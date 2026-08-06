@@ -1,23 +1,36 @@
 name: Validate Site
 
 # Required, blocking checks for structural correctness that must never merge
-# broken: hreflang reciprocity, /library/ and /symbol/ page structure,
-# per-page social/Pinterest image assets, new/changed pages' image assets
-# specifically, new/changed /symbol/ pages' Related-Symbols peer-link
-# reciprocity, translation parity — an EN <-> locale content change
-# introduced by this PR without its sibling being updated — locale mesh
-# health (hreflang reciprocity + locale-native internal links on any locale
-# page this PR touches), the locale-parent-gap pre-build check on any new
-# locale page, and FAQ schema visibility (FAQPage/QAPage JSON-LD whose
-# questions aren't actually on the page). Each validator already exits
-# non-zero on failure (see scripts/audit-hreflang.js,
+# broken: hreflang reciprocity, hreflang cluster completeness (every member
+# of a cluster links every other member — a distinct check from reciprocity,
+# see scripts/audit-hreflang-completeness.js's own header comment for why
+# pairwise reciprocity alone misses mutual omissions), /library/ and
+# /symbol/ page structure, the Funding Choices ad-blocking-recovery tag,
+# per-page social/Pinterest image assets,
+# new/changed pages' image assets specifically, new/changed /symbol/ pages'
+# Related-Symbols peer-link reciprocity, translation parity — an EN <->
+# locale content change introduced by this PR without its sibling being
+# updated — locale mesh health (hreflang reciprocity + locale-native
+# internal links on any locale page this PR touches), the locale-parent-gap
+# pre-build check on any new locale page, and FAQ schema visibility
+# (FAQPage/QAPage JSON-LD whose questions aren't actually on the page). Each
+# validator already exits non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/audit-hreflang-completeness.js,
 # scripts/validate_library_pages.py, scripts/check-image-assets.py,
 # scripts/check-new-page-image-assets.py,
 # scripts/check-new-symbol-peer-links.py,
 # scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
-# scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js) — this
+# scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js,
+# scripts/check-funding-choices.js) — this
 # workflow is what actually wires that into CI so a PR can't merge broken
 # pages.
+#
+# That wiring was inert from the day it was written until 2026-08-06: every
+# step pipes into `| tee`, and a pipeline exits with its LAST command's status,
+# so `tee` succeeding masked every validator's failure and `steps.<id>.outcome`
+# was always 'success'. See the `defaults.run.shell` block on the job below —
+# do not remove it. Consequence worth remembering: a green "Validate Site" on
+# any PR before that date carries no information.
 #
 # scripts/check-image-assets.py is a whole-site audit (also requires a
 # Pinterest pin per page) and the site carries a large, deliberately-paced
@@ -67,24 +80,15 @@ jobs:
     permissions:
       contents: read
 
-    # REQUIRED for any of the gating below to work at all. Every validator
-    # step below pipes into `tee` so its output can be replayed into the step
-    # summary — and a shell without `pipefail` reports the exit code of the
-    # LAST command in a pipeline, which is always `tee`, always 0. GitHub's
-    # default `run:` shell is `bash -e {0}` (no pipefail), so from the day
-    # this workflow was written (2026-07-22) until this fix EVERY validator
-    # step recorded `outcome: success` no matter what the validator returned,
-    # and the "fail the job if any gating validator reported problems" step
-    # below could never fire. Setting `shell: bash` here makes Actions use
-    # `bash --noprofile --norc -eo pipefail {0}`, so the validator's exit
-    # code survives the pipe.
-    #
-    # Found via a Retire-bucket stale-branch scan (ultratextgen-lab-'s
-    # gsc-breakout / portfolio-scan pass, 2026-08-05): a fix for this exact
-    # bug was drafted 2026-07-26 (branch
-    # claude/faqpage-schema-content-fix-gcaa10) but never merged — it sat
-    # stale for 10 days while every "required, blocking" check documented in
-    # this file's own comments and in CLAUDE.md was silently non-blocking.
+    # Every validator step below is `<validator> | tee <name>.log`, and a
+    # pipeline's exit status is its LAST command's — `tee` always succeeds, so
+    # without pipefail every one of these steps reported success no matter what
+    # the validator itself exited with. GitHub's default shell for `run:` is
+    # `bash -e {0}`, which has no pipefail; naming `bash` explicitly gets
+    # `bash --noprofile --norc -eo pipefail {0}`. Until this was set, the whole
+    # gating block below was inert: `steps.<id>.outcome` was 'success'
+    # unconditionally, so the "Fail the job" step never fired. Do not remove
+    # this without also removing the `| tee` from every step.
     defaults:
       run:
         shell: bash
@@ -116,10 +120,27 @@ jobs:
         continue-on-error: true
         run: npm run check:hreflang | tee hreflang-audit.log
 
+      - name: Run hreflang cluster completeness audit
+        id: hreflang_completeness
+        continue-on-error: true
+        run: npm run check:hreflang-completeness | tee hreflang-completeness.log
+
       - name: Run library/symbol page validator
         id: library
         continue-on-error: true
         run: python3 scripts/validate_library_pages.py | tee library-validate.log
+
+      # Whole-site and gating, unlike the other whole-site checks below: this
+      # one has no backlog to be permanently red against — the tag either is
+      # or isn't in a page's <head>, and scripts/inject-funding-choices-tag.js
+      # fixes any gap in one idempotent run. It was previously unwired, which
+      # is how 37 pages (27 zh-tw/symbol, 7 vi/library, and the whole
+      # free-fire-clan-tag cluster) shipped without ad-blocking-recovery
+      # tagging across several unrelated PRs before anyone noticed.
+      - name: Run Funding Choices tag check
+        id: funding_choices
+        continue-on-error: true
+        run: npm run check:funding-choices | tee funding-choices.log
 
       - name: Run image asset check (whole-site audit, informational only)
         id: images
@@ -177,9 +198,19 @@ jobs:
             cat hreflang-audit.log
             echo '```'
             echo ""
+            echo "### hreflang cluster completeness audit — \`${{ steps.hreflang_completeness.outcome }}\`"
+            echo '```'
+            cat hreflang-completeness.log
+            echo '```'
+            echo ""
             echo "### Library/symbol page validator — \`${{ steps.library.outcome }}\`"
             echo '```'
             cat library-validate.log
+            echo '```'
+            echo ""
+            echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo '```'
+            cat funding-choices.log
             echo '```'
             echo ""
             echo "### Image asset check (whole-site audit, informational) — \`${{ steps.images.outcome }}\`"
@@ -240,7 +271,7 @@ jobs:
         # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
+        if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

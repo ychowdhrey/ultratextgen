@@ -104,9 +104,9 @@
     },
     {
       "pattern": "updates/*",
-      "tier": "never",
-      "scriptIndependent": false,
-      "rationale": "Dated Unicode/platform/game rule-change log — already Pinterest-pin-excluded, low per-page yield, and inherently volatile. Never mirror regardless of demand signal."
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Dated Unicode/platform/game rule-change log. Re-tiered from \"never\" to \"core\" on 2026-08-05 by user decision: updates/ is news, not demand-gated reference content, so per-locale search volume is the wrong instrument for it — a rule change that affects a locale's readers is worth carrying in that locale regardless of what a keyword tool says. Prose is script-independent, so it mirrors into any script. NOTE the standing cost the old rationale was pointing at, which is real and unchanged: these pages go stale on external events, so every mirrored entry multiplies the correction sweep when one does (UTC #188 invalidated the 18.0 beta entry and required rewriting 8 locale siblings in one pass). Mirror deliberately, and correct the whole cluster when the underlying fact moves."
     }
   ]
 }

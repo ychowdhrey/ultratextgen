@@ -204,8 +204,17 @@ def collect(force=False, only=None):
             html = open(path, encoding="utf-8").read()
             slug = slug_for(path)
             og_base, og_href, hero_base = current_asset_basenames(html)
-            already_ok = (og_base == slug) and (hero_base in (slug, None))
-            if already_ok and not force:
+            named_ok = (og_base == slug) and (hero_base in (slug, None))
+            # A correctly-NAMED reference is not the same as a present file.
+            # A page whose art was never generated already points at the right
+            # path, so a name-only check skips it and reports "0 pages needing
+            # art" while the OG image 404s -- precisely the case CLAUDE.md's
+            # "art ships with the page" rule exists to prevent. Require the
+            # files on disk too, so a missing asset is collected without --force.
+            assets_present = os.path.exists(os.path.join(gsa.OG, f"{slug}.png")) and (
+                hero_base is None
+                or os.path.exists(os.path.join(gsa.HERO, f"{slug}.svg")))
+            if named_ok and assets_present and not force:
                 continue
             m = HREFLANG_EN.search(html)
             href = m.group(4) if m else None
@@ -220,13 +229,45 @@ def collect(force=False, only=None):
     return rows
 
 
-def main():
-    dry = "--dry-run" in sys.argv
-    force = "--force" in sys.argv
+KNOWN_FLAGS = {"--dry-run", "--force", "--only", "--help", "-h"}
+
+
+def parse_args(argv):
+    """Parse argv, or exit. Returns (dry, force, only).
+
+    Hand-rolled rather than argparse to keep --only repeatable exactly as it
+    has always behaved. Two things it must do that a bare `in sys.argv` scan
+    did not: honour --help WITHOUT running (this script writes files and
+    rewires pages, so `--help` used to perform a real run), and reject an
+    unknown flag instead of silently ignoring it -- a typo'd `--onlyy foo`
+    would otherwise drop the scope and sweep the whole tree, which is the one
+    thing --only exists to prevent.
+    """
+    if "--help" in argv or "-h" in argv:
+        print(__doc__)
+        sys.exit(0)
+    dry = "--dry-run" in argv
+    force = "--force" in argv
     only = []
-    for i, arg in enumerate(sys.argv):
-        if arg == "--only" and i + 1 < len(sys.argv):
-            only.append(sys.argv[i + 1])
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--only":
+            if i + 1 >= len(argv) or argv[i + 1].startswith("-"):
+                sys.exit("error: --only requires a path prefix, e.g. --only fr/symbol/")
+            only.append(argv[i + 1])
+            i += 2
+            continue
+        if arg.startswith("-") and arg not in KNOWN_FLAGS:
+            sys.exit(f"error: unknown flag {arg!r} (run with --help)")
+        if not arg.startswith("-"):
+            sys.exit(f"error: unexpected argument {arg!r} (paths go after --only)")
+        i += 1
+    return dry, force, only
+
+
+def main():
+    dry, force, only = parse_args(sys.argv[1:])
     rows = collect(force=force, only=(only or None))
     print(f"pages needing locale art: {len(rows)}" +
           (f" (scoped to {only})" if only else ""))

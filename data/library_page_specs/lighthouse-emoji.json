@@ -1,0 +1,144 @@
+{
+  "slug": "lighthouse-emoji",
+  "page_type": "symbol",
+  "title": "Lighthouse Emoji: Copy & Paste 🛙 — Confirmed for Unicode 18.0, September 16 2026",
+  "meta_description": "The lighthouse emoji (🛙, U+1F6D9) is confirmed in Unicode 18.0, publishing 16 September 2026. Its chart design was deliberately simplified to stop platforms drawing it differently. Here's its status, meaning, and what to use until fonts ship it.",
+  "canonical": "https://ultratextgen.com/symbol/lighthouse-emoji/",
+  "breadcrumb": "Lighthouse Emoji",
+  "hero_h1": "Lighthouse Emoji",
+  "hero_tagline": "A confirmed Unicode 18.0 character, publishing 16 September 2026 — one of nine new emoji in the release, and one of three whose reference artwork was redrawn to stop vendors rendering it differently. Copy the codepoint now; fonts follow later.",
+  "intro": "The lighthouse emoji (🛙, U+1F6D9) is one of nine new emoji confirmed for Unicode 18.0 and its companion release, Emoji 18.0. Its status is no longer provisional: at UTC Meeting #188 on 30 July 2026 the emoji subcommittee recommended \"no changes to the emoji repertoire\" for Unicode 18.0, leaving all nine characters as approved, and the same meeting authorised the release for 16 September 2026. It sits in the Transport and Map Symbols block alongside the other structures and travel icons. What makes the lighthouse unusual within its own cohort is the design work done to it before release. Emoji vendors each draw their own artwork from Unicode's reference chart, and detailed reference images tend to produce wildly different results across platforms. So the subcommittee stripped the lighthouse back: the extra textures were removed specifically, in its own words, so \"vendors don't have to replicate\" them, leaving what it calls the \"core symbolic architecture\" — a blueprint deliberately simple enough that Apple, Google, Samsung and the rest should land on recognisably the same tower. Publication is not the same as availability, though: on 16 September the character exists in the standard, and only after that do fonts, keyboards and operating systems add it on their own schedules, typically over the following months.",
+  "date_published": "2026-08-05",
+  "date_modified": "2026-08-05",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "lighthouse",
+      "label": "Lighthouse",
+      "h2": "Lighthouse Emoji",
+      "intro": "The confirmed character. Copyable as a codepoint today; expect a blank box until fonts ship support after the 16 September 2026 release.",
+      "symbols": [
+        {
+          "char": "🛙",
+          "label": "Lighthouse (U+1F6D9, confirmed for Unicode 18.0)"
+        }
+      ]
+    },
+    {
+      "id": "what-to-use-now",
+      "label": "What to Use Now",
+      "h2": "What to Use Until Fonts Ship It",
+      "intro": "Already-encoded emoji that render everywhere today and carry a similar coastal, navigational or warning-beacon meaning.",
+      "symbols": [
+        {
+          "char": "🗼",
+          "label": "Tokyo Tower — the closest existing tall-structure emoji"
+        },
+        {
+          "char": "⛵",
+          "label": "Sailboat"
+        },
+        {
+          "char": "🌊",
+          "label": "Water Wave"
+        },
+        {
+          "char": "🚨",
+          "label": "Police Car Light — for the rotating-beacon sense"
+        },
+        {
+          "char": "🏝️",
+          "label": "Desert Island"
+        }
+      ]
+    },
+    {
+      "id": "the-other-eight",
+      "label": "The Other Eight",
+      "h2": "The Other Eight Emoji in Unicode 18.0",
+      "intro": "All nine were confirmed together and publish on the same day. None render yet.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (U+1FAEB) — won the public vote"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (U+1FACC)"
+        },
+        {
+          "char": "🪌",
+          "label": "Eraser (U+1FA8C)"
+        },
+        {
+          "char": "🪍",
+          "label": "Net With Handle (U+1FA8D)"
+        },
+        {
+          "char": "🫹",
+          "label": "Leftwards Thumb Sign (U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Rightwards Thumb Sign (U+1FAFA)"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the lighthouse emoji?",
+      "a": "It is a new emoji at U+1F6D9, confirmed for Unicode 18.0 and its companion release Emoji 18.0. It depicts a lighthouse tower and sits in the Transport and Map Symbols block. It is one of nine new emoji in the release."
+    },
+    {
+      "q": "When will the lighthouse emoji be available?",
+      "a": "Unicode 18.0 publishes on 16 September 2026, which is when the character officially exists in the standard. Actual availability on your device comes later: fonts, keyboards and operating systems each add support on their own schedules, usually over the months following a release."
+    },
+    {
+      "q": "Why does the lighthouse emoji show as an empty box?",
+      "a": "Because no font covers the codepoint yet. Unicode 18.0 has not published, so the character is confirmed but not yet released, and nothing on your device knows how to draw it. The box or placeholder glyph is the expected behaviour until platform support ships."
+    },
+    {
+      "q": "Was the lighthouse emoji's design changed before release?",
+      "a": "Yes. It is one of three Unicode 18.0 emoji whose reference chart image was updated ahead of publication. The extra details and intricate textures were stripped away so that vendors would not have to replicate them, reducing the risk of the emoji looking very different across platforms. The stated aim was to leave a simple \"core symbolic architecture\" for designers to work from."
+    },
+    {
+      "q": "Is the lighthouse emoji approved, or still a candidate?",
+      "a": "Approved. At UTC Meeting #188 on 30 July 2026 the emoji subcommittee recommended no changes to the Unicode 18.0 emoji repertoire, so all nine characters — the lighthouse among them — stand as confirmed for the September release."
+    },
+    {
+      "q": "What emoji can I use for a lighthouse right now?",
+      "a": "There is no exact substitute. The closest existing options are Tokyo Tower for a tall coastal structure, Sailboat or Water Wave for the maritime context, and Police Car Light if you specifically mean a rotating warning beacon."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/travel-vacation-emojis/",
+      "title": "Travel & Vacation Emojis",
+      "desc": "Every coastal, transport and destination emoji you can already use today."
+    },
+    {
+      "href": "/symbol/cracking-face-emoji/",
+      "title": "Cracking Face Emoji",
+      "desc": "The Unicode 18.0 emoji that won Emojipedia's public vote."
+    },
+    {
+      "href": "/symbol/meteor-emoji/",
+      "title": "Meteor Emoji",
+      "desc": "Another of the nine, and another whose chart artwork was revised."
+    },
+    {
+      "href": "/symbol/pickle-emoji/",
+      "title": "Pickle Emoji",
+      "desc": "The runner-up in the public vote, shipping the same day."
+    }
+  ]
+}

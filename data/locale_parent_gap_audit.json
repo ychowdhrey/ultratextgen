@@ -470,6 +470,84 @@
       },
       "verdict": "gate-pass",
       "evidence": "User-authorized override of vi's Tier-2 hold, for the seven mid-head library/* pages built 2026-08-01 (ky-hieu-tien-te, ky-tu-dac-biet-unicode, ky-hieu-am-nhac, ky-hieu-co-vua, ky-hieu-ton-giao, ky-hieu-hoi-giao, ky-tu-kawaii-de-thuong). Same shape as the 2026-07-25 symbol/* entry, with one difference worth recording: this time the hold's own premise was checked against data rather than simply overridden. vi is held because of an \"authority/indexing gap - not a content gap\", but the sitewide GSC pull of 2026-08-01 (ultratextgen-lab-, GSC-QUERY-LEVEL-PULL-2026-08-01.md sec 1b, window Jul 4-29) measures /vi/* at 163,411 impressions, 4,704 clicks, 2.88% CTR across 114 pages and 1,765 queries - indexed, ranked and converting, and 100x the 47-click figure the hold was originally reasoned from. The FF/gaming query family alone went from 19 impressions/2 clicks to 714/32 on the same aggregation method. The user was shown the hold and its reasoning before deciding, and chose to include vi. Instruments are null: this is an authorization plus a contradicted-premise finding, NOT a fresh Semrush/GSC per-cell pull. Per the 2026-08-01 CLAUDE.md rule, an all-null entry is a bridge, not a pass - it is complete only once instruments are backfilled or a dated veto is recorded. Re-check is logged in the lab repo's docs/review-register.md. vi's tier and hold flag in data/locale_qualification_tiers.json are deliberately left untouched: the registry keeps stating the standing default, and this ledger carries the dated, attributed exception. If the hold's premise is now simply wrong, that is a separate registry decision to raise on its own evidence, not something to change as a side effect of shipping pages."
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "id",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 560,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Live Semrush pull (db=id, 2026-08-05) for the YouTube channel-name/handle answers cluster: 'nama channel youtube' 210, 'cara mengganti nama channel youtube' 140, 'handle youtube' 140, 'ganti nama youtube' 70 = ~560/mo. Corroborated first-party: GSC (3 months to 2026-08-05) shows ID-language YouTube name queries already earning impressions at pos 3-5 ('nama channel youtube aesthetic', 'nama youtube keren', 'ide nama channel youtube') on /id/usecase/nama-keren/ — a name-IDEAS page, which is a different intent from these two how-to/comparison answers, so Gate 1 (ownership) is clear: no existing id/ page targets the change-name or handle-vs-name queries. Competitor footprint: generic how-to blogs rank these in ID, no rules-aware tool page.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "tr",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 510,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Live Semrush pull (db=tr, 2026-08-05): 'youtube kanal adi degistirme' 210, 'youtube kullanici adi degistirme' 210, 'youtube kanal ismi' 90 = ~510/mo. Gate 1 checked: no existing tr/ page targets these — tr/answers/ currently covers blank names, box-rendering, username-vs-display-name (generic, cross-platform) and rejected game names; none targets YouTube channel-name change or the YouTube handle/name split. Competitor footprint: Turkish how-to blogs and video results, no rules-aware tool page.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pt",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 380,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Live Semrush pull (db=br, 2026-08-05): 'como mudar o nome do canal do youtube' 140, 'nome de canal do youtube' 110, 'mudar nome youtube' 110, 'arroba youtube' 20 = ~380/mo. Gate 1 checked: no existing pt/ page targets these; pt/answers/ holds only the rejected-game-name answer, and pt/gerador-de-nomes/ is a name-ideas generator (different intent). Competitor footprint: Brazilian how-to blogs and video results, no rules-aware tool page.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "es",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 60,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "Live Semrush pull (db=es, 2026-08-05) for the same cluster returned ~60/mo total ('como cambiar el nombre de youtube' 30, 'cambiar nombre de canal de youtube' 20, 'arroba youtube' 10, 'nombre de canal de youtube' 0). Below threshold — recorded as a deliberate not-built, not an oversight. Re-check if ES demand moves.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "fr",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 210,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "Live Semrush pull (db=fr, 2026-08-05): 'pseudo youtube' 140, 'changer son nom youtube' 40, 'identifiant youtube' 30, 'changer nom de chaine youtube' 0 = ~210/mo — but two-thirds of that is 'pseudo youtube', which is name-GENERATOR intent, not the how-to/comparison intent these two answers pages serve. The answers-intent slice alone is ~70/mo. Recorded as not-built for this cluster; the 'pseudo youtube' demand is a separate question for a French name-generator page, which would need its own EN-parent and gate check.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "it",
+      "checkedDate": "2026-08-05",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 150,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "Live Semrush pull (db=it, 2026-08-05): 'cambiare nome youtube' 110, 'come cambiare nome canale youtube' 20, 'nome canale youtube' 20 = ~150/mo. Below the threshold the id/tr/pt cells cleared; recorded as a deliberate not-built rather than an unaudited gap.",
+      "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
     }
   ]
 }

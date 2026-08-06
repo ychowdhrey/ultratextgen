@@ -150,7 +150,35 @@ function linksUnreachableFor(linkPaths, lang) {
 // ─── Check every changed page that belongs to a cluster ────────────────────
 
 const flagged = []; // { enUrl, localeUrl, changedRel, unsyncedSiblingRels: [] }
+const converged = []; // { rel, otherRel, from, to } — pairs this branch moved together, never flagged
 const checkedPairs = new Set(); // dedupe: "enUrl|localeUrl"
+
+/**
+ * Did editing `rel` move it TOWARD its untouched sibling rather than away?
+ *
+ * This gate exists to stop EN and a locale page DRIFTING APART, and it infers
+ * drift from "one side moved, the other didn't" — a proxy that inverts on a
+ * backfill. A pass that adds content the other side already has (the locale
+ * half of a peer-link sync, a missing FAQ ported over, an EN page catching up
+ * to links its translations already carry) necessarily touches one side only,
+ * and the gate reads that repair as damage.
+ *
+ * So measure the thing the rule is actually about: pairwise divergence before
+ * vs after, scored against the untouched sibling as a fixed reference.
+ *
+ * Deliberately strict (`<`, not `<=`): trading one divergence for another nets
+ * to zero and is exactly the drift this check is for. Returns false when there
+ * is no prior state (a new page), so new pages still flag normally.
+ */
+function convergedTowards(rel, beforeHtml, afterHtml, fpOpts, siblingRel) {
+  if (beforeHtml === null) return false;
+  const siblingFp = fingerprint(fs.readFileSync(path.join(ROOT, siblingRel), 'utf8'), { relPath: siblingRel });
+  const from = score(diff(fingerprint(beforeHtml, fpOpts), siblingFp));
+  const to = score(diff(fingerprint(afterHtml, fpOpts), siblingFp));
+  if (to >= from) return false;
+  converged.push({ rel, otherRel: siblingRel, from, to });
+  return true;
+}
 
 for (const rel of changedFiles) {
   const filePath = path.join(ROOT, rel);
@@ -208,6 +236,10 @@ for (const rel of changedFiles) {
     checkedPairs.add(pairKey);
     if (hasException(enAnchor, rec.canonical)) continue;
     if (changedSet.has(enRec.rel)) continue; // EN parent touched — presumed synced
+
+    // Repairing drift is not creating it — see convergedTowards().
+    if (convergedTowards(rel, before, newHtml, fpOpts, enRec.rel)) continue;
+
     // No linksUnreachableFor() suppression on this branch by design: the
     // sibling here is the EN parent, and an EN page can always link another
     // EN page, so there is never "nothing it could do".
@@ -235,7 +267,17 @@ for (const rel of changedFiles) {
     if (actionable.length === 0) continue; // no sibling could act on this change
 
     if (actionable.some((s) => changedSet.has(s.rec.rel))) continue; // at least one sibling synced
-    for (const s of actionable) {
+
+    // Same carve-out as the locale branch, mirrored: an EN page catching up to
+    // links its translations already carry has converged toward them, not
+    // drifted from them. Evaluated per sibling, since one EN edit can converge
+    // toward some siblings while diverging from others.
+    const stillDiverging = actionable.filter(
+      (s) => !convergedTowards(rel, before, newHtml, fpOpts, s.rec.rel)
+    );
+    if (stillDiverging.length === 0) continue;
+
+    for (const s of stillDiverging) {
       const pairKey = `${rec.canonical}|${s.url}`;
       if (checkedPairs.has(pairKey)) continue;
       checkedPairs.add(pairKey);
@@ -250,7 +292,20 @@ console.log('Translation Parity Check');
 console.log(`  base:                    ${base} (merge-base ${mergeBase.slice(0, 8)})`);
 console.log(`  changed HTML files:      ${changedFiles.length}`);
 console.log(`  pairs with unsynced content change: ${flagged.length}`);
+console.log(`  pairs converged (drift repaired, not introduced): ${converged.length}`);
 console.log('');
+
+if (converged.length) {
+  const shown = converged.slice(0, 15);
+  console.log('Converged (the changed page moved TOWARD its untouched sibling):');
+  for (const c of shown) {
+    console.log(`  · ${c.rel}  divergence ${c.from} -> ${c.to}  (vs ${c.otherRel})`);
+  }
+  if (converged.length > shown.length) {
+    console.log(`  … and ${converged.length - shown.length} more.`);
+  }
+  console.log('');
+}
 
 if (flagged.length) {
   for (const f of flagged) {

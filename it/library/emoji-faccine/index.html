@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Emoji faccine: bacio, occhiolino, sorrisetto, occhi al cielo e altre da copiare</title>
+<meta name="description" content="Copia le emoji faccine per stato d'animo — bacio 😘, occhiolino 😉, sorrisetto 😏, occhi al cielo 🙄, faccina che arrossisce 😊, supplichevole 🥺, occhiali da sole 😎, aureola 😇 e altre, con significati e combinazioni pronte. Tocca una faccina per copiarla subito.">
+
+<link rel="canonical" href="https://ultratextgen.com/it/library/emoji-faccine/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/face-emojis/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/gesichts-emojis/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/emojis-de-caras/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/emojis-visages/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/emoji-wajah/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/emoji-faccine/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/emojis-de-rosto/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/yuz-emojileri/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/face-emojis/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/it-library-emoji-faccine.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Emoji faccine: bacio, occhiolino, sorrisetto, occhi al cielo e altre da copiare">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emoji faccine: bacio, occhiolino, sorrisetto, occhi al cielo e altre da copiare">
+<meta name="twitter:description" content="Copia le emoji faccine per stato d'animo — bacio 😘, occhiolino 😉, sorrisetto 😏, occhi al cielo 🙄, faccina che arrossisce 😊, supplichevole 🥺, occhiali da sole 😎, aureola 😇 e altre, con significati e combinazioni pronte. Tocca una faccina per copiarla subito.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/it-library-emoji-faccine.png">
+<meta property="og:title" content="Emoji faccine: bacio, occhiolino, sorrisetto, occhi al cielo e altre da copiare">
+<meta property="og:description" content="Copia le emoji faccine per stato d'animo — bacio 😘, occhiolino 😉, sorrisetto 😏, occhi al cielo 🙄, faccina che arrossisce 😊, supplichevole 🥺, occhiali da sole 😎, aureola 😇 e altre, con significati e combinazioni pronte. Tocca una faccina per copiarla subito.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/it/library/emoji-faccine/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "it",
+  "headline": "Emoji faccine: bacio, occhiolino, sorrisetto, occhi al cielo e altre da copiare",
+  "alternateName": ["Emoji faccine copia e incolla", "Faccine emoji", "Emoji delle emozioni", "Emoji espressioni del viso", "Emoji bacio", "Emoji occhiolino", "Emoji sorrisetto", "Emoji occhi al cielo", "Emoji faccina che arrossisce", "Emoji supplichevole", "Emoji occhiali da sole", "Emoji labbro morso", "Emoji lingua", "Emoji aureola"],
+  "description": "Copia le emoji faccine per stato d'animo — bacio 😘, occhiolino 😉, sorrisetto 😏, occhi al cielo 🙄, faccina che arrossisce 😊, supplichevole 🥺, occhiali da sole 😎, labbro morso 🫦, aureola 😇 e altre, con significati, varianti simili e combinazioni pronte. Tocca una faccina per copiarla subito.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "image": "https://ultratextgen.com/assets/og/it-library-emoji-faccine.png",
+  "mainEntityOfPage": "https://ultratextgen.com/it/library/emoji-faccine/",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-05"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "it",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Libreria",
+      "item": "https://ultratextgen.com/it/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Emoji faccine",
+      "item": "https://ultratextgen.com/it/library/emoji-faccine/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "it",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual è l'emoji del bacio e in cosa si differenzia dalle faccine che baciano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'emoji che manda un bacio 😘 lancia un bacio con un cuoricino e suona affettuosa o civettuola. Le faccine che baciano senza cuore — 😗 (neutra), 😙 (con occhi sorridenti) e 😚 (con occhi chiusi) — sono più delicate e innocenti, perfette per amici e famiglia. L'impronta di rossetto 💋 rappresenta invece il bacio in sé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa significa l'emoji sorrisetto 😏?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La faccina con sorrisetto 😏 esprime sicurezza, compiacimento, sfacciataggine o allusione civettuola. È la scelta giusta per una risposta che prende in giro, un'allusione furba o un momento da «te l'avevo detto»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è l'emoji del labbro morso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'emoji del labbro morso è 🫦. Si usa molto per segnalare attrazione, nervosismo o una reazione civettuola tipo «oh mamma». C'è anche chi la abbina al sorrisetto 😏 per rendere il senso più chiaro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa significa la faccina supplichevole 🥺?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La faccina supplichevole 🥺 ha due occhioni grandi e lucidi da cucciolo. Si usa per implorare in modo tenero, dire «ti prego», far notare che una cosa è adorabile o mettere in colpa un amico per scherzo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Queste emoji faccine funzionano su iPhone, Android, Instagram e Discord?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Sono emoji Unicode standard, quindi si vedono su iPhone, Android, Instagram, TikTok, Discord, Snapchat e WhatsApp. Tocca una faccina di questa pagina per copiarla e incollala dove scrivi. Qualcuna tra le più recenti, come il labbro morso 🫦, sui dispositivi molto vecchi può apparire come un quadratino (▯)."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/it/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/it/library/">Libreria</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Emoji faccine</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Emoji faccine per stato d'animo</h1>
+    <p class="hero-tagline">Trova la faccina esatta per quello che vuoi dire — bacio, occhiolino, sorrisetto, occhi al cielo, faccina che arrossisce, supplichevole, occhiali da sole, labbro morso, aureola e altre. Per ognuna trovi le varianti simili, cosa significa e una combinazione pronta da incollare. Tocca una faccina per copiarla subito.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/it-library-emoji-faccine.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Questa raccolta mette in ordine le emoji faccine che si cercano davvero, partendo dallo stato d'animo — non un semplice elenco di caratteri, ma la faccina giusta per ogni intenzione, con le sue varianti simili, due righe su cosa significa e quando usarla e una combinazione pronta da copiare per post, bio e risposte. Sotto la parte per stato d'animo puoi comunque sfogliare tutte le faccine raggruppate per umore.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEELINGS HUB NAV -->
+<section class="editorial-section" id="by-feeling">
+  <span class="article-section-label">Sfoglia per stato d'animo</span>
+  <h2>Le emoji faccine per stato d'animo</h2>
+  <p class="u-secondary-block">Vai direttamente allo stato d'animo che ti serve — ogni sezione ha l'emoji principale, le varianti simili, il significato in breve e una combinazione pronta da copiare. Vai a
+    <a href="#feel-kiss">bacio</a>,
+    <a href="#feel-wink">occhiolino</a>,
+    <a href="#feel-smirk">sorrisetto</a>,
+    <a href="#feel-scared">paura</a>,
+    <a href="#feel-blush">faccina che arrossisce</a>,
+    <a href="#feel-confused">confusione</a>,
+    <a href="#feel-eye-roll">occhi al cielo</a>,
+    <a href="#feel-freaky">freaky</a>,
+    <a href="#feel-sunglasses">occhiali da sole</a>,
+    <a href="#feel-lip-bite">labbro morso</a>,
+    <a href="#feel-tongue">lingua</a>,
+    <a href="#feel-pleading">supplica</a>,
+    <a href="#feel-embarrassed">imbarazzo</a>,
+    <a href="#feel-annoyed">fastidio</a>,
+    <a href="#feel-cringe">cringe</a>,
+    <a href="#feel-sigh">sospiro</a>,
+    <a href="#feel-choking">soffocamento</a> o
+    <a href="#feel-halo">aureola</a>.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: BACIO -->
+<section class="mood-explainers" id="feel-kiss">
+  <span class="article-section-label">Bacio</span>
+  <h2>Emoji bacio 😘</h2>
+  <p class="u-secondary-tight">Le emoji del bacio vanno dal bacio soffiato civettuolo al bacino dolce e innocente.</p>
+  <div class="editorial-block">
+    <p>Scegli 😘 (bacio soffiato) quando vuoi trasmettere calore o un tocco di flirt — aggiunge un cuoricino. Le faccine che baciano più sobrie 😗 😙 😚 suonano gentili e platoniche, perfette per amici e famiglia, mentre 💋 rappresenta l'impronta del bacio. Usa un bacio per chiudere un messaggio dolce, dare la buonanotte o rendere più affettuoso un grazie.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😘" aria-label="Copia l'emoji faccina che manda un bacio">😘</button>
+      <span class="flag-label">Manda un bacio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😗" aria-label="Copia l'emoji faccina che bacia">😗</button>
+      <span class="flag-label">Faccina che bacia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😙" aria-label="Copia l'emoji faccina che bacia con occhi sorridenti">😙</button>
+      <span class="flag-label">Bacio, occhi sorridenti</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😚" aria-label="Copia l'emoji faccina che bacia con occhi chiusi">😚</button>
+      <span class="flag-label">Bacio, occhi chiusi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💋" aria-label="Copia l'emoji impronta di bacio">💋</button>
+      <span class="flag-label">Impronta di bacio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😘❤️💋" aria-label="Copia la combinazione di emoji del bacio">😘❤️💋</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: OCCHIOLINO -->
+<section class="mood-explainers" id="feel-wink">
+  <span class="article-section-label">Occhiolino</span>
+  <h2>Emoji occhiolino 😉</h2>
+  <p class="u-secondary-tight">L'occhiolino ammorbidisce un messaggio e lo trasforma in una battuta, un'allusione o un flirt.</p>
+  <div class="editorial-block">
+    <p>La faccina che fa l'occhiolino 😉 dice a chi legge «sto scherzando» — usala dopo una presa in giro, una battuta tra voi o un'allusione civettuola, così non viene presa troppo sul serio. La faccina che fa l'occhiolino con la lingua 😜 alza il livello di sciocchezza, mentre il sorrisetto 😏 è più allusivo.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😉" aria-label="Copia l'emoji faccina che fa l'occhiolino">😉</button>
+      <span class="flag-label">Faccina che fa l'occhiolino</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😜" aria-label="Copia l'emoji faccina che fa l'occhiolino con la lingua">😜</button>
+      <span class="flag-label">Occhiolino + lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😏" aria-label="Copia l'emoji faccina con sorrisetto">😏</button>
+      <span class="flag-label">Sorrisetto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😉😏✨" aria-label="Copia la combinazione di emoji dell'occhiolino">😉😏✨</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: SORRISETTO -->
+<section class="mood-explainers" id="feel-smirk">
+  <span class="article-section-label">Sorrisetto</span>
+  <h2>Emoji sorrisetto 😏</h2>
+  <p class="u-secondary-tight">Compiaciuto, furbo, civettuolo o silenziosamente sicuro di sé: il sorrisetto fa un sacco di lavoro.</p>
+  <div class="editorial-block">
+    <p>La faccina con sorrisetto 😏 porta con sé un'aria complice e soddisfatta di sé. Mettila dopo una risposta brillante, una battuta civettuola o un vanto travestito da modestia. Abbinala all'occhiolino 😉 per flirtare o al diavoletto sorridente 😈 per un tocco di malizia.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😏" aria-label="Copia l'emoji faccina con sorrisetto">😏</button>
+      <span class="flag-label">Faccina con sorrisetto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😉" aria-label="Copia l'emoji faccina che fa l'occhiolino">😉</button>
+      <span class="flag-label">Occhiolino</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😈" aria-label="Copia l'emoji faccina con le corna">😈</button>
+      <span class="flag-label">Diavoletto sorridente</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😏😉😈" aria-label="Copia la combinazione di emoji del sorrisetto">😏😉😈</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: PAURA -->
+<section class="mood-explainers" id="feel-scared">
+  <span class="article-section-label">Paura</span>
+  <h2>Emoji paura 😨</h2>
+  <p class="u-secondary-tight">Dal timore leggero al panico urlato.</p>
+  <div class="editorial-block">
+    <p>La faccina impaurita 😨 esprime preoccupazione e timore, mentre la faccina che urla 😱 (la faccia di «Mamma, ho perso l'aereo») è per lo shock e il terrore. 😰 aggiunge il sudore dell'ansia e 😖 suona come spaventato e sopraffatto. Usale per gli spaventi improvvisi, le notizie inquietanti o un drammatico «non riesco a guardare».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😨" aria-label="Copia l'emoji faccina impaurita">😨</button>
+      <span class="flag-label">Faccina impaurita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😱" aria-label="Copia l'emoji faccina terrorizzata">😱</button>
+      <span class="flag-label">Urlo di terrore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😰" aria-label="Copia l'emoji faccina ansiosa con sudore">😰</button>
+      <span class="flag-label">Sudore d'ansia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😖" aria-label="Copia l'emoji faccina frastornata">😖</button>
+      <span class="flag-label">Sopraffatto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😱😨💀" aria-label="Copia la combinazione di emoji della paura">😱😨💀</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: ARROSSIRE -->
+<section class="mood-explainers" id="feel-blush">
+  <span class="article-section-label">Arrossire</span>
+  <h2>Emoji faccina che arrossisce 😊</h2>
+  <p class="u-secondary-tight">Timida, lusingata, affettuosa o un po' in imbarazzo.</p>
+  <div class="editorial-block">
+    <p>La faccina sorridente con le guance rosse 😊 suona felice e un filo timida — perfetta per un complimento dolce o un «grazie». ☺️ è più morbida e calda, 🥰 aggiunge i cuori dell'innamoramento e la faccina paonazza 😳 è il rossore più imbarazzato, quello di chi è stato colto sul fatto.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😊" aria-label="Copia l'emoji faccina che sorride con occhi sorridenti">😊</button>
+      <span class="flag-label">Sorriso che arrossisce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☺️" aria-label="Copia l'emoji faccina sorridente">☺️</button>
+      <span class="flag-label">Sorriso dolce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥰" aria-label="Copia l'emoji faccina che sorride con i cuori">🥰</button>
+      <span class="flag-label">Innamorata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😳" aria-label="Copia l'emoji faccina paonazza">😳</button>
+      <span class="flag-label">Paonazza</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😊🥰💗" aria-label="Copia la combinazione di emoji per arrossire">😊🥰💗</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: CONFUSIONE -->
+<section class="mood-explainers" id="feel-confused">
+  <span class="article-section-label">Confusione</span>
+  <h2>Emoji faccina confusa 😕</h2>
+  <p class="u-secondary-tight">Perplesso, incerto o «aspetta, cosa?»</p>
+  <div class="editorial-block">
+    <p>La faccina confusa 😕 mostra un'incertezza leggera o una piccola delusione. La faccina preoccupata 😟 è più in ansia, la faccina con la bocca tratteggiata 🫤 è quella di chi non è convinto e la faccina pensierosa 🤔 serve quando stai davvero ragionando su qualcosa. Ottime per un sincero «non ci capisco niente» o un «mmh».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😕" aria-label="Copia l'emoji faccina confusa">😕</button>
+      <span class="flag-label">Faccina confusa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😟" aria-label="Copia l'emoji faccina preoccupata">😟</button>
+      <span class="flag-label">Preoccupata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫤" aria-label="Copia l'emoji faccina con bocca diagonale">🫤</button>
+      <span class="flag-label">Non convinta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤔" aria-label="Copia l'emoji faccina pensierosa">🤔</button>
+      <span class="flag-label">Pensierosa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😕🤔❓" aria-label="Copia la combinazione di emoji della confusione">😕🤔❓</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: OCCHI AL CIELO -->
+<section class="mood-explainers" id="feel-eye-roll">
+  <span class="article-section-label">Occhi al cielo</span>
+  <h2>Emoji occhi al cielo 🙄</h2>
+  <p class="u-secondary-tight">Infastidito, per nulla impressionato o «ci risiamo».</p>
+  <div class="editorial-block">
+    <p>La faccina con gli occhi al cielo 🙄 è esasperazione pura — sarcasmo, un pizzico di disprezzo o la stanchezza di chi non ne può più. Abbinala alla faccina contrariata 😒 per rincarare la dose, o alla faccina che sbuffa 😤 quando sei davvero stufo.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙄" aria-label="Copia l'emoji faccina con occhi al cielo">🙄</button>
+      <span class="flag-label">Occhi al cielo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😒" aria-label="Copia l'emoji faccina contrariata">😒</button>
+      <span class="flag-label">Contrariata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😤" aria-label="Copia l'emoji faccina che sbuffa">😤</button>
+      <span class="flag-label">Stufa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙄😒😤" aria-label="Copia la combinazione di emoji degli occhi al cielo">🙄😒😤</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: FREAKY -->
+<section class="mood-explainers" id="feel-freaky">
+  <span class="article-section-label">Freaky</span>
+  <h2>Emoji freaky 😈</h2>
+  <p class="u-secondary-tight">Civettuolo, malizioso e un po' sopra le righe: il set «freaky».</p>
+  <div class="editorial-block">
+    <p>Nello slang «freaky» vuol dire civettuolo, birichino o allusivo. Le scelte principali sono il diavoletto sorridente 😈 (che ne sta combinando una), la lingua 👅 e il labbro morso 🫦 (registro flirt) e la faccina accaldata 🥵 («qui si alza la temperatura»). Mescolale per un tono provocatorio da tarda serata.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😈" aria-label="Copia l'emoji faccina con le corna">😈</button>
+      <span class="flag-label">Maliziosa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👅" aria-label="Copia l'emoji lingua">👅</button>
+      <span class="flag-label">Lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫦" aria-label="Copia l'emoji labbro morso">🫦</button>
+      <span class="flag-label">Labbro morso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥵" aria-label="Copia l'emoji faccina accaldata">🥵</button>
+      <span class="flag-label">Faccina accaldata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😈👅🥵" aria-label="Copia la combinazione di emoji freaky">😈👅🥵</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: OCCHIALI DA SOLE -->
+<section class="mood-explainers" id="feel-sunglasses">
+  <span class="article-section-label">Occhiali da sole</span>
+  <h2>Emoji occhiali da sole 😎</h2>
+  <p class="u-secondary-tight">Figo, sicuro di sé, imperturbabile, «fattene una ragione».</p>
+  <div class="editorial-block">
+    <p>La faccina sorridente con gli occhiali da sole 😎 è il «sono un figo / l'ho spaccata» universale. Usala per sottolineare una vittoria, restare sul casual o far capire che niente ti scompone. La faccina travestita 🥸 è la cugina più buffa e la faccina nerd 🤓 la ribalta in un saccente giocoso.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😎" aria-label="Copia l'emoji faccina con occhiali da sole">😎</button>
+      <span class="flag-label">Occhiali da sole</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥸" aria-label="Copia l'emoji faccina travestita">🥸</button>
+      <span class="flag-label">Travestimento</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤓" aria-label="Copia l'emoji faccina nerd">🤓</button>
+      <span class="flag-label">Nerd</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😎🆒🔥" aria-label="Copia la combinazione di emoji con occhiali da sole">😎🆒🔥</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: LABBRO MORSO -->
+<section class="mood-explainers" id="feel-lip-bite">
+  <span class="article-section-label">Labbro morso</span>
+  <h2>Emoji labbro morso 🫦</h2>
+  <p class="u-secondary-tight">Attrazione, nervosismo o un civettuolo «oh mamma».</p>
+  <div class="editorial-block">
+    <p>L'emoji del labbro morso 🫦 è letteralmente un morso al labbro: di solito segnala attrazione o flirt, a volte nervosismo o attesa. Abbinala al sorrisetto 😏 per rendere il senso civettuolo inequivocabile, o alla faccina accaldata 🥵 per alzare la temperatura. Sui dispositivi molto vecchi può apparire come un quadratino (▯).</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫦" aria-label="Copia l'emoji labbro morso">🫦</button>
+      <span class="flag-label">Labbro morso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😏" aria-label="Copia l'emoji faccina con sorrisetto">😏</button>
+      <span class="flag-label">Sorrisetto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥵" aria-label="Copia l'emoji faccina accaldata">🥵</button>
+      <span class="flag-label">Faccina accaldata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫦😏🥵" aria-label="Copia la combinazione di emoji del labbro morso">🫦😏🥵</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: LINGUA -->
+<section class="mood-explainers" id="feel-tongue">
+  <span class="article-section-label">Lingua</span>
+  <h2>Emoji lingua 😛</h2>
+  <p class="u-secondary-tight">Giocoso, sfacciato, sciocchino o «scherzavo».</p>
+  <div class="editorial-block">
+    <p>Le faccine con la lingua di fuori sono spensierate: 😛 è semplicemente giocosa, 😝 strizza gli occhi per fare ancora più il buffone e 😜 ci mette pure l'occhiolino. La lingua da sola 👅 è più allusiva, o si usa per dire «che buono». Aggiungine una a una battuta così nessuno la prende troppo sul serio.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😛" aria-label="Copia l'emoji faccina che mostra la lingua">😛</button>
+      <span class="flag-label">Lingua di fuori</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😝" aria-label="Copia l'emoji faccina con occhi chiusi e lingua">😝</button>
+      <span class="flag-label">Occhi chiusi + lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😜" aria-label="Copia l'emoji faccina che fa l'occhiolino con la lingua">😜</button>
+      <span class="flag-label">Occhiolino + lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👅" aria-label="Copia l'emoji lingua">👅</button>
+      <span class="flag-label">Lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😛😜😝" aria-label="Copia la combinazione di emoji della lingua">😛😜😝</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: SUPPLICA -->
+<section class="mood-explainers" id="feel-pleading">
+  <span class="article-section-label">Supplica</span>
+  <h2>Emoji faccina supplichevole 🥺</h2>
+  <p class="u-secondary-tight">Occhioni da cucciolo — «ti prego dai» e «che tenerezza».</p>
+  <div class="editorial-block">
+    <p>La faccina supplichevole 🥺 ha occhi grandi e lucidi, fatti per implorare in modo tenero, dire che qualcosa è adorabile o mettere in colpa qualcuno per scherzo. La faccina che trattiene le lacrime 🥹 è la versione più commossa, mentre la faccina disperata 😭 porta tutto al livello «non ce la faccio più».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥺" aria-label="Copia l'emoji faccina supplichevole">🥺</button>
+      <span class="flag-label">Faccina supplichevole</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥹" aria-label="Copia l'emoji faccina che trattiene le lacrime">🥹</button>
+      <span class="flag-label">Trattiene le lacrime</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😭" aria-label="Copia l'emoji faccina disperata">😭</button>
+      <span class="flag-label">Pianto a dirotto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥺👉👈" aria-label="Copia la combinazione di emoji della supplica">🥺👉👈</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: IMBARAZZO -->
+<section class="mood-explainers" id="feel-embarrassed">
+  <span class="article-section-label">Imbarazzo</span>
+  <h2>Emoji imbarazzo 😳</h2>
+  <p class="u-secondary-tight">In imbarazzo, a disagio o «non posso credere di averlo fatto».</p>
+  <div class="editorial-block">
+    <p>La faccina paonazza 😳 è il classico sguardo di chi è in imbarazzo ed è stato beccato. Il sorriso con la goccia di sudore 😅 copre il sollievo impacciato («c'è mancato poco») e la faccina che sbircia 🫣 è per «mi vergogno troppo per guardare». Usale per i momenti da cringe, le figuracce o una confessione timida.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😳" aria-label="Copia l'emoji faccina paonazza">😳</button>
+      <span class="flag-label">Paonazza</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😅" aria-label="Copia l'emoji faccina che sorride con goccia di sudore">😅</button>
+      <span class="flag-label">Sollievo impacciato</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫣" aria-label="Copia l'emoji faccina che sbircia">🫣</button>
+      <span class="flag-label">Sbircia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😳😅🫣" aria-label="Copia la combinazione di emoji dell'imbarazzo">😳😅🫣</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: FASTIDIO -->
+<section class="mood-explainers" id="feel-annoyed">
+  <span class="article-section-label">Fastidio</span>
+  <h2>Emoji faccina contrariata 😒</h2>
+  <p class="u-secondary-tight">Poco impressionato, seccato, «ma davvero?»</p>
+  <div class="editorial-block">
+    <p>La faccina contrariata 😒 è il «non mi impressioni» di tutti i giorni. La faccina senza espressione 😑 suona piatta e rassegnata, gli occhi al cielo 🙄 aggiungono sarcasmo e la faccina che sbuffa 😤 è il fastidio che scivola nella frustrazione.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😒" aria-label="Copia l'emoji faccina contrariata">😒</button>
+      <span class="flag-label">Contrariata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😑" aria-label="Copia l'emoji faccina senza espressione">😑</button>
+      <span class="flag-label">Senza espressione</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙄" aria-label="Copia l'emoji faccina con occhi al cielo">🙄</button>
+      <span class="flag-label">Occhi al cielo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😤" aria-label="Copia l'emoji faccina che sbuffa">😤</button>
+      <span class="flag-label">Frustrata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😒🙄😤" aria-label="Copia la combinazione di emoji del fastidio">😒🙄😤</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: CRINGE -->
+<section class="mood-explainers" id="feel-cringe">
+  <span class="article-section-label">Cringe</span>
+  <h2>Emoji cringe 😬</h2>
+  <p class="u-secondary-tight">«Ahia», imbarazzante, vergogna per interposta persona.</p>
+  <div class="editorial-block">
+    <p>La faccina che digrigna i denti 😬 è il cringe per eccellenza — denti stretti per un «oddio» imbarazzato. La faccina paonazza 😳 copre l'imbarazzo personale, mentre la faccina che si scioglie 🫠 è quella del «vorrei sparire». Perfette per un momento da cringe o per una risposta tipo «di questo non si parla».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😬" aria-label="Copia l'emoji faccina che digrigna i denti">😬</button>
+      <span class="flag-label">Denti stretti</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😳" aria-label="Copia l'emoji faccina paonazza">😳</button>
+      <span class="flag-label">Paonazza</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫠" aria-label="Copia l'emoji faccina che si scioglie">🫠</button>
+      <span class="flag-label">Si scioglie</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😬🫠💀" aria-label="Copia la combinazione di emoji del cringe">😬🫠💀</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: SOSPIRO -->
+<section class="mood-explainers" id="feel-sigh">
+  <span class="article-section-label">Sospiro</span>
+  <h2>Emoji sospiro 😮‍💨</h2>
+  <p class="u-secondary-tight">Sollievo, stanchezza o «vabbè…»</p>
+  <div class="editorial-block">
+    <p>La faccina che espira 😮‍💨 è il sospiro vero e proprio — sollievo dopo lo stress, oppure un soffio di stanchezza. La faccina pensosa 😔 è il sospiro malinconico e deluso, mentre la faccina assonnata 😪 è quella di chi è a pezzi. Usale per sfogarti con delicatezza o per dire «non ne posso più».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😮‍💨" aria-label="Copia l'emoji faccina che espira">😮‍💨</button>
+      <span class="flag-label">Espira</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😔" aria-label="Copia l'emoji faccina pensosa">😔</button>
+      <span class="flag-label">Pensosa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😪" aria-label="Copia l'emoji faccina assonnata">😪</button>
+      <span class="flag-label">A pezzi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😮‍💨😔😪" aria-label="Copia la combinazione di emoji del sospiro">😮‍💨😔😪</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: SOFFOCAMENTO -->
+<section class="mood-explainers" id="feel-choking">
+  <span class="article-section-label">Soffocamento</span>
+  <h2>Emoji soffocamento 😵</h2>
+  <p class="u-secondary-tight">Stordito, con i conati o «non riesco a respirare» (dal ridere).</p>
+  <div class="editorial-block">
+    <p>Non esiste un'unica emoji ufficiale per «soffocare», quindi ognuno si arrangia. Per il soffocamento letterale o per la sensazione di essere sopraffatto vanno bene la faccina con gli occhi barrati 😵 e quella con gli occhi a spirale 😵‍💫, con la faccina nauseata 🤢 per i conati. Attenzione: in molti usano 😵 insieme a 💀 per dire «sto soffocando dal ridere». Scegli in base al contesto.</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😵" aria-label="Copia l'emoji faccina con occhi barrati">😵</button>
+      <span class="flag-label">Occhi barrati</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😵‍💫" aria-label="Copia l'emoji faccina con occhi a spirale">😵‍💫</button>
+      <span class="flag-label">Occhi a spirale</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤢" aria-label="Copia l'emoji faccina nauseata">🤢</button>
+      <span class="flag-label">Conati</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😵💀😮‍💨" aria-label="Copia la combinazione di emoji del soffocamento">😵💀😮‍💨</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEEL: AUREOLA -->
+<section class="mood-explainers" id="feel-halo">
+  <span class="article-section-label">Aureola</span>
+  <h2>Emoji aureola 😇</h2>
+  <p class="u-secondary-tight">Innocente, angelica o un «chi, io?» giocoso.</p>
+  <div class="editorial-block">
+    <p>La faccina sorridente con l'aureola 😇 significa innocente, dolce o benedetta — e spesso si usa in modo ironico subito dopo aver combinato qualcosa. Abbinala all'angioletto 👼 o alle scintille ✨ per un effetto tenero, oppure al diavoletto 😈 per la battuta «buono contro cattivo».</p>
+  </div>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😇" aria-label="Copia l'emoji faccina con aureola">😇</button>
+      <span class="flag-label">Faccina con aureola</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👼" aria-label="Copia l'emoji angioletto">👼</button>
+      <span class="flag-label">Angioletto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😈" aria-label="Copia l'emoji faccina con le corna">😈</button>
+      <span class="flag-label">Diavoletto (contrasto)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😇👼✨" aria-label="Copia la combinazione di emoji dell'aureola">😇👼✨</button>
+      <span class="flag-label">Sta bene con</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BROWSE BY MOOD INTRO -->
+<section class="editorial-section" id="by-mood">
+  <span class="article-section-label">Sfoglia per umore</span>
+  <h2>Tutte le emoji faccine per umore</h2>
+  <p class="u-secondary-block">Preferisci sfogliare invece di cercare? Qui sotto trovi tutte le emoji faccine raggruppate per umore — felici, affettuose, confuse, arrabbiate, tristi, sorprese, sciocche, fighe, malaticce e rare. Tocca una faccina per copiarla.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SMILEY & HAPPY -->
+<section class="mood-explainers" id="smiley-happy">
+  <span class="article-section-label">Sorrisi e felicità</span>
+  <h2>Faccine sorridenti e felici</h2>
+  <p class="u-secondary-tight">Emoji faccine positive, gioiose e affettuose per esprimere felicità e affetto.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😀" aria-label="Copia 😀">😀</button>
+      <span class="flag-label">Faccina che sorride</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😃" aria-label="Copia 😃">😃</button>
+      <span class="flag-label">Gran sorriso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😄" aria-label="Copia 😄">😄</button>
+      <span class="flag-label">Sorriso con occhi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😁" aria-label="Copia 😁">😁</button>
+      <span class="flag-label">Faccina raggiante</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😆" aria-label="Copia 😆">😆</button>
+      <span class="flag-label">Risata a occhi stretti</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😅" aria-label="Copia 😅">😅</button>
+      <span class="flag-label">Sorriso sudato</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤣" aria-label="Copia 🤣">🤣</button>
+      <span class="flag-label">Rotola dal ridere</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😂" aria-label="Copia 😂">😂</button>
+      <span class="flag-label">Lacrime di gioia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙂" aria-label="Copia 🙂">🙂</button>
+      <span class="flag-label">Sorriso accennato</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😊" aria-label="Copia 😊">😊</button>
+      <span class="flag-label">Sorriso che arrossisce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😇" aria-label="Copia 😇">😇</button>
+      <span class="flag-label">Aureola da angelo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😉" aria-label="Copia 😉">😉</button>
+      <span class="flag-label">Faccina che fa l'occhiolino</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤗" aria-label="Copia 🤗">🤗</button>
+      <span class="flag-label">Faccina che abbraccia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥰" aria-label="Copia 🥰">🥰</button>
+      <span class="flag-label">Sorriso con cuori</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😍" aria-label="Copia 😍">😍</button>
+      <span class="flag-label">Occhi a cuore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤩" aria-label="Copia 🤩">🤩</button>
+      <span class="flag-label">Occhi a stella</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥳" aria-label="Copia 🥳">🥳</button>
+      <span class="flag-label">Faccina che festeggia</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- AFFECTIONATE FACES -->
+<section class="mood-explainers" id="affectionate-faces">
+  <span class="article-section-label">Faccine affettuose</span>
+  <h2>Emoji faccine affettuose</h2>
+  <p class="u-secondary-tight">Emoji faccine che esprimono amore, affetto e tenerezza.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😍" aria-label="Copia 😍">😍</button>
+      <span class="flag-label">Occhi a cuore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😘" aria-label="Copia 😘">😘</button>
+      <span class="flag-label">Manda un bacio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😗" aria-label="Copia 😗">😗</button>
+      <span class="flag-label">Faccina che bacia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😚" aria-label="Copia 😚">😚</button>
+      <span class="flag-label">Bacio a occhi chiusi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😙" aria-label="Copia 😙">😙</button>
+      <span class="flag-label">Bacio con occhi sorridenti</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SHRUG & CONFUSION -->
+<section class="mood-explainers" id="shrug-confusion">
+  <span class="article-section-label">Spallucce e dubbi</span>
+  <h2>Emoji spallucce e confusione</h2>
+  <p class="u-secondary-tight">Emoji che esprimono incertezza, perplessità e le classiche spallucce.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤷" aria-label="Copia 🤷">🤷</button>
+      <span class="flag-label">Spallucce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😕" aria-label="Copia 😕">😕</button>
+      <span class="flag-label">Faccina confusa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤔" aria-label="Copia 🤔">🤔</button>
+      <span class="flag-label">Faccina pensierosa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😶" aria-label="Copia 😶">😶</button>
+      <span class="flag-label">Senza bocca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫤" aria-label="Copia 🫤">🫤</button>
+      <span class="flag-label">Bocca tratteggiata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😐" aria-label="Copia 😐">😐</button>
+      <span class="flag-label">Faccina neutra</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😑" aria-label="Copia 😑">😑</button>
+      <span class="flag-label">Senza espressione</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫠" aria-label="Copia 🫠">🫠</button>
+      <span class="flag-label">Faccina che si scioglie</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤨" aria-label="Copia 🤨">🤨</button>
+      <span class="flag-label">Sopracciglio alzato</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧐" aria-label="Copia 🧐">🧐</button>
+      <span class="flag-label">Faccina con monocolo</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ANGER & FRUSTRATION -->
+<section class="mood-explainers" id="anger-frustration">
+  <span class="article-section-label">Rabbia e frustrazione</span>
+  <h2>Emoji arrabbiate e frustrate</h2>
+  <p class="u-secondary-tight">Emoji per esprimere rabbia, frustrazione, furia ed emozioni cupe.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😠" aria-label="Copia 😠">😠</button>
+      <span class="flag-label">Faccina arrabbiata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😡" aria-label="Copia 😡">😡</button>
+      <span class="flag-label">Faccina imbronciata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤬" aria-label="Copia 🤬">🤬</button>
+      <span class="flag-label">Faccina che impreca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💢" aria-label="Copia 💢">💢</button>
+      <span class="flag-label">Segno di rabbia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😤" aria-label="Copia 😤">😤</button>
+      <span class="flag-label">Sbuffo dal naso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👿" aria-label="Copia 👿">👿</button>
+      <span class="flag-label">Diavoletto arrabbiato</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😈" aria-label="Copia 😈">😈</button>
+      <span class="flag-label">Diavoletto sorridente</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💀" aria-label="Copia 💀">💀</button>
+      <span class="flag-label">Teschio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☠" aria-label="Copia ☠">☠</button>
+      <span class="flag-label">Teschio con ossa incrociate</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SADNESS & SYMPATHY -->
+<section class="mood-explainers" id="sadness-sympathy">
+  <span class="article-section-label">Tristezza e conforto</span>
+  <h2>Emoji tristi e di conforto</h2>
+  <p class="u-secondary-tight">Emoji che trasmettono tristezza, delusione, dolore ed empatia.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😢" aria-label="Copia 😢">😢</button>
+      <span class="flag-label">Faccina che piange</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😭" aria-label="Copia 😭">😭</button>
+      <span class="flag-label">Pianto a dirotto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😞" aria-label="Copia 😞">😞</button>
+      <span class="flag-label">Delusa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😔" aria-label="Copia 😔">😔</button>
+      <span class="flag-label">Faccina pensosa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥺" aria-label="Copia 🥺">🥺</button>
+      <span class="flag-label">Faccina supplichevole</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😿" aria-label="Copia 😿">😿</button>
+      <span class="flag-label">Gatto che piange</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😥" aria-label="Copia 😥">😥</button>
+      <span class="flag-label">Triste ma sollevata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥲" aria-label="Copia 🥲">🥲</button>
+      <span class="flag-label">Sorriso con lacrima</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😰" aria-label="Copia 😰">😰</button>
+      <span class="flag-label">Ansiosa con sudore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😩" aria-label="Copia 😩">😩</button>
+      <span class="flag-label">Faccina esausta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😫" aria-label="Copia 😫">😫</button>
+      <span class="flag-label">Faccina stanca</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😓" aria-label="Copia 😓">😓</button>
+      <span class="flag-label">Sconsolata con sudore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😟" aria-label="Copia 😟">😟</button>
+      <span class="flag-label">Faccina preoccupata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙁" aria-label="Copia 🙁">🙁</button>
+      <span class="flag-label">Leggermente imbronciata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥹" aria-label="Copia 🥹">🥹</button>
+      <span class="flag-label">Trattiene le lacrime</span>
+    </div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SURPRISE & SHOCK -->
+<section class="mood-explainers" id="surprise-shock">
+  <span class="article-section-label">Sorpresa e shock</span>
+  <h2>Emoji sorprese e scioccate</h2>
+  <p class="u-secondary-tight">Emoji per esprimere sorpresa, shock, stupore e incredulità.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😲" aria-label="Copia 😲">😲</button>
+      <span class="flag-label">Faccina stupita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😮" aria-label="Copia 😮">😮</button>
+      <span class="flag-label">Faccina a bocca aperta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😯" aria-label="Copia 😯">😯</button>
+      <span class="flag-label">Faccina sorpresa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤯" aria-label="Copia 🤯">🤯</button>
+      <span class="flag-label">Testa che esplode</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😱" aria-label="Copia 😱">😱</button>
+      <span class="flag-label">Urlo di terrore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫢" aria-label="Copia 🫢">🫢</button>
+      <span class="flag-label">Mani sulla bocca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😳" aria-label="Copia 😳">😳</button>
+      <span class="flag-label">Faccina paonazza</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤭" aria-label="Copia 🤭">🤭</button>
+      <span class="flag-label">Mano sulla bocca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😧" aria-label="Copia 😧">😧</button>
+      <span class="flag-label">Faccina angosciata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😦" aria-label="Copia 😦">😦</button>
+      <span class="flag-label">Imbronciata a bocca aperta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😨" aria-label="Copia 😨">😨</button>
+      <span class="flag-label">Faccina impaurita</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😵‍💫" aria-label="Copia 😵‍💫">😵‍💫</button>
+      <span class="flag-label">Occhi a spirale</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😬" aria-label="Copia 😬">😬</button>
+      <span class="flag-label">Denti stretti / ahia</span>
+    </div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SILLY & PLAYFUL -->
+<section class="mood-explainers" id="silly-playful">
+  <span class="article-section-label">Sciocche e giocose</span>
+  <h2>Emoji sciocche e giocose</h2>
+  <p class="u-secondary-tight">Emoji divertenti e buffe per i momenti spensierati e comici.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😜" aria-label="Copia 😜">😜</button>
+      <span class="flag-label">Occhiolino con lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤪" aria-label="Copia 🤪">🤪</button>
+      <span class="flag-label">Faccina impazzita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😝" aria-label="Copia 😝">😝</button>
+      <span class="flag-label">Occhi chiusi con lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤡" aria-label="Copia 🤡">🤡</button>
+      <span class="flag-label">Faccina da clown</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥴" aria-label="Copia 🥴">🥴</button>
+      <span class="flag-label">Faccina stordita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🙃" aria-label="Copia 🙃">🙃</button>
+      <span class="flag-label">Faccina sottosopra</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😋" aria-label="Copia 😋">😋</button>
+      <span class="flag-label">Si lecca i baffi</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😛" aria-label="Copia 😛">😛</button>
+      <span class="flag-label">Faccina con la lingua</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫣" aria-label="Copia 🫣">🫣</button>
+      <span class="flag-label">Occhio che sbircia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤫" aria-label="Copia 🤫">🤫</button>
+      <span class="flag-label">Faccina che zittisce</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤤" aria-label="Copia 🤤">🤤</button>
+      <span class="flag-label">Faccina che sbava</span>
+    </div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COOL & CONFIDENT -->
+<section class="mood-explainers" id="cool-confident">
+  <span class="article-section-label">Fighe e sicure di sé</span>
+  <h2>Emoji fighe e sicure di sé</h2>
+  <p class="u-secondary-tight">Emoji che trasmettono sicurezza, stile e disinvoltura.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😎" aria-label="Copia 😎">😎</button>
+      <span class="flag-label">Faccina con occhiali da sole</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤠" aria-label="Copia 🤠">🤠</button>
+      <span class="flag-label">Cappello da cowboy</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧐" aria-label="Copia 🧐">🧐</button>
+      <span class="flag-label">Monocolo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤓" aria-label="Copia 🤓">🤓</button>
+      <span class="flag-label">Faccina nerd</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫡" aria-label="Copia 🫡">🫡</button>
+      <span class="flag-label">Faccina che saluta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤑" aria-label="Copia 🤑">🤑</button>
+      <span class="flag-label">Bocca a forma di dollaro</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😏" aria-label="Copia 😏">😏</button>
+      <span class="flag-label">Faccina con sorrisetto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥸" aria-label="Copia 🥸">🥸</button>
+      <span class="flag-label">Faccina travestita</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SICK & UNWELL -->
+<section class="mood-explainers" id="sick-unwell">
+  <span class="article-section-label">Malattia e malessere</span>
+  <h2>Emoji malate e sofferenti</h2>
+  <p class="u-secondary-tight">Emoji per la malattia, il malessere fisico e il sentirsi poco bene.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤒" aria-label="Copia 🤒">🤒</button>
+      <span class="flag-label">Faccina con termometro</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤕" aria-label="Copia 🤕">🤕</button>
+      <span class="flag-label">Testa bendata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤢" aria-label="Copia 🤢">🤢</button>
+      <span class="flag-label">Faccina nauseata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤮" aria-label="Copia 🤮">🤮</button>
+      <span class="flag-label">Faccina che vomita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😴" aria-label="Copia 😴">😴</button>
+      <span class="flag-label">Faccina che dorme</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥱" aria-label="Copia 🥱">🥱</button>
+      <span class="flag-label">Faccina che sbadiglia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥵" aria-label="Copia 🥵">🥵</button>
+      <span class="flag-label">Faccina accaldata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥶" aria-label="Copia 🥶">🥶</button>
+      <span class="flag-label">Faccina congelata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😵" aria-label="Copia 😵">😵</button>
+      <span class="flag-label">Faccina stordita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤧" aria-label="Copia 🤧">🤧</button>
+      <span class="flag-label">Faccina che starnutisce</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😷" aria-label="Copia 😷">😷</button>
+      <span class="flag-label">Mascherina</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RARE & EXTENDED -->
+<section class="mood-explainers" id="rare-extended">
+  <span class="article-section-label">Rare e insolite</span>
+  <h2>Emoji faccine rare e insolite</h2>
+  <p class="u-secondary-tight">Faccine emoji meno usate, comprese quelle in costume e le più bizzarre.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤡" aria-label="Copia 🤡">🤡</button>
+      <span class="flag-label">Faccina da clown</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👹" aria-label="Copia 👹">👹</button>
+      <span class="flag-label">Orco</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👺" aria-label="Copia 👺">👺</button>
+      <span class="flag-label">Goblin</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💀" aria-label="Copia 💀">💀</button>
+      <span class="flag-label">Teschio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☠" aria-label="Copia ☠">☠</button>
+      <span class="flag-label">Teschio con ossa incrociate</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👻" aria-label="Copia 👻">👻</button>
+      <span class="flag-label">Fantasma</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👽" aria-label="Copia 👽">👽</button>
+      <span class="flag-label">Alieno</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤖" aria-label="Copia 🤖">🤖</button>
+      <span class="flag-label">Robot</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🎃" aria-label="Copia 🎃">🎃</button>
+      <span class="flag-label">Zucca di Halloween</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🥸" aria-label="Copia 🥸">🥸</button>
+      <span class="flag-label">Faccina travestita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🫠" aria-label="Copia 🫠">🫠</button>
+      <span class="flag-label">Faccina che si scioglie</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🗣" aria-label="Copia 🗣">🗣</button>
+      <span class="flag-label">Testa che parla</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤐" aria-label="Copia 🤐">🤐</button>
+      <span class="flag-label">Bocca con cerniera</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🤥" aria-label="Copia 🤥">🤥</button>
+      <span class="flag-label">Faccina bugiarda</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="😮‍💨" aria-label="Copia 😮‍💨">😮‍💨</button>
+      <span class="flag-label">Espira</span>
+    </div>
+</div>
+</section>
+
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">FAQ</span>
+  <h2>Domande sulle emoji faccine</h2>
+  <details class="faq-item">
+    <summary class="faq-question">Qual è l'emoji del bacio e in cosa si differenzia dalle faccine che baciano?</summary>
+    <p class="faq-answer">L'emoji che manda un bacio 😘 lancia un bacio con un cuoricino e suona affettuosa o civettuola. Le faccine che baciano senza cuore — 😗 (neutra), 😙 (con occhi sorridenti) e 😚 (con occhi chiusi) — sono più delicate e innocenti, perfette per amici e famiglia. L'impronta di rossetto 💋 rappresenta invece il bacio in sé.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Cosa significa l'emoji sorrisetto 😏?</summary>
+    <p class="faq-answer">La faccina con sorrisetto 😏 esprime sicurezza, compiacimento, sfacciataggine o allusione civettuola. È la scelta giusta per una risposta che prende in giro, un'allusione furba o un momento da «te l'avevo detto».</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Qual è l'emoji del labbro morso?</summary>
+    <p class="faq-answer">L'emoji del labbro morso è 🫦. Si usa molto per segnalare attrazione, nervosismo o una reazione civettuola tipo «oh mamma». C'è anche chi la abbina al sorrisetto 😏 per rendere il senso più chiaro.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Cosa significa la faccina supplichevole 🥺?</summary>
+    <p class="faq-answer">La faccina supplichevole 🥺 ha due occhioni grandi e lucidi da cucciolo. Si usa per implorare in modo tenero, dire «ti prego», far notare che una cosa è adorabile o mettere in colpa un amico per scherzo.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Queste emoji faccine funzionano su iPhone, Android, Instagram e Discord?</summary>
+    <p class="faq-answer">Sì. Sono emoji Unicode standard, quindi si vedono su iPhone, Android, Instagram, TikTok, Discord, Snapchat e WhatsApp. Tocca una faccina di questa pagina per copiarla e incollala dove scrivi. Qualcuna tra le più recenti, come il labbro morso 🫦, sui dispositivi molto vecchi può apparire come un quadratino (▯).</p>
+  </details>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Dai stile al testo con i font Unicode</h3>
+  <p>Usa UltraTextGen per trasformare il testo normale in grassetto, corsivo, corsivo elegante e oltre 100 altri stili di font Unicode — gratis e istantaneo.</p>
+  <a href="https://ultratextgen.com/it/" class="cta-btn">Apri UltraTextGen →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Risorse collegate</span>
+  <div class="compare-grid">
+    <a href="/it/usecase/traduttore-emoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Traduttore di emoji</h4>
+      <p>Trasforma una frase in emoji, scrivi un nome con le lettere emoji o riporta gli emoji a testo — gratis e istantaneo.</p>
+    </a>
+    <a href="/it/combinazioni-emoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Combinazioni di emoji</h4>
+      <p>Set di emoji pronti da copiare per bio, caption e stati — cute, coquette, dark e aesthetic.</p>
+    </a>
+    <a href="/it/library/simboli-cuore/" class="compare-card variant-muted u-no-underline">
+      <h4>Simboli cuore</h4>
+      <p>Ogni emoji cuore e ogni carattere Unicode a forma di cuore in un'unica raccolta.</p>
+    </a>
+    <a href="/it/library/kaomoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Kaomoji e faccine giapponesi</h4>
+      <p>Faccine costruite con il testo — felici, tristi, spallucce e animali — da copiare e incollare.</p>
+    </a>
+    <a href="/it/symbol/emoji-faccina-che-si-scioglie/" class="compare-card variant-muted u-no-underline">
+      <h4>Emoji faccina che si scioglie</h4>
+      <p>La faccina gialla con il sorriso accennato che cola via 🫠 — il modo standard per dire «vorrei sparire».</p>
+    </a>
+    <a href="/it/symbol/emoji-faccina-distorta/" class="compare-card variant-muted u-no-underline">
+      <h4>Emoji faccina distorta</h4>
+      <p>La faccina stirata e gonfiata 🫪 di Unicode 17.0, nel dettaglio.</p>
+    </a>
+    <a href="/it/symbol/emoji-volto-incrinato/" class="compare-card variant-muted u-no-underline">
+      <h4>Emoji volto incrinato</h4>
+      <p>Un volto a metà espressione che si incrina sotto pressione — in bozza per Emoji 18.0, attesa con Unicode 18.0 a settembre 2026.</p>
+    </a>
+    <a href="/it/library/" class="compare-card variant-muted u-no-underline">
+      <h4>Libreria di simboli</h4>
+      <p>Tutte le raccolte di simboli, caratteri speciali e kaomoji del sito, in un unico posto.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

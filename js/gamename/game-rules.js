@@ -106,6 +106,29 @@
     // name appear invisible to other players — so we flag decorative
     // Unicode as a warning here (strict) rather than treating it as safe.
     clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // YouTube channel names (display names) accept Unicode freely — styled
+    // letters, symbols and emoji all save. Google's own help pages document
+    // the rename throttle ("You can change your channel name twice within a
+    // 14-day period", support.google.com/youtube/answer/2657964) but publish
+    // NO character maximum for the name field; the 50 here is the widely
+    // reported client-side limit and matches the field's observed maxlength,
+    // not a Google document — treat it like PUBG's 14 (real client behaviour,
+    // no official source). One caveat worth knowing that this engine cannot
+    // encode: since 2022 YouTube limits names spelled ENTIRELY in lookalike
+    // special characters (its own example: "¥ouⓉube") as an impersonation/
+    // spam measure — decorated-but-readable names pass, all-symbol names can
+    // be rejected. The page copy owns that nuance.
+    youtube: { label: "YouTube (channel name)", limit: 50, min: 1, weighted: false, noSpace: false, field: "display" },
+    // YouTube @handles are the opposite field: 3-30 characters, letters and
+    // numbers plus underscores, hyphens, periods and Latin middle dots (·) —
+    // none of those four at the start or end — unique across YouTube, and no
+    // decorative Unicode ever (support.google.com/youtube/answer/11585688).
+    // Google also allows letters from ~75 non-Latin scripts with SHORTER
+    // script-specific limits (Han/Hangul 1-10, kana/Ethiopic 2-20); this
+    // ASCII pattern validates the Latin path only, so the page's fail copy
+    // must say "plain letters and numbers" rather than claim non-Latin
+    // handles are impossible.
+    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/ },
     // VRChat Display Names are 4-15 characters and can only be changed once
     // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
     // my name" help article — by far the longest rename cooldown of any rule
@@ -475,7 +498,7 @@
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
-    const state = { game: games[0], dirty: false };
+    const state = { game: games[0], dirty: false, lastLevel: null, priming: true };
 
     mount.innerHTML = "";
     mount.classList.add("gr-checker");
@@ -494,6 +517,10 @@
         const tab = e.target.closest(".gr-tab");
         if (!tab) return;
         state.game = tab.getAttribute("data-game");
+        // Same name against a different game's rules is a genuinely new check
+        // (a name that fits Discord's 32 may fail Free Fire's weighted 12), so
+        // clear the last verdict rather than suppressing the event as a repeat.
+        state.lastLevel = null;
         render();
       });
       mount.appendChild(tabsWrap);
@@ -600,9 +627,45 @@
           charRow.appendChild(tile);
         });
       }
+
+      reportVerdict(report);
+    }
+
+    /* Completion event. render() runs on every keystroke, so this fires only
+       when the verdict LEVEL actually changes (empty -> ok -> warn -> fail),
+       not per character — a name being typed produces at most a couple of
+       events, not one per key. The empty state is never reported: it is the
+       initial condition, not an outcome the user reached.
+
+       What this is for: the checker is the site's main product-completion
+       surface on the game-name pages and it has never emitted a single event,
+       so nothing downstream can tell whether it is used, whether it catches
+       real problems, or whether it is ignored furniture. `verdict` is the
+       answer the user actually got; `over_limit` separates "too long" from
+       "unsupported characters", which are different product failures with
+       different fixes. */
+    function reportVerdict(report) {
+      const level = report.level;
+      if (!level || level === "empty") return;
+      // The first render happens at init, against whatever the generator was
+      // pre-filled with — reporting it would count page loads as checks. Record
+      // the level so a later real change still registers as a transition, but
+      // don't emit for it.
+      if (state.priming) { state.lastLevel = level; return; }
+      if (level === state.lastLevel) return;
+      state.lastLevel = level;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "name_check",
+        check_game: state.game,
+        check_verdict: level,
+        check_over_limit: !!(report.limit && report.effective > report.limit)
+      });
     }
 
     render();
+    state.priming = false;
   }
 
   ns.gameRules = {
