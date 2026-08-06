@@ -153,6 +153,16 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /symbol/yin-yang-symbol/            /symbol/yin-yang/  301
 /symbol/yin-yang-symbol/index.html  /symbol/yin-yang/  301
 
+# es/symbol/ degree-symbol duplicate: two ES pages both claimed hreflang="es"
+# for symbol/degree-symbol (signo-de-grado = identity/history framing,
+# simbolo-de-grado = copy-paste collection framing). 0010bce41 (2026-07-23)
+# picked signo-de-grado as the closer symbol/-scope match but only touched
+# 2 of the cluster's 18 pages; 016abfdab (2026-07-25) reintroduced the
+# duplicate across the rest. Retired simbolo-de-grado for good this time —
+# deduped hreflang on all 18 cluster members, repointed every internal link.
+/es/symbol/simbolo-de-grado/             /es/symbol/signo-de-grado/  301
+/es/symbol/simbolo-de-grado/index.html   /es/symbol/signo-de-grado/  301
+
 # Library → Symbol pillar (i18n): single-glyph translated pages shipped under
 # <lang>/library/ instead of <lang>/symbol/ (see docs/unicode-library-workflow.md §7).
 # tr/library/derece-isareti/ is deliberately NOT here: unlike its siblings it's a
@@ -172,8 +182,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/library/signo-de-euro/index.html        /es/symbol/signo-de-euro/                  301
 /es/library/signo-de-libra/                 /es/symbol/signo-de-libra/                 301
 /es/library/signo-de-libra/index.html       /es/symbol/signo-de-libra/                 301
-/es/library/simbolo-de-grado/               /es/symbol/simbolo-de-grado/               301
-/es/library/simbolo-de-grado/index.html     /es/symbol/simbolo-de-grado/               301
+/es/library/simbolo-de-grado/               /es/symbol/signo-de-grado/                 301
+/es/library/simbolo-de-grado/index.html     /es/symbol/signo-de-grado/                 301
 /es/library/simbolo-de-infinito/            /es/symbol/simbolo-de-infinito/            301
 /es/library/simbolo-de-infinito/index.html  /es/symbol/simbolo-de-infinito/            301
 /id/library/simbol-derajat/                 /id/symbol/simbol-derajat/                 301
