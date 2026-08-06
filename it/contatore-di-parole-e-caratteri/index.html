@@ -125,6 +125,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Qual è il limite di caratteri per la didascalia e il nome utente di TikTok?","acceptedAnswer":{"@type":"Answer","text":"Una didascalia TikTok arriva fino a 2.200 caratteri. La bio ha un limite di 80 caratteri, e un nome utente può arrivare a 24 caratteri (solo lettere, numeri, trattini bassi e punti)."}},
     {"@type":"Question","name":"Qual è una buona lunghezza per il meta title e la meta description in ottica SEO?","acceptedAnswer":{"@type":"Answer","text":"Google tronca in base alla larghezza in pixel sullo schermo e non a un conteggio rigido di caratteri, ma come linea guida pratica tieni il meta title intorno ai 60 caratteri e la meta description intorno ai 155 caratteri, così non viene tagliata nei risultati di ricerca."}},
     {"@type":"Question","name":"Qual è il limite di parole per un tema, una tesina o una tesi di laurea?","acceptedAnswer":{"@type":"Answer","text":"Dipende molto dal livello scolastico e dall'istituto, ma alcuni riferimenti comuni in Italia: un tema delle superiori si aggira di solito tra le 400 e le 800 parole, una tesina d'esame tra le 1.500 e le 3.000 parole, mentre una tesi di laurea triennale richiede in genere tra le 8.000 e le 15.000 parole (una magistrale può superare le 20.000). Incolla la tua bozza nel contatore qui sopra per seguire il numero di parole in tempo reale mentre scrivi, e sistema il testo prima di consegnarlo."}},
+    {"@type":"Question","name":"Cosa sono le battute?","acceptedAnswer":{"@type":"Answer","text":"Nella scrittura professionale italiana una battuta è un carattere, spazi inclusi: ogni lettera, numero, segno di punteggiatura e spazio conta come una battuta. Un limite di «3.000 battute» quindi non parla di parole — corrisponde a circa 450–500 parole di italiano corrente. È la statistica «Caratteri» (spazi inclusi) del contatore qui sopra."}},
+    {"@type":"Question","name":"Quante battute ha una cartella editoriale?","acceptedAnswer":{"@type":"Answer","text":"1.800 battute, spazi inclusi: la convenzione è 30 righe da 60 battute ciascuna. La statistica «Cartelle» qui sopra divide il conteggio con spazi per 1.800 e si aggiorna in tempo reale mentre scrivi o incolli il testo."}},
+    {"@type":"Question","name":"Il limite di un bando o di una tesi è spazi inclusi o esclusi?","acceptedAnswer":{"@type":"Answer","text":"Se il regolamento parla di battute, per convenzione sono spazi inclusi. Alcuni atenei e alcuni bandi però specificano «spazi esclusi»: in quel caso usa la statistica «Caratteri (senza spazi)». Se il testo non specifica nulla, assumi spazi inclusi — è la convenzione delle battute e anche l'interpretazione più prudente."}},
     {"@type":"Question","name":"Questo contatore è gratis, e salva o carica il mio testo?","acceptedAnswer":{"@type":"Answer","text":"Sì, completamente gratis e senza registrazione. Ogni conteggio viene calcolato lato client, nel tuo browser, con JavaScript puro — nulla di ciò che scrivi viene caricato, registrato o salvato da nessuna parte."}}
   ]
 }
@@ -188,7 +191,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Caratteri (senza spazi)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Frasi</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragrafi</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Righe</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sec</span><span class="counter-stat-label">Tempo di lettura</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 sec</span><span class="counter-stat-label">Tempo di parlato</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Grafemi (caratteri visibili)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Unità UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Byte UTF-8</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statCartelle">0</span><span class="counter-stat-label">Cartelle (da 1.800 battute)</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -201,6 +210,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p>I limiti di caratteri esistono per due motivi diversi, e vale la pena sapere con quale hai a che fare. I <strong>limiti rigidi</strong> — i 280 di X/Twitter, il soprannome Discord a 32 caratteri, il nome utente TikTok a 24 caratteri — sono imposti dalla piattaforma stessa: se li superi, il post o il salvataggio viene semplicemente rifiutato. I <strong>limiti morbidi o pratici</strong> — una meta description di Google, una descrizione YouTube prima di «Mostra altro», un post LinkedIn prima che venga troncato con «vedi altro» — non ti impediscono di scrivere di più, ma tutto ciò che supera quel punto resta nascosto alla maggior parte di chi legge, a meno che non clicchi per espandere. Il verificatore qui sopra usa il limite reale, rigido o ufficialmente documentato, di ogni piattaforma; per quelli a troncamento morbido (meta title/description, YouTube, LinkedIn) considera il numero come «quanto si vede in modo affidabile», non come un muro invalicabile.</p>
     <p>Una cosa che spesso sorprende: alcune piattaforme contano più di quanto ci si aspetti. Un link in un post X conta come circa 23 caratteri, indipendentemente da quanto sia lungo l'URL reale. Emoji e lettere accentate possono contare come più di un «carattere» a seconda di come è implementato internamente il contatore di ciascuna piattaforma — questo strumento conta per punto di codice Unicode, che è il modo in cui conta praticamente ogni piattaforma moderna oggi.</p>
     <p>Questi limiti non hanno nulla a che vedere con un altro caso d'uso molto comune in Italia: i limiti di parole richiesti per un tema delle superiori, una tesina d'esame o una tesi di laurea, che rispondono a una logica accademica ben distinta dai limiti di caratteri dei social — vedi la domanda dedicata nella FAQ qui sotto.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="battute-cartelle">
+    <h2>Battute e cartelle: come si contano</h2>
+    <p>Nell'editoria e nell'università italiana i limiti non si danno quasi mai in parole: si danno in <strong>battute</strong>, e per convenzione una battuta è un carattere <strong>spazi inclusi</strong> — ogni lettera, numero, segno di punteggiatura e spazio conta. L'equivoco classico è proprio questo: «massimo 3.000 battute» non significa 3.000 parole, ma circa 450–500 parole di italiano corrente.</p>
+    <p>La <strong>cartella editoriale</strong> è l'unità standard con cui si misurano i testi: <strong>30 righe da 60 battute = 1.800 battute</strong>, spazi inclusi. La statistica «Cartelle» del contatore qui sopra usa esattamente questa definizione, calcolata sul conteggio con spazi, e si aggiorna in tempo reale mentre scrivi.</p>
+    <p>Attenzione però: alcuni atenei e alcuni bandi specificano <strong>«spazi esclusi»</strong>. Per questo il contatore mostra entrambi i numeri in tempo reale — «Caratteri» (spazi inclusi) e «Caratteri (senza spazi)» — così puoi usare quello che il regolamento nomina. Se il testo non specifica nulla, assumi spazi inclusi: è la convenzione delle battute, ed è anche l'interpretazione più prudente.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -239,6 +257,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">Qual è il limite di parole per un tema, una tesina o una tesi di laurea?</summary>
       <p class="faq-answer">Dipende molto dal livello scolastico e dall'istituto, ma alcuni riferimenti comuni in Italia: un tema delle superiori si aggira di solito tra le 400 e le 800 parole, una tesina d'esame tra le 1.500 e le 3.000 parole, mentre una tesi di laurea triennale richiede in genere tra le 8.000 e le 15.000 parole (una magistrale può superare le 20.000). Incolla la tua bozza nel contatore qui sopra per seguire il numero di parole in tempo reale mentre scrivi, e sistema il testo prima di consegnarlo.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Cosa sono le battute?</summary>
+      <p class="faq-answer">Nella scrittura professionale italiana una battuta è un carattere, spazi inclusi: ogni lettera, numero, segno di punteggiatura e spazio conta come una battuta. Un limite di «3.000 battute» quindi non parla di parole — corrisponde a circa 450–500 parole di italiano corrente. È la statistica «Caratteri» (spazi inclusi) del contatore qui sopra.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Quante battute ha una cartella editoriale?</summary>
+      <p class="faq-answer">1.800 battute, spazi inclusi: la convenzione è 30 righe da 60 battute ciascuna. La statistica «Cartelle» qui sopra divide il conteggio con spazi per 1.800 e si aggiorna in tempo reale mentre scrivi o incolli il testo.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Il limite di un bando o di una tesi è spazi inclusi o esclusi?</summary>
+      <p class="faq-answer">Se il regolamento parla di battute, per convenzione sono spazi inclusi. Alcuni atenei e alcuni bandi però specificano «spazi esclusi»: in quel caso usa la statistica «Caratteri (senza spazi)». Se il testo non specifica nulla, assumi spazi inclusi — è la convenzione delle battute e anche l'interpretazione più prudente.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Questo contatore è gratis, e salva o carica il mio testo?</summary>
@@ -294,50 +324,26 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/js/counter/counterRules.js"></script>
 <script>
-/* ==========================================================================
-   Inline Italian-language wiring for /it/contatore-di-parole-e-caratteri/.
-   A translated-strings fork of counterController.js (same pattern as
-   counterControllerEs.js / counterControllerFr.js), kept inline here rather
-   than as a new /js/counter/counterControllerIt.js file so this page needs
-   no files outside /it/. Reuses counterRules.js unchanged (pure logic +
-   platform-limit numbers, no user-facing strings).
-   ========================================================================== */
-(function () {
-  "use strict";
-
-  var $ = function (sel, root) { return (root || document).querySelector(sel); };
-
-  var READING_WPM = 225;
-
-  function countWords(str) {
-    var trimmed = str.trim();
-    return trimmed ? trimmed.split(/\s+/).length : 0;
-  }
-
-  function countSentences(str) {
-    var trimmed = str.trim();
-    if (!trimmed) return 0;
-    var matches = trimmed.match(/[^.!?]+[.!?]+/g) || [];
-    var consumed = matches.join("").length;
-    var remainder = trimmed.slice(consumed).trim();
-    return matches.length + (remainder ? 1 : 0);
-  }
-
-  function countParagraphs(str) {
-    return str.split(/\n+/).map(function (p) { return p.trim(); }).filter(Boolean).length;
-  }
-
-  function formatReadingTime(words) {
-    if (!words) return "0 sec";
-    var minutes = words / READING_WPM;
-    if (minutes < 1) {
-      var seconds = Math.max(1, Math.round(minutes * 60));
-      return seconds + " sec";
-    }
-    return Math.ceil(minutes) + " min";
-  }
-
-  var LABELS = {
+/* Italian strings for the shared counter controller
+   (/js/counter/counterController.js). Replaces the previous inline fork so
+   this page picks up the shared controller's newer stats — lines, speaking
+   time, graphemes, UTF-16 units, UTF-8 bytes, plus the "Cartelle" unit tile —
+   and the platform checker's weighted-X / SMS-segment notes. All translated
+   strings below were carried over from that fork unchanged. */
+window.UTG_COUNTER_I18N = {
+  sec: "sec",
+  min: "min",
+  copied: "Copiato!",
+  label: "Verifica il tuo testo rispetto al limite di una piattaforma",
+  ok: "Rientra ✓",
+  fail: "Oltre il limite ✕",
+  xNote: "Conteggiato come conta X: ogni URL = 23, e la maggior parte di simboli, emoji e lettere Unicode stilizzate = 2 ciascuno.",
+  smsSegments: "{n} segmento/i SMS · {per} caratteri per segmento ({enc})",
+  smsUnicode: "passato in modalità Unicode a causa di: {chars}",
+  units: [
+    { id: "statCartelle", per: 1800, of: "chars", decimals: 1 }
+  ],
+  labels: {
     "x-post": "Post su X / Twitter",
     "discord-message": "Messaggio Discord",
     "ig-caption": "Didascalia Instagram",
@@ -364,99 +370,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     "meta-title": "Meta title SEO",
     "meta-description": "Meta description SEO",
     "sms": "SMS (1 segmento)"
-  };
-  var GROUPS = {
+  },
+  groups: {
     posts: "Post",
     bios: "Bio e profili",
     usernames: "Nomi utente",
     titles: "Titoli e SEO"
-  };
-
-  function init() {
-    var input = document.getElementById("counterInput");
-    if (!input) return;
-
-    var urlQ = new URLSearchParams(window.location.search).get("q");
-    if (urlQ) input.value = urlQ;
-
-    var stat = {
-      chars: $("#statChars"),
-      charsNoSpaces: $("#statCharsNoSpaces"),
-      words: $("#statWords"),
-      sentences: $("#statSentences"),
-      paragraphs: $("#statParagraphs"),
-      readingTime: $("#statReadingTime")
-    };
-    var clearBtn = document.getElementById("counterClearBtn");
-    var copyBtn = document.getElementById("counterCopyBtn");
-
-    function render() {
-      var val = input.value;
-      var chars = Array.from(val).length;
-      var charsNoSpaces = Array.from(val.replace(/\s/g, "")).length;
-      var words = countWords(val);
-
-      if (stat.chars) stat.chars.textContent = chars.toLocaleString();
-      if (stat.charsNoSpaces) stat.charsNoSpaces.textContent = charsNoSpaces.toLocaleString();
-      if (stat.words) stat.words.textContent = words.toLocaleString();
-      if (stat.sentences) stat.sentences.textContent = countSentences(val).toLocaleString();
-      if (stat.paragraphs) stat.paragraphs.textContent = countParagraphs(val).toLocaleString();
-      if (stat.readingTime) stat.readingTime.textContent = formatReadingTime(words);
-
-      if (clearBtn) clearBtn.hidden = chars === 0;
-    }
-
-    input.addEventListener("input", render);
-
-    if (clearBtn) {
-      clearBtn.addEventListener("click", function () {
-        input.value = "";
-        input.focus();
-        render();
-      });
-    }
-
-    if (copyBtn) {
-      copyBtn.addEventListener("click", function () {
-        if (!input.value) return;
-        navigator.clipboard.writeText(input.value).then(function () {
-          var original = copyBtn.textContent;
-          copyBtn.textContent = "Copiato!";
-          copyBtn.classList.add("is-copied");
-          setTimeout(function () {
-            copyBtn.textContent = original;
-            copyBtn.classList.remove("is-copied");
-          }, 1500);
-        }).catch(function (err) {
-          console.error("Copy failed:", err);
-        });
-      });
-    }
-
-    render();
-
-    var ns = window.UltraTextGen;
-    if (ns && ns.counterRules) {
-      ns.counterRules.initChecker({
-        mount: "platformChecker",
-        inputId: "counterInput",
-        text: {
-          label: "Verifica il tuo testo rispetto al limite di una piattaforma",
-          ok: "Rientra ✓",
-          fail: "Oltre il limite ✕"
-        },
-        labels: LABELS,
-        groups: GROUPS
-      });
-    }
   }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-})();
+};
 </script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

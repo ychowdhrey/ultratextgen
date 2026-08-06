@@ -122,6 +122,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"¿Cuál es el límite de caracteres de la publicación y el titular de LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Una publicación de LinkedIn permite hasta 3.000 caracteres, aunque el feed la recorta con \"ver más\" tras unos 200–700 caracteres según el dispositivo. El campo de titular tiene un tope de 220 caracteres."}},
     {"@type":"Question","name":"¿Cuál es el límite de caracteres de la descripción y el nombre de usuario de TikTok?","acceptedAnswer":{"@type":"Answer","text":"Una descripción de TikTok cabe hasta en 2.200 caracteres. La bio tiene un tope de 80 caracteres, y un nombre de usuario puede tener hasta 24 caracteres (solo letras, números, guiones bajos y puntos)."}},
     {"@type":"Question","name":"¿Cuál es una buena longitud de meta título y meta descripción para SEO?","acceptedAnswer":{"@type":"Answer","text":"Google recorta según el ancho en píxeles en pantalla, no según un conteo estricto de caracteres, pero como guía práctica, mantén el meta título en unos 60 caracteres y la meta descripción en unos 155 caracteres para que no se corte en los resultados de búsqueda."}},
+    {"@type":"Question","name":"¿Los formularios oficiales cuentan los caracteres con espacios o sin espacios?","acceptedAnswer":{"@type":"Answer","text":"Casi nunca lo aclaran. Un límite tipo «máximo 4.000 caracteres» en un formulario académico o administrativo suele contar todo lo que tecleas, espacios incluidos — así funcionan los campos de formulario web. Si la convocatoria no especifica, asume que cuenta con espacios y usa la estadística «Caracteres» de arriba; si dice expresamente «sin espacios», usa «Caracteres (sin espacios)». El contador muestra ambos números en vivo, uno junto al otro."}},
+    {"@type":"Question","name":"¿Por qué mi número de caracteres no coincide con el del formulario?","acceptedAnswer":{"@type":"Answer","text":"Porque no todas las plataformas cuentan en la misma unidad. La mayoría cuenta puntos de código Unicode, pero los campos de formulario HTML y muchas apps cuentan unidades UTF-16 (las letras Unicode con estilo cuestan 2 cada una), otros sistemas cuentan bytes UTF-8, y X usa un conteo ponderado. Las estadísticas «Grafemas», «Unidades UTF-16» y «Bytes UTF-8» de arriba se actualizan en vivo para que puedas comparar con la unidad que use el destino."}},
     {"@type":"Question","name":"¿Este contador es gratis, y guarda o sube mi texto?","acceptedAnswer":{"@type":"Answer","text":"Sí, totalmente gratis y sin registro. Cada conteo se ejecuta en tu navegador con JavaScript sencillo — nada de lo que escribes se sube, se registra ni se guarda en ningún sitio."}}
   ]
 }
@@ -184,7 +186,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Caracteres (sin espacios)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Oraciones</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Párrafos</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Líneas</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 seg</span><span class="counter-stat-label">Tiempo de lectura</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 seg</span><span class="counter-stat-label">Tiempo de habla</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Grafemas (caracteres visibles)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Unidades UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Bytes UTF-8</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -196,6 +203,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Límites de caracteres por plataforma, explicados</h2>
     <p>Los límites de caracteres existen por dos razones distintas, y vale la pena saber a cuál te enfrentas. Los <strong>límites estrictos</strong> — los 280 de X/Twitter, el apodo de 32 caracteres de Discord, el nombre de usuario de 24 caracteres de TikTok — los impone la propia plataforma: si te pasas, la publicación o el guardado simplemente se rechaza. Los <strong>límites blandos o prácticos</strong> — una meta descripción de Google, una descripción de YouTube antes de "Mostrar más", una publicación de LinkedIn antes de recortarse con "ver más" — no te impiden escribir más, pero todo lo que pase de ese punto queda oculto para la mayoría de quienes lo lean, a menos que hagan clic para expandirlo. El verificador de arriba usa el límite real, estricto u oficialmente documentado, de cada plataforma; para los de recorte blando (meta título/descripción, YouTube, LinkedIn) trata el número como "cuánto se muestra de forma confiable", no como un muro infranqueable.</p>
     <p>Hay algo que suele confundir: algunas plataformas cuentan más de lo que esperarías. Un enlace en una publicación de X cuenta como ~23 caracteres sin importar cuán largo sea el enlace real. Los emojis y las letras acentuadas pueden contar como más de un "carácter" según cómo esté implementado internamente el contador de cada plataforma — esta herramienta cuenta por punto de código Unicode, que es como cuenta prácticamente toda plataforma moderna hoy en día.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="con-o-sin-espacios">
+    <h2>¿Caracteres con espacios o sin espacios?</h2>
+    <p>Muchos límites oficiales no lo aclaran. Un formulario académico o administrativo que pide «máximo 4.000 caracteres» — una carta de motivación, el resumen de una tesis, la casilla de una convocatoria — casi nunca dice si esos 4.000 incluyen los espacios. Y la diferencia no es menor: en un texto normal en español, los espacios suponen en torno a un 15–17&nbsp;% del total, así que un borrador que queda holgado sin espacios puede pasarse del límite en cuanto se cuentan con ellos.</p>
+    <p>Por eso el contador de arriba muestra los dos números a la vez, en vivo: «Caracteres» (con espacios) y «Caracteres (sin espacios)». Escribe o pega tu borrador y compara ambos con el límite que te hayan dado. La regla práctica: <strong>si el formulario no especifica, asume que cuenta con espacios</strong> — es como cuentan los campos de formulario web (para un <code>maxlength</code>, un espacio es un carácter como cualquier otro) y además es la interpretación más restrictiva, con la que nunca te pasarás por sorpresa.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -230,6 +245,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">¿Cuál es una buena longitud de meta título y meta descripción para SEO?</summary>
       <p class="faq-answer">Google recorta según el ancho en píxeles en pantalla, no según un conteo estricto de caracteres, pero como guía práctica, mantén el meta título en unos 60 caracteres y la meta descripción en unos 155 caracteres para que no se corte en los resultados de búsqueda.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">¿Los formularios oficiales cuentan los caracteres con espacios o sin espacios?</summary>
+      <p class="faq-answer">Casi nunca lo aclaran. Un límite tipo «máximo 4.000 caracteres» en un formulario académico o administrativo suele contar todo lo que tecleas, espacios incluidos — así funcionan los campos de formulario web. Si la convocatoria no especifica, asume que cuenta con espacios y usa la estadística «Caracteres» de arriba; si dice expresamente «sin espacios», usa «Caracteres (sin espacios)». El contador muestra ambos números en vivo, uno junto al otro.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">¿Por qué mi número de caracteres no coincide con el del formulario?</summary>
+      <p class="faq-answer">Porque no todas las plataformas cuentan en la misma unidad. La mayoría cuenta puntos de código Unicode, pero los campos de formulario HTML y muchas apps cuentan unidades UTF-16 (las letras Unicode con estilo cuestan 2 cada una), otros sistemas cuentan bytes UTF-8, y X usa un conteo ponderado. Las estadísticas «Grafemas», «Unidades UTF-16» y «Bytes UTF-8» de arriba se actualizan en vivo para que puedas comparar con la unidad que use el destino.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">¿Este contador es gratis, y guarda o sube mi texto?</summary>
@@ -273,7 +296,60 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<script>
+/* Spanish strings for the shared counter controller
+   (/js/counter/counterController.js). Replaces the old counterControllerEs.js
+   fork so this page picks up the shared controller's newer stats — lines,
+   speaking time, graphemes, UTF-16 units, UTF-8 bytes — and the platform
+   checker's weighted-X / SMS-segment notes. All translated strings below were
+   carried over from that fork unchanged. */
+window.UTG_COUNTER_I18N = {
+  sec: "seg",
+  min: "min",
+  copied: "¡Copiado!",
+  label: "Comprueba tu texto contra el límite de una plataforma",
+  ok: "Cabe ✓",
+  fail: "Supera el límite ✕",
+  xNote: "Contado como cuenta X: cada URL = 23, y la mayoría de símbolos, emojis y letras Unicode con estilo = 2 cada uno.",
+  smsSegments: "{n} segmento(s) de SMS · {per} caracteres por segmento ({enc})",
+  smsUnicode: "cambiado a modo Unicode por: {chars}",
+  labels: {
+    "x-post": "Publicación en X / Twitter",
+    "discord-message": "Mensaje de Discord",
+    "ig-caption": "Descripción de Instagram",
+    "tiktok-caption": "Descripción de TikTok",
+    "li-post": "Publicación de LinkedIn",
+    "fb-post": "Publicación de Facebook",
+    "yt-description": "Descripción de YouTube",
+    "pinterest-description": "Descripción de pin de Pinterest",
+    "telegram-message": "Mensaje de Telegram",
+    "telegram-caption": "Descripción de foto/video de Telegram",
+    "threads-post": "Publicación de Threads",
+    "bluesky-post": "Publicación de Bluesky",
+    "zalo-post": "Publicación/estado de Zalo",
+    "ig-bio": "Biografía de Instagram",
+    "tiktok-bio": "Biografía de TikTok",
+    "li-headline": "Titular de LinkedIn",
+    "whatsapp-about": "Info de WhatsApp",
+    "telegram-bio": "Biografía de Telegram",
+    "vk-status": "Estado de VK",
+    "discord-nick": "Apodo de Discord",
+    "tiktok-username": "Nombre de usuario de TikTok",
+    "ig-username": "Nombre de usuario de Instagram",
+    "yt-title": "Título de YouTube",
+    "meta-title": "Meta título SEO",
+    "meta-description": "Meta descripción SEO",
+    "sms": "SMS (1 segmento)"
+  },
+  groups: {
+    posts: "Publicaciones",
+    bios: "Bios y perfiles",
+    usernames: "Nombres de usuario",
+    titles: "Títulos y SEO"
+  }
+};
+</script>
 <script src="/js/counter/counterRules.js"></script>
-<script src="/js/counter/counterControllerEs.js" defer></script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

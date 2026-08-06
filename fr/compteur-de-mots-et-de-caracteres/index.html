@@ -123,6 +123,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Quelle est la limite de caractères pour une publication et un titre LinkedIn ?","acceptedAnswer":{"@type":"Answer","text":"Une publication LinkedIn autorise jusqu'à 3 000 caractères, même si le fil d'actualité la tronque avec « voir plus » après environ 200 à 700 caractères selon l'appareil. Le champ titre est plafonné à 220 caractères."}},
     {"@type":"Question","name":"Quelle est une bonne longueur de balise meta titre et meta description pour le SEO ?","acceptedAnswer":{"@type":"Answer","text":"Google tronque selon la largeur en pixels à l'écran plutôt qu'un nombre de caractères strict, mais en pratique, garde une balise meta titre autour de 60 caractères et une meta description autour de 155 caractères pour éviter qu'elle soit coupée dans les résultats de recherche."}},
     {"@type":"Question","name":"Quelle est la limite de mots pour une dissertation, un mémoire ou un devoir au lycée ?","acceptedAnswer":{"@type":"Answer","text":"Ça dépend beaucoup du niveau et de l'établissement, mais quelques repères courants : une dissertation ou un devoir au lycée tourne le plus souvent entre 300 et 1 000 mots, tandis qu'un mémoire ou un dossier à l'université demande généralement entre 2 000 et 6 000 mots selon le sujet et le cycle. Colle ton brouillon dans le compteur ci-dessus pour suivre ton nombre de mots en direct pendant la rédaction, et ajuste avant de rendre ton travail."}},
+    {"@type":"Question","name":"La limite Parcoursup de 1 500 caractères compte-t-elle les espaces ?","acceptedAnswer":{"@type":"Answer","text":"Oui : le projet de formation motivé de Parcoursup est limité à 1 500 caractères espaces compris, soit environ 200 à 250 mots. Colle ton brouillon dans le compteur ci-dessus et surveille la statistique « Caractères » (avec espaces) — c'est ce nombre-là que le champ Parcoursup compte. Vise environ 1 400 caractères pour garder une marge d'ajustement à la relecture."}},
+    {"@type":"Question","name":"Qu'est-ce qu'un feuillet ?","acceptedAnswer":{"@type":"Answer","text":"L'unité de calibrage classique de l'édition et du journalisme français : 1 feuillet = 1 500 signes, espaces comprises — héritage de la page dactylographiée de 25 lignes de 60 signes — soit environ 250 à 260 mots. La statistique « Feuillets » ci-dessus se calcule en direct sur cette base, à partir du nombre de caractères espaces comprises."}},
+    {"@type":"Question","name":"Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?","acceptedAnswer":{"@type":"Answer","text":"Parce que toutes les plateformes ne comptent pas dans la même unité. La plupart comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 (les lettres Unicode stylées coûtent 2 chacune), d'autres systèmes comptent des octets UTF-8, et X utilise un comptage pondéré. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » ci-dessus se mettent à jour en direct pour que tu puisses comparer avec l'unité utilisée par la destination."}},
     {"@type":"Question","name":"Ce compteur est-il gratuit, et conserve-t-il ou envoie-t-il mon texte ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entièrement gratuit et sans inscription. Chaque calcul s'exécute côté client, dans ton navigateur, en JavaScript pur — rien de ce que tu tapes n'est envoyé, enregistré ou conservé où que ce soit."}}
   ]
 }
@@ -185,7 +188,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Caractères (sans espaces)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Phrases</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraphes</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Lignes</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sec</span><span class="counter-stat-label">Temps de lecture</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 sec</span><span class="counter-stat-label">Temps de parole</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Graphèmes (caractères visibles)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Unités UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Octets UTF-8</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statFeuillets">0</span><span class="counter-stat-label">Feuillets (de 1 500 signes)</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -198,6 +207,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p>Les limites de caractères existent pour deux raisons différentes, et il vaut mieux savoir à laquelle tu as affaire. Les <strong>limites strictes</strong> — les 280 caractères de X/Twitter, le pseudo Discord à 32 caractères, le nom d'utilisateur TikTok à 24 caractères — sont imposées par la plateforme elle-même : dépasse-les, et la publication ou l'enregistrement est tout simplement refusé. Les <strong>limites souples ou pratiques</strong> — une balise meta description Google, une description YouTube avant « Afficher la suite », une publication LinkedIn avant qu'elle ne soit tronquée par « voir plus » — ne t'empêchent pas de taper davantage, mais tout ce qui dépasse ce seuil reste caché à la majorité des lecteurs sauf s'ils cliquent pour développer. Le vérificateur ci-dessus utilise la vraie limite stricte ou officiellement documentée de chaque plateforme ; pour celles à troncature souple (balise meta titre/description, YouTube, LinkedIn), considère le chiffre comme « ce qui s'affiche de façon fiable », pas comme un mur infranchissable.</p>
     <p>Un détail qui surprend souvent : certaines plateformes comptent plus que ce à quoi on s'attend. Un lien dans une publication X compte pour environ 23 caractères, peu importe la longueur réelle de l'URL. Les emojis et les caractères accentués peuvent compter pour plus d'un « caractère » selon la façon dont le compteur d'une plateforme est implémenté en interne — cet outil compte par point de code Unicode, ce qui correspond à la façon dont pratiquement toutes les plateformes modernes comptent aujourd'hui.</p>
     <p>Ces limites n'ont d'ailleurs rien à voir avec un autre cas d'usage très courant en France : les quotas de mots imposés pour une dissertation, un mémoire ou un devoir au lycée, qui répondent à une logique académique bien distincte des limites de caractères des réseaux sociaux — voir la question dédiée dans la FAQ ci-dessous.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="signes-espaces">
+    <h2>Signes, espaces comprises ou non ?</h2>
+    <p>Dans l'édition et le journalisme français, on ne compte pas en mots mais en <strong>signes</strong> — et sauf mention contraire, « signes » veut dire <strong>espaces comprises</strong> : chaque lettre, chiffre, signe de ponctuation et espace compte pour un. Le <strong>feuillet</strong>, l'unité classique de calibrage héritée de la page dactylographiée de 25 lignes de 60 signes, vaut <strong>1 500 signes</strong>, soit environ 250 à 260 mots de français courant.</p>
+    <p>Le compteur ci-dessus affiche les deux comptes en direct — « Caractères » (avec espaces) et « Caractères (sans espaces) » — plus une statistique « Feuillets » calculée sur la base d'un feuillet de 1 500 signes espaces comprises. Si une consigne précise « signes espaces non comprises », prends le nombre sans espaces ; dans tous les autres cas, c'est le compte espaces comprises qui fait foi.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="parcoursup">
+    <h2>Parcoursup : 1 500 caractères</h2>
+    <p>Le <strong>projet de formation motivé</strong> de Parcoursup est plafonné à <strong>1 500 caractères, espaces compris</strong> — soit environ 200 à 250 mots. Colle ton brouillon dans le compteur ci-dessus et surveille la statistique « Caractères » (avec espaces) : c'est exactement le nombre que le champ Parcoursup compte, ce qui t'évite de découvrir le dépassement au moment de la saisie.</p>
+    <p>Conseil pratique : vise environ <strong>1 400 caractères</strong> pour garder une marge — de quoi ajuster une formule ou corriger une coquille à la relecture sans devoir couper une phrase entière dans l'urgence.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -236,6 +261,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">Quelle est la limite de mots pour une dissertation, un mémoire ou un devoir au lycée ?</summary>
       <p class="faq-answer">Ça dépend beaucoup du niveau et de l'établissement, mais quelques repères courants : une dissertation ou un devoir au lycée tourne le plus souvent entre 300 et 1 000 mots, tandis qu'un mémoire ou un dossier à l'université demande généralement entre 2 000 et 6 000 mots selon le sujet et le cycle. Colle ton brouillon dans le compteur ci-dessus pour suivre ton nombre de mots en direct pendant la rédaction, et ajuste avant de rendre ton travail.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">La limite Parcoursup de 1 500 caractères compte-t-elle les espaces ?</summary>
+      <p class="faq-answer">Oui : le projet de formation motivé de Parcoursup est limité à 1 500 caractères espaces compris, soit environ 200 à 250 mots. Colle ton brouillon dans le compteur ci-dessus et surveille la statistique « Caractères » (avec espaces) — c'est ce nombre-là que le champ Parcoursup compte. Vise environ 1 400 caractères pour garder une marge d'ajustement à la relecture.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Qu'est-ce qu'un feuillet ?</summary>
+      <p class="faq-answer">L'unité de calibrage classique de l'édition et du journalisme français : 1 feuillet = 1 500 signes, espaces comprises — héritage de la page dactylographiée de 25 lignes de 60 signes — soit environ 250 à 260 mots. La statistique « Feuillets » ci-dessus se calcule en direct sur cette base, à partir du nombre de caractères espaces comprises.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?</summary>
+      <p class="faq-answer">Parce que toutes les plateformes ne comptent pas dans la même unité. La plupart comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 (les lettres Unicode stylées coûtent 2 chacune), d'autres systèmes comptent des octets UTF-8, et X utilise un comptage pondéré. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » ci-dessus se mettent à jour en direct pour que tu puisses comparer avec l'unité utilisée par la destination.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Ce compteur est-il gratuit, et conserve-t-il ou envoie-t-il mon texte ?</summary>
@@ -279,7 +316,63 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<script>
+/* French strings for the shared counter controller
+   (/js/counter/counterController.js). Replaces the old counterControllerFr.js
+   fork so this page picks up the shared controller's newer stats — lines,
+   speaking time, graphemes, UTF-16 units, UTF-8 bytes, plus the "Feuillets"
+   unit tile — and the platform checker's weighted-X / SMS-segment notes. All
+   translated strings below were carried over from that fork unchanged. */
+window.UTG_COUNTER_I18N = {
+  sec: "sec",
+  min: "min",
+  copied: "Copié !",
+  label: "Vérifiez votre texte par rapport à une limite de plateforme",
+  ok: "Ça passe ✓",
+  fail: "Dépasse la limite ✕",
+  xNote: "Compté comme X compte : chaque URL = 23, et la plupart des symboles, emojis et lettres Unicode stylées = 2 chacun.",
+  smsSegments: "{n} segment(s) SMS · {per} caractères par segment ({enc})",
+  smsUnicode: "passé en mode Unicode à cause de : {chars}",
+  units: [
+    { id: "statFeuillets", per: 1500, of: "chars", decimals: 1 }
+  ],
+  labels: {
+    "x-post": "Publication X / Twitter",
+    "discord-message": "Message Discord",
+    "ig-caption": "Légende Instagram",
+    "tiktok-caption": "Légende TikTok",
+    "li-post": "Publication LinkedIn",
+    "fb-post": "Publication Facebook",
+    "yt-description": "Description YouTube",
+    "pinterest-description": "Description d'épingle Pinterest",
+    "telegram-message": "Message Telegram",
+    "telegram-caption": "Légende photo/vidéo Telegram",
+    "threads-post": "Publication Threads",
+    "bluesky-post": "Publication Bluesky",
+    "zalo-post": "Publication/statut Zalo",
+    "ig-bio": "Bio Instagram",
+    "tiktok-bio": "Bio TikTok",
+    "li-headline": "Titre LinkedIn",
+    "whatsapp-about": "À propos WhatsApp",
+    "telegram-bio": "Bio Telegram",
+    "vk-status": "Statut VK",
+    "discord-nick": "Pseudo Discord",
+    "tiktok-username": "Nom d'utilisateur TikTok",
+    "ig-username": "Nom d'utilisateur Instagram",
+    "yt-title": "Titre YouTube",
+    "meta-title": "Balise meta titre SEO",
+    "meta-description": "Balise meta description SEO",
+    "sms": "SMS (1 segment)"
+  },
+  groups: {
+    posts: "Publications",
+    bios: "Bios et profils",
+    usernames: "Noms d'utilisateur",
+    titles: "Titres et SEO"
+  }
+};
+</script>
 <script src="/js/counter/counterRules.js"></script>
-<script src="/js/counter/counterControllerFr.js" defer></script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
