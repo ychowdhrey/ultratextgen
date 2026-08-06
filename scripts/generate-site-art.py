@@ -2665,6 +2665,8 @@ PAGES.update({
       P(m_typo, sample="字", weight="800", size=96, label="文字数 · 単語数", ff="Noto Sans CJK JP", lab_ff="Noto Sans CJK JP"), K_USE),
 "ko-geuljasu-segi": ("글자수세기", "공백 포함/제외 글자수를 실시간으로 세는 무료 도구",
       P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
+"zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
+      P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
