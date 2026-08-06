@@ -693,10 +693,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="lib-index-title">Semua Koleksi A–Z</h2>
     <p class="lib-index-note">Setiap koleksi simbol, lambang, dan kaomoji di Perpustakaan UltraTextGen. Jelajahi direktori lengkap di atas, atau langsung buka salah satu halaman di bawah.</p>
     <ul class="lib-index-list">
+      <li><a href="/id/library/karakter-spesial/">Karakter Spesial</a></li>
       <li><a href="/id/library/simbol-aesthetic/">Simbol Aesthetic</a></li>
       <li><a href="/id/library/shrug-kaomoji/">Kaomoji Angkat Bahu</a></li>
       <li><a href="/id/library/simbol-bintang/">Simbol Bintang</a></li>
       <li><a href="/id/library/simbol-bunga/">Simbol Bunga &amp; Alam</a></li>
+      <li><a href="/id/library/simbol-catur/">Simbol Catur</a></li>
       <li><a href="/id/library/simbol-centang/">Simbol Centang &amp; Ceklis</a></li>
       <li><a href="/id/library/love-kaomoji/">Kaomoji Cinta</a></li>
       <li><a href="/id/library/simbol-coquette/">Simbol Coquette</a></li>
@@ -705,6 +707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/id/library/simbol-discord/">Simbol Discord</a></li>
       <li><a href="/id/library/simbol-dreamcore-weirdcore/">Simbol Dreamcore &amp; Weirdcore</a></li>
       <li><a href="/id/library/emoji-sedih/">Emoji Sedih</a></li>
+      <li><a href="/id/library/emoji-wajah/">Emoji Wajah</a></li>
       <li><a href="/id/library/simbol-facebook/">Simbol Facebook</a></li>
       <li><a href="/id/library/simbol-fairycore/">Simbol Fairycore</a></li>
       <li><a href="/id/library/simbol-ff/">Simbol FF (Free Fire)</a></li>
@@ -713,6 +716,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/id/library/simbol-gender/">Simbol Gender</a></li>
       <li><a href="/id/library/simbol-geometri/">Simbol Geometri</a></li>
       <li><a href="/id/library/simbol-goth-grunge/">Simbol Goth &amp; Grunge</a></li>
+      <li><a href="/id/library/simbol-islami/">Simbol Islami</a></li>
       <li><a href="/id/library/simbol-jepang/">Simbol Jepang</a></li>
       <li><a href="/id/library/kaomoji/">Kaomoji — Wajah Teks Jepang</a></li>
       <li><a href="/id/library/cat-kaomoji/">Kaomoji Kucing</a></li>
@@ -720,7 +724,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/id/library/emoji-combos/">Kombinasi Emoji</a></li>
       <li><a href="/id/symbol/simbol-kutip/">Simbol Kutip</a></li>
       <li><a href="/id/library/cute-kaomoji/">Kaomoji Lucu</a></li>
+      <li><a href="/id/library/simbol-keagamaan/">Simbol Keagamaan</a></li>
       <li><a href="/id/library/simbol-love/">Simbol Love &amp; Hati</a></li>
+      <li><a href="/id/library/simbol-mata-uang/">Simbol Mata Uang</a></li>
       <li><a href="/id/library/simbol-matematika/">Simbol Matematika</a></li>
       <li><a href="/id/library/crying-kaomoji/">Kaomoji Menangis</a></li>
       <li><a href="/id/library/simbol-minecraft/">Simbol Minecraft</a></li>
@@ -756,6 +762,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   /* ── Data ───────────────────────────────────────────────────── */
   const LIBRARY = [
+    {
+      title: "Simbol Islami",
+      slug: "simbol-islami",
+      description: "Bulan sabit dan bintang ☪, ligatur Arab ﷲ ﷺ, masjid, dan ucapan Idulfitri.",
+      preview: "☪ ﷲ ﷺ 🕌 📿",
+      useCases: ["Referensi", "Bio"],
+      platforms: ["Universal"],
+      type: "Simbol",
+      subject: "Spiritual & Kepercayaan",
+      alpha: "S"
+    },
+    {
+      title: "Simbol Keagamaan",
+      slug: "simbol-keagamaan",
+      description: "Salib ✝, bulan sabit ☪, bintang Daud ✡, roda Dharma ☸, dan simbol iman lainnya.",
+      preview: "✝ ☪ ✡ ☸ ☯",
+      useCases: ["Referensi", "Bio"],
+      platforms: ["Universal"],
+      type: "Simbol",
+      subject: "Spiritual & Kepercayaan",
+      alpha: "S"
+    },
+    {
+      title: "Simbol Catur",
+      slug: "simbol-catur",
+      description: "Bidak ♔ ♛, kotak papan, dan tanda notasi catur.",
+      preview: "♔ ♕ ♞ ♟ ⬛",
+      useCases: ["Referensi", "Bio"],
+      platforms: ["Universal"],
+      type: "Simbol",
+      subject: "Game & Platform",
+      alpha: "S"
+    },
+    {
+      title: "Karakter Spesial",
+      slug: "karakter-spesial",
+      description: "Tak hingga ∞, damai ☮, sains, tanda hukum © ™, dan simbol Unicode langka.",
+      preview: "∞ ☮ © ™ ✧",
+      useCases: ["Referensi", "Bio"],
+      platforms: ["Universal"],
+      type: "Simbol",
+      subject: "Tanda & Indikator",
+      alpha: "K"
+    },
+    {
+      title: "Simbol Mata Uang",
+      slug: "simbol-mata-uang",
+      description: "Lambang mata uang $ € £ ¥ ₹ — mata uang dunia, regional, bersejarah, dan kripto.",
+      preview: "$ € £ ¥ ₿",
+      useCases: ["Referensi", "Bio"],
+      platforms: ["Universal"],
+      type: "Simbol",
+      subject: "Tanda & Indikator",
+      alpha: "S"
+    },
     {
       title: "Simbol Aesthetic",
       slug: "simbol-aesthetic",
@@ -1195,6 +1256,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       type: "Emoji",
       subject: "Emosi & Ekspresi",
       alpha: "S"
+    },
+    {
+      title: "Emoji Wajah",
+      slug: "emoji-wajah",
+      description: "Emoji wajah sesuai perasaan 😘 😉 😏 🙄 🥺 — arti, variasi terdekat, dan kombinasi siap copas.",
+      preview: "😘 😉 😏 🙄 🥺",
+      useCases: ["Bio", "Caption", "Komentar"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Emoji",
+      subject: "Emosi & Ekspresi",
+      alpha: "W"
     },
     {
       title: "Kaomoji Sedih",

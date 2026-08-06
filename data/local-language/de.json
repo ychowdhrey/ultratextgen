@@ -1,6 +1,6 @@
 {
   "_generated": true,
-  "_generated_by": "private research tooling — see internal docs/local-language-intelligence.md",
+  "_generated_by": "generated — see docs/local-language-intelligence.md",
   "_do_not_hand_edit": true,
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "de",
@@ -128,12 +128,12 @@
       "register": "informal/everyday, most common actual search phrasing",
       "phrase_type": "colloquial_term",
       "content_surface": "WebApplication alternateName, hero copy, forum questions",
-      "usage_guidance": "This is the phrase real searchers type (more than 'Fraktur' or 'gotische Schrift'); keep it prominent in alternateName/meta even though the page's primary H1 uses 'Gotische Schrift'.",
+      "usage_guidance": "REVISED 2026-07-26 (supersedes the 2026-07-25 guidance below). Promote this to the page's TITLE, H1 and slug, not just alternateName/meta. Prior guidance -- 'keep it prominent in alternateName/meta even though the page's primary H1 uses Gotische Schrift' -- was followed and did not work: 26 days of GSC show the German blackletter cluster earning ~0 clicks while three competitors rank dedicated Altdeutsch/Fraktur pages carrying the term in title+H1+slug (one on an exact-match domain). alternateName is not a ranking surface.",
       "good_example": "gutefrage.net/frage/schriftgenerator-kostenlos-gesucht-fuer-altdeutsche-schriftart („Schriftgenerator kostenlos gesucht für altdeutsche Schriftart“)",
       "avoid_when": "n/a",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-07-26"
     },
     {
       "phrase_id": "DE-010",

@@ -1,7 +1,7 @@
 {
   "_generated": true,
   "_do_not_hand_edit": true,
-  "_note": "Index of the local-language snapshot files. Regenerated from the private research dataset.",
+  "_note": "Index of the local-language snapshot files. Generated — do not hand-edit.",
   "locales": [
     "ar",
     "cs",
@@ -22,8 +22,9 @@
     "sr",
     "th",
     "tl",
-    "tr"
+    "tr",
+    "zh-tw"
   ],
-  "total_approved_or_limited_use_phrases": 394,
-  "total_excluded_candidates_or_other": 198
+  "total_approved_or_limited_use_phrases": 400,
+  "total_excluded_candidates_or_other": 695
 }

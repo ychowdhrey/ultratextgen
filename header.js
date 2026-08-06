@@ -12,8 +12,7 @@
   // A top-banner unit (slot 7584734719) used to live here too — removed
   // 2026-07-27 after a 7-day AdSense pull showed 3 impressions / SGD0.00
   // sitewide while permanently reserving 100-250px under the nav on every
-  // pageview. See ultratextgen-lab- docs/adsense-coverage-and-monetization-
-  // diversification-2026-07-16.md §11 for the full analysis.
+  // pageview. Full earnings analysis recorded internally.
   const AD_CLIENT = "ca-pub-8242324164413945";
 
   const rightRailHTML = '<aside class="ad-slot ad-rail-right">' +
@@ -33,7 +32,7 @@
     pt: {
       home: "/pt/",
       guide: { label: "Guias", href: "/pt/guide/" },
-      answers: { label: "Respostas", href: "/answers/" },
+      answers: { label: "Respostas", href: "/pt/answers/" },
       category: { label: "Categorias", href: "/pt/category/" },
       usecase: { label: "Usos", href: "/pt/usecase/" },
       library: { label: "Biblioteca", href: "/pt/library/" },
@@ -45,7 +44,7 @@
     fr: {
       home: "/fr/",
       guide: { label: "Guides", href: "/fr/guide/" },
-      answers: { label: "Réponses", href: "/answers/" },
+      answers: { label: "Réponses", href: "/fr/answers/" },
       category: { label: "Catégories", href: "/fr/category/" },
       usecase: { label: "Usages", href: "/fr/usecase/" },
       library: { label: "Bibliothèque", href: "/fr/library/" },
@@ -69,7 +68,7 @@
     it: {
       home: "/it/",
       guide: { label: "Guide", href: "/it/guide/" },
-      answers: { label: "Risposte", href: "/answers/" },
+      answers: { label: "Risposte", href: "/it/answers/" },
       category: { label: "Categorie", href: "/it/category/" },
       usecase: { label: "Usi", href: "/it/usecase/" },
       library: { label: "Libreria", href: "/it/library/" },
@@ -81,7 +80,7 @@
     tr: {
       home: "/tr/",
       guide: { label: "Rehberler", href: "/tr/guide/" },
-      answers: { label: "Yanıtlar", href: "/answers/" },
+      answers: { label: "Yanıtlar", href: "/tr/answers/" },
       category: { label: "Kategoriler", href: "/tr/category/" },
       usecase: { label: "Kullanımlar", href: "/tr/usecase/" },
       library: { label: "Kütüphane", href: "/tr/library/" },
@@ -93,7 +92,7 @@
     es: {
       home: "/es/",
       guide: { label: "Guías", href: "/es/guide/" },
-      answers: { label: "Respuestas", href: "/answers/" },
+      answers: { label: "Respuestas", href: "/es/answers/" },
       category: { label: "Categorías", href: "/es/category/" },
       usecase: { label: "Usos", href: "/es/usecase/" },
       library: { label: "Biblioteca", href: "/es/library/" },
@@ -105,7 +104,7 @@
     id: {
       home: "/id/",
       guide: { label: "Panduan", href: "/id/guide/" },
-      answers: { label: "Jawaban", href: "/answers/" },
+      answers: { label: "Jawaban", href: "/id/answers/" },
       category: { label: "Kategori", href: "/id/category/" },
       usecase: { label: "Kegunaan", href: "/id/usecase/" },
       library: { label: "Perpustakaan", href: "/id/library/" },
@@ -117,7 +116,7 @@
     pl: {
       home: "/pl/",
       guide: { label: "Poradniki", href: "/pl/guide/" },
-      answers: { label: "Odpowiedzi", href: "/answers/" },
+      answers: { label: "Odpowiedzi", href: "/pl/answers/" },
       category: { label: "Kategorie", href: "/pl/category/" },
       usecase: { label: "Zastosowania", href: "/pl/usecase/" },
       library: { label: "Biblioteka", href: "/pl/library/" },
@@ -129,7 +128,7 @@
     ar: {
       home: "/ar/",
       guide: { label: "الأدلة", href: "/ar/guide/" },
-      answers: { label: "الإجابات", href: "/answers/" },
+      answers: { label: "الإجابات", href: "/ar/answers/" },
       category: { label: "الفئات", href: "/category/" },
       usecase: { label: "الاستخدامات", href: "/usecase/" },
       library: { label: "المكتبة", href: "/ar/library/" },
@@ -213,7 +212,7 @@
     ja: {
       home: "/ja/",
       guide: { label: "ガイド", href: "/ja/guide/" },
-      answers: { label: "回答", href: "/answers/" },
+      answers: { label: "回答", href: "/ja/answers/" },
       category: { label: "カテゴリー", href: "/category/" },
       usecase: { label: "使い方", href: "/usecase/" },
       library: { label: "ライブラリ", href: "/ja/library/" },
@@ -237,7 +236,7 @@
     nl: {
       home: "/nl/",
       guide: { label: "Guides", href: "/nl/guide/" },
-      answers: { label: "Antwoorden", href: "/answers/" },
+      answers: { label: "Antwoorden", href: "/nl/answers/" },
       category: { label: "Categorieën", href: "/category/" },
       usecase: { label: "Toepassingen", href: "/usecase/" },
       library: { label: "Bibliotheek", href: "/nl/library/" },
@@ -273,7 +272,7 @@
     ru: {
       home: "/ru/",
       guide: { label: "Руководства", href: "/ru/guide/" },
-      answers: { label: "Ответы", href: "/answers/" },
+      answers: { label: "Ответы", href: "/ru/answers/" },
       category: { label: "Категории", href: "/category/" },
       usecase: { label: "Применение", href: "/usecase/" },
       library: { label: "Библиотека", href: "/ru/library/" },
@@ -321,7 +320,7 @@
     th: {
       home: "/th/",
       guide: { label: "คู่มือ", href: "/th/guide/" },
-      answers: { label: "คำตอบ", href: "/answers/" },
+      answers: { label: "คำตอบ", href: "/th/answers/" },
       category: { label: "หมวดหมู่", href: "/category/" },
       usecase: { label: "การใช้งาน", href: "/usecase/" },
       library: { label: "คลังสัญลักษณ์", href: "/th/library/" },

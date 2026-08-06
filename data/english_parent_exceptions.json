@@ -1,0 +1,140 @@
+{
+  "_readme": "Machine-readable ledger of the English-Parent Rule's ratified local-only exceptions — locale pages explicitly agreed to exist with NO live English parent (see CLAUDE.md, 'Localization Workflow — the English-Parent Rule', which holds the full narrative for each). This file is the state the tooling consults; the CLAUDE.md prose is the reasoning of record. Read by scripts/check-locale-parent-gap.js: a newly-added locale page whose canonical URL is listed here passes the no-en-parent check instead of failing it. Do NOT add an entry here unilaterally — every entry must reflect a real, discussed ratification with the user, the same bar as data/translation_parity_exceptions.json and data/locale_parent_gap_audit.json. Entry shape: { localeUrl (full canonical https URL, trailing slash), reason (why no EN parent exists — 'no-EN-demand-by-construction' cases vs 'EN-SERP-consolidation' cases are different claims, name which), agreed (YYYY-MM-DD), enDemandBasis (what was known about EN-side demand at ratification), lastRechecked (YYYY-MM-DD or null — date of the last reverse-demand sweep), nextRecheck (YYYY-MM-DD — when the EN side should next be checked), verdict (latest re-check outcome: null until first sweep, then 'exception-stands' | 'veto' (EN demand exists but the EN SERP consolidates the term onto an existing page — building a parent would cannibalize it) | 'build-parent' (EN demand found on a distinct SERP — build the EN parent, wire the cluster, then REMOVE this entry)) }. The standing decision rule when EN demand appears is ownership-check-before-build: demand alone never auto-triggers the EN build — run the 'check who already owns it' test on the English SERP first, then build or record a dated veto.",
+  "exceptions": [
+    {
+      "localeUrl": "https://ultratextgen.com/ja/gal-moji/",
+      "reason": "Japanese hiragana/katakana lookalike-glyph cipher (styles.js Japanese-script-only procedureId). The transform operates on Japanese script; an EN page would not be a translation of this feature. no-EN-demand-by-construction claim.",
+      "agreed": "2026-07-25",
+      "enDemandBasis": "No English speaker searches 'gal moji converter' as a query distinct from the plain homepage generator — asserted at ratification, not instrument-checked.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ko/font-byeonhwan/",
+      "reason": "CJK-script-user tool for decorating Latin/English text, distinct in H1/framing from ko's own homepage. Pairs with zh-tw/yingwen-ziti/. no-EN-demand-by-construction claim ('English font generator' is not a distinct EN query from the homepage generator).",
+      "agreed": "2026-07-25",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/zh-tw/yingwen-ziti/",
+      "reason": "Same ratification and claim shape as ko/font-byeonhwan/ (same 2026-07-25 pass).",
+      "agreed": "2026-07-25",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/id/tulisan-cuping/",
+      "reason": "Indonesian phonetic cute-typing transform (r→l, s→c, community-fixed forms) operating on Indonesian phonemes — an EN parent would not be a translation of the feature. no-EN-demand-by-construction claim. Precedent, not a template: future locale-slang transforms each need their own demand evidence and discussion.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "'font cuping'/'cuping font' shows substantial combined ID-market demand at low difficulty; 'cuping' is not a term English speakers search — the ID-side number is measured, the EN-side zero is asserted.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/fr/calligraphie/",
+      "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim: 'calligraphy' has real EN volume, but the EN SERP is believed to consolidate it onto the homepage-type pages (row-17 close-out read), while French GSC shows fr/index.html doesn't compete on this page's queries (76% of impressions on 'calligraphie copier coller' family).",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "EN-side synonym-consolidation premise is INFERRED from the font-converter row-17 close-out, never verified against EN GSC/SERP data for 'calligraphy' specifically — the first reverse-demand sweep must verify it.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/fr/changeur-de-police/",
+      "reason": "EN-SERP-consolidation claim, same ratification as fr/calligraphie/. Strongest FR ownership evidence of the trio: 100% of impressions on queries fr/index.html never ranks for ('change police'/'changeur de police'). Cluster includes live IT siblings (it/font-copia-e-incolla/, it/caratteri-speciali/) with no EN member — the locale↔locale parity blind spot flagged 2026-07-26 lives on this cluster.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer' EN SERP believed to pull the same competitor set as 'font generator').",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/fr/police-d-ecriture/",
+      "reason": "EN-SERP-consolidation claim, same ratification as fr/calligraphie/. Largest and still-growing FR volume of the trio: 'police d'écriture'/'police ecriture' — fr/index.html barely registers on the query while this page holds a strong first-page position.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/fr/ecriture-speciale/",
+      "reason": "Not a ratified keep on demand evidence — the 2026-07-26 GSC pull found negligible volume either way and the page was left as-is while its two siblings (fr/ecriture-style/, fr/generateur-de-texte/) were 301'd to fr/. Listed so the gate and the reverse-demand sweep see it; it is a fold candidate at the next re-check, not a demand-backed exception.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Negligible FR volume in the 26-day GSC pull; EN side never checked.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/tr/sekilli-yazi/",
+      "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim. This page targets 'süslü yazı / süslü harf' (fancy writing / fancy letters), a concept with obvious English demand. The reason no EN parent exists is that the EN homepage IS that page: its H1 is literally 'Fancy Text Generator' and it uses 'fancy text' 14 times, with no standalone EN fancy-text page anywhere in the repo. Building one would cannibalise the site's own homepage — the same shape as the fr/calligraphie trio. On the TR side the two do not compete: first-party GSC (27d to 2026-08-02) shows this page drawing the overwhelming majority of its impressions on 'süslü' queries at first-page positions, while sitting far down the SERP on the 'şekilli yaz*' family that /tr/ owns.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Verified directly against this repo on 2026-08-02: EN homepage H1 = 'Fancy Text Generator', 14 uses of 'fancy text', and no standalone EN fancy-text/fancy-letters page exists (only answers/* spokes about fancy text, which are a different content type). NOT verified: EN SERP or EN GSC for 'fancy text'/'fancy letters' specifically — the keyword tool has been out of API units since 2026-07-30, so the cannibalisation premise rests on our own site structure rather than on an EN demand pull. The first reverse-demand sweep must verify it.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/vi/usecase/ten-lien-quan-dep/",
+      "reason": "Nickname/special-character generator for Liên Quân Mobile, Tencent's MOBA (the Vietnam localization of Arena of Valor) — no meaningful English-market presence and no EN name-generator page for it anywhere in usecase/ (checked: no arena-of-valor-name-generator exists). no-EN-demand-by-construction claim. Discovered mis-parented onto the generic usecase/nickname-generator/ hub alongside its true sibling zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/ (Taiwan's name for the same game); paired into their own isolated 2-locale cluster instead, mirroring the ko/font-byeonhwan/zh-tw/yingwen-ziti precedent.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked — Semrush was out of API units at the time. Rests on the structural/linguistic argument (specific regional game, no EN equivalent to translate) rather than confirmed search volume.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/",
+      "reason": "Same ratification and claim shape as vi/usecase/ten-lien-quan-dep/ (same 2026-08-03 pass) — Taiwan's name for the same game (傳說對決 / Arena of Valor), paired with it into an isolated 2-locale cluster.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked — Semrush was out of API units at the time.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/id/usecase/nama-discord-keren/",
+      "reason": "EN-parent-absent — no EN Discord-name page exists to be its parent: /discord/ is the generator hub and usecase/nickname-generator/ is the general nickname page, already claimed by id/usecase/nama-panggilan/. Ratified as local-only rather than force-fitted to either. Surfaced by the site-wide duplicate-claimant scan as a second id page claiming a parent another id page already owned; the fix was to drop the wrong parent claim, not to merge, because the two pages serve non-overlapping queries.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC (Jul 2-28 2026) shows zero query overlap with the page that owns the nickname-generator parent: nama-discord-keren draws 118 impressions led by 'nama discord keren' (63) and 'nama role discord keren' (13), while id/usecase/nama-panggilan/ draws 28 led by 'buat nama panggilan keren' (5). EN side: no EN Discord-name page exists at all — this is an absent-parent claim, not a no-EN-demand claim, so the reverse-demand sweep should ask whether an EN Discord-name parent is worth building, not whether EN demand exists.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/nl/sierlijke-letters/",
+      "reason": "EN-parent-absent — no EN 'sierletters' (ornamental/calligraphic lettering) page exists. Dutch separates two concepts English collapses: cursief is italic/slanted (the Word-button sense), sierletters are ornamental/calligraphic. The page originally claimed category/cursive-fonts/, which nl/cursieve-letters/ already owns, but the two serve different queries and are not duplicates — so the fix was to drop the wrong parent claim, not to merge. Rule 3 de-targeting was applied to the hub in the same change: nl/cursieve-letters/ had 'sierlijke letters A-Z' in its own title and meta description and now reads 'cursief schrift A-Z'.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC settles the split decisively and in the counter-intuitive direction: nl/sierlijke-letters/ draws 1,768 impressions / 45 clicks ('sierletters' alone 795/29) against nl/cursieve-letters/'s 200 impressions / 1 click, despite being the smaller and less-linked page — merging would have 301'd away the best-performing NL asset on the site. EN side: no 'sierletters' equivalent exists; this is an absent-parent claim, so the reverse-demand sweep should ask whether an EN ornamental-lettering parent is worth building, not whether EN demand exists.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/font-copia-e-incolla/",
+      "reason": "IT sibling on the fr/changeur-de-police/ cluster (no EN member — same EN-SERP-consolidation claim as that trio). Keeps the slot as the concept-equivalent of 'changeur de police'.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer'/'font converter' EN SERP believed to pull the same competitor set as 'font generator') — not independently re-verified for Italian demand specifically.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
+      "reason": "Correction, 2026-08-02: previously also claimed a slot on the fr/changeur-de-police/ cluster, making two IT claimants on one hreflang cluster — invalid, flagged by audit-hreflang.js as a stacked-cluster conflict. it/font-copia-e-incolla/ kept the concept-equivalent slot; this page now stands alone with only a self-reference + homepage x-default, same ratified no-EN-parent shape as the rest of this ledger.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Not independently assessed — inherited the fr/changeur-de-police/ cluster's premise at the point it was split out, rather than its own EN demand check.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    }
+  ]
+}

@@ -29,16 +29,16 @@ workflow that produces it.
 
 | Type | Namespace | Schema | Governing workflow | Source of record | Generator + validator | Maturity |
 |---|---|---|---|---|---|---|
-| **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (+ [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md)) | `data/library_opportunities.csv` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
-| **Symbol** (single glyph/emoji identity) | `/symbol/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) — shares the Library workflow; a spec sets `"page_type": "symbol"` | `data/library_opportunities.csv` (backlog rows stay `page_type=library`; the library/symbol split happens per-spec in `data/library_page_specs/`, not in the backlog CSV) | `generate_library_page_from_spec.py` + `validate_library_pages.py` (shared with Library) + `sync_symbol_spoke_links.py` (hub↔spoke linking) | ✅ fully systematized (shares the Library pipeline end-to-end) |
-| **Category** (style generators) | `/category/` | `WebApplication` | ❌ none | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog, no generator |
-| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | ❌ none | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog, no generator |
+| **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (forum research is maintained internally) | `the internal opportunity backlog` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
+| **Symbol** (single glyph/emoji identity) | `/symbol/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) — shares the Library workflow; a spec sets `"page_type": "symbol"` | `the internal opportunity backlog` (backlog rows stay `page_type=library`; the library/symbol split happens per-spec in `data/library_page_specs/`, not in the backlog CSV) | `generate_library_page_from_spec.py` + `validate_library_pages.py` (shared with Library) + `sync_symbol_spoke_links.py` (hub↔spoke linking) | ✅ fully systematized (shares the Library pipeline end-to-end) |
+| **Category** (style generators) | `/category/` | `WebApplication` | ❌ none | the internal opportunity backlog (`page_type=category`) | ❌ none | ⚠️ backlog, no generator |
+| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | ❌ none | the internal opportunity backlog (`page_type=answers`) | ❌ none | ⚠️ backlog, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
-| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `the internal opportunity backlog` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Learn** (education pillar — handwriting/pre-writing/tracing articles) | `/learn/` | `Article` + `BreadcrumbList` + `FAQPage` | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented — new this review (PRs #625, #650: handwriting hub + 9 articles, `dot-to-dots`, `coloring-and-fine-motor`). Content is *about* handwriting/tracing/coloring rather than a printable itself, but sits close enough to the Printables scope boundary in `CLAUDE.md` (shape-only/pre-writing content is out of scope there) to be worth an explicit look |
 | **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
 | **Updates** (dated Unicode/platform/game rule-change log) | `/updates/` | `NewsArticle` + `BreadcrumbList` + `FAQPage` | `CLAUDE.md` "Content Type: Updates" section (documented there in depth; no dedicated file under `docs/`) | ❌ none (entries register directly in `scripts/generate-site-art.py`'s `PAGES` dict; no CSV backlog row) | ❌ none (hand-built) | ⚠️ actively shipping — 10 PRs this week alone (#607, #608, #610, #615, #616, #619, #620, #628, #634, #646) — but this map and the digest classifier had no row/rule for it until now |
-| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog, no generator |
+| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | `CLAUDE.md` scope note | the internal opportunity backlog (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, `/threads/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
@@ -64,15 +64,21 @@ These run across page types rather than producing a type.
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | ❌ none | ad hoc |
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
-| Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
-| i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `no/`, `pl/`, `pt/`, `sv/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| Collection-copy audit | `the internal opportunity-audit tool` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
+| i18n / localization | `prerender-i18n.js` (+ 30 live locale directories, `locales/`, `README.*.md`) — the classifier that tracks these (`scripts/weekly_pr_digest.py`) matched them one-by-one until 2026-08-01; see Known gaps #4 | ❌ none | as needed |
 | Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
-| ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
+| ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | the internal opportunity backlog `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
+| Consent management (Google Funding Choices) | `check-funding-choices.js`, `inject-funding-choices-tag.js` — tag deployed to every HTML page (PR #660, 2026-07-25) | ❌ none | ❌ no CI workflow wires the checker in yet (unlike `check-gtm.js` below) — see Known gaps #9 |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
-| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`validate.yml`, folded in from the retired `image-assets-check.yml`) |
+| Image asset check | `check-image-assets.py` (whole-site, informational) + `check-new-page-image-assets.py` (diff-scoped, gating) | ❌ none (CI-only) | CI (`validate.yml`, folded in from the retired `image-assets-check.yml`) |
 | hreflang reciprocity audit | `audit-hreflang.js` (`npm run check:hreflang`) | ❌ none (CI-only) | CI (`validate.yml`) |
 | Library/Symbol structural lint | `validate_library_pages.py` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) | CI (`validate.yml`) |
+| Translation parity (EN ↔ locale sync-after-creation) | `audit-translation-parity.js` (whole-site, informational) + `check-translation-parity.js` (diff-scoped, gating) | `CLAUDE.md` "Translation Parity" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) + ad hoc audit |
+| Locale mesh (hreflang reciprocity + locale-native link rewrites) | `sync-locale-mesh.js` (`--fix`) + `check-locale-mesh.js` (diff-scoped, gating) | `CLAUDE.md` "Locale Parent Governance" section + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating) + per-batch `--fix` |
+| Locale parent governance (Core Parent Set + Locale Tier registries — which parents mirror into which locales by default) | `check-locale-parent-tier.js` (pre-build lookup) + `audit-locale-parent-gap.js` (whole-site, informational) + `check-locale-parent-gap.js` (diff-scoped, gating) | `CLAUDE.md` "Locale Parent Governance" section + [`locale-parent-governance.md`](./locale-parent-governance.md) | CI (`validate.yml`, gating on new locale pages) + run before starting new locale work |
+| FAQ schema visibility (FAQPage/QAPage JSON-LD must mirror the visible page) | `audit-faq-schema.js` (whole-site, informational) + `check-faq-schema.js` (diff-scoped, gating) + `fix-faq-schema-visibility.js` (repair pass) | `CLAUDE.md` "FAQ schema must mirror visible page content" section | CI (`validate.yml`, gating) + per-batch audit/fix |
+| Local Language Intelligence (evidence-backed locally-native vocabulary per market) | ❌ none (data-only; the canonical dataset is maintained internally and synced into `data/local-language/*.json`) | `CLAUDE.md` "Local Language Intelligence" section + [`local-language-intelligence.md`](./local-language-intelligence.md) | as needed, continuous capture |
 
 ---
 
@@ -88,7 +94,7 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
-| `validate.yml` | on `pull_request` (+ manual) | **required, blocking**: `audit-hreflang.js` (`npm run check:hreflang`), `validate_library_pages.py`, `check-image-assets.py` — each already exited non-zero on failure but none was wired into CI until now. Supersedes the old path-filtered `image-assets-check.yml` (retired; folded in here so the image-asset check now runs unconditionally on every PR instead of only on HTML/asset-path changes). |
+| `validate.yml` | on `pull_request` (+ manual) | **required, blocking gates**: `audit-hreflang.js`, `validate_library_pages.py`, `check-new-page-image-assets.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-faq-schema.js`, `check-locale-parent-gap.js`. Plus two whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins) and `audit-locale-parent-gap.js` (locale translation coverage). Supersedes the old path-filtered `image-assets-check.yml` (retired). This row was stale from 2026-07-23 through 2026-07-31 — five gating checks (`check-new-page-image-assets.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-locale-parent-gap.js`, `check-faq-schema.js`) landed in the workflow file with no corresponding row here; see Operational tracks above for what each one governs. |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -172,6 +178,22 @@ here so they aren't lost. Update as they're closed or new ones appear.
    for this review's additive-map-update mandate — but the fix itself
    (`^[a-z]{2}(-[a-z]{2})?/` → i18n, checked before the more specific rules)
    is small and has been fully specified for three weeks running.
+   **Update (2026-08-01):** another new locale launched this week — Finnish
+   `/fi/` (PR #669, "feat(fi): complete Finnish locale launch", 11 pages) —
+   again absent from `LANE_RULES`, again surfacing as Unclassified signal
+   (PRs #669, #672, #680). This is the **sixth** consecutive review flagging
+   the identical recurring cost (2026-07-10, -11, -18, -22, -25, -08-01), so
+   this review finally implements the pattern-rule fix that's been specified
+   since 2026-07-11: `scripts/weekly_pr_digest.py` now falls back to
+   `^[a-z]{2}(-[a-z]{2})?/` → i18n whenever no more-specific rule matches,
+   replacing the ~30 hand-enumerated locale prefixes. Verified safe against
+   the one non-locale two-letter top-level directory in the repo (`js/`,
+   already claimed by an earlier, more specific "Core JS" rule, so the
+   fallback never reaches it) and re-run against this week's 34 PRs, which
+   now classify with **zero** Unclassified signal. This closes the
+   classifier half of this gap permanently — a future locale launch needs no
+   `LANE_RULES` patch at all. The documentation-home half (a dedicated i18n
+   governing doc) is still open, and is now the only thing left in this gap.
 5. **Platform pages lane is undocumented** — the twelve social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, `/threads/`, …) receive active SEO
    updates (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
@@ -230,6 +252,15 @@ here so they aren't lost. Update as they're closed or new ones appear.
    churn a decision doc (why AdSense over Journey, revenue-share terms, page
    exclusions) would have made safer to reason about — still doesn't exist.
    The operational-tracks table row above reflects the current AdSense state.
+   **Update (2026-08-01):** a related but distinct gap appeared this week —
+   PR #660 deployed a Google Funding Choices consent/ad-blocking-recovery
+   tag site-wide (every HTML page), with a checker script
+   (`check-funding-choices.js`) committed alongside it, but unlike
+   `check-gtm.js` that checker was never wired into a CI workflow — nothing
+   currently stops a new page from shipping without the tag. Added its own
+   Operational tracks row above rather than folding it into this gap (it's a
+   site-wide script deployment, not a revenue/provider decision), but the
+   still-missing governing doc and the missing CI wiring are both open.
 10. **New this week: Events (seasonal/holiday pages) is a genuinely new lane,
     not just an unclassified PR.** PR #457 added ten English `/events/<slug>/`
     pages (Christmas, Halloween, Diwali, Eid Mubarak, Lunar New Year, etc.)
@@ -239,7 +270,7 @@ here so they aren't lost. Update as they're closed or new ones appear.
     generator, validation built in) reading `data/event_page_specs/*.json`,
     and a dedicated `js/events/eventPageController.js` — but has no page-type
     row, no governing doc, and no demand-backlog entry (no `page_type=events`
-    rows exist in `library_opportunities.csv`). Added a row to the page-type
+    rows exist in the internal opportunity backlog). Added a row to the page-type
     table above and a `LANE_RULES` entry (`events/` → "Events"); the
     governing doc and backlog integration are still open.
 11. **Root-level standalone tool pages, no naming convention — still
@@ -304,6 +335,25 @@ here so they aren't lost. Update as they're closed or new ones appear.
     `/learn/` content stays within the typography-native line the
     boundary draws is an editorial call for a human, not something this
     review resolves.
+15. **This map had drifted from the CI it's supposed to describe.** Five
+    operational tracks were fully built, fully documented in `CLAUDE.md`,
+    and (in four of five cases) already wired into `validate.yml` as
+    required gates — **Translation Parity** (2026-07-23), **Locale mesh**
+    and **Locale Parent Governance** (2026-07-24), **FAQ schema visibility**
+    (2026-07-26), and **Local Language Intelligence** (2026-07-25, data-only,
+    no CI gate) — with zero footprint in this file until now. None of this
+    was "new this week" in the usual sense (three of the five predate this
+    review's 7-day window); it went unnoticed because past reviews checked
+    PR file paths against `LANE_RULES`, which correctly classified all of
+    it as `Scripts / tooling` / `Data / backlog` / `Docs` and surfaced no
+    Unclassified signal — a page-type/lane classifier has no way to notice
+    that a *cross-cutting* track is missing a map row. Added all five to the
+    Operational tracks table above, and corrected the `validate.yml` row in
+    Automated workflows (below) to list its actual current gate set instead
+    of the three it shipped with. No systematic fix for the underlying blind
+    spot (classifier-driven review can't catch operational-track drift) is
+    proposed here — noting it so a future review doesn't have to rediscover
+    it from scratch.
 
 ---
 

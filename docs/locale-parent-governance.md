@@ -30,9 +30,8 @@ two things: an English-Parent Rule (does a parent exist at all) and a
 surfacing. That combination has a proven blind spot: EN `/symbol/` had 77
 pages, FR `/symbol/` had 6, and nobody ran a systematic check on that gap —
 it sat there until a one-off manual Semrush pull (2026-07-14) found
-**~49,960 searches/month** of directly-evidenced French demand (euro-sign
-14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol
-3,600/mo, +11 more slugs) that had simply never been looked for.
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign,
+micro-sign, not-equal-sign, delta-symbol, +11 more slugs) that had simply never been looked for.
 
 The fix isn't "translate everything" (the site's own per-page GSC yield data
 argues strongly against a blanket mirror — 30 focused `/id/` pages
@@ -275,14 +274,13 @@ prerequisites.)
 from this registry's 2026-07-24 launch through 2026-08-05 on an
 **authority/indexing gap, not a content gap** basis — do not add vi content,
 it needs backlinks, not translations. That framing was already stale the day
-the registry shipped: the private research repo's
-`docs/locale-parent-strategy-2026-07-23.md` had recorded, one day earlier,
-that vi had recovered (109,278 impressions / 3,436 clicks / weighted
-position 6.2, `docs/locale-build-backlog-2026-07-23.md` caveats) and that
-the HOLD framing should be updated — that correction never made it into this
-registry until now. `vi` is plain Tier 2 going forward, same as its
-qualify-then-mirror-Core siblings; the `decide()` mechanism below (§3) still
-supports holding a locale, it's just not currently applied to any of the 29.
+the registry shipped: an internal analysis one day earlier (2026-07-23) had
+already found that vi recovered (109,278 impressions / 3,436 clicks /
+weighted position 6.2) and flagged that the HOLD framing should be updated —
+that correction never made it into this registry until now. `vi` is plain
+Tier 2 going forward, same as its qualify-then-mirror-Core siblings; the
+`decide()` mechanism below (§3) still supports holding a locale, it's just
+not currently applied to any of the 29.
 
 ### `scripts/lib/locale-parent-registry.js`
 
@@ -363,7 +361,7 @@ The ledger — same `_readme` + array shape as
     "enGscImpressionsFromLocale": null
   },
   "verdict": "mirror",
-  "evidence": "euro-sign 14,800/mo, micro-sign 5,400/mo, ...",
+  "evidence": "euro-sign, micro-sign, ... (figures held internally)",
   "recordedBy": "governance-tooling-audit"
 }
 ```

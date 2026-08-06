@@ -12,9 +12,8 @@ a per-PR merge gate without being permanently red regardless of what any given
 PR touches. That's the actual mechanism that let new pages keep shipping ahead
 of their hero/OG art despite scripts/check-image-assets.py existing: Google
 crawls a new page within hours and records a broken image reference before any
-later cleanup pass lands (see ultratextgen-lab-'s
-gsc-technical-seo-leakage-audit-2026-07-24.md §6 for the investigation that
-found this recurring). This script closes that gap the same way
+later cleanup pass lands (an internal GSC crawl-stats investigation found
+this recurring). This script closes that gap the same way
 check-translation-parity.js closes the equivalent gap for translation drift:
 diff-scoped, so only NEW problems introduced by this branch can fail it.
 

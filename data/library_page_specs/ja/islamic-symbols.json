@@ -1,0 +1,280 @@
+{
+  "slug": "islamic-symbols",
+  "lang": "ja",
+  "title": "イスラム教の記号コピペ ☪ ﷲ ﷺ 星と三日月・アラビア語合字",
+  "meta_description": "イスラム教に関する記号のコピペ集。星と三日月、アッラーやバスマラの合字、モスクや祈りの絵文字、イードの挨拶。クリックでコピーできます。",
+  "breadcrumb": "イスラム教の記号",
+  "hero_h1": "イスラム教の記号",
+  "hero_tagline": "星と三日月、アラビア語の敬称合字、モスクや祈りの文字、ラマダンの挨拶。記号をクリックするとすぐにコピーできます。",
+  "intro": "Unicodeのイスラム教関連の記号は、よく知られた星と三日月 ☪ だけではありません。アラビア文字表示形字ブロックには、完全な敬称合字が収録されています。1文字で「アッラー」(ﷲ)、預言者の名の後に唱えられる祝福の言葉 (ﷺ)、バスマラ全体 (﷽) を表す文字です。このページでは、それらの合字をモスク、カアバ、祈りの絵文字とあわせて掲載しています。ラマダンやイードの挨拶、プロフィール、信仰にまつわる投稿での利用を想定しています。敬称合字は、その重みにふさわしい敬意をもってお使いください。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ja/library/islamic-symbols/",
+  "home_url": "https://ultratextgen.com/ja/",
+  "crumb_home": "ホーム",
+  "library_url": "https://ultratextgen.com/ja/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/islamic-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/islamische-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-islamiques/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-islami/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-islamici/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/islamic-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/islam-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/islamitische-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-islamskie/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/islamskie-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/islamic-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/islami-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "star-crescent",
+      "label": "星と三日月",
+      "h2": "星と三日月の記号",
+      "intro": "三日月と星。イスラム教と結びつけて最も広く知られている象徴です。",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "星と三日月"
+        },
+        {
+          "char": "☪️",
+          "label": "星と三日月（絵文字スタイル）"
+        },
+        {
+          "char": "☫",
+          "label": "ファルシー記号（イランの紋章）"
+        },
+        {
+          "char": "🌙",
+          "label": "三日月"
+        },
+        {
+          "char": "☽",
+          "label": "上弦の月"
+        },
+        {
+          "char": "☾",
+          "label": "下弦の月"
+        },
+        {
+          "char": "⭐",
+          "label": "星"
+        },
+        {
+          "char": "✨",
+          "label": "キラキラ"
+        }
+      ]
+    },
+    {
+      "id": "arabic-ligatures",
+      "label": "合字",
+      "h2": "アラビア語の敬称合字",
+      "intro": "1文字で聖なる語や敬称の全体を表すUnicode文字です。扱いにはご配慮ください。",
+      "symbols": [
+        {
+          "char": "ﷲ",
+          "label": "アッラーの合字"
+        },
+        {
+          "char": "ﷺ",
+          "label": "サッラッラーフ・アライヒ・ワサッラムの合字"
+        },
+        {
+          "char": "﷽",
+          "label": "バスマラ（ビスミッラーヒ・ッラフマーニ・ッラヒーム）の合字"
+        },
+        {
+          "char": "ﷻ",
+          "label": "ジャッラ・ジャラールフの合字"
+        },
+        {
+          "char": "ﷴ",
+          "label": "ムハンマドの合字"
+        },
+        {
+          "char": "۞",
+          "label": "ルブウ・アルヒズブの開始記号"
+        },
+        {
+          "char": "۝",
+          "label": "アーヤ（節）の終わり記号"
+        }
+      ]
+    },
+    {
+      "id": "mosque-worship",
+      "label": "礼拝の場",
+      "h2": "モスクとカアバ",
+      "intro": "モスク、マッカのカアバ、礼拝全般を表す絵文字。",
+      "symbols": [
+        {
+          "char": "🕌",
+          "label": "モスク"
+        },
+        {
+          "char": "🕋",
+          "label": "カアバ"
+        },
+        {
+          "char": "🛐",
+          "label": "礼拝所"
+        }
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "label": "祈り",
+      "h2": "祈りと信仰",
+      "intro": "サラー（礼拝）、ドゥアー（祈願）、日々の信仰に関わる文字。",
+      "symbols": [
+        {
+          "char": "📿",
+          "label": "数珠"
+        },
+        {
+          "char": "🤲",
+          "label": "両手のひらを上に"
+        },
+        {
+          "char": "🧎",
+          "label": "ひざまずく人"
+        },
+        {
+          "char": "🧕",
+          "label": "スカーフをかぶった女性"
+        }
+      ]
+    },
+    {
+      "id": "ramadan-eid",
+      "label": "ラマダンとイード",
+      "h2": "ラマダンとイードのお祝い",
+      "intro": "イフタールの招待、イードの投稿、家族への挨拶に使えるお祝いの文字。",
+      "symbols": [
+        {
+          "char": "🎊",
+          "label": "くす玉"
+        },
+        {
+          "char": "🎉",
+          "label": "クラッカー"
+        },
+        {
+          "char": "🍬",
+          "label": "キャンディ"
+        },
+        {
+          "char": "🐑",
+          "label": "羊"
+        },
+        {
+          "char": "🌴",
+          "label": "ヤシの木"
+        },
+        {
+          "char": "🫖",
+          "label": "ティーポット"
+        }
+      ]
+    },
+    {
+      "id": "islamic-greetings",
+      "label": "挨拶",
+      "h2": "ラマダン・イードの挨拶の組み合わせ",
+      "intro": "そのまま使える敬意ある挨拶です。ボタンを押すと組み合わせ全体を一度にコピーできます。",
+      "symbols": [
+        {
+          "char": "☪️🌙 Ramadan Mubarak 🌙☪️",
+          "label": "「Ramadan Mubarak」の挨拶"
+        },
+        {
+          "char": "🕌✨ Eid Mubarak ✨🕌",
+          "label": "「Eid Mubarak」の挨拶"
+        },
+        {
+          "char": "🤲📿 Jumma Mubarak 📿🤲",
+          "label": "「Jumma Mubarak」の挨拶"
+        }
+      ]
+    }
+  ],
+  "cta": "UltraTextGenを使えば、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントに変換できます。無料ですぐに使えます。",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "宗教の記号",
+      "desc": "世界の伝統に由来する信仰と精神性の記号。"
+    },
+    {
+      "href": "/ja/library/star-symbols/",
+      "title": "星の記号",
+      "desc": "星、アスタリスク、キラキラ記号のコピペ集。"
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "月と天体の記号",
+      "desc": "月の満ち欠け、星、天体の記号。"
+    },
+    {
+      "href": "/ja/symbol/heiwa-kigou/",
+      "title": "ピースマーク（☮）",
+      "desc": "ピースマークの由来と使い方。"
+    }
+  ]
+}

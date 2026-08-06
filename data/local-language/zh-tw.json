@@ -1,0 +1,43 @@
+{
+  "_generated": true,
+  "_generated_by": "generated — see docs/local-language-intelligence.md",
+  "_do_not_hand_edit": true,
+  "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
+  "locale": "zh-tw",
+  "language": "Chinese (Traditional)",
+  "phrase_count": 2,
+  "phrases": [
+    {
+      "phrase_id": "ZHTW-025",
+      "native_phrase": "FB",
+      "transliteration": "",
+      "english_concept": "Facebook (abbreviated)",
+      "country_or_market": "TW",
+      "register": "neutral-casual, mainstream",
+      "phrase_type": "platform_shorthand",
+      "content_surface": "title/meta/H2/FAQ",
+      "usage_guidance": "User-authorized fast-track promotion (2026-07-31), overriding the standard same-pass-insertion hold given the strength of the volume evidence. Pair with 'Facebook' rather than replace it (e.g. 'Facebook（FB）符號') -- do not use 'FB' as a standalone primary title/H1 term; the hreflang cluster is keyed to the full Facebook concept.",
+      "good_example": "Facebook（FB）符號大全 — 反應・愛心符號複製貼上",
+      "avoid_when": "formal/legal copy needing the full brand name; do not use as a standalone term without the Facebook pairing since FB is ambiguous out of context",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-07-31"
+    },
+    {
+      "phrase_id": "ZHTW-028",
+      "native_phrase": "日幣",
+      "transliteration": "",
+      "english_concept": "Japanese yen (colloquial currency name)",
+      "country_or_market": "TW",
+      "register": "everyday/colloquial; standard in TW speech and consumer contexts",
+      "phrase_type": "colloquial_term",
+      "content_surface": "title, H1, meta description, FAQ, alternateName",
+      "usage_guidance": "CLEARED FOR PRODUCTION on the yen page only, by explicit user authorization 2026-08-03 — the same fast-track ZHTW-013 (fb) got, and for the same reason: the page was targeting the formal name while the market searches the colloquial one. Applied 2026-08-03: zh-tw/symbol/yen-sign/ retitled 「日幣符號 ¥：複製貼上、日圓與人民幣的差別」 (was 「日圓／人民幣符號」), H1 「日幣符號（¥）」, and every sibling currency page's related card + ¥ tile label updated to match. 日圓 is deliberately KEPT in the intro and the title's second clause — it is the correct formal/written term (JPY) and readers arriving on either name must find the other. Do not strip it. Scope is this page; 日幣 does not become the house term for the yen everywhere.",
+      "good_example": "",
+      "avoid_when": "formal financial/legal copy and anything quoting an ISO code context, where 日圓/JPY is correct; mainland-targeted copy, where 日元 is the norm",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-03"
+    }
+  ]
+}

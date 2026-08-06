@@ -10,8 +10,11 @@ For every target page it:
   3. inserts a decorative <figure class="page-hero-figure"> after the hero
 
 Idempotent: a page already carrying the data-uthero marker is left untouched.
-Run:  python3 scripts/wire-site-art.py
+Run:  python3 scripts/wire-site-art.py                      # whole site
+      python3 scripts/wire-site-art.py path/to/index.html   # scoped
+      python3 scripts/wire-site-art.py --dry-run            # report only
 """
+import argparse
 import os
 import re
 import glob
@@ -57,16 +60,53 @@ def figure_block(slug):
 
 
 def main():
-    hero_dir = os.path.join(ROOT, "assets", "hero")
+    ap = argparse.ArgumentParser(
+        description="Wire generated hero/OG art into pages still using /logo.png.")
+    ap.add_argument(
+        "files", nargs="*",
+        help="repo-relative index.html paths to process (default: every page). "
+             "Scope a focused change to just the pages it touches.")
+    ap.add_argument(
+        "--dry-run", action="store_true",
+        help="report what would change without writing anything.")
+    args = ap.parse_args()
+
     og_dir = os.path.join(ROOT, "assets", "og")
-    swapped = inserted = skipped = noart = 0
+    scanned = written = swapped = inserted = skipped = noart = 0
     no_anchor = []
     os.chdir(ROOT)
-    for path in sorted(glob.glob("**/index.html", recursive=True)):
+
+    if args.files:
+        targets = []
+        for f in args.files:
+            rel = os.path.relpath(os.path.abspath(f), ROOT).replace(os.sep, "/")
+            if not os.path.exists(rel):
+                ap.error(f"no such file: {f}")
+            targets.append(rel)
+    else:
+        targets = sorted(glob.glob("**/index.html", recursive=True))
+
+    for path in targets:
         if path.startswith("guide" + os.sep):
             continue
+        scanned += 1
         html = open(path, encoding="utf-8").read()
-        if LOGO not in html and "data-uthero" not in html:
+        original = html
+        # This guard was written when the only way to lack a hero figure was to
+        # still be on the generic /logo.png card, so "no logo and no figure"
+        # meant "already done." That stopped being true: a page whose OG got
+        # pointed at real art by any other path (a spec generator, a hand fix)
+        # but never had its figure inserted matches neither arm and becomes
+        # permanently invisible here — no amount of re-running finds it. That is
+        # the whole reason 37 cs/hr/pt/ro pages sat with correct OG art and no
+        # hero, and why re-running the script never surfaced them.
+        #
+        # An explicit `--files` target opts out: naming a page IS the decision
+        # that it needs wiring. An unscoped run keeps the conservative
+        # behaviour, because lanes like EN `symbol/*` hold ~99 figure-less pages
+        # whose heroes are an open question this script must not answer as a
+        # side effect of someone regenerating something else.
+        if not args.files and LOGO not in html and "data-uthero" not in html:
             continue
         slug = slug_for(path)
         if not slug:
@@ -90,12 +130,19 @@ def main():
         html = new
 
         # Strip any previously-wired figure so its placement is recomputed.
-        # Keeps the script idempotent *and* corrective when placement rules
-        # change. Tolerates extra attributes (e.g. aria-hidden) on the figure.
+        # Keeps the script corrective when placement rules change.
+        #
+        # This strip and figure_block() must be exactly newline-symmetric or the
+        # script is not idempotent. It used to consume up to two newlines and
+        # emit one, while figure_block() re-added its own leading and trailing
+        # newline — so every run leaked one blank line into every already-wired
+        # page, and a single run reported 1,907 "insertions" that were really
+        # 1,906 no-op rewrites plus whitespace churn. Strip exactly one newline
+        # on each side; figure_block() puts exactly one back.
         had_figure = "data-uthero" in html
         html = re.sub(
-            r'\n?<figure class="page-hero-figure" data-uthero[^>]*>.*?</figure>\n?',
-            '\n', html, flags=re.S)
+            r'\n<figure class="page-hero-figure" data-uthero[^>]*>.*?</figure>\n',
+            '', html, flags=re.S)
 
         # 3. insert hero figure (decorative — see figure_block)
 
@@ -121,14 +168,22 @@ def main():
             no_anchor.append(slug)
         else:
             html = html[:pos] + figure_block(slug) + html[pos:]
-            inserted += 1
             if had_figure:
                 skipped += 1
+            else:
+                inserted += 1
 
-        open(path, "w", encoding="utf-8").write(html)
+        # Only touch the file when something actually changed. Writing
+        # unconditionally rewrote every page on every run, which buried the
+        # handful of real edits in ~1,900 no-op diffs and made the script
+        # unusable inside a focused change.
+        if html != original:
+            if not args.dry_run:
+                open(path, "w", encoding="utf-8").write(html)
+            written += 1
 
-    print(f"image swaps: {swapped}  hero inserted: {inserted}  "
-          f"already-done: {skipped}  no-art: {noart}")
+    print(f"scanned: {scanned}  written: {written}  image swaps: {swapped}  "
+          f"hero inserted: {inserted}  already-correct: {skipped}  no-art: {noart}")
     if no_anchor:
         print("NO HERO ANCHOR (og swapped, figure not inserted):")
         for s in no_anchor:

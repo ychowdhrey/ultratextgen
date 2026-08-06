@@ -1,0 +1,420 @@
+{
+  "slug": "dini-semboller",
+  "lang": "tr",
+  "title": "Dini Semboller: Kopyala Yapıştır ✝ ☪ ✡ ☸ İnanç Sembolleri",
+  "meta_description": "Dünyanın büyük geleneklerinden dini, manevi ve inançla ilgili Unicode sembollerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.",
+  "breadcrumb": "Dini ve Manevi Semboller",
+  "hero_h1": "Dini ve Manevi Semboller",
+  "hero_tagline": "Dünyanın büyük geleneklerinden dini, manevi ve inançla ilgili Unicode sembollerinden oluşan bir başvuru koleksiyonu. Anında kopyalamak için herhangi bir sembole tıkla.",
+  "intro": "Bu kütüphanede Hristiyanlık, İslam, Yahudilik, Hinduizm, Budizm ve dünyanın diğer geleneklerine ait semboller ile evrensel manevi ve barış sembolleri yer alıyor. İnanç geleneğine ve kategoriye göre gruplandırıldı.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/tr/library/dini-semboller/",
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "library_url": "https://ultratextgen.com/tr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/korssymboler/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/religious-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/religioese-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-religieux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-keagamaan/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-religiosi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/religious-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-religijne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/religious-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/dini-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "Hristiyan",
+      "h2": "Haç ve Hristiyan Sembolleri",
+      "intro": "Unicode'daki haç çeşitleri ve Hristiyan geleneklerindeki kiliseyle ilgili semboller.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Latin haçı"
+        },
+        {
+          "char": "☦",
+          "label": "Ortodoks haçı"
+        },
+        {
+          "char": "✞",
+          "label": "Gölgeli haç"
+        },
+        {
+          "char": "✟",
+          "label": "Konturlu haç"
+        },
+        {
+          "char": "♰",
+          "label": "Batı Süryani haçı"
+        },
+        {
+          "char": "♱",
+          "label": "Doğu Süryani haçı"
+        },
+        {
+          "char": "⛪",
+          "label": "Kilise"
+        },
+        {
+          "char": "✠",
+          "label": "Malta haçı"
+        }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "İslami",
+      "h2": "İslami Semboller",
+      "intro": "Hilal, cami ve İslam geleneğiyle ilişkilendirilen diğer semboller.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Ay yıldız"
+        },
+        {
+          "char": "🕌",
+          "label": "Cami"
+        },
+        {
+          "char": "🕋",
+          "label": "Kâbe"
+        },
+        {
+          "char": "📿",
+          "label": "Tespih"
+        },
+        {
+          "char": "﷽",
+          "label": "Besmele ligatürü"
+        }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "Yahudi",
+      "h2": "Yahudi Sembolleri",
+      "intro": "Davut yıldızı, menora ve Yahudi geleneğinden diğer semboller.",
+      "symbols": [
+        {
+          "char": "✡",
+          "label": "Davut yıldızı"
+        },
+        {
+          "char": "🕍",
+          "label": "Sinagog"
+        },
+        {
+          "char": "🕎",
+          "label": "Menora"
+        }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "Dharma dinleri",
+      "h2": "Dharma Dinlerinin Sembolleri",
+      "intro": "Hinduizm, Budizm, Caynizm ve Sihizm sembolleri.",
+      "symbols": [
+        {
+          "char": "☸",
+          "label": "Dharma çarkı"
+        },
+        {
+          "char": "🕉",
+          "label": "Om (emoji)"
+        },
+        {
+          "char": "卍",
+          "label": "Manji (Budist uğur işareti, sola dönük)"
+        },
+        {
+          "char": "☬",
+          "label": "Adi Şakti (khanda)"
+        },
+        {
+          "char": "🛕",
+          "label": "Hindu tapınağı"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda (emoji)"
+        },
+        {
+          "char": "🔱",
+          "label": "Trişula (üç çatallı mızrak)"
+        },
+        {
+          "char": "ॐ",
+          "label": "Om (Devanagari)"
+        },
+        {
+          "char": "🦚",
+          "label": "Tavus kuşu"
+        },
+        {
+          "char": "🪶",
+          "label": "Tavus kuşu tüyü"
+        },
+        {
+          "char": "🪈",
+          "label": "Flüt"
+        },
+        {
+          "char": "🪷",
+          "label": "Nilüfer"
+        },
+        {
+          "char": "🪔",
+          "label": "Diya kandili"
+        },
+        {
+          "char": "🙏",
+          "label": "Birleştirilmiş eller"
+        },
+        {
+          "char": "🧘",
+          "label": "Lotus oturuşunda kişi (meditasyon)"
+        }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "Doğu Asya",
+      "h2": "Doğu Asya Manevi Sembolleri",
+      "intro": "Taoizm, Şintoizm ve diğer Doğu Asya geleneklerinin sembolleri.",
+      "symbols": [
+        {
+          "char": "☯",
+          "label": "Yin yang"
+        },
+        {
+          "char": "☰",
+          "label": "Gök trigramı"
+        },
+        {
+          "char": "☱",
+          "label": "Göl trigramı"
+        },
+        {
+          "char": "☲",
+          "label": "Ateş trigramı"
+        },
+        {
+          "char": "☳",
+          "label": "Gök gürültüsü trigramı"
+        },
+        {
+          "char": "☴",
+          "label": "Rüzgâr trigramı"
+        },
+        {
+          "char": "☵",
+          "label": "Su trigramı"
+        },
+        {
+          "char": "☶",
+          "label": "Dağ trigramı"
+        },
+        {
+          "char": "☷",
+          "label": "Toprak trigramı"
+        },
+        {
+          "char": "⛩",
+          "label": "Şinto tapınağı (torii)"
+        },
+        {
+          "char": "卐",
+          "label": "Doğu Asya uğur gamalı haçı (sağa dönük)"
+        }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Çizgiler",
+      "h2": "Yin ve Yang Çizgileri",
+      "intro": "Yukarıdaki I Ching trigramlarını oluşturan tek ve çift çizgi biçimleri.",
+      "symbols": [
+        {
+          "char": "⚊",
+          "label": "Yang tek çizgisi"
+        },
+        {
+          "char": "⚋",
+          "label": "Yin tek çizgisi"
+        },
+        {
+          "char": "⚌",
+          "label": "Büyük yang çift çizgisi"
+        },
+        {
+          "char": "⚍",
+          "label": "Küçük yin çift çizgisi"
+        },
+        {
+          "char": "⚎",
+          "label": "Küçük yang çift çizgisi"
+        },
+        {
+          "char": "⚏",
+          "label": "Büyük yin çift çizgisi"
+        }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Evrensel manevi",
+      "h2": "Evrensel Manevi Semboller",
+      "intro": "Birden fazla gelenekte kullanılan ya da evrensel olarak tanınan semboller.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Barış sembolü"
+        },
+        {
+          "char": "⚛",
+          "label": "Atom sembolü"
+        },
+        {
+          "char": "🔯",
+          "label": "Ortası noktalı altı köşeli yıldız"
+        },
+        {
+          "char": "⚕",
+          "label": "Asklepios asası"
+        },
+        {
+          "char": "☥",
+          "label": "Ankh"
+        }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "Barış ve iyi niyet",
+      "h2": "Barış, El Hareketleri ve İyi Niyet",
+      "intro": "Yukarıdaki barış sembolüyle birlikte kullanılan el hareketleri, güvercinler ve iyi niyet sembolleri.",
+      "symbols": [
+        {
+          "char": "✌️",
+          "label": "Zafer işareti"
+        },
+        {
+          "char": "🙏",
+          "label": "Birleştirilmiş eller"
+        },
+        {
+          "char": "🕊️",
+          "label": "Güvercin"
+        },
+        {
+          "char": "🫒",
+          "label": "Zeytin"
+        },
+        {
+          "char": "🌿",
+          "label": "Zeytin dalı"
+        },
+        {
+          "char": "🤝",
+          "label": "Tokalaşma"
+        },
+        {
+          "char": "🫶",
+          "label": "Elle kalp"
+        },
+        {
+          "char": "👐",
+          "label": "Açık eller"
+        }
+      ]
+    }
+  ],
+  "cta": "Düz metni kalın, italik, el yazısı ve 100'den fazla Unicode font stiline dönüştürmek için UltraTextGen'i kullan — ücretsiz ve anında.",
+  "related": [
+    {
+      "href": "/tr/library/islami-semboller/",
+      "title": "İslami Semboller",
+      "desc": "Ay yıldız, Arapça ligatürler ve bayram tebrikleri."
+    },
+    {
+      "href": "/tr/library/kalp-sembolleri/",
+      "title": "Kalp Sembolleri",
+      "desc": "Her şekil ve stilde kalpler ♥ ♡ ❤."
+    },
+    {
+      "href": "/tr/symbol/baris-isareti/",
+      "title": "Barış Sembolü (☮)",
+      "desc": "Barış sembolünün tarihi ve kullanımı."
+    },
+    {
+      "href": "/tr/symbol/yin-yang-sembolu/",
+      "title": "Yin Yang Sembolü (☯)",
+      "desc": "Yin yang sembolünün anlamı ve kökeni."
+    }
+  ]
+}

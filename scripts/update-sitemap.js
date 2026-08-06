@@ -55,6 +55,18 @@ function getOgImage(filePath) {
   return m[1];
 }
 
+// A sitemap is a list of pages we WANT indexed — advertising a noindex page
+// (the /usecase/*/embed/ widgets, etc.) sends crawlers a contradictory signal.
+const NOINDEX_RE = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']/i;
+
+function isNoindex(filePath) {
+  try {
+    return NOINDEX_RE.test(fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8'));
+  } catch {
+    return false;
+  }
+}
+
 // ─── URL helpers ──────────────────────────────────────────────────────────────
 
 function pathToUrl(filePath) {
@@ -153,8 +165,12 @@ function urlSortKey(url) {
 function generateSitemap() {
   console.log('🔍 Scanning for index.html pages...');
 
-  const indexFiles = findIndexFiles(REPO_ROOT);
-  console.log(`   Pages discovered: ${indexFiles.length}`);
+  const discovered = findIndexFiles(REPO_ROOT);
+  const indexFiles = discovered.filter(f => !isNoindex(f));
+  console.log(`   Pages discovered: ${discovered.length}`);
+  if (discovered.length !== indexFiles.length) {
+    console.log(`   Skipped noindex:  ${discovered.length - indexFiles.length}`);
+  }
 
   // Build URL entries — fully derived from filesystem, no sitemap.xml read
   const urlEntries = indexFiles

@@ -12,10 +12,55 @@
  * content actually change" means the same thing in both places.
  */
 
+const fs = require('fs');
+const path = require('path');
 const cheerio = require('cheerio');
 const { normalizeUrl } = require('./translation-clusters');
 
-const CONTENT_LINK_RE = /^\/(category|library|symbol|guide|answers|usecase|updates)\//;
+// Catalogue pages — pillar indexes whose internal-link list is an inventory of
+// what exists in that locale, not translated content. EN library/index carries
+// ~306 content links against 7-50 on its locale siblings, and category/index
+// carries 25 against 0, because a locale catalogue must not link English-only
+// pages. Counting those links as structural drift made every new EN page demand
+// a locale sibling edit, which is why the link set is dropped for these pages
+// (and only these). Every other fingerprint component still applies — see
+// data/parity_catalogue_pages.json for the full rationale and the scope limit.
+const CATALOGUE_CONFIG_PATH = path.join(__dirname, '..', '..', 'data', 'parity_catalogue_pages.json');
+
+let cataloguePatterns = null;
+
+function loadCataloguePatterns() {
+  if (cataloguePatterns) return cataloguePatterns;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(CATALOGUE_CONFIG_PATH, 'utf8'));
+    cataloguePatterns = Array.isArray(parsed.cataloguePatterns) ? parsed.cataloguePatterns : [];
+  } catch {
+    // Missing/malformed config must not silently disable the gate's link
+    // coverage for every page — fall back to "nothing is a catalogue".
+    cataloguePatterns = [];
+  }
+  return cataloguePatterns;
+}
+
+/**
+ * Is this repo-relative path a pillar catalogue index (EN or locale)?
+ * Matches `library/index.html` and `<lang>/library/index.html`, but not
+ * `library/currency-symbols/index.html`.
+ */
+function isCataloguePage(relPath) {
+  if (!relPath) return false;
+  const rel = String(relPath).replace(/^[./]+/, '').replace(/\\/g, '/');
+  return loadCataloguePatterns().some(
+    (pattern) => rel === pattern || rel.endsWith(`/${pattern}`)
+  );
+}
+
+// `events` was missing until 2026-07-31: the section shipped after this regex
+// was written, so every /events/ link was invisible to the fingerprint. A PR
+// adding event links across 26 library hubs reported "0 pairs with unsynced
+// content change" — a blind pass, not a clean one. Any new content type has to
+// be added here or the parity gate silently stops covering it.
+const CONTENT_LINK_RE = /^\/(category|library|symbol|guide|answers|usecase|updates|events)\//;
 
 /**
  * @param {Map} byUrl - from discoverClusters(): normalized canonical -> record
@@ -82,17 +127,28 @@ function createFingerprinter(byUrl, localeCodes) {
     return count;
   }
 
-  function fingerprint(html) {
+  /**
+   * @param {string} html
+   * @param {object} [opts]
+   * @param {string} [opts.relPath] - repo-relative path; when it names a
+   *        catalogue index the inventory link set is excluded (see
+   *        isCataloguePage / data/parity_catalogue_pages.json).
+   */
+  function fingerprint(html, opts) {
     const $ = cheerio.load(html);
+    const catalogue = isCataloguePage(opts && opts.relPath);
     const links = new Set();
-    $('a[href]').each((_, el) => {
-      const href = $(el).attr('href');
-      if (!href) return;
-      const norm = normalizeContentHref(href);
-      if (norm && CONTENT_LINK_RE.test(norm)) links.add(norm);
-    });
+    if (!catalogue) {
+      $('a[href]').each((_, el) => {
+        const href = $(el).attr('href');
+        if (!href) return;
+        const norm = normalizeContentHref(href);
+        if (norm && CONTENT_LINK_RE.test(norm)) links.add(norm);
+      });
+    }
     return {
       links,
+      catalogue,
       h2Count: $('h2').length,
       faqCount: countJsonLdQuestions(html),
       symbolTileCount: $('.symbol-tile').length,
@@ -122,4 +178,4 @@ function createFingerprinter(byUrl, localeCodes) {
   return { fingerprint, diff, score, normalizeContentHref };
 }
 
-module.exports = { createFingerprinter, CONTENT_LINK_RE };
+module.exports = { createFingerprinter, isCataloguePage, CONTENT_LINK_RE };

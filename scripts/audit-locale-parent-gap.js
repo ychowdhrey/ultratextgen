@@ -5,8 +5,8 @@
  * audit-locale-parent-gap.js
  *
  * Whole-site, point-in-time discovery pass: the systematic version of the FR
- * `/symbol/` blind spot (EN had 77 symbol pages, FR had 6; ~49,960/mo of
- * directly-evidenced French demand sat undetected until a manual Semrush
+ * `/symbol/` blind spot (EN had 77 symbol pages, FR had 6; substantial
+ * directly-evidenced French demand sat undetected until a manual keyword
  * pull found it — see data/locale_parent_gap_audit.json for that entry).
  *
  * For every Core-tier pattern in data/core_parent_set.json x every qualified

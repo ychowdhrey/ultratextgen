@@ -1,0 +1,443 @@
+{
+  "slug": "ky-hieu-tien-te",
+  "lang": "vi",
+  "title": "Ký Hiệu Tiền Tệ: Copy Paste Biểu Tượng Tiền Các Nước",
+  "meta_description": "Xem và sao chép ký hiệu tiền tệ, biểu tượng tiền và ký tự tài chính Unicode của các nước. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "breadcrumb": "Ký Hiệu Tiền Tệ",
+  "hero_h1": "Ký Hiệu Tiền Tệ",
+  "hero_tagline": "Bộ sưu tập tham khảo các ký hiệu tiền tệ, biểu tượng tiền và ký tự tài chính Unicode. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "intro": "Thư viện này gồm ký hiệu của các đồng tiền lớn trên thế giới, biểu tượng tiền theo khu vực, ký hiệu tiền tệ trong lịch sử và các ký tự tài chính Unicode liên quan. Ký hiệu được sắp xếp theo khu vực địa lý và mục đích sử dụng. Tất cả đều là văn bản Unicode thông thường nên dán sạch vào tiểu sử, trang sản phẩm, bảng tính và bài đăng. Đồng Việt Nam có ký hiệu riêng là ₫ (U+20AB), nằm trong mục tiền tệ châu Á bên dưới — khác với chữ “đ” thường trong bảng chữ cái tiếng Việt.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/vi/library/ky-hieu-tien-te/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "library_url": "https://ultratextgen.com/vi/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/currency-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-moneda/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-euro/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwapye-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/euroteken/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/para-birimi-sembolleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/valuta-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/waehrungssymbole/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/valuta-symboler/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-monetaires/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/currency-symbols/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-valyut/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-moeda/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-walut/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/currency-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-mata-uang/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-tien-te/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "major-currencies",
+      "label": "Tiền tệ chính",
+      "h2": "Các Đồng Tiền Lớn Của Thế Giới",
+      "intro": "Ký hiệu của những đồng tiền được giao dịch và nhận biết rộng rãi nhất thế giới.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Đô la"
+        },
+        {
+          "char": "€",
+          "label": "Euro"
+        },
+        {
+          "char": "£",
+          "label": "Bảng Anh"
+        },
+        {
+          "char": "¥",
+          "label": "Yên / Nhân dân tệ"
+        },
+        {
+          "char": "₹",
+          "label": "Rupee Ấn Độ"
+        },
+        {
+          "char": "₽",
+          "label": "Rúp"
+        },
+        {
+          "char": "₩",
+          "label": "Won"
+        },
+        {
+          "char": "₿",
+          "label": "Bitcoin"
+        }
+      ]
+    },
+    {
+      "id": "european-currencies",
+      "label": "Châu Âu",
+      "h2": "Ký Hiệu Tiền Tệ Châu Âu",
+      "intro": "Ký hiệu tiền tệ dùng ở các nước châu Âu, gồm cả đơn vị hiện hành và trong lịch sử.",
+      "symbols": [
+        {
+          "char": "€",
+          "label": "Euro"
+        },
+        {
+          "char": "£",
+          "label": "Bảng Anh"
+        },
+        {
+          "char": "₴",
+          "label": "Hryvnia"
+        },
+        {
+          "char": "₾",
+          "label": "Lari"
+        },
+        {
+          "char": "₺",
+          "label": "Lira Thổ Nhĩ Kỳ"
+        },
+        {
+          "char": "ƒ",
+          "label": "Florin"
+        },
+        {
+          "char": "₣",
+          "label": "Franc Pháp"
+        },
+        {
+          "char": "₤",
+          "label": "Lira"
+        },
+        {
+          "char": "₯",
+          "label": "Drachma"
+        },
+        {
+          "char": "₼",
+          "label": "Manat"
+        }
+      ]
+    },
+    {
+      "id": "african-currencies",
+      "label": "Châu Phi",
+      "h2": "Ký Hiệu Tiền Tệ Châu Phi",
+      "intro": "Ký hiệu của các đơn vị tiền tệ dùng tại các nước châu Phi.",
+      "symbols": [
+        {
+          "char": "₦",
+          "label": "Naira"
+        },
+        {
+          "char": "₵",
+          "label": "Cedi"
+        }
+      ]
+    },
+    {
+      "id": "asian-currencies",
+      "label": "Châu Á",
+      "h2": "Ký Hiệu Tiền Tệ Châu Á",
+      "intro": "Ký hiệu tiền tệ của Đông Á, Nam Á, Trung Á và Trung Đông.",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "Yên / Nhân dân tệ"
+        },
+        {
+          "char": "₹",
+          "label": "Rupee Ấn Độ"
+        },
+        {
+          "char": "₩",
+          "label": "Won"
+        },
+        {
+          "char": "₭",
+          "label": "Kíp"
+        },
+        {
+          "char": "₮",
+          "label": "Tugrik"
+        },
+        {
+          "char": "₸",
+          "label": "Tenge"
+        },
+        {
+          "char": "₪",
+          "label": "Shekel"
+        },
+        {
+          "char": "﷼",
+          "label": "Rial"
+        },
+        {
+          "char": "₨",
+          "label": "Ký hiệu rupee"
+        },
+        {
+          "char": "₫",
+          "label": "Đồng"
+        },
+        {
+          "char": "৳",
+          "label": "Taka"
+        },
+        {
+          "char": "௹",
+          "label": "Rupee Tamil"
+        }
+      ]
+    },
+    {
+      "id": "americas-currencies",
+      "label": "Châu Mỹ",
+      "h2": "Ký Hiệu Tiền Tệ Châu Mỹ",
+      "intro": "Ký hiệu tiền tệ của Bắc Mỹ, Trung Mỹ và Nam Mỹ.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Đô la"
+        },
+        {
+          "char": "¢",
+          "label": "Xu"
+        },
+        {
+          "char": "₡",
+          "label": "Colón"
+        },
+        {
+          "char": "₲",
+          "label": "Guaraní"
+        },
+        {
+          "char": "₱",
+          "label": "Peso"
+        }
+      ]
+    },
+    {
+      "id": "historic-currencies",
+      "label": "Lịch sử",
+      "h2": "Ký Hiệu Tiền Tệ Trong Lịch Sử",
+      "intro": "Những ký hiệu tiền tệ không còn dùng phổ biến hoặc mang giá trị lịch sử.",
+      "symbols": [
+        {
+          "char": "₧",
+          "label": "Peseta"
+        },
+        {
+          "char": "₰",
+          "label": "Pfennig Đức"
+        },
+        {
+          "char": "₳",
+          "label": "Austral"
+        },
+        {
+          "char": "₶",
+          "label": "Livre Tournois"
+        },
+        {
+          "char": "₷",
+          "label": "Spesmilo"
+        }
+      ]
+    },
+    {
+      "id": "financial-symbols",
+      "label": "Tài chính",
+      "h2": "Ký Hiệu Tài Chính & Khác",
+      "intro": "Ký hiệu tài chính dùng chung, dấu phần nghìn và ký hiệu tiền mã hóa.",
+      "symbols": [
+        {
+          "char": "¤",
+          "label": "Ký hiệu tiền tệ chung"
+        },
+        {
+          "char": "‰",
+          "label": "Phần nghìn"
+        },
+        {
+          "char": "‱",
+          "label": "Phần vạn"
+        },
+        {
+          "char": "Ξ",
+          "label": "Ethereum"
+        },
+        {
+          "char": "₠",
+          "label": "Ký hiệu Euro-Currency"
+        }
+      ]
+    },
+    {
+      "id": "additional-currency-symbols",
+      "label": "Trọn khối Unicode",
+      "h2": "Phần Còn Lại Của Khối Ký Hiệu Tiền Tệ Unicode",
+      "intro": "Các điểm mã còn lại trong khối Currency Symbols của Unicode (U+20A0–U+20CF) chưa liệt kê ở trên.",
+      "symbols": [
+        {
+          "char": "₢",
+          "label": "Cruzeiro"
+        },
+        {
+          "char": "₥",
+          "label": "Mill"
+        },
+        {
+          "char": "₻",
+          "label": "Mark Bắc Âu"
+        },
+        {
+          "char": "⃀",
+          "label": "Som"
+        }
+      ]
+    },
+    {
+      "id": "cryptocurrency",
+      "label": "Tiền mã hóa",
+      "h2": "Ký Hiệu Tiền Mã Hóa & Tiền Số",
+      "intro": "Các ký hiệu dùng cho những đồng tiền mã hóa phổ biến.",
+      "symbols": [
+        {
+          "char": "₿",
+          "label": "Bitcoin"
+        },
+        {
+          "char": "Ξ",
+          "label": "Ethereum"
+        },
+        {
+          "char": "Ł",
+          "label": "Litecoin"
+        },
+        {
+          "char": "Ð",
+          "label": "Dogecoin"
+        },
+        {
+          "char": "Ɱ",
+          "label": "Monero"
+        },
+        {
+          "char": "฿",
+          "label": "Baht / Bitcoin"
+        }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để chuyển văn bản thường thành chữ đậm, nghiêng, viết tay và hơn 100 kiểu phông Unicode khác — miễn phí và tức thì.",
+  "related": [
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La ($)",
+      "desc": "Nguồn gốc ký hiệu đô la, mã Alt và cách gõ."
+    },
+    {
+      "href": "/vi/symbol/euro-sign/",
+      "title": "Ký Hiệu Euro (€)",
+      "desc": "Lịch sử ký hiệu euro và mọi cách nhập."
+    },
+    {
+      "href": "/vi/symbol/bitcoin-symbol/",
+      "title": "Ký Hiệu Bitcoin (₿)",
+      "desc": "Ký hiệu bitcoin, điểm mã Unicode và mức hỗ trợ."
+    },
+    {
+      "href": "/vi/symbol/cent-sign/",
+      "title": "Ký Hiệu Xu (¢)",
+      "desc": "Ký hiệu xu, mã Alt và cách dùng."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Cộng trừ, nhân, chia, căn bậc hai và vô cực."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ký hiệu tiền Việt Nam là gì và gõ thế nào?",
+      "a": "Ký hiệu chính thức của đồng Việt Nam là ₫ (U+20AB, DONG SIGN) — một ký tự Unicode riêng, không phải chữ “đ” trong bảng chữ cái tiếng Việt. Cách nhanh nhất là nhấn vào ô ₫ trong mục tiền tệ châu Á ở trên để sao chép. Trên Windows, giữ Alt rồi gõ 8363 ở bàn phím số. Trong văn bản tiếng Việt, thông lệ phổ biến vẫn là viết “VNĐ” hoặc “đồng” sau số tiền."
+    },
+    {
+      "q": "Ký hiệu đặt trước hay sau số tiền?",
+      "a": "Tùy theo ngôn ngữ chứ không phải theo ký hiệu. Tiếng Việt đặt đơn vị sau số tiền và có dấu cách: 250.000 ₫. Tiếng Anh đặt trước và không có dấu cách: $50. Ký tự Unicode vẫn là một, chỉ khác quy ước trình bày."
+    },
+    {
+      "q": "Vì sao một số ký hiệu tiền tệ hiện ra ô vuông trống?",
+      "a": "Ô vuông trống (thường gọi là tofu) nghĩa là phông chữ trên thiết bị của bạn không có ký tự đó. Điều này hay xảy ra với các ký hiệu hiếm hoặc mới thêm gần đây, như som Kyrgyzstan (⃀) hay mark Bắc Âu (₻). Những ký hiệu thông dụng như $, €, £, ¥ và ₫ được hỗ trợ ở mọi nơi."
+    },
+    {
+      "q": "₨ và ₹ khác nhau thế nào?",
+      "a": "₨ là ký hiệu rupee dùng chung cho nhiều nước (Pakistan, Sri Lanka, Nepal, Mauritius). ₹ là ký hiệu riêng của rupee Ấn Độ, được Ấn Độ chọn năm 2010 và bổ sung vào Unicode cùng năm. Với số tiền bằng rupee Ấn Độ, hãy dùng ₹."
+    }
+  ]
+}

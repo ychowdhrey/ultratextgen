@@ -135,6 +135,7 @@ Kontextuelle Seiten, die auf bestimmte Nutzerziele ausgerichtet sind, jeweils mi
 - https://ultratextgen.com/usecase/bio-font/
 - https://ultratextgen.com/usecase/clan-tag-generator/
 - https://ultratextgen.com/usecase/clash-of-clans-name-generator/
+- https://ultratextgen.com/usecase/clash-royale-name-generator/
 - https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
 - https://ultratextgen.com/usecase/emoji-letters/
@@ -150,6 +151,7 @@ Kontextuelle Seiten, die auf bestimmte Nutzerziele ausgerichtet sind, jeweils mi
 - https://ultratextgen.com/usecase/nickname-generator/
 - https://ultratextgen.com/usecase/old-english-translator/
 - https://ultratextgen.com/usecase/pirate-translator/
+- https://ultratextgen.com/usecase/playstation-name-generator/
 - https://ultratextgen.com/usecase/pubg-name-generator/
 - https://ultratextgen.com/usecase/repeat-text/
 - https://ultratextgen.com/usecase/scrolling-text/
@@ -159,6 +161,7 @@ Kontextuelle Seiten, die auf bestimmte Nutzerziele ausgerichtet sind, jeweils mi
 - https://ultratextgen.com/usecase/text-to-emoji/
 - https://ultratextgen.com/usecase/valorant-name-generator/
 - https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/xbox-name-generator/
 - https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
@@ -588,8 +591,4 @@ Keine Frameworks. Keine Build-Tools für das Frontend erforderlich. Reiner brows
 - https://ultratextgen.com/embed/name-checker/
 - https://ultratextgen.com/embed/nickname-generator/
 - https://ultratextgen.com/embed/zalgo-text-generator/
-- https://ultratextgen.com/usecase/bio-font/embed/
-- https://ultratextgen.com/usecase/name-checker/embed/
-- https://ultratextgen.com/usecase/nickname-generator/embed/
-- https://ultratextgen.com/usecase/zalgo-text/embed/
 <!-- END_EMBED -->

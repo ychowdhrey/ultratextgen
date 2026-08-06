@@ -99,7 +99,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "image": "https://ultratextgen.com/assets/og/events-easter.png"
 }
 </script>
 
@@ -122,7 +123,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "When is Easter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Easter falls on a Sunday between March 22 and April 25 each year (the exact date shifts with the lunar calendar). Check a current calendar for the exact date, then come back and style your greeting for it."
+        "text": "The next Easter is Sunday, March 28, 2027. After that it falls on Sunday, April 16, 2028, then Sunday, April 1, 2029."
       }
     },
     {
@@ -186,8 +187,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-card">
       <h1 class="hero-headline">Easter Text &amp; Symbol Generator</h1>
       <p class="hero-tagline">Type a name or spring wish and style it in cute, script, and elegant fonts, then copy bunny, egg, and chick emoji, kaomoji, and ASCII art — or tap a ready-made Easter phrase to style it instantly.</p>
+      <p class="event-next-date" id="eventNextDate" data-event-dates="[&quot;2027-03-28&quot;, &quot;2028-04-16&quot;, &quot;2029-04-01&quot;, &quot;2030-04-21&quot;, &quot;2031-04-13&quot;, &quot;2032-03-28&quot;]" data-template="Next Easter: {date}">Next Easter: Sunday, March 28, 2027</p>
       <div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
@@ -206,6 +208,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="block-example">
       <strong>Easter:</strong> on a Sunday between March 22 and April 25 each year (the exact date shifts with the lunar calendar)
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">Wishes &amp; Messages</span>
+    <h2>Easter Wishes &amp; Messages</h2>
+    <p class="editorial-intro">Tap any wish to drop it into the box above — every font below then restyles it instantly, so you can copy it decorated in one step.</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -243,15 +254,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p class="editorial-intro">Curated multi-line pieces — tap Copy to grab one with its line breaks and spacing intact.</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
     <p class="u-secondary-tight u-mt-15">Want to type your own name or message into a live block-letter banner instead? Try the <a href="/ascii-art-generator/">ASCII Art Generator</a>.</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Phrase Bank</span>
-    <h2>Easter Phrase Bank</h2>
-    <p class="editorial-intro">Tap a phrase to drop it into the box up top and see every font style above restyle it instantly.</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -298,7 +300,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">When is Easter?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <div class="faq-answer">Easter falls on a Sunday between March 22 and April 25 each year (the exact date shifts with the lunar calendar). Check a current calendar for the exact date, then come back and style your greeting for it.</div>
+      <div class="faq-answer">The next Easter is Sunday, March 28, 2027. After that it falls on Sunday, April 16, 2028, then Sunday, April 1, 2029.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">How do I use the Easter generator?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -405,45 +407,118 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "phraseBank": [
     {
       "text": "Happy Easter",
-      "nativeScript": "Happy Easter",
-      "romanization": "Happy Easter",
-      "translation": "The classic, universal Easter greeting"
+      "translation": "The one that always works.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Happy Easter to you and your family",
+      "translation": "Standard card wording.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Wishing you a joyful Easter",
+      "translation": "Slightly warmer.",
+      "group": "Classic greetings"
     },
     {
       "text": "He Is Risen",
-      "nativeScript": "He Is Risen",
-      "romanization": "He Is Risen",
-      "translation": "The traditional Christian Easter greeting"
+      "translation": "The traditional religious greeting.",
+      "group": "Classic greetings"
     },
     {
-      "text": "Hoppy Easter",
-      "nativeScript": "Hoppy Easter",
-      "romanization": "Hoppy Easter",
-      "translation": "A playful bunny-themed pun on \"Happy Easter\""
+      "text": "Blessed Easter",
+      "translation": "Religious but understated.",
+      "group": "Classic greetings"
     },
     {
-      "text": "Some Bunny Loves You",
-      "nativeScript": "Some Bunny Loves You",
-      "romanization": "Some Bunny Loves You",
-      "translation": "A card-ready pun greeting for family and kids"
+      "text": "Happy Easter to you too!",
+      "translation": "Plain reply.",
+      "group": "Replies"
     },
     {
-      "text": "Egg-cellent Easter",
-      "nativeScript": "Egg-cellent Easter",
-      "romanization": "Egg-cellent Easter",
-      "translation": "A playful pun caption for photos and captions"
+      "text": "Thank you — enjoy the long weekend",
+      "translation": "Reply that works where Easter is a holiday weekend.",
+      "group": "Replies"
     },
     {
-      "text": "Wishing You a Joyful Easter",
-      "nativeScript": "Wishing You a Joyful Easter",
-      "romanization": "Wishing You a Joyful Easter",
-      "translation": "A warmer, card-length wish"
+      "text": "Happy Easter to my favourite egg hunters",
+      "translation": "For kids in the family.",
+      "group": "For family"
     },
     {
-      "text": "Feliz Pascua",
-      "nativeScript": "Feliz Pascua",
-      "romanization": "feh-LEEZ PAHS-kwah",
-      "translation": "Happy Easter (Spanish)"
+      "text": "Wishing your family a bright and happy Easter",
+      "translation": "Family card wording.",
+      "group": "For family"
+    },
+    {
+      "text": "Hope your Easter is full of chocolate and sunshine",
+      "translation": "Light family message.",
+      "group": "For family"
+    },
+    {
+      "text": "Happy first Easter, little one",
+      "translation": "For a baby's first Easter.",
+      "group": "For family"
+    },
+    {
+      "text": "Missing you this Easter",
+      "translation": "For family you're apart from.",
+      "group": "For family"
+    },
+    {
+      "text": "Happy Easter! May your chocolate outnumber your steps",
+      "translation": "Playful message.",
+      "group": "For friends"
+    },
+    {
+      "text": "Hopping by to say Happy Easter",
+      "translation": "Pun greeting that suits a story.",
+      "group": "For friends"
+    },
+    {
+      "text": "Somebunny loves you",
+      "translation": "The classic Easter pun.",
+      "group": "For friends"
+    },
+    {
+      "text": "Wishing you a happy and restful Easter",
+      "translation": "Safe for colleagues and clients.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Happy Easter from all of us",
+      "translation": "Team or company message.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Enjoy the long weekend — Happy Easter",
+      "translation": "Good for an out-of-office note.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Happy Easter",
+      "translation": "The caption that always works.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Egg hunt champion",
+      "translation": "For a kids' photo.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Chocolate for breakfast",
+      "translation": "Playful caption.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Pastels and sunshine",
+      "translation": "Spring-leaning caption.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Hop to it",
+      "translation": "Three words, works anywhere.",
+      "group": "Short for a caption"
     }
   ]
 };</script>
@@ -451,6 +526,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>

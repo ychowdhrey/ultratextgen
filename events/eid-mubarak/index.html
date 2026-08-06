@@ -126,7 +126,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "When is Eid Mubarak?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eid Mubarak falls twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later. Check a current calendar for the exact date, then come back and style your greeting for it."
+        "text": "Eid Mubarak moves each year against the Gregorian calendar because it follows the Hijri (Islamic lunar) calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side."
       }
     },
     {
@@ -198,9 +198,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-card">
       <h1 class="hero-headline">Eid Mubarak Text &amp; Symbol Generator</h1>
       <p class="hero-tagline">Type a name or wish and style it in curated fonts, then copy crescent moons, mosque and prayer emoji, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.</p>
+      <p class="event-next-date" id="eventNextDate" data-occurrence="{&quot;type&quot;: &quot;islamic&quot;, &quot;month&quot;: 10, &quot;day&quot;: 1, &quot;calendar_name&quot;: &quot;the Hijri (Islamic lunar) calendar&quot;}" data-template="Next Eid Mubarak: {date}" hidden></p>
       <p class="u-secondary-tight">Also known as: Eid al-Fitr, Eid al-Adha, Eid Mubarak</p>
       <div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
@@ -211,7 +212,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
        fetchpriority="high" alt="">
 </figure>
 
-
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
@@ -220,6 +220,25 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="block-example">
       <strong>Eid Mubarak:</strong> twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">Wishes &amp; Messages</span>
+    <h2>Eid Mubarak Wishes &amp; Messages</h2>
+    <p class="editorial-intro">Tap any wish to drop it into the box above — every font below then restyles it instantly, so you can copy it decorated in one step.</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>
+    <p class="u-secondary-tight u-mt-15">Not sure what "Eid Mubarak" means or how to reply to it? Read <a href="/answers/eid-mubarak-meaning-and-reply/">Eid Mubarak: meaning and how to reply</a>.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventNativeSection">
+    <span class="article-section-label">In Arabic</span>
+    <h2>Eid Mubarak in Arabic</h2>
+    <p class="editorial-intro">Tap any line to copy it in Arabic. These are the native-script forms of the greetings above — paste them straight into a message, card, or bio.</p>
+    <div class="glyph-grid" id="eventNativeGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -257,16 +276,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p class="editorial-intro">Curated multi-line pieces — tap Copy to grab one with its line breaks and spacing intact.</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
     <p class="u-secondary-tight u-mt-15">Want to type your own name or message into a live block-letter banner instead? Try the <a href="/ascii-art-generator/">ASCII Art Generator</a>.</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Phrase Bank</span>
-    <h2>Eid Mubarak Phrase Bank</h2>
-    <p class="editorial-intro">Tap a phrase to drop it into the box up top and see every font style above restyle it instantly.</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
-    <p class="u-secondary-tight u-mt-15">Not sure what "Eid Mubarak" means or how to reply to it? Read <a href="/answers/eid-mubarak-meaning-and-reply/">Eid Mubarak: meaning and how to reply</a>.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -313,7 +322,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">When is Eid Mubarak?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <div class="faq-answer">Eid Mubarak falls twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later. Check a current calendar for the exact date, then come back and style your greeting for it.</div>
+      <div class="faq-answer">Eid Mubarak moves each year against the Gregorian calendar because it follows the Hijri (Islamic lunar) calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">How do I use the Eid Mubarak generator?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -438,50 +447,156 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "text": "Eid Mubarak",
       "nativeScript": "عيد مبارك",
-      "romanization": "Eid Mubarak",
-      "translation": "Blessed Eid"
+      "romanization": "ʿĪd Mubārak",
+      "translation": "Blessed Eid — the standard greeting, used for both Eid al-Fitr and Eid al-Adha.",
+      "group": "Classic greetings"
     },
     {
       "text": "Eid Sa'id",
       "nativeScript": "عيد سعيد",
-      "romanization": "Eid Sa'id",
-      "translation": "Happy Eid"
+      "romanization": "ʿĪd Saʿīd",
+      "translation": "Happy Eid — slightly warmer and less formal than Eid Mubarak.",
+      "group": "Classic greetings"
     },
     {
-      "text": "Taqabbal Allahu Minna wa Minkum",
-      "nativeScript": "تقبل الله منا ومنكم",
-      "romanization": "Taqabbal Allahu minna wa minkum",
-      "translation": "May Allah accept [our good deeds] from us and from you — a traditional formal reply to an Eid greeting"
+      "text": "Kul aam wa antum bikhair",
+      "nativeScript": "كل عام وأنتم بخير",
+      "romanization": "Kull ʿām wa antum bi-khayr",
+      "translation": "May you be well every year — said at Eid and other yearly occasions.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Eid Adha Mubarak",
+      "nativeScript": "عيد أضحى مبارك",
+      "romanization": "ʿĪd Aḍḥā Mubārak",
+      "translation": "Specifically for Eid al-Adha, the festival of sacrifice.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Eid al-Fitr Mubarak",
+      "nativeScript": "عيد الفطر مبارك",
+      "romanization": "ʿĪd al-Fiṭr Mubārak",
+      "translation": "Specifically for Eid al-Fitr, at the end of Ramadan.",
+      "group": "Classic greetings"
     },
     {
       "text": "Happy Eid",
-      "nativeScript": "Happy Eid",
-      "romanization": "Happy Eid",
-      "translation": "A simple, universal English Eid greeting"
+      "translation": "The simplest English version — safe for any recipient.",
+      "group": "Classic greetings"
     },
     {
-      "text": "Eid Mubarak to You and Your Family",
-      "nativeScript": "Eid Mubarak to You and Your Family",
-      "romanization": "Eid Mubarak to You and Your Family",
-      "translation": "A warm, family-inclusive Eid greeting"
+      "text": "Taqabbal Allahu minna wa minkum",
+      "nativeScript": "تقبل الله منا ومنكم",
+      "romanization": "Taqabbal Allāhu minnā wa minkum",
+      "translation": "May Allah accept from us and from you — the traditional reply to an Eid greeting.",
+      "group": "Replies"
     },
     {
-      "text": "Wishing You Joy and Blessings This Eid",
-      "nativeScript": "Wishing You Joy and Blessings This Eid",
-      "romanization": "Wishing You Joy and Blessings This Eid",
-      "translation": "A warm English wish for the holiday"
+      "text": "Wa antum bikhair",
+      "nativeScript": "وأنتم بخير",
+      "romanization": "Wa antum bi-khayr",
+      "translation": "And you too, be well — the natural reply to Kul aam wa antum bikhair.",
+      "group": "Replies"
     },
     {
-      "text": "May This Eid Bring Peace and Happiness",
-      "nativeScript": "May This Eid Bring Peace and Happiness",
-      "romanization": "May This Eid Bring Peace and Happiness",
-      "translation": "A reflective English Eid message"
+      "text": "Eid Mubarak to you too",
+      "translation": "Plain English reply when someone greets you first.",
+      "group": "Replies"
     },
     {
-      "text": "Eid Mubarak to You and Yours",
-      "nativeScript": "Eid Mubarak to You and Yours",
-      "romanization": "Eid Mubarak to You and Yours",
-      "translation": "A friendly, inclusive way to greet a group or family"
+      "text": "Ameen, and to you and your family",
+      "translation": "Warm English reply to a blessing-style greeting.",
+      "group": "Replies"
+    },
+    {
+      "text": "Eid Mubarak to you and your family",
+      "translation": "Includes the whole household — the most common card wording.",
+      "group": "For family"
+    },
+    {
+      "text": "May this Eid bring peace and happiness to your home",
+      "translation": "Warmer, card-length family wish.",
+      "group": "For family"
+    },
+    {
+      "text": "Wishing you a joyful Eid with the people you love",
+      "translation": "Works for relatives you won't see in person.",
+      "group": "For family"
+    },
+    {
+      "text": "Eid Mubarak, Mama and Baba",
+      "translation": "Swap in your own words for parents.",
+      "group": "For family"
+    },
+    {
+      "text": "Missing you this Eid — Eid Mubarak",
+      "translation": "For family abroad or away.",
+      "group": "For family"
+    },
+    {
+      "text": "Eid Mubarak! May your day be full of good food and better company",
+      "translation": "Light, informal, good for a group chat.",
+      "group": "For friends"
+    },
+    {
+      "text": "Eid Mubarak — save me some sheer khurma",
+      "translation": "Playful, food-first message between friends.",
+      "group": "For friends"
+    },
+    {
+      "text": "Happy Eid! Hope you got the good outfit this year",
+      "translation": "Casual and funny for close friends.",
+      "group": "For friends"
+    },
+    {
+      "text": "Eid Mubarak from me to you",
+      "translation": "Short and friendly, no formality.",
+      "group": "For friends"
+    },
+    {
+      "text": "Wishing you and your family a blessed Eid",
+      "translation": "Safe for colleagues, clients, and managers.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Eid Mubarak — wishing you peace, health, and prosperity",
+      "translation": "Formal card or email wording.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "On behalf of the whole team, Eid Mubarak",
+      "translation": "For a company message or team-wide note.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "May the blessings of Eid be with you and your loved ones",
+      "translation": "Formal without being stiff.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Eid Mubarak",
+      "translation": "The caption that always works.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Blessed Eid",
+      "translation": "Two words, fits any bio or story.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Eid vibes",
+      "translation": "Casual social-post caption.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Eid, but make it fancy",
+      "translation": "Playful caption for an outfit photo.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Family, food, Eid",
+      "translation": "Short caption for a group photo.",
+      "group": "Short for a caption"
     }
   ]
 };</script>
@@ -489,6 +604,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>
