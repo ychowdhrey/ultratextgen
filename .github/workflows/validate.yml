@@ -71,6 +71,19 @@ jobs:
     permissions:
       contents: read
 
+    # Every validator step below is `<validator> | tee <name>.log`, and a
+    # pipeline's exit status is its LAST command's — `tee` always succeeds, so
+    # without pipefail every one of these steps reported success no matter what
+    # the validator itself exited with. GitHub's default shell for `run:` is
+    # `bash -e {0}`, which has no pipefail; naming `bash` explicitly gets
+    # `bash --noprofile --norc -eo pipefail {0}`. Until this was set, the whole
+    # gating block below was inert: `steps.<id>.outcome` was 'success'
+    # unconditionally, so the "Fail the job" step never fired. Do not remove
+    # this without also removing the `| tee` from every step.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
