@@ -106,6 +106,29 @@
     // name appear invisible to other players — so we flag decorative
     // Unicode as a warning here (strict) rather than treating it as safe.
     clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // YouTube channel names (display names) accept Unicode freely — styled
+    // letters, symbols and emoji all save. Google's own help pages document
+    // the rename throttle ("You can change your channel name twice within a
+    // 14-day period", support.google.com/youtube/answer/2657964) but publish
+    // NO character maximum for the name field; the 50 here is the widely
+    // reported client-side limit and matches the field's observed maxlength,
+    // not a Google document — treat it like PUBG's 14 (real client behaviour,
+    // no official source). One caveat worth knowing that this engine cannot
+    // encode: since 2022 YouTube limits names spelled ENTIRELY in lookalike
+    // special characters (its own example: "¥ouⓉube") as an impersonation/
+    // spam measure — decorated-but-readable names pass, all-symbol names can
+    // be rejected. The page copy owns that nuance.
+    youtube: { label: "YouTube (channel name)", limit: 50, min: 1, weighted: false, noSpace: false, field: "display" },
+    // YouTube @handles are the opposite field: 3-30 characters, letters and
+    // numbers plus underscores, hyphens, periods and Latin middle dots (·) —
+    // none of those four at the start or end — unique across YouTube, and no
+    // decorative Unicode ever (support.google.com/youtube/answer/11585688).
+    // Google also allows letters from ~75 non-Latin scripts with SHORTER
+    // script-specific limits (Han/Hangul 1-10, kana/Ethiopic 2-20); this
+    // ASCII pattern validates the Latin path only, so the page's fail copy
+    // must say "plain letters and numbers" rather than claim non-Latin
+    // handles are impossible.
+    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/ },
     // VRChat Display Names are 4-15 characters and can only be changed once
     // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
     // my name" help article — by far the longest rename cooldown of any rule
