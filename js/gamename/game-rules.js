@@ -498,7 +498,7 @@
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
-    const state = { game: games[0], dirty: false };
+    const state = { game: games[0], dirty: false, lastLevel: null, priming: true };
 
     mount.innerHTML = "";
     mount.classList.add("gr-checker");
@@ -517,6 +517,10 @@
         const tab = e.target.closest(".gr-tab");
         if (!tab) return;
         state.game = tab.getAttribute("data-game");
+        // Same name against a different game's rules is a genuinely new check
+        // (a name that fits Discord's 32 may fail Free Fire's weighted 12), so
+        // clear the last verdict rather than suppressing the event as a repeat.
+        state.lastLevel = null;
         render();
       });
       mount.appendChild(tabsWrap);
@@ -623,9 +627,45 @@
           charRow.appendChild(tile);
         });
       }
+
+      reportVerdict(report);
+    }
+
+    /* Completion event. render() runs on every keystroke, so this fires only
+       when the verdict LEVEL actually changes (empty -> ok -> warn -> fail),
+       not per character — a name being typed produces at most a couple of
+       events, not one per key. The empty state is never reported: it is the
+       initial condition, not an outcome the user reached.
+
+       What this is for: the checker is the site's main product-completion
+       surface on the game-name pages and it has never emitted a single event,
+       so nothing downstream can tell whether it is used, whether it catches
+       real problems, or whether it is ignored furniture. `verdict` is the
+       answer the user actually got; `over_limit` separates "too long" from
+       "unsupported characters", which are different product failures with
+       different fixes. */
+    function reportVerdict(report) {
+      const level = report.level;
+      if (!level || level === "empty") return;
+      // The first render happens at init, against whatever the generator was
+      // pre-filled with — reporting it would count page loads as checks. Record
+      // the level so a later real change still registers as a transition, but
+      // don't emit for it.
+      if (state.priming) { state.lastLevel = level; return; }
+      if (level === state.lastLevel) return;
+      state.lastLevel = level;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "name_check",
+        check_game: state.game,
+        check_verdict: level,
+        check_over_limit: !!(report.limit && report.effective > report.limit)
+      });
     }
 
     render();
+    state.priming = false;
   }
 
   ns.gameRules = {
