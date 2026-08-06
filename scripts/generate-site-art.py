@@ -1311,7 +1311,6 @@ HOME_CARD = "fancy-text-generator-preview"
 
 PAGES = {
   # ---- localized game-nickname generators & symbol libraries (new markets) ----
-  "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
   "pt-library-simbolos-para-free-fire": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
   "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
   "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
