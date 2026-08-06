@@ -122,6 +122,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Jaki jest limit znaków podpisu i nazwy użytkownika na TikToku?","acceptedAnswer":{"@type":"Answer","text":"Podpis na TikToku mieści do 2200 znaków. Bio jest ograniczone do 80 znaków, a nazwa użytkownika może mieć do 24 znaków (tylko litery, cyfry, podkreślenia i kropki)."}},
     {"@type":"Question","name":"Jaki jest limit znaków posta i nagłówka na LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Post na LinkedIn pozwala na do 3000 znaków, choć w feedzie zostaje przycięty przyciskiem „zobacz więcej” po około 200–700 znakach, zależnie od urządzenia. Pole nagłówka jest ograniczone do 220 znaków."}},
     {"@type":"Question","name":"Jaka jest dobra długość tytułu i opisu meta pod SEO?","acceptedAnswer":{"@type":"Answer","text":"Google przycina wyniki według szerokości w pikselach na ekranie, a nie ściśle według liczby znaków, ale w praktyce trzymaj się około 60 znaków dla tytułu meta i około 155 znaków dla opisu meta, aby nie zostały ucięte w wynikach wyszukiwania."}},
+    {"@type":"Question","name":"Ile znaków ma strona rozliczeniowa?","acceptedAnswer":{"@type":"Answer","text":"W tłumaczeniach zwykłych standardem jest 1800 znaków ze spacjami na stronę (część biur przyjmuje 1500 albo 1600 — to kwestia umowy). W tłumaczeniach poświadczonych (przysięgłych) strona ma 1125 znaków ze spacjami, zgodnie z rozporządzeniem Ministra Sprawiedliwości, a każdą rozpoczętą stronę liczy się jako całą. Oba przeliczenia widzisz na żywo w kafelkach statystyk powyżej: „Strony rozliczeniowe (po 1800 zzs)” i „Strony tłum. przysięgłego (po 1125 zzs)”."}},
+    {"@type":"Question","name":"Jak policzyć zzs do wyceny copywritingu?","acceptedAnswer":{"@type":"Answer","text":"Wklej gotowy tekst do licznika powyżej i odczytaj kafelek „Znaki” — to liczba znaków ze spacjami (zzs), na której opiera się większość wycen copywriterskich rozliczanych za każde 1000 zzs. Jeśli rozliczenie jest w znakach bez spacji, użyj kafelka „Znaki (bez spacji)”. Nic nie jest wysyłane na serwer — liczenie odbywa się w Twojej przeglądarce."}},
+    {"@type":"Question","name":"Dlaczego Word i liczniki online pokazują różne liczby znaków?","acceptedAnswer":{"@type":"Answer","text":"Najczęściej przez znaki niewidoczne: Word nie wlicza do statystyki znaczników akapitu ani podziałów wiersza, a część liczników online traktuje każdy enter jak znak. Różnice robią też przypisy — Word domyślnie w ogóle ich nie liczy, dopóki nie zaznaczysz opcji „Uwzględnij pola tekstowe, przypisy dolne i końcowe”. Przy rozliczeniach za zzs ustal z klientem lub biurem jedną metodę liczenia — różnica potrafi sięgnąć kilku procent."}},
     {"@type":"Question","name":"Czy ten licznik jest darmowy i czy zapisuje lub wysyła mój tekst?","acceptedAnswer":{"@type":"Answer","text":"Tak, całkowicie za darmo, bez rejestracji. Każde liczenie odbywa się w Twojej przeglądarce w zwykłym JavaScript — nic, co wpiszesz, nie jest wysyłane, logowane ani nigdzie zapisywane."}}
   ]
 }
@@ -184,7 +187,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Znaki (bez spacji)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Zdania</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Akapity</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Wiersze</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 s</span><span class="counter-stat-label">Czas czytania</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 s</span><span class="counter-stat-label">Czas mówienia</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Grafemy (widoczne znaki)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Jednostki UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Bajty UTF-8</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statStronyRozl">0</span><span class="counter-stat-label">Strony rozliczeniowe (po 1800 zzs)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statStronyPrzys">0</span><span class="counter-stat-label">Strony tłum. przysięgłego (po 1125 zzs)</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -196,6 +206,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Limity znaków na platformach, wyjaśnione</h2>
     <p>Limity znaków istnieją z dwóch różnych powodów i warto wiedzieć, z którym masz do czynienia. <strong>Limity twarde</strong> — 280 znaków na X/Twitterze, 32-znakowy pseudonim na Discordzie, 24-znakowa nazwa użytkownika na TikToku — są egzekwowane przez samą platformę: przekroczysz je, a post albo zapis po prostu zostanie odrzucony. <strong>Limity miękkie/praktyczne</strong> — opis meta w Google, opis filmu na YouTube przed „Pokaż więcej”, post na LinkedIn zanim zostanie przycięty przyciskiem „zobacz więcej” — nie blokują pisania dalej, ale wszystko po tym punkcie jest ukryte przed większością czytelników, chyba że klikną, by rozwinąć treść. Sprawdzian powyżej używa rzeczywistego twardego lub oficjalnie udokumentowanego limitu każdej platformy; dla tych z miękkim przycięciem (tytuł/opis meta, YouTube, LinkedIn) traktuj podaną liczbę jako „ile realnie się wyświetla”, a nie ścianę, której nie da się przekroczyć.</p>
     <p>Jedna rzecz, która wielu zaskakuje: niektóre platformy liczą więcej, niż można by się spodziewać. Adres URL w poście na X liczy się jako ok. 23 znaki, niezależnie od tego, jak długi jest faktyczny link. Emoji i znaki z akcentami mogą liczyć się jako więcej niż jeden „znak”, zależnie od tego, jak licznik danej platformy jest zaimplementowany wewnętrznie — to narzędzie liczy według punktów kodowych Unicode, co odpowiada sposobowi liczenia niemal każdej współczesnej platformy.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="zzs">
+    <h2>Znaki ze spacjami (zzs) i strony rozliczeniowe</h2>
+    <p>W polskich wycenach tekstu wszystko kręci się wokół <strong>zzs — znaków ze spacjami</strong>. Copywriting i content marketing rozlicza się zwykle za każde 1000 znaków ze spacjami. W tłumaczeniach zwykłych standardowa <strong>strona rozliczeniowa to najczęściej 1800 zzs</strong> (część biur przyjmuje 1500 albo 1600 — zawsze sprawdź w umowie), a <strong>strona tłumaczenia przysięgłego (poświadczonego) to 1125 znaków ze spacjami</strong>, zgodnie z rozporządzeniem Ministra Sprawiedliwości w sprawie wynagrodzenia za czynności tłumacza przysięgłego — przy czym każdą rozpoczętą stronę liczy się jako całą.</p>
+    <p>Licznik powyżej pokazuje oba przeliczenia na żywo: wklej tekst, a w kafelkach „Strony rozliczeniowe (po 1800 zzs)” i „Strony tłum. przysięgłego (po 1125 zzs)” od razu zobaczysz, ile stron ma Twój dokument — obok liczby znaków ze spacjami („Znaki”) i bez spacji („Znaki (bez spacji)”).</p>
   </section>
 
   <div class="section-divider"></div>
@@ -230,6 +248,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">Jaka jest dobra długość tytułu i opisu meta pod SEO?</summary>
       <p class="faq-answer">Google przycina wyniki według szerokości w pikselach na ekranie, a nie ściśle według liczby znaków, ale w praktyce trzymaj się około 60 znaków dla tytułu meta i około 155 znaków dla opisu meta, aby nie zostały ucięte w wynikach wyszukiwania.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Ile znaków ma strona rozliczeniowa?</summary>
+      <p class="faq-answer">W tłumaczeniach zwykłych standardem jest 1800 znaków ze spacjami na stronę (część biur przyjmuje 1500 albo 1600 — to kwestia umowy). W tłumaczeniach poświadczonych (przysięgłych) strona ma 1125 znaków ze spacjami, zgodnie z rozporządzeniem Ministra Sprawiedliwości, a każdą rozpoczętą stronę liczy się jako całą. Oba przeliczenia widzisz na żywo w kafelkach statystyk powyżej: „Strony rozliczeniowe (po 1800 zzs)” i „Strony tłum. przysięgłego (po 1125 zzs)”.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Jak policzyć zzs do wyceny copywritingu?</summary>
+      <p class="faq-answer">Wklej gotowy tekst do licznika powyżej i odczytaj kafelek „Znaki” — to liczba znaków ze spacjami (zzs), na której opiera się większość wycen copywriterskich rozliczanych za każde 1000 zzs. Jeśli rozliczenie jest w znakach bez spacji, użyj kafelka „Znaki (bez spacji)”. Nic nie jest wysyłane na serwer — liczenie odbywa się w Twojej przeglądarce.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Dlaczego Word i liczniki online pokazują różne liczby znaków?</summary>
+      <p class="faq-answer">Najczęściej przez znaki niewidoczne: Word nie wlicza do statystyki znaczników akapitu ani podziałów wiersza, a część liczników online traktuje każdy enter jak znak. Różnice robią też przypisy — Word domyślnie w ogóle ich nie liczy, dopóki nie zaznaczysz opcji „Uwzględnij pola tekstowe, przypisy dolne i końcowe”. Przy rozliczeniach za zzs ustal z klientem lub biurem jedną metodę liczenia — różnica potrafi sięgnąć kilku procent.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Czy ten licznik jest darmowy i czy zapisuje lub wysyła mój tekst?</summary>
@@ -274,6 +304,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/js/counter/counterRules.js"></script>
-<script src="/js/counter/counterControllerPl.js" defer></script>
+<script>
+  window.UTG_COUNTER_I18N = {
+    sec: "s",
+    min: "min",
+    copied: "Skopiowano!",
+    label: "Sprawdź tekst względem limitu platformy",
+    ok: "Mieści się ✓",
+    fail: "Przekroczono limit ✕",
+    xNote: "Policzone tak, jak liczy X: każdy link = 23, a większość symboli, emoji i ozdobnych liter Unicode = po 2.",
+    smsSegments: "{n} segm. SMS · {per} znaków na segment ({enc})",
+    smsUnicode: "na tryb Unicode przełącza: {chars}",
+    labels: {
+      "x-post": "Post na X / Twitterze",
+      "discord-message": "Wiadomość na Discordzie",
+      "ig-caption": "Podpis na Instagramie",
+      "tiktok-caption": "Podpis na TikToku",
+      "li-post": "Post na LinkedIn",
+      "fb-post": "Post na Facebooku",
+      "yt-description": "Opis filmu na YouTube",
+      "pinterest-description": "Opis pinu na Pintereście",
+      "telegram-message": "Wiadomość na Telegramie",
+      "telegram-caption": "Podpis zdjęcia/wideo na Telegramie",
+      "threads-post": "Post na Threads",
+      "bluesky-post": "Post na Bluesky",
+      "reddit-title": "Tytuł posta na Reddicie",
+      "zalo-post": "Post/status na Zalo",
+      "ig-bio": "Bio na Instagramie",
+      "tiktok-bio": "Bio na TikToku",
+      "li-headline": "Nagłówek LinkedIn",
+      "whatsapp-about": "Sekcja „O mnie” WhatsApp",
+      "telegram-bio": "Bio na Telegramie",
+      "vk-status": "Status na VK",
+      "discord-nick": "Pseudonim na Discordzie",
+      "tiktok-username": "Nazwa użytkownika TikTok",
+      "ig-username": "Nazwa użytkownika Instagram",
+      "yt-title": "Tytuł filmu YouTube",
+      "meta-title": "Tytuł meta SEO",
+      "meta-description": "Opis meta SEO",
+      "sms": "SMS (1 wiadomość)"
+    },
+    groups: {
+      posts: "Posty",
+      bios: "Bio i profile",
+      usernames: "Nazwy użytkownika",
+      titles: "Tytuły i SEO"
+    },
+    units: [
+      { id: "statStronyRozl", per: 1800, of: "chars" },
+      { id: "statStronyPrzys", per: 1125, of: "chars" }
+    ]
+  };
+</script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

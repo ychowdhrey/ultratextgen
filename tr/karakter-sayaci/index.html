@@ -123,6 +123,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"TikTok açıklama ve kullanıcı adı karakter sınırı kaç?","acceptedAnswer":{"@type":"Answer","text":"Bir TikTok açıklaması 2.200 karaktere kadar sığar. Biyografi 80 karakterle sınırlı; kullanıcı adı ise en fazla 24 karakter olabilir (sadece harf, rakam, alt çizgi ve nokta)."}},
     {"@type":"Question","name":"LinkedIn gönderi ve başlık karakter sınırı kaç?","acceptedAnswer":{"@type":"Answer","text":"Bir LinkedIn gönderisi 3.000 karaktere kadar izin verir, ama akışta cihaza göre yaklaşık 200–700 karakterden sonra «daha fazla gör» ile kesilir. Başlık (headline) alanı 220 karakterle sınırlıdır."}},
     {"@type":"Question","name":"SEO için iyi bir meta başlık ve meta açıklama uzunluğu nedir?","acceptedAnswer":{"@type":"Answer","text":"Google, katı bir karakter sayısından çok ekrandaki piksel genişliğine göre keser; ama pratik bir ölçü olarak meta başlığı yaklaşık 60, meta açıklamayı yaklaşık 155 karakterde tut ki arama sonuçlarında kesilmesin."}},
+    {"@type":"Question","name":"Çeviride 1 sayfa kaç karakter?","acceptedAnswer":{"@type":"Answer","text":"Türkiye'de yaygın standart, boşluksuz 1000 karakter = 1 sayfadır ve sayım genellikle hedef metin üzerinden yapılır. Metnini yukarıdaki kutuya yapıştır; «Karakter (boşluksuz)» sayısını ve «Çeviri sayfası (boşluksuz 1000 karakter)» kutucuğundaki sayfa karşılığını anlık görürsün. Kaynak metinden mi hedef metinden mi sayılacağı büroya göre değişebilir — teklifte netleştirmekte fayda var."}},
+    {"@type":"Question","name":"Türkçe karakterler (ş, ğ, ı, ç) SMS'i neden kısaltıyor?","acceptedAnswer":{"@type":"Answer","text":"SMS'in 160 karakterlik sınırı yalnızca GSM-7 alfabesindeki karakterler için geçerlidir. ş, ğ, ı, İ ve küçük ç bu alfabede olmadığından, tek bir tanesi bile mesajın tamamını Unicode moduna geçirir: segment başına 70 karakter (bölünen mesajlarda 67). Mesaj bölününce 2 kat ücretlendirilebilir. Yukarıdaki kontroldeki «SMS (1 mesaj)» seçeneği hangi karakterin buna yol açtığını gösterir."}},
+    {"@type":"Question","name":"Word ile online sayaçlar neden farklı karakter sayısı gösteriyor?","acceptedAnswer":{"@type":"Answer","text":"Genellikle görünmeyen karakterler yüzünden: Word, paragraf işaretlerini ve satır sonlarını farklı sayar; dipnotlar ise «Metin kutularını, dipnotları ve son notları dahil et» kutusu işaretlenmedikçe sayıma hiç girmez. Ayrıca bazı alanlar karakteri kod noktası yerine UTF-16 birimi ya da bayt olarak sayar — süslü Unicode harfleri bu sayımlarda 2 ya da 4 sayılır. Yukarıdaki Grafem, UTF-16 birimi ve UTF-8 bayt kutucukları, hedefin kullandığı sayımı birebir görmeni sağlar."}},
     {"@type":"Question","name":"Bu sayaç ücretsiz mi, metnimi kaydediyor ya da yüklüyor mu?","acceptedAnswer":{"@type":"Answer","text":"Evet, tamamen ücretsiz ve üyeliksiz. Her sayım, tarayıcında düz JavaScript ile çalışır — yazdığın hiçbir şey yüklenmez, kaydedilmez ya da herhangi bir yerde saklanmaz."}}
   ]
 }
@@ -185,7 +188,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Karakter (boşluksuz)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Cümle</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraf</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Satır</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sn</span><span class="counter-stat-label">Okuma süresi</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 sn</span><span class="counter-stat-label">Konuşma süresi</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Grafem (görünen karakter)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">UTF-16 birimi</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 bayt</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statCeviriSayfa">0</span><span class="counter-stat-label">Çeviri sayfası (boşluksuz 1000 karakter)</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -197,6 +206,20 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Platform karakter sınırları, açıklamalı</h2>
     <p>Karakter sınırları iki farklı nedenle vardır ve hangisiyle karşı karşıya olduğunu bilmekte fayda var. <strong>Katı sınırlar</strong> — X/Twitter'ın 280'i, Discord'un 32 karakterlik takma adı, TikTok'un 24 karakterlik kullanıcı adı — platformun kendisi tarafından uygulanır: aşarsan gönderi ya da kayıt doğrudan reddedilir. <strong>Yumuşak/pratik sınırlar</strong> — bir Google meta açıklaması, «Daha fazla göster»den önceki YouTube açıklaması, «daha fazla gör» ile kesilmeden önceki LinkedIn gönderisi — daha fazla yazmanı engellemez, ama o noktadan sonrası okuyucuların çoğundan gizlenir; görmek için tıklamaları gerekir. Yukarıdaki kontrol, her platformun gerçek katı ya da resmî olarak belgelenmiş sınırını kullanır; yumuşak kesilenler için (meta başlık/açıklama, YouTube, LinkedIn) verilen sayıyı «güvenilir şekilde görünen miktar» olarak düşün, aşılamaz bir duvar olarak değil.</p>
     <p>İnsanları en çok şaşırtan şey: bazı platformlar beklediğinden fazlasını sayar. Bir X gönderisindeki URL, gerçek bağlantı ne kadar uzun olursa olsun ~23 karakter sayılır. Emoji ve aksanlı karakterler, platformun sayacının içeride nasıl yazıldığına bağlı olarak birden fazla «karakter» sayılabilir — bu araç Unicode kod noktasına göre sayar, bu da bugün neredeyse her modern platformun sayma biçimiyle örtüşür. Türkçe karakterler (ç, ş, ğ, ı, ö, ü) modern platformlarda tek karakter sayılır; sadece SMS'te Türkçe karakter kullanmak bazı operatörlerde 1 mesajlık sınırı 160'tan 70 karaktere düşürebilir — uzun SMS'lerde buna dikkat et.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="bosluksuz">
+    <h2>Boşluklu / boşluksuz karakter sayısı</h2>
+    <p>Türkiye'de çeviri ücretleri çoğunlukla <strong>«boşluksuz 1000 karakter = 1 sayfa»</strong> hesabıyla belirlenir ve sayım genellikle <strong>hedef metin</strong> (çevirinin teslim edildiği dildeki metin) üzerinden yapılır — kaynak metinden sayan bürolar da var, o yüzden teklif alırken hangisinin geçerli olduğunu netleştir. Yukarıdaki sayaçta iki değer yan yana durur: «Karakter» her boşluğu sayar, «Karakter (boşluksuz)» boşlukları çıkarır; «Çeviri sayfası (boşluksuz 1000 karakter)» kutucuğu ise metnin kaç sayfa ettiğini anlık gösterir. Sosyal medya sınırlarını kontrol ederken boşluklu sayıyı, çeviri sayfası hesabında boşluksuz sayıyı kullan.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="sms-turkce">
+    <h2>Türkçe karakterler ve SMS: 160'tan 70'e</h2>
+    <p>Bir SMS, her karakter eski GSM-7 alfabesinde kaldığı sürece 160 karakter alır. ö ve ü bu alfabede var; ama <strong>ş, ğ, ı, İ ve küçük ç yok</strong> — tek bir tanesi bile tüm mesajı sessizce Unicode moduna geçirir: segment başına 160 yerine <strong>70 karakter</strong> (mesaj bölünürse 67). 100 karakterlik bir mesaj böylece 2 segmente bölünür ve operatörüne göre <strong>2 kat ücretlendirilebilir</strong>. Emojiler ve Word'den yapıştırılan kıvrık tırnaklar da aynı etkiyi yapar. Yukarıdaki kontroldeki «SMS (1 mesaj)» seçeneği bunu anlık algılar ve mesajı Unicode moduna geçiren karakteri tam olarak gösterir.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -231,6 +254,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">SEO için iyi bir meta başlık ve meta açıklama uzunluğu nedir?</summary>
       <p class="faq-answer">Google, katı bir karakter sayısından çok ekrandaki piksel genişliğine göre keser; ama pratik bir ölçü olarak meta başlığı yaklaşık 60, meta açıklamayı yaklaşık 155 karakterde tut ki arama sonuçlarında kesilmesin.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Çeviride 1 sayfa kaç karakter?</summary>
+      <p class="faq-answer">Türkiye'de yaygın standart, boşluksuz 1000 karakter = 1 sayfadır ve sayım genellikle hedef metin üzerinden yapılır. Metnini yukarıdaki kutuya yapıştır; «Karakter (boşluksuz)» sayısını ve «Çeviri sayfası (boşluksuz 1000 karakter)» kutucuğundaki sayfa karşılığını anlık görürsün. Kaynak metinden mi hedef metinden mi sayılacağı büroya göre değişebilir — teklifte netleştirmekte fayda var.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Türkçe karakterler (ş, ğ, ı, ç) SMS'i neden kısaltıyor?</summary>
+      <p class="faq-answer">SMS'in 160 karakterlik sınırı yalnızca GSM-7 alfabesindeki karakterler için geçerlidir. ş, ğ, ı, İ ve küçük ç bu alfabede olmadığından, tek bir tanesi bile mesajın tamamını Unicode moduna geçirir: segment başına 70 karakter (bölünen mesajlarda 67). Mesaj bölününce 2 kat ücretlendirilebilir. Yukarıdaki kontroldeki «SMS (1 mesaj)» seçeneği hangi karakterin buna yol açtığını gösterir.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Word ile online sayaçlar neden farklı karakter sayısı gösteriyor?</summary>
+      <p class="faq-answer">Genellikle görünmeyen karakterler yüzünden: Word, paragraf işaretlerini ve satır sonlarını farklı sayar; dipnotlar ise «Metin kutularını, dipnotları ve son notları dahil et» kutusu işaretlenmedikçe sayıma hiç girmez. Ayrıca bazı alanlar karakteri kod noktası yerine UTF-16 birimi ya da bayt olarak sayar — süslü Unicode harfleri bu sayımlarda 2 ya da 4 sayılır. Yukarıdaki Grafem, UTF-16 birimi ve UTF-8 bayt kutucukları, hedefin kullandığı sayımı birebir görmeni sağlar.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Bu sayaç ücretsiz mi, metnimi kaydediyor ya da yüklüyor mu?</summary>
@@ -275,6 +310,57 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/js/counter/counterRules.js"></script>
-<script src="/tr/js/counter/counterControllerTr.js" defer></script>
+<script>
+  window.UTG_COUNTER_I18N = {
+    sec: "sn",
+    min: "dk",
+    copied: "Kopyalandı!",
+    label: "Metnini bir platform sınırıyla karşılaştır",
+    ok: "Sığıyor ✓",
+    fail: "Sınır aşıldı ✕",
+    xNote: "X'in saydığı gibi sayıldı: her bağlantı = 23; sembollerin, emojilerin ve süslü Unicode harflerin çoğu = 2'şer.",
+    smsSegments: "{n} SMS segmenti · segment başına {per} karakter ({enc})",
+    smsUnicode: "Unicode moduna geçiren: {chars}",
+    labels: {
+      "x-post": "X / Twitter gönderisi",
+      "discord-message": "Discord mesajı",
+      "ig-caption": "Instagram açıklaması",
+      "tiktok-caption": "TikTok açıklaması",
+      "li-post": "LinkedIn gönderisi",
+      "fb-post": "Facebook gönderisi",
+      "yt-description": "YouTube video açıklaması",
+      "pinterest-description": "Pinterest pin açıklaması",
+      "telegram-message": "Telegram mesajı",
+      "telegram-caption": "Telegram fotoğraf/video açıklaması",
+      "threads-post": "Threads gönderisi",
+      "bluesky-post": "Bluesky gönderisi",
+      "reddit-title": "Reddit gönderi başlığı",
+      "zalo-post": "Zalo gönderisi/durumu",
+      "ig-bio": "Instagram biyografisi",
+      "tiktok-bio": "TikTok biyografisi",
+      "li-headline": "LinkedIn başlığı",
+      "whatsapp-about": "WhatsApp Hakkında yazısı",
+      "telegram-bio": "Telegram biyografisi",
+      "vk-status": "VK durumu",
+      "discord-nick": "Discord takma adı",
+      "tiktok-username": "TikTok kullanıcı adı",
+      "ig-username": "Instagram kullanıcı adı",
+      "yt-title": "YouTube video başlığı",
+      "meta-title": "SEO meta başlığı",
+      "meta-description": "SEO meta açıklaması",
+      "sms": "SMS (1 mesaj)"
+    },
+    groups: {
+      posts: "Gönderiler",
+      bios: "Biyografi ve profiller",
+      usernames: "Kullanıcı adları",
+      titles: "Başlıklar ve SEO"
+    },
+    units: [
+      { id: "statCeviriSayfa", per: 1000, of: "charsNoSpaces" }
+    ]
+  };
+</script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
