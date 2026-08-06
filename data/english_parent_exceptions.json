@@ -117,6 +117,24 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/font-copia-e-incolla/",
+      "reason": "IT sibling on the fr/changeur-de-police/ cluster (no EN member — same EN-SERP-consolidation claim as that trio). Keeps the slot as the concept-equivalent of 'changeur de police'.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer'/'font converter' EN SERP believed to pull the same competitor set as 'font generator') — not independently re-verified for Italian demand specifically.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
+      "reason": "Correction, 2026-08-02: previously also claimed a slot on the fr/changeur-de-police/ cluster, making two IT claimants on one hreflang cluster — invalid, flagged by audit-hreflang.js as a stacked-cluster conflict. it/font-copia-e-incolla/ kept the concept-equivalent slot; this page now stands alone with only a self-reference + homepage x-default, same ratified no-EN-parent shape as the rest of this ledger.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Not independently assessed — inherited the fr/changeur-de-police/ cluster's premise at the point it was split out, rather than its own EN demand check.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }
