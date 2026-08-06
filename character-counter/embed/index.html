@@ -51,7 +51,7 @@
   <div class="embed-wrapper">
     <div class="hero-card">
       <h1 class="hero-headline">Character Counter</h1>
-      <p class="hero-tagline">Live word &amp; character stats, plus a checker for 26 platform limits.</p>
+      <p class="hero-tagline">Live word, character, and byte stats, plus a checker for 27 platform limits — counted the way each platform counts.</p>
 
       <div class="counter-tool">
         <div>
@@ -71,7 +71,11 @@
           <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Chars (no spaces)</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Sentences</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraphs</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Lines</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sec</span><span class="counter-stat-label">Reading time</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Graphemes (visible)</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">UTF-16 units</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 bytes</span></div>
         </div>
 
         <div id="platformChecker"></div>
