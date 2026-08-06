@@ -273,9 +273,24 @@ peers is not an error (not every symbol has a natural sibling); only a
 check:new-symbol-peer-links`) is the diff-scoped PR gate, wired into
 `.github/workflows/validate.yml`: for every `/symbol/` page a PR adds or
 changes, its declared peers must currently link back, or the PR fails with
-the exact pair and the fix (run the generator, commit the result). Scope
-note: both scripts, like the hub-linking tooling above, only walk EN
-`symbol/*` — they do not check locale-prefixed `<lang>/symbol/*` pages.
+the exact pair and the fix (run the generator, commit the result).
+
+**Locale propagation (added 2026-08-06).** `sync_symbol_spoke_links.py` used
+to walk EN `symbol/*` only, which made `--write --reciprocal` a trap: it
+repaired the EN side and left the same relation missing on all 1,645
+`<lang>/symbol/*` pages, whose compare-grids are static HTML written once at
+creation time exactly like EN's. Running it produced 113 EN fixes and **493
+translation-parity pairs**. It now mirrors the peer graph into every language:
+for each EN relation A↔B and each language L where **both** ends have a live
+sibling, L's copy of A gets a card pointing at L's copy of B. Cluster
+membership comes from each locale page's own `hreflang="en"` link (the same
+source `scripts/lib/translation-clusters.js` uses), never from guessing a
+locale slug. Card copy is read from the **target locale page's own** `<h1>`
+and hero tagline — nothing is translated here, and a peer with no sibling in
+L is skipped rather than linked in English. `--no-locales` restores EN-only
+behaviour. The first full run cleared a 2,537-link backlog across 1,009 pages
+in 19 languages. `check-new-symbol-peer-links.py` (the PR gate) is still
+EN-only and diff-scoped.
 
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
@@ -1073,6 +1088,37 @@ have that translation). `linksUnreachableFor()` is conservative by
 construction: an unresolvable link target counts as reachable, so an unknown
 link can never silently suppress a flag.
 
+### Repairing drift is not creating it — the convergence carve-out (added 2026-08-06)
+
+The gate infers drift from *"one side of a cluster moved, the other didn't."*
+That proxy **inverts on a backfill**. A pass that adds content the sibling
+already has — the locale half of a peer-link sync, a missing FAQ ported over,
+an EN page catching up to links its translations already carry — necessarily
+touches one side only, so the gate reads the repair exactly like the damage.
+Not hypothetical: the locale peer-link sync above tripped it **353 times**,
+in both directions, with every single pair ending up measurably *closer* to
+its sibling than it started.
+
+So `check-translation-parity.js` now measures the thing the rule is about
+instead of inferring it. `convergedTowards()` scores pairwise divergence
+before vs after against the untouched sibling as a fixed reference (same
+shared fingerprint/diff/score the audit uses); a **strict** decrease means the
+page moved toward its sibling and there is nothing to sync. Applied on both
+branches — per-sibling on the EN branch, since one EN edit can converge toward
+some siblings while diverging from others. Converged pairs are **reported**
+with their before→after scores, never silenced.
+
+Strict `<`, not `<=`, on purpose: trading one divergence for another nets to
+zero and is precisely the drift this check exists for. New pages are
+unaffected (no prior state to have converged from). Verified still catching
+real drift: an added `/library/currency-symbols/` link on `/discord/` flags 7
+pairs, and deleting one peer card from a locale symbol page flags that pair.
+
+*(Note: the carve-out section above records that probe as flagging "exactly
+`fr` and `id`". It flags **7** locales as of 2026-08-06 — five more have since
+gained a currency-symbols translation. The probe still works; the expected
+count moves as the site grows.)*
+
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
 classifies a *page type* whose link list is an inventory. Adding a pattern to
@@ -1277,7 +1323,19 @@ complete flowchart, and every script's flags/exit codes:
   declared `hreflang="no"` pointing at its own URL (a mislabeled entry, not
   a real Norwegian sibling link) instead of `no/kursiv-tekst/` — flagged as
   a conflict and left for manual resolution rather than silently
-  overwritten. Also watch for genuine **duplicate-page clusters** as a
+  overwritten. **Placeholder EN-homepage claims (2026-08-06):** a *subpage*
+  naming the bare homepage as its `hreflang="en"` is the documented shape of
+  a ratified local-only page, and `audit-hreflang.js --fix` has always refused
+  to repair it (writing it back would make the homepage link one arbitrary
+  subpage). The audit nonetheless counted those pairs as blocking
+  non-reciprocal issues — demanding a repair its own fixer declines to make,
+  which would have turned every PR red the moment the workflow started
+  gating. They now classify separately: reported in their own informational
+  section, annotated against `data/english_parent_exceptions.json` so an
+  *unratified* claim is still visible, and excluded from the exit code.
+  Homepage-to-homepage claims (locale homepages listing each other) are a real
+  cluster and are still checked and fixed. Also watch for genuine
+  **duplicate-page clusters** as a
   byproduct of any run — two members that declare the same locale for one
   EN parent (a content bug, not a completeness gap) — which this script
   surfaces but never auto-fixes; resolve those by hand per the "Parallel
@@ -1415,6 +1473,31 @@ Settings → Branches for the target branch — that's a repository setting, not
 something in this repo's tracked files, and it was not verified as part of
 adding this tooling. If new pages are still shipping without their art after
 this, check that setting before assuming the scripts are wrong.
+
+**Root cause found, and it was neither (2026-08-06): the whole workflow was
+inert.** Every validator step in `validate.yml` is `<validator> | tee X.log`.
+A pipeline exits with its **last** command's status, `tee` always succeeds,
+and GitHub's default `run:` shell is `bash -e {0}` — `-e` but **no
+pipefail**. So every step recorded `outcome == 'success'` no matter what the
+validator exited with, and the final "Fail the job if any gating validator
+reported problems" step, which keys off exactly those outcomes, could never
+fire. Fixed by declaring `defaults.run.shell: bash` on the job, which is
+`bash --noprofile --norc -eo pipefail {0}`.
+
+Two consequences worth carrying forward:
+- **A green "Validate Site" on any PR before 2026-08-06 carries no
+  information.** Do not cite one as evidence a page passed anything.
+- **Adding a validator script is not the same as gating on it.** Before
+  trusting a new check, confirm it actually fails a PR — run it against a
+  deliberately broken input and watch the job go red. Every gate in this file
+  had been reasoned about, documented, and wired, and none of them worked.
+
+Also wired the same day: `npm run check:funding-choices`, which existed but
+was never added to the workflow — which is how 37 pages shipped without the
+ad-blocking-recovery tag. Unlike the other whole-site checks it gates rather
+than informs, because it has no backlog to be permanently red against (the
+tag is either in `<head>` or not, and
+`scripts/inject-funding-choices-tag.js` closes any gap in one idempotent run).
 
 ---
 
