@@ -122,6 +122,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Giới hạn ký tự của chú thích và tiểu sử Instagram là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Một chú thích Instagram có thể dài tới 2.200 ký tự, dù chỉ vài dòng đầu hiển thị trước khi bị rút gọn bằng \"thêm\". Ô tiểu sử ngắn hơn nhiều: 150 ký tự. Cả hai đều có trong bộ kiểm tra nền tảng phía trên."}},
     {"@type":"Question","name":"Giới hạn ký tự của chú thích và tên người dùng TikTok là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Một chú thích TikTok chứa được tới 2.200 ký tự. Tiểu sử giới hạn ở 80 ký tự, và tên người dùng tối đa 24 ký tự (chỉ gồm chữ cái, số, gạch dưới và dấu chấm)."}},
     {"@type":"Question","name":"Độ dài thẻ tiêu đề và mô tả meta SEO bao nhiêu là hợp lý?","acceptedAnswer":{"@type":"Answer","text":"Google rút gọn theo chiều rộng pixel hiển thị chứ không theo số ký tự cố định, nhưng làm mốc thực tế, hãy giữ thẻ tiêu đề khoảng 60 ký tự và thẻ mô tả khoảng 155 ký tự để không bị cắt trên trang kết quả tìm kiếm."}},
+    {"@type":"Question","name":"Vì sao tin nhắn có dấu bị tách thành nhiều tin?","acceptedAnswer":{"@type":"Answer","text":"Một tin SMS chứa được 160 ký tự chỉ khi mọi ký tự đều nằm trong bảng mã GSM-7 (không dấu). Chỉ cần một chữ có dấu như à, ế hay ộ là cả tin chuyển sang chế độ Unicode — còn 70 ký tự mỗi tin — nên tin dài bị tách thành nhiều tin và tính tiền nhiều lần. Chọn \"SMS (1 đoạn)\" trong bộ kiểm tra phía trên để xem chính xác ký tự nào gây ra điều đó."}},
+    {"@type":"Question","name":"Vì sao chữ kiểu trên Zalo tự trở về font thường?","acceptedAnswer":{"@type":"Answer","text":"Zalo chỉ hiển thị chữ kiểu (font đặc biệt) trong một giới hạn nhất định: khi đoạn chữ kiểu vượt khoảng 70 ký tự, Zalo tự đưa nó về font thường. Vì vậy hãy đo độ dài chữ kiểu bằng bộ đếm phía trên trước khi đăng — và nhớ rằng bài đăng hay nhật ký Zalo cũng chỉ nhận tối đa 2.000 ký tự."}},
+    {"@type":"Question","name":"Chữ kiểu có bị tính nhiều ký tự hơn không?","acceptedAnswer":{"@type":"Answer","text":"Thường là có. Chữ Unicode kiểu (đậm, thư pháp, gothic…) phần lớn nằm ngoài vùng cơ bản của Unicode, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16 và 4 byte UTF-8 — đó là lý do một cái tên 10 chữ kiểu có thể bị từ chối ở ô giới hạn 12 ký tự. Dán chữ kiểu vào bộ đếm phía trên để xem chi phí thật ở từng cách đếm."}},
     {"@type":"Question","name":"Công cụ đếm này có miễn phí không, và có lưu trữ hay tải văn bản của tôi lên đâu không?","acceptedAnswer":{"@type":"Answer","text":"Có, hoàn toàn miễn phí và không cần đăng ký. Mọi phép đếm chạy ngay trong trình duyệt của bạn bằng JavaScript thuần — không có gì bạn gõ bị tải lên, ghi log hay lưu trữ ở bất kỳ đâu."}}
   ]
 }
@@ -184,7 +187,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Ký tự (không khoảng trắng)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Câu</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Đoạn văn</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Số dòng</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 giây</span><span class="counter-stat-label">Thời gian đọc</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 giây</span><span class="counter-stat-label">Thời gian nói</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Ký tự hiển thị (grapheme)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Đơn vị UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Byte UTF-8</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -196,6 +204,22 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Giới hạn ký tự trên từng nền tảng, giải thích rõ</h2>
     <p>Giới hạn ký tự tồn tại vì hai lý do khác nhau, và biết mình đang gặp loại nào rất đáng để ý. <strong>Giới hạn cứng</strong> — 280 ký tự của X/Twitter, biệt danh 32 ký tự của Discord, tên người dùng 24 ký tự của TikTok — do chính nền tảng áp đặt: vượt quá là bài đăng hoặc thao tác lưu bị từ chối ngay lập tức. <strong>Giới hạn mềm/thực tế</strong> — thẻ mô tả meta của Google, mô tả video YouTube trước nút "Hiện thêm", hay bài đăng LinkedIn trước khi bị rút gọn bằng "xem thêm" — không ngăn bạn gõ thêm, nhưng phần vượt quá sẽ bị ẩn khỏi hầu hết người đọc trừ khi họ bấm mở rộng. Bộ kiểm tra ở trên dùng đúng giới hạn cứng hoặc giới hạn được công bố chính thức của từng nền tảng; với các giới hạn rút gọn mềm (thẻ tiêu đề/mô tả meta, YouTube, LinkedIn), hãy xem con số đó là "phần chắc chắn sẽ hiển thị", không phải một bức tường không thể vượt qua. Riêng tại Việt Nam, giới hạn 2.000 ký tự cho mỗi bài đăng hoặc trạng thái Zalo là một trong những giới hạn người dùng hay chạm phải nhất — nhất là khi dán cả một đoạn tâm sự dài hoặc thông báo nhóm.</p>
     <p>Một điều hay khiến nhiều người bối rối: một số nền tảng đếm nhiều hơn bạn tưởng. Một đường link trong bài đăng X luôn được tính là khoảng 23 ký tự, bất kể link gốc dài bao nhiêu. Emoji và các ký tự có dấu có thể được tính là nhiều hơn một "ký tự" tùy vào cách bộ đếm nội bộ của từng nền tảng hoạt động — công cụ này đếm theo code point Unicode, đúng với cách hầu hết nền tảng hiện đại đang đếm ngày nay.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="sms-co-dau">
+    <h2>Tin nhắn SMS có dấu: 160 hay 70 ký tự?</h2>
+    <p>Một tin nhắn SMS chứa được <strong>160 ký tự</strong> chỉ khi mọi ký tự đều nằm trong bảng mã GSM-7 — nói cách khác, khi bạn nhắn không dấu. Chỉ cần MỘT chữ có dấu (à, ế, ộ…) là cả tin lập tức chuyển sang chế độ Unicode: mỗi tin chỉ còn chứa được <strong>70 ký tự</strong>, tin dài bị tách thành nhiều tin và bị tính tiền nhiều lần. Đó là lý do một tin nhắn tiếng Việt có dấu dài 100 ký tự lại bị tính thành hai tin, trong khi tin không dấu cùng độ dài chỉ tính một.</p>
+    <p>Chọn "SMS (1 đoạn)" trong bộ kiểm tra phía trên: công cụ đếm theo đúng quy tắc phân đoạn GSM-7/Unicode và chỉ ra chính xác ký tự nào khiến tin nhắn của bạn chuyển sang chế độ Unicode — trước khi bạn bấm gửi.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="gioi-han-zalo">
+    <h2>Giới hạn ký tự trên Zalo</h2>
+    <p>Một bài đăng hoặc nhật ký Zalo nhận tối đa <strong>2.000 ký tự</strong> — vượt quá là Zalo hiện lỗi "Bạn chỉ được nhập tối đa 2000 ký tự" và không cho đăng. Chọn "Bài đăng / trạng thái Zalo" trong bộ kiểm tra phía trên để biết ngay bài viết của bạn có vừa hay không trước khi đăng.</p>
+    <p>LƯU Ý: chữ kiểu (font đặc biệt) trên Zalo tự trở về font thường nếu đoạn chữ kiểu vượt khoảng 70 ký tự — nên hãy đo trước khi đăng. Dán chữ kiểu vào bộ đếm phía trên để xem độ dài thật của nó: ô "Đơn vị UTF-16" cho thấy mỗi chữ kiểu thường tốn 2 đơn vị, tức một đoạn chữ kiểu ngắn hơn bạn tưởng đã chạm ngưỡng đó.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -230,6 +254,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">Độ dài thẻ tiêu đề và mô tả meta SEO bao nhiêu là hợp lý?</summary>
       <p class="faq-answer">Google rút gọn theo chiều rộng pixel hiển thị chứ không theo số ký tự cố định, nhưng làm mốc thực tế, hãy giữ thẻ tiêu đề khoảng 60 ký tự và thẻ mô tả khoảng 155 ký tự để không bị cắt trên trang kết quả tìm kiếm.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Vì sao tin nhắn có dấu bị tách thành nhiều tin?</summary>
+      <p class="faq-answer">Một tin SMS chứa được 160 ký tự chỉ khi mọi ký tự đều nằm trong bảng mã GSM-7 (không dấu). Chỉ cần một chữ có dấu như à, ế hay ộ là cả tin chuyển sang chế độ Unicode — còn 70 ký tự mỗi tin — nên tin dài bị tách thành nhiều tin và tính tiền nhiều lần. Chọn "SMS (1 đoạn)" trong bộ kiểm tra phía trên để xem chính xác ký tự nào gây ra điều đó.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Vì sao chữ kiểu trên Zalo tự trở về font thường?</summary>
+      <p class="faq-answer">Zalo chỉ hiển thị chữ kiểu (font đặc biệt) trong một giới hạn nhất định: khi đoạn chữ kiểu vượt khoảng 70 ký tự, Zalo tự đưa nó về font thường. Vì vậy hãy đo độ dài chữ kiểu bằng bộ đếm phía trên trước khi đăng — và nhớ rằng bài đăng hay nhật ký Zalo cũng chỉ nhận tối đa 2.000 ký tự.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Chữ kiểu có bị tính nhiều ký tự hơn không?</summary>
+      <p class="faq-answer">Thường là có. Chữ Unicode kiểu (đậm, thư pháp, gothic…) phần lớn nằm ngoài vùng cơ bản của Unicode, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16 và 4 byte UTF-8 — đó là lý do một cái tên 10 chữ kiểu có thể bị từ chối ở ô giới hạn 12 ký tự. Dán chữ kiểu vào bộ đếm phía trên để xem chi phí thật ở từng cách đếm.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Công cụ đếm này có miễn phí không, và có lưu trữ hay tải văn bản của tôi lên đâu không?</summary>
@@ -273,7 +309,55 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<script>
+  window.UTG_COUNTER_I18N = {
+    selected: "zalo-post",
+    sec: "giây",
+    min: "phút",
+    copied: "Đã sao chép!",
+    label: "Kiểm tra văn bản theo giới hạn nền tảng",
+    ok: "Vừa đủ ✓",
+    fail: "Vượt quá giới hạn ✕",
+    xNote: "Đếm theo đúng cách X đếm: mỗi liên kết = 23 ký tự, hầu hết ký hiệu, emoji và chữ Unicode kiểu = 2 ký tự mỗi chữ.",
+    smsSegments: "{n} tin SMS · {per} ký tự mỗi tin ({enc})",
+    smsUnicode: "chuyển sang chế độ Unicode vì: {chars}",
+    groups: {
+      posts: "Bài đăng",
+      bios: "Tiểu sử & hồ sơ",
+      usernames: "Tên người dùng",
+      titles: "Tiêu đề & SEO"
+    },
+    labels: {
+      "x-post": "Bài đăng X / Twitter",
+      "discord-message": "Tin nhắn Discord",
+      "ig-caption": "Chú thích Instagram",
+      "tiktok-caption": "Chú thích TikTok",
+      "li-post": "Bài đăng LinkedIn",
+      "fb-post": "Bài đăng Facebook",
+      "yt-description": "Mô tả video YouTube",
+      "pinterest-description": "Mô tả ghim Pinterest",
+      "telegram-message": "Tin nhắn Telegram",
+      "telegram-caption": "Chú thích ảnh/video Telegram",
+      "threads-post": "Bài đăng Threads",
+      "bluesky-post": "Bài đăng Bluesky",
+      "zalo-post": "Bài đăng / trạng thái Zalo",
+      "ig-bio": "Tiểu sử Instagram",
+      "tiktok-bio": "Tiểu sử TikTok",
+      "li-headline": "Tiêu đề LinkedIn",
+      "whatsapp-about": "Giới thiệu WhatsApp",
+      "telegram-bio": "Tiểu sử Telegram",
+      "vk-status": "Trạng thái VK",
+      "discord-nick": "Biệt danh Discord",
+      "tiktok-username": "Tên người dùng TikTok",
+      "ig-username": "Tên người dùng Instagram",
+      "yt-title": "Tiêu đề video YouTube",
+      "meta-title": "Thẻ tiêu đề SEO",
+      "meta-description": "Thẻ mô tả SEO",
+      "sms": "SMS (1 đoạn)"
+    }
+  };
+</script>
 <script src="/js/counter/counterRules.js"></script>
-<script src="/js/counter/counterControllerVi.js" defer></script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

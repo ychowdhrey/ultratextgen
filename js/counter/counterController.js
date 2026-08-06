@@ -55,7 +55,8 @@
     smsUnicode: null,
     labels: null,
     groups: null,
-    units: null
+    units: null,
+    selected: null
   }, window.UTG_COUNTER_I18N || {});
 
   function formatTime(words, wpm) {
@@ -164,6 +165,7 @@
       ns.counterRules.initChecker({
         mount: "platformChecker",
         inputId: "counterInput",
+        selected: I18N.selected || undefined,
         text: {
           label: I18N.label,
           ok: I18N.ok,

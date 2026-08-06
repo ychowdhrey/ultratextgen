@@ -122,6 +122,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Berapa batas karakter postingan dan headline LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Postingan LinkedIn mengizinkan sampai 3.000 karakter, meskipun di feed akan dipotong dengan \"lihat selengkapnya\" setelah sekitar 200–700 karakter tergantung perangkat. Kolom headline dibatasi 220 karakter."}},
     {"@type":"Question","name":"Berapa batas karakter caption dan username TikTok?","acceptedAnswer":{"@type":"Answer","text":"Caption TikTok muat sampai 2.200 karakter. Bio dibatasi 80 karakter, dan username bisa sampai 24 karakter (hanya huruf, angka, garis bawah, dan titik)."}},
     {"@type":"Question","name":"Berapa panjang judul meta dan deskripsi meta yang ideal untuk SEO?","acceptedAnswer":{"@type":"Answer","text":"Google memotong hasil berdasarkan lebar piksel di layar, bukan jumlah karakter yang ketat, tapi sebagai panduan praktis, usahakan judul meta sekitar 60 karakter dan deskripsi meta sekitar 155 karakter supaya tidak terpotong di hasil pencarian."}},
+    {"@type":"Question","name":"Kenapa huruf bergaya dihitung 2 karakter?","acceptedAnswer":{"@type":"Answer","text":"Huruf Unicode bergaya (bold, kursif, gothic, dan sebagian besar font kece lainnya) kebanyakan berada di luar bidang dasar Unicode, jadi setiap huruf yang terlihat memakan 2 unit UTF-16, 4 byte UTF-8, dan 2 dari jatah 280 karakter X. Itulah kenapa nama 10 huruf bergaya bisa ditolak kolom yang batasnya 12 karakter. Tempel teks bergaya kamu ke penghitung di atas untuk melihat biayanya di setiap cara hitung."}},
+    {"@type":"Question","name":"Kenapa SMS saya terpecah jadi beberapa pesan?","acceptedAnswer":{"@type":"Answer","text":"Satu SMS memuat 160 karakter hanya selama semua karakternya ada di alfabet GSM. Satu emoji atau karakter khusus saja langsung memindahkan seluruh pesan ke mode Unicode — 70 karakter per segmen — sehingga pesan 100 karakter tiba-tiba butuh dua segmen dan biayanya bisa dua kali lipat. Pilih \"SMS (1 pesan)\" di pengecek platform di atas untuk melihat karakter mana yang menyebabkannya."}},
     {"@type":"Question","name":"Apakah penghitung ini gratis, dan apakah menyimpan atau mengunggah teks saya?","acceptedAnswer":{"@type":"Answer","text":"Ya, sepenuhnya gratis tanpa perlu daftar. Setiap hitungan berjalan langsung di browser kamu dengan JavaScript biasa — tidak ada yang kamu ketik yang diunggah, dicatat, atau disimpan di mana pun."}}
   ]
 }
@@ -184,7 +186,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Karakter (tanpa spasi)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Kalimat</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraf</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Jumlah baris</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 dtk</span><span class="counter-stat-label">Waktu baca</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 dtk</span><span class="counter-stat-label">Waktu bicara</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Grafem (karakter terlihat)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Unit UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Byte UTF-8</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -196,6 +203,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Batas karakter di berbagai platform, dijelaskan</h2>
     <p>Batas karakter ada karena dua alasan berbeda, dan ada baiknya kamu tahu sedang berhadapan dengan yang mana. <strong>Batas keras (hard limit)</strong> — 280 karakter di X/Twitter, nickname 32 karakter di Discord, username 24 karakter di TikTok — diberlakukan langsung oleh platformnya: kalau kelebihan, postingan atau penyimpanannya langsung ditolak. <strong>Batas lunak/praktis (soft limit)</strong> — deskripsi meta Google, deskripsi video YouTube sebelum "Tampilkan selengkapnya", postingan LinkedIn sebelum dipotong dengan "lihat selengkapnya" — tidak menghalangi kamu mengetik lebih banyak, tapi apa pun setelah titik itu disembunyikan dari sebagian besar pembaca kecuali mereka mengklik untuk membukanya. Pengecekan di atas memakai batas keras resmi atau batas yang didokumentasikan resmi tiap platform; untuk yang sifatnya potongan lunak (judul/deskripsi meta, YouTube, LinkedIn), anggap angkanya sebagai "berapa banyak yang tampil dengan andal", bukan tembok yang tak bisa dilewati.</p>
     <p>Satu hal yang sering bikin kaget: beberapa platform menghitung lebih banyak dari yang kamu kira. URL dalam postingan X dihitung sekitar 23 karakter, berapa pun panjang link aslinya. Emoji dan karakter beraksen bisa dihitung lebih dari satu "karakter" tergantung bagaimana penghitung platform itu diimplementasikan secara internal — alat ini menghitung berdasarkan Unicode code point, yang cocok dengan cara hampir semua platform modern menghitung saat ini.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="cara-hitung">
+    <h2>Kenapa jumlah karakter bisa berbeda-beda?</h2>
+    <p>"Ini berapa karakter?" ternyata punya lebih dari satu jawaban benar, karena tiap platform menghitung dengan satuan yang berbeda. Kebanyakan platform menghitung code point Unicode — sama seperti angka "Karakter" di alat ini. Tapi form HTML dan banyak aplikasi menghitung unit UTF-16, sehingga setiap huruf bergaya dihitung 2. X memakai hitungan berbobot: setiap URL dihitung tepat 23, dan kebanyakan emoji serta simbol dihitung 2. SMS lain lagi: pesan dihitung per segmen GSM — 160 karakter per segmen, tapi begitu ada satu emoji atau karakter khusus, seluruh pesan pindah ke mode Unicode dan tiap segmen hanya memuat 70 karakter.</p>
+    <p>Semua cara hitung itu tampil langsung di statistik di atas — Grafem, Unit UTF-16, dan Byte UTF-8 ikut diperbarui saat kamu mengetik, jadi kalau sebuah form bilang teks kamu kepanjangan padahal menurut hitunganmu tidak, kamu bisa langsung melihat angka mana yang sebenarnya dipakai platform tujuanmu.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -230,6 +245,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <details class="faq-item">
       <summary class="faq-question">Berapa panjang judul meta dan deskripsi meta yang ideal untuk SEO?</summary>
       <p class="faq-answer">Google memotong hasil berdasarkan lebar piksel di layar, bukan jumlah karakter yang ketat, tapi sebagai panduan praktis, usahakan judul meta sekitar 60 karakter dan deskripsi meta sekitar 155 karakter supaya tidak terpotong di hasil pencarian.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Kenapa huruf bergaya dihitung 2 karakter?</summary>
+      <p class="faq-answer">Huruf Unicode bergaya (bold, kursif, gothic, dan sebagian besar font kece lainnya) kebanyakan berada di luar bidang dasar Unicode, jadi setiap huruf yang terlihat memakan 2 unit UTF-16, 4 byte UTF-8, dan 2 dari jatah 280 karakter X. Itulah kenapa nama 10 huruf bergaya bisa ditolak kolom yang batasnya 12 karakter. Tempel teks bergaya kamu ke penghitung di atas untuk melihat biayanya di setiap cara hitung.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Kenapa SMS saya terpecah jadi beberapa pesan?</summary>
+      <p class="faq-answer">Satu SMS memuat 160 karakter hanya selama semua karakternya ada di alfabet GSM. Satu emoji atau karakter khusus saja langsung memindahkan seluruh pesan ke mode Unicode — 70 karakter per segmen — sehingga pesan 100 karakter tiba-tiba butuh dua segmen dan biayanya bisa dua kali lipat. Pilih "SMS (1 pesan)" di pengecek platform di atas untuk melihat karakter mana yang menyebabkannya.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Apakah penghitung ini gratis, dan apakah menyimpan atau mengunggah teks saya?</summary>
@@ -273,172 +296,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script src="/js/counter/counterRules.js"></script>
 <script>
-/* ==========================================================================
-   Indonesian-language wiring for /id/penghitung-kata-dan-karakter/. Inlined
-   (rather than added as a new shared /js/counter/counterControllerId.js
-   file) to keep this locale's build fully contained under /id/. Same
-   logic as counterController.js / counterControllerPl.js with a
-   translated strings table — reuses counterRules.js unchanged (pure
-   logic + platform-limit numbers, no user-facing strings).
-   ========================================================================== */
-(function () {
-  "use strict";
-
-  const $ = (sel, root) => (root || document).querySelector(sel);
-
-  const READING_WPM = 225;
-
-  function countWords(str) {
-    const trimmed = str.trim();
-    return trimmed ? trimmed.split(/\s+/).length : 0;
-  }
-
-  function countSentences(str) {
-    const trimmed = str.trim();
-    if (!trimmed) return 0;
-    const matches = trimmed.match(/[^.!?]+[.!?]+/g) || [];
-    const consumed = matches.join("").length;
-    const remainder = trimmed.slice(consumed).trim();
-    return matches.length + (remainder ? 1 : 0);
-  }
-
-  function countParagraphs(str) {
-    return str.split(/\n+/).map((p) => p.trim()).filter(Boolean).length;
-  }
-
-  function formatReadingTime(words) {
-    if (!words) return "0 dtk";
-    const minutes = words / READING_WPM;
-    if (minutes < 1) {
-      const seconds = Math.max(1, Math.round(minutes * 60));
-      return seconds + " dtk";
+  window.UTG_COUNTER_I18N = {
+    sec: "dtk",
+    min: "mnt",
+    copied: "Tersalin!",
+    label: "Cek teks kamu terhadap batas platform",
+    ok: "Muat \u2713",
+    fail: "Melebihi batas \u2715",
+    xNote: "Dihitung persis seperti X menghitung: setiap URL = 23 karakter, dan sebagian besar simbol, emoji, serta huruf Unicode bergaya = 2 per huruf.",
+    smsSegments: "{n} segmen SMS \u00b7 {per} karakter per segmen ({enc})",
+    smsUnicode: "beralih ke mode Unicode karena: {chars}",
+    groups: {
+      posts: "Postingan",
+      bios: "Bio & profil",
+      usernames: "Nama pengguna",
+      titles: "Judul & SEO"
+    },
+    labels: {
+      "x-post": "Postingan X / Twitter",
+      "discord-message": "Pesan Discord",
+      "ig-caption": "Caption Instagram",
+      "tiktok-caption": "Caption TikTok",
+      "li-post": "Postingan LinkedIn",
+      "fb-post": "Postingan Facebook",
+      "yt-description": "Deskripsi video YouTube",
+      "pinterest-description": "Deskripsi pin Pinterest",
+      "telegram-message": "Pesan Telegram",
+      "telegram-caption": "Caption foto/video Telegram",
+      "threads-post": "Postingan Threads",
+      "bluesky-post": "Postingan Bluesky",
+      "zalo-post": "Postingan/status Zalo",
+      "ig-bio": "Bio Instagram",
+      "tiktok-bio": "Bio TikTok",
+      "li-headline": "Headline LinkedIn",
+      "whatsapp-about": "Info WhatsApp",
+      "telegram-bio": "Bio Telegram",
+      "vk-status": "Status VK",
+      "discord-nick": "Nickname Discord",
+      "tiktok-username": "Username TikTok",
+      "ig-username": "Username Instagram",
+      "yt-title": "Judul video YouTube",
+      "meta-title": "Judul meta SEO",
+      "meta-description": "Deskripsi meta SEO",
+      "sms": "SMS (1 pesan)"
     }
-    return Math.ceil(minutes) + " mnt";
-  }
-
-  const LABELS = {
-    "x-post": "Postingan X / Twitter",
-    "discord-message": "Pesan Discord",
-    "ig-caption": "Caption Instagram",
-    "tiktok-caption": "Caption TikTok",
-    "li-post": "Postingan LinkedIn",
-    "fb-post": "Postingan Facebook",
-    "yt-description": "Deskripsi video YouTube",
-    "pinterest-description": "Deskripsi pin Pinterest",
-    "telegram-message": "Pesan Telegram",
-    "telegram-caption": "Caption foto/video Telegram",
-    "threads-post": "Postingan Threads",
-    "bluesky-post": "Postingan Bluesky",
-    "zalo-post": "Postingan/status Zalo",
-    "ig-bio": "Bio Instagram",
-    "tiktok-bio": "Bio TikTok",
-    "li-headline": "Headline LinkedIn",
-    "whatsapp-about": "Info WhatsApp",
-    "telegram-bio": "Bio Telegram",
-    "vk-status": "Status VK",
-    "discord-nick": "Nickname Discord",
-    "tiktok-username": "Username TikTok",
-    "ig-username": "Username Instagram",
-    "yt-title": "Judul video YouTube",
-    "meta-title": "Judul meta SEO",
-    "meta-description": "Deskripsi meta SEO",
-    "sms": "SMS (1 pesan)"
   };
-  const GROUPS = {
-    posts: "Postingan",
-    bios: "Bio & profil",
-    usernames: "Nama pengguna",
-    titles: "Judul & SEO"
-  };
-
-  function init() {
-    const input = document.getElementById("counterInput");
-    if (!input) return;
-
-    const urlQ = new URLSearchParams(window.location.search).get("q");
-    if (urlQ) input.value = urlQ;
-
-    const stat = {
-      chars: $("#statChars"),
-      charsNoSpaces: $("#statCharsNoSpaces"),
-      words: $("#statWords"),
-      sentences: $("#statSentences"),
-      paragraphs: $("#statParagraphs"),
-      readingTime: $("#statReadingTime")
-    };
-    const clearBtn = document.getElementById("counterClearBtn");
-    const copyBtn = document.getElementById("counterCopyBtn");
-
-    function render() {
-      const val = input.value;
-      const chars = Array.from(val).length;
-      const charsNoSpaces = Array.from(val.replace(/\s/g, "")).length;
-      const words = countWords(val);
-
-      if (stat.chars) stat.chars.textContent = chars.toLocaleString();
-      if (stat.charsNoSpaces) stat.charsNoSpaces.textContent = charsNoSpaces.toLocaleString();
-      if (stat.words) stat.words.textContent = words.toLocaleString();
-      if (stat.sentences) stat.sentences.textContent = countSentences(val).toLocaleString();
-      if (stat.paragraphs) stat.paragraphs.textContent = countParagraphs(val).toLocaleString();
-      if (stat.readingTime) stat.readingTime.textContent = formatReadingTime(words);
-
-      if (clearBtn) clearBtn.hidden = chars === 0;
-    }
-
-    input.addEventListener("input", render);
-
-    if (clearBtn) {
-      clearBtn.addEventListener("click", () => {
-        input.value = "";
-        input.focus();
-        render();
-      });
-    }
-
-    if (copyBtn) {
-      copyBtn.addEventListener("click", async () => {
-        if (!input.value) return;
-        try {
-          await navigator.clipboard.writeText(input.value);
-          const original = copyBtn.textContent;
-          copyBtn.textContent = "Tersalin!";
-          copyBtn.classList.add("is-copied");
-          setTimeout(() => {
-            copyBtn.textContent = original;
-            copyBtn.classList.remove("is-copied");
-          }, 1500);
-        } catch (err) {
-          console.error("Copy failed:", err);
-        }
-      });
-    }
-
-    render();
-
-    const ns = window.UltraTextGen;
-    if (ns && ns.counterRules) {
-      ns.counterRules.initChecker({
-        mount: "platformChecker",
-        inputId: "counterInput",
-        text: {
-          label: "Cek teks kamu terhadap batas platform",
-          ok: "Muat ✓",
-          fail: "Melebihi batas ✕"
-        },
-        labels: LABELS,
-        groups: GROUPS
-      });
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-})();
 </script>
+<script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
