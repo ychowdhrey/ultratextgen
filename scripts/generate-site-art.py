@@ -260,9 +260,10 @@ def m_typo(p, sample="Aa", **kw):
              f'text-decoration="{deco}" letter-spacing="{spacing}" '
              f'fill="#fff" text-anchor="middle">{sample}</text>')
     extra = kw.get("extra", "")
+    lab_ff = kw.get("lab_ff", SANS)
     lab = ""
     if label:
-        lab = (f'<text x="180" y="318" font-family="{SANS}" font-size="20" '
+        lab = (f'<text x="180" y="318" font-family="{lab_ff}" font-size="20" '
                f'fill="{SUB}" text-anchor="middle">{label}</text>')
     return f"""
     <text x="180" y="208" font-family="{ff}" font-size="{size+40}"
@@ -2658,6 +2659,12 @@ PAGES.update({
 # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
 "character-counter": ("Character Counter", "Live word & character stats as you type",
       P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
+"characters-to-words": ("Characters to Words", "Convert any character count to words & pages",
+      P(m_typo, sample="1000", weight="800", size=80, label="characters → words"), K_USE),
+"ja-mojisu-kaunto": ("文字数カウント", "文字数・単語数をリアルタイムで数える無料ツール",
+      P(m_typo, sample="字", weight="800", size=96, label="文字数 · 単語数", ff="Noto Sans CJK JP", lab_ff="Noto Sans CJK JP"), K_USE),
+"ko-geuljasu-segi": ("글자수세기", "공백 포함/제외 글자수를 실시간으로 세는 무료 도구",
+      P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
