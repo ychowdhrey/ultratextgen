@@ -1,0 +1,299 @@
+{
+  "slug": "emoji-mahkota",
+  "title": "Emoji Mahkota 👑 — Salin & Tempel buat Bio, Nama & Caption | UltraTextGen",
+  "meta_description": "Emoji mahkota 👑 buat bio, nama tampilan, dan caption — plus kombinasi queen, king, dan flexing menang siap pakai. Klik emojinya, langsung kesalin.",
+  "canonical": "https://ultratextgen.com/id/library/emoji-mahkota/",
+  "breadcrumb": "Emoji Mahkota",
+  "hero_h1": "Emoji Mahkota",
+  "hero_tagline": "Emoji mahkota 👑 buat aura queen dan king, pamer kemenangan, dan caption ala kerajaan — plus kombinasi siap pakai buat bio dan komentar. Klik emojinya, langsung kesalin.",
+  "intro": "Emoji mahkota 👑 sekarang jauh lebih luas dari sekadar simbol kerajaan — di TikTok dan Instagram dia jadi cara singkat bilang \"that's so queen\" atau \"that's so king\", buat muji outfit, comeback, atau flexing orang lain sebagai yang paling juara. Biasanya ditumpuk sama 💯 atau 🔥 buat nandain menang, dilempar sendirian sebagai pujian, atau dipasangkan sama 💅 buat kesan percaya diri dan santai. Halaman ini isinya emoji mahkota berwarna 👑 dan rombongan kerajaannya — 🤴 🫅 👸 — plus kombinasi slang yang beneran dipakai orang buat caption menang dan flexing. Kalau yang kamu cari mahkota versi teks polos kayak ♛ ♔ yang lolos di kolom nama game, itu ada di halaman Simbol Nickname dan Simbol Catur di bawah.",
+  "date_published": "2026-08-07",
+  "date_modified": "2026-08-07",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-crown",
+      "label": "Mahkota Utama",
+      "h2": "Emoji Mahkota & Rombongan Kerajaan",
+      "intro": "Emoji mahkotanya sendiri, plus emoji keluarga kerajaan yang sering dipasangkan di bio dan caption.",
+      "symbols": [
+        {
+          "char": "👑",
+          "label": "Mahkota"
+        },
+        {
+          "char": "🤴",
+          "label": "Pangeran"
+        },
+        {
+          "char": "👸",
+          "label": "Putri"
+        },
+        {
+          "char": "🫅",
+          "label": "Orang Bermahkota"
+        },
+        {
+          "char": "💍",
+          "label": "Cincin"
+        },
+        {
+          "char": "🏰",
+          "label": "Istana"
+        }
+      ]
+    },
+    {
+      "id": "queen-king-slang",
+      "label": "Slang Queen & King",
+      "h2": "Emoji Slang \"Queen\" & \"King\"",
+      "intro": "Lapisan slang dari emoji mahkota — nyebut orang lain (atau diri sendiri) queen atau king karena ikonik, on-brand, atau cuek dengan gaya.",
+      "symbols": [
+        {
+          "char": "💅",
+          "label": "Cat Kuku"
+        },
+        {
+          "char": "💯",
+          "label": "Seratus Poin"
+        },
+        {
+          "char": "😌",
+          "label": "Wajah Lega"
+        },
+        {
+          "char": "🙌",
+          "label": "Angkat Dua Tangan"
+        },
+        {
+          "char": "👏",
+          "label": "Tepuk Tangan"
+        },
+        {
+          "char": "🤌",
+          "label": "Jari Mengerucut"
+        }
+      ]
+    },
+    {
+      "id": "winning-best",
+      "label": "Menang & Nomor 1",
+      "h2": "Emoji Menang, Flexing & Nomor 1",
+      "intro": "Emoji sekitaran mahkota buat nyebut sesuatu yang terbaik, sang pemenang, atau GOAT.",
+      "symbols": [
+        {
+          "char": "🥇",
+          "label": "Medali Emas"
+        },
+        {
+          "char": "🏆",
+          "label": "Piala"
+        },
+        {
+          "char": "🐐",
+          "label": "Kambing (GOAT)"
+        },
+        {
+          "char": "🔥",
+          "label": "Api"
+        },
+        {
+          "char": "🎖️",
+          "label": "Medali Kehormatan"
+        },
+        {
+          "char": "💪",
+          "label": "Otot Lengan"
+        }
+      ]
+    },
+    {
+      "id": "royal-aesthetic",
+      "label": "Aesthetic Kerajaan",
+      "h2": "Aksesori & Aesthetic Kerajaan",
+      "intro": "Emoji berkesan mewah dan lembut yang cocok dipasangkan sama mahkota buat caption aesthetic dan postingan glow up.",
+      "symbols": [
+        {
+          "char": "💎",
+          "label": "Permata"
+        },
+        {
+          "char": "🎀",
+          "label": "Pita"
+        },
+        {
+          "char": "👛",
+          "label": "Dompet"
+        },
+        {
+          "char": "💄",
+          "label": "Lipstik"
+        },
+        {
+          "char": "🦢",
+          "label": "Angsa"
+        },
+        {
+          "char": "🦚",
+          "label": "Merak"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Mahkota",
+    "intro": "Kombinasi mahkota siap pakai — salin satu set sekaligus, langsung tempel ke bio, caption, atau komentar."
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "Flex Mahkota",
+      "flags": [
+        "👑",
+        "💯",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aura Queen",
+      "flags": [
+        "👑",
+        "💅",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gaya King",
+      "flags": [
+        "👑",
+        "😎",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Emang Karakternya",
+      "flags": [
+        "👑",
+        "💅",
+        "😌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sang Pemenang",
+      "flags": [
+        "👑",
+        "🏆",
+        "🥇"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Status GOAT",
+      "flags": [
+        "👑",
+        "🐐",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glow Up Kerajaan",
+      "flags": [
+        "👑",
+        "✨",
+        "💎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mode Penobatan",
+      "flags": [
+        "👑",
+        "🎉",
+        "🥂"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Mahkota di Tiap Perangkat",
+      "paragraphs": [
+        "👑 termasuk emoji yang paling konsisten antar vendor — mahkota emas berpermata di hampir semua platform — dan itu sebagian alasan kenapa dia aman banget dipakai di bio dan nama tampilan. Punya Apple emasnya sedikit lebih pekat dengan permata merah yang kelihatan; punya Google lebih rata dan bersudut.",
+        "Yang perlu diperhatikan itu pasangan 👑 sama 🤴 atau 👸, karena emoji orang punya varian warna kulit sementara mahkotanya nggak. Mahkota sendirian kebaca sebagai status tanpa nempelin ke satu orang tertentu, dan biasanya itu yang dibutuhin nama tampilan.",
+        "Buat mahkota versi <em>teks polos</em> yang lolos di kolom yang nolak emoji — ♛ ♕ ♚ ♔ — pakai karakter bidak catur di halaman <a href=\"/id/library/simbol-nickname/\">simbol nickname</a>. Itu yang paling sering lolos filter nama game, sementara 👑 sering ditolak."
+      ]
+    }
+  ],
+  "faq_label": "FAQ",
+  "faq_h2": "Emoji Mahkota, Dijawab",
+  "faq": [
+    {
+      "q": "Emoji mahkota bisa dipakai di username?",
+      "a": "Di nama tampilan biasanya bisa. Di @username hampir nggak pernah bisa — kebanyakan platform cuma nerima huruf ASCII di situ. Game bahkan lebih ketat dan sering nolak emoji mentah-mentah; mahkota teks ♛ dan ♔ jauh lebih sering lolos, dan itu ada di halaman Simbol Nickname."
+    },
+    {
+      "q": "Apa bedanya 👑 sama ♛?",
+      "a": "👑 itu emoji gambar berwarna. ♛ itu karakter teks biasa — bidak ratu catur hitam — yang tampil mengikuti font di sekitarnya. Yang kedua bisa ditempel ke jauh lebih banyak tempat, termasuk kebanyakan kolom nama game, dan itu sebabnya nickname berhias biasanya pakai yang ini."
+    },
+    {
+      "q": "Emoji mahkota artinya apa?",
+      "a": "Status, menang, atau jadi favorit seseorang — \"queen\", \"king\", \"GOAT\". Ini salah satu hiasan paling umum di nama tampilan game dan bio Instagram justru karena maknanya kebaca sama di hampir semua budaya."
+    },
+    {
+      "q": "Emoji mahkota punya varian warna kulit?",
+      "a": "Nggak. 👑 itu benda, jadi nggak punya varian warna kulit. Emoji orang yang sering dipasangkan sama dia — 🤴 dan 👸 — punya, dan itu sebabnya keduanya bisa kelihatan beda dari yang kamu pilih kalau HP penerimanya sudah lama."
+    },
+    {
+      "q": "Kenapa emoji mahkota saya muncul jadi kotak?",
+      "a": "Perangkat yang nampilin nggak punya font emoji yang mencakup karakter itu. 👑 termasuk emoji lama dan didukung luas, jadi ini jarang terjadi — kalau sampai terjadi, berarti perangkatnya sudah tua banget, dan ♛ versi teks bakal tampil di tempat emojinya gagal."
+    }
+  ],
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "related": [
+    {
+      "href": "/id/library/simbol-nickname/",
+      "title": "Simbol Nickname",
+      "desc": "Mahkota teks ♛ ♔, sayap, kurung, dan aksen buat nick game apa pun."
+    },
+    {
+      "href": "/id/library/simbol-catur/",
+      "title": "Simbol Catur",
+      "desc": "Bidak catur ♔ ♕ ♚ ♛ versi teks polos yang nempel di mana-mana."
+    },
+    {
+      "href": "/id/library/emoji-combos/",
+      "title": "Kombinasi Emoji",
+      "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
+    },
+    {
+      "href": "/id/library/simbol-ff/",
+      "title": "Simbol FF (Free Fire)",
+      "desc": "Bingkai ꧁꧂ dan simbol nick Free Fire, tempat mahkota teks paling sering dipakai."
+    }
+  ],
+  "lang": "id",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/crown-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-mahkota/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/crown-emoji/"
+    }
+  ]
+}

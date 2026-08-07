@@ -1,0 +1,278 @@
+{
+  "slug": "emoji-bintang",
+  "title": "Emoji Bintang ⭐ 🌟 ✨ — Salin & Tempel Rating Bintang 5 | UltraTextGen",
+  "meta_description": "Emoji bintang ⭐ 🌟 ✨ buat rating bintang 5, caption, dan bio aesthetic — lengkap sama kaomoji bermata bintang. Klik emojinya, langsung kesalin.",
+  "canonical": "https://ultratextgen.com/id/library/emoji-bintang/",
+  "breadcrumb": "Emoji Bintang",
+  "hero_h1": "Emoji Bintang",
+  "hero_tagline": "Bintang rating, bintang bersinar, bintang jatuh, kilau, sampai kaomoji bermata bintang — satu set emoji bintang lengkap. Klik emojinya, langsung kesalin.",
+  "intro": "Emoji bintang ⭐ termasuk emoji paling kepakai sehari-hari — sekali ketik lima kali jadi ⭐⭐⭐⭐⭐ buat ngasih rating, nilai produk, atau nandain yang paling juara di caption. Halaman ini ngumpulin satu keluarga emoji bintang: dari ⭐ bintang rating, 🌟 bintang bersinar, ✨ kilau, sampai 🌠 bintang jatuh, plus teman-teman langit malamnya dan kaomoji bermata bintang kayak (☆ω☆). Semua di sini emoji gambar berwarna. Kalau yang kamu cari bintang teks polos kayak ★ dan ☆ yang bisa nempel di kolom nama dan bio tanpa jadi gambar, itu ada di halaman Simbol Bintang. Klik satu bintang, satu kaomoji, atau ambil langsung satu kombinasi jadi.",
+  "date_published": "2026-08-07",
+  "date_modified": "2026-08-07",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-star",
+      "label": "Bintang Utama",
+      "h2": "Emoji Bintang Utama",
+      "intro": "Emoji bintang yang paling sering dipakai — dari bintang rating polos sampai kilau dan bintang jatuh.",
+      "symbols": [
+        {
+          "char": "⭐",
+          "label": "Bintang"
+        },
+        {
+          "char": "🌟",
+          "label": "Bintang Bersinar"
+        },
+        {
+          "char": "✨",
+          "label": "Kilau"
+        },
+        {
+          "char": "💫",
+          "label": "Bintang Berputar"
+        },
+        {
+          "char": "🌠",
+          "label": "Bintang Jatuh"
+        }
+      ]
+    },
+    {
+      "id": "star-ratings",
+      "label": "Rating",
+      "h2": "Rating & Ulasan Bintang",
+      "intro": "Ulang ⭐ sebanyak lima kali buat bikin rating bintang 5, atau padukan sama piala buat nandain pemenang.",
+      "symbols": [
+        {
+          "char": "⭐",
+          "label": "Bintang"
+        },
+        {
+          "char": "🌟",
+          "label": "Bintang Bersinar"
+        },
+        {
+          "char": "🏆",
+          "label": "Piala"
+        }
+      ]
+    },
+    {
+      "id": "night-sky-sparkle",
+      "label": "Langit Malam",
+      "h2": "Emoji Langit Malam & Kilau",
+      "intro": "Teman-teman kosmik yang bikin deretan bintang berubah jadi satu pemandangan langit malam.",
+      "symbols": [
+        {
+          "char": "🌌",
+          "label": "Bima Sakti"
+        },
+        {
+          "char": "🌃",
+          "label": "Malam Berbintang"
+        },
+        {
+          "char": "☄️",
+          "label": "Komet"
+        },
+        {
+          "char": "🪐",
+          "label": "Planet Bercincin"
+        }
+      ]
+    },
+    {
+      "id": "star-kaomoji-section",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Bintang & Wajah Teks",
+      "intro": "Wajah teks ala Jepang bermata bintang — nempel di mana pun teks biasa bisa masuk.",
+      "symbols": [
+        {
+          "char": "(☆ω☆)",
+          "label": "Kaomoji Mata Bintang"
+        },
+        {
+          "char": "(✯◡✯)",
+          "label": "Kaomoji Senyum Berkilau"
+        },
+        {
+          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+          "label": "Kaomoji Senang Berkilau"
+        },
+        {
+          "char": "★~(◠‿◕✿)",
+          "label": "Kaomoji Kedip Bintang"
+        },
+        {
+          "char": "(๑>ᴗ<)☆",
+          "label": "Kaomoji Semangat Bintang"
+        },
+        {
+          "char": "✩‿✩",
+          "label": "Kaomoji Mata Berkelip"
+        },
+        {
+          "char": "(⋆❛ ہ ❛⋆)",
+          "label": "Kaomoji Tatapan Berkilau"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Bintang",
+    "intro": "Ambil satu kombinasi bintang yang udah jadi — rating bintang 5, langit berbintang, atau aesthetic kilau."
+  },
+  "collection_container_id": "starSetsContainer",
+  "collections": [
+    {
+      "name": "Rating Bintang 5",
+      "flags": [
+        "⭐",
+        "⭐",
+        "⭐",
+        "⭐",
+        "⭐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Permohonan Bintang Jatuh",
+      "flags": [
+        "🌠",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Langit Berbintang",
+      "flags": [
+        "🌌",
+        "🌃",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aesthetic Kilau",
+      "flags": [
+        "✨",
+        "💫",
+        "🌟"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sang Juara",
+      "flags": [
+        "🏆",
+        "⭐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bintang Naik Daun",
+      "flags": [
+        "🌟",
+        "🚀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vibes Kosmik",
+      "flags": [
+        "🪐",
+        "☄️",
+        "🌌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bersinar Terang",
+      "flags": [
+        "✨",
+        "⭐",
+        "🌟"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Bintang di Tiap Perangkat",
+      "paragraphs": [
+        "Setiap bintang di halaman ini cuma satu karakter Unicode, sama persis di semua perangkat — tapi <em>gambarnya</em> dibikin sendiri-sendiri sama tiap vendor. ⭐ versi Apple itu bintang emas membulat dengan gradasi lembut; punya Google lebih rata dan lebih pekat; Samsung ada di antara keduanya. Kirim ⭐⭐⭐⭐⭐ dari iPhone ke HP Android, ratingnya tetap kebaca lima bintang, cuma tampilannya sedikit beda.",
+        "Yang perlu diperhatikan itu <strong>💫 Bintang Berputar</strong>, yang di beberapa vendor digambar kayak sapuan komet, bukan bintang — jadi bisa kebaca sebagai gerakan, bukan rating. Kalau maknanya harus jelas tanpa salah tafsir, ⭐ yang paling aman.",
+        "Mau bintang versi <em>teks polos</em> — ★ ☆ ✦ — biar bisa ditempel ke username atau kolom yang nolak emoji? Itu ada di halaman <a href=\"/id/library/simbol-bintang/\">simbol bintang</a>."
+      ]
+    }
+  ],
+  "faq_label": "FAQ",
+  "faq_h2": "Emoji Bintang, Dijawab",
+  "faq": [
+    {
+      "q": "Kenapa emoji bintang kelihatan beda di Android dan iPhone?",
+      "a": "Karena karakternya dan gambarnya itu dua hal berbeda. ⭐ cuma satu kode Unicode yang sama di semua perangkat, tapi Apple, Google, Samsung, dan Microsoft masing-masing bikin gambarnya sendiri. Bintang yang kamu kirim tetap bintang yang sama — cuma gambarnya yang ganti mengikuti HP penerimanya."
+    },
+    {
+      "q": "Gimana cara bikin rating bintang 5?",
+      "a": "Ulang karakter ⭐ sebanyak lima kali: ⭐⭐⭐⭐⭐. Buat rating setengah, campur yang penuh sama yang kosong — biasanya orang pakai ⭐⭐⭐⭐ ditambah ☆ dari halaman Simbol Bintang, karena di Unicode nggak ada emoji setengah bintang."
+    },
+    {
+      "q": "Apa bedanya ⭐, 🌟, dan ✨?",
+      "a": "⭐ itu bintang rating polos, paling pas buat ulasan dan penilaian. 🌟 bintang bersinar, dibacanya \"spesial\" atau \"menonjol\". ✨ itu kilau — maknanya berkilap, baru, atau seru, bukan rating, dan paling sering dipakai sebagai hiasan di sekitar tulisan."
+    },
+    {
+      "q": "Emoji bintang bisa dipakai di username?",
+      "a": "Di @username biasanya nggak bisa, karena kebanyakan platform cuma nerima huruf ASCII di situ. Di nama tampilan sering bisa. Kalau kolomnya nolak emoji, pakai bintang teks kayak ★ atau ☆ dari halaman Simbol Bintang — itu karakter biasa dan lolos di jauh lebih banyak kolom, termasuk nama game."
+    },
+    {
+      "q": "Kenapa emoji bintang muncul jadi kotak kosong?",
+      "a": "Perangkat yang nampilin nggak punya font emoji yang mencakup karakter itu, biasanya karena sistemnya sudah lama banget. Makin baru emojinya, makin besar kemungkinannya. ⭐ dan ✨ termasuk emoji lama dan aman; yang baru ditambahkan belakangan yang lebih sering gagal tampil."
+    }
+  ],
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "related": [
+    {
+      "href": "/id/library/simbol-bintang/",
+      "title": "Simbol Bintang",
+      "desc": "Bintang teks polos ★ ☆ ✦ yang nempel di kolom nama dan bio tanpa jadi gambar."
+    },
+    {
+      "href": "/id/library/kaomoji/",
+      "title": "Kaomoji & Wajah Teks",
+      "desc": "Koleksi kaomoji lengkap — senang, sedih, marah, dan semua di antaranya."
+    },
+    {
+      "href": "/id/library/emoji-combos/",
+      "title": "Kombinasi Emoji",
+      "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
+    },
+    {
+      "href": "/id/library/simbol-aesthetic/",
+      "title": "Simbol Aesthetic",
+      "desc": "Simbol kilau dan ornamen halus buat bio dan caption aesthetic."
+    }
+  ],
+  "lang": "id",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/star-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-bintang/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/star-emoji/"
+    }
+  ]
+}
