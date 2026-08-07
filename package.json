@@ -29,7 +29,8 @@
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
     "check:external-refs": "node scripts/check-external-refs.js",
     "refresh:events": "python3 scripts/refresh-event-pages.py",
-    "check:counter-claims": "node scripts/check-counter-claims.js"
+    "check:counter-claims": "node scripts/check-counter-claims.js",
+    "plan:library-locale": "python3 scripts/plan-library-locale-batch.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
