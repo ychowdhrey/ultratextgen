@@ -119,16 +119,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "inLanguage": "pl",
   "mainEntity": [
     {"@type":"Question","name":"Jak policzyć słowa i znaki online?","acceptedAnswer":{"@type":"Answer","text":"Wpisz lub wklej swój tekst do pola powyżej. Liczba słów, liczba znaków (ze spacjami i bez), liczba zdań, liczba akapitów oraz szacowany czas czytania aktualizują się na żywo podczas pisania — bez przycisku, i nic, co wpiszesz, nie jest wysyłane ani zapisywane."}},
-    {"@type":"Question","name":"Czy to liczy znaki ze spacjami czy bez?","acceptedAnswer":{"@type":"Answer","text":"Obie wartości, pokazane obok siebie: „Znaki” liczy każdą spację, a „Znaki (bez spacji)” pomija białe znaki. Większość limitów platform (Twitter/X, Instagram, Discord) liczy spacje jako zwykłe znaki, więc przy sprawdzaniu posta lub bio pod kątem limitu używaj liczby ze spacjami."}},
-    {"@type":"Question","name":"Jaki jest limit znaków na X (Twitterze)?","acceptedAnswer":{"@type":"Answer","text":"280 znaków na post dla standardowych kont, wliczając spacje, linki i hashtagi (link liczy się jako około 23 znaki, nawet jeśli wyświetla się krócej). Wybierz „Post na X / Twitterze” w sprawdzaniu limitów platform poniżej, aby na żywo zobaczyć, czy Twój tekst się mieści."}},
-    {"@type":"Question","name":"Jaki jest limit znaków podpisu i bio na Instagramie?","acceptedAnswer":{"@type":"Answer","text":"Podpis na Instagramie może mieć do 2200 znaków, choć widoczne są tylko pierwsze linijki, zanim „więcej” je przytnie. Pole bio jest znacznie krótsze: 150 znaków. Oba limity znajdziesz w sprawdzaniu limitów platform poniżej."}},
-    {"@type":"Question","name":"Jaki jest limit znaków podpisu i nazwy użytkownika na TikToku?","acceptedAnswer":{"@type":"Answer","text":"Podpis na TikToku mieści do 2200 znaków. Bio jest ograniczone do 80 znaków, a nazwa użytkownika może mieć do 24 znaków (tylko litery, cyfry, podkreślenia i kropki)."}},
-    {"@type":"Question","name":"Jaki jest limit znaków posta i nagłówka na LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Post na LinkedIn pozwala na do 3000 znaków, choć w feedzie zostaje przycięty przyciskiem „zobacz więcej” po około 200–700 znakach, zależnie od urządzenia. Pole nagłówka jest ograniczone do 220 znaków."}},
-    {"@type":"Question","name":"Jaka jest dobra długość tytułu i opisu meta pod SEO?","acceptedAnswer":{"@type":"Answer","text":"Google przycina wyniki według szerokości w pikselach na ekranie, a nie ściśle według liczby znaków, ale w praktyce trzymaj się około 60 znaków dla tytułu meta i około 155 znaków dla opisu meta, aby nie zostały ucięte w wynikach wyszukiwania."}},
+    {"@type":"Question","name":"Czy spacje liczą się jako znaki?","acceptedAnswer":{"@type":"Answer","text":"Tak, praktycznie wszędzie. Spacja to zwykły znak: zajmuje jedno z 280 miejsc na X, jedno ze 150 w bio na Instagramie i jeden septet w SMS-ie. Dlatego licznik pokazuje obok siebie „Znaki” i „Znaki (bez spacji)”: przy każdym limicie platformy używaj liczby ze spacjami (zzs), a wersji bez spacji tylko wtedy, gdy klient albo biuro wyraźnie tak rozlicza — to konwencja rozliczeniowa, nie techniczna."}},
+    {"@type":"Question","name":"Czy emoji liczy się jako jeden znak?","acceptedAnswer":{"@type":"Answer","text":"Rzadko. Zwykłe emoji to najczęściej jeden punkt kodowy, ale dwie jednostki UTF-16; emoji z odcieniem skóry albo sklejone z kilku znaków (jak emoji rodziny) potrafi mieć 4, 7 i więcej. Na X każde emoji kosztuje 2 z Twoich 280, a w SMS-ie jedno emoji przestawia całą wiadomość ze 160-znakowego GSM-7 na segmenty po 70 znaków. Kafelek „Grafemy” pokazuje to, co widzisz; „Znaki” i „Jednostki UTF-16” pokazują, ile naliczy Ci pole."}},
+    {"@type":"Question","name":"Dlaczego platforma pisze, że przekroczyłem limit, choć licznik pokazuje, że się mieszczę?","acceptedAnswer":{"@type":"Answer","text":"Bo liczycie w różnych jednostkach. Większość platform liczy punkty kodowe Unicode, ale pola formularzy HTML i wiele aplikacji liczy jednostki UTF-16 — tam ozdobna litera kosztuje 2 — pola ofert Amazona liczą bajty UTF-8, a X liczy wagowo. Wybierz nad polem tekstowym, dokąd tekst trafia, a licznik przeliczy go dokładnie tak, jak liczy to miejsce, zamiast podawać jedną ogólną liczbę."}},
+    {"@type":"Question","name":"Jak zmieścić tekst w limicie?","acceptedAnswer":{"@type":"Answer","text":"Gdy przekroczysz limit, licznik pokazuje, co wyciąć — razem z dokładną oszczędnością liczoną w jednostce danej platformy: zamień ozdobny tekst Unicode na zwykły, usuń emoji, wyprostuj cudzysłowy drukarskie i pauzy, scal podwójne spacje, usuń hashtagi albo przytnij tekst do limitu na granicy słowa. Każda poprawka to jedno kliknięcie i każdą da się cofnąć, więc możesz najpierw wypróbować najtańszą, zanim zaczniesz przepisywać tekst."}},
+    {"@type":"Question","name":"Czy ozdobne czcionki liczą się jako więcej znaków?","acceptedAnswer":{"@type":"Answer","text":"Zwykle podwójnie. Ozdobne litery Unicode — pogrubione, kaligraficzne, gotyckie i większość innych fantazyjnych alfabetów — leżą powyżej U+FFFF, więc każda widoczna litera kosztuje 2 jednostki UTF-16, 4 bajty UTF-8 i 2 z 280 znaków na X. Dlatego dziesięcioliterowa ozdobna nazwa potrafi zostać odrzucona przez dwunastoznakowe pole w grze. Wklej ją do licznika i użyj poprawki „Zamień ozdobny tekst na zwykły”, żeby od razu zobaczyć i odzyskać różnicę."}},
+    {"@type":"Question","name":"Czy znaki niewidoczne też są liczone?","acceptedAnswer":{"@type":"Answer","text":"Tak, i to najczęstszy powód, dla którego wynik bywa zagadkowo wyższy, niż wygląda. Spacje zerowej szerokości, znaczniki BOM i wypełniacze wklejone z innych aplikacji zjadają Twój limit, nie pokazując niczego na ekranie. Licznik sygnalizuje je pod polem tekstowym i pozwala usunąć jednym kliknięciem."}},
+    {"@type":"Question","name":"Ile znaków ma SMS po polsku?","acceptedAnswer":{"@type":"Answer","text":"70 na segment, jeśli w treści jest choć jedno ą, ć, ę, ł, ń, ó, ś, ź lub ż — czyli niemal zawsze. Standardowe 160 znaków obowiązuje wyłącznie w alfabecie GSM-7, do którego polskie znaki diakrytyczne nie należą; jeden taki znak przestawia całą wiadomość na kodowanie Unicode, czyli 70 znaków na segment (67, gdy wiadomość dzieli się na kilka). To samo robi emoji i cudzysłów drukarski wklejony z Worda. Dlatego przy masowych wysyłkach SMS-y bez ogonków wychodzą taniej. Wybierz „SMS” nad polem tekstowym, a licznik pokaże liczbę segmentów, tryb kodowania i dokładnie ten znak, który go przełączył."}},
     {"@type":"Question","name":"Ile znaków ma strona rozliczeniowa?","acceptedAnswer":{"@type":"Answer","text":"W tłumaczeniach zwykłych standardem jest 1800 znaków ze spacjami na stronę (część biur przyjmuje 1500 albo 1600 — to kwestia umowy). W tłumaczeniach poświadczonych (przysięgłych) strona ma 1125 znaków ze spacjami, zgodnie z rozporządzeniem Ministra Sprawiedliwości, a każdą rozpoczętą stronę liczy się jako całą. Oba przeliczenia widzisz na żywo w kafelkach statystyk powyżej: „Strony rozliczeniowe (po 1800 zzs)” i „Strony tłum. przysięgłego (po 1125 zzs)”."}},
     {"@type":"Question","name":"Jak policzyć zzs do wyceny copywritingu?","acceptedAnswer":{"@type":"Answer","text":"Wklej gotowy tekst do licznika powyżej i odczytaj kafelek „Znaki” — to liczba znaków ze spacjami (zzs), na której opiera się większość wycen copywriterskich rozliczanych za każde 1000 zzs. Jeśli rozliczenie jest w znakach bez spacji, użyj kafelka „Znaki (bez spacji)”. Nic nie jest wysyłane na serwer — liczenie odbywa się w Twojej przeglądarce."}},
     {"@type":"Question","name":"Dlaczego Word i liczniki online pokazują różne liczby znaków?","acceptedAnswer":{"@type":"Answer","text":"Najczęściej przez znaki niewidoczne: Word nie wlicza do statystyki znaczników akapitu ani podziałów wiersza, a część liczników online traktuje każdy enter jak znak. Różnice robią też przypisy — Word domyślnie w ogóle ich nie liczy, dopóki nie zaznaczysz opcji „Uwzględnij pola tekstowe, przypisy dolne i końcowe”. Przy rozliczeniach za zzs ustal z klientem lub biurem jedną metodę liczenia — różnica potrafi sięgnąć kilku procent."}},
-    {"@type":"Question","name":"Czy ten licznik jest darmowy i czy zapisuje lub wysyła mój tekst?","acceptedAnswer":{"@type":"Answer","text":"Tak, całkowicie za darmo, bez rejestracji. Każde liczenie odbywa się w Twojej przeglądarce w zwykłym JavaScript — nic, co wpiszesz, nie jest wysyłane, logowane ani nigdzie zapisywane."}}
+    {"@type":"Question","name":"Czy ten licznik jest darmowy i czy zapisuje lub wysyła mój tekst?","acceptedAnswer":{"@type":"Answer","text":"Tak, całkowicie za darmo, bez rejestracji. Każde liczenie, sprawdzenie limitu i każda poprawka wykonują się w Twojej przeglądarce w zwykłym JavaScript — nic, co wpiszesz, nie jest wysyłane, logowane ani nigdzie zapisywane."}}
   ]
 }
 </script>
@@ -166,23 +167,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>Wpisz lub wklej dowolny tekst w polu poniżej, a każda statystyka zaktualizuje się natychmiast: słowa, znaki (ze spacjami i bez), zdania, akapity oraz szacowany czas czytania. Nic nie jest wysyłane — każda liczba jest obliczana bezpośrednio w Twojej przeglądarce. Poniżej licznika wybierz platformę z listy, aby sprawdzić, czy Twój tekst mieści się w jej limicie, wraz z dokładną liczbą znaków i tym, ile Ci jeszcze zostało (albo o ile go przekraczasz). Potrzebujesz stylowej czcionki Unicode dla tekstu, który właśnie zmierzyłeś? <a href="/pl/">Główny generator UltraTextGen</a> zamieni go w ponad 100 stylów do skopiowania i wklejenia.</p>
+      <p>Wpisz lub wklej dowolny tekst, a każda statystyka zaktualizuje się natychmiast: słowa, znaki (ze spacjami i bez), zdania, akapity, czas czytania oraz strony rozliczeniowe. Nad polem tekstowym wybierz, dokąd ten tekst trafia — licznik przeliczy go wtedy dokładnie tak, jak liczy to miejsce, i pokaże, ile Ci jeszcze zostało albo o ile przekraczasz limit. A gdy przekraczasz, podpowie, co konkretnie wyciąć, żeby się zmieścić — jednym kliknięciem i z możliwością cofnięcia. Nic nie jest wysyłane: każda liczba powstaje w Twojej przeglądarce. Potrzebujesz stylowej czcionki Unicode dla tekstu, który właśnie zmierzyłeś? <a href="/pl/">Główny generator UltraTextGen</a> zamieni go w ponad 100 stylów do skopiowania i wklejenia.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">Twój tekst</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">Kopiuj</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Wyczyść</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="Wpisz lub wklej tutaj swój tekst…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Słowa</span></div>
@@ -200,15 +207,106 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statStronyPrzys">0</span><span class="counter-stat-label">Strony tłum. przysięgłego (po 1125 zzs)</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">Gdzie jeszcze zmieści się ten tekst — na żywo, we wszystkich limitach</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section">
-    <h2>Limity znaków na platformach, wyjaśnione</h2>
-    <p>Limity znaków istnieją z dwóch różnych powodów i warto wiedzieć, z którym masz do czynienia. <strong>Limity twarde</strong> — 280 znaków na X/Twitterze, 32-znakowy pseudonim na Discordzie, 24-znakowa nazwa użytkownika na TikToku — są egzekwowane przez samą platformę: przekroczysz je, a post albo zapis po prostu zostanie odrzucony. <strong>Limity miękkie/praktyczne</strong> — opis meta w Google, opis filmu na YouTube przed „Pokaż więcej”, post na LinkedIn zanim zostanie przycięty przyciskiem „zobacz więcej” — nie blokują pisania dalej, ale wszystko po tym punkcie jest ukryte przed większością czytelników, chyba że klikną, by rozwinąć treść. Sprawdzian powyżej używa rzeczywistego twardego lub oficjalnie udokumentowanego limitu każdej platformy; dla tych z miękkim przycięciem (tytuł/opis meta, YouTube, LinkedIn) traktuj podaną liczbę jako „ile realnie się wyświetla”, a nie ścianę, której nie da się przekroczyć.</p>
-    <p>Jedna rzecz, która wielu zaskakuje: niektóre platformy liczą więcej, niż można by się spodziewać. Adres URL w poście na X liczy się jako ok. 23 znaki, niezależnie od tego, jak długi jest faktyczny link. Emoji i znaki z akcentami mogą liczyć się jako więcej niż jeden „znak”, zależnie od tego, jak licznik danej platformy jest zaimplementowany wewnętrznie — to narzędzie liczy według punktów kodowych Unicode, co odpowiada sposobowi liczenia niemal każdej współczesnej platformy.</p>
+    <h2>Limity twarde a limity miękkie</h2>
+    <p>„Limit znaków” oznacza dwie różne rzeczy, a od tego zależy, co naprawdę kosztuje Cię przekroczenie.</p>
+    <table class="comparison-table">
+      <thead><tr><th>Rodzaj</th><th>Co się dzieje po przekroczeniu</th><th>Przykłady</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Limit twardy</strong></td>
+          <td>Platforma odrzuca tekst. Post się nie wyśle, nazwa się nie zapisze.</td>
+          <td>Post na X 280 · pseudonim na Discordzie 32 · nazwa użytkownika TikTok 24 · segment SMS</td>
+        </tr>
+        <tr>
+          <td><strong>Limit miękki</strong><br>(przycięcie)</td>
+          <td>Możesz pisać dalej, ale czytelnicy przestają to widzieć, dopóki nie klikną „więcej”.</td>
+          <td>Podpis na Instagramie po 125 · post na LinkedIn po ok. 210 · opis na YouTube po ok. 157</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Sprawdzian nad polem tekstowym wie, który jest który: przy limicie miękkim mówi wprost, w którym miejscu tekst zostanie ucięty, żebyś mógł przenieść najważniejsze na początek, a nie tylko pilnować liczby.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="limits">
+    <h2>Wszystkie limity znaków z tego sprawdzianu</h2>
+    <p>Te same limity, których używa narzędzie powyżej, zebrane w tabeli. Przejdź do: <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">jak liczy każda platforma</a>.</p>
+
+    <h3>Posty i wiadomości</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Platforma</th><th>Limit</th><th>Uwagi</th></tr></thead>
+      <tbody>
+        <tr id="twitter"><td>Post na X / Twitterze</td><td>280</td><td>Liczone wagowo: każdy link = 23, większość emoji, symboli i ozdobnych liter = 2 — zobacz <a href="#counting-modes">jak liczy X</a></td></tr>
+        <tr id="discord"><td>Wiadomość na Discordzie</td><td>2000</td><td>4000 z Nitro; dłuższe wiadomości zamieniają się w załącznik .txt</td></tr>
+        <tr id="instagram"><td>Podpis na Instagramie</td><td>2200</td><td>Po pierwszych linijkach zwijany do „więcej”</td></tr>
+        <tr id="tiktok"><td>Podpis na TikToku</td><td>2200</td><td></td></tr>
+        <tr><td>Post na LinkedIn</td><td>3000</td><td>„Zobacz więcej” przycina po ok. 200–700 znakach, zależnie od urządzenia</td></tr>
+        <tr><td>Post na Facebooku</td><td>63&nbsp;206</td><td></td></tr>
+        <tr><td>Opis filmu na YouTube</td><td>5000</td><td></td></tr>
+        <tr><td>Opis pinu na Pintereście</td><td>500</td><td></td></tr>
+        <tr><td>Wiadomość na Telegramie</td><td>4096</td><td>1024 dla podpisu zdjęcia lub wideo</td></tr>
+        <tr><td>Post na Threads</td><td>500</td><td></td></tr>
+        <tr><td>Post na Bluesky</td><td>300</td><td>Liczone grafemami (tym, co widać), a nie punktami kodowymi</td></tr>
+        <tr><td>Tytuł posta na Reddicie</td><td>300</td><td></td></tr>
+        <tr><td>Post/status na Zalo</td><td>2000</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Bio i profile</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Pole</th><th>Limit</th></tr></thead>
+      <tbody>
+        <tr><td>Bio na Instagramie</td><td>150</td></tr>
+        <tr><td>Bio na TikToku</td><td>80</td></tr>
+        <tr><td>Nagłówek na LinkedIn</td><td>220</td></tr>
+        <tr><td>Sekcja „Info” na WhatsAppie</td><td>139</td></tr>
+        <tr><td>Bio na Telegramie</td><td>70</td></tr>
+        <tr><td>Status na VK</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Nazwy użytkownika, tytuły i SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Pole</th><th>Limit</th><th>Uwagi</th></tr></thead>
+      <tbody>
+        <tr><td>Pseudonim na Discordzie</td><td>32</td><td></td></tr>
+        <tr><td>Nazwa użytkownika na TikToku</td><td>24</td><td>Tylko litery, cyfry, podkreślenia i kropki</td></tr>
+        <tr><td>Nazwa użytkownika na Instagramie</td><td>30</td><td></td></tr>
+        <tr><td>Tytuł filmu na YouTube</td><td>100</td><td></td></tr>
+        <tr><td>Tytuł meta pod SEO</td><td>~60</td><td>Google przycina według szerokości w pikselach — traktuj to jak wskazówkę</td></tr>
+        <tr><td>Opis meta pod SEO</td><td>~155</td><td>Tak samo — przycięcie według szerokości w pikselach</td></tr>
+        <tr id="sms"><td>Wiadomość SMS</td><td>160 / segment</td><td>Spada do 70 na segment, gdy pojawi się choć jeden znak spoza GSM-7 — a polskie ą ć ę ł ń ó ś ź ż są poza nim, więc SMS po polsku niemal zawsze liczy się po 70; zobacz <a href="#counting-modes">liczenie SMS-ów</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="counting-modes">
+    <h2>Dlaczego Twoja liczba znaków nie zgadza się z tą z platformy</h2>
+    <p>Na pytanie „ile to znaków?” jest więcej niż jedna poprawna odpowiedź, bo platformy liczą w różnych jednostkach. Ten sam tekst może mieć cztery różne długości:</p>
+    <table class="comparison-table">
+      <thead><tr><th>Sposób liczenia</th><th>Co mierzy</th><th>Kto tak liczy</th></tr></thead>
+      <tbody>
+        <tr><td>Grafemy</td><td>To, co faktycznie widać — emoji z odcieniem skóry to 1</td><td>Bluesky; z grubsza tak samo Instagram traktuje emoji</td></tr>
+        <tr><td>Punkty kodowe</td><td>Znaki Unicode — 👍🏽 to 2 (kciuk + odcień skóry)</td><td>Większość platform internetowych i główny kafelek „Znaki” w tym narzędziu</td></tr>
+        <tr><td>Jednostki UTF-16</td><td>Sposób, w jaki tekst przechowuje JavaScript i wiele aplikacji — litery 𝗽𝗼𝗴𝗿𝘂𝗯𝗶𝗼𝗻𝗲 kosztują po 2</td><td>Pola formularzy HTML (<code>maxlength</code>), wiele gier i backendów aplikacji</td></tr>
+        <tr><td>Bajty UTF-8</td><td>Rozmiar zapisu — ó to 2, 中 to 3, 𝗯 to 4</td><td>Pola ofert Amazona, nazwy na Steamie, bazy danych</td></tr>
+      </tbody>
+    </table>
+    <p>Wszystkie cztery widzisz na żywo w statystykach powyżej, więc gdy formularz twierdzi, że tekst jest za długi, a edytor tekstu się z tym nie zgadza, od razu wiadomo, którą jednostką liczy formularz. Dwa miejsca wymagają jeszcze dodatkowej reguły:</p>
+    <p><strong>X / Twitter liczy wagowo, a nie po znakach.</strong> Zgodnie z opublikowanym przez X algorytmem (biblioteka <code>twitter-text</code>) każdy adres URL liczy się dokładnie jako 23, podstawowe litery łacińskie jako 1, a niemal wszystko inne — znaki CJK, większość emoji i każda „ozdobna” litera Unicode — jako <strong>2</strong>. Post w całości zapisany 𝗽𝗼𝗴𝗿𝘂𝗯𝗶𝗲𝗻𝗶𝗲𝗺 zmieści więc tylko 140 widocznych liter w budżecie 280. Opcja „X / Twitter” w sprawdzaniu powyżej stosuje ten prawdziwy algorytm. Polskie ą, ć, ę, ł, ń, ó, ś, ź, ż mieszczą się w zakresie o wadze 1, więc na X nie kosztują więcej niż zwykłe litery.</p>
+    <p><strong>SMS liczy się w segmentach — a po polsku segment prawie zawsze ma 70 znaków.</strong> Wiadomość mieści 160 znaków tylko dopóty, dopóki wszystkie znaki należą do starego alfabetu GSM-7. Polskie znaki diakrytyczne — ą, ć, ę, ł, ń, ó, ś, ź, ż — do niego <em>nie</em> należą, podobnie jak emoji i cudzysłowy drukarskie „ ” wklejone z Worda. Wystarczy jeden taki znak, żeby cała wiadomość przeszła w tryb Unicode: 70 znaków na segment, a przy dłuższych wiadomościach 67. Dlatego „Dziękuję” zamiast „Dziekuje” potrafi zamienić jednego SMS-a w dwa — i to jest powód, dla którego masowe wysyłki po polsku często idą bez ogonków. Opcja „SMS” w sprawdzaniu powyżej wykrywa to i pokazuje dokładnie ten znak, który przełączył wiadomość.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -229,28 +327,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">Wpisz lub wklej swój tekst do pola powyżej. Liczba słów, liczba znaków (ze spacjami i bez), liczba zdań, liczba akapitów oraz szacowany czas czytania aktualizują się na żywo podczas pisania — bez przycisku, i nic, co wpiszesz, nie jest wysyłane ani zapisywane.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Czy to liczy znaki ze spacjami czy bez?</summary>
-      <p class="faq-answer">Obie wartości, pokazane obok siebie: „Znaki” liczy każdą spację, a „Znaki (bez spacji)” pomija białe znaki. Większość limitów platform (Twitter/X, Instagram, Discord) liczy spacje jako zwykłe znaki, więc przy sprawdzaniu posta lub bio pod kątem limitu używaj liczby ze spacjami.</p>
+      <summary class="faq-question">Czy spacje liczą się jako znaki?</summary>
+      <p class="faq-answer">Tak, praktycznie wszędzie. Spacja to zwykły znak: zajmuje jedno z 280 miejsc na X, jedno ze 150 w bio na Instagramie i jeden septet w SMS-ie. Dlatego licznik pokazuje obok siebie „Znaki” i „Znaki (bez spacji)”: przy każdym limicie platformy używaj liczby ze spacjami (zzs), a wersji bez spacji tylko wtedy, gdy klient albo biuro wyraźnie tak rozlicza — to konwencja rozliczeniowa, nie techniczna.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Jaki jest limit znaków na X (Twitterze)?</summary>
-      <p class="faq-answer">280 znaków na post dla standardowych kont, wliczając spacje, linki i hashtagi (link liczy się jako około 23 znaki, nawet jeśli wyświetla się krócej). Wybierz „Post na X / Twitterze” w sprawdzaniu limitów platform powyżej, aby na żywo zobaczyć, czy Twój tekst się mieści.</p>
+      <summary class="faq-question">Czy emoji liczy się jako jeden znak?</summary>
+      <p class="faq-answer">Rzadko. Zwykłe emoji to najczęściej jeden punkt kodowy, ale dwie jednostki UTF-16; emoji z odcieniem skóry albo sklejone z kilku znaków (jak emoji rodziny) potrafi mieć 4, 7 i więcej. Na X każde emoji kosztuje 2 z Twoich 280, a w SMS-ie jedno emoji przestawia całą wiadomość ze 160-znakowego GSM-7 na segmenty po 70 znaków. Kafelek „Grafemy” pokazuje to, co widzisz; „Znaki” i „Jednostki UTF-16” pokazują, ile naliczy Ci pole.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Jaki jest limit znaków podpisu i bio na Instagramie?</summary>
-      <p class="faq-answer">Podpis na Instagramie może mieć do 2200 znaków, choć widoczne są tylko pierwsze linijki, zanim „więcej” je przytnie. Pole bio jest znacznie krótsze: 150 znaków. Oba limity znajdziesz w sprawdzaniu limitów platform powyżej.</p>
+      <summary class="faq-question">Dlaczego platforma pisze, że przekroczyłem limit, choć licznik pokazuje, że się mieszczę?</summary>
+      <p class="faq-answer">Bo liczycie w różnych jednostkach. Większość platform liczy punkty kodowe Unicode, ale pola formularzy HTML i wiele aplikacji liczy jednostki UTF-16 — tam ozdobna litera kosztuje 2 — pola ofert Amazona liczą bajty UTF-8, a X liczy wagowo. Wybierz nad polem tekstowym, dokąd tekst trafia, a licznik przeliczy go dokładnie tak, jak liczy to miejsce, zamiast podawać jedną ogólną liczbę.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Jaki jest limit znaków podpisu i nazwy użytkownika na TikToku?</summary>
-      <p class="faq-answer">Podpis na TikToku mieści do 2200 znaków. Bio jest ograniczone do 80 znaków, a nazwa użytkownika może mieć do 24 znaków (tylko litery, cyfry, podkreślenia i kropki).</p>
+      <summary class="faq-question">Jak zmieścić tekst w limicie?</summary>
+      <p class="faq-answer">Gdy przekroczysz limit, licznik pokazuje, co wyciąć — razem z dokładną oszczędnością liczoną w jednostce danej platformy: zamień ozdobny tekst Unicode na zwykły, usuń emoji, wyprostuj cudzysłowy drukarskie i pauzy, scal podwójne spacje, usuń hashtagi albo przytnij tekst do limitu na granicy słowa. Każda poprawka to jedno kliknięcie i każdą da się cofnąć, więc możesz najpierw wypróbować najtańszą, zanim zaczniesz przepisywać tekst.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Jaki jest limit znaków posta i nagłówka na LinkedIn?</summary>
-      <p class="faq-answer">Post na LinkedIn pozwala na do 3000 znaków, choć w feedzie zostaje przycięty przyciskiem „zobacz więcej” po około 200–700 znakach, zależnie od urządzenia. Pole nagłówka jest ograniczone do 220 znaków.</p>
+      <summary class="faq-question">Czy ozdobne czcionki liczą się jako więcej znaków?</summary>
+      <p class="faq-answer">Zwykle podwójnie. Ozdobne litery Unicode — pogrubione, kaligraficzne, gotyckie i większość innych fantazyjnych alfabetów — leżą powyżej U+FFFF, więc każda widoczna litera kosztuje 2 jednostki UTF-16, 4 bajty UTF-8 i 2 z 280 znaków na X. Dlatego dziesięcioliterowa ozdobna nazwa potrafi zostać odrzucona przez dwunastoznakowe pole w grze. Wklej ją do licznika i użyj poprawki „Zamień ozdobny tekst na zwykły”, żeby od razu zobaczyć i odzyskać różnicę.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Jaka jest dobra długość tytułu i opisu meta pod SEO?</summary>
-      <p class="faq-answer">Google przycina wyniki według szerokości w pikselach na ekranie, a nie ściśle według liczby znaków, ale w praktyce trzymaj się około 60 znaków dla tytułu meta i około 155 znaków dla opisu meta, aby nie zostały ucięte w wynikach wyszukiwania.</p>
+      <summary class="faq-question">Czy znaki niewidoczne też są liczone?</summary>
+      <p class="faq-answer">Tak, i to najczęstszy powód, dla którego wynik bywa zagadkowo wyższy, niż wygląda. Spacje zerowej szerokości, znaczniki BOM i wypełniacze wklejone z innych aplikacji zjadają Twój limit, nie pokazując niczego na ekranie. Licznik sygnalizuje je pod polem tekstowym i pozwala usunąć jednym kliknięciem.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Ile znaków ma SMS po polsku?</summary>
+      <p class="faq-answer">70 na segment, jeśli w treści jest choć jedno ą, ć, ę, ł, ń, ó, ś, ź lub ż — czyli niemal zawsze. Standardowe 160 znaków obowiązuje wyłącznie w alfabecie GSM-7, do którego polskie znaki diakrytyczne nie należą; jeden taki znak przestawia całą wiadomość na kodowanie Unicode, czyli 70 znaków na segment (67, gdy wiadomość dzieli się na kilka). To samo robi emoji i cudzysłów drukarski wklejony z Worda. Dlatego przy masowych wysyłkach SMS-y bez ogonków wychodzą taniej. Wybierz „SMS” nad polem tekstowym, a licznik pokaże liczbę segmentów, tryb kodowania i dokładnie ten znak, który go przełączył.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Ile znaków ma strona rozliczeniowa?</summary>
@@ -266,7 +368,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Czy ten licznik jest darmowy i czy zapisuje lub wysyła mój tekst?</summary>
-      <p class="faq-answer">Tak, całkowicie za darmo, bez rejestracji. Każde liczenie odbywa się w Twojej przeglądarce w zwykłym JavaScript — nic, co wpiszesz, nie jest wysyłane, logowane ani nigdzie zapisywane.</p>
+      <p class="faq-answer">Tak, całkowicie za darmo, bez rejestracji. Każde liczenie, sprawdzenie limitu i każda poprawka wykonują się w Twojej przeglądarce w zwykłym JavaScript — nic, co wpiszesz, nie jest wysyłane, logowane ani nigdzie zapisywane.</p>
     </details>
   </section>
 
@@ -307,19 +409,107 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script>
   window.UTG_COUNTER_I18N = {
     sec: "s",
     min: "min",
     copied: "Skopiowano!",
-    label: "Sprawdź tekst względem limitu platformy",
+    label: "Dokąd trafia ten tekst?",
     ok: "Mieści się ✓",
     fail: "Przekroczono limit ✕",
     xNote: "Policzone tak, jak liczy X: każdy link = 23, a większość symboli, emoji i ozdobnych liter Unicode = po 2.",
     smsSegments: "{n} segm. SMS · {per} znaków na segment ({enc})",
     smsUnicode: "na tryb Unicode przełącza: {chars}",
+    visibleNote: "Widocznych jest tylko około pierwszych {n} znaków, reszta zostaje zwinięta — najważniejsze umieść na początku.",
+    platformLabel: "Platforma",
+    fieldLabel: "Pole",
+    overBy: "Przekraczasz o {n} — wybierz poprawkę:",
+    trimToFit: "Przytnij do limitu",
+    undo: "Cofnij",
+    applied: "Zastosowano",
+    fitsHeading: "Gdzie jeszcze zmieści się ten tekst",
+    segShort: "segm.",
+    inspectStyled: "Ozdobne litery Unicode: {n} — każda kosztuje 2 na X i w wielu polach aplikacji.",
+    inspectInvisible: "Znaki niewidoczne, które i tak się liczą: {n}.",
+    inspectCombining: "Nałożone znaki diakrytyczne (zalgo): {n}.",
+    reducers: {
+      "plain": "Zamień ozdobny tekst na zwykły",
+      "invisible": "Usuń znaki niewidoczne",
+      "combining": "Usuń nałożone znaki diakrytyczne",
+      "emoji": "Usuń emoji",
+      "quotes": "Wyprostuj cudzysłowy i myślniki",
+      "spaces": "Scal podwójne spacje",
+      "blanklines": "Scal puste wiersze",
+      "hashtags": "Usuń hashtagi",
+      "gsm-safe": "Dostosuj do SMS-a (powrót do 160 na segment)"
+    },
+    reducerHints: {
+      "plain": "Ozdobne litery Unicode kosztują w większości pól po 2 jednostki.",
+      "invisible": "Znaki zerowej szerokości i wypełniacze, których nie widać, a pole je liczy.",
+      "combining": "Każdy znak glitch/zalgo dokłada jeden znak.",
+      "emoji": "Emoji kosztuje 2 na X, a SMS-a przestawia na segmenty po 70 znaków.",
+      "quotes": "Polskie cudzysłowy „ ” i pauzy najczęściej wybijają SMS-a z GSM-7.",
+      "spaces": "Powtórzone spacje i spacje na końcach wierszy.",
+      "blanklines": "Trzy lub więcej złamań wiersza pod rząd.",
+      "hashtags": "Przenieś je do komentarza."
+    },
+    platforms: {
+      "seo": "Wynik wyszukiwania Google"
+    },
+    fields: {
+      "x-post": "Post",
+      "x-bio": "Bio",
+      "x-name": "Nazwa wyświetlana",
+      "ig-caption": "Podpis",
+      "ig-bio": "Bio",
+      "ig-username": "Nazwa użytkownika",
+      "ig-alt": "Tekst alternatywny",
+      "tiktok-caption": "Podpis",
+      "tiktok-bio": "Bio",
+      "tiktok-username": "Nazwa użytkownika",
+      "li-post": "Post",
+      "li-headline": "Nagłówek",
+      "li-about": "Sekcja „O mnie”",
+      "li-comment": "Komentarz",
+      "yt-title": "Tytuł filmu",
+      "yt-description": "Opis",
+      "yt-comment": "Komentarz",
+      "fb-post": "Post",
+      "discord-message": "Wiadomość",
+      "discord-nick": "Pseudonim",
+      "discord-status": "Status niestandardowy",
+      "telegram-message": "Wiadomość",
+      "telegram-caption": "Podpis zdjęcia/wideo",
+      "telegram-bio": "Bio",
+      "threads-post": "Post",
+      "threads-bio": "Bio",
+      "bluesky-post": "Post",
+      "bluesky-bio": "Bio",
+      "reddit-title": "Tytuł posta",
+      "reddit-comment": "Komentarz",
+      "pinterest-description": "Opis pinu",
+      "pinterest-title": "Tytuł pinu",
+      "whatsapp-about": "Info",
+      "vk-status": "Status",
+      "zalo-post": "Post/status",
+      "sms": "Wiadomość SMS",
+      "meta-title": "Tytuł strony",
+      "meta-description": "Opis meta"
+    },
     labels: {
       "x-post": "Post na X / Twitterze",
+      "x-bio": "Bio na X / Twitterze",
+      "x-name": "Nazwa wyświetlana na X / Twitterze",
+      "ig-alt": "Tekst alternatywny na Instagramie",
+      "li-about": "Sekcja „O mnie” na LinkedIn",
+      "li-comment": "Komentarz na LinkedIn",
+      "yt-comment": "Komentarz na YouTube",
+      "discord-status": "Status niestandardowy na Discordzie",
+      "threads-bio": "Bio na Threads",
+      "bluesky-bio": "Bio na Bluesky",
+      "reddit-comment": "Komentarz na Reddicie",
+      "pinterest-title": "Tytuł pinu na Pintereście",
       "discord-message": "Wiadomość na Discordzie",
       "ig-caption": "Podpis na Instagramie",
       "tiktok-caption": "Podpis na TikToku",
@@ -336,7 +526,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "ig-bio": "Bio na Instagramie",
       "tiktok-bio": "Bio na TikToku",
       "li-headline": "Nagłówek LinkedIn",
-      "whatsapp-about": "Sekcja „O mnie” WhatsApp",
+      "whatsapp-about": "Sekcja „Info” na WhatsAppie",
       "telegram-bio": "Bio na Telegramie",
       "vk-status": "Status na VK",
       "discord-nick": "Pseudonim na Discordzie",
