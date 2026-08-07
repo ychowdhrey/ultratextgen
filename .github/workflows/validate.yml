@@ -12,8 +12,11 @@ name: Validate Site
 # locale content change introduced by this PR without its sibling being
 # updated — locale mesh health (hreflang reciprocity + locale-native
 # internal links on any locale page this PR touches), the locale-parent-gap
-# pre-build check on any new locale page, and FAQ schema visibility
-# (FAQPage/QAPage JSON-LD whose questions aren't actually on the page). Each
+# pre-build check on any new locale page, FAQ schema visibility
+# (FAQPage/QAPage JSON-LD whose questions aren't actually on the page), and
+# the external-reference check (no tracked file may point readers at a repo,
+# doc or tool that isn't published here — see scripts/check-external-refs.js
+# for why a dangling pointer is worse than none). Each
 # validator already exits non-zero on failure (see scripts/audit-hreflang.js,
 # scripts/audit-hreflang-completeness.js,
 # scripts/validate_library_pages.py, scripts/check-image-assets.py,
@@ -21,7 +24,7 @@ name: Validate Site
 # scripts/check-new-symbol-peer-links.py,
 # scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
 # scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js,
-# scripts/check-funding-choices.js) — this
+# scripts/check-funding-choices.js, scripts/check-external-refs.js) — this
 # workflow is what actually wires that into CI so a PR can't merge broken
 # pages.
 #
@@ -40,15 +43,14 @@ name: Validate Site
 # changes, checking just og:image/twitter:image/hero (not Pinterest pins), so
 # pre-existing site-wide backlog can never make it permanently red. This
 # exists specifically to stop new pages shipping ahead of their hero/OG art —
-# see the internal GSC crawl-stats investigation that found this recurring.
+# a recurring pattern confirmed from live GSC crawl-stats data.
 #
 # scripts/sync_symbol_spoke_links.py --check (no --write) is likewise a
 # whole-site audit — it reports every /symbol/ page whose declared "Related
 # Symbols" peer relation isn't reciprocated, alongside the existing hub-orphan
 # check — so its step below is informational only; hub-orphans are already
 # gated separately by scripts/validate_library_pages.py, and peer-link
-# backlog (real at the time this was added, since fixed in the same PR — see
-# ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §7) is a
+# backlog (real at the time this was added, since fixed in the same PR) is a
 # dashboard, not a per-PR blocker on its own. scripts/check-new-symbol-peer-
 # links.py is the actual gate: diff-scoped to only /symbol/ pages this PR
 # adds or changes, so a newly-introduced one-directional peer relation can't
@@ -95,7 +97,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # check-translation-parity.js diffs this PR against its base branch,
           # which needs real history — a shallow (depth-1) checkout has no
@@ -103,12 +105,12 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -141,6 +143,16 @@ jobs:
         id: funding_choices
         continue-on-error: true
         run: npm run check:funding-choices | tee funding-choices.log
+
+      # Gating. Structural validators cannot see a number written in prose or
+      # in a <meta>, which is how "LinkedIn cuts at 210" survived the rule
+      # changing and how "27 platform limits" stayed in the snippet text long
+      # after the table grew to 38. This asserts every figure these pages
+      # state still matches js/counter/counterRules.js.
+      - name: Run counter claim-consistency check
+        id: counter_claims
+        continue-on-error: true
+        run: npm run check:counter-claims | tee counter-claims.log
 
       - name: Run image asset check (whole-site audit, informational only)
         id: images
@@ -187,6 +199,11 @@ jobs:
         continue-on-error: true
         run: npm run audit:locale-parent-gap | tee locale-parent-gap-audit.log
 
+      - name: Run external-reference check
+        id: external_refs
+        continue-on-error: true
+        run: npm run check:external-refs | tee external-refs.log
+
       - name: Build step summary
         if: always()
         run: |
@@ -209,6 +226,7 @@ jobs:
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
             echo '```'
             cat funding-choices.log
             echo '```'
@@ -253,6 +271,11 @@ jobs:
             cat locale-parent-gap.log
             echo '```'
             echo ""
+            echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
+            echo '```'
+            cat external-refs.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -271,7 +294,6 @@ jobs:
         # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
-        run: |
+if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure' || steps.external_refs.outcome == 'failure' || steps.counter_claims.outcome == 'failure'        run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

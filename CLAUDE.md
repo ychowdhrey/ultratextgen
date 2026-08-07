@@ -257,8 +257,8 @@ and `symbol/rupee-sign/` (all shipped 2026-07-11/12) cross-linked each
 other, but `symbol/ruble-sign/` (07-18), `symbol/dirham-sign/`, and
 `symbol/saudi-riyal-sign/` (both 07-22) — which claimed those older pages as
 peers — were never added back in, leaving three real pages with only 1–2
-inbound editorial links each. Root-cause analysis:
-`ultratextgen-lab-`'s `gsc-technical-seo-leakage-audit-2026-07-24.md` §7.
+inbound editorial links each. Root-cause analysis: an internal audit
+(2026-07-24).
 
 `scripts/sync_symbol_spoke_links.py --write --reciprocal` fixes both
 directions in one pass — hub reciprocity (as before) and peer reciprocity
@@ -1235,9 +1235,13 @@ at their intersection:
 - **`data/locale_qualification_tiers.json`** — tiers every one of the 29
   canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
   (qualify via the existing 7-point gate, then mirror Core), or Tier 3
-  (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
-  — its problem is an authority/indexing gap, not a content gap; do not add
-  vi content.
+  (hold/stub, no spec mirroring). A locale can additionally carry
+  `hold: true` within Tier 2 for a non-content reason (authority/indexing
+  gap rather than a content gap) — no locale currently does. `vi` carried
+  this from 2026-07-24 to 2026-08-06 (lifted per user decision — see
+  "What passes a gate" §3 below for the override history, and
+  `docs/locale-parent-governance.md` §2 for the full record); it's plain
+  Tier 2 now, same as its qualify-then-mirror-Core siblings.
 
 `scripts/lib/locale-parent-registry.js`'s `decide(relPath, localeCode)` walks
 the full 5-step flowchart (Tier-3/held locale → skip; script-incompatible
@@ -1401,12 +1405,16 @@ Three recurring points of confusion, each resolved by a real case:
    still chose to include vi in a `symbol/*` build; the authorization was
    recorded as a `data/locale_parent_gap_audit.json` entry with `null`
    instruments and evidence text naming it a user authorization
-   (`f09d35b5`) — vi's hold flag and tier were left untouched. That's the
-   template: the override lives in the ledger as a dated, attributed
-   decision; the registry keeps stating the standing default. Presenting the
-   hold reasoning to the user *before* they decide is part of the override
-   being legitimate — a hold silently ignored is a violation, a hold
-   knowingly overridden is a decision.
+   (`f09d35b5`) — vi's hold flag and tier were left untouched at the time.
+   That's the template for a per-batch override: the override lives in the
+   ledger as a dated, attributed decision; the registry keeps stating the
+   standing default. Presenting the hold reasoning to the user *before* they
+   decide is part of the override being legitimate — a hold silently
+   ignored is a violation, a hold knowingly overridden is a decision.
+   (Superseded 2026-08-06: this per-batch-override pattern is now historical
+   for `vi` specifically — the user lifted the hold flag itself rather than
+   overriding it batch-by-batch. The pattern above still applies to any
+   future locale that picks up a hold.)
 4. **An all-instruments-null authorization is a bridge, not a pass
    (2026-08-01).** A `data/locale_parent_gap_audit.json` entry recorded with
    every instrument `null` (a user authorization in lieu of a real pull) must
@@ -1612,11 +1620,36 @@ silently return is the tooling below, not vigilance.
 
 ## Testing
 
-There is no automated test framework. Testing is manual and browser-based:
+There is no automated test framework, and no runner — every test here is a
+plain file you open or a plain file you `node`. Testing is otherwise manual
+and browser-based:
+
 - `js/vertical/verticalLayouts.test.html` — manual test page for vertical layout module
+- `js/counter/counterRules.test.js` — `node js/counter/counterRules.test.js`.
+  Assertions for the pure half of the character counter: counting modes,
+  per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
+  `LIMITS` table integrity. No DOM, no dependencies.
+- `js/counter/counter.test.html` — the DOM half, which needs a browser: the
+  two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
+  ordering, SMS segments, soft-limit warning, clear. Open it and read the
+  panel, or drive it headlessly and read `window.__UTG_TEST` (`{ pass, fail,
+  lines, summary }`). It runs against a deliberately **non-English** I18N
+  block, so it also asserts that a translated page renders translated fix-bar
+  buttons instead of falling back to English — a regression that would
+  otherwise only ever be noticed by a reader of that language.
 - Test changes by opening HTML files in a browser
 
-Do not add a test framework unless explicitly requested.
+**Why the counter has tests when nothing else does.** It is the one surface
+whose entire value proposition is numerical correctness, and it shipped a
+wrong number: Bluesky was billing code points while the page's own reference
+table said graphemes, so 👨‍👩‍👧‍👦 cost 7 instead of 1. A visual check
+cannot catch that. Any future page that *asserts facts* — limits, counts,
+encodings — deserves the same treatment; a page that merely renders copy does
+not.
+
+Do not add a test framework unless explicitly requested. Adding another
+zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
+framework" and needs no permission.
 
 ---
 

@@ -260,9 +260,10 @@ def m_typo(p, sample="Aa", **kw):
              f'text-decoration="{deco}" letter-spacing="{spacing}" '
              f'fill="#fff" text-anchor="middle">{sample}</text>')
     extra = kw.get("extra", "")
+    lab_ff = kw.get("lab_ff", SANS)
     lab = ""
     if label:
-        lab = (f'<text x="180" y="318" font-family="{SANS}" font-size="20" '
+        lab = (f'<text x="180" y="318" font-family="{lab_ff}" font-size="20" '
                f'fill="{SUB}" text-anchor="middle">{label}</text>')
     return f"""
     <text x="180" y="208" font-family="{ff}" font-size="{size+40}"
@@ -1729,6 +1730,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-pinterest-use": ("What Font Does Pinterest Use?", "Pinterest Sans, by Grilli Type", m_qa, K_ANS),
   "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
@@ -2558,6 +2560,7 @@ PAGES.update({
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
 "answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
 "answers-what-font-does-twitter-use": ("What Font Does Twitter/X Use?", "Chirp, the brand font, explained", m_qa, K_ANS),
+"answers-what-font-does-whatsapp-use": ("What Font Does WhatsApp Use?", "Logo vs. chat, and why they differ", m_qa, K_ANS),
 "answers-what-font-does-youtube-use": ("What Font Does YouTube Use?", "Roboto and YouTube Sans, explained", m_qa, K_ANS),
 "answers-youtube-handle-vs-channel-name": ("YouTube Handle vs Channel Name", "Two fields, two rule sets — which is which", m_qa, K_ANS),
 "id-answers-handle-vs-nama-channel-youtube": ("Handle vs Nama Channel YouTube", "Dua kolom, dua aturan berbeda", m_qa, K_ANS),
@@ -2657,6 +2660,14 @@ PAGES.update({
 # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
 "character-counter": ("Character Counter", "Live word & character stats as you type",
       P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
+"characters-to-words": ("Characters to Words", "Convert any character count to words & pages",
+      P(m_typo, sample="1000", weight="800", size=80, label="characters → words"), K_USE),
+"ja-mojisu-kaunto": ("文字数カウント", "文字数・単語数をリアルタイムで数える無料ツール",
+      P(m_typo, sample="字", weight="800", size=96, label="文字数 · 単語数", ff="Noto Sans CJK JP", lab_ff="Noto Sans CJK JP"), K_USE),
+"ko-geuljasu-segi": ("글자수세기", "공백 포함/제외 글자수를 실시간으로 세는 무료 도구",
+      P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
+"zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
+      P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
@@ -2846,6 +2857,67 @@ PAGES["ru-library-strelki"] = (
 PAGES["th-library-arrow-symbols"] = (
     "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
     glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+
+# ---- 2026-08-07: zh-tw mesh-completion backfill (7 pages) + it/vi (1 each) ----
+# zh-tw was promoted Tier 3 -> Tier 2 on 2026-08-06; these clusters were
+# already 15-18 locales deep and simply hadn't been backfilled yet. Glyph
+# picks reuse the exact same sets as the equivalent EN/other-locale keys
+# above for cross-locale visual consistency.
+PAGES["zh-tw-library-biaoqing-fuhao-zuhe"] = (
+    "表情符號組合大全", "美學風格複製貼上表情符號組合",
+    m_smiley, K_LIB)
+PAGES["zh-tw-library-xila-zimu-fuhao"] = (
+    "希臘字母符號", "α β Δ Σ Ω π 複製貼上",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+PAGES["zh-tw-library-shuxue-fuhao"] = (
+    "數學符號", "運算子、根號、無限大複製貼上",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["zh-tw-library-aixin-fuhao"] = (
+    "愛心符號大全", "複製貼上愛心表情符號與字元",
+    glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB)
+PAGES["zh-tw-library-huobi-fuhao"] = (
+    "貨幣符號大全", "複製貼上世界貨幣符號",
+    m_coin, K_LIB)
+PAGES["zh-tw-library-keai-mengxi-fuhao"] = (
+    "可愛萌系符號", "柔美風格裝飾符號複製貼上",
+    glyphs("♡", "❀", "✧", "⊹", "✦"), K_LIB)
+PAGES["zh-tw-library-teshu-fuhao"] = (
+    "特殊符號", "複製貼上獨特 Unicode 符號",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["it-library-caratteri-speciali-simboli"] = (
+    "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["vi-library-ky-tu-hy-lap"] = (
+    "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+
+# ---- 2026-08-07: what-font-does-{pinterest,whatsapp}-use — 12 locales ----
+PAGES.update({
+  "ar-answers-what-font-does-pinterest-use": ("ما هو الخط الذي يستخدمه بينتيرست؟", "الإجابة السريعة، قصة خط Pinterest Sans، والبديل المجاني الذي يمكنك تثب", m_qa, K_ANS),
+  "ar-answers-what-font-does-whatsapp-use": ("ما هو الخط الذي يستخدمه WhatsApp؟", "الإجابة السريعة: يعتمد WhatsApp على خط جهازك وليس على خط خاص به — لهذا", m_qa, K_ANS),
+  "es-answers-what-font-does-pinterest-use": ("¿Qué Fuente Usa Pinterest?", "La respuesta corta, la historia detrás de Pinterest Sans, y la alterna", m_qa, K_ANS),
+  "es-answers-what-font-does-whatsapp-use": ("¿Qué fuente usa WhatsApp?", "En resumen: el logo usa Helvetica Neue, pero el chat no tiene una fuen", m_qa, K_ANS),
+  "fr-answers-what-font-does-pinterest-use": ("Quelle Police Utilise Pinterest ?", "La réponse courte, l'histoire de Pinterest Sans, et l'alternative grat", m_qa, K_ANS),
+  "fr-answers-what-font-does-whatsapp-use": ("Quelle police utilise WhatsApp ?", "En bref : le logo est en Helvetica Neue, mais l'interface de chat n'ut", m_qa, K_ANS),
+  "id-answers-what-font-does-pinterest-use": ("Font Apa yang Digunakan Pinterest?", "Jawaban singkatnya, kisah di balik Pinterest Sans, dan font gratis mir", m_qa, K_ANS),
+  "id-answers-what-font-does-whatsapp-use": ("Font Apa yang Digunakan WhatsApp?", "Singkatnya: logo WhatsApp menggunakan Helvetica Neue, tapi tampilan ch", m_qa, K_ANS),
+  "it-answers-what-font-does-pinterest-use": ("Che Font Usa Pinterest?", "In breve: Pinterest usa un typeface proprietario chiamato Pinterest Sa", m_qa, K_ANS),
+  "it-answers-what-font-does-whatsapp-use": ("Che Font Usa WhatsApp?", "In breve: il logo di WhatsApp è impostato in Helvetica Neue, ma la cha", m_qa, K_ANS),
+  "ja-answers-what-font-does-pinterest-use": ("Pinterestのフォントは何ですか?", "アプリ・サイト・ロゴで使われている書体と、無料で使える代替フォントを解説します。", m_qa, K_ANS),
+  "ja-answers-what-font-does-whatsapp-use": ("WhatsAppのフォントは何ですか?", "ロゴとチャット画面、それぞれで使われているフォントの違いを解説します。", m_qa, K_ANS),
+  "nl-answers-what-font-does-pinterest-use": ("Welk lettertype gebruikt Pinterest?", "Pinterest Sans, Grilli Type, en de gratis alternatieven die er het dic", m_qa, K_ANS),
+  "nl-answers-what-font-does-whatsapp-use": ("Welk lettertype gebruikt WhatsApp?", "Helvetica Neue voor het logo, en waarom je chats er per toestel net an", m_qa, K_ANS),
+  "pl-answers-what-font-does-pinterest-use": ("Jakiej czcionki używa Pinterest?", "Krótka odpowiedź, historia Pinterest Sans i darmowy odpowiednik, który", m_qa, K_ANS),
+  "pl-answers-what-font-does-whatsapp-use": ("Jakiej czcionki używa WhatsApp?", "Krótka odpowiedź, wyjaśnienie, dlaczego czaty wyglądają inaczej na róż", m_qa, K_ANS),
+  "pt-answers-what-font-does-pinterest-use": ("Que Fonte Usa o Pinterest?", "A app, o site e a marca do Pinterest usam a Pinterest Sans, uma fonte ", m_qa, K_ANS),
+  "pt-answers-what-font-does-whatsapp-use": ("Que Fonte Usa o WhatsApp?", "O logótipo do WhatsApp usa Helvetica Neue, mas a conversa em si não te", m_qa, K_ANS),
+  "ru-answers-what-font-does-pinterest-use": ("Какой шрифт использует Pinterest?", "От интерфейса приложения до логотипа: разбираем фирменный шрифт Pinter", m_qa, K_ANS),
+  "ru-answers-what-font-does-whatsapp-use": ("Какой шрифт использует WhatsApp?", "Логотип, интерфейс и переписка используют разные шрифты. Разбираем, чт", m_qa, K_ANS),
+  "th-answers-what-font-does-pinterest-use": ("Pinterest ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: Pinterest ใช้ฟอนต์ชื่อ Pinterest Sans ฟอนต์ซานเซอริฟแนวเร", m_qa, K_ANS),
+  "th-answers-what-font-does-whatsapp-use": ("WhatsApp ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: โลโก้ WhatsApp ใช้ Helvetica Neue แต่หน้าจอแชทไม่มีฟอนต์ป", m_qa, K_ANS),
+  "tr-answers-what-font-does-pinterest-use": ("Pinterest Hangi Yazı Tipini Kullanıyor?", "Uygulamadan logoya: Pinterest'in imza yazı tipinin arkasındaki hikâye ", m_qa, K_ANS),
+  "tr-answers-what-font-does-whatsapp-use": ("WhatsApp Hangi Yazı Tipini Kullanıyor?", "Logo sabit, sohbet ekranı değil: WhatsApp'ın yazı tipi seçimlerinin ci", m_qa, K_ANS),
+})
 
 
 def main():
