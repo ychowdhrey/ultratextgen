@@ -7258,6 +7258,98 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   line-height: 1.5;
 }
 
+/* Target-first picker: platform -> field, sitting ABOVE the text box so you
+   choose the destination before you write, not after. */
+.cc-selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.cc-selects .cc-select { flex: 1 1 12rem; min-width: 0; }
+.cc-bar-fill.is-close { background: var(--ts-warn, #d99100); }
+
+/* Live count that lives with the box */
+.counter-live {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.12));
+}
+.counter-live.is-close { color: var(--ts-warn, #d99100); }
+.counter-live.is-over { color: var(--ts-fail); font-weight: 700; }
+.counter-textarea.is-over-limit { border-color: var(--ts-fail); }
+
+.counter-field { display: block; }
+.counter-inspect {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* The fix layer — what every other counter is missing */
+.counter-fix {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.25));
+  background: var(--surface-2, rgba(127, 127, 127, 0.06));
+}
+.counter-fix.is-over { border-color: var(--ts-fail); }
+.cc-fix-lead {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  color: var(--ts-fail);
+}
+.cc-fix-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cc-fix-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.3));
+  background: var(--surface-1, transparent);
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.cc-fix-btn:hover { border-color: var(--accent-color, #6c4df6); }
+.cc-fix-btn-save {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--ts-safe);
+  font-size: 0.8rem;
+}
+.cc-fix-btn-trim .cc-fix-btn-save { color: var(--text-secondary); }
+.cc-fix-btn-undo { color: var(--text-muted); }
+
+/* Fits-everywhere grid */
+.counter-fits { margin-top: 1rem; }
+.counter-fits-head {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.cc-fit-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cc-fit-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.25));
+}
+.cc-fit-chip.is-fit { color: var(--text-secondary); }
+.cc-fit-chip.is-unfit { color: var(--ts-fail); border-color: var(--ts-fail); }
+.cc-fit-chip.is-active { border-color: var(--accent-color, #6c4df6); font-weight: 600; }
+.cc-fit-num { font-variant-numeric: tabular-nums; opacity: 0.85; }
+
 /* Inline "name check" callout — the game-rules checker rendered as a compact
    live readout inside the generator card (between the input and the decoration
    tabs), instead of a separate stacked section with its own heading. Reuses
