@@ -118,18 +118,110 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@type": "FAQPage",
   "inLanguage": "de",
   "mainEntity": [
-    {"@type":"Question","name":"Wie zähle ich Wörter und Zeichen online?","acceptedAnswer":{"@type":"Answer","text":"Tippe oder füge deinen Text in das Feld oben ein. Wortanzahl, Zeichenanzahl (mit und ohne Leerzeichen), Satzanzahl, Absatzanzahl und die geschätzte Lesezeit aktualisieren sich live beim Tippen – kein Absenden-Button, und nichts von dem, was du eingibst, wird hochgeladen oder gespeichert."}},
-    {"@type":"Question","name":"Zählt das Tool Zeichen mit oder ohne Leerzeichen?","acceptedAnswer":{"@type":"Answer","text":"Beides, nebeneinander angezeigt: „Zeichen“ zählt jedes Leerzeichen mit, „Zeichen (ohne Leerzeichen)“ entfernt alle Leerräume. Die meisten Plattform-Limits (X/Twitter, Instagram, Discord) zählen Leerzeichen als normale Zeichen – nutze also die Zahl mit Leerzeichen, wenn du einen Beitrag oder eine Bio gegen ein Limit prüfst."}},
-    {"@type":"Question","name":"Wie viele Zeichen darf eine Hausarbeit oder Klausur haben?","acceptedAnswer":{"@type":"Answer","text":"Das hängt von der Vorgabe deiner Uni oder Prüfungsordnung ab, aber viele Hausarbeiten und Klausuren geben eine Wort- oder Zeichenzahl statt einer Seitenzahl vor (zum Beispiel „8.000–10.000 Zeichen inklusive Leerzeichen“ oder „2.500 Wörter“). Füge deinen Entwurf oben ein, um Wörter und Zeichen mit und ohne Leerzeichen sofort zu sehen – so weißt du vor der Abgabe, ob du die Quote einhältst, statt in Word nachzuzählen."}},
-    {"@type":"Question","name":"Wie viele Zeichen hat ein X (Twitter) Beitrag?","acceptedAnswer":{"@type":"Answer","text":"280 Zeichen pro Beitrag für Standard-Konten, inklusive Leerzeichen, Links und Hashtags (ein Link zählt trotz kürzerer Anzeige als rund 23 Zeichen). Wähle „X- / Twitter-Beitrag“ im Plattform-Check oben, um live zu sehen, ob dein Text passt."}},
-    {"@type":"Question","name":"Wie viele Zeichen hat eine Instagram-Bildunterschrift und Bio?","acceptedAnswer":{"@type":"Answer","text":"Eine Instagram-Bildunterschrift darf bis zu 2.200 Zeichen lang sein, wobei nur die ersten Zeilen angezeigt werden, bevor „mehr“ den Rest abschneidet. Das Bio-Feld ist mit 150 Zeichen deutlich kürzer. Beide Limits stehen im Plattform-Check oben zur Auswahl."}},
-    {"@type":"Question","name":"Wie viele Zeichen hat ein LinkedIn-Beitrag und die Headline?","acceptedAnswer":{"@type":"Answer","text":"Ein LinkedIn-Beitrag erlaubt bis zu 3.000 Zeichen, wobei der Feed ihn je nach Gerät schon nach etwa 200–700 Zeichen mit „mehr anzeigen“ abschneidet. Das Headline-Feld ist auf 220 Zeichen begrenzt."}},
-    {"@type":"Question","name":"Wie viele Zeichen hat eine TikTok-Bildunterschrift und der Benutzername?","acceptedAnswer":{"@type":"Answer","text":"Eine TikTok-Bildunterschrift passt bis zu 2.200 Zeichen. Die Bio ist auf 80 Zeichen begrenzt, und ein Benutzername darf bis zu 24 Zeichen haben (nur Buchstaben, Zahlen, Unterstriche und Punkte)."}},
-    {"@type":"Question","name":"Was ist eine gute Länge für SEO-Meta-Titel und -Beschreibung?","acceptedAnswer":{"@type":"Answer","text":"Google schneidet nach Pixelbreite auf dem Bildschirm ab, nicht nach einer festen Zeichenzahl – als praktische Faustregel gilt aber: Meta-Titel um die 60 Zeichen, Meta-Beschreibung um die 155 Zeichen, damit nichts in den Suchergebnissen abgeschnitten wird."}},
-    {"@type":"Question","name":"Was ist eine Normseite, und wie viele Zeichen hat sie?","acceptedAnswer":{"@type":"Answer","text":"Eine Normseite umfasst 1.800 Anschläge (Zeichen inklusive Leerzeichen), klassisch gerechnet als 30 Zeilen à 60 Anschläge; eine Normzeile umfasst 55 Anschläge. Beide Einheiten sind in Übersetzung, Lektorat und Journalismus übliche Abrechnungsgrundlagen. Der Zähler oben rechnet deinen Text live in Normseiten und Normzeilen um — du siehst beide Werte direkt in den Statistik-Kacheln."}},
-    {"@type":"Question","name":"Warum zählt Word Fußnoten nicht mit?","acceptedAnswer":{"@type":"Answer","text":"Words Statusleiste zählt Fuß- und Endnoten standardmäßig nicht mit — das Häkchen „Textfelder, Fuß- und Endnoten einbeziehen“ im Dialog „Wörter zählen“ ist ab Werk deaktiviert. Bei Hausarbeiten mit Zeichenquote ist das eine echte Falle: Je nachdem, ob deine Prüfungsordnung Fußnoten mitzählt, kann die relevante Zahl deutlich von der Anzeige abweichen. Prüfe die Fußnoten separat, zum Beispiel indem du sie getrennt in den Zähler oben einfügst."}},
-    {"@type":"Question","name":"Warum wird meine SMS mit Emoji plötzlich kürzer oder teurer?","acceptedAnswer":{"@type":"Answer","text":"Eine SMS fasst 160 Zeichen nur, solange alle Zeichen im GSM-7-Alphabet liegen — ä, ö, ü und ß gehören dazu. Ein einziges Emoji, typografische Anführungszeichen („…“) oder ein langer Gedankenstrich schaltet die ganze Nachricht in den Unicode-Modus um: 70 Zeichen pro Segment, 67 beim Aufteilen. Die Option „SMS (1 Segment)“ im Check oben erkennt das und nennt das genaue Zeichen, das deine Nachricht umgeschaltet hat."}},
-    {"@type":"Question","name":"Ist der Zähler kostenlos, und werden meine Daten gespeichert oder hochgeladen?","acceptedAnswer":{"@type":"Answer","text":"Ja, komplett kostenlos und ohne Anmeldung. Jede Zählung läuft clientseitig in deinem Browser mit reinem JavaScript – nichts von dem, was du eingibst, wird hochgeladen, protokolliert oder irgendwo gespeichert."}}
+    {
+      "@type": "Question",
+      "name": "Wie zähle ich Wörter und Zeichen online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tippe oder füge deinen Text in das Feld oben ein. Wortanzahl, Zeichenanzahl (mit und ohne Leerzeichen), Satzanzahl, Absatzanzahl und die geschätzte Lesezeit aktualisieren sich live beim Tippen – kein Absenden-Button, und nichts von dem, was du eingibst, wird hochgeladen oder gespeichert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zählt das Tool Zeichen mit oder ohne Leerzeichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beides, nebeneinander angezeigt: „Zeichen“ zählt jedes Leerzeichen mit, „Zeichen (ohne Leerzeichen)“ entfernt alle Leerräume. Für Plattformlimits gilt praktisch immer die Zahl mit Leerzeichen – auf X, in einer Instagram-Bio oder in einer SMS ist ein Leerzeichen ein ganz normales Zeichen. Die Zahl ohne Leerzeichen brauchst du nur dann, wenn eine Uni-Vorgabe oder ein Auftraggeber ausdrücklich danach fragt; das ist eine Abrechnungskonvention, keine technische Notwendigkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zählen Emojis als ein Zeichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Selten. Ein einfaches Emoji ist meist 1 Codepunkt, aber 2 UTF-16-Einheiten; mit Hautton oder als zusammengesetzte Sequenz – etwa ein Familien-Emoji – werden daraus schnell 4, 7 oder mehr. Auf X zählt jedes Emoji 2 der 280 Zeichen, und in einer SMS schaltet ein einziges Emoji die ganze Nachricht von 160-Zeichen-GSM-7 auf 70-Zeichen-Unicode-Segmente um. Die Kachel „Grapheme“ zeigt, was du siehst; „Zeichen“ und „UTF-16-Einheiten“ zeigen, was das Feld dir berechnet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum sagt die Plattform, ich sei drüber, obwohl mein Zähler sagt, ich sei drunter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil ihr in unterschiedlichen Einheiten zählt. Die meisten Plattformen zählen Unicode-Codepunkte, aber HTML-Formularfelder und viele Apps zählen UTF-16-Einheiten – dort kostet ein verzierter Buchstabe gleich 2 –, Amazon-Listing-Felder zählen UTF-8-Bytes und X rechnet gewichtet. Wähle oben aus, wohin der Text geht: Dann zählt der Check genau so, wie dieses Ziel zählt, statt dir eine allgemeine Zahl zu nennen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie bekomme ich meinen Text unter das Limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sobald du drüber bist, zeigt dir das Tool, was sich streichen lässt – jeweils mit der genauen Ersparnis in der Zähleinheit der Zielplattform: verzierte Unicode-Schrift in normale Buchstaben zurückverwandeln, Emojis entfernen, typografische Anführungszeichen und Gedankenstriche begradigen, doppelte Leerzeichen zusammenfassen, Hashtags streichen oder an der Wortgrenze passend kürzen. Jede Korrektur ist ein einziger Klick und lässt sich rückgängig machen – du kannst also erst die günstigste Variante ausprobieren, bevor du anfängst umzuschreiben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zählen verzierte Schriften als mehr Zeichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meistens doppelt. Verzierte Unicode-Buchstaben – fett, Schreibschrift, Fraktur und die meisten anderen Fancy-Alphabete – liegen fast alle oberhalb von U+FFFF. Jeder sichtbare Buchstabe kostet damit 2 UTF-16-Einheiten, 4 UTF-8-Bytes und 2 der 280 Zeichen auf X. Ein zehnbuchstabiger verzierter Name kann deshalb an einem 12-Zeichen-Feld scheitern. Füge ihn oben ein und nutze „Verzierte Schrift in normale umwandeln“, um den Unterschied sofort zu sehen und zurückzuholen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werden unsichtbare Zeichen mitgezählt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – und sie sind der häufigste Grund dafür, dass eine Zahl unerklärlich höher ausfällt, als der Text aussieht. Leerzeichen ohne Breite, Byte-Order-Marks und Füllzeichen, die beim Kopieren aus anderen Apps mitkommen, verbrauchen dein Budget, ohne etwas anzuzeigen. Der Zähler weist direkt unter dem Textfeld darauf hin und bietet die Entfernung mit einem Klick an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Zeichen darf eine Hausarbeit oder Klausur haben?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt von der Vorgabe deiner Uni oder Prüfungsordnung ab, aber viele Hausarbeiten und Klausuren geben eine Wort- oder Zeichenzahl statt einer Seitenzahl vor (zum Beispiel „8.000–10.000 Zeichen inklusive Leerzeichen“ oder „2.500 Wörter“). Füge deinen Entwurf oben ein, um Wörter und Zeichen mit und ohne Leerzeichen sofort zu sehen – so weißt du vor der Abgabe, ob du die Quote einhältst, statt in Word nachzuzählen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist eine gute Länge für SEO-Meta-Titel und -Beschreibung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google schneidet nach Pixelbreite auf dem Bildschirm ab, nicht nach einer festen Zeichenzahl – als praktische Faustregel gilt aber: Meta-Titel um die 60 Zeichen, Meta-Beschreibung um die 155 Zeichen, damit nichts in den Suchergebnissen abgeschnitten wird."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist eine Normseite, und wie viele Zeichen hat sie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Normseite umfasst 1.800 Anschläge (Zeichen inklusive Leerzeichen), klassisch gerechnet als 30 Zeilen à 60 Anschläge; eine Normzeile umfasst 55 Anschläge. Beide Einheiten sind in Übersetzung, Lektorat und Journalismus übliche Abrechnungsgrundlagen. Der Zähler oben rechnet deinen Text live in Normseiten und Normzeilen um — du siehst beide Werte direkt in den Statistik-Kacheln."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum zählt Word Fußnoten nicht mit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Words Statusleiste zählt Fuß- und Endnoten standardmäßig nicht mit — das Häkchen „Textfelder, Fuß- und Endnoten einbeziehen“ im Dialog „Wörter zählen“ ist ab Werk deaktiviert. Bei Hausarbeiten mit Zeichenquote ist das eine echte Falle: Je nachdem, ob deine Prüfungsordnung Fußnoten mitzählt, kann die relevante Zahl deutlich von der Anzeige abweichen. Prüfe die Fußnoten separat, zum Beispiel indem du sie getrennt in den Zähler oben einfügst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum wird meine SMS mit Emoji plötzlich kürzer oder teurer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine SMS fasst 160 Zeichen nur, solange alle Zeichen im GSM-7-Alphabet liegen — ä, ö, ü und ß gehören dazu. Ein einziges Emoji, typografische Anführungszeichen („…“) oder ein langer Gedankenstrich schaltet die ganze Nachricht in den Unicode-Modus um: 70 Zeichen pro Segment, 67 beim Aufteilen. Die Option „SMS (1 Segment)“ im Check oben erkennt das und nennt das genaue Zeichen, das deine Nachricht umgeschaltet hat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Zähler kostenlos, und werden meine Daten gespeichert oder hochgeladen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, komplett kostenlos und ohne Anmeldung. Jede Zählung läuft clientseitig in deinem Browser mit reinem JavaScript – nichts von dem, was du eingibst, wird hochgeladen, protokolliert oder irgendwo gespeichert."
+      }
+    }
   ]
 }
 </script>
@@ -167,23 +259,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>Tippe oder füge einen beliebigen Text in das Feld unten ein – jede Zahl aktualisiert sich sofort: Wörter, Zeichen (mit und ohne Leerzeichen), Sätze, Absätze und eine geschätzte Lesezeit. Nichts wird hochgeladen – jede Zahl wird direkt in deinem Browser berechnet. Unter dem Zähler wählst du eine Plattform aus dem Dropdown, um zu prüfen, ob dein aktueller Text noch ins Limit passt, mit exakter Zeichenzahl und wie viele Zeichen dir noch bleiben (oder wie weit du drüber bist). Brauchst du für den gerade gemessenen Text noch eine stylische Unicode-Schrift? Der <a href="/de/">UltraTextGen-Hauptgenerator</a> macht daraus über 100 Copy-Paste-Stile.</p>
+      <p>Tippe oder füge einen beliebigen Text in das Feld unten ein – jede Zahl aktualisiert sich sofort: Wörter, Zeichen (mit und ohne Leerzeichen), Sätze, Absätze und eine geschätzte Lesezeit. Nichts wird hochgeladen – jede Zahl wird direkt in deinem Browser berechnet. Über dem Textfeld wählst du zuerst aus, wohin der Text soll: Der Check zählt dann genau so, wie diese Plattform zählt, und zeigt dir live, wie viele Zeichen dir noch bleiben oder wie weit du drüber bist. Und wenn du drüber bist, bleibt es nicht bei der schlechten Nachricht – du bekommst konkrete Korrekturen mit der jeweiligen Ersparnis vorgeschlagen, jede mit einem Klick anwendbar und jederzeit rückgängig zu machen. Brauchst du für den gerade gemessenen Text noch eine stylische Unicode-Schrift? Der <a href="/de/">UltraTextGen-Hauptgenerator</a> macht daraus über 100 Copy-Paste-Stile.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">Dein Text</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">Kopieren</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Löschen</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="Text hier eingeben oder einfügen…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Wörter</span></div>
@@ -201,15 +299,107 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statNormzeilen">0</span><span class="counter-stat-label">Normzeilen (à 55 Anschläge)</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">Wo dieser Text sonst noch passt – live, über alle Limits hinweg</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section">
-    <h2>Plattform-Zeichenlimits erklärt</h2>
-    <p>Zeichenlimits gibt es aus zwei ganz unterschiedlichen Gründen, und es lohnt sich zu wissen, mit welchem du es gerade zu tun hast. <strong>Harte Limits</strong> – X/Twitters 280 Zeichen, Discords 32-Zeichen-Spitzname, TikToks 24-Zeichen-Benutzername – werden von der Plattform selbst durchgesetzt: Überschreitest du sie, wird der Beitrag oder die Änderung schlicht abgelehnt. <strong>Weiche bzw. praktische Limits</strong> – eine Google-Meta-Beschreibung, eine YouTube-Beschreibung vor „Mehr anzeigen“, ein LinkedIn-Beitrag, bevor er mit „mehr anzeigen“ abgeschnitten wird – hindern dich nicht am Weitertippen, aber alles danach bleibt für die meisten Leser:innen verborgen, sofern sie nicht extra aufklappen. Der Check oben nutzt jeweils das echte harte oder offiziell dokumentierte Limit der Plattform; bei den weichen Abschneide-Grenzen (Meta-Titel/-Beschreibung, YouTube, LinkedIn) gilt die Zahl als „das, was zuverlässig angezeigt wird“, nicht als unüberwindbare Wand. Eine ebenso häufige, aber ganz andere Situation: Deutsche Hausarbeiten und Klausuren geben oft eine feste Wort- oder Zeichenzahl statt einer Seitenzahl vor – das hat mit Social-Media-Limits nichts zu tun, lässt sich mit demselben Zähler aber genauso leicht prüfen.</p>
-    <p>Ein Punkt, der oft stolpert: Manche Plattformen zählen mehr, als man denkt. Ein Link in einem X-Beitrag zählt immer als rund 23 Zeichen, egal wie lang die tatsächliche URL ist. Emojis und Zeichen mit Akzenten können intern als mehr als „ein Zeichen“ gezählt werden, je nachdem, wie der Zähler einer Plattform implementiert ist – dieses Tool zählt nach Unicode-Codepunkten, was der Zählweise so gut wie jeder modernen Plattform entspricht.</p>
+    <h2>Harte und weiche Limits</h2>
+    <p>Zwei ganz verschiedene Dinge heißen „Zeichenlimit“ – und davon hängt ab, was ein Überschreiten dich tatsächlich kostet.</p>
+    <table class="comparison-table">
+      <thead><tr><th>Art</th><th>Was passiert, wenn du drüber bist</th><th>Beispiele</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Hartes Limit</strong></td>
+          <td>Die Plattform lehnt ab. Der Beitrag geht nicht raus, der Name lässt sich nicht speichern.</td>
+          <td>X-Beitrag 280 · Discord-Spitzname 32 · TikTok-Benutzername 24 · SMS-Segment</td>
+        </tr>
+        <tr>
+          <td><strong>Weiches Limit</strong><br>(Abschneiden)</td>
+          <td>Du kannst weitertippen, aber ab dort liest es niemand mehr, ohne auf „mehr“ zu tippen.</td>
+          <td>Instagram-Bildunterschrift ab 125 · LinkedIn-Beitrag ab ca. 210 · YouTube-Beschreibung ab ca. 157</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Der Check oben weiß, welches von beidem gerade gilt: Bei einem weichen Limit sagt er dir zusätzlich, ab welchem Zeichen dein Text abgeschnitten wird – du kannst das Wichtigste also nach vorn ziehen, statt nur unter einer Zahl zu bleiben.</p>
+    <p>Eine ebenso häufige, aber ganz andere Situation: Deutsche Hausarbeiten, Bachelorarbeiten und Klausuren geben oft eine feste Wort- oder Zeichenzahl statt einer Seitenzahl vor. Das hat mit Social-Media-Limits nichts zu tun, lässt sich mit demselben Zähler aber genauso prüfen – <a href="#leerzeichen">mit oder ohne Leerzeichen</a> ist dabei die entscheidende Frage.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="limits">
+    <h2>Alle Zeichenlimits im Überblick</h2>
+    <p>Dieselben Limits, mit denen der Live-Check oben rechnet – hier als Nachschlagetabelle.</p>
+
+    <h3>Beiträge &amp; Nachrichten</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Plattform</th><th>Limit</th><th>Hinweis</th></tr></thead>
+      <tbody>
+        <tr><td>X- / Twitter-Beitrag</td><td>280</td><td>Gewichtet: jede URL = 23, die meisten Emojis, Symbole und verzierten Buchstaben = je 2 – siehe <a href="#zaehlweisen">wie X zählt</a></td></tr>
+        <tr><td>Discord-Nachricht</td><td>2.000</td><td>4.000 mit Nitro; längere Nachrichten werden zum .txt-Anhang</td></tr>
+        <tr><td>Instagram-Bildunterschrift</td><td>2.200</td><td>Nach den ersten Zeilen mit „mehr“ abgeschnitten</td></tr>
+        <tr><td>TikTok-Bildunterschrift</td><td>2.200</td><td></td></tr>
+        <tr><td>LinkedIn-Beitrag</td><td>3.000</td><td>„Mehr anzeigen“ schneidet je nach Gerät schon nach 200–700 Zeichen ab</td></tr>
+        <tr><td>Facebook-Beitrag</td><td>63.206</td><td></td></tr>
+        <tr><td>YouTube-Beschreibung</td><td>5.000</td><td></td></tr>
+        <tr><td>Pinterest-Pin-Beschreibung</td><td>500</td><td></td></tr>
+        <tr><td>Telegram-Nachricht</td><td>4.096</td><td>1.024 für eine Foto-/Video-Beschriftung</td></tr>
+        <tr><td>Threads-Beitrag</td><td>500</td><td></td></tr>
+        <tr><td>Bluesky-Beitrag</td><td>300</td><td>Zählt nach Graphemen (was du siehst), nicht nach Codepunkten</td></tr>
+        <tr><td>Reddit-Beitragstitel</td><td>300</td><td></td></tr>
+        <tr><td>Zalo-Beitrag/Status</td><td>2.000</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Bios &amp; Profile</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Feld</th><th>Limit</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram-Bio</td><td>150</td></tr>
+        <tr><td>TikTok-Bio</td><td>80</td></tr>
+        <tr><td>LinkedIn-Headline</td><td>220</td></tr>
+        <tr><td>WhatsApp-Info</td><td>139</td></tr>
+        <tr><td>Telegram-Bio</td><td>70</td></tr>
+        <tr><td>VK-Status</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Benutzernamen, Titel &amp; SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Feld</th><th>Limit</th><th>Hinweis</th></tr></thead>
+      <tbody>
+        <tr><td>Discord-Spitzname</td><td>32</td><td></td></tr>
+        <tr><td>TikTok-Benutzername</td><td>24</td><td>Nur Buchstaben, Zahlen, Unterstriche und Punkte</td></tr>
+        <tr><td>Instagram-Benutzername</td><td>30</td><td></td></tr>
+        <tr><td>YouTube-Titel</td><td>100</td><td></td></tr>
+        <tr><td>SEO-Meta-Titel</td><td>~60</td><td>Google schneidet nach Pixelbreite ab – als Richtwert verstehen</td></tr>
+        <tr><td>SEO-Meta-Beschreibung</td><td>~155</td><td>Ebenfalls Pixelbreite, keine feste Zeichenzahl</td></tr>
+        <tr><td>SMS (Textnachricht)</td><td>160 / Segment</td><td>Fällt auf 70 pro Segment, sobald ein Zeichen außerhalb von GSM-7 auftaucht (Emoji, typografische Anführungszeichen, ő, ą …) – siehe <a href="#sms">SMS-Zählung</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="zaehlweisen">
+    <h2>Warum deine Zeichenzahl nicht zur Plattform passt</h2>
+    <p>„Wie viele Zeichen sind das?“ hat mehr als eine richtige Antwort, weil Plattformen in unterschiedlichen Einheiten zählen. Derselbe Text hat vier verschiedene Längen:</p>
+    <table class="comparison-table">
+      <thead><tr><th>Zählweise</th><th>Was gemessen wird</th><th>Wer so zählt</th></tr></thead>
+      <tbody>
+        <tr><td>Grapheme</td><td>Was du siehst – ein Emoji mit Hautton ist 1</td><td>Bluesky; ungefähr auch Instagrams Umgang mit Emojis</td></tr>
+        <tr><td>Codepunkte</td><td>Unicode-Zeichen – 👍🏽 sind 2 (Daumen + Hautton)</td><td>Die meisten Web-Plattformen und die Kachel „Zeichen“ oben</td></tr>
+        <tr><td>UTF-16-Einheiten</td><td>Wie JavaScript und viele Apps Text speichern – 𝗳𝗲𝘁𝘁𝗲 Buchstaben kosten je 2</td><td>HTML-Formularfelder (<code>maxlength</code>), viele Spiele und App-Backends</td></tr>
+        <tr><td>UTF-8-Bytes</td><td>Speichergröße – ä ist 2, 中 ist 3, 𝗯 ist 4</td><td>Amazon-Listing-Felder, Steam-Namen, Datenbanken</td></tr>
+      </tbody>
+    </table>
+    <p>Alle vier siehst du oben live. Wenn ein Formular behauptet, dein Text sei zu lang, während Word etwas anderes anzeigt, kannst du hier ablesen, welche Zählweise das Formular benutzt. Zwei Plattformen brauchen zusätzlich eigene Regeln:</p>
+    <p><strong>X/Twitter zählt nach Gewicht, nicht nach Zeichen.</strong> Nach dem von X selbst veröffentlichten Algorithmus (der <code>twitter-text</code>-Bibliothek) zählt jede URL exakt 23, lateinische Grundbuchstaben zählen 1 – und fast alles andere, also CJK-Zeichen, die meisten Emojis und jeder verzierte Unicode-Buchstabe, zählt <strong>2</strong>. Ein komplett 𝗳𝗲𝘁𝘁 gesetzter Beitrag hat deshalb nur 140 sichtbare Buchstaben Platz. Die X-Optionen im Check oben rechnen genau nach diesem Algorithmus.</p>
+    <p><strong>Bei der SMS entscheidet ein einziges Zeichen über den Preis.</strong> Eine Nachricht fasst 160 Zeichen nur, solange jedes Zeichen im alten GSM-7-Alphabet liegt – die deutschen Umlaute ä, ö, ü und das ß gehören dazu. Ein Emoji, ein typografisches Anführungszeichen aus Word oder ein Buchstabe außerhalb des Alphabets schaltet die ganze Nachricht still auf 70 Zeichen pro Segment um. Mehr dazu im <a href="#sms">SMS-Abschnitt</a> weiter unten.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -238,27 +428,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Zählt das Tool Zeichen mit oder ohne Leerzeichen?</summary>
-      <p class="faq-answer">Beides, nebeneinander angezeigt: „Zeichen“ zählt jedes Leerzeichen mit, „Zeichen (ohne Leerzeichen)“ entfernt alle Leerräume. Die meisten Plattform-Limits (X/Twitter, Instagram, Discord) zählen Leerzeichen als normale Zeichen – nutze also die Zahl mit Leerzeichen, wenn du einen Beitrag oder eine Bio gegen ein Limit prüfst.</p>
+      <p class="faq-answer">Beides, nebeneinander angezeigt: „Zeichen“ zählt jedes Leerzeichen mit, „Zeichen (ohne Leerzeichen)“ entfernt alle Leerräume. Für Plattformlimits gilt praktisch immer die Zahl mit Leerzeichen – auf X, in einer Instagram-Bio oder in einer SMS ist ein Leerzeichen ein ganz normales Zeichen. Die Zahl ohne Leerzeichen brauchst du nur dann, wenn eine Uni-Vorgabe oder ein Auftraggeber ausdrücklich danach fragt; das ist eine Abrechnungskonvention, keine technische Notwendigkeit.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Zählen Emojis als ein Zeichen?</summary>
+      <p class="faq-answer">Selten. Ein einfaches Emoji ist meist 1 Codepunkt, aber 2 UTF-16-Einheiten; mit Hautton oder als zusammengesetzte Sequenz – etwa ein Familien-Emoji – werden daraus schnell 4, 7 oder mehr. Auf X zählt jedes Emoji 2 der 280 Zeichen, und in einer SMS schaltet ein einziges Emoji die ganze Nachricht von 160-Zeichen-GSM-7 auf 70-Zeichen-Unicode-Segmente um. Die Kachel „Grapheme“ zeigt, was du siehst; „Zeichen“ und „UTF-16-Einheiten“ zeigen, was das Feld dir berechnet.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Warum sagt die Plattform, ich sei drüber, obwohl mein Zähler sagt, ich sei drunter?</summary>
+      <p class="faq-answer">Weil ihr in unterschiedlichen Einheiten zählt. Die meisten Plattformen zählen Unicode-Codepunkte, aber HTML-Formularfelder und viele Apps zählen UTF-16-Einheiten – dort kostet ein verzierter Buchstabe gleich 2 –, Amazon-Listing-Felder zählen UTF-8-Bytes und X rechnet gewichtet. Wähle oben aus, wohin der Text geht: Dann zählt der Check genau so, wie dieses Ziel zählt, statt dir eine allgemeine Zahl zu nennen.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Wie bekomme ich meinen Text unter das Limit?</summary>
+      <p class="faq-answer">Sobald du drüber bist, zeigt dir das Tool, was sich streichen lässt – jeweils mit der genauen Ersparnis in der Zähleinheit der Zielplattform: verzierte Unicode-Schrift in normale Buchstaben zurückverwandeln, Emojis entfernen, typografische Anführungszeichen und Gedankenstriche begradigen, doppelte Leerzeichen zusammenfassen, Hashtags streichen oder an der Wortgrenze passend kürzen. Jede Korrektur ist ein einziger Klick und lässt sich rückgängig machen – du kannst also erst die günstigste Variante ausprobieren, bevor du anfängst umzuschreiben.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Zählen verzierte Schriften als mehr Zeichen?</summary>
+      <p class="faq-answer">Meistens doppelt. Verzierte Unicode-Buchstaben – fett, Schreibschrift, Fraktur und die meisten anderen Fancy-Alphabete – liegen fast alle oberhalb von U+FFFF. Jeder sichtbare Buchstabe kostet damit 2 UTF-16-Einheiten, 4 UTF-8-Bytes und 2 der 280 Zeichen auf X. Ein zehnbuchstabiger verzierter Name kann deshalb an einem 12-Zeichen-Feld scheitern. Füge ihn oben ein und nutze „Verzierte Schrift in normale umwandeln“, um den Unterschied sofort zu sehen und zurückzuholen.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Werden unsichtbare Zeichen mitgezählt?</summary>
+      <p class="faq-answer">Ja – und sie sind der häufigste Grund dafür, dass eine Zahl unerklärlich höher ausfällt, als der Text aussieht. Leerzeichen ohne Breite, Byte-Order-Marks und Füllzeichen, die beim Kopieren aus anderen Apps mitkommen, verbrauchen dein Budget, ohne etwas anzuzeigen. Der Zähler weist direkt unter dem Textfeld darauf hin und bietet die Entfernung mit einem Klick an.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Wie viele Zeichen darf eine Hausarbeit oder Klausur haben?</summary>
       <p class="faq-answer">Das hängt von der Vorgabe deiner Uni oder Prüfungsordnung ab, aber viele Hausarbeiten und Klausuren geben eine Wort- oder Zeichenzahl statt einer Seitenzahl vor (zum Beispiel „8.000–10.000 Zeichen inklusive Leerzeichen“ oder „2.500 Wörter“). Füge deinen Entwurf oben ein, um Wörter und Zeichen mit und ohne Leerzeichen sofort zu sehen – so weißt du vor der Abgabe, ob du die Quote einhältst, statt in Word nachzuzählen.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Wie viele Zeichen hat ein X (Twitter) Beitrag?</summary>
-      <p class="faq-answer">280 Zeichen pro Beitrag für Standard-Konten, inklusive Leerzeichen, Links und Hashtags (ein Link zählt trotz kürzerer Anzeige als rund 23 Zeichen). Wähle „X- / Twitter-Beitrag“ im Plattform-Check oben, um live zu sehen, ob dein Text passt.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Wie viele Zeichen hat eine Instagram-Bildunterschrift und Bio?</summary>
-      <p class="faq-answer">Eine Instagram-Bildunterschrift darf bis zu 2.200 Zeichen lang sein, wobei nur die ersten Zeilen angezeigt werden, bevor „mehr“ den Rest abschneidet. Das Bio-Feld ist mit 150 Zeichen deutlich kürzer. Beide Limits stehen im Plattform-Check oben zur Auswahl.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Wie viele Zeichen hat ein LinkedIn-Beitrag und die Headline?</summary>
-      <p class="faq-answer">Ein LinkedIn-Beitrag erlaubt bis zu 3.000 Zeichen, wobei der Feed ihn je nach Gerät schon nach etwa 200–700 Zeichen mit „mehr anzeigen“ abschneidet. Das Headline-Feld ist auf 220 Zeichen begrenzt.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Wie viele Zeichen hat eine TikTok-Bildunterschrift und der Benutzername?</summary>
-      <p class="faq-answer">Eine TikTok-Bildunterschrift passt bis zu 2.200 Zeichen. Die Bio ist auf 80 Zeichen begrenzt, und ein Benutzername darf bis zu 24 Zeichen haben (nur Buchstaben, Zahlen, Unterstriche und Punkte).</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Was ist eine gute Länge für SEO-Meta-Titel und -Beschreibung?</summary>
@@ -319,6 +513,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script>
   window.UTG_COUNTER_I18N = {
     sec: "Sek.",
@@ -330,20 +525,107 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     xNote: "Gezählt, wie X zählt: jede URL = 23, die meisten Symbole, Emojis und verzierten Unicode-Buchstaben = je 2.",
     smsSegments: "{n} SMS-Segment(e) · {per} Zeichen pro Segment ({enc})",
     smsUnicode: "auf Unicode-Modus umgeschaltet durch: {chars}",
+    visibleNote: "Nur etwa die ersten {n} Zeichen werden angezeigt, danach wird abgeschnitten – stell das Wichtigste nach vorn.",
+    platformLabel: "Plattform",
+    fieldLabel: "Feld",
+    overBy: "{n} zu viel – wähle eine Korrektur:",
+    trimToFit: "Passend kürzen",
+    undo: "Rückgängig",
+    applied: "Angewendet",
+    segShort: "Seg.",
+    fitsHeading: "Wo dieser Text sonst noch passt",
+    inspectStyled: "{n} verzierte Unicode-Buchstaben – sie kosten auf X und in vielen App-Feldern je 2.",
+    inspectInvisible: "{n} unsichtbare Zeichen, die trotzdem mitzählen.",
+    inspectCombining: "{n} gestapelte diakritische Zeichen.",
+    platforms: {
+      seo: "Google-Suchergebnis"
+    },
+    reducers: {
+      "plain": "Verzierte Schrift in normale umwandeln",
+      "invisible": "Unsichtbare Zeichen entfernen",
+      "combining": "Gestapelte Diakritika entfernen",
+      "emoji": "Emojis entfernen",
+      "quotes": "Typografische Zeichen begradigen",
+      "spaces": "Doppelte Leerzeichen zusammenfassen",
+      "blanklines": "Leerzeilen zusammenfassen",
+      "hashtags": "Hashtags entfernen",
+      "gsm-safe": "SMS-tauglich machen (zurück zu 160 pro Segment)"
+    },
+    reducerHints: {
+      "plain": "Verzierte Unicode-Buchstaben kosten in den meisten Feldern je 2 Einheiten.",
+      "invisible": "Zeichen ohne Breite und Füllzeichen, die du nicht siehst, das Feld aber mitzählt.",
+      "combining": "Glitch- und Zalgo-Zeichen kosten je ein Zeichen extra.",
+      "emoji": "Emojis zählen auf X doppelt und schalten eine SMS auf 70-Zeichen-Segmente um.",
+      "quotes": "Typografische Anführungszeichen und Gedankenstriche kippen bei der SMS meistens GSM-7.",
+      "spaces": "Mehrfache Leerzeichen und Leerraum am Zeilenende.",
+      "blanklines": "Drei oder mehr Zeilenumbrüche hintereinander.",
+      "hashtags": "Verschiebe sie stattdessen in einen Kommentar."
+    },
+    fields: {
+      "x-post": "Beitrag",
+      "x-bio": "Bio",
+      "x-name": "Anzeigename",
+      "ig-caption": "Bildunterschrift",
+      "ig-bio": "Bio",
+      "ig-username": "Benutzername",
+      "ig-alt": "Alt-Text",
+      "tiktok-caption": "Bildunterschrift",
+      "tiktok-bio": "Bio",
+      "tiktok-username": "Benutzername",
+      "li-post": "Beitrag",
+      "li-headline": "Headline",
+      "li-about": "Info-Bereich",
+      "li-comment": "Kommentar",
+      "yt-title": "Videotitel",
+      "yt-description": "Beschreibung",
+      "yt-comment": "Kommentar",
+      "fb-post": "Beitrag",
+      "discord-message": "Nachricht",
+      "discord-nick": "Spitzname",
+      "discord-status": "Eigener Status",
+      "telegram-message": "Nachricht",
+      "telegram-caption": "Foto-/Video-Beschriftung",
+      "telegram-bio": "Bio",
+      "threads-post": "Beitrag",
+      "threads-bio": "Bio",
+      "bluesky-post": "Beitrag",
+      "bluesky-bio": "Bio",
+      "reddit-title": "Beitragstitel",
+      "reddit-comment": "Kommentar",
+      "pinterest-description": "Pin-Beschreibung",
+      "pinterest-title": "Pin-Titel",
+      "whatsapp-about": "Info",
+      "vk-status": "Status",
+      "zalo-post": "Beitrag/Status",
+      "sms": "Textnachricht",
+      "meta-title": "Seitentitel",
+      "meta-description": "Meta-Beschreibung"
+    },
     labels: {
       "x-post": "X- / Twitter-Beitrag",
+      "x-bio": "X- / Twitter-Bio",
+      "x-name": "X- / Twitter-Anzeigename",
       "discord-message": "Discord-Nachricht",
+      "discord-status": "Discord-Status",
       "ig-caption": "Instagram-Bildunterschrift",
+      "ig-alt": "Instagram-Alt-Text",
       "tiktok-caption": "TikTok-Bildunterschrift",
       "li-post": "LinkedIn-Beitrag",
+      "li-about": "LinkedIn-Info-Bereich",
+      "li-comment": "LinkedIn-Kommentar",
       "fb-post": "Facebook-Beitrag",
       "yt-description": "YouTube-Beschreibung",
+      "yt-comment": "YouTube-Kommentar",
       "pinterest-description": "Pinterest-Pin-Beschreibung",
+      "pinterest-title": "Pinterest-Pin-Titel",
       "telegram-message": "Telegram-Nachricht",
       "telegram-caption": "Telegram-Foto-/Video-Bildunterschrift",
       "threads-post": "Threads-Beitrag",
+      "threads-bio": "Threads-Bio",
       "bluesky-post": "Bluesky-Beitrag",
+      "bluesky-bio": "Bluesky-Bio",
       "reddit-title": "Reddit-Beitragstitel",
+      "reddit-comment": "Reddit-Kommentar",
       "zalo-post": "Zalo-Beitrag/Status",
       "ig-bio": "Instagram-Bio",
       "tiktok-bio": "TikTok-Bio",
