@@ -7251,6 +7251,12 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   transition: width 0.15s ease;
 }
 .cc-bar-fill.is-over { background: var(--ts-fail); }
+.cc-note {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
 
 /* Inline "name check" callout — the game-rules checker rendered as a compact
    live readout inside the generator card (between the input and the decoration
@@ -8555,3 +8561,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   line-height: 1.2;
   padding: 2px 6px;
 }
+
+/* Characters-to-words converter (/character-counter/characters-to-words/) */
+.ctw-input { min-height: auto; }
+.ctw-picks { margin-top: 0.75rem; }
