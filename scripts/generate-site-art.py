@@ -2892,6 +2892,34 @@ PAGES["vi-library-ky-tu-hy-lap"] = (
     "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
     glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
 
+# ---- 2026-08-07: what-font-does-{pinterest,whatsapp}-use — 12 locales ----
+PAGES.update({
+  "ar-answers-what-font-does-pinterest-use": ("ما هو الخط الذي يستخدمه بينتيرست؟", "الإجابة السريعة، قصة خط Pinterest Sans، والبديل المجاني الذي يمكنك تثب", m_qa, K_ANS),
+  "ar-answers-what-font-does-whatsapp-use": ("ما هو الخط الذي يستخدمه WhatsApp؟", "الإجابة السريعة: يعتمد WhatsApp على خط جهازك وليس على خط خاص به — لهذا", m_qa, K_ANS),
+  "es-answers-what-font-does-pinterest-use": ("¿Qué Fuente Usa Pinterest?", "La respuesta corta, la historia detrás de Pinterest Sans, y la alterna", m_qa, K_ANS),
+  "es-answers-what-font-does-whatsapp-use": ("¿Qué fuente usa WhatsApp?", "En resumen: el logo usa Helvetica Neue, pero el chat no tiene una fuen", m_qa, K_ANS),
+  "fr-answers-what-font-does-pinterest-use": ("Quelle Police Utilise Pinterest ?", "La réponse courte, l'histoire de Pinterest Sans, et l'alternative grat", m_qa, K_ANS),
+  "fr-answers-what-font-does-whatsapp-use": ("Quelle police utilise WhatsApp ?", "En bref : le logo est en Helvetica Neue, mais l'interface de chat n'ut", m_qa, K_ANS),
+  "id-answers-what-font-does-pinterest-use": ("Font Apa yang Digunakan Pinterest?", "Jawaban singkatnya, kisah di balik Pinterest Sans, dan font gratis mir", m_qa, K_ANS),
+  "id-answers-what-font-does-whatsapp-use": ("Font Apa yang Digunakan WhatsApp?", "Singkatnya: logo WhatsApp menggunakan Helvetica Neue, tapi tampilan ch", m_qa, K_ANS),
+  "it-answers-what-font-does-pinterest-use": ("Che Font Usa Pinterest?", "In breve: Pinterest usa un typeface proprietario chiamato Pinterest Sa", m_qa, K_ANS),
+  "it-answers-what-font-does-whatsapp-use": ("Che Font Usa WhatsApp?", "In breve: il logo di WhatsApp è impostato in Helvetica Neue, ma la cha", m_qa, K_ANS),
+  "ja-answers-what-font-does-pinterest-use": ("Pinterestのフォントは何ですか?", "アプリ・サイト・ロゴで使われている書体と、無料で使える代替フォントを解説します。", m_qa, K_ANS),
+  "ja-answers-what-font-does-whatsapp-use": ("WhatsAppのフォントは何ですか?", "ロゴとチャット画面、それぞれで使われているフォントの違いを解説します。", m_qa, K_ANS),
+  "nl-answers-what-font-does-pinterest-use": ("Welk lettertype gebruikt Pinterest?", "Pinterest Sans, Grilli Type, en de gratis alternatieven die er het dic", m_qa, K_ANS),
+  "nl-answers-what-font-does-whatsapp-use": ("Welk lettertype gebruikt WhatsApp?", "Helvetica Neue voor het logo, en waarom je chats er per toestel net an", m_qa, K_ANS),
+  "pl-answers-what-font-does-pinterest-use": ("Jakiej czcionki używa Pinterest?", "Krótka odpowiedź, historia Pinterest Sans i darmowy odpowiednik, który", m_qa, K_ANS),
+  "pl-answers-what-font-does-whatsapp-use": ("Jakiej czcionki używa WhatsApp?", "Krótka odpowiedź, wyjaśnienie, dlaczego czaty wyglądają inaczej na róż", m_qa, K_ANS),
+  "pt-answers-what-font-does-pinterest-use": ("Que Fonte Usa o Pinterest?", "A app, o site e a marca do Pinterest usam a Pinterest Sans, uma fonte ", m_qa, K_ANS),
+  "pt-answers-what-font-does-whatsapp-use": ("Que Fonte Usa o WhatsApp?", "O logótipo do WhatsApp usa Helvetica Neue, mas a conversa em si não te", m_qa, K_ANS),
+  "ru-answers-what-font-does-pinterest-use": ("Какой шрифт использует Pinterest?", "От интерфейса приложения до логотипа: разбираем фирменный шрифт Pinter", m_qa, K_ANS),
+  "ru-answers-what-font-does-whatsapp-use": ("Какой шрифт использует WhatsApp?", "Логотип, интерфейс и переписка используют разные шрифты. Разбираем, чт", m_qa, K_ANS),
+  "th-answers-what-font-does-pinterest-use": ("Pinterest ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: Pinterest ใช้ฟอนต์ชื่อ Pinterest Sans ฟอนต์ซานเซอริฟแนวเร", m_qa, K_ANS),
+  "th-answers-what-font-does-whatsapp-use": ("WhatsApp ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: โลโก้ WhatsApp ใช้ Helvetica Neue แต่หน้าจอแชทไม่มีฟอนต์ป", m_qa, K_ANS),
+  "tr-answers-what-font-does-pinterest-use": ("Pinterest Hangi Yazı Tipini Kullanıyor?", "Uygulamadan logoya: Pinterest'in imza yazı tipinin arkasındaki hikâye ", m_qa, K_ANS),
+  "tr-answers-what-font-does-whatsapp-use": ("WhatsApp Hangi Yazı Tipini Kullanıyor?", "Logo sabit, sohbet ekranı değil: WhatsApp'ın yazı tipi seçimlerinin ci", m_qa, K_ANS),
+})
+
 
 def main():
     import cairosvg
