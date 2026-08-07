@@ -35,16 +35,31 @@ node scripts/check-locale-parent-tier.js library/heart-symbols <locale>
 ## Step 1 — Plan the batch
 
 ```bash
-python3 scripts/plan-library-locale-batch.py --locale tr --size 10 \
+python3 scripts/plan-library-locale-batch.py --locale th --size 10 \
         --gsc <search-console-landing-page-export.csv> \
-        --json /tmp/batch-tr.json
+        --market Thailand \
+        --json /tmp/batch-th.json
 ```
 
-**Always pass `--gsc` when an export is available.** Without it the ranking falls
-back to structural proxies (inbound links, existing cluster size), which measure
-how well-connected a page is, not whether anyone searches for it. The difference
-is not cosmetic: structurally, `emoji-flags` outranks `fortnite-symbols`; on real
-demand, `fortnite-symbols` outranks it ~13×.
+**Always pass `--gsc`, and always pass `--market` with it.** The two flags rank
+by different things and the difference decides the batch:
+
+- **`--gsc` alone** ranks by the EN page's own clicks — i.e. by **English** demand
+  mix. EN is ~78% naming/identity; `ja` is ~0.2%. Ranking a Japanese batch this way
+  puts Free Fire first for a market that sends the Free Fire page **11 impressions**.
+- **`--gsc --market <Country>`** ranks by impressions from that market landing on
+  the **EN** page — people in the target country already finding the English
+  version because no local one exists. That is demand for the page you are about
+  to build, measured where you are building it.
+
+Without either, the fallback is structural (inbound links, cluster size), which
+measures how well-connected a page is, not whether anyone searches for it —
+structurally `emoji-flags` outranks `fortnite-symbols`; on demand it is the
+reverse by ~13×.
+
+**Caveat on `--market`:** it only sees pages that already rank in that market. A
+page with zero market impressions may still have demand nobody can see — that is
+the FR `/symbol/` blind spot. Treat the ranking as a floor, not a ceiling.
 
 Batch size: **8–12**. Large enough to amortise the mesh and validation steps,
 small enough that one bad decision doesn't contaminate 40 pages.

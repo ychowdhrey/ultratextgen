@@ -28,10 +28,32 @@ Priority model — three signals, all computable from the repo, no API needed:
 
   4. demand   — OPTIONAL and strongly preferred when available. Pass --gsc with a
                 Search Console export (columns: Landing Page, Impressions, Url
-                Clicks, and optionally Country) and the EN page's own measured
-                clicks dominate the score. Signals 1-2 are structural proxies used
-                only when no export is supplied; they say a page is well-connected,
-                not that anyone searches for it. Prefer real data.
+                Clicks, Country). Signals 1-2 are structural proxies used only when
+                no export is supplied; they say a page is well-connected, not that
+                anyone searches for it.
+
+                Two demand modes, and the difference is not subtle:
+
+                  --gsc alone          ranks by the EN page's own clicks. This
+                                       imports ENGLISH demand mix. EN is ~78%
+                                       naming/identity; ja is ~0.2%. Ranking a
+                                       Japanese batch this way puts Free Fire
+                                       first for a market where Free Fire has no
+                                       presence.
+
+                  --gsc + --market     ranks by impressions from THAT MARKET
+                                       landing on the EN page — i.e. people in the
+                                       target country already finding the English
+                                       version because no local one exists. This is
+                                       demand for the page you are about to build,
+                                       measured in the market you are building for.
+                                       Always prefer it.
+
+                Caveat on --market: it only sees pages that already rank in that
+                market. A page with zero market impressions may still have demand
+                nobody can see yet — that is the FR /symbol/ blind spot the whole
+                governance layer exists for. Treat the ranking as a floor, not a
+                ceiling.
 
 Usage:
   python3 scripts/plan-library-locale-batch.py --locale tr --size 10
@@ -150,12 +172,19 @@ def match_native(slug, phrases):
     return sorted(hits, key=lambda h: (not h["title_safe"], h["phrase_id"] or ""))
 
 
-def gsc_clicks(csv_path):
-    """{en-library-slug: clicks} from a Search Console landing-page export."""
+def gsc_clicks(csv_path, market=None):
+    """{en-library-slug: n} from a Search Console export.
+
+    Without `market`: EN clicks (English demand — see the --market caveat above).
+    With `market`:    impressions from that country landing on the EN page, which
+                      is demand for the locale page that does not exist yet.
+    """
     import csv as _csv
     clicks = collections.Counter()
     with open(csv_path, encoding="utf-8-sig") as fh:
         for row in _csv.DictReader(fh):
+            if market and (row.get("Country") or "").strip() != market:
+                continue
             page = (row.get("Landing Page") or row.get("Page") or "").strip()
             m = re.search(r"/library/([^/]+)/?$", page)
             # EN pages only — a locale sibling's clicks say nothing about whether
@@ -163,8 +192,12 @@ def gsc_clicks(csv_path):
             # topics already widely translated (signal 2 covers that separately).
             if not m or re.search(r"ultratextgen\.com/[a-z]{2}(-[a-z]{2})?/library/", page):
                 continue
+            field = ("Impressions" if market else None)
             try:
-                clicks[m.group(1)] += int(row.get("Url Clicks") or row.get("Clicks") or 0)
+                if market:
+                    clicks[m.group(1)] += int(row.get("Impressions") or 0)
+                else:
+                    clicks[m.group(1)] += int(row.get("Url Clicks") or row.get("Clicks") or 0)
             except ValueError:
                 pass
     return clicks
@@ -186,6 +219,10 @@ def main():
     ap.add_argument("--json", dest="json_out")
     ap.add_argument("--gsc", help="Search Console landing-page CSV; makes the "
                                   "ranking demand-driven instead of structural")
+    ap.add_argument("--market", help="Country name as it appears in the GSC export "
+                                     "(e.g. Thailand). Ranks by that market's "
+                                     "impressions on the EN page — strongly "
+                                     "preferred over bare --gsc")
     ap.add_argument("--coverage", action="store_true",
                     help="print per-locale coverage and exit")
     args = ap.parse_args()
@@ -217,7 +254,7 @@ def main():
     inbound = inbound_link_counts()
     phrases = native_phrases(loc)
     missing = [s for s in pages if loc not in cov[s]]
-    demand = gsc_clicks(args.gsc) if args.gsc else None
+    demand = gsc_clicks(args.gsc, args.market) if args.gsc else None
 
     scored = []
     for slug in missing:
@@ -249,12 +286,23 @@ def main():
     print(f"  missing              : {len(missing)}")
     print(f"  native phrases avail : {len(phrases)} "
           f"(approved/limited_use in data/local-language/{loc}.json)")
-    basis = ("EN clicks*10 + inbound + locales  [DEMAND-DRIVEN]" if demand is not None
-             else "inbound*2 + locales*3  [STRUCTURAL — pass --gsc for real demand]")
+    if demand is None:
+        basis = "inbound*2 + locales*3  [STRUCTURAL — pass --gsc for real demand]"
+    elif args.market:
+        basis = (f"{args.market} impressions on the EN page*10 + inbound + locales  "
+                 f"[MARKET DEMAND — best available]")
+    else:
+        basis = ("EN clicks*10 + inbound + locales  [ENGLISH demand — pass --market "
+                 "to rank by the target market instead]")
     print(f"\nNext {len(batch)} by priority (score = {basis}):\n")
     for i, r in enumerate(batch, 1):
         print(f"{i:3d}. {r['slug']}")
-        dm = f"EN clicks {r['en_clicks']:5d}  " if r["en_clicks"] is not None else ""
+        if r["en_clicks"] is None:
+            dm = ""
+        elif args.market:
+            dm = f"{args.market} impr {r['en_clicks']:5d}  "
+        else:
+            dm = f"EN clicks {r['en_clicks']:5d}  "
         print(f"     score {r['score']:5d}  {dm}inbound {r['inbound_links']:3d}  "
               f"already in {r['locales_already_translated']} locales")
         if r["native_evidence"]:
