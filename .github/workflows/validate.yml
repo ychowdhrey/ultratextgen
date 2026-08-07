@@ -144,6 +144,16 @@ jobs:
         continue-on-error: true
         run: npm run check:funding-choices | tee funding-choices.log
 
+      # Gating. Structural validators cannot see a number written in prose or
+      # in a <meta>, which is how "LinkedIn cuts at 210" survived the rule
+      # changing and how "27 platform limits" stayed in the snippet text long
+      # after the table grew to 38. This asserts every figure these pages
+      # state still matches js/counter/counterRules.js.
+      - name: Run counter claim-consistency check
+        id: counter_claims
+        continue-on-error: true
+        run: npm run check:counter-claims | tee counter-claims.log
+
       - name: Run image asset check (whole-site audit, informational only)
         id: images
         continue-on-error: true
@@ -216,6 +226,7 @@ jobs:
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
             echo '```'
             cat funding-choices.log
             echo '```'
@@ -283,7 +294,6 @@ jobs:
         # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure' || steps.external_refs.outcome == 'failure'
-        run: |
+if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure' || steps.external_refs.outcome == 'failure' || steps.counter_claims.outcome == 'failure'        run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
