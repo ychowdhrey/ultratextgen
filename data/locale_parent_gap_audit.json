@@ -548,6 +548,90 @@
       "verdict": "gate-fail",
       "evidence": "Live Semrush pull (db=it, 2026-08-05): 'cambiare nome youtube' 110, 'come cambiare nome canale youtube' 20, 'nome canale youtube' 20 = ~150/mo. Below the threshold the id/tr/pt cells cleared; recorded as a deliberate not-built rather than an unaudited gap.",
       "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pt",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "de",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "nl",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "ko",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
     }
   ]
 }
