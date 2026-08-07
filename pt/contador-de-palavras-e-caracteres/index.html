@@ -189,6 +189,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -232,7 +234,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>O verificador acima sabe qual é qual: quando o limite é flexível, ele diz em que ponto o texto é cortado, para você colocar o que importa na frente em vez de só ficar abaixo de um número.</p>
+    <p>O limite flexível é aquele contra o qual quase todo mundo escreve de verdade, e quase nenhum contador mostra. Um post do LinkedIn tem 3.000 caracteres e uns 140 úteis: o resto fica atrás de um toque que quase ninguém dá. Por isso o contador acima desenha o corte direto — digite e você vê exatamente o texto que aparece antes do «ver mais», com todo o resto esmaecido atrás de uma linha, além de como essa mesma abertura se sai em cada outro feed que corta.</p>
+    <p><strong>Onde cada feed corta, e em qual aparelho:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Corta em</th><th>O que isso significa para o gancho</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Post do LinkedIn</td>
+          <td>~140 no celular<br>~210 no computador</td>
+          <td>Escreva pensando em 140 e a abertura sobrevive aos dois. É a maior diferença entre celular e computador desta lista.</td>
+        </tr>
+        <tr>
+          <td><a href="/pt/fontes-para-instagram/">Legenda do Instagram</a></td>
+          <td>~125</td>
+          <td>O corte mais apertado da lista — mais ou menos uma frase antes do «… mais».</td>
+        </tr>
+        <tr>
+          <td>Descrição do YouTube</td>
+          <td>~157</td>
+          <td>O que aparece abaixo do título antes do «Mostrar mais» — e muitas vezes o que a busca exibe.</td>
+        </tr>
+        <tr>
+          <td><a href="/pt/fontes-para-facebook/">Post do Facebook</a></td>
+          <td>~477</td>
+          <td>O corte mais generoso — um parágrafo curto inteiro cabe antes dele.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Duas ressalvas honestas. Esses números vêm do comportamento observado da interface, não de limites publicados: encare-os como «o que aparece de forma confiável», e não como um valor exato. E os feeds também cortam por <em>número de linhas</em>: três quebras de linha logo no começo podem cortar um post bem antes de qualquer contagem de caracteres. Se a sua abertura depende de uma lista, teste também no editor real.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -441,6 +470,11 @@ window.UTG_COUNTER_I18N = {
   applied: "Aplicado",
   fitsHeading: "Onde mais esse texto cabe",
   segShort: "segm.",
+  foldHeading: "O que as pessoas veem antes do «ver mais»",
+  foldMore: "ver mais",
+  foldMeta: "{shown} de {total} caracteres à vista · {hidden} escondidos atrás do toque",
+  foldRoom: "Restam {n} caracteres de gancho antes do corte",
+  foldDevices: "No celular corta em {m}; no computador, em {d}.",
   inspectStyled: "{n} letras Unicode estilizadas — custam 2 cada uma no X e em muitos campos de app.",
   inspectInvisible: "{n} caracteres invisíveis que contam do mesmo jeito.",
   inspectCombining: "{n} acentos empilhados.",

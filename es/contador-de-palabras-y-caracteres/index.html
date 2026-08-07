@@ -186,6 +186,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -228,7 +230,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>El verificador de arriba sabe cuál es cuál: cuando el límite es blando te dice en qué punto se corta el texto, para que pongas lo importante al principio en vez de limitarte a no pasarte de un número.</p>
+    <p>El límite blando es contra el que casi todo el mundo escribe en realidad, y casi ningún contador lo enseña. Una publicación de LinkedIn tiene 3.000 caracteres y unos 140 útiles: el resto queda detrás de un toque que casi nadie da. Por eso el contador de arriba dibuja el corte directamente: escribe algo y verás el texto exacto que aparece antes de «ver más», con todo lo demás atenuado tras una línea, además de cómo aguanta ese mismo arranque en el resto de feeds que recortan.</p>
+    <p><strong>Dónde corta cada feed y en qué dispositivo:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Corta a los</th><th>Qué significa para el gancho</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Publicación de LinkedIn</td>
+          <td>~140 en móvil<br>~210 en escritorio</td>
+          <td>Escribe pensando en 140 y el arranque sobrevive a los dos. Es la mayor diferencia entre móvil y escritorio de toda la lista.</td>
+        </tr>
+        <tr>
+          <td><a href="/es/fuentes-para-instagram/">Descripción de Instagram</a></td>
+          <td>~125</td>
+          <td>El corte más justo de la lista: aproximadamente una frase antes del «… más».</td>
+        </tr>
+        <tr>
+          <td>Descripción de YouTube</td>
+          <td>~157</td>
+          <td>Lo que se ve bajo el título antes de «Mostrar más»; también es lo que suele aparecer en el buscador.</td>
+        </tr>
+        <tr>
+          <td><a href="/es/letras-para-facebook/">Publicación de Facebook</a></td>
+          <td>~477</td>
+          <td>El corte más generoso: entra un párrafo corto entero antes de que llegue.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Dos advertencias honestas. Son comportamientos observados de la interfaz, no límites publicados, así que tómalos como «lo que se ve de forma fiable» y no como umbrales exactos. Y los feeds también cortan por <em>número de líneas</em>: tres saltos de línea al principio pueden recortar una publicación mucho antes de cualquier cifra de caracteres. Si tu arranque depende de una lista, compruébalo también en el editor real.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -417,6 +446,11 @@ window.UTG_COUNTER_I18N = {
   applied: "Aplicado",
   fitsHeading: "Dónde más cabe este texto",
   segShort: "segm.",
+  foldHeading: "Lo que la gente ve antes de «ver más»",
+  foldMore: "ver más",
+  foldMeta: "{shown} de {total} caracteres a la vista · {hidden} ocultos tras el toque",
+  foldRoom: "Te quedan {n} caracteres de gancho antes del corte",
+  foldDevices: "En móvil corta a los {m}; en escritorio, a los {d}.",
   inspectStyled: "{n} letras Unicode con estilo — cuestan 2 cada una en X y en muchos campos de apps.",
   inspectInvisible: "{n} caracteres invisibles que sí cuentan.",
   inspectCombining: "{n} diacríticos apilados.",
