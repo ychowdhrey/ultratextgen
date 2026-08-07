@@ -204,7 +204,7 @@ LOCALE_FAQ_LABEL = {
 }
 
 
-def render_faq(faq, label):
+def render_faq(faq, label, heading=None):
     """Render the optional FAQ block.
 
     Uses the JS-free <details> disclosure variant deliberately: library pages
@@ -221,13 +221,55 @@ def render_faq(faq, label):
             f'    <div class="faq-answer"><p>{esc(entry["a"])}</p></div>\n'
             "  </details>"
         )
+    # The house form on hand-written library pages carries a real <h2> under the
+    # kicker (spec key "faq_h2"). It is optional so older specs keep their
+    # current output byte-for-byte, but a page whose sibling has one needs it —
+    # <h2> count is part of the translation-parity fingerprint.
+    heading_html = f"  <h2>{esc(heading)}</h2>\n" if heading else ""
     return (
         '<!-- FAQ -->\n'
         '<section class="editorial-section" id="faq">\n'
         f'  <span class="article-section-label">{esc(label)}</span>\n'
+        f"{heading_html}"
         + "\n".join(items)
         + "\n</section>"
     )
+
+
+def render_editorial_sections(sections):
+    """Render free prose sections (spec key "editorial_sections").
+
+    Symbol grids and FAQs cover most of a library page, but some pages need a
+    plain editorial block — e.g. the "how this emoji looks on each device"
+    section on star-emoji/crying-emoji/crown-emoji. Before this key existed
+    those had to be hand-added to the HTML after generation, which meant a
+    later `--force` regenerate silently deleted them (the same class of
+    silent loss the art-wiring order already causes; see
+    docs/library-locale-translation-workflow.md step 6).
+
+    `paragraphs` entries are emitted as-is so they can carry inline markup
+    (<em>, <strong>, <a href>) in house style. They are author-written spec
+    content, never user input.
+    """
+    blocks = []
+    for sec in sections:
+        label_html = (
+            f'  <span class="article-section-label">{esc(sec["label"])}</span>\n'
+            if sec.get("label")
+            else ""
+        )
+        paras = "\n".join(f"    <p>{p}</p>" for p in sec.get("paragraphs", []))
+        sid = f' id="{esc_attr(sec["id"])}"' if sec.get("id") else ""
+        blocks.append(
+            f'<section class="editorial-section"{sid}>\n'
+            f"{label_html}"
+            f'  <h2>{esc(sec["h2"])}</h2>\n'
+            '  <div class="editorial-block">\n'
+            f"{paras}\n"
+            "  </div>\n"
+            "</section>"
+        )
+    return '\n\n<div class="section-divider"></div>\n\n'.join(blocks)
 
 
 # Locales written right-to-left. The site's own RTL content locale is Arabic;
@@ -425,11 +467,24 @@ def render_page(spec):
         ensure_ascii=False,
     )
 
+    # Optional free-prose sections, rendered between the symbol grids and the FAQ.
+    editorial = spec.get("editorial_sections") or []
+    editorial_html = (
+        f"\n\n<div class=\"section-divider\"></div>\n\n{render_editorial_sections(editorial)}"
+        if editorial
+        else ""
+    )
+
     # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
     # spec list, so a page can never ship schema for Q&A it doesn't render.
     faq = spec.get("faq") or []
     faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
-    faq_html = f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label)}" if faq else ""
+    faq_h2 = spec.get("faq_h2")
+    faq_html = (
+        f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label, faq_h2)}"
+        if faq
+        else ""
+    )
     ld_faq_html = ""
     if faq:
         ld_faq = json.dumps(
@@ -534,7 +589,7 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}{faq_html}
+{body_sections}{editorial_html}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
