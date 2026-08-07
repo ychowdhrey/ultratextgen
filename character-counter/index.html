@@ -233,6 +233,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -275,7 +277,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>The checker above knows which is which: on a soft limit it tells you where the text gets cut, so you can front-load what matters instead of just staying under a number.</p>
+    <p>The soft limit is the one most people are actually writing against, and almost no counter shows it. A LinkedIn post has 3,000 characters and roughly 140 useful ones: the rest is behind a tap nobody takes. So the tool above renders the fold directly — type into it and you see the exact text that appears before "see more", with everything after the cut dimmed behind a line, plus how the same opening holds up on every other feed that truncates.</p>
+    <p><strong>Where each feed cuts, and on which device:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Cuts at</th><th>What that means for a hook</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/linkedin/">LinkedIn post</a></td>
+          <td>~140 mobile<br>~210 desktop</td>
+          <td>Write to 140 and it survives both. This is the widest desktop/mobile gap of any feed here.</td>
+        </tr>
+        <tr>
+          <td><a href="/instagram/">Instagram caption</a></td>
+          <td>~125</td>
+          <td>The tightest fold on this list — roughly one sentence before "... more".</td>
+        </tr>
+        <tr>
+          <td><a href="/youtube/">YouTube description</a></td>
+          <td>~157</td>
+          <td>What shows under the title before "Show more"; also what search often surfaces.</td>
+        </tr>
+        <tr>
+          <td><a href="/facebook/">Facebook post</a></td>
+          <td>~477</td>
+          <td>The most forgiving fold — a full short paragraph lands before the cut.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Two honest caveats. These are observed UI behaviour, not published limits, so treat them as "what reliably shows" rather than exact thresholds — and feeds also cut on <em>line count</em>, so three early line breaks can truncate a post well short of any character number. If your opening depends on a list, check it in the real composer too.</p>
   </section>
 
   <div class="section-divider"></div>

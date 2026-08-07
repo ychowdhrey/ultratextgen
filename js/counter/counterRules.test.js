@@ -78,6 +78,30 @@ t("inspect finds styled", ins.styled, 2);
 t("inspect finds invisible", ins.invisible, 1);
 t("inspect finds combining", ins.combining, 1);
 
+// --- the fold (the second budget) ---
+const f1 = R.foldInfo("a".repeat(200), "li-post");
+t("fold: cut point is the mobile fold", f1.at, 140);
+t("fold: desktop fold reported too", f1.desktop, 210);
+t("fold: label is digits only (no English to leak into locales)", /^[0-9\u2013-]+$/.test(f1.label), true);
+t("fold: label spans both devices", f1.label, "140\u2013210");
+t("fold: shown/hidden split", [f1.shown, f1.hidden, f1.truncated], [140, 60, true]);
+t("fold: preview is exactly the visible part", f1.preview, "a".repeat(140));
+t("fold: hiddenText is the rest, losslessly", f1.preview + f1.hiddenText, "a".repeat(200));
+const f2 = R.foldInfo("short", "li-post");
+t("fold: under the cut reports remaining", [f2.truncated, f2.remaining], [false, 135]);
+t("fold: no fold on a username", R.foldInfo("x".repeat(50), "ig-username"), null);
+t("fold: no fold on an X post", R.foldInfo("x".repeat(50), "x-post"), null);
+t("fold: single-fold platform has no desktop split", R.foldInfo("x".repeat(200), "ig-caption").desktop, null);
+t("fold: instagram cuts at 125", R.foldInfo("x".repeat(200), "ig-caption").at, 125);
+// the cut must never split a grapheme cluster
+const fam = "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}";
+const f3 = R.foldInfo(fam.repeat(200), "li-post");
+t("fold: cuts on grapheme boundaries", f3.preview, fam.repeat(140));
+t("fold: grapheme cut is lossless", f3.preview + f3.hiddenText, fam.repeat(200));
+t("foldsAll covers exactly the folding rules",
+  R.foldsAll("hi").length, R.LIMITS.filter((r) => r.visibleAt).length);
+t("foldsAll entries all carry their rule", R.foldsAll("hi").every((f) => f && f.rule && f.rule.id), true);
+
 // --- rule table integrity ---
 const ids = R.LIMITS.map(r => r.id);
 t("no duplicate rule ids", ids.length, new Set(ids).size);

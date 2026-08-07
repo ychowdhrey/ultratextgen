@@ -79,6 +79,12 @@
     reducers: null,
     reducerHints: null,
     segShort: "seg",
+    /* The fold layer. Every string a locale page must translate. */
+    foldHeading: "What people see before \u201csee more\u201d",
+    foldMore: "see more",
+    foldMeta: "{shown} of {total} characters shown \u00b7 {hidden} hidden behind the tap",
+    foldRoom: "{n} characters of hook left before it gets cut",
+    foldDevices: "Mobile cuts at {m}, desktop at {d}.",
     overBy: "Over by {n} — pick a fix:",
     trimToFit: "Trim to fit",
     undo: "Undo",
@@ -136,6 +142,7 @@
     const fixBar = document.getElementById("counterFixBar");
     const inspectBar = document.getElementById("counterInspect");
     const fitGrid = document.getElementById("counterFitGrid");
+    const foldBar = document.getElementById("counterFold");
 
     const ns = window.UltraTextGen || {};
     const counts = ns.counterCounts || null;
@@ -220,6 +227,65 @@
       }
 
       fixBar.appendChild(actions);
+    }
+
+    /* ---------- 2b. THE FOLD — the second budget ----------
+       The hard limit decides whether a post sends; the fold decides whether
+       anyone reads it. LinkedIn accepts 3,000 characters and then shows ~140
+       of them on a phone. Every other counter reports the number nobody is
+       actually writing against, so this renders the one they are: exactly
+       what the reader sees before "see more", with the rest dimmed behind
+       the cut, and whether the same text survives the fold everywhere else. */
+    function renderFold() {
+      if (!foldBar || !rules || !rules.foldInfo) return;
+      const value = input.value;
+      const limitId = activeLimitId();
+      const info = value && limitId ? rules.foldInfo(value, limitId) : null;
+      if (!info) { foldBar.hidden = true; return; }
+
+      foldBar.innerHTML = "";
+      foldBar.hidden = false;
+      foldBar.classList.toggle("is-cut", info.truncated);
+
+      foldBar.appendChild(el("p", "cc-fold-head", I18N.foldHeading));
+
+      const preview = el("div", "cc-fold-preview");
+      preview.appendChild(el("span", "cc-fold-shown", info.preview));
+      if (info.truncated) {
+        preview.appendChild(el("span", "cc-fold-more", "… " + I18N.foldMore));
+        preview.appendChild(el("span", "cc-fold-hidden", info.hiddenText));
+      }
+      foldBar.appendChild(preview);
+
+      const meta = el("p", "cc-fold-meta");
+      meta.textContent = info.truncated
+        ? fmt(I18N.foldMeta, {
+            shown: info.shown.toLocaleString(),
+            total: info.total.toLocaleString(),
+            hidden: info.hidden.toLocaleString()
+          })
+        : fmt(I18N.foldRoom, { n: info.remaining.toLocaleString() });
+      if (info.desktop) {
+        meta.appendChild(el("span", "cc-fold-devices",
+          " " + fmt(I18N.foldDevices, { m: info.at, d: info.desktop })));
+      }
+      foldBar.appendChild(meta);
+
+      /* Cross-platform: the same hook, against every fold on the site. This is
+         the part that makes the fold a capability rather than one platform's
+         footnote — a manager writing one hook for four feeds needs all four. */
+      const others = rules.foldsAll(value).filter((f) => f.rule.id !== limitId);
+      if (others.length) {
+        const row = el("div", "cc-fold-others");
+        others.forEach((f) => {
+          const chip = el("span", "cc-fit-chip " + (f.truncated ? "is-unfit" : "is-fit"));
+          chip.appendChild(el("span", "cc-fit-name",
+            (I18N.labels && I18N.labels[f.rule.id]) || f.rule.label));
+          chip.appendChild(el("span", "cc-fit-num", f.label));
+          row.appendChild(chip);
+        });
+        foldBar.appendChild(row);
+      }
     }
 
     /* ---------- 2. DIAGNOSE ---------- */
@@ -318,6 +384,7 @@
       renderStats();
       renderLive();
       renderInspect();
+      renderFold();
       renderFix();
       renderFitGrid();
       if (checker) checker.render();

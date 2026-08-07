@@ -40,6 +40,8 @@
     <p class="counter-inspect" id="counterInspect" hidden></p>
   </div>
 
+  <div class="counter-fold" id="counterFold" hidden></div>
+
   <div class="counter-fix" id="counterFixBar" hidden></div>
 
   <div class="counter-stats-grid">
@@ -80,6 +82,11 @@
     undo: "Rückgängig",
     fitsHeading: "Wo dieser Text sonst noch passt",
     segShort: "Seg.",
+    foldHeading: "Was vor \u201eMehr anzeigen\u201c sichtbar ist",
+    foldMore: "mehr anzeigen",
+    foldMeta: "{shown} von {total} Zeichen sichtbar \u00b7 {hidden} verborgen",
+    foldRoom: "noch {n} Zeichen bis zum Abschnitt",
+    foldDevices: "Mobil schneidet bei {m}, Desktop bei {d}.",
     visibleNote: "Nur die ersten {n} Zeichen sind sichtbar.",
     inspectStyled: "{n} stilisierte Unicode-Buchstaben.",
     inspectInvisible: "{n} unsichtbare Zeichen.",
@@ -253,6 +260,56 @@ window.addEventListener("load", function () {
   t("clear empties the box", input.value, "");
   t("clear hides the fit grid", $("#counterFitGrid").hidden, true);
   t("clear hides the clear button", $("#counterClearBtn").hidden, true);
+
+
+  /* ---------- 11. the fold — the second budget ---------- */
+  const fold = $("#counterFold");
+  platformSel.value = "linkedin";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("");
+  t("empty text: fold panel hidden", fold.hidden, true);
+
+  type("Short hook.");
+  t("under the fold: panel still shown", fold.hidden, false);
+  t("under the fold: not flagged as cut", fold.classList.contains("is-cut"), false);
+  t("under the fold: no see-more marker", !!fold.querySelector(".cc-fold-more"), false);
+  t("under the fold: reports remaining hook room",
+    fold.querySelector(".cc-fold-meta").textContent.indexOf("noch 129 Zeichen") > -1, true);
+  t("fold heading is translated", fold.querySelector(".cc-fold-head").textContent.indexOf("Mehr anzeigen") > -1, true);
+
+  const hook = "H".repeat(140);
+  type(hook + "T".repeat(60));
+  t("over the fold: flagged as cut", fold.classList.contains("is-cut"), true);
+  t("preview is exactly the visible part", fold.querySelector(".cc-fold-shown").textContent, hook);
+  t("preview is cut at the MOBILE fold, not desktop", fold.querySelector(".cc-fold-shown").textContent.length, 140);
+  t("see-more marker is translated", fold.querySelector(".cc-fold-more").textContent.indexOf("mehr anzeigen") > -1, true);
+  t("the hidden remainder is rendered, not dropped", fold.querySelector(".cc-fold-hidden").textContent, "T".repeat(60));
+  t("meta reports shown/total/hidden",
+    fold.querySelector(".cc-fold-meta").textContent.indexOf("140 von 200 Zeichen sichtbar") > -1, true);
+  t("both device folds named", fold.querySelector(".cc-fold-devices").textContent.indexOf("140") > -1
+    && fold.querySelector(".cc-fold-devices").textContent.indexOf("210") > -1, true);
+
+  /* the cut must never split a grapheme cluster */
+  type("👨‍👩‍👧‍👦".repeat(200));
+  const shown = fold.querySelector(".cc-fold-shown").textContent;
+  t("fold cuts on grapheme boundaries (no broken emoji)",
+    shown === "👨‍👩‍👧‍👦".repeat(140), true);
+
+  /* cross-platform: the same hook against every other fold on the site */
+  type("z".repeat(130));
+  const others = Array.from(fold.querySelectorAll(".cc-fold-others .cc-fit-chip"));
+  t("other folding destinations listed", others.length > 1, true);
+  t("active destination excluded from the others row",
+    others.some((c) => c.textContent.indexOf("LinkedIn-Beitrag") === 0), false);
+  t("130 chars already over Instagram's 125 fold",
+    others.some((c) => c.textContent.indexOf("Instagram") === 0 && c.classList.contains("is-unfit")), true);
+  t("130 chars still inside YouTube's 157 fold",
+    others.some((c) => c.textContent.indexOf("YouTube") === 0 && c.classList.contains("is-fit")), true);
+
+  /* destinations that do not fold must not render the panel at all */
+  platformSel.value = "x";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  t("non-folding destination hides the panel", fold.hidden, true);
 
   const summary = (fail ? fail + " FAILED, " : "") + pass + " passed";
   document.getElementById("results").textContent = lines.join("\n") + "\n\n" + summary;

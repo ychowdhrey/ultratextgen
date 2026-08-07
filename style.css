@@ -7328,6 +7328,59 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .cc-fix-btn-trim .cc-fix-btn-save { color: var(--text-secondary); }
 .cc-fix-btn-undo { color: var(--text-muted); }
 
+/* The fold — what shows before "see more".
+   The preview is the payload: the text above the cut reads normally, the cut
+   is a real rule across the block, and everything after it is dimmed so the
+   cost of a slow hook is visible at a glance rather than described. */
+.counter-fold {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.3));
+  border-radius: 12px;
+  background: var(--card-bg, transparent);
+}
+.cc-fold-head {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.cc-fold-preview {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.cc-fold-shown { color: var(--text-color); }
+.cc-fold-more {
+  color: var(--accent-color, #6c4df6);
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* The cut itself: the hidden remainder starts on its own line, behind a rule. */
+.cc-fold-hidden {
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-color, rgba(127, 127, 127, 0.4));
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.cc-fold-meta {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.cc-fold-devices { color: var(--text-muted); }
+.counter-fold.is-cut { border-color: var(--accent-color, #6c4df6); }
+.cc-fold-others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
 /* Fits-everywhere grid */
 .counter-fits { margin-top: 1rem; }
 .counter-fits-head {

@@ -68,6 +68,19 @@
     return n;
   }
 
+  /** First n graphemes, so a cut never lands inside an emoji or a
+      combining sequence — the fold preview must render, not mojibake. */
+  function takeGraphemes(str, n) {
+    if (!str || n <= 0) return "";
+    if (!graphemeSegmenter) return Array.from(str).slice(0, n).join("");
+    let out = "", i = 0;
+    for (const s of graphemeSegmenter.segment(str)) {
+      if (i++ >= n) break;
+      out += s.segment;
+    }
+    return out;
+  }
+
   /* --- X/Twitter weighted counting (twitter-text v3 config) --- */
   const X_URL_WEIGHT = 23;
   const X_LIGHT_RANGES = [
@@ -173,11 +186,7 @@
     { id: "tiktok-bio", platform: "tiktok", field: "Bio", label: "TikTok bio", limit: 80, group: "bios" },
     { id: "tiktok-username", platform: "tiktok", field: "Username", label: "TikTok username", limit: 24, group: "usernames" },
 
-    /* The "see more" fold is not one number: LinkedIn cuts at roughly 210 on
-       desktop but ~140 on mobile, which is where most of the feed is read. Warn
-       at the stricter of the two, and show the range — a hook that survives 140
-       survives both. Community-measured, not a published limit. */
-    { id: "li-post", platform: "linkedin", field: "Post", label: "LinkedIn post", limit: 3000, group: "posts", visibleAt: 140, visibleAtLabel: "140–210" },
+    { id: "li-post", platform: "linkedin", field: "Post", label: "LinkedIn post", limit: 3000, group: "posts", visibleAt: 140, foldDesktop: 210 },
     { id: "li-headline", platform: "linkedin", field: "Headline", label: "LinkedIn headline", limit: 220, group: "bios" },
     { id: "li-about", platform: "linkedin", field: "About section", label: "LinkedIn About", limit: 2600, group: "bios" },
     { id: "li-comment", platform: "linkedin", field: "Comment", label: "LinkedIn comment", limit: 1250, group: "posts" },
@@ -275,6 +284,53 @@
       const r = analyze(str, rule.id);
       return { rule, fits: r.fits, used: r.glyphs, limit: r.limit, remaining: r.remaining };
     });
+  }
+
+  /**
+   * The fold — the second budget.
+   *
+   * A feed post has two numbers that matter, and the one everybody tracks is
+   * the less important one. The hard limit decides whether the post SENDS;
+   * the fold decides whether anyone READS it. LinkedIn will happily accept
+   * 3,000 characters and then show ~140 of them on a phone behind "see more".
+   * For anyone writing a hook, the fold IS the limit.
+   *
+   * Measured in graphemes, because this is about what the reader's screen
+   * shows, not how the backend stores it. Returns null for destinations that
+   * don't truncate (a username, an SMS, an X post that fits whole).
+   *
+   * Honest about its own precision: these are community-measured observations
+   * of a UI, not published API limits, and platforms also fold on line COUNT
+   * (a few early line breaks can cut a post short of any character number).
+   * Treat as "what reliably shows", which is how the page frames it.
+   */
+  function foldInfo(str, limitId) {
+    const rule = ruleById(limitId);
+    if (!rule.visibleAt) return null;
+    const s = str || "";
+    const at = rule.visibleAt;
+    const total = graphemes(s);
+    return {
+      rule: rule,
+      at: at,
+      desktop: rule.foldDesktop || null,
+      /* Digits only — this string is dropped into each locale's own
+         translated sentence, so it must carry no English. */
+      label: rule.foldDesktop ? at + "–" + rule.foldDesktop : String(at),
+      total: total,
+      shown: Math.min(total, at),
+      hidden: Math.max(0, total - at),
+      remaining: at - total,
+      truncated: total > at,
+      preview: takeGraphemes(s, at),
+      /* What the fold costs you on the far side of the cut. */
+      hiddenText: total > at ? s.slice(takeGraphemes(s, at).length) : ""
+    };
+  }
+
+  /** Every destination that folds, and whether this text survives its fold. */
+  function foldsAll(str) {
+    return LIMITS.filter((r) => r.visibleAt).map((r) => foldInfo(str, r.id));
   }
 
   /* ============================================================
@@ -411,7 +467,7 @@
            visibleNote, so anything wordier would leak English onto 14
            translated pages. */
         notes.push(fmt(text.visibleNote || "Only about the first {n} characters show before it is truncated — put what matters first.",
-          { n: rule.visibleAtLabel || rule.visibleAt.toLocaleString() }));
+          { n: foldInfo(value, state.limitId).label }));
       }
       note.textContent = notes.join(" ");
       note.hidden = notes.length === 0;
@@ -451,10 +507,10 @@
   }
 
   ns.counterCounts = {
-    codePoints, utf16Units, utf8Bytes, graphemes, xWeightedLength, gsmInfo
+    codePoints, utf16Units, utf8Bytes, graphemes, takeGraphemes, xWeightedLength, gsmInfo
   };
   ns.counterRules = {
     LIMITS, PLATFORMS, DEFAULT_GROUPS,
-    analyze, measure, fitsAll, ruleById, initChecker
+    analyze, measure, fitsAll, foldInfo, foldsAll, ruleById, initChecker
   };
 })();
