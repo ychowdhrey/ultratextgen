@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghidlibrar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhidlibrar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhidlibrar" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshidlibrar" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshidlibrar)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhidlibrar)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhidlibrar)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <path d="M180 62 L228 146 H204 L246 220 H214 L254 288 H106 L146 220 H114
+             L156 146 H132 Z" fill="url(#gvhidlibrar)"/>
+    <rect x="164" y="288" width="32" height="24" rx="6" fill="#64748b"/>
+    <circle cx="180" cy="90" r="10" fill="#fff"/>
+    <circle cx="150" cy="180" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="212" cy="200" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="170" cy="250" r="8" fill="#fff" opacity="0.7"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <path d="M180 62 L228 146 H204 L246 220 H214 L254 288 H106 L146 220 H114
+             L156 146 H132 Z" fill="url(#gvhidlibrar)"/>
+    <rect x="164" y="288" width="32" height="24" rx="6" fill="#64748b"/>
+    <circle cx="180" cy="90" r="10" fill="#fff"/>
+    <circle cx="150" cy="180" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="212" cy="200" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="170" cy="250" r="8" fill="#fff" opacity="0.7"/></g>
+</svg>
