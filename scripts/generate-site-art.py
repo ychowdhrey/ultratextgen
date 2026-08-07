@@ -2857,6 +2857,39 @@ PAGES["th-library-arrow-symbols"] = (
     "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
     glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
 
+# ---- 2026-08-07: zh-tw mesh-completion backfill (7 pages) + it/vi (1 each) ----
+# zh-tw was promoted Tier 3 -> Tier 2 on 2026-08-06; these clusters were
+# already 15-18 locales deep and simply hadn't been backfilled yet. Glyph
+# picks reuse the exact same sets as the equivalent EN/other-locale keys
+# above for cross-locale visual consistency.
+PAGES["zh-tw-library-biaoqing-fuhao-zuhe"] = (
+    "表情符號組合大全", "美學風格複製貼上表情符號組合",
+    m_smiley, K_LIB)
+PAGES["zh-tw-library-xila-zimu-fuhao"] = (
+    "希臘字母符號", "α β Δ Σ Ω π 複製貼上",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+PAGES["zh-tw-library-shuxue-fuhao"] = (
+    "數學符號", "運算子、根號、無限大複製貼上",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["zh-tw-library-aixin-fuhao"] = (
+    "愛心符號大全", "複製貼上愛心表情符號與字元",
+    glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB)
+PAGES["zh-tw-library-huobi-fuhao"] = (
+    "貨幣符號大全", "複製貼上世界貨幣符號",
+    m_coin, K_LIB)
+PAGES["zh-tw-library-keai-mengxi-fuhao"] = (
+    "可愛萌系符號", "柔美風格裝飾符號複製貼上",
+    glyphs("♡", "❀", "✧", "⊹", "✦"), K_LIB)
+PAGES["zh-tw-library-teshu-fuhao"] = (
+    "特殊符號", "複製貼上獨特 Unicode 符號",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["it-library-caratteri-speciali-simboli"] = (
+    "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["vi-library-ky-tu-hy-lap"] = (
+    "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+
 
 def main():
     import cairosvg
