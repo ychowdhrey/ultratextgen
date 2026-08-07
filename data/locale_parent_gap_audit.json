@@ -558,10 +558,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "answers/*",
@@ -572,10 +573,12 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded 'only 3 German rows, none strong' and stated explicitly that this was 'not a claim that German demand is absent — it is genuinely unaudited at the required strength'.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)",
+      "supersedes": "answers/* x de gate-fail dated 2026-07-26"
     },
     {
       "pattern": "answers/*",
@@ -586,10 +589,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "answers/*",
@@ -600,10 +604,12 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded ZERO Korean rows in the 248-row forum corpus — the check could not be run at all. This override therefore rests on user judgement alone, with no supporting demand evidence in either direction. The weakest of the seven; flagged as such to the user before it was authorised.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)",
+      "supersedes": "answers/* x ko gate-fail dated 2026-07-26"
     },
     {
       "pattern": "answers/*",
@@ -614,10 +620,12 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell. That entry explicitly said 'NOT a demand failure' — Vietnamese forum evidence was already recorded as genuinely strong (VOZ, boxcongnghe.com, kituvui.com, Lemon8) and the block was vi's authority/indexing hold, not demand. This session's own SEA forum research independently found Vietnamese the RICHEST of eight markets surveyed for this exact job (Free Fire patch-version tagging OB43/OB54, rename-card cost anxiety, native failure vocabulary 'ô vuông'). The hold in data/locale_qualification_tiers.json is untouched.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)",
+      "supersedes": "answers/* x vi gate-fail dated 2026-07-26"
     },
     {
       "pattern": "answers/*",
@@ -628,10 +636,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "symbol/*",
@@ -642,10 +651,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "symbol/*",
@@ -656,10 +666,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "library/*",
@@ -670,10 +681,11 @@
         "keywordVolumeInLocaleMonthly": null,
         "enGscImpressionsFromLocale": null
       },
-      "verdict": "user-authorised-override",
-      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "verdict": "gate-pass",
+      "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
       "nextRecheck": "2026-09-07",
-      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
+      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
     }
   ]
 }
