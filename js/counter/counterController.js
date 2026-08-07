@@ -256,7 +256,15 @@
       fitGrid.hidden = false;
       fitGrid.innerHTML = "";
       const activeId = activeLimitId();
-      rules.fitsAll(value).forEach((row) => {
+      /* Order by distance from the boundary, over-limit side first: the fields
+         you just broke by a little are the ones one more fix would rescue, and
+         the fields with a hair of headroom left are the ones to watch. Raw
+         table order buries both under whatever has 63,206 characters spare. */
+      const rows = rules.fitsAll(value).slice().sort((a, b) => {
+        if (a.fits !== b.fits) return a.fits ? 1 : -1;
+        return Math.abs(a.remaining) - Math.abs(b.remaining);
+      });
+      rows.forEach((row) => {
         const chip = el("span", "cc-fit-chip " + (row.fits ? "is-fit" : "is-unfit"));
         if (row.rule.id === activeId) chip.classList.add("is-active");
         const name = (I18N.labels && I18N.labels[row.rule.id]) || row.rule.label;
