@@ -303,5 +303,20 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
 /es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
 
+# Self-cannibalization merge (2026-08-06). pt/espaco-invisivel/ and
+# pt/texto-invisivel/ both targeted the "espaço em branco copiar e colar" family
+# — GSC (3 months) shows espaco-invisivel drawing 142 impressions / 0 clicks at
+# avg position 11.7, every query in that family, while the phrase sits inside
+# texto-invisivel's own <title> ("Copiar e Colar Espaço em Branco"). Two pages,
+# one query family, zero clicks. texto-invisivel survives: it is the pt member of
+# a 17-locale hreflang cluster (parent library/invisible-character), carries 12
+# inbound internal links vs 2, and 29 copy tiles vs 0. espaco-invisivel was also
+# headless (no hreflang="en", x-default pointing at itself — a rule violation).
+# Its one genuinely unique job — using the character to space *between* words in
+# a nick, distinct from a fully blank name — was ported into texto-invisivel's
+# Free Fire FAQ before retiring.
+/pt/espaco-invisivel/            /pt/texto-invisivel/  301
+/pt/espaco-invisivel/index.html  /pt/texto-invisivel/  301
+
 /404  /404.html  200
 /*    /404.html  404
