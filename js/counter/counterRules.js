@@ -173,7 +173,11 @@
     { id: "tiktok-bio", platform: "tiktok", field: "Bio", label: "TikTok bio", limit: 80, group: "bios" },
     { id: "tiktok-username", platform: "tiktok", field: "Username", label: "TikTok username", limit: 24, group: "usernames" },
 
-    { id: "li-post", platform: "linkedin", field: "Post", label: "LinkedIn post", limit: 3000, group: "posts", visibleAt: 210 },
+    /* The "see more" fold is not one number: LinkedIn cuts at roughly 210 on
+       desktop but ~140 on mobile, which is where most of the feed is read. Warn
+       at the stricter of the two, and show the range — a hook that survives 140
+       survives both. Community-measured, not a published limit. */
+    { id: "li-post", platform: "linkedin", field: "Post", label: "LinkedIn post", limit: 3000, group: "posts", visibleAt: 140, visibleAtLabel: "140–210" },
     { id: "li-headline", platform: "linkedin", field: "Headline", label: "LinkedIn headline", limit: 220, group: "bios" },
     { id: "li-about", platform: "linkedin", field: "About section", label: "LinkedIn About", limit: 2600, group: "bios" },
     { id: "li-comment", platform: "linkedin", field: "Comment", label: "LinkedIn comment", limit: 1250, group: "posts" },
@@ -402,8 +406,12 @@
         notes.push(s);
       }
       if (rule.visibleAt && report.glyphs > rule.visibleAt) {
+        /* `visibleAtLabel` is deliberately digits-only (e.g. "140–210") rather
+           than prose: it is substituted into every locale's own translated
+           visibleNote, so anything wordier would leak English onto 14
+           translated pages. */
         notes.push(fmt(text.visibleNote || "Only about the first {n} characters show before it is truncated — put what matters first.",
-          { n: rule.visibleAt.toLocaleString() }));
+          { n: rule.visibleAtLabel || rule.visibleAt.toLocaleString() }));
       }
       note.textContent = notes.join(" ");
       note.hidden = notes.length === 0;
