@@ -548,6 +548,32 @@
       "verdict": "gate-fail",
       "evidence": "Live Semrush pull (db=it, 2026-08-05): 'cambiare nome youtube' 110, 'come cambiare nome canale youtube' 20, 'nome canale youtube' 20 = ~150/mo. Below the threshold the id/tr/pt cells cleared; recorded as a deliberate not-built rather than an unaudited gap.",
       "recordedBy": "claude-session-01K1n2SehzyRRGCV79cTWgTd-user-directed"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Supersedes the 2026-07-26 gate-fail entry for the same (pattern, locale) — not editing it in place, per this file's own rule against silently rewriting a recorded verdict. That entry's own text: demand for blank-name, tofu (why-is-my-name-showing-as-boxes) and name-rejection was already cleared via the 248-row forum-evidence corpus (a decision rule set before reading results: >=1 strong/medium-high row or >=2 independent medium rows; native-verbatim + real source URL required), and it failed solely because vi carried an explicit locale hold unrelated to demand (\"the hold overrides a passing demand signal. Revisit if and when the vi hold is lifted\"). The hold was lifted 2026-08-06 (user decision, recorded in data/locale_qualification_tiers.json's vi entry) — the sole blocker on record for these 3 topics is gone. Restored the 3 vi pages (cach-tao-ten-trong-vo-hinh, vi-sao-ten-hien-o-vuong, vi-sao-ten-game-bi-tu-choi) from their pre-revert content (4164fc6f, before 4eeb80a2 pulled the Wave-1 answers/* batch), repaired the hreflang mesh (scripts/sync-locale-mesh.js --fix — 37 reciprocal links restored across the 3 clusters' still-live siblings, stale references to the still-reverted de/fr/id/it/ko/nl/pl/pt/ru/th siblings removed since only vi is in scope here), and restored the 2 homepage FAQ links on vi/index.html (visible + JSON-LD, both) that the revert had stripped.",
+      "recordedBy": "claude-session-01KaoL3mVvBteWW1p2KrVqpH-hold-lift-supersedes-gate-fail"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 0,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "The 4th page of the original Wave-1 vi/answers/* quartet (where-do-fancy-fonts-work-username-vs-display-name -> vi/answers/username-hay-ten-hien-thi), NOT covered by the 2026-07-26 forum-evidence entry above (that pass explicitly named only blank-name, tofu, and name-rejection as cleared). Ran the keyword-volume instrument this time: Semrush phrase_these, db=vn, on the exact comparison framing (\"username hay ten hien thi\", \"ten dang nhap hay ten hien thi\") returned zero results for both -- no measurable Vietnamese search volume for the username-vs-display-name comparison query itself. Adjacent broader/definitional queries do have real volume (\"username la gi\" 1,600/mo, \"ten dang nhap la gi\" 390/mo, \"ten hien thi\" 20/mo, \"ten nguoi dung la gi\" 20/mo) but those are a different, more generic intent (\"what is a username\") than this page's actual job (which platform field to paste styled text into). This is a genuinely weaker/mixed demand case than the other 3 -- not a clean pass on the keyword instrument -- built anyway on explicit user authorization (\"Built all 4. Go Go Go!\", this session) after being shown the distinction between the exact-query zero and the adjacent-query volume. Same restoration mechanics as the sibling entry above (pre-revert content from 4164fc6f, hreflang mesh repaired via sync-locale-mesh.js --fix, no homepage FAQ link on vi/index.html for this topic in either the pre- or post-revert version -- confirmed via the full 4eeb80a2 diff, so none needed restoring here).",
+      "recordedBy": "claude-session-01KaoL3mVvBteWW1p2KrVqpH-user-authorized-weak-signal"
     }
   ]
 }
