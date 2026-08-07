@@ -189,6 +189,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -232,7 +234,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Metin kutusunun üstündeki kontrol hangisinin hangisi olduğunu bilir: yumuşak bir sınırda metnin tam olarak nerede kesildiğini söyler, böylece sadece bir sayının altında kalmak yerine önemli olanı başa alabilirsin.</p>
+    <p>İnsanların aslında karşı yazdığı sınır yumuşak olanıdır ve neredeyse hiçbir sayaç onu göstermez. Bir LinkedIn gönderisinin 3.000 karakteri vardır, işe yarayanı ise yaklaşık 140: gerisi kimsenin dokunmadığı bir bağlantının arkasında kalır. Bu yüzden yukarıdaki kontrol kesme çizgisini doğrudan çiziyor — yazdıkça «daha fazlasını gör» öncesinde çıkacak metni birebir görüyorsun, sonrası bir çizginin altında soluk duruyor; aynı girişin kesme yapan diğer akışlarda da ayakta kalıp kalmadığı hemen yanında.</p>
+    <p><strong>Hangi akış nerede ve hangi cihazda kesiyor:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Akış</th><th>Kestiği yer</th><th>Giriş için ne anlama geliyor</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn gönderisi</td>
+          <td>~140 mobilde<br>~210 masaüstünde</td>
+          <td>140'a göre yazarsan ikisinde de ayakta kalır. Listedeki en geniş mobil/masaüstü farkı bu.</td>
+        </tr>
+        <tr>
+          <td><a href="/tr/instagram-yazi-tipi/">Instagram açıklaması</a></td>
+          <td>~125</td>
+          <td>Listedeki en dar kesme — «... devamı»ndan önce aşağı yukarı tek bir cümle.</td>
+        </tr>
+        <tr>
+          <td>YouTube açıklaması</td>
+          <td>~157</td>
+          <td>Başlığın altında «Daha fazlasını göster» öncesinde görünen kısım; aramada da genelde bu kısım çıkar.</td>
+        </tr>
+        <tr>
+          <td>Facebook gönderisi</td>
+          <td>~477</td>
+          <td>En cömert kesme — kesilmeden önce kısa bir paragrafın tamamı sığar.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>İki dürüst uyarı. Bu sayılar platformların yayımladığı sınırlar değil, arayüzde gözlenen davranışlar; yani «kesin eşik» diye değil, «güvenle görünen kadarı» diye okunmalı. Ayrıca akışlar <em>satır sayısına</em> göre de kesiyor: başta üç satır sonu, herhangi bir karakter sayısının çok altında bir yerde gönderiyi kesebilir. Girişin bir listeye dayanıyorsa bir de gerçek paylaşım ekranında dene.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -425,6 +454,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     smsSegments: "{n} SMS segmenti · segment başına {per} karakter ({enc})",
     smsUnicode: "Unicode moduna geçiren: {chars}",
     visibleNote: "Kesilmeden önce yalnızca ilk {n} karakter kadarı görünüyor — önemli olanı başa al.",
+    foldHeading: "«Daha fazlasını gör»den önce görünen kısım",
+    foldMore: "daha fazlasını gör",
+    foldMeta: "{total} karakterin {shown} tanesi görünüyor · {hidden} tanesi dokunmanın arkasında",
+    foldRoom: "Girişin kesilmesine {n} karakter kaldı",
+    foldDevices: "Mobilde {m}, masaüstünde {d} karakterde kesiliyor.",
     platformLabel: "Platform",
     fieldLabel: "Alan",
     overBy: "{n} karakter aştın — bir çözüm seç:",

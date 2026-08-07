@@ -189,6 +189,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -233,7 +235,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Sprawdzian nad polem tekstowym wie, który jest który: przy limicie miękkim mówi wprost, w którym miejscu tekst zostanie ucięty, żebyś mógł przenieść najważniejsze na początek, a nie tylko pilnować liczby.</p>
+    <p>To limit miękki jest tym, pod który naprawdę się pisze, i prawie żaden licznik go nie pokazuje. Post na LinkedIn ma 3000 znaków i mniej więcej 140 użytecznych: cała reszta siedzi za kliknięciem, którego nikt nie wykonuje. Dlatego sprawdzian nad polem tekstowym rysuje miejsce ucięcia wprost — piszesz i od razu widzisz dokładnie ten fragment, który pokaże się przed „zobacz więcej”, z resztą przygaszoną pod linią cięcia, a obok to, czy ten sam początek broni się na każdym innym feedzie, który przycina.</p>
+    <p><strong>Gdzie ucina każdy feed i na jakim urządzeniu:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Ucina po</th><th>Co to znaczy dla początku</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Post na LinkedIn</td>
+          <td>ok. 140 na telefonie<br>ok. 210 na komputerze</td>
+          <td>Napisz do 140, a przetrwa w obu miejscach. To największa różnica między telefonem a komputerem z całej listy.</td>
+        </tr>
+        <tr>
+          <td><a href="/pl/czcionki-na-instagram/">Podpis na Instagramie</a></td>
+          <td>ok. 125</td>
+          <td>Najostrzejsze ucięcie z tej listy — mniej więcej jedno zdanie przed „... więcej”.</td>
+        </tr>
+        <tr>
+          <td>Opis na YouTube</td>
+          <td>ok. 157</td>
+          <td>Tyle widać pod tytułem przed „Pokaż więcej”, i to zwykle ten fragment trafia do wyników wyszukiwania.</td>
+        </tr>
+        <tr>
+          <td><a href="/pl/czcionki-na-facebook/">Post na Facebooku</a></td>
+          <td>ok. 477</td>
+          <td>Najbardziej wyrozumiałe ucięcie — przed cięciem mieści się cały krótki akapit.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Dwa uczciwe zastrzeżenia. To są zaobserwowane zachowania interfejsu, a nie limity ogłoszone przez platformy, więc traktuj je jako „tyle widać niezawodnie”, a nie jako dokładne progi. Poza tym feedy ucinają też po <em>liczbie wierszy</em>, więc trzy wczesne złamania linii potrafią zwinąć post dużo wcześniej, niż wynikałoby z jakiejkolwiek liczby znaków. Jeśli Twój początek opiera się na wyliczance, sprawdź go dodatkowo w prawdziwym oknie publikacji.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -422,6 +451,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     smsSegments: "{n} segm. SMS · {per} znaków na segment ({enc})",
     smsUnicode: "na tryb Unicode przełącza: {chars}",
     visibleNote: "Widocznych jest tylko około pierwszych {n} znaków, reszta zostaje zwinięta — najważniejsze umieść na początku.",
+    foldHeading: "Co widać przed kliknięciem „zobacz więcej”",
+    foldMore: "zobacz więcej",
+    foldMeta: "Widoczne: {shown} z {total} znaków · {hidden} ukrytych za kliknięciem",
+    foldRoom: "Zostało jeszcze {n} znaków, zanim tekst zostanie zwinięty",
+    foldDevices: "Na telefonie ucięcie po {m}, na komputerze po {d}.",
     platformLabel: "Platforma",
     fieldLabel: "Pole",
     overBy: "Przekraczasz o {n} — wybierz poprawkę:",

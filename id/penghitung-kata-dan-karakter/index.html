@@ -185,6 +185,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -227,7 +229,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Pengecek di atas tahu bedanya: pada batas lunak ia memberi tahu di titik mana teks kamu terpotong, jadi kamu bisa menaruh yang penting di depan alih-alih sekadar menjaga angka tetap di bawah batas.</p>
+    <p>Batas lunak inilah yang sebenarnya jadi patokan menulis kebanyakan orang, dan hampir tidak ada penghitung yang menampilkannya. Satu postingan LinkedIn punya jatah 3.000 karakter tapi cuma sekitar 140 karakter yang benar-benar kepakai: sisanya ada di balik ketukan yang jarang dilakukan orang. Makanya alat di atas menggambar titik potongnya langsung — ketik di sana dan kamu langsung melihat teks persis yang muncul sebelum "selengkapnya", dengan semua yang ada di balik garis potong diredupkan, plus apakah pembuka yang sama masih bertahan di feed lain yang juga memotong.</p>
+    <p><strong>Di mana tiap feed memotong, dan di perangkat apa:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Memotong di</th><th>Artinya buat kalimat pembuka</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Postingan LinkedIn</td>
+          <td>~140 di HP<br>~210 di desktop</td>
+          <td>Tulis sampai 140 saja dan pembukanya aman di dua-duanya. Ini selisih HP–desktop terbesar di daftar ini.</td>
+        </tr>
+        <tr>
+          <td><a href="/id/font-ig/">Caption Instagram</a></td>
+          <td>~125</td>
+          <td>Potongan paling ketat di daftar ini — kira-kira cuma satu kalimat sebelum muncul "… selengkapnya".</td>
+        </tr>
+        <tr>
+          <td>Deskripsi YouTube</td>
+          <td>~157</td>
+          <td>Bagian yang tampil di bawah judul sebelum tombol "Tampilkan lainnya"; sering ini juga yang diambil mesin pencari.</td>
+        </tr>
+        <tr>
+          <td><a href="/id/font-facebook/">Postingan Facebook</a></td>
+          <td>~477</td>
+          <td>Potongan paling longgar — satu paragraf pendek utuh masih masuk sebelum garis potong.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Dua catatan jujur. Angka-angka ini hasil pengamatan tampilan, bukan batas resmi yang diumumkan platform, jadi anggap sebagai "yang biasanya tampil" ketimbang ambang yang persis — dan feed juga memotong berdasarkan <em>jumlah baris</em>, jadi tiga kali ganti baris di awal bisa memotong postingan jauh sebelum angka karakter mana pun tercapai. Kalau pembukaan kamu bergantung pada daftar berpoin, cek juga langsung di composer aslinya.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -392,6 +421,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     visibleNote: "Hanya sekitar {n} karakter pertama yang tampil sebelum dipotong — taruh yang penting di depan.",
     platformLabel: "Platform",
     fieldLabel: "Kolom",
+    foldHeading: "Yang dilihat orang sebelum “selengkapnya”",
+    foldMore: "selengkapnya",
+    foldMeta: "{shown} dari {total} karakter tampil · {hidden} tersembunyi di balik ketukan",
+    foldRoom: "Sisa {n} karakter pembuka sebelum kena potong",
+    foldDevices: "HP memotong di {m}, desktop di {d}.",
     overBy: "Kelebihan {n} — pilih cara memangkasnya:",
     trimToFit: "Potong biar muat",
     undo: "Batalkan",
