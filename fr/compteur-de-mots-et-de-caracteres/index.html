@@ -118,18 +118,102 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@type": "FAQPage",
   "inLanguage": "fr",
   "mainEntity": [
-    {"@type":"Question","name":"Comment compter les mots et les caractères en ligne ?","acceptedAnswer":{"@type":"Answer","text":"Tape ou colle ton texte dans le champ ci-dessus. Le nombre de mots, de caractères (avec et sans espaces), de phrases, de paragraphes et le temps de lecture estimé se mettent à jour en direct pendant que tu tapes — pas de bouton à cliquer, et rien de ce que tu tapes n'est envoyé ni conservé."}},
-    {"@type":"Question","name":"Ce compteur compte-t-il les caractères avec ou sans espaces ?","acceptedAnswer":{"@type":"Answer","text":"Les deux, affichés côte à côte : « Caractères » inclut chaque espace, et « Caractères (sans espaces) » retire les espaces. La plupart des limites de plateforme (Twitter/X, Instagram, Discord) comptent les espaces comme des caractères normaux, donc utilise le nombre avec espaces pour vérifier un post ou une bio par rapport à une limite."}},
-    {"@type":"Question","name":"Quelle est la limite de caractères sur X (Twitter) ?","acceptedAnswer":{"@type":"Answer","text":"280 caractères par publication pour les comptes standards, espaces, liens et hashtags compris (un lien compte pour environ 23 caractères même s'il s'affiche plus court). Sélectionne « Publication X / Twitter » dans le vérificateur de plateforme ci-dessus pour voir en direct si ton texte passe."}},
-    {"@type":"Question","name":"Quelle est la limite de caractères pour une légende et une bio Instagram ?","acceptedAnswer":{"@type":"Answer","text":"Une légende Instagram peut aller jusqu'à 2 200 caractères, même si seules les deux premières lignes s'affichent avant que « plus » ne tronque le reste. Le champ bio est bien plus court : 150 caractères. Les deux sont disponibles dans le vérificateur de plateforme ci-dessus."}},
-    {"@type":"Question","name":"Quelle est la limite de caractères pour une légende et un nom d'utilisateur TikTok ?","acceptedAnswer":{"@type":"Answer","text":"Une légende TikTok tient sur 2 200 caractères. La bio est limitée à 80 caractères, et un nom d'utilisateur peut aller jusqu'à 24 caractères (lettres, chiffres, tirets bas et points uniquement)."}},
-    {"@type":"Question","name":"Quelle est la limite de caractères pour une publication et un titre LinkedIn ?","acceptedAnswer":{"@type":"Answer","text":"Une publication LinkedIn autorise jusqu'à 3 000 caractères, même si le fil d'actualité la tronque avec « voir plus » après environ 200 à 700 caractères selon l'appareil. Le champ titre est plafonné à 220 caractères."}},
-    {"@type":"Question","name":"Quelle est une bonne longueur de balise meta titre et meta description pour le SEO ?","acceptedAnswer":{"@type":"Answer","text":"Google tronque selon la largeur en pixels à l'écran plutôt qu'un nombre de caractères strict, mais en pratique, garde une balise meta titre autour de 60 caractères et une meta description autour de 155 caractères pour éviter qu'elle soit coupée dans les résultats de recherche."}},
-    {"@type":"Question","name":"Quelle est la limite de mots pour une dissertation, un mémoire ou un devoir au lycée ?","acceptedAnswer":{"@type":"Answer","text":"Ça dépend beaucoup du niveau et de l'établissement, mais quelques repères courants : une dissertation ou un devoir au lycée tourne le plus souvent entre 300 et 1 000 mots, tandis qu'un mémoire ou un dossier à l'université demande généralement entre 2 000 et 6 000 mots selon le sujet et le cycle. Colle ton brouillon dans le compteur ci-dessus pour suivre ton nombre de mots en direct pendant la rédaction, et ajuste avant de rendre ton travail."}},
-    {"@type":"Question","name":"La limite Parcoursup de 1 500 caractères compte-t-elle les espaces ?","acceptedAnswer":{"@type":"Answer","text":"Oui : le projet de formation motivé de Parcoursup est limité à 1 500 caractères espaces compris, soit environ 200 à 250 mots. Colle ton brouillon dans le compteur ci-dessus et surveille la statistique « Caractères » (avec espaces) — c'est ce nombre-là que le champ Parcoursup compte. Vise environ 1 400 caractères pour garder une marge d'ajustement à la relecture."}},
-    {"@type":"Question","name":"Qu'est-ce qu'un feuillet ?","acceptedAnswer":{"@type":"Answer","text":"L'unité de calibrage classique de l'édition et du journalisme français : 1 feuillet = 1 500 signes, espaces comprises — héritage de la page dactylographiée de 25 lignes de 60 signes — soit environ 250 à 260 mots. La statistique « Feuillets » ci-dessus se calcule en direct sur cette base, à partir du nombre de caractères espaces comprises."}},
-    {"@type":"Question","name":"Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?","acceptedAnswer":{"@type":"Answer","text":"Parce que toutes les plateformes ne comptent pas dans la même unité. La plupart comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 (les lettres Unicode stylées coûtent 2 chacune), d'autres systèmes comptent des octets UTF-8, et X utilise un comptage pondéré. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » ci-dessus se mettent à jour en direct pour que tu puisses comparer avec l'unité utilisée par la destination."}},
-    {"@type":"Question","name":"Ce compteur est-il gratuit, et conserve-t-il ou envoie-t-il mon texte ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entièrement gratuit et sans inscription. Chaque calcul s'exécute côté client, dans ton navigateur, en JavaScript pur — rien de ce que tu tapes n'est envoyé, enregistré ou conservé où que ce soit."}}
+    {
+      "@type": "Question",
+      "name": "Comment compter les mots et les caractères en ligne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tape ou colle ton texte dans le champ ci-dessus. Le nombre de mots, de caractères (avec et sans espaces), de phrases, de paragraphes et le temps de lecture estimé se mettent à jour en direct pendant que tu tapes — pas de bouton à cliquer, et rien de ce que tu tapes n'est envoyé ni conservé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce compteur compte-t-il les caractères avec ou sans espaces ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les deux, affichés côte à côte : « Caractères » inclut chaque espace, et « Caractères (sans espaces) » les retire. Pour une limite de plateforme, c'est toujours le nombre avec espaces qui compte — sur X, dans une bio Instagram ou dans un SMS, une espace est un caractère comme un autre. Le nombre sans espaces ne sert que si une consigne le demande explicitement (« signes espaces non comprises ») : c'est une convention de facturation, pas une règle technique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les emojis comptent-ils pour un seul caractère ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarement. Un emoji simple vaut en général 1 point de code mais 2 unités UTF-16 ; avec une teinte de peau ou sous forme de séquence composée (un emoji famille, par exemple), il peut en valoir 4, 7 ou plus. Sur X, chaque emoji consomme 2 des 280 caractères, et dans un SMS un seul emoji fait basculer tout le message des segments GSM-7 de 160 caractères aux segments Unicode de 70. La statistique « Graphèmes » montre ce que tu vois ; « Caractères » et « Unités UTF-16 » montrent ce que le champ te facture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parce que vous ne comptez pas dans la même unité. La plupart des plateformes comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 — où une lettre stylée coûte 2 —, les fiches produit Amazon comptent des octets UTF-8, et X applique un comptage pondéré. Indique la destination en haut de l'outil : le compteur adopte alors sa façon de compter au lieu de te donner un chiffre générique. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » restent affichées en direct pour comparer les quatre unités."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment faire passer mon texte sous la limite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dès que tu dépasses, l'outil te montre ce que tu peux retirer, avec le gain exact de chaque option dans l'unité de comptage de la destination : reconvertir les lettres Unicode stylées en texte normal, supprimer les emojis, simplifier la ponctuation typographique, fusionner les espaces doubles, retirer les hashtags, ou couper à la limite sur une frontière de mot. Chaque correction tient en un clic et s'annule aussi vite — tu peux donc tester la solution la moins coûteuse avant de te lancer dans une réécriture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les polices stylées comptent-elles pour plus de caractères ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le plus souvent le double. Les lettres Unicode stylées — gras, cursive, gothique et la plupart des autres alphabets décoratifs — vivent au-dessus de U+FFFF : chaque lettre visible coûte donc 2 unités UTF-16, 4 octets UTF-8 et 2 des 280 caractères de X. Un pseudo stylé de 10 lettres peut ainsi être refusé par un champ de jeu limité à 12 caractères. Colle-le dans le compteur et utilise « Convertir la police stylée en texte normal » pour voir et récupérer la différence immédiatement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les caractères invisibles sont-ils comptés aussi ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui — et c'est la raison la plus fréquente d'un total mystérieusement plus élevé que ce que le texte laisse voir. Les espaces de largeur nulle, les marques d'ordre des octets et les caractères de remplissage récupérés en copiant depuis une autre application consomment ton budget sans rien afficher. Le compteur les signale juste sous le champ de saisie et propose de les retirer en un clic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la limite de mots pour une dissertation, un mémoire ou un devoir au lycée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ça dépend beaucoup du niveau et de l'établissement, mais quelques repères courants : une dissertation ou un devoir au lycée tourne le plus souvent entre 300 et 1 000 mots, tandis qu'un mémoire ou un dossier à l'université demande généralement entre 2 000 et 6 000 mots selon le sujet et le cycle. Colle ton brouillon dans le compteur ci-dessus pour suivre ton nombre de mots en direct pendant la rédaction, et ajuste avant de rendre ton travail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La limite Parcoursup de 1 500 caractères compte-t-elle les espaces ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui : le projet de formation motivé de Parcoursup est limité à 1 500 caractères espaces compris, soit environ 200 à 250 mots. Colle ton brouillon dans le compteur ci-dessus et surveille la statistique « Caractères » (avec espaces) — c'est ce nombre-là que le champ Parcoursup compte. Vise environ 1 400 caractères pour garder une marge d'ajustement à la relecture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un feuillet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'unité de calibrage classique de l'édition et du journalisme français : 1 feuillet = 1 500 signes, espaces comprises — héritage de la page dactylographiée de 25 lignes de 60 signes — soit environ 250 à 260 mots. La statistique « Feuillets » ci-dessus se calcule en direct sur cette base, à partir du nombre de caractères espaces comprises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est une bonne longueur de balise meta titre et meta description pour le SEO ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google tronque selon la largeur en pixels à l'écran plutôt qu'un nombre de caractères strict, mais en pratique, garde une balise meta titre autour de 60 caractères et une meta description autour de 155 caractères pour éviter qu'elle soit coupée dans les résultats de recherche."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce compteur est-il gratuit, et conserve-t-il ou envoie-t-il mon texte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, entièrement gratuit et sans inscription. Chaque calcul s'exécute côté client, dans ton navigateur, en JavaScript pur — rien de ce que tu tapes n'est envoyé, enregistré ou conservé où que ce soit."
+      }
+    }
   ]
 }
 </script>
@@ -167,23 +251,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>Tape ou colle n'importe quel texte dans le champ ci-dessous et chaque statistique se met à jour instantanément : mots, caractères (avec et sans espaces), phrases, paragraphes et un temps de lecture estimé. Rien n'est envoyé — chaque nombre est calculé directement dans ton navigateur. Sous le compteur, choisis une plateforme dans le menu déroulant pour vérifier si ton texte actuel respecte encore sa limite, avec le nombre de caractères exact et combien il t'en reste (ou de combien tu la dépasses). Besoin de belles polices Unicode pour le texte que tu viens de mesurer ? Le <a href="/fr/">générateur UltraTextGen</a> le transforme en plus de 100 styles à copier-coller.</p>
+      <p>Tape ou colle n'importe quel texte dans le champ ci-dessous et chaque statistique se met à jour instantanément : mots, caractères (avec et sans espaces), phrases, paragraphes et un temps de lecture estimé. Rien n'est envoyé — chaque nombre est calculé directement dans ton navigateur. Au-dessus du champ de saisie, commence par indiquer où va ce texte : le vérificateur compte alors exactement comme cette destination compte, et t'affiche en direct ce qu'il te reste ou de combien tu dépasses. Et si tu dépasses, ça ne s'arrête pas à la mauvaise nouvelle — l'outil te propose des corrections concrètes avec le gain de chacune, applicables en un clic et annulables à tout moment. Besoin de belles polices Unicode pour le texte que tu viens de mesurer ? Le <a href="/fr/">générateur UltraTextGen</a> le transforme en plus de 100 styles à copier-coller.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">Ton texte</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">Copier</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Effacer</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="Tape ou colle ton texte ici…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Mots</span></div>
@@ -200,16 +290,107 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statFeuillets">0</span><span class="counter-stat-label">Feuillets (de 1 500 signes)</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">Où ce texte passe aussi — en direct, sur toutes les limites</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section">
-    <h2>Les limites de caractères par plateforme, expliquées</h2>
-    <p>Les limites de caractères existent pour deux raisons différentes, et il vaut mieux savoir à laquelle tu as affaire. Les <strong>limites strictes</strong> — les 280 caractères de X/Twitter, le pseudo Discord à 32 caractères, le nom d'utilisateur TikTok à 24 caractères — sont imposées par la plateforme elle-même : dépasse-les, et la publication ou l'enregistrement est tout simplement refusé. Les <strong>limites souples ou pratiques</strong> — une balise meta description Google, une description YouTube avant « Afficher la suite », une publication LinkedIn avant qu'elle ne soit tronquée par « voir plus » — ne t'empêchent pas de taper davantage, mais tout ce qui dépasse ce seuil reste caché à la majorité des lecteurs sauf s'ils cliquent pour développer. Le vérificateur ci-dessus utilise la vraie limite stricte ou officiellement documentée de chaque plateforme ; pour celles à troncature souple (balise meta titre/description, YouTube, LinkedIn), considère le chiffre comme « ce qui s'affiche de façon fiable », pas comme un mur infranchissable.</p>
-    <p>Un détail qui surprend souvent : certaines plateformes comptent plus que ce à quoi on s'attend. Un lien dans une publication X compte pour environ 23 caractères, peu importe la longueur réelle de l'URL. Les emojis et les caractères accentués peuvent compter pour plus d'un « caractère » selon la façon dont le compteur d'une plateforme est implémenté en interne — cet outil compte par point de code Unicode, ce qui correspond à la façon dont pratiquement toutes les plateformes modernes comptent aujourd'hui.</p>
-    <p>Ces limites n'ont d'ailleurs rien à voir avec un autre cas d'usage très courant en France : les quotas de mots imposés pour une dissertation, un mémoire ou un devoir au lycée, qui répondent à une logique académique bien distincte des limites de caractères des réseaux sociaux — voir la question dédiée dans la FAQ ci-dessous.</p>
+    <h2>Limites strictes et limites souples</h2>
+    <p>Deux choses très différentes s'appellent « limite de caractères », et ça change ce qu'un dépassement te coûte vraiment.</p>
+    <table class="comparison-table">
+      <thead><tr><th>Type</th><th>Ce qui se passe si tu dépasses</th><th>Exemples</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Limite stricte</strong></td>
+          <td>La plateforme refuse. La publication ne part pas, le nom ne s'enregistre pas.</td>
+          <td>Publication X 280 · pseudo Discord 32 · nom d'utilisateur TikTok 24 · segment SMS</td>
+        </tr>
+        <tr>
+          <td><strong>Limite souple</strong><br>(troncature)</td>
+          <td>Tu peux continuer à écrire, mais à partir de là plus personne ne lit sans cliquer sur « plus ».</td>
+          <td>Légende Instagram après 125 · publication LinkedIn après ~210 · description YouTube après ~157</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Le vérificateur ci-dessus sait de laquelle il s'agit : sur une limite souple, il t'indique en plus à quel endroit ton texte sera coupé, pour que tu places l'essentiel en premier au lieu de simplement rester sous un chiffre.</p>
+    <p>Ces limites n'ont rien à voir avec un autre cas très courant en France : les quotas de mots imposés pour une dissertation, un mémoire ou un devoir au lycée, et le plafond de <a href="#parcoursup">1 500 caractères de Parcoursup</a>. La logique est académique, pas technique — mais le même compteur y répond aussi bien.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="limits">
+    <h2>Toutes les limites de caractères du vérificateur</h2>
+    <p>Les mêmes limites que celles utilisées par le vérificateur en direct ci-dessus, sous forme de tableau de référence. Aller à : <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#modes-de-comptage">comment chaque plateforme compte</a>.</p>
+
+    <h3>Publications et messages</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Plateforme</th><th>Limite</th><th>Remarques</th></tr></thead>
+      <tbody>
+        <tr id="twitter"><td>Publication X / Twitter</td><td>280</td><td>Comptage pondéré : chaque URL = 23, la plupart des emojis, symboles et lettres stylées = 2 — voir <a href="#modes-de-comptage">comment X compte</a></td></tr>
+        <tr id="discord"><td>Message Discord</td><td>2 000</td><td>4 000 avec Nitro ; au-delà, le message devient une pièce jointe .txt</td></tr>
+        <tr id="instagram"><td>Légende Instagram</td><td>2 200</td><td>Tronquée par « plus » après les premières lignes</td></tr>
+        <tr id="tiktok"><td>Légende TikTok</td><td>2 200</td><td></td></tr>
+        <tr><td>Publication LinkedIn</td><td>3 000</td><td>« Voir plus » tronque entre 200 et 700 caractères selon l'appareil</td></tr>
+        <tr><td>Publication Facebook</td><td>63 206</td><td></td></tr>
+        <tr><td>Description YouTube</td><td>5 000</td><td></td></tr>
+        <tr><td>Description d'épingle Pinterest</td><td>500</td><td></td></tr>
+        <tr><td>Message Telegram</td><td>4 096</td><td>1 024 pour une légende photo/vidéo</td></tr>
+        <tr><td>Publication Threads</td><td>500</td><td></td></tr>
+        <tr><td>Publication Bluesky</td><td>300</td><td>Compté en graphèmes (ce que tu vois), pas en points de code</td></tr>
+        <tr><td>Titre de post Reddit</td><td>300</td><td></td></tr>
+        <tr><td>Publication/statut Zalo</td><td>2 000</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Bios et profils</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Champ</th><th>Limite</th></tr></thead>
+      <tbody>
+        <tr><td>Bio Instagram</td><td>150</td></tr>
+        <tr><td>Bio TikTok</td><td>80</td></tr>
+        <tr><td>Titre LinkedIn</td><td>220</td></tr>
+        <tr><td>À propos WhatsApp</td><td>139</td></tr>
+        <tr><td>Bio Telegram</td><td>70</td></tr>
+        <tr><td>Statut VK</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Noms d'utilisateur, titres et SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Champ</th><th>Limite</th><th>Remarques</th></tr></thead>
+      <tbody>
+        <tr><td>Pseudo Discord</td><td>32</td><td></td></tr>
+        <tr><td>Nom d'utilisateur TikTok</td><td>24</td><td>Lettres, chiffres, tirets bas et points uniquement</td></tr>
+        <tr><td>Nom d'utilisateur Instagram</td><td>30</td><td></td></tr>
+        <tr><td>Titre YouTube</td><td>100</td><td></td></tr>
+        <tr><td>Balise meta titre SEO</td><td>~60</td><td>Google tronque selon la largeur en pixels — à prendre comme un ordre de grandeur</td></tr>
+        <tr><td>Balise meta description SEO</td><td>~155</td><td>Idem : troncature en pixels, pas en caractères</td></tr>
+        <tr id="sms"><td>SMS (message texte)</td><td>160 / segment</td><td>Tombe à 70 par segment dès qu'un caractère sort de l'alphabet GSM-7 (emoji, apostrophe courbe, â, ê, ô, œ…) — voir <a href="#modes-de-comptage">le comptage SMS</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="modes-de-comptage">
+    <h2>Pourquoi ton compte de caractères ne correspond pas à celui de la plateforme</h2>
+    <p>« Ça fait combien de caractères ? » a plus d'une bonne réponse, parce que les plateformes ne comptent pas dans la même unité. Un même texte a quatre longueurs différentes :</p>
+    <table class="comparison-table">
+      <thead><tr><th>Mode de comptage</th><th>Ce qui est mesuré</th><th>Qui l'utilise</th></tr></thead>
+      <tbody>
+        <tr><td>Graphèmes</td><td>Ce que tu vois — un emoji avec teinte de peau vaut 1</td><td>Bluesky ; à peu près la façon dont Instagram traite les emojis</td></tr>
+        <tr><td>Points de code</td><td>Caractères Unicode — 👍🏽 en vaut 2 (pouce + teinte)</td><td>La plupart des plateformes web, et la statistique « Caractères » ci-dessus</td></tr>
+        <tr><td>Unités UTF-16</td><td>La façon dont JavaScript et beaucoup d'applications stockent le texte — les lettres 𝗴𝗿𝗮𝘀𝘀𝗲𝘀 coûtent 2 chacune</td><td>Champs de formulaire HTML (<code>maxlength</code>), jeux vidéo, back-ends d'applications</td></tr>
+        <tr><td>Octets UTF-8</td><td>Le poids de stockage — é vaut 2, 中 vaut 3, 𝗯 vaut 4</td><td>Fiches produit Amazon, pseudos Steam, bases de données</td></tr>
+      </tbody>
+    </table>
+    <p>Les quatre s'affichent en direct dans les statistiques ci-dessus : quand un formulaire prétend que ton texte est trop long alors que ton traitement de texte dit le contraire, tu vois immédiatement quelle unité ce formulaire utilise. Deux plateformes ajoutent leurs propres règles par-dessus :</p>
+    <p><strong>X/Twitter compte au poids, pas au caractère.</strong> D'après l'algorithme publié par X lui-même (la bibliothèque <code>twitter-text</code>), chaque URL vaut exactement 23, les lettres latines de base valent 1, et à peu près tout le reste — caractères CJK, la plupart des emojis et chaque lettre Unicode stylée — vaut <strong>2</strong>. Une publication entièrement en 𝗴𝗿𝗮𝘀 ne tient donc que 140 lettres visibles sur les 280. Les options X du vérificateur ci-dessus appliquent réellement cet algorithme.</p>
+    <p><strong>Un SMS se compte en segments, et un seul caractère peut tripler la facture.</strong> Un message tient 160 caractères tant que tous ses caractères appartiennent au vieil alphabet GSM-7. Bonne nouvelle pour le français : é, è, à, ù et le Ç majuscule en font partie. Mais les accents circonflexes (â, ê, î, ô, û), les trémas (ë, ï), le ç minuscule, la ligature œ, les guillemets « », l'apostrophe courbe ’ et l'espace fine insécable qui précède ; : ! ? n'y sont pas — et un seul d'entre eux fait basculer tout le message en mode Unicode : 70 caractères par segment, 67 dès qu'il se scinde. Autrement dit, « août » ou « c'est prêt ! » copié depuis Word peut suffire à doubler le coût d'un envoi. L'option SMS du vérificateur détecte le basculement et te nomme le caractère exact qui l'a provoqué.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -239,27 +420,27 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Ce compteur compte-t-il les caractères avec ou sans espaces ?</summary>
-      <p class="faq-answer">Les deux, affichés côte à côte : « Caractères » inclut chaque espace, et « Caractères (sans espaces) » retire les espaces. La plupart des limites de plateforme (Twitter/X, Instagram, Discord) comptent les espaces comme des caractères normaux, donc utilise le nombre avec espaces pour vérifier un post ou une bio par rapport à une limite.</p>
+      <p class="faq-answer">Les deux, affichés côte à côte : « Caractères » inclut chaque espace, et « Caractères (sans espaces) » les retire. Pour une limite de plateforme, c'est toujours le nombre avec espaces qui compte — sur X, dans une bio Instagram ou dans un SMS, une espace est un caractère comme un autre. Le nombre sans espaces ne sert que si une consigne le demande explicitement (« signes espaces non comprises ») : c'est une convention de facturation, pas une règle technique.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Quelle est la limite de caractères sur X (Twitter) ?</summary>
-      <p class="faq-answer">280 caractères par publication pour les comptes standards, espaces, liens et hashtags compris (un lien compte pour environ 23 caractères même s'il s'affiche plus court). Sélectionne « Publication X / Twitter » dans le vérificateur de plateforme ci-dessus pour voir en direct si ton texte passe.</p>
+      <summary class="faq-question">Les emojis comptent-ils pour un seul caractère ?</summary>
+      <p class="faq-answer">Rarement. Un emoji simple vaut en général 1 point de code mais 2 unités UTF-16 ; avec une teinte de peau ou sous forme de séquence composée (un emoji famille, par exemple), il peut en valoir 4, 7 ou plus. Sur X, chaque emoji consomme 2 des 280 caractères, et dans un SMS un seul emoji fait basculer tout le message des segments GSM-7 de 160 caractères aux segments Unicode de 70. La statistique « Graphèmes » montre ce que tu vois ; « Caractères » et « Unités UTF-16 » montrent ce que le champ te facture.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Quelle est la limite de caractères pour une légende et une bio Instagram ?</summary>
-      <p class="faq-answer">Une légende Instagram peut aller jusqu'à 2 200 caractères, même si seules les deux premières lignes s'affichent avant que « plus » ne tronque le reste. Le champ bio est bien plus court : 150 caractères. Les deux sont disponibles dans le vérificateur de plateforme ci-dessus.</p>
+      <summary class="faq-question">Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?</summary>
+      <p class="faq-answer">Parce que vous ne comptez pas dans la même unité. La plupart des plateformes comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 — où une lettre stylée coûte 2 —, les fiches produit Amazon comptent des octets UTF-8, et X applique un comptage pondéré. Indique la destination en haut de l'outil : le compteur adopte alors sa façon de compter au lieu de te donner un chiffre générique. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » restent affichées en direct pour comparer les quatre unités.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Quelle est la limite de caractères pour une légende et un nom d'utilisateur TikTok ?</summary>
-      <p class="faq-answer">Une légende TikTok tient sur 2 200 caractères. La bio est limitée à 80 caractères, et un nom d'utilisateur peut aller jusqu'à 24 caractères (lettres, chiffres, tirets bas et points uniquement).</p>
+      <summary class="faq-question">Comment faire passer mon texte sous la limite ?</summary>
+      <p class="faq-answer">Dès que tu dépasses, l'outil te montre ce que tu peux retirer, avec le gain exact de chaque option dans l'unité de comptage de la destination : reconvertir les lettres Unicode stylées en texte normal, supprimer les emojis, simplifier la ponctuation typographique, fusionner les espaces doubles, retirer les hashtags, ou couper à la limite sur une frontière de mot. Chaque correction tient en un clic et s'annule aussi vite — tu peux donc tester la solution la moins coûteuse avant de te lancer dans une réécriture.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Quelle est la limite de caractères pour une publication et un titre LinkedIn ?</summary>
-      <p class="faq-answer">Une publication LinkedIn autorise jusqu'à 3 000 caractères, même si le fil d'actualité la tronque avec « voir plus » après environ 200 à 700 caractères selon l'appareil. Le champ titre est plafonné à 220 caractères.</p>
+      <summary class="faq-question">Les polices stylées comptent-elles pour plus de caractères ?</summary>
+      <p class="faq-answer">Le plus souvent le double. Les lettres Unicode stylées — gras, cursive, gothique et la plupart des autres alphabets décoratifs — vivent au-dessus de U+FFFF : chaque lettre visible coûte donc 2 unités UTF-16, 4 octets UTF-8 et 2 des 280 caractères de X. Un pseudo stylé de 10 lettres peut ainsi être refusé par un champ de jeu limité à 12 caractères. Colle-le dans le compteur et utilise « Convertir la police stylée en texte normal » pour voir et récupérer la différence immédiatement.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Quelle est une bonne longueur de balise meta titre et meta description pour le SEO ?</summary>
-      <p class="faq-answer">Google tronque selon la largeur en pixels à l'écran plutôt qu'un nombre de caractères strict, mais en pratique, garde une balise meta titre autour de 60 caractères et une meta description autour de 155 caractères pour éviter qu'elle soit coupée dans les résultats de recherche.</p>
+      <summary class="faq-question">Les caractères invisibles sont-ils comptés aussi ?</summary>
+      <p class="faq-answer">Oui — et c'est la raison la plus fréquente d'un total mystérieusement plus élevé que ce que le texte laisse voir. Les espaces de largeur nulle, les marques d'ordre des octets et les caractères de remplissage récupérés en copiant depuis une autre application consomment ton budget sans rien afficher. Le compteur les signale juste sous le champ de saisie et propose de les retirer en un clic.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Quelle est la limite de mots pour une dissertation, un mémoire ou un devoir au lycée ?</summary>
@@ -274,8 +455,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">L'unité de calibrage classique de l'édition et du journalisme français : 1 feuillet = 1 500 signes, espaces comprises — héritage de la page dactylographiée de 25 lignes de 60 signes — soit environ 250 à 260 mots. La statistique « Feuillets » ci-dessus se calcule en direct sur cette base, à partir du nombre de caractères espaces comprises.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Pourquoi mon nombre de caractères ne correspond-il pas à celui du formulaire ?</summary>
-      <p class="faq-answer">Parce que toutes les plateformes ne comptent pas dans la même unité. La plupart comptent des points de code Unicode, mais les champs de formulaire HTML et beaucoup d'applications comptent des unités UTF-16 (les lettres Unicode stylées coûtent 2 chacune), d'autres systèmes comptent des octets UTF-8, et X utilise un comptage pondéré. Les statistiques « Graphèmes », « Unités UTF-16 » et « Octets UTF-8 » ci-dessus se mettent à jour en direct pour que tu puisses comparer avec l'unité utilisée par la destination.</p>
+      <summary class="faq-question">Quelle est une bonne longueur de balise meta titre et meta description pour le SEO ?</summary>
+      <p class="faq-answer">Google tronque selon la largeur en pixels à l'écran plutôt qu'un nombre de caractères strict, mais en pratique, garde une balise meta titre autour de 60 caractères et une meta description autour de 155 caractères pour éviter qu'elle soit coupée dans les résultats de recherche.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Ce compteur est-il gratuit, et conserve-t-il ou envoie-t-il mon texte ?</summary>
@@ -336,22 +517,110 @@ window.UTG_COUNTER_I18N = {
   xNote: "Compté comme X compte : chaque URL = 23, et la plupart des symboles, emojis et lettres Unicode stylées = 2 chacun.",
   smsSegments: "{n} segment(s) SMS · {per} caractères par segment ({enc})",
   smsUnicode: "passé en mode Unicode à cause de : {chars}",
+  visibleNote: "Seuls les {n} premiers caractères environ s'affichent avant la troncature — place l'essentiel en premier.",
+  platformLabel: "Plateforme",
+  fieldLabel: "Champ",
+  overBy: "{n} de trop — choisis une correction :",
+  trimToFit: "Couper à la limite",
+  undo: "Annuler",
+  applied: "Appliqué",
+  segShort: "seg.",
+  fitsHeading: "Où ce texte passe aussi",
+  inspectStyled: "{n} lettres Unicode stylées — elles coûtent 2 chacune sur X et dans beaucoup de champs d'application.",
+  inspectInvisible: "{n} caractères invisibles qui comptent quand même.",
+  inspectCombining: "{n} signes diacritiques empilés.",
   units: [
     { id: "statFeuillets", per: 1500, of: "chars", decimals: 1 }
   ],
+  platforms: {
+    seo: "Résultat de recherche Google"
+  },
+  reducers: {
+    "plain": "Convertir la police stylée en texte normal",
+    "invisible": "Supprimer les caractères invisibles",
+    "combining": "Supprimer les diacritiques empilés",
+    "emoji": "Supprimer les emojis",
+    "quotes": "Simplifier la ponctuation typographique",
+    "spaces": "Fusionner les espaces doubles",
+    "blanklines": "Fusionner les lignes vides",
+    "hashtags": "Supprimer les hashtags",
+    "gsm-safe": "Rendre le SMS compatible (retour à 160 par segment)"
+  },
+  reducerHints: {
+    "plain": "Les lettres Unicode stylées coûtent 2 unités chacune dans la plupart des champs.",
+    "invisible": "Caractères de largeur nulle et caractères de remplissage : invisibles pour toi, comptés par le champ.",
+    "combining": "Les signes glitch/zalgo ajoutent un caractère chacun.",
+    "emoji": "Les emojis coûtent 2 sur X et font passer un SMS en segments de 70 caractères.",
+    "quotes": "Remplace les guillemets « », l'apostrophe courbe, les tirets cadratins et les espaces fines insécables (avant ; : ! ?) par leurs équivalents ASCII. Ta ponctuation perd sa finesse typographique, mais c'est justement ce qui fait sortir un SMS du GSM-7.",
+    "spaces": "Espaces répétées et espaces en fin de ligne.",
+    "blanklines": "Trois sauts de ligne consécutifs ou plus.",
+    "hashtags": "Déplace-les plutôt dans un commentaire."
+  },
+  fields: {
+    "x-post": "Publication",
+    "x-bio": "Bio",
+    "x-name": "Nom affiché",
+    "ig-caption": "Légende",
+    "ig-bio": "Bio",
+    "ig-username": "Nom d'utilisateur",
+    "ig-alt": "Texte alternatif",
+    "tiktok-caption": "Légende",
+    "tiktok-bio": "Bio",
+    "tiktok-username": "Nom d'utilisateur",
+    "li-post": "Publication",
+    "li-headline": "Titre",
+    "li-about": "Section Infos",
+    "li-comment": "Commentaire",
+    "yt-title": "Titre de la vidéo",
+    "yt-description": "Description",
+    "yt-comment": "Commentaire",
+    "fb-post": "Publication",
+    "discord-message": "Message",
+    "discord-nick": "Pseudo",
+    "discord-status": "Statut personnalisé",
+    "telegram-message": "Message",
+    "telegram-caption": "Légende photo/vidéo",
+    "telegram-bio": "Bio",
+    "threads-post": "Publication",
+    "threads-bio": "Bio",
+    "bluesky-post": "Publication",
+    "bluesky-bio": "Bio",
+    "reddit-title": "Titre du post",
+    "reddit-comment": "Commentaire",
+    "pinterest-description": "Description d'épingle",
+    "pinterest-title": "Titre d'épingle",
+    "whatsapp-about": "À propos",
+    "vk-status": "Statut",
+    "zalo-post": "Publication/statut",
+    "sms": "Message texte",
+    "meta-title": "Titre de page",
+    "meta-description": "Meta description"
+  },
   labels: {
     "x-post": "Publication X / Twitter",
+    "x-bio": "Bio X / Twitter",
+    "x-name": "Nom affiché X / Twitter",
     "discord-message": "Message Discord",
+    "discord-status": "Statut personnalisé Discord",
     "ig-caption": "Légende Instagram",
+    "ig-alt": "Texte alternatif Instagram",
     "tiktok-caption": "Légende TikTok",
     "li-post": "Publication LinkedIn",
+    "li-about": "Section Infos LinkedIn",
+    "li-comment": "Commentaire LinkedIn",
     "fb-post": "Publication Facebook",
     "yt-description": "Description YouTube",
+    "yt-comment": "Commentaire YouTube",
     "pinterest-description": "Description d'épingle Pinterest",
+    "pinterest-title": "Titre d'épingle Pinterest",
     "telegram-message": "Message Telegram",
     "telegram-caption": "Légende photo/vidéo Telegram",
     "threads-post": "Publication Threads",
+    "threads-bio": "Bio Threads",
     "bluesky-post": "Publication Bluesky",
+    "bluesky-bio": "Bio Bluesky",
+    "reddit-title": "Titre de post Reddit",
+    "reddit-comment": "Commentaire Reddit",
     "zalo-post": "Publication/statut Zalo",
     "ig-bio": "Bio Instagram",
     "tiktok-bio": "Bio TikTok",
@@ -376,6 +645,7 @@ window.UTG_COUNTER_I18N = {
 };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
