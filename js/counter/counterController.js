@@ -71,6 +71,14 @@
     groups: null,
     units: null,
     selected: null,
+    /* Fix-layer button copy. The reducers themselves live in
+       counterReduce.js with English labels; a locale page overrides them by
+       reducer id here (`reducers`/`reducerHints`) rather than forking the
+       module, so a reducer added later falls back to English instead of
+       silently disappearing from translated pages. */
+    reducers: null,
+    reducerHints: null,
+    segShort: "seg",
     overBy: "Over by {n} — pick a fix:",
     trimToFit: "Trim to fit",
     undo: "Undo",
@@ -175,10 +183,11 @@
       suggestions.forEach((s) => {
         const btn = el("button", "cc-fix-btn");
         btn.type = "button";
-        btn.title = s.hint || "";
-        btn.appendChild(el("span", "cc-fix-btn-label", s.label));
+        btn.title = (I18N.reducerHints && I18N.reducerHints[s.id]) || s.hint || "";
+        btn.appendChild(el("span", "cc-fix-btn-label",
+          (I18N.reducers && I18N.reducers[s.id]) || s.label));
         const tag = s.segmentsAfter != null
-          ? s.segmentsBefore + " → " + s.segmentsAfter + " seg"
+          ? s.segmentsBefore + " → " + s.segmentsAfter + " " + I18N.segShort
           : "−" + s.saved;
         btn.appendChild(el("span", "cc-fix-btn-save", tag));
         btn.addEventListener("click", () => applyValue(s.result));

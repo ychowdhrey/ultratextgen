@@ -195,8 +195,12 @@
     { id: "threads-post", platform: "threads", field: "Post", label: "Threads post", limit: 500, group: "posts" },
     { id: "threads-bio", platform: "threads", field: "Bio", label: "Threads bio", limit: 150, group: "bios" },
 
-    { id: "bluesky-post", platform: "bluesky", field: "Post", label: "Bluesky post", limit: 300, group: "posts" },
-    { id: "bluesky-bio", platform: "bluesky", field: "Bio", label: "Bluesky bio", limit: 256, group: "bios" },
+    /* Bluesky is the one platform that counts what you actually see: the
+       AT Protocol lexicon caps a post at 300 *graphemes* (and a profile
+       description at 256), so a family emoji built from a 7-code-point ZWJ
+       sequence costs 1, not 7. */
+    { id: "bluesky-post", platform: "bluesky", field: "Post", label: "Bluesky post", limit: 300, group: "posts", countMode: "graphemes" },
+    { id: "bluesky-bio", platform: "bluesky", field: "Bio", label: "Bluesky bio", limit: 256, group: "bios", countMode: "graphemes" },
 
     { id: "reddit-title", platform: "reddit", field: "Post title", label: "Reddit post title", limit: 300, group: "posts" },
     { id: "reddit-comment", platform: "reddit", field: "Comment", label: "Reddit comment", limit: 10000, group: "posts" },
@@ -236,6 +240,7 @@
     const mode = rule.countMode || "codepoint";
     if (mode === "gsm") return gsmInfo(str || "").length;
     if (mode === "x-weighted") return xWeightedLength(str || "");
+    if (mode === "graphemes") return graphemes(str || "");
     return codePoints(str || "");
   }
 
