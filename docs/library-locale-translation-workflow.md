@@ -108,8 +108,42 @@ Three failure modes to rule out:
 3. **The locale hub already targets the term**, in which case the spoke needs
    Hub-vs-Spoke Rule 3 de-targeting applied to the hub in the same change.
 
-If any of these hit, either skip the page or resolve the conflict deliberately —
-do not ship alongside it.
+### What to do when a conflict IS found — the part that matters
+
+A conflict is **never** a reason to stop. It redirects the work; it does not
+cancel it. Three outcomes, and none of them is "give up":
+
+| What you found | What you build |
+|---|---|
+| **A locale page already owns this exact job** | **Do not build a second page. Build INTO the existing one.** Port whatever the EN page has that it lacks — sections, FAQ, native answer links. You keep the whole opportunity and you spend it on a page that already ranks, instead of starting a new one from zero authority. |
+| **A locale page covers a *related but different* job** | Build the new page **and** apply Hub-vs-Spoke Rule 3 to the existing one in the same change: strip the competing prose down to a one-line pointer. Two pages, two queries, no overlap. |
+| **Nothing exists** | Build normally. |
+
+**Worked example — `tr`, 2026-08-07.** The planner ranked
+`library/nickname-symbols` as `tr`'s top cell: 419 Türkiye impressions on the EN
+page, no `tr` sibling. Step 3 killed it. `tr/library/semboller/` is titled
+*"Şekilli Semboller — Nick ve Bio için Semboller Kopyala"* and already owns that
+cluster outright — `şekilli nick sembolleri` 1,536 impr at pos 4.51,
+`nick sembolleri` 1,103 at 5.70, **5,817 impressions / 289 clicks, all page one.**
+A new `tr/library/nickname-symbols` would have been a textbook `vi/chu-kieu/`
+duplicate: a thinner page competing with one already ranking fourth.
+
+So the work became row 1 of the table. `tr/library/semboller/` gained the same
+three sections the EN page had just gained — field-by-field
+username-vs-display-name, invisible/blank characters, box-rendering — each
+linking **Turkish** answer pages that already existed and were never linked from
+it (`kullanici-adi-mi-goruntulenen-ad-mi`, `oyun-ismi-neden-reddedildi`,
+`bos-gorunmez-isim-nasil-yapilir`, `isim-neden-kutu-olarak-gorunuyor`).
+
+Same opportunity, no cannibalization, and it lands on a page at position 4-5
+instead of a new URL at position nothing. **That trade is almost always better:**
+a page already on page one converts every added section immediately, while a new
+page spends weeks earning the right to be seen at all.
+
+Note what the 419 impressions actually were once diagnosed — not a translation
+gap but a **routing** signal: Turkish users landing on the English page while a
+Turkish page ranks 4th for the same terms. That is an hreflang/internal-link fix,
+and it is cheaper than any page build.
 
 ---
 
