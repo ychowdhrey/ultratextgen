@@ -187,6 +187,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -229,7 +231,35 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>上方的檢查器分得出這兩種：遇到軟性限制時，它會告訴你文字會在哪裡被收合，讓你把重點往前擺，而不是只求數字不要超過。</p>
+    <p>大多數人真正在對付的其實是軟性限制，卻幾乎沒有字數工具會把它顯示出來。一則 LinkedIn 貼文可以打 3,000 個字元，但真正有用的大約只有前面 140 個，其餘都藏在沒人會點的那一下之後。所以上方的工具直接把收合的位置畫出來 — 打字進去，你會看到「顯示更多」之前實際出現的那段文字，切線之後的部分會變淡，同時也看得到同一個開頭在其他會收合的版位撐不撐得住。</p>
+    <p>這裡要特別講清楚：<strong>收合是用畫面上看得到的字數來算的。</strong>中文字在 UTF-8 佔 3 個位元組，但在收合的計算裡，一個字就是一個字。Instagram 的 125 字元收合，中文一樣放得下 125 個字，不會因為位元組而縮水。位元組會卡住你的是「送不送得出去」的硬性限制那一邊，跟收合是兩回事。</p>
+    <p><strong>各個版位在哪裡收合，用什麼裝置看：</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>版位</th><th>收合位置</th><th>對開頭的意義</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn 貼文</td>
+          <td>手機約 140<br>電腦約 210</td>
+          <td>寫在 140 個字元以內，兩邊都撐得住。這是表中手機與電腦落差最大的一個版位。</td>
+        </tr>
+        <tr>
+          <td><a href="/zh-tw/ig-ziti/">Instagram 貼文說明</a></td>
+          <td>約 125</td>
+          <td>表中最緊的收合 — 大概只有一句話，就到「⋯更多」了。</td>
+        </tr>
+        <tr>
+          <td>YouTube 說明</td>
+          <td>約 157</td>
+          <td>標題底下、「顯示更多」之前會露出的那一段；搜尋結果抓的通常也是這裡。</td>
+        </tr>
+        <tr>
+          <td>Facebook 貼文</td>
+          <td>約 477</td>
+          <td>最寬鬆的收合 — 一個短段落可以整段落在切線之前。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>兩點要老實講。這些是從實際介面觀察到的行為，不是平台公布的限制，所以請把它們當成「穩定會顯示出來的長度」，而不是精確的門檻 — 而且這些版位也會依<em>行數</em>收合，開頭連換三行，可能還沒碰到任何字數就先被截斷了。如果你的開頭靠的是條列，請也到真正的發文框裡試一次。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -421,6 +451,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     visibleNote: "只有前面約 {n} 個字元會顯示出來，之後會被收合 — 請把重點放在前面。",
     platformLabel: "平台",
     fieldLabel: "欄位",
+    foldHeading: "讀者按「顯示更多」之前看到的內容",
+    foldMore: "顯示更多",
+    foldMeta: "{total} 個字元中顯示了 {shown} 個 · {hidden} 個藏在點擊之後",
+    foldRoom: "距離被收合，開頭還剩 {n} 個字元",
+    foldDevices: "手機在 {m} 收合，電腦在 {d}。",
     overBy: "超出 {n} 個 — 選一種處理方式：",
     trimToFit: "截斷到剛好符合",
     undo: "還原",

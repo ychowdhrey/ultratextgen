@@ -188,6 +188,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -230,7 +232,35 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>위의 확인 도구는 이 둘을 구분해요. 소프트 리밋이면 어디에서 잘리는지까지 알려 주니, 숫자만 겨우 맞추는 대신 중요한 내용을 앞으로 당겨 쓸 수 있어요.</p>
+    <p>정작 대부분의 사람이 실제로 맞춰 쓰는 건 소프트 리밋인데, 이걸 보여 주는 글자수 세기 도구는 거의 없어요. 링크드인 게시물은 3,000자까지 쓸 수 있지만 실제로 읽히는 건 앞의 140자 정도고, 나머지는 아무도 누르지 않는 터치 뒤에 있어요. 그래서 위 도구는 잘리는 지점을 그대로 그려서 보여 줘요 — 입력해 보면 '더 보기' 앞에 실제로 나오는 문장이 그대로 보이고, 잘림선 뒤는 흐리게 처리되며, 같은 첫머리가 잘림이 있는 다른 곳에서도 살아남는지까지 함께 확인할 수 있어요.</p>
+    <p>한 가지 짚어 둘 게 있어요. <strong>잘림은 화면에 보이는 글자 수로 셉니다.</strong> UTF-8로는 3바이트를 쓰는 한글도 잘림 계산에서는 한 글자가 그냥 한 글자예요. 인스타그램의 125자 잘림에는 한글도 정확히 125자가 들어가고, 바이트 때문에 줄어들지 않아요. 바이트가 발목을 잡는 건 '올라가느냐 마느냐'를 결정하는 하드 리밋 쪽뿐이에요.</p>
+    <p><strong>어디에서, 어떤 기기에서 잘리는지:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>올리는 곳</th><th>잘리는 지점</th><th>첫머리에 주는 의미</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>링크드인 게시물</td>
+          <td>휴대폰 약 140<br>PC 약 210</td>
+          <td>140자 안에 쓰면 둘 다에서 살아남아요. 이 표에서 휴대폰과 PC 차이가 가장 큰 곳이에요.</td>
+        </tr>
+        <tr>
+          <td><a href="/ko/insta-font/">인스타그램 캡션</a></td>
+          <td>약 125</td>
+          <td>이 표에서 가장 빡빡한 잘림 — '… 더 보기'까지 대략 한 문장이에요.</td>
+        </tr>
+        <tr>
+          <td>유튜브 설명</td>
+          <td>약 157</td>
+          <td>제목 아래 '더보기' 앞까지 보이는 부분이고, 검색에 걸리는 것도 보통 여기예요.</td>
+        </tr>
+        <tr>
+          <td>페이스북 게시물</td>
+          <td>약 477</td>
+          <td>가장 넉넉한 잘림 — 짧은 문단 하나는 통째로 잘림선 앞에 들어가요.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>솔직하게 두 가지. 이 숫자들은 플랫폼이 공개한 제한이 아니라 실제 화면에서 관찰한 동작이라, 정확한 임계값이라기보다 '확실히 보이는 정도'로 봐 주세요. 그리고 각 서비스는 <em>줄 수</em>로도 잘라요. 앞부분에서 줄바꿈을 세 번만 해도 어떤 글자수에도 닿기 전에 잘립니다. 첫머리가 목록에 기대고 있다면 실제 작성 화면에서도 확인해 보세요.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -420,6 +450,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     visibleNote: "앞부분 약 {n}자까지만 보이고 그 뒤는 접혀요 — 중요한 내용을 앞에 쓰세요.",
     platformLabel: "플랫폼",
     fieldLabel: "항목",
+    foldHeading: "'더 보기'를 누르기 전에 보이는 부분",
+    foldMore: "더 보기",
+    foldMeta: "{total}자 중 {shown}자 표시 · {hidden}자는 터치 뒤에 숨어요",
+    foldRoom: "잘리기까지 첫머리에 쓸 수 있는 {n}자 남음",
+    foldDevices: "휴대폰은 {m}자, PC는 {d}자에서 잘려요.",
     overBy: "{n}자 초과했어요 — 줄이는 방법을 골라 보세요:",
     trimToFit: "제한에 맞게 자르기",
     undo: "되돌리기",
