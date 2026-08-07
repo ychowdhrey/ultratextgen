@@ -894,47 +894,16 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [
-    {
-      name: "Blue Aesthetic",
-      flags: ["💙", "🦋", "🌊", "🐬", "🧊", "☁️"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Pink Coquette",
-      flags: ["🌸", "💗", "🎀", "🩰", "🍓"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Purple Magic",
-      flags: ["💜", "🔮", "🪻", "🦄", "✨"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Red Romance",
-      flags: ["❤️", "🌹", "🍒", "💋", "🔥"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Green Nature",
-      flags: ["💚", "🍀", "🐸", "🌿", "🍃"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Yellow Sunshine",
-      flags: ["💛", "🌻", "🍋", "🐝", "☀️"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Black Grunge",
-      flags: ["🖤", "🕷️", "🌑", "⛓️", "🦇"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "White Angelcore",
-      flags: ["🤍", "🕊️", "☁️", "🦢", "✨"],
-      defaultFormat: "inline"
-    }
-  ];
+      { name: "Pink Coquette", flags: ["🌸", "💗", "🎀", "🩰", "🍓"], defaultFormat: "inline" },
+      { name: "Red Romance", flags: ["❤️", "🌹", "🍒", "💋", "🔥"], defaultFormat: "inline" },
+      { name: "White Angelcore", flags: ["🤍", "🕊️", "☁️", "🦢", "✨"], defaultFormat: "inline" },
+      { name: "Black Grunge", flags: ["🖤", "🕷️", "🌑", "⛓️", "🦇"], defaultFormat: "inline" },
+      { name: "Brown Cottage", flags: ["🤎", "☕", "🧸", "🍫", "🍂"], defaultFormat: "inline" },
+      { name: "Green Nature", flags: ["💚", "🍀", "🐸", "🌿", "🍃"], defaultFormat: "inline" },
+      { name: "Purple Magic", flags: ["💜", "🔮", "🪻", "🦄", "✨"], defaultFormat: "inline" },
+      { name: "Yellow Sunshine", flags: ["💛", "🌻", "🍋", "🐝", "☀️"], defaultFormat: "inline" },
+      { name: "Blue Aesthetic", flags: ["💙", "🦋", "🌊", "🐬", "🧊"], defaultFormat: "inline" }
+    ];
 
   ns.buildGrids("colorCombosContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);

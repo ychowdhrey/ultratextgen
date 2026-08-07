@@ -675,18 +675,6 @@
   "collection_container_id": "colorCombosContainer",
   "collections": [
     {
-      "name": "Blue Aesthetic",
-      "flags": [
-        "💙",
-        "🦋",
-        "🌊",
-        "🐬",
-        "🧊",
-        "☁️"
-      ],
-      "defaultFormat": "inline"
-    },
-    {
       "name": "Pink Coquette",
       "flags": [
         "🌸",
@@ -694,17 +682,6 @@
         "🎀",
         "🩰",
         "🍓"
-      ],
-      "defaultFormat": "inline"
-    },
-    {
-      "name": "Purple Magic",
-      "flags": [
-        "💜",
-        "🔮",
-        "🪻",
-        "🦄",
-        "✨"
       ],
       "defaultFormat": "inline"
     },
@@ -720,24 +697,13 @@
       "defaultFormat": "inline"
     },
     {
-      "name": "Green Nature",
+      "name": "White Angelcore",
       "flags": [
-        "💚",
-        "🍀",
-        "🐸",
-        "🌿",
-        "🍃"
-      ],
-      "defaultFormat": "inline"
-    },
-    {
-      "name": "Yellow Sunshine",
-      "flags": [
-        "💛",
-        "🌻",
-        "🍋",
-        "🐝",
-        "☀️"
+        "🤍",
+        "🕊️",
+        "☁️",
+        "🦢",
+        "✨"
       ],
       "defaultFormat": "inline"
     },
@@ -753,13 +719,57 @@
       "defaultFormat": "inline"
     },
     {
-      "name": "White Angelcore",
+      "name": "Brown Cottage",
       "flags": [
-        "🤍",
-        "🕊️",
-        "☁️",
-        "🦢",
+        "🤎",
+        "☕",
+        "🧸",
+        "🍫",
+        "🍂"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Green Nature",
+      "flags": [
+        "💚",
+        "🍀",
+        "🐸",
+        "🌿",
+        "🍃"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Purple Magic",
+      "flags": [
+        "💜",
+        "🔮",
+        "🪻",
+        "🦄",
         "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yellow Sunshine",
+      "flags": [
+        "💛",
+        "🌻",
+        "🍋",
+        "🐝",
+        "☀️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blue Aesthetic",
+      "flags": [
+        "💙",
+        "🦋",
+        "🌊",
+        "🐬",
+        "🧊"
       ],
       "defaultFormat": "inline"
     }
