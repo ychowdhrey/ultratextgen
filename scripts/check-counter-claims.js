@@ -48,16 +48,38 @@ const { LIMITS, PLATFORMS } = RULES;
 const FIELD_COUNT = LIMITS.length;
 const PLATFORM_COUNT = PLATFORMS.length;
 
-/* Numbers a counter page is legitimately allowed to print in a numeric
-   table cell: every hard limit, every fold, both device folds, and the
-   SMS/X constants the counting sections explain. */
-const VALID_FIGURES = new Set();
-LIMITS.forEach((r) => {
-  VALID_FIGURES.add(r.limit);
-  if (r.visibleAt) VALID_FIGURES.add(r.visibleAt);
-  if (r.foldDesktop) VALID_FIGURES.add(r.foldDesktop);
-});
-[160, 153, 70, 67, 23, 1, 2, 3, 4].forEach((n) => VALID_FIGURES.add(n));
+/* Numbers a counter page is legitimately allowed to print in a numeric table
+   cell: every hard limit, every fold, both device folds, and the SMS/X
+   constants the counting sections explain.
+
+   Derived PER PAGE, because a locale page may inject its own rules at runtime
+   — the Russian page adds vk-post (15,940) and vk-message, which exist in no
+   shared file. Checking those pages against the base table alone reported
+   their own correct figures as errors, which is how a checker earns the
+   reputation that gets it ignored. */
+const BASE_CONSTANTS = [160, 153, 70, 67, 23, 1, 2, 3, 4];
+
+function figuresFor(src) {
+  const w = {};
+  new Function("window", fs.readFileSync(path.join(ROOT, "js/counter/counterRules.js"), "utf8"))(w);
+  /* Replay only inline scripts that touch the rule table, in a sandbox with no
+     document — a page's UI wiring must not run, and anything that throws is
+     simply skipped. */
+  const inline = src.match(/<script>([\s\S]*?)<\/script>/g) || [];
+  inline.forEach((block) => {
+    const body = block.replace(/^<script>/, "").replace(/<\/script>$/, "");
+    if (!/counterRules|LIMITS/.test(body)) return;
+    try { new Function("window", body)(w); } catch (e) { /* not our concern */ }
+  });
+  const rules = (w.UltraTextGen && w.UltraTextGen.counterRules) || RULES;
+  const set = new Set(BASE_CONSTANTS);
+  rules.LIMITS.forEach((r) => {
+    set.add(r.limit);
+    if (r.visibleAt) set.add(r.visibleAt);
+    if (r.foldDesktop) set.add(r.foldDesktop);
+  });
+  return set;
+}
 
 /* Words meaning "platform" or "field" across the locales this page ships
    in. Only used to find the number sitting next to them. */
@@ -115,13 +137,35 @@ function textRuns(src) {
 }
 
 /* Meta/OG descriptions are prose too, and are where the "27 limits" claim
-   actually lived — invisible to any body-text scan. */
+   actually lived — invisible to any body-text scan. So is the `description`
+   inside the WebApplication/WebSite JSON-LD, which the tag-stripping pass
+   deliberately throws away: the first version of this script missed exactly
+   that, and three CJK pages were still asserting 27 there. Structured data
+   makes a claim to machines the same way a meta tag does. */
 function metaDescriptions(src) {
   const out = [];
   const re = /<meta[^>]+(?:name|property)="(?:description|og:description|twitter:description)"[^>]*content="([^"]*)"/gi;
   let m;
   while ((m = re.exec(src))) out.push(m[1]);
+
+  const ld = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi;
+  while ((m = ld.exec(src))) {
+    let data;
+    try { data = JSON.parse(m[1]); } catch (e) { continue; }
+    collectStrings(data, out);
+  }
   return out;
+}
+
+/* Any human-readable string anywhere in a JSON-LD graph. Walking the whole
+   structure rather than naming fields means a claim moved into `abstract`,
+   `disambiguatingDescription` or a nested offer is still checked. */
+function collectStrings(node, out, depth) {
+  const d = depth || 0;
+  if (d > 8 || node == null) return;
+  if (typeof node === "string") { if (node.length > 12) out.push(node); return; }
+  if (Array.isArray(node)) { node.forEach((n) => collectStrings(n, out, d + 1)); return; }
+  if (typeof node === "object") Object.values(node).forEach((n) => collectStrings(n, out, d + 1));
 }
 
 /** Numbers written immediately before or after a platform/field word. */
@@ -134,6 +178,16 @@ function aggregateClaims(text) {
   // e.g. Japanese/Chinese put the number after the noun
   const re2 = new RegExp("(?:" + words + ")\\s*(\\d{1,3})\\b", "gi");
   while ((m = re2.exec(text))) claims.push({ n: Number(m[1]), text: m[0].trim() });
+
+  /* CJK counts with a measure word between the figure and the noun —
+     "27種類のプラットフォーム", "27 種平台" — so the adjacency the two patterns
+     above rely on never holds, and three pages kept asserting 27 unnoticed.
+     Deliberately requires BOTH the measure word and a platform/limit noun
+     right after it, so an ordinary phrase like "4種類の数え方" (four counting
+     modes, which these pages legitimately say) is not swept up. */
+  const CJK = /(\d{1,3})\s*(?:種類|種|個|款)\s*(?:の|之)?\s*(?:プラットフォーム|サービス|平台|文字数制限|字數限制|文字制限|플랫폼)/g;
+  while ((m = CJK.exec(text))) claims.push({ n: Number(m[1]), text: m[0].trim() });
+
   return claims;
 }
 
@@ -170,8 +224,9 @@ for (const { rel, src } of pages) {
     }
   }
 
+  const validFigures = figuresFor(src);
   for (const f of tableFigures(src)) {
-    if (!VALID_FIGURES.has(f.n)) {
+    if (!validFigures.has(f.n)) {
       problems.push({
         rel,
         kind: "figure",

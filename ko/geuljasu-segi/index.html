@@ -160,19 +160,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">글자수세기</h1>
-  <p class="hero-sub">입력하는 즉시 글자 수(공백 포함/제외), 단어 수, 문장·문단 수, 읽기 시간이 실시간으로 집계돼요. 자기소개서(자소서) 글자수 확인은 물론, X(트위터)·인스타그램·카카오톡·유튜브·디스코드 등 플랫폼별 글자수 제한에 맞는지도 바로 확인할 수 있어요.</p>
+  <p class="hero-sub">17개 플랫폼 38개 입력란의 글자수 제한을 실시간으로 확인하고, 넘치면 한 번의 클릭으로 정리하세요.</p>
 </div></div></section>
 
 <main class="container">
-  <section class="editorial-section">
-    <div class="editorial-block">
-      <p>입력창 바로 위에서 글이 올라갈 곳을 먼저 고르고, 글을 쓰거나 붙여넣으세요. 단어 수, 글자 수(공백 포함·제외), 문장 수, 문단 수, 읽기 시간이 즉시 갱신되고, 확인 도구는 그 플랫폼이 실제로 세는 방식 그대로 계산해서 몇 자가 남았는지(또는 몇 자를 초과했는지) 알려 줘요. 초과했을 때 그냥 알려 주고 끝나지 않아요 — 무엇을 얼마나 줄일 수 있는지 절약되는 글자 수와 함께 제안하고, 전부 한 번의 클릭으로 적용하고 되돌릴 수 있어요. 어떤 것도 서버로 전송되지 않고 모든 계산은 브라우저 안에서만 이루어져요. 방금 잰 텍스트를 예쁜 유니코드 글꼴로 바꾸고 싶다면 <a href="/ko/">UltraTextGen 한국어 글씨체 변환기</a>가 100가지 이상의 복사–붙여넣기 스타일로 바꿔 드려요.</p>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <div class="counter-tool">
+<div class="counter-tool">
     <div id="platformChecker"></div>
 
     <div class="counter-field">
@@ -212,12 +204,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </div>
 
+  <p class="counter-footnote">모든 계산은 브라우저 안에서만 이루어져요 — 입력한 글은 전송되거나 저장되지 않아요. 글씨체까지 바꾸고 싶다면 <a href="/ko/">UltraTextGen 변환기</a>가 100가지 이상의 복사–붙여넣기 글꼴로 바꿔 드려요.</p>
+
   <div class="section-divider"></div>
 
   <section class="editorial-section">
     <h2>하드 리밋과 소프트 리밋</h2>
     <p>'글자수 제한'이라고 불리는 것에는 성격이 다른 두 가지가 있고, 넘겼을 때 치르는 대가도 달라요.</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>종류</th><th>초과하면 어떻게 되나요</th><th>예시</th></tr></thead>
       <tbody>
         <tr>
@@ -231,35 +225,39 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td>인스타그램 캡션 125자 이후 · 링크드인 게시물 모바일 약 140자 / PC 약 210자 이후 · 유튜브 설명 약 157자 이후</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>정작 대부분의 사람이 실제로 맞춰 쓰는 건 소프트 리밋인데, 이걸 보여 주는 글자수 세기 도구는 거의 없어요. 링크드인 게시물은 3,000자까지 쓸 수 있지만 실제로 읽히는 건 앞의 140자 정도고, 나머지는 아무도 누르지 않는 터치 뒤에 있어요. 그래서 위 도구는 잘리는 지점을 그대로 그려서 보여 줘요 — 입력해 보면 '더 보기' 앞에 실제로 나오는 문장이 그대로 보이고, 잘림선 뒤는 흐리게 처리되며, 같은 첫머리가 잘림이 있는 다른 곳에서도 살아남는지까지 함께 확인할 수 있어요.</p>
     <p>한 가지 짚어 둘 게 있어요. <strong>잘림은 화면에 보이는 글자 수로 셉니다.</strong> UTF-8로는 3바이트를 쓰는 한글도 잘림 계산에서는 한 글자가 그냥 한 글자예요. 인스타그램의 125자 잘림에는 한글도 정확히 125자가 들어가고, 바이트 때문에 줄어들지 않아요. 바이트가 발목을 잡는 건 '올라가느냐 마느냐'를 결정하는 하드 리밋 쪽뿐이에요.</p>
     <p><strong>어디에서, 어떤 기기에서 잘리는지:</strong></p>
-    <table class="comparison-table">
-      <thead><tr><th>올리는 곳</th><th>잘리는 지점</th><th>첫머리에 주는 의미</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>올리는 곳</th><th class="num">휴대폰</th><th class="num">PC</th><th>첫머리에 주는 의미</th></tr></thead>
       <tbody>
         <tr>
           <td>링크드인 게시물</td>
-          <td>휴대폰 약 140<br>PC 약 210</td>
-          <td>140자 안에 쓰면 둘 다에서 살아남아요. 이 표에서 휴대폰과 PC 차이가 가장 큰 곳이에요.</td>
+          <td class="num">약 140</td>
+          <td class="num">약 210</td>
+          <td>140자 안에 쓰면 둘 다에서 살아남아요. 이 표에서 기기 간 차이가 가장 큰 곳이에요.</td>
         </tr>
         <tr>
           <td><a href="/ko/insta-font/">인스타그램 캡션</a></td>
-          <td>약 125</td>
+          <td class="num">약 125</td>
+          <td class="num">약 125</td>
           <td>이 표에서 가장 빡빡한 잘림 — '… 더 보기'까지 대략 한 문장이에요.</td>
         </tr>
         <tr>
           <td>유튜브 설명</td>
-          <td>약 157</td>
+          <td class="num">약 157</td>
+          <td class="num">약 157</td>
           <td>제목 아래 '더보기' 앞까지 보이는 부분이고, 검색에 걸리는 것도 보통 여기예요.</td>
         </tr>
         <tr>
           <td>페이스북 게시물</td>
-          <td>약 477</td>
+          <td class="num">약 477</td>
+          <td class="num">약 477</td>
           <td>가장 넉넉한 잘림 — 짧은 문단 하나는 통째로 잘림선 앞에 들어가요.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>솔직하게 두 가지. 이 숫자들은 플랫폼이 공개한 제한이 아니라 실제 화면에서 관찰한 동작이라, 정확한 임계값이라기보다 '확실히 보이는 정도'로 봐 주세요. 그리고 각 서비스는 <em>줄 수</em>로도 잘라요. 앞부분에서 줄바꿈을 세 번만 해도 어떤 글자수에도 닿기 전에 잘립니다. 첫머리가 목록에 기대고 있다면 실제 작성 화면에서도 확인해 보세요.</p>
   </section>
 
@@ -268,7 +266,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="counting-modes">
     <h2>플랫폼이 세는 글자수와 내 글자수가 다른 이유</h2>
     <p>'이거 몇 자예요?'에는 정답이 하나가 아니에요. 서비스마다 세는 단위가 다르기 때문이에요. 한국어 사용자에게 가장 중요한 건 이 지점이에요: <strong>한글 한 글자는 1 코드포인트, 1 UTF-16 단위지만, UTF-8로는 3바이트</strong>예요. 그래서 글자 수로는 여유가 있는데도 바이트로 제한하는 입력 폼이나 시스템에서는 '너무 깁니다'라며 거부당하는 일이 생겨요. 같은 글에 길이가 네 가지 있다고 생각하면 돼요.</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>세는 방식</th><th>무엇을 재나요</th><th>한글에서는</th></tr></thead>
       <tbody>
         <tr><td>자소 단위(그래핌)</td><td>눈에 보이는 그대로 — 피부색이 붙은 이모지도 1</td><td>'한' = 1. 블루스카이가 사용</td></tr>
@@ -276,7 +274,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>UTF-16 단위</td><td>자바스크립트와 많은 앱이 글을 저장하는 방식</td><td>'한' = 1이지만 특수 글꼴 영문은 2. HTML 폼의 <code>maxlength</code>, 게임·앱 백엔드</td></tr>
         <tr><td>UTF-8 바이트</td><td>저장 용량</td><td><strong>'한' = 3바이트</strong>. 데이터베이스 <code>VARCHAR</code>, 아마존 상품 정보란, 스팀 이름, 오래된 업무 시스템</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>이 차이는 실무에서 그대로 드러나요. 예를 들어 '255바이트까지'인 항목에는 한글이 85자밖에 안 들어가요. 위의 '자소 단위(보이는 글자)', 'UTF-16 단위', 'UTF-8 바이트' 타일은 입력과 동시에 모두 갱신되니, 폼은 길다고 하는데 내 글자 수는 모자랄 때 그 폼이 어떤 단위로 세는지 바로 짚어낼 수 있어요. 공백 포함·제외 문제는 이와 별개의 한국식 기준이라 <a href="#gongbaek">공백 포함 vs 공백 제외</a>에서 따로 설명했어요.</p>
     <p>여기에 더해 자기만의 규칙을 쓰는 곳이 두 군데 있어요. <strong>X(트위터)는 글자가 아니라 가중치로 세서</strong> 한글 한 글자가 2로 계산돼요(자세히는 <a href="#x-twitter">X에서 한글은 몇 자까지</a>). <strong>SMS는 '건'으로 세는데</strong>, 한글은 GSM-7 문자 집합에 없어서 항상 유니코드로 처리되고 1건당 70자(분할되면 67자)로 떨어져요. 영문·숫자만 쓰면 1건에 160자예요.</p>
   </section>
@@ -312,51 +310,51 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p>위의 실시간 확인 도구가 실제로 쓰는 제한을 그대로 표로 정리했어요. 바로 가기: <a href="#twitter">X/트위터</a> · <a href="#discord">디스코드</a> · <a href="#instagram">인스타그램</a> · <a href="#tiktok">틱톡</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">플랫폼별 세는 방식</a>.</p>
 
     <h3>게시물 &amp; 메시지</h3>
-    <table class="comparison-table">
-      <thead><tr><th>플랫폼</th><th>제한</th><th>비고</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>플랫폼</th><th class="num">제한</th><th>비고</th></tr></thead>
       <tbody>
-        <tr id="twitter"><td>X(트위터) 게시물</td><td>280</td><td>가중치 방식 — URL은 항상 23, 한글·이모지·특수 글꼴은 글자당 2라 한글로만 쓰면 실질 약 140자</td></tr>
-        <tr id="discord"><td>디스코드 메시지</td><td>2,000</td><td>니트로 구독 시 4,000. 더 길면 .txt 첨부파일로 바뀜</td></tr>
-        <tr id="instagram"><td>인스타그램 캡션</td><td>2,200</td><td>첫 몇 줄 이후 '더 보기'로 접힘</td></tr>
-        <tr id="tiktok"><td>틱톡 캡션</td><td>2,200</td><td></td></tr>
-        <tr><td>링크드인 게시물</td><td>3,000</td><td>기기에 따라 약 200~700자에서 '더 보기'로 접힘</td></tr>
-        <tr><td>페이스북 게시물</td><td>63,206</td><td></td></tr>
-        <tr><td>유튜브 설명</td><td>5,000</td><td></td></tr>
-        <tr><td>핀터레스트 핀 설명</td><td>500</td><td></td></tr>
-        <tr><td>텔레그램 메시지</td><td>4,096</td><td>사진·영상 캡션은 1,024</td></tr>
-        <tr><td>스레드 게시물</td><td>500</td><td></td></tr>
-        <tr><td>블루스카이 게시물</td><td>300</td><td>코드포인트가 아니라 자소 단위(보이는 글자)로 셈</td></tr>
-        <tr><td>레딧 게시물 제목</td><td>300</td><td></td></tr>
-        <tr><td>잘로 게시물·상태</td><td>2,000</td><td></td></tr>
+        <tr id="twitter"><td>X(트위터) 게시물</td><td class="num">280</td><td>가중치 방식 — URL은 항상 23, 한글·이모지·특수 글꼴은 글자당 2라 한글로만 쓰면 실질 약 140자</td></tr>
+        <tr id="discord"><td>디스코드 메시지</td><td class="num">2,000</td><td>니트로 구독 시 4,000. 더 길면 .txt 첨부파일로 바뀜</td></tr>
+        <tr id="instagram"><td>인스타그램 캡션</td><td class="num">2,200</td><td>첫 몇 줄 이후 '더 보기'로 접힘</td></tr>
+        <tr id="tiktok"><td>틱톡 캡션</td><td class="num">2,200</td><td></td></tr>
+        <tr><td>링크드인 게시물</td><td class="num">3,000</td><td>기기에 따라 약 200~700자에서 '더 보기'로 접힘</td></tr>
+        <tr><td>페이스북 게시물</td><td class="num">63,206</td><td></td></tr>
+        <tr><td>유튜브 설명</td><td class="num">5,000</td><td></td></tr>
+        <tr><td>핀터레스트 핀 설명</td><td class="num">500</td><td></td></tr>
+        <tr><td>텔레그램 메시지</td><td class="num">4,096</td><td>사진·영상 캡션은 1,024</td></tr>
+        <tr><td>스레드 게시물</td><td class="num">500</td><td></td></tr>
+        <tr><td>블루스카이 게시물</td><td class="num">300</td><td>코드포인트가 아니라 자소 단위(보이는 글자)로 셈</td></tr>
+        <tr><td>레딧 게시물 제목</td><td class="num">300</td><td></td></tr>
+        <tr><td>잘로 게시물·상태</td><td class="num">2,000</td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>소개 &amp; 프로필</h3>
-    <table class="comparison-table">
-      <thead><tr><th>항목</th><th>제한</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>항목</th><th class="num">제한</th></tr></thead>
       <tbody>
-        <tr><td>인스타그램 소개(바이오)</td><td>150</td></tr>
-        <tr><td>틱톡 소개(바이오)</td><td>80</td></tr>
-        <tr><td>링크드인 헤드라인</td><td>220</td></tr>
-        <tr><td>왓츠앱 정보</td><td>139</td></tr>
-        <tr><td>텔레그램 소개</td><td>70</td></tr>
-        <tr><td>VK 상태</td><td>140</td></tr>
+        <tr><td>인스타그램 소개(바이오)</td><td class="num">150</td></tr>
+        <tr><td>틱톡 소개(바이오)</td><td class="num">80</td></tr>
+        <tr><td>링크드인 헤드라인</td><td class="num">220</td></tr>
+        <tr><td>왓츠앱 정보</td><td class="num">139</td></tr>
+        <tr><td>텔레그램 소개</td><td class="num">70</td></tr>
+        <tr><td>VK 상태</td><td class="num">140</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>사용자명, 제목 &amp; SMS</h3>
-    <table class="comparison-table">
-      <thead><tr><th>항목</th><th>제한</th><th>비고</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>항목</th><th class="num">제한</th><th>비고</th></tr></thead>
       <tbody>
-        <tr><td>디스코드 별명</td><td>32</td><td></td></tr>
-        <tr><td>틱톡 사용자명</td><td>24</td><td>영문·숫자·밑줄·마침표만 가능</td></tr>
-        <tr><td>인스타그램 사용자명</td><td>30</td><td></td></tr>
-        <tr><td>유튜브 제목</td><td>100</td><td></td></tr>
-        <tr><td>SEO 메타 제목</td><td>약 60</td><td>구글은 픽셀 너비로 자르므로 참고 기준으로 보세요</td></tr>
-        <tr><td>SEO 메타 설명</td><td>약 155</td><td>마찬가지로 픽셀 너비로 잘림</td></tr>
-        <tr id="sms"><td>SMS 문자메시지</td><td>160 / 1건</td><td>GSM-7 문자만 썼을 때. <strong>한글은 항상 유니코드로 처리되어 실질 1건 70자</strong>(분할 시 67자)</td></tr>
+        <tr><td>디스코드 별명</td><td class="num">32</td><td></td></tr>
+        <tr><td>틱톡 사용자명</td><td class="num">24</td><td>영문·숫자·밑줄·마침표만 가능</td></tr>
+        <tr><td>인스타그램 사용자명</td><td class="num">30</td><td></td></tr>
+        <tr><td>유튜브 제목</td><td class="num">100</td><td></td></tr>
+        <tr><td>SEO 메타 제목</td><td class="num">약 60</td><td>구글은 픽셀 너비로 자르므로 참고 기준으로 보세요</td></tr>
+        <tr><td>SEO 메타 설명</td><td class="num">약 155</td><td>마찬가지로 픽셀 너비로 잘림</td></tr>
+        <tr id="sms"><td>SMS 문자메시지</td><td class="num">160 / 1건</td><td>GSM-7 문자만 썼을 때. <strong>한글은 항상 유니코드로 처리되어 실질 1건 70자</strong>(분할 시 67자)</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>국내 서비스 중 <strong>카카오톡 상태메시지는 60자</strong>예요. 카카오톡은 위 확인 도구에 포함되어 있지 않으니 '글자 수(공백 포함)' 값만 보고 맞추면 돼요.</p>
   </section>
 
@@ -455,6 +453,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     foldMeta: "{total}자 중 {shown}자 표시 · {hidden}자는 터치 뒤에 숨어요",
     foldRoom: "잘리기까지 첫머리에 쓸 수 있는 {n}자 남음",
     foldDevices: "휴대폰은 {m}자, PC는 {d}자에서 잘려요.",
+    pastFold: "들어가지만 {n}자에서 잘림 ⚠",
+    showAllFits: "전체 {n}개 보기",
+    showFewerFits: "간단히 보기",
     overBy: "{n}자 초과했어요 — 줄이는 방법을 골라 보세요:",
     trimToFit: "제한에 맞게 자르기",
     undo: "되돌리기",
