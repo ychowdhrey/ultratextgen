@@ -632,6 +632,48 @@
       "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Built as part of the invisible-text cross-market pass. Semrush was out of API units for the entire session, so the demand instruments could NOT be run — no proxy was substituted. The registry decision was presented to the user in full BEFORE the build (answers/* is a gated parent; vi is Tier 2 with an explicit hold 'needs backlinks, not translations'; zh-tw and ms are Tier 3 hold-stub) and the user directed the build anyway. Locale tiers and vi's hold flag are deliberately LEFT UNCHANGED — this is a per-batch override recorded in the ledger, not a registry change. Supporting (non-instrument) rationale: the EN parent's own cluster already draws measurable first-party demand, and the answers lane is the structurally healthiest lane in this cluster (12 members, fully reciprocal mesh, zero defects). This entry is a BRIDGE, not a pass: it is complete only when the instruments are backfilled with real numbers or a dated veto is recorded. Re-check is logged in the lab review register.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "ms",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "ms",
+      "checkedDate": "2026-08-07",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "user-authorised-override",
+      "evidence": "USER-AUTHORISED OVERRIDE, 2026-08-07. Same authorisation as the answers/* entries in this batch. check-locale-parent-tier returned 'hold-stub' for both ms and zh-tw (Tier 3: hold/stub, no spec mirroring). That reasoning was presented to the user before the build and the build was directed anyway. Semrush was out of API units all session so no demand instrument could be run, and no weaker proxy was substituted. Locale tiers are LEFT UNCHANGED — this is a per-batch override in the ledger, not a registry change. Note ms already had a live answers/* page (ms/answers/cara-buat-nama-kosong) with no library or symbol page beneath it, i.e. it was an orphan in this cluster; these two pages give it a parent lane. Bridge, not a pass: complete only when instruments are backfilled or a dated veto is recorded.",
+      "nextRecheck": "2026-09-07",
+      "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed"
     }
   ]
 }

@@ -1,0 +1,164 @@
+{
+  "slug": "invisible-character",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "隱形字元（⠀）：空白名稱、含義與用法 | UltraTextGen",
+  "meta_description": "隱形字元 ⠀（U+2800）完整說明——為什麼它能通過空白名稱的驗證，而其他隱形符號會被過濾掉，以及要怎麼輸入。點一下即可複製。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/invisible-character/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "隱形字元",
+  "hero_h1": "隱形字元（⠀）",
+  "hero_tagline": "空白使用者名稱與暱稱背後那個看起來什麼都沒有的字元——點一下就複製。",
+  "intro": "⠀（U+2800）不是空白字元——它來自 Unicode 的點字圖案（Braille Patterns）區塊，該區塊編碼了一個點字方格的全部 256 種組合，而 U+2800 正是「一個點都沒有」的那一種。這個技術細節就是它有用的原因：驗證程式通常會裁掉真正的空白字元、拒絕只有空白的欄位，卻會把 U+2800 當成一個普通的可列印符號放行。所以它能在遊戲暱稱、Discord 顯示名稱和 Instagram 個人資料裡做出空白名稱，而一般空白鍵做不到。",
+  "date_published": "2026-08-07",
+  "date_modified": "2026-08-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "invisible-character",
+      "label": "隱形字元",
+      "h2": "隱形字元（點字空白）",
+      "intro": "字元本身——看起來是空的，但它是一個真正的 Unicode 字元，可以直接複製。",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank（U+2800）"
+        }
+      ]
+    },
+    {
+      "id": "other-invisible-characters",
+      "label": "別搞混了",
+      "h2": "其他「隱形」字元——以及為什麼選哪一個很重要",
+      "intro": "這些字元看起來也是空的，但面對各平台的驗證機制時，每一個的行為都不一樣。",
+      "symbols": [
+        {
+          "char": "​",
+          "label": "零寬空格（U+200B）——寬度真的是零；很多驗證程式會把它當空白裁掉，所以在 U+2800 成功的地方它常常失敗"
+        },
+        {
+          "char": " ",
+          "label": "不斷行空格（U+00A0）——這是真正的空白字元；幾乎一定會被裁掉或直接拒絕"
+        },
+        {
+          "char": "ㅤ",
+          "label": "諺文填充字元（U+3164）——另一個常用的空白名稱選擇，在某些 U+2800 失效的平台上可用，反之亦然"
+        }
+      ]
+    },
+    {
+      "id": "zero-width-format-characters",
+      "label": "零寬格式字元",
+      "h2": "其他零寬格式字元",
+      "intro": "和零寬空格同一家族——這些是合法的 Unicode 字元，什麼都不顯示，但各自有自己的文字排版用途，不是拿來繞過空白名稱驗證的。",
+      "symbols": [
+        {
+          "char": "‌",
+          "label": "零寬不連字（U+200C）"
+        },
+        {
+          "char": "‍",
+          "label": "零寬連字（U+200D）"
+        },
+        {
+          "char": "⁠",
+          "label": "文字連接符（U+2060）"
+        },
+        {
+          "char": "­",
+          "label": "軟連字號（U+00AD）"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/library/kongbai-fuhao/",
+      "title": "所有空白符號",
+      "desc": "零寬空格、填充字元與點字空白。"
+    },
+    {
+      "href": "/zh-tw/answers/kongbai-mingcheng-zenme-nong/",
+      "title": "空白名稱怎麼弄",
+      "desc": "隱形字元的做法，以及要注意的地方。"
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/invisible-character/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/nevidimyy-simvol/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/karakter-tak-terlihat/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/unsichtbares-schriftzeichen/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/caractere-invisible/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/gorunmez-yazi-karakteri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-carattere-invisibile/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-caractere-invisivel/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/caracter-invisible/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-harf-ghayr-marii/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/mienai-moji/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/tua-akson-long-hon/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/pusty-znak-brajla/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/onzichtbaar-teken/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/invisible-character/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/tumyeong-munja-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/invisible-character/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/symbol/aksara-tak-nampak/"
+    }
+  ]
+}
