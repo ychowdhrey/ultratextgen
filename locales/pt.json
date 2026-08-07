@@ -303,7 +303,7 @@
           },
           {
             "question": "Funciona com acento (á, é, ã, ç, ô)?",
-            "answer": "Os caracteres acentuados (á, é, í, ó, ú, ã, õ, â, ê, ô, ç) costumam ser mantidos como estão na maioria dos estilos, porque o Unicode não tem variante estilizada pra todas as letras com acento. O resto da palavra é convertido normalmente.\n    <br><br>\n    <strong>Dica</strong><br>\n    Se quiser que todas as letras saiam no mesmo estilo (importante pra nick e bio), dá pra escrever sem acento — tipo «nao» no lugar de «não», «coracao» no lugar de «coração». Fica menos correto gramaticalmente mas mais consistente visualmente."
+            "answer": "Os caracteres acentuados (á, é, í, ó, ú, ã, õ, â, ê, ô, ç) são estilizados junto com o resto da palavra na maioria dos estilos: o gerador separa a letra-base do acento, aplica o estilo na letra e devolve o acento por cima — «coração» vira 𝗰𝗼𝗿𝗮𝗰̧𝗮̃𝗼 em negrito. Só alguns poucos estilos (texto de cabeça pra baixo, e letras sem forma acentuada como ł đ ø ß) ainda caem pra letra normal.\n    <br><br>\n    <strong>Dica</strong><br>\n    Não precisa mais tirar os acentos pra manter o visual uniforme — escreve normal, com acento mesmo."
           },
           {
             "question": "Tem app pra baixar ou só funciona no navegador?",
