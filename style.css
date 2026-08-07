@@ -3008,21 +3008,63 @@ button.clear-decoration {
 }
 
 /* Which-format comparison table (was inline-styled in the page HTML) */
+/* Reference tables carry a lot of this site's value, so they get a real
+   style rather than bare padding: row rules for tracking across a wide row,
+   a zebra tint, tabular numerals so figures line up in a column, and a
+   scroll container so a wide table never forces the page sideways on a
+   phone. Numeric columns are opted in with .num. */
+.comparison-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.comparison-table-wrap .comparison-table {
+  margin: 0;
+  min-width: 34rem;
 }
 
 .comparison-table th {
   text-align: left;
-  padding: 0.75rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--border-color, rgba(127, 127, 127, 0.35));
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .comparison-table td {
-  padding: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border-light, rgba(127, 127, 127, 0.18));
+  vertical-align: top;
 }
+
+.comparison-table tbody tr:nth-child(even) {
+  background: var(--border-light, rgba(127, 127, 127, 0.06));
+}
+
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+
+/* Number columns: right-aligned, tabular, and never wrapped mid-figure. */
+.comparison-table th.num,
+.comparison-table td.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* First column is the row's identity — let it keep its own weight. */
+.comparison-table td:first-child { font-weight: 600; }
 
 /* Visible Breadcrumb Navigation */
 .breadcrumbs {
@@ -7233,11 +7275,14 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border: 1px solid transparent;
 }
 .cc-badge-ok { color: var(--ts-safe); border-color: var(--ts-safe); }
+.cc-badge-warn { color: var(--ts-warn, #d99100); border-color: var(--ts-warn, #d99100); }
 .cc-badge-fail { color: var(--ts-fail); border-color: var(--ts-fail); }
 .cc-badge-empty { color: var(--text-muted); }
 .cc-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cc-count.is-over { color: var(--ts-fail); font-weight: 700; }
 .cc-bar {
+  position: relative;
+  overflow: visible;
   height: 6px;
   border-radius: 999px;
   background: var(--border-light);
@@ -7251,6 +7296,17 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   transition: width 0.15s ease;
 }
 .cc-bar-fill.is-over { background: var(--ts-fail); }
+.cc-bar-fill.is-past-fold { background: var(--ts-warn, #d99100); }
+/* Where the feed truncates, marked on the bar itself. */
+.cc-bar-fold {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 10px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--text-secondary);
+}
 .cc-note {
   margin-top: 0.5rem;
   font-size: 0.82rem;
@@ -7381,6 +7437,15 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin-top: 0.6rem;
 }
 
+.counter-footnote {
+  max-width: 900px;
+  margin: 0.75rem auto 0;
+  padding: 0 24px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 /* Fits-everywhere grid */
 .counter-fits { margin-top: 1rem; }
 .counter-fits-head {
@@ -7402,6 +7467,16 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .cc-fit-chip.is-unfit { color: var(--ts-fail); border-color: var(--ts-fail); }
 .cc-fit-chip.is-active { border-color: var(--accent-color, #6c4df6); font-weight: 600; }
 .cc-fit-num { font-variant-numeric: tabular-nums; opacity: 0.85; }
+.cc-fit-toggle {
+  border: none;
+  background: none;
+  padding: 0.25rem 0.4rem;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--accent-color, #6c4df6);
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /* Inline "name check" callout — the game-rules checker rendered as a compact
    live readout inside the generator card (between the input and the decoration

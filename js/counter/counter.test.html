@@ -82,6 +82,9 @@
     undo: "Rückgängig",
     fitsHeading: "Wo dieser Text sonst noch passt",
     segShort: "Seg.",
+    pastFold: "Passt \u2014 abgeschnitten bei {n}",
+    showAllFits: "Alle {n} anzeigen",
+    showFewerFits: "Weniger anzeigen",
     foldHeading: "Was vor \u201eMehr anzeigen\u201c sichtbar ist",
     foldMore: "mehr anzeigen",
     foldMeta: "{shown} von {total} Zeichen sichtbar \u00b7 {hidden} verborgen",
@@ -221,14 +224,18 @@ window.addEventListener("load", function () {
   t("empty text: fit grid hidden", $("#counterFitGrid").hidden, true);
   type("y".repeat(150));
   const chips = $$("#counterFitGrid .cc-fit-chip");
-  t("fit grid renders every rule", chips.length, window.UltraTextGen.counterRules.LIMITS.length);
+  t("fit grid collapses rather than dumping every rule", chips.length, 12);
   t("over-limit chips come first", chips[0].classList.contains("is-unfit"), true);
-  t("headroom chips come last", chips[chips.length - 1].classList.contains("is-fit"), true);
-  const unfit = chips.filter((c) => c.classList.contains("is-unfit"));
+  t("the active destination is always pinned into the collapsed view",
+    chips.some((c) => c.classList.contains("is-active")), true);
+  const unfit = chips.filter((c) => c.classList.contains("is-unfit") && !c.classList.contains("is-active"));
   const dist = unfit.map((c) => Math.abs(parseInt(c.querySelector(".cc-fit-num").textContent.replace(/[^\d]/g, ""), 10)));
   t("over-limit chips ordered nearest-first", dist.slice().sort((a, b) => a - b), dist);
   t("active destination marked", chips.filter((c) => c.classList.contains("is-active")).length, 1);
-  t("chip names use the locale labels", chips.some((c) => c.textContent.indexOf("X-Beitrag") === 0), true);
+  $("#counterFitGrid .cc-fit-toggle").click();
+  t("chip names use the locale labels",
+    $$("#counterFitGrid .cc-fit-chip").some((c) => c.textContent.indexOf("X-Beitrag") === 0), true);
+  $("#counterFitGrid .cc-fit-toggle").click();
 
   /* ---------- 8. SMS is segment-aware end to end ---------- */
   platformSel.value = "sms";
@@ -310,6 +317,53 @@ window.addEventListener("load", function () {
   platformSel.value = "x";
   platformSel.dispatchEvent(new Event("change", { bubbles: true }));
   t("non-folding destination hides the panel", fold.hidden, true);
+
+
+  /* ---------- 12. the three-state badge: the fold is in the readout ---------- */
+  const badge = () => $("#platformChecker .cc-badge");
+  const barFill = () => $("#platformChecker .cc-bar-fill");
+  const foldTick = () => $("#platformChecker .cc-bar-fold");
+  platformSel.value = "linkedin";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  fieldSel.value = "li-post"; fieldSel.dispatchEvent(new Event("change", { bubbles: true }));
+
+  type("A short hook.");
+  t("well inside the fold: green", badge().className.indexOf("cc-badge-ok") > -1, true);
+  t("green state is not amber", badge().className.indexOf("cc-badge-warn") > -1, false);
+
+  type("z".repeat(680));
+  t("fits the limit but past the fold: AMBER, not green",
+    [badge().className.indexOf("cc-badge-warn") > -1, badge().className.indexOf("cc-badge-ok") > -1], [true, false]);
+  t("amber badge names the cut point", badge().textContent.indexOf("140") > -1, true);
+  t("amber badge text is translated", badge().textContent.indexOf("abgeschnitten") > -1, true);
+  t("bar fill goes amber too", barFill().classList.contains("is-past-fold"), true);
+
+  type("z".repeat(3200));
+  t("over the hard limit: red beats amber",
+    [badge().className.indexOf("cc-badge-fail") > -1, badge().className.indexOf("cc-badge-warn") > -1], [true, false]);
+
+  t("fold tick shown on a folding field", foldTick().hidden, false);
+  t("fold tick sits at fold/limit along the bar",
+    Math.abs(parseFloat(foldTick().style.left) - (140 / 3000 * 100)) < 0.01, true);
+  platformSel.value = "x";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("z".repeat(100));
+  t("non-folding field hides the tick", foldTick().hidden, true);
+  t("non-folding field never goes amber", badge().className.indexOf("cc-badge-warn") > -1, false);
+
+  /* ---------- 13. the fit grid no longer dumps 38 chips ---------- */
+  type("z".repeat(150));
+  const chipsNow = () => $$("#counterFitGrid .cc-fit-chip");
+  const toggle = () => $("#counterFitGrid .cc-fit-toggle");
+  t("collapsed by default", chipsNow().length, 12);
+  t("toggle offered", !!toggle(), true);
+  t("toggle is translated and counts the rest", toggle().textContent, "Alle 38 anzeigen");
+  t("collapsed view leads with what is broken", chipsNow()[0].classList.contains("is-unfit"), true);
+  toggle().click();
+  t("expanding shows every rule", chipsNow().length, 38);
+  t("toggle flips to collapse", toggle().textContent, "Weniger anzeigen");
+  toggle().click();
+  t("collapsing again returns to the preview", chipsNow().length, 12);
 
   const summary = (fail ? fail + " FAILED, " : "") + pass + " passed";
   document.getElementById("results").textContent = lines.join("\n") + "\n\n" + summary;

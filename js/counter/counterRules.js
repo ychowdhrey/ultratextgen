@@ -394,7 +394,13 @@
 
     const bar = el("div", "cc-bar");
     const fill = el("div", "cc-bar-fill");
+    /* A tick on the bar where the feed truncates. Without it the bar answers
+       only "will this send", which on a 3,000-character field is a question
+       nobody is asking. */
+    const foldMark = el("span", "cc-bar-fold");
+    foldMark.hidden = true;
     bar.appendChild(fill);
+    bar.appendChild(foldMark);
     mount.appendChild(bar);
 
     const note = el("div", "cc-note");
@@ -437,8 +443,18 @@
       const report = analyze(value, state.limitId);
       const rule = report.rule;
 
-      badge.className = "cc-badge cc-badge-" + (report.glyphs === 0 ? "empty" : report.fits ? "ok" : "fail");
-      badge.textContent = report.glyphs === 0 ? "" : (report.fits ? (text.ok || "Fits ✓") : (text.fail || "Over the limit ✕"));
+      /* Three states, not two. "Fits" and "over the limit" leave out the one
+         that matters most on a feed field: it will post, and almost nobody
+         will read past the cut. That gets its own amber state rather than a
+         green tick and a footnote. */
+      const fold = foldInfo(value, state.limitId);
+      const pastFold = !!(fold && fold.truncated && report.fits);
+      const status = report.glyphs === 0 ? "empty" : !report.fits ? "fail" : pastFold ? "warn" : "ok";
+      badge.className = "cc-badge cc-badge-" + status;
+      badge.textContent = status === "empty" ? ""
+        : status === "fail" ? (text.fail || "Over the limit ✕")
+        : status === "warn" ? fmt(text.pastFold || "Fits — cut at {n} ⚠", { n: fold.at })
+        : (text.ok || "Fits ✓");
 
       count.textContent = report.glyphs.toLocaleString() + " / " + report.limit.toLocaleString();
       count.classList.toggle("is-over", !report.fits);
@@ -446,7 +462,16 @@
       const pct = Math.min(100, (report.glyphs / report.limit) * 100);
       fill.style.width = pct + "%";
       fill.classList.toggle("is-over", !report.fits);
-      fill.classList.toggle("is-close", report.fits && pct >= 90);
+      fill.classList.toggle("is-past-fold", pastFold);
+      fill.classList.toggle("is-close", report.fits && !pastFold && pct >= 90);
+
+      if (fold && rule.limit) {
+        foldMark.hidden = false;
+        foldMark.style.left = Math.min(100, (fold.at / rule.limit) * 100) + "%";
+        foldMark.title = fold.label;
+      } else {
+        foldMark.hidden = true;
+      }
 
       const notes = [];
       if (report.mode === "x-weighted" && report.glyphs > 0) {
