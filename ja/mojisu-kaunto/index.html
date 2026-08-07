@@ -121,9 +121,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"文字数カウントは全角・半角をどう数えますか？","acceptedAnswer":{"@type":"Answer","text":"このツールはUnicodeのコードポイント単位で数えるため、全角も半角も等しく1文字としてカウントします。「あ」も「a」も「ア」も「ｱ」もすべて1文字です。ただし、エントリーシートの入力欄や一部の応募フォームには、半角2文字を1文字（半角＝0.5文字）と数える独自ルールが残っている場合があります。提出先が数え方を指定しているときは、その指定を優先してください。"}},
     {"@type":"Question","name":"原稿用紙換算はどう計算しますか？","acceptedAnswer":{"@type":"Answer","text":"文字数（空白・改行を含む）を400で割った値を「原稿用紙（400字換算）」のタイルに表示します。たとえば1,000文字なら2.5枚です。提出物の枚数として数える場合は端数を切り上げるのが一般的で、1,000文字なら400字詰め原稿用紙3枚分になります。読書感想文・レポート・エントリーシート（400字や800字の指定が多い）の分量確認に使えます。"}},
     {"@type":"Question","name":"X（Twitter）では日本語は何文字まで投稿できますか？","acceptedAnswer":{"@type":"Answer","text":"Xの上限は280カウントですが、日本語・中国語・韓国語の文字と絵文字は1文字＝2カウントで計算されるため、日本語の投稿は実質約140字までです。URLは長さに関係なく常に23カウントされます。上のチェッカーで「X（旧Twitter）ポスト」を選ぶと、Xが実際に使っている重み付きアルゴリズムでカウントできます。"}},
-    {"@type":"Question","name":"スペースや改行は文字数に含まれますか？","acceptedAnswer":{"@type":"Answer","text":"「文字数」タイルはスペース（全角・半角とも）と改行を含んだ数、「文字数（空白除く）」はそれらを除いた数を表示します。X、Instagram、Discordなど多くのプラットフォームはスペースも1文字として数えるため、投稿やプロフィールを制限と照らし合わせるときは空白込みの「文字数」を使ってください。"}},
-    {"@type":"Question","name":"文字数がフォームやアプリの表示と合わないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"サービスによって数える単位が違うためです。多くのサービスはUnicodeのコードポイントで数えますが、HTMLフォームの多くはUTF-16単位（装飾フォントの文字は1文字＝2）、Xは重み付きカウント、Blueskyは書記素（見た目の文字）で数えます。上の「書記素（見た目の文字）」「UTF-16単位」「UTF-8バイト」のタイルを見れば、提出先がどの数え方でも実際の値を照合できます。"}},
-    {"@type":"Question","name":"入力した文章は保存されますか？","acceptedAnswer":{"@type":"Answer","text":"保存されません。カウントはすべてブラウザ内のJavaScriptだけで完結し（クライアントサイドのみ）、入力した文章がサーバーへ送信・記録・保存されることは一切ありません。会員登録も不要で、完全無料で使えます。"}}
+    {"@type":"Question","name":"スペースや改行は文字数に含まれますか？","acceptedAnswer":{"@type":"Answer","text":"「文字数」タイルはスペース（全角・半角とも）と改行を含んだ数、「文字数（空白除く）」はそれらを除いた数を表示します。X、Instagram、Discordなど多くのプラットフォームはスペースも1文字として数えるため、投稿やプロフィールを制限と照らし合わせるときは空白込みの「文字数」を使ってください。空白除きの数値は、提出先が明示的に「空白を除く」と指定している場合だけ使ってください。"}},
+    {"@type":"Question","name":"文字数がフォームやアプリの表示と合わないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"数える単位が違うためです。日本語で最も多い原因は、日本語1文字＝1コードポイント＝1 UTF-16単位だが、UTF-8では3バイトという差です。文字数で制限しているサービスでは余裕があっても、バイト数で制限しているデータベース項目や業務システム、Amazonの商品情報欄などでは3倍の勢いで枠を消費するため「長すぎます」と弾かれます。たとえば255バイトの項目に入る日本語は85文字だけです。これに加えてXは重み付きカウント（日本語1文字＝2）、Blueskyは書記素で数えます。上の「書記素（見た目の文字）」「UTF-16単位」「UTF-8バイト」のタイルを見れば、提出先がどの単位で数えていても実際の値を照合できます。"}},
+    {"@type":"Question","name":"絵文字は1文字として数えられますか？","acceptedAnswer":{"@type":"Answer","text":"ほとんどの場合そうはなりません。単純な絵文字は1コードポイントですがUTF-16では2単位、肌色付きや結合絵文字（家族の絵文字など）は4単位・7単位以上になることもあります。Xでは絵文字1つが2カウント、SMSでは絵文字1つ入れるだけで1通あたりの上限が変わります。「書記素（見た目の文字）」タイルが見た目の個数、「文字数」と「UTF-16単位」が実際に消費される量です。"}},
+    {"@type":"Question","name":"文字数を制限内に収めるにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"オーバーすると、そのプラットフォーム自身の単位で「何をどれだけ削れるか」を提示します。装飾フォントの英数字を通常の文字に戻す、絵文字を削除する、全角引用符やダッシュを半角に直す、連続スペースをまとめる、ハッシュタグを外す、単語の切れ目で切り詰める、といった選択肢です。どれもワンクリックで適用でき、取り消しもできるので、本文を書き直す前にいちばん犠牲の少ない方法から試せます。"}},
+    {"@type":"Question","name":"装飾フォントの文字は多くカウントされますか？","acceptedAnswer":{"@type":"Answer","text":"通常の2倍が目安です。太字・筆記体・ゴシックなどの装飾されたUnicodeの英数字はU+FFFFより上の領域にあるため、見た目1文字あたりUTF-16で2単位、UTF-8で4バイト、Xの280枠のうち2を消費します。装飾フォント10文字の名前が12文字制限の入力欄に弾かれるのはこのためです。貼り付けて「装飾フォントの英数字を通常の文字に戻す」を押せば、その差をその場で取り戻せます。なおこの変換の対象は英数字だけで、日本語（ひらがな・カタカナ・漢字）はそのまま残ります。"}},
+    {"@type":"Question","name":"見えない文字もカウントされますか？","acceptedAnswer":{"@type":"Answer","text":"カウントされます。見た目と文字数が合わない原因として最も多いのがこれです。ゼロ幅スペース、BOM、他のアプリからコピーしたときに紛れ込む埋め草文字は、何も表示しないまま制限枠を消費します。このツールはそれらをテキストボックスのすぐ下に表示し、ワンクリックで削除できます。"}},
+    {"@type":"Question","name":"入力した文章は保存されますか？","acceptedAnswer":{"@type":"Answer","text":"保存されません。カウント・判定・修正はすべてブラウザ内のJavaScriptだけで完結し（クライアントサイドのみ）、入力した文章がサーバーへ送信・記録・保存されることは一切ありません。会員登録も不要で、完全無料で使えます。"}}
   ]
 }
 </script>
@@ -161,23 +165,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>下のボックスに文章を入力または貼り付けると、文字数（空白込み・空白除く）、行数、段落数、読了時間、400字詰め原稿用紙の換算枚数がすべて即座に更新されます。送信ボタンはなく、入力内容がアップロードされることもありません — すべての数値はブラウザ内だけで計算されます。カウンターの下のドロップダウンからプラットフォームを選ぶと、いまの文章がその制限に収まるか、あと何文字残っているか（または何文字オーバーしているか）をリアルタイムで確認できます。数え終えた文章をおしゃれなUnicodeフォントにしたいときは、<a href="/ja/">UltraTextGenのフォント変換</a>が100種類以上のコピペ対応スタイルに変換します。</p>
+      <p>まずボックスのすぐ上で投稿先を選び、文章を入力または貼り付けてください。文字数（空白込み・空白除く）、行数、段落数、読了時間、400字詰め原稿用紙の換算枚数がすべて即座に更新され、チェッカーは選んだ投稿先が実際に使っている数え方でカウントして、残り文字数（またはオーバー分）を表示します。オーバーした場合もそこで終わりません — 何をどれだけ削れば収まるかを削減量つきで提示し、どれもワンクリックで適用・取り消しできます。送信ボタンはなく、入力内容がアップロードされることもありません — すべての数値はブラウザ内だけで計算されます。数え終えた文章をおしゃれなUnicodeフォントにしたいときは、<a href="/ja/">UltraTextGenのフォント変換</a>が100種類以上のコピペ対応スタイルに変換します。</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">あなたのテキスト</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">コピー</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>クリア</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="ここに文章を入力または貼り付け…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fold" id="counterFold" hidden></div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statChars">0</span><span class="counter-stat-label">文字数</span></div>
@@ -194,8 +206,80 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8バイト</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">この文章が収まる場所 — すべての制限をリアルタイム判定</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section">
+    <h2>ハードリミットとソフトリミット</h2>
+    <p>「文字数制限」と呼ばれるものには性質の違う2種類があり、オーバーしたときの結果もまったく違います。</p>
+    <table class="comparison-table">
+      <thead><tr><th>種類</th><th>オーバーするとどうなるか</th><th>例</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>ハードリミット</strong><br>（実際の上限）</td>
+          <td>サービス側が受け付けません。投稿できない、名前が保存できない。</td>
+          <td>Xポスト 280 · Discordニックネーム 32 · TikTokユーザーネーム 24 · SMS 1通</td>
+        </tr>
+        <tr>
+          <td><strong>ソフトリミット</strong><br>（折りたたみ）</td>
+          <td>それ以上も入力できますが、「続きを読む」を押さない限り読者には見えません。</td>
+          <td>Instagramキャプションは125以降 · LinkedIn投稿はモバイル約140／PC約210以降 · YouTube説明欄は約157以降</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>多くの人が実際に書きながら意識しているのはソフトリミットのほうなのに、それを表示するカウンターはほとんどありません。LinkedIn投稿は3,000文字入りますが、実際に読まれるのは冒頭のおよそ140文字だけで、残りは誰も押さないタップの向こう側にあります。だから上のツールは折りたたみの位置そのものを描き出します — 入力すると、「もっと見る」の前に表示される文章がそのまま見え、カットラインより後ろは薄く表示され、同じ書き出しが折りたたみのある他の場所でも通用するかどうかまで並べて確認できます。</p>
+    <p>ここで大事なのは、<strong>折りたたみは画面に表示される文字数で決まる</strong>という点です。UTF-8では3バイトを消費する日本語も、折りたたみの計算では1文字は1文字。Instagramの125文字の折りたたみには日本語でもちょうど125文字入り、バイト数のぶん短くなることはありません。バイト数が効いてくるのは「投稿が通るかどうか」を決めるハードリミットの側だけで、折りたたみとは別の話です。</p>
+    <p><strong>どこで折りたたまれるか、デバイス別:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>投稿先</th><th>折りたたみ位置</th><th>書き出しにとっての意味</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn投稿</td>
+          <td>スマホ 約140<br>PC 約210</td>
+          <td>140文字に収めれば両方で生き残ります。この表の中でスマホとPCの差がいちばん大きい場所です。</td>
+        </tr>
+        <tr>
+          <td><a href="/ja/insta-font/">Instagramキャプション</a></td>
+          <td>約125</td>
+          <td>この表でいちばん厳しい折りたたみ。「… 続きを読む」まで、およそ1文しかありません。</td>
+        </tr>
+        <tr>
+          <td>YouTube説明欄</td>
+          <td>約157</td>
+          <td>タイトルの下に「もっと見る」の前まで表示される部分。検索結果に拾われるのも多くはここです。</td>
+        </tr>
+        <tr>
+          <td>Facebook投稿</td>
+          <td>約477</td>
+          <td>いちばん余裕のある折りたたみ。短い段落なら丸ごとカットラインの手前に収まります。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>正直に2点。これらは公表された制限ではなく実際のUIで観測された挙動なので、厳密なしきい値ではなく「確実に表示される目安」として扱ってください。また各サービスは<em>行数</em>でも折りたたむため、冒頭で改行を3回入れれば、どの文字数にも届かないうちに折りたたまれます。書き出しが箇条書きに頼っているなら、実際の投稿画面でも確認してください。</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="counting-modes">
+    <h2>文字数がフォームやアプリの表示と合わない理由</h2>
+    <p>「これは何文字？」の答えは1つではありません。数える単位がサービスごとに違うからです。日本語ユーザーにとって最も重要なのは、<strong>日本語1文字＝1コードポイント＝1 UTF-16単位ですが、UTF-8では3バイト</strong>だという点です。つまり「文字数」で数えれば余裕があるのに、バイト数で制限しているフォームやシステムには弾かれる、ということが起こります。同じ文章に4通りの長さがあると考えてください。</p>
+    <table class="comparison-table">
+      <thead><tr><th>数え方</th><th>何を測っているか</th><th>日本語だとどうなるか</th></tr></thead>
+      <tbody>
+        <tr><td>書記素</td><td>見た目どおりの文字。肌色付きの絵文字も1</td><td>「あ」＝1。Blueskyが採用</td></tr>
+        <tr><td>コードポイント</td><td>Unicodeの文字数 — 👍🏽 は2（手＋肌色）</td><td>「あ」＝1。多くのウェブサービスと、このツールの「文字数」タイル</td></tr>
+        <tr><td>UTF-16単位</td><td>JavaScriptや多くのアプリの内部保存形式</td><td>「あ」＝1だが装飾フォントの英数字は2。HTMLフォームの<code>maxlength</code>、ゲームやアプリのバックエンド</td></tr>
+        <tr><td>UTF-8バイト</td><td>保存サイズ</td><td><strong>「あ」＝3バイト</strong>。データベースの<code>VARCHAR</code>、Amazonの商品情報欄、Steam名、古い業務システムやCSV連携</td></tr>
+      </tbody>
+    </table>
+    <p>この差は実務でそのまま効いてきます。たとえば「255バイトまで」のデータベース項目には、日本語なら85文字しか入りません。上の「書記素（見た目の文字）」「UTF-16単位」「UTF-8バイト」のタイルは入力と同時にすべて更新されるので、フォームが「長すぎます」と言うのにこちらの文字数は足りている、という場面で、そのフォームがどの単位で数えているのかをその場で突き止められます。なお全角・半角の扱いは日本のフォーム特有の論点なので、<a href="#zenkaku-hankaku">全角・半角の数え方</a>で個別に説明しています。</p>
+    <p>この4つに加えて、独自ルールを持つサービスが2つあります。<strong>X（旧Twitter）は文字数ではなく重みで数え</strong>、日本語1文字は2カウントになります（詳しくは<a href="#x-twitter">X（旧Twitter）の文字数</a>）。<strong>SMSは「通数」で数え</strong>、日本語はGSM-7の文字セットに含まれないため常にUnicode扱いとなり、1通70文字（分割時は67文字）に下がります。半角英数字だけで書けば1通160文字です。</p>
+  </section>
 
   <div class="section-divider"></div>
 
@@ -225,26 +309,56 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="limits">
-    <h2>主要プラットフォームの文字数制限一覧</h2>
-    <p>上のチェッカーが使っている代表的な制限に、LINEなど日本でよく使われるサービスを加えた一覧表です。</p>
+    <h2>チェッカーに入っている文字数制限の一覧</h2>
+    <p>上のチェッカーが実際に使っている制限を、そのまま参照表にしたものです。ジャンプ：<a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">各サービスの数え方</a>。</p>
+
+    <h3>投稿・メッセージ</h3>
     <table class="comparison-table">
       <thead><tr><th>プラットフォーム</th><th>上限</th><th>補足</th></tr></thead>
       <tbody>
-        <tr><td>X（旧Twitter）ポスト</td><td>280カウント</td><td>日本語・絵文字は1文字＝2カウントのため実質約140字。URLは常に23カウント</td></tr>
-        <tr><td>Instagram キャプション</td><td>2,200文字</td><td>冒頭数行のあとは「続きを読む」で折りたたまれる</td></tr>
-        <tr><td>Instagram プロフィール（自己紹介）</td><td>150文字</td><td></td></tr>
-        <tr><td>TikTok キャプション</td><td>2,200文字</td><td></td></tr>
-        <tr><td>TikTok 自己紹介</td><td>80文字</td><td></td></tr>
-        <tr><td>LINE ひとこと（ステータスメッセージ）</td><td>500文字</td><td></td></tr>
-        <tr><td>YouTube 説明欄</td><td>5,000文字</td><td></td></tr>
-        <tr><td>YouTube タイトル</td><td>100文字</td><td></td></tr>
-        <tr><td>Discord メッセージ</td><td>2,000文字</td><td>Nitro加入時は4,000文字</td></tr>
-        <tr><td>LinkedIn 投稿</td><td>3,000文字</td><td>フィードでは約200〜700文字で「もっと見る」に折りたたまれる</td></tr>
-        <tr><td>Threads 投稿</td><td>500文字</td><td></td></tr>
-        <tr><td>Telegram メッセージ</td><td>4,096文字</td><td>写真・動画のキャプションは1,024文字</td></tr>
-        <tr><td>SMS（ショートメール）</td><td>1通70文字（日本語）</td><td>日本語はUnicode扱いのため1通70文字。半角英数字のみ（GSM-7）なら160文字</td></tr>
+        <tr id="twitter"><td>X（旧Twitter）ポスト</td><td>280</td><td>重み付きカウント：URLは常に23、日本語・絵文字・装飾フォントは1文字＝2のため日本語では実質約140字</td></tr>
+        <tr id="discord"><td>Discord メッセージ</td><td>2,000</td><td>Nitro加入時は4,000。それより長いと.txt添付に変換される</td></tr>
+        <tr id="instagram"><td>Instagram キャプション</td><td>2,200</td><td>冒頭数行のあとは「続きを読む」で折りたたまれる</td></tr>
+        <tr id="tiktok"><td>TikTok キャプション</td><td>2,200</td><td></td></tr>
+        <tr><td>LinkedIn 投稿</td><td>3,000</td><td>端末により約200〜700文字で「もっと見る」に折りたたまれる</td></tr>
+        <tr><td>Facebook 投稿</td><td>63,206</td><td></td></tr>
+        <tr><td>YouTube 説明欄</td><td>5,000</td><td></td></tr>
+        <tr><td>Pinterest ピン説明文</td><td>500</td><td></td></tr>
+        <tr><td>Telegram メッセージ</td><td>4,096</td><td>写真・動画のキャプションは1,024</td></tr>
+        <tr><td>Threads 投稿</td><td>500</td><td></td></tr>
+        <tr><td>Bluesky 投稿</td><td>300</td><td>コードポイントではなく書記素（見た目の文字）で判定</td></tr>
+        <tr><td>Reddit 投稿タイトル</td><td>300</td><td></td></tr>
+        <tr><td>Zalo 投稿・ステータス</td><td>2,000</td><td></td></tr>
       </tbody>
     </table>
+
+    <h3>プロフィール・自己紹介</h3>
+    <table class="comparison-table">
+      <thead><tr><th>入力欄</th><th>上限</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram プロフィール（自己紹介）</td><td>150</td></tr>
+        <tr><td>TikTok 自己紹介</td><td>80</td></tr>
+        <tr><td>LinkedIn ヘッドライン</td><td>220</td></tr>
+        <tr><td>WhatsApp 自己紹介</td><td>139</td></tr>
+        <tr><td>Telegram 自己紹介</td><td>70</td></tr>
+        <tr><td>VK ステータス</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ユーザーネーム・タイトル・SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>入力欄</th><th>上限</th><th>補足</th></tr></thead>
+      <tbody>
+        <tr><td>Discord ニックネーム</td><td>32</td><td></td></tr>
+        <tr><td>TikTok ユーザーネーム</td><td>24</td><td>半角英数字・アンダースコア・ピリオドのみ</td></tr>
+        <tr><td>Instagram ユーザーネーム</td><td>30</td><td></td></tr>
+        <tr><td>YouTube タイトル</td><td>100</td><td></td></tr>
+        <tr><td>メタタイトル（SEO）</td><td>約60</td><td>Googleはピクセル幅で切るため目安として扱う</td></tr>
+        <tr><td>メタディスクリプション（SEO）</td><td>約155</td><td>同じくピクセル幅で切られる</td></tr>
+        <tr id="sms"><td>SMS（ショートメール）</td><td>160 / 1通</td><td>GSM-7の文字だけの場合。<strong>日本語は必ずUnicode扱いになるため実質1通70文字</strong>（分割時は67文字）</td></tr>
+      </tbody>
+    </table>
+    <p>日本でよく使われるサービスのうち、<strong>LINEのひとこと（ステータスメッセージ）は500文字</strong>です。LINEは上のチェッカーの対象外なので、文字数だけを見て判断してください。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -266,15 +380,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">スペースや改行は文字数に含まれますか？</summary>
-      <p class="faq-answer">「文字数」タイルはスペース（全角・半角とも）と改行を含んだ数、「文字数（空白除く）」はそれらを除いた数を表示します。X、Instagram、Discordなど多くのプラットフォームはスペースも1文字として数えるため、投稿やプロフィールを制限と照らし合わせるときは空白込みの「文字数」を使ってください。</p>
+      <p class="faq-answer">「文字数」タイルはスペース（全角・半角とも）と改行を含んだ数、「文字数（空白除く）」はそれらを除いた数を表示します。X、Instagram、Discordなど多くのプラットフォームはスペースも1文字として数えるため、投稿やプロフィールを制限と照らし合わせるときは空白込みの「文字数」を使ってください。空白除きの数値は、提出先が明示的に「空白を除く」と指定している場合だけ使ってください。</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">文字数がフォームやアプリの表示と合わないのはなぜですか？</summary>
-      <p class="faq-answer">サービスによって数える単位が違うためです。多くのサービスはUnicodeのコードポイントで数えますが、HTMLフォームの多くはUTF-16単位（装飾フォントの文字は1文字＝2）、Xは重み付きカウント、Blueskyは書記素（見た目の文字）で数えます。上の「書記素（見た目の文字）」「UTF-16単位」「UTF-8バイト」のタイルを見れば、提出先がどの数え方でも実際の値を照合できます。</p>
+      <p class="faq-answer">数える単位が違うためです。日本語で最も多い原因は、<strong>日本語1文字＝1コードポイント＝1 UTF-16単位だが、UTF-8では3バイト</strong>という差です。文字数で制限しているサービスでは余裕があっても、バイト数で制限しているデータベース項目や業務システム、Amazonの商品情報欄などでは3倍の勢いで枠を消費するため「長すぎます」と弾かれます。たとえば255バイトの項目に入る日本語は85文字だけです。これに加えてXは重み付きカウント（日本語1文字＝2）、Blueskyは書記素で数えます。上の「書記素（見た目の文字）」「UTF-16単位」「UTF-8バイト」のタイルを見れば、提出先がどの単位で数えていても実際の値を照合できます。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">絵文字は1文字として数えられますか？</summary>
+      <p class="faq-answer">ほとんどの場合そうはなりません。単純な絵文字は1コードポイントですがUTF-16では2単位、肌色付きや結合絵文字（家族の絵文字など）は4単位・7単位以上になることもあります。Xでは絵文字1つが2カウント、SMSでは絵文字1つ入れるだけで1通あたりの上限が変わります。「書記素（見た目の文字）」タイルが見た目の個数、「文字数」と「UTF-16単位」が実際に消費される量です。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">文字数を制限内に収めるにはどうすればいいですか？</summary>
+      <p class="faq-answer">オーバーすると、そのプラットフォーム自身の単位で「何をどれだけ削れるか」を提示します。装飾フォントの英数字を通常の文字に戻す、絵文字を削除する、全角引用符やダッシュを半角に直す、連続スペースをまとめる、ハッシュタグを外す、単語の切れ目で切り詰める、といった選択肢です。どれもワンクリックで適用でき、取り消しもできるので、本文を書き直す前にいちばん犠牲の少ない方法から試せます。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">装飾フォントの文字は多くカウントされますか？</summary>
+      <p class="faq-answer">通常の2倍が目安です。太字・筆記体・ゴシックなどの装飾されたUnicodeの英数字はU+FFFFより上の領域にあるため、見た目1文字あたりUTF-16で2単位、UTF-8で4バイト、Xの280枠のうち2を消費します。装飾フォント10文字の名前が12文字制限の入力欄に弾かれるのはこのためです。貼り付けて「装飾フォントの英数字を通常の文字に戻す」を押せば、その差をその場で取り戻せます。なおこの変換の対象は英数字だけで、日本語（ひらがな・カタカナ・漢字）はそのまま残ります。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">見えない文字もカウントされますか？</summary>
+      <p class="faq-answer">カウントされます。見た目と文字数が合わない原因として最も多いのがこれです。ゼロ幅スペース、BOM、他のアプリからコピーしたときに紛れ込む埋め草文字は、何も表示しないまま制限枠を消費します。このツールはそれらをテキストボックスのすぐ下に表示し、ワンクリックで削除できます。</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">入力した文章は保存されますか？</summary>
-      <p class="faq-answer">保存されません。カウントはすべてブラウザ内のJavaScriptだけで完結し（クライアントサイドのみ）、入力した文章がサーバーへ送信・記録・保存されることは一切ありません。会員登録も不要で、完全無料で使えます。</p>
+      <p class="faq-answer">保存されません。カウント・判定・修正はすべてブラウザ内のJavaScriptだけで完結し（クライアントサイドのみ）、入力した文章がサーバーへ送信・記録・保存されることは一切ありません。会員登録も不要で、完全無料で使えます。</p>
     </details>
   </section>
 
@@ -322,6 +452,89 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     xNote: "X/Twitterの実際の重み付きカウント：URLは23文字、絵文字・記号・日中韓の文字は2文字換算",
     smsSegments: "SMS {n}通 · 1通あたり{per}文字（{enc}）",
     smsUnicode: "Unicodeモードに切り替えた文字：{chars}",
+    visibleNote: "表示されるのは冒頭およそ{n}文字までで、それ以降は折りたたまれます — 大事な内容を先に書いてください。",
+    platformLabel: "プラットフォーム",
+    fieldLabel: "入力欄",
+    foldHeading: "「もっと見る」の前に読者が見る部分",
+    foldMore: "もっと見る",
+    foldMeta: "{total}文字中{shown}文字を表示 · {hidden}文字はタップの向こう側",
+    foldRoom: "折りたたみまで、書き出しに使える残り{n}文字",
+    foldDevices: "スマホは{m}文字、PCは{d}文字で折りたたみ。",
+    overBy: "{n}オーバーしています — 対処法を選んでください：",
+    trimToFit: "収まる長さに切り詰める",
+    undo: "元に戻す",
+    applied: "適用しました",
+    fitsHeading: "この文章が収まる場所",
+    segShort: "通",
+    inspectStyled: "装飾フォントの英数字が{n}文字 — Xや多くのアプリの入力欄では1文字あたり2カウントされます。",
+    inspectInvisible: "見えないのにカウントされる文字が{n}個あります。",
+    inspectCombining: "重ねがけされた結合記号が{n}個あります。",
+    reducers: {
+      "plain": "装飾フォントの英数字を通常の文字に戻す",
+      "invisible": "見えない文字を削除",
+      "combining": "重ねがけの結合記号を削除",
+      "emoji": "絵文字を削除",
+      "quotes": "引用符とダッシュを半角に直す",
+      "spaces": "連続スペースをまとめる",
+      "blanklines": "連続する空行をまとめる",
+      "hashtags": "ハッシュタグを削除",
+      "gsm-safe": "SMS向けに整える（1通160文字に戻す）"
+    },
+    reducerHints: {
+      "plain": "装飾された英数字は多くの入力欄で1文字あたり2カウントされます。日本語の文字はそのまま残ります。",
+      "invisible": "ゼロ幅スペースなど、見えないのに入力欄にはカウントされる文字。",
+      "combining": "グリッチ／ザルゴの記号は1個につき1文字増えます。",
+      "emoji": "絵文字はXで2カウント、SMSでは1通70文字の上限に切り替わる原因になります。",
+      "quotes": "全角の引用符やダッシュはSMSのGSM-7を壊す代表的な原因です。",
+      "spaces": "連続するスペースと行末の余分な空白。",
+      "blanklines": "3行以上続く空行。",
+      "hashtags": "ハッシュタグは本文ではなくコメント欄へ移しましょう。"
+    },
+    platforms: {
+      "x": "X（旧Twitter）",
+      "sms": "SMS（ショートメール）",
+      "seo": "Google検索結果"
+    },
+    fields: {
+      "x-post": "ポスト",
+      "x-bio": "自己紹介",
+      "x-name": "表示名",
+      "ig-caption": "キャプション",
+      "ig-bio": "プロフィール（自己紹介）",
+      "ig-username": "ユーザーネーム",
+      "ig-alt": "代替テキスト",
+      "tiktok-caption": "キャプション",
+      "tiktok-bio": "自己紹介",
+      "tiktok-username": "ユーザーネーム",
+      "li-post": "投稿",
+      "li-headline": "ヘッドライン",
+      "li-about": "自己紹介（About）",
+      "li-comment": "コメント",
+      "yt-title": "動画タイトル",
+      "yt-description": "説明欄",
+      "yt-comment": "コメント",
+      "fb-post": "投稿",
+      "discord-message": "メッセージ",
+      "discord-nick": "ニックネーム",
+      "discord-status": "カスタムステータス",
+      "telegram-message": "メッセージ",
+      "telegram-caption": "写真・動画キャプション",
+      "telegram-bio": "自己紹介",
+      "threads-post": "投稿",
+      "threads-bio": "自己紹介",
+      "bluesky-post": "投稿",
+      "bluesky-bio": "自己紹介",
+      "reddit-title": "投稿タイトル",
+      "reddit-comment": "コメント",
+      "pinterest-description": "ピン説明文",
+      "pinterest-title": "ピンタイトル",
+      "whatsapp-about": "自己紹介",
+      "vk-status": "ステータス",
+      "zalo-post": "投稿・ステータス",
+      "sms": "本文",
+      "meta-title": "メタタイトル",
+      "meta-description": "メタディスクリプション"
+    },
     groups: {
       posts: "投稿・メッセージ",
       bios: "プロフィール・自己紹介",
@@ -330,18 +543,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     labels: {
       "x-post": "X（旧Twitter）ポスト",
+      "x-bio": "X（旧Twitter）自己紹介",
+      "x-name": "X（旧Twitter）表示名",
       "discord-message": "Discordメッセージ",
+      "discord-status": "Discordカスタムステータス",
       "ig-caption": "Instagramキャプション",
+      "ig-alt": "Instagram代替テキスト",
       "tiktok-caption": "TikTokキャプション",
       "li-post": "LinkedIn投稿",
+      "li-about": "LinkedIn自己紹介（About）",
+      "li-comment": "LinkedInコメント",
       "fb-post": "Facebook投稿",
       "yt-description": "YouTube説明欄",
+      "yt-comment": "YouTubeコメント",
       "pinterest-description": "Pinterestピン説明文",
+      "pinterest-title": "Pinterestピンタイトル",
       "telegram-message": "Telegramメッセージ",
       "telegram-caption": "Telegram写真・動画キャプション",
       "threads-post": "Threads投稿",
+      "threads-bio": "Threads自己紹介",
       "bluesky-post": "Bluesky投稿",
+      "bluesky-bio": "Bluesky自己紹介",
       "reddit-title": "Reddit投稿タイトル",
+      "reddit-comment": "Redditコメント",
       "zalo-post": "Zalo投稿・ステータス",
       "ig-bio": "Instagramプロフィール（自己紹介）",
       "tiktok-bio": "TikTok自己紹介",
@@ -363,6 +587,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

@@ -114,16 +114,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "inLanguage": "fi",
   "mainEntity": [
     {"@type":"Question","name":"Miten lasken sanat ja merkit verkossa?","acceptedAnswer":{"@type":"Answer","text":"Kirjoita tai liitä teksti yllä olevaan kenttään. Sanamäärä, merkkimäärä (välilyöntien kanssa ja ilman), virkkeiden ja kappaleiden määrä sekä arvioitu lukuaika päivittyvät heti kirjoittaessasi — lähetysnappia ei ole, eikä mitään kirjoittamaasi lähetetä tai tallenneta."}},
-    {"@type":"Question","name":"Lasketaanko merkit välilyöntien kanssa vai ilman?","acceptedAnswer":{"@type":"Answer","text":"Molemmat näkyvät rinnakkain: “Merkit” sisältää jokaisen välilyönnin ja “Merkit (ilman välilyöntejä)” jättää tyhjämerkit pois. Useimmat palvelurajat (X, Instagram, Discord) laskevat välilyönnit tavallisina merkkeinä, joten käytä välilyönnit sisältävää lukua, kun tarkistat julkaisua tai biota rajaa vasten."}},
-    {"@type":"Question","name":"Mikä on X:n (Twitterin) merkkiraja?","acceptedAnswer":{"@type":"Answer","text":"280 merkkiä julkaisua kohti tavallisilla tileillä, mukaan lukien välilyönnit, linkit ja aihetunnisteet (linkki lasketaan noin 23 merkiksi, vaikka se näkyisi lyhyempänä). Valitse alla olevasta tarkistimesta “X / Twitter post” nähdäksesi heti, mahtuuko tekstisi."}},
-    {"@type":"Question","name":"Mikä on Instagramin kuvatekstin ja bion merkkiraja?","acceptedAnswer":{"@type":"Answer","text":"Instagram-kuvateksti voi olla enintään 2 200 merkkiä, vaikka vain parin ensimmäisen rivin jälkeen se katkeaa “lisää”-linkkiin. Bio-kenttä on paljon lyhyempi: 150 merkkiä. Molemmat löytyvät alla olevasta tarkistimesta."}},
-    {"@type":"Question","name":"Mikä on LinkedInin julkaisun ja otsikon merkkiraja?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn-julkaisuun mahtuu 3 000 merkkiä, mutta syöte katkaisee sen “näytä lisää” -linkkiin noin 200–700 merkin jälkeen laitteesta riippuen. Otsikkokentän raja on 220 merkkiä."}},
-    {"@type":"Question","name":"Mikä on TikTokin kuvatekstin ja käyttäjätunnuksen merkkiraja?","acceptedAnswer":{"@type":"Answer","text":"TikTok-kuvatekstiin mahtuu 2 200 merkkiä. Bion raja on 80 merkkiä ja käyttäjätunnus voi olla enintään 24 merkkiä (vain kirjaimet, numerot, alaviivat ja pisteet)."}},
-    {"@type":"Question","name":"Mikä on hyvä otsikon ja kuvauksen pituus hakukoneoptimoinnissa?","acceptedAnswer":{"@type":"Answer","text":"Google katkaisee tekstin pikselileveyden mukaan eikä tarkan merkkimäärän perusteella, mutta käytännön ohjeena pidä sivun otsikko noin 60 merkissä ja metakuvaus noin 155 merkissä, jotta ne eivät katkea hakutuloksissa."}},
-    {"@type":"Question","name":"Miten ä, ö ja emojit lasketaan?","acceptedAnswer":{"@type":"Answer","text":"Tämä laskuri laskee Unicode-koodipisteinä, mikä vastaa tapaa, jolla käytännössä kaikki nykyiset palvelut laskevat. Skandit ä, ö ja å ovat kukin yksi merkki, joten ne eivät kuluta rajaa enempää kuin muutkaan kirjaimet. Emoji voi sen sijaan viedä useamman merkin, jos se koostuu useasta koodipisteestä — esimerkiksi perhe- tai lippuemojit."}},
-    {"@type":"Question","name":"Lyhentävätkö ä ja ö tekstiviestin?","acceptedAnswer":{"@type":"Answer","text":"Eivät — ä, ö ja å kuuluvat tekstiviestien GSM-merkistöön, joten viestiin mahtuu niiden kanssa edelleen 160 merkkiä. Sen sijaan emoji tai kaareva lainausmerkki pudottaa koko viestin Unicode-tilaan, jolloin yhteen osaan mahtuu vain 70 merkkiä. Tarkistimen tekstiviestivalinta näyttää, mikä merkki muutoksen aiheutti."}},
-    {"@type":"Question","name":"Miksi tyylitelty kirjain lasketaan kahdeksi merkiksi?","acceptedAnswer":{"@type":"Answer","text":"Tyylitellyt Unicode-kirjaimet (lihavoitu, kaunokirjoitus, goottilainen…) sijaitsevat enimmäkseen Unicoden lisätasoilla, joten jokainen näkyvä kirjain vie 2 UTF-16-yksikköä, 4 UTF-8-tavua ja 2 X:n 280 merkin budjetista. Liitä tyylitelty teksti yllä olevaan laskuriin, niin näet sen todellisen hinnan jokaisessa laskentatavassa."}},
-    {"@type":"Question","name":"Onko laskuri ilmainen, ja tallennetaanko tekstini?","acceptedAnswer":{"@type":"Answer","text":"Kyllä, täysin ilmainen ilman rekisteröitymistä. Jokainen laskenta tapahtuu selaimessasi tavallisella JavaScriptillä — mitään kirjoittamaasi ei lähetetä, kirjata tai tallenneta minnekään."}}
+    {"@type":"Question","name":"Lasketaanko välilyönnit merkeiksi?","acceptedAnswer":{"@type":"Answer","text":"Kyllä, käytännössä kaikkialla. Välilyönti on tavallinen merkki: se vie yhden X:n 280 merkistä, yhden Instagram-bion 150:stä ja yhden septetin tekstiviestistä. Siksi laskuri näyttää rinnakkain “Merkit” ja “Merkit (ilman välilyöntejä)”: käytä välilyönnit sisältävää lukua kaikkiin palvelurajoihin, ja välilyönnitöntä vain silloin kun asiakas tai toimeksianto nimenomaan pyytää sitä — se on laskutuskäytäntö, ei tekninen sääntö."}},
+    {"@type":"Question","name":"Miten ä, ö ja emojit lasketaan?","acceptedAnswer":{"@type":"Answer","text":"Skandit ä, ö ja å ovat kukin yksi koodipiste ja painavat myös X:n painotetussa laskennassa 1, joten ne eivät kuluta rajaa enempää kuin muutkaan kirjaimet. Emoji sen sijaan harvoin maksaa yhden: tavallinen emoji on yleensä 1 koodipiste mutta 2 UTF-16-yksikköä, ja ihonsävyllinen tai useasta osasta yhdistetty emoji (kuten perhe-emoji) voi olla 4, 7 tai enemmän. X:ssä jokainen emoji vie 2 merkkiä 280:stä. “Grafeemit”-luku kertoo mitä näet, “Merkit” ja “UTF-16-yksiköt” sen mitä kenttä veloittaa."}},
+    {"@type":"Question","name":"Miksi palvelu väittää tekstiä liian pitkäksi, vaikka laskuri sanoo sen mahtuvan?","acceptedAnswer":{"@type":"Answer","text":"Koska te laskette eri yksiköissä. Useimmat palvelut laskevat Unicode-koodipisteitä, mutta HTML-lomakkeiden kentät ja moni sovellus laskevat UTF-16-yksiköitä — siellä tyylitelty kirjain maksaa 2 — Amazonin tuotekentät laskevat UTF-8-tavuja ja X laskee painotetusti. Valitse tekstikentän yläpuolelta, minne teksti on menossa, niin laskuri laskee sen täsmälleen niin kuin kohde laskee yhden yleisluvun sijaan."}},
+    {"@type":"Question","name":"Miten saan tekstin mahtumaan rajaan?","acceptedAnswer":{"@type":"Answer","text":"Kun menet yli, laskuri näyttää mitä kannattaa karsia — ja kuinka paljon kukin vaihtoehto säästää juuri sen palvelun omassa laskentayksikössä: muunna tyylitelty Unicode tavalliseksi tekstiksi, poista emojit, suorista kaarevat lainausmerkit ja ajatusviivat, yhdistä kaksoisvälilyönnit, poista aihetunnisteet tai katkaise teksti sanan rajalta. Jokainen on yhden klikkauksen takana ja jokainen on peruttavissa, joten voit kokeilla halvinta korjausta ennen kuin alat kirjoittaa tekstiä uusiksi."}},
+    {"@type":"Question","name":"Miksi tyylitelty kirjain lasketaan kahdeksi merkiksi?","acceptedAnswer":{"@type":"Answer","text":"Tyylitellyt Unicode-kirjaimet (lihavoitu, kaunokirjoitus, goottilainen…) sijaitsevat enimmäkseen Unicoden lisätasoilla, joten jokainen näkyvä kirjain vie 2 UTF-16-yksikköä, 4 UTF-8-tavua ja 2 X:n 280 merkin budjetista. Kymmenkirjaiminen tyylitelty nimi voi siksi kaatua 12 merkin peliprofiiliin. Liitä teksti laskuriin ja käytä korjausta “Muunna tyylitelty teksti tavalliseksi”, niin näet ja saat eron takaisin heti."}},
+    {"@type":"Question","name":"Lasketaanko näkymättömät merkit mukaan?","acceptedAnswer":{"@type":"Answer","text":"Kyllä, ja se on yleisin syy siihen että merkkimäärä on arvoituksellisesti isompi kuin miltä teksti näyttää. Nollanlevyiset välilyönnit, tavujärjestysmerkit ja muista sovelluksista liitetyt täytemerkit syövät rajaasi näyttämättä ruudulla mitään. Laskuri merkitsee ne tekstikentän alle ja poistaa ne yhdellä klikkauksella."}},
+    {"@type":"Question","name":"Lyhentävätkö ä ja ö tekstiviestin?","acceptedAnswer":{"@type":"Answer","text":"Eivät — ä, ö ja å kuuluvat tekstiviestien GSM-merkistöön, joten viestiin mahtuu niiden kanssa edelleen 160 merkkiä. Sen sijaan emoji tai kaareva lainausmerkki pudottaa koko viestin Unicode-tilaan, jolloin yhteen osaan mahtuu vain 70 merkkiä. Tarkistimen tekstiviestivalinta näyttää, mikä merkki muutoksen aiheutti, ja “Tee tekstiviestiystävälliseksi” -korjaus poistaa ne yhdellä klikkauksella."}},
+    {"@type":"Question","name":"Onko laskuri ilmainen, ja tallennetaanko tekstini?","acceptedAnswer":{"@type":"Answer","text":"Kyllä, täysin ilmainen ilman rekisteröitymistä. Jokainen laskenta, rajatarkistus ja korjaus tapahtuu selaimessasi tavallisella JavaScriptillä — mitään kirjoittamaasi ei lähetetä, kirjata tai tallenneta minnekään."}}
   ]
 }
 </script>
@@ -161,23 +159,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>Kirjoita tai liitä mikä tahansa teksti alla olevaan kenttään, niin jokainen luku päivittyy heti: sanat, merkit (välilyöntien kanssa ja ilman), virkkeet, kappaleet ja arvioitu lukuaika. Mitään ei lähetetä eteenpäin — jokainen luku lasketaan suoraan selaimessasi. Laskurin alta voit valita palvelun ja tarkistaa, mahtuuko nykyinen teksti sen rajaan: näet tarkan merkkimäärän ja sen, montako merkkiä on jäljellä tai montako yli mennään. Tarvitsetko juuri mittaamallesi tekstille tyylikkään Unicode-fontin? <a href="/fi/">UltraTextGenin suomenkielinen generaattori</a> muuntaa sen yli sadaksi kopioitavaksi tyyliksi.</p>
+      <p>Kirjoita tai liitä mikä tahansa teksti, niin jokainen luku päivittyy heti: sanat, merkit (välilyöntien kanssa ja ilman), virkkeet, kappaleet ja arvioitu lukuaika. Valitse tekstikentän yläpuolelta, minne teksti on menossa — silloin laskuri laskee sen täsmälleen niin kuin kyseinen palvelu laskee ja kertoo, montako merkkiä on jäljellä tai montako yli mennään. Ja jos yli mennään, se kertoo myös mitä kannattaa karsia: yksi klikkaus, ja jokainen korjaus on peruttavissa. Mitään ei lähetetä eteenpäin — jokainen luku lasketaan suoraan selaimessasi. Tarvitsetko juuri mittaamallesi tekstille tyylikkään Unicode-fontin? <a href="/fi/">UltraTextGenin suomenkielinen generaattori</a> muuntaa sen yli sadaksi kopioitavaksi tyyliksi.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">Tekstisi</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">Kopioi</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Tyhjennä</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="Kirjoita tai liitä tekstisi tähän…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fold" id="counterFold" hidden></div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Sanat</span></div>
@@ -193,23 +199,133 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8-tavut</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">Minne tämä teksti vielä mahtuu — reaaliajassa, kaikkiin rajoihin</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section">
-    <h2>Palvelujen merkkirajat selitettynä</h2>
-    <p>Merkkirajoja on kahdenlaisia, ja kannattaa tietää kumpaa vastaan on tekemisissä. <strong>Kovat rajat</strong> — X:n 280 merkkiä, Discordin 32 merkin nimimerkki, TikTokin 24 merkin käyttäjätunnus — ovat palvelun itsensä valvomia: jos menet yli, julkaisua tai tallennusta ei yksinkertaisesti hyväksytä. <strong>Pehmeät eli käytännön rajat</strong> — Googlen metakuvaus, YouTuben kuvaus ennen “näytä lisää” -linkkiä, LinkedIn-julkaisu ennen katkaisua — eivät estä kirjoittamasta pidempään, mutta rajan ylittävä osa piiloutuu useimmilta lukijoilta, ellei niitä erikseen avata. Yllä oleva tarkistin käyttää kunkin palvelun todellista kovaa tai virallisesti dokumentoitua rajaa; pehmeissä rajoissa (sivun otsikko ja metakuvaus, YouTube, LinkedIn) lukua kannattaa pitää mittana siitä, kuinka paljon näkyy luotettavasti, ei seinänä jota ei voi ylittää.</p>
-    <p>Yksi asia yllättää monet: osa palveluista laskee enemmän kuin odottaisi. X-julkaisussa oleva verkko-osoite lasketaan noin 23 merkiksi riippumatta siitä, kuinka pitkä linkki oikeasti on. Emojit ja tarkkeelliset kirjaimet voivat laskeutua useammaksi kuin yhdeksi merkiksi sen mukaan, miten palvelun laskuri on sisäisesti toteutettu — tämä työkalu laskee Unicode-koodipisteinä, mikä vastaa käytännössä kaikkien nykyisten palvelujen laskutapaa. Suomenkielisen kirjoittajan kannalta olennaisin seuraus on rauhoittava: ä, ö ja å ovat kukin yksi koodipiste, joten skandit eivät kuluta merkkirajaa sen enempää kuin muutkaan kirjaimet.</p>
+    <h2>Kovat ja pehmeät rajat</h2>
+    <p>“Merkkiraja” tarkoittaa kahta eri asiaa, ja siitä riippuu, mitä rajan ylittäminen oikeasti maksaa.</p>
+    <table class="comparison-table">
+      <thead><tr><th>Tyyppi</th><th>Mitä tapahtuu, jos menet yli</th><th>Esimerkkejä</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Kova raja</strong></td>
+          <td>Palvelu hylkää tekstin. Julkaisu ei lähde, nimi ei tallennu.</td>
+          <td>X-julkaisu 280 · Discord-nimimerkki 32 · TikTok-käyttäjätunnus 24 · tekstiviestin osa</td>
+        </tr>
+        <tr>
+          <td><strong>Pehmeä raja</strong><br>(katkaisu)</td>
+          <td>Voit kirjoittaa pidempäänkin, mutta lukijat eivät näe loppua ennen kuin avaavat “lisää”.</td>
+          <td>Instagram-kuvateksti 125 merkin jälkeen · LinkedIn-julkaisu n. 140 (mobiili) / 210 (työpöytä) jälkeen · YouTube-kuvaus n. 157 jälkeen</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Pehmeä raja on se, jota useimmat oikeasti kirjoittavat vastaan, eikä juuri mikään laskuri näytä sitä. LinkedIn-julkaisuun mahtuu 3 000 merkkiä ja niistä noin 140 on käyttökelpoisia: loput jäävät napautuksen taakse, jota kukaan ei tee. Siksi yllä oleva työkalu piirtää katkaisukohdan suoraan näkyviin — kirjoita kenttään, niin näet täsmälleen sen tekstin, joka näkyy ennen “näytä lisää” -linkkiä, loppuosan himmennettynä katkaisuviivan takana, ja sen, kestääkö sama aloitus katkaisun myös muissa syötteissä.</p>
+    <p><strong>Missä kohtaa kukin syöte katkaisee, ja millä laitteella:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Syöte</th><th>Katkaisee kohdassa</th><th>Mitä se tarkoittaa aloitukselle</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn-julkaisu</td>
+          <td>~140 puhelimessa<br>~210 työpöydällä</td>
+          <td>Kirjoita aloitus 140 merkkiin, niin se kestää molemmissa. Tässä on listan suurin ero puhelimen ja työpöydän välillä.</td>
+        </tr>
+        <tr>
+          <td><a href="/fi/instagram-fontit/">Instagram-kuvateksti</a></td>
+          <td>~125</td>
+          <td>Listan tiukin katkaisu — noin yksi virke ennen kuin tulee “… lisää”.</td>
+        </tr>
+        <tr>
+          <td>YouTube-kuvaus</td>
+          <td>~157</td>
+          <td>Se osa, joka näkyy otsikon alla ennen “Näytä lisää” -painiketta; usein myös se, minkä haku nostaa esiin.</td>
+        </tr>
+        <tr>
+          <td>Facebook-julkaisu</td>
+          <td>~477</td>
+          <td>Listan armollisin katkaisu — kokonainen lyhyt kappale ehtii ennen katkaisua.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Kaksi rehellistä varausta. Nämä ovat käyttöliittymästä havaittua käytöstä, eivät julkaistuja rajoja, joten pidä niitä pikemminkin “sinä määränä, joka luotettavasti näkyy” kuin tarkkoina kynnyksinä — ja syötteet katkaisevat myös <em>rivimäärän</em> perusteella, joten kolme rivinvaihtoa heti alussa voi katkaista julkaisun kauas ennen mitään merkkilukua. Jos aloituksesi nojaa listaan, kokeile se myös oikeassa julkaisukentässä.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="limits">
+    <h2>Kaikki tarkistimen merkkirajat</h2>
+    <p>Samat rajat, joita yllä oleva tarkistin käyttää, taulukkona. Siirry kohtaan: <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">tekstiviesti</a> · <a href="#counting-modes">miten kukin palvelu laskee</a>.</p>
+
+    <h3>Julkaisut ja viestit</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Palvelu</th><th>Raja</th><th>Huomioita</th></tr></thead>
+      <tbody>
+        <tr id="twitter"><td>X / Twitter -julkaisu</td><td>280</td><td>Painotettu laskenta: jokainen linkki = 23, useimmat emojit, symbolit ja tyylitellyt kirjaimet = 2 — katso <a href="#counting-modes">miten X laskee</a></td></tr>
+        <tr id="discord"><td>Discord-viesti</td><td>2 000</td><td>Nitrolla 4 000; pidemmästä viestistä tulee .txt-liite</td></tr>
+        <tr id="instagram"><td>Instagram-kuvateksti</td><td>2 200</td><td>Katkeaa ensimmäisten rivien jälkeen “lisää”-linkkiin</td></tr>
+        <tr id="tiktok"><td>TikTok-kuvateksti</td><td>2 200</td><td></td></tr>
+        <tr><td>LinkedIn-julkaisu</td><td>3 000</td><td>“Näytä lisää” katkaisee laitteesta riippuen noin 200–700 merkin kohdalla</td></tr>
+        <tr><td>Facebook-julkaisu</td><td>63 206</td><td></td></tr>
+        <tr><td>YouTube-kuvaus</td><td>5 000</td><td></td></tr>
+        <tr><td>Pinterestin pinin kuvaus</td><td>500</td><td></td></tr>
+        <tr><td>Telegram-viesti</td><td>4 096</td><td>Kuvan tai videon tekstille 1 024</td></tr>
+        <tr><td>Threads-julkaisu</td><td>500</td><td></td></tr>
+        <tr><td>Bluesky-julkaisu</td><td>300</td><td>Lasketaan grafeemeina (sen mukaan mitä näet), ei koodipisteinä</td></tr>
+        <tr><td>Redditin julkaisun otsikko</td><td>300</td><td></td></tr>
+        <tr><td>Zalo-julkaisu/tila</td><td>2 000</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Biot ja profiilit</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Kenttä</th><th>Raja</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram-bio</td><td>150</td></tr>
+        <tr><td>TikTok-bio</td><td>80</td></tr>
+        <tr><td>LinkedIn-otsikko</td><td>220</td></tr>
+        <tr><td>WhatsAppin tiedot</td><td>139</td></tr>
+        <tr><td>Telegram-bio</td><td>70</td></tr>
+        <tr><td>VK-tila</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Käyttäjätunnukset, otsikot ja tekstiviesti</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Kenttä</th><th>Raja</th><th>Huomioita</th></tr></thead>
+      <tbody>
+        <tr><td>Discord-nimimerkki</td><td>32</td><td></td></tr>
+        <tr><td>TikTok-käyttäjätunnus</td><td>24</td><td>Vain kirjaimet, numerot, alaviivat ja pisteet</td></tr>
+        <tr><td>Instagram-käyttäjätunnus</td><td>30</td><td></td></tr>
+        <tr><td>YouTube-otsikko</td><td>100</td><td></td></tr>
+        <tr><td>Sivun otsikko (SEO)</td><td>~60</td><td>Google katkaisee pikselileveyden mukaan — pidä lukua ohjeena</td></tr>
+        <tr><td>Metakuvaus (SEO)</td><td>~155</td><td>Sama juttu — katkaisu pikselileveyden mukaan</td></tr>
+        <tr id="sms"><td>Tekstiviesti</td><td>160 / osa</td><td>Putoaa 70:een heti kun mukana on yksikin GSM-merkistön ulkopuolinen merkki (emoji, kaareva lainausmerkki, ş, ő…). <strong>Ä, ö ja å eivät ole tällaisia</strong> — ne kuuluvat GSM-merkistöön; katso <a href="#counting-modes">tekstiviestin laskenta</a></td></tr>
+      </tbody>
+    </table>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="counting-modes">
     <h2>Miksi merkkimäärä voi erota alustan laskennasta?</h2>
-    <p>”Montako merkkiä tässä on?” -kysymykseen on useampi oikea vastaus, koska palvelut laskevat eri yksiköissä. Useimmat alustat laskevat Unicode-koodipisteitä — sama tapa kuin tämän työkalun Merkit-luku. HTML-lomakkeiden kentät ja moni sovellus laskevat kuitenkin UTF-16-yksiköitä, jolloin jokainen tyylitelty Unicode-kirjain maksaa 2. X laskee painotetusti: jokainen URL on tasan 23, ja useimmat emojit, symbolit ja tyylitellyt kirjaimet 2 kukin. Tekstiviesti taas lasketaan segmenteittäin: viestiin mahtuu 160 merkkiä niin kauan kuin jokainen merkki kuuluu GSM-aakkostoon — ja suomalaisittain olennaista on, että ä ja ö OVAT siinä mukana eivätkä lyhennä viestiä. Sen sijaan yksi emoji tai tekstinkäsittelystä liitetty kaareva lainausmerkki pudottaa koko viestin Unicode-tilaan: 160 → 70 merkkiä osaa kohti.</p>
-    <p>Kaikki nämä laskentatavat näkyvät reaaliajassa yllä olevissa tilastoissa — Grafeemit, UTF-16-yksiköt ja UTF-8-tavut päivittyvät kirjoittaessasi, joten näet heti, mitä lukua kohdepalvelu käyttää, kun jokin lomake väittää tekstiäsi liian pitkäksi.</p>
+    <p>”Montako merkkiä tässä on?” -kysymykseen on useampi oikea vastaus, koska palvelut laskevat eri yksiköissä. Samalla tekstillä voi olla neljä eri pituutta:</p>
+    <table class="comparison-table">
+      <thead><tr><th>Laskentatapa</th><th>Mitä mittaa</th><th>Kuka käyttää</th></tr></thead>
+      <tbody>
+        <tr><td>Grafeemit</td><td>Sen mitä silmä näkee — ihonsävyllinen emoji on 1</td><td>Bluesky; suunnilleen näin Instagram kohtelee emojeita</td></tr>
+        <tr><td>Koodipisteet</td><td>Unicode-merkit — 👍🏽 on 2 (peukku + ihonsävy)</td><td>Useimmat verkkopalvelut ja tämän työkalun Merkit-luku</td></tr>
+        <tr><td>UTF-16-yksiköt</td><td>Miten JavaScript ja moni sovellus tallentaa tekstin — 𝗹𝗶𝗵𝗮𝘃𝗮𝘁 kirjaimet maksavat 2 kukin</td><td>HTML-lomakkeiden kentät (<code>maxlength</code>), moni peli ja sovelluksen taustajärjestelmä</td></tr>
+        <tr><td>UTF-8-tavut</td><td>Tallennuskoko — ä on 2, 中 on 3, 𝗯 on 4</td><td>Amazonin tuotekentät, Steam-nimet, tietokannat</td></tr>
+      </tbody>
+    </table>
+    <p>Kaikki neljä näkyvät reaaliajassa yllä olevissa tilastoissa, joten kun jokin lomake väittää tekstiäsi liian pitkäksi ja tekstinkäsittelyohjelma on eri mieltä, näet heti kumpaa lukua lomake käyttää. Kaksi kohdetta tarvitsee tämän päälle vielä oman sääntönsä:</p>
+    <p><strong>X / Twitter laskee painolla, ei merkeillä.</strong> X:n itsensä julkaiseman algoritmin mukaan (<code>twitter-text</code>-kirjasto) jokainen URL on tasan 23 ja lähes kaikki U+10FF:n yläpuolelta — kiinalaiset merkit, useimmat emojit ja jokainen “koristeellinen” Unicode-kirjain — painaa <strong>2</strong>. Ä, ö ja å jäävät painon 1 alueelle (U+0000–U+10FF), joten skandit eivät vie X:ssä yhtään enempää tilaa kuin muutkaan kirjaimet. Kokonaan 𝗹𝗶𝗵𝗮𝘃𝗼𝗶𝗱𝘂𝗹𝗹𝗮 tyylillä kirjoitettuun julkaisuun mahtuu sen sijaan vain 140 näkyvää kirjainta 280:n budjetista. Tarkistimen “X / Twitter” -valinta toteuttaa tämän oikean algoritmin.</p>
+    <p><strong>Tekstiviesti lasketaan osissa — mutta ä ja ö eivät ole syyllisiä.</strong> Viestiin mahtuu 160 merkkiä niin kauan kuin jokainen merkki kuuluu vanhaan GSM-7-aakkostoon, ja suomalaisittain tärkein tieto on, että <strong>ä, ö ja å kuuluvat siihen</strong>: suomenkielinen viesti pysyy 160 merkissä ilman mitään temppuja. Sen sijaan yksi emoji, tekstinkäsittelystä liitetty kaareva lainausmerkki (’) tai GSM-merkistön ulkopuolinen tarkkeellinen kirjain pudottaa koko viestin Unicode-tilaan: 70 merkkiä osaa kohti, ja pilkkoutuvassa viestissä 67. Tarkistimen “Tekstiviesti”-valinta havaitsee tämän ja näyttää täsmälleen sen merkin, joka muutoksen aiheutti — ja yhden klikkauksen “Tee tekstiviestiystävälliseksi” -korjaus siivoaa ne pois.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -222,44 +338,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">Kirjoita tai liitä teksti yllä olevaan kenttään. Sanamäärä, merkkimäärä (välilyöntien kanssa ja ilman), virkkeiden ja kappaleiden määrä sekä arvioitu lukuaika päivittyvät heti kirjoittaessasi — lähetysnappia ei ole, eikä mitään kirjoittamaasi lähetetä tai tallenneta.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Lasketaanko merkit välilyöntien kanssa vai ilman?</summary>
-      <p class="faq-answer">Molemmat näkyvät rinnakkain: “Merkit” sisältää jokaisen välilyönnin ja “Merkit (ilman välilyöntejä)” jättää tyhjämerkit pois. Useimmat palvelurajat (X, Instagram, Discord) laskevat välilyönnit tavallisina merkkeinä, joten käytä välilyönnit sisältävää lukua, kun tarkistat julkaisua tai biota rajaa vasten.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Mikä on X:n (Twitterin) merkkiraja?</summary>
-      <p class="faq-answer">280 merkkiä julkaisua kohti tavallisilla tileillä, mukaan lukien välilyönnit, linkit ja aihetunnisteet (linkki lasketaan noin 23 merkiksi, vaikka se näkyisi lyhyempänä). Valitse alla olevasta tarkistimesta “X / Twitter post” nähdäksesi heti, mahtuuko tekstisi.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Mikä on Instagramin kuvatekstin ja bion merkkiraja?</summary>
-      <p class="faq-answer">Instagram-kuvateksti voi olla enintään 2 200 merkkiä, vaikka vain parin ensimmäisen rivin jälkeen se katkeaa “lisää”-linkkiin. Bio-kenttä on paljon lyhyempi: 150 merkkiä. Molemmat löytyvät alla olevasta tarkistimesta.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Mikä on LinkedInin julkaisun ja otsikon merkkiraja?</summary>
-      <p class="faq-answer">LinkedIn-julkaisuun mahtuu 3 000 merkkiä, mutta syöte katkaisee sen “näytä lisää” -linkkiin noin 200–700 merkin jälkeen laitteesta riippuen. Otsikkokentän raja on 220 merkkiä.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Mikä on TikTokin kuvatekstin ja käyttäjätunnuksen merkkiraja?</summary>
-      <p class="faq-answer">TikTok-kuvatekstiin mahtuu 2 200 merkkiä. Bion raja on 80 merkkiä ja käyttäjätunnus voi olla enintään 24 merkkiä (vain kirjaimet, numerot, alaviivat ja pisteet).</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Mikä on hyvä otsikon ja kuvauksen pituus hakukoneoptimoinnissa?</summary>
-      <p class="faq-answer">Google katkaisee tekstin pikselileveyden mukaan eikä tarkan merkkimäärän perusteella, mutta käytännön ohjeena pidä sivun otsikko noin 60 merkissä ja metakuvaus noin 155 merkissä, jotta ne eivät katkea hakutuloksissa.</p>
+      <summary class="faq-question">Lasketaanko välilyönnit merkeiksi?</summary>
+      <p class="faq-answer">Kyllä, käytännössä kaikkialla. Välilyönti on tavallinen merkki: se vie yhden X:n 280 merkistä, yhden Instagram-bion 150:stä ja yhden septetin tekstiviestistä. Siksi laskuri näyttää rinnakkain “Merkit” ja “Merkit (ilman välilyöntejä)”: käytä välilyönnit sisältävää lukua kaikkiin palvelurajoihin, ja välilyönnitöntä vain silloin kun asiakas tai toimeksianto nimenomaan pyytää sitä — se on laskutuskäytäntö, ei tekninen sääntö.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Miten ä, ö ja emojit lasketaan?</summary>
-      <p class="faq-answer">Tämä laskuri laskee Unicode-koodipisteinä, mikä vastaa tapaa, jolla käytännössä kaikki nykyiset palvelut laskevat. Skandit ä, ö ja å ovat kukin yksi merkki, joten ne eivät kuluta rajaa enempää kuin muutkaan kirjaimet. Emoji voi sen sijaan viedä useamman merkin, jos se koostuu useasta koodipisteestä — esimerkiksi perhe- tai lippuemojit.</p>
+      <p class="faq-answer">Skandit ä, ö ja å ovat kukin yksi koodipiste ja painavat myös X:n painotetussa laskennassa 1, joten ne eivät kuluta rajaa enempää kuin muutkaan kirjaimet. Emoji sen sijaan harvoin maksaa yhden: tavallinen emoji on yleensä 1 koodipiste mutta 2 UTF-16-yksikköä, ja ihonsävyllinen tai useasta osasta yhdistetty emoji (kuten perhe-emoji) voi olla 4, 7 tai enemmän. X:ssä jokainen emoji vie 2 merkkiä 280:stä. “Grafeemit”-luku kertoo mitä näet, “Merkit” ja “UTF-16-yksiköt” sen mitä kenttä veloittaa.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Lyhentävätkö ä ja ö tekstiviestin?</summary>
-      <p class="faq-answer">Eivät — ä, ö ja å kuuluvat tekstiviestien GSM-merkistöön, joten viestiin mahtuu niiden kanssa edelleen 160 merkkiä. Sen sijaan emoji tai kaareva lainausmerkki pudottaa koko viestin Unicode-tilaan, jolloin yhteen osaan mahtuu vain 70 merkkiä. Tarkistimen tekstiviestivalinta näyttää, mikä merkki muutoksen aiheutti.</p>
+      <summary class="faq-question">Miksi palvelu väittää tekstiä liian pitkäksi, vaikka laskuri sanoo sen mahtuvan?</summary>
+      <p class="faq-answer">Koska te laskette eri yksiköissä. Useimmat palvelut laskevat Unicode-koodipisteitä, mutta HTML-lomakkeiden kentät ja moni sovellus laskevat UTF-16-yksiköitä — siellä tyylitelty kirjain maksaa 2 — Amazonin tuotekentät laskevat UTF-8-tavuja ja X laskee painotetusti. Valitse tekstikentän yläpuolelta, minne teksti on menossa, niin laskuri laskee sen täsmälleen niin kuin kohde laskee yhden yleisluvun sijaan.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Miten saan tekstin mahtumaan rajaan?</summary>
+      <p class="faq-answer">Kun menet yli, laskuri näyttää mitä kannattaa karsia — ja kuinka paljon kukin vaihtoehto säästää juuri sen palvelun omassa laskentayksikössä: muunna tyylitelty Unicode tavalliseksi tekstiksi, poista emojit, suorista kaarevat lainausmerkit ja ajatusviivat, yhdistä kaksoisvälilyönnit, poista aihetunnisteet tai katkaise teksti sanan rajalta. Jokainen on yhden klikkauksen takana ja jokainen on peruttavissa, joten voit kokeilla halvinta korjausta ennen kuin alat kirjoittaa tekstiä uusiksi.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Miksi tyylitelty kirjain lasketaan kahdeksi merkiksi?</summary>
-      <p class="faq-answer">Tyylitellyt Unicode-kirjaimet (lihavoitu, kaunokirjoitus, goottilainen…) sijaitsevat enimmäkseen Unicoden lisätasoilla, joten jokainen näkyvä kirjain vie 2 UTF-16-yksikköä, 4 UTF-8-tavua ja 2 X:n 280 merkin budjetista. Liitä tyylitelty teksti yllä olevaan laskuriin, niin näet sen todellisen hinnan jokaisessa laskentatavassa.</p>
+      <p class="faq-answer">Tyylitellyt Unicode-kirjaimet (lihavoitu, kaunokirjoitus, goottilainen…) sijaitsevat enimmäkseen Unicoden lisätasoilla, joten jokainen näkyvä kirjain vie 2 UTF-16-yksikköä, 4 UTF-8-tavua ja 2 X:n 280 merkin budjetista. Kymmenkirjaiminen tyylitelty nimi voi siksi kaatua 12 merkin peliprofiiliin. Liitä teksti laskuriin ja käytä korjausta “Muunna tyylitelty teksti tavalliseksi”, niin näet ja saat eron takaisin heti.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Lasketaanko näkymättömät merkit mukaan?</summary>
+      <p class="faq-answer">Kyllä, ja se on yleisin syy siihen että merkkimäärä on arvoituksellisesti isompi kuin miltä teksti näyttää. Nollanlevyiset välilyönnit, tavujärjestysmerkit ja muista sovelluksista liitetyt täytemerkit syövät rajaasi näyttämättä ruudulla mitään. Laskuri merkitsee ne tekstikentän alle ja poistaa ne yhdellä klikkauksella.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Lyhentävätkö ä ja ö tekstiviestin?</summary>
+      <p class="faq-answer">Eivät — ä, ö ja å kuuluvat tekstiviestien GSM-merkistöön, joten viestiin mahtuu niiden kanssa edelleen 160 merkkiä. Sen sijaan emoji tai kaareva lainausmerkki pudottaa koko viestin Unicode-tilaan, jolloin yhteen osaan mahtuu vain 70 merkkiä. Tarkistimen tekstiviestivalinta näyttää, mikä merkki muutoksen aiheutti, ja “Tee tekstiviestiystävälliseksi” -korjaus poistaa ne yhdellä klikkauksella.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Onko laskuri ilmainen, ja tallennetaanko tekstini?</summary>
-      <p class="faq-answer">Kyllä, täysin ilmainen ilman rekisteröitymistä. Jokainen laskenta tapahtuu selaimessasi tavallisella JavaScriptillä — mitään kirjoittamaasi ei lähetetä, kirjata tai tallenneta minnekään.</p>
+      <p class="faq-answer">Kyllä, täysin ilmainen ilman rekisteröitymistä. Jokainen laskenta, rajatarkistus ja korjaus tapahtuu selaimessasi tavallisella JavaScriptillä — mitään kirjoittamaasi ei lähetetä, kirjata tai tallenneta minnekään.</p>
     </details>
   </section>
 
@@ -301,12 +409,93 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     sec: "s",
     min: "min",
     copied: "Kopioitu!",
-    label: "Tarkista teksti palvelun merkkirajaa vasten",
+    label: "Minne t\u00e4m\u00e4 teksti on menossa?",
     ok: "Mahtuu \u2713",
     fail: "Yli rajan \u2715",
     xNote: "Laskettu X:n omalla tavalla: jokainen URL = 23 merkki\u00e4, ja useimmat symbolit, emojit ja tyylitellyt Unicode-kirjaimet = 2 kukin.",
     smsSegments: "Tekstiviestiosia: {n} \u00b7 {per} merkki\u00e4 osaa kohti ({enc})",
     smsUnicode: "Unicode-tilaan siirtymisen aiheutti: {chars}",
+    visibleNote: "Vain noin {n} ensimm\u00e4ist\u00e4 merkki\u00e4 n\u00e4kyy ennen katkaisua \u2014 laita t\u00e4rkein alkuun.",
+    platformLabel: "Palvelu",
+    fieldLabel: "Kentt\u00e4",
+    foldHeading: "Mit\u00e4 lukija n\u00e4kee ennen \u201cn\u00e4yt\u00e4 lis\u00e4\u00e4\u201d -linkki\u00e4",
+    foldMore: "n\u00e4yt\u00e4 lis\u00e4\u00e4",
+    foldMeta: "{shown}/{total} merkki\u00e4 n\u00e4kyviss\u00e4 \u00b7 {hidden} piilossa napautuksen takana",
+    foldRoom: "Aloitusta j\u00e4ljell\u00e4 {n} merkki\u00e4 ennen katkaisua",
+    foldDevices: "Puhelimessa katkaisu on kohdassa {m}, ty\u00f6p\u00f6yd\u00e4ll\u00e4 {d}.",
+    overBy: "Yli rajan {n} merkki\u00e4 \u2014 valitse korjaus:",
+    trimToFit: "Katkaise mahtumaan",
+    undo: "Kumoa",
+    applied: "Tehty",
+    fitsHeading: "Minne t\u00e4m\u00e4 teksti viel\u00e4 mahtuu",
+    segShort: "os.",
+    inspectStyled: "Tyyliteltyj\u00e4 Unicode-kirjaimia: {n} \u2014 kukin maksaa 2 X:ss\u00e4 ja monessa sovelluskent\u00e4ss\u00e4.",
+    inspectInvisible: "N\u00e4kym\u00e4tt\u00f6mi\u00e4 merkkej\u00e4, jotka silti lasketaan: {n}.",
+    inspectCombining: "P\u00e4\u00e4llekk\u00e4isi\u00e4 tarkemerkkej\u00e4: {n}.",
+    reducers: {
+      "plain": "Muunna tyylitelty teksti tavalliseksi",
+      "invisible": "Poista n\u00e4kym\u00e4tt\u00f6m\u00e4t merkit",
+      "combining": "Poista p\u00e4\u00e4llekk\u00e4iset tarkemerkit",
+      "emoji": "Poista emojit",
+      "quotes": "Suorista lainausmerkit ja viivat",
+      "spaces": "Yhdist\u00e4 kaksoisv\u00e4lily\u00f6nnit",
+      "blanklines": "Yhdist\u00e4 tyhj\u00e4t rivit",
+      "hashtags": "Poista aihetunnisteet",
+      "gsm-safe": "Tee tekstiviestiyst\u00e4v\u00e4lliseksi (takaisin 160 merkkiin osaa kohti)"
+    },
+    reducerHints: {
+      "plain": "Tyylitellyt Unicode-kirjaimet maksavat useimmissa kentiss\u00e4 2 yksikk\u00f6\u00e4 kukin.",
+      "invisible": "Nollanlevyiset ja t\u00e4ytemerkit, joita et n\u00e4e mutta kentt\u00e4 laskee.",
+      "combining": "Jokainen glitch- eli zalgo-merkki lis\u00e4\u00e4 yhden merkin.",
+      "emoji": "Emoji maksaa X:ss\u00e4 2 ja pudottaa tekstiviestin 70 merkin osiin.",
+      "quotes": "Kaarevat lainausmerkit ja pitk\u00e4t ajatusviivat kaatavat tekstiviestin GSM-merkist\u00f6n \u2014 toisin kuin \u00e4 ja \u00f6.",
+      "spaces": "Toistuvat v\u00e4lily\u00f6nnit ja rivien lopun tyhj\u00e4 tila.",
+      "blanklines": "Kolme tai useampi per\u00e4kk\u00e4inen rivinvaihto.",
+      "hashtags": "Siirr\u00e4 ne kommenttiin."
+    },
+    platforms: {
+      "seo": "Googlen hakutulos"
+    },
+    fields: {
+      "x-post": "Julkaisu",
+      "x-bio": "Bio",
+      "x-name": "N\u00e4ytt\u00f6nimi",
+      "ig-caption": "Kuvateksti",
+      "ig-bio": "Bio",
+      "ig-username": "K\u00e4ytt\u00e4j\u00e4tunnus",
+      "ig-alt": "Vaihtoehtoinen teksti",
+      "tiktok-caption": "Kuvateksti",
+      "tiktok-bio": "Bio",
+      "tiktok-username": "K\u00e4ytt\u00e4j\u00e4tunnus",
+      "li-post": "Julkaisu",
+      "li-headline": "Otsikko",
+      "li-about": "Tietoja-osio",
+      "li-comment": "Kommentti",
+      "yt-title": "Videon otsikko",
+      "yt-description": "Kuvaus",
+      "yt-comment": "Kommentti",
+      "fb-post": "Julkaisu",
+      "discord-message": "Viesti",
+      "discord-nick": "Nimimerkki",
+      "discord-status": "Oma tila",
+      "telegram-message": "Viesti",
+      "telegram-caption": "Kuvan/videon teksti",
+      "telegram-bio": "Bio",
+      "threads-post": "Julkaisu",
+      "threads-bio": "Bio",
+      "bluesky-post": "Julkaisu",
+      "bluesky-bio": "Bio",
+      "reddit-title": "Julkaisun otsikko",
+      "reddit-comment": "Kommentti",
+      "pinterest-description": "Pinin kuvaus",
+      "pinterest-title": "Pinin otsikko",
+      "whatsapp-about": "Tiedot",
+      "vk-status": "Tila",
+      "zalo-post": "Julkaisu/tila",
+      "sms": "Tekstiviesti",
+      "meta-title": "Sivun otsikko",
+      "meta-description": "Metakuvaus"
+    },
     groups: {
       posts: "Julkaisut",
       bios: "Biot ja profiilit",
@@ -315,6 +504,23 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     labels: {
       "x-post": "X / Twitter -julkaisu",
+      "x-bio": "X / Twitter -bio",
+      "x-name": "X / Twitter -näyttönimi",
+      "ig-alt": "Instagramin vaihtoehtoinen teksti",
+      "li-about": "LinkedInin Tietoja-osio",
+      "li-comment": "LinkedIn-kommentti",
+      "yt-comment": "YouTube-kommentti",
+      "discord-status": "Discordin oma tila",
+      "telegram-caption": "Telegramin kuvan/videon teksti",
+      "threads-bio": "Threads-bio",
+      "bluesky-post": "Bluesky-julkaisu",
+      "bluesky-bio": "Bluesky-bio",
+      "reddit-title": "Redditin julkaisun otsikko",
+      "reddit-comment": "Reddit-kommentti",
+      "pinterest-description": "Pinterestin pinin kuvaus",
+      "pinterest-title": "Pinterestin pinin otsikko",
+      "vk-status": "VK-tila",
+      "zalo-post": "Zalo-julkaisu/tila",
       "discord-message": "Discord-viesti",
       "ig-caption": "Instagram-kuvateksti",
       "tiktok-caption": "TikTok-kuvateksti",
@@ -339,6 +545,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

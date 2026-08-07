@@ -118,17 +118,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@type": "FAQPage",
   "inLanguage": "vi",
   "mainEntity": [
-    {"@type":"Question","name":"Làm sao để đếm từ và ký tự trực tuyến?","acceptedAnswer":{"@type":"Answer","text":"Gõ hoặc dán văn bản của bạn vào ô phía trên. Số từ, số ký tự (có và không có khoảng trắng), số câu, số đoạn văn và thời gian đọc ước tính sẽ tự động cập nhật ngay khi bạn gõ — không cần bấm nút gửi, và không có gì bạn gõ bị tải lên hay lưu trữ."}},
-    {"@type":"Question","name":"Công cụ này đếm ký tự có tính khoảng trắng hay không?","acceptedAnswer":{"@type":"Answer","text":"Cả hai, hiển thị song song: \"Ký tự\" tính cả mọi khoảng trắng, còn \"Ký tự (không khoảng trắng)\" đã bỏ khoảng trắng ra. Hầu hết giới hạn nền tảng (Twitter/X, Instagram, Discord, Zalo) đều tính khoảng trắng là ký tự bình thường, nên hãy dùng số có khoảng trắng khi kiểm tra bài đăng hay tiểu sử so với giới hạn."}},
+    {"@type":"Question","name":"Khoảng trắng có được tính là ký tự không?","acceptedAnswer":{"@type":"Answer","text":"Có, ở gần như mọi nền tảng. Khoảng trắng là một ký tự bình thường: nó ăn một trong 280 ký tự của X, một trong 150 ký tự tiểu sử Instagram, và một septet trong tin nhắn SMS. Đó là lý do công cụ hiển thị \"Ký tự\" và \"Ký tự (không khoảng trắng)\" cạnh nhau: dùng số có khoảng trắng khi so với bất kỳ giới hạn nền tảng nào, còn số không khoảng trắng chỉ dùng khi khách hàng hay nhà trường yêu cầu — đó là quy ước tính công, không phải quy tắc kỹ thuật."}},
+    {"@type":"Question","name":"Một emoji có được tính là một ký tự không?","acceptedAnswer":{"@type":"Answer","text":"Hiếm khi. Một emoji thường là 1 code point nhưng 2 đơn vị UTF-16; loại có màu da hoặc ghép từ nhiều mảnh (như emoji gia đình) có thể là 4, 7 hoặc hơn. Trên X mỗi emoji ăn 2 trong 280 ký tự, còn trong SMS chỉ một emoji là đủ đẩy cả tin từ GSM-7 160 ký tự xuống Unicode 70 ký tự. Ô \"Ký tự hiển thị (grapheme)\" cho thấy thứ bạn nhìn thấy; ô \"Ký tự\" và \"Đơn vị UTF-16\" cho thấy thứ nền tảng thực sự tính tiền."}},
+    {"@type":"Question","name":"Vì sao nền tảng báo tôi vượt giới hạn trong khi bộ đếm nói là chưa?","acceptedAnswer":{"@type":"Answer","text":"Vì bạn và nền tảng đang đếm bằng hai đơn vị khác nhau. Phần lớn đếm code point Unicode, nhưng ô nhập HTML và nhiều ứng dụng đếm đơn vị UTF-16 — nơi một chữ kiểu tốn 2 — ô sản phẩm Amazon đếm byte UTF-8 (mỗi chữ tiếng Việt có dấu là 3 byte), còn X thì đếm theo trọng số. Hãy chọn đúng nơi văn bản sẽ được đăng ở đầu công cụ: nó sẽ đếm theo đúng cách nơi đó đếm, thay vì đưa cho bạn một con số chung chung."}},
+    {"@type":"Question","name":"Làm sao đưa văn bản về dưới giới hạn?","acceptedAnswer":{"@type":"Answer","text":"Khi bạn vượt quá, công cụ chỉ ra nên cắt gì, kèm số ký tự tiết kiệm được tính bằng đúng đơn vị của nền tảng đó: đổi chữ Unicode kiểu về chữ thường, bỏ emoji, nắn thẳng dấu nháy cong và gạch ngang dài, gộp khoảng trắng thừa, bỏ hashtag, hoặc cắt vừa giới hạn ngay tại ranh giới từ. Mỗi cách chỉ một cú nhấp và hoàn tác được, nên bạn thử được phương án rẻ nhất trước khi phải viết lại."}},
+    {"@type":"Question","name":"Chữ kiểu có bị tính nhiều ký tự hơn không?","acceptedAnswer":{"@type":"Answer","text":"Thường là gấp đôi. Chữ Unicode kiểu — đậm, thư pháp, gothic và hầu hết bảng chữ cái trang trí khác — phần lớn nằm trên U+FFFF, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16, 4 byte UTF-8 và 2 trong 280 ký tự của X. Vì thế một cái tên 10 chữ kiểu vẫn có thể bị ô game giới hạn 12 ký tự từ chối. Dán vào rồi bấm \"Đổi chữ kiểu về chữ thường\" để thấy và lấy lại phần chênh lệch ngay lập tức."}},
+    {"@type":"Question","name":"Ký tự vô hình có bị tính không?","acceptedAnswer":{"@type":"Answer","text":"Có, và đây là lý do phổ biến nhất khiến số ký tự cao hơn hẳn so với những gì bạn nhìn thấy. Khoảng trắng độ rộng bằng không, dấu BOM và các ký tự chèn thêm khi copy từ ứng dụng khác vẫn ăn hạn mức của bạn dù không hiện gì cả. Công cụ đánh dấu chúng ngay dưới ô nhập và cho xóa bằng một cú nhấp."}},
     {"@type":"Question","name":"Giới hạn ký tự của Zalo là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Một bài đăng hoặc trạng thái Zalo được giới hạn ở 2.000 ký tự — đây là giới hạn mà rất nhiều người dùng Việt Nam gặp phải khi đăng một đoạn tâm sự dài hoặc thông báo. Chọn \"Bài đăng / trạng thái Zalo\" trong bộ kiểm tra nền tảng phía trên để xem ngay văn bản của bạn có vừa hay không."}},
-    {"@type":"Question","name":"Giới hạn ký tự của X (Twitter) là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"280 ký tự cho mỗi bài đăng với tài khoản thường, tính cả khoảng trắng, liên kết và hashtag (một liên kết vẫn được tính khoảng 23 ký tự dù hiển thị ngắn hơn). Chọn \"Bài đăng X / Twitter\" trong bộ kiểm tra nền tảng phía trên để xem trực tiếp văn bản của bạn có vừa không."}},
-    {"@type":"Question","name":"Giới hạn ký tự của chú thích và tiểu sử Instagram là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Một chú thích Instagram có thể dài tới 2.200 ký tự, dù chỉ vài dòng đầu hiển thị trước khi bị rút gọn bằng \"thêm\". Ô tiểu sử ngắn hơn nhiều: 150 ký tự. Cả hai đều có trong bộ kiểm tra nền tảng phía trên."}},
-    {"@type":"Question","name":"Giới hạn ký tự của chú thích và tên người dùng TikTok là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Một chú thích TikTok chứa được tới 2.200 ký tự. Tiểu sử giới hạn ở 80 ký tự, và tên người dùng tối đa 24 ký tự (chỉ gồm chữ cái, số, gạch dưới và dấu chấm)."}},
-    {"@type":"Question","name":"Độ dài thẻ tiêu đề và mô tả meta SEO bao nhiêu là hợp lý?","acceptedAnswer":{"@type":"Answer","text":"Google rút gọn theo chiều rộng pixel hiển thị chứ không theo số ký tự cố định, nhưng làm mốc thực tế, hãy giữ thẻ tiêu đề khoảng 60 ký tự và thẻ mô tả khoảng 155 ký tự để không bị cắt trên trang kết quả tìm kiếm."}},
     {"@type":"Question","name":"Vì sao tin nhắn có dấu bị tách thành nhiều tin?","acceptedAnswer":{"@type":"Answer","text":"Một tin SMS chứa được 160 ký tự chỉ khi mọi ký tự đều nằm trong bảng mã GSM-7 (không dấu). Chỉ cần một chữ có dấu như à, ế hay ộ là cả tin chuyển sang chế độ Unicode — còn 70 ký tự mỗi tin — nên tin dài bị tách thành nhiều tin và tính tiền nhiều lần. Chọn \"SMS (1 đoạn)\" trong bộ kiểm tra phía trên để xem chính xác ký tự nào gây ra điều đó."}},
     {"@type":"Question","name":"Vì sao chữ kiểu trên Zalo tự trở về font thường?","acceptedAnswer":{"@type":"Answer","text":"Zalo chỉ hiển thị chữ kiểu (font đặc biệt) trong một giới hạn nhất định: khi đoạn chữ kiểu vượt khoảng 70 ký tự, Zalo tự đưa nó về font thường. Vì vậy hãy đo độ dài chữ kiểu bằng bộ đếm phía trên trước khi đăng — và nhớ rằng bài đăng hay nhật ký Zalo cũng chỉ nhận tối đa 2.000 ký tự."}},
-    {"@type":"Question","name":"Chữ kiểu có bị tính nhiều ký tự hơn không?","acceptedAnswer":{"@type":"Answer","text":"Thường là có. Chữ Unicode kiểu (đậm, thư pháp, gothic…) phần lớn nằm ngoài vùng cơ bản của Unicode, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16 và 4 byte UTF-8 — đó là lý do một cái tên 10 chữ kiểu có thể bị từ chối ở ô giới hạn 12 ký tự. Dán chữ kiểu vào bộ đếm phía trên để xem chi phí thật ở từng cách đếm."}},
-    {"@type":"Question","name":"Công cụ đếm này có miễn phí không, và có lưu trữ hay tải văn bản của tôi lên đâu không?","acceptedAnswer":{"@type":"Answer","text":"Có, hoàn toàn miễn phí và không cần đăng ký. Mọi phép đếm chạy ngay trong trình duyệt của bạn bằng JavaScript thuần — không có gì bạn gõ bị tải lên, ghi log hay lưu trữ ở bất kỳ đâu."}}
+    {"@type":"Question","name":"Công cụ đếm này có miễn phí không, và có lưu trữ hay tải văn bản của tôi lên đâu không?","acceptedAnswer":{"@type":"Answer","text":"Có, hoàn toàn miễn phí và không cần đăng ký. Mọi phép đếm, kiểm tra và sửa đều chạy ngay trong trình duyệt của bạn bằng JavaScript thuần — không có gì bạn gõ bị tải lên, ghi log hay lưu trữ ở bất kỳ đâu."}}
   ]
 }
 </script>
@@ -166,23 +165,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>Gõ hoặc dán bất kỳ đoạn văn bản nào vào ô bên dưới, mọi số liệu sẽ cập nhật ngay lập tức: số từ, số ký tự (có và không có khoảng trắng), số câu, số đoạn văn và thời gian đọc ước tính. Không có gì được tải lên cả — mọi con số đều được tính ngay trong trình duyệt của bạn. Bên dưới bộ đếm, chọn một nền tảng trong danh sách để kiểm tra xem văn bản hiện tại có còn vừa giới hạn hay không, kèm số ký tự chính xác và bạn còn dư bao nhiêu (hoặc đã vượt quá bao nhiêu). Cần font chữ Unicode đẹp cho đoạn văn bản bạn vừa đo? <a href="/vi/">Công cụ tạo chữ kiểu UltraTextGen</a> biến nó thành hơn 100 kiểu chữ copy-paste.</p>
+      <p>Chọn nơi văn bản sẽ được đăng ở ngay phía trên ô nhập, rồi gõ hoặc dán nội dung vào: mọi số liệu cập nhật tức thì — số từ, số ký tự (có và không có khoảng trắng), số câu, số đoạn văn và thời gian đọc ước tính — và bộ kiểm tra đếm đúng theo cách nền tảng đó đếm, kèm số ký tự bạn còn dư hoặc đã vượt. Nếu vượt, công cụ không dừng ở việc báo lỗi: nó đề xuất từng cách cắt ngắn kèm số ký tự tiết kiệm được, mỗi cách chỉ một cú nhấp và hoàn tác được. Không có gì được tải lên cả — mọi con số đều được tính ngay trong trình duyệt của bạn. Cần font chữ Unicode đẹp cho đoạn văn bản bạn vừa đo? <a href="/vi/">Công cụ tạo chữ kiểu UltraTextGen</a> biến nó thành hơn 100 kiểu chữ copy-paste.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">Văn bản của bạn</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 2.000</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">Sao chép</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Xóa</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="Nhập hoặc dán văn bản của bạn vào đây…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fold" id="counterFold" hidden></div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Từ</span></div>
@@ -198,15 +205,134 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Byte UTF-8</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">Văn bản này còn vừa những chỗ nào — cập nhật trực tiếp, trên mọi giới hạn</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section">
-    <h2>Giới hạn ký tự trên từng nền tảng, giải thích rõ</h2>
-    <p>Giới hạn ký tự tồn tại vì hai lý do khác nhau, và biết mình đang gặp loại nào rất đáng để ý. <strong>Giới hạn cứng</strong> — 280 ký tự của X/Twitter, biệt danh 32 ký tự của Discord, tên người dùng 24 ký tự của TikTok — do chính nền tảng áp đặt: vượt quá là bài đăng hoặc thao tác lưu bị từ chối ngay lập tức. <strong>Giới hạn mềm/thực tế</strong> — thẻ mô tả meta của Google, mô tả video YouTube trước nút "Hiện thêm", hay bài đăng LinkedIn trước khi bị rút gọn bằng "xem thêm" — không ngăn bạn gõ thêm, nhưng phần vượt quá sẽ bị ẩn khỏi hầu hết người đọc trừ khi họ bấm mở rộng. Bộ kiểm tra ở trên dùng đúng giới hạn cứng hoặc giới hạn được công bố chính thức của từng nền tảng; với các giới hạn rút gọn mềm (thẻ tiêu đề/mô tả meta, YouTube, LinkedIn), hãy xem con số đó là "phần chắc chắn sẽ hiển thị", không phải một bức tường không thể vượt qua. Riêng tại Việt Nam, giới hạn 2.000 ký tự cho mỗi bài đăng hoặc trạng thái Zalo là một trong những giới hạn người dùng hay chạm phải nhất — nhất là khi dán cả một đoạn tâm sự dài hoặc thông báo nhóm.</p>
-    <p>Một điều hay khiến nhiều người bối rối: một số nền tảng đếm nhiều hơn bạn tưởng. Một đường link trong bài đăng X luôn được tính là khoảng 23 ký tự, bất kể link gốc dài bao nhiêu. Emoji và các ký tự có dấu có thể được tính là nhiều hơn một "ký tự" tùy vào cách bộ đếm nội bộ của từng nền tảng hoạt động — công cụ này đếm theo code point Unicode, đúng với cách hầu hết nền tảng hiện đại đang đếm ngày nay.</p>
+    <h2>Giới hạn cứng và giới hạn mềm</h2>
+    <p>Hai thứ rất khác nhau cùng được gọi là "giới hạn ký tự", và vượt quá loại nào thì cái giá phải trả cũng khác.</p>
+    <table class="comparison-table">
+      <thead><tr><th>Loại</th><th>Vượt quá thì sao</th><th>Ví dụ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Giới hạn cứng</strong></td>
+          <td>Nền tảng từ chối luôn. Bài không đăng được, tên không lưu được.</td>
+          <td>Bài đăng X 280 · Biệt danh Discord 32 · Tên người dùng TikTok 24 · Một tin SMS</td>
+        </tr>
+        <tr>
+          <td><strong>Giới hạn mềm</strong><br>(bị rút gọn)</td>
+          <td>Bạn vẫn gõ thêm được, nhưng người đọc không thấy phần sau trừ khi họ bấm "xem thêm".</td>
+          <td>Chú thích Instagram sau 125 · Bài đăng LinkedIn sau ~140 trên di động / ~210 trên máy tính · Mô tả YouTube sau ~157</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Riêng ở thị trường Việt Nam, giới hạn 2.000 ký tự của một bài đăng hay nhật ký Zalo là giới hạn người dùng chạm phải thường xuyên nhất — nhất là khi dán cả một đoạn tâm sự dài hoặc thông báo nhóm. Chi tiết ở phần <a href="#gioi-han-zalo">giới hạn ký tự trên Zalo</a> bên dưới.</p>
+    <p>Giới hạn mềm mới là thứ phần lớn mọi người thực sự đang viết cho, vậy mà gần như không bộ đếm nào hiển thị nó. Một bài đăng LinkedIn được 3.000 ký tự nhưng chỉ có khoảng 140 ký tự thực sự dùng được: phần còn lại nằm sau một cú chạm mà rất ít người chạm. Vì thế công cụ phía trên vẽ thẳng chỗ bị cắt ra — chọn trong bộ kiểm tra một nơi có rút gọn (Zalo được chọn sẵn không rút gọn, nên khung này chỉ hiện khi bạn chọn LinkedIn, Instagram, YouTube hoặc Facebook) rồi gõ vào, bạn sẽ thấy đúng đoạn chữ xuất hiện trước "xem thêm", phần sau vạch cắt bị làm mờ, cùng với việc chính đoạn mở đầu đó còn trụ được ở những nơi khác hay không.</p>
+    <p><strong>Mỗi nơi cắt ở đâu, và trên thiết bị nào:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Nơi đăng</th><th>Cắt ở</th><th>Điều đó có nghĩa gì với đoạn mở đầu</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Bài đăng LinkedIn</td>
+          <td>~140 trên điện thoại<br>~210 trên máy tính</td>
+          <td>Viết gọn trong 140 ký tự là trụ được cả hai. Đây là khoảng chênh điện thoại/máy tính lớn nhất trong bảng này.</td>
+        </tr>
+        <tr>
+          <td><a href="/vi/font-ig/">Chú thích Instagram</a></td>
+          <td>~125</td>
+          <td>Chỗ cắt chặt nhất ở đây — chỉ khoảng một câu là đã tới chữ "… thêm".</td>
+        </tr>
+        <tr>
+          <td>Mô tả video YouTube</td>
+          <td>~157</td>
+          <td>Phần hiện dưới tiêu đề trước nút "Hiển thị thêm"; cũng thường là phần công cụ tìm kiếm lấy ra.</td>
+        </tr>
+        <tr>
+          <td><a href="/vi/font-facebook/">Bài đăng Facebook</a></td>
+          <td>~477</td>
+          <td>Chỗ cắt dễ thở nhất — trọn một đoạn ngắn vẫn nằm trước vạch cắt.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Hai điều cần nói thẳng. Đây là hành vi quan sát được trên giao diện chứ không phải giới hạn nền tảng công bố, nên hãy hiểu chúng là "mức thường xuyên hiển thị được" thay vì ngưỡng chính xác — và các nền tảng còn cắt theo <em>số dòng</em>, nên chỉ vài lần xuống dòng sớm là bài bị rút gọn trước khi chạm tới bất kỳ con số ký tự nào. Nếu đoạn mở đầu của bạn phụ thuộc vào một danh sách gạch đầu dòng, hãy thử luôn trong trình soạn thảo thật.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="limits">
+    <h2>Toàn bộ giới hạn ký tự có trong bộ kiểm tra</h2>
+    <p>Chính những giới hạn mà bộ kiểm tra phía trên đang dùng, trình bày dạng bảng tra cứu. Nhảy nhanh tới: <a href="#zalo">Zalo</a> · <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">cách mỗi nền tảng đếm</a>.</p>
+
+    <h3>Bài đăng &amp; tin nhắn</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Nền tảng</th><th>Giới hạn</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr id="zalo"><td>Bài đăng / nhật ký Zalo</td><td>2.000</td><td>Vượt quá là Zalo báo "Bạn chỉ được nhập tối đa 2000 ký tự"</td></tr>
+        <tr id="twitter"><td>Bài đăng X / Twitter</td><td>280</td><td>Đếm có trọng số: mỗi liên kết = 23, phần lớn emoji/ký hiệu/chữ kiểu = 2 — xem <a href="#counting-modes">cách X đếm</a></td></tr>
+        <tr id="discord"><td>Tin nhắn Discord</td><td>2.000</td><td>4.000 nếu có Nitro; tin dài hơn bị chuyển thành tệp .txt đính kèm</td></tr>
+        <tr id="instagram"><td>Chú thích Instagram</td><td>2.200</td><td>Bị rút gọn bằng "thêm" sau vài dòng đầu</td></tr>
+        <tr id="tiktok"><td>Chú thích TikTok</td><td>2.200</td><td></td></tr>
+        <tr><td>Bài đăng LinkedIn</td><td>3.000</td><td>Nút "xem thêm" rút gọn ở khoảng 200–700 ký tự tùy thiết bị</td></tr>
+        <tr><td>Bài đăng Facebook</td><td>63.206</td><td></td></tr>
+        <tr><td>Mô tả video YouTube</td><td>5.000</td><td></td></tr>
+        <tr><td>Mô tả ghim Pinterest</td><td>500</td><td></td></tr>
+        <tr><td>Tin nhắn Telegram</td><td>4.096</td><td>1.024 cho chú thích ảnh/video</td></tr>
+        <tr><td>Bài đăng Threads</td><td>500</td><td></td></tr>
+        <tr><td>Bài đăng Bluesky</td><td>300</td><td>Đếm theo grapheme (ký tự bạn nhìn thấy), không phải code point</td></tr>
+        <tr><td>Tiêu đề bài đăng Reddit</td><td>300</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tiểu sử &amp; hồ sơ</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Ô nhập</th><th>Giới hạn</th></tr></thead>
+      <tbody>
+        <tr><td>Tiểu sử Instagram</td><td>150</td></tr>
+        <tr><td>Tiểu sử TikTok</td><td>80</td></tr>
+        <tr><td>Tiêu đề LinkedIn</td><td>220</td></tr>
+        <tr><td>Giới thiệu WhatsApp</td><td>139</td></tr>
+        <tr><td>Tiểu sử Telegram</td><td>70</td></tr>
+        <tr><td>Trạng thái VK</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tên người dùng, tiêu đề &amp; SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>Ô nhập</th><th>Giới hạn</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Biệt danh Discord</td><td>32</td><td></td></tr>
+        <tr><td>Tên người dùng TikTok</td><td>24</td><td>Chỉ gồm chữ cái, số, gạch dưới và dấu chấm</td></tr>
+        <tr><td>Tên người dùng Instagram</td><td>30</td><td></td></tr>
+        <tr><td>Tiêu đề video YouTube</td><td>100</td><td></td></tr>
+        <tr><td>Thẻ tiêu đề SEO</td><td>~60</td><td>Google cắt theo chiều rộng pixel — coi đây là mốc tham khảo</td></tr>
+        <tr><td>Thẻ mô tả SEO</td><td>~155</td><td>Tương tự — cắt theo chiều rộng pixel</td></tr>
+        <tr id="sms"><td>Tin nhắn SMS</td><td>160 / tin</td><td>Rơi xuống 70 mỗi tin ngay khi xuất hiện một ký tự ngoài GSM-7 (emoji, dấu nháy cong, và mọi chữ tiếng Việt có dấu) — xem <a href="#sms-co-dau">cách đếm SMS</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="counting-modes">
+    <h2>Vì sao số ký tự của bạn không khớp với nền tảng</h2>
+    <p>"Đoạn này bao nhiêu ký tự?" có nhiều hơn một đáp án đúng, vì mỗi nền tảng đếm bằng một đơn vị khác nhau. Cùng một đoạn văn bản có thể có bốn độ dài:</p>
+    <table class="comparison-table">
+      <thead><tr><th>Cách đếm</th><th>Đo cái gì</th><th>Ai dùng</th></tr></thead>
+      <tbody>
+        <tr><td>Grapheme</td><td>Đúng thứ mắt bạn nhìn thấy — một emoji kèm màu da là 1</td><td>Bluesky; gần với cách Instagram xử lý emoji</td></tr>
+        <tr><td>Code point</td><td>Ký tự Unicode — 👍🏽 là 2 (bàn tay + màu da)</td><td>Phần lớn nền tảng web, và ô "Ký tự" chính của công cụ này</td></tr>
+        <tr><td>Đơn vị UTF-16</td><td>Cách JavaScript và nhiều ứng dụng lưu chữ — mỗi chữ kiểu (𝗮 𝗯 𝗰) tốn 2 đơn vị</td><td>Ô nhập HTML (<code>maxlength</code>), nhiều game và backend ứng dụng</td></tr>
+        <tr><td>Byte UTF-8</td><td>Dung lượng lưu trữ — é là 2, 中 là 3, 𝗯 là 4</td><td>Ô sản phẩm Amazon (tiêu đề 200 byte), tên Steam, cơ sở dữ liệu</td></tr>
+      </tbody>
+    </table>
+    <p>Cả bốn đều hiển thị trực tiếp ở phần số liệu phía trên, nên khi một biểu mẫu báo văn bản của bạn quá dài trong khi Word nói ngược lại, bạn thấy ngay biểu mẫu đó đang đếm bằng đơn vị nào. Một lưu ý riêng cho tiếng Việt: mỗi chữ có dấu như ế hay ộ vẫn là 1 code point, nhưng tốn tới 3 byte UTF-8 — nên những ô giới hạn theo byte sẽ chật hơn nhiều so với con số ký tự bạn thấy. Ngoài ra có hai nền tảng cần luật riêng:</p>
+    <p><strong>X / Twitter đếm theo trọng số, không đếm ký tự.</strong> Theo đúng thuật toán X tự công bố (thư viện <code>twitter-text</code>), mỗi liên kết được tính chẵn 23, chữ cái Latinh cơ bản tính 1, và gần như mọi thứ còn lại — chữ CJK, phần lớn emoji, và mọi chữ Unicode kiểu — tính <strong>2</strong>. Một bài đăng viết toàn chữ kiểu vì thế chỉ chứa được 140 chữ hiển thị trong ngân sách 280. Mục "X / Twitter" trong bộ kiểm tra phía trên chạy đúng thuật toán này.</p>
+    <p><strong>SMS đếm theo tin, và một ký tự thôi cũng đủ nhân đôi hóa đơn.</strong> Đây chính là chỗ tiếng Việt chịu thiệt nhất — xem phần <a href="#sms-co-dau">tin nhắn SMS có dấu</a> ngay bên dưới.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -231,32 +357,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <span class="article-section-label">Hỏi đáp</span>
     <h2>Đếm từ &amp; đếm ký tự, giải đáp</h2>
     <details class="faq-item">
-      <summary class="faq-question">Làm sao để đếm từ và ký tự trực tuyến?</summary>
-      <p class="faq-answer">Gõ hoặc dán văn bản của bạn vào ô phía trên. Số từ, số ký tự (có và không có khoảng trắng), số câu, số đoạn văn và thời gian đọc ước tính sẽ tự động cập nhật ngay khi bạn gõ — không cần bấm nút gửi, và không có gì bạn gõ bị tải lên hay lưu trữ.</p>
+      <summary class="faq-question">Khoảng trắng có được tính là ký tự không?</summary>
+      <p class="faq-answer">Có, ở gần như mọi nền tảng. Khoảng trắng là một ký tự bình thường: nó ăn một trong 280 ký tự của X, một trong 150 ký tự tiểu sử Instagram, và một septet trong tin nhắn SMS. Đó là lý do công cụ hiển thị "Ký tự" và "Ký tự (không khoảng trắng)" cạnh nhau: dùng số có khoảng trắng khi so với bất kỳ giới hạn nền tảng nào, còn số không khoảng trắng chỉ dùng khi khách hàng hay nhà trường yêu cầu — đó là quy ước tính công, không phải quy tắc kỹ thuật.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Công cụ này đếm ký tự có tính khoảng trắng hay không?</summary>
-      <p class="faq-answer">Cả hai, hiển thị song song: "Ký tự" tính cả mọi khoảng trắng, còn "Ký tự (không khoảng trắng)" đã bỏ khoảng trắng ra. Hầu hết giới hạn nền tảng (Twitter/X, Instagram, Discord, Zalo) đều tính khoảng trắng là ký tự bình thường, nên hãy dùng số có khoảng trắng khi kiểm tra bài đăng hay tiểu sử so với giới hạn.</p>
+      <summary class="faq-question">Một emoji có được tính là một ký tự không?</summary>
+      <p class="faq-answer">Hiếm khi. Một emoji thường là 1 code point nhưng 2 đơn vị UTF-16; loại có màu da hoặc ghép từ nhiều mảnh (như emoji gia đình) có thể là 4, 7 hoặc hơn. Trên X mỗi emoji ăn 2 trong 280 ký tự, còn trong SMS chỉ một emoji là đủ đẩy cả tin từ GSM-7 160 ký tự xuống Unicode 70 ký tự. Ô "Ký tự hiển thị (grapheme)" cho thấy thứ bạn nhìn thấy; ô "Ký tự" và "Đơn vị UTF-16" cho thấy thứ nền tảng thực sự tính tiền.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Vì sao nền tảng báo tôi vượt giới hạn trong khi bộ đếm nói là chưa?</summary>
+      <p class="faq-answer">Vì bạn và nền tảng đang đếm bằng hai đơn vị khác nhau. Phần lớn đếm code point Unicode, nhưng ô nhập HTML và nhiều ứng dụng đếm đơn vị UTF-16 — nơi một chữ kiểu tốn 2 — ô sản phẩm Amazon đếm byte UTF-8 (mỗi chữ tiếng Việt có dấu là 3 byte), còn X thì đếm theo trọng số. Hãy chọn đúng nơi văn bản sẽ được đăng ở đầu công cụ: nó sẽ đếm theo đúng cách nơi đó đếm, thay vì đưa cho bạn một con số chung chung.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Làm sao đưa văn bản về dưới giới hạn?</summary>
+      <p class="faq-answer">Khi bạn vượt quá, công cụ chỉ ra nên cắt gì, kèm số ký tự tiết kiệm được tính bằng đúng đơn vị của nền tảng đó: đổi chữ Unicode kiểu về chữ thường, bỏ emoji, nắn thẳng dấu nháy cong và gạch ngang dài, gộp khoảng trắng thừa, bỏ hashtag, hoặc cắt vừa giới hạn ngay tại ranh giới từ. Mỗi cách chỉ một cú nhấp và hoàn tác được, nên bạn thử được phương án rẻ nhất trước khi phải viết lại.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Chữ kiểu có bị tính nhiều ký tự hơn không?</summary>
+      <p class="faq-answer">Thường là gấp đôi. Chữ Unicode kiểu — đậm, thư pháp, gothic và hầu hết bảng chữ cái trang trí khác — phần lớn nằm trên U+FFFF, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16, 4 byte UTF-8 và 2 trong 280 ký tự của X. Vì thế một cái tên 10 chữ kiểu vẫn có thể bị ô game giới hạn 12 ký tự từ chối. Dán vào rồi bấm "Đổi chữ kiểu về chữ thường" để thấy và lấy lại phần chênh lệch ngay lập tức.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Ký tự vô hình có bị tính không?</summary>
+      <p class="faq-answer">Có, và đây là lý do phổ biến nhất khiến số ký tự cao hơn hẳn so với những gì bạn nhìn thấy. Khoảng trắng độ rộng bằng không, dấu BOM và các ký tự chèn thêm khi copy từ ứng dụng khác vẫn ăn hạn mức của bạn dù không hiện gì cả. Công cụ đánh dấu chúng ngay dưới ô nhập và cho xóa bằng một cú nhấp.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Giới hạn ký tự của Zalo là bao nhiêu?</summary>
       <p class="faq-answer">Một bài đăng hoặc trạng thái Zalo được giới hạn ở 2.000 ký tự — đây là giới hạn mà rất nhiều người dùng Việt Nam gặp phải khi đăng một đoạn tâm sự dài hoặc thông báo. Chọn "Bài đăng / trạng thái Zalo" trong bộ kiểm tra nền tảng phía trên để xem ngay văn bản của bạn có vừa hay không.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Giới hạn ký tự của X (Twitter) là bao nhiêu?</summary>
-      <p class="faq-answer">280 ký tự cho mỗi bài đăng với tài khoản thường, tính cả khoảng trắng, liên kết và hashtag (một liên kết vẫn được tính khoảng 23 ký tự dù hiển thị ngắn hơn). Chọn "Bài đăng X / Twitter" trong bộ kiểm tra nền tảng phía trên để xem trực tiếp văn bản của bạn có vừa không.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Giới hạn ký tự của chú thích và tiểu sử Instagram là bao nhiêu?</summary>
-      <p class="faq-answer">Một chú thích Instagram có thể dài tới 2.200 ký tự, dù chỉ vài dòng đầu hiển thị trước khi bị rút gọn bằng "thêm". Ô tiểu sử ngắn hơn nhiều: 150 ký tự. Cả hai đều có trong bộ kiểm tra nền tảng phía trên.</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Giới hạn ký tự của chú thích và tên người dùng TikTok là bao nhiêu?</summary>
-      <p class="faq-answer">Một chú thích TikTok chứa được tới 2.200 ký tự. Tiểu sử giới hạn ở 80 ký tự, và tên người dùng tối đa 24 ký tự (chỉ gồm chữ cái, số, gạch dưới và dấu chấm).</p>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">Độ dài thẻ tiêu đề và mô tả meta SEO bao nhiêu là hợp lý?</summary>
-      <p class="faq-answer">Google rút gọn theo chiều rộng pixel hiển thị chứ không theo số ký tự cố định, nhưng làm mốc thực tế, hãy giữ thẻ tiêu đề khoảng 60 ký tự và thẻ mô tả khoảng 155 ký tự để không bị cắt trên trang kết quả tìm kiếm.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Vì sao tin nhắn có dấu bị tách thành nhiều tin?</summary>
@@ -267,12 +393,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">Zalo chỉ hiển thị chữ kiểu (font đặc biệt) trong một giới hạn nhất định: khi đoạn chữ kiểu vượt khoảng 70 ký tự, Zalo tự đưa nó về font thường. Vì vậy hãy đo độ dài chữ kiểu bằng bộ đếm phía trên trước khi đăng — và nhớ rằng bài đăng hay nhật ký Zalo cũng chỉ nhận tối đa 2.000 ký tự.</p>
     </details>
     <details class="faq-item">
-      <summary class="faq-question">Chữ kiểu có bị tính nhiều ký tự hơn không?</summary>
-      <p class="faq-answer">Thường là có. Chữ Unicode kiểu (đậm, thư pháp, gothic…) phần lớn nằm ngoài vùng cơ bản của Unicode, nên mỗi chữ hiển thị tốn 2 đơn vị UTF-16 và 4 byte UTF-8 — đó là lý do một cái tên 10 chữ kiểu có thể bị từ chối ở ô giới hạn 12 ký tự. Dán chữ kiểu vào bộ đếm phía trên để xem chi phí thật ở từng cách đếm.</p>
-    </details>
-    <details class="faq-item">
       <summary class="faq-question">Công cụ đếm này có miễn phí không, và có lưu trữ hay tải văn bản của tôi lên đâu không?</summary>
-      <p class="faq-answer">Có, hoàn toàn miễn phí và không cần đăng ký. Mọi phép đếm chạy ngay trong trình duyệt của bạn bằng JavaScript thuần — không có gì bạn gõ bị tải lên, ghi log hay lưu trữ ở bất kỳ đâu.</p>
+      <p class="faq-answer">Có, hoàn toàn miễn phí và không cần đăng ký. Mọi phép đếm, kiểm tra và sửa đều chạy ngay trong trình duyệt của bạn bằng JavaScript thuần — không có gì bạn gõ bị tải lên, ghi log hay lưu trữ ở bất kỳ đâu.</p>
     </details>
   </section>
 
@@ -324,6 +446,87 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     xNote: "Đếm theo đúng cách X đếm: mỗi liên kết = 23 ký tự, hầu hết ký hiệu, emoji và chữ Unicode kiểu = 2 ký tự mỗi chữ.",
     smsSegments: "{n} tin SMS · {per} ký tự mỗi tin ({enc})",
     smsUnicode: "chuyển sang chế độ Unicode vì: {chars}",
+    visibleNote: "Chỉ khoảng {n} ký tự đầu hiển thị trước khi bị rút gọn — hãy đưa phần quan trọng lên trước.",
+    platformLabel: "Nền tảng",
+    fieldLabel: "Ô nhập",
+    foldHeading: "Người đọc thấy gì trước khi bấm “xem thêm”",
+    foldMore: "xem thêm",
+    foldMeta: "Hiện {shown} trong {total} ký tự · {hidden} ký tự nằm sau nút bấm",
+    foldRoom: "Còn {n} ký tự mở đầu trước khi bị cắt",
+    foldDevices: "Điện thoại cắt ở {m}, máy tính ở {d}.",
+    overBy: "Vượt {n} ký tự — chọn một cách xử lý:",
+    trimToFit: "Cắt cho vừa",
+    undo: "Hoàn tác",
+    applied: "Đã áp dụng",
+    fitsHeading: "Văn bản này còn vừa những chỗ nào",
+    segShort: "tin",
+    inspectStyled: "{n} chữ Unicode kiểu — mỗi chữ tốn 2 đơn vị trên X và ở nhiều ô nhập ứng dụng.",
+    inspectInvisible: "{n} ký tự vô hình nhưng vẫn bị tính.",
+    inspectCombining: "{n} dấu chồng lên nhau (kiểu zalgo).",
+    reducers: {
+      "plain": "Đổi chữ kiểu về chữ thường",
+      "invisible": "Xóa ký tự vô hình",
+      "combining": "Xóa dấu chồng zalgo",
+      "emoji": "Xóa emoji",
+      "quotes": "Nắn thẳng dấu nháy và gạch ngang",
+      "spaces": "Gộp khoảng trắng thừa",
+      "blanklines": "Gộp dòng trống",
+      "hashtags": "Xóa hashtag",
+      "gsm-safe": "Đưa tin nhắn về chuẩn SMS (160 ký tự mỗi tin)"
+    },
+    reducerHints: {
+      "plain": "Mỗi chữ Unicode kiểu tốn 2 đơn vị ở hầu hết các ô nhập.",
+      "invisible": "Ký tự độ rộng bằng không và ký tự chèn thêm — bạn không thấy nhưng ô nhập vẫn tính.",
+      "combining": "Mỗi dấu glitch/zalgo cộng thêm một ký tự.",
+      "emoji": "Emoji tốn 2 ký tự trên X và đẩy tin SMS xuống còn 70 ký tự mỗi tin.",
+      "quotes": "Dấu nháy cong và gạch ngang dài là thứ hay phá vỡ GSM-7 trong SMS nhất.",
+      "spaces": "Khoảng trắng lặp lại và khoảng trắng thừa ở cuối dòng.",
+      "blanklines": "Từ ba lần xuống dòng liên tiếp trở lên.",
+      "hashtags": "Chuyển hashtag xuống phần bình luận thay vì để trong bài."
+    },
+    platforms: {
+      "seo": "Kết quả tìm kiếm Google"
+    },
+    fields: {
+      "x-post": "Bài đăng",
+      "x-bio": "Tiểu sử",
+      "x-name": "Tên hiển thị",
+      "ig-caption": "Chú thích",
+      "ig-bio": "Tiểu sử",
+      "ig-username": "Tên người dùng",
+      "ig-alt": "Văn bản thay thế",
+      "tiktok-caption": "Chú thích",
+      "tiktok-bio": "Tiểu sử",
+      "tiktok-username": "Tên người dùng",
+      "li-post": "Bài đăng",
+      "li-headline": "Tiêu đề hồ sơ",
+      "li-about": "Mục Giới thiệu",
+      "li-comment": "Bình luận",
+      "yt-title": "Tiêu đề video",
+      "yt-description": "Mô tả",
+      "yt-comment": "Bình luận",
+      "fb-post": "Bài đăng",
+      "discord-message": "Tin nhắn",
+      "discord-nick": "Biệt danh",
+      "discord-status": "Trạng thái tùy chỉnh",
+      "telegram-message": "Tin nhắn",
+      "telegram-caption": "Chú thích ảnh/video",
+      "telegram-bio": "Tiểu sử",
+      "threads-post": "Bài đăng",
+      "threads-bio": "Tiểu sử",
+      "bluesky-post": "Bài đăng",
+      "bluesky-bio": "Tiểu sử",
+      "reddit-title": "Tiêu đề bài đăng",
+      "reddit-comment": "Bình luận",
+      "pinterest-description": "Mô tả ghim",
+      "pinterest-title": "Tiêu đề ghim",
+      "whatsapp-about": "Giới thiệu",
+      "vk-status": "Trạng thái",
+      "zalo-post": "Bài đăng / nhật ký",
+      "sms": "Tin nhắn SMS",
+      "meta-title": "Thẻ tiêu đề",
+      "meta-description": "Thẻ mô tả"
+    },
     groups: {
       posts: "Bài đăng",
       bios: "Tiểu sử & hồ sơ",
@@ -332,17 +535,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     labels: {
       "x-post": "Bài đăng X / Twitter",
+      "x-bio": "Tiểu sử X / Twitter",
+      "x-name": "Tên hiển thị X / Twitter",
       "discord-message": "Tin nhắn Discord",
+      "discord-status": "Trạng thái tùy chỉnh Discord",
       "ig-caption": "Chú thích Instagram",
+      "ig-alt": "Văn bản thay thế Instagram",
       "tiktok-caption": "Chú thích TikTok",
       "li-post": "Bài đăng LinkedIn",
+      "li-about": "Mục Giới thiệu LinkedIn",
+      "li-comment": "Bình luận LinkedIn",
       "fb-post": "Bài đăng Facebook",
       "yt-description": "Mô tả video YouTube",
+      "yt-comment": "Bình luận YouTube",
       "pinterest-description": "Mô tả ghim Pinterest",
+      "pinterest-title": "Tiêu đề ghim Pinterest",
+      "reddit-title": "Tiêu đề bài đăng Reddit",
+      "reddit-comment": "Bình luận Reddit",
       "telegram-message": "Tin nhắn Telegram",
       "telegram-caption": "Chú thích ảnh/video Telegram",
       "threads-post": "Bài đăng Threads",
+      "threads-bio": "Tiểu sử Threads",
       "bluesky-post": "Bài đăng Bluesky",
+      "bluesky-bio": "Tiểu sử Bluesky",
       "zalo-post": "Bài đăng / trạng thái Zalo",
       "ig-bio": "Tiểu sử Instagram",
       "tiktok-bio": "Tiểu sử TikTok",
@@ -361,6 +576,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

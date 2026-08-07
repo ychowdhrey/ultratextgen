@@ -1620,11 +1620,36 @@ silently return is the tooling below, not vigilance.
 
 ## Testing
 
-There is no automated test framework. Testing is manual and browser-based:
+There is no automated test framework, and no runner — every test here is a
+plain file you open or a plain file you `node`. Testing is otherwise manual
+and browser-based:
+
 - `js/vertical/verticalLayouts.test.html` — manual test page for vertical layout module
+- `js/counter/counterRules.test.js` — `node js/counter/counterRules.test.js`.
+  Assertions for the pure half of the character counter: counting modes,
+  per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
+  `LIMITS` table integrity. No DOM, no dependencies.
+- `js/counter/counter.test.html` — the DOM half, which needs a browser: the
+  two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
+  ordering, SMS segments, soft-limit warning, clear. Open it and read the
+  panel, or drive it headlessly and read `window.__UTG_TEST` (`{ pass, fail,
+  lines, summary }`). It runs against a deliberately **non-English** I18N
+  block, so it also asserts that a translated page renders translated fix-bar
+  buttons instead of falling back to English — a regression that would
+  otherwise only ever be noticed by a reader of that language.
 - Test changes by opening HTML files in a browser
 
-Do not add a test framework unless explicitly requested.
+**Why the counter has tests when nothing else does.** It is the one surface
+whose entire value proposition is numerical correctness, and it shipped a
+wrong number: Bluesky was billing code points while the page's own reference
+table said graphemes, so 👨‍👩‍👧‍👦 cost 7 instead of 1. A visual check
+cannot catch that. Any future page that *asserts facts* — limits, counts,
+encodings — deserves the same treatment; a page that merely renders copy does
+not.
+
+Do not add a test framework unless explicitly requested. Adding another
+zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
+framework" and needs no permission.
 
 ---
 

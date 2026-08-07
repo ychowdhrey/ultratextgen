@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Character counter — controller & picker tests</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!--
+  Manual + headless test page for the character-counter UI layer, in the same
+  idiom as js/vertical/verticalLayouts.test.html.
+
+  counterRules.js and counterReduce.js are pure and covered by assertions that
+  need no DOM. Everything below needs a real one: the two-tier platform/field
+  picker, the live count, the inspect line, the fix bar's buttons, undo, and
+  the fit grid's ordering. Open this file in a browser and read the panel, or
+  drive it headlessly and read window.__UTG_TEST.
+
+  The locale I18N block below is deliberately NOT English — it is the same
+  merge-over-defaults contract every <lang>/ counter page uses, so these tests
+  also prove a translated page renders translated buttons rather than falling
+  back to the English reducer labels.
+-->
+<h1>Character counter — controller &amp; picker tests</h1>
+<pre id="results">running…</pre>
+
+<div class="counter-tool">
+  <div id="platformChecker"></div>
+
+  <div class="counter-field">
+    <div class="counter-field-head">
+      <label for="counterInput">Your text</label>
+      <div class="counter-field-actions">
+        <span class="counter-live" id="counterLiveCount">0 / 280</span>
+        <button class="copy-btn" type="button" id="counterCopyBtn">Copy</button>
+        <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Clear</button>
+      </div>
+    </div>
+    <textarea class="counter-textarea" id="counterInput" spellcheck="false"></textarea>
+    <p class="counter-inspect" id="counterInspect" hidden></p>
+  </div>
+
+  <div class="counter-fold" id="counterFold" hidden></div>
+
+  <div class="counter-fix" id="counterFixBar" hidden></div>
+
+  <div class="counter-stats-grid">
+    <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Words</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statChars">0</span><span class="counter-stat-label">Characters</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Chars (no spaces)</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Sentences</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraphs</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Lines</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sec</span><span class="counter-stat-label">Reading time</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 sec</span><span class="counter-stat-label">Speaking time</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Graphemes</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">UTF-16 units</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 bytes</span></div>
+    <div class="counter-stat"><span class="counter-stat-value" id="statTestUnit">0</span><span class="counter-stat-label">Test billing unit</span></div>
+  </div>
+
+  <div class="counter-fits">
+    <p class="counter-fits-head">Where else this text fits</p>
+    <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+  </div>
+</div>
+
+<script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
+<script>
+  /* A stand-in locale page: non-English strings for everything the fix layer
+     renders, plus a `units` tile and a `selected` preselect, so the test
+     covers the whole locale contract rather than the English defaults. */
+  window.UTG_COUNTER_I18N = {
+    selected: "li-post",
+    sec: "s", min: "min", copied: "Kopiert!",
+    label: "Wohin geht dieser Text?",
+    ok: "Passt ✓", fail: "Zu lang ✕",
+    platformLabel: "Plattform", fieldLabel: "Feld",
+    overBy: "{n} Zeichen zu viel — Korrektur wählen:",
+    trimToFit: "Passend kürzen",
+    undo: "Rückgängig",
+    fitsHeading: "Wo dieser Text sonst noch passt",
+    segShort: "Seg.",
+    foldHeading: "Was vor \u201eMehr anzeigen\u201c sichtbar ist",
+    foldMore: "mehr anzeigen",
+    foldMeta: "{shown} von {total} Zeichen sichtbar \u00b7 {hidden} verborgen",
+    foldRoom: "noch {n} Zeichen bis zum Abschnitt",
+    foldDevices: "Mobil schneidet bei {m}, Desktop bei {d}.",
+    visibleNote: "Nur die ersten {n} Zeichen sind sichtbar.",
+    inspectStyled: "{n} stilisierte Unicode-Buchstaben.",
+    inspectInvisible: "{n} unsichtbare Zeichen.",
+    inspectCombining: "{n} kombinierende Zeichen.",
+    units: [{ id: "statTestUnit", per: 1800, of: "chars", decimals: 2 }],
+    platforms: { seo: "Google-Suchergebnis" },
+    fields: { "li-post": "Beitrag", "li-headline": "Schlagzeile", "x-post": "Beitrag", "sms": "SMS" },
+    labels: { "li-post": "LinkedIn-Beitrag", "x-post": "X-Beitrag" },
+    reducers: {
+      plain: "In normalen Text umwandeln",
+      emoji: "Emojis entfernen",
+      invisible: "Unsichtbare Zeichen entfernen",
+      combining: "Kombinierende Zeichen entfernen",
+      quotes: "Typografie vereinfachen",
+      spaces: "Doppelte Leerzeichen entfernen",
+      blanklines: "Leerzeilen zusammenfassen",
+      hashtags: "Hashtags entfernen",
+      "gsm-safe": "SMS-tauglich machen"
+    },
+    reducerHints: { plain: "Stilisierte Buchstaben kosten meist 2 Einheiten." }
+  };
+</script>
+<script src="/js/counter/counterController.js" defer></script>
+
+<script>
+window.addEventListener("load", function () {
+  const lines = [];
+  let pass = 0, fail = 0;
+  function t(name, got, want) {
+    const ok = JSON.stringify(got) === JSON.stringify(want);
+    ok ? pass++ : fail++;
+    lines.push((ok ? "PASS " : "FAIL ") + name + "  got=" + JSON.stringify(got) + (ok ? "" : "  want=" + JSON.stringify(want)));
+  }
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => Array.from(document.querySelectorAll(s));
+  const input = $("#counterInput");
+  const type = (v) => { input.value = v; input.dispatchEvent(new Event("input", { bubbles: true })); };
+  const selects = () => $$("#platformChecker select");
+  const fixBtns = () => $$("#counterFixBar .cc-fix-btn");
+  const btnByLabel = (txt) => fixBtns().find((b) => b.textContent.indexOf(txt) === 0);
+
+  /* ---------- 1. the picker mounted, and it is two-tier ---------- */
+  const sel = selects();
+  t("picker rendered two selects", sel.length, 2);
+  const [platformSel, fieldSel] = sel;
+  t("platform select is populated", platformSel.options.length > 10, true);
+  t("locale `selected` honoured (LinkedIn preselected)", platformSel.value, "linkedin");
+  t("field select scoped to that platform", Array.from(fieldSel.options).every((o) => o.value.indexOf("li-") === 0), true);
+  t("field label is translated, not the full label", fieldSel.options[0].textContent.indexOf("Beitrag") === 0, true);
+  t("field option shows its limit", fieldSel.options[0].textContent.indexOf("3,000") > -1, true);
+  t("picker label is translated", $("#platformChecker .cc-label").textContent, "Wohin geht dieser Text?");
+  t("aria-label on platform select translated", platformSel.getAttribute("aria-label"), "Plattform");
+
+  /* ---------- 2. changing platform repaints tier two ---------- */
+  platformSel.value = "x";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  t("switching platform repaints fields", Array.from(fieldSel.options).every((o) => o.value.indexOf("x-") === 0), true);
+  t("switching platform reselects first field", fieldSel.value, "x-post");
+  platformSel.value = "whatsapp";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  t("single-field platform hides tier two", fieldSel.hidden, true);
+  platformSel.value = "x";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  t("multi-field platform shows tier two again", fieldSel.hidden, false);
+
+  /* ---------- 3. live count + over-limit state ---------- */
+  type("hello");
+  t("live count reads n / limit", $("#counterLiveCount").textContent, "5 / 280");
+  t("under limit: textarea not flagged", input.classList.contains("is-over-limit"), false);
+  type("x".repeat(300));
+  t("over limit: live count flagged", $("#counterLiveCount").classList.contains("is-over"), true);
+  t("over limit: textarea flagged", input.classList.contains("is-over-limit"), true);
+  type("x".repeat(275));
+  t("near limit: live count warns", $("#counterLiveCount").classList.contains("is-close"), true);
+
+  /* ---------- 4. stats, including the locale billing unit ---------- */
+  type("one two three");
+  t("word count", $("#statWords").textContent, "3");
+  t("char count", $("#statChars").textContent, "13");
+  t("chars without spaces", $("#statCharsNoSpaces").textContent, "11");
+  type("x".repeat(900));
+  t("locale `units` tile computed", $("#statTestUnit").textContent, "0.5");
+
+  /* ---------- 5. inspect line names what you cannot see ---------- */
+  type("plain text only");
+  t("clean text: inspect hidden", $("#counterInspect").hidden, true);
+  type("𝗔𝗕 ​ ń");
+  const insp = $("#counterInspect");
+  t("dirty text: inspect shown", insp.hidden, false);
+  t("inspect reports styled letters", insp.textContent.indexOf("2 stilisierte") > -1, true);
+  t("inspect reports invisibles", insp.textContent.indexOf("1 unsichtbare") > -1, true);
+  t("inspect reports combining marks", insp.textContent.indexOf("1 kombinierende") > -1, true);
+  t("inspect is translated (no English leak)", /styled|invisible|stacked/.test(insp.textContent), false);
+
+  /* ---------- 6. the fix bar ---------- */
+  type("plain text that fits fine");
+  t("clean + fits: fix bar hidden", $("#counterFixBar").hidden, true);
+
+  const styled = "𝗔𝗕𝗖".repeat(60) + " 🙂 #tag";
+  type(styled);
+  t("over limit: fix bar shown", $("#counterFixBar").hidden, false);
+  t("over limit: fix bar flagged", $("#counterFixBar").classList.contains("is-over"), true);
+  t("lead line is translated with the shortfall", /^\d+ Zeichen zu viel/.test($("#counterFixBar .cc-fix-lead").textContent), true);
+  t("fix buttons rendered", fixBtns().length > 1, true);
+  t("reducer labels are translated", fixBtns().some((b) => b.textContent.indexOf("In normalen Text umwandeln") === 0), true);
+  t("no English reducer label leaked", fixBtns().some((b) => /Convert fancy|Remove emoji|Remove hashtags/.test(b.textContent)), false);
+  t("every button shows a saving", fixBtns().filter((b) => b.querySelector(".cc-fix-btn-save")).length, fixBtns().length);
+  t("trim button offered when over", !!btnByLabel("Passend kürzen"), true);
+  t("undo not offered before any fix", !!btnByLabel("Rückgängig"), false);
+
+  /* clicking a reducer really rewrites the box, and the saving was honest */
+  const before = window.UltraTextGen.counterRules.measure(input.value, "x-post");
+  const plainBtn = btnByLabel("In normalen Text umwandeln");
+  const claimed = parseInt(plainBtn.querySelector(".cc-fix-btn-save").textContent.replace(/[^\d]/g, ""), 10);
+  plainBtn.click();
+  const after = window.UltraTextGen.counterRules.measure(input.value, "x-post");
+  t("clicking a reducer changes the text", input.value !== styled, true);
+  t("the saving shown was the saving delivered", before - after, claimed);
+  t("undo offered after a fix", !!btnByLabel("Rückgängig"), true);
+  btnByLabel("Rückgängig").click();
+  t("undo restores the original text", input.value, styled);
+
+  /* trim really gets under, on a word boundary, in this destination's unit */
+  type("word ".repeat(120).trim());
+  btnByLabel("Passend kürzen").click();
+  const trimmed = input.value;
+  t("trim gets under the limit", window.UltraTextGen.counterRules.measure(trimmed, "x-post") <= 280, true);
+  t("trim did not cut mid-word", /(\bword|…)$/.test(trimmed), true);
+
+  /* ---------- 7. the fit grid ---------- */
+  type("");
+  t("empty text: fit grid hidden", $("#counterFitGrid").hidden, true);
+  type("y".repeat(150));
+  const chips = $$("#counterFitGrid .cc-fit-chip");
+  t("fit grid renders every rule", chips.length, window.UltraTextGen.counterRules.LIMITS.length);
+  t("over-limit chips come first", chips[0].classList.contains("is-unfit"), true);
+  t("headroom chips come last", chips[chips.length - 1].classList.contains("is-fit"), true);
+  const unfit = chips.filter((c) => c.classList.contains("is-unfit"));
+  const dist = unfit.map((c) => Math.abs(parseInt(c.querySelector(".cc-fit-num").textContent.replace(/[^\d]/g, ""), 10)));
+  t("over-limit chips ordered nearest-first", dist.slice().sort((a, b) => a - b), dist);
+  t("active destination marked", chips.filter((c) => c.classList.contains("is-active")).length, 1);
+  t("chip names use the locale labels", chips.some((c) => c.textContent.indexOf("X-Beitrag") === 0), true);
+
+  /* ---------- 8. SMS is segment-aware end to end ---------- */
+  platformSel.value = "sms";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("Hello there, this is a perfectly ordinary GSM-7 message.");
+  const noteEl = $("#platformChecker .cc-note");
+  t("SMS note shown", noteEl.hidden, false);
+  type("Hello there 🙂 this one has an emoji in it.");
+  t("emoji flips SMS to Unicode mode in the UI", noteEl.textContent.indexOf("UCS-2") > -1, true);
+  const gsmBtn = btnByLabel("SMS-tauglich machen");
+  t("SMS-safe fix offered", !!gsmBtn, true);
+  t("SMS-safe fix reports segments, not characters", gsmBtn.querySelector(".cc-fix-btn-save").textContent.indexOf("Seg.") > -1, true);
+  gsmBtn.click();
+  t("SMS-safe fix returns the message to GSM-7",
+    window.UltraTextGen.counterCounts.gsmInfo(input.value).encoding, "GSM-7");
+
+  /* ---------- 9. soft-limit truncation warning ---------- */
+  platformSel.value = "linkedin";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("z".repeat(400));
+  t("soft limit warns where it truncates",
+    $("#platformChecker .cc-note").textContent.indexOf("Nur die ersten 140–210 Zeichen") > -1, true);
+  t("soft limit does not claim the post is over", $("#counterLiveCount").classList.contains("is-over"), false);
+
+  /* ---------- 10. clear ---------- */
+  type("something");
+  t("clear button appears with text", $("#counterClearBtn").hidden, false);
+  $("#counterClearBtn").click();
+  t("clear empties the box", input.value, "");
+  t("clear hides the fit grid", $("#counterFitGrid").hidden, true);
+  t("clear hides the clear button", $("#counterClearBtn").hidden, true);
+
+
+  /* ---------- 11. the fold — the second budget ---------- */
+  const fold = $("#counterFold");
+  platformSel.value = "linkedin";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  type("");
+  t("empty text: fold panel hidden", fold.hidden, true);
+
+  type("Short hook.");
+  t("under the fold: panel still shown", fold.hidden, false);
+  t("under the fold: not flagged as cut", fold.classList.contains("is-cut"), false);
+  t("under the fold: no see-more marker", !!fold.querySelector(".cc-fold-more"), false);
+  t("under the fold: reports remaining hook room",
+    fold.querySelector(".cc-fold-meta").textContent.indexOf("noch 129 Zeichen") > -1, true);
+  t("fold heading is translated", fold.querySelector(".cc-fold-head").textContent.indexOf("Mehr anzeigen") > -1, true);
+
+  const hook = "H".repeat(140);
+  type(hook + "T".repeat(60));
+  t("over the fold: flagged as cut", fold.classList.contains("is-cut"), true);
+  t("preview is exactly the visible part", fold.querySelector(".cc-fold-shown").textContent, hook);
+  t("preview is cut at the MOBILE fold, not desktop", fold.querySelector(".cc-fold-shown").textContent.length, 140);
+  t("see-more marker is translated", fold.querySelector(".cc-fold-more").textContent.indexOf("mehr anzeigen") > -1, true);
+  t("the hidden remainder is rendered, not dropped", fold.querySelector(".cc-fold-hidden").textContent, "T".repeat(60));
+  t("meta reports shown/total/hidden",
+    fold.querySelector(".cc-fold-meta").textContent.indexOf("140 von 200 Zeichen sichtbar") > -1, true);
+  t("both device folds named", fold.querySelector(".cc-fold-devices").textContent.indexOf("140") > -1
+    && fold.querySelector(".cc-fold-devices").textContent.indexOf("210") > -1, true);
+
+  /* the cut must never split a grapheme cluster */
+  type("👨‍👩‍👧‍👦".repeat(200));
+  const shown = fold.querySelector(".cc-fold-shown").textContent;
+  t("fold cuts on grapheme boundaries (no broken emoji)",
+    shown === "👨‍👩‍👧‍👦".repeat(140), true);
+
+  /* cross-platform: the same hook against every other fold on the site */
+  type("z".repeat(130));
+  const others = Array.from(fold.querySelectorAll(".cc-fold-others .cc-fit-chip"));
+  t("other folding destinations listed", others.length > 1, true);
+  t("active destination excluded from the others row",
+    others.some((c) => c.textContent.indexOf("LinkedIn-Beitrag") === 0), false);
+  t("130 chars already over Instagram's 125 fold",
+    others.some((c) => c.textContent.indexOf("Instagram") === 0 && c.classList.contains("is-unfit")), true);
+  t("130 chars still inside YouTube's 157 fold",
+    others.some((c) => c.textContent.indexOf("YouTube") === 0 && c.classList.contains("is-fit")), true);
+
+  /* destinations that do not fold must not render the panel at all */
+  platformSel.value = "x";
+  platformSel.dispatchEvent(new Event("change", { bubbles: true }));
+  t("non-folding destination hides the panel", fold.hidden, true);
+
+  const summary = (fail ? fail + " FAILED, " : "") + pass + " passed";
+  document.getElementById("results").textContent = lines.join("\n") + "\n\n" + summary;
+  window.__UTG_TEST = { pass: pass, fail: fail, lines: lines, summary: summary };
+});
+</script>
+</body>
+</html>
