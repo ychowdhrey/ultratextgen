@@ -281,6 +281,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -325,7 +327,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Der Check oben weiß, welches von beidem gerade gilt: Bei einem weichen Limit sagt er dir zusätzlich, ab welchem Zeichen dein Text abgeschnitten wird – du kannst das Wichtigste also nach vorn ziehen, statt nur unter einer Zahl zu bleiben.</p>
+    <p>Das weiche Limit ist das, gegen das die meisten tatsächlich schreiben – und fast kein Zähler zeigt es an. Ein LinkedIn-Beitrag hat 3.000 Zeichen und ungefähr 140 nützliche: Der Rest liegt hinter einem Tippen, das kaum jemand macht. Deshalb stellt der Zähler oben den Schnitt direkt dar – tipp etwas ein, und du siehst genau den Text, der vor „mehr anzeigen“ erscheint, alles dahinter abgeblendet hinter einer Trennlinie, dazu, wie derselbe Einstieg in jedem anderen Feed dasteht, der abschneidet.</p>
+    <p><strong>Wo jeder Feed abschneidet – und auf welchem Gerät:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Schnitt bei</th><th>Was das für den Aufhänger bedeutet</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn-Beitrag</td>
+          <td>ca. 140 Handy<br>ca. 210 Desktop</td>
+          <td>Schreib auf 140 hin, dann überlebt der Einstieg beides. Das ist die größte Lücke zwischen Handy und Desktop in dieser Liste.</td>
+        </tr>
+        <tr>
+          <td><a href="/de/schriftarten-fuer-instagram/">Instagram-Bildunterschrift</a></td>
+          <td>ca. 125</td>
+          <td>Der knappste Schnitt hier – etwa ein Satz, bevor „… mehr“ kommt.</td>
+        </tr>
+        <tr>
+          <td>YouTube-Beschreibung</td>
+          <td>ca. 157</td>
+          <td>Was unter dem Titel steht, bevor „Mehr ansehen“ kommt – und oft auch das, was in der Suche auftaucht.</td>
+        </tr>
+        <tr>
+          <td><a href="/de/schriftarten-fuer-facebook/">Facebook-Beitrag</a></td>
+          <td>ca. 477</td>
+          <td>Der großzügigste Schnitt – ein ganzer kurzer Absatz landet noch davor.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Zwei ehrliche Einschränkungen. Das sind beobachtete Oberflächen, keine veröffentlichten Limits – nimm sie also als „was zuverlässig zu sehen ist“ und nicht als exakte Schwellenwerte. Und Feeds schneiden auch nach <em>Zeilenzahl</em> ab: Drei frühe Zeilenumbrüche können einen Beitrag deutlich vor jeder Zeichenzahl kappen. Wenn dein Einstieg von einer Aufzählung lebt, prüf ihn zusätzlich im echten Editor.</p>
     <p>Eine ebenso häufige, aber ganz andere Situation: Deutsche Hausarbeiten, Bachelorarbeiten und Klausuren geben oft eine feste Wort- oder Zeichenzahl statt einer Seitenzahl vor. Das hat mit Social-Media-Limits nichts zu tun, lässt sich mit demselben Zähler aber genauso prüfen – <a href="#leerzeichen">mit oder ohne Leerzeichen</a> ist dabei die entscheidende Frage.</p>
   </section>
 
@@ -533,6 +562,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     undo: "Rückgängig",
     applied: "Angewendet",
     segShort: "Seg.",
+    foldHeading: "Was Leser vor „mehr anzeigen“ sehen",
+    foldMore: "mehr anzeigen",
+    foldMeta: "{shown} von {total} Zeichen sichtbar · {hidden} verborgen hinter dem Aufklappen",
+    foldRoom: "Noch {n} Zeichen für den Aufhänger, bevor abgeschnitten wird",
+    foldDevices: "Auf dem Handy wird bei {m} abgeschnitten, auf dem Desktop bei {d}.",
     fitsHeading: "Wo dieser Text sonst noch passt",
     inspectStyled: "{n} verzierte Unicode-Buchstaben – sie kosten auf X und in vielen App-Feldern je 2.",
     inspectInvisible: "{n} unsichtbare Zeichen, die trotzdem mitzählen.",

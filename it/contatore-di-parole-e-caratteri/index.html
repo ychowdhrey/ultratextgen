@@ -192,6 +192,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -235,7 +237,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Il verificatore qui sopra sa distinguerli: quando il limite è morbido ti dice in quale punto il testo viene tagliato, così metti davanti quello che conta invece di limitarti a stare sotto un numero.</p>
+    <p>Il limite morbido è quello contro cui si scrive davvero, e quasi nessun contatore lo mostra. Un post LinkedIn ha 3.000 caratteri e circa 140 caratteri utili: tutto il resto sta dietro un tocco che quasi nessuno fa. Per questo il verificatore qui sopra disegna il taglio: scrivi e vedi esattamente il testo che compare prima di «altro», con la parte successiva sfumata sotto una linea, e capisci se la stessa apertura regge anche su tutti gli altri feed che troncano.</p>
+    <p><strong>Dove taglia ogni feed, e su quale dispositivo:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Feed</th><th>Taglia a</th><th>Cosa significa per l'apertura</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Post LinkedIn</td>
+          <td>~140 su mobile<br>~210 su desktop</td>
+          <td>Se stai entro 140 regge su entrambi. È il divario mobile/desktop più ampio di tutta la lista.</td>
+        </tr>
+        <tr>
+          <td><a href="/it/font-instagram/">Didascalia Instagram</a></td>
+          <td>~125</td>
+          <td>Il taglio più stretto di questo elenco: poco più di una frase prima di «... altro».</td>
+        </tr>
+        <tr>
+          <td>Descrizione YouTube</td>
+          <td>~157</td>
+          <td>Quello che si legge sotto il titolo prima di «Mostra altro», ed è spesso anche ciò che finisce nella ricerca.</td>
+        </tr>
+        <tr>
+          <td><a href="/it/font-facebook/">Post Facebook</a></td>
+          <td>~477</td>
+          <td>Il taglio più generoso: prima del limite ci sta un intero paragrafo breve.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Due avvertenze oneste. Questi numeri nascono dall'osservazione dell'interfaccia, non da limiti pubblicati: vanno letti come «quanto si vede in modo affidabile», non come soglie esatte. E i feed tagliano anche in base al <em>numero di righe</em>, quindi tre interruzioni di riga all'inizio possono troncare un post ben prima di qualsiasi conteggio di caratteri. Se l'apertura si regge su un elenco, provala anche nell'editor vero della piattaforma.</p>
     <p>Nulla di tutto questo riguarda un altro caso d'uso molto comune in Italia: i limiti di parole richiesti per un tema delle superiori, una tesina d'esame o una tesi di laurea, che rispondono a una logica accademica ben distinta dai limiti di caratteri dei social — vedi la domanda dedicata nella FAQ qui sotto.</p>
   </section>
 
@@ -444,6 +473,11 @@ window.UTG_COUNTER_I18N = {
   platformLabel: "Piattaforma",
   fieldLabel: "Campo",
   visibleNote: "Si vedono solo i primi {n} caratteri prima che il resto venga troncato — metti davanti quello che conta.",
+  foldHeading: "Quello che si vede prima di «altro»",
+  foldMore: "altro",
+  foldMeta: "{shown} caratteri visibili su {total} · {hidden} nascosti dietro il tocco",
+  foldRoom: "Ti restano {n} caratteri di apertura prima del taglio",
+  foldDevices: "Su mobile taglia a {m}, su desktop a {d}.",
   overBy: "Sei oltre di {n} — scegli come rientrare:",
   trimToFit: "Taglia per farlo rientrare",
   undo: "Annulla",

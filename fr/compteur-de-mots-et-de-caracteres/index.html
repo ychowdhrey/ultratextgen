@@ -273,6 +273,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -316,7 +318,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Le vérificateur ci-dessus sait de laquelle il s'agit : sur une limite souple, il t'indique en plus à quel endroit ton texte sera coupé, pour que tu places l'essentiel en premier au lieu de simplement rester sous un chiffre.</p>
+    <p>La limite souple est celle contre laquelle on écrit vraiment, et presque aucun compteur ne l'affiche. Une publication LinkedIn dispose de 3 000 caractères et d'environ 140 utiles : le reste est derrière un clic que personne ne fait. C'est pour ça que le compteur ci-dessus dessine la coupure directement — tape ton texte et tu vois exactement ce qui s'affiche avant « voir plus », le reste grisé derrière un trait, plus la façon dont la même accroche tient sur chacun des autres fils qui tronquent.</p>
+    <p><strong>Où chaque fil coupe, et sur quel appareil :</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Fil</th><th>Coupe à</th><th>Ce que ça implique pour l'accroche</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="/fr/police-linkedin/">Publication LinkedIn</a></td>
+          <td>~140 sur mobile<br>~210 sur ordinateur</td>
+          <td>Écris pour 140 et l'accroche survit aux deux. C'est le plus grand écart mobile/ordinateur de la liste.</td>
+        </tr>
+        <tr>
+          <td><a href="/fr/police-instagram/">Légende Instagram</a></td>
+          <td>~125</td>
+          <td>La coupure la plus serrée ici — une phrase environ avant le « … plus ».</td>
+        </tr>
+        <tr>
+          <td>Description YouTube</td>
+          <td>~157</td>
+          <td>Ce qui s'affiche sous le titre avant « Afficher plus » — et souvent ce que la recherche remonte.</td>
+        </tr>
+        <tr>
+          <td><a href="/fr/ecriture-facebook/">Publication Facebook</a></td>
+          <td>~477</td>
+          <td>La coupure la plus généreuse — un court paragraphe entier passe avant.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Deux réserves honnêtes. Ce sont des comportements d'interface observés, pas des limites publiées : prends-les comme « ce qui s'affiche de façon fiable » plutôt que comme des seuils exacts. Et les fils coupent aussi au <em>nombre de lignes</em> : trois retours à la ligne placés tôt peuvent tronquer une publication bien avant n'importe quel chiffre. Si ton accroche repose sur une liste, vérifie-la aussi dans le vrai éditeur.</p>
     <p>Ces limites n'ont rien à voir avec un autre cas très courant en France : les quotas de mots imposés pour une dissertation, un mémoire ou un devoir au lycée, et le plafond de <a href="#parcoursup">1 500 caractères de Parcoursup</a>. La logique est académique, pas technique — mais le même compteur y répond aussi bien.</p>
   </section>
 
@@ -525,6 +554,11 @@ window.UTG_COUNTER_I18N = {
   undo: "Annuler",
   applied: "Appliqué",
   segShort: "seg.",
+  foldHeading: "Ce que les gens voient avant « voir plus »",
+  foldMore: "voir plus",
+  foldMeta: "{shown} caractères affichés sur {total} · {hidden} cachés derrière le clic",
+  foldRoom: "Encore {n} caractères d'accroche avant la coupure",
+  foldDevices: "La coupure tombe à {m} sur mobile, à {d} sur ordinateur.",
   fitsHeading: "Où ce texte passe aussi",
   inspectStyled: "{n} lettres Unicode stylées — elles coûtent 2 chacune sur X et dans beaucoup de champs d'application.",
   inspectInvisible: "{n} caractères invisibles qui comptent quand même.",
