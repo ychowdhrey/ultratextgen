@@ -79,6 +79,9 @@
     reducers: null,
     reducerHints: null,
     segShort: "seg",
+    pastFold: null,
+    showAllFits: "Show all {n}",
+    showFewerFits: "Show fewer",
     /* The fold layer. Every string a locale page must translate. */
     foldHeading: "What people see before \u201csee more\u201d",
     foldMore: "see more",
@@ -151,6 +154,7 @@
 
     let checker = null;
     let undoValue = null;
+    let fitGridExpanded = false;
 
     function activeLimitId() {
       return checker ? checker.getLimitId() : (rules ? rules.LIMITS[0].id : null);
@@ -330,7 +334,26 @@
         if (a.fits !== b.fits) return a.fits ? 1 : -1;
         return Math.abs(a.remaining) - Math.abs(b.remaining);
       });
-      rows.forEach((row) => {
+      /* 38 chips at once is a wall, not an answer. Show the ones a writer can
+         act on — everything the text already breaks, plus the nearest few it
+         still fits — and keep the rest one click away. Ordering already puts
+         the boundary cases first, so this is a prefix, not a filter. */
+      const PREVIEW = 12;
+      const collapsed = rows.length > PREVIEW && !fitGridExpanded;
+      let shown = rows;
+      if (collapsed) {
+        shown = rows.slice(0, PREVIEW);
+        /* The destination you actually selected must never be the one the
+           collapse hides — and it sorts to the bottom precisely when it has
+           the most headroom, which is exactly when you are least worried and
+           most likely to trust the grid. Pin it in. */
+        if (!shown.some((r) => r.rule.id === activeId)) {
+          const active = rows.find((r) => r.rule.id === activeId);
+          if (active) shown = shown.slice(0, PREVIEW - 1).concat([active]);
+        }
+      }
+
+      shown.forEach((row) => {
         const chip = el("span", "cc-fit-chip " + (row.fits ? "is-fit" : "is-unfit"));
         if (row.rule.id === activeId) chip.classList.add("is-active");
         const name = (I18N.labels && I18N.labels[row.rule.id]) || row.rule.label;
@@ -340,6 +363,19 @@
           : "−" + Math.abs(row.remaining).toLocaleString()));
         fitGrid.appendChild(chip);
       });
+
+      if (rows.length > PREVIEW) {
+        const toggle = el("button", "cc-fit-toggle");
+        toggle.type = "button";
+        toggle.textContent = collapsed
+          ? fmt(I18N.showAllFits, { n: rows.length })
+          : I18N.showFewerFits;
+        toggle.addEventListener("click", () => {
+          fitGridExpanded = !fitGridExpanded;
+          renderFitGrid();
+        });
+        fitGrid.appendChild(toggle);
+      }
     }
 
     /* ---------- 1. MEASURE ---------- */
@@ -432,6 +468,7 @@
           smsSegments: I18N.smsSegments || undefined,
           smsUnicode: I18N.smsUnicode || undefined,
           visibleNote: I18N.visibleNote || undefined,
+          pastFold: I18N.pastFold || undefined,
           platformLabel: I18N.platformLabel || undefined,
           fieldLabel: I18N.fieldLabel || undefined
         },
