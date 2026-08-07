@@ -1,126 +1,668 @@
 {
   "slug": "color-emoji-combos",
-  "title": "Color Emoji Combos: Copy & Paste Blue Pink Purple Themes",
-  "meta_description": "Copy and paste color emoji combos sorted by theme — blue 💙🦋🌊, pink 🌸💗🎀, purple 💜🔮, plus red, green, and black sets. Click any symbol to copy it instantly.",
+  "title": "Color Emoji Combos: Pink, Red, Black & White Copy & Paste",
+  "meta_description": "Copy and paste color emoji combos by theme — pink 🌸💗🎀, red ❤️🌹🍒, black 🖤⛓️🕷️, white 🤍🕊️☁️, plus brown, green, purple, yellow and blue sets. Tap any combo to copy the whole string.",
   "canonical": "https://ultratextgen.com/library/color-emoji-combos/",
   "breadcrumb": "Color Emoji Combos",
   "hero_h1": "Color Emoji Combos",
-  "hero_tagline": "Emoji sets organized by color theme — blue, pink, purple, red, green, yellow, black, and white. Click any symbol or set to copy it instantly.",
-  "intro": "Color emoji combos are short strings of emojis that share one color palette, used to give bios, captions, and usernames a consistent aesthetic. Pick a blue set for ocean and butterfly vibes, a pink set for coquette profiles, or a black set for grunge moods — every color theme below has individually copyable emojis plus ready-made combo sets you can copy with one click.",
+  "hero_tagline": "Ready-made emoji combos grouped by color — pink, red, black, white, brown, green, purple, yellow, and blue. Tap any combo to copy the whole string.",
+  "intro": "Color emoji combos are short strings of emojis that share one color palette, used to give bios, captions, and usernames a consistent aesthetic. Pick a pink set for coquette profiles, a red set for romance, or a black set for grunge moods — every color below has eight ready-made combos you can copy whole, plus the individual emojis to mix your own.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-08-07",
   "copy_pattern": "collection",
   "sections": [
     {
-      "id": "blue-emojis",
-      "label": "Blue",
-      "h2": "Blue Emojis",
-      "intro": "Cool ocean, sky, and butterfly emojis for blue aesthetic themes.",
-      "symbols": [
-        { "char": "💙", "label": "Blue Heart" },
-        { "char": "🦋", "label": "Butterfly" },
-        { "char": "🌊", "label": "Water Wave" },
-        { "char": "🐬", "label": "Dolphin" },
-        { "char": "🧊", "label": "Ice" },
-        { "char": "🫐", "label": "Blueberries" },
-        { "char": "☁️", "label": "Cloud" },
-        { "char": "💠", "label": "Diamond with a Dot" }
-      ]
-    },
-    {
       "id": "pink-emojis",
       "label": "Pink",
-      "h2": "Pink Emojis",
-      "intro": "Soft blossom, bow, and ballet emojis for pink and coquette themes.",
+      "h2": "Pink Emoji Combos",
+      "intro": "Soft blossom, bow, and ballet sets for pink and coquette themes.",
+      "combos": [
+        {
+          "char": "🌸💗🎀",
+          "label": "Coquette"
+        },
+        {
+          "char": "🎀🩰🤍",
+          "label": "Ballet core"
+        },
+        {
+          "char": "💕🍓🧁",
+          "label": "Strawberry milk"
+        },
+        {
+          "char": "🌷💓🦩",
+          "label": "Flamingo blush"
+        },
+        {
+          "char": "💖✨🩷",
+          "label": "Pink sparkle"
+        },
+        {
+          "char": "🍬🌸💞",
+          "label": "Bubblegum"
+        },
+        {
+          "char": "🩰🌹💗",
+          "label": "Soft ballerina"
+        },
+        {
+          "char": "💅🎀💕",
+          "label": "Girly glam"
+        }
+      ],
       "symbols": [
-        { "char": "🌸", "label": "Cherry Blossom" },
-        { "char": "💗", "label": "Growing Heart" },
-        { "char": "🎀", "label": "Ribbon" },
-        { "char": "🩰", "label": "Ballet Shoes" },
-        { "char": "🦩", "label": "Flamingo" },
-        { "char": "🌷", "label": "Tulip" },
-        { "char": "🍓", "label": "Strawberry" },
-        { "char": "💕", "label": "Two Hearts" }
-      ]
-    },
-    {
-      "id": "purple-emojis",
-      "label": "Purple",
-      "h2": "Purple Emojis",
-      "intro": "Mystical and dreamy emojis for purple aesthetic themes.",
-      "symbols": [
-        { "char": "💜", "label": "Purple Heart" },
-        { "char": "🔮", "label": "Crystal Ball" },
-        { "char": "🪻", "label": "Hyacinth" },
-        { "char": "🍇", "label": "Grapes" },
-        { "char": "☂️", "label": "Umbrella" },
-        { "char": "🦄", "label": "Unicorn" },
-        { "char": "🟣", "label": "Purple Circle" }
+        {
+          "char": "🌸",
+          "label": "Cherry Blossom"
+        },
+        {
+          "char": "💗",
+          "label": "Growing Heart"
+        },
+        {
+          "char": "🎀",
+          "label": "Ribbon"
+        },
+        {
+          "char": "🩰",
+          "label": "Ballet Shoes"
+        },
+        {
+          "char": "🦩",
+          "label": "Flamingo"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulip"
+        },
+        {
+          "char": "🍓",
+          "label": "Strawberry"
+        },
+        {
+          "char": "💕",
+          "label": "Two Hearts"
+        }
       ]
     },
     {
       "id": "red-emojis",
       "label": "Red",
-      "h2": "Red Emojis",
-      "intro": "Bold romance and fire emojis for red themes.",
+      "h2": "Red Emoji Combos",
+      "intro": "Rose, cherry, and fire sets for red romance and bold themes.",
+      "combos": [
+        {
+          "char": "❤️🌹🍒",
+          "label": "Red romance"
+        },
+        {
+          "char": "❤️‍🔥💋🔥",
+          "label": "Burning kiss"
+        },
+        {
+          "char": "🍎❤️🎈",
+          "label": "Classic red"
+        },
+        {
+          "char": "💋💄🌹",
+          "label": "Red lips"
+        },
+        {
+          "char": "🍓❤️🍷",
+          "label": "Cherry wine"
+        },
+        {
+          "char": "🧧🎆❤️",
+          "label": "Lucky red"
+        },
+        {
+          "char": "🥊🔴💯",
+          "label": "Bold red"
+        },
+        {
+          "char": "🌶️🔥❤️",
+          "label": "Spicy"
+        }
+      ],
       "symbols": [
-        { "char": "❤️", "label": "Red Heart" },
-        { "char": "🌹", "label": "Rose" },
-        { "char": "🍒", "label": "Cherries" },
-        { "char": "🍎", "label": "Red Apple" },
-        { "char": "💋", "label": "Kiss Mark" },
-        { "char": "🔥", "label": "Fire" },
-        { "char": "🌶️", "label": "Hot Pepper" }
+        {
+          "char": "❤️",
+          "label": "Red Heart"
+        },
+        {
+          "char": "🌹",
+          "label": "Rose"
+        },
+        {
+          "char": "🍒",
+          "label": "Cherries"
+        },
+        {
+          "char": "💋",
+          "label": "Kiss Mark"
+        },
+        {
+          "char": "🍎",
+          "label": "Red Apple"
+        },
+        {
+          "char": "🔴",
+          "label": "Red Circle"
+        },
+        {
+          "char": "🧧",
+          "label": "Red Envelope"
+        }
+      ]
+    },
+    {
+      "id": "white-emojis",
+      "label": "White",
+      "h2": "White Emoji Combos",
+      "intro": "Dove, cloud, and swan sets for white, angelcore, and clean minimal themes.",
+      "combos": [
+        {
+          "char": "🤍🕊️☁️",
+          "label": "Angelcore"
+        },
+        {
+          "char": "🦢🤍✨",
+          "label": "Swan"
+        },
+        {
+          "char": "☁️🍚🤍",
+          "label": "Soft white"
+        },
+        {
+          "char": "🕯️🤍📖",
+          "label": "Quiet white"
+        },
+        {
+          "char": "❄️🤍🩶",
+          "label": "Winter white"
+        },
+        {
+          "char": "🐇🤍🌙",
+          "label": "Snow bunny"
+        },
+        {
+          "char": "💍🤍🌾",
+          "label": "Bridal"
+        },
+        {
+          "char": "🧊🤍💎",
+          "label": "Ice white"
+        }
+      ],
+      "symbols": [
+        {
+          "char": "🤍",
+          "label": "White Heart"
+        },
+        {
+          "char": "🕊️",
+          "label": "Dove"
+        },
+        {
+          "char": "☁️",
+          "label": "Cloud"
+        },
+        {
+          "char": "🦢",
+          "label": "Swan"
+        },
+        {
+          "char": "🍚",
+          "label": "Cooked Rice"
+        },
+        {
+          "char": "🕯️",
+          "label": "Candle"
+        },
+        {
+          "char": "💍",
+          "label": "Ring"
+        },
+        {
+          "char": "🩶",
+          "label": "Grey Heart"
+        }
+      ]
+    },
+    {
+      "id": "black-emojis",
+      "label": "Black",
+      "h2": "Black Emoji Combos",
+      "intro": "Chain, spider, and midnight sets for black, grunge, and dark academia themes.",
+      "combos": [
+        {
+          "char": "🖤⛓️🕷️",
+          "label": "Grunge"
+        },
+        {
+          "char": "🌑🖤🦇",
+          "label": "Midnight"
+        },
+        {
+          "char": "🖤🕸️🗝️",
+          "label": "Dark academia"
+        },
+        {
+          "char": "☕🖤📖",
+          "label": "Black coffee"
+        },
+        {
+          "char": "🐈‍⬛🖤🌙",
+          "label": "Black cat"
+        },
+        {
+          "char": "🖤💀🔥",
+          "label": "Hard black"
+        },
+        {
+          "char": "🎩🖤♠️",
+          "label": "Sharp black"
+        },
+        {
+          "char": "🖤🪶🌚",
+          "label": "Raven"
+        }
+      ],
+      "symbols": [
+        {
+          "char": "🖤",
+          "label": "Black Heart"
+        },
+        {
+          "char": "⛓️",
+          "label": "Chains"
+        },
+        {
+          "char": "🕷️",
+          "label": "Spider"
+        },
+        {
+          "char": "🌑",
+          "label": "New Moon"
+        },
+        {
+          "char": "🦇",
+          "label": "Bat"
+        },
+        {
+          "char": "♠️",
+          "label": "Spade Suit"
+        },
+        {
+          "char": "⚫",
+          "label": "Black Circle"
+        }
+      ]
+    },
+    {
+      "id": "brown-emojis",
+      "label": "Brown",
+      "h2": "Brown Emoji Combos",
+      "intro": "Coffee, teddy, and woodland sets for brown, cottagecore, and cozy themes.",
+      "combos": [
+        {
+          "char": "🤎☕🍂",
+          "label": "Coffee brown"
+        },
+        {
+          "char": "🧸🤎🍪",
+          "label": "Teddy"
+        },
+        {
+          "char": "🐻🤎🍯",
+          "label": "Honey bear"
+        },
+        {
+          "char": "🤎🥐📚",
+          "label": "Bookish brown"
+        },
+        {
+          "char": "🍫🤎🥛",
+          "label": "Chocolate milk"
+        },
+        {
+          "char": "🪵🤎🍄",
+          "label": "Woodland"
+        },
+        {
+          "char": "🐴🤎🌾",
+          "label": "Horse girl"
+        },
+        {
+          "char": "🤎🧣🕯️",
+          "label": "Cozy brown"
+        }
+      ],
+      "symbols": [
+        {
+          "char": "🤎",
+          "label": "Brown Heart"
+        },
+        {
+          "char": "☕",
+          "label": "Hot Beverage"
+        },
+        {
+          "char": "🍂",
+          "label": "Fallen Leaf"
+        },
+        {
+          "char": "🧸",
+          "label": "Teddy Bear"
+        },
+        {
+          "char": "🍫",
+          "label": "Chocolate Bar"
+        },
+        {
+          "char": "🐻",
+          "label": "Bear"
+        },
+        {
+          "char": "🪵",
+          "label": "Wood"
+        },
+        {
+          "char": "🥐",
+          "label": "Croissant"
+        }
       ]
     },
     {
       "id": "green-emojis",
       "label": "Green",
-      "h2": "Green Emojis",
-      "intro": "Fresh nature and luck emojis for green themes.",
+      "h2": "Green Emoji Combos",
+      "intro": "Clover, plant, and forest sets for green, nature, and matcha themes.",
+      "combos": [
+        {
+          "char": "💚🍀🌿",
+          "label": "Lucky green"
+        },
+        {
+          "char": "🌱💚🪴",
+          "label": "Plant mom"
+        },
+        {
+          "char": "🐸💚🍃",
+          "label": "Frog core"
+        },
+        {
+          "char": "🍏💚🥝",
+          "label": "Fresh green"
+        },
+        {
+          "char": "🌲💚🏕️",
+          "label": "Forest"
+        },
+        {
+          "char": "🦎💚🌵",
+          "label": "Desert green"
+        },
+        {
+          "char": "🍵💚🌿",
+          "label": "Matcha"
+        },
+        {
+          "char": "💚🐢🌊",
+          "label": "Sea green"
+        }
+      ],
       "symbols": [
-        { "char": "💚", "label": "Green Heart" },
-        { "char": "🍀", "label": "Four Leaf Clover" },
-        { "char": "🐸", "label": "Frog" },
-        { "char": "🌿", "label": "Herb" },
-        { "char": "🍃", "label": "Leaf Fluttering in Wind" },
-        { "char": "🥑", "label": "Avocado" },
-        { "char": "🐢", "label": "Turtle" }
+        {
+          "char": "💚",
+          "label": "Green Heart"
+        },
+        {
+          "char": "🍀",
+          "label": "Four Leaf Clover"
+        },
+        {
+          "char": "🌿",
+          "label": "Herb"
+        },
+        {
+          "char": "🐸",
+          "label": "Frog"
+        },
+        {
+          "char": "🌱",
+          "label": "Seedling"
+        },
+        {
+          "char": "🍏",
+          "label": "Green Apple"
+        },
+        {
+          "char": "🌲",
+          "label": "Evergreen Tree"
+        }
+      ]
+    },
+    {
+      "id": "purple-emojis",
+      "label": "Purple",
+      "h2": "Purple Emoji Combos",
+      "intro": "Crystal, unicorn, and lavender sets for purple, mystical, and dreamy themes.",
+      "combos": [
+        {
+          "char": "💜🔮🪻",
+          "label": "Purple magic"
+        },
+        {
+          "char": "🦄💜✨",
+          "label": "Unicorn"
+        },
+        {
+          "char": "🍇💜🥤",
+          "label": "Grape soda"
+        },
+        {
+          "char": "🌌💜🔮",
+          "label": "Cosmic purple"
+        },
+        {
+          "char": "🪻💜🦋",
+          "label": "Lavender field"
+        },
+        {
+          "char": "👾💜🕹️",
+          "label": "Neon purple"
+        },
+        {
+          "char": "💜👑🍷",
+          "label": "Royal purple"
+        },
+        {
+          "char": "🌙💜⭐",
+          "label": "Dream purple"
+        }
+      ],
+      "symbols": [
+        {
+          "char": "💜",
+          "label": "Purple Heart"
+        },
+        {
+          "char": "🔮",
+          "label": "Crystal Ball"
+        },
+        {
+          "char": "🪻",
+          "label": "Hyacinth"
+        },
+        {
+          "char": "🍇",
+          "label": "Grapes"
+        },
+        {
+          "char": "☂️",
+          "label": "Umbrella"
+        },
+        {
+          "char": "🦄",
+          "label": "Unicorn"
+        },
+        {
+          "char": "🟣",
+          "label": "Purple Circle"
+        }
       ]
     },
     {
       "id": "yellow-orange-emojis",
       "label": "Yellow & Orange",
-      "h2": "Yellow & Orange Emojis",
-      "intro": "Warm sunshine and citrus emojis for yellow and orange themes.",
+      "h2": "Yellow & Orange Emoji Combos",
+      "intro": "Sunflower, lemon, and sunset sets for yellow and orange themes.",
+      "combos": [
+        {
+          "char": "💛🌻☀️",
+          "label": "Sunshine"
+        },
+        {
+          "char": "🍋💛🐤",
+          "label": "Lemon"
+        },
+        {
+          "char": "🐝💛🍯",
+          "label": "Honeybee"
+        },
+        {
+          "char": "🧡🍊🌅",
+          "label": "Orange sunset"
+        },
+        {
+          "char": "🎃🧡🍂",
+          "label": "Pumpkin"
+        },
+        {
+          "char": "💛⭐✨",
+          "label": "Golden hour"
+        },
+        {
+          "char": "🧡🦊🍁",
+          "label": "Fox autumn"
+        },
+        {
+          "char": "🍯💛🥐",
+          "label": "Warm yellow"
+        }
+      ],
       "symbols": [
-        { "char": "💛", "label": "Yellow Heart" },
-        { "char": "🌻", "label": "Sunflower" },
-        { "char": "🍋", "label": "Lemon" },
-        { "char": "🐝", "label": "Honeybee" },
-        { "char": "☀️", "label": "Sun" },
-        { "char": "⭐", "label": "Star" },
-        { "char": "🧡", "label": "Orange Heart" },
-        { "char": "🍊", "label": "Tangerine" },
-        { "char": "🦊", "label": "Fox" }
+        {
+          "char": "💛",
+          "label": "Yellow Heart"
+        },
+        {
+          "char": "🌻",
+          "label": "Sunflower"
+        },
+        {
+          "char": "🍋",
+          "label": "Lemon"
+        },
+        {
+          "char": "🐝",
+          "label": "Honeybee"
+        },
+        {
+          "char": "☀️",
+          "label": "Sun"
+        },
+        {
+          "char": "🧡",
+          "label": "Orange Heart"
+        },
+        {
+          "char": "🍊",
+          "label": "Tangerine"
+        },
+        {
+          "char": "🦊",
+          "label": "Fox"
+        },
+        {
+          "char": "🌅",
+          "label": "Sunrise"
+        }
       ]
     },
     {
-      "id": "black-white-emojis",
-      "label": "Black & White",
-      "h2": "Black & White Emojis",
-      "intro": "Monochrome emojis for grunge, goth, and angelcore themes.",
+      "id": "blue-emojis",
+      "label": "Blue",
+      "h2": "Blue Emoji Combos",
+      "intro": "Butterfly, wave, and sky sets for blue and ocean themes.",
+      "combos": [
+        {
+          "char": "💙🦋🌊",
+          "label": "Blue aesthetic"
+        },
+        {
+          "char": "🌊🐬🐚",
+          "label": "Ocean blue"
+        },
+        {
+          "char": "🧊💙❄️",
+          "label": "Ice blue"
+        },
+        {
+          "char": "☁️💙🌀",
+          "label": "Sky blue"
+        },
+        {
+          "char": "🫐💙🍇",
+          "label": "Blueberry"
+        },
+        {
+          "char": "🐳💙🌊",
+          "label": "Deep sea"
+        },
+        {
+          "char": "💠💙✨",
+          "label": "Crystal blue"
+        },
+        {
+          "char": "🌌💙🌙",
+          "label": "Night blue"
+        }
+      ],
       "symbols": [
-        { "char": "🖤", "label": "Black Heart" },
-        { "char": "🕷️", "label": "Spider" },
-        { "char": "🌑", "label": "New Moon" },
-        { "char": "🦇", "label": "Bat" },
-        { "char": "⛓️", "label": "Chains" },
-        { "char": "🤍", "label": "White Heart" },
-        { "char": "🕊️", "label": "Dove" },
-        { "char": "🦢", "label": "Swan" },
-        { "char": "⚪", "label": "White Circle" },
-        { "char": "⚫", "label": "Black Circle" }
+        {
+          "char": "💙",
+          "label": "Blue Heart"
+        },
+        {
+          "char": "🦋",
+          "label": "Butterfly"
+        },
+        {
+          "char": "🌊",
+          "label": "Water Wave"
+        },
+        {
+          "char": "🐬",
+          "label": "Dolphin"
+        },
+        {
+          "char": "🧊",
+          "label": "Ice"
+        },
+        {
+          "char": "🫐",
+          "label": "Blueberries"
+        },
+        {
+          "char": "☁️",
+          "label": "Cloud"
+        },
+        {
+          "char": "💠",
+          "label": "Diamond with a Dot"
+        }
       ]
     }
   ],
@@ -134,42 +676,91 @@
   "collections": [
     {
       "name": "Blue Aesthetic",
-      "flags": ["💙", "🦋", "🌊", "🐬", "🧊", "☁️"],
+      "flags": [
+        "💙",
+        "🦋",
+        "🌊",
+        "🐬",
+        "🧊",
+        "☁️"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Pink Coquette",
-      "flags": ["🌸", "💗", "🎀", "🩰", "🍓"],
+      "flags": [
+        "🌸",
+        "💗",
+        "🎀",
+        "🩰",
+        "🍓"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Purple Magic",
-      "flags": ["💜", "🔮", "🪻", "🦄", "✨"],
+      "flags": [
+        "💜",
+        "🔮",
+        "🪻",
+        "🦄",
+        "✨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Red Romance",
-      "flags": ["❤️", "🌹", "🍒", "💋", "🔥"],
+      "flags": [
+        "❤️",
+        "🌹",
+        "🍒",
+        "💋",
+        "🔥"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Green Nature",
-      "flags": ["💚", "🍀", "🐸", "🌿", "🍃"],
+      "flags": [
+        "💚",
+        "🍀",
+        "🐸",
+        "🌿",
+        "🍃"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Yellow Sunshine",
-      "flags": ["💛", "🌻", "🍋", "🐝", "☀️"],
+      "flags": [
+        "💛",
+        "🌻",
+        "🍋",
+        "🐝",
+        "☀️"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Black Grunge",
-      "flags": ["🖤", "🕷️", "🌑", "⛓️", "🦇"],
+      "flags": [
+        "🖤",
+        "🕷️",
+        "🌑",
+        "⛓️",
+        "🦇"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "White Angelcore",
-      "flags": ["🤍", "🕊️", "☁️", "🦢", "✨"],
+      "flags": [
+        "🤍",
+        "🕊️",
+        "☁️",
+        "🦢",
+        "✨"
+      ],
       "defaultFormat": "inline"
     }
   ],
