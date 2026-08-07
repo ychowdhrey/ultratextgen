@@ -1,0 +1,267 @@
+{
+  "slug": "emoji-tengkorak",
+  "title": "Emoji Tengkorak 💀 ☠️ — Salin & Tempel Kombinasi \"Gua Mati\" | UltraTextGen",
+  "meta_description": "Salin & tempel emoji tengkorak 💀 ☠️ 🦴, kombinasi \"gua mati ketawa\", dan kaomoji tengkorak x_x buat reaksi dan caption. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Emoji Tengkorak",
+  "hero_h1": "Emoji Tengkorak & Kaomoji",
+  "hero_tagline": "Dari 💀 tengkorak polos sampai cara favorit internet bilang \"gua mati ketawa\", plus tulang silang, tanda bahaya, dan kaomoji tengkorak kayak x_x. Klik simbolnya, langsung kesalin.",
+  "intro": "Emoji tengkorak 💀 termasuk karakter paling bermuatan budaya di internet — dia berhenti berarti kematian harfiah bertahun-tahun lalu, dan sekarang lebih sering berarti \"gua mati\", dalam arti sesuatu begitu lucu sampai kamu mati ketawa, pelan-pelan menggantikan 😂 sebagai reaksi andalan. Halaman ini ngumpulin emoji tengkorak bergambar (💀 ☠️), tulang silang dan tanda bahaya yang biasa dipasangkan, plus kaomoji tengkorak satu baris kayak x_x dan (☠‿☠). Salin satu simbol sendirian, atau ambil kombinasi jadi kayak 💀😂🤣 buat komentar yang artinya \"ini lucu banget sampai gua mati\".",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-skull",
+      "label": "Tengkorak Utama",
+      "h2": "Emoji Tengkorak Utama",
+      "intro": "Dua emoji tengkorak ikonik yang jadi awal semua kombinasi.",
+      "symbols": [
+        {
+          "char": "💀",
+          "label": "Tengkorak"
+        },
+        {
+          "char": "☠️",
+          "label": "Tengkorak & Tulang Silang"
+        }
+      ]
+    },
+    {
+      "id": "dead-from-laughing",
+      "label": "Mati Ketawa",
+      "h2": "Emoji Mati Ketawa",
+      "intro": "Kelompok meme tempat 💀 menggantikan ketawa-sampai-nangis — pasangkan dengan ini.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Ketawa Sampai Nangis"
+        },
+        {
+          "char": "🤣",
+          "label": "Ngakak Guling-Guling"
+        },
+        {
+          "char": "⚰️",
+          "label": "Peti Mati"
+        },
+        {
+          "char": "💯",
+          "label": "Nilai Seratus"
+        },
+        {
+          "char": "🪦",
+          "label": "Batu Nisan"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-danger",
+      "label": "Tulang & Bahaya",
+      "h2": "Tulang, Bajak Laut & Simbol Bahaya",
+      "intro": "Tulang, bendera bajak laut, dan tanda bahaya buat sisi tengkorak yang lebih gelap.",
+      "symbols": [
+        {
+          "char": "🦴",
+          "label": "Tulang"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Bendera Bajak Laut"
+        },
+        {
+          "char": "☣️",
+          "label": "Biohazard"
+        },
+        {
+          "char": "☢️",
+          "label": "Radioaktif"
+        }
+      ]
+    },
+    {
+      "id": "skull-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Tengkorak & Wajah Teks",
+      "intro": "Wajah teks satu baris bermata mati yang nempel di mana pun teks polos masuk.",
+      "symbols": [
+        {
+          "char": "x_x",
+          "label": "Kaomoji Mata Mati"
+        },
+        {
+          "char": "X_X",
+          "label": "Kaomoji Pingsan"
+        },
+        {
+          "char": "(x_x)",
+          "label": "Kaomoji Mati Pusing"
+        },
+        {
+          "char": "†（‡＾ᴗ＾）†",
+          "label": "Kaomoji Salib Kuburan"
+        },
+        {
+          "char": "(☠‿☠)",
+          "label": "Kaomoji Tengkorak Senyum"
+        },
+        {
+          "char": "✖‿✖",
+          "label": "Kaomoji Senyum Mati"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Tengkorak",
+    "intro": "Salin satu kombinasi tengkorak lengkap sekali klik, langsung tempel ke komentar, caption, atau balasan."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Mati Ketawa",
+      "flags": [
+        "💀",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zona Bahaya",
+      "flags": [
+        "☠️",
+        "☣️",
+        "☢️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mode Bajak Laut",
+      "flags": [
+        "☠️",
+        "🏴‍☠️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wafat Total",
+      "flags": [
+        "💀",
+        "⚰️",
+        "🪦"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tengkorak Halloween",
+      "flags": [
+        "💀",
+        "🎃",
+        "👻"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lucu Banget Gua Mati",
+      "flags": [
+        "💀",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bikin Merinding",
+      "flags": [
+        "💀",
+        "🦴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP Gua",
+      "flags": [
+        "💀",
+        "⚰️"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Tengkorak di Tiap Perangkat",
+      "paragraphs": [
+        "💀 termasuk emoji yang gambarnya cukup konsisten antar vendor — tengkorak putih menghadap depan di hampir semua platform. Punya Apple giginya lebih rapi dan rongga matanya lebih besar; punya Google lebih rata dan lebih kartun.",
+        "Yang berbeda-beda justru bukan gambarnya, tapi <em>maknanya</em>. Buat sebagian orang 💀 berarti \"ngakak sampai mati\"; buat yang lain — terutama lawan bicara yang lebih tua atau di konteks kerja — dia masih berarti kematian, bahaya, atau racun. Nggak ada perangkat yang bisa memperjelas itu; cuma konteks yang bisa.",
+        "Ada juga karakter yang mirip tapi berbeda: ☠ Tengkorak & Tulang Silang adalah piktogram racun dan bendera bajak laut, bukan 💀. Identitas lengkapnya ada di <a href=\"/id/symbol/simbol-tengkorak-tulang-silang/\">simbol tengkorak &amp; tulang silang</a>."
+      ]
+    }
+  ],
+  "faq_h2": "Emoji Tengkorak, Dijawab",
+  "faq": [
+    {
+      "q": "Kenapa 💀 dipakai buat ketawa?",
+      "a": "Karena maknanya bergeser jadi \"gua mati\" — sesuatu begitu lucu sampai kamu mati ketawa. Ini datang dari budaya meme dan sekarang jadi salah satu reaksi paling umum di kolom komentar, menggantikan 😂 buat sebagian orang."
+    },
+    {
+      "q": "Apa bedanya 💀 sama ☠️?",
+      "a": "💀 tengkorak polos, dan itu yang dipakai buat arti \"mati ketawa\". ☠️ tengkorak dengan tulang silang — piktogram racun resmi dan bendera bajak laut, jadi nadanya bahaya, bukan lucu."
+    },
+    {
+      "q": "Aman nggak pakai 💀 ke atasan atau orang yang lebih tua?",
+      "a": "Sebaiknya jangan. Pergeseran maknanya nggak merata: kalau lawan bicaramu nggak akrab dengan bahasa meme, dia bakal membacanya sebagai kematian atau ancaman. Buat konteks kerja, 😂 jauh lebih kecil risikonya."
+    },
+    {
+      "q": "Gimana cara nulis tengkorak pakai teks biasa?",
+      "a": "Pakai kaomoji satu baris — x_x, X_X, (☠‿☠). Semuanya disusun dari karakter biasa, jadi bisa ditempel ke username dan kolom yang menolak emoji."
+    },
+    {
+      "q": "Emoji tengkorak bisa dipakai di nama game?",
+      "a": "Sering ditolak, karena banyak game memfilter emoji dari kolom nama. Yang lebih sering lolos itu karakter teks seperti ☠ atau simbol nick lain — lihat halaman simbol nickname."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/symbol/simbol-tengkorak-tulang-silang/",
+      "title": "Simbol Tengkorak & Tulang Silang",
+      "desc": "Identitas lengkap ☠ — piktogram racun dan bendera bajak laut, bukan 💀."
+    },
+    {
+      "href": "/id/library/emoji-ketawa/",
+      "title": "Emoji Ketawa",
+      "desc": "Wajah ngakak dan kombinasi tengkorak yang artinya sama-sama mati ketawa."
+    },
+    {
+      "href": "/id/library/simbol-nickname/",
+      "title": "Simbol Nickname",
+      "desc": "Simbol teks yang lolos filter kolom nama game."
+    },
+    {
+      "href": "/id/library/emoji-wajah/",
+      "title": "Emoji Wajah",
+      "desc": "Semua emoji wajah dalam satu grid siap salin."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/emoji-tengkorak/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-tengkorak/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    }
+  ]
+}
