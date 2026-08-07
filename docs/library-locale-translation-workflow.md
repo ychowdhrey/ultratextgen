@@ -180,6 +180,26 @@ locale-native internal links are wired on creation rather than audited later.
 
 ## Step 6 — Art, in the same commit
 
+**Order matters, and getting it wrong is silent.** Wire the art *after* the final
+run of the generator. `generate_library_page_from_spec.py --force` rewrites the
+page from the spec, which discards the `og:image`/`twitter:image`/hero that
+`wire-site-art.py` injected — so a re-generate to fix a typo silently reverts the
+page to `/logo.png` with no hero, and the gate will not catch it unless you re-run
+it afterwards. This happened on the `es` build: art wired, spec edited, page
+regenerated, wiring lost, and `check:new-page-images` had already reported green
+*before* the regenerate.
+
+**`wire-site-art.py` also runs unscoped.** It rewrites every page it can improve —
+on this repo that is ~506 files, mostly a `loading="lazy"` → `fetchpriority="high"`
+swap on hero images. That may be a good change, but it does not belong in a
+translation commit. Revert everything outside your batch before committing:
+
+```bash
+python3 scripts/wire-site-art.py
+git status --short | awk '{print $2}' | grep -v '<your-batch-path>' | xargs git checkout --
+```
+
+
 ```bash
 # register the page in scripts/generate-site-art.py PAGES, then:
 python3 scripts/generate-site-art.py <locale>-library-<native-slug>

@@ -1523,6 +1523,8 @@ PAGES = {
         m_gamepad, K_USE),
   "id-library-simbol-ml": ("Simbol ML", "Simbol nama Mobile Legends, tinggal salin",
         m_gamepad, K_LIB),
+  "es-library-simbolos-para-fortnite": ("Símbolos para Fortnite", "Signos para tu nombre de jugador",
+        m_gamepad, K_LIB),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
         m_gamepad, K_USE),
   "usecase-free-fire-clan-tag-generator": ("Free Fire Clan Tag Generator", "A shared prefix your whole squad pastes into their name",
