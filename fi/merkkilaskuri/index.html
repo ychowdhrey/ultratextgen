@@ -181,6 +181,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -223,7 +225,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>Tekstikentän yläpuolella oleva tarkistin tietää kummasta on kyse: pehmeässä rajassa se kertoo, mistä kohtaa teksti katkeaa, jotta voit nostaa tärkeimmän alkuun sen sijaan että vain pysyttelisit jonkin luvun alapuolella.</p>
+    <p>Pehmeä raja on se, jota useimmat oikeasti kirjoittavat vastaan, eikä juuri mikään laskuri näytä sitä. LinkedIn-julkaisuun mahtuu 3 000 merkkiä ja niistä noin 140 on käyttökelpoisia: loput jäävät napautuksen taakse, jota kukaan ei tee. Siksi yllä oleva työkalu piirtää katkaisukohdan suoraan näkyviin — kirjoita kenttään, niin näet täsmälleen sen tekstin, joka näkyy ennen “näytä lisää” -linkkiä, loppuosan himmennettynä katkaisuviivan takana, ja sen, kestääkö sama aloitus katkaisun myös muissa syötteissä.</p>
+    <p><strong>Missä kohtaa kukin syöte katkaisee, ja millä laitteella:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>Syöte</th><th>Katkaisee kohdassa</th><th>Mitä se tarkoittaa aloitukselle</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn-julkaisu</td>
+          <td>~140 puhelimessa<br>~210 työpöydällä</td>
+          <td>Kirjoita aloitus 140 merkkiin, niin se kestää molemmissa. Tässä on listan suurin ero puhelimen ja työpöydän välillä.</td>
+        </tr>
+        <tr>
+          <td><a href="/fi/instagram-fontit/">Instagram-kuvateksti</a></td>
+          <td>~125</td>
+          <td>Listan tiukin katkaisu — noin yksi virke ennen kuin tulee “… lisää”.</td>
+        </tr>
+        <tr>
+          <td>YouTube-kuvaus</td>
+          <td>~157</td>
+          <td>Se osa, joka näkyy otsikon alla ennen “Näytä lisää” -painiketta; usein myös se, minkä haku nostaa esiin.</td>
+        </tr>
+        <tr>
+          <td>Facebook-julkaisu</td>
+          <td>~477</td>
+          <td>Listan armollisin katkaisu — kokonainen lyhyt kappale ehtii ennen katkaisua.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Kaksi rehellistä varausta. Nämä ovat käyttöliittymästä havaittua käytöstä, eivät julkaistuja rajoja, joten pidä niitä pikemminkin “sinä määränä, joka luotettavasti näkyy” kuin tarkkoina kynnyksinä — ja syötteet katkaisevat myös <em>rivimäärän</em> perusteella, joten kolme rivinvaihtoa heti alussa voi katkaista julkaisun kauas ennen mitään merkkilukua. Jos aloituksesi nojaa listaan, kokeile se myös oikeassa julkaisukentässä.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -389,6 +418,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     visibleNote: "Vain noin {n} ensimm\u00e4ist\u00e4 merkki\u00e4 n\u00e4kyy ennen katkaisua \u2014 laita t\u00e4rkein alkuun.",
     platformLabel: "Palvelu",
     fieldLabel: "Kentt\u00e4",
+    foldHeading: "Mit\u00e4 lukija n\u00e4kee ennen \u201cn\u00e4yt\u00e4 lis\u00e4\u00e4\u201d -linkki\u00e4",
+    foldMore: "n\u00e4yt\u00e4 lis\u00e4\u00e4",
+    foldMeta: "{shown}/{total} merkki\u00e4 n\u00e4kyviss\u00e4 \u00b7 {hidden} piilossa napautuksen takana",
+    foldRoom: "Aloitusta j\u00e4ljell\u00e4 {n} merkki\u00e4 ennen katkaisua",
+    foldDevices: "Puhelimessa katkaisu on kohdassa {m}, ty\u00f6p\u00f6yd\u00e4ll\u00e4 {d}.",
     overBy: "Yli rajan {n} merkki\u00e4 \u2014 valitse korjaus:",
     trimToFit: "Katkaise mahtumaan",
     undo: "Kumoa",
