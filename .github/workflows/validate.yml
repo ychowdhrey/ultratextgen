@@ -47,8 +47,7 @@ name: Validate Site
 # Symbols" peer relation isn't reciprocated, alongside the existing hub-orphan
 # check — so its step below is informational only; hub-orphans are already
 # gated separately by scripts/validate_library_pages.py, and peer-link
-# backlog (real at the time this was added, since fixed in the same PR — see
-# ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §7) is a
+# backlog (real at the time this was added, since fixed in the same PR) is a
 # dashboard, not a per-PR blocker on its own. scripts/check-new-symbol-peer-
 # links.py is the actual gate: diff-scoped to only /symbol/ pages this PR
 # adds or changes, so a newly-introduced one-directional peer relation can't
