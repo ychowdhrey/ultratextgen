@@ -63,6 +63,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/contador-de-palavras-e-caracteres/">
   <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/karakter-sayaci/">
   <link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/merkkilaskuri/">
+  <link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/geuljasu-segi/">
+  <link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/mojisu-kaunto/">
+  <link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/zishu-tongji/">
   <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/character-counter/">
 
   <meta property="og:title" content="Счётчик символов и слов — бесплатный онлайн-инструмент | UltraTextGen">
@@ -119,8 +122,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"Считает символы с пробелами или без?","acceptedAnswer":{"@type":"Answer","text":"И так, и так — рядом показаны обе величины: «Символы» учитывают каждый пробел, а «Символы (без пробелов)» пробелы убирают. Большинство лимитов платформ (ВКонтакте, Telegram, X, Instagram) считают пробелы как обычные символы, поэтому при проверке поста или описания на лимит используйте значение с пробелами."}},
     {"@type":"Question","name":"Какой лимит символов у записи и статуса ВКонтакте?","acceptedAnswer":{"@type":"Answer","text":"Запись на стене ВКонтакте вмещает около 15 940 символов, статус — 140 символов, а личное сообщение — до 4096 символов. Все три лимита есть в проверке платформ ниже: выберите нужный вариант ВКонтакте, чтобы видеть на лету, помещается ли текст."}},
     {"@type":"Question","name":"Какой лимит символов у сообщения в Telegram?","acceptedAnswer":{"@type":"Answer","text":"Обычное сообщение в Telegram — до 4096 символов, подпись к фото или видео — до 1024 символов, описание профиля — до 70 символов. Выберите нужный вариант Telegram в проверке платформ ниже."}},
-    {"@type":"Question","name":"Сколько символов в одном SMS на кириллице?","acceptedAnswer":{"@type":"Answer","text":"Если в сообщении есть кириллица, оно кодируется как UCS-2, и в один сегмент помещается 70 символов (а не 160, как для латиницы). Дальше сообщение разбивается на части. В проверке платформ лимит SMS указан именно для кириллицы — 70 символов."}},
+    {"@type":"Question","name":"Сколько символов в одном SMS на кириллице?","acceptedAnswer":{"@type":"Answer","text":"Если в сообщении есть кириллица, оно кодируется как UCS-2, и в один сегмент помещается 70 символов (а не 160, как для латиницы). Дальше сообщение разбивается на части. Проверка платформ выше определяет кодировку автоматически: для латиницы в GSM-7 действует лимит 160, а как только появляется кириллица или эмодзи, сегмент вмещает 70 символов — счётчик показывает число сегментов и символ, из-за которого сообщение переключилось в режим Unicode."}},
     {"@type":"Question","name":"Какой лимит у подписи и описания профиля в Instagram?","acceptedAnswer":{"@type":"Answer","text":"Подпись в Instagram — до 2200 символов, хотя в ленте видны только первые строки, дальше идёт «ещё». Описание профиля гораздо короче — 150 символов. Оба лимита доступны в проверке платформ ниже."}},
+    {"@type":"Question","name":"Считать знаки с пробелами или без?","acceptedAnswer":{"@type":"Answer","text":"Единого стандарта нет — в копирайтинге и переводе встречаются оба варианта, поэтому способ подсчёта фиксируют в договорённости с заказчиком. Разница между двумя величинами обычно составляет порядка 12–18 % — столько объёма дают пробелы. Счётчик выше показывает оба значения рядом: «Символы» — с пробелами, «Символы (без пробелов)» — без них (сокращённо «б/п»), а плитка «Тысячи знаков с пробелами» сразу переводит объём в привычную единицу расчёта."}},
+    {"@type":"Question","name":"Почему Word и онлайн-счётчики показывают разное число знаков?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего из-за невидимых символов: Word не включает в статистику знаки абзаца и разрывы строк, а часть онлайн-счётчиков считает каждый перенос строки как символ. Сноски Word по умолчанию не считает вовсе — пока не отмечен пункт «Учитывать надписи и сноски». Кроме того, некоторые поля и формы считают не кодовые точки, а единицы UTF-16 или байты — плитки «Графемы (видимые символы)», «Единицы UTF-16» и «Байты UTF-8» выше показывают все эти величины одновременно."}},
     {"@type":"Question","name":"Инструмент бесплатный и сохраняет ли он мой текст?","acceptedAnswer":{"@type":"Answer","text":"Да, полностью бесплатно и без регистрации. Все подсчёты выполняются прямо в вашем браузере на обычном JavaScript — ничто из введённого не загружается, не логируется и нигде не сохраняется."}}
   ]
 }
@@ -183,7 +188,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Символы (без пробелов)</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Предложения</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Абзацы</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Строки</span></div>
       <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 сек</span><span class="counter-stat-label">Время чтения</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statSpeakingTime">0 сек</span><span class="counter-stat-label">Время речи</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Графемы (видимые символы)</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">Единицы UTF-16</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">Байты UTF-8</span></div>
+      <div class="counter-stat"><span class="counter-stat-value" id="statTysZnakov">0</span><span class="counter-stat-label">Тысячи знаков с пробелами</span></div>
     </div>
 
     <div id="platformChecker"></div>
@@ -195,6 +206,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Лимиты символов на платформах — коротко о главном</h2>
     <p>Лимиты бывают двух видов, и полезно понимать, с каким вы имеете дело. <strong>Жёсткие лимиты</strong> — 280 символов в X/Twitter, 32-символьный ник на сервере Discord, 24-символьное имя пользователя в TikTok — платформа просто не даст сохранить или опубликовать текст сверх лимита. <strong>Мягкие (практические) лимиты</strong> — SEO-описание в Google, описание видео на YouTube до кнопки «Ещё», пост в ленте до сворачивания — писать дальше не мешают, но всё, что за этой границей, скрыто от большинства читателей, пока они не развернут текст. Проверка выше использует реальный жёсткий или официально документированный лимит каждой платформы.</p>
     <p>Для русскоязычной аудитории мы добавили то, чего нет в англоязычных счётчиках: лимиты <strong>ВКонтакте</strong> (запись на стене — около 15 940 символов, статус — 140, личное сообщение — 4096) и <strong>Telegram</strong> (сообщение — 4096, подпись к медиа — 1024, описание профиля — 70). Ещё одна деталь, о которой часто забывают: <strong>SMS на кириллице</strong> вмещает в один сегмент всего 70 символов, а не 160, — потому что кириллица кодируется как UCS-2. А ссылка в посте X считается примерно за 23 символа, какой бы длинной она ни была. Эмодзи и буквы с диакритикой в разных счётчиках могут считаться по-разному — этот инструмент считает по кодовым точкам Unicode, как это делает почти любая современная платформа.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="znaki">
+    <h2>Знаки с пробелами и без пробелов</h2>
+    <p>В русскоязычном копирайтинге и переводе объём текста принято считать «тысячами знаков»: за единицу расчёта берут 1000 знаков. А вот с пробелами или без (сокращённо «б/п») — стороны договариваются отдельно: единого стандарта нет, в объявлениях и договорах встречаются оба варианта. Разница ощутимая: пробелы обычно добавляют порядка 12–18 % объёма, поэтому «10 000 знаков с пробелами» и «10 000 знаков б/п» — это разные объёмы работы и разные деньги. Прежде чем договариваться о цене, зафиксируйте письменно, какая из двух величин имеется в виду.</p>
+    <p>Счётчик выше показывает обе величины рядом — «Символы» (с пробелами) и «Символы (без пробелов)», — а плитка «Тысячи знаков с пробелами» сразу переводит текст в привычную единицу расчёта: например, 4 500 знаков с пробелами — это 4,5 тысячи.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -220,11 +239,19 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </details>
     <details class="faq-item">
       <summary class="faq-question">Сколько символов в одном SMS на кириллице?</summary>
-      <p class="faq-answer">Если в сообщении есть кириллица, оно кодируется как UCS-2, и в один сегмент помещается 70 символов (а не 160, как для латиницы). Дальше сообщение разбивается на части. В проверке платформ лимит SMS указан именно для кириллицы — 70 символов.</p>
+      <p class="faq-answer">Если в сообщении есть кириллица, оно кодируется как UCS-2, и в один сегмент помещается 70 символов (а не 160, как для латиницы). Дальше сообщение разбивается на части. Проверка платформ выше определяет кодировку автоматически: для латиницы в GSM-7 действует лимит 160, а как только появляется кириллица или эмодзи, сегмент вмещает 70 символов — счётчик показывает число сегментов и символ, из-за которого сообщение переключилось в режим Unicode.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Какой лимит у подписи и описания профиля в Instagram?</summary>
       <p class="faq-answer">Подпись в Instagram — до 2200 символов, хотя в ленте видны только первые строки, дальше идёт «ещё». Описание профиля гораздо короче — 150 символов. Оба лимита доступны в проверке платформ выше.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Считать знаки с пробелами или без?</summary>
+      <p class="faq-answer">Единого стандарта нет — в копирайтинге и переводе встречаются оба варианта, поэтому способ подсчёта фиксируют в договорённости с заказчиком. Разница между двумя величинами обычно составляет порядка 12–18 % — столько объёма дают пробелы. Счётчик выше показывает оба значения рядом: «Символы» — с пробелами, «Символы (без пробелов)» — без них (сокращённо «б/п»), а плитка «Тысячи знаков с пробелами» сразу переводит объём в привычную единицу расчёта.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Почему Word и онлайн-счётчики показывают разное число знаков?</summary>
+      <p class="faq-answer">Чаще всего из-за невидимых символов: Word не включает в статистику знаки абзаца и разрывы строк, а часть онлайн-счётчиков считает каждый перенос строки как символ. Сноски Word по умолчанию не считает вовсе — пока не отмечен пункт «Учитывать надписи и сноски». Кроме того, некоторые поля и формы считают не кодовые точки, а единицы UTF-16 или байты — плитки «Графемы (видимые символы)», «Единицы UTF-16» и «Байты UTF-8» выше показывают все эти величины одновременно.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">Инструмент бесплатный и сохраняет ли он мой текст?</summary>
@@ -268,6 +295,71 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script src="/ru/schetchik-slov-i-simvolov/counter-ru.js" defer></script>
+<script src="/js/counter/counterRules.js"></script>
+<script>
+  (function () {
+    "use strict";
+    /* ВКонтакте-лимиты, которых нет в общей таблице counterRules.js —
+       добавляем их в начало, чтобы «Запись ВКонтакте» осталась вариантом
+       по умолчанию, как и раньше на этой странице. */
+    const rules = window.UltraTextGen && window.UltraTextGen.counterRules;
+    if (rules && rules.LIMITS && !rules.LIMITS.some(function (r) { return r.id === "vk-post"; })) {
+      rules.LIMITS.unshift(
+        { id: "vk-post", label: "Запись ВКонтакте (стена)", limit: 15940, group: "posts" },
+        { id: "vk-message", label: "Личное сообщение ВКонтакте", limit: 4096, group: "posts" }
+      );
+    }
+    window.UTG_COUNTER_I18N = {
+      sec: "сек",
+      min: "мин",
+      copied: "Скопировано!",
+      label: "Проверьте текст на лимит платформы",
+      ok: "Помещается ✓",
+      fail: "Превышен лимит ✕",
+      xNote: "Посчитано так, как считает X: каждая ссылка = 23, а большинство символов, эмодзи и декоративных букв Unicode = по 2.",
+      smsSegments: "Сегментов SMS: {n} · {per} символов в сегменте ({enc})",
+      smsUnicode: "в режим Unicode переводит: {chars}",
+      labels: {
+        "x-post": "Пост в X / Twitter",
+        "discord-message": "Сообщение в Discord",
+        "ig-caption": "Подпись в Instagram",
+        "tiktok-caption": "Подпись в TikTok",
+        "li-post": "Пост в LinkedIn",
+        "fb-post": "Пост в Facebook",
+        "yt-description": "Описание видео на YouTube",
+        "pinterest-description": "Описание пина в Pinterest",
+        "telegram-message": "Сообщение в Telegram",
+        "telegram-caption": "Подпись к фото/видео в Telegram",
+        "threads-post": "Пост в Threads",
+        "bluesky-post": "Пост в Bluesky",
+        "reddit-title": "Заголовок поста на Reddit",
+        "zalo-post": "Пост/статус в Zalo",
+        "ig-bio": "Описание профиля Instagram",
+        "tiktok-bio": "Описание профиля TikTok",
+        "li-headline": "Заголовок профиля LinkedIn",
+        "whatsapp-about": "Статус «О себе» в WhatsApp",
+        "telegram-bio": "Описание профиля Telegram",
+        "vk-status": "Статус ВКонтакте",
+        "discord-nick": "Ник на сервере Discord",
+        "tiktok-username": "Имя пользователя TikTok",
+        "ig-username": "Имя пользователя Instagram",
+        "yt-title": "Название видео на YouTube",
+        "meta-title": "SEO title (заголовок)",
+        "meta-description": "SEO description (описание)",
+        "sms": "SMS (1 сегмент)"
+      },
+      groups: {
+        posts: "Посты и сообщения",
+        bios: "Профили и статусы",
+        usernames: "Ники",
+        titles: "Заголовки и SEO"
+      },
+      units: [
+        { id: "statTysZnakov", per: 1000, of: "chars" }
+      ]
+    };
+  })();
+</script>
+<script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
