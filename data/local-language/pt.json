@@ -272,12 +272,12 @@
       "register": "neutral, explainer/FAQ register",
       "phrase_type": "problem_description",
       "content_surface": "FAQ ('Diferenças e dúvidas rápidas' category)",
-      "usage_guidance": "Existing, accurate, well-framed FAQ answer — keep as-is. This is the BR site's own correct, pre-emptive answer to what independent forum research this pass identified as the actual, better-evidenced 'broken text after paste' pain point (as opposed to the unconfirmed 'texto quebrado'/'bugou o nick' phrasing, which was searched for and not found verbatim anywhere).",
+      "usage_guidance": "CORRECTED 2026-08-06 — do NOT keep as-is. Direct execution of renderer.js shows accented Portuguese letters ARE styled (base letter styled, accent reattached): «coração» -> bold with the cedilla and tilde intact. The FAQ text this row previously endorsed described the pre-2026-07-18 renderer. The live pt copy was corrected 2026-08-06 (pt/index.html + locales/pt.json). Use this row as the record of the CORRECTED framing: accents are preserved in most styles; only upside-down and letters with no decomposition (l-slash, d-stroke, o-slash, eszett) fall back to plain. Portuguese itself has no such letter, so for pt the honest answer is simply 'accents are kept'.",
       "good_example": "Os caracteres acentuados (á, é, í, ó, ú, ã, õ, â, ê, ô, ç) costumam ser mantidos como estão na maioria dos estilos [...] Se quiser que todas as letras saiam no mesmo estilo [...] dá pra escrever sem acento",
       "avoid_when": "n/a",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-06"
     }
   ]
 }

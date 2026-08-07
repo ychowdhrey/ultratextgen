@@ -272,12 +272,12 @@
       "register": "neutral",
       "phrase_type": "standard_everyday_term",
       "content_surface": "dedicated usecase page with rich FAQ",
-      "usage_guidance": "The page's FAQ is unusually well-crafted for a generator site: it explicitly warns the Unicode output is 'eine Arbeitsgrundlage, keine stichfertige Vorlage' (a starting point, not a ready-to-ink template) and flags the umlaut/ß rendering gap for tattoo artists — a genuinely German-market-specific caveat (ä/ö/ü/ß have no Fraktur/script Unicode forms) worth preserving as house style for any future tattoo-adjacent content.",
+      "usage_guidance": "CORRECTED 2026-08-06 — the FAQ this row praised was factually wrong and is now fixed. renderer.js styles ä/ö/ü with the umlaut reattached («Grüße» -> Fraktur with umlaut intact); the page's former advice to respell them ae/oe/ue actively DESTROYED the umlaut, which mattered because this is tattoo-lettering guidance. Only ß lacks a form and collapses to a single styled s. Live copy corrected 2026-08-06 on de/usecase/tattoo-schrift and de/altdeutsche-schrift. Use this row as the record of the corrected framing, not the original praise.",
       "good_example": "de/usecase/tattoo-schrift FAQ: „Achtung bei Umlauten: ä, ö, ü und ß bleiben in den Unicode-Schriften meist normale Buchstaben, aber dein Tätowierer zeichnet sie im finalen Lettering problemlos mit.“",
       "avoid_when": "n/a",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-06"
     }
   ]
 }
