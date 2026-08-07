@@ -245,19 +245,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Compteur de Mots et de Caractères</h1>
-  <p class="hero-sub">Statistiques en direct sur les mots, caractères, phrases, paragraphes et le temps de lecture pendant que tu tapes — plus un vérificateur pour savoir si ton texte respecte les limites de X/Twitter, Instagram, TikTok, LinkedIn, YouTube, Discord, Telegram, SMS et 18 autres plateformes.</p>
+  <p class="hero-sub">Comptage en direct pour 38 champs sur 17 plateformes — et des corrections en un clic quand tu dépasses.</p>
 </div></div></section>
 
 <main class="container">
-  <section class="editorial-section">
-    <div class="editorial-block">
-      <p>Tape ou colle n'importe quel texte dans le champ ci-dessous et chaque statistique se met à jour instantanément : mots, caractères (avec et sans espaces), phrases, paragraphes et un temps de lecture estimé. Rien n'est envoyé — chaque nombre est calculé directement dans ton navigateur. Au-dessus du champ de saisie, commence par indiquer où va ce texte : le vérificateur compte alors exactement comme cette destination compte, et t'affiche en direct ce qu'il te reste ou de combien tu dépasses. Et si tu dépasses, ça ne s'arrête pas à la mauvaise nouvelle — l'outil te propose des corrections concrètes avec le gain de chacune, applicables en un clic et annulables à tout moment. Besoin de belles polices Unicode pour le texte que tu viens de mesurer ? Le <a href="/fr/">générateur UltraTextGen</a> le transforme en plus de 100 styles à copier-coller.</p>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <div class="counter-tool">
+<div class="counter-tool">
     <div id="platformChecker"></div>
 
     <div class="counter-field">
@@ -298,12 +290,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </div>
 
+  <p class="counter-footnote">Tout est calculé dans ton navigateur — rien de ce que tu tapes n'est envoyé ni conservé. Besoin aussi d'un texte stylé ? Le <a href="/fr/">générateur UltraTextGen</a> le transforme en plus de 100 polices à copier-coller.</p>
+
   <div class="section-divider"></div>
 
   <section class="editorial-section">
     <h2>Limites strictes et limites souples</h2>
     <p>Deux choses très différentes s'appellent « limite de caractères », et ça change ce qu'un dépassement te coûte vraiment.</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Type</th><th>Ce qui se passe si tu dépasses</th><th>Exemples</th></tr></thead>
       <tbody>
         <tr>
@@ -317,34 +311,38 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td>Légende Instagram après 125 · publication LinkedIn après ~140 sur mobile / ~210 sur ordinateur · description YouTube après ~157</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>La limite souple est celle contre laquelle on écrit vraiment, et presque aucun compteur ne l'affiche. Une publication LinkedIn dispose de 3 000 caractères et d'environ 140 utiles : le reste est derrière un clic que personne ne fait. C'est pour ça que le compteur ci-dessus dessine la coupure directement — tape ton texte et tu vois exactement ce qui s'affiche avant « voir plus », le reste grisé derrière un trait, plus la façon dont la même accroche tient sur chacun des autres fils qui tronquent.</p>
     <p><strong>Où chaque fil coupe, et sur quel appareil :</strong></p>
-    <table class="comparison-table">
-      <thead><tr><th>Fil</th><th>Coupe à</th><th>Ce que ça implique pour l'accroche</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Fil</th><th class="num">Mobile</th><th class="num">Ordinateur</th><th>Ce que ça implique pour l'accroche</th></tr></thead>
       <tbody>
         <tr>
           <td><a href="/fr/police-linkedin/">Publication LinkedIn</a></td>
-          <td>~140 sur mobile<br>~210 sur ordinateur</td>
+          <td class="num">~140</td>
+          <td class="num">~210</td>
           <td>Écris pour 140 et l'accroche survit aux deux. C'est le plus grand écart mobile/ordinateur de la liste.</td>
         </tr>
         <tr>
           <td><a href="/fr/police-instagram/">Légende Instagram</a></td>
-          <td>~125</td>
+          <td class="num">~125</td>
+          <td class="num">~125</td>
           <td>La coupure la plus serrée ici — une phrase environ avant le « … plus ».</td>
         </tr>
         <tr>
           <td>Description YouTube</td>
-          <td>~157</td>
+          <td class="num">~157</td>
+          <td class="num">~157</td>
           <td>Ce qui s'affiche sous le titre avant « Afficher plus » — et souvent ce que la recherche remonte.</td>
         </tr>
         <tr>
           <td><a href="/fr/ecriture-facebook/">Publication Facebook</a></td>
-          <td>~477</td>
+          <td class="num">~477</td>
+          <td class="num">~477</td>
           <td>La coupure la plus généreuse — un court paragraphe entier passe avant.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Deux réserves honnêtes. Ce sont des comportements d'interface observés, pas des limites publiées : prends-les comme « ce qui s'affiche de façon fiable » plutôt que comme des seuils exacts. Et les fils coupent aussi au <em>nombre de lignes</em> : trois retours à la ligne placés tôt peuvent tronquer une publication bien avant n'importe quel chiffre. Si ton accroche repose sur une liste, vérifie-la aussi dans le vrai éditeur.</p>
     <p>Ces limites n'ont rien à voir avec un autre cas très courant en France : les quotas de mots imposés pour une dissertation, un mémoire ou un devoir au lycée, et le plafond de <a href="#parcoursup">1 500 caractères de Parcoursup</a>. La logique est académique, pas technique — mais le même compteur y répond aussi bien.</p>
   </section>
@@ -356,51 +354,51 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p>Les mêmes limites que celles utilisées par le vérificateur en direct ci-dessus, sous forme de tableau de référence. Aller à : <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#modes-de-comptage">comment chaque plateforme compte</a>.</p>
 
     <h3>Publications et messages</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Plateforme</th><th>Limite</th><th>Remarques</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Plateforme</th><th class="num">Limite</th><th>Remarques</th></tr></thead>
       <tbody>
-        <tr id="twitter"><td>Publication X / Twitter</td><td>280</td><td>Comptage pondéré : chaque URL = 23, la plupart des emojis, symboles et lettres stylées = 2 — voir <a href="#modes-de-comptage">comment X compte</a></td></tr>
-        <tr id="discord"><td>Message Discord</td><td>2 000</td><td>4 000 avec Nitro ; au-delà, le message devient une pièce jointe .txt</td></tr>
-        <tr id="instagram"><td>Légende Instagram</td><td>2 200</td><td>Tronquée par « plus » après les premières lignes</td></tr>
-        <tr id="tiktok"><td>Légende TikTok</td><td>2 200</td><td></td></tr>
-        <tr><td>Publication LinkedIn</td><td>3 000</td><td>« Voir plus » tronque entre 200 et 700 caractères selon l'appareil</td></tr>
-        <tr><td>Publication Facebook</td><td>63 206</td><td></td></tr>
-        <tr><td>Description YouTube</td><td>5 000</td><td></td></tr>
-        <tr><td>Description d'épingle Pinterest</td><td>500</td><td></td></tr>
-        <tr><td>Message Telegram</td><td>4 096</td><td>1 024 pour une légende photo/vidéo</td></tr>
-        <tr><td>Publication Threads</td><td>500</td><td></td></tr>
-        <tr><td>Publication Bluesky</td><td>300</td><td>Compté en graphèmes (ce que tu vois), pas en points de code</td></tr>
-        <tr><td>Titre de post Reddit</td><td>300</td><td></td></tr>
-        <tr><td>Publication/statut Zalo</td><td>2 000</td><td></td></tr>
+        <tr id="twitter"><td>Publication X / Twitter</td><td class="num">280</td><td>Comptage pondéré : chaque URL = 23, la plupart des emojis, symboles et lettres stylées = 2 — voir <a href="#modes-de-comptage">comment X compte</a></td></tr>
+        <tr id="discord"><td>Message Discord</td><td class="num">2 000</td><td>4 000 avec Nitro ; au-delà, le message devient une pièce jointe .txt</td></tr>
+        <tr id="instagram"><td>Légende Instagram</td><td class="num">2 200</td><td>Tronquée par « plus » après les premières lignes</td></tr>
+        <tr id="tiktok"><td>Légende TikTok</td><td class="num">2 200</td><td></td></tr>
+        <tr><td>Publication LinkedIn</td><td class="num">3 000</td><td>« Voir plus » tronque entre 200 et 700 caractères selon l'appareil</td></tr>
+        <tr><td>Publication Facebook</td><td class="num">63 206</td><td></td></tr>
+        <tr><td>Description YouTube</td><td class="num">5 000</td><td></td></tr>
+        <tr><td>Description d'épingle Pinterest</td><td class="num">500</td><td></td></tr>
+        <tr><td>Message Telegram</td><td class="num">4 096</td><td>1 024 pour une légende photo/vidéo</td></tr>
+        <tr><td>Publication Threads</td><td class="num">500</td><td></td></tr>
+        <tr><td>Publication Bluesky</td><td class="num">300</td><td>Compté en graphèmes (ce que tu vois), pas en points de code</td></tr>
+        <tr><td>Titre de post Reddit</td><td class="num">300</td><td></td></tr>
+        <tr><td>Publication/statut Zalo</td><td class="num">2 000</td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Bios et profils</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Champ</th><th>Limite</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Champ</th><th class="num">Limite</th></tr></thead>
       <tbody>
-        <tr><td>Bio Instagram</td><td>150</td></tr>
-        <tr><td>Bio TikTok</td><td>80</td></tr>
-        <tr><td>Titre LinkedIn</td><td>220</td></tr>
-        <tr><td>À propos WhatsApp</td><td>139</td></tr>
-        <tr><td>Bio Telegram</td><td>70</td></tr>
-        <tr><td>Statut VK</td><td>140</td></tr>
+        <tr><td>Bio Instagram</td><td class="num">150</td></tr>
+        <tr><td>Bio TikTok</td><td class="num">80</td></tr>
+        <tr><td>Titre LinkedIn</td><td class="num">220</td></tr>
+        <tr><td>À propos WhatsApp</td><td class="num">139</td></tr>
+        <tr><td>Bio Telegram</td><td class="num">70</td></tr>
+        <tr><td>Statut VK</td><td class="num">140</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Noms d'utilisateur, titres et SMS</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Champ</th><th>Limite</th><th>Remarques</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Champ</th><th class="num">Limite</th><th>Remarques</th></tr></thead>
       <tbody>
-        <tr><td>Pseudo Discord</td><td>32</td><td></td></tr>
-        <tr><td>Nom d'utilisateur TikTok</td><td>24</td><td>Lettres, chiffres, tirets bas et points uniquement</td></tr>
-        <tr><td>Nom d'utilisateur Instagram</td><td>30</td><td></td></tr>
-        <tr><td>Titre YouTube</td><td>100</td><td></td></tr>
-        <tr><td>Balise meta titre SEO</td><td>~60</td><td>Google tronque selon la largeur en pixels — à prendre comme un ordre de grandeur</td></tr>
-        <tr><td>Balise meta description SEO</td><td>~155</td><td>Idem : troncature en pixels, pas en caractères</td></tr>
-        <tr id="sms"><td>SMS (message texte)</td><td>160 / segment</td><td>Tombe à 70 par segment dès qu'un caractère sort de l'alphabet GSM-7 (emoji, apostrophe courbe, â, ê, ô, œ…) — voir <a href="#modes-de-comptage">le comptage SMS</a></td></tr>
+        <tr><td>Pseudo Discord</td><td class="num">32</td><td></td></tr>
+        <tr><td>Nom d'utilisateur TikTok</td><td class="num">24</td><td>Lettres, chiffres, tirets bas et points uniquement</td></tr>
+        <tr><td>Nom d'utilisateur Instagram</td><td class="num">30</td><td></td></tr>
+        <tr><td>Titre YouTube</td><td class="num">100</td><td></td></tr>
+        <tr><td>Balise meta titre SEO</td><td class="num">~60</td><td>Google tronque selon la largeur en pixels — à prendre comme un ordre de grandeur</td></tr>
+        <tr><td>Balise meta description SEO</td><td class="num">~155</td><td>Idem : troncature en pixels, pas en caractères</td></tr>
+        <tr id="sms"><td>SMS (message texte)</td><td class="num">160 / segment</td><td>Tombe à 70 par segment dès qu'un caractère sort de l'alphabet GSM-7 (emoji, apostrophe courbe, â, ê, ô, œ…) — voir <a href="#modes-de-comptage">le comptage SMS</a></td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <div class="section-divider"></div>
@@ -408,7 +406,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="modes-de-comptage">
     <h2>Pourquoi ton compte de caractères ne correspond pas à celui de la plateforme</h2>
     <p>« Ça fait combien de caractères ? » a plus d'une bonne réponse, parce que les plateformes ne comptent pas dans la même unité. Un même texte a quatre longueurs différentes :</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Mode de comptage</th><th>Ce qui est mesuré</th><th>Qui l'utilise</th></tr></thead>
       <tbody>
         <tr><td>Graphèmes</td><td>Ce que tu vois — un emoji avec teinte de peau vaut 1</td><td>Bluesky ; à peu près la façon dont Instagram traite les emojis</td></tr>
@@ -416,7 +414,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Unités UTF-16</td><td>La façon dont JavaScript et beaucoup d'applications stockent le texte — les lettres 𝗴𝗿𝗮𝘀𝘀𝗲𝘀 coûtent 2 chacune</td><td>Champs de formulaire HTML (<code>maxlength</code>), jeux vidéo, back-ends d'applications</td></tr>
         <tr><td>Octets UTF-8</td><td>Le poids de stockage — é vaut 2, 中 vaut 3, 𝗯 vaut 4</td><td>Fiches produit Amazon, pseudos Steam, bases de données</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Les quatre s'affichent en direct dans les statistiques ci-dessus : quand un formulaire prétend que ton texte est trop long alors que ton traitement de texte dit le contraire, tu vois immédiatement quelle unité ce formulaire utilise. Deux plateformes ajoutent leurs propres règles par-dessus :</p>
     <p><strong>X/Twitter compte au poids, pas au caractère.</strong> D'après l'algorithme publié par X lui-même (la bibliothèque <code>twitter-text</code>), chaque URL vaut exactement 23, les lettres latines de base valent 1, et à peu près tout le reste — caractères CJK, la plupart des emojis et chaque lettre Unicode stylée — vaut <strong>2</strong>. Une publication entièrement en 𝗴𝗿𝗮𝘀 ne tient donc que 140 lettres visibles sur les 280. Les options X du vérificateur ci-dessus appliquent réellement cet algorithme.</p>
     <p><strong>Un SMS se compte en segments, et un seul caractère peut tripler la facture.</strong> Un message tient 160 caractères tant que tous ses caractères appartiennent au vieil alphabet GSM-7. Bonne nouvelle pour le français : é, è, à, ù et le Ç majuscule en font partie. Mais les accents circonflexes (â, ê, î, ô, û), les trémas (ë, ï), le ç minuscule, la ligature œ, les guillemets « », l'apostrophe courbe ’ et l'espace fine insécable qui précède ; : ! ? n'y sont pas — et un seul d'entre eux fait basculer tout le message en mode Unicode : 70 caractères par segment, 67 dès qu'il se scinde. Autrement dit, « août » ou « c'est prêt ! » copié depuis Word peut suffire à doubler le coût d'un envoi. L'option SMS du vérificateur détecte le basculement et te nomme le caractère exact qui l'a provoqué.</p>
@@ -554,6 +552,9 @@ window.UTG_COUNTER_I18N = {
   undo: "Annuler",
   applied: "Appliqué",
   segShort: "seg.",
+  pastFold: "Passe — coupé à {n} ⚠",
+  showAllFits: "Afficher les {n}",
+  showFewerFits: "Afficher moins",
   foldHeading: "Ce que les gens voient avant « voir plus »",
   foldMore: "voir plus",
   foldMeta: "{shown} caractères affichés sur {total} · {hidden} cachés derrière le clic",

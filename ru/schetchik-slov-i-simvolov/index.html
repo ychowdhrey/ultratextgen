@@ -161,19 +161,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Счётчик символов и слов</h1>
-  <p class="hero-sub">Слова, символы, предложения, абзацы и время чтения считаются на лету по мере набора — плюс проверка, помещается ли текст в лимиты ВКонтакте, Telegram, X/Twitter, Instagram, TikTok, YouTube, Discord и других платформ.</p>
+  <p class="hero-sub">Подсчёт на лету для 38 полей на 17 платформах — и исправления в один клик, если вы вышли за лимит.</p>
 </div></div></section>
 
 <main class="container">
-  <section class="editorial-section">
-    <div class="editorial-block">
-      <p>Введите или вставьте любой текст — и все показатели обновятся мгновенно: слова, символы (с пробелами и без), предложения, абзацы, время чтения и тысячи знаков. Над полем ввода выберите, куда пойдёт этот текст: счётчик посчитает его ровно так, как считает эта площадка, и покажет, сколько символов осталось или на сколько вы вышли за лимит. А если вышли — подскажет, что именно вырезать, чтобы уместиться: одно нажатие, и всё можно отменить. Ничто не загружается на сервер — каждое число считается прямо в вашем браузере. Нужны стильные Unicode-шрифты для только что посчитанного текста? <a href="/ru/">Основной генератор UltraTextGen</a> превратит его в более чем 100 стилей для копирования и вставки.</p>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <div class="counter-tool">
+<div class="counter-tool">
     <div id="platformChecker"></div>
 
     <div class="counter-field">
@@ -214,12 +206,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </div>
 
+  <p class="counter-footnote">Всё считается прямо в вашем браузере — ничто из введённого не загружается и не сохраняется. Нужен ещё и стильный шрифт? <a href="/ru/">Генератор UltraTextGen</a> превратит текст в более чем 100 шрифтов для копирования и вставки.</p>
+
   <div class="section-divider"></div>
 
   <section class="editorial-section">
     <h2>Жёсткие и мягкие лимиты</h2>
     <p>«Лимитом символов» называют две разные вещи, и от этого зависит, чем именно обернётся превышение.</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Тип</th><th>Что будет при превышении</th><th>Примеры</th></tr></thead>
       <tbody>
         <tr>
@@ -233,34 +227,38 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <td>Подпись в Instagram после 125 · пост в LinkedIn после ~140 на мобильном / ~210 на десктопе · описание на YouTube после ~157</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Именно под мягкий лимит люди и пишут на самом деле, но почти ни один счётчик его не показывает. У поста в LinkedIn 3000 символов — и примерно 140 полезных: всё остальное спрятано за нажатием, которого почти никто не делает. Поэтому проверка над полем ввода рисует место сворачивания прямо: вы пишете и сразу видите тот самый фрагмент, который покажется до «ещё», а всё, что после среза, приглушено под линией; рядом видно и то, выдерживает ли это же начало сворачивание в остальных лентах.</p>
     <p><strong>Где сворачивает каждая лента и на каком устройстве:</strong></p>
-    <table class="comparison-table">
-      <thead><tr><th>Лента</th><th>Сворачивает на</th><th>Что это значит для первой фразы</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Лента</th><th class="num">Телефон</th><th class="num">Компьютер</th><th>Что это значит для первой фразы</th></tr></thead>
       <tbody>
         <tr>
           <td>Пост в LinkedIn</td>
-          <td>~140 на телефоне<br>~210 на компьютере</td>
+          <td class="num">~140</td>
+          <td class="num">~210</td>
           <td>Уложитесь в 140 — и начало уцелеет и там, и там. Самый большой разрыв между телефоном и компьютером во всём списке.</td>
         </tr>
         <tr>
           <td><a href="/ru/shrift-dlya-instagram/">Подпись в Instagram</a></td>
-          <td>~125</td>
+          <td class="num">~125</td>
+          <td class="num">~125</td>
           <td>Самый жёсткий срез в списке — примерно одно предложение до «... ещё».</td>
         </tr>
         <tr>
           <td>Описание на YouTube</td>
-          <td>~157</td>
+          <td class="num">~157</td>
+          <td class="num">~157</td>
           <td>Столько видно под названием ролика до кнопки «Ещё»; этот же фрагмент чаще всего попадает и в поиск.</td>
         </tr>
         <tr>
           <td>Пост в Facebook</td>
-          <td>~477</td>
+          <td class="num">~477</td>
+          <td class="num">~477</td>
           <td>Самый щадящий срез — до сворачивания помещается целый короткий абзац.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Две честные оговорки. Это наблюдаемое поведение интерфейса, а не опубликованные лимиты: читайте их как «столько видно стабильно», а не как точные пороги. И ленты сворачивают текст ещё и по <em>числу строк</em>, поэтому три переноса строки в самом начале свернут пост гораздо раньше любого числа символов. Если начало держится на списке, проверьте его и в самом окне публикации.</p>
   </section>
 
@@ -271,52 +269,52 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p>Те же лимиты, которыми пользуется счётчик выше, — в виде справочной таблицы. Перейти к: <a href="#vk">ВКонтакте</a> · <a href="#twitter">X/Twitter</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">как считает каждая площадка</a>.</p>
 
     <h3>Посты и сообщения</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Площадка</th><th>Лимит</th><th>Примечания</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Площадка</th><th class="num">Лимит</th><th>Примечания</th></tr></thead>
       <tbody>
-        <tr id="vk"><td>Запись ВКонтакте (стена)</td><td>15 940</td><td>Личное сообщение — 4096</td></tr>
-        <tr id="twitter"><td>Пост в X / Twitter</td><td>280</td><td>Считается по весу: каждая ссылка = 23, большинство эмодзи, символов и декоративных букв = 2 — см. <a href="#counting-modes">как считает X</a></td></tr>
-        <tr id="discord"><td>Сообщение в Discord</td><td>2000</td><td>4000 с Nitro; более длинное сообщение превращается в вложение .txt</td></tr>
-        <tr id="instagram"><td>Подпись в Instagram</td><td>2200</td><td>После первых строк сворачивается в «ещё»</td></tr>
-        <tr id="tiktok"><td>Подпись в TikTok</td><td>2200</td><td></td></tr>
-        <tr><td>Пост в LinkedIn</td><td>3000</td><td>«Показать ещё» сворачивает примерно после 200–700 символов, в зависимости от устройства</td></tr>
-        <tr><td>Пост в Facebook</td><td>63 206</td><td></td></tr>
-        <tr><td>Описание видео на YouTube</td><td>5000</td><td></td></tr>
-        <tr><td>Описание пина в Pinterest</td><td>500</td><td></td></tr>
-        <tr><td>Сообщение в Telegram</td><td>4096</td><td>1024 для подписи к фото или видео</td></tr>
-        <tr><td>Пост в Threads</td><td>500</td><td></td></tr>
-        <tr><td>Пост в Bluesky</td><td>300</td><td>Считается по графемам (по тому, что видно), а не по кодовым точкам</td></tr>
-        <tr><td>Заголовок поста на Reddit</td><td>300</td><td></td></tr>
-        <tr><td>Пост/статус в Zalo</td><td>2000</td><td></td></tr>
+        <tr id="vk"><td>Запись ВКонтакте (стена)</td><td class="num">15 940</td><td>Личное сообщение — 4096</td></tr>
+        <tr id="twitter"><td>Пост в X / Twitter</td><td class="num">280</td><td>Считается по весу: каждая ссылка = 23, большинство эмодзи, символов и декоративных букв = 2 — см. <a href="#counting-modes">как считает X</a></td></tr>
+        <tr id="discord"><td>Сообщение в Discord</td><td class="num">2000</td><td>4000 с Nitro; более длинное сообщение превращается в вложение .txt</td></tr>
+        <tr id="instagram"><td>Подпись в Instagram</td><td class="num">2200</td><td>После первых строк сворачивается в «ещё»</td></tr>
+        <tr id="tiktok"><td>Подпись в TikTok</td><td class="num">2200</td><td></td></tr>
+        <tr><td>Пост в LinkedIn</td><td class="num">3000</td><td>«Показать ещё» сворачивает примерно после 200–700 символов, в зависимости от устройства</td></tr>
+        <tr><td>Пост в Facebook</td><td class="num">63 206</td><td></td></tr>
+        <tr><td>Описание видео на YouTube</td><td class="num">5000</td><td></td></tr>
+        <tr><td>Описание пина в Pinterest</td><td class="num">500</td><td></td></tr>
+        <tr><td>Сообщение в Telegram</td><td class="num">4096</td><td>1024 для подписи к фото или видео</td></tr>
+        <tr><td>Пост в Threads</td><td class="num">500</td><td></td></tr>
+        <tr><td>Пост в Bluesky</td><td class="num">300</td><td>Считается по графемам (по тому, что видно), а не по кодовым точкам</td></tr>
+        <tr><td>Заголовок поста на Reddit</td><td class="num">300</td><td></td></tr>
+        <tr><td>Пост/статус в Zalo</td><td class="num">2000</td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Профили и статусы</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Поле</th><th>Лимит</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Поле</th><th class="num">Лимит</th></tr></thead>
       <tbody>
-        <tr><td>Статус ВКонтакте</td><td>140</td></tr>
-        <tr><td>Описание профиля Instagram</td><td>150</td></tr>
-        <tr><td>Описание профиля TikTok</td><td>80</td></tr>
-        <tr><td>Заголовок профиля LinkedIn</td><td>220</td></tr>
-        <tr><td>Статус «О себе» в WhatsApp</td><td>139</td></tr>
-        <tr><td>Описание профиля Telegram</td><td>70</td></tr>
+        <tr><td>Статус ВКонтакте</td><td class="num">140</td></tr>
+        <tr><td>Описание профиля Instagram</td><td class="num">150</td></tr>
+        <tr><td>Описание профиля TikTok</td><td class="num">80</td></tr>
+        <tr><td>Заголовок профиля LinkedIn</td><td class="num">220</td></tr>
+        <tr><td>Статус «О себе» в WhatsApp</td><td class="num">139</td></tr>
+        <tr><td>Описание профиля Telegram</td><td class="num">70</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <h3>Ники, заголовки и SMS</h3>
-    <table class="comparison-table">
-      <thead><tr><th>Поле</th><th>Лимит</th><th>Примечания</th></tr></thead>
+    <div class="comparison-table-wrap"><table class="comparison-table">
+      <thead><tr><th>Поле</th><th class="num">Лимит</th><th>Примечания</th></tr></thead>
       <tbody>
-        <tr><td>Ник на сервере Discord</td><td>32</td><td></td></tr>
-        <tr><td>Имя пользователя TikTok</td><td>24</td><td>Только буквы, цифры, подчёркивания и точки</td></tr>
-        <tr><td>Имя пользователя Instagram</td><td>30</td><td></td></tr>
-        <tr><td>Название видео на YouTube</td><td>100</td><td></td></tr>
-        <tr><td>SEO title (заголовок)</td><td>~60</td><td>Google обрезает по ширине в пикселях — считайте это ориентиром</td></tr>
-        <tr><td>SEO description (описание)</td><td>~155</td><td>То же самое — обрезка по ширине в пикселях</td></tr>
-        <tr id="sms"><td>SMS</td><td>160 / сегмент</td><td>Кириллицы нет в алфавите GSM-7, поэтому <strong>любое сообщение на русском — 70 символов в сегменте</strong>, а не 160 — см. <a href="#counting-modes">как считается SMS</a></td></tr>
+        <tr><td>Ник на сервере Discord</td><td class="num">32</td><td></td></tr>
+        <tr><td>Имя пользователя TikTok</td><td class="num">24</td><td>Только буквы, цифры, подчёркивания и точки</td></tr>
+        <tr><td>Имя пользователя Instagram</td><td class="num">30</td><td></td></tr>
+        <tr><td>Название видео на YouTube</td><td class="num">100</td><td></td></tr>
+        <tr><td>SEO title (заголовок)</td><td class="num">~60</td><td>Google обрезает по ширине в пикселях — считайте это ориентиром</td></tr>
+        <tr><td>SEO description (описание)</td><td class="num">~155</td><td>То же самое — обрезка по ширине в пикселях</td></tr>
+        <tr id="sms"><td>SMS</td><td class="num">160 / сегмент</td><td>Кириллицы нет в алфавите GSM-7, поэтому <strong>любое сообщение на русском — 70 символов в сегменте</strong>, а не 160 — см. <a href="#counting-modes">как считается SMS</a></td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <div class="section-divider"></div>
@@ -324,7 +322,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section" id="counting-modes">
     <h2>Почему ваше число символов не совпадает с числом платформы</h2>
     <p>У вопроса «сколько тут символов?» больше одного правильного ответа: площадки считают в разных единицах. У одного и того же текста может быть четыре разных длины:</p>
-    <table class="comparison-table">
+    <div class="comparison-table-wrap"><table class="comparison-table">
       <thead><tr><th>Единица подсчёта</th><th>Что измеряет</th><th>Кто так считает</th></tr></thead>
       <tbody>
         <tr><td>Графемы</td><td>То, что видно глазом — эмодзи с оттенком кожи это 1</td><td>Bluesky; примерно так же Instagram обходится с эмодзи</td></tr>
@@ -332,7 +330,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <tr><td>Единицы UTF-16</td><td>Как текст хранят JavaScript и многие приложения — декоративные буквы вроде 𝗯𝗼𝗹𝗱 стоят по 2</td><td>Поля HTML-форм (<code>maxlength</code>), многие игры и бэкенды приложений</td></tr>
         <tr><td>Байты UTF-8</td><td>Размер записи — русская буква это 2, 中 — 3, 𝗯 — 4</td><td>Поля товаров Amazon, имена в Steam, базы данных</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p>Все четыре величины показаны выше на лету, так что если форма считает текст слишком длинным, а текстовый редактор с ней не согласен, сразу видно, какой именно единицей меряет форма. Двум площадкам нужны отдельные правила сверх этого:</p>
     <p><strong>X / Twitter считает по весу, а не по символам.</strong> По опубликованному самой X алгоритму (библиотека <code>twitter-text</code>) каждая ссылка считается ровно за 23, а почти всё, что лежит выше U+10FF, — иероглифы, большинство эмодзи и каждая «декоративная» буква Unicode — за <strong>2</strong>. Кириллица в этот диапазон не попадает и весит <strong>1</strong> — ровно как латиница, так что пост на русском вмещает полные 280 знаков. А вот текст, набранный декоративным шрифтом (𝗯𝗼𝗹𝗱, 𝓼𝓬𝓻𝓲𝓹𝓽 — такие алфавиты в Unicode есть в основном для латиницы), урезает бюджет вдвое: 140 видимых букв вместо 280. Вариант «X / Twitter» в проверке выше применяет этот настоящий алгоритм.</p>
     <p><strong>SMS считается сегментами, и на русском сегмент всегда 70 символов.</strong> Сообщение вмещает 160 символов только пока все знаки входят в старый алфавит GSM-7 — а кириллицы в нём нет вообще, ни одной буквы. Поэтому любое русскоязычное SMS кодируется как UCS-2: <strong>70 символов в сегменте</strong>, а при разбиении на части — 67. Отсюда и разница в цене: сообщение на 200 символов на латинице уйдёт двумя сегментами, а на русском — тремя. Эмодзи и «кавычки-ёлочки», вставленные из Word, дают тот же эффект и для латиницы. Вариант «SMS» в проверке выше определяет это автоматически и показывает число сегментов, кодировку и точный символ, который перевёл сообщение в режим Unicode.</p>
@@ -470,6 +468,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       foldMeta: "Видно {shown} символов из {total} · {hidden} скрыто за нажатием",
       foldRoom: "До сворачивания осталось ещё {n} символов",
       foldDevices: "На телефоне сворачивает на {m}, на компьютере — на {d}.",
+      pastFold: "Влезает — срез на {n} ⚠",
+      showAllFits: "Показать все ({n})",
+      showFewerFits: "Показать меньше",
       platformLabel: "Площадка",
       fieldLabel: "Поле",
       overBy: "Превышение на {n} — выберите, что исправить:",
