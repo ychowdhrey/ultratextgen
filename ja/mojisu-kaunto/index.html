@@ -187,6 +187,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
 
+    <div class="counter-fold" id="counterFold" hidden></div>
+
     <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
@@ -230,7 +232,35 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
       </tbody>
     </table>
-    <p>上のチェッカーはこの違いを区別しています。ソフトリミットの場合は「どこで折りたたまれるか」を表示するので、単に数字を下回らせるのではなく、大事な内容を冒頭に寄せる判断ができます。</p>
+    <p>多くの人が実際に書きながら意識しているのはソフトリミットのほうなのに、それを表示するカウンターはほとんどありません。LinkedIn投稿は3,000文字入りますが、実際に読まれるのは冒頭のおよそ140文字だけで、残りは誰も押さないタップの向こう側にあります。だから上のツールは折りたたみの位置そのものを描き出します — 入力すると、「もっと見る」の前に表示される文章がそのまま見え、カットラインより後ろは薄く表示され、同じ書き出しが折りたたみのある他の場所でも通用するかどうかまで並べて確認できます。</p>
+    <p>ここで大事なのは、<strong>折りたたみは画面に表示される文字数で決まる</strong>という点です。UTF-8では3バイトを消費する日本語も、折りたたみの計算では1文字は1文字。Instagramの125文字の折りたたみには日本語でもちょうど125文字入り、バイト数のぶん短くなることはありません。バイト数が効いてくるのは「投稿が通るかどうか」を決めるハードリミットの側だけで、折りたたみとは別の話です。</p>
+    <p><strong>どこで折りたたまれるか、デバイス別:</strong></p>
+    <table class="comparison-table">
+      <thead><tr><th>投稿先</th><th>折りたたみ位置</th><th>書き出しにとっての意味</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LinkedIn投稿</td>
+          <td>スマホ 約140<br>PC 約210</td>
+          <td>140文字に収めれば両方で生き残ります。この表の中でスマホとPCの差がいちばん大きい場所です。</td>
+        </tr>
+        <tr>
+          <td><a href="/ja/insta-font/">Instagramキャプション</a></td>
+          <td>約125</td>
+          <td>この表でいちばん厳しい折りたたみ。「… 続きを読む」まで、およそ1文しかありません。</td>
+        </tr>
+        <tr>
+          <td>YouTube説明欄</td>
+          <td>約157</td>
+          <td>タイトルの下に「もっと見る」の前まで表示される部分。検索結果に拾われるのも多くはここです。</td>
+        </tr>
+        <tr>
+          <td>Facebook投稿</td>
+          <td>約477</td>
+          <td>いちばん余裕のある折りたたみ。短い段落なら丸ごとカットラインの手前に収まります。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>正直に2点。これらは公表された制限ではなく実際のUIで観測された挙動なので、厳密なしきい値ではなく「確実に表示される目安」として扱ってください。また各サービスは<em>行数</em>でも折りたたむため、冒頭で改行を3回入れれば、どの文字数にも届かないうちに折りたたまれます。書き出しが箇条書きに頼っているなら、実際の投稿画面でも確認してください。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -425,6 +455,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     visibleNote: "表示されるのは冒頭およそ{n}文字までで、それ以降は折りたたまれます — 大事な内容を先に書いてください。",
     platformLabel: "プラットフォーム",
     fieldLabel: "入力欄",
+    foldHeading: "「もっと見る」の前に読者が見る部分",
+    foldMore: "もっと見る",
+    foldMeta: "{total}文字中{shown}文字を表示 · {hidden}文字はタップの向こう側",
+    foldRoom: "折りたたみまで、書き出しに使える残り{n}文字",
+    foldDevices: "スマホは{m}文字、PCは{d}文字で折りたたみ。",
     overBy: "{n}オーバーしています — 対処法を選んでください：",
     trimToFit: "収まる長さに切り詰める",
     undo: "元に戻す",
