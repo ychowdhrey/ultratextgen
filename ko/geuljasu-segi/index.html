@@ -123,7 +123,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"자소서 글자수는 공백 포함인가요, 제외인가요?","acceptedAnswer":{"@type":"Answer","text":"회사와 플랫폼마다 달라요. 사람인·잡코리아 같은 주요 채용 플랫폼의 입력 폼은 대부분 공백 포함 기준이지만, 공백 제외를 명시하는 공고도 있으니 반드시 지원하는 공고의 기준을 먼저 확인하세요. 이 도구는 공백 포함·제외 글자 수를 나란히 보여 주기 때문에 어느 기준이든 바로 맞출 수 있어요."}},
     {"@type":"Question","name":"X(트위터)에서 한글은 몇 자까지 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"X의 글자 제한은 280이지만 가중치 방식이라 한글·이모지·대부분의 특수문자는 글자당 2로 계산돼요. 그래서 한글로만 쓰면 실제로는 약 140자까지 들어가고, URL은 실제 길이와 상관없이 23자로 계산돼요. 위 플랫폼 확인에서 'X / Twitter post'를 선택하면 X의 실제 계산 방식 그대로 확인할 수 있어요."}},
     {"@type":"Question","name":"줄바꿈도 글자수에 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"네, 줄바꿈은 공백 포함 글자 수에 1자로 들어가요(공백 제외 글자 수에서는 빠져요). 대부분의 입력 폼과 채용 플랫폼도 줄바꿈을 1자로 계산하니, 문단을 많이 나눈 자소서라면 줄바꿈 몇 자가 제한에 영향을 줄 수 있어요."}},
-    {"@type":"Question","name":"입력한 글이 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 계산은 브라우저 안에서 순수 자바스크립트로만 이루어져요 — 입력한 글은 서버로 전송되지 않고, 어디에도 저장되거나 기록되지 않아요. 완전 무료이고 회원가입도 필요 없어요."}}
+    {"@type":"Question","name":"이모지는 한 글자로 세나요?","acceptedAnswer":{"@type":"Answer","text":"그런 경우는 드물어요. 단순한 이모지는 코드포인트로는 1이지만 UTF-16으로는 2 단위이고, 피부색이 붙었거나 여러 개가 결합된 이모지(가족 이모지 등)는 4, 7 단위 이상이 되기도 해요. X에서는 이모지 하나가 2로 계산되고, SMS에서는 이모지 하나만 들어가도 1건당 글자 수 기준이 바뀌어요. '자소 단위(보이는 글자)' 타일이 눈에 보이는 개수, '글자 수'와 'UTF-16 단위'가 실제로 소모되는 양이에요."}},
+    {"@type":"Question","name":"플랫폼은 초과라는데 글자수세기는 괜찮다고 나오는 이유가 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"세는 단위가 서로 다르기 때문이에요. 한국어에서 가장 흔한 원인은 한글 한 글자가 1 코드포인트, 1 UTF-16 단위지만 UTF-8로는 3바이트라는 점이에요. 글자 수로 제한하는 서비스에서는 여유가 있어도, 바이트로 제한하는 데이터베이스 항목·업무 시스템·아마존 상품 정보란에서는 세 배 속도로 한도를 소모해 거부당해요. 예를 들어 255바이트짜리 항목에 들어가는 한글은 85자뿐이에요. 여기에 더해 X는 가중치 방식(한글 1자 = 2), 블루스카이는 자소 단위로 세요. 도구 맨 위에서 글이 올라갈 곳을 고르면 그곳이 세는 방식 그대로 계산해 주니, 일반적인 숫자 대신 실제로 맞는 숫자를 볼 수 있어요."}},
+    {"@type":"Question","name":"글자수를 제한 안으로 줄이려면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"초과하면 그 플랫폼 자체의 계산 단위로 '무엇을 얼마나 줄일 수 있는지'를 알려 줘요. 특수 글꼴로 된 영문·숫자를 일반 문자로 되돌리기, 이모지 삭제, 둥근 따옴표와 대시를 일반 기호로 펴기, 중복 공백 합치기, 해시태그 빼기, 단어 경계에 맞춰 잘라내기 같은 선택지예요. 전부 한 번의 클릭으로 적용되고 되돌릴 수 있으니, 글을 다시 쓰기 전에 가장 손해가 적은 방법부터 시도해 볼 수 있어요."}},
+    {"@type":"Question","name":"특수 글꼴로 쓰면 글자수가 더 많이 잡히나요?","acceptedAnswer":{"@type":"Answer","text":"보통 두 배로 잡혀요. 볼드·필기체·고딕 같은 특수 유니코드 영문·숫자는 대부분 U+FFFF 위쪽에 있어서, 보이는 글자 하나당 UTF-16 2 단위, UTF-8 4바이트, X의 280 한도 중 2를 소모해요. 특수 글꼴 10자짜리 이름이 12자 제한 입력란에서 거부되는 이유가 이것이에요. 붙여넣고 '특수 글꼴 영문·숫자를 일반 문자로'를 누르면 그 차이를 바로 되돌릴 수 있어요. 이 변환은 영문과 숫자에만 적용되고 한글은 그대로 남아요."}},
+    {"@type":"Question","name":"보이지 않는 문자도 글자수에 세나요?","acceptedAnswer":{"@type":"Answer","text":"네, 그리고 글자 수가 보이는 것보다 이상하게 많이 나오는 가장 흔한 원인이에요. 폭이 없는 공백, BOM, 다른 앱에서 복사할 때 딸려 들어오는 채움 문자는 아무것도 보여 주지 않으면서 한도를 그대로 소모해요. 이 도구는 그런 문자를 입력창 바로 아래에 표시하고 한 번의 클릭으로 지울 수 있게 해 줘요."}},
+    {"@type":"Question","name":"입력한 글이 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 계산도, 확인도, 수정도 전부 브라우저 안에서 순수 자바스크립트로만 이루어져요 — 입력한 글은 서버로 전송되지 않고, 어디에도 저장되거나 기록되지 않아요. 완전 무료이고 회원가입도 필요 없어요."}}
   ]
 }
 </script>
@@ -161,23 +166,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>아래 입력창에 글을 쓰거나 붙여넣으면 모든 숫자가 즉시 갱신돼요: 단어 수, 글자 수(공백 포함·제외), 문장 수, 문단 수, 읽기 시간까지. 어떤 것도 서버로 전송되지 않고 모든 계산은 브라우저 안에서만 이루어져요. 입력창 아래에서 플랫폼을 선택하면 지금 쓴 글이 그 플랫폼의 글자수 제한에 맞는지, 몇 자가 남았는지(또는 몇 자를 초과했는지)도 바로 볼 수 있어요. 방금 잰 텍스트를 예쁜 유니코드 글꼴로 바꾸고 싶다면 <a href="/ko/">UltraTextGen 한국어 글씨체 변환기</a>가 100가지 이상의 복사–붙여넣기 스타일로 바꿔 드려요.</p>
+      <p>입력창 바로 위에서 글이 올라갈 곳을 먼저 고르고, 글을 쓰거나 붙여넣으세요. 단어 수, 글자 수(공백 포함·제외), 문장 수, 문단 수, 읽기 시간이 즉시 갱신되고, 확인 도구는 그 플랫폼이 실제로 세는 방식 그대로 계산해서 몇 자가 남았는지(또는 몇 자를 초과했는지) 알려 줘요. 초과했을 때 그냥 알려 주고 끝나지 않아요 — 무엇을 얼마나 줄일 수 있는지 절약되는 글자 수와 함께 제안하고, 전부 한 번의 클릭으로 적용하고 되돌릴 수 있어요. 어떤 것도 서버로 전송되지 않고 모든 계산은 브라우저 안에서만 이루어져요. 방금 잰 텍스트를 예쁜 유니코드 글꼴로 바꾸고 싶다면 <a href="/ko/">UltraTextGen 한국어 글씨체 변환기</a>가 100가지 이상의 복사–붙여넣기 스타일로 바꿔 드려요.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">내 글</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">복사</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>지우기</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="여기에 글을 쓰거나 붙여넣으세요…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">단어 수</span></div>
@@ -193,8 +204,52 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 바이트</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">이 글이 또 어디에 들어가는지 — 모든 제한을 실시간으로</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section">
+    <h2>하드 리밋과 소프트 리밋</h2>
+    <p>'글자수 제한'이라고 불리는 것에는 성격이 다른 두 가지가 있고, 넘겼을 때 치르는 대가도 달라요.</p>
+    <table class="comparison-table">
+      <thead><tr><th>종류</th><th>초과하면 어떻게 되나요</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>하드 리밋</strong><br>(실제 상한)</td>
+          <td>플랫폼이 아예 거부해요. 게시물이 올라가지 않고, 이름이 저장되지 않아요.</td>
+          <td>X 게시물 280 · 디스코드 별명 32 · 틱톡 사용자명 24 · SMS 1건</td>
+        </tr>
+        <tr>
+          <td><strong>소프트 리밋</strong><br>(잘림)</td>
+          <td>더 쓸 수는 있지만, '더 보기'를 누르지 않는 독자에게는 뒷부분이 보이지 않아요.</td>
+          <td>인스타그램 캡션 125자 이후 · 링크드인 게시물 약 210자 이후 · 유튜브 설명 약 157자 이후</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>위의 확인 도구는 이 둘을 구분해요. 소프트 리밋이면 어디에서 잘리는지까지 알려 주니, 숫자만 겨우 맞추는 대신 중요한 내용을 앞으로 당겨 쓸 수 있어요.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="counting-modes">
+    <h2>플랫폼이 세는 글자수와 내 글자수가 다른 이유</h2>
+    <p>'이거 몇 자예요?'에는 정답이 하나가 아니에요. 서비스마다 세는 단위가 다르기 때문이에요. 한국어 사용자에게 가장 중요한 건 이 지점이에요: <strong>한글 한 글자는 1 코드포인트, 1 UTF-16 단위지만, UTF-8로는 3바이트</strong>예요. 그래서 글자 수로는 여유가 있는데도 바이트로 제한하는 입력 폼이나 시스템에서는 '너무 깁니다'라며 거부당하는 일이 생겨요. 같은 글에 길이가 네 가지 있다고 생각하면 돼요.</p>
+    <table class="comparison-table">
+      <thead><tr><th>세는 방식</th><th>무엇을 재나요</th><th>한글에서는</th></tr></thead>
+      <tbody>
+        <tr><td>자소 단위(그래핌)</td><td>눈에 보이는 그대로 — 피부색이 붙은 이모지도 1</td><td>'한' = 1. 블루스카이가 사용</td></tr>
+        <tr><td>코드포인트</td><td>유니코드 문자 수 — 👍🏽 는 2(손 + 피부색)</td><td>'한' = 1. 대부분의 웹 서비스와 이 도구의 '글자 수' 타일</td></tr>
+        <tr><td>UTF-16 단위</td><td>자바스크립트와 많은 앱이 글을 저장하는 방식</td><td>'한' = 1이지만 특수 글꼴 영문은 2. HTML 폼의 <code>maxlength</code>, 게임·앱 백엔드</td></tr>
+        <tr><td>UTF-8 바이트</td><td>저장 용량</td><td><strong>'한' = 3바이트</strong>. 데이터베이스 <code>VARCHAR</code>, 아마존 상품 정보란, 스팀 이름, 오래된 업무 시스템</td></tr>
+      </tbody>
+    </table>
+    <p>이 차이는 실무에서 그대로 드러나요. 예를 들어 '255바이트까지'인 항목에는 한글이 85자밖에 안 들어가요. 위의 '자소 단위(보이는 글자)', 'UTF-16 단위', 'UTF-8 바이트' 타일은 입력과 동시에 모두 갱신되니, 폼은 길다고 하는데 내 글자 수는 모자랄 때 그 폼이 어떤 단위로 세는지 바로 짚어낼 수 있어요. 공백 포함·제외 문제는 이와 별개의 한국식 기준이라 <a href="#gongbaek">공백 포함 vs 공백 제외</a>에서 따로 설명했어요.</p>
+    <p>여기에 더해 자기만의 규칙을 쓰는 곳이 두 군데 있어요. <strong>X(트위터)는 글자가 아니라 가중치로 세서</strong> 한글 한 글자가 2로 계산돼요(자세히는 <a href="#x-twitter">X에서 한글은 몇 자까지</a>). <strong>SMS는 '건'으로 세는데</strong>, 한글은 GSM-7 문자 집합에 없어서 항상 유니코드로 처리되고 1건당 70자(분할되면 67자)로 떨어져요. 영문·숫자만 쓰면 1건에 160자예요.</p>
+  </section>
 
   <div class="section-divider"></div>
 
@@ -222,23 +277,57 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <div class="section-divider"></div>
 
-  <section class="editorial-section" id="platform-limits">
-    <h2>플랫폼별 글자수 제한 한눈에 보기</h2>
-    <p>위의 실시간 플랫폼 확인이 사용하는 것과 같은 제한을 표로 정리했어요. 한글 기준 유의점은 비고를 참고하세요.</p>
+  <section class="editorial-section" id="limits">
+    <h2>확인 도구에 들어 있는 글자수 제한 전체</h2>
+    <p>위의 실시간 확인 도구가 실제로 쓰는 제한을 그대로 표로 정리했어요. 바로 가기: <a href="#twitter">X/트위터</a> · <a href="#discord">디스코드</a> · <a href="#instagram">인스타그램</a> · <a href="#tiktok">틱톡</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">플랫폼별 세는 방식</a>.</p>
+
+    <h3>게시물 &amp; 메시지</h3>
     <table class="comparison-table">
-      <thead><tr><th>플랫폼 / 항목</th><th>제한</th><th>비고</th></tr></thead>
+      <thead><tr><th>플랫폼</th><th>제한</th><th>비고</th></tr></thead>
       <tbody>
-        <tr><td>X(트위터) 게시물</td><td>280</td><td>가중치 방식 — 한글은 글자당 2로 계산되어 실질 약 140자, URL은 23자</td></tr>
-        <tr><td>인스타그램 캡션</td><td>2,200</td><td>첫 몇 줄 이후 '더 보기'로 접힘</td></tr>
-        <tr><td>인스타그램 소개(바이오)</td><td>150</td><td></td></tr>
-        <tr><td>카카오톡 상태메시지</td><td>60</td><td></td></tr>
+        <tr id="twitter"><td>X(트위터) 게시물</td><td>280</td><td>가중치 방식 — URL은 항상 23, 한글·이모지·특수 글꼴은 글자당 2라 한글로만 쓰면 실질 약 140자</td></tr>
+        <tr id="discord"><td>디스코드 메시지</td><td>2,000</td><td>니트로 구독 시 4,000. 더 길면 .txt 첨부파일로 바뀜</td></tr>
+        <tr id="instagram"><td>인스타그램 캡션</td><td>2,200</td><td>첫 몇 줄 이후 '더 보기'로 접힘</td></tr>
+        <tr id="tiktok"><td>틱톡 캡션</td><td>2,200</td><td></td></tr>
+        <tr><td>링크드인 게시물</td><td>3,000</td><td>기기에 따라 약 200~700자에서 '더 보기'로 접힘</td></tr>
+        <tr><td>페이스북 게시물</td><td>63,206</td><td></td></tr>
         <tr><td>유튜브 설명</td><td>5,000</td><td></td></tr>
-        <tr><td>유튜브 제목</td><td>100</td><td></td></tr>
-        <tr><td>틱톡 캡션</td><td>2,200</td><td></td></tr>
-        <tr><td>틱톡 소개(바이오)</td><td>80</td><td></td></tr>
-        <tr><td>디스코드 메시지</td><td>2,000</td><td>니트로 구독 시 4,000</td></tr>
+        <tr><td>핀터레스트 핀 설명</td><td>500</td><td></td></tr>
+        <tr><td>텔레그램 메시지</td><td>4,096</td><td>사진·영상 캡션은 1,024</td></tr>
+        <tr><td>스레드 게시물</td><td>500</td><td></td></tr>
+        <tr><td>블루스카이 게시물</td><td>300</td><td>코드포인트가 아니라 자소 단위(보이는 글자)로 셈</td></tr>
+        <tr><td>레딧 게시물 제목</td><td>300</td><td></td></tr>
+        <tr><td>잘로 게시물·상태</td><td>2,000</td><td></td></tr>
       </tbody>
     </table>
+
+    <h3>소개 &amp; 프로필</h3>
+    <table class="comparison-table">
+      <thead><tr><th>항목</th><th>제한</th></tr></thead>
+      <tbody>
+        <tr><td>인스타그램 소개(바이오)</td><td>150</td></tr>
+        <tr><td>틱톡 소개(바이오)</td><td>80</td></tr>
+        <tr><td>링크드인 헤드라인</td><td>220</td></tr>
+        <tr><td>왓츠앱 정보</td><td>139</td></tr>
+        <tr><td>텔레그램 소개</td><td>70</td></tr>
+        <tr><td>VK 상태</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>사용자명, 제목 &amp; SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>항목</th><th>제한</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>디스코드 별명</td><td>32</td><td></td></tr>
+        <tr><td>틱톡 사용자명</td><td>24</td><td>영문·숫자·밑줄·마침표만 가능</td></tr>
+        <tr><td>인스타그램 사용자명</td><td>30</td><td></td></tr>
+        <tr><td>유튜브 제목</td><td>100</td><td></td></tr>
+        <tr><td>SEO 메타 제목</td><td>약 60</td><td>구글은 픽셀 너비로 자르므로 참고 기준으로 보세요</td></tr>
+        <tr><td>SEO 메타 설명</td><td>약 155</td><td>마찬가지로 픽셀 너비로 잘림</td></tr>
+        <tr id="sms"><td>SMS 문자메시지</td><td>160 / 1건</td><td>GSM-7 문자만 썼을 때. <strong>한글은 항상 유니코드로 처리되어 실질 1건 70자</strong>(분할 시 67자)</td></tr>
+      </tbody>
+    </table>
+    <p>국내 서비스 중 <strong>카카오톡 상태메시지는 60자</strong>예요. 카카오톡은 위 확인 도구에 포함되어 있지 않으니 '글자 수(공백 포함)' 값만 보고 맞추면 돼요.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -263,8 +352,28 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">네, 줄바꿈은 공백 포함 글자 수에 1자로 들어가요(공백 제외 글자 수에서는 빠져요). 대부분의 입력 폼과 채용 플랫폼도 줄바꿈을 1자로 계산하니, 문단을 많이 나눈 자소서라면 줄바꿈 몇 자가 제한에 영향을 줄 수 있어요.</p>
     </details>
     <details class="faq-item">
+      <summary class="faq-question">이모지는 한 글자로 세나요?</summary>
+      <p class="faq-answer">그런 경우는 드물어요. 단순한 이모지는 코드포인트로는 1이지만 UTF-16으로는 2 단위이고, 피부색이 붙었거나 여러 개가 결합된 이모지(가족 이모지 등)는 4, 7 단위 이상이 되기도 해요. X에서는 이모지 하나가 2로 계산되고, SMS에서는 이모지 하나만 들어가도 1건당 글자 수 기준이 바뀌어요. '자소 단위(보이는 글자)' 타일이 눈에 보이는 개수, '글자 수'와 'UTF-16 단위'가 실제로 소모되는 양이에요.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">플랫폼은 초과라는데 글자수세기는 괜찮다고 나오는 이유가 뭔가요?</summary>
+      <p class="faq-answer">세는 단위가 서로 다르기 때문이에요. 한국어에서 가장 흔한 원인은 <strong>한글 한 글자가 1 코드포인트, 1 UTF-16 단위지만 UTF-8로는 3바이트</strong>라는 점이에요. 글자 수로 제한하는 서비스에서는 여유가 있어도, 바이트로 제한하는 데이터베이스 항목·업무 시스템·아마존 상품 정보란에서는 세 배 속도로 한도를 소모해 거부당해요. 예를 들어 255바이트짜리 항목에 들어가는 한글은 85자뿐이에요. 여기에 더해 X는 가중치 방식(한글 1자 = 2), 블루스카이는 자소 단위로 세요. 도구 맨 위에서 글이 올라갈 곳을 고르면 그곳이 세는 방식 그대로 계산해 주니, 일반적인 숫자 대신 실제로 맞는 숫자를 볼 수 있어요.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">글자수를 제한 안으로 줄이려면 어떻게 하나요?</summary>
+      <p class="faq-answer">초과하면 그 플랫폼 자체의 계산 단위로 '무엇을 얼마나 줄일 수 있는지'를 알려 줘요. 특수 글꼴로 된 영문·숫자를 일반 문자로 되돌리기, 이모지 삭제, 둥근 따옴표와 대시를 일반 기호로 펴기, 중복 공백 합치기, 해시태그 빼기, 단어 경계에 맞춰 잘라내기 같은 선택지예요. 전부 한 번의 클릭으로 적용되고 되돌릴 수 있으니, 글을 다시 쓰기 전에 가장 손해가 적은 방법부터 시도해 볼 수 있어요.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">특수 글꼴로 쓰면 글자수가 더 많이 잡히나요?</summary>
+      <p class="faq-answer">보통 두 배로 잡혀요. 볼드·필기체·고딕 같은 특수 유니코드 영문·숫자는 대부분 U+FFFF 위쪽에 있어서, 보이는 글자 하나당 UTF-16 2 단위, UTF-8 4바이트, X의 280 한도 중 2를 소모해요. 특수 글꼴 10자짜리 이름이 12자 제한 입력란에서 거부되는 이유가 이것이에요. 붙여넣고 '특수 글꼴 영문·숫자를 일반 문자로'를 누르면 그 차이를 바로 되돌릴 수 있어요. 이 변환은 영문과 숫자에만 적용되고 한글은 그대로 남아요.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">보이지 않는 문자도 글자수에 세나요?</summary>
+      <p class="faq-answer">네, 그리고 글자 수가 보이는 것보다 이상하게 많이 나오는 가장 흔한 원인이에요. 폭이 없는 공백, BOM, 다른 앱에서 복사할 때 딸려 들어오는 채움 문자는 아무것도 보여 주지 않으면서 한도를 그대로 소모해요. 이 도구는 그런 문자를 입력창 바로 아래에 표시하고 한 번의 클릭으로 지울 수 있게 해 줘요.</p>
+    </details>
+    <details class="faq-item">
       <summary class="faq-question">입력한 글이 저장되나요?</summary>
-      <p class="faq-answer">아니요. 모든 계산은 브라우저 안에서 순수 자바스크립트로만 이루어져요 — 입력한 글은 서버로 전송되지 않고, 어디에도 저장되거나 기록되지 않아요. 완전 무료이고 회원가입도 필요 없어요.</p>
+      <p class="faq-answer">아니요. 계산도, 확인도, 수정도 전부 브라우저 안에서 순수 자바스크립트로만 이루어져요 — 입력한 글은 서버로 전송되지 않고, 어디에도 저장되거나 기록되지 않아요. 완전 무료이고 회원가입도 필요 없어요.</p>
     </details>
   </section>
 
@@ -306,11 +415,149 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     ok: "제한 내 ✓",
     fail: "제한 초과 ✕",
     xNote: "X는 실제 가중치 방식으로 계산합니다: URL은 23자, 한글·이모지·특수문자는 글자당 2자.",
-    smsSegments: "SMS {n}건 · 구간당 {per}자 ({enc})",
-    smsUnicode: "유니코드 모드로 전환시킨 문자: {chars}"
+    smsSegments: "SMS {n}건 · 1건당 {per}자 ({enc})",
+    smsUnicode: "유니코드 모드로 전환시킨 문자: {chars}",
+    visibleNote: "앞부분 약 {n}자까지만 보이고 그 뒤는 접혀요 — 중요한 내용을 앞에 쓰세요.",
+    platformLabel: "플랫폼",
+    fieldLabel: "항목",
+    overBy: "{n}자 초과했어요 — 줄이는 방법을 골라 보세요:",
+    trimToFit: "제한에 맞게 자르기",
+    undo: "되돌리기",
+    applied: "적용됨",
+    fitsHeading: "이 글이 또 어디에 들어가는지",
+    segShort: "건",
+    inspectStyled: "특수 글꼴 영문·숫자 {n}자 — X와 여러 앱 입력란에서는 한 자당 2로 계산돼요.",
+    inspectInvisible: "보이지 않지만 글자수에 들어가는 문자 {n}개.",
+    inspectCombining: "겹쳐 쌓인 결합 기호 {n}개.",
+    reducers: {
+      "plain": "특수 글꼴 영문·숫자를 일반 문자로",
+      "invisible": "보이지 않는 문자 지우기",
+      "combining": "겹친 결합 기호 지우기",
+      "emoji": "이모지 지우기",
+      "quotes": "따옴표와 대시를 일반 기호로 펴기",
+      "spaces": "중복 공백 합치기",
+      "blanklines": "빈 줄 합치기",
+      "hashtags": "해시태그 지우기",
+      "gsm-safe": "SMS에 맞게 정리하기(1건 160자로 복구)"
+    },
+    reducerHints: {
+      "plain": "특수 글꼴로 된 영문·숫자는 대부분의 입력란에서 한 자당 2로 계산돼요. 한글은 그대로 남아요.",
+      "invisible": "폭이 없는 공백이나 채움 문자 — 보이지 않지만 입력란은 세요.",
+      "combining": "글리치·자모 겹침 기호는 하나당 한 자씩 늘어나요.",
+      "emoji": "이모지는 X에서 2로 계산되고 SMS를 1건 70자로 떨어뜨려요.",
+      "quotes": "둥근 따옴표와 긴 대시가 SMS의 GSM-7을 깨뜨리는 대표적인 원인이에요.",
+      "spaces": "반복된 공백과 줄 끝에 남은 공백.",
+      "blanklines": "세 줄 이상 이어지는 빈 줄.",
+      "hashtags": "해시태그는 본문 대신 댓글로 옮기세요."
+    },
+    platforms: {
+      "x": "X(트위터)",
+      "instagram": "인스타그램",
+      "tiktok": "틱톡",
+      "linkedin": "링크드인",
+      "youtube": "유튜브",
+      "facebook": "페이스북",
+      "discord": "디스코드",
+      "telegram": "텔레그램",
+      "threads": "스레드",
+      "bluesky": "블루스카이",
+      "reddit": "레딧",
+      "pinterest": "핀터레스트",
+      "whatsapp": "왓츠앱",
+      "zalo": "잘로",
+      "sms": "SMS 문자메시지",
+      "seo": "구글 검색결과"
+    },
+    fields: {
+      "x-post": "게시물",
+      "x-bio": "소개",
+      "x-name": "표시 이름",
+      "ig-caption": "캡션",
+      "ig-bio": "소개(바이오)",
+      "ig-username": "사용자명",
+      "ig-alt": "대체 텍스트",
+      "tiktok-caption": "캡션",
+      "tiktok-bio": "소개(바이오)",
+      "tiktok-username": "사용자명",
+      "li-post": "게시물",
+      "li-headline": "헤드라인",
+      "li-about": "소개 섹션",
+      "li-comment": "댓글",
+      "yt-title": "영상 제목",
+      "yt-description": "설명",
+      "yt-comment": "댓글",
+      "fb-post": "게시물",
+      "discord-message": "메시지",
+      "discord-nick": "별명",
+      "discord-status": "사용자 지정 상태",
+      "telegram-message": "메시지",
+      "telegram-caption": "사진·영상 캡션",
+      "telegram-bio": "소개",
+      "threads-post": "게시물",
+      "threads-bio": "소개",
+      "bluesky-post": "게시물",
+      "bluesky-bio": "소개",
+      "reddit-title": "게시물 제목",
+      "reddit-comment": "댓글",
+      "pinterest-description": "핀 설명",
+      "pinterest-title": "핀 제목",
+      "whatsapp-about": "정보",
+      "vk-status": "상태",
+      "zalo-post": "게시물·상태",
+      "sms": "문자 본문",
+      "meta-title": "페이지 제목",
+      "meta-description": "메타 설명"
+    },
+    groups: {
+      posts: "게시물·메시지",
+      bios: "소개·프로필",
+      usernames: "사용자명",
+      titles: "제목·메타"
+    },
+    labels: {
+      "x-post": "X(트위터) 게시물",
+      "x-bio": "X(트위터) 소개",
+      "x-name": "X(트위터) 표시 이름",
+      "ig-caption": "인스타그램 캡션",
+      "ig-bio": "인스타그램 소개(바이오)",
+      "ig-username": "인스타그램 사용자명",
+      "ig-alt": "인스타그램 대체 텍스트",
+      "tiktok-caption": "틱톡 캡션",
+      "tiktok-bio": "틱톡 소개(바이오)",
+      "tiktok-username": "틱톡 사용자명",
+      "li-post": "링크드인 게시물",
+      "li-headline": "링크드인 헤드라인",
+      "li-about": "링크드인 소개 섹션",
+      "li-comment": "링크드인 댓글",
+      "yt-title": "유튜브 제목",
+      "yt-description": "유튜브 설명",
+      "yt-comment": "유튜브 댓글",
+      "fb-post": "페이스북 게시물",
+      "discord-message": "디스코드 메시지",
+      "discord-nick": "디스코드 별명",
+      "discord-status": "디스코드 사용자 지정 상태",
+      "telegram-message": "텔레그램 메시지",
+      "telegram-caption": "텔레그램 사진·영상 캡션",
+      "telegram-bio": "텔레그램 소개",
+      "threads-post": "스레드 게시물",
+      "threads-bio": "스레드 소개",
+      "bluesky-post": "블루스카이 게시물",
+      "bluesky-bio": "블루스카이 소개",
+      "reddit-title": "레딧 게시물 제목",
+      "reddit-comment": "레딧 댓글",
+      "pinterest-description": "핀터레스트 핀 설명",
+      "pinterest-title": "핀터레스트 핀 제목",
+      "whatsapp-about": "왓츠앱 정보",
+      "vk-status": "VK 상태",
+      "zalo-post": "잘로 게시물·상태",
+      "sms": "SMS 문자메시지",
+      "meta-title": "SEO 메타 제목",
+      "meta-description": "SEO 메타 설명"
+    }
   };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

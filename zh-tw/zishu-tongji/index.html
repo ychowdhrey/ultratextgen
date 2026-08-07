@@ -122,8 +122,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {"@type":"Question","name":"全形和半形字元怎麼計算？","acceptedAnswer":{"@type":"Answer","text":"這個工具以 Unicode 碼位為單位計算，全形與半形一律各算 1 個字元 — 中文字、全形標點、半形英文字母、半形數字都是 1。不過部分表單與報名系統仍沿用一個全形字算 2 的舊規則，在「限 500 字」的欄位裡實際只放得下 250 個中文字。對方若有明確規定計算方式，請以對方的規定為準。"}},
     {"@type":"Question","name":"在 X（推特）上中文可以打幾個字？","acceptedAnswer":{"@type":"Answer","text":"X 的上限是 280 個計數單位，而中文、日文、韓文字元與大多數表情符號每個計為 2，所以整篇用中文寫的貼文實際上大約只能打 140 個字。URL 不論實際多長一律計為 23。在上方的檢查器選擇「X（推特）貼文」，就是照 X 實際使用的加權演算法計算的。"}},
     {"@type":"Question","name":"空白和換行算字元嗎？","acceptedAnswer":{"@type":"Answer","text":"「字元數」會把空白（全形與半形）和換行一起算進去，「字元數（不含空白）」則把它們扣掉。X、Instagram、Discord 等大多數平台都把空白當成一般字元計算，所以拿貼文或個人簡介去對平台限制時，請用含空白的「字元數」。"}},
-    {"@type":"Question","name":"為什麼我算的字數和表單顯示的不一樣？","acceptedAnswer":{"@type":"Answer","text":"因為各家系統計算的單位不同。多數平台以 Unicode 碼位計算，但 HTML 表單欄位常以 UTF-16 單位計算（特殊字體的字母每個算 2），部分電商欄位以 UTF-8 位元組計算（一個中文字通常是 3 個位元組），X 使用加權計算，Bluesky 則以字素計算。上方的「字素（看得見的字）」「UTF-16 單位」「UTF-8 位元組」三格會同步更新，可以直接對照對方使用的算法。"}},
-    {"@type":"Question","name":"輸入的文字會被儲存嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。所有計算都是純瀏覽器端運算，由頁面上的 JavaScript 在你的裝置上完成，輸入的文字不會上傳、不會記錄，也不會儲存到任何伺服器。工具完全免費，也不需要註冊。"}}
+    {"@type":"Question","name":"表情符號算一個字元嗎？","acceptedAnswer":{"@type":"Answer","text":"通常不是。單純的表情符號在碼位上是 1，但在 UTF-16 是 2 個單位；帶膚色或由多個符號組合而成的（例如全家人的表情符號）可能是 4、7 個單位甚至更多。在 X 上每個表情符號計為 2，在 SMS 裡只要放進一個表情符號，整則訊息每則可容納的字元數就會改變。「字素（看得見的字）」顯示你眼睛看到的數量，「字元數」與「UTF-16 單位」則是實際被扣掉的額度。"}},
+    {"@type":"Question","name":"為什麼我算的字數和表單顯示的不一樣？","acceptedAnswer":{"@type":"Answer","text":"因為各家系統計算的單位不同。中文最常見的原因是：一個中文字是 1 個碼位、1 個 UTF-16 單位，但換成 UTF-8 是 3 個位元組。以字元數設限的服務看起來還很寬鬆，但在以位元組設限的資料庫欄位、內部系統或電商商品欄位裡，額度會以三倍的速度被吃掉，於是被判定「太長」。舉例來說，上限 255 位元組的欄位，中文只放得下 85 個字。除此之外，X 使用加權計算（中文字每個算 2），Bluesky 則以字素計算。在工具最上方選好文字要發到哪裡，它就會照那裡的算法計算，而不是給你一個籠統的數字；上方的「字素（看得見的字）」「UTF-16 單位」「UTF-8 位元組」三格也會同步更新，可以直接對照。"}},
+    {"@type":"Question","name":"超過限制時要怎麼把字數縮下來？","acceptedAnswer":{"@type":"Answer","text":"一旦超過，工具會用該平台自己的計算單位列出可以刪掉什麼、各能省下多少：把特殊字體的英文字母與數字還原成一般字元、刪除表情符號、把彎引號與長破折號改成一般符號、合併多餘空白、拿掉主題標籤，或是直接在詞的邊界截斷到剛好符合限制。每一項都只要按一下，而且都能還原，所以可以先試代價最小的做法，不必一開始就重寫。"}},
+    {"@type":"Question","name":"特殊字體會被多算字數嗎？","acceptedAnswer":{"@type":"Answer","text":"通常會多算一倍。粗體、花體、哥德體等特殊 Unicode 英數字大多位於 U+FFFF 之上，因此看得見的每一個字母會用掉 2 個 UTF-16 單位、4 個 UTF-8 位元組，以及 X 那 280 個額度中的 2 個。這就是為什麼 10 個特殊字體字母組成的名稱，會被上限 12 字元的欄位擋下來。貼進來之後按「把特殊字體的英數字還原成一般字元」，就能立刻看到並拿回這段差距。這個轉換只作用在英文字母與數字上，中文字會原封不動保留。"}},
+    {"@type":"Question","name":"隱形字元也會被算進去嗎？","acceptedAnswer":{"@type":"Answer","text":"會，而且這是字數莫名比看起來多的最常見原因。零寬空白、位元組順序記號（BOM），以及從其他應用程式複製時夾帶進來的填充字元，什麼都不顯示卻照樣吃掉你的額度。這個工具會把它們標示在文字框正下方，並提供一鍵移除。"}},
+    {"@type":"Question","name":"輸入的文字會被儲存嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。計算、檢查與修改都是純瀏覽器端運算，由頁面上的 JavaScript 在你的裝置上完成，輸入的文字不會上傳、不會記錄，也不會儲存到任何伺服器。工具完全免費，也不需要註冊。"}}
   ]
 }
 </script>
@@ -161,23 +165,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
-      <p>在下方的方框輸入或貼上文字，字元數（含空白與不含空白）、句數、段落數、行數、閱讀時間與朗讀時間都會立刻更新。沒有送出按鈕，輸入的內容也不會上傳 — 每一個數字都在你的瀏覽器裡算完。計數器下方可以選擇平台，直接檢查目前的文字是否還在該平台的字數限制內，以及還剩下幾個字元（或超出幾個字元）。想把剛剛數好的文字換成特殊字體，<a href="/zh-tw/">UltraTextGen 特殊符號產生器</a>可以一鍵轉換成 100 種以上可複製貼上的樣式。</p>
+      <p>先在方框正上方選擇這段文字要發到哪裡，再輸入或貼上內容：字元數（含空白與不含空白）、句數、段落數、行數、閱讀時間與朗讀時間都會立刻更新，而檢查器會照你選的平台實際的計算方式計算，直接告訴你還剩下幾個字元（或超出幾個字元）。萬一超出，工具不會只丟給你一句「超過了」 — 它會列出可以怎麼縮短、每一種各能省下多少，全部一鍵套用、也能一鍵還原。沒有送出按鈕，輸入的內容也不會上傳 — 每一個數字都在你的瀏覽器裡算完。想把剛剛數好的文字換成特殊字體，<a href="/zh-tw/">UltraTextGen 特殊符號產生器</a>可以一鍵轉換成 100 種以上可複製貼上的樣式。</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="counter-tool">
-    <div>
+    <div id="platformChecker"></div>
+
+    <div class="counter-field">
       <div class="counter-field-head">
         <label for="counterInput">你的文字</label>
         <div class="counter-field-actions">
+          <span class="counter-live" id="counterLiveCount">0 / 280</span>
           <button class="copy-btn" type="button" id="counterCopyBtn">複製</button>
           <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>清除</button>
         </div>
       </div>
       <textarea class="counter-textarea" id="counterInput" placeholder="在這裡輸入或貼上文字…" spellcheck="false"></textarea>
+      <p class="counter-inspect" id="counterInspect" hidden></p>
     </div>
+
+    <div class="counter-fix" id="counterFixBar" hidden></div>
 
     <div class="counter-stats-grid">
       <div class="counter-stat"><span class="counter-stat-value" id="statChars">0</span><span class="counter-stat-label">字元數</span></div>
@@ -193,8 +203,52 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 位元組</span></div>
     </div>
 
-    <div id="platformChecker"></div>
+    <div class="counter-fits">
+      <p class="counter-fits-head">這段文字還放得進哪裡 — 所有限制即時比對</p>
+      <div class="cc-fit-grid" id="counterFitGrid" hidden></div>
+    </div>
   </div>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section">
+    <h2>硬性限制與軟性限制</h2>
+    <p>被稱作「字數限制」的其實有兩種，超過之後的代價完全不同。</p>
+    <table class="comparison-table">
+      <thead><tr><th>類型</th><th>超過會怎樣</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>硬性限制</strong><br>（真正的上限）</td>
+          <td>平台直接拒絕。貼文送不出去，名稱存不起來。</td>
+          <td>X 貼文 280 · Discord 暱稱 32 · TikTok 使用者名稱 24 · SMS 單則</td>
+        </tr>
+        <tr>
+          <td><strong>軟性限制</strong><br>（收合截斷）</td>
+          <td>你還是可以繼續打，但讀者不點「更多」就看不到後面的內容。</td>
+          <td>Instagram 貼文說明 125 字後 · LinkedIn 貼文約 210 字後 · YouTube 說明約 157 字後</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>上方的檢查器分得出這兩種：遇到軟性限制時，它會告訴你文字會在哪裡被收合，讓你把重點往前擺，而不是只求數字不要超過。</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="counting-modes">
+    <h2>為什麼你算的字數和平台算的不一樣</h2>
+    <p>「這段有幾個字？」不只有一個正確答案，因為每個系統計算的單位不同。對中文使用者來說最關鍵的一點是：<strong>一個中文字是 1 個碼位、1 個 UTF-16 單位，但換成 UTF-8 是 3 個位元組</strong>。所以用字元數來看明明還有空間，遇到以位元組設限的欄位或系統卻會被擋下來。同一段文字，可以有四種長度：</p>
+    <table class="comparison-table">
+      <thead><tr><th>計算方式</th><th>算的是什麼</th><th>中文的情況</th></tr></thead>
+      <tbody>
+        <tr><td>字素</td><td>眼睛看到的樣子 — 帶膚色的表情符號也算 1</td><td>「字」＝ 1。Bluesky 採用</td></tr>
+        <tr><td>碼位（code point）</td><td>Unicode 字元數 — 👍🏽 算 2（手＋膚色）</td><td>「字」＝ 1。多數網路平台，以及本工具的「字元數」</td></tr>
+        <tr><td>UTF-16 單位</td><td>JavaScript 與許多應用程式儲存文字的方式</td><td>「字」＝ 1，但特殊字體的英數字每個算 2。HTML 表單的 <code>maxlength</code>、遊戲與應用程式後端</td></tr>
+        <tr><td>UTF-8 位元組</td><td>儲存大小</td><td><strong>「字」＝ 3 個位元組</strong>。資料庫 <code>VARCHAR</code>、電商商品欄位、Steam 名稱、舊式系統與 CSV 介接</td></tr>
+      </tbody>
+    </table>
+    <p>這個落差在實務上很有感：一個標示「上限 255 位元組」的欄位，中文其實只放得下 85 個字。上方的「字素（看得見的字）」「UTF-16 單位」「UTF-8 位元組」三格會隨著輸入同步更新，當表單說你的文字太長、你自己算卻還沒滿時，可以當場看出它是用哪一種單位在算。至於全形與半形的換算，是中文表單特有的另一個問題，另外寫在<a href="#quanjiao-banjiao">全形與半形字元的計算方式</a>。</p>
+    <p>除了這四種之外，還有兩個地方有自己的規則。<strong>X（推特）不是數字元、而是算加權</strong>，中文字每個計 2（詳見<a href="#x-twitter">X（推特）的中文字數</a>）。<strong>SMS 是以「則」計算</strong>，中文不在 GSM-7 字元集內，所以一律以 Unicode 編碼處理，每則降到 70 個字元（被拆開時是 67 個）；只用半形英數字的話則是每則 160 個字元。</p>
+  </section>
 
   <div class="section-divider"></div>
 
@@ -225,27 +279,56 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="limits">
-    <h2>主要平台字數限制一覽</h2>
-    <p>下表是上方檢查器所使用的字數限制，另外加上台灣常用的 LINE 作為參考。</p>
+    <h2>檢查器收錄的所有字數限制</h2>
+    <p>下表就是上方檢查器實際使用的那一份字數限制，供你查閱。快速跳至：<a href="#twitter">X／推特</a> · <a href="#discord">Discord</a> · <a href="#instagram">Instagram</a> · <a href="#tiktok">TikTok</a> · <a href="#sms">SMS</a> · <a href="#counting-modes">各平台的計算方式</a>。</p>
+
+    <h3>貼文與訊息</h3>
     <table class="comparison-table">
-      <thead><tr><th>平台／欄位</th><th>上限</th><th>補充</th></tr></thead>
+      <thead><tr><th>平台</th><th>上限</th><th>補充</th></tr></thead>
       <tbody>
-        <tr><td>X（推特）貼文</td><td>280</td><td>中文字與表情符號每個計 2，中文貼文實際約 140 字；URL 一律計 23</td></tr>
-        <tr><td>Instagram 貼文說明</td><td>2,200</td><td>前幾行之後會收合成「更多」</td></tr>
-        <tr><td>Instagram 個人簡介</td><td>150</td><td></td></tr>
-        <tr><td>Threads 貼文</td><td>500</td><td></td></tr>
-        <tr><td>TikTok 貼文說明</td><td>2,200</td><td></td></tr>
-        <tr><td>TikTok 個人簡介</td><td>80</td><td></td></tr>
+        <tr id="twitter"><td>X（推特）貼文</td><td>280</td><td>加權計算：URL 一律計 23，中文字、表情符號與特殊字體每個計 2，中文貼文實際約 140 字</td></tr>
+        <tr id="discord"><td>Discord 訊息</td><td>2,000</td><td>訂閱 Nitro 為 4,000；更長的訊息會被轉成 .txt 附件</td></tr>
+        <tr id="instagram"><td>Instagram 貼文說明</td><td>2,200</td><td>前幾行之後會收合成「更多」</td></tr>
+        <tr id="tiktok"><td>TikTok 貼文說明</td><td>2,200</td><td></td></tr>
+        <tr><td>LinkedIn 貼文</td><td>3,000</td><td>依裝置不同，約 200–700 個字元後收合成「查看更多」</td></tr>
+        <tr><td>Facebook 貼文</td><td>63,206</td><td></td></tr>
         <tr><td>YouTube 影片說明</td><td>5,000</td><td></td></tr>
-        <tr><td>YouTube 影片標題</td><td>100</td><td></td></tr>
-        <tr><td>Discord 訊息</td><td>2,000</td><td>訂閱 Nitro 為 4,000</td></tr>
-        <tr><td>Discord 暱稱</td><td>32</td><td></td></tr>
-        <tr><td>LinkedIn 貼文</td><td>3,000</td><td>動態牆約 200–700 個字元後會收合成「查看更多」</td></tr>
+        <tr><td>Pinterest 圖釘說明</td><td>500</td><td></td></tr>
         <tr><td>Telegram 訊息</td><td>4,096</td><td>照片／影片說明為 1,024</td></tr>
-        <tr><td>SMS 簡訊</td><td>每則 70（中文）</td><td>中文屬 Unicode 編碼，每則 70 個字元；只用半形英數字（GSM-7）時為每則 160 個字元</td></tr>
-        <tr><td>LINE 狀態消息</td><td>500</td><td>參考用，未包含在上方的檢查器中</td></tr>
+        <tr><td>Threads 貼文</td><td>500</td><td></td></tr>
+        <tr><td>Bluesky 貼文</td><td>300</td><td>以字素（看得見的字）計算，不是碼位</td></tr>
+        <tr><td>Reddit 貼文標題</td><td>300</td><td></td></tr>
+        <tr><td>Zalo 貼文／動態</td><td>2,000</td><td></td></tr>
       </tbody>
     </table>
+
+    <h3>個人簡介與檔案</h3>
+    <table class="comparison-table">
+      <thead><tr><th>欄位</th><th>上限</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram 個人簡介</td><td>150</td></tr>
+        <tr><td>TikTok 個人簡介</td><td>80</td></tr>
+        <tr><td>LinkedIn 標題（Headline）</td><td>220</td></tr>
+        <tr><td>WhatsApp 個人狀態</td><td>139</td></tr>
+        <tr><td>Telegram 個人簡介</td><td>70</td></tr>
+        <tr><td>VK 狀態</td><td>140</td></tr>
+      </tbody>
+    </table>
+
+    <h3>使用者名稱、標題與 SMS</h3>
+    <table class="comparison-table">
+      <thead><tr><th>欄位</th><th>上限</th><th>補充</th></tr></thead>
+      <tbody>
+        <tr><td>Discord 暱稱</td><td>32</td><td></td></tr>
+        <tr><td>TikTok 使用者名稱</td><td>24</td><td>只能使用半形英文字母、數字、底線與句點</td></tr>
+        <tr><td>Instagram 使用者名稱</td><td>30</td><td></td></tr>
+        <tr><td>YouTube 影片標題</td><td>100</td><td></td></tr>
+        <tr><td>網頁標題（SEO meta title）</td><td>約 60</td><td>Google 以像素寬度截斷，請當作參考值</td></tr>
+        <tr><td>網頁描述（SEO meta description）</td><td>約 155</td><td>同樣是以像素寬度截斷</td></tr>
+        <tr id="sms"><td>SMS 簡訊</td><td>每則 160</td><td>全部使用 GSM-7 字元時。<strong>中文一律以 Unicode 編碼處理，實際每則只有 70 個字元</strong>（被拆開時為 67）</td></tr>
+      </tbody>
+    </table>
+    <p>台灣常用的服務中，<strong>LINE 狀態消息上限為 500 個字元</strong>。LINE 未包含在上方的檢查器中，請直接以「字元數」那一格對照即可。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -270,12 +353,28 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="faq-answer">「字元數」會把空白（全形與半形）和換行一起算進去，「字元數（不含空白）」則把它們扣掉。X、Instagram、Discord 等大多數平台都把空白當成一般字元計算，所以拿貼文或個人簡介去對平台限制時，請用含空白的「字元數」。</p>
     </details>
     <details class="faq-item">
+      <summary class="faq-question">表情符號算一個字元嗎？</summary>
+      <p class="faq-answer">通常不是。單純的表情符號在碼位上是 1，但在 UTF-16 是 2 個單位；帶膚色或由多個符號組合而成的（例如全家人的表情符號）可能是 4、7 個單位甚至更多。在 X 上每個表情符號計為 2，在 SMS 裡只要放進一個表情符號，整則訊息每則可容納的字元數就會改變。「字素（看得見的字）」顯示你眼睛看到的數量，「字元數」與「UTF-16 單位」則是實際被扣掉的額度。</p>
+    </details>
+    <details class="faq-item">
       <summary class="faq-question">為什麼我算的字數和表單顯示的不一樣？</summary>
-      <p class="faq-answer">因為各家系統計算的單位不同。多數平台以 Unicode 碼位計算，但 HTML 表單欄位常以 UTF-16 單位計算（特殊字體的字母每個算 2），部分電商欄位以 UTF-8 位元組計算（一個中文字通常是 3 個位元組），X 使用加權計算，Bluesky 則以字素計算。上方的「字素（看得見的字）」「UTF-16 單位」「UTF-8 位元組」三格會同步更新，可以直接對照對方使用的算法。</p>
+      <p class="faq-answer">因為各家系統計算的單位不同。中文最常見的原因是：<strong>一個中文字是 1 個碼位、1 個 UTF-16 單位，但換成 UTF-8 是 3 個位元組</strong>。以字元數設限的服務看起來還很寬鬆，但在以位元組設限的資料庫欄位、內部系統或電商商品欄位裡，額度會以三倍的速度被吃掉，於是被判定「太長」。舉例來說，上限 255 位元組的欄位，中文只放得下 85 個字。除此之外，X 使用加權計算（中文字每個算 2），Bluesky 則以字素計算。在工具最上方選好文字要發到哪裡，它就會照那裡的算法計算，而不是給你一個籠統的數字；上方的「字素（看得見的字）」「UTF-16 單位」「UTF-8 位元組」三格也會同步更新，可以直接對照。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">超過限制時要怎麼把字數縮下來？</summary>
+      <p class="faq-answer">一旦超過，工具會用該平台自己的計算單位列出可以刪掉什麼、各能省下多少：把特殊字體的英文字母與數字還原成一般字元、刪除表情符號、把彎引號與長破折號改成一般符號、合併多餘空白、拿掉主題標籤，或是直接在詞的邊界截斷到剛好符合限制。每一項都只要按一下，而且都能還原，所以可以先試代價最小的做法，不必一開始就重寫。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">特殊字體會被多算字數嗎？</summary>
+      <p class="faq-answer">通常會多算一倍。粗體、花體、哥德體等特殊 Unicode 英數字大多位於 U+FFFF 之上，因此看得見的每一個字母會用掉 2 個 UTF-16 單位、4 個 UTF-8 位元組，以及 X 那 280 個額度中的 2 個。這就是為什麼 10 個特殊字體字母組成的名稱，會被上限 12 字元的欄位擋下來。貼進來之後按「把特殊字體的英數字還原成一般字元」，就能立刻看到並拿回這段差距。這個轉換只作用在英文字母與數字上，中文字會原封不動保留。</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">隱形字元也會被算進去嗎？</summary>
+      <p class="faq-answer">會，而且這是字數莫名比看起來多的最常見原因。零寬空白、位元組順序記號（BOM），以及從其他應用程式複製時夾帶進來的填充字元，什麼都不顯示卻照樣吃掉你的額度。這個工具會把它們標示在文字框正下方，並提供一鍵移除。</p>
     </details>
     <details class="faq-item">
       <summary class="faq-question">輸入的文字會被儲存嗎？</summary>
-      <p class="faq-answer">不會。所有計算都是純瀏覽器端運算，由頁面上的 JavaScript 在你的裝置上完成，輸入的文字不會上傳、不會記錄，也不會儲存到任何伺服器。工具完全免費，也不需要註冊。</p>
+      <p class="faq-answer">不會。計算、檢查與修改都是純瀏覽器端運算，由頁面上的 JavaScript 在你的裝置上完成，輸入的文字不會上傳、不會記錄，也不會儲存到任何伺服器。工具完全免費，也不需要註冊。</p>
     </details>
   </section>
 
@@ -319,6 +418,84 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     xNote: "X（推特）實際的加權計算方式：URL 一律計為 23 字元，中文字、表情符號與特殊字元每個計為 2",
     smsSegments: "SMS 共 {n} 則 · 每則 {per} 個字元（{enc}）",
     smsUnicode: "切換成 Unicode 模式的字元：{chars}",
+    visibleNote: "只有前面約 {n} 個字元會顯示出來，之後會被收合 — 請把重點放在前面。",
+    platformLabel: "平台",
+    fieldLabel: "欄位",
+    overBy: "超出 {n} 個 — 選一種處理方式：",
+    trimToFit: "截斷到剛好符合",
+    undo: "還原",
+    applied: "已套用",
+    fitsHeading: "這段文字還放得進哪裡",
+    segShort: "則",
+    inspectStyled: "特殊字體的英數字共 {n} 個 — 在 X 與許多應用程式欄位裡每個算 2。",
+    inspectInvisible: "有 {n} 個看不見卻照樣被計算的字元。",
+    inspectCombining: "有 {n} 個疊加的變音記號。",
+    reducers: {
+      "plain": "把特殊字體的英數字還原成一般字元",
+      "invisible": "移除隱形字元",
+      "combining": "移除疊加的變音記號",
+      "emoji": "移除表情符號",
+      "quotes": "把彎引號與破折號改成一般符號",
+      "spaces": "合併多餘空白",
+      "blanklines": "合併空白行",
+      "hashtags": "移除主題標籤",
+      "gsm-safe": "整理成 SMS 相容（回到每則 160 個字元）"
+    },
+    reducerHints: {
+      "plain": "特殊字體的英文字母與數字在多數欄位裡每個算 2 個單位。中文字會原封不動保留。",
+      "invisible": "零寬與填充字元 — 你看不見，欄位卻照樣計算。",
+      "combining": "每個亂碼／Zalgo 記號都會多算一個字元。",
+      "emoji": "表情符號在 X 上算 2，也會讓 SMS 掉到每則 70 個字元。",
+      "quotes": "彎引號與長破折號是 SMS 上破壞 GSM-7 最常見的元凶。",
+      "spaces": "重複的空白與行尾多餘的空白。",
+      "blanklines": "連續三行以上的空白行。",
+      "hashtags": "把主題標籤搬到留言區，不要放在內文。"
+    },
+    platforms: {
+      "x": "X（推特）",
+      "sms": "SMS 簡訊",
+      "seo": "Google 搜尋結果"
+    },
+    fields: {
+      "x-post": "貼文",
+      "x-bio": "個人簡介",
+      "x-name": "顯示名稱",
+      "ig-caption": "貼文說明",
+      "ig-bio": "個人簡介",
+      "ig-username": "使用者名稱",
+      "ig-alt": "替代文字",
+      "tiktok-caption": "貼文說明",
+      "tiktok-bio": "個人簡介",
+      "tiktok-username": "使用者名稱",
+      "li-post": "貼文",
+      "li-headline": "標題（Headline）",
+      "li-about": "關於我",
+      "li-comment": "留言",
+      "yt-title": "影片標題",
+      "yt-description": "影片說明",
+      "yt-comment": "留言",
+      "fb-post": "貼文",
+      "discord-message": "訊息",
+      "discord-nick": "暱稱",
+      "discord-status": "自訂狀態",
+      "telegram-message": "訊息",
+      "telegram-caption": "照片／影片說明",
+      "telegram-bio": "個人簡介",
+      "threads-post": "貼文",
+      "threads-bio": "個人簡介",
+      "bluesky-post": "貼文",
+      "bluesky-bio": "個人簡介",
+      "reddit-title": "貼文標題",
+      "reddit-comment": "留言",
+      "pinterest-description": "圖釘說明",
+      "pinterest-title": "圖釘標題",
+      "whatsapp-about": "個人狀態",
+      "vk-status": "狀態",
+      "zalo-post": "貼文／動態",
+      "sms": "簡訊內容",
+      "meta-title": "網頁標題",
+      "meta-description": "網頁描述"
+    },
     groups: {
       posts: "貼文與訊息",
       bios: "個人簡介",
@@ -327,18 +504,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     labels: {
       "x-post": "X（推特）貼文",
+      "x-bio": "X（推特）個人簡介",
+      "x-name": "X（推特）顯示名稱",
       "discord-message": "Discord 訊息",
+      "discord-status": "Discord 自訂狀態",
       "ig-caption": "Instagram 貼文說明",
+      "ig-alt": "Instagram 替代文字",
       "tiktok-caption": "TikTok 貼文說明",
       "li-post": "LinkedIn 貼文",
+      "li-about": "LinkedIn 關於我",
+      "li-comment": "LinkedIn 留言",
       "fb-post": "Facebook 貼文",
       "yt-description": "YouTube 影片說明",
+      "yt-comment": "YouTube 留言",
       "pinterest-description": "Pinterest 圖釘說明",
+      "pinterest-title": "Pinterest 圖釘標題",
       "telegram-message": "Telegram 訊息",
       "telegram-caption": "Telegram 照片／影片說明",
       "threads-post": "Threads 貼文",
+      "threads-bio": "Threads 個人簡介",
       "bluesky-post": "Bluesky 貼文",
+      "bluesky-bio": "Bluesky 個人簡介",
       "reddit-title": "Reddit 貼文標題",
+      "reddit-comment": "Reddit 留言",
       "zalo-post": "Zalo 貼文／動態",
       "ig-bio": "Instagram 個人簡介",
       "tiktok-bio": "TikTok 個人簡介",
@@ -357,6 +545,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   };
 </script>
 <script src="/js/counter/counterRules.js"></script>
+<script src="/js/counter/counterReduce.js"></script>
 <script src="/js/counter/counterController.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>
