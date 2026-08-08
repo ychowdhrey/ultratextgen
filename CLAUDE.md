@@ -1350,6 +1350,26 @@ complete flowchart, and every script's flags/exit codes:
   occasional manual spot-check for headless pages (`audit-hreflang.js`
   already reports these as "Headless targets") remains worthwhile alongside
   this tool.
+  **Cross-cluster edges (added 2026-08-08) — a third failure mode, blocking.**
+  Page A names B as its sibling for locale L, but B's own `hreflang="en"`
+  claims a *different* EN parent, so the two sit in different clusters and A
+  is advertising another cluster's page as its translation. Neither prior
+  check can see it: completeness reconstructs membership from each page's own
+  `hreflang="en"`, so B is simply not a member of A's cluster and the stray
+  edge is never examined; reciprocity only asks whether an edge points both
+  ways, and a cross-cluster edge can be **perfectly reciprocal and still
+  wrong**. Real case, the one that prompted the check: every member of
+  `library/aesthetic-symbols/` correctly listed `it/library/simboli/` as its
+  Italian page, while `nl/library/speciale-tekens/` — a member of
+  `library/special-characters/` — listed that same Italian page as *its*
+  Italian version, and `simboli` listed `speciale-tekens` back as its Dutch
+  version. Two EN parents claiming one translation, in both directions,
+  invisible to both existing audits. Never auto-fixed (which side is wrong is
+  a content call: drop the stray entry, or repoint it at that locale's real
+  page in this cluster). Unlike duplicate-page clusters — a pre-existing
+  backlog this script only surfaces — this class was driven to zero in the
+  same change that added the check, so it **fails the build**; there is no
+  legitimate case for two EN parents sharing a translation.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
