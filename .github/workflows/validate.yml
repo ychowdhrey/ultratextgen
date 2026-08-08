@@ -199,6 +199,16 @@ jobs:
         continue-on-error: true
         run: npm run audit:locale-parent-gap | tee locale-parent-gap-audit.log
 
+      # Validates every locale SPEC against its live EN parent before any HTML
+      # exists — tile parity, hreflang self-reference, related links resolving
+      # on disk, duplicate claimants. Whole-set rather than diff-scoped: the
+      # spec set is small and every check is relative to the EN parent, so it
+      # cannot go permanently red on backlog the way check:images does.
+      - name: Run locale spec check
+        id: locale_spec
+        continue-on-error: true
+        run: npm run check:locale-spec | tee locale-spec.log
+
       - name: Run external-reference check
         id: external_refs
         continue-on-error: true
@@ -294,6 +304,19 @@ jobs:
         # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these systems on new/changed pages.
-if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.funding_choices.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure' || steps.external_refs.outcome == 'failure' || steps.counter_claims.outcome == 'failure'        run: |
+        if: steps.hreflang.outcome == 'failure' ||
+          steps.hreflang_completeness.outcome == 'failure' ||
+          steps.library.outcome == 'failure' ||
+          steps.funding_choices.outcome == 'failure' ||
+          steps.new_images.outcome == 'failure' ||
+          steps.new_symbol_peer_links.outcome == 'failure' ||
+          steps.parity.outcome == 'failure' ||
+          steps.locale_mesh.outcome == 'failure' ||
+          steps.locale_parent_gap.outcome == 'failure' ||
+          steps.locale_spec.outcome == 'failure' ||
+          steps.faq_schema.outcome == 'failure' ||
+          steps.external_refs.outcome == 'failure' ||
+          steps.counter_claims.outcome == 'failure'
+        run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

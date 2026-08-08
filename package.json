@@ -27,6 +27,7 @@
     "check:locale-parent-tier": "node scripts/check-locale-parent-tier.js",
     "audit:locale-parent-gap": "node scripts/audit-locale-parent-gap.js",
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
+    "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
     "check:external-refs": "node scripts/check-external-refs.js",
     "refresh:events": "python3 scripts/refresh-event-pages.py",
     "check:counter-claims": "node scripts/check-counter-claims.js",
