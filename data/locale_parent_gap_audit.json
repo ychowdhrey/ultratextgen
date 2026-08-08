@@ -559,7 +559,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=sa, 2026-08-07): 'pinterest font' 20/mo, 'whatsapp font' (Arabic 'خط واتساب') 10/mo — thin, well below the four-figure gate-pass threshold on its own. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull (see ultratextgen-lab review-register item 28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=sa, 2026-08-07): 'pinterest font' 20/mo, 'whatsapp font' (Arabic 'خط واتساب') 10/mo — thin, well below the four-figure gate-pass threshold on its own. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -572,7 +572,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=es, 2026-08-07): 'letra de pinterest' 20/mo, 'fuente de whatsapp' 20/mo, 'letra de whatsapp' 40/mo (KD20) — thin, below threshold on its own. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull (see ultratextgen-lab review-register item 28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=es, 2026-08-07): 'letra de pinterest' 20/mo, 'fuente de whatsapp' 20/mo, 'letra de whatsapp' 40/mo (KD20) — thin, below threshold on its own. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -585,7 +585,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=fr, 2026-08-07): 'police pinterest' 20/mo, 'police whatsapp' 110/mo (KD21), \"police d'écriture whatsapp\" 90/mo — the WhatsApp side is closer to (but still under) a real floor; Pinterest side is thin. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull (see ultratextgen-lab review-register item 28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07), not a fresh per-locale instrument pull clearing threshold on its own — Semrush partially ran (see below) before hitting its API unit cap mid-batch for the remaining 9 locales in this same build; this locale's numbers are real but do not clear the stated four-figure/mo floor by themselves. Live Semrush pull (db=fr, 2026-08-07): 'police pinterest' 20/mo, 'police whatsapp' 110/mo (KD21), \"police d'écriture whatsapp\" 90/mo — the WhatsApp side is closer to (but still under) a real floor; Pinterest side is thin. Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Backfill real numbers for all 12 locales in this cluster at the next Semrush pull.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -598,7 +598,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -611,7 +611,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -624,7 +624,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -637,7 +637,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -650,7 +650,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -663,7 +663,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -676,7 +676,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -689,7 +689,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
@@ -702,7 +702,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled as ultratextgen-lab review-register item 28 (2026-08-28).",
+      "evidence": "User-authorized exception (\"Let's built all 12 locales, this is the time to rank\", 2026-08-07) — all-instruments-null bridge, not a pass on the numeric threshold. Semrush ran out of API units mid-batch this session before this locale's query could be pulled (ar/es/fr were checked first and came back thin — see those three entries dated the same day for the pattern this cluster likely follows). Scope: answers/what-font-does-pinterest-use/ and answers/what-font-does-whatsapp-use/ (font-identity-lookup pattern), not the general answers/* backlog. Must be backfilled with real numbers or a dated veto at the next Semrush pull — scheduled for re-check on 2026-08-28.",
       "recordedBy": "claude-session-answer-types-impressions-clicks-so4pjg-user-directed"
     },
     {
