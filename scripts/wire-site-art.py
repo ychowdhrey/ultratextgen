@@ -92,7 +92,21 @@ def main():
         scanned += 1
         html = open(path, encoding="utf-8").read()
         original = html
-        if LOGO not in html and "data-uthero" not in html:
+        # This guard was written when the only way to lack a hero figure was to
+        # still be on the generic /logo.png card, so "no logo and no figure"
+        # meant "already done." That stopped being true: a page whose OG got
+        # pointed at real art by any other path (a spec generator, a hand fix)
+        # but never had its figure inserted matches neither arm and becomes
+        # permanently invisible here — no amount of re-running finds it. That is
+        # the whole reason 37 cs/hr/pt/ro pages sat with correct OG art and no
+        # hero, and why re-running the script never surfaced them.
+        #
+        # An explicit `--files` target opts out: naming a page IS the decision
+        # that it needs wiring. An unscoped run keeps the conservative
+        # behaviour, because lanes like EN `symbol/*` hold ~99 figure-less pages
+        # whose heroes are an open question this script must not answer as a
+        # side effect of someone regenerating something else.
+        if not args.files and LOGO not in html and "data-uthero" not in html:
             continue
         slug = slug_for(path)
         if not slug:

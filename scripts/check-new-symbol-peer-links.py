@@ -12,10 +12,9 @@ without being permanently red regardless of what any given PR touches — same
 architectural reason check-new-page-image-assets.py exists separately from
 check-image-assets.py. This script closes the gap going forward: diff-scoped,
 so only a NEW one-directional peer relation introduced by this branch can
-fail it. Root cause + case study: ultratextgen-lab-'s
-gsc-technical-seo-leakage-audit-2026-07-24.md §7 (the currency-symbol cluster
-— euro/pound/yen/rupee never linked back to ruble/dirham/riyal, which shipped
-weeks later).
+fail it. Root cause + case study: an internal audit (2026-07-24) traced it to
+the currency-symbol cluster — euro/pound/yen/rupee never linked back to
+ruble/dirham/riyal, which shipped weeks later.
 
 Scope: EN /symbol/*/index.html only, matching sync_symbol_spoke_links.py's own
 scope (it does not walk locale-prefixed <lang>/symbol/ pages). Reciprocity is

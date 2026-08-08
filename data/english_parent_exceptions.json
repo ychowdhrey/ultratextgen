@@ -99,6 +99,42 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/id/usecase/nama-discord-keren/",
+      "reason": "EN-parent-absent — no EN Discord-name page exists to be its parent: /discord/ is the generator hub and usecase/nickname-generator/ is the general nickname page, already claimed by id/usecase/nama-panggilan/. Ratified as local-only rather than force-fitted to either. Surfaced by the site-wide duplicate-claimant scan as a second id page claiming a parent another id page already owned; the fix was to drop the wrong parent claim, not to merge, because the two pages serve non-overlapping queries.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC (Jul 2-28 2026) shows zero query overlap with the page that owns the nickname-generator parent: nama-discord-keren draws 118 impressions led by 'nama discord keren' (63) and 'nama role discord keren' (13), while id/usecase/nama-panggilan/ draws 28 led by 'buat nama panggilan keren' (5). EN side: no EN Discord-name page exists at all — this is an absent-parent claim, not a no-EN-demand claim, so the reverse-demand sweep should ask whether an EN Discord-name parent is worth building, not whether EN demand exists.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/nl/sierlijke-letters/",
+      "reason": "EN-parent-absent — no EN 'sierletters' (ornamental/calligraphic lettering) page exists. Dutch separates two concepts English collapses: cursief is italic/slanted (the Word-button sense), sierletters are ornamental/calligraphic. The page originally claimed category/cursive-fonts/, which nl/cursieve-letters/ already owns, but the two serve different queries and are not duplicates — so the fix was to drop the wrong parent claim, not to merge. Rule 3 de-targeting was applied to the hub in the same change: nl/cursieve-letters/ had 'sierlijke letters A-Z' in its own title and meta description and now reads 'cursief schrift A-Z'.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC settles the split decisively and in the counter-intuitive direction: nl/sierlijke-letters/ draws 1,768 impressions / 45 clicks ('sierletters' alone 795/29) against nl/cursieve-letters/'s 200 impressions / 1 click, despite being the smaller and less-linked page — merging would have 301'd away the best-performing NL asset on the site. EN side: no 'sierletters' equivalent exists; this is an absent-parent claim, so the reverse-demand sweep should ask whether an EN ornamental-lettering parent is worth building, not whether EN demand exists.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/font-copia-e-incolla/",
+      "reason": "IT sibling on the fr/changeur-de-police/ cluster (no EN member — same EN-SERP-consolidation claim as that trio). Keeps the slot as the concept-equivalent of 'changeur de police'.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer'/'font converter' EN SERP believed to pull the same competitor set as 'font generator') — not independently re-verified for Italian demand specifically.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
+      "reason": "Correction, 2026-08-02: previously also claimed a slot on the fr/changeur-de-police/ cluster, making two IT claimants on one hreflang cluster — invalid, flagged by audit-hreflang.js as a stacked-cluster conflict. it/font-copia-e-incolla/ kept the concept-equivalent slot; this page now stands alone with only a self-reference + homepage x-default, same ratified no-EN-parent shape as the rest of this ledger.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Not independently assessed — inherited the fr/changeur-de-police/ cluster's premise at the point it was split out, rather than its own EN demand check.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }

@@ -1,0 +1,361 @@
+{
+  "slug": "simbol-korea",
+  "title": "Simbol Korea 사랑 — Salin & Tempel Huruf Hangul & Slang K-Pop | UltraTextGen",
+  "meta_description": "Simbol Korea — kata Hangul, huruf jamo, dan slang K-pop seperti ㅋㅋㅋ, lengkap dengan cara baca dan artinya. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Simbol Korea",
+  "hero_h1": "Simbol Korea",
+  "hero_tagline": "Kata-kata Hangul, huruf jamo, dan slang fandom K-pop — semuanya dilabeli cara baca dan artinya. Klik simbolnya, langsung kesalin.",
+  "intro": "Simbol Korea ikut mendunia bareng K-pop dan drakor, dan kata Hangul seperti 사랑 (sarang, cinta) sekarang muncul di bio, fan edit, dan kolom komentar di mana-mana. Halaman ini ngumpulin kata-kata Korea yang bermakna, huruf jamo penyusun alfabet Hangul, plus slang teks yang beneran dipakai orang Korea — seperti ㅋㅋㅋ buat ketawa — semuanya dilabeli cara baca dan artinya biar kamu nggak salah pakai. Salin buat akun fanbase, caption, atau bio.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "hangul-words",
+      "label": "Kata Hangul",
+      "h2": "Kata Hangul yang Bermakna",
+      "intro": "Kata-kata Korea yang indah soal cinta, mimpi, dan alam — Hangul yang paling sering disalin buat bio dan caption.",
+      "symbols": [
+        {
+          "char": "사랑",
+          "label": "Sarang — Cinta"
+        },
+        {
+          "char": "행복",
+          "label": "Haengbok — Kebahagiaan"
+        },
+        {
+          "char": "꿈",
+          "label": "Kkum — Mimpi"
+        },
+        {
+          "char": "별",
+          "label": "Byeol — Bintang"
+        },
+        {
+          "char": "달",
+          "label": "Dal — Bulan"
+        },
+        {
+          "char": "하늘",
+          "label": "Haneul — Langit"
+        },
+        {
+          "char": "마음",
+          "label": "Maeum — Hati, Pikiran"
+        },
+        {
+          "char": "봄",
+          "label": "Bom — Musim Semi"
+        },
+        {
+          "char": "꽃",
+          "label": "Kkot — Bunga"
+        },
+        {
+          "char": "빛",
+          "label": "Bit — Cahaya"
+        },
+        {
+          "char": "바다",
+          "label": "Bada — Laut"
+        },
+        {
+          "char": "희망",
+          "label": "Huimang — Harapan"
+        }
+      ]
+    },
+    {
+      "id": "kpop-fan-words",
+      "label": "Kata K-Pop",
+      "h2": "Kata Fandom & Budaya K-Pop",
+      "intro": "Kosakata fandom di kolom komentar K-pop dan stan Twitter, lengkap dengan cara baca biar pemakaiannya tepat.",
+      "symbols": [
+        {
+          "char": "최애",
+          "label": "Choeae — Bias, Favorit"
+        },
+        {
+          "char": "대박",
+          "label": "Daebak — Keren Banget"
+        },
+        {
+          "char": "화이팅",
+          "label": "Hwaiting — Semangat!"
+        },
+        {
+          "char": "사랑해",
+          "label": "Saranghae — Aku Cinta Kamu"
+        },
+        {
+          "char": "오빠",
+          "label": "Oppa — Kakak Cowok (Diucapkan Cewek)"
+        },
+        {
+          "char": "언니",
+          "label": "Eonni — Kakak Cewek (Diucapkan Cewek)"
+        },
+        {
+          "char": "귀여워",
+          "label": "Gwiyeowo — Lucu Banget"
+        },
+        {
+          "char": "짱",
+          "label": "Jjang — Paling Top"
+        }
+      ]
+    },
+    {
+      "id": "jamo-letters",
+      "label": "Huruf Jamo",
+      "h2": "Huruf Hangul (Jamo)",
+      "intro": "Konsonan dan vokal penyusun alfabet Hangul, dari blok Hangul Compatibility Jamo.",
+      "symbols": [
+        {
+          "char": "ㄱ",
+          "label": "Giyeok — Huruf Kiyeok (G/K)"
+        },
+        {
+          "char": "ㄴ",
+          "label": "Nieun — Huruf Nieun (N)"
+        },
+        {
+          "char": "ㄷ",
+          "label": "Digeut — Huruf Tikeut (D/T)"
+        },
+        {
+          "char": "ㄹ",
+          "label": "Rieul — Huruf Rieul (R/L)"
+        },
+        {
+          "char": "ㅁ",
+          "label": "Mieum — Huruf Mieum (M)"
+        },
+        {
+          "char": "ㅂ",
+          "label": "Bieup — Huruf Pieup (B/P)"
+        },
+        {
+          "char": "ㅅ",
+          "label": "Siot — Huruf Sios (S)"
+        },
+        {
+          "char": "ㅇ",
+          "label": "Ieung — Huruf Ieung (NG)"
+        },
+        {
+          "char": "ㅈ",
+          "label": "Jieut — Huruf Cieuc (J)"
+        },
+        {
+          "char": "ㅋ",
+          "label": "Kieuk — Huruf Khieukh (K)"
+        },
+        {
+          "char": "ㅎ",
+          "label": "Hieut — Huruf Hieuh (H)"
+        },
+        {
+          "char": "ㅏ",
+          "label": "A — Huruf A"
+        },
+        {
+          "char": "ㅗ",
+          "label": "O — Huruf O"
+        },
+        {
+          "char": "ㅜ",
+          "label": "U — Huruf U"
+        }
+      ]
+    },
+    {
+      "id": "korean-text-slang",
+      "label": "Slang Chat",
+      "h2": "Slang Chat & Ketawa Korea",
+      "intro": "Singkatan jamo yang dipakai di chat Korea — ketawa, nangis, dan balasan cepat.",
+      "symbols": [
+        {
+          "char": "ㅋㅋㅋ",
+          "label": "Kekeke — Ketawa (LOL versi Korea)"
+        },
+        {
+          "char": "ㅎㅎ",
+          "label": "Hehe — Ketawa Pelan"
+        },
+        {
+          "char": "ㅠㅠ",
+          "label": "Yu Yu — Mata Berkaca-kaca"
+        },
+        {
+          "char": "ㅜㅜ",
+          "label": "U U — Wajah Nangis"
+        },
+        {
+          "char": "ㅇㅇ",
+          "label": "Eung — Iya, Oke"
+        },
+        {
+          "char": "ㄱㄱ",
+          "label": "Go Go — Ayo Gas"
+        },
+        {
+          "char": "ㄴㄴ",
+          "label": "No No — Nggak"
+        },
+        {
+          "char": "ㅊㅋ",
+          "label": "Chuka — Selamat"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "korean-sets",
+    "label": "Set Hangul",
+    "h2": "Kombinasi Hangul Siap Pakai",
+    "intro": "Salin satu set Hangul lengkap sekali klik — sorakan fandom, rangkaian ketawa, atau bingkai bio K-pop yang sudah jadi."
+  },
+  "collection_container_id": "koreanSetsContainer",
+  "collections": [
+    {
+      "name": "Saranghae — Aku Cinta Kamu",
+      "flags": [
+        "사랑해"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bio Fans K-Pop",
+      "flags": [
+        "최애",
+        "💜",
+        "화이팅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set Semangat (Hwaiting!)",
+      "flags": [
+        "화이팅",
+        "아자아자",
+        "파이팅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set Ketawa",
+      "flags": [
+        "ㅋㅋㅋ",
+        "ㅎㅎ",
+        "ㅋㅋㅋㅋㅋ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set Nangis",
+      "flags": [
+        "ㅠㅠ",
+        "ㅜㅜ",
+        "ㅠ.ㅠ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kata Langit Malam",
+      "flags": [
+        "달",
+        "별",
+        "하늘",
+        "꿈"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bingkai Bio Hangul",
+      "flags": [
+        "✧ 사랑 ✧",
+        "달 · 별 · 꿈",
+        "행복하자"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Kenapa ㅋㅋㅋ Bukan Sekadar \"Wkwkwk\" Versi Korea",
+      "paragraphs": [
+        "Huruf jamo di halaman ini — ㅋ ㅎ ㅠ ㅜ — sebetulnya bukan kata, tapi <em>huruf tunggal</em> Hangul yang dipakai sebagai singkatan bunyi. ㅋ berbunyi \"k\", jadi ㅋㅋㅋ membaca sebagai \"kekeke\", persis seperti \"wkwkwk\" di Indonesia. Makin panjang deretannya, makin lucu maksudnya — sama persis logikanya.",
+        "Yang perlu diperhatikan: ㅠㅠ dan ㅜㅜ dua-duanya berarti nangis, tapi dia <em>huruf vokal</em> yang bentuknya kebetulan mirip mata berair. Karena itu keduanya tampil sama di semua perangkat — nggak ada risiko kotak kosong seperti emoji baru.",
+        "Kata Hangul juga aman ditempel ke kolom nama dan bio, karena dia teks biasa. Yang perlu dicek cuma satu: sebagian game menghitung tiap suku kata Hangul sebagai dua karakter, jadi 사랑해 bisa dihitung 6, bukan 3."
+      ]
+    }
+  ],
+  "faq_h2": "Simbol Korea, Dijawab",
+  "faq": [
+    {
+      "q": "ㅋㅋㅋ itu artinya apa?",
+      "a": "Ketawa — setara 'wkwkwk' di Indonesia. ㅋ adalah huruf Hangul yang berbunyi 'k', jadi ㅋㅋㅋ dibaca 'kekeke'. Makin panjang deretannya, makin lucu maksudnya."
+    },
+    {
+      "q": "Apa bedanya 오빠 sama 언니?",
+      "a": "오빠 (oppa) berarti kakak laki-laki dan hanya diucapkan oleh perempuan. 언니 (eonni) berarti kakak perempuan, juga hanya diucapkan oleh perempuan. Laki-laki memakai 형 (hyung) dan 누나 (nuna). Salah pakai langsung kedengaran janggal buat penutur asli."
+    },
+    {
+      "q": "최애 itu artinya apa?",
+      "a": "Choeae — anggota atau idola favoritmu, yang di fandom internasional disebut 'bias'. Dia salah satu kata paling sering muncul di bio akun fanbase K-pop."
+    },
+    {
+      "q": "Huruf Hangul bisa dipakai di nama game?",
+      "a": "Sering bisa, karena Hangul teks biasa. Tapi hati-hati soal hitungan: sebagian game menghitung tiap suku kata Hangul sebagai dua karakter, jadi nama kamu bisa mentok batas lebih cepat dari perkiraan."
+    },
+    {
+      "q": "화이팅 dan 파이팅 itu beda?",
+      "a": "Nggak, dua-duanya cara menulis kata yang sama — dari bahasa Inggris 'fighting', dipakai buat menyemangati. 화이팅 lebih umum di tulisan; 파이팅 lebih dekat ke cara orang mengucapkannya."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/simbol-jepang/",
+      "title": "Simbol Jepang",
+      "desc": "Karakter Jepang, kanji, dan simbol aesthetic ala Jepang."
+    },
+    {
+      "href": "/id/library/simbol-aesthetic/",
+      "title": "Simbol Aesthetic",
+      "desc": "Ornamen halus buat bio dan caption bernuansa aesthetic."
+    },
+    {
+      "href": "/id/library/simbol-love/",
+      "title": "Simbol Love & Hati",
+      "desc": "Semua bentuk hati Unicode buat bio dan caption."
+    },
+    {
+      "href": "/id/library/kaomoji/",
+      "title": "Kaomoji & Wajah Teks",
+      "desc": "Wajah teks Jepang buat semua suasana hati."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/simbol-korea/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/korean-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-korea/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/korean-symbols/"
+    }
+  ]
+}

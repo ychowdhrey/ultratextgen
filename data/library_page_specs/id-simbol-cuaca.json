@@ -1,0 +1,398 @@
+{
+  "slug": "simbol-cuaca",
+  "title": "Simbol Cuaca ☀ ☁ 🌧 — Salin & Tempel Ikon Cuaca & Fase Bulan | UltraTextGen",
+  "meta_description": "Simbol cuaca lengkap — matahari, awan, hujan, salju, angin, fase bulan, dan simbol suhu. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Simbol Cuaca",
+  "hero_h1": "Simbol Cuaca",
+  "hero_tagline": "Koleksi referensi simbol kondisi cuaca, fase bulan, dan karakter atmosfer Unicode. Klik simbolnya, langsung kesalin.",
+  "intro": "Simbol cuaca dipakai di mana-mana — caption soal hujan, bio yang bernuansa musim, jadwal kegiatan, sampai laporan cuaca kecil di grup chat. Halaman ini ngumpulin satu set lengkap: matahari dan langit cerah, awan, hujan dan badai, salju dan dingin, angin dan puting beliung, seluruh dua belas fase bulan, plus simbol suhu seperti ℃ dan ℉. Sebagian di sini emoji berwarna, sebagian karakter teks polos seperti ☀ dan ☁ yang nempel di kolom nama dan bio tanpa jadi gambar.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "sun-clear-sky",
+      "label": "Matahari",
+      "h2": "Simbol Matahari & Langit Cerah",
+      "intro": "Simbol untuk cuaca cerah, langit bersih, dan siang hari.",
+      "symbols": [
+        {
+          "char": "☀",
+          "label": "Matahari"
+        },
+        {
+          "char": "☼",
+          "label": "Matahari Bersinar"
+        },
+        {
+          "char": "🌞",
+          "label": "Matahari Berwajah"
+        },
+        {
+          "char": "🌤",
+          "label": "Cerah Berawan"
+        },
+        {
+          "char": "🌅",
+          "label": "Matahari Terbit"
+        },
+        {
+          "char": "🌄",
+          "label": "Terbit di Balik Gunung"
+        },
+        {
+          "char": "🌇",
+          "label": "Matahari Terbenam"
+        }
+      ]
+    },
+    {
+      "id": "cloud-symbols",
+      "label": "Awan",
+      "h2": "Simbol Awan",
+      "intro": "Simbol untuk cuaca berawan dan langit mendung.",
+      "symbols": [
+        {
+          "char": "☁",
+          "label": "Awan"
+        },
+        {
+          "char": "⛅",
+          "label": "Sebagian Berawan"
+        },
+        {
+          "char": "🌥",
+          "label": "Banyak Awan"
+        },
+        {
+          "char": "🌦",
+          "label": "Hujan Sambil Cerah"
+        },
+        {
+          "char": "🌁",
+          "label": "Berkabut"
+        },
+        {
+          "char": "☁️",
+          "label": "Awan Emoji"
+        }
+      ]
+    },
+    {
+      "id": "rain-storm",
+      "label": "Hujan & Badai",
+      "h2": "Simbol Hujan & Badai",
+      "intro": "Simbol untuk hujan, badai, petir, dan cuaca ekstrem.",
+      "symbols": [
+        {
+          "char": "🌧",
+          "label": "Hujan"
+        },
+        {
+          "char": "⛈",
+          "label": "Badai Petir"
+        },
+        {
+          "char": "🌩",
+          "label": "Awan Petir"
+        },
+        {
+          "char": "⚡",
+          "label": "Petir"
+        },
+        {
+          "char": "🌂",
+          "label": "Payung Tertutup"
+        },
+        {
+          "char": "☂",
+          "label": "Payung"
+        },
+        {
+          "char": "☔",
+          "label": "Payung Kena Hujan"
+        },
+        {
+          "char": "🌧️",
+          "label": "Awan Hujan"
+        },
+        {
+          "char": "⛈️",
+          "label": "Awan Badai"
+        },
+        {
+          "char": "🌩️",
+          "label": "Awan Kilat"
+        },
+        {
+          "char": "☂️",
+          "label": "Payung Emoji"
+        },
+        {
+          "char": "🥾",
+          "label": "Sepatu Bot Hujan"
+        }
+      ]
+    },
+    {
+      "id": "snow-cold",
+      "label": "Salju & Dingin",
+      "h2": "Simbol Salju & Dingin",
+      "intro": "Berbagai bentuk kepingan salju, manusia salju, dan simbol musim dingin.",
+      "symbols": [
+        {
+          "char": "🌨",
+          "label": "Turun Salju"
+        },
+        {
+          "char": "❄",
+          "label": "Kepingan Salju"
+        },
+        {
+          "char": "❅",
+          "label": "Kepingan Salju Alt"
+        },
+        {
+          "char": "❆",
+          "label": "Kepingan Salju Tebal"
+        },
+        {
+          "char": "⛄",
+          "label": "Manusia Salju"
+        },
+        {
+          "char": "☃",
+          "label": "Manusia Salju Bersalju"
+        },
+        {
+          "char": "🧊",
+          "label": "Es Batu"
+        }
+      ]
+    },
+    {
+      "id": "wind-tornado",
+      "label": "Angin",
+      "h2": "Simbol Angin & Puting Beliung",
+      "intro": "Simbol untuk angin, puting beliung, dan pergerakan udara.",
+      "symbols": [
+        {
+          "char": "🌬",
+          "label": "Wajah Meniup"
+        },
+        {
+          "char": "🌪",
+          "label": "Puting Beliung"
+        },
+        {
+          "char": "🌀",
+          "label": "Siklon"
+        },
+        {
+          "char": "💨",
+          "label": "Embusan Angin"
+        },
+        {
+          "char": "🌪️",
+          "label": "Tornado"
+        },
+        {
+          "char": "🌬️",
+          "label": "Angin Bertiup"
+        },
+        {
+          "char": "🍃",
+          "label": "Daun Tertiup Angin"
+        },
+        {
+          "char": "🎐",
+          "label": "Lonceng Angin"
+        }
+      ]
+    },
+    {
+      "id": "moon-night",
+      "label": "Bulan",
+      "h2": "Simbol Bulan & Malam",
+      "intro": "Simbol untuk bulan, malam hari, dan seluruh fase bulan.",
+      "symbols": [
+        {
+          "char": "🌙",
+          "label": "Bulan Sabit"
+        },
+        {
+          "char": "🌛",
+          "label": "Bulan Sabit Berwajah Kiri"
+        },
+        {
+          "char": "🌜",
+          "label": "Bulan Sabit Berwajah Kanan"
+        },
+        {
+          "char": "🌝",
+          "label": "Bulan Purnama Berwajah"
+        },
+        {
+          "char": "🌑",
+          "label": "Bulan Baru"
+        },
+        {
+          "char": "🌒",
+          "label": "Sabit Muda"
+        },
+        {
+          "char": "🌓",
+          "label": "Kuartal Pertama"
+        },
+        {
+          "char": "🌔",
+          "label": "Cembung Muda"
+        },
+        {
+          "char": "🌕",
+          "label": "Bulan Purnama"
+        },
+        {
+          "char": "🌖",
+          "label": "Cembung Tua"
+        },
+        {
+          "char": "🌗",
+          "label": "Kuartal Terakhir"
+        },
+        {
+          "char": "🌘",
+          "label": "Sabit Tua"
+        }
+      ]
+    },
+    {
+      "id": "thermometer-measurement",
+      "label": "Suhu",
+      "h2": "Simbol Termometer & Suhu",
+      "intro": "Simbol pengukuran cuaca dan suhu.",
+      "symbols": [
+        {
+          "char": "🌡",
+          "label": "Termometer"
+        },
+        {
+          "char": "🔥",
+          "label": "Api / Panas"
+        },
+        {
+          "char": "°",
+          "label": "Tanda Derajat"
+        },
+        {
+          "char": "℃",
+          "label": "Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Fahrenheit"
+        }
+      ]
+    },
+    {
+      "id": "rainbow-special",
+      "label": "Lainnya",
+      "h2": "Pelangi & Simbol Khusus",
+      "intro": "Pelangi, komet, dan fenomena atmosfer lainnya.",
+      "symbols": [
+        {
+          "char": "🌈",
+          "label": "Pelangi"
+        },
+        {
+          "char": "☄",
+          "label": "Komet"
+        },
+        {
+          "char": "🌊",
+          "label": "Ombak"
+        },
+        {
+          "char": "💧",
+          "label": "Tetesan Air"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Emoji Cuaca vs Simbol Cuaca Teks",
+      "paragraphs": [
+        "Halaman ini mencampur dua hal yang sering dikira sama. ☀ ☁ ☂ ❄ ☃ adalah <em>karakter teks</em> — dia tampil mengikuti font di sekitarnya, bisa diwarnai lewat CSS, dan nempel di kolom nama dan bio yang menolak emoji. 🌧 ⛈ 🌪 adalah <em>emoji bergambar</em> — selalu berwarna, dan sering ditolak oleh kolom nama.",
+        "Beberapa karakter punya dua versi sekaligus. ☂ dan ☂️ misalnya adalah karakter yang sama; yang kedua diberi penanda variasi emoji (U+FE0F) yang memaksa perangkat menggambarnya berwarna. Kalau kamu mau versi hitam-putih yang mengikuti warna teks, salin yang <em>tanpa</em> penanda.",
+        "Buat lambang suhu sendirian — identitas lengkap ℃ dan ℉ berikut cara mengetiknya di Windows dan Mac — lihat halaman <a href=\"/id/symbol/simbol-celsius/\">simbol Celsius</a>."
+      ]
+    }
+  ],
+  "faq_h2": "Simbol Cuaca, Dijawab",
+  "faq": [
+    {
+      "q": "Apa bedanya ☀ sama 🌞?",
+      "a": "☀ karakter teks — dia mengikuti warna dan font tulisan di sekitarnya, jadi tampil hitam di teks hitam. 🌞 emoji bergambar dan selalu berwarna kuning dengan wajah. Buat kolom nama dan bio yang menolak emoji, pakai ☀."
+    },
+    {
+      "q": "Kenapa ada dua payung, ☂ dan ☂️?",
+      "a": "Karakternya sama; yang kedua ditambahi penanda variasi emoji (U+FE0F) yang memaksa perangkat menggambarnya berwarna. Salin yang tanpa penanda kalau kamu mau versi hitam-putih."
+    },
+    {
+      "q": "Gimana cara nulis simbol derajat Celsius?",
+      "a": "Kamu bisa menyalin ℃ langsung dari halaman ini, atau menyusunnya dari ° diikuti huruf C. Keduanya sah; ℃ satu karakter tunggal, jadi lebih hemat kalau ada batas panjang."
+    },
+    {
+      "q": "Fase bulan lengkapnya ada berapa?",
+      "a": "Dua belas emoji fase bulan, dari 🌑 bulan baru sampai 🌘 sabit tua, dan semuanya ada di bagian Bulan di atas dalam urutan yang benar."
+    },
+    {
+      "q": "Simbol cuaca bisa dipakai di nama game?",
+      "a": "Yang versi teks biasanya bisa — ☀ ☁ ❄ ☂ termasuk karakter yang paling sering lolos filter. Versi emoji seperti 🌧 dan 🌪 jauh lebih sering ditolak."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/simbol-zodiak/",
+      "title": "Simbol Zodiak",
+      "desc": "Lambang zodiak dan astrologi versi teks polos."
+    },
+    {
+      "href": "/id/library/simbol-bintang/",
+      "title": "Simbol Bintang",
+      "desc": "Bintang teks ★ ☆ ✦ buat bio, nama, dan caption."
+    },
+    {
+      "href": "/id/symbol/simbol-celsius/",
+      "title": "Simbol Celsius",
+      "desc": "Identitas lengkap ℃ plus cara mengetiknya di Windows dan Mac."
+    },
+    {
+      "href": "/id/symbol/emoji-meteor/",
+      "title": "Emoji Meteor",
+      "desc": "Identitas lengkap ☄ — meteor, komet, dan bedanya dari bintang jatuh."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/simbol-cuaca/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-cuaca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    }
+  ]
+}

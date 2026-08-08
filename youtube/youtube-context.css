@@ -73,6 +73,37 @@
   white-space: nowrap;
 }
 
+.youtube-status-pill {
+  display: inline-flex;
+  margin-right: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid var(--border-light);
+}
+
+.youtube-status-safe {
+  border-color: #86efac;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.youtube-status-caution {
+  border-color: #fcd34d;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.youtube-status-blocked {
+  border-color: #fca5a5;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
 .youtube-result-warning {
   display: inline-flex;
   margin-left: 8px;

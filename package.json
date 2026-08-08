@@ -27,7 +27,12 @@
     "check:locale-parent-tier": "node scripts/check-locale-parent-tier.js",
     "audit:locale-parent-gap": "node scripts/audit-locale-parent-gap.js",
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
-    "refresh:events": "python3 scripts/refresh-event-pages.py"
+    "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
+    "check:workflows": "python3 scripts/check-workflows.py",
+    "check:external-refs": "node scripts/check-external-refs.js",
+    "refresh:events": "python3 scripts/refresh-event-pages.py",
+    "check:counter-claims": "node scripts/check-counter-claims.js",
+    "plan:library-locale": "python3 scripts/plan-library-locale-batch.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

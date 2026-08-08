@@ -260,9 +260,10 @@ def m_typo(p, sample="Aa", **kw):
              f'text-decoration="{deco}" letter-spacing="{spacing}" '
              f'fill="#fff" text-anchor="middle">{sample}</text>')
     extra = kw.get("extra", "")
+    lab_ff = kw.get("lab_ff", SANS)
     lab = ""
     if label:
-        lab = (f'<text x="180" y="318" font-family="{SANS}" font-size="20" '
+        lab = (f'<text x="180" y="318" font-family="{lab_ff}" font-size="20" '
                f'fill="{SUB}" text-anchor="middle">{label}</text>')
     return f"""
     <text x="180" y="208" font-family="{ff}" font-size="{size+40}"
@@ -1311,7 +1312,6 @@ HOME_CARD = "fancy-text-generator-preview"
 
 PAGES = {
   # ---- localized game-nickname generators & symbol libraries (new markets) ----
-  "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
   "pt-library-simbolos-para-free-fire": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
   "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
   "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
@@ -1518,8 +1518,86 @@ PAGES = {
   "tr-usecase-emoji-harfler": ("Emoji Harfleri", "İsmini emoji alfabesiyle yaz", m_flag, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
         m_gamepad, K_USE),
+  "usecase-name-to-symbols": ("Name to Symbols", "Your name rewritten in rare Unicode letterforms",
+        m_gamepad, K_USE),
+  "id-library-simbol-ml": ("Simbol ML", "Simbol nama Mobile Legends, tinggal salin",
+        m_gamepad, K_LIB),
+
+  # ── Turkish library batch (2026-08-08) ──────────────────────────────────
+  "tr-library-emoji-anlamlari": ("Emoji Anlamları", "Hangi emoji ne demek, tek sayfada",
+        m_smiley, K_LIB),
+  "tr-library-iphone-emojileri": ("iPhone Emojileri", "Apple emojileri ve Android farkı",
+        m_smiley, K_LIB),
+  "tr-library-uzgun-emoji": ("Üzgün Emoji", "Hüzünlü yüzler, kırık kalp ve kaomoji",
+        m_kaomoji, K_LIB),
+  "tr-library-aglayan-emoji": ("Ağlayan Emoji", "Gözyaşından gülmekten ağlamaya",
+        m_kaomoji, K_LIB),
+  "tr-library-kurukafa-emoji": ("Kurukafa Emoji", "Öldüm tepkisi ve tehlike sembolleri",
+        m_skull, K_LIB),
+  "tr-library-gulen-emoji": ("Gülen Emoji", "Kahkaha, sırıtma ve meme tepkileri",
+        m_smiley, K_LIB),
+  "tr-library-klavye-sembolleri": ("Klavye Sembolleri", "Command, Shift ve tuş işaretleri",
+        m_block, K_LIB),
+  "tr-library-tac-emoji": ("Taç Emoji", "Queen aurası, bio ve kullanıcı adı için",
+        m_trophy, K_LIB),
+  "tr-library-opucuk-emoji": ("Öpücük Emoji", "Havadan öpücük, dudak izi ve çift emojileri",
+        m_heart, K_LIB),
+  "tr-library-ates-emoji": ("Ateş Emoji", "Çok iyi demenin tek karakterlik hâli",
+        m_firework, K_LIB),
+  "id-library-emoji-bintang": ("Emoji Bintang", "Rating bintang 5, kilau, dan bintang jatuh",
+        m_star, K_LIB),
+  "id-library-emoji-nangis": ("Emoji Nangis", "Dari nangis kejer sampai nahan air mata",
+        m_smiley, K_LIB),
+  "id-library-emoji-mahkota": ("Emoji Mahkota", "Aura queen dan king buat bio dan nama",
+        m_trophy, K_LIB),
+  "id-library-emoji-iphone": ("Emoji iPhone", "Emoji Apple dan bedanya dari Android",
+        m_smiley, K_LIB),
+  "id-library-emoji-marah": ("Emoji Marah", "Muka ngamuk dan kaomoji gebrak meja",
+        m_burst_angry, K_LIB),
+  "id-library-emoji-senang": ("Emoji Senang", "Senyum, matahari, dan kaomoji ceria",
+        m_smiley, K_LIB),
+  "id-library-emoji-ketawa": ("Emoji Ketawa", "Dari ketawa sampai nangis sampai mati ketawa",
+        m_smiley, K_LIB),
+  "id-library-emoji-kaget": ("Emoji Kaget", "Teriakan, melongo, dan kepala meledak",
+        m_burst_angry, K_LIB),
+  "id-library-emoji-tengkorak": ("Emoji Tengkorak", "Cara internet bilang gua mati ketawa",
+        m_skull, K_LIB),
+  "id-library-emoji-kesal": ("Emoji Kesal", "Gua nggak marah, cuma kesel",
+        m_smiley, K_LIB),
+  "id-library-emoji-cium": ("Emoji Cium", "Kecupan, bekas lipstik, dan kaomoji monyong",
+        m_heart, K_LIB),
+  "id-library-emoji-malaikat": ("Emoji Malaikat", "Malaikat pelindung dan simbol kenangan",
+        m_crescent, K_LIB),
+  "id-library-emoji-damai": ("Emoji Damai", "Tangan peace, merpati, dan vibe tenang",
+        m_lotus_om, K_LIB),
+  "id-library-simbol-whatsapp": ("Simbol WhatsApp", "Hiasan buat status, bio, dan nama grup",
+        m_chat, K_LIB),
+  "id-library-simbol-cuaca": ("Simbol Cuaca", "Matahari, hujan, salju, dan fase bulan",
+        m_crescent, K_LIB),
+  "id-library-simbol-instagram": ("Simbol Instagram", "Hiasan buat bio, caption, dan story",
+        m_camera, K_LIB),
+  "id-library-simbol-kurung": ("Simbol Kurung", "Semua jenis kurung Unicode, termasuk CJK",
+        m_block, K_LIB),
+  "id-library-simbol-tanda-baca": ("Simbol Tanda Baca", "Belati, pilcrow, dan tanda di luar keyboard",
+        m_divider, K_LIB),
+  "id-library-simbol-medis": ("Simbol Medis", "Tongkat medis, tanda Rx, dan palang kesehatan",
+        m_ankh, K_LIB),
+  "id-library-simbol-korea": ("Simbol Korea", "Kata Hangul, huruf jamo, dan slang K-pop",
+        m_kana_grid, K_LIB),
+  "id-library-simbol-natal": ("Simbol Natal", "Pohon, salju, kado, dan ucapan siap pakai",
+        m_tree, K_LIB),
+  "id-library-emoji-hewan": ("Emoji Hewan", "Peliharaan, satwa liar, burung, dan hewan laut",
+        m_paw, K_LIB),
+  "es-library-simbolos-para-fortnite": ("Símbolos para Fortnite", "Signos para tu nombre de jugador",
+        m_gamepad, K_LIB),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
         m_gamepad, K_USE),
+  "usecase-free-fire-clan-tag-generator": ("Free Fire Clan Tag Generator", "A shared prefix your whole squad pastes into their name",
+        m_trophy, K_USE),
+  "es-usecase-tag-de-clan-free-fire": ("Tag para Clan de Free Fire", "Etiqueta corta que todo el clan comparte",
+        m_trophy, K_USE),
+  "pt-usecase-tag-de-cla-ff": ("Tag de Clã para Free Fire", "Etiqueta curta que todo o clã compartilha",
+        m_trophy, K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
@@ -1563,8 +1641,6 @@ PAGES = {
   "pt-fonte-gotica": ("Fonte Gótica", "Letras góticas e dark para copiar",
         P(m_typo, sample="Goth", ff=SERIF, weight="800", size=80, label="dark e dramática"), K_CAT),
   "tr-usecase-zalgo-text": ("Zalgo Metin Oluşturucu", "Ürkütücü bozuk metin oluşturun", m_zalgo, K_USE),
-  "tr-yazi-stilleri": ("Yazı Stilleri", "Değişik yazı tipleri kopyala yapıştır",
-        P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
   "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
   "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
   "tr-usecase-free-fire-nick": ("Free Fire Şekilli Nick", "Free Fire isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
@@ -1602,15 +1678,11 @@ PAGES = {
         P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
   "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
   "fr-usecase-pseudo-free-fire": ("Pseudo Free Fire Stylé", "Symboles ombrelle et pseudos 12 caractères", m_gamepad, K_USE),
-  "fr-ecriture-style": ("Écriture Stylé", "60+ styles d'écriture à copier-coller",
-        P(m_typo, sample="Stylé", weight="700", size=80, label="copier-coller"), K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",
         P(m_typo, sample="a e s", size=72, spacing="6", label="a e s t h e t i c"), K_CAT),
   "fr-belle-ecriture": ("Belle Écriture", "Jolies écritures à copier-coller",
         P(m_typo, sample="Belle", ff=SERIF, style="italic", weight="400", size=64,
           label="jolie et élégante"), K_CAT),
-  "fr-generateur-de-texte": ("Générateur de Texte Stylé", "Gratuit, sans inscription",
-        P(m_typo, sample="Abc", weight="700", size=88, label="60+ styles"), K_USE),
   "fr-changeur-de-police": ("Changeur de Police", "Change ton écriture en ligne",
         P(m_transform, a="A", b="𝓐"), K_USE),
   "fr-calligraphie": ("Calligraphie en Ligne", "Alphabet calligraphie à copier-coller",
@@ -1730,6 +1802,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-pinterest-use": ("What Font Does Pinterest Use?", "Pinterest Sans, by Grilli Type", m_qa, K_ANS),
   "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
@@ -1850,6 +1923,8 @@ PAGES = {
   "symbol-tilde-symbol": ("Tilde Symbol", "~ meaning, history & how to type it", glyphs("~"), K_SYM),
   "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
   "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
+  "symbol-lighthouse-emoji": ("Lighthouse Emoji", "Confirmed for Unicode 18.0, Sept 16 2026",
+        glyphs("☀", "✦", "⚓", "☾", "✧"), K_SYM),
   "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
   "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
   "symbol-melting-face-emoji": ("Melting Face Emoji", "U+1FAE0 — meaning, sarcasm reading & origin", m_smiley, K_SYM),
@@ -1863,6 +1938,8 @@ PAGES = {
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
   "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
+  "symbol-belarusian-ruble-sign": ("Belarusian Ruble Sign", "Provisional at U+20C5, targeting Unicode 19.0", m_coin, K_SYM),
+  "ru-symbol-znak-belorusskogo-rublya": ("Знак белорусского рубля", "Предварительно U+20C5, прицел на Unicode 19.0", m_coin, K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
@@ -1948,8 +2025,6 @@ PAGES = {
         glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
-  "library-degree-symbol": ("Degree Symbol", "Temperature, angles and more",
-        glyphs("°", "℃", "℉", "∠", "′"), K_LIB),
   "library-discord-symbols": ("Discord Symbols", "Symbols that paste cleanly in Discord",
         glyphs("✦", "★", "⚔", "♥", "➤"), K_LIB),
   "library-divider-kaomoji": ("Kaomoji Dividers", "Cute text dividers & spacers", m_kaomoji, K_LIB),
@@ -1992,7 +2067,6 @@ PAGES = {
   "library-laughing-kaomoji": ("Laughing Kaomoji", "Giggling, LOL text faces", m_kaomoji, K_LIB),
   "library-lenny-face": ("Lenny Face", "The smirking text face", m_kaomoji, K_LIB),
   "library-line-divider-symbols": ("Line Dividers & Separators", "Break up text beautifully", m_divider, K_LIB),
-  "library-linkedin-comment-styling": ("LinkedIn Comment Styling", "Make your comments stand out", m_chat, K_LIB),
   "library-linkedin-symbol-library": ("LinkedIn Symbol Library", "Professional symbols and bullets",
         glyphs("▸", "✓", "★", "•", "➤"), K_LIB),
   "library-love-kaomoji": ("Love & Heart Kaomoji", "Affectionate text faces", m_kaomoji, K_LIB),
@@ -2039,8 +2113,6 @@ PAGES = {
   "library-transport-symbols": ("Transport & Map Symbols", "Vehicles and travel marks", m_car, K_LIB),
   "library-weather-symbols": ("Weather Symbols & Emojis", "Sun, clouds, rain and snow",
         glyphs("☀", "☁", "☂", "❄", "☼"), K_LIB),
-  "library-whisper-subliminal-symbols": ("Whisper & Subliminal Symbols", "Quiet, faded accents",
-        glyphs("❛", "❜", "✧", "·", "✦"), K_LIB),
   "library-witchy-occult-symbols": ("Witchy & Occult Symbols", "Moons, signs and the arcane",
         glyphs("☽", "☿", "✦", "☉", "♆"), K_LIB),
   "library-x-twitter-symbols": ("X (Twitter) Symbols", "Symbols for posts and your bio", m_xmark, K_LIB),
@@ -2178,8 +2250,6 @@ PAGES = {
         glyphs("✉", "✂", "✎", "☎", "✰"), K_LIB),
   "library-party-celebration-emojis": ("Party & Celebration Emojis", "Confetti for every occasion",
         glyphs("✦", "★", "❉", "✺", "❋"), K_LIB),
-  "library-peace-symbol": ("Peace Symbol", "Signs of calm and harmony",
-        glyphs("☮", "✌", "☯", "♡", "✦"), K_LIB),
   "library-poop-emoji": ("Poop Emoji", "The internet's favourite pile", m_smiley, K_LIB),
   "library-preppy-emoji-combos": ("Preppy Emoji Combos", "Polished, coastal-cool pairings", m_bow, K_LIB),
   "library-pride-lgbtq-symbols": ("Pride & LGBTQ Symbols", "Flags and identity colors, copy-ready",
@@ -2214,8 +2284,6 @@ PAGES = {
   "library-wedding-anniversary-emojis": ("Wedding & Anniversary Emojis", "Love, rings and celebration",
         glyphs("♥", "♡", "❣", "❀", "✦"), K_LIB),
   "library-whatsapp-symbols": ("WhatsApp Symbols", "Symbols that paste cleanly in chats", m_chat, K_LIB),
-  "library-yin-yang-symbol": ("Yin & Yang Symbol", "Balance, duality and trigrams",
-        glyphs("☯", "☰", "☲", "☴", "☵"), K_LIB),
 
   # --- World Cup / football library batch (nations, players, trophies) ---
   "library-algeria-emoji-combos": ("Algeria Emoji Combos", "Fan emoji sets to copy and paste", m_flag, K_LIB),
@@ -2328,7 +2396,6 @@ PAGES = {
   # German
   "de-library-emoji-flags": ("Länderflaggen", "Flaggen-Emojis aller Länder", m_flag, K_LIB),
   # Portuguese
-  "pt-combos-de-emoji": ("Combos de Emoji", "Combinações de emoji para copiar e colar", m_smiley, K_LIB),
   "pt-fontes-para-discord": ("Fontes para Discord", "Letras para nick, canal e bio — sem Nitro", m_chat, K_PLAT),
   "pt-library-emoji-flags": ("Emoji de Bandeiras", "Bandeiras de todos os países", m_flag, K_LIB),
   # Vietnamese
@@ -2342,14 +2409,12 @@ PAGES = {
   "vi-library-bullet-point-symbols": ("Ký Hiệu Chấm Tròn", "Dẫn đầu danh sách thật đẹp",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   # Spanish
-  "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
   "es-library-emoji-flags": ("Emoji Bandera", "Banderas de todos los países", m_flag, K_LIB),
   "es-letras-en-otros-idiomas": ("Letras en Otros Idiomas", "Alfabetos y letras del mundo para copiar",
         P(m_typo, sample="Åß", size=88, label="letras del mundo"), K_LIB),
   "es-letras-bonitas": ("Letras Bonitas", "Letras lindas para copiar y pegar",
         P(m_typo, sample="Aa", size=88, style="italic", label="letras bonitas"), K_CAT),
   # French
-  "fr-combos-emoji": ("Combos Emoji", "Combinaisons d'emoji à copier-coller", m_smiley, K_LIB),
   "fr-police-discord": ("Police Discord", "Écriture pour pseudo et bio — sans Nitro", m_chat, K_PLAT),
   # Polish
   "pl-literki": ("Literki", "Ładne literki do skopiowania",
@@ -2567,7 +2632,16 @@ PAGES.update({
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
 "answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
 "answers-what-font-does-twitter-use": ("What Font Does Twitter/X Use?", "Chirp, the brand font, explained", m_qa, K_ANS),
+"answers-what-font-does-whatsapp-use": ("What Font Does WhatsApp Use?", "Logo vs. chat, and why they differ", m_qa, K_ANS),
 "answers-what-font-does-youtube-use": ("What Font Does YouTube Use?", "Roboto and YouTube Sans, explained", m_qa, K_ANS),
+"answers-youtube-handle-vs-channel-name": ("YouTube Handle vs Channel Name", "Two fields, two rule sets — which is which", m_qa, K_ANS),
+"id-answers-handle-vs-nama-channel-youtube": ("Handle vs Nama Channel YouTube", "Dua kolom, dua aturan berbeda", m_qa, K_ANS),
+"id-answers-cara-mengganti-nama-channel-youtube": ("Cara Mengganti Nama Channel YouTube", "Langkahnya, batasnya, dan biayanya", m_qa, K_ANS),
+"tr-answers-youtube-handle-mi-kanal-adi-mi": ("YouTube Handle mı Kanal Adı mı", "İki alan, iki farklı kural", m_qa, K_ANS),
+"tr-answers-youtube-kanal-adi-nasil-degistirilir": ("YouTube Kanal Adı Nasıl Değiştirilir", "Adımlar, 14 gün sınırı ve bedeli", m_qa, K_ANS),
+"pt-answers-handle-ou-nome-do-canal-do-youtube": ("Handle ou Nome do Canal do YouTube", "Dois campos, duas regras diferentes", m_qa, K_ANS),
+"pt-answers-como-mudar-o-nome-do-canal-do-youtube": ("Como Mudar o Nome do Canal do YouTube", "O passo a passo, o limite e o custo", m_qa, K_ANS),
+"answers-how-to-change-youtube-channel-name": ("How to Change Your YouTube Channel Name", "The steps, the 14-day limit, the badge cost", m_qa, K_ANS),
 "answers-what-is-ascii": ("What Is ASCII?", "The 128-character code behind plain text", m_qa, K_ANS),
 "answers-why-does-copied-fancy-text-lose-formatting": ("Why Fancy Text Loses Formatting", "It was never formatting — just substitute characters", m_qa, K_ANS),
 "answers-why-fancy-text-looks-different-on-iphone-vs-android": ("Fancy Text: iPhone vs Android", "Same characters, different system fonts", m_qa, K_ANS),
@@ -2658,6 +2732,14 @@ PAGES.update({
 # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
 "character-counter": ("Character Counter", "Live word & character stats as you type",
       P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
+"characters-to-words": ("Characters to Words", "Convert any character count to words & pages",
+      P(m_typo, sample="1000", weight="800", size=80, label="characters → words"), K_USE),
+"ja-mojisu-kaunto": ("文字数カウント", "文字数・単語数をリアルタイムで数える無料ツール",
+      P(m_typo, sample="字", weight="800", size=96, label="文字数 · 単語数", ff="Noto Sans CJK JP", lab_ff="Noto Sans CJK JP"), K_USE),
+"ko-geuljasu-segi": ("글자수세기", "공백 포함/제외 글자수를 실시간으로 세는 무료 도구",
+      P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
+"zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
+      P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
@@ -2665,7 +2747,6 @@ PAGES.update({
 "tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),
 "tr-library-onay-isaretleri": ("Onay İşaretleri", "Tik, çarpı ve durum sembolleri kopyala", glyphs("✓", "✔", "☑", "✗"), K_LIB),
 "tr-library-ok-isaretleri": ("Ok İşaretleri", "Yön, çift ve emoji oklar kopyala yapıştır", glyphs("→", "⇒", "↩", "➤"), K_LIB),
-"tr-library-tirnak-isareti": ("Tırnak İşareti", "Düz, kıvrık tırnak ve dış tırnak kopyala", glyphs("\"", "“", "”", "«"), K_LIB),
 "tr-library-derece-isareti": ("Derece İşareti", "Sıcaklık, açı ve geometri sembolleri kopyala", glyphs("°", "℃", "∠", "′"), K_LIB),
 "tr-library-para-birimi-sembolleri": ("Para Birimi Sembolleri", "Türk Lirası, euro, dolar ve dünya paraları", glyphs("₺", "€", "$", "£"), K_LIB),
 "tr-library-yunan-alfabesi-sembolleri": ("Yunan Alfabesi Sembolleri", "Alfa, beta, pi ve tüm Yunan harfleri kopyala", glyphs("α", "β", "π", "Ω"), K_LIB),
@@ -2757,6 +2838,20 @@ PAGES.update({
 "sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
 "tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
 "updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
+"ar-updates-unicode-18-release-date-confirmed": ("تأكيد موعد إصدار يونيكود 18.0", "16 سبتمبر 2026 — وكتابة واحدة حُذفت", m_doc, K_UPDATE),
+"de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
+"es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha confirmada", "16 de septiembre de 2026 — una escritura cortada", m_doc, K_UPDATE),
+"fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date confirmée", "16 septembre 2026 — une écriture retirée", m_doc, K_UPDATE),
+"id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "16 September 2026 — satu aksara dicoret", m_doc, K_UPDATE),
+"it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data confermata", "16 settembre 2026 — una scrittura tolta", m_doc, K_UPDATE),
+"ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日確定", "2026年9月16日 — 文字体系が1つ削除", m_doc, K_UPDATE),
+"ko-updates-unicode-18-chulsi-il-hwakjeong": ("유니코드 18.0 출시일 확정", "2026년 9월 16일 — 문자 하나 제외", m_doc, K_UPDATE),
+"nl-updates-unicode-18-releasedatum-bevestigd": ("Unicode 18.0: datum bevestigd", "16 september 2026 — één schrift geschrapt", m_doc, K_UPDATE),
+"pl-updates-unicode-18-data-premiery-potwierdzona": ("Unicode 18.0: data potwierdzona", "16 września 2026 — jedno pismo usunięte", m_doc, K_UPDATE),
+"pt-updates-data-de-lancamento-unicode-18-confirmada": ("Unicode 18.0: data confirmada", "16 de setembro de 2026 — uma escrita cortada", m_doc, K_UPDATE),
+"ru-updates-unicode-18-release-date-confirmed": ("Дата выхода Unicode 18.0", "16 сентября 2026 — одна письменность исключена", m_doc, K_UPDATE),
+"th-updates-unicode-18-release-date-confirmed": ("ยืนยันวันปล่อย Unicode 18.0", "16 กันยายน 2026 — ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
+"tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi onaylandı", "16 Eylül 2026 — bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
 "ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
 "de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
@@ -2835,6 +2930,67 @@ PAGES["th-library-arrow-symbols"] = (
     "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
     glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
 
+# ---- 2026-08-07: zh-tw mesh-completion backfill (7 pages) + it/vi (1 each) ----
+# zh-tw was promoted Tier 3 -> Tier 2 on 2026-08-06; these clusters were
+# already 15-18 locales deep and simply hadn't been backfilled yet. Glyph
+# picks reuse the exact same sets as the equivalent EN/other-locale keys
+# above for cross-locale visual consistency.
+PAGES["zh-tw-library-biaoqing-fuhao-zuhe"] = (
+    "表情符號組合大全", "美學風格複製貼上表情符號組合",
+    m_smiley, K_LIB)
+PAGES["zh-tw-library-xila-zimu-fuhao"] = (
+    "希臘字母符號", "α β Δ Σ Ω π 複製貼上",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+PAGES["zh-tw-library-shuxue-fuhao"] = (
+    "數學符號", "運算子、根號、無限大複製貼上",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["zh-tw-library-aixin-fuhao"] = (
+    "愛心符號大全", "複製貼上愛心表情符號與字元",
+    glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB)
+PAGES["zh-tw-library-huobi-fuhao"] = (
+    "貨幣符號大全", "複製貼上世界貨幣符號",
+    m_coin, K_LIB)
+PAGES["zh-tw-library-keai-mengxi-fuhao"] = (
+    "可愛萌系符號", "柔美風格裝飾符號複製貼上",
+    glyphs("♡", "❀", "✧", "⊹", "✦"), K_LIB)
+PAGES["zh-tw-library-teshu-fuhao"] = (
+    "特殊符號", "複製貼上獨特 Unicode 符號",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["it-library-caratteri-speciali-simboli"] = (
+    "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
+    glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["vi-library-ky-tu-hy-lap"] = (
+    "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
+    glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+
+# ---- 2026-08-07: what-font-does-{pinterest,whatsapp}-use — 12 locales ----
+PAGES.update({
+  "ar-answers-what-font-does-pinterest-use": ("ما هو الخط الذي يستخدمه بينتيرست؟", "الإجابة السريعة، قصة خط Pinterest Sans، والبديل المجاني الذي يمكنك تثب", m_qa, K_ANS),
+  "ar-answers-what-font-does-whatsapp-use": ("ما هو الخط الذي يستخدمه WhatsApp؟", "الإجابة السريعة: يعتمد WhatsApp على خط جهازك وليس على خط خاص به — لهذا", m_qa, K_ANS),
+  "es-answers-what-font-does-pinterest-use": ("¿Qué Fuente Usa Pinterest?", "La respuesta corta, la historia detrás de Pinterest Sans, y la alterna", m_qa, K_ANS),
+  "es-answers-what-font-does-whatsapp-use": ("¿Qué fuente usa WhatsApp?", "En resumen: el logo usa Helvetica Neue, pero el chat no tiene una fuen", m_qa, K_ANS),
+  "fr-answers-what-font-does-pinterest-use": ("Quelle Police Utilise Pinterest ?", "La réponse courte, l'histoire de Pinterest Sans, et l'alternative grat", m_qa, K_ANS),
+  "fr-answers-what-font-does-whatsapp-use": ("Quelle police utilise WhatsApp ?", "En bref : le logo est en Helvetica Neue, mais l'interface de chat n'ut", m_qa, K_ANS),
+  "id-answers-what-font-does-pinterest-use": ("Font Apa yang Digunakan Pinterest?", "Jawaban singkatnya, kisah di balik Pinterest Sans, dan font gratis mir", m_qa, K_ANS),
+  "id-answers-what-font-does-whatsapp-use": ("Font Apa yang Digunakan WhatsApp?", "Singkatnya: logo WhatsApp menggunakan Helvetica Neue, tapi tampilan ch", m_qa, K_ANS),
+  "it-answers-what-font-does-pinterest-use": ("Che Font Usa Pinterest?", "In breve: Pinterest usa un typeface proprietario chiamato Pinterest Sa", m_qa, K_ANS),
+  "it-answers-what-font-does-whatsapp-use": ("Che Font Usa WhatsApp?", "In breve: il logo di WhatsApp è impostato in Helvetica Neue, ma la cha", m_qa, K_ANS),
+  "ja-answers-what-font-does-pinterest-use": ("Pinterestのフォントは何ですか?", "アプリ・サイト・ロゴで使われている書体と、無料で使える代替フォントを解説します。", m_qa, K_ANS),
+  "ja-answers-what-font-does-whatsapp-use": ("WhatsAppのフォントは何ですか?", "ロゴとチャット画面、それぞれで使われているフォントの違いを解説します。", m_qa, K_ANS),
+  "nl-answers-what-font-does-pinterest-use": ("Welk lettertype gebruikt Pinterest?", "Pinterest Sans, Grilli Type, en de gratis alternatieven die er het dic", m_qa, K_ANS),
+  "nl-answers-what-font-does-whatsapp-use": ("Welk lettertype gebruikt WhatsApp?", "Helvetica Neue voor het logo, en waarom je chats er per toestel net an", m_qa, K_ANS),
+  "pl-answers-what-font-does-pinterest-use": ("Jakiej czcionki używa Pinterest?", "Krótka odpowiedź, historia Pinterest Sans i darmowy odpowiednik, który", m_qa, K_ANS),
+  "pl-answers-what-font-does-whatsapp-use": ("Jakiej czcionki używa WhatsApp?", "Krótka odpowiedź, wyjaśnienie, dlaczego czaty wyglądają inaczej na róż", m_qa, K_ANS),
+  "pt-answers-what-font-does-pinterest-use": ("Que Fonte Usa o Pinterest?", "A app, o site e a marca do Pinterest usam a Pinterest Sans, uma fonte ", m_qa, K_ANS),
+  "pt-answers-what-font-does-whatsapp-use": ("Que Fonte Usa o WhatsApp?", "O logótipo do WhatsApp usa Helvetica Neue, mas a conversa em si não te", m_qa, K_ANS),
+  "ru-answers-what-font-does-pinterest-use": ("Какой шрифт использует Pinterest?", "От интерфейса приложения до логотипа: разбираем фирменный шрифт Pinter", m_qa, K_ANS),
+  "ru-answers-what-font-does-whatsapp-use": ("Какой шрифт использует WhatsApp?", "Логотип, интерфейс и переписка используют разные шрифты. Разбираем, чт", m_qa, K_ANS),
+  "th-answers-what-font-does-pinterest-use": ("Pinterest ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: Pinterest ใช้ฟอนต์ชื่อ Pinterest Sans ฟอนต์ซานเซอริฟแนวเร", m_qa, K_ANS),
+  "th-answers-what-font-does-whatsapp-use": ("WhatsApp ใช้ฟอนต์อะไร?", "คำตอบสั้น ๆ: โลโก้ WhatsApp ใช้ Helvetica Neue แต่หน้าจอแชทไม่มีฟอนต์ป", m_qa, K_ANS),
+  "tr-answers-what-font-does-pinterest-use": ("Pinterest Hangi Yazı Tipini Kullanıyor?", "Uygulamadan logoya: Pinterest'in imza yazı tipinin arkasındaki hikâye ", m_qa, K_ANS),
+  "tr-answers-what-font-does-whatsapp-use": ("WhatsApp Hangi Yazı Tipini Kullanıyor?", "Logo sabit, sohbet ekranı değil: WhatsApp'ın yazı tipi seçimlerinin ci", m_qa, K_ANS),
+})
+
 
 def main():
     import cairosvg
@@ -2885,6 +3041,43 @@ def main():
     print(f"wrote {n} hero SVGs to assets/hero/ and {n} OG PNGs to assets/og/")
     print(f"wrote homepage card + {len(LOCALIZED_HOME)} localized homepage cards "
           "to assets/og/")
+    report_orphan_keys()
+
+
+def report_orphan_keys():
+    """Report PAGES keys with no live page AND no page referencing their art.
+
+    The loop above has no page-existence guard: it writes art for every key
+    unconditionally, so a key left behind by a retired, renamed or never-built
+    page silently keeps producing an orphan asset pair on every full run. Twelve
+    such keys accumulated undetected (three retired-and-301'd pages, four
+    library->symbol lane migrations, three locale pages whose slug never matched
+    the page's real URL, two pages never built) because nothing looked.
+
+    Deliberately a report, not a skip. A key legitimately need not match a page
+    slug — `learn-hub` serves `learn/index.html` — so skipping on "no directory"
+    would stop generating art that is genuinely in use. Referenced art is
+    therefore never flagged, and the decision to delete a key stays a human one.
+    """
+    import glob as _glob
+    import re as _re
+    pages = [p for p in _glob.glob("**/index.html", recursive=True) if os.sep in p]
+    live = {os.path.dirname(p).replace(os.sep, "-") for p in pages}
+    # One pass over the pages collecting every slug any page actually serves,
+    # rather than re-scanning every page per key (1k keys x 4k pages of file
+    # reads is slow enough that nobody would leave the report enabled).
+    used = set()
+    ref = _re.compile(r'assets/(?:og|hero)/([A-Za-z0-9._-]+)\.(?:png|svg)')
+    for p in pages:
+        with open(p, encoding="utf-8") as fh:
+            used.update(ref.findall(fh.read()))
+    orphans = [s for s in PAGES if s not in live and s not in used]
+    if orphans:
+        print(f"\nORPHAN PAGES KEYS ({len(orphans)}) — no live page, art unreferenced.")
+        print("Each writes an unused asset pair on every full run. Retire the key,")
+        print("or build the page it was added for:")
+        for s in sorted(orphans):
+            print("  -", s)
 
 
 if __name__ == "__main__":

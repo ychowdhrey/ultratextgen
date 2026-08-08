@@ -77,6 +77,10 @@ LANE_RULES = [
     ("katakana-chart/", "Category pages"),
     ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
+    # CI audit-artifact output (css-audit.yml uploads reports/ as an
+    # artifact, but PRs also commit it directly — see docs/README.md
+    # "CSS audit" operational track).
+    ("reports/", "CSS audit"),
     ("data/", "Data / backlog"),
     (".github/workflows/", "CI / automation"),
     ("scripts/", "Scripts / tooling"),

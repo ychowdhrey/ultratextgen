@@ -1,0 +1,256 @@
+{
+  "slug": "ruang-kosong",
+  "lang": "ms",
+  "page_type": "library",
+  "title": "Ruang Kosong & Aksara Kosong — Salin Tampal Nama Kosong | UltraTextGen",
+  "meta_description": "Salin ruang kosong & aksara kosong (zero width space, Hangul filler, braille) untuk nama kosong FF/ML, bio IG kosong dan mesej WhatsApp kosong. Klik untuk salin — percuma.",
+  "canonical": "https://ultratextgen.com/ms/library/ruang-kosong/",
+  "home_url": "https://ultratextgen.com/ms/",
+  "crumb_home": "Laman Utama",
+  "crumb_library": "Pustaka",
+  "library_url": "https://ultratextgen.com/ms/library/",
+  "breadcrumb": "Ruang Kosong",
+  "hero_h1": "Ruang Kosong & Aksara Kosong",
+  "hero_tagline": "Setiap ruang kosong dan aksara kosong yang ditawarkan Unicode — zero width space, aksara pengisi dan braille kosong. Klik mana-mana simbol untuk terus menyalinnya.",
+  "intro": "Aksara kosong ialah aksara Unicode sebenar yang dipaparkan sebagai tiada apa-apa — ruang kosong yang boleh anda salin dan tampal di tempat yang biasanya menolak input kosong. Orang menggunakannya untuk membuat nama Discord kosong, menambah baris kosong dalam bio atau kapsyen Instagram, menghantar mesej WhatsApp yang kelihatan kosong, atau membuat jarak kemas dalam nama permainan. Setiap butang di bawah mengandungi aksara kosong yang sebenar: petaknya kelihatan kosong, tetapi labelnya memberitahu anda dengan tepat aksara mana yang sedang anda salin.",
+  "date_published": "2026-08-07",
+  "date_modified": "2026-08-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "zero-width-characters",
+      "label": "Lebar Sifar",
+      "h2": "Aksara Lebar Sifar & Format Halimunan",
+      "intro": "Aksara ini langsung tidak mengambil ruang lebar — sesuai untuk nama pengguna halimunan dan untuk memecahkan teks tanpa memaparkan apa-apa.",
+      "symbols": [
+        {
+          "char": "​",
+          "label": "Zero Width Space — U+200B"
+        },
+        {
+          "char": "‌",
+          "label": "Zero Width Non-Joiner — U+200C"
+        },
+        {
+          "char": "‍",
+          "label": "Zero Width Joiner — U+200D"
+        },
+        {
+          "char": "⁠",
+          "label": "Word Joiner — U+2060"
+        },
+        {
+          "char": "﻿",
+          "label": "Zero Width No-Break Space — U+FEFF"
+        },
+        {
+          "char": "‎",
+          "label": "Left-to-Right Mark — U+200E"
+        },
+        {
+          "char": "‏",
+          "label": "Right-to-Left Mark — U+200F"
+        },
+        {
+          "char": "­",
+          "label": "Soft Hyphen — U+00AD"
+        }
+      ]
+    },
+    {
+      "id": "blank-spaces",
+      "label": "Ruang Kosong",
+      "h2": "Aksara Ruang Kosong",
+      "intro": "Ada lebar tetapi kosong: ruang ini kekal di tempat yang biasanya memangkas atau menggabungkan aksara bar ruang biasa.",
+      "symbols": [
+        {
+          "char": " ",
+          "label": "No-Break Space — U+00A0"
+        },
+        {
+          "char": " ",
+          "label": "En Space — U+2002"
+        },
+        {
+          "char": " ",
+          "label": "Em Space — U+2003"
+        },
+        {
+          "char": " ",
+          "label": "Figure Space — U+2007"
+        },
+        {
+          "char": " ",
+          "label": "Punctuation Space — U+2008"
+        },
+        {
+          "char": " ",
+          "label": "Thin Space — U+2009"
+        },
+        {
+          "char": " ",
+          "label": "Hair Space — U+200A"
+        },
+        {
+          "char": " ",
+          "label": "Narrow No-Break Space — U+202F"
+        }
+      ]
+    },
+    {
+      "id": "wide-spaces",
+      "label": "Ruang Lebar",
+      "h2": "Aksara Ruang Lebar & Khas",
+      "intro": "Aksara kosong yang lebih lebar, termasuk ruang ideografik lebar penuh yang digunakan dalam tipografi CJK — sesuai untuk jurang besar yang ketara.",
+      "symbols": [
+        {
+          "char": " ",
+          "label": "En Quad — U+2000"
+        },
+        {
+          "char": " ",
+          "label": "Em Quad — U+2001"
+        },
+        {
+          "char": " ",
+          "label": "Three-Per-Em Space — U+2004"
+        },
+        {
+          "char": " ",
+          "label": "Four-Per-Em Space — U+2005"
+        },
+        {
+          "char": " ",
+          "label": "Six-Per-Em Space — U+2006"
+        },
+        {
+          "char": " ",
+          "label": "Medium Mathematical Space — U+205F"
+        },
+        {
+          "char": "　",
+          "label": "Ideographic Space — U+3000"
+        }
+      ]
+    },
+    {
+      "id": "filler-characters",
+      "label": "Pengisi",
+      "h2": "Aksara Pengisi & Glif Kosong",
+      "intro": "Huruf dan corak yang dipaparkan sebagai glif kosong — braille kosong dan Hangul filler ialah pilihan utama untuk nama permainan yang halimunan.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank — U+2800"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler — U+3164"
+        },
+        {
+          "char": "ᅟ",
+          "label": "Hangul Choseong Filler — U+115F"
+        },
+        {
+          "char": "ᅠ",
+          "label": "Hangul Jungseong Filler — U+1160"
+        },
+        {
+          "char": "ﾠ",
+          "label": "Halfwidth Hangul Filler — U+FFA0"
+        },
+        {
+          "char": "᠎",
+          "label": "Mongolian Vowel Separator — U+180E"
+        }
+      ]
+    }
+  ],
+  "cta": "Guna UltraTextGen untuk menukar teks biasa kepada tebal, condong, kursif dan 100+ gaya fon Unicode lain — percuma dan serta-merta.",
+  "related": [
+    {
+      "href": "/ms/symbol/aksara-tak-nampak/",
+      "title": "Aksara Tak Nampak (⠀)",
+      "desc": "Aksara tunggal di sebalik nama kosong, diterangkan sepenuhnya."
+    },
+    {
+      "href": "/ms/answers/cara-buat-nama-kosong/",
+      "title": "Cara Buat Nama Kosong",
+      "desc": "Kaedahnya, dan perkara yang perlu diberi perhatian."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/invisible-character/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/spasi-kosong/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/texto-invisible/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/texto-invisivel/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/texte-invisible/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/unsichtbares-zeichen/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/testo-invisibile/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/onzichtbare-tekst/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/gorunmez-karakter/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ky-tu-vo-hinh/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/niewidzialny-znak/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/kongbai-fuhao/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/nas-ghayr-marii/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/bin-kan-munja/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/kuuhaku-moji/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/nevidimyy-tekst/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/khokhwam-long-hon/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/ruang-kosong/"
+    }
+  ]
+}

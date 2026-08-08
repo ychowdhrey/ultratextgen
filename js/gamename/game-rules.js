@@ -45,7 +45,7 @@
      field        which name this rule describes: 'display' or 'username'
      ============================ */
   const RULES = {
-    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display" },
+    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display", reportedBlocked: "ㅤ" },
     ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
     // Krafton publishes NO name rules for PUBG Mobile. The help centre article
     // ("How do I change my in-game nickname?", unchanged since at least 2022)
@@ -106,6 +106,29 @@
     // name appear invisible to other players — so we flag decorative
     // Unicode as a warning here (strict) rather than treating it as safe.
     clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // YouTube channel names (display names) accept Unicode freely — styled
+    // letters, symbols and emoji all save. Google's own help pages document
+    // the rename throttle ("You can change your channel name twice within a
+    // 14-day period", support.google.com/youtube/answer/2657964) but publish
+    // NO character maximum for the name field; the 50 here is the widely
+    // reported client-side limit and matches the field's observed maxlength,
+    // not a Google document — treat it like PUBG's 14 (real client behaviour,
+    // no official source). One caveat worth knowing that this engine cannot
+    // encode: since 2022 YouTube limits names spelled ENTIRELY in lookalike
+    // special characters (its own example: "¥ouⓉube") as an impersonation/
+    // spam measure — decorated-but-readable names pass, all-symbol names can
+    // be rejected. The page copy owns that nuance.
+    youtube: { label: "YouTube (channel name)", limit: 50, min: 1, weighted: false, noSpace: false, field: "display" },
+    // YouTube @handles are the opposite field: 3-30 characters, letters and
+    // numbers plus underscores, hyphens, periods and Latin middle dots (·) —
+    // none of those four at the start or end — unique across YouTube, and no
+    // decorative Unicode ever (support.google.com/youtube/answer/11585688).
+    // Google also allows letters from ~75 non-Latin scripts with SHORTER
+    // script-specific limits (Han/Hangul 1-10, kana/Ethiopic 2-20); this
+    // ASCII pattern validates the Latin path only, so the page's fail copy
+    // must say "plain letters and numbers" rather than claim non-Latin
+    // handles are impossible.
+    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/ },
     // VRChat Display Names are 4-15 characters and can only be changed once
     // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
     // my name" help article — by far the longest rename cooldown of any rule
@@ -264,7 +287,12 @@
     "‹›«»❰❱❬❭❮❯" + // quotes/ornate brackets
     "™®©∞×÷✖❌" + // ™ ® © ∞ ×
     "☀☁☂☔⛱✈✻✼☘❤" + // ☀ ☁ ☂ ☔ ⛱ payung set
-    "᲼ㅤ​⠀" + // invisible fillers (ㅤ U+3164, braille blank, ZWSP)
+    // Invisible fillers. "Safe" here means "the field accepts the codepoint",
+    // NOT "every game still accepts it" — a game can start rejecting one
+    // without anything else changing. Per-game exceptions live in RULES'
+    // `reportedBlocked` (see Free Fire and U+3164), which is checked before
+    // this table so a name the game will refuse can't come back "safe".
+    "᲼ㅤ​⠀" + // ㅤ U+3164 Hangul Filler, braille blank U+2800, ZWSP
     "■□▲△▼▽●○◆◇▀▄︻︼" + // geometry / ▄▀ / ︻︼ sniper art
     "一丶丿"; // stroke marks
 
@@ -347,6 +375,12 @@
     // ch may be a multi-codepoint grapheme (base + combining marks) — classify
     // by its first codepoint, same base that carries the visible glyph.
     const base = Array.from(ch)[0] || ch;
+    // Checked before SAFE_SYMBOLS: a character can be structurally valid and
+    // still be refused by one specific game. Warn rather than fail — the
+    // reports are consistent but we have no in-game confirmation, and saying
+    // "this may be refused" is the honest claim. Saying nothing is not: a
+    // rename is paid, so a false all-clear costs the player real money.
+    if (rule.reportedBlocked && rule.reportedBlocked.indexOf(base) !== -1) return "warn";
     const cls = classifyChar(base);
     if (cls === "ascii" || cls === "space") return "pass";
     if (cls === "unknown") return "warn"; // may render as a box, client-dependent
@@ -402,6 +436,9 @@
     }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
     if (rule.strict && (safe + styled + emoji + unknown) > 0) issues.push("strict-symbols");
+    if (rule.reportedBlocked && graphemes(str || "").some(function (ch) {
+      return rule.reportedBlocked.indexOf(Array.from(ch)[0] || ch) !== -1;
+    })) issues.push("reported-blocked");
 
     // Level: fail = the game will reject it; warn = may render as boxes
     // or be rejected on some clients; ok = clears every structural rule.
@@ -416,6 +453,7 @@
     else if (
       issues.indexOf("unknown-chars") !== -1 ||
       issues.indexOf("strict-symbols") !== -1 ||
+      issues.indexOf("reported-blocked") !== -1 ||
       issues.indexOf("weight-uncertain") !== -1
     ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
@@ -471,11 +509,18 @@
     if (!mount) return;
 
     const text = cfg.text || {};
-    const issueText = text.issue || {};
+    // A page supplies its own translated issue strings. `reported-blocked` is
+    // newer than most pages' config blocks, so it falls back to English rather
+    // than rendering nothing — an untranslated warning still tells the player
+    // their rename may fail, which silence does not. Pages should override it.
+    const issueText = Object.assign(
+      { "reported-blocked": "Players report this game no longer accepts one of these characters — try another if the rename is refused." },
+      text.issue || {}
+    );
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
-    const state = { game: games[0], dirty: false };
+    const state = { game: games[0], dirty: false, lastLevel: null, priming: true };
 
     mount.innerHTML = "";
     mount.classList.add("gr-checker");
@@ -494,6 +539,10 @@
         const tab = e.target.closest(".gr-tab");
         if (!tab) return;
         state.game = tab.getAttribute("data-game");
+        // Same name against a different game's rules is a genuinely new check
+        // (a name that fits Discord's 32 may fail Free Fire's weighted 12), so
+        // clear the last verdict rather than suppressing the event as a repeat.
+        state.lastLevel = null;
         render();
       });
       mount.appendChild(tabsWrap);
@@ -600,9 +649,45 @@
           charRow.appendChild(tile);
         });
       }
+
+      reportVerdict(report);
+    }
+
+    /* Completion event. render() runs on every keystroke, so this fires only
+       when the verdict LEVEL actually changes (empty -> ok -> warn -> fail),
+       not per character — a name being typed produces at most a couple of
+       events, not one per key. The empty state is never reported: it is the
+       initial condition, not an outcome the user reached.
+
+       What this is for: the checker is the site's main product-completion
+       surface on the game-name pages and it has never emitted a single event,
+       so nothing downstream can tell whether it is used, whether it catches
+       real problems, or whether it is ignored furniture. `verdict` is the
+       answer the user actually got; `over_limit` separates "too long" from
+       "unsupported characters", which are different product failures with
+       different fixes. */
+    function reportVerdict(report) {
+      const level = report.level;
+      if (!level || level === "empty") return;
+      // The first render happens at init, against whatever the generator was
+      // pre-filled with — reporting it would count page loads as checks. Record
+      // the level so a later real change still registers as a transition, but
+      // don't emit for it.
+      if (state.priming) { state.lastLevel = level; return; }
+      if (level === state.lastLevel) return;
+      state.lastLevel = level;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "name_check",
+        check_game: state.game,
+        check_verdict: level,
+        check_over_limit: !!(report.limit && report.effective > report.limit)
+      });
     }
 
     render();
+    state.priming = false;
   }
 
   ns.gameRules = {

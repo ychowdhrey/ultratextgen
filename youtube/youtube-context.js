@@ -1,42 +1,62 @@
 (function () {
   "use strict";
 
+  /* Destination switcher for the YouTube hub.
+
+     Each context carries the field's real limit and an honest verdict about
+     styled Unicode there. Sources: handle rules and the 3-30 length are
+     Google's own (support.google.com/youtube/answer/11585688); the rename
+     throttle is answer/2657964. The channel-name 50 is the observed client
+     limit, not a documented one — same caveat as RULES.youtube in
+     js/gamename/game-rules.js, which is the single maintenance point for
+     these numbers on checker surfaces.
+
+     status: "safe" | "caution" | "blocked" — drives the guidance badge.
+     Video titles are "caution", not "blocked": Unicode letters DO save in
+     titles; the cost is search matching and screen readers, so the advice
+     is keep keyword words plain, decorate around them. */
   const CONTEXTS = {
     "channel-name": {
       limit: 50,
-      guidance: "Default destination. Channel names support Unicode text styles and are the best place to use fancy fonts.",
+      status: "safe",
+      guidance: "Default destination. Channel names accept Unicode styles, symbols, and emoji. Keep it readable — names spelled entirely in lookalike symbols can be rejected as impersonation.",
       placeholder: "Your Channel Name",
       mode: "normal"
     },
     "description": {
       limit: 5000,
-      guidance: "Descriptions support Unicode, but keep your primary keywords in plain text so YouTube can parse them clearly.",
+      status: "safe",
+      guidance: "Video descriptions accept Unicode, but keep your primary keywords in plain text so search can parse them clearly.",
       placeholder: "Weekly uploads about tech and productivity.",
       mode: "normal"
     },
     "video-title": {
       limit: 100,
-      guidance: "YouTube strips styled Unicode from titles. You can copy styles here, but keep your real title plain text.",
+      status: "caution",
+      guidance: "Titles do save Unicode styles, but search doesn't read a styled word as its plain spelling. Keep keyword words plain and decorate around them.",
       placeholder: "How I Grew to 100K Subscribers",
       mode: "title"
     },
     comment: {
       limit: 10000,
-      guidance: "Comments support Unicode styles. For comment-specific examples and layouts, use the dedicated comment tool.",
+      status: "safe",
+      guidance: "Comments accept Unicode styles, and YouTube also has native formatting: *bold*, _italic_, -strikethrough-. For comment-specific examples, use the dedicated comment tool.",
       placeholder: "This edit is fire 🔥",
       mode: "normal",
       routeHtml: 'Comment-specific examples: <a href="/usecase/comment-font/">Comment Font Generator</a>.'
     },
     bio: {
       limit: 1000,
-      guidance: "About text supports Unicode styles. Keep the first line readable and concise for profile clarity.",
+      status: "safe",
+      guidance: "About text accepts Unicode styles. Keep the first line readable and concise for profile clarity.",
       placeholder: "Creator · tutorials · weekly videos",
       mode: "normal",
       routeHtml: 'Bio-focused layouts: <a href="/usecase/bio-font/">Bio Font Generator</a>.'
     },
     handle: {
       limit: 30,
-      guidance: "YouTube handles only allow letters, numbers, underscores, hyphens, and periods.",
+      status: "blocked",
+      guidance: "Handles allow letters and numbers plus . _ - (never at the start or end), 3–30 characters, no fancy fonts, no emoji, no spaces. Style your channel name instead.",
       placeholder: "yourhandle",
       mode: "handle"
     }
@@ -59,6 +79,23 @@
     results: document.getElementById("resultsGrid")
   };
 
+  // Visible characters, not UTF-16 units — a bold 10-letter name is 10
+  // graphemes but 20 code units. We count graphemes for the main readout
+  // (that's what a person sees) and surface the code-unit figure separately
+  // when the two differ, because nobody documents which one YouTube's
+  // fields meter and pretending to know would be worse than saying both.
+  const graphemeSeg =
+    typeof Intl !== "undefined" && Intl.Segmenter
+      ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+  function graphemeCount(str) {
+    if (!str) return 0;
+    if (!graphemeSeg) return Array.from(str).length;
+    let n = 0;
+    for (const s of graphemeSeg.segment(str)) { void s; n++; }
+    return n;
+  }
+
   function getInputText() {
     if (!el.input) return "";
     return el.input.value || "";
@@ -67,18 +104,20 @@
   function updateCounter() {
     if (!el.input || !el.charCount || !el.charLimit) return;
     const ctx = CONTEXTS[currentContext];
-    const len = el.input.value.length;
+    const raw = el.input.value;
+    const visible = graphemeCount(raw);
+    const units = raw.length;
     const warnAt = Math.floor(ctx.limit * 0.9);
 
-    el.charCount.textContent = String(len);
+    el.charCount.textContent = units > visible ? visible + " (" + units + " units)" : String(visible);
     el.charLimit.textContent = String(ctx.limit);
-    el.charWrap.classList.toggle("char-warning", len >= warnAt);
+    el.charWrap.classList.toggle("char-warning", units >= warnAt);
 
-    if (len >= warnAt && len < ctx.limit && !thresholdAnnounced && el.counterAnnounce) {
+    if (units >= warnAt && units < ctx.limit && !thresholdAnnounced && el.counterAnnounce) {
       el.counterAnnounce.textContent = "Approaching limit.";
       thresholdAnnounced = true;
     }
-    if (len < warnAt) {
+    if (units < warnAt) {
       thresholdAnnounced = false;
       if (el.counterAnnounce) el.counterAnnounce.textContent = "";
     }
@@ -87,7 +126,19 @@
   function renderGuidance() {
     if (!el.guidance) return;
     const ctx = CONTEXTS[currentContext];
-    el.guidance.innerHTML = ctx.guidance + ' <span class="limit-pill">' + ctx.limit + '-character limit</span>';
+    el.guidance.textContent = "";
+    const badge = document.createElement("span");
+    badge.className = "youtube-status-pill youtube-status-" + ctx.status;
+    badge.textContent =
+      ctx.status === "safe" ? "Fancy text: works here" :
+      ctx.status === "caution" ? "Fancy text: use with care" :
+      "Fancy text: rejected here";
+    el.guidance.appendChild(badge);
+    el.guidance.appendChild(document.createTextNode(" " + ctx.guidance + " "));
+    const pill = document.createElement("span");
+    pill.className = "limit-pill";
+    pill.textContent = ctx.limit + "-character limit";
+    el.guidance.appendChild(pill);
   }
 
   function renderPanel() {
@@ -103,7 +154,7 @@
         const wrap = document.createElement("div");
         wrap.className = "youtube-handle-explainer";
         const strong = document.createElement("strong");
-        strong.textContent = "YouTube handles only allow letters, numbers, _ - . — fancy fonts won't save.";
+        strong.textContent = "YouTube handles only allow letters and numbers plus . _ - — fancy fonts won't save.";
         wrap.appendChild(strong);
         wrap.appendChild(document.createTextNode(" Style your "));
         const channelStrong = document.createElement("strong");
@@ -149,7 +200,7 @@
 
     if (ctx.mode === "handle") {
       el.results.innerHTML =
-        '<div class="style-card"><div class="style-info"><p class="style-preview placeholder">YouTube handles are ASCII only. Styled results are disabled for @Handle. Use channel-name styles instead or try <a href="/youtube/name-generator/">YouTube Name Generator</a>.</p></div></div>';
+        '<div class="style-card"><div class="style-info"><p class="style-preview placeholder">YouTube handles only accept plain letters, numbers, and . _ - so styled results are disabled for @Handle. Use channel-name styles instead or try <a href="/youtube/name-generator/">YouTube Name Generator</a>.</p></div></div>';
       return;
     }
 
@@ -163,7 +214,7 @@
       if (ctx.mode === "title") {
         const badge = document.createElement("span");
         badge.className = "youtube-result-warning";
-        badge.textContent = "Plain text: YouTube strips title styling";
+        badge.textContent = "Keep keyword words plain for search";
         name.appendChild(badge);
       }
     });
@@ -227,7 +278,7 @@
           if (badge) badge.remove();
           const trimmed = cleanName.textContent.trim();
           if (trimmed) name = trimmed;
-        }        
+        }
       }
       setTimeout(function () {
         el.copyAnnounce.textContent = "Copied " + name + " to clipboard.";

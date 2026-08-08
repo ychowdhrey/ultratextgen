@@ -1,0 +1,346 @@
+{
+  "slug": "simbol-kurung",
+  "title": "Simbol Kurung ( ) [ ] 「 」 — Semua Jenis Tanda Kurung Unicode | UltraTextGen",
+  "meta_description": "Referensi lengkap simbol kurung Unicode — kurung biasa, siku, kurawal, kurung CJK 「」【】, kurung hias, dan versi lebar penuh. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Simbol Kurung",
+  "hero_h1": "Simbol Kurung",
+  "hero_tagline": "Referensi lengkap jenis kurung Unicode — dari kurung standar dan matematika sampai kurung CJK, hias, dan lebar penuh. Klik simbolnya, langsung kesalin.",
+  "intro": "Kurung di keyboard cuma ada tiga pasang, tapi Unicode punya puluhan. Halaman ini ngumpulin semuanya dalam satu tempat: kurung standar yang kamu pakai sehari-hari, kurung sudut CJK 「」 dan kurung lentikular 【】 yang jadi favorit buat nama dan teks aesthetic, kurung matematika seperti ⌈ ⌉ dan ⌊ ⌋, kurung hias yang lebih tebal, tanda kutip sudut, plus versi lebar penuh yang bikin tulisan kelihatan renggang. Semuanya karakter teks biasa, jadi nempel di kolom nama game, bio, dan judul tanpa jadi gambar.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "standard-brackets",
+      "label": "Standar",
+      "h2": "Kurung Standar",
+      "intro": "Jenis kurung yang paling umum — kurung biasa, siku, kurawal, dan kurung sudut.",
+      "symbols": [
+        {
+          "char": "(",
+          "label": "Kurung Buka"
+        },
+        {
+          "char": ")",
+          "label": "Kurung Tutup"
+        },
+        {
+          "char": "[",
+          "label": "Kurung Siku Buka"
+        },
+        {
+          "char": "]",
+          "label": "Kurung Siku Tutup"
+        },
+        {
+          "char": "{",
+          "label": "Kurung Kurawal Buka"
+        },
+        {
+          "char": "}",
+          "label": "Kurung Kurawal Tutup"
+        },
+        {
+          "char": "⟨",
+          "label": "Kurung Sudut Matematika Buka"
+        },
+        {
+          "char": "⟩",
+          "label": "Kurung Sudut Matematika Tutup"
+        }
+      ]
+    },
+    {
+      "id": "cjk-brackets",
+      "label": "CJK & Jepang",
+      "h2": "Kurung CJK & Jepang",
+      "intro": "Kurung Tionghoa, Jepang, dan Korea yang populer buat teks aesthetic dan username.",
+      "symbols": [
+        {
+          "char": "「",
+          "label": "Kurung Sudut Buka"
+        },
+        {
+          "char": "」",
+          "label": "Kurung Sudut Tutup"
+        },
+        {
+          "char": "『",
+          "label": "Kurung Sudut Putih Buka"
+        },
+        {
+          "char": "』",
+          "label": "Kurung Sudut Putih Tutup"
+        },
+        {
+          "char": "【",
+          "label": "Kurung Lentikular Hitam Buka"
+        },
+        {
+          "char": "】",
+          "label": "Kurung Lentikular Hitam Tutup"
+        },
+        {
+          "char": "〔",
+          "label": "Kurung Tempurung Buka"
+        },
+        {
+          "char": "〕",
+          "label": "Kurung Tempurung Tutup"
+        },
+        {
+          "char": "〈",
+          "label": "Kurung Sudut Buka Tunggal"
+        },
+        {
+          "char": "〉",
+          "label": "Kurung Sudut Tutup Tunggal"
+        },
+        {
+          "char": "《",
+          "label": "Kurung Sudut Ganda Buka"
+        },
+        {
+          "char": "》",
+          "label": "Kurung Sudut Ganda Tutup"
+        }
+      ]
+    },
+    {
+      "id": "mathematical-brackets",
+      "label": "Matematika",
+      "h2": "Kurung Matematika",
+      "intro": "Kurung pembulatan ke atas, ke bawah, siku ganda, dan notasi matematika lainnya.",
+      "symbols": [
+        {
+          "char": "⌈",
+          "label": "Pembulatan Atas Kiri"
+        },
+        {
+          "char": "⌉",
+          "label": "Pembulatan Atas Kanan"
+        },
+        {
+          "char": "⌊",
+          "label": "Pembulatan Bawah Kiri"
+        },
+        {
+          "char": "⌋",
+          "label": "Pembulatan Bawah Kanan"
+        },
+        {
+          "char": "⟦",
+          "label": "Kurung Siku Putih Buka"
+        },
+        {
+          "char": "⟧",
+          "label": "Kurung Siku Putih Tutup"
+        },
+        {
+          "char": "⟪",
+          "label": "Kurung Sudut Ganda Buka"
+        },
+        {
+          "char": "⟫",
+          "label": "Kurung Sudut Ganda Tutup"
+        }
+      ]
+    },
+    {
+      "id": "decorative-brackets",
+      "label": "Hias",
+      "h2": "Kurung Hias",
+      "intro": "Kurung ornamen dan hias buat teks bergaya.",
+      "symbols": [
+        {
+          "char": "❪",
+          "label": "Kurung Pipih Buka"
+        },
+        {
+          "char": "❫",
+          "label": "Kurung Pipih Tutup"
+        },
+        {
+          "char": "❬",
+          "label": "Kurung Sudut Sedang Buka"
+        },
+        {
+          "char": "❭",
+          "label": "Kurung Sudut Sedang Tutup"
+        },
+        {
+          "char": "❮",
+          "label": "Ornamen Sudut Tebal Buka"
+        },
+        {
+          "char": "❯",
+          "label": "Ornamen Sudut Tebal Tutup"
+        },
+        {
+          "char": "❰",
+          "label": "Kurung Sudut Tebal Buka"
+        },
+        {
+          "char": "❱",
+          "label": "Kurung Sudut Tebal Tutup"
+        },
+        {
+          "char": "❲",
+          "label": "Kurung Tempurung Tipis Buka"
+        },
+        {
+          "char": "❳",
+          "label": "Kurung Tempurung Tipis Tutup"
+        }
+      ]
+    },
+    {
+      "id": "quotation-corner",
+      "label": "Tanda Kutip",
+      "h2": "Kurung Kutip & Tipografi",
+      "intro": "Tanda kutip tipografis dan guillemet buat teks formal maupun hias.",
+      "symbols": [
+        {
+          "char": "‹",
+          "label": "Kutip Sudut Tunggal Buka"
+        },
+        {
+          "char": "›",
+          "label": "Kutip Sudut Tunggal Tutup"
+        },
+        {
+          "char": "«",
+          "label": "Kutip Sudut Ganda Buka"
+        },
+        {
+          "char": "»",
+          "label": "Kutip Sudut Ganda Tutup"
+        },
+        {
+          "char": "❝",
+          "label": "Kutip Ganda Tebal Buka"
+        },
+        {
+          "char": "❞",
+          "label": "Kutip Ganda Tebal Tutup"
+        },
+        {
+          "char": "❛",
+          "label": "Kutip Tunggal Tebal Buka"
+        },
+        {
+          "char": "❜",
+          "label": "Kutip Tunggal Tebal Tutup"
+        }
+      ]
+    },
+    {
+      "id": "full-width-brackets",
+      "label": "Lebar Penuh",
+      "h2": "Kurung Lebar Penuh",
+      "intro": "Kurung versi lebar penuh yang dipakai di tipografi CJK dan teks aesthetic.",
+      "symbols": [
+        {
+          "char": "（",
+          "label": "Kurung Buka Lebar Penuh"
+        },
+        {
+          "char": "）",
+          "label": "Kurung Tutup Lebar Penuh"
+        },
+        {
+          "char": "［",
+          "label": "Kurung Siku Buka Lebar Penuh"
+        },
+        {
+          "char": "］",
+          "label": "Kurung Siku Tutup Lebar Penuh"
+        },
+        {
+          "char": "｛",
+          "label": "Kurawal Buka Lebar Penuh"
+        },
+        {
+          "char": "｝",
+          "label": "Kurawal Tutup Lebar Penuh"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Kurung Mana yang Lolos di Kolom Nama Game",
+      "paragraphs": [
+        "Semua kurung di halaman ini karakter teks biasa, bukan emoji, jadi peluangnya lolos filter jauh lebih besar. Tapi tiap game punya daftar putihnya sendiri: 【 】 dan 「 」 termasuk yang paling sering diterima, sementara kurung hias seperti ❰ ❱ dan ❪ ❫ lebih sering ditolak karena berasal dari blok ornamen.",
+        "Yang perlu diperhatikan: kurung lebar penuh （ ） dihitung sebagai satu karakter oleh Unicode, tapi memakan ruang <em>dua</em> huruf di layar. Di kolom nama yang batasnya ketat, itu bikin nama kamu kelihatan lebih panjang daripada hitungannya.",
+        "Untuk nama game yang berhias, kombinasi kurung yang sudah terbukti dipakai — termasuk bingkai ꧁꧂ — ada di halaman <a href=\"/id/library/simbol-nickname/\">simbol nickname</a>."
+      ]
+    }
+  ],
+  "faq_h2": "Simbol Kurung, Dijawab",
+  "faq": [
+    {
+      "q": "Kurung 「」 itu dari bahasa apa?",
+      "a": "Itu kurung sudut Jepang, dipakai seperti tanda kutip dalam tulisan Jepang. Di luar konteks itu, dia populer sebagai hiasan nama dan teks aesthetic karena bentuknya bersih dan simetris."
+    },
+    {
+      "q": "Apa bedanya 【】 sama 〔〕?",
+      "a": "【】 kurung lentikular hitam — tebal dan mencolok, paling sering dipakai buat penanda judul. 〔〕 kurung tempurung — lebih tipis dan lebih ringan. Dua-duanya sama-sama karakter teks biasa."
+    },
+    {
+      "q": "Kenapa kurung lebar penuh （ ） kelihatan renggang?",
+      "a": "Karena dia memang dirancang untuk tipografi CJK, di mana tiap karakter menempati kotak selebar dua huruf Latin. Itu yang bikin tulisan berkurung lebar penuh terasa lapang."
+    },
+    {
+      "q": "Kurung ini bisa dipakai di nama game?",
+      "a": "Banyak yang bisa, karena semuanya teks biasa. 【 】 dan 「 」 paling sering diterima; kurung ornamen seperti ❰ ❱ lebih sering ditolak. Selalu tes di kolom namanya sebelum pakai jatah ganti nama."
+    },
+    {
+      "q": "Gimana cara ngetik kurung ini tanpa menyalin?",
+      "a": "Di Windows bisa pakai kode Alt atau Peta Karakter; di Mac lewat Edit → Emoji & Simbol. Untuk sebagian besar orang, menyalin dari halaman ini jauh lebih cepat."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/karakter-spesial/",
+      "title": "Karakter Spesial",
+      "desc": "Kumpulan karakter khusus Unicode buat teks, nama, dan bio."
+    },
+    {
+      "href": "/id/library/simbol-nickname/",
+      "title": "Simbol Nickname",
+      "desc": "Bingkai, kurung, dan aksen yang terbukti lolos di kolom nama game."
+    },
+    {
+      "href": "/id/library/simbol-geometri/",
+      "title": "Simbol Geometri",
+      "desc": "Bentuk geometris Unicode buat hiasan dan pembatas."
+    },
+    {
+      "href": "/id/library/simbol-matematika/",
+      "title": "Simbol Matematika",
+      "desc": "Notasi dan operator matematika Unicode siap salin."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/simbol-kurung/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/bracket-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-kurung/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/bracket-symbols/"
+    }
+  ]
+}

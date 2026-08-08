@@ -1,0 +1,306 @@
+{
+  "slug": "simbol-tanda-baca",
+  "title": "Simbol Tanda Baca † ‡ ¶ ※ ‽ — Salin & Tempel Tanda Khusus | UltraTextGen",
+  "meta_description": "Simbol tanda baca yang nggak ada di keyboard — belati †, pilcrow ¶, tanda rujukan ※, interrobang ‽, tanda kutip, dan lainnya. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Simbol Tanda Baca",
+  "hero_h1": "Simbol Tanda Baca",
+  "hero_tagline": "Belati, pilcrow, asterisme, interrobang, dan tanda terbalik — tanda baca yang nggak ada di keyboard kamu. Klik simbolnya, langsung kesalin.",
+  "intro": "Di luar koma dan titik yang kita pakai tiap hari, ada satu set tanda baca khusus yang nggak muat di keyboard. Halaman ini ngumpulin semuanya: belati † dan belati ganda ‡ buat catatan kaki, asterisme ⁂ dan tanda rujukan ※, pilcrow ¶ dan tanda pasal § buat teks hukum dan editorial, interrobang ‽ dan tanda terbalik ¿ ¡, plus versi lebar penuh dari tanda tanya, titik dua, dan koma yang sering dicari buat teks aesthetic. Semuanya karakter Unicode biasa yang bisa disalin ke dokumen, postingan, dan kolom nama.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "daggers-reference",
+      "label": "Belati",
+      "h2": "Belati, Asterisk & Tanda Rujukan",
+      "intro": "Belati catatan kaki, asterisme, dan tanda rujukan yang dipakai di penataan huruf.",
+      "symbols": [
+        {
+          "char": "†",
+          "label": "Belati"
+        },
+        {
+          "char": "‡",
+          "label": "Belati Ganda"
+        },
+        {
+          "char": "⁑",
+          "label": "Dua Asterisk Bertumpuk"
+        },
+        {
+          "char": "⁂",
+          "label": "Asterisme"
+        },
+        {
+          "char": "※",
+          "label": "Tanda Rujukan"
+        },
+        {
+          "char": "‖",
+          "label": "Garis Vertikal Ganda"
+        }
+      ]
+    },
+    {
+      "id": "paragraph-section",
+      "label": "Paragraf",
+      "h2": "Tanda Paragraf & Pasal",
+      "intro": "Pilcrow, tanda pasal, dan permil yang dipakai di teks hukum dan editorial.",
+      "symbols": [
+        {
+          "char": "¶",
+          "label": "Tanda Pilcrow"
+        },
+        {
+          "char": "⁋",
+          "label": "Pilcrow Terbalik"
+        },
+        {
+          "char": "§",
+          "label": "Tanda Pasal"
+        },
+        {
+          "char": "‰",
+          "label": "Tanda Permil"
+        },
+        {
+          "char": "‱",
+          "label": "Tanda Per Sepuluh Ribu"
+        }
+      ]
+    },
+    {
+      "id": "interrobang-inverted",
+      "label": "Terbalik",
+      "h2": "Interrobang & Tanda Terbalik",
+      "intro": "Tanda tanya dan tanda seru yang digabung dan dibalik.",
+      "symbols": [
+        {
+          "char": "‽",
+          "label": "Interrobang"
+        },
+        {
+          "char": "⸮",
+          "label": "Tanda Tanya Terbalik"
+        },
+        {
+          "char": "¡",
+          "label": "Tanda Seru Terbalik"
+        },
+        {
+          "char": "¿",
+          "label": "Tanda Tanya Terbalik Spanyol"
+        },
+        {
+          "char": "⁇",
+          "label": "Tanda Tanya Ganda"
+        },
+        {
+          "char": "⁉",
+          "label": "Tanda Seru & Tanya"
+        },
+        {
+          "char": "⁈",
+          "label": "Tanda Tanya & Seru"
+        }
+      ]
+    },
+    {
+      "id": "question-mark-symbol",
+      "label": "Tanya & Seru",
+      "h2": "Tanda Tanya, Tanda Seru & Titik Koma",
+      "intro": "Salin tanda tanya dan tanda seru berikut bentuk terbaliknya ala Spanyol dan titik koma yang sering dicari bareng.",
+      "symbols": [
+        {
+          "char": "?",
+          "label": "Tanda Tanya"
+        },
+        {
+          "char": "!",
+          "label": "Tanda Seru"
+        },
+        {
+          "char": ";",
+          "label": "Titik Koma"
+        },
+        {
+          "char": "？",
+          "label": "Tanda Tanya Lebar Penuh"
+        },
+        {
+          "char": "！",
+          "label": "Tanda Seru Lebar Penuh"
+        }
+      ]
+    },
+    {
+      "id": "colon-symbol",
+      "label": "Titik Dua",
+      "h2": "Titik Dua & Garis Bawah",
+      "intro": "Salin titik dua, garis bawah, dan tanda penghubung lain yang dipakai di teks, kode, dan username.",
+      "symbols": [
+        {
+          "char": ":",
+          "label": "Titik Dua"
+        },
+        {
+          "char": "_",
+          "label": "Garis Bawah"
+        },
+        {
+          "char": "：",
+          "label": "Titik Dua Lebar Penuh"
+        },
+        {
+          "char": "﹍",
+          "label": "Garis Bawah Putus"
+        },
+        {
+          "char": "‿",
+          "label": "Garis Penghubung Lengkung"
+        }
+      ]
+    },
+    {
+      "id": "comma-symbol",
+      "label": "Koma",
+      "h2": "Koma & Tanda Kurung",
+      "intro": "Salin koma berikut tanda kurung dan pemisah lain buat merapikan format teks.",
+      "symbols": [
+        {
+          "char": ",",
+          "label": "Koma"
+        },
+        {
+          "char": "(",
+          "label": "Kurung Buka"
+        },
+        {
+          "char": ")",
+          "label": "Kurung Tutup"
+        },
+        {
+          "char": "，",
+          "label": "Koma Lebar Penuh"
+        },
+        {
+          "char": "、",
+          "label": "Koma Ideografis"
+        },
+        {
+          "char": "（",
+          "label": "Kurung Buka Lebar Penuh"
+        },
+        {
+          "char": "）",
+          "label": "Kurung Tutup Lebar Penuh"
+        }
+      ]
+    },
+    {
+      "id": "quotation-marks",
+      "label": "Tanda Kutip",
+      "h2": "Tanda Kutip",
+      "intro": "Gaya kutip lurus, melengkung, dan guillemet — tiga bentuk yang paling sering tertukar.",
+      "symbols": [
+        {
+          "char": "\"",
+          "label": "Tanda Kutip Lurus"
+        },
+        {
+          "char": "“",
+          "label": "Kutip Ganda Kiri"
+        },
+        {
+          "char": "”",
+          "label": "Kutip Ganda Kanan"
+        },
+        {
+          "char": "«",
+          "label": "Guillemet Kiri"
+        },
+        {
+          "char": "»",
+          "label": "Guillemet Kanan"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Kenapa Tanda Kutip Kamu Berubah Sendiri",
+      "paragraphs": [
+        "Semua karakter di halaman ini teks Unicode biasa, jadi dia terkirim apa adanya. Yang sering bikin bingung bukan perangkatnya, tapi <em>aplikasinya</em>: Word, Google Docs, dan banyak aplikasi catatan otomatis mengubah kutip lurus \" jadi kutip melengkung “ ” sambil kamu mengetik. Kalau kamu butuh yang lurus — misalnya buat kode — matikan smart quotes dulu, atau salin karakter lurusnya dari halaman ini.",
+        "Perbedaan itu penting di tempat yang tak terduga. Kutip melengkung ” dan kutip lurus \" adalah dua karakter berbeda, jadi pencarian teks yang mengetik satu bentuk nggak akan menemukan yang satunya. Begitu juga ¡ dan ¿ Spanyol: keduanya karakter tersendiri, bukan tanda biasa yang diputar.",
+        "Versi lebar penuh — ？ ！ ： ， — memakan ruang selebar dua huruf Latin. Itu yang bikin teks aesthetic kelihatan renggang, tapi juga bikin nama kamu lebih cepat mentok batas karakter."
+      ]
+    }
+  ],
+  "faq_h2": "Simbol Tanda Baca, Dijawab",
+  "faq": [
+    {
+      "q": "Tanda † dan ‡ dipakai buat apa?",
+      "a": "Buat catatan kaki, waktu tanda bintang * sudah dipakai. Urutan standarnya: * lalu † lalu ‡. Di luar penerbitan, † juga sering dipakai buat menandai orang yang sudah meninggal."
+    },
+    {
+      "q": "‽ itu tanda apa?",
+      "a": "Interrobang — gabungan tanda tanya dan tanda seru dalam satu karakter, buat kalimat yang sekaligus bertanya dan terkejut. Dia karakter Unicode resmi, cuma jarang dipakai di tulisan formal."
+    },
+    {
+      "q": "Kenapa tanda kutip saya berubah jadi melengkung?",
+      "a": "Karena aplikasinya punya fitur smart quotes yang otomatis menggantinya sambil kamu mengetik. Kutip lurus dan melengkung adalah karakter berbeda; kalau kamu butuh yang lurus, matikan fitur itu atau salin karakternya langsung dari halaman ini."
+    },
+    {
+      "q": "※ itu artinya apa?",
+      "a": "Tanda rujukan, berasal dari penataan huruf Asia Timur. Di teks Jepang dan Tionghoa dia menandai catatan atau peringatan penting, semacam 'perhatikan ini'."
+    },
+    {
+      "q": "Apa bedanya ¶ sama §?",
+      "a": "¶ pilcrow, menandai awal paragraf baru. § tanda pasal, menandai bagian bernomor di dokumen hukum. Keduanya sering muncul bersamaan di kutipan peraturan."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/karakter-spesial/",
+      "title": "Karakter Spesial",
+      "desc": "Kumpulan karakter khusus Unicode buat teks, nama, dan bio."
+    },
+    {
+      "href": "/id/library/simbol-kurung/",
+      "title": "Simbol Kurung",
+      "desc": "Semua jenis tanda kurung Unicode, dari standar sampai CJK dan hias."
+    },
+    {
+      "href": "/id/library/simbol-garis/",
+      "title": "Simbol Garis & Pembatas",
+      "desc": "Garis, strip, dan pembatas buat merapikan teks panjang."
+    },
+    {
+      "href": "/id/library/simbol-matematika/",
+      "title": "Simbol Matematika",
+      "desc": "Notasi dan operator matematika Unicode siap salin."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/simbol-tanda-baca/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/punctuation-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-tanda-baca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/punctuation-symbols/"
+    }
+  ]
+}

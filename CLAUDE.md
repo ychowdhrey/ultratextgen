@@ -257,8 +257,8 @@ and `symbol/rupee-sign/` (all shipped 2026-07-11/12) cross-linked each
 other, but `symbol/ruble-sign/` (07-18), `symbol/dirham-sign/`, and
 `symbol/saudi-riyal-sign/` (both 07-22) — which claimed those older pages as
 peers — were never added back in, leaving three real pages with only 1–2
-inbound editorial links each. Root-cause analysis:
-`ultratextgen-lab-`'s `gsc-technical-seo-leakage-audit-2026-07-24.md` §7.
+inbound editorial links each. Root-cause analysis: an internal audit
+(2026-07-24).
 
 `scripts/sync_symbol_spoke_links.py --write --reciprocal` fixes both
 directions in one pass — hub reciprocity (as before) and peer reciprocity
@@ -273,9 +273,24 @@ peers is not an error (not every symbol has a natural sibling); only a
 check:new-symbol-peer-links`) is the diff-scoped PR gate, wired into
 `.github/workflows/validate.yml`: for every `/symbol/` page a PR adds or
 changes, its declared peers must currently link back, or the PR fails with
-the exact pair and the fix (run the generator, commit the result). Scope
-note: both scripts, like the hub-linking tooling above, only walk EN
-`symbol/*` — they do not check locale-prefixed `<lang>/symbol/*` pages.
+the exact pair and the fix (run the generator, commit the result).
+
+**Locale propagation (added 2026-08-06).** `sync_symbol_spoke_links.py` used
+to walk EN `symbol/*` only, which made `--write --reciprocal` a trap: it
+repaired the EN side and left the same relation missing on all 1,645
+`<lang>/symbol/*` pages, whose compare-grids are static HTML written once at
+creation time exactly like EN's. Running it produced 113 EN fixes and **493
+translation-parity pairs**. It now mirrors the peer graph into every language:
+for each EN relation A↔B and each language L where **both** ends have a live
+sibling, L's copy of A gets a card pointing at L's copy of B. Cluster
+membership comes from each locale page's own `hreflang="en"` link (the same
+source `scripts/lib/translation-clusters.js` uses), never from guessing a
+locale slug. Card copy is read from the **target locale page's own** `<h1>`
+and hero tagline — nothing is translated here, and a peer with no sibling in
+L is skipped rather than linked in English. `--no-locales` restores EN-only
+behaviour. The first full run cleared a 2,537-link backlog across 1,009 pages
+in 19 languages. `check-new-symbol-peer-links.py` (the PR gate) is still
+EN-only and diff-scoped.
 
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
@@ -1073,6 +1088,37 @@ have that translation). `linksUnreachableFor()` is conservative by
 construction: an unresolvable link target counts as reachable, so an unknown
 link can never silently suppress a flag.
 
+### Repairing drift is not creating it — the convergence carve-out (added 2026-08-06)
+
+The gate infers drift from *"one side of a cluster moved, the other didn't."*
+That proxy **inverts on a backfill**. A pass that adds content the sibling
+already has — the locale half of a peer-link sync, a missing FAQ ported over,
+an EN page catching up to links its translations already carry — necessarily
+touches one side only, so the gate reads the repair exactly like the damage.
+Not hypothetical: the locale peer-link sync above tripped it **353 times**,
+in both directions, with every single pair ending up measurably *closer* to
+its sibling than it started.
+
+So `check-translation-parity.js` now measures the thing the rule is about
+instead of inferring it. `convergedTowards()` scores pairwise divergence
+before vs after against the untouched sibling as a fixed reference (same
+shared fingerprint/diff/score the audit uses); a **strict** decrease means the
+page moved toward its sibling and there is nothing to sync. Applied on both
+branches — per-sibling on the EN branch, since one EN edit can converge toward
+some siblings while diverging from others. Converged pairs are **reported**
+with their before→after scores, never silenced.
+
+Strict `<`, not `<=`, on purpose: trading one divergence for another nets to
+zero and is precisely the drift this check exists for. New pages are
+unaffected (no prior state to have converged from). Verified still catching
+real drift: an added `/library/currency-symbols/` link on `/discord/` flags 7
+pairs, and deleting one peer card from a locale symbol page flags that pair.
+
+*(Note: the carve-out section above records that probe as flagging "exactly
+`fr` and `id`". It flags **7** locales as of 2026-08-06 — five more have since
+gained a currency-symbols translation. The probe still works; the expected
+count moves as the site grows.)*
+
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
 classifies a *page type* whose link list is an inventory. Adding a pattern to
@@ -1189,9 +1235,13 @@ at their intersection:
 - **`data/locale_qualification_tiers.json`** — tiers every one of the 29
   canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
   (qualify via the existing 7-point gate, then mirror Core), or Tier 3
-  (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
-  — its problem is an authority/indexing gap, not a content gap; do not add
-  vi content.
+  (hold/stub, no spec mirroring). A locale can additionally carry
+  `hold: true` within Tier 2 for a non-content reason (authority/indexing
+  gap rather than a content gap) — no locale currently does. `vi` carried
+  this from 2026-07-24 to 2026-08-06 (lifted per user decision — see
+  "What passes a gate" §3 below for the override history, and
+  `docs/locale-parent-governance.md` §2 for the full record); it's plain
+  Tier 2 now, same as its qualify-then-mirror-Core siblings.
 
 `scripts/lib/locale-parent-registry.js`'s `decide(relPath, localeCode)` walks
 the full 5-step flowchart (Tier-3/held locale → skip; script-incompatible
@@ -1277,7 +1327,19 @@ complete flowchart, and every script's flags/exit codes:
   declared `hreflang="no"` pointing at its own URL (a mislabeled entry, not
   a real Norwegian sibling link) instead of `no/kursiv-tekst/` — flagged as
   a conflict and left for manual resolution rather than silently
-  overwritten. Also watch for genuine **duplicate-page clusters** as a
+  overwritten. **Placeholder EN-homepage claims (2026-08-06):** a *subpage*
+  naming the bare homepage as its `hreflang="en"` is the documented shape of
+  a ratified local-only page, and `audit-hreflang.js --fix` has always refused
+  to repair it (writing it back would make the homepage link one arbitrary
+  subpage). The audit nonetheless counted those pairs as blocking
+  non-reciprocal issues — demanding a repair its own fixer declines to make,
+  which would have turned every PR red the moment the workflow started
+  gating. They now classify separately: reported in their own informational
+  section, annotated against `data/english_parent_exceptions.json` so an
+  *unratified* claim is still visible, and excluded from the exit code.
+  Homepage-to-homepage claims (locale homepages listing each other) are a real
+  cluster and are still checked and fixed. Also watch for genuine
+  **duplicate-page clusters** as a
   byproduct of any run — two members that declare the same locale for one
   EN parent (a content bug, not a completeness gap) — which this script
   surfaces but never auto-fixes; resolve those by hand per the "Parallel
@@ -1308,22 +1370,6 @@ complete flowchart, and every script's flags/exit codes:
   backlog this script only surfaces — this class was driven to zero in the
   same change that added the check, so it **fails the build**; there is no
   legitimate case for two EN parents sharing a translation.
-- **`audit-hreflang.js` and ratified local-only pages (added 2026-08-08).**
-  The reciprocity audit reads `data/english_parent_exceptions.json` and
-  exempts one specific edge: a **ledgered** local-only page pointing
-  `hreflang="en"`/`x-default` at the **bare homepage**. Per the English-Parent
-  Rule above that placeholder is explicitly "not a translation-equivalence
-  claim," so the homepage is not supposed to link back — but the audit
-  counted every such page as a permanent non-reciprocal pair, which is why it
-  could never reach zero and therefore could never be trusted as a gate. (Its
-  `--fix` path already knew this; see `isHomepage()`'s comment. Only the
-  reporting path disagreed.) The exemption is deliberately narrow: gated on
-  the ledger, not a blanket homepage skip, so an **un**-ratified page pointing
-  at the homepage is still a genuine orphan and still fails. Exempted edges
-  are counted in a visible "Ratified local-only placeholders" line rather than
-  dropped silently. Consequence to know: **ratifying a page in that ledger now
-  also suppresses an hreflang finding**, so the ledger's "never add an entry
-  unilaterally" rule guards CI behaviour too, not just the parent-gap gate.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
@@ -1379,12 +1425,16 @@ Three recurring points of confusion, each resolved by a real case:
    still chose to include vi in a `symbol/*` build; the authorization was
    recorded as a `data/locale_parent_gap_audit.json` entry with `null`
    instruments and evidence text naming it a user authorization
-   (`f09d35b5`) — vi's hold flag and tier were left untouched. That's the
-   template: the override lives in the ledger as a dated, attributed
-   decision; the registry keeps stating the standing default. Presenting the
-   hold reasoning to the user *before* they decide is part of the override
-   being legitimate — a hold silently ignored is a violation, a hold
-   knowingly overridden is a decision.
+   (`f09d35b5`) — vi's hold flag and tier were left untouched at the time.
+   That's the template for a per-batch override: the override lives in the
+   ledger as a dated, attributed decision; the registry keeps stating the
+   standing default. Presenting the hold reasoning to the user *before* they
+   decide is part of the override being legitimate — a hold silently
+   ignored is a violation, a hold knowingly overridden is a decision.
+   (Superseded 2026-08-06: this per-batch-override pattern is now historical
+   for `vi` specifically — the user lifted the hold flag itself rather than
+   overriding it batch-by-batch. The pattern above still applies to any
+   future locale that picks up a hold.)
 4. **An all-instruments-null authorization is a bridge, not a pass
    (2026-08-01).** A `data/locale_parent_gap_audit.json` entry recorded with
    every instrument `null` (a user authorization in lieu of a real pull) must
@@ -1452,27 +1502,85 @@ something in this repo's tracked files, and it was not verified as part of
 adding this tooling. If new pages are still shipping without their art after
 this, check that setting before assuming the scripts are wrong.
 
-**Correction (2026-08-08) — there was a second, earlier cause, and it was in
-this repo's own tracked files.** The paragraph above sends you to branch
-protection first. That was incomplete: for the whole life of `validate.yml`
-up to this date, the job *never reported failure in the first place*, so
-there was no failing status for branch protection to enforce. Every
-validator runs as `npm run check:X | tee X.log`, and the workflow declared
-no `shell:`, so steps used GitHub's **default** Linux shell `bash -e {0}` —
-which, unlike `shell: bash` (`bash --noprofile --norc -eo pipefail {0}`),
-does **not** set `pipefail`. The pipeline's exit code was therefore `tee`'s,
-always 0. Each step recorded `outcome=success` no matter what the script
-printed, and the final "Fail the job if any gating validator reported
-problems" step — which keys off exactly those outcomes — was `skipped` on
-every run. **All nine gating validators were affected**, not just the image
-ones. Diagnosed from PR #702's run (`30983660731`): the hreflang step shows
-`success` on a tree byte-identical to the `main` that fails `npm run
-check:hreflang` locally with 6 issues, and the gating step shows `skipped`.
-Fixed by a job-level `defaults.run.shell: bash`. **Both causes are real** —
-check the required-status-check setting *as well*; this correction adds a
-prior cause, it does not retire that one. And when adding a step to
-`validate.yml`, never let a `| tee` be the last command in a step that is
-supposed to gate without confirming `pipefail` is in effect.
+**Root cause found, and it was neither (2026-08-06): the whole workflow was
+inert.** Every validator step in `validate.yml` is `<validator> | tee X.log`.
+A pipeline exits with its **last** command's status, `tee` always succeeds,
+and GitHub's default `run:` shell is `bash -e {0}` — `-e` but **no
+pipefail**. So every step recorded `outcome == 'success'` no matter what the
+validator exited with, and the final "Fail the job if any gating validator
+reported problems" step, which keys off exactly those outcomes, could never
+fire. Fixed by declaring `defaults.run.shell: bash` on the job, which is
+`bash --noprofile --norc -eo pipefail {0}`.
+
+Two consequences worth carrying forward:
+- **A green "Validate Site" on any PR before 2026-08-06 carries no
+  information.** Do not cite one as evidence a page passed anything.
+- **Adding a validator script is not the same as gating on it.** Before
+  trusting a new check, confirm it actually fails a PR — run it against a
+  deliberately broken input and watch the job go red. Every gate in this file
+  had been reasoned about, documented, and wired, and none of them worked.
+
+Also wired the same day: `npm run check:funding-choices`, which existed but
+was never added to the workflow — which is how 37 pages shipped without the
+ad-blocking-recovery tag. Unlike the other whole-site checks it gates rather
+than informs, because it has no backlog to be permanently red against (the
+tag is either in `<head>` or not, and
+`scripts/inject-funding-choices-tag.js` closes any gap in one idempotent run).
+
+**It happened again on 2026-08-07, a different way: the workflow stopped
+parsing.** An `if:` written at column 0 and a `run: |` folded onto the line
+above left `validate.yml` invalid YAML. It sat broken for a day, and every PR
+merged in that window was unchecked, including a 22-page locale batch.
+
+**Where an unparseable workflow does and doesn't show up** — verified against
+the real runs on 2026-08-08, because the intuitive answer is wrong in both
+directions:
+
+- On **`push`**, GitHub *does* create a failed run. It is named after the file
+  path (`.github/workflows/validate.yml`) rather than its `name:`, because the
+  `name:` is inside the file it could not parse. Nine of these accumulated
+  across 08-07.
+- On **`pull_request`**, it creates **nothing**. GitHub cannot know the file
+  wanted to run on `pull_request` — that trigger is also inside the unparsed
+  file. So the entry simply disappears from the PR's checks list. For commits
+  `09e0935f6`, `76237e264` and `d85029f66` the PR checks were CSS Audit, GTM
+  Check, Ads Check, and nothing else.
+
+That asymmetry is the whole trap: the failure was loud in the Actions tab,
+where nobody looks, and absent from the PR checks list, which is what merges
+gate on. **A vanished check reads exactly like a check that was never
+required.**
+
+The two incidents share a shape worth naming: **a check that reports nothing
+is indistinguishable from a check that passes.** Both times the evidence of
+health was the absence of a complaint.
+
+**`npm run check:workflows`** (`scripts/check-workflows.py`) closes it. It
+parses every `.github/workflows/*.yml`, requires the shape Actions actually
+needs (a trigger, `jobs`, per job a `runs-on` and steps that have `uses` or
+`run`), and encodes both incidents as rules:
+
+- **pipefail** — a step that pipes (`| tee`) with no `shell: bash` in effect
+  is an error, because GitHub's default `bash -e` has no pipefail. `||` is
+  explicitly not a pipe; flagging the repo's own `git diff --quiet || git
+  commit` idiom would train people to ignore the check.
+- **swallowed failures** — a `continue-on-error: true` step must have an `id`,
+  and `steps.<id>.` must be referenced somewhere in the file. A step allowed
+  to fail whose outcome nobody reads is a check that does nothing.
+
+**It runs from two places on purpose, and both are needed.** A step inside
+`validate.yml` cannot catch `validate.yml` failing to parse, so the lint also
+runs from its own small workflow, `.github/workflows/workflow-lint.yml` —
+whichever of the two still parses reports on the one that doesn't. Do not
+consolidate them.
+
+Verified per this section's own rule before being trusted: run against four
+deliberately broken inputs — the real 2026-08-07 parse break, the real
+2026-08-06 missing `defaults.run.shell`, a `continue-on-error` step with no
+`id`, and a step with neither `uses` nor `run` — each exits non-zero. Its
+first real run also found the pipefail bug live in a *second* workflow,
+`css-audit.yml`, which had been reporting success regardless of what
+`audit-css.js` found; fixed in the same change.
 
 ---
 
@@ -1587,11 +1695,36 @@ silently return is the tooling below, not vigilance.
 
 ## Testing
 
-There is no automated test framework. Testing is manual and browser-based:
+There is no automated test framework, and no runner — every test here is a
+plain file you open or a plain file you `node`. Testing is otherwise manual
+and browser-based:
+
 - `js/vertical/verticalLayouts.test.html` — manual test page for vertical layout module
+- `js/counter/counterRules.test.js` — `node js/counter/counterRules.test.js`.
+  Assertions for the pure half of the character counter: counting modes,
+  per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
+  `LIMITS` table integrity. No DOM, no dependencies.
+- `js/counter/counter.test.html` — the DOM half, which needs a browser: the
+  two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
+  ordering, SMS segments, soft-limit warning, clear. Open it and read the
+  panel, or drive it headlessly and read `window.__UTG_TEST` (`{ pass, fail,
+  lines, summary }`). It runs against a deliberately **non-English** I18N
+  block, so it also asserts that a translated page renders translated fix-bar
+  buttons instead of falling back to English — a regression that would
+  otherwise only ever be noticed by a reader of that language.
 - Test changes by opening HTML files in a browser
 
-Do not add a test framework unless explicitly requested.
+**Why the counter has tests when nothing else does.** It is the one surface
+whose entire value proposition is numerical correctness, and it shipped a
+wrong number: Bluesky was billing code points while the page's own reference
+table said graphemes, so 👨‍👩‍👧‍👦 cost 7 instead of 1. A visual check
+cannot catch that. Any future page that *asserts facts* — limits, counts,
+encodings — deserves the same treatment; a page that merely renders copy does
+not.
+
+Do not add a test framework unless explicitly requested. Adding another
+zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
+framework" and needs no permission.
 
 ---
 
