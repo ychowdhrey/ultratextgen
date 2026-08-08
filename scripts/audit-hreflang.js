@@ -64,6 +64,33 @@ function isHomepage(url) {
   return /^https:\/\/ultratextgen\.com\/([a-z]{2}(-[a-z]+)?\/)?$/.test(url);
 }
 
+// Ratified local-only pages (CLAUDE.md, "Localization Workflow — the
+// English-Parent Rule") deliberately have NO English parent. They point
+// hreflang="en"/x-default at the bare homepage as a generic placeholder — per
+// CLAUDE.md that is explicitly "not a translation-equivalence claim" — so the
+// homepage is NOT supposed to link back with that page's locale code.
+//
+// The --fix path already knows this (see isHomepage() above: the homepage
+// "must never be auto-edited to link back to one arbitrary subpage"), but the
+// reporting path did not, so every ratified exception counted as a permanent
+// non-reciprocal pair. That left this audit unable to reach zero for
+// by-design reasons — and an audit that is always red is one nobody can gate
+// on. data/english_parent_exceptions.json is the ledger of record for which
+// pages have been ratified, so read it rather than hardcoding a list.
+//
+// Deliberately narrow: only an edge from a ratified page TO a homepage is
+// exempt. A page that is not in the ledger pointing en-> the homepage is a
+// genuine un-ratified orphan and still gets flagged.
+const ratifiedLocalOnly = new Set();
+try {
+  const ledger = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/english_parent_exceptions.json'), 'utf8'));
+  for (const e of ledger.exceptions || []) {
+    if (e && e.localeUrl) ratifiedLocalOnly.add(normalize(e.localeUrl));
+  }
+} catch (err) {
+  console.warn(`  ! could not read data/english_parent_exceptions.json (${err.message}) — ratified local-only pages will be reported as non-reciprocal`);
+}
+
 function extractLinks(html) {
   let canonical = null;
   const alternates = []; // { hreflang, href }
@@ -113,11 +140,18 @@ console.log(`  Pages declaring hreflang:        ${pages.length}`);
 const brokenList = []; // target href matches no known page at all
 const headless = new Map(); // target record -> [{ sourcePage, hreflang }]  (target exists, but has zero alternates)
 const nonReciprocal = []; // { page, target, hreflang }  (target exists, has alternates, doesn't link back)
+const exemptPlaceholders = []; // ratified local-only page -> homepage placeholder (by design, see ratifiedLocalOnly)
 
 for (const page of pages) {
   for (const alt of page.alternates) {
     if (alt.hreflang === 'x-default') continue; // informational hint, not a reciprocal pair
     if (alt.href === page.canonical) continue; // self-reference, expected
+
+    // Ratified local-only page -> homepage placeholder: by design, not a gap.
+    if (isHomepage(alt.href) && ratifiedLocalOnly.has(page.canonical)) {
+      exemptPlaceholders.push(`${page.rel}  hreflang="${alt.hreflang}" -> ${alt.href}`);
+      continue;
+    }
 
     const target = byUrl.get(alt.href);
     if (!target) {
@@ -179,6 +213,7 @@ console.log(`  Non-reciprocal pairs:            ${nonReciprocal.length}`);
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
 console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
+console.log(`  Ratified local-only placeholders: ${exemptPlaceholders.length} (exempt, see data/english_parent_exceptions.json)`);
 
 if (nonReciprocal.length) {
   console.log('');

@@ -71,6 +71,27 @@ jobs:
     permissions:
       contents: read
 
+    # REQUIRED for the gating step at the bottom of this job to work at all.
+    # Every validator below is run as `npm run check:X | tee X.log` so its
+    # output lands in both the log and the step summary. GitHub's *default*
+    # shell on Linux is `bash -e {0}` — no `-o pipefail` — so a pipeline's
+    # exit code is `tee`'s, which is always 0. That silently swallowed every
+    # validator's non-zero exit: each step recorded outcome=success no matter
+    # what the script reported, and the "Fail the job if any gating validator
+    # reported problems" step below (which keys off those outcomes) was
+    # skipped every run. Setting `shell: bash` switches to
+    # `bash --noprofile --norc -eo pipefail {0}`, so the pipeline's exit code
+    # is the validator's again.
+    #
+    # This was live from the workflow's creation until 2026-08-08 and made all
+    # nine gating validators non-functional — verified against PR #702's run
+    # (30983660731), where the hreflang step reported success on a tree that
+    # fails `npm run check:hreflang` locally with 6 issues. Do not remove this
+    # block, and do not add a `| tee` step that overrides `shell:`.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
