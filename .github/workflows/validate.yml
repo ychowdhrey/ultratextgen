@@ -117,6 +117,16 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      # First, and gating (no continue-on-error). If a workflow in this repo
+      # does not parse, GitHub does not run it and does not report it as
+      # failing — it just silently vanishes from the PR's checks, which is how
+      # this very file sat dead from 2026-08-07 to 2026-08-08 while PRs merged
+      # unchecked. .github/workflows/workflow-lint.yml runs the same script
+      # from its own workflow, because a step in here cannot catch THIS file
+      # failing to parse. The two cover each other; keep both.
+      - name: Lint GitHub Actions workflows
+        run: pip install pyyaml >/dev/null && python3 scripts/check-workflows.py
+
       - name: Run hreflang reciprocity audit
         id: hreflang
         continue-on-error: true

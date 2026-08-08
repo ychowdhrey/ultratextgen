@@ -1507,6 +1507,44 @@ than informs, because it has no backlog to be permanently red against (the
 tag is either in `<head>` or not, and
 `scripts/inject-funding-choices-tag.js` closes any gap in one idempotent run).
 
+**It happened again on 2026-08-07, a different way: the workflow stopped
+parsing.** An `if:` written at column 0 and a `run: |` folded onto the line
+above left `validate.yml` invalid YAML. GitHub does not report a workflow it
+cannot parse as failing — it does not run it at all: no red X, no annotation,
+no check on the PR. It sat broken for a day, and every PR merged in that
+window was completely unchecked, including a 22-page locale batch.
+
+The two incidents share a shape worth naming: **a check that reports nothing
+is indistinguishable from a check that passes.** Both times the evidence of
+health was the absence of a complaint.
+
+**`npm run check:workflows`** (`scripts/check-workflows.py`) closes it. It
+parses every `.github/workflows/*.yml`, requires the shape Actions actually
+needs (a trigger, `jobs`, per job a `runs-on` and steps that have `uses` or
+`run`), and encodes both incidents as rules:
+
+- **pipefail** — a step that pipes (`| tee`) with no `shell: bash` in effect
+  is an error, because GitHub's default `bash -e` has no pipefail. `||` is
+  explicitly not a pipe; flagging the repo's own `git diff --quiet || git
+  commit` idiom would train people to ignore the check.
+- **swallowed failures** — a `continue-on-error: true` step must have an `id`,
+  and `steps.<id>.` must be referenced somewhere in the file. A step allowed
+  to fail whose outcome nobody reads is a check that does nothing.
+
+**It runs from two places on purpose, and both are needed.** A step inside
+`validate.yml` cannot catch `validate.yml` failing to parse, so the lint also
+runs from its own small workflow, `.github/workflows/workflow-lint.yml` —
+whichever of the two still parses reports on the one that doesn't. Do not
+consolidate them.
+
+Verified per this section's own rule before being trusted: run against four
+deliberately broken inputs — the real 2026-08-07 parse break, the real
+2026-08-06 missing `defaults.run.shell`, a `continue-on-error` step with no
+`id`, and a step with neither `uses` nor `run` — each exits non-zero. Its
+first real run also found the pipefail bug live in a *second* workflow,
+`css-audit.yml`, which had been reporting success regardless of what
+`audit-css.js` found; fixed in the same change.
+
 ---
 
 ## Build & Development
