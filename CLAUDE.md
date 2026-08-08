@@ -1288,6 +1288,42 @@ complete flowchart, and every script's flags/exit codes:
   occasional manual spot-check for headless pages (`audit-hreflang.js`
   already reports these as "Headless targets") remains worthwhile alongside
   this tool.
+  **Cross-cluster edges (added 2026-08-08) — a third failure mode, blocking.**
+  Page A names B as its sibling for locale L, but B's own `hreflang="en"`
+  claims a *different* EN parent, so the two sit in different clusters and A
+  is advertising another cluster's page as its translation. Neither prior
+  check can see it: completeness reconstructs membership from each page's own
+  `hreflang="en"`, so B is simply not a member of A's cluster and the stray
+  edge is never examined; reciprocity only asks whether an edge points both
+  ways, and a cross-cluster edge can be **perfectly reciprocal and still
+  wrong**. Real case, the one that prompted the check: every member of
+  `library/aesthetic-symbols/` correctly listed `it/library/simboli/` as its
+  Italian page, while `nl/library/speciale-tekens/` — a member of
+  `library/special-characters/` — listed that same Italian page as *its*
+  Italian version, and `simboli` listed `speciale-tekens` back as its Dutch
+  version. Two EN parents claiming one translation, in both directions,
+  invisible to both existing audits. Never auto-fixed (which side is wrong is
+  a content call: drop the stray entry, or repoint it at that locale's real
+  page in this cluster). Unlike duplicate-page clusters — a pre-existing
+  backlog this script only surfaces — this class was driven to zero in the
+  same change that added the check, so it **fails the build**; there is no
+  legitimate case for two EN parents sharing a translation.
+- **`audit-hreflang.js` and ratified local-only pages (added 2026-08-08).**
+  The reciprocity audit reads `data/english_parent_exceptions.json` and
+  exempts one specific edge: a **ledgered** local-only page pointing
+  `hreflang="en"`/`x-default` at the **bare homepage**. Per the English-Parent
+  Rule above that placeholder is explicitly "not a translation-equivalence
+  claim," so the homepage is not supposed to link back — but the audit
+  counted every such page as a permanent non-reciprocal pair, which is why it
+  could never reach zero and therefore could never be trusted as a gate. (Its
+  `--fix` path already knew this; see `isHomepage()`'s comment. Only the
+  reporting path disagreed.) The exemption is deliberately narrow: gated on
+  the ledger, not a blanket homepage skip, so an **un**-ratified page pointing
+  at the homepage is still a genuine orphan and still fails. Exempted edges
+  are counted in a visible "Ratified local-only placeholders" line rather than
+  dropped silently. Consequence to know: **ratifying a page in that ledger now
+  also suppresses an hreflang finding**, so the ledger's "never add an entry
+  unilaterally" rule guards CI behaviour too, not just the parent-gap gate.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
@@ -1415,6 +1451,28 @@ Settings → Branches for the target branch — that's a repository setting, not
 something in this repo's tracked files, and it was not verified as part of
 adding this tooling. If new pages are still shipping without their art after
 this, check that setting before assuming the scripts are wrong.
+
+**Correction (2026-08-08) — there was a second, earlier cause, and it was in
+this repo's own tracked files.** The paragraph above sends you to branch
+protection first. That was incomplete: for the whole life of `validate.yml`
+up to this date, the job *never reported failure in the first place*, so
+there was no failing status for branch protection to enforce. Every
+validator runs as `npm run check:X | tee X.log`, and the workflow declared
+no `shell:`, so steps used GitHub's **default** Linux shell `bash -e {0}` —
+which, unlike `shell: bash` (`bash --noprofile --norc -eo pipefail {0}`),
+does **not** set `pipefail`. The pipeline's exit code was therefore `tee`'s,
+always 0. Each step recorded `outcome=success` no matter what the script
+printed, and the final "Fail the job if any gating validator reported
+problems" step — which keys off exactly those outcomes — was `skipped` on
+every run. **All nine gating validators were affected**, not just the image
+ones. Diagnosed from PR #702's run (`30983660731`): the hreflang step shows
+`success` on a tree byte-identical to the `main` that fails `npm run
+check:hreflang` locally with 6 issues, and the gating step shows `skipped`.
+Fixed by a job-level `defaults.run.shell: bash`. **Both causes are real** —
+check the required-status-check setting *as well*; this correction adds a
+prior cause, it does not retire that one. And when adding a step to
+`validate.yml`, never let a `| tee` be the last command in a step that is
+supposed to gate without confirming `pipefail` is in effect.
 
 ---
 
