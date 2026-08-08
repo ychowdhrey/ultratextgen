@@ -1,0 +1,265 @@
+{
+  "slug": "klavye-sembolleri",
+  "title": "Klavye Sembolleri ⌘ ⌥ ⇧ — Klavyede Olmayan İşaretler | UltraTextGen",
+  "meta_description": "Klavye sembolleri ⌘ ⌥ ⇧ ⌫ ⇥ tek sayfada: Mac tuş işaretleri, düzenleme ve yön tuşları. Klavyede olmayan sembolleri tıkla kopyala.",
+  "breadcrumb": "Klavye Sembolleri",
+  "hero_h1": "Klavye Sembolleri",
+  "hero_tagline": "Command, Option, Shift, Backspace ve yön tuşlarının sembolleri — kısayol anlatırken yazıya gömebileceğin gerçek karakterler.",
+  "intro": "Bir kısayolu anlatırken 'Command + Shift + 4' yazmak yerine ⌘⇧4 yazabilirsin: bunlar ekran görüntüsü değil, gerçek Unicode karakterleri. Klavyende bu tuşlar olmasa bile kopyalayıp her yere yapıştırabilirsin — dokümantasyon, sunum ve yardım metinleri için.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "mac-tuslari",
+      "label": "Mac Tuşları",
+      "h2": "Mac Değiştirici Tuş Sembolleri",
+      "intro": "Apple klavyelerinin üstündeki işaretlerin tam karşılıkları.",
+      "symbols": [
+        {
+          "char": "⌘",
+          "label": "Command Tuşu"
+        },
+        {
+          "char": "⌥",
+          "label": "Option (Alt) Tuşu"
+        },
+        {
+          "char": "⇧",
+          "label": "Shift Tuşu"
+        },
+        {
+          "char": "⌃",
+          "label": "Control Tuşu"
+        },
+        {
+          "char": "⇪",
+          "label": "Caps Lock"
+        },
+        {
+          "char": "⏏",
+          "label": "Çıkar (Eject) Tuşu"
+        },
+        {
+          "char": "⎋",
+          "label": "Escape Tuşu"
+        }
+      ]
+    },
+    {
+      "id": "duzenleme",
+      "label": "Düzenleme",
+      "h2": "Düzenleme ve Gezinme Tuşları",
+      "intro": "Enter, Backspace, Tab ve boşluk tuşunun sembolleri.",
+      "symbols": [
+        {
+          "char": "⏎",
+          "label": "Return Tuşu"
+        },
+        {
+          "char": "↵",
+          "label": "Satır Başı Oku"
+        },
+        {
+          "char": "⌫",
+          "label": "Geri Silme (Backspace)"
+        },
+        {
+          "char": "⌦",
+          "label": "İleri Silme (Delete)"
+        },
+        {
+          "char": "⇥",
+          "label": "Tab Tuşu"
+        },
+        {
+          "char": "⇤",
+          "label": "Geri Tab"
+        },
+        {
+          "char": "␣",
+          "label": "Boşluk Tuşu"
+        }
+      ]
+    },
+    {
+      "id": "yon-tuslari",
+      "label": "Yön",
+      "h2": "Yön Tuşları ve Özel Semboller",
+      "intro": "Ok tuşları ve sık kullanılan diğer klavye işaretleri.",
+      "symbols": [
+        {
+          "char": "↑",
+          "label": "Yukarı Ok Tuşu"
+        },
+        {
+          "char": "↓",
+          "label": "Aşağı Ok Tuşu"
+        },
+        {
+          "char": "←",
+          "label": "Sol Ok Tuşu"
+        },
+        {
+          "char": "→",
+          "label": "Sağ Ok Tuşu"
+        },
+        {
+          "char": "⌨",
+          "label": "Klavye"
+        },
+        {
+          "char": "⎈",
+          "label": "Control (Dümen) Sembolü"
+        },
+        {
+          "char": "⎙",
+          "label": "Ekran Görüntüsü Sembolü"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "klavye-sembol-kullanim",
+      "label": "Kullanım",
+      "h2": "Bu Semboller Nerede İşe Yarar?",
+      "paragraphs": [
+        "Bu karakterler bir görsel değil, düz metin. Yani bir Word belgesine, Notion sayfasına, GitHub açıklamasına ya da e-postaya yapıştırdığında metin olarak kalır: aranabilir, kopyalanabilir ve yazı tipiyle birlikte ölçeklenir. Kısayol anlatan her yerde ekran görüntüsünden çok daha kullanışlı.",
+        "Windows kullanıyorsan da işine yarar. ⌘ Mac'e özel olsa bile ⇧, ⌫, ⇥ ve ok tuşları her platformda aynı anlamı taşır; Windows için Ctrl yerine ⌃ kullanmak yaygın bir gösterim. Karma bir kitleye yazıyorsan sembolün yanına tuşun adını da yazmak en güvenlisi.",
+        "Bazı sembollerin gösterimi yazı tipine bağlı. ⌘ ve ⌥ neredeyse her yerde düzgün çizilirken ⎙ ve ⎈ daha az yaygın olduğu için kimi yazı tiplerinde boş kutu çıkabilir. Önemli bir belgede kullanmadan önce hedef ortamda görünüp görünmediğini denemek işi garantiye alır."
+      ]
+    }
+  ],
+  "faq_h2": "Klavye Sembolleri Hakkında Sık Sorulanlar",
+  "faq": [
+    {
+      "q": "Klavyede olmayan sembolleri nasıl yazarım?",
+      "a": "En pratik yolu buradan kopyalamak: sembolün üstüne tıkla, panoya kopyalansın, istediğin yere yapıştır. Alt kodları ve karakter haritası da çalışır ama kısayol sembolleri için kopyalamak çok daha hızlı."
+    },
+    {
+      "q": "⌘ sembolü ne anlama geliyor?",
+      "a": "Mac'teki Command tuşu. Unicode'daki resmî adı 'Place of Interest Sign' ve aslında İskandinav haritalarında turistik yeri gösteren bir işaret — Apple bu sembolü klavyesine almış."
+    },
+    {
+      "q": "Bu semboller Windows'ta çalışır mı?",
+      "a": "Evet, karakterlerin hepsi standart Unicode. ⌘ Windows klavyesinde bir tuşa karşılık gelmese de karakter olarak sorunsuz görünür ve kopyalanır."
+    },
+    {
+      "q": "Sembol boş kutu olarak çıkıyor, ne yapmalıyım?",
+      "a": "Kullandığın yazı tipi o karakteri içermiyordur. Farklı bir yazı tipi dene ya da ⎙ gibi az yaygın sembolleri, karşılığını yazıyla belirterek kullan."
+    },
+    {
+      "q": "Kısayolları yazarken sembol mü kullanmalıyım, kelime mi?",
+      "a": "Mac odaklı bir metinde semboller (⌘⇧4) daha okunaklı ve kısa. Karma ya da yeni başlayan bir kitleye yazıyorsan ilk geçtiği yerde 'Command (⌘)' gibi ikisini birlikte vermek en anlaşılırı."
+    }
+  ],
+  "faq_label": "SSS",
+  "related": [
+    {
+      "href": "/tr/library/semboller/",
+      "title": "Semboller",
+      "desc": "Bütün sembol koleksiyonlarının giriş sayfası."
+    },
+    {
+      "href": "/tr/library/ok-isaretleri/",
+      "title": "Ok İşaretleri",
+      "desc": "→ ← ↑ ↓ ve bütün ok karakterleri."
+    },
+    {
+      "href": "/tr/library/alt-kodlari/",
+      "title": "Alt Kodları",
+      "desc": "Klavyeden özel karakter yazmanın kod listesi."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "± × ÷ ≠ ve diğer işlem işaretleri."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/tr/library/klavye-sembolleri/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
+  "lang": "tr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/klavye-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    }
+  ],
+  "collection_section": {
+    "id": "hazir-setler",
+    "label": "Kısayol Setleri",
+    "h2": "Hazır Kısayol Setleri",
+    "intro": "Sık anlatılan kısayolların sembol hâli — dokümana ya da sunuma tek tıkla yapıştır."
+  },
+  "collection_container_id": "keyboardSetsContainer",
+  "collections": [
+    {
+      "name": "Kopyala / Yapıştır",
+      "flags": [
+        "⌘",
+        "⇧",
+        "⌥",
+        "⌃"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ekran Görüntüsü",
+      "flags": [
+        "⌘",
+        "⇧",
+        "⌃"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Metin Düzenleme",
+      "flags": [
+        "⌫",
+        "⌦",
+        "⇥",
+        "⇤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Satır ve Boşluk",
+      "flags": [
+        "⏎",
+        "↵",
+        "␣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yön Tuşları",
+      "flags": [
+        "↑",
+        "↓",
+        "←",
+        "→"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sistem Tuşları",
+      "flags": [
+        "⎋",
+        "⇪",
+        "⏏",
+        "⌨"
+      ],
+      "defaultFormat": "inline"
+    }
+  ]
+}
