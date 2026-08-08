@@ -2,11 +2,15 @@ name: Workflow Lint
 
 # Why this is its own workflow instead of a step inside validate.yml
 # -----------------------------------------------------------------
-# GitHub silently does not run a workflow it cannot parse: no red X, no
-# annotation, no check on the PR at all. validate.yml stopped parsing on
-# 2026-08-07 (an `if:` at column 0 plus a `run: |` folded onto the line above)
-# and nothing noticed for a day — every PR merged in that window, including a
-# 22-page locale batch, went completely unchecked.
+# An unparseable workflow disappears from the PR's checks list — the list
+# merges gate on. On `push` GitHub records a failed run (named after the file
+# path, since the `name:` is inside the file it could not parse); on
+# `pull_request` it records nothing at all, because that trigger is also
+# inside the unparsed file. validate.yml stopped parsing on 2026-08-07 (an
+# `if:` at column 0 plus a `run: |` folded onto the line above) and nothing
+# noticed for a day — every PR merged in that window, including a 22-page
+# locale batch, went unchecked, while red marks piled up in the Actions tab
+# where nobody was looking.
 #
 # A step inside validate.yml cannot catch validate.yml failing to parse. So the
 # lint runs from here as well, and validate.yml runs it too: whichever of the

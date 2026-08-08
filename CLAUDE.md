@@ -1509,10 +1509,27 @@ tag is either in `<head>` or not, and
 
 **It happened again on 2026-08-07, a different way: the workflow stopped
 parsing.** An `if:` written at column 0 and a `run: |` folded onto the line
-above left `validate.yml` invalid YAML. GitHub does not report a workflow it
-cannot parse as failing — it does not run it at all: no red X, no annotation,
-no check on the PR. It sat broken for a day, and every PR merged in that
-window was completely unchecked, including a 22-page locale batch.
+above left `validate.yml` invalid YAML. It sat broken for a day, and every PR
+merged in that window was unchecked, including a 22-page locale batch.
+
+**Where an unparseable workflow does and doesn't show up** — verified against
+the real runs on 2026-08-08, because the intuitive answer is wrong in both
+directions:
+
+- On **`push`**, GitHub *does* create a failed run. It is named after the file
+  path (`.github/workflows/validate.yml`) rather than its `name:`, because the
+  `name:` is inside the file it could not parse. Nine of these accumulated
+  across 08-07.
+- On **`pull_request`**, it creates **nothing**. GitHub cannot know the file
+  wanted to run on `pull_request` — that trigger is also inside the unparsed
+  file. So the entry simply disappears from the PR's checks list. For commits
+  `09e0935f6`, `76237e264` and `d85029f66` the PR checks were CSS Audit, GTM
+  Check, Ads Check, and nothing else.
+
+That asymmetry is the whole trap: the failure was loud in the Actions tab,
+where nobody looks, and absent from the PR checks list, which is what merges
+gate on. **A vanished check reads exactly like a check that was never
+required.**
 
 The two incidents share a shape worth naming: **a check that reports nothing
 is indistinguishable from a check that passes.** Both times the evidence of

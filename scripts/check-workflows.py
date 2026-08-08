@@ -13,10 +13,16 @@ symptom was a workflow that *looked* fine and enforced nothing:
     Every gate in CLAUDE.md had been reasoned about, documented and wired, and
     none of them worked. Fixed with `defaults.run.shell: bash`.
   * 2026-08-07 — `validate.yml` stopped PARSING (an `if:` at column 0, and a
-    `run: |` concatenated onto the line above). GitHub silently does not run a
-    workflow it cannot parse: no red X, no annotation, no check on the PR at
-    all. It sat broken for a day and every PR merged in that window was
-    unchecked, including a 22-page locale batch.
+    `run: |` concatenated onto the line above). It sat broken for a day and
+    every PR merged in that window was unchecked, including a 22-page locale
+    batch. The reason nobody noticed is an asymmetry worth knowing (verified
+    against the real runs, 2026-08-08): on `push` GitHub *does* record a
+    failed run, named after the file path rather than its `name:` — the
+    `name:` is inside the file it could not parse. On `pull_request` it
+    records NOTHING, because the `pull_request` trigger is also inside that
+    file. So the check vanishes from the PR's checks list — the list merges
+    gate on — while red marks pile up in the Actions tab where nobody looks.
+    A vanished check reads exactly like a check that was never required.
 
 The second one is the reason this script is not just another step inside
 `validate.yml`: **a step inside a workflow cannot catch that workflow failing
