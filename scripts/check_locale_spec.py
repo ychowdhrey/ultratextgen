@@ -41,6 +41,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://ultratextgen.com"
 
+# hreflang code -> URL path segment, where the two differ. See the canonical
+# check below for why this exists.
+URL_SEGMENT = {"zh-TW": "zh-tw"}
+
 # Words that, appearing in a translated title/H1/intro, usually mean a row was
 # copied from the EN parent and never translated. Deliberately short: many
 # locales legitimately keep loanwords ("emoji", "aesthetic", "copy paste"), and
@@ -88,13 +92,20 @@ def check(path, strict=False):
     W = lambda m: warns.append(f"{name}: {m}")
 
     # --- filename convention -------------------------------------------------
-    if not name.startswith(f"{lang}-"):
+    if not (name.startswith(f"{lang}-") or name.startswith(f"{URL_SEGMENT.get(lang, lang)}-")):
         W(f'filename should start with "{lang}-" (lang={lang!r})')
 
     # --- canonical -----------------------------------------------------------
+    # The hreflang code and the URL path segment are NOT always the same string.
+    # zh-TW is the correct hreflang code, but every one of this site's live
+    # Traditional-Chinese URLs is /zh-tw/ (68 sitemap entries, zero uppercase).
+    # Deriving the path from `lang` sent a whole page cluster into a duplicate
+    # /zh-TW/ space nothing links to — caught 2026-08-10 on the iphone-emojis
+    # batch. Map explicitly rather than assuming they match.
     ptype = spec.get("page_type", "library")
     folder = "symbol" if ptype == "symbol" else "library"
-    want_canon = f"{SITE}/{lang}/{folder}/{slug}/"
+    seg = URL_SEGMENT.get(lang, lang)
+    want_canon = f"{SITE}/{seg}/{folder}/{slug}/"
     if spec.get("canonical") != want_canon:
         E(f"canonical is {spec.get('canonical')!r}, expected {want_canon!r}")
 

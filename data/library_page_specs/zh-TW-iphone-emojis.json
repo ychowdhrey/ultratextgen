@@ -1,0 +1,401 @@
+{
+  "slug": "iphone-emoji",
+  "title": "iPhone Emoji 🍎 蘋果表情符號複製貼上 | UltraTextGen",
+  "meta_description": "iPhone emoji 複製貼上：笑臉、愛心、手勢，以及一看就知道是蘋果的表情符號。點一下就複製，也說明為什麼 Android 顯示不一樣。",
+  "breadcrumb": "iPhone Emoji",
+  "hero_h1": "iPhone Emoji",
+  "hero_tagline": "蘋果畫的表情符號：臉、愛心、手勢，還有一眼就看出是 iPhone 的那些。",
+  "intro": "iPhone 的 emoji 跟 Android 並不是不同的字元，而是同一組 Unicode，只是由蘋果自己繪製。以下把最常用的分成四組，點一下就複製，可以直接貼到個人簡介、訊息或貼文裡。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "yuzler",
+      "label": "常用的 iPhone 臉部 Emoji",
+      "h2": "常用的 iPhone 臉部 Emoji",
+      "intro": "最常用的表情，蘋果版本。",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "笑到流淚"
+        },
+        {
+          "char": "🥹",
+          "label": "忍住眼淚的臉"
+        },
+        {
+          "char": "🥲",
+          "label": "含淚微笑"
+        },
+        {
+          "char": "😊",
+          "label": "微笑瞇眼"
+        },
+        {
+          "char": "🥰",
+          "label": "被愛心圍繞的笑臉"
+        },
+        {
+          "char": "😍",
+          "label": "愛心眼"
+        },
+        {
+          "char": "😎",
+          "label": "戴墨鏡的臉"
+        },
+        {
+          "char": "🤔",
+          "label": "思考的臉"
+        },
+        {
+          "char": "🙃",
+          "label": "顛倒的臉"
+        },
+        {
+          "char": "😭",
+          "label": "放聲大哭"
+        },
+        {
+          "char": "🥺",
+          "label": "水汪汪懇求臉"
+        },
+        {
+          "char": "😅",
+          "label": "尷尬冒汗笑"
+        },
+        {
+          "char": "😏",
+          "label": "得意的笑"
+        },
+        {
+          "char": "😴",
+          "label": "睡著的臉"
+        },
+        {
+          "char": "🤩",
+          "label": "星星眼"
+        },
+        {
+          "char": "🤯",
+          "label": "頭爆炸"
+        },
+        {
+          "char": "😡",
+          "label": "生氣的臉"
+        },
+        {
+          "char": "🫠",
+          "label": "融化的臉"
+        }
+      ]
+    },
+    {
+      "id": "kalpler",
+      "label": "iPhone 愛心 Emoji",
+      "h2": "iPhone 愛心 Emoji",
+      "intro": "各種顏色的愛心一次看完。",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "紅色愛心"
+        },
+        {
+          "char": "🩷",
+          "label": "粉紅色愛心"
+        },
+        {
+          "char": "🧡",
+          "label": "橘色愛心"
+        },
+        {
+          "char": "💛",
+          "label": "黃色愛心"
+        },
+        {
+          "char": "💚",
+          "label": "綠色愛心"
+        },
+        {
+          "char": "💙",
+          "label": "藍色愛心"
+        },
+        {
+          "char": "🩵",
+          "label": "淺藍色愛心"
+        },
+        {
+          "char": "💜",
+          "label": "紫色愛心"
+        },
+        {
+          "char": "🖤",
+          "label": "黑色愛心"
+        },
+        {
+          "char": "🩶",
+          "label": "灰色愛心"
+        },
+        {
+          "char": "🤍",
+          "label": "白色愛心"
+        },
+        {
+          "char": "🤎",
+          "label": "棕色愛心"
+        },
+        {
+          "char": "💕",
+          "label": "兩顆愛心"
+        },
+        {
+          "char": "💖",
+          "label": "閃亮愛心"
+        },
+        {
+          "char": "💔",
+          "label": "破碎的心"
+        },
+        {
+          "char": "❤️‍🔥",
+          "label": "燃燒的心"
+        }
+      ]
+    },
+    {
+      "id": "eller",
+      "label": "iPhone 手勢 Emoji",
+      "h2": "iPhone 手勢 Emoji",
+      "intro": "讚、拍手和聊天常用手勢。",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "讚"
+        },
+        {
+          "char": "👎",
+          "label": "倒讚"
+        },
+        {
+          "char": "🙏",
+          "label": "合十的手"
+        },
+        {
+          "char": "👏",
+          "label": "拍手"
+        },
+        {
+          "char": "🙌",
+          "label": "舉起雙手"
+        },
+        {
+          "char": "🤝",
+          "label": "握手"
+        },
+        {
+          "char": "👌",
+          "label": "OK 手勢"
+        },
+        {
+          "char": "🤌",
+          "label": "捏手指"
+        },
+        {
+          "char": "🤞",
+          "label": "交叉手指"
+        },
+        {
+          "char": "🫶",
+          "label": "雙手比愛心"
+        },
+        {
+          "char": "🤙",
+          "label": "打電話手勢"
+        },
+        {
+          "char": "✌️",
+          "label": "勝利手勢"
+        },
+        {
+          "char": "🤟",
+          "label": "我愛你手勢"
+        },
+        {
+          "char": "👋",
+          "label": "揮手"
+        },
+        {
+          "char": "🫰",
+          "label": "手指愛心"
+        },
+        {
+          "char": "💪",
+          "label": "手臂肌肉"
+        }
+      ]
+    },
+    {
+      "id": "iphone",
+      "label": "最有「iPhone 味」的 Emoji",
+      "h2": "最有「iPhone 味」的 Emoji",
+      "intro": "一眼就認得出來的那幾個。",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "桃子"
+        },
+        {
+          "char": "💩",
+          "label": "便便"
+        },
+        {
+          "char": "🔥",
+          "label": "火"
+        },
+        {
+          "char": "✨",
+          "label": "閃亮"
+        },
+        {
+          "char": "💯",
+          "label": "一百分"
+        },
+        {
+          "char": "🗿",
+          "label": "摩艾"
+        },
+        {
+          "char": "🦋",
+          "label": "蝴蝶"
+        },
+        {
+          "char": "🌙",
+          "label": "新月"
+        },
+        {
+          "char": "⭐",
+          "label": "星星"
+        },
+        {
+          "char": "💀",
+          "label": "骷髏"
+        },
+        {
+          "char": "👀",
+          "label": "眼睛"
+        },
+        {
+          "char": "🫶🏼",
+          "label": "手指愛心（膚色）"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "iPhone Emoji 常見問題",
+  "faq": [
+    {
+      "q": "iPhone 的 emoji 和 Android 的不一樣嗎？",
+      "a": "字元本身完全一樣，都是同一個 Unicode 編碼，只是蘋果和 Google 各自畫了一套。從這裡複製的 emoji 兩邊都能用。"
+    },
+    {
+      "q": "為什麼我的 emoji 在 Android 上長得不一樣？",
+      "a": "因為 Android 用的是 Google 那一套圖，不是蘋果的。內容沒有變，只是圖不同，不是錯誤也不是亂碼。"
+    },
+    {
+      "q": "可以從電腦或 Android 複製 iPhone 的 emoji 嗎？",
+      "a": "可以。這裡複製的是字元不是圖片，到哪裡都能貼。對方看到的樣子取決於他自己的裝置。"
+    },
+    {
+      "q": "為什麼 emoji 顯示成方框或問號？",
+      "a": "是裝置還不認得那個字元，通常因為系統版本太舊。新加入的 emoji 特別容易這樣，字元本身沒問題，換成較新的裝置就會正常顯示。"
+    },
+    {
+      "q": "有沒有蘋果字型可以讓 Android 顯示 iPhone 的 emoji？",
+      "a": "沒有，宣稱做得到的 App 要小心。Emoji 屬於作業系統的一部分，要看到蘋果的圖就得用蘋果的裝置。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "iPhone 與 Android：同一個 Emoji，不同的圖",
+      "body": "從 iPhone 傳出 😂 時，送出去的不是圖片，而是 Unicode 編碼 U+1F602。收到的手機再用自己那套圖畫出來 — 可能是蘋果、Google、三星或 WhatsApp 的版本。所以樣子會變，意思不會。真正會出問題的只有一種情況：那個 emoji 對收件人的系統來說太新，於是顯示成方框，更新系統就好了。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/biaoqing-fuhao-zuhe/",
+      "title": "Emoji 組合",
+      "desc": "可以直接貼上的 emoji 排列。"
+    },
+    {
+      "href": "/zh-tw/library/aixin-fuhao/",
+      "title": "愛心符號",
+      "desc": "愛心 emoji 與文字符號。"
+    },
+    {
+      "href": "/zh-tw/library/cute-kaomoji/",
+      "title": "可愛顏文字",
+      "desc": "用文字組成的表情。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/zh-tw/library/iphone-emoji/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-iphone/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/iphone-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-iphone/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/emodzi-ayfon/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/iphone-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/iphone-emojis/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/emojis-iphone/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/emoji-iphone/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-iphone/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/emoji-iphone/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/iphone-emoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/iphone-emojis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    }
+  ]
+}

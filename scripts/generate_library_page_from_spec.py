@@ -178,6 +178,10 @@ LOCALE_UI_STRINGS = {
     "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
     "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
     "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    # zh-TW was missing entirely, so every Traditional-Chinese page fell back to
+    # English chrome ("Copy", "Related Resources") while its 23 live siblings
+    # carry proper Chinese. Caught 2026-08-10 on the iphone-emojis batch.
+    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
     "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
     "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
     "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
@@ -185,6 +189,7 @@ LOCALE_UI_STRINGS = {
 
 # Section label for the optional FAQ block, per locale. Falls back to English.
 LOCALE_FAQ_LABEL = {
+    "zh-TW": "常見問題",
     "pt": "Perguntas Frequentes",
     "de": "Häufige Fragen",
     "fr": "Questions fréquentes",
@@ -664,7 +669,13 @@ def main(argv=None):
     # page_type "symbol" routes to /symbol/ instead of /library/.
     lang = spec.get("lang", "en")
     base_folder = "symbol" if spec.get("page_type", "library") == "symbol" else "library"
-    out_dir = (REPO / lang / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
+    # The hreflang code is not always the directory name: zh-TW is the correct
+    # hreflang code but every live Traditional-Chinese URL on this site is
+    # /zh-tw/. Writing to REPO/zh-TW/ created a second, unlinked URL space —
+    # caught 2026-08-10 on the iphone-emojis batch. Map explicitly.
+    URL_SEGMENT = {"zh-TW": "zh-tw"}
+    seg = URL_SEGMENT.get(lang, lang)
+    out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:
