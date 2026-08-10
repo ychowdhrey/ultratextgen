@@ -55,6 +55,9 @@ ultratextgen/
 ├── _redirects              # Cloudflare Pages redirect rules — PATH ONLY,
 │                           #   query strings are silently ignored (see below)
 ├── _headers                # Cloudflare Pages response headers
+├── _routes.json            # Pages Functions routing: ONLY `/` invokes the
+│                           #   Function — keeps every other request a free
+│                           #   static asset (see What NOT to Do)
 ├── functions/_middleware.js# Pages Function: owns `/` (English homepage + ?lang=)
 │
 ├── .github/workflows/
@@ -1809,12 +1812,25 @@ Standing protocol:
 - Do not put a query string in a `_redirects` source path. This is Cloudflare
   Pages, not Netlify: Pages matches the **path only** and silently drops the
   query, so `/?lang=fr  /fr/  301` is read as `/  /fr/  301` and 301s the
-  English homepage to French for every visitor and crawler — and because a
-  static redirect short-circuits before Pages Functions, it also bypasses
-  `functions/_middleware.js`, which exists specifically to keep `/` English.
-  That shipped in PR #566 and sat live from 2026-07-15 to 2026-07-26. Query
-  matching belongs in `functions/_middleware.js` (`LANG_REDIRECTS`), which can
-  actually read `url.searchParams`.
+  English homepage to French for every visitor and crawler. That shipped in
+  PR #566 and sat live from 2026-07-15 to 2026-07-26 — during that window
+  `functions/_middleware.js` (which exists specifically to keep `/` English)
+  was not executing, so nothing intercepted the bad rule. Note the ordering:
+  when Functions ARE active on a route (per `_routes.json`), the Function
+  runs *before* `_redirects` — verified on production 2026-08-10, where the
+  middleware's `?lang=` 301s fire on `/` even though `_redirects` also has a
+  `/` rule. Query matching belongs in `functions/_middleware.js`
+  (`LANG_REDIRECTS`), which can actually read `url.searchParams`.
+- Do not widen `_routes.json`'s `include` list, add new files under
+  `functions/`, or delete `_routes.json`, without checking the Functions
+  invocation budget. Every included route bills one Workers-quota invocation
+  per request; with no `_routes.json`, Cloudflare auto-generates one that
+  routes **every** request (CSS, JS, images, all pages) through the root
+  middleware just to run `context.next()`. That was live until 2026-08-10
+  and burned ~100k invocations/day — the entire Workers free daily quota —
+  at ~36k pageviews/day. Static asset requests are free and unlimited only
+  when they do not invoke a Function. Only `/` needs the Function (English
+  homepage + legacy `?lang=` 301s); everything else must stay excluded.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts

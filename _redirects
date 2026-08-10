@@ -3,14 +3,16 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
 # Serve the English homepage for the root path.
 #
-# This rule is what actually keeps / on English. It was previously
-# described as a "safety net if the middleware is not deployed", with
-# functions/_middleware.js as the primary fix — but the middleware does
-# not execute on this Pages project at all. Verified on the PR #674
-# preview: with this rule REMOVED (so nothing in _redirects matched /),
-# /?lang=de still returned 200 rather than the 301 the middleware issues
-# from its very first branch. Functions are inert here; this is primary,
-# not a fallback. Do not remove it expecting the middleware to cover /.
+# Fallback layer for /. On current production (verified 2026-08-10)
+# functions/_middleware.js IS executing and owns / — it runs before
+# _redirects on routes /_routes.json sends it, serves the English
+# homepage via /_root, and 301s legacy ?lang= URLs. This rule exists
+# for the state where Functions are inert (as a PR #674 preview test
+# observed on 2026-07-26, when this comment claimed Functions never
+# ran here): if the middleware ever stops executing again, this rewrite
+# is what keeps / on English instead of letting Pages' implicit
+# Accept-Language i18n negotiation serve a locale homepage. Keep both
+# layers; do not remove either expecting the other to cover /.
 /  /index.html  200
 
 # Canonical path: enforce trailing slash on platform root pages
