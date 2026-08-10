@@ -6,7 +6,7 @@
   "hero_h1": "왕관 이모지",
   "hero_tagline": "👑 — 1등, 최애, 오늘의 주인공. 프로필과 댓글에 바로 붙여넣을 왕관 조합을 모았습니다.",
   "intro": "왕관 이모지 👑는 이제 왕족보다 '1등'에 가깝습니다. 잘한 사람 댓글에 하나 붙이면 그걸로 칭찬이 되죠. 여기에는 👑와 같이 묶여 다니는 왕실 이모지, 자랑과 1등 이모지, 감성 소품, 그리고 그대로 붙여넣을 조합을 모았습니다. 그림 이모지가 막히는 칸에서 쓸 방법은 아래 자주 묻는 질문에 있습니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -33,10 +33,6 @@
         {
           "char": "💍",
           "label": "반지"
-        },
-        {
-          "char": "🏰",
-          "label": "성"
         }
       ]
     },
@@ -46,6 +42,10 @@
       "h2": "'퀸' '킹' 느낌의 이모지",
       "intro": "잘했다, 멋있다, 흔들림 없다 — 칭찬으로 붙이는 쪽.",
       "symbols": [
+        {
+          "char": "🏰",
+          "label": "성"
+        },
         {
           "char": "💅",
           "label": "매니큐어"
@@ -59,20 +59,8 @@
           "label": "흐뭇한 얼굴"
         },
         {
-          "char": "😎",
-          "label": "선글라스 낀 얼굴"
-        },
-        {
           "char": "🙌",
           "label": "만세"
-        },
-        {
-          "char": "👏",
-          "label": "박수"
-        },
-        {
-          "char": "🤌",
-          "label": "손끝 모은 손"
         }
       ]
     },
@@ -82,6 +70,14 @@
       "h2": "1등과 자랑에 쓰는 이모지",
       "intro": "왕관 옆에서 '최고'라는 뜻을 확실히 해 주는 것들.",
       "symbols": [
+        {
+          "char": "👏",
+          "label": "박수"
+        },
+        {
+          "char": "🤌",
+          "label": "손끝 모은 손"
+        },
         {
           "char": "🥇",
           "label": "금메달"
@@ -93,7 +89,15 @@
         {
           "char": "🐐",
           "label": "염소 (GOAT)"
-        },
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "로열 감성",
+      "h2": "로열 감성 소품 이모지",
+      "intro": "값비싸 보이는 쪽으로 분위기를 잡을 때.",
+      "symbols": [
         {
           "char": "🔥",
           "label": "불"
@@ -105,27 +109,23 @@
         {
           "char": "💪",
           "label": "알통"
-        }
-      ]
-    },
-    {
-      "id": "s4",
-      "label": "로열 감성",
-      "h2": "로열 감성 소품 이모지",
-      "intro": "값비싸 보이는 쪽으로 분위기를 잡을 때.",
-      "symbols": [
+        },
         {
           "char": "💎",
           "label": "보석"
         },
         {
-          "char": "✨",
-          "label": "반짝임"
-        },
-        {
           "char": "🎀",
           "label": "리본"
-        },
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "왕관 조합",
+      "h2": "왕관 이모지 조합 모음",
+      "intro": "한 번에 복사해서 프로필이나 댓글에 그대로 붙여넣으세요.",
+      "symbols": [
         {
           "char": "👛",
           "label": "지갑"
@@ -141,54 +141,6 @@
         {
           "char": "🦚",
           "label": "공작"
-        },
-        {
-          "char": "🥂",
-          "label": "건배"
-        },
-        {
-          "char": "🎉",
-          "label": "폭죽"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "label": "왕관 조합",
-      "h2": "왕관 이모지 조합 모음",
-      "intro": "한 번에 복사해서 프로필이나 댓글에 그대로 붙여넣으세요.",
-      "symbols": [
-        {
-          "char": "👑💯🔥",
-          "label": "왕관 자랑"
-        },
-        {
-          "char": "👑💅✨",
-          "label": "퀸 에너지"
-        },
-        {
-          "char": "👑😎🔥",
-          "label": "킹 무드"
-        },
-        {
-          "char": "👑💅😌",
-          "label": "나답게"
-        },
-        {
-          "char": "👑🏆🥇",
-          "label": "우승"
-        },
-        {
-          "char": "👑🐐🔥",
-          "label": "GOAT 인증"
-        },
-        {
-          "char": "👑✨💎",
-          "label": "반짝이는 승급"
-        },
-        {
-          "char": "👑🎉🥂",
-          "label": "대관식"
         }
       ]
     }
@@ -284,6 +236,87 @@
     {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/crown-emoji/"
+    }
+  ],
+  "collection_container_id": "crownSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "조합 세트",
+    "h2": "왕관 이모지 조합 세트",
+    "intro": "바로 쓸 수 있는 조합입니다. 한 번 누르면 세트 전체가 복사되어 프로필·캡션·댓글에 그대로 붙여넣을 수 있습니다."
+  },
+  "collections": [
+    {
+      "name": "Crown Flex",
+      "flags": [
+        "👑",
+        "💯",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Queen Energy",
+      "flags": [
+        "👑",
+        "💅",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "King Behavior",
+      "flags": [
+        "👑",
+        "😎",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "That's On Brand",
+      "flags": [
+        "👑",
+        "💅",
+        "😌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Winner Winner",
+      "flags": [
+        "👑",
+        "🏆",
+        "🥇"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "GOAT Status",
+      "flags": [
+        "👑",
+        "🐐",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Royal Glow Up",
+      "flags": [
+        "👑",
+        "✨",
+        "💎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Coronation Mode",
+      "flags": [
+        "👑",
+        "🎉",
+        "🥂"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

@@ -6,7 +6,7 @@
   "hero_h1": "기도 이모티콘",
   "hero_tagline": "🙏 🤲 m(_ _)m — 부탁할 때, 고마울 때, 기도할 때. 누르면 복사됩니다.",
   "intro": "부탁할 때도, 고마울 때도, 기도할 때도 같은 손이 쓰입니다. 유니코드가 붙인 이름은 '기도'가 아니라 '모은 손'이라 어느 쪽으로 읽어도 틀리지 않습니다. 아래에는 기도 이모티콘과 손바닥을 위로 편 🤲, 함께 쓰는 손 이모지, 신앙 기호, 그리고 이모지를 막는 칸에서 쓸 수 있는 카오모지를 모았습니다. 눌러서 복사하세요.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -14,13 +14,22 @@
       "h2": "기본 기도 이모지",
       "intro": "두 손을 모은 모양과 피부색 다섯 가지.",
       "symbols": [
-        { "char": "🙏", "label": "모은 손" },
-        { "char": "🙏🏻", "label": "모은 손 (밝은 피부)" },
-        { "char": "🙏🏼", "label": "모은 손 (연한 피부)" },
-        { "char": "🙏🏽", "label": "모은 손 (보통 피부)" },
-        { "char": "🙏🏾", "label": "모은 손 (진한 피부)" },
-        { "char": "🙏🏿", "label": "모은 손 (어두운 피부)" },
-        { "char": "🤲", "label": "손바닥을 위로" }
+        {
+          "char": "🙏",
+          "label": "모은 손"
+        },
+        {
+          "char": "🤲",
+          "label": "손바닥을 위로"
+        },
+        {
+          "char": "👐",
+          "label": "두 손 펼침"
+        },
+        {
+          "char": "🫶",
+          "label": "손하트"
+        }
       ]
     },
     {
@@ -29,12 +38,22 @@
       "h2": "함께 쓰는 손 이모지",
       "intro": "감사와 응원을 같이 전할 때.",
       "symbols": [
-        { "char": "👐", "label": "두 손 펼침" },
-        { "char": "🫶", "label": "손하트" },
-        { "char": "🤝", "label": "악수" },
-        { "char": "👏", "label": "박수" },
-        { "char": "✋", "label": "손 들기" },
-        { "char": "🙌", "label": "두 손 들기" }
+        {
+          "char": "🤝",
+          "label": "악수"
+        },
+        {
+          "char": "👏",
+          "label": "박수"
+        },
+        {
+          "char": "✋",
+          "label": "손 들기"
+        },
+        {
+          "char": "🕊️",
+          "label": "비둘기"
+        }
       ]
     },
     {
@@ -43,13 +62,22 @@
       "h2": "신앙과 기도 기호",
       "intro": "종교와 조용한 기도에 함께 쓰이는 기호.",
       "symbols": [
-        { "char": "🕊️", "label": "비둘기" },
-        { "char": "🧎", "label": "무릎 꿇은 사람" },
-        { "char": "✝️", "label": "십자가" },
-        { "char": "☪️", "label": "별과 초승달" },
-        { "char": "🕉️", "label": "옴" },
-        { "char": "🛐", "label": "예배 장소" },
-        { "char": "📿", "label": "염주" }
+        {
+          "char": "🧎",
+          "label": "무릎 꿇은 사람"
+        },
+        {
+          "char": "✝️",
+          "label": "십자가"
+        },
+        {
+          "char": "☪️",
+          "label": "별과 초승달"
+        },
+        {
+          "char": "🕉️",
+          "label": "옴"
+        }
       ]
     },
     {
@@ -58,12 +86,18 @@
       "h2": "감사·부탁 카오모지",
       "intro": "이모지를 막는 칸에서도 통과하는 글자 얼굴.",
       "symbols": [
-        { "char": "m(_ _)m", "label": "깊이 숙인 인사" },
-        { "char": "( ᵕ人ᵕ)", "label": "두 손 모은 부탁" },
-        { "char": "_(:3」∠)_", "label": "엎드린 감사" },
-        { "char": "(｡•̀ᴗ-)✧", "label": "고맙다는 윙크" },
-        { "char": "(≧∇≦)ﾉ", "label": "기쁜 감사" },
-        { "char": "orz", "label": "무릎 꿇은 모습" }
+        {
+          "char": "m(_ _)m",
+          "label": "깊이 숙인 인사"
+        },
+        {
+          "char": "(｡•̀ᴗ-)✧",
+          "label": "고맙다는 윙크"
+        },
+        {
+          "char": "_(:3」∠)_",
+          "label": "엎드린 감사"
+        }
       ]
     },
     {
@@ -72,14 +106,18 @@
       "h2": "기도·감사 조합",
       "intro": "그대로 눌러 복사하면 되는 조합입니다.",
       "symbols": [
-        { "char": "🙏🕊️", "label": "기도를 보냅니다" },
-        { "char": "🙏💕", "label": "정말 고마워요" },
-        { "char": "🙏🥺", "label": "부탁드려요" },
-        { "char": "🙏✨", "label": "좋은 기운을" },
-        { "char": "🙏❤️", "label": "감사한 마음" },
-        { "char": "🙏🙌", "label": "하이파이브" },
-        { "char": "🙏🧎", "label": "깊은 존경" },
-        { "char": "🙏🕊️✨", "label": "축복을 빌며" }
+        {
+          "char": "(≧∇≦)ﾉ",
+          "label": "기쁜 감사"
+        },
+        {
+          "char": "orz",
+          "label": "무릎 꿇은 모습"
+        },
+        {
+          "char": "( ᵕ人ᵕ)",
+          "label": "두 손 모은 부탁"
+        }
       ]
     }
   ],
@@ -146,6 +184,80 @@
     {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/praying-hands-emoji/"
+    }
+  ],
+  "collection_container_id": "prayingHandsSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "조합 세트",
+    "h2": "기도 이모티콘 조합 세트",
+    "intro": "바로 쓸 수 있는 조합입니다. 한 번 누르면 세트 전체가 복사되어 프로필·캡션·댓글에 그대로 붙여넣을 수 있습니다."
+  },
+  "collections": [
+    {
+      "name": "Sending Prayers",
+      "flags": [
+        "🙏",
+        "🕊️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thank You So Much",
+      "flags": [
+        "🙏",
+        "💕"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Please And Thank You",
+      "flags": [
+        "🙏",
+        "🥺"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Good Vibes Only",
+      "flags": [
+        "🙏",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Grateful Heart",
+      "flags": [
+        "🙏",
+        "❤️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "High Five",
+      "flags": [
+        "🙏",
+        "🙌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Bow Of Respect",
+      "flags": [
+        "🙏",
+        "🧎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blessed",
+      "flags": [
+        "🙏",
+        "🕊️",
+        "✨"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

@@ -6,7 +6,7 @@
   "hero_h1": "생각 이모티콘",
   "hero_tagline": "🤔 🧐 🤷 (・_・?) — 고민, 의심, 모르겠음. 누르면 복사됩니다.",
   "intro": "생각 이모티콘은 아직 판단하지 않았다는 신호입니다. 그런데 진짜로 고민 중일 때, 상대 말이 미덥지 않을 때, 정말 모르겠을 때 쓰는 기호가 각각 다릅니다. 세 상황을 섞어 쓰면 뜻이 어긋나니 아래에서 상황별로 골라 쓰세요. 누르면 바로 복사됩니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -19,22 +19,6 @@
           "label": "생각하는 얼굴"
         },
         {
-          "char": "💭",
-          "label": "생각 풍선"
-        },
-        {
-          "char": "🧠",
-          "label": "뇌"
-        }
-      ]
-    },
-    {
-      "id": "s2",
-      "label": "의심스러울 때",
-      "h2": "의심스러울 때 쓰는 이모지",
-      "intro": "믿기지는 않는데 대놓고 따지기는 뭐할 때.",
-      "symbols": [
-        {
           "char": "🧐",
           "label": "외눈 안경"
         },
@@ -45,7 +29,15 @@
         {
           "char": "🫤",
           "label": "삐뚤어진 입"
-        },
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "의심스러울 때",
+      "h2": "의심스러울 때 쓰는 이모지",
+      "intro": "믿기지는 않는데 대놓고 따지기는 뭐할 때.",
+      "symbols": [
         {
           "char": "😑",
           "label": "무표정"
@@ -53,6 +45,14 @@
         {
           "char": "🙄",
           "label": "눈 굴리기"
+        },
+        {
+          "char": "🤷",
+          "label": "어깨 으쓱"
+        },
+        {
+          "char": "🤷‍♂️",
+          "label": "남자 어깨 으쓱"
         }
       ]
     },
@@ -63,16 +63,20 @@
       "intro": "솔직하게 어깨 으쓱.",
       "symbols": [
         {
-          "char": "🤷",
-          "label": "어깨 으쓱"
-        },
-        {
-          "char": "🤷‍♂️",
-          "label": "남자 어깨 으쓱"
-        },
-        {
           "char": "🤷‍♀️",
           "label": "여자 어깨 으쓱"
+        },
+        {
+          "char": "💭",
+          "label": "생각 풍선"
+        },
+        {
+          "char": "🧠",
+          "label": "뇌"
+        },
+        {
+          "char": "(・_・?)",
+          "label": "궁금함"
         }
       ]
     },
@@ -82,10 +86,6 @@
       "h2": "생각하는 얼굴 문자 (카오모지)",
       "intro": "이모지를 막는 입력란에서도 대개 통과합니다.",
       "symbols": [
-        {
-          "char": "(・_・?)",
-          "label": "궁금함"
-        },
         {
           "char": "(¬‿¬)",
           "label": "다 안다는 표정"
@@ -101,7 +101,15 @@
         {
           "char": "(・∀・)",
           "label": "생각하며 웃기"
-        },
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "바로 쓰는 조합",
+      "h2": "바로 쓰는 생각 이모지 조합",
+      "intro": "하나씩 고르지 않아도 되는 완성된 조합.",
+      "symbols": [
         {
           "char": "( ˘ ³˘)?",
           "label": "어리둥절"
@@ -113,46 +121,6 @@
         {
           "char": "(๑•́ ₃ •̀๑)",
           "label": "입 삐죽 고민"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "label": "바로 쓰는 조합",
-      "h2": "바로 쓰는 생각 이모지 조합",
-      "intro": "하나씩 고르지 않아도 되는 완성된 조합.",
-      "symbols": [
-        {
-          "char": "🤔💭",
-          "label": "음, 생각 좀"
-        },
-        {
-          "char": "🤔🧠",
-          "label": "머리 굴리는 중"
-        },
-        {
-          "char": "🤔🤷",
-          "label": "글쎄, 모르겠는데"
-        },
-        {
-          "char": "🧐🤨",
-          "label": "의심스러운 눈초리"
-        },
-        {
-          "char": "🤷🤷‍♂️🤷‍♀️",
-          "label": "다들 모름"
-        },
-        {
-          "char": "🤔💭🧠",
-          "label": "깊은 고민"
-        },
-        {
-          "char": "🧐🤔",
-          "label": "수상한데 궁금함"
-        },
-        {
-          "char": "🤷¯\\_(ツ)_/¯",
-          "label": "그냥 넘기기"
         }
       ]
     }
@@ -220,6 +188,81 @@
     {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/thinking-emoji/"
+    }
+  ],
+  "collection_container_id": "thinkingSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "조합 세트",
+    "h2": "생각 이모티콘 조합 세트",
+    "intro": "바로 쓸 수 있는 조합입니다. 한 번 누르면 세트 전체가 복사되어 프로필·캡션·댓글에 그대로 붙여넣을 수 있습니다."
+  },
+  "collections": [
+    {
+      "name": "Hmm Let Me Think",
+      "flags": [
+        "🤔",
+        "💭"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big Brain Moment",
+      "flags": [
+        "🤔",
+        "🧠"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Not Sure About This",
+      "flags": [
+        "🤔",
+        "🤷"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Skeptical Side-Eye",
+      "flags": [
+        "🧐",
+        "🤨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I Have No Idea",
+      "flags": [
+        "🤷",
+        "🤷‍♂️",
+        "🤷‍♀️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Thoughts",
+      "flags": [
+        "🤔",
+        "💭",
+        "🧠"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Suspicious But Curious",
+      "flags": [
+        "🧐",
+        "🤔"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shrug It Off",
+      "flags": [
+        "🤷",
+        "¯\\_(ツ)_/¯"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

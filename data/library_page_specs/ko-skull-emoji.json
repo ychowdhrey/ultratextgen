@@ -6,7 +6,7 @@
   "hero_h1": "해골 이모티콘",
   "hero_tagline": "💀 ☠️ 🦴 — 진지한 해골부터 '웃겨 죽겠다'는 뜻의 조합까지. 누르면 복사됩니다.",
   "intro": "해골 이모티콘은 이제 죽음보다 웃음 쪽에 더 자주 쓰입니다. 댓글에 💀 하나만 있어도 '웃겨 죽겠다'는 뜻이 되죠. 이 페이지에는 그림 이모지 해골(💀 ☠️), 같이 붙여 쓰는 관·비석·위험 표시, x_x 처럼 글자로 만든 얼굴, 그리고 바로 붙여넣을 조합을 담았습니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -23,12 +23,12 @@
           "label": "해골과 뼈"
         },
         {
-          "char": "🦴",
-          "label": "뼈"
+          "char": "😂",
+          "label": "눈물 나게 웃는 얼굴"
         },
         {
-          "char": "🏴‍☠️",
-          "label": "해적기"
+          "char": "🤣",
+          "label": "바닥 구르며 웃는 얼굴"
         }
       ]
     },
@@ -39,24 +39,20 @@
       "intro": "💀가 😂 자리를 대신할 때 옆에 붙는 것들.",
       "symbols": [
         {
-          "char": "😂",
-          "label": "눈물 나게 웃는 얼굴"
-        },
-        {
-          "char": "🤣",
-          "label": "바닥 구르며 웃는 얼굴"
+          "char": "⚰️",
+          "label": "관"
         },
         {
           "char": "💯",
           "label": "백점"
         },
         {
-          "char": "⚰️",
-          "label": "관"
-        },
-        {
           "char": "🪦",
           "label": "비석"
+        },
+        {
+          "char": "🦴",
+          "label": "뼈"
         }
       ]
     },
@@ -67,20 +63,16 @@
       "intro": "해골이 원래 뜻 그대로 쓰이는 자리.",
       "symbols": [
         {
+          "char": "🏴‍☠️",
+          "label": "해적기"
+        },
+        {
           "char": "☣️",
           "label": "생물학적 위험"
         },
         {
           "char": "☢️",
           "label": "방사능"
-        },
-        {
-          "char": "🎃",
-          "label": "잭오랜턴"
-        },
-        {
-          "char": "👻",
-          "label": "유령"
         }
       ]
     },
@@ -101,7 +93,15 @@
         {
           "char": "(x_x)",
           "label": "어지러운 얼굴"
-        },
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "해골 조합",
+      "h2": "해골 이모지 조합 모음",
+      "intro": "한 번에 복사해서 댓글이나 상태메시지에 그대로 붙여넣으세요.",
+      "symbols": [
         {
           "char": "†（‡＾ᴗ＾）†",
           "label": "무덤 십자가"
@@ -113,46 +113,6 @@
         {
           "char": "✖‿✖",
           "label": "눈 감은 웃음"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "label": "해골 조합",
-      "h2": "해골 이모지 조합 모음",
-      "intro": "한 번에 복사해서 댓글이나 상태메시지에 그대로 붙여넣으세요.",
-      "symbols": [
-        {
-          "char": "💀😂🤣",
-          "label": "웃겨 죽겠음"
-        },
-        {
-          "char": "💀💯",
-          "label": "진짜 웃김"
-        },
-        {
-          "char": "💀⚰️🪦",
-          "label": "완전히 사망"
-        },
-        {
-          "char": "💀⚰️",
-          "label": "그대로 안녕"
-        },
-        {
-          "char": "💀🦴",
-          "label": "뼈만 남음"
-        },
-        {
-          "char": "☠️☣️☢️",
-          "label": "위험 구역"
-        },
-        {
-          "char": "☠️🏴‍☠️",
-          "label": "해적 모드"
-        },
-        {
-          "char": "💀🎃👻",
-          "label": "핼러윈 해골"
         }
       ]
     }
@@ -248,6 +208,83 @@
     {
       "lang": "x-default",
       "href": "https://ultratextgen.com/library/skull-emoji/"
+    }
+  ],
+  "collection_container_id": "skullSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "조합 세트",
+    "h2": "해골 이모티콘 조합 세트",
+    "intro": "바로 쓸 수 있는 조합입니다. 한 번 누르면 세트 전체가 복사되어 프로필·캡션·댓글에 그대로 붙여넣을 수 있습니다."
+  },
+  "collections": [
+    {
+      "name": "Dead From Laughing",
+      "flags": [
+        "💀",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Danger Zone",
+      "flags": [
+        "☠️",
+        "☣️",
+        "☢️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pirate Mode",
+      "flags": [
+        "☠️",
+        "🏴‍☠️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Absolutely Deceased",
+      "flags": [
+        "💀",
+        "⚰️",
+        "🪦"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Halloween Skull",
+      "flags": [
+        "💀",
+        "🎃",
+        "👻"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "That's So Funny I'm Dead",
+      "flags": [
+        "💀",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bone Chilling",
+      "flags": [
+        "💀",
+        "🦴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP Me",
+      "flags": [
+        "💀",
+        "⚰️"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }
