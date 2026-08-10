@@ -101,9 +101,9 @@ def validate_spec(spec):
         raise SpecError(f"missing required field(s): {', '.join(missing)}")
 
     pattern = spec["copy_pattern"]
-    if pattern not in ("single", "collection"):
+    if pattern not in ("single", "collection", "art"):
         raise SpecError(
-            f"copy_pattern must be 'single' or 'collection', got {pattern!r}"
+            f"copy_pattern must be 'single', 'collection' or 'art', got {pattern!r}"
         )
 
     sections = spec["sections"]
@@ -111,11 +111,18 @@ def validate_spec(spec):
         raise SpecError("sections must be a non-empty list")
 
     for i, sec in enumerate(sections):
-        for key in ("id", "h2", "symbols"):
+        items_key = "art" if pattern == "art" else "symbols"
+        for key in ("id", "h2", items_key):
             if key not in sec:
                 raise SpecError(f"sections[{i}] missing '{key}'")
-        if not isinstance(sec["symbols"], list) or not sec["symbols"]:
-            raise SpecError(f"sections[{i}].symbols must be a non-empty list")
+        if not isinstance(sec[items_key], list) or not sec[items_key]:
+            raise SpecError(f"sections[{i}].{items_key} must be a non-empty list")
+        if pattern == "art":
+            for j, piece in enumerate(sec["art"]):
+                for key in ("label", "art"):
+                    if key not in piece or piece[key] in (None, ""):
+                        raise SpecError(f"sections[{i}].art[{j}] missing '{key}'")
+            continue
         for j, sym in enumerate(sec["symbols"]):
             if "char" not in sym or sym["char"] in (None, ""):
                 raise SpecError(f"sections[{i}].symbols[{j}] missing 'char'")
@@ -312,6 +319,58 @@ def render_symbol_section(sec, copy_label="Copy"):
         f"{intro_html}"
         '  <div class="flag-rows">\n'
         + "\n".join(rows)
+        + "\n  </div>\n"
+        "</section>"
+    )
+
+
+def render_art_section(sec, copy_label="Copy", copy_aria=None):
+    """An `art` section: multi-line ASCII pieces in <pre>, not a symbol grid.
+
+    The pieces themselves are language-neutral — =^..^= is a cat in every
+    locale — so only the section heading and each piece's label are translated.
+    The copy button is handled by the same delegated listener in
+    symbol-explorer.js that the hand-written English pages use, so nothing new
+    is loaded.
+
+    The <pre> opens at column 0 on purpose: everything between the tags is
+    significant whitespace, and indenting it to match the surrounding markup
+    would indent the artwork.
+    """
+    cards = []
+    for piece in sec["art"]:
+        label = piece["label"]
+        aria = (copy_aria or "{copy} {label}").format(copy=copy_label, label=label)
+        cards.append(
+            '    <div class="art-piece-card">\n'
+            '      <div class="art-piece-head">\n'
+            f'        <span class="art-piece-label">{esc(label)}</span>\n'
+            '        <button class="art-piece-copy" type="button" '
+            f'data-label="{esc_attr(label)}" '
+            f'aria-label="{esc_attr(aria)}">{esc(copy_label)}</button>\n'
+            "      </div>\n"
+            '      <div class="art-piece-body">\n'
+            f'<pre class="art-piece-pre">{esc(piece["art"])}</pre>\n'
+            "      </div>\n"
+            "    </div>"
+        )
+    label_html = (
+        f'  <span class="article-section-label">{esc(sec["label"])}</span>\n'
+        if sec.get("label")
+        else ""
+    )
+    intro_html = (
+        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        if sec.get("intro")
+        else ""
+    )
+    return (
+        f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
+        f"{label_html}"
+        f'  <h2>{esc(sec["h2"])}</h2>\n'
+        f"{intro_html}"
+        '  <div class="art-piece-grid">\n'
+        + "\n".join(cards)
         + "\n  </div>\n"
         "</section>"
     )
@@ -514,7 +573,12 @@ def render_page(spec):
         ld_faq_html = f'\n\n<script type="application/ld+json">\n{ld_faq}\n</script>'
 
     # Section bodies
-    section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
+    if spec["copy_pattern"] == "art":
+        art_aria = spec.get("copy_aria_template") or ui.get("copyArt")
+        section_blocks = [render_art_section(s, copy_label, art_aria)
+                          for s in spec["sections"]]
+    else:
+        section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
