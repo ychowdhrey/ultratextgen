@@ -1,0 +1,353 @@
+{
+  "slug": "byeoljari-giho",
+  "title": "별자리 기호 ♈♉♊ — 12별자리 특수문자 복사 | UltraTextGen",
+  "meta_description": "별자리 기호 ♈♉♊ 복사 붙여넣기: 12별자리 전부와 행성 기호, 십이지 동물, 점성술 각 기호까지. 클릭하면 바로 복사됩니다.",
+  "breadcrumb": "별자리 기호",
+  "hero_h1": "별자리 기호",
+  "hero_tagline": "열두 별자리를 유니코드 기호로, 행성과 십이지 동물, 점성술의 각 기호까지 한자리에.",
+  "intro": "별자리 기호는 이미지가 아니라 진짜 유니코드 문자라 별도 폰트가 필요 없습니다. 인스타그램 소개, 디스코드 닉네임, 메모, 메시지에 그대로 붙여넣을 수 있습니다. 누르면 복사됩니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "western",
+      "label": "12별자리 기호",
+      "h2": "12별자리 기호",
+      "intro": "열두 별자리와 해당 기간입니다.",
+      "symbols": [
+        {
+          "char": "♈",
+          "label": "양자리 (3/21–4/19)"
+        },
+        {
+          "char": "♉",
+          "label": "황소자리 (4/20–5/20)"
+        },
+        {
+          "char": "♊",
+          "label": "쌍둥이자리 (5/21–6/20)"
+        },
+        {
+          "char": "♋",
+          "label": "게자리 (6/21–7/22)"
+        },
+        {
+          "char": "♌",
+          "label": "사자자리 (7/23–8/22)"
+        },
+        {
+          "char": "♍",
+          "label": "처녀자리 (8/23–9/22)"
+        },
+        {
+          "char": "♎",
+          "label": "천칭자리 (9/23–10/22)"
+        },
+        {
+          "char": "♏",
+          "label": "전갈자리 (10/23–11/21)"
+        },
+        {
+          "char": "♐",
+          "label": "궁수자리 (11/22–12/21)"
+        },
+        {
+          "char": "♑",
+          "label": "염소자리 (12/22–1/19)"
+        },
+        {
+          "char": "♒",
+          "label": "물병자리 (1/20–2/18)"
+        },
+        {
+          "char": "♓",
+          "label": "물고기자리 (2/19–3/20)"
+        },
+        {
+          "char": "⛎",
+          "label": "뱀주인자리 (11/30–12/17, 비공식)"
+        }
+      ]
+    },
+    {
+      "id": "planets",
+      "label": "행성·천체 기호",
+      "h2": "행성·천체 기호",
+      "intro": "해와 달, 고전 행성 기호입니다.",
+      "symbols": [
+        {
+          "char": "☉",
+          "label": "해"
+        },
+        {
+          "char": "☽",
+          "label": "상현달"
+        },
+        {
+          "char": "☾",
+          "label": "하현달"
+        },
+        {
+          "char": "☿",
+          "label": "수성"
+        },
+        {
+          "char": "♀",
+          "label": "금성"
+        },
+        {
+          "char": "♁",
+          "label": "지구"
+        },
+        {
+          "char": "♂",
+          "label": "화성"
+        },
+        {
+          "char": "♃",
+          "label": "목성"
+        },
+        {
+          "char": "♄",
+          "label": "토성"
+        },
+        {
+          "char": "♅",
+          "label": "천왕성"
+        },
+        {
+          "char": "♆",
+          "label": "해왕성"
+        },
+        {
+          "char": "♇",
+          "label": "명왕성"
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "label": "십이지 동물",
+      "h2": "십이지 동물",
+      "intro": "십이지의 열두 동물입니다.",
+      "symbols": [
+        {
+          "char": "🐀",
+          "label": "쥐"
+        },
+        {
+          "char": "🐂",
+          "label": "소"
+        },
+        {
+          "char": "🐅",
+          "label": "호랑이"
+        },
+        {
+          "char": "🐇",
+          "label": "토끼"
+        },
+        {
+          "char": "🐉",
+          "label": "용"
+        },
+        {
+          "char": "🐍",
+          "label": "뱀"
+        },
+        {
+          "char": "🐎",
+          "label": "말"
+        },
+        {
+          "char": "🐐",
+          "label": "양"
+        },
+        {
+          "char": "🐒",
+          "label": "원숭이"
+        },
+        {
+          "char": "🐓",
+          "label": "닭"
+        },
+        {
+          "char": "🐕",
+          "label": "개"
+        },
+        {
+          "char": "🐖",
+          "label": "돼지"
+        }
+      ]
+    },
+    {
+      "id": "aspects",
+      "label": "점성술 각 기호",
+      "h2": "점성술 각 기호",
+      "intro": "출생 차트에서 쓰는 각입니다.",
+      "symbols": [
+        {
+          "char": "☊",
+          "label": "승교점"
+        },
+        {
+          "char": "☋",
+          "label": "강교점"
+        },
+        {
+          "char": "☌",
+          "label": "합"
+        },
+        {
+          "char": "☍",
+          "label": "충"
+        },
+        {
+          "char": "⚹",
+          "label": "육십도"
+        },
+        {
+          "char": "□",
+          "label": "사각"
+        },
+        {
+          "char": "△",
+          "label": "삼각"
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "label": "4원소와 연금술 기호",
+      "h2": "4원소와 연금술 기호",
+      "intro": "불·물·공기·흙과 연금술 기호입니다.",
+      "symbols": [
+        {
+          "char": "🜂",
+          "label": "불 (연금술)"
+        },
+        {
+          "char": "🜄",
+          "label": "물 (연금술)"
+        },
+        {
+          "char": "🜁",
+          "label": "공기 (연금술)"
+        },
+        {
+          "char": "🜃",
+          "label": "흙 (연금술)"
+        },
+        {
+          "char": "△",
+          "label": "불의 삼각형"
+        },
+        {
+          "char": "▽",
+          "label": "물의 삼각형"
+        },
+        {
+          "char": "🜍",
+          "label": "황"
+        },
+        {
+          "char": "☿",
+          "label": "수은"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "별자리 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "인스타그램 소개글에서 되나요?",
+      "a": "됩니다. 이미지가 아니라 평범한 유니코드 문자라 글을 넣을 수 있는 곳이면 어디든 붙습니다. 다만 @ 아이디에서는 대개 막힙니다."
+    },
+    {
+      "q": "같은 기호가 검게도, 색으로도 보이는 이유는?",
+      "a": "기기에 따라 ♈를 글자로 처리하기도 하고 컬러 이모지로 처리하기도 합니다. 문자는 같고 그리는 방식만 다릅니다."
+    },
+    {
+      "q": "뱀주인자리는 뭔가요?",
+      "a": "태양이 지나가는 열세 번째 별자리 오피우쿠스입니다. 서양 점성술은 전통적으로 열두 별자리만 쓰기 때문에 여기서는 비공식으로 표시했습니다."
+    },
+    {
+      "q": "수성 기호가 왜 두 번 나오나요?",
+      "a": "☿는 행성 수성이면서 연금술의 수은이기도 합니다. 역사적으로 같은 기호가 두 맥락에서 쓰였습니다."
+    },
+    {
+      "q": "게임 닉네임에 써도 되나요?",
+      "a": "되는 게임도 있고 라틴 문자 외에는 전부 걸러 내는 게임도 있습니다. 개명권은 대개 유료이니 확정 전에 먼저 시험해 보세요."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "별자리 기호가 애초에 문자인 이유",
+      "body": "별자리와 행성 기호는 천문학·연금술 필사본에서 왔고, 수백 년 동안 글자와 나란히 조판돼 왔습니다. 유니코드에 들어온 것도 그 연장선으로, 장식이 아니라 천문학 문헌을 조판하기 위해서였습니다. ♈가 기기에 따라 검은 기호가 되기도 하고 컬러 이모지가 되기도 하는 것도 같은 이유입니다 — 글자로 볼 것이냐 그림으로 볼 것이냐의 차이일 뿐입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/byeol-giho/",
+      "title": "별 기호 ★ 모음 (복사용)",
+      "desc": "별 기호·반짝임 특수문자·별 이모지를 모양과 용도별로 정리했습니다. 기본 별부터 다각형 별, 별표, 반짝임, 별점, 프로필 꾸미기 데코까지 — 클릭 한 번으로 복사되어 인스타 프로필·닉네임·디…"
+    },
+    {
+      "href": "/ko/library/alt-kodeu/",
+      "title": "알트 코드 (Alt Code)",
+      "desc": "윈도우에서 특수문자를 입력하는 가장 흔한 Alt 키 코드 모음 — 닉네임을 꾸밀 때 자주 쓰는 기호부터 통화, 수학, 클래식 DOS 기호까지. 텐키(숫자 패드)가 없어도 괜찮아요, 모든 기호는…"
+    },
+    {
+      "href": "/ko/library/bunsu-giho/",
+      "title": "분수 기호 모음",
+      "desc": "½ ⅓ ¼ ⅛ 같은 유니코드 분수부터, 분수 슬래시와 위·아래 첨자로 직접 만드는 분수까지 — 클릭 한 번으로 복사되는 분수 기호 모음입니다."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/byeoljari-giho/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/sternzeichen-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/znaki-zodiaka/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-cung-hoang-dao/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/seiza-kigou/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-astrologiques/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/byeoljari-giho/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/zodiac-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "slug": "emoji-drapeaux",
+  "title": "Emoji Drapeaux 🏳️ — Drapeaux à Copier-Coller | UltraTextGen",
+  "meta_description": "Emoji drapeaux à copier : drapeaux de pays, drapeaux d'organisations, drapeaux régionaux, drapeaux identitaires et drapeaux symboliques. Cliquez pour copier.",
+  "breadcrumb": "Emoji Drapeaux",
+  "hero_h1": "Emoji Drapeaux",
+  "hero_tagline": "Les drapeaux les plus utilisés, par catégorie — pays, organisations, régions, identités et drapeaux symboliques.",
+  "intro": "Un emoji drapeau n'est pas une image mais une paire de lettres régionales que le système transforme en drapeau. C'est pour cela qu'il s'affiche parfois en deux lettres au lieu du drapeau. Cliquez pour copier.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "country",
+      "label": "Drapeaux de Pays",
+      "h2": "Drapeaux de Pays",
+      "intro": "Les plus fréquents dans les bios.",
+      "symbols": [
+        {
+          "char": "🇺🇸",
+          "label": "États-Unis"
+        },
+        {
+          "char": "🇲🇽",
+          "label": "Mexique"
+        },
+        {
+          "char": "🇮🇳",
+          "label": "Inde"
+        },
+        {
+          "char": "🇧🇷",
+          "label": "Brésil"
+        },
+        {
+          "char": "🇨🇦",
+          "label": "Canada"
+        },
+        {
+          "char": "🇵🇷",
+          "label": "Porto Rico"
+        },
+        {
+          "char": "🇬🇧",
+          "label": "Royaume-Uni"
+        },
+        {
+          "char": "🇮🇪",
+          "label": "Irlande"
+        }
+      ]
+    },
+    {
+      "id": "org",
+      "label": "Drapeaux d'Organisations",
+      "h2": "Drapeaux d'Organisations",
+      "intro": "Unions et institutions.",
+      "symbols": [
+        {
+          "char": "🇪🇺",
+          "label": "Union Européenne"
+        },
+        {
+          "char": "🇺🇳",
+          "label": "Nations Unies"
+        }
+      ]
+    },
+    {
+      "id": "regional",
+      "label": "Drapeaux Régionaux",
+      "h2": "Drapeaux Régionaux",
+      "intro": "Nations constitutives du Royaume-Uni.",
+      "symbols": [
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "label": "Angleterre"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "label": "Écosse"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+          "label": "Pays de Galles"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "Drapeaux Identitaires",
+      "h2": "Drapeaux Identitaires",
+      "intro": "Drapeaux de fierté.",
+      "symbols": [
+        {
+          "char": "🏳️‍🌈",
+          "label": "Fierté Arc-en-Ciel"
+        },
+        {
+          "char": "🏳️‍⚧️",
+          "label": "Fierté Transgenre"
+        }
+      ]
+    },
+    {
+      "id": "symbolic",
+      "label": "Drapeaux Symboliques",
+      "h2": "Drapeaux Symboliques",
+      "intro": "Drapeaux qui ne désignent aucun territoire.",
+      "symbols": [
+        {
+          "char": "🏁",
+          "label": "Drapeau à Damier"
+        },
+        {
+          "char": "🚩",
+          "label": "Fanion Triangulaire"
+        },
+        {
+          "char": "🏳",
+          "label": "Drapeau Blanc"
+        },
+        {
+          "char": "🏴",
+          "label": "Drapeau Noir"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Drapeau Pirate"
+        },
+        {
+          "char": "🎌",
+          "label": "Drapeaux Croisés"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions Fréquentes sur les Emoji Drapeaux",
+  "faq": [
+    {
+      "q": "Pourquoi je vois « FR » au lieu du drapeau ?",
+      "a": "Un emoji drapeau est une paire d'indicateurs régionaux, ici F et R. Si le système ne dispose pas de l'image correspondante, il affiche les deux lettres — c'est le comportement prévu, pas une erreur."
+    },
+    {
+      "q": "Pourquoi les drapeaux ne s'affichent-ils pas sous Windows ?",
+      "a": "Windows n'inclut pas les images de drapeaux nationaux et rend les paires de lettres à la place. Le caractère est correct : sur téléphone, le drapeau apparaîtra."
+    },
+    {
+      "q": "Pourquoi l'Angleterre et l'Écosse fonctionnent-elles différemment ?",
+      "a": "Ce sont des drapeaux de sous-région, construits avec une séquence de balises et non avec deux lettres. Ils sont plus récents et moins largement pris en charge."
+    },
+    {
+      "q": "Puis-je mettre un drapeau dans mon pseudo ?",
+      "a": "Dans le nom affiché, en général oui. Certaines plateformes retirent les drapeaux nationaux pour des raisons de modération, indépendamment du reste des emojis."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Pourquoi un Drapeau N'est Pas Vraiment un Caractère",
+      "body": "🇫🇷 n'existe pas comme caractère unique : ce sont deux « indicateurs régionaux », 🇫 et 🇷, que le système reconnaît comme un code pays et remplace par une image. Unicode a fait ce choix délibérément, pour ne pas avoir à trancher quelles entités méritent un drapeau — la liste vient de la norme ISO des codes pays, pas d'une décision du consortium. C'est pourquoi un drapeau peut apparaître d'un côté et rester deux lettres de l'autre."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/emoji-combos/",
+      "title": "Combos emoji à copier-coller",
+      "desc": "Des combinaisons d'emoji prêtes à donner une ambiance à ta bio, ton statut et tes légendes — mignon, coquet…"
+    },
+    {
+      "href": "/fr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour…"
+    },
+    {
+      "href": "/fr/library/alphabet-grec/",
+      "title": "Alphabet Grec",
+      "desc": "L'alphabet grec complet — majuscules, minuscules et variantes mathématiques — prêt à copier. Clique sur n'i…"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/emoji-drapeaux/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-drapeaux/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/kokki-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-bandiere/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/guoqi-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    }
+  ]
+}
