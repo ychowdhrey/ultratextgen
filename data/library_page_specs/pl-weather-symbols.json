@@ -1,0 +1,401 @@
+{
+  "slug": "symbole-pogody",
+  "title": "Symbole pogody ☀ ☁ 🌧 ❄ — znaki i emoji pogodowe do kopiowania | UltraTextGen",
+  "meta_description": "Symbole pogody do skopiowania: słońce ☀, chmury ☁, deszcz 🌧, śnieg ❄, wiatr 🌪, fazy księżyca 🌙 i stopnie ℃ ℉. Kliknij symbol, aby od razu go skopiować.",
+  "breadcrumb": "Symbole pogody",
+  "hero_h1": "Symbole pogody i emoji",
+  "hero_tagline": "☀ ☁ 🌧 ❄ 🌪 — słońce, chmury, opady, wiatr, fazy księżyca i stopnie. Kliknij, aby skopiować.",
+  "intro": "Znaki pogodowe przydają się wszędzie tam, gdzie prognoza musi zmieścić się w jednej linii: w opisie profilu, w nagłówku wiadomości, w tabeli albo w podpisie zdjęcia. Osiem grup poniżej układa się tak, jak zwykle opisuje się pogodę — od nieba, przez opady, po temperaturę. Kliknij symbol, a trafi do schowka.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "sun",
+      "label": "Słońce i bezchmurne niebo",
+      "h2": "Słońce i bezchmurne niebo",
+      "intro": "Od czystego znaku po emoji wschodu.",
+      "symbols": [
+        {
+          "char": "☀",
+          "label": "Słońce"
+        },
+        {
+          "char": "☼",
+          "label": "Słońce z promieniami"
+        },
+        {
+          "char": "🌞",
+          "label": "Słońce z twarzą"
+        },
+        {
+          "char": "🌤",
+          "label": "Przeważnie słonecznie"
+        },
+        {
+          "char": "🌅",
+          "label": "Wschód słońca"
+        },
+        {
+          "char": "🌄",
+          "label": "Wschód nad górami"
+        },
+        {
+          "char": "🌇",
+          "label": "Zachód słońca"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "Chmury",
+      "h2": "Chmury",
+      "intro": "Całe zachmurzenie, od małego po pełne.",
+      "symbols": [
+        {
+          "char": "☁",
+          "label": "Chmura"
+        },
+        {
+          "char": "⛅",
+          "label": "Częściowe zachmurzenie"
+        },
+        {
+          "char": "🌥",
+          "label": "Duże zachmurzenie"
+        },
+        {
+          "char": "🌦",
+          "label": "Słońce z deszczem"
+        },
+        {
+          "char": "🌁",
+          "label": "Mgła"
+        },
+        {
+          "char": "☁️",
+          "label": "Chmura (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "rain",
+      "label": "Deszcz i burza",
+      "h2": "Deszcz i burza",
+      "intro": "Opady, wyładowania i to, co się przed nimi chroni.",
+      "symbols": [
+        {
+          "char": "🌧",
+          "label": "Deszcz"
+        },
+        {
+          "char": "⛈",
+          "label": "Burza z deszczem"
+        },
+        {
+          "char": "🌩",
+          "label": "Chmura z piorunem"
+        },
+        {
+          "char": "⚡",
+          "label": "Piorun"
+        },
+        {
+          "char": "🌂",
+          "label": "Złożony parasol"
+        },
+        {
+          "char": "☂",
+          "label": "Parasol"
+        },
+        {
+          "char": "☔",
+          "label": "Parasol w deszczu"
+        },
+        {
+          "char": "🌧️",
+          "label": "Chmura deszczowa (emoji)"
+        },
+        {
+          "char": "⛈️",
+          "label": "Chmura burzowa (emoji)"
+        },
+        {
+          "char": "🌩️",
+          "label": "Chmura z piorunem (emoji)"
+        },
+        {
+          "char": "☂️",
+          "label": "Parasol (emoji)"
+        },
+        {
+          "char": "🥾",
+          "label": "Kalosz"
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "label": "Śnieg i mróz",
+      "h2": "Śnieg i mróz",
+      "intro": "Zima w jednym znaku.",
+      "symbols": [
+        {
+          "char": "🌨",
+          "label": "Opady śniegu"
+        },
+        {
+          "char": "❄",
+          "label": "Płatek śniegu"
+        },
+        {
+          "char": "❅",
+          "label": "Płatek śniegu (wariant)"
+        },
+        {
+          "char": "❆",
+          "label": "Gruby płatek śniegu"
+        },
+        {
+          "char": "⛄",
+          "label": "Bałwan"
+        },
+        {
+          "char": "☃",
+          "label": "Bałwan z padającym śniegiem"
+        },
+        {
+          "char": "🧊",
+          "label": "Lód"
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "label": "Wiatr i trąba powietrzna",
+      "h2": "Wiatr i trąba powietrzna",
+      "intro": "Ruch powietrza, od podmuchu po wir.",
+      "symbols": [
+        {
+          "char": "🌬",
+          "label": "Twarz dmuchająca wiatrem"
+        },
+        {
+          "char": "🌪",
+          "label": "Trąba powietrzna"
+        },
+        {
+          "char": "🌀",
+          "label": "Cyklon"
+        },
+        {
+          "char": "💨",
+          "label": "Podmuch wiatru"
+        },
+        {
+          "char": "🌪️",
+          "label": "Trąba powietrzna (emoji)"
+        },
+        {
+          "char": "🌬️",
+          "label": "Twarz dmuchająca (emoji)"
+        },
+        {
+          "char": "🍃",
+          "label": "Liść na wietrze"
+        },
+        {
+          "char": "🎐",
+          "label": "Dzwonek wietrzny"
+        }
+      ]
+    },
+    {
+      "id": "moon",
+      "label": "Księżyc i noc",
+      "h2": "Księżyc i noc",
+      "intro": "Wszystkie fazy w kolejności.",
+      "symbols": [
+        {
+          "char": "🌙",
+          "label": "Sierp księżyca"
+        },
+        {
+          "char": "🌛",
+          "label": "Pierwsza kwadra z twarzą"
+        },
+        {
+          "char": "🌜",
+          "label": "Ostatnia kwadra z twarzą"
+        },
+        {
+          "char": "🌝",
+          "label": "Pełnia z twarzą"
+        },
+        {
+          "char": "🌑",
+          "label": "Nów"
+        },
+        {
+          "char": "🌒",
+          "label": "Przybywający sierp"
+        },
+        {
+          "char": "🌓",
+          "label": "Pierwsza kwadra"
+        },
+        {
+          "char": "🌔",
+          "label": "Przybywający garb"
+        },
+        {
+          "char": "🌕",
+          "label": "Pełnia"
+        },
+        {
+          "char": "🌖",
+          "label": "Ubywający garb"
+        },
+        {
+          "char": "🌗",
+          "label": "Ostatnia kwadra"
+        },
+        {
+          "char": "🌘",
+          "label": "Ubywający sierp"
+        }
+      ]
+    },
+    {
+      "id": "temp",
+      "label": "Temperatura i pomiary",
+      "h2": "Temperatura i pomiary",
+      "intro": "Stopnie i skale.",
+      "symbols": [
+        {
+          "char": "🌡",
+          "label": "Termometr"
+        },
+        {
+          "char": "🔥",
+          "label": "Ogień / upał"
+        },
+        {
+          "char": "°",
+          "label": "Znak stopnia"
+        },
+        {
+          "char": "℃",
+          "label": "Stopień Celsjusza"
+        },
+        {
+          "char": "℉",
+          "label": "Stopień Fahrenheita"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "label": "Tęcza i znaki dodatkowe",
+      "h2": "Tęcza i znaki dodatkowe",
+      "intro": "To, co zostaje po burzy.",
+      "symbols": [
+        {
+          "char": "🌈",
+          "label": "Tęcza"
+        },
+        {
+          "char": "☄",
+          "label": "Kometa"
+        },
+        {
+          "char": "🌊",
+          "label": "Fala"
+        },
+        {
+          "char": "💧",
+          "label": "Kropla"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Najczęstsze pytania o symbole pogody",
+  "faq": [
+    {
+      "q": "Czym różni się ☀ od 🌞?",
+      "a": "☀ to znak tekstowy — przyjmuje kolor i wielkość otaczającego tekstu, więc w dokumencie czy tabeli zostaje czarny i nie rozpycha wiersza. 🌞 to emoji, zawsze kolorowe i większe od linii. Do wydruków i arkuszy lepszy jest ☀, do postów i opisów profilu 🌞."
+    },
+    {
+      "q": "Czy to są oficjalne symbole z map synoptycznych?",
+      "a": "Nie. Mapy synoptyczne używają własnego zestawu znaków według norm meteorologicznych, którego w Unicode w komplecie nie ma. To, co jest tutaj, to znaki i emoji do pisania o pogodzie — do prognozy w opisie profilu, nagłówka wiadomości czy podpisu zdjęcia — a nie do rysowania mapy pogody."
+    },
+    {
+      "q": "Dlaczego niektóre symbole wyglądają inaczej na telefonie niż na komputerze?",
+      "a": "Emoji rysuje system, nie strona: Apple, Google, Samsung i Microsoft mają własne zestawy. Chmura z deszczem będzie więc trochę inna na iPhonie i na Androidzie. Znaki tekstowe jak ☀ ☁ ❄ są pod tym względem stabilniejsze, bo najczęściej rysuje je zwykła czcionka."
+    },
+    {
+      "q": "Jak wstawić stopnie ℃ zamiast pisać °C?",
+      "a": "℃ to jeden znak, wygodny w wąskiej kolumnie tabeli, ale w tekście ciągłym poprawniejszy jest zapis 25 °C ze spacją niełamliwą. W arkuszach kalkulacyjnych warto pamiętać, że ℃ w komórce jest tekstem — do obliczeń zostaw samą liczbę, a jednostkę daj w nagłówku kolumny."
+    },
+    {
+      "q": "Czy fazy księżyca są ułożone w prawidłowej kolejności?",
+      "a": "Tak — od nowiu 🌑 przez pierwszą kwadrę 🌓 i pełnię 🌕 do ostatniej kwadry 🌗 i ubywającego sierpa 🌘. Uwaga: ten porządek odpowiada półkuli północnej; na południowej oświetlona strona jest odwrotna, więc dla czytelnika z Australii kolejność wyglądałaby lustrzanie."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Dlaczego pogodę pisze się emoji, a nie słowem",
+      "body": "Prognoza w jednej linii to gatunek sam w sobie: pasek w opisie profilu, nagłówek wiadomości, podpis pod zdjęciem z wakacji. Słowo „pochmurno z przejaśnieniami” zajmuje pół wiersza, ⛅ zajmuje jeden znak i czyta się od razu, także dla kogoś, kto nie zna języka. To dlatego zestaw pogodowy jest jednym z niewielu, w których emoji bywa precyzyjniejsze od tekstu — pod warunkiem, że nie miesza się skal. Trzy poziomy zachmurzenia (⛅ 🌥 ☁) niosą informację; pięć podobnych chmur obok siebie już nie."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pl/library/symbole-znakow-zodiaku/",
+      "title": "Symbole Znaków Zodiaku",
+      "desc": "Wszystkie dwanaście znaków zodiaku jako znaki Unicode, a do tego planety, chińskie zwierzęta zodiaku i klasyczne aspekty."
+    },
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole gwiazdek — kolekcja (kopiuj i wklej)",
+      "desc": "Zbiór symboli gwiazdek, iskierek oraz znaków asterysku Unicode w różnej liczbie ramion i stylach. Od podstawowych gwiazdek, przez wieloramienne i emoji, po gwiazdki oceny i ozdoby do bio — kliknij dowolny symbol, aby natychmiast go skopiować i wkleić w profil na Instagramie, nazwę czy podpis."
+    },
+    {
+      "href": "/pl/library/emoji-flags/",
+      "title": "Flagi Emoji — Flagi Wszystkich Krajów",
+      "desc": "Kliknij flagę, aby skopiować: flaga Polski, Niemiec, Wielkiej Brytanii i każdego kraju świata. Wklej w nick, bio, opis albo wiadomość — bez instalowania niczego."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/pl/library/symbole-pogody/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "pl",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-pogody/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/wetter-symbole/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-cuaca/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-meteo/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/nalssi-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    }
+  ]
+}

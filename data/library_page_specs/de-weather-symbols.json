@@ -1,0 +1,401 @@
+{
+  "slug": "wetter-symbole",
+  "title": "Wetter Symbole ☀ ☁ 🌧 ❄ — Wetterzeichen und Emojis zum Kopieren | UltraTextGen",
+  "meta_description": "Wetter-Symbole zum Kopieren: Sonne ☀, Wolken ☁, Regen 🌧, Schnee ❄, Wind 🌪, Mondphasen 🌙 und Grad ℃ ℉. Tippe ein Zeichen an, um es sofort zu kopieren.",
+  "breadcrumb": "Wetter Symbole",
+  "hero_h1": "Wetter Symbole und Emojis",
+  "hero_tagline": "☀ ☁ 🌧 ❄ 🌪 — Sonne, Wolken, Niederschlag, Wind, Mondphasen und Grad. Antippen zum Kopieren.",
+  "intro": "Wetterzeichen braucht man überall dort, wo eine Vorhersage in eine einzige Zeile passen muss: in der Bio, in einer Betreffzeile, in einer Tabelle, unter einem Foto. Die acht Gruppen unten folgen der Reihenfolge, in der über Wetter meist gesprochen wird — vom Himmel über den Niederschlag bis zur Temperatur. Tippe ein Zeichen an, es landet in der Zwischenablage.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "sun",
+      "label": "Sonne und klarer Himmel",
+      "h2": "Sonne und klarer Himmel",
+      "intro": "Vom schlichten Zeichen bis zum Sonnenaufgang-Emoji.",
+      "symbols": [
+        {
+          "char": "☀",
+          "label": "Sonne"
+        },
+        {
+          "char": "☼",
+          "label": "Sonne mit Strahlen"
+        },
+        {
+          "char": "🌞",
+          "label": "Sonne mit Gesicht"
+        },
+        {
+          "char": "🌤",
+          "label": "Überwiegend sonnig"
+        },
+        {
+          "char": "🌅",
+          "label": "Sonnenaufgang"
+        },
+        {
+          "char": "🌄",
+          "label": "Sonnenaufgang über Bergen"
+        },
+        {
+          "char": "🌇",
+          "label": "Sonnenuntergang"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "Wolken",
+      "h2": "Wolken",
+      "intro": "Die ganze Skala der Bewölkung.",
+      "symbols": [
+        {
+          "char": "☁",
+          "label": "Wolke"
+        },
+        {
+          "char": "⛅",
+          "label": "Teilweise bewölkt"
+        },
+        {
+          "char": "🌥",
+          "label": "Stark bewölkt"
+        },
+        {
+          "char": "🌦",
+          "label": "Sonne und Regen"
+        },
+        {
+          "char": "🌁",
+          "label": "Nebel"
+        },
+        {
+          "char": "☁️",
+          "label": "Wolke (Emoji)"
+        }
+      ]
+    },
+    {
+      "id": "rain",
+      "label": "Regen und Gewitter",
+      "h2": "Regen und Gewitter",
+      "intro": "Niederschlag, Blitze und der Schutz davor.",
+      "symbols": [
+        {
+          "char": "🌧",
+          "label": "Regen"
+        },
+        {
+          "char": "⛈",
+          "label": "Gewitter"
+        },
+        {
+          "char": "🌩",
+          "label": "Wolke mit Blitz"
+        },
+        {
+          "char": "⚡",
+          "label": "Blitz"
+        },
+        {
+          "char": "🌂",
+          "label": "Geschlossener Schirm"
+        },
+        {
+          "char": "☂",
+          "label": "Regenschirm"
+        },
+        {
+          "char": "☔",
+          "label": "Schirm im Regen"
+        },
+        {
+          "char": "🌧️",
+          "label": "Regenwolke (Emoji)"
+        },
+        {
+          "char": "⛈️",
+          "label": "Gewitterwolke (Emoji)"
+        },
+        {
+          "char": "🌩️",
+          "label": "Blitzwolke (Emoji)"
+        },
+        {
+          "char": "☂️",
+          "label": "Regenschirm (Emoji)"
+        },
+        {
+          "char": "🥾",
+          "label": "Gummistiefel"
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "label": "Schnee und Kälte",
+      "h2": "Schnee und Kälte",
+      "intro": "Winter in einem Zeichen.",
+      "symbols": [
+        {
+          "char": "🌨",
+          "label": "Schneefall"
+        },
+        {
+          "char": "❄",
+          "label": "Schneeflocke"
+        },
+        {
+          "char": "❅",
+          "label": "Schneeflocke (Variante)"
+        },
+        {
+          "char": "❆",
+          "label": "Dicke Schneeflocke"
+        },
+        {
+          "char": "⛄",
+          "label": "Schneemann"
+        },
+        {
+          "char": "☃",
+          "label": "Schneemann mit Schneefall"
+        },
+        {
+          "char": "🧊",
+          "label": "Eis"
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "label": "Wind und Wirbelsturm",
+      "h2": "Wind und Wirbelsturm",
+      "intro": "Bewegte Luft, vom Windstoß bis zum Wirbel.",
+      "symbols": [
+        {
+          "char": "🌬",
+          "label": "Blasendes Gesicht"
+        },
+        {
+          "char": "🌪",
+          "label": "Tornado"
+        },
+        {
+          "char": "🌀",
+          "label": "Zyklon"
+        },
+        {
+          "char": "💨",
+          "label": "Windstoß"
+        },
+        {
+          "char": "🌪️",
+          "label": "Tornado (Emoji)"
+        },
+        {
+          "char": "🌬️",
+          "label": "Blasendes Gesicht (Emoji)"
+        },
+        {
+          "char": "🍃",
+          "label": "Blatt im Wind"
+        },
+        {
+          "char": "🎐",
+          "label": "Windspiel"
+        }
+      ]
+    },
+    {
+      "id": "moon",
+      "label": "Mond und Nacht",
+      "h2": "Mond und Nacht",
+      "intro": "Alle Phasen der Reihe nach.",
+      "symbols": [
+        {
+          "char": "🌙",
+          "label": "Mondsichel"
+        },
+        {
+          "char": "🌛",
+          "label": "Zunehmender Halbmond mit Gesicht"
+        },
+        {
+          "char": "🌜",
+          "label": "Abnehmender Halbmond mit Gesicht"
+        },
+        {
+          "char": "🌝",
+          "label": "Vollmond mit Gesicht"
+        },
+        {
+          "char": "🌑",
+          "label": "Neumond"
+        },
+        {
+          "char": "🌒",
+          "label": "Zunehmende Sichel"
+        },
+        {
+          "char": "🌓",
+          "label": "Zunehmender Halbmond"
+        },
+        {
+          "char": "🌔",
+          "label": "Zunehmender Dreiviertelmond"
+        },
+        {
+          "char": "🌕",
+          "label": "Vollmond"
+        },
+        {
+          "char": "🌖",
+          "label": "Abnehmender Dreiviertelmond"
+        },
+        {
+          "char": "🌗",
+          "label": "Abnehmender Halbmond"
+        },
+        {
+          "char": "🌘",
+          "label": "Abnehmende Sichel"
+        }
+      ]
+    },
+    {
+      "id": "temp",
+      "label": "Temperatur und Messwerte",
+      "h2": "Temperatur und Messwerte",
+      "intro": "Grad und Skalen.",
+      "symbols": [
+        {
+          "char": "🌡",
+          "label": "Thermometer"
+        },
+        {
+          "char": "🔥",
+          "label": "Feuer / Hitze"
+        },
+        {
+          "char": "°",
+          "label": "Gradzeichen"
+        },
+        {
+          "char": "℃",
+          "label": "Grad Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Grad Fahrenheit"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "label": "Regenbogen und Extras",
+      "h2": "Regenbogen und Extras",
+      "intro": "Was nach dem Gewitter bleibt.",
+      "symbols": [
+        {
+          "char": "🌈",
+          "label": "Regenbogen"
+        },
+        {
+          "char": "☄",
+          "label": "Komet"
+        },
+        {
+          "char": "🌊",
+          "label": "Welle"
+        },
+        {
+          "char": "💧",
+          "label": "Tropfen"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Wetter-Symbolen",
+  "faq": [
+    {
+      "q": "Was ist der Unterschied zwischen ☀ und 🌞?",
+      "a": "☀ ist ein Textzeichen: Es übernimmt Farbe und Größe des umgebenden Texts, bleibt in einem Dokument oder einer Tabelle also schwarz und sprengt die Zeile nicht. 🌞 ist ein Emoji, immer farbig und größer als die Zeile. Für Ausdrucke und Tabellen ist ☀ die bessere Wahl, für Posts und Bio 🌞."
+    },
+    {
+      "q": "Sind das die offiziellen Symbole der Wetterkarte?",
+      "a": "Nein. Synoptische Karten verwenden eine genormte Symbolik, die Unicode nicht vollständig abbildet. Hier stehen Zeichen und Emojis, mit denen man über Wetter schreibt — eine Vorhersage in der Bio, eine Betreffzeile, eine Bildunterschrift — nicht, um eine Wetterkarte zu zeichnen."
+    },
+    {
+      "q": "Warum sehen manche Symbole am Handy anders aus als am Rechner?",
+      "a": "Emojis zeichnet das Betriebssystem, nicht die Seite: Apple, Google, Samsung und Microsoft haben eigene Sätze. Die Regenwolke sieht auf dem iPhone deshalb etwas anders aus als auf Android. Textzeichen wie ☀ ☁ ❄ sind stabiler, weil sie meist die normale Schrift zeichnet."
+    },
+    {
+      "q": "℃ oder °C — was ist richtig?",
+      "a": "℃ ist ein einzelnes Zeichen und in einer schmalen Tabellenspalte praktisch; im Fließtext bleibt aber 25 °C mit geschütztem Leerzeichen die korrekte Schreibweise. In Tabellenkalkulationen gilt: ℃ in der Zelle ist Text — für Berechnungen nur die Zahl stehen lassen und die Einheit in die Spaltenüberschrift setzen."
+    },
+    {
+      "q": "Stimmt die Reihenfolge der Mondphasen?",
+      "a": "Ja: vom Neumond 🌑 über den zunehmenden Halbmond 🌓 und den Vollmond 🌕 zum abnehmenden Halbmond 🌗 und zur abnehmenden Sichel 🌘. Diese Abfolge gilt allerdings für die Nordhalbkugel; südlich des Äquators ist die beleuchtete Seite spiegelverkehrt."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Warum Wetter mit Emojis geschrieben wird",
+      "body": "Die Vorhersage in einer Zeile ist eine eigene Gattung: der Streifen in der Bio, die Betreffzeile, die Unterschrift unter dem Urlaubsfoto. „Wechselnd bewölkt mit Aufheiterungen“ füllt eine halbe Zeile, ⛅ füllt ein Zeichen und wird sofort verstanden, auch von jemandem, der die Sprache nicht kennt. Das ist einer der wenigen Bereiche, in denen ein Emoji genauer ist als ein Wort — solange man die Skalen nicht vermischt. Drei Stufen Bewölkung (⛅ 🌥 ☁) tragen Information; fünf ähnliche Wolken nebeneinander nicht mehr."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/sternzeichen-symbole/",
+      "title": "Sternzeichen Symbole",
+      "desc": "Alle zwölf Tierkreiszeichen als Unicode-Zeichen, dazu Planeten, chinesische Tierkreistiere und die klassischen Aspektsymbole."
+    },
+    {
+      "href": "/de/library/stern-symbole/",
+      "title": "Stern-Symbole (zum Kopieren)",
+      "desc": "Eine Sammlung von Stern-Symbolen, Funkel-Zeichen und Sternchen-Varianten aus Unicode. Von einfachen Sternen über mehrzackige Sterne bis zu Bewertungssternen — einfach auf ein Symbol klicken, um es sofort zu kopieren, und in Instagram-Bio, Namen oder Kaptionen einfügen."
+    },
+    {
+      "href": "/de/library/emoji-flags/",
+      "title": "Flaggen-Emoji — Länderflaggen zum Kopieren",
+      "desc": "Flagge anklicken und sofort kopieren: die Deutschland-Flagge, UK, Türkei und jedes weitere Land. Einfügen in Spielnamen, Bio, Captions oder Nachrichten — ohne App."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/wetter-symbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/wetter-symbole/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-cuaca/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-meteo/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/nalssi-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-pogody/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    }
+  ]
+}
