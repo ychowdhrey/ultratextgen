@@ -1,0 +1,217 @@
+{
+  "slug": "backslash-zeichen",
+  "title": "Backslash Zeichen \\ / — Schrägstrich-Varianten zum Kopieren | UltraTextGen",
+  "meta_description": "Backslash \\ und Schrägstrich / mit allen Varianten: Bruchstrich ⁄, Divisionsstrich ∕, Fullwidth ／ ＼, Mathe-Diagonalen und senkrechte Striche. Antippen zum Kopieren.",
+  "breadcrumb": "Backslash Zeichen",
+  "hero_h1": "Schrägstrich- und Backslash-Zeichen",
+  "hero_tagline": "/ \\ ⁄ ∕ ／ ╱ — Schrägstrich, Backslash, Bruch- und Mathe-Varianten. Antippen zum Kopieren.",
+  "intro": "Die meisten Besucher dieser Seite suchen genau eine Sache: wie man den Backslash tippt, wenn die Tastatur ihn nicht hergibt. Die Antwort steht in der FAQ; die vier Gruppen darunter sind die Varianten, die man braucht, sobald es um Brüche, Formeln oder Textsatz geht. Antippen kopiert das Zeichen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Varianten des Schrägstrichs",
+      "h2": "Varianten des Schrägstrichs",
+      "intro": "Von schmal bis breit.",
+      "symbols": [
+        {
+          "char": "/",
+          "label": "Schrägstrich (Solidus)"
+        },
+        {
+          "char": "⁄",
+          "label": "Bruchstrich"
+        },
+        {
+          "char": "∕",
+          "label": "Divisionsschrägstrich"
+        },
+        {
+          "char": "⧸",
+          "label": "Großer Solidus"
+        },
+        {
+          "char": "／",
+          "label": "Schrägstrich in voller Breite"
+        },
+        {
+          "char": "╱",
+          "label": "Diagonale (Rahmenzeichnung)"
+        },
+        {
+          "char": "⟋",
+          "label": "Steigende Diagonale (Mathematik)"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Varianten des Backslashs",
+      "h2": "Varianten des Backslashs",
+      "intro": "Dasselbe rückwärts.",
+      "symbols": [
+        {
+          "char": "\\",
+          "label": "Backslash (Reverse Solidus)"
+        },
+        {
+          "char": "∖",
+          "label": "Mengendifferenz"
+        },
+        {
+          "char": "⧵",
+          "label": "Backslash-Operator"
+        },
+        {
+          "char": "＼",
+          "label": "Backslash in voller Breite"
+        },
+        {
+          "char": "╲",
+          "label": "Rückwärtsdiagonale (Rahmenzeichnung)"
+        },
+        {
+          "char": "⟍",
+          "label": "Fallende Diagonale (Mathematik)"
+        },
+        {
+          "char": "﹨",
+          "label": "Kleiner Backslash"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Division und Mathematik",
+      "h2": "Division und Mathematik",
+      "intro": "Wenn gerechnet wird.",
+      "symbols": [
+        {
+          "char": "÷",
+          "label": "Geteiltzeichen"
+        },
+        {
+          "char": "∶",
+          "label": "Verhältniszeichen"
+        },
+        {
+          "char": "∷",
+          "label": "Proportionszeichen"
+        },
+        {
+          "char": "⧶",
+          "label": "Solidus mit Überstrich"
+        },
+        {
+          "char": "⫽",
+          "label": "Doppelter Solidus-Operator"
+        },
+        {
+          "char": "⧷",
+          "label": "Backslash mit Strich"
+        },
+        {
+          "char": "⧹",
+          "label": "Großer Backslash"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Dekorative und besondere Striche",
+      "h2": "Dekorative und besondere Striche",
+      "intro": "Für Trenner und Raster.",
+      "symbols": [
+        {
+          "char": "╳",
+          "label": "Leichtes Diagonalkreuz"
+        },
+        {
+          "char": "∥",
+          "label": "Parallel zu"
+        },
+        {
+          "char": "⫴",
+          "label": "Dreifacher Senkrechtstrich"
+        },
+        {
+          "char": "⫾",
+          "label": "Weißer Senkrechtstrich"
+        },
+        {
+          "char": "|",
+          "label": "Senkrechter Strich"
+        },
+        {
+          "char": "‖",
+          "label": "Doppelter Senkrechtstrich"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zum Backslash-Zeichen",
+  "faq": [
+    {
+      "q": "Wie tippe ich den Backslash auf einer deutschen Tastatur?",
+      "a": "Mit AltGr + ß. Auf einem Mac mit deutschem Layout ist es Alt + Shift + 7. Auf einer Laptop-Tastatur ohne AltGr funktioniert auch Strg + Alt + ß. Wenn keine der Kombinationen greift, kopiere das Zeichen einfach hier oben aus der zweiten Gruppe."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen / und \\?",
+      "a": "Der Schrägstrich / trennt Pfadteile im Web und unter Linux und macOS; der Backslash \\ tut dasselbe unter Windows. In Programmiersprachen leitet \\ zusätzlich Escape-Sequenzen ein, weshalb er in Zeichenketten oft doppelt geschrieben werden muss."
+    },
+    {
+      "q": "Welchen Strich nehme ich für einen Bruch?",
+      "a": "Für Fließtext den Bruchstrich ⁄ (U+2044): Er ist stärker geneigt und schließt enger an die Ziffern an. In Formeln gehört der Divisionsschrägstrich ∕ (U+2215) hin. Der normale / ist typografisch keine der beiden Rollen, funktioniert aber überall."
+    },
+    {
+      "q": "Warum sieht ／ so breit aus?",
+      "a": "Es ist die Fullwidth-Variante, gedacht für Text mit ostasiatischen Schriftzeichen, in dem jedes Zeichen dieselbe quadratische Breite hat. In einem deutschen Satz wirkt sie deshalb übermäßig weit; für Layout-Zwecke ist sie trotzdem beliebt, weil sie zuverlässig Platz schafft."
+    },
+    {
+      "q": "Kann ich den Backslash in einem Dateinamen verwenden?",
+      "a": "Unter Windows nicht — er ist dort als Pfadtrenner reserviert, ebenso wie / \\ : * ? \" < > |. Unter Linux und macOS ist \\ im Namen technisch erlaubt, führt aber in Skripten regelmäßig zu Fehlern und ist deshalb keine gute Idee."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ein Zeichen, das von einer Firmenentscheidung übrig blieb",
+      "body": "Dass Windows-Pfade mit Backslash geschrieben werden, ist kein Entwurf, sondern ein Rest. MS-DOS verwendete den Schrägstrich bereits für Befehlsschalter, als Verzeichnisse hinzukamen — also musste der Trenner ein anderes Zeichen werden, und der Backslash war frei. Diese Notlösung von 1983 ist der Grund, warum bis heute jede plattformübergreifende Software zwei Pfadschreibweisen behandeln muss, warum \\ in fast jeder Programmiersprache doppelt getippt wird und warum die deutsche Tastatur dieses Zeichen hinter eine AltGr-Kombination versteckt hat."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/mathe-symbole/",
+      "title": "Mathe-Symbole",
+      "desc": "Mathematische Unicode-Zeichen zum Kopieren und Einfügen — Operatoren, griechische Buchstaben, Mengenlehre, Analysis und mehr. Klick auf ein Symbol, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/klammer-symbole/",
+      "title": "Klammern & Klammerzeichen",
+      "desc": "Eine vollständige Referenz der Unicode-Klammertypen — von Standard- und mathematischen Klammern bis zu CJK-, dekorativen und vollbreiten Varianten. Klick auf ein Symbol, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/symbole-zum-kopieren/",
+      "title": "Symbole & Emojis zum Kopieren",
+      "desc": "Alle Symbole, Sonderzeichen, Zeichen und Emojis zum Kopieren und Einfügen an einem Ort — Herzen ♥, Sterne ★, Pfeile →, Häkchen ✓, Währung € und mehr. Klick ein Zeichen an, und es ist sofort in deiner Zwischenablage. Kostenlos, ohne App, ohne Anmeldung."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/backslash-zeichen/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/backslash-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+    }
+  ]
+}
