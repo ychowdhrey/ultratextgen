@@ -1,0 +1,401 @@
+{
+  "slug": "simboli-meteo",
+  "title": "Simboli meteo ☀ ☁ 🌧 ❄ — simboli ed emoji del tempo da copiare | UltraTextGen",
+  "meta_description": "Simboli meteo da copiare: sole ☀, nuvole ☁, pioggia 🌧, neve ❄, vento 🌪, fasi lunari 🌙 e gradi ℃ ℉. Tocca un simbolo per copiarlo subito.",
+  "breadcrumb": "Simboli meteo",
+  "hero_h1": "Simboli meteo ed emoji del tempo",
+  "hero_tagline": "☀ ☁ 🌧 ❄ 🌪 — sole, nuvole, precipitazioni, vento, fasi lunari e gradi. Tocca per copiare.",
+  "intro": "I simboli del tempo servono ovunque una previsione debba stare in una riga sola: nella bio, nell'oggetto di un messaggio, in una tabella, sotto una foto. Gli otto gruppi qui sotto seguono l'ordine con cui il tempo si racconta di solito — dal cielo alle precipitazioni fino alla temperatura. Tocca un simbolo e finisce negli appunti.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "sun",
+      "label": "Sole e cielo sereno",
+      "h2": "Sole e cielo sereno",
+      "intro": "Dal segno essenziale all'emoji dell'alba.",
+      "symbols": [
+        {
+          "char": "☀",
+          "label": "Sole"
+        },
+        {
+          "char": "☼",
+          "label": "Sole con raggi"
+        },
+        {
+          "char": "🌞",
+          "label": "Sole con volto"
+        },
+        {
+          "char": "🌤",
+          "label": "Prevalentemente soleggiato"
+        },
+        {
+          "char": "🌅",
+          "label": "Alba"
+        },
+        {
+          "char": "🌄",
+          "label": "Alba sulle montagne"
+        },
+        {
+          "char": "🌇",
+          "label": "Tramonto"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "label": "Nuvole",
+      "h2": "Nuvole",
+      "intro": "Tutta la scala della copertura nuvolosa.",
+      "symbols": [
+        {
+          "char": "☁",
+          "label": "Nuvola"
+        },
+        {
+          "char": "⛅",
+          "label": "Parzialmente nuvoloso"
+        },
+        {
+          "char": "🌥",
+          "label": "Molto nuvoloso"
+        },
+        {
+          "char": "🌦",
+          "label": "Sole e pioggia"
+        },
+        {
+          "char": "🌁",
+          "label": "Nebbia"
+        },
+        {
+          "char": "☁️",
+          "label": "Nuvola (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "rain",
+      "label": "Pioggia e temporali",
+      "h2": "Pioggia e temporali",
+      "intro": "Precipitazioni, fulmini e come ci si ripara.",
+      "symbols": [
+        {
+          "char": "🌧",
+          "label": "Pioggia"
+        },
+        {
+          "char": "⛈",
+          "label": "Temporale"
+        },
+        {
+          "char": "🌩",
+          "label": "Nuvola con fulmine"
+        },
+        {
+          "char": "⚡",
+          "label": "Fulmine"
+        },
+        {
+          "char": "🌂",
+          "label": "Ombrello chiuso"
+        },
+        {
+          "char": "☂",
+          "label": "Ombrello"
+        },
+        {
+          "char": "☔",
+          "label": "Ombrello sotto la pioggia"
+        },
+        {
+          "char": "🌧️",
+          "label": "Nuvola di pioggia (emoji)"
+        },
+        {
+          "char": "⛈️",
+          "label": "Nuvola temporalesca (emoji)"
+        },
+        {
+          "char": "🌩️",
+          "label": "Nuvola con fulmine (emoji)"
+        },
+        {
+          "char": "☂️",
+          "label": "Ombrello (emoji)"
+        },
+        {
+          "char": "🥾",
+          "label": "Stivale da pioggia"
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "label": "Neve e freddo",
+      "h2": "Neve e freddo",
+      "intro": "L'inverno in un carattere.",
+      "symbols": [
+        {
+          "char": "🌨",
+          "label": "Nevicata"
+        },
+        {
+          "char": "❄",
+          "label": "Fiocco di neve"
+        },
+        {
+          "char": "❅",
+          "label": "Fiocco di neve (variante)"
+        },
+        {
+          "char": "❆",
+          "label": "Fiocco di neve spesso"
+        },
+        {
+          "char": "⛄",
+          "label": "Pupazzo di neve"
+        },
+        {
+          "char": "☃",
+          "label": "Pupazzo sotto la neve"
+        },
+        {
+          "char": "🧊",
+          "label": "Ghiaccio"
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "label": "Vento e tornado",
+      "h2": "Vento e tornado",
+      "intro": "L'aria in movimento, dalla folata al vortice.",
+      "symbols": [
+        {
+          "char": "🌬",
+          "label": "Volto che soffia"
+        },
+        {
+          "char": "🌪",
+          "label": "Tornado"
+        },
+        {
+          "char": "🌀",
+          "label": "Ciclone"
+        },
+        {
+          "char": "💨",
+          "label": "Folata di vento"
+        },
+        {
+          "char": "🌪️",
+          "label": "Tornado (emoji)"
+        },
+        {
+          "char": "🌬️",
+          "label": "Volto che soffia (emoji)"
+        },
+        {
+          "char": "🍃",
+          "label": "Foglia al vento"
+        },
+        {
+          "char": "🎐",
+          "label": "Campanella a vento"
+        }
+      ]
+    },
+    {
+      "id": "moon",
+      "label": "Luna e notte",
+      "h2": "Luna e notte",
+      "intro": "Tutte le fasi, in ordine.",
+      "symbols": [
+        {
+          "char": "🌙",
+          "label": "Luna crescente"
+        },
+        {
+          "char": "🌛",
+          "label": "Primo quarto con volto"
+        },
+        {
+          "char": "🌜",
+          "label": "Ultimo quarto con volto"
+        },
+        {
+          "char": "🌝",
+          "label": "Luna piena con volto"
+        },
+        {
+          "char": "🌑",
+          "label": "Luna nuova"
+        },
+        {
+          "char": "🌒",
+          "label": "Luna crescente sottile"
+        },
+        {
+          "char": "🌓",
+          "label": "Primo quarto"
+        },
+        {
+          "char": "🌔",
+          "label": "Gibbosa crescente"
+        },
+        {
+          "char": "🌕",
+          "label": "Luna piena"
+        },
+        {
+          "char": "🌖",
+          "label": "Gibbosa calante"
+        },
+        {
+          "char": "🌗",
+          "label": "Ultimo quarto"
+        },
+        {
+          "char": "🌘",
+          "label": "Luna calante sottile"
+        }
+      ]
+    },
+    {
+      "id": "temp",
+      "label": "Temperatura e misure",
+      "h2": "Temperatura e misure",
+      "intro": "Gradi e scale.",
+      "symbols": [
+        {
+          "char": "🌡",
+          "label": "Termometro"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuoco / caldo"
+        },
+        {
+          "char": "°",
+          "label": "Segno di grado"
+        },
+        {
+          "char": "℃",
+          "label": "Grado Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Grado Fahrenheit"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "label": "Arcobaleno e simboli extra",
+      "h2": "Arcobaleno e simboli extra",
+      "intro": "Quello che resta dopo il temporale.",
+      "symbols": [
+        {
+          "char": "🌈",
+          "label": "Arcobaleno"
+        },
+        {
+          "char": "☄",
+          "label": "Cometa"
+        },
+        {
+          "char": "🌊",
+          "label": "Onda"
+        },
+        {
+          "char": "💧",
+          "label": "Goccia"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Domande frequenti sui simboli meteo",
+  "faq": [
+    {
+      "q": "Che differenza c'è fra ☀ e 🌞?",
+      "a": "☀ è un carattere di testo: prende colore e dimensione dal testo attorno, quindi in un documento o in una tabella resta nero e non allarga la riga. 🌞 è un'emoji, sempre colorata e più grande della riga. Per stampe e fogli di calcolo conviene ☀, per post e bio 🌞."
+    },
+    {
+      "q": "Sono i simboli ufficiali delle carte meteorologiche?",
+      "a": "No. Le carte sinottiche usano una simbologia normata che Unicode non copre per intero. Qui trovi caratteri ed emoji per scrivere del tempo — una previsione in bio, l'oggetto di un messaggio, la didascalia di una foto — non per disegnare una mappa meteorologica."
+    },
+    {
+      "q": "Perché alcuni simboli sono diversi sul telefono e sul computer?",
+      "a": "Le emoji le disegna il sistema operativo, non la pagina: Apple, Google, Samsung e Microsoft hanno set propri. La nuvola con pioggia sarà quindi un po' diversa su iPhone e su Android. I caratteri di testo come ☀ ☁ ❄ sono più stabili, perché di solito li disegna il font normale."
+    },
+    {
+      "q": "Meglio ℃ o °C?",
+      "a": "℃ è un carattere unico, comodo in una colonna stretta, ma nel testo corrente la forma corretta resta 25 °C con lo spazio. Nei fogli di calcolo ricorda che ℃ in cella è testo: per i calcoli lascia solo il numero e metti l'unità nell'intestazione della colonna."
+    },
+    {
+      "q": "Le fasi lunari sono nell'ordine giusto?",
+      "a": "Sì: dalla luna nuova 🌑 al primo quarto 🌓, alla piena 🌕, all'ultimo quarto 🌗 e alla calante 🌘. Attenzione però: quest'ordine vale per l'emisfero nord. Nell'emisfero sud la parte illuminata è dal lato opposto, quindi per un lettore australiano la sequenza appare speculare."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Perché il tempo si scrive con le emoji",
+      "body": "La previsione in una riga è un genere a sé: la striscia in bio, l'oggetto del messaggio, la didascalia della foto in vacanza. «Nuvoloso con schiarite» occupa mezza riga; ⛅ occupa un carattere e si legge subito, anche per chi non conosce la lingua. È uno dei pochi campi in cui un'emoji è più precisa di una parola — a patto di non mescolare le scale. Tre livelli di copertura (⛅ 🌥 ☁) portano informazione; cinque nuvole simili una accanto all'altra non più."
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-zodiaco/",
+      "title": "Simboli dello zodiaco e dell'astrologia",
+      "desc": "Una raccolta dei segni dello zodiaco occidentale, dei simboli planetari, dello zodiaco cinese e dei caratteri astronomici. Tocca un simbolo, è copiato."
+    },
+    {
+      "href": "/it/library/simboli-stella/",
+      "title": "Simboli stella da copiare",
+      "desc": "Una raccolta di simboli stella, scintille e asterischi Unicode — stelle piene ★, vuote ☆, a più punte, emoji e decorazioni per la bio. Tocca un simbolo, è copiato."
+    },
+    {
+      "href": "/it/library/emoji-bandiere/",
+      "title": "Emoji Bandiere",
+      "desc": "Le bandiere più usate, per categoria — paesi, organizzazioni, regioni, identità e bandiere simboliche."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/it/library/simboli-meteo/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "it",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-meteo/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/wetter-symbole/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-cuaca/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/nalssi-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-pogody/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/weather-symbols/"
+    }
+  ]
+}

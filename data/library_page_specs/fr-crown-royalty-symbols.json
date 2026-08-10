@@ -1,0 +1,197 @@
+{
+  "slug": "symbole-couronne",
+  "title": "Symbole couronne ♔ ♛ 👑 — couronnes et signes royaux à copier | UltraTextGen",
+  "meta_description": "Symboles de couronne à copier : roi ♔, dame ♛, couronne 👑, ankh ☥, fleur de lys ⚜ et motifs royaux. Clique sur un symbole pour le copier aussitôt.",
+  "breadcrumb": "Symbole couronne",
+  "hero_h1": "Symboles de couronne et de royauté",
+  "hero_tagline": "♔ ♕ ♚ ♛ 👑 ⚜ — pièces d'échecs, couronne, ankh et fleur de lys. Clique pour copier.",
+  "intro": "Qui cherche un symbole de couronne tombe presque toujours sur les pièces d'échecs : ♔ et ♛ sont les seuls vrais caractères de texte à porter une couronne, et contrairement à l'emoji 👑 ils prennent la couleur du texte autour. C'est précisément pour cela qu'ils passent dans les pseudos, là où les emoji sont souvent refusés. Clique pour copier.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Symboles de couronne",
+      "h2": "Symboles de couronne",
+      "intro": "Tout le choix d'un coup d'œil.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Roi blanc des échecs"
+        },
+        {
+          "char": "♕",
+          "label": "Dame blanche des échecs"
+        },
+        {
+          "char": "♚",
+          "label": "Roi noir des échecs"
+        },
+        {
+          "char": "♛",
+          "label": "Dame noire des échecs"
+        },
+        {
+          "char": "👑",
+          "label": "Emoji couronne"
+        },
+        {
+          "char": "☥",
+          "label": "Ankh"
+        },
+        {
+          "char": "⚜",
+          "label": "Fleur de lys"
+        },
+        {
+          "char": "🤴",
+          "label": "Emoji prince"
+        },
+        {
+          "char": "👸",
+          "label": "Emoji princesse"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Roi et dame des échecs",
+      "h2": "Roi et dame des échecs",
+      "intro": "Plein ou en contour.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Roi blanc (contour)"
+        },
+        {
+          "char": "♕",
+          "label": "Dame blanche (contour)"
+        },
+        {
+          "char": "♚",
+          "label": "Roi noir (plein)"
+        },
+        {
+          "char": "♛",
+          "label": "Dame noire (plein)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Diadèmes et motifs royaux",
+      "h2": "Diadèmes et motifs royaux",
+      "intro": "Ce qui va autour.",
+      "symbols": [
+        {
+          "char": "👑",
+          "label": "Emoji couronne"
+        },
+        {
+          "char": "☥",
+          "label": "Ankh"
+        },
+        {
+          "char": "⚜",
+          "label": "Fleur de lys"
+        },
+        {
+          "char": "❦",
+          "label": "Cœur fleuri"
+        },
+        {
+          "char": "✠",
+          "label": "Croix de Malte"
+        },
+        {
+          "char": "☩",
+          "label": "Croix de Jérusalem"
+        },
+        {
+          "char": "🫅",
+          "label": "Personne couronnée"
+        },
+        {
+          "char": "💍",
+          "label": "Bague"
+        },
+        {
+          "char": "🏰",
+          "label": "Château"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions fréquentes sur le symbole couronne",
+  "faq": [
+    {
+      "q": "Pourquoi ♔ est « blanc » alors qu'il apparaît en contour ?",
+      "a": "Les noms viennent de l'échiquier, pas de l'apparence. ♔ est la pièce blanche, dessinée en contour ; ♚ est la noire, dessinée pleine. Sur fond sombre l'impression s'inverse, mais les caractères, eux, ne changent pas."
+    },
+    {
+      "q": "Quelle différence entre ♛ et 👑 ?",
+      "a": "♛ est un caractère de texte : il prend la couleur et la taille du texte et passe dans les champs qui refusent les emoji. 👑 est un emoji, toujours doré et plus grand que la ligne. Pour un pseudo, ♛ est en général le choix le plus pratique."
+    },
+    {
+      "q": "Ces symboles passent-ils dans un pseudo de jeu ?",
+      "a": "♔ ♕ ♚ ♛ ★ sont anciens et bien pris en charge, donc souvent acceptés. 👑 🤴 🫅 sont des emoji et se font fréquemment refuser dans les champs de nom. Teste avant de valider, surtout si le renommage est payant."
+    },
+    {
+      "q": "Que représentent ☥ et ⚜ ?",
+      "a": "☥ est l'ankh égyptien, signe de vie : ce n'est pas une couronne, mais sa silhouette le fait souvent figurer à côté. ⚜ est la fleur de lys héraldique, emblème des rois de France, et donc le plus « royal » de la série."
+    },
+    {
+      "q": "Pourquoi 🫅 s'affiche-t-il comme un carré vide ?",
+      "a": "Ce caractère n'a été ajouté qu'en 2022 ; les systèmes plus anciens ne le connaissent pas encore. Le texte est correct et s'affichera sur un appareil à jour. Pour être sûr, prends 👑 ou ♛."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Pourquoi la couronne vient du jeu d'échecs",
+      "body": "Unicode ne contient aucun caractère « couronne » générique en texte, et ce n'est pas un oubli. La table encode les signes dont une écriture ou une notation spécialisée a besoin, pas ceux qui seraient décoratifs. Les pièces d'échecs y sont entrées parce qu'on imprime des parties depuis des siècles et qu'il fallait des caractères pour cela. Que ♛ orne aujourd'hui des millions de pseudos est un effet de bord : c'était simplement la seule couronne existant sous forme de lettre au moment où l'on en a cherché une."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/symboles-echecs/",
+      "title": "Symboles d'Échecs",
+      "desc": "Une collection de référence des symboles Unicode de pièces d'échecs, de cases et de notation. Cliquez sur un symbole pour le copier instantanément."
+    },
+    {
+      "href": "/fr/library/symboles/",
+      "title": "Symboles à copier-coller — cœurs, étoiles & caractères spéciaux",
+      "desc": "La collection de symboles pour ta bio Instagram, ton pseudo, ton statut WhatsApp et tes légendes — cœurs ♡, étoiles ★, croix ✝, cadres ꧁꧂, flèches et symboles aesthetic. Touche un symbole, il est copié."
+    },
+    {
+      "href": "/fr/library/symboles-etoiles/",
+      "title": "Symboles Étoile",
+      "desc": "Une collection de référence de symboles étoile, de caractères scintillants et de signes Unicode liés à l'astérisque. Clique sur un symbole pour le copier instantanément."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/symbole-couronne/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/crown-royalty-symbols/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symbole-couronne/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/crown-royalty-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/kronen-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/crown-royalty-symbols/"
+    }
+  ]
+}
