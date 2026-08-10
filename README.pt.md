@@ -142,12 +142,14 @@ Páginas contextuais projetadas em torno de objetivos específicos do usuário, 
 - https://ultratextgen.com/usecase/emoji-to-text/
 - https://ultratextgen.com/usecase/football-font/
 - https://ultratextgen.com/usecase/fortnite-name-generator/
+- https://ultratextgen.com/usecase/free-fire-clan-tag-generator/
 - https://ultratextgen.com/usecase/free-fire-guild-name-generator/
 - https://ultratextgen.com/usecase/free-fire-name-generator/
 - https://ultratextgen.com/usecase/group-name-generator/
 - https://ultratextgen.com/usecase/linkedin-headline/
 - https://ultratextgen.com/usecase/mobile-legends-name-generator/
 - https://ultratextgen.com/usecase/mobile-legends-squad-name-generator/
+- https://ultratextgen.com/usecase/name-to-symbols/
 - https://ultratextgen.com/usecase/nickname-generator/
 - https://ultratextgen.com/usecase/old-english-translator/
 - https://ultratextgen.com/usecase/pirate-translator/
@@ -567,6 +569,7 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/venezuela-emoji-combos/
 - https://ultratextgen.com/library/vertical-line-symbols/
 - https://ultratextgen.com/library/vinicius-emoji-combos/
+- https://ultratextgen.com/library/vrchat-symbols/
 - https://ultratextgen.com/library/wales-emoji-combos/
 - https://ultratextgen.com/library/wave-kaomoji/
 - https://ultratextgen.com/library/weapon-tool-emojis/
