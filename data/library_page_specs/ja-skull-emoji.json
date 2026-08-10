@@ -1,0 +1,189 @@
+{
+  "slug": "dokuro-emoji",
+  "title": "ドクロ 絵文字 💀 一覧 — 骸骨・「死んだ」系のコピペ | UltraTextGen",
+  "meta_description": "ドクロの絵文字 💀 ☠ をコピペで。「笑い死んだ」系の絵文字、骨や危険標識、ドクロの顔文字もまとめて掲載。タップでコピーできます。",
+  "breadcrumb": "ドクロ 絵文字",
+  "hero_h1": "ドクロ 絵文字",
+  "hero_tagline": "💀 の二つの意味——文字どおりの意味と、いま実際によく使われている意味。",
+  "intro": "ネットでの 💀 はほとんど「死」の意味では使われず、「無理、笑いすぎた」という意味です。このページはその二つを分けて、まずドクロ本体、次に笑いの周辺、最後に本当の危険標識を並べています。タップでコピーできます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "core",
+      "label": "ドクロの絵文字",
+      "h2": "ドクロの絵文字",
+      "intro": "記号そのもの。",
+      "symbols": [
+        {
+          "char": "💀",
+          "label": "どくろ"
+        },
+        {
+          "char": "☠️",
+          "label": "どくろと骨"
+        }
+      ]
+    },
+    {
+      "id": "laughing",
+      "label": "「笑い死ぬ」系の絵文字",
+      "h2": "「笑い死ぬ」系の絵文字",
+      "intro": "いま 💀 が置かれる文脈。",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "うれし泣き"
+        },
+        {
+          "char": "🤣",
+          "label": "転げ回って笑う"
+        },
+        {
+          "char": "⚰️",
+          "label": "棺"
+        },
+        {
+          "char": "💯",
+          "label": "100点"
+        },
+        {
+          "char": "🪦",
+          "label": "墓石"
+        }
+      ]
+    },
+    {
+      "id": "danger",
+      "label": "骸骨・骨・危険の記号",
+      "h2": "骸骨・骨・危険の記号",
+      "intro": "ここでは文字どおりの意味。",
+      "symbols": [
+        {
+          "char": "🦴",
+          "label": "骨"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "海賊旗"
+        },
+        {
+          "char": "☣️",
+          "label": "バイオハザード"
+        },
+        {
+          "char": "☢️",
+          "label": "放射能"
+        }
+      ]
+    },
+    {
+      "id": "kaomoji",
+      "label": "ドクロの顔文字",
+      "h2": "ドクロの顔文字",
+      "intro": "文字で組んだドクロ。",
+      "symbols": [
+        {
+          "char": "x_x",
+          "label": "死んだ目の顔文字"
+        },
+        {
+          "char": "X_X",
+          "label": "のびた顔文字"
+        },
+        {
+          "char": "(x_x)",
+          "label": "目を回した顔文字"
+        },
+        {
+          "char": "†（‡＾ᴗ＾）†",
+          "label": "墓の十字の顔文字"
+        },
+        {
+          "char": "(☠‿☠)",
+          "label": "笑うドクロの顔文字"
+        },
+        {
+          "char": "✖‿✖",
+          "label": "死んだ笑顔の顔文字"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "ドクロ絵文字のよくある質問",
+  "faq": [
+    {
+      "q": "コメントの 💀 はどういう意味？",
+      "a": "ほとんどの場合「笑い death」——面白すぎて死んだ、という意味です。😂 が古い世代の記号と見なされたことで置き換わりました。死とは関係ありません。"
+    },
+    {
+      "q": "💀 と ☠ の違いは？",
+      "a": "💀 はカラーのどくろ、☠ は骨が交差した古い警告記号で、多くの環境では白黒で出ます。☠ のほうが真面目な意味に読まれます。"
+    },
+    {
+      "q": "☠ がカラーになったり黒くなったりするのはなぜ？",
+      "a": "古い記号文字で、テキストとしても絵文字としても表示できるためです。文字として出したいときは異体字セレクタ U+FE0E を付けます。"
+    },
+    {
+      "q": "名前に 💀 を使えますか？",
+      "a": "表示名なら多くの場合使えます。@ のユーザーネームでは使えません。ドクロ系はほかの絵文字より厳しく扱うサービスもあるので、先に試すのが安全です。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "ドクロが「笑い」になった経緯",
+      "body": "この意味の変化は新しく、経緯もはっきりしています。2020年ごろ TikTok で 💀 が「面白すぎて死んだ」を表すようになりました。きっかけは、😂 が上の世代の記号と見なされるようになったことです。Unicode 上の名称はいまも単に「Skull」で、実際に伝わっている意味は文字表のどこにも書かれていません。文字どおりの意味で使いたいときは、この変化を免れた ☠ のほうが向いています。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/special-characters/",
+      "title": "特殊文字 一覧（かわいい記号コピペ）",
+      "desc": "かわいい特殊文字をジャンル別にまとめました。キラキラ・ハート・星・矢印・飾り括弧・音符まで — クリックするだけでコピーできて、インスタのプロフィールやゲームの名前にそのまま使えます。"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号（コピペ一覧）",
+      "desc": "インスタやX・TikTokの名前やプロフィールを飾る、おしゃれな特殊文字を集めました。キラキラ・ハート・花・区切り線・飾り括弧まで — クリックするだけでコピーできます。"
+    },
+    {
+      "href": "/ja/library/emoji-combos/",
+      "title": "絵文字コンボ 一覧",
+      "desc": "かわいい絵文字コンボ（組み合わせ）を、雰囲気別にまとめました。量産型・シンプル・韓国っぽ・推し活・季節・誕生日まで — クリックするだけでコンボごとコピーできて、インスタやLINE、Xにそのまま貼れます。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/dokuro-emoji/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/totenkopf-emoji/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/dokuro-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-teschio/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-tete-de-mort/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/emoji-caveira/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    }
+  ]
+}
