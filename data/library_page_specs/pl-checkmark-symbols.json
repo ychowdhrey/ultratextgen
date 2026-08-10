@@ -1,0 +1,505 @@
+{
+  "slug": "symbol-ptaszka",
+  "title": "Symbol ptaszka ✓ ✔ ☑ — znaki zaznaczenia do kopiowania | UltraTextGen",
+  "meta_description": "Symbole ptaszka ✓ ✔ ☑ ✅ do skopiowania: krzyżyki, kolorowe kropki stanu, pola wyboru i numery kroków. Kliknij symbol, aby od razu go skopiować.",
+  "breadcrumb": "Symbol ptaszka",
+  "hero_h1": "Symbol ptaszka",
+  "hero_tagline": "✓ ✔ ☑ ✅ i wszystko, co stoi obok: krzyżyki, kropki stanu, pola wyboru, numery kroków. Kliknij, aby skopiować.",
+  "intro": "Ptaszek rzadko wystarcza sam: obok niego niemal zawsze pojawia się krzyżyk jako jego przeciwieństwo, kolorowa kropka stanu i wciąż puste pole wyboru. Osiem grup poniżej układa się według tego rzeczywistego użycia. Kliknij symbol, a trafi do schowka.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "Klasyczne symbole ptaszka",
+      "h2": "Klasyczne symbole ptaszka",
+      "intro": "Te cztery, pięć, które przydają się najczęściej.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Ptaszek"
+        },
+        {
+          "char": "✔",
+          "label": "Gruby ptaszek"
+        },
+        {
+          "char": "☑",
+          "label": "Zaznaczony kwadrat"
+        },
+        {
+          "char": "✅",
+          "label": "Zielony ptaszek (emoji)"
+        },
+        {
+          "char": "☐",
+          "label": "Pusty kwadrat"
+        },
+        {
+          "char": "▣",
+          "label": "Kwadrat z czarnym środkiem"
+        },
+        {
+          "char": "✔️",
+          "label": "Gruby ptaszek (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "Krzyżyki i znaki odrzucenia",
+      "h2": "Krzyżyki i znaki odrzucenia",
+      "intro": "Przeciwieństwo ptaszka.",
+      "symbols": [
+        {
+          "char": "✗",
+          "label": "Krzyżyk"
+        },
+        {
+          "char": "✘",
+          "label": "Gruby krzyżyk"
+        },
+        {
+          "char": "❌",
+          "label": "Czerwony krzyżyk (emoji)"
+        },
+        {
+          "char": "☒",
+          "label": "Kwadrat z krzyżykiem"
+        },
+        {
+          "char": "✕",
+          "label": "Krzyżyk mnożenia"
+        },
+        {
+          "char": "❎",
+          "label": "Przycisk z krzyżykiem"
+        },
+        {
+          "char": "✖",
+          "label": "Gruby krzyżyk mnożenia"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "label": "Kropki stanu",
+      "h2": "Kropki stanu",
+      "intro": "Gdy stan czyta się z koloru.",
+      "symbols": [
+        {
+          "char": "🟢",
+          "label": "Zielona kropka (działa)"
+        },
+        {
+          "char": "🔴",
+          "label": "Czerwona kropka (błąd)"
+        },
+        {
+          "char": "🟡",
+          "label": "Żółta kropka (uwaga)"
+        },
+        {
+          "char": "⚪",
+          "label": "Biała kropka (nieaktywne)"
+        },
+        {
+          "char": "⚫",
+          "label": "Czarna kropka (offline)"
+        },
+        {
+          "char": "⬤",
+          "label": "Duże koło"
+        },
+        {
+          "char": "○",
+          "label": "Puste kółko"
+        },
+        {
+          "char": "●",
+          "label": "Wypełnione kółko"
+        },
+        {
+          "char": "🔵",
+          "label": "Niebieska kropka (informacja)"
+        },
+        {
+          "char": "🟠",
+          "label": "Pomarańczowa kropka (ostrożnie)"
+        },
+        {
+          "char": "🟣",
+          "label": "Fioletowa kropka"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "Akceptacja i weryfikacja",
+      "h2": "Akceptacja i weryfikacja",
+      "intro": "Znak, że ktoś sprawdził.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Kciuk w górę"
+        },
+        {
+          "char": "👎",
+          "label": "Kciuk w dół"
+        },
+        {
+          "char": "👌",
+          "label": "Gest OK"
+        },
+        {
+          "char": "💯",
+          "label": "Sto punktów"
+        },
+        {
+          "char": "⭐",
+          "label": "Gwiazdka"
+        },
+        {
+          "char": "🔰",
+          "label": "Japoński znak początkującego"
+        },
+        {
+          "char": "🛡️",
+          "label": "Tarcza"
+        },
+        {
+          "char": "🏅",
+          "label": "Medal"
+        }
+      ]
+    },
+    {
+      "id": "warning",
+      "label": "Ostrzeżenia i informacje",
+      "h2": "Ostrzeżenia i informacje",
+      "intro": "Gdy trzeba zatrzymać wzrok.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "Znak ostrzegawczy"
+        },
+        {
+          "char": "⚠️",
+          "label": "Ostrzeżenie (emoji)"
+        },
+        {
+          "char": "ℹ️",
+          "label": "Informacja"
+        },
+        {
+          "char": "🔔",
+          "label": "Dzwonek"
+        },
+        {
+          "char": "📢",
+          "label": "Głośnik"
+        },
+        {
+          "char": "📣",
+          "label": "Megafon"
+        },
+        {
+          "char": "🚨",
+          "label": "Kogut policyjny"
+        },
+        {
+          "char": "⛔",
+          "label": "Zakaz wjazdu"
+        },
+        {
+          "char": "🚫",
+          "label": "Zakaz"
+        },
+        {
+          "char": "🔺",
+          "label": "Czerwony trójkąt w górę"
+        },
+        {
+          "char": "🔻",
+          "label": "Czerwony trójkąt w dół"
+        },
+        {
+          "char": "‼",
+          "label": "Podwójny wykrzyknik"
+        },
+        {
+          "char": "❗",
+          "label": "Wykrzyknik"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "Wskaźniki postępu",
+      "h2": "Wskaźniki postępu",
+      "intro": "Kroki i stan prac.",
+      "symbols": [
+        {
+          "char": "⏳",
+          "label": "Klepsydra w toku"
+        },
+        {
+          "char": "⌛",
+          "label": "Klepsydra skończona"
+        },
+        {
+          "char": "🔄",
+          "label": "Strzałki odświeżania"
+        },
+        {
+          "char": "⏺",
+          "label": "Przycisk nagrywania"
+        },
+        {
+          "char": "⏸",
+          "label": "Przycisk pauzy"
+        },
+        {
+          "char": "⏹",
+          "label": "Przycisk stop"
+        },
+        {
+          "char": "①",
+          "label": "Krok 1"
+        },
+        {
+          "char": "②",
+          "label": "Krok 2"
+        },
+        {
+          "char": "③",
+          "label": "Krok 3"
+        },
+        {
+          "char": "④",
+          "label": "Krok 4"
+        },
+        {
+          "char": "⑤",
+          "label": "Krok 5"
+        },
+        {
+          "char": "⑥",
+          "label": "Krok 6"
+        },
+        {
+          "char": "⑦",
+          "label": "Krok 7"
+        },
+        {
+          "char": "⑧",
+          "label": "Krok 8"
+        },
+        {
+          "char": "⑨",
+          "label": "Krok 9"
+        },
+        {
+          "char": "⑩",
+          "label": "Krok 10"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "label": "Pola wyboru i kwadraty",
+      "h2": "Pola wyboru i kwadraty",
+      "intro": "Kwadraciki przed pozycjami listy.",
+      "symbols": [
+        {
+          "char": "☐",
+          "label": "Puste pole"
+        },
+        {
+          "char": "☑",
+          "label": "Zaznaczone pole"
+        },
+        {
+          "char": "☒",
+          "label": "Przekreślone pole"
+        },
+        {
+          "char": "🗹",
+          "label": "Grube pole wyboru"
+        },
+        {
+          "char": "🗸",
+          "label": "Cienki ptaszek"
+        },
+        {
+          "char": "🗴",
+          "label": "Cienki krzyżyk"
+        },
+        {
+          "char": "▢",
+          "label": "Zaokrąglony kwadrat"
+        },
+        {
+          "char": "⊠",
+          "label": "Kwadrat z krzyżykiem"
+        },
+        {
+          "char": "☑️",
+          "label": "Pole wyboru (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "Szablony listy zadań",
+      "h2": "Szablony listy zadań",
+      "intro": "Gotowe wiersze do skopiowania w całości.",
+      "symbols": [
+        {
+          "char": "☑ Done",
+          "label": "Wiersz „zrobione”"
+        },
+        {
+          "char": "☐ To-do",
+          "label": "Wiersz „do zrobienia”"
+        },
+        {
+          "char": "✔ Completed · ✘ Pending",
+          "label": "Para ukończone / oczekuje"
+        },
+        {
+          "char": "[✓]",
+          "label": "Ptaszek w nawiasach"
+        },
+        {
+          "char": "[ ]",
+          "label": "Puste nawiasy"
+        },
+        {
+          "char": "✅ Yes  ❌ No",
+          "label": "Tak / Nie"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Najczęstsze pytania o symbol ptaszka",
+  "faq": [
+    {
+      "q": "Czym różni się ✓ od ✅?",
+      "a": "✓ to znak tekstowy: przyjmuje kolor i wielkość otaczającego tekstu i nie rzuca się w oczy w czarno-białym dokumencie. ✅ to emoji, więc wszędzie wychodzi jako zielony kwadrat, większy od wiersza. Do dokumentów, CV i tabel bierz ✓, do czatu i mediów społecznościowych lepiej pasuje ✅."
+    },
+    {
+      "q": "Jak wstawić ptaszka z klawiatury?",
+      "a": "W Windows otwórz panel emoji skrótem Win + kropka. W Wordzie wpisz 2713 i naciśnij Alt + X. Na Macu panel znaków otwiera Ctrl + Cmd + spacja. Skopiowanie z tej strony i tak jest najszybsze."
+    },
+    {
+      "q": "Czy mogę wstawić ptaszka do nazwy na Instagramie albo WhatsAppie?",
+      "a": "W nazwie wyświetlanej tak, prawie wszędzie. W nazwie użytkownika z @ Instagram i X nie przepuszczają symboli. W grach zależy od tytułu, więc sprawdź przed zatwierdzeniem nicku."
+    },
+    {
+      "q": "Dlaczego istnieją osobno ✔ i ✔️?",
+      "a": "To ten sam znak, ale drugi ma niewidoczny selektor proszący o wygląd emoji. ✔ zostaje tekstem (zwykle czarnym), ✔️ staje się kolorowy. W tabeli lepszy jest ✔ — nie psuje wyrównania."
+    },
+    {
+      "q": "Czy zadziała w Excelu i Arkuszach Google?",
+      "a": "Tak. Wklejony do komórki zostaje bez zmian i można go użyć w formule, na przykład jako kryterium LICZ.JEŻELI. Uwaga na emoji takie jak ✅ — ich wydruk zależy od czcionki, więc w arkuszach do druku bezpieczniejszy jest ✓."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Dlaczego sam ptaszek nie wystarcza",
+      "body": "Kto szuka symbolu ptaszka, zwykle właśnie buduje listę. A lista nie utrzyma się na samym „zrobione”: żeby dało się odczytać stan, obok musi stać to, czego jeszcze nie zaczęto (☐), to, co trwa (⏳), i to, z czego zrezygnowano (✗). Dlatego ta strona nie zbiera wyłącznie rodziny ✓ — przeciwieństwo i stany pośrednie stoją na tym samym poziomie. Z tego samego powodu są tu kolorowe kropki: w dokumencie wygodniejszy jest ptaszek, ale na pulpicie wskaźników albo w protokole spotkania trójka 🟢🟡🔴 czyta się znacznie szybciej."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pl/library/symbole-strzalek/",
+      "title": "Symbole strzałek — kolekcja (kopiuj i wklej)",
+      "desc": "Zbiór symboli strzałek Unicode — proste, podwójne, trójkątne, zakrzywione i emoji. Kliknij dowolny symbol, aby natychmiast go skopiować i wkleić w profil, post czy dokument."
+    },
+    {
+      "href": "/pl/symbol/znak-zaznaczenia/",
+      "title": "Znak Zaznaczenia (✓)",
+      "desc": "Znak zaznaczenia (✓ ✔) — ptaszek, który znaczy „zrobione”, „poprawne” lub „zweryfikowane” — oraz emoji ✅, pole wyboru ☑ i znaki ✗ i √, z którymi bywa mylony. Kliknij dowolny symbol, aby od razu go skopiować."
+    },
+    {
+      "href": "/pl/library/znaki-specjalne/",
+      "title": "Znaki Specjalne",
+      "desc": "Zbiór referencyjny wyjątkowych symboli Unicode — nieskończoność, pokój, nauka, znaki prawne, ozdobniki estetyczne i rzadkie ciekawostki. Kliknij dowolny symbol, aby go od razu skopiować."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/pl/library/symbol-ptaszka/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "pl",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbol-ptaszka/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/flueben-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/haekchen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-verificacion/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symbole-coche/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-centang/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simbolo-spunta/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/checkmark-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chekeu-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/vinkje/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/hakesymboler/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvol-galochki/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/bock-symboler/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/onay-isaretleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    }
+  ]
+}

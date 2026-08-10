@@ -1,0 +1,505 @@
+{
+  "slug": "chekeu-giho",
+  "title": "체크 기호 ✓ ✔ ☑ — 체크 표시·체크박스 복사 붙여넣기 | UltraTextGen",
+  "meta_description": "체크 기호 모음 ✓ ✔ ☑ ✅. 엑스 표시, 상태 원, 체크박스, 진행 단계 번호까지 한곳에. 눌러서 바로 복사해 문서·발표자료·프로필에 붙여넣으세요.",
+  "breadcrumb": "체크 기호",
+  "hero_h1": "체크 기호",
+  "hero_tagline": "✓ ✔ ☑ ✅ 그리고 그 주변 — 엑스 표시, 상태 원, 체크박스, 단계 번호. 누르면 복사됩니다.",
+  "intro": "체크 기호가 혼자 쓰이는 일은 드뭅니다. 대개 그 반대인 엑스, 상태를 나타내는 색 원, 빈 체크박스와 함께 놓입니다. 아래 여덟 묶음은 실제로 같이 쓰이는 것끼리 모은 것입니다. 기호를 누르면 클립보드에 복사됩니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "기본 체크 기호",
+      "h2": "기본 체크 기호",
+      "intro": "가장 많이 쓰이는 네다섯 개.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "체크 표시"
+        },
+        {
+          "char": "✔",
+          "label": "굵은 체크 표시"
+        },
+        {
+          "char": "☑",
+          "label": "체크된 네모"
+        },
+        {
+          "char": "✅",
+          "label": "초록 체크 이모지"
+        },
+        {
+          "char": "☐",
+          "label": "빈 네모"
+        },
+        {
+          "char": "▣",
+          "label": "안이 찬 네모"
+        },
+        {
+          "char": "✔️",
+          "label": "굵은 체크(이모지)"
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "엑스·거부 기호",
+      "h2": "엑스·거부 기호",
+      "intro": "체크의 반대편.",
+      "symbols": [
+        {
+          "char": "✗",
+          "label": "엑스 표시"
+        },
+        {
+          "char": "✘",
+          "label": "굵은 엑스"
+        },
+        {
+          "char": "❌",
+          "label": "빨간 엑스 이모지"
+        },
+        {
+          "char": "☒",
+          "label": "엑스 친 네모"
+        },
+        {
+          "char": "✕",
+          "label": "곱셈 엑스"
+        },
+        {
+          "char": "❎",
+          "label": "엑스 버튼"
+        },
+        {
+          "char": "✖",
+          "label": "굵은 곱셈 엑스"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "label": "상태 표시 원",
+      "h2": "상태 표시 원",
+      "intro": "정상·오류·대기를 색으로 나타낼 때.",
+      "symbols": [
+        {
+          "char": "🟢",
+          "label": "초록 원(정상)"
+        },
+        {
+          "char": "🔴",
+          "label": "빨강 원(오류)"
+        },
+        {
+          "char": "🟡",
+          "label": "노랑 원(주의)"
+        },
+        {
+          "char": "⚪",
+          "label": "흰 원(비활성)"
+        },
+        {
+          "char": "⚫",
+          "label": "검정 원(오프라인)"
+        },
+        {
+          "char": "⬤",
+          "label": "큰 원"
+        },
+        {
+          "char": "○",
+          "label": "빈 원"
+        },
+        {
+          "char": "●",
+          "label": "채운 원"
+        },
+        {
+          "char": "🔵",
+          "label": "파랑 원(안내)"
+        },
+        {
+          "char": "🟠",
+          "label": "주황 원(경고)"
+        },
+        {
+          "char": "🟣",
+          "label": "보라 원"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "승인·인증 기호",
+      "h2": "승인·인증 기호",
+      "intro": "확인했다는 표시.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "엄지 척"
+        },
+        {
+          "char": "👎",
+          "label": "엄지 아래"
+        },
+        {
+          "char": "👌",
+          "label": "오케이 손"
+        },
+        {
+          "char": "💯",
+          "label": "100점"
+        },
+        {
+          "char": "⭐",
+          "label": "별"
+        },
+        {
+          "char": "🔰",
+          "label": "초보 마크"
+        },
+        {
+          "char": "🛡️",
+          "label": "방패"
+        },
+        {
+          "char": "🏅",
+          "label": "메달"
+        }
+      ]
+    },
+    {
+      "id": "warning",
+      "label": "경고·안내 기호",
+      "h2": "경고·안내 기호",
+      "intro": "주의를 끌어야 할 때.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "경고 표시"
+        },
+        {
+          "char": "⚠️",
+          "label": "경고 이모지"
+        },
+        {
+          "char": "ℹ️",
+          "label": "정보"
+        },
+        {
+          "char": "🔔",
+          "label": "종"
+        },
+        {
+          "char": "📢",
+          "label": "확성기"
+        },
+        {
+          "char": "📣",
+          "label": "메가폰"
+        },
+        {
+          "char": "🚨",
+          "label": "경광등"
+        },
+        {
+          "char": "⛔",
+          "label": "진입 금지"
+        },
+        {
+          "char": "🚫",
+          "label": "금지"
+        },
+        {
+          "char": "🔺",
+          "label": "빨간 세모(위)"
+        },
+        {
+          "char": "🔻",
+          "label": "빨간 세모(아래)"
+        },
+        {
+          "char": "‼",
+          "label": "느낌표 두 개"
+        },
+        {
+          "char": "❗",
+          "label": "느낌표"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "진행 상태 기호",
+      "h2": "진행 상태 기호",
+      "intro": "단계와 진행 상황.",
+      "symbols": [
+        {
+          "char": "⏳",
+          "label": "모래시계(진행 중)"
+        },
+        {
+          "char": "⌛",
+          "label": "모래시계(완료)"
+        },
+        {
+          "char": "🔄",
+          "label": "새로고침 화살표"
+        },
+        {
+          "char": "⏺",
+          "label": "녹화 버튼"
+        },
+        {
+          "char": "⏸",
+          "label": "일시정지"
+        },
+        {
+          "char": "⏹",
+          "label": "정지"
+        },
+        {
+          "char": "①",
+          "label": "1단계"
+        },
+        {
+          "char": "②",
+          "label": "2단계"
+        },
+        {
+          "char": "③",
+          "label": "3단계"
+        },
+        {
+          "char": "④",
+          "label": "4단계"
+        },
+        {
+          "char": "⑤",
+          "label": "5단계"
+        },
+        {
+          "char": "⑥",
+          "label": "6단계"
+        },
+        {
+          "char": "⑦",
+          "label": "7단계"
+        },
+        {
+          "char": "⑧",
+          "label": "8단계"
+        },
+        {
+          "char": "⑨",
+          "label": "9단계"
+        },
+        {
+          "char": "⑩",
+          "label": "10단계"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "label": "네모·체크박스 기호",
+      "h2": "네모·체크박스 기호",
+      "intro": "목록 앞에 놓는 상자.",
+      "symbols": [
+        {
+          "char": "☐",
+          "label": "빈 상자"
+        },
+        {
+          "char": "☑",
+          "label": "체크된 상자"
+        },
+        {
+          "char": "☒",
+          "label": "엑스 친 상자"
+        },
+        {
+          "char": "🗹",
+          "label": "굵은 체크박스"
+        },
+        {
+          "char": "🗸",
+          "label": "가는 체크"
+        },
+        {
+          "char": "🗴",
+          "label": "가는 엑스"
+        },
+        {
+          "char": "▢",
+          "label": "둥근 네모"
+        },
+        {
+          "char": "⊠",
+          "label": "엑스 사각형"
+        },
+        {
+          "char": "☑️",
+          "label": "체크박스(이모지)"
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "체크리스트 템플릿",
+      "h2": "체크리스트 템플릿",
+      "intro": "그대로 복사해 쓰는 줄.",
+      "symbols": [
+        {
+          "char": "☑ Done",
+          "label": "완료 줄"
+        },
+        {
+          "char": "☐ To-do",
+          "label": "할 일 줄"
+        },
+        {
+          "char": "✔ Completed · ✘ Pending",
+          "label": "완료 · 대기 한 쌍"
+        },
+        {
+          "char": "[✓]",
+          "label": "대괄호 체크"
+        },
+        {
+          "char": "[ ]",
+          "label": "대괄호 빈칸"
+        },
+        {
+          "char": "✅ Yes  ❌ No",
+          "label": "예 / 아니오"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "체크 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "✓와 ✅는 뭐가 다른가요?",
+      "a": "✓는 글자입니다. 주변 글씨의 색과 크기를 그대로 따라가고, 흑백 문서에도 어울립니다. ✅는 이모지라 어디서든 초록색 네모로 나오고 크기도 글씨보다 큽니다. 문서·이력서·표에는 ✓, 채팅·SNS에는 ✅가 자연스럽습니다."
+    },
+    {
+      "q": "체크 기호를 키보드로 어떻게 입력하나요?",
+      "a": "한글 키보드에서는 자음 'ㅁ'을 누르고 한자 키를 누르면 후보 목록에 ✓ ☑ 같은 기호가 나옵니다. 윈도우에서는 Win + . 로 이모지 창을 열 수 있습니다. 이 페이지에서 눌러 복사하는 편이 가장 빠릅니다."
+    },
+    {
+      "q": "카카오톡 프로필이나 인스타 이름에 넣을 수 있나요?",
+      "a": "표시 이름에는 대부분 들어갑니다. 인스타그램과 X의 @아이디에는 기호가 들어가지 않습니다. 게임 닉네임은 서비스마다 다르니 확정 전에 한 번 시험해 보세요."
+    },
+    {
+      "q": "✔와 ✔️는 왜 따로 있나요?",
+      "a": "코드는 같지만 뒤에 붙는 이모지 변형 선택자 하나가 다릅니다. ✔는 글자 모양(보통 검정), ✔️는 이모지 모양으로 표시됩니다. 표 안에서 색이 튀는 게 싫다면 ✔를 쓰세요."
+    },
+    {
+      "q": "엑셀이나 구글 스프레드시트에서도 쓸 수 있나요?",
+      "a": "됩니다. 셀에 붙여넣으면 그대로 남고, 조건부 서식이나 COUNTIF의 조건으로도 쓸 수 있습니다. 다만 ✅ 같은 이모지는 글꼴에 따라 인쇄 결과가 달라질 수 있어, 인쇄용 표에는 ✓ 쪽이 안전합니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "체크 하나로 끝나지 않는 이유",
+      "body": "체크 기호를 찾는 사람은 대개 목록을 만들고 있습니다. 그런데 목록은 '완료'만으로 굴러가지 않습니다. 아직 안 한 것(☐), 하다 만 것(⏳), 안 하기로 한 것(✗)이 함께 있어야 상태가 읽힙니다. 그래서 이 페이지는 ✓ 계열만 모으지 않고 반대쪽과 중간 단계를 같은 높이에 두었습니다. 색 원 묶음도 같은 이유입니다 — 문서에서는 체크가 편하지만, 대시보드나 회의록에서는 🟢🟡🔴 세 개가 훨씬 빨리 읽힙니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/dohyeong-giho/",
+      "title": "도형 기호 모음",
+      "desc": "동그라미, 네모, 삼각형, 마름모부터 불릿과 그 밖의 도형까지 — 클릭 한 번으로 복사되는 도형 기호 모음입니다. 목록, 상태 표시, 캡션 꾸미기에 바로 쓰세요."
+    },
+    {
+      "href": "/ko/library/hwasalpyo-giho/",
+      "title": "화살표 기호 · 특수문자 모음 (복사용)",
+      "desc": "방향을 나타내는 화살표 특수문자를 스타일별로 모았습니다. → ← ↑ ↓ 같은 기본 화살표부터 굵은 화살표, 이중 화살표, 곡선 화살표, 삼각형 포인터, 화살표 이모지까지 — 클릭 한 번으로 복사해 인스타 프로필이나 닉네임에 바로 붙여넣으세요."
+    },
+    {
+      "href": "/ko/symbol/chekeu-pyosi-giho/",
+      "title": "체크 표시 기호",
+      "desc": "체크 표시(✓ ✔) — 완료·정답·확인을 뜻하는 틱 표시 — 와 ✅ 이모지, ☑ 체크박스, 그리고 자주 헷갈리는 ✗·√까지. 클릭 한 번으로 바로 복사됩니다."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/chekeu-giho/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chekeu-giho/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/flueben-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/haekchen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-verificacion/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symbole-coche/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-centang/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simbolo-spunta/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/checkmark-kigou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/vinkje/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/hakesymboler/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbol-ptaszka/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvol-galochki/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/bock-symboler/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/onay-isaretleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    }
+  ]
+}
