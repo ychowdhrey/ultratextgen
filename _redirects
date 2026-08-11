@@ -339,5 +339,21 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/conversor-de-letras/            /es/  301
 /es/conversor-de-letras/index.html  /es/  301
 
+# pt/letras-para-copiar retired 2026-08-11 -> /pt/letras-diferentes/.
+# Resolved review-register item #38 with a query x landing-page cross-tab
+# (60 days to 2026-08-01), the cut a standard GSC export cannot produce.
+# The page drew ZERO impressions across the whole window -- it is absent from
+# the export entirely -- while its own head-term family ("letras para copiar",
+# "letras copiar e colar") went 326 impressions to /pt/ and 289 imp / 15 clicks
+# to /pt/letras-diferentes/. Its term was already being served by two other
+# pages; it was serving nothing.
+# Structural twin of the survivor, so nothing to port: both carry the same six
+# sections in the same order (how it works, A-Z alphabet, name/bio, nick/games,
+# where it works, FAQ). Anchor text on the four inbound links said "letras para
+# copiar" / "gerador de fonte", which now feeds letras-diferentes -- the page
+# already ranking pos 6.8 for that exact term.
+/pt/letras-para-copiar/            /pt/letras-diferentes/  301
+/pt/letras-para-copiar/index.html  /pt/letras-diferentes/  301
+
 /404  /404.html  200
 /*    /404.html  404

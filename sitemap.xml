@@ -2493,6 +2493,16 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/calligraphy/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ultratextgen.com/assets/og/calligraphy.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/category/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -24784,7 +24794,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -29209,16 +29219,6 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://ultratextgen.com/assets/og/pt-letras-negrito.png</image:loc>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://ultratextgen.com/pt/letras-para-copiar/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://ultratextgen.com/assets/og/pt-letras-para-copiar.png</image:loc>
     </image:image>
   </url>
 

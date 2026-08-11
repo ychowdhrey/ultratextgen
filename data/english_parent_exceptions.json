@@ -38,16 +38,6 @@
       "verdict": null
     },
     {
-      "localeUrl": "https://ultratextgen.com/fr/calligraphie/",
-      "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim: 'calligraphy' has real EN volume, but the EN SERP is believed to consolidate it onto the homepage-type pages (row-17 close-out read), while French GSC shows fr/index.html doesn't compete on this page's queries (76% of impressions on 'calligraphie copier coller' family).",
-      "agreed": "2026-07-26",
-      "enDemandBasis": "EN-side synonym-consolidation premise is INFERRED from the font-converter row-17 close-out, never verified against EN GSC/SERP data for 'calligraphy' specifically — the first reverse-demand sweep must verify it.",
-      "lastRechecked": "2026-08-11",
-      "nextRecheck": "2026-09-15",
-      "verdict": "build-parent",
-      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. *** THIS ONE INVERTS. *** 'calligraphy generator' does NOT consolidate: it returns DEDICATED SUBPAGES -- fsymbols.com/font/calligraphy, onlinefontsgenerator.com/calligraphy-font-generator/, pixelied.com/font-generator/calligraphy, tools.aiease.ai/text/font-generator/calligraphy, creativefabrica.com/tools/calligraphy-font-generator/ -- plus three exact-match domains (calligraphyfontgenerator.com, calligraphycreator.com, calligraphygenerator.online). The cleanest signal: onlinefontsgenerator.com ranks its ROOT for 'font converter' and a /calligraphy-font-generator/ SUBPAGE for calligraphy. Same domain, different URL, so the difference isolates to intent. Ownership check per the standing rule, run before proposing any build: no EN page owns the term -- category/cursive-fonts contains the string 'calligraph' ZERO times, and the only EN calligraphy page is printables/calligraphy-alphabet, a print/trace job, not a copy-paste generator. So the recorded reason for this entry ('EN-SERP-consolidation') is WRONG and the exception is revocable. Per CLAUDE.md the page STAYS until an EN parent is actually built; this verdict records the decision, not its execution. NOT built in this pass -- raising it rather than taking a same-pass discovery-to-build leap."
-    },
-    {
       "localeUrl": "https://ultratextgen.com/fr/changeur-de-police/",
       "reason": "EN-SERP-consolidation claim, same ratification as fr/calligraphie/. Strongest FR ownership evidence of the trio: 100% of impressions on queries fr/index.html never ranks for ('change police'/'changeur de police'). Cluster includes live IT siblings (it/font-copia-e-incolla/, it/caratteri-speciali/) with no EN member — the locale↔locale parity blind spot flagged 2026-07-26 lives on this cluster.",
       "agreed": "2026-07-26",
