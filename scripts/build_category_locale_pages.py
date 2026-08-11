@@ -73,10 +73,87 @@ HEAD_SCRIPTS = """<script async src="https://fundingchoicesmessages.google.com/i
        crossorigin="anonymous"></script>"""
 
 # ---------------------------------------------------------------------------
-# The EN parent every page in this run translates, and its existing siblings.
+# Batches. One entry per EN parent being mirrored.
+#
+#   parent    repo-relative path of the EN parent page
+#   family    the value of window.UTG_FAMILY — this is styles.js's `familySlug`,
+#             NOT the URL slug. They differ: category/gothic-fonts/ uses
+#             familySlug "gothic". Copy the EN parent's value verbatim.
+#   siblings  locale pages that already exist in this cluster, so the hreflang
+#             set and the language switcher stay complete.
+#   rows      the alphabet table. Payload strings are the PRODUCTION renderer's
+#             own output (dumped by executing styles.js+renderer.js), not
+#             hand-typed glyphs — hand-typing these is how a wrong codepoint
+#             reaches a copy button nobody notices is broken.
 # ---------------------------------------------------------------------------
-PARENT = "category/underline-text"
-EXISTING_SIBLINGS = [("ru", "ru/podcherknutyy-tekst"), ("tr", "tr/alti-cizili-yazi")]
+A_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+A_LO = "abcdefghijklmnopqrstuvwxyz"
+
+BATCHES = {
+    "underline": {
+        "parent": "category/underline-text",
+        "family": "underline-text",
+        "siblings": [("ru", "ru/podcherknutyy-tekst"), ("tr", "tr/alti-cizili-yazi")],
+        "rows": "combining",   # generated from UNDER/DOUBLE/WAVY below
+    },
+    "gothic": {
+        "parent": "category/gothic-fonts",
+        "family": "gothic",
+        "siblings": [
+            ("de", "de/altdeutsche-schrift"), ("es", "es/letras-goticas"),
+            ("fr", "fr/ecriture-gothique"), ("id", "id/tulisan-gotik"),
+            ("pl", "pl/czcionki-gotyckie"), ("pt", "pt/fonte-gotica"),
+            ("ru", "ru/goticheskiy-shrift"), ("vi", "vi/font-gothic"),
+            ("sr", "sr/goticka-slova"), ("sk", "sk/goticke-pismo"),
+            ("ro", "ro/scriere-gotica"), ("it", "it/gotico"),
+            ("hr", "hr/goticka-slova"), ("cs", "cs/goticke-pismo"),
+            ("bs", "bs/goticka-slova"), ("hu", "hu/gotikus-betuk"),
+            ("ms", "ms/tulisan-gotik"), ("fi", "fi/goottilaiset-kirjaimet"),
+        ],
+        "rows": [
+            ("fraktur", "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
+            ("bold", "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅 𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟"),
+            ("digits", "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗"),
+        ],
+    },
+    "aesthetic": {
+        "parent": "category/aesthetic-fonts",
+        "family": "aesthetic-fonts",
+        "siblings": [
+            ("de", "de/aesthetic-schrift"), ("es", "es/letras-aesthetic"),
+            ("fr", "fr/ecriture-aesthetic"), ("it", "it/scritte-aesthetic"),
+            ("id", "id/tulisan-aesthetic"), ("ja", "ja/oshare-moji"),
+            ("pl", "pl/estetyczne-czcionki"), ("pt", "pt/letras-aesthetic"),
+            ("ru", "ru/krasivyy-shrift"), ("ko", "ko/gamseong-moji"),
+        ],
+        "rows": [
+            ("script", "𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵 𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏"),
+            ("smallcaps", "ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘQʀsᴛᴜᴠᴡxʏᴢ ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘqʀsᴛᴜᴠᴡxʏᴢ"),
+            ("wide", "Ａ Ｂ Ｃ Ｄ Ｅ Ｆ Ｇ Ｈ Ｉ Ｊ Ｋ Ｌ Ｍ Ｎ Ｏ Ｐ Ｑ Ｒ Ｓ Ｔ Ｕ Ｖ Ｗ Ｘ Ｙ Ｚ"),
+        ],
+    },
+    "strikethrough": {
+        "parent": "category/strikethrough-text",
+        "family": "strikethrough-text",
+        "siblings": [
+            ("de", "de/durchgestrichener-text"), ("es", "es/letra-tachada"),
+            ("id", "id/tulisan-coret"), ("it", "it/testo-barrato"),
+            ("pl", "pl/przekreslony-tekst"), ("pt", "pt/letra-tachada"),
+            ("ru", "ru/zacherknutyy-tekst"), ("tr", "tr/ustu-cizili-yazi"),
+            ("vi", "vi/chu-gach-ngang"),
+        ],
+        "rows": [
+            ("strike", "A̶B̶C̶D̶E̶F̶G̶H̶I̶J̶K̶L̶M̶N̶O̶P̶Q̶R̶S̶T̶U̶V̶W̶X̶Y̶Z̶ a̶b̶c̶d̶e̶f̶g̶h̶i̶j̶k̶l̶m̶n̶o̶p̶q̶r̶s̶t̶u̶v̶w̶x̶y̶z̶"),
+            ("double", "A̶̵B̶̵C̶̵D̶̵E̶̵F̶̵G̶̵H̶̵I̶̵J̶̵K̶̵L̶̵M̶̵N̶̵O̶̵P̶̵Q̶̵R̶̵S̶̵T̶̵U̶̵V̶̵W̶̵X̶̵Y̶̵Z̶̵ a̶̵b̶̵c̶̵d̶̵e̶̵f̶̵g̶̵h̶̵i̶̵j̶̵k̶̵l̶̵m̶̵n̶̵o̶̵p̶̵q̶̵r̶̵s̶̵t̶̵u̶̵v̶̵w̶̵x̶̵y̶̵z̶̵"),
+            ("slash", "A̸B̸C̸D̸E̸F̸G̸H̸I̸J̸K̸L̸M̸N̸O̸P̸Q̸R̸S̸T̸U̸V̸W̸X̸Y̸Z̸ a̸b̸c̸d̸e̸f̸g̸h̸i̸j̸k̸l̸m̸n̸o̸p̸q̸r̸s̸t̸u̸v̸w̸x̸y̸z̸"),
+            ("digits", "0̶1̶2̶3̶4̶5̶6̶7̶8̶9̶"),
+        ],
+    },
+}
+
+# Selected at run time by --batch; defaults to the original underline batch.
+PARENT = BATCHES["underline"]["parent"]
+EXISTING_SIBLINGS = BATCHES["underline"]["siblings"]
 
 # ---------------------------------------------------------------------------
 # Per-locale authored content. Nothing here is machine-translated.
@@ -409,19 +486,21 @@ def art_slug(page_slug):
     return page_slug.replace("/", "-")
 
 
-def build(code, spec, all_codes):
+def build(code, spec, all_codes, batch, specs):
+    parent = batch["parent"]
+    siblings = batch["siblings"]
     slug, lang = spec["slug"], spec["lang"]
     url = f"{BASE}/{slug}/"
     art = art_slug(slug)
     og = f"{BASE}/assets/og/{art}.png"
-    parent_url = f"{BASE}/{PARENT}/"
+    parent_url = f"{BASE}/{parent}/"
 
     # hreflang: en, every existing sibling, every locale in this batch, self, x-default.
     sibs = [("en", parent_url)]
-    for c, s in EXISTING_SIBLINGS:
+    for c, s in siblings:
         sibs.append((c, f"{BASE}/{s}/"))
     for c in all_codes:
-        sibs.append((c, f"{BASE}/{SPECS[c]['slug']}/"))
+        sibs.append((c, f"{BASE}/{specs[c]['slug']}/"))
     seen, alts = set(), []
     for c, u in sibs:
         if c in seen:
@@ -431,29 +510,28 @@ def build(code, spec, all_codes):
     alts.append(f'  <link rel="alternate" hreflang="x-default" href="{parent_url}">')
 
     # language switcher, mirroring the hreflang set (own locale marked active)
-    sw = ['      <a class="lang-option" href="/{}/" hreflang="en">EN</a>'.format(PARENT)]
-    for c, s in EXISTING_SIBLINGS:
+    sw = ['      <a class="lang-option" href="/{}/" hreflang="en">EN</a>'.format(parent)]
+    for c, s in siblings:
         sw.append(f'      <a class="lang-option" href="/{s}/" hreflang="{c}">{c.upper()}</a>')
     for c in all_codes:
         cls = "lang-option active" if c == code else "lang-option"
-        sw.append(f'      <a class="{cls}" href="/{SPECS[c]["slug"]}/" hreflang="{c}">{c.upper()}</a>')
+        sw.append(f'      <a class="{cls}" href="/{specs[c]["slug"]}/" hreflang="{c}">{c.upper()}</a>')
 
     rows = []
-    marks = [UNDER, DOUBLE, WAVY]
-    for i, mark in enumerate(marks):
+    if batch["rows"] == "combining":
+        payloads = [alpha_pair(m) for m in (UNDER, DOUBLE, WAVY)] + \
+                   [deco(DIGITS, m) for m in (UNDER, DOUBLE)]
+        displays = [alpha_label(m) for m in (UNDER, DOUBLE, WAVY)] + \
+                   [" ".join(d + m for d in DIGITS) for m in (UNDER, DOUBLE)]
+    else:
+        payloads = [p for _, p in batch["rows"]]
+        displays = [p.replace(" ", " · ", 1) if len(p) > 40 else p for p in payloads]
+    for i, (payload, display) in enumerate(zip(payloads, displays)):
         rows.append(
             f'      <div class="alpha-row">\n'
             f'        <span class="alpha-label">{spec["labels"][i]}</span>\n'
-            f'        <button class="glyph-copy alpha-glyphs" type="button" data-text="{alpha_pair(mark)}" '
-            f'aria-label="{spec["copy_aria"][i]}">{alpha_label(mark)}</button>\n'
-            f'      </div>')
-    for j, mark in enumerate([UNDER, DOUBLE]):
-        i = 3 + j
-        rows.append(
-            f'      <div class="alpha-row">\n'
-            f'        <span class="alpha-label">{spec["labels"][i]}</span>\n'
-            f'        <button class="glyph-copy alpha-glyphs" type="button" data-text="{deco(DIGITS, mark)}" '
-            f'aria-label="{spec["copy_aria"][i]}">{" ".join(d + mark for d in DIGITS)}</button>\n'
+            f'        <button class="glyph-copy alpha-glyphs" type="button" data-text="{payload}" '
+            f'aria-label="{spec["copy_aria"][i]}">{display}</button>\n'
             f'      </div>')
 
     faq_json = ",\n".join(
@@ -636,7 +714,7 @@ def build(code, spec, all_codes):
 
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script>window.UTG_FAMILY = "underline-text";</script>
+<script>window.UTG_FAMILY = "{batch["family"]}";</script>
 <script>window.UTG_DEMO_TEXT = "{spec["demo"]}";</script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
@@ -670,18 +748,22 @@ SECTION_HEADS = {
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", action="append", help="locale code (repeatable)")
+    ap.add_argument("--batch", default="underline", choices=sorted(BATCHES))
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
-    all_codes = list(SPECS)
+    batch = BATCHES[a.batch]
+    specs = SPECS if a.batch == "underline" else BATCH2_SPECS[a.batch]
+    heads = SECTION_HEADS if a.batch == "underline" else BATCH2_HEADS[a.batch]
+    all_codes = list(specs)
     targets = a.only or all_codes
     for code in targets:
-        if code not in SPECS:
-            print(f"error: unknown locale {code}", file=sys.stderr)
+        if code not in specs:
+            print(f"error: unknown locale {code} for batch {a.batch}", file=sys.stderr)
             return 2
-        spec = dict(SPECS[code])
-        spec["related_h2"], spec["faq_h2"] = SECTION_HEADS[code]
-        html = build(code, spec, all_codes)
+        spec = dict(specs[code])
+        spec["related_h2"], spec["faq_h2"] = heads[code]
+        html = build(code, spec, all_codes, batch, specs)
         dest = os.path.join(ROOT, spec["slug"], "index.html")
         if a.dry_run:
             print(f"[dry-run] {dest}  ({len(html)} bytes)")
@@ -691,6 +773,194 @@ def main():
         print(f"wrote {dest}")
     return 0
 
+
+
+# ===========================================================================
+# Batch 2 content (2026-08-11) — gothic x {tr, nl}, aesthetic x tr,
+# strikethrough x fr. Authored, not machine-translated, same as SPECS above.
+# ===========================================================================
+
+BATCH2_SPECS = {
+    "gothic": {
+        "tr": {
+            "slug": "tr/gotik-yazi", "lang": "tr", "currency": "TRY",
+            "home": "Ana Sayfa", "crumb": "Gotik Yazı",
+            "title": "Gotik Yazı — Gotik Font Kopyala Yapıştır (𝔊𝔬𝔱𝔦𝔨)",
+            "desc": "Gotik yazı oluşturucu: metnini 𝔊𝔬𝔱𝔦𝔨 ve 𝕲𝖔𝖙𝖎𝖐 stillerine çevir. Instagram bio, nick ve dövme yazısı için gotik font kopyala yapıştır — ücretsiz, uygulamasız.",
+            "h1": "Gotik yazı — kopyala yapıştır",
+            "tagline": "Metnini yaz, anında gotik yazıya dönsün — ince Fraktur ve kalın gotik. Instagram bio'suna, nickine, başlığa yapıştır; harfler her yerde gotik kalır.",
+            "og_desc": "Metnini gotik yazıya çevir: Fraktur ve kalın gotik. Kopyala; bio'ya, nicke, açıklamaya yapıştır.",
+            "tw_desc": "Gotik yazı stilleri tek sayfada — yaz, kopyala, yapıştır. Ücretsiz.",
+            "app_name": "Gotik Yazı Oluşturucu",
+            "alt_names": ["Gotik Yazı", "Gotik Font", "Fraktur Yazı", "Eski Alman Yazısı", "Gothic Font"],
+            "app_desc": "Gotik yazı oluşturucu: metnini Fraktur ve kalın gotik Unicode stillerine çevirir — Instagram bio, oyun nicki ve dövme yazısı için kopyala yapıştır.",
+            "demo": "gotik yazıyı dene.\\nyaz, kopyala, yapıştır.",
+            "deco_label": "Sonuca süsleme ekle",
+            "deco_tabs": ["Semboller", "Çerçeveler", "Minimal"],
+            "labels": ["Fraktur", "Kalın Gotik", "Rakamlar"],
+            "copy_aria": ["Fraktur alfabeyi kopyala", "Kalın gotik alfabeyi kopyala", "Gotik rakamları kopyala"],
+            "s1_h2": "Unicode gotik yazı: yüklenecek font yok",
+            "s1_intro": "Buradaki <strong>gotik yazı</strong> bir font dosyası değil — Unicode'un kendi Fraktur harf bloğu. Yani indirilecek bir şey yok ve kopyaladığın metin, gotik fontu yüklü olmayan cihazlarda bile gotik görünür: Instagram bio'sunda, oyun nickinde, WhatsApp durumunda.",
+            "s1_example": "<strong>Örnek:</strong> «Gotik» → 𝔊𝔬𝔱𝔦𝔨 (Fraktur), 𝕲𝖔𝖙𝖎𝖐 (kalın gotik)",
+            "s1_after": "Bu yazı stiline İngilizcede «gothic», «blackletter» ya da «Fraktur» denir; hepsi aynı harf ailesini anlatır. Dövme ve logo yazısında en çok tercih edilen stil budur. Metnini olduğu gibi <a href=\"/tr/kalin-yazi/\">kalın yazı</a> ya da <a href=\"/tr/el-yazisi-fontu/\">el yazısı</a> olarak da görmek istersen o sayfalara bak.",
+            "s2_h2": "Gotik alfabe (A–Z) — komple kopyala",
+            "s2_intro": "İki gotik stilde tam alfabe ve rakamlar. Bir satıra dokun, o stilin tamamı panoya kopyalansın.",
+            "s2_after": "Hangisi? <strong>Fraktur</strong> daha ince ve klasik — uzun metinde daha okunaklı. <strong>Kalın gotik</strong> daha ağır ve dikkat çekici — kısa nick ve başlık için. Türkçe karakterler (ş, ı, ğ, ö, ü, ç) Unicode gotik blokta bulunmadığı için düz halleriyle kalır; bu normaldir ve bütün gotik font araçlarında böyledir.",
+            "s3_h2": "Gotik yazı nerede kullanılır?",
+            "s3_intro": "Gotik yazının işi ağırlık ve karakter katmak — bir ismi ya da başlığı ciddi, eski ve sert göstermek.",
+            "s3_example": "— <strong>Oyun nicki</strong>: klan ve savaş temalı isimlerde en çok kullanılan stil<br>— <strong>Dövme yazısı</strong>: isim ve tarih dövmelerinin klasik yazı tipi<br>— <strong>Instagram bio</strong>: tek satırlık isim ya da slogan için<br>— <strong>Logo ve başlık</strong>: müzik, moda ve spor kulübü estetiğinde",
+            "faqs": [
+                ("Gotik yazı nasıl yazılır?", "Yukarıdaki kutuya metnini yaz — Fraktur (𝔊𝔬𝔱𝔦𝔨) ve kalın gotik (𝕲𝖔𝖙𝖎𝖐) versiyonları anında listelenir. Kopyala butonuna dokun ve istediğin alana yapıştır. Font yüklemen gerekmez; bunlar Unicode karakterleri olduğu için metinle birlikte taşınır."),
+                ("Gotik yazı Instagram'da çalışır mı?", "Çalışır. Gotik Unicode harfler bio'da, görünen adda, açıklamada ve yorumda sorunsuz görünür. Buradan kopyala, Instagram'a yapıştır. Yalnızca kullanıcı adı (@) alanı kabul etmez — orada sadece düz harf, rakam, nokta ve alt çizgi geçerlidir."),
+                ("Türkçe karakterler (ş, ı, ğ, ö, ü, ç) gotik oluyor mu?", "Hayır, düz kalırlar — ve bu bir hata değil. Unicode'un Fraktur bloğu yalnızca A–Z ve a–z harflerini içerir; ş, ı, ğ, ö, ü, ç için gotik karşılık tanımlanmamıştır. Bütün gotik font araçlarında durum aynıdır. Nick yazarken tamamen gotik bir görünüm istiyorsan Türkçe karakter içermeyen bir yazım seçmek en pratik yol."),
+                ("Fraktur ile kalın gotik arasında ne fark var?", "Fraktur (𝔊𝔬𝔱𝔦𝔨) daha ince çizgili ve klasik matbaa görünümünde; birkaç kelimeden uzun metinlerde daha okunaklıdır. Kalın gotik (𝕲𝖔𝖙𝖎𝖐) daha kalın ve gösterişli; kısa nick, başlık ve logo için daha uygundur. İkisi de aynı şekilde kopyalanıp yapıştırılır."),
+                ("Gotik yazı oyun nickinde kabul edilir mi?", "Çoğu oyunda kabul edilir ama hepsinde değil — bazı oyunlar nick alanında yalnızca temel Latin harflerine izin verir ve gotik karakterleri reddeder ya da kutu (□) olarak gösterir. Yapıştırdıktan sonra ismin doğru göründüğünü kontrol et; reddedilirse o oyun Unicode harf kabul etmiyor demektir."),
+            ],
+            "related": [
+                ("/tr/kalin-yazi/", "Kalın Yazı", "Kalın Unicode harfler — her uygulamada kalın kalır."),
+                ("/tr/el-yazisi-fontu/", "El Yazısı Fontu", "Bitişik el yazısı stilleri, kopyala yapıştır."),
+                ("/tr/sekilli-nick/", "Şekilli Nick", "Oyun nicki için çerçeveler ve semboller."),
+            ],
+        },
+        "nl": {
+            "slug": "nl/gotische-letters", "lang": "nl", "currency": "EUR",
+            "home": "Home", "crumb": "Gotische Letters",
+            "title": "Gotische Letters — Gothic Lettertype Kopiëren (𝔊𝔬𝔱𝔥𝔦𝔠)",
+            "desc": "Gotische letters generator: zet je tekst om naar 𝔊𝔬𝔱𝔥𝔦𝔠 en 𝕲𝖔𝖙𝖍𝖎𝖈. Gothic lettertype kopiëren en plakken voor je Instagram-bio, nickname en tattoo-ontwerp — gratis, zonder app.",
+            "h1": "Gotische letters — kopiëren en plakken",
+            "tagline": "Typ je tekst en hij wordt meteen gotisch — fijne Fraktur en vette gothic. Plak het in je Instagram-bio, je nickname of een kop; de letters blijven overal gotisch.",
+            "og_desc": "Zet je tekst om naar gotische letters: Fraktur en vette gothic. Kopieer en plak in je bio, nickname of omschrijving.",
+            "tw_desc": "Alle gotische letterstijlen op één pagina — typen, kopiëren, plakken. Gratis.",
+            "app_name": "Gotische Letters Generator",
+            "alt_names": ["Gotische Letters", "Gothic Lettertype", "Fraktur Letters", "Oud Duits Schrift", "Gothic Font"],
+            "app_desc": "Gotische letters generator: zet je tekst om naar Unicode-stijlen in Fraktur en vette gothic — om te kopiëren naar je Instagram-bio, game-nickname en tattoo-ontwerp.",
+            "demo": "probeer gotische letters.\\ntyp, kopieer, plak.",
+            "deco_label": "Voeg een versiering toe aan het resultaat",
+            "deco_tabs": ["Symbolen", "Kaders", "Minimaal"],
+            "labels": ["Fraktur", "Vette Gothic", "Cijfers"],
+            "copy_aria": ["Kopieer het Fraktur-alfabet", "Kopieer het vette gothic-alfabet", "Kopieer de gotische cijfers"],
+            "s1_h2": "Gotische letters in Unicode: geen lettertype installeren",
+            "s1_intro": "De <strong>gotische letters</strong> hier zijn geen lettertypebestand — het is Unicode's eigen Fraktur-letterblok. Je hoeft dus niets te downloaden, en de tekst die je kopieert blijft gotisch op apparaten waar geen gothic lettertype geïnstalleerd staat: in je Instagram-bio, je game-nickname, je WhatsApp-status.",
+            "s1_example": "<strong>Voorbeeld:</strong> «Gothic» → 𝔊𝔬𝔱𝔥𝔦𝔠 (Fraktur), 𝕲𝖔𝖙𝖍𝖎𝖈 (vette gothic)",
+            "s1_after": "Deze letterfamilie heet ook wel <em>blackletter</em>, <em>Fraktur</em> of <em>oud Duits schrift</em> — het gaat om dezelfde letters. Wil je juist sierlijke of kalligrafische letters in plaats van gotische? Kijk dan bij <a href=\"/nl/sierlijke-letters/\">sierlijke letters</a>; dat is een andere stijl met een eigen pagina.",
+            "s2_h2": "Gotisch alfabet (A–Z) — kopieer het in één keer",
+            "s2_intro": "Het volledige alfabet en de cijfers in twee gotische stijlen. Tik op een rij en de hele stijl gaat naar je klembord.",
+            "s2_after": "Welke kies je? <strong>Fraktur</strong> is fijner en klassieker — beter leesbaar bij meer dan een paar woorden. <strong>Vette gothic</strong> is zwaarder en opvallender — geschikt voor een korte nickname of kop. Let op: Unicode's gotische blok bevat alleen A–Z en a–z, dus accenten (é, ë, ï) blijven gewoon staan. Dat geldt voor elke gothic-generator, niet alleen deze.",
+            "s3_h2": "Waar gebruik je gotische letters?",
+            "s3_intro": "Gotische letters doen één ding goed: gewicht en karakter geven — een naam of kop serieus, oud en stoer laten ogen.",
+            "s3_example": "— <strong>Game-nickname</strong>: de standaardstijl voor clan- en battle-namen<br>— <strong>Tattoo-ontwerp</strong>: het klassieke lettertype voor namen en data<br>— <strong>Instagram-bio</strong>: voor één regel naam of slogan<br>— <strong>Logo en kop</strong>: in muziek-, mode- en voetbalclub-esthetiek",
+            "faqs": [
+                ("Hoe maak je gotische letters?", "Typ je tekst in het vak hierboven — de Fraktur-versie (𝔊𝔬𝔱𝔥𝔦𝔠) en de vette gothic-versie (𝕲𝖔𝖙𝖍𝖎𝖈) verschijnen meteen. Tik op kopiëren en plak het waar je wilt. Je hoeft geen lettertype te installeren: dit zijn Unicode-tekens, dus ze reizen mee met de tekst."),
+                ("Werken gotische letters op Instagram?", "Ja. Gotische Unicode-letters worden gewoon getoond in je bio, weergavenaam, bijschrift en reacties. Kopieer hier en plak op Instagram. Alleen het gebruikersnaamveld (@) accepteert ze niet — daar gelden alleen gewone letters, cijfers, punt en liggend streepje."),
+                ("Waarom worden mijn accenten (é, ë, ï) niet gotisch?", "Omdat Unicode's gotische blok alleen A–Z en a–z bevat; voor letters met accenten bestaat er geen gotische variant. Ze blijven daarom staan zoals ze zijn. Dat is geen fout van deze tool — het geldt voor elke gothic-generator. Wil je een volledig gotisch woordbeeld, kies dan een schrijfwijze zonder accenten."),
+                ("Wat is het verschil tussen Fraktur en vette gothic?", "Fraktur (𝔊𝔬𝔱𝔥𝔦𝔠) heeft dunnere lijnen en oogt klassiek-typografisch; bij meer dan een paar woorden leest die prettiger. Vette gothic (𝕲𝖔𝖙𝖍𝖎𝖈) is dikker en nadrukkelijker; handiger voor een korte nickname, kop of logo. Allebei kopieer en plak je op dezelfde manier."),
+                ("Worden gotische letters geaccepteerd in games?", "In veel games wel, maar niet in alle — sommige games staan in het naamveld alleen basis-Latijnse letters toe en weigeren gotische tekens of tonen ze als blokjes (□). Controleer na het plakken of je naam goed wordt weergegeven; als hij wordt geweigerd, accepteert die game geen Unicode-letters."),
+            ],
+            "related": [
+                ("/nl/vetgedrukte-letters/", "Vetgedrukte Letters", "Unicode-vet dat vet blijft waar je het ook plakt."),
+                ("/nl/sierlijke-letters/", "Sierlijke Letters", "Sierletters en kalligrafische stijlen — een andere look dan gotisch."),
+                ("/nl/instagram-lettertype/", "Instagram Lettertype", "De lettertypes die het beste werken op Instagram, met bio-ideeën."),
+            ],
+        },
+    },
+    "aesthetic": {
+        "tr": {
+            "slug": "tr/estetik-yazi", "lang": "tr", "currency": "TRY",
+            "home": "Ana Sayfa", "crumb": "Estetik Yazı",
+            "title": "Estetik Yazı — Aesthetic Font Kopyala Yapıştır (𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸)",
+            "desc": "Estetik yazı oluşturucu: metnini 𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸, ᴀᴇsᴛʜᴇᴛɪᴄ ve Ａ Ｅ Ｓ stillerine çevir. Instagram bio ve nick için aesthetic font kopyala yapıştır — ücretsiz.",
+            "h1": "Estetik yazı — kopyala yapıştır",
+            "tagline": "Metnini yaz, anında estetik yazıya dönsün — ince script, küçük büyük harf ve geniş aralıklı yazı. Instagram bio'suna, hikâyene ve nickine yapıştır.",
+            "og_desc": "Metnini estetik yazıya çevir: script, small caps ve geniş aralıklı. Kopyala, bio'ya yapıştır.",
+            "tw_desc": "Estetik yazı stilleri tek sayfada — yaz, kopyala, yapıştır. Ücretsiz.",
+            "app_name": "Estetik Yazı Oluşturucu",
+            "alt_names": ["Estetik Yazı", "Aesthetic Font", "Estetik Font", "Aesthetic Yazı", "Estetik Harfler"],
+            "app_desc": "Estetik yazı oluşturucu: metnini script, small caps ve geniş aralıklı Unicode stillerine çevirir — Instagram bio, hikâye ve nick için kopyala yapıştır.",
+            "demo": "estetik yazıyı dene.\\nyaz, kopyala, yapıştır.",
+            "deco_label": "Sonuca süsleme ekle",
+            "deco_tabs": ["Semboller", "Çerçeveler", "Minimal"],
+            "labels": ["Script", "Küçük Büyük Harf", "Geniş Aralıklı"],
+            "copy_aria": ["Script alfabeyi kopyala", "Küçük büyük harf alfabeyi kopyala", "Geniş aralıklı alfabeyi kopyala"],
+            "s1_h2": "Estetik yazı: sade, yumuşak ve her yere yapışan",
+            "s1_intro": "<strong>Estetik yazı</strong> tek bir font değil — bio ve hikâyelerde sevilen sade, yumuşak görünümü veren birkaç Unicode stilinin ortak adı. Hepsi normal karakter olduğu için kopyaladığında olduğu gibi taşınır; uygulama ya da font yüklemen gerekmez.",
+            "s1_example": "<strong>Örnek:</strong> «Aesthetic» → 𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸 (script), ᴀᴇsᴛʜᴇᴛɪᴄ (küçük büyük harf), Ａ ｅ ｓ (geniş aralıklı)",
+            "s1_after": "Süslü çerçeve, kalp ve sembollerle birlikte kullanmak istersen <a href=\"/tr/sekilli-yazi/\">süslü yazı</a> sayfasında hazır çerçeveler var; orası sembol ve süsleme odaklı, burası ise sade estetik harfler için.",
+            "s2_h2": "Estetik alfabe (A–Z) — komple kopyala",
+            "s2_intro": "Üç estetik stilde tam alfabe. Bir satıra dokun, o stilin tamamı panoya kopyalansın.",
+            "s2_after": "Hangisi? <strong>Script</strong> yumuşak ve el yazısı hissi verir — isim ve tek satırlık bio için. <strong>Küçük büyük harf</strong> sakin ve düzenli durur — uzun bio metninde en okunaklısı. <strong>Geniş aralıklı</strong> yazıyı nefes aldırır — başlık ve bölüm ayırıcı için. Türkçe karakterler bu Unicode bloklarında bulunmadığı için düz kalır.",
+            "s3_h2": "Estetik yazı nerede kullanılır?",
+            "s3_intro": "Estetik yazının işi sadeleştirmek — bir bio'yu ya da hikâyeyi kalabalık göstermeden özenli göstermek.",
+            "s3_example": "— <strong>Instagram bio</strong>: isim, meslek ve şehir satırlarını yumuşatmak için<br>— <strong>Hikâye ve öne çıkan başlıklar</strong>: kapak yazılarında<br>— <strong>Nick ve görünen ad</strong>: sade ama fark edilir bir görünüm için<br>— <strong>Alıntı ve not</strong>: paylaşımlarda tek satırlık vurgu",
+            "faqs": [
+                ("Estetik yazı nasıl yazılır?", "Yukarıdaki kutuya metnini yaz — script (𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸), küçük büyük harf (ᴀᴇsᴛʜᴇᴛɪᴄ) ve geniş aralıklı versiyonlar anında listelenir. Kopyala butonuna dokun ve istediğin alana yapıştır. Bunlar Unicode karakterleri olduğu için font yüklemene gerek yoktur."),
+                ("Estetik yazı Instagram bio'da çalışır mı?", "Çalışır — zaten en çok orada kullanılır. Bio'da, görünen adda, açıklamada ve hikâye metninde sorunsuz görünür. Buradan kopyala, Instagram'a yapıştır. Yalnızca kullanıcı adı (@) alanı kabul etmez."),
+                ("Türkçe karakterler (ş, ı, ğ, ö, ü, ç) estetik oluyor mu?", "Script ve küçük büyük harf stillerinde hayır — Unicode'un bu blokları yalnızca A–Z ve a–z içerir, Türkçe karakterler için karşılık tanımlanmamıştır, bu yüzden düz kalırlar. Geniş aralıklı stil ise farklıdır: aralık eklemek harfi değiştirmediği için Türkçe karakterlerde de sorunsuz çalışır."),
+                ("Estetik yazı ile süslü yazı arasında ne fark var?", "Estetik yazı harflerin kendi şeklini değiştirir — script, küçük büyük harf, geniş aralık. Süslü yazı ise harfleri değiştirmeden etrafına çerçeve, kalp ve sembol ekler. İkisi birlikte de kullanılabilir: önce buradan estetik harfleri kopyala, sonra süsleme ekle."),
+                ("Kopyaladığım yazı bazı yerlerde kutu görünüyor, neden?", "Bu, o uygulamanın ya da cihazın ilgili Unicode karakteri gösterecek fontu bulamadığı anlamına gelir — yazı yanlış değil, sadece o ekranda çizilemiyor. En sık eski cihazlarda ve bazı oyun içi yazı alanlarında olur. Böyle bir durumda daha yaygın desteklenen bir stil (örneğin küçük büyük harf) seçmek en pratik çözümdür."),
+            ],
+            "related": [
+                ("/tr/sekilli-yazi/", "Süslü Yazı", "Çerçeveler, kalpler ve sembollerle süslü yazı."),
+                ("/tr/kucuk-yazi/", "Küçük Yazı", "Küçültülmüş Unicode harfler — bio ve dipnot için."),
+                ("/tr/instagram-yazi-tipi/", "Instagram Yazı Tipi", "Instagram'da en iyi görünen fontlar ve bio önerileri."),
+            ],
+        },
+    },
+    "strikethrough": {
+        "fr": {
+            "slug": "fr/texte-barre", "lang": "fr", "currency": "EUR",
+            "home": "Accueil", "crumb": "Texte Barré",
+            "title": "Texte Barré — Écriture Barrée à Copier-Coller (t̶e̶x̶t̶e̶)",
+            "desc": "Générateur de texte barré : transforme ton texte en t̶e̶x̶t̶e̶, t̶̵e̶̵x̶̵t̶̵e̶̵ et t̸e̸x̸t̸e̸. À copier-coller dans ta bio Instagram, tes messages et ton pseudo — gratuit, sans appli.",
+            "h1": "Texte barré — à copier-coller",
+            "tagline": "Tape ton texte, il devient barré instantanément — barre simple, barre double et barre oblique. Colle-le dans ta bio Instagram, un message, un prix ou un pseudo ; la barre suit partout.",
+            "og_desc": "Transforme ton texte en barré : barre simple, double et oblique. Copie, colle dans ta bio, tes messages ou ton pseudo.",
+            "tw_desc": "Tous les styles de texte barré sur une page — tape, copie, colle. Gratuit.",
+            "app_name": "Générateur de Texte Barré",
+            "alt_names": ["Texte Barré", "Écriture Barrée", "Barrer du Texte", "Texte Rayé", "Strikethrough"],
+            "app_desc": "Générateur de texte barré : convertit ton texte en styles Unicode à barre simple, double et oblique — à copier-coller pour ta bio Instagram, tes messages et ton pseudo de jeu.",
+            "demo": "essaie le texte barré.\\ntape, copie, colle.",
+            "deco_label": "Ajouter une décoration au résultat",
+            "deco_tabs": ["Symboles", "Cadres", "Minimaliste"],
+            "labels": ["Barre Simple", "Barre Double", "Barre Oblique", "Chiffres Barrés"],
+            "copy_aria": ["Copier l'alphabet à barre simple", "Copier l'alphabet à barre double", "Copier l'alphabet à barre oblique", "Copier les chiffres barrés"],
+            "s1_h2": "Texte barré en Unicode : la barre qui te suit partout",
+            "s1_intro": "Le <strong>texte barré</strong> ici n'est pas une mise en forme comme dans Word — chaque lettre reçoit un caractère combinant Unicode dont le dessin est déjà une barre. C'est pour ça que la barre voyage avec le texte quand tu copies : dans une bio Instagram qui n'a aucun bouton barrer, dans une description TikTok et même dans un pseudo de jeu.",
+            "s1_example": "<strong>Exemple :</strong> «texte» → t̶e̶x̶t̶e̶ (barre simple), t̶̵e̶̵x̶̵t̶̵e̶̵ (barre double), t̸e̸x̸t̸e̸ (barre oblique)",
+            "s1_after": "WhatsApp a bien un raccourci pour barrer (~texte~) et Discord aussi (~~texte~~) — mais ce sont des raccourcis propres à ces applis, qui ne fonctionnent nulle part ailleurs. Le barré Unicode reste barré partout où tu le colles, parce que la barre fait partie du caractère. Pour l'effet inverse, mettre en valeur au lieu d'annuler, vois <a href=\"/fr/texte-souligne/\">texte souligné</a>.",
+            "s2_h2": "Alphabet barré (A–Z) — à copier en entier",
+            "s2_intro": "L'alphabet complet et les chiffres dans trois styles de barré. Touche une ligne et tout le style part dans le presse-papiers.",
+            "s2_after": "Lequel choisir ? La <strong>barre simple</strong> est le barré classique — le plus lisible, idéal pour un prix corrigé. La <strong>barre double</strong> est plus appuyée. La <strong>barre oblique</strong> traverse chaque lettre en diagonale et se remarque davantage. Les accents français (é, è, ç, à) passent sans problème : la barre est un caractère à part, pas une table de lettres de remplacement.",
+            "s3_h2": "À quoi sert le texte barré ?",
+            "s3_intro": "Le barré dit une chose que rien d'autre ne dit aussi vite : «ceci ne compte plus» — sans effacer, en gardant le mot visible.",
+            "s3_example": "— <strong>Prix et promos</strong> : afficher l'ancien prix b̶a̶r̶r̶é̶ à côté du nouveau<br>— <strong>Listes et objectifs</strong> : marquer ce qui est fait sans le supprimer<br>— <strong>Ton et humour</strong> : la blague du «je ne le pensais pas» barré, très utilisée en bio<br>— <strong>Corrections</strong> : montrer ce qui a changé dans un message ou un post",
+            "faqs": [
+                ("Comment écrire en texte barré ?", "Tape ton texte dans le champ ci-dessus — les versions à barre simple (t̶e̶x̶t̶e̶), barre double (t̶̵e̶̵x̶̵t̶̵e̶̵) et barre oblique (t̸e̸x̸t̸e̸) s'affichent immédiatement. Touche le bouton copier et colle où tu veux. Comme la barre est un caractère Unicode accroché à la lettre, elle tient même dans les champs qui ne gèrent pas le barré."),
+                ("Comment barrer du texte sur WhatsApp ?", "WhatsApp a son propre raccourci : entoure ton texte de tildes (~texte~) et il apparaît barré dans le message. Mais ce raccourci ne marche que dans WhatsApp — pas dans ton statut ni ailleurs. Pour un barré qui tient partout (Instagram, TikTok, pseudo, statut), tape ton texte ici et colle la version barrée."),
+                ("Peut-on utiliser du texte barré sur Instagram ?", "Oui. Instagram n'a pas de bouton barrer, mais les caractères Unicode barrés s'affichent sans problème dans la bio, le nom affiché, la légende et les commentaires. Copie ici, colle sur Instagram. Seul le champ du nom d'utilisateur (@) les refuse."),
+                ("Quelle différence entre les styles de barré ?", "La barre simple (t̶e̶x̶t̶e̶) est le barré classique — le plus lisible, celui qu'on attend pour un prix corrigé. La barre double (t̶̵e̶̵x̶̵t̶̵e̶̵) est plus appuyée et plus visible. La barre oblique (t̸e̸x̸t̸e̸) traverse chaque lettre en diagonale, un rendu plus marqué. Les trois se copient et se collent de la même façon."),
+                ("Ça marche avec les accents (é, è, ç, à) ?", "Oui. La barre repose sur un caractère combinant distinct et non sur une table de lettres de remplacement — elle traverse donc n'importe quelle lettre, accents français compris, et même les alphabets non latins. Contrairement au gras Unicode, tu n'as pas à retirer tes accents. Sur certaines applis anciennes la barre peut être légèrement décalée — vérifie après avoir collé."),
+            ],
+            "related": [
+                ("/fr/texte-souligne/", "Texte Souligné", "L'effet inverse — mettre en valeur au lieu d'annuler."),
+                ("/fr/texte-en-gras/", "Texte en Gras", "Le gras Unicode qui reste gras partout où tu le colles."),
+                ("/fr/police-instagram/", "Police Instagram", "Les polices qui rendent le mieux sur Instagram, avec des idées de bio."),
+            ],
+        },
+    },
+}
+
+BATCH2_HEADS = {
+    "gothic": {
+        "tr": ("Kopyalanacak başka stiller", "Gotik yazı hakkında sorular"),
+        "nl": ("Andere stijlen om te kopiëren", "Vragen over gotische letters"),
+    },
+    "aesthetic": {
+        "tr": ("Kopyalanacak başka stiller", "Estetik yazı hakkında sorular"),
+    },
+    "strikethrough": {
+        "fr": ("D'autres styles à copier", "Questions sur le texte barré"),
+    },
+}
 
 if __name__ == "__main__":
     sys.exit(main())
