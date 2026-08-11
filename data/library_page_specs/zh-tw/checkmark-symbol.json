@@ -1,0 +1,100 @@
+{
+  "slug": "checkmark-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "打勾符號 ✓ ✔：複製貼上勾選符號大全 | UltraTextGen",
+  "meta_description": "點一下複製打勾符號 ✓（U+2713）、加粗版 ✔、綠色打勾表情符號 ✅ 與方框打勾 ☑，附容易搞混的 ✗ 與 √ 辨析。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/checkmark-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "打勾符號",
+  "hero_h1": "打勾符號（✓ ✔）",
+  "hero_tagline": "代表「完成」「正確」的勾選符號——點一下就複製。",
+  "intro": "打勾符號（✓，Unicode U+2713 CHECK MARK）是最常用來標示完成、正確或已確認的符號。Unicode 把它放在 Dingbats 區塊，旁邊還有筆畫較粗的 ✔（U+2714 HEAVY CHECK MARK）；加上變化選擇符後 ✔️ 會變成打勾表情符號，而綠色的 ✅ 與方框裡的 ☑ 則是各自獨立的碼位。打勾符號和代表「錯誤／否」的 ✗ 叉叉意義相反，也常被誤打成外型相近的 √ 根號符號——如果你要的其實是數學根號，請見平方根符號頁面。",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/checkmark-symbol/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-galochki/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/chekkumaaku-kigou/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/tanda-centang/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-coche/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/haekchen-symbol/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/onay-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-di-spunta/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-verificacao/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/checkmark-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-zaznaczenia/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/vinkje-symbool/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-verificacion/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-alsah/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/chekeu-pyosi-giho/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/khreuangmai-thuk/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/checkmark-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/checkmark-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "check-mark",
+      "label": "打勾符號",
+      "h2": "打勾符號本體",
+      "intro": "標準與加粗兩種打勾符號，可直接貼到清單或表單裡。",
+      "symbols": [
+        { "char": "✓", "label": "打勾符號（U+2713）" },
+        { "char": "✔", "label": "加粗打勾符號（U+2714）" }
+      ]
+    },
+    {
+      "id": "check-emoji-boxes",
+      "label": "表情符號與方框",
+      "h2": "打勾表情符號與勾選方框",
+      "intro": "彩色打勾表情符號，以及清單常用的方框打勾變體。",
+      "symbols": [
+        { "char": "✅", "label": "綠色打勾表情符號（U+2705）" },
+        { "char": "✔️", "label": "加粗打勾表情符號" },
+        { "char": "☑", "label": "方框打勾（U+2611）" },
+        { "char": "🗹", "label": "粗體方框打勾（U+1F5F9）" },
+        { "char": "🗸", "label": "細體打勾（U+1F5F8）" }
+      ]
+    },
+    {
+      "id": "not-a-check",
+      "label": "容易搞混的符號",
+      "h2": "常被誤打成打勾符號的符號",
+      "intro": "以下每一個都曾被誤用來代替打勾符號，但各自代表不同意思。",
+      "symbols": [
+        { "char": "✗", "label": "叉叉符號（U+2717）——錯誤／否" },
+        { "char": "✘", "label": "加粗叉叉符號（U+2718）" },
+        { "char": "√", "label": "平方根符號（U+221A）" },
+        { "char": "✕", "label": "乘號 X（U+2715）" },
+        { "char": "☒", "label": "方框叉叉（U+2612）" }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/square-root/",
+      "title": "平方根符號（√）",
+      "desc": "外型與打勾符號相近、常被誤打的根號。"
+    },
+    {
+      "href": "/zh-tw/symbol/multiplication-sign/",
+      "title": "乘號符號（×）",
+      "desc": "與叉叉打勾替代符號容易搞混的乘號。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號大全",
+      "desc": "複製貼上獨特 Unicode 符號的完整整理。"
+    },
+    {
+      "href": "/zh-tw/library/shuxue-fuhao/",
+      "title": "數學符號大全",
+      "desc": "更多數理領域常用的符號整理。"
+    }
+  ]
+}
