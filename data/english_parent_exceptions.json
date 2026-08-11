@@ -135,6 +135,15 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/zh-tw/symbol/dun-hao/",
+      "reason": "no-EN-demand-by-construction. 頓號 (U+3001 IDEOGRAPHIC COMMA) is a Chinese-script enumeration comma with no direct English equivalent (English uses a plain comma for lists). First symbol/* page in this ledger -- every prior entry is a usecase/-shaped page; lane chosen for content-shape fit (single-glyph identity page), slug is pinyin (dun-hao) since there's no EN slug to mirror.",
+      "agreed": "2026-08-11",
+      "enDemandBasis": "Instrument-checked, not asserted (stronger basis than most entries in this ledger): Wikimedia pageviews API -- English 'Ideographic_comma' is a bare redirect averaging ~27 human views/month; Chinese zh.wikipedia.org/wiki/頓號 averages ~7,800/month (290x gap). No Stack Overflow discussion under the Unicode name; English-language Unicode reference sites (compart.com, fileformat.info, etc.) carry it only as a templated stub with zero engagement. The real English-language search behavior that exists around this glyph (Microsoft Q&A, italki) is phrased as 'how do I type this Chinese punctuation mark', not 'what is an ideographic comma' -- functional IME/input-method demand, not reference-lookup demand for a dedicated hub section.",
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-11",
+      "verdict": "exception-stands"
     }
   ]
 }
