@@ -10,7 +10,8 @@ For each page it emits:
   - /assets/hero/<slug>.svg   in-page decorative hero banner (1200x340)
   - /assets/og/<slug>.png     1200x630 social card with baked title + brand
 
-Run:  python3 scripts/generate-site-art.py
+Run:  python3 scripts/generate-site-art.py --only <slug>   (incremental)
+      python3 scripts/generate-site-art.py --all           (full regen)
 Requires: cairosvg (PNG rasterization). SVGs are valid standalone assets.
 Arabic titles additionally need arabic-reshaper + python-bidi (cairosvg has
 no shaping/bidi engine of its own — see spanned()) and the fonts-noto-core
@@ -23,6 +24,7 @@ emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
 import os
+import sys
 import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -3056,16 +3058,73 @@ PAGES.update({
 
 
 def main():
+    import argparse
     import cairosvg
-    import sys
-    # Optional slug-prefix filter (e.g. `... printables-cursive-alphabet-letter`)
-    # regenerates only the matching pages instead of rewriting the whole set —
-    # keeps incremental additions from churning hundreds of existing assets.
-    only = sys.argv[1] if len(sys.argv) > 1 else None
+
+    ap = argparse.ArgumentParser(
+        prog="generate-site-art.py",
+        description="Generate the hero SVG + OG PNG pair for pages registered in PAGES.",
+        epilog=(
+            "A bare run used to regenerate every registered page. That is now behind "
+            "--all, because rasterising the whole set on a machine whose font build "
+            "differs from the one that produced the committed PNGs rewrites hundreds of "
+            "visually-identical-but-byte-different files, and that churn then has to be "
+            "reverted by hand before committing. Name what you are adding instead."))
+    ap.add_argument("--only", action="append", metavar="SLUG_PREFIX", default=[],
+                    help="regenerate only slugs starting with this prefix (repeatable). "
+                         "A slug is the page path with '/' replaced by '-', e.g. "
+                         "tr-gotik-yazi for tr/gotik-yazi/index.html.")
+    ap.add_argument("--all", action="store_true",
+                    help="regenerate EVERY registered page plus the homepage cards. "
+                         "Review `git status` before committing — see epilog.")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="print what would be written and exit without writing.")
+    # Backwards compatibility: this script used to take a bare positional slug
+    # prefix (sys.argv[1]). Kept working, hidden from --help, so older docs and
+    # muscle memory don't break.
+    ap.add_argument("legacy_prefix", nargs="?", help=argparse.SUPPRESS)
+    a = ap.parse_args()
+
+    prefixes = list(a.only)
+    if a.legacy_prefix:
+        prefixes.append(a.legacy_prefix)
+
+    if not prefixes and not a.all:
+        print("error: refusing to regenerate every asset without --all.\n", file=sys.stderr)
+        print("  Adding or changing a page?  python3 scripts/generate-site-art.py --only <slug>",
+              file=sys.stderr)
+        print("  (slug = page path with '/' as '-', e.g. --only tr-gotik-yazi)\n", file=sys.stderr)
+        print("  Really want the whole set?  python3 scripts/generate-site-art.py --all",
+              file=sys.stderr)
+        print("  Not sure what a run would touch?  add --dry-run to either.\n", file=sys.stderr)
+        print(f"  {len(PAGES)} pages are registered; a full run also rewrites the homepage "
+              f"card and {len(LOCALIZED_HOME)} localized homepage cards.", file=sys.stderr)
+        return 2
+
+    if prefixes:
+        selected = [s for s in PAGES if any(s.startswith(p) for p in prefixes)]
+        # A prefix that matches nothing is almost always a typo, and silently
+        # doing no work reads exactly like success.
+        unmatched = [p for p in prefixes if not any(s.startswith(p) for s in PAGES)]
+        if unmatched:
+            print(f"error: no registered page matches: {', '.join(unmatched)}", file=sys.stderr)
+            print("       check the slug, or register the page in PAGES first.", file=sys.stderr)
+            return 2
+    else:
+        selected = list(PAGES)
+
+    if a.dry_run:
+        print(f"[dry-run] would write {len(selected)} hero SVG + OG PNG pair(s):")
+        for slug in selected:
+            print(f"  assets/hero/{slug}.svg  +  assets/og/{slug}.png")
+        if a.all:
+            print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
+            print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
+        return 0
+
     n = 0
-    for slug, (title, sub, motif, kicker) in PAGES.items():
-        if only and not slug.startswith(only):
-            continue
+    for slug in selected:
+        title, sub, motif, kicker = PAGES[slug]
         native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
@@ -3075,12 +3134,13 @@ def main():
             output_width=1200, output_height=630)
         n += 1
 
-    # Homepage social card + hero figure. The English root index.html
-    # references both. Skipped when a slug filter is active — a filtered run
-    # is an incremental addition, not a full regeneration.
-    if only:
-        print(f"wrote {n} hero SVGs and OG PNGs (filter: {only})")
-        return
+    # Homepage social card + hero figure, and the localized homepage cards.
+    # Only on a full run: a scoped run is an incremental addition and has no
+    # business rewriting the homepage's art.
+    if not a.all:
+        print(f"wrote {n} hero SVG + OG PNG pair(s) (scoped to: {', '.join(prefixes)})")
+        return 0
+
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(
@@ -3104,7 +3164,10 @@ def main():
     print(f"wrote {n} hero SVGs to assets/hero/ and {n} OG PNGs to assets/og/")
     print(f"wrote homepage card + {len(LOCALIZED_HOME)} localized homepage cards "
           "to assets/og/")
+    print("\nNOTE: a full run rewrites every asset. Review `git status` and revert any "
+          "file whose only change is a re-render before committing.")
     report_orphan_keys()
+    return 0
 
 
 def report_orphan_keys():
@@ -3144,4 +3207,4 @@ def report_orphan_keys():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

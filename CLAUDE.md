@@ -1467,7 +1467,8 @@ A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
 hero figure must point at files that exist on disk **in the same commit/PR**
 that ships the page — never a follow-up "generate the missing art" pass.
 Google crawls new pages within hours of the sitemap picking them up (see
-`generate-site-art.py`/`wire-site-art.py`'s standard pipeline); if the art
+`generate-site-art.py --only <slug>` / `wire-site-art.py`'s standard pipeline —
+a bare `generate-site-art.py` run is refused, see "Scoping" below); if the art
 isn't there yet, Googlebot's first fetch of that image 404s, and that broken
 first impression is recorded before any later fix lands. This has been a
 real, recurring pattern in this repo's own history (see
@@ -1476,6 +1477,23 @@ that backfilled hero/OG art for pages already shipped) — most recently
 diagnosed from live GSC crawl-stats data in an internal audit (2026-07-24).
 
 ### Tooling — why there are two image-asset scripts, not one
+
+**Scoping (added 2026-08-11).** `generate-site-art.py` **refuses a bare run**
+and exits 2. Use `--only <slug>` (repeatable; slug = the page path with `/`
+replaced by `-`, so `tr/gotik-yazi/index.html` is `tr-gotik-yazi`), or `--all`
+for a genuine full regeneration. `--dry-run` lists what a run would write
+without writing it, and an `--only` prefix matching no registered page is an
+error rather than a silent no-op.
+
+The default was flipped because a full run rasterises ~1,200 pages, and on a
+machine whose font build differs from the one that produced the committed PNGs
+that rewrites hundreds of **visually identical but byte-different** files —
+churn that then has to be spotted and reverted by hand before committing. That
+happened on three consecutive locale batches on 2026-08-11 (119 files the first
+time) and was caught each time only by reading `git status`. A capable filter
+already existed as an undocumented positional argument; nobody used it because
+nothing said it was there and the dangerous path was the default one. The
+positional still works, hidden, for backwards compatibility.
 
 - **`scripts/check-image-assets.py`** (`npm run check:images`) — whole-site
   audit. Requires every indexable page to have `og:image`, `twitter:image`,
