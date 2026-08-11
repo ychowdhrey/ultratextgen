@@ -2,7 +2,7 @@
   "locale": "tr",
   "slug": "emoji-bayraklar",
   "title": "Bayrak Emoji — Türk Bayrağı ve Ülke Bayrakları Kopyala",
-  "meta_description": "Türk bayrağı 🇹🇷 ve bütün ülke bayraklarının emojisi. Bayrağa dokun, anında kopyalansın; oyun ismine, bio'ya, başlığa veya mesaja yapıştır. Hazır bayrak setleri de var.",
+  "meta_description": "Türk bayrağı 🇹🇷 ve tüm ülke bayraklarının emojisi. Bayrağa dokun, kopyalansın; oyun ismine, bio'ya veya mesaja yapıştır. Hazır bayrak setleri de var.",
   "breadcrumb": "Bayrak Emoji",
   "h1": "Bayrak Emoji — Ülke Bayrakları Kopyala",
   "hero_tagline": "Bayrağa dokun, anında kopyalansın: Türk bayrağı, Azerbaycan, Almanya ve her ülke. Oyun ismine, bio'ya, başlığa veya mesaja yapıştır — uygulama gerekmez.",
@@ -42,6 +42,19 @@
     "South Asia": "Güney Asya",
     "East Asia": "Doğu Asya"
   },
+  "special_flags": {
+    "England": "İngiltere",
+    "Scotland": "İskoçya",
+    "Wales": "Galler",
+    "Rainbow Flag": "Gökkuşağı bayrağı",
+    "Transgender Flag": "Trans bayrağı",
+    "Chequered Flag": "Damalı bayrak",
+    "Triangular Flag": "Üçgen bayrak",
+    "White Flag": "Beyaz bayrak",
+    "Black Flag": "Siyah bayrak",
+    "Pirate Flag": "Korsan bayrağı",
+    "Crossed Flags": "Çapraz Japon bayrakları"
+  },
   "featured_codes": ["TR", "AZ", "DE", "US", "GB", "RU", "SA", "SY", "PS", "GR", "FR", "NL", "IT", "UA"],
   "faq": [
     {
@@ -67,6 +80,6 @@
   ],
   "editorial": {
     "h2": "🇹🇷 aslında bir bayrak karakteri değil",
-    "body": "🇹🇷 diye bir karakter yok: Ⓣ + Ⓡ, yani iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO ülke kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
+    "body": "🇹🇷 diye bir karakter yok: Ⓣ + Ⓡ, iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
   }
 }

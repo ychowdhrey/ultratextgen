@@ -80,6 +80,6 @@
   ],
   "editorial": {
     "h2": "🇮🇩 sebenarnya bukan karakter bendera",
-    "body": "Di 🇮🇩 tidak ada karakter bendera — hanya huruf indikator I dan D yang digambar font jadi Merah Putih. Itu sebabnya Windows menampilkan ID. Unicode meminjam kode ISO agar tak perlu memutuskan mana yang layak disebut negara — sekaligus alasan sebagian bendera tak ada."
+    "body": "🇮🇩 bukan karakter bendera — isinya huruf indikator I dan D, digambar font jadi Merah Putih. Karena itu Windows menampilkan ID. Unicode meminjam kode ISO agar tak perlu memutuskan mana yang layak disebut negara — juga alasan sebagian bendera tak ada."
   }
 }
