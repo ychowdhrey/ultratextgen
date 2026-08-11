@@ -1,0 +1,72 @@
+{
+  "locale": "tr",
+  "slug": "emoji-bayraklar",
+  "title": "Bayrak Emoji — Türk Bayrağı ve Ülke Bayrakları Kopyala",
+  "meta_description": "Türk bayrağı 🇹🇷 ve bütün ülke bayraklarının emojisi. Bayrağa dokun, anında kopyalansın; oyun ismine, bio'ya, başlığa veya mesaja yapıştır. Hazır bayrak setleri de var.",
+  "breadcrumb": "Bayrak Emoji",
+  "h1": "Bayrak Emoji — Ülke Bayrakları Kopyala",
+  "hero_tagline": "Bayrağa dokun, anında kopyalansın: Türk bayrağı, Azerbaycan, Almanya ve her ülke. Oyun ismine, bio'ya, başlığa veya mesaja yapıştır — uygulama gerekmez.",
+  "intro": "Her ülkenin bayrağı tek dokunuş uzağında. Yaklaşık 200 ülkenin bayrağını gez, kıtaya göre filtrele, istediğin bayrak emojisini anında kopyala. Bayrak emojileri resim değil, gerçek Unicode karakteridir — bu yüzden Instagram, WhatsApp, TikTok, Discord ve Telegram gönderilerine, bio'na ve oyun isim alanına düz yazı gibi yapışır. Sayfanın başında Türk bayrağı ve en çok aranan bayraklar hazır duruyor; aşağıda ise Avrupa Birliği, G20 veya Orta Doğu gibi bütün bir seti tek tuşla kopyalayabilirsin.",
+  "sections": {
+    "country_list": {
+      "label": "Ülke bayrakları",
+      "h2": "Tüm ülke bayrakları",
+      "intro": "Yaklaşık 200 ülke bayrağı, kıtaya göre filtrelenebilir. Kopyalamak için bayrağa dokun:"
+    },
+    "grids": {
+      "label": "Bayrak setleri",
+      "h2": "Bölgeye göre bayrak setleri",
+      "intro": "Bir gönderi, liste ya da başlık için bütün bir bayrak setini tek seferde kopyala."
+    },
+    "featured": {
+      "label": "Popüler bayraklar",
+      "h2": "En çok aranan bayraklar",
+      "intro": "Türk bayrağı ve Türkiye'den en çok aranan bayraklar bir arada. Kopyalamak için dokun:"
+    }
+  },
+  "regions": {
+    "all": "Tümü",
+    "europe": "Avrupa",
+    "asia": "Asya",
+    "americas": "Amerika",
+    "africa": "Afrika",
+    "oceania": "Okyanusya"
+  },
+  "aria_copy_flag": "{name} bayrağını kopyala",
+  "groups": {
+    "European Union Members": "Avrupa Birliği üyeleri",
+    "ASEAN": "ASEAN ülkeleri",
+    "Middle East": "Orta Doğu",
+    "G20": "G20 ülkeleri",
+    "Nordic Countries": "İskandinav ülkeleri",
+    "South Asia": "Güney Asya",
+    "East Asia": "Doğu Asya"
+  },
+  "featured_codes": ["TR", "AZ", "DE", "US", "GB", "RU", "SA", "SY", "PS", "GR", "FR", "NL", "IT", "UA"],
+  "faq": [
+    {
+      "q": "Neden bayrak yerine “TR” yazıyor?",
+      "a": "Cihazında bayrağı çizecek emoji fontu yoksa bunu görürsün. Windows, ülke bayraklarını varsayılan olarak çizmez; onun yerine ülke kodunun iki harfini gösterir (TR, DE, US). iPhone, Android ve Mac'te bayrak normal görünür. Kopyaladığın karakter yine de doğrudur — telefondan bakan herkes bayrağı görür."
+    },
+    {
+      "q": "Bayrak emojisi kaç karakter sayılır?",
+      "a": "En az iki. Her bayrak iki bölge gösterge harfinden oluşur, yani 150 karakterlik bir bio'da 🇹🇷 tek başına 2 karakter yer kaplar. Bazı oyun ve uygulama alanları daha da katı sayar (bayrak başına 4) ya da emojiyi hiç kabul etmez. İsim alanı “geçersiz karakter” diyorsa sade bir isim + tek bayrak dene."
+    },
+    {
+      "q": "Neden bazı bayraklar emoji olarak yok?",
+      "a": "Çünkü bayraklar tek tek tasarlanmaz: Unicode yalnızca iki harfli ISO ülke kodlarını bayrağa çevirir. Resmî bir ülke kodu olmayan bölgenin bayrak emojisi de olmaz. İngiltere, İskoçya ve Galler bayrakları ayrı bir yöntemle eklenmiş birkaç istisnadır."
+    },
+    {
+      "q": "Bayrak emojileri WhatsApp, Telegram ve Instagram'da çalışır mı?",
+      "a": "Evet. Bayraklar standart Unicode karakteridir, tek bir uygulamaya ait bir özellik değil; WhatsApp, Telegram, Instagram, TikTok, Discord ve X'te sorunsuz yapışır. Görünümü belirleyen uygulama değil, karşı tarafın cihazıdır — aynı bayrak iPhone'da, Android'de ve Windows'ta farklı görünür."
+    },
+    {
+      "q": "Bayrak neden kutu (□) olarak görünüyor?",
+      "a": "Cihazın emoji fontu o bayrağı tanımıyor demektir; genelde eski bir telefonda ya da uzun süredir güncellenmemiş bir sistemde olur. Karakter bozulmaz, sadece çizilemez — sistem güncellemesinden sonra bayrak yerine oturur."
+    }
+  ],
+  "editorial": {
+    "h2": "🇹🇷 aslında bir bayrak karakteri değil",
+    "body": "🇹🇷 diye bir karakter yok: Ⓣ + Ⓡ, yani iki bölge gösterge harfi var; bayrağı fontun kendisi çizer. Windows'ta iki harf görmenin sebebi bu. Unicode, hangi toprağın ülke sayılacağına karar vermemek için ISO ülke kodlarını ödünç aldı — bazı bayrakların hiç olmaması da bundan."
+  }
+}

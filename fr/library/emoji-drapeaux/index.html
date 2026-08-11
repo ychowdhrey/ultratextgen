@@ -340,6 +340,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- ALL COUNTRY FLAGS -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">Liste Complète</span>
+  <h2>Les Drapeaux des 195 Pays</h2>
+  <p class="u-secondary-tight">Filtrez par continent, puis cliquez sur un drapeau pour le copier.</p>
+
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">Tous</button>
+    <button class="region-filter" data-region="europe">Europe</button>
+    <button class="region-filter" data-region="asia">Asie</button>
+    <button class="region-filter" data-region="americas">Amérique</button>
+    <button class="region-filter" data-region="africa">Afrique</button>
+    <button class="region-filter" data-region="oceania">Océanie</button>
+  </div>
+
+  <div class="flag-rows" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FLAG COMBO SETS -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">Séries de Drapeaux</span>
+  <h2>Séries de Drapeaux Prêtes à Copier</h2>
+  <p class="u-secondary-block">Un clic copie le groupe entier : les 27 drapeaux de l'UE, les 10 de l'ASEAN, tout le G20.</p>
+
+  <div id="flagGridContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Questions fréquentes</span>
@@ -399,5 +430,255 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns) return;
+
+  var COUNTRIES = [
+    { code: "AF", name: "Afghanistan", region: "asia" },
+    { code: "AL", name: "Albanie", region: "europe" },
+    { code: "DZ", name: "Algérie", region: "africa" },
+    { code: "AD", name: "Andorre", region: "europe" },
+    { code: "AO", name: "Angola", region: "africa" },
+    { code: "AG", name: "Antigua-et-Barbuda", region: "americas" },
+    { code: "AR", name: "Argentine", region: "americas" },
+    { code: "AM", name: "Arménie", region: "asia" },
+    { code: "AU", name: "Australie", region: "oceania" },
+    { code: "AT", name: "Autriche", region: "europe" },
+    { code: "AZ", name: "Azerbaïdjan", region: "asia" },
+    { code: "BS", name: "Bahamas", region: "americas" },
+    { code: "BH", name: "Bahreïn", region: "asia" },
+    { code: "BD", name: "Bangladesh", region: "asia" },
+    { code: "BB", name: "Barbade", region: "americas" },
+    { code: "BY", name: "Biélorussie", region: "europe" },
+    { code: "BE", name: "Belgique", region: "europe" },
+    { code: "BZ", name: "Belize", region: "americas" },
+    { code: "BJ", name: "Bénin", region: "africa" },
+    { code: "BT", name: "Bhoutan", region: "asia" },
+    { code: "BO", name: "Bolivie", region: "americas" },
+    { code: "BA", name: "Bosnie-Herzégovine", region: "europe" },
+    { code: "BW", name: "Botswana", region: "africa" },
+    { code: "BR", name: "Brésil", region: "americas" },
+    { code: "BN", name: "Brunei", region: "asia" },
+    { code: "BG", name: "Bulgarie", region: "europe" },
+    { code: "BF", name: "Burkina Faso", region: "africa" },
+    { code: "BI", name: "Burundi", region: "africa" },
+    { code: "CV", name: "Cap-Vert", region: "africa" },
+    { code: "KH", name: "Cambodge", region: "asia" },
+    { code: "CM", name: "Cameroun", region: "africa" },
+    { code: "CA", name: "Canada", region: "americas" },
+    { code: "CF", name: "République centrafricaine", region: "africa" },
+    { code: "TD", name: "Tchad", region: "africa" },
+    { code: "CL", name: "Chili", region: "americas" },
+    { code: "CN", name: "Chine", region: "asia" },
+    { code: "CO", name: "Colombie", region: "americas" },
+    { code: "KM", name: "Comores", region: "africa" },
+    { code: "CG", name: "Congo-Brazzaville", region: "africa" },
+    { code: "CD", name: "Congo-Kinshasa", region: "africa" },
+    { code: "CR", name: "Costa Rica", region: "americas" },
+    { code: "CI", name: "Côte d’Ivoire", region: "africa" },
+    { code: "HR", name: "Croatie", region: "europe" },
+    { code: "CU", name: "Cuba", region: "americas" },
+    { code: "CY", name: "Chypre", region: "europe" },
+    { code: "CZ", name: "Tchéquie", region: "europe" },
+    { code: "DK", name: "Danemark", region: "europe" },
+    { code: "DJ", name: "Djibouti", region: "africa" },
+    { code: "DM", name: "Dominique", region: "americas" },
+    { code: "DO", name: "République dominicaine", region: "americas" },
+    { code: "EC", name: "Équateur", region: "americas" },
+    { code: "EG", name: "Égypte", region: "africa" },
+    { code: "SV", name: "Salvador", region: "americas" },
+    { code: "GQ", name: "Guinée équatoriale", region: "africa" },
+    { code: "ER", name: "Érythrée", region: "africa" },
+    { code: "EE", name: "Estonie", region: "europe" },
+    { code: "SZ", name: "Eswatini", region: "africa" },
+    { code: "ET", name: "Éthiopie", region: "africa" },
+    { code: "FJ", name: "Fidji", region: "oceania" },
+    { code: "FI", name: "Finlande", region: "europe" },
+    { code: "FR", name: "France", region: "europe" },
+    { code: "GA", name: "Gabon", region: "africa" },
+    { code: "GM", name: "Gambie", region: "africa" },
+    { code: "GE", name: "Géorgie", region: "europe" },
+    { code: "DE", name: "Allemagne", region: "europe" },
+    { code: "GH", name: "Ghana", region: "africa" },
+    { code: "GR", name: "Grèce", region: "europe" },
+    { code: "GD", name: "Grenade", region: "americas" },
+    { code: "GT", name: "Guatemala", region: "americas" },
+    { code: "GN", name: "Guinée", region: "africa" },
+    { code: "GW", name: "Guinée-Bissau", region: "africa" },
+    { code: "GY", name: "Guyana", region: "americas" },
+    { code: "HT", name: "Haïti", region: "americas" },
+    { code: "HN", name: "Honduras", region: "americas" },
+    { code: "HU", name: "Hongrie", region: "europe" },
+    { code: "IS", name: "Islande", region: "europe" },
+    { code: "IN", name: "Inde", region: "asia" },
+    { code: "ID", name: "Indonésie", region: "asia" },
+    { code: "IR", name: "Iran", region: "asia" },
+    { code: "IQ", name: "Irak", region: "asia" },
+    { code: "IE", name: "Irlande", region: "europe" },
+    { code: "IL", name: "Israël", region: "asia" },
+    { code: "IT", name: "Italie", region: "europe" },
+    { code: "JM", name: "Jamaïque", region: "americas" },
+    { code: "JP", name: "Japon", region: "asia" },
+    { code: "JO", name: "Jordanie", region: "asia" },
+    { code: "KZ", name: "Kazakhstan", region: "asia" },
+    { code: "KE", name: "Kenya", region: "africa" },
+    { code: "KI", name: "Kiribati", region: "oceania" },
+    { code: "KW", name: "Koweït", region: "asia" },
+    { code: "KG", name: "Kirghizstan", region: "asia" },
+    { code: "LA", name: "Laos", region: "asia" },
+    { code: "LV", name: "Lettonie", region: "europe" },
+    { code: "LB", name: "Liban", region: "asia" },
+    { code: "LS", name: "Lesotho", region: "africa" },
+    { code: "LR", name: "Liberia", region: "africa" },
+    { code: "LY", name: "Libye", region: "africa" },
+    { code: "LI", name: "Liechtenstein", region: "europe" },
+    { code: "LT", name: "Lituanie", region: "europe" },
+    { code: "LU", name: "Luxembourg", region: "europe" },
+    { code: "MG", name: "Madagascar", region: "africa" },
+    { code: "MW", name: "Malawi", region: "africa" },
+    { code: "MY", name: "Malaisie", region: "asia" },
+    { code: "MV", name: "Maldives", region: "asia" },
+    { code: "ML", name: "Mali", region: "africa" },
+    { code: "MT", name: "Malte", region: "europe" },
+    { code: "MH", name: "Îles Marshall", region: "oceania" },
+    { code: "MR", name: "Mauritanie", region: "africa" },
+    { code: "MU", name: "Maurice", region: "africa" },
+    { code: "MX", name: "Mexique", region: "americas" },
+    { code: "FM", name: "Micronésie", region: "oceania" },
+    { code: "MD", name: "Moldavie", region: "europe" },
+    { code: "MC", name: "Monaco", region: "europe" },
+    { code: "MN", name: "Mongolie", region: "asia" },
+    { code: "ME", name: "Monténégro", region: "europe" },
+    { code: "MA", name: "Maroc", region: "africa" },
+    { code: "MZ", name: "Mozambique", region: "africa" },
+    { code: "MM", name: "Myanmar (Birmanie)", region: "asia" },
+    { code: "NA", name: "Namibie", region: "africa" },
+    { code: "NR", name: "Nauru", region: "oceania" },
+    { code: "NP", name: "Népal", region: "asia" },
+    { code: "NL", name: "Pays-Bas", region: "europe" },
+    { code: "NZ", name: "Nouvelle-Zélande", region: "oceania" },
+    { code: "NI", name: "Nicaragua", region: "americas" },
+    { code: "NE", name: "Niger", region: "africa" },
+    { code: "NG", name: "Nigeria", region: "africa" },
+    { code: "KP", name: "Corée du Nord", region: "asia" },
+    { code: "MK", name: "Macédoine du Nord", region: "europe" },
+    { code: "NO", name: "Norvège", region: "europe" },
+    { code: "OM", name: "Oman", region: "asia" },
+    { code: "PK", name: "Pakistan", region: "asia" },
+    { code: "PW", name: "Palaos", region: "oceania" },
+    { code: "PS", name: "Territoires palestiniens", region: "asia" },
+    { code: "PA", name: "Panama", region: "americas" },
+    { code: "PG", name: "Papouasie-Nouvelle-Guinée", region: "oceania" },
+    { code: "PY", name: "Paraguay", region: "americas" },
+    { code: "PE", name: "Pérou", region: "americas" },
+    { code: "PH", name: "Philippines", region: "asia" },
+    { code: "PL", name: "Pologne", region: "europe" },
+    { code: "PT", name: "Portugal", region: "europe" },
+    { code: "QA", name: "Qatar", region: "asia" },
+    { code: "RO", name: "Roumanie", region: "europe" },
+    { code: "RU", name: "Russie", region: "europe" },
+    { code: "RW", name: "Rwanda", region: "africa" },
+    { code: "KN", name: "Saint-Christophe-et-Niévès", region: "americas" },
+    { code: "LC", name: "Sainte-Lucie", region: "americas" },
+    { code: "VC", name: "Saint-Vincent-et-les Grenadines", region: "americas" },
+    { code: "WS", name: "Samoa", region: "oceania" },
+    { code: "SM", name: "Saint-Marin", region: "europe" },
+    { code: "ST", name: "Sao Tomé-et-Principe", region: "africa" },
+    { code: "SA", name: "Arabie saoudite", region: "asia" },
+    { code: "SN", name: "Sénégal", region: "africa" },
+    { code: "RS", name: "Serbie", region: "europe" },
+    { code: "SC", name: "Seychelles", region: "africa" },
+    { code: "SL", name: "Sierra Leone", region: "africa" },
+    { code: "SG", name: "Singapour", region: "asia" },
+    { code: "SK", name: "Slovaquie", region: "europe" },
+    { code: "SI", name: "Slovénie", region: "europe" },
+    { code: "SB", name: "Îles Salomon", region: "oceania" },
+    { code: "SO", name: "Somalie", region: "africa" },
+    { code: "ZA", name: "Afrique du Sud", region: "africa" },
+    { code: "KR", name: "Corée du Sud", region: "asia" },
+    { code: "SS", name: "Soudan du Sud", region: "africa" },
+    { code: "ES", name: "Espagne", region: "europe" },
+    { code: "LK", name: "Sri Lanka", region: "asia" },
+    { code: "SD", name: "Soudan", region: "africa" },
+    { code: "SR", name: "Suriname", region: "americas" },
+    { code: "SE", name: "Suède", region: "europe" },
+    { code: "CH", name: "Suisse", region: "europe" },
+    { code: "SY", name: "Syrie", region: "asia" },
+    { code: "TJ", name: "Tadjikistan", region: "asia" },
+    { code: "TZ", name: "Tanzanie", region: "africa" },
+    { code: "TH", name: "Thaïlande", region: "asia" },
+    { code: "TL", name: "Timor oriental", region: "asia" },
+    { code: "TG", name: "Togo", region: "africa" },
+    { code: "TO", name: "Tonga", region: "oceania" },
+    { code: "TT", name: "Trinité-et-Tobago", region: "americas" },
+    { code: "TN", name: "Tunisie", region: "africa" },
+    { code: "TR", name: "Turquie", region: "europe" },
+    { code: "TM", name: "Turkménistan", region: "asia" },
+    { code: "TV", name: "Tuvalu", region: "oceania" },
+    { code: "UG", name: "Ouganda", region: "africa" },
+    { code: "UA", name: "Ukraine", region: "europe" },
+    { code: "AE", name: "Émirats arabes unis", region: "asia" },
+    { code: "GB", name: "Royaume-Uni", region: "europe" },
+    { code: "US", name: "États-Unis", region: "americas" },
+    { code: "UY", name: "Uruguay", region: "americas" },
+    { code: "UZ", name: "Ouzbékistan", region: "asia" },
+    { code: "VU", name: "Vanuatu", region: "oceania" },
+    { code: "VA", name: "État de la Cité du Vatican", region: "europe" },
+    { code: "VE", name: "Venezuela", region: "americas" },
+    { code: "VN", name: "Viêt Nam", region: "asia" },
+    { code: "YE", name: "Yémen", region: "asia" },
+    { code: "ZM", name: "Zambie", region: "africa" },
+    { code: "ZW", name: "Zimbabwe", region: "africa" }
+  ];
+
+  var list = document.getElementById("countryFlagList");
+  if (list) {
+    COUNTRIES.forEach(function (c) {
+      var flag = ns.isoToFlag(c.code);
+      var row = document.createElement("div");
+      row.className = "flag-row";
+      row.setAttribute("data-region", c.region);
+      var btn = document.createElement("button");
+      btn.className = "flag-emoji symbol-tile";
+      btn.setAttribute("data-symbol", flag);
+      btn.setAttribute("aria-label", "Copier le drapeau : " + c.name + "");
+      btn.textContent = flag;
+      var label = document.createElement("span");
+      label.className = "flag-label";
+      label.textContent = c.name;
+      row.appendChild(btn);
+      row.appendChild(label);
+      list.appendChild(row);
+    });
+
+    var filterBtns = document.querySelectorAll(".region-filter");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var region = btn.getAttribute("data-region");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        list.querySelectorAll(".flag-row").forEach(function (item) {
+          item.style.display = (region === "all" || item.getAttribute("data-region") === region) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  var FLAG_GROUPS = [
+    { name: "Union européenne (UE)", flags: ["🇦🇹","🇧🇪","🇧🇬","🇭🇷","🇨🇾","🇨🇿","🇩🇰","🇪🇪","🇫🇮","🇫🇷","🇩🇪","🇬🇷","🇭🇺","🇮🇪","🇮🇹","🇱🇻","🇱🇹","🇱🇺","🇲🇹","🇳🇱","🇵🇱","🇵🇹","🇷🇴","🇸🇰","🇸🇮","🇪🇸","🇸🇪"] },
+    { name: "ASEAN (Asie du Sud-Est)", flags: ["🇸🇬","🇲🇾","🇮🇩","🇹🇭","🇵🇭","🇻🇳","🇧🇳","🇰🇭","🇱🇦","🇲🇲"] },
+    { name: "Moyen-Orient", flags: ["🇸🇦","🇦🇪","🇶🇦","🇰🇼","🇧🇭","🇴🇲","🇮🇱","🇯🇴","🇱🇧","🇮🇶","🇮🇷","🇾🇪"] },
+    { name: "G20", flags: ["🇦🇷","🇦🇺","🇧🇷","🇨🇦","🇨🇳","🇫🇷","🇩🇪","🇮🇳","🇮🇩","🇮🇹","🇯🇵","🇲🇽","🇷🇺","🇸🇦","🇿🇦","🇰🇷","🇹🇷","🇬🇧","🇺🇸"] },
+    { name: "Pays nordiques", flags: ["🇩🇰","🇫🇮","🇮🇸","🇳🇴","🇸🇪"] },
+    { name: "Asie du Sud", flags: ["🇮🇳","🇵🇰","🇧🇩","🇱🇰","🇳🇵","🇧🇹","🇲🇻","🇦🇫"] },
+    { name: "Asie de l'Est", flags: ["🇨🇳","🇯🇵","🇰🇷","🇹🇼","🇲🇳","🇭🇰","🇲🇴"] }
+  ];
+  if (ns.buildGrids) ns.buildGrids("flagGridContainer", FLAG_GROUPS);
+});
+</script>
+
 </body>
 </html>
