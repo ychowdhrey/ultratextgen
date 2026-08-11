@@ -17,9 +17,9 @@
   "date_modified": "2026-08-11",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/" },
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ideographic-comma/" },
     { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/dun-hao/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/" }
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ideographic-comma/" }
   ],
   "sections": [
     {
@@ -87,6 +87,11 @@
   ],
   "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
   "related": [
+    {
+      "href": "/zh-tw/symbol/shan-jie-hao/",
+      "title": "刪節號（……）",
+      "desc": "中文六點刪節號的寫法與複製貼上。"
+    },
     {
       "href": "/zh-tw/library/teshu-fuhao/",
       "title": "特殊符號大全",

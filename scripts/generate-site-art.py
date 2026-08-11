@@ -2982,6 +2982,18 @@ PAGES["zh-tw-library-teshu-fuhao"] = (
 PAGES["zh-tw-symbol-dun-hao"] = (
     "頓號", "、符號複製貼上與正確用法",
     native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["zh-tw-symbol-shan-jie-hao"] = (
+    "刪節號", "……六點刪節號複製貼上與正確寫法",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
+# EN parents for the two CJK punctuation marks above. The comma uses
+# native_glyph() rather than glyphs() because U+3001 falls outside DejaVu
+# Sans's coverage — see native_glyph_badge()'s own docstring.
+PAGES["symbol-ideographic-comma"] = (
+    "Ideographic Comma", "、 the CJK list comma, copy & paste",
+    native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["symbol-ellipsis"] = (
+    "Ellipsis", "… meaning, and why it isn't three periods",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
 PAGES["it-library-caratteri-speciali-simboli"] = (
     "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
     glyphs("§", "¶", "†", "‡", "★"), K_LIB)

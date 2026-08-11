@@ -1708,12 +1708,6 @@
       "localeUrl": "https://ultratextgen.com/es/",
       "reason": "check-translation-parity.js flags this pair because es/index.html gained one internal link in this branch — a `cat-cta` pointing at its own /es/library/ hub. index.html (EN) was not touched and needed no change: it has carried that exact link to /library/ all along. This is the locale catching up to EN, not EN drifting from the locale — verified by running the shared fingerprint diff directly, which shows /library/ is NOT in this pair's onlyInLocale set after the change, i.e. the added link now MATCHES EN and the structural difference between the two pages got smaller, not larger. The gate fires on 'this page's fingerprint moved', not on 'divergence increased', so an improvement trips it. Touching index.html to satisfy the gate would make things strictly worse: the EN homepage anchors a 30-member cluster, so marking it changed would flag all 16 locale homepages this PR does NOT touch, turning 6 findings into 16. SCOPE WARNING for future readers: check-translation-parity.js's hasException() is a plain (enUrl, localeUrl) match and ignores the schema's `suppress` field, so this is necessarily a FULL-PAIR exception. It is not a review of this pair's large pre-existing drift (faqDelta -11, 15 locale-only content links), which predates this branch, was not examined, and is NOT blessed by this entry. If that backlog is ever addressed, delete this entry rather than treating it as prior approval.",
       "agreed": "2026-07-31"
-    },
-    {
-      "enUrl": "https://ultratextgen.com/",
-      "localeUrl": "https://ultratextgen.com/zh-tw/symbol/dun-hao/",
-      "reason": "New page, ratified local-only exception under the English-Parent Rule (see data/english_parent_exceptions.json) -- hreflang=\"en\" points at the bare homepage as a placeholder default, not a real translation relationship, same shape as every other local-only exception in this ledger (ko/font-byeonhwan/, etc.). There is no EN sibling for this content to stay in sync with -- 頓號 is Chinese-script-only by construction.",
-      "agreed": "2026-08-11"
     }
   ]
 }

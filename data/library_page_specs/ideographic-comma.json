@@ -1,0 +1,69 @@
+{
+  "slug": "ideographic-comma",
+  "page_type": "symbol",
+  "title": "Ideographic Comma (、): Copy & Paste the Chinese List Comma",
+  "meta_description": "Copy and paste the ideographic comma (、, U+3001) — the CJK enumeration comma that separates items in a list, distinct from the fullwidth comma ， used between clauses. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/ideographic-comma/",
+  "breadcrumb": "Ideographic Comma",
+  "hero_h1": "Ideographic Comma (、)",
+  "hero_tagline": "The CJK list comma — the mark Chinese uses to separate items in a series, and Japanese uses as an ordinary sentence pause. Click any symbol to copy it instantly.",
+  "intro": "The ideographic comma (、, Unicode U+3001) is the wedge-shaped comma used across Chinese, Japanese, and Korean typography. It is not a stylistic variant of the Western comma — in Chinese it is a separate mark with a separate job: 、 separates items in a list (蘋果、香蕉、橘子), while the fullwidth comma ， separates clauses within a sentence. Chinese grammar names them differently for that reason, 頓號 for the enumeration comma and 逗號 for the clause comma. Japanese uses the same glyph for a different job again — as 読点 (touten), the general mid-sentence pause mark, closer to how English uses a plain comma. It sits in the CJK Symbols and Punctuation block alongside the ideographic full stop 。, and because it appears on no English keyboard layout, copy-paste is usually the fastest way to get one.",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ideographic-comma",
+      "label": "Ideographic Comma",
+      "h2": "The Ideographic Comma (、)",
+      "intro": "The enumeration comma itself, plus the vertical presentation form used in traditional top-to-bottom CJK typesetting.",
+      "symbols": [
+        { "char": "、", "label": "Ideographic Comma (U+3001)" },
+        { "char": "︑", "label": "Vertical Ideographic Comma (U+FE11)" }
+      ]
+    },
+    {
+      "id": "comma-vs-comma",
+      "label": "、 vs ，",
+      "h2": "Ideographic Comma vs. Fullwidth Comma",
+      "intro": "These two are not interchangeable in Chinese writing. 、 joins items in a list; ， marks a pause between clauses. Using the wrong one is the single most common CJK punctuation mistake for non-native writers — and the plain ASCII comma is a third character again, half the width of both.",
+      "symbols": [
+        { "char": "、", "label": "Ideographic Comma — Between List Items" },
+        { "char": "，", "label": "Fullwidth Comma (U+FF0C) — Between Clauses" },
+        { "char": ",", "label": "ASCII Comma (U+002C) — Western Text" }
+      ]
+    },
+    {
+      "id": "cjk-punctuation",
+      "label": "CJK Punctuation",
+      "h2": "Other CJK Punctuation Marks",
+      "intro": "The marks that share the ideographic comma's block and its fullwidth spacing — none of which are on a standard English keyboard.",
+      "symbols": [
+        { "char": "。", "label": "Ideographic Full Stop (U+3002)" },
+        { "char": "；", "label": "Fullwidth Semicolon (U+FF1B)" },
+        { "char": "：", "label": "Fullwidth Colon (U+FF1A)" },
+        { "char": "「", "label": "Left Corner Bracket (U+300C)" },
+        { "char": "」", "label": "Right Corner Bracket (U+300D)" },
+        { "char": "《", "label": "Left Double Angle Bracket (U+300A)" },
+        { "char": "》", "label": "Right Double Angle Bracket (U+300B)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Quotation marks, dashes, brackets, and other everyday punctuation in Unicode."
+    },
+    {
+      "href": "/symbol/ellipsis/",
+      "title": "Ellipsis (…)",
+      "desc": "The three-dot mark that CJK typography doubles to six — another punctuation character with its own separate Chinese and Japanese conventions."
+    },
+    {
+      "href": "/symbol/quotation-mark/",
+      "title": "Quotation Mark",
+      "desc": "Straight, curly, and guillemet quote styles — including the CJK corner brackets that pair with this comma."
+    }
+  ]
+}
