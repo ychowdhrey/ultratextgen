@@ -1,0 +1,101 @@
+{
+  "slug": "shan-jie-hao",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "刪節號怎麼打？……六點刪節號複製貼上與正確寫法 | UltraTextGen",
+  "meta_description": "點一下複製刪節號（……），附中文六點刪節號的正確寫法、和英文三點省略號的差別，以及電腦手機輸入法怎麼打。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/shan-jie-hao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "刪節號",
+  "hero_h1": "刪節號（……）",
+  "hero_tagline": "中文的六點刪節號——點一下就複製，下面附正確寫法與輸入法打法。",
+  "intro": "刪節號（……）用來表示語句的省略、未說完的話，或引文中略去的部分。中文的刪節號和英文的省略號寫法不同：中文標準寫法是<strong>六個點、佔兩個全形字的寬度</strong>，也就是把 Unicode 的省略號字元（U+2026）連打兩次；英文則只有三點。另外要注意點的高度——繁體中文排版習慣把點置中（⋯⋯，U+22EF），簡體中文和日文則多半沿用底線位置（……）。因為 Unicode 並沒有專門的「六點刪節號」字元，實務上都是把單一字元重複兩次，直接複製貼上最不會出錯。",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ellipsis/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/shan-jie-hao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ellipsis/" }
+  ],
+  "sections": [
+    {
+      "id": "shan-jie-hao",
+      "label": "刪節號",
+      "h2": "刪節號本體（六點）",
+      "intro": "中文標準的六點刪節號，佔兩個全形字寬。置中版本較常用於繁體中文排版。",
+      "symbols": [
+        { "char": "……", "label": "六點刪節號（底線位置）——U+2026 重複兩次" },
+        { "char": "⋯⋯", "label": "六點刪節號（置中）——U+22EF 重複兩次" }
+      ]
+    },
+    {
+      "id": "single-ellipsis",
+      "label": "單一省略號字元",
+      "h2": "單一省略號字元（三點）",
+      "intro": "組成刪節號的單一 Unicode 字元。單用三點是英文寫法，中文正式文件請用上面的六點版本。",
+      "symbols": [
+        { "char": "…", "label": "水平省略號（U+2026）" },
+        { "char": "⋯", "label": "置中省略號（U+22EF）" },
+        { "char": "︙", "label": "直排省略號（U+FE19）——用於直式排版" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "相關標點符號",
+      "h2": "其他常見中文標點",
+      "intro": "和刪節號一樣，這些全形標點在英文鍵盤上都打不出來。",
+      "symbols": [
+        { "char": "、", "label": "頓號——分隔並列項目" },
+        { "char": "。", "label": "句號" },
+        { "char": "——", "label": "破折號（全形，佔兩字寬）" },
+        { "char": "「", "label": "左引號" },
+        { "char": "」", "label": "右引號" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "how-to-type",
+      "label": "怎麼打刪節號",
+      "h2": "電腦、手機怎麼打出刪節號",
+      "paragraphs": [
+        "最快的方式是直接從上面複製貼上六點版本——因為沒有單一的「六點刪節號」字元，自己輸入時很容易只打出三點或六個句點。",
+        "用輸入法輸入：中文輸入法（新注音、微軟注音、搜狗輸入法等）通常在符號選單的標點區裡收錄了省略號，選一次會插入一個三點字元，<strong>要連選兩次</strong>才是完整的中文刪節號。Word 等文書軟體的「插入符號」選單也能找到 U+2026。",
+        "常見錯誤：用六個句點「......」代替。看起來相近，但那是六個獨立字元，排版時點距不均、也可能在行尾被拆開換行，正式文件請避免。"
+      ]
+    },
+    {
+      "id": "usage-rules",
+      "label": "正確用法",
+      "h2": "刪節號的正確用法",
+      "paragraphs": [
+        "<strong>表示省略</strong>：引用文字時略去中間段落，用刪節號代替，例如「他說：『我明天……再說吧。』」",
+        "<strong>表示語句未完或語氣停頓</strong>：常見於對話與小說敘述，表達猶豫、遲疑或欲言又止。",
+        "<strong>不要和「等」「等等」連用</strong>：刪節號本身已經表示列舉未盡，寫成「蘋果、香蕉……等」是重複，擇一即可。",
+        "<strong>標準寬度是兩個全形字</strong>：中文刪節號固定六點，不像英文可依風格指南寫成三點或加空格。"
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/dun-hao/",
+      "title": "頓號（、）",
+      "desc": "分隔並列項目的中文標點，和刪節號同樣打不出來要複製。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號大全",
+      "desc": "複製貼上獨特 Unicode 符號的完整整理。"
+    },
+    {
+      "href": "/zh-tw/library/shuxue-fuhao/",
+      "title": "數學符號大全",
+      "desc": "更多數理領域常用的符號整理。"
+    }
+  ]
+}

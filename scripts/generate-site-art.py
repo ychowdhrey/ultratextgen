@@ -1257,6 +1257,29 @@ def glyphs(*g):
     return P(scatter_glyphs, glyphs=list(g))
 
 
+def native_glyph_badge(p, char, native_family):
+    """A single-glyph focal badge, like scatter_glyphs's focal circle but
+    with the glyph's font-family resolved per-character against installed
+    cmaps (_resolve_family) instead of the fixed SYM constant. scatter_glyphs
+    hardcodes font-family=SYM ("DejaVu Sans"), which has no CJK Symbols and
+    Punctuation coverage (U+3000-303F) — a glyph like 、(U+3001) silently
+    renders as tofu even though the same character renders correctly in the
+    title/subtitle tspans via spanned()'s cmap-aware resolution. Scoped as
+    its own function rather than editing scatter_glyphs itself, which many
+    already-shipped pages' motifs depend on."""
+    fam = _resolve_family(char, native_family)
+    family_attr = fam if fam else SYM
+    ch = esc(char)
+    return f"""
+    <circle cx="180" cy="158" r="58" fill="url(#g{p})"/>
+    <text x="180" y="182" font-family="{family_attr}" font-size="66" fill="#fff"
+          text-anchor="middle">{ch}</text>"""
+
+
+def native_glyph(char, native_family):
+    return P(native_glyph_badge, char=char, native_family=native_family)
+
+
 # Localized homepage social cards. Each localized homepage (de/, es/, ...) used
 # to share the English homepage card, leaving English copy on a translated page.
 # Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
@@ -2956,6 +2979,21 @@ PAGES["zh-tw-library-keai-mengxi-fuhao"] = (
 PAGES["zh-tw-library-teshu-fuhao"] = (
     "特殊符號", "複製貼上獨特 Unicode 符號",
     glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["zh-tw-symbol-dun-hao"] = (
+    "頓號", "、符號複製貼上與正確用法",
+    native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["zh-tw-symbol-shan-jie-hao"] = (
+    "刪節號", "……六點刪節號複製貼上與正確寫法",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
+# EN parents for the two CJK punctuation marks above. The comma uses
+# native_glyph() rather than glyphs() because U+3001 falls outside DejaVu
+# Sans's coverage — see native_glyph_badge()'s own docstring.
+PAGES["symbol-ideographic-comma"] = (
+    "Ideographic Comma", "、 the CJK list comma, copy & paste",
+    native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["symbol-ellipsis"] = (
+    "Ellipsis", "… meaning, and why it isn't three periods",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
 PAGES["it-library-caratteri-speciali-simboli"] = (
     "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
     glyphs("§", "¶", "†", "‡", "★"), K_LIB)

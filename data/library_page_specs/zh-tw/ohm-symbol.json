@@ -1,0 +1,105 @@
+{
+  "slug": "ohm-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "歐姆符號 Ω／℧：複製貼上與電阻單位說明 | UltraTextGen",
+  "meta_description": "點一下複製歐姆符號 Ω（電阻單位，源自物理學家 Georg Simon Ohm 的歐姆定律 V=IR），附倒數用的 mho／siemens 符號與電路常用符號。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/ohm-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "歐姆符號",
+  "hero_h1": "歐姆符號（Ω）",
+  "hero_tagline": "電阻的單位符號，源自歐姆定律 V=IR——點一下就複製。",
+  "intro": "歐姆符號（Ω，U+2126 OHM SIGN）是電阻的單位，源自德國物理學家 Georg Simon Ohm（1789–1854）1827 年提出的歐姆定律：導體上的電流與電壓成正比、與電阻成反比，也就是熟悉的 V = I × R。有一點值得先知道：這裡的 Ω 技術上是獨立碼位 U+2126，但外觀與希臘字母大寫 omega（U+03A9）完全相同，Unicode 資料庫本身也建議將歐姆符號正規化為一般的 omega——換句話說，多數人其實直接打希臘字母 Ω 就好，兩者在複製貼上時效果相同。完整的辨析請見歐米加符號頁面。",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ohm-symbol/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/znak-oma/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-ohm/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-ohm/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/ohm-zeichen/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/ohm-isareti/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-ohm/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-ohm/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-ohmio/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/ramz-ohm/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/teikou-kigou/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/sanyalak-ohm/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-oma/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/ohm-symbool/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/ohm-symbol/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/jeohang-om-giho/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/ohm-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ohm-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "ohm-sign",
+      "label": "歐姆符號",
+      "h2": "歐姆符號（Ω）",
+      "intro": "電阻的單位符號。U+2126 是專屬的歐姆碼位，但實務上多數人直接輸入希臘字母大寫 omega，外觀完全一樣。小寫 ω 則用在交流電數學中代表角頻率，ω = 2πf。",
+      "symbols": [
+        { "char": "Ω", "label": "歐姆符號（U+2126）——電阻" },
+        { "char": "ω", "label": "希臘小寫 omega（ω）——角頻率" }
+      ]
+    },
+    {
+      "id": "unicode-identity",
+      "label": "Ω 與希臘字母 omega",
+      "h2": "歐姆符號 vs. 希臘字母 Omega",
+      "intro": "這兩個字元在幾乎所有字型裡長得一模一樣，但 Unicode 碼位不同：U+2126 是歐姆符號，U+03A9 是希臘大寫 omega。Unicode 資料庫本身建議將歐姆符號正規化為一般 omega，多數鍵盤與工具產生的其實也是 omega，不是歐姆符號——這個落差曾造成真實的文件轉換錯誤。複製貼上時兩者皆可使用；完整辨析請見歐米加符號頁面。",
+      "symbols": [
+        { "char": "Ω", "label": "歐姆符號（U+2126）——舊碼位" },
+        { "char": "Ω", "label": "希臘大寫 Omega（U+03A9）——Unicode 建議形式" }
+      ]
+    },
+    {
+      "id": "mho-siemens",
+      "label": "Mho 與 Siemens",
+      "h2": "Mho 與 Siemens——電阻的倒數單位",
+      "intro": "電導是電阻的倒數（1 ÷ Ω），舊單位是 mho（℧）——就是把「ohm」反過來寫，1883 年由 Lord Kelvin 提出。1971 年現代 SI 制改用 siemens（符號 S，紀念發明家 Werner von Siemens）取代它；美國 NIST 現在把「mho」列為應避免使用的名稱，但 ℧ 仍會出現在較舊的文獻與電路圖裡。",
+      "symbols": [
+        { "char": "℧", "label": "Mho 符號（U+2127）——「ohm」反寫" },
+        { "char": "S", "label": "Siemens（S）——現代 SI 電導單位" }
+      ]
+    },
+    {
+      "id": "circuit-symbols",
+      "label": "電路相關符號",
+      "h2": "其他電學與電路符號",
+      "intro": "歐姆符號常與這幾個電路圖、規格表常見的 Unicode 字元一起出現：",
+      "symbols": [
+        { "char": "⏚", "label": "接地符號（U+23DA）" },
+        { "char": "⚡", "label": "高壓警告符號（U+26A1）" },
+        { "char": "∿", "label": "正弦波（U+223F）——交流電" }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/omega-symbol/",
+      "title": "歐米加符號（Ω／ω）",
+      "desc": "歐姆符號正規化後對應的希臘字母，完整 Unicode 辨析在這裡。"
+    },
+    {
+      "href": "/zh-tw/symbol/micro-sign/",
+      "title": "微符號（µ）",
+      "desc": "同樣的 Unicode 巧合：µ 也是會正規化為希臘字母的舊碼位。"
+    },
+    {
+      "href": "/zh-tw/library/shuxue-fuhao/",
+      "title": "數學符號大全",
+      "desc": "更多數理領域常用的符號整理。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號大全",
+      "desc": "複製貼上獨特 Unicode 符號的完整整理。"
+    }
+  ]
+}
