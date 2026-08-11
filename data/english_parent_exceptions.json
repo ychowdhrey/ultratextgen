@@ -139,25 +139,28 @@
       "enDemandBasis": "Structural/linguistic, not instrument-checked -- Semrush out of API units on 2026-08-11. Rests on the absence of an EN Standoff 2 page and the game's CIS-market concentration, the same standard the 2026-08-03 vi/zh-tw game pair was ratified on.",
       "lastRechecked": null,
       "nextRecheck": "2026-11-01",
-      "verdict": null
+      "verdict": null,
+      "recheckEvidence": "NOT BACKFILLED 2026-08-11 and deliberately so: the export available on that date was filtered to Vietnam, which cannot say anything about a Russian-market page. Recording the non-check so a future pass does not mistake this entry's silence for a completed one. Needs a RU-market pull."
     },
     {
       "localeUrl": "https://ultratextgen.com/vi/ki-tu-dac-biet-lien-quan/",
       "reason": "Special-character page for Lien Quan Mobile (Tencent's Arena of Valor, VN localization) -- the same game already ratified as local-only for vi/usecase/ten-lien-quan-dep + zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao on 2026-08-03. This is the symbols variant of that job rather than the generator, so the precedent extends directly. x-default pointed at usecase/nickname-generator, whose vi slot belongs to vi/usecase/ten-game-hay; corrected to the homepage. NOTE: review-register item 21 says do NOT touch this page's U+3164 blank-name copy pending an in-game check -- that hold is about content and is untouched here; this change is hreflang-only.",
       "agreed": "2026-08-11",
       "enDemandBasis": "Inherits the 2026-08-03 pair's basis: no EN arena-of-valor page exists, confirmed again 2026-08-11. Not instrument-checked; Semrush out of API units.",
-      "lastRechecked": null,
-      "nextRecheck": "2026-11-01",
-      "verdict": null
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-09-15",
+      "verdict": null,
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11. *** THE DATA DOES NOT SUPPORT THIS PAGE, THOUGH IT DOES NOT CONTRADICT THE EXCEPTION ITSELF. *** First-party GSC cross-tab, Vietnam, 40 days: this page recorded ZERO impressions -- it is absent from the export entirely. The 'lien quan' query family is owned almost completely by vi/usecase/ten-lien-quan-dep/ (458 of 468 impressions, 22 clicks). The EXCEPTION remains correct on its own terms: it is a claim about parentage (no EN Arena of Valor page exists to translate), and that is still true. What is now in doubt is whether the page should exist at all -- it is a fold candidate into ten-lien-quan-dep. Verdict deliberately left null rather than flipped, per the rule that a backfill contradicting a live page's status is a discussion with the user, not a silent reversal. ADDITIONAL CONSTRAINT: review-register item #21 names this exact URL as do-not-touch pending an in-game U+3164 check, so any fold must clear that hold first."
     },
     {
       "localeUrl": "https://ultratextgen.com/vi/font-chu-dep/",
       "reason": "Vietnamese 'font chu dep' page whose job is diacritic-safe styling -- Vietnamese stacks tone marks on vowels, so most Unicode style blocks silently drop or mangle them, and the page's value is showing which styles survive 'co dau' text. That constraint does not exist in English, so an EN parent would not be a translation of the feature. Same shape as the ratified id/tulisan-cuping precedent (a transform defined by the target language's own orthography). Was headless -- zero hreflang alternates -- and now carries the standard ratified shape.",
       "agreed": "2026-08-11",
       "enDemandBasis": "Structural: the diacritic-preservation job is Vietnamese-specific by construction. Not instrument-checked; Semrush out of API units on 2026-08-11.",
-      "lastRechecked": null,
+      "lastRechecked": "2026-08-11",
       "nextRecheck": "2026-11-01",
-      "verdict": null
+      "verdict": "exception-stands",
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11 (this entry shipped 2026-08-11 with all instruments null; the ledger's own rule says such an entry is a bridge, not a pass, and is complete only once backfilled). First-party GSC query x landing-page cross-tab, Vietnam, 40 days: the page draws 20,828 impressions / 573 clicks -- the #2 Vietnamese page on the site after /vi/ itself. On its own head term 'font chu dep' it holds 10,052 imp / 307 clicks at pos 7.2. The structural claim (diacritic-safe styling is Vietnamese-specific) is now backed by real volume rather than asserted. FLAGGED, NOT ACTIONED: /vi/ outranks it on that same head term (28,253 imp / 1,204 clicks at pos 6.4), i.e. the hub takes ~2.8x the spoke. That is a partial hub-eats-spoke pattern, but both earn heavily and /vi/ is the site's single largest locale asset (234,906 imp), so no de-targeting is proposed here -- see the review register."
     },
     {
       "localeUrl": "https://ultratextgen.com/it/scritte-particolari/",
