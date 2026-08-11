@@ -66,6 +66,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/emoji-flags/">
 <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/emoji-flags/">
 <link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/emoji-flags/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/emoji-bayraklar/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/emodzi-flagi/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/emoji-vlaggen/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/gukgi-imoji/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/emoji-bendera/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/emoji-flags/">
 <meta property="og:image" content="https://ultratextgen.com/assets/og/ja-library-kokki-emoji.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -300,7 +305,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="mood-explainers" id="symbolic">
   <span class="article-section-label">記号としての旗</span>
   <h2>記号としての旗</h2>
-  <p class="u-secondary-tight">territory を指さない旗。</p>
+  <p class="u-secondary-tight">領土を指さない旗。</p>
   <div class="flag-rows">
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="🏁" aria-label="コピー チェッカーフラッグ">🏁</button>
@@ -336,6 +341,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="editorial-block">
 
   </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ALL COUNTRY FLAGS -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">国別一覧</span>
+  <h2>世界195か国の国旗一覧</h2>
+  <p class="u-secondary-tight">大陸で絞り込んで、旗をタップするとコピーできます。</p>
+
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">すべて</button>
+    <button class="region-filter" data-region="europe">ヨーロッパ</button>
+    <button class="region-filter" data-region="asia">アジア</button>
+    <button class="region-filter" data-region="americas">南北アメリカ</button>
+    <button class="region-filter" data-region="africa">アフリカ</button>
+    <button class="region-filter" data-region="oceania">オセアニア</button>
+  </div>
+
+  <div class="flag-rows" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FLAG COMBO SETS -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">まとめてコピー</span>
+  <h2>国旗セットをまとめてコピー</h2>
+  <p class="u-secondary-block">EU27か国もASEAN10か国も、1タップでグループごとまとめてコピーできます。</p>
+
+  <div id="flagGridContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -399,5 +435,255 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns) return;
+
+  var COUNTRIES = [
+    { code: "AF", name: "アフガニスタン", region: "asia" },
+    { code: "AL", name: "アルバニア", region: "europe" },
+    { code: "DZ", name: "アルジェリア", region: "africa" },
+    { code: "AD", name: "アンドラ", region: "europe" },
+    { code: "AO", name: "アンゴラ", region: "africa" },
+    { code: "AG", name: "アンティグア・バーブーダ", region: "americas" },
+    { code: "AR", name: "アルゼンチン", region: "americas" },
+    { code: "AM", name: "アルメニア", region: "asia" },
+    { code: "AU", name: "オーストラリア", region: "oceania" },
+    { code: "AT", name: "オーストリア", region: "europe" },
+    { code: "AZ", name: "アゼルバイジャン", region: "asia" },
+    { code: "BS", name: "バハマ", region: "americas" },
+    { code: "BH", name: "バーレーン", region: "asia" },
+    { code: "BD", name: "バングラデシュ", region: "asia" },
+    { code: "BB", name: "バルバドス", region: "americas" },
+    { code: "BY", name: "ベラルーシ", region: "europe" },
+    { code: "BE", name: "ベルギー", region: "europe" },
+    { code: "BZ", name: "ベリーズ", region: "americas" },
+    { code: "BJ", name: "ベナン", region: "africa" },
+    { code: "BT", name: "ブータン", region: "asia" },
+    { code: "BO", name: "ボリビア", region: "americas" },
+    { code: "BA", name: "ボスニア・ヘルツェゴビナ", region: "europe" },
+    { code: "BW", name: "ボツワナ", region: "africa" },
+    { code: "BR", name: "ブラジル", region: "americas" },
+    { code: "BN", name: "ブルネイ", region: "asia" },
+    { code: "BG", name: "ブルガリア", region: "europe" },
+    { code: "BF", name: "ブルキナファソ", region: "africa" },
+    { code: "BI", name: "ブルンジ", region: "africa" },
+    { code: "CV", name: "カーボベルデ", region: "africa" },
+    { code: "KH", name: "カンボジア", region: "asia" },
+    { code: "CM", name: "カメルーン", region: "africa" },
+    { code: "CA", name: "カナダ", region: "americas" },
+    { code: "CF", name: "中央アフリカ共和国", region: "africa" },
+    { code: "TD", name: "チャド", region: "africa" },
+    { code: "CL", name: "チリ", region: "americas" },
+    { code: "CN", name: "中国", region: "asia" },
+    { code: "CO", name: "コロンビア", region: "americas" },
+    { code: "KM", name: "コモロ", region: "africa" },
+    { code: "CG", name: "コンゴ共和国(ブラザビル)", region: "africa" },
+    { code: "CD", name: "コンゴ民主共和国(キンシャサ)", region: "africa" },
+    { code: "CR", name: "コスタリカ", region: "americas" },
+    { code: "CI", name: "コートジボワール", region: "africa" },
+    { code: "HR", name: "クロアチア", region: "europe" },
+    { code: "CU", name: "キューバ", region: "americas" },
+    { code: "CY", name: "キプロス", region: "europe" },
+    { code: "CZ", name: "チェコ", region: "europe" },
+    { code: "DK", name: "デンマーク", region: "europe" },
+    { code: "DJ", name: "ジブチ", region: "africa" },
+    { code: "DM", name: "ドミニカ国", region: "americas" },
+    { code: "DO", name: "ドミニカ共和国", region: "americas" },
+    { code: "EC", name: "エクアドル", region: "americas" },
+    { code: "EG", name: "エジプト", region: "africa" },
+    { code: "SV", name: "エルサルバドル", region: "americas" },
+    { code: "GQ", name: "赤道ギニア", region: "africa" },
+    { code: "ER", name: "エリトリア", region: "africa" },
+    { code: "EE", name: "エストニア", region: "europe" },
+    { code: "SZ", name: "エスワティニ", region: "africa" },
+    { code: "ET", name: "エチオピア", region: "africa" },
+    { code: "FJ", name: "フィジー", region: "oceania" },
+    { code: "FI", name: "フィンランド", region: "europe" },
+    { code: "FR", name: "フランス", region: "europe" },
+    { code: "GA", name: "ガボン", region: "africa" },
+    { code: "GM", name: "ガンビア", region: "africa" },
+    { code: "GE", name: "ジョージア", region: "europe" },
+    { code: "DE", name: "ドイツ", region: "europe" },
+    { code: "GH", name: "ガーナ", region: "africa" },
+    { code: "GR", name: "ギリシャ", region: "europe" },
+    { code: "GD", name: "グレナダ", region: "americas" },
+    { code: "GT", name: "グアテマラ", region: "americas" },
+    { code: "GN", name: "ギニア", region: "africa" },
+    { code: "GW", name: "ギニアビサウ", region: "africa" },
+    { code: "GY", name: "ガイアナ", region: "americas" },
+    { code: "HT", name: "ハイチ", region: "americas" },
+    { code: "HN", name: "ホンジュラス", region: "americas" },
+    { code: "HU", name: "ハンガリー", region: "europe" },
+    { code: "IS", name: "アイスランド", region: "europe" },
+    { code: "IN", name: "インド", region: "asia" },
+    { code: "ID", name: "インドネシア", region: "asia" },
+    { code: "IR", name: "イラン", region: "asia" },
+    { code: "IQ", name: "イラク", region: "asia" },
+    { code: "IE", name: "アイルランド", region: "europe" },
+    { code: "IL", name: "イスラエル", region: "asia" },
+    { code: "IT", name: "イタリア", region: "europe" },
+    { code: "JM", name: "ジャマイカ", region: "americas" },
+    { code: "JP", name: "日本", region: "asia" },
+    { code: "JO", name: "ヨルダン", region: "asia" },
+    { code: "KZ", name: "カザフスタン", region: "asia" },
+    { code: "KE", name: "ケニア", region: "africa" },
+    { code: "KI", name: "キリバス", region: "oceania" },
+    { code: "KW", name: "クウェート", region: "asia" },
+    { code: "KG", name: "キルギス", region: "asia" },
+    { code: "LA", name: "ラオス", region: "asia" },
+    { code: "LV", name: "ラトビア", region: "europe" },
+    { code: "LB", name: "レバノン", region: "asia" },
+    { code: "LS", name: "レソト", region: "africa" },
+    { code: "LR", name: "リベリア", region: "africa" },
+    { code: "LY", name: "リビア", region: "africa" },
+    { code: "LI", name: "リヒテンシュタイン", region: "europe" },
+    { code: "LT", name: "リトアニア", region: "europe" },
+    { code: "LU", name: "ルクセンブルク", region: "europe" },
+    { code: "MG", name: "マダガスカル", region: "africa" },
+    { code: "MW", name: "マラウイ", region: "africa" },
+    { code: "MY", name: "マレーシア", region: "asia" },
+    { code: "MV", name: "モルディブ", region: "asia" },
+    { code: "ML", name: "マリ", region: "africa" },
+    { code: "MT", name: "マルタ", region: "europe" },
+    { code: "MH", name: "マーシャル諸島", region: "oceania" },
+    { code: "MR", name: "モーリタニア", region: "africa" },
+    { code: "MU", name: "モーリシャス", region: "africa" },
+    { code: "MX", name: "メキシコ", region: "americas" },
+    { code: "FM", name: "ミクロネシア連邦", region: "oceania" },
+    { code: "MD", name: "モルドバ", region: "europe" },
+    { code: "MC", name: "モナコ", region: "europe" },
+    { code: "MN", name: "モンゴル", region: "asia" },
+    { code: "ME", name: "モンテネグロ", region: "europe" },
+    { code: "MA", name: "モロッコ", region: "africa" },
+    { code: "MZ", name: "モザンビーク", region: "africa" },
+    { code: "MM", name: "ミャンマー (ビルマ)", region: "asia" },
+    { code: "NA", name: "ナミビア", region: "africa" },
+    { code: "NR", name: "ナウル", region: "oceania" },
+    { code: "NP", name: "ネパール", region: "asia" },
+    { code: "NL", name: "オランダ", region: "europe" },
+    { code: "NZ", name: "ニュージーランド", region: "oceania" },
+    { code: "NI", name: "ニカラグア", region: "americas" },
+    { code: "NE", name: "ニジェール", region: "africa" },
+    { code: "NG", name: "ナイジェリア", region: "africa" },
+    { code: "KP", name: "北朝鮮", region: "asia" },
+    { code: "MK", name: "北マケドニア", region: "europe" },
+    { code: "NO", name: "ノルウェー", region: "europe" },
+    { code: "OM", name: "オマーン", region: "asia" },
+    { code: "PK", name: "パキスタン", region: "asia" },
+    { code: "PW", name: "パラオ", region: "oceania" },
+    { code: "PS", name: "パレスチナ自治区", region: "asia" },
+    { code: "PA", name: "パナマ", region: "americas" },
+    { code: "PG", name: "パプアニューギニア", region: "oceania" },
+    { code: "PY", name: "パラグアイ", region: "americas" },
+    { code: "PE", name: "ペルー", region: "americas" },
+    { code: "PH", name: "フィリピン", region: "asia" },
+    { code: "PL", name: "ポーランド", region: "europe" },
+    { code: "PT", name: "ポルトガル", region: "europe" },
+    { code: "QA", name: "カタール", region: "asia" },
+    { code: "RO", name: "ルーマニア", region: "europe" },
+    { code: "RU", name: "ロシア", region: "europe" },
+    { code: "RW", name: "ルワンダ", region: "africa" },
+    { code: "KN", name: "セントクリストファー・ネーヴィス", region: "americas" },
+    { code: "LC", name: "セントルシア", region: "americas" },
+    { code: "VC", name: "セントビンセント及びグレナディーン諸島", region: "americas" },
+    { code: "WS", name: "サモア", region: "oceania" },
+    { code: "SM", name: "サンマリノ", region: "europe" },
+    { code: "ST", name: "サントメ・プリンシペ", region: "africa" },
+    { code: "SA", name: "サウジアラビア", region: "asia" },
+    { code: "SN", name: "セネガル", region: "africa" },
+    { code: "RS", name: "セルビア", region: "europe" },
+    { code: "SC", name: "セーシェル", region: "africa" },
+    { code: "SL", name: "シエラレオネ", region: "africa" },
+    { code: "SG", name: "シンガポール", region: "asia" },
+    { code: "SK", name: "スロバキア", region: "europe" },
+    { code: "SI", name: "スロベニア", region: "europe" },
+    { code: "SB", name: "ソロモン諸島", region: "oceania" },
+    { code: "SO", name: "ソマリア", region: "africa" },
+    { code: "ZA", name: "南アフリカ", region: "africa" },
+    { code: "KR", name: "韓国", region: "asia" },
+    { code: "SS", name: "南スーダン", region: "africa" },
+    { code: "ES", name: "スペイン", region: "europe" },
+    { code: "LK", name: "スリランカ", region: "asia" },
+    { code: "SD", name: "スーダン", region: "africa" },
+    { code: "SR", name: "スリナム", region: "americas" },
+    { code: "SE", name: "スウェーデン", region: "europe" },
+    { code: "CH", name: "スイス", region: "europe" },
+    { code: "SY", name: "シリア", region: "asia" },
+    { code: "TJ", name: "タジキスタン", region: "asia" },
+    { code: "TZ", name: "タンザニア", region: "africa" },
+    { code: "TH", name: "タイ", region: "asia" },
+    { code: "TL", name: "東ティモール", region: "asia" },
+    { code: "TG", name: "トーゴ", region: "africa" },
+    { code: "TO", name: "トンガ", region: "oceania" },
+    { code: "TT", name: "トリニダード・トバゴ", region: "americas" },
+    { code: "TN", name: "チュニジア", region: "africa" },
+    { code: "TR", name: "トルコ", region: "europe" },
+    { code: "TM", name: "トルクメニスタン", region: "asia" },
+    { code: "TV", name: "ツバル", region: "oceania" },
+    { code: "UG", name: "ウガンダ", region: "africa" },
+    { code: "UA", name: "ウクライナ", region: "europe" },
+    { code: "AE", name: "アラブ首長国連邦", region: "asia" },
+    { code: "GB", name: "イギリス", region: "europe" },
+    { code: "US", name: "アメリカ合衆国", region: "americas" },
+    { code: "UY", name: "ウルグアイ", region: "americas" },
+    { code: "UZ", name: "ウズベキスタン", region: "asia" },
+    { code: "VU", name: "バヌアツ", region: "oceania" },
+    { code: "VA", name: "バチカン市国", region: "europe" },
+    { code: "VE", name: "ベネズエラ", region: "americas" },
+    { code: "VN", name: "ベトナム", region: "asia" },
+    { code: "YE", name: "イエメン", region: "asia" },
+    { code: "ZM", name: "ザンビア", region: "africa" },
+    { code: "ZW", name: "ジンバブエ", region: "africa" }
+  ];
+
+  var list = document.getElementById("countryFlagList");
+  if (list) {
+    COUNTRIES.forEach(function (c) {
+      var flag = ns.isoToFlag(c.code);
+      var row = document.createElement("div");
+      row.className = "flag-row";
+      row.setAttribute("data-region", c.region);
+      var btn = document.createElement("button");
+      btn.className = "flag-emoji symbol-tile";
+      btn.setAttribute("data-symbol", flag);
+      btn.setAttribute("aria-label", "" + c.name + "の国旗をコピー");
+      btn.textContent = flag;
+      var label = document.createElement("span");
+      label.className = "flag-label";
+      label.textContent = c.name;
+      row.appendChild(btn);
+      row.appendChild(label);
+      list.appendChild(row);
+    });
+
+    var filterBtns = document.querySelectorAll(".region-filter");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var region = btn.getAttribute("data-region");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        list.querySelectorAll(".flag-row").forEach(function (item) {
+          item.style.display = (region === "all" || item.getAttribute("data-region") === region) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  var FLAG_GROUPS = [
+    { name: "EU加盟国", flags: ["🇦🇹","🇧🇪","🇧🇬","🇭🇷","🇨🇾","🇨🇿","🇩🇰","🇪🇪","🇫🇮","🇫🇷","🇩🇪","🇬🇷","🇭🇺","🇮🇪","🇮🇹","🇱🇻","🇱🇹","🇱🇺","🇲🇹","🇳🇱","🇵🇱","🇵🇹","🇷🇴","🇸🇰","🇸🇮","🇪🇸","🇸🇪"] },
+    { name: "ASEAN（東南アジア）", flags: ["🇸🇬","🇲🇾","🇮🇩","🇹🇭","🇵🇭","🇻🇳","🇧🇳","🇰🇭","🇱🇦","🇲🇲"] },
+    { name: "中東", flags: ["🇸🇦","🇦🇪","🇶🇦","🇰🇼","🇧🇭","🇴🇲","🇮🇱","🇯🇴","🇱🇧","🇮🇶","🇮🇷","🇾🇪"] },
+    { name: "G20", flags: ["🇦🇷","🇦🇺","🇧🇷","🇨🇦","🇨🇳","🇫🇷","🇩🇪","🇮🇳","🇮🇩","🇮🇹","🇯🇵","🇲🇽","🇷🇺","🇸🇦","🇿🇦","🇰🇷","🇹🇷","🇬🇧","🇺🇸"] },
+    { name: "北欧", flags: ["🇩🇰","🇫🇮","🇮🇸","🇳🇴","🇸🇪"] },
+    { name: "南アジア", flags: ["🇮🇳","🇵🇰","🇧🇩","🇱🇰","🇳🇵","🇧🇹","🇲🇻","🇦🇫"] },
+    { name: "東アジア", flags: ["🇨🇳","🇯🇵","🇰🇷","🇹🇼","🇲🇳","🇭🇰","🇲🇴"] }
+  ];
+  if (ns.buildGrids) ns.buildGrids("flagGridContainer", FLAG_GROUPS);
+});
+</script>
+
 </body>
 </html>

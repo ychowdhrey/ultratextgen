@@ -66,6 +66,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/emoji-flags/">
 <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/emoji-flags/">
 <link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/emoji-flags/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/emoji-bayraklar/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/emodzi-flagi/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/emoji-vlaggen/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/gukgi-imoji/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/emoji-bendera/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/emoji-flags/">
 <meta property="og:image" content="https://ultratextgen.com/assets/og/zh-tw-library-guoqi-emoji.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -340,6 +345,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- ALL COUNTRY FLAGS -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">完整清單</span>
+  <h2>全世界 195 面國旗</h2>
+  <p class="u-secondary-tight">先用洲別篩選，再點一下旗子就複製。</p>
+
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">全部</button>
+    <button class="region-filter" data-region="europe">歐洲</button>
+    <button class="region-filter" data-region="asia">亞洲</button>
+    <button class="region-filter" data-region="americas">美洲</button>
+    <button class="region-filter" data-region="africa">非洲</button>
+    <button class="region-filter" data-region="oceania">大洋洲</button>
+  </div>
+
+  <div class="flag-rows" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FLAG COMBO SETS -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">整組複製</span>
+  <h2>可以整組複製的國旗組合</h2>
+  <p class="u-secondary-block">點一下複製一整組：歐盟 27 面、東協 10 面、G20 全員。</p>
+
+  <div id="flagGridContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">常見問題</span>
@@ -399,5 +435,255 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns) return;
+
+  var COUNTRIES = [
+    { code: "AF", name: "阿富汗", region: "asia" },
+    { code: "AL", name: "阿爾巴尼亞", region: "europe" },
+    { code: "DZ", name: "阿爾及利亞", region: "africa" },
+    { code: "AD", name: "安道爾", region: "europe" },
+    { code: "AO", name: "安哥拉", region: "africa" },
+    { code: "AG", name: "安地卡及巴布達", region: "americas" },
+    { code: "AR", name: "阿根廷", region: "americas" },
+    { code: "AM", name: "亞美尼亞", region: "asia" },
+    { code: "AU", name: "澳洲", region: "oceania" },
+    { code: "AT", name: "奧地利", region: "europe" },
+    { code: "AZ", name: "亞塞拜然", region: "asia" },
+    { code: "BS", name: "巴哈馬", region: "americas" },
+    { code: "BH", name: "巴林", region: "asia" },
+    { code: "BD", name: "孟加拉", region: "asia" },
+    { code: "BB", name: "巴貝多", region: "americas" },
+    { code: "BY", name: "白俄羅斯", region: "europe" },
+    { code: "BE", name: "比利時", region: "europe" },
+    { code: "BZ", name: "貝里斯", region: "americas" },
+    { code: "BJ", name: "貝南", region: "africa" },
+    { code: "BT", name: "不丹", region: "asia" },
+    { code: "BO", name: "玻利維亞", region: "americas" },
+    { code: "BA", name: "波士尼亞與赫塞哥維納", region: "europe" },
+    { code: "BW", name: "波札那", region: "africa" },
+    { code: "BR", name: "巴西", region: "americas" },
+    { code: "BN", name: "汶萊", region: "asia" },
+    { code: "BG", name: "保加利亞", region: "europe" },
+    { code: "BF", name: "布吉納法索", region: "africa" },
+    { code: "BI", name: "蒲隆地", region: "africa" },
+    { code: "CV", name: "維德角", region: "africa" },
+    { code: "KH", name: "柬埔寨", region: "asia" },
+    { code: "CM", name: "喀麥隆", region: "africa" },
+    { code: "CA", name: "加拿大", region: "americas" },
+    { code: "CF", name: "中非共和國", region: "africa" },
+    { code: "TD", name: "查德", region: "africa" },
+    { code: "CL", name: "智利", region: "americas" },
+    { code: "CN", name: "中國", region: "asia" },
+    { code: "CO", name: "哥倫比亞", region: "americas" },
+    { code: "KM", name: "葛摩", region: "africa" },
+    { code: "CG", name: "剛果（布拉薩）", region: "africa" },
+    { code: "CD", name: "剛果（金夏沙）", region: "africa" },
+    { code: "CR", name: "哥斯大黎加", region: "americas" },
+    { code: "CI", name: "象牙海岸", region: "africa" },
+    { code: "HR", name: "克羅埃西亞", region: "europe" },
+    { code: "CU", name: "古巴", region: "americas" },
+    { code: "CY", name: "賽普勒斯", region: "europe" },
+    { code: "CZ", name: "捷克", region: "europe" },
+    { code: "DK", name: "丹麥", region: "europe" },
+    { code: "DJ", name: "吉布地", region: "africa" },
+    { code: "DM", name: "多米尼克", region: "americas" },
+    { code: "DO", name: "多明尼加共和國", region: "americas" },
+    { code: "EC", name: "厄瓜多", region: "americas" },
+    { code: "EG", name: "埃及", region: "africa" },
+    { code: "SV", name: "薩爾瓦多", region: "americas" },
+    { code: "GQ", name: "赤道幾內亞", region: "africa" },
+    { code: "ER", name: "厄利垂亞", region: "africa" },
+    { code: "EE", name: "愛沙尼亞", region: "europe" },
+    { code: "SZ", name: "史瓦帝尼", region: "africa" },
+    { code: "ET", name: "衣索比亞", region: "africa" },
+    { code: "FJ", name: "斐濟", region: "oceania" },
+    { code: "FI", name: "芬蘭", region: "europe" },
+    { code: "FR", name: "法國", region: "europe" },
+    { code: "GA", name: "加彭", region: "africa" },
+    { code: "GM", name: "甘比亞", region: "africa" },
+    { code: "GE", name: "喬治亞", region: "europe" },
+    { code: "DE", name: "德國", region: "europe" },
+    { code: "GH", name: "迦納", region: "africa" },
+    { code: "GR", name: "希臘", region: "europe" },
+    { code: "GD", name: "格瑞那達", region: "americas" },
+    { code: "GT", name: "瓜地馬拉", region: "americas" },
+    { code: "GN", name: "幾內亞", region: "africa" },
+    { code: "GW", name: "幾內亞比索", region: "africa" },
+    { code: "GY", name: "蓋亞那", region: "americas" },
+    { code: "HT", name: "海地", region: "americas" },
+    { code: "HN", name: "宏都拉斯", region: "americas" },
+    { code: "HU", name: "匈牙利", region: "europe" },
+    { code: "IS", name: "冰島", region: "europe" },
+    { code: "IN", name: "印度", region: "asia" },
+    { code: "ID", name: "印尼", region: "asia" },
+    { code: "IR", name: "伊朗", region: "asia" },
+    { code: "IQ", name: "伊拉克", region: "asia" },
+    { code: "IE", name: "愛爾蘭", region: "europe" },
+    { code: "IL", name: "以色列", region: "asia" },
+    { code: "IT", name: "義大利", region: "europe" },
+    { code: "JM", name: "牙買加", region: "americas" },
+    { code: "JP", name: "日本", region: "asia" },
+    { code: "JO", name: "約旦", region: "asia" },
+    { code: "KZ", name: "哈薩克", region: "asia" },
+    { code: "KE", name: "肯亞", region: "africa" },
+    { code: "KI", name: "吉里巴斯", region: "oceania" },
+    { code: "KW", name: "科威特", region: "asia" },
+    { code: "KG", name: "吉爾吉斯", region: "asia" },
+    { code: "LA", name: "寮國", region: "asia" },
+    { code: "LV", name: "拉脫維亞", region: "europe" },
+    { code: "LB", name: "黎巴嫩", region: "asia" },
+    { code: "LS", name: "賴索托", region: "africa" },
+    { code: "LR", name: "賴比瑞亞", region: "africa" },
+    { code: "LY", name: "利比亞", region: "africa" },
+    { code: "LI", name: "列支敦斯登", region: "europe" },
+    { code: "LT", name: "立陶宛", region: "europe" },
+    { code: "LU", name: "盧森堡", region: "europe" },
+    { code: "MG", name: "馬達加斯加", region: "africa" },
+    { code: "MW", name: "馬拉威", region: "africa" },
+    { code: "MY", name: "馬來西亞", region: "asia" },
+    { code: "MV", name: "馬爾地夫", region: "asia" },
+    { code: "ML", name: "馬利", region: "africa" },
+    { code: "MT", name: "馬爾他", region: "europe" },
+    { code: "MH", name: "馬紹爾群島", region: "oceania" },
+    { code: "MR", name: "茅利塔尼亞", region: "africa" },
+    { code: "MU", name: "模里西斯", region: "africa" },
+    { code: "MX", name: "墨西哥", region: "americas" },
+    { code: "FM", name: "密克羅尼西亞", region: "oceania" },
+    { code: "MD", name: "摩爾多瓦", region: "europe" },
+    { code: "MC", name: "摩納哥", region: "europe" },
+    { code: "MN", name: "蒙古", region: "asia" },
+    { code: "ME", name: "蒙特內哥羅", region: "europe" },
+    { code: "MA", name: "摩洛哥", region: "africa" },
+    { code: "MZ", name: "莫三比克", region: "africa" },
+    { code: "MM", name: "緬甸", region: "asia" },
+    { code: "NA", name: "納米比亞", region: "africa" },
+    { code: "NR", name: "諾魯", region: "oceania" },
+    { code: "NP", name: "尼泊爾", region: "asia" },
+    { code: "NL", name: "荷蘭", region: "europe" },
+    { code: "NZ", name: "紐西蘭", region: "oceania" },
+    { code: "NI", name: "尼加拉瓜", region: "americas" },
+    { code: "NE", name: "尼日", region: "africa" },
+    { code: "NG", name: "奈及利亞", region: "africa" },
+    { code: "KP", name: "北韓", region: "asia" },
+    { code: "MK", name: "北馬其頓", region: "europe" },
+    { code: "NO", name: "挪威", region: "europe" },
+    { code: "OM", name: "阿曼", region: "asia" },
+    { code: "PK", name: "巴基斯坦", region: "asia" },
+    { code: "PW", name: "帛琉", region: "oceania" },
+    { code: "PS", name: "巴勒斯坦自治區", region: "asia" },
+    { code: "PA", name: "巴拿馬", region: "americas" },
+    { code: "PG", name: "巴布亞紐幾內亞", region: "oceania" },
+    { code: "PY", name: "巴拉圭", region: "americas" },
+    { code: "PE", name: "秘魯", region: "americas" },
+    { code: "PH", name: "菲律賓", region: "asia" },
+    { code: "PL", name: "波蘭", region: "europe" },
+    { code: "PT", name: "葡萄牙", region: "europe" },
+    { code: "QA", name: "卡達", region: "asia" },
+    { code: "RO", name: "羅馬尼亞", region: "europe" },
+    { code: "RU", name: "俄羅斯", region: "europe" },
+    { code: "RW", name: "盧安達", region: "africa" },
+    { code: "KN", name: "聖克里斯多福及尼維斯", region: "americas" },
+    { code: "LC", name: "聖露西亞", region: "americas" },
+    { code: "VC", name: "聖文森及格瑞那丁", region: "americas" },
+    { code: "WS", name: "薩摩亞", region: "oceania" },
+    { code: "SM", name: "聖馬利諾", region: "europe" },
+    { code: "ST", name: "聖多美普林西比", region: "africa" },
+    { code: "SA", name: "沙烏地阿拉伯", region: "asia" },
+    { code: "SN", name: "塞內加爾", region: "africa" },
+    { code: "RS", name: "塞爾維亞", region: "europe" },
+    { code: "SC", name: "塞席爾", region: "africa" },
+    { code: "SL", name: "獅子山", region: "africa" },
+    { code: "SG", name: "新加坡", region: "asia" },
+    { code: "SK", name: "斯洛伐克", region: "europe" },
+    { code: "SI", name: "斯洛維尼亞", region: "europe" },
+    { code: "SB", name: "索羅門群島", region: "oceania" },
+    { code: "SO", name: "索馬利亞", region: "africa" },
+    { code: "ZA", name: "南非", region: "africa" },
+    { code: "KR", name: "南韓", region: "asia" },
+    { code: "SS", name: "南蘇丹", region: "africa" },
+    { code: "ES", name: "西班牙", region: "europe" },
+    { code: "LK", name: "斯里蘭卡", region: "asia" },
+    { code: "SD", name: "蘇丹", region: "africa" },
+    { code: "SR", name: "蘇利南", region: "americas" },
+    { code: "SE", name: "瑞典", region: "europe" },
+    { code: "CH", name: "瑞士", region: "europe" },
+    { code: "SY", name: "敘利亞", region: "asia" },
+    { code: "TJ", name: "塔吉克", region: "asia" },
+    { code: "TZ", name: "坦尚尼亞", region: "africa" },
+    { code: "TH", name: "泰國", region: "asia" },
+    { code: "TL", name: "東帝汶", region: "asia" },
+    { code: "TG", name: "多哥", region: "africa" },
+    { code: "TO", name: "東加", region: "oceania" },
+    { code: "TT", name: "千里達及托巴哥", region: "americas" },
+    { code: "TN", name: "突尼西亞", region: "africa" },
+    { code: "TR", name: "土耳其", region: "europe" },
+    { code: "TM", name: "土庫曼", region: "asia" },
+    { code: "TV", name: "吐瓦魯", region: "oceania" },
+    { code: "UG", name: "烏干達", region: "africa" },
+    { code: "UA", name: "烏克蘭", region: "europe" },
+    { code: "AE", name: "阿拉伯聯合大公國", region: "asia" },
+    { code: "GB", name: "英國", region: "europe" },
+    { code: "US", name: "美國", region: "americas" },
+    { code: "UY", name: "烏拉圭", region: "americas" },
+    { code: "UZ", name: "烏茲別克", region: "asia" },
+    { code: "VU", name: "萬那杜", region: "oceania" },
+    { code: "VA", name: "梵蒂岡", region: "europe" },
+    { code: "VE", name: "委內瑞拉", region: "americas" },
+    { code: "VN", name: "越南", region: "asia" },
+    { code: "YE", name: "葉門", region: "asia" },
+    { code: "ZM", name: "尚比亞", region: "africa" },
+    { code: "ZW", name: "辛巴威", region: "africa" }
+  ];
+
+  var list = document.getElementById("countryFlagList");
+  if (list) {
+    COUNTRIES.forEach(function (c) {
+      var flag = ns.isoToFlag(c.code);
+      var row = document.createElement("div");
+      row.className = "flag-row";
+      row.setAttribute("data-region", c.region);
+      var btn = document.createElement("button");
+      btn.className = "flag-emoji symbol-tile";
+      btn.setAttribute("data-symbol", flag);
+      btn.setAttribute("aria-label", "複製" + c.name + "國旗");
+      btn.textContent = flag;
+      var label = document.createElement("span");
+      label.className = "flag-label";
+      label.textContent = c.name;
+      row.appendChild(btn);
+      row.appendChild(label);
+      list.appendChild(row);
+    });
+
+    var filterBtns = document.querySelectorAll(".region-filter");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var region = btn.getAttribute("data-region");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        list.querySelectorAll(".flag-row").forEach(function (item) {
+          item.style.display = (region === "all" || item.getAttribute("data-region") === region) ? "" : "none";
+        });
+      });
+    });
+  }
+
+  var FLAG_GROUPS = [
+    { name: "歐盟成員國", flags: ["🇦🇹","🇧🇪","🇧🇬","🇭🇷","🇨🇾","🇨🇿","🇩🇰","🇪🇪","🇫🇮","🇫🇷","🇩🇪","🇬🇷","🇭🇺","🇮🇪","🇮🇹","🇱🇻","🇱🇹","🇱🇺","🇲🇹","🇳🇱","🇵🇱","🇵🇹","🇷🇴","🇸🇰","🇸🇮","🇪🇸","🇸🇪"] },
+    { name: "東協（ASEAN）", flags: ["🇸🇬","🇲🇾","🇮🇩","🇹🇭","🇵🇭","🇻🇳","🇧🇳","🇰🇭","🇱🇦","🇲🇲"] },
+    { name: "中東", flags: ["🇸🇦","🇦🇪","🇶🇦","🇰🇼","🇧🇭","🇴🇲","🇮🇱","🇯🇴","🇱🇧","🇮🇶","🇮🇷","🇾🇪"] },
+    { name: "G20", flags: ["🇦🇷","🇦🇺","🇧🇷","🇨🇦","🇨🇳","🇫🇷","🇩🇪","🇮🇳","🇮🇩","🇮🇹","🇯🇵","🇲🇽","🇷🇺","🇸🇦","🇿🇦","🇰🇷","🇹🇷","🇬🇧","🇺🇸"] },
+    { name: "北歐國家", flags: ["🇩🇰","🇫🇮","🇮🇸","🇳🇴","🇸🇪"] },
+    { name: "南亞", flags: ["🇮🇳","🇵🇰","🇧🇩","🇱🇰","🇳🇵","🇧🇹","🇲🇻","🇦🇫"] },
+    { name: "東亞", flags: ["🇨🇳","🇯🇵","🇰🇷","🇹🇼","🇲🇳","🇭🇰","🇲🇴"] }
+  ];
+  if (ns.buildGrids) ns.buildGrids("flagGridContainer", FLAG_GROUPS);
+});
+</script>
+
 </body>
 </html>
