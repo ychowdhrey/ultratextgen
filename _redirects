@@ -320,5 +320,24 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /pt/espaco-invisivel/            /pt/texto-invisivel/  301
 /pt/espaco-invisivel/index.html  /pt/texto-invisivel/  301
 
+# es/conversor-de-letras retired 2026-08-11 -> /es/ (the ES homepage).
+# Google declined to index it: URL Inspection reports "Discovered - currently
+# not indexed", never crawled, 17 days after it shipped. That is a judgment,
+# not latency -- it shipped in the same commit as pt/conversor-de-letras,
+# pt/letras-diferentes and it/convertitore-di-caratteri (2026-07-25), and every
+# one of those siblings indexed and now earns impressions. Same batch, same
+# template, same day, so the difference isolates to this page.
+# The reason is that the ES homepage already owns the exact term: its <title>
+# leads with "Conversor de Letras Bonitas para Copiar y Pegar" and the phrase
+# appears 4x in its body. The spoke was a thinner duplicate of it -- 5 sections
+# and 6 FAQs against the homepage's 14 and 25 -- i.e. the vi/chu-kieu pattern.
+# Nothing unique to port: every section (three steps, instant restyle, per-style
+# conversion, copy anywhere) is generic generator copy the homepage covers in
+# more depth. Its es slot on the conversor hreflang cluster was released; the
+# cluster survives as it/convertitore-di-caratteri + pt/conversor-de-letras,
+# both of which are indexed and ranking.
+/es/conversor-de-letras/            /es/  301
+/es/conversor-de-letras/index.html  /es/  301
+
 /404  /404.html  200
 /*    /404.html  404
