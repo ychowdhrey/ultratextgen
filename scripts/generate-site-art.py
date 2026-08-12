@@ -2891,6 +2891,13 @@ PAGES.update({
 "de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
 "es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha confirmada", "16 de septiembre de 2026 — una escritura cortada", m_doc, K_UPDATE),
 "fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date confirmée", "16 septembre 2026 — une écriture retirée", m_doc, K_UPDATE),
+"vi-updates-unicode-18-xac-nhan-ngay-phat-hanh": ("Unicode 18.0 chốt ngày phát hành", "16/9/2026 — một hệ chữ bị gạch tên", m_doc, K_UPDATE),
+"zh-tw-updates-unicode-18-fabu-riqi-queren": ("Unicode 18.0 發布日期確定", "2026 年 9 月 16 日——一套文字遭剔除", m_doc, K_UPDATE),
+"vi-updates-emoji-moi-unicode-18": ("Emoji mới của Unicode 18.0", "Cracking Face thắng bình chọn, Pickle và Meteor theo sau", m_doc, K_UPDATE),
+# Kept short deliberately: wrap_width_for() only widens for "Noto Sans CJK
+# JP"/"KR", and zh-tw resolves to WenQuanYi Zen Hei, so a zh-TW title wraps at
+# the Latin character width and a long one overruns the card into the motif.
+"zh-tw-updates-unicode-18-xin-biaoqing-fuhao": ("Unicode 18.0 新表情符號", "龜裂臉贏得公開投票，醃黃瓜居次", m_doc, K_UPDATE),
 "id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "16 September 2026 — satu aksara dicoret", m_doc, K_UPDATE),
 "it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data confermata", "16 settembre 2026 — una scrittura tolta", m_doc, K_UPDATE),
 "ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日確定", "2026年9月16日 — 文字体系が1つ削除", m_doc, K_UPDATE),
