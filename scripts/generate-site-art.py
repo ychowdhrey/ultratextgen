@@ -2840,6 +2840,12 @@ PAGES.update({
 "pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+# 2026-08-12 ES printables gap-fill + graffiti EN parent.
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
+"es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
+"es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
 "printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
