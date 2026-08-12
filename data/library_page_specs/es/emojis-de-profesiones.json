@@ -1,0 +1,234 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-profesiones",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-profesiones/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/people-profession-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-profesiones/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/people-profession-emojis/" }
+  ],
+  "title": "Emojis de Profesiones y Personas: Copia y Pega Oficios y Trabajos",
+  "meta_description": "Explora y copia emojis de profesiones y personas — salud, tecnología, educación, negocios, arte y ciencia. Haz clic en cualquier emoji para copiarlo al instante.",
+  "breadcrumb": "Emojis de Personas y Profesiones",
+  "hero_h1": "Emojis de Personas y Profesiones",
+  "hero_tagline": "Una referencia completa de emojis de personas y profesiones organizada por área — salud, tecnología, educación, negocios, arte y ciencia. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de profesiones funcionan muy bien en perfiles de LinkedIn, biografías profesionales, firmas de correo y contenido de redes sociales de cada industria. Unicode incluye variantes neutras, masculinas y femeninas para cada oficio. Esta colección los organiza por área para que encuentres rápido el emoji que necesitas según el contexto.",
+  "sections": [
+    {
+      "id": "healthcare",
+      "label": "",
+      "h2": "Emojis de profesiones de la salud",
+      "intro": "Emojis de médicos, enfermería y personal de salud para contenido del área médica.",
+      "symbols": [
+        { "char": "👨‍⚕️", "label": "Profesional de la salud (hombre)" },
+        { "char": "👩‍⚕️", "label": "Profesional de la salud (mujer)" },
+        { "char": "🧑‍⚕️", "label": "Profesional de la salud" },
+        { "char": "💉", "label": "Jeringa" },
+        { "char": "💊", "label": "Pastilla" },
+        { "char": "🏥", "label": "Hospital" },
+        { "char": "🩺", "label": "Estetoscopio" },
+        { "char": "🩻", "label": "Radiografía" },
+        { "char": "🩼", "label": "Muleta" },
+        { "char": "⚕️", "label": "Símbolo médico" },
+        { "char": "🩹", "label": "Curita" }
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "",
+      "h2": "Emojis de profesiones de tecnología",
+      "intro": "Emojis de programadores, desarrolladores y profesionales de tecnología.",
+      "symbols": [
+        { "char": "👨‍💻", "label": "Profesional de tecnología (hombre)" },
+        { "char": "👩‍💻", "label": "Profesional de tecnología (mujer)" },
+        { "char": "🧑‍💻", "label": "Profesional de tecnología" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🖥️", "label": "Computadora de escritorio" },
+        { "char": "🖱️", "label": "Mouse" },
+        { "char": "⌨️", "label": "Teclado" },
+        { "char": "📱", "label": "Celular" }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "",
+      "h2": "Emojis de profesiones de la educación",
+      "intro": "Emojis de profesores, estudiantes y personal educativo para contenido académico.",
+      "symbols": [
+        { "char": "👨‍🏫", "label": "Profesor" },
+        { "char": "👩‍🏫", "label": "Profesora" },
+        { "char": "🧑‍🎓", "label": "Estudiante" },
+        { "char": "🎓", "label": "Birrete" },
+        { "char": "📚", "label": "Libros" },
+        { "char": "📖", "label": "Libro abierto" },
+        { "char": "✏️", "label": "Lápiz" },
+        { "char": "📝", "label": "Nota" },
+        { "char": "🧑‍🏫", "label": "Docente" },
+        { "char": "🍎", "label": "Manzana roja" },
+        { "char": "📐", "label": "Escuadra" },
+        { "char": "🏫", "label": "Escuela" }
+      ]
+    },
+    {
+      "id": "business-finance",
+      "label": "",
+      "h2": "Emojis de profesiones de negocios y finanzas",
+      "intro": "Emojis de oficina, dirección y finanzas para contenido de negocios.",
+      "symbols": [
+        { "char": "👨‍💼", "label": "Oficinista (hombre)" },
+        { "char": "👩‍💼", "label": "Oficinista (mujer)" },
+        { "char": "💼", "label": "Maletín" },
+        { "char": "📊", "label": "Gráfico de barras" },
+        { "char": "📈", "label": "Gráfico ascendente" },
+        { "char": "📉", "label": "Gráfico descendente" },
+        { "char": "🏦", "label": "Banco" },
+        { "char": "💰", "label": "Bolsa de dinero" }
+      ]
+    },
+    {
+      "id": "creative-arts",
+      "label": "",
+      "h2": "Emojis de profesiones creativas y artísticas",
+      "intro": "Emojis de artistas, músicos y profesionales creativos para contenido de industrias creativas.",
+      "symbols": [
+        { "char": "👨‍🎨", "label": "Artista (hombre)" },
+        { "char": "👩‍🎨", "label": "Artista (mujer)" },
+        { "char": "🎭", "label": "Artes escénicas" },
+        { "char": "🎬", "label": "Claqueta" },
+        { "char": "🎤", "label": "Micrófono" },
+        { "char": "🎵", "label": "Nota musical" },
+        { "char": "🎼", "label": "Partitura" }
+      ]
+    },
+    {
+      "id": "science-engineering",
+      "label": "",
+      "h2": "Emojis de profesiones de ciencia e ingeniería",
+      "intro": "Emojis de científicos, ingenieros e investigadores para contenido de ciencia y tecnología.",
+      "symbols": [
+        { "char": "👨‍🔬", "label": "Científico" },
+        { "char": "👩‍🔬", "label": "Científica" },
+        { "char": "🧑‍🔧", "label": "Mecánico" },
+        { "char": "🔬", "label": "Microscopio" },
+        { "char": "🔭", "label": "Telescopio" },
+        { "char": "🧪", "label": "Tubo de ensayo" },
+        { "char": "⚗️", "label": "Alambique" },
+        { "char": "🧬", "label": "ADN" }
+      ]
+    },
+    {
+      "id": "construction-emoji",
+      "label": "",
+      "h2": "Emojis de obreros de construcción",
+      "intro": "Copia el emoji de obrero de construcción y otros símbolos de obra y oficios.",
+      "symbols": [
+        { "char": "👷", "label": "Persona de construcción" },
+        { "char": "👷‍♂️", "label": "Obrero de construcción" },
+        { "char": "👷‍♀️", "label": "Obrera de construcción" },
+        { "char": "🦺", "label": "Chaleco de seguridad" },
+        { "char": "🚧", "label": "Obra en construcción" },
+        { "char": "🔨", "label": "Martillo" },
+        { "char": "🏗️", "label": "Edificio en construcción" }
+      ]
+    },
+    {
+      "id": "chef-emoji",
+      "label": "",
+      "h2": "Emojis de chef y cocina",
+      "intro": "Copia el emoji de chef y otros símbolos de cocina.",
+      "symbols": [
+        { "char": "🧑‍🍳", "label": "Chef" },
+        { "char": "👨‍🍳", "label": "Chef (hombre)" },
+        { "char": "👩‍🍳", "label": "Chef (mujer)" },
+        { "char": "🍳", "label": "Cocinando" },
+        { "char": "🔪", "label": "Cuchillo de cocina" },
+        { "char": "🍽️", "label": "Plato con cubiertos" }
+      ]
+    },
+    {
+      "id": "police-emoji",
+      "label": "",
+      "h2": "Emojis de policía y seguridad",
+      "intro": "Copia el emoji de policía y otros símbolos de seguridad pública.",
+      "symbols": [
+        { "char": "👮", "label": "Policía" },
+        { "char": "👮‍♂️", "label": "Policía (hombre)" },
+        { "char": "👮‍♀️", "label": "Policía (mujer)" },
+        { "char": "🚓", "label": "Patrulla" },
+        { "char": "🚔", "label": "Patrulla de frente" },
+        { "char": "🚨", "label": "Sirena" }
+      ]
+    },
+    {
+      "id": "firefighter-emoji",
+      "label": "",
+      "h2": "Emojis de bomberos",
+      "intro": "Copia el emoji de bombero y otros símbolos de rescate e incendios.",
+      "symbols": [
+        { "char": "🧑‍🚒", "label": "Bombero" },
+        { "char": "👨‍🚒", "label": "Bombero (hombre)" },
+        { "char": "👩‍🚒", "label": "Bombera" },
+        { "char": "🚒", "label": "Camión de bomberos" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🧯", "label": "Extintor" }
+      ]
+    },
+    {
+      "id": "boy-emoji",
+      "label": "",
+      "h2": "Emojis de niños y familia",
+      "intro": "Copia el emoji de niño y otros símbolos de familia y personas.",
+      "symbols": [
+        { "char": "👦", "label": "Niño" },
+        { "char": "👧", "label": "Niña" },
+        { "char": "🧒", "label": "Niño o niña" },
+        { "char": "🧑", "label": "Persona" },
+        { "char": "👨‍👩‍👧‍👦", "label": "Familia" },
+        { "char": "👥", "label": "Siluetas de personas" }
+      ]
+    },
+    {
+      "id": "pregnant-emoji",
+      "label": "",
+      "h2": "Emojis de embarazo y bebés",
+      "intro": "Copia el emoji de mujer embarazada y otros símbolos para anunciar la llegada de un bebé.",
+      "symbols": [
+        { "char": "🤰", "label": "Mujer embarazada" },
+        { "char": "🫄", "label": "Persona embarazada" },
+        { "char": "🫃", "label": "Hombre embarazado" },
+        { "char": "🤱", "label": "Lactancia" },
+        { "char": "👶", "label": "Bebé" },
+        { "char": "🍼", "label": "Biberón" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/emojis-lenguaje-corporal/",
+      "title": "Emojis de Lenguaje Corporal",
+      "desc": "Emojis de lenguaje corporal y actividades que expresan movimiento y emoción."
+    },
+    {
+      "href": "/es/library/simbolos-para-linkedin/",
+      "title": "Biblioteca de Símbolos para LinkedIn",
+      "desc": "Símbolos y caracteres especiales que funcionan en publicaciones y perfiles de LinkedIn."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Caritas, expresiones y emojis de emociones para cada estado de ánimo."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Símbolos de Logros",
+      "desc": "Trofeos, medallas, listones y otros símbolos de logros y premios."
+    }
+  ]
+}

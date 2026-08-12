@@ -1,0 +1,310 @@
+{
+  "lang": "es",
+  "slug": "arte-de-texto-memes",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/arte-de-texto-memes/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/meme-text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto-memes/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/meme-text-art/"
+    }
+  ],
+  "title": "Arte de Texto de Memes: Copiar y Pegar Arte de Puntos y Copypasta",
+  "meta_description": "Arte de texto de memes para copiar y pegar: packs de caras Lenny, mesas volcadas, miradas de desaprobación y caras de arte de puntos. Copia cualquier set con un clic.",
+  "breadcrumb": "Arte de texto de memes",
+  "hero_h1": "Arte de Texto de Memes",
+  "hero_tagline": "Caras de reacción, packs de Lenny, mesas volcadas y memes de arte de puntos hechos con caracteres braille y de bloques. Haz clic en cualquier pieza para copiarla al instante.",
+  "intro": "El arte de texto memes es el lado reacción del arte ASCII: caras Lenny, mesas volcadas, miradas de desaprobación y caras de puntos braille que pegas en Discord, Twitch y los chats de juegos para el efecto cómico. A diferencia del arte de texto decorativo, estas piezas existen para caer en una conversación en el momento exacto. Copia una cara o un set de volteo completo con un clic aquí abajo, o llévate los bloques de sombreado, los caracteres braille de densidad y los glifos para armar caras y montar tu propio meme.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, letra manuscrita y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+  "sections": [
+    {
+      "id": "shading-blocks",
+      "label": "Sombreado",
+      "h2": "Caracteres de bloques de sombreado",
+      "intro": "Los cuatro niveles clásicos de sombra más los medios bloques: los píxeles del arte de memes con bloques.",
+      "symbols": [
+        {
+          "char": "░",
+          "label": "Sombreado claro"
+        },
+        {
+          "char": "▒",
+          "label": "Sombreado medio"
+        },
+        {
+          "char": "▓",
+          "label": "Sombreado oscuro"
+        },
+        {
+          "char": "█",
+          "label": "Bloque completo"
+        },
+        {
+          "char": "▄",
+          "label": "Medio bloque inferior"
+        },
+        {
+          "char": "▀",
+          "label": "Medio bloque superior"
+        },
+        {
+          "char": "▌",
+          "label": "Medio bloque izquierdo"
+        },
+        {
+          "char": "▐",
+          "label": "Medio bloque derecho"
+        }
+      ]
+    },
+    {
+      "id": "braille-density",
+      "label": "Densidad de puntos",
+      "h2": "Caracteres braille por densidad",
+      "intro": "Patrones braille ordenados de lleno a disperso: son los tonos de gris del arte de puntos de los memes.",
+      "symbols": [
+        {
+          "char": "⣿",
+          "label": "Patrón braille puntos 12345678"
+        },
+        {
+          "char": "⣷",
+          "label": "Patrón braille puntos 1235678"
+        },
+        {
+          "char": "⣦",
+          "label": "Patrón braille puntos 23678"
+        },
+        {
+          "char": "⣤",
+          "label": "Patrón braille puntos 3678"
+        },
+        {
+          "char": "⣀",
+          "label": "Patrón braille puntos 78"
+        },
+        {
+          "char": "⠿",
+          "label": "Patrón braille puntos 123456"
+        },
+        {
+          "char": "⠟",
+          "label": "Patrón braille puntos 12345"
+        },
+        {
+          "char": "⠛",
+          "label": "Patrón braille puntos 1245"
+        },
+        {
+          "char": "⠉",
+          "label": "Patrón braille puntos 14"
+        },
+        {
+          "char": "⠁",
+          "label": "Patrón braille puntos 1"
+        }
+      ]
+    },
+    {
+      "id": "face-builders",
+      "label": "Partes de la cara",
+      "h2": "Caracteres para armar caras",
+      "intro": "Las letras y marcas prestadas que forman las caras de texto más famosas: ojos de desaprobación, bocas de Lenny y volteos de furia.",
+      "symbols": [
+        {
+          "char": "ಠ",
+          "label": "Letra kannada ttha (ojo de desaprobación)"
+        },
+        {
+          "char": "°",
+          "label": "Signo de grado (ojo de Lenny)"
+        },
+        {
+          "char": "ʖ",
+          "label": "Letra latina oclusiva glotal invertida (boca de Lenny)"
+        },
+        {
+          "char": "◉",
+          "label": "Ojo de pez"
+        },
+        {
+          "char": "◕",
+          "label": "Círculo negro salvo el cuadrante superior izquierdo"
+        },
+        {
+          "char": "ヮ",
+          "label": "Letra katakana wa pequeña (boca feliz)"
+        },
+        {
+          "char": "﹏",
+          "label": "Línea baja ondulada (boca preocupada)"
+        },
+        {
+          "char": "益",
+          "label": "Ideograma CJK yi (centro de la cara de furia)"
+        },
+        {
+          "char": "︵",
+          "label": "Forma vertical del paréntesis izquierdo (arco de volteo)"
+        },
+        {
+          "char": "彡",
+          "label": "Radical CJK shan (líneas de movimiento)"
+        }
+      ]
+    },
+    {
+      "id": "meme-emojis",
+      "label": "Emojis de memes",
+      "h2": "Emojis de reacción para memes",
+      "intro": "Los emojis que encabezan las respuestas de meme: combínalos con arte de puntos para más efecto.",
+      "symbols": [
+        {
+          "char": "🗿",
+          "label": "Moai"
+        },
+        {
+          "char": "💀",
+          "label": "Calavera"
+        },
+        {
+          "char": "😂",
+          "label": "Cara con lágrimas de alegría"
+        },
+        {
+          "char": "🤡",
+          "label": "Cara de payaso"
+        },
+        {
+          "char": "🐸",
+          "label": "Rana"
+        },
+        {
+          "char": "👁",
+          "label": "Ojo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "😎",
+          "label": "Cara sonriente con gafas de sol"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Pack de caras Lenny",
+      "flags": [
+        "( ͡° ͜ʖ ͡°)",
+        "( ͡~ ͜ʖ ͡°)",
+        "( ͠° ͟ʖ ͡°)",
+        "( ͡o ͜ʖ ͡o)",
+        "ʕ ͡° ʖ̯ ͡°ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Set de mesas volcadas",
+      "flags": [
+        "(╯°□°）╯︵ ┻━┻",
+        "┬─┬ノ( º _ ºノ)",
+        "(ノಠ益ಠ)ノ彡┻━┻",
+        "┻━┻ ︵ヽ(`Д´)ノ︵ ┻━┻",
+        "┬──┬ ¯\\_(ツ)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Pack de desaprobación",
+      "flags": [
+        "ಠ_ಠ",
+        "ಠ‿ಠ",
+        "ಠ╭╮ಠ",
+        "(ಠ_ಠ)",
+        "ಠ▃ಠ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Carita presumida (arte de puntos)",
+      "flags": [
+        "⠀⢀⣤⣶⣶⣶⣤⡀",
+        "⢰⣿⠋⠁⠀⠈⠙⣿⡆",
+        "⣿⡇⠀⣿⠀⣿⠀⢸⣿",
+        "⣿⡇⠀⠀⠀⠀⠀⢸⣿",
+        "⢿⣇⠀⠳⠶⠞⠀⣸⡿",
+        "⠀⠙⠷⣦⣤⣴⠾⠋"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Cara llorando (arte de puntos)",
+      "flags": [
+        "⠀⢀⣤⣶⣶⣶⣤⡀",
+        "⢰⣿⠋⠁⠀⠈⠙⣿⡆",
+        "⣿⡇⠀⣿⠀⣿⠀⢸⣿",
+        "⣿⡇⠀⢣⠀⢣⠀⢸⣿",
+        "⢿⣇⠀⢠⣤⡄⠀⣸⡿",
+        "⠀⠙⠷⣦⣤⣴⠾⠋"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Ojos de furia (arte de bloques)",
+      "flags": [
+        "░░░░░░░░░░",
+        "░░█▄░░▄█░░",
+        "░░░█░░█░░░",
+        "░░░░░░░░░░",
+        "░░▀▀▀▀▀▀░░"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "collection_container_id": "memeTextArtContainer",
+  "collection_section": {
+    "id": "meme-art-sets",
+    "label": "Sets de memes",
+    "h2": "Sets de arte de texto de memes",
+    "intro": "Copia un pack de reacción completo o una cara de arte de puntos con un clic: el formato vertical mantiene alineadas las piezas de varias líneas."
+  },
+  "related": [
+    {
+      "href": "/es/library/arte-de-texto/",
+      "title": "Arte de texto",
+      "desc": "Piezas clásicas de arte ASCII y Unicode, con sus bloques de construcción."
+    },
+    {
+      "href": "/library/roblox-text-art/",
+      "title": "Arte de texto para Roblox",
+      "desc": "Caras y arte de puntos aptos para el chat de Roblox."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de texto y kaomoji",
+      "desc": "Emoticones de estilo japonés para cada ánimo y cada reacción."
+    },
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Emojis brainrot y de jerga",
+      "desc": "Combinaciones de emojis sigma, rizz y de memes de la generación Z."
+    }
+  ]
+}

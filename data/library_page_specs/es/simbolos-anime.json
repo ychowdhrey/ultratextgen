@@ -1,0 +1,146 @@
+{
+  "lang": "es",
+  "slug": "simbolos-anime",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-anime/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/anime-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-anime/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/anime-symbols/" }
+  ],
+  "title": "Símbolos Anime: Copiar y Pegar Caracteres Aesthetic de Anime",
+  "meta_description": "Copia y pega símbolos anime — acentos de destellos y estrellas, marcas de batalla y marcos de nombre para tu biografía o usuario. Haz clic para copiar.",
+  "breadcrumb": "Símbolos Anime",
+  "hero_h1": "Símbolos Anime",
+  "hero_tagline": "Bordes de destellos, marcas de batalla y marcos de nombre que los fans del anime copian en biografías, nombres de usuario y edits. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos anime tienen menos que ver con un alfabeto y más con una estética: los destellos de un edit shoujo, las espadas cruzadas de un opening shonen, la luna y las estrellas de una escena de chica mágica. Esta biblioteca reúne esos bloques decorativos aparte de las otras páginas de japonés del sitio: para kanji, hiragana y katakana con significado real, ve a Símbolos Japoneses; para caritas como (＾▽＾), ve a Caritas de Texto y Kaomoji. Aquí el enfoque es puramente estético y pensado para el fandom — acentos para adornar un nombre, más marcos listos donde puedes pegar el tuyo. Las temporadas de anime se estrenan en un calendario trimestral real y recurrente (invierno, primavera, verano y otoño), así que esta página está hecha para servir en todas ellas, no solo para el estreno del momento.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "sparkle-star-accents",
+      "label": "Destellos y Estrellas",
+      "h2": "Acentos de Destellos y Estrellas",
+      "intro": "Las estrellas y destellos que enmarcan un edit, una biografía o un nombre de usuario con estética anime.",
+      "symbols": [
+        { "char": "✦", "label": "Estrella negra de cuatro puntas" },
+        { "char": "✧", "label": "Estrella blanca de cuatro puntas" },
+        { "char": "⋆", "label": "Operador de estrella (destello pequeño)" },
+        { "char": "✩", "label": "Estrella blanca de contorno marcado" },
+        { "char": "⁺", "label": "Signo más en superíndice (acento de destello)" },
+        { "char": "˚", "label": "Anillo superior (punto de destello)" }
+      ]
+    },
+    {
+      "id": "blade-battle-marks",
+      "label": "Marcas de Batalla",
+      "h2": "Marcas de Espadas y Batalla",
+      "intro": "Acentos filosos, estilo shonen, para nombres de usuario y edits de anime de peleas.",
+      "symbols": [
+        { "char": "⚔", "label": "Espadas cruzadas" },
+        { "char": "☠", "label": "Calavera y huesos cruzados" },
+        { "char": "➤", "label": "Punta de flecha negra hacia la derecha" },
+        { "char": "✝", "label": "Cruz latina (motivo de tatuaje estilo Tokyo Manji)" },
+        { "char": "乂", "label": "Ideograma CJK Yi (marca de hojas cruzadas)" },
+        { "char": "力", "label": "Chikara — poder / fuerza" }
+      ]
+    },
+    {
+      "id": "moon-sky-accents",
+      "label": "Luna y Cielo",
+      "h2": "Acentos de Luna y Cielo",
+      "intro": "Marcas celestes suaves para estéticas shoujo y de chica mágica.",
+      "symbols": [
+        { "char": "☽", "label": "Cuarto creciente" },
+        { "char": "☾", "label": "Cuarto menguante" },
+        { "char": "☄", "label": "Cometa" },
+        { "char": "✵", "label": "Estrella de ocho puntas en molinete" },
+        { "char": "✯", "label": "Estrella de molinete" }
+      ]
+    },
+    {
+      "id": "anime-vfx-emoji",
+      "label": "Emojis VFX",
+      "h2": "Emojis de VFX e Impacto Anime",
+      "intro": "Emojis a color que se leen como las líneas de movimiento y los efectos por los que el anime es conocido.",
+      "symbols": [
+        { "char": "✨", "label": "Destellos" },
+        { "char": "💫", "label": "Mareo (efecto de espiral)" },
+        { "char": "💥", "label": "Choque (estallido de impacto)" },
+        { "char": "🌸", "label": "Flor de cerezo" },
+        { "char": "⚡", "label": "Alto voltaje (destello de poder)" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Marco de Batalla Shonen",
+      "flags": ["⚔", "YourName", "⚔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Etiqueta de Cruz Estilo Tokyo Manji",
+      "flags": ["✝", "YourName", "✝"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Marco Tributo a Gaara (愛 — Ai, amor)",
+      "flags": ["愛", "YourName", "愛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Marco de Idol con Destellos",
+      "flags": ["✧", "YourName", "✧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Marco de Villano Oscuro",
+      "flags": ["☠", "YourName", "☠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Marco Mágico a la Luz de la Luna",
+      "flags": ["☽", "YourName", "☾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Envoltura de Destellos VFX",
+      "flags": ["✨", "YourName", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "animeFrameContainer",
+  "collection_section": {
+    "id": "fandom-name-frames",
+    "label": "Marcos de Fandom",
+    "h2": "Marcos de Nombre para Fans del Anime",
+    "intro": "Pega tu propio nombre o usuario en medio de un marco listo para usar. Son combinaciones de símbolos hechas por fans, inspiradas en estéticas de anime y en motivos icónicos de personajes — no son logos ni arte oficial."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-japoneses/",
+      "title": "Símbolos Japoneses",
+      "desc": "Caracteres kanji, hiragana y katakana con romaji y significados."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "Caritas al estilo japonés para chats y publicaciones."
+    },
+    {
+      "href": "/es/library/simbolos-kawaii-cute/",
+      "title": "Símbolos Kawaii",
+      "desc": "Símbolos adorables de inspiración japonesa para estéticas suaves."
+    },
+    {
+      "href": "/library/gaming-aesthetic-symbols/",
+      "title": "Símbolos Aesthetic para Gaming",
+      "desc": "Marcas filosas y con estilo para gamertags y nombres de usuario."
+    }
+  ]
+}

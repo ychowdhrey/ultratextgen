@@ -1,0 +1,90 @@
+{
+  "lang": "es",
+  "slug": "emoji-brasil",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-brasil/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/brazil-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-brasil/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/brazil-emoji-combos/" }
+  ],
+  "title": "Emoji Brasil 🇧🇷⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Brasil 🇧🇷⚽: la Seleção, la samba y sets en verde y amarillo para biografías. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Brasil",
+  "hero_h1": "Combos de Emoji Brasil",
+  "hero_tagline": "Los colores de la Seleção, la samba y sets de emojis de fútbol para aficionados de Brasil: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Brasil 🇧🇷 casi nunca va solo: los aficionados lo combinan con la pelota ⚽ y con el verde y amarillo de la Seleção. Estos combos están hechos para biografías de aficionados, publicaciones de día de partido y nombres de usuario durante el Mundial. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "brazil-emojis",
+      "label": "Brasil",
+      "h2": "Emojis de Brasil",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇧🇷", "label": "Bandera de Brasil" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "💛", "label": "Corazón amarillo" },
+        { "char": "💚", "label": "Corazón verde" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" },
+        { "char": "🥁", "label": "Tambor" }
+      ]
+    },
+    {
+      "id": "samba",
+      "label": "Samba",
+      "h2": "Emojis de Samba y Carnaval",
+      "intro": "El espíritu del carnaval detrás de la Seleção.",
+      "symbols": [
+        { "char": "🥁", "label": "Tambor" },
+        { "char": "🎉", "label": "Cañón de confeti" },
+        { "char": "🎊", "label": "Bola de confeti" },
+        { "char": "💃", "label": "Mujer bailando" },
+        { "char": "🕺", "label": "Hombre bailando" },
+        { "char": "🌴", "label": "Palmera" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Fútbol de Brasil", "flags": ["🇧🇷", "⚽", "🏆"], "defaultFormat": "inline" },
+    { "name": "El Sueño del Hexa", "flags": ["🏆", "⚽", "💛"], "defaultFormat": "inline" },
+    { "name": "Ambiente de Samba", "flags": ["🥁", "🎉", "🇧🇷"], "defaultFormat": "inline" },
+    { "name": "Verde y Amarilla", "flags": ["💛", "💚", "🇧🇷"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "brazilCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Brasil",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}
