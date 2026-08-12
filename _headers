@@ -1,3 +1,14 @@
+# NOTE: this file must end with a trailing newline. Cloudflare's _headers
+# parser drops a final line that has no newline terminator, and it does so
+# silently — the rule simply never applies and nothing reports it. That was
+# live: the /*.js rule below was the last line, unterminated, and never took
+# effect. Verified against production 2026-08-12 — /script.js, /styles.js and
+# /header.js all returned Cloudflare Pages' default `max-age=14400` rather
+# than the 300 declared here, while the /  and /index.html rules above them
+# applied correctly. Same shape as the two validate.yml incidents in
+# CLAUDE.md: a rule that reports nothing is indistinguishable from a rule
+# that works.
+
 # Prevent browsers and edge caches from preserving a stale redirect
 # from / to /fr/ (or any other locale).  The middleware now requests
 # /_root.html (which has no locale variants) so i18n routing cannot
@@ -13,3 +24,18 @@
 # copies without sacrificing performance for repeat visits.
 /*.js
   Cache-Control: public, max-age=300, must-revalidate
+
+# Generated art (assets/hero/*.svg, assets/og/*.png, assets/specimen/*.png)
+# and pins. Content changes only when the generator reruns, so the 4-hour
+# Pages default makes every returning visitor re-validate art that is almost
+# never different. 30 days instead.
+#
+# Deliberately NOT `immutable`: filenames here are slug-stable, not
+# content-hashed, so a regenerated card reuses its URL. `immutable` tells the
+# browser never to revalidate even on reload, which would pin stale art in
+# real users' caches for the full max-age with no way to push a correction.
+# 30 days + must-revalidate keeps the win (a returning visitor inside the
+# window makes zero requests) while capping the worst-case staleness of a
+# regenerated card at 30 days instead of a year.
+/assets/*
+  Cache-Control: public, max-age=2592000, must-revalidate

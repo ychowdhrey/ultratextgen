@@ -2673,6 +2673,28 @@ for _l, _word in LETTER_WORD.items():
     PAGES[f"printables-cursive-alphabet-letter-{_l}"] = (
         f"Cursive {_L}", f"Capital & lowercase {_L} in cursive — free printable",
         P(m_letter_cursive, letter=_L), K_PRINT)
+    # block-letter stencils and calligraphy were the two per-letter sets never
+    # registered here, so all 26 of each inherited their hub's single card.
+    PAGES[f"printables-block-letters-letter-{_l}"] = (
+        f"Letter {_L} Stencil", f"Block letter {_L} to print, trace and cut",
+        P(m_letter_stencil, letter=_L), K_PRINT)
+    PAGES[f"printables-calligraphy-alphabet-letter-{_l}"] = (
+        f"Calligraphy {_L}", f"Blackletter & script {_L} to copy or print",
+        P(m_letter_cursive, letter=_L), K_PRINT)
+
+# Number pages exist for four of the alphabet sets. Registering only the A-Z
+# half left every 0-9 page on its hub's card (block-letters, and — via the
+# category page it borrowed from — bubble-letters).
+for _d in "0123456789":
+    PAGES[f"printables-block-letters-number-{_d}"] = (
+        f"Number {_d} Stencil", f"Block number {_d} to print, trace and cut",
+        P(m_letter_stencil, letter=_d), K_PRINT)
+    PAGES[f"printables-bubble-letters-number-{_d}"] = (
+        f"Bubble Number {_d}", f"Puffy outline {_d} to trace, color and print",
+        P(m_letter_bubble, letter=_d), K_PRINT)
+    PAGES[f"printables-alphabet-coloring-pages-number-{_d}"] = (
+        f"Number {_d} Coloring Page", f"Printable {_d} outline to color",
+        P(m_letter_outline, letter=_d), K_PRINT)
 
 # ---- /learn/ education pillar ----
 PAGES.update({
@@ -3095,6 +3117,12 @@ PAGES["it-library-caratteri-speciali-simboli"] = (
 PAGES["vi-library-ky-tu-hy-lap"] = (
     "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
     glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+
+# Moved library/ -> symbol/ on 2026-08-06; its art kept the old
+# es-library-simbolo-de-grado slug, so the page's og/hero 404'd from that day.
+PAGES["es-symbol-simbolo-de-grado"] = (
+    "Símbolo de Grado", "° significado, Alt Code y cómo escribirlo",
+    glyphs("°", "℃", "℉"), K_SYM)
 
 # ---- 2026-08-07: what-font-does-{pinterest,whatsapp}-use — 12 locales ----
 PAGES.update({
