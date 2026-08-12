@@ -2697,9 +2697,11 @@ for _l, _word in LETTER_WORD.items():
 # ES per-letter coloring spokes (2026-08-12). Same loop shape as the EN sets
 # above; the Spanish head-word differs from LETTER_WORD because the letter-word
 # association is language-specific (A de Arbol, not A is for Apple).
-LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato"}
+LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato", "enye": "Ñu"}
 for _l, _word in LETTER_WORD_ES.items():
-    _L = _l.upper()
+    # slug != letter for the Spanish enye: the URL/PNG slug is ASCII ("enye",
+    # matching printablesEngine's own charSlug), but the drawn glyph is Ñ.
+    _L = "Ñ" if _l == "enye" else _l.upper()
     PAGES[f"es-imprimibles-abecedario-para-colorear-letra-{_l}"] = (
         f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
         P(m_letter_outline, letter=_L), K_PRINT)
@@ -2850,6 +2852,8 @@ PAGES.update({
 "pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
+"es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
 # 2026-08-12 ES printables gap-fill + graffiti EN parent.
 "printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
 "es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
