@@ -357,6 +357,57 @@
         small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt — ideal für eine Pinnwand" }
       }
     }
+,
+    /* Indonesian. Sizes are metric (like de/fr/es/pt, unlike en's inches).
+       "mading" (majalah dinding) is the Indonesian school wall-display that
+       does the job en calls a bulletin board. Indonesian marks no plural, so
+       every count form deliberately repeats one word. */
+    id: {
+      letterWord: "huruf", numberWord: "angka",
+      copied: "Tersalin!",
+      printThisLetter: "Cetak huruf ini", printThisNumber: "Cetak angka ini",
+      downloadPng: "Unduh PNG",
+      copyPaste: "Salin-tempel", copy: "Salin", howToDraw: "Cara menulisnya", lowerSuffix: " \u00b7 kecil",
+      level: "Tingkat", nameLabel: "Nama:", dateLabel: "Tanggal:", space: "spasi",
+      dotToDot: "sambung titik", bannerFlag: "Bendera banner \u2014",
+      dotsCount: "titik", dotNumbers: "Titik bernomor",
+      dotLadderTitle: "Tangga latihan",
+      dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
+      pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
+      printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
+      classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
+      classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Cetak untuk seluruh setnya.",
+      bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
+      puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "bendera banner", ofWord: "dari",
+      flagCount: { one: "bendera", other: "bendera" },
+      pageCount: { one: "halaman", other: "halaman" },
+      modelCount: { one: "contoh", other: "contoh" },
+      traceCount: { one: "tebalkan", other: "tebalkan" },
+      blankCount: { one: "kosong", other: "kosong" },
+      trace: {
+        solid:    { label: "Contoh penuh", hint: "Huruf gelap utuh \u2014 langsung ditebalkan di atasnya" },
+        "bold-dot": { label: "Titik tebal", hint: "Titik besar dan rapat sehingga mudah dihubungkan" },
+        "fine-dot": { label: "Titik halus", hint: "Titik lebih tipis dengan jarak sedikit lebih renggang" },
+        dashed:   { label: "Garis putus-putus", hint: "Garis terputus \u2014 lebih banyak yang harus dilengkapi" },
+        faded:    { label: "Bayangan samar", hint: "Huruf abu-abu muda untuk ditimpa" },
+        faint:    { label: "Panduan tipis", hint: "Garis nyaris tak terlihat \u2014 hampir tanpa bantuan" },
+        blank:    { label: "Garis kosong", hint: "Tanpa panduan \u2014 tulis dari ingatan" }
+      },
+      dot: {
+        easy:   { label: "Mudah", hint: "Jarak lebar, titik sedikit \u2014 untuk anak paling kecil" },
+        medium: { label: "Sedang", hint: "Sambung titik yang seimbang" },
+        hard:   { label: "Sulit", hint: "Lebih banyak titik dan detail hurufnya lebih halus" },
+        expert: { label: "Ahli", hint: "Titiknya banyak \u2014 tantangan sungguhan" }
+      },
+      size: {
+        label: "Ukuran cetak",
+        full:   { label: "Satu halaman penuh", hint: "Satu huruf besar per lembar \u2014 setelan bawaan saat ini" },
+        medium: { label: "Sedang (~10 cm)", hint: "Beberapa huruf per lembar \u2014 cocok untuk poster" },
+        small:  { label: "Kecil (~5 cm)", hint: "Banyak huruf per lembar \u2014 pas untuk mading" }
+      }
+    }
   };
   const T = I18N[LANG] || I18N.en;
 

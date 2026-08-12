@@ -371,7 +371,12 @@
 
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
-    h.textContent = "Cross-Stitch Pattern — " + state.text.toUpperCase().trim();
+    /* The only user-facing string this engine generates. printablesEngine.js
+       carries a full I18N table; one string does not warrant a second copy of
+       that machinery, so a translated page overrides it from its own config
+       the same way it already supplies UTG_PRINTABLE. Falls back to English. */
+    const cfgTitle = (window.UTG_CROSS_STITCH && window.UTG_CROSS_STITCH.printTitle);
+    h.textContent = (cfgTitle || "Cross-Stitch Pattern — ") + state.text.toUpperCase().trim();
     wrap.appendChild(h);
 
     const label = state.text.trim().replace(/"/g, "”");

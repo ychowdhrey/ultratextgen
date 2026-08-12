@@ -2634,6 +2634,18 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
+  "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
+  "id-printables-huruf-kaligrafi": ("Huruf Kaligrafi A\u2013Z", "Kaligrafi huruf Latin \u2014 tiru, tebalkan, cetak", m_grid, K_PRINT),
+  "id-printables-huruf-bubble": ("Huruf Bubble A\u2013Z & 0\u20139", "Huruf gemuk berongga \u2014 cetak, warnai, unduh PNG", m_grid, K_PRINT),
+  "id-printables-mewarnai-huruf": ("Mewarnai Huruf A\u2013Z", "Lembar mewarnai abjad untuk PAUD & TK", m_grid, K_PRINT),
+  "id-printables-tulisan-selamat-ulang-tahun": ("Tulisan Selamat Ulang Tahun", "Huruf sambung \u2014 cetak, unduh PNG, ganti nama", m_grid, K_PRINT),
+"id-printables-alfabet-spanyol": ("Alfabet Bahasa Spanyol A\u2013Z", "27 huruf termasuk \u00d1 \u2014 cetak & cara baca", m_grid, K_PRINT),
+"id-printables-huruf-titik-titik": ("Huruf Titik-Titik A\u2013Z & 0\u20139", "Sambung titik \u2014 4 tingkat, cetak sendiri", m_grid, K_PRINT),
+"id-printables-kristik-huruf": ("Pola Kristik Huruf A\u2013Z", "Bagan 5\u00d77 \u2014 ketik nama, cetak polanya", m_grid, K_PRINT),
+"id-printables-menebalkan-huruf": ("Menebalkan Huruf", "Buat lembar latihan menulis \u2014 7 tingkat, cetak sendiri", m_grid, K_PRINT),
+  "id-printables-huruf-balok": ("Huruf Balok A\u2013Z", "Huruf terpisah & angka 0\u20139 \u2014 contoh, tebalkan, mal", m_grid, K_PRINT),
+  "id-printables-huruf-sambung": ("Huruf Sambung A\u2013Z", "Lembar tegak bersambung untuk ditebalkan & dicetak", m_grid, K_PRINT),
   # Printables: 5 new locale hub pages
   "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
   "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
@@ -2880,6 +2892,20 @@ PAGES.update({
       P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
 "zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
       P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
+"nl-woorden-en-tekens-tellen": ("Woorden en tekens tellen", "Live tellingen voor 38 velden op 17 platforms",
+      P(m_typo, sample="123", weight="800", size=88, label="woorden · tekens"), K_USE),
+# m_typo writes `sample`/`label` raw — unlike the card title it does not go
+# through spanned(), so it gets neither Arabic reshaping/bidi nor per-glyph
+# font fallback. Two consequences drive the values below: an Arabic *word*
+# would render as disconnected isolated forms in reversed order (حرف came out
+# reading فرح), and "·" (U+00B7) is absent from both NotoSansArabic and
+# NotoSansThai, so the usual "x · y" label renders a tofu box. Arabic-Indic
+# digits sidestep the first (numbers are written left-to-right, so logical
+# order is already visual order) and a native conjunction sidesteps the second.
+"ar-addad-al-huruf-wal-kalimat": ("عداد الأحرف والكلمات", "عدّ فوري للأحرف والكلمات مع فحص حدود المنصات",
+      P(m_typo, sample="٢٨٠", weight="800", size=88, label="الأحرف والكلمات", ff="Noto Sans Arabic", lab_ff="Noto Sans Arabic"), K_USE),
+"th-nap-kham-lae-tua-akson": ("นับคำและนับตัวอักษร", "นับสดพร้อมเช็กลิมิต 38 ช่องใน 17 แพลตฟอร์ม",
+      P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
@@ -2982,6 +3008,13 @@ PAGES.update({
 "de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
 "es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha confirmada", "16 de septiembre de 2026 — una escritura cortada", m_doc, K_UPDATE),
 "fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date confirmée", "16 septembre 2026 — une écriture retirée", m_doc, K_UPDATE),
+"vi-updates-unicode-18-xac-nhan-ngay-phat-hanh": ("Unicode 18.0 chốt ngày phát hành", "16/9/2026 — một hệ chữ bị gạch tên", m_doc, K_UPDATE),
+"zh-tw-updates-unicode-18-fabu-riqi-queren": ("Unicode 18.0 發布日期確定", "2026 年 9 月 16 日——一套文字遭剔除", m_doc, K_UPDATE),
+"vi-updates-emoji-moi-unicode-18": ("Emoji mới của Unicode 18.0", "Cracking Face thắng bình chọn, Pickle và Meteor theo sau", m_doc, K_UPDATE),
+# Kept short deliberately: wrap_width_for() only widens for "Noto Sans CJK
+# JP"/"KR", and zh-tw resolves to WenQuanYi Zen Hei, so a zh-TW title wraps at
+# the Latin character width and a long one overruns the card into the motif.
+"zh-tw-updates-unicode-18-xin-biaoqing-fuhao": ("Unicode 18.0 新表情符號", "龜裂臉贏得公開投票，醃黃瓜居次", m_doc, K_UPDATE),
 "id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "16 September 2026 — satu aksara dicoret", m_doc, K_UPDATE),
 "it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data confermata", "16 settembre 2026 — una scrittura tolta", m_doc, K_UPDATE),
 "ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日確定", "2026年9月16日 — 文字体系が1つ削除", m_doc, K_UPDATE),
@@ -3010,6 +3043,7 @@ PAGES.update({
 "updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
+"vi-updates-lien-quan-khoa-doi-ten": ("Liên Quân siết khóa đổi tên", "Tên vi phạm bị tự sửa, khóa đổi tên tới 3 năm", m_doc, K_UPDATE),
 })
 
 # ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
