@@ -10,9 +10,18 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/halloween-symbols/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-halloween/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/halloween-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/halloween-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-halloween/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/halloween-symbols/"
+    }
   ],
   "title": "Símbolos Halloween: Copiar y Pegar 🎃 💀 🕸 Caracteres Terroríficos",
   "meta_description": "Símbolos de Halloween: calabazas, fantasmas, calaveras, murciélagos, telarañas y combos de dulce o truco. Haz clic en cualquier carácter para copiarlo.",
@@ -27,12 +36,30 @@
       "h2": "Calabazas, Fantasmas y Calaveras",
       "intro": "El elenco principal de Halloween: calabazas, fantasmas y calaveras.",
       "symbols": [
-        { "char": "🎃", "label": "Calabaza de Halloween" },
-        { "char": "👻", "label": "Fantasma" },
-        { "char": "💀", "label": "Calavera" },
-        { "char": "☠", "label": "Calavera y huesos cruzados" },
-        { "char": "🦴", "label": "Hueso" },
-        { "char": "👁", "label": "Ojo" }
+        {
+          "char": "🎃",
+          "label": "Calabaza de Halloween"
+        },
+        {
+          "char": "👻",
+          "label": "Fantasma"
+        },
+        {
+          "char": "💀",
+          "label": "Calavera"
+        },
+        {
+          "char": "☠",
+          "label": "Calavera y huesos cruzados"
+        },
+        {
+          "char": "🦴",
+          "label": "Hueso"
+        },
+        {
+          "char": "👁",
+          "label": "Ojo"
+        }
       ]
     },
     {
@@ -41,16 +68,46 @@
       "h2": "Criaturas de la Noche",
       "intro": "Murciélagos, arañas, gatos negros y los monstruos que salen al caer la noche.",
       "symbols": [
-        { "char": "🦇", "label": "Murciélago" },
-        { "char": "🕷", "label": "Araña" },
-        { "char": "🕸", "label": "Telaraña" },
-        { "char": "🐈‍⬛", "label": "Gato negro" },
-        { "char": "🦉", "label": "Búho" },
-        { "char": "🐺", "label": "Lobo" },
-        { "char": "🐍", "label": "Serpiente" },
-        { "char": "🧛", "label": "Vampiro" },
-        { "char": "🧟", "label": "Zombi" },
-        { "char": "🧙", "label": "Mago" }
+        {
+          "char": "🦇",
+          "label": "Murciélago"
+        },
+        {
+          "char": "🕷",
+          "label": "Araña"
+        },
+        {
+          "char": "🕸",
+          "label": "Telaraña"
+        },
+        {
+          "char": "🐈‍⬛",
+          "label": "Gato negro"
+        },
+        {
+          "char": "🦉",
+          "label": "Búho"
+        },
+        {
+          "char": "🐺",
+          "label": "Lobo"
+        },
+        {
+          "char": "🐍",
+          "label": "Serpiente"
+        },
+        {
+          "char": "🧛",
+          "label": "Vampiro"
+        },
+        {
+          "char": "🧟",
+          "label": "Zombi"
+        },
+        {
+          "char": "🧙",
+          "label": "Mago"
+        }
       ]
     },
     {
@@ -59,16 +116,46 @@
       "h2": "Cementerio y Cielo Nocturno",
       "intro": "Ataúdes, lápidas, neblina y luz de luna para la estética más tétrica.",
       "symbols": [
-        { "char": "⚰", "label": "Ataúd" },
-        { "char": "⚱", "label": "Urna funeraria" },
-        { "char": "🪦", "label": "Lápida" },
-        { "char": "🌕", "label": "Luna llena" },
-        { "char": "🌑", "label": "Luna nueva" },
-        { "char": "🌙", "label": "Luna creciente" },
-        { "char": "🕯", "label": "Vela" },
-        { "char": "⛓", "label": "Cadenas" },
-        { "char": "🏚", "label": "Casa abandonada" },
-        { "char": "🌫", "label": "Niebla" }
+        {
+          "char": "⚰",
+          "label": "Ataúd"
+        },
+        {
+          "char": "⚱",
+          "label": "Urna funeraria"
+        },
+        {
+          "char": "🪦",
+          "label": "Lápida"
+        },
+        {
+          "char": "🌕",
+          "label": "Luna llena"
+        },
+        {
+          "char": "🌑",
+          "label": "Luna nueva"
+        },
+        {
+          "char": "🌙",
+          "label": "Luna creciente"
+        },
+        {
+          "char": "🕯",
+          "label": "Vela"
+        },
+        {
+          "char": "⛓",
+          "label": "Cadenas"
+        },
+        {
+          "char": "🏚",
+          "label": "Casa abandonada"
+        },
+        {
+          "char": "🌫",
+          "label": "Niebla"
+        }
       ]
     },
     {
@@ -77,13 +164,34 @@
       "h2": "Pociones y Magia",
       "intro": "Bolas de cristal, escobas y utensilios para preparar pociones en perfiles de bruja.",
       "symbols": [
-        { "char": "🔮", "label": "Bola de cristal" },
-        { "char": "🧹", "label": "Escoba" },
-        { "char": "🪄", "label": "Varita mágica" },
-        { "char": "🧪", "label": "Tubo de ensayo" },
-        { "char": "⚗", "label": "Alambique" },
-        { "char": "📜", "label": "Pergamino" },
-        { "char": "🗡", "label": "Daga" }
+        {
+          "char": "🔮",
+          "label": "Bola de cristal"
+        },
+        {
+          "char": "🧹",
+          "label": "Escoba"
+        },
+        {
+          "char": "🪄",
+          "label": "Varita mágica"
+        },
+        {
+          "char": "🧪",
+          "label": "Tubo de ensayo"
+        },
+        {
+          "char": "⚗",
+          "label": "Alambique"
+        },
+        {
+          "char": "📜",
+          "label": "Pergamino"
+        },
+        {
+          "char": "🗡",
+          "label": "Daga"
+        }
       ]
     },
     {
@@ -92,11 +200,26 @@
       "h2": "Dulces de Dulce o Truco",
       "intro": "El botín: dulces, chocolate y la canasta para cargarlo.",
       "symbols": [
-        { "char": "🍬", "label": "Caramelo" },
-        { "char": "🍭", "label": "Paleta" },
-        { "char": "🍫", "label": "Barra de chocolate" },
-        { "char": "🍎", "label": "Manzana roja" },
-        { "char": "🧺", "label": "Canasta" }
+        {
+          "char": "🍬",
+          "label": "Caramelo"
+        },
+        {
+          "char": "🍭",
+          "label": "Paleta"
+        },
+        {
+          "char": "🍫",
+          "label": "Barra de chocolate"
+        },
+        {
+          "char": "🍎",
+          "label": "Manzana roja"
+        },
+        {
+          "char": "🧺",
+          "label": "Canasta"
+        }
       ]
     },
     {
@@ -105,11 +228,26 @@
       "h2": "Combos de Saludo de Halloween",
       "intro": "Saludos terroríficos y adornos para la biografía con un clic: cada botón copia el combo completo.",
       "symbols": [
-        { "char": "🎃👻 Happy Halloween 👻🎃", "label": "Saludo de Feliz Halloween" },
-        { "char": "🕸🕷🕸 Trick or Treat 🕸🕷🕸", "label": "Saludo de dulce o truco" },
-        { "char": "💀☠💀☠💀", "label": "Cadena de calaveras" },
-        { "char": "•☽────✧🦇✧────☾•", "label": "Separador de murciélago y luna" },
-        { "char": "🍬🍭🍫 Sweet & Spooky 🍫🍭🍬", "label": "Combo dulce y terrorífico" }
+        {
+          "char": "🎃👻 Feliz Halloween 👻🎃",
+          "label": "Saludo de Feliz Halloween"
+        },
+        {
+          "char": "🕸🕷🕸 Dulce o Truco 🕸🕷🕸",
+          "label": "Saludo de dulce o truco"
+        },
+        {
+          "char": "💀☠💀☠💀",
+          "label": "Cadena de calaveras"
+        },
+        {
+          "char": "•☽────✧🦇✧────☾•",
+          "label": "Separador de murciélago y luna"
+        },
+        {
+          "char": "🍬🍭🍫 Dulce y Terrorífico 🍫🍭🍬",
+          "label": "Combo dulce y terrorífico"
+        }
       ]
     }
   ],

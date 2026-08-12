@@ -10,9 +10,18 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/linkedin-symbol-library/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-para-linkedin/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/linkedin-symbol-library/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/linkedin-symbol-library/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-para-linkedin/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/linkedin-symbol-library/"
+    }
   ],
   "title": "Símbolos para LinkedIn: Copia y Pega Flechas, Viñetas y Números",
   "meta_description": "Biblioteca de símbolos Unicode para LinkedIn. Haz clic en cualquier flecha, viñeta, número o indicador de estado para copiarlo al instante.",
@@ -27,34 +36,118 @@
       "h2": "Flechas direccionales",
       "intro": "",
       "symbols": [
-        { "char": "→", "label": "símbolo →" },
-        { "char": "⇒", "label": "símbolo ⇒" },
-        { "char": "➜", "label": "símbolo ➜" },
-        { "char": "➝", "label": "símbolo ➝" },
-        { "char": "⟶", "label": "símbolo ⟶" },
-        { "char": "⟹", "label": "símbolo ⟹" },
-        { "char": "⇢", "label": "símbolo ⇢" },
-        { "char": "⇨", "label": "símbolo ⇨" },
-        { "char": "⇾", "label": "símbolo ⇾" },
-        { "char": "⇰", "label": "símbolo ⇰" },
-        { "char": "↓", "label": "símbolo ↓" },
-        { "char": "⇩", "label": "símbolo ⇩" },
-        { "char": "⬇", "label": "símbolo ⬇" },
-        { "char": "↑", "label": "símbolo ↑" },
-        { "char": "⇧", "label": "símbolo ⇧" },
-        { "char": "⬆", "label": "símbolo ⬆" },
-        { "char": "↗", "label": "símbolo ↗" },
-        { "char": "↘", "label": "símbolo ↘" },
-        { "char": "↖", "label": "símbolo ↖" },
-        { "char": "↙", "label": "símbolo ↙" },
-        { "char": "↩", "label": "símbolo ↩" },
-        { "char": "↪", "label": "símbolo ↪" },
-        { "char": "↺", "label": "símbolo ↺" },
-        { "char": "↻", "label": "símbolo ↻" },
-        { "char": "←", "label": "símbolo ←" },
-        { "char": "⇐", "label": "símbolo ⇐" },
-        { "char": "⟵", "label": "símbolo ⟵" },
-        { "char": "⇦", "label": "símbolo ⇦" }
+        {
+          "char": "→",
+          "label": "símbolo →"
+        },
+        {
+          "char": "⇒",
+          "label": "símbolo ⇒"
+        },
+        {
+          "char": "➜",
+          "label": "símbolo ➜"
+        },
+        {
+          "char": "➝",
+          "label": "símbolo ➝"
+        },
+        {
+          "char": "⟶",
+          "label": "símbolo ⟶"
+        },
+        {
+          "char": "⟹",
+          "label": "símbolo ⟹"
+        },
+        {
+          "char": "⇢",
+          "label": "símbolo ⇢"
+        },
+        {
+          "char": "⇨",
+          "label": "símbolo ⇨"
+        },
+        {
+          "char": "⇾",
+          "label": "símbolo ⇾"
+        },
+        {
+          "char": "⇰",
+          "label": "símbolo ⇰"
+        },
+        {
+          "char": "↓",
+          "label": "símbolo ↓"
+        },
+        {
+          "char": "⇩",
+          "label": "símbolo ⇩"
+        },
+        {
+          "char": "⬇",
+          "label": "símbolo ⬇"
+        },
+        {
+          "char": "↑",
+          "label": "símbolo ↑"
+        },
+        {
+          "char": "⇧",
+          "label": "símbolo ⇧"
+        },
+        {
+          "char": "⬆",
+          "label": "símbolo ⬆"
+        },
+        {
+          "char": "↗",
+          "label": "símbolo ↗"
+        },
+        {
+          "char": "↘",
+          "label": "símbolo ↘"
+        },
+        {
+          "char": "↖",
+          "label": "símbolo ↖"
+        },
+        {
+          "char": "↙",
+          "label": "símbolo ↙"
+        },
+        {
+          "char": "↩",
+          "label": "símbolo ↩"
+        },
+        {
+          "char": "↪",
+          "label": "símbolo ↪"
+        },
+        {
+          "char": "↺",
+          "label": "símbolo ↺"
+        },
+        {
+          "char": "↻",
+          "label": "símbolo ↻"
+        },
+        {
+          "char": "←",
+          "label": "símbolo ←"
+        },
+        {
+          "char": "⇐",
+          "label": "símbolo ⇐"
+        },
+        {
+          "char": "⟵",
+          "label": "símbolo ⟵"
+        },
+        {
+          "char": "⇦",
+          "label": "símbolo ⇦"
+        }
       ]
     },
     {
@@ -63,34 +156,118 @@
       "h2": "Viñetas y marcadores de lista",
       "intro": "",
       "symbols": [
-        { "char": "•", "label": "símbolo •" },
-        { "char": "◦", "label": "símbolo ◦" },
-        { "char": "●", "label": "símbolo ●" },
-        { "char": "○", "label": "símbolo ○" },
-        { "char": "▪", "label": "símbolo ▪" },
-        { "char": "▫", "label": "símbolo ▫" },
-        { "char": "◾", "label": "símbolo ◾" },
-        { "char": "◽", "label": "símbolo ◽" },
-        { "char": "■", "label": "símbolo ■" },
-        { "char": "□", "label": "símbolo □" },
-        { "char": "◆", "label": "símbolo ◆" },
-        { "char": "◇", "label": "símbolo ◇" },
-        { "char": "◈", "label": "símbolo ◈" },
-        { "char": "►", "label": "símbolo ►" },
-        { "char": "▸", "label": "símbolo ▸" },
-        { "char": "▹", "label": "símbolo ▹" },
-        { "char": "▻", "label": "símbolo ▻" },
-        { "char": "▶", "label": "símbolo ▶" },
-        { "char": "▌", "label": "símbolo ▌" },
-        { "char": "▍", "label": "símbolo ▍" },
-        { "char": "▏", "label": "símbolo ▏" },
-        { "char": "❘", "label": "símbolo ❘" },
-        { "char": "❙", "label": "símbolo ❙" },
-        { "char": "❚", "label": "símbolo ❚" },
-        { "char": "–", "label": "símbolo –" },
-        { "char": "—", "label": "símbolo —" },
-        { "char": "‣", "label": "símbolo ‣" },
-        { "char": "⁃", "label": "símbolo ⁃" }
+        {
+          "char": "•",
+          "label": "símbolo •"
+        },
+        {
+          "char": "◦",
+          "label": "símbolo ◦"
+        },
+        {
+          "char": "●",
+          "label": "símbolo ●"
+        },
+        {
+          "char": "○",
+          "label": "símbolo ○"
+        },
+        {
+          "char": "▪",
+          "label": "símbolo ▪"
+        },
+        {
+          "char": "▫",
+          "label": "símbolo ▫"
+        },
+        {
+          "char": "◾",
+          "label": "símbolo ◾"
+        },
+        {
+          "char": "◽",
+          "label": "símbolo ◽"
+        },
+        {
+          "char": "■",
+          "label": "símbolo ■"
+        },
+        {
+          "char": "□",
+          "label": "símbolo □"
+        },
+        {
+          "char": "◆",
+          "label": "símbolo ◆"
+        },
+        {
+          "char": "◇",
+          "label": "símbolo ◇"
+        },
+        {
+          "char": "◈",
+          "label": "símbolo ◈"
+        },
+        {
+          "char": "►",
+          "label": "símbolo ►"
+        },
+        {
+          "char": "▸",
+          "label": "símbolo ▸"
+        },
+        {
+          "char": "▹",
+          "label": "símbolo ▹"
+        },
+        {
+          "char": "▻",
+          "label": "símbolo ▻"
+        },
+        {
+          "char": "▶",
+          "label": "símbolo ▶"
+        },
+        {
+          "char": "▌",
+          "label": "símbolo ▌"
+        },
+        {
+          "char": "▍",
+          "label": "símbolo ▍"
+        },
+        {
+          "char": "▏",
+          "label": "símbolo ▏"
+        },
+        {
+          "char": "❘",
+          "label": "símbolo ❘"
+        },
+        {
+          "char": "❙",
+          "label": "símbolo ❙"
+        },
+        {
+          "char": "❚",
+          "label": "símbolo ❚"
+        },
+        {
+          "char": "–",
+          "label": "símbolo –"
+        },
+        {
+          "char": "—",
+          "label": "símbolo —"
+        },
+        {
+          "char": "‣",
+          "label": "símbolo ‣"
+        },
+        {
+          "char": "⁃",
+          "label": "símbolo ⁃"
+        }
       ]
     },
     {
@@ -99,22 +276,70 @@
       "h2": "Marcas de verificación, cruces y validación",
       "intro": "",
       "symbols": [
-        { "char": "✓", "label": "símbolo ✓" },
-        { "char": "✔", "label": "símbolo ✔" },
-        { "char": "☑", "label": "símbolo ☑" },
-        { "char": "🗸", "label": "símbolo 🗸" },
-        { "char": "✕", "label": "símbolo ✕" },
-        { "char": "✖", "label": "símbolo ✖" },
-        { "char": "✗", "label": "símbolo ✗" },
-        { "char": "✘", "label": "símbolo ✘" },
-        { "char": "☒", "label": "símbolo ☒" },
-        { "char": "☐", "label": "símbolo ☐" },
-        { "char": "☑", "label": "símbolo ☑" },
-        { "char": "☒", "label": "símbolo ☒" },
-        { "char": "⚠", "label": "símbolo ⚠" },
-        { "char": "❗", "label": "símbolo ❗" },
-        { "char": "‼", "label": "símbolo ‼" },
-        { "char": "⁉", "label": "símbolo ⁉" }
+        {
+          "char": "✓",
+          "label": "símbolo ✓"
+        },
+        {
+          "char": "✔",
+          "label": "símbolo ✔"
+        },
+        {
+          "char": "☑",
+          "label": "símbolo ☑"
+        },
+        {
+          "char": "🗸",
+          "label": "símbolo 🗸"
+        },
+        {
+          "char": "✕",
+          "label": "símbolo ✕"
+        },
+        {
+          "char": "✖",
+          "label": "símbolo ✖"
+        },
+        {
+          "char": "✗",
+          "label": "símbolo ✗"
+        },
+        {
+          "char": "✘",
+          "label": "símbolo ✘"
+        },
+        {
+          "char": "☒",
+          "label": "símbolo ☒"
+        },
+        {
+          "char": "☐",
+          "label": "símbolo ☐"
+        },
+        {
+          "char": "☑",
+          "label": "símbolo ☑"
+        },
+        {
+          "char": "☒",
+          "label": "símbolo ☒"
+        },
+        {
+          "char": "⚠",
+          "label": "símbolo ⚠"
+        },
+        {
+          "char": "❗",
+          "label": "símbolo ❗"
+        },
+        {
+          "char": "‼",
+          "label": "símbolo ‼"
+        },
+        {
+          "char": "⁉",
+          "label": "símbolo ⁉"
+        }
       ]
     },
     {
@@ -123,76 +348,286 @@
       "h2": "Números para enumerar",
       "intro": "",
       "symbols": [
-        { "char": "①", "label": "símbolo ①" },
-        { "char": "②", "label": "símbolo ②" },
-        { "char": "③", "label": "símbolo ③" },
-        { "char": "④", "label": "símbolo ④" },
-        { "char": "⑤", "label": "símbolo ⑤" },
-        { "char": "⑥", "label": "símbolo ⑥" },
-        { "char": "⑦", "label": "símbolo ⑦" },
-        { "char": "⑧", "label": "símbolo ⑧" },
-        { "char": "⑨", "label": "símbolo ⑨" },
-        { "char": "⑩", "label": "símbolo ⑩" },
-        { "char": "⑪", "label": "símbolo ⑪" },
-        { "char": "⑫", "label": "símbolo ⑫" },
-        { "char": "⑬", "label": "símbolo ⑬" },
-        { "char": "⑭", "label": "símbolo ⑭" },
-        { "char": "⑮", "label": "símbolo ⑮" },
-        { "char": "⑯", "label": "símbolo ⑯" },
-        { "char": "⑰", "label": "símbolo ⑰" },
-        { "char": "⑱", "label": "símbolo ⑱" },
-        { "char": "⑲", "label": "símbolo ⑲" },
-        { "char": "⑳", "label": "símbolo ⑳" },
-        { "char": "❶", "label": "símbolo ❶" },
-        { "char": "❷", "label": "símbolo ❷" },
-        { "char": "❸", "label": "símbolo ❸" },
-        { "char": "❹", "label": "símbolo ❹" },
-        { "char": "❺", "label": "símbolo ❺" },
-        { "char": "❻", "label": "símbolo ❻" },
-        { "char": "❼", "label": "símbolo ❼" },
-        { "char": "❽", "label": "símbolo ❽" },
-        { "char": "❾", "label": "símbolo ❾" },
-        { "char": "❿", "label": "símbolo ❿" },
-        { "char": "⑴", "label": "símbolo ⑴" },
-        { "char": "⑵", "label": "símbolo ⑵" },
-        { "char": "⑶", "label": "símbolo ⑶" },
-        { "char": "⑷", "label": "símbolo ⑷" },
-        { "char": "⑸", "label": "símbolo ⑸" },
-        { "char": "⑹", "label": "símbolo ⑹" },
-        { "char": "⑺", "label": "símbolo ⑺" },
-        { "char": "⑻", "label": "símbolo ⑻" },
-        { "char": "⑼", "label": "símbolo ⑼" },
-        { "char": "⑽", "label": "símbolo ⑽" },
-        { "char": "⑾", "label": "símbolo ⑾" },
-        { "char": "⑿", "label": "símbolo ⑿" },
-        { "char": "⒀", "label": "símbolo ⒀" },
-        { "char": "⒁", "label": "símbolo ⒁" },
-        { "char": "⒂", "label": "símbolo ⒂" },
-        { "char": "⒃", "label": "símbolo ⒃" },
-        { "char": "⒄", "label": "símbolo ⒄" },
-        { "char": "⒅", "label": "símbolo ⒅" },
-        { "char": "⒆", "label": "símbolo ⒆" },
-        { "char": "⒇", "label": "símbolo ⒇" },
-        { "char": "⒈", "label": "símbolo ⒈" },
-        { "char": "⒉", "label": "símbolo ⒉" },
-        { "char": "⒊", "label": "símbolo ⒊" },
-        { "char": "⒋", "label": "símbolo ⒋" },
-        { "char": "⒌", "label": "símbolo ⒌" },
-        { "char": "⒍", "label": "símbolo ⒍" },
-        { "char": "⒎", "label": "símbolo ⒎" },
-        { "char": "⒏", "label": "símbolo ⒏" },
-        { "char": "⒐", "label": "símbolo ⒐" },
-        { "char": "⒑", "label": "símbolo ⒑" },
-        { "char": "⒒", "label": "símbolo ⒒" },
-        { "char": "⒓", "label": "símbolo ⒓" },
-        { "char": "⒔", "label": "símbolo ⒔" },
-        { "char": "⒕", "label": "símbolo ⒕" },
-        { "char": "⒖", "label": "símbolo ⒖" },
-        { "char": "⒗", "label": "símbolo ⒗" },
-        { "char": "⒘", "label": "símbolo ⒘" },
-        { "char": "⒙", "label": "símbolo ⒙" },
-        { "char": "⒚", "label": "símbolo ⒚" },
-        { "char": "⒛", "label": "símbolo ⒛" }
+        {
+          "char": "①",
+          "label": "símbolo ①"
+        },
+        {
+          "char": "②",
+          "label": "símbolo ②"
+        },
+        {
+          "char": "③",
+          "label": "símbolo ③"
+        },
+        {
+          "char": "④",
+          "label": "símbolo ④"
+        },
+        {
+          "char": "⑤",
+          "label": "símbolo ⑤"
+        },
+        {
+          "char": "⑥",
+          "label": "símbolo ⑥"
+        },
+        {
+          "char": "⑦",
+          "label": "símbolo ⑦"
+        },
+        {
+          "char": "⑧",
+          "label": "símbolo ⑧"
+        },
+        {
+          "char": "⑨",
+          "label": "símbolo ⑨"
+        },
+        {
+          "char": "⑩",
+          "label": "símbolo ⑩"
+        },
+        {
+          "char": "⑪",
+          "label": "símbolo ⑪"
+        },
+        {
+          "char": "⑫",
+          "label": "símbolo ⑫"
+        },
+        {
+          "char": "⑬",
+          "label": "símbolo ⑬"
+        },
+        {
+          "char": "⑭",
+          "label": "símbolo ⑭"
+        },
+        {
+          "char": "⑮",
+          "label": "símbolo ⑮"
+        },
+        {
+          "char": "⑯",
+          "label": "símbolo ⑯"
+        },
+        {
+          "char": "⑰",
+          "label": "símbolo ⑰"
+        },
+        {
+          "char": "⑱",
+          "label": "símbolo ⑱"
+        },
+        {
+          "char": "⑲",
+          "label": "símbolo ⑲"
+        },
+        {
+          "char": "⑳",
+          "label": "símbolo ⑳"
+        },
+        {
+          "char": "❶",
+          "label": "símbolo ❶"
+        },
+        {
+          "char": "❷",
+          "label": "símbolo ❷"
+        },
+        {
+          "char": "❸",
+          "label": "símbolo ❸"
+        },
+        {
+          "char": "❹",
+          "label": "símbolo ❹"
+        },
+        {
+          "char": "❺",
+          "label": "símbolo ❺"
+        },
+        {
+          "char": "❻",
+          "label": "símbolo ❻"
+        },
+        {
+          "char": "❼",
+          "label": "símbolo ❼"
+        },
+        {
+          "char": "❽",
+          "label": "símbolo ❽"
+        },
+        {
+          "char": "❾",
+          "label": "símbolo ❾"
+        },
+        {
+          "char": "❿",
+          "label": "símbolo ❿"
+        },
+        {
+          "char": "⑴",
+          "label": "símbolo ⑴"
+        },
+        {
+          "char": "⑵",
+          "label": "símbolo ⑵"
+        },
+        {
+          "char": "⑶",
+          "label": "símbolo ⑶"
+        },
+        {
+          "char": "⑷",
+          "label": "símbolo ⑷"
+        },
+        {
+          "char": "⑸",
+          "label": "símbolo ⑸"
+        },
+        {
+          "char": "⑹",
+          "label": "símbolo ⑹"
+        },
+        {
+          "char": "⑺",
+          "label": "símbolo ⑺"
+        },
+        {
+          "char": "⑻",
+          "label": "símbolo ⑻"
+        },
+        {
+          "char": "⑼",
+          "label": "símbolo ⑼"
+        },
+        {
+          "char": "⑽",
+          "label": "símbolo ⑽"
+        },
+        {
+          "char": "⑾",
+          "label": "símbolo ⑾"
+        },
+        {
+          "char": "⑿",
+          "label": "símbolo ⑿"
+        },
+        {
+          "char": "⒀",
+          "label": "símbolo ⒀"
+        },
+        {
+          "char": "⒁",
+          "label": "símbolo ⒁"
+        },
+        {
+          "char": "⒂",
+          "label": "símbolo ⒂"
+        },
+        {
+          "char": "⒃",
+          "label": "símbolo ⒃"
+        },
+        {
+          "char": "⒄",
+          "label": "símbolo ⒄"
+        },
+        {
+          "char": "⒅",
+          "label": "símbolo ⒅"
+        },
+        {
+          "char": "⒆",
+          "label": "símbolo ⒆"
+        },
+        {
+          "char": "⒇",
+          "label": "símbolo ⒇"
+        },
+        {
+          "char": "⒈",
+          "label": "símbolo ⒈"
+        },
+        {
+          "char": "⒉",
+          "label": "símbolo ⒉"
+        },
+        {
+          "char": "⒊",
+          "label": "símbolo ⒊"
+        },
+        {
+          "char": "⒋",
+          "label": "símbolo ⒋"
+        },
+        {
+          "char": "⒌",
+          "label": "símbolo ⒌"
+        },
+        {
+          "char": "⒍",
+          "label": "símbolo ⒍"
+        },
+        {
+          "char": "⒎",
+          "label": "símbolo ⒎"
+        },
+        {
+          "char": "⒏",
+          "label": "símbolo ⒏"
+        },
+        {
+          "char": "⒐",
+          "label": "símbolo ⒐"
+        },
+        {
+          "char": "⒑",
+          "label": "símbolo ⒑"
+        },
+        {
+          "char": "⒒",
+          "label": "símbolo ⒒"
+        },
+        {
+          "char": "⒓",
+          "label": "símbolo ⒓"
+        },
+        {
+          "char": "⒔",
+          "label": "símbolo ⒔"
+        },
+        {
+          "char": "⒕",
+          "label": "símbolo ⒕"
+        },
+        {
+          "char": "⒖",
+          "label": "símbolo ⒖"
+        },
+        {
+          "char": "⒗",
+          "label": "símbolo ⒗"
+        },
+        {
+          "char": "⒘",
+          "label": "símbolo ⒘"
+        },
+        {
+          "char": "⒙",
+          "label": "símbolo ⒙"
+        },
+        {
+          "char": "⒚",
+          "label": "símbolo ⒚"
+        },
+        {
+          "char": "⒛",
+          "label": "símbolo ⒛"
+        }
       ]
     },
     {
@@ -201,136 +636,526 @@
       "h2": "Marcadores con letras",
       "intro": "",
       "symbols": [
-        { "char": "Ⓐ", "label": "símbolo Ⓐ" },
-        { "char": "Ⓑ", "label": "símbolo Ⓑ" },
-        { "char": "Ⓒ", "label": "símbolo Ⓒ" },
-        { "char": "Ⓓ", "label": "símbolo Ⓓ" },
-        { "char": "Ⓔ", "label": "símbolo Ⓔ" },
-        { "char": "Ⓕ", "label": "símbolo Ⓕ" },
-        { "char": "Ⓖ", "label": "símbolo Ⓖ" },
-        { "char": "Ⓗ", "label": "símbolo Ⓗ" },
-        { "char": "Ⓘ", "label": "símbolo Ⓘ" },
-        { "char": "Ⓙ", "label": "símbolo Ⓙ" },
-        { "char": "Ⓚ", "label": "símbolo Ⓚ" },
-        { "char": "Ⓛ", "label": "símbolo Ⓛ" },
-        { "char": "Ⓜ", "label": "símbolo Ⓜ" },
-        { "char": "Ⓝ", "label": "símbolo Ⓝ" },
-        { "char": "Ⓞ", "label": "símbolo Ⓞ" },
-        { "char": "Ⓟ", "label": "símbolo Ⓟ" },
-        { "char": "Ⓠ", "label": "símbolo Ⓠ" },
-        { "char": "Ⓡ", "label": "símbolo Ⓡ" },
-        { "char": "Ⓢ", "label": "símbolo Ⓢ" },
-        { "char": "Ⓣ", "label": "símbolo Ⓣ" },
-        { "char": "Ⓤ", "label": "símbolo Ⓤ" },
-        { "char": "Ⓥ", "label": "símbolo Ⓥ" },
-        { "char": "Ⓦ", "label": "símbolo Ⓦ" },
-        { "char": "Ⓧ", "label": "símbolo Ⓧ" },
-        { "char": "Ⓨ", "label": "símbolo Ⓨ" },
-        { "char": "Ⓩ", "label": "símbolo Ⓩ" },
-        { "char": "ⓐ", "label": "símbolo ⓐ" },
-        { "char": "ⓑ", "label": "símbolo ⓑ" },
-        { "char": "ⓒ", "label": "símbolo ⓒ" },
-        { "char": "ⓓ", "label": "símbolo ⓓ" },
-        { "char": "ⓔ", "label": "símbolo ⓔ" },
-        { "char": "ⓕ", "label": "símbolo ⓕ" },
-        { "char": "ⓖ", "label": "símbolo ⓖ" },
-        { "char": "ⓗ", "label": "símbolo ⓗ" },
-        { "char": "ⓘ", "label": "símbolo ⓘ" },
-        { "char": "ⓙ", "label": "símbolo ⓙ" },
-        { "char": "ⓚ", "label": "símbolo ⓚ" },
-        { "char": "ⓛ", "label": "símbolo ⓛ" },
-        { "char": "ⓜ", "label": "símbolo ⓜ" },
-        { "char": "ⓝ", "label": "símbolo ⓝ" },
-        { "char": "ⓞ", "label": "símbolo ⓞ" },
-        { "char": "ⓟ", "label": "símbolo ⓟ" },
-        { "char": "ⓠ", "label": "símbolo ⓠ" },
-        { "char": "ⓡ", "label": "símbolo ⓡ" },
-        { "char": "ⓢ", "label": "símbolo ⓢ" },
-        { "char": "ⓣ", "label": "símbolo ⓣ" },
-        { "char": "ⓤ", "label": "símbolo ⓤ" },
-        { "char": "ⓥ", "label": "símbolo ⓥ" },
-        { "char": "ⓦ", "label": "símbolo ⓦ" },
-        { "char": "ⓧ", "label": "símbolo ⓧ" },
-        { "char": "ⓨ", "label": "símbolo ⓨ" },
-        { "char": "ⓩ", "label": "símbolo ⓩ" },
-        { "char": "🅐", "label": "símbolo 🅐" },
-        { "char": "🅑", "label": "símbolo 🅑" },
-        { "char": "🅒", "label": "símbolo 🅒" },
-        { "char": "🅓", "label": "símbolo 🅓" },
-        { "char": "🅔", "label": "símbolo 🅔" },
-        { "char": "🅕", "label": "símbolo 🅕" },
-        { "char": "🅖", "label": "símbolo 🅖" },
-        { "char": "🅗", "label": "símbolo 🅗" },
-        { "char": "🅘", "label": "símbolo 🅘" },
-        { "char": "🅙", "label": "símbolo 🅙" },
-        { "char": "🅚", "label": "símbolo 🅚" },
-        { "char": "🅛", "label": "símbolo 🅛" },
-        { "char": "🅜", "label": "símbolo 🅜" },
-        { "char": "🅝", "label": "símbolo 🅝" },
-        { "char": "🅞", "label": "símbolo 🅞" },
-        { "char": "🅟", "label": "símbolo 🅟" },
-        { "char": "🅠", "label": "símbolo 🅠" },
-        { "char": "🅡", "label": "símbolo 🅡" },
-        { "char": "🅢", "label": "símbolo 🅢" },
-        { "char": "🅣", "label": "símbolo 🅣" },
-        { "char": "🅤", "label": "símbolo 🅤" },
-        { "char": "🅥", "label": "símbolo 🅥" },
-        { "char": "🅦", "label": "símbolo 🅦" },
-        { "char": "🅧", "label": "símbolo 🅧" },
-        { "char": "🅨", "label": "símbolo 🅨" },
-        { "char": "🅩", "label": "símbolo 🅩" },
-        { "char": "🄰", "label": "símbolo 🄰" },
-        { "char": "🄱", "label": "símbolo 🄱" },
-        { "char": "🄲", "label": "símbolo 🄲" },
-        { "char": "🄳", "label": "símbolo 🄳" },
-        { "char": "🄴", "label": "símbolo 🄴" },
-        { "char": "🄵", "label": "símbolo 🄵" },
-        { "char": "🄶", "label": "símbolo 🄶" },
-        { "char": "🄷", "label": "símbolo 🄷" },
-        { "char": "🄸", "label": "símbolo 🄸" },
-        { "char": "🄹", "label": "símbolo 🄹" },
-        { "char": "🄺", "label": "símbolo 🄺" },
-        { "char": "🄻", "label": "símbolo 🄻" },
-        { "char": "🄼", "label": "símbolo 🄼" },
-        { "char": "🄽", "label": "símbolo 🄽" },
-        { "char": "🄾", "label": "símbolo 🄾" },
-        { "char": "🄿", "label": "símbolo 🄿" },
-        { "char": "🅀", "label": "símbolo 🅀" },
-        { "char": "🅁", "label": "símbolo 🅁" },
-        { "char": "🅂", "label": "símbolo 🅂" },
-        { "char": "🅃", "label": "símbolo 🅃" },
-        { "char": "🅄", "label": "símbolo 🅄" },
-        { "char": "🅅", "label": "símbolo 🅅" },
-        { "char": "🅆", "label": "símbolo 🅆" },
-        { "char": "🅇", "label": "símbolo 🅇" },
-        { "char": "🅈", "label": "símbolo 🅈" },
-        { "char": "🅉", "label": "símbolo 🅉" },
-        { "char": "⒜", "label": "símbolo ⒜" },
-        { "char": "⒝", "label": "símbolo ⒝" },
-        { "char": "⒞", "label": "símbolo ⒞" },
-        { "char": "⒟", "label": "símbolo ⒟" },
-        { "char": "⒠", "label": "símbolo ⒠" },
-        { "char": "⒡", "label": "símbolo ⒡" },
-        { "char": "⒢", "label": "símbolo ⒢" },
-        { "char": "⒣", "label": "símbolo ⒣" },
-        { "char": "⒤", "label": "símbolo ⒤" },
-        { "char": "⒥", "label": "símbolo ⒥" },
-        { "char": "⒦", "label": "símbolo ⒦" },
-        { "char": "⒧", "label": "símbolo ⒧" },
-        { "char": "⒨", "label": "símbolo ⒨" },
-        { "char": "⒩", "label": "símbolo ⒩" },
-        { "char": "⒪", "label": "símbolo ⒪" },
-        { "char": "⒫", "label": "símbolo ⒫" },
-        { "char": "⒬", "label": "símbolo ⒬" },
-        { "char": "⒭", "label": "símbolo ⒭" },
-        { "char": "⒮", "label": "símbolo ⒮" },
-        { "char": "⒯", "label": "símbolo ⒯" },
-        { "char": "⒰", "label": "símbolo ⒰" },
-        { "char": "⒱", "label": "símbolo ⒱" },
-        { "char": "⒲", "label": "símbolo ⒲" },
-        { "char": "⒳", "label": "símbolo ⒳" },
-        { "char": "⒴", "label": "símbolo ⒴" },
-        { "char": "⒵", "label": "símbolo ⒵" }
+        {
+          "char": "Ⓐ",
+          "label": "símbolo Ⓐ"
+        },
+        {
+          "char": "Ⓑ",
+          "label": "símbolo Ⓑ"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "símbolo Ⓒ"
+        },
+        {
+          "char": "Ⓓ",
+          "label": "símbolo Ⓓ"
+        },
+        {
+          "char": "Ⓔ",
+          "label": "símbolo Ⓔ"
+        },
+        {
+          "char": "Ⓕ",
+          "label": "símbolo Ⓕ"
+        },
+        {
+          "char": "Ⓖ",
+          "label": "símbolo Ⓖ"
+        },
+        {
+          "char": "Ⓗ",
+          "label": "símbolo Ⓗ"
+        },
+        {
+          "char": "Ⓘ",
+          "label": "símbolo Ⓘ"
+        },
+        {
+          "char": "Ⓙ",
+          "label": "símbolo Ⓙ"
+        },
+        {
+          "char": "Ⓚ",
+          "label": "símbolo Ⓚ"
+        },
+        {
+          "char": "Ⓛ",
+          "label": "símbolo Ⓛ"
+        },
+        {
+          "char": "Ⓜ",
+          "label": "símbolo Ⓜ"
+        },
+        {
+          "char": "Ⓝ",
+          "label": "símbolo Ⓝ"
+        },
+        {
+          "char": "Ⓞ",
+          "label": "símbolo Ⓞ"
+        },
+        {
+          "char": "Ⓟ",
+          "label": "símbolo Ⓟ"
+        },
+        {
+          "char": "Ⓠ",
+          "label": "símbolo Ⓠ"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "símbolo Ⓡ"
+        },
+        {
+          "char": "Ⓢ",
+          "label": "símbolo Ⓢ"
+        },
+        {
+          "char": "Ⓣ",
+          "label": "símbolo Ⓣ"
+        },
+        {
+          "char": "Ⓤ",
+          "label": "símbolo Ⓤ"
+        },
+        {
+          "char": "Ⓥ",
+          "label": "símbolo Ⓥ"
+        },
+        {
+          "char": "Ⓦ",
+          "label": "símbolo Ⓦ"
+        },
+        {
+          "char": "Ⓧ",
+          "label": "símbolo Ⓧ"
+        },
+        {
+          "char": "Ⓨ",
+          "label": "símbolo Ⓨ"
+        },
+        {
+          "char": "Ⓩ",
+          "label": "símbolo Ⓩ"
+        },
+        {
+          "char": "ⓐ",
+          "label": "símbolo ⓐ"
+        },
+        {
+          "char": "ⓑ",
+          "label": "símbolo ⓑ"
+        },
+        {
+          "char": "ⓒ",
+          "label": "símbolo ⓒ"
+        },
+        {
+          "char": "ⓓ",
+          "label": "símbolo ⓓ"
+        },
+        {
+          "char": "ⓔ",
+          "label": "símbolo ⓔ"
+        },
+        {
+          "char": "ⓕ",
+          "label": "símbolo ⓕ"
+        },
+        {
+          "char": "ⓖ",
+          "label": "símbolo ⓖ"
+        },
+        {
+          "char": "ⓗ",
+          "label": "símbolo ⓗ"
+        },
+        {
+          "char": "ⓘ",
+          "label": "símbolo ⓘ"
+        },
+        {
+          "char": "ⓙ",
+          "label": "símbolo ⓙ"
+        },
+        {
+          "char": "ⓚ",
+          "label": "símbolo ⓚ"
+        },
+        {
+          "char": "ⓛ",
+          "label": "símbolo ⓛ"
+        },
+        {
+          "char": "ⓜ",
+          "label": "símbolo ⓜ"
+        },
+        {
+          "char": "ⓝ",
+          "label": "símbolo ⓝ"
+        },
+        {
+          "char": "ⓞ",
+          "label": "símbolo ⓞ"
+        },
+        {
+          "char": "ⓟ",
+          "label": "símbolo ⓟ"
+        },
+        {
+          "char": "ⓠ",
+          "label": "símbolo ⓠ"
+        },
+        {
+          "char": "ⓡ",
+          "label": "símbolo ⓡ"
+        },
+        {
+          "char": "ⓢ",
+          "label": "símbolo ⓢ"
+        },
+        {
+          "char": "ⓣ",
+          "label": "símbolo ⓣ"
+        },
+        {
+          "char": "ⓤ",
+          "label": "símbolo ⓤ"
+        },
+        {
+          "char": "ⓥ",
+          "label": "símbolo ⓥ"
+        },
+        {
+          "char": "ⓦ",
+          "label": "símbolo ⓦ"
+        },
+        {
+          "char": "ⓧ",
+          "label": "símbolo ⓧ"
+        },
+        {
+          "char": "ⓨ",
+          "label": "símbolo ⓨ"
+        },
+        {
+          "char": "ⓩ",
+          "label": "símbolo ⓩ"
+        },
+        {
+          "char": "🅐",
+          "label": "símbolo 🅐"
+        },
+        {
+          "char": "🅑",
+          "label": "símbolo 🅑"
+        },
+        {
+          "char": "🅒",
+          "label": "símbolo 🅒"
+        },
+        {
+          "char": "🅓",
+          "label": "símbolo 🅓"
+        },
+        {
+          "char": "🅔",
+          "label": "símbolo 🅔"
+        },
+        {
+          "char": "🅕",
+          "label": "símbolo 🅕"
+        },
+        {
+          "char": "🅖",
+          "label": "símbolo 🅖"
+        },
+        {
+          "char": "🅗",
+          "label": "símbolo 🅗"
+        },
+        {
+          "char": "🅘",
+          "label": "símbolo 🅘"
+        },
+        {
+          "char": "🅙",
+          "label": "símbolo 🅙"
+        },
+        {
+          "char": "🅚",
+          "label": "símbolo 🅚"
+        },
+        {
+          "char": "🅛",
+          "label": "símbolo 🅛"
+        },
+        {
+          "char": "🅜",
+          "label": "símbolo 🅜"
+        },
+        {
+          "char": "🅝",
+          "label": "símbolo 🅝"
+        },
+        {
+          "char": "🅞",
+          "label": "símbolo 🅞"
+        },
+        {
+          "char": "🅟",
+          "label": "símbolo 🅟"
+        },
+        {
+          "char": "🅠",
+          "label": "símbolo 🅠"
+        },
+        {
+          "char": "🅡",
+          "label": "símbolo 🅡"
+        },
+        {
+          "char": "🅢",
+          "label": "símbolo 🅢"
+        },
+        {
+          "char": "🅣",
+          "label": "símbolo 🅣"
+        },
+        {
+          "char": "🅤",
+          "label": "símbolo 🅤"
+        },
+        {
+          "char": "🅥",
+          "label": "símbolo 🅥"
+        },
+        {
+          "char": "🅦",
+          "label": "símbolo 🅦"
+        },
+        {
+          "char": "🅧",
+          "label": "símbolo 🅧"
+        },
+        {
+          "char": "🅨",
+          "label": "símbolo 🅨"
+        },
+        {
+          "char": "🅩",
+          "label": "símbolo 🅩"
+        },
+        {
+          "char": "🄰",
+          "label": "símbolo 🄰"
+        },
+        {
+          "char": "🄱",
+          "label": "símbolo 🄱"
+        },
+        {
+          "char": "🄲",
+          "label": "símbolo 🄲"
+        },
+        {
+          "char": "🄳",
+          "label": "símbolo 🄳"
+        },
+        {
+          "char": "🄴",
+          "label": "símbolo 🄴"
+        },
+        {
+          "char": "🄵",
+          "label": "símbolo 🄵"
+        },
+        {
+          "char": "🄶",
+          "label": "símbolo 🄶"
+        },
+        {
+          "char": "🄷",
+          "label": "símbolo 🄷"
+        },
+        {
+          "char": "🄸",
+          "label": "símbolo 🄸"
+        },
+        {
+          "char": "🄹",
+          "label": "símbolo 🄹"
+        },
+        {
+          "char": "🄺",
+          "label": "símbolo 🄺"
+        },
+        {
+          "char": "🄻",
+          "label": "símbolo 🄻"
+        },
+        {
+          "char": "🄼",
+          "label": "símbolo 🄼"
+        },
+        {
+          "char": "🄽",
+          "label": "símbolo 🄽"
+        },
+        {
+          "char": "🄾",
+          "label": "símbolo 🄾"
+        },
+        {
+          "char": "🄿",
+          "label": "símbolo 🄿"
+        },
+        {
+          "char": "🅀",
+          "label": "símbolo 🅀"
+        },
+        {
+          "char": "🅁",
+          "label": "símbolo 🅁"
+        },
+        {
+          "char": "🅂",
+          "label": "símbolo 🅂"
+        },
+        {
+          "char": "🅃",
+          "label": "símbolo 🅃"
+        },
+        {
+          "char": "🅄",
+          "label": "símbolo 🅄"
+        },
+        {
+          "char": "🅅",
+          "label": "símbolo 🅅"
+        },
+        {
+          "char": "🅆",
+          "label": "símbolo 🅆"
+        },
+        {
+          "char": "🅇",
+          "label": "símbolo 🅇"
+        },
+        {
+          "char": "🅈",
+          "label": "símbolo 🅈"
+        },
+        {
+          "char": "🅉",
+          "label": "símbolo 🅉"
+        },
+        {
+          "char": "⒜",
+          "label": "símbolo ⒜"
+        },
+        {
+          "char": "⒝",
+          "label": "símbolo ⒝"
+        },
+        {
+          "char": "⒞",
+          "label": "símbolo ⒞"
+        },
+        {
+          "char": "⒟",
+          "label": "símbolo ⒟"
+        },
+        {
+          "char": "⒠",
+          "label": "símbolo ⒠"
+        },
+        {
+          "char": "⒡",
+          "label": "símbolo ⒡"
+        },
+        {
+          "char": "⒢",
+          "label": "símbolo ⒢"
+        },
+        {
+          "char": "⒣",
+          "label": "símbolo ⒣"
+        },
+        {
+          "char": "⒤",
+          "label": "símbolo ⒤"
+        },
+        {
+          "char": "⒥",
+          "label": "símbolo ⒥"
+        },
+        {
+          "char": "⒦",
+          "label": "símbolo ⒦"
+        },
+        {
+          "char": "⒧",
+          "label": "símbolo ⒧"
+        },
+        {
+          "char": "⒨",
+          "label": "símbolo ⒨"
+        },
+        {
+          "char": "⒩",
+          "label": "símbolo ⒩"
+        },
+        {
+          "char": "⒪",
+          "label": "símbolo ⒪"
+        },
+        {
+          "char": "⒫",
+          "label": "símbolo ⒫"
+        },
+        {
+          "char": "⒬",
+          "label": "símbolo ⒬"
+        },
+        {
+          "char": "⒭",
+          "label": "símbolo ⒭"
+        },
+        {
+          "char": "⒮",
+          "label": "símbolo ⒮"
+        },
+        {
+          "char": "⒯",
+          "label": "símbolo ⒯"
+        },
+        {
+          "char": "⒰",
+          "label": "símbolo ⒰"
+        },
+        {
+          "char": "⒱",
+          "label": "símbolo ⒱"
+        },
+        {
+          "char": "⒲",
+          "label": "símbolo ⒲"
+        },
+        {
+          "char": "⒳",
+          "label": "símbolo ⒳"
+        },
+        {
+          "char": "⒴",
+          "label": "símbolo ⒴"
+        },
+        {
+          "char": "⒵",
+          "label": "símbolo ⒵"
+        }
       ]
     },
     {
@@ -339,30 +1164,102 @@
       "h2": "Números romanos",
       "intro": "",
       "symbols": [
-        { "char": "Ⅰ", "label": "símbolo Ⅰ" },
-        { "char": "Ⅱ", "label": "símbolo Ⅱ" },
-        { "char": "Ⅲ", "label": "símbolo Ⅲ" },
-        { "char": "Ⅳ", "label": "símbolo Ⅳ" },
-        { "char": "Ⅴ", "label": "símbolo Ⅴ" },
-        { "char": "Ⅵ", "label": "símbolo Ⅵ" },
-        { "char": "Ⅶ", "label": "símbolo Ⅶ" },
-        { "char": "Ⅷ", "label": "símbolo Ⅷ" },
-        { "char": "Ⅸ", "label": "símbolo Ⅸ" },
-        { "char": "Ⅹ", "label": "símbolo Ⅹ" },
-        { "char": "Ⅺ", "label": "símbolo Ⅺ" },
-        { "char": "Ⅻ", "label": "símbolo Ⅻ" },
-        { "char": "ⅰ", "label": "símbolo ⅰ" },
-        { "char": "ⅱ", "label": "símbolo ⅱ" },
-        { "char": "ⅲ", "label": "símbolo ⅲ" },
-        { "char": "ⅳ", "label": "símbolo ⅳ" },
-        { "char": "ⅴ", "label": "símbolo ⅴ" },
-        { "char": "ⅵ", "label": "símbolo ⅵ" },
-        { "char": "ⅶ", "label": "símbolo ⅶ" },
-        { "char": "ⅷ", "label": "símbolo ⅷ" },
-        { "char": "ⅸ", "label": "símbolo ⅸ" },
-        { "char": "ⅹ", "label": "símbolo ⅹ" },
-        { "char": "ⅺ", "label": "símbolo ⅺ" },
-        { "char": "ⅻ", "label": "símbolo ⅻ" }
+        {
+          "char": "Ⅰ",
+          "label": "símbolo Ⅰ"
+        },
+        {
+          "char": "Ⅱ",
+          "label": "símbolo Ⅱ"
+        },
+        {
+          "char": "Ⅲ",
+          "label": "símbolo Ⅲ"
+        },
+        {
+          "char": "Ⅳ",
+          "label": "símbolo Ⅳ"
+        },
+        {
+          "char": "Ⅴ",
+          "label": "símbolo Ⅴ"
+        },
+        {
+          "char": "Ⅵ",
+          "label": "símbolo Ⅵ"
+        },
+        {
+          "char": "Ⅶ",
+          "label": "símbolo Ⅶ"
+        },
+        {
+          "char": "Ⅷ",
+          "label": "símbolo Ⅷ"
+        },
+        {
+          "char": "Ⅸ",
+          "label": "símbolo Ⅸ"
+        },
+        {
+          "char": "Ⅹ",
+          "label": "símbolo Ⅹ"
+        },
+        {
+          "char": "Ⅺ",
+          "label": "símbolo Ⅺ"
+        },
+        {
+          "char": "Ⅻ",
+          "label": "símbolo Ⅻ"
+        },
+        {
+          "char": "ⅰ",
+          "label": "símbolo ⅰ"
+        },
+        {
+          "char": "ⅱ",
+          "label": "símbolo ⅱ"
+        },
+        {
+          "char": "ⅲ",
+          "label": "símbolo ⅲ"
+        },
+        {
+          "char": "ⅳ",
+          "label": "símbolo ⅳ"
+        },
+        {
+          "char": "ⅴ",
+          "label": "símbolo ⅴ"
+        },
+        {
+          "char": "ⅵ",
+          "label": "símbolo ⅵ"
+        },
+        {
+          "char": "ⅶ",
+          "label": "símbolo ⅶ"
+        },
+        {
+          "char": "ⅷ",
+          "label": "símbolo ⅷ"
+        },
+        {
+          "char": "ⅸ",
+          "label": "símbolo ⅸ"
+        },
+        {
+          "char": "ⅹ",
+          "label": "símbolo ⅹ"
+        },
+        {
+          "char": "ⅺ",
+          "label": "símbolo ⅺ"
+        },
+        {
+          "char": "ⅻ",
+          "label": "símbolo ⅻ"
+        }
       ]
     },
     {
@@ -371,29 +1268,98 @@
       "h2": "Estado, prioridad y calificación",
       "intro": "",
       "symbols": [
-        { "char": "▲", "label": "símbolo ▲" },
-        { "char": "△", "label": "símbolo △" },
-        { "char": "▼", "label": "símbolo ▼" },
-        { "char": "▽", "label": "símbolo ▽" },
-        { "char": "●", "label": "símbolo ●" },
-        { "char": "○", "label": "símbolo ○" },
-        { "char": "◉", "label": "símbolo ◉" },
-        { "char": "◎", "label": "símbolo ◎" },
-        { "char": "⬤", "label": "símbolo ⬤" },
-        { "char": "◯", "label": "símbolo ◯" },
-        { "char": "■", "label": "símbolo ■" },
-        { "char": "□", "label": "símbolo □" },
-        { "char": "▣", "label": "símbolo ▣" },
-        { "char": "▤", "label": "símbolo ▤" },
-        { "char": "▥", "label": "símbolo ▥" },
-        { "char": "▦", "label": "símbolo ▦" },
-        { "char": "▧", "label": "símbolo ▧" },
-        { "char": "▨", "label": "símbolo ▨" },
-        { "char": "▩", "label": "símbolo ▩" },
-        { "char": "★", "label": "símbolo ★" },
-        { "char": "☆", "label": "símbolo ☆" },
-        { "char": "✦", "label": "símbolo ✦" },
-        { "char": "✧", "label": "símbolo ✧" }
+        {
+          "char": "▲",
+          "label": "símbolo ▲"
+        },
+        {
+          "char": "△",
+          "label": "símbolo △"
+        },
+        {
+          "char": "▼",
+          "label": "símbolo ▼"
+        },
+        {
+          "char": "▽",
+          "label": "símbolo ▽"
+        },
+        {
+          "char": "●",
+          "label": "símbolo ●"
+        },
+        {
+          "char": "○",
+          "label": "símbolo ○"
+        },
+        {
+          "char": "◉",
+          "label": "símbolo ◉"
+        },
+        {
+          "char": "◎",
+          "label": "símbolo ◎"
+        },
+        {
+          "char": "⬤",
+          "label": "símbolo ⬤"
+        },
+        {
+          "char": "◯",
+          "label": "símbolo ◯"
+        },
+        {
+          "char": "■",
+          "label": "símbolo ■"
+        },
+        {
+          "char": "□",
+          "label": "símbolo □"
+        },
+        {
+          "char": "▣",
+          "label": "símbolo ▣"
+        },
+        {
+          "char": "▤",
+          "label": "símbolo ▤"
+        },
+        {
+          "char": "▥",
+          "label": "símbolo ▥"
+        },
+        {
+          "char": "▦",
+          "label": "símbolo ▦"
+        },
+        {
+          "char": "▧",
+          "label": "símbolo ▧"
+        },
+        {
+          "char": "▨",
+          "label": "símbolo ▨"
+        },
+        {
+          "char": "▩",
+          "label": "símbolo ▩"
+        },
+        {
+          "char": "★",
+          "label": "símbolo ★"
+        },
+        {
+          "char": "☆",
+          "label": "símbolo ☆"
+        },
+        {
+          "char": "✦",
+          "label": "símbolo ✦"
+        },
+        {
+          "char": "✧",
+          "label": "símbolo ✧"
+        }
       ]
     },
     {
@@ -402,32 +1368,110 @@
       "h2": "Divisores, separadores y marcos",
       "intro": "",
       "symbols": [
-        { "char": "|", "label": "símbolo |" },
-        { "char": "‖", "label": "símbolo ‖" },
-        { "char": "¦", "label": "símbolo ¦" },
-        { "char": "┃", "label": "símbolo ┃" },
-        { "char": "─", "label": "símbolo ─" },
-        { "char": "━", "label": "símbolo ━" },
-        { "char": "═", "label": "símbolo ═" },
-        { "char": "·", "label": "símbolo ·" },
-        { "char": "⋅", "label": "símbolo ⋅" },
-        { "char": "•", "label": "símbolo •" },
-        { "char": "‧", "label": "símbolo ‧" },
-        { "char": "▬", "label": "símbolo ▬" },
-        { "char": "▭", "label": "símbolo ▭" },
-        { "char": "▮", "label": "símbolo ▮" },
-        { "char": "▯", "label": "símbolo ▯" },
-        { "char": "█", "label": "símbolo █" },
-        { "char": "▓", "label": "símbolo ▓" },
-        { "char": "▒", "label": "símbolo ▒" },
-        { "char": "░", "label": "símbolo ░" },
-        { "char": "⟡", "label": "símbolo ⟡" },
-        { "char": "❖", "label": "símbolo ❖" },
-        { "char": "✦", "label": "símbolo ✦" },
-        { "char": "◇", "label": "símbolo ◇" },
-        { "char": "◆", "label": "símbolo ◆" },
-        { "char": "■", "label": "símbolo ■" },
-        { "char": "□", "label": "símbolo □" }
+        {
+          "char": "|",
+          "label": "símbolo |"
+        },
+        {
+          "char": "‖",
+          "label": "símbolo ‖"
+        },
+        {
+          "char": "¦",
+          "label": "símbolo ¦"
+        },
+        {
+          "char": "┃",
+          "label": "símbolo ┃"
+        },
+        {
+          "char": "─",
+          "label": "símbolo ─"
+        },
+        {
+          "char": "━",
+          "label": "símbolo ━"
+        },
+        {
+          "char": "═",
+          "label": "símbolo ═"
+        },
+        {
+          "char": "·",
+          "label": "símbolo ·"
+        },
+        {
+          "char": "⋅",
+          "label": "símbolo ⋅"
+        },
+        {
+          "char": "•",
+          "label": "símbolo •"
+        },
+        {
+          "char": "‧",
+          "label": "símbolo ‧"
+        },
+        {
+          "char": "▬",
+          "label": "símbolo ▬"
+        },
+        {
+          "char": "▭",
+          "label": "símbolo ▭"
+        },
+        {
+          "char": "▮",
+          "label": "símbolo ▮"
+        },
+        {
+          "char": "▯",
+          "label": "símbolo ▯"
+        },
+        {
+          "char": "█",
+          "label": "símbolo █"
+        },
+        {
+          "char": "▓",
+          "label": "símbolo ▓"
+        },
+        {
+          "char": "▒",
+          "label": "símbolo ▒"
+        },
+        {
+          "char": "░",
+          "label": "símbolo ░"
+        },
+        {
+          "char": "⟡",
+          "label": "símbolo ⟡"
+        },
+        {
+          "char": "❖",
+          "label": "símbolo ❖"
+        },
+        {
+          "char": "✦",
+          "label": "símbolo ✦"
+        },
+        {
+          "char": "◇",
+          "label": "símbolo ◇"
+        },
+        {
+          "char": "◆",
+          "label": "símbolo ◆"
+        },
+        {
+          "char": "■",
+          "label": "símbolo ■"
+        },
+        {
+          "char": "□",
+          "label": "símbolo □"
+        }
       ]
     },
     {
@@ -436,33 +1480,114 @@
       "h2": "Corchetes, comillas y estructura",
       "intro": "",
       "symbols": [
-        { "char": "【", "label": "símbolo 【" },
-        { "char": "】", "label": "símbolo 】" },
-        { "char": "〔", "label": "símbolo 〔" },
-        { "char": "〕", "label": "símbolo 〕" },
-        { "char": "〈", "label": "símbolo 〈" },
-        { "char": "〉", "label": "símbolo 〉" },
-        { "char": "《", "label": "símbolo 《" },
-        { "char": "》", "label": "símbolo 》" },
-        { "char": "「", "label": "símbolo 「" },
-        { "char": "」", "label": "símbolo 」" },
-        { "char": "『", "label": "símbolo 『" },
-        { "char": "』", "label": "símbolo 』" },
-        { "char": "“", "label": "símbolo “" },
-        { "char": "”", "label": "símbolo ”" },
-        { "char": "‘", "label": "símbolo ‘" },
-        { "char": "’", "label": "símbolo ’" },
-        { "char": "«", "label": "símbolo «" },
-        { "char": "»", "label": "símbolo »" },
-        { "char": "‹", "label": "símbolo ‹" },
-        { "char": "›", "label": "símbolo ›" },
-        { "char": "※", "label": "símbolo ※" },
-        { "char": "‡", "label": "símbolo ‡" },
-        { "char": "†", "label": "símbolo †" },
-        { "char": "‣", "label": "símbolo ‣" },
-        { "char": "⁂", "label": "símbolo ⁂" },
-        { "char": "⁑", "label": "símbolo ⁑" },
-        { "char": "⁕", "label": "símbolo ⁕" }
+        {
+          "char": "【",
+          "label": "símbolo 【"
+        },
+        {
+          "char": "】",
+          "label": "símbolo 】"
+        },
+        {
+          "char": "〔",
+          "label": "símbolo 〔"
+        },
+        {
+          "char": "〕",
+          "label": "símbolo 〕"
+        },
+        {
+          "char": "〈",
+          "label": "símbolo 〈"
+        },
+        {
+          "char": "〉",
+          "label": "símbolo 〉"
+        },
+        {
+          "char": "《",
+          "label": "símbolo 《"
+        },
+        {
+          "char": "》",
+          "label": "símbolo 》"
+        },
+        {
+          "char": "「",
+          "label": "símbolo 「"
+        },
+        {
+          "char": "」",
+          "label": "símbolo 」"
+        },
+        {
+          "char": "『",
+          "label": "símbolo 『"
+        },
+        {
+          "char": "』",
+          "label": "símbolo 』"
+        },
+        {
+          "char": "“",
+          "label": "símbolo “"
+        },
+        {
+          "char": "”",
+          "label": "símbolo ”"
+        },
+        {
+          "char": "‘",
+          "label": "símbolo ‘"
+        },
+        {
+          "char": "’",
+          "label": "símbolo ’"
+        },
+        {
+          "char": "«",
+          "label": "símbolo «"
+        },
+        {
+          "char": "»",
+          "label": "símbolo »"
+        },
+        {
+          "char": "‹",
+          "label": "símbolo ‹"
+        },
+        {
+          "char": "›",
+          "label": "símbolo ›"
+        },
+        {
+          "char": "※",
+          "label": "símbolo ※"
+        },
+        {
+          "char": "‡",
+          "label": "símbolo ‡"
+        },
+        {
+          "char": "†",
+          "label": "símbolo †"
+        },
+        {
+          "char": "‣",
+          "label": "símbolo ‣"
+        },
+        {
+          "char": "⁂",
+          "label": "símbolo ⁂"
+        },
+        {
+          "char": "⁑",
+          "label": "símbolo ⁑"
+        },
+        {
+          "char": "⁕",
+          "label": "símbolo ⁕"
+        }
       ]
     },
     {
@@ -471,31 +1596,106 @@
       "h2": "Matemáticas, lógica y comparación",
       "intro": "",
       "symbols": [
-        { "char": "±", "label": "símbolo ±" },
-        { "char": "×", "label": "símbolo ×" },
-        { "char": "÷", "label": "símbolo ÷" },
-        { "char": "≠", "label": "símbolo ≠" },
-        { "char": "≤", "label": "símbolo ≤" },
-        { "char": "≥", "label": "símbolo ≥" },
-        { "char": "≈", "label": "símbolo ≈" },
-        { "char": "~", "label": "símbolo ~" },
-        { "char": "∞", "label": "símbolo ∞" },
-        { "char": "∑", "label": "símbolo ∑" },
-        { "char": "∆", "label": "símbolo ∆" },
-        { "char": "√", "label": "símbolo √" },
-        { "char": "∴", "label": "símbolo ∴" },
-        { "char": "∵", "label": "símbolo ∵" },
-        { "char": "∈", "label": "símbolo ∈" },
-        { "char": "∉", "label": "símbolo ∉" },
-        { "char": "∩", "label": "símbolo ∩" },
-        { "char": "∪", "label": "símbolo ∪" },
-        { "char": "⊂", "label": "símbolo ⊂" },
-        { "char": "⊃", "label": "símbolo ⊃" },
-        { "char": "∀", "label": "símbolo ∀" },
-        { "char": "∃", "label": "símbolo ∃" },
-        { "char": "∂", "label": "símbolo ∂" },
-        { "char": "∫", "label": "símbolo ∫" },
-        { "char": "π", "label": "símbolo π" }
+        {
+          "char": "±",
+          "label": "símbolo ±"
+        },
+        {
+          "char": "×",
+          "label": "símbolo ×"
+        },
+        {
+          "char": "÷",
+          "label": "símbolo ÷"
+        },
+        {
+          "char": "≠",
+          "label": "símbolo ≠"
+        },
+        {
+          "char": "≤",
+          "label": "símbolo ≤"
+        },
+        {
+          "char": "≥",
+          "label": "símbolo ≥"
+        },
+        {
+          "char": "≈",
+          "label": "símbolo ≈"
+        },
+        {
+          "char": "~",
+          "label": "símbolo ~"
+        },
+        {
+          "char": "∞",
+          "label": "símbolo ∞"
+        },
+        {
+          "char": "∑",
+          "label": "símbolo ∑"
+        },
+        {
+          "char": "∆",
+          "label": "símbolo ∆"
+        },
+        {
+          "char": "√",
+          "label": "símbolo √"
+        },
+        {
+          "char": "∴",
+          "label": "símbolo ∴"
+        },
+        {
+          "char": "∵",
+          "label": "símbolo ∵"
+        },
+        {
+          "char": "∈",
+          "label": "símbolo ∈"
+        },
+        {
+          "char": "∉",
+          "label": "símbolo ∉"
+        },
+        {
+          "char": "∩",
+          "label": "símbolo ∩"
+        },
+        {
+          "char": "∪",
+          "label": "símbolo ∪"
+        },
+        {
+          "char": "⊂",
+          "label": "símbolo ⊂"
+        },
+        {
+          "char": "⊃",
+          "label": "símbolo ⊃"
+        },
+        {
+          "char": "∀",
+          "label": "símbolo ∀"
+        },
+        {
+          "char": "∃",
+          "label": "símbolo ∃"
+        },
+        {
+          "char": "∂",
+          "label": "símbolo ∂"
+        },
+        {
+          "char": "∫",
+          "label": "símbolo ∫"
+        },
+        {
+          "char": "π",
+          "label": "símbolo π"
+        }
       ]
     },
     {
@@ -504,25 +1704,82 @@
       "h2": "Estrellas, destellos y realces",
       "intro": "",
       "symbols": [
-        { "char": "★", "label": "símbolo ★" },
-        { "char": "☆", "label": "símbolo ☆" },
-        { "char": "✦", "label": "símbolo ✦" },
-        { "char": "✧", "label": "símbolo ✧" },
-        { "char": "✪", "label": "símbolo ✪" },
-        { "char": "✰", "label": "símbolo ✰" },
-        { "char": "✮", "label": "símbolo ✮" },
-        { "char": "✯", "label": "símbolo ✯" },
-        { "char": "✶", "label": "símbolo ✶" },
-        { "char": "✷", "label": "símbolo ✷" },
-        { "char": "✸", "label": "símbolo ✸" },
-        { "char": "✹", "label": "símbolo ✹" },
-        { "char": "✺", "label": "símbolo ✺" },
-        { "char": "✻", "label": "símbolo ✻" },
-        { "char": "✼", "label": "símbolo ✼" },
-        { "char": "✽", "label": "símbolo ✽" },
-        { "char": "❋", "label": "símbolo ❋" },
-        { "char": "❊", "label": "símbolo ❊" },
-        { "char": "❈", "label": "símbolo ❈" }
+        {
+          "char": "★",
+          "label": "símbolo ★"
+        },
+        {
+          "char": "☆",
+          "label": "símbolo ☆"
+        },
+        {
+          "char": "✦",
+          "label": "símbolo ✦"
+        },
+        {
+          "char": "✧",
+          "label": "símbolo ✧"
+        },
+        {
+          "char": "✪",
+          "label": "símbolo ✪"
+        },
+        {
+          "char": "✰",
+          "label": "símbolo ✰"
+        },
+        {
+          "char": "✮",
+          "label": "símbolo ✮"
+        },
+        {
+          "char": "✯",
+          "label": "símbolo ✯"
+        },
+        {
+          "char": "✶",
+          "label": "símbolo ✶"
+        },
+        {
+          "char": "✷",
+          "label": "símbolo ✷"
+        },
+        {
+          "char": "✸",
+          "label": "símbolo ✸"
+        },
+        {
+          "char": "✹",
+          "label": "símbolo ✹"
+        },
+        {
+          "char": "✺",
+          "label": "símbolo ✺"
+        },
+        {
+          "char": "✻",
+          "label": "símbolo ✻"
+        },
+        {
+          "char": "✼",
+          "label": "símbolo ✼"
+        },
+        {
+          "char": "✽",
+          "label": "símbolo ✽"
+        },
+        {
+          "char": "❋",
+          "label": "símbolo ❋"
+        },
+        {
+          "char": "❊",
+          "label": "símbolo ❊"
+        },
+        {
+          "char": "❈",
+          "label": "símbolo ❈"
+        }
       ]
     },
     {
@@ -531,33 +1788,114 @@
       "h2": "Formas geométricas",
       "intro": "",
       "symbols": [
-        { "char": "■", "label": "símbolo ■" },
-        { "char": "□", "label": "símbolo □" },
-        { "char": "▪", "label": "símbolo ▪" },
-        { "char": "▫", "label": "símbolo ▫" },
-        { "char": "◾", "label": "símbolo ◾" },
-        { "char": "◽", "label": "símbolo ◽" },
-        { "char": "▢", "label": "símbolo ▢" },
-        { "char": "▲", "label": "símbolo ▲" },
-        { "char": "△", "label": "símbolo △" },
-        { "char": "▼", "label": "símbolo ▼" },
-        { "char": "▽", "label": "símbolo ▽" },
-        { "char": "◁", "label": "símbolo ◁" },
-        { "char": "▷", "label": "símbolo ▷" },
-        { "char": "◀", "label": "símbolo ◀" },
-        { "char": "▶", "label": "símbolo ▶" },
-        { "char": "●", "label": "símbolo ●" },
-        { "char": "○", "label": "símbolo ○" },
-        { "char": "◐", "label": "símbolo ◐" },
-        { "char": "◑", "label": "símbolo ◑" },
-        { "char": "◒", "label": "símbolo ◒" },
-        { "char": "◓", "label": "símbolo ◓" },
-        { "char": "◔", "label": "símbolo ◔" },
-        { "char": "◕", "label": "símbolo ◕" },
-        { "char": "◆", "label": "símbolo ◆" },
-        { "char": "◇", "label": "símbolo ◇" },
-        { "char": "◈", "label": "símbolo ◈" },
-        { "char": "♦", "label": "símbolo ♦" }
+        {
+          "char": "■",
+          "label": "símbolo ■"
+        },
+        {
+          "char": "□",
+          "label": "símbolo □"
+        },
+        {
+          "char": "▪",
+          "label": "símbolo ▪"
+        },
+        {
+          "char": "▫",
+          "label": "símbolo ▫"
+        },
+        {
+          "char": "◾",
+          "label": "símbolo ◾"
+        },
+        {
+          "char": "◽",
+          "label": "símbolo ◽"
+        },
+        {
+          "char": "▢",
+          "label": "símbolo ▢"
+        },
+        {
+          "char": "▲",
+          "label": "símbolo ▲"
+        },
+        {
+          "char": "△",
+          "label": "símbolo △"
+        },
+        {
+          "char": "▼",
+          "label": "símbolo ▼"
+        },
+        {
+          "char": "▽",
+          "label": "símbolo ▽"
+        },
+        {
+          "char": "◁",
+          "label": "símbolo ◁"
+        },
+        {
+          "char": "▷",
+          "label": "símbolo ▷"
+        },
+        {
+          "char": "◀",
+          "label": "símbolo ◀"
+        },
+        {
+          "char": "▶",
+          "label": "símbolo ▶"
+        },
+        {
+          "char": "●",
+          "label": "símbolo ●"
+        },
+        {
+          "char": "○",
+          "label": "símbolo ○"
+        },
+        {
+          "char": "◐",
+          "label": "símbolo ◐"
+        },
+        {
+          "char": "◑",
+          "label": "símbolo ◑"
+        },
+        {
+          "char": "◒",
+          "label": "símbolo ◒"
+        },
+        {
+          "char": "◓",
+          "label": "símbolo ◓"
+        },
+        {
+          "char": "◔",
+          "label": "símbolo ◔"
+        },
+        {
+          "char": "◕",
+          "label": "símbolo ◕"
+        },
+        {
+          "char": "◆",
+          "label": "símbolo ◆"
+        },
+        {
+          "char": "◇",
+          "label": "símbolo ◇"
+        },
+        {
+          "char": "◈",
+          "label": "símbolo ◈"
+        },
+        {
+          "char": "♦",
+          "label": "símbolo ♦"
+        }
       ]
     },
     {
@@ -566,41 +1904,146 @@
       "h2": "Monedas y negocios",
       "intro": "",
       "symbols": [
-        { "char": "$", "label": "símbolo $" },
-        { "char": "€", "label": "símbolo €" },
-        { "char": "£", "label": "símbolo £" },
-        { "char": "¥", "label": "símbolo ¥" },
-        { "char": "₹", "label": "símbolo ₹" },
-        { "char": "₩", "label": "símbolo ₩" },
-        { "char": "₽", "label": "símbolo ₽" },
-        { "char": "₿", "label": "símbolo ₿" },
-        { "char": "¢", "label": "símbolo ¢" },
-        { "char": "₱", "label": "símbolo ₱" },
-        { "char": "₪", "label": "símbolo ₪" },
-        { "char": "₫", "label": "símbolo ₫" },
-        { "char": "₴", "label": "símbolo ₴" },
-        { "char": "₦", "label": "símbolo ₦" },
-        { "char": "₡", "label": "símbolo ₡" },
-        { "char": "₢", "label": "símbolo ₢" },
-        { "char": "₣", "label": "símbolo ₣" },
-        { "char": "₤", "label": "símbolo ₤" },
-        { "char": "₥", "label": "símbolo ₥" },
-        { "char": "₧", "label": "símbolo ₧" },
-        { "char": "₨", "label": "símbolo ₨" },
-        { "char": "₭", "label": "símbolo ₭" },
-        { "char": "₮", "label": "símbolo ₮" },
-        { "char": "₯", "label": "símbolo ₯" },
-        { "char": "₰", "label": "símbolo ₰" },
-        { "char": "₲", "label": "símbolo ₲" },
-        { "char": "₳", "label": "símbolo ₳" },
-        { "char": "₵", "label": "símbolo ₵" },
-        { "char": "₶", "label": "símbolo ₶" },
-        { "char": "₷", "label": "símbolo ₷" },
-        { "char": "₸", "label": "símbolo ₸" },
-        { "char": "₺", "label": "símbolo ₺" },
-        { "char": "₻", "label": "símbolo ₻" },
-        { "char": "₼", "label": "símbolo ₼" },
-        { "char": "₾", "label": "símbolo ₾" }
+        {
+          "char": "$",
+          "label": "símbolo $"
+        },
+        {
+          "char": "€",
+          "label": "símbolo €"
+        },
+        {
+          "char": "£",
+          "label": "símbolo £"
+        },
+        {
+          "char": "¥",
+          "label": "símbolo ¥"
+        },
+        {
+          "char": "₹",
+          "label": "símbolo ₹"
+        },
+        {
+          "char": "₩",
+          "label": "símbolo ₩"
+        },
+        {
+          "char": "₽",
+          "label": "símbolo ₽"
+        },
+        {
+          "char": "₿",
+          "label": "símbolo ₿"
+        },
+        {
+          "char": "¢",
+          "label": "símbolo ¢"
+        },
+        {
+          "char": "₱",
+          "label": "símbolo ₱"
+        },
+        {
+          "char": "₪",
+          "label": "símbolo ₪"
+        },
+        {
+          "char": "₫",
+          "label": "símbolo ₫"
+        },
+        {
+          "char": "₴",
+          "label": "símbolo ₴"
+        },
+        {
+          "char": "₦",
+          "label": "símbolo ₦"
+        },
+        {
+          "char": "₡",
+          "label": "símbolo ₡"
+        },
+        {
+          "char": "₢",
+          "label": "símbolo ₢"
+        },
+        {
+          "char": "₣",
+          "label": "símbolo ₣"
+        },
+        {
+          "char": "₤",
+          "label": "símbolo ₤"
+        },
+        {
+          "char": "₥",
+          "label": "símbolo ₥"
+        },
+        {
+          "char": "₧",
+          "label": "símbolo ₧"
+        },
+        {
+          "char": "₨",
+          "label": "símbolo ₨"
+        },
+        {
+          "char": "₭",
+          "label": "símbolo ₭"
+        },
+        {
+          "char": "₮",
+          "label": "símbolo ₮"
+        },
+        {
+          "char": "₯",
+          "label": "símbolo ₯"
+        },
+        {
+          "char": "₰",
+          "label": "símbolo ₰"
+        },
+        {
+          "char": "₲",
+          "label": "símbolo ₲"
+        },
+        {
+          "char": "₳",
+          "label": "símbolo ₳"
+        },
+        {
+          "char": "₵",
+          "label": "símbolo ₵"
+        },
+        {
+          "char": "₶",
+          "label": "símbolo ₶"
+        },
+        {
+          "char": "₷",
+          "label": "símbolo ₷"
+        },
+        {
+          "char": "₸",
+          "label": "símbolo ₸"
+        },
+        {
+          "char": "₺",
+          "label": "símbolo ₺"
+        },
+        {
+          "char": "₻",
+          "label": "símbolo ₻"
+        },
+        {
+          "char": "₼",
+          "label": "símbolo ₼"
+        },
+        {
+          "char": "₾",
+          "label": "símbolo ₾"
+        }
       ]
     },
     {
@@ -609,23 +2052,74 @@
       "h2": "Legales, referencias y editoriales",
       "intro": "",
       "symbols": [
-        { "char": "©", "label": "símbolo ©" },
-        { "char": "®", "label": "símbolo ®" },
-        { "char": "™", "label": "símbolo ™" },
-        { "char": "§", "label": "símbolo §" },
-        { "char": "¶", "label": "símbolo ¶" },
-        { "char": "†", "label": "símbolo †" },
-        { "char": "‡", "label": "símbolo ‡" },
-        { "char": "※", "label": "símbolo ※" },
-        { "char": "℠", "label": "símbolo ℠" },
-        { "char": "℗", "label": "símbolo ℗" },
-        { "char": "℃", "label": "símbolo ℃" },
-        { "char": "℉", "label": "símbolo ℉" },
-        { "char": "№", "label": "símbolo №" },
-        { "char": "℞", "label": "símbolo ℞" },
-        { "char": "℡", "label": "símbolo ℡" },
-        { "char": "℀", "label": "símbolo ℀" },
-        { "char": "℁", "label": "símbolo ℁" }
+        {
+          "char": "©",
+          "label": "símbolo ©"
+        },
+        {
+          "char": "®",
+          "label": "símbolo ®"
+        },
+        {
+          "char": "™",
+          "label": "símbolo ™"
+        },
+        {
+          "char": "§",
+          "label": "símbolo §"
+        },
+        {
+          "char": "¶",
+          "label": "símbolo ¶"
+        },
+        {
+          "char": "†",
+          "label": "símbolo †"
+        },
+        {
+          "char": "‡",
+          "label": "símbolo ‡"
+        },
+        {
+          "char": "※",
+          "label": "símbolo ※"
+        },
+        {
+          "char": "℠",
+          "label": "símbolo ℠"
+        },
+        {
+          "char": "℗",
+          "label": "símbolo ℗"
+        },
+        {
+          "char": "℃",
+          "label": "símbolo ℃"
+        },
+        {
+          "char": "℉",
+          "label": "símbolo ℉"
+        },
+        {
+          "char": "№",
+          "label": "símbolo №"
+        },
+        {
+          "char": "℞",
+          "label": "símbolo ℞"
+        },
+        {
+          "char": "℡",
+          "label": "símbolo ℡"
+        },
+        {
+          "char": "℀",
+          "label": "símbolo ℀"
+        },
+        {
+          "char": "℁",
+          "label": "símbolo ℁"
+        }
       ]
     },
     {
@@ -634,24 +2128,78 @@
       "h2": "Decorativos aptos para LinkedIn",
       "intro": "",
       "symbols": [
-        { "char": "❖", "label": "símbolo ❖" },
-        { "char": "❘", "label": "símbolo ❘" },
-        { "char": "❙", "label": "símbolo ❙" },
-        { "char": "❚", "label": "símbolo ❚" },
-        { "char": "⟡", "label": "símbolo ⟡" },
-        { "char": "◇", "label": "símbolo ◇" },
-        { "char": "◆", "label": "símbolo ◆" },
-        { "char": "✦", "label": "símbolo ✦" },
-        { "char": "❧", "label": "símbolo ❧" },
-        { "char": "☙", "label": "símbolo ☙" },
-        { "char": "❦", "label": "símbolo ❦" },
-        { "char": "❡", "label": "símbolo ❡" },
-        { "char": "☸", "label": "símbolo ☸" },
-        { "char": "⚙", "label": "símbolo ⚙" },
-        { "char": "⚡", "label": "símbolo ⚡" },
-        { "char": "✾", "label": "símbolo ✾" },
-        { "char": "❀", "label": "símbolo ❀" },
-        { "char": "☘", "label": "símbolo ☘" }
+        {
+          "char": "❖",
+          "label": "símbolo ❖"
+        },
+        {
+          "char": "❘",
+          "label": "símbolo ❘"
+        },
+        {
+          "char": "❙",
+          "label": "símbolo ❙"
+        },
+        {
+          "char": "❚",
+          "label": "símbolo ❚"
+        },
+        {
+          "char": "⟡",
+          "label": "símbolo ⟡"
+        },
+        {
+          "char": "◇",
+          "label": "símbolo ◇"
+        },
+        {
+          "char": "◆",
+          "label": "símbolo ◆"
+        },
+        {
+          "char": "✦",
+          "label": "símbolo ✦"
+        },
+        {
+          "char": "❧",
+          "label": "símbolo ❧"
+        },
+        {
+          "char": "☙",
+          "label": "símbolo ☙"
+        },
+        {
+          "char": "❦",
+          "label": "símbolo ❦"
+        },
+        {
+          "char": "❡",
+          "label": "símbolo ❡"
+        },
+        {
+          "char": "☸",
+          "label": "símbolo ☸"
+        },
+        {
+          "char": "⚙",
+          "label": "símbolo ⚙"
+        },
+        {
+          "char": "⚡",
+          "label": "símbolo ⚡"
+        },
+        {
+          "char": "✾",
+          "label": "símbolo ✾"
+        },
+        {
+          "char": "❀",
+          "label": "símbolo ❀"
+        },
+        {
+          "char": "☘",
+          "label": "símbolo ☘"
+        }
       ]
     },
     {
@@ -660,26 +2208,86 @@
       "h2": "Combinaciones para copiar rápido",
       "intro": "",
       "symbols": [
-        { "char": "→ Key takeaway", "label": "→ Idea clave" },
-        { "char": "✓ What worked", "label": "✓ Lo que funcionó" },
-        { "char": "✗ What failed", "label": "✗ Lo que falló" },
-        { "char": "① First principle", "label": "① Primer principio" },
-        { "char": "② Second principle", "label": "② Segundo principio" },
-        { "char": "③ Third principle", "label": "③ Tercer principio" },
-        { "char": "★ Standout insight", "label": "★ Hallazgo destacado" },
-        { "char": "• Point one", "label": "• Punto uno" },
-        { "char": "▸ Action step", "label": "▸ Paso a seguir" },
-        { "char": "【Framework】", "label": "【Marco de trabajo】" },
-        { "char": "《Case Study》", "label": "《Caso de estudio》" },
-        { "char": "▲ Growth", "label": "▲ Crecimiento" },
-        { "char": "▼ Decline", "label": "▼ Caída" },
-        { "char": "™ Brand note", "label": "™ Nota de marca" },
-        { "char": "⟹ Therefore", "label": "⟹ Por lo tanto" },
-        { "char": "↪ Plot twist", "label": "↪ Giro inesperado" },
-        { "char": "◆ Key fact", "label": "◆ Dato clave" },
-        { "char": "☐ Not started", "label": "☐ Sin empezar" },
-        { "char": "☑ Complete", "label": "☑ Completado" },
-        { "char": "☒ Blocked", "label": "☒ Bloqueado" }
+        {
+          "char": "→ Idea clave",
+          "label": "→ Idea clave"
+        },
+        {
+          "char": "✓ Lo que funcionó",
+          "label": "✓ Lo que funcionó"
+        },
+        {
+          "char": "✗ Lo que falló",
+          "label": "✗ Lo que falló"
+        },
+        {
+          "char": "① Primer principio",
+          "label": "① Primer principio"
+        },
+        {
+          "char": "② Segundo principio",
+          "label": "② Segundo principio"
+        },
+        {
+          "char": "③ Tercer principio",
+          "label": "③ Tercer principio"
+        },
+        {
+          "char": "★ Hallazgo destacado",
+          "label": "★ Hallazgo destacado"
+        },
+        {
+          "char": "• Punto uno",
+          "label": "• Punto uno"
+        },
+        {
+          "char": "▸ Paso a seguir",
+          "label": "▸ Paso a seguir"
+        },
+        {
+          "char": "【Marco de trabajo】",
+          "label": "【Marco de trabajo】"
+        },
+        {
+          "char": "《Caso de estudio》",
+          "label": "《Caso de estudio》"
+        },
+        {
+          "char": "▲ Crecimiento",
+          "label": "▲ Crecimiento"
+        },
+        {
+          "char": "▼ Caída",
+          "label": "▼ Caída"
+        },
+        {
+          "char": "™ Nota de marca",
+          "label": "™ Nota de marca"
+        },
+        {
+          "char": "⟹ Por lo tanto",
+          "label": "⟹ Por lo tanto"
+        },
+        {
+          "char": "↪ Giro inesperado",
+          "label": "↪ Giro inesperado"
+        },
+        {
+          "char": "◆ Dato clave",
+          "label": "◆ Dato clave"
+        },
+        {
+          "char": "☐ Sin empezar",
+          "label": "☐ Sin empezar"
+        },
+        {
+          "char": "☑ Completado",
+          "label": "☑ Completado"
+        },
+        {
+          "char": "☒ Bloqueado",
+          "label": "☒ Bloqueado"
+        }
       ]
     }
   ],
