@@ -1,0 +1,147 @@
+{
+  "lang": "es",
+  "slug": "emoji-smirk",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-smirk/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/smirk-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-smirk/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/smirk-emoji/" }
+  ],
+  "title": "Emoji Smirk y Kaomoji: Copiar y Pegar 😏😌 Combos Presumidos",
+  "meta_description": "Emoji smirk 😏 😌 😼, combos de caras presumidas y seguras, más kaomoji pícaros como (¬‿¬) para respuestas coquetas. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Smirk y Kaomoji",
+  "hero_h1": "Emoji Smirk y Kaomoji",
+  "hero_tagline": "La cara de sonrisita 😏, gestos presumidos y seguros, guiños pícaros y kaomoji de complicidad — cada matiz de 'sé algo que tú no'. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji smirk 😏 carga dos significados a la vez: la seguridad presumida de quien está muy contento consigo mismo, y ese aire coqueto y sugerente de 'sé algo que tú no sabes'. Aquí reunimos todo el rango: la cara aliviada 😌, la sonrisa mínima y difícil de leer 🙂, el gato con sonrisa torcida 😼, y guiños pícaros como 😉 y 😜 para una reacción juguetona. Cuando un emoji no alcanza para el tono exacto, los kaomoji presumidos clásicos como (¬‿¬) y ( ͡~ ͜ʖ ͡°) se pegan donde funcione el texto plano. La cara con lentes de sol 😎 aparece aquí solo de pasada — tiene su propia página completa — porque esta se queda enfocada en la sonrisita. Toma una sola cara, o copia un combo listo para respuestas coquetas, alardes seguros y reacciones de pura complicidad.",
+  "sections": [
+    {
+      "id": "core-smirk",
+      "label": "Cara de Sonrisita",
+      "h2": "El Emoji Smirk",
+      "intro": "Una cara, dos significados — seguridad presumida en un momento, un coqueto 'sé algo' al siguiente. El contexto decide cuál de los dos está haciendo.",
+      "symbols": [
+        { "char": "😏", "label": "Cara con sonrisa de suficiencia" }
+      ]
+    },
+    {
+      "id": "smug-confident",
+      "label": "Caras Presumidas y Seguras",
+      "h2": "Caras Presumidas y Seguras",
+      "intro": "Sonrisas tranquilas y seguras para cuando estás contento contigo mismo y no lo escondes.",
+      "symbols": [
+        { "char": "😌", "label": "Cara aliviada" },
+        { "char": "🙂", "label": "Cara sonriendo ligeramente" },
+        { "char": "🙃", "label": "Cara al revés" },
+        { "char": "😎", "label": "Cara sonriente con lentes de sol" },
+        { "char": "😼", "label": "Gato con sonrisa torcida" },
+        { "char": "🤭", "label": "Cara con mano en la boca" }
+      ]
+    },
+    {
+      "id": "sly-expressions",
+      "label": "Cara Guiñando",
+      "h2": "Otras Expresiones Pícaras",
+      "intro": "Guiños, gestos de silencio y un zorro astuto para el lado travieso y cómplice de la sonrisita.",
+      "symbols": [
+        { "char": "😉", "label": "Cara guiñando el ojo" },
+        { "char": "😜", "label": "Cara guiñando con lengua" },
+        { "char": "😈", "label": "Cara sonriente con cuernos" },
+        { "char": "🤫", "label": "Cara pidiendo silencio" },
+        { "char": "🦊", "label": "Zorro" }
+      ]
+    },
+    {
+      "id": "smirk-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Presumidos y Pícaros",
+      "intro": "Caritas al estilo japonés que sonríen de lado, guiñan y se ven demasiado satisfechas consigo mismas, todo en texto plano.",
+      "symbols": [
+        { "char": "(¬‿¬)", "label": "Kaomoji de sonrisa presumida" },
+        { "char": "(¬ω¬)", "label": "Kaomoji de sonrisita pícara" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Kaomoji Lenny guiñando" },
+        { "char": "(￢‿￢)", "label": "Kaomoji de sonrisa cómplice" },
+        { "char": "( •̀ ω •́ )✧", "label": "Kaomoji de seguridad con brillo" },
+        { "char": "(￣ー￣)", "label": "Kaomoji de sonrisa satisfecha" },
+        { "char": "(｀∀´)", "label": "Kaomoji de sonrisa malvada" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Seguridad Presumida",
+      "flags": ["😏", "😌", "😎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Respuesta Coqueta",
+      "flags": ["😏", "😉", "😘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sé Algo que Tú No",
+      "flags": ["😏", "🤫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Me Siento Increíble",
+      "flags": ["😌", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sonrisita Pícara",
+      "flags": ["😼", "😏", "🦊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aguántate",
+      "flags": ["😎", "😏", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sonrisa Cómplice",
+      "flags": ["😏", "(¬‿¬)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Guiño Seguro",
+      "flags": ["😉", "😏", "😌"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "smirkSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Smirk",
+    "intro": "Copia un combo presumido completo con un clic — desde un alarde seguro hasta una respuesta coqueta y cómplice."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-gafas-de-sol/",
+      "title": "Emoji de Gafas de Sol y Kaomoji",
+      "desc": "La cara cool con lentes 😎 y sus combos seguros y despreocupados — la página hermana completa."
+    },
+    {
+      "href": "/es/library/emoji-side-eye/",
+      "title": "Emoji Side Eye y Kaomoji",
+      "desc": "Miradas de reojo desconfiadas y gestos pícaros que no se dejan impresionar."
+    },
+    {
+      "href": "/es/library/emoji-pensando/",
+      "title": "Emoji Pensando y Kaomoji",
+      "desc": "La cara 🤔 pensativa, miradas escépticas y combos de 'mmm'."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todos los smileys y emojis de caras en una sola cuadrícula."
+    }
+  ]
+}
