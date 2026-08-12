@@ -23,65 +23,15 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhfrlibrar)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhfrlibrar)"/>
   <g transform="translate(740 -10) scale(1.02)">
-            <rect x="40" y="96" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="82" y="152" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="700" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="140" y="96" width="84" height="84" rx="18" fill="url(#ghfrlibrar)"
-                  stroke="#1a1a2e" stroke-opacity="0"/>
-            <text x="182" y="152" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
-                  font-weight="400" font-style="italic" fill="#fff"
-                  text-anchor="middle">Aa</text>
-            <rect x="240" y="96" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="282" y="152" font-family="DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">★</text>
-            <rect x="40" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="82" y="256" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
-                  font-weight="700" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="140" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="182" y="256" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="240" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="282" y="256" font-family="DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">♥</text></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle">✿</text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle">˚</text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="FreeSerif">ᥫ</tspan><tspan font-family="Unifont">᭡</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle">☨</text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghfrlibrar)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">★</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-            <rect x="40" y="96" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="82" y="152" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="700" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="140" y="96" width="84" height="84" rx="18" fill="url(#ghfrlibrar)"
-                  stroke="#1a1a2e" stroke-opacity="0"/>
-            <text x="182" y="152" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
-                  font-weight="400" font-style="italic" fill="#fff"
-                  text-anchor="middle">Aa</text>
-            <rect x="240" y="96" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="282" y="152" font-family="DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">★</text>
-            <rect x="40" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="82" y="256" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
-                  font-weight="700" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="140" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="182" y="256" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">Aa</text>
-            <rect x="240" y="200" width="84" height="84" rx="18" fill="#fff"
-                  stroke="#1a1a2e" stroke-opacity="0.1"/>
-            <text x="282" y="256" font-family="DejaVu Sans, sans-serif" font-size="40"
-                  font-weight="400" font-style="normal" fill="#1a1a2e"
-                  text-anchor="middle">♥</text></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle">✿</text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle">˚</text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="FreeSerif">ᥫ</tspan><tspan font-family="Unifont">᭡</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle">☨</text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghfrlibrar)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">★</text></g>
 </svg>

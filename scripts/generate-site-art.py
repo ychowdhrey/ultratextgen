@@ -23,7 +23,9 @@ built from vector primitives + raster-safe system-font glyphs only. Colour
 emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
+import io
 import os
+import re
 import sys
 import textwrap
 
@@ -43,6 +45,7 @@ PANEL2 = "#F2F1FB"
 SANS = "Liberation Sans, DejaVu Sans, sans-serif"
 SERIF = "Georgia, 'Liberation Serif', 'DejaVu Serif', serif"
 SYM = "DejaVu Sans, sans-serif"  # raster-safe symbol coverage
+SYM_PRIMARY = "DejaVu Sans"      # SYM's first family; see spanned()
 
 # ---------------------------------------------------------------- shared defs
 
@@ -105,6 +108,16 @@ _FALLBACK_FONTS = [
     ("Noto Sans Javanese", "/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf"),
     ("Noto Serif Tibetan", "/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf"),
     ("Noto Sans CJK JP", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+    # Added for page-derived motifs (see motif_from_page): a page's own copy
+    # tiles are emoji and styled Unicode, which nothing above covers. Appended
+    # rather than inserted so the resolution order for every character the
+    # existing art already uses is unchanged.
+    ("Noto Color Emoji", "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"),
+    # Math alphanumerics and phonetic small-caps — the output of half this
+    # site's styles (𝓛𝓾𝓷𝓪, 𝕶𝖆𝖗𝖙𝖆𝖑, ᴡᴏʙʙʟʏ).
+    ("FreeSerif", "/usr/share/fonts/truetype/freefont/FreeSerif.ttf"),
+    ("Unifont", "/usr/share/fonts/opentype/unifont/unifont.otf"),
+    ("Unifont Upper", "/usr/share/fonts/opentype/unifont/unifont_upper.otf"),
 ]
 _NATIVE_FONT_FILE = {
     "Noto Sans Arabic": "/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf",
@@ -131,14 +144,57 @@ def _cmap(path):
 
 
 _LIBERATION_SANS = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
+_DEJAVU_SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 
-def _resolve_family(ch, native_family):
+_EMOJI_FONT = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+
+
+# Characters below U+1F000 whose default presentation is emoji rather than
+# text (Unicode Emoji_Presentation=Yes). The distinction is the whole game
+# here: ⚽ and ✅ are pictures, while ♥ ★ ♛ ⚜ ⚔ living a few codepoints away
+# are typographic ornaments. Routing the latter to a colour emoji font puts a
+# glossy red heart inside an ASCII kaomoji and turns a name page's ornament
+# tray into clip-art.
+_EMOJI_PRESENTATION = (
+    (0x231A, 0x231B), (0x23E9, 0x23EC), (0x23F0, 0x23F0), (0x23F3, 0x23F3),
+    (0x25FD, 0x25FE), (0x2614, 0x2615), (0x2648, 0x2653), (0x267F, 0x267F),
+    (0x2693, 0x2693), (0x26A1, 0x26A1), (0x26AA, 0x26AB), (0x26BD, 0x26BE),
+    (0x26C4, 0x26C5), (0x26CE, 0x26CE), (0x26D4, 0x26D4), (0x26EA, 0x26EA),
+    (0x26F2, 0x26F3), (0x26F5, 0x26F5), (0x26FA, 0x26FA), (0x26FD, 0x26FD),
+    (0x2705, 0x2705), (0x270A, 0x270B), (0x2728, 0x2728), (0x274C, 0x274C),
+    (0x274E, 0x274E), (0x2753, 0x2755), (0x2757, 0x2757), (0x2795, 0x2797),
+    (0x27B0, 0x27B0), (0x27BF, 0x27BF), (0x2B1B, 0x2B1C), (0x2B50, 0x2B50),
+    (0x2B55, 0x2B55),
+)
+
+
+def _is_pictograph(ch):
+    """Emoji proper — a picture, not a typographic symbol."""
+    o = ord(ch)
+    if 0x1F000 <= o <= 0x1FAFF:
+        return True
+    return any(lo <= o <= hi for lo, hi in _EMOJI_PRESENTATION)
+
+
+def _resolve_family(ch, native_family, base_path=_LIBERATION_SANS):
     """None -> the default font-family chain already renders this char.
     A family name -> wrap it in a tspan for that family. False -> no
-    installed font covers it; drop the character rather than show tofu."""
+    installed font covers it; drop the character rather than show tofu.
+
+    base_path is the font the enclosing <text> actually draws in, and it is
+    not always the same one: titles are set in SANS (Liberation) but motifs
+    are set in SYM (DejaVu). Testing a motif glyph against Liberation reports
+    ₿ as already covered and leaves it unwrapped, which draws tofu because
+    DejaVu Sans has no such glyph."""
     cp = ord(ch)
-    if cp in _cmap(_LIBERATION_SANS):
+    # Emoji first, ahead of everything: Noto Sans Symbols2 carries monochrome
+    # outlines for part of the emoji range, so without this an emoji set drawn
+    # from a page's own tiles comes out half in colour and half in black
+    # depending on which font happened to win each character.
+    if _is_pictograph(ch) and cp in _cmap(_EMOJI_FONT):
+        return "Noto Color Emoji"
+    if cp in _cmap(base_path):
         return None
     if native_family and cp in _cmap(_NATIVE_FONT_FILE[native_family]):
         return native_family
@@ -148,10 +204,18 @@ def _resolve_family(ch, native_family):
     return False
 
 
-def spanned(text, native):
+def spanned(text, native, default_family=None, base_path=_LIBERATION_SANS):
     """esc(text), wrapping any run the default font can't render in its own
     <tspan font-family="...">, resolved per-character against installed
-    font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
+    font cmaps. native is a family name from NATIVE_SCRIPT, or None.
+
+    default_family names the family the enclosing <text> already asks for, so
+    a run resolving to that same family is emitted as plain text instead of a
+    tspan that would restate it. Callers drawing in SYM should pass
+    SYM_PRIMARY: most decorative glyphs on this site live in DejaVu Sans but
+    not in Liberation Sans, and without this every one of them picks up a
+    redundant wrapper — ~1,100 files of diff noise on art that did not
+    change."""
     if not text:
         return ""
     if native == "Noto Sans Arabic":
@@ -168,7 +232,7 @@ def spanned(text, native):
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
-        fam = _resolve_family(ch, native)
+        fam = _resolve_family(ch, native, base_path)
         if fam is False:
             continue  # no installed font covers this glyph — drop it
         if first or fam == cur_family:
@@ -183,7 +247,7 @@ def spanned(text, native):
     out = ""
     for fam, chunk in runs:
         out += (f'<tspan font-family="{fam}">{esc(chunk)}</tspan>'
-                if fam else esc(chunk))
+                if fam and fam != default_family else esc(chunk))
     return out
 
 
@@ -217,7 +281,7 @@ def scatter_glyphs(p, glyphs, accent=PURPLE):
     # layout: focal centre + up to 4 satellites
     spots = [(70, 96, 60, "stroke"), (300, 104, 52, "blue"),
              (108, 282, 50, "sub"), (286, 262, 50, "ink")]
-    g = [esc(ch) for ch in glyphs[:5]]
+    g = [spanned(ch, None, SYM_PRIMARY, _DEJAVU_SANS) for ch in glyphs[:5]]
     focal = g[0]
     sats = g[1:5]
     lines = ""
@@ -3057,6 +3121,259 @@ PAGES.update({
 })
 
 
+
+# ---------------------------------------------------------------------------
+# Page-derived motifs — let a page's own symbols be its artwork.
+#
+# WHY: ~718 registered pages were drawn with a motif carrying no per-page
+# detail, so the art was identical across pages about completely different
+# things — 66 country emoji-combo pages all showed the same anonymous flag,
+# 75 single-emoji pages all showed the same generic smiley. Meanwhile
+# scatter_glyphs (which takes the actual glyphs as an argument) was already
+# producing 190 distinct images across 239 symbol pages. The pattern worked;
+# it just wasn't applied.
+#
+# The fix reads each page's OWN copy-tiles rather than adding a hand-kept
+# mapping: library/algeria-emoji-combos already offers 🇩🇿 as its first tile,
+# library/moai-emoji already offers 🗿. That is authoritative (it is what the
+# page actually gives the reader), needs no maintenance, and self-corrects if
+# a page's symbols change.
+# ---------------------------------------------------------------------------
+
+# Only attributes that carry an actual copy payload. data-style/data-category/
+# data-mode etc. hold config strings ("gothic", "all") and must never be read
+# as artwork.
+_TILE_RE = re.compile(r'data-(?:symbol|text|glyph|copy|char)="([^"]{1,28})"')
+_tiles_cache = {}
+
+# Codepoints that occupy no advance width of their own (ZWJ, VS15/16, ZWSP).
+_ZERO_WIDTH = frozenset("‍️︎​")
+
+
+_page_index = None
+_SKIP_DIRS = {".git", "node_modules", "assets", "scripts", ".github", "data", "docs"}
+
+
+def _build_page_index():
+    """slug -> index.html path, built by walking the tree once.
+
+    A slug cannot be split back into a path by hand: '/' and '-' both become
+    '-', and page directories contain hyphens themselves, so 'zh-tw' is either
+    zh/tw/ or zh-tw/ and 'library-emoji-combos' is either library/emoji-combos/
+    or library-emoji-combos/. Deriving the slug forward from every real path
+    is exact where guessing backwards is not."""
+    idx = {}
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in _SKIP_DIRS and not d.startswith(".")]
+        if "index.html" not in filenames:
+            continue
+        rel = os.path.relpath(dirpath, ROOT)
+        if rel == ".":
+            continue
+        idx.setdefault(rel.replace(os.sep, "-"), os.path.join(dirpath, "index.html"))
+    return idx
+
+
+def _slug_to_page(slug):
+    """assets slug -> the page file it was generated for ('a-b-c' -> a/b/c)."""
+    global _page_index
+    if _page_index is None:
+        _page_index = _build_page_index()
+    return _page_index.get(slug)
+
+
+def page_tiles(slug, limit=40):
+    """Everything a page offers for copying, in the page's own priority order.
+
+    Returns [] when the page has no copy-tiles (an answers/ or guide/ page,
+    typically) - callers must treat that as "keep the existing motif", never
+    as "draw nothing"."""
+    if slug in _tiles_cache:
+        return _tiles_cache[slug]
+    out = []
+    path = _slug_to_page(slug)
+    if path:
+        try:
+            html = io.open(path, encoding="utf-8").read()
+        except OSError:
+            html = ""
+        for g in _TILE_RE.findall(html):
+            g = g.strip()
+            if g and g not in out:
+                out.append(g)
+            if len(out) >= limit:
+                break
+    _tiles_cache[slug] = out
+    return out
+
+
+# Interface furniture, not subject matter: arrows, bullets, rules, check/cross
+# marks. They appear on every page and say nothing about any of them.
+_CHROME = frozenset("→←↑↓↔↩↪↻⟶⇒▶◀●○■□⬜⬛▪▫│┃─━╱✓✔✕✖✗➤►▸∙·※�")
+_pict_cache = {}
+
+
+def page_pictographs(slug, limit=5, floor=3):
+    """Fallback art source for pages with no copy-tiles: the pictographs their
+    own visible prose uses.
+
+    A generator page renders its output at runtime and an answers/ page is
+    prose, so neither has a copy grid to read - but an emoji-translator page's
+    worked examples really do contain the emoji it translates to, and an
+    updates/ entry really does contain the emoji the release added. Requires
+    `floor` distinct symbols so a page with one decorative glyph does not get
+    art built out of an accident."""
+    if slug in _pict_cache:
+        return _pict_cache[slug]
+    out = []
+    path = _slug_to_page(slug)
+    if path:
+        try:
+            html = io.open(path, encoding="utf-8").read()
+        except OSError:
+            html = ""
+        html = re.sub(r"(?is)<(script|style|head)\b.*?</\1>", " ", html)
+        html = re.sub(r"(?s)<[^>]+>", " ", html)
+        counts = {}
+        for ch in html:
+            if ch in _CHROME or not _is_pictograph(ch):
+                continue
+            counts[ch] = counts.get(ch, 0) + 1
+        if len(counts) >= floor:
+            out = [c for c, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))][:limit]
+    _pict_cache[slug] = out
+    return out
+
+
+def _units(s):
+    """Approximate advance width of a string in em units, for auto-sizing.
+
+    cairosvg exposes no text measurement we can query, so a specimen line has
+    to be sized before it is drawn or it overflows the panel. Latin/symbol
+    glyphs run ~0.62em in DejaVu Sans; CJK, emoji and enclosed forms are
+    full-width. Combining marks and joiners add nothing."""
+    w = 0.0
+    for ch in s:
+        o = ord(ch)
+        if ch in _ZERO_WIDTH or 0x0300 <= o <= 0x036F:
+            continue
+        if 0x1F1E6 <= o <= 0x1F1FF:      # regional indicator: two make one flag
+            w += 0.5
+        elif 0xA980 <= o <= 0xA9DF:      # Javanese ornaments — very wide
+            w += 1.6
+        elif 0x0F00 <= o <= 0x0FFF:      # Tibetan ornaments — wide
+            w += 1.3
+        elif _is_pictograph(ch):         # emoji cells are near-square
+            w += 1.25
+        elif o > 0x2E00:                 # CJK, enclosed, decorative
+            w += 1.0
+        else:
+            w += 0.62
+    return max(w, 0.6)
+
+
+def _drawable(g):
+    """True when every visible character has an installed font behind it.
+
+    spanned() drops what nothing covers, so an undrawable tile does not fail
+    loudly — it renders an empty card. library/egyptian-hieroglyphs is the
+    real case: U+13000.. is in no font here, and selecting it produced a
+    brand chip with nothing on it."""
+    vis = [c for c in g if c not in _ZERO_WIDTH and not 0x0300 <= ord(c) <= 0x036F]
+    return bool(vis) and all(_resolve_family(c, None, _DEJAVU_SANS) is not False
+                             for c in vis)
+
+
+def _is_run(g):
+    """True for multi-character strings (kaomoji, styled names, framed samples,
+    styled alphabet rows) - anything scatter_glyphs, which sizes for a single
+    symbol at 66px, would overflow."""
+    stripped = "".join(c for c in g if not (0x1F1E6 <= ord(c) <= 0x1F1FF)
+                       and not 0x0300 <= ord(c) <= 0x036F
+                       and c not in _ZERO_WIDTH)
+    return len(stripped) > 2
+
+
+def m_specimen(p, lines, accent=PURPLE):
+    """A specimen card of the page's own output: up to three real samples,
+    stacked, each auto-sized to fit.
+
+    This is the treatment for pages whose copy targets are strings rather than
+    single glyphs - styled names, clan tags, kaomoji, framed samples, styled
+    alphabet rows. Drawing what the page actually produces makes the art
+    specific to that page for free. A single line renders large and centred,
+    so one motif covers both a lone kaomoji and a three-name generator."""
+    lines = [l for l in lines if l][:3]
+    if not lines:
+        return ""
+    box = 250.0                                  # usable panel width in px
+    if len(lines) == 1:
+        rows = [(196, min(58.0, box / _units(lines[0])), INK, 1.0)]
+        chip = f'<circle cx="180" cy="176" r="96" fill="url(#g{p})" opacity="0.14"/>'
+    else:
+        ys = {2: (150, 226), 3: (116, 194, 272)}[len(lines)]
+        maxes = {2: (40.0, 34.0), 3: (36.0, 30.0, 26.0)}[len(lines)]
+        fills = (INK, accent, SUB)
+        ops = (1.0, 0.95, 0.85)
+        rows = [(ys[i], min(maxes[i], box / _units(lines[i])), fills[i], ops[i])
+                for i in range(len(lines))]
+        chip = (f'<rect x="34" y="{ys[0] - 46}" width="292" '
+                f'height="{ys[-1] - ys[0] + 76}" rx="30" fill="url(#g{p})" opacity="0.10"/>')
+    body = "".join(
+        f'<text x="180" y="{y}" font-family="{SYM}" font-size="{sz:.1f}" fill="{fill}" '
+        f'text-anchor="middle" opacity="{op}">{spanned(t, None, SYM_PRIMARY, _DEJAVU_SANS)}</text>'
+        for (y, sz, fill, op), t in zip(rows, lines))
+    return f"""
+    {chip}
+    {body}"""
+
+
+def _spread(items, n):
+    """Pick n items spread across the list rather than the first n.
+
+    Copy grids often open with a shared template block (every free-fire page
+    starts the same way), so taking the head would draw the same picture for
+    every sibling. Sampling across the list picks up what actually differs."""
+    if len(items) <= n:
+        return items
+    step = (len(items) - 1) / float(n - 1) if n > 1 else 0.0
+    return [items[int(round(i * step))] for i in range(n)]
+
+
+def motif_from_page(slug, current_motif):
+    """Upgrade a detail-free motif to one built from the page's own symbols.
+
+    Returns the original motif unchanged when the page has no tiles, so a page
+    that genuinely has no symbols of its own (answers/, guide/) keeps the
+    hand-chosen motif it already had. Runs are preferred over single glyphs
+    when a page has both: a name page's glyph tray is shared with every other
+    name page, while its sample names are its own."""
+    if isinstance(current_motif, P) and current_motif.keywords:
+        return current_motif          # already carries per-page detail
+    tiles = [g for g in page_tiles(slug) if _drawable(g)]
+    if not tiles:
+        pics = [g for g in page_pictographs(slug) if _drawable(g)]
+        return P(scatter_glyphs, glyphs=pics) if pics else current_motif
+    # Order matters, and both halves were learned from a wrong result.
+    # Emoji tiles win outright: library/moai-emoji leads with the moai it is
+    # about and carries unrelated kaomoji further down, so preferring runs
+    # drew a face on the moai page.
+    head = tiles[:8]
+    picts = [g for g in head if not _is_run(g) and any(_is_pictograph(c) for c in g)]
+    if len(picts) * 5 >= len(head) * 3:      # the leading grid is mostly emoji
+        return P(scatter_glyphs,
+                 glyphs=[g for g in tiles if not _is_run(g)
+                         and any(_is_pictograph(c) for c in g)][:5])
+    # Otherwise runs beat single glyphs: every free-fire page opens with the
+    # same ornament tray, so drawing those would give all of them one picture,
+    # while their sample names are genuinely their own.
+    runs = [g for g in tiles if _is_run(g)]
+    if runs:
+        return P(m_specimen, lines=_spread(runs, 3))
+    return P(scatter_glyphs, glyphs=_spread(tiles, 5))
+
+
+
 def main():
     import argparse
     import cairosvg
@@ -3079,6 +3396,9 @@ def main():
                          "Review `git status` before committing — see epilog.")
     ap.add_argument("--dry-run", action="store_true",
                     help="print what would be written and exit without writing.")
+    ap.add_argument("--no-page-motifs", action="store_true",
+                    help="disable deriving a page's motif from its own copy-tiles "
+                         "(see motif_from_page) and use the registered motif as-is.")
     ap.add_argument("--force", action="store_true",
                     help="re-render pages whose art already exists. Without this, an "
                          "existing hero+OG pair is left alone — so a run only fills gaps "
@@ -3151,6 +3471,8 @@ def main():
     n = 0
     for slug in selected:
         title, sub, motif, kicker = PAGES[slug]
+        if not a.no_page_motifs:
+            motif = motif_from_page(slug, motif)
         native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))

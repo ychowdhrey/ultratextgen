@@ -23,15 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryr)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryr)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <path d="M180 70 L286 128 L180 186 L74 128 Z" fill="url(#ghlibraryr)"/>
-    <path d="M74 128 L180 186 L180 300 L74 242 Z" fill="url(#gvhlibraryr)" opacity="0.85"/>
-    <path d="M286 128 L180 186 L180 300 L286 242 Z" fill="#8b5cf6" opacity="0.5"/>
-    <circle cx="150" cy="150" r="7" fill="#fff"/>
-    <circle cx="208" cy="150" r="7" fill="#fff"/></g>
+    <circle cx="180" cy="176" r="96" fill="url(#ghlibraryr)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="58.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">⋆˚<tspan font-family="Noto Serif Tibetan">࿔</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <path d="M180 70 L286 128 L180 186 L74 128 Z" fill="url(#ghlibraryr)"/>
-    <path d="M74 128 L180 186 L180 300 L74 242 Z" fill="url(#gvhlibraryr)" opacity="0.85"/>
-    <path d="M286 128 L180 186 L180 300 L286 242 Z" fill="#8b5cf6" opacity="0.5"/>
-    <circle cx="150" cy="150" r="7" fill="#fff"/>
-    <circle cx="208" cy="150" r="7" fill="#fff"/></g>
+    <circle cx="180" cy="176" r="96" fill="url(#ghlibraryr)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="58.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">⋆˚<tspan font-family="Noto Serif Tibetan">࿔</tspan></text></g>
 </svg>

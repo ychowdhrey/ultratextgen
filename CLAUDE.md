@@ -1483,7 +1483,12 @@ and exits 2. Use `--only <slug>` (repeatable; slug = the page path with `/`
 replaced by `-`, so `tr/gotik-yazi/index.html` is `tr-gotik-yazi`), or `--all`
 for a genuine full regeneration. `--dry-run` lists what a run would write
 without writing it, and an `--only` prefix matching no registered page is an
-error rather than a silent no-op.
+error rather than a silent no-op. **`--only` matches by prefix, not exact
+slug** — `--only answers` regenerates all 86 `answers-*` pages, and `--only
+category` all of `category-*`. When you mean an exact set, check `git status`
+against the set you intended and revert the surplus; a slug that is a prefix of
+its siblings will quietly pull them in (a 555-page run wrote 701 pairs this
+way).
 
 **A run also now skips any page whose hero+OG already exist** — "already there"
 means "done", so a run only ever fills gaps and costs nothing for pages that are
@@ -1500,6 +1505,71 @@ time) and was caught each time only by reading `git status`. A capable filter
 already existed as an undocumented positional argument; nobody used it because
 nothing said it was there and the dangerous path was the default one. The
 positional still works, hidden, for backwards compatibility.
+
+**Page-derived motifs (added 2026-08-11).** The registry in `PAGES` pairs each
+page with a motif function. 718 of 1,209 pages were registered against a motif
+that takes **no per-page argument**, so every page sharing it got a
+byte-identical drawing: 66 country emoji-combo pages all showed the same
+anonymous flag, and `library/moai-emoji` and `library/clown-emoji` shared one
+generic smiley. Meanwhile `scatter_glyphs`, which *does* take the glyphs as an
+argument, was already producing 190 distinct images across 239 `symbol/` pages.
+The mechanism worked; it just was not applied.
+
+`motif_from_page(slug, motif)` closes that by reading the page's **own** copy
+tiles (`data-symbol` / `data-text` / `data-copy` / `data-char`) — authoritative,
+zero-maintenance, and self-correcting when a page's symbols change. It is
+deliberately conservative: a motif already carrying per-page arguments is
+returned untouched, and a page with nothing to read keeps its hand-chosen
+motif, so `answers/*` prose pages still get the Q&A card that actually suits
+them. Result: **488 → 884 distinct drawings across 1,209 pages**. `--no-page-motifs`
+restores the registry's literal motif.
+
+Three routing rules, each learned from a wrong result rather than reasoned up
+front — do not "simplify" them without re-rendering the named pages:
+
+- **Emoji tiles win outright.** `library/moai-emoji` leads with the moai it is
+  about and carries unrelated kaomoji further down; preferring runs drew a face
+  on the moai page.
+- **Otherwise runs beat single glyphs.** Every free-fire page opens with the
+  same ornament tray (`꧁ ༒ ࿐ …`), so drawing those gives all of them one
+  picture, while their sample names are genuinely their own.
+- **For emoji, take the page's leading grid, not a spread.** Sampling across
+  everything a page mentions put a bank and a bicep on the moai card.
+
+**Four font rules the motifs depend on.** cairosvg has no per-glyph fallback —
+it takes the first matched family and draws tofu for anything that family lacks
+— so motif text goes through the existing `spanned()`/`_resolve_family()`
+resolver, the same one Arabic and Devanagari titles already use. Beyond that:
+
+- **Emoji resolve to Noto Color Emoji ahead of Noto Sans Symbols2**, which
+  carries monochrome outlines for part of the emoji range and would otherwise
+  leave a set half in colour and half in black. The priority is gated on
+  `Emoji_Presentation`, not on a codepoint range: `⚽` and `✅` are pictures,
+  while `♥ ★ ♛ ⚜ ⚔` a few codepoints away are typographic ornaments, and
+  routing those to a colour font puts a glossy red heart inside an ASCII
+  kaomoji.
+- **`_resolve_family` takes the base font it is resolving *against*.** Titles
+  are set in `SANS` (Liberation), motifs in `SYM` (DejaVu). Testing a motif
+  glyph against Liberation reports `₿` as already covered and leaves it
+  unwrapped — which draws tofu, because DejaVu Sans has no such glyph.
+- **`spanned()` takes the enclosing element's family** so a run resolving to
+  that same family is emitted as plain text. Without it every decorative glyph
+  in DejaVu-but-not-Liberation picks up a wrapper that restates the font it is
+  already in: ~1,100 files of diff noise on art that did not change.
+- **Never select a tile no installed font can draw.** `spanned()` drops
+  uncovered characters, so an undrawable tile fails silently as an *empty*
+  card rather than as tofu. `library/egyptian-hieroglyphs` is the real case —
+  U+13000.. is in no font here, and selecting it produced a brand chip with
+  nothing on it. `_drawable()` filters those out, and a page whose tiles are
+  all undrawable keeps its registered motif.
+
+**Before regenerating art, check your fonts.** `_FALLBACK_FONTS` and
+`_NATIVE_FONT_FILE` name specific files; a character no installed font covers is
+**dropped**, not drawn as tofu. On a container missing `fonts-noto-core` /
+`fonts-noto-cjk` / `fonts-wqy-zenhei` that silently deletes glyphs from
+regenerated cards. Install them first (`apt-get install -y fonts-noto-core
+fonts-noto-cjk fonts-wqy-zenhei`) and confirm every path in those two tables
+exists.
 
 - **`scripts/check-image-assets.py`** (`npm run check:images`) — whole-site
   audit. Requires every indexable page to have `og:image`, `twitter:image`,
