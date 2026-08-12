@@ -2545,6 +2545,7 @@ PAGES = {
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
   # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
   "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
+  "id-printables-menebalkan-huruf": ("Menebalkan Huruf", "Buat lembar latihan menulis \u2014 7 tingkat, cetak sendiri", m_grid, K_PRINT),
   "id-printables-huruf-balok": ("Huruf Balok A\u2013Z", "Huruf terpisah & angka 0\u20139 \u2014 contoh, tebalkan, mal", m_grid, K_PRINT),
   "id-printables-huruf-sambung": ("Huruf Sambung A\u2013Z", "Lembar tegak bersambung untuk ditebalkan & dicetak", m_grid, K_PRINT),
   # Printables: 5 new locale hub pages
