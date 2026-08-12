@@ -2543,6 +2543,9 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
+  "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
+  "id-printables-huruf-sambung": ("Huruf Sambung A\u2013Z", "Lembar tegak bersambung untuk ditebalkan & dicetak", m_grid, K_PRINT),
   # Printables: 5 new locale hub pages
   "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
   "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
