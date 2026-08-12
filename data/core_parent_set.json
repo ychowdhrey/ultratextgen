@@ -61,6 +61,12 @@
       "rationale": "Default for the usecase/ section — long-tail spokes (per-game name pages like free-fire-name-generator/valorant-name-generator/clan-tag-generator, niche generators) gate on a pre-build demand check. The two carve-outs above are more specific patterns and win via most-specific-pattern-first precedence, so they don't inherit this default."
     },
     {
+      "pattern": "printables/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Printable letterform spokes (bubble/cursive/block/calligraphy alphabets, tracing and coloring sheets). Added 2026-08-12: these previously matched NO pattern at all, so classifyParent returned pattern:null and tier:'unclassified', which the flowchart already treated as gated tail — its own rationale said to 'raise it with the user rather than assuming it's Core'. This entry codifies that existing de-facto treatment rather than changing it, and gives the pattern a real key so a per-locale gate-pass can actually be recorded in data/locale_parent_gap_audit.json (a null key could not be). Deliberately `gated`, not `core`: the printables engine renders Latin letterforms, and per-locale demand varies enormously — the 2026-07-10 i18n demand pass found strong evidence in es/fr/de/pt/pl, medium in it, and rated several other locales weak. Marked scriptIndependent:false for the same reason category/* is — a Latin-letterform tracing sheet is not meaningful for a non-Latin script. Note printables/index.html remains a separate, more-specific `core` entry: the pillar HUB mirrors by default, the spokes beneath it gate."
+    },
+    {
       "pattern": "answers/*",
       "tier": "gated",
       "scriptIndependent": false,
