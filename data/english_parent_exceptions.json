@@ -38,31 +38,24 @@
       "verdict": null
     },
     {
-      "localeUrl": "https://ultratextgen.com/fr/calligraphie/",
-      "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim: 'calligraphy' has real EN volume, but the EN SERP is believed to consolidate it onto the homepage-type pages (row-17 close-out read), while French GSC shows fr/index.html doesn't compete on this page's queries (76% of impressions on 'calligraphie copier coller' family).",
-      "agreed": "2026-07-26",
-      "enDemandBasis": "EN-side synonym-consolidation premise is INFERRED from the font-converter row-17 close-out, never verified against EN GSC/SERP data for 'calligraphy' specifically — the first reverse-demand sweep must verify it.",
-      "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
-      "verdict": null
-    },
-    {
       "localeUrl": "https://ultratextgen.com/fr/changeur-de-police/",
       "reason": "EN-SERP-consolidation claim, same ratification as fr/calligraphie/. Strongest FR ownership evidence of the trio: 100% of impressions on queries fr/index.html never ranks for ('change police'/'changeur de police'). Cluster includes live IT siblings (it/font-copia-e-incolla/, it/caratteri-speciali/) with no EN member — the locale↔locale parity blind spot flagged 2026-07-26 lives on this cluster.",
       "agreed": "2026-07-26",
       "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer' EN SERP believed to pull the same competitor set as 'font generator').",
-      "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
-      "verdict": null
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-01",
+      "verdict": "veto",
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
     },
     {
       "localeUrl": "https://ultratextgen.com/fr/police-d-ecriture/",
       "reason": "EN-SERP-consolidation claim, same ratification as fr/calligraphie/. Largest and still-growing FR volume of the trio: 'police d'écriture'/'police ecriture' — fr/index.html barely registers on the query while this page holds a strong first-page position.",
       "agreed": "2026-07-26",
       "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/.",
-      "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
-      "verdict": null
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-01",
+      "verdict": "veto",
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
     },
     {
       "localeUrl": "https://ultratextgen.com/fr/ecriture-speciale/",
@@ -78,9 +71,10 @@
       "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim. This page targets 'süslü yazı / süslü harf' (fancy writing / fancy letters), a concept with obvious English demand. The reason no EN parent exists is that the EN homepage IS that page: its H1 is literally 'Fancy Text Generator' and it uses 'fancy text' 14 times, with no standalone EN fancy-text page anywhere in the repo. Building one would cannibalise the site's own homepage — the same shape as the fr/calligraphie trio. On the TR side the two do not compete: first-party GSC (27d to 2026-08-02) shows this page drawing the overwhelming majority of its impressions on 'süslü' queries at first-page positions, while sitting far down the SERP on the 'şekilli yaz*' family that /tr/ owns.",
       "agreed": "2026-08-02",
       "enDemandBasis": "Verified directly against this repo on 2026-08-02: EN homepage H1 = 'Fancy Text Generator', 14 uses of 'fancy text', and no standalone EN fancy-text/fancy-letters page exists (only answers/* spokes about fancy text, which are a different content type). NOT verified: EN SERP or EN GSC for 'fancy text'/'fancy letters' specifically — the keyword tool has been out of API units since 2026-07-30, so the cannibalisation premise rests on our own site structure rather than on an EN demand pull. The first reverse-demand sweep must verify it.",
-      "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
-      "verdict": null
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-09-15",
+      "verdict": "exception-stands",
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. PREMISE PARTLY SUPERSEDED, VERDICT UNCHANGED -- flagged rather than flipped. This entry's stated reason was 'no standalone EN fancy-text page exists anywhere in the repo'. As of 2026-08-11 that is no longer true: /fancy-letters/ shipped as the EN A-Z alphabet reference. It is NOT automatically this page's parent -- tr/sekilli-yazi is a generator (H1 'Suslu yazi ve suslu harf olusturucu') whose ratification rests on first-party TR GSC showing it owns the 'suslu' query family at first-page positions, while /fancy-letters/ is a browse-the-alphabet reference. Re-parenting a page with live first-page rankings on an inference rather than TR GSC evidence is exactly the 'never fix a working page' failure the GSC register exists to prevent. Needs a TR query-level pull before any re-parent."
     },
     {
       "localeUrl": "https://ultratextgen.com/vi/usecase/ten-lien-quan-dep/",
@@ -123,17 +117,58 @@
       "reason": "IT sibling on the fr/changeur-de-police/ cluster (no EN member — same EN-SERP-consolidation claim as that trio). Keeps the slot as the concept-equivalent of 'changeur de police'.",
       "agreed": "2026-07-26",
       "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer'/'font converter' EN SERP believed to pull the same competitor set as 'font generator') — not independently re-verified for Italian demand specifically.",
-      "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
-      "verdict": null
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-01",
+      "verdict": "veto",
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. 'font generator' returns afontgenerator.com/, texttrick.com/, fontgenerator.cc/, livefontgenerator.com/, onlinefontsgenerator.com/, fontsgeneratorpro.com/, fontgen.cool/, fontb.com/ -- all roots. 'font converter' returns fontchanger.net/, fontgen.net/, fontgenerator.cc/, texttrick.com/, fontgen.cool/, fontsgeneratorpro.com/, fontb.com/, onlinefontsgenerator.com/ -- 6 of 8 the same domains, again all roots. 'letter converter' repeats the pattern. No competitor maintains a distinct converter subpage. CONSOLIDATION CONFIRMED: an EN parent would compete with our own homepage. Closes the load-bearing half of the row-17 read that this entry rests on."
     },
     {
       "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
       "reason": "Correction, 2026-08-02: previously also claimed a slot on the fr/changeur-de-police/ cluster, making two IT claimants on one hreflang cluster — invalid, flagged by audit-hreflang.js as a stacked-cluster conflict. it/font-copia-e-incolla/ kept the concept-equivalent slot; this page now stands alone with only a self-reference + homepage x-default, same ratified no-EN-parent shape as the rest of this ledger.",
       "agreed": "2026-08-02",
       "enDemandBasis": "Not independently assessed — inherited the fr/changeur-de-police/ cluster's premise at the point it was split out, rather than its own EN demand check.",
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-01",
+      "verdict": "veto",
+      "recheckEvidence": "Reverse-demand sweep 2026-08-11, direct SERP observation (Semrush still out of API units, so this is the next instrument down the hierarchy and is named as such -- it is search-result observation, not an EN GSC pull). Discriminator used is NOT domain overlap but whether competitors rank their ROOT or a DEDICATED SUBPAGE: a synonym is served by the same homepage, a distinct intent earns its own URL on that same domain. Same consolidation finding as the font-converter cluster: this is a generator page ('scrivi il testo e diventa subito un carattere speciale'), whose EN equivalent is the homepage. Also positively resolved the open question in this entry's own text -- it was never a mis-parent of library/special-characters, because that cluster already carries a real IT member (it/library/caratteri-speciali-simboli), a symbol COLLECTION, which is a different content type from this generator. The two do not compete."
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/ru/niki-standoff-2/",
+      "reason": "Nickname/symbol generator for Standoff 2, a CIS-market mobile FPS with no meaningful English-market presence and no EN name-generator page for it anywhere in usecase/ (the EN tree covers Free Fire, PUBG, Mobile Legends, Fortnite, Roblox, Valorant, CoC, Clash Royale, Stumble Guys, PlayStation, Xbox, TikTok, YouTube -- not Standoff 2). Same claim shape and same resolution as the ratified vi/usecase/ten-lien-quan-dep + zh-tw/chuanshuo-duijue pair: a specific regional game with no EN equivalent to translate. Flagged as an unresolved option-2 candidate since ENGLISH-PARENT-RULE-AUDIT-2026-07-25 and never closed until now. Its x-default pointed at usecase/nickname-generator, whose ru slot belongs to ru/generator-nikov -- i.e. it asserted a translation relationship the parent denies; corrected to the bare homepage as a generic default, not a translation-equivalence claim.",
+      "agreed": "2026-08-11",
+      "enDemandBasis": "Structural/linguistic, not instrument-checked -- Semrush out of API units on 2026-08-11. Rests on the absence of an EN Standoff 2 page and the game's CIS-market concentration, the same standard the 2026-08-03 vi/zh-tw game pair was ratified on.",
       "lastRechecked": null,
-      "nextRecheck": "2026-09-01",
+      "nextRecheck": "2026-11-01",
+      "verdict": null,
+      "recheckEvidence": "NOT BACKFILLED 2026-08-11 and deliberately so: the export available on that date was filtered to Vietnam, which cannot say anything about a Russian-market page. Recording the non-check so a future pass does not mistake this entry's silence for a completed one. Needs a RU-market pull."
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/vi/ki-tu-dac-biet-lien-quan/",
+      "reason": "Special-character page for Lien Quan Mobile (Tencent's Arena of Valor, VN localization) -- the same game already ratified as local-only for vi/usecase/ten-lien-quan-dep + zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao on 2026-08-03. This is the symbols variant of that job rather than the generator, so the precedent extends directly. x-default pointed at usecase/nickname-generator, whose vi slot belongs to vi/usecase/ten-game-hay; corrected to the homepage. NOTE: a separate open content question flags this page as do-not-touch on its U+3164 blank-name copy, pending an in-game check -- that hold is about content and is untouched here; this change is hreflang-only.",
+      "agreed": "2026-08-11",
+      "enDemandBasis": "Inherits the 2026-08-03 pair's basis: no EN arena-of-valor page exists, confirmed again 2026-08-11. Not instrument-checked; Semrush out of API units.",
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-09-15",
+      "verdict": null,
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11. *** THE DATA DOES NOT SUPPORT THIS PAGE, THOUGH IT DOES NOT CONTRADICT THE EXCEPTION ITSELF. *** First-party GSC cross-tab, Vietnam, 40 days: this page recorded ZERO impressions -- it is absent from the export entirely. The 'lien quan' query family is owned almost completely by vi/usecase/ten-lien-quan-dep/ (458 of 468 impressions, 22 clicks). The EXCEPTION remains correct on its own terms: it is a claim about parentage (no EN Arena of Valor page exists to translate), and that is still true. What is now in doubt is whether the page should exist at all -- it is a fold candidate into ten-lien-quan-dep. Verdict deliberately left null rather than flipped, per the rule that a backfill contradicting a live page's status is a discussion with the user, not a silent reversal. ADDITIONAL CONSTRAINT: a separate open content question names this exact URL as do-not-touch pending an in-game U+3164 check, so any fold must clear that hold first."
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/vi/font-chu-dep/",
+      "reason": "Vietnamese 'font chu dep' page whose job is diacritic-safe styling -- Vietnamese stacks tone marks on vowels, so most Unicode style blocks silently drop or mangle them, and the page's value is showing which styles survive 'co dau' text. That constraint does not exist in English, so an EN parent would not be a translation of the feature. Same shape as the ratified id/tulisan-cuping precedent (a transform defined by the target language's own orthography). Was headless -- zero hreflang alternates -- and now carries the standard ratified shape.",
+      "agreed": "2026-08-11",
+      "enDemandBasis": "Structural: the diacritic-preservation job is Vietnamese-specific by construction. Not instrument-checked; Semrush out of API units on 2026-08-11.",
+      "lastRechecked": "2026-08-11",
+      "nextRecheck": "2026-11-01",
+      "verdict": "exception-stands",
+      "recheckEvidence": "INSTRUMENT BACKFILL 2026-08-11 (this entry shipped 2026-08-11 with all instruments null; the ledger's own rule says such an entry is a bridge, not a pass, and is complete only once backfilled). First-party GSC query x landing-page cross-tab, Vietnam, 40 days: the page draws 20,828 impressions / 573 clicks -- the #2 Vietnamese page on the site after /vi/ itself. On its own head term 'font chu dep' it holds 10,052 imp / 307 clicks at pos 7.2. The structural claim (diacritic-safe styling is Vietnamese-specific) is now backed by real volume rather than asserted. FLAGGED, NOT ACTIONED: /vi/ outranks it on that same head term (28,253 imp / 1,204 clicks at pos 6.4), i.e. the hub takes ~2.8x the spoke. That is a partial hub-eats-spoke pattern, but both earn heavily and /vi/ is the site's single largest locale asset (234,906 imp), so no de-targeting is proposed here -- see the review register."
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/scritte-particolari/",
+      "reason": "ORPHAN HALF OF AN ALREADY-LEDGERED CLUSTER, recorded for visibility rather than as a fresh demand claim. It is the IT member of the 2-locale cluster anchored by fr/ecriture-speciale, which IS ledgered -- so one half of one cluster was listed and the other was not. Carries the SAME caveat as its French sibling: that entry states plainly it is 'not a ratified keep on demand evidence ... a fold candidate at the next re-check'. Nothing here upgrades that. Both halves also had x-default pointing at the FRENCH url (fr/ecriture-speciale), violating the invariant that x-default is always an EN URL; both corrected to the homepage. This cluster is the locale-to-locale parity blind spot CLAUDE.md flags as undecided since 2026-07-26 -- neither side is EN, so no tooling watches it.",
+      "agreed": "2026-08-11",
+      "enDemandBasis": "None established, deliberately. Its French sibling's own GSC pull found negligible volume either way, and no IT-side pull has ever been run. Listed as a fold candidate awaiting a decision, not as a demand-backed exception.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-15",
       "verdict": null
     }
   ]

@@ -497,26 +497,61 @@ Scripts are loaded in a strict order in every HTML page:
 - Defines `window.textStyles` — the global Unicode font registry
 - Each style maps A–Z, a–z, 0–9 to Unicode equivalents
 - Defines `CATEGORY_PAGES` and `SITE_PAGES` routing objects
-- Style object shape:
+- Style object shape (verified against the live registry 2026-08-11 — see the
+  correction note below):
   ```js
   {
-    upper: { A: '𝗔', B: '𝗕', ... },
-    lower: { a: '𝗮', b: '𝗯', ... },
-    nums:  { 0: '𝟬', 1: '𝟭', ... },
-    type: 'map',           // 'map' | 'zalgo' | 'upside-down' | 'transform'
+    // POSITIONAL STRING, not an object keyed by letter. Index 0 = A, 25 = Z.
+    upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+    lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+    nums:  '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+    type: 'map',           // see the five real values below
     category: 'bold',
-    familySlug: 'bold-fonts',
-    groupSlug: 'bold'
+    familySlug: 'bold-fonts',   // string OR array of strings
+    groupSlug: 'bold',
+    slug: 'bold',
+    platforms: [ … ]
   }
   ```
+  `upper`/`lower`/`nums` may **also** be a real JS **array**, and one style
+  requires it: `Ultra Regional Indicator`, whose "letters" are two codepoints
+  each (regional indicator + U+2060 word joiner) and would be torn apart by
+  the positional string reader. `mapToArray()` in `renderer.js` accepts either
+  form (`Array.isArray` → returned as-is; string → parsed positionally, with
+  special-case parsers for wrapped forms like `⦅❨A❩⦆` and `→A←`).
+
+  Non-`map` types carry different fields instead of `upper`/`lower`/`nums`:
+  `procedureId` (procedure), `decoratorId` (decorator), `transform`
+  (function), `redactChar`/`redactMode` (redact); plus optional `note` and
+  `accentSafe`.
+
+  **Correction (2026-08-11).** This block previously documented `upper` as an
+  object map (`{ A: '𝗔', … }`) and `type` as `'map' | 'zalgo' | 'upside-down'
+  | 'transform'`. Neither matched the code, and the drift was live long enough
+  to mislead: a pass reading this file wrote `style.upper['A']` against a
+  string and silently got `undefined` for all 26 letters, falling back to
+  plain ASCII with no error. Zero styles have ever used a type named `zalgo`,
+  `upside-down` or `transform` — `transform` is a *field*, not a type.
 
 #### `renderer.js`
-- Exports `window.UltraTextGenRender` with main method `renderAny(text, styleKey, options)`
-- Handles rendering types:
-  - **`map`**: Character-by-character Unicode substitution
-  - **`zalgo`**: Glitch text with stacked diacritics
-  - **`upside-down`**: Text reversal + character flipping with fallback modes
-  - **`transform`**: Custom transforms (backwards, smallCaps, mirror)
+- Exports `window.UltraTextGenRender` with its single method
+  `renderAny(text, style)` — **two** arguments, and the second is the resolved
+  **style object**, not a key and not followed by an options bag. Every call
+  site passes `styles[styleKey]` (see `gothic-tools.js`). *(Corrected
+  2026-08-11; previously documented as `renderAny(text, styleKey, options)`.)*
+- Dispatch is on `style.type`. `function` is checked **before** the switch
+  (`style.type === 'function' && style.transform`); everything else falls
+  through a `switch`, whose `default` is `renderMap`. The five values in live
+  use, with their counts as of 2026-08-11 (114 styles total):
+  - **`map`** (50) — positional Unicode substitution via `renderMap`
+  - **`procedure`** (30) — named algorithm by `procedureId` (this is where
+    zalgo, gal-moji, cuping and similar transforms actually live)
+  - **`decorator`** (15) — named decorator by `decoratorId`
+  - **`function`** (11) — `transform` fn; today this is the upside-down family
+  - **`redact`** (8) — `redactChar`/`redactMode`
+- `renderer.js` also has a `case 'pattern'` calling `renderPattern`, but
+  **no style currently uses it** — supported, unused. Don't assume it's dead
+  without checking; don't assume it's reachable either.
 
 #### `script.js`
 - Main IIFE wrapping all UI state and event logic
@@ -621,10 +656,40 @@ All pages follow this structure and must maintain:
 To add a new text style, edit `styles.js`:
 
 1. Add an entry to `window.textStyles` with the shape shown above
-2. Map all 26 uppercase letters (`A`–`Z`), 26 lowercase (`a`–`z`), and 10 digits (`0`–`9`)
+2. Supply **exactly** 26 uppercase, 26 lowercase and 10 digits, **in order** —
+   `upper`/`lower`/`nums` are read **positionally** (`upperArr[0]` is `A`), not
+   looked up by letter
 3. Set `type: 'map'` for standard character substitution
 4. Assign `category`, `familySlug`, and `groupSlug` that match existing category pages
-5. Characters that have no Unicode equivalent should be omitted (the renderer falls back to the original character)
+5. **A letter with no Unicode equivalent must still occupy its slot** — repeat
+   the plain character (`…HIJ` with a plain `I`) rather than leaving it out.
+   Omitting one shifts every later letter by a position, so a style missing `I`
+   silently renders `J` for `I`, `K` for `J`, and so on to `Z`. Only a
+   *trailing* omission is harmless, because `mapChar` falls back to the
+   original character when the index is absent (`upperArr[u] || ch`).
+6. Use an **array** instead of a string when a single "letter" is more than one
+   codepoint — that is why `Ultra Regional Indicator` is an array. A positional
+   string would split it mid-glyph.
+7. Check the lengths before shipping: `renderMap` validates 26/26/10, but only
+   warns behind `window.UTG_DEBUG`, so a bad map is **silent in production**.
+   Run the renderer's own check rather than counting characters yourself —
+   several styles store wrapped forms (`⦅❨A❩⦆`, `→A←`, `[A]`, `‹A›`, `‖A‖`,
+   `|A|`) that `mapToArray()` parses with dedicated regexes, so a naive
+   `Array.from(...).length` reports 8 well-formed styles as broken:
+   ```bash
+   node -e "
+   global.window={UTG_DEBUG:true};require('./styles.js');require('./renderer.js');
+   const bad=[],w=console.warn;
+   console.warn=(m,slug,lens)=>{if(String(m).includes('Bad map lengths'))bad.push([slug,JSON.stringify(lens)])};
+   for(const s of Object.values(window.textStyles)){if(s.type!=='map')continue;
+     window.UltraTextGenRender.renderAny('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',s);}
+   console.warn=w;bad.forEach(b=>console.log('BAD',b[0],b[1]));
+   console.log(bad.length?bad.length+' malformed':'all map styles well-formed');"
+   ```
+   Verified 2026-08-11: all 50 `map` styles pass. `mapToArray` is not exported,
+   which is exactly why this drives the check through `renderAny` instead of
+   reimplementing the parsing — a second copy of that logic would drift from
+   the first, the failure this whole section documents.
 
 ---
 
