@@ -2694,6 +2694,16 @@ for _l, _word in LETTER_WORD.items():
         f"Calligraphy {_L}", f"Blackletter & script {_L} to copy or print",
         P(m_letter_cursive, letter=_L), K_PRINT)
 
+# ES per-letter coloring spokes (2026-08-12). Same loop shape as the EN sets
+# above; the Spanish head-word differs from LETTER_WORD because the letter-word
+# association is language-specific (A de Arbol, not A is for Apple).
+LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato"}
+for _l, _word in LETTER_WORD_ES.items():
+    _L = _l.upper()
+    PAGES[f"es-imprimibles-abecedario-para-colorear-letra-{_l}"] = (
+        f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
 # Number pages exist for four of the alphabet sets. Registering only the A-Z
 # half left every 0-9 page on its hub's card (block-letters, and — via the
 # category page it borrowed from — bubble-letters).
