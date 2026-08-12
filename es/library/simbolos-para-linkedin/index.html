@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Símbolos para LinkedIn: Copia y Pega Flechas, Viñetas y Números</title>
+<meta name="description" content="Biblioteca de símbolos Unicode para LinkedIn. Haz clic en cualquier flecha, viñeta, número o indicador de estado para copiarlo al instante.">
+
+<link rel="canonical" href="https://ultratextgen.com/es/library/simbolos-para-linkedin/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/linkedin-symbol-library/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/simbolos-para-linkedin/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/linkedin-symbol-library/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-para-linkedin.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Símbolos para LinkedIn: Copia y Pega Flechas, Viñetas y Números">
+<meta name="twitter:description" content="Biblioteca de símbolos Unicode para LinkedIn. Haz clic en cualquier flecha, viñeta, número o indicador de estado para copiarlo al instante.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-para-linkedin.png">
+<meta property="og:title" content="Símbolos para LinkedIn: Copia y Pega Flechas, Viñetas y Números">
+<meta property="og:description" content="Biblioteca de símbolos Unicode para LinkedIn. Haz clic en cualquier flecha, viñeta, número o indicador de estado para copiarlo al instante.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/es/library/simbolos-para-linkedin/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Símbolos para LinkedIn: Copia y Pega Flechas, Viñetas y Números",
+  "description": "Biblioteca de símbolos Unicode para LinkedIn. Haz clic en cualquier flecha, viñeta, número o indicador de estado para copiarlo al instante.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/es/library/simbolos-para-linkedin/",
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://ultratextgen.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Biblioteca",
+      "item": "https://ultratextgen.com/es/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Biblioteca de Símbolos para LinkedIn",
+      "item": "https://ultratextgen.com/es/library/simbolos-para-linkedin/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Biblioteca de Símbolos para LinkedIn</h1>
+    <p class="hero-tagline">Símbolos Unicode profesionales seleccionados para publicaciones, titulares y comentarios de LinkedIn. Haz clic en cualquier símbolo para copiarlo al portapapeles.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>LinkedIn premia la claridad y la estructura visual. El símbolo correcto — una flecha para marcar avance, un número para ordenar un marco de trabajo, una viñeta limpia para una lista — convierte un párrafo denso en contenido profesional y fácil de leer de un vistazo, del que sí genera interacción. Todos los símbolos para LinkedIn de esta página están probados en la versión de escritorio y en la app móvil. Haz clic una vez para copiar y pega directo en tu publicación, comentario o titular de LinkedIn. Si buscas técnicas para dar formato a tus comentarios con Unicode, revisa la guía de estilo para comentarios de LinkedIn. Para dominar la parte estratégica de comentar, explora la guía de arquetipos de comentarios de LinkedIn. Y para construir una identidad visual consistente, mira Marca personal a través de la tipografía.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="arrows">
+  <h2>Flechas direccionales</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="→" aria-label="Copiar símbolo →">→</button>
+      <span class="flag-label">símbolo →</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇒" aria-label="Copiar símbolo ⇒">⇒</button>
+      <span class="flag-label">símbolo ⇒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➜" aria-label="Copiar símbolo ➜">➜</button>
+      <span class="flag-label">símbolo ➜</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="➝" aria-label="Copiar símbolo ➝">➝</button>
+      <span class="flag-label">símbolo ➝</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟶" aria-label="Copiar símbolo ⟶">⟶</button>
+      <span class="flag-label">símbolo ⟶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟹" aria-label="Copiar símbolo ⟹">⟹</button>
+      <span class="flag-label">símbolo ⟹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇢" aria-label="Copiar símbolo ⇢">⇢</button>
+      <span class="flag-label">símbolo ⇢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇨" aria-label="Copiar símbolo ⇨">⇨</button>
+      <span class="flag-label">símbolo ⇨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇾" aria-label="Copiar símbolo ⇾">⇾</button>
+      <span class="flag-label">símbolo ⇾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇰" aria-label="Copiar símbolo ⇰">⇰</button>
+      <span class="flag-label">símbolo ⇰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↓" aria-label="Copiar símbolo ↓">↓</button>
+      <span class="flag-label">símbolo ↓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇩" aria-label="Copiar símbolo ⇩">⇩</button>
+      <span class="flag-label">símbolo ⇩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬇" aria-label="Copiar símbolo ⬇">⬇</button>
+      <span class="flag-label">símbolo ⬇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↑" aria-label="Copiar símbolo ↑">↑</button>
+      <span class="flag-label">símbolo ↑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇧" aria-label="Copiar símbolo ⇧">⇧</button>
+      <span class="flag-label">símbolo ⇧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬆" aria-label="Copiar símbolo ⬆">⬆</button>
+      <span class="flag-label">símbolo ⬆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↗" aria-label="Copiar símbolo ↗">↗</button>
+      <span class="flag-label">símbolo ↗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↘" aria-label="Copiar símbolo ↘">↘</button>
+      <span class="flag-label">símbolo ↘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↖" aria-label="Copiar símbolo ↖">↖</button>
+      <span class="flag-label">símbolo ↖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↙" aria-label="Copiar símbolo ↙">↙</button>
+      <span class="flag-label">símbolo ↙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↩" aria-label="Copiar símbolo ↩">↩</button>
+      <span class="flag-label">símbolo ↩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↪" aria-label="Copiar símbolo ↪">↪</button>
+      <span class="flag-label">símbolo ↪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↺" aria-label="Copiar símbolo ↺">↺</button>
+      <span class="flag-label">símbolo ↺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↻" aria-label="Copiar símbolo ↻">↻</button>
+      <span class="flag-label">símbolo ↻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="←" aria-label="Copiar símbolo ←">←</button>
+      <span class="flag-label">símbolo ←</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇐" aria-label="Copiar símbolo ⇐">⇐</button>
+      <span class="flag-label">símbolo ⇐</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟵" aria-label="Copiar símbolo ⟵">⟵</button>
+      <span class="flag-label">símbolo ⟵</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⇦" aria-label="Copiar símbolo ⇦">⇦</button>
+      <span class="flag-label">símbolo ⇦</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="bullets">
+  <h2>Viñetas y marcadores de lista</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="•" aria-label="Copiar símbolo •">•</button>
+      <span class="flag-label">símbolo •</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◦" aria-label="Copiar símbolo ◦">◦</button>
+      <span class="flag-label">símbolo ◦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="●" aria-label="Copiar símbolo ●">●</button>
+      <span class="flag-label">símbolo ●</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="○" aria-label="Copiar símbolo ○">○</button>
+      <span class="flag-label">símbolo ○</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▪" aria-label="Copiar símbolo ▪">▪</button>
+      <span class="flag-label">símbolo ▪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▫" aria-label="Copiar símbolo ▫">▫</button>
+      <span class="flag-label">símbolo ▫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◾" aria-label="Copiar símbolo ◾">◾</button>
+      <span class="flag-label">símbolo ◾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◽" aria-label="Copiar símbolo ◽">◽</button>
+      <span class="flag-label">símbolo ◽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="■" aria-label="Copiar símbolo ■">■</button>
+      <span class="flag-label">símbolo ■</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="□" aria-label="Copiar símbolo □">□</button>
+      <span class="flag-label">símbolo □</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◆" aria-label="Copiar símbolo ◆">◆</button>
+      <span class="flag-label">símbolo ◆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◇" aria-label="Copiar símbolo ◇">◇</button>
+      <span class="flag-label">símbolo ◇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◈" aria-label="Copiar símbolo ◈">◈</button>
+      <span class="flag-label">símbolo ◈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="►" aria-label="Copiar símbolo ►">►</button>
+      <span class="flag-label">símbolo ►</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▸" aria-label="Copiar símbolo ▸">▸</button>
+      <span class="flag-label">símbolo ▸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▹" aria-label="Copiar símbolo ▹">▹</button>
+      <span class="flag-label">símbolo ▹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▻" aria-label="Copiar símbolo ▻">▻</button>
+      <span class="flag-label">símbolo ▻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▶" aria-label="Copiar símbolo ▶">▶</button>
+      <span class="flag-label">símbolo ▶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▌" aria-label="Copiar símbolo ▌">▌</button>
+      <span class="flag-label">símbolo ▌</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▍" aria-label="Copiar símbolo ▍">▍</button>
+      <span class="flag-label">símbolo ▍</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▏" aria-label="Copiar símbolo ▏">▏</button>
+      <span class="flag-label">símbolo ▏</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❘" aria-label="Copiar símbolo ❘">❘</button>
+      <span class="flag-label">símbolo ❘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❙" aria-label="Copiar símbolo ❙">❙</button>
+      <span class="flag-label">símbolo ❙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❚" aria-label="Copiar símbolo ❚">❚</button>
+      <span class="flag-label">símbolo ❚</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="–" aria-label="Copiar símbolo –">–</button>
+      <span class="flag-label">símbolo –</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="—" aria-label="Copiar símbolo —">—</button>
+      <span class="flag-label">símbolo —</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‣" aria-label="Copiar símbolo ‣">‣</button>
+      <span class="flag-label">símbolo ‣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁃" aria-label="Copiar símbolo ⁃">⁃</button>
+      <span class="flag-label">símbolo ⁃</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="checklist">
+  <h2>Marcas de verificación, cruces y validación</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✓" aria-label="Copiar símbolo ✓">✓</button>
+      <span class="flag-label">símbolo ✓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✔" aria-label="Copiar símbolo ✔">✔</button>
+      <span class="flag-label">símbolo ✔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑" aria-label="Copiar símbolo ☑">☑</button>
+      <span class="flag-label">símbolo ☑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🗸" aria-label="Copiar símbolo 🗸">🗸</button>
+      <span class="flag-label">símbolo 🗸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✕" aria-label="Copiar símbolo ✕">✕</button>
+      <span class="flag-label">símbolo ✕</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✖" aria-label="Copiar símbolo ✖">✖</button>
+      <span class="flag-label">símbolo ✖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✗" aria-label="Copiar símbolo ✗">✗</button>
+      <span class="flag-label">símbolo ✗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✘" aria-label="Copiar símbolo ✘">✘</button>
+      <span class="flag-label">símbolo ✘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☒" aria-label="Copiar símbolo ☒">☒</button>
+      <span class="flag-label">símbolo ☒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☐" aria-label="Copiar símbolo ☐">☐</button>
+      <span class="flag-label">símbolo ☐</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑" aria-label="Copiar símbolo ☑">☑</button>
+      <span class="flag-label">símbolo ☑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☒" aria-label="Copiar símbolo ☒">☒</button>
+      <span class="flag-label">símbolo ☒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚠" aria-label="Copiar símbolo ⚠">⚠</button>
+      <span class="flag-label">símbolo ⚠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❗" aria-label="Copiar símbolo ❗">❗</button>
+      <span class="flag-label">símbolo ❗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‼" aria-label="Copiar símbolo ‼">‼</button>
+      <span class="flag-label">símbolo ‼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁉" aria-label="Copiar símbolo ⁉">⁉</button>
+      <span class="flag-label">símbolo ⁉</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="numbers">
+  <h2>Números para enumerar</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="①" aria-label="Copiar símbolo ①">①</button>
+      <span class="flag-label">símbolo ①</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="②" aria-label="Copiar símbolo ②">②</button>
+      <span class="flag-label">símbolo ②</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="③" aria-label="Copiar símbolo ③">③</button>
+      <span class="flag-label">símbolo ③</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="④" aria-label="Copiar símbolo ④">④</button>
+      <span class="flag-label">símbolo ④</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑤" aria-label="Copiar símbolo ⑤">⑤</button>
+      <span class="flag-label">símbolo ⑤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑥" aria-label="Copiar símbolo ⑥">⑥</button>
+      <span class="flag-label">símbolo ⑥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑦" aria-label="Copiar símbolo ⑦">⑦</button>
+      <span class="flag-label">símbolo ⑦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑧" aria-label="Copiar símbolo ⑧">⑧</button>
+      <span class="flag-label">símbolo ⑧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑨" aria-label="Copiar símbolo ⑨">⑨</button>
+      <span class="flag-label">símbolo ⑨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑩" aria-label="Copiar símbolo ⑩">⑩</button>
+      <span class="flag-label">símbolo ⑩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑪" aria-label="Copiar símbolo ⑪">⑪</button>
+      <span class="flag-label">símbolo ⑪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑫" aria-label="Copiar símbolo ⑫">⑫</button>
+      <span class="flag-label">símbolo ⑫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑬" aria-label="Copiar símbolo ⑬">⑬</button>
+      <span class="flag-label">símbolo ⑬</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑭" aria-label="Copiar símbolo ⑭">⑭</button>
+      <span class="flag-label">símbolo ⑭</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑮" aria-label="Copiar símbolo ⑮">⑮</button>
+      <span class="flag-label">símbolo ⑮</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑯" aria-label="Copiar símbolo ⑯">⑯</button>
+      <span class="flag-label">símbolo ⑯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑰" aria-label="Copiar símbolo ⑰">⑰</button>
+      <span class="flag-label">símbolo ⑰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑱" aria-label="Copiar símbolo ⑱">⑱</button>
+      <span class="flag-label">símbolo ⑱</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑲" aria-label="Copiar símbolo ⑲">⑲</button>
+      <span class="flag-label">símbolo ⑲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑳" aria-label="Copiar símbolo ⑳">⑳</button>
+      <span class="flag-label">símbolo ⑳</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❶" aria-label="Copiar símbolo ❶">❶</button>
+      <span class="flag-label">símbolo ❶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❷" aria-label="Copiar símbolo ❷">❷</button>
+      <span class="flag-label">símbolo ❷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❸" aria-label="Copiar símbolo ❸">❸</button>
+      <span class="flag-label">símbolo ❸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❹" aria-label="Copiar símbolo ❹">❹</button>
+      <span class="flag-label">símbolo ❹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❺" aria-label="Copiar símbolo ❺">❺</button>
+      <span class="flag-label">símbolo ❺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❻" aria-label="Copiar símbolo ❻">❻</button>
+      <span class="flag-label">símbolo ❻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❼" aria-label="Copiar símbolo ❼">❼</button>
+      <span class="flag-label">símbolo ❼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❽" aria-label="Copiar símbolo ❽">❽</button>
+      <span class="flag-label">símbolo ❽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❾" aria-label="Copiar símbolo ❾">❾</button>
+      <span class="flag-label">símbolo ❾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❿" aria-label="Copiar símbolo ❿">❿</button>
+      <span class="flag-label">símbolo ❿</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑴" aria-label="Copiar símbolo ⑴">⑴</button>
+      <span class="flag-label">símbolo ⑴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑵" aria-label="Copiar símbolo ⑵">⑵</button>
+      <span class="flag-label">símbolo ⑵</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑶" aria-label="Copiar símbolo ⑶">⑶</button>
+      <span class="flag-label">símbolo ⑶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑷" aria-label="Copiar símbolo ⑷">⑷</button>
+      <span class="flag-label">símbolo ⑷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑸" aria-label="Copiar símbolo ⑸">⑸</button>
+      <span class="flag-label">símbolo ⑸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑹" aria-label="Copiar símbolo ⑹">⑹</button>
+      <span class="flag-label">símbolo ⑹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑺" aria-label="Copiar símbolo ⑺">⑺</button>
+      <span class="flag-label">símbolo ⑺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑻" aria-label="Copiar símbolo ⑻">⑻</button>
+      <span class="flag-label">símbolo ⑻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑼" aria-label="Copiar símbolo ⑼">⑼</button>
+      <span class="flag-label">símbolo ⑼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑽" aria-label="Copiar símbolo ⑽">⑽</button>
+      <span class="flag-label">símbolo ⑽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑾" aria-label="Copiar símbolo ⑾">⑾</button>
+      <span class="flag-label">símbolo ⑾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑿" aria-label="Copiar símbolo ⑿">⑿</button>
+      <span class="flag-label">símbolo ⑿</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒀" aria-label="Copiar símbolo ⒀">⒀</button>
+      <span class="flag-label">símbolo ⒀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒁" aria-label="Copiar símbolo ⒁">⒁</button>
+      <span class="flag-label">símbolo ⒁</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒂" aria-label="Copiar símbolo ⒂">⒂</button>
+      <span class="flag-label">símbolo ⒂</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒃" aria-label="Copiar símbolo ⒃">⒃</button>
+      <span class="flag-label">símbolo ⒃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒄" aria-label="Copiar símbolo ⒄">⒄</button>
+      <span class="flag-label">símbolo ⒄</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒅" aria-label="Copiar símbolo ⒅">⒅</button>
+      <span class="flag-label">símbolo ⒅</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒆" aria-label="Copiar símbolo ⒆">⒆</button>
+      <span class="flag-label">símbolo ⒆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒇" aria-label="Copiar símbolo ⒇">⒇</button>
+      <span class="flag-label">símbolo ⒇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒈" aria-label="Copiar símbolo ⒈">⒈</button>
+      <span class="flag-label">símbolo ⒈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒉" aria-label="Copiar símbolo ⒉">⒉</button>
+      <span class="flag-label">símbolo ⒉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒊" aria-label="Copiar símbolo ⒊">⒊</button>
+      <span class="flag-label">símbolo ⒊</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒋" aria-label="Copiar símbolo ⒋">⒋</button>
+      <span class="flag-label">símbolo ⒋</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒌" aria-label="Copiar símbolo ⒌">⒌</button>
+      <span class="flag-label">símbolo ⒌</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒍" aria-label="Copiar símbolo ⒍">⒍</button>
+      <span class="flag-label">símbolo ⒍</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒎" aria-label="Copiar símbolo ⒎">⒎</button>
+      <span class="flag-label">símbolo ⒎</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒏" aria-label="Copiar símbolo ⒏">⒏</button>
+      <span class="flag-label">símbolo ⒏</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒐" aria-label="Copiar símbolo ⒐">⒐</button>
+      <span class="flag-label">símbolo ⒐</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒑" aria-label="Copiar símbolo ⒑">⒑</button>
+      <span class="flag-label">símbolo ⒑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒒" aria-label="Copiar símbolo ⒒">⒒</button>
+      <span class="flag-label">símbolo ⒒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒓" aria-label="Copiar símbolo ⒓">⒓</button>
+      <span class="flag-label">símbolo ⒓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒔" aria-label="Copiar símbolo ⒔">⒔</button>
+      <span class="flag-label">símbolo ⒔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒕" aria-label="Copiar símbolo ⒕">⒕</button>
+      <span class="flag-label">símbolo ⒕</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒖" aria-label="Copiar símbolo ⒖">⒖</button>
+      <span class="flag-label">símbolo ⒖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒗" aria-label="Copiar símbolo ⒗">⒗</button>
+      <span class="flag-label">símbolo ⒗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒘" aria-label="Copiar símbolo ⒘">⒘</button>
+      <span class="flag-label">símbolo ⒘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒙" aria-label="Copiar símbolo ⒙">⒙</button>
+      <span class="flag-label">símbolo ⒙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒚" aria-label="Copiar símbolo ⒚">⒚</button>
+      <span class="flag-label">símbolo ⒚</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒛" aria-label="Copiar símbolo ⒛">⒛</button>
+      <span class="flag-label">símbolo ⒛</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="letters">
+  <h2>Marcadores con letras</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓐ" aria-label="Copiar símbolo Ⓐ">Ⓐ</button>
+      <span class="flag-label">símbolo Ⓐ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓑ" aria-label="Copiar símbolo Ⓑ">Ⓑ</button>
+      <span class="flag-label">símbolo Ⓑ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓒ" aria-label="Copiar símbolo Ⓒ">Ⓒ</button>
+      <span class="flag-label">símbolo Ⓒ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓓ" aria-label="Copiar símbolo Ⓓ">Ⓓ</button>
+      <span class="flag-label">símbolo Ⓓ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓔ" aria-label="Copiar símbolo Ⓔ">Ⓔ</button>
+      <span class="flag-label">símbolo Ⓔ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓕ" aria-label="Copiar símbolo Ⓕ">Ⓕ</button>
+      <span class="flag-label">símbolo Ⓕ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓖ" aria-label="Copiar símbolo Ⓖ">Ⓖ</button>
+      <span class="flag-label">símbolo Ⓖ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓗ" aria-label="Copiar símbolo Ⓗ">Ⓗ</button>
+      <span class="flag-label">símbolo Ⓗ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓘ" aria-label="Copiar símbolo Ⓘ">Ⓘ</button>
+      <span class="flag-label">símbolo Ⓘ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓙ" aria-label="Copiar símbolo Ⓙ">Ⓙ</button>
+      <span class="flag-label">símbolo Ⓙ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓚ" aria-label="Copiar símbolo Ⓚ">Ⓚ</button>
+      <span class="flag-label">símbolo Ⓚ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓛ" aria-label="Copiar símbolo Ⓛ">Ⓛ</button>
+      <span class="flag-label">símbolo Ⓛ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓜ" aria-label="Copiar símbolo Ⓜ">Ⓜ</button>
+      <span class="flag-label">símbolo Ⓜ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓝ" aria-label="Copiar símbolo Ⓝ">Ⓝ</button>
+      <span class="flag-label">símbolo Ⓝ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓞ" aria-label="Copiar símbolo Ⓞ">Ⓞ</button>
+      <span class="flag-label">símbolo Ⓞ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓟ" aria-label="Copiar símbolo Ⓟ">Ⓟ</button>
+      <span class="flag-label">símbolo Ⓟ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓠ" aria-label="Copiar símbolo Ⓠ">Ⓠ</button>
+      <span class="flag-label">símbolo Ⓠ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓡ" aria-label="Copiar símbolo Ⓡ">Ⓡ</button>
+      <span class="flag-label">símbolo Ⓡ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓢ" aria-label="Copiar símbolo Ⓢ">Ⓢ</button>
+      <span class="flag-label">símbolo Ⓢ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓣ" aria-label="Copiar símbolo Ⓣ">Ⓣ</button>
+      <span class="flag-label">símbolo Ⓣ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓤ" aria-label="Copiar símbolo Ⓤ">Ⓤ</button>
+      <span class="flag-label">símbolo Ⓤ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓥ" aria-label="Copiar símbolo Ⓥ">Ⓥ</button>
+      <span class="flag-label">símbolo Ⓥ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓦ" aria-label="Copiar símbolo Ⓦ">Ⓦ</button>
+      <span class="flag-label">símbolo Ⓦ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓧ" aria-label="Copiar símbolo Ⓧ">Ⓧ</button>
+      <span class="flag-label">símbolo Ⓧ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓨ" aria-label="Copiar símbolo Ⓨ">Ⓨ</button>
+      <span class="flag-label">símbolo Ⓨ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⓩ" aria-label="Copiar símbolo Ⓩ">Ⓩ</button>
+      <span class="flag-label">símbolo Ⓩ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓐ" aria-label="Copiar símbolo ⓐ">ⓐ</button>
+      <span class="flag-label">símbolo ⓐ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓑ" aria-label="Copiar símbolo ⓑ">ⓑ</button>
+      <span class="flag-label">símbolo ⓑ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓒ" aria-label="Copiar símbolo ⓒ">ⓒ</button>
+      <span class="flag-label">símbolo ⓒ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓓ" aria-label="Copiar símbolo ⓓ">ⓓ</button>
+      <span class="flag-label">símbolo ⓓ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓔ" aria-label="Copiar símbolo ⓔ">ⓔ</button>
+      <span class="flag-label">símbolo ⓔ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓕ" aria-label="Copiar símbolo ⓕ">ⓕ</button>
+      <span class="flag-label">símbolo ⓕ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓖ" aria-label="Copiar símbolo ⓖ">ⓖ</button>
+      <span class="flag-label">símbolo ⓖ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓗ" aria-label="Copiar símbolo ⓗ">ⓗ</button>
+      <span class="flag-label">símbolo ⓗ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓘ" aria-label="Copiar símbolo ⓘ">ⓘ</button>
+      <span class="flag-label">símbolo ⓘ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓙ" aria-label="Copiar símbolo ⓙ">ⓙ</button>
+      <span class="flag-label">símbolo ⓙ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓚ" aria-label="Copiar símbolo ⓚ">ⓚ</button>
+      <span class="flag-label">símbolo ⓚ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓛ" aria-label="Copiar símbolo ⓛ">ⓛ</button>
+      <span class="flag-label">símbolo ⓛ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓜ" aria-label="Copiar símbolo ⓜ">ⓜ</button>
+      <span class="flag-label">símbolo ⓜ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓝ" aria-label="Copiar símbolo ⓝ">ⓝ</button>
+      <span class="flag-label">símbolo ⓝ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓞ" aria-label="Copiar símbolo ⓞ">ⓞ</button>
+      <span class="flag-label">símbolo ⓞ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓟ" aria-label="Copiar símbolo ⓟ">ⓟ</button>
+      <span class="flag-label">símbolo ⓟ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓠ" aria-label="Copiar símbolo ⓠ">ⓠ</button>
+      <span class="flag-label">símbolo ⓠ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓡ" aria-label="Copiar símbolo ⓡ">ⓡ</button>
+      <span class="flag-label">símbolo ⓡ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓢ" aria-label="Copiar símbolo ⓢ">ⓢ</button>
+      <span class="flag-label">símbolo ⓢ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓣ" aria-label="Copiar símbolo ⓣ">ⓣ</button>
+      <span class="flag-label">símbolo ⓣ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓤ" aria-label="Copiar símbolo ⓤ">ⓤ</button>
+      <span class="flag-label">símbolo ⓤ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓥ" aria-label="Copiar símbolo ⓥ">ⓥ</button>
+      <span class="flag-label">símbolo ⓥ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓦ" aria-label="Copiar símbolo ⓦ">ⓦ</button>
+      <span class="flag-label">símbolo ⓦ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓧ" aria-label="Copiar símbolo ⓧ">ⓧ</button>
+      <span class="flag-label">símbolo ⓧ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓨ" aria-label="Copiar símbolo ⓨ">ⓨ</button>
+      <span class="flag-label">símbolo ⓨ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⓩ" aria-label="Copiar símbolo ⓩ">ⓩ</button>
+      <span class="flag-label">símbolo ⓩ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅐" aria-label="Copiar símbolo 🅐">🅐</button>
+      <span class="flag-label">símbolo 🅐</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅑" aria-label="Copiar símbolo 🅑">🅑</button>
+      <span class="flag-label">símbolo 🅑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅒" aria-label="Copiar símbolo 🅒">🅒</button>
+      <span class="flag-label">símbolo 🅒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅓" aria-label="Copiar símbolo 🅓">🅓</button>
+      <span class="flag-label">símbolo 🅓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅔" aria-label="Copiar símbolo 🅔">🅔</button>
+      <span class="flag-label">símbolo 🅔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅕" aria-label="Copiar símbolo 🅕">🅕</button>
+      <span class="flag-label">símbolo 🅕</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅖" aria-label="Copiar símbolo 🅖">🅖</button>
+      <span class="flag-label">símbolo 🅖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅗" aria-label="Copiar símbolo 🅗">🅗</button>
+      <span class="flag-label">símbolo 🅗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅘" aria-label="Copiar símbolo 🅘">🅘</button>
+      <span class="flag-label">símbolo 🅘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅙" aria-label="Copiar símbolo 🅙">🅙</button>
+      <span class="flag-label">símbolo 🅙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅚" aria-label="Copiar símbolo 🅚">🅚</button>
+      <span class="flag-label">símbolo 🅚</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅛" aria-label="Copiar símbolo 🅛">🅛</button>
+      <span class="flag-label">símbolo 🅛</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅜" aria-label="Copiar símbolo 🅜">🅜</button>
+      <span class="flag-label">símbolo 🅜</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅝" aria-label="Copiar símbolo 🅝">🅝</button>
+      <span class="flag-label">símbolo 🅝</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅞" aria-label="Copiar símbolo 🅞">🅞</button>
+      <span class="flag-label">símbolo 🅞</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅟" aria-label="Copiar símbolo 🅟">🅟</button>
+      <span class="flag-label">símbolo 🅟</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅠" aria-label="Copiar símbolo 🅠">🅠</button>
+      <span class="flag-label">símbolo 🅠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅡" aria-label="Copiar símbolo 🅡">🅡</button>
+      <span class="flag-label">símbolo 🅡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅢" aria-label="Copiar símbolo 🅢">🅢</button>
+      <span class="flag-label">símbolo 🅢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅣" aria-label="Copiar símbolo 🅣">🅣</button>
+      <span class="flag-label">símbolo 🅣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅤" aria-label="Copiar símbolo 🅤">🅤</button>
+      <span class="flag-label">símbolo 🅤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅥" aria-label="Copiar símbolo 🅥">🅥</button>
+      <span class="flag-label">símbolo 🅥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅦" aria-label="Copiar símbolo 🅦">🅦</button>
+      <span class="flag-label">símbolo 🅦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅧" aria-label="Copiar símbolo 🅧">🅧</button>
+      <span class="flag-label">símbolo 🅧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅨" aria-label="Copiar símbolo 🅨">🅨</button>
+      <span class="flag-label">símbolo 🅨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅩" aria-label="Copiar símbolo 🅩">🅩</button>
+      <span class="flag-label">símbolo 🅩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄰" aria-label="Copiar símbolo 🄰">🄰</button>
+      <span class="flag-label">símbolo 🄰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄱" aria-label="Copiar símbolo 🄱">🄱</button>
+      <span class="flag-label">símbolo 🄱</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄲" aria-label="Copiar símbolo 🄲">🄲</button>
+      <span class="flag-label">símbolo 🄲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄳" aria-label="Copiar símbolo 🄳">🄳</button>
+      <span class="flag-label">símbolo 🄳</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄴" aria-label="Copiar símbolo 🄴">🄴</button>
+      <span class="flag-label">símbolo 🄴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄵" aria-label="Copiar símbolo 🄵">🄵</button>
+      <span class="flag-label">símbolo 🄵</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄶" aria-label="Copiar símbolo 🄶">🄶</button>
+      <span class="flag-label">símbolo 🄶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄷" aria-label="Copiar símbolo 🄷">🄷</button>
+      <span class="flag-label">símbolo 🄷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄸" aria-label="Copiar símbolo 🄸">🄸</button>
+      <span class="flag-label">símbolo 🄸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄹" aria-label="Copiar símbolo 🄹">🄹</button>
+      <span class="flag-label">símbolo 🄹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄺" aria-label="Copiar símbolo 🄺">🄺</button>
+      <span class="flag-label">símbolo 🄺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄻" aria-label="Copiar símbolo 🄻">🄻</button>
+      <span class="flag-label">símbolo 🄻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄼" aria-label="Copiar símbolo 🄼">🄼</button>
+      <span class="flag-label">símbolo 🄼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄽" aria-label="Copiar símbolo 🄽">🄽</button>
+      <span class="flag-label">símbolo 🄽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄾" aria-label="Copiar símbolo 🄾">🄾</button>
+      <span class="flag-label">símbolo 🄾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🄿" aria-label="Copiar símbolo 🄿">🄿</button>
+      <span class="flag-label">símbolo 🄿</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅀" aria-label="Copiar símbolo 🅀">🅀</button>
+      <span class="flag-label">símbolo 🅀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅁" aria-label="Copiar símbolo 🅁">🅁</button>
+      <span class="flag-label">símbolo 🅁</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅂" aria-label="Copiar símbolo 🅂">🅂</button>
+      <span class="flag-label">símbolo 🅂</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅃" aria-label="Copiar símbolo 🅃">🅃</button>
+      <span class="flag-label">símbolo 🅃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅄" aria-label="Copiar símbolo 🅄">🅄</button>
+      <span class="flag-label">símbolo 🅄</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅅" aria-label="Copiar símbolo 🅅">🅅</button>
+      <span class="flag-label">símbolo 🅅</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅆" aria-label="Copiar símbolo 🅆">🅆</button>
+      <span class="flag-label">símbolo 🅆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅇" aria-label="Copiar símbolo 🅇">🅇</button>
+      <span class="flag-label">símbolo 🅇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅈" aria-label="Copiar símbolo 🅈">🅈</button>
+      <span class="flag-label">símbolo 🅈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🅉" aria-label="Copiar símbolo 🅉">🅉</button>
+      <span class="flag-label">símbolo 🅉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒜" aria-label="Copiar símbolo ⒜">⒜</button>
+      <span class="flag-label">símbolo ⒜</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒝" aria-label="Copiar símbolo ⒝">⒝</button>
+      <span class="flag-label">símbolo ⒝</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒞" aria-label="Copiar símbolo ⒞">⒞</button>
+      <span class="flag-label">símbolo ⒞</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒟" aria-label="Copiar símbolo ⒟">⒟</button>
+      <span class="flag-label">símbolo ⒟</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒠" aria-label="Copiar símbolo ⒠">⒠</button>
+      <span class="flag-label">símbolo ⒠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒡" aria-label="Copiar símbolo ⒡">⒡</button>
+      <span class="flag-label">símbolo ⒡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒢" aria-label="Copiar símbolo ⒢">⒢</button>
+      <span class="flag-label">símbolo ⒢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒣" aria-label="Copiar símbolo ⒣">⒣</button>
+      <span class="flag-label">símbolo ⒣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒤" aria-label="Copiar símbolo ⒤">⒤</button>
+      <span class="flag-label">símbolo ⒤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒥" aria-label="Copiar símbolo ⒥">⒥</button>
+      <span class="flag-label">símbolo ⒥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒦" aria-label="Copiar símbolo ⒦">⒦</button>
+      <span class="flag-label">símbolo ⒦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒧" aria-label="Copiar símbolo ⒧">⒧</button>
+      <span class="flag-label">símbolo ⒧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒨" aria-label="Copiar símbolo ⒨">⒨</button>
+      <span class="flag-label">símbolo ⒨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒩" aria-label="Copiar símbolo ⒩">⒩</button>
+      <span class="flag-label">símbolo ⒩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒪" aria-label="Copiar símbolo ⒪">⒪</button>
+      <span class="flag-label">símbolo ⒪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒫" aria-label="Copiar símbolo ⒫">⒫</button>
+      <span class="flag-label">símbolo ⒫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒬" aria-label="Copiar símbolo ⒬">⒬</button>
+      <span class="flag-label">símbolo ⒬</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒭" aria-label="Copiar símbolo ⒭">⒭</button>
+      <span class="flag-label">símbolo ⒭</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒮" aria-label="Copiar símbolo ⒮">⒮</button>
+      <span class="flag-label">símbolo ⒮</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒯" aria-label="Copiar símbolo ⒯">⒯</button>
+      <span class="flag-label">símbolo ⒯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒰" aria-label="Copiar símbolo ⒰">⒰</button>
+      <span class="flag-label">símbolo ⒰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒱" aria-label="Copiar símbolo ⒱">⒱</button>
+      <span class="flag-label">símbolo ⒱</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒲" aria-label="Copiar símbolo ⒲">⒲</button>
+      <span class="flag-label">símbolo ⒲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒳" aria-label="Copiar símbolo ⒳">⒳</button>
+      <span class="flag-label">símbolo ⒳</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒴" aria-label="Copiar símbolo ⒴">⒴</button>
+      <span class="flag-label">símbolo ⒴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⒵" aria-label="Copiar símbolo ⒵">⒵</button>
+      <span class="flag-label">símbolo ⒵</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="roman-numerals">
+  <h2>Números romanos</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅰ" aria-label="Copiar símbolo Ⅰ">Ⅰ</button>
+      <span class="flag-label">símbolo Ⅰ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅱ" aria-label="Copiar símbolo Ⅱ">Ⅱ</button>
+      <span class="flag-label">símbolo Ⅱ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅲ" aria-label="Copiar símbolo Ⅲ">Ⅲ</button>
+      <span class="flag-label">símbolo Ⅲ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅳ" aria-label="Copiar símbolo Ⅳ">Ⅳ</button>
+      <span class="flag-label">símbolo Ⅳ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅴ" aria-label="Copiar símbolo Ⅴ">Ⅴ</button>
+      <span class="flag-label">símbolo Ⅴ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅵ" aria-label="Copiar símbolo Ⅵ">Ⅵ</button>
+      <span class="flag-label">símbolo Ⅵ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅶ" aria-label="Copiar símbolo Ⅶ">Ⅶ</button>
+      <span class="flag-label">símbolo Ⅶ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅷ" aria-label="Copiar símbolo Ⅷ">Ⅷ</button>
+      <span class="flag-label">símbolo Ⅷ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅸ" aria-label="Copiar símbolo Ⅸ">Ⅸ</button>
+      <span class="flag-label">símbolo Ⅸ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅹ" aria-label="Copiar símbolo Ⅹ">Ⅹ</button>
+      <span class="flag-label">símbolo Ⅹ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅺ" aria-label="Copiar símbolo Ⅺ">Ⅺ</button>
+      <span class="flag-label">símbolo Ⅺ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="Ⅻ" aria-label="Copiar símbolo Ⅻ">Ⅻ</button>
+      <span class="flag-label">símbolo Ⅻ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅰ" aria-label="Copiar símbolo ⅰ">ⅰ</button>
+      <span class="flag-label">símbolo ⅰ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅱ" aria-label="Copiar símbolo ⅱ">ⅱ</button>
+      <span class="flag-label">símbolo ⅱ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅲ" aria-label="Copiar símbolo ⅲ">ⅲ</button>
+      <span class="flag-label">símbolo ⅲ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅳ" aria-label="Copiar símbolo ⅳ">ⅳ</button>
+      <span class="flag-label">símbolo ⅳ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅴ" aria-label="Copiar símbolo ⅴ">ⅴ</button>
+      <span class="flag-label">símbolo ⅴ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅵ" aria-label="Copiar símbolo ⅵ">ⅵ</button>
+      <span class="flag-label">símbolo ⅵ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅶ" aria-label="Copiar símbolo ⅶ">ⅶ</button>
+      <span class="flag-label">símbolo ⅶ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅷ" aria-label="Copiar símbolo ⅷ">ⅷ</button>
+      <span class="flag-label">símbolo ⅷ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅸ" aria-label="Copiar símbolo ⅸ">ⅸ</button>
+      <span class="flag-label">símbolo ⅸ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅹ" aria-label="Copiar símbolo ⅹ">ⅹ</button>
+      <span class="flag-label">símbolo ⅹ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅺ" aria-label="Copiar símbolo ⅺ">ⅺ</button>
+      <span class="flag-label">símbolo ⅺ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ⅻ" aria-label="Copiar símbolo ⅻ">ⅻ</button>
+      <span class="flag-label">símbolo ⅻ</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="status">
+  <h2>Estado, prioridad y calificación</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▲" aria-label="Copiar símbolo ▲">▲</button>
+      <span class="flag-label">símbolo ▲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="△" aria-label="Copiar símbolo △">△</button>
+      <span class="flag-label">símbolo △</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▼" aria-label="Copiar símbolo ▼">▼</button>
+      <span class="flag-label">símbolo ▼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▽" aria-label="Copiar símbolo ▽">▽</button>
+      <span class="flag-label">símbolo ▽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="●" aria-label="Copiar símbolo ●">●</button>
+      <span class="flag-label">símbolo ●</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="○" aria-label="Copiar símbolo ○">○</button>
+      <span class="flag-label">símbolo ○</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◉" aria-label="Copiar símbolo ◉">◉</button>
+      <span class="flag-label">símbolo ◉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◎" aria-label="Copiar símbolo ◎">◎</button>
+      <span class="flag-label">símbolo ◎</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬤" aria-label="Copiar símbolo ⬤">⬤</button>
+      <span class="flag-label">símbolo ⬤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◯" aria-label="Copiar símbolo ◯">◯</button>
+      <span class="flag-label">símbolo ◯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="■" aria-label="Copiar símbolo ■">■</button>
+      <span class="flag-label">símbolo ■</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="□" aria-label="Copiar símbolo □">□</button>
+      <span class="flag-label">símbolo □</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▣" aria-label="Copiar símbolo ▣">▣</button>
+      <span class="flag-label">símbolo ▣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▤" aria-label="Copiar símbolo ▤">▤</button>
+      <span class="flag-label">símbolo ▤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▥" aria-label="Copiar símbolo ▥">▥</button>
+      <span class="flag-label">símbolo ▥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▦" aria-label="Copiar símbolo ▦">▦</button>
+      <span class="flag-label">símbolo ▦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▧" aria-label="Copiar símbolo ▧">▧</button>
+      <span class="flag-label">símbolo ▧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▨" aria-label="Copiar símbolo ▨">▨</button>
+      <span class="flag-label">símbolo ▨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▩" aria-label="Copiar símbolo ▩">▩</button>
+      <span class="flag-label">símbolo ▩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copiar símbolo ★">★</button>
+      <span class="flag-label">símbolo ★</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☆" aria-label="Copiar símbolo ☆">☆</button>
+      <span class="flag-label">símbolo ☆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✦" aria-label="Copiar símbolo ✦">✦</button>
+      <span class="flag-label">símbolo ✦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Copiar símbolo ✧">✧</button>
+      <span class="flag-label">símbolo ✧</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="dividers">
+  <h2>Divisores, separadores y marcos</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="|" aria-label="Copiar símbolo |">|</button>
+      <span class="flag-label">símbolo |</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‖" aria-label="Copiar símbolo ‖">‖</button>
+      <span class="flag-label">símbolo ‖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="¦" aria-label="Copiar símbolo ¦">¦</button>
+      <span class="flag-label">símbolo ¦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="┃" aria-label="Copiar símbolo ┃">┃</button>
+      <span class="flag-label">símbolo ┃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="─" aria-label="Copiar símbolo ─">─</button>
+      <span class="flag-label">símbolo ─</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="━" aria-label="Copiar símbolo ━">━</button>
+      <span class="flag-label">símbolo ━</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="═" aria-label="Copiar símbolo ═">═</button>
+      <span class="flag-label">símbolo ═</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="·" aria-label="Copiar símbolo ·">·</button>
+      <span class="flag-label">símbolo ·</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⋅" aria-label="Copiar símbolo ⋅">⋅</button>
+      <span class="flag-label">símbolo ⋅</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="•" aria-label="Copiar símbolo •">•</button>
+      <span class="flag-label">símbolo •</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‧" aria-label="Copiar símbolo ‧">‧</button>
+      <span class="flag-label">símbolo ‧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▬" aria-label="Copiar símbolo ▬">▬</button>
+      <span class="flag-label">símbolo ▬</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▭" aria-label="Copiar símbolo ▭">▭</button>
+      <span class="flag-label">símbolo ▭</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▮" aria-label="Copiar símbolo ▮">▮</button>
+      <span class="flag-label">símbolo ▮</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▯" aria-label="Copiar símbolo ▯">▯</button>
+      <span class="flag-label">símbolo ▯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="█" aria-label="Copiar símbolo █">█</button>
+      <span class="flag-label">símbolo █</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▓" aria-label="Copiar símbolo ▓">▓</button>
+      <span class="flag-label">símbolo ▓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▒" aria-label="Copiar símbolo ▒">▒</button>
+      <span class="flag-label">símbolo ▒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="░" aria-label="Copiar símbolo ░">░</button>
+      <span class="flag-label">símbolo ░</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟡" aria-label="Copiar símbolo ⟡">⟡</button>
+      <span class="flag-label">símbolo ⟡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❖" aria-label="Copiar símbolo ❖">❖</button>
+      <span class="flag-label">símbolo ❖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✦" aria-label="Copiar símbolo ✦">✦</button>
+      <span class="flag-label">símbolo ✦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◇" aria-label="Copiar símbolo ◇">◇</button>
+      <span class="flag-label">símbolo ◇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◆" aria-label="Copiar símbolo ◆">◆</button>
+      <span class="flag-label">símbolo ◆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="■" aria-label="Copiar símbolo ■">■</button>
+      <span class="flag-label">símbolo ■</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="□" aria-label="Copiar símbolo □">□</button>
+      <span class="flag-label">símbolo □</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="brackets">
+  <h2>Corchetes, comillas y estructura</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="【" aria-label="Copiar símbolo 【">【</button>
+      <span class="flag-label">símbolo 【</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="】" aria-label="Copiar símbolo 】">】</button>
+      <span class="flag-label">símbolo 】</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="〔" aria-label="Copiar símbolo 〔">〔</button>
+      <span class="flag-label">símbolo 〔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="〕" aria-label="Copiar símbolo 〕">〕</button>
+      <span class="flag-label">símbolo 〕</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="〈" aria-label="Copiar símbolo 〈">〈</button>
+      <span class="flag-label">símbolo 〈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="〉" aria-label="Copiar símbolo 〉">〉</button>
+      <span class="flag-label">símbolo 〉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="《" aria-label="Copiar símbolo 《">《</button>
+      <span class="flag-label">símbolo 《</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="》" aria-label="Copiar símbolo 》">》</button>
+      <span class="flag-label">símbolo 》</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="「" aria-label="Copiar símbolo 「">「</button>
+      <span class="flag-label">símbolo 「</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="」" aria-label="Copiar símbolo 」">」</button>
+      <span class="flag-label">símbolo 」</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="『" aria-label="Copiar símbolo 『">『</button>
+      <span class="flag-label">símbolo 『</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="』" aria-label="Copiar símbolo 』">』</button>
+      <span class="flag-label">símbolo 』</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="“" aria-label="Copiar símbolo “">“</button>
+      <span class="flag-label">símbolo “</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="”" aria-label="Copiar símbolo ”">”</button>
+      <span class="flag-label">símbolo ”</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‘" aria-label="Copiar símbolo ‘">‘</button>
+      <span class="flag-label">símbolo ‘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="’" aria-label="Copiar símbolo ’">’</button>
+      <span class="flag-label">símbolo ’</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="«" aria-label="Copiar símbolo «">«</button>
+      <span class="flag-label">símbolo «</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="»" aria-label="Copiar símbolo »">»</button>
+      <span class="flag-label">símbolo »</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‹" aria-label="Copiar símbolo ‹">‹</button>
+      <span class="flag-label">símbolo ‹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="›" aria-label="Copiar símbolo ›">›</button>
+      <span class="flag-label">símbolo ›</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="※" aria-label="Copiar símbolo ※">※</button>
+      <span class="flag-label">símbolo ※</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‡" aria-label="Copiar símbolo ‡">‡</button>
+      <span class="flag-label">símbolo ‡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Copiar símbolo †">†</button>
+      <span class="flag-label">símbolo †</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‣" aria-label="Copiar símbolo ‣">‣</button>
+      <span class="flag-label">símbolo ‣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁂" aria-label="Copiar símbolo ⁂">⁂</button>
+      <span class="flag-label">símbolo ⁂</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁑" aria-label="Copiar símbolo ⁑">⁑</button>
+      <span class="flag-label">símbolo ⁑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⁕" aria-label="Copiar símbolo ⁕">⁕</button>
+      <span class="flag-label">símbolo ⁕</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="math">
+  <h2>Matemáticas, lógica y comparación</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="±" aria-label="Copiar símbolo ±">±</button>
+      <span class="flag-label">símbolo ±</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="×" aria-label="Copiar símbolo ×">×</button>
+      <span class="flag-label">símbolo ×</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="÷" aria-label="Copiar símbolo ÷">÷</button>
+      <span class="flag-label">símbolo ÷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≠" aria-label="Copiar símbolo ≠">≠</button>
+      <span class="flag-label">símbolo ≠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≤" aria-label="Copiar símbolo ≤">≤</button>
+      <span class="flag-label">símbolo ≤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≥" aria-label="Copiar símbolo ≥">≥</button>
+      <span class="flag-label">símbolo ≥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="≈" aria-label="Copiar símbolo ≈">≈</button>
+      <span class="flag-label">símbolo ≈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="~" aria-label="Copiar símbolo ~">~</button>
+      <span class="flag-label">símbolo ~</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∞" aria-label="Copiar símbolo ∞">∞</button>
+      <span class="flag-label">símbolo ∞</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∑" aria-label="Copiar símbolo ∑">∑</button>
+      <span class="flag-label">símbolo ∑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∆" aria-label="Copiar símbolo ∆">∆</button>
+      <span class="flag-label">símbolo ∆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="√" aria-label="Copiar símbolo √">√</button>
+      <span class="flag-label">símbolo √</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∴" aria-label="Copiar símbolo ∴">∴</button>
+      <span class="flag-label">símbolo ∴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∵" aria-label="Copiar símbolo ∵">∵</button>
+      <span class="flag-label">símbolo ∵</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∈" aria-label="Copiar símbolo ∈">∈</button>
+      <span class="flag-label">símbolo ∈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∉" aria-label="Copiar símbolo ∉">∉</button>
+      <span class="flag-label">símbolo ∉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∩" aria-label="Copiar símbolo ∩">∩</button>
+      <span class="flag-label">símbolo ∩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∪" aria-label="Copiar símbolo ∪">∪</button>
+      <span class="flag-label">símbolo ∪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⊂" aria-label="Copiar símbolo ⊂">⊂</button>
+      <span class="flag-label">símbolo ⊂</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⊃" aria-label="Copiar símbolo ⊃">⊃</button>
+      <span class="flag-label">símbolo ⊃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∀" aria-label="Copiar símbolo ∀">∀</button>
+      <span class="flag-label">símbolo ∀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∃" aria-label="Copiar símbolo ∃">∃</button>
+      <span class="flag-label">símbolo ∃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∂" aria-label="Copiar símbolo ∂">∂</button>
+      <span class="flag-label">símbolo ∂</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∫" aria-label="Copiar símbolo ∫">∫</button>
+      <span class="flag-label">símbolo ∫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="π" aria-label="Copiar símbolo π">π</button>
+      <span class="flag-label">símbolo π</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="stars">
+  <h2>Estrellas, destellos y realces</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copiar símbolo ★">★</button>
+      <span class="flag-label">símbolo ★</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☆" aria-label="Copiar símbolo ☆">☆</button>
+      <span class="flag-label">símbolo ☆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✦" aria-label="Copiar símbolo ✦">✦</button>
+      <span class="flag-label">símbolo ✦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Copiar símbolo ✧">✧</button>
+      <span class="flag-label">símbolo ✧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✪" aria-label="Copiar símbolo ✪">✪</button>
+      <span class="flag-label">símbolo ✪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✰" aria-label="Copiar símbolo ✰">✰</button>
+      <span class="flag-label">símbolo ✰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✮" aria-label="Copiar símbolo ✮">✮</button>
+      <span class="flag-label">símbolo ✮</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✯" aria-label="Copiar símbolo ✯">✯</button>
+      <span class="flag-label">símbolo ✯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✶" aria-label="Copiar símbolo ✶">✶</button>
+      <span class="flag-label">símbolo ✶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✷" aria-label="Copiar símbolo ✷">✷</button>
+      <span class="flag-label">símbolo ✷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✸" aria-label="Copiar símbolo ✸">✸</button>
+      <span class="flag-label">símbolo ✸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✹" aria-label="Copiar símbolo ✹">✹</button>
+      <span class="flag-label">símbolo ✹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✺" aria-label="Copiar símbolo ✺">✺</button>
+      <span class="flag-label">símbolo ✺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✻" aria-label="Copiar símbolo ✻">✻</button>
+      <span class="flag-label">símbolo ✻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✼" aria-label="Copiar símbolo ✼">✼</button>
+      <span class="flag-label">símbolo ✼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✽" aria-label="Copiar símbolo ✽">✽</button>
+      <span class="flag-label">símbolo ✽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❋" aria-label="Copiar símbolo ❋">❋</button>
+      <span class="flag-label">símbolo ❋</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❊" aria-label="Copiar símbolo ❊">❊</button>
+      <span class="flag-label">símbolo ❊</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❈" aria-label="Copiar símbolo ❈">❈</button>
+      <span class="flag-label">símbolo ❈</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="geometric">
+  <h2>Formas geométricas</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="■" aria-label="Copiar símbolo ■">■</button>
+      <span class="flag-label">símbolo ■</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="□" aria-label="Copiar símbolo □">□</button>
+      <span class="flag-label">símbolo □</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▪" aria-label="Copiar símbolo ▪">▪</button>
+      <span class="flag-label">símbolo ▪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▫" aria-label="Copiar símbolo ▫">▫</button>
+      <span class="flag-label">símbolo ▫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◾" aria-label="Copiar símbolo ◾">◾</button>
+      <span class="flag-label">símbolo ◾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◽" aria-label="Copiar símbolo ◽">◽</button>
+      <span class="flag-label">símbolo ◽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▢" aria-label="Copiar símbolo ▢">▢</button>
+      <span class="flag-label">símbolo ▢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▲" aria-label="Copiar símbolo ▲">▲</button>
+      <span class="flag-label">símbolo ▲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="△" aria-label="Copiar símbolo △">△</button>
+      <span class="flag-label">símbolo △</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▼" aria-label="Copiar símbolo ▼">▼</button>
+      <span class="flag-label">símbolo ▼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▽" aria-label="Copiar símbolo ▽">▽</button>
+      <span class="flag-label">símbolo ▽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◁" aria-label="Copiar símbolo ◁">◁</button>
+      <span class="flag-label">símbolo ◁</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▷" aria-label="Copiar símbolo ▷">▷</button>
+      <span class="flag-label">símbolo ▷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◀" aria-label="Copiar símbolo ◀">◀</button>
+      <span class="flag-label">símbolo ◀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▶" aria-label="Copiar símbolo ▶">▶</button>
+      <span class="flag-label">símbolo ▶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="●" aria-label="Copiar símbolo ●">●</button>
+      <span class="flag-label">símbolo ●</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="○" aria-label="Copiar símbolo ○">○</button>
+      <span class="flag-label">símbolo ○</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◐" aria-label="Copiar símbolo ◐">◐</button>
+      <span class="flag-label">símbolo ◐</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◑" aria-label="Copiar símbolo ◑">◑</button>
+      <span class="flag-label">símbolo ◑</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◒" aria-label="Copiar símbolo ◒">◒</button>
+      <span class="flag-label">símbolo ◒</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◓" aria-label="Copiar símbolo ◓">◓</button>
+      <span class="flag-label">símbolo ◓</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◔" aria-label="Copiar símbolo ◔">◔</button>
+      <span class="flag-label">símbolo ◔</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◕" aria-label="Copiar símbolo ◕">◕</button>
+      <span class="flag-label">símbolo ◕</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◆" aria-label="Copiar símbolo ◆">◆</button>
+      <span class="flag-label">símbolo ◆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◇" aria-label="Copiar símbolo ◇">◇</button>
+      <span class="flag-label">símbolo ◇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◈" aria-label="Copiar símbolo ◈">◈</button>
+      <span class="flag-label">símbolo ◈</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♦" aria-label="Copiar símbolo ♦">♦</button>
+      <span class="flag-label">símbolo ♦</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="currency">
+  <h2>Monedas y negocios</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="$" aria-label="Copiar símbolo $">$</button>
+      <span class="flag-label">símbolo $</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="€" aria-label="Copiar símbolo €">€</button>
+      <span class="flag-label">símbolo €</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="£" aria-label="Copiar símbolo £">£</button>
+      <span class="flag-label">símbolo £</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="¥" aria-label="Copiar símbolo ¥">¥</button>
+      <span class="flag-label">símbolo ¥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₹" aria-label="Copiar símbolo ₹">₹</button>
+      <span class="flag-label">símbolo ₹</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₩" aria-label="Copiar símbolo ₩">₩</button>
+      <span class="flag-label">símbolo ₩</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₽" aria-label="Copiar símbolo ₽">₽</button>
+      <span class="flag-label">símbolo ₽</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₿" aria-label="Copiar símbolo ₿">₿</button>
+      <span class="flag-label">símbolo ₿</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="¢" aria-label="Copiar símbolo ¢">¢</button>
+      <span class="flag-label">símbolo ¢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₱" aria-label="Copiar símbolo ₱">₱</button>
+      <span class="flag-label">símbolo ₱</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₪" aria-label="Copiar símbolo ₪">₪</button>
+      <span class="flag-label">símbolo ₪</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₫" aria-label="Copiar símbolo ₫">₫</button>
+      <span class="flag-label">símbolo ₫</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₴" aria-label="Copiar símbolo ₴">₴</button>
+      <span class="flag-label">símbolo ₴</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₦" aria-label="Copiar símbolo ₦">₦</button>
+      <span class="flag-label">símbolo ₦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₡" aria-label="Copiar símbolo ₡">₡</button>
+      <span class="flag-label">símbolo ₡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₢" aria-label="Copiar símbolo ₢">₢</button>
+      <span class="flag-label">símbolo ₢</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₣" aria-label="Copiar símbolo ₣">₣</button>
+      <span class="flag-label">símbolo ₣</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₤" aria-label="Copiar símbolo ₤">₤</button>
+      <span class="flag-label">símbolo ₤</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₥" aria-label="Copiar símbolo ₥">₥</button>
+      <span class="flag-label">símbolo ₥</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₧" aria-label="Copiar símbolo ₧">₧</button>
+      <span class="flag-label">símbolo ₧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₨" aria-label="Copiar símbolo ₨">₨</button>
+      <span class="flag-label">símbolo ₨</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₭" aria-label="Copiar símbolo ₭">₭</button>
+      <span class="flag-label">símbolo ₭</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₮" aria-label="Copiar símbolo ₮">₮</button>
+      <span class="flag-label">símbolo ₮</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₯" aria-label="Copiar símbolo ₯">₯</button>
+      <span class="flag-label">símbolo ₯</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₰" aria-label="Copiar símbolo ₰">₰</button>
+      <span class="flag-label">símbolo ₰</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₲" aria-label="Copiar símbolo ₲">₲</button>
+      <span class="flag-label">símbolo ₲</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₳" aria-label="Copiar símbolo ₳">₳</button>
+      <span class="flag-label">símbolo ₳</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₵" aria-label="Copiar símbolo ₵">₵</button>
+      <span class="flag-label">símbolo ₵</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₶" aria-label="Copiar símbolo ₶">₶</button>
+      <span class="flag-label">símbolo ₶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₷" aria-label="Copiar símbolo ₷">₷</button>
+      <span class="flag-label">símbolo ₷</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₸" aria-label="Copiar símbolo ₸">₸</button>
+      <span class="flag-label">símbolo ₸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₺" aria-label="Copiar símbolo ₺">₺</button>
+      <span class="flag-label">símbolo ₺</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₻" aria-label="Copiar símbolo ₻">₻</button>
+      <span class="flag-label">símbolo ₻</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₼" aria-label="Copiar símbolo ₼">₼</button>
+      <span class="flag-label">símbolo ₼</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="₾" aria-label="Copiar símbolo ₾">₾</button>
+      <span class="flag-label">símbolo ₾</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="legal">
+  <h2>Legales, referencias y editoriales</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="©" aria-label="Copiar símbolo ©">©</button>
+      <span class="flag-label">símbolo ©</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="®" aria-label="Copiar símbolo ®">®</button>
+      <span class="flag-label">símbolo ®</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Copiar símbolo ™">™</button>
+      <span class="flag-label">símbolo ™</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="§" aria-label="Copiar símbolo §">§</button>
+      <span class="flag-label">símbolo §</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="¶" aria-label="Copiar símbolo ¶">¶</button>
+      <span class="flag-label">símbolo ¶</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Copiar símbolo †">†</button>
+      <span class="flag-label">símbolo †</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‡" aria-label="Copiar símbolo ‡">‡</button>
+      <span class="flag-label">símbolo ‡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="※" aria-label="Copiar símbolo ※">※</button>
+      <span class="flag-label">símbolo ※</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℠" aria-label="Copiar símbolo ℠">℠</button>
+      <span class="flag-label">símbolo ℠</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℗" aria-label="Copiar símbolo ℗">℗</button>
+      <span class="flag-label">símbolo ℗</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℃" aria-label="Copiar símbolo ℃">℃</button>
+      <span class="flag-label">símbolo ℃</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℉" aria-label="Copiar símbolo ℉">℉</button>
+      <span class="flag-label">símbolo ℉</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="№" aria-label="Copiar símbolo №">№</button>
+      <span class="flag-label">símbolo №</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℞" aria-label="Copiar símbolo ℞">℞</button>
+      <span class="flag-label">símbolo ℞</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℡" aria-label="Copiar símbolo ℡">℡</button>
+      <span class="flag-label">símbolo ℡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℀" aria-label="Copiar símbolo ℀">℀</button>
+      <span class="flag-label">símbolo ℀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="℁" aria-label="Copiar símbolo ℁">℁</button>
+      <span class="flag-label">símbolo ℁</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="decorative">
+  <h2>Decorativos aptos para LinkedIn</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❖" aria-label="Copiar símbolo ❖">❖</button>
+      <span class="flag-label">símbolo ❖</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❘" aria-label="Copiar símbolo ❘">❘</button>
+      <span class="flag-label">símbolo ❘</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❙" aria-label="Copiar símbolo ❙">❙</button>
+      <span class="flag-label">símbolo ❙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❚" aria-label="Copiar símbolo ❚">❚</button>
+      <span class="flag-label">símbolo ❚</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟡" aria-label="Copiar símbolo ⟡">⟡</button>
+      <span class="flag-label">símbolo ⟡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◇" aria-label="Copiar símbolo ◇">◇</button>
+      <span class="flag-label">símbolo ◇</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◆" aria-label="Copiar símbolo ◆">◆</button>
+      <span class="flag-label">símbolo ◆</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✦" aria-label="Copiar símbolo ✦">✦</button>
+      <span class="flag-label">símbolo ✦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❧" aria-label="Copiar símbolo ❧">❧</button>
+      <span class="flag-label">símbolo ❧</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☙" aria-label="Copiar símbolo ☙">☙</button>
+      <span class="flag-label">símbolo ☙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="Copiar símbolo ❦">❦</button>
+      <span class="flag-label">símbolo ❦</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❡" aria-label="Copiar símbolo ❡">❡</button>
+      <span class="flag-label">símbolo ❡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☸" aria-label="Copiar símbolo ☸">☸</button>
+      <span class="flag-label">símbolo ☸</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚙" aria-label="Copiar símbolo ⚙">⚙</button>
+      <span class="flag-label">símbolo ⚙</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚡" aria-label="Copiar símbolo ⚡">⚡</button>
+      <span class="flag-label">símbolo ⚡</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✾" aria-label="Copiar símbolo ✾">✾</button>
+      <span class="flag-label">símbolo ✾</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❀" aria-label="Copiar símbolo ❀">❀</button>
+      <span class="flag-label">símbolo ❀</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☘" aria-label="Copiar símbolo ☘">☘</button>
+      <span class="flag-label">símbolo ☘</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="combos">
+  <h2>Combinaciones para copiar rápido</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="→ Key takeaway" aria-label="Copiar → Idea clave">→ Key takeaway</button>
+      <span class="flag-label">→ Idea clave</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✓ What worked" aria-label="Copiar ✓ Lo que funcionó">✓ What worked</button>
+      <span class="flag-label">✓ Lo que funcionó</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✗ What failed" aria-label="Copiar ✗ Lo que falló">✗ What failed</button>
+      <span class="flag-label">✗ Lo que falló</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="① First principle" aria-label="Copiar ① Primer principio">① First principle</button>
+      <span class="flag-label">① Primer principio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="② Second principle" aria-label="Copiar ② Segundo principio">② Second principle</button>
+      <span class="flag-label">② Segundo principio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="③ Third principle" aria-label="Copiar ③ Tercer principio">③ Third principle</button>
+      <span class="flag-label">③ Tercer principio</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="★ Standout insight" aria-label="Copiar ★ Hallazgo destacado">★ Standout insight</button>
+      <span class="flag-label">★ Hallazgo destacado</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="• Point one" aria-label="Copiar • Punto uno">• Point one</button>
+      <span class="flag-label">• Punto uno</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▸ Action step" aria-label="Copiar ▸ Paso a seguir">▸ Action step</button>
+      <span class="flag-label">▸ Paso a seguir</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="【Framework】" aria-label="Copiar 【Marco de trabajo】">【Framework】</button>
+      <span class="flag-label">【Marco de trabajo】</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="《Case Study》" aria-label="Copiar 《Caso de estudio》">《Case Study》</button>
+      <span class="flag-label">《Caso de estudio》</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▲ Growth" aria-label="Copiar ▲ Crecimiento">▲ Growth</button>
+      <span class="flag-label">▲ Crecimiento</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▼ Decline" aria-label="Copiar ▼ Caída">▼ Decline</button>
+      <span class="flag-label">▼ Caída</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="™ Brand note" aria-label="Copiar ™ Nota de marca">™ Brand note</button>
+      <span class="flag-label">™ Nota de marca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⟹ Therefore" aria-label="Copiar ⟹ Por lo tanto">⟹ Therefore</button>
+      <span class="flag-label">⟹ Por lo tanto</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="↪ Plot twist" aria-label="Copiar ↪ Giro inesperado">↪ Plot twist</button>
+      <span class="flag-label">↪ Giro inesperado</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="◆ Key fact" aria-label="Copiar ◆ Dato clave">◆ Key fact</button>
+      <span class="flag-label">◆ Dato clave</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☐ Not started" aria-label="Copiar ☐ Sin empezar">☐ Not started</button>
+      <span class="flag-label">☐ Sin empezar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑ Complete" aria-label="Copiar ☑ Completado">☑ Complete</button>
+      <span class="flag-label">☑ Completado</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☒ Blocked" aria-label="Copiar ☒ Bloqueado">☒ Blocked</button>
+      <span class="flag-label">☒ Bloqueado</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Transforma texto con fuentes Unicode</h3>
+  <p>Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.</p>
+  <a href="https://ultratextgen.com/es/" class="cta-btn">Abrir UltraTextGen →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Recursos Relacionados</span>
+  <div class="compare-grid">
+    <a href="/es/simbolos-de-flechas/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Flechas</h4>
+      <p>Todas las flechas de Unicode — direccionales, de retorno, de doble línea y decorativas — en una sola referencia.</p>
+    </a>
+    <a href="/es/library/simbolos-de-vineta/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Viñetas</h4>
+      <p>Viñetas redondas, cuadradas, de rombo, de triángulo, de guion y de barra para listas ordenadas y limpias.</p>
+    </a>
+    <a href="/es/library/simbolos-de-verificacion/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Verificación</h4>
+      <p>Todas las marcas de verificación y palomitas para confirmaciones, listas y estados.</p>
+    </a>
+    <a href="/es/library/simbolo-x/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Cruz y X</h4>
+      <p>Cruces, signos de multiplicación, marcas de descarte y glifos de rechazo para estados negativos.</p>
+    </a>
+    <a href="/es/library/simbolos-de-numero/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Números</h4>
+      <p>Números en círculo, en negrita, entre paréntesis y estilizados para listas ordenadas y rankings.</p>
+    </a>
+    <a href="/guide/linkedin-comment-styling/" class="compare-card variant-muted u-no-underline">
+      <h4>Técnicas de Estilo para Comentarios de LinkedIn</h4>
+      <p>Técnicas profesionales de formato Unicode para comentarios de LinkedIn, con ejemplos listos para usar en énfasis, tono y legibilidad.</p>
+    </a>
+    <a href="/usecase/linkedin-headline/" class="compare-card variant-muted u-no-underline">
+      <h4>Generador de Titulares para LinkedIn</h4>
+      <p>Crea titulares de LinkedIn que llamen la atención con estilos de texto Unicode que destacan en los resultados de búsqueda y en las visitas a tu perfil.</p>
+    </a>
+    <a href="/guide/linkedin-comments-guide/" class="compare-card variant-muted u-no-underline">
+      <h4>Arquetipos de Comentarios en LinkedIn</h4>
+      <p>Domina los 14 arquetipos de comentarios y las estrategias de formato que separan al 1% de creadores de LinkedIn del resto.</p>
+    </a>
+    <a href="/guide/personal-branding-through-typography/" class="compare-card variant-muted u-no-underline">
+      <h4>Marca Personal a Través de la Tipografía</h4>
+      <p>Convierte un formato Unicode consistente en una firma profesional reconocible en todas tus redes sociales.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js"></script>
+<script src="/footer.js"></script>
+</body>
+</html>

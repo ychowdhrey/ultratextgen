@@ -10,16 +10,25 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/wave-kaomoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-saludo/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/wave-kaomoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/wave-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji-saludo/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/wave-kaomoji/"
+    }
   ],
   "title": "Kaomoji Saludo: Caritas de Texto que Saludan para Copiar",
-  "meta_description": "Explora y copia kaomoji de saludo, también escritos kamoji: caritas de texto japonesas que dicen hola y adiós. Haz clic en cualquiera para copiarla al instante.",
+  "meta_description": "Explora y copia kaomoji de saludo, también escritos kamoji: caritas de texto japonesas que dicen hola y adiós. Haz clic en cualquiera para copiarla.",
   "breadcrumb": "Kaomoji de saludo",
   "hero_h1": "Kaomoji de Saludo",
   "hero_tagline": "Copia y pega kaomoji de saludo: caritas de texto japonesas que levantan la mano para decir hola y adiós. Haz clic en cualquier carita para copiarla al instante.",
-  "intro": "Un kaomoji saludo (también escrito kamoji) es una carita de texto de estilo japonés que levanta la mano para saludar: un hola alegre o un adiós cariñoso. Caritas como (^-^)/ o ( ﾟ▽ﾟ)/ son texto Unicode puro, así que se pegan sin problemas en biografías, pies de foto, comentarios y chats. Explora por estilo aquí abajo y haz clic en cualquier carita para copiarla al instante. Busques \"kaomoji saludo\" o \"saludo kaomoji\", todas las caritas de esta página son gratis para copiar y pegar.",
+  "intro": "Un kaomoji saludo (también escrito kamoji) es una carita de texto de estilo japonés que levanta la mano para saludar: un hola alegre o un adiós cariñoso. Caritas como (^-^)/ o ( ﾟ▽ﾟ)/ son texto Unicode puro, así que se pegan sin problemas en biografías, pies de foto, comentarios y chats. Explora por estilo aquí abajo y haz clic en cualquier carita para copiarla al instante. Ya sea que busques \"kaomoji saludo\" o \"saludo kaomoji\", todas las caritas de esta página son gratis para copiar y pegar.",
   "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, letra manuscrita y más de 100 estilos de fuentes Unicode: gratis y al instante.",
   "sections": [
     {
@@ -28,12 +37,30 @@
       "h2": "Kaomoji de saludo para decir hola",
       "intro": "Holas alegres y simpáticos.",
       "symbols": [
-        { "char": "(^-^)/", "label": "Hola, qué tal" },
-        { "char": "( ﾟ▽ﾟ)/", "label": "Hola" },
-        { "char": "(・ω・)ノ", "label": "Ey" },
-        { "char": "ヾ(^ω^*)", "label": "Saludando con la mano" },
-        { "char": "(＠^◡^)ノ", "label": "Saludo alegre" },
-        { "char": "( ´ ▽ ` )ﾉ", "label": "Hola cálido" }
+        {
+          "char": "(^-^)/",
+          "label": "Hola, qué tal"
+        },
+        {
+          "char": "( ﾟ▽ﾟ)/",
+          "label": "Hola"
+        },
+        {
+          "char": "(・ω・)ノ",
+          "label": "Ey"
+        },
+        {
+          "char": "ヾ(^ω^*)",
+          "label": "Saludando con la mano"
+        },
+        {
+          "char": "(＠^◡^)ノ",
+          "label": "Saludo alegre"
+        },
+        {
+          "char": "( ´ ▽ ` )ﾉ",
+          "label": "Hola cálido"
+        }
       ]
     },
     {
@@ -42,12 +69,30 @@
       "h2": "Kaomoji de saludo para despedirse",
       "intro": "Despedidas de nos vemos pronto.",
       "symbols": [
-        { "char": "(^_^)/~", "label": "Chau chau" },
-        { "char": "（ ^_^）／~~~", "label": "Nos vemos" },
-        { "char": "ﾉ(・ω・)ﾉ", "label": "Cuídate" },
-        { "char": "(；一_一)ﾉ", "label": "Adiós a regañadientes" },
-        { "char": "(*´╰╯`๓)♬", "label": "Despedida" },
-        { "char": "バイバイ(￣▽￣)ノ", "label": "Adiós con la mano" }
+        {
+          "char": "(^_^)/~",
+          "label": "Chau chau"
+        },
+        {
+          "char": "（ ^_^）／~~~",
+          "label": "Nos vemos"
+        },
+        {
+          "char": "ﾉ(・ω・)ﾉ",
+          "label": "Cuídate"
+        },
+        {
+          "char": "(；一_一)ﾉ",
+          "label": "Adiós a regañadientes"
+        },
+        {
+          "char": "(*´╰╯`๓)♬",
+          "label": "Despedida"
+        },
+        {
+          "char": "バイバイ(￣▽￣)ノ",
+          "label": "Adiós con la mano"
+        }
       ]
     },
     {
@@ -56,11 +101,26 @@
       "h2": "Kaomoji de saludo emocionado",
       "intro": "Saludos grandes, con los dos brazos.",
       "symbols": [
-        { "char": "ヾ(・ω・*)ﾉ", "label": "Saludo emocionado" },
-        { "char": "ヽ(・∀・)ﾉ", "label": "Por acá" },
-        { "char": "ﾉ(*≧▽≦)ﾉ", "label": "Saludo enorme" },
-        { "char": "＼(^▽^)／", "label": "Con los dos brazos" },
-        { "char": "ヾ(≧▽≦*)o", "label": "Qué felicidad" }
+        {
+          "char": "ヾ(・ω・*)ﾉ",
+          "label": "Saludo emocionado"
+        },
+        {
+          "char": "ヽ(・∀・)ﾉ",
+          "label": "Por acá"
+        },
+        {
+          "char": "ﾉ(*≧▽≦)ﾉ",
+          "label": "Saludo enorme"
+        },
+        {
+          "char": "＼(^▽^)／",
+          "label": "Con los dos brazos"
+        },
+        {
+          "char": "ヾ(≧▽≦*)o",
+          "label": "Qué felicidad"
+        }
       ]
     }
   ],

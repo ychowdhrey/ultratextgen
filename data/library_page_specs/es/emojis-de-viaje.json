@@ -1,0 +1,136 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-viaje",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-viaje/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/travel-vacation-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-viaje/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/travel-vacation-emojis/" }
+  ],
+  "title": "Emojis de Viaje y Vacaciones: Copiar y Pegar ✈ 🏖",
+  "meta_description": "Copia y pega emojis de viaje y vacaciones: ✈️ avión, 🏖️ playa, 🗺️ mapa y combos de cuenta regresiva. Haz clic en cualquier emoji para copiarlo.",
+  "breadcrumb": "Emojis de Viaje y Vacaciones",
+  "hero_h1": "Emojis de Viaje y Vacaciones",
+  "hero_tagline": "Aviones, playas, mapas y maletas, con sets de combos para la cuenta regresiva del viaje. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de viaje son la forma de anunciar unas vacaciones antes de imprimir el pase de abordar. Esta página reúne el kit completo: ✈️ avión, 🏖️ playa con sombrilla, 🗺️ mapamundi y 🧳 maleta, organizados en secciones de transporte, playa, paseos y equipaje. Úsalos en biografías viajeras, publicaciones de cuenta regresiva, mensajes de fuera de la oficina y diarios de viaje. Abajo están los sets de combos de un clic para vacaciones en la playa, viajes por carretera y modo aeropuerto.",
+  "sections": [
+    {
+      "id": "getting-there",
+      "label": "Transporte",
+      "h2": "Emojis de Aviones, Trenes y Transporte",
+      "intro": "Todas las formas de llegar al destino, desde el despegue hasta el cruce en ferry.",
+      "symbols": [
+        { "char": "✈️", "label": "Avión" },
+        { "char": "🛫", "label": "Avión despegando" },
+        { "char": "🛬", "label": "Avión aterrizando" },
+        { "char": "🚆", "label": "Tren" },
+        { "char": "🚗", "label": "Automóvil" },
+        { "char": "🚐", "label": "Minivan" },
+        { "char": "⛴️", "label": "Ferry" },
+        { "char": "🚢", "label": "Barco" },
+        { "char": "🛳️", "label": "Crucero" },
+        { "char": "🚠", "label": "Teleférico" }
+      ]
+    },
+    {
+      "id": "beach-island",
+      "label": "Playa",
+      "h2": "Emojis de Playa e Isla",
+      "intro": "Sombrillas, palmeras y tragos tropicales para la clásica publicación playera.",
+      "symbols": [
+        { "char": "🏖️", "label": "Playa con sombrilla" },
+        { "char": "🏝️", "label": "Isla desierta" },
+        { "char": "⛱️", "label": "Sombrilla en la arena" },
+        { "char": "🌴", "label": "Palmera" },
+        { "char": "🌊", "label": "Ola de mar" },
+        { "char": "🩴", "label": "Sandalias de dedo" },
+        { "char": "🕶️", "label": "Lentes de sol" },
+        { "char": "🧴", "label": "Bloqueador solar" },
+        { "char": "🍹", "label": "Trago tropical" },
+        { "char": "🥥", "label": "Coco" }
+      ]
+    },
+    {
+      "id": "sightseeing",
+      "label": "Paseos",
+      "h2": "Emojis de Paseos y Navegación",
+      "intro": "Mapas, brújulas y monumentos para armar el itinerario.",
+      "symbols": [
+        { "char": "🗺️", "label": "Mapamundi" },
+        { "char": "🧭", "label": "Brújula" },
+        { "char": "📍", "label": "Marcador de ubicación" },
+        { "char": "🗽", "label": "Estatua de la Libertad" },
+        { "char": "🗼", "label": "Torre de Tokio" },
+        { "char": "🗿", "label": "Moái" },
+        { "char": "🏛️", "label": "Edificio clásico" },
+        { "char": "🎡", "label": "Rueda de la fortuna" },
+        { "char": "📸", "label": "Cámara con flash" },
+        { "char": "🎒", "label": "Mochila" }
+      ]
+    },
+    {
+      "id": "packing-hotel",
+      "label": "Equipaje",
+      "h2": "Emojis de Equipaje y Hotel",
+      "intro": "Maletas, pasaportes y check-in para el lado práctico del viaje.",
+      "symbols": [
+        { "char": "🧳", "label": "Maleta" },
+        { "char": "🛎️", "label": "Timbre de recepción" },
+        { "char": "🏨", "label": "Hotel" },
+        { "char": "🛏️", "label": "Cama" },
+        { "char": "🛂", "label": "Control de pasaportes" },
+        { "char": "🎫", "label": "Boleto" },
+        { "char": "💱", "label": "Cambio de divisas" },
+        { "char": "🌐", "label": "Globo con meridianos" },
+        { "char": "☀️", "label": "Sol" },
+        { "char": "⏳", "label": "Reloj de arena con arena cayendo" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Cuenta Regresiva del Viaje", "flags": ["✈️", "🗓️", "⏳", "🎉", "🧳"], "defaultFormat": "inline" },
+    { "name": "Vacaciones en la Playa", "flags": ["🏖️", "🌊", "🍹", "🕶️", "☀️"], "defaultFormat": "inline" },
+    { "name": "Biografía Viajera", "flags": ["✈️", "🌍", "📍", "🧭", "✨"], "defaultFormat": "inline" },
+    { "name": "Escapada a la Isla", "flags": ["🏝️", "🌴", "🥥", "🐠", "🌅"], "defaultFormat": "inline" },
+    { "name": "Verano Europeo", "flags": ["🛵", "🍝", "🏛️", "🍷", "📸"], "defaultFormat": "inline" },
+    { "name": "Viaje por Carretera", "flags": ["🚗", "🗺️", "🎶", "⛽", "🌄"], "defaultFormat": "inline" },
+    { "name": "Modo Aeropuerto", "flags": ["🛫", "☕", "🎧", "🛂", "💺"], "defaultFormat": "inline" },
+    { "name": "Luna de Miel", "flags": ["💍", "✈️", "🏖️", "🥂", "💕"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "travelSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Viaje",
+    "intro": "Copia un combo de viaje completo con un clic: cuentas regresivas, escapadas a la playa y biografías viajeras listas para pegar."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-transporte/",
+      "title": "Símbolos de Transporte",
+      "desc": "Autos, trenes, aviones y todos los emojis de vehículos a detalle."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Emojis de banderas de países para cada destino del mapa."
+    },
+    {
+      "href": "/es/library/emojis-de-naturaleza/",
+      "title": "Emojis de Naturaleza",
+      "desc": "Montañas, bosques y mar para tus aventuras al aire libre."
+    },
+    {
+      "href": "/es/library/emojis-de-comida/",
+      "title": "Emojis de Comida y Bebida",
+      "desc": "Platillos y bebidas locales para darle sabor a tus publicaciones de viaje."
+    }
+  ]
+}

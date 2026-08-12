@@ -23,12 +23,12 @@
       "href": "https://ultratextgen.com/library/ml-name-symbols/"
     }
   ],
-  "title": "Símbolos para Nombres de Mobile Legends: Copiar y Pegar ꧁꧂",
+  "title": "Símbolos para Nombres Mobile Legends: Copiar y Pegar ꧁꧂",
   "meta_description": "Símbolos para nombres de Mobile Legends: letras de rango ᴳᵒᵈ, kanji épicos, adornos y decoraciones de nick listas. Haz clic en cualquier símbolo para copiarlo.",
   "breadcrumb": "Símbolos para nombres de Mobile Legends",
   "hero_h1": "Símbolos para Nombres de Mobile Legends",
   "hero_tagline": "Letras de rango en superíndice, kanji épicos, adornos y decoraciones de nick de MLBB listas para usar. Haz clic en cualquier símbolo para copiarlo al instante.",
-  "intro": "¿Buscas un nombre de ML que se vea increíble? Los símbolos para nombres de Mobile Legends tienen sus propios sellos: letritas en superíndice que escriben ᴳᵒᵈ o ᴹᴸ antes del nick, un solo kanji como 狼 o 月 para darle misterio, y la etiqueta de francotirador ︻デ═一 que todo escuadrón ha visto en la pantalla de carga. La tarjeta de cambio de nombre de MLBB acepta estos caracteres Unicode, así que aparecen en las salas, en las tablas de rango y en las páginas de escuadrón. Copia símbolos sueltos aquí abajo o llévate una decoración de nick terminada y mete tu propio nombre.",
+  "intro": "Si buscas símbolos para nombres Mobile Legends, el estilo de nick de MLBB tiene sus propios sellos: letritas en superíndice que escriben ᴳᵒᵈ o ᴹᴸ antes del nombre, un solo kanji como 狼 o 月 para darle misterio, y la etiqueta de francotirador ︻デ═一 que todo escuadrón ha visto en la pantalla de carga. La tarjeta de cambio de nombre de MLBB acepta estos caracteres Unicode, así que aparecen en las salas, en las tablas de rango y en las páginas de escuadrón. Copia símbolos sueltos aquí abajo o llévate una decoración de nick terminada y mete tu propio nombre.",
   "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, letra manuscrita y más de 100 estilos de fuentes Unicode: gratis y al instante.",
   "sections": [
     {
@@ -277,7 +277,7 @@
       "name": "Etiqueta de francotirador",
       "flags": [
         "︻デ═一",
-        "YourNick"
+        "TuNick"
       ],
       "defaultFormat": "inline"
     },
@@ -285,7 +285,7 @@
       "name": "Nick de nivel dios",
       "flags": [
         "ᴳᵒᵈ•",
-        "YourNick"
+        "TuNick"
       ],
       "defaultFormat": "inline"
     },
@@ -293,7 +293,7 @@
       "name": "Marco clásico de MLBB",
       "flags": [
         "꧁•",
-        "YourNick",
+        "TuNick",
         "•꧂"
       ],
       "defaultFormat": "inline"
@@ -301,7 +301,7 @@
     {
       "name": "Remate khomut",
       "flags": [
-        "YourNick",
+        "TuNick",
         "๛"
       ],
       "defaultFormat": "inline"
@@ -310,7 +310,7 @@
       "name": "Etiqueta espíritu de lobo",
       "flags": [
         "狼",
-        "YourNick",
+        "TuNick",
         "彡"
       ],
       "defaultFormat": "inline"
@@ -319,7 +319,7 @@
       "name": "Estandarte de escuadrón",
       "flags": [
         "❖",
-        "YourSquad",
+        "TuEscuadra",
         "❖"
       ],
       "defaultFormat": "inline"
@@ -328,7 +328,7 @@
       "name": "Nick velo de luna",
       "flags": [
         "⦗月⦘",
-        "YourNick"
+        "TuNick"
       ],
       "defaultFormat": "inline"
     }

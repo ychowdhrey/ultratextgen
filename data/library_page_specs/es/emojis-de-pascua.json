@@ -10,9 +10,18 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/easter-symbols/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-pascua/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/easter-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/easter-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-pascua/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/easter-symbols/"
+    }
   ],
   "title": "Emojis de Pascua y Símbolos: Copiar y Pegar 🐰 🥚 ✝ Primavera",
   "meta_description": "Emojis de Pascua y símbolos — conejos, huevos, pollitos, cruces y flores de primavera para tarjetas, publicaciones y biografías. Haz clic para copiar.",
@@ -27,14 +36,38 @@
       "h2": "Conejos y Huevos de Pascua",
       "intro": "Lo esencial de la búsqueda de huevos — conejos, huevos, canastas y chocolate.",
       "symbols": [
-        { "char": "🐰", "label": "Cara de conejo" },
-        { "char": "🐇", "label": "Conejo" },
-        { "char": "🥚", "label": "Huevo" },
-        { "char": "🪺", "label": "Nido con huevos" },
-        { "char": "🪹", "label": "Nido vacío" },
-        { "char": "🧺", "label": "Canasta" },
-        { "char": "🍫", "label": "Barra de chocolate" },
-        { "char": "🎀", "label": "Moño" }
+        {
+          "char": "🐰",
+          "label": "Cara de conejo"
+        },
+        {
+          "char": "🐇",
+          "label": "Conejo"
+        },
+        {
+          "char": "🥚",
+          "label": "Huevo"
+        },
+        {
+          "char": "🪺",
+          "label": "Nido con huevos"
+        },
+        {
+          "char": "🪹",
+          "label": "Nido vacío"
+        },
+        {
+          "char": "🧺",
+          "label": "Canasta"
+        },
+        {
+          "char": "🍫",
+          "label": "Barra de chocolate"
+        },
+        {
+          "char": "🎀",
+          "label": "Moño"
+        }
       ]
     },
     {
@@ -43,13 +76,34 @@
       "h2": "Pollitos, Corderos y Animales de Primavera",
       "intro": "Los animales de la vida nueva que pertenecen a la temporada — pollitos en cada etapa, corderos y mariposas.",
       "symbols": [
-        { "char": "🐣", "label": "Pollito saliendo del huevo" },
-        { "char": "🐤", "label": "Pollito" },
-        { "char": "🐥", "label": "Pollito de frente" },
-        { "char": "🐑", "label": "Oveja" },
-        { "char": "🐏", "label": "Carnero" },
-        { "char": "🦋", "label": "Mariposa" },
-        { "char": "🐝", "label": "Abeja" }
+        {
+          "char": "🐣",
+          "label": "Pollito saliendo del huevo"
+        },
+        {
+          "char": "🐤",
+          "label": "Pollito"
+        },
+        {
+          "char": "🐥",
+          "label": "Pollito de frente"
+        },
+        {
+          "char": "🐑",
+          "label": "Oveja"
+        },
+        {
+          "char": "🐏",
+          "label": "Carnero"
+        },
+        {
+          "char": "🦋",
+          "label": "Mariposa"
+        },
+        {
+          "char": "🐝",
+          "label": "Abeja"
+        }
       ]
     },
     {
@@ -58,13 +112,34 @@
       "h2": "Cruces y Símbolos de Fe",
       "intro": "Caracteres respetuosos para el corazón cristiano de la Pascua — cruces, iglesias y palomas.",
       "symbols": [
-        { "char": "✝", "label": "Cruz latina" },
-        { "char": "✝️", "label": "Cruz latina (estilo emoji)" },
-        { "char": "☦", "label": "Cruz ortodoxa" },
-        { "char": "⛪", "label": "Iglesia" },
-        { "char": "🙏", "label": "Manos en oración" },
-        { "char": "🕊", "label": "Paloma" },
-        { "char": "📖", "label": "Libro abierto" }
+        {
+          "char": "✝",
+          "label": "Cruz latina"
+        },
+        {
+          "char": "✝️",
+          "label": "Cruz latina (estilo emoji)"
+        },
+        {
+          "char": "☦",
+          "label": "Cruz ortodoxa"
+        },
+        {
+          "char": "⛪",
+          "label": "Iglesia"
+        },
+        {
+          "char": "🙏",
+          "label": "Manos en oración"
+        },
+        {
+          "char": "🕊",
+          "label": "Paloma"
+        },
+        {
+          "char": "📖",
+          "label": "Libro abierto"
+        }
       ]
     },
     {
@@ -73,15 +148,42 @@
       "h2": "Flores de Primavera y Sol",
       "intro": "Tulipanes, flores y cielos brillantes para publicaciones primaverales.",
       "symbols": [
-        { "char": "🌷", "label": "Tulipán" },
-        { "char": "🌼", "label": "Flor" },
-        { "char": "🌸", "label": "Flor de cerezo" },
-        { "char": "🌻", "label": "Girasol" },
-        { "char": "🪻", "label": "Jacinto" },
-        { "char": "💐", "label": "Ramo de flores" },
-        { "char": "🌱", "label": "Brote" },
-        { "char": "☀", "label": "Sol" },
-        { "char": "🌈", "label": "Arcoíris" }
+        {
+          "char": "🌷",
+          "label": "Tulipán"
+        },
+        {
+          "char": "🌼",
+          "label": "Flor"
+        },
+        {
+          "char": "🌸",
+          "label": "Flor de cerezo"
+        },
+        {
+          "char": "🌻",
+          "label": "Girasol"
+        },
+        {
+          "char": "🪻",
+          "label": "Jacinto"
+        },
+        {
+          "char": "💐",
+          "label": "Ramo de flores"
+        },
+        {
+          "char": "🌱",
+          "label": "Brote"
+        },
+        {
+          "char": "☀",
+          "label": "Sol"
+        },
+        {
+          "char": "🌈",
+          "label": "Arcoíris"
+        }
       ]
     },
     {
@@ -90,11 +192,26 @@
       "h2": "Combos de Saludo de Pascua",
       "intro": "Saludos y decoraciones de primavera listos para usar — cada botón copia el combo completo de una vez.",
       "symbols": [
-        { "char": "🐰🥚 Happy Easter 🥚🐰", "label": "Saludo de Felices Pascuas" },
-        { "char": "🌷🐣🌷 Spring Is Here 🌷🐣🌷", "label": "Saludo de Llegó la Primavera" },
-        { "char": "✝🕊✝ He Is Risen ✝🕊✝", "label": "Saludo de Ha Resucitado" },
-        { "char": "•✿────🐰────✿•", "label": "Separador de conejo" },
-        { "char": "🥚🍫🧺🍫🥚", "label": "Combo de canasta de Pascua" }
+        {
+          "char": "🐰🥚 Felices Pascuas 🥚🐰",
+          "label": "Saludo de Felices Pascuas"
+        },
+        {
+          "char": "🌷🐣🌷 Spring Is Here 🌷🐣🌷",
+          "label": "Saludo de Llegó la Primavera"
+        },
+        {
+          "char": "✝🕊✝ He Is Risen ✝🕊✝",
+          "label": "Saludo de Ha Resucitado"
+        },
+        {
+          "char": "•✿────🐰────✿•",
+          "label": "Separador de conejo"
+        },
+        {
+          "char": "🥚🍫🧺🍫🥚",
+          "label": "Combo de canasta de Pascua"
+        }
       ]
     }
   ],
