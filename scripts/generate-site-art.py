@@ -2775,6 +2775,20 @@ PAGES.update({
       P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
 "zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
       P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
+"nl-woorden-en-tekens-tellen": ("Woorden en tekens tellen", "Live tellingen voor 38 velden op 17 platforms",
+      P(m_typo, sample="123", weight="800", size=88, label="woorden · tekens"), K_USE),
+# m_typo writes `sample`/`label` raw — unlike the card title it does not go
+# through spanned(), so it gets neither Arabic reshaping/bidi nor per-glyph
+# font fallback. Two consequences drive the values below: an Arabic *word*
+# would render as disconnected isolated forms in reversed order (حرف came out
+# reading فرح), and "·" (U+00B7) is absent from both NotoSansArabic and
+# NotoSansThai, so the usual "x · y" label renders a tofu box. Arabic-Indic
+# digits sidestep the first (numbers are written left-to-right, so logical
+# order is already visual order) and a native conjunction sidesteps the second.
+"ar-addad-al-huruf-wal-kalimat": ("عداد الأحرف والكلمات", "عدّ فوري للأحرف والكلمات مع فحص حدود المنصات",
+      P(m_typo, sample="٢٨٠", weight="800", size=88, label="الأحرف والكلمات", ff="Noto Sans Arabic", lab_ff="Noto Sans Arabic"), K_USE),
+"th-nap-kham-lae-tua-akson": ("นับคำและนับตัวอักษร", "นับสดพร้อมเช็กลิมิต 38 ช่องใน 17 แพลตฟอร์ม",
+      P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
