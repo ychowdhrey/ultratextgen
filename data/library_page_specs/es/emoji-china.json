@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-china",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-china/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/china-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-china/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/china-emoji-combos/" }
+  ],
+  "title": "Emoji China: Combos 🇨🇳⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji China 🇨🇳⚽: los colores del Equipo Dragón y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji China",
+  "hero_h1": "Combos de Emoji China",
+  "hero_tagline": "Los colores del Equipo Dragón y sets de emojis de fútbol para hinchas de China — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji China 🇨🇳 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con el rojo y amarillo del Equipo Dragón. El grito \"Jiayou China\" (¡vamos, China!) acompaña a la selección en cada partido. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "China",
+      "h2": "Emojis de China",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇨🇳", "label": "Bandera de China" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Chino",
+      "intro": "Rojo y amarillo con el dragón y las estrellas.",
+      "symbols": [
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🏮", "label": "Farolillo" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Equipo Dragón",
+      "flags": ["🇨🇳", "⚽", "🐉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos China",
+      "flags": ["🇨🇳", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo y Amarillo",
+      "flags": ["🔴", "🟡", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Chino",
+      "flags": ["🇨🇳", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "chinaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de China",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

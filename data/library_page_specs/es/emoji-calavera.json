@@ -1,0 +1,145 @@
+{
+  "lang": "es",
+  "slug": "emoji-calavera",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-calavera/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/skull-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-calavera/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/skull-emoji/" }
+  ],
+  "title": "Emoji Calavera y Kaomoji: Copiar y Pegar 💀 ☠️ Combos",
+  "meta_description": "Copia y pega el emoji calavera 💀 ☠️ 🦴, los combos de \"me morí de risa\" y kaomoji como x_x para reacciones y comentarios. Un clic y listo.",
+  "breadcrumb": "Emoji calavera y kaomoji",
+  "hero_h1": "Emoji Calavera y Kaomoji",
+  "hero_tagline": "Desde el 💀 más simple hasta la forma favorita de internet para decir \"me morí de risa\", con huesos cruzados, señales de peligro y kaomoji de calavera como x_x. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji calavera 💀 es uno de los caracteres con más carga cultural de internet: hace años que dejó de hablar de la muerte literal y hoy significa sobre todo \"me morí\", como cuando algo es tan gracioso que uno se muere de risa, desplazando poco a poco al 😂 como reacción favorita. Esta página reúne las calaveras en formato emoji (💀 ☠️), los huesos cruzados y símbolos de peligro que suelen acompañarlas, y los kaomoji de una sola línea como x_x y (☠‿☠). Copia cada glifo por separado o llévate un combo ya armado como 💀😂🤣 para un comentario que diga \"esto es tan gracioso que me morí\". ¿Buscabas la calavera de arte ASCII, esa de varias líneas dibujada con caracteres de texto? Esa versión vive en la página de arte ASCII de calavera que enlazamos abajo.",
+  "sections": [
+    {
+      "id": "core-skull",
+      "label": "Calaveras principales",
+      "h2": "Los emojis de calavera principales",
+      "intro": "Los dos emojis de calavera más reconocibles, con los que empieza cualquier combo.",
+      "symbols": [
+        { "char": "💀", "label": "Calavera" },
+        { "char": "☠️", "label": "Calavera y huesos cruzados" }
+      ]
+    },
+    {
+      "id": "dead-from-laughing",
+      "label": "Muerto de risa",
+      "h2": "Emojis de muerto de risa",
+      "intro": "El grupo de memes donde el 💀 reemplaza a la cara llorando de risa: combínalo con estos.",
+      "symbols": [
+        { "char": "😂", "label": "Cara con lágrimas de alegría" },
+        { "char": "🤣", "label": "Rodando de risa" },
+        { "char": "⚰️", "label": "Ataúd" },
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "🪦", "label": "Lápida" }
+      ]
+    },
+    {
+      "id": "skeleton-danger",
+      "label": "Esqueleto y peligro",
+      "h2": "Símbolos de esqueleto, huesos y peligro",
+      "intro": "Huesos, banderas piratas y señales de riesgo para el lado más oscuro de las publicaciones con calaveras.",
+      "symbols": [
+        { "char": "🦴", "label": "Hueso" },
+        { "char": "🏴‍☠️", "label": "Bandera pirata" },
+        { "char": "☣️", "label": "Riesgo biológico" },
+        { "char": "☢️", "label": "Radiactivo" }
+      ]
+    },
+    {
+      "id": "skull-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de calavera y caritas de texto",
+      "intro": "Caritas de una sola línea con la mirada apagada, listas para pegar donde solo funciona el texto plano.",
+      "symbols": [
+        { "char": "x_x", "label": "Kaomoji de ojos muertos" },
+        { "char": "X_X", "label": "Kaomoji noqueado" },
+        { "char": "(x_x)", "label": "Kaomoji mareado y muerto" },
+        { "char": "†（‡＾ᴗ＾）†", "label": "Kaomoji de cruz de tumba" },
+        { "char": "(☠‿☠)", "label": "Kaomoji de calavera sonriente" },
+        { "char": "✖‿✖", "label": "Kaomoji de sonrisa muerta" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Muerto de risa",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zona de peligro",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modo pirata",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Completamente muerto",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Calavera de Halloween",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tan gracioso que me morí",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Frío hasta los huesos",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP yo",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "skullSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji calavera",
+    "intro": "Copia un combo completo de calaveras con un clic y pégalo directo en un comentario, una descripción o una respuesta."
+  },
+  "related": [
+    {
+      "href": "/es/library/arte-ascii-calavera/",
+      "title": "Arte ASCII de calavera",
+      "desc": "Calaveras de varias líneas dibujadas con caracteres de texto: la versión ASCII de esta página."
+    },
+    {
+      "href": "/es/library/emoji-riendo/",
+      "title": "Emoji riendo y kaomoji",
+      "desc": "Caras de risa, reacciones de llorar de risa y los combos de calavera que significan lo mismo."
+    },
+    {
+      "href": "/es/library/simbolos-halloween/",
+      "title": "Símbolos de Halloween",
+      "desc": "Calabazas, fantasmas, murciélagos y glifos tenebrosos para acompañar tus calaveras."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "Todas las caritas y emojis de caras en una sola cuadrícula lista para copiar."
+    }
+  ]
+}

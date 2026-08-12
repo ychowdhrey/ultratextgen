@@ -1,0 +1,154 @@
+{
+  "lang": "es",
+  "slug": "emoji-sorprendido",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-sorprendido/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/shocked-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-sorprendido/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/shocked-emoji/" }
+  ],
+  "title": "Emoji Sorprendido y Kaomoji: Copiar y Pegar 😱 Combos de Asombro",
+  "meta_description": "Emoji sorprendido 😱 😲 🤯, kaomoji de asombro como (⊙_⊙) y combos de reacción para giros inesperados. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Sorprendido y Kaomoji",
+  "hero_h1": "Emoji Sorprendido y Kaomoji",
+  "hero_tagline": "Gritos, jadeos, mandíbulas caídas y kaomoji de ojos enormes (⊙_⊙) — sorpresa en todos sus niveles. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Cuando algo es realmente increíble, el emoji sorprendido habla por ti: 😱 grita, 😲 se queda sin aire y 🤯 simplemente explota. Esta página reúne todas las caras de sorpresa y asombro, los signos de exclamación que le suben el volumen a un jadeo, las expresiones de nervios y susto para cuando la noticia incomoda, y kaomoji de ojos desorbitados como Σ(ﾟДﾟ) que se pegan donde sea que funcione el texto plano. Abajo también encontrarás combos de un clic pensados para giros de trama, hilos de chismes y reacciones de susto repentino.",
+  "sections": [
+    {
+      "id": "shocked-faces",
+      "label": "Caras de Sorpresa",
+      "h2": "Emojis de Caras Sorprendidas y Asombradas",
+      "intro": "Las caras principales de sorpresa, desde un jadeo callado hasta el grito completo.",
+      "symbols": [
+        { "char": "😱", "label": "Cara gritando de miedo" },
+        { "char": "😨", "label": "Cara asustada" },
+        { "char": "😲", "label": "Cara asombrada" },
+        { "char": "😮", "label": "Cara con la boca abierta" },
+        { "char": "😯", "label": "Cara estupefacta" },
+        { "char": "😳", "label": "Cara sonrojada" },
+        { "char": "🙀", "label": "Gato asustado" },
+        { "char": "🫢", "label": "Cara con la mano sobre la boca" }
+      ]
+    },
+    {
+      "id": "mind-blown",
+      "label": "Mente Volada",
+      "h2": "Símbolos de Asombro y Exclamación",
+      "intro": "Cabezas que estallan y signos de énfasis para que el impacto pegue más fuerte.",
+      "symbols": [
+        { "char": "🤯", "label": "Cabeza explotando" },
+        { "char": "‼", "label": "Doble signo de exclamación" },
+        { "char": "⁉", "label": "Signo de exclamación e interrogación" },
+        { "char": "❗", "label": "Signo de exclamación rojo" },
+        { "char": "❓", "label": "Signo de interrogación rojo" },
+        { "char": "💥", "label": "Explosión" },
+        { "char": "😵", "label": "Cara con los ojos en equis" },
+        { "char": "😵‍💫", "label": "Cara con ojos en espiral" }
+      ]
+    },
+    {
+      "id": "nervous-spooked",
+      "label": "Nervios y Susto",
+      "h2": "Caras de Nervios, Susto y Mudez",
+      "intro": "Para cuando la sorpresa incomoda: espiar entre los dedos, escalofríos y silencio total.",
+      "symbols": [
+        { "char": "🫣", "label": "Cara espiando entre los dedos" },
+        { "char": "👀", "label": "Ojos" },
+        { "char": "😧", "label": "Cara angustiada" },
+        { "char": "🥶", "label": "Cara de frío" },
+        { "char": "👻", "label": "Fantasma" },
+        { "char": "😶", "label": "Cara sin boca" }
+      ]
+    },
+    {
+      "id": "shocked-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de Sorpresa y Caritas de Texto",
+      "intro": "Caritas de texto al estilo japonés con los ojos desorbitados, congeladas de incredulidad.",
+      "symbols": [
+        { "char": "(⊙_⊙)", "label": "Kaomoji de ojos muy abiertos" },
+        { "char": "Σ(ﾟДﾟ)", "label": "Kaomoji de sobresalto repentino" },
+        { "char": "Σ(°△°|||)", "label": "Kaomoji de susto de golpe" },
+        { "char": "w(°ｏ°)w", "label": "Kaomoji de asombro con las manos arriba" },
+        { "char": "(ﾟоﾟ)", "label": "Kaomoji de mirada boquiabierta" },
+        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Kaomoji de pánico agitado" },
+        { "char": "(○o○)", "label": "Kaomoji de sorpresa con ojos redondos" },
+        { "char": "☉_☉", "label": "Kaomoji de mirada congelada" },
+        { "char": "(((ﾟДﾟ;)))", "label": "Kaomoji de temblor por el susto" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Susto Repentino",
+      "flags": ["😱", "‼", "💥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sin Palabras",
+      "flags": ["😶", "😳", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Giro Inesperado",
+      "flags": ["😮", "🤯", "⁉", "🍿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tomado por Sorpresa",
+      "flags": ["😳", "🫢", "👀", "❗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Grito de Terror",
+      "flags": ["😱", "👻", "🕷", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mente Volada",
+      "flags": ["🤯", "💥", "🧠", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pack de Kaomoji de Sorpresa",
+      "flags": ["(⊙_⊙)", "Σ(ﾟДﾟ)", "ヽ(ﾟДﾟ)ﾉ"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "shockedSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Sorpresa",
+    "intro": "Copia una reacción de asombro completa con un clic — hecha para giros inesperados y noticias de último momento."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-enojado/",
+      "title": "Emoji Enojado y Kaomoji",
+      "desc": "Caras de furia y kaomoji de mesa volteada para cuando la sorpresa se vuelve rabia."
+    },
+    {
+      "href": "/es/library/emoji-side-eye/",
+      "title": "Emoji de Mirada de Reojo y Kaomoji",
+      "desc": "Miradas de juicio para la sorpresa con desconfianza."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todos los emojis de caras en una sola cuadrícula lista para copiar."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "La biblioteca completa de kaomoji para cada emoción."
+    }
+  ]
+}

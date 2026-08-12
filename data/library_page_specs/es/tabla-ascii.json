@@ -1,0 +1,156 @@
+{
+  "lang": "es",
+  "slug": "tabla-ascii",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/tabla-ascii/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/ascii-table/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/tabla-ascii/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/ascii-table/" }
+  ],
+  "title": "Tabla ASCII: Códigos y Caracteres ASCII para Copiar y Pegar",
+  "meta_description": "Tabla ASCII con los códigos decimal, hexadecimal, binario y octal de signos, dígitos y letras. Haz clic en cualquier carácter para copiarlo al instante.",
+  "breadcrumb": "Tabla ASCII",
+  "hero_h1": "Tabla ASCII",
+  "hero_tagline": "Caracteres ASCII imprimibles del 33 al 126 con sus códigos decimal, hexadecimal, binario y octal. Haz clic en cualquier carácter para copiarlo al instante.",
+  "intro": "La tabla ASCII asigna los 128 caracteres del American Standard Code for Information Interchange (Código Estándar Estadounidense para el Intercambio de Información) a los números del 0 al 127: la base de la codificación de texto moderna y los primeros 128 puntos de código de Unicode. Esta referencia cubre el rango imprimible (33–126) agrupado por tipo, y cada carácter viene etiquetado con su código decimal, hexadecimal, binario y octal. Los códigos del 0 al 31 son caracteres de control que no se imprimen (por ejemplo el 10, el salto de línea) y el 32 es el espacio.",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "Puntuación 33–47",
+      "h2": "Signos de Puntuación y Símbolos ASCII (33–47)",
+      "intro": "El primer bloque imprimible: signos de puntuación y símbolos aritméticos.",
+      "symbols": [
+        { "char": "!", "label": "33 / 0x21 / 0b0100001 / 0o41 — Signo de exclamación" },
+        { "char": "\"", "label": "34 / 0x22 / 0b0100010 / 0o42 — Comillas dobles" },
+        { "char": "#", "label": "35 / 0x23 / 0b0100011 / 0o43 — Almohadilla (numeral)" },
+        { "char": "$", "label": "36 / 0x24 / 0b0100100 / 0o44 — Signo de dólar" },
+        { "char": "%", "label": "37 / 0x25 / 0b0100101 / 0o45 — Signo de porcentaje" },
+        { "char": "&", "label": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand" },
+        { "char": "'", "label": "39 / 0x27 / 0b0100111 / 0o47 — Apóstrofo" },
+        { "char": "(", "label": "40 / 0x28 / 0b0101000 / 0o50 — Paréntesis izquierdo" },
+        { "char": ")", "label": "41 / 0x29 / 0b0101001 / 0o51 — Paréntesis derecho" },
+        { "char": "*", "label": "42 / 0x2A / 0b0101010 / 0o52 — Asterisco" },
+        { "char": "+", "label": "43 / 0x2B / 0b0101011 / 0o53 — Signo de más" },
+        { "char": ",", "label": "44 / 0x2C / 0b0101100 / 0o54 — Coma" },
+        { "char": "-", "label": "45 / 0x2D / 0b0101101 / 0o55 — Guion (signo de menos)" },
+        { "char": ".", "label": "46 / 0x2E / 0b0101110 / 0o56 — Punto" },
+        { "char": "/", "label": "47 / 0x2F / 0b0101111 / 0o57 — Barra diagonal" }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "Dígitos 48–57",
+      "h2": "Dígitos ASCII (48–57)",
+      "intro": "Los diez dígitos decimales: el código de cada dígito es 48 más su valor.",
+      "symbols": [
+        { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60 — Dígito cero" },
+        { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61 — Dígito uno" },
+        { "char": "2", "label": "50 / 0x32 / 0b0110010 / 0o62 — Dígito dos" },
+        { "char": "3", "label": "51 / 0x33 / 0b0110011 / 0o63 — Dígito tres" },
+        { "char": "4", "label": "52 / 0x34 / 0b0110100 / 0o64 — Dígito cuatro" },
+        { "char": "5", "label": "53 / 0x35 / 0b0110101 / 0o65 — Dígito cinco" },
+        { "char": "6", "label": "54 / 0x36 / 0b0110110 / 0o66 — Dígito seis" },
+        { "char": "7", "label": "55 / 0x37 / 0b0110111 / 0o67 — Dígito siete" },
+        { "char": "8", "label": "56 / 0x38 / 0b0111000 / 0o70 — Dígito ocho" },
+        { "char": "9", "label": "57 / 0x39 / 0b0111001 / 0o71 — Dígito nueve" }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "Puntuación 58–64",
+      "h2": "Signos de Puntuación y Símbolos ASCII (58–64)",
+      "intro": "Los símbolos que van entre los dígitos y las letras mayúsculas.",
+      "symbols": [
+        { "char": ":", "label": "58 / 0x3A / 0b0111010 / 0o72 — Dos puntos" },
+        { "char": ";", "label": "59 / 0x3B / 0b0111011 / 0o73 — Punto y coma" },
+        { "char": "<", "label": "60 / 0x3C / 0b0111100 / 0o74 — Signo de menor que" },
+        { "char": "=", "label": "61 / 0x3D / 0b0111101 / 0o75 — Signo de igual" },
+        { "char": ">", "label": "62 / 0x3E / 0b0111110 / 0o76 — Signo de mayor que" },
+        { "char": "?", "label": "63 / 0x3F / 0b0111111 / 0o77 — Signo de interrogación" },
+        { "char": "@", "label": "64 / 0x40 / 0b1000000 / 0o100 — Arroba" }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "Letras 65–122",
+      "h2": "Letras ASCII (65–90 y 97–122)",
+      "intro": "Las mayúsculas van del 65 (A) al 90 (Z) y las minúsculas del 97 (a) al 122 (z): siempre la mayúscula más 32.",
+      "symbols": [
+        { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101 — Letra latina A mayúscula" },
+        { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102 — Letra latina B mayúscula" },
+        { "char": "C", "label": "67 / 0x43 / 0b1000011 / 0o103 — Letra latina C mayúscula" },
+        { "char": "M", "label": "77 / 0x4D / 0b1001101 / 0o115 — Letra latina M mayúscula" },
+        { "char": "N", "label": "78 / 0x4E / 0b1001110 / 0o116 — Letra latina N mayúscula" },
+        { "char": "X", "label": "88 / 0x58 / 0b1011000 / 0o130 — Letra latina X mayúscula" },
+        { "char": "Y", "label": "89 / 0x59 / 0b1011001 / 0o131 — Letra latina Y mayúscula" },
+        { "char": "Z", "label": "90 / 0x5A / 0b1011010 / 0o132 — Letra latina Z mayúscula" },
+        { "char": "a", "label": "97 / 0x61 / 0b1100001 / 0o141 — Letra latina a minúscula" },
+        { "char": "b", "label": "98 / 0x62 / 0b1100010 / 0o142 — Letra latina b minúscula" },
+        { "char": "m", "label": "109 / 0x6D / 0b1101101 / 0o155 — Letra latina m minúscula" },
+        { "char": "n", "label": "110 / 0x6E / 0b1101110 / 0o156 — Letra latina n minúscula" },
+        { "char": "x", "label": "120 / 0x78 / 0b1111000 / 0o170 — Letra latina x minúscula" },
+        { "char": "z", "label": "122 / 0x7A / 0b1111010 / 0o172 — Letra latina z minúscula" }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "Corchetes 91–96",
+      "h2": "Corchetes y Marcas ASCII (91–96)",
+      "intro": "Corchetes, barra invertida, acento circunflejo, guion bajo y acento grave.",
+      "symbols": [
+        { "char": "[", "label": "91 / 0x5B / 0b1011011 / 0o133 — Corchete izquierdo" },
+        { "char": "\\", "label": "92 / 0x5C / 0b1011100 / 0o134 — Barra invertida" },
+        { "char": "]", "label": "93 / 0x5D / 0b1011101 / 0o135 — Corchete derecho" },
+        { "char": "^", "label": "94 / 0x5E / 0b1011110 / 0o136 — Acento circunflejo (caret)" },
+        { "char": "_", "label": "95 / 0x5F / 0b1011111 / 0o137 — Guion bajo" },
+        { "char": "`", "label": "96 / 0x60 / 0b1100000 / 0o140 — Acento grave (backtick)" }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "Llaves 123–126",
+      "h2": "Llaves y Virgulilla ASCII (123–126)",
+      "intro": "Los últimos caracteres imprimibles antes del código de control DEL, en la posición 127.",
+      "symbols": [
+        { "char": "{", "label": "123 / 0x7B / 0b1111011 / 0o173 — Llave izquierda" },
+        { "char": "|", "label": "124 / 0x7C / 0b1111100 / 0o174 — Barra vertical (pipe)" },
+        { "char": "}", "label": "125 / 0x7D / 0b1111101 / 0o175 — Llave derecha" },
+        { "char": "~", "label": "126 / 0x7E / 0b1111110 / 0o176 — Virgulilla" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/answers/what-is-ascii/",
+      "title": "¿Qué es ASCII?",
+      "desc": "La respuesta corta: qué significa ASCII, qué abarca y en qué se diferencia de Unicode."
+    },
+    {
+      "href": "/es/library/codigos-alt/",
+      "title": "Códigos Alt",
+      "desc": "Códigos de la tecla Alt para escribir caracteres especiales desde el teclado."
+    },
+    {
+      "href": "/es/library/entidades-html/",
+      "title": "Entidades HTML",
+      "desc": "Códigos de entidades HTML con nombre para usar símbolos en la web."
+    },
+    {
+      "href": "/es/library/arte-de-texto/",
+      "title": "Arte de Texto",
+      "desc": "Colecciones de arte ASCII y Unicode para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-teclado/",
+      "title": "Símbolos del Teclado",
+      "desc": "Los símbolos impresos en las teclas de tu teclado, explicados uno por uno."
+    }
+  ]
+}

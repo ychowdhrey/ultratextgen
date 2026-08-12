@@ -1,0 +1,265 @@
+{
+  "lang": "es",
+  "slug": "emoji-corona",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-corona/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/crown-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-corona/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/crown-emoji/"
+    }
+  ],
+  "title": "Emoji Corona: Copiar y Pegar 👑 Combos de Reina y Rey",
+  "meta_description": "Copia y pega el emoji corona 👑 para presumir logros, decir que alguien es reina o rey y armar combos reales. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Emoji Corona",
+  "hero_h1": "Emoji Corona",
+  "hero_tagline": "El emoji corona 👑 para energía de reina y de rey, presumir una victoria y armar pies de foto con estética real, más combos listos para biografías y comentarios. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji corona 👑 dejó hace rato de significar solo realeza: en TikTok e Instagram es la manera más rápida de decir que alguien es una reina o un rey, o sea, que su look, su respuesta o su logro son lo máximo. Aparece junto al 💯 o al 🔥 para marcar una victoria, solo como piropo, o al lado del 💅 para esa energía segura a la que nada le afecta. Esta página reúne el emoji corona a todo color y su corte real — 🤴 🫅 👸 —, además de los combos que la gente sí pega en biografías y pies de foto para presumir, celebrar y coronar a alguien. ¿Buscas la corona de contorno, las piezas de rey y reina del ajedrez o las tiaras en Unicode? Ese conjunto está en la página de símbolos de corona que enlazamos abajo.",
+  "sections": [
+    {
+      "id": "core-crown",
+      "label": "Emoji corona",
+      "h2": "El emoji corona y la corte real",
+      "intro": "El emoji corona en sí, más los emojis de la familia real con los que se combina en biografías y pies de foto.",
+      "symbols": [
+        {
+          "char": "👑",
+          "label": "Corona"
+        },
+        {
+          "char": "🤴",
+          "label": "Príncipe"
+        },
+        {
+          "char": "👸",
+          "label": "Princesa"
+        },
+        {
+          "char": "🫅",
+          "label": "Persona con corona"
+        },
+        {
+          "char": "💍",
+          "label": "Anillo"
+        },
+        {
+          "char": "🏰",
+          "label": "Castillo"
+        }
+      ]
+    },
+    {
+      "id": "queen-king-slang",
+      "label": "Jerga de reina y rey",
+      "h2": "Emojis de la jerga de reina y rey",
+      "intro": "La capa de jerga del emoji corona: llamarle reina o rey a alguien (o a ti) por ser icónico, fiel a su estilo o imposible de afectar.",
+      "symbols": [
+        {
+          "char": "💅",
+          "label": "Esmalte de uñas"
+        },
+        {
+          "char": "💯",
+          "label": "Cien puntos"
+        },
+        {
+          "char": "😌",
+          "label": "Cara aliviada"
+        },
+        {
+          "char": "🙌",
+          "label": "Manos levantadas"
+        },
+        {
+          "char": "👏",
+          "label": "Manos aplaudiendo"
+        },
+        {
+          "char": "🤌",
+          "label": "Dedos juntos"
+        }
+      ]
+    },
+    {
+      "id": "winning-best",
+      "label": "Ganar y ser el número 1",
+      "h2": "Emojis para ganar, presumir y ser el número 1",
+      "intro": "Emojis que acompañan a la corona para decir que algo es lo mejor, el ganador o el GOAT.",
+      "symbols": [
+        {
+          "char": "🥇",
+          "label": "Medalla de oro"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🐐",
+          "label": "Cabra (GOAT)"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🎖️",
+          "label": "Medalla militar"
+        },
+        {
+          "char": "💪",
+          "label": "Bíceps flexionado"
+        }
+      ]
+    },
+    {
+      "id": "royal-aesthetic",
+      "label": "Estética real",
+      "h2": "Estética real y accesorios",
+      "intro": "Emojis suaves y de aire caro que combinan con la corona en pies de foto estéticos y publicaciones de glow up.",
+      "symbols": [
+        {
+          "char": "💎",
+          "label": "Gema"
+        },
+        {
+          "char": "🎀",
+          "label": "Moño"
+        },
+        {
+          "char": "👛",
+          "label": "Monedero"
+        },
+        {
+          "char": "💄",
+          "label": "Labial"
+        },
+        {
+          "char": "🦢",
+          "label": "Cisne"
+        },
+        {
+          "char": "🦚",
+          "label": "Pavo real"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Presumiendo corona",
+      "flags": [
+        "👑",
+        "💯",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Energía de reina",
+      "flags": [
+        "👑",
+        "💅",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Actitud de rey",
+      "flags": [
+        "👑",
+        "😎",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fiel a su estilo",
+      "flags": [
+        "👑",
+        "💅",
+        "😌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ganador absoluto",
+      "flags": [
+        "👑",
+        "🏆",
+        "🥇"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nivel GOAT",
+      "flags": [
+        "👑",
+        "🐐",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glow up real",
+      "flags": [
+        "👑",
+        "✨",
+        "💎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modo coronación",
+      "flags": [
+        "👑",
+        "🎉",
+        "🥂"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "crownSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos del emoji corona",
+    "intro": "Combos de corona listos para usar: copia el set completo con un clic y pégalo directo en una biografía, un pie de foto o un comentario."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-corona/",
+      "title": "Símbolos de corona y realeza",
+      "desc": "Piezas de rey y reina del ajedrez, tiaras y coronas de contorno en Unicode para nombres de usuario y biografías."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Símbolos de logros",
+      "desc": "Trofeos, medallas, listones e íconos de corona para victorias, metas y tablas de clasificación."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Sets de combos de emojis listos para pies de foto, biografías y comentarios de cualquier ánimo."
+    },
+    {
+      "href": "/es/library/emoji-fuego/",
+      "title": "Emoji de fuego",
+      "desc": "El emoji de fuego 🔥 y los combos de jerga que combinan naturalmente con la corona."
+    }
+  ]
+}

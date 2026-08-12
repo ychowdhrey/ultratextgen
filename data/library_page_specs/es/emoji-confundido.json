@@ -1,0 +1,152 @@
+{
+  "lang": "es",
+  "slug": "emoji-confundido",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-confundido/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/confused-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-confundido/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/confused-emoji/" }
+  ],
+  "title": "Emoji Confundido y Kaomoji: Copiar y Pegar 😕😖🫤 Combos de Confusión",
+  "meta_description": "Emoji confundido 😕 😖 🫤, combos de confusión y kaomoji como (・・?) para chats, comentarios y respuestas. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Confundido y Kaomoji",
+  "hero_h1": "Emoji Confundido y Kaomoji",
+  "hero_tagline": "La cara confundida 😕, los gestos de agobio, los ojos en espiral por sobrecarga y kaomoji perdidos — todos los matices de «no entiendo nada». Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji confundido 😕 es la cara que mandas cuando algo simplemente no te cuadra: ceño fruncido, boca torcida y una duda genuina. Es el reverso de la cara pensativa 🤔: no es un «déjame pensarlo» deliberado, sino un honesto «espera, ¿qué?». Esta página reúne todo el rango de la confusión: el gesto agobiado de 😖, la incomodidad de boca torcida de 🫤, los ojos en espiral de 😵‍💫 para cuando el cerebro ya no da más, y los signos de interrogación y cejas levantadas que agregas cuando nada tiene sentido. Cuando ningún emoji alcanza, los kaomoji clásicos de confusión como (・・?) y (@_@) se pegan donde sea que funcione el texto plano. Toma una sola cara o copia un combo ya armado para tus chats, comentarios y respuestas.",
+  "sections": [
+    {
+      "id": "core-confused",
+      "label": "Caras de Confusión",
+      "h2": "Emojis de Caras Confundidas y Desconcertadas",
+      "intro": "Las caras de confusión del día a día, las que usas cuando algo no te termina de cuadrar.",
+      "symbols": [
+        { "char": "😕", "label": "Cara confundida" },
+        { "char": "😖", "label": "Cara agobiada" },
+        { "char": "🫤", "label": "Cara con la boca torcida" },
+        { "char": "😟", "label": "Cara preocupada" },
+        { "char": "🙁", "label": "Cara con el ceño levemente fruncido" },
+        { "char": "😦", "label": "Cara con el ceño fruncido y la boca abierta" }
+      ]
+    },
+    {
+      "id": "baffled-overwhelmed",
+      "label": "Desconcierto y Sobrecarga",
+      "h2": "Caras de Desconcierto y Sobrecarga",
+      "intro": "Cuando la confusión se convierte en sobrecarga total: ojos que giran, miradas mareadas y una cabeza a punto de estallar.",
+      "symbols": [
+        { "char": "😵‍💫", "label": "Cara con ojos en espiral" },
+        { "char": "😵", "label": "Cara mareada" },
+        { "char": "🥴", "label": "Cara aturdida" },
+        { "char": "🤯", "label": "Cabeza explotando" },
+        { "char": "🫠", "label": "Cara derritiéndose" },
+        { "char": "😩", "label": "Cara agotada" }
+      ]
+    },
+    {
+      "id": "puzzled-reactions",
+      "label": "Reacciones de Duda",
+      "h2": "Reacciones de Duda y Signos de Interrogación",
+      "intro": "La ceja levantada, el encogimiento de hombros y los signos de interrogación que agregas cuando de verdad no entiendes.",
+      "symbols": [
+        { "char": "🤨", "label": "Cara con una ceja levantada" },
+        { "char": "❓", "label": "Signo de interrogación rojo" },
+        { "char": "❔", "label": "Signo de interrogación blanco" },
+        { "char": "⁉️", "label": "Signo de exclamación e interrogación" },
+        { "char": "🤷", "label": "Persona encogiéndose de hombros" }
+      ]
+    },
+    {
+      "id": "confused-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de Confusión y Caritas de Texto",
+      "intro": "Caritas de texto al estilo japonés para el desconcierto puro: mareos, sudores incómodos y miradas en blanco.",
+      "symbols": [
+        { "char": "(・・?)", "label": "Kaomoji de duda" },
+        { "char": "(@_@)", "label": "Kaomoji de mareo" },
+        { "char": "(ーー;)", "label": "Kaomoji de sudor incómodo" },
+        { "char": "(⊙_⊙)", "label": "Kaomoji de desconcierto con ojos abiertos" },
+        { "char": "(・_・;)", "label": "Kaomoji de inseguridad nerviosa" },
+        { "char": "(￣ヘ￣;)", "label": "Kaomoji de ceño de duda" },
+        { "char": "( ﾟдﾟ)", "label": "Kaomoji de mirada en blanco" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Totalmente Perdido",
+      "flags": ["😕", "❓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No Entiendo Nada",
+      "flags": ["😕", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Espera, ¿Qué?",
+      "flags": ["🫤", "❓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cerebro Sobrecargado",
+      "flags": ["😵‍💫", "🤯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No Tiene Sentido",
+      "flags": ["😖", "❓", "❔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "¡¿Eh?!",
+      "flags": ["🤨", "⁉️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mareado y Confundido",
+      "flags": ["🥴", "😵‍💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Demasiadas Preguntas",
+      "flags": ["❓", "❔", "⁉️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "confusedSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Confundido",
+    "intro": "Copia un combo de confusión completo con un clic — desde un «¿eh?» leve hasta la sobrecarga total del cerebro."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-pensando/",
+      "title": "Emoji Pensando y Kaomoji",
+      "desc": "Caras de reflexión y de «mmm» para cuando estás evaluando una idea, no perdido."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "La biblioteca completa de kaomoji: todos los ánimos, de la alegría al desconcierto."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las caritas y emojis de caras en una sola cuadrícula."
+    },
+    {
+      "href": "/es/library/emoji-sorprendido/",
+      "title": "Emoji Sorprendido y Kaomoji",
+      "desc": "Sorpresa con los ojos bien abiertos y combos de reacción para giros inesperados."
+    }
+  ]
+}
