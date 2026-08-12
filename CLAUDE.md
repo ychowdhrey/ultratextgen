@@ -1485,6 +1485,12 @@ for a genuine full regeneration. `--dry-run` lists what a run would write
 without writing it, and an `--only` prefix matching no registered page is an
 error rather than a silent no-op.
 
+**A run also now skips any page whose hero+OG already exist** — "already there"
+means "done", so a run only ever fills gaps and costs nothing for pages that are
+finished. `--force` re-renders anyway (needed when the brand skin itself
+changes). This removes the churn at the root rather than only behind a flag: a
+full `--all` run on an unchanged tree now writes **0** files instead of 119.
+
 The default was flipped because a full run rasterises ~1,200 pages, and on a
 machine whose font build differs from the one that produced the committed PNGs
 that rewrites hundreds of **visually identical but byte-different** files —

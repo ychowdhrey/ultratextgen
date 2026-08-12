@@ -3079,6 +3079,10 @@ def main():
                          "Review `git status` before committing — see epilog.")
     ap.add_argument("--dry-run", action="store_true",
                     help="print what would be written and exit without writing.")
+    ap.add_argument("--force", action="store_true",
+                    help="re-render pages whose art already exists. Without this, an "
+                         "existing hero+OG pair is left alone — so a run only fills gaps "
+                         "and costs nothing for pages that are already done.")
     # Backwards compatibility: this script used to take a bare positional slug
     # prefix (sys.argv[1]). Kept working, hidden from --help, so older docs and
     # muscle memory don't break.
@@ -3113,7 +3117,25 @@ def main():
     else:
         selected = list(PAGES)
 
+    # Only produce what is actually missing. Re-rendering a page whose art already
+    # exists cannot improve it (the inputs are unchanged) but CAN churn the file,
+    # because a different local font build rasterises the same SVG to different
+    # bytes. So "already there" means "done" unless the caller says otherwise.
+    already = []
+    if not a.force:
+        keep = []
+        for slug in selected:
+            if (os.path.exists(os.path.join(HERO, f"{slug}.svg"))
+                    and os.path.exists(os.path.join(OG, f"{slug}.png"))):
+                already.append(slug)
+            else:
+                keep.append(slug)
+        selected = keep
+
     if a.dry_run:
+        if already:
+            print(f"[dry-run] {len(already)} page(s) already have their art — skipping "
+                  f"(use --force to re-render).")
         print(f"[dry-run] would write {len(selected)} hero SVG + OG PNG pair(s):")
         for slug in selected:
             print(f"  assets/hero/{slug}.svg  +  assets/og/{slug}.png")
@@ -3121,6 +3143,10 @@ def main():
             print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
             print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
         return 0
+
+    if already and not a.dry_run:
+        print(f"{len(already)} page(s) already have their art — skipped "
+              f"(use --force to re-render).")
 
     n = 0
     for slug in selected:
