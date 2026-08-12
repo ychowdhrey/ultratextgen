@@ -23,13 +23,15 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryl)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryl)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <circle cx="180" cy="180" r="92" fill="url(#ghlibraryl)"/>
-    <path d="M180 110 l40 30 -16 48 h-48 l-16 -48 Z" fill="#fff"/>
-    <path d="M180 100 v-8 M252 158 l8 -4 M232 250 l6 6 M128 250 l-6 6 M108 158 l-8 -4"
-          stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.7"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">⚽</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🐐</tspan></text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="Noto Color Emoji">🐂</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle"><tspan font-family="Noto Color Emoji">🎯</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryl)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">🇦🇷</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <circle cx="180" cy="180" r="92" fill="url(#ghlibraryl)"/>
-    <path d="M180 110 l40 30 -16 48 h-48 l-16 -48 Z" fill="#fff"/>
-    <path d="M180 100 v-8 M252 158 l8 -4 M232 250 l6 6 M128 250 l-6 6 M108 158 l-8 -4"
-          stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.7"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">⚽</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🐐</tspan></text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="Noto Color Emoji">🐂</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle"><tspan font-family="Noto Color Emoji">🎯</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryl)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">🇦🇷</tspan></text></g>
 </svg>

@@ -23,15 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhrusymbol)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhrusymbol)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <ellipse cx="180" cy="264" rx="86" ry="20" fill="#64748b" opacity="0.25"/>
-    <circle cx="180" cy="228" r="70" fill="url(#gvhrusymbol)"/>
-    <circle cx="180" cy="158" r="70" fill="url(#ghrusymbol)"/>
-    <text x="180" y="182" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="70" font-weight="700"
-          fill="#fff" text-anchor="middle">$</text></g>
+    <rect x="34" y="104" width="292" height="152" rx="30" fill="url(#ghrusymbol)" opacity="0.10"/>
+    <text x="180" y="150" font-family="DejaVu Sans, sans-serif" font-size="40.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">BYN</text><text x="180" y="226" font-family="DejaVu Sans, sans-serif" font-size="34.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">руб.</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <ellipse cx="180" cy="264" rx="86" ry="20" fill="#64748b" opacity="0.25"/>
-    <circle cx="180" cy="228" r="70" fill="url(#gvhrusymbol)"/>
-    <circle cx="180" cy="158" r="70" fill="url(#ghrusymbol)"/>
-    <text x="180" y="182" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="70" font-weight="700"
-          fill="#fff" text-anchor="middle">$</text></g>
+    <rect x="34" y="104" width="292" height="152" rx="30" fill="url(#ghrusymbol)" opacity="0.10"/>
+    <text x="180" y="150" font-family="DejaVu Sans, sans-serif" font-size="40.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">BYN</text><text x="180" y="226" font-family="DejaVu Sans, sans-serif" font-size="34.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">руб.</text></g>
 </svg>

@@ -31,6 +31,24 @@
       "rationale": "Flagship script-independent browse/collection pillar — same job as symbol/*, one level up (a currency-symbols or zodiac-signs collection page copies identically regardless of the visitor's language)."
     },
     {
+      "pattern": "category/strikethrough-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision on executed evidence. category/* is Latin-only because most of the pillar is Unicode math-alphanumeric SUBSTITUTION (a lookup table with no non-Latin entries). Strikethrough is not: renderer.js's decorator functions are `splitGraphemes(t).map(c => c + '\\u0336')` — they APPEND a combining mark to any grapheme, with no lookup table at all. Verified by executing the production styles.js+renderer.js against 7 non-Latin scripts: all 9 styles in this family transform Hindi, Arabic, Thai, Korean, Japanese, Chinese and Cyrillic correctly (नमस्ते -> न̶म̶स्ते̶). Production precedent already live and unquestioned: ru/zacherknutyy-tekst/ ships Cyrillic strikethrough in its own H1. Setting scriptIndependent per-page rather than per-pattern is what the most-specific-pattern-wins resolver exists for."
+    },
+    {
+      "pattern": "category/underline-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision — same mechanism and same verification as category/strikethrough-text/* above (combining U+0332 via splitGraphemes; all 6 styles in the family transform all 7 tested non-Latin scripts; ru/podcherknutyy-tekst/ is the live production precedent). This is also the pillar's best-converting page — 2.76x its own GSC position-curve band — which is why the mis-tiering was expensive rather than academic."
+    },
+    {
+      "pattern": "category/text-decorator/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision. This family wraps or frames text in symbols rather than substituting letterforms, so the job is script-irrelevant by construction; all 10 styles verified transforming all 7 tested non-Latin scripts. NOTE the demand caveat recorded with the decision: unlike the two above, this page has near-zero measured EN demand (13 impressions/60d), so the tier is corrected here for consistency of the mechanism claim — it is NOT a build recommendation, and no locale build is authorized by this entry alone."
+    },
+    {
       "pattern": "category/*",
       "tier": "core",
       "scriptIndependent": false,

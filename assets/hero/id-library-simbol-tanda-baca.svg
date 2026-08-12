@@ -22,6 +22,10 @@
   <rect width="1200" height="340" rx="20" fill="url(#dotshidlibrar)"/>
   <circle cx="1010" cy="60" r="260" fill="url(#glowhidlibrar)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhidlibrar)"/>
-  <g transform="translate(740 -10) scale(1.02)"><text x="180" y="96" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">✦ ━━━━ ✦</text><rect x="40" y="118" width="280" height="48" rx="14" fill="url(#ghidlibrar)"/><text x="180" y="152" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#fff" text-anchor="middle" letter-spacing="4">•   •   •</text><text x="180" y="208" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">❖ ⁂ ❖</text><text x="180" y="264" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">─── ★ ───</text></g>
-  <g transform="translate(420 -10) scale(0.62)" opacity="0.10"><text x="180" y="96" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">✦ ━━━━ ✦</text><rect x="40" y="118" width="280" height="48" rx="14" fill="url(#ghidlibrar)"/><text x="180" y="152" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#fff" text-anchor="middle" letter-spacing="4">•   •   •</text><text x="180" y="208" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">❖ ⁂ ❖</text><text x="180" y="264" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#64748b" text-anchor="middle" letter-spacing="4" opacity="0.7">─── ★ ───</text></g>
+  <g transform="translate(740 -10) scale(1.02)">
+    <circle cx="180" cy="176" r="96" fill="url(#ghidlibrar)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="58.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">&amp;quot;</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <circle cx="180" cy="176" r="96" fill="url(#ghidlibrar)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="58.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">&amp;quot;</text></g>
 </svg>
