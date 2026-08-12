@@ -2548,7 +2548,11 @@ PAGES = {
   "id-printables-huruf-kaligrafi": ("Huruf Kaligrafi A\u2013Z", "Kaligrafi huruf Latin \u2014 tiru, tebalkan, cetak", m_grid, K_PRINT),
   "id-printables-huruf-bubble": ("Huruf Bubble A\u2013Z & 0\u20139", "Huruf gemuk berongga \u2014 cetak, warnai, unduh PNG", m_grid, K_PRINT),
   "id-printables-mewarnai-huruf": ("Mewarnai Huruf A\u2013Z", "Lembar mewarnai abjad untuk PAUD & TK", m_grid, K_PRINT),
-  "id-printables-menebalkan-huruf": ("Menebalkan Huruf", "Buat lembar latihan menulis \u2014 7 tingkat, cetak sendiri", m_grid, K_PRINT),
+  "id-printables-tulisan-selamat-ulang-tahun": ("Tulisan Selamat Ulang Tahun", "Huruf sambung \u2014 cetak, unduh PNG, ganti nama", m_grid, K_PRINT),
+"id-printables-alfabet-spanyol": ("Alfabet Bahasa Spanyol A\u2013Z", "27 huruf termasuk \u00d1 \u2014 cetak & cara baca", m_grid, K_PRINT),
+"id-printables-huruf-titik-titik": ("Huruf Titik-Titik A\u2013Z & 0\u20139", "Sambung titik \u2014 4 tingkat, cetak sendiri", m_grid, K_PRINT),
+"id-printables-kristik-huruf": ("Pola Kristik Huruf A\u2013Z", "Bagan 5\u00d77 \u2014 ketik nama, cetak polanya", m_grid, K_PRINT),
+"id-printables-menebalkan-huruf": ("Menebalkan Huruf", "Buat lembar latihan menulis \u2014 7 tingkat, cetak sendiri", m_grid, K_PRINT),
   "id-printables-huruf-balok": ("Huruf Balok A\u2013Z", "Huruf terpisah & angka 0\u20139 \u2014 contoh, tebalkan, mal", m_grid, K_PRINT),
   "id-printables-huruf-sambung": ("Huruf Sambung A\u2013Z", "Lembar tegak bersambung untuk ditebalkan & dicetak", m_grid, K_PRINT),
   # Printables: 5 new locale hub pages
