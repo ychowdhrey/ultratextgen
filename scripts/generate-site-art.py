@@ -2706,6 +2706,15 @@ for _l, _word in LETTER_WORD_ES.items():
         f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
         P(m_letter_outline, letter=_L), K_PRINT)
 
+# ES per-digit number spokes (2026-08-12) — the 0-9 half of the ES colouring
+# family, which had existed on the EN side all along.
+LETTER_WORD_ES_NUM = {"0": "cero", "1": "uno", "2": "dos", "3": "tres", "4": "cuatro",
+                      "5": "cinco", "6": "seis", "7": "siete", "8": "ocho", "9": "nueve"}
+for _d, _w in LETTER_WORD_ES_NUM.items():
+    PAGES[f"es-imprimibles-abecedario-para-colorear-numero-{_d}"] = (
+        f"Numero {_d} para Colorear", f"El {_w} en grande, contorno para imprimir",
+        P(m_letter_outline, letter=_d), K_PRINT)
+
 # Number pages exist for four of the alphabet sets. Registering only the A-Z
 # half left every 0-9 page on its hub's card (block-letters, and — via the
 # category page it borrowed from — bubble-letters).
