@@ -1,0 +1,366 @@
+{
+  "slug": "xiangmu-fuhao",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "title": "項目符號 • ► ✓ 清單標記複製貼上 | UltraTextGen",
+  "meta_description": "項目符號一次收齊：圓點、三角形、箭頭、打勾方框、星星菱形與圈數字，適合用在文件、筆記或社群貼文的清單標記。點一下就複製。",
+  "canonical": "https://ultratextgen.com/zh-tw/library/xiangmu-fuhao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "收藏",
+  "library_url": "https://ultratextgen.com/zh-tw/library/",
+  "breadcrumb": "項目符號",
+  "hero_h1": "項目符號",
+  "hero_tagline": "清單、筆記、社群貼文都用得到的項目標記符號，點一下就複製。",
+  "intro": "打字時想用比「-」或「*」更好看的項目符號，卻找不到輸入法？這裡收錄了常見的圓點、三角形、箭頭、打勾方框，還有裝飾性的星星菱形與圈數字，都是標準 Unicode 字元，貼到 Word、筆記軟體、Instagram 貼文都不會跑版。",
+  "date_published": "2026-08-13",
+  "date_modified": "2026-08-13",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-vineta/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-puces/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-poin/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jeom-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-marcadores/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/aufzaehlungszeichen/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/opsommingstekens/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-punktowania/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/madde-imi-sembolleri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-punto-elenco/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/markery-spiska/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/xiangmu-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "dots",
+      "label": "圓點類",
+      "h2": "圓點與基本項目符號",
+      "intro": "最常見的清單開頭符號。",
+      "symbols": [
+        {
+          "char": "•",
+          "label": "項目符號"
+        },
+        {
+          "char": "‣",
+          "label": "三角項目符號"
+        },
+        {
+          "char": "◦",
+          "label": "白色項目符號"
+        },
+        {
+          "char": "⁃",
+          "label": "連字號項目符號"
+        },
+        {
+          "char": "∙",
+          "label": "點運算子"
+        },
+        {
+          "char": "·",
+          "label": "中間點"
+        },
+        {
+          "char": "⊙",
+          "label": "圓圈點運算子"
+        },
+        {
+          "char": "⊚",
+          "label": "圓圈環運算子"
+        },
+        {
+          "char": "◉",
+          "label": "實心圓點"
+        }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "箭頭與三角形",
+      "h2": "箭頭與三角形項目符號",
+      "intro": "適合表示步驟、流程或重點提示的方向性符號。",
+      "symbols": [
+        {
+          "char": "▸",
+          "label": "黑色右三角形"
+        },
+        {
+          "char": "►",
+          "label": "黑色右指標"
+        },
+        {
+          "char": "→",
+          "label": "向右箭頭"
+        },
+        {
+          "char": "➤",
+          "label": "黑色右箭頭"
+        },
+        {
+          "char": "➜",
+          "label": "圓頭右箭頭"
+        },
+        {
+          "char": "➔",
+          "label": "粗右箭頭"
+        },
+        {
+          "char": "▶",
+          "label": "黑色右三角"
+        },
+        {
+          "char": "▷",
+          "label": "白色右三角"
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "label": "打勾與方框",
+      "h2": "打勾與核取方框符號",
+      "intro": "待辦清單、確認事項常用的核取符號。",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "打勾符號"
+        },
+        {
+          "char": "✔",
+          "label": "加粗打勾符號"
+        },
+        {
+          "char": "☑",
+          "label": "方框打勾"
+        },
+        {
+          "char": "✅",
+          "label": "綠色打勾表情符號"
+        },
+        {
+          "char": "☐",
+          "label": "空白方框"
+        },
+        {
+          "char": "☒",
+          "label": "打叉方框"
+        }
+      ]
+    },
+    {
+      "id": "decorative",
+      "label": "星星與菱形",
+      "h2": "裝飾性星星與菱形符號",
+      "intro": "想讓清單更有設計感時可以用這些裝飾符號。",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "黑色星星"
+        },
+        {
+          "char": "◆",
+          "label": "黑色菱形"
+        },
+        {
+          "char": "✦",
+          "label": "黑色四角星"
+        },
+        {
+          "char": "◇",
+          "label": "白色菱形"
+        },
+        {
+          "char": "◈",
+          "label": "內嵌小菱形"
+        },
+        {
+          "char": "❖",
+          "label": "減號黑菱形"
+        },
+        {
+          "char": "✧",
+          "label": "白色四角星"
+        },
+        {
+          "char": "✶",
+          "label": "六角黑星"
+        }
+      ]
+    },
+    {
+      "id": "floral",
+      "label": "花朵符號",
+      "h2": "花朵造型項目符號",
+      "intro": "柔和風格的清單標記，適合筆記或美感排版。",
+      "symbols": [
+        {
+          "char": "❀",
+          "label": "白色小花"
+        },
+        {
+          "char": "❁",
+          "label": "八瓣花朵"
+        },
+        {
+          "char": "✿",
+          "label": "黑色小花"
+        },
+        {
+          "char": "⚘",
+          "label": "花朵符號"
+        },
+        {
+          "char": "✾",
+          "label": "六瓣花朵"
+        },
+        {
+          "char": "❃",
+          "label": "風車星芒"
+        },
+        {
+          "char": "✻",
+          "label": "淚滴星芒"
+        },
+        {
+          "char": "❋",
+          "label": "八瓣風車星芒"
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "label": "圈數字",
+      "h2": "圈數字符號（1–10）",
+      "intro": "需要標示順序時可以直接用這組圈起來的數字，不必另外排版。",
+      "symbols": [
+        {
+          "char": "①",
+          "label": "圈數字一"
+        },
+        {
+          "char": "②",
+          "label": "圈數字二"
+        },
+        {
+          "char": "③",
+          "label": "圈數字三"
+        },
+        {
+          "char": "④",
+          "label": "圈數字四"
+        },
+        {
+          "char": "⑤",
+          "label": "圈數字五"
+        },
+        {
+          "char": "⑥",
+          "label": "圈數字六"
+        },
+        {
+          "char": "⑦",
+          "label": "圈數字七"
+        },
+        {
+          "char": "⑧",
+          "label": "圈數字八"
+        },
+        {
+          "char": "⑨",
+          "label": "圈數字九"
+        },
+        {
+          "char": "⑩",
+          "label": "圈數字十"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "項目符號常見問題",
+  "faq": [
+    {
+      "q": "這些符號可以直接貼進 Word 或簡報嗎？",
+      "a": "可以，全部都是標準 Unicode 字元，貼到 Word、PowerPoint、筆記軟體或社群貼文都能正常顯示，不需要額外安裝字型。"
+    },
+    {
+      "q": "圈數字最多只到十嗎？",
+      "a": "Unicode 收錄的標準圈數字只到 ⑳（20），這裡列出最常用的 1 到 10；超過的範圍建議改用「1.」「2.」這類一般數字加符號的寫法。"
+    },
+    {
+      "q": "為什麼要用符號取代一般的「-」或「*」？",
+      "a": "純文字項目符號比鍵盤上的連字號或星號更清楚易讀，尤其在不支援自動項目清單格式的地方（例如聊天訊息、純文字筆記）特別實用。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號",
+      "desc": "獨特 Unicode 符號的參考收藏——無限、和平、科學、法律標記等罕見符號。點一下就複製。"
+    },
+    {
+      "href": "/zh-tw/library/",
+      "title": "符號收藏",
+      "desc": "瀏覽 UltraTextGen 所有的 Unicode 符號收藏頁面。"
+    }
+  ]
+}

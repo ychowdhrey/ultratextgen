@@ -1,0 +1,378 @@
+{
+  "slug": "yinyue-fuhao",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "title": "音樂符號 ♪♫ 音符與樂器表情符號複製貼上 | UltraTextGen",
+  "meta_description": "音樂符號一次收齊：四分音符、高音譜號、升降記號、休止符，還有吉他、鋼琴等樂器表情符號與音符裝飾。點一下就複製。",
+  "canonical": "https://ultratextgen.com/zh-tw/library/yinyue-fuhao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "收藏",
+  "library_url": "https://ultratextgen.com/zh-tw/library/",
+  "breadcrumb": "音樂符號",
+  "hero_h1": "音樂符號",
+  "hero_tagline": "音符、譜號、休止符與樂器表情符號的完整收藏，點一下就複製。",
+  "intro": "音樂符號分成兩種完全不同的來源：一種是 Unicode 從很早期就收錄的正式記譜符號（音符、譜號、升降記號），主要給樂譜排版軟體使用；另一種是後來才加入的樂器表情符號（吉他 🎸、鋼琴 🎹），單純是圖像化的插圖。兩者都能直接複製貼到暱稱、歌詞截圖或聊天訊息裡。",
+  "date_published": "2026-08-13",
+  "date_modified": "2026-08-13",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-am-nhac/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/yinyue-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "音符",
+      "h2": "基本音符",
+      "intro": "最常用來裝飾暱稱或代表「音樂」的音符字元。",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "四分音符"
+        },
+        {
+          "char": "♪",
+          "label": "八分音符"
+        },
+        {
+          "char": "♫",
+          "label": "連桿八分音符"
+        },
+        {
+          "char": "♬",
+          "label": "連桿十六分音符"
+        },
+        {
+          "char": "🎵",
+          "label": "音符表情符號"
+        },
+        {
+          "char": "🎶",
+          "label": "多音符表情符號"
+        }
+      ]
+    },
+    {
+      "id": "clefs-accidentals",
+      "label": "譜號與升降記號",
+      "h2": "譜號、升降與強弱記號",
+      "intro": "樂譜排版用的正式記譜符號。",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "高音譜號"
+        },
+        {
+          "char": "𝄡",
+          "label": "中音譜號"
+        },
+        {
+          "char": "𝄢",
+          "label": "低音譜號"
+        },
+        {
+          "char": "♯",
+          "label": "升記號"
+        },
+        {
+          "char": "♭",
+          "label": "降記號"
+        },
+        {
+          "char": "♮",
+          "label": "還原記號"
+        },
+        {
+          "char": "𝄪",
+          "label": "重升記號"
+        },
+        {
+          "char": "𝄫",
+          "label": "重降記號"
+        },
+        {
+          "char": "𝆏",
+          "label": "弱音記號（piano）"
+        },
+        {
+          "char": "𝆑",
+          "label": "強音記號（forte）"
+        }
+      ]
+    },
+    {
+      "id": "barlines",
+      "label": "小節線與反覆記號",
+      "h2": "小節線、反覆與延音記號",
+      "intro": "標示樂句結構的記譜符號。",
+      "symbols": [
+        {
+          "char": "𝄀",
+          "label": "單小節線"
+        },
+        {
+          "char": "𝄁",
+          "label": "雙小節線"
+        },
+        {
+          "char": "𝄂",
+          "label": "終止線"
+        },
+        {
+          "char": "𝄃",
+          "label": "反向終止線"
+        },
+        {
+          "char": "𝄆",
+          "label": "反覆記號（左）"
+        },
+        {
+          "char": "𝄇",
+          "label": "反覆記號（右）"
+        },
+        {
+          "char": "𝄐",
+          "label": "延音記號"
+        },
+        {
+          "char": "𝄑",
+          "label": "延音記號（下方）"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "休止符",
+      "h2": "休止符",
+      "intro": "代表不同拍長「靜音」的記譜符號。",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "八分休止符"
+        },
+        {
+          "char": "𝄿",
+          "label": "十六分休止符"
+        },
+        {
+          "char": "𝄻",
+          "label": "二分休止符"
+        },
+        {
+          "char": "𝄼",
+          "label": "四分休止符"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "樂器表情符號",
+      "h2": "樂器與音響表情符號",
+      "intro": "各種樂器與播放裝置的表情符號插圖。",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "吉他表情符號"
+        },
+        {
+          "char": "🎹",
+          "label": "鋼琴表情符號"
+        },
+        {
+          "char": "🎺",
+          "label": "小號表情符號"
+        },
+        {
+          "char": "🎻",
+          "label": "小提琴表情符號"
+        },
+        {
+          "char": "🎷",
+          "label": "薩克斯風表情符號"
+        },
+        {
+          "char": "🥁",
+          "label": "鼓表情符號"
+        },
+        {
+          "char": "🪕",
+          "label": "斑鳩琴表情符號"
+        },
+        {
+          "char": "🪗",
+          "label": "手風琴表情符號"
+        },
+        {
+          "char": "🪘",
+          "label": "長鼓表情符號"
+        },
+        {
+          "char": "🪇",
+          "label": "沙鈴表情符號"
+        },
+        {
+          "char": "🎤",
+          "label": "麥克風表情符號"
+        },
+        {
+          "char": "🎧",
+          "label": "耳機表情符號"
+        },
+        {
+          "char": "📻",
+          "label": "收音機表情符號"
+        },
+        {
+          "char": "🔊",
+          "label": "大聲量喇叭表情符號"
+        },
+        {
+          "char": "🔇",
+          "label": "靜音喇叭表情符號"
+        },
+        {
+          "char": "🎼",
+          "label": "樂譜表情符號"
+        }
+      ]
+    },
+    {
+      "id": "decorations",
+      "label": "音符裝飾",
+      "h2": "音符暱稱裝飾組合",
+      "intro": "把音符和其他符號組合起來的裝飾字串，適合放在暱稱或簡介裡。",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "音符分隔裝飾"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "星芒音符裝飾"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "星塵音符裝飾"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "簡約音符裝飾"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "閃亮音符裝飾"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "成對音符裝飾"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "愛心音符裝飾"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "括號音符裝飾"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "音樂符號常見問題",
+  "faq": [
+    {
+      "q": "這些音樂符號可以貼到暱稱裡嗎？",
+      "a": "可以，音符和樂器表情符號都是純文字字元，貼到 Discord、遊戲暱稱、Instagram 簡介都不會跑版；比較舊型的裝置對少數記譜符號（例如 𝄞 高音譜號）支援度較低，建議先在目標平台測試。"
+    },
+    {
+      "q": "為什麼有些符號看起來像方框？",
+      "a": "部分記譜符號（升降記號、休止符）屬於較冷門的 Unicode 區塊，只有裝了對應字型的裝置才能正常顯示；換一台手機或電腦通常就能看到正確符號。"
+    },
+    {
+      "q": "音符和樂器表情符號有什麼不同？",
+      "a": "音符（♪♫）是正式的記譜符號，主要給樂譜軟體排版用；樂器表情符號（🎸🎹）則單純是插圖，沒有記譜功能，純粹用來裝飾文字。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號",
+      "desc": "獨特 Unicode 符號的參考收藏——無限、和平、科學、法律標記等罕見符號。點一下就複製。"
+    },
+    {
+      "href": "/zh-tw/library/",
+      "title": "符號收藏",
+      "desc": "瀏覽 UltraTextGen 所有的 Unicode 符號收藏頁面。"
+    }
+  ]
+}
