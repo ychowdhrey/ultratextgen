@@ -2694,6 +2694,27 @@ for _l, _word in LETTER_WORD.items():
         f"Calligraphy {_L}", f"Blackletter & script {_L} to copy or print",
         P(m_letter_cursive, letter=_L), K_PRINT)
 
+# ES per-letter coloring spokes (2026-08-12). Same loop shape as the EN sets
+# above; the Spanish head-word differs from LETTER_WORD because the letter-word
+# association is language-specific (A de Arbol, not A is for Apple).
+LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato", "enye": "Ñu"}
+for _l, _word in LETTER_WORD_ES.items():
+    # slug != letter for the Spanish enye: the URL/PNG slug is ASCII ("enye",
+    # matching printablesEngine's own charSlug), but the drawn glyph is Ñ.
+    _L = "Ñ" if _l == "enye" else _l.upper()
+    PAGES[f"es-imprimibles-abecedario-para-colorear-letra-{_l}"] = (
+        f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
+# ES per-digit number spokes (2026-08-12) — the 0-9 half of the ES colouring
+# family, which had existed on the EN side all along.
+LETTER_WORD_ES_NUM = {"0": "cero", "1": "uno", "2": "dos", "3": "tres", "4": "cuatro",
+                      "5": "cinco", "6": "seis", "7": "siete", "8": "ocho", "9": "nueve"}
+for _d, _w in LETTER_WORD_ES_NUM.items():
+    PAGES[f"es-imprimibles-abecedario-para-colorear-numero-{_d}"] = (
+        f"Numero {_d} para Colorear", f"El {_w} en grande, contorno para imprimir",
+        P(m_letter_outline, letter=_d), K_PRINT)
+
 # Number pages exist for four of the alphabet sets. Registering only the A-Z
 # half left every 0-9 page on its hub's card (block-letters, and — via the
 # category page it borrowed from — bubble-letters).
@@ -2840,6 +2861,15 @@ PAGES.update({
 "pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
+"es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
+# 2026-08-12 ES printables gap-fill + graffiti EN parent.
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
+"es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
+"es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
 "printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
