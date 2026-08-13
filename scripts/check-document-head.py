@@ -43,6 +43,20 @@ HEAD_END_RE = re.compile(r'</head>', re.I)
 ALT_OR_CANON_RE = re.compile(r'<link[^>]*rel=[\'"](?:alternate|canonical)[\'"][^>]*>', re.I)
 CANON_RE = re.compile(r'<link[^>]*rel=[\'"]canonical[\'"][^>]*>', re.I)
 
+# A tile button's aria-label is the last attribute on the tag, so a well-formed
+# one always closes as  aria-label="...">  — the quote is immediately followed
+# by the tag's own '>'. If anything else follows, the value contained a raw '"'
+# that ended the attribute early and left the rest of the label as garbage
+# attributes.
+#
+# This shipped: on 2026-08-13 a pass copied visible labels into aria-label
+# without escaping, and 26 labels containing a quoted word — 'often used
+# decoratively as a "rewind"/arrow substitute' — silently broke their own
+# button. symbol/left-arrow lost its only tile as a result. Nothing caught it
+# until a downstream parser reported the section as empty.
+TILE_ARIA_RE = re.compile(
+    r'<button class="flag-emoji symbol-tile" data-symbol="[^"]*" aria-label="[^"]*"(?!>)')
+
 
 def check(path):
     """Return a list of problem strings for one file."""
@@ -74,6 +88,11 @@ def check(path):
     if len(canons) > 1:
         problems.append(f'{len(canons)} canonical tags in <head>')
 
+    for m in TILE_ARIA_RE.finditer(src):
+        problems.append(
+            'tile aria-label contains an unescaped double quote, which ends the '
+            f'attribute early and breaks the button: …{m.group(0)[-70:]}')
+
     return problems
 
 
@@ -98,9 +117,14 @@ def main():
         print(f'✗ {path}\n    {problem}')
     if len(bad) > 60:
         print(f'  ... and {len(bad) - 60} more')
-    print('\n  Fix: move the tag inside <head>, after the canonical.')
-    print('  If a generator put it there, fix the generator too — see this file\'s')
-    print('  header for the audit-hreflang.js insertion bug that caused the first two.')
+    print()
+    if any('aria-label' in p for _, p in bad):
+        print('  Fix (aria-label): HTML-escape the value — a literal " must be &quot;.')
+        print('  Anything that copies a visible label into an attribute has to escape it.')
+    if any('aria-label' not in p for _, p in bad):
+        print('  Fix (placement): move the tag inside <head>, after the canonical.')
+        print('  If a generator put it there, fix the generator too — see this file\'s')
+        print('  header for the audit-hreflang.js insertion bug that caused the first two.')
     return 1
 
 
