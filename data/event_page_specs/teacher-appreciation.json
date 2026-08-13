@@ -1,0 +1,239 @@
+{
+  "slug": "teacher-appreciation",
+  "event_name": "Teacher Appreciation Week",
+  "aliases": ["Teacher Appreciation Day", "National Teacher Day", "Teachers' Day"],
+
+  "title": "Teacher Appreciation Fonts, Symbols & Card Messages | UltraTextGen",
+  "meta_description": "Style a thank-you message for a teacher in warm cursive fonts, copy apple, pencil and star emoji, and tap a ready-made line to style it instantly. Free, no sign-up.",
+
+  "hero_h1": "Teacher Appreciation Text & Symbol Generator",
+  "hero_tagline": "Type a teacher's name or a thank-you message and style it in warm, elegant fonts, then copy apple, pencil, and star emoji, or tap a ready-made line to style it instantly. Note: the date below is the US date — most other countries mark a teachers' day of their own on a different day.",
+
+  "intro": "Teacher Appreciation Week is a thank-you occasion built around a small set of short, sincere lines — a card, a gift tag, a note in a lunchbox, a class group message. This page gathers what people actually reach for: warm, legible fonts you can preview on your own text, the apple, pencil, book and star emoji people paste around a teacher's name, a few original ASCII art pieces, and a phrase bank grouped by who is writing — a student, a parent, or a whole class. The lines that land are the specific ones, so the bank is built to be finished rather than copied: most entries leave room for a name, a subject, or the one thing that actually happened this year.",
+
+  "date_window": "Monday to Friday of the first full week of May in the US, with National Teacher Day on the Tuesday of that week — but this is a US date. World Teachers' Day is 5 October, Malaysia marks Hari Guru on 16 May, and Indonesia marks Hari Guru Nasional on 25 November, so check your own country's date first",
+
+  "sample_phrase": "Thank You for Everything",
+
+  "canonical": "https://ultratextgen.com/events/teacher-appreciation/",
+
+  "occurrence": {
+    "type": "table",
+    "dates": [
+      "2026-05-05", "2027-05-04", "2028-05-02", "2029-05-08", "2030-05-07",
+      "2031-05-06", "2032-05-04", "2033-05-03", "2034-05-02", "2035-05-08",
+      "2036-05-06", "2037-05-05", "2038-05-04", "2039-05-03", "2040-05-08"
+    ]
+  },
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Cute Script",
+      "Ultra Italic Serif",
+      "Ultra Bold Serif",
+      "Ultra Small Caps"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Apples, Books & Classroom",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🍎", "📚", "✏️", "📝", "🎒", "🖍️", "📐", "🧑‍🏫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thanks, Stars & Hearts",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["⭐", "🌟", "💛", "❤️", "🙏", "👏", "🏆", "🌻"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(◕‿◕)♡", "label": "Warm & Grateful" },
+    { "text": "＼(^o^)／", "label": "Cheerful Thanks" },
+    { "text": "(っ˘̩╭╮˘̩)っ", "label": "Heartfelt" },
+    { "text": "( ˶ˆᗜˆ˵ )", "label": "Happy Student" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Apple",
+        "art": "    ,--./\n   /    \\\n  |      |\n   \\    /\n    `--'"
+      },
+      {
+        "label": "Pencil",
+        "art": "  _____________\n /             \\____\n|               ___ >\n \\_____________/----"
+      },
+      {
+        "label": "Star",
+        "art": "     *\n    ***\n *********\n  *******\n   *****\n  **   **"
+      },
+      {
+        "label": "Stack of Books",
+        "art": " _______________\n|_______________|\n |_____________|\n  |___________|\n   |_________|"
+      },
+      {
+        "label": "Thank You Banner",
+        "art": "+------------------------+\n|   T H A N K   Y O U    |\n|        TEACHER         |\n+------------------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Teacher Appreciation Week",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Thank You for Everything",
+      "group": "Classic greetings",
+      "translation": "Short, safe, and sincere."
+    },
+    {
+      "text": "Happy Teachers' Day",
+      "group": "Classic greetings",
+      "translation": "Use this outside the US, where the day is usually named this way."
+    },
+    {
+      "text": "The Best Teacher",
+      "group": "Classic greetings",
+      "translation": "Fits a gift tag or a card front."
+    },
+    {
+      "text": "Thank you for being patient with me",
+      "group": "From a student",
+      "translation": "Works for almost any age."
+    },
+    {
+      "text": "You made this year so much better",
+      "group": "From a student",
+      "translation": "Warm without being over the top."
+    },
+    {
+      "text": "I actually like reading now",
+      "group": "From a student",
+      "translation": "Swap in the subject that changed — this is the shape that lands."
+    },
+    {
+      "text": "Thanks for never giving up on me",
+      "group": "From a student",
+      "translation": "For a teacher who stuck with a hard year."
+    },
+    {
+      "text": "Thank you for how you are with her",
+      "group": "From a parent",
+      "translation": "Swap her for him or them. Parents write this one most."
+    },
+    {
+      "text": "She talks about your class at dinner",
+      "group": "From a parent",
+      "translation": "A specific, true detail beats any adjective."
+    },
+    {
+      "text": "Thank you for noticing what he needed",
+      "group": "From a parent",
+      "translation": "For a teacher who spotted something you did not."
+    },
+    {
+      "text": "We see how hard you work",
+      "group": "From a parent",
+      "translation": "Simple and sincere."
+    },
+    {
+      "text": "Thank you from all of us in ___",
+      "group": "From the whole class",
+      "translation": "Fill in the class or room number, then style it."
+    },
+    {
+      "text": "Room ___ says thank you",
+      "group": "From the whole class",
+      "translation": "Good for a banner or a shared card front."
+    },
+    {
+      "text": "The best part of ___ was your class",
+      "group": "From the whole class",
+      "translation": "Fill in the year or grade."
+    },
+    {
+      "text": "Thank you for the ___ lesson I still think about",
+      "group": "Name something specific",
+      "translation": "The single most effective card line: name one real moment."
+    },
+    {
+      "text": "You were right about ___",
+      "group": "Name something specific",
+      "translation": "Warm, a little playful, and impossible to write generically."
+    },
+    {
+      "text": "Thank you for making ___ make sense",
+      "group": "Name something specific",
+      "translation": "Fill in the subject or topic."
+    },
+    {
+      "text": "Best Teacher Ever",
+      "group": "Short for a gift tag",
+      "translation": "Three words, fits any tag."
+    },
+    {
+      "text": "Thanks, Teacher",
+      "group": "Short for a gift tag",
+      "translation": "The shortest version that still reads as warm."
+    },
+    {
+      "text": "You're Appreciated",
+      "group": "Short for a gift tag",
+      "translation": "Neutral and safe for a staff-wide gift."
+    },
+    {
+      "text": "Thank you for a great year",
+      "group": "End of the year",
+      "translation": "For the last week of term rather than May."
+    },
+    {
+      "text": "We'll miss you next year",
+      "group": "End of the year",
+      "translation": "For a teacher the class is moving on from."
+    }
+  ],
+
+  "companion_answer_slug": "teacher-appreciation-card-what-to-write",
+
+  "faq_more_q": "What should I actually write in a teacher's card?",
+
+  "related": [
+    {
+      "href": "/library/school-education-emojis/",
+      "title": "School & Education Emojis",
+      "desc": "The full classroom emoji set — apples, books, pencils, and more to pair with a thank-you note."
+    },
+    {
+      "href": "/library/star-emoji/",
+      "title": "Star Emoji",
+      "desc": "Every star emoji and Unicode star character for framing a teacher's name."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Heart emojis and Unicode heart characters in every colour and style."
+    },
+    {
+      "href": "/events/graduation/",
+      "title": "Graduation Generator",
+      "desc": "The other end of the school year — fonts, symbols, and phrases for graduation messages."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for cards, tags, and handwritten-looking notes."
+    }
+  ]
+}
