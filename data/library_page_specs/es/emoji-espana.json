@@ -1,0 +1,177 @@
+{
+ "lang": "es",
+ "slug": "emoji-espana",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-espana/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/spain-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-espana/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/spain-emoji-combos/"
+  }
+ ],
+ "title": "Emoji España 🇪🇸⚽ Combos para Copiar y Pegar",
+ "meta_description": "Combos de emoji España 🇪🇸⚽ — colores de La Roja y sets de fútbol para biografías y publicaciones. Haz clic en cualquier emoji o combo para copiarlo.",
+ "breadcrumb": "Combos de Emojis de España",
+ "hero_h1": "Combos de Emojis de España",
+ "hero_tagline": "Los colores de La Roja y sets de emojis de fútbol para los aficionados de España: haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los combos de emoji España juntan la bandera 🇪🇸 con el balón ⚽ y los colores de La Roja. Los cánticos de «Vamos España» suenan en cada partido. Copia un emoji suelto de los de abajo o llévate un set completo con un solo clic.",
+ "sections": [
+  {
+   "id": "spain-emojis",
+   "label": "España",
+   "h2": "Emojis de España",
+   "intro": "La bandera, el balón y los colores nacionales.",
+   "symbols": [
+    {
+     "char": "🇪🇸",
+     "label": "Bandera de España"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🔴",
+     "label": "Círculo rojo"
+    },
+    {
+     "char": "🟡",
+     "label": "Círculo amarillo"
+    },
+    {
+     "char": "🐂",
+     "label": "Toro"
+    },
+    {
+     "char": "🌞",
+     "label": "Sol"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de confeti"
+    }
+   ]
+  },
+  {
+   "id": "pride-emojis",
+   "label": "Orgullo",
+   "h2": "Emojis del Orgullo Español",
+   "intro": "El rojo y el amarillo de la rojigualda.",
+   "symbols": [
+    {
+     "char": "🔴",
+     "label": "Círculo rojo"
+    },
+    {
+     "char": "🟡",
+     "label": "Círculo amarillo"
+    },
+    {
+     "char": "🐂",
+     "label": "Toro"
+    },
+    {
+     "char": "🌞",
+     "label": "Sol"
+    },
+    {
+     "char": "💯",
+     "label": "Cien puntos"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "La Roja",
+   "flags": [
+    "🇪🇸",
+    "⚽",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Vamos España",
+   "flags": [
+    "🇪🇸",
+    "⚽",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Campeones de España",
+   "flags": [
+    "🇪🇸",
+    "🏆",
+    "🥇"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Rojigualda",
+   "flags": [
+    "🔴",
+    "🟡",
+    "🔴"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "spainCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos de España",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, publicación o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emojis del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y temática."
+  }
+ ]
+}

@@ -1,0 +1,155 @@
+{
+  "lang": "es",
+  "slug": "emoji-molesto",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-molesto/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/annoyed-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-molesto/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/annoyed-emoji/" }
+  ],
+  "title": "Emoji Molesto y Kaomoji: Copiar y Pegar 😒🙄 Combos de Fastidio",
+  "meta_description": "Emoji molesto 😒 🙄 😑 😤, combos de fastidio y hartazgo, y kaomoji como (￣ヘ￣) para chats y comentarios. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Molesto y Kaomoji",
+  "hero_h1": "Emoji Molesto y Kaomoji",
+  "hero_tagline": "La mirada 😒 sin gracia, la cara 😤 a punto de estallar y todos los kaomoji para decir \"no estoy enojado, solo molesto\". Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La cara sin gracia 😒 es el emoji molesto por excelencia de internet: esa mirada que pones cuando algo fastidia pero no vale un berrinche completo. Esta página reúne todo ese rango intermedio: la mirada plana 😑, la cara sarcástica de cabeza 🙃 y el 😤 con vapor en la nariz para cuando el fastidio empieza a volverse frustración. También incluye el lado no verbal — un 🤷 de hombros o un 🙅 rotundo dicen \"ya me harté\" sin una sola palabra — y las caritas de puro texto como (￣ヘ￣) completan el set para donde los emojis no se ven. Para el gesto concreto de poner los ojos en blanco, mira la página enlazada abajo; y para cuando el fastidio se desborda en furia, revisa la página de emoji enojado.",
+  "sections": [
+    {
+      "id": "annoyed-core",
+      "label": "Caras de Fastidio",
+      "h2": "El Emoji de Cara Molesta",
+      "intro": "La fila del \"no me impresiona\" de todos los días, encabezada por 😒 — el emoji que la mayoría tiene en mente al decir \"emoji molesto\".",
+      "symbols": [
+        { "char": "😒", "label": "Cara sin gracia" },
+        { "char": "😑", "label": "Cara inexpresiva" },
+        { "char": "🙄", "label": "Cara con ojos en blanco" },
+        { "char": "😤", "label": "Cara con vapor en la nariz" },
+        { "char": "🤨", "label": "Cara con la ceja levantada" },
+        { "char": "😾", "label": "Gato enfurruñado" },
+        { "char": "🙃", "label": "Cara al revés" }
+      ]
+    },
+    {
+      "id": "frustration-climbing",
+      "label": "Frustración en Aumento",
+      "h2": "Cuando el Fastidio Pasa a Frustración",
+      "intro": "Un paso más allá de la irritación: las caras tensas y hartas para cuando el fastidio sigue creciendo.",
+      "symbols": [
+        { "char": "😖", "label": "Cara desconcertada" },
+        { "char": "😣", "label": "Cara de aguante" },
+        { "char": "🫨", "label": "Cara temblando" },
+        { "char": "🙁", "label": "Cara con el ceño levemente fruncido" },
+        { "char": "☹️", "label": "Cara con el ceño fruncido" },
+        { "char": "😞", "label": "Cara decepcionada" },
+        { "char": "😕", "label": "Cara confundida" }
+      ]
+    },
+    {
+      "id": "annoyed-gestures",
+      "label": "Gestos de Fastidio",
+      "h2": "Gestos y Lenguaje Corporal de Fastidio",
+      "intro": "A veces la cara no basta: encoger los hombros o una mano que dice \"no\" deja el mismo mensaje sin una sola palabra.",
+      "symbols": [
+        { "char": "🤷", "label": "Persona encogiéndose de hombros" },
+        { "char": "🤷‍♀️", "label": "Mujer encogiéndose de hombros" },
+        { "char": "🤷‍♂️", "label": "Hombre encogiéndose de hombros" },
+        { "char": "🙅", "label": "Persona haciendo el gesto de no" },
+        { "char": "🙅‍♀️", "label": "Mujer haciendo el gesto de no" },
+        { "char": "✋", "label": "Mano levantada" },
+        { "char": "🚫", "label": "Prohibido" }
+      ]
+    },
+    {
+      "id": "annoyed-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji y Caritas de Texto de Fastidio",
+      "intro": "Caritas hechas solo con signos de puntuación que se pegan en cualquier lado, sin depender de que los emojis se vean.",
+      "symbols": [
+        { "char": "( ಠ_ಠ )", "label": "Kaomoji de desaprobación" },
+        { "char": "(￣ヘ￣)", "label": "Kaomoji de \"hmpf\"" },
+        { "char": "(-_-)", "label": "Kaomoji de fastidio plano" },
+        { "char": "(ーー;)", "label": "Kaomoji de suspiro incómodo" },
+        { "char": "(´-ω-`)", "label": "Kaomoji de suspiro harto" },
+        { "char": "( `皿´)", "label": "Kaomoji de dientes apretados" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Ya Me Harté",
+      "flags": ["😒", "😤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hasta Aquí Llegué",
+      "flags": ["😑", "🙃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Juicio en Silencio",
+      "flags": ["😒", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Apenas Aguantando",
+      "flags": ["😣", "😖", "🫨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Habla con la Mano",
+      "flags": ["🤷", "🙅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Echando Humo en Silencio",
+      "flags": ["😑", "😤", "🫨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Uf, Ya Qué",
+      "flags": ["🙃", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hoy No",
+      "flags": ["😑", "🚫"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "annoyedSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Emoji Molesto",
+    "intro": "Combos de fastidio listos para usar: copia un set completo con un clic y pégalo en un mensaje, un comentario o una publicación."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-ojos-en-blanco/",
+      "title": "Emoji de Ojos en Blanco y Kaomoji",
+      "desc": "El gesto concreto de 🙄 poner los ojos en blanco y cada suspiro de \"¿en serio?\"."
+    },
+    {
+      "href": "/es/library/emoji-enojado/",
+      "title": "Emoji Enojado y Kaomoji",
+      "desc": "Cuando el fastidio deja de ser leve y se desborda en pura furia."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las caritas y emojis de caras en una sola cuadrícula para explorar."
+    },
+    {
+      "href": "/es/library/emoji-facepalm/",
+      "title": "Emoji Facepalm y Kaomoji",
+      "desc": "El 🤦 para cuando las palabras ya no alcanzan."
+    }
+  ]
+}

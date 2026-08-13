@@ -1,0 +1,171 @@
+{
+  "lang": "es",
+  "slug": "simbolos-braille",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-braille/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/braille-pattern-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-braille/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/braille-pattern-symbols/"
+    }
+  ],
+  "title": "Símbolos Braille: Copiar y Pegar ⠿ ⣿ Caracteres de Puntos y Vacíos",
+  "meta_description": "Copia y pega símbolos braille: el carácter braille en blanco (⠀), los rellenos sólidos (⣿) y todas las combinaciones de puntos. Un clic para copiar.",
+  "breadcrumb": "Símbolos Braille",
+  "hero_h1": "Símbolos Braille de Puntos",
+  "hero_tagline": "Todos los patrones de puntos braille, desde el carácter invisible en blanco hasta el bloque completamente sólido. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos braille ocupan un bloque Unicode completo de 256 combinaciones de puntos. Más allá de su propósito original de lectura táctil, se usan muchísimo en línea: el patrón braille en blanco (⠀) es un separador invisible muy popular para nombres de usuario y biografías, mientras que los rellenos densos como ⣿ sirven para armar barras compactas y arte estilo ASCII. Esta biblioteca reúne los patrones vacíos y ligeros, los rellenos sólidos y densos, y las posiciones individuales de puntos que puedes mezclar para crear tus propias formas.",
+  "sections": [
+    {
+      "id": "blank-light-patterns",
+      "label": "Vacíos y Ligeros",
+      "h2": "Patrones Vacíos y Ligeros",
+      "intro": "El patrón braille invisible y las filas de puntos que se van llenando poco a poco. El carácter en blanco se ve como un espacio vacío, pero cuenta como glifo visible, y por eso funciona tan bien de separador.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Patrón braille en blanco (separador invisible)"
+        },
+        {
+          "char": "⠁",
+          "label": "Patrón braille puntos 1"
+        },
+        {
+          "char": "⠃",
+          "label": "Patrón braille puntos 12"
+        },
+        {
+          "char": "⠇",
+          "label": "Patrón braille puntos 123"
+        },
+        {
+          "char": "⠏",
+          "label": "Patrón braille puntos 1234"
+        },
+        {
+          "char": "⠟",
+          "label": "Patrón braille puntos 12345"
+        },
+        {
+          "char": "⠿",
+          "label": "Patrón braille puntos 123456"
+        }
+      ]
+    },
+    {
+      "id": "dense-solid-fills",
+      "label": "Rellenos Densos",
+      "h2": "Rellenos Densos y Sólidos",
+      "intro": "Patrones de ocho puntos que se leen como bloques rellenos. El patrón completo (⣿) es el glifo braille más denso y funciona muy bien para barras y sombreados.",
+      "symbols": [
+        {
+          "char": "⣿",
+          "label": "Patrón braille puntos 12345678 (bloque completo)"
+        },
+        {
+          "char": "⡿",
+          "label": "Patrón braille puntos 1234567"
+        },
+        {
+          "char": "⢿",
+          "label": "Patrón braille puntos 1234568"
+        },
+        {
+          "char": "⣟",
+          "label": "Patrón braille puntos 1234578"
+        },
+        {
+          "char": "⣯",
+          "label": "Patrón braille puntos 1234678"
+        },
+        {
+          "char": "⣷",
+          "label": "Patrón braille puntos 1235678"
+        },
+        {
+          "char": "⣾",
+          "label": "Patrón braille puntos 2345678"
+        }
+      ]
+    },
+    {
+      "id": "dot-positions-spacers",
+      "label": "Posiciones de Puntos",
+      "h2": "Posiciones de Puntos y Separadores",
+      "intro": "Puntos sueltos y grupos pequeños que puedes combinar para dibujar formas braille propias, separadores punteados y texturas.",
+      "symbols": [
+        {
+          "char": "⠂",
+          "label": "Patrón braille puntos 2"
+        },
+        {
+          "char": "⠄",
+          "label": "Patrón braille puntos 3"
+        },
+        {
+          "char": "⠈",
+          "label": "Patrón braille puntos 4"
+        },
+        {
+          "char": "⠐",
+          "label": "Patrón braille puntos 5"
+        },
+        {
+          "char": "⠠",
+          "label": "Patrón braille puntos 6"
+        },
+        {
+          "char": "⡀",
+          "label": "Patrón braille puntos 7"
+        },
+        {
+          "char": "⢀",
+          "label": "Patrón braille puntos 8"
+        },
+        {
+          "char": "⠒",
+          "label": "Patrón braille puntos 25"
+        },
+        {
+          "char": "⠤",
+          "label": "Patrón braille puntos 36"
+        },
+        {
+          "char": "⠶",
+          "label": "Patrón braille puntos 2356"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres Especiales",
+      "desc": "Símbolos Unicode únicos con significado propio y fuerza por sí solos."
+    },
+    {
+      "href": "/es/library/separadores-de-texto/",
+      "title": "Símbolos de Líneas y Separadores",
+      "desc": "Líneas horizontales, líneas punteadas y caracteres separadores para diseños limpios."
+    },
+    {
+      "href": "/es/library/simbolos-geometricos/",
+      "title": "Símbolos Geométricos",
+      "desc": "Cuadrados, círculos, triángulos y bloques para diagramas y arte."
+    }
+  ]
+}

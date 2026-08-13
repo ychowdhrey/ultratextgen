@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-noruega",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-noruega/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/norway-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-noruega/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/norway-emoji-combos/"
+    }
+  ],
+  "title": "Combos de Emoji de Noruega 🇳🇴⚽ Copiar y Pegar",
+  "meta_description": "Combos de emoji de Noruega 🇳🇴⚽: colores de los Leones y sets de fútbol para biografías y descripciones. Copia cualquier emoji o combo al instante.",
+  "breadcrumb": "Combos de emoji de Noruega",
+  "hero_h1": "Combos de emoji de Noruega",
+  "hero_tagline": "Colores de los Leones y sets de emoji de fútbol para la afición de Noruega: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los emojis de Noruega combinan la bandera 🇳🇴 con el balón ⚽ y los colores de los Leones. Heia Norge: espíritu vikingo dentro de la cancha. Copia un emoji suelto de abajo o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Noruega",
+      "h2": "Emojis de Noruega",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇳🇴",
+          "label": "Bandera de Noruega"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo azul"
+        },
+        {
+          "char": "⚔️",
+          "label": "Espadas cruzadas"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de orgullo noruego",
+      "intro": "El rojo, blanco y azul de los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo azul"
+        },
+        {
+          "char": "⚔️",
+          "label": "Espadas cruzadas"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Noruega",
+      "flags": [
+        "🇳🇴",
+        "⚽",
+        "⚔️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heia Norge",
+      "flags": [
+        "🇳🇴",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo, blanco y azul",
+      "flags": [
+        "🔴",
+        "⚪",
+        "🔵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo noruego",
+      "flags": [
+        "🇳🇴",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "norwayCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Noruega",
+    "intro": "Copia un combo completo con un solo clic y pégalo en una biografía, una descripción o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emoji del Mundial",
+      "desc": "Sets y combos de emoji del Mundial para biografías y descripciones de la afición."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y cada tema."
+    }
+  ]
+}

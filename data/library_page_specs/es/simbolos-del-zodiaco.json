@@ -1,0 +1,369 @@
+{
+ "lang": "es",
+ "slug": "simbolos-del-zodiaco",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-del-zodiaco/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/zodiac-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-del-zodiaco/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/zodiac-symbols/"
+  }
+ ],
+ "title": "Símbolos del Zodiaco: Copiar y Pegar Signos de Astrología",
+ "meta_description": "Explora y copia los símbolos del zodiaco, signos planetarios, animales del zodiaco chino y caracteres astronómicos Unicode. Haz clic para copiar al instante.",
+ "breadcrumb": "Símbolos del Zodiaco y la Astrología",
+ "hero_h1": "Símbolos del Zodiaco y la Astrología",
+ "hero_tagline": "Una colección de referencia con los signos del zodiaco occidental, los símbolos planetarios, los animales del zodiaco chino y los caracteres astronómicos. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Esta biblioteca reúne los símbolos del zodiaco de los 12 signos occidentales, los símbolos de planetas y cuerpos celestes que se usan en astrología y astronomía, los emojis de los animales del zodiaco chino y otros caracteres astronómicos relacionados. Los símbolos están agrupados por tradición y por categoría.",
+ "sections": [
+  {
+   "id": "western-zodiac",
+   "label": "",
+   "h2": "Signos del Zodiaco Occidental",
+   "intro": "Los doce signos del zodiaco astrológico occidental, con sus rangos de fechas.",
+   "symbols": [
+    {
+     "char": "♈",
+     "label": "Aries (21 mar – 19 abr)"
+    },
+    {
+     "char": "♉",
+     "label": "Tauro (20 abr – 20 may)"
+    },
+    {
+     "char": "♊",
+     "label": "Géminis (21 may – 20 jun)"
+    },
+    {
+     "char": "♋",
+     "label": "Cáncer (21 jun – 22 jul)"
+    },
+    {
+     "char": "♌",
+     "label": "Leo (23 jul – 22 ago)"
+    },
+    {
+     "char": "♍",
+     "label": "Virgo (23 ago – 22 sep)"
+    },
+    {
+     "char": "♎",
+     "label": "Libra (23 sep – 22 oct)"
+    },
+    {
+     "char": "♏",
+     "label": "Escorpio (23 oct – 21 nov)"
+    },
+    {
+     "char": "♐",
+     "label": "Sagitario (22 nov – 21 dic)"
+    },
+    {
+     "char": "♑",
+     "label": "Capricornio (22 dic – 19 ene)"
+    },
+    {
+     "char": "♒",
+     "label": "Acuario (20 ene – 18 feb)"
+    },
+    {
+     "char": "♓",
+     "label": "Piscis (19 feb – 20 mar)"
+    },
+    {
+     "char": "⛎",
+     "label": "Ofiuco (30 nov – 17 dic, decimotercer signo no oficial)"
+    }
+   ]
+  },
+  {
+   "id": "planetary-symbols",
+   "label": "",
+   "h2": "Símbolos de Planetas y Cuerpos Celestes",
+   "intro": "Símbolos astronómicos y astrológicos de los planetas y otros cuerpos celestes.",
+   "symbols": [
+    {
+     "char": "☉",
+     "label": "Sol"
+    },
+    {
+     "char": "☽",
+     "label": "Luna en cuarto creciente"
+    },
+    {
+     "char": "☾",
+     "label": "Luna en cuarto menguante"
+    },
+    {
+     "char": "☿",
+     "label": "Mercurio"
+    },
+    {
+     "char": "♀",
+     "label": "Venus"
+    },
+    {
+     "char": "♁",
+     "label": "Tierra"
+    },
+    {
+     "char": "♂",
+     "label": "Marte"
+    },
+    {
+     "char": "♃",
+     "label": "Júpiter"
+    },
+    {
+     "char": "♄",
+     "label": "Saturno"
+    },
+    {
+     "char": "♅",
+     "label": "Urano"
+    },
+    {
+     "char": "♆",
+     "label": "Neptuno"
+    },
+    {
+     "char": "♇",
+     "label": "Plutón"
+    }
+   ]
+  },
+  {
+   "id": "chinese-zodiac",
+   "label": "",
+   "h2": "Animales del Zodiaco Chino",
+   "intro": "Los animales del zodiaco chino que representan el ciclo lunar de 12 años.",
+   "symbols": [
+    {
+     "char": "🐀",
+     "label": "Rata"
+    },
+    {
+     "char": "🐂",
+     "label": "Buey"
+    },
+    {
+     "char": "🐅",
+     "label": "Tigre"
+    },
+    {
+     "char": "🐇",
+     "label": "Conejo"
+    },
+    {
+     "char": "🐉",
+     "label": "Dragón"
+    },
+    {
+     "char": "🐍",
+     "label": "Serpiente"
+    },
+    {
+     "char": "🐎",
+     "label": "Caballo"
+    },
+    {
+     "char": "🐐",
+     "label": "Cabra"
+    },
+    {
+     "char": "🐒",
+     "label": "Mono"
+    },
+    {
+     "char": "🐓",
+     "label": "Gallo"
+    },
+    {
+     "char": "🐕",
+     "label": "Perro"
+    },
+    {
+     "char": "🐖",
+     "label": "Cerdo"
+    }
+   ]
+  },
+  {
+   "id": "astrological-symbols",
+   "label": "",
+   "h2": "Símbolos de Notación Astrológica",
+   "intro": "Símbolos adicionales de notación astrológica.",
+   "symbols": [
+    {
+     "char": "☊",
+     "label": "Nodo ascendente"
+    },
+    {
+     "char": "☋",
+     "label": "Nodo descendente"
+    },
+    {
+     "char": "☌",
+     "label": "Conjunción"
+    },
+    {
+     "char": "☍",
+     "label": "Oposición"
+    },
+    {
+     "char": "⚹",
+     "label": "Sextil"
+    },
+    {
+     "char": "□",
+     "label": "Cuadratura"
+    },
+    {
+     "char": "△",
+     "label": "Trígono"
+    }
+   ]
+  },
+  {
+   "id": "classical-elements",
+   "label": "",
+   "h2": "Símbolos de los Elementos Clásicos y la Alquimia",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "🜂",
+     "label": "Fuego (alquímico)"
+    },
+    {
+     "char": "🜄",
+     "label": "Agua (alquímico)"
+    },
+    {
+     "char": "🜁",
+     "label": "Aire (alquímico)"
+    },
+    {
+     "char": "🜃",
+     "label": "Tierra (alquímico)"
+    },
+    {
+     "char": "△",
+     "label": "Triángulo de fuego"
+    },
+    {
+     "char": "▽",
+     "label": "Triángulo de agua"
+    },
+    {
+     "char": "🜍",
+     "label": "Azufre"
+    },
+    {
+     "char": "☿",
+     "label": "Mercurio"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/simbolos-de-estrella/",
+   "title": "Colección de Símbolos de Estrella",
+   "desc": "Caracteres de estrella, desde las estrellas rellenas y de contorno hasta las variantes decorativas de varias puntas."
+  },
+  {
+   "href": "/es/library/simbolos-religiosos/",
+   "title": "Símbolos Religiosos y Espirituales",
+   "desc": "Símbolos de fe y espiritualidad: cruces, medias lunas, estrellas y signos de paz de las grandes tradiciones del mundo."
+  },
+  {
+   "href": "/es/library/simbolos-del-clima/",
+   "title": "Símbolos del Clima",
+   "desc": "Símbolos de condiciones meteorológicas, fases de la luna y caracteres atmosféricos de Unicode."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Explorador de Emojis de Banderas",
+   "desc": "Explora los 258 emojis de banderas, incluidos países, territorios y banderas especiales."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-acuario/",
+   "title": "Símbolo de Acuario",
+   "desc": "El glifo de Acuario (♒) son dos líneas onduladas que representan el agua en movimiento."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-geminis/",
+   "title": "Símbolo de Géminis",
+   "desc": "El glifo de Géminis (♊) es una figura sencilla de doble barra que representa a «los gemelos»."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-leo/",
+   "title": "Símbolo de Leo",
+   "desc": "El glifo de Leo (♌) remite al León de Nemea, la bestia invulnerable que Heracles estranguló con sus propias manos en su primer trabajo."
+  },
+  {
+   "href": "/es/symbol/signo-zodiacal-libra/",
+   "title": "Símbolo de Libra",
+   "desc": "El glifo de Libra (♎) es, literalmente, una balanza."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-sagitario/",
+   "title": "Símbolo de Sagitario",
+   "desc": "El glifo de Sagitario (♐) es una flecha trazada sobre un arco."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-tauro/",
+   "title": "Símbolo de Tauro",
+   "desc": "El glifo de Tauro (♉) es la cabeza y los cuernos de un toro."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-aries/",
+   "title": "Símbolo de Aries",
+   "desc": "El glifo de Aries (♈) es un par de cuernos curvos de carnero."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-cancer/",
+   "title": "Símbolo de Cáncer",
+   "desc": "El glifo de Cáncer (♋) es un par de pinzas de cangrejo enroscadas."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-capricornio/",
+   "title": "Símbolo de Capricornio",
+   "desc": "El glifo de Capricornio (♑) es un monograma de la cabra marina."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-piscis/",
+   "title": "Símbolo de Piscis",
+   "desc": "El glifo de Piscis (♓) son dos medias lunas unidas por una barra."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-escorpio/",
+   "title": "Símbolo de Escorpio",
+   "desc": "El glifo de Escorpio (♏) es el cuerpo de un escorpión que termina en una cola levantada y lista para picar."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-virgo/",
+   "title": "Símbolo de Virgo",
+   "desc": "El glifo de Virgo (♍) es una «M» con un lazo que se lee como una doncella sosteniendo una espiga de trigo."
+  },
+  {
+   "href": "/es/symbol/luna-negra-lilith/",
+   "title": "Símbolo de la Luna Negra Lilith",
+   "desc": "⚸ U+26B8: el glifo astrológico de un punto matemático en la órbita de la Luna, no de un planeta, una luna ni un asteroide."
+  }
+ ]
+}

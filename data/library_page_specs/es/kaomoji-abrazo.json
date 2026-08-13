@@ -1,0 +1,89 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-abrazo",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-abrazo/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/hug-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-abrazo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/hug-kaomoji/" }
+  ],
+  "title": "Kaomoji Abrazo: Caritas Japonesas para Copiar y Pegar",
+  "meta_description": "Explora y copia kaomoji de abrazo: caritas japonesas de texto con los brazos abiertos, listas para abrazar. Haz clic en cualquiera para copiarla.",
+  "breadcrumb": "Kaomoji de Abrazo",
+  "hero_h1": "Kaomoji de Abrazo",
+  "hero_tagline": "Copia y pega kaomoji de abrazo: caritas japonesas de texto cálidas y con los brazos bien abiertos. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Un kaomoji abrazo (también escrito kamoji) es una carita japonesa hecha con texto que abre los brazos para darte un abrazo, muchas veces estirando la mano con una っ o una づ. Caritas como (づ｡◕‿‿◕｡)づ o ⊂(・ω・*⊂) son texto Unicode común y corriente, así que se pegan sin problema en biografías, publicaciones, comentarios y mensajes. Explora por estilo abajo y haz clic en cualquier carita para copiarla al instante. Ya sea que busques «kaomoji abrazo» o «abrazo kaomoji», todas las caritas de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "comehere",
+      "label": "Ven aquí",
+      "h2": "Kaomoji que Piden un Abrazo",
+      "intro": "Caritas que estiran los brazos pidiendo un abrazo.",
+      "symbols": [
+        { "char": "(っ˘̩╭╮˘̩)っ", "label": "Ven aquí" },
+        { "char": "(つ✧ω✧)つ", "label": "Abrazo con brillos" },
+        { "char": "(⊃｡•́‿•̀｡)⊃", "label": "Brazos estirados" },
+        { "char": "(づ￣ ³￣)づ", "label": "Abrazo y beso" },
+        { "char": "(っ˘з(˘⌣˘ )", "label": "Mimos" },
+        { "char": "ヽ(♡‿♡)ノ", "label": "Brazos de amor" }
+      ]
+    },
+    {
+      "id": "warm",
+      "label": "Abrazo cálido",
+      "h2": "Kaomoji de Abrazo Cálido",
+      "intro": "Abrazos apretados y bien envolventes.",
+      "symbols": [
+        { "char": "(づ｡◕‿‿◕｡)づ", "label": "Abrazo cálido" },
+        { "char": "⊂(・ω・*⊂)", "label": "Acurrucados" },
+        { "char": "⊂(´・ω・｀⊂)", "label": "Abrazo gentil" },
+        { "char": "(◍•ᴗ•◍)⊃", "label": "Abrazo suave" },
+        { "char": "(っ◔◡◔)っ", "label": "Abrazo dulce" },
+        { "char": "ヽ(๑╹◡╹๑)ﾉ", "label": "Abrazo grande" }
+      ]
+    },
+    {
+      "id": "group",
+      "label": "Abrazo grupal",
+      "h2": "Kaomoji de Abrazo Grupal",
+      "intro": "Brazos bien abiertos para todos.",
+      "symbols": [
+        { "char": "＼(^o^)／", "label": "Abrazo grupal" },
+        { "char": "⊂((・▽・))⊃", "label": "Brazos abiertos" },
+        { "char": "ヽ(・∀・)ﾉ", "label": "Acércate" },
+        { "char": "｡ﾟ(｡ノωヽ｡)ﾟ｡", "label": "Abrazo emotivo" },
+        { "char": "(っ˘̩╭╮˘̩)っ", "label": "Apretón" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "La colección completa de kaomoji: caritas japonesas de texto para cada estado de ánimo."
+    },
+    {
+      "href": "/es/library/love-kaomoji/",
+      "title": "Kaomoji de Amor y Corazones",
+      "desc": "Corazones, besos y abrazos en forma de caritas tiernas de texto."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita: mezcla ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/es/library/cute-kaomoji/",
+      "title": "Kaomoji Tiernos",
+      "desc": "Caritas kawaii con ojos brillantes y mejillas sonrojadas."
+    }
+  ]
+}

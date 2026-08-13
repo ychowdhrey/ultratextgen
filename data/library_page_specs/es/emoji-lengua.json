@@ -1,0 +1,254 @@
+{
+  "lang": "es",
+  "slug": "emoji-lengua",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-lengua/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/tongue-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-lengua/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/tongue-emoji/"
+    }
+  ],
+  "title": "Emoji Lengua y Kaomoji: Copiar y Pegar 😛 😜 😝 Combos Traviesos",
+  "meta_description": "Emoji lengua 😛 😜 😝 🤪, combos traviesos y kaomoji con la lengua afuera como :P y (≧∇≦) para chats juguetones. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Lengua y Kaomoji",
+  "hero_h1": "Emoji Lengua y Kaomoji",
+  "hero_tagline": "Caras juguetonas con la lengua afuera, la cara loca 🤪, la 👅 lengua por sí sola y kaomoji traviesos — todos los sabores de lo bobo y lo burlón. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji lengua 😛 es la manera que tiene internet de decir \"es broma\": una cara juguetona y burlona que suaviza un chiste o una molestada. Esta página reúne todo el rango travieso: el guiño de 😜, los ojos apretados de 😝, la cara completamente desquiciada de 🤪 y la 👅 lengua por sí sola para lamidas, antojos y reacciones pícaras. Cuando ningún emoji da con la vibra exacta, los kaomoji clásicos con la lengua afuera como :P y (≧∇≦) se pegan en cualquier lugar donde funcione el texto plano. Toma una sola cara o copia un combo ya armado para tus chats, comentarios y respuestas juguetonas.",
+  "sections": [
+    {
+      "id": "core-tongue-faces",
+      "label": "Caras con la Lengua Afuera",
+      "h2": "Emojis de Caras con la Lengua Afuera",
+      "intro": "Las caras de lengua de todos los días, desde sacarla sin más hasta la burla con guiño.",
+      "symbols": [
+        {
+          "char": "😛",
+          "label": "Cara con la lengua afuera"
+        },
+        {
+          "char": "😜",
+          "label": "Cara guiñando con la lengua afuera"
+        },
+        {
+          "char": "😝",
+          "label": "Cara con los ojos apretados y la lengua afuera"
+        },
+        {
+          "char": "😋",
+          "label": "Cara saboreando comida"
+        }
+      ]
+    },
+    {
+      "id": "silly-zany",
+      "label": "Caras Locas y Bobas",
+      "h2": "Emojis de Caras Bobas y Desquiciadas",
+      "intro": "Caras tontas, mareadas y sin ningún filtro para máxima energía de caos.",
+      "symbols": [
+        {
+          "char": "🤪",
+          "label": "Cara loca"
+        },
+        {
+          "char": "🥴",
+          "label": "Cara mareada"
+        },
+        {
+          "char": "🤤",
+          "label": "Cara babeando"
+        },
+        {
+          "char": "😵‍💫",
+          "label": "Cara con ojos en espiral"
+        },
+        {
+          "char": "🙃",
+          "label": "Cara al revés"
+        }
+      ]
+    },
+    {
+      "id": "tongue-emoji",
+      "label": "El Emoji de la Lengua",
+      "h2": "El Emoji 👅 de la Lengua",
+      "intro": "La lengua por sí sola — el emoji estrella de esta parte del cuerpo — junto con sus vecinos más cercanos de la boca.",
+      "symbols": [
+        {
+          "char": "👅",
+          "label": "Lengua"
+        },
+        {
+          "char": "👄",
+          "label": "Boca"
+        },
+        {
+          "char": "🫦",
+          "label": "Labio mordido"
+        },
+        {
+          "char": "💋",
+          "label": "Marca de beso"
+        }
+      ]
+    },
+    {
+      "id": "tongue-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji con la Lengua Afuera y Traviesos",
+      "intro": "Caritas de texto que sacan la lengua, se burlan y sonríen en texto plano.",
+      "symbols": [
+        {
+          "char": ":P",
+          "label": "Sacando la lengua"
+        },
+        {
+          "char": ":-P",
+          "label": "Lengua pícara"
+        },
+        {
+          "char": "xP",
+          "label": "Lengua de risa"
+        },
+        {
+          "char": ";P",
+          "label": "Lengua con guiño"
+        },
+        {
+          "char": "(≧∇≦)",
+          "label": "Kaomoji de risa con los ojos apretados"
+        },
+        {
+          "char": "(￣ρ￣)",
+          "label": "Kaomoji babeando"
+        },
+        {
+          "char": "(・ε・)",
+          "label": "Kaomoji haciendo trompita"
+        },
+        {
+          "char": "ヽ(≧∀≦)ノ",
+          "label": "Kaomoji emocionado y bobo"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Modo travieso",
+      "flags": [
+        "😛",
+        "😜",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Solo estoy molestando",
+      "flags": [
+        "😜",
+        "😋",
+        "👅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Completamente loco",
+      "flags": [
+        "🤪",
+        "🥴",
+        "😵‍💫"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Escuadrón bobo",
+      "flags": [
+        "😝",
+        "🤪",
+        "🤤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ñañaña",
+      "flags": [
+        "😛",
+        "👅",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Guiño juguetón",
+      "flags": [
+        "😜",
+        "😉",
+        "😛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Se me antoja",
+      "flags": [
+        "😋",
+        "🤤",
+        "👅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cara de caos",
+      "flags": [
+        "🤪",
+        "😜",
+        "🥴",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "tongueSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Lengua",
+    "intro": "Copia un combo travieso completo con un clic — desde una burla rápida hasta el caos total."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-riendo/",
+      "title": "Emoji Riendo y Kaomoji",
+      "desc": "Caras llorando de risa y combos de carcajada para acompañar una lengua traviesa."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de Emojis Graciosos",
+      "desc": "Combos ya armados para chistes, bromas y respuestas de meme."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "Todos los estados de ánimo en kaomoji, de lo juguetón a lo mohíno y más allá."
+    }
+  ]
+}

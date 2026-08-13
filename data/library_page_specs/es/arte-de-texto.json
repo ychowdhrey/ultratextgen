@@ -1,0 +1,338 @@
+{
+  "lang": "es",
+  "slug": "arte-de-texto",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/arte-de-texto/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ],
+  "title": "Arte de Texto: Colecciones ASCII y Unicode para Copiar y Pegar",
+  "meta_description": "Copia y pega arte de texto: gatos ASCII, corazones braille, marcos de estrellas y kaomoji clásicos, más bloques para crear el tuyo con un clic.",
+  "breadcrumb": "Arte de texto",
+  "hero_h1": "Arte de texto",
+  "hero_tagline": "Piezas terminadas de arte ASCII y Unicode, más todos los caracteres de recuadro, bloque y braille que necesitas para armar las tuyas. Haz clic para copiar al instante.",
+  "intro": "El arte de texto (también llamado arte ASCII) son dibujos hechos por completo con caracteres: líneas de recuadro, bloques sombreados, puntos braille y símbolos comunes del teclado. Funciona en cualquier lugar donde funcione el texto: chats de Discord, salas de juego, publicaciones en X, comentarios de YouTube y biografías de texto plano. Esta página reúne piezas pequeñas listas para pegar con un solo clic, más los caracteres sueltos que sirven de bloques de construcción si quieres dibujar algo original.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Líneas",
+      "h2": "Caracteres de dibujo de recuadro",
+      "intro": "Líneas rectas, esquinas y uniones: el esqueleto de marcos, tablas y arte de texto estructurado.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Línea horizontal fina"
+        },
+        {
+          "char": "│",
+          "label": "Línea vertical fina"
+        },
+        {
+          "char": "┌",
+          "label": "Esquina fina superior izquierda"
+        },
+        {
+          "char": "┐",
+          "label": "Esquina fina superior derecha"
+        },
+        {
+          "char": "└",
+          "label": "Esquina fina inferior izquierda"
+        },
+        {
+          "char": "┘",
+          "label": "Esquina fina inferior derecha"
+        },
+        {
+          "char": "├",
+          "label": "Unión fina en T izquierda"
+        },
+        {
+          "char": "┤",
+          "label": "Unión fina en T derecha"
+        },
+        {
+          "char": "┼",
+          "label": "Cruce fino"
+        },
+        {
+          "char": "═",
+          "label": "Línea horizontal doble"
+        },
+        {
+          "char": "║",
+          "label": "Línea vertical doble"
+        },
+        {
+          "char": "╔",
+          "label": "Esquina doble superior izquierda"
+        },
+        {
+          "char": "╗",
+          "label": "Esquina doble superior derecha"
+        },
+        {
+          "char": "╚",
+          "label": "Esquina doble inferior izquierda"
+        },
+        {
+          "char": "╝",
+          "label": "Esquina doble inferior derecha"
+        }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Bloques",
+      "h2": "Caracteres de bloque y sombreado",
+      "intro": "Bloques sólidos y sombreados para rellenar formas y crear degradados en piezas más grandes.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Bloque completo"
+        },
+        {
+          "char": "▀",
+          "label": "Medio bloque superior"
+        },
+        {
+          "char": "▄",
+          "label": "Medio bloque inferior"
+        },
+        {
+          "char": "▌",
+          "label": "Medio bloque izquierdo"
+        },
+        {
+          "char": "▐",
+          "label": "Medio bloque derecho"
+        },
+        {
+          "char": "░",
+          "label": "Sombreado claro"
+        },
+        {
+          "char": "▒",
+          "label": "Sombreado medio"
+        },
+        {
+          "char": "▓",
+          "label": "Sombreado oscuro"
+        },
+        {
+          "char": "▖",
+          "label": "Cuadrante inferior izquierdo"
+        },
+        {
+          "char": "▘",
+          "label": "Cuadrante superior izquierdo"
+        }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Caracteres de puntos braille",
+      "intro": "Los patrones braille dan la resolución más fina al arte de texto: casi todo el arte de puntos moderno se dibuja con ellos.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Patrón braille puntos 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Patrón braille puntos 1-4"
+        },
+        {
+          "char": "⠛",
+          "label": "Patrón braille puntos 1-2-4-5"
+        },
+        {
+          "char": "⠿",
+          "label": "Patrón braille puntos 1 al 6"
+        },
+        {
+          "char": "⣀",
+          "label": "Patrón braille puntos 7-8"
+        },
+        {
+          "char": "⣤",
+          "label": "Patrón braille puntos 3-6-7-8"
+        },
+        {
+          "char": "⣶",
+          "label": "Patrón braille puntos 2-3-5-6-7-8"
+        },
+        {
+          "char": "⣿",
+          "label": "Patrón braille puntos 1 al 8"
+        },
+        {
+          "char": "⡇",
+          "label": "Patrón braille puntos 1-2-3-7"
+        },
+        {
+          "char": "⢸",
+          "label": "Patrón braille puntos 4-5-6-8"
+        }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Formas",
+      "h2": "Formas geométricas de acento",
+      "intro": "Caracteres geométricos simples para estrellas, rombos y detalles decorativos.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Rombo relleno"
+        },
+        {
+          "char": "◇",
+          "label": "Rombo sin relleno"
+        },
+        {
+          "char": "●",
+          "label": "Círculo relleno"
+        },
+        {
+          "char": "○",
+          "label": "Círculo sin relleno"
+        },
+        {
+          "char": "▲",
+          "label": "Triángulo relleno hacia arriba"
+        },
+        {
+          "char": "△",
+          "label": "Triángulo sin relleno hacia arriba"
+        },
+        {
+          "char": "▼",
+          "label": "Triángulo relleno hacia abajo"
+        },
+        {
+          "char": "▽",
+          "label": "Triángulo sin relleno hacia abajo"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Gato ASCII",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Corazón braille",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Rombos apilados",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Marco de estrellas",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀tu texto⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Kaomoji clásicos",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Cordillera",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "collection_container_id": "textArtContainer",
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Piezas de arte",
+    "h2": "Piezas de arte de texto listas para usar",
+    "intro": "Copia una pieza completa de varias líneas con un solo clic: deja el formato vertical para que las líneas queden alineadas."
+  },
+  "related": [
+    {
+      "href": "/es/library/arte-de-texto-memes/",
+      "title": "Arte de texto de memes",
+      "desc": "Caras hechas con puntos, packs de lenny y piezas estilo meme."
+    },
+    {
+      "href": "/library/roblox-text-art/",
+      "title": "Arte de texto para Roblox",
+      "desc": "Caras y arte de puntos que funcionan bien en el chat de Roblox."
+    },
+    {
+      "href": "/library/box-drawing-symbols/",
+      "title": "Símbolos de dibujo de recuadro",
+      "desc": "El set completo de líneas y esquinas para armar marcos y tablas."
+    },
+    {
+      "href": "/es/library/simbolos-braille/",
+      "title": "Símbolos de patrones braille",
+      "desc": "Todos los patrones de puntos braille que se usan en el arte de alta resolución."
+    }
+  ]
+}

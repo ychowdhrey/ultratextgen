@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-qatar",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-qatar/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/qatar-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-qatar/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/qatar-emoji-combos/" }
+  ],
+  "title": "Emoji Qatar: Combos 🇶🇦⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Qatar 🇶🇦⚽: los colores de Al-Annabi y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Qatar",
+  "hero_h1": "Combos de Emoji Qatar",
+  "hero_tagline": "Los colores de Al-Annabi y sets de emojis de fútbol para hinchas de Qatar — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Qatar 🇶🇦 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con los colores de Al-Annabi. El grito de Yalla Qatar acompaña al granate y blanco. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Qatar",
+      "h2": "Emojis de Qatar",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇶🇦", "label": "Bandera de Qatar" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🟤", "label": "Círculo marrón" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🦅", "label": "Águila" },
+        { "char": "🏜️", "label": "Desierto" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Qatarí",
+      "intro": "El granate y el blanco de Al-Annabi.",
+      "symbols": [
+        { "char": "🟤", "label": "Círculo marrón" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🦅", "label": "Águila" },
+        { "char": "🏜️", "label": "Desierto" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Al-Annabi",
+      "flags": ["🇶🇦", "⚽", "🦅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yalla Qatar",
+      "flags": ["🇶🇦", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Granate y Blanco",
+      "flags": ["🟤", "⚪", "🟤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Qatarí",
+      "flags": ["🇶🇦", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "qatarCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Qatar",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

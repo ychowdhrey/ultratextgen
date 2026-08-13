@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-peru",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-peru/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/peru-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-peru/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/peru-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Perú: Combos 🇵🇪⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Perú 🇵🇪⚽: los colores de la Blanquirroja y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Perú",
+  "hero_h1": "Combos de Emoji Perú",
+  "hero_tagline": "Los colores de la Blanquirroja y sets de emojis de fútbol para los hinchas del Perú — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Perú 🇵🇪 casi nunca va solo: los hinchas lo combinan con el balón ⚽ y con el rojo y blanco de la Blanquirroja. ¡Arriba Perú! Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Perú",
+      "h2": "Emojis del Perú",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇵🇪",
+          "label": "Bandera del Perú"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del orgullo peruano",
+      "intro": "El rojo y blanco de la Blanquirroja.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "La Blanquirroja",
+      "flags": [
+        "🇵🇪",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arriba Perú",
+      "flags": [
+        "🇵🇪",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo y Blanco",
+      "flags": [
+        "🔴",
+        "⚪",
+        "🔴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Peruano",
+      "flags": [
+        "🇵🇪",
+        "⚽",
+        "💪"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "peruCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos del Perú",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

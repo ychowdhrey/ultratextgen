@@ -1,0 +1,321 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-deportes",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-deportes/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/sports-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-deportes/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/sports-emojis/"
+    }
+  ],
+  "title": "Emojis de Deportes y Actividades: Copiar y Pegar",
+  "meta_description": "Explora y copia emojis de deportes: pelotas, raquetas, deportes acuáticos y de invierno, fitness, aventura al aire libre y medallas. Haz clic para copiarlos.",
+  "breadcrumb": "Emojis de Deportes y Actividades",
+  "hero_h1": "Emojis de Deportes y Actividades",
+  "hero_tagline": "Una referencia completa de emojis de deportes y actividades: desde los deportes de pelota hasta los acuáticos, el fitness, la aventura al aire libre y las medallas. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de deportes quedan perfectos para publicaciones de día de partido, avances del gimnasio, anuncios de eventos y contenido deportivo en general. Esta colección reúne todos los emojis de deporte y actividad que existen en Unicode, ordenados por disciplina. Haz clic en cualquiera para copiarlo y pégalo donde lo necesites.",
+  "sections": [
+    {
+      "id": "ball-sports",
+      "label": "",
+      "h2": "Emojis de Deportes de Pelota",
+      "intro": "Fútbol, baloncesto, fútbol americano, béisbol, tenis y otros emojis de deportes de pelota.",
+      "symbols": [
+        {
+          "char": "⚽",
+          "label": "Pelota de Fútbol"
+        },
+        {
+          "char": "🏀",
+          "label": "Balón de Baloncesto"
+        },
+        {
+          "char": "🏈",
+          "label": "Fútbol Americano"
+        },
+        {
+          "char": "⚾",
+          "label": "Béisbol"
+        },
+        {
+          "char": "🥎",
+          "label": "Sóftbol"
+        },
+        {
+          "char": "🎾",
+          "label": "Tenis"
+        },
+        {
+          "char": "🏐",
+          "label": "Vóleibol"
+        },
+        {
+          "char": "🏉",
+          "label": "Rugby"
+        },
+        {
+          "char": "🥏",
+          "label": "Disco Volador"
+        },
+        {
+          "char": "🎳",
+          "label": "Boliche"
+        },
+        {
+          "char": "🏟️",
+          "label": "Estadio"
+        },
+        {
+          "char": "🥅",
+          "label": "Portería"
+        },
+        {
+          "char": "🚩",
+          "label": "Banderín de Córner"
+        }
+      ]
+    },
+    {
+      "id": "racket-stick-sports",
+      "label": "",
+      "h2": "Emojis de Deportes de Raqueta y Palo",
+      "intro": "Bádminton, hockey, críquet, lacrosse y otros emojis de deportes de raqueta o palo.",
+      "symbols": [
+        {
+          "char": "🏸",
+          "label": "Bádminton"
+        },
+        {
+          "char": "🏒",
+          "label": "Hockey sobre Hielo"
+        },
+        {
+          "char": "🏑",
+          "label": "Hockey sobre Césped"
+        },
+        {
+          "char": "🥍",
+          "label": "Lacrosse"
+        },
+        {
+          "char": "🏏",
+          "label": "Críquet"
+        },
+        {
+          "char": "🪃",
+          "label": "Bumerán"
+        },
+        {
+          "char": "🏓",
+          "label": "Ping Pong"
+        },
+        {
+          "char": "⛳",
+          "label": "Bandera de Golf"
+        },
+        {
+          "char": "🏌️",
+          "label": "Persona Jugando Golf"
+        }
+      ]
+    },
+    {
+      "id": "water-winter-sports",
+      "label": "",
+      "h2": "Emojis de Deportes Acuáticos y de Invierno",
+      "intro": "Natación, surf, esquí, snowboard y otros emojis de deportes acuáticos y de invierno.",
+      "symbols": [
+        {
+          "char": "🏊",
+          "label": "Persona Nadando"
+        },
+        {
+          "char": "🏄",
+          "label": "Persona Surfeando"
+        },
+        {
+          "char": "🤽",
+          "label": "Persona Jugando Waterpolo"
+        },
+        {
+          "char": "🚣",
+          "label": "Persona Remando"
+        },
+        {
+          "char": "🏂",
+          "label": "Persona en Snowboard"
+        },
+        {
+          "char": "⛷️",
+          "label": "Esquiador"
+        },
+        {
+          "char": "🎿",
+          "label": "Esquís"
+        },
+        {
+          "char": "🛷",
+          "label": "Trineo"
+        },
+        {
+          "char": "⛸️",
+          "label": "Patín de Hielo"
+        },
+        {
+          "char": "🧊",
+          "label": "Hielo"
+        },
+        {
+          "char": "🛶",
+          "label": "Canoa"
+        }
+      ]
+    },
+    {
+      "id": "fitness-athletics",
+      "label": "",
+      "h2": "Emojis de Fitness y Actividad Física",
+      "intro": "Pesas, gimnasia, correr, ciclismo y otros emojis de actividad física.",
+      "symbols": [
+        {
+          "char": "🏋️",
+          "label": "Persona Levantando Pesas"
+        },
+        {
+          "char": "🤸",
+          "label": "Persona Haciendo Volteretas"
+        },
+        {
+          "char": "🤼",
+          "label": "Personas Luchando"
+        },
+        {
+          "char": "🤾",
+          "label": "Persona Jugando Balonmano"
+        },
+        {
+          "char": "🏃",
+          "label": "Persona Corriendo"
+        },
+        {
+          "char": "🧗",
+          "label": "Persona Escalando"
+        },
+        {
+          "char": "🚴",
+          "label": "Persona en Bicicleta"
+        },
+        {
+          "char": "🚵",
+          "label": "Persona en Bicicleta de Montaña"
+        },
+        {
+          "char": "🤺",
+          "label": "Persona Practicando Esgrima"
+        },
+        {
+          "char": "🏇",
+          "label": "Carrera de Caballos"
+        },
+        {
+          "char": "🥊",
+          "label": "Guante de Boxeo"
+        },
+        {
+          "char": "🥋",
+          "label": "Traje de Artes Marciales"
+        },
+        {
+          "char": "🛹",
+          "label": "Patineta"
+        },
+        {
+          "char": "🛼",
+          "label": "Patines"
+        },
+        {
+          "char": "🛴",
+          "label": "Monopatín"
+        },
+        {
+          "char": "🧘",
+          "label": "Yoga"
+        }
+      ]
+    },
+    {
+      "id": "medals-trophies",
+      "label": "",
+      "h2": "Emojis de Medallas y Trofeos",
+      "intro": "Emojis de logros y premios para celebrar victorias y metas cumplidas.",
+      "symbols": [
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🥇",
+          "label": "Medalla de Oro"
+        },
+        {
+          "char": "🥈",
+          "label": "Medalla de Plata"
+        },
+        {
+          "char": "🥉",
+          "label": "Medalla de Bronce"
+        },
+        {
+          "char": "🏅",
+          "label": "Medalla Deportiva"
+        },
+        {
+          "char": "🎖️",
+          "label": "Medalla Militar"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Símbolos de Logros",
+      "desc": "Trofeos, medallas, cintas y otros símbolos de logros y premios."
+    },
+    {
+      "href": "/es/library/emojis-lenguaje-corporal/",
+      "title": "Emojis de Lenguaje Corporal",
+      "desc": "Emojis de lenguaje corporal y actividad que expresan movimiento y emoción."
+    },
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Símbolos y Gestos de Manos",
+      "desc": "Emojis y símbolos de gestos con las manos para comunicarte y expresarte."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Caritas sonrientes, expresiones y emojis de emociones para cada ánimo."
+    },
+    {
+      "href": "/es/library/emoji-musculo/",
+      "title": "Emoji de Músculo",
+      "desc": "Combos de flex, motivación de gimnasio y ganancias."
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "lang": "es",
+  "slug": "parentesis-corchetes-y-llaves",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/parentesis-corchetes-y-llaves/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/bracket-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/parentesis-corchetes-y-llaves/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/bracket-symbols/" }
+  ],
+  "title": "Paréntesis, Corchetes y Llaves: Todos los Tipos de Unicode",
+  "meta_description": "Explora y copia todos los paréntesis, corchetes y llaves de Unicode: estándar, CJK, matemáticos, decorativos, comillas angulares y de ancho completo.",
+  "breadcrumb": "Paréntesis, Corchetes y Llaves",
+  "hero_h1": "Paréntesis, Corchetes y Llaves",
+  "hero_tagline": "Una referencia completa de los paréntesis (), corchetes [] y llaves {} de Unicode: desde los estándar y matemáticos hasta los CJK, decorativos y de ancho completo. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Unicode tiene decenas de variantes de paréntesis, corchetes y llaves más allá de las tres que trae el teclado. Los corchetes CJK se usan muchísimo en biografías y nombres de usuario estéticos, los corchetes matemáticos aparecen en la notación formal y los decorativos le dan un toque visual al texto con estilo. Esta colección organiza todos los tipos para que los explores y los copies rápido.",
+  "sections": [
+    {
+      "id": "standard-brackets",
+      "label": "",
+      "h2": "Paréntesis, Corchetes y Llaves Estándar",
+      "intro": "Los tipos más comunes: paréntesis curvos, corchetes cuadrados, llaves y ángulos matemáticos.",
+      "symbols": [
+        { "char": "(", "label": "Paréntesis de apertura" },
+        { "char": ")", "label": "Paréntesis de cierre" },
+        { "char": "[", "label": "Corchete de apertura" },
+        { "char": "]", "label": "Corchete de cierre" },
+        { "char": "{", "label": "Llave de apertura" },
+        { "char": "}", "label": "Llave de cierre" },
+        { "char": "⟨", "label": "Ángulo matemático de apertura" },
+        { "char": "⟩", "label": "Ángulo matemático de cierre" }
+      ]
+    },
+    {
+      "id": "cjk-brackets",
+      "label": "",
+      "h2": "Corchetes CJK y Japoneses",
+      "intro": "Corchetes chinos, japoneses y coreanos, muy usados en texto estético y nombres de usuario.",
+      "symbols": [
+        { "char": "「", "label": "Corchete de esquina de apertura" },
+        { "char": "」", "label": "Corchete de esquina de cierre" },
+        { "char": "『", "label": "Corchete de esquina blanco de apertura" },
+        { "char": "』", "label": "Corchete de esquina blanco de cierre" },
+        { "char": "【", "label": "Corchete lenticular negro de apertura" },
+        { "char": "】", "label": "Corchete lenticular negro de cierre" },
+        { "char": "〔", "label": "Corchete de caparazón de apertura" },
+        { "char": "〕", "label": "Corchete de caparazón de cierre" },
+        { "char": "〈", "label": "Ángulo de apertura" },
+        { "char": "〉", "label": "Ángulo de cierre" },
+        { "char": "《", "label": "Doble ángulo de apertura" },
+        { "char": "》", "label": "Doble ángulo de cierre" }
+      ]
+    },
+    {
+      "id": "mathematical-brackets",
+      "label": "",
+      "h2": "Corchetes Matemáticos",
+      "intro": "Techo, piso, doble corchete y otros signos de la notación matemática.",
+      "symbols": [
+        { "char": "⌈", "label": "Techo izquierdo" },
+        { "char": "⌉", "label": "Techo derecho" },
+        { "char": "⌊", "label": "Piso izquierdo" },
+        { "char": "⌋", "label": "Piso derecho" },
+        { "char": "⟦", "label": "Corchete blanco matemático de apertura" },
+        { "char": "⟧", "label": "Corchete blanco matemático de cierre" },
+        { "char": "⟪", "label": "Doble ángulo matemático de apertura" },
+        { "char": "⟫", "label": "Doble ángulo matemático de cierre" }
+      ]
+    },
+    {
+      "id": "decorative-brackets",
+      "label": "",
+      "h2": "Paréntesis y Corchetes Decorativos",
+      "intro": "Caracteres ornamentales y decorativos para texto con estilo.",
+      "symbols": [
+        { "char": "❪", "label": "Paréntesis aplanado de apertura" },
+        { "char": "❫", "label": "Paréntesis aplanado de cierre" },
+        { "char": "❬", "label": "Ángulo mediano de apertura" },
+        { "char": "❭", "label": "Ángulo mediano de cierre" },
+        { "char": "❮", "label": "Comilla angular gruesa de apertura" },
+        { "char": "❯", "label": "Comilla angular gruesa de cierre" },
+        { "char": "❰", "label": "Corchete angular grueso de apertura" },
+        { "char": "❱", "label": "Corchete angular grueso de cierre" },
+        { "char": "❲", "label": "Caparazón ligero de apertura" },
+        { "char": "❳", "label": "Caparazón ligero de cierre" }
+      ]
+    },
+    {
+      "id": "quotation-corner",
+      "label": "",
+      "h2": "Comillas y Signos Tipográficos",
+      "intro": "Comillas tipográficas y angulares para textos formales y decorativos.",
+      "symbols": [
+        { "char": "‹", "label": "Comilla angular simple de apertura" },
+        { "char": "›", "label": "Comilla angular simple de cierre" },
+        { "char": "«", "label": "Comilla angular doble de apertura" },
+        { "char": "»", "label": "Comilla angular doble de cierre" },
+        { "char": "❝", "label": "Comilla doble gruesa de apertura" },
+        { "char": "❞", "label": "Comilla doble gruesa de cierre" },
+        { "char": "❛", "label": "Comilla simple gruesa de apertura" },
+        { "char": "❜", "label": "Comilla simple gruesa de cierre" }
+      ]
+    },
+    {
+      "id": "full-width-brackets",
+      "label": "",
+      "h2": "Paréntesis, Corchetes y Llaves de Ancho Completo",
+      "intro": "Variantes de ancho completo usadas en tipografía CJK y en texto estético.",
+      "symbols": [
+        { "char": "（", "label": "Paréntesis de apertura de ancho completo" },
+        { "char": "）", "label": "Paréntesis de cierre de ancho completo" },
+        { "char": "［", "label": "Corchete de apertura de ancho completo" },
+        { "char": "］", "label": "Corchete de cierre de ancho completo" },
+        { "char": "｛", "label": "Llave de apertura de ancho completo" },
+        { "char": "｝", "label": "Llave de cierre de ancho completo" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres Especiales",
+      "desc": "Puntuación, tipografía y caracteres Unicode especiales para escribir."
+    },
+    {
+      "href": "/es/library/simbolos-geometricos/",
+      "title": "Símbolos Geométricos",
+      "desc": "Círculos, rombos, cuadrados, triángulos y formas decorativas para dar formato."
+    },
+    {
+      "href": "/es/simbolos-de-flechas/",
+      "title": "Símbolos de Flechas",
+      "desc": "Todas las flechas de Unicode para navegación, dirección y listas."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Caracteres matemáticos de Unicode: operadores, letras griegas y símbolos de cálculo."
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-objetos",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-objetos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/object-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-objetos/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/object-emojis/" }
+  ],
+  "title": "Emojis de Objetos: Copia y Pega 📌 📷 🔒 Cosas de Todos los Días",
+  "meta_description": "Explora emojis de objetos cotidianos — chinches 📌, cámaras 📷, candados 🔒, llaves, velas, trofeos y cosas de casa. Haz clic para copiar al instante.",
+  "breadcrumb": "Emojis de Objetos",
+  "hero_h1": "Emojis de Objetos",
+  "hero_tagline": "Emojis de cosas de todos los días — tecnología, casa, oficina, llaves y premios — ordenados por tema. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de objetos reúnen las cosas de todos los días a las que recurrimos en publicaciones, listas y biografías: celulares y cámaras, candados y llaves, muebles, útiles de oficina y trofeos. Esta referencia los agrupa por tema para que encuentres rápido el objeto exacto que buscas, y los combos del final juntan situaciones comunes — sesiones de estudio, día de mudanza, compras en línea — en un solo clic.",
+  "sections": [
+    {
+      "id": "tech-gadgets",
+      "label": "Tecnología",
+      "h2": "Emojis de tecnología y gadgets",
+      "intro": "Celulares, computadoras, cámaras y equipo de audio.",
+      "symbols": [
+        { "char": "📱", "label": "Celular" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🖥️", "label": "Computadora de escritorio" },
+        { "char": "⌨️", "label": "Teclado" },
+        { "char": "🖱️", "label": "Mouse" },
+        { "char": "📷", "label": "Cámara de fotos" },
+        { "char": "🎥", "label": "Cámara de video" },
+        { "char": "🎤", "label": "Micrófono" },
+        { "char": "🎧", "label": "Audífonos" },
+        { "char": "📺", "label": "Televisión" },
+        { "char": "🔋", "label": "Batería" },
+        { "char": "🤖", "label": "Robot" }
+      ]
+    },
+    {
+      "id": "home-household",
+      "label": "Casa",
+      "h2": "Emojis de casa y hogar",
+      "intro": "Casas, muebles y cosas de la vida diaria.",
+      "symbols": [
+        { "char": "🏠", "label": "Casa" },
+        { "char": "🛋️", "label": "Sofá y lámpara" },
+        { "char": "🛏️", "label": "Cama" },
+        { "char": "🪑", "label": "Silla" },
+        { "char": "🕯️", "label": "Vela" },
+        { "char": "🧸", "label": "Osito de peluche" },
+        { "char": "🛁", "label": "Bañera" },
+        { "char": "🧹", "label": "Escoba" },
+        { "char": "🧺", "label": "Canasta" },
+        { "char": "🪴", "label": "Planta en maceta" },
+        { "char": "🚪", "label": "Puerta" }
+      ]
+    },
+    {
+      "id": "office-organization",
+      "label": "Oficina",
+      "h2": "Emojis de oficina y organización",
+      "intro": "Calendarios, portapapeles y archivos para planes y listas.",
+      "symbols": [
+        { "char": "📅", "label": "Calendario" },
+        { "char": "🗓️", "label": "Calendario de espiral" },
+        { "char": "📋", "label": "Portapapeles" },
+        { "char": "🗂️", "label": "Separadores de fichas" },
+        { "char": "📇", "label": "Fichero" },
+        { "char": "🗒️", "label": "Bloc de notas" }
+      ]
+    },
+    {
+      "id": "locks-keys",
+      "label": "Candados y llaves",
+      "h2": "Emojis de candados, llaves y enlaces",
+      "intro": "Emojis de seguridad, privacidad y enlaces.",
+      "symbols": [
+        { "char": "🔒", "label": "Candado cerrado" },
+        { "char": "🔓", "label": "Candado abierto" },
+        { "char": "🔐", "label": "Candado con llave" },
+        { "char": "🔏", "label": "Candado con bolígrafo" },
+        { "char": "🔑", "label": "Llave" },
+        { "char": "🗝️", "label": "Llave antigua" },
+        { "char": "🔗", "label": "Enlace" }
+      ]
+    },
+    {
+      "id": "everyday-items",
+      "label": "Diario",
+      "h2": "Emojis de objetos de todos los días",
+      "intro": "Tazas de café, focos, carritos de compras y lo indispensable del día a día.",
+      "symbols": [
+        { "char": "☕", "label": "Café" },
+        { "char": "💡", "label": "Foco" },
+        { "char": "🔦", "label": "Linterna" },
+        { "char": "🛒", "label": "Carrito de compras" },
+        { "char": "💳", "label": "Tarjeta de crédito" },
+        { "char": "🧼", "label": "Jabón" },
+        { "char": "🪥", "label": "Cepillo de dientes" },
+        { "char": "🧴", "label": "Botella de crema" },
+        { "char": "📦", "label": "Paquete" }
+      ]
+    },
+    {
+      "id": "awards-prizes",
+      "label": "Premios",
+      "h2": "Emojis de trofeos y premios",
+      "intro": "Trofeos, medallas y regalos para triunfos y logros.",
+      "symbols": [
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🥈", "label": "Medalla de plata" },
+        { "char": "🥉", "label": "Medalla de bronce" },
+        { "char": "🏅", "label": "Medalla deportiva" },
+        { "char": "🎁", "label": "Regalo" },
+        { "char": "🎈", "label": "Globo" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Trabajo desde Casa",
+      "flags": ["💻", "☕", "📅", "🏠", "🪴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sesión de Estudio",
+      "flags": ["📚", "💡", "🗒️", "☕", "🎧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Setup de Creador de Contenido",
+      "flags": ["🎤", "🎧", "📷", "💻", "🔋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Día de Mudanza",
+      "flags": ["🏠", "📦", "🔑", "🧹", "🚪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Compras en Línea",
+      "flags": ["🛒", "💳", "📦", "🏷️", "🎁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Noche Tranquila en Casa",
+      "flags": ["🕯️", "🛋️", "🧸", "📺", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Podio de Ganadores",
+      "flags": ["🏆", "🥇", "🥈", "🥉", "🏅"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "objectSetsContainer",
+  "collection_section": {
+    "id": "object-sets",
+    "label": "Combos",
+    "h2": "Combos de emojis de objetos",
+    "intro": "Copia un set temático de emojis de objetos con un clic para publicaciones, listas y biografías."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-arte/",
+      "title": "Emojis de Arte y Papelería",
+      "desc": "Lápices, paletas, cuadernos y emojis de material creativo."
+    },
+    {
+      "href": "/es/library/emojis-de-moda/",
+      "title": "Emojis de Ropa y Moda",
+      "desc": "Vestidos, zapatos, sombreros y emojis de outfits para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-dinero/",
+      "title": "Emojis de Dinero",
+      "desc": "Emojis y combos de billetes, monedas y bolsas de dinero."
+    },
+    {
+      "href": "/library/tech-status-symbols/",
+      "title": "Símbolos de Tecnología y Estado",
+      "desc": "Caracteres de batería, señal y estado de interfaz."
+    }
+  ]
+}

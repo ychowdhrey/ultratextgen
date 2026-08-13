@@ -1,0 +1,153 @@
+{
+  "lang": "es",
+  "slug": "emoji-avergonzado",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-avergonzado/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/embarrassed-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-avergonzado/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/embarrassed-emoji/" }
+  ],
+  "title": "Emoji Avergonzado y Kaomoji: Copiar y Pegar 😳😬 Combos de Pena",
+  "meta_description": "Emoji avergonzado 😳 😬 🙃 para reacciones de pena, momentos cringe y metidas de pata, más kaomoji como (ノ_<。). Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Avergonzado y Kaomoji",
+  "hero_h1": "Emoji Avergonzado y Kaomoji",
+  "hero_tagline": "La cara encendida 😳, las muecas de cringe, las caras de 'me cacharon' y los kaomoji de pena para cada metida de pata. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji avergonzado 😳 es el que mandas justo cuando caes en cuenta de que todos lo vieron — no es el cosquilleo tierno de un piropo, sino esa pena de cara caliente, de 'trágame tierra', después de una metida de pata, de confundir un nombre o de un chiste que cayó mal. Aquí reunimos todo el rango de la vergüenza: el clásico 😳 de cara encendida junto al 😅 de sudor nervioso, reacciones de cringe como 😬 y 🫠 para ver un desastre social en vivo, y las caras de 'me cacharon' — 🤭, 😯, 🤐 — para el segundo después de decir algo que ya no puedes retirar. Los kaomoji de pena como (ノ_<。) y m(_ _)m cargan la misma energía en texto plano, ideales para chats y comentarios donde los emojis no pegan igual. Si lo que buscas es el lado más suave y de mejillas rosadas — timidez por un cumplido, un halago, ese momento de 'me da pena contigo' — la página del emoji sonrojado que enlazamos abajo es la indicada. Copia una sola cara, o llévate un combo listo para el después de cualquier momento cringe.",
+  "sections": [
+    {
+      "id": "core-embarrassed-faces",
+      "label": "Caras de Vergüenza",
+      "h2": "Emoji Avergonzado 😳",
+      "intro": "Las caras de pena de todos los días — las que buscas apenas caes en cuenta de que todos lo vieron.",
+      "symbols": [
+        { "char": "😳", "label": "Cara sonrojada" },
+        { "char": "🙃", "label": "Cara al revés" },
+        { "char": "😅", "label": "Cara sonriente con sudor" },
+        { "char": "🫠", "label": "Cara derritiéndose" },
+        { "char": "😐", "label": "Cara neutral" },
+        { "char": "😶", "label": "Cara sin boca" }
+      ]
+    },
+    {
+      "id": "cringe-oh-no-reactions",
+      "label": "Cringe y Momentos 'Ay No'",
+      "h2": "Emojis de Cringe y de 'Ay No'",
+      "intro": "Cuando la pena se convierte en pánico visible — sudor, ahogos y las ganas de reírse antes de que alguien se dé cuenta.",
+      "symbols": [
+        { "char": "😬", "label": "Cara de mueca" },
+        { "char": "😱", "label": "Cara gritando de miedo" },
+        { "char": "😨", "label": "Cara asustada" },
+        { "char": "😰", "label": "Cara ansiosa con sudor" },
+        { "char": "😓", "label": "Cara cabizbaja con sudor" },
+        { "char": "💦", "label": "Gotas de sudor" }
+      ]
+    },
+    {
+      "id": "mortified-caught-out",
+      "label": "Pena y 'Me Cacharon'",
+      "h2": "Caras de Pena y de 'Me Cacharon'",
+      "intro": "El segundo después de la metida de pata, cuando darías lo que fuera por retirarlo o simplemente desaparecer.",
+      "symbols": [
+        { "char": "🤭", "label": "Cara con mano en la boca" },
+        { "char": "😯", "label": "Cara callada" },
+        { "char": "🫥", "label": "Cara punteada" },
+        { "char": "😔", "label": "Cara pensativa" },
+        { "char": "🤐", "label": "Cara con boca de cremallera" },
+        { "char": "😞", "label": "Cara decepcionada" }
+      ]
+    },
+    {
+      "id": "embarrassed-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji y Caritas de Texto de Vergüenza",
+      "intro": "Caritas al estilo japonés para el cringe puro — sudor nervioso, disculpas con mueca y silencios incómodos, listas para pegar donde funcione el texto plano.",
+      "symbols": [
+        { "char": "(ノ_<。)", "label": "Kaomoji de disculpa apenada" },
+        { "char": "(>_<)", "label": "Kaomoji de mueca de vergüenza" },
+        { "char": "(^^;)", "label": "Kaomoji de sonrisa con sudor nervioso" },
+        { "char": "m(_ _)m", "label": "Kaomoji de reverencia de disculpa" },
+        { "char": "(>ω<)", "label": "Kaomoji de mueca nerviosa" },
+        { "char": "(-_-;)", "label": "Kaomoji de silencio incómodo" },
+        { "char": "(ﾟoﾟ)", "label": "Kaomoji de sobresalto" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "¿De Verdad Dije Eso?",
+      "flags": ["😳", "🤭", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Con las Manos en la Masa",
+      "flags": ["😳", "😨", "😅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cringe Social",
+      "flags": ["😬", "🫠", "😐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ay No, Ay No, Ay No",
+      "flags": ["😱", "😰", "😳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Trágame Tierra",
+      "flags": ["🫥", "🙃", "😶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Reírse de Nervios",
+      "flags": ["😅", "😬", "🙃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silencio Incómodo",
+      "flags": ["😐", "😶", "🤐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pack de Kaomoji de Pena",
+      "flags": ["(ノ_<。)", "(>_<)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "embarrassedSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Avergonzado",
+    "intro": "Combos de pena listos para usar — copia el set completo con un clic para el después de cualquier momento cringe."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-sonrojado/",
+      "title": "Emoji Sonrojado y Kaomoji",
+      "desc": "El lado suave y de mejillas rosadas de la timidez — sonrisas cálidas y caras de halago."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    },
+    {
+      "href": "/es/library/emoji-sorprendido/",
+      "title": "Emoji Sorprendido y Kaomoji",
+      "desc": "Sorpresa con los ojos bien abiertos y combos de reacción para giros inesperados."
+    },
+    {
+      "href": "/es/library/emoji-confundido/",
+      "title": "Emoji Confundido y Kaomoji",
+      "desc": "Caras de desconcierto y sin palabras para cuando nada cuadra."
+    }
+  ]
+}

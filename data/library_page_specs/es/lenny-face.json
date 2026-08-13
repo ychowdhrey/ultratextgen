@@ -1,0 +1,98 @@
+{
+  "lang": "es",
+  "slug": "lenny-face",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/lenny-face/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/lenny-face/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/lenny-face/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/lenny-face/" }
+  ],
+  "title": "Lenny Face: Copiar y Pegar ( ͡° ͜ʖ ͡°) Caras de Texto",
+  "meta_description": "Copia y pega la Lenny face ( ͡° ͜ʖ ͡°) y decenas de variantes: la clásica cara de texto burlona para comentarios, chats y memes. Un clic y listo.",
+  "breadcrumb": "Lenny Face",
+  "hero_h1": "Lenny Face",
+  "hero_tagline": "Copia y pega la Lenny face ( ͡° ͜ʖ ͡°) y todas sus variantes — la clásica cara de texto burlona de los memes. Haz clic en cualquiera para copiarla al instante.",
+  "intro": "La Lenny face ( ͡° ͜ʖ ͡°) es una cara de texto al estilo japonés: una sonrisa pícara y cómplice armada con puros caracteres Unicode. Se pega limpia en comentarios, chats y publicaciones en cualquier lugar que soporte Unicode, sin necesidad de una imagen. Abajo puedes ver la original junto con sus muchas variantes y hacer clic en cualquiera para copiarla al instante. Da igual si buscas «lenny face», «lenny face para copiar y pegar» o «generador de lenny face»: todas las caras de esta página son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en letras negritas, cursivas, manuscritas y más de 100 estilos de fuentes Unicode, gratis y al instante.",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "La Original",
+      "h2": "La Lenny Face Original",
+      "intro": "La sonrisa burlona clásica y sus parientes más cercanos.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Lenny clásica" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Lenny guiñando el ojo" },
+        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Lenny feliz" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Lenny astuta" },
+        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Lenny estirando la mano" }
+      ]
+    },
+    {
+      "id": "buff",
+      "label": "Lenny Musculosa",
+      "h2": "Lenny Face Musculosa y Marcando Bíceps",
+      "intro": "Brazos arriba: marcando músculo, con toda la energía y lista para todo.",
+      "symbols": [
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Lenny marcando músculo" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Lenny marchando" },
+        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Lenny grosera" },
+        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Lenny fuerte" }
+      ]
+    },
+    {
+      "id": "reaching",
+      "label": "Estirándose",
+      "h2": "Lenny Face Estirando los Brazos",
+      "intro": "Variantes que agarran, señalan y piden.",
+      "symbols": [
+        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Lenny abrazando" },
+        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Lenny señalando" },
+        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Lenny pidiendo" },
+        { "char": "( ͡°Ѡ ͡°)", "label": "Lenny de boca ancha" }
+      ]
+    },
+    {
+      "id": "variants",
+      "label": "Variantes de Ojos",
+      "h2": "Variantes de Ojos de la Lenny Face",
+      "intro": "La misma sonrisa burlona, con los ojos cambiados.",
+      "symbols": [
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Lenny de ojos redondos" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Lenny de ojos marcados" },
+        { "char": "( ͡• ͜ʖ ͡•)", "label": "Lenny de ojos de punto" },
+        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Lenny de ojos de diana" },
+        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Lenny de ojos de moneda" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caras de Texto y Kaomoji",
+      "desc": "El hub completo de kaomoji: caras de texto japonesas para cada estado de ánimo."
+    },
+    {
+      "href": "/es/library/dongers/",
+      "title": "Dongers",
+      "desc": "Caras de texto con los brazos en alto y pura energía, como ヽ༼ຈل͜ຈ༽ﾉ, para copiar y pegar."
+    },
+    {
+      "href": "/es/library/shrug-kaomoji/",
+      "title": "Kaomoji de Hombros Encogidos",
+      "desc": "El clásico ¯\\_(ツ)_/¯ y todas sus variantes."
+    },
+    {
+      "href": "/es/library/cute-kaomoji/",
+      "title": "Kaomoji Tiernos",
+      "desc": "Caras de texto kawaii con ojos brillantes y mejillas sonrojadas."
+    }
+  ]
+}

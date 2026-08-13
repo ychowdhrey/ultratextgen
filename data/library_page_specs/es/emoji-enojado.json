@@ -1,0 +1,153 @@
+{
+  "lang": "es",
+  "slug": "emoji-enojado",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-enojado/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/angry-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-enojado/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/angry-emoji/" }
+  ],
+  "title": "Emoji Enojado y Kaomoji: Copiar y Pegar 😡 Combos de Furia",
+  "meta_description": "Emoji enojado 😡 🤬 😤, combos de furia y kaomoji de mesa volteada como (╯°□°）╯︵ ┻━┻ para chats y comentarios. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Enojado y Kaomoji",
+  "hero_h1": "Emoji Enojado y Kaomoji",
+  "hero_tagline": "Caras rojas de furia, vapor, fuego y el legendario kaomoji de mesa volteada — enojo en todas sus intensidades. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La escala del emoji enojado va desde el ceño fruncido de 😠, que apenas contiene la molestia, hasta la furia con groserías censuradas de 🤬 — y cuando ningún emoji alcanza, siempre queda el kaomoji de mesa volteada (╯°□°）╯︵ ┻━┻. En esta página reunimos todas las caras de enojo, los símbolos de fuego y explosión que convierten un reclamo en una publicación de pura rabia, las caras de fastidio y ojos en blanco para la irritación de bajo voltaje, y combos de enojo listos para copiar con un solo clic en chats, comentarios y esos momentos de rabia en pleno juego.",
+  "sections": [
+    {
+      "id": "angry-faces",
+      "label": "Caras de Enojo",
+      "h2": "Emojis de Caras Enojadas y Molestas",
+      "intro": "Las caras de enojo esenciales, desde el ceño que apenas aguanta hasta la furia con groserías.",
+      "symbols": [
+        { "char": "😡", "label": "Cara furiosa" },
+        { "char": "😠", "label": "Cara enojada" },
+        { "char": "🤬", "label": "Cara con símbolos en la boca" },
+        { "char": "😤", "label": "Cara con vapor en la nariz" },
+        { "char": "👿", "label": "Cara enojada con cuernos" },
+        { "char": "😾", "label": "Gato enojado" },
+        { "char": "💢", "label": "Símbolo de enojo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    },
+    {
+      "id": "rage-fuel",
+      "label": "Combustible de Rabia",
+      "h2": "Explosiones, Fuego y Símbolos de Furia",
+      "intro": "Volcanes, rayos y cabezas que estallan para subir la rabia al máximo.",
+      "symbols": [
+        { "char": "🤯", "label": "Cabeza explotando" },
+        { "char": "💥", "label": "Explosión" },
+        { "char": "⚡", "label": "Alto voltaje" },
+        { "char": "🌋", "label": "Volcán" },
+        { "char": "🗯", "label": "Globo de enojo" },
+        { "char": "👹", "label": "Ogro" },
+        { "char": "😈", "label": "Cara sonriente con cuernos" }
+      ]
+    },
+    {
+      "id": "annoyed-faces",
+      "label": "Caras de Fastidio",
+      "h2": "Caras de Fastidio y Hartazgo",
+      "intro": "Irritación por debajo de la furia: ojos en blanco, miradas planas y dientes apretados.",
+      "symbols": [
+        { "char": "🙄", "label": "Cara con ojos en blanco" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "🤨", "label": "Cara con una ceja levantada" },
+        { "char": "😖", "label": "Cara agobiada" },
+        { "char": "😣", "label": "Cara de aguante" },
+        { "char": "🫨", "label": "Cara temblando" }
+      ]
+    },
+    {
+      "id": "rage-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de Furia y Mesa Volteada",
+      "intro": "Las mesas volteadas, las miradas fulminantes y los gruñidos de las caritas de texto clásicas.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Kaomoji de mesa volteada" },
+        { "char": "(┛◉Д◉)┛彡┻━┻", "label": "Kaomoji de mesa volteada con furia" },
+        { "char": "┬─┬ノ( º _ ºノ)", "label": "Kaomoji de acomodar la mesa" },
+        { "char": "(╬ Ò﹏Ó)", "label": "Kaomoji de rabia hirviendo" },
+        { "char": "ヽ(`Д´)ﾉ", "label": "Kaomoji de grito de rabia" },
+        { "char": "(ﾉಥ益ಥ)ﾉ ┻━┻", "label": "Kaomoji de rabia con lágrimas" },
+        { "char": "(¬_¬)", "label": "Kaomoji de mirada irritada" },
+        { "char": "(≖_≖ )", "label": "Kaomoji de mirada desconfiada" },
+        { "char": "(｀ﾍ´)", "label": "Kaomoji de bufido molesto" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Modo Furia",
+      "flags": ["😡", "🤬", "💢", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sacar el Vapor",
+      "flags": ["😤", "💨", "😠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Se Acabó la Paciencia",
+      "flags": ["🙄", "😬", "😤", "💢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Colapso Total",
+      "flags": ["🤯", "💥", "🌋", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arco de Villano",
+      "flags": ["😈", "👿", "🔥", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teclado Destrozado",
+      "flags": ["😡", "⌨", "💥", "🤬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Saga de la Mesa Volteada",
+      "flags": ["(╯°□°）╯︵ ┻━┻", "┬─┬ノ( º _ ºノ)", "(┛◉Д◉)┛彡┻━┻"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "angrySetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Furia",
+    "intro": "Copia un combo de rabia completo con un solo clic — desde el fastidio medido hasta el colapso total."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-triste/",
+      "title": "Emoji Triste y Kaomoji",
+      "desc": "Caras de melancolía y desamor para los bajones más silenciosos."
+    },
+    {
+      "href": "/es/library/emoji-sorprendido/",
+      "title": "Emoji Sorprendido y Kaomoji",
+      "desc": "Sorpresa con los ojos bien abiertos y combos de reacción para giros inesperados."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "Todos los ánimos en kaomoji, de la alegría a la furia de voltear la mesa."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-manos",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-manos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/hand-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-manos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hand-symbols/"
+    }
+  ],
+  "title": "Símbolos de Manos: Emojis de Gestos para Copiar y Pegar",
+  "meta_description": "Explora y copia símbolos de manos: emojis de gestos, manos que señalan y caracteres Unicode de dedos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "breadcrumb": "Símbolos de gestos con las manos",
+  "hero_h1": "Símbolos de Gestos con las Manos",
+  "hero_tagline": "Una colección de referencia con emojis de gestos, manos que señalan y caracteres Unicode relacionados con los dedos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Esta biblioteca reúne los símbolos de manos que ofrece Unicode: manos que señalan, emojis de gestos, señas con los dedos y caracteres de manos relacionados con el cuerpo. Están organizados por tipo de gesto: direcciones que señalan, gestos comunes y señas con la mano.",
+  "sections": [
+    {
+      "id": "pointing",
+      "label": "",
+      "h2": "Emojis de manos que señalan",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "👆",
+          "label": "Señalar hacia arriba"
+        },
+        {
+          "char": "👇",
+          "label": "Señalar hacia abajo"
+        },
+        {
+          "char": "👈",
+          "label": "Señalar a la izquierda"
+        },
+        {
+          "char": "👉",
+          "label": "Señalar a la derecha"
+        },
+        {
+          "char": "☝",
+          "label": "Índice hacia arriba"
+        },
+        {
+          "char": "☞",
+          "label": "Índice a la derecha"
+        },
+        {
+          "char": "☜",
+          "label": "Índice a la izquierda"
+        },
+        {
+          "char": "☟",
+          "label": "Índice hacia abajo"
+        },
+        {
+          "char": "🫵",
+          "label": "Señalar al espectador"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "",
+      "h2": "Emojis de aprobación y pulgares",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pulgar arriba"
+        },
+        {
+          "char": "👎",
+          "label": "Pulgar abajo"
+        },
+        {
+          "char": "👌",
+          "label": "Mano de OK"
+        },
+        {
+          "char": "🤌",
+          "label": "Dedos juntos"
+        },
+        {
+          "char": "🙆",
+          "label": "Gesto de OK con los brazos"
+        }
+      ]
+    },
+    {
+      "id": "gestures",
+      "label": "",
+      "h2": "Emojis de gestos con la mano",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "✌",
+          "label": "Victoria"
+        },
+        {
+          "char": "🤞",
+          "label": "Dedos cruzados"
+        },
+        {
+          "char": "🤟",
+          "label": "Te quiero"
+        },
+        {
+          "char": "🤘",
+          "label": "Cuernos de rock"
+        },
+        {
+          "char": "🤙",
+          "label": "Llámame"
+        },
+        {
+          "char": "🫰",
+          "label": "Chasquido / suerte"
+        },
+        {
+          "char": "🫱",
+          "label": "Mano hacia la derecha"
+        },
+        {
+          "char": "🫲",
+          "label": "Mano hacia la izquierda"
+        },
+        {
+          "char": "🫳",
+          "label": "Palma hacia abajo"
+        },
+        {
+          "char": "🫴",
+          "label": "Palma hacia arriba"
+        },
+        {
+          "char": "👐",
+          "label": "Manos abiertas"
+        },
+        {
+          "char": "🤲",
+          "label": "Palmas juntas hacia arriba"
+        },
+        {
+          "char": "🫡",
+          "label": "Saludo militar"
+        },
+        {
+          "char": "🤦",
+          "label": "Mano en la cara"
+        },
+        {
+          "char": "🙇",
+          "label": "Persona haciendo una reverencia"
+        }
+      ]
+    },
+    {
+      "id": "celebration",
+      "label": "",
+      "h2": "Emojis de manos para celebrar y expresarse",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🙌",
+          "label": "Manos levantadas"
+        },
+        {
+          "char": "👏",
+          "label": "Aplausos"
+        },
+        {
+          "char": "🤝",
+          "label": "Apretón de manos"
+        },
+        {
+          "char": "🙏",
+          "label": "Manos juntas"
+        },
+        {
+          "char": "👐",
+          "label": "Manos abiertas"
+        },
+        {
+          "char": "🤲",
+          "label": "Palmas hacia arriba"
+        },
+        {
+          "char": "🫶",
+          "label": "Corazón con las manos"
+        }
+      ]
+    },
+    {
+      "id": "functional",
+      "label": "",
+      "h2": "Símbolos de manos funcionales",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "✋",
+          "label": "Mano levantada"
+        },
+        {
+          "char": "🖐",
+          "label": "Dedos separados"
+        },
+        {
+          "char": "🖖",
+          "label": "Saludo vulcano"
+        },
+        {
+          "char": "✍",
+          "label": "Mano escribiendo"
+        },
+        {
+          "char": "🤚",
+          "label": "Dorso de la mano levantado"
+        },
+        {
+          "char": "🖕",
+          "label": "Dedo del medio"
+        },
+        {
+          "char": "🦾",
+          "label": "Brazo mecánico"
+        },
+        {
+          "char": "✊",
+          "label": "Puño levantado"
+        },
+        {
+          "char": "👊",
+          "label": "Puño de frente"
+        },
+        {
+          "char": "🤛",
+          "label": "Puño a la izquierda"
+        },
+        {
+          "char": "🤜",
+          "label": "Puño a la derecha"
+        },
+        {
+          "char": "👋",
+          "label": "Saludando con la mano"
+        },
+        {
+          "char": "🖕",
+          "label": "Dedo del medio"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Colección de símbolos de corazón",
+      "desc": "Una colección de emojis de corazón y caracteres Unicode de corazones para expresar amor, agradecimiento y apoyo."
+    },
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Símbolos de lazos de concientización",
+      "desc": "Símbolos de lazos y caracteres de causas de concientización disponibles en Unicode."
+    },
+    {
+      "href": "/es/library/simbolos-de-musica/",
+      "title": "Símbolos de notas musicales",
+      "desc": "Notas musicales, emojis de instrumentos y símbolos Unicode relacionados con la música."
+    },
+    {
+      "href": "/es/library/simbolos-para-linkedin/",
+      "title": "Biblioteca de símbolos para LinkedIn",
+      "desc": "Una biblioteca de referencia con los símbolos Unicode más usados en LinkedIn."
+    },
+    {
+      "href": "/es/library/emoji-manos-rezando/",
+      "title": "Emoji de manos rezando y kaomoji",
+      "desc": "El emoji 🙏 de rezo, gracias y choca esos cinco, más kaomoji haciendo una reverencia."
+    },
+    {
+      "href": "/es/library/emoji-saludo-militar/",
+      "title": "Emoji de saludo militar y kaomoji",
+      "desc": "La cara que saluda, los saludos vulcanos y kaomoji de respeto."
+    },
+    {
+      "href": "/es/library/emoji-apreton-de-manos/",
+      "title": "Emoji de apretón de manos y kaomoji",
+      "desc": "El apretón de manos, los saludos amistosos y kaomoji de cerrar un trato."
+    },
+    {
+      "href": "/es/library/emoji-facepalm/",
+      "title": "Emoji facepalm y kaomoji",
+      "desc": "El facepalm, las caras de hartazgo y kaomoji derrumbados como orz."
+    },
+    {
+      "href": "/es/library/emoji-aplausos/",
+      "title": "Emoji de aplausos",
+      "desc": "Manos aplaudiendo y el formato de meme que pone énfasis palabra por palabra."
+    },
+    {
+      "href": "/es/library/emoji-paz/",
+      "title": "Emoji de paz",
+      "desc": "Señal de paz, paloma y símbolos de armonía para pies de foto."
+    },
+    {
+      "href": "/es/symbol/emoji-de-senal-de-pulgar/",
+      "title": "Emoji de señal de pulgar hacia la izquierda y la derecha",
+      "desc": "Un par direccional que señala, no otro gesto de aprobación: propuesto para Emoji 18.0, previsto junto con Unicode 18.0 en septiembre de 2026."
+    }
+  ]
+}

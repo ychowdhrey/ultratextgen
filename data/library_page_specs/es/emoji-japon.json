@@ -1,0 +1,177 @@
+{
+ "lang": "es",
+ "slug": "emoji-japon",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-japon/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/japan-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-japon/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/japan-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Japón 🇯🇵⚽ Combos para Copiar y Pegar",
+ "meta_description": "Combos de emoji Japón 🇯🇵⚽ — colores de los Samurai Blue y sets de fútbol para biografías y publicaciones. Haz clic en cualquier emoji para copiarlo.",
+ "breadcrumb": "Combos de Emojis de Japón",
+ "hero_h1": "Combos de Emojis de Japón",
+ "hero_tagline": "Los colores de los Samurai Blue y sets de emojis de fútbol para los hinchas de Japón: haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los combos de emoji Japón juntan la bandera 🇯🇵 con el balón ⚽ y los colores de los Samurai Blue. El grito de «Ganbare Nippon» impulsa a la selección en cada partido. Copia un emoji suelto de los de abajo o llévate un set completo con un solo clic.",
+ "sections": [
+  {
+   "id": "japan-emojis",
+   "label": "Japón",
+   "h2": "Emojis de Japón",
+   "intro": "La bandera, el balón y los colores nacionales.",
+   "symbols": [
+    {
+     "char": "🇯🇵",
+     "label": "Bandera de Japón"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🔵",
+     "label": "Círculo azul"
+    },
+    {
+     "char": "🔴",
+     "label": "Círculo rojo"
+    },
+    {
+     "char": "🌸",
+     "label": "Flor de cerezo"
+    },
+    {
+     "char": "☀️",
+     "label": "Sol naciente"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de confeti"
+    }
+   ]
+  },
+  {
+   "id": "pride-emojis",
+   "label": "Orgullo",
+   "h2": "Emojis del Orgullo Japonés",
+   "intro": "El azul de los Samurai Blue y el sol naciente.",
+   "symbols": [
+    {
+     "char": "🔵",
+     "label": "Círculo azul"
+    },
+    {
+     "char": "🔴",
+     "label": "Círculo rojo"
+    },
+    {
+     "char": "🌸",
+     "label": "Flor de cerezo"
+    },
+    {
+     "char": "☀️",
+     "label": "Sol naciente"
+    },
+    {
+     "char": "⛩️",
+     "label": "Santuario sintoísta"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Samurai Blue",
+   "flags": [
+    "🇯🇵",
+    "⚽",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Ganbare Nippon",
+   "flags": [
+    "🇯🇵",
+    "⚽",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sol Naciente",
+   "flags": [
+    "🇯🇵",
+    "☀️",
+    "⚽"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sakura",
+   "flags": [
+    "🌸",
+    "🔵",
+    "⚽"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "japanCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos de Japón",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, publicación o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emojis del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y temática."
+  }
+ ]
+}

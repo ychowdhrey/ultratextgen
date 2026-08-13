@@ -1,0 +1,344 @@
+{
+ "lang": "es",
+ "slug": "emojis-de-fiesta",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emojis-de-fiesta/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emojis-de-fiesta/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+  }
+ ],
+ "title": "Emojis de Fiesta: Copiar y Pegar 🎉 Combos de Confeti",
+ "meta_description": "Emojis de fiesta para copiar y pegar: 🎉 confeti, 🥳 cara de fiesta, globos, fuegos artificiales, brindis y combos de celebración. Haz clic y cópialos.",
+ "breadcrumb": "Emojis de Fiesta y Celebración",
+ "hero_h1": "Emojis de Fiesta y Celebración",
+ "hero_tagline": "Confeti, pastel, fuegos artificiales y brindis para cada celebración: haz clic en cualquier emoji para copiarlo al instante.",
+ "intro": "Los emojis de fiesta convierten cualquier mensaje en una celebración, desde una felicitación de cumpleaños hasta un comentario de felicitaciones o una cuenta regresiva de Año Nuevo. Esta biblioteca reúne los emojis de celebración imprescindibles —🎉 cohete de fiesta, 🎊 bola de confeti, 🥳 cara de fiesta— junto con los antojos de cumpleaños, las copas brindando, la energía de la pista de baile y los fuegos artificiales. Copia emojis sueltos para tus pies de foto e invitaciones, o toma un combo de fiesta completo con un solo clic.",
+ "sections": [
+  {
+   "id": "party-essentials",
+   "label": "Lo Esencial",
+   "h2": "Lo Esencial de la Fiesta",
+   "intro": "Los emojis de celebración básicos que dicen fiesta sin una sola palabra.",
+   "symbols": [
+    {
+     "char": "🎉",
+     "label": "Cohete de fiesta"
+    },
+    {
+     "char": "🎊",
+     "label": "Bola de confeti"
+    },
+    {
+     "char": "🥳",
+     "label": "Cara de fiesta"
+    },
+    {
+     "char": "🪅",
+     "label": "Piñata"
+    },
+    {
+     "char": "🎈",
+     "label": "Globo"
+    },
+    {
+     "char": "🎁",
+     "label": "Regalo envuelto"
+    },
+    {
+     "char": "🎀",
+     "label": "Moño"
+    }
+   ]
+  },
+  {
+   "id": "birthday-treats",
+   "label": "Antojos de Cumpleaños",
+   "h2": "Pastel de Cumpleaños y Dulces",
+   "intro": "Pasteles, velas y dulces para publicaciones y felicitaciones de cumpleaños.",
+   "symbols": [
+    {
+     "char": "🎂",
+     "label": "Pastel de cumpleaños"
+    },
+    {
+     "char": "🧁",
+     "label": "Cupcake"
+    },
+    {
+     "char": "🍰",
+     "label": "Rebanada de pastel"
+    },
+    {
+     "char": "🕯",
+     "label": "Vela"
+    },
+    {
+     "char": "🍬",
+     "label": "Caramelo"
+    },
+    {
+     "char": "🍭",
+     "label": "Paleta"
+    }
+   ]
+  },
+  {
+   "id": "toasts-drinks",
+   "label": "Brindis y Bebidas",
+   "h2": "Brindis y Bebidas de Celebración",
+   "intro": "Levanta la copa con champaña, cocteles y tarros de cerveza chocando.",
+   "symbols": [
+    {
+     "char": "🥂",
+     "label": "Copas brindando"
+    },
+    {
+     "char": "🍾",
+     "label": "Botella descorchándose"
+    },
+    {
+     "char": "🍻",
+     "label": "Tarros de cerveza brindando"
+    },
+    {
+     "char": "🍹",
+     "label": "Bebida tropical"
+    },
+    {
+     "char": "🍸",
+     "label": "Copa de coctel"
+    }
+   ]
+  },
+  {
+   "id": "music-dance",
+   "label": "Música y Baile",
+   "h2": "Música y Pista de Baile",
+   "intro": "Bailarines, bolas de disco y notas musicales para la energía de la noche de fiesta.",
+   "symbols": [
+    {
+     "char": "💃",
+     "label": "Mujer bailando"
+    },
+    {
+     "char": "🕺",
+     "label": "Hombre bailando"
+    },
+    {
+     "char": "🪩",
+     "label": "Bola de disco"
+    },
+    {
+     "char": "🎶",
+     "label": "Notas musicales"
+    },
+    {
+     "char": "🎵",
+     "label": "Nota musical"
+    },
+    {
+     "char": "🎤",
+     "label": "Micrófono"
+    },
+    {
+     "char": "🔊",
+     "label": "Altavoz a todo volumen"
+    },
+    {
+     "char": "👯",
+     "label": "Personas con orejas de conejo"
+    }
+   ]
+  },
+  {
+   "id": "fireworks-sparkle",
+   "label": "Fuegos Artificiales",
+   "h2": "Fuegos Artificiales y Brillo",
+   "intro": "Ilumina las cuentas regresivas y los grandes anuncios con fuegos artificiales y estrellas.",
+   "symbols": [
+    {
+     "char": "🎆",
+     "label": "Fuegos artificiales"
+    },
+    {
+     "char": "🎇",
+     "label": "Bengala"
+    },
+    {
+     "char": "✨",
+     "label": "Destellos"
+    },
+    {
+     "char": "🌟",
+     "label": "Estrella brillante"
+    },
+    {
+     "char": "⭐",
+     "label": "Estrella"
+    },
+    {
+     "char": "💫",
+     "label": "Estela de estrella"
+    }
+   ]
+  },
+  {
+   "id": "trophies-flowers",
+   "label": "Triunfos y Flores",
+   "h2": "Trofeos, Medallas y Flores",
+   "intro": "Los extras de felicitación para victorias, graduaciones y logros importantes.",
+   "symbols": [
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🥇",
+     "label": "Medalla de oro"
+    },
+    {
+     "char": "🎓",
+     "label": "Birrete de graduación"
+    },
+    {
+     "char": "💐",
+     "label": "Ramo de flores"
+    },
+    {
+     "char": "🌹",
+     "label": "Rosa"
+    },
+    {
+     "char": "👑",
+     "label": "Corona"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Fiestón de Cumpleaños",
+   "flags": [
+    "🎂",
+    "🎉",
+    "🎈",
+    "🥳"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Cuenta Regresiva de Año Nuevo",
+   "flags": [
+    "🎆",
+    "🥂",
+    "✨",
+    "🎊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Noche de Fiesta",
+   "flags": [
+    "🪩",
+    "💃",
+    "🕺",
+    "🎶"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Felicidades",
+   "flags": [
+    "🎉",
+    "👏",
+    "🏆",
+    "💐"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Salud",
+   "flags": [
+    "🥂",
+    "🍾",
+    "🎊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Fiesta Sorpresa",
+   "flags": [
+    "🎁",
+    "🎈",
+    "🤫",
+    "🥳"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Lluvia de Confeti",
+   "flags": [
+    "🎊",
+    "🎉",
+    "🎊",
+    "🎉"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Fiesta de Graduación",
+   "flags": [
+    "🎓",
+    "🎉",
+    "👏",
+    "🥳"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "partySetsContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Combos",
+  "h2": "Combos de Celebración",
+  "intro": "Copia un combo de fiesta completo con un clic: ideal para felicitaciones de cumpleaños, comentarios de felicitaciones y cuentas regresivas."
+ },
+ "related": [
+  {
+   "href": "/es/library/emojis-para-mensajes/",
+   "title": "Emojis de Saludos y Mensajes",
+   "desc": "Combos de buenos días, gracias y felicitaciones."
+  },
+  {
+   "href": "/es/library/emojis-de-boda/",
+   "title": "Emojis de Boda y Aniversario",
+   "desc": "Anillos, campanas y combos de pareja para el gran día."
+  },
+  {
+   "href": "/es/library/simbolos-de-brillo/",
+   "title": "Símbolos de Brillo",
+   "desc": "Destellos, brillos y caracteres de resplandor para textos estéticos."
+  },
+  {
+   "href": "/library/achievement-symbols/",
+   "title": "Símbolos de Logros",
+   "desc": "Trofeos, medallas y símbolos de ganador para celebrar el éxito."
+  }
+ ]
+}

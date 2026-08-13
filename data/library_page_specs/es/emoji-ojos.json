@@ -1,0 +1,243 @@
+{
+  "lang": "es",
+  "slug": "emoji-ojos",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-ojos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/eyes-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-ojos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/eyes-emoji/"
+    }
+  ],
+  "title": "Emoji Ojos: Copiar y Pegar 👀 Combos de Miradas y Sospecha",
+  "meta_description": "Copia el emoji ojos 👀, el ojo 👁️, las caras que espían, kaomoji de ojos y combos de mirada sospechosa. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Ojos y Kaomoji",
+  "hero_h1": "Emoji Ojos y Kaomoji de Miradas",
+  "hero_tagline": "Desde el famosísimo 👀 hasta el ojo 👁️ solo, las caras de mirada de reojo y los kaomoji con los ojos bien abiertos: todas las formas de decir que estás mirando. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji ojos 👀 es menos un dibujo de dos ojos que una actitud completa: es la manera más rápida de decir estoy viendo esto, aquí hay algo raro o a ver, sigue contando, sin escribir una sola palabra. Debajo de un comentario picante, encima de una captura de pantalla o repetido 👀👀👀 para máximo chisme, convierte el simple hecho de mirar en una reacción que todos entienden al instante. En español lleva la misma carga que un ojo al piojo o un te estoy vigilando dicho entre risas. Esta página reúne el emoji ojos y el ojo 👁️ solo, las caras que espían y sospechan, los kaomoji de ojos bien abiertos como ಠ_ಠ y combos de un clic — te agarraron en 4K, comportamiento sospechoso, vine por el chisme — hechos justo para esos momentos. Copia un solo carácter o un combo completo y pégalo en una respuesta, un pie de foto o el chat del grupo.",
+  "sections": [
+    {
+      "id": "core-eyes",
+      "label": "El emoji ojos",
+      "h2": "El emoji ojos",
+      "intro": "Los ojos famosos de los memes, más el ojo solo y su variante dentro del globo de diálogo.",
+      "symbols": [
+        {
+          "char": "👀",
+          "label": "Ojos"
+        },
+        {
+          "char": "👁️",
+          "label": "Ojo"
+        },
+        {
+          "char": "👁️‍🗨️",
+          "label": "Ojo en globo de diálogo"
+        }
+      ]
+    },
+    {
+      "id": "peeking-watching",
+      "label": "Espiando y mirando",
+      "h2": "Caras que espían y observan",
+      "intro": "Caras atrapadas espiando, curioseando o sin poder apartar la mirada.",
+      "symbols": [
+        {
+          "char": "🫣",
+          "label": "Cara espiando entre los dedos"
+        },
+        {
+          "char": "🙈",
+          "label": "Mono que no ve"
+        },
+        {
+          "char": "😳",
+          "label": "Cara sonrojada"
+        },
+        {
+          "char": "🤨",
+          "label": "Cara con la ceja levantada"
+        },
+        {
+          "char": "🧐",
+          "label": "Cara con monóculo"
+        }
+      ]
+    },
+    {
+      "id": "side-eye-suspicious",
+      "label": "Mirada de reojo",
+      "h2": "Miradas de reojo y de sospecha",
+      "intro": "Ojos en blanco, miradas planas y sonrisitas para cuando algo huele raro.",
+      "symbols": [
+        {
+          "char": "🙄",
+          "label": "Cara con los ojos en blanco"
+        },
+        {
+          "char": "😒",
+          "label": "Cara sin gracia"
+        },
+        {
+          "char": "😏",
+          "label": "Cara con sonrisa pícara"
+        },
+        {
+          "char": "🤔",
+          "label": "Cara pensativa"
+        }
+      ]
+    },
+    {
+      "id": "eyes-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de ojos",
+      "intro": "Caritas de texto que miran fijo, entrecierran los ojos y miran de reojo con puros caracteres: pégalas donde quieras.",
+      "symbols": [
+        {
+          "char": "☉_☉",
+          "label": "Kaomoji de ojos enormes"
+        },
+        {
+          "char": "ಠ_ಠ",
+          "label": "Kaomoji de mirada de desaprobación"
+        },
+        {
+          "char": "⊙▂⊙",
+          "label": "Kaomoji de mirada de susto"
+        },
+        {
+          "char": "(⊙_⊙)",
+          "label": "Kaomoji de ojos redondos"
+        },
+        {
+          "char": "( ⚆ _ ⚆ )",
+          "label": "Kaomoji de mirada desconcertada"
+        },
+        {
+          "char": "(¬_¬)",
+          "label": "Kaomoji de mirada de reojo"
+        },
+        {
+          "char": "◉_◉",
+          "label": "Kaomoji de ojos abiertos sin expresión"
+        },
+        {
+          "char": "(° ͜ʖ °)",
+          "label": "Kaomoji de mirada astuta"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Te estoy viendo",
+      "flags": [
+        "👀",
+        "👀",
+        "👀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mirada sospechosa",
+      "flags": [
+        "🙄",
+        "👀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Te agarraron en 4K",
+      "flags": [
+        "👀",
+        "📸"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Comportamiento sospechoso",
+      "flags": [
+        "👀",
+        "🤨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Espiando a escondidas",
+      "flags": [
+        "🫣",
+        "👀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pura mirada de reojo",
+      "flags": [
+        "😒",
+        "🙄",
+        "👀"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vine por el chisme",
+      "flags": [
+        "👀",
+        "🍿"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Inspección con monóculo",
+      "flags": [
+        "🧐",
+        "👀"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "eyesSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos del emoji ojos",
+    "intro": "Copia un combo de miradas completo con un clic y pégalo directo en una respuesta o un pie de foto."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-side-eye/",
+      "title": "Emoji de mirada de reojo",
+      "desc": "La mirada sospechosa de lado en todas sus formas, del 👀 al (¬_¬)."
+    },
+    {
+      "href": "/es/library/emoji-sorprendido/",
+      "title": "Emoji sorprendido y kaomoji",
+      "desc": "Ojos bien abiertos de sorpresa y combos de reacción para giros inesperados."
+    },
+    {
+      "href": "/es/library/emojis-lenguaje-corporal/",
+      "title": "Emojis de lenguaje corporal",
+      "desc": "Encogimientos de hombros, palmadas en la frente y gestos que dicen más que las palabras."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "Todos los emojis de caritas y sonrisas en una sola cuadrícula para explorar."
+    }
+  ]
+}

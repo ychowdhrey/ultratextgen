@@ -1,0 +1,139 @@
+{
+  "lang": "es",
+  "slug": "simbolos-medicos",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-medicos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/medical-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-medicos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/medical-symbols/"
+    }
+  ],
+  "title": "Símbolos Médicos: Copiar y Pegar ⚕ Caduceo, Rx y Salud",
+  "meta_description": "Copia y pega símbolos médicos: la vara de Esculapio, el caduceo, el signo Rx de receta, cruces médicas y señales de salud y emergencia. Un clic y listo.",
+  "breadcrumb": "Símbolos médicos",
+  "hero_h1": "Símbolos médicos",
+  "hero_tagline": "La vara de Esculapio, el caduceo, el signo Rx y las cruces y señales de salud que los acompañan. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos médicos identifican farmacias, hospitales e información de salud, y casi todos existen como caracteres Unicode que puedes copiar y pegar donde quieras. Esta biblioteca reúne la vara de Esculapio y el caduceo —dos signos que se confunden todo el tiempo, aunque solo el primero corresponde de verdad a la medicina—, el carácter ℞ de las recetas, las cruces médicas y griegas que se usan en clínicas y botiquines, y los emojis de salud, tratamiento y emergencia que hoy aparecen en cualquier chat. Sirven igual para una ficha de paciente, una publicación de bioseguridad, un directorio de servicios o el nombre de un consultorio.",
+  "sections": [
+    {
+      "id": "medical-pharmacy",
+      "label": "Medicina",
+      "h2": "Signos médicos y de farmacia",
+      "intro": "Los símbolos tradicionales de la vara médica y el signo de las recetas.",
+      "symbols": [
+        {
+          "char": "⚕",
+          "label": "Vara de Esculapio"
+        },
+        {
+          "char": "⚕️",
+          "label": "Símbolo médico (estilo emoji)"
+        },
+        {
+          "char": "☤",
+          "label": "Caduceo"
+        },
+        {
+          "char": "⚚",
+          "label": "Vara de Hermes"
+        },
+        {
+          "char": "℞",
+          "label": "Signo de receta médica (Rx)"
+        }
+      ]
+    },
+    {
+      "id": "medical-crosses",
+      "label": "Cruces",
+      "h2": "Cruces médicas y signos de más",
+      "intro": "Cruces y signos de más que se usan en clínicas, primeros auxilios y servicios de salud.",
+      "symbols": [
+        {
+          "char": "✚",
+          "label": "Cruz griega gruesa"
+        },
+        {
+          "char": "✛",
+          "label": "Cruz de centro abierto"
+        },
+        {
+          "char": "✜",
+          "label": "Cruz gruesa de centro abierto"
+        },
+        {
+          "char": "➕",
+          "label": "Signo de más grueso"
+        },
+        {
+          "char": "⊕",
+          "label": "Signo de más dentro de un círculo"
+        }
+      ]
+    },
+    {
+      "id": "health-emergency",
+      "label": "Salud",
+      "h2": "Símbolos de salud y emergencia",
+      "intro": "Emojis actuales de salud, tratamiento y emergencias.",
+      "symbols": [
+        {
+          "char": "🩺",
+          "label": "Estetoscopio"
+        },
+        {
+          "char": "💊",
+          "label": "Pastilla"
+        },
+        {
+          "char": "💉",
+          "label": "Jeringa"
+        },
+        {
+          "char": "🩹",
+          "label": "Curita"
+        },
+        {
+          "char": "🧬",
+          "label": "ADN"
+        },
+        {
+          "char": "🚑",
+          "label": "Ambulancia"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolo-x/",
+      "title": "Símbolos de cruz y equis",
+      "desc": "Cruces, signos de multiplicación y caracteres de equis para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-peligro/",
+      "title": "Símbolos de peligro y advertencia",
+      "desc": "Radiactividad, riesgo biológico y señales de advertencia y bioseguridad en Unicode."
+    },
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres especiales",
+      "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+    }
+  ]
+}
