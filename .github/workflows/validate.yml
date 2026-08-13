@@ -194,6 +194,16 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-mesh -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-mesh.log
 
+      # Whole-site and gating, unlike most whole-site checks here, because its
+      # backlog is zero: the 172 tiles that failed it were all repaired in the
+      # change that added it. A tile whose label names U+2126 must copy U+2126;
+      # NFC silently rewrites that character (and U+212A) to a lookalike, so
+      # this cannot be left to vigilance.
+      - name: Run tile codepoint check
+        id: tile_codepoints
+        continue-on-error: true
+        run: python3 scripts/check-tile-codepoints.py | tee tile-codepoints.log
+
       - name: Run FAQ schema visibility check
         id: faq_schema
         continue-on-error: true
@@ -281,6 +291,11 @@ jobs:
             cat locale-mesh.log
             echo '```'
             echo ""
+            echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
+            echo '```'
+            cat tile-codepoints.log
+            echo '```'
+            echo ""
             echo "### FAQ schema visibility check — \`${{ steps.faq_schema.outcome }}\`"
             echo '```'
             cat faq-schema.log
@@ -326,7 +341,8 @@ jobs:
           steps.locale_spec.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
-          steps.counter_claims.outcome == 'failure'
+          steps.counter_claims.outcome == 'failure' ||
+          steps.tile_codepoints.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
