@@ -164,11 +164,31 @@
   function renderEmojiCollections() {
     const cfg = DATA.emojiCollections;
     if (!cfg || !cfg.groups || !cfg.groups.length) return;
-    const ns = window.UltraTextGen;
-    if (!ns || typeof ns.buildGrids !== "function") return;
     const containerId = cfg.containerId || "eventEmojiGrids";
     if (!$("#" + containerId)) return;
-    ns.buildGrids(containerId, cfg.groups);
+
+    /* buildGrids lives in symbol-explorer.js, which every generated event
+       page loads AFTER this file — both deferred, so it executes later, and
+       init() runs during this script's own deferred execution (readyState is
+       already "interactive", so the DOMContentLoaded branch below is not
+       taken). At this moment the helper does not exist yet.
+
+       This used to `return` here, which silently left the section as a
+       heading and a "Tap any character to copy it" line above an empty div
+       on every event page. Nothing surfaced it: the guard is indistinguishable
+       from "this page has no emoji configured". Retry on `load`, by which
+       point every deferred script has run. */
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.buildGrids === "function") {
+      ns.buildGrids(containerId, cfg.groups);
+      return;
+    }
+    window.addEventListener("load", function () {
+      const late = window.UltraTextGen;
+      if (late && typeof late.buildGrids === "function") {
+        late.buildGrids(containerId, cfg.groups);
+      }
+    }, { once: true });
   }
 
   /* --------------------------------------------------------------------------
