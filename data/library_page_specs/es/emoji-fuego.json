@@ -1,0 +1,143 @@
+{
+  "lang": "es",
+  "slug": "emoji-fuego",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-fuego/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/fire-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-fuego/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/fire-emoji/" }
+  ],
+  "title": "Emoji Fuego y Kaomoji: Copiar y Pegar 🔥💯 Combos de Hype",
+  "meta_description": "El emoji fuego 🔥 significa que algo está increíble: combos con 💯 🚀, símbolos de calor y sets listos para tus publicaciones y comentarios.",
+  "breadcrumb": "Emoji fuego y kaomoji",
+  "hero_h1": "Emoji Fuego y Kaomoji",
+  "hero_tagline": "El 🔥 que significa \"esto está increíble\": combinaciones de hype, símbolos de calor y peligro, kaomoji con llamas y combos listos para pegar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Hace tiempo que el emoji fuego 🔥 dejó de hablar de llamas literales: hoy significa sobre todo que algo está increíble, que quedó buenísimo, que está que arde. Esta página reúne el 🔥 en sí, los emojis de hype y aprobación que lo acompañan (💯 🚀 ⚡ 🙌 👑), los símbolos de calor y peligro como 🌋 y 🥵 que llevan un mensaje al límite, y algunos kaomoji con sabor a llama para los chats donde solo entra texto plano. Más abajo vas a encontrar combos de un clic —\"esto está increíble\", \"totalmente encendido\" y varios más— pensados para descripciones, comentarios y respuestas con energía. Copia un solo carácter o llévate el set completo de una sola vez.",
+  "sections": [
+    {
+      "id": "core-fire",
+      "label": "El emoji fuego",
+      "h2": "El emoji fuego",
+      "intro": "El único glifo que carga con todo el significado de \"esto está increíble\".",
+      "symbols": [
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    },
+    {
+      "id": "hype-approval",
+      "label": "Hype y aprobación",
+      "h2": "Combinaciones de hype y aprobación",
+      "intro": "Los emojis que convierten el 🔥 en elogio total: el cien, el cohete, pura energía.",
+      "symbols": [
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "🚀", "label": "Cohete" },
+        { "char": "⚡", "label": "Alto voltaje" },
+        { "char": "🙌", "label": "Manos levantadas" },
+        { "char": "👑", "label": "Corona" }
+      ]
+    },
+    {
+      "id": "heat-danger",
+      "label": "Calor y peligro",
+      "h2": "Símbolos de calor y peligro",
+      "intro": "Símbolos de calor literal que suben una opinión picante hasta el nivel de advertencia.",
+      "symbols": [
+        { "char": "🌋", "label": "Volcán" },
+        { "char": "♨️", "label": "Aguas termales" },
+        { "char": "🥵", "label": "Cara acalorada" },
+        { "char": "🧯", "label": "Extintor" }
+      ]
+    },
+    {
+      "id": "fire-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de fuego y llamas",
+      "intro": "El fuego es difícil de dibujar con texto, así que estas son las caritas más encendidas y chispeantes que se pueden armar con caracteres.",
+      "symbols": [
+        { "char": "(๑ᵔ⌣ᵔ๑)", "label": "Kaomoji acalorado" },
+        { "char": "ᕙ(⇀‸↼‶)ᕗ", "label": "Kaomoji sacando músculo" },
+        { "char": "(҂ `з´ )ﾉ⌒☆", "label": "Kaomoji lanzando chispas" },
+        { "char": "✧⁠٩⁠(⁠ˊ⁠ᗜ⁠ˋ⁠*⁠)⁠و⁠✧", "label": "Kaomoji encendido y brillante" },
+        { "char": "ᕦ(ò_óˇ)ᕤ", "label": "Kaomoji con toda la energía" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Esto está increíble",
+      "flags": ["🔥", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Totalmente encendido",
+      "flags": ["🔥", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Opinión picante",
+      "flags": ["🔥", "🥵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cohete a la cima",
+      "flags": ["🔥", "🚀", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Solo emoji fuego",
+      "flags": ["🔥", "🔥", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sube la temperatura",
+      "flags": ["🔥", "♨️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Energía de rey",
+      "flags": ["🔥", "👑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Peligrosamente caliente",
+      "flags": ["🔥", "🌋", "🥵"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "fireSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji fuego",
+    "intro": "Copia un combo completo de hype con un solo clic: elogio, calor o pura llama."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Cadenas de emojis listas para cada ánimo y cada momento."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de emojis graciosos",
+      "desc": "Combos con cara de meme, hechos para sacar risas en los comentarios."
+    },
+    {
+      "href": "/es/library/emojis-de-fiesta/",
+      "title": "Emojis de fiesta y celebración",
+      "desc": "Confeti, serpentinas y símbolos de festejo para logros y buenas noticias."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    }
+  ]
+}

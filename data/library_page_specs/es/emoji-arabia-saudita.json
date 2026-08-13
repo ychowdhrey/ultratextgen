@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-arabia-saudita",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-arabia-saudita/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/saudi-arabia-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-arabia-saudita/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/saudi-arabia-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Arabia Saudita: Combos 🇸🇦⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Arabia Saudita 🇸🇦⚽: los colores de los Halcones Verdes y sets de fútbol para biografías de aficionados. Haz clic para copiarlos.",
+  "breadcrumb": "Combos de Emoji Arabia Saudita",
+  "hero_h1": "Combos de Emoji Arabia Saudita",
+  "hero_tagline": "Los colores de los Halcones Verdes y sets de emojis de fútbol para los aficionados de Arabia Saudita: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Arabia Saudita 🇸🇦 casi nunca va solo: los aficionados lo combinan con la pelota ⚽ y con el verde y blanco de los Halcones Verdes. El grito de \"Yalla Saudi\" levanta a los Halcones Verdes. Copia un emoji suelto de los de abajo o llévate un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "saudi-arabia-emojis",
+      "label": "Arabia Saudita",
+      "h2": "Emojis de Arabia Saudita",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇸🇦",
+          "label": "Bandera de Arabia Saudita"
+        },
+        {
+          "char": "⚽",
+          "label": "Pelota de fútbol"
+        },
+        {
+          "char": "🟢",
+          "label": "Círculo verde"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🦅",
+          "label": "Halcón"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del orgullo saudí",
+      "intro": "El verde y el blanco de los Halcones Verdes.",
+      "symbols": [
+        {
+          "char": "🟢",
+          "label": "Círculo verde"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🦅",
+          "label": "Halcón"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Halcones Verdes",
+      "flags": [
+        "🇸🇦",
+        "⚽",
+        "🦅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yalla Saudi",
+      "flags": [
+        "🇸🇦",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Verde y blanco",
+      "flags": [
+        "🟢",
+        "⚪",
+        "🟢"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo saudí",
+      "flags": [
+        "🇸🇦",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "saudiArabiaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de combos de Arabia Saudita",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

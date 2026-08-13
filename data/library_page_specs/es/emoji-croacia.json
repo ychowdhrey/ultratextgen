@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-croacia",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-croacia/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/croatia-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-croacia/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/croatia-emoji-combos/" }
+  ],
+  "title": "Emoji Croacia 🇭🇷⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos con el emoji Croacia 🇭🇷⚽: los colores de los Vatreni y sets de fútbol para biografías y pies de foto. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Combos de emojis de Croacia",
+  "hero_h1": "Combos con el Emoji de Croacia",
+  "hero_tagline": "Los colores de los Vatreni y sets de emojis de fútbol para los hinchas de Croacia. Haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Croacia 🇭🇷 casi nunca viaja solo: los hinchas lo combinan con el balón ⚽ y con los colores de los Vatreni. \"Idemo Hrvatska\" es el grito que mueve a los fieles del tablero de ajedrez. Copia un solo emoji de aquí abajo o llévate un set de combos completo con un clic.",
+  "sections": [
+    {
+      "id": "croatia-emojis",
+      "label": "Croacia",
+      "h2": "Emojis de Croacia",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        { "char": "🇭🇷", "label": "Bandera de Croacia" },
+        { "char": "⚽", "label": "Balón de fútbol" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "🤍", "label": "Corazón blanco" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de orgullo croata",
+      "intro": "El tablero rojo y blanco de los Vatreni.",
+      "symbols": [
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "🤍", "label": "Corazón blanco" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Vatreni",
+      "flags": ["🇭🇷", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Idemo Hrvatska",
+      "flags": ["🇭🇷", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tablero de ajedrez",
+      "flags": ["🔴", "⚪", "🔴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo croata",
+      "flags": ["🇭🇷", "⚽", "🐐"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "croatiaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de combos de Croacia",
+    "intro": "Copia un combo completo con un clic y pégalo en una biografía, un pie de foto o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y pies de foto de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones estéticas de emojis para cada ánimo y cada tema."
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "lang": "es",
+  "slug": "emoji-aplausos",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-aplausos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/clap-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-aplausos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/clap-emoji/"
+    }
+  ],
+  "title": "Emoji Aplausos: Copiar y Pegar 👏 Combos de Aplauso y Énfasis",
+  "meta_description": "Copia y pega el emoji aplausos 👏, sus tonos de piel, el meme de énfasis palabra por palabra y combos listos. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Emoji Aplausos",
+  "hero_h1": "Emoji Aplausos",
+  "hero_tagline": "El emoji de manos aplaudiendo 👏 para felicitar, celebrar y armar el meme de énfasis palabra por palabra, con todos los tonos de piel y combos de un clic. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji aplausos 👏 es uno de los gestos con manos más usados de internet y cumple dos funciones muy distintas. Puesto una sola vez al final de una frase se lee como un aplauso sincero: bien hecho, bien dicho, felicidades. Pero metido entre cada palabra se convierte en el meme del énfasis: ESTO 👏 NO 👏 ESTÁ 👏 BIEN o DEJA 👏 DE 👏 INTERRUMPIRME, donde el 👏 funciona como puntuación que imita a alguien aplaudiendo sílaba por sílaba para que el mensaje quede clarísimo. Esta página cubre los dos usos: el aplauso simple en todos los tonos de piel, combos de énfasis listos para copiar y cambiarles las palabras, y los emojis que mejor lo acompañan en pies de foto, comentarios y mensajes directos. Si lo que buscas son todos los gestos con manos y no solo el aplauso, la biblioteca de símbolos de manos que enlazamos abajo tiene el conjunto completo.",
+  "sections": [
+    {
+      "id": "clap-skin-tones",
+      "label": "Tonos de piel",
+      "h2": "Emoji aplausos en todos los tonos de piel",
+      "intro": "El emoji aplausos admite los cinco modificadores de tono de piel de la escala Fitzpatrick, además del amarillo por defecto. Toca el que quieras que aparezca en tu mensaje.",
+      "symbols": [
+        {
+          "char": "👏",
+          "label": "Manos aplaudiendo"
+        },
+        {
+          "char": "👏🏻",
+          "label": "Manos aplaudiendo (tono de piel claro)"
+        },
+        {
+          "char": "👏🏼",
+          "label": "Manos aplaudiendo (tono de piel claro medio)"
+        },
+        {
+          "char": "👏🏽",
+          "label": "Manos aplaudiendo (tono de piel medio)"
+        },
+        {
+          "char": "👏🏾",
+          "label": "Manos aplaudiendo (tono de piel oscuro medio)"
+        },
+        {
+          "char": "👏🏿",
+          "label": "Manos aplaudiendo (tono de piel oscuro)"
+        }
+      ]
+    },
+    {
+      "id": "clap-cheer-emoji",
+      "label": "Festejo y celebración",
+      "h2": "Emojis de festejo para acompañar el aplauso",
+      "intro": "Emojis que aparecen junto al 👏 cuando el mensaje es una celebración o un festejo completo, y no solo un aplauso educado.",
+      "symbols": [
+        {
+          "char": "🙌",
+          "label": "Manos levantadas"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        },
+        {
+          "char": "🎊",
+          "label": "Bola de confeti"
+        },
+        {
+          "char": "🥳",
+          "label": "Cara de fiesta"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        }
+      ]
+    },
+    {
+      "id": "clap-approval-emoji",
+      "label": "Aprobación y ánimo",
+      "h2": "Emojis de aprobación para acompañar el aplauso",
+      "intro": "Emojis que combinan con el 👏 cuando el tono es de acuerdo, de ánimo o de apoyo, más que de pura celebración.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pulgar arriba"
+        },
+        {
+          "char": "💯",
+          "label": "Cien puntos"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrella"
+        },
+        {
+          "char": "🫶",
+          "label": "Manos formando un corazón"
+        },
+        {
+          "char": "👌",
+          "label": "Mano haciendo OK"
+        }
+      ]
+    },
+    {
+      "id": "clap-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de aplausos y festejo",
+      "intro": "Kaomoji hechos solo con texto que acompañan al 👏 para celebrar y festejar: muy útiles en plataformas o fuentes donde el emoji no se ve bien.",
+      "symbols": [
+        {
+          "char": "\\(^o^)/",
+          "label": "Kaomoji festejando"
+        },
+        {
+          "char": "ヽ(´▽`)/",
+          "label": "Kaomoji celebrando"
+        },
+        {
+          "char": "\\(≧▽≦)/",
+          "label": "Kaomoji de alegría desbordada"
+        },
+        {
+          "char": "ᕕ( ᐛ )ᕗ",
+          "label": "Kaomoji de festejo emocionado"
+        },
+        {
+          "char": "(ノ°ο°)ノ",
+          "label": "Kaomoji de festejo sorprendido"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Énfasis: esto no está bien",
+      "flags": [
+        "ESTO",
+        "👏",
+        "NO",
+        "👏",
+        "ESTÁ",
+        "👏",
+        "BIEN"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Énfasis: deja de interrumpirme",
+      "flags": [
+        "DEJA",
+        "👏",
+        "DE",
+        "👏",
+        "INTERRUMPIRME"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Énfasis: lee el ambiente",
+      "flags": [
+        "LEE",
+        "👏",
+        "EL",
+        "👏",
+        "AMBIENTE"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Énfasis: usa tus palabras",
+      "flags": [
+        "USA",
+        "👏",
+        "TUS",
+        "👏",
+        "PALABRAS"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ovación de pie",
+      "flags": [
+        "👏",
+        "🙌",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bien merecido",
+      "flags": [
+        "👏",
+        "💯",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Buen trabajo, equipo",
+      "flags": [
+        "👏",
+        "🫶",
+        "⭐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Elogio y apoyo",
+      "flags": [
+        "👏",
+        "👍",
+        "🙌"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "clapSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos del emoji aplausos",
+    "intro": "Combos de aplauso listos para usar, incluido el formato de énfasis palabra por palabra: copia el set completo con un clic y pégalo en un pie de foto, un comentario o un mensaje."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Colección de símbolos de manos",
+      "desc": "Todos los emojis y símbolos de gestos con manos: manos levantadas, apretón de manos, manos juntas y más."
+    },
+    {
+      "href": "/es/library/emoji-pulgar-arriba/",
+      "title": "Emoji de pulgar arriba",
+      "desc": "Emojis de aprobación y acuerdo para acompañar un aplauso en comentarios y mensajes."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de emojis graciosos",
+      "desc": "Combos de emojis cómicos listos para pies de foto, respuestas y publicaciones de reacción."
+    },
+    {
+      "href": "/es/library/significado-de-los-emojis/",
+      "title": "Guía de significados de los emojis",
+      "desc": "Qué señala de verdad cada emoji en chats y publicaciones, incluido el aplauso."
+    }
+  ]
+}

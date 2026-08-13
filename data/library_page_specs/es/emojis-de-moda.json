@@ -1,0 +1,176 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-moda",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-moda/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/clothing-fashion-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-moda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/clothing-fashion-emojis/" }
+  ],
+  "title": "Emojis de Moda y Ropa: Copiar y Pegar 👗 👟 Combos de Outfit",
+  "meta_description": "Emojis de moda y ropa para copiar y pegar — vestidos 👗, tenis 👟, sombreros 🎩, bolsos 👜, lentes y combos de outfit. Haz clic para copiar al instante.",
+  "breadcrumb": "Emojis de Moda y Ropa",
+  "hero_h1": "Emojis de Moda y Ropa",
+  "hero_tagline": "Todos los emojis de ropa, zapatos, sombreros y accesorios, más combos de outfit listos para usar. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de moda son el recurso obvio para las publicaciones de outfit del día, las biografías de estilo, los hauls de ropa de segunda mano y las listas de tienda — un vestido y tacones para salir de noche, gorra y tenis para el streetwear, bufanda y guantes para la temporada de frío. Esta referencia reúne cada prenda, zapato, sombrero, bolso y accesorio que existe en Unicode, con combos de outfit de un solo clic al final de la página.",
+  "sections": [
+    {
+      "id": "clothes-outfits",
+      "label": "Ropa",
+      "h2": "Emojis de Ropa y Outfits",
+      "intro": "Vestidos, camisas, jeans y otras prendas.",
+      "symbols": [
+        { "char": "👗", "label": "Vestido" },
+        { "char": "👚", "label": "Blusa" },
+        { "char": "👕", "label": "Camiseta" },
+        { "char": "👔", "label": "Corbata" },
+        { "char": "👖", "label": "Jeans" },
+        { "char": "🩳", "label": "Shorts" },
+        { "char": "👙", "label": "Bikini" },
+        { "char": "🥻", "label": "Sari" },
+        { "char": "👘", "label": "Kimono" },
+        { "char": "🧥", "label": "Abrigo" },
+        { "char": "🥼", "label": "Bata de laboratorio" },
+        { "char": "🦺", "label": "Chaleco reflectante" }
+      ]
+    },
+    {
+      "id": "shoes-footwear",
+      "label": "Zapatos",
+      "h2": "Emojis de Zapatos y Calzado",
+      "intro": "Tenis, tacones, botas y sandalias.",
+      "symbols": [
+        { "char": "👟", "label": "Tenis deportivos" },
+        { "char": "👞", "label": "Zapato de vestir" },
+        { "char": "👠", "label": "Zapato de tacón" },
+        { "char": "👡", "label": "Sandalia de mujer" },
+        { "char": "👢", "label": "Bota de mujer" },
+        { "char": "🥾", "label": "Bota de montaña" },
+        { "char": "🥿", "label": "Zapato plano" },
+        { "char": "🩴", "label": "Chancla" },
+        { "char": "🩰", "label": "Zapatillas de ballet" }
+      ]
+    },
+    {
+      "id": "hats-headwear",
+      "label": "Sombreros",
+      "h2": "Emojis de Sombreros y Gorras",
+      "intro": "Gorras, sombreros, cascos y ropa de invierno.",
+      "symbols": [
+        { "char": "🎩", "label": "Sombrero de copa" },
+        { "char": "🧢", "label": "Gorra" },
+        { "char": "👒", "label": "Sombrero de mujer" },
+        { "char": "🪖", "label": "Casco militar" },
+        { "char": "⛑️", "label": "Casco de rescate" },
+        { "char": "🎓", "label": "Birrete de graduación" },
+        { "char": "🧣", "label": "Bufanda" },
+        { "char": "🧤", "label": "Guantes" },
+        { "char": "🧦", "label": "Calcetines" }
+      ]
+    },
+    {
+      "id": "bags-accessories",
+      "label": "Bolsos y Lentes",
+      "h2": "Emojis de Bolsos, Lentes y Accesorios",
+      "intro": "Bolsos, mochilas, lentes y accesorios para llevar contigo.",
+      "symbols": [
+        { "char": "👜", "label": "Bolso de mano" },
+        { "char": "👛", "label": "Monedero" },
+        { "char": "👝", "label": "Cartera de mano" },
+        { "char": "🎒", "label": "Mochila" },
+        { "char": "🧳", "label": "Maleta" },
+        { "char": "💼", "label": "Portafolio" },
+        { "char": "👓", "label": "Lentes" },
+        { "char": "🕶️", "label": "Lentes de sol" },
+        { "char": "🥽", "label": "Gafas protectoras" },
+        { "char": "🌂", "label": "Paraguas cerrado" }
+      ]
+    },
+    {
+      "id": "sewing-style",
+      "label": "Costura y Estilo",
+      "h2": "Emojis Extra de Costura y Estilo",
+      "intro": "Hilo, lana y toques finales para quienes crean y estilizan.",
+      "symbols": [
+        { "char": "🧵", "label": "Hilo" },
+        { "char": "🪡", "label": "Aguja de coser" },
+        { "char": "🧶", "label": "Ovillo de lana" },
+        { "char": "🪮", "label": "Peine afro" },
+        { "char": "💄", "label": "Labial" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Publicación de Outfit del Día",
+      "flags": ["👗", "👠", "👜", "💄", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Look Streetwear",
+      "flags": ["🧢", "👟", "🎒", "🕶️", "⛓️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Noche de Gala",
+      "flags": ["🎩", "👔", "👞", "🥂", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Outfit de Playa",
+      "flags": ["👙", "🩴", "👒", "🕶️", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Capas para el Frío",
+      "flags": ["🧣", "🧤", "🧥", "🧦", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Haul de Ropa de Segunda",
+      "flags": ["👚", "👖", "👜", "🛍️", "♻️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rincón de Costura",
+      "flags": ["🧵", "🪡", "🧶", "✂️", "📏"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "outfitSetsContainer",
+  "collection_section": {
+    "id": "outfit-sets",
+    "label": "Sets de Outfit",
+    "h2": "Combos de Outfit",
+    "intro": "Copia un combo completo de outfit con un clic para tus publicaciones de OOTD y biografías de estilo."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-belleza/",
+      "title": "Emojis de Belleza y Uñas",
+      "desc": "Combos de maquillaje, esmalte de uñas y glam."
+    },
+    {
+      "href": "/es/library/emojis-de-joyas/",
+      "title": "Emojis de Joyas y Gemas",
+      "desc": "Diamantes, anillos y combos de brillo."
+    },
+    {
+      "href": "/es/library/emojis-de-objetos/",
+      "title": "Emojis de Objetos",
+      "desc": "Emojis de cosas de todos los días, de la tecnología al hogar."
+    },
+    {
+      "href": "/es/library/emojis-preppy/",
+      "title": "Combos de Emojis Preppy",
+      "desc": "Sets de la estética preppy con moños rosas y caritas felices."
+    }
+  ]
+}

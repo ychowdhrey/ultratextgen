@@ -1,0 +1,177 @@
+{
+ "lang": "es",
+ "slug": "emoji-canada",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-canada/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/canada-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-canada/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/canada-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Canadá: Combos 🇨🇦⚽ para Copiar y Pegar",
+ "meta_description": "Combos de emoji de Canadá 🇨🇦⚽ — colores de la selección canadiense y sets de fútbol para biografías y subtítulos. Haz clic en cualquier combo para copiarlo.",
+ "breadcrumb": "Combos de Emoji de Canadá",
+ "hero_h1": "Combos de Emoji de Canadá",
+ "hero_tagline": "Los colores de la selección canadiense y sets de emojis de fútbol para los hinchas de Canadá — haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los hinchas juntan el emoji de Canadá 🇨🇦 con el balón ⚽ y los colores de la selección canadiense. Como país anfitrión de 2026, Canadá también se suma a la fiesta. Copia un solo emoji abajo o toma un combo completo con un clic.",
+ "sections": [
+  {
+   "id": "canada-emojis",
+   "label": "Canadá",
+   "h2": "Emojis de Canadá",
+   "intro": "La bandera, el balón y los colores nacionales.",
+   "symbols": [
+    {
+     "char": "🇨🇦",
+     "label": "Bandera de Canadá"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de Fútbol"
+    },
+    {
+     "char": "🔴",
+     "label": "Círculo Rojo"
+    },
+    {
+     "char": "⚪",
+     "label": "Círculo Blanco"
+    },
+    {
+     "char": "🍁",
+     "label": "Hoja de Arce"
+    },
+    {
+     "char": "❤️",
+     "label": "Corazón Rojo"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de Confeti"
+    }
+   ]
+  },
+  {
+   "id": "pride-emojis",
+   "label": "Orgullo",
+   "h2": "Emojis del Orgullo Canadiense",
+   "intro": "Rojo y blanco con la hoja de arce.",
+   "symbols": [
+    {
+     "char": "🔴",
+     "label": "Círculo Rojo"
+    },
+    {
+     "char": "⚪",
+     "label": "Círculo Blanco"
+    },
+    {
+     "char": "🍁",
+     "label": "Hoja de Arce"
+    },
+    {
+     "char": "❤️",
+     "label": "Corazón Rojo"
+    },
+    {
+     "char": "🤍",
+     "label": "Corazón Blanco"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Selección de Canadá",
+   "flags": [
+    "🇨🇦",
+    "⚽",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Vamos Canadá",
+   "flags": [
+    "🇨🇦",
+    "⚽",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Hoja de Arce",
+   "flags": [
+    "🍁",
+    "🔴",
+    "⚪"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Anfitrión 2026",
+   "flags": [
+    "🇨🇦",
+    "🏟️",
+    "⚽"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "canadaCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Combos Listos",
+  "h2": "Combos de Canadá",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, subtítulo o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emoji del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y subtítulos de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones de emojis con estética para cada ánimo y tema."
+  }
+ ]
+}

@@ -1,0 +1,327 @@
+{
+  "lang": "es",
+  "slug": "simbolos-coreanos",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-coreanos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/korean-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-coreanos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/korean-symbols/"
+    }
+  ],
+  "title": "Símbolos Coreanos: Copiar y Pegar 사랑 y Letras Hangul",
+  "meta_description": "Símbolos coreanos y hangul para copiar y pegar: palabras como 사랑 (amor), jerga de fans del K-pop, letras jamo y risas ㅋㅋㅋ. Haz clic para copiar al instante.",
+  "breadcrumb": "Símbolos Coreanos",
+  "hero_h1": "Símbolos Coreanos",
+  "hero_tagline": "Palabras en hangul, letras jamo y jerga de fans del K-pop, cada una con su romanización y su significado. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos coreanos se volvieron globales de la mano del K-pop y los K-dramas, y palabras en hangul como 사랑 (sarang, amor) ya aparecen en biografías, edits de fans y comentarios en todos lados. Esta biblioteca reúne palabras coreanas con significado, las letras jamo que forman el alfabeto hangul y la jerga que los coreanos realmente escriben en sus chats —como ㅋㅋㅋ para reírse—, todo acompañado de su romanización y su traducción. Cópialos para tu cuenta de fan, para tus publicaciones o para practicar el idioma.",
+  "sections": [
+    {
+      "id": "hangul-words",
+      "label": "Palabras en Hangul",
+      "h2": "Palabras en Hangul con Significado",
+      "intro": "Palabras coreanas preciosas sobre el amor, los sueños y la naturaleza: las más copiadas para biografías y publicaciones.",
+      "symbols": [
+        {
+          "char": "사랑",
+          "label": "Sarang — Amor"
+        },
+        {
+          "char": "행복",
+          "label": "Haengbok — Felicidad"
+        },
+        {
+          "char": "꿈",
+          "label": "Kkum — Sueño"
+        },
+        {
+          "char": "별",
+          "label": "Byeol — Estrella"
+        },
+        {
+          "char": "달",
+          "label": "Dal — Luna"
+        },
+        {
+          "char": "하늘",
+          "label": "Haneul — Cielo"
+        },
+        {
+          "char": "마음",
+          "label": "Maeum — Corazón, Mente"
+        },
+        {
+          "char": "봄",
+          "label": "Bom — Primavera"
+        },
+        {
+          "char": "꽃",
+          "label": "Kkot — Flor"
+        },
+        {
+          "char": "빛",
+          "label": "Bit — Luz"
+        },
+        {
+          "char": "바다",
+          "label": "Bada — Mar"
+        },
+        {
+          "char": "희망",
+          "label": "Huimang — Esperanza"
+        }
+      ]
+    },
+    {
+      "id": "kpop-fan-words",
+      "label": "K-Pop y Cultura Fan",
+      "h2": "Palabras del K-Pop y la Cultura Fan",
+      "intro": "El vocabulario que se usa en los comentarios del K-pop y en el stan Twitter, con romanización para que uses cada palabra bien.",
+      "symbols": [
+        {
+          "char": "최애",
+          "label": "Choeae — Bias, Favorito"
+        },
+        {
+          "char": "대박",
+          "label": "Daebak — Increíble"
+        },
+        {
+          "char": "화이팅",
+          "label": "Hwaiting — ¡Tú Puedes!"
+        },
+        {
+          "char": "사랑해",
+          "label": "Saranghae — Te Amo"
+        },
+        {
+          "char": "오빠",
+          "label": "Oppa — Hermano Mayor (lo dice una mujer)"
+        },
+        {
+          "char": "언니",
+          "label": "Eonni — Hermana Mayor (lo dice una mujer)"
+        },
+        {
+          "char": "귀여워",
+          "label": "Gwiyeowo — Qué Tierno"
+        },
+        {
+          "char": "짱",
+          "label": "Jjang — El Mejor"
+        }
+      ]
+    },
+    {
+      "id": "jamo-letters",
+      "label": "Letras Jamo",
+      "h2": "Letras del Hangul (Jamo)",
+      "intro": "Las consonantes y vocales sueltas del alfabeto hangul, tomadas del bloque Hangul Compatibility Jamo.",
+      "symbols": [
+        {
+          "char": "ㄱ",
+          "label": "Giyeok — Letra Hangul Kiyeok (G/K)"
+        },
+        {
+          "char": "ㄴ",
+          "label": "Nieun — Letra Hangul Nieun (N)"
+        },
+        {
+          "char": "ㄷ",
+          "label": "Digeut — Letra Hangul Tikeut (D/T)"
+        },
+        {
+          "char": "ㄹ",
+          "label": "Rieul — Letra Hangul Rieul (R/L)"
+        },
+        {
+          "char": "ㅁ",
+          "label": "Mieum — Letra Hangul Mieum (M)"
+        },
+        {
+          "char": "ㅂ",
+          "label": "Bieup — Letra Hangul Pieup (B/P)"
+        },
+        {
+          "char": "ㅅ",
+          "label": "Siot — Letra Hangul Sios (S)"
+        },
+        {
+          "char": "ㅇ",
+          "label": "Ieung — Letra Hangul Ieung (NG)"
+        },
+        {
+          "char": "ㅈ",
+          "label": "Jieut — Letra Hangul Cieuc (J)"
+        },
+        {
+          "char": "ㅋ",
+          "label": "Kieuk — Letra Hangul Khieukh (K)"
+        },
+        {
+          "char": "ㅎ",
+          "label": "Hieut — Letra Hangul Hieuh (H)"
+        },
+        {
+          "char": "ㅏ",
+          "label": "A — Letra Hangul A"
+        },
+        {
+          "char": "ㅗ",
+          "label": "O — Letra Hangul O"
+        },
+        {
+          "char": "ㅜ",
+          "label": "U — Letra Hangul U"
+        }
+      ]
+    },
+    {
+      "id": "korean-text-slang",
+      "label": "Jerga de Chat",
+      "h2": "Jerga y Risas Coreanas de Chat",
+      "intro": "Abreviaturas en jamo que se usan en los chats coreanos: risas, llanto y respuestas rápidas.",
+      "symbols": [
+        {
+          "char": "ㅋㅋㅋ",
+          "label": "Kekeke — Risa (el jajaja coreano)"
+        },
+        {
+          "char": "ㅎㅎ",
+          "label": "Hehe — Risa Suave"
+        },
+        {
+          "char": "ㅠㅠ",
+          "label": "Yu Yu — Ojos Llorosos"
+        },
+        {
+          "char": "ㅜㅜ",
+          "label": "U U — Carita Llorando"
+        },
+        {
+          "char": "ㅇㅇ",
+          "label": "Eung — Sí, Ok"
+        },
+        {
+          "char": "ㄱㄱ",
+          "label": "Go Go — Vamos"
+        },
+        {
+          "char": "ㄴㄴ",
+          "label": "No No — Para Nada"
+        },
+        {
+          "char": "ㅊㅋ",
+          "label": "Chuka — Felicidades"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Saranghae — Te Amo",
+      "flags": [
+        "사랑해"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Biografía de Fan del K-Pop",
+      "flags": [
+        "최애",
+        "💜",
+        "화이팅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set de Ánimo (¡Hwaiting!)",
+      "flags": [
+        "화이팅",
+        "아자아자",
+        "파이팅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set de Risas",
+      "flags": [
+        "ㅋㅋㅋ",
+        "ㅎㅎ",
+        "ㅋㅋㅋㅋㅋ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set de Llanto",
+      "flags": [
+        "ㅠㅠ",
+        "ㅜㅜ",
+        "ㅠ.ㅠ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Palabras del Cielo Nocturno",
+      "flags": [
+        "달",
+        "별",
+        "하늘",
+        "꿈"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Marco de Biografía en Hangul",
+      "flags": [
+        "✧ 사랑 ✧",
+        "달 · 별 · 꿈",
+        "행복하자"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "collection_container_id": "koreanSetsContainer",
+  "collection_section": {
+    "id": "korean-sets",
+    "label": "Sets en Hangul",
+    "h2": "Sets de Combos Coreanos",
+    "intro": "Copia un set completo en hangul con un solo clic: porras de fan, cadenas de risas o un marco de biografía K-pop listo para usar."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-chinos/",
+      "title": "Símbolos Chinos",
+      "desc": "Hanzi de buena suerte como 福 y 龍 con su pinyin y su significado."
+    },
+    {
+      "href": "/es/library/simbolos-japoneses/",
+      "title": "Símbolos Japoneses",
+      "desc": "Kanji, hiragana y katakana con su romaji y su significado."
+    },
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Símbolos de Corazón",
+      "desc": "Emojis de corazón y corazones Unicode para biografías de fan y edits."
+    },
+    {
+      "href": "/es/simbolos-aesthetic/",
+      "title": "Símbolos Aesthetic",
+      "desc": "Caracteres decorativos suaves para acompañar el hangul en tu biografía."
+    }
+  ]
+}

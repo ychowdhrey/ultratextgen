@@ -1,0 +1,121 @@
+{
+  "lang": "es",
+  "slug": "simbolos-ipa",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-ipa/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/ipa-phonetic-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-ipa/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/ipa-phonetic-symbols/" }
+  ],
+  "title": "Símbolos IPA Fonéticos: Copiar y Pegar ə ʃ θ de Pronunciación",
+  "meta_description": "Copia y pega símbolos IPA fonéticos: schwa ə, esh ʃ, theta θ, vocales, consonantes y marcas de acento con ejemplos. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Símbolos IPA Fonéticos",
+  "hero_h1": "Símbolos IPA Fonéticos",
+  "hero_tagline": "El Alfabeto Fonético Internacional: vocales, consonantes y marcas de acento con sonidos de ejemplo. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos IPA del Alfabeto Fonético Internacional permiten escribir la pronunciación con precisión: la schwa ə, el sonido \"sh\" ʃ, los sonidos \"th\" θ y ð, y decenas más. Lo difícil es escribirlos: casi ningún teclado permite ingresar los caracteres del bloque Extensiones del AFI, y por eso lingüistas, profesores de idiomas y editores de diccionarios los copian de una referencia como esta. Cada símbolo de abajo está agrupado por tipo y etiquetado con su nombre y, cuando ayuda, un sonido de ejemplo.",
+  "sections": [
+    {
+      "id": "ipa-vowels",
+      "label": "Vocales",
+      "h2": "Símbolos Vocálicos del AFI",
+      "intro": "Los símbolos vocálicos más usados en inglés y en la transcripción fonética general.",
+      "symbols": [
+        { "char": "ə", "label": "Schwa — la 'a' de About" },
+        { "char": "ɪ", "label": "I versalita — la 'i' de Kit" },
+        { "char": "ɛ", "label": "E abierta (épsilon) — la 'e' de Dress" },
+        { "char": "æ", "label": "Ash — la 'a' de Trap" },
+        { "char": "ʌ", "label": "V invertida — la 'u' de Strut" },
+        { "char": "ɑ", "label": "Alfa — la 'a' de Father" },
+        { "char": "ɒ", "label": "Alfa invertida — la 'o' de Lot (inglés británico)" },
+        { "char": "ɔ", "label": "O abierta — el 'aw' de Thought" },
+        { "char": "ʊ", "label": "Ípsilon — el 'oo' de Foot" },
+        { "char": "ɜ", "label": "E abierta invertida — el 'ur' de Nurse" },
+        { "char": "ɨ", "label": "I barrada — vocal cerrada central" },
+        { "char": "ɐ", "label": "A invertida — vocal casi abierta central" }
+      ]
+    },
+    {
+      "id": "ipa-fricatives",
+      "label": "Fricativas",
+      "h2": "Consonantes Fricativas y Sibilantes",
+      "intro": "Los sonidos de fricción y siseo, incluidas la conocida esh, la ezh, la theta y la eth.",
+      "symbols": [
+        { "char": "ʃ", "label": "Esh — el 'sh' de Ship" },
+        { "char": "ʒ", "label": "Ezh — la 's' de Vision" },
+        { "char": "θ", "label": "Theta — el 'th' de Think" },
+        { "char": "ð", "label": "Eth — el 'th' de This" },
+        { "char": "ɸ", "label": "Fi — fricativa bilabial sorda" },
+        { "char": "β", "label": "Beta — fricativa bilabial sonora" },
+        { "char": "ç", "label": "C con cedilla — la 'h' de Hue" },
+        { "char": "x", "label": "X — el 'ch' de Loch" },
+        { "char": "ʁ", "label": "R versalita invertida — la R francesa" },
+        { "char": "ɣ", "label": "Gamma — fricativa velar sonora" }
+      ]
+    },
+    {
+      "id": "ipa-consonants",
+      "label": "Otras Consonantes",
+      "h2": "Nasales, Vibrantes Simples y Otras Consonantes",
+      "intro": "Símbolos de consonantes nasales, aproximantes, retroflejas y glotales.",
+      "symbols": [
+        { "char": "ŋ", "label": "Eng — el 'ng' de Sing" },
+        { "char": "ɲ", "label": "N con gancho — la 'ñ' de Señor" },
+        { "char": "ɹ", "label": "R invertida — la 'r' de Red" },
+        { "char": "ɾ", "label": "R con gancho — la 'tt' de Butter en inglés americano" },
+        { "char": "ʔ", "label": "Oclusiva glotal — el corte de 'Uh-Oh'" },
+        { "char": "ʈ", "label": "T con gancho retroflejo — T retrofleja" },
+        { "char": "ɖ", "label": "D con cola — D retrofleja" },
+        { "char": "ʎ", "label": "Y invertida — el 'gl' de Famiglia en italiano" },
+        { "char": "ɫ", "label": "L con tilde media — L velarizada de Feel" },
+        { "char": "ʍ", "label": "W invertida — el 'wh' sordo de Which" }
+      ]
+    },
+    {
+      "id": "ipa-suprasegmentals",
+      "label": "Acento y Duración",
+      "h2": "Marcas de Acento, Duración y Modificadores",
+      "intro": "Marcas suprasegmentales de acento y duración vocálica, además de modificadores en superíndice.",
+      "symbols": [
+        { "char": "ˈ", "label": "Línea vertical — marca de acento primario" },
+        { "char": "ˌ", "label": "Línea vertical baja — marca de acento secundario" },
+        { "char": "ː", "label": "Dos puntos triangulares — marca de vocal larga" },
+        { "char": "ˑ", "label": "Medio punto triangular — marca de duración media" },
+        { "char": "ʰ", "label": "H en superíndice — aspiración" },
+        { "char": "ʷ", "label": "W en superíndice — labialización" },
+        { "char": "ʲ", "label": "J en superíndice — palatalización" },
+        { "char": "ⁿ", "label": "N en superíndice — relajación nasal" },
+        { "char": "ʼ", "label": "Apóstrofo modificador — eyectiva" },
+        { "char": "ˀ", "label": "Oclusiva glotal modificadora — glotalización" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/letras-griegas/",
+      "title": "Símbolos de Letras Griegas",
+      "desc": "De alfa a omega: las letras griegas que se usan en ciencia y matemáticas."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Acentos y Signos Diacríticos",
+      "desc": "Acento agudo, grave, diéresis y otros signos diacríticos para copiar."
+    },
+    {
+      "href": "/es/library/codigos-alt/",
+      "title": "Códigos Alt",
+      "desc": "Códigos de la tecla Alt para escribir caracteres especiales."
+    },
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres Especiales",
+      "desc": "Una lista maestra de caracteres Unicode especiales para copiar."
+    }
+  ]
+}

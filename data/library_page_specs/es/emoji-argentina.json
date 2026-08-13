@@ -1,0 +1,106 @@
+{
+  "lang": "es",
+  "slug": "emoji-argentina",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-argentina/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/argentina-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-argentina/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/argentina-emoji-combos/" }
+  ],
+  "title": "Emoji Argentina: Combos 🇦🇷⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Argentina 🇦🇷⚽: Albiceleste, las tres estrellas y sets de campeón para biografías. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Argentina",
+  "hero_h1": "Combos de Emoji Argentina",
+  "hero_tagline": "Los colores de la Albiceleste, las tres estrellas y sets de emojis de fútbol para hinchas de Argentina — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Argentina 🇦🇷 casi nunca va solo: los hinchas lo combinan con la pelota ⚽, con las tres estrellas de campeón del mundo y con el celeste y blanco de la Albiceleste. Estos combos quedan perfectos en biografías de hincha, publicaciones y nombres de usuario. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "argentina-emojis",
+      "label": "Argentina",
+      "h2": "Emojis de Argentina",
+      "intro": "La bandera, la pelota y las estrellas de campeón.",
+      "symbols": [
+        { "char": "🇦🇷", "label": "Bandera de Argentina" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🤍", "label": "Corazón blanco" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "☀️", "label": "Sol de Mayo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "albiceleste",
+      "label": "Albiceleste",
+      "h2": "Emojis del Orgullo Albiceleste",
+      "intro": "Celeste, blanco y el sol.",
+      "symbols": [
+        { "char": "🤍", "label": "Corazón blanco" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "☀️", "label": "Sol" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🐐", "label": "Cabra (el GOAT)" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Argentina Campeón",
+      "flags": ["🇦🇷", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Argentina",
+      "flags": ["🇦🇷", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tres Estrellas",
+      "flags": ["⭐", "⭐", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Albiceleste",
+      "flags": ["🤍", "💙", "☀️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "argentinaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Argentina",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

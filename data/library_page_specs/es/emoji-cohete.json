@@ -1,0 +1,151 @@
+{
+  "lang": "es",
+  "slug": "emoji-cohete",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-cohete/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/rocket-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-cohete/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/rocket-emoji/" }
+  ],
+  "title": "Emoji Cohete: Copiar y Pegar 🚀 Combos de Lanzamiento y Hype",
+  "meta_description": "Copia el emoji cohete 🚀 junto a lunas, estrellas y símbolos de hype para publicaciones de cripto y bolsa, lanzamientos y crecimiento. Un clic y listo.",
+  "breadcrumb": "Emoji cohete",
+  "hero_h1": "Emoji Cohete",
+  "hero_tagline": "El cohete del \"a la luna\" en las publicaciones de cripto y bolsa, de los lanzamientos de producto y de la ambición en grande, con los símbolos de espacio, crecimiento y estela que lo acompañan. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji cohete 🚀 empezó siendo un simple emoji de viaje espacial, pero en el Twitter de la bolsa y las criptomonedas tomó vida propia: \"a la luna\" se volvió la forma corta de decir que un precio está por dispararse, y el cohete quedó como la imagen de esa apuesta. Desde entonces se escapó del mundo financiero: los fundadores de startups lo usan para anunciar lanzamientos, los creadores para decir \"estamos creciendo rápido\", y aparece cada vez que alguien quiere transmitir impulso o ambición sin escribir una palabra. Esta página reúne el cohete y sus parientes más cercanos, el tema de luna y estrellas que completa el meme de \"a la luna\", los emojis de crecimiento y hype que se apilan a su lado (📈 🔥 💯), y varias piezas para armar tu propia estela de despegue, además de sets listos para copiar con un clic.",
+  "sections": [
+    {
+      "id": "rocket-variants",
+      "label": "Cohete y despegue",
+      "h2": "Emoji cohete y símbolos de lanzamiento",
+      "intro": "El cohete en sí, más los glifos de despegue que se usan en la misma frase: satélites, ovnis y la energía de cuenta regresiva de un lanzamiento.",
+      "symbols": [
+        { "char": "🚀", "label": "Cohete" },
+        { "char": "🛸", "label": "Platillo volador" },
+        { "char": "🛰️", "label": "Satélite" },
+        { "char": "🎯", "label": "Diana" },
+        { "char": "⏱️", "label": "Cronómetro" },
+        { "char": "🧨", "label": "Petardo" }
+      ]
+    },
+    {
+      "id": "space-moon-theme",
+      "label": "Luna y espacio",
+      "h2": "Emojis de luna, estrellas y espacio",
+      "intro": "El tema de \"a la luna\" completo: fases lunares, estrellas y el cielo nocturno al que siempre apunta el cohete en las publicaciones de cripto y bolsa.",
+      "symbols": [
+        { "char": "🌕", "label": "Luna llena" },
+        { "char": "🌙", "label": "Luna creciente" },
+        { "char": "🌔", "label": "Luna gibosa creciente" },
+        { "char": "🌟", "label": "Estrella brillante" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "✨", "label": "Destellos" },
+        { "char": "🌌", "label": "Vía Láctea" },
+        { "char": "🪐", "label": "Planeta con anillos" },
+        { "char": "🌠", "label": "Estrella fugaz" }
+      ]
+    },
+    {
+      "id": "hype-growth",
+      "label": "Hype y crecimiento",
+      "h2": "Emojis de hype y crecimiento",
+      "intro": "Los emojis que van de copilotos del 🚀 cada vez que el mensaje es \"esto va para arriba\": gráficos, fuego y confianza al máximo.",
+      "symbols": [
+        { "char": "📈", "label": "Gráfico ascendente" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "💎", "label": "Diamante" },
+        { "char": "🙌", "label": "Manos levantadas" },
+        { "char": "💰", "label": "Bolsa de dinero" },
+        { "char": "📊", "label": "Gráfico de barras" }
+      ]
+    },
+    {
+      "id": "motion-trail",
+      "label": "Movimiento y estela",
+      "h2": "Símbolos de movimiento y estela de lanzamiento",
+      "intro": "Piezas para armar una estela de despegue en texto: llamas, rayas y flechas para simular el escape y la subida detrás de un cohete.",
+      "symbols": [
+        { "char": "💨", "label": "Ráfaga de viento" },
+        { "char": "⬆️", "label": "Flecha hacia arriba" },
+        { "char": "🔺", "label": "Triángulo rojo hacia arriba" },
+        { "char": "💥", "label": "Explosión" },
+        { "char": "〰️", "label": "Línea ondulada" },
+        { "char": "➰", "label": "Bucle" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "A la luna",
+      "flags": ["🚀", "🌕", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hype de bolsa",
+      "flags": ["🚀", "📈", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Racha alcista de cripto",
+      "flags": ["🚀", "💰", "📊", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Día de lanzamiento",
+      "flags": ["🚀", "🎯", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Manos de diamante",
+      "flags": ["💎", "🙌", "🚀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Espacio profundo",
+      "flags": ["🚀", "🪐", "🌌", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ambición en grande",
+      "flags": ["🚀", "🔥", "💯"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "rocketSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji cohete",
+    "intro": "Combos de cohete listos para usar: copia el set completo con un clic y pégalo directo en una descripción, una publicación o tu biografía."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-fantasia/",
+      "title": "Emojis de fantasía y mitología",
+      "desc": "Aliens, ovnis y todo el conjunto espacial y de ciencia ficción que vuela junto al cohete."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Sets de combos listos para descripciones, biografías y publicaciones de cualquier tema."
+    },
+    {
+      "href": "/es/library/emojis-de-dinero/",
+      "title": "Emojis de dinero",
+      "desc": "Billetes, monedas y ganancias para las publicaciones de cripto y bolsa junto al cohete."
+    },
+    {
+      "href": "/es/library/emojis-de-objetos/",
+      "title": "Emojis de objetos",
+      "desc": "Emojis de objetos cotidianos, de herramientas a tecnología, para completar cualquier descripción."
+    }
+  ]
+}

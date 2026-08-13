@@ -1,0 +1,161 @@
+{
+  "lang": "es",
+  "slug": "emoji-side-eye",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-side-eye/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/side-eye-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-side-eye/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/side-eye-emoji/" }
+  ],
+  "title": "Emoji Side Eye y Kaomoji: Copiar y Pegar 👀 Combos de Juzgar",
+  "meta_description": "Copia y pega emojis de side eye como 👀 😒 🤨, kaomoji que juzgan como ಠ_ಠ y combos listos para memes y respuestas. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Side Eye",
+  "hero_h1": "Emoji Side Eye y Kaomoji",
+  "hero_tagline": "Todas las miradas de juicio en un solo lugar: emojis de side eye, caras de desconfianza y kaomoji de desaprobación. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji side eye es la reacción universal para el juicio silencioso, la sospecha y ese momento de \"¿en serio dijo eso?\". Esta colección reúne el trío clásico del side eye 👀 😒 🤨, las caras de escepticismo y desgano que lo acompañan, y los kaomoji de desaprobación como ಠ_ಠ, que existen desde mucho antes que los emojis. Úsalos en respuestas de comentarios, chats grupales y memes, o toma un combo listo como el famoso \"caught in 4K\" que está más abajo.",
+  "sections": [
+    {
+      "id": "side-eye-faces",
+      "label": "Caras de Side Eye",
+      "h2": "Caras Clásicas de Side Eye y Juicio",
+      "intro": "Los emojis de side eye a los que todos recurren cuando sobran las palabras.",
+      "symbols": [
+        { "char": "👀", "label": "Ojos" },
+        { "char": "😒", "label": "Cara sin gracia" },
+        { "char": "🤨", "label": "Cara con ceja levantada" },
+        { "char": "🙄", "label": "Cara con ojos en blanco" },
+        { "char": "😏", "label": "Cara con sonrisa maliciosa" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "😐", "label": "Cara neutral" },
+        { "char": "😶", "label": "Cara sin boca" }
+      ]
+    },
+    {
+      "id": "suspicious-skeptical",
+      "label": "Sospecha",
+      "h2": "Caras de Sospecha y Escepticismo",
+      "intro": "Caras para la duda, la inspección y el cuestionar todo en silencio.",
+      "symbols": [
+        { "char": "🧐", "label": "Cara con monóculo" },
+        { "char": "🤔", "label": "Cara pensativa" },
+        { "char": "😕", "label": "Cara confundida" },
+        { "char": "🫤", "label": "Cara con boca diagonal" },
+        { "char": "😬", "label": "Cara de incomodidad" },
+        { "char": "🥸", "label": "Cara disfrazada" },
+        { "char": "🕵", "label": "Detective" },
+        { "char": "🫣", "label": "Cara espiando entre los dedos" }
+      ]
+    },
+    {
+      "id": "eyes-cameras",
+      "label": "Ojos y Cámaras",
+      "h2": "Ojos, Cámaras y Pruebas",
+      "intro": "Emojis de ojo vigilante y cámaras para atrapar a alguien en el acto.",
+      "symbols": [
+        { "char": "👁", "label": "Ojo" },
+        { "char": "📸", "label": "Cámara con flash" },
+        { "char": "📷", "label": "Cámara" },
+        { "char": "🔍", "label": "Lupa hacia la izquierda" },
+        { "char": "🔎", "label": "Lupa hacia la derecha" },
+        { "char": "🪞", "label": "Espejo" },
+        { "char": "👓", "label": "Lentes" },
+        { "char": "🕶", "label": "Lentes de sol" }
+      ]
+    },
+    {
+      "id": "judging-kaomoji",
+      "label": "Kaomoji de Juicio",
+      "h2": "Kaomoji de Juicio y Side Eye",
+      "intro": "Caritas de texto clásicas que transmiten desaprobación sin usar un solo emoji.",
+      "symbols": [
+        { "char": "ಠ_ಠ", "label": "Mirada de desaprobación" },
+        { "char": "ಠ‿ಠ", "label": "Desaprobación con burla" },
+        { "char": "(¬_¬)", "label": "Kaomoji de side eye" },
+        { "char": "(¬‿¬)", "label": "Kaomoji de sonrisa pícara" },
+        { "char": "(¬､¬)", "label": "Kaomoji de mirada esquiva" },
+        { "char": "(←_←)", "label": "Kaomoji mirando a la izquierda" },
+        { "char": "(→_→)", "label": "Kaomoji mirando a la derecha" },
+        { "char": "(눈_눈)", "label": "Kaomoji de ojos entrecerrados" },
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Cara de Lenny" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Atrapado en 4K",
+      "flags": ["🤨", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ojo Boca Ojo",
+      "flags": ["👁", "👄", "👁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Triple Side Eye",
+      "flags": ["👀", "👀", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Te Estoy Juzgando",
+      "flags": ["ಠ_ಠ", "👀", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ni Me Inmuto",
+      "flags": ["😒", "🙄", "💅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Detector de Sospechosos",
+      "flags": ["🧐", "🔍", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silencio Incómodo",
+      "flags": ["😐", "😑", "😶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Con Pruebas",
+      "flags": ["👀", "📸", "🗂"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "sideEyeSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Side Eye",
+    "intro": "Copia un combo completo de juicio con un solo clic y pégalo directo en tu respuesta."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las caritas y emojis de caras organizados por estado de ánimo y significado."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "Caritas de texto clásicas y kaomoji japoneses para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de Emojis Graciosos",
+      "desc": "Combinaciones de emojis para memes y bromas en chats y publicaciones."
+    },
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Emojis de Brainrot y Jerga",
+      "desc": "Combos de sigma, rizz y calaveras sacados de la jerga actual de internet."
+    }
+  ]
+}

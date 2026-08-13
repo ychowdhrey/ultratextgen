@@ -1,0 +1,116 @@
+{
+  "lang": "es",
+  "slug": "arte-ascii-calavera",
+  "page_type": "library",
+  "copy_pattern": "art",
+  "canonical": "https://ultratextgen.com/es/library/arte-ascii-calavera/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/skull-ascii-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-ascii-calavera/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/skull-ascii-art/"
+    }
+  ],
+  "title": "Arte ASCII de Calavera 💀 Copiar y Pegar",
+  "meta_description": "Arte ASCII de calavera original para copiar y pegar: calaveras mini, tibias cruzadas, calavera pixelada y una calavera grande con detalle. Haz clic en Copiar.",
+  "breadcrumb": "Arte ASCII de Calavera",
+  "hero_h1": "Arte ASCII de Calavera",
+  "hero_tagline": "Calaveras originales dibujadas solo con texto plano — calaveras diminutas, tibias cruzadas, calaveras pixeladas y una calavera grande con detalle. Haz clic en Copiar y pégala donde quieras.",
+  "intro": "El arte ASCII de calavera arma una calavera con puros caracteres del teclado: paréntesis para las cuencas de los ojos, barras verticales para los dientes y diagonales para la mandíbula. Las piezas de una sola línea se pegan limpias en cualquier chat o biografía, mientras que las más grandes de varias líneas se ven mejor donde el texto conserva el ancho fijo — bloques de código de Discord, terminales o cualquier lugar con fuente monoespaciada. Si el dibujo se ve chueco al pegarlo, casi siempre es porque la fuente de destino no es monoespaciada y no porque el arte esté mal.",
+  "sections": [
+    {
+      "id": "small-skulls",
+      "h2": "Arte ASCII de Calavera Pequeño",
+      "intro": "Calaveras mini y separadores que caben en cualquier mensaje.",
+      "art": [
+        {
+          "label": "Calavera mini",
+          "art": "[x_x]"
+        },
+        {
+          "label": "Separador de calaveras",
+          "art": "=[x_x]=[x_x]=[x_x]="
+        },
+        {
+          "label": "Calavera diminuta",
+          "art": " .-.\n(o.o)\n |=|"
+        }
+      ]
+    },
+    {
+      "id": "classic-skulls",
+      "h2": "Calaveras Clásicas",
+      "intro": "Calaveras de tamaño medio — pégalas donde una fuente monoespaciada mantenga las columnas alineadas.",
+      "art": [
+        {
+          "label": "Calavera clásica",
+          "art": "  _____\n /     \\\n| () () |\n \\  ^  /\n  |||||"
+        },
+        {
+          "label": "Calavera y tibias cruzadas",
+          "art": " \\\\    _____    //\n  \\\\  /     \\  //\n   \\\\| () () |//\n     |   ^   |\n    //\\ === /\\\\\n   //   ---   \\\\\n  //           \\\\"
+        }
+      ]
+    },
+    {
+      "id": "big-skulls",
+      "h2": "Arte ASCII de Calavera Grande",
+      "intro": "Calaveras más grandes y detalladas — ideales para bloques de código de Discord, terminales y cualquier lugar con fuente de ancho fijo.",
+      "art": [
+        {
+          "label": "Calavera pixelada",
+          "art": "  #######\n #########\n##  ###  ##\n##  ###  ##\n###########\n ### # ###\n  ## # ##\n   #####"
+        },
+        {
+          "label": "Calavera grande",
+          "art": "     _______\n    /       \\\n   /         \\\n  |           |\n  |  .-. .-.  |\n  |  (o) (o)  |\n  |     ^     |\n   \\   ___   /\n    | (___) |\n    |=======|\n     |=|=|=|"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/arte-de-texto/",
+      "title": "Arte de Texto",
+      "desc": "Bordes, marcos y dibujos hechos con caracteres para biografías y publicaciones."
+    },
+    {
+      "href": "/es/library/simbolos-halloween/",
+      "title": "Símbolos de Halloween",
+      "desc": "Calabazas, fantasmas y símbolos de Halloween para copiar."
+    },
+    {
+      "href": "/es/library/tabla-ascii/",
+      "title": "Tabla ASCII",
+      "desc": "La tabla ASCII completa con códigos decimales y hexadecimales."
+    },
+    {
+      "href": "/library/star-ascii-art/",
+      "title": "Arte ASCII de Estrellas",
+      "desc": "Estrellas dibujadas en texto plano, listas para pegar."
+    },
+    {
+      "href": "/es/library/emoji-calavera/",
+      "title": "Emoji Calavera y Kaomoji",
+      "desc": "El emoji de calavera 💀 y los kaomoji con calaveras."
+    },
+    {
+      "href": "/es/events/halloween/",
+      "title": "Generador de Texto y Símbolos de Halloween",
+      "desc": "Fuentes, emojis y frases de Halloween en un solo lugar."
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos Unicode — gratis y al instante."
+}

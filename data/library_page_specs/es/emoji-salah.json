@@ -1,0 +1,173 @@
+{
+  "lang": "es",
+  "slug": "emoji-salah",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-salah/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/salah-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-salah/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/salah-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Salah 🇪🇬⚽🐐 Combos para Copiar y Pegar",
+  "meta_description": "Emoji Salah 🇪🇬⚽ — sets de emojis de hincha para biografías, publicaciones y comentarios. Haz clic en cualquier emoji o combo para copiarlo al instante.",
+  "breadcrumb": "Emoji Salah",
+  "hero_h1": "Emoji Salah: Combos de Hincha",
+  "hero_tagline": "Sets de emojis para los hinchas de Salah: bandera, fútbol y combos con su sello. Haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los hinchas de Mohamed Salah acompañan la bandera de Egipto 🇪🇬 con el balón ⚽ y la corona 👑 del Rey Egipcio, y el emoji Salah casi siempre viene en combo. Estos sets quedan perfectos en biografías, publicaciones y comentarios. Copia un emoji suelto de la lista o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "salah-emojis",
+      "label": "Salah",
+      "h2": "Emojis de Salah",
+      "intro": "Los emojis que identifican al jugador.",
+      "symbols": [
+        {
+          "char": "🇪🇬",
+          "label": "Bandera de Egipto"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🐐",
+          "label": "GOAT (el mejor de la historia)"
+        },
+        {
+          "char": "👑",
+          "label": "Corona (el Rey Egipcio)"
+        },
+        {
+          "char": "🔴",
+          "label": "Rojo (Liverpool)"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🇵🇸",
+          "label": "Orgullo faraónico"
+        }
+      ]
+    },
+    {
+      "id": "egypt-emojis",
+      "label": "Egipto",
+      "h2": "Emojis de Egipto y Liverpool",
+      "intro": "El Rey Egipcio vestido del rojo del Liverpool.",
+      "symbols": [
+        {
+          "char": "🇪🇬",
+          "label": "Bandera de Egipto"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "👑",
+          "label": "Corona"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Mo Salah",
+      "flags": [
+        "🇪🇬",
+        "⚽",
+        "👑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "El Rey Egipcio",
+      "flags": [
+        "🇪🇬",
+        "👑",
+        "⚽"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo del Liverpool",
+      "flags": [
+        "🔴",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Faraón",
+      "flags": [
+        "🇪🇬",
+        "⚽",
+        "🐐"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "salahCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Sets de Combos",
+    "h2": "Sets de Combos de Salah",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, tus publicaciones o tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los partidos."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y tema."
+    }
+  ]
+}
