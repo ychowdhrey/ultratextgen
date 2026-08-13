@@ -2863,6 +2863,7 @@ PAGES.update({
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
 "es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
 # 2026-08-12 ES printables gap-fill + graffiti EN parent.
 "printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
 "es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
