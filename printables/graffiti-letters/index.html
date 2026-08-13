@@ -48,11 +48,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graffiti Letters A–Z to Print — Free Graffiti Alphabet | UltraTextGen</title>
-  <meta name="description" content="Free graffiti letters A–Z and 0–9 to print. Big throw-up style outlines to trace, colour in and practise, plus a step-by-step on drawing graffiti letters by hand. Print any letter or download the PNG.">
+  <meta name="description" content="Free graffiti letters A–Z and 0–9 to print, plus a graffiti generator — type your name, pick a style (throw-up, tag, marker, spray, blockbuster), colour it and download the PNG. All free, in your browser.">
   <link rel="canonical" href="https://ultratextgen.com/printables/graffiti-letters/">
 
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/printables/graffiti-letters/">
   <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/imprimibles/letras-graffiti/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/printables/grafiti-nama/">
   <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/printables/graffiti-letters/">
 
   <meta name="robots" content="index, follow">
@@ -72,7 +73,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/printables-graffiti-letters.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Fredoka:wght@500;600;700&amp;family=Archivo+Black&amp;family=Sedgwick+Ave+Display&amp;family=Permanent+Marker&amp;family=Rubik+Spray+Paint&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -178,6 +179,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
+      "name": "Is there a graffiti generator with different styles and colours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the generator on this page. Type your name or a word, pick one of five styles (throw-up, tag, marker, spray or blockbuster), and either keep the hollow outline to print and colour by hand or switch on solid fill and choose your own fill and outline colours. Download the result as a PNG — including a transparent PNG for stickers, thumbnails and overlays. It all renders in your browser, so nothing you type is uploaded anywhere."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is it free, and do I need to sign up?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -209,7 +218,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-inner" style="max-width:820px;">
       <h1 class="hero-headline">Graffiti letters A–Z to print</h1>
       <p class="hero-tagline">
-        The graffiti throw-up alphabet — fat, rounded outlines built to be traced, outlined and coloured in. Pick a letter, print the whole A–Z, or type a word and print it as a piece. Free, no sign-up.
+        The graffiti throw-up alphabet — fat, rounded outlines built to be traced, outlined and coloured in. Pick a letter, print the whole A–Z, or type a word into the generator, pick one of five styles and colour it as a piece. Free, no sign-up.
       </p>
     </div>
   </section>
@@ -228,18 +237,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
     </section>
 
-    <!-- Name / word worksheet -->
+    <!-- Graffiti generator: name / word tool -->
     <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
-      <h2 id="ptNameHeading">Print your name in graffiti letters</h2>
-      <p class="bubble-az-intro">Type a name or a short word and print it as a row of graffiti outlines — ready to trace, outline and colour, or save as a PNG.</p>
+      <h2 id="ptNameHeading">Graffiti generator — your name in graffiti</h2>
+      <p class="bubble-az-intro">Type a name or a short word, pick a graffiti style, and take it however you want it — a hollow outline to print and colour by hand, or coloured in right here and downloaded as a PNG (plain or transparent, ready for stickers and thumbnails). Everything renders in your browser; nothing you type leaves it.</p>
       <div class="pt-name-tool">
         <div class="input-wrapper">
           <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Type a word… e.g. FRESH" maxlength="40">
+        </div>
+        <div class="pt-segment" id="pt-name-styles" role="radiogroup" aria-label="Graffiti style">
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="throwup" aria-pressed="true">Throw-up <small>fat rounded outline</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="tag" aria-pressed="false">Tag <small>quick street tag</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="marker" aria-pressed="false">Marker <small>hand-drawn marker</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="spray" aria-pressed="false">Spray <small>spray-paint texture</small></button>
+          <button type="button" class="pt-gen-preset pt-name-style-opt" data-style="block" aria-pressed="false">Blockbuster <small>heavy block capitals</small></button>
+        </div>
+        <div class="pt-name-designer">
+          <label class="pt-name-color" for="pt-name-fill">Fill <input type="color" id="pt-name-fill" value="#7c3aed"></label>
+          <label class="pt-name-color" for="pt-name-stroke">Outline <input type="color" id="pt-name-stroke" value="#1a1a2e"></label>
+          <label class="pt-name-solid-toggle"><input type="checkbox" id="pt-name-solid"> Colour it in now (solid fill)</label>
         </div>
         <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
         <div class="bubble-actions pt-name-actions">
           <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Print the sheet</button>
           <button type="button" class="bubble-btn" id="pt-name-png">Download PNG</button>
+          <button type="button" class="bubble-btn" id="pt-name-png-transparent">PNG (transparent)</button>
         </div>
       </div>
     </section>
@@ -343,6 +365,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
       <div class="faq-item">
         <button class="faq-question" type="button">
+          Is there a graffiti generator with different styles and colours?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Yes — the generator on this page. Type your name or a word, pick one of five styles (<strong>throw-up, tag, marker, spray or blockbuster</strong>), and either keep the hollow outline to print and colour by hand or switch on solid fill and choose your own fill and outline colours. Download the result as a PNG — including a transparent PNG for stickers, thumbnails and overlays. It all renders in your browser, so nothing you type is uploaded anywhere.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
           Is it free, and do I need to sign up?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
@@ -371,6 +403,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       variantFamily: "bubble",
       glyphStyle: "Ultra Bubble",
       nameDemo: "FRESH",
+      nameStyles: [
+        { key: "throwup", font: "Fredoka, 'Arial Black', sans-serif", strokeWidth: 10, letterSpacing: 0.06 },
+        { key: "tag", font: "'Sedgwick Ave Display', cursive", strokeWidth: 5, letterSpacing: 0.04 },
+        { key: "marker", font: "'Permanent Marker', cursive", strokeWidth: 5, letterSpacing: 0.05 },
+        { key: "spray", font: "'Rubik Spray Paint', cursive", strokeWidth: 4, letterSpacing: 0.04 },
+        { key: "block", font: "'Archivo Black', 'Arial Black', sans-serif", strokeWidth: 8, letterSpacing: 0.05 }
+      ],
       howto: {
         title: "How to draw {ch} in graffiti",
         steps: [
