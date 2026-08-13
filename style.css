@@ -8805,3 +8805,10 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 /* Characters-to-words converter (/character-counter/characters-to-words/) */
 .ctw-input { min-height: auto; }
 .ctw-picks { margin-top: 0.75rem; }
+
+/* Graffiti name-style designer (printables/graffiti-letters/ + siblings) */
+.pt-name-designer { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; margin: 0.65rem 0 0.25rem; }
+.pt-name-designer-label { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); }
+.pt-name-color { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.pt-name-color input[type="color"] { width: 34px; height: 26px; padding: 0; border: 1px solid var(--border-light); border-radius: 6px; background: transparent; cursor: pointer; }
+.pt-name-solid-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; }
