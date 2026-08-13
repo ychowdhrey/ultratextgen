@@ -355,5 +355,10 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /pt/letras-para-copiar/            /pt/letras-diferentes/  301
 /pt/letras-para-copiar/index.html  /pt/letras-diferentes/  301
 
+# heart-emoji folded into heart-symbols 2026-08-13: orphan EN page (0 locale
+# siblings, 2 impressions/34d) merged into the 20-locale cluster parent.
+/library/heart-emoji/            /library/heart-symbols/  301
+/library/heart-emoji/index.html  /library/heart-symbols/  301
+
 /404  /404.html  200
 /*    /404.html  404
