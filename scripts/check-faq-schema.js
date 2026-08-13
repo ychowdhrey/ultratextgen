@@ -27,7 +27,11 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { auditHtml } = require('./lib/faq-schema-audit');
+const {
+  auditHtml,
+  findBinderScripts,
+  unboundFaqItems
+} = require('./lib/faq-schema-audit');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -92,12 +96,24 @@ if (changedFiles.length === 0) {
 }
 
 const flagged = [];
+const unbound = [];
 let checked = 0;
+
+// Which local JS files bind the accordion. Scanned once, not per page.
+const binderScripts = findBinderScripts(ROOT);
 
 for (const rel of changedFiles) {
   const filePath = path.join(ROOT, rel);
   if (!fs.existsSync(filePath)) continue; // deleted in a later commit
-  const result = auditHtml(fs.readFileSync(filePath, 'utf8'));
+  const html = fs.readFileSync(filePath, 'utf8');
+
+  // A button-variant FAQ with nothing bound to open it renders its answers
+  // never (style.css: .faq-answer{display:none}). Checked independently of
+  // the schema comparison below, which cannot see CSS.
+  const hidden = unboundFaqItems(html, { pagePath: rel, binderScripts });
+  if (hidden) unbound.push({ rel, hidden });
+
+  const result = auditHtml(html);
   if (!result.hasFaqSchema) continue;
   checked++;
   if (result.status === 'ok') continue;
@@ -106,9 +122,32 @@ for (const rel of changedFiles) {
 
 console.log(`  with FAQ schema:    ${checked}`);
 console.log(`  mismatched:         ${flagged.length}`);
+console.log(`  unbound accordions: ${unbound.length}`);
 console.log('');
 
-if (!flagged.length) {
+if (unbound.length) {
+  for (const u of unbound) {
+    console.log(
+      `\u2717 ${u.rel} has ${u.hidden} button-variant FAQ item(s) with no accordion binder — ` +
+        'their answers can never be opened:'
+    );
+    console.log(
+      '    style.css sets .faq-answer{display:none} and only .faq-item.open (added by JS)\n' +
+        '    or details[open] reveals it. This page loads neither /script.js, nor an inline\n' +
+        '    .faq-question handler, nor a local script that binds one.'
+    );
+    console.log('');
+  }
+  console.log(
+    'Fix: use the JS-free disclosure variant instead —\n' +
+      '     <details class="faq-item"><summary class="faq-question">Q</summary>\n' +
+      '       <p class="faq-answer">A</p></details>\n' +
+      '     See CLAUDE.md, "FAQ schema must mirror visible page content".'
+  );
+  console.log('');
+}
+
+if (!flagged.length && !unbound.length) {
   console.log('Every FAQ schema question on the changed pages is visible on the page. ✓');
   process.exit(0);
 }
@@ -123,7 +162,7 @@ for (const f of flagged) {
   console.log('');
 }
 
-console.log(
+if (flagged.length) console.log(
   'Fix: render the Q&A on the page (house style: .faq-item > .faq-question + .faq-answer),\n' +
     '     or remove the unmatched questions from the JSON-LD. Schema must mirror visible\n' +
     '     content — see CLAUDE.md, "FAQ schema must mirror visible page content".\n' +

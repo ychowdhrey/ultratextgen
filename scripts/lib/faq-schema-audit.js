@@ -24,9 +24,45 @@
  *   'ok'              — every schema question is visible on the page
  *   'partial'         — some questions visible, some not (usually stale schema)
  *   'no-visible-faq'  — zero questions visible (the headline violation)
+ *
+ * ── "in the DOM" is not the same as "visible" (added 2026-08-13) ──────────
+ *
+ * `extractVisibleText` reads the document's text. It has no model of CSS, and
+ * that was a real blind spot: style.css sets
+ *
+ *     .faq-answer { display: none }
+ *
+ * and reveals it only via `.faq-item.open` — which some JS has to add — or via
+ * `details[open]`, which the browser handles natively. So a page using the
+ * *button* variant
+ *
+ *     <div class="faq-item"><button class="faq-question">Q</button>
+ *       <div class="faq-answer">A</div></div>
+ *
+ * with nothing on the page binding a click handler renders its answers
+ * **never**, while `auditHtml` reported it 'ok' because the text was in the
+ * DOM. 63 live pages were in exactly that state, shipping 298 schema questions
+ * for 298 answers no reader could open.
+ *
+ * `unboundFaqItems()` closes it. Three things count as a binder, and all three
+ * are in live use — checking only the first is what produced a 20× overcount
+ * the first time this was measured:
+ *
+ *   1. `/script.js` (the global accordion handler)
+ *   2. an inline `document.querySelectorAll('.faq-question')` block
+ *   3. a page-local JS file that binds it (upside-down.js, comment-font.js, …)
+ *
+ * Script `src` values are resolved relative to the page before comparison —
+ * `category/upside-down-text/` references its binder relatively and is
+ * otherwise a false positive.
+ *
+ * The `<details>` variant needs no binder and is always visible, which is why
+ * CLAUDE.md prescribes it for pages that do not load /script.js.
  */
 
 const cheerio = require('cheerio');
+const fs = require('fs');
+const path = require('path');
 
 /* ───────────────────────── text normalization ───────────────────────── */
 
@@ -211,8 +247,66 @@ function auditHtml(html) {
   };
 }
 
+/* ──────────────── accordion binding (see the module docblock) ──────────── */
+
+const INLINE_BINDER = /querySelectorAll\(\s*['"]\.faq-question/;
+const GLOBAL_BINDER = 'script.js';
+
+/**
+ * Repo-relative paths of every local JS file that binds `.faq-question`.
+ * Scanned once by the caller and passed in, so this module never walks the
+ * tree per page. `scripts/` is excluded — those are build tools, not shipped.
+ */
+function findBinderScripts(rootDir) {
+  const found = new Set();
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name === 'node_modules' || entry.name === '.git') continue;
+      const full = path.join(dir, entry.name);
+      const rel = path.relative(rootDir, full).split(path.sep).join('/');
+      if (entry.isDirectory()) {
+        if (rel !== 'scripts') walk(full);
+      } else if (entry.name.endsWith('.js')) {
+        const src = fs.readFileSync(full, 'utf8');
+        if (src.includes('faq-question') && /addEventListener|onclick/.test(src)) {
+          found.add(rel);
+        }
+      }
+    }
+  })(rootDir);
+  return found;
+}
+
+/**
+ * Button-variant FAQ items on a page with nothing to open them.
+ *
+ * @param {string} html      raw file contents
+ * @param {object} opts
+ * @param {string} opts.pagePath       repo-relative path, for resolving relative src
+ * @param {Set<string>} opts.binderScripts  from findBinderScripts()
+ * @returns {number} count of permanently-hidden answers (0 when fine)
+ */
+function unboundFaqItems(html, { pagePath = '', binderScripts = new Set() } = {}) {
+  const buttons = html.match(/<button[^>]*class=["']faq-question/g);
+  if (!buttons) return 0;
+  if (INLINE_BINDER.test(html)) return 0;
+
+  const dir = path.posix.dirname(pagePath.split(path.sep).join('/'));
+  for (const m of html.matchAll(/<script[^>]*\bsrc=["']([^"']+)["']/g)) {
+    const src = m[1];
+    if (/^https?:\/\//.test(src)) continue;
+    const rel = src.startsWith('/')
+      ? src.replace(/^\/+/, '')
+      : path.posix.normalize(path.posix.join(dir, src));
+    if (rel === GLOBAL_BINDER || binderScripts.has(rel)) return 0;
+  }
+  return buttons.length;
+}
+
 module.exports = {
   auditHtml,
+  findBinderScripts,
+  unboundFaqItems,
   extractSchemaQuestions,
   extractVisibleText,
   normalizeText,
