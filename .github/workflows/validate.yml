@@ -199,6 +199,14 @@ jobs:
       # change that added it. A tile whose label names U+2126 must copy U+2126;
       # NFC silently rewrites that character (and U+212A) to a lookalike, so
       # this cannot be left to vigilance.
+      # Structural, and gating for the same reason as the tile codepoint check:
+      # zero violations after the change that added it. Catches what a text-level
+      # audit structurally cannot — a <head> tag that is not actually in <head>.
+      - name: Run document head structure check
+        id: document_head
+        continue-on-error: true
+        run: python3 scripts/check-document-head.py | tee document-head.log
+
       - name: Run tile codepoint check
         id: tile_codepoints
         continue-on-error: true
@@ -291,6 +299,11 @@ jobs:
             cat locale-mesh.log
             echo '```'
             echo ""
+            echo "### Document head structure check — \`${{ steps.document_head.outcome }}\`"
+            echo '```'
+            cat document-head.log
+            echo '```'
+            echo ""
             echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
             echo '```'
             cat tile-codepoints.log
@@ -342,7 +355,8 @@ jobs:
           steps.faq_schema.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
-          steps.tile_codepoints.outcome == 'failure'
+          steps.tile_codepoints.outcome == 'failure' ||
+          steps.document_head.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

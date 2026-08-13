@@ -33,7 +33,8 @@
     "refresh:events": "python3 scripts/refresh-event-pages.py",
     "check:counter-claims": "node scripts/check-counter-claims.js",
     "plan:library-locale": "python3 scripts/plan-library-locale-batch.py",
-    "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py"
+    "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py",
+    "check:document-head": "python3 scripts/check-document-head.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
