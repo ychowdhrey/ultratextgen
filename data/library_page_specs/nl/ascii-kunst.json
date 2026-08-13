@@ -1,0 +1,266 @@
+{
+  "slug": "ascii-kunst",
+  "lang": "nl",
+  "page_type": "library",
+  "title": "ASCII Kunst ▓ Tekstkunst Kopiëren en Plakken | UltraTextGen",
+  "meta_description": "ASCII- en tekstkunst kopiëren: lijntekens, blokken, braillepatronen en vormen om je eigen tekstkunst mee te bouwen. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/ascii-kunst/",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "breadcrumb": "ASCII Kunst",
+  "hero_h1": "ASCII Kunst",
+  "hero_tagline": "Bouwstenen voor eigen tekstkunst: lijnen, blokken, braillepatronen en vormen — klik om te kopiëren.",
+  "intro": "ASCII-kunst (ook wel tekstkunst genoemd) is tekening gemaakt van gewone tekens in plaats van pixels — populair sinds de begindagen van het internet en nog steeds overal te vinden in forumberichten, terminalvensters en chatberichten. Deze pagina verzamelt de bouwstenen: lijntekens om kaders te trekken, blokken en schaduwtinten om vlakken te vullen, braillepatronen voor fijnere texturen, en basisvormen. Combineer ze zelf tot je eigen ontwerp.",
+  "date_published": "2026-08-13",
+  "date_modified": "2026-08-13",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-kunst/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "boxes",
+      "label": "Lijntekens",
+      "h2": "Lijntekens voor kaders",
+      "intro": "Enkele en dubbele lijnen om kaders en tabellen mee te tekenen in platte tekst.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Enkele horizontale lijn"
+        },
+        {
+          "char": "│",
+          "label": "Enkele verticale lijn"
+        },
+        {
+          "char": "┌",
+          "label": "Hoek linksboven"
+        },
+        {
+          "char": "┐",
+          "label": "Hoek rechtsboven"
+        },
+        {
+          "char": "└",
+          "label": "Hoek linksonder"
+        },
+        {
+          "char": "┘",
+          "label": "Hoek rechtsonder"
+        },
+        {
+          "char": "├",
+          "label": "T-verbinding links"
+        },
+        {
+          "char": "┤",
+          "label": "T-verbinding rechts"
+        },
+        {
+          "char": "┼",
+          "label": "Kruispunt"
+        },
+        {
+          "char": "═",
+          "label": "Dubbele horizontale lijn"
+        },
+        {
+          "char": "║",
+          "label": "Dubbele verticale lijn"
+        },
+        {
+          "char": "╔",
+          "label": "Dubbele hoek linksboven"
+        },
+        {
+          "char": "╗",
+          "label": "Dubbele hoek rechtsboven"
+        },
+        {
+          "char": "╚",
+          "label": "Dubbele hoek linksonder"
+        },
+        {
+          "char": "╝",
+          "label": "Dubbele hoek rechtsonder"
+        }
+      ]
+    },
+    {
+      "id": "blocks",
+      "label": "Blokken en schaduw",
+      "h2": "Blokken en schaduwtinten",
+      "intro": "Volle en halve blokken, plus schaduwtinten om vlakken te vullen — de basis van pixel-achtige tekstkunst.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Volledig blok"
+        },
+        {
+          "char": "▀",
+          "label": "Bovenste halve blok"
+        },
+        {
+          "char": "▄",
+          "label": "Onderste halve blok"
+        },
+        {
+          "char": "▌",
+          "label": "Linker halve blok"
+        },
+        {
+          "char": "▐",
+          "label": "Rechter halve blok"
+        },
+        {
+          "char": "░",
+          "label": "Lichte schaduw"
+        },
+        {
+          "char": "▒",
+          "label": "Middelste schaduw"
+        },
+        {
+          "char": "▓",
+          "label": "Donkere schaduw"
+        },
+        {
+          "char": "▖",
+          "label": "Kwadrant linksonder"
+        },
+        {
+          "char": "▘",
+          "label": "Kwadrant linksboven"
+        }
+      ]
+    },
+    {
+      "id": "braille",
+      "label": "Braillepatronen",
+      "h2": "Braillepatronen voor fijne texturen",
+      "intro": "Braillecellen worden vaak gebruikt om fijnere, korrelige texturen te maken dan met blokken alleen mogelijk is.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Braillepunt 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braillepatroon 14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braillepatroon 1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braillepatroon 123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braillepatroon 78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braillepatroon 3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braillepatroon 235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braillepatroon 12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braillepatroon 1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braillepatroon 4568"
+        }
+      ]
+    },
+    {
+      "id": "shapes",
+      "label": "Vormen",
+      "h2": "Basisvormen",
+      "intro": "Cirkels, ruiten en driehoeken om contouren of accenten toe te voegen.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Zwarte ruit"
+        },
+        {
+          "char": "◇",
+          "label": "Witte ruit"
+        },
+        {
+          "char": "●",
+          "label": "Zwarte cirkel"
+        },
+        {
+          "char": "○",
+          "label": "Witte cirkel"
+        },
+        {
+          "char": "▲",
+          "label": "Zwarte driehoek omhoog"
+        },
+        {
+          "char": "△",
+          "label": "Witte driehoek omhoog"
+        },
+        {
+          "char": "▼",
+          "label": "Zwarte driehoek omlaag"
+        },
+        {
+          "char": "▽",
+          "label": "Witte driehoek omlaag"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Veelgestelde vragen over ASCII kunst",
+  "faq": [
+    {
+      "q": "Wat is het verschil tussen ASCII-kunst en Unicode-tekstkunst?",
+      "a": "Klassieke ASCII-kunst gebruikt alleen de originele 128 ASCII-tekens (letters, cijfers, leestekens); moderne tekstkunst zoals hier gebruikt ook bredere Unicode-tekens zoals lijntekens, blokken en braillepatronen voor meer detail."
+    },
+    {
+      "q": "Werkt tekstkunst overal waar ik het plak?",
+      "a": "Meestal wel, zolang het lettertype van de ontvanger de gebruikte tekens ondersteunt. Platte-tekstomgevingen met een vast-breedte lettertype (zoals code-editors of sommige chatapps) geven het netste resultaat, omdat elk teken dan even breed is."
+    },
+    {
+      "q": "Hoe bouw ik hiermee mijn eigen tekstkunst?",
+      "a": "Combineer de lijntekens tot een kader, vul het met blokken of braillepatronen voor textuur, en gebruik de vormen als accenten — net als bij pixelkunst, maar dan met tekst in plaats van pixels."
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/",
+      "title": "Symbolenbibliotheek",
+      "desc": "Blader door alle Unicode-symboolcollecties van UltraTextGen."
+    },
+    {
+      "href": "/nl/library/instagram-bio-symbolen/",
+      "title": "Instagram Bio Symbolen",
+      "desc": "Symbolen voor je Instagram bio, captions en Stories."
+    }
+  ]
+}
