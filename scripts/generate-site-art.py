@@ -2634,6 +2634,17 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # ar/library batch (2026-08-14) — Saudi-market volume export; see the
+  # Arabic locale research doc. Motifs come from each page's own copy tiles
+  # via motif_from_page(), so the base motif here is only the fallback.
+  "ar-library-text-art": ("رسومات بالرموز", "أحرف الرسم والمكعبات والتظليل للنسخ",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u250c"), K_LIB),
+  "ar-library-pubg-symbols": ("رموز ببجي", "رموز اللاعبين والإطارات المقبولة في اللعبة",
+        glyphs("\u30c4", "\u5f61", "\u4e42", "\ua9c1", "\u2605"), K_LIB),
+  "ar-library-whatsapp-symbols": ("رموز واتساب", "رموز وزخارف لحالة واتساب والبايو",
+        glyphs("\u2713", "\u2665", "\u2605", "\u2022", "\u2756"), K_LIB),
+  "ar-library-fire-emoji": ("ايموجي نار", "معناه في المحادثات وتركيباته الجاهزة",
+        glyphs("\U0001f525", "\U0001f4af", "\U0001f680", "\u26a1", "\U0001f451"), K_LIB),
   # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
   "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
   "id-printables-huruf-kaligrafi": ("Huruf Kaligrafi A\u2013Z", "Kaligrafi huruf Latin \u2014 tiru, tebalkan, cetak", m_grid, K_PRINT),
