@@ -1,0 +1,219 @@
+{
+  "lang": "es",
+  "slug": "emoji-aureola",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-aureola/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/halo-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-aureola/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/halo-emoji/"
+    }
+  ],
+  "title": "Emoji Aureola y Kaomoji: Copiar y Pegar 😇 Combos de Inocencia",
+  "meta_description": "Copia y pega el emoji aureola 😇, combos con el angelito 👼, caras de \"yo no fui\" como 😇 👀 y kaomoji tiernos como (｡◕‿◕｡). Un clic y listo.",
+  "breadcrumb": "Emoji Aureola y Kaomoji",
+  "hero_h1": "Emoji Aureola y Kaomoji",
+  "hero_tagline": "El emoji aureola 😇 con sus acompañantes —el ángel, la paloma y los destellos—, las caras de \"¿yo?\" que venden la inocencia y kaomoji tiernos a juego. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La cara sonriente con aureola 😇 significa inocente, dulce o bendecido, y se usa igual de seguido con ironía: se suelta justo después de confesar una travesura en una descripción. Esta página reúne el emoji aureola con sus acompañantes —el angelito 👼, la paloma 🕊️ y los destellos 🌟—, las caras de \"¿yo? yo no fui\" como 👀 y 🙈 que venden la inocencia, y kaomoji tiernos como (｡◕‿◕｡). Para la otra mitad del chiste —los cuernos y la travesura de verdad— la página del emoji diablo que enlazamos abajo es su contraparte natural.",
+  "sections": [
+    {
+      "id": "halo-angel-core",
+      "label": "Aureola y ángel",
+      "h2": "Emojis de aureola y ángel",
+      "intro": "La cara con aureola en sí, más el ángel, la paloma y los glifos de luz que arman ese aire bendecido y bonachón.",
+      "symbols": [
+        {
+          "char": "😇",
+          "label": "Cara sonriente con aureola"
+        },
+        {
+          "char": "👼",
+          "label": "Angelito"
+        },
+        {
+          "char": "🕊️",
+          "label": "Paloma de la paz"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        },
+        {
+          "char": "🌟",
+          "label": "Estrella brillante"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrella"
+        },
+        {
+          "char": "🙏",
+          "label": "Manos juntas"
+        }
+      ]
+    },
+    {
+      "id": "innocent-act",
+      "label": "Cara de inocente",
+      "h2": "Emojis para hacerse el inocente",
+      "intro": "Las caras de \"¿yo?\" que acompañan a la aureola cuando una descripción se hace la desentendida después de una travesura.",
+      "symbols": [
+        {
+          "char": "👀",
+          "label": "Ojos"
+        },
+        {
+          "char": "🙈",
+          "label": "Mono que no ve"
+        },
+        {
+          "char": "🤭",
+          "label": "Cara con la mano en la boca"
+        },
+        {
+          "char": "😊",
+          "label": "Cara sonriente con ojos sonrientes"
+        },
+        {
+          "char": "😌",
+          "label": "Cara de alivio"
+        },
+        {
+          "char": "🤫",
+          "label": "Cara pidiendo silencio"
+        }
+      ]
+    },
+    {
+      "id": "halo-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji inocentes y angelicales",
+      "intro": "Caritas de texto al estilo japonés con la misma energía dulce e incapaz de romper un plato que el emoji aureola.",
+      "symbols": [
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Kaomoji de ojos inocentes"
+        },
+        {
+          "char": "(¬‿¬)",
+          "label": "Kaomoji que no rompe un plato"
+        },
+        {
+          "char": "( ˘ᵕ˘ )",
+          "label": "Kaomoji dulce y contento"
+        },
+        {
+          "char": "ヽ(´▽`)/",
+          "label": "Kaomoji inocente y alegre"
+        },
+        {
+          "char": "(๑˘◡˘๑)",
+          "label": "Kaomoji inocente y feliz"
+        },
+        {
+          "char": "(◍•ᴗ•◍)",
+          "label": "Kaomoji inocente y adorable"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Modo aureola",
+      "flags": [
+        "😇",
+        "✨",
+        "👼"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Haciéndose el inocente",
+      "flags": [
+        "😇",
+        "👀",
+        "🤭"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Angelito",
+      "flags": [
+        "👼",
+        "🕊️",
+        "⭐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vibra bendecida",
+      "flags": [
+        "🙏",
+        "🌟",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dulce e inocente",
+      "flags": [
+        "😇",
+        "😊",
+        "😌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Set de kaomoji con aureola",
+      "flags": [
+        "(｡◕‿◕｡)",
+        "(¬‿¬)",
+        "( ˘ᵕ˘ )"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "haloSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji aureola",
+    "intro": "Combos con aureola listos para usar: copia el set completo con un clic y pégalo directo en una descripción, una biografía o un comentario."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-diablo/",
+      "title": "Emoji diablo y kaomoji",
+      "desc": "La contraparte directa de 😇: diablitos, demonios y combos de villano para la otra mitad del chiste."
+    },
+    {
+      "href": "/es/library/simbolos-religiosos/",
+      "title": "Símbolos religiosos y espirituales",
+      "desc": "Cruces, estrellas de fe y otros glifos religiosos y espirituales para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "Todos los emojis de caritas y sonrisas en una sola cuadrícula, organizados por estado de ánimo."
+    },
+    {
+      "href": "/es/library/emojis-de-fantasia/",
+      "title": "Emojis de fantasía y mitología",
+      "desc": "Dragones, magos y otros emojis míticos y legendarios para publicaciones llenas de fantasía."
+    }
+  ]
+}

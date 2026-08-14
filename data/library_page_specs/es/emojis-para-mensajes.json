@@ -1,0 +1,321 @@
+{
+  "lang": "es",
+  "slug": "emojis-para-mensajes",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-para-mensajes/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/greeting-message-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-para-mensajes/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/greeting-message-emojis/"
+    }
+  ],
+  "title": "Emojis para Mensajes: Copiar y Pegar Buenos Días, Gracias y Más",
+  "meta_description": "Emojis para mensajes de buenos días, gracias, perdón y felicitaciones, con combos listos para WhatsApp. Haz clic en cualquier emoji para copiarlo.",
+  "breadcrumb": "Emojis para mensajes",
+  "hero_h1": "Emojis para mensajes y saludos",
+  "hero_tagline": "Soles de buenos días, manos de gracias y confeti de felicitaciones: haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis para mensajes transmiten la calidez de un saludo antes de que se lea una sola palabra: un 🌅 amanecer para los buenos días, un 🙏 de gracias, un 🎉 de felicitaciones. Esta biblioteca los organiza por saludo y cubre buenos días, buenas noches, gracias, felicitaciones, bienvenida, perdón y te extraño. Copia emojis sueltos para estados de WhatsApp y grupos familiares, o llévate un combo de saludo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "good-morning",
+      "label": "Buenos días",
+      "h2": "Emojis de buenos días",
+      "intro": "Amaneceres, café y sol para abrir el día.",
+      "symbols": [
+        {
+          "char": "🌅",
+          "label": "Amanecer"
+        },
+        {
+          "char": "🌄",
+          "label": "Amanecer sobre las montañas"
+        },
+        {
+          "char": "☀",
+          "label": "Sol"
+        },
+        {
+          "char": "🌞",
+          "label": "Sol con cara"
+        },
+        {
+          "char": "☕",
+          "label": "Bebida caliente"
+        },
+        {
+          "char": "🐦",
+          "label": "Pájaro"
+        },
+        {
+          "char": "🌻",
+          "label": "Girasol"
+        }
+      ]
+    },
+    {
+      "id": "good-night",
+      "label": "Buenas noches",
+      "h2": "Emojis de buenas noches",
+      "intro": "Lunas, estrellas y caritas con sueño para cerrar el día.",
+      "symbols": [
+        {
+          "char": "🌙",
+          "label": "Luna creciente"
+        },
+        {
+          "char": "🌜",
+          "label": "Luna con cara"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrella"
+        },
+        {
+          "char": "🌃",
+          "label": "Noche estrellada"
+        },
+        {
+          "char": "🌠",
+          "label": "Estrella fugaz"
+        },
+        {
+          "char": "💤",
+          "label": "Zzz"
+        },
+        {
+          "char": "😴",
+          "label": "Cara durmiendo"
+        }
+      ]
+    },
+    {
+      "id": "thank-you",
+      "label": "Gracias",
+      "h2": "Emojis de gracias y agradecimiento",
+      "intro": "Manos juntas, flores y sonrisas cálidas para mostrar agradecimiento.",
+      "symbols": [
+        {
+          "char": "🙏",
+          "label": "Manos juntas"
+        },
+        {
+          "char": "💐",
+          "label": "Ramo de flores"
+        },
+        {
+          "char": "🌹",
+          "label": "Rosa"
+        },
+        {
+          "char": "❤",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "😊",
+          "label": "Cara sonriendo con ojos felices"
+        },
+        {
+          "char": "🤗",
+          "label": "Cara sonriendo con las manos abiertas"
+        },
+        {
+          "char": "🫶",
+          "label": "Manos en corazón"
+        }
+      ]
+    },
+    {
+      "id": "congratulations-welcome",
+      "label": "Felicitaciones",
+      "h2": "Emojis de felicitaciones y bienvenida",
+      "intro": "Confeti, aplausos y trofeos para los logros y las bienvenidas cálidas.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        },
+        {
+          "char": "🎊",
+          "label": "Bola de confeti"
+        },
+        {
+          "char": "👏",
+          "label": "Manos aplaudiendo"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🥳",
+          "label": "Cara de fiesta"
+        },
+        {
+          "char": "🌺",
+          "label": "Hibisco"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        }
+      ]
+    },
+    {
+      "id": "sorry-miss-you",
+      "label": "Perdón y te extraño",
+      "h2": "Emojis de perdón y te extraño",
+      "intro": "Emojis suaves y sinceros para pedir disculpas y para extrañar a alguien.",
+      "symbols": [
+        {
+          "char": "🥺",
+          "label": "Cara suplicante"
+        },
+        {
+          "char": "😔",
+          "label": "Cara pensativa"
+        },
+        {
+          "char": "💔",
+          "label": "Corazón roto"
+        },
+        {
+          "char": "💌",
+          "label": "Carta de amor"
+        },
+        {
+          "char": "💭",
+          "label": "Globo de pensamiento"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulipán"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Buenos días",
+      "flags": [
+        "🌅",
+        "☀",
+        "☕",
+        "😊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Buenas noches",
+      "flags": [
+        "🌙",
+        "⭐",
+        "💤",
+        "😴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gracias",
+      "flags": [
+        "🙏",
+        "💐",
+        "❤",
+        "😊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Felicitaciones",
+      "flags": [
+        "🎉",
+        "👏",
+        "🏆",
+        "🥳"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bienvenida",
+      "flags": [
+        "🤗",
+        "🙏",
+        "🌺",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Te extraño",
+      "flags": [
+        "🥺",
+        "💌",
+        "💭",
+        "❤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Perdón",
+      "flags": [
+        "🙏",
+        "😔",
+        "🥺",
+        "🌷"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Feliz cumpleaños",
+      "flags": [
+        "🎂",
+        "🎈",
+        "🎉",
+        "💝"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "greetingSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de saludos",
+    "intro": "Copia un combo de saludo completo con un solo clic y pégalo en un estado, una historia o un chat."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-fiesta/",
+      "title": "Emojis de fiesta y celebración",
+      "desc": "Confeti, pastel y brindis para cada celebración."
+    },
+    {
+      "href": "/es/library/emojis-de-amistad/",
+      "title": "Emojis de amistad y amor",
+      "desc": "Abrazos, mejores amigos y combos de corazones de amistad."
+    },
+    {
+      "href": "/es/library/simbolos-whatsapp/",
+      "title": "Símbolos para WhatsApp",
+      "desc": "Caracteres para estados y perfiles de WhatsApp."
+    },
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Símbolos de corazón",
+      "desc": "Emojis de corazón y caracteres Unicode de corazón en cada color y estilo."
+    }
+  ]
+}

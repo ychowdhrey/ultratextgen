@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-polonia",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-polonia/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/poland-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-polonia/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/poland-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Polonia 🇵🇱⚽ Combos para Copiar y Pegar",
+  "meta_description": "Emoji Polonia 🇵🇱⚽ — los colores de los Biało-Czerwoni y combos futboleros para biografías y publicaciones. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Emoji Polonia",
+  "hero_h1": "Emoji Polonia: Combos y Banderas",
+  "hero_tagline": "Los colores de los Biało-Czerwoni y sets de emojis futboleros para los hinchas de Polonia: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los hinchas de Polonia acompañan la bandera 🇵🇱 con el balón ⚽ y los colores de los Biało-Czerwoni, y el emoji Polonia rara vez viaja solo. Polska, biało-czerwoni: el blanco y el rojo que los unen. Copia un emoji suelto de la lista o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Polonia",
+      "h2": "Emojis de Polonia",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇵🇱",
+          "label": "Bandera de Polonia"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "🦅",
+          "label": "Águila"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cornetita de fiesta"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Polaco",
+      "intro": "El blanco y el rojo de los colores nacionales.",
+      "symbols": [
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "🦅",
+          "label": "Águila"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Biało-Czerwoni",
+      "flags": [
+        "🇵🇱",
+        "⚽",
+        "🦅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Polska",
+      "flags": [
+        "🇵🇱",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blanco y Rojo",
+      "flags": [
+        "⚪",
+        "🔴",
+        "⚪"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Polaco",
+      "flags": [
+        "🇵🇱",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "polandCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Sets de Combos",
+    "h2": "Sets de Combos de Polonia",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, tus publicaciones o tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los partidos."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y tema."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "lang": "es",
+  "slug": "adivina-el-futbolista-por-emojis",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/adivina-el-futbolista-por-emojis/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/guess-soccer-player-by-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/adivina-el-futbolista-por-emojis/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/guess-soccer-player-by-emoji/" }
+  ],
+  "title": "Adivina el Futbolista por Emojis ⚽ (Pistas y Respuestas)",
+  "meta_description": "Adivina el futbolista por emojis: pistas con sus respuestas, listas para copiar en quizzes, juegos y grupos de chat. Haz clic en cualquier pista para copiarla.",
+  "breadcrumb": "Adivina el Futbolista",
+  "hero_h1": "Adivina el Futbolista por Emojis",
+  "hero_tagline": "Pistas de emojis con la respuesta de cada jugador — copia una pista para un quiz, una historia o el grupo de chat. Haz clic en cualquier pista para copiarla.",
+  "intro": "\"Adivina el futbolista por emojis\" es uno de los juegos favoritos en fiestas y grupos de chat: unos cuantos emojis insinúan a una estrella y todos gritan el nombre. Abajo, cada pista de emojis viene acompañada de su respuesta para que puedas armar el quiz o comprobar si le atinaste. Haz clic en una pista para copiar los emojis, compártela y después revela al jugador.",
+  "sections": [
+    {
+      "id": "easy-players",
+      "label": "Fácil",
+      "h2": "Pistas Fáciles",
+      "intro": "Los nombres más grandes: se adivinan en segundos.",
+      "symbols": [
+        { "char": "🐐⚽🇦🇷", "label": "Lionel Messi" },
+        { "char": "🇵🇹⚽7️⃣", "label": "Cristiano Ronaldo" },
+        { "char": "🇫🇷⚽🚀", "label": "Kylian Mbappe" },
+        { "char": "🇳🇴⚽🤖", "label": "Erling Haaland" },
+        { "char": "🇧🇷⚽🎩", "label": "Neymar Jr" },
+        { "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽🎯", "label": "Harry Kane" }
+      ]
+    },
+    {
+      "id": "star-players",
+      "label": "Estrellas",
+      "h2": "Pistas de Estrellas",
+      "intro": "Estrellas del momento y jóvenes promesas.",
+      "symbols": [
+        { "char": "🇪🇸⚽💎", "label": "Lamine Yamal" },
+        { "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽👑", "label": "Jude Bellingham" },
+        { "char": "🇧🇷⚽💃", "label": "Vinicius Jr" },
+        { "char": "🇪🇬⚽👑", "label": "Mohamed Salah" },
+        { "char": "🇭🇷⚽🎼", "label": "Luka Modric" },
+        { "char": "🇫🇷⚽9️⃣", "label": "Karim Benzema" }
+      ]
+    },
+    {
+      "id": "legend-players",
+      "label": "Más",
+      "h2": "Más Pistas de Jugadores",
+      "intro": "Goleadores, maestros del medio campo y favoritos de la hinchada.",
+      "symbols": [
+        { "char": "🇺🇾⚽🔫", "label": "Luis Suarez" },
+        { "char": "🇵🇱⚽🎯", "label": "Robert Lewandowski" },
+        { "char": "🇳🇬⚽🎭", "label": "Victor Osimhen" },
+        { "char": "🇬🇪⚽🎩", "label": "Khvicha Kvaratskhelia" },
+        { "char": "🇰🇷⚽⚡", "label": "Son Heung-min" },
+        { "char": "🇪🇸⚽🛡️", "label": "Rodri" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de Deportes",
+      "desc": "Todos los emojis de deportes y actividades, organizados por categoría."
+    }
+  ]
+}

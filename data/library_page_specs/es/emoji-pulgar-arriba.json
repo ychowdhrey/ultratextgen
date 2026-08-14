@@ -1,0 +1,176 @@
+{
+  "lang": "es",
+  "slug": "emoji-pulgar-arriba",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-pulgar-arriba/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/thumbs-up-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-pulgar-arriba/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/thumbs-up-emoji/" }
+  ],
+  "title": "Emoji Pulgar Arriba: Copiar y Pegar 👍 👎 Combos de Aprobación",
+  "meta_description": "Copia y pega el emoji pulgar arriba 👍 en todos los tonos de piel, más 👎, manos de OK y combos de aprobación para chats. Un clic para copiar.",
+  "breadcrumb": "Emoji Pulgar Arriba",
+  "hero_h1": "Emoji Pulgar Arriba",
+  "hero_tagline": "Pulgar arriba, pulgar abajo y todos los gestos de aprobación que hay en medio — haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "El emoji pulgar arriba 👍 es la señal de aprobación por defecto de internet: sirve para decir «de acuerdo», «me parece bien» o «listo» sin escribir una sola palabra. Esta biblioteca reúne el pulgar arriba y el pulgar abajo en todos los tonos de piel, la familia más amplia de gestos de aprobación como 👌 y 🤝, y las marcas de verificación que los acompañan en encuestas, respuestas y reseñas. Toma un carácter suelto o copia un combo de aprobación completo con un solo clic.",
+  "sections": [
+    {
+      "id": "thumbs-up-tones",
+      "label": "Pulgar Arriba",
+      "h2": "Pulgar Arriba en Todos los Tonos de Piel",
+      "intro": "El clásico emoji de pulgar arriba y sus cinco variantes de tono de piel.",
+      "symbols": [
+        { "char": "👍", "label": "Pulgar arriba" },
+        { "char": "👍🏻", "label": "Pulgar arriba: tono de piel claro" },
+        { "char": "👍🏼", "label": "Pulgar arriba: tono de piel claro medio" },
+        { "char": "👍🏽", "label": "Pulgar arriba: tono de piel medio" },
+        { "char": "👍🏾", "label": "Pulgar arriba: tono de piel oscuro medio" },
+        { "char": "👍🏿", "label": "Pulgar arriba: tono de piel oscuro" }
+      ]
+    },
+    {
+      "id": "thumbs-down-tones",
+      "label": "Pulgar Abajo",
+      "h2": "Pulgar Abajo en Todos los Tonos de Piel",
+      "intro": "La contraparte de desaprobación, también disponible en todos los tonos de piel.",
+      "symbols": [
+        { "char": "👎", "label": "Pulgar abajo" },
+        { "char": "👎🏻", "label": "Pulgar abajo: tono de piel claro" },
+        { "char": "👎🏼", "label": "Pulgar abajo: tono de piel claro medio" },
+        { "char": "👎🏽", "label": "Pulgar abajo: tono de piel medio" },
+        { "char": "👎🏾", "label": "Pulgar abajo: tono de piel oscuro medio" },
+        { "char": "👎🏿", "label": "Pulgar abajo: tono de piel oscuro" }
+      ]
+    },
+    {
+      "id": "approval-gestures",
+      "label": "Gestos de Aprobación",
+      "h2": "Gestos de Aprobación y Acuerdo",
+      "intro": "Emojis de manos que dicen que sí, que quedó bien y que hay trato.",
+      "symbols": [
+        { "char": "👌", "label": "Mano haciendo OK" },
+        { "char": "✌", "label": "Mano en señal de victoria" },
+        { "char": "🤙", "label": "Mano de llámame" },
+        { "char": "🤞", "label": "Dedos cruzados" },
+        { "char": "🫰", "label": "Mano con corazón de dedos" },
+        { "char": "🤝", "label": "Apretón de manos" },
+        { "char": "👏", "label": "Manos aplaudiendo" },
+        { "char": "🙌", "label": "Manos levantadas" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "✊", "label": "Puño en alto" },
+        { "char": "👊", "label": "Puño de frente" },
+        { "char": "🫶", "label": "Manos formando un corazón" }
+      ]
+    },
+    {
+      "id": "pointing-hands",
+      "label": "Manos que Señalan",
+      "h2": "Manos que Señalan y Manos Levantadas",
+      "intro": "Dirige la atención hacia arriba, hacia abajo o hacia lo que quieres que lean.",
+      "symbols": [
+        { "char": "☝", "label": "Índice señalando hacia arriba" },
+        { "char": "👆", "label": "Dorso de la mano con índice hacia arriba" },
+        { "char": "👇", "label": "Dorso de la mano con índice hacia abajo" },
+        { "char": "👈", "label": "Dorso de la mano con índice hacia la izquierda" },
+        { "char": "👉", "label": "Dorso de la mano con índice hacia la derecha" },
+        { "char": "✋", "label": "Mano levantada" },
+        { "char": "🖐", "label": "Mano con los dedos separados" },
+        { "char": "🖖", "label": "Saludo vulcano" }
+      ]
+    },
+    {
+      "id": "approval-marks",
+      "label": "Marcas de Aprobación",
+      "h2": "Marcas de Verificación y Símbolos de Aprobación",
+      "intro": "Las marcas que combinan naturalmente con un pulgar arriba en encuestas y reseñas.",
+      "symbols": [
+        { "char": "✅", "label": "Botón de marca de verificación" },
+        { "char": "✔", "label": "Marca de verificación" },
+        { "char": "☑", "label": "Casilla marcada" },
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "🆗", "label": "Botón OK" },
+        { "char": "🆒", "label": "Botón Cool" },
+        { "char": "❌", "label": "Cruz de error" },
+        { "char": "⭕", "label": "Círculo rojo" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Aprobado Total",
+      "flags": ["👍", "💯", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bien Hecho",
+      "flags": ["👏", "👏", "👏", "🙌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Trato Cerrado",
+      "flags": ["🤝", "👍", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ni de Broma",
+      "flags": ["👎", "❌", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Todo Bien",
+      "flags": ["👌", "😎", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sí Rotundo",
+      "flags": ["💪", "🔥", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Victoria del Equipo",
+      "flags": ["🙌", "🎉", "👍", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dedos Cruzados",
+      "flags": ["🤞", "🍀", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "thumbsUpSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Aprobación",
+    "intro": "Copia un combo completo de aprobación o de rechazo con un clic y pégalo donde quieras."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Símbolos de Manos",
+      "desc": "Gestos con las manos, dedos que señalan y símbolos para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-verificacion/",
+      "title": "Símbolos de Verificación",
+      "desc": "Palomitas, vistos y símbolos de verificación en todos los estilos."
+    },
+    {
+      "href": "/es/library/emojis-lenguaje-corporal/",
+      "title": "Emojis de Lenguaje Corporal",
+      "desc": "Emojis de gestos y posturas para mensajes más expresivos."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Símbolos de Logros",
+      "desc": "Trofeos, medallas y símbolos de ganador para celebrar los triunfos."
+    }
+  ]
+}

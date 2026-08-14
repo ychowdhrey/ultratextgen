@@ -1,0 +1,89 @@
+{
+  "lang": "es",
+  "slug": "emoji-tarjeta-roja",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emoji-tarjeta-roja/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/card-emoji-soccer/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-tarjeta-roja/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/card-emoji-soccer/" }
+  ],
+  "title": "Emoji Tarjeta Roja y Amarilla 🟥🟨 para Copiar y Pegar",
+  "meta_description": "Copia y pega el emoji tarjeta roja 🟥 y la tarjeta amarilla 🟨 del fútbol, más combos de árbitro y VAR. Haz clic en cualquier emoji para copiarlo al instante.",
+  "breadcrumb": "Emoji de tarjetas de fútbol",
+  "hero_h1": "Emoji de Tarjeta Roja y Amarilla",
+  "hero_tagline": "Las tarjetas del fútbol en emoji: amarilla 🟨, roja 🟥 y combos de árbitro para amonestaciones y expulsiones. Haz clic en cualquier emoji para copiarlo.",
+  "intro": "No existe un emoji literal de tarjeta de árbitro, así que el emoji tarjeta roja es en realidad el cuadrado rojo 🟥, igual que el cuadrado amarillo 🟨 hace de amonestación. Esta página junta esas tarjetas con los emojis de árbitro, VAR y cuerpo arbitral, además de combos de reacción para cuando la decisión es polémica. Haz clic en cualquier emoji para copiarlo.",
+  "sections": [
+    {
+      "id": "cards",
+      "label": "Tarjetas",
+      "h2": "Emojis de tarjetas",
+      "intro": "Los cuadrados amarillo y rojo hacen las veces de las tarjetas del árbitro.",
+      "symbols": [
+        { "char": "🟨", "label": "Tarjeta amarilla (cuadrado amarillo)" },
+        { "char": "🟥", "label": "Tarjeta roja (cuadrado rojo)" },
+        { "char": "🟧", "label": "Cuadrado naranja (segunda amarilla)" },
+        { "char": "⬛", "label": "Cuadrado negro" },
+        { "char": "⬜", "label": "Cuadrado blanco" },
+        { "char": "🎴", "label": "Cartas de flores" }
+      ]
+    },
+    {
+      "id": "officials",
+      "label": "Arbitraje",
+      "h2": "Emojis de árbitro y cuerpo arbitral",
+      "intro": "Los jueces del partido y las herramientas detrás de la decisión.",
+      "symbols": [
+        { "char": "⏱️", "label": "Cronómetro" },
+        { "char": "🚩", "label": "Banderín del juez de línea" },
+        { "char": "📺", "label": "Pantalla del VAR (televisión)" },
+        { "char": "📋", "label": "Portapapeles" },
+        { "char": "🧍", "label": "Persona de pie (árbitro)" },
+        { "char": "☝️", "label": "Dedo hacia arriba (penal)" }
+      ]
+    },
+    {
+      "id": "combos",
+      "label": "Reacciones",
+      "h2": "Combos de tarjetas y reacciones",
+      "intro": "Reacciones de amonestación y expulsión: haz clic para copiar.",
+      "symbols": [
+        { "char": "🟨⚽", "label": "Tarjeta amarilla + fútbol" },
+        { "char": "🟥😨", "label": "Tarjeta roja + susto" },
+        { "char": "🟨🟥", "label": "Dos amarillas = roja" },
+        { "char": "📺🟥", "label": "VAR + tarjeta roja" },
+        { "char": "🟥😠", "label": "Tarjeta roja + enojo" },
+        { "char": "⏱️🟨", "label": "Amonestación sobre la hora" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/library/soccer-emoji-copy-paste/",
+      "title": "Lista de emojis de fútbol",
+      "desc": "El set completo de emojis de fútbol, listo para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de deportes",
+      "desc": "Todos los emojis de deportes y actividades, ordenados por categoría."
+    },
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y pies de foto de hinchas."
+    }
+  ]
+}

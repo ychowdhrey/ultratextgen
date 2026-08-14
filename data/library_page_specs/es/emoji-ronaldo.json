@@ -1,0 +1,90 @@
+{
+  "lang": "es",
+  "slug": "emoji-ronaldo",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-ronaldo/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/ronaldo-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-ronaldo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/ronaldo-emoji-combos/" }
+  ],
+  "title": "Emoji Ronaldo 🇵🇹⚽🐐: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Ronaldo 🇵🇹⚽🐐: sets de CR7, GOAT y Siuuu para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Ronaldo",
+  "hero_h1": "Combos de Emoji Ronaldo",
+  "hero_tagline": "Sets de emojis de Portugal, CR7 y GOAT para fans de Ronaldo: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los fans de Cristiano Ronaldo arman sus combos con la bandera de Portugal 🇵🇹, el número 7 y la cabra 🐐 del GOAT. Úsalos en biografías de fan de CR7, en publicaciones y en los comentarios. Copia un emoji suelto de las secciones o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "ronaldo-emojis",
+      "label": "Ronaldo",
+      "h2": "Emojis de Ronaldo",
+      "intro": "Las marcas de la era CR7.",
+      "symbols": [
+        { "char": "🇵🇹", "label": "Bandera de Portugal" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🐐", "label": "Cabra (GOAT)" },
+        { "char": "👑", "label": "Corona" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "7️⃣", "label": "Número 7" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    },
+    {
+      "id": "portugal",
+      "label": "Portugal",
+      "h2": "Emojis de Portugal y CR7",
+      "intro": "Los colores de la Selección y el festejo del Siuuu.",
+      "symbols": [
+        { "char": "🇵🇹", "label": "Bandera de Portugal" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "💚", "label": "Corazón verde" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "CR7 GOAT", "flags": ["🐐", "⚽", "🇵🇹"], "defaultFormat": "inline" },
+    { "name": "Siuuu", "flags": ["🔥", "💪", "⚽"], "defaultFormat": "inline" },
+    { "name": "El Siete", "flags": ["7️⃣", "⚽", "👑"], "defaultFormat": "inline" },
+    { "name": "Orgullo Portugués", "flags": ["🇵🇹", "❤️", "💚"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "ronaldoCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Ronaldo",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

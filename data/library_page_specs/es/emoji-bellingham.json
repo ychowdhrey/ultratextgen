@@ -1,0 +1,173 @@
+{
+ "lang": "es",
+ "slug": "emoji-bellingham",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-bellingham/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/bellingham-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-bellingham/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/bellingham-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Bellingham: Combos 🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽🐐 para Copiar y Pegar",
+ "meta_description": "Combos de emoji de Bellingham 🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽ — sets de emojis para biografías, subtítulos y comentarios de hinchas. Haz clic en cualquier combo para copiarlo.",
+ "breadcrumb": "Combos de Emoji de Bellingham",
+ "hero_h1": "Combos de Emoji de Bellingham",
+ "hero_tagline": "Sets de emojis de hincha para Bellingham — bandera, fútbol y sus combos característicos. Haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los fans de Jude Bellingham arman su emoji de Bellingham juntando la bandera de Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿 con el balón ⚽ y la corona 👑. Estos combos van perfecto en biografías, subtítulos y comentarios. Copia un solo emoji abajo o toma un combo completo con un clic.",
+ "sections": [
+  {
+   "id": "bellingham-emojis",
+   "label": "Bellingham",
+   "h2": "Emojis de Bellingham",
+   "intro": "Los emojis característicos del jugador.",
+   "symbols": [
+    {
+     "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+     "label": "Bandera de Inglaterra"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de Fútbol"
+    },
+    {
+     "char": "🐐",
+     "label": "Cabra (GOAT)"
+    },
+    {
+     "char": "👑",
+     "label": "Corona"
+    },
+    {
+     "char": "🦁",
+     "label": "León (Tres Leones)"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "⚪",
+     "label": "Blanco (Real Madrid)"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    }
+   ]
+  },
+  {
+   "id": "madrid-emojis",
+   "label": "Madrid",
+   "h2": "Emojis de Inglaterra y el Real Madrid",
+   "intro": "El blanco galáctico y el orgullo de los Tres Leones.",
+   "symbols": [
+    {
+     "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+     "label": "Bandera de Inglaterra"
+    },
+    {
+     "char": "⚪",
+     "label": "Círculo Blanco"
+    },
+    {
+     "char": "🦁",
+     "label": "León"
+    },
+    {
+     "char": "👑",
+     "label": "Corona"
+    },
+    {
+     "char": "✨",
+     "label": "Destellos"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Jude",
+   "flags": [
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "⚽",
+    "👑"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Hey Jude",
+   "flags": [
+    "⚽",
+    "🎶",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Galáctico del Madrid",
+   "flags": [
+    "⚪",
+    "⚽",
+    "👑"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Estrella de Inglaterra",
+   "flags": [
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "⚽",
+    "🦁"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "bellinghamCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Combos Listos",
+  "h2": "Combos de Bellingham",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, subtítulo o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emoji del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y subtítulos de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones de emojis con estética para cada ánimo y tema."
+  }
+ ]
+}

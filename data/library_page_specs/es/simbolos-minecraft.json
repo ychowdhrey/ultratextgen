@@ -1,0 +1,309 @@
+{
+  "lang": "es",
+  "slug": "simbolos-minecraft",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-minecraft/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/minecraft-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-minecraft/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/minecraft-symbols/"
+    }
+  ],
+  "title": "Símbolos Minecraft: Copiar y Pegar para Chat y Servidores",
+  "meta_description": "Copia símbolos Minecraft para el chat, los MOTD y los nombres de servidor: flechas, bloques de sombreado ░▒▓, líneas de marco e iconos del juego.",
+  "breadcrumb": "Símbolos Minecraft",
+  "hero_h1": "Símbolos Minecraft",
+  "hero_tagline": "Corchetes para el chat, bloques de sombreado para los MOTD, líneas de marco e iconos temáticos que se ven bien en la fuente de Minecraft. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La fuente predeterminada de Minecraft muestra una buena parte de Unicode, y por eso los servidores decoran los MOTD, los rangos del chat, los hologramas y las pantallas de expulsión con caracteres como ►, ▌ y ☠. Esta biblioteca reúne los símbolos Minecraft que se ven de forma confiable en el chat, en la lista de servidores, en las líneas del marcador y en la configuración de los plugins: desde bloques de sombreado para los banners de MOTD hasta picos y espadas para los prefijos de rango. Pégalos en los plugins de MOTD que leen server.properties, en los formatos de chat de Essentials o en objetos renombrados en el yunque.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "chat-rank-brackets",
+      "label": "Corchetes de rango",
+      "h2": "Símbolos de corchetes para el chat y los rangos",
+      "intro": "Puntas de flecha y corchetes ornamentales que se usan alrededor de las etiquetas de rango tipo [Admin] y los prefijos del chat.",
+      "symbols": [
+        {
+          "char": "►",
+          "label": "Puntero negro hacia la derecha"
+        },
+        {
+          "char": "◄",
+          "label": "Puntero negro hacia la izquierda"
+        },
+        {
+          "char": "▶",
+          "label": "Triángulo negro hacia la derecha"
+        },
+        {
+          "char": "◀",
+          "label": "Triángulo negro hacia la izquierda"
+        },
+        {
+          "char": "«",
+          "label": "Comilla angular doble izquierda"
+        },
+        {
+          "char": "»",
+          "label": "Comilla angular doble derecha"
+        },
+        {
+          "char": "❰",
+          "label": "Corchete angular ornamental izquierdo grueso"
+        },
+        {
+          "char": "❱",
+          "label": "Corchete angular ornamental derecho grueso"
+        },
+        {
+          "char": "〘",
+          "label": "Corchete de caparazón de tortuga blanco izquierdo"
+        },
+        {
+          "char": "〙",
+          "label": "Corchete de caparazón de tortuga blanco derecho"
+        }
+      ]
+    },
+    {
+      "id": "motd-blocks",
+      "label": "Bloques MOTD",
+      "h2": "Bloques de sombreado para la lista de servidores y el MOTD",
+      "intro": "Bloques sólidos y sombreados para banners de MOTD, barras de progreso y separadores estilo pixel.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Bloque completo"
+        },
+        {
+          "char": "▓",
+          "label": "Sombreado oscuro"
+        },
+        {
+          "char": "▒",
+          "label": "Sombreado medio"
+        },
+        {
+          "char": "░",
+          "label": "Sombreado claro"
+        },
+        {
+          "char": "▌",
+          "label": "Medio bloque izquierdo"
+        },
+        {
+          "char": "▐",
+          "label": "Medio bloque derecho"
+        },
+        {
+          "char": "■",
+          "label": "Cuadrado negro"
+        },
+        {
+          "char": "□",
+          "label": "Cuadrado blanco"
+        },
+        {
+          "char": "▪",
+          "label": "Cuadrado negro pequeño"
+        },
+        {
+          "char": "▫",
+          "label": "Cuadrado blanco pequeño"
+        },
+        {
+          "char": "◆",
+          "label": "Rombo negro"
+        },
+        {
+          "char": "◇",
+          "label": "Rombo blanco"
+        }
+      ]
+    },
+    {
+      "id": "box-drawing-ui",
+      "label": "Líneas de marco",
+      "h2": "Líneas de marco para la interfaz del chat",
+      "intro": "Piezas de línea y esquina para enmarcar menús de /help, paneles de holograma y bordes del marcador.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Línea horizontal simple"
+        },
+        {
+          "char": "│",
+          "label": "Línea vertical simple"
+        },
+        {
+          "char": "┌",
+          "label": "Esquina simple superior izquierda"
+        },
+        {
+          "char": "┐",
+          "label": "Esquina simple superior derecha"
+        },
+        {
+          "char": "└",
+          "label": "Esquina simple inferior izquierda"
+        },
+        {
+          "char": "┘",
+          "label": "Esquina simple inferior derecha"
+        },
+        {
+          "char": "╔",
+          "label": "Esquina doble superior izquierda"
+        },
+        {
+          "char": "╗",
+          "label": "Esquina doble superior derecha"
+        },
+        {
+          "char": "╚",
+          "label": "Esquina doble inferior izquierda"
+        },
+        {
+          "char": "╝",
+          "label": "Esquina doble inferior derecha"
+        },
+        {
+          "char": "═",
+          "label": "Línea horizontal doble"
+        },
+        {
+          "char": "║",
+          "label": "Línea vertical doble"
+        }
+      ]
+    },
+    {
+      "id": "game-icons",
+      "label": "Iconos del juego",
+      "h2": "Iconos temáticos del juego",
+      "intro": "Picos, espadas, corazones y pociones: iconos que combinan con las herramientas y el HUD de Minecraft.",
+      "symbols": [
+        {
+          "char": "⛏",
+          "label": "Pico"
+        },
+        {
+          "char": "⚒",
+          "label": "Martillo y pico"
+        },
+        {
+          "char": "⚔",
+          "label": "Espadas cruzadas"
+        },
+        {
+          "char": "🏹",
+          "label": "Arco y flecha"
+        },
+        {
+          "char": "🛡",
+          "label": "Escudo"
+        },
+        {
+          "char": "☠",
+          "label": "Calavera y huesos cruzados"
+        },
+        {
+          "char": "❤",
+          "label": "Corazón negro grueso (vida)"
+        },
+        {
+          "char": "⚗",
+          "label": "Alambique (soporte para pociones)"
+        },
+        {
+          "char": "💎",
+          "label": "Gema (diamante)"
+        },
+        {
+          "char": "✦",
+          "label": "Estrella negra de cuatro puntas (destello de EXP)"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    },
+    {
+      "id": "arrows-markers",
+      "label": "Marcadores",
+      "h2": "Flechas, verificaciones y señales de advertencia",
+      "intro": "Flechas de puntero y marcas de estado para tutoriales, votaciones y anuncios de advertencia.",
+      "symbols": [
+        {
+          "char": "➤",
+          "label": "Punta de flecha negra hacia la derecha"
+        },
+        {
+          "char": "➜",
+          "label": "Flecha gruesa de punta redondeada hacia la derecha"
+        },
+        {
+          "char": "→",
+          "label": "Flecha hacia la derecha"
+        },
+        {
+          "char": "⇨",
+          "label": "Flecha blanca hacia la derecha"
+        },
+        {
+          "char": "☛",
+          "label": "Mano señalando a la derecha"
+        },
+        {
+          "char": "✔",
+          "label": "Marca de verificación gruesa"
+        },
+        {
+          "char": "✘",
+          "label": "Equis gruesa"
+        },
+        {
+          "char": "⚠",
+          "label": "Señal de advertencia"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-para-fortnite/",
+      "title": "Símbolos para Fortnite",
+      "desc": "Caracteres llamativos para nombres y glifos para etiquetas de clan en Fortnite."
+    },
+    {
+      "href": "/es/library/simbolos-roblox/",
+      "title": "Símbolos de Roblox",
+      "desc": "Caracteres para nombres de usuario y nombres en pantalla que funcionan en Roblox."
+    },
+    {
+      "href": "/library/box-drawing-symbols/",
+      "title": "Símbolos de marco",
+      "desc": "Todos los caracteres de línea, esquina y unión para armar marcos de texto."
+    },
+    {
+      "href": "/es/library/simbolos-geometricos/",
+      "title": "Símbolos geométricos",
+      "desc": "Cuadrados, triángulos y círculos para decorar el texto de forma limpia."
+    }
+  ]
+}

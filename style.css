@@ -3166,6 +3166,26 @@ button.clear-decoration {
   box-shadow: var(--shadow-soft);
 }
 
+/* Specimen chart — a rendered grid of the page's own symbols, sitting above
+   the footer. Unlike the hero banner above it this is content, not decoration:
+   it is the saveable/shareable version of what the page offers, and the one
+   artifact on the page that Google Images can actually index (live text can't
+   be). Deliberately lazy-loaded and below the fold — see
+   scripts/generate-specimen-art.py for why it must not carry fetchpriority. */
+.specimen-figure {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.specimen-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
 /* Reading-time / category meta row in the hero */
 .guide-meta {
   display: flex;
@@ -8785,3 +8805,10 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 /* Characters-to-words converter (/character-counter/characters-to-words/) */
 .ctw-input { min-height: auto; }
 .ctw-picks { margin-top: 0.75rem; }
+
+/* Graffiti name-style designer (printables/graffiti-letters/ + siblings) */
+.pt-name-designer { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; margin: 0.65rem 0 0.25rem; }
+.pt-name-designer-label { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); }
+.pt-name-color { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.pt-name-color input[type="color"] { width: 34px; height: 26px; padding: 0; border: 1px solid var(--border-light); border-radius: 6px; background: transparent; cursor: pointer; }
+.pt-name-solid-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; }

@@ -1,0 +1,161 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-joyas",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-joyas/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/jewelry-gem-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-joyas/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/jewelry-gem-emojis/" }
+  ],
+  "title": "Emojis de Joyas y Gemas: Copiar y Pegar 💎 💍 Combos de Brillo",
+  "meta_description": "Copia y pega emojis de joyas y gemas — diamantes 💎, anillos 💍, coronas 👑, cristales 🔮 y combos brillantes para biografías. Haz clic para copiar.",
+  "breadcrumb": "Emojis de Joyas y Gemas",
+  "hero_h1": "Emojis de Joyas y Gemas",
+  "hero_tagline": "Diamantes, anillos, coronas y cristales, con combos de brillo listos para usar. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de joyas dan brillo instantáneo a biografías, publicaciones y nombres de usuario — un diamante para el toque de lujo, un anillo para el post de compromiso, una bola de cristal para la estética brujita. Esta colección reúne en un solo lugar las gemas, el bling y los destellos, incluidas las figuras geométricas de rombo, más combos de un clic para temas de princesa, disco y estética de lujo.",
+  "sections": [
+    {
+      "id": "gems-crystals",
+      "label": "Gemas",
+      "h2": "Emojis de Gemas y Cristales",
+      "intro": "Piedras preciosas, cristales y amuletos.",
+      "symbols": [
+        { "char": "💎", "label": "Piedra preciosa" },
+        { "char": "🔮", "label": "Bola de cristal" },
+        { "char": "🪩", "label": "Bola de espejos" },
+        { "char": "🦪", "label": "Ostra" },
+        { "char": "🧿", "label": "Amuleto contra el mal de ojo" },
+        { "char": "📿", "label": "Rosario" }
+      ]
+    },
+    {
+      "id": "rings-royalty",
+      "label": "Anillos y Coronas",
+      "h2": "Emojis de Anillos, Coronas y Tesoros",
+      "intro": "Anillos, coronas y objetos preciados.",
+      "symbols": [
+        { "char": "💍", "label": "Anillo" },
+        { "char": "👑", "label": "Corona" },
+        { "char": "🪙", "label": "Moneda" },
+        { "char": "⌚", "label": "Reloj" },
+        { "char": "🪞", "label": "Espejo" }
+      ]
+    },
+    {
+      "id": "diamond-shapes",
+      "label": "Figuras de Rombo",
+      "h2": "Símbolos de Rombo",
+      "intro": "Caracteres geométricos de rombo para decorar nombres y separadores.",
+      "symbols": [
+        { "char": "💠", "label": "Rombo con punto" },
+        { "char": "🔷", "label": "Rombo azul grande" },
+        { "char": "🔶", "label": "Rombo naranja grande" },
+        { "char": "🔹", "label": "Rombo azul pequeño" },
+        { "char": "🔸", "label": "Rombo naranja pequeño" },
+        { "char": "♦️", "label": "Palo de diamantes" },
+        { "char": "◆", "label": "Rombo negro" },
+        { "char": "◇", "label": "Rombo blanco" }
+      ]
+    },
+    {
+      "id": "sparkle-shine",
+      "label": "Destellos",
+      "h2": "Emojis de Destellos y Brillo",
+      "intro": "Destellos y estrellas para acompañar cualquier combo de brillo.",
+      "symbols": [
+        { "char": "✨", "label": "Destellos" },
+        { "char": "💫", "label": "Mareo" },
+        { "char": "🌟", "label": "Estrella brillante" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🌠", "label": "Estrella fugaz" },
+        { "char": "❇️", "label": "Destello" }
+      ]
+    },
+    {
+      "id": "luxury-life",
+      "label": "Lujo",
+      "h2": "Emojis de Estilo de Vida de Lujo",
+      "intro": "Champán, compras y dinero para publicaciones de estética de lujo.",
+      "symbols": [
+        { "char": "🥂", "label": "Copas brindando" },
+        { "char": "🍾", "label": "Botella descorchada" },
+        { "char": "🛍️", "label": "Bolsas de compras" },
+        { "char": "💸", "label": "Billete con alas" },
+        { "char": "💰", "label": "Bolsa de dinero" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Brillo de Diamante",
+      "flags": ["💎", "✨", "💍", "🤍", "🥂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estética de Princesa",
+      "flags": ["👑", "💍", "🎀", "🩰", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bruja de Cristales",
+      "flags": ["🔮", "💎", "🌙", "🧿", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glam de Disco",
+      "flags": ["🪩", "✨", "💃", "🥂", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sirena de Perlas",
+      "flags": ["🦪", "🐚", "🧜‍♀️", "💎", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estética de Lujo",
+      "flags": ["💰", "💸", "💎", "🛍️", "🍾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Brillo de Compromiso",
+      "flags": ["💍", "🥂", "🍾", "💐", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "blingSetsContainer",
+  "collection_section": {
+    "id": "bling-sets",
+    "label": "Sets de Brillo",
+    "h2": "Combos de Brillo",
+    "intro": "Copia un combo completo de joyas y gemas con un clic para biografías y publicaciones."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-boda/",
+      "title": "Emojis de Boda y Aniversario",
+      "desc": "Combos de anillo, campana y pareja para los días importantes."
+    },
+    {
+      "href": "/es/library/simbolos-de-corona/",
+      "title": "Símbolos de Corona y Realeza",
+      "desc": "Caracteres de corona y adornos reales para nombres."
+    },
+    {
+      "href": "/es/library/emojis-de-dinero/",
+      "title": "Emojis de Dinero",
+      "desc": "Emojis y combos de efectivo, monedas y bolsas de dinero."
+    },
+    {
+      "href": "/es/library/simbolos-de-brillo/",
+      "title": "Símbolos de Destellos",
+      "desc": "Destellos, glitter y caracteres de brillo para texto aesthetic."
+    }
+  ]
+}

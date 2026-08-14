@@ -1,0 +1,289 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-transito",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-transito/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/traffic-road-sign-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-transito/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/traffic-road-sign-symbols/"
+    }
+  ],
+  "title": "Símbolos de Tránsito y Señales Viales: Copiar y Pegar",
+  "meta_description": "Explora y copia símbolos de tránsito y señales viales: semáforos, prohibiciones, íconos peatonales y emojis de carretera. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Símbolos de Tránsito y Señales Viales",
+  "hero_h1": "Símbolos de Tránsito y Señales Viales",
+  "hero_tagline": "Símbolos Unicode y emojis relacionados con el tránsito, las señales viales y la infraestructura de transporte. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Las señales viales reales son imágenes, no caracteres Unicode. Aun así, Unicode y los emojis incluyen todo un conjunto de símbolos de tránsito que transmiten un significado parecido: semáforos, círculos de prohibición, íconos de peatones y mucho más. Esta biblioteca reúne los mejores caracteres disponibles relacionados con el tránsito y las señales de la vía.",
+  "sections": [
+    {
+      "id": "traffic-signals",
+      "label": "",
+      "h2": "Símbolos de Semáforo",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚦",
+          "label": "Semáforo Vertical"
+        },
+        {
+          "char": "🚥",
+          "label": "Semáforo Horizontal"
+        },
+        {
+          "char": "🟢",
+          "label": "Círculo Verde"
+        },
+        {
+          "char": "🟡",
+          "label": "Círculo Amarillo"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo Rojo"
+        },
+        {
+          "char": "⚠",
+          "label": "Señal de Advertencia"
+        },
+        {
+          "char": "⛔",
+          "label": "Prohibido el Paso"
+        }
+      ]
+    },
+    {
+      "id": "stoplight-sequence",
+      "label": "",
+      "h2": "Secuencia del Semáforo (🔴 🟡 🟢)",
+      "intro": "La secuencia clásica de alto, precaución y siga que se usa en todo el mundo para regular el tránsito, junto con el propio glifo del semáforo.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Rojo — Alto"
+        },
+        {
+          "char": "🟡",
+          "label": "Amarillo — Precaución"
+        },
+        {
+          "char": "🟢",
+          "label": "Verde — Siga"
+        },
+        {
+          "char": "🚦",
+          "label": "Semáforo"
+        }
+      ]
+    },
+    {
+      "id": "prohibition-signs",
+      "label": "",
+      "h2": "Señales de Prohibición y Restricción",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚫",
+          "label": "Prohibido"
+        },
+        {
+          "char": "🚳",
+          "label": "Prohibido Bicicletas"
+        },
+        {
+          "char": "🚭",
+          "label": "Prohibido Fumar"
+        },
+        {
+          "char": "🚯",
+          "label": "Prohibido Tirar Basura"
+        },
+        {
+          "char": "🚱",
+          "label": "Agua No Potable"
+        },
+        {
+          "char": "🚷",
+          "label": "Prohibido el Paso a Peatones"
+        },
+        {
+          "char": "📵",
+          "label": "Prohibido Usar Celulares"
+        },
+        {
+          "char": "🔞",
+          "label": "Prohibido Menores de 18"
+        },
+        {
+          "char": "Ø",
+          "label": "Cero Barrado (No)"
+        }
+      ]
+    },
+    {
+      "id": "pedestrian-vehicle",
+      "label": "",
+      "h2": "Símbolos de Peatones y Vehículos",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚶",
+          "label": "Persona Caminando"
+        },
+        {
+          "char": "🏃",
+          "label": "Persona Corriendo"
+        },
+        {
+          "char": "🚴",
+          "label": "Persona en Bicicleta"
+        },
+        {
+          "char": "🚵",
+          "label": "Persona en Bicicleta de Montaña"
+        },
+        {
+          "char": "🚗",
+          "label": "Automóvil"
+        },
+        {
+          "char": "🚕",
+          "label": "Taxi"
+        },
+        {
+          "char": "🚌",
+          "label": "Autobús"
+        },
+        {
+          "char": "🚚",
+          "label": "Camión de Reparto"
+        },
+        {
+          "char": "🚑",
+          "label": "Ambulancia"
+        },
+        {
+          "char": "🚒",
+          "label": "Camión de Bomberos"
+        }
+      ]
+    },
+    {
+      "id": "facilities-services",
+      "label": "",
+      "h2": "Símbolos de Servicios e Instalaciones Viales",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🅿",
+          "label": "Estacionamiento"
+        },
+        {
+          "char": "⛽",
+          "label": "Surtidor de Gasolina"
+        },
+        {
+          "char": "🚧",
+          "label": "Señal de Obras"
+        },
+        {
+          "char": "🚨",
+          "label": "Luz de Patrulla"
+        },
+        {
+          "char": "🚩",
+          "label": "Bandera Roja"
+        },
+        {
+          "char": "🚪",
+          "label": "Puerta"
+        },
+        {
+          "char": "🏁",
+          "label": "Bandera a Cuadros"
+        }
+      ]
+    },
+    {
+      "id": "warnings",
+      "label": "",
+      "h2": "Símbolos de Advertencia y Peligro",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "Advertencia"
+        },
+        {
+          "char": "☠",
+          "label": "Calavera y Huesos Cruzados"
+        },
+        {
+          "char": "☢",
+          "label": "Radiactivo"
+        },
+        {
+          "char": "☣",
+          "label": "Riesgo Biológico"
+        },
+        {
+          "char": "💣",
+          "label": "Bomba"
+        },
+        {
+          "char": "⚡",
+          "label": "Alto Voltaje"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "⚠️",
+          "label": "Advertencia"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-transporte/",
+      "title": "Símbolos de Transporte y Mapas",
+      "desc": "Íconos de transporte terrestre, ferroviario, aéreo y marítimo, más símbolos de mapas."
+    },
+    {
+      "href": "/es/simbolos-de-flechas/",
+      "title": "Símbolos de Flechas",
+      "desc": "Flechas direccionales para dar formato y para navegar."
+    },
+    {
+      "href": "/es/library/simbolos-geometricos/",
+      "title": "Símbolos Geométricos",
+      "desc": "Círculos, cuadrados y triángulos, incluidas las formas de las señales."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Explorador de Emojis de Banderas",
+      "desc": "Los 195 emojis de banderas de países organizados por región."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-silla-de-ruedas/",
+      "title": "Símbolo de Silla de Ruedas",
+      "desc": "El Símbolo Internacional de Accesibilidad (♿), azul y blanco, diseñado en 1968."
+    }
+  ]
+}

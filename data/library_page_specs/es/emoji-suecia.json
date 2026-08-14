@@ -1,0 +1,91 @@
+{
+  "lang": "es",
+  "slug": "emoji-suecia",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-suecia/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/sweden-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-suecia/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/sweden-emoji-combos/" }
+  ],
+  "title": "Emoji Suecia 🇸🇪⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Suecia 🇸🇪⚽: los colores del Blågult y sets de fútbol para biografías. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Suecia",
+  "hero_h1": "Combos de Emoji Suecia",
+  "hero_tagline": "Los colores del Blågult y sets de emojis de fútbol para aficionados de Suecia: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Suecia 🇸🇪 se combina con la pelota ⚽ y con los colores del Blågult. Heja Sverige: azul y amarillo para siempre. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Suecia",
+      "h2": "Emojis de Suecia",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇸🇪", "label": "Bandera de Suecia" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "💛", "label": "Corazón amarillo" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo Sueco",
+      "intro": "El azul y amarillo del Blågult.",
+      "symbols": [
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "💛", "label": "Corazón amarillo" },
+        { "char": "👑", "label": "Corona" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Blagult", "flags": ["🇸🇪", "⚽", "🏆"], "defaultFormat": "inline" },
+    { "name": "Heja Sverige", "flags": ["🇸🇪", "⚽", "🔥"], "defaultFormat": "inline" },
+    { "name": "Azul y Amarillo", "flags": ["🔵", "🟡", "⚽"], "defaultFormat": "inline" },
+    { "name": "Orgullo Sueco", "flags": ["🇸🇪", "⚽", "💪"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "swedenCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Suecia",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gheventste" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvheventste" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowheventste" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsheventste" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsheventste)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowheventste)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvheventste)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <line x1="60" y1="150" x2="300" y2="150" stroke="#64748b" stroke-width="4"/>
+    <line x1="60" y1="200" x2="300" y2="200" stroke="#64748b" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="60" y1="250" x2="300" y2="250" stroke="#64748b" stroke-width="4"/>
+    <g transform="translate(230 130) rotate(35)">
+      <rect x="-12" y="-70" width="24" height="90" rx="4" fill="url(#gvheventste)"/>
+      <path d="M-12 -70 L12 -70 L0 -96 Z" fill="#1a1a2e"/>
+      <rect x="-12" y="18" width="24" height="16" fill="#fbbf24"/>
+    </g></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <line x1="60" y1="150" x2="300" y2="150" stroke="#64748b" stroke-width="4"/>
+    <line x1="60" y1="200" x2="300" y2="200" stroke="#64748b" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="60" y1="250" x2="300" y2="250" stroke="#64748b" stroke-width="4"/>
+    <g transform="translate(230 130) rotate(35)">
+      <rect x="-12" y="-70" width="24" height="90" rx="4" fill="url(#gvheventste)"/>
+      <path d="M-12 -70 L12 -70 L0 -96 Z" fill="#1a1a2e"/>
+      <rect x="-12" y="18" width="24" height="16" fill="#fbbf24"/>
+    </g></g>
+</svg>

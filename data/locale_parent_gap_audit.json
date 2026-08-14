@@ -1019,7 +1019,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "answers/*",
@@ -1034,7 +1034,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded 'only 3 German rows, none strong' and stated explicitly that this was 'not a claim that German demand is absent — it is genuinely unaudited at the required strength'.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)",
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)",
       "supersedes": "answers/* x de gate-fail dated 2026-07-26"
     },
     {
@@ -1050,7 +1050,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. ",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "answers/*",
@@ -1065,7 +1065,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. Supersedes the 2026-07-26 gate-fail for this cell, which recorded ZERO Korean rows in the 248-row forum corpus — the check could not be run at all. This override therefore rests on user judgement alone, with no supporting demand evidence in either direction. The weakest of the seven; flagged as such to the user before it was authorised.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)",
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)",
       "supersedes": "answers/* x ko gate-fail dated 2026-07-26"
     },
     {
@@ -1081,7 +1081,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "symbol/*",
@@ -1096,7 +1096,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — zh-tw is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "symbol/*",
@@ -1111,7 +1111,7 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
     },
     {
       "pattern": "library/*",
@@ -1126,7 +1126,58 @@
       "evidence": "USER DECISION, 2026-08-07, recorded verbatim in substance: \"A page like this is required in all languages and there is a high chance of demand and ranking so we built.\" This is a judgement that the blank/invisible-name answer is a universally-required page type, NOT an instrument result. Every instrument is null: Semrush was out of API units for the whole session and no weaker proxy was substituted. The registry decision (gated parent for answers/*; Tier 3 hold-stub for ms and zh-tw; explicit hold for vi) was presented in full BEFORE the build, as were the prior gate-fail records, and the build was directed with that knowledge — a knowingly overridden hold is a decision, a silently ignored one is a violation. Locale tiers and vi's hold flag are LEFT UNCHANGED. BRIDGE, NOT A PASS: complete only when instruments are backfilled with real numbers or a dated veto is recorded. No prior entry — ms is Tier 3 (hold-stub), so this overrides a locale tier, not a recorded demand failure. ms already had a live answers/* page with no library or symbol parent beneath it; these pages close that orphan.",
       "nextRecheck": "2026-09-07",
       "recordedBy": "claude-session-invisible-text-demand-w9qcnv-user-directed",
-      "reviewRegisterItem": "lab docs/review-register.md — invisible-text override backfill (2026-09-07)"
+      "scheduledRecheck": "invisible-text override backfill (2026-09-07)"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "id",
+      "checkedDate": "2026-08-14",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 73070,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized on 2026-08-12 (\"Gate Pass Approved\") AND independently cleared on real instruments — unlike the all-null vi authorization precedent, this entry does not rest on the authorization alone. KEYWORD VOLUME: owner-supplied Semrush ID export (359-keyword typography-native cluster) maps 64,850/mo onto EIGHT live EN printables parents, every mapped head term at KD 23-34: cursive-alphabet 29,260/mo (huruf sambung 14,800 KD34), block-letters 10,110/mo (huruf balok 6,600 KD31), handwriting-worksheet-generator 9,980/mo (menebalkan huruf 2,400 KD32), calligraphy-alphabet 5,380/mo (huruf kaligrafi 1,600 KD32), alphabet-coloring-pages 4,880/mo, bubble-letters 4,870/mo (tulisan bubble 1,600 KD34), dot-to-dot-alphabet 350/mo, name-tracing 20/mo. That is far above the gated-tail four-figure/mo threshold. COMPETITOR FOOTPRINT: lembarkerjaanak.com, semestaibu.com, educastudio.com and kelanakids.com all rank for this cluster, but every one ships STATIC PDF downloads or paid bundles - none is a generator, while the volume is for name/letter-personalised output they structurally do not serve. ENGINE RISK NIL: Indonesian is plain 26-letter Latin with no diacritics, so unlike the pl (a c e l n o s z z) and de (Grundschrift) cases the 2026-07-10 i18n pass flagged, no glyph work is required. SUPERSEDES the 2026-07-10 printables-i18n-demand pass's `weak (10)` Indonesian rating, which that doc's own section 4 conceded was made with no volume data at all and asked to be re-checked before any build approval. enGscImpressionsFromLocale left null: the owner reports the pages are already ranking, but no first-party GSC figure has been supplied and none exists in internal records - it is recorded as not-yet-evidenced rather than assumed, and does not affect the pass, which clears on the other two instruments independently.  || SECOND-PASS BACKFILL 2026-08-14 (owner-supplied 17,109-keyword ID Semrush export; 15,750 after dedupe, 320,810/mo total, 81% of rows carrying no volume so every figure below is a FLOOR, not a ceiling). Volume field raised 64,850 -> 73,070, which composites two instruments and is recorded as such rather than re-derived: 64,480/mo across the six spokes the first-pass 359-keyword mapping authorized, plus 8,590/mo across four more this export surfaced (happy-birthday-in-cursive 8,120 addressable inside a 13,710 raw cluster once translation-intent queries such as 'tulisan korea/arab/inggris selamat ulang tahun' are stripped; spanish-alphabet-chart 320; dot-to-dot-alphabet 80; cross-stitch-letters 70). All ten are now live under id/printables/. TWO PARENTS DROPPED ON INTENT, NOT SIZE - the finding worth carrying forward: banner-maker matches 29,680/mo and monogram-maker 17,870/mo, the two largest raw matches in the entire export, and both are dead. banner-maker's volume is led by 'buat banner terdekat' / 'pembuatan banner terdekat' / 'tempat buat banner terdekat' - people looking for a LOCAL VINYL PRINT SHOP - leaving 120/mo of actual printable-banner intent. monogram-maker's is 'monogram logo' / 'logo monogram' / 'logo monogram 3 huruf' - LOGO DESIGN, a Canva/Looka SERP - leaving 150/mo for printable initials. More volume would not change either verdict. This is the mirror of the first pass's error: that one read absence from an export as absence of demand and nearly dropped the #2 and #4 clusters (block-letters 10,110, calligraphy-alphabet 5,380); this one would have read presence as demand and shipped two pages against the wrong SERP. Neither volume nor its absence is a verdict on its own. Also confirmed negligible: name-tracing 20/mo, sight-word-tracing ~0 ('sight words' is an English-literacy concept), name-puzzle-maker 0 matches, coloring-page-maker 0 non-letter matches with all letter-colouring demand already served by the built mewarnai-huruf. enGscImpressionsFromLocale REMAINS NULL - the pages are days old and have no GSC history yet; per CLAUDE.md's 'all-instruments-null authorization is a bridge' rule this instrument is still owed, and a GSC pull filtered to Indonesia x /printables/* is the check that would settle both the dropped parents and the thin ones on first-party data. Full working: the lab repo's id-printables reconciliation brief, second-pass section.",
+      "recordedBy": "claude-session-tier-1-2-locale-opportunities-711ah3-user-authorized (backfilled 2026-08-14, user-directed)"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "es",
+      "checkedDate": "2026-08-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 973580,
+        "enGscImpressionsFromLocale": 79
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-requested build on 2026-08-12 (\"create the missing pages based on the volume\") AND independently cleared on real instruments — same shape as the id/printables entry above, not an authorization-only pass. KEYWORD VOLUME: owner-supplied Semrush bulk exports across 10 Spanish-language markets (MX 6.04M, CO 1.29M, AR 1.26M, PE 1.01M, CL 919k, EC 820k, VE 591k, US 585k, ES 529k, GT 264k total across all seeds). The typography-native subset that maps onto live EN printables parents is 1,109,720/mo: graffiti-letters 502,120 (letras graffiti 130,600 KD35 + letras grafiti 124,510 KD26 — NEW EN parent built in this same change), calligraphy-alphabet 325,000 (caligrafia 270,640 KD42), block-letters 156,050 (moldes de letras 64,090 KD35), handwriting-worksheet-generator 66,830 (caligrafia para ninos 52,220 KD23), monogram-maker 36,890 (monograma 17,840 KD38), cross-stitch-letters 22,430 (letras punto de cruz 8,980 KD23). EXCLUDED as out of scope per CLAUDE.md's printables typography-native boundary: 'dibujos/imagenes para colorear|pintar' (~1.44M/mo) — generic drawings, not letterforms. DATA CAVEAT recorded rather than smoothed over: the per-letter family ('letra X para imprimir') reads 292,060/mo raw, but 'letra a', 'letra s' and 'letra o' carry byte-identical per-country volumes (AR 18,100 / PE 14,800 / EC 12,100 / CL 8,100 / CO 5,400 / MX 5,400 / GT 2,400 / VE 1,000) — a Semrush aliasing artifact, not three real 67k keywords. Alias-corrected the family is ~104,210/mo. Per-letter pages are NOT part of this entry's scope. EN GSC IMPRESSIONS: first-party GSC export (last 3 months to 2026-08-12, filtered to /es/imprimibles/) shows the existing 5-page ES cluster drawing only 79 impressions / 1 click, on 13 of 91 days, first impression 2026-07-13. Positions are page-one (3.67-7.62) but exclusively on ultra-long-tail queries ('letra burbuja para imprimir', 'letra h cursiva para imprimir'); the cluster draws zero impressions on every head term above. That is a coverage gap, not a ranking or CTR problem — the sample is far too small to build a position-to-CTR curve from, so no CTR-based claim is made here per the raw-CTR rule. COMPETITOR FOOTPRINT: yes — every mapped head term returns Image/Image pack/Video SERPs dominated by dedicated printable-alphabet sites. || CORRECTION 2026-08-12 (same day, arithmetic error in the original entry): the 1,109,720 figure was computed by summing every export row per keyword, but 25 of the 411 keywords appear in TWO seed files each, so those were counted twice — exactly 2x on each. Deduplicating by (keyword, country) the mapped total is 973,580. Four cluster figures in this entry were affected: calligraphy-alphabet 325,000 -> 175,390, handwriting-worksheet-generator 66,830 -> 40,720, numbers 30,560 -> 20,560, and 'caligrafía para niños' 52,220 -> 26,110. UNAFFECTED and unchanged: graffiti-letters 502,120, block-letters 156,050, monogram-maker 36,890, cross-stitch-letters 22,430. The verdict does not change — every cluster remains large and the gate still passes on real instruments — but the number recorded here is now the deduplicated one. Method note for any future pass reading these exports: sum per (keyword, country) taking the max, never per row."
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "id",
+      "checkedDate": "2026-08-13",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 19940,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Graffiti-specific entry for id/printables/grafiti-nama/ (translation of printables/graffiti-letters/, the EN parent merged to main 2026-08-13 via PR #746). Distinct from the 2026-08-12 printables/*-x-id gate-pass (64,850/mo across 8 parents) because graffiti was not one of that entry's mapped parents. USER PROMOTION: owner directive 2026-08-13 ('Graffiti has come multiple times on our radar and now is the time to take the action... Execute the plan'), pasting register rows EP-001/EP-018 (docs/en-parent-required-register.md, lab repo branch claude/lucid-davinci-wqt5bt). KEYWORD VOLUME: ~19,940/mo, name-led cluster - grafiti nama 9,900 + gambar/tulisan/huruf grafiti nama + grafiti nama sendiri 3d (Semrush id pull 2026-07-23, recorded in docs/nama-indonesia-utg-scope-2026-07-23.md). PROVENANCE CAVEAT, stated not smoothed: that pull's raw CSV was never committed to the lab repo's data/ tree, and the doc's 2026-08-05 correction pass explicitly did not re-verify this item - the figure is register-recorded prose, not a re-checkable export. Re-look scheduled with the 2026-10-11 graffiti/ES-printables co-read (lab review-register). COMPETITOR FOOTPRINT: yes - data/id_semrush_keyword_gap_ultratextgen_vs_competitors_2026-07-23.csv (lab repo) shows piliapp and LingoJam ranking Unicode copy-paste pages against 8 grafiti-family queries (40-260/mo each, e.g. huruf grafiti tegak bersambung 210/mo at pos 18/24), on SERPs carrying image packs/video/AI overviews - i.e. served by mismatched page types, none a generator. First-party corroboration: GSC 2026-08-01 shows 'nama tiktok grafiti' impressions landing on id/usecase/nama-tiktok-keren/. EN GSC IMPRESSIONS: null - the EN parent is 1 day old on main, the instrument cannot read yet. Ownership check: no existing id/ page targets grafiti (id/printables/ has 10 pages, none graffiti; the nama-tiktok-keren page serves TikTok-name intent, a different job).",
+      "recordedBy": "claude-session-graffiti-generator-strategy-nbg4r6-user-directed"
+    },
+    {
+      "pattern": "library/keyboard-symbols",
+      "locale": "ar",
+      "checkedDate": "2026-08-14",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 530,
+        "enGscImpressionsFromLocale": 0
+      },
+      "verdict": "veto",
+      "evidence": "VETO on intent mismatch plus two existing ar claimants — NOT on volume. Volume exists: رموز الكيبورد 480/mo (KD 29) + رموز لوحة المفاتيح 50/mo (KD --) = 530/mo, operator-supplied Semrush db=sa bulk export, 2026-08-14 (Semrush's `ar` code is Argentina; there is no pan-Arab database, so `sa` is the correct market here). The veto is that the EN parent does not do the job those queries ask for. library/keyboard-symbols/ is about Mac/PC modifier-key GLYPHS — its H2s are 'Mac Modifier Keys', 'Editing & Navigation Keys', 'Arrow & Special Keys', and its title leads with the key symbols themselves. Its six live locale siblings all translate that same scope faithfully (de/library/tastatur-symbole 'Mac-Modifiertasten'; ja/library/keyboard-kigou 'Mac の修飾キー'). The Arabic queries mean the opposite thing: 'symbols you cannot type FROM the keyboard', i.e. special characters. CANNIBALISATION: two ar pages already claim that job. ar/library/special-characters/ carries the H2 'رموز غير موجودة في لوحة المفاتيح' (symbols not on the keyboard) and is the locale's strongest page at 57,651 impressions / 1,783 clicks / position 6.31 over 3 months; ar/library/alt-codes/ carries 'رموز لوحة المفاتيح' in its own <title>. Translating the Mac-key page onto this term would both serve the wrong job and put a third claimant on a term the locale's best page already holds. FIRST-PARTY CHECK: GSC 3-month /ar/ pull returns no meaningful impressions on كيبورد / لوحة المفاتيح beyond four incidental rows (max 23 impressions, 0 clicks), so nothing is being starved by the absence. CARRY-FORWARD, not actioned here: the same mismatch may affect the six shipped locale siblings, whose 9,710/mo cluster figure came from terms that may likewise mean 'special characters' in those markets. Flagged for a separate pass; this entry does not touch them. USER DECISION 2026-08-14: veto recorded at the owner's explicit direction after the evidence was presented.",
+      "nextRecheck": "2026-11-14"
     },
     {
       "pattern": "usecase/*",

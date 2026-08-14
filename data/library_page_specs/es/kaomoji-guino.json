@@ -1,0 +1,153 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-guino",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-guino/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/wink-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji-guino/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/wink-kaomoji/"
+    }
+  ],
+  "title": "Kaomoji de Guiño: Copiar y Pegar Caritas que Guiñan",
+  "meta_description": "Explora y copia kaomoji de guiño —también escritos kamoji—: caritas de texto japonesas pícaras, coquetas y tiernas. Haz clic para copiar al instante.",
+  "breadcrumb": "Kaomoji de Guiño",
+  "hero_h1": "Kaomoji de Guiño",
+  "hero_tagline": "Copia y pega kaomoji de guiño — caritas de texto japonesas pícaras, con un ojo cerrado. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji de guiño (también escritos kamoji) son caritas de texto al estilo japonés con un ojo cerrado en un guiño juguetón: coquetas, pícaras o simplemente tiernas. Un kaomoji guiño como (^_-) o (･ω<)☆ es texto Unicode normal, así que se pega sin problemas en biografías, publicaciones, comentarios y chats. Explora las caritas por estilo abajo y haz clic en cualquiera para copiarla al instante. Ya busques \"kaomoji guiño\" o \"guiño kaomoji\", todas las caritas de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "playful",
+      "label": "Juguetones",
+      "h2": "Kaomoji de Guiño Juguetones",
+      "intro": "Guiños relajados y amistosos.",
+      "symbols": [
+        {
+          "char": "(^_-)",
+          "label": "Guiño"
+        },
+        {
+          "char": "(^_-)-☆",
+          "label": "Guiño con Estrella"
+        },
+        {
+          "char": "(・ω<)",
+          "label": "Guiño Pícaro"
+        },
+        {
+          "char": "(･ω<)☆",
+          "label": "Guiño con Destello"
+        },
+        {
+          "char": "(>ω^)",
+          "label": "Guiño de Lado"
+        },
+        {
+          "char": "(￣▽￣)ノ",
+          "label": "Guiño y Saludo"
+        }
+      ]
+    },
+    {
+      "id": "cute",
+      "label": "Guiño Tierno",
+      "h2": "Kaomoji de Guiño Tiernos",
+      "intro": "Guiños dulces y con brillitos.",
+      "symbols": [
+        {
+          "char": "(｡•̀ᴗ-)✧",
+          "label": "Guiño Seguro"
+        },
+        {
+          "char": "(๑^ᴗ<๑)",
+          "label": "Guiño Dulce"
+        },
+        {
+          "char": "٩(^ᴗ<)۶",
+          "label": "Guiño Feliz"
+        },
+        {
+          "char": "( ⓛ ω ⓛ *)",
+          "label": "Guiño Tímido"
+        },
+        {
+          "char": "(ᵔ ᵕ ˂ )",
+          "label": "Guiño Suave"
+        },
+        {
+          "char": "~(>ω^)~",
+          "label": "Guiño Juguetón"
+        }
+      ]
+    },
+    {
+      "id": "flirty",
+      "label": "Coquetos",
+      "h2": "Kaomoji de Guiño Coquetos",
+      "intro": "Guiños encantadores y con onda de coqueteo.",
+      "symbols": [
+        {
+          "char": "(￣ε￣＠)",
+          "label": "Guiño Coqueto"
+        },
+        {
+          "char": "( ˘ ³˘)~♡",
+          "label": "Guiño y Beso"
+        },
+        {
+          "char": "(｡•̀ᴗ-)~♡",
+          "label": "Encantador"
+        },
+        {
+          "char": "(＾꒳＾)",
+          "label": "Tímido"
+        },
+        {
+          "char": "(≖ᴗ≖)",
+          "label": "Guiño Presumido"
+        },
+        {
+          "char": "( ･ㅂ･)و ̑̑",
+          "label": "Codazo Tierno"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Kaomoji y Caritas de Texto",
+      "desc": "El centro completo de kaomoji: todas las caritas japonesas en un solo lugar."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji Felices",
+      "desc": "Caritas de texto japonesas sonrientes y alegres."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita: mezcla ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/es/library/cute-kaomoji/",
+      "title": "Kaomoji Tiernos",
+      "desc": "Caritas kawaii con ojos brillantes y mejillas sonrojadas."
+    }
+  ]
+}

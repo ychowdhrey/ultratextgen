@@ -1,0 +1,147 @@
+{
+  "lang": "es",
+  "slug": "emoji-pensando",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-pensando/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/thinking-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-pensando/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/thinking-emoji/" }
+  ],
+  "title": "Emoji Pensando y Kaomoji: Copiar y Pegar 🤔💭 Combos de Duda",
+  "meta_description": "Emoji pensando 🤔 🧐 🤨, combos de duda y de hombros encogidos, y kaomoji como (・_・?) para chats y comentarios. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Pensando y Kaomoji",
+  "hero_h1": "Emoji Pensando y Kaomoji",
+  "hero_tagline": "La cara pensativa 🤔, las miradas escépticas, los hombros encogidos y los kaomoji que se quedan dudando — cada matiz del «mmm» y del «tal vez». Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji pensando 🤔 es la forma abreviada de decir «mmm, déjame pensarlo»: mano en el mentón, ceja levantada y veredicto todavía pendiente. Esta página reúne todo el rango de la duda: la mirada escrutadora de 🧐, la ceja alzada de 🤨, el sincero 🤷 para cuando de verdad no tienes idea, y el globo de pensamiento 💭 junto al 🧠 para los momentos de puro cerebro. Cuando ningún emoji transmite exactamente lo que quieres decir, los kaomoji clásicos como (・_・?) y ¯\\_(ツ)_/¯ se pegan en cualquier lugar donde funcione el texto plano. Toma una carita suelta o copia un combo listo para chats, comentarios y respuestas.",
+  "sections": [
+    {
+      "id": "core-thinking",
+      "label": "La Cara Pensativa",
+      "h2": "El Emoji de Cara Pensativa",
+      "intro": "El emoji al que todos recurren cuando algo merece pensarse dos veces.",
+      "symbols": [
+        { "char": "🤔", "label": "Cara pensativa" }
+      ]
+    },
+    {
+      "id": "skeptical-scrutinizing",
+      "label": "Escépticos",
+      "h2": "Caras Escépticas y Analíticas",
+      "intro": "Ojos entrecerrados y cejas levantadas para cuando la historia no te termina de convencer.",
+      "symbols": [
+        { "char": "🧐", "label": "Cara con monóculo" },
+        { "char": "🤨", "label": "Cara con ceja levantada" },
+        { "char": "🫤", "label": "Cara con boca torcida" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "🙄", "label": "Cara con ojos en blanco" }
+      ]
+    },
+    {
+      "id": "shrugging-unsure",
+      "label": "Dudas",
+      "h2": "Emojis de Hombros Encogidos y Duda",
+      "intro": "Manos abiertas y globos de pensamiento para un sincero «de verdad no sé».",
+      "symbols": [
+        { "char": "🤷", "label": "Persona encogiéndose de hombros" },
+        { "char": "🤷‍♂️", "label": "Hombre encogiéndose de hombros" },
+        { "char": "🤷‍♀️", "label": "Mujer encogiéndose de hombros" },
+        { "char": "💭", "label": "Globo de pensamiento" },
+        { "char": "🧠", "label": "Cerebro" }
+      ]
+    },
+    {
+      "id": "thinking-kaomoji",
+      "label": "Kaomoji Pensativos",
+      "h2": "Kaomoji Pensativos y Caras de Texto",
+      "intro": "Caras de texto al estilo japonés que dudan, sonríen con picardía y se encogen de hombros en texto plano.",
+      "symbols": [
+        { "char": "(・_・?)", "label": "Kaomoji con duda curiosa" },
+        { "char": "(¬‿¬)", "label": "Kaomoji de sonrisa cómplice" },
+        { "char": "ヽ(´ー｀)ノ", "label": "Kaomoji despreocupado" },
+        { "char": "(￣～￣;)", "label": "Kaomoji inseguro" },
+        { "char": "(・∀・)", "label": "Kaomoji que lo está considerando" },
+        { "char": "( ˘ ³˘)?", "label": "Kaomoji desconcertado" },
+        { "char": "¯\\_(ツ)_/¯", "label": "Kaomoji de hombros encogidos" },
+        { "char": "(๑•́ ₃ •̀๑)", "label": "Kaomoji pensativo con puchero" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Déjame Pensarlo",
+      "flags": ["🤔", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Momento de Puro Cerebro",
+      "flags": ["🤔", "🧠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No Me Convence",
+      "flags": ["🤔", "🤷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mirada Escéptica",
+      "flags": ["🧐", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ni Idea",
+      "flags": ["🤷", "🤷‍♂️", "🤷‍♀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pensamientos Profundos",
+      "flags": ["🤔", "💭", "🧠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sospechoso pero Interesante",
+      "flags": ["🧐", "🤔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Me Da Igual",
+      "flags": ["🤷", "¯\\_(ツ)_/¯"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "thinkingSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos del Emoji Pensando",
+    "intro": "Copia un combo pensativo completo con un clic, desde un «mmm» rápido hasta el modo cerebro al máximo."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las caritas y emojis de rostro en una sola cuadrícula para explorar."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caras de Texto y Kaomoji",
+      "desc": "La biblioteca completa de kaomoji: felices, escépticos y todo lo que hay en medio."
+    },
+    {
+      "href": "/es/library/emoji-side-eye/",
+      "title": "Emoji de Mirada de Reojo y Kaomoji",
+      "desc": "Miradas sospechosas y reacciones de reojo poco convencidas."
+    },
+    {
+      "href": "/es/library/emoji-nerd/",
+      "title": "Emoji Nerd y Kaomoji",
+      "desc": "Lentes, cerebros y combos de estudio para acompañar una cara pensativa."
+    }
+  ]
+}

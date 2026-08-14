@@ -24,6 +24,26 @@
   const SVGNS = "http://www.w3.org/2000/svg";
   const INK = "#1a1a2e";
   const FONT = "'Playfair Display', Georgia, 'Times New Roman', serif";
+
+  /* User-facing strings. printablesEngine.js carries a full I18N table; these
+     four do not warrant a second copy of that machinery, so a translated page
+     overrides them from its own config the same way it already supplies
+     UTG_PRINTABLE. Every key falls back to English. */
+  const CFG = window.UTG_MONOGRAM || {};
+  /* `||` would treat a deliberate empty string as "unset" and fall back to the
+     English default — which is exactly what a locale needs when its layout
+     names already read as a complete phrase and no trailing noun belongs. */
+  const pick = (v, dflt) => (v === undefined || v === null ? dflt : v);
+  const T = {
+    noun:        pick(CFG.noun, "Monogram"),
+    typeInitials:pick(CFG.typeInitials, "Type initials"),
+    preview:     pick(CFG.preview, "Monogram preview"),
+    layoutWord:  pick(CFG.layoutWord, "layout"),
+    /* state.layout holds the raw data-value ("classic"/"stacked"/"circle"), so
+       it must be mapped before it reaches a user-facing label. */
+    layoutNames: CFG.layoutNames || { classic: "classic", stacked: "stacked", circle: "circle" },
+    printTitle:  pick(CFG.printTitle, "Monogram — ")
+  };
   const WEIGHT = "700";
   const VB = 400; // SVG viewBox is 0 0 400 400
 
@@ -147,14 +167,14 @@
       role: "img"
     });
     const initials = (v.l + v.c + v.r);
-    svg.setAttribute("aria-label", initials ? ("Monogram " + initials + " — " + state.layout + " layout") : "Monogram preview");
+    svg.setAttribute("aria-label", initials ? (T.noun + " " + initials + " — " + ((T.layoutNames[state.layout] || state.layout) + " " + T.layoutWord).trim()) : T.preview);
 
     if (!v.l && !v.c && !v.r) {
       const hint = svgEl("text", {
         x: 200, y: 200, "text-anchor": "middle", "dominant-baseline": "central",
         "font-family": FONT, "font-size": 26, fill: "#9aa2b1"
       });
-      hint.textContent = "Type initials";
+      hint.textContent = T.typeInitials;
       svg.appendChild(hint);
       return svg;
     }
@@ -308,13 +328,13 @@
     const root = byId("pt-print-root");
     if (!root) { window.print(); return; }
     const v = vals();
-    const initials = (v.l + v.c + v.r) || "Monogram";
+    const initials = (v.l + v.c + v.r) || T.noun;
     root.innerHTML = "";
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
-    h.textContent = "Monogram — " + initials;
+    h.textContent = T.printTitle + initials;
     wrap.appendChild(h);
     const holder = document.createElement("div");
     holder.className = "pt-design-print-holder";

@@ -1,0 +1,173 @@
+{
+ "lang": "es",
+ "slug": "emoji-messi",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-messi/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/messi-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-messi/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/messi-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Messi: Combos 🇦🇷⚽🐐 para Copiar y Pegar",
+ "meta_description": "Combos de emoji de Messi 🇦🇷⚽🐐 — sets del GOAT, de Argentina y del 10 para biografías y subtítulos. Haz clic en cualquier emoji o combo para copiarlo.",
+ "breadcrumb": "Combos de Emoji de Messi",
+ "hero_h1": "Combos de Emoji de Messi",
+ "hero_tagline": "Sets de emojis de Argentina, del GOAT y del número 10 para los fans de Messi — haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los fans arman su emoji de Messi juntando la bandera de Argentina 🇦🇷 con el balón ⚽ y la cabra 🐐 para coronar al mejor de todos los tiempos. Estos combos están hechos para cuentas de fans, biografías y comentarios. Copia un solo emoji de las secciones de abajo o toma un combo completo con un clic.",
+ "sections": [
+  {
+   "id": "messi-emojis",
+   "label": "Messi",
+   "h2": "Emojis de Messi",
+   "intro": "Los íconos de la leyenda de Leo Messi.",
+   "symbols": [
+    {
+     "char": "🇦🇷",
+     "label": "Bandera de Argentina"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de Fútbol"
+    },
+    {
+     "char": "🐐",
+     "label": "Cabra (GOAT)"
+    },
+    {
+     "char": "👑",
+     "label": "Corona"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔟",
+     "label": "Número 10"
+    },
+    {
+     "char": "💙",
+     "label": "Corazón Azul"
+    },
+    {
+     "char": "🤍",
+     "label": "Corazón Blanco"
+    }
+   ]
+  },
+  {
+   "id": "argentina",
+   "label": "Argentina",
+   "h2": "Emojis del Orgullo Argentino",
+   "intro": "Los colores de la Albiceleste y la gloria del Mundial.",
+   "symbols": [
+    {
+     "char": "🇦🇷",
+     "label": "Bandera de Argentina"
+    },
+    {
+     "char": "🤍",
+     "label": "Corazón Blanco"
+    },
+    {
+     "char": "💙",
+     "label": "Corazón Azul"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "⭐",
+     "label": "Estrella"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de Confeti"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Messi GOAT",
+   "flags": [
+    "🐐",
+    "⚽",
+    "🇦🇷"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Leo 10",
+   "flags": [
+    "🔟",
+    "⚽",
+    "👑"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Argentina Campeón",
+   "flags": [
+    "🇦🇷",
+    "🏆",
+    "🥇"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Amor por Leo",
+   "flags": [
+    "💙",
+    "🤍",
+    "⚽"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "messiCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Combos Listos",
+  "h2": "Combos de Messi",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, subtítulo o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emoji del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y subtítulos de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones de emojis con estética para cada ánimo y tema."
+  }
+ ]
+}

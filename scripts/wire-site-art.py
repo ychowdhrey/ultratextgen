@@ -22,6 +22,9 @@ import glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://ultratextgen.com"
 LOGO = f"{BASE}/logo.png"
+# Any generated OG card — used to detect a page advertising a card that is not
+# its own (see the swap block in main() for when this is acted on).
+FOREIGN_OG = re.compile(re.escape(BASE) + r"/assets/og/[A-Za-z0-9._-]+\.png")
 
 
 def slug_for(path):
@@ -118,13 +121,27 @@ def main():
         og_url = f"{BASE}/assets/og/{slug}.png"
 
         # 1+2. line-scoped image swaps (og:image / twitter:image / JSON-LD image)
+        #
+        # A page can also point at *another page's* real card rather than at
+        # LOGO — the shape 82 printables letter/number pages had, each
+        # advertising its hub's PNG. That is neither LOGO nor its own art, so a
+        # LOGO-only swap can never see it, and the page stays unable to earn an
+        # image result of its own. Same blind-spot class as the figure guard
+        # above, and it takes the same opt-out: naming a page with --files IS
+        # the decision that its OG should be its own card. An unscoped run
+        # stays LOGO-only, because inheriting a card is legitimate for a page
+        # that has no art of its own.
         def swap_meta(m):
-            return m.group(0).replace(LOGO, og_url)
+            tag = m.group(0).replace(LOGO, og_url)
+            return FOREIGN_OG.sub(og_url, tag) if args.files else tag
 
         new = re.sub(r'<meta[^>]*(?:og:image|twitter:image)[^>]*>',
                      swap_meta, html)
         new = re.sub(r'"image"\s*:\s*"' + re.escape(LOGO) + r'"',
                      f'"image": "{og_url}"', new)
+        if args.files:
+            new = re.sub(r'("image"\s*:\s*")' + FOREIGN_OG.pattern + r'(")',
+                         lambda m: m.group(1) + og_url + m.group(2), new)
         if new != html:
             swapped += 1
         html = new

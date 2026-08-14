@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-uruguay",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-uruguay/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/uruguay-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-uruguay/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/uruguay-emoji-combos/" }
+  ],
+  "title": "Emoji Uruguay: Combos 🇺🇾⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Uruguay 🇺🇾⚽: los colores de la Celeste y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Uruguay",
+  "hero_h1": "Combos de Emoji Uruguay",
+  "hero_tagline": "Los colores de la Celeste y sets de emojis de fútbol para hinchas de Uruguay — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Uruguay 🇺🇾 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con el celeste y blanco de la Celeste. El grito de Vamos Uruguay resume la garra charrúa. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "uruguay-emojis",
+      "label": "Uruguay",
+      "h2": "Emojis de Uruguay",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇺🇾", "label": "Bandera de Uruguay" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "☀️", "label": "Sol de Mayo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Uruguayo",
+      "intro": "El celeste y el blanco de la Celeste.",
+      "symbols": [
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "☀️", "label": "Sol de Mayo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "La Celeste",
+      "flags": ["🇺🇾", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Uruguay",
+      "flags": ["🇺🇾", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Celeste y Blanco",
+      "flags": ["🔵", "⚪", "☀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Garra Charrúa",
+      "flags": ["🇺🇾", "⚽", "💪"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "uruguayCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Uruguay",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

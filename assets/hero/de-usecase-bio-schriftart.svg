@@ -23,21 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhdeusecas)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhdeusecas)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghdeusecas)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhdeusecas)"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghdeusecas)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0"><tspan font-family="Noto Sans Javanese">꧁</tspan> du <tspan font-family="Noto Sans Javanese">꧂</tspan></text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">◥ du ◤</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85">♛ du ♛</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghdeusecas)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhdeusecas)"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghdeusecas)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0"><tspan font-family="Noto Sans Javanese">꧁</tspan> du <tspan font-family="Noto Sans Javanese">꧂</tspan></text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">◥ du ◤</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85">♛ du ♛</text></g>
 </svg>

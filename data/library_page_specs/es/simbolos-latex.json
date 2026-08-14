@@ -1,0 +1,158 @@
+{
+  "lang": "es",
+  "slug": "simbolos-latex",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-latex/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/latex-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-latex/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/latex-symbols/" }
+  ],
+  "title": "Símbolos LaTeX: Copiar y Pegar Notación Matemática y Comandos",
+  "meta_description": "Copia símbolos matemáticos de LaTeX con sus comandos: \\sum, \\alpha, \\infty, integrales, letras griegas, relaciones y notación de conjuntos. Un clic y listo.",
+  "breadcrumb": "Símbolos LaTeX",
+  "hero_h1": "Símbolos LaTeX",
+  "hero_tagline": "Los equivalentes en Unicode de la notación matemática más común de LaTeX, cada uno con su comando. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos LaTeX suelen vivir dentro de documentos .tex, pero muchas veces necesitas el carácter Unicode real: para un correo, un mensaje de Slack, apuntes de clase o un foro donde LaTeX no se renderiza. Esta referencia empareja cada glifo con su comando, así puedes copiar el carácter tal cual o recordar el comando para tu documento. Incluye letras griegas, operadores, relaciones, notación de conjuntos y lógica, flechas y los símbolos sueltos que más usan estudiantes e investigadores.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligráfica y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+  "sections": [
+    {
+      "id": "greek-letters",
+      "label": "Letras Griegas",
+      "h2": "Letras Griegas",
+      "intro": "Las letras griegas que se usan en todas las matemáticas y la física, con sus comandos de LaTeX.",
+      "symbols": [
+        { "char": "α", "label": "\\alpha — Letra griega minúscula alfa" },
+        { "char": "β", "label": "\\beta — Letra griega minúscula beta" },
+        { "char": "γ", "label": "\\gamma — Letra griega minúscula gamma" },
+        { "char": "δ", "label": "\\delta — Letra griega minúscula delta" },
+        { "char": "θ", "label": "\\theta — Letra griega minúscula theta" },
+        { "char": "λ", "label": "\\lambda — Letra griega minúscula lambda" },
+        { "char": "μ", "label": "\\mu — Letra griega minúscula mu" },
+        { "char": "π", "label": "\\pi — Letra griega minúscula pi" },
+        { "char": "σ", "label": "\\sigma — Letra griega minúscula sigma" },
+        { "char": "φ", "label": "\\varphi — Letra griega minúscula fi" },
+        { "char": "Δ", "label": "\\Delta — Letra griega mayúscula delta" },
+        { "char": "Ω", "label": "\\Omega — Letra griega mayúscula omega" }
+      ]
+    },
+    {
+      "id": "operators",
+      "label": "Operadores",
+      "h2": "Operadores y Grandes Operadores",
+      "intro": "Sumatorias, productos, integrales y los operadores aritméticos del día a día.",
+      "symbols": [
+        { "char": "∑", "label": "\\sum — Sumatoria n-aria" },
+        { "char": "∏", "label": "\\prod — Producto n-ario" },
+        { "char": "∫", "label": "\\int — Integral" },
+        { "char": "∬", "label": "\\iint — Integral doble" },
+        { "char": "∮", "label": "\\oint — Integral de contorno" },
+        { "char": "√", "label": "\\sqrt — Raíz cuadrada" },
+        { "char": "∂", "label": "\\partial — Derivada parcial" },
+        { "char": "∇", "label": "\\nabla — Nabla" },
+        { "char": "±", "label": "\\pm — Signo más-menos" },
+        { "char": "×", "label": "\\times — Signo de multiplicación" },
+        { "char": "÷", "label": "\\div — Signo de división" },
+        { "char": "⋅", "label": "\\cdot — Operador punto" }
+      ]
+    },
+    {
+      "id": "relations",
+      "label": "Relaciones",
+      "h2": "Relaciones y Comparaciones",
+      "intro": "Relaciones de igualdad, desigualdad y equivalencia con sus comandos.",
+      "symbols": [
+        { "char": "≤", "label": "\\leq — Menor o igual que" },
+        { "char": "≥", "label": "\\geq — Mayor o igual que" },
+        { "char": "≠", "label": "\\neq — Distinto de" },
+        { "char": "≈", "label": "\\approx — Aproximadamente igual a" },
+        { "char": "≡", "label": "\\equiv — Idéntico a" },
+        { "char": "∼", "label": "\\sim — Operador tilde" },
+        { "char": "≅", "label": "\\cong — Congruente con" },
+        { "char": "∝", "label": "\\propto — Proporcional a" }
+      ]
+    },
+    {
+      "id": "sets-logic",
+      "label": "Conjuntos y Lógica",
+      "h2": "Teoría de Conjuntos y Lógica",
+      "intro": "Pertenencia, subconjuntos, uniones, cuantificadores y conectores lógicos.",
+      "symbols": [
+        { "char": "∈", "label": "\\in — Pertenece a" },
+        { "char": "∉", "label": "\\notin — No pertenece a" },
+        { "char": "⊂", "label": "\\subset — Subconjunto de" },
+        { "char": "⊆", "label": "\\subseteq — Subconjunto de o igual a" },
+        { "char": "∪", "label": "\\cup — Unión" },
+        { "char": "∩", "label": "\\cap — Intersección" },
+        { "char": "∅", "label": "\\emptyset — Conjunto vacío" },
+        { "char": "∀", "label": "\\forall — Para todo" },
+        { "char": "∃", "label": "\\exists — Existe" },
+        { "char": "¬", "label": "\\neg — Signo de negación" },
+        { "char": "∧", "label": "\\land — Y lógico (conjunción)" },
+        { "char": "∨", "label": "\\lor — O lógico (disyunción)" }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "Flechas",
+      "h2": "Flechas y Aplicaciones",
+      "intro": "Flechas de implicación y de aplicación que se usan en demostraciones y definiciones de funciones.",
+      "symbols": [
+        { "char": "→", "label": "\\rightarrow — Flecha hacia la derecha" },
+        { "char": "←", "label": "\\leftarrow — Flecha hacia la izquierda" },
+        { "char": "↔", "label": "\\leftrightarrow — Flecha de doble sentido" },
+        { "char": "⇒", "label": "\\Rightarrow — Flecha doble hacia la derecha" },
+        { "char": "⇔", "label": "\\Leftrightarrow — Flecha doble de doble sentido" },
+        { "char": "↦", "label": "\\mapsto — Flecha con barra (aplica a)" }
+      ]
+    },
+    {
+      "id": "misc-math",
+      "label": "Varios",
+      "h2": "Otros Símbolos Matemáticos",
+      "intro": "Infinito, marcas de geometría, delimitadores y abreviaturas de demostración.",
+      "symbols": [
+        { "char": "∞", "label": "\\infty — Infinito" },
+        { "char": "ℵ", "label": "\\aleph — Símbolo alef" },
+        { "char": "ℏ", "label": "\\hbar — Constante de Planck reducida" },
+        { "char": "ℓ", "label": "\\ell — Ele minúscula manuscrita" },
+        { "char": "⊥", "label": "\\perp — Perpendicular a" },
+        { "char": "∥", "label": "\\parallel — Paralelo a" },
+        { "char": "∠", "label": "\\angle — Ángulo" },
+        { "char": "⌈", "label": "\\lceil — Techo izquierdo" },
+        { "char": "⌋", "label": "\\rfloor — Piso derecho" },
+        { "char": "⋯", "label": "\\cdots — Puntos suspensivos centrados" },
+        { "char": "∴", "label": "\\therefore — Por lo tanto" },
+        { "char": "∵", "label": "\\because — Porque" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Más-menos, infinito y todos los operadores matemáticos para copiar y pegar."
+    },
+    {
+      "href": "/es/letras-griegas/",
+      "title": "Símbolos de Letras Griegas",
+      "desc": "El alfabeto griego completo para matemáticas, ciencia y nombres de fraternidades."
+    },
+    {
+      "href": "/es/library/simbolos-de-fracciones/",
+      "title": "Símbolos de Fracciones",
+      "desc": "Fracciones Unicode listas para usar como ½, ⅓ y ¾."
+    },
+    {
+      "href": "/es/library/entidades-html/",
+      "title": "Entidades HTML",
+      "desc": "Entidades de caracteres HTML con nombre, con sus códigos y símbolos."
+    }
+  ]
+}

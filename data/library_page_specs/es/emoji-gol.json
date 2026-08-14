@@ -1,0 +1,169 @@
+{
+ "lang": "es",
+ "slug": "emoji-gol",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-gol/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/goal-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-gol/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/goal-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Gol ⚽🥅 Combos de Celebración",
+ "meta_description": "Combos de emoji gol ⚽🥅 — sets de celebración para publicaciones y reacciones de fútbol. Haz clic en cualquier emoji o combo para copiarlo al instante.",
+ "breadcrumb": "Combos de Emojis de Gol",
+ "hero_h1": "Emoji Gol y Combos de Celebración",
+ "hero_tagline": "Sets de emojis de balón y arco para festejar un golazo: haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "No hay nada como el momento en que el balón entra al arco. Estos combos de emoji gol juntan el balón ⚽ y el arco 🥅 con fuego, confeti y emojis de festejo para tus publicaciones y reacciones. Copia un emoji suelto de los de abajo o llévate un combo listo con un solo clic.",
+ "sections": [
+  {
+   "id": "goal-emojis",
+   "label": "Gol",
+   "h2": "Emojis de Gol",
+   "intro": "El balón, el arco y el remate.",
+   "symbols": [
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🥅",
+     "label": "Arco de fútbol"
+    },
+    {
+     "char": "🎯",
+     "label": "Diana"
+    },
+    {
+     "char": "💥",
+     "label": "Choque"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    },
+    {
+     "char": "💪",
+     "label": "Bíceps flexionado"
+    },
+    {
+     "char": "📣",
+     "label": "Megáfono"
+    }
+   ]
+  },
+  {
+   "id": "celebration-emojis",
+   "label": "Celebración",
+   "h2": "Emojis de Celebración de Gol",
+   "intro": "El grito que llega cuando la pelota entra.",
+   "symbols": [
+    {
+     "char": "🎉",
+     "label": "Cañón de confeti"
+    },
+    {
+     "char": "🎊",
+     "label": "Bola de confeti"
+    },
+    {
+     "char": "🙌",
+     "label": "Manos en alto"
+    },
+    {
+     "char": "🕺",
+     "label": "Hombre bailando"
+    },
+    {
+     "char": "🥳",
+     "label": "Cara de fiesta"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "¡Gol!",
+   "flags": [
+    "⚽",
+    "🥅",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "¡Goooool!",
+   "flags": [
+    "🥅",
+    "⚽",
+    "🎉"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Golazo",
+   "flags": [
+    "⚽",
+    "💥",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Rompe redes",
+   "flags": [
+    "🥅",
+    "⚽",
+    "💪"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "goalCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos de Gol",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, publicación o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emojis del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y temática."
+  }
+ ]
+}

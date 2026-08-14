@@ -1,0 +1,255 @@
+{
+ "lang": "es",
+ "slug": "simbolos-de-fracciones",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-de-fracciones/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/fraction-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-de-fracciones/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/fraction-symbols/"
+  }
+ ],
+ "title": "Símbolos de Fracciones: Copiar y Pegar ½ ⅓ ¼ en Unicode",
+ "meta_description": "Copia y pega símbolos de fracciones Unicode — medios, tercios, cuartos, octavos, quintos y un set para armar la tuya. Haz clic en cualquiera para copiarlo.",
+ "breadcrumb": "Símbolos de Fracciones",
+ "hero_h1": "Símbolos de Fracciones",
+ "hero_tagline": "Todas las fracciones Unicode precompuestas — medios, tercios, cuartos, octavos y más — además de la barra y los dígitos para armar la fracción que necesites. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Los símbolos de fracciones precompuestos (las llamadas fracciones vulgares) muestran una fracción completa en un solo glifo. Esta biblioteca reúne los medios, tercios y cuartos de todos los días, los octavos, quintos, sextos, séptimos, novenos y décimos, y un set para armar la tuya usando la barra de fracción junto con dígitos en superíndice y subíndice.",
+ "sections": [
+  {
+   "id": "common-fractions",
+   "label": "Comunes",
+   "h2": "Medios, Tercios y Cuartos",
+   "intro": "Las fracciones del día a día: medios, tercios y cuartos.",
+   "symbols": [
+    {
+     "char": "½",
+     "label": "Un Medio"
+    },
+    {
+     "char": "⅓",
+     "label": "Un Tercio"
+    },
+    {
+     "char": "⅔",
+     "label": "Dos Tercios"
+    },
+    {
+     "char": "¼",
+     "label": "Un Cuarto"
+    },
+    {
+     "char": "¾",
+     "label": "Tres Cuartos"
+    }
+   ]
+  },
+  {
+   "id": "eighths",
+   "label": "Octavos",
+   "h2": "Fracciones en Octavos",
+   "intro": "Los cuatro octavos precompuestos.",
+   "symbols": [
+    {
+     "char": "⅛",
+     "label": "Un Octavo"
+    },
+    {
+     "char": "⅜",
+     "label": "Tres Octavos"
+    },
+    {
+     "char": "⅝",
+     "label": "Cinco Octavos"
+    },
+    {
+     "char": "⅞",
+     "label": "Siete Octavos"
+    }
+   ]
+  },
+  {
+   "id": "other-fractions",
+   "label": "Más",
+   "h2": "Quintos, Sextos, Séptimos y Más",
+   "intro": "Quintos, sextos, séptimos, novenos, décimos y el signo de cero tercios.",
+   "symbols": [
+    {
+     "char": "⅕",
+     "label": "Un Quinto"
+    },
+    {
+     "char": "⅖",
+     "label": "Dos Quintos"
+    },
+    {
+     "char": "⅗",
+     "label": "Tres Quintos"
+    },
+    {
+     "char": "⅘",
+     "label": "Cuatro Quintos"
+    },
+    {
+     "char": "⅙",
+     "label": "Un Sexto"
+    },
+    {
+     "char": "⅚",
+     "label": "Cinco Sextos"
+    },
+    {
+     "char": "⅐",
+     "label": "Un Séptimo"
+    },
+    {
+     "char": "⅑",
+     "label": "Un Noveno"
+    },
+    {
+     "char": "⅒",
+     "label": "Un Décimo"
+    },
+    {
+     "char": "↉",
+     "label": "Cero Tercios"
+    }
+   ]
+  },
+  {
+   "id": "build-fraction",
+   "label": "Arma la Tuya",
+   "h2": "Arma Cualquier Fracción (Barra + Superíndices)",
+   "intro": "Combina la barra de fracción con dígitos en superíndice para escribir cualquier numerador sobre su denominador.",
+   "symbols": [
+    {
+     "char": "⁄",
+     "label": "Barra de Fracción"
+    },
+    {
+     "char": "⅟",
+     "label": "Numerador Uno"
+    },
+    {
+     "char": "⁰",
+     "label": "Cero en Superíndice"
+    },
+    {
+     "char": "¹",
+     "label": "Uno en Superíndice"
+    },
+    {
+     "char": "²",
+     "label": "Dos en Superíndice"
+    },
+    {
+     "char": "³",
+     "label": "Tres en Superíndice"
+    },
+    {
+     "char": "⁴",
+     "label": "Cuatro en Superíndice"
+    },
+    {
+     "char": "⁵",
+     "label": "Cinco en Superíndice"
+    },
+    {
+     "char": "⁶",
+     "label": "Seis en Superíndice"
+    },
+    {
+     "char": "⁷",
+     "label": "Siete en Superíndice"
+    },
+    {
+     "char": "⁸",
+     "label": "Ocho en Superíndice"
+    },
+    {
+     "char": "⁹",
+     "label": "Nueve en Superíndice"
+    }
+   ]
+  },
+  {
+   "id": "subscript-digits",
+   "label": "Subíndices",
+   "h2": "Dígitos en Subíndice",
+   "intro": "Dígitos en subíndice para denominadores y notación de tipo químico.",
+   "symbols": [
+    {
+     "char": "₀",
+     "label": "Cero en Subíndice"
+    },
+    {
+     "char": "₁",
+     "label": "Uno en Subíndice"
+    },
+    {
+     "char": "₂",
+     "label": "Dos en Subíndice"
+    },
+    {
+     "char": "₃",
+     "label": "Tres en Subíndice"
+    },
+    {
+     "char": "₄",
+     "label": "Cuatro en Subíndice"
+    },
+    {
+     "char": "₅",
+     "label": "Cinco en Subíndice"
+    },
+    {
+     "char": "₆",
+     "label": "Seis en Subíndice"
+    },
+    {
+     "char": "₇",
+     "label": "Siete en Subíndice"
+    },
+    {
+     "char": "₈",
+     "label": "Ocho en Subíndice"
+    },
+    {
+     "char": "₉",
+     "label": "Nueve en Subíndice"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-numero/",
+   "title": "Símbolos de Números",
+   "desc": "Números encerrados en círculo, en superíndice, romanos y otras formas Unicode."
+  },
+  {
+   "href": "/es/library/simbolos-matematicos/",
+   "title": "Símbolos Matemáticos",
+   "desc": "Operadores matemáticos, letras griegas, raíces y signos de infinito."
+  },
+  {
+   "href": "/es/library/caracteres-especiales/",
+   "title": "Caracteres Especiales",
+   "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+  }
+ ]
+}

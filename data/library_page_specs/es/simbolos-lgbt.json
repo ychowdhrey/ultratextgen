@@ -1,0 +1,223 @@
+{
+ "lang": "es",
+ "slug": "simbolos-lgbt",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-lgbt/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/pride-lgbtq-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-lgbt/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/pride-lgbtq-symbols/"
+  }
+ ],
+ "title": "Símbolos LGBT: Banderas y Colores del Orgullo para Copiar y Pegar",
+ "meta_description": "Copia y pega la bandera arcoíris y la trans, el símbolo transgénero y combos de corazones para bisexual, pansexual, lésbico, no binario y más.",
+ "breadcrumb": "Símbolos LGBT",
+ "hero_h1": "Símbolos LGBT y del Orgullo",
+ "hero_tagline": "Las banderas arcoíris y trans, los signos de identidad principales y combos de corazones para las banderas a las que Unicode todavía no les dio su propio emoji. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Unicode solo ha estandarizado dos emojis dedicados de bandera del Orgullo: la arcoíris y la trans. Las demás banderas de la comunidad LGBT —bisexual, pansexual, lésbica, no binaria, de género fluido, asexual y varias más— no tienen un carácter oficial propio, así que la gente las representa como el texto siempre improvisa frente a un vacío: con una fila de corazones de colores que imita las franjas de cada bandera. Ese recurso se volvió tan común que ayudó a impulsar la llegada de los corazones rosa, celeste y gris en Unicode 15.0, en 2023. Esta página reúne los dos emojis reales de bandera, los signos básicos de género y orientación, y un set completo de combos de corazones para las banderas que todavía esperan el suyo. La demanda se dispara cada junio con el Mes del Orgullo, por eso la página está lista y publicada con mucha anticipación, y no improvisada sobre la marcha.",
+ "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+ "sections": [
+  {
+   "id": "official-pride-flags",
+   "label": "Banderas oficiales",
+   "h2": "Emojis oficiales de bandera del Orgullo",
+   "intro": "Las únicas dos banderas del Orgullo con un emoji Unicode propio de un solo carácter. Todas las demás de abajo se arman con combos de colores.",
+   "symbols": [
+    {
+     "char": "🏳️‍🌈",
+     "label": "Bandera arcoíris del Orgullo"
+    },
+    {
+     "char": "🏳️‍⚧️",
+     "label": "Bandera trans del Orgullo"
+    }
+   ]
+  },
+  {
+   "id": "core-identity-signs",
+   "label": "Signos de identidad",
+   "h2": "Signos de identidad principales",
+   "intro": "Signos Unicode fundamentales para género y orientación. El set completo, con las marcas de matrimonio y pareja, está en Símbolos de género.",
+   "symbols": [
+    {
+     "char": "⚧",
+     "label": "Símbolo transgénero"
+    },
+    {
+     "char": "⚢",
+     "label": "Doble signo femenino — Orgullo sáfico o lésbico"
+    },
+    {
+     "char": "⚣",
+     "label": "Doble signo masculino — Orgullo gay"
+    }
+   ]
+  },
+  {
+   "id": "rainbow-visibility",
+   "label": "Arcoíris y visibilidad",
+   "h2": "Arcoíris y marcas cotidianas del Orgullo",
+   "intro": "El arcoíris es el símbolo del Orgullo más reconocido de todos; encuentra el arcoíris completo y el resto del set atmosférico en Símbolos del clima. Combínalo con estas marcas cotidianas de apoyo.",
+   "symbols": [
+    {
+     "char": "🌈",
+     "label": "Arcoíris"
+    },
+    {
+     "char": "🫶",
+     "label": "Manos en corazón — solidaridad y amor"
+    },
+    {
+     "char": "🤝",
+     "label": "Apretón de manos — unidad y alianza"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Orgullo arcoíris (6 franjas)",
+   "flags": [
+    "❤️",
+    "🧡",
+    "💛",
+    "💚",
+    "💙",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo trans",
+   "flags": [
+    "🩵",
+    "🩷",
+    "🤍",
+    "🩷",
+    "🩵"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo bisexual",
+   "flags": [
+    "🩷",
+    "💜",
+    "💙"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo pansexual",
+   "flags": [
+    "🩷",
+    "💛",
+    "🩵"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo lésbico (tonos atardecer)",
+   "flags": [
+    "🧡",
+    "🩷",
+    "🤍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo no binario",
+   "flags": [
+    "💛",
+    "🤍",
+    "💜",
+    "🖤"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo de género fluido",
+   "flags": [
+    "🩷",
+    "🤍",
+    "💜",
+    "🖤",
+    "💙"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo asexual",
+   "flags": [
+    "🖤",
+    "🩶",
+    "🤍",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo Progress (arcoíris + tonos inclusivos)",
+   "flags": [
+    "🏳️‍🌈",
+    "🤎",
+    "🖤",
+    "🩵",
+    "🩷",
+    "🤍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo intersexual",
+   "flags": [
+    "💛",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "prideFlagCombosContainer",
+ "collection_section": {
+  "id": "flag-color-combos",
+  "label": "Combos de colores",
+  "h2": "Combos de colores de banderas del Orgullo (corazones sustitutos)",
+  "intro": "Unicode todavía no le dio a la mayoría de las banderas del Orgullo un carácter propio, así que copia un combo de corazones del color exacto: cada set respeta el orden real de las franjas de esa bandera, de arriba hacia abajo."
+ },
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-genero/",
+   "title": "Símbolos de género",
+   "desc": "Masculino, femenino, transgénero y todos los signos combinados de género y orientación."
+  },
+  {
+   "href": "/es/library/simbolos-del-clima/",
+   "title": "Símbolos del clima",
+   "desc": "El emoji del arcoíris y todos los símbolos atmosféricos, del sol a la nieve."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Explorador de banderas emoji",
+   "desc": "Todas las banderas de países y territorios en emoji, en un solo lugar."
+  },
+  {
+   "href": "/es/simbolos-de-corazon/",
+   "title": "Símbolos de corazón",
+   "desc": "Todos los emojis de corazón y caracteres Unicode de corazón, en cada color."
+  }
+ ]
+}

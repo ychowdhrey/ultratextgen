@@ -23,15 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhyoutuben)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhyoutuben)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="46" y="78" width="268" height="166" rx="24" fill="url(#ghyoutuben)"/>
-    <circle cx="180" cy="161" r="46" fill="#fff"/>
-    <polygon points="166,138 166,184 206,161" fill="url(#ghyoutuben)"/>
-    <rect x="46" y="262" width="190" height="13" rx="6" fill="#64748b" opacity="0.5"/>
-    <rect x="46" y="288" width="120" height="13" rx="6" fill="#64748b" opacity="0.3"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghyoutuben)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="18.7" fill="#1a1a2e" text-anchor="middle" opacity="1.0">⋆˚ <tspan font-family="FreeSerif">𝘓𝘶𝘯𝘢</tspan> <tspan font-family="FreeSerif">𝘋𝘪𝘢𝘳𝘺</tspan> ˚⋆</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95"><tspan font-family="FreeSerif">𝘔𝘰𝘯𝘰</tspan> <tspan font-family="FreeSerif">𝘔𝘦𝘥𝘪𝘢</tspan></text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Noto Color Emoji">⚡</tspan> Vibe <tspan font-family="Noto Color Emoji">⚡</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="46" y="78" width="268" height="166" rx="24" fill="url(#ghyoutuben)"/>
-    <circle cx="180" cy="161" r="46" fill="#fff"/>
-    <polygon points="166,138 166,184 206,161" fill="url(#ghyoutuben)"/>
-    <rect x="46" y="262" width="190" height="13" rx="6" fill="#64748b" opacity="0.5"/>
-    <rect x="46" y="288" width="120" height="13" rx="6" fill="#64748b" opacity="0.3"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghyoutuben)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="18.7" fill="#1a1a2e" text-anchor="middle" opacity="1.0">⋆˚ <tspan font-family="FreeSerif">𝘓𝘶𝘯𝘢</tspan> <tspan font-family="FreeSerif">𝘋𝘪𝘢𝘳𝘺</tspan> ˚⋆</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95"><tspan font-family="FreeSerif">𝘔𝘰𝘯𝘰</tspan> <tspan font-family="FreeSerif">𝘔𝘦𝘥𝘪𝘢</tspan></text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Noto Color Emoji">⚡</tspan> Vibe <tspan font-family="Noto Color Emoji">⚡</tspan></text></g>
 </svg>

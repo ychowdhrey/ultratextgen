@@ -1,0 +1,223 @@
+{
+ "lang": "es",
+ "slug": "simbolos-de-lavado",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-de-lavado/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-de-lavado/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  }
+ ],
+ "title": "Símbolos de Lavado: Significado de Lavar, Secar y Planchar",
+ "meta_description": "Símbolos de lavado y su significado: lavar, blanquear, secar y planchar en Unicode para copiar y pegar. Haz clic para copiarlos al instante.",
+ "breadcrumb": "Símbolos de Lavado y Cuidado de la Ropa",
+ "hero_h1": "Símbolos de Lavado y Cuidado de la Ropa",
+ "hero_tagline": "Íconos de lavado, blanqueado, secado y planchado que puedes copiar y pegar. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Los símbolos de lavado oficiales de la norma ISO 3758 que vienen impresos en las etiquetas de la ropa no existen como caracteres Unicode independientes, así que esta referencia reúne los equivalentes más cercanos —emojis y figuras geométricas— agrupados según lo que indica cada instrucción de cuidado: lavado y agua, blanqueado con cloro, secado, niveles de calor de la plancha y las prohibiciones de «no hacer». Cada casilla copia un solo carácter que puedes pegar en etiquetas de cuidado, listas de empaque, notas y publicaciones. Usa el nombre Unicode que aparece junto a cada símbolo para que quien lo lea sepa exactamente qué significa.",
+ "sections": [
+  {
+   "id": "washing",
+   "label": "Lavado",
+   "h2": "Símbolos de Lavado y Agua",
+   "intro": "Los sustitutos Unicode más cercanos al ícono de la tina de lavado: agua, detergente y señales de lavado a máquina.",
+   "symbols": [
+    {
+     "char": "🧺",
+     "label": "Canasta (de ropa)"
+    },
+    {
+     "char": "🧼",
+     "label": "Jabón"
+    },
+    {
+     "char": "🧴",
+     "label": "Botella de loción (detergente)"
+    },
+    {
+     "char": "💧",
+     "label": "Gota (agua)"
+    },
+    {
+     "char": "🚿",
+     "label": "Ducha"
+    },
+    {
+     "char": "🛁",
+     "label": "Bañera"
+    },
+    {
+     "char": "♨",
+     "label": "Aguas termales (agua caliente)"
+    },
+    {
+     "char": "🌊",
+     "label": "Ola de agua"
+    }
+   ]
+  },
+  {
+   "id": "bleaching",
+   "label": "Blanqueado",
+   "h2": "Símbolos de Blanqueado",
+   "intro": "El símbolo de blanqueado es un triángulo: vacío significa que se puede usar cloro y tachado significa que no se debe usar.",
+   "symbols": [
+    {
+     "char": "△",
+     "label": "Triángulo blanco hacia arriba (se puede blanquear)"
+    },
+    {
+     "char": "▲",
+     "label": "Triángulo negro hacia arriba"
+    },
+    {
+     "char": "⚠",
+     "label": "Señal de advertencia"
+    },
+    {
+     "char": "🧪",
+     "label": "Tubo de ensayo (químicos)"
+    },
+    {
+     "char": "☣",
+     "label": "Riesgo biológico"
+    },
+    {
+     "char": "🚫",
+     "label": "Prohibido (no usar cloro)"
+    }
+   ]
+  },
+  {
+   "id": "drying",
+   "label": "Secado",
+   "h2": "Símbolos de Secado",
+   "intro": "Las figuras de sol, círculo y cuadrado imitan los íconos de secado en secadora y de secado al aire.",
+   "symbols": [
+    {
+     "char": "☀",
+     "label": "Sol con rayos (secar al aire)"
+    },
+    {
+     "char": "🌞",
+     "label": "Sol con cara"
+    },
+    {
+     "char": "◯",
+     "label": "Círculo grande (secadora)"
+    },
+    {
+     "char": "□",
+     "label": "Cuadrado blanco (secar en plano)"
+    },
+    {
+     "char": "💨",
+     "label": "Ráfaga de aire (secado al aire)"
+    },
+    {
+     "char": "🧷",
+     "label": "Seguro (pinzas de tendedero)"
+    },
+    {
+     "char": "🌡",
+     "label": "Termómetro (calor de secado)"
+    }
+   ]
+  },
+  {
+   "id": "ironing",
+   "label": "Planchado",
+   "h2": "Símbolos de Planchado y Calor",
+   "intro": "Los símbolos de plancha usan uno, dos o tres puntos para calor bajo, medio y alto; estos caracteres Unicode reproducen esa misma escala.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Fuego (calor alto)"
+    },
+    {
+     "char": "♨",
+     "label": "Aguas termales (vapor)"
+    },
+    {
+     "char": "•",
+     "label": "Un punto (calor bajo)"
+    },
+    {
+     "char": "‥",
+     "label": "Dos puntos (calor medio)"
+    },
+    {
+     "char": "…",
+     "label": "Tres puntos (calor alto)"
+    },
+    {
+     "char": "♻",
+     "label": "Reciclaje (lavado ecológico)"
+    }
+   ]
+  },
+  {
+   "id": "do-not",
+   "label": "Prohibiciones",
+   "h2": "Símbolos de Prohibición «No»",
+   "intro": "En una etiqueta de cuidado, una cruz sobre cualquier símbolo significa no hacerlo. Combínalos con los símbolos de arriba para indicar no lavar, no usar cloro, no secar o no planchar.",
+   "symbols": [
+    {
+     "char": "🚫",
+     "label": "Señal de prohibido"
+    },
+    {
+     "char": "⛔",
+     "label": "Prohibido el paso"
+    },
+    {
+     "char": "❌",
+     "label": "Marca de equis"
+    },
+    {
+     "char": "✗",
+     "label": "Equis de votación"
+    },
+    {
+     "char": "✘",
+     "label": "Equis gruesa"
+    },
+    {
+     "char": "⊘",
+     "label": "Barra de división dentro de un círculo"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-peligro/",
+   "title": "Símbolos de Peligro y Advertencia",
+   "desc": "Triángulos de advertencia, señales de precaución y símbolos de peligro para etiquetas de seguridad."
+  },
+  {
+   "href": "/es/library/simbolos-de-reciclaje/",
+   "title": "Símbolos de Reciclaje y Medio Ambiente",
+   "desc": "Flechas de reciclaje y símbolos ecológicos para empaques y etiquetas de cuidado."
+  },
+  {
+   "href": "/es/library/simbolos-geometricos/",
+   "title": "Símbolos Geométricos",
+   "desc": "Triángulos, cuadrados, círculos y otras figuras que se usan en los íconos de cuidado de la ropa."
+  }
+ ]
+}

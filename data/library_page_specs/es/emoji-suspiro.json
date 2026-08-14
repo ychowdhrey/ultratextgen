@@ -1,0 +1,154 @@
+{
+  "lang": "es",
+  "slug": "emoji-suspiro",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-suspiro/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/sigh-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-suspiro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/sigh-emoji/" }
+  ],
+  "title": "Emoji Suspiro y Kaomoji: Copiar y Pegar 😮‍💨 Combos de Alivio",
+  "meta_description": "Copia y pega emojis de suspiro como 😮‍💨 😌 😥, kaomoji de hartazgo como (¬_¬) y combos de alivio para tus comentarios y respuestas.",
+  "breadcrumb": "Emoji suspiro y kaomoji",
+  "hero_h1": "Emoji Suspiro y Kaomoji",
+  "hero_tagline": "Desde el respiro de alivio hasta el clásico \"bueno, ya está\": todos los emojis de suspiro, los kaomoji de hartazgo y los combos de un clic para cuando por fin terminó. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La cara que exhala 😮‍💨 es el emoji suspiro por excelencia en internet, y abarca muchísimo: el alivio después de zafar por poco, el hartazgo ante otra demora más, o la resignación de ver que algo sale mal y no tener energía ni para reaccionar. Esta página reúne todo ese rango: el respiro aliviado de 😌 y 😥, el hartazgo con los ojos en blanco de 🙄 y 😒, accesorios de viento y hombros encogidos como 💨 y 🤷, y kaomoji de suspiro en texto plano como (¬_¬) para donde los emojis no se ven. Si lo que buscas es cansancio general o sueño, la página de emojis de cansancio cubre los bostezos y el agotamiento; esta se queda en el suspiro mismo, no en el desgaste. Copia una sola carita o llévate un combo listo según el tamaño del suspiro.",
+  "sections": [
+    {
+      "id": "sigh-relief",
+      "label": "Suspiro y alivio",
+      "h2": "Emojis de suspiro y alivio",
+      "intro": "El respiro literal: el alivio cuando se corta la tensión, o la risa nerviosa una vez que pasó lo peor.",
+      "symbols": [
+        { "char": "😮‍💨", "label": "Cara exhalando" },
+        { "char": "😌", "label": "Cara aliviada" },
+        { "char": "😥", "label": "Cara triste pero aliviada" },
+        { "char": "😅", "label": "Cara sonriente con sudor" },
+        { "char": "😓", "label": "Cara cabizbaja con sudor" },
+        { "char": "🥲", "label": "Cara sonriente con lágrima" }
+      ]
+    },
+    {
+      "id": "exasperated-resigned",
+      "label": "Hartazgo y resignación",
+      "h2": "Caras de hartazgo y resignación",
+      "intro": "Cuando el suspiro no es alivio sino resignación: ojos en blanco, cara plana o simplemente ya no dar más con lo que acaba de pasar.",
+      "symbols": [
+        { "char": "😔", "label": "Cara pensativa" },
+        { "char": "🙄", "label": "Cara con ojos en blanco" },
+        { "char": "😒", "label": "Cara sin gracia" },
+        { "char": "🫤", "label": "Cara con boca diagonal" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "😤", "label": "Cara resoplando" },
+        { "char": "😞", "label": "Cara decepcionada" }
+      ]
+    },
+    {
+      "id": "sigh-props",
+      "label": "Accesorios de reacción",
+      "h2": "Accesorios y gestos que acompañan al suspiro",
+      "intro": "Los gestos y objetos que viajan junto a un suspiro: un soplido, unos hombros encogidos o desconectarse por completo.",
+      "symbols": [
+        { "char": "💨", "label": "Ráfaga de viento" },
+        { "char": "🌬️", "label": "Cara de viento" },
+        { "char": "🤷", "label": "Persona encogiéndose de hombros" },
+        { "char": "🙃", "label": "Cara al revés" },
+        { "char": "🫥", "label": "Cara de línea punteada" },
+        { "char": "😶‍🌫️", "label": "Cara entre nubes" }
+      ]
+    },
+    {
+      "id": "sigh-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de suspiro y caritas de texto",
+      "intro": "Caritas de suspiro en texto plano para donde los emojis no se ven: pégalas en comentarios, foros o código.",
+      "symbols": [
+        { "char": "(´-ω-`)", "label": "Kaomoji de suspiro suave" },
+        { "char": "(¬_¬)", "label": "Kaomoji de suspiro de reojo" },
+        { "char": "(￣ー￣;)", "label": "Kaomoji de otra vez lo mismo" },
+        { "char": "(；一_一)", "label": "Kaomoji de suspiro agotado" },
+        { "char": "¯\\_(ツ)_/¯", "label": "Kaomoji de hombros encogidos" },
+        { "char": "(´д`)", "label": "Kaomoji de suspiro derrotado" },
+        { "char": "(-.-;)", "label": "Kaomoji de suspiro nervioso" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Por fin terminó",
+      "flags": ["😮‍💨", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bueno, eso pasó",
+      "flags": ["😑", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Respiro hondo",
+      "flags": ["😮‍💨", "🌬️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ya no doy más",
+      "flags": ["😒", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Casi no la cuento",
+      "flags": ["😅", "😮‍💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ola de alivio",
+      "flags": ["😥", "😌", "💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Me encojo de hombros",
+      "flags": ["🙄", "🤷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Desconectado del todo",
+      "flags": ["😶‍🌫️", "🫥"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "sighSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos con el emoji suspiro",
+    "intro": "Combos de suspiro listos para usar: copia un set completo con un clic y pégalo directo en un pie de foto, un comentario o una respuesta."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-cansado/",
+      "title": "Emoji cansado y kaomoji",
+      "desc": "Bostezos, agotamiento y kaomoji con sueño, para el cansancio más que para un solo suspiro."
+    },
+    {
+      "href": "/es/library/emoji-facepalm/",
+      "title": "Emoji facepalm y kaomoji",
+      "desc": "El gesto de la mano en la cara y kaomoji para la frustración total."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    },
+    {
+      "href": "/es/library/emoji-triste/",
+      "title": "Emoji triste y kaomoji",
+      "desc": "Caras melancólicas y kaomoji llorando para cuando el suspiro pasa a algo más pesado."
+    }
+  ]
+}

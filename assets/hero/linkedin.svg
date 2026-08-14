@@ -23,19 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlinkedin)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlinkedin)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="48" y="84" width="232" height="30" rx="9" fill="url(#ghlinkedin)"/>
-    <rect x="48" y="138" width="180" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="164" width="216" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="190" width="150" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <g transform="translate(286 70)">
-      <path d="M0 30 L10 8 L20 24 L30 4 L40 24 L50 8 L60 30 Z" fill="url(#ghlinkedin)"/>
-    </g></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghlinkedin)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="14.4" fill="#1a1a2e" text-anchor="middle" opacity="1.0">Jordan Lee | Product Manager</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">▸ Jordan Lee</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="20.2" fill="#64748b" text-anchor="middle" opacity="0.85">Jordan Lee · Speaker</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="48" y="84" width="232" height="30" rx="9" fill="url(#ghlinkedin)"/>
-    <rect x="48" y="138" width="180" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="164" width="216" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="190" width="150" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <g transform="translate(286 70)">
-      <path d="M0 30 L10 8 L20 24 L30 4 L40 24 L50 8 L60 30 Z" fill="url(#ghlinkedin)"/>
-    </g></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghlinkedin)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="14.4" fill="#1a1a2e" text-anchor="middle" opacity="1.0">Jordan Lee | Product Manager</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">▸ Jordan Lee</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="20.2" fill="#64748b" text-anchor="middle" opacity="0.85">Jordan Lee · Speaker</text></g>
 </svg>

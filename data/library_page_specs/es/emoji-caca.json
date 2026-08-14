@@ -1,0 +1,268 @@
+{
+  "lang": "es",
+  "slug": "emoji-caca",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-caca/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/poop-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-caca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/poop-emoji/"
+    }
+  ],
+  "title": "Emoji Caca: Copiar y Pegar 💩 Combos Graciosos",
+  "meta_description": "El emoji caca 💩 con inodoros, nubes de olor, caras de asco y combos graciosos para bromas y chats. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Caca",
+  "hero_h1": "Emoji Caca 💩",
+  "hero_tagline": "El montoncito sonriente 💩 y todos los inodoros, nubes de olor y caras de asco que lo acompañan. Haz clic en cualquier símbolo o combo para copiarlo al instante.",
+  "intro": "El emoji caca 💩 —oficialmente Montón de Excremento— es el humor de baño favorito de internet desde los primeros días de los emojis, con su clásica sonrisa amistosa incluida. Encabeza mensajes de broma, burlas de cumpleaños, reportes del paseo del perro y el caos de cualquier chat grupal. Esta página reúne el emoji caca junto con todo su elenco de baño, las caras de reacción más graciosas para acompañarlo y combos de un solo clic para lograr el máximo efecto cómico.",
+  "sections": [
+    {
+      "id": "poop-bathroom",
+      "label": "Caca y Baño",
+      "h2": "Emojis de Caca y de Baño",
+      "intro": "La estrella del show y cada mueble de baño donde vive.",
+      "symbols": [
+        {
+          "char": "💩",
+          "label": "Montón de Excremento"
+        },
+        {
+          "char": "🚽",
+          "label": "Inodoro"
+        },
+        {
+          "char": "🧻",
+          "label": "Rollo de Papel"
+        },
+        {
+          "char": "🪠",
+          "label": "Destapador de Inodoro"
+        },
+        {
+          "char": "🚾",
+          "label": "Señal de WC"
+        },
+        {
+          "char": "🧼",
+          "label": "Jabón"
+        },
+        {
+          "char": "🚻",
+          "label": "Señal de Baños"
+        }
+      ]
+    },
+    {
+      "id": "laughing-faces",
+      "label": "Caras de Risa",
+      "h2": "Caras de Reacción con Risa",
+      "intro": "Las caras que se ríen cuando el emoji caca cae en el chat.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Cara con Lágrimas de Alegría"
+        },
+        {
+          "char": "🤣",
+          "label": "Cara Revolcándose de Risa"
+        },
+        {
+          "char": "😆",
+          "label": "Cara Sonriente con Ojos Cerrados"
+        },
+        {
+          "char": "🤭",
+          "label": "Cara con la Mano en la Boca"
+        },
+        {
+          "char": "😜",
+          "label": "Cara Guiñando con la Lengua Afuera"
+        },
+        {
+          "char": "🤪",
+          "label": "Cara Alocada"
+        }
+      ]
+    },
+    {
+      "id": "gross-out",
+      "label": "Asco",
+      "h2": "Emojis de Asco y Mal Olor",
+      "intro": "Caras con náuseas, zorrillos y ráfagas de aire para contar la historia completa, olor incluido.",
+      "symbols": [
+        {
+          "char": "🤢",
+          "label": "Cara con Náuseas"
+        },
+        {
+          "char": "🤮",
+          "label": "Cara Vomitando"
+        },
+        {
+          "char": "😷",
+          "label": "Cara con Mascarilla"
+        },
+        {
+          "char": "🤧",
+          "label": "Cara Estornudando"
+        },
+        {
+          "char": "🦨",
+          "label": "Zorrillo"
+        },
+        {
+          "char": "💨",
+          "label": "Ráfaga de Aire"
+        },
+        {
+          "char": "🙊",
+          "label": "Mono que No Habla"
+        }
+      ]
+    },
+    {
+      "id": "warning-signs",
+      "label": "Señales de Alerta",
+      "h2": "Señales de Advertencia y Peligro",
+      "intro": "Cinta de precaución para la emergencia de baño verdaderamente catastrófica.",
+      "symbols": [
+        {
+          "char": "⚠️",
+          "label": "Advertencia"
+        },
+        {
+          "char": "☣️",
+          "label": "Peligro Biológico"
+        },
+        {
+          "char": "🚫",
+          "label": "Prohibido"
+        },
+        {
+          "char": "⛔",
+          "label": "Prohibido el Paso"
+        },
+        {
+          "char": "🚧",
+          "label": "Obras"
+        },
+        {
+          "char": "🚨",
+          "label": "Luz de Patrulla"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Apestoso Clásico",
+      "flags": [
+        "💩",
+        "💨",
+        "🦨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Carrera al Baño",
+      "flags": [
+        "🏃",
+        "💨",
+        "🚽",
+        "💩"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Alerta Código Café",
+      "flags": [
+        "🚨",
+        "⚠️",
+        "💩",
+        "🚨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Muriéndose de Risa",
+      "flags": [
+        "💩",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Combo de Asco",
+      "flags": [
+        "🤢",
+        "💩",
+        "🤮"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Básicos del Baño",
+      "flags": [
+        "🚽",
+        "🧻",
+        "🪠",
+        "🧼"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Desfile de Cacas",
+      "flags": [
+        "💩",
+        "💩",
+        "💩",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "poopSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos Graciosos de Caca",
+    "intro": "Copia un combo completo de emoji caca en un solo clic: bromas ya armadas para mensajes, comentarios y chats grupales."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-moai/",
+      "title": "Emoji Moái",
+      "desc": "El emoji 🗿 de piedra con sus combos de memes inexpresivos."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de Emojis Graciosos",
+      "desc": "Combinaciones de emojis de memes y bromas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-nerd/",
+      "title": "Emoji Nerd",
+      "desc": "La cara 🤓 de nerd y sus colecciones de combos de memes."
+    },
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Emojis de Brainrot y Jerga",
+      "desc": "Combos de emojis de sigma, rizz y jerga de la generación Z."
+    }
+  ]
+}

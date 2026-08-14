@@ -31,6 +31,24 @@
       "rationale": "Flagship script-independent browse/collection pillar — same job as symbol/*, one level up (a currency-symbols or zodiac-signs collection page copies identically regardless of the visitor's language)."
     },
     {
+      "pattern": "category/strikethrough-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision on executed evidence. category/* is Latin-only because most of the pillar is Unicode math-alphanumeric SUBSTITUTION (a lookup table with no non-Latin entries). Strikethrough is not: renderer.js's decorator functions are `splitGraphemes(t).map(c => c + '\\u0336')` — they APPEND a combining mark to any grapheme, with no lookup table at all. Verified by executing the production styles.js+renderer.js against 7 non-Latin scripts: all 9 styles in this family transform Hindi, Arabic, Thai, Korean, Japanese, Chinese and Cyrillic correctly (नमस्ते -> न̶म̶स्ते̶). Production precedent already live and unquestioned: ru/zacherknutyy-tekst/ ships Cyrillic strikethrough in its own H1. Setting scriptIndependent per-page rather than per-pattern is what the most-specific-pattern-wins resolver exists for."
+    },
+    {
+      "pattern": "category/underline-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision — same mechanism and same verification as category/strikethrough-text/* above (combining U+0332 via splitGraphemes; all 6 styles in the family transform all 7 tested non-Latin scripts; ru/podcherknutyy-tekst/ is the live production precedent). This is also the pillar's best-converting page — 2.76x its own GSC position-curve band — which is why the mis-tiering was expensive rather than academic."
+    },
+    {
+      "pattern": "category/text-decorator/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision. This family wraps or frames text in symbols rather than substituting letterforms, so the job is script-irrelevant by construction; all 10 styles verified transforming all 7 tested non-Latin scripts. NOTE the demand caveat recorded with the decision: unlike the two above, this page has near-zero measured EN demand (13 impressions/60d), so the tier is corrected here for consistency of the mechanism claim — it is NOT a build recommendation, and no locale build is authorized by this entry alone."
+    },
+    {
       "pattern": "category/*",
       "tier": "core",
       "scriptIndependent": false,
@@ -59,6 +77,12 @@
       "tier": "gated",
       "scriptIndependent": false,
       "rationale": "Default for the usecase/ section — long-tail spokes (per-game name pages like free-fire-name-generator/valorant-name-generator/clan-tag-generator, niche generators) gate on a pre-build demand check. The two carve-outs above are more specific patterns and win via most-specific-pattern-first precedence, so they don't inherit this default."
+    },
+    {
+      "pattern": "printables/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Printable letterform spokes (bubble/cursive/block/calligraphy alphabets, tracing and coloring sheets). Added 2026-08-12: these previously matched NO pattern at all, so classifyParent returned pattern:null and tier:'unclassified', which the flowchart already treated as gated tail — its own rationale said to 'raise it with the user rather than assuming it's Core'. This entry codifies that existing de-facto treatment rather than changing it, and gives the pattern a real key so a per-locale gate-pass can actually be recorded in data/locale_parent_gap_audit.json (a null key could not be). Deliberately `gated`, not `core`: the printables engine renders Latin letterforms, and per-locale demand varies enormously — the 2026-07-10 i18n demand pass found strong evidence in es/fr/de/pt/pl, medium in it, and rated several other locales weak. Marked scriptIndependent:false for the same reason category/* is — a Latin-letterform tracing sheet is not meaningful for a non-Latin script. Note printables/index.html remains a separate, more-specific `core` entry: the pillar HUB mirrors by default, the spokes beneath it gate."
     },
     {
       "pattern": "answers/*",

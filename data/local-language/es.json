@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "es",
   "language": "Spanish",
-  "phrase_count": 18,
+  "phrase_count": 19,
   "phrases": [
     {
       "phrase_id": "ES-001",
@@ -294,6 +294,22 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "ES-043",
+      "native_phrase": "planas / planas de caligrafía",
+      "transliteration": "",
+      "english_concept": "repetition handwriting sheets ('write this line over and over')",
+      "country_or_market": "es_MX",
+      "register": "neutral, school-culture",
+      "phrase_type": "standard_everyday_term",
+      "content_surface": "h1, title, faq (es_MX only)",
+      "usage_guidance": "The single best es_MX head term for a handwriting-practice-sheet generator: 'planas de caligrafía para imprimir' names the exact artefact a Mexican parent has in mind. It supports, and does not compete with, a broader 'caligrafía para imprimir' target.",
+      "good_example": "Genera planas de caligrafía con el nombre de tu hijo y descárgalas en PDF.",
+      "avoid_when": "Do not use in es_ES copy — in Spain 'plana' primarily reads as 'flat/page' and the drill is called a 'ficha de caligrafía'. Avoid where the tone is anti-rote: 'planas' carries a mild connotation of repetitive punishment-style homework for some Mexican adults, so do not use it in copy arguing that practice should be playful.",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-12"
     }
   ]
 }
