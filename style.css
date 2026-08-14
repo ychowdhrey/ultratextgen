@@ -8498,6 +8498,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .lib-clear-btn.visible {
   display: inline-flex;
+}
 
 /* Cursive hub A-Z chart (crawlable text glyphs, links to letter guides) */
 .cursive-chart-grid {
@@ -8769,20 +8770,33 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.45;
+}
 
-/* Per-letter sierletters grid (nl/sierlijke-letters). GSC shows 23 distinct
-   single-letter queries ("sierlijke b", "sierletter o", …) landing on that page
-   at pos ~7.9 with almost no clicks — the page ranked for them but only offered
-   whole-alphabet copy rows. Each cell is individually anchored so those queries
-   land on the letter they asked for. Layout mirrors .cursive-letter-grid; no JS
-   of its own — the buttons inside are ordinary .glyph-copy targets. */
-.sierletter-grid {
+/* Per-letter anchored letter grid. Two pages use it, for the same reason:
+   a page ranks for single-letter queries but only offers whole-alphabet copy
+   rows, so the searcher lands on a wall of 26 letters instead of the one they
+   asked for. Each cell is individually anchored so the query can deep-link to
+   its own letter. Layout mirrors .cursive-letter-grid; no JS of its own — the
+   buttons inside are ordinary .glyph-copy targets, picked up by script.js's
+   delegated handler.
+
+   .sierletter-* — nl/sierlijke-letters. GSC showed 23 distinct single-letter
+   queries ("sierlijke b", "sierletter o", …) at pos ~7.9 with almost no clicks.
+   .letter-anchor-* — the generic name, added 2026-08-10 for ja/hikkitai, where
+   a Semrush pull found 39 single-letter cursive queries ("s 筆記体", "筆記体 f",
+   both word orders) worth ~115,850/mo combined against a page whose own intro
+   promised per-letter glyphs but shipped only two whole-alphabet buttons.
+   Prefer .letter-anchor-* for any new page; .sierletter-* is kept so the
+   existing Dutch markup kept working unchanged. */
+.sierletter-grid,
+.letter-anchor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
   gap: 10px;
   margin: 18px 0;
 }
-.sierletter-cell {
+.sierletter-cell,
+.letter-anchor-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8793,10 +8807,12 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   background: var(--bg-white);
   scroll-margin-top: 90px;
 }
-.sierletter-cell .alpha-label {
+.sierletter-cell .alpha-label,
+.letter-anchor-cell .alpha-label {
   flex: none;
 }
-.sierletter-cell .glyph-copy {
+.sierletter-cell .glyph-copy,
+.letter-anchor-cell .glyph-copy {
   font-size: 1.5rem;
   line-height: 1.2;
   padding: 2px 6px;
