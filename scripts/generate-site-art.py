@@ -2634,6 +2634,17 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # ar/library batch (2026-08-14) — Saudi-market volume export; see the
+  # Arabic locale research doc. Motifs come from each page's own copy tiles
+  # via motif_from_page(), so the base motif here is only the fallback.
+  "ar-library-text-art": ("رسومات بالرموز", "أحرف الرسم والمكعبات والتظليل للنسخ",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u250c"), K_LIB),
+  "ar-library-pubg-symbols": ("رموز ببجي", "رموز اللاعبين والإطارات المقبولة في اللعبة",
+        glyphs("\u30c4", "\u5f61", "\u4e42", "\ua9c1", "\u2605"), K_LIB),
+  "ar-library-whatsapp-symbols": ("رموز واتساب", "رموز وزخارف لحالة واتساب والبايو",
+        glyphs("\u2713", "\u2665", "\u2605", "\u2022", "\u2756"), K_LIB),
+  "ar-library-fire-emoji": ("ايموجي نار", "معناه في المحادثات وتركيباته الجاهزة",
+        glyphs("\U0001f525", "\U0001f4af", "\U0001f680", "\u26a1", "\U0001f451"), K_LIB),
   # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
   "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
   "id-printables-huruf-kaligrafi": ("Huruf Kaligrafi A\u2013Z", "Kaligrafi huruf Latin \u2014 tiru, tebalkan, cetak", m_grid, K_PRINT),
@@ -2693,6 +2704,27 @@ for _l, _word in LETTER_WORD.items():
     PAGES[f"printables-calligraphy-alphabet-letter-{_l}"] = (
         f"Calligraphy {_L}", f"Blackletter & script {_L} to copy or print",
         P(m_letter_cursive, letter=_L), K_PRINT)
+
+# ES per-letter coloring spokes (2026-08-12). Same loop shape as the EN sets
+# above; the Spanish head-word differs from LETTER_WORD because the letter-word
+# association is language-specific (A de Arbol, not A is for Apple).
+LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato", "enye": "Ñu"}
+for _l, _word in LETTER_WORD_ES.items():
+    # slug != letter for the Spanish enye: the URL/PNG slug is ASCII ("enye",
+    # matching printablesEngine's own charSlug), but the drawn glyph is Ñ.
+    _L = "Ñ" if _l == "enye" else _l.upper()
+    PAGES[f"es-imprimibles-abecedario-para-colorear-letra-{_l}"] = (
+        f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
+# ES per-digit number spokes (2026-08-12) — the 0-9 half of the ES colouring
+# family, which had existed on the EN side all along.
+LETTER_WORD_ES_NUM = {"0": "cero", "1": "uno", "2": "dos", "3": "tres", "4": "cuatro",
+                      "5": "cinco", "6": "seis", "7": "siete", "8": "ocho", "9": "nueve"}
+for _d, _w in LETTER_WORD_ES_NUM.items():
+    PAGES[f"es-imprimibles-abecedario-para-colorear-numero-{_d}"] = (
+        f"Numero {_d} para Colorear", f"El {_w} en grande, contorno para imprimir",
+        P(m_letter_outline, letter=_d), K_PRINT)
 
 # Number pages exist for four of the alphabet sets. Registering only the A-Z
 # half left every 0-9 page on its hub's card (block-letters, and — via the
@@ -2776,6 +2808,7 @@ PAGES.update({
 "answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
 "answers-christmas-card-what-to-write": ("What to Write in a Christmas Card", "Lines by relationship, family to boss", m_qa, K_ANS),
 "answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
+"answers-teacher-appreciation-card-what-to-write": ("What to Write in a Teacher's Card", "Specific lines from a student, parent or class", m_qa, K_ANS),
 "answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
 "answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
@@ -2809,6 +2842,7 @@ PAGES.update({
 "events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
 "events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
 "events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
+"events-teacher-appreciation": ("Teacher Appreciation Text & Symbol Generator", "Apple, pencil, and star emoji with ready-made thank-you lines", m_pencil_ruled, K_USE),
 "events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
 "events-thanksgiving": ("Thanksgiving Fonts & Emoji Generator", "Turkey, pie, and autumn-leaf emoji for gratitude posts", m_pie, K_USE),
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
@@ -2840,6 +2874,17 @@ PAGES.update({
 "pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
+"es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
+# 2026-08-12 ES printables gap-fill + graffiti EN parent.
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+# 2026-08-13 graffiti-generator pass: ID translation of the graffiti EN parent.
+"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
+"es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
+"es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
 "printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
@@ -3044,6 +3089,7 @@ PAGES.update({
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 "vi-updates-lien-quan-khoa-doi-ten": ("Liên Quân siết khóa đổi tên", "Tên vi phạm bị tự sửa, khóa đổi tên tới 3 năm", m_doc, K_UPDATE),
+"updates-telegram-premium-message-limit": ("Telegram Premium Messages Grow From 4,096 to 32,768 Characters", "Free accounts stay at 4,096 — the editor is Premium-only", m_doc, K_UPDATE),
 })
 
 # ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull

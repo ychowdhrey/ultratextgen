@@ -1,0 +1,246 @@
+{
+  "lang": "es",
+  "slug": "emoji-check",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-check/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/check-mark-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-check/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/check-mark-emoji/"
+    }
+  ],
+  "title": "Emoji Check y Kaomoji: Copiar y Pegar ✅ ✔️ Combos de Tarea Lista",
+  "meta_description": "Copia y pega el emoji check ✅ ✔️ ☑️, las cruces ❌ ✖️ y combos de tarea lista para listas y chats. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Check y Kaomoji",
+  "hero_h1": "Emoji Check y Kaomoji",
+  "hero_tagline": "Todas las palomitas, desde el botón verde ✅ hasta el glifo simple ✓, más cruces, gestos de aprobación y combos de tarea lista ya armados. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji check ✅ es ese botón verde de tarea cumplida que marcas cuando algo queda terminado, distinto de la palomita simple de Unicode ✓, un glifo plano en negro que se funde con el texto que lo rodea. Según el país lo vas a oír como palomita en México, como chulo o visto en Colombia, Venezuela, Ecuador y Perú, o como marca de verificación cuando la ocasión pide algo más formal. Esta página reúne toda la familia ✅ ✔️ ☑️, las cruces y equis que la gente busca justo al lado (❌ ✖️ 🚫), gestos de aprobación como 👍 y 💯, y combos de un clic para listas de pendientes, chats y actualizaciones de estado. También incluye una fila de palomitas de texto plano (✓ ✗ ☒) para hojas de cálculo y documentos donde un glifo sencillo se ve mejor que un emoji a todo color. Y si lo que buscas es el carácter Unicode de la palomita por sí solo — su punto de código, su historia y los caracteres que se le parecen — revisa la página de símbolos de verificación que enlazamos abajo.",
+  "sections": [
+    {
+      "id": "core-check-marks",
+      "label": "Palomitas Principales",
+      "h2": "Emojis de Check Principales",
+      "intro": "La familia a todo color del emoji check, desde el botón verde hasta la casilla marcada.",
+      "symbols": [
+        {
+          "char": "✅",
+          "label": "Botón de check"
+        },
+        {
+          "char": "✔️",
+          "label": "Palomita gruesa"
+        },
+        {
+          "char": "☑️",
+          "label": "Casilla con palomita"
+        },
+        {
+          "char": "🗹",
+          "label": "Casilla con palomita gruesa"
+        }
+      ]
+    },
+    {
+      "id": "cross-x-marks",
+      "label": "Cruces y Equis",
+      "h2": "Emojis de Cruz y Equis",
+      "intro": "Las marcas de no, error y rechazo que la gente busca junto a las palomitas.",
+      "symbols": [
+        {
+          "char": "❌",
+          "label": "Cruz roja"
+        },
+        {
+          "char": "✖️",
+          "label": "Signo de multiplicación"
+        },
+        {
+          "char": "❎",
+          "label": "Botón de cruz"
+        },
+        {
+          "char": "🚫",
+          "label": "Prohibido"
+        }
+      ]
+    },
+    {
+      "id": "approval-gestures",
+      "label": "Gestos de Aprobación",
+      "h2": "Gestos de Aprobación y Tarea Lista",
+      "intro": "Manos, cien puntos y notas para marcar un mensaje como listo, aprobado o bien hecho.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pulgar arriba"
+        },
+        {
+          "char": "🙌",
+          "label": "Manos en alto"
+        },
+        {
+          "char": "👏",
+          "label": "Aplausos"
+        },
+        {
+          "char": "💯",
+          "label": "Cien puntos"
+        },
+        {
+          "char": "✍️",
+          "label": "Mano escribiendo"
+        },
+        {
+          "char": "📝",
+          "label": "Nota"
+        }
+      ]
+    },
+    {
+      "id": "text-check-marks",
+      "label": "Palomitas de Texto",
+      "h2": "Palomitas de Texto (Sin Emoji)",
+      "intro": "Palomitas y cruces de Unicode que se ven como glifos planos — ideales para hojas de cálculo, documentos y textos que deben quedarse en un solo color.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Palomita"
+        },
+        {
+          "char": "✗",
+          "label": "Equis de casilla"
+        },
+        {
+          "char": "☒",
+          "label": "Casilla con equis"
+        },
+        {
+          "char": "✕",
+          "label": "Equis de multiplicación"
+        },
+        {
+          "char": "✘",
+          "label": "Equis gruesa"
+        },
+        {
+          "char": "⍻",
+          "label": "Palomita tachada"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Tarea completada",
+      "flags": [
+        "✅",
+        "📝",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Todo listo por hoy",
+      "flags": [
+        "✔️",
+        "☑️",
+        "🙌"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aprobado",
+      "flags": [
+        "✅",
+        "👍"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No aprobado",
+      "flags": [
+        "❌",
+        "🚫"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pendientes tachados",
+      "flags": [
+        "✅",
+        "✅",
+        "✅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ni de broma",
+      "flags": [
+        "❌",
+        "✖️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Doble verificación",
+      "flags": [
+        "✅",
+        "✔️",
+        "☑️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Verificado",
+      "flags": [
+        "✅",
+        "💯",
+        "👏"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "checkMarkSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Check",
+    "intro": "Copia un combo completo de listo y aprobado con un clic y pégalo directo en una lista de pendientes, una respuesta o una actualización de estado."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-verificacion/",
+      "title": "Símbolos de Verificación",
+      "desc": "La familia Unicode de la palomita ✓ ✔ en texto plano — explórala y cópiala sin el color del emoji."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-verificacion/",
+      "title": "Símbolo de Verificación",
+      "desc": "Todo sobre el carácter ✓ por sí solo: punto de código, historia y cómo escribirlo con el teclado."
+    },
+    {
+      "href": "/es/library/emoji-pulgar-arriba/",
+      "title": "Emoji de Pulgar Arriba",
+      "desc": "El emoji 👍 de aprobación y acuerdo, con combos positivos ya armados."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combinaciones de Emojis",
+      "desc": "Combos de emojis para mezclar y combinar según el estado de ánimo y el mensaje."
+    }
+  ]
+}

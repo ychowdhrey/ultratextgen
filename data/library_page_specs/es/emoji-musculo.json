@@ -1,0 +1,218 @@
+{
+ "lang": "es",
+ "slug": "emoji-musculo",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-musculo/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/muscle-emoji/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-musculo/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/muscle-emoji/"
+  }
+ ],
+ "title": "Emoji Músculo 💪 Copiar y Pegar: Combos de Gym y Flex",
+ "meta_description": "Copia y pega el emoji de bíceps 💪, sus tonos de piel y combos de gym, flex y motivación para publicaciones, biografías y comentarios. Un clic y listo.",
+ "breadcrumb": "Emoji de Músculo",
+ "hero_h1": "Emoji de Músculo",
+ "hero_tagline": "El emoji de bíceps flexionado para el progreso en el gym, las ganancias y el flex de internet: todos los tonos de piel más los emojis de gimnasio y hype que lo acompañan. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "El emoji músculo 💪 es la forma más rápida de decir fuerza, esfuerzo y trabajo hecho: sirve para un check-in en el gym, para responderle a alguien que se rompió entrenando o como reacción de un solo emoji ante una buena noticia. Igual de seguido se usa fuera del gimnasio: «flex» es slang de internet para presumir, así que 💪 aparece en publicaciones de logros, récords personales y cualquier momento que merezca una presumida discreta. Esta página reúne el emoji de músculo y sus variantes de tono de piel, los emojis de gimnasio y cardio que casi siempre lo acompañan, y los de motivación y medallas para cuando el flex se lo ganó.",
+ "sections": [
+  {
+   "id": "muscle-flex",
+   "label": "Músculo y flex",
+   "h2": "Emoji de Bíceps Flexionado y Tonos de Piel",
+   "intro": "El emoji 💪 base y sus cinco variantes oficiales de tono de piel: elige la que te corresponda o usa el amarillo por defecto para un flex neutral.",
+   "symbols": [
+    {
+     "char": "💪",
+     "label": "Bíceps flexionado"
+    },
+    {
+     "char": "💪🏻",
+     "label": "Bíceps flexionado: tono de piel claro"
+    },
+    {
+     "char": "💪🏼",
+     "label": "Bíceps flexionado: tono de piel claro medio"
+    },
+    {
+     "char": "💪🏽",
+     "label": "Bíceps flexionado: tono de piel medio"
+    },
+    {
+     "char": "💪🏾",
+     "label": "Bíceps flexionado: tono de piel oscuro medio"
+    },
+    {
+     "char": "💪🏿",
+     "label": "Bíceps flexionado: tono de piel oscuro"
+    },
+    {
+     "char": "🦾",
+     "label": "Brazo mecánico"
+    }
+   ]
+  },
+  {
+   "id": "gym-fitness",
+   "label": "Gym y fitness",
+   "h2": "Emojis de Gimnasio y Fitness",
+   "intro": "Pesas, carrera y el sudor que va con eso: los emojis que aparecen en los registros de entrenamiento y las publicaciones de progreso.",
+   "symbols": [
+    {
+     "char": "🏋️",
+     "label": "Persona levantando pesas"
+    },
+    {
+     "char": "🏋️‍♀️",
+     "label": "Mujer levantando pesas"
+    },
+    {
+     "char": "🏃",
+     "label": "Persona corriendo"
+    },
+    {
+     "char": "🤸",
+     "label": "Persona haciendo la rueda"
+    },
+    {
+     "char": "🧗",
+     "label": "Persona escalando"
+    },
+    {
+     "char": "💦",
+     "label": "Gotas de sudor"
+    },
+    {
+     "char": "🥵",
+     "label": "Cara acalorada"
+    }
+   ]
+  },
+  {
+   "id": "motivation-achievement",
+   "label": "Motivación y logros",
+   "h2": "Emojis de Motivación y Logros",
+   "intro": "Para cuando el flex se lo ganó: hype, esfuerzo y la victoria que lo respalda.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    },
+    {
+     "char": "🥇",
+     "label": "Medalla de oro"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "💯",
+     "label": "Cien puntos"
+    },
+    {
+     "char": "⚡",
+     "label": "Alto voltaje"
+    },
+    {
+     "char": "👊",
+     "label": "Puño de frente"
+    },
+    {
+     "char": "🎯",
+     "label": "Diana"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Check-in en el gym",
+   "flags": [
+    "💪",
+    "🏋️",
+    "💦"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Récord personal",
+   "flags": [
+    "💪",
+    "🥇",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sin días libres",
+   "flags": [
+    "💪",
+    "🏃",
+    "⚡"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Flex a lo grande",
+   "flags": [
+    "💪",
+    "💯",
+    "👊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Temporada de ganancias",
+   "flags": [
+    "💪",
+    "🔥",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "muscleSetsContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos del Emoji de Músculo",
+  "intro": "Combos de músculo listos para usar: copia un set completo con un clic y pégalo en una publicación de gym, en tu biografía o en un comentario."
+ },
+ "related": [
+  {
+   "href": "/es/library/emojis-de-deportes/",
+   "title": "Emojis de Deportes y Actividades",
+   "desc": "Deportes de pelota, acuáticos, fitness y medallas para redondear una publicación de entrenamiento."
+  },
+  {
+   "href": "/es/library/emoji-fuego/",
+   "title": "Emoji y Kaomoji de Fuego",
+   "desc": "El emoji 🔥 del hype y sus sets de combos para publicaciones y comentarios."
+  },
+  {
+   "href": "/library/achievement-symbols/",
+   "title": "Emojis de Trofeos, Medallas y Premios",
+   "desc": "Coronas, trofeos y medallas para celebrar un récord personal."
+  },
+  {
+   "href": "/es/library/simbolos-de-manos/",
+   "title": "Símbolos de Manos",
+   "desc": "Choques de puños, señas y otros emojis de gestos para acompañar un flex."
+  }
+ ]
+}

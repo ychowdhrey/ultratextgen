@@ -1,0 +1,280 @@
+{
+  "lang": "es",
+  "slug": "simbolos-whatsapp",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-whatsapp/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/whatsapp-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-whatsapp/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/whatsapp-symbols/"
+    }
+  ],
+  "title": "Símbolos WhatsApp: Copiar y Pegar ✓ ♥ para Estados y Bio",
+  "meta_description": "Copia y pega símbolos WhatsApp para tu estado, biografía y nombres de grupo: checks, corazones, estrellas y adornos. Haz clic para copiar al instante.",
+  "breadcrumb": "Símbolos WhatsApp",
+  "hero_h1": "Símbolos WhatsApp",
+  "hero_tagline": "Checks, corazones, estrellas y adornos para estados, biografías y nombres de grupo de WhatsApp. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos de WhatsApp le dan vida a las partes de la app que el texto normal deja vacías: tu línea de información, los estados, los nombres de grupo y los mensajes de difusión. Esta biblioteca reúne los caracteres que la gente pega más seguido en WhatsApp: palomitas y marcas de verificación, corazones de todos los colores, estrellas y destellos, además de separadores y adornos ya armados para tu estado. Todo lo que ves aquí es Unicode estándar, así que se ve igual en Android y en iPhone sin instalar ninguna app extra ni pagar nada.",
+  "sections": [
+    {
+      "id": "ticks-checks",
+      "label": "Checks",
+      "h2": "Checks y marcas de verificación",
+      "intro": "Las palomitas recuerdan a los famosos checks de entrega de WhatsApp y quedan muy bien en estados de pendientes y en las reglas de un grupo.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Marca de verificación"
+        },
+        {
+          "char": "✔",
+          "label": "Marca de verificación gruesa"
+        },
+        {
+          "char": "✅",
+          "label": "Marca de verificación en verde"
+        },
+        {
+          "char": "☑",
+          "label": "Casilla marcada"
+        },
+        {
+          "char": "✗",
+          "label": "Equis de rechazo"
+        },
+        {
+          "char": "✘",
+          "label": "Equis gruesa"
+        }
+      ]
+    },
+    {
+      "id": "hearts-love",
+      "label": "Corazones",
+      "h2": "Corazones y símbolos de amor",
+      "intro": "Corazones para estados de pareja, mensajes de aniversario y nombres de grupos familiares.",
+      "symbols": [
+        {
+          "char": "♥",
+          "label": "Corazón relleno"
+        },
+        {
+          "char": "♡",
+          "label": "Corazón sin relleno"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "💙",
+          "label": "Corazón azul"
+        },
+        {
+          "char": "💞",
+          "label": "Corazones giratorios"
+        },
+        {
+          "char": "💌",
+          "label": "Carta de amor"
+        }
+      ]
+    },
+    {
+      "id": "stars-sparkles",
+      "label": "Estrellas",
+      "h2": "Estrellas y destellos",
+      "intro": "Estrellas y destellos que hacen resaltar tu línea de información o el titular de un estado.",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "Estrella rellena"
+        },
+        {
+          "char": "☆",
+          "label": "Estrella sin relleno"
+        },
+        {
+          "char": "✦",
+          "label": "Estrella de cuatro puntas rellena"
+        },
+        {
+          "char": "✧",
+          "label": "Estrella de cuatro puntas sin relleno"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        },
+        {
+          "char": "🌟",
+          "label": "Estrella brillante"
+        },
+        {
+          "char": "💫",
+          "label": "Estrella con estela"
+        }
+      ]
+    },
+    {
+      "id": "bullets-dividers",
+      "label": "Adornos",
+      "h2": "Viñetas, flechas y separadores",
+      "intro": "Ordena un estado largo o la descripción de un grupo con viñetas, flechas y separadores.",
+      "symbols": [
+        {
+          "char": "•",
+          "label": "Viñeta"
+        },
+        {
+          "char": "◦",
+          "label": "Viñeta sin relleno"
+        },
+        {
+          "char": "▪",
+          "label": "Cuadrito relleno"
+        },
+        {
+          "char": "➤",
+          "label": "Punta de flecha hacia la derecha"
+        },
+        {
+          "char": "➜",
+          "label": "Flecha gruesa de punta redondeada"
+        },
+        {
+          "char": "❖",
+          "label": "Rombo relleno con equis blanca"
+        },
+        {
+          "char": "◈",
+          "label": "Rombo con diamante interior"
+        },
+        {
+          "char": "┊",
+          "label": "Línea vertical punteada"
+        },
+        {
+          "char": "─",
+          "label": "Línea horizontal"
+        },
+        {
+          "char": "✽",
+          "label": "Asterisco de pétalos gruesos"
+        }
+      ]
+    },
+    {
+      "id": "popular-emoji",
+      "label": "Emojis populares",
+      "h2": "Emojis más usados en los estados de WhatsApp",
+      "intro": "Los emojis que más se pegan en estados, descripciones y respuestas de WhatsApp.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Cara llorando de risa"
+        },
+        {
+          "char": "🙏",
+          "label": "Manos juntas"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "💯",
+          "label": "Cien puntos"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        },
+        {
+          "char": "🌹",
+          "label": "Rosa"
+        },
+        {
+          "char": "☕",
+          "label": "Taza de café"
+        },
+        {
+          "char": "🎵",
+          "label": "Nota musical"
+        }
+      ]
+    },
+    {
+      "id": "status-combos",
+      "label": "Combos para estados",
+      "h2": "Adornos listos para tu estado",
+      "intro": "Adornos de un clic para estados y biografías: cada botón copia la cadena completa de una sola vez.",
+      "symbols": [
+        {
+          "char": "•──────♡──────•",
+          "label": "Separador con corazón"
+        },
+        {
+          "char": "✦ ♡ ✦ ♡ ✦",
+          "label": "Cadena de estrellas y corazones"
+        },
+        {
+          "char": "✿ ❀ ✿ ❀ ✿",
+          "label": "Separador de flores"
+        },
+        {
+          "char": "♪ ♫ ♬ ♫ ♪",
+          "label": "Adorno de notas musicales"
+        },
+        {
+          "char": "★·.·´¯`·.·★",
+          "label": "Marco clásico de estrellas"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-para-instagram/",
+      "title": "Símbolos para Instagram",
+      "desc": "Símbolos y caracteres para biografías, descripciones e historias de Instagram."
+    },
+    {
+      "href": "/library/tiktok-symbols/",
+      "title": "Símbolos para TikTok",
+      "desc": "Símbolos de moda para nombres de usuario, biografías y descripciones de TikTok."
+    },
+    {
+      "href": "/es/library/simbolos-discord/",
+      "title": "Símbolos para Discord",
+      "desc": "Símbolos para nombres de servidores, canales y estados de Discord."
+    },
+    {
+      "href": "/es/library/emojis-para-mensajes/",
+      "title": "Emojis de saludo y para mensajes",
+      "desc": "Combos de emojis de gracias, buenos días y saludos para tus chats."
+    }
+  ]
+}

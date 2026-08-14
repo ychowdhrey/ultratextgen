@@ -1,0 +1,176 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-arte",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-arte/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/art-stationery-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-arte/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/art-stationery-emojis/" }
+  ],
+  "title": "Emojis de Arte y Papelería: Copiar y Pegar ✏ 🎨 Combos Creativos",
+  "meta_description": "Emojis de arte y papelería para copiar y pegar: lápices ✏️, paletas 🎨, pinceles, cuadernos, papel y combos creativos. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Emojis de arte y papelería",
+  "hero_h1": "Emojis de Arte y Papelería",
+  "hero_tagline": "Lápices, paletas, plumas, papel y útiles de escritorio, con sets de combos creativos. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de arte y papelería son un clásico de las biografías de artistas, las cuentas de estudio, los bullet journals y los pies de foto de escritura: una paleta y un pincel para avisar que las comisiones están abiertas, un lápiz y un cuaderno para un hilo de estudio, un sobre para promocionar el newsletter. Esta referencia reúne los emojis de dibujo, escritura, papel y útiles de escritorio que existen en Unicode, más sets de combos de un clic para las situaciones creativas más comunes.",
+  "sections": [
+    {
+      "id": "drawing-painting",
+      "label": "Arte",
+      "h2": "Emojis de dibujo y pintura",
+      "intro": "Paleta, pincel y cuadros para artistas visuales.",
+      "symbols": [
+        { "char": "🎨", "label": "Paleta de pintor" },
+        { "char": "🖌️", "label": "Pincel" },
+        { "char": "🖍️", "label": "Crayón" },
+        { "char": "✏️", "label": "Lápiz" },
+        { "char": "🖼️", "label": "Cuadro con marco" }
+      ]
+    },
+    {
+      "id": "pens-writing",
+      "label": "Plumas",
+      "h2": "Emojis de plumas y escritura",
+      "intro": "Bolígrafos, plumines y escritura para quienes escriben y toman apuntes.",
+      "symbols": [
+        { "char": "🖊️", "label": "Bolígrafo" },
+        { "char": "🖋️", "label": "Pluma fuente" },
+        { "char": "✒️", "label": "Plumín negro" },
+        { "char": "📝", "label": "Nota" },
+        { "char": "✍️", "label": "Mano escribiendo" }
+      ]
+    },
+    {
+      "id": "paper-notebooks",
+      "label": "Papel y libros",
+      "h2": "Emojis de papel, cuadernos y libros",
+      "intro": "Hojas, pergaminos, cuadernos y libros de todos los colores.",
+      "symbols": [
+        { "char": "📄", "label": "Hoja de papel" },
+        { "char": "📃", "label": "Hoja con punta doblada" },
+        { "char": "📜", "label": "Pergamino" },
+        { "char": "📑", "label": "Marcadores de páginas" },
+        { "char": "📒", "label": "Libro de contabilidad" },
+        { "char": "📓", "label": "Cuaderno" },
+        { "char": "📔", "label": "Cuaderno con tapa decorada" },
+        { "char": "📕", "label": "Libro cerrado" },
+        { "char": "📗", "label": "Libro verde" },
+        { "char": "📘", "label": "Libro azul" },
+        { "char": "📙", "label": "Libro naranja" },
+        { "char": "📖", "label": "Libro abierto" },
+        { "char": "📚", "label": "Libros" }
+      ]
+    },
+    {
+      "id": "desk-supplies",
+      "label": "Útiles de escritorio",
+      "h2": "Emojis de útiles de escritorio y oficina",
+      "intro": "Chinchetas, clips, reglas y archivos para escritorios ordenados.",
+      "symbols": [
+        { "char": "📌", "label": "Chincheta" },
+        { "char": "📍", "label": "Chincheta redonda" },
+        { "char": "📎", "label": "Clip" },
+        { "char": "🖇️", "label": "Clips enlazados" },
+        { "char": "📏", "label": "Regla" },
+        { "char": "📐", "label": "Escuadra" },
+        { "char": "✂️", "label": "Tijeras" },
+        { "char": "🗃️", "label": "Caja de fichas" },
+        { "char": "🗄️", "label": "Archivador" },
+        { "char": "📂", "label": "Carpeta abierta" },
+        { "char": "📁", "label": "Carpeta" },
+        { "char": "🗑️", "label": "Papelera" }
+      ]
+    },
+    {
+      "id": "mail-news",
+      "label": "Correo y noticias",
+      "h2": "Emojis de correo, etiquetas y periódicos",
+      "intro": "Sobres, buzones y prensa para mensajes y noticias.",
+      "symbols": [
+        { "char": "✉️", "label": "Sobre" },
+        { "char": "📩", "label": "Sobre con flecha" },
+        { "char": "📨", "label": "Sobre entrante" },
+        { "char": "📧", "label": "Correo electrónico" },
+        { "char": "📮", "label": "Buzón de correo" },
+        { "char": "📬", "label": "Buzón abierto con bandera arriba" },
+        { "char": "📰", "label": "Periódico" },
+        { "char": "🗞️", "label": "Periódico enrollado" },
+        { "char": "🏷️", "label": "Etiqueta" },
+        { "char": "🔖", "label": "Marcador de libro" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Biografía de artista",
+      "flags": ["🎨", "🖌️", "✏️", "🖼️", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Apuntes de estudio",
+      "flags": ["📚", "📝", "✏️", "📌", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bullet journal",
+      "flags": ["📔", "🖊️", "📏", "🌸", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Escritorio de escritor",
+      "flags": ["✍️", "📜", "🖋️", "☕", "💡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vuelta a clases",
+      "flags": ["🎒", "✏️", "📐", "📚", "🍎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hora del correo",
+      "flags": ["✉️", "📮", "📬", "💌", "🏷️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sesión de bocetos",
+      "flags": ["✏️", "📓", "🖍️", "🎨", "🎧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "creativeSetsContainer",
+  "collection_section": {
+    "id": "creative-sets",
+    "label": "Sets creativos",
+    "h2": "Sets de combos creativos",
+    "intro": "Copia con un clic un combo completo de emojis de arte o papelería para biografías y pies de foto."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-escuela/",
+      "title": "Emojis de escuela y educación",
+      "desc": "Combos de emojis de graduación, estudio y salón de clases."
+    },
+    {
+      "href": "/es/library/emojis-de-objetos/",
+      "title": "Emojis de objetos",
+      "desc": "Emojis de cosas de todos los días, de la tecnología al hogar."
+    },
+    {
+      "href": "/es/library/simbolos-de-email/",
+      "title": "Símbolos de email",
+      "desc": "Sobre, arroba y caracteres de correo para tus mensajes."
+    },
+    {
+      "href": "/es/library/simbolos-de-vineta/",
+      "title": "Símbolos de viñeta",
+      "desc": "Puntos, flechas y marcadores de lista para listas bien ordenadas."
+    }
+  ]
+}

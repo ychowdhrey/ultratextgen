@@ -1,0 +1,89 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-sorprendido",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-sorprendido/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/shocked-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-sorprendido/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/shocked-kaomoji/" }
+  ],
+  "title": "Kaomoji Sorprendido: Copiar y Pegar Caritas de Asombro",
+  "meta_description": "Explora y copia kaomoji sorprendido — también escrito kamoji — caritas de texto japonesas con ojos como platos y asombro total. Haz clic para copiar.",
+  "breadcrumb": "Kaomoji Sorprendido",
+  "hero_h1": "Kaomoji Sorprendido",
+  "hero_tagline": "Copia y pega kaomoji sorprendido — caritas de texto japonesas con los ojos como platos, la boca abierta y el asombro congelado. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji sorprendidos (también escritos kamoji) son caritas de texto japonesas congeladas en pleno asombro: ojos como platos, mandíbulas caídas e incredulidad total. Un kaomoji sorprendido como (⊙_⊙) o Σ(°△°|||) es texto Unicode normal, así que se pega sin problemas en biografías, publicaciones, comentarios y chats. Explora por intensidad abajo y haz clic en cualquier carita para copiarla al instante. Ya busques \"kaomoji sorprendido\" o \"kaomoji de sorpresa\", todas las caritas aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "wide",
+      "label": "Ojos como Platos",
+      "h2": "Kaomoji con los Ojos como Platos",
+      "intro": "Caritas congeladas, con los ojos enormes, tomadas por sorpresa.",
+      "symbols": [
+        { "char": "(⊙_⊙)", "label": "Ojos bien abiertos" },
+        { "char": "(○_○)", "label": "Sorpresa en blanco" },
+        { "char": "(☉_☉)", "label": "Mirada fija" },
+        { "char": "(⊙﹏⊙)", "label": "Sorpresa nerviosa" },
+        { "char": "(°o°)", "label": "Ay, no" },
+        { "char": "(⊙▂⊙)", "label": "Atónito" }
+      ]
+    },
+    {
+      "id": "gasp",
+      "label": "Boquiabierto",
+      "h2": "Kaomoji Boquiabiertos",
+      "intro": "Caritas con la mandíbula caída y el aire cortado.",
+      "symbols": [
+        { "char": "(°ロ°)", "label": "Grito ahogado" },
+        { "char": "(ﾟﾛﾟ)", "label": "Boca bien abierta" },
+        { "char": "(」°ロ°)」", "label": "Sorpresa a gritos" },
+        { "char": "w(°o°)w", "label": "Guau" },
+        { "char": "(๑º口º๑)", "label": "Sin palabras" },
+        { "char": "( ﾟдﾟ)", "label": "Horrorizado" }
+      ]
+    },
+    {
+      "id": "mind",
+      "label": "Alucinado",
+      "h2": "Kaomoji Alucinados",
+      "intro": "Incredulidad total y completamente exagerada.",
+      "symbols": [
+        { "char": "Σ(°△°|||)", "label": "Alarmado" },
+        { "char": "Σ(っ °Д °;)っ", "label": "No puede ser" },
+        { "char": "(((( ;°Д°))))", "label": "Pánico" },
+        { "char": "Σ(ﾟﾛﾟ|||)", "label": "Fulminado" },
+        { "char": "(ﾉﾟ0ﾟ)ﾉ", "label": "Impactado" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El centro completo de kaomoji: caritas japonesas de todos los ánimos en un solo lugar."
+    },
+    {
+      "href": "/es/library/crying-kaomoji/",
+      "title": "Kaomoji Llorando y Tristes",
+      "desc": "Caritas con lágrimas y ánimo sombrío para momentos más pesados."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Crea tu propia carita: mezcla ojos, bocas y brazos, y luego cópiala."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji Felices",
+      "desc": "Caritas de texto japonesas sonrientes y llenas de alegría."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "lang": "es",
+  "slug": "emoji-griezmann",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-griezmann/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/griezmann-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-griezmann/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/griezmann-emoji-combos/"
+    }
+  ],
+  "title": "Combos de Emoji de Griezmann 🇫🇷⚽🐐 Copiar y Pegar",
+  "meta_description": "Combos de emoji de Griezmann 🇫🇷⚽: sets de emoji de la afición para biografías, descripciones y comentarios. Copia cualquier combo al instante.",
+  "breadcrumb": "Combos de emoji de Griezmann",
+  "hero_h1": "Combos de emoji de Griezmann",
+  "hero_tagline": "Sets de emoji para la afición de Griezmann: bandera, fútbol y los combos con su sello. Haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "La afición de Antoine Griezmann combina la bandera de Francia 🇫🇷 con el balón ⚽ y el control 🎮 del gamer. Estos combos de emoji de Griezmann quedan perfectos en biografías, descripciones y comentarios. Copia un emoji suelto de abajo o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "griezmann-emojis",
+      "label": "Griezmann",
+      "h2": "Emojis de Griezmann",
+      "intro": "Los emojis con el sello del jugador.",
+      "symbols": [
+        {
+          "char": "🇫🇷",
+          "label": "Bandera de Francia"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🐐",
+          "label": "GOAT: el mejor de todos"
+        },
+        {
+          "char": "🎮",
+          "label": "Control de videojuegos"
+        },
+        {
+          "char": "7️⃣",
+          "label": "Número 7"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔴",
+          "label": "Rojo (Atlético)"
+        },
+        {
+          "char": "⚪",
+          "label": "Blanco (Atlético)"
+        }
+      ]
+    },
+    {
+      "id": "france-emojis",
+      "label": "Francia",
+      "h2": "Emojis de Francia y del Atlético",
+      "intro": "El campeón del mundo e ídolo del Atleti.",
+      "symbols": [
+        {
+          "char": "🇫🇷",
+          "label": "Bandera de Francia"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "👑",
+          "label": "Corona (el Principito)"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Grizi",
+      "flags": [
+        "🇫🇷",
+        "⚽",
+        "🎮"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estrella del Atleti",
+      "flags": [
+        "🔴",
+        "⚪",
+        "⚽"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Francia campeona",
+      "flags": [
+        "🇫🇷",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "El Principito",
+      "flags": [
+        "👑",
+        "⚽",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "griezmannCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Griezmann",
+    "intro": "Copia un combo completo con un solo clic y pégalo en una biografía, una descripción o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emoji del Mundial",
+      "desc": "Sets y combos de emoji del Mundial para biografías y descripciones de la afición."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y cada tema."
+    }
+  ]
+}

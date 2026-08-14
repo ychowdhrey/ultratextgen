@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-italia",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-italia/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/italy-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-italia/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/italy-emoji-combos/" }
+  ],
+  "title": "Emoji Italia: Combos 🇮🇹⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Italia 🇮🇹⚽: los colores de los Azzurri y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Italia",
+  "hero_h1": "Combos de Emoji Italia",
+  "hero_tagline": "Los colores de los Azzurri y sets de emojis de fútbol para hinchas de Italia — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Italia 🇮🇹 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con los colores de los Azzurri. El grito de Forza Italia acompaña a los Azzurri de las cuatro estrellas. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "italy-emojis",
+      "label": "Italia",
+      "h2": "Emojis de Italia",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇮🇹", "label": "Bandera de Italia" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Italiano",
+      "intro": "El azzurro de la selección y el tricolore.",
+      "symbols": [
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Azzurri",
+      "flags": ["🇮🇹", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Forza Italia",
+      "flags": ["🇮🇹", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cuatro Estrellas",
+      "flags": ["⭐", "⭐", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tricolore",
+      "flags": ["🟢", "⚪", "🔴"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "italyCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Italia",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

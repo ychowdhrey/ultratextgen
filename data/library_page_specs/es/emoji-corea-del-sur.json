@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-corea-del-sur",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-corea-del-sur/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/south-korea-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-corea-del-sur/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/south-korea-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Corea del Sur: Combos 🇰🇷⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Corea del Sur 🇰🇷⚽: los colores de los Guerreros Taeguk y sets de fútbol para biografías. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Corea del Sur",
+  "hero_h1": "Combos de Emoji Corea del Sur",
+  "hero_tagline": "Los colores de los Guerreros Taeguk y sets de emojis de fútbol para hinchas de Corea del Sur — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Corea del Sur 🇰🇷 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con los colores de los Guerreros Taeguk. Los cantos de Daehanminguk hacen temblar la tribuna de los Diablos Rojos. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "south-korea-emojis",
+      "label": "Corea del Sur",
+      "h2": "Emojis de Corea del Sur",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇰🇷",
+          "label": "Bandera de Corea del Sur"
+        },
+        {
+          "char": "⚽",
+          "label": "Pelota de Fútbol"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo Rojo"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo Azul"
+        },
+        {
+          "char": "🐅",
+          "label": "Tigre"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin Yang (Taegeuk)"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de Confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo Coreano",
+      "intro": "El rojo y el azul del taegeuk, los colores de los Diablos Rojos.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Círculo Rojo"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo Azul"
+        },
+        {
+          "char": "🐅",
+          "label": "Tigre"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin Yang (Taegeuk)"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Guerreros Taeguk",
+      "flags": [
+        "🇰🇷",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Daehanminguk",
+      "flags": [
+        "🇰🇷",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Diablos Rojos",
+      "flags": [
+        "🔴",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fighting",
+      "flags": [
+        "🇰🇷",
+        "💪",
+        "⚽"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "southKoreaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Corea del Sur",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

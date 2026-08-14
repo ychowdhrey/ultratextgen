@@ -1,0 +1,90 @@
+{
+  "lang": "es",
+  "slug": "emoji-goat",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-goat/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/goat-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-goat/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/goat-emoji-combos/" }
+  ],
+  "title": "Emoji Goat 🐐⚽🏆: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji goat 🐐⚽🏆 para biografías y publicaciones de fútbol: la cabra, la corona y el trofeo. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Goat",
+  "hero_h1": "Combos de Emoji Goat",
+  "hero_tagline": "Sets de emojis del mejor de todos los tiempos: cabra, corona y trofeo para biografías deportivas. Haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji goat 🐐 significa «Greatest Of All Time», el mejor de todos los tiempos, y aparece en cada debate futbolero. Combínalo con la pelota, la corona y el trofeo para coronar a tu jugador favorito. Copia un emoji suelto de los de abajo o toma un set GOAT completo con un solo clic.",
+  "sections": [
+    {
+      "id": "goat-emojis",
+      "label": "GOAT",
+      "h2": "Emojis GOAT",
+      "intro": "El kit del mejor de todos los tiempos.",
+      "symbols": [
+        { "char": "🐐", "label": "Cabra (el GOAT)" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "👑", "label": "Corona" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "✨", "label": "Destellos" }
+      ]
+    },
+    {
+      "id": "legend",
+      "label": "Leyenda",
+      "h2": "Emojis de Leyenda y Campeón",
+      "intro": "Símbolos de estatus para los más grandes de la historia.",
+      "symbols": [
+        { "char": "👑", "label": "Corona" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🎖️", "label": "Medalla" },
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "GOAT del Fútbol", "flags": ["🐐", "⚽", "🏆"], "defaultFormat": "inline" },
+    { "name": "Estatus de GOAT", "flags": ["🐐", "👑", "💯"], "defaultFormat": "inline" },
+    { "name": "Mentalidad de Campeón", "flags": ["🏆", "🔥", "💪"], "defaultFormat": "inline" },
+    { "name": "El Mejor de la Historia", "flags": ["🐐", "🥇", "✨"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "goatCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos GOAT",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de Deportes",
+      "desc": "Todos los emojis de deportes y actividades, organizados por categoría."
+    }
+  ]
+}

@@ -323,16 +323,31 @@ if (FIX) {
     let xDefaultIdx = -1;
     let indent = '  ';
     lines.forEach((line, i) => {
-      if (/<link\b[^>]*rel="alternate"/i.test(line)) {
+      if (/<link\b[^>]*rel=["']alternate["']/i.test(line)) {
         lastAltIdx = i;
         const m = line.match(/^(\s*)/);
         if (m) indent = m[1];
-        if (/hreflang="x-default"/i.test(line)) xDefaultIdx = i;
+        if (/hreflang=["']x-default["']/i.test(line)) xDefaultIdx = i;
       }
     });
 
-    const insertAt = xDefaultIdx !== -1 ? xDefaultIdx : lastAltIdx + 1;
-    if (insertAt < 0) continue;
+    // lastAltIdx === -1 means this file declares no alternates we recognised.
+    // `lastAltIdx + 1` would then be 0, which splices the new <link> ABOVE
+    // <!DOCTYPE> — outside <head>, invisible to crawlers, and enough to put the
+    // page in quirks mode. That is not hypothetical: it shipped on
+    // es/decorador-de-texto and es/simbolos-para-free-fire, whose alternates are
+    // single-quoted and so matched none of the double-quote-only regexes above.
+    // Fall back to the canonical line, and skip rather than guess if there is
+    // no anchor at all.
+    let insertAt = xDefaultIdx !== -1 ? xDefaultIdx : (lastAltIdx !== -1 ? lastAltIdx + 1 : -1);
+    if (insertAt < 0) {
+      const canonIdx = lines.findIndex((l) => /<link\b[^>]*rel=["']canonical["']/i.test(l));
+      if (canonIdx < 0) {
+        console.warn(`  ! ${filePath}: no alternate or canonical anchor — skipped rather than inserting at the top of the file`);
+        continue;
+      }
+      insertAt = canonIdx + 1;
+    }
 
     const existing = new Set(lines.map((l) => l.trim()));
 
@@ -409,7 +424,7 @@ if (FIX) {
     let canonIdx = -1;
     let indent = '  ';
     lines.forEach((line, i) => {
-      if (/<link\b[^>]*rel="canonical"/i.test(line)) {
+      if (/<link\b[^>]*rel=["']canonical["']/i.test(line)) {
         canonIdx = i;
         const m = line.match(/^(\s*)/);
         if (m) indent = m[1];

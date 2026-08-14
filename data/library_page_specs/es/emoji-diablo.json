@@ -1,0 +1,154 @@
+{
+  "lang": "es",
+  "slug": "emoji-diablo",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-diablo/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/devil-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-diablo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/devil-emoji/" }
+  ],
+  "title": "Emoji Diablo y Kaomoji: Copiar y Pegar 😈👿 Combos de Demonio",
+  "meta_description": "Emoji diablo 😈 👿 👹 👺, combos de demonio y villano y kaomoji diabólicos como ψ(｀∇´)ψ para chats, publicaciones y juegos. Haz clic para copiar.",
+  "breadcrumb": "Emoji Diablo y Kaomoji",
+  "hero_h1": "Emoji Diablo y Kaomoji",
+  "hero_tagline": "Sonrisas con cuernos, diablillos enojados, ogros, goblins y kaomoji diabólicos — todos los matices del villano, el demonio y la travesura. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji diablo 😈 tiene dos caras. Esta página cubre el lado literal: el 😈 sonriente y su gemelo más enojado, el diablillo 👿, monstruos del folclore como el ogro 👹 y el goblin 👺, y marcas de villano como el tridente 🔱 y el supervillano 🦹 que convierten cualquier texto en todo un número de genio del mal. Ojo con la diferencia frente al significado coqueto y travieso del 😈: ese uso pícaro tiene su propia página de emoji freaky, enlazada más abajo. Y cuando ningún emoji alcanza para transmitir la amenaza, los kaomoji diabólicos como ψ(｀∇´)ψ se pegan donde sea que funcione el texto plano. Toma una sola cara o copia un combo de demonio ya armado para tus chats, publicaciones y nombres de juego.",
+  "sections": [
+    {
+      "id": "core-devil-faces",
+      "label": "Caras del Diablo",
+      "h2": "Emojis de Diablo, Diablillo y Muerte",
+      "intro": "Las dos caras con cuernos que están en el centro de todo chiste diabólico, más las calaveras y el fuego que arman el ambiente.",
+      "symbols": [
+        { "char": "😈", "label": "Cara sonriente con cuernos" },
+        { "char": "👿", "label": "Cara enojada con cuernos" },
+        { "char": "💀", "label": "Calavera" },
+        { "char": "☠️", "label": "Calavera y huesos cruzados" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    },
+    {
+      "id": "demons-monsters",
+      "label": "Demonios y Monstruos",
+      "h2": "Emojis de Demonio, Ogro y Monstruos",
+      "intro": "Bestias del folclore y monstruos nocturnos: el elenco completo de una publicación de terror o de villanos.",
+      "symbols": [
+        { "char": "👹", "label": "Ogro" },
+        { "char": "👺", "label": "Goblin" },
+        { "char": "👻", "label": "Fantasma" },
+        { "char": "🧟", "label": "Zombi" },
+        { "char": "🧛", "label": "Vampiro" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "🤡", "label": "Cara de payaso" }
+      ]
+    },
+    {
+      "id": "villain-mischief-symbols",
+      "label": "Villanos y Travesuras",
+      "h2": "Símbolos de Villano, Tridente y Travesura",
+      "intro": "El tridente, el supervillano y las armas que llevan un texto al terreno del genio del mal.",
+      "symbols": [
+        { "char": "🔱", "label": "Emblema del tridente" },
+        { "char": "🦹", "label": "Supervillano" },
+        { "char": "🦹‍♂️", "label": "Supervillano hombre" },
+        { "char": "🦹‍♀️", "label": "Supervillana mujer" },
+        { "char": "🗡️", "label": "Daga" },
+        { "char": "⚔️", "label": "Espadas cruzadas" },
+        { "char": "🐍", "label": "Serpiente" }
+      ]
+    },
+    {
+      "id": "devil-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Diabólicos y de Villano",
+      "intro": "Caritas de texto al estilo japonés que sonríen con malicia, traman planes y sacan cuernos en texto plano.",
+      "symbols": [
+        { "char": "ψ(｀∇´)ψ", "label": "Kaomoji de sonrisa con cuernos" },
+        { "char": "Ψ(｀▽´)Ψ", "label": "Kaomoji de demonio contento" },
+        { "char": "(｀皿´)凸", "label": "Kaomoji de villano desafiante" },
+        { "char": "( ｀ｰ´)", "label": "Kaomoji de sonrisa malvada" },
+        { "char": "(◣_◢)", "label": "Kaomoji de mirada amenazante" },
+        { "char": "(¬､¬)", "label": "Kaomoji de mirada de reojo tramposa" },
+        { "char": "(￢‿￢)", "label": "Kaomoji de sonrisa astuta" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Modo Diablo",
+      "flags": ["😈", "👿", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Invocación de Demonios",
+      "flags": ["😈", "🔱", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arco de Villano Completo",
+      "flags": ["🦹", "😈", "🔥", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fiesta de Monstruos",
+      "flags": ["👹", "👺", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Genio del Mal",
+      "flags": ["😈", "🧠", "🦹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Muerte y Oscuridad",
+      "flags": ["💀", "☠️", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Travesura Ligera",
+      "flags": ["😈", "😜", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Diabólicos",
+      "flags": ["ψ(｀∇´)ψ", "(｀皿´)凸", "Ψ(｀▽´)Ψ"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "devilSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Diablo",
+    "intro": "Copia un combo diabólico completo con un solo clic — desde una travesura ligera hasta un arco de villano completo."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-halloween/",
+      "title": "Símbolos de Halloween",
+      "desc": "Calabazas, murciélagos y glifos escalofriantes para toda la temporada."
+    },
+    {
+      "href": "/es/library/emojis-de-fantasia/",
+      "title": "Emojis de Fantasía y Mitología",
+      "desc": "Dragones, magos y criaturas míticas para publicaciones llenas de lore."
+    },
+    {
+      "href": "/es/library/emoji-freaky/",
+      "title": "Emoji Freaky y Kaomoji",
+      "desc": "El lado coqueto y travieso del 😈 — el significado pícaro de la cara del diablo."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las caritas y emojis de caras en una sola cuadrícula."
+    }
+  ]
+}

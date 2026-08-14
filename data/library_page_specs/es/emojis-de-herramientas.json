@@ -1,0 +1,314 @@
+{
+ "lang": "es",
+ "slug": "emojis-de-herramientas",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emojis-de-herramientas/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/weapon-tool-emojis/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emojis-de-herramientas/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/weapon-tool-emojis/"
+  }
+ ],
+ "title": "Emojis de Herramientas y Armas ⚔ 🔪 🔨 Copiar y Pegar",
+ "meta_description": "Lista de emojis de herramientas y armas: espadas ⚔️, escudos 🛡️, arcos 🏹, martillos 🔨 y sets de combate para gaming. Haz clic para copiarlos al instante.",
+ "breadcrumb": "Emojis de Armas y Herramientas",
+ "hero_h1": "Emojis de Herramientas y Armas",
+ "hero_tagline": "Espadas, escudos, martillos y herramientas de taller para biografías gamer y publicaciones con temática de batalla. Haz clic en cualquier emoji para copiarlo al instante.",
+ "intro": "Los emojis de herramientas y armas aparecen todo el tiempo en clips de gaming, nombres de clan, biografías con onda de RPG y publicaciones de bricolaje: espadas cruzadas para un duelo, un escudo para los que juegan de defensa, un martillo y una llave para los que construyen. Esta referencia reúne los emojis de filo, de largo alcance, de herramientas y de ferretería que existen en Unicode, con sets de equipamiento listos para copiar con un solo clic.",
+ "sections": [
+  {
+   "id": "swords-blades",
+   "label": "Filos",
+   "h2": "Emojis de Espadas y Filos",
+   "intro": "Espadas, dagas y otros emojis con filo.",
+   "symbols": [
+    {
+     "char": "⚔️",
+     "label": "Espadas cruzadas"
+    },
+    {
+     "char": "🗡️",
+     "label": "Daga"
+    },
+    {
+     "char": "🔪",
+     "label": "Cuchillo de cocina"
+    },
+    {
+     "char": "🪓",
+     "label": "Hacha"
+    },
+    {
+     "char": "🪃",
+     "label": "Búmeran"
+    }
+   ]
+  },
+  {
+   "id": "shields-ranged",
+   "label": "Escudos y distancia",
+   "h2": "Emojis de Escudos y Ataque a Distancia",
+   "intro": "Emojis de defensa y ataque a distancia para publicaciones de batalla.",
+   "symbols": [
+    {
+     "char": "🛡️",
+     "label": "Escudo"
+    },
+    {
+     "char": "🏹",
+     "label": "Arco y flecha"
+    },
+    {
+     "char": "🔫",
+     "label": "Pistola de agua"
+    },
+    {
+     "char": "💣",
+     "label": "Bomba"
+    },
+    {
+     "char": "🧨",
+     "label": "Petardo"
+    },
+    {
+     "char": "🎯",
+     "label": "Diana"
+    }
+   ]
+  },
+  {
+   "id": "hammers-tools",
+   "label": "Herramientas",
+   "h2": "Emojis de Martillos y Herramientas de Taller",
+   "intro": "Martillos, llaves y emojis de herramientas para construir y reparar.",
+   "symbols": [
+    {
+     "char": "🔨",
+     "label": "Martillo"
+    },
+    {
+     "char": "⚒️",
+     "label": "Martillo y pico"
+    },
+    {
+     "char": "🛠️",
+     "label": "Martillo y llave inglesa"
+    },
+    {
+     "char": "⛏️",
+     "label": "Pico"
+    },
+    {
+     "char": "🪛",
+     "label": "Destornillador"
+    },
+    {
+     "char": "🔧",
+     "label": "Llave inglesa"
+    },
+    {
+     "char": "🪚",
+     "label": "Serrucho"
+    },
+    {
+     "char": "🧰",
+     "label": "Caja de herramientas"
+    },
+    {
+     "char": "🪜",
+     "label": "Escalera"
+    }
+   ]
+  },
+  {
+   "id": "hardware-parts",
+   "label": "Ferretería",
+   "h2": "Emojis de Ferretería y Piezas",
+   "intro": "Engranajes, tornillos y emojis de piezas mecánicas.",
+   "symbols": [
+    {
+     "char": "⚙️",
+     "label": "Engranaje"
+    },
+    {
+     "char": "🔩",
+     "label": "Tuerca y perno"
+    },
+    {
+     "char": "🧲",
+     "label": "Imán"
+    },
+    {
+     "char": "🪝",
+     "label": "Gancho"
+    },
+    {
+     "char": "⛓️",
+     "label": "Cadenas"
+    },
+    {
+     "char": "🪤",
+     "label": "Ratonera"
+    },
+    {
+     "char": "🔗",
+     "label": "Eslabón"
+    }
+   ]
+  },
+  {
+   "id": "battle-effects",
+   "label": "Efectos",
+   "h2": "Emojis de Efectos de Batalla y Poder",
+   "intro": "Impacto, energía y magia para rematar un combo de batalla.",
+   "symbols": [
+    {
+     "char": "💥",
+     "label": "Choque"
+    },
+    {
+     "char": "⚡",
+     "label": "Alto voltaje"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    },
+    {
+     "char": "🪄",
+     "label": "Varita mágica"
+    },
+    {
+     "char": "🧪",
+     "label": "Tubo de ensayo"
+    },
+    {
+     "char": "💫",
+     "label": "Mareo"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Equipo de caballero",
+   "flags": [
+    "⚔️",
+    "🛡️",
+    "🏰",
+    "🐎",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Aterrizaje battle royale",
+   "flags": [
+    "🔫",
+    "💣",
+    "🧨",
+    "🎯",
+    "💥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Misión medieval",
+   "flags": [
+    "🗡️",
+    "🛡️",
+    "🐉",
+    "🏹",
+    "🏰"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Build de arquero",
+   "flags": [
+    "🏹",
+    "🎯",
+    "🪶",
+    "🌲",
+    "💨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Build de mago",
+   "flags": [
+    "🪄",
+    "🧪",
+    "⚡",
+    "💫",
+    "🔮"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Banco de trabajo",
+   "flags": [
+    "🔨",
+    "🪛",
+    "🔧",
+    "🪚",
+    "🧰"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Salida a minar",
+   "flags": [
+    "⛏️",
+    "🪨",
+    "💎",
+    "🪜",
+    "🔦"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "weaponLoadoutsContainer",
+ "collection_section": {
+  "id": "loadout-sets",
+  "label": "Sets de Equipamiento",
+  "h2": "Sets de Combos de Batalla y Equipamiento",
+  "intro": "Copia con un clic un equipamiento completo de emojis de armas o herramientas para tus biografías y clips de gaming."
+ },
+ "related": [
+  {
+   "href": "/es/library/simbolos-para-fortnite/",
+   "title": "Símbolos para Fortnite",
+   "desc": "Caracteres sweaty para nombres y decoraciones de clan."
+  },
+  {
+   "href": "/es/library/simbolos-minecraft/",
+   "title": "Símbolos de Minecraft",
+   "desc": "Caracteres para el chat, el MOTD y los nombres de servidor."
+  },
+  {
+   "href": "/es/library/emojis-de-fantasia/",
+   "title": "Emojis de Fantasía y Mitología",
+   "desc": "Magos, dragones y combos de emojis mágicos."
+  },
+  {
+   "href": "/es/library/simbolos-de-peligro/",
+   "title": "Símbolos de Peligro y Advertencia",
+   "desc": "Caracteres de precaución, peligro y advertencia."
+  }
+ ]
+}

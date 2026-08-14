@@ -1,0 +1,215 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-comida",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-comida/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/food-drink-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-comida/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/food-drink-emojis/" }
+  ],
+  "title": "Emojis de Comida y Bebida: Copiar y Pegar Símbolos de Comida",
+  "meta_description": "Explora y copia emojis de comida y bebida: frutas, verduras, platillos, postres, bebidas y utensilios de cocina. Haz clic en cualquier emoji para copiarlo.",
+  "breadcrumb": "Emojis de Comida y Bebida",
+  "hero_h1": "Emojis de Comida y Bebida",
+  "hero_tagline": "Una referencia completa de emojis de comida y bebida: de frutas y verduras a postres, bebidas y utensilios de cocina. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de comida están entre los más usados en todas las plataformas. Ya sea que publiques una receta, compartas la reseña de un restaurante o quieras darle sabor a tus redes sociales, esta colección reúne todos los emojis de comida y bebida del estándar Unicode, organizados por categoría para que los encuentres rápido.",
+  "sections": [
+    {
+      "id": "fruits-vegetables",
+      "label": "",
+      "h2": "Emojis de Frutas y Verduras",
+      "intro": "Emojis de productos frescos para contenido de comida, recetas y publicaciones de alimentación saludable.",
+      "symbols": [
+        { "char": "🍎", "label": "Manzana roja" },
+        { "char": "🥑", "label": "Aguacate" },
+        { "char": "🍇", "label": "Uvas" },
+        { "char": "🍊", "label": "Mandarina" },
+        { "char": "🍋", "label": "Limón" },
+        { "char": "🍌", "label": "Plátano" },
+        { "char": "🍉", "label": "Sandía" },
+        { "char": "🍓", "label": "Fresa" },
+        { "char": "🫐", "label": "Arándanos" },
+        { "char": "🍒", "label": "Cerezas" },
+        { "char": "🍑", "label": "Durazno" },
+        { "char": "🥭", "label": "Mango" },
+        { "char": "🍍", "label": "Piña" },
+        { "char": "🥥", "label": "Coco" },
+        { "char": "🥝", "label": "Kiwi" },
+        { "char": "🍅", "label": "Jitomate" },
+        { "char": "🥦", "label": "Brócoli" },
+        { "char": "🥬", "label": "Verdura de hoja verde" },
+        { "char": "🥒", "label": "Pepino" },
+        { "char": "🌶️", "label": "Chile picante" },
+        { "char": "🫑", "label": "Pimiento" },
+        { "char": "🌽", "label": "Elote" },
+        { "char": "🥕", "label": "Zanahoria" },
+        { "char": "🧄", "label": "Ajo" },
+        { "char": "🧅", "label": "Cebolla" },
+        { "char": "🥔", "label": "Papa" },
+        { "char": "🫘", "label": "Frijoles" },
+        { "char": "🍈", "label": "Melón" }
+      ]
+    },
+    {
+      "id": "prepared-foods",
+      "label": "",
+      "h2": "Emojis de Platillos Preparados",
+      "intro": "Emojis de comida cocinada y platillos listos para publicaciones de comidas, reseñas de restaurantes y blogs gastronómicos.",
+      "symbols": [
+        { "char": "🍕", "label": "Pizza" },
+        { "char": "🍔", "label": "Hamburguesa" },
+        { "char": "🌭", "label": "Hot dog" },
+        { "char": "🥪", "label": "Sándwich" },
+        { "char": "🌮", "label": "Taco" },
+        { "char": "🌯", "label": "Burrito" },
+        { "char": "🫔", "label": "Tamal" },
+        { "char": "🥙", "label": "Pan plano relleno" },
+        { "char": "🧆", "label": "Falafel" },
+        { "char": "🥚", "label": "Huevo" },
+        { "char": "🍳", "label": "Huevo friéndose" },
+        { "char": "🥘", "label": "Sartén con comida" },
+        { "char": "🍲", "label": "Olla de comida" },
+        { "char": "🫕", "label": "Fondue" },
+        { "char": "🥣", "label": "Tazón con cuchara" },
+        { "char": "🥗", "label": "Ensalada verde" },
+        { "char": "🍿", "label": "Palomitas" },
+        { "char": "🧈", "label": "Mantequilla" },
+        { "char": "🧂", "label": "Sal" },
+        { "char": "🥫", "label": "Comida enlatada" },
+        { "char": "🍟", "label": "Papas fritas" },
+        { "char": "🧀", "label": "Trozo de queso" },
+        { "char": "🍣", "label": "Sushi" },
+        { "char": "🍱", "label": "Caja bento" },
+        { "char": "🍙", "label": "Bola de arroz" },
+        { "char": "🍥", "label": "Pastel de pescado" },
+        { "char": "🍞", "label": "Pan" },
+        { "char": "🥖", "label": "Baguette" },
+        { "char": "🥐", "label": "Cuernito" },
+        { "char": "🥯", "label": "Bagel" },
+        { "char": "🥨", "label": "Pretzel" },
+        { "char": "🍜", "label": "Tazón humeante" },
+        { "char": "🍝", "label": "Espagueti" },
+        { "char": "🥞", "label": "Hotcakes" },
+        { "char": "🧇", "label": "Waffle" },
+        { "char": "🥓", "label": "Tocino" }
+      ]
+    },
+    {
+      "id": "desserts-sweets",
+      "label": "",
+      "h2": "Emojis de Postres y Dulces",
+      "intro": "Pasteles, galletas, dulces y antojos para contenido de postres.",
+      "symbols": [
+        { "char": "🍰", "label": "Rebanada de pastel" },
+        { "char": "🎂", "label": "Pastel de cumpleaños" },
+        { "char": "🧁", "label": "Cupcake" },
+        { "char": "🥧", "label": "Tarta" },
+        { "char": "🍮", "label": "Flan" },
+        { "char": "🍭", "label": "Paleta" },
+        { "char": "🍬", "label": "Caramelo" },
+        { "char": "🍫", "label": "Barra de chocolate" },
+        { "char": "🍩", "label": "Dona" },
+        { "char": "🍪", "label": "Galleta" },
+        { "char": "🍯", "label": "Tarro de miel" },
+        { "char": "🍨", "label": "Helado en copa" },
+        { "char": "🍦", "label": "Helado suave" },
+        { "char": "🍧", "label": "Raspado" }
+      ]
+    },
+    {
+      "id": "drinks-beverages",
+      "label": "",
+      "h2": "Emojis de Bebidas",
+      "intro": "Bebidas calientes, bebidas frías y emojis de bebidas alcohólicas.",
+      "symbols": [
+        { "char": "☕", "label": "Café" },
+        { "char": "🍵", "label": "Taza de té sin asa" },
+        { "char": "🫖", "label": "Tetera" },
+        { "char": "🧋", "label": "Té con perlas" },
+        { "char": "🥤", "label": "Vaso con popote" },
+        { "char": "🧃", "label": "Jugo en caja" },
+        { "char": "🥛", "label": "Vaso de leche" },
+        { "char": "🍼", "label": "Biberón" },
+        { "char": "🫗", "label": "Líquido sirviéndose" },
+        { "char": "🍺", "label": "Tarro de cerveza" },
+        { "char": "🍻", "label": "Tarros de cerveza brindando" },
+        { "char": "🥂", "label": "Copas brindando" },
+        { "char": "🍷", "label": "Copa de vino" },
+        { "char": "🥃", "label": "Vaso corto" },
+        { "char": "🍸", "label": "Copa de coctel" },
+        { "char": "🍹", "label": "Bebida tropical" },
+        { "char": "🍾", "label": "Botella descorchándose" },
+        { "char": "🧊", "label": "Hielo" }
+      ]
+    },
+    {
+      "id": "kitchen-cooking",
+      "label": "",
+      "h2": "Emojis de Cocina y Utensilios",
+      "intro": "Cubiertos, ollas y herramientas de cocina para contenido culinario.",
+      "symbols": [
+        { "char": "🍽️", "label": "Plato con cubiertos" },
+        { "char": "🍴", "label": "Tenedor y cuchillo" },
+        { "char": "🥄", "label": "Cuchara" },
+        { "char": "🔪", "label": "Cuchillo de cocina" },
+        { "char": "🫙", "label": "Frasco" },
+        { "char": "🧑‍🍳", "label": "Chef" },
+        { "char": "🥢", "label": "Palillos chinos" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/usecase/traductor-de-emojis/",
+      "title": "Convertidor de Texto a Emoji",
+      "desc": "Convierte cualquier frase en emojis, escribe nombres con letras de emoji o descifra emojis de vuelta a texto: gratis y al instante."
+    },
+    {
+      "href": "/es/library/emojis-de-animales/",
+      "title": "Emojis de Animales",
+      "desc": "Una colección completa de emojis de animales organizada por tipo y hábitat."
+    },
+    {
+      "href": "/es/library/simbolos-de-flor/",
+      "title": "Símbolos de Flores y Naturaleza",
+      "desc": "Emojis de flores, símbolos de plantas y caracteres Unicode con temática natural."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones de todo el mundo."
+    },
+    {
+      "href": "/library/chefs-kiss-emoji/",
+      "title": "Emoji y Kaomoji de Beso de Chef",
+      "desc": "El gesto del beso de chef, caras de deleite y kaomoji de perfección."
+    },
+    {
+      "href": "/es/library/emoji-berenjena/",
+      "title": "Emoji y Kaomoji de Berenjena",
+      "desc": "El significado con doble sentido del emoji de berenjena y otras verduras sugerentes."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Caritas, expresiones y emojis de emociones para cada estado de ánimo."
+    },
+    {
+      "href": "/es/symbol/emoji-de-pepinillo/",
+      "title": "Emoji de Pepinillo",
+      "desc": "Un pepinillo entero, distinto del pepino y de la berenjena: propuesto para Emoji 18.0, previsto junto con Unicode 18.0 en septiembre de 2026."
+    },
+    {
+      "href": "/events/thanksgiving/",
+      "title": "Generador de Texto y Símbolos de Acción de Gracias",
+      "desc": "Dale estilo a un saludo de Acción de Gracias en vivo y copia fuentes, emojis, kaomoji y frases listas para usar."
+    }
+  ]
+}

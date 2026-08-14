@@ -170,6 +170,15 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-15",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/es/imprimibles/abecedario-para-colorear/letra-enye/",
+      "reason": "RATIFIED LOCAL-ONLY: the 27th letter of the Spanish alphabet. This is the cleanest possible instance of the category — Ñ does not exist in the English alphabet, so an English parent is not merely absent but impossible to write: there is no 'printable letter Ñ' page an English speaker would land on, because the letter is not part of their alphabet. Structurally identical to the ja/gal-moji precedent (a script-specific artefact with no English analogue), and strictly stronger than it, since gal-moji is a stylistic transform an English speaker could conceivably search for whereas Ñ is a character English does not use. Its 26 A-Z siblings under the same parent are all normal translations of live printables/alphabet-coloring-pages/letter-<x>/ pages and carry full reciprocal hreflang; this one page is the exception, and it is the only one in the set. en/x-default fall back to the bare EN homepage as a generic default only, per CLAUDE.md's own distinction — NOT a translation-equivalence claim, and it must not be auto-propagated as a real sibling relationship by mesh tooling. Note the site already covers Ñ elsewhere without an EN parent problem: es/imprimibles/abecedario-espanol/ is a translation of printables/spanish-alphabet-chart/, where Ñ is one tile inside a 27-letter chart rather than its own URL. That page stays the canonical 'whole Spanish alphabet' target; this one owns the single-letter query only, exactly as its 26 siblings do.",
+      "agreed": "2026-08-12",
+      "enDemandBasis": "None, and none is possible by construction — 'printable letter enye' is not an English query. The ES-side demand is real and directly evidenced: 'letra ñ para colorear' 1,220/mo in the owner-supplied 10-market Semrush export (2026-08-13 pull), which is mid-pack among the per-letter set and larger than 9 of the 26 A-Z letters it sits alongside. Difficulty KD27, in line with the rest of the family.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-10-11",
+      "verdict": "ratified 2026-08-12. Unlike most entries in this ledger, this exception is not expected to expire: an English parent cannot appear later because the letter will not enter the English alphabet. The nextRecheck date is aligned with review-register item 42 (the ES printables 60-day readout) purely so the whole cluster is re-examined together — if that readout fires the stop rule, this page is reviewed for retirement alongside its 26 siblings, not on its own merits."
     }
   ]
 }

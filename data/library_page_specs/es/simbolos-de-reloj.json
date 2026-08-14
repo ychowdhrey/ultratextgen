@@ -1,0 +1,136 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-reloj",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-reloj/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/clock-time-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-reloj/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/clock-time-symbols/" }
+  ],
+  "title": "Símbolos de Reloj y Hora: Copiar y Pegar 🕐 ⌛ ⏰",
+  "meta_description": "Copia símbolos de reloj y hora: las 24 caras de reloj de Unicode 🕐, relojes de arena ⌛, despertadores ⏰ y marcas AM/PM. Haz clic para copiar.",
+  "breadcrumb": "Símbolos de Reloj y Hora",
+  "hero_h1": "Símbolos de Reloj y Hora",
+  "hero_tagline": "Todas las caras de reloj de Unicode, más relojes de arena, temporizadores, calendarios e íconos de día y noche. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Unicode incluye un juego completo de 24 símbolos de reloj —uno por cada hora y cada media hora— junto con relojes de arena, despertadores, cronómetros e íconos de calendario. Son ideales para anunciar eventos, armar horarios, publicar cuentas regresivas, recordar fechas límite y avisar que estás fuera de la oficina. Elige la hora exacta que necesitas, desde 🕐 la una en punto hasta 🕧 las doce y media, y pégala donde quieras.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "clock-faces-hour",
+      "label": "En punto",
+      "h2": "Caras de Reloj — En Punto",
+      "intro": "Doce emojis de cara de reloj, uno por cada hora, de la una a las doce en punto.",
+      "symbols": [
+        { "char": "🕐", "label": "Reloj a la una en punto" },
+        { "char": "🕑", "label": "Reloj a las dos en punto" },
+        { "char": "🕒", "label": "Reloj a las tres en punto" },
+        { "char": "🕓", "label": "Reloj a las cuatro en punto" },
+        { "char": "🕔", "label": "Reloj a las cinco en punto" },
+        { "char": "🕕", "label": "Reloj a las seis en punto" },
+        { "char": "🕖", "label": "Reloj a las siete en punto" },
+        { "char": "🕗", "label": "Reloj a las ocho en punto" },
+        { "char": "🕘", "label": "Reloj a las nueve en punto" },
+        { "char": "🕙", "label": "Reloj a las diez en punto" },
+        { "char": "🕚", "label": "Reloj a las once en punto" },
+        { "char": "🕛", "label": "Reloj a las doce en punto" }
+      ]
+    },
+    {
+      "id": "clock-faces-half",
+      "label": "Y media",
+      "h2": "Caras de Reloj — Y Media",
+      "intro": "El juego correspondiente de medias horas, de la una y media a las doce y media.",
+      "symbols": [
+        { "char": "🕜", "label": "Reloj a la una y media" },
+        { "char": "🕝", "label": "Reloj a las dos y media" },
+        { "char": "🕞", "label": "Reloj a las tres y media" },
+        { "char": "🕟", "label": "Reloj a las cuatro y media" },
+        { "char": "🕠", "label": "Reloj a las cinco y media" },
+        { "char": "🕡", "label": "Reloj a las seis y media" },
+        { "char": "🕢", "label": "Reloj a las siete y media" },
+        { "char": "🕣", "label": "Reloj a las ocho y media" },
+        { "char": "🕤", "label": "Reloj a las nueve y media" },
+        { "char": "🕥", "label": "Reloj a las diez y media" },
+        { "char": "🕦", "label": "Reloj a las once y media" },
+        { "char": "🕧", "label": "Reloj a las doce y media" }
+      ]
+    },
+    {
+      "id": "timers-calendars",
+      "label": "Temporizadores y calendarios",
+      "h2": "Temporizadores, Relojes y Calendarios",
+      "intro": "Relojes de arena, cronómetros, despertadores e íconos de calendario para horarios y fechas límite.",
+      "symbols": [
+        { "char": "⌚", "label": "Reloj de pulsera" },
+        { "char": "⏰", "label": "Despertador" },
+        { "char": "⏱", "label": "Cronómetro" },
+        { "char": "⏲", "label": "Temporizador" },
+        { "char": "⌛", "label": "Reloj de arena terminado" },
+        { "char": "⏳", "label": "Reloj de arena con arena cayendo" },
+        { "char": "🕰", "label": "Reloj de mesa" },
+        { "char": "📅", "label": "Calendario" },
+        { "char": "📆", "label": "Calendario de hojas" },
+        { "char": "🗓", "label": "Calendario de espiral" }
+      ]
+    },
+    {
+      "id": "day-night",
+      "label": "Día y noche",
+      "h2": "Íconos de Día y Noche",
+      "intro": "Del amanecer a la noche, para marcar la mañana, la tarde y la madrugada.",
+      "symbols": [
+        { "char": "🌅", "label": "Amanecer" },
+        { "char": "🌄", "label": "Amanecer sobre las montañas" },
+        { "char": "🌞", "label": "Sol con cara" },
+        { "char": "🌇", "label": "Atardecer" },
+        { "char": "🌆", "label": "Ciudad al anochecer" },
+        { "char": "🌃", "label": "Noche estrellada" },
+        { "char": "🌙", "label": "Luna creciente" },
+        { "char": "🌛", "label": "Luna en cuarto creciente con cara" }
+      ]
+    },
+    {
+      "id": "duration-marks",
+      "label": "Marcas de duración",
+      "h2": "Relojes de Arena y Marcas de Duración",
+      "intro": "Relojes de arena tipográficos, primas de minutos y segundos, y caracteres compactos de AM/PM.",
+      "symbols": [
+        { "char": "⧖", "label": "Reloj de arena blanco" },
+        { "char": "⧗", "label": "Reloj de arena negro" },
+        { "char": "′", "label": "Prima (minutos)" },
+        { "char": "″", "label": "Doble prima (segundos)" },
+        { "char": "㏂", "label": "AM en cuadro" },
+        { "char": "㏘", "label": "PM en cuadro" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-del-clima/",
+      "title": "Símbolos del Clima",
+      "desc": "Sol, lluvia, nieve y caracteres del pronóstico para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-luna/",
+      "title": "Símbolos de Luna y Astros",
+      "desc": "Fases de la luna, estrellas y caracteres del cielo nocturno para publicaciones estéticas."
+    },
+    {
+      "href": "/library/media-control-symbols/",
+      "title": "Símbolos de Control Multimedia",
+      "desc": "Glifos de reproducir, pausar y avanzar para textos con estilo de reproductor."
+    },
+    {
+      "href": "/es/library/simbolos-de-numero/",
+      "title": "Símbolos de Números",
+      "desc": "Números en círculos, en teclas y con estilo para copiar."
+    }
+  ]
+}

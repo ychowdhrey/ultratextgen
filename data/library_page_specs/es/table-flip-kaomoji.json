@@ -1,0 +1,78 @@
+{
+  "lang": "es",
+  "slug": "table-flip-kaomoji",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/table-flip-kaomoji/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/table-flip-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/table-flip-kaomoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/table-flip-kaomoji/" }
+  ],
+  "title": "Table Flip Kaomoji: Copia y Pega la Mesa Volteada (╯°□°）╯︵ ┻━┻",
+  "meta_description": "Copia y pega table flip kaomoji y ASCII de mesa volteada — (╯°□°）╯︵ ┻━┻ y más caritas de rabia para cuando las palabras no alcanzan.",
+  "breadcrumb": "Table Flip Kaomoji",
+  "hero_h1": "Table Flip Kaomoji",
+  "hero_tagline": "Copia y pega table flip kaomoji — también conocido como ASCII de mesa volteada — para esos momentos en los que solo queda voltear la mesa. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "El table flip kaomoji (también llamado ASCII de mesa volteada o emoji de voltear la mesa) es el gesto (╯°□°）╯︵ ┻━┻: una persona lanzando una mesa por los aires, escrita completamente con caracteres Unicode. Es texto puro, no una imagen, así que se pega limpio en chats, comentarios, biografías y publicaciones de cualquier plataforma. Le digas como le digas — table flip kaomoji, mesa volteada o carita de rabia — todo lo de abajo es gratis para copiar y pegar, incluido el más tranquilo ┬─┬ ノ( ゜-゜ノ) para volver a poner la mesa en su lugar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negritas, cursivas, letra manuscrita y más de 100 estilos de fuentes Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "Clásico",
+      "h2": "Table flip kaomoji clásicos",
+      "intro": "El gesto de rabia original y su variante más común.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Mesa volteada" },
+        { "char": "(ノ°Д°)ノ︵ ┻━┻", "label": "A volar la mesa" }
+      ]
+    },
+    {
+      "id": "angry-flip",
+      "label": "Con furia",
+      "h2": "Table flip kaomoji con furia",
+      "intro": "Más rabia en el gesto, con mesa y todo.",
+      "symbols": [
+        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Volteada con furia" },
+        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Doble volteada" },
+        { "char": "(╯‵□′)╯︵┻━┻", "label": "Volteada de rabia" }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Devolver la mesa",
+      "h2": "Kaomoji para poner la mesa de vuelta",
+      "intro": "Para cuando se pasa el enojo y vuelve la calma.",
+      "symbols": [
+        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Poner la mesa de vuelta" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El centro completo de kaomoji — caritas japonesas de texto para cada estado de ánimo."
+    },
+    {
+      "href": "/es/library/kaomoji-enojado/",
+      "title": "Kaomoji Enojados",
+      "desc": "Caritas japonesas de texto furiosas y molestas, incluidas estas mesas volteadas."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita de texto — mezcla ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "Generador de Arte ASCII",
+      "desc": "Convierte una palabra o un nombre en arte ASCII de letras grandes al instante."
+    }
+  ]
+}

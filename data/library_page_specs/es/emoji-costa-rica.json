@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-costa-rica",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-costa-rica/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/costa-rica-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-costa-rica/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/costa-rica-emoji-combos/"
+    }
+  ],
+  "title": "Combos de Emoji de Costa Rica 🇨🇷⚽ Copiar y Pegar",
+  "meta_description": "Combos de emoji de Costa Rica 🇨🇷⚽: colores de los Ticos y sets de fútbol para biografías y descripciones. Copia cualquier emoji o combo al instante.",
+  "breadcrumb": "Combos de emoji de Costa Rica",
+  "hero_h1": "Combos de emoji de Costa Rica",
+  "hero_tagline": "Colores de los Ticos y sets de emoji de fútbol para la afición de Costa Rica: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los emojis de Costa Rica combinan la bandera 🇨🇷 con el balón ⚽ y los colores de los Ticos. Vamos Ticos: La Sele sigue adelante. Copia un emoji suelto de abajo o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Costa Rica",
+      "h2": "Emojis de Costa Rica",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇨🇷",
+          "label": "Bandera de Costa Rica"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo azul"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de orgullo tico",
+      "intro": "El rojo, blanco y azul de La Sele.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo azul"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "La Sele",
+      "flags": [
+        "🇨🇷",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Ticos",
+      "flags": [
+        "🇨🇷",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo, blanco y azul",
+      "flags": [
+        "🔴",
+        "⚪",
+        "🔵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo tico",
+      "flags": [
+        "🇨🇷",
+        "⚽",
+        "💪"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "costaricaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Costa Rica",
+    "intro": "Copia un combo completo con un solo clic y pégalo en una biografía, una descripción o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emoji del Mundial",
+      "desc": "Sets y combos de emoji del Mundial para biografías y descripciones de la afición."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y cada tema."
+    }
+  ]
+}
