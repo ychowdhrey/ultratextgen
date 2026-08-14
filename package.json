@@ -32,6 +32,7 @@
     "check:external-refs": "node scripts/check-external-refs.js",
     "refresh:events": "python3 scripts/refresh-event-pages.py",
     "check:counter-claims": "node scripts/check-counter-claims.js",
+    "test:sitemap-images": "node scripts/update-sitemap.test.js",
     "plan:library-locale": "python3 scripts/plan-library-locale-batch.py",
     "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py",
     "check:document-head": "python3 scripts/check-document-head.py",
