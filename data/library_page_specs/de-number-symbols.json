@@ -1,0 +1,441 @@
+{
+  "slug": "zahlen-symbole",
+  "title": "Zahlen Symbole ① ② ③ — Kreiszahlen, hochgestellt, römisch zum Kopieren | UltraTextGen",
+  "meta_description": "Zahlen-Symbole zum Kopieren: Kreiszahlen ①②③, schwarze Kreiszahlen ❶❷❸, hochgestellt ¹²³, tiefgestellt ₁₂₃, römisch ⅠⅡⅢ und in Klammern ⑴⑵⑶.",
+  "breadcrumb": "Zahlen Symbole",
+  "hero_h1": "Zahlen- und Ziffernsymbole",
+  "hero_tagline": "① ❶ ² ₂ Ⅲ ⑷ — Kreiszahlen, hoch- und tiefgestellt, römisch, in Klammern. Antippen zum Kopieren.",
+  "intro": "Das hier sind echte Zeichen, keine Formatierung. Deshalb überstehen sie auch Eingabefelder ohne Listenfunktion: Profilbeschreibungen, Spielernamen, Chatfenster, Zellen in einer Tabelle. Die sechs Gruppen unten sind nach der Art der Nummerierung geordnet. Antippen kopiert das Zeichen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Zahlen im Kreis",
+      "h2": "Zahlen im Kreis",
+      "intro": "1 bis 20, für nummerierte Listen.",
+      "symbols": [
+        {
+          "char": "①",
+          "label": "Eingekreiste 1"
+        },
+        {
+          "char": "②",
+          "label": "Eingekreiste 2"
+        },
+        {
+          "char": "③",
+          "label": "Eingekreiste 3"
+        },
+        {
+          "char": "④",
+          "label": "Eingekreiste 4"
+        },
+        {
+          "char": "⑤",
+          "label": "Eingekreiste 5"
+        },
+        {
+          "char": "⑥",
+          "label": "Eingekreiste 6"
+        },
+        {
+          "char": "⑦",
+          "label": "Eingekreiste 7"
+        },
+        {
+          "char": "⑧",
+          "label": "Eingekreiste 8"
+        },
+        {
+          "char": "⑨",
+          "label": "Eingekreiste 9"
+        },
+        {
+          "char": "⑩",
+          "label": "Eingekreiste 10"
+        },
+        {
+          "char": "⑪",
+          "label": "Eingekreiste 11"
+        },
+        {
+          "char": "⑫",
+          "label": "Eingekreiste 12"
+        },
+        {
+          "char": "⑬",
+          "label": "Eingekreiste 13"
+        },
+        {
+          "char": "⑭",
+          "label": "Eingekreiste 14"
+        },
+        {
+          "char": "⑮",
+          "label": "Eingekreiste 15"
+        },
+        {
+          "char": "⑯",
+          "label": "Eingekreiste 16"
+        },
+        {
+          "char": "⑰",
+          "label": "Eingekreiste 17"
+        },
+        {
+          "char": "⑱",
+          "label": "Eingekreiste 18"
+        },
+        {
+          "char": "⑲",
+          "label": "Eingekreiste 19"
+        },
+        {
+          "char": "⑳",
+          "label": "Eingekreiste 20"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Zahlen im schwarzen Kreis",
+      "h2": "Zahlen im schwarzen Kreis",
+      "intro": "Invertierte Kreise, wenn es auffallen soll.",
+      "symbols": [
+        {
+          "char": "❶",
+          "label": "Negativ eingekreiste 1"
+        },
+        {
+          "char": "❷",
+          "label": "Negativ eingekreiste 2"
+        },
+        {
+          "char": "❸",
+          "label": "Negativ eingekreiste 3"
+        },
+        {
+          "char": "❹",
+          "label": "Negativ eingekreiste 4"
+        },
+        {
+          "char": "❺",
+          "label": "Negativ eingekreiste 5"
+        },
+        {
+          "char": "❻",
+          "label": "Negativ eingekreiste 6"
+        },
+        {
+          "char": "❼",
+          "label": "Negativ eingekreiste 7"
+        },
+        {
+          "char": "❽",
+          "label": "Negativ eingekreiste 8"
+        },
+        {
+          "char": "❾",
+          "label": "Negativ eingekreiste 9"
+        },
+        {
+          "char": "❿",
+          "label": "Negativ eingekreiste 10"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Hochgestellte Zahlen",
+      "h2": "Hochgestellte Zahlen",
+      "intro": "Für Exponenten und Fußnoten.",
+      "symbols": [
+        {
+          "char": "⁰",
+          "label": "Hochgestellte 0"
+        },
+        {
+          "char": "¹",
+          "label": "Hochgestellte 1"
+        },
+        {
+          "char": "²",
+          "label": "Hochgestellte 2"
+        },
+        {
+          "char": "³",
+          "label": "Hochgestellte 3"
+        },
+        {
+          "char": "⁴",
+          "label": "Hochgestellte 4"
+        },
+        {
+          "char": "⁵",
+          "label": "Hochgestellte 5"
+        },
+        {
+          "char": "⁶",
+          "label": "Hochgestellte 6"
+        },
+        {
+          "char": "⁷",
+          "label": "Hochgestellte 7"
+        },
+        {
+          "char": "⁸",
+          "label": "Hochgestellte 8"
+        },
+        {
+          "char": "⁹",
+          "label": "Hochgestellte 9"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Tiefgestellte Zahlen",
+      "h2": "Tiefgestellte Zahlen",
+      "intro": "Für chemische Formeln und Indizes.",
+      "symbols": [
+        {
+          "char": "₀",
+          "label": "Tiefgestellte 0"
+        },
+        {
+          "char": "₁",
+          "label": "Tiefgestellte 1"
+        },
+        {
+          "char": "₂",
+          "label": "Tiefgestellte 2"
+        },
+        {
+          "char": "₃",
+          "label": "Tiefgestellte 3"
+        },
+        {
+          "char": "₄",
+          "label": "Tiefgestellte 4"
+        },
+        {
+          "char": "₅",
+          "label": "Tiefgestellte 5"
+        },
+        {
+          "char": "₆",
+          "label": "Tiefgestellte 6"
+        },
+        {
+          "char": "₇",
+          "label": "Tiefgestellte 7"
+        },
+        {
+          "char": "₈",
+          "label": "Tiefgestellte 8"
+        },
+        {
+          "char": "₉",
+          "label": "Tiefgestellte 9"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Römische Zahlen",
+      "h2": "Römische Zahlen",
+      "intro": "Römische Zahlen als ein einziges Zeichen.",
+      "symbols": [
+        {
+          "char": "Ⅰ",
+          "label": "Römische Zahl I"
+        },
+        {
+          "char": "Ⅱ",
+          "label": "Römische Zahl II"
+        },
+        {
+          "char": "Ⅲ",
+          "label": "Römische Zahl III"
+        },
+        {
+          "char": "Ⅳ",
+          "label": "Römische Zahl IV"
+        },
+        {
+          "char": "Ⅴ",
+          "label": "Römische Zahl V"
+        },
+        {
+          "char": "Ⅵ",
+          "label": "Römische Zahl VI"
+        },
+        {
+          "char": "Ⅶ",
+          "label": "Römische Zahl VII"
+        },
+        {
+          "char": "Ⅷ",
+          "label": "Römische Zahl VIII"
+        },
+        {
+          "char": "Ⅸ",
+          "label": "Römische Zahl IX"
+        },
+        {
+          "char": "Ⅹ",
+          "label": "Römische Zahl X"
+        },
+        {
+          "char": "Ⅺ",
+          "label": "Römische Zahl XI"
+        },
+        {
+          "char": "Ⅻ",
+          "label": "Römische Zahl XII"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Zahlen in Klammern",
+      "h2": "Zahlen in Klammern",
+      "intro": "Zum Nummerieren im laufenden Text.",
+      "symbols": [
+        {
+          "char": "⑴",
+          "label": "Eingeklammerte 1"
+        },
+        {
+          "char": "⑵",
+          "label": "Eingeklammerte 2"
+        },
+        {
+          "char": "⑶",
+          "label": "Eingeklammerte 3"
+        },
+        {
+          "char": "⑷",
+          "label": "Eingeklammerte 4"
+        },
+        {
+          "char": "⑸",
+          "label": "Eingeklammerte 5"
+        },
+        {
+          "char": "⑹",
+          "label": "Eingeklammerte 6"
+        },
+        {
+          "char": "⑺",
+          "label": "Eingeklammerte 7"
+        },
+        {
+          "char": "⑻",
+          "label": "Eingeklammerte 8"
+        },
+        {
+          "char": "⑼",
+          "label": "Eingeklammerte 9"
+        },
+        {
+          "char": "⑽",
+          "label": "Eingeklammerte 10"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Zahlen-Symbolen",
+  "faq": [
+    {
+      "q": "Werden Kreiszahlen überall richtig angezeigt?",
+      "a": "① bis ⑳ sind alte, gut unterstützte Zeichen und erscheinen auf Rechnern wie Handys zuverlässig. Ab ㉑ und bei Sonderfällen wie ㊿ wird die Unterstützung dünn. Wenn das Gerät der Gegenseite unbekannt ist, hör bei ⑳ auf."
+    },
+    {
+      "q": "Wofür sind hochgestellte Zahlen gut?",
+      "a": "Für Exponenten dort, wo sich nichts formatieren lässt — m² oder 10⁶ in der Profilbeschreibung, in einer Betreffzeile, in einer CSV-Datei. Gerechnet wird damit nicht; es ist reine Schreibweise."
+    },
+    {
+      "q": "Ⅰ oder großes I für römische Zahlen?",
+      "a": "Wenn es nur um Lesbarkeit geht, sind aneinandergereihte Großbuchstaben die sichere Wahl. Die Zeichen Ⅰ Ⅱ Ⅲ belegen dafür genau eine Zeichenbreite, was in Tabellenspalten und Feldern mit Zeichenlimit hilft. Beim Suchen und Sortieren gelten sie allerdings als völlig andere Zeichen."
+    },
+    {
+      "q": "Kann Excel damit rechnen?",
+      "a": "Nein. ① und ² zählen als Text, nicht als Zahl, lassen sich also weder summieren noch nach Wert sortieren. Rechenwerte gehören als normale Ziffern in die Zelle, die Symbole in Überschriften und Beschriftungen."
+    },
+    {
+      "q": "Erkennen Suchmaschinen und Hashtags diese Zeichen?",
+      "a": "Meist werden sie als etwas anderes behandelt als normale Ziffern. Als Gestaltung ist das unproblematisch, aber ersetze keine Zahl in einem Begriff, unter dem du gefunden werden willst."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Warum es hilft, Nummern tippen zu können",
+      "body": "Die Listenfunktion einer Textverarbeitung ist im Dokument bequem, verschwindet aber beim Einfügen. Kopiert man eine nummerierte Liste in eine Profilbeschreibung, fallen genau die Nummern weg — weil Formatierung kein Zeichen ist. ①②③ dagegen sind Zeichen und überleben jedes Feld ohne Formatierung. Genau deshalb tauchen Kreiszahlen in Spielernamen, Profiltexten, Chats und Tabellenzellen auf: weniger aus Geschmack, mehr weil es dort keine Formatierung gibt."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/haekchen-symbole/",
+      "title": "Häkchen-Symbole",
+      "desc": "Eine Nachschlage-Sammlung mit Häkchen-Symbolen, Kreuzen und Status-Anzeigen für Listen, Vergleiche und professionelle Formatierung. Klick auf ein Symbol, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/symbole-zum-kopieren/",
+      "title": "Symbole & Emojis zum Kopieren",
+      "desc": "Alle Symbole, Sonderzeichen, Zeichen und Emojis zum Kopieren und Einfügen an einem Ort — Herzen ♥, Sterne ★, Pfeile →, Häkchen ✓, Währung € und mehr. Klick ein Zeichen an, und es ist sofort in deiner Zwischenablage. Kostenlos, ohne App, ohne Anmeldung."
+    },
+    {
+      "href": "/de/library/aesthetische-symbole/",
+      "title": "Ästhetische Symbole",
+      "desc": "Eine kuratierte Sammlung ästhetischer Unicode-Zeichen für Bio, Benutzername, Captions und Text-Deko. Klick auf ein Symbol, um es sofort zu kopieren."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/zahlen-symbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/number-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/zahlen-symbole/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/number-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-numero/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/font-angka/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/suuji-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/sutja-giho/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-so/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/shuzi-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/number-symbols/"
+    }
+  ]
+}

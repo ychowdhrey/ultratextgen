@@ -100,7 +100,13 @@ for (const [pattern, { info, pages }] of corePages) {
       const hasLocale = [...members].some((m) => {
         if (m === rec.canonical) return false;
         const r = byUrl.get(m);
-        return r && r.ownLang === locale;
+        // `ownLang` is the raw hreflang code off the page (`zh-TW`), while
+        // `locale` is the registry key (`zh-tw`). Compare case-insensitively,
+        // exactly as check-locale-parent-gap.js already does — a raw `===`
+        // here reported every zh-tw cell as 0 translated regardless of
+        // reality (34 symbol/, 29 library/ and a live counter page all
+        // invisible), manufacturing gaps that did not exist.
+        return r && r.ownLang && r.ownLang.toLowerCase() === locale.toLowerCase();
       });
       if (hasLocale) translated++;
     }

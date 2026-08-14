@@ -1,0 +1,90 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-pulgar-arriba",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-pulgar-arriba/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/thumbs-up-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-pulgar-arriba/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/thumbs-up-kaomoji/" }
+  ],
+  "title": "Kaomoji Pulgar Arriba: Copiar y Pegar Caritas de Aprobación",
+  "meta_description": "Explora y copia kaomoji de pulgar arriba (también escritos kamoji): caritas japonesas de aprobación que dicen \"bien hecho\". Un clic y se copian al instante.",
+  "breadcrumb": "Kaomoji Pulgar Arriba",
+  "hero_h1": "Kaomoji Pulgar Arriba",
+  "hero_tagline": "Copia y pega kaomoji de pulgar arriba: caritas de texto japonesas de aprobación y confianza. Haz clic en cualquiera para copiarla al instante.",
+  "intro": "Los kaomoji de pulgar arriba (también escritos kamoji) son caritas de texto al estilo japonés que levantan el pulgar con seguridad o usan una d y una b para dar el visto bueno: una forma de decir \"bien\" o \"buen trabajo\" solo con texto. Un kaomoji pulgar arriba como d(°∀°)b o (๑˃ᴗ˂)ﻭ es texto Unicode normal, así que se pega limpio en biografías, publicaciones, comentarios y chats. Explora por estilo abajo y haz clic en cualquier carita para copiarla al instante. Busques \"kaomoji pulgar arriba\" o \"pulgar arriba kaomoji\", todas las de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligráfica y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+  "sections": [
+    {
+      "id": "approve",
+      "label": "Aprobación",
+      "h2": "Kaomoji de Aprobación",
+      "intro": "Pulgar arriba con toda la confianza.",
+      "symbols": [
+        { "char": "d(°∀°)b", "label": "Pulgar arriba" },
+        { "char": "b(￣▽￣)d", "label": "Los dos pulgares" },
+        { "char": "(b ᵔ▽ᵔ)b", "label": "Qué bien" },
+        { "char": "(b^_^)b", "label": "Aprobado" },
+        { "char": "d(-_^)", "label": "Guiño de aprobación" },
+        { "char": "(๑•̀ㅂ•́)و✧", "label": "Tú puedes" }
+      ]
+    },
+    {
+      "id": "goodjob",
+      "label": "Buen Trabajo",
+      "h2": "Kaomoji de Buen Trabajo",
+      "intro": "Caritas de ánimo y de felicitación.",
+      "symbols": [
+        { "char": "(๑˃ᴗ˂)ﻭ", "label": "Buen trabajo" },
+        { "char": "( ᐛ )و", "label": "Échale ganas" },
+        { "char": "ᕦ(ò_óˇ)ᕤ", "label": "Sí se puede" },
+        { "char": "(ง •̀_•́)ง", "label": "Vamos con todo" },
+        { "char": "( •̀ᴗ•́ )و", "label": "Bien hecho" },
+        { "char": "( ﾟ▽ﾟ)/", "label": "Excelente" }
+      ]
+    },
+    {
+      "id": "cool",
+      "label": "Aprobación Serena",
+      "h2": "Kaomoji de Aprobación Serena",
+      "intro": "Aprobación discreta y con seguridad.",
+      "symbols": [
+        { "char": "( ⌐■_■)", "label": "Asentimiento cool" },
+        { "char": "(｀・ω・´)b", "label": "Asentimiento firme" },
+        { "char": "( ￣ー￣)b", "label": "Sólido" },
+        { "char": "(๑•̀ㅁ•́๑)✧", "label": "En eso estoy" },
+        { "char": "( •̀ω•́ )b", "label": "Revisado" },
+        { "char": "ヨシ!(๑•̀ㅂ•́)و", "label": "Yosh" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El hub completo de kaomoji: caritas de texto japonesas de cada estado de ánimo en un solo lugar."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji Felices",
+      "desc": "Caritas de texto japonesas sonrientes y alegres."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita de texto: combina ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/es/library/kaomoji-emocionado/",
+      "title": "Kaomoji Emocionados",
+      "desc": "Caritas de texto con mucha energía y emoción."
+    }
+  ]
+}

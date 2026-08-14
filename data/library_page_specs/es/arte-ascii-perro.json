@@ -1,0 +1,114 @@
+{
+  "lang": "es",
+  "slug": "arte-ascii-perro",
+  "page_type": "library",
+  "copy_pattern": "art",
+  "canonical": "https://ultratextgen.com/es/library/arte-ascii-perro/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/dog-ascii-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-ascii-perro/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/dog-ascii-art/"
+    }
+  ],
+  "title": "Arte ASCII de Perro 🐶 Copiar y Pegar",
+  "meta_description": "Arte ASCII de perro original para copiar y pegar: caritas de cachorro, orejas caídas, perros sentados y huesos dibujados en texto plano. Haz clic en Copiar.",
+  "breadcrumb": "Arte ASCII de Perro",
+  "hero_h1": "Arte ASCII de Perro",
+  "hero_tagline": "Perros originales de varias líneas hechos solo con texto — caritas de cachorro, orejas caídas, perros sentados y huesos. Haz clic en Copiar y pégalo donde quieras.",
+  "intro": "El arte ASCII de perro dibuja un cachorro completo — orejas, hocico, patas y cola moviéndose — usando nada más que caracteres del teclado. Estos son dibujos completos de varias líneas; si lo que buscas son caritas japonesas de perro compactas de una sola línea, la colección de kaomoji de perro que enlazamos abajo tiene esa versión. Las piezas grandes se ven mejor donde el texto conserva el ancho fijo, como los bloques de código de Discord o una terminal. Si el perro se ve deforme al pegarlo, casi siempre es porque la fuente de destino no es monoespaciada.",
+  "sections": [
+    {
+      "id": "small-dogs",
+      "h2": "Arte ASCII de Perro Pequeño",
+      "intro": "Cachorros de tres líneas y huesos para chats y comentarios.",
+      "art": [
+        {
+          "label": "Hueso de una línea",
+          "art": "(o)=======(o)"
+        },
+        {
+          "label": "Carita de cachorro",
+          "art": " /^ ^\\\n( o o )\n \\_o_/"
+        },
+        {
+          "label": "Cachorro asomándose",
+          "art": "  /\\ ___ /\\\n (  o   o  )\n_(_)_____(_)_"
+        },
+        {
+          "label": "Hueso de perro",
+          "art": " __          __\n(  \\________/  )\n(__/        \\__)"
+        }
+      ]
+    },
+    {
+      "id": "classic-dogs",
+      "h2": "Perros Clásicos",
+      "intro": "Perros de tamaño medio con más detalle — cachorros felices y caritas de perro grandes.",
+      "art": [
+        {
+          "label": "Cachorro feliz",
+          "art": "   __      __\n  ( _\\    /_ )\n   \\ \\.--./ /\n    ( o  o )\n     ) __ (\n    (_/  \\_)"
+        },
+        {
+          "label": "Carita de perro grande",
+          "art": "    ______\n   /      \\\n  | (o)(o) |\n /|   __   |\\\n( |  (__)  | )\n \\|        |/\n   \\______/"
+        },
+        {
+          "label": "Perro de orejas caídas",
+          "art": "  ___         ___\n /   \\_______/   \\\n|    /  o o  \\    |\n|   |    ..   |   |\n \\  |  \\___/  |  /\n  \\_|         |_/\n    \\_________/"
+        }
+      ]
+    },
+    {
+      "id": "big-dogs",
+      "h2": "Arte ASCII de Perro Grande",
+      "intro": "Perros de cuerpo completo — ideales para bloques de código de Discord, terminales y cualquier lugar con fuente de ancho fijo.",
+      "art": [
+        {
+          "label": "Perro sentado",
+          "art": "     __\n    /  \\______\n   ( o        \\  /\n    \\   ______ \\/\n     | |      | |\n     | |      | |\n    _| |_    _| |_"
+        },
+        {
+          "label": "Perro pidiendo",
+          "art": "      /\\____/\\\n     /  o  o  \\\n     |   ..   |\n      \\ \\__/ /\n      /      \\\n     / |    | \\\n    (  |    |  )\n     \\ |    | /\n      \\|    |/\n      (______)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/arte-de-texto/",
+      "title": "Arte de Texto",
+      "desc": "Bordes, marcos y dibujos hechos con caracteres para biografías y publicaciones."
+    },
+    {
+      "href": "/es/library/kaomoji-perro/",
+      "title": "Kaomoji de Perro",
+      "desc": "Caritas japonesas de perro hechas con caracteres, en una sola línea."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "Generador de Arte ASCII",
+      "desc": "Convierte cualquier texto en arte ASCII al instante."
+    },
+    {
+      "href": "/es/library/arte-ascii-gato/",
+      "title": "Arte ASCII de Gato",
+      "desc": "Gatos dibujados en texto plano, listos para pegar."
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos Unicode — gratis y al instante."
+}

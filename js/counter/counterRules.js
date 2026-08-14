@@ -201,7 +201,16 @@
     { id: "discord-nick", platform: "discord", field: "Nickname", label: "Discord nickname", limit: 32, group: "usernames" },
     { id: "discord-status", platform: "discord", field: "Custom status", label: "Discord custom status", limit: 128, group: "bios" },
 
+    /* Telegram is the one platform here where the message limit depends on
+       what the sender pays. 4096 is still the number for everyone on a free
+       account. Telegram's Rich Text Editor, announced 2026-07-14 and gated
+       to Premium, raises a single message to 32,768 — so the free figure is
+       not wrong, it is just eight times short for a paying sender. Both are
+       listed rather than replacing one with the other, because a writer
+       picking "Telegram message" needs to know which of the two they are
+       actually writing against. */
     { id: "telegram-message", platform: "telegram", field: "Message", label: "Telegram message", limit: 4096, group: "posts" },
+    { id: "telegram-message-premium", platform: "telegram", field: "Message (Premium)", label: "Telegram message (Premium)", limit: 32768, group: "posts" },
     { id: "telegram-caption", platform: "telegram", field: "Photo/video caption", label: "Telegram photo/video caption", limit: 1024, group: "posts" },
     { id: "telegram-bio", platform: "telegram", field: "Bio", label: "Telegram bio", limit: 70, group: "bios" },
 
@@ -394,7 +403,13 @@
 
     const bar = el("div", "cc-bar");
     const fill = el("div", "cc-bar-fill");
+    /* A tick on the bar where the feed truncates. Without it the bar answers
+       only "will this send", which on a 3,000-character field is a question
+       nobody is asking. */
+    const foldMark = el("span", "cc-bar-fold");
+    foldMark.hidden = true;
     bar.appendChild(fill);
+    bar.appendChild(foldMark);
     mount.appendChild(bar);
 
     const note = el("div", "cc-note");
@@ -437,8 +452,18 @@
       const report = analyze(value, state.limitId);
       const rule = report.rule;
 
-      badge.className = "cc-badge cc-badge-" + (report.glyphs === 0 ? "empty" : report.fits ? "ok" : "fail");
-      badge.textContent = report.glyphs === 0 ? "" : (report.fits ? (text.ok || "Fits ✓") : (text.fail || "Over the limit ✕"));
+      /* Three states, not two. "Fits" and "over the limit" leave out the one
+         that matters most on a feed field: it will post, and almost nobody
+         will read past the cut. That gets its own amber state rather than a
+         green tick and a footnote. */
+      const fold = foldInfo(value, state.limitId);
+      const pastFold = !!(fold && fold.truncated && report.fits);
+      const status = report.glyphs === 0 ? "empty" : !report.fits ? "fail" : pastFold ? "warn" : "ok";
+      badge.className = "cc-badge cc-badge-" + status;
+      badge.textContent = status === "empty" ? ""
+        : status === "fail" ? (text.fail || "Over the limit ✕")
+        : status === "warn" ? fmt(text.pastFold || "Fits — cut at {n} ⚠", { n: fold.at })
+        : (text.ok || "Fits ✓");
 
       count.textContent = report.glyphs.toLocaleString() + " / " + report.limit.toLocaleString();
       count.classList.toggle("is-over", !report.fits);
@@ -446,7 +471,16 @@
       const pct = Math.min(100, (report.glyphs / report.limit) * 100);
       fill.style.width = pct + "%";
       fill.classList.toggle("is-over", !report.fits);
-      fill.classList.toggle("is-close", report.fits && pct >= 90);
+      fill.classList.toggle("is-past-fold", pastFold);
+      fill.classList.toggle("is-close", report.fits && !pastFold && pct >= 90);
+
+      if (fold && rule.limit) {
+        foldMark.hidden = false;
+        foldMark.style.left = Math.min(100, (fold.at / rule.limit) * 100) + "%";
+        foldMark.title = fold.label;
+      } else {
+        foldMark.hidden = true;
+      }
 
       const notes = [];
       if (report.mode === "x-weighted" && report.glyphs > 0) {

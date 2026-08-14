@@ -1,0 +1,205 @@
+{
+  "slug": "warnsymbole",
+  "title": "Warnsymbole ☢ ☣ ⚠ — Gefahren- und Verbotszeichen zum Kopieren | UltraTextGen",
+  "meta_description": "Warnsymbole zum Kopieren: radioaktiv ☢, Biogefährdung ☣, Totenkopf ☠, Warnung ⚠, Hochspannung ⚡ und Verbotszeichen 🚫 ⛔. Antippen zum Kopieren.",
+  "breadcrumb": "Warnsymbole",
+  "hero_h1": "Gefahren- und Warnsymbole",
+  "hero_tagline": "☢ ☣ ⚠ ⚡ 🚫 — Gefahr, Warnung, Alarm und Verbot. Antippen zum Kopieren.",
+  "intro": "Das sind Textzeichen, keine genormten Piktogramme: Sie taugen dazu, über eine Gefahr zu schreiben, nicht dazu, sie an einer Anlage auszuweisen. Die vier Gruppen unten reichen vom konkreten Risiko bis zum Verbot. Antippen kopiert das Zeichen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Giftig, radioaktiv und biologisch",
+      "h2": "Giftig, radioaktiv und biologisch",
+      "intro": "Risiken mit eigenem Zeichen.",
+      "symbols": [
+        {
+          "char": "☢",
+          "label": "Radioaktiv-Zeichen"
+        },
+        {
+          "char": "☣",
+          "label": "Biogefährdung"
+        },
+        {
+          "char": "☠",
+          "label": "Totenkopf mit Knochen"
+        },
+        {
+          "char": "⚰",
+          "label": "Sarg"
+        },
+        {
+          "char": "⚱",
+          "label": "Urne"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Warnung, Vorsicht und Elektrizität",
+      "h2": "Warnung, Vorsicht und Elektrizität",
+      "intro": "Wenn die Gefahr allgemein oder elektrisch ist.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "Warnzeichen"
+        },
+        {
+          "char": "☡",
+          "label": "Vorsichtszeichen"
+        },
+        {
+          "char": "⚡",
+          "label": "Hochspannung"
+        },
+        {
+          "char": "☇",
+          "label": "Blitz"
+        },
+        {
+          "char": "⌁",
+          "label": "Elektrischer Pfeil"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Alarm und Ausrufezeichen",
+      "h2": "Alarm und Ausrufezeichen",
+      "intro": "Um in einer Zeile das Auge zu stoppen.",
+      "symbols": [
+        {
+          "char": "‼",
+          "label": "Doppeltes Ausrufezeichen"
+        },
+        {
+          "char": "⁉",
+          "label": "Ausrufe- und Fragezeichen"
+        },
+        {
+          "char": "❗",
+          "label": "Ausrufezeichen gefüllt"
+        },
+        {
+          "char": "❕",
+          "label": "Ausrufezeichen weiß"
+        },
+        {
+          "char": "❌",
+          "label": "Rotes Kreuz"
+        },
+        {
+          "char": "⛔",
+          "label": "Zutritt verboten"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Verbots- und Zutrittszeichen",
+      "h2": "Verbots- und Zutrittszeichen",
+      "intro": "Was nicht erlaubt ist.",
+      "symbols": [
+        {
+          "char": "🚫",
+          "label": "Verbotszeichen"
+        },
+        {
+          "char": "∅",
+          "label": "Leere Menge"
+        },
+        {
+          "char": "Ø",
+          "label": "Durchgestrichenes O"
+        },
+        {
+          "char": "🚭",
+          "label": "Rauchen verboten"
+        },
+        {
+          "char": "🚷",
+          "label": "Für Fußgänger verboten"
+        },
+        {
+          "char": "📵",
+          "label": "Mobiltelefone verboten"
+        },
+        {
+          "char": "🔞",
+          "label": "Erst ab 18"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Warnsymbolen",
+  "faq": [
+    {
+      "q": "Darf ich die für ein Sicherheitsschild im Betrieb verwenden?",
+      "a": "Nein. Sicherheitskennzeichnung ist genormt (ASR A1.3 und ISO 7010) und schreibt Form, Farbe und Proportionen des Piktogramms vor. ☢ und ⚠ sind Schriftzeichen: gut, um in einem Text, einer Tabelle oder einer Nachricht über eine Gefahr zu schreiben — kein Ersatz für ein Schild."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen ⚠ und ⚠️?",
+      "a": "Es ist dasselbe Zeichen; das zweite trägt einen unsichtbaren Selektor, der eine Emoji-Darstellung anfordert. ⚠ bleibt Text und nimmt die Absatzfarbe an, ⚠️ erscheint gelb und größer. In einer Tabelle ist die Textform praktischer."
+    },
+    {
+      "q": "Sind ⛔ und 🚫 dasselbe?",
+      "a": "Nein. ⛔ ist die rote Scheibe mit waagerechtem weißem Balken — «Zutritt verboten». 🚫 ist der Kreis mit Schrägbalken, das allgemeine Verbot, das meist noch etwas Verbotenes daneben braucht. In Texten werden beide oft verwechselt."
+    },
+    {
+      "q": "Warum steht Ø bei den Verbotszeichen?",
+      "a": "Weil es häufig als «null» oder «nichts» eingesetzt wird, vor allem in Tabellen und Notizen. Ursprünglich ist es ein Buchstabe des dänischen und norwegischen Alphabets; das danebenstehende ∅ ist die leere Menge aus der Mathematik — zwei verschiedene Zeichen, die sich stark ähneln."
+    },
+    {
+      "q": "Werden sie auf allen Geräten angezeigt?",
+      "a": "Die Textzeichen (☢ ☣ ☠ ⚠) fast überall. Emojis wie 🚭 🚷 📵 hängen vom Zeichensatz des Systems ab und sehen auf iPhone, Android und Windows unterschiedlich aus. Auf sehr alten Geräten können ⌁ und ☡ als leeres Kästchen erscheinen."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Ein Gefahrensymbol ist kein Gefahrenschild",
+      "body": "Der Unterschied wiegt schwerer, als er klingt. Ein Sicherheitsschild ist ein genormtes Objekt: Größe, Farbe, Kontrast und Anbringungsort sind vorgeschrieben, weil es aus der Entfernung, im Vorbeigehen und bei schlechtem Licht funktionieren muss. Ein Unicode-Zeichen hat nichts davon — es wechselt mit dem Text die Farbe, schrumpft mit der Schriftgröße und wird auf einem anderen Gerät womöglich anders gezeichnet. Deshalb ist ☢ in einer Zeile Dokumentation genau richtig und an einer Tür völlig fehl am Platz."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/symbole-zum-kopieren/",
+      "title": "Symbole & Emojis zum Kopieren",
+      "desc": "Alle Symbole, Sonderzeichen, Zeichen und Emojis zum Kopieren und Einfügen an einem Ort — Herzen ♥, Sterne ★, Pfeile →, Häkchen ✓, Währung € und mehr. Klick ein Zeichen an, und es ist sofort in deiner Zwischenablage. Kostenlos, ohne App, ohne Anmeldung."
+    },
+    {
+      "href": "/de/symbol/biohazard-symbol/",
+      "title": "Biohazard-Symbol (☣)",
+      "desc": "Das Kleeblatt-und-Kreise-Zeichen (☣), 1966 in einem Labor von Dow Chemical so konstruiert, dass es sofort einprägsam und für sich genommen völlig bedeutungslos ist. Klicke ein Symbol an, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/symbol/stopp-symbol/",
+      "title": "Stopp-Symbol (🛑)",
+      "desc": "Das achteckige Stoppschild-Emoji — das einzige Verkehrszeichen mit dieser bewusst gewählten Form — und der Kreis ⛔ „Einfahrt verboten“, mit dem man es ständig verwechselt. Klick zum Kopieren."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/warnsymbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/warnsymbole/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-pericolo/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
+    }
+  ]
+}

@@ -23,11 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryx)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryx)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="80" y="80" width="200" height="200" rx="36" fill="url(#ghlibraryx)"/>
-    <path d="M132 132 L228 228 M228 132 L132 228" stroke="#fff" stroke-width="22"
-          stroke-linecap="round"/></g>
+    <circle cx="180" cy="176" r="96" fill="url(#ghlibraryx)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="40.3" fill="#1a1a2e" text-anchor="middle" opacity="1.0">──────────</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="80" y="80" width="200" height="200" rx="36" fill="url(#ghlibraryx)"/>
-    <path d="M132 132 L228 228 M228 132 L132 228" stroke="#fff" stroke-width="22"
-          stroke-linecap="round"/></g>
+    <circle cx="180" cy="176" r="96" fill="url(#ghlibraryx)" opacity="0.14"/>
+    <text x="180" y="196" font-family="DejaVu Sans, sans-serif" font-size="40.3" fill="#1a1a2e" text-anchor="middle" opacity="1.0">──────────</text></g>
 </svg>

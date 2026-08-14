@@ -1,0 +1,311 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-boda",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-boda/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/wedding-anniversary-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-boda/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/wedding-anniversary-emojis/"
+    }
+  ],
+  "title": "Emojis de Boda y Aniversario: Copiar y Pegar 💍 Combos de Anillos",
+  "meta_description": "Emojis de boda y aniversario para copiar: 💍 anillos, 👰 parejas, palomas, campanas y combos románticos para invitaciones y publicaciones.",
+  "breadcrumb": "Emojis de Boda y Aniversario",
+  "hero_h1": "Emojis de Boda y Aniversario",
+  "hero_tagline": "Anillos, campanas, parejas y brindis para bodas y aniversarios: haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de boda llevan el romance del gran día a los anuncios de compromiso, las invitaciones de \"aparta la fecha\" y las publicaciones de aniversario. Esta biblioteca reúne lo esencial: el anillo 💍, la capilla 💒, la pareja 👰 y 🤵, palomas, campanas y brindis de celebración, además de los corazones y flores que rematan una publicación romántica. Copia emojis sueltos o llévate un combo completo como Recién Casados con un solo clic.",
+  "sections": [
+    {
+      "id": "rings-proposal",
+      "label": "Anillos y Propuesta",
+      "h2": "Anillos, Capillas y Propuestas",
+      "intro": "El anillo, el lugar y los símbolos de decir que sí.",
+      "symbols": [
+        {
+          "char": "💍",
+          "label": "Anillo"
+        },
+        {
+          "char": "💎",
+          "label": "Piedra preciosa"
+        },
+        {
+          "char": "💒",
+          "label": "Boda"
+        },
+        {
+          "char": "⛪",
+          "label": "Iglesia"
+        },
+        {
+          "char": "💌",
+          "label": "Carta de amor"
+        },
+        {
+          "char": "🕊",
+          "label": "Paloma"
+        }
+      ]
+    },
+    {
+      "id": "couples",
+      "label": "Parejas",
+      "h2": "Novias, Novios y Parejas",
+      "intro": "La feliz pareja en todas sus combinaciones.",
+      "symbols": [
+        {
+          "char": "👰",
+          "label": "Persona con velo"
+        },
+        {
+          "char": "🤵",
+          "label": "Persona de esmoquin"
+        },
+        {
+          "char": "💑",
+          "label": "Pareja con corazón"
+        },
+        {
+          "char": "💏",
+          "label": "Beso"
+        },
+        {
+          "char": "👫",
+          "label": "Mujer y hombre de la mano"
+        },
+        {
+          "char": "👬",
+          "label": "Hombres de la mano"
+        },
+        {
+          "char": "👭",
+          "label": "Mujeres de la mano"
+        }
+      ]
+    },
+    {
+      "id": "romantic-hearts",
+      "label": "Corazones",
+      "h2": "Corazones Románticos",
+      "intro": "Corazones para los votos, los aniversarios y todo lo que hay en medio.",
+      "symbols": [
+        {
+          "char": "❤",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "💕",
+          "label": "Dos corazones"
+        },
+        {
+          "char": "💖",
+          "label": "Corazón brillante"
+        },
+        {
+          "char": "💘",
+          "label": "Corazón con flecha"
+        },
+        {
+          "char": "💝",
+          "label": "Corazón con moño"
+        },
+        {
+          "char": "💞",
+          "label": "Corazones giratorios"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        }
+      ]
+    },
+    {
+      "id": "celebration-toasts",
+      "label": "Brindis y Flores",
+      "h2": "Brindis, Campanas y Flores",
+      "intro": "Champán, ramos y campanas para la fiesta y la cena de aniversario.",
+      "symbols": [
+        {
+          "char": "🥂",
+          "label": "Copas brindando"
+        },
+        {
+          "char": "🍾",
+          "label": "Botella descorchándose"
+        },
+        {
+          "char": "💐",
+          "label": "Ramo de flores"
+        },
+        {
+          "char": "🌹",
+          "label": "Rosa"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulipán"
+        },
+        {
+          "char": "🔔",
+          "label": "Campana"
+        },
+        {
+          "char": "🎊",
+          "label": "Bola de confeti"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        }
+      ]
+    },
+    {
+      "id": "wedding-details",
+      "label": "Detalles de Boda",
+      "h2": "Vestidos, Velas y Detalles",
+      "intro": "Los toques finales para invitaciones y publicaciones del día de la boda.",
+      "symbols": [
+        {
+          "char": "👗",
+          "label": "Vestido"
+        },
+        {
+          "char": "🕯",
+          "label": "Vela"
+        },
+        {
+          "char": "🎀",
+          "label": "Moño"
+        },
+        {
+          "char": "🦢",
+          "label": "Cisne"
+        },
+        {
+          "char": "🌸",
+          "label": "Flor de cerezo"
+        },
+        {
+          "char": "🍰",
+          "label": "Rebanada de pastel"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Recién Casados",
+      "flags": [
+        "👰",
+        "🤵",
+        "💍",
+        "💒"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "La Propuesta",
+      "flags": [
+        "💍",
+        "🥹",
+        "💖",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Amor de Aniversario",
+      "flags": [
+        "💕",
+        "🥂",
+        "🌹",
+        "💑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Campanas de Boda",
+      "flags": [
+        "💒",
+        "🔔",
+        "🕊",
+        "💐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Anuncio de Compromiso",
+      "flags": [
+        "💍",
+        "✨",
+        "🥂",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Luna de Miel",
+      "flags": [
+        "✈",
+        "🏝",
+        "💑",
+        "🌅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bodas de Oro",
+      "flags": [
+        "💛",
+        "💍",
+        "🥂",
+        "🎊"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "weddingSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Sets de Combos",
+    "h2": "Sets de Combos de Boda y Aniversario",
+    "intro": "Copia un combo romántico completo con un clic para anuncios, invitaciones y publicaciones de aniversario."
+  },
+  "related": [
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Símbolos de Corazón",
+      "desc": "Emojis de corazón y caracteres Unicode de corazón en todos los colores y estilos."
+    },
+    {
+      "href": "/es/library/emojis-de-fiesta/",
+      "title": "Emojis de Fiesta y Celebración",
+      "desc": "Combos de confeti, pastel y brindis para cualquier celebración."
+    },
+    {
+      "href": "/es/library/emojis-de-joyas/",
+      "title": "Emojis de Joyas y Piedras Preciosas",
+      "desc": "Combos de diamantes, anillos y lujo para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-amistad/",
+      "title": "Emojis de Amistad y Amor",
+      "desc": "Sets de combos de abrazos, mejores amigas y corazones de amistad."
+    }
+  ]
+}

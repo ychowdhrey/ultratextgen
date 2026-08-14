@@ -1,0 +1,100 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-estrella",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-estrella/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/star-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-estrella/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/star-kaomoji/" }
+  ],
+  "title": "Kaomoji Estrella: Copia y Pega Caritas con Ojos de Estrella",
+  "meta_description": "Explora y copia kaomoji estrella — también escrito kamoji — caritas japonesas de texto con ojos de estrella y miradas deslumbradas. Copia con un clic.",
+  "breadcrumb": "Kaomoji Estrella",
+  "hero_h1": "Kaomoji Estrella",
+  "hero_tagline": "Copia y pega kaomoji estrella — caritas japonesas de texto con ojos brillantes y expresiones deslumbradas. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji estrella (también escritos kamoji) son caritas japonesas de texto armadas alrededor del símbolo de estrella ★: ojos en forma de estrella, asombro y emoción de quien queda encandilado. Un kaomoji de estrella como (★ω★) o (☆▽☆) es texto Unicode puro, así que se pega limpio en biografías, publicaciones, comentarios y nombres de usuario. Explora por estilo abajo y haz clic en cualquier carita para copiarla al instante. Busques \"kaomoji estrella\" o \"kaomoji estrellas\", todas las caritas de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negritas, cursivas, letra manuscrita y más de 100 estilos de fuentes Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "star-eyes",
+      "label": "Ojos de estrella",
+      "h2": "Kaomoji con ojos de estrella",
+      "intro": "Caritas con estrellas por ojos — impresionadas y encandiladas.",
+      "symbols": [
+        { "char": "(★ω★)", "label": "Ojos de estrella" },
+        { "char": "(☆▽☆)", "label": "Asombrado" },
+        { "char": "(✧ω✧)", "label": "Ojos con destellos" },
+        { "char": "(★▽★)", "label": "Alucinado" },
+        { "char": "(☆ω☆)", "label": "Deslumbrado" },
+        { "char": "(✪ω✪)", "label": "Ojos de estrella bien abiertos" },
+        { "char": "(★^O^★)", "label": "Estrella emocionada" }
+      ]
+    },
+    {
+      "id": "starstruck",
+      "label": "Encandilado",
+      "h2": "Kaomoji encandilados y emocionados",
+      "intro": "Caritas llenas de energía y de emoción estelar.",
+      "symbols": [
+        { "char": "٩(★ω★)۶", "label": "Súper emocionado" },
+        { "char": "ヽ(★ω★)ﾉ", "label": "Estrellas festejando" },
+        { "char": "＼(☆o☆)／", "label": "Encandilado" },
+        { "char": "ヽ(>∀<☆)ノ", "label": "Feliz de la vida" },
+        { "char": "(ﾉ☆ヮ☆)ﾉ", "label": "Lanzando estrellas" }
+      ]
+    },
+    {
+      "id": "dreamy",
+      "label": "Soñador",
+      "h2": "Kaomoji soñadores y de buenos deseos",
+      "intro": "Caritas suaves y soñadoras con un brillo estelar.",
+      "symbols": [
+        { "char": "‧₊˚✧ (◕‿◕) ✧˚₊‧", "label": "Deseo bajo las estrellas" },
+        { "char": "(｡•̀ᴗ-)✧", "label": "Estrella con confianza" },
+        { "char": "(☆_☆)", "label": "Maravillado" },
+        { "char": "(¬‿¬)☆", "label": "Estrella pícara" }
+      ]
+    },
+    {
+      "id": "shooting",
+      "label": "Estrellas fugaces",
+      "h2": "Kaomoji de estrellas fugaces",
+      "intro": "Caritas enmarcadas por estrellas fugaces y destellos.",
+      "symbols": [
+        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Lluvia de estrellas" },
+        { "char": "(づ｡◕‿‿◕｡)づ★", "label": "Abrazo de estrella" },
+        { "char": "★彡( º ロ º )", "label": "Estrella fugaz" },
+        { "char": "｡ﾟ+.(★ω★).+ﾟ｡", "label": "Estrella brillante" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El centro completo de kaomoji — caritas japonesas de texto para cada estado de ánimo."
+    },
+    {
+      "href": "/library/sparkle-kaomoji/",
+      "title": "Kaomoji de Destellos y Estrellas",
+      "desc": "Brillos, destellos y magia en forma de caritas japonesas de texto."
+    },
+    {
+      "href": "/es/simbolos-de-estrella/",
+      "title": "Símbolos de Estrella",
+      "desc": "Estrellas sueltas en todos los grosores y estilos para copiar y pegar."
+    },
+    {
+      "href": "/es/library/cute-kaomoji/",
+      "title": "Kaomoji Tiernos",
+      "desc": "Caritas kawaii con ojos brillantes y mejillas sonrojadas."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lang": "es",
+  "slug": "emoji-futbol",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emoji-futbol/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/football-emoji-copy-paste/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-futbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/football-emoji-copy-paste/" }
+  ],
+  "title": "Emoji Fútbol ⚽🏈 para Copiar y Pegar",
+  "meta_description": "Copia y pega emojis de fútbol: balón ⚽, fútbol americano 🏈, rugby 🏉, trofeos 🏆 y emojis de partido. Haz clic en cualquier emoji para copiarlo al instante.",
+  "breadcrumb": "Emoji fútbol",
+  "hero_h1": "Emoji Fútbol para Copiar y Pegar",
+  "hero_tagline": "Emojis de fútbol, fútbol americano y rugby en un solo lugar, más trofeos, tarjetas y emojis de hinchada. Haz clic en cualquier emoji para copiarlo.",
+  "intro": "El emoji fútbol ⚽ es el balón que todo el mundo reconoce, y en Estados Unidos la palabra \"football\" apunta al ovalado 🏈, así que esta página cubre los dos deportes. Abajo vas a encontrar el balón y el equipo de fútbol, los balones de fútbol americano y rugby, y los trofeos, tarjetas y emojis de festejo que aparecen en cada publicación de día de partido. Haz clic en cualquier emoji para copiarlo y pegarlo en una biografía, un pie de foto o un chat.",
+  "sections": [
+    {
+      "id": "soccer",
+      "label": "Fútbol",
+      "h2": "Emojis de fútbol",
+      "intro": "El juego del balón redondo: pelota, arco, guantes y uniforme.",
+      "symbols": [
+        { "char": "⚽", "label": "Balón de fútbol" },
+        { "char": "🥅", "label": "Red del arco" },
+        { "char": "🧤", "label": "Guantes de arquero" },
+        { "char": "🚩", "label": "Banderín de córner" },
+        { "char": "👟", "label": "Botín / zapatilla" },
+        { "char": "🎽", "label": "Camiseta deportiva" }
+      ]
+    },
+    {
+      "id": "gridiron",
+      "label": "Americano y rugby",
+      "h2": "Emojis de fútbol americano y rugby",
+      "intro": "Balones de fútbol americano y rugby, más estadio y público.",
+      "symbols": [
+        { "char": "🏈", "label": "Fútbol americano" },
+        { "char": "🏉", "label": "Balón de rugby" },
+        { "char": "🏟️", "label": "Estadio" },
+        { "char": "📣", "label": "Megáfono" },
+        { "char": "🏃", "label": "Persona corriendo" },
+        { "char": "🏆", "label": "Trofeo" }
+      ]
+    },
+    {
+      "id": "match",
+      "label": "Trofeos y tarjetas",
+      "h2": "Emojis de trofeos, tarjetas y festejo",
+      "intro": "El resultado del partido: trofeos, medallas, tarjetas y celebración.",
+      "symbols": [
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🥈", "label": "Medalla de plata" },
+        { "char": "🟨", "label": "Tarjeta amarilla" },
+        { "char": "🟥", "label": "Tarjeta roja" },
+        { "char": "🎉", "label": "Cañón de confeti" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/soccer-emoji-copy-paste/",
+      "title": "Lista de emojis de fútbol",
+      "desc": "El set completo de emojis de fútbol, listo para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de deportes",
+      "desc": "Todos los emojis de deportes y actividades, ordenados por categoría."
+    },
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y pies de foto de hinchas."
+    }
+  ]
+}

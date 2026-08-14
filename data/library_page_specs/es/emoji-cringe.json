@@ -1,0 +1,166 @@
+{
+  "lang": "es",
+  "slug": "emoji-cringe",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-cringe/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/cringe-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-cringe/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/cringe-emoji/" }
+  ],
+  "title": "Emoji Cringe y Kaomoji: Copiar y Pegar 😬 💀 Combos de Vergüenza Ajena",
+  "meta_description": "Copia y pega el emoji cringe 😬, reacciones de vergüenza ajena y combos de \"me morí\" de cringe para chats y respuestas. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji cringe y kaomoji",
+  "hero_h1": "Emoji Cringe y Kaomoji",
+  "hero_tagline": "La cara de mueca 😬, las reacciones de vergüenza ajena y los combos de \"me morí\" de cringe para todo lo que alguien más acaba de decir o hacer. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji cringe por excelencia es la cara de mueca 😬: dientes apretados, ojos cerrados, la expresión exacta para el momento en que lo que dijo o hizo otra persona cae pésimo. Es una reacción ajena, no propia: no eres tú quien pasa vergüenza, solo lo estás viendo pasar y lo sientes hasta los huesos. Esta página reúne todo ese arco de reacción: la mueca inicial, las caras de 🫣 que no pueden mirar y se tapan, la jerga del 💀 \"me morí\" de cringe que se adueñó de los comentarios, y el 😶 del silencio incómodo que sigue a un chiste malo o a un video de compilado de cringe. Cuando un emoji no alcanza, kaomoji de texto plano como (^_^;) y (¬_¬) llevan la misma energía a cualquier lugar donde funcione el texto. Copia una sola carita o llévate un combo listo para chats grupales, respuestas y publicaciones de reacción.",
+  "sections": [
+    {
+      "id": "core-cringe",
+      "label": "Caras de cringe",
+      "h2": "Emoji cringe: muecas y caras de \"uy, no\"",
+      "intro": "Las reacciones de cringe de todos los días: las caras que buscas apenas el momento de otra persona se va al piso.",
+      "symbols": [
+        { "char": "😬", "label": "Cara de mueca" },
+        { "char": "🫣", "label": "Cara espiando entre los dedos" },
+        { "char": "🙈", "label": "Mono que no ve" },
+        { "char": "😅", "label": "Cara sonriente con sudor" },
+        { "char": "😓", "label": "Cara cabizbaja con sudor" },
+        { "char": "😐", "label": "Cara neutral" }
+      ]
+    },
+    {
+      "id": "secondhand-cringe",
+      "label": "Vergüenza ajena",
+      "h2": "Vergüenza ajena y reacciones de no poder mirar",
+      "intro": "Cringe por cuenta de otro: ver una escena en la que no tienes nada que ver y aun así no poder apartar la mirada.",
+      "symbols": [
+        { "char": "🙊", "label": "Mono que no habla" },
+        { "char": "🤐", "label": "Cara con boca de cierre" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "😩", "label": "Cara agobiada" },
+        { "char": "🙉", "label": "Mono que no oye" },
+        { "char": "😵", "label": "Cara mareada" }
+      ]
+    },
+    {
+      "id": "dying-of-cringe",
+      "label": "Morir de cringe",
+      "h2": "\"Me morí\": emojis para morir de cringe",
+      "intro": "El nivel exagerado de la jerga de internet, donde la reacción es tan dramática que hace falta un ataúd.",
+      "symbols": [
+        { "char": "💀", "label": "Calavera" },
+        { "char": "☠️", "label": "Calavera y huesos cruzados" },
+        { "char": "⚰️", "label": "Ataúd" },
+        { "char": "🪦", "label": "Lápida" },
+        { "char": "🫥", "label": "Cara de línea punteada" },
+        { "char": "🥴", "label": "Cara mareada y aturdida" }
+      ]
+    },
+    {
+      "id": "awkward-silence",
+      "label": "Silencio incómodo",
+      "h2": "Silencio incómodo y miradas de reojo",
+      "intro": "La mirada plana y el reojo con intención: lo que queda cuando de verdad no hay nada que responder.",
+      "symbols": [
+        { "char": "😶", "label": "Cara sin boca" },
+        { "char": "🙄", "label": "Cara con ojos en blanco" },
+        { "char": "😒", "label": "Cara sin gracia" },
+        { "char": "🫤", "label": "Cara con boca diagonal" },
+        { "char": "😯", "label": "Cara boquiabierta" },
+        { "char": "🤨", "label": "Cara con ceja levantada" }
+      ]
+    },
+    {
+      "id": "cringe-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de cringe y caritas de texto",
+      "intro": "Caritas de cringe en texto plano para donde los emojis no se ven: sudores nerviosos, miradas de reojo y muecas.",
+      "symbols": [
+        { "char": "(^_^;)", "label": "Kaomoji de sonrisa incómoda con sudor" },
+        { "char": "(-_-;)", "label": "Kaomoji de silencio incómodo" },
+        { "char": "( ̄▽ ̄;)", "label": "Kaomoji de risa nerviosa" },
+        { "char": "(¬_¬)", "label": "Kaomoji de juicio de reojo" },
+        { "char": "(・へ・)", "label": "Kaomoji de mueca de disgusto" },
+        { "char": "(>_<)", "label": "Kaomoji de cara arrugada de cringe" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Uy, qué cringe",
+      "flags": ["😬", "😅", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No puedo mirar",
+      "flags": ["🫣", "🙈", "🙊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Me morí",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silencio incómodo",
+      "flags": ["😶", "🤐", "🫥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cringe de reojo",
+      "flags": ["🙄", "😒", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Viéndolo pasar",
+      "flags": ["👀", "😬", "🫣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Risa nerviosa",
+      "flags": ["😅", "😓", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Compilado de cringe",
+      "flags": ["💀", "😬", "😩"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "cringeSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos con el emoji cringe",
+    "intro": "Combos de cringe listos para usar: copia un set completo con un clic y pégalo directo en una respuesta, un comentario o un chat grupal."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "Todas las caritas y caras en una sola cuadrícula, cringe incluido."
+    },
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Combos de emojis brainrot y de jerga",
+      "desc": "Sigma, rizz y lluvia de calaveras: la jerga de internet que alimenta las reacciones de morir de cringe."
+    },
+    {
+      "href": "/es/library/emoji-sorprendido/",
+      "title": "Emoji sorprendido y kaomoji",
+      "desc": "Ojos bien abiertos y reacciones de giro inesperado para el instante justo antes del cringe."
+    },
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "La biblioteca completa de kaomoji: todos los ánimos, de la alegría a la vergüenza ajena."
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+ "lang": "es",
+ "slug": "separadores-de-texto",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/separadores-de-texto/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/line-divider-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/separadores-de-texto/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/line-divider-symbols/"
+  }
+ ],
+ "title": "Separadores de Texto: Líneas y Divisores para Copiar y Pegar",
+ "meta_description": "Separadores de texto para copiar y pegar: líneas horizontales, divisores decorativos, guiones y bordes. Haz clic en cualquier símbolo para copiarlo.",
+ "breadcrumb": "Separadores de texto",
+ "hero_h1": "Separadores de texto y divisores de línea",
+ "hero_tagline": "Copia y pega separadores de texto para correos, publicaciones de LinkedIn, biografías y documentos. Líneas horizontales, divisores decorativos y combos listos para usar. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Los separadores de texto y las líneas divisorias hacen que un texto plano se vea ordenado y profesional. Úsalos para separar secciones en correos, publicaciones de LinkedIn, biografías y descripciones de redes sociales. Estos caracteres Unicode se pegan sin problemas en cualquier plataforma: no se pierde nada del formato.",
+ "sections": [
+  {
+   "id": "horizontal-lines",
+   "label": "",
+   "h2": "Caracteres de línea horizontal",
+   "intro": "Caracteres de dibujo de recuadro para separadores horizontales limpios y minimalistas.",
+   "symbols": [
+    {
+     "char": "─",
+     "label": "Línea horizontal fina"
+    },
+    {
+     "char": "━",
+     "label": "Línea horizontal gruesa"
+    },
+    {
+     "char": "═",
+     "label": "Línea horizontal doble"
+    },
+    {
+     "char": "╌",
+     "label": "Línea fina de doble guion"
+    },
+    {
+     "char": "┄",
+     "label": "Línea fina de triple guion"
+    },
+    {
+     "char": "┈",
+     "label": "Línea fina de cuádruple guion"
+    },
+    {
+     "char": "╍",
+     "label": "Línea gruesa de doble guion"
+    },
+    {
+     "char": "┅",
+     "label": "Línea gruesa de triple guion"
+    },
+    {
+     "char": "┉",
+     "label": "Línea gruesa de cuádruple guion"
+    },
+    {
+     "char": "⎯",
+     "label": "Extensión de línea horizontal"
+    }
+   ]
+  },
+  {
+   "id": "decorative-dividers",
+   "label": "",
+   "h2": "Combos de divisores decorativos",
+   "intro": "Patrones de divisores ya armados con caracteres de línea de Unicode.",
+   "symbols": [
+    {
+     "char": "✦──────✦",
+     "label": "Estrella, línea y estrella"
+    },
+    {
+     "char": "═══════",
+     "label": "Línea doble"
+    },
+    {
+     "char": "━━━━━━━",
+     "label": "Línea gruesa"
+    },
+    {
+     "char": "─────────",
+     "label": "Línea fina"
+    },
+    {
+     "char": "• • • • •",
+     "label": "Línea de viñetas"
+    },
+    {
+     "char": "·──────·",
+     "label": "Punto, línea y punto"
+    }
+   ]
+  },
+  {
+   "id": "ornamental-separators",
+   "label": "",
+   "h2": "Combos de separadores ornamentales",
+   "intro": "Divisores elegantes hechos con caracteres florales y decorativos de Unicode.",
+   "symbols": [
+    {
+     "char": "❧──❧",
+     "label": "Divisor de corazón floral"
+    },
+    {
+     "char": "✿──✿",
+     "label": "Divisor de florecita"
+    },
+    {
+     "char": "♦──♦",
+     "label": "Divisor de rombo"
+    },
+    {
+     "char": "★──★",
+     "label": "Divisor de estrella"
+    },
+    {
+     "char": "❖──❖",
+     "label": "Divisor de rombo con punta"
+    },
+    {
+     "char": "•──────•",
+     "label": "Viñeta, línea y viñeta"
+    }
+   ]
+  },
+  {
+   "id": "dashed-dotted",
+   "label": "",
+   "h2": "Líneas discontinuas y punteadas",
+   "intro": "Caracteres de guiones y puntos para separadores suaves e informales.",
+   "symbols": [
+    {
+     "char": "┄┄┄",
+     "label": "Triple guion"
+    },
+    {
+     "char": "╌╌╌",
+     "label": "Doble guion"
+    },
+    {
+     "char": "┈┈┈",
+     "label": "Cuádruple guion"
+    },
+    {
+     "char": "- - - -",
+     "label": "Guiones separados"
+    },
+    {
+     "char": "· · · ·",
+     "label": "Puntos medios"
+    },
+    {
+     "char": "∙ ∙ ∙ ∙",
+     "label": "Puntos de operador"
+    }
+   ]
+  },
+  {
+   "id": "box-drawing-characters",
+   "label": "",
+   "h2": "Caracteres de bordes y recuadros",
+   "intro": "Caracteres de dibujo de recuadro para armar bordes y marcos en texto plano.",
+   "symbols": [
+    {
+     "char": "┌",
+     "label": "Esquina superior izquierda"
+    },
+    {
+     "char": "┐",
+     "label": "Esquina superior derecha"
+    },
+    {
+     "char": "└",
+     "label": "Esquina inferior izquierda"
+    },
+    {
+     "char": "┘",
+     "label": "Esquina inferior derecha"
+    },
+    {
+     "char": "├",
+     "label": "Unión en T izquierda"
+    },
+    {
+     "char": "┤",
+     "label": "Unión en T derecha"
+    },
+    {
+     "char": "┬",
+     "label": "Unión en T superior"
+    },
+    {
+     "char": "┴",
+     "label": "Unión en T inferior"
+    },
+    {
+     "char": "╔",
+     "label": "Esquina superior izquierda doble"
+    },
+    {
+     "char": "╗",
+     "label": "Esquina superior derecha doble"
+    },
+    {
+     "char": "╚",
+     "label": "Esquina inferior izquierda doble"
+    },
+    {
+     "char": "╝",
+     "label": "Esquina inferior derecha doble"
+    }
+   ]
+  },
+  {
+   "id": "underline-text",
+   "label": "",
+   "h2": "Caracteres para subrayar texto",
+   "intro": "Copia marcas de subrayado combinantes y guiones bajos para subrayar donde no existe un botón de formato.",
+   "symbols": [
+    {
+     "char": "a̲b̲c̲",
+     "label": "Subrayado combinante"
+    },
+    {
+     "char": "a̳b̳c̳",
+     "label": "Doble subrayado combinante"
+    },
+    {
+     "char": "_",
+     "label": "Guion bajo"
+    },
+    {
+     "char": "‗",
+     "label": "Guion bajo doble"
+    },
+    {
+     "char": "﹍",
+     "label": "Guion bajo discontinuo"
+    },
+    {
+     "char": "▁▁▁▁▁",
+     "label": "Subrayado de bloque bajo"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-brillo/",
+   "title": "Símbolos de brillos y decoración",
+   "desc": "Símbolos de brillo, destellos y decoradores aesthetic para biografías y descripciones."
+  },
+  {
+   "href": "/es/simbolos-de-flechas/",
+   "title": "Símbolos de flechas",
+   "desc": "Todos los caracteres de flecha de Unicode para navegación, dirección y listas."
+  },
+  {
+   "href": "/es/library/simbolos-geometricos/",
+   "title": "Símbolos geométricos",
+   "desc": "Círculos, rombos, cuadrados, triángulos y formas decorativas para dar formato."
+  },
+  {
+   "href": "/es/library/simbolos-de-email/",
+   "title": "Símbolos para correo",
+   "desc": "Símbolos Unicode que se ven bien en cualquier cliente de correo para un formato profesional."
+  }
+ ]
+}

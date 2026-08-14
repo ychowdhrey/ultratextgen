@@ -1,0 +1,337 @@
+{
+ "lang": "es",
+ "slug": "simbolos-electricos",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-electricos/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/electrical-circuit-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-electricos/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/electrical-circuit-symbols/"
+  }
+ ],
+ "title": "Símbolos Eléctricos: Copiar y Pegar Ω ⏚ ⚡ Glifos de Ingeniería",
+ "meta_description": "Copia símbolos eléctricos y de circuitos: ohm Ω, puesta a tierra ⏚, corriente alterna ⏦, compuertas lógicas y unidades. Haz clic para copiarlos.",
+ "breadcrumb": "Símbolos Eléctricos y de Circuitos",
+ "hero_h1": "Símbolos Eléctricos y de Circuitos",
+ "hero_tagline": "Glifos de puesta a tierra, corriente, potencia, compuertas lógicas y unidades para textos de ingeniería. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Unicode cubre, sin hacer mucho ruido, buena parte de la notación eléctrica: el signo de ohm, la puesta a tierra, las marcas de corriente alterna y continua, los glifos del botón de encendido y caracteres compactos de unidades como ㎃ y ㏀. Estos símbolos eléctricos son muy prácticos para anotar esquemas, escribir en foros técnicos, redactar informes de laboratorio, armar hojas de cálculo y, en general, para cualquier situación en la que abrir un programa de dibujo sería exagerado. Copia el carácter que necesites directo en tu documento: no hace falta una fuente especial ni instalar nada. Cada glifo es texto Unicode común, así que se pega igual en Word, Google Docs, correos, comentarios y código, y se mantiene legible cuando el archivo cambia de computadora.",
+ "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, letra manuscrita y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+ "sections": [
+  {
+   "id": "power-energy",
+   "label": "Potencia",
+   "h2": "Símbolos de Potencia y Energía",
+   "intro": "Estados de encendido, enchufes y baterías: los glifos de prender y apagar las cosas.",
+   "symbols": [
+    {
+     "char": "⚡",
+     "label": "Alta tensión"
+    },
+    {
+     "char": "⏻",
+     "label": "Símbolo de encendido"
+    },
+    {
+     "char": "⏼",
+     "label": "Símbolo de encendido y apagado"
+    },
+    {
+     "char": "⏽",
+     "label": "Símbolo de encendido (ON)"
+    },
+    {
+     "char": "⏾",
+     "label": "Símbolo de suspensión"
+    },
+    {
+     "char": "🔌",
+     "label": "Enchufe eléctrico"
+    },
+    {
+     "char": "🔋",
+     "label": "Batería"
+    },
+    {
+     "char": "🪫",
+     "label": "Batería baja"
+    }
+   ]
+  },
+  {
+   "id": "circuit-glyphs",
+   "label": "Circuitos",
+   "h2": "Puesta a Tierra, Corriente y Glifos de Circuito",
+   "intro": "Caracteres propios de los diagramas de circuitos, tomados del bloque Técnico Misceláneo de Unicode.",
+   "symbols": [
+    {
+     "char": "⏚",
+     "label": "Puesta a tierra"
+    },
+    {
+     "char": "⏛",
+     "label": "Fusible"
+    },
+    {
+     "char": "⏦",
+     "label": "Corriente alterna"
+    },
+    {
+     "char": "⎓",
+     "label": "Corriente continua (segunda forma)"
+    },
+    {
+     "char": "⌁",
+     "label": "Flecha eléctrica"
+    },
+    {
+     "char": "∿",
+     "label": "Onda senoidal"
+    },
+    {
+     "char": "⏧",
+     "label": "Intersección eléctrica"
+    },
+    {
+     "char": "↯",
+     "label": "Flecha en zigzag hacia abajo"
+    }
+   ]
+  },
+  {
+   "id": "logic-gates",
+   "label": "Lógica",
+   "h2": "Compuertas Lógicas y Símbolos Digitales",
+   "intro": "Operadores booleanos y símbolos de salida de electrónica digital para notación lógica.",
+   "symbols": [
+    {
+     "char": "∧",
+     "label": "Y lógico (AND)"
+    },
+    {
+     "char": "∨",
+     "label": "O lógico (OR)"
+    },
+    {
+     "char": "¬",
+     "label": "Signo de negación (inversor)"
+    },
+    {
+     "char": "⊕",
+     "label": "Más dentro de un círculo (XOR)"
+    },
+    {
+     "char": "⊻",
+     "label": "O exclusivo (XOR)"
+    },
+    {
+     "char": "⊼",
+     "label": "NAND"
+    },
+    {
+     "char": "⊽",
+     "label": "NOR"
+    },
+    {
+     "char": "⎍",
+     "label": "Símbolo monoestable"
+    },
+    {
+     "char": "⎎",
+     "label": "Símbolo de histéresis"
+    },
+    {
+     "char": "⎏",
+     "label": "Salida de colector abierto tipo H"
+    },
+    {
+     "char": "⎐",
+     "label": "Salida de colector abierto tipo L"
+    },
+    {
+     "char": "⎑",
+     "label": "Salida con resistencia pull-down pasiva"
+    },
+    {
+     "char": "⎒",
+     "label": "Salida con resistencia pull-up pasiva"
+    }
+   ]
+  },
+  {
+   "id": "units",
+   "label": "Unidades",
+   "h2": "Unidades y Magnitudes Eléctricas",
+   "intro": "El signo de ohm y las unidades de un solo carácter para voltios, amperios, vatios, hercios y faradios.",
+   "symbols": [
+    {
+     "char": "Ω",
+     "label": "Signo de ohm"
+    },
+    {
+     "char": "℧",
+     "label": "Signo de ohm invertido (mho)"
+    },
+    {
+     "char": "µ",
+     "label": "Signo de micro"
+    },
+    {
+     "char": "㎌",
+     "label": "µF cuadrado (microfaradio)"
+    },
+    {
+     "char": "㎷",
+     "label": "mV cuadrado (milivoltio)"
+    },
+    {
+     "char": "㎸",
+     "label": "kV cuadrado (kilovoltio)"
+    },
+    {
+     "char": "㎃",
+     "label": "mA cuadrado (miliamperio)"
+    },
+    {
+     "char": "㎄",
+     "label": "kA cuadrado (kiloamperio)"
+    },
+    {
+     "char": "㎾",
+     "label": "kW cuadrado (kilovatio)"
+    },
+    {
+     "char": "㎿",
+     "label": "MW cuadrado (megavatio)"
+    },
+    {
+     "char": "㎐",
+     "label": "Hz cuadrado (hercio)"
+    },
+    {
+     "char": "㎒",
+     "label": "MHz cuadrado (megahercio)"
+    },
+    {
+     "char": "㏀",
+     "label": "kΩ cuadrado (kiloohmio)"
+    },
+    {
+     "char": "㏁",
+     "label": "MΩ cuadrado (megaohmio)"
+    }
+   ]
+  },
+  {
+   "id": "math-engineering",
+   "label": "Matemáticas",
+   "h2": "Símbolos Matemáticos para Análisis de Circuitos",
+   "intro": "Ángulos de fase, frecuencia y la notación matemática que llena las hojas de cálculo y los ejercicios de ingeniería.",
+   "symbols": [
+    {
+     "char": "φ",
+     "label": "Letra griega phi minúscula (ángulo de fase)"
+    },
+    {
+     "char": "ω",
+     "label": "Letra griega omega minúscula (frecuencia angular)"
+    },
+    {
+     "char": "θ",
+     "label": "Letra griega theta minúscula"
+    },
+    {
+     "char": "Δ",
+     "label": "Letra griega delta mayúscula"
+    },
+    {
+     "char": "π",
+     "label": "Letra griega pi minúscula"
+    },
+    {
+     "char": "∑",
+     "label": "Sumatoria"
+    },
+    {
+     "char": "∫",
+     "label": "Integral"
+    },
+    {
+     "char": "√",
+     "label": "Raíz cuadrada"
+    },
+    {
+     "char": "±",
+     "label": "Signo más-menos"
+    },
+    {
+     "char": "≈",
+     "label": "Aproximadamente igual a"
+    },
+    {
+     "char": "∞",
+     "label": "Infinito"
+    }
+   ]
+  },
+  {
+   "id": "safety-warnings",
+   "label": "Seguridad",
+   "h2": "Señales de Seguridad y Advertencia Eléctrica",
+   "intro": "Glifos de advertencia para etiquetas de alta tensión y avisos de seguridad.",
+   "symbols": [
+    {
+     "char": "⚠",
+     "label": "Señal de advertencia"
+    },
+    {
+     "char": "☠",
+     "label": "Calavera y huesos cruzados"
+    },
+    {
+     "char": "⛔",
+     "label": "Prohibido el paso"
+    },
+    {
+     "char": "🚫",
+     "label": "Prohibido"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-unidades/",
+   "title": "Símbolos de Unidades y Medidas",
+   "desc": "Caracteres de grado, micro y unidades de medida para copiar."
+  },
+  {
+   "href": "/es/library/simbolos-de-peligro/",
+   "title": "Símbolos de Peligro y Advertencia",
+   "desc": "Radiación, riesgo biológico y señales de precaución para etiquetas de seguridad."
+  },
+  {
+   "href": "/es/library/simbolos-matematicos/",
+   "title": "Símbolos Matemáticos",
+   "desc": "Operadores, relaciones y notación para ecuaciones y fórmulas."
+  },
+  {
+   "href": "/library/tech-status-symbols/",
+   "title": "Símbolos de Tecnología y Estado",
+   "desc": "Glifos de interfaz, señal y estado de dispositivos para copiar y pegar."
+  }
+ ]
+}

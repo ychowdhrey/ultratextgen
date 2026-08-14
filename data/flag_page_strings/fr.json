@@ -1,0 +1,33 @@
+{
+  "locale": "fr",
+  "sections": {
+    "country_list": {
+      "label": "Liste Complète",
+      "h2": "Les Drapeaux des 195 Pays",
+      "intro": "Filtrez par continent, puis cliquez sur un drapeau pour le copier."
+    },
+    "grids": {
+      "label": "Séries de Drapeaux",
+      "h2": "Séries de Drapeaux Prêtes à Copier",
+      "intro": "Un clic copie le groupe entier : les 27 drapeaux de l'UE, les 10 de l'ASEAN, tout le G20."
+    }
+  },
+  "regions": {
+    "all": "Tous",
+    "europe": "Europe",
+    "asia": "Asie",
+    "americas": "Amérique",
+    "africa": "Afrique",
+    "oceania": "Océanie"
+  },
+  "aria_copy_flag": "Copier le drapeau : {name}",
+  "groups": {
+    "European Union Members": "Union européenne (UE)",
+    "ASEAN": "ASEAN (Asie du Sud-Est)",
+    "Middle East": "Moyen-Orient",
+    "G20": "G20",
+    "Nordic Countries": "Pays nordiques",
+    "South Asia": "Asie du Sud",
+    "East Asia": "Asie de l'Est"
+  }
+}

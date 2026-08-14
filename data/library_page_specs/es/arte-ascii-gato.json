@@ -1,0 +1,110 @@
+{
+  "lang": "es",
+  "slug": "arte-ascii-gato",
+  "page_type": "library",
+  "copy_pattern": "art",
+  "canonical": "https://ultratextgen.com/es/library/arte-ascii-gato/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/cat-ascii-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-ascii-gato/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/cat-ascii-art/"
+    }
+  ],
+  "title": "Arte ASCII de Gato 🐱 Copiar y Pegar",
+  "meta_description": "Arte ASCII de gato original para copiar y pegar: caritas de gato, gatos en pose de pan, gatos largos y gatos sentados en texto plano. Haz clic en Copiar.",
+  "breadcrumb": "Arte ASCII de Gato",
+  "hero_h1": "Arte ASCII de Gato",
+  "hero_tagline": "Gatos originales de varias líneas hechos solo con texto — caritas de gato, gatos en pose de pan, gatos largos y gatos sentados. Haz clic en Copiar y pégalo donde quieras.",
+  "intro": "El arte ASCII de gato dibuja un gato entero — orejas, bigotes, patas y cola — usando nada más que caracteres del teclado. Estos son dibujos completos de varias líneas, no caritas de una sola línea; si lo que buscas son emoticones japoneses compactos de gato, la colección de kaomoji de gato que enlazamos abajo tiene esa versión. Las piezas grandes se ven mejor donde el texto conserva el ancho fijo, como los bloques de código de Discord o una terminal. Si el gato se ve deforme al pegarlo, el problema casi siempre es que la fuente de destino no es monoespaciada.",
+  "sections": [
+    {
+      "id": "small-cats",
+      "h2": "Arte ASCII de Gato Pequeño",
+      "intro": "Gatitos de tres líneas y una carita de bigotes de una sola línea para chats y comentarios.",
+      "art": [
+        {
+          "label": "Gato de una línea",
+          "art": "=^..^="
+        },
+        {
+          "label": "Carita de gato pequeña",
+          "art": "  /\\_/\\\n ( o_o )\n  (>x<)"
+        },
+        {
+          "label": "Gato asomándose",
+          "art": " /\\_/\\\n( o o )\n_| ^  |_____"
+        }
+      ]
+    },
+    {
+      "id": "classic-cats",
+      "h2": "Gatos Clásicos",
+      "intro": "Gatos de tamaño medio con más detalle — en pose de pan, caritas grandes y un gato sentado robusto.",
+      "art": [
+        {
+          "label": "Gato en pose de pan",
+          "art": "   /\\_/\\\n  ( -.- )\n /       \\\n|         |\n \\_______/"
+        },
+        {
+          "label": "Carita de gato grande",
+          "art": "   /\\_______/\\\n  /   o   o   \\\n =|     ^     |=\n  |  \\_____/  |\n   \\         /\n    \\_______/"
+        },
+        {
+          "label": "Gato sentado robusto",
+          "art": "    /\\_____/\\\n   /  o   o  \\\n  ( ==  ^  == )\n   )         (\n  (           )\n ( (  )   (  ) )\n(__(__)___(__)__)"
+        }
+      ]
+    },
+    {
+      "id": "big-cats",
+      "h2": "Arte ASCII de Gato Grande",
+      "intro": "Gatos más grandes — ideales para bloques de código de Discord, terminales y cualquier lugar con fuente de ancho fijo.",
+      "art": [
+        {
+          "label": "Gato de espaldas",
+          "art": "   /\\_/\\\n  (     )    ,\n  (     )    |\\\n  (     )    | |\n (       )   | |\n (       )   | |\n (       )__/ /\n  (__________/"
+        },
+        {
+          "label": "Gato largo",
+          "art": "  /\\_/\\\n ( o.o )\n |     |\n |     |\n |     |\n |     |\n |     |\n (     )\n (_____)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/arte-de-texto/",
+      "title": "Arte de Texto",
+      "desc": "Bordes, marcos y dibujos hechos con caracteres para biografías y publicaciones."
+    },
+    {
+      "href": "/es/library/cat-kaomoji/",
+      "title": "Kaomoji de Gato",
+      "desc": "Caritas japonesas de gato hechas con caracteres, en una sola línea."
+    },
+    {
+      "href": "/es/library/tabla-ascii/",
+      "title": "Tabla ASCII",
+      "desc": "La tabla ASCII completa con códigos decimales y hexadecimales."
+    },
+    {
+      "href": "/es/library/arte-ascii-perro/",
+      "title": "Arte ASCII de Perro",
+      "desc": "Perros dibujados en texto plano, listos para pegar."
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos Unicode — gratis y al instante."
+}

@@ -1,0 +1,437 @@
+{
+  "slug": "hua-fuhao",
+  "title": "花 符號 ❀ ✿ 🌸 — 花朵符號與表情符號複製貼上 | UltraTextGen",
+  "meta_description": "花朵符號 ✿ ❀ ❁ 與花的表情符號 🌸 🌹 🌷，還有葉子、樹木、季節符號和個人簡介用的花朵分隔線。點一下就複製。",
+  "breadcrumb": "花 符號",
+  "hero_h1": "花朵符號與自然表情符號",
+  "hero_tagline": "✿ ❀ 🌸 🌿 — 花、葉、樹，以及簡介欄用的花朵分隔線。點一下即可複製。",
+  "intro": "能打在文字裡的花其實有兩種，很容易混在一起。🌸 🌹 🌷 這類是表情符號，顏色與大小固定，適合訊息和照片說明。✿ ❀ ❁ 這類是文字符號，會跟著周圍字的顏色走，所以適合放在暱稱或個人簡介裡當裝飾。以下兩種都收錄了，最後還有由多個符號組成的分隔線。點一下就會複製到剪貼簿。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "常見花朵表情符號",
+      "h2": "常見花朵表情符號",
+      "intro": "最常用的那幾種花。",
+      "symbols": [
+        {
+          "char": "🌸",
+          "label": "櫻花"
+        },
+        {
+          "char": "🌹",
+          "label": "玫瑰"
+        },
+        {
+          "char": "🌺",
+          "label": "扶桑花"
+        },
+        {
+          "char": "🌻",
+          "label": "向日葵"
+        },
+        {
+          "char": "🌼",
+          "label": "小花"
+        },
+        {
+          "char": "🌷",
+          "label": "鬱金香"
+        },
+        {
+          "char": "💐",
+          "label": "花束"
+        },
+        {
+          "char": "🏵",
+          "label": "薔薇花結"
+        },
+        {
+          "char": "🪷",
+          "label": "蓮花"
+        },
+        {
+          "char": "🪻",
+          "label": "風信子"
+        },
+        {
+          "char": "💮",
+          "label": "白花"
+        }
+      ]
+    },
+    {
+      "id": "plant",
+      "label": "植物與葉子符號",
+      "h2": "植物與葉子符號",
+      "intro": "沒有花的綠色。",
+      "symbols": [
+        {
+          "char": "🌿",
+          "label": "香草"
+        },
+        {
+          "char": "🍀",
+          "label": "四葉幸運草"
+        },
+        {
+          "char": "🍁",
+          "label": "楓葉"
+        },
+        {
+          "char": "🍂",
+          "label": "落葉"
+        },
+        {
+          "char": "🌱",
+          "label": "幼苗"
+        },
+        {
+          "char": "🪴",
+          "label": "盆栽"
+        },
+        {
+          "char": "☘",
+          "label": "三葉草"
+        },
+        {
+          "char": "🌾",
+          "label": "稻穗"
+        },
+        {
+          "char": "🍃",
+          "label": "隨風飄的葉子"
+        },
+        {
+          "char": "🎍",
+          "label": "門松"
+        }
+      ]
+    },
+    {
+      "id": "tree",
+      "label": "樹木符號",
+      "h2": "樹木符號",
+      "intro": "從針葉樹到聖誕樹。",
+      "symbols": [
+        {
+          "char": "🌲",
+          "label": "常綠樹"
+        },
+        {
+          "char": "🌳",
+          "label": "落葉樹"
+        },
+        {
+          "char": "🌴",
+          "label": "棕櫚樹"
+        },
+        {
+          "char": "🎋",
+          "label": "七夕竹"
+        },
+        {
+          "char": "🎄",
+          "label": "聖誕樹"
+        },
+        {
+          "char": "🪵",
+          "label": "木頭"
+        },
+        {
+          "char": "🪹",
+          "label": "空鳥巢"
+        },
+        {
+          "char": "🪺",
+          "label": "有蛋的鳥巢"
+        }
+      ]
+    },
+    {
+      "id": "unicode",
+      "label": "花朵文字符號（Unicode）",
+      "h2": "花朵文字符號（Unicode）",
+      "intro": "會跟著文字顏色變化，適合暱稱與簡介。",
+      "symbols": [
+        {
+          "char": "✿",
+          "label": "黑色小花"
+        },
+        {
+          "char": "❀",
+          "label": "白色小花"
+        },
+        {
+          "char": "❁",
+          "label": "八瓣花"
+        },
+        {
+          "char": "❃",
+          "label": "粗體小花"
+        },
+        {
+          "char": "✾",
+          "label": "六瓣黑花"
+        },
+        {
+          "char": "⚘",
+          "label": "花"
+        },
+        {
+          "char": "❋",
+          "label": "粗體八瓣花"
+        },
+        {
+          "char": "✻",
+          "label": "水滴星號"
+        },
+        {
+          "char": "❊",
+          "label": "圓圈白點"
+        },
+        {
+          "char": "❉",
+          "label": "氣球狀星號"
+        }
+      ]
+    },
+    {
+      "id": "seasonal",
+      "label": "季節與風景符號",
+      "h2": "季節與風景符號",
+      "intro": "襯托花朵的背景。",
+      "symbols": [
+        {
+          "char": "🌅",
+          "label": "日出"
+        },
+        {
+          "char": "🌊",
+          "label": "海浪"
+        },
+        {
+          "char": "⛰",
+          "label": "山"
+        },
+        {
+          "char": "🏔",
+          "label": "雪山"
+        },
+        {
+          "char": "🌋",
+          "label": "火山"
+        },
+        {
+          "char": "🌈",
+          "label": "彩虹"
+        },
+        {
+          "char": "🌄",
+          "label": "山中日出"
+        },
+        {
+          "char": "🌇",
+          "label": "城市日落"
+        },
+        {
+          "char": "🌃",
+          "label": "星空夜晚"
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "label": "庭園與生長符號",
+      "h2": "庭園與生長符號",
+      "intro": "長在花旁邊的東西。",
+      "symbols": [
+        {
+          "char": "🌱",
+          "label": "幼苗"
+        },
+        {
+          "char": "🪻",
+          "label": "風信子"
+        },
+        {
+          "char": "🪷",
+          "label": "蓮花"
+        },
+        {
+          "char": "🌵",
+          "label": "仙人掌"
+        },
+        {
+          "char": "🎑",
+          "label": "賞月"
+        },
+        {
+          "char": "🪨",
+          "label": "石頭"
+        },
+        {
+          "char": "🪸",
+          "label": "珊瑚"
+        },
+        {
+          "char": "🍄",
+          "label": "蘑菇"
+        },
+        {
+          "char": "🌰",
+          "label": "栗子"
+        },
+        {
+          "char": "🥀",
+          "label": "枯萎的花"
+        }
+      ]
+    },
+    {
+      "id": "dividers",
+      "label": "花朵分隔線與簡介裝飾",
+      "h2": "花朵分隔線與簡介裝飾",
+      "intro": "已經排好的組合，複製的是整串而不是單一符號。",
+      "symbols": [
+        {
+          "char": "✿•°•❀•°•✿",
+          "label": "花朵分隔線"
+        },
+        {
+          "char": "·°✿°·",
+          "label": "點點加小花"
+        },
+        {
+          "char": "⋆｡˚❀˚｡⋆",
+          "label": "閃亮花朵"
+        },
+        {
+          "char": "꒰❀꒱",
+          "label": "括號裡的花"
+        },
+        {
+          "char": "ʚ🌸ɞ",
+          "label": "帶翅膀的花"
+        },
+        {
+          "char": "˗ˏˋ🌷ˎˊ˗",
+          "label": "鬱金香裝飾"
+        },
+        {
+          "char": "❀ ━━━ ❀",
+          "label": "帶花的線"
+        },
+        {
+          "char": "✾ ｡ﾟ❀ ｡ﾟ✾",
+          "label": "小花叢"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "花朵符號常見問題",
+  "faq": [
+    {
+      "q": "❀ 和 🌸 有什麼不同？",
+      "a": "❀ 是文字符號，會跟著周圍文字的顏色和大小走，放在白色暱稱裡就是白的，放在黑色內文裡就是黑的。🌸 是表情符號，到哪裡都是粉紅色，而且比一行字大。裝飾暱稱或簡介用 ❀ 比較好看，訊息和照片說明用 🌸 比較自然。"
+    },
+    {
+      "q": "可以放進 Instagram 的名字裡嗎？",
+      "a": "顯示名稱可以。以 @ 開頭的帳號名稱只接受英數字、句點和底線，所以這裡的符號都進不去。遊戲則要看各家規則，建議在確定暱稱前先試打一次。"
+    },
+    {
+      "q": "為什麼有些花會變成空白方框？",
+      "a": "方框代表那台裝置還不認得這個字。這多半發生在較新的表情符號上，例如 🪷 蓮花、🪻 風信子、🪺 有蛋的鳥巢，都是近幾年才加入的。✿ ❀ ❁ 這類文字符號年代很久，幾乎在任何裝置上都能正常顯示。"
+    },
+    {
+      "q": "分隔線要怎麼複製？",
+      "a": "最後一組不是單一符號，而是由好幾個符號和空格排成的整串。點一下會連空格一起複製。貼上後不要動它——少一個空格，左右就不對稱了。"
+    },
+    {
+      "q": "裝飾符號會影響螢幕閱讀器嗎？",
+      "a": "會。螢幕閱讀器會把 ❀ 逐字念出它的名稱，所以一排裝飾就變成一長串重複的念白。暱稱結尾放一兩個沒問題，用二十朵花把整段簡介框起來就不太合適了。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "同一個名字底下的兩種來源",
+      "body": "大家用「花符號」一個詞去找的，其實是來源完全不同的兩群東西。花的表情符號源自一九九○年代末日本電信業者的表情符號集，從一開始就是小圖：顏色固定、形狀固定。而 ✿ ❀ ❁ 走的是另一條路——它們是活字印刷時代的裝飾符號，也就是所謂的花飾（floron），早在電腦出現之前就用來妝點書頁。正因為如此，它們的行為跟字母一樣，會繼承周圍的字體、顏色和大小。這個來源上的差別，剛好就是使用上的分界：圖是放進內容裡的，裝飾是織進文字裡的。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/aixin-fuhao/",
+      "title": "愛心符號大全",
+      "desc": "各種顏色與風格的愛心表情符號、Unicode 愛心字元與愛情相關符號參考收錄。點一下符號就能立刻複製。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號",
+      "desc": "獨特 Unicode 符號的參考收藏——無限、和平、科學、法律標記、美感獨立符號與罕見珍稀符號。點一下符號就能立刻複製。"
+    },
+    {
+      "href": "/zh-tw/library/biaoqing-fuhao-zuhe/",
+      "title": "表情符號組合大全",
+      "desc": "200+ 種美學風格表情符號組合，點一下就能複製整組——森女系、鄉村田園、夜空、Y2K 等風格應有盡有。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/zh-tw/library/hua-fuhao/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/flower-symbols/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/hua-fuhao/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/flower-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/blumen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-flor/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-fleurs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-bunga/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/hana-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/kkot-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-kwiatow/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-tsvetov/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/flower-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/flower-symbols/"
+    }
+  ]
+}

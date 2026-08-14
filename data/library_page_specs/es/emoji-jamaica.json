@@ -1,0 +1,91 @@
+{
+  "lang": "es",
+  "slug": "emoji-jamaica",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-jamaica/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/jamaica-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-jamaica/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/jamaica-emoji-combos/" }
+  ],
+  "title": "Emoji Jamaica 🇯🇲⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Jamaica 🇯🇲⚽: los colores de los Reggae Boyz y sets de fútbol para biografías. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Jamaica",
+  "hero_h1": "Combos de Emoji Jamaica",
+  "hero_tagline": "Los colores de los Reggae Boyz y sets de emojis de fútbol para aficionados de Jamaica: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Jamaica 🇯🇲 se combina con la pelota ⚽ y con los colores de los Reggae Boyz. Big Up Jamaica: puro ambiente Reggae Boyz. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Jamaica",
+      "h2": "Emojis de Jamaica",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇯🇲", "label": "Bandera de Jamaica" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "⚫", "label": "Círculo negro" },
+        { "char": "🎶", "label": "Notas musicales" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo Jamaicano",
+      "intro": "El verde, dorado y negro de los Reggae Boyz.",
+      "symbols": [
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "⚫", "label": "Círculo negro" },
+        { "char": "🎶", "label": "Notas musicales" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Reggae Boyz", "flags": ["🇯🇲", "⚽", "🎶"], "defaultFormat": "inline" },
+    { "name": "Big Up Jamaica", "flags": ["🇯🇲", "⚽", "🔥"], "defaultFormat": "inline" },
+    { "name": "Verde, Dorado y Negro", "flags": ["🟢", "🟡", "⚫"], "defaultFormat": "inline" },
+    { "name": "Orgullo Jamaicano", "flags": ["🇯🇲", "⚽", "🏆"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "jamaicaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Jamaica",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

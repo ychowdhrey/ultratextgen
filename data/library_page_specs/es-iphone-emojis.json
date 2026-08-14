@@ -1,0 +1,401 @@
+{
+  "slug": "emojis-iphone",
+  "title": "Emojis iPhone 🍎 — Copiar y Pegar Emojis de Apple | UltraTextGen",
+  "meta_description": "Emojis de iPhone para copiar y pegar: caritas, corazones, manos y los emojis que se reconocen al instante como Apple. Clic para copiar — y por qué en Android cambian.",
+  "breadcrumb": "Emojis iPhone",
+  "hero_h1": "Emojis iPhone",
+  "hero_tagline": "Los emojis tal y como los dibuja Apple: caras, corazones, gestos y los que delatan que es un iPhone.",
+  "intro": "Los emojis de iPhone no son caracteres distintos a los de Android — es el mismo Unicode, dibujado por Apple. Abajo están los más usados en cuatro grupos: toca un emoji y se copia al portapapeles, listo para la bio, un mensaje o un pie de foto.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "yuzler",
+      "label": "Caritas y Emojis de Cara de iPhone",
+      "h2": "Caritas y Emojis de Cara de iPhone",
+      "intro": "Las expresiones de siempre con el dibujo de Apple.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Cara Llorando de Risa"
+        },
+        {
+          "char": "🥹",
+          "label": "Cara Aguantando las Lágrimas"
+        },
+        {
+          "char": "🥲",
+          "label": "Cara Sonriente con Lágrima"
+        },
+        {
+          "char": "😊",
+          "label": "Cara Sonriente con Ojos Sonrientes"
+        },
+        {
+          "char": "🥰",
+          "label": "Cara Sonriente con Corazones"
+        },
+        {
+          "char": "😍",
+          "label": "Cara con Ojos de Corazón"
+        },
+        {
+          "char": "😎",
+          "label": "Cara con Gafas de Sol"
+        },
+        {
+          "char": "🤔",
+          "label": "Cara Pensativa"
+        },
+        {
+          "char": "🙃",
+          "label": "Cara al Revés"
+        },
+        {
+          "char": "😭",
+          "label": "Cara Llorando a Gritos"
+        },
+        {
+          "char": "🥺",
+          "label": "Cara Suplicante"
+        },
+        {
+          "char": "😅",
+          "label": "Cara Sonriente con Sudor"
+        },
+        {
+          "char": "😏",
+          "label": "Cara con Sonrisa Ladeada"
+        },
+        {
+          "char": "😴",
+          "label": "Cara Durmiendo"
+        },
+        {
+          "char": "🤩",
+          "label": "Cara Deslumbrada"
+        },
+        {
+          "char": "🤯",
+          "label": "Cabeza Explotando"
+        },
+        {
+          "char": "😡",
+          "label": "Cara Furiosa"
+        },
+        {
+          "char": "🫠",
+          "label": "Cara Derritiéndose"
+        }
+      ]
+    },
+    {
+      "id": "kalpler",
+      "label": "Emojis de Corazón de iPhone",
+      "h2": "Emojis de Corazón de iPhone",
+      "intro": "Todos los corazones de colores juntos.",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "Corazón Rojo"
+        },
+        {
+          "char": "🩷",
+          "label": "Corazón Rosa"
+        },
+        {
+          "char": "🧡",
+          "label": "Corazón Naranja"
+        },
+        {
+          "char": "💛",
+          "label": "Corazón Amarillo"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón Verde"
+        },
+        {
+          "char": "💙",
+          "label": "Corazón Azul"
+        },
+        {
+          "char": "🩵",
+          "label": "Corazón Azul Claro"
+        },
+        {
+          "char": "💜",
+          "label": "Corazón Morado"
+        },
+        {
+          "char": "🖤",
+          "label": "Corazón Negro"
+        },
+        {
+          "char": "🩶",
+          "label": "Corazón Gris"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón Blanco"
+        },
+        {
+          "char": "🤎",
+          "label": "Corazón Marrón"
+        },
+        {
+          "char": "💕",
+          "label": "Dos Corazones"
+        },
+        {
+          "char": "💖",
+          "label": "Corazón Brillante"
+        },
+        {
+          "char": "💔",
+          "label": "Corazón Roto"
+        },
+        {
+          "char": "❤️‍🔥",
+          "label": "Corazón en Llamas"
+        }
+      ]
+    },
+    {
+      "id": "eller",
+      "label": "Emojis de Manos y Gestos de iPhone",
+      "h2": "Emojis de Manos y Gestos de iPhone",
+      "intro": "Pulgares, aplausos y gestos de chat.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pulgar Hacia Arriba"
+        },
+        {
+          "char": "👎",
+          "label": "Pulgar Hacia Abajo"
+        },
+        {
+          "char": "🙏",
+          "label": "Manos Juntas"
+        },
+        {
+          "char": "👏",
+          "label": "Manos Aplaudiendo"
+        },
+        {
+          "char": "🙌",
+          "label": "Manos Levantadas"
+        },
+        {
+          "char": "🤝",
+          "label": "Apretón de Manos"
+        },
+        {
+          "char": "👌",
+          "label": "Señal de OK"
+        },
+        {
+          "char": "🤌",
+          "label": "Dedos Juntos"
+        },
+        {
+          "char": "🤞",
+          "label": "Dedos Cruzados"
+        },
+        {
+          "char": "🫶",
+          "label": "Corazón con las Manos"
+        },
+        {
+          "char": "🤙",
+          "label": "Gesto de Llámame"
+        },
+        {
+          "char": "✌️",
+          "label": "Señal de Victoria"
+        },
+        {
+          "char": "🤟",
+          "label": "Gesto de Te Quiero"
+        },
+        {
+          "char": "👋",
+          "label": "Mano Saludando"
+        },
+        {
+          "char": "🫰",
+          "label": "Corazón con los Dedos"
+        },
+        {
+          "char": "💪",
+          "label": "Bíceps Flexionado"
+        }
+      ]
+    },
+    {
+      "id": "iphone",
+      "label": "Los Emojis Más \"iPhone\"",
+      "h2": "Los Emojis Más \"iPhone\"",
+      "intro": "Los que se reconocen al momento.",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "Melocotón"
+        },
+        {
+          "char": "💩",
+          "label": "Caca"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        },
+        {
+          "char": "💯",
+          "label": "Cien Puntos"
+        },
+        {
+          "char": "🗿",
+          "label": "Moái"
+        },
+        {
+          "char": "🦋",
+          "label": "Mariposa"
+        },
+        {
+          "char": "🌙",
+          "label": "Luna Creciente"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrella"
+        },
+        {
+          "char": "💀",
+          "label": "Calavera"
+        },
+        {
+          "char": "👀",
+          "label": "Ojos"
+        },
+        {
+          "char": "🫶🏼",
+          "label": "Corazón con los Dedos (Tono)"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Preguntas Frecuentes sobre los Emojis de iPhone",
+  "faq": [
+    {
+      "q": "¿Los emojis de iPhone son distintos de los de Android?",
+      "a": "No, son los mismos caracteres — el mismo estándar Unicode. Solo cambia el dibujo: Apple tiene su estilo y Google el suyo. Un emoji copiado aquí llega igual a los dos."
+    },
+    {
+      "q": "¿Por qué mis emojis se ven diferentes en Android?",
+      "a": "Porque Android los dibuja con el conjunto de Google en lugar del de Apple. El mensaje es idéntico, la ilustración no. No es un fallo ni un carácter equivocado."
+    },
+    {
+      "q": "¿Puedo copiar emojis de iPhone desde un ordenador o un Android?",
+      "a": "Sí. Aquí se copia el carácter, no una imagen — funciona en cualquier sitio. En el dispositivo de quien lo recibe aparecerá con el estilo de ese dispositivo."
+    },
+    {
+      "q": "¿Por qué un emoji sale como un cuadrado o un signo de interrogación?",
+      "a": "El dispositivo todavía no conoce ese carácter, normalmente por tener un sistema antiguo. Pasa con los emojis añadidos hace poco: el carácter es correcto y se verá en un dispositivo actualizado."
+    },
+    {
+      "q": "¿Existe una fuente de Apple para tener los emojis de iPhone en Android?",
+      "a": "No, y conviene desconfiar de las apps que lo prometen. Los emojis forman parte del sistema operativo; para verlos con el estilo de Apple hace falta un dispositivo Apple."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "iPhone y Android: el Mismo Emoji, Distinto Dibujo",
+      "body": "Cuando envías 😂 desde un iPhone no mandas una imagen, sino un código Unicode: U+1F602. El teléfono que lo recibe lo dibuja con su propio conjunto — Apple, Google, Samsung o WhatsApp. Por eso cambia el aspecto y no el significado. Lo único que se rompe de verdad es un emoji demasiado nuevo para el sistema de quien lo recibe: entonces sale un cuadrado, y basta con actualizar."
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combinaciones de Emojis",
+      "desc": "Secuencias de emojis listas para pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Todas las expresiones juntas."
+    },
+    {
+      "href": "/es/library/simbolos-de-teclado/",
+      "title": "Símbolos de Teclado",
+      "desc": "Caracteres especiales del teclado."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/es/library/emojis-iphone/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "es",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-iphone/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/iphone-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-iphone/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/emodzi-ayfon/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/iphone-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/iphone-emojis/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/emojis-iphone/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/emoji-iphone/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-iphone/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/emoji-iphone/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/iphone-emoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/iphone-emojis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    }
+  ]
+}

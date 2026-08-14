@@ -1,0 +1,301 @@
+{
+  "slug": "symbole-kart",
+  "title": "Symbole kart ♠ ♥ ♦ ♣ — znaki kolorów kart do kopiowania | UltraTextGen",
+  "meta_description": "Symbole kart do skopiowania: pik ♠, kier ♥, karo ♦, trefl ♣, wersje konturowe, kostki do gry ⚀–⚅ i karty ze znaków Unicode. Kliknij, aby skopiować.",
+  "breadcrumb": "Symbole kart",
+  "hero_h1": "Symbole kolorów kart ♠ ♥ ♦ ♣",
+  "hero_tagline": "♠ ♥ ♦ ♣ ♤ ♡ ♢ ♧ ⚀ 🂡 — kolory kart, kostki i całe talie w znakach. Kliknij, aby skopiować.",
+  "intro": "Kolory kart istnieją w Unicode w dwóch odmianach: wypełnionej (♠ ♥ ♦ ♣) i konturowej (♤ ♡ ♢ ♧). W tekście czarno-białym ta druga bywa czytelniejsza. Poniżej znajdziesz też kostki do gry i pełną talię zapisaną znakami. Kliknij symbol, a trafi do schowka.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Standardowe kolory kart",
+      "h2": "Standardowe kolory kart",
+      "intro": "Cztery podstawowe.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Pik"
+        },
+        {
+          "char": "♥",
+          "label": "Kier"
+        },
+        {
+          "char": "♦",
+          "label": "Karo"
+        },
+        {
+          "char": "♣",
+          "label": "Trefl"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Kolory kart w konturze",
+      "h2": "Kolory kart w konturze",
+      "intro": "Ta sama czwórka, bez wypełnienia.",
+      "symbols": [
+        {
+          "char": "♤",
+          "label": "Pik konturowy"
+        },
+        {
+          "char": "♡",
+          "label": "Kier konturowy"
+        },
+        {
+          "char": "♢",
+          "label": "Karo konturowe"
+        },
+        {
+          "char": "♧",
+          "label": "Trefl konturowy"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Kolory kart — wypełnione i konturowe",
+      "h2": "Kolory kart — wypełnione i konturowe",
+      "intro": "Wszystkie osiem obok siebie.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Pik"
+        },
+        {
+          "char": "♥",
+          "label": "Kier"
+        },
+        {
+          "char": "♦",
+          "label": "Karo"
+        },
+        {
+          "char": "♣",
+          "label": "Trefl"
+        },
+        {
+          "char": "♤",
+          "label": "Pik konturowy"
+        },
+        {
+          "char": "♡",
+          "label": "Kier konturowy"
+        },
+        {
+          "char": "♢",
+          "label": "Karo konturowe"
+        },
+        {
+          "char": "♧",
+          "label": "Trefl konturowy"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Ścianki kostki do gry",
+      "h2": "Ścianki kostki do gry",
+      "intro": "Od jednego do sześciu oczek.",
+      "symbols": [
+        {
+          "char": "⚀",
+          "label": "Kostka — jedno oczko"
+        },
+        {
+          "char": "⚁",
+          "label": "Kostka — dwa oczka"
+        },
+        {
+          "char": "⚂",
+          "label": "Kostka — trzy oczka"
+        },
+        {
+          "char": "⚃",
+          "label": "Kostka — cztery oczka"
+        },
+        {
+          "char": "⚄",
+          "label": "Kostka — pięć oczek"
+        },
+        {
+          "char": "⚅",
+          "label": "Kostka — sześć oczek"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Emoji z kartami",
+      "h2": "Emoji z kartami",
+      "intro": "Wersje kolorowe.",
+      "symbols": [
+        {
+          "char": "🃏",
+          "label": "Joker"
+        },
+        {
+          "char": "🎴",
+          "label": "Karty hanafuda"
+        },
+        {
+          "char": "🀄",
+          "label": "Mahjong — czerwony smok"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Karty i symbole specjalne",
+      "h2": "Karty i symbole specjalne",
+      "intro": "Cała talia zapisana znakami.",
+      "symbols": [
+        {
+          "char": "🂠",
+          "label": "Rewers karty"
+        },
+        {
+          "char": "🂡",
+          "label": "As pik"
+        },
+        {
+          "char": "🂢",
+          "label": "Dwójka pik"
+        },
+        {
+          "char": "🂮",
+          "label": "Król pik"
+        },
+        {
+          "char": "🂱",
+          "label": "As kier"
+        },
+        {
+          "char": "🂾",
+          "label": "Król kier"
+        },
+        {
+          "char": "🃁",
+          "label": "As karo"
+        },
+        {
+          "char": "🃎",
+          "label": "Król karo"
+        },
+        {
+          "char": "🃑",
+          "label": "As trefl"
+        },
+        {
+          "char": "🃞",
+          "label": "Król trefl"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Symbole gier",
+      "h2": "Symbole gier",
+      "intro": "Wokół stołu do gry.",
+      "symbols": [
+        {
+          "char": "🎰",
+          "label": "Automat do gry"
+        },
+        {
+          "char": "🎲",
+          "label": "Kostka do gry"
+        },
+        {
+          "char": "🎯",
+          "label": "Tarcza z dziesiątką"
+        },
+        {
+          "char": "🎱",
+          "label": "Bila numer 8"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Najczęstsze pytania o symbole kart",
+  "faq": [
+    {
+      "q": "Dlaczego ♥ i ♦ wyświetlają się na czerwono?",
+      "a": "Bo część systemów traktuje je jako emoji i nadaje im własny kolor. To zachowanie zależy od czcionki i urządzenia — w jednym miejscu zobaczysz czarny znak, w innym czerwony. Jeśli kolor ma być przewidywalny, użyj wersji konturowych ♡ ♢, które prawie zawsze zostają czarne."
+    },
+    {
+      "q": "Czy da się zapisać całą talię znakami?",
+      "a": "Tak. Unicode zawiera 52 karty plus jokery, w blokach 🂡–🂮, 🂱–🂾, 🃁–🃎 i 🃑–🃞. Wsparcie jest jednak nierówne: na wielu urządzeniach zobaczysz puste kwadraty, więc do praktycznego użycia bezpieczniejsze są same kolory."
+    },
+    {
+      "q": "Jak wpisać ♠ z klawiatury?",
+      "a": "W Windows otwórz panel emoji skrótem Win + kropka albo wpisz 2660 i naciśnij Alt + X w Wordzie. Na Macu panel znaków otwiera Ctrl + Cmd + spacja. Skopiowanie stąd jest szybsze."
+    },
+    {
+      "q": "Czy te znaki zadziałają w nazwie w grze?",
+      "a": "Zwykle tak — ♠ ♥ ♦ ♣ to stare, dobrze obsługiwane znaki. Karty z pełnej talii (🂡) są nowsze i częściej blokowane albo wyświetlane jako kwadrat. Sprawdź przed zatwierdzeniem nicku."
+    },
+    {
+      "q": "Dlaczego trzecia grupa powtarza te same symbole?",
+      "a": "Bo w praktyce najczęściej kopiuje się je wszystkie naraz — cztery wypełnione i cztery konturowe w jednym ciągu, na przykład do nagłówka tabeli albo opisu talii. Grupa istnieje dla wygody, nie dodaje nowych znaków."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Dlaczego istnieją dwie wersje tych samych kolorów",
+      "body": "Wypełniony i konturowy zestaw nie są wariantami stylistycznymi — pochodzą z druku. W czarno-białym składzie brydżowym trzeba było odróżnić kolory czerwone od czarnych bez użycia koloru, więc kier i karo drukowano jako kontur, a pik i trefl jako plamę. Unicode odziedziczył oba zestawy w komplecie, przez co dziś mamy osiem znaków zamiast czterech. W praktyce oznacza to prostą regułę: jeśli tekst jest czarno-biały, ♠ ♣ ♡ ♢ czyta się poprawnie, a ♠ ♣ ♥ ♦ zlewa w jedną grupę."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pl/library/symbole-szachowe/",
+      "title": "Symbole Szachowe",
+      "desc": "Zbiór referencyjny symboli Unicode figur szachowych, pól szachownicy i notacji. Kliknij dowolny symbol, aby go od razu skopiować."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole serca (kopiuj i wklej)",
+      "desc": "Zbiór emotek serca, znaków serca Unicode i symboli miłości uporządkowanych według koloru i stylu. Od czerwonych i różowych kolorowych serc, przez złamane serca, po tekstowe znaki serca — kliknij dowolny symbol, aby go od razu skopiować i wkleić do bio czy nicku na Instagramie."
+    },
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole gwiazdek — kolekcja (kopiuj i wklej)",
+      "desc": "Zbiór symboli gwiazdek, iskierek oraz znaków asterysku Unicode w różnej liczbie ramion i stylach. Od podstawowych gwiazdek, przez wieloramienne i emoji, po gwiazdki oceny i ozdoby do bio — kliknij dowolny symbol, aby natychmiast go skopiować i wkleić w profil na Instagramie, nazwę czy podpis."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/pl/library/symbole-kart/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "pl",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-kart/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/spielkarten-symbole/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/trump-kigou/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    }
+  ]
+}

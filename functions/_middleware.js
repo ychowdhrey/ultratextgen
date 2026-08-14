@@ -1,16 +1,28 @@
-// ⚠️  THIS MIDDLEWARE DOES NOT CURRENTLY RUN.
+// ✅ THIS MIDDLEWARE IS LIVE, and its invocation scope is governed by
+// /_routes.json — only pathname `/` invokes it. Do not add routes to
+// that include list (or new files under functions/) without checking
+// the Functions invocation budget: every included route bills one
+// Workers-quota invocation per request, and before /_routes.json
+// existed (added 2026-08-10) Cloudflare's auto-generated routing sent
+// EVERY request — CSS, JS, images, all locale pages — through this
+// function just to run context.next(), burning ~100k invocations/day
+// (the entire Workers free daily quota) at ~36k pageviews/day.
 //
-// Pages Functions are not executing on this project. Verified on the
-// PR #674 preview deploy (2026-07-26): with every _redirects rule that
-// matched `/` removed, `/?lang=de` still returned 200 instead of the
-// 301 the LANG_REDIRECTS branch below issues before touching anything
-// else. `/` is served by the `/  /index.html  200` rule in _redirects,
-// and the `_root.html` copy this file fetches is unused.
-//
-// The code below is correct and will take effect if Functions are ever
-// enabled (check the Pages project's build config in the Cloudflare
-// dashboard) — but do not rely on it for anything today, and do not
-// delete a _redirects rule on the assumption that it covers you.
+// History, so nobody "re-discovers" either half of it:
+// - A PR #674 preview test (2026-07-26) concluded Pages Functions were
+//   not executing on this project, and this banner used to say so.
+//   That conclusion no longer holds and must not be trusted: verified
+//   against production on 2026-08-10, `/?lang=de` 301s to /de/,
+//   `/?lang=DE` does too (this file's .toLowerCase()), `/?lang=en` and
+//   unknown codes fall through, and `?q=` is carried while `lang` is
+//   dropped — this file's exact fingerprint, which no _redirects rule
+//   can produce (Pages matches _redirects on the path only). What
+//   changed between those two dates was never pinned down; what is
+//   certain is that Functions execute on production today.
+// - The `/  /index.html  200` rule in _redirects is the fallback that
+//   keeps `/` English if Functions are ever inert again (as they were
+//   during that 07-26 test). Keep both layers; do not delete either on
+//   the assumption that the other covers you.
 //
 // Legacy ?lang= query-param URLs → path-based locale homepages.
 //

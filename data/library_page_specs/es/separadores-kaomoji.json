@@ -1,0 +1,104 @@
+{
+  "lang": "es",
+  "slug": "separadores-kaomoji",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/separadores-kaomoji/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/divider-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/separadores-kaomoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/divider-kaomoji/" }
+  ],
+  "title": "Separadores Kaomoji: Copiar y Pegar Divisores de Texto Bonitos",
+  "meta_description": "Explora y copia separadores kaomoji: divisores, espaciadores y bordes de texto lindos al estilo japonés para biografías y publicaciones. Un clic y se copian.",
+  "breadcrumb": "Separadores Kaomoji",
+  "hero_h1": "Separadores Kaomoji",
+  "hero_tagline": "Copia y pega separadores kaomoji: divisores, espaciadores y bordes de texto lindos para dividir biografías, descripciones y publicaciones. Haz clic en cualquiera para copiarlo al instante.",
+  "intro": "Los separadores kaomoji (también escritos kamoji) son líneas decorativas de texto al estilo japonés: destellos, estrellas, corazones y puntos encadenados para dividir las secciones de una biografía, una descripción o una publicación. Un separador kaomoji como ｡･:*:･ﾟ★ o ˚₊‧꒰ა ✿ ໒꒱‧₊˚ es texto Unicode normal, así que se pega limpio en cualquier lado. Explora por estilo abajo y haz clic en el que quieras para copiarlo al instante. Busques \"separadores kaomoji\", \"espaciadores kaomoji\" o \"bordes kaomoji\", aquí todos son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligráfica y más de 100 estilos de fuentes Unicode: gratis y al instante.",
+  "sections": [
+    {
+      "id": "sparkle",
+      "label": "Separadores con Brillo",
+      "h2": "Separadores de Destellos y Estrellas",
+      "intro": "Líneas brillantes para partir tu texto.",
+      "symbols": [
+        { "char": "｡･:*:･ﾟ★,｡･:*:･ﾟ☆", "label": "Línea de destellos" },
+        { "char": "✧･ﾟ: *✧･ﾟ:*", "label": "Hilera de brillos" },
+        { "char": "⋆｡°✩ ⋆｡°✩", "label": "Puntos estrellados" },
+        { "char": "˚ ✦ . ˚ ✦ .", "label": "Estrellas tenues" },
+        { "char": "· ˚ ✦ ˚ · ✦ ˚ ·", "label": "Cielo nocturno" },
+        { "char": "｡ﾟ+.✧ ｡ﾟ+.✧", "label": "Glitter" }
+      ]
+    },
+    {
+      "id": "cute",
+      "label": "Separadores Lindos",
+      "h2": "Separadores de Corazones y Flores",
+      "intro": "Divisores suaves y kawaii.",
+      "symbols": [
+        { "char": "˚₊‧꒰ა ♡ ໒꒱‧₊˚", "label": "Corazón enmarcado" },
+        { "char": "˚₊‧꒰ა ✿ ໒꒱‧₊˚", "label": "Flor enmarcada" },
+        { "char": "─➤ ♡ ─➤", "label": "Corazón con flecha" },
+        { "char": "♡⃛ ⃛♡ ⃛♡", "label": "Corazones flotando" },
+        { "char": "❁ ────── ❁", "label": "Línea de flores" },
+        { "char": "✿°•°✿ ─── ✿°•°✿", "label": "Borde florido" }
+      ]
+    },
+    {
+      "id": "lines",
+      "label": "Separadores de Líneas",
+      "h2": "Separadores de Líneas y Puntos",
+      "intro": "Líneas limpias para dividir secciones.",
+      "symbols": [
+        { "char": "┈┈┈┈୨♡୧┈┈┈┈", "label": "Corte con corazón" },
+        { "char": "─── ⋆⋅☆⋅⋆ ───", "label": "Estrella al centro" },
+        { "char": "⊹ ࣪ ˖ ⊹ ࣪ ˖", "label": "Marcas diminutas" },
+        { "char": "• ° • ═════ • ° •", "label": "Línea con puntos" },
+        { "char": "═══════⊹⊱✫⊰⊹═══════", "label": "Línea ornamentada" },
+        { "char": "⋅˚₊‧ ────── ‧₊˚ ⋅", "label": "Línea ligera" }
+      ]
+    },
+    {
+      "id": "borders",
+      "label": "Marcos y Bordes",
+      "h2": "Bordes y Marcos de Esquina",
+      "intro": "Marquitos y esquinas para biografías.",
+      "symbols": [
+        { "char": "╭─────────╮", "label": "Marco superior" },
+        { "char": "╰─────────╯", "label": "Marco inferior" },
+        { "char": "┌───── ⋆⋅☆⋅⋆ ─────┐", "label": "Estrella arriba" },
+        { "char": "⟡ ⋆ ⟡ ⋆ ⟡", "label": "Hilera de diamantes" },
+        { "char": "◜◝◜◝◜◝", "label": "Onda superior" },
+        { "char": "✦ ⋅ ✦ ⋅ ✦ ⋅ ✦", "label": "Hilera de destellos" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El hub completo de kaomoji: caritas de texto japonesas de cada estado de ánimo en un solo lugar."
+    },
+    {
+      "href": "/library/sparkle-kaomoji/",
+      "title": "Kaomoji de Brillos y Estrellas",
+      "desc": "Caritas de texto con glitter, destellos y estrellas."
+    },
+    {
+      "href": "/es/library/separadores-de-texto/",
+      "title": "Símbolos de Líneas Separadoras",
+      "desc": "Separadores y divisores de una sola línea para copiar."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita de texto: combina ojos, bocas y brazos, y cópiala."
+    }
+  ]
+}

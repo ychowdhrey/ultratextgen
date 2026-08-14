@@ -1,0 +1,158 @@
+{
+  "lang": "es",
+  "slug": "emoji-enfermo",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-enfermo/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/sick-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-enfermo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/sick-emoji/" }
+  ],
+  "title": "Emoji Enfermo y Kaomoji: Copiar y Pegar 🤢🤮 Combos de Náuseas",
+  "meta_description": "El emoji enfermo 🤢 🤮 🥴, combos de fiebre y náuseas, y kaomoji mareados como (×_×) para tus mensajes de día de enfermedad. Copia con un clic.",
+  "breadcrumb": "Emoji enfermo y kaomoji",
+  "hero_h1": "Emoji Enfermo y Kaomoji",
+  "hero_tagline": "Caras verdes de náuseas, fiebres y sudores fríos, reacciones a media arcada y kaomoji mareados: todos los matices de sentirse mal del cuerpo. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Cuando te sientes mal, un emoji enfermo dice más rápido lo que un párrafo entero explicaría con esfuerzo. Esta página reúne todo el registro del malestar: las caras 🤤 babeando y 🥴 mareada de la cabeza que da vueltas, la 🤢 con náuseas y la 🤮 vomitando para cuando ya no hay vuelta atrás, el 🤒 con termómetro, la 😷 con mascarilla y el 🤧 del estornudo para una gripe o un resfriado, y los golpes de 🥵 calor y 🥶 frío con sus 💦 gotas de sudor. Y cuando ningún emoji da con el matiz exacto, los kaomoji mareados como (×_×) y (@_@) se pegan en cualquier lugar donde funcione el texto plano. Toma una sola carita o copia un combo ya armado para tus mensajes de día de enfermedad, tus chats y tus comentarios.",
+  "sections": [
+    {
+      "id": "drooling-queasy",
+      "label": "Baboso y mareado",
+      "h2": "Emojis de cara babeando y mareada",
+      "intro": "Las caras de cabeza dando vueltas y de estar a punto de desplomarse, para cuando todo se siente revuelto.",
+      "symbols": [
+        { "char": "🤤", "label": "Cara babeando" },
+        { "char": "🥴", "label": "Cara mareada" },
+        { "char": "😵", "label": "Cara aturdida" },
+        { "char": "😵‍💫", "label": "Cara con ojos en espiral" },
+        { "char": "🫠", "label": "Cara derritiéndose" },
+        { "char": "😪", "label": "Cara con sueño" }
+      ]
+    },
+    {
+      "id": "nauseated-vomiting",
+      "label": "Náuseas y vómito",
+      "h2": "Emojis de náuseas y vómito",
+      "intro": "Verde de la cara y rumbo al baño: toda la escalada de las náuseas.",
+      "symbols": [
+        { "char": "🤢", "label": "Cara con náuseas" },
+        { "char": "🤮", "label": "Cara vomitando" },
+        { "char": "🚽", "label": "Inodoro" },
+        { "char": "🧻", "label": "Rollo de papel" },
+        { "char": "🪣", "label": "Balde" },
+        { "char": "💚", "label": "Corazón verde" }
+      ]
+    },
+    {
+      "id": "feverish-contagious",
+      "label": "Fiebre y contagio",
+      "h2": "Emojis de enfermedad, fiebre y contagio",
+      "intro": "Termómetros, mascarillas, estornudos y los golpes de calor y frío de una fiebre.",
+      "symbols": [
+        { "char": "🤒", "label": "Cara con termómetro" },
+        { "char": "🌡️", "label": "Termómetro" },
+        { "char": "😷", "label": "Cara con mascarilla" },
+        { "char": "🤧", "label": "Cara estornudando" },
+        { "char": "🥵", "label": "Cara acalorada" },
+        { "char": "🥶", "label": "Cara congelada" },
+        { "char": "😓", "label": "Cara decaída con sudor" },
+        { "char": "💦", "label": "Gotas de sudor" },
+        { "char": "🤕", "label": "Cara con venda en la cabeza" },
+        { "char": "💊", "label": "Pastilla" }
+      ]
+    },
+    {
+      "id": "sick-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de enfermedad y mareo",
+      "intro": "Caritas de estilo japonés que se tambalean, hacen muecas y se ponen verdes usando solo texto.",
+      "symbols": [
+        { "char": "(×_×)", "label": "Kaomoji mareado con ojos de X" },
+        { "char": "(@_@)", "label": "Kaomoji con la cabeza dando vueltas" },
+        { "char": "(×﹏×)", "label": "Kaomoji desplomado de mareo" },
+        { "char": "(´～｀)", "label": "Kaomoji con mueca de asco" },
+        { "char": "(＠_＠;)", "label": "Kaomoji mareado con sudor frío" },
+        { "char": "(>﹏<)", "label": "Kaomoji con mueca de náuseas" },
+        { "char": "(⊙﹏⊙)", "label": "Kaomoji mareado con ojos muy abiertos" },
+        { "char": "( ﾟдﾟ)", "label": "Kaomoji de susto con náuseas" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Me siento mal",
+      "flags": ["🤒", "🤧", "😷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "A punto de vomitar",
+      "flags": ["🤢", "🤮", "🚽"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mareado y con vueltas",
+      "flags": ["🥴", "😵", "😵‍💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sueños de fiebre",
+      "flags": ["🤒", "🥵", "🥶", "🌡️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gripe en cama",
+      "flags": ["🤒", "🛏️", "💊", "🍵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Temporada de gripe y resfriado",
+      "flags": ["🤧", "🤒", "🧻", "😷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hecho polvo por las náuseas",
+      "flags": ["🤢", "🥴", "💦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Desastre babeante",
+      "flags": ["🤤", "🥴", "💦"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "sickSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji enfermo",
+    "intro": "Copia un combo completo de día de enfermedad con un clic: desde la primera oleada de náuseas hasta la gripe que te deja en cama."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-cansado/",
+      "title": "Emoji cansado y kaomoji",
+      "desc": "Caras agotadas, sin pilas y desgastadas para los días de poca energía."
+    },
+    {
+      "href": "/es/library/emoji-llorando/",
+      "title": "Emoji llorando y kaomoji",
+      "desc": "Caras con lágrimas y sollozos para los ratos más miserables."
+    },
+    {
+      "href": "/es/library/simbolos-medicos/",
+      "title": "Símbolos médicos",
+      "desc": "Cruces de farmacia, caduceos y señales de salud para acompañar las caritas de enfermo."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    }
+  ]
+}

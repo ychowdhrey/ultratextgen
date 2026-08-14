@@ -1,0 +1,91 @@
+{
+  "lang": "es",
+  "slug": "emoji-francia",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-francia/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/france-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-francia/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/france-emoji-combos/" }
+  ],
+  "title": "Emoji Francia 🇫🇷⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Francia 🇫🇷⚽: los colores de Les Bleus y sets de fútbol para biografías. Haz clic en cualquier emoji o combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Francia",
+  "hero_h1": "Combos de Emoji Francia",
+  "hero_tagline": "Los colores de Les Bleus y sets de emojis de fútbol para aficionados de Francia: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Francia 🇫🇷 suele ir junto a la pelota ⚽ y a los colores de Les Bleus. Allez les Bleus durante todo el Mundial. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "france-emojis",
+      "label": "Francia",
+      "h2": "Emojis de Francia",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇫🇷", "label": "Bandera de Francia" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🐓", "label": "Gallo" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo Francés",
+      "intro": "El azul, blanco y rojo de la bandera tricolor.",
+      "symbols": [
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🐓", "label": "Gallo" },
+        { "char": "🗼", "label": "Torre Eiffel" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Les Bleus", "flags": ["🇫🇷", "⚽", "🏆"], "defaultFormat": "inline" },
+    { "name": "Allez les Bleus", "flags": ["🇫🇷", "⚽", "🔥"], "defaultFormat": "inline" },
+    { "name": "Francia Campeón", "flags": ["🇫🇷", "🏆", "⭐"], "defaultFormat": "inline" },
+    { "name": "Tricolor", "flags": ["🔵", "⚪", "🔴"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "franceCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Francia",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

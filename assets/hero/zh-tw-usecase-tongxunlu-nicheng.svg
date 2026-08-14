@@ -23,11 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhzhtwusec)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhzhtwusec)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <path d="M180 260 C 100 200 100 130 150 110 C 175 100 180 120 180 130
-             C 180 120 185 100 210 110 C 260 130 260 200 180 260 Z" fill="url(#ghzhtwusec)"/>
-    <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghzhtwusec)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">♡ <tspan font-family="Noto Sans CJK JP">寶貝</tspan> ♡</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">✧˖° <tspan font-family="Noto Sans CJK JP">傻瓜</tspan> °˖✧</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Noto Sans CJK JP">心肝寶貝</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <path d="M180 260 C 100 200 100 130 150 110 C 175 100 180 120 180 130
-             C 180 120 185 100 210 110 C 260 130 260 200 180 260 Z" fill="url(#ghzhtwusec)"/>
-    <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghzhtwusec)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">♡ <tspan font-family="Noto Sans CJK JP">寶貝</tspan> ♡</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">✧˖° <tspan font-family="Noto Sans CJK JP">傻瓜</tspan> °˖✧</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Noto Sans CJK JP">心肝寶貝</tspan></text></g>
 </svg>

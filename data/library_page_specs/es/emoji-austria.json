@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-austria",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-austria/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/austria-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-austria/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/austria-emoji-combos/" }
+  ],
+  "title": "Emoji Austria: Combos 🇦🇹⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Austria 🇦🇹⚽: los colores de Das Team y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Austria",
+  "hero_h1": "Combos de Emoji Austria",
+  "hero_tagline": "Los colores de Das Team y sets de emojis de fútbol para hinchas de Austria — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Austria 🇦🇹 casi nunca va solo: los hinchas lo combinan con la pelota ⚽ y con el rojo y blanco de Das Team, la selección austriaca. \"Hopp Österreich\" es el grito que une esos dos colores en la tribuna. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Austria",
+      "h2": "Emojis de Austria",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇦🇹", "label": "Bandera de Austria" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🦅", "label": "Águila" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Austriaco",
+      "intro": "El rojo y blanco de los colores nacionales.",
+      "symbols": [
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "🦅", "label": "Águila" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "🏔️", "label": "Montaña nevada" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Das Team",
+      "flags": ["🇦🇹", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Austria",
+      "flags": ["🇦🇹", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo y Blanco",
+      "flags": ["🔴", "⚪", "🔴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Austriaco",
+      "flags": ["🇦🇹", "⚽", "💪"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "austriaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Austria",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "slug": "checkmark-kigou",
+  "title": "チェックマーク 記号 ✓ ✔ ☑ — チェック・バツ記号のコピペ一覧 | UltraTextGen",
+  "meta_description": "チェックマークの記号 ✓ ✔ ☑ ✅ をコピペで。バツ記号、状態を表す丸、チェックボックス、丸数字までまとめて掲載。タップでコピーできます。",
+  "breadcrumb": "チェックマーク 記号",
+  "hero_h1": "チェックマーク 記号",
+  "hero_tagline": "✓ ✔ ☑ ✅ とその周辺。バツ記号、状態の丸、チェックボックス、丸数字まで。タップでコピーできます。",
+  "intro": "チェックマークだけで足りることはあまりなく、たいていは対になるバツ、状態を示す色つきの丸、まだ空のチェックボックスと一緒に使われます。以下の8グループはその使われ方に沿っています。タップするとコピーされます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "基本のチェックマーク記号",
+      "h2": "基本のチェックマーク記号",
+      "intro": "よく使う4〜5個。",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "チェックマーク"
+        },
+        {
+          "char": "✔",
+          "label": "太いチェックマーク"
+        },
+        {
+          "char": "☑",
+          "label": "チェック入りの四角"
+        },
+        {
+          "char": "✅",
+          "label": "緑のチェック（絵文字）"
+        },
+        {
+          "char": "☐",
+          "label": "空の四角"
+        },
+        {
+          "char": "▣",
+          "label": "中が黒い四角"
+        },
+        {
+          "char": "✔️",
+          "label": "太いチェック（絵文字）"
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "バツ・却下の記号",
+      "h2": "バツ・却下の記号",
+      "intro": "チェックの反対側。",
+      "symbols": [
+        {
+          "char": "✗",
+          "label": "バツ印"
+        },
+        {
+          "char": "✘",
+          "label": "太いバツ印"
+        },
+        {
+          "char": "❌",
+          "label": "赤いバツ（絵文字）"
+        },
+        {
+          "char": "☒",
+          "label": "バツ入りの四角"
+        },
+        {
+          "char": "✕",
+          "label": "かけ算のバツ"
+        },
+        {
+          "char": "❎",
+          "label": "バツボタン"
+        },
+        {
+          "char": "✖",
+          "label": "太いかけ算のバツ"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "label": "状態を表す丸",
+      "h2": "状態を表す丸",
+      "intro": "色で状態を見せたいとき。",
+      "symbols": [
+        {
+          "char": "🟢",
+          "label": "緑の丸（正常）"
+        },
+        {
+          "char": "🔴",
+          "label": "赤の丸（エラー）"
+        },
+        {
+          "char": "🟡",
+          "label": "黄の丸（注意）"
+        },
+        {
+          "char": "⚪",
+          "label": "白の丸（停止中）"
+        },
+        {
+          "char": "⚫",
+          "label": "黒の丸（オフライン）"
+        },
+        {
+          "char": "⬤",
+          "label": "大きい丸"
+        },
+        {
+          "char": "○",
+          "label": "白丸"
+        },
+        {
+          "char": "●",
+          "label": "黒丸"
+        },
+        {
+          "char": "🔵",
+          "label": "青の丸（情報）"
+        },
+        {
+          "char": "🟠",
+          "label": "オレンジの丸（警戒）"
+        },
+        {
+          "char": "🟣",
+          "label": "紫の丸"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "承認・確認の記号",
+      "h2": "承認・確認の記号",
+      "intro": "誰かが見た、という印。",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "いいね"
+        },
+        {
+          "char": "👎",
+          "label": "よくないね"
+        },
+        {
+          "char": "👌",
+          "label": "OKサイン"
+        },
+        {
+          "char": "💯",
+          "label": "100点"
+        },
+        {
+          "char": "⭐",
+          "label": "星"
+        },
+        {
+          "char": "🔰",
+          "label": "初心者マーク"
+        },
+        {
+          "char": "🛡️",
+          "label": "盾"
+        },
+        {
+          "char": "🏅",
+          "label": "メダル"
+        }
+      ]
+    },
+    {
+      "id": "warning",
+      "label": "警告・お知らせの記号",
+      "h2": "警告・お知らせの記号",
+      "intro": "目を止めてほしいとき。",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "警告標識"
+        },
+        {
+          "char": "⚠️",
+          "label": "警告（絵文字）"
+        },
+        {
+          "char": "ℹ️",
+          "label": "案内"
+        },
+        {
+          "char": "🔔",
+          "label": "ベル"
+        },
+        {
+          "char": "📢",
+          "label": "拡声器"
+        },
+        {
+          "char": "📣",
+          "label": "メガホン"
+        },
+        {
+          "char": "🚨",
+          "label": "パトランプ"
+        },
+        {
+          "char": "⛔",
+          "label": "進入禁止"
+        },
+        {
+          "char": "🚫",
+          "label": "禁止"
+        },
+        {
+          "char": "🔺",
+          "label": "赤い上向き三角"
+        },
+        {
+          "char": "🔻",
+          "label": "赤い下向き三角"
+        },
+        {
+          "char": "‼",
+          "label": "二重感嘆符"
+        },
+        {
+          "char": "❗",
+          "label": "感嘆符"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "進行状況の記号",
+      "h2": "進行状況の記号",
+      "intro": "手順と進み具合。",
+      "symbols": [
+        {
+          "char": "⏳",
+          "label": "砂時計（進行中）"
+        },
+        {
+          "char": "⌛",
+          "label": "砂時計（終了）"
+        },
+        {
+          "char": "🔄",
+          "label": "更新の矢印"
+        },
+        {
+          "char": "⏺",
+          "label": "録画ボタン"
+        },
+        {
+          "char": "⏸",
+          "label": "一時停止"
+        },
+        {
+          "char": "⏹",
+          "label": "停止"
+        },
+        {
+          "char": "①",
+          "label": "手順1"
+        },
+        {
+          "char": "②",
+          "label": "手順2"
+        },
+        {
+          "char": "③",
+          "label": "手順3"
+        },
+        {
+          "char": "④",
+          "label": "手順4"
+        },
+        {
+          "char": "⑤",
+          "label": "手順5"
+        },
+        {
+          "char": "⑥",
+          "label": "手順6"
+        },
+        {
+          "char": "⑦",
+          "label": "手順7"
+        },
+        {
+          "char": "⑧",
+          "label": "手順8"
+        },
+        {
+          "char": "⑨",
+          "label": "手順9"
+        },
+        {
+          "char": "⑩",
+          "label": "手順10"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "label": "四角・チェックボックスの記号",
+      "h2": "四角・チェックボックスの記号",
+      "intro": "箇条書きの頭に置く四角。",
+      "symbols": [
+        {
+          "char": "☐",
+          "label": "空の箱"
+        },
+        {
+          "char": "☑",
+          "label": "チェック済みの箱"
+        },
+        {
+          "char": "☒",
+          "label": "バツを入れた箱"
+        },
+        {
+          "char": "🗹",
+          "label": "太いチェックボックス"
+        },
+        {
+          "char": "🗸",
+          "label": "細いチェック"
+        },
+        {
+          "char": "🗴",
+          "label": "細いバツ"
+        },
+        {
+          "char": "▢",
+          "label": "角丸の四角"
+        },
+        {
+          "char": "⊠",
+          "label": "バツ入りの正方形"
+        },
+        {
+          "char": "☑️",
+          "label": "チェックボックス（絵文字）"
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "チェックリストの型",
+      "h2": "チェックリストの型",
+      "intro": "そのまま貼れる行。",
+      "symbols": [
+        {
+          "char": "☑ Done",
+          "label": "完了の行"
+        },
+        {
+          "char": "☐ To-do",
+          "label": "未着手の行"
+        },
+        {
+          "char": "✔ Completed · ✘ Pending",
+          "label": "完了・保留の組"
+        },
+        {
+          "char": "[✓]",
+          "label": "角かっこ付きチェック"
+        },
+        {
+          "char": "[ ]",
+          "label": "角かっこの空欄"
+        },
+        {
+          "char": "✅ Yes  ❌ No",
+          "label": "はい / いいえ"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "チェックマーク記号のよくある質問",
+  "faq": [
+    {
+      "q": "✓ と ✅ の違いは？",
+      "a": "✓ は文字です。まわりの文字と同じ色・同じ大きさになり、白黒の資料になじみます。✅ は絵文字なので、どこでも緑の四角として出て、行の高さより大きく見えます。書類や表なら ✓、チャットやSNSなら ✅ が自然です。"
+    },
+    {
+      "q": "チェックマークはキーボードでどう入力しますか？",
+      "a": "日本語入力で「ちぇっく」と打って変換すると ✓ ☑ が候補に出ます。Windows は Win + . で絵文字パネルが開きます。Word なら 2713 と入力して Alt + X でも出せます。ここからコピーするのがいちばん速い方法です。"
+    },
+    {
+      "q": "SNSの名前やプロフィールに入れられますか？",
+      "a": "表示名なら多くのサービスで入ります。@ から始まるユーザー名では Instagram と X が記号を認めません。ゲームは作品ごとに違うので、確定前に一度試してください。"
+    },
+    {
+      "q": "✔ と ✔️ はなぜ別にあるのですか？",
+      "a": "文字は同じで、後ろに絵文字化を指示する目に見えない一文字が付いているかどうかの違いです。✔ は文字の見た目（多くは黒）、✔️ は絵文字の見た目になります。表の中で色が浮くのが嫌なら ✔ を選んでください。"
+    },
+    {
+      "q": "ExcelやGoogleスプレッドシートでも使えますか？",
+      "a": "使えます。セルに貼ればそのまま残り、COUNTIF の条件などにも指定できます。ただし ✅ のような絵文字はフォントによって印刷結果が変わるため、印刷する表では ✓ のほうが安全です。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "チェックだけでは足りない理由",
+      "body": "チェックマークを探している人は、たいていリストを作っている最中です。ところがリストは「完了」だけでは回りません。まだ手をつけていないもの（☐）、途中のもの（⏳）、やらないと決めたもの（✗）が並んで初めて状態が読めます。だからこのページは ✓ の仲間だけを集めず、反対側と途中の段階を同じ高さに置いています。色つきの丸を入れているのも同じ理由で、書類ではチェックが便利でも、ダッシュボードや議事録では 🟢🟡🔴 の三つのほうがずっと速く読めます。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/arrow-symbols/",
+      "title": "矢印記号 一覧（コピペ）",
+      "desc": "矢印記号（矢じるし）をジャンル別にまとめました。まっすぐな矢印から、太字・二重線・曲線・三角・絵文字の矢印まで — クリックするだけでコピーできて、投稿・資料・プロフィールにそのまま使えます。"
+    },
+    {
+      "href": "/ja/symbol/chekkumaaku-kigou/",
+      "title": "チェックマーク記号",
+      "desc": "完了・正解・確認済みを意味するチェックマーク（✓ ✔）——✅絵文字、☑チェックボックス、そして混同されやすい✗・√もあわせて。クリックでコピーできます。"
+    },
+    {
+      "href": "/ja/library/special-characters/",
+      "title": "特殊文字 一覧（かわいい記号コピペ）",
+      "desc": "かわいい特殊文字をジャンル別にまとめました。キラキラ・ハート・星・矢印・飾り括弧・音符まで — クリックするだけでコピーできて、インスタのプロフィールやゲームの名前にそのまま使えます。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/checkmark-kigou/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/checkmark-kigou/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/flueben-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/haekchen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-verificacion/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symbole-coche/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-centang/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simbolo-spunta/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chekeu-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/vinkje/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/hakesymboler/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbol-ptaszka/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvol-galochki/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/bock-symboler/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/onay-isaretleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    }
+  ]
+}

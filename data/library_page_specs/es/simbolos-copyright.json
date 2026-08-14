@@ -1,0 +1,175 @@
+{
+  "lang": "es",
+  "slug": "simbolos-copyright",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-copyright/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-copyright/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+    }
+  ],
+  "title": "Símbolos Copyright, Marca Registrada y Legales: Copiar y Pegar © ® ™",
+  "meta_description": "Copia y pega símbolos copyright, de marca registrada y otros signos legales de Unicode: ©, ®, ™, ℠, ℗, §, ¶ y más. Haz clic en cualquiera para copiarlo.",
+  "breadcrumb": "Símbolos de Copyright, Marca Registrada y Legales",
+  "hero_h1": "Símbolos de Copyright, Marca Registrada y Legales",
+  "hero_tagline": "Todos los símbolos de copyright, marca registrada y documentos legales que existen en Unicode: ©, ®, ™, ℠, ℗, más las marcas de sección, párrafo y referencia. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos copyright y de propiedad intelectual indican titularidad, registro y derechos, mientras que las marcas de referencia le dan estructura a los documentos formales. Esta biblioteca reúne los signos de derechos de autor y de registro, las marcas comerciales y de servicio, las abreviaturas de número y de oficina, y los signos de sección, párrafo, daga y referencia que se usan en contratos y citas.",
+  "sections": [
+    {
+      "id": "copyright-registered",
+      "label": "Copyright",
+      "h2": "Símbolos de Copyright y Registrado",
+      "intro": "Marcas de titularidad: derechos de autor, marca registrada, copyright de grabación sonora y las variantes de letra en círculo en mayúscula y minúscula.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Signo de Copyright"
+        },
+        {
+          "char": "®",
+          "label": "Signo de Registrado"
+        },
+        {
+          "char": "℗",
+          "label": "Copyright de Grabación Sonora"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "C Mayúscula en Círculo"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "R Mayúscula en Círculo"
+        },
+        {
+          "char": "ⓒ",
+          "label": "C Minúscula en Círculo"
+        },
+        {
+          "char": "ⓡ",
+          "label": "R Minúscula en Círculo"
+        }
+      ]
+    },
+    {
+      "id": "trademark-service",
+      "label": "Marca Registrada",
+      "h2": "Marcas Comerciales y de Servicio",
+      "intro": "Los signos de marca comercial y de marca de servicio que identifican una marca o un servicio.",
+      "symbols": [
+        {
+          "char": "™",
+          "label": "Signo de Marca Comercial"
+        },
+        {
+          "char": "℠",
+          "label": "Marca de Servicio"
+        }
+      ]
+    },
+    {
+      "id": "office-numero",
+      "label": "Marcas de Oficina",
+      "h2": "Signo de Número y Marcas de Oficina",
+      "intro": "Abreviaturas de oficina en forma de letra y el signo de número que se usa en la correspondencia formal.",
+      "symbols": [
+        {
+          "char": "№",
+          "label": "Signo de Número"
+        },
+        {
+          "char": "℅",
+          "label": "A la Atención De"
+        },
+        {
+          "char": "℀",
+          "label": "A Cuenta De"
+        },
+        {
+          "char": "℁",
+          "label": "Dirigido al Asunto"
+        },
+        {
+          "char": "℆",
+          "label": "Cada Una"
+        }
+      ]
+    },
+    {
+      "id": "section-reference",
+      "label": "Referencia",
+      "h2": "Marcas de Sección, Párrafo y Referencia",
+      "intro": "Marcas de documento para secciones, párrafos, notas al pie y citas.",
+      "symbols": [
+        {
+          "char": "§",
+          "label": "Signo de Sección"
+        },
+        {
+          "char": "¶",
+          "label": "Calderón / Signo de Párrafo"
+        },
+        {
+          "char": "†",
+          "label": "Daga"
+        },
+        {
+          "char": "‡",
+          "label": "Doble Daga"
+        },
+        {
+          "char": "※",
+          "label": "Marca de Referencia"
+        },
+        {
+          "char": "‖",
+          "label": "Doble Línea Vertical"
+        },
+        {
+          "char": "⁂",
+          "label": "Asterismo"
+        },
+        {
+          "char": "⁑",
+          "label": "Dos Asteriscos Alineados en Vertical"
+        },
+        {
+          "char": "⸿",
+          "label": "Capítulo (Capitulum)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres Especiales",
+      "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+    },
+    {
+      "href": "/es/library/simbolos-de-moneda/",
+      "title": "Símbolos de Moneda",
+      "desc": "Dólar, euro, libra, yen y todos los demás signos de moneda de Unicode."
+    },
+    {
+      "href": "/es/library/simbolos-de-numero/",
+      "title": "Símbolos de Números",
+      "desc": "Números en círculo, superíndices, romanos y otras formas numéricas de Unicode."
+    }
+  ]
+}

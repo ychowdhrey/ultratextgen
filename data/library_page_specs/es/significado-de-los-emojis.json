@@ -1,0 +1,283 @@
+{
+  "lang": "es",
+  "slug": "significado-de-los-emojis",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/significado-de-los-emojis/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/significado-de-los-emojis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    }
+  ],
+  "title": "Significado de los Emojis: Qué Quiere Decir Cada Emoji Popular",
+  "meta_description": "Descubre el significado de los emojis más usados: caras, gestos con las manos, colores de corazón, simbolismo animal y emojis con doble sentido.",
+  "breadcrumb": "Significado de los Emojis",
+  "hero_h1": "Significado de los Emojis",
+  "hero_tagline": "Qué quiere decir de verdad cada emoji popular — desde las caras y los gestos con las manos hasta los colores de corazón, el simbolismo de los animales y los emojis con doble sentido. Haz clic en cualquier emoji para copiarlo.",
+  "intro": "El significado de los emojis casi nunca es tan obvio como parece: un mismo emoji puede querer decir cosas distintas según el contexto, la aplicación en la que se use y la generación que lo escriba. Esta guía explica qué transmiten realmente los emojis más populares, incluidos varios que con los años adoptaron un segundo sentido que quizá no te esperas — la calavera que significa \"me morí de risa\", la gorra que acusa a alguien de mentir o el durazno que hace rato dejó de ser solo una fruta. Explora por categoría, revisa qué dice cada color de corazón y qué carga cultural trae cada animal, y haz clic en cualquier emoji para copiarlo al instante y pegarlo en tu biografía, tus publicaciones o tus mensajes.",
+  "sections": [
+    {
+      "id": "smiley-face-meanings",
+      "label": "",
+      "h2": "Significado de los Emojis de Caras y Sonrisas",
+      "intro": "Lo que transmiten de verdad en una conversación las caras más comunes.",
+      "symbols": [
+        {
+          "char": "😊",
+          "label": "Sonriente — alegría genuina y buena onda"
+        },
+        {
+          "char": "😂",
+          "label": "Riendo hasta llorar"
+        },
+        {
+          "char": "🥺",
+          "label": "Súplica, ojitos de cachorro, pedir un favor"
+        },
+        {
+          "char": "😏",
+          "label": "Sonrisa ladeada — cómplice, coqueta, presumida"
+        },
+        {
+          "char": "🤔",
+          "label": "Pensando, dudando, cuestionando"
+        },
+        {
+          "char": "😐",
+          "label": "Cara neutra — inexpresiva, sin impresionarse"
+        },
+        {
+          "char": "🙄",
+          "label": "Ojos en blanco — harto, fastidiado"
+        },
+        {
+          "char": "😤",
+          "label": "Frustración, triunfo, determinación"
+        }
+      ]
+    },
+    {
+      "id": "hand-gesture-meanings",
+      "label": "",
+      "h2": "Significado de los Emojis de Manos y Gestos",
+      "intro": "Qué significan los emojis de gestos en contexto — algunos ya se usan muy lejos de su sentido original.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pulgar arriba — aprobación, me gusta, de acuerdo"
+        },
+        {
+          "char": "👎",
+          "label": "Pulgar abajo — desaprobación, no me gusta"
+        },
+        {
+          "char": "🤝",
+          "label": "Apretón de manos — acuerdo, alianza"
+        },
+        {
+          "char": "🙏",
+          "label": "Rezar o dar las gracias — gratitud, por favor"
+        },
+        {
+          "char": "✌️",
+          "label": "Señal de victoria o de paz, también el número dos"
+        },
+        {
+          "char": "🤞",
+          "label": "Dedos cruzados — cruzar los dedos por suerte"
+        },
+        {
+          "char": "🤙",
+          "label": "Llámame, relájate, saludo shaka"
+        },
+        {
+          "char": "👋",
+          "label": "Saludando — hola y adiós"
+        }
+      ]
+    },
+    {
+      "id": "heart-color-meanings",
+      "label": "",
+      "h2": "Significado de los Colores del Emoji Corazón",
+      "intro": "Cada color de corazón carga un matiz emocional distinto — esto es lo que transmite cada uno. En Snapchat, además, el color del corazón marca el nivel de amistad; ese sistema está explicado completo en la guía de colores de corazones de Snapchat.",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "Rojo — amor clásico, pasión, romance"
+        },
+        {
+          "char": "🧡",
+          "label": "Naranja — calidez, cariño, amistad"
+        },
+        {
+          "char": "💛",
+          "label": "Amarillo — alegría, amistad, optimismo"
+        },
+        {
+          "char": "💚",
+          "label": "Verde — naturaleza, salud, celos"
+        },
+        {
+          "char": "💙",
+          "label": "Azul — confianza, lealtad, cariño platónico"
+        },
+        {
+          "char": "💜",
+          "label": "Morado — compasión, misterio, espiritualidad"
+        },
+        {
+          "char": "🖤",
+          "label": "Negro — humor negro, estética oscura, duelo"
+        },
+        {
+          "char": "🤍",
+          "label": "Blanco — pureza, paz, estética limpia"
+        },
+        {
+          "char": "🤎",
+          "label": "Café — calidez, comodidad, tonos tierra"
+        },
+        {
+          "char": "💗",
+          "label": "Rosa — cariño, ternura, amor que va creciendo"
+        }
+      ]
+    },
+    {
+      "id": "animal-emoji-meanings",
+      "label": "",
+      "h2": "Simbolismo de los Emojis de Animales",
+      "intro": "Lo que representan los emojis de animales en la cultura pop y en las conversaciones de internet.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Mariposa — transformación, libertad"
+        },
+        {
+          "char": "🐍",
+          "label": "Serpiente — traición, astucia (Taylor Swift)"
+        },
+        {
+          "char": "🦊",
+          "label": "Zorro — listo, astuto, pícaro"
+        },
+        {
+          "char": "🐸",
+          "label": "Rana — cultura de memes, \"a mí ni me va ni me viene\""
+        },
+        {
+          "char": "🐝",
+          "label": "Abeja — trabajadora, incansable, Beyoncé"
+        },
+        {
+          "char": "🦄",
+          "label": "Unicornio — raro, mágico, único"
+        }
+      ]
+    },
+    {
+      "id": "double-meaning-emojis",
+      "label": "",
+      "h2": "Emojis con Doble Sentido y Significado Oculto",
+      "intro": "Emojis que adoptaron un segundo significado muy lejos de su intención original.",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "Durazno — también se usa con doble sentido"
+        },
+        {
+          "char": "🍆",
+          "label": "Berenjena — también se usa con doble sentido"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego — algo increíble, y la racha de Snapchat"
+        },
+        {
+          "char": "💀",
+          "label": "Calavera — \"me morí\" de la risa"
+        },
+        {
+          "char": "🤡",
+          "label": "Payaso — hacer el ridículo o quedar como tonto"
+        },
+        {
+          "char": "🧢",
+          "label": "Gorra — mentir; \"no cap\" significa \"sin mentir\""
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/usecase/traductor-de-emojis/",
+      "title": "Conversor de Texto a Emojis",
+      "desc": "Convierte cualquier frase en emojis, escribe nombres con letras de emoji o traduce emojis de vuelta a texto — gratis y al instante."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "Caritas, expresiones y emojis de emociones para cada estado de ánimo."
+    },
+    {
+      "href": "/library/smiley-face-guide/",
+      "title": "Guía de Caritas Sonrientes",
+      "desc": "Una guía de las caritas sonrientes, sus expresiones y cuándo conviene usar cada una."
+    },
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Símbolos y Gestos de Manos",
+      "desc": "Emojis y símbolos de gestos con las manos para comunicarte y expresarte."
+    },
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Colección de Símbolos de Corazón",
+      "desc": "Todos los emojis de corazón y los caracteres Unicode de corazón en una sola referencia."
+    },
+    {
+      "href": "/es/library/emojis-de-animales/",
+      "title": "Emojis de Animales",
+      "desc": "Mamíferos, aves, criaturas marinas, insectos y animales mitológicos."
+    },
+    {
+      "href": "/es/library/emojis-de-comida/",
+      "title": "Emojis de Comida y Bebida",
+      "desc": "Frutas, platillos, dulces y bebidas — el set completo de emojis de comida."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de Deportes",
+      "desc": "Pelotas, equipo, medallas y emojis de actividades para publicaciones deportivas."
+    },
+    {
+      "href": "/es/library/emojis-lenguaje-corporal/",
+      "title": "Emojis de Lenguaje Corporal",
+      "desc": "Posturas, gestos y emojis de cuerpo entero que expresan cómo te sientes."
+    },
+    {
+      "href": "/es/library/emojis-de-profesiones/",
+      "title": "Emojis de Personas y Profesiones",
+      "desc": "Personas, roles y emojis de profesiones de todos los oficios."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países, banderas regionales y banderas de uso especial."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-peligro",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-peligro/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/hazard-warning-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-peligro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/hazard-warning-symbols/" }
+  ],
+  "title": "Símbolos de Peligro: Copiar y Pegar ☢ ☣ ⚠ Señales de Advertencia",
+  "meta_description": "Copia y pega símbolos de peligro: radiactivo, riesgo biológico, triángulo de advertencia, alto voltaje y calavera. Haz clic para copiarlos al instante.",
+  "breadcrumb": "Símbolos de Peligro y Advertencia",
+  "hero_h1": "Símbolos de Peligro y Advertencia",
+  "hero_tagline": "Radiactivo, riesgo biológico, alto voltaje y señales de advertencia, junto con las marcas de alerta que los acompañan. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos de peligro avisan de un riesgo con un solo vistazo. Esta biblioteca reúne las marcas de radiactividad, riesgo biológico y calavera con huesos cruzados, las señales de advertencia y precaución, los glifos de electricidad y alto voltaje, y los signos de exclamación que se usan para alertar. Todos son caracteres Unicode normales, así que puedes copiarlos y pegarlos en etiquetas, documentos y mensajes sin necesidad de una imagen.",
+  "sections": [
+    {
+      "id": "toxic-radioactive",
+      "label": "Tóxicos",
+      "h2": "Tóxico, Radiactivo y Riesgo Biológico",
+      "intro": "Las señales clásicas de peligro para radiación, riesgos biológicos y veneno.",
+      "symbols": [
+        { "char": "☢", "label": "Señal de radiactividad" },
+        { "char": "☣", "label": "Señal de riesgo biológico" },
+        { "char": "☠", "label": "Calavera y huesos cruzados" },
+        { "char": "⚰", "label": "Ataúd" },
+        { "char": "⚱", "label": "Urna funeraria" }
+      ]
+    },
+    {
+      "id": "warning-electrical",
+      "label": "Advertencia",
+      "h2": "Advertencia, Precaución y Electricidad",
+      "intro": "Las marcas generales de advertencia y las señales de alto voltaje y riesgo eléctrico.",
+      "symbols": [
+        { "char": "⚠", "label": "Señal de advertencia" },
+        { "char": "☡", "label": "Señal de precaución" },
+        { "char": "⚡", "label": "Señal de alto voltaje" },
+        { "char": "☇", "label": "Rayo" },
+        { "char": "⌁", "label": "Flecha eléctrica" }
+      ]
+    },
+    {
+      "id": "alert-marks",
+      "label": "Alertas",
+      "h2": "Marcas de Alerta y Exclamación",
+      "intro": "Signos de exclamación y marcas de equis para llamar la atención sobre un peligro o un error.",
+      "symbols": [
+        { "char": "‼", "label": "Doble signo de exclamación" },
+        { "char": "⁉", "label": "Signo de exclamación e interrogación" },
+        { "char": "❗", "label": "Signo de exclamación grueso" },
+        { "char": "❕", "label": "Signo de exclamación blanco" },
+        { "char": "❌", "label": "Marca de equis" },
+        { "char": "⛔", "label": "Prohibido el paso" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-transito/",
+      "title": "Símbolos de Tránsito y Señales Viales",
+      "desc": "Señales de tránsito, carretera y transporte para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-de-reciclaje/",
+      "title": "Símbolos de Reciclaje y Medio Ambiente",
+      "desc": "Marcas de reciclaje, ecología y medio ambiente en Unicode."
+    },
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres Especiales",
+      "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "slug": "tastatur-symbole",
+  "title": "Tastatur-Symbole ⌘ ⌥ ⇧ — Tastenzeichen Kopieren | UltraTextGen",
+  "meta_description": "Tastatur-Symbole ⌘ ⌥ ⇧ ⌫ zum Kopieren: Mac-Modifiertasten, Bearbeitungs- und Navigationstasten, Pfeile. Klick zum Kopieren.",
+  "breadcrumb": "Tastatur-Symbole",
+  "hero_h1": "Tastatur-Symbole",
+  "hero_tagline": "Tasten so, wie sie in Handbüchern gesetzt werden: ⌘ ⌥ ⇧ ⌫ ⇥ und die Pfeile, fertig zum Einfügen.",
+  "intro": "Wer eine Tastenkombination aufschreibt — in einer Anleitung, einer README, einer Nachricht — braucht die echten Tastenzeichen statt der Wörter. Es sind Unicode-Zeichen und funktionieren überall ohne Bild. Zum Kopieren anklicken.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "mac",
+      "label": "Mac-Modifiertasten",
+      "h2": "Mac-Modifiertasten",
+      "intro": "Die vier Modifier plus Eject und Esc.",
+      "symbols": [
+        {
+          "char": "⌘",
+          "label": "Befehlstaste"
+        },
+        {
+          "char": "⌥",
+          "label": "Wahltaste"
+        },
+        {
+          "char": "⇧",
+          "label": "Umschalttaste"
+        },
+        {
+          "char": "⌃",
+          "label": "Steuerungstaste"
+        },
+        {
+          "char": "⇪",
+          "label": "Feststelltaste"
+        },
+        {
+          "char": "⏏",
+          "label": "Auswurftaste"
+        },
+        {
+          "char": "⎋",
+          "label": "Esc-Taste"
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "label": "Bearbeitungs- und Navigationstasten",
+      "h2": "Bearbeitungs- und Navigationstasten",
+      "intro": "Enter, Rückschritt, Tabulator und Leertaste.",
+      "symbols": [
+        {
+          "char": "⏎",
+          "label": "Eingabetaste"
+        },
+        {
+          "char": "↵",
+          "label": "Wagenrücklaufpfeil"
+        },
+        {
+          "char": "⌫",
+          "label": "Rückschritttaste"
+        },
+        {
+          "char": "⌦",
+          "label": "Entfernen vorwärts"
+        },
+        {
+          "char": "⇥",
+          "label": "Tabulatortaste"
+        },
+        {
+          "char": "⇤",
+          "label": "Rücktabulator"
+        },
+        {
+          "char": "␣",
+          "label": "Leertaste"
+        }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "Pfeile und Sondertasten",
+      "h2": "Pfeile und Sondertasten",
+      "intro": "Richtungstasten und Tastaturzeichen.",
+      "symbols": [
+        {
+          "char": "↑",
+          "label": "Pfeiltaste Auf"
+        },
+        {
+          "char": "↓",
+          "label": "Pfeiltaste Ab"
+        },
+        {
+          "char": "←",
+          "label": "Pfeiltaste Links"
+        },
+        {
+          "char": "→",
+          "label": "Pfeiltaste Rechts"
+        },
+        {
+          "char": "⌨",
+          "label": "Tastatur"
+        },
+        {
+          "char": "⎈",
+          "label": "Steuerungstaste (Steuerrad)"
+        },
+        {
+          "char": "⎙",
+          "label": "Druck-Taste"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Tastatur-Symbolen",
+  "faq": [
+    {
+      "q": "Warum heißt ⌘ „Sehenswürdigkeit“?",
+      "a": "So lautet der Unicode-Name: U+2318 stammt von einem skandinavischen Verkehrszeichen für einen sehenswerten Ort. Apple übernahm es in den 1980ern für die Befehlstaste, der offizielle Name blieb unverändert."
+    },
+    {
+      "q": "Funktionieren sie unter Windows?",
+      "a": "Das Zeichen ja, es wird überall angezeigt. Die Taste nicht: Unter Windows entspricht ⌘ der Strg-Taste und ⌥ der Alt-Taste."
+    },
+    {
+      "q": "Warum erscheint ⇧ manchmal als farbiges Emoji?",
+      "a": "Manche Systeme stellen weiße Pfeile als Piktogramm dar. Für die Textdarstellung hängen Sie den Variantenselektor U+FE0E an das Zeichen."
+    },
+    {
+      "q": "Kann ich sie in einer GitHub-README verwenden?",
+      "a": "Ja, und es ist sogar die bessere Wahl: Sie bleiben im Klartext lesbar und ersparen ein Bild."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Warum Tasten ein Eigenes Zeichen Haben",
+      "body": "Diese Symbole stehen in Unicode, weil die technische Dokumentation sie lange vor dem Web brauchte: Ein gedrucktes Handbuch konnte nicht bei jeder genannten Tastenkombination eine Abbildung einfügen. Deshalb sind ⌘, ⌥ und ⇧ echte Zeichen, die sich wie Buchstaben in eine Textzeile setzen lassen — und deshalb bleiben sie auch in einem Chat lesbar, statt zum Anhang zu werden."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/emoji-combos/",
+      "title": "Emoji-Kombinationen zum Kopieren und Einfügen",
+      "desc": "Über 100 fertige Emoji-Combos, die deiner Bio, deinem Status und deinen Captions eine klare Stimmung geben…"
+    },
+    {
+      "href": "/de/library/kaomoji/",
+      "title": "Kaomoji &amp; Text-Emoticons",
+      "desc": "Kaomoji kopieren und einfügen — Text-Emoticons im japanischen Stil aus Unicode-Zeichen. Fröhliche Gesichter…"
+    },
+    {
+      "href": "/de/library/alt-codes/",
+      "title": "Alt-Codes für Windows",
+      "desc": "Die wichtigsten Alt-Codes, um Sonderzeichen unter Windows zu tippen — vom großen Eszett ẞ über deutsche Uml…"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/tastatur-symbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-tastiera/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-clavier/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-na-klaviature/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/tastatur-symbole/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/keyboard-kigou/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    }
+  ]
+}

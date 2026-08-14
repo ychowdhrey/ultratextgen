@@ -1,0 +1,145 @@
+{
+  "lang": "es",
+  "slug": "simbolos-para-twitter",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-para-twitter/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/x-twitter-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-para-twitter/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/x-twitter-symbols/" }
+  ],
+  "title": "Símbolos para Twitter (X): Copiar y Pegar en Publicaciones y Biografía",
+  "meta_description": "Copia y pega símbolos para Twitter (X): la marca 𝕏, palomitas, flechas, viñetas para hilos y adornos de biografía. Haz clic para copiar al instante.",
+  "breadcrumb": "Símbolos para Twitter (X)",
+  "hero_h1": "Símbolos para Twitter (X)",
+  "hero_tagline": "Copia y pega caracteres especiales para X (antes Twitter): símbolos para dar formato a hilos, resaltar hashtags, palomitas, emojis de interacción y adornos de biografía. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "X (Twitter) admite símbolos Unicode sin problema en publicaciones, hilos, respuestas y biografías. Usa estos símbolos para Twitter para darle estructura a un hilo largo, hacer que un hashtag resalte, decorar tu biografía o darle personalidad a una publicación suelta. Todos los caracteres están verificados para que se vean correctamente tanto en la versión web de X como en las apps móviles.",
+  "sections": [
+    {
+      "id": "x-mark-symbols",
+      "label": "",
+      "h2": "Símbolos de la X y Marcas de Cruz",
+      "intro": "Caracteres de texto para la propia marca X: la 𝕏 estilizada del logo renovado, más cruces y signos de multiplicación. Haz clic en cualquiera para copiarlo.",
+      "symbols": [
+        { "char": "𝕏", "label": "X de doble trazo (estilo logo)" },
+        { "char": "✕", "label": "X de multiplicación" },
+        { "char": "✖", "label": "X de multiplicación gruesa" },
+        { "char": "✗", "label": "X de casilla" },
+        { "char": "✘", "label": "X de casilla gruesa" },
+        { "char": "╳", "label": "X de dibujo de cajas" },
+        { "char": "⨯", "label": "Producto vectorial" },
+        { "char": "×", "label": "Signo de multiplicación" },
+        { "char": "☓", "label": "Aspa (cruz de San Andrés)" },
+        { "char": "ⓧ", "label": "X minúscula en círculo" }
+      ]
+    },
+    {
+      "id": "thread-formatting-symbols",
+      "label": "",
+      "h2": "Símbolos para Dar Formato a Hilos",
+      "intro": "Símbolos que ayudan a estructurar y ordenar los hilos de X para que se lean mejor.",
+      "symbols": [
+        { "char": "🧵", "label": "Hilo (aguja e hilo)" },
+        { "char": "①", "label": "1 en círculo" },
+        { "char": "②", "label": "2 en círculo" },
+        { "char": "③", "label": "3 en círculo" },
+        { "char": "▸", "label": "Puntero hacia la derecha" },
+        { "char": "→", "label": "Flecha hacia la derecha" },
+        { "char": "•", "label": "Viñeta" },
+        { "char": "──────────", "label": "Separador de hilo" }
+      ]
+    },
+    {
+      "id": "quote-reply-markers",
+      "label": "",
+      "h2": "Caracteres para Citas y Respuestas",
+      "intro": "Símbolos para marcar visualmente el texto citado y las referencias a respuestas en tus publicaciones.",
+      "symbols": [
+        { "char": "❝", "label": "Comilla de apertura gruesa" },
+        { "char": "❞", "label": "Comilla de cierre gruesa" },
+        { "char": "«", "label": "Comilla angular izquierda" },
+        { "char": "»", "label": "Comilla angular derecha" },
+        { "char": "↩", "label": "Flecha con gancho a la izquierda" },
+        { "char": "↪", "label": "Flecha con gancho a la derecha" }
+      ]
+    },
+    {
+      "id": "hashtag-enhancement-symbols",
+      "label": "",
+      "h2": "Símbolos para Resaltar Hashtags",
+      "intro": "Símbolos que se colocan alrededor de los hashtags para que destaquen en las publicaciones.",
+      "symbols": [
+        { "char": "✨", "label": "Destellos" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "⚡", "label": "Rayo" },
+        { "char": "★", "label": "Estrella negra" },
+        { "char": "▶", "label": "Triángulo negro hacia la derecha" },
+        { "char": "◆", "label": "Rombo negro" }
+      ]
+    },
+    {
+      "id": "checkmarks-verification",
+      "label": "",
+      "h2": "Palomitas y Caracteres de Verificación",
+      "intro": "Palomitas y caracteres estilo cuenta verificada para publicaciones y listas.",
+      "symbols": [
+        { "char": "✓", "label": "Palomita" },
+        { "char": "✔", "label": "Palomita gruesa" },
+        { "char": "✅", "label": "Palomita blanca gruesa" },
+        { "char": "☑", "label": "Casilla marcada" },
+        { "char": "✗", "label": "X de casilla" },
+        { "char": "✘", "label": "X de casilla gruesa" }
+      ]
+    },
+    {
+      "id": "bio-profile-decoration",
+      "label": "",
+      "h2": "Símbolos para Decorar tu Biografía y Perfil de X",
+      "intro": "Símbolos que le dan estilo y personalidad a las biografías y perfiles de X.",
+      "symbols": [
+        { "char": "♡", "label": "Corazón blanco" },
+        { "char": "✦", "label": "Estrella de cuatro puntas" },
+        { "char": "·", "label": "Punto medio" },
+        { "char": "│", "label": "Barra vertical" },
+        { "char": "⊹", "label": "Matriz conjugada hermítica" },
+        { "char": "📌", "label": "Chincheta (marca de publicación fijada)" },
+        { "char": "🔗", "label": "Enlace" },
+        { "char": "📍", "label": "Marcador de ubicación" },
+        { "char": "✧", "label": "Estrella blanca de cuatro puntas" },
+        { "char": "✰", "label": "Estrella blanca con sombra" },
+        { "char": "❥", "label": "Corazón grueso girado" },
+        { "char": "❀", "label": "Flor blanca" },
+        { "char": "✿", "label": "Flor negra" },
+        { "char": "➤", "label": "Punta de flecha negra" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/simbolos-de-estrella/",
+      "title": "Colección de Símbolos de Estrella",
+      "desc": "Estrellas, destellos, asteriscos y caracteres de brillo en varios estilos Unicode."
+    },
+    {
+      "href": "/es/library/simbolos-de-verificacion/",
+      "title": "Símbolos de Palomita",
+      "desc": "Palomitas, marcas de verificación y casillas para listas y formularios."
+    },
+    {
+      "href": "/es/simbolos-de-flechas/",
+      "title": "Símbolos de Flechas",
+      "desc": "Todas las flechas Unicode para navegación, dirección y formato de listas."
+    },
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Colección de Símbolos de Corazón",
+      "desc": "Todos los emojis de corazón y caracteres Unicode de corazón en una sola referencia."
+    }
+  ]
+}

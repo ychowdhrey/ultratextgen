@@ -101,9 +101,9 @@ def validate_spec(spec):
         raise SpecError(f"missing required field(s): {', '.join(missing)}")
 
     pattern = spec["copy_pattern"]
-    if pattern not in ("single", "collection"):
+    if pattern not in ("single", "collection", "art"):
         raise SpecError(
-            f"copy_pattern must be 'single' or 'collection', got {pattern!r}"
+            f"copy_pattern must be 'single', 'collection' or 'art', got {pattern!r}"
         )
 
     sections = spec["sections"]
@@ -111,11 +111,18 @@ def validate_spec(spec):
         raise SpecError("sections must be a non-empty list")
 
     for i, sec in enumerate(sections):
-        for key in ("id", "h2", "symbols"):
+        items_key = "art" if pattern == "art" else "symbols"
+        for key in ("id", "h2", items_key):
             if key not in sec:
                 raise SpecError(f"sections[{i}] missing '{key}'")
-        if not isinstance(sec["symbols"], list) or not sec["symbols"]:
-            raise SpecError(f"sections[{i}].symbols must be a non-empty list")
+        if not isinstance(sec[items_key], list) or not sec[items_key]:
+            raise SpecError(f"sections[{i}].{items_key} must be a non-empty list")
+        if pattern == "art":
+            for j, piece in enumerate(sec["art"]):
+                for key in ("label", "art"):
+                    if key not in piece or piece[key] in (None, ""):
+                        raise SpecError(f"sections[{i}].art[{j}] missing '{key}'")
+            continue
         for j, sym in enumerate(sec["symbols"]):
             if "char" not in sym or sym["char"] in (None, ""):
                 raise SpecError(f"sections[{i}].symbols[{j}] missing 'char'")
@@ -178,6 +185,10 @@ LOCALE_UI_STRINGS = {
     "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
     "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
     "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    # zh-TW was missing entirely, so every Traditional-Chinese page fell back to
+    # English chrome ("Copy", "Related Resources") while its 23 live siblings
+    # carry proper Chinese. Caught 2026-08-10 on the iphone-emojis batch.
+    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
     "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
     "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
     "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
@@ -185,6 +196,7 @@ LOCALE_UI_STRINGS = {
 
 # Section label for the optional FAQ block, per locale. Falls back to English.
 LOCALE_FAQ_LABEL = {
+    "zh-TW": "常見問題",
     "pt": "Perguntas Frequentes",
     "de": "Häufige Fragen",
     "fr": "Questions fréquentes",
@@ -204,7 +216,7 @@ LOCALE_FAQ_LABEL = {
 }
 
 
-def render_faq(faq, label):
+def render_faq(faq, label, heading=None):
     """Render the optional FAQ block.
 
     Uses the JS-free <details> disclosure variant deliberately: library pages
@@ -221,13 +233,55 @@ def render_faq(faq, label):
             f'    <div class="faq-answer"><p>{esc(entry["a"])}</p></div>\n'
             "  </details>"
         )
+    # The house form on hand-written library pages carries a real <h2> under the
+    # kicker (spec key "faq_h2"). It is optional so older specs keep their
+    # current output byte-for-byte, but a page whose sibling has one needs it —
+    # <h2> count is part of the translation-parity fingerprint.
+    heading_html = f"  <h2>{esc(heading)}</h2>\n" if heading else ""
     return (
         '<!-- FAQ -->\n'
         '<section class="editorial-section" id="faq">\n'
         f'  <span class="article-section-label">{esc(label)}</span>\n'
+        f"{heading_html}"
         + "\n".join(items)
         + "\n</section>"
     )
+
+
+def render_editorial_sections(sections):
+    """Render free prose sections (spec key "editorial_sections").
+
+    Symbol grids and FAQs cover most of a library page, but some pages need a
+    plain editorial block — e.g. the "how this emoji looks on each device"
+    section on star-emoji/crying-emoji/crown-emoji. Before this key existed
+    those had to be hand-added to the HTML after generation, which meant a
+    later `--force` regenerate silently deleted them (the same class of
+    silent loss the art-wiring order already causes; see
+    docs/library-locale-translation-workflow.md step 6).
+
+    `paragraphs` entries are emitted as-is so they can carry inline markup
+    (<em>, <strong>, <a href>) in house style. They are author-written spec
+    content, never user input.
+    """
+    blocks = []
+    for sec in sections:
+        label_html = (
+            f'  <span class="article-section-label">{esc(sec["label"])}</span>\n'
+            if sec.get("label")
+            else ""
+        )
+        paras = "\n".join(f"    <p>{p}</p>" for p in sec.get("paragraphs", []))
+        sid = f' id="{esc_attr(sec["id"])}"' if sec.get("id") else ""
+        blocks.append(
+            f'<section class="editorial-section"{sid}>\n'
+            f"{label_html}"
+            f'  <h2>{esc(sec["h2"])}</h2>\n'
+            '  <div class="editorial-block">\n'
+            f"{paras}\n"
+            "  </div>\n"
+            "</section>"
+        )
+    return '\n\n<div class="section-divider"></div>\n\n'.join(blocks)
 
 
 # Locales written right-to-left. The site's own RTL content locale is Arabic;
@@ -265,6 +319,58 @@ def render_symbol_section(sec, copy_label="Copy"):
         f"{intro_html}"
         '  <div class="flag-rows">\n'
         + "\n".join(rows)
+        + "\n  </div>\n"
+        "</section>"
+    )
+
+
+def render_art_section(sec, copy_label="Copy", copy_aria=None):
+    """An `art` section: multi-line ASCII pieces in <pre>, not a symbol grid.
+
+    The pieces themselves are language-neutral — =^..^= is a cat in every
+    locale — so only the section heading and each piece's label are translated.
+    The copy button is handled by the same delegated listener in
+    symbol-explorer.js that the hand-written English pages use, so nothing new
+    is loaded.
+
+    The <pre> opens at column 0 on purpose: everything between the tags is
+    significant whitespace, and indenting it to match the surrounding markup
+    would indent the artwork.
+    """
+    cards = []
+    for piece in sec["art"]:
+        label = piece["label"]
+        aria = (copy_aria or "{copy} {label}").format(copy=copy_label, label=label)
+        cards.append(
+            '    <div class="art-piece-card">\n'
+            '      <div class="art-piece-head">\n'
+            f'        <span class="art-piece-label">{esc(label)}</span>\n'
+            '        <button class="art-piece-copy" type="button" '
+            f'data-label="{esc_attr(label)}" '
+            f'aria-label="{esc_attr(aria)}">{esc(copy_label)}</button>\n'
+            "      </div>\n"
+            '      <div class="art-piece-body">\n'
+            f'<pre class="art-piece-pre">{esc(piece["art"])}</pre>\n'
+            "      </div>\n"
+            "    </div>"
+        )
+    label_html = (
+        f'  <span class="article-section-label">{esc(sec["label"])}</span>\n'
+        if sec.get("label")
+        else ""
+    )
+    intro_html = (
+        f'  <p class="u-secondary-tight">{esc(sec["intro"])}</p>\n'
+        if sec.get("intro")
+        else ""
+    )
+    return (
+        f'<section class="mood-explainers" id="{esc_attr(sec["id"])}">\n'
+        f"{label_html}"
+        f'  <h2>{esc(sec["h2"])}</h2>\n'
+        f"{intro_html}"
+        '  <div class="art-piece-grid">\n'
+        + "\n".join(cards)
         + "\n  </div>\n"
         "</section>"
     )
@@ -425,11 +531,24 @@ def render_page(spec):
         ensure_ascii=False,
     )
 
+    # Optional free-prose sections, rendered between the symbol grids and the FAQ.
+    editorial = spec.get("editorial_sections") or []
+    editorial_html = (
+        f"\n\n<div class=\"section-divider\"></div>\n\n{render_editorial_sections(editorial)}"
+        if editorial
+        else ""
+    )
+
     # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
     # spec list, so a page can never ship schema for Q&A it doesn't render.
     faq = spec.get("faq") or []
     faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
-    faq_html = f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label)}" if faq else ""
+    faq_h2 = spec.get("faq_h2")
+    faq_html = (
+        f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label, faq_h2)}"
+        if faq
+        else ""
+    )
     ld_faq_html = ""
     if faq:
         ld_faq = json.dumps(
@@ -454,7 +573,12 @@ def render_page(spec):
         ld_faq_html = f'\n\n<script type="application/ld+json">\n{ld_faq}\n</script>'
 
     # Section bodies
-    section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
+    if spec["copy_pattern"] == "art":
+        art_aria = spec.get("copy_aria_template") or ui.get("copyArt")
+        section_blocks = [render_art_section(s, copy_label, art_aria)
+                          for s in spec["sections"]]
+    else:
+        section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
@@ -534,7 +658,7 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}{faq_html}
+{body_sections}{editorial_html}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
@@ -609,7 +733,13 @@ def main(argv=None):
     # page_type "symbol" routes to /symbol/ instead of /library/.
     lang = spec.get("lang", "en")
     base_folder = "symbol" if spec.get("page_type", "library") == "symbol" else "library"
-    out_dir = (REPO / lang / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
+    # The hreflang code is not always the directory name: zh-TW is the correct
+    # hreflang code but every live Traditional-Chinese URL on this site is
+    # /zh-tw/. Writing to REPO/zh-TW/ created a second, unlinked URL space —
+    # caught 2026-08-10 on the iphone-emojis batch. Map explicitly.
+    URL_SEGMENT = {"zh-TW": "zh-tw"}
+    seg = URL_SEGMENT.get(lang, lang)
+    out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:

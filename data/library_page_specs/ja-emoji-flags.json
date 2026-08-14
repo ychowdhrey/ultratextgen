@@ -1,0 +1,209 @@
+{
+  "slug": "kokki-emoji",
+  "title": "国旗 絵文字 一覧 — 世界の旗をコピペ | UltraTextGen",
+  "meta_description": "国旗の絵文字をコピペで。国の旗、国際機関の旗、地域の旗、プライドフラッグ、記号としての旗をまとめて掲載。タップでコピーできます。",
+  "breadcrumb": "国旗 絵文字",
+  "hero_h1": "国旗 絵文字",
+  "hero_tagline": "よく使われる旗をカテゴリー別に。国、機関、地域、アイデンティティ、そして記号としての旗。",
+  "intro": "国旗の絵文字は画像ではなく、地域を表す2文字の組み合わせを端末が旗に置き換えたものです。旗ではなくアルファベット2文字で表示されることがあるのはそのためです。タップでコピーできます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "country",
+      "label": "国の旗",
+      "h2": "国の旗",
+      "intro": "プロフィールでよく使われるもの。",
+      "symbols": [
+        {
+          "char": "🇺🇸",
+          "label": "アメリカ合衆国"
+        },
+        {
+          "char": "🇲🇽",
+          "label": "メキシコ"
+        },
+        {
+          "char": "🇮🇳",
+          "label": "インド"
+        },
+        {
+          "char": "🇧🇷",
+          "label": "ブラジル"
+        },
+        {
+          "char": "🇨🇦",
+          "label": "カナダ"
+        },
+        {
+          "char": "🇵🇷",
+          "label": "プエルトリコ"
+        },
+        {
+          "char": "🇬🇧",
+          "label": "イギリス"
+        },
+        {
+          "char": "🇮🇪",
+          "label": "アイルランド"
+        }
+      ]
+    },
+    {
+      "id": "org",
+      "label": "国際機関の旗",
+      "h2": "国際機関の旗",
+      "intro": "連合や国際機関。",
+      "symbols": [
+        {
+          "char": "🇪🇺",
+          "label": "欧州連合"
+        },
+        {
+          "char": "🇺🇳",
+          "label": "国際連合"
+        }
+      ]
+    },
+    {
+      "id": "regional",
+      "label": "地域の旗",
+      "h2": "地域の旗",
+      "intro": "イギリスを構成する各国。",
+      "symbols": [
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "label": "イングランド"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "label": "スコットランド"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+          "label": "ウェールズ"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "アイデンティティの旗",
+      "h2": "アイデンティティの旗",
+      "intro": "プライドフラッグ。",
+      "symbols": [
+        {
+          "char": "🏳️‍🌈",
+          "label": "レインボープライド"
+        },
+        {
+          "char": "🏳️‍⚧️",
+          "label": "トランスジェンダープライド"
+        }
+      ]
+    },
+    {
+      "id": "symbolic",
+      "label": "記号としての旗",
+      "h2": "記号としての旗",
+      "intro": "territory を指さない旗。",
+      "symbols": [
+        {
+          "char": "🏁",
+          "label": "チェッカーフラッグ"
+        },
+        {
+          "char": "🚩",
+          "label": "三角旗"
+        },
+        {
+          "char": "🏳",
+          "label": "白旗"
+        },
+        {
+          "char": "🏴",
+          "label": "黒旗"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "海賊旗"
+        },
+        {
+          "char": "🎌",
+          "label": "交差した旗"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "国旗絵文字のよくある質問",
+  "faq": [
+    {
+      "q": "旗ではなく「JP」と表示されるのはなぜ？",
+      "a": "国旗の絵文字は地域指示子2文字（この場合 J と P）の組み合わせです。対応する画像を持たない環境では2文字がそのまま出ます。仕様どおりの動作で、不具合ではありません。"
+    },
+    {
+      "q": "Windows で国旗が出ないのはなぜ？",
+      "a": "Windows は国旗の画像を同梱しておらず、代わりに2文字を表示します。文字としては正しいので、スマートフォンでは旗として表示されます。"
+    },
+    {
+      "q": "イングランドやスコットランドの旗が別扱いなのはなぜ？",
+      "a": "これらは2文字ではなくタグ列で作られた地域の旗です。追加が新しく、対応している環境も少なめです。"
+    },
+    {
+      "q": "名前に国旗を入れられますか？",
+      "a": "表示名なら多くの場合入れられます。ただし運営方針として国旗だけを削除するサービスもあり、ほかの絵文字とは扱いが違うことがあります。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "国旗が「1文字」ではない理由",
+      "body": "🇯🇵 という単独の文字は存在しません。地域指示子の 🇯 と 🇵 が並んでいて、それを端末が国コードとして認識し、画像に置き換えています。Unicode がこの方式を選んだのは、どの地域に旗を与えるかを自分で決めずに済ませるためで、一覧の根拠は ISO の国コード規格であって consortium の判断ではありません。ある端末では旗になり、別の端末では2文字のままになるのはそのためです。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/special-characters/",
+      "title": "特殊文字 一覧（かわいい記号コピペ）",
+      "desc": "かわいい特殊文字をジャンル別にまとめました。キラキラ・ハート・星・矢印・飾り括弧・音符まで — クリックするだけでコピーできて、インスタのプロフィールやゲームの名前にそのまま使えます。"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号（コピペ一覧）",
+      "desc": "インスタやX・TikTokの名前やプロフィールを飾る、おしゃれな特殊文字を集めました。キラキラ・ハート・花・区切り線・飾り括弧まで — クリックするだけでコピーできます。"
+    },
+    {
+      "href": "/ja/library/emoji-combos/",
+      "title": "絵文字コンボ 一覧",
+      "desc": "かわいい絵文字コンボ（組み合わせ）を、雰囲気別にまとめました。量産型・シンプル・韓国っぽ・推し活・季節・誕生日まで — クリックするだけでコンボごとコピーできて、インスタやLINE、Xにそのまま貼れます。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/kokki-emoji/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-drapeaux/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/kokki-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-bandiere/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/guoqi-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    }
+  ]
+}

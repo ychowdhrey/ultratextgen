@@ -1,0 +1,373 @@
+{
+  "slug": "html-entities",
+  "title": "HTML Entities Liste &amp; &lt; &gt; — Zeichen-Entities zum Kopieren | UltraTextGen",
+  "meta_description": "HTML-Entities als Liste: reservierte Zeichen &amp; &lt; &gt; &quot;, Striche, Anführungszeichen, Copyright, Währungen, Mathezeichen und Buchstaben mit Akzent. Antippen zum Kopieren.",
+  "breadcrumb": "HTML Entities",
+  "hero_h1": "HTML Entities",
+  "hero_tagline": "&amp; &lt; &gt; &nbsp; &copy; — von den reservierten Zeichen über Typografie und Währungen bis zu Akzentbuchstaben. Antippen zum Kopieren.",
+  "intro": "HTML-Entities sind die Schreibweise für Zeichen, die der Browser sonst als Auszeichnung lesen würde. Zwingend nötig sind nur die ersten fünf (&amp; &lt; &gt; &quot; &#x27;); alles Weitere ist Bequemlichkeit. Die sechs Gruppen unten sind nach Einsatzzweck sortiert. Antippen kopiert den Code.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Reservierte HTML-Zeichen",
+      "h2": "Reservierte HTML-Zeichen",
+      "intro": "Diese fünf müssen immer maskiert werden.",
+      "symbols": [
+        {
+          "char": "&amp;",
+          "label": "&amp; — Kaufmännisches Und"
+        },
+        {
+          "char": "&lt;",
+          "label": "< — Kleiner-als-Zeichen"
+        },
+        {
+          "char": "&gt;",
+          "label": "> — Größer-als-Zeichen"
+        },
+        {
+          "char": "&quot;",
+          "label": "\" — Anführungszeichen"
+        },
+        {
+          "char": "&#x27;",
+          "label": "&apos; — Apostroph"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Satzzeichen und Typografie",
+      "h2": "Satzzeichen und Typografie",
+      "intro": "Anführungszeichen, Striche, Leerraum.",
+      "symbols": [
+        {
+          "char": " ",
+          "label": "  — Geschütztes Leerzeichen (erscheint leer)"
+        },
+        {
+          "char": "–",
+          "label": "&ndash; — Halbgeviertstrich"
+        },
+        {
+          "char": "—",
+          "label": "&mdash; — Geviertstrich"
+        },
+        {
+          "char": "…",
+          "label": "&hellip; — Auslassungspunkte"
+        },
+        {
+          "char": "•",
+          "label": "&bull; — Aufzählungspunkt"
+        },
+        {
+          "char": "§",
+          "label": "&sect; — Paragrafzeichen"
+        },
+        {
+          "char": "¶",
+          "label": "&para; — Absatzzeichen"
+        },
+        {
+          "char": "“",
+          "label": "&ldquo; — Linkes doppeltes Anführungszeichen"
+        },
+        {
+          "char": "”",
+          "label": "&rdquo; — Rechtes doppeltes Anführungszeichen"
+        },
+        {
+          "char": "‘",
+          "label": "&lsquo; — Linkes einfaches Anführungszeichen"
+        },
+        {
+          "char": "’",
+          "label": "&rsquo; — Rechtes einfaches Anführungszeichen"
+        },
+        {
+          "char": "«",
+          "label": "&laquo; — Linke Guillemets"
+        },
+        {
+          "char": "»",
+          "label": "&raquo; — Rechte Guillemets"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Währung und Rechtszeichen",
+      "h2": "Währung und Rechtszeichen",
+      "intro": "Rechtshinweise und Währungen.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "&copy; — Copyright-Zeichen"
+        },
+        {
+          "char": "®",
+          "label": "&reg; — Eingetragene-Marke-Zeichen"
+        },
+        {
+          "char": "™",
+          "label": "&trade; — Markenzeichen"
+        },
+        {
+          "char": "€",
+          "label": "&euro; — Euro-Zeichen"
+        },
+        {
+          "char": "£",
+          "label": "&pound; — Pfund-Zeichen"
+        },
+        {
+          "char": "¥",
+          "label": "&yen; — Yen-Zeichen"
+        },
+        {
+          "char": "¢",
+          "label": "&cent; — Cent-Zeichen"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Mathematik und Maßeinheiten",
+      "h2": "Mathematik und Maßeinheiten",
+      "intro": "Für Formeln und Einheiten.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "&times; — Malzeichen"
+        },
+        {
+          "char": "÷",
+          "label": "&divide; — Geteiltzeichen"
+        },
+        {
+          "char": "±",
+          "label": "&plusmn; — Plusminuszeichen"
+        },
+        {
+          "char": "½",
+          "label": "&frac12; — Bruch ein Halb"
+        },
+        {
+          "char": "¼",
+          "label": "&frac14; — Bruch ein Viertel"
+        },
+        {
+          "char": "¾",
+          "label": "&frac34; — Bruch drei Viertel"
+        },
+        {
+          "char": "°",
+          "label": "&deg; — Gradzeichen"
+        },
+        {
+          "char": "µ",
+          "label": "&micro; — Mikro-Zeichen"
+        },
+        {
+          "char": "∞",
+          "label": "&infin; — Unendlichzeichen"
+        },
+        {
+          "char": "≈",
+          "label": "&asymp; — Ungefähr gleich"
+        },
+        {
+          "char": "≠",
+          "label": "&ne; — Ungleich"
+        },
+        {
+          "char": "≤",
+          "label": "&le; — Kleiner oder gleich"
+        },
+        {
+          "char": "≥",
+          "label": "&ge; — Größer oder gleich"
+        },
+        {
+          "char": "√",
+          "label": "&radic; — Wurzelzeichen"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Pfeile, Herzen und Formen",
+      "h2": "Pfeile, Herzen und Formen",
+      "intro": "Zierde und Richtung.",
+      "symbols": [
+        {
+          "char": "←",
+          "label": "&larr; — Pfeil nach links"
+        },
+        {
+          "char": "→",
+          "label": "&rarr; — Pfeil nach rechts"
+        },
+        {
+          "char": "↑",
+          "label": "&uarr; — Pfeil nach oben"
+        },
+        {
+          "char": "↓",
+          "label": "&darr; — Pfeil nach unten"
+        },
+        {
+          "char": "↔",
+          "label": "&harr; — Pfeil nach links und rechts"
+        },
+        {
+          "char": "♥",
+          "label": "&hearts; — Herz (Kartenfarbe)"
+        },
+        {
+          "char": "♦",
+          "label": "&diams; — Karo (Kartenfarbe)"
+        },
+        {
+          "char": "♣",
+          "label": "&clubs; — Kreuz (Kartenfarbe)"
+        },
+        {
+          "char": "♠",
+          "label": "&spades; — Pik (Kartenfarbe)"
+        },
+        {
+          "char": "★",
+          "label": "&starf; — Gefüllter Stern"
+        },
+        {
+          "char": "☆",
+          "label": "&star; — Umrissener Stern"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Buchstaben mit Akzent",
+      "h2": "Buchstaben mit Akzent",
+      "intro": "Wenn der Buchstabe nicht auf der Tastatur liegt.",
+      "symbols": [
+        {
+          "char": "é",
+          "label": "&eacute; — E mit Akut"
+        },
+        {
+          "char": "è",
+          "label": "&egrave; — E mit Gravis"
+        },
+        {
+          "char": "ê",
+          "label": "&ecirc; — E mit Zirkumflex"
+        },
+        {
+          "char": "ñ",
+          "label": "&ntilde; — N mit Tilde"
+        },
+        {
+          "char": "ü",
+          "label": "&uuml; — U mit Umlaut"
+        },
+        {
+          "char": "ç",
+          "label": "&ccedil; — C mit Cedille"
+        },
+        {
+          "char": "å",
+          "label": "&aring; — A mit Ring"
+        },
+        {
+          "char": "ø",
+          "label": "&oslash; — O mit Schrägstrich"
+        },
+        {
+          "char": "æ",
+          "label": "&aelig; — Ligatur AE"
+        },
+        {
+          "char": "ß",
+          "label": "&szlig; — Scharfes S (Eszett)"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu HTML-Entities",
+  "faq": [
+    {
+      "q": "Braucht man Entities heute überhaupt noch?",
+      "a": "Wirklich nötig sind fünf: &amp; &lt; &gt; sowie &quot; und &#x27; innerhalb von Attributwerten. Diese Zeichen kollidieren mit der HTML-Syntax selbst und würden sonst als Ende eines Tags oder Attributs gelesen. Alle übrigen Zeichen darf man direkt schreiben, sofern die Datei als UTF-8 gespeichert ist."
+    },
+    {
+      "q": "Wann setzt man ein geschütztes Leerzeichen ein?",
+      "a": "Überall dort, wo keine Zeile umbrechen soll — zwischen Zahl und Einheit («10 kg»), in «Windows 11», vor einem Prozentzeichen. Als Werkzeug für Einrückung oder Abstand ist es dagegen falsch eingesetzt; das gehört ins CSS."
+    },
+    {
+      "q": "Wann müssen Anführungszeichen maskiert werden?",
+      "a": "Nur, wenn im Attributwert dasselbe Anführungszeichen vorkommt, das den Wert umschließt. Steht in einem doppelt gequoteten Attribut ein \", endet das Attribut genau dort. Im Fließtext dürfen beide unverändert stehen."
+    },
+    {
+      "q": "Benannte oder numerische Entity?",
+      "a": "Wo es einen Namen gibt, ist die benannte Form (&copy;) besser lesbar, und ein Tippfehler fällt eher auf. Namen existieren aber nur für eine feste Liste; für alles andere nimmt man die numerische Form (&#8212;). Im Ergebnis sind beide gleichwertig."
+    },
+    {
+      "q": "Sind Entities schuld an kaputten Sonderzeichen?",
+      "a": "Meist nicht. Zerschossene Umlaute kommen fast immer von einer falsch deklarierten Zeichenkodierung: Es fehlt &lt;meta charset=\"utf-8\"&gt;, oder die Datei ist nicht als UTF-8 gespeichert. Entities können das Symptom überdecken, die Lösung ist eine einheitliche Kodierung."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Die fünf Pflichtzeichen — und der ganze Rest",
+      "body": "Entity-Listen werden schnell lang, doch nur fünf Einträge sind wirklich verpflichtend. &amp; &lt; &gt; sind im Text wie im Attribut gefährlich; &quot; und &#x27; nur dann, wenn sie mit dem umschließenden Anführungszeichen kollidieren. Die übrigen Hunderte sind weitgehend ein Erbe der Zeit vor durchgängigem UTF-8: Heute lassen sich © und — direkt tippen. Eine Tabelle lohnt sich trotzdem, weil fremde Templates, CMS-Felder und alter Bestandscode weiter voll davon sind. Lesen können und schreiben müssen sind zwei verschiedene Dinge."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/alt-codes/",
+      "title": "Alt-Codes für Windows",
+      "desc": "Die wichtigsten Alt-Codes, um Sonderzeichen unter Windows zu tippen — vom großen Eszett ẞ über deutsche Umlaute bis zu €, © und Anführungszeichen. Klick auf ein Zeichen, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/ascii-tabelle/",
+      "title": "ASCII-Tabelle",
+      "desc": "Druckbare ASCII-Zeichen 33–126 mit ihren Dezimal-, Hex-, Binär- und Oktalcodes. Klick auf ein Zeichen, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/copyright-marken-symbole/",
+      "title": "Copyright-, Marken- & Rechtssymbole",
+      "desc": "Jedes Copyright-, Marken- und Rechtsdokument-Symbol in Unicode — ©, ®, ™, ℠, ℗ sowie Abschnitts-, Absatz- und Verweiszeichen. Klick auf ein Symbol, um es sofort zu kopieren."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/html-entities/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/html-entities/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/html-entities/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/html-tokushu-moji/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/html-spetssimvoly/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/html-entities/"
+    }
+  ]
+}

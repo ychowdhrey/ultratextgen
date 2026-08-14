@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-nueva-zelanda",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-nueva-zelanda/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/new-zealand-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-nueva-zelanda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/new-zealand-emoji-combos/" }
+  ],
+  "title": "Emoji Nueva Zelanda: Combos 🇳🇿⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Nueva Zelanda 🇳🇿⚽ — colores de los All Whites y sets de fútbol para biografías y publicaciones. Haz clic para copiar al instante.",
+  "breadcrumb": "Combos de Emoji Nueva Zelanda",
+  "hero_h1": "Combos de Emoji Nueva Zelanda",
+  "hero_tagline": "Colores de los All Whites y sets de emojis de fútbol para los fans de Nueva Zelanda — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los fans de Nueva Zelanda combinan la bandera 🇳🇿 con el balón ⚽ y los colores de los All Whites. Vamos Kiwis — los All Whites siempre en alto. Copia un solo emoji abajo, o llévate un combo completo con un clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Nueva Zelanda",
+      "h2": "Emojis de Nueva Zelanda",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        { "char": "🇳🇿", "label": "Bandera de Nueva Zelanda" },
+        { "char": "⚽", "label": "Balón de fútbol" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "⚫", "label": "Círculo negro" },
+        { "char": "🥝", "label": "Kiwi" },
+        { "char": "🌿", "label": "Helecho" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo de Nueva Zelanda",
+      "intro": "El blanco y el negro de los All Whites.",
+      "symbols": [
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "⚫", "label": "Círculo negro" },
+        { "char": "🥝", "label": "Kiwi" },
+        { "char": "🌿", "label": "Helecho" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "All Whites",
+      "flags": ["🇳🇿", "⚽", "⚪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Kiwis",
+      "flags": ["🇳🇿", "⚽", "🥝"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blanco y Negro",
+      "flags": ["⚪", "⚫", "⚽"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Neozelandés",
+      "flags": ["🇳🇿", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "newzealandCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Nueva Zelanda",
+    "intro": "Copia un combo completo con un clic y pégalo en una biografía, una publicación o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de fans."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y tema."
+    }
+  ]
+}

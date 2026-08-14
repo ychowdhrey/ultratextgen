@@ -1,0 +1,223 @@
+{
+ "lang": "es",
+ "slug": "emoji-regalo",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-regalo/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/gift-emoji/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-regalo/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/gift-emoji/"
+  }
+ ],
+ "title": "Emoji Regalo: Copiar y Pegar 🎁 Combos de Regalos y Sorpresas",
+ "meta_description": "Copia y pega el emoji regalo 🎁, los símbolos de moño y envoltura 🎀 💝 y los combos de sorpresa 🎉 🥳 ✨ para cumpleaños y cualquier ocasión.",
+ "breadcrumb": "Emoji de Regalo",
+ "hero_h1": "Emoji Regalo",
+ "hero_tagline": "El regalo envuelto, los símbolos de moño y envoltura, y los emojis de sorpresa y celebración que acompañan cualquier obsequio. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "El emoji regalo 🎁 sirve para obsequios de todo tipo: cumpleaños, sorpresas «porque sí», detalles de agradecimiento y cualquier momento de dar algo que no está atado a una sola fecha del calendario. Esta página reúne ese set general de todo el año: el regalo envuelto y sus parientes de moño y envoltura, los emojis de sorpresa y celebración que casi siempre lo acompañan, y símbolos de fiesta neutros que combinan con cualquier obsequio. Si lo que estás armando es una publicación navideña, la sección de regalos y Santa de la página de símbolos de Navidad que enlazamos abajo es la versión temática de este mismo glifo; esta página es la de todos los días, para cualquier ocasión.",
+ "sections": [
+  {
+   "id": "gift-wrapping",
+   "label": "Regalos y Envoltura",
+   "h2": "Emojis de Regalo y Envoltura",
+   "intro": "El regalo en sí, más los emojis de moño, bolsa y sobre que lo adornan.",
+   "symbols": [
+    {
+     "char": "🎁",
+     "label": "Regalo envuelto"
+    },
+    {
+     "char": "🎀",
+     "label": "Moño"
+    },
+    {
+     "char": "💝",
+     "label": "Corazón con moño"
+    },
+    {
+     "char": "🛍️",
+     "label": "Bolsas de compras"
+    },
+    {
+     "char": "🧧",
+     "label": "Sobre rojo"
+    },
+    {
+     "char": "📦",
+     "label": "Paquete"
+    }
+   ]
+  },
+  {
+   "id": "celebration-surprise",
+   "label": "Celebración y Sorpresa",
+   "h2": "Emojis de Sorpresa y Celebración",
+   "intro": "Los emojis de reacción que van con abrir un regalo: cohetes de fiesta, confeti y pura emoción.",
+   "symbols": [
+    {
+     "char": "🎉",
+     "label": "Cohete de fiesta"
+    },
+    {
+     "char": "🎊",
+     "label": "Bola de confeti"
+    },
+    {
+     "char": "🎈",
+     "label": "Globo"
+    },
+    {
+     "char": "🥳",
+     "label": "Cara de fiesta"
+    },
+    {
+     "char": "✨",
+     "label": "Destellos"
+    },
+    {
+     "char": "🪅",
+     "label": "Piñata"
+    },
+    {
+     "char": "🤩",
+     "label": "Cara alucinada"
+    }
+   ]
+  },
+  {
+   "id": "occasion-neutral",
+   "label": "Fiesta para Cualquier Ocasión",
+   "h2": "Emojis de Fiesta sin Ocasión Fija",
+   "intro": "Sin fecha asociada: pastel, brindis y música que quedan bien en un cumpleaños, un ascenso o cualquier excusa para regalar algo.",
+   "symbols": [
+    {
+     "char": "🎂",
+     "label": "Pastel de cumpleaños"
+    },
+    {
+     "char": "🧁",
+     "label": "Cupcake"
+    },
+    {
+     "char": "🕯️",
+     "label": "Vela"
+    },
+    {
+     "char": "🥂",
+     "label": "Copas brindando"
+    },
+    {
+     "char": "🍾",
+     "label": "Botella descorchándose"
+    },
+    {
+     "char": "🪩",
+     "label": "Bola de disco"
+    },
+    {
+     "char": "🎶",
+     "label": "Notas musicales"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Regalo de Cumpleaños",
+   "flags": [
+    "🎁",
+    "🎂",
+    "🎉"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Porque Sí",
+   "flags": [
+    "🎁",
+    "💝",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sorpresa Revelada",
+   "flags": [
+    "📦",
+    "🎀",
+    "🎊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Regalo de Agradecimiento",
+   "flags": [
+    "🎁",
+    "💌",
+    "🙏"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Regalo en Efectivo",
+   "flags": [
+    "🧧",
+    "💸",
+    "🎁"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Envoltura y Moño",
+   "flags": [
+    "🎀",
+    "📦",
+    "🎁"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "giftSetsContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Combos",
+  "h2": "Combos de Emoji de Regalo",
+  "intro": "Combos de regalo listos para usar: copia el set completo con un clic y pégalo en una publicación de cumpleaños, una tarjeta o un mensaje de agradecimiento."
+ },
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-navidad/",
+   "title": "Símbolos de Navidad",
+   "desc": "El emoji de regalo propio de las fiestas, más Santa, renos y combos de saludos navideños."
+  },
+  {
+   "href": "/es/library/emojis-de-fiesta/",
+   "title": "Emojis de Fiesta y Celebración",
+   "desc": "Confeti, pastel, fuegos artificiales y brindis para cada celebración que un regalo puede marcar."
+  },
+  {
+   "href": "/es/library/emojis-de-amistad/",
+   "title": "Emojis de Amistad y Amor",
+   "desc": "Abrazos, mejores amigos y corazones de amistad para las personas a las que les regalas."
+  },
+  {
+   "href": "/es/library/significado-de-los-emojis/",
+   "title": "Guía de Significados de los Emojis",
+   "desc": "Qué transmite en realidad cada emoji en chats y pies de foto, regalos y celebraciones incluidos."
+  }
+ ]
+}

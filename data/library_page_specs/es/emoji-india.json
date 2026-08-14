@@ -1,0 +1,173 @@
+{
+  "lang": "es",
+  "slug": "emoji-india",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-india/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/india-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-india/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/india-emoji-combos/"
+    }
+  ],
+  "title": "Emoji India: Combos 🇮🇳⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji India 🇮🇳⚽: la tricolor, el loto y sets deportivos para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji India",
+  "hero_h1": "Combos de Emoji India",
+  "hero_tagline": "La tricolor, el loto y sets de emojis deportivos para los fans de India — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji India 🇮🇳 se combina con la tricolor azafrán, blanco y verde y con símbolos nacionales como el loto y el tigre. Estos combos quedan bien en biografías de hinchas, publicaciones y nombres de usuario, lo mismo para el fútbol que para el críquet. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "india-emojis",
+      "label": "India",
+      "h2": "Emojis de India",
+      "intro": "La bandera, la tricolor y los símbolos nacionales.",
+      "symbols": [
+        {
+          "char": "🇮🇳",
+          "label": "Bandera de India"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🧡",
+          "label": "Corazón naranja (azafrán)"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🏏",
+          "label": "Críquet"
+        },
+        {
+          "char": "🪷",
+          "label": "Flor de loto"
+        },
+        {
+          "char": "🐅",
+          "label": "Tigre"
+        }
+      ]
+    },
+    {
+      "id": "pride",
+      "label": "Orgullo",
+      "h2": "Emojis del orgullo indio",
+      "intro": "Colores y símbolos del orgullo nacional.",
+      "symbols": [
+        {
+          "char": "🧡",
+          "label": "Corazón naranja"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🪷",
+          "label": "Flor de loto"
+        },
+        {
+          "char": "🐅",
+          "label": "Tigre"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Fútbol de India",
+      "flags": [
+        "🇮🇳",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tricolor",
+      "flags": [
+        "🧡",
+        "🤍",
+        "💚"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tigres Azules",
+      "flags": [
+        "🐅",
+        "💙",
+        "⚽"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Jai Hind",
+      "flags": [
+        "🇮🇳",
+        "🪷",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "indiaCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de India",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

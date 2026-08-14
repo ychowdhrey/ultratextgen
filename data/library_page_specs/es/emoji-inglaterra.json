@@ -1,0 +1,169 @@
+{
+ "lang": "es",
+ "slug": "emoji-inglaterra",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-inglaterra/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/england-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-inglaterra/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/england-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽ Combos para Copiar y Pegar",
+ "meta_description": "Combos de emoji Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽ — los Three Lions, la cruz de San Jorge y sets de fútbol. Haz clic en cualquier emoji o combo para copiarlo.",
+ "breadcrumb": "Combos de Emojis de Inglaterra",
+ "hero_h1": "Combos de Emojis de Inglaterra",
+ "hero_tagline": "Los Three Lions, la cruz de San Jorge y sets de emojis de fútbol para los hinchas de Inglaterra: haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los combos de emoji Inglaterra juntan la bandera de San Jorge 🏴󠁧󠁢󠁥󠁮󠁧󠁿 con el balón ⚽ y los Three Lions. Están pensados para biografías de hinchas, publicaciones de día de partido y nombres de usuario. Copia un emoji suelto de los de abajo o llévate un set completo con un solo clic.",
+ "sections": [
+  {
+   "id": "england-emojis",
+   "label": "Inglaterra",
+   "h2": "Emojis de Inglaterra",
+   "intro": "La bandera, los leones y la rosa.",
+   "symbols": [
+    {
+     "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+     "label": "Bandera de Inglaterra"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🦁",
+     "label": "León (Three Lions)"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🌹",
+     "label": "Rosa"
+    },
+    {
+     "char": "❤️",
+     "label": "Corazón rojo"
+    },
+    {
+     "char": "🤍",
+     "label": "Corazón blanco"
+    }
+   ]
+  },
+  {
+   "id": "three-lions",
+   "label": "Three Lions",
+   "h2": "Three Lions y Emojis de Hinchas",
+   "intro": "Puro aliento para la selección inglesa.",
+   "symbols": [
+    {
+     "char": "🦁",
+     "label": "León"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de confeti"
+    },
+    {
+     "char": "📣",
+     "label": "Megáfono"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Fútbol de Inglaterra",
+   "flags": [
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "⚽",
+    "🦁"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Three Lions",
+   "flags": [
+    "🦁",
+    "⚽",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Its Coming Home",
+   "flags": [
+    "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "🏆",
+    "🎉"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Vamos Inglaterra",
+   "flags": [
+    "⚽",
+    "🦁",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "englandCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos de Inglaterra",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, publicación o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emojis del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y temática."
+  }
+ ]
+}

@@ -1,0 +1,441 @@
+{
+  "slug": "ky-tu-so",
+  "title": "Ký tự số ① ② ③ — số trong vòng tròn, số mũ, số La Mã copy dán | UltraTextGen",
+  "meta_description": "Ký tự số để copy: số trong vòng tròn ①②③, vòng tròn đen ❶❷❸, số mũ ¹²³, chỉ số dưới ₁₂₃, số La Mã ⅠⅡⅢ và số trong ngoặc ⑴⑵⑶. Chạm để copy ngay.",
+  "breadcrumb": "Ký tự số",
+  "hero_h1": "Ký tự số",
+  "hero_tagline": "① ❶ ² ₂ Ⅲ ⑷ — số trong vòng tròn, số mũ, chỉ số dưới, số La Mã, số trong ngoặc. Chạm để copy.",
+  "intro": "Đây là ký tự thật, không phải định dạng. Nhờ vậy chúng dán được vào cả những ô nhập không có chức năng đánh số: phần giới thiệu trên mạng xã hội, tên nhân vật trong game, khung chat, ô của bảng tính. Sáu nhóm dưới đây chia theo cách đánh số. Chạm vào ký tự là nó vào bộ nhớ tạm.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Số trong vòng tròn",
+      "h2": "Số trong vòng tròn",
+      "intro": "Từ 1 đến 20, dùng cho danh sách đánh số.",
+      "symbols": [
+        {
+          "char": "①",
+          "label": "Số 1 trong vòng tròn"
+        },
+        {
+          "char": "②",
+          "label": "Số 2 trong vòng tròn"
+        },
+        {
+          "char": "③",
+          "label": "Số 3 trong vòng tròn"
+        },
+        {
+          "char": "④",
+          "label": "Số 4 trong vòng tròn"
+        },
+        {
+          "char": "⑤",
+          "label": "Số 5 trong vòng tròn"
+        },
+        {
+          "char": "⑥",
+          "label": "Số 6 trong vòng tròn"
+        },
+        {
+          "char": "⑦",
+          "label": "Số 7 trong vòng tròn"
+        },
+        {
+          "char": "⑧",
+          "label": "Số 8 trong vòng tròn"
+        },
+        {
+          "char": "⑨",
+          "label": "Số 9 trong vòng tròn"
+        },
+        {
+          "char": "⑩",
+          "label": "Số 10 trong vòng tròn"
+        },
+        {
+          "char": "⑪",
+          "label": "Số 11 trong vòng tròn"
+        },
+        {
+          "char": "⑫",
+          "label": "Số 12 trong vòng tròn"
+        },
+        {
+          "char": "⑬",
+          "label": "Số 13 trong vòng tròn"
+        },
+        {
+          "char": "⑭",
+          "label": "Số 14 trong vòng tròn"
+        },
+        {
+          "char": "⑮",
+          "label": "Số 15 trong vòng tròn"
+        },
+        {
+          "char": "⑯",
+          "label": "Số 16 trong vòng tròn"
+        },
+        {
+          "char": "⑰",
+          "label": "Số 17 trong vòng tròn"
+        },
+        {
+          "char": "⑱",
+          "label": "Số 18 trong vòng tròn"
+        },
+        {
+          "char": "⑲",
+          "label": "Số 19 trong vòng tròn"
+        },
+        {
+          "char": "⑳",
+          "label": "Số 20 trong vòng tròn"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Số trong vòng tròn đen",
+      "h2": "Số trong vòng tròn đen",
+      "intro": "Vòng tròn đảo màu, dùng khi cần nổi bật.",
+      "symbols": [
+        {
+          "char": "❶",
+          "label": "Số 1 vòng tròn đen"
+        },
+        {
+          "char": "❷",
+          "label": "Số 2 vòng tròn đen"
+        },
+        {
+          "char": "❸",
+          "label": "Số 3 vòng tròn đen"
+        },
+        {
+          "char": "❹",
+          "label": "Số 4 vòng tròn đen"
+        },
+        {
+          "char": "❺",
+          "label": "Số 5 vòng tròn đen"
+        },
+        {
+          "char": "❻",
+          "label": "Số 6 vòng tròn đen"
+        },
+        {
+          "char": "❼",
+          "label": "Số 7 vòng tròn đen"
+        },
+        {
+          "char": "❽",
+          "label": "Số 8 vòng tròn đen"
+        },
+        {
+          "char": "❾",
+          "label": "Số 9 vòng tròn đen"
+        },
+        {
+          "char": "❿",
+          "label": "Số 10 vòng tròn đen"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Số mũ (chỉ số trên)",
+      "h2": "Số mũ (chỉ số trên)",
+      "intro": "Dùng cho số mũ và chú thích.",
+      "symbols": [
+        {
+          "char": "⁰",
+          "label": "Số mũ 0"
+        },
+        {
+          "char": "¹",
+          "label": "Số mũ 1"
+        },
+        {
+          "char": "²",
+          "label": "Số mũ 2"
+        },
+        {
+          "char": "³",
+          "label": "Số mũ 3"
+        },
+        {
+          "char": "⁴",
+          "label": "Số mũ 4"
+        },
+        {
+          "char": "⁵",
+          "label": "Số mũ 5"
+        },
+        {
+          "char": "⁶",
+          "label": "Số mũ 6"
+        },
+        {
+          "char": "⁷",
+          "label": "Số mũ 7"
+        },
+        {
+          "char": "⁸",
+          "label": "Số mũ 8"
+        },
+        {
+          "char": "⁹",
+          "label": "Số mũ 9"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Chỉ số dưới",
+      "h2": "Chỉ số dưới",
+      "intro": "Dùng cho công thức hoá học và biến số.",
+      "symbols": [
+        {
+          "char": "₀",
+          "label": "Chỉ số dưới 0"
+        },
+        {
+          "char": "₁",
+          "label": "Chỉ số dưới 1"
+        },
+        {
+          "char": "₂",
+          "label": "Chỉ số dưới 2"
+        },
+        {
+          "char": "₃",
+          "label": "Chỉ số dưới 3"
+        },
+        {
+          "char": "₄",
+          "label": "Chỉ số dưới 4"
+        },
+        {
+          "char": "₅",
+          "label": "Chỉ số dưới 5"
+        },
+        {
+          "char": "₆",
+          "label": "Chỉ số dưới 6"
+        },
+        {
+          "char": "₇",
+          "label": "Chỉ số dưới 7"
+        },
+        {
+          "char": "₈",
+          "label": "Chỉ số dưới 8"
+        },
+        {
+          "char": "₉",
+          "label": "Chỉ số dưới 9"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Số La Mã",
+      "h2": "Số La Mã",
+      "intro": "Số La Mã gói trong một ký tự.",
+      "symbols": [
+        {
+          "char": "Ⅰ",
+          "label": "Số La Mã I"
+        },
+        {
+          "char": "Ⅱ",
+          "label": "Số La Mã II"
+        },
+        {
+          "char": "Ⅲ",
+          "label": "Số La Mã III"
+        },
+        {
+          "char": "Ⅳ",
+          "label": "Số La Mã IV"
+        },
+        {
+          "char": "Ⅴ",
+          "label": "Số La Mã V"
+        },
+        {
+          "char": "Ⅵ",
+          "label": "Số La Mã VI"
+        },
+        {
+          "char": "Ⅶ",
+          "label": "Số La Mã VII"
+        },
+        {
+          "char": "Ⅷ",
+          "label": "Số La Mã VIII"
+        },
+        {
+          "char": "Ⅸ",
+          "label": "Số La Mã IX"
+        },
+        {
+          "char": "Ⅹ",
+          "label": "Số La Mã X"
+        },
+        {
+          "char": "Ⅺ",
+          "label": "Số La Mã XI"
+        },
+        {
+          "char": "Ⅻ",
+          "label": "Số La Mã XII"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Số trong ngoặc đơn",
+      "h2": "Số trong ngoặc đơn",
+      "intro": "Đánh số ngay trong câu văn.",
+      "symbols": [
+        {
+          "char": "⑴",
+          "label": "Số (1) trong ngoặc"
+        },
+        {
+          "char": "⑵",
+          "label": "Số (2) trong ngoặc"
+        },
+        {
+          "char": "⑶",
+          "label": "Số (3) trong ngoặc"
+        },
+        {
+          "char": "⑷",
+          "label": "Số (4) trong ngoặc"
+        },
+        {
+          "char": "⑸",
+          "label": "Số (5) trong ngoặc"
+        },
+        {
+          "char": "⑹",
+          "label": "Số (6) trong ngoặc"
+        },
+        {
+          "char": "⑺",
+          "label": "Số (7) trong ngoặc"
+        },
+        {
+          "char": "⑻",
+          "label": "Số (8) trong ngoặc"
+        },
+        {
+          "char": "⑼",
+          "label": "Số (9) trong ngoặc"
+        },
+        {
+          "char": "⑽",
+          "label": "Số (10) trong ngoặc"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Câu hỏi thường gặp về ký tự số",
+  "faq": [
+    {
+      "q": "Số trong vòng tròn có bị lỗi font không?",
+      "a": "Từ ① đến ⑳ là những ký tự lâu đời, hiển thị tốt trên hầu hết máy tính và điện thoại. Từ ㉑ trở lên, hoặc ㊿, thì nhiều thiết bị chưa hỗ trợ. Không chắc về máy người nhận thì nên dừng ở ⑳."
+    },
+    {
+      "q": "Số mũ dùng vào việc gì?",
+      "a": "Dùng khi cần viết luỹ thừa ở nơi không chỉnh được định dạng — m², 10⁶ trong phần giới thiệu, trong tiêu đề email hay trong tệp CSV. Nó chỉ là hình thức chữ, không được tính như một phép toán."
+    },
+    {
+      "q": "Nên dùng Ⅰ hay chữ I hoa cho số La Mã?",
+      "a": "Nếu chỉ cần dễ đọc thì ghép chữ hoa I, V, X là chắc chắn nhất. Ⅰ Ⅱ Ⅲ ở đây chiếm đúng một ô chữ nên hợp với cột bảng và ô giới hạn ký tự. Đổi lại, khi tìm kiếm hay sắp xếp, máy coi chúng là ký tự khác hẳn chữ cái."
+    },
+    {
+      "q": "Dán vào Excel có tính toán được không?",
+      "a": "Không. ① hay ² được coi là chữ chứ không phải số, nên không cộng và không sắp xếp theo giá trị được. Hãy để số thường ở ô cần tính, còn ký tự số thì dùng cho tiêu đề và nhãn."
+    },
+    {
+      "q": "Công cụ tìm kiếm và hashtag có nhận không?",
+      "a": "Phần lớn trường hợp chúng bị coi là ký tự khác với chữ số thường. Dùng cho đẹp thì không sao, nhưng đừng thay số trong những từ khoá bạn muốn người khác tìm ra."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Lợi thế của việc gõ được số thứ tự",
+      "body": "Chức năng đánh số của trình soạn thảo rất tiện trong tài liệu, nhưng biến mất ngay khi bạn dán đi nơi khác. Dán một danh sách vào phần giới thiệu mạng xã hội, các con số rụng sạch — vì định dạng không phải là ký tự. ①②③ thì khác: chúng là ký tự nên sống sót ở mọi ô nhập không có định dạng. Đó là lý do số trong vòng tròn phổ biến ở tên nhân vật game, phần giới thiệu, khung chat và ô bảng tính — không hẳn vì đẹp, mà vì ở đó không có định dạng để dùng."
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/library/ky-tu-dac-biet-unicode/",
+      "title": "Ký Tự Đặc Biệt Unicode",
+      "desc": "Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu hiếm. Nhấn vào ký hiệu bất kỳ để sao chép ngay."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Kí Tự Đặc Biệt — bấm là copy",
+      "desc": "Kho kí tự đặc biệt đầy đủ cho tên Free Fire, Liên Quân, bio Facebook, Instagram và caption TikTok: khung ꧁꧂, trái tim ♡, ngôi sao ✦, mũi tên ➤, hoa ✿. Bấm kí hiệu để copy, hoặc gõ chữ vào ô dưới để bọc khung tự động."
+    },
+    {
+      "href": "/vi/combo-emoji/",
+      "title": "Combo emoji copy paste — bấm là dán",
+      "desc": "Combo emoji sẵn để bio, tên và caption cùng một vibe — cute, tình yêu, dark, cool và thiên nhiên. Bấm vào combo icon để copy, hoặc gõ tên vào ô dưới rồi tự ghép combo biểu tượng cảm xúc với chữ kiểu ở hai đầu."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/vi/library/ky-tu-so/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/number-symbols/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-so/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/number-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/zahlen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-numero/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/font-angka/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/suuji-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/sutja-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/shuzi-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/number-symbols/"
+    }
+  ]
+}

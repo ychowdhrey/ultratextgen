@@ -1,0 +1,353 @@
+{
+  "slug": "symbole-znakow-zodiaku",
+  "title": "Symbole Znaków Zodiaku ♈♉♊ — Skopiuj i Wklej | UltraTextGen",
+  "meta_description": "Symbole znaków zodiaku ♈♉♊ do skopiowania: wszystkie 12 znaków, symbole planet, chińskie zwierzęta zodiaku i aspekty astrologiczne. Kliknij, aby skopiować.",
+  "breadcrumb": "Symbole Znaków Zodiaku",
+  "hero_h1": "Symbole Znaków Zodiaku",
+  "hero_tagline": "Wszystkie dwanaście znaków zodiaku jako znaki Unicode, a do tego planety, chińskie zwierzęta zodiaku i klasyczne aspekty.",
+  "intro": "Symbole zodiaku to prawdziwe znaki Unicode, nie obrazki, i nie wymagają żadnej czcionki. Działają w bio na Instagramie, w nicku na Discordzie, w notatkach i wiadomościach. Kliknij symbol, aby go skopiować.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "western",
+      "label": "Znaki Zodiaku",
+      "h2": "Znaki Zodiaku",
+      "intro": "Dwanaście znaków wraz z zakresami dat.",
+      "symbols": [
+        {
+          "char": "♈",
+          "label": "Baran (21 marca – 19 kwietnia)"
+        },
+        {
+          "char": "♉",
+          "label": "Byk (20 kwietnia – 20 maja)"
+        },
+        {
+          "char": "♊",
+          "label": "Bliźnięta (21 maja – 20 czerwca)"
+        },
+        {
+          "char": "♋",
+          "label": "Rak (21 czerwca – 22 lipca)"
+        },
+        {
+          "char": "♌",
+          "label": "Lew (23 lipca – 22 sierpnia)"
+        },
+        {
+          "char": "♍",
+          "label": "Panna (23 sierpnia – 22 września)"
+        },
+        {
+          "char": "♎",
+          "label": "Waga (23 września – 22 października)"
+        },
+        {
+          "char": "♏",
+          "label": "Skorpion (23 października – 21 listopada)"
+        },
+        {
+          "char": "♐",
+          "label": "Strzelec (22 listopada – 21 grudnia)"
+        },
+        {
+          "char": "♑",
+          "label": "Koziorożec (22 grudnia – 19 stycznia)"
+        },
+        {
+          "char": "♒",
+          "label": "Wodnik (20 stycznia – 18 lutego)"
+        },
+        {
+          "char": "♓",
+          "label": "Ryby (19 lutego – 20 marca)"
+        },
+        {
+          "char": "⛎",
+          "label": "Wężownik (30 lis. – 17 gru., nieoficjalny)"
+        }
+      ]
+    },
+    {
+      "id": "planets",
+      "label": "Symbole Planet i Ciał Niebieskich",
+      "h2": "Symbole Planet i Ciał Niebieskich",
+      "intro": "Słońce, Księżyc i klasyczne symbole planet.",
+      "symbols": [
+        {
+          "char": "☉",
+          "label": "Słońce"
+        },
+        {
+          "char": "☽",
+          "label": "Pierwsza kwadra"
+        },
+        {
+          "char": "☾",
+          "label": "Ostatnia kwadra"
+        },
+        {
+          "char": "☿",
+          "label": "Merkury"
+        },
+        {
+          "char": "♀",
+          "label": "Wenus"
+        },
+        {
+          "char": "♁",
+          "label": "Ziemia"
+        },
+        {
+          "char": "♂",
+          "label": "Mars"
+        },
+        {
+          "char": "♃",
+          "label": "Jowisz"
+        },
+        {
+          "char": "♄",
+          "label": "Saturn"
+        },
+        {
+          "char": "♅",
+          "label": "Uran"
+        },
+        {
+          "char": "♆",
+          "label": "Neptun"
+        },
+        {
+          "char": "♇",
+          "label": "Pluton"
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "label": "Chińskie Zwierzęta Zodiaku",
+      "h2": "Chińskie Zwierzęta Zodiaku",
+      "intro": "Dwanaście zwierząt kalendarza chińskiego.",
+      "symbols": [
+        {
+          "char": "🐀",
+          "label": "Szczur"
+        },
+        {
+          "char": "🐂",
+          "label": "Wół"
+        },
+        {
+          "char": "🐅",
+          "label": "Tygrys"
+        },
+        {
+          "char": "🐇",
+          "label": "Królik"
+        },
+        {
+          "char": "🐉",
+          "label": "Smok"
+        },
+        {
+          "char": "🐍",
+          "label": "Wąż"
+        },
+        {
+          "char": "🐎",
+          "label": "Koń"
+        },
+        {
+          "char": "🐐",
+          "label": "Koza"
+        },
+        {
+          "char": "🐒",
+          "label": "Małpa"
+        },
+        {
+          "char": "🐓",
+          "label": "Kogut"
+        },
+        {
+          "char": "🐕",
+          "label": "Pies"
+        },
+        {
+          "char": "🐖",
+          "label": "Świnia"
+        }
+      ]
+    },
+    {
+      "id": "aspects",
+      "label": "Symbole Aspektów Astrologicznych",
+      "h2": "Symbole Aspektów Astrologicznych",
+      "intro": "Aspekty z horoskopu.",
+      "symbols": [
+        {
+          "char": "☊",
+          "label": "Węzeł wstępujący"
+        },
+        {
+          "char": "☋",
+          "label": "Węzeł zstępujący"
+        },
+        {
+          "char": "☌",
+          "label": "Koniunkcja"
+        },
+        {
+          "char": "☍",
+          "label": "Opozycja"
+        },
+        {
+          "char": "⚹",
+          "label": "Sekstyl"
+        },
+        {
+          "char": "□",
+          "label": "Kwadratura"
+        },
+        {
+          "char": "△",
+          "label": "Trygon"
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "label": "Żywioły i Symbole Alchemiczne",
+      "h2": "Żywioły i Symbole Alchemiczne",
+      "intro": "Ogień, woda, powietrze, ziemia i znaki alchemiczne.",
+      "symbols": [
+        {
+          "char": "🜂",
+          "label": "Ogień (alchemiczny)"
+        },
+        {
+          "char": "🜄",
+          "label": "Woda (alchemiczna)"
+        },
+        {
+          "char": "🜁",
+          "label": "Powietrze (alchemiczne)"
+        },
+        {
+          "char": "🜃",
+          "label": "Ziemia (alchemiczna)"
+        },
+        {
+          "char": "△",
+          "label": "Trójkąt ognia"
+        },
+        {
+          "char": "▽",
+          "label": "Trójkąt wody"
+        },
+        {
+          "char": "🜍",
+          "label": "Siarka"
+        },
+        {
+          "char": "☿",
+          "label": "Rtęć"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Najczęstsze Pytania o Symbole Zodiaku",
+  "faq": [
+    {
+      "q": "Czy zadziałają w bio na Instagramie?",
+      "a": "Tak. To zwykłe znaki Unicode, a nie obrazki, więc wkleisz je wszędzie tam, gdzie wpisuje się tekst. W nazwie użytkownika (@) zwykle są jednak blokowane."
+    },
+    {
+      "q": "Dlaczego symbol raz jest czarny, a raz kolorowy?",
+      "a": "Jedne systemy traktują ♈ jak znak tekstowy, inne jak kolorowe emoji. To ten sam znak, różni się wyłącznie sposób rysowania."
+    },
+    {
+      "q": "Kim jest Wężownik?",
+      "a": "Ofiuchus, trzynasta konstelacja, przez którą przechodzi Słońce. Astrologia zachodnia tradycyjnie posługuje się dwunastoma znakami, dlatego jest tu oznaczony jako nieoficjalny."
+    },
+    {
+      "q": "Dlaczego symbol Merkurego pojawia się dwa razy?",
+      "a": "☿ oznacza jednocześnie planetę i alchemiczną rtęć — historycznie ten sam symbol w dwóch kontekstach."
+    },
+    {
+      "q": "Czy mogę użyć ich w nicku w grze?",
+      "a": "Gdzieniegdzie tak, ale część gier filtruje wszystko poza alfabetem łacińskim. Sprawdź przed zmianą nazwy — zmiana nicku bywa płatna."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Dlaczego Symbole Zodiaku w Ogóle Są Znakami Tekstowymi",
+      "body": "Symbole zodiaku i planet pochodzą z rękopisów astronomicznych i alchemicznych, gdzie składano je na równi z literami. Właśnie dlatego trafiły do Unicode — nie jako ozdoba, lecz po to, by dało się składać teksty astronomiczne. To tłumaczy również rozbieżności w wyglądzie: jedne systemy uznają ♈ za literę i rysują na czarno, inne za piktogram i pokazują jako kolorowe emoji."
+    }
+  ],
+  "related": [
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole gwiazdek — kolekcja (kopiuj i wklej)",
+      "desc": "Zbiór symboli gwiazdek, iskierek oraz znaków asterysku Unicode w różnej liczbie ramion i stylach. Od podsta…"
+    },
+    {
+      "href": "/pl/library/emoji-combos/",
+      "title": "Kombinacje emoji do kopiowania",
+      "desc": "100+ gotowych zestawów emoji, które nadają Twojemu bio, statusowi i opisom jeden klimat — coquette, cottage…"
+    },
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Cały alfabet grecki — wielkie i małe litery oraz warianty matematyczne — gotowy do skopiowania."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "pl",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/sternzeichen-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/znaki-zodiaka/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-cung-hoang-dao/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/seiza-kigou/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-astrologiques/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/byeoljari-giho/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/zodiac-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    }
+  ]
+}

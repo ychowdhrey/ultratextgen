@@ -1,0 +1,290 @@
+{
+  "slug": "emoji-cium",
+  "title": "Emoji Cium 😘 💋 — Salin & Tempel Kombinasi Ciuman | UltraTextGen",
+  "meta_description": "Emoji cium 😘 💋 👄, wajah mencium, bekas lipstik, dan kaomoji genit seperti ( ˘ ³˘) buat chat, komentar, dan DM. Klik simbolnya, langsung kesalin.",
+  "breadcrumb": "Emoji Cium",
+  "hero_h1": "Emoji Cium & Kaomoji",
+  "hero_tagline": "Kecupan jarak jauh, wajah mencium, bekas lipstik, dan kaomoji monyong — segala cara ngirim ciuman lewat teks. Klik simbolnya, langsung kesalin.",
+  "intro": "Emoji cium datang dalam satu rentang genit: 😘 wajah yang meniupkan ciuman berbentuk hati kecil, 😗 wajah mencium yang lebih kalem, dan 💋 bekas lipstik yang kamu tinggalkan di akhir pesan. Halaman ini ngumpulin semua wajah mencium, bekas ciuman dan emoji bibir 👄, emoji pasangan buat pasangan romantis, plus kaomoji ciuman klasik kayak ( ˘ ³˘) yang nempel di mana pun teks polos masuk. Ambil satu simbol, atau salin kombinasi jadi buat chat, komentar, dan DM.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "kissing-faces",
+      "label": "Wajah Mencium",
+      "h2": "Emoji Wajah Mencium",
+      "intro": "Wajah cium intinya, dari kecupan berhati sampai kecupan mata terpejam yang lembut.",
+      "symbols": [
+        {
+          "char": "😘",
+          "label": "Meniupkan Ciuman"
+        },
+        {
+          "char": "😗",
+          "label": "Wajah Mencium"
+        },
+        {
+          "char": "😙",
+          "label": "Mencium Mata Berbinar"
+        },
+        {
+          "char": "😚",
+          "label": "Mencium Mata Terpejam"
+        },
+        {
+          "char": "😽",
+          "label": "Kucing Mencium"
+        }
+      ]
+    },
+    {
+      "id": "kiss-marks-mouths",
+      "label": "Bekas Cium & Bibir",
+      "h2": "Bekas Ciuman, Bibir & Mulut",
+      "intro": "Cap lipstik dan emoji bibir yang menutup pesan dengan kecupan.",
+      "symbols": [
+        {
+          "char": "💋",
+          "label": "Bekas Ciuman"
+        },
+        {
+          "char": "👄",
+          "label": "Bibir"
+        },
+        {
+          "char": "🫦",
+          "label": "Gigit Bibir"
+        },
+        {
+          "char": "👅",
+          "label": "Lidah"
+        }
+      ]
+    },
+    {
+      "id": "romantic-pairings",
+      "label": "Pasangan",
+      "h2": "Emoji Pasangan & Romantis",
+      "intro": "Pasangan berciuman dan wajah bermata hati buat momen yang satu ciuman aja belum cukup.",
+      "symbols": [
+        {
+          "char": "💏",
+          "label": "Ciuman"
+        },
+        {
+          "char": "💑",
+          "label": "Pasangan Berhati"
+        },
+        {
+          "char": "😍",
+          "label": "Mata Berbentuk Hati"
+        },
+        {
+          "char": "🥰",
+          "label": "Senyum Dikelilingi Hati"
+        },
+        {
+          "char": "💕",
+          "label": "Dua Hati"
+        }
+      ]
+    },
+    {
+      "id": "kiss-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Ciuman & Wajah Teks",
+      "intro": "Wajah teks ala Jepang yang monyong, mengecup, dan meniupkan ciuman pakai teks biasa.",
+      "symbols": [
+        {
+          "char": "( ˘ ³˘)",
+          "label": "Kaomoji Monyong"
+        },
+        {
+          "char": "(づ￣ ³￣)づ",
+          "label": "Kaomoji Sini Cium"
+        },
+        {
+          "char": "( ˘ ³˘)♥",
+          "label": "Kaomoji Cium Berhati"
+        },
+        {
+          "char": "(*˘︶˘*).｡.:*",
+          "label": "Kaomoji Cium Manis"
+        },
+        {
+          "char": "(っ˘з˘)っ",
+          "label": "Kaomoji Kecupan"
+        },
+        {
+          "char": "( ᵔ ³ᵔ )",
+          "label": "Kaomoji Cium Cemberut"
+        },
+        {
+          "char": "(˘ ³˘)♡",
+          "label": "Kaomoji Cium Sayang"
+        },
+        {
+          "char": "( ˘ ³˘)ﾉ",
+          "label": "Kaomoji Meniup Ciuman"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Cium",
+    "intro": "Salin satu kombinasi ciuman lengkap sekali klik — dari kecupan cepat sampai mode genit total."
+  },
+  "collection_container_id": "kissSetsContainer",
+  "collections": [
+    {
+      "name": "Kirim Ciuman",
+      "flags": [
+        "😘",
+        "💋"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kecupan Manis",
+      "flags": [
+        "😗",
+        "😙",
+        "😚"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cap Lipstik",
+      "flags": [
+        "💋",
+        "👄"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chat Genit",
+      "flags": [
+        "😘",
+        "😍",
+        "💋"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Goals Banget",
+      "flags": [
+        "💏",
+        "💑",
+        "💕"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Muah",
+      "flags": [
+        "😚",
+        "💋",
+        "😘"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cinta & Ciuman",
+      "flags": [
+        "😘",
+        "🥰",
+        "💗"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "XOXO",
+      "flags": [
+        "❌",
+        "⭕",
+        "💋",
+        "❤️"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Cium di Tiap Perangkat",
+      "paragraphs": [
+        "Karakternya sama di semua HP, gambarnya yang beda — dan di keluarga ini bedanya bisa menggeser nada dari manis jadi genit. 😘 versi sebagian vendor hatinya kecil dan malu-malu, di vendor lain besar dan mencolok.",
+        "Yang paling sering ketuker itu <strong>😗, 😙, dan 😚</strong>: beberapa vendor menggambar ketiganya nyaris identik, jadi beda antara kecupan netral, kecupan ramah, dan kecupan mata terpejam hilang sama sekali. Kalau maksudnya penting, 😘 yang paling jelas kebaca sebagai mengirim ciuman.",
+        "Buat wajah cium versi <em>teks</em> yang nempel di username dan kolom tanpa emoji — ( ˘ ³˘) dan sejenisnya — lihat halaman <a href=\"/id/library/love-kaomoji/\">kaomoji cinta</a>."
+      ]
+    }
+  ],
+  "faq_h2": "Emoji Cium, Dijawab",
+  "faq": [
+    {
+      "q": "Apa bedanya 😘 sama 💋?",
+      "a": "😘 wajah yang sedang meniupkan ciuman — ada orangnya, jadi terasa personal. 💋 cuma bekas lipstiknya, tanpa wajah, jadi nadanya lebih gaya dan sering dipakai sebagai tanda tangan di akhir pesan."
+    },
+    {
+      "q": "Aman nggak kirim 😘 ke teman biasa?",
+      "a": "Tergantung kebiasaan lingkaranmu. Di banyak pertemanan Indonesia 😘 dipakai santai antar teman dekat dan nggak dibaca romantis. Kalau ragu, 😊 atau 🤗 menyampaikan kehangatan tanpa risiko salah tangkap."
+    },
+    {
+      "q": "🫦 itu artinya apa?",
+      "a": "Gigit bibir. Nadanya jauh lebih menggoda daripada emoji cium lainnya, jadi hati-hati memakainya di chat yang bukan dengan pasangan — dia jarang kebaca netral."
+    },
+    {
+      "q": "XOXO itu apa dan gimana nulisnya pakai emoji?",
+      "a": "XOXO artinya peluk dan cium — X untuk cium, O untuk peluk. Versi emojinya biasanya ❌⭕💋❤️, dan kombinasi itu sudah tersedia di atas untuk disalin sekali klik."
+    },
+    {
+      "q": "Emoji cium bisa dipakai di bio atau username?",
+      "a": "Di bio dan nama tampilan biasanya bisa; di @username hampir nggak pernah. Kalau kolomnya menolak emoji, pakai kaomoji seperti ( ˘ ³˘) — itu karakter teks biasa dan lolos di jauh lebih banyak kolom."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/love-kaomoji/",
+      "title": "Kaomoji Cinta",
+      "desc": "Wajah teks bertema cinta dan ciuman yang nempel di mana pun."
+    },
+    {
+      "href": "/id/library/simbol-love/",
+      "title": "Simbol Love & Hati",
+      "desc": "Semua hati warna-warni plus simbol hati Unicode buat disalin."
+    },
+    {
+      "href": "/id/library/emoji-wajah/",
+      "title": "Emoji Wajah",
+      "desc": "Semua emoji wajah dalam satu grid siap salin."
+    },
+    {
+      "href": "/id/library/emoji-combos/",
+      "title": "Kombinasi Emoji",
+      "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/emoji-cium/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/kiss-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-cium/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/kiss-emoji/"
+    }
+  ]
+}

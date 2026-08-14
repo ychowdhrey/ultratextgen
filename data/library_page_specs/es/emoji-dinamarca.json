@@ -1,0 +1,177 @@
+{
+  "lang": "es",
+  "slug": "emoji-dinamarca",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-dinamarca/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/denmark-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-dinamarca/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/denmark-emoji-combos/"
+    }
+  ],
+  "title": "Combos de Emoji de Dinamarca 🇩🇰⚽ Copiar y Pegar",
+  "meta_description": "Combos de emoji de Dinamarca 🇩🇰⚽: colores de la Danish Dynamite y sets de fútbol para biografías y descripciones. Copia cualquier combo al instante.",
+  "breadcrumb": "Combos de emoji de Dinamarca",
+  "hero_h1": "Combos de emoji de Dinamarca",
+  "hero_tagline": "Colores de la Danish Dynamite y sets de emoji de fútbol para la afición de Dinamarca: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los emojis de Dinamarca combinan la bandera 🇩🇰 con el balón ⚽ y los colores de la Danish Dynamite. Kom Så Danmark hace detonar la dinamita danesa. Copia un emoji suelto de abajo o llévate un combo completo con un solo clic.",
+  "sections": [
+    {
+      "id": "denmark-emojis",
+      "label": "Dinamarca",
+      "h2": "Emojis de Dinamarca",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        {
+          "char": "🇩🇰",
+          "label": "Bandera de Dinamarca"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "💥",
+          "label": "Explosión de dinamita"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de orgullo danés",
+      "intro": "El rojo y blanco de la Danish Dynamite.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Círculo rojo"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo blanco"
+        },
+        {
+          "char": "💥",
+          "label": "Explosión de dinamita"
+        },
+        {
+          "char": "❤️",
+          "label": "Corazón rojo"
+        },
+        {
+          "char": "🤍",
+          "label": "Corazón blanco"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        },
+        {
+          "char": "🔥",
+          "label": "Fuego"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Danish Dynamite",
+      "flags": [
+        "🇩🇰",
+        "⚽",
+        "💥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kom Så Danmark",
+      "flags": [
+        "🇩🇰",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rojo y blanco",
+      "flags": [
+        "🔴",
+        "⚪",
+        "🔴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo danés",
+      "flags": [
+        "🇩🇰",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "denmarkCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Dinamarca",
+    "intro": "Copia un combo completo con un solo clic y pégalo en una biografía, una descripción o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de emoji del Mundial",
+      "desc": "Sets y combos de emoji del Mundial para biografías y descripciones de la afición."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y cada tema."
+    }
+  ]
+}

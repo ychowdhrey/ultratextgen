@@ -1,0 +1,422 @@
+{
+  "slug": "discord-fuhao",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "title": "Discord 符號 ⌗ ➤ ♡ 用戶名稱與簡介裝飾複製貼上 | UltraTextGen",
+  "meta_description": "Discord 用戶名稱、頻道、簡介裝飾符號一次收齊：頻道箭頭、分隔線、愛心、括號與星星符號，全部能正常顯示。點一下就複製。",
+  "canonical": "https://ultratextgen.com/zh-tw/library/discord-fuhao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "收藏",
+  "library_url": "https://ultratextgen.com/zh-tw/library/",
+  "breadcrumb": "Discord 符號",
+  "hero_h1": "Discord 符號",
+  "hero_tagline": "用戶名稱、頻道與簡介裝飾符號，點一下就複製，全部經過測試能正常顯示。",
+  "intro": "Discord 的用戶名稱、暱稱和個人簡介都支援 Unicode 符號，很多伺服器也會用符號讓頻道列表看起來更整齊。這裡收錄的符號分成頻道箭頭、分隔線、愛心、裝飾括號與星星幾大類，都是純文字字元，貼到用戶名稱、頻道名稱或簡介都能穩定顯示，不會變成方框。",
+  "date_published": "2026-08-13",
+  "date_modified": "2026-08-13",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/discord-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/discord-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/discord-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-discord/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-discord/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-discord/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-discord/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/discord-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/discord-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-discord/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-discord/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-discord/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/discord-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-discord/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/discord-symbolen/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-discord/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/discord-symbols/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/discord-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/discord-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/discord-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "channel",
+      "label": "頻道符號",
+      "h2": "頻道與箭頭符號",
+      "intro": "伺服器管理員整理頻道列表時常用的箭頭與分層符號。",
+      "symbols": [
+        {
+          "char": "⌗",
+          "label": "井字方塊（頻道風格）"
+        },
+        {
+          "char": "➤",
+          "label": "頻道箭頭"
+        },
+        {
+          "char": "▸",
+          "label": "小型右三角"
+        },
+        {
+          "char": "│",
+          "label": "直線分隔"
+        },
+        {
+          "char": "⊹",
+          "label": "上標十字符號"
+        },
+        {
+          "char": "╭",
+          "label": "左上圓角線"
+        },
+        {
+          "char": "╰",
+          "label": "左下圓角線"
+        },
+        {
+          "char": "↳",
+          "label": "轉折箭頭"
+        },
+        {
+          "char": "⋆",
+          "label": "星號運算子"
+        },
+        {
+          "char": "◜",
+          "label": "左上弧線"
+        }
+      ]
+    },
+    {
+      "id": "hearts-dividers",
+      "label": "愛心與分隔符號",
+      "h2": "愛心與細節分隔符號",
+      "intro": "用在簡介或暱稱中間，讓文字排版更有層次。",
+      "symbols": [
+        {
+          "char": "❥",
+          "label": "愛心項目符號"
+        },
+        {
+          "char": "┊",
+          "label": "點狀直線分隔"
+        },
+        {
+          "char": "࣪",
+          "label": "組合符號點"
+        },
+        {
+          "char": "݁",
+          "label": "組合小點"
+        },
+        {
+          "char": "◎",
+          "label": "靶心符號"
+        },
+        {
+          "char": "⩩",
+          "label": "約等於符號"
+        },
+        {
+          "char": "๑",
+          "label": "泰文字母（裝飾用）"
+        },
+        {
+          "char": "໒",
+          "label": "寮文字母（裝飾用）"
+        },
+        {
+          "char": "᭡",
+          "label": "峇里文音樂符號"
+        },
+        {
+          "char": "ᥫ",
+          "label": "林布文字母（裝飾用）"
+        },
+        {
+          "char": "♥",
+          "label": "黑色愛心"
+        },
+        {
+          "char": "❣",
+          "label": "驚嘆愛心"
+        },
+        {
+          "char": "❤︎",
+          "label": "文字版愛心"
+        },
+        {
+          "char": "ෆ",
+          "label": "僧伽羅文字母（愛心造型）"
+        }
+      ]
+    },
+    {
+      "id": "brackets",
+      "label": "裝飾括號",
+      "h2": "裝飾性括號符號",
+      "intro": "把名稱或關鍵字框起來用的各式括號。",
+      "symbols": [
+        {
+          "char": "〔",
+          "label": "龜甲括號（左）"
+        },
+        {
+          "char": "〕",
+          "label": "龜甲括號（右）"
+        },
+        {
+          "char": "「",
+          "label": "左角括號"
+        },
+        {
+          "char": "」",
+          "label": "右角括號"
+        },
+        {
+          "char": "『",
+          "label": "左雙角括號"
+        },
+        {
+          "char": "』",
+          "label": "右雙角括號"
+        },
+        {
+          "char": "⌜",
+          "label": "左上直角"
+        },
+        {
+          "char": "⌝",
+          "label": "右上直角"
+        },
+        {
+          "char": "⌞",
+          "label": "左下直角"
+        },
+        {
+          "char": "⌟",
+          "label": "右下直角"
+        },
+        {
+          "char": "❪",
+          "label": "扁平左括號"
+        },
+        {
+          "char": "❫",
+          "label": "扁平右括號"
+        },
+        {
+          "char": "▬",
+          "label": "黑色矩形"
+        },
+        {
+          "char": "▭",
+          "label": "白色矩形"
+        }
+      ]
+    },
+    {
+      "id": "stars",
+      "label": "星星符號",
+      "h2": "星星與閃亮符號",
+      "intro": "點綴用戶名稱或簡介的星星系符號。",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "黑色星星"
+        },
+        {
+          "char": "☆",
+          "label": "白色星星"
+        },
+        {
+          "char": "✦",
+          "label": "黑色四角星"
+        },
+        {
+          "char": "✧",
+          "label": "白色四角星"
+        },
+        {
+          "char": "✩",
+          "label": "外框星星"
+        },
+        {
+          "char": "✨",
+          "label": "閃亮表情符號"
+        },
+        {
+          "char": "𖤐",
+          "label": "暗黑符文星（裝飾用）"
+        },
+        {
+          "char": "⭒",
+          "label": "外框小星星"
+        },
+        {
+          "char": "⭑",
+          "label": "實心小星星"
+        },
+        {
+          "char": "・",
+          "label": "片假名中點"
+        },
+        {
+          "char": "❀",
+          "label": "白色小花"
+        }
+      ]
+    },
+    {
+      "id": "lines",
+      "label": "分隔線",
+      "h2": "水平分隔線符號",
+      "intro": "用來分隔簡介段落或頻道分類的長線符號。",
+      "symbols": [
+        {
+          "char": "━",
+          "label": "粗水平線"
+        },
+        {
+          "char": "┈",
+          "label": "點狀水平線（疏）"
+        },
+        {
+          "char": "⌇",
+          "label": "波浪直線"
+        },
+        {
+          "char": "─",
+          "label": "細水平線"
+        },
+        {
+          "char": "╌",
+          "label": "雙點虛線"
+        },
+        {
+          "char": "┄",
+          "label": "三點虛線"
+        }
+      ]
+    },
+    {
+      "id": "combos",
+      "label": "裝飾組合",
+      "h2": "現成的裝飾組合",
+      "intro": "把符號組合成一串現成裝飾，直接複製貼到名稱前後就能用。",
+      "symbols": [
+        {
+          "char": "꒰ ✦ ꒱",
+          "label": "星星括號組合"
+        },
+        {
+          "char": "⋆˚࿔",
+          "label": "星芒裝飾組合"
+        },
+        {
+          "char": "★ ⩩ 𓂃 ✦",
+          "label": "星星裝飾組合"
+        },
+        {
+          "char": "⊹ ♡ ⊹",
+          "label": "愛心十字組合"
+        },
+        {
+          "char": "𓆩♡𓆪",
+          "label": "埃及風愛心框"
+        },
+        {
+          "char": "꒰꒱ ⊹",
+          "label": "括號十字組合"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Discord 符號常見問題",
+  "faq": [
+    {
+      "q": "這些符號會不會在 Discord 上顯示成方框？",
+      "a": "這裡收錄的符號都經過測試，在目前的 Discord 桌面版與手機版都能正常顯示；如果遇到顯示異常，通常是裝置字型問題，換一台裝置或更新系統字型就能解決。"
+    },
+    {
+      "q": "符號可以用在伺服器的頻道名稱上嗎？",
+      "a": "可以，Discord 的頻道名稱支援 Unicode 符號，很多伺服器會用「⌗」「➤」這類符號取代原本的「#」，讓頻道分類看起來更清楚。"
+    },
+    {
+      "q": "用戶名稱和暱稱有什麼不同？",
+      "a": "用戶名稱（username）是整個 Discord 帳號通用的識別名稱，字元限制較嚴格；暱稱（server nickname）只在單一伺服器內顯示，可以自由更換、也更能接受符號裝飾。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號",
+      "desc": "獨特 Unicode 符號的參考收藏——無限、和平、科學、法律標記等罕見符號。點一下就複製。"
+    },
+    {
+      "href": "/zh-tw/library/",
+      "title": "符號收藏",
+      "desc": "瀏覽 UltraTextGen 所有的 Unicode 符號收藏頁面。"
+    }
+  ]
+}
