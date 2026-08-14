@@ -1178,6 +1178,344 @@
       "verdict": "veto",
       "evidence": "VETO on intent mismatch plus two existing ar claimants — NOT on volume. Volume exists: رموز الكيبورد 480/mo (KD 29) + رموز لوحة المفاتيح 50/mo (KD --) = 530/mo, operator-supplied Semrush db=sa bulk export, 2026-08-14 (Semrush's `ar` code is Argentina; there is no pan-Arab database, so `sa` is the correct market here). The veto is that the EN parent does not do the job those queries ask for. library/keyboard-symbols/ is about Mac/PC modifier-key GLYPHS — its H2s are 'Mac Modifier Keys', 'Editing & Navigation Keys', 'Arrow & Special Keys', and its title leads with the key symbols themselves. Its six live locale siblings all translate that same scope faithfully (de/library/tastatur-symbole 'Mac-Modifiertasten'; ja/library/keyboard-kigou 'Mac の修飾キー'). The Arabic queries mean the opposite thing: 'symbols you cannot type FROM the keyboard', i.e. special characters. CANNIBALISATION: two ar pages already claim that job. ar/library/special-characters/ carries the H2 'رموز غير موجودة في لوحة المفاتيح' (symbols not on the keyboard) and is the locale's strongest page at 57,651 impressions / 1,783 clicks / position 6.31 over 3 months; ar/library/alt-codes/ carries 'رموز لوحة المفاتيح' in its own <title>. Translating the Mac-key page onto this term would both serve the wrong job and put a third claimant on a term the locale's best page already holds. FIRST-PARTY CHECK: GSC 3-month /ar/ pull returns no meaningful impressions on كيبورد / لوحة المفاتيح beyond four incidental rows (max 23 impressions, 0 clicks), so nothing is being starved by the absence. CARRY-FORWARD, not actioned here: the same mismatch may affect the six shipped locale siblings, whose 9,710/mo cluster figure came from terms that may likewise mean 'special characters' in those markets. Flagged for a separate pass; this entry does not touch them. USER DECISION 2026-08-14: veto recorded at the owner's explicit direction after the evidence was presented.",
       "nextRecheck": "2026-11-14"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ar",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 1055
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 1 already-live usecase/* ar page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: asmaa-pubg (PUBG Name, ~1,055/mo impr, ~54.0/mo clicks, avg pos 12.2). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ar",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 25
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 2 already-live usecase/* ar page(s), none clearing the >=1,000/mo threshold on live GSC performance: asmaa-mobile-legends (Mobile Legends Name, ~5/mo impr, ~0.0/mo clicks); khat-bio (Bio Font, ~25/mo impr, ~5.2/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "de",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 45
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 4 already-live usecase/* de page(s), none clearing the >=1,000/mo threshold on live GSC performance: stumble-guys-namensgenerator (Stumble Guys Name, ~8/mo impr, ~0.0/mo clicks); zalgo-text (Zalgo/Glitch Text, ~25/mo impr, ~0.0/mo clicks); emoji-uebersetzer (Text to Emoji, ~45/mo impr, ~0.8/mo clicks); tattoo-schrift (Tattoo Fonts, ~43/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "es",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 41186
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 2 already-live usecase/* es page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: nombres-para-free-fire (Free Fire Name, ~41,186/mo impr, ~1,941.7/mo clicks, avg pos 8.2); nombres-aesthetic (Aesthetic Instagram Names, ~11,940/mo impr, ~1,296.0/mo clicks, avg pos 5.8). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "es",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 150
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 7 already-live usecase/* es page(s), none clearing the >=1,000/mo threshold on live GSC performance: tag-de-clan-free-fire (Free Fire Clan Tag, ~3/mo impr, ~0.8/mo clicks); nombres-para-mobile-legends (Mobile Legends Name, ~10/mo impr, ~0.0/mo clicks); nombres-para-stumble-guys (Stumble Guys Name, ~150/mo impr, ~6.0/mo clicks); vertical-text (Vertical Text, ~32/mo impr, ~0.8/mo clicks); traductor-de-emojis (Text to Emoji, ~39/mo impr, ~0.0/mo clicks); nombres-de-contacto-aesthetic (Aesthetic Contact Names, ~3/mo impr, ~0.0/mo clicks); nombres-para-grupos (Group Name, ~14/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "fr",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 1538
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 1 already-live usecase/* fr page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: pseudo-fortnite (Fortnite Name, ~1,538/mo impr, ~99.0/mo clicks, avg pos 7.7). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "fr",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 58
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 7 already-live usecase/* fr page(s), none clearing the >=1,000/mo threshold on live GSC performance: pseudo-free-fire (Free Fire Name, ~4/mo impr, ~0.0/mo clicks); guilde-free-fire (Free Fire Guild Name, ~3/mo impr, ~0.0/mo clicks); ecriture-bio (Bio Font, ~28/mo impr, ~1.5/mo clicks); vertical-text (Vertical Text, ~32/mo impr, ~0.0/mo clicks); traducteur-emoji (Text to Emoji, ~47/mo impr, ~0.8/mo clicks); ecriture-tatouage (Tattoo Fonts, ~43/mo impr, ~0.8/mo clicks); nom-de-groupe (Group Name, ~58/mo impr, ~0.8/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "hi",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 193
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 2 already-live usecase/* hi page(s), none clearing the >=1,000/mo threshold on live GSC performance: free-fire-naam-stylish (Free Fire Name, ~193/mo impr, ~5.2/mo clicks); pubg-bgmi-naam-stylish (PUBG Name, ~154/mo impr, ~7.5/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "id",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 441242
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 11 already-live usecase/* id page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: nama-ff-keren (Free Fire Name, ~441,242/mo impr, ~27,226.5/mo clicks, avg pos 8.8); nama-ff-keren-cowok (Free Fire Name (boy variant), ~27,966/mo impr, ~969.0/mo clicks, avg pos 7.4); nama-ff-keren-cewek (Free Fire Name (girl variant), ~1,396/mo impr, ~28.5/mo clicks, avg pos 7.9); nama-guild-ff-keren (Free Fire Guild Name, ~11,525/mo impr, ~215.2/mo clicks, avg pos 6.5); nama-ml-keren (Mobile Legends Name, ~73,634/mo impr, ~5,181.0/mo clicks, avg pos 8.5); nama-ml-keren-cowok (Mobile Legends Name (boy), ~17,924/mo impr, ~895.5/mo clicks, avg pos 8.5); nama-ml-keren-girl (Mobile Legends Name (girl), ~4,730/mo impr, ~237.0/mo clicks, avg pos 7.2); nama-pubg-keren (PUBG Name, ~3,458/mo impr, ~340.5/mo clicks, avg pos 9.2); bio-tiktok-aesthetic (Bio Font (TikTok), ~4,204/mo impr, ~61.5/mo clicks, avg pos 7.1); bio-ig-aesthetic (Bio Font (Instagram), ~2,594/mo impr, ~120.0/mo clicks, avg pos 8.3); nama-ig-aesthetic (Aesthetic Instagram Names, ~68,509/mo impr, ~1,996.5/mo clicks, avg pos 7.4). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "id",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 245
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 6 already-live usecase/* id page(s), none clearing the >=1,000/mo threshold on live GSC performance: nama-squad-ml-keren (Mobile Legends Squad Name, ~245/mo impr, ~0.8/mo clicks); nama-coc-keren (Clash of Clans Name, ~110/mo impr, ~1.5/mo clicks); nama-stumble-guys-keren (Stumble Guys Name, ~15/mo impr, ~0.0/mo clicks); vertical-text (Vertical Text, ~4/mo impr, ~0.0/mo clicks); font-tato (Tattoo Fonts, ~7/mo impr, ~0.8/mo clicks); nama-grup-keren (Group Name, ~242/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "it",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 44
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 4 already-live usecase/* it page(s), none clearing the >=1,000/mo threshold on live GSC performance: zalgo-text (Zalgo/Glitch Text, ~29/mo impr, ~0.0/mo clicks); vertical-text (Vertical Text, ~4/mo impr, ~0.0/mo clicks); font-tatuaggi (Tattoo Fonts, ~17/mo impr, ~0.0/mo clicks); nomi-per-contatti-aesthetic (Aesthetic Contact Names, ~44/mo impr, ~1.5/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ja",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 56
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 1 already-live usecase/* ja page(s), none clearing the >=1,000/mo threshold on live GSC performance: bio-font (Bio Font, ~56/mo impr, ~0.8/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ko",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 11
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 1 already-live usecase/* ko page(s), none clearing the >=1,000/mo threshold on live GSC performance: vertical-text (Vertical Text, ~11/mo impr, ~3.8/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ms",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 3
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 2 already-live usecase/* ms page(s), none clearing the >=1,000/mo threshold on live GSC performance: nama-ff-hebat (Free Fire Name, ~2/mo impr, ~0.0/mo clicks); nama-ml-hebat (Mobile Legends Name, ~3/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "nl",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 45
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 2 already-live usecase/* nl page(s), none clearing the >=1,000/mo threshold on live GSC performance: zalgo-text (Zalgo/Glitch Text, ~5/mo impr, ~0.0/mo clicks); tattoo-letters (Tattoo Fonts, ~45/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pl",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 5
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 1 already-live usecase/* pl page(s), none clearing the >=1,000/mo threshold on live GSC performance: tlumacz-emoji (Text to Emoji, ~5/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pt",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 11172
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 1 already-live usecase/* pt page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: nick-ff (Free Fire Name, ~11,172/mo impr, ~366.8/mo clicks, avg pos 10.1). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pt",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 188
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 5 already-live usecase/* pt page(s), none clearing the >=1,000/mo threshold on live GSC performance: nomes-para-guilda-ff (Free Fire Guild Name, ~8/mo impr, ~0.0/mo clicks); tag-de-cla-ff (Free Fire Clan Tag, ~1/mo impr, ~0.0/mo clicks); zalgo-text (Zalgo/Glitch Text, ~188/mo impr, ~4.5/mo clicks); vertical-text (Vertical Text, ~61/mo impr, ~0.0/mo clicks); nomes-de-contato-aesthetic (Aesthetic Contact Names, ~3/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ro",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 4
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 1 already-live usecase/* ro page(s), none clearing the >=1,000/mo threshold on live GSC performance: nume-pentru-free-fire (Free Fire Name, ~4/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ru",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 161
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 1 already-live usecase/* ru page(s), none clearing the >=1,000/mo threshold on live GSC performance: zalgo-text (Zalgo/Glitch Text, ~161/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "th",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 83
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 2 already-live usecase/* th page(s), none clearing the >=1,000/mo threshold on live GSC performance: free-fire-name-generator (Free Fire Name, ~83/mo impr, ~6.8/mo clicks); mobile-legends-name-generator (Mobile Legends Name, ~14/mo impr, ~1.5/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "tr",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 1934
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 1 already-live usecase/* tr page(s), each independently clearing the >=1,000/mo threshold on its own live GSC performance: pubg-nick (PUBG Name, ~1,934/mo impr, ~84.0/mo clicks, avg pos 33.0). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "tr",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 199
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 7 already-live usecase/* tr page(s), none clearing the >=1,000/mo threshold on live GSC performance: free-fire-nick (Free Fire Name, ~80/mo impr, ~4.5/mo clicks); stumble-guys-nick (Stumble Guys Name, ~15/mo impr, ~0.0/mo clicks); biyografi-yazi-tipi (Bio Font, ~199/mo impr, ~11.2/mo clicks); zalgo-text (Zalgo/Glitch Text, ~16/mo impr, ~0.0/mo clicks); vertical-text (Vertical Text, ~3/mo impr, ~0.8/mo clicks); emoji-ceviri (Text to Emoji, ~17/mo impr, ~1.5/mo clicks); rehber-adi-estetik (Aesthetic Contact Names, ~1/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 154
+      },
+      "verdict": "gate-fail",
+      "evidence": "Covers 3 already-live usecase/* vi page(s), none clearing the >=1,000/mo threshold on live GSC performance: nick-ff (Free Fire Name, ~154/mo impr, ~0.8/mo clicks); vertical-text (Vertical Text, ~1/mo impr, ~0.0/mo clicks); dich-emoji (Text to Emoji, ~14/mo impr, ~0.0/mo clicks). Not a claim demand is zero forever -- these are genuinely thin at the required strength today. Recorded as a finding, not an action: per user direction 2026-08-11, no fold/retarget/de-index follows from this entry alone (fold is reserved for cannibalization, not underperformance) -- see the private lab repo's review-register for the standing decision and re-check date. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "guide/*",
+      "locale": "ALL",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 1424
+      },
+      "verdict": "gate-fail",
+      "evidence": "Single cross-locale entry, not per-locale, because the finding is uniform: the 3-page Discord guide trio (discord-text-formatting-explained, discord-safe-name-styling, discord-where-fonts-work) built across 28 locales (all non-EN locales except fi, which already carries its own 2026-07-26/08-02 ledger entries -- not duplicated here) totals ~1,424 impressions/mo and ~18 clicks/mo across the ENTIRE 87-page cluster combined. The EN parent itself (guide/discord-text-formatting-explained/) tops out at ~631/mo -- also under the >=1,000/mo gated-tier threshold, so this is not a translation-targeting gap, it's a content-area result that doesn't clear the bar in English either. Individual locale range: ~1-105/mo, none material. Applies to: ar, bs, cs, da, de, es, fr, hi, hr, hu, id, it, ja, ko, ms, nl, no, pl, pt, ro, ru, sk, sr, sv, th, tl, tr, vi, zh-tw. Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone. Recorded as a finding only -- no fold/retarget/de-index follows from this entry per user direction 2026-08-11 (see private lab repo review-register).",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ALL",
+      "checkedDate": "2026-08-11",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": 5
+      },
+      "verdict": "gate-fail",
+      "evidence": "usecase/valorant-name-generator/ -- 7 impressions total (EN only) across the entire 40-day window; the id/tr locale builds (usecase/valorant-name-generator translations) register zero rows at all in either the 6-day or 40-day export. Complete dead zone across every version of this page, EN included. Recorded as a finding only -- no fold/retarget/de-index follows from this entry per user direction 2026-08-11 (see private lab repo review-register). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
+      "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
     }
   ]
 }
