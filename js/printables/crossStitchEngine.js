@@ -8,6 +8,24 @@
 (function () {
   "use strict";
 
+  /* User-facing strings. printablesEngine.js carries a full I18N table; these
+     do not warrant a second copy of that machinery, so a translated page
+     overrides them from its own config the same way it already supplies
+     UTG_PRINTABLE. Every key falls back to English.
+     Note stitchOne/stitchMany are whole words, not a suffix: English pluralises
+     "stitch" -> "stitches" by appending, Spanish needs "puntada"/"puntadas". */
+  const CS_CFG = window.UTG_CROSS_STITCH || {};
+  const T = {
+    printTitle:      CS_CFG.printTitle      || "Cross-Stitch Pattern — ",
+    chartAriaPrefix: CS_CFG.chartAriaPrefix || "Cross-stitch chart for ",
+    oneStitch:       CS_CFG.oneStitch       || "= 1 stitch",
+    columnsWord:     CS_CFG.columnsWord     || "columns",
+    rowsWord:        CS_CFG.rowsWord        || "rows",
+    stitchOne:       CS_CFG.stitchOne       || "stitch",
+    stitchMany:      CS_CFG.stitchMany      || "stitches",
+    emptyHint:       CS_CFG.emptyHint       || "Type a word or name above to see its cross-stitch chart."
+  };
+
   /* ── The 5×7 stitch alphabet ──────────────────────────────────────
      Each glyph is 7 rows of a 5-character string: '1' = a stitch,
      '0' = empty. Uppercase + digits + a blank space column. This is a
@@ -157,7 +175,7 @@
       : '<g stroke="' + color + '" stroke-width="' + (CELL * 0.17) +
         '" stroke-linecap="round" fill="none">' + marks + "</g>";
 
-    const aria = label ? ' role="img" aria-label="Cross-stitch chart for ' + label + '"' : ' aria-hidden="true"';
+    const aria = label ? ' role="img" aria-label="' + T.chartAriaPrefix + label + '"' : ' aria-hidden="true"';
 
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h +
       '" width="' + w + '" height="' + h + '"' + aria +
@@ -187,9 +205,9 @@
       'margin-top:0.85rem;font-size:0.85rem;font-weight:600;color:#334155;">' +
       '<span style="display:inline-flex;align-items:center;gap:0.4rem;">' +
       '<span style="display:inline-flex;width:20px;height:20px;">' + symbolSVG(color, style, 20) + "</span>" +
-      "<span>= 1 stitch</span></span>" +
-      '<span style="color:#64748b;">' + cols + " columns × " + GLYPH_ROWS + " rows · " +
-      stitches + " stitch" + (stitches === 1 ? "" : "es") + "</span>" +
+      "<span>" + T.oneStitch + "</span></span>" +
+      '<span style="color:#64748b;">' + cols + " " + T.columnsWord + " × " + GLYPH_ROWS + " " + T.rowsWord + " · " +
+      stitches + " " + (stitches === 1 ? T.stitchOne : T.stitchMany) + "</span>" +
       "</div>";
   }
 
@@ -203,7 +221,7 @@
     if (model.empty || model.cols === 0) {
       chart.innerHTML = '<p class="cross-stitch-empty" ' +
         'style="text-align:center;color:#94a3b8;font-weight:600;padding:1.5rem 0;margin:0;">' +
-        "Type a word or name above to see its cross-stitch chart.</p>";
+        T.emptyHint + "</p>";
       if (legend) legend.innerHTML = "";
       return;
     }
@@ -321,8 +339,9 @@
 
     // Legend at the bottom: symbol swatch + text.
     const stitches = countStitches(model.rows);
-    const legendText = "= 1 stitch     ·     " + model.cols + " columns × " +
-      GLYPH_ROWS + " rows · " + stitches + " stitch" + (stitches === 1 ? "" : "es");
+    const legendText = T.oneStitch + "     ·     " + model.cols + " " + T.columnsWord + " × " +
+      GLYPH_ROWS + " " + T.rowsWord + " · " + stitches + " " +
+      (stitches === 1 ? T.stitchOne : T.stitchMany);
     const symSize = 26;
     const gap = 10;
     ctx.font = "600 20px 'Plus Jakarta Sans', system-ui, sans-serif";
@@ -371,7 +390,11 @@
 
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
-    h.textContent = "Cross-Stitch Pattern — " + state.text.toUpperCase().trim();
+    /* The only user-facing string this engine generates. printablesEngine.js
+       carries a full I18N table; one string does not warrant a second copy of
+       that machinery, so a translated page overrides it from its own config
+       the same way it already supplies UTG_PRINTABLE. Falls back to English. */
+    h.textContent = T.printTitle + state.text.toUpperCase().trim();
     wrap.appendChild(h);
 
     const label = state.text.trim().replace(/"/g, "”");

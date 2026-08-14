@@ -23,19 +23,15 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhusecasel)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhusecasel)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="48" y="84" width="232" height="30" rx="9" fill="url(#ghusecasel)"/>
-    <rect x="48" y="138" width="180" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="164" width="216" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="190" width="150" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <g transform="translate(286 70)">
-      <path d="M0 30 L10 8 L20 24 L30 4 L40 24 L50 8 L60 30 Z" fill="url(#ghusecasel)"/>
-    </g></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">💡</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">💻</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghusecasel)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">📈</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="48" y="84" width="232" height="30" rx="9" fill="url(#ghusecasel)"/>
-    <rect x="48" y="138" width="180" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="164" width="216" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <rect x="48" y="190" width="150" height="12" rx="6" fill="#64748b" opacity="0.35"/>
-    <g transform="translate(286 70)">
-      <path d="M0 30 L10 8 L20 24 L30 4 L40 24 L50 8 L60 30 Z" fill="url(#ghusecasel)"/>
-    </g></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">💡</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">💻</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghusecasel)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">📈</tspan></text></g>
 </svg>

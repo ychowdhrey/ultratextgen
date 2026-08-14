@@ -1,0 +1,372 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-transporte",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-transporte/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/transport-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-transporte/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/transport-symbols/"
+    }
+  ],
+  "title": "Símbolos de Transporte 🚆 — Iconos de Vehículos y Mapas",
+  "meta_description": "Explora y copia símbolos y emojis Unicode de transporte, vehículos y viajes. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "breadcrumb": "Símbolos de Transporte y Mapas",
+  "hero_h1": "Símbolos de Transporte y Mapas",
+  "hero_tagline": "Una colección de referencia de símbolos y emojis Unicode de transporte, vehículos y viajes. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Esta biblioteca de símbolos de transporte reúne emojis de vehículos, medios de transporte, señales de tránsito y caracteres Unicode relacionados con los viajes. Están organizados por tipo de transporte: vehículos terrestres, aire y mar, tren y señalización.",
+  "sections": [
+    {
+      "id": "road",
+      "label": "",
+      "h2": "Vehículos de carretera",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚗",
+          "label": "Auto"
+        },
+        {
+          "char": "🚕",
+          "label": "Taxi"
+        },
+        {
+          "char": "🚌",
+          "label": "Autobús"
+        },
+        {
+          "char": "🚎",
+          "label": "Trolebús"
+        },
+        {
+          "char": "🏎",
+          "label": "Auto de carreras"
+        },
+        {
+          "char": "🚓",
+          "label": "Patrulla de policía"
+        },
+        {
+          "char": "🚑",
+          "label": "Ambulancia"
+        },
+        {
+          "char": "🚒",
+          "label": "Camión de bomberos"
+        },
+        {
+          "char": "🛻",
+          "label": "Camioneta pickup"
+        },
+        {
+          "char": "🚚",
+          "label": "Camión de reparto"
+        },
+        {
+          "char": "🚛",
+          "label": "Tráiler"
+        },
+        {
+          "char": "🚐",
+          "label": "Minibús"
+        },
+        {
+          "char": "🚙",
+          "label": "Camioneta SUV"
+        },
+        {
+          "char": "🛺",
+          "label": "Mototaxi"
+        },
+        {
+          "char": "🚜",
+          "label": "Tractor"
+        },
+        {
+          "char": "🚍",
+          "label": "Autobús de frente"
+        }
+      ]
+    },
+    {
+      "id": "two-wheeled",
+      "label": "",
+      "h2": "Vehículos de dos ruedas",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🏍",
+          "label": "Motocicleta"
+        },
+        {
+          "char": "🛵",
+          "label": "Scooter"
+        },
+        {
+          "char": "🚲",
+          "label": "Bicicleta"
+        },
+        {
+          "char": "🛴",
+          "label": "Monopatín"
+        },
+        {
+          "char": "🛞",
+          "label": "Rueda"
+        },
+        {
+          "char": "🛹",
+          "label": "Patineta"
+        },
+        {
+          "char": "🛼",
+          "label": "Patines"
+        },
+        {
+          "char": "🚴",
+          "label": "Persona en bicicleta"
+        },
+        {
+          "char": "🚵",
+          "label": "Ciclismo de montaña"
+        }
+      ]
+    },
+    {
+      "id": "rail",
+      "label": "",
+      "h2": "Transporte ferroviario",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚆",
+          "label": "Tren"
+        },
+        {
+          "char": "🚇",
+          "label": "Metro"
+        },
+        {
+          "char": "🚈",
+          "label": "Tren ligero"
+        },
+        {
+          "char": "🚉",
+          "label": "Estación"
+        },
+        {
+          "char": "🚊",
+          "label": "Tranvía"
+        },
+        {
+          "char": "🚝",
+          "label": "Monorriel"
+        },
+        {
+          "char": "🚞",
+          "label": "Tren de montaña"
+        },
+        {
+          "char": "🚃",
+          "label": "Vagón de tren"
+        },
+        {
+          "char": "🚄",
+          "label": "Tren de alta velocidad"
+        },
+        {
+          "char": "🚅",
+          "label": "Tren bala"
+        },
+        {
+          "char": "🚂",
+          "label": "Locomotora"
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "label": "",
+      "h2": "Símbolos de transporte aéreo",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "✈",
+          "label": "Avión"
+        },
+        {
+          "char": "🛩",
+          "label": "Avioneta"
+        },
+        {
+          "char": "🛫",
+          "label": "Despegue"
+        },
+        {
+          "char": "🛬",
+          "label": "Aterrizaje"
+        },
+        {
+          "char": "🚁",
+          "label": "Helicóptero"
+        },
+        {
+          "char": "🛸",
+          "label": "Platillo volador"
+        },
+        {
+          "char": "🚀",
+          "label": "Cohete"
+        },
+        {
+          "char": "🪂",
+          "label": "Paracaídas"
+        },
+        {
+          "char": "💺",
+          "label": "Asiento"
+        },
+        {
+          "char": "🛰",
+          "label": "Satélite"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "label": "",
+      "h2": "Símbolos de transporte marítimo",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚢",
+          "label": "Barco"
+        },
+        {
+          "char": "⛴",
+          "label": "Ferri"
+        },
+        {
+          "char": "🛳",
+          "label": "Barco de pasajeros"
+        },
+        {
+          "char": "⛵",
+          "label": "Velero"
+        },
+        {
+          "char": "🚤",
+          "label": "Lancha rápida"
+        },
+        {
+          "char": "🛶",
+          "label": "Canoa"
+        },
+        {
+          "char": "⚓",
+          "label": "Ancla"
+        },
+        {
+          "char": "🚣",
+          "label": "Bote de remos"
+        },
+        {
+          "char": "🛟",
+          "label": "Salvavidas"
+        }
+      ]
+    },
+    {
+      "id": "map-symbols",
+      "label": "",
+      "h2": "Símbolos de navegación y mapas",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🚏",
+          "label": "Parada de autobús"
+        },
+        {
+          "char": "🚥",
+          "label": "Semáforo horizontal"
+        },
+        {
+          "char": "🚦",
+          "label": "Semáforo vertical"
+        },
+        {
+          "char": "🚧",
+          "label": "Zona en construcción"
+        },
+        {
+          "char": "⛽",
+          "label": "Surtidor de gasolina"
+        },
+        {
+          "char": "🛤",
+          "label": "Vía de tren"
+        },
+        {
+          "char": "🛣",
+          "label": "Autopista"
+        },
+        {
+          "char": "🗺",
+          "label": "Mapa del mundo"
+        },
+        {
+          "char": "🧭",
+          "label": "Brújula"
+        },
+        {
+          "char": "📍",
+          "label": "Pin de ubicación"
+        },
+        {
+          "char": "🗾",
+          "label": "Mapa de Japón"
+        },
+        {
+          "char": "🌐",
+          "label": "Globo terráqueo"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Explorador de Emojis de Banderas",
+      "desc": "Las 195 banderas de países organizadas por región para consultarlas y copiarlas rápido."
+    },
+    {
+      "href": "/es/library/simbolos-del-clima/",
+      "title": "Símbolos del Clima",
+      "desc": "Símbolos y emojis Unicode de sol, lluvia, nieve y fenómenos atmosféricos."
+    },
+    {
+      "href": "/es/library/simbolos-de-moneda/",
+      "title": "Símbolos de Moneda",
+      "desc": "Signos de monedas del mundo y símbolos Unicode monetarios."
+    },
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Colección de Símbolos de Manos",
+      "desc": "Manos que señalan, gestos y emojis para contar con los dedos."
+    }
+  ]
+}

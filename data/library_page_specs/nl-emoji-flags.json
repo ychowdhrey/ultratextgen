@@ -1,0 +1,201 @@
+{
+  "slug": "emoji-vlaggen",
+  "title": "Vlaggen Emoji — Alle Landenvlaggen Kopiëren en Plakken",
+  "meta_description": "Nederlandse vlag 🇳🇱 en alle landenvlaggen als emoji. Klik op een vlag om te kopiëren en plak hem in je bio, naam of bericht. Ook complete vlaggensets.",
+  "breadcrumb": "Vlaggen Emoji",
+  "hero_h1": "Vlaggen Emoji — Alle Landenvlaggen",
+  "hero_tagline": "Klik op een vlag en hij staat meteen op je klembord: de Nederlandse vlag, België, Duitsland en elk ander land. Plakken in je bio, weergavenaam, caption of bericht — zonder app.",
+  "intro": "Elke landenvlag is één klik weg. Blader door de vlaggen van bijna 200 landen, filter op werelddeel en kopieer elke vlagemoji direct. Vlaggen-emoji's zijn echte Unicode-tekens en geen plaatjes, dus je plakt ze net als gewone tekst in posts, bio's, captions en berichten op WhatsApp, Instagram, TikTok, Discord en Telegram — en in naamvelden van games. Bovenaan staan de Nederlandse vlag en de meestgezochte landen klaar; onderaan kopieer je een hele set in één keer, zoals de EU-landen, de G20 of de Noordse landen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Populaire vlaggen",
+      "h2": "Meestgezochte vlaggen",
+      "intro": "De Nederlandse vlag en de landen die hier het vaakst worden gezocht. Klik om te kopiëren:",
+      "symbols": [
+        {
+          "char": "🇳🇱",
+          "label": "Nederland"
+        },
+        {
+          "char": "🇧🇪",
+          "label": "België"
+        },
+        {
+          "char": "🇩🇪",
+          "label": "Duitsland"
+        },
+        {
+          "char": "🇫🇷",
+          "label": "Frankrijk"
+        },
+        {
+          "char": "🇬🇧",
+          "label": "Verenigd Koninkrijk"
+        },
+        {
+          "char": "🇺🇸",
+          "label": "Verenigde Staten"
+        },
+        {
+          "char": "🇪🇸",
+          "label": "Spanje"
+        },
+        {
+          "char": "🇮🇹",
+          "label": "Italië"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "",
+      "h2": "Europese Unie · Verenigde Naties",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🇪🇺",
+          "label": "Europese Unie"
+        },
+        {
+          "char": "🇺🇳",
+          "label": "Verenigde Naties"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "",
+      "h2": "Engeland · Schotland · Wales",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "label": "Engeland"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "label": "Schotland"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+          "label": "Wales"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "",
+      "h2": "Regenboogvlag · Transgendervlag",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🏳️‍🌈",
+          "label": "Regenboogvlag"
+        },
+        {
+          "char": "🏳️‍⚧️",
+          "label": "Transgendervlag"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "",
+      "h2": "Piratenvlag · Finishvlag",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "🏁",
+          "label": "Finishvlag"
+        },
+        {
+          "char": "🚩",
+          "label": "Driehoekige vlag"
+        },
+        {
+          "char": "🏳",
+          "label": "Witte vlag"
+        },
+        {
+          "char": "🏴",
+          "label": "Zwarte vlag"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Piratenvlag"
+        },
+        {
+          "char": "🎌",
+          "label": "Gekruiste Japanse vlaggen"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Populaire vlaggen",
+  "faq": [
+    {
+      "q": "Waarom zie ik “NL” in plaats van de vlag?",
+      "a": "Dan mist je apparaat het lettertype dat vlaggen tekent. Windows toont landenvlaggen standaard niet en laat in plaats daarvan de twee letters van de landcode zien (NL, BE, DE). Op iPhone, Android en Mac verschijnt de vlag gewoon. Het teken dat je kopieert is hoe dan ook correct: wie meeleest op een telefoon ziet de vlag wél."
+    },
+    {
+      "q": "Hoeveel tekens telt een vlagemoji?",
+      "a": "Minimaal twee. Elke vlag bestaat uit twee regioletters, dus 🇳🇱 kost in een bio van 150 tekens al 2 tekens van je tekenlimiet. Sommige naamvelden in games en apps rekenen strenger (4 per vlag) of weigeren emoji helemaal — krijg je een melding over ongeldige tekens, houd de naam dan simpel met één vlag."
+    },
+    {
+      "q": "Waarom bestaan sommige vlaggen niet als emoji?",
+      "a": "Omdat vlaggen niet los worden ontworpen: Unicode zet alleen tweeletterige ISO-landcodes om in een vlag. Heeft een gebied geen officiële landcode, dan is er ook geen vlagemoji. Engeland, Schotland en Wales zijn de paar uitzonderingen, toegevoegd via een andere techniek."
+    },
+    {
+      "q": "Werken vlaggen-emoji's in WhatsApp, Telegram en Instagram?",
+      "a": "Ja. Het zijn gewone Unicode-tekens en geen functie van één app, dus ze plakken overal: WhatsApp, Telegram, Instagram, TikTok, Discord en X. Hoe ze eruitzien bepaalt niet de app maar het apparaat van de lezer — dezelfde vlag ziet er op iPhone, Android en Windows anders uit."
+    },
+    {
+      "q": "Waarom zie ik een vierkantje in plaats van een vlag?",
+      "a": "Dan kent het emoji-lettertype van dat apparaat de vlag niet, meestal op een oudere telefoon of een systeem dat lang niet is bijgewerkt. Het teken zelf blijft intact, het kan alleen niet getekend worden — na een systeemupdate verschijnt de vlag alsnog."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "🇳🇱 is helemaal geen vlagteken",
+      "body": "🇳🇱 bestaat niet als vlagteken: het zijn Ⓝ + Ⓛ, twee regioletters die je lettertype als vlag tekent. Vandaar die letters op Windows. Unicode leende de ISO-landcodes om nooit te bepalen wat een land is — daarom ontbreken sommige vlaggen simpelweg."
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combinaties om te Kopiëren en Plakken 🦋✨ Esthetische Combo's",
+      "desc": "Kant-en-klare emoji combinaties om te kopiëren en plakken: schattig, coquette, liefde, dark en strand. Esthetische emoji combo's voor je Insta-bio, TikTok en WhatsApp — gratis."
+    },
+    {
+      "href": "/nl/library/hartjes/",
+      "title": "Hartjes Kopiëren ♡ ❤ 🖤 — Alle Hartjes-Tekens en Hart-Emoji's",
+      "desc": "Hartjes om te kopiëren en plakken: het open hartje ♡, het volle hartje ♥ (Alt+3), alle gekleurde hart-emoji's ❤ 🧡 💛 💚 💙 💜 🖤 en aesthetic hartjes als ᥫ᭡ en ୨୧ — voor je bio, naam en berichten. Eén tik om te kopiëren."
+    },
+    {
+      "href": "/nl/library/discord-symbolen/",
+      "title": "Discord Symbolen ⌗ ➤ ♡ Kopiëren voor Gebruikersnaam &amp; Bio",
+      "desc": "Discord symbolen ⌗ ➤ ♡ om te kopiëren en plakken in gebruikersnaam, weergavenaam, kanalen en bio — esthetische versieringen, scheidingstekens, hartjes en sterretjes die overal netjes worden weergegeven."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/nl/library/emoji-vlaggen/",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "lang": "nl",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/emoji-vlaggen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    }
+  ]
+}

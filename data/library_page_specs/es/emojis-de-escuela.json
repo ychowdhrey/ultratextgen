@@ -1,0 +1,168 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-escuela",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-escuela/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/school-education-emojis/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-de-escuela/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/school-education-emojis/" }
+  ],
+  "title": "Emojis de Escuela: Copia y Pega 🎓 📚 Combos de Estudio",
+  "meta_description": "Copia y pega emojis de escuela — 🎓 birrete, 📚 libros, ✏️ lápiz — con combos de estudio para publicaciones de regreso a clases y semana de exámenes.",
+  "breadcrumb": "Emojis de Escuela y Educación",
+  "hero_h1": "Emojis de Escuela y Educación",
+  "hero_tagline": "Birretes, libros, lápices y combos listos de estudio para biografías de estudiantes y publicaciones de clase. Haz clic en cualquier emoji para copiarlo al instante.",
+  "intro": "Los emojis de escuela cubren todo, desde el primer día de clases hasta la graduación. Esta página reúne el set completo de educación — 🎓 birrete, 📚 libros, ✏️ lápiz, 🔬 microscopio — organizado en secciones de útiles, logros, ciencias y horas de estudio. Los estudiantes los usan en biografías de cuentas de estudio, publicaciones de regreso a clases y chats grupales en semana de exámenes; los profes los suman a circulares y publicaciones de festejo. Abajo del todo están los combos de un clic para graduación, exámenes y estética de estudio.",
+  "sections": [
+    {
+      "id": "school-supplies",
+      "label": "Útiles",
+      "h2": "Emojis de útiles escolares",
+      "intro": "Libros, cuadernos, lápices y todo lo que va en la cartuchera.",
+      "symbols": [
+        { "char": "📚", "label": "Libros" },
+        { "char": "📖", "label": "Libro abierto" },
+        { "char": "📓", "label": "Cuaderno" },
+        { "char": "📒", "label": "Libreta" },
+        { "char": "📝", "label": "Nota" },
+        { "char": "✏️", "label": "Lápiz" },
+        { "char": "🖊️", "label": "Bolígrafo" },
+        { "char": "🖍️", "label": "Crayón" },
+        { "char": "📏", "label": "Regla" },
+        { "char": "📐", "label": "Escuadra" },
+        { "char": "✂️", "label": "Tijeras" },
+        { "char": "📎", "label": "Clip" }
+      ]
+    },
+    {
+      "id": "graduation-achievement",
+      "label": "Graduación",
+      "h2": "Emojis de graduación y logros",
+      "intro": "Birretes, diplomas y medallas para publicaciones de graduación y logros académicos.",
+      "symbols": [
+        { "char": "🎓", "label": "Birrete" },
+        { "char": "🏫", "label": "Escuela" },
+        { "char": "🎒", "label": "Mochila" },
+        { "char": "📜", "label": "Pergamino" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🏅", "label": "Medalla deportiva" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "science-subjects",
+      "label": "Materias",
+      "h2": "Emojis de ciencias y materias",
+      "intro": "Laboratorio, geografía, matemáticas y arte: un emoji para cada clase del horario.",
+      "symbols": [
+        { "char": "🔬", "label": "Microscopio" },
+        { "char": "🧪", "label": "Tubo de ensayo" },
+        { "char": "🧬", "label": "ADN" },
+        { "char": "🔭", "label": "Telescopio" },
+        { "char": "🧮", "label": "Ábaco" },
+        { "char": "🌍", "label": "Globo terráqueo (Europa y África)" },
+        { "char": "🗺️", "label": "Mapamundi" },
+        { "char": "🎨", "label": "Paleta de pintor" },
+        { "char": "🎵", "label": "Nota musical" },
+        { "char": "🔢", "label": "Números" }
+      ]
+    },
+    {
+      "id": "study-time",
+      "label": "Hora de estudiar",
+      "h2": "Emojis de estudio y exámenes",
+      "intro": "Noches de repaso, fechas de entrega y momentos de iluminación.",
+      "symbols": [
+        { "char": "⏰", "label": "Despertador" },
+        { "char": "📅", "label": "Calendario" },
+        { "char": "☕", "label": "Café" },
+        { "char": "💡", "label": "Foco" },
+        { "char": "🤓", "label": "Cara de nerd" },
+        { "char": "🧠", "label": "Cerebro" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "📊", "label": "Gráfico de barras" },
+        { "char": "✅", "label": "Marca de verificación" },
+        { "char": "🍎", "label": "Manzana roja" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Regreso a Clases",
+      "flags": ["🎒", "📚", "✏️", "🏫", "🍎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Día de Graduación",
+      "flags": ["🎓", "📜", "🎉", "🥳", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bio Modo Estudio",
+      "flags": ["📚", "☕", "💻", "🧠", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Semana de Exámenes",
+      "flags": ["📝", "⏰", "☕", "💪", "🍀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Clase de Ciencias",
+      "flags": ["🔬", "🧪", "🧬", "🥽", "📊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gracias, Profe",
+      "flags": ["🍎", "📚", "✏️", "💐", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modo Matemáticas",
+      "flags": ["🧮", "📐", "📏", "🔢", "✏️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estética Lectora",
+      "flags": ["📖", "🕯️", "☕", "🍂", "🤓"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "schoolSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de escuela y estudio",
+    "intro": "Copia un combo completo de estudio o de escuela con un clic — ideal para biografías de estudiantes, publicaciones de regreso a clases y semana de exámenes."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-arte/",
+      "title": "Emojis de Arte y Papelería",
+      "desc": "Lápices, paletas y emojis de herramientas creativas para cuentas de arte."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Operadores matemáticos y caracteres de notación para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emojis-de-profesiones/",
+      "title": "Emojis de Personas y Profesiones",
+      "desc": "Profesores, científicos y otros emojis de profesiones."
+    },
+    {
+      "href": "/es/library/emoji-nerd/",
+      "title": "Emoji Nerd",
+      "desc": "La cara de nerd 🤓 y los combos de memes armados con ella."
+    }
+  ]
+}

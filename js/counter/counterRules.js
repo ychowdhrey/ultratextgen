@@ -201,7 +201,16 @@
     { id: "discord-nick", platform: "discord", field: "Nickname", label: "Discord nickname", limit: 32, group: "usernames" },
     { id: "discord-status", platform: "discord", field: "Custom status", label: "Discord custom status", limit: 128, group: "bios" },
 
+    /* Telegram is the one platform here where the message limit depends on
+       what the sender pays. 4096 is still the number for everyone on a free
+       account. Telegram's Rich Text Editor, announced 2026-07-14 and gated
+       to Premium, raises a single message to 32,768 — so the free figure is
+       not wrong, it is just eight times short for a paying sender. Both are
+       listed rather than replacing one with the other, because a writer
+       picking "Telegram message" needs to know which of the two they are
+       actually writing against. */
     { id: "telegram-message", platform: "telegram", field: "Message", label: "Telegram message", limit: 4096, group: "posts" },
+    { id: "telegram-message-premium", platform: "telegram", field: "Message (Premium)", label: "Telegram message (Premium)", limit: 32768, group: "posts" },
     { id: "telegram-caption", platform: "telegram", field: "Photo/video caption", label: "Telegram photo/video caption", limit: 1024, group: "posts" },
     { id: "telegram-bio", platform: "telegram", field: "Bio", label: "Telegram bio", limit: 70, group: "bios" },
 

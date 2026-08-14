@@ -1,0 +1,94 @@
+{
+  "slug": "square-root",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "平方根符號 √：複製貼上與根號用法 | UltraTextGen",
+  "meta_description": "點一下複製平方根符號 √（U+221A），附立方根 ∛、四次方根 ∜，以及容易被誤打成打勾符號的辨析。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/square-root/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "平方根符號",
+  "hero_h1": "平方根符號（√）",
+  "hero_tagline": "根號 √ 是什麼、怎麼打——點一下就複製。",
+  "intro": "平方根符號（√，Unicode U+221A SQUARE ROOT，中文稱「根號」）用來表示一個數的平方根，例如 √9 = 3。這個符號的外型源自拉丁文 radix（根）的字首 r，經過幾世紀演變成現在的形狀，數學上也稱為 radical sign（根式符號）。Unicode 另外收錄了 ∛（立方根，U+221B）與 ∜（四次方根，U+221C），三者常一起出現在數學符號表裡。要留心的是，√ 和打勾符號 ✓ 外型相近，鍵盤或注音／拼音輸入法選字時很容易誤選——如果你要的其實是「完成」「正確」的勾選符號，請見打勾符號頁面。",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/square-root/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-akar-kuadrat/" },
+    { "lang": "ar", "href": "https://ultratextgen.com/ar/symbol/square-root/" },
+    { "lang": "da", "href": "https://ultratextgen.com/da/symbol/kvadratrodstegn/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/square-root/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/symbol/karekok-isareti/" },
+    { "lang": "th", "href": "https://ultratextgen.com/th/symbol/square-root/" },
+    { "lang": "ru", "href": "https://ultratextgen.com/ru/symbol/kvadratnyy-koren/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/raiz-quadrada/" },
+    { "lang": "ko", "href": "https://ultratextgen.com/ko/symbol/ruteu-giho/" },
+    { "lang": "ja", "href": "https://ultratextgen.com/ja/symbol/square-root/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-radice-quadrata/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-racine-carree/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-raiz-cuadrada/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/quadratwurzelzeichen/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pierwiastek-kwadratowy/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/symbol/vierkantswortel/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/square-root/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/square-root/" }
+  ],
+  "sections": [
+    {
+      "id": "square-root-sign",
+      "label": "平方根符號",
+      "h2": "平方根符號（根號）",
+      "intro": "最常用的根號本體，可直接複製貼上到計算式或文件裡。",
+      "symbols": [
+        { "char": "√", "label": "平方根符號（U+221A）" }
+      ]
+    },
+    {
+      "id": "other-roots",
+      "label": "其他次方根",
+      "h2": "立方根與四次方根",
+      "intro": "根號家族的其他成員，數學排版偶爾會用到。",
+      "symbols": [
+        { "char": "∛", "label": "立方根符號（U+221B）" },
+        { "char": "∜", "label": "四次方根符號（U+221C）" }
+      ]
+    },
+    {
+      "id": "not-a-checkmark",
+      "label": "容易搞混的符號",
+      "h2": "根號不是打勾符號",
+      "intro": "√ 和 ✓ 打勾符號外型相似，很容易在輸入法選字或截圖辨識時搞混，但兩者意義完全不同——一個是數學根式，一個是「完成／正確」的勾選標記。",
+      "symbols": [
+        { "char": "✓", "label": "打勾符號（U+2713）——不是根號" },
+        { "char": "≈", "label": "約等於（U+2248）——常與根號結果並用" }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/checkmark-symbol/",
+      "title": "打勾符號（✓ ✔）",
+      "desc": "外型與根號相近、常被誤打的勾選符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/multiplication-sign/",
+      "title": "乘號符號（×）",
+      "desc": "根號運算式裡常一起出現的乘號。"
+    },
+    {
+      "href": "/zh-tw/library/shuxue-fuhao/",
+      "title": "數學符號大全",
+      "desc": "更多數理領域常用的符號整理。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號大全",
+      "desc": "複製貼上獨特 Unicode 符號的完整整理。"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "slug": "roblox-fuhao",
+  "lang": "zh-TW",
+  "page_type": "library",
+  "title": "Roblox 符號 ✦ ⚡ ♡ 顯示名稱裝飾複製貼上 | UltraTextGen",
+  "meta_description": "Roblox 顯示名稱、簡介裝飾符號一次收齊：星星、愛心、皇冠、交叉劍與骷髏，另附隱形字元用法說明。點一下就複製。",
+  "canonical": "https://ultratextgen.com/zh-tw/library/roblox-fuhao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "收藏",
+  "library_url": "https://ultratextgen.com/zh-tw/library/",
+  "breadcrumb": "Roblox 符號",
+  "hero_h1": "Roblox 顯示名稱符號",
+  "hero_tagline": "裝飾顯示名稱、簡介和群組用的符號，點一下就複製。",
+  "intro": "Roblox 的顯示名稱和簡介都支援基本的 Unicode 符號，很多玩家會用星星、愛心或皇冠符號讓名稱看起來更特別。這裡收錄的符號都經過測試，能通過 Roblox 目前的名稱過濾機制；另外也整理了「Robux」「Premium」「已驗證」這幾個常被誤認為符號的圖示，其實是平台內建的官方標章，無法用文字複製取得。",
+  "date_published": "2026-08-13",
+  "date_modified": "2026-08-13",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/roblox-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/roblox-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-roblox/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-roblox/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-roblox/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-roblox/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/roblox-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-roblox/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-roblox/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/roblox-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-roblox/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/roblox-symbols/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/roblox-symbols/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-roblox/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/roblox-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/roblox-symbolen/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/library/simbol-roblox/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/roblox-symboler/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/roblox-fuhao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/roblox-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "decor",
+      "label": "裝飾符號",
+      "h2": "基本裝飾符號",
+      "intro": "最常用來點綴顯示名稱的星星、圓點與弧線符號。",
+      "symbols": [
+        {
+          "char": "⋆",
+          "label": "六角星運算子"
+        },
+        {
+          "char": "⊹",
+          "label": "上標十字符號"
+        },
+        {
+          "char": "✦",
+          "label": "黑色四角星"
+        },
+        {
+          "char": "✧",
+          "label": "白色四角星"
+        },
+        {
+          "char": "★",
+          "label": "黑色星星"
+        },
+        {
+          "char": "☆",
+          "label": "白色星星"
+        },
+        {
+          "char": "⌒",
+          "label": "弧線符號"
+        },
+        {
+          "char": "◌",
+          "label": "組合圈號"
+        },
+        {
+          "char": "⚡",
+          "label": "閃電"
+        },
+        {
+          "char": "•",
+          "label": "項目符號"
+        }
+      ]
+    },
+    {
+      "id": "hearts-flowers",
+      "label": "愛心與花朵",
+      "h2": "愛心、花朵與可愛系符號",
+      "intro": "柔和可愛風格的名稱裝飾符號。",
+      "symbols": [
+        {
+          "char": "♡",
+          "label": "白色愛心"
+        },
+        {
+          "char": "♥",
+          "label": "黑色愛心"
+        },
+        {
+          "char": "❀",
+          "label": "白色小花"
+        },
+        {
+          "char": "✿",
+          "label": "黑色小花"
+        },
+        {
+          "char": "❁",
+          "label": "八瓣花朵"
+        },
+        {
+          "char": "ツ",
+          "label": "片假名笑臉（微笑符號）"
+        },
+        {
+          "char": "🎀",
+          "label": "蝴蝶結表情符號"
+        },
+        {
+          "char": "୨୧",
+          "label": "波浪裝飾（可愛風）"
+        },
+        {
+          "char": "ʚɞ",
+          "label": "翅膀愛心組合"
+        },
+        {
+          "char": "꒰",
+          "label": "左圓括弧"
+        },
+        {
+          "char": "꒱",
+          "label": "右圓括弧"
+        },
+        {
+          "char": "๑",
+          "label": "泰文數字一（裝飾用）"
+        },
+        {
+          "char": "ღ",
+          "label": "喬治亞字母（愛心造型）"
+        }
+      ]
+    },
+    {
+      "id": "gothic-gaming",
+      "label": "遊戲風格符號",
+      "h2": "哥德與遊戲戰鬥風符號",
+      "intro": "適合戰鬥、幫派或暗黑風格帳號的符號。",
+      "symbols": [
+        {
+          "char": "♱",
+          "label": "東敘利亞十字"
+        },
+        {
+          "char": "✟",
+          "label": "外框拉丁十字"
+        },
+        {
+          "char": "✮",
+          "label": "圓圈白星"
+        },
+        {
+          "char": "𓆩",
+          "label": "埃及符號（左）"
+        },
+        {
+          "char": "𓆪",
+          "label": "埃及符號（右）"
+        },
+        {
+          "char": "𖥔",
+          "label": "圓圈叉符號"
+        },
+        {
+          "char": "⋆˚࿔",
+          "label": "星芒裝飾組合"
+        },
+        {
+          "char": "⚔",
+          "label": "交叉劍"
+        },
+        {
+          "char": "†",
+          "label": "短劍十字"
+        },
+        {
+          "char": "☠",
+          "label": "骷髏交叉骨"
+        },
+        {
+          "char": "亗",
+          "label": "戰鬥風漢字部首"
+        },
+        {
+          "char": "☬",
+          "label": "錫克教徽（幫派標籤框）"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "label": "皇冠與狀態符號",
+      "h2": "皇冠、打勾與狀態類符號",
+      "intro": "常被用來暗示「等級」或「特殊身分」的符號——但要注意，這些只是普通文字符號，並非 Roblox 官方認證標章。",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "黑棋皇后（皇冠風）"
+        },
+        {
+          "char": "♚",
+          "label": "黑棋國王（皇冠風）"
+        },
+        {
+          "char": "👑",
+          "label": "皇冠表情符號"
+        },
+        {
+          "char": "✓",
+          "label": "打勾符號"
+        },
+        {
+          "char": "☑",
+          "label": "方框打勾"
+        },
+        {
+          "char": "💎",
+          "label": "鑽石（會員風格）"
+        },
+        {
+          "char": "☀",
+          "label": "太陽"
+        },
+        {
+          "char": "☾",
+          "label": "下弦月"
+        }
+      ]
+    },
+    {
+      "id": "invisible",
+      "label": "隱形字元",
+      "h2": "隱形字元（韓文填充・盲文空白）",
+      "intro": "這兩個是常被用來製造「空白名稱」效果的隱形字元，並非真正的空白鍵，能通過大多數平台的必填欄位檢查。",
+      "symbols": [
+        {
+          "char": "ㅤ",
+          "label": "韓文填充字元（U+3164）"
+        },
+        {
+          "char": "⠀",
+          "label": "盲文空白字元（U+2800）"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Roblox 符號常見問題",
+  "faq": [
+    {
+      "q": "這些符號在 Roblox 上真的能用嗎？",
+      "a": "能，這裡收錄的符號都是標準 Unicode 字元，符合 Roblox 目前的名稱過濾規則；但過濾規則會不定期調整，如果某個符號被擋下來，換一個試試看即可。"
+    },
+    {
+      "q": "皇冠符號可以證明我是 Premium 會員嗎？",
+      "a": "不行，👑♛這類符號單純是裝飾用的文字符號，任何人都能複製使用，跟帳號是否為 Premium 會員或是否已驗證完全無關，Roblox 官方的會員與驗證標章是系統內建圖示，無法透過文字複製取得。"
+    },
+    {
+      "q": "隱形字元可以讓名稱看起來全空白嗎？",
+      "a": "可以達到接近全空白的視覺效果，但大多數平台仍要求名稱欄位不能真的完全空白，複製表中的隱形字元通常能通過這類檢查，效果因平台版本而異。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號",
+      "desc": "獨特 Unicode 符號的參考收藏——無限、和平、科學、法律標記等罕見符號。點一下就複製。"
+    },
+    {
+      "href": "/zh-tw/library/",
+      "title": "符號收藏",
+      "desc": "瀏覽 UltraTextGen 所有的 Unicode 符號收藏頁面。"
+    }
+  ]
+}

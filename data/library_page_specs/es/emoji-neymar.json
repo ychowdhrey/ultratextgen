@@ -1,0 +1,173 @@
+{
+  "lang": "es",
+  "slug": "emoji-neymar",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-neymar/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/neymar-emoji-combos/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-neymar/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/neymar-emoji-combos/"
+    }
+  ],
+  "title": "Emoji Neymar: Combos 🇧🇷⚽🐐 para Copiar y Pegar",
+  "meta_description": "Combos de emoji Neymar 🇧🇷⚽: Brasil, joga bonito y sets del número 10 para biografías de hinchas. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Neymar",
+  "hero_h1": "Combos de Emoji Neymar",
+  "hero_tagline": "Brasil, samba y sets de emojis con clase para los fans de Neymar — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los fans de Neymar Jr mezclan la bandera de Brasil 🇧🇷 con el balón ⚽ y un toque de clase al estilo joga bonito. Estos combos quedan bien en biografías de hinchas, publicaciones y comentarios. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "neymar-emojis",
+      "label": "Neymar",
+      "h2": "Emojis de Neymar",
+      "intro": "La clase del samba y el número 10.",
+      "symbols": [
+        {
+          "char": "🇧🇷",
+          "label": "Bandera de Brasil"
+        },
+        {
+          "char": "⚽",
+          "label": "Balón de fútbol"
+        },
+        {
+          "char": "🐐",
+          "label": "Cabra (el GOAT)"
+        },
+        {
+          "char": "💎",
+          "label": "Diamante (clase)"
+        },
+        {
+          "char": "🔟",
+          "label": "Número 10"
+        },
+        {
+          "char": "🎩",
+          "label": "Sombrero de copa (jugadas)"
+        },
+        {
+          "char": "💛",
+          "label": "Corazón amarillo"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "label": "Brasil",
+      "h2": "Emojis de Brasil y del joga bonito",
+      "intro": "Los colores de la Seleção y la celebración con samba.",
+      "symbols": [
+        {
+          "char": "🇧🇷",
+          "label": "Bandera de Brasil"
+        },
+        {
+          "char": "💛",
+          "label": "Corazón amarillo"
+        },
+        {
+          "char": "💚",
+          "label": "Corazón verde"
+        },
+        {
+          "char": "🥁",
+          "label": "Tambor (samba)"
+        },
+        {
+          "char": "🎉",
+          "label": "Cañón de confeti"
+        },
+        {
+          "char": "🏆",
+          "label": "Trofeo"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Neymar Jr",
+      "flags": [
+        "🇧🇷",
+        "⚽",
+        "💎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Joga Bonito",
+      "flags": [
+        "🎩",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Brasil 10",
+      "flags": [
+        "🔟",
+        "💛",
+        "💚"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estrella de la Samba",
+      "flags": [
+        "⚽",
+        "🎉",
+        "🇧🇷"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "neymarCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Neymar",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

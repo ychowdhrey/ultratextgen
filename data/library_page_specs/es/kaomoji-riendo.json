@@ -1,0 +1,149 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-riendo",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-riendo/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/laughing-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji-riendo/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/laughing-kaomoji/"
+    }
+  ],
+  "title": "Kaomoji Riendo: Copiar y Pegar Caritas de Risa",
+  "meta_description": "Explora y copia kaomoji riendo — también escritos kamoji — caritas de texto japonesas con risitas, carcajadas y ataques de risa. Un clic y listo.",
+  "breadcrumb": "Kaomoji Riendo",
+  "hero_h1": "Kaomoji Riendo",
+  "hero_tagline": "Copia y pega kaomoji riendo — caritas de texto japonesas con risitas y carcajadas. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji riendo (también escritos kamoji) son caritas de texto japonesas atrapadas en plena risa: desde una risita chiquita hasta una carcajada enorme o un ataque de risa en el piso. Un kaomoji riendo como (≧▽≦) o ( ﾟ∀ﾟ)ｱﾊﾊ八八 es texto Unicode normal, así que se pega sin problemas en biografías, descripciones, comentarios y chats. Explora por intensidad abajo y haz clic en cualquier carita para copiarla al instante. Ya busques \"kaomoji riendo\" o \"kaomoji de risa\", todas las caritas de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "giggle",
+      "label": "Risitas",
+      "h2": "Kaomoji de risitas",
+      "intro": "Risas suaves y discretas.",
+      "symbols": [
+        {
+          "char": "(≧▽≦)",
+          "label": "Risita"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Risa suave"
+        },
+        {
+          "char": "( ˆ ▿ ˆ )",
+          "label": "Risa tranquila"
+        },
+        {
+          "char": "(๑˃ᴗ˂)",
+          "label": "Ji ji"
+        },
+        {
+          "char": "(o´∀`o)ﾟ",
+          "label": "Risita feliz"
+        },
+        {
+          "char": "ふふ(´∀`)",
+          "label": "Risa disimulada"
+        }
+      ]
+    },
+    {
+      "id": "big",
+      "label": "Carcajada",
+      "h2": "Kaomoji de carcajada",
+      "intro": "Risa fuerte y a todo pulmón.",
+      "symbols": [
+        {
+          "char": "( ﾟ∀ﾟ)ｱﾊﾊ八八",
+          "label": "JAJAJA"
+        },
+        {
+          "char": "(*≧艸≦)",
+          "label": "Muerto de risa"
+        },
+        {
+          "char": "٩(ˊᗜˋ*)و",
+          "label": "Aullando de risa"
+        },
+        {
+          "char": "ﾟ*｡ヾ(≧▽≦*)ｏ",
+          "label": "Estallando de risa"
+        },
+        {
+          "char": "ハ(＾▽＾)ノ",
+          "label": "Gran carcajada"
+        },
+        {
+          "char": "(ノ≧∀≦)ノ",
+          "label": "Carcajada"
+        }
+      ]
+    },
+    {
+      "id": "rolling",
+      "label": "Rodando",
+      "h2": "Kaomoji muertos de risa",
+      "intro": "Risas de no poder respirar, rodando por el piso.",
+      "symbols": [
+        {
+          "char": "(」・ω・)」",
+          "label": "Perdiendo el control"
+        },
+        {
+          "char": "_(:3」∠)_",
+          "label": "Rodando de risa"
+        },
+        {
+          "char": "╰(*´︶`*)╯",
+          "label": "Sin aire de tanto reír"
+        },
+        {
+          "char": "(≧∇≦)ﾉ",
+          "label": "Muriéndose de risa"
+        },
+        {
+          "char": "щ(ﾟДﾟщ)",
+          "label": "No puedo más"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de texto y kaomoji",
+      "desc": "La colección completa de kaomoji: caritas de texto japonesas de cada estado de ánimo en un solo lugar."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji felices",
+      "desc": "Caritas de texto japonesas sonrientes y llenas de alegría."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de kaomoji",
+      "desc": "Arma tu propia carita de texto: mezcla ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/es/library/crying-kaomoji/",
+      "title": "Kaomoji llorando y tristes",
+      "desc": "Para reír hasta llorar, mira también las lágrimas."
+    }
+  ]
+}

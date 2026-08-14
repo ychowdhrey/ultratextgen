@@ -1,0 +1,88 @@
+{
+  "lang": "es",
+  "slug": "kaomoji-perro",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/kaomoji-perro/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/dog-kaomoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-perro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/dog-kaomoji/" }
+  ],
+  "title": "Kaomoji Perro: Copia y Pega Caritas de Perritos Tiernos",
+  "meta_description": "Explora y copia kaomoji perro — también escrito kamoji — caritas japonesas de perritos: felices, pidiendo comida y juguetones. Copia con un clic.",
+  "breadcrumb": "Kaomoji Perro",
+  "hero_h1": "Kaomoji Perro",
+  "hero_tagline": "Copia y pega kaomoji perro — tiernas caritas japonesas de texto con orejas caídas y patitas. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji perro (también escritos kamoji) son caritas japonesas de texto armadas alrededor del hocico ᴥ o ▼ y de las orejas caídas ∪. Un kaomoji de perro como ໒(＾ᴥ＾)七 o U・ᴥ・U es texto Unicode puro, así que se pega limpio en biografías, publicaciones, comentarios y nombres de usuario. Explora por estado de ánimo abajo y haz clic en cualquier carita para copiarla al instante. Busques \"kaomoji perro\" o \"kaomoji de perrito\", todos los peluditos de aquí son gratis para copiar y pegar.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negritas, cursivas, letra manuscrita y más de 100 estilos de fuentes Unicode — gratis y al instante.",
+  "sections": [
+    {
+      "id": "happy",
+      "label": "Perro feliz",
+      "h2": "Kaomoji de perros felices",
+      "intro": "Perritos alegres moviendo la cola.",
+      "symbols": [
+        { "char": "໒(＾ᴥ＾)七", "label": "Perro feliz" },
+        { "char": "∪・ω・∪", "label": "Orejas caídas" },
+        { "char": "U・ᴥ・U", "label": "Buen chico" },
+        { "char": "▼・ᴥ・▼", "label": "Hocico arriba" },
+        { "char": "(◕ᴥ◕ʋ)", "label": "Cachorro despierto" },
+        { "char": "ヽ(^ᴥ^)ﾉ", "label": "Perro emocionado" }
+      ]
+    },
+    {
+      "id": "beg",
+      "label": "Pidiendo",
+      "h2": "Kaomoji de cachorros pidiendo",
+      "intro": "Caritas de cachorro dulces y suplicantes.",
+      "symbols": [
+        { "char": "(｡•́ᴥ•̀｡)", "label": "Ojos de cachorro" },
+        { "char": "૮ ˶ᵔ ᵕ ᵔ˶ ა", "label": "Por favor" },
+        { "char": "(❍ᴥ❍ʋ)", "label": "Ojos grandes" },
+        { "char": "U｡•́‿•̀｡U", "label": "Dame un poquito" },
+        { "char": "ʕ•ᴥ•ʔ?", "label": "Curioso" }
+      ]
+    },
+    {
+      "id": "play",
+      "label": "Juguetón",
+      "h2": "Kaomoji de perritos juguetones",
+      "intro": "Perros inquietos y listos para cualquier cosa.",
+      "symbols": [
+        { "char": "ᕦ(ᐛ)ᕡ", "label": "Listo para jugar" },
+        { "char": "(＾• ω •＾)", "label": "Animado" },
+        { "char": "∪◕ᴥ◕∪", "label": "Moviendo la cola" },
+        { "char": "ヽ(=^･ω･^=)丿", "label": "Saltarín" },
+        { "char": "U❛ᴥ❛U", "label": "Guau" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Caritas de Texto y Kaomoji",
+      "desc": "El centro completo de kaomoji — caritas japonesas de texto para cada estado de ánimo."
+    },
+    {
+      "href": "/es/library/cat-kaomoji/",
+      "title": "Kaomoji de Gato",
+      "desc": "Tiernas caritas de gato con bigotes y patitas."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generador de Kaomoji",
+      "desc": "Arma tu propia carita de texto — mezcla ojos, bocas y brazos, y cópiala."
+    },
+    {
+      "href": "/es/library/kaomoji-conejo/",
+      "title": "Kaomoji de Conejo",
+      "desc": "Tiernas caritas de conejo con orejas largas."
+    }
+  ]
+}

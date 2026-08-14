@@ -45,7 +45,7 @@
      field        which name this rule describes: 'display' or 'username'
      ============================ */
   const RULES = {
-    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display" },
+    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display", reportedBlocked: "ㅤ" },
     ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
     // Krafton publishes NO name rules for PUBG Mobile. The help centre article
     // ("How do I change my in-game nickname?", unchanged since at least 2022)
@@ -287,7 +287,12 @@
     "‹›«»❰❱❬❭❮❯" + // quotes/ornate brackets
     "™®©∞×÷✖❌" + // ™ ® © ∞ ×
     "☀☁☂☔⛱✈✻✼☘❤" + // ☀ ☁ ☂ ☔ ⛱ payung set
-    "᲼ㅤ​⠀" + // invisible fillers (ㅤ U+3164, braille blank, ZWSP)
+    // Invisible fillers. "Safe" here means "the field accepts the codepoint",
+    // NOT "every game still accepts it" — a game can start rejecting one
+    // without anything else changing. Per-game exceptions live in RULES'
+    // `reportedBlocked` (see Free Fire and U+3164), which is checked before
+    // this table so a name the game will refuse can't come back "safe".
+    "᲼ㅤ​⠀" + // ㅤ U+3164 Hangul Filler, braille blank U+2800, ZWSP
     "■□▲△▼▽●○◆◇▀▄︻︼" + // geometry / ▄▀ / ︻︼ sniper art
     "一丶丿"; // stroke marks
 
@@ -370,6 +375,12 @@
     // ch may be a multi-codepoint grapheme (base + combining marks) — classify
     // by its first codepoint, same base that carries the visible glyph.
     const base = Array.from(ch)[0] || ch;
+    // Checked before SAFE_SYMBOLS: a character can be structurally valid and
+    // still be refused by one specific game. Warn rather than fail — the
+    // reports are consistent but we have no in-game confirmation, and saying
+    // "this may be refused" is the honest claim. Saying nothing is not: a
+    // rename is paid, so a false all-clear costs the player real money.
+    if (rule.reportedBlocked && rule.reportedBlocked.indexOf(base) !== -1) return "warn";
     const cls = classifyChar(base);
     if (cls === "ascii" || cls === "space") return "pass";
     if (cls === "unknown") return "warn"; // may render as a box, client-dependent
@@ -425,6 +436,9 @@
     }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
     if (rule.strict && (safe + styled + emoji + unknown) > 0) issues.push("strict-symbols");
+    if (rule.reportedBlocked && graphemes(str || "").some(function (ch) {
+      return rule.reportedBlocked.indexOf(Array.from(ch)[0] || ch) !== -1;
+    })) issues.push("reported-blocked");
 
     // Level: fail = the game will reject it; warn = may render as boxes
     // or be rejected on some clients; ok = clears every structural rule.
@@ -439,6 +453,7 @@
     else if (
       issues.indexOf("unknown-chars") !== -1 ||
       issues.indexOf("strict-symbols") !== -1 ||
+      issues.indexOf("reported-blocked") !== -1 ||
       issues.indexOf("weight-uncertain") !== -1
     ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
@@ -494,7 +509,14 @@
     if (!mount) return;
 
     const text = cfg.text || {};
-    const issueText = text.issue || {};
+    // A page supplies its own translated issue strings. `reported-blocked` is
+    // newer than most pages' config blocks, so it falls back to English rather
+    // than rendering nothing — an untranslated warning still tells the player
+    // their rename may fail, which silence does not. Pages should override it.
+    const issueText = Object.assign(
+      { "reported-blocked": "Players report this game no longer accepts one of these characters — try another if the rename is refused." },
+      text.issue || {}
+    );
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 

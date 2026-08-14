@@ -128,13 +128,75 @@ for (const [anchor, memberSet] of clusters) {
   }
 }
 
+// ─── Cross-cluster edges ────────────────────────────────────────────────
+// A THIRD failure mode, distinct from both checks that already exist. Page A
+// names B as its sibling for locale L, but B's own hreflang="en" claims a
+// different EN parent than A's — so the two pages belong to different
+// clusters and A is advertising another cluster's page as its translation.
+//
+// Neither existing check can see it:
+//   - completeness (above) reconstructs membership from each page's own
+//     hreflang="en", so B simply isn't a member of A's cluster and the stray
+//     edge is never examined;
+//   - reciprocity (audit-hreflang.js) only asks whether the edge points both
+//     ways, and a cross-cluster edge can be perfectly two-way and still wrong.
+//
+// Real case (fixed 2026-08-08): every member of library/aesthetic-symbols
+// correctly listed it/library/simboli as its Italian page, while
+// nl/library/speciale-tekens — a member of library/special-characters —
+// listed that same Italian page as *its* Italian version, and simboli listed
+// speciale-tekens back as its Dutch version. Mutually reciprocal, and wrong
+// in both directions: it told Google two different EN pages share one
+// Italian translation.
+const crossCluster = []; // { fromRel, fromAnchor, code, toRel, toAnchor }
+
+function anchorOf(rec) {
+  if (!rec) return null;
+  if (rec.ownLang === 'en') return rec.canonical;
+  const enAlt = rec.alternates.find((a) => a.hreflang === 'en');
+  return enAlt ? enAlt.href : null;
+}
+
+for (const [, rec] of byUrl) {
+  const fromAnchor = anchorOf(rec);
+  if (!fromAnchor) continue; // headless — audit-hreflang.js reports these
+  for (const alt of rec.alternates) {
+    if (alt.hreflang === 'x-default') continue;
+    if (alt.href === rec.canonical) continue; // self-reference
+    const target = byUrl.get(alt.href);
+    if (!target) continue; // broken target — audit-hreflang.js reports these
+    const toAnchor = anchorOf(target);
+    if (!toAnchor) continue; // headless target — likewise
+    if (toAnchor !== fromAnchor) {
+      crossCluster.push({
+        fromRel: rec.rel, fromAnchor, code: alt.hreflang, toRel: target.rel, toAnchor,
+      });
+    }
+  }
+}
+
 // ─── Report ─────────────────────────────────────────────────────────────
 
 console.log('hreflang Cluster Completeness Audit');
 console.log(`  Clusters with >=2 real members:  ${[...clusters.values()].filter((s) => s.size >= 2).length}`);
 console.log(`  Pages with missing sibling entries: ${incomplete.length}`);
 console.log(`  Duplicate-page clusters (NOT auto-fixed): ${duplicateClusters.length}`);
+console.log(`  Cross-cluster edges (NOT auto-fixed):     ${crossCluster.length}`);
 console.log('');
+
+if (crossCluster.length) {
+  console.log('Cross-cluster edges — this page names a sibling that belongs to a DIFFERENT');
+  console.log('EN cluster. Two EN parents cannot share one translation. Resolve by hand:');
+  console.log('drop the stray entry, or repoint it at that locale\'s real page in this');
+  console.log('cluster (never auto-filled — which of the two is wrong is a content call):');
+  for (const c of crossCluster) {
+    console.log(`  ✗ ${c.fromRel}`);
+    console.log(`      declares hreflang="${c.code}" -> ${c.toRel}`);
+    console.log(`      but this page's cluster is ${c.fromAnchor}`);
+    console.log(`      while that page's cluster is ${c.toAnchor}`);
+  }
+  console.log('');
+}
 
 if (duplicateClusters.length) {
   console.log('Duplicate-page clusters — two+ pages claim the same locale for one EN parent.');
@@ -283,13 +345,21 @@ if (FIX && incomplete.length) {
   }
 }
 
-if (incomplete.length && !FIX) {
+// Cross-cluster edges are blocking. Unlike the duplicate-page clusters above
+// (a pre-existing content backlog this script only surfaces), this class was
+// driven to zero in the same change that added the check, so any occurrence
+// is new — and there is no legitimate case for one, since two EN parents
+// sharing a translation is always a bug on one side or the other.
+if (crossCluster.length) {
+  console.log(`❌ ${crossCluster.length} cross-cluster hreflang edge(s) — see above. Not auto-fixable.`);
+  process.exit(1);
+} else if (incomplete.length && !FIX) {
   console.log(`❌ ${incomplete.length} page(s) with incomplete hreflang cluster coverage. Run with --fix to auto-repair.`);
   process.exit(1);
 } else if (FIX && (incomplete.length - filesFixed) > 0) {
   console.log('⚠️  Some incomplete pages remain (out of scope or conflicting) — see warnings above.');
   process.exit(conflictWarnings.length || skippedOutOfScope ? 0 : 1);
 } else {
-  console.log('✅ Every hreflang cluster has full N-way coverage among its real members.');
+  console.log('✅ Every hreflang cluster has full N-way coverage among its real members, with no cross-cluster edges.');
   process.exit(0);
 }

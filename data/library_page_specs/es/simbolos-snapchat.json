@@ -1,0 +1,125 @@
+{
+  "lang": "es",
+  "slug": "simbolos-snapchat",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-snapchat/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/snapchat-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-snapchat/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/snapchat-symbols/" }
+  ],
+  "title": "Símbolos Snapchat: Copiar y Pegar 👻 ✨ Adornos y Guía de Emojis de Amigos",
+  "meta_description": "Copia y pega símbolos de Snapchat para tu nombre y biografía: fantasma 👻, destellos ✨, fuego 🔥, más una guía clara de las rachas y los emojis de amigos.",
+  "breadcrumb": "Símbolos Snapchat",
+  "hero_h1": "Símbolos Snapchat",
+  "hero_tagline": "Fantasmas, destellos, fuego y corazones para decorar tu nombre y tus publicaciones de Snapchat, más una guía clara de qué significan de verdad el fuego de la racha, el reloj de arena y los emojis de amigos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La cultura de Snapchat vive de dos tipos de símbolos. El primero es el de copiar y pegar: fantasmas 👻, destellos ✨, fuego 🔥 y corazones que la gente le agrega a su nombre, su biografía o sus publicaciones para que resalten, todos gratis aquí abajo. El segundo es el sistema propio de Emojis de Amigos de Snapchat: esas insignias pequeñas junto al nombre de un amigo que llevan la cuenta de tu racha (Snapstreak), muestran qué tan fuerte es una amistad y marcan a los amigos nuevos y los cumpleaños. Esta página cubre las dos cosas: primero un set completo de símbolos para copiar y pegar, y después una explicación honesta de cómo funcionan los emojis de amigos. Ese sistema es personalizable, así que tómalo como el clásico predeterminado de siempre y no como una tabla fija; revisa tu propio Ajustes > Emojis de amigos para ver el set que tienes ahora.",
+  "sections": [
+    {
+      "id": "bio-username-symbols",
+      "label": "Copiar y Pegar",
+      "h2": "Símbolos para tu Biografía y Nombre de Snapchat",
+      "intro": "Los símbolos decorativos exactos que más usan los snapchatters en sus nombres y biografías — el mismo set que aparece en el generador de fuentes para Snapchat.",
+      "symbols": [
+        { "char": "👻", "label": "Fantasma" },
+        { "char": "⚡", "label": "Rayo" },
+        { "char": "✨", "label": "Destellos" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "💛", "label": "Corazón amarillo" },
+        { "char": "★", "label": "Estrella" },
+        { "char": "♡", "label": "Corazón delineado" },
+        { "char": "☀", "label": "Sol" },
+        { "char": "✦", "label": "Estrella brillante" },
+        { "char": "⋆˙⟡", "label": "Adorno de destellos" }
+      ]
+    },
+    {
+      "id": "snapchat-vibe-symbols",
+      "label": "Más Símbolos de Snapchat",
+      "h2": "Símbolos de Ambiente y Publicaciones en Snapchat",
+      "intro": "Más símbolos que aparecen todo el tiempo en publicaciones, chats y biografías de Snapchat: caritas con actitud, corazones de otros colores y clásicos de las historias.",
+      "symbols": [
+        { "char": "😎", "label": "Cara sonriente con gafas de sol" },
+        { "char": "📸", "label": "Cámara con flash" },
+        { "char": "👀", "label": "Ojos" },
+        { "char": "😂", "label": "Cara llorando de risa" },
+        { "char": "❤️", "label": "Corazón rojo" },
+        { "char": "💕", "label": "Dos corazones (rosas)" },
+        { "char": "💬", "label": "Globo de diálogo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Mejores Amigos",
+      "flags": ["🔥", "💛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ambiente de Historia",
+      "flags": ["✨", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Racha de Snaps",
+      "flags": ["🔥", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Amistad Nueva",
+      "flags": ["👶", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Snap de Cumpleaños",
+      "flags": ["🎂", "🎉", "💛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Con Toda la Actitud",
+      "flags": ["😎", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "El Grupo Perfecto",
+      "flags": ["👻", "✨", "🔥"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "snapchatSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Símbolos de Snapchat",
+    "intro": "Combos de Snapchat listos para usar: copia un set completo con un clic y pégalo directo en tu biografía, una publicación o una respuesta de racha."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-corazon/",
+      "title": "Emoji de Corazón y Kaomoji",
+      "desc": "Todos los colores de corazón, sus significados y sets de combos en un solo lugar."
+    },
+    {
+      "href": "/es/library/significado-de-los-emojis/",
+      "title": "Guía de Significados de los Emojis",
+      "desc": "Lo que realmente significan los emojis populares, desde las caritas hasta los colores de corazón."
+    },
+    {
+      "href": "/es/library/emoji-gafas-de-sol/",
+      "title": "Emoji de Gafas de Sol y Kaomoji",
+      "desc": "La colección completa del emoji con gafas de sol y sus combos con actitud."
+    },
+    {
+      "href": "/snapchat/",
+      "title": "Generador de Fuentes para Snapchat",
+      "desc": "Convierte tu nombre en fuentes Unicode con estilo para Snapchat, más adornos para el nombre."
+    }
+  ]
+}

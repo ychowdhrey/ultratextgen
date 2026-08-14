@@ -1,0 +1,196 @@
+{
+ "lang": "es",
+ "slug": "simbolo-slash",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolo-slash/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolo-slash/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/slash-backslash-symbols/"
+  }
+ ],
+ "title": "Símbolo Slash y Barra Invertida: Copiar y Pegar Todas las Barras",
+ "meta_description": "Explora y copia cada barra y barra invertida: barras diagonales, variantes de backslash, barras de fracción y símbolos de división. Haz clic para copiar.",
+ "breadcrumb": "Símbolos de Barra y Barra Invertida",
+ "hero_h1": "Símbolo Slash y Barra Invertida",
+ "hero_tagline": "Todos los caracteres Unicode de barra y barra invertida: desde el solidus estándar hasta las barras de fracción, los símbolos de división y las variantes decorativas. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Esta biblioteca reúne las barras diagonales, las barras invertidas y los caracteres separadores relacionados que existen en Unicode. El humilde símbolo slash tiene muchas más variantes de las que uno imagina: desde barras de división pensadas para matemáticas hasta barras tipográficas de fracción y formas de ancho completo.",
+ "sections": [
+  {
+   "id": "forward-slashes",
+   "label": "",
+   "h2": "Variantes de la Barra Diagonal",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "/",
+     "label": "Solidus (barra diagonal)"
+    },
+    {
+     "char": "⁄",
+     "label": "Barra de fracción"
+    },
+    {
+     "char": "∕",
+     "label": "Barra de división"
+    },
+    {
+     "char": "⧸",
+     "label": "Solidus grande"
+    },
+    {
+     "char": "／",
+     "label": "Solidus de ancho completo"
+    },
+    {
+     "char": "╱",
+     "label": "Diagonal de dibujo de cajas"
+    },
+    {
+     "char": "⟋",
+     "label": "Diagonal ascendente matemática"
+    }
+   ]
+  },
+  {
+   "id": "backslashes",
+   "label": "",
+   "h2": "Variantes de la Barra Invertida",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "\\",
+     "label": "Solidus inverso (barra invertida)"
+    },
+    {
+     "char": "∖",
+     "label": "Diferencia de conjuntos"
+    },
+    {
+     "char": "⧵",
+     "label": "Operador de solidus inverso"
+    },
+    {
+     "char": "＼",
+     "label": "Barra invertida de ancho completo"
+    },
+    {
+     "char": "╲",
+     "label": "Diagonal inversa de dibujo de cajas"
+    },
+    {
+     "char": "⟍",
+     "label": "Diagonal descendente matemática"
+    },
+    {
+     "char": "﹨",
+     "label": "Barra invertida pequeña"
+    }
+   ]
+  },
+  {
+   "id": "division-math-slashes",
+   "label": "",
+   "h2": "Barras de División y Matemáticas",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "÷",
+     "label": "Signo de división"
+    },
+    {
+     "char": "∶",
+     "label": "Razón"
+    },
+    {
+     "char": "∷",
+     "label": "Proporción"
+    },
+    {
+     "char": "⧶",
+     "label": "Solidus con línea superior"
+    },
+    {
+     "char": "⫽",
+     "label": "Operador de doble solidus"
+    },
+    {
+     "char": "⧷",
+     "label": "Solidus inverso con trazo"
+    },
+    {
+     "char": "⧹",
+     "label": "Solidus inverso grande"
+    }
+   ]
+  },
+  {
+   "id": "decorative-slashes",
+   "label": "",
+   "h2": "Barras Decorativas y Especiales",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "╳",
+     "label": "Cruz diagonal fina"
+    },
+    {
+     "char": "∥",
+     "label": "Paralelo a"
+    },
+    {
+     "char": "⫴",
+     "label": "Barra vertical triple"
+    },
+    {
+     "char": "⫾",
+     "label": "Barra vertical blanca"
+    },
+    {
+     "char": "|",
+     "label": "Línea vertical"
+    },
+    {
+     "char": "‖",
+     "label": "Línea vertical doble"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-matematicos/",
+   "title": "Símbolos Matemáticos",
+   "desc": "Operadores y símbolos matemáticos para ecuaciones y notación científica."
+  },
+  {
+   "href": "/es/library/parentesis-corchetes-y-llaves/",
+   "title": "Símbolos de Paréntesis",
+   "desc": "Todos los caracteres de paréntesis, corchetes y llaves."
+  },
+  {
+   "href": "/es/library/separadores-de-texto/",
+   "title": "Símbolos Separadores de Línea",
+   "desc": "Divisores y separadores horizontales para publicaciones y formato."
+  },
+  {
+   "href": "/es/library/caracteres-especiales/",
+   "title": "Caracteres Especiales",
+   "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+  }
+ ]
+}

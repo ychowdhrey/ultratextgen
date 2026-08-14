@@ -1,0 +1,159 @@
+{
+  "lang": "es",
+  "slug": "emoji-caballito-de-mar",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-caballito-de-mar/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/seahorse-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-caballito-de-mar/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/seahorse-emoji/" }
+  ],
+  "title": "Emoji Caballito de Mar: ¿Existe? 🐴🌊 Copia las Alternativas",
+  "meta_description": "El emoji de caballito de mar no existe: es un falso recuerdo colectivo. Copia las criaturas marinas más parecidas 🐠 🦑 🐙 con un solo clic.",
+  "breadcrumb": "Emoji Caballito de Mar",
+  "hero_h1": "Emoji Caballito de Mar",
+  "hero_tagline": "No existe un emoji oficial de caballito de mar — nunca existió, por más segura que esté tu memoria. Aquí están los emojis de animales marinos y de océano más parecidos para copiar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Si buscaste el emoji caballito de mar, te topaste con uno de los falsos recuerdos favoritos de internet: no hay emoji de caballito de mar y nunca lo hubo. Unicode tiene un acuario entero — 🐠 pez tropical, 🐡 pez globo, 🦑 calamar, 🐙 pulpo, 🐳 ballena — pero el caballito de mar nunca entró, ni siquiera en las últimas versiones de emojis. Aun así muchísima gente jura recordarlo, casi siempre porque está pensando en el emoji de caballo 🐴 o porque da por hecho que todos los animales tienen su glifo. Esta página zanja la duda y reúne los emojis marinos reales más parecidos que puedes copiar ahora mismo, además de un combo casero para armar tu propio caballito de mar cuando nada más funcione.",
+  "sections": [
+    {
+      "id": "the-myth",
+      "label": "El mito",
+      "h2": "Por qué la gente cree que existe un emoji de caballito de mar",
+      "intro": "El emoji de caballito de mar es un caso clásico de efecto Mandela: un recuerdo falso compartido. La mayoría en realidad está pensando en el emoji de caballo, en una sirena, o simplemente asume que todo animal tiene su emoji.",
+      "symbols": [
+        { "char": "🐴", "label": "Cara de caballo" },
+        { "char": "🐎", "label": "Caballo" },
+        { "char": "🌊", "label": "Ola de mar" },
+        { "char": "🦄", "label": "Unicornio" },
+        { "char": "🧜‍♀️", "label": "Sirena" },
+        { "char": "❓", "label": "Signo de interrogación" }
+      ]
+    },
+    {
+      "id": "sea-creatures",
+      "label": "Animales marinos",
+      "h2": "Los emojis de animales marinos más parecidos",
+      "intro": "No hay caballito de mar, pero sí muchos animales del océano que existen como emoji. Estos son los mejores reemplazos que puedes copiar hoy.",
+      "symbols": [
+        { "char": "🐠", "label": "Pez tropical" },
+        { "char": "🐟", "label": "Pez" },
+        { "char": "🐡", "label": "Pez globo" },
+        { "char": "🐙", "label": "Pulpo" },
+        { "char": "🦑", "label": "Calamar" },
+        { "char": "🦐", "label": "Camarón" },
+        { "char": "🦞", "label": "Langosta" },
+        { "char": "🦀", "label": "Cangrejo" },
+        { "char": "🐬", "label": "Delfín" },
+        { "char": "🐳", "label": "Ballena" }
+      ]
+    },
+    {
+      "id": "ocean-water",
+      "label": "Océano y agua",
+      "h2": "Emojis de océano y agua",
+      "intro": "Arma la escena submarina con olas, caracoles, burbujas y coral — el fondo marino por el que nadaría un caballito de mar.",
+      "symbols": [
+        { "char": "🌊", "label": "Ola de mar" },
+        { "char": "🐚", "label": "Caracol de mar" },
+        { "char": "🫧", "label": "Burbujas" },
+        { "char": "🪸", "label": "Coral" },
+        { "char": "💧", "label": "Gota de agua" },
+        { "char": "⚓", "label": "Ancla" },
+        { "char": "🏝️", "label": "Isla desierta" },
+        { "char": "🌀", "label": "Espiral" }
+      ]
+    },
+    {
+      "id": "diy-seahorse",
+      "label": "Hazlo tú mismo",
+      "h2": "Arma tu propio combo de caballito de mar",
+      "intro": "¿No hay un solo glifo? Invéntalo. Junta una cabeza de caballo con una cola enroscada y algo de agua y tendrás un caballito de mar de texto bastante convincente — abajo están las piezas.",
+      "symbols": [
+        { "char": "🐴", "label": "Cara de caballo" },
+        { "char": "🌀", "label": "Espiral" },
+        { "char": "🐚", "label": "Caracol de mar" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "🌊", "label": "Ola de mar" },
+        { "char": "🫧", "label": "Burbujas" },
+        { "char": "🐡", "label": "Pez globo" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Sustituto del caballito de mar",
+      "flags": ["🐴", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caballito de mar casero",
+      "flags": ["🐴", "🌀", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bajo el mar",
+      "flags": ["🐠", "🐙", "🦑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Misterio del océano",
+      "flags": ["🌊", "❓", "🐴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Acuario",
+      "flags": ["🐠", "🐡", "🐟", "🦑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Azul profundo",
+      "flags": ["🐳", "🐬", "🦈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Poza de marea",
+      "flags": ["🐚", "🪸", "🫧", "🦐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aguas míticas",
+      "flags": ["🧜‍♀️", "🌊", "🐚"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "seahorseSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de caballito de mar y del océano",
+    "intro": "Copia un combo marino completo con un clic — lo más cercano a un emoji de caballito de mar que puedes pegar hoy."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-de-animales/",
+      "title": "Emojis de Animales",
+      "desc": "Todos los emojis de animales reales en una sola cuadrícula — incluidos los marinos a los que nunca se sumó el caballito de mar."
+    },
+    {
+      "href": "/es/library/emojis-de-naturaleza/",
+      "title": "Emojis de Naturaleza",
+      "desc": "Olas, plantas y clima para completar una escena del océano."
+    },
+    {
+      "href": "/es/library/significado-de-los-emojis/",
+      "title": "Guía de Significados de Emojis",
+      "desc": "Qué significa realmente cada emoji — y cuáles solo existen en la imaginación de la gente."
+    },
+    {
+      "href": "/es/library/emojis-de-fantasia/",
+      "title": "Emojis de Fantasía y Seres Míticos",
+      "desc": "Sirenas, dragones y unicornios para el rincón mítico del océano."
+    }
+  ]
+}

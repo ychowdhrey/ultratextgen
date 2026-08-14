@@ -198,6 +198,25 @@ for (const rel of addedFiles) {
     continue;
   }
 
+  // A ratified local-only page's documented shape is hreflang="en" pointing at
+  // the bare EN homepage as a generic placeholder (CLAUDE.md, "Ratified
+  // local-only exceptions"). That href RESOLVES, so the !enRec carve-out above
+  // never fires for it, and decide() then classifies the homepage — which is
+  // unclassified in the Core Parent Set, falls through to the gated tail, and
+  // demands a ledger entry keyed on a null pattern that no entry can ever
+  // match. Same class of bug, and same fix, as the placeholder-EN-homepage
+  // case already documented for audit-hreflang-completeness.js: the exception
+  // IS the recorded decision, so it passes here regardless of whether its
+  // placeholder happens to resolve.
+  // Verified against a deliberately unratified copy of the same page, per
+  // CLAUDE.md's "adding a validator is not the same as gating on it" rule:
+  // the copy is flagged and the script exits 1, so this is scoped to the
+  // ledger rather than a blanket bypass.
+  if (enParentExceptionUrls.has(rec.canonical)) {
+    console.log(`  ratified local-only exception (passes, placeholder EN parent): ${rel}`);
+    continue;
+  }
+
   const result = decide(enRec.rel, localeCode);
   if (!result.requiresLedgerEntry) continue; // Core-parent default-mirror path — passes silently
 

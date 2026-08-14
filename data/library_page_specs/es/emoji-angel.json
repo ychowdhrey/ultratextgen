@@ -1,0 +1,153 @@
+{
+  "lang": "es",
+  "slug": "emoji-angel",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-angel/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/angel-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-angel/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/angel-emoji/" }
+  ],
+  "title": "Emoji Ángel: Copiar y Pegar 👼 Símbolos de Ángel de la Guarda y Homenaje",
+  "meta_description": "Copia y pega el emoji ángel 👼, símbolos de ángel de la guarda y del cielo, y combos de homenaje como 🕊️🙏💐 para publicaciones y mensajes.",
+  "breadcrumb": "Emoji Ángel",
+  "hero_h1": "Emoji Ángel",
+  "hero_tagline": "Angelito, ángel de la guarda e imágenes del cielo para homenajes, recuerdos y bendiciones — distinto del meme de la carita con aureola. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji ángel 👼 muestra un querubín con cara de bebé y alas, y su uso más literal es para un bebé o un niño pequeño, incluido el término cariñoso \"bebé ángel\" que usan las familias para un hijo perdido durante el embarazo o en sus primeros meses. Como ángel de la guarda, el mismo emoji indica que alguien te cuida y te manda protección, suerte o bendición, y suele acompañarse de un escudo 🛡️, una cruz ✝️ o un rosario 📿. También es uno de los emojis más comunes en publicaciones de homenaje y de \"en memoria de\", donde representa a un padre, un abuelo, una mascota o un amigo que ya no está, casi siempre junto a una paloma 🕊️, manos juntas 🙏, un ramo 💐, una vela 🕯️ o una lápida 🪦. Ese trabajo es distinto del de 😇, la carita con aureola nacida del meme de \"hacerse el inocente\": esta página se queda con 👼 y con las alas, el cielo, la guarda y el homenaje a su alrededor. Toma un símbolo suelto abajo o copia un combo listo para una publicación de recuerdo, un mensaje de ángel de la guarda o un homenaje a un bebé ángel.",
+  "sections": [
+    {
+      "id": "baby-angel-heavenly",
+      "label": "Angelito y Cielo",
+      "h2": "Emojis de Angelito y Cielo",
+      "intro": "El querubín con cara de bebé, más las alas, el cielo y los símbolos celestiales que arman un look de ángel o de \"ya está en el cielo\".",
+      "symbols": [
+        { "char": "👼", "label": "Angelito" },
+        { "char": "🪽", "label": "Ala" },
+        { "char": "☁️", "label": "Nube" },
+        { "char": "🌈", "label": "Arcoíris" },
+        { "char": "🌠", "label": "Estrella fugaz" },
+        { "char": "🌙", "label": "Luna creciente" }
+      ]
+    },
+    {
+      "id": "guardian-protection",
+      "label": "Guarda y Protección",
+      "h2": "Símbolos de Ángel de la Guarda y Protección",
+      "intro": "Símbolos para el sentido de ángel de la guarda: alguien que te cuida y te manda protección, fe y bendición.",
+      "symbols": [
+        { "char": "🛡️", "label": "Escudo" },
+        { "char": "✝️", "label": "Cruz latina" },
+        { "char": "📿", "label": "Rosario" },
+        { "char": "⛪", "label": "Iglesia" },
+        { "char": "💫", "label": "Estrella giratoria" },
+        { "char": "🔔", "label": "Campana" }
+      ]
+    },
+    {
+      "id": "memorial-tribute",
+      "label": "Homenaje y Memoria",
+      "h2": "Emojis de Homenaje y \"En Memoria De\"",
+      "intro": "El set exacto que aparece en publicaciones de homenaje, obituarios y mensajes de \"en memoria de\" para una persona o una mascota que ya no está.",
+      "symbols": [
+        { "char": "🕊️", "label": "Paloma de la paz" },
+        { "char": "🙏", "label": "Manos juntas" },
+        { "char": "💐", "label": "Ramo de flores" },
+        { "char": "🌟", "label": "Estrella brillante" },
+        { "char": "🕯️", "label": "Vela" },
+        { "char": "🪦", "label": "Lápida" },
+        { "char": "🌹", "label": "Rosa" }
+      ]
+    },
+    {
+      "id": "angel-baby-family",
+      "label": "Bebé Ángel y Familia",
+      "h2": "Emojis de Bebé Ángel y Homenaje Familiar",
+      "intro": "Para el lado familiar de 👼: el término cariñoso \"bebé ángel\" que se usa para un hijo perdido durante el embarazo o en sus primeros meses, y los símbolos que suelen acompañarlo.",
+      "symbols": [
+        { "char": "👶", "label": "Bebé" },
+        { "char": "🎀", "label": "Moño" },
+        { "char": "🧸", "label": "Osito de peluche" },
+        { "char": "🦋", "label": "Mariposa" },
+        { "char": "🌷", "label": "Tulipán" },
+        { "char": "🌼", "label": "Florecita" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Ángel de la Guarda",
+      "flags": ["👼", "🛡️", "🕊️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "En Memoria De",
+      "flags": ["🕊️", "🙏", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Descansa en Paz",
+      "flags": ["🪦", "🕯️", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Homenaje a un Bebé Ángel",
+      "flags": ["👼", "🎀", "🦋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Enviado del Cielo",
+      "flags": ["👼", "☁️", "🌈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bendecido y Protegido",
+      "flags": ["🙏", "💫", "🔔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flores de Despedida",
+      "flags": ["💐", "🌷", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Alas de Ángel",
+      "flags": ["🪽", "✝️", "🕊️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "angelSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Emoji Ángel",
+    "intro": "Combos de ángel listos para usar: copia un set completo con un clic y pégalo en una publicación de homenaje, un mensaje de recuerdo o una biografía de ángel de la guarda."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-diablo/",
+      "title": "Emoji Diablo y Kaomoji",
+      "desc": "El opuesto natural de 👼: caras con cuernos, diablillos y combos de villano."
+    },
+    {
+      "href": "/es/library/simbolos-religiosos/",
+      "title": "Símbolos Religiosos y Espirituales",
+      "desc": "Cruces, estrellas de fe y otros símbolos religiosos y espirituales para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-manos-rezando/",
+      "title": "Emoji de Manos Rezando",
+      "desc": "El emoji 🙏 por su cuenta: significados, gestos y combos de oración."
+    },
+    {
+      "href": "/es/library/emojis-de-fantasia/",
+      "title": "Emojis de Fantasía y Mitología",
+      "desc": "Dragones, magos y otros emojis míticos y legendarios para publicaciones llenas de fantasía."
+    }
+  ]
+}

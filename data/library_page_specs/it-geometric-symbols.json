@@ -1,0 +1,481 @@
+{
+  "slug": "simboli-geometrici",
+  "title": "Simboli geometrici ● ■ ▲ ◆ — forme e punti elenco da copiare | UltraTextGen",
+  "meta_description": "Simboli geometrici da copiare: cerchi ● ○, quadrati ■ □, triangoli ▲ ▽, rombi ◆ ◇, punti elenco • ‣ ▸ ed esagoni ⬡. Tocca un simbolo per copiarlo.",
+  "breadcrumb": "Simboli geometrici",
+  "hero_h1": "Simboli geometrici",
+  "hero_tagline": "● ○ ■ ▲ ◆ • — cerchi, quadrati, triangoli, rombi, punti elenco e altre forme. Tocca per copiare.",
+  "intro": "Le forme geometriche servono quasi sempre a due cose: fare un punto elenco dove la formattazione non arriva, e segnalare uno stato con un colore. Le sei gruppi qui sotto sono ordinati per forma, con i marcatori di elenco raccolti a parte perché è lì che si va a cercarli. Tocca un simbolo e finisce negli appunti.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Cerchi",
+      "h2": "Cerchi",
+      "intro": "Pieni, vuoti e colorati.",
+      "symbols": [
+        {
+          "char": "●",
+          "label": "Cerchio pieno"
+        },
+        {
+          "char": "○",
+          "label": "Cerchio vuoto"
+        },
+        {
+          "char": "◉",
+          "label": "Occhio di pesce"
+        },
+        {
+          "char": "◎",
+          "label": "Bersaglio"
+        },
+        {
+          "char": "⊙",
+          "label": "Cerchio con punto"
+        },
+        {
+          "char": "⊚",
+          "label": "Cerchio con anello"
+        },
+        {
+          "char": "⬤",
+          "label": "Cerchio pieno grande"
+        },
+        {
+          "char": "◌",
+          "label": "Cerchio punteggiato"
+        },
+        {
+          "char": "🔴",
+          "label": "Pallino rosso"
+        },
+        {
+          "char": "🟡",
+          "label": "Pallino giallo"
+        },
+        {
+          "char": "🟢",
+          "label": "Pallino verde"
+        },
+        {
+          "char": "🔵",
+          "label": "Pallino blu"
+        },
+        {
+          "char": "⚪",
+          "label": "Pallino bianco (emoji)"
+        },
+        {
+          "char": "⚫",
+          "label": "Pallino nero (emoji)"
+        },
+        {
+          "char": "🟠",
+          "label": "Pallino arancione"
+        },
+        {
+          "char": "🟣",
+          "label": "Pallino viola"
+        },
+        {
+          "char": "🟤",
+          "label": "Pallino marrone"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Rombi",
+      "h2": "Rombi",
+      "intro": "Dal seme delle carte alla gemma.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Rombo pieno"
+        },
+        {
+          "char": "◇",
+          "label": "Rombo vuoto"
+        },
+        {
+          "char": "♦",
+          "label": "Seme di quadri"
+        },
+        {
+          "char": "◈",
+          "label": "Rombo con punto centrale"
+        },
+        {
+          "char": "🔶",
+          "label": "Rombo arancione grande"
+        },
+        {
+          "char": "🔷",
+          "label": "Rombo blu grande"
+        },
+        {
+          "char": "💎",
+          "label": "Gemma"
+        },
+        {
+          "char": "💠",
+          "label": "Rombo con puntino"
+        },
+        {
+          "char": "♢",
+          "label": "Seme di quadri vuoto"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Quadrati",
+      "h2": "Quadrati",
+      "intro": "Compresi tutti i quadrati colorati.",
+      "symbols": [
+        {
+          "char": "■",
+          "label": "Quadrato pieno"
+        },
+        {
+          "char": "□",
+          "label": "Quadrato vuoto"
+        },
+        {
+          "char": "◼",
+          "label": "Quadrato medio pieno"
+        },
+        {
+          "char": "◻",
+          "label": "Quadrato medio vuoto"
+        },
+        {
+          "char": "▪",
+          "label": "Quadratino pieno"
+        },
+        {
+          "char": "▫",
+          "label": "Quadratino vuoto"
+        },
+        {
+          "char": "🟥",
+          "label": "Quadrato rosso"
+        },
+        {
+          "char": "🟧",
+          "label": "Quadrato arancione"
+        },
+        {
+          "char": "🟨",
+          "label": "Quadrato giallo"
+        },
+        {
+          "char": "🟩",
+          "label": "Quadrato verde"
+        },
+        {
+          "char": "🟦",
+          "label": "Quadrato blu"
+        },
+        {
+          "char": "🟪",
+          "label": "Quadrato viola"
+        },
+        {
+          "char": "🟫",
+          "label": "Quadrato marrone"
+        },
+        {
+          "char": "⬛",
+          "label": "Quadrato grande nero"
+        },
+        {
+          "char": "⬜",
+          "label": "Quadrato grande bianco"
+        },
+        {
+          "char": "▭",
+          "label": "Rettangolo vuoto"
+        },
+        {
+          "char": "▬",
+          "label": "Rettangolo pieno"
+        },
+        {
+          "char": "▯",
+          "label": "Rettangolo verticale vuoto"
+        },
+        {
+          "char": "▮",
+          "label": "Rettangolo verticale pieno"
+        },
+        {
+          "char": "▢",
+          "label": "Quadrato con angoli arrotondati"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Triangoli",
+      "h2": "Triangoli",
+      "intro": "Nelle quattro direzioni.",
+      "symbols": [
+        {
+          "char": "▲",
+          "label": "Triangolo pieno in su"
+        },
+        {
+          "char": "△",
+          "label": "Triangolo vuoto in su"
+        },
+        {
+          "char": "▼",
+          "label": "Triangolo pieno in giù"
+        },
+        {
+          "char": "▽",
+          "label": "Triangolo vuoto in giù"
+        },
+        {
+          "char": "◀",
+          "label": "Triangolo pieno a sinistra"
+        },
+        {
+          "char": "▶",
+          "label": "Triangolo pieno a destra"
+        },
+        {
+          "char": "◄",
+          "label": "Puntatore a sinistra"
+        },
+        {
+          "char": "►",
+          "label": "Puntatore a destra"
+        },
+        {
+          "char": "◁",
+          "label": "Triangolo vuoto a sinistra"
+        },
+        {
+          "char": "▷",
+          "label": "Triangolo vuoto a destra"
+        },
+        {
+          "char": "🔺",
+          "label": "Triangolo rosso in su"
+        },
+        {
+          "char": "🔻",
+          "label": "Triangolo rosso in giù"
+        },
+        {
+          "char": "⏫",
+          "label": "Doppia freccia su"
+        },
+        {
+          "char": "⏬",
+          "label": "Doppia freccia giù"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Punti elenco e marcatori",
+      "h2": "Punti elenco e marcatori",
+      "intro": "Per elencare dove non c'è formattazione.",
+      "symbols": [
+        {
+          "char": "‣",
+          "label": "Punto triangolare"
+        },
+        {
+          "char": "▸",
+          "label": "Puntina piena a destra"
+        },
+        {
+          "char": "▹",
+          "label": "Puntina vuota a destra"
+        },
+        {
+          "char": "▪",
+          "label": "Quadratino pieno"
+        },
+        {
+          "char": "▫",
+          "label": "Quadratino vuoto"
+        },
+        {
+          "char": "◆",
+          "label": "Rombo pieno"
+        },
+        {
+          "char": "◇",
+          "label": "Rombo vuoto"
+        },
+        {
+          "char": "•",
+          "label": "Punto elenco"
+        },
+        {
+          "char": "◦",
+          "label": "Punto elenco vuoto"
+        },
+        {
+          "char": "∙",
+          "label": "Operatore punto"
+        },
+        {
+          "char": "‧",
+          "label": "Punto di sillabazione"
+        },
+        {
+          "char": "⁃",
+          "label": "Trattino elenco"
+        },
+        {
+          "char": "⦿",
+          "label": "Punto cerchiato"
+        },
+        {
+          "char": "⦾",
+          "label": "Punto cerchiato vuoto"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Altre forme",
+      "h2": "Altre forme",
+      "intro": "Poligoni e caselle.",
+      "symbols": [
+        {
+          "char": "⬡",
+          "label": "Esagono vuoto"
+        },
+        {
+          "char": "⬢",
+          "label": "Esagono pieno"
+        },
+        {
+          "char": "⬠",
+          "label": "Pentagono vuoto"
+        },
+        {
+          "char": "⬟",
+          "label": "Pentagono pieno"
+        },
+        {
+          "char": "⏣",
+          "label": "Anello benzenico con cerchio"
+        },
+        {
+          "char": "⎔",
+          "label": "Simbolo di funzione software"
+        },
+        {
+          "char": "⌬",
+          "label": "Anello benzenico"
+        },
+        {
+          "char": "⏢",
+          "label": "Trapezio vuoto"
+        },
+        {
+          "char": "☐",
+          "label": "Casella"
+        },
+        {
+          "char": "☑",
+          "label": "Casella spuntata"
+        },
+        {
+          "char": "☒",
+          "label": "Casella barrata"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Domande frequenti sui simboli geometrici",
+  "faq": [
+    {
+      "q": "Perché usare • al posto di un elenco puntato vero?",
+      "a": "Perché la formattazione non sopravvive al copia-incolla. Un elenco creato con il pulsante dell'editor perde i punti quando finisce in una bio, in un campo di testo semplice o in una cella. • ‣ ▸ sono caratteri: restano dove li metti, in qualsiasi campo."
+    },
+    {
+      "q": "Qual è la differenza fra ● e 🔴?",
+      "a": "● è un carattere di testo: prende colore e dimensione dal testo attorno, quindi in un documento in nero resta nero. 🔴 è un'emoji, sempre rossa e più grande della riga. Per una tabella o un documento conviene la forma testuale, per un post l'emoji."
+    },
+    {
+      "q": "Come si allineano le forme in una colonna?",
+      "a": "Con un carattere a larghezza fissa per riga. I quadrati colorati (🟥 🟩) sono emoji e occupano circa il doppio di ■, quindi mescolarli in una griglia manda fuori allineamento le righe. Scegli una sola famiglia e restaci."
+    },
+    {
+      "q": "Perché l'anello benzenico è fra le forme?",
+      "a": "Perché ⌬ e ⏣ sono esagoni con un cerchio interno, codificati per la notazione chimica ma di fatto usati come forme decorative. È lo stesso motivo per cui ⎔ compare qui: nasce come simbolo di funzione nei diagrammi software."
+    },
+    {
+      "q": "Si vedono su tutti i dispositivi?",
+      "a": "Le forme testuali (● ■ ▲ ◆ • ▸) sì, praticamente ovunque: sono fra i caratteri più vecchi e meglio supportati. I quadrati e i pallini colorati sono emoji aggiunte nel 2019 e possono mancare su sistemi non aggiornati."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Il punto elenco è un carattere, la lista è una formattazione",
+      "body": "Sono due cose diverse e la differenza si nota solo quando il testo si sposta. La lista puntata di un editor è una proprietà del paragrafo: i punti li disegna il programma, non stanno nel testo. Copiala in una bio di Instagram, in un campo di un modulo o in una cella e i punti spariscono, lasciando righe indistinte. Un carattere come • o ▸ invece fa parte della stringa e viaggia con essa. È il motivo per cui questa pagina esiste: non serve una forma più bella, serve una forma che sopravviva all'incollaggio."
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-freccia/",
+      "title": "Simboli freccia da copiare",
+      "desc": "Una raccolta di riferimento di caratteri freccia direzionali — dritte, doppie, triangolari, curve ed emoji. Tocca un simbolo, è copiato all'istante."
+    },
+    {
+      "href": "/it/library/simbolo-spunta/",
+      "title": "Simbolo Spunta",
+      "desc": "✓ ✔ ☑ ✅ e ciò che gli sta attorno — croci, pallini di stato, caselle e numeri di passaggio. Tocca per copiare."
+    },
+    {
+      "href": "/it/symbol/simbolo-diametro/",
+      "title": "Simbolo del diametro (⌀)",
+      "desc": "Il segno di diametro (⌀) che precede le quote circolari nei disegni tecnici — più i simboli che vengono scambiati per esso. Tocca un simbolo per copiarlo all'istante."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/it/library/simboli-geometrici/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "it",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-geometrici/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-geometricos/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-geometri/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/dohyeong-giho/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/geometriske-symboler/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    }
+  ]
+}

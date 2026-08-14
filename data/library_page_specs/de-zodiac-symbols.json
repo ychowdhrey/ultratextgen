@@ -1,0 +1,353 @@
+{
+  "slug": "sternzeichen-symbole",
+  "title": "Sternzeichen Symbole ♈♉♊ — Tierkreiszeichen Kopieren | UltraTextGen",
+  "meta_description": "Sternzeichen-Symbole zum Kopieren: alle 12 Tierkreiszeichen ♈♉♊, Planetenzeichen, chinesische Tierkreistiere und astrologische Aspekte. Klick zum Kopieren.",
+  "breadcrumb": "Sternzeichen Symbole",
+  "hero_h1": "Sternzeichen Symbole",
+  "hero_tagline": "Alle zwölf Tierkreiszeichen als Unicode-Zeichen, dazu Planeten, chinesische Tierkreistiere und die klassischen Aspektsymbole.",
+  "intro": "Die Tierkreiszeichen sind echte Unicode-Zeichen — kein Bild, keine Schriftart nötig. Sie funktionieren in der Instagram-Bio, im Discord-Namen, in Notizen und in Nachrichten. Zum Kopieren einfach antippen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "western",
+      "label": "Tierkreiszeichen",
+      "h2": "Tierkreiszeichen",
+      "intro": "Die zwölf Zeichen mit ihren Zeiträumen.",
+      "symbols": [
+        {
+          "char": "♈",
+          "label": "Widder (21. März – 19. April)"
+        },
+        {
+          "char": "♉",
+          "label": "Stier (20. April – 20. Mai)"
+        },
+        {
+          "char": "♊",
+          "label": "Zwillinge (21. Mai – 20. Juni)"
+        },
+        {
+          "char": "♋",
+          "label": "Krebs (21. Juni – 22. Juli)"
+        },
+        {
+          "char": "♌",
+          "label": "Löwe (23. Juli – 22. August)"
+        },
+        {
+          "char": "♍",
+          "label": "Jungfrau (23. August – 22. September)"
+        },
+        {
+          "char": "♎",
+          "label": "Waage (23. September – 22. Oktober)"
+        },
+        {
+          "char": "♏",
+          "label": "Skorpion (23. Oktober – 21. November)"
+        },
+        {
+          "char": "♐",
+          "label": "Schütze (22. November – 21. Dezember)"
+        },
+        {
+          "char": "♑",
+          "label": "Steinbock (22. Dezember – 19. Januar)"
+        },
+        {
+          "char": "♒",
+          "label": "Wassermann (20. Januar – 18. Februar)"
+        },
+        {
+          "char": "♓",
+          "label": "Fische (19. Februar – 20. März)"
+        },
+        {
+          "char": "⛎",
+          "label": "Schlangenträger (30. Nov. – 17. Dez., inoffiziell)"
+        }
+      ]
+    },
+    {
+      "id": "planets",
+      "label": "Planeten- und Himmelskörperzeichen",
+      "h2": "Planeten- und Himmelskörperzeichen",
+      "intro": "Sonne, Mond und die klassischen Planetenzeichen.",
+      "symbols": [
+        {
+          "char": "☉",
+          "label": "Sonne"
+        },
+        {
+          "char": "☽",
+          "label": "Zunehmender Halbmond"
+        },
+        {
+          "char": "☾",
+          "label": "Abnehmender Halbmond"
+        },
+        {
+          "char": "☿",
+          "label": "Merkur"
+        },
+        {
+          "char": "♀",
+          "label": "Venus"
+        },
+        {
+          "char": "♁",
+          "label": "Erde"
+        },
+        {
+          "char": "♂",
+          "label": "Mars"
+        },
+        {
+          "char": "♃",
+          "label": "Jupiter"
+        },
+        {
+          "char": "♄",
+          "label": "Saturn"
+        },
+        {
+          "char": "♅",
+          "label": "Uranus"
+        },
+        {
+          "char": "♆",
+          "label": "Neptun"
+        },
+        {
+          "char": "♇",
+          "label": "Pluto"
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "label": "Chinesische Tierkreistiere",
+      "h2": "Chinesische Tierkreistiere",
+      "intro": "Die zwölf Tiere des chinesischen Kalenders.",
+      "symbols": [
+        {
+          "char": "🐀",
+          "label": "Ratte"
+        },
+        {
+          "char": "🐂",
+          "label": "Büffel"
+        },
+        {
+          "char": "🐅",
+          "label": "Tiger"
+        },
+        {
+          "char": "🐇",
+          "label": "Hase"
+        },
+        {
+          "char": "🐉",
+          "label": "Drache"
+        },
+        {
+          "char": "🐍",
+          "label": "Schlange"
+        },
+        {
+          "char": "🐎",
+          "label": "Pferd"
+        },
+        {
+          "char": "🐐",
+          "label": "Ziege"
+        },
+        {
+          "char": "🐒",
+          "label": "Affe"
+        },
+        {
+          "char": "🐓",
+          "label": "Hahn"
+        },
+        {
+          "char": "🐕",
+          "label": "Hund"
+        },
+        {
+          "char": "🐖",
+          "label": "Schwein"
+        }
+      ]
+    },
+    {
+      "id": "aspects",
+      "label": "Astrologische Aspektzeichen",
+      "h2": "Astrologische Aspektzeichen",
+      "intro": "Aspekte aus dem Horoskop.",
+      "symbols": [
+        {
+          "char": "☊",
+          "label": "Aufsteigender Knoten"
+        },
+        {
+          "char": "☋",
+          "label": "Absteigender Knoten"
+        },
+        {
+          "char": "☌",
+          "label": "Konjunktion"
+        },
+        {
+          "char": "☍",
+          "label": "Opposition"
+        },
+        {
+          "char": "⚹",
+          "label": "Sextil"
+        },
+        {
+          "char": "□",
+          "label": "Quadrat"
+        },
+        {
+          "char": "△",
+          "label": "Trigon"
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "label": "Elemente und Alchemistische Zeichen",
+      "h2": "Elemente und Alchemistische Zeichen",
+      "intro": "Feuer, Wasser, Luft, Erde und alchemistische Zeichen.",
+      "symbols": [
+        {
+          "char": "🜂",
+          "label": "Feuer (alchemistisch)"
+        },
+        {
+          "char": "🜄",
+          "label": "Wasser (alchemistisch)"
+        },
+        {
+          "char": "🜁",
+          "label": "Luft (alchemistisch)"
+        },
+        {
+          "char": "🜃",
+          "label": "Erde (alchemistisch)"
+        },
+        {
+          "char": "△",
+          "label": "Feuerdreieck"
+        },
+        {
+          "char": "▽",
+          "label": "Wasserdreieck"
+        },
+        {
+          "char": "🜍",
+          "label": "Schwefel"
+        },
+        {
+          "char": "☿",
+          "label": "Quecksilber"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Sternzeichen-Symbolen",
+  "faq": [
+    {
+      "q": "Funktionieren die Zeichen in der Instagram-Bio?",
+      "a": "Ja. Es sind gewöhnliche Unicode-Zeichen, keine Bilder — sie lassen sich überall einfügen, wo Text erlaubt ist. Im @-Benutzernamen sind sie dagegen meist gesperrt."
+    },
+    {
+      "q": "Warum sieht mein Zeichen mal schwarz, mal farbig aus?",
+      "a": "Manche Systeme zeigen ♈ als schlichtes Textzeichen, andere als farbiges Emoji. Beides ist dasselbe Zeichen; nur die Darstellung des Geräts unterscheidet sich."
+    },
+    {
+      "q": "Was ist der Schlangenträger?",
+      "a": "Ophiuchus, ein dreizehntes Sternbild, das die Sonne durchläuft. Die westliche Astrologie rechnet traditionell mit zwölf Zeichen, deshalb steht er hier als inoffizieller Zusatz."
+    },
+    {
+      "q": "Warum steht das Merkurzeichen zweimal?",
+      "a": "☿ ist zugleich Planetenzeichen und alchemistisches Zeichen für Quecksilber — historisch dasselbe Symbol in zwei Zusammenhängen."
+    },
+    {
+      "q": "Kann ich sie im Spielernamen verwenden?",
+      "a": "Manche Spiele erlauben sie, andere filtern alles außerhalb des lateinischen Alphabets. Vor dem Umbenennen ausprobieren — ein Namenswechsel ist oft kostenpflichtig."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Warum Tierkreiszeichen Überhaupt Textzeichen Sind",
+      "body": "Die Tierkreis- und Planetenzeichen stammen aus astronomischen und alchemistischen Handschriften und wurden jahrhundertelang gesetzt wie Buchstaben. Genau deshalb sind sie in Unicode gelandet: nicht als Dekoration, sondern damit astronomische Fachtexte gesetzt werden können. Das erklärt auch, warum ♈ auf manchen Geräten nüchtern schwarz erscheint und auf anderen als farbiges Emoji — die einen behandeln es als Schriftzeichen, die anderen als Bildzeichen."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/stern-symbole/",
+      "title": "Stern-Symbole (zum Kopieren)",
+      "desc": "Eine Sammlung von Stern-Symbolen, Funkel-Zeichen und Sternchen-Varianten aus Unicode. Von einfachen Sternen…"
+    },
+    {
+      "href": "/de/library/emoji-combos/",
+      "title": "Emoji-Kombinationen zum Kopieren und Einfügen",
+      "desc": "Über 100 fertige Emoji-Combos, die deiner Bio, deinem Status und deinen Captions eine klare Stimmung geben…"
+    },
+    {
+      "href": "/de/library/aegyptische-hieroglyphen/",
+      "title": "Ägyptische Hieroglyphen",
+      "desc": "Über tausend ägyptische Hieroglyphen aus Unicode, in der Reihenfolge der Gardiner-Liste. Zum Kopieren ankli…"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/sternzeichen-symbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/sternzeichen-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/znaki-zodiaka/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-cung-hoang-dao/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/seiza-kigou/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-astrologiques/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/byeoljari-giho/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/zodiac-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    }
+  ]
+}

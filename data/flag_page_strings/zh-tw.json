@@ -1,0 +1,33 @@
+{
+  "locale": "zh-tw",
+  "sections": {
+    "country_list": {
+      "label": "完整清單",
+      "h2": "全世界 195 面國旗",
+      "intro": "先用洲別篩選，再點一下旗子就複製。"
+    },
+    "grids": {
+      "label": "整組複製",
+      "h2": "可以整組複製的國旗組合",
+      "intro": "點一下複製一整組：歐盟 27 面、東協 10 面、G20 全員。"
+    }
+  },
+  "regions": {
+    "all": "全部",
+    "europe": "歐洲",
+    "asia": "亞洲",
+    "americas": "美洲",
+    "africa": "非洲",
+    "oceania": "大洋洲"
+  },
+  "aria_copy_flag": "複製{name}國旗",
+  "groups": {
+    "European Union Members": "歐盟成員國",
+    "ASEAN": "東協（ASEAN）",
+    "Middle East": "中東",
+    "G20": "G20",
+    "Nordic Countries": "北歐國家",
+    "South Asia": "南亞",
+    "East Asia": "東亞"
+  }
+}

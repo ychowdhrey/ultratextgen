@@ -1,0 +1,67 @@
+{
+  "slug": "ellipsis",
+  "page_type": "symbol",
+  "title": "Ellipsis Symbol (…): Copy & Paste — Why It Isn't Three Periods",
+  "meta_description": "Copy and paste the ellipsis (…, U+2026) — the single-character three-dot mark, why it isn't the same as typing three periods, and the midline ⋯ that CJK typography doubles into six dots. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/ellipsis/",
+  "breadcrumb": "Ellipsis",
+  "hero_h1": "Ellipsis (…)",
+  "hero_tagline": "The three-dot mark for an omission or a trailing thought — one Unicode character, not three periods, and six dots wide in Chinese. Click any symbol to copy it instantly.",
+  "intro": "The ellipsis (…, Unicode U+2026 HORIZONTAL ELLIPSIS) marks omitted words or a sentence that trails off. It is a single character, which is what separates it from the three consecutive periods (...) most people type instead — the real ellipsis keeps its dots evenly spaced and never breaks across a line, and a spell checker or typesetting engine treats the two differently. Unicode also encodes a vertically centred variant, the midline ellipsis ⋯ (U+22EF), used in mathematics and in CJK typography where dots sit at mid-height rather than on the baseline. Chinese and Japanese convention doubles the mark to six dots spanning two full character widths (…… or ⋯⋯), which is why the Chinese name for it, 刪節號, describes a two-space mark rather than a single character.",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ellipsis",
+      "label": "Ellipsis",
+      "h2": "The Ellipsis Character (…)",
+      "intro": "The single-character ellipsis and its vertically centred midline counterpart, ready to paste.",
+      "symbols": [
+        { "char": "…", "label": "Horizontal Ellipsis (U+2026)" },
+        { "char": "⋯", "label": "Midline Horizontal Ellipsis (U+22EF)" },
+        { "char": "︙", "label": "Presentation Form for Vertical Ellipsis (U+FE19)" }
+      ]
+    },
+    {
+      "id": "not-three-periods",
+      "label": "Not Three Periods",
+      "h2": "The Ellipsis vs. Three Periods",
+      "intro": "Typing three full stops looks close but is three separate characters — they can be split across a line break, they space unevenly in justified text, and find-and-replace treats them as different strings. The vertical and diagonal dot variants below are separate mathematical characters again, not styling choices.",
+      "symbols": [
+        { "char": ".", "label": "Full Stop (U+002E) — Typed Three Times for a Fake Ellipsis" },
+        { "char": "‥", "label": "Two Dot Leader (U+2025)" },
+        { "char": "⋮", "label": "Vertical Ellipsis (U+22EE)" },
+        { "char": "⋰", "label": "Up Right Diagonal Ellipsis (U+22F0)" },
+        { "char": "⋱", "label": "Down Right Diagonal Ellipsis (U+22F1)" }
+      ]
+    },
+    {
+      "id": "cjk-ellipsis",
+      "label": "CJK Six-Dot Form",
+      "h2": "The CJK Six-Dot Ellipsis",
+      "intro": "Chinese and Japanese typography writes the ellipsis as six dots across two character widths, produced by doubling the character rather than by any dedicated codepoint. Traditional Chinese usage generally centres the dots (⋯⋯); Simplified Chinese and Japanese more often sit them on the baseline (……).",
+      "symbols": [
+        { "char": "……", "label": "Doubled Horizontal Ellipsis — Baseline Six-Dot Form" },
+        { "char": "⋯⋯", "label": "Doubled Midline Ellipsis — Centred Six-Dot Form" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Quotation marks, dashes, brackets, and other everyday punctuation in Unicode."
+    },
+    {
+      "href": "/symbol/ideographic-comma/",
+      "title": "Ideographic Comma (、)",
+      "desc": "The CJK list comma — another punctuation character whose Chinese and Japanese jobs differ from the Western mark it resembles."
+    },
+    {
+      "href": "/symbol/em-dash/",
+      "title": "Em Dash (—)",
+      "desc": "The long dash that marks a break or an aside — the punctuation mark an ellipsis is most often traded against for a trailing pause."
+    }
+  ]
+}

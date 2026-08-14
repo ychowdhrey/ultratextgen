@@ -1,0 +1,353 @@
+{
+  "slug": "seiza-kigou",
+  "title": "星座 記号 ♈♉♊ 一覧 — コピペできる12星座マーク | UltraTextGen",
+  "meta_description": "12星座の記号 ♈♉♊ をコピペで。惑星記号、十二支、アスペクト記号もまとめて掲載。タップするとコピーされ、プロフィールや投稿にそのまま貼れます。",
+  "breadcrumb": "星座 記号",
+  "hero_h1": "星座 記号",
+  "hero_tagline": "12星座の記号を Unicode で。惑星、十二支、アスペクト記号もあわせて一覧にしました。",
+  "intro": "星座記号は画像ではなく Unicode の文字なので、特別なフォントは要りません。Instagram のプロフィール、Discord の名前、メモ、メッセージにそのまま貼れます。タップするとコピーされます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "western",
+      "label": "12星座の記号",
+      "h2": "12星座の記号",
+      "intro": "12星座と期間の一覧。",
+      "symbols": [
+        {
+          "char": "♈",
+          "label": "おひつじ座（3/21–4/19）"
+        },
+        {
+          "char": "♉",
+          "label": "おうし座（4/20–5/20）"
+        },
+        {
+          "char": "♊",
+          "label": "ふたご座（5/21–6/20）"
+        },
+        {
+          "char": "♋",
+          "label": "かに座（6/21–7/22）"
+        },
+        {
+          "char": "♌",
+          "label": "しし座（7/23–8/22）"
+        },
+        {
+          "char": "♍",
+          "label": "おとめ座（8/23–9/22）"
+        },
+        {
+          "char": "♎",
+          "label": "てんびん座（9/23–10/22）"
+        },
+        {
+          "char": "♏",
+          "label": "さそり座（10/23–11/21）"
+        },
+        {
+          "char": "♐",
+          "label": "いて座（11/22–12/21）"
+        },
+        {
+          "char": "♑",
+          "label": "やぎ座（12/22–1/19）"
+        },
+        {
+          "char": "♒",
+          "label": "みずがめ座（1/20–2/18）"
+        },
+        {
+          "char": "♓",
+          "label": "うお座（2/19–3/20）"
+        },
+        {
+          "char": "⛎",
+          "label": "へびつかい座（11/30–12/17、非公式）"
+        }
+      ]
+    },
+    {
+      "id": "planets",
+      "label": "惑星・天体の記号",
+      "h2": "惑星・天体の記号",
+      "intro": "太陽・月と古典的な惑星記号。",
+      "symbols": [
+        {
+          "char": "☉",
+          "label": "太陽"
+        },
+        {
+          "char": "☽",
+          "label": "上弦の月"
+        },
+        {
+          "char": "☾",
+          "label": "下弦の月"
+        },
+        {
+          "char": "☿",
+          "label": "水星"
+        },
+        {
+          "char": "♀",
+          "label": "金星"
+        },
+        {
+          "char": "♁",
+          "label": "地球"
+        },
+        {
+          "char": "♂",
+          "label": "火星"
+        },
+        {
+          "char": "♃",
+          "label": "木星"
+        },
+        {
+          "char": "♄",
+          "label": "土星"
+        },
+        {
+          "char": "♅",
+          "label": "天王星"
+        },
+        {
+          "char": "♆",
+          "label": "海王星"
+        },
+        {
+          "char": "♇",
+          "label": "冥王星"
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "label": "十二支の動物",
+      "h2": "十二支の動物",
+      "intro": "十二支の動物。",
+      "symbols": [
+        {
+          "char": "🐀",
+          "label": "子（ねずみ）"
+        },
+        {
+          "char": "🐂",
+          "label": "丑（うし）"
+        },
+        {
+          "char": "🐅",
+          "label": "寅（とら）"
+        },
+        {
+          "char": "🐇",
+          "label": "卯（うさぎ）"
+        },
+        {
+          "char": "🐉",
+          "label": "辰（たつ）"
+        },
+        {
+          "char": "🐍",
+          "label": "巳（へび）"
+        },
+        {
+          "char": "🐎",
+          "label": "午（うま）"
+        },
+        {
+          "char": "🐐",
+          "label": "未（ひつじ）"
+        },
+        {
+          "char": "🐒",
+          "label": "申（さる）"
+        },
+        {
+          "char": "🐓",
+          "label": "酉（とり）"
+        },
+        {
+          "char": "🐕",
+          "label": "戌（いぬ）"
+        },
+        {
+          "char": "🐖",
+          "label": "亥（いのしし）"
+        }
+      ]
+    },
+    {
+      "id": "aspects",
+      "label": "アスペクト記号",
+      "h2": "アスペクト記号",
+      "intro": "ホロスコープで使うアスペクト。",
+      "symbols": [
+        {
+          "char": "☊",
+          "label": "ドラゴンヘッド"
+        },
+        {
+          "char": "☋",
+          "label": "ドラゴンテイル"
+        },
+        {
+          "char": "☌",
+          "label": "コンジャンクション"
+        },
+        {
+          "char": "☍",
+          "label": "オポジション"
+        },
+        {
+          "char": "⚹",
+          "label": "セクスタイル"
+        },
+        {
+          "char": "□",
+          "label": "スクエア"
+        },
+        {
+          "char": "△",
+          "label": "トライン"
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "label": "四大元素と錬金術記号",
+      "h2": "四大元素と錬金術記号",
+      "intro": "火・水・風・地と錬金術の記号。",
+      "symbols": [
+        {
+          "char": "🜂",
+          "label": "火（錬金術）"
+        },
+        {
+          "char": "🜄",
+          "label": "水（錬金術）"
+        },
+        {
+          "char": "🜁",
+          "label": "風（錬金術）"
+        },
+        {
+          "char": "🜃",
+          "label": "地（錬金術）"
+        },
+        {
+          "char": "△",
+          "label": "火の三角"
+        },
+        {
+          "char": "▽",
+          "label": "水の三角"
+        },
+        {
+          "char": "🜍",
+          "label": "硫黄"
+        },
+        {
+          "char": "☿",
+          "label": "水銀"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "星座記号のよくある質問",
+  "faq": [
+    {
+      "q": "Instagram のプロフィールで使えますか？",
+      "a": "使えます。画像ではなく普通の Unicode 文字なので、文字が入る場所ならどこでも貼れます。ただし @ のユーザーネームでは弾かれることがほとんどです。"
+    },
+    {
+      "q": "同じ記号が黒くなったりカラーになったりするのはなぜ？",
+      "a": "端末によって ♈ を文字として扱うかカラー絵文字として扱うかが違うためです。文字自体は同じで、表示方法だけが変わります。"
+    },
+    {
+      "q": "へびつかい座とは？",
+      "a": "太陽が通過する13番目の星座オフィウクスです。西洋占星術は伝統的に12星座で扱うため、ここでは非公式として載せています。"
+    },
+    {
+      "q": "水星の記号が2回出てくるのはなぜ？",
+      "a": "☿ は惑星の水星と、錬金術の水銀の両方を表します。歴史的に同じ記号が二つの文脈で使われてきました。"
+    },
+    {
+      "q": "ゲームの名前に使えますか？",
+      "a": "使えるゲームもありますが、ラテン文字以外を弾くものもあります。改名は有料のことが多いので、確定前に試してください。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "星座記号がそもそも文字である理由",
+      "body": "星座記号と惑星記号は天文学や錬金術の写本から来ていて、何世紀も文字と同じように組版されてきました。Unicode に入ったのもその延長で、装飾のためではなく天文学の文献を組めるようにするためです。♈ が端末によって黒い記号になったりカラー絵文字になったりするのも同じ理由で、文字として扱うか絵として扱うかの差にすぎません。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/star-symbols/",
+      "title": "星の記号 一覧（コピペ）",
+      "desc": "星の記号・星の絵文字・Unicodeの星文字・キラキラにまつわる記号を、形とスタイル別にまとめました。基本の星から多角星、アスタリスク、星評価（★★★★★）まで — クリックするだけでコピーできて、インスタのプロフ…"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号（コピペ一覧）",
+      "desc": "インスタやX・TikTokの名前やプロフィールを飾る、おしゃれな特殊文字を集めました。キラキラ・ハート・花・区切り線・飾り括弧まで — クリックするだけでコピーできます。"
+    },
+    {
+      "href": "/ja/library/special-characters/",
+      "title": "特殊文字 一覧（かわいい記号コピペ）",
+      "desc": "かわいい特殊文字をジャンル別にまとめました。キラキラ・ハート・星・矢印・飾り括弧・音符まで — クリックするだけでコピーできて、インスタのプロフィールやゲームの名前にそのまま使えます。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/seiza-kigou/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/sternzeichen-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/znaki-zodiaka/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-cung-hoang-dao/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/seiza-kigou/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-znakow-zodiaku/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-astrologiques/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/byeoljari-giho/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/zodiac-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/zodiac-symbols/"
+    }
+  ]
+}

@@ -23,13 +23,15 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhsymbolin)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhsymbolin)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="88" y="68" width="184" height="224" rx="26"
-          fill="none" stroke="url(#gvhsymbolin)" stroke-width="4"
-          stroke-dasharray="10 8" opacity="0.5"/>
-    <circle cx="148" cy="112" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="158" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="202" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="248" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="112" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="158" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="202" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="248" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Sans CJK JP">ㅤ</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghsymbolin)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">⠀</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="88" y="68" width="184" height="224" rx="26"
-          fill="none" stroke="url(#gvhsymbolin)" stroke-width="4"
-          stroke-dasharray="10 8" opacity="0.5"/>
-    <circle cx="148" cy="112" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="158" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="202" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="148" cy="248" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="112" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="158" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="202" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/><circle cx="212" cy="248" r="13" fill="none" stroke="url(#ghsymbolin)" stroke-width="5"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Sans CJK JP">ㅤ</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghsymbolin)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">⠀</text></g>
 </svg>

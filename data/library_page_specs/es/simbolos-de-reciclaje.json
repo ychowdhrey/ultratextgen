@@ -1,0 +1,155 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-reciclaje",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-reciclaje/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/recycle-environment-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-reciclaje/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/recycle-environment-symbols/"
+    }
+  ],
+  "title": "Símbolos de Reciclaje: Copiar y Pegar ♻ ♲ Signos Ecológicos",
+  "meta_description": "Copia y pega símbolos de reciclaje: el signo universal (♻), los códigos de resina plástica (♳–♹) y glifos ecológicos. Haz clic para copiar al instante.",
+  "breadcrumb": "Símbolos de reciclaje",
+  "hero_h1": "Símbolos de reciclaje y medio ambiente",
+  "hero_tagline": "El signo universal del reciclaje, los códigos de resina plástica y los glifos ecológicos en un solo lugar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Las flechas del reciclaje son uno de los símbolos más reconocidos del mundo, y Unicode los incluye completos. Esta biblioteca reúne los símbolos de reciclaje universales, los códigos numerados de identificación de resina (del ♳ al ♹) que vienen impresos en los envases de plástico y los glifos verdes de ecología y medio ambiente para contenido sobre sustentabilidad. Si alguna vez volteaste una botella para ver qué número trae debajo, aquí encuentras ese carácter exacto y su significado. Haz clic en cualquiera para copiarlo y usarlo en etiquetas, publicaciones, manuales de separación de residuos o descripciones de producto.",
+  "sections": [
+    {
+      "id": "recycling-signs",
+      "label": "Reciclaje",
+      "h2": "Signos de reciclaje",
+      "intro": "El símbolo universal del reciclaje y sus variantes en negro, genérica y de papel.",
+      "symbols": [
+        {
+          "char": "♻",
+          "label": "Símbolo universal de reciclaje (negro)"
+        },
+        {
+          "char": "♲",
+          "label": "Símbolo universal de reciclaje"
+        },
+        {
+          "char": "♺",
+          "label": "Reciclaje de materiales genéricos"
+        },
+        {
+          "char": "♼",
+          "label": "Símbolo de papel reciclado"
+        },
+        {
+          "char": "♽",
+          "label": "Símbolo de papel parcialmente reciclado"
+        },
+        {
+          "char": "♻️",
+          "label": "Símbolo de reciclaje (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "plastic-resin-codes",
+      "label": "Códigos de resina",
+      "h2": "Códigos de resina plástica",
+      "intro": "Los códigos numerados de identificación de resina que llevan impresos los plásticos, del tipo 1 al 7.",
+      "symbols": [
+        {
+          "char": "♳",
+          "label": "Plástico tipo 1 (PET, tereftalato de polietileno)"
+        },
+        {
+          "char": "♴",
+          "label": "Plástico tipo 2 (PEAD/HDPE, polietileno de alta densidad)"
+        },
+        {
+          "char": "♵",
+          "label": "Plástico tipo 3 (PVC, policloruro de vinilo)"
+        },
+        {
+          "char": "♶",
+          "label": "Plástico tipo 4 (PEBD/LDPE, polietileno de baja densidad)"
+        },
+        {
+          "char": "♷",
+          "label": "Plástico tipo 5 (PP, polipropileno)"
+        },
+        {
+          "char": "♸",
+          "label": "Plástico tipo 6 (PS, poliestireno)"
+        },
+        {
+          "char": "♹",
+          "label": "Plástico tipo 7 (OTROS)"
+        }
+      ]
+    },
+    {
+      "id": "eco-environment",
+      "label": "Ecología y naturaleza",
+      "h2": "Símbolos ecológicos y de medio ambiente",
+      "intro": "Glifos de plantas, árboles y planeta para contenido sobre sustentabilidad, residuos y medio ambiente.",
+      "symbols": [
+        {
+          "char": "🌱",
+          "label": "Plántula"
+        },
+        {
+          "char": "🌿",
+          "label": "Hierba"
+        },
+        {
+          "char": "🍃",
+          "label": "Hojas al viento"
+        },
+        {
+          "char": "🌳",
+          "label": "Árbol de hoja caduca"
+        },
+        {
+          "char": "🌲",
+          "label": "Árbol de hoja perenne"
+        },
+        {
+          "char": "🌍",
+          "label": "Globo terráqueo (Europa y África)"
+        },
+        {
+          "char": "🗑",
+          "label": "Bote de basura"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Lazos de concientización",
+      "desc": "Símbolos de lazos por causas y campañas, en todos sus colores y significados."
+    },
+    {
+      "href": "/es/library/simbolos-del-clima/",
+      "title": "Símbolos del clima",
+      "desc": "Sol, nubes, lluvia, nieve y otros símbolos Unicode relacionados con el clima."
+    },
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres especiales",
+      "desc": "Símbolos Unicode únicos, con significado propio y atractivo por sí solos."
+    }
+  ]
+}

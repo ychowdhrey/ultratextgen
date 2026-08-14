@@ -1,0 +1,170 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-email",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-email/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/email-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-email/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/email-symbols/" }
+  ],
+  "title": "Símbolos de Email — Copiar y Pegar Iconos para Tu Firma",
+  "meta_description": "Copia y pega símbolos de email: iconos de contacto para la firma (✉ ☎), símbolos para el asunto, viñetas profesionales y marcadores de estado. Un clic y listo.",
+  "breadcrumb": "Símbolos de Email",
+  "hero_h1": "Símbolos de Email",
+  "hero_tagline": "Una colección de referencia de símbolos pensados para el correo: llamadores de atención para el asunto, viñetas profesionales, separadores, iconos de firma y símbolos de reacción. Haz clic en cualquiera para copiarlo al instante.",
+  "intro": "Explora y copia símbolos de email en Unicode organizados por caso de uso: desde símbolos que destacan en la línea de asunto hasta viñetas profesionales limpias, separadores, indicadores de estado, iconos de contacto y reacciones de respuesta.",
+  "sections": [
+    {
+      "id": "subject-line",
+      "label": "",
+      "h2": "Símbolos que Llaman la Atención en el Asunto",
+      "intro": "Símbolos muy visibles que destacan en la línea de asunto y aumentan la tasa de apertura.",
+      "symbols": [
+        { "char": "⚡", "label": "Rayo" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "✨", "label": "Destellos" },
+        { "char": "🎯", "label": "Diana" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🚀", "label": "Cohete" },
+        { "char": "📢", "label": "Altavoz" },
+        { "char": "📣", "label": "Megáfono" },
+        { "char": "🆕", "label": "Nuevo" },
+        { "char": "🔔", "label": "Campana" },
+        { "char": "💡", "label": "Foco" },
+        { "char": "❗", "label": "Signo de exclamación" }
+      ]
+    },
+    {
+      "id": "pro-bullets",
+      "label": "",
+      "h2": "Símbolos de Viñeta Profesionales",
+      "intro": "Caracteres de viñeta limpios y minimalistas para estructurar el cuerpo del correo.",
+      "symbols": [
+        { "char": "▸", "label": "Triángulo pequeño relleno a la derecha" },
+        { "char": "▹", "label": "Triángulo pequeño hueco a la derecha" },
+        { "char": "◆", "label": "Rombo negro" },
+        { "char": "➤", "label": "Puntero a la derecha" },
+        { "char": "◇", "label": "Rombo blanco" },
+        { "char": "●", "label": "Círculo negro" },
+        { "char": "○", "label": "Círculo blanco" },
+        { "char": "‣", "label": "Viñeta triangular" },
+        { "char": "▪", "label": "Cuadrado pequeño negro" },
+        { "char": "▫", "label": "Cuadrado pequeño blanco" },
+        { "char": "•", "label": "Viñeta" }
+      ]
+    },
+    {
+      "id": "dividers",
+      "label": "",
+      "h2": "Símbolos Separadores para Correos",
+      "intro": "Caracteres de línea para separar visualmente las secciones de un correo.",
+      "symbols": [
+        { "char": "─", "label": "Línea horizontal simple" },
+        { "char": "═", "label": "Línea horizontal doble" },
+        { "char": "━", "label": "Línea horizontal gruesa" },
+        { "char": "│", "label": "Barra vertical" },
+        { "char": "┃", "label": "Barra vertical gruesa" },
+        { "char": "—", "label": "Raya larga" },
+        { "char": "·", "label": "Punto medio" },
+        { "char": "⋯", "label": "Puntos suspensivos centrados" },
+        { "char": "〰", "label": "Guion ondulado" },
+        { "char": "|", "label": "Línea vertical" },
+        { "char": "⁃", "label": "Guion de viñeta" },
+        { "char": "┄", "label": "Línea de trazos ligera" }
+      ]
+    },
+    {
+      "id": "status-priority",
+      "label": "",
+      "h2": "Símbolos de Estado y Prioridad",
+      "intro": "Indicadores de estado y prioridad por color para comunicar tareas y proyectos.",
+      "symbols": [
+        { "char": "🔴", "label": "Rojo (urgente)" },
+        { "char": "🟡", "label": "Amarillo (pendiente)" },
+        { "char": "🟢", "label": "Verde (listo)" },
+        { "char": "✅", "label": "Completado" },
+        { "char": "❌", "label": "Cancelado" },
+        { "char": "❓", "label": "Signo de interrogación" },
+        { "char": "🆘", "label": "SOS" },
+        { "char": "🆓", "label": "Gratis" },
+        { "char": "⚠️", "label": "Advertencia" },
+        { "char": "ℹ️", "label": "Información" },
+        { "char": "🔵", "label": "Azul (en proceso)" },
+        { "char": "⏰", "label": "Despertador" },
+        { "char": "📌", "label": "Chincheta" }
+      ]
+    },
+    {
+      "id": "contact-icons",
+      "label": "",
+      "h2": "Iconos de Contacto y Firma",
+      "intro": "Iconos para firmas de correo, datos de contacto y cierres profesionales.",
+      "symbols": [
+        { "char": "📧", "label": "Correo electrónico" },
+        { "char": "📱", "label": "Teléfono celular" },
+        { "char": "📞", "label": "Auricular de teléfono" },
+        { "char": "🌐", "label": "Sitio web / globo" },
+        { "char": "📍", "label": "Marcador de ubicación" },
+        { "char": "☎", "label": "Teléfono" },
+        { "char": "💼", "label": "Portafolio" },
+        { "char": "🔗", "label": "Enlace" },
+        { "char": "📎", "label": "Clip" },
+        { "char": "🖊", "label": "Pluma" },
+        { "char": "✉", "label": "Sobre" },
+        { "char": "✆", "label": "Ubicación telefónica (texto)" },
+        { "char": "☏", "label": "Teléfono hueco (texto)" },
+        { "char": "⌂", "label": "Casa / dirección (texto)" },
+        { "char": "✎", "label": "Lápiz (texto)" }
+      ]
+    },
+    {
+      "id": "reaction-response",
+      "label": "",
+      "h2": "Símbolos de Reacción y Respuesta",
+      "intro": "Símbolos para reaccionar rápido a un correo, confirmar recibido y cerrar con buena onda.",
+      "symbols": [
+        { "char": "👍", "label": "Pulgar arriba" },
+        { "char": "👎", "label": "Pulgar abajo" },
+        { "char": "✅", "label": "Aprobado" },
+        { "char": "❌", "label": "Rechazado" },
+        { "char": "🤝", "label": "Apretón de manos" },
+        { "char": "🙏", "label": "Gracias" },
+        { "char": "👏", "label": "Aplausos" },
+        { "char": "💯", "label": "Cien puntos" },
+        { "char": "💡", "label": "Idea" },
+        { "char": "🎉", "label": "Celebración" },
+        { "char": "❤️", "label": "Corazón" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-para-linkedin/",
+      "title": "Biblioteca de Símbolos para LinkedIn",
+      "desc": "Símbolos Unicode profesionales probados y seleccionados para publicaciones y comentarios de LinkedIn."
+    },
+    {
+      "href": "/es/library/simbolos-de-verificacion/",
+      "title": "Símbolos de Palomita",
+      "desc": "Palomitas, tachas y marcadores de estado para listas y comparaciones."
+    },
+    {
+      "href": "/es/simbolos-de-flechas/",
+      "title": "Símbolos de Flechas",
+      "desc": "Flechas rectas, curvas, dobles, triangulares y de emoji para dar formato."
+    },
+    {
+      "href": "/guide/linkedin-comment-styling/",
+      "title": "Cómo Dar Estilo a Comentarios de LinkedIn",
+      "desc": "Técnicas y plantillas para escribir comentarios profesionales en LinkedIn."
+    }
+  ]
+}

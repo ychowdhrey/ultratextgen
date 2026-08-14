@@ -10,7 +10,8 @@ For each page it emits:
   - /assets/hero/<slug>.svg   in-page decorative hero banner (1200x340)
   - /assets/og/<slug>.png     1200x630 social card with baked title + brand
 
-Run:  python3 scripts/generate-site-art.py
+Run:  python3 scripts/generate-site-art.py --only <slug>   (incremental)
+      python3 scripts/generate-site-art.py --all           (full regen)
 Requires: cairosvg (PNG rasterization). SVGs are valid standalone assets.
 Arabic titles additionally need arabic-reshaper + python-bidi (cairosvg has
 no shaping/bidi engine of its own — see spanned()) and the fonts-noto-core
@@ -22,7 +23,10 @@ built from vector primitives + raster-safe system-font glyphs only. Colour
 emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
+import io
 import os
+import re
+import sys
 import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,6 +45,7 @@ PANEL2 = "#F2F1FB"
 SANS = "Liberation Sans, DejaVu Sans, sans-serif"
 SERIF = "Georgia, 'Liberation Serif', 'DejaVu Serif', serif"
 SYM = "DejaVu Sans, sans-serif"  # raster-safe symbol coverage
+SYM_PRIMARY = "DejaVu Sans"      # SYM's first family; see spanned()
 
 # ---------------------------------------------------------------- shared defs
 
@@ -103,6 +108,16 @@ _FALLBACK_FONTS = [
     ("Noto Sans Javanese", "/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf"),
     ("Noto Serif Tibetan", "/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf"),
     ("Noto Sans CJK JP", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+    # Added for page-derived motifs (see motif_from_page): a page's own copy
+    # tiles are emoji and styled Unicode, which nothing above covers. Appended
+    # rather than inserted so the resolution order for every character the
+    # existing art already uses is unchanged.
+    ("Noto Color Emoji", "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"),
+    # Math alphanumerics and phonetic small-caps — the output of half this
+    # site's styles (𝓛𝓾𝓷𝓪, 𝕶𝖆𝖗𝖙𝖆𝖑, ᴡᴏʙʙʟʏ).
+    ("FreeSerif", "/usr/share/fonts/truetype/freefont/FreeSerif.ttf"),
+    ("Unifont", "/usr/share/fonts/opentype/unifont/unifont.otf"),
+    ("Unifont Upper", "/usr/share/fonts/opentype/unifont/unifont_upper.otf"),
 ]
 _NATIVE_FONT_FILE = {
     "Noto Sans Arabic": "/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf",
@@ -129,14 +144,57 @@ def _cmap(path):
 
 
 _LIBERATION_SANS = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
+_DEJAVU_SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 
-def _resolve_family(ch, native_family):
+_EMOJI_FONT = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+
+
+# Characters below U+1F000 whose default presentation is emoji rather than
+# text (Unicode Emoji_Presentation=Yes). The distinction is the whole game
+# here: ⚽ and ✅ are pictures, while ♥ ★ ♛ ⚜ ⚔ living a few codepoints away
+# are typographic ornaments. Routing the latter to a colour emoji font puts a
+# glossy red heart inside an ASCII kaomoji and turns a name page's ornament
+# tray into clip-art.
+_EMOJI_PRESENTATION = (
+    (0x231A, 0x231B), (0x23E9, 0x23EC), (0x23F0, 0x23F0), (0x23F3, 0x23F3),
+    (0x25FD, 0x25FE), (0x2614, 0x2615), (0x2648, 0x2653), (0x267F, 0x267F),
+    (0x2693, 0x2693), (0x26A1, 0x26A1), (0x26AA, 0x26AB), (0x26BD, 0x26BE),
+    (0x26C4, 0x26C5), (0x26CE, 0x26CE), (0x26D4, 0x26D4), (0x26EA, 0x26EA),
+    (0x26F2, 0x26F3), (0x26F5, 0x26F5), (0x26FA, 0x26FA), (0x26FD, 0x26FD),
+    (0x2705, 0x2705), (0x270A, 0x270B), (0x2728, 0x2728), (0x274C, 0x274C),
+    (0x274E, 0x274E), (0x2753, 0x2755), (0x2757, 0x2757), (0x2795, 0x2797),
+    (0x27B0, 0x27B0), (0x27BF, 0x27BF), (0x2B1B, 0x2B1C), (0x2B50, 0x2B50),
+    (0x2B55, 0x2B55),
+)
+
+
+def _is_pictograph(ch):
+    """Emoji proper — a picture, not a typographic symbol."""
+    o = ord(ch)
+    if 0x1F000 <= o <= 0x1FAFF:
+        return True
+    return any(lo <= o <= hi for lo, hi in _EMOJI_PRESENTATION)
+
+
+def _resolve_family(ch, native_family, base_path=_LIBERATION_SANS):
     """None -> the default font-family chain already renders this char.
     A family name -> wrap it in a tspan for that family. False -> no
-    installed font covers it; drop the character rather than show tofu."""
+    installed font covers it; drop the character rather than show tofu.
+
+    base_path is the font the enclosing <text> actually draws in, and it is
+    not always the same one: titles are set in SANS (Liberation) but motifs
+    are set in SYM (DejaVu). Testing a motif glyph against Liberation reports
+    ₿ as already covered and leaves it unwrapped, which draws tofu because
+    DejaVu Sans has no such glyph."""
     cp = ord(ch)
-    if cp in _cmap(_LIBERATION_SANS):
+    # Emoji first, ahead of everything: Noto Sans Symbols2 carries monochrome
+    # outlines for part of the emoji range, so without this an emoji set drawn
+    # from a page's own tiles comes out half in colour and half in black
+    # depending on which font happened to win each character.
+    if _is_pictograph(ch) and cp in _cmap(_EMOJI_FONT):
+        return "Noto Color Emoji"
+    if cp in _cmap(base_path):
         return None
     if native_family and cp in _cmap(_NATIVE_FONT_FILE[native_family]):
         return native_family
@@ -146,10 +204,18 @@ def _resolve_family(ch, native_family):
     return False
 
 
-def spanned(text, native):
+def spanned(text, native, default_family=None, base_path=_LIBERATION_SANS):
     """esc(text), wrapping any run the default font can't render in its own
     <tspan font-family="...">, resolved per-character against installed
-    font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
+    font cmaps. native is a family name from NATIVE_SCRIPT, or None.
+
+    default_family names the family the enclosing <text> already asks for, so
+    a run resolving to that same family is emitted as plain text instead of a
+    tspan that would restate it. Callers drawing in SYM should pass
+    SYM_PRIMARY: most decorative glyphs on this site live in DejaVu Sans but
+    not in Liberation Sans, and without this every one of them picks up a
+    redundant wrapper — ~1,100 files of diff noise on art that did not
+    change."""
     if not text:
         return ""
     if native == "Noto Sans Arabic":
@@ -166,7 +232,7 @@ def spanned(text, native):
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
-        fam = _resolve_family(ch, native)
+        fam = _resolve_family(ch, native, base_path)
         if fam is False:
             continue  # no installed font covers this glyph — drop it
         if first or fam == cur_family:
@@ -181,7 +247,7 @@ def spanned(text, native):
     out = ""
     for fam, chunk in runs:
         out += (f'<tspan font-family="{fam}">{esc(chunk)}</tspan>'
-                if fam else esc(chunk))
+                if fam and fam != default_family else esc(chunk))
     return out
 
 
@@ -215,7 +281,7 @@ def scatter_glyphs(p, glyphs, accent=PURPLE):
     # layout: focal centre + up to 4 satellites
     spots = [(70, 96, 60, "stroke"), (300, 104, 52, "blue"),
              (108, 282, 50, "sub"), (286, 262, 50, "ink")]
-    g = [esc(ch) for ch in glyphs[:5]]
+    g = [spanned(ch, None, SYM_PRIMARY, _DEJAVU_SANS) for ch in glyphs[:5]]
     focal = g[0]
     sats = g[1:5]
     lines = ""
@@ -1257,6 +1323,29 @@ def glyphs(*g):
     return P(scatter_glyphs, glyphs=list(g))
 
 
+def native_glyph_badge(p, char, native_family):
+    """A single-glyph focal badge, like scatter_glyphs's focal circle but
+    with the glyph's font-family resolved per-character against installed
+    cmaps (_resolve_family) instead of the fixed SYM constant. scatter_glyphs
+    hardcodes font-family=SYM ("DejaVu Sans"), which has no CJK Symbols and
+    Punctuation coverage (U+3000-303F) — a glyph like 、(U+3001) silently
+    renders as tofu even though the same character renders correctly in the
+    title/subtitle tspans via spanned()'s cmap-aware resolution. Scoped as
+    its own function rather than editing scatter_glyphs itself, which many
+    already-shipped pages' motifs depend on."""
+    fam = _resolve_family(char, native_family)
+    family_attr = fam if fam else SYM
+    ch = esc(char)
+    return f"""
+    <circle cx="180" cy="158" r="58" fill="url(#g{p})"/>
+    <text x="180" y="182" font-family="{family_attr}" font-size="66" fill="#fff"
+          text-anchor="middle">{ch}</text>"""
+
+
+def native_glyph(char, native_family):
+    return P(native_glyph_badge, char=char, native_family=native_family)
+
+
 # Localized homepage social cards. Each localized homepage (de/, es/, ...) used
 # to share the English homepage card, leaving English copy on a translated page.
 # Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
@@ -1522,6 +1611,28 @@ PAGES = {
         m_gamepad, K_USE),
   "id-library-simbol-ml": ("Simbol ML", "Simbol nama Mobile Legends, tinggal salin",
         m_gamepad, K_LIB),
+
+  # ── Turkish library batch (2026-08-08) ──────────────────────────────────
+  "tr-library-emoji-anlamlari": ("Emoji Anlamları", "Hangi emoji ne demek, tek sayfada",
+        m_smiley, K_LIB),
+  "tr-library-iphone-emojileri": ("iPhone Emojileri", "Apple emojileri ve Android farkı",
+        m_smiley, K_LIB),
+  "tr-library-uzgun-emoji": ("Üzgün Emoji", "Hüzünlü yüzler, kırık kalp ve kaomoji",
+        m_kaomoji, K_LIB),
+  "tr-library-aglayan-emoji": ("Ağlayan Emoji", "Gözyaşından gülmekten ağlamaya",
+        m_kaomoji, K_LIB),
+  "tr-library-kurukafa-emoji": ("Kurukafa Emoji", "Öldüm tepkisi ve tehlike sembolleri",
+        m_skull, K_LIB),
+  "tr-library-gulen-emoji": ("Gülen Emoji", "Kahkaha, sırıtma ve meme tepkileri",
+        m_smiley, K_LIB),
+  "tr-library-klavye-sembolleri": ("Klavye Sembolleri", "Command, Shift ve tuş işaretleri",
+        m_block, K_LIB),
+  "tr-library-tac-emoji": ("Taç Emoji", "Queen aurası, bio ve kullanıcı adı için",
+        m_trophy, K_LIB),
+  "tr-library-opucuk-emoji": ("Öpücük Emoji", "Havadan öpücük, dudak izi ve çift emojileri",
+        m_heart, K_LIB),
+  "tr-library-ates-emoji": ("Ateş Emoji", "Çok iyi demenin tek karakterlik hâli",
+        m_firework, K_LIB),
   "id-library-emoji-bintang": ("Emoji Bintang", "Rating bintang 5, kilau, dan bintang jatuh",
         m_star, K_LIB),
   "id-library-emoji-nangis": ("Emoji Nangis", "Dari nangis kejer sampai nahan air mata",
@@ -1634,6 +1745,31 @@ PAGES = {
         P(m_typo, sample="Bold", weight="800", size=80, label="kalın ve net"), K_CAT),
   "tr-alti-cizili-yazi": ("Altı Çizili Yazı", "Altı çizili font kopyala yapıştır",
         P(m_typo, sample="Çizili", size=64, deco="underline", label="vurgulu ve net"), K_CAT),
+  # category/underline-text locale mirrors (Tier-1 gap close)
+  "id-tulisan-garis-bawah": ("Tulisan Garis Bawah", "Font garis bawah copy paste",
+        P(m_typo, sample="Garis", size=64, deco="underline", label="tegas dan jelas"), K_CAT),
+  "pt-texto-sublinhado": ("Texto Sublinhado", "Fonte sublinhada copiar e colar",
+        P(m_typo, sample="Sublinhado", size=58, deco="underline", label="com ênfase"), K_CAT),
+  "de-unterstrichener-text": ("Unterstrichener Text", "Unterstrichene Schrift kopieren",
+        P(m_typo, sample="Unterstrichen", size=52, deco="underline", label="betont und klar"), K_CAT),
+  "fr-texte-souligne": ("Texte Souligné", "Écriture soulignée à copier-coller",
+        P(m_typo, sample="Souligné", size=62, deco="underline", label="net et mis en valeur"), K_CAT),
+  "it-testo-sottolineato": ("Testo Sottolineato", "Scritte sottolineate da copiare",
+        P(m_typo, sample="Sottolineato", size=54, deco="underline", label="con enfasi"), K_CAT),
+  "es-texto-subrayado": ("Texto Subrayado", "Letras subrayadas para copiar",
+        P(m_typo, sample="Subrayado", size=60, deco="underline", label="con énfasis"), K_CAT),
+  "pl-podkreslony-tekst": ("Podkreślony Tekst", "Podkreślona czcionka do skopiowania",
+        P(m_typo, sample="Podkreślony", size=54, deco="underline", label="wyraźnie i czytelnie"), K_CAT),
+  "nl-onderstreepte-tekst": ("Onderstreepte Tekst", "Onderstreept lettertype kopiëren",
+        P(m_typo, sample="Onderstreept", size=54, deco="underline", label="duidelijk en strak"), K_CAT),
+  "tr-gotik-yazi": ("Gotik Yazı", "Gotik font kopyala yapıştır",
+        P(m_typo, sample="Gotik", ff=SERIF, weight="800", size=76, label="ağır ve karakterli"), K_CAT),
+  "nl-gotische-letters": ("Gotische Letters", "Gothic lettertype kopiëren",
+        P(m_typo, sample="Gothic", ff=SERIF, weight="800", size=72, label="zwaar en stoer"), K_CAT),
+  "tr-estetik-yazi": ("Estetik Yazı", "Aesthetic font kopyala yapıştır",
+        P(m_typo, sample="e s t", size=70, spacing="6", label="e s t e t i k"), K_CAT),
+  "fr-texte-barre": ("Texte Barré", "Écriture barrée à copier-coller",
+        P(m_typo, sample="Barré", size=68, deco="line-through", label="rayé et net"), K_CAT),
   "tr-instagram-yazi-tipi": ("Instagram Yazı Tipi", "Bio için şekilli yazı ve semboller", m_camera, K_PLAT),
   "tr-snapchat-yazi-tipi": ("Snapchat Yazı Tipi", "Snap ve görünen ad için şekilli yazı", m_chat, K_PLAT),
   "fr-police-d-ecriture": ("Police d'Écriture", "Polices à copier-coller",
@@ -2498,6 +2634,29 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # ar/library batch (2026-08-14) — sized on Saudi-market (db=sa) keyword
+  # volume. Motifs come from each page's own copy tiles via motif_from_page(),
+  # so the base motif here is only the fallback.
+  "ar-library-text-art": ("رسومات بالرموز", "أحرف الرسم والمكعبات والتظليل للنسخ",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u250c"), K_LIB),
+  "ar-library-pubg-symbols": ("رموز ببجي", "رموز اللاعبين والإطارات المقبولة في اللعبة",
+        glyphs("\u30c4", "\u5f61", "\u4e42", "\ua9c1", "\u2605"), K_LIB),
+  "ar-library-whatsapp-symbols": ("رموز واتساب", "رموز وزخارف لحالة واتساب والبايو",
+        glyphs("\u2713", "\u2665", "\u2605", "\u2022", "\u2756"), K_LIB),
+  "ar-library-fire-emoji": ("ايموجي نار", "معناه في المحادثات وتركيباته الجاهزة",
+        glyphs("\U0001f525", "\U0001f4af", "\U0001f680", "\u26a1", "\U0001f451"), K_LIB),
+  # Printables: id locale hub + first spoke (2026-08-12, gate-pass on 64,850/mo)
+  "id-printables": ("Lembar Huruf untuk Dicetak", "Huruf sambung, balok & kaligrafi \u2014 ketik nama, cetak", m_grid, K_PRINT),
+  "id-printables-huruf-kaligrafi": ("Huruf Kaligrafi A\u2013Z", "Kaligrafi huruf Latin \u2014 tiru, tebalkan, cetak", m_grid, K_PRINT),
+  "id-printables-huruf-bubble": ("Huruf Bubble A\u2013Z & 0\u20139", "Huruf gemuk berongga \u2014 cetak, warnai, unduh PNG", m_grid, K_PRINT),
+  "id-printables-mewarnai-huruf": ("Mewarnai Huruf A\u2013Z", "Lembar mewarnai abjad untuk PAUD & TK", m_grid, K_PRINT),
+  "id-printables-tulisan-selamat-ulang-tahun": ("Tulisan Selamat Ulang Tahun", "Huruf sambung \u2014 cetak, unduh PNG, ganti nama", m_grid, K_PRINT),
+"id-printables-alfabet-spanyol": ("Alfabet Bahasa Spanyol A\u2013Z", "27 huruf termasuk \u00d1 \u2014 cetak & cara baca", m_grid, K_PRINT),
+"id-printables-huruf-titik-titik": ("Huruf Titik-Titik A\u2013Z & 0\u20139", "Sambung titik \u2014 4 tingkat, cetak sendiri", m_grid, K_PRINT),
+"id-printables-kristik-huruf": ("Pola Kristik Huruf A\u2013Z", "Bagan 5\u00d77 \u2014 ketik nama, cetak polanya", m_grid, K_PRINT),
+"id-printables-menebalkan-huruf": ("Menebalkan Huruf", "Buat lembar latihan menulis \u2014 7 tingkat, cetak sendiri", m_grid, K_PRINT),
+  "id-printables-huruf-balok": ("Huruf Balok A\u2013Z", "Huruf terpisah & angka 0\u20139 \u2014 contoh, tebalkan, mal", m_grid, K_PRINT),
+  "id-printables-huruf-sambung": ("Huruf Sambung A\u2013Z", "Lembar tegak bersambung untuk ditebalkan & dicetak", m_grid, K_PRINT),
   # Printables: 5 new locale hub pages
   "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
   "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
@@ -2537,6 +2696,49 @@ for _l, _word in LETTER_WORD.items():
     PAGES[f"printables-cursive-alphabet-letter-{_l}"] = (
         f"Cursive {_L}", f"Capital & lowercase {_L} in cursive — free printable",
         P(m_letter_cursive, letter=_L), K_PRINT)
+    # block-letter stencils and calligraphy were the two per-letter sets never
+    # registered here, so all 26 of each inherited their hub's single card.
+    PAGES[f"printables-block-letters-letter-{_l}"] = (
+        f"Letter {_L} Stencil", f"Block letter {_L} to print, trace and cut",
+        P(m_letter_stencil, letter=_L), K_PRINT)
+    PAGES[f"printables-calligraphy-alphabet-letter-{_l}"] = (
+        f"Calligraphy {_L}", f"Blackletter & script {_L} to copy or print",
+        P(m_letter_cursive, letter=_L), K_PRINT)
+
+# ES per-letter coloring spokes (2026-08-12). Same loop shape as the EN sets
+# above; the Spanish head-word differs from LETTER_WORD because the letter-word
+# association is language-specific (A de Arbol, not A is for Apple).
+LETTER_WORD_ES = {"a": "Árbol", "b": "Ballena", "c": "Casa", "d": "Delfín", "e": "Elefante", "f": "Flor", "g": "Gato", "h": "Helado", "i": "Iglú", "j": "Jirafa", "k": "Koala", "l": "León", "m": "Mariposa", "n": "Nube", "o": "Oso", "p": "Pelota", "q": "Queso", "r": "Ratón", "s": "Sol", "t": "Tortuga", "u": "Uvas", "v": "Vaca", "w": "Wok", "x": "Xilófono", "y": "Yate", "z": "Zapato", "enye": "Ñu"}
+for _l, _word in LETTER_WORD_ES.items():
+    # slug != letter for the Spanish enye: the URL/PNG slug is ASCII ("enye",
+    # matching printablesEngine's own charSlug), but the drawn glyph is Ñ.
+    _L = "Ñ" if _l == "enye" else _l.upper()
+    PAGES[f"es-imprimibles-abecedario-para-colorear-letra-{_l}"] = (
+        f"Letra {_L} para Colorear", f"{_L} de {_word} — contorno grande para imprimir",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
+# ES per-digit number spokes (2026-08-12) — the 0-9 half of the ES colouring
+# family, which had existed on the EN side all along.
+LETTER_WORD_ES_NUM = {"0": "cero", "1": "uno", "2": "dos", "3": "tres", "4": "cuatro",
+                      "5": "cinco", "6": "seis", "7": "siete", "8": "ocho", "9": "nueve"}
+for _d, _w in LETTER_WORD_ES_NUM.items():
+    PAGES[f"es-imprimibles-abecedario-para-colorear-numero-{_d}"] = (
+        f"Numero {_d} para Colorear", f"El {_w} en grande, contorno para imprimir",
+        P(m_letter_outline, letter=_d), K_PRINT)
+
+# Number pages exist for four of the alphabet sets. Registering only the A-Z
+# half left every 0-9 page on its hub's card (block-letters, and — via the
+# category page it borrowed from — bubble-letters).
+for _d in "0123456789":
+    PAGES[f"printables-block-letters-number-{_d}"] = (
+        f"Number {_d} Stencil", f"Block number {_d} to print, trace and cut",
+        P(m_letter_stencil, letter=_d), K_PRINT)
+    PAGES[f"printables-bubble-letters-number-{_d}"] = (
+        f"Bubble Number {_d}", f"Puffy outline {_d} to trace, color and print",
+        P(m_letter_bubble, letter=_d), K_PRINT)
+    PAGES[f"printables-alphabet-coloring-pages-number-{_d}"] = (
+        f"Number {_d} Coloring Page", f"Printable {_d} outline to color",
+        P(m_letter_outline, letter=_d), K_PRINT)
 
 # ---- /learn/ education pillar ----
 PAGES.update({
@@ -2606,6 +2808,7 @@ PAGES.update({
 "answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
 "answers-christmas-card-what-to-write": ("What to Write in a Christmas Card", "Lines by relationship, family to boss", m_qa, K_ANS),
 "answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
+"answers-teacher-appreciation-card-what-to-write": ("What to Write in a Teacher's Card", "Specific lines from a student, parent or class", m_qa, K_ANS),
 "answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
 "answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
@@ -2639,6 +2842,7 @@ PAGES.update({
 "events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
 "events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
 "events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
+"events-teacher-appreciation": ("Teacher Appreciation Text & Symbol Generator", "Apple, pencil, and star emoji with ready-made thank-you lines", m_pencil_ruled, K_USE),
 "events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
 "events-thanksgiving": ("Thanksgiving Fonts & Emoji Generator", "Turkey, pie, and autumn-leaf emoji for gratitude posts", m_pie, K_USE),
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
@@ -2670,6 +2874,17 @@ PAGES.update({
 "pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
+"es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
+# 2026-08-12 ES printables gap-fill + graffiti EN parent.
+"printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+# 2026-08-13 graffiti-generator pass: ID translation of the graffiti EN parent.
+"id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_stencil, letter="G"), K_PRINT),
+"es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
+"es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
+"es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
 "printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
@@ -2701,6 +2916,10 @@ PAGES.update({
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
 "usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
 "usecase-valorant-name-generator": ("Valorant Name Generator", "Live Riot ID checker + stylish names", m_gamepad, K_USE),
+"calligraphy": ("Calligraphy Font Generator", "Script, blackletter & chancery italic to copy and paste",
+      P(m_typo, sample="Aa", weight="700", style="italic", size=88, label="script \u00b7 blackletter \u00b7 italic"), K_CAT),
+"fancy-letters": ("Fancy Letters A to Z", "The whole alphabet in 20 copy-ready Unicode styles",
+      P(m_typo, sample="Aa", weight="800", size=88, label="A\u2013Z \u00b7 a\u2013z \u00b7 0\u20139"), K_CAT),
 "ascii-art-generator": ("ASCII Art Generator", "Turn any word into big block-letter ASCII art",
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
@@ -2718,6 +2937,20 @@ PAGES.update({
       P(m_typo, sample="글", weight="800", size=96, label="글자 수 · 단어 수", ff="Noto Sans CJK KR", lab_ff="Noto Sans CJK KR"), K_USE),
 "zh-tw-zishu-tongji": ("字數統計", "免費線上計算字數與字元數的工具",
       P(m_typo, sample="字", weight="800", size=96, label="字數 · 字元數", ff="Noto Sans CJK TC", lab_ff="Noto Sans CJK TC"), K_USE),
+"nl-woorden-en-tekens-tellen": ("Woorden en tekens tellen", "Live tellingen voor 38 velden op 17 platforms",
+      P(m_typo, sample="123", weight="800", size=88, label="woorden · tekens"), K_USE),
+# m_typo writes `sample`/`label` raw — unlike the card title it does not go
+# through spanned(), so it gets neither Arabic reshaping/bidi nor per-glyph
+# font fallback. Two consequences drive the values below: an Arabic *word*
+# would render as disconnected isolated forms in reversed order (حرف came out
+# reading فرح), and "·" (U+00B7) is absent from both NotoSansArabic and
+# NotoSansThai, so the usual "x · y" label renders a tofu box. Arabic-Indic
+# digits sidestep the first (numbers are written left-to-right, so logical
+# order is already visual order) and a native conjunction sidesteps the second.
+"ar-addad-al-huruf-wal-kalimat": ("عداد الأحرف والكلمات", "عدّ فوري للأحرف والكلمات مع فحص حدود المنصات",
+      P(m_typo, sample="٢٨٠", weight="800", size=88, label="الأحرف والكلمات", ff="Noto Sans Arabic", lab_ff="Noto Sans Arabic"), K_USE),
+"th-nap-kham-lae-tua-akson": ("นับคำและนับตัวอักษร", "นับสดพร้อมเช็กลิมิต 38 ช่องใน 17 แพลตฟอร์ม",
+      P(m_typo, sample="อักษร", weight="800", size=76, label="ตัวอักษรและคำ", ff="Noto Sans Thai", lab_ff="Noto Sans Thai"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
@@ -2820,6 +3053,13 @@ PAGES.update({
 "de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
 "es-updates-unicode-18-fecha-lanzamiento-confirmada": ("Unicode 18.0: fecha confirmada", "16 de septiembre de 2026 — una escritura cortada", m_doc, K_UPDATE),
 "fr-updates-unicode-18-date-de-sortie-confirmee": ("Unicode 18.0 : date confirmée", "16 septembre 2026 — une écriture retirée", m_doc, K_UPDATE),
+"vi-updates-unicode-18-xac-nhan-ngay-phat-hanh": ("Unicode 18.0 chốt ngày phát hành", "16/9/2026 — một hệ chữ bị gạch tên", m_doc, K_UPDATE),
+"zh-tw-updates-unicode-18-fabu-riqi-queren": ("Unicode 18.0 發布日期確定", "2026 年 9 月 16 日——一套文字遭剔除", m_doc, K_UPDATE),
+"vi-updates-emoji-moi-unicode-18": ("Emoji mới của Unicode 18.0", "Cracking Face thắng bình chọn, Pickle và Meteor theo sau", m_doc, K_UPDATE),
+# Kept short deliberately: wrap_width_for() only widens for "Noto Sans CJK
+# JP"/"KR", and zh-tw resolves to WenQuanYi Zen Hei, so a zh-TW title wraps at
+# the Latin character width and a long one overruns the card into the motif.
+"zh-tw-updates-unicode-18-xin-biaoqing-fuhao": ("Unicode 18.0 新表情符號", "龜裂臉贏得公開投票，醃黃瓜居次", m_doc, K_UPDATE),
 "id-updates-tanggal-rilis-unicode-18-dipastikan": ("Tanggal Rilis Unicode 18.0", "16 September 2026 — satu aksara dicoret", m_doc, K_UPDATE),
 "it-updates-data-di-uscita-unicode-18-confermata": ("Unicode 18.0: data confermata", "16 settembre 2026 — una scrittura tolta", m_doc, K_UPDATE),
 "ja-updates-unicode-18-release-date-confirmed": ("Unicode 18.0 リリース日確定", "2026年9月16日 — 文字体系が1つ削除", m_doc, K_UPDATE),
@@ -2848,6 +3088,8 @@ PAGES.update({
 "updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
+"vi-updates-lien-quan-khoa-doi-ten": ("Liên Quân siết khóa đổi tên", "Tên vi phạm bị tự sửa, khóa đổi tên tới 3 năm", m_doc, K_UPDATE),
+"updates-telegram-premium-message-limit": ("Telegram Premium Messages Grow From 4,096 to 32,768 Characters", "Free accounts stay at 4,096 — the editor is Premium-only", m_doc, K_UPDATE),
 })
 
 # ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
@@ -2934,12 +3176,33 @@ PAGES["zh-tw-library-keai-mengxi-fuhao"] = (
 PAGES["zh-tw-library-teshu-fuhao"] = (
     "特殊符號", "複製貼上獨特 Unicode 符號",
     glyphs("§", "¶", "†", "‡", "★"), K_LIB)
+PAGES["zh-tw-symbol-dun-hao"] = (
+    "頓號", "、符號複製貼上與正確用法",
+    native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["zh-tw-symbol-shan-jie-hao"] = (
+    "刪節號", "……六點刪節號複製貼上與正確寫法",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
+# EN parents for the two CJK punctuation marks above. The comma uses
+# native_glyph() rather than glyphs() because U+3001 falls outside DejaVu
+# Sans's coverage — see native_glyph_badge()'s own docstring.
+PAGES["symbol-ideographic-comma"] = (
+    "Ideographic Comma", "、 the CJK list comma, copy & paste",
+    native_glyph("、", "WenQuanYi Zen Hei"), K_SYM)
+PAGES["symbol-ellipsis"] = (
+    "Ellipsis", "… meaning, and why it isn't three periods",
+    glyphs("…", "⋯", "⋮", "‥"), K_SYM)
 PAGES["it-library-caratteri-speciali-simboli"] = (
     "Caratteri Speciali", "Simboli Unicode unici da copiare e incollare",
     glyphs("§", "¶", "†", "‡", "★"), K_LIB)
 PAGES["vi-library-ky-tu-hy-lap"] = (
     "Ký Tự Hy Lạp", "Sao chép & dán bảng chữ cái Hy Lạp",
     glyphs("α", "β", "Δ", "Ω", "π"), K_LIB)
+
+# Moved library/ -> symbol/ on 2026-08-06; its art kept the old
+# es-library-simbolo-de-grado slug, so the page's og/hero 404'd from that day.
+PAGES["es-symbol-simbolo-de-grado"] = (
+    "Símbolo de Grado", "° significado, Alt Code y cómo escribirlo",
+    glyphs("°", "℃", "℉"), K_SYM)
 
 # ---- 2026-08-07: what-font-does-{pinterest,whatsapp}-use — 12 locales ----
 PAGES.update({
@@ -2970,17 +3233,358 @@ PAGES.update({
 })
 
 
-def main():
-    import cairosvg
-    import sys
-    # Optional slug-prefix filter (e.g. `... printables-cursive-alphabet-letter`)
-    # regenerates only the matching pages instead of rewriting the whole set —
-    # keeps incremental additions from churning hundreds of existing assets.
-    only = sys.argv[1] if len(sys.argv) > 1 else None
-    n = 0
-    for slug, (title, sub, motif, kicker) in PAGES.items():
-        if only and not slug.startswith(only):
+
+# ---------------------------------------------------------------------------
+# Page-derived motifs — let a page's own symbols be its artwork.
+#
+# WHY: ~718 registered pages were drawn with a motif carrying no per-page
+# detail, so the art was identical across pages about completely different
+# things — 66 country emoji-combo pages all showed the same anonymous flag,
+# 75 single-emoji pages all showed the same generic smiley. Meanwhile
+# scatter_glyphs (which takes the actual glyphs as an argument) was already
+# producing 190 distinct images across 239 symbol pages. The pattern worked;
+# it just wasn't applied.
+#
+# The fix reads each page's OWN copy-tiles rather than adding a hand-kept
+# mapping: library/algeria-emoji-combos already offers 🇩🇿 as its first tile,
+# library/moai-emoji already offers 🗿. That is authoritative (it is what the
+# page actually gives the reader), needs no maintenance, and self-corrects if
+# a page's symbols change.
+# ---------------------------------------------------------------------------
+
+# Only attributes that carry an actual copy payload. data-style/data-category/
+# data-mode etc. hold config strings ("gothic", "all") and must never be read
+# as artwork.
+_TILE_RE = re.compile(r'data-(?:symbol|text|glyph|copy|char)="([^"]{1,28})"')
+_tiles_cache = {}
+
+# Codepoints that occupy no advance width of their own (ZWJ, VS15/16, ZWSP).
+_ZERO_WIDTH = frozenset("‍️︎​")
+
+
+_page_index = None
+_SKIP_DIRS = {".git", "node_modules", "assets", "scripts", ".github", "data", "docs"}
+
+
+def _build_page_index():
+    """slug -> index.html path, built by walking the tree once.
+
+    A slug cannot be split back into a path by hand: '/' and '-' both become
+    '-', and page directories contain hyphens themselves, so 'zh-tw' is either
+    zh/tw/ or zh-tw/ and 'library-emoji-combos' is either library/emoji-combos/
+    or library-emoji-combos/. Deriving the slug forward from every real path
+    is exact where guessing backwards is not."""
+    idx = {}
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in _SKIP_DIRS and not d.startswith(".")]
+        if "index.html" not in filenames:
             continue
+        rel = os.path.relpath(dirpath, ROOT)
+        if rel == ".":
+            continue
+        idx.setdefault(rel.replace(os.sep, "-"), os.path.join(dirpath, "index.html"))
+    return idx
+
+
+def _slug_to_page(slug):
+    """assets slug -> the page file it was generated for ('a-b-c' -> a/b/c)."""
+    global _page_index
+    if _page_index is None:
+        _page_index = _build_page_index()
+    return _page_index.get(slug)
+
+
+def page_tiles(slug, limit=40):
+    """Everything a page offers for copying, in the page's own priority order.
+
+    Returns [] when the page has no copy-tiles (an answers/ or guide/ page,
+    typically) - callers must treat that as "keep the existing motif", never
+    as "draw nothing"."""
+    if slug in _tiles_cache:
+        return _tiles_cache[slug]
+    out = []
+    path = _slug_to_page(slug)
+    if path:
+        try:
+            html = io.open(path, encoding="utf-8").read()
+        except OSError:
+            html = ""
+        for g in _TILE_RE.findall(html):
+            g = g.strip()
+            if g and g not in out:
+                out.append(g)
+            if len(out) >= limit:
+                break
+    _tiles_cache[slug] = out
+    return out
+
+
+# Interface furniture, not subject matter: arrows, bullets, rules, check/cross
+# marks. They appear on every page and say nothing about any of them.
+_CHROME = frozenset("→←↑↓↔↩↪↻⟶⇒▶◀●○■□⬜⬛▪▫│┃─━╱✓✔✕✖✗➤►▸∙·※�")
+_pict_cache = {}
+
+
+def page_pictographs(slug, limit=5, floor=3):
+    """Fallback art source for pages with no copy-tiles: the pictographs their
+    own visible prose uses.
+
+    A generator page renders its output at runtime and an answers/ page is
+    prose, so neither has a copy grid to read - but an emoji-translator page's
+    worked examples really do contain the emoji it translates to, and an
+    updates/ entry really does contain the emoji the release added. Requires
+    `floor` distinct symbols so a page with one decorative glyph does not get
+    art built out of an accident."""
+    if slug in _pict_cache:
+        return _pict_cache[slug]
+    out = []
+    path = _slug_to_page(slug)
+    if path:
+        try:
+            html = io.open(path, encoding="utf-8").read()
+        except OSError:
+            html = ""
+        html = re.sub(r"(?is)<(script|style|head)\b.*?</\1>", " ", html)
+        html = re.sub(r"(?s)<[^>]+>", " ", html)
+        counts = {}
+        for ch in html:
+            if ch in _CHROME or not _is_pictograph(ch):
+                continue
+            counts[ch] = counts.get(ch, 0) + 1
+        if len(counts) >= floor:
+            out = [c for c, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))][:limit]
+    _pict_cache[slug] = out
+    return out
+
+
+def _units(s):
+    """Approximate advance width of a string in em units, for auto-sizing.
+
+    cairosvg exposes no text measurement we can query, so a specimen line has
+    to be sized before it is drawn or it overflows the panel. Latin/symbol
+    glyphs run ~0.62em in DejaVu Sans; CJK, emoji and enclosed forms are
+    full-width. Combining marks and joiners add nothing."""
+    w = 0.0
+    for ch in s:
+        o = ord(ch)
+        if ch in _ZERO_WIDTH or 0x0300 <= o <= 0x036F:
+            continue
+        if 0x1F1E6 <= o <= 0x1F1FF:      # regional indicator: two make one flag
+            w += 0.5
+        elif 0xA980 <= o <= 0xA9DF:      # Javanese ornaments — very wide
+            w += 1.6
+        elif 0x0F00 <= o <= 0x0FFF:      # Tibetan ornaments — wide
+            w += 1.3
+        elif _is_pictograph(ch):         # emoji cells are near-square
+            w += 1.25
+        elif o > 0x2E00:                 # CJK, enclosed, decorative
+            w += 1.0
+        else:
+            w += 0.62
+    return max(w, 0.6)
+
+
+def _drawable(g):
+    """True when every visible character has an installed font behind it.
+
+    spanned() drops what nothing covers, so an undrawable tile does not fail
+    loudly — it renders an empty card. library/egyptian-hieroglyphs is the
+    real case: U+13000.. is in no font here, and selecting it produced a
+    brand chip with nothing on it."""
+    vis = [c for c in g if c not in _ZERO_WIDTH and not 0x0300 <= ord(c) <= 0x036F]
+    return bool(vis) and all(_resolve_family(c, None, _DEJAVU_SANS) is not False
+                             for c in vis)
+
+
+def _is_run(g):
+    """True for multi-character strings (kaomoji, styled names, framed samples,
+    styled alphabet rows) - anything scatter_glyphs, which sizes for a single
+    symbol at 66px, would overflow."""
+    stripped = "".join(c for c in g if not (0x1F1E6 <= ord(c) <= 0x1F1FF)
+                       and not 0x0300 <= ord(c) <= 0x036F
+                       and c not in _ZERO_WIDTH)
+    return len(stripped) > 2
+
+
+def m_specimen(p, lines, accent=PURPLE):
+    """A specimen card of the page's own output: up to three real samples,
+    stacked, each auto-sized to fit.
+
+    This is the treatment for pages whose copy targets are strings rather than
+    single glyphs - styled names, clan tags, kaomoji, framed samples, styled
+    alphabet rows. Drawing what the page actually produces makes the art
+    specific to that page for free. A single line renders large and centred,
+    so one motif covers both a lone kaomoji and a three-name generator."""
+    lines = [l for l in lines if l][:3]
+    if not lines:
+        return ""
+    box = 250.0                                  # usable panel width in px
+    if len(lines) == 1:
+        rows = [(196, min(58.0, box / _units(lines[0])), INK, 1.0)]
+        chip = f'<circle cx="180" cy="176" r="96" fill="url(#g{p})" opacity="0.14"/>'
+    else:
+        ys = {2: (150, 226), 3: (116, 194, 272)}[len(lines)]
+        maxes = {2: (40.0, 34.0), 3: (36.0, 30.0, 26.0)}[len(lines)]
+        fills = (INK, accent, SUB)
+        ops = (1.0, 0.95, 0.85)
+        rows = [(ys[i], min(maxes[i], box / _units(lines[i])), fills[i], ops[i])
+                for i in range(len(lines))]
+        chip = (f'<rect x="34" y="{ys[0] - 46}" width="292" '
+                f'height="{ys[-1] - ys[0] + 76}" rx="30" fill="url(#g{p})" opacity="0.10"/>')
+    body = "".join(
+        f'<text x="180" y="{y}" font-family="{SYM}" font-size="{sz:.1f}" fill="{fill}" '
+        f'text-anchor="middle" opacity="{op}">{spanned(t, None, SYM_PRIMARY, _DEJAVU_SANS)}</text>'
+        for (y, sz, fill, op), t in zip(rows, lines))
+    return f"""
+    {chip}
+    {body}"""
+
+
+def _spread(items, n):
+    """Pick n items spread across the list rather than the first n.
+
+    Copy grids often open with a shared template block (every free-fire page
+    starts the same way), so taking the head would draw the same picture for
+    every sibling. Sampling across the list picks up what actually differs."""
+    if len(items) <= n:
+        return items
+    step = (len(items) - 1) / float(n - 1) if n > 1 else 0.0
+    return [items[int(round(i * step))] for i in range(n)]
+
+
+def motif_from_page(slug, current_motif):
+    """Upgrade a detail-free motif to one built from the page's own symbols.
+
+    Returns the original motif unchanged when the page has no tiles, so a page
+    that genuinely has no symbols of its own (answers/, guide/) keeps the
+    hand-chosen motif it already had. Runs are preferred over single glyphs
+    when a page has both: a name page's glyph tray is shared with every other
+    name page, while its sample names are its own."""
+    if isinstance(current_motif, P) and current_motif.keywords:
+        return current_motif          # already carries per-page detail
+    tiles = [g for g in page_tiles(slug) if _drawable(g)]
+    if not tiles:
+        pics = [g for g in page_pictographs(slug) if _drawable(g)]
+        return P(scatter_glyphs, glyphs=pics) if pics else current_motif
+    # Order matters, and both halves were learned from a wrong result.
+    # Emoji tiles win outright: library/moai-emoji leads with the moai it is
+    # about and carries unrelated kaomoji further down, so preferring runs
+    # drew a face on the moai page.
+    head = tiles[:8]
+    picts = [g for g in head if not _is_run(g) and any(_is_pictograph(c) for c in g)]
+    if len(picts) * 5 >= len(head) * 3:      # the leading grid is mostly emoji
+        return P(scatter_glyphs,
+                 glyphs=[g for g in tiles if not _is_run(g)
+                         and any(_is_pictograph(c) for c in g)][:5])
+    # Otherwise runs beat single glyphs: every free-fire page opens with the
+    # same ornament tray, so drawing those would give all of them one picture,
+    # while their sample names are genuinely their own.
+    runs = [g for g in tiles if _is_run(g)]
+    if runs:
+        return P(m_specimen, lines=_spread(runs, 3))
+    return P(scatter_glyphs, glyphs=_spread(tiles, 5))
+
+
+
+def main():
+    import argparse
+    import cairosvg
+
+    ap = argparse.ArgumentParser(
+        prog="generate-site-art.py",
+        description="Generate the hero SVG + OG PNG pair for pages registered in PAGES.",
+        epilog=(
+            "A bare run used to regenerate every registered page. That is now behind "
+            "--all, because rasterising the whole set on a machine whose font build "
+            "differs from the one that produced the committed PNGs rewrites hundreds of "
+            "visually-identical-but-byte-different files, and that churn then has to be "
+            "reverted by hand before committing. Name what you are adding instead."))
+    ap.add_argument("--only", action="append", metavar="SLUG_PREFIX", default=[],
+                    help="regenerate only slugs starting with this prefix (repeatable). "
+                         "A slug is the page path with '/' replaced by '-', e.g. "
+                         "tr-gotik-yazi for tr/gotik-yazi/index.html.")
+    ap.add_argument("--all", action="store_true",
+                    help="regenerate EVERY registered page plus the homepage cards. "
+                         "Review `git status` before committing — see epilog.")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="print what would be written and exit without writing.")
+    ap.add_argument("--no-page-motifs", action="store_true",
+                    help="disable deriving a page's motif from its own copy-tiles "
+                         "(see motif_from_page) and use the registered motif as-is.")
+    ap.add_argument("--force", action="store_true",
+                    help="re-render pages whose art already exists. Without this, an "
+                         "existing hero+OG pair is left alone — so a run only fills gaps "
+                         "and costs nothing for pages that are already done.")
+    # Backwards compatibility: this script used to take a bare positional slug
+    # prefix (sys.argv[1]). Kept working, hidden from --help, so older docs and
+    # muscle memory don't break.
+    ap.add_argument("legacy_prefix", nargs="?", help=argparse.SUPPRESS)
+    a = ap.parse_args()
+
+    prefixes = list(a.only)
+    if a.legacy_prefix:
+        prefixes.append(a.legacy_prefix)
+
+    if not prefixes and not a.all:
+        print("error: refusing to regenerate every asset without --all.\n", file=sys.stderr)
+        print("  Adding or changing a page?  python3 scripts/generate-site-art.py --only <slug>",
+              file=sys.stderr)
+        print("  (slug = page path with '/' as '-', e.g. --only tr-gotik-yazi)\n", file=sys.stderr)
+        print("  Really want the whole set?  python3 scripts/generate-site-art.py --all",
+              file=sys.stderr)
+        print("  Not sure what a run would touch?  add --dry-run to either.\n", file=sys.stderr)
+        print(f"  {len(PAGES)} pages are registered; a full run also rewrites the homepage "
+              f"card and {len(LOCALIZED_HOME)} localized homepage cards.", file=sys.stderr)
+        return 2
+
+    if prefixes:
+        selected = [s for s in PAGES if any(s.startswith(p) for p in prefixes)]
+        # A prefix that matches nothing is almost always a typo, and silently
+        # doing no work reads exactly like success.
+        unmatched = [p for p in prefixes if not any(s.startswith(p) for s in PAGES)]
+        if unmatched:
+            print(f"error: no registered page matches: {', '.join(unmatched)}", file=sys.stderr)
+            print("       check the slug, or register the page in PAGES first.", file=sys.stderr)
+            return 2
+    else:
+        selected = list(PAGES)
+
+    # Only produce what is actually missing. Re-rendering a page whose art already
+    # exists cannot improve it (the inputs are unchanged) but CAN churn the file,
+    # because a different local font build rasterises the same SVG to different
+    # bytes. So "already there" means "done" unless the caller says otherwise.
+    already = []
+    if not a.force:
+        keep = []
+        for slug in selected:
+            if (os.path.exists(os.path.join(HERO, f"{slug}.svg"))
+                    and os.path.exists(os.path.join(OG, f"{slug}.png"))):
+                already.append(slug)
+            else:
+                keep.append(slug)
+        selected = keep
+
+    if a.dry_run:
+        if already:
+            print(f"[dry-run] {len(already)} page(s) already have their art — skipping "
+                  f"(use --force to re-render).")
+        print(f"[dry-run] would write {len(selected)} hero SVG + OG PNG pair(s):")
+        for slug in selected:
+            print(f"  assets/hero/{slug}.svg  +  assets/og/{slug}.png")
+        if a.all:
+            print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
+            print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
+        return 0
+
+    if already and not a.dry_run:
+        print(f"{len(already)} page(s) already have their art — skipped "
+              f"(use --force to re-render).")
+
+    n = 0
+    for slug in selected:
+        title, sub, motif, kicker = PAGES[slug]
+        if not a.no_page_motifs:
+            motif = motif_from_page(slug, motif)
         native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
@@ -2990,12 +3594,13 @@ def main():
             output_width=1200, output_height=630)
         n += 1
 
-    # Homepage social card + hero figure. The English root index.html
-    # references both. Skipped when a slug filter is active — a filtered run
-    # is an incremental addition, not a full regeneration.
-    if only:
-        print(f"wrote {n} hero SVGs and OG PNGs (filter: {only})")
-        return
+    # Homepage social card + hero figure, and the localized homepage cards.
+    # Only on a full run: a scoped run is an incremental addition and has no
+    # business rewriting the homepage's art.
+    if not a.all:
+        print(f"wrote {n} hero SVG + OG PNG pair(s) (scoped to: {', '.join(prefixes)})")
+        return 0
+
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(
@@ -3019,7 +3624,10 @@ def main():
     print(f"wrote {n} hero SVGs to assets/hero/ and {n} OG PNGs to assets/og/")
     print(f"wrote homepage card + {len(LOCALIZED_HOME)} localized homepage cards "
           "to assets/og/")
+    print("\nNOTE: a full run rewrites every asset. Review `git status` and revert any "
+          "file whose only change is a re-render before committing.")
     report_orphan_keys()
+    return 0
 
 
 def report_orphan_keys():
@@ -3059,4 +3667,4 @@ def report_orphan_keys():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

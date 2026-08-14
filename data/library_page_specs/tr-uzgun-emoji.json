@@ -1,0 +1,304 @@
+{
+  "slug": "uzgun-emoji",
+  "title": "Üzgün Emoji 😢 💔 — Hüzünlü Emoji ve Kaomoji Kopyala Yapıştır | UltraTextGen",
+  "meta_description": "Üzgün emoji 😢 😔 ☹, kırık kalp sembolleri ve hüzünlü kaomoji (◞‸◟) tek sayfada. Tıkla kopyala, sohbete ya da bio'ya yapıştır.",
+  "breadcrumb": "Üzgün Emoji",
+  "hero_h1": "Üzgün Emoji ve Kaomoji",
+  "hero_tagline": "Hafif bir surat asmadan gözü dolmuş yüze kadar bütün üzgün ifadeler, kırık kalp sembolleri ve karakterle kurulan hüzünlü kaomoji.",
+  "intro": "Üzgün emoji seçmek göründüğünden ince bir iş: 😔 sessiz bir küskünlük, 😢 gerçekten dolmuş bir göz, ☹ ise daha resmî duran eski bir sembol. Aşağıda hepsi tonuna göre ayrıldı — üstüne tıkladığında panoya kopyalanır.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "uzgun-yuzler",
+      "label": "Yüzler",
+      "h2": "Üzgün Yüz Emojileri",
+      "intro": "En hafifinden en ağırına, üzgün yüz ifadeleri.",
+      "symbols": [
+        {
+          "char": "😢",
+          "label": "Ağlayan Yüz"
+        },
+        {
+          "char": "😞",
+          "label": "Hayal Kırıklığına Uğramış Yüz"
+        },
+        {
+          "char": "😔",
+          "label": "Düşünceli Mahzun Yüz"
+        },
+        {
+          "char": "☹",
+          "label": "Asık Suratlı Yüz"
+        },
+        {
+          "char": "🙁",
+          "label": "Hafif Asık Surat"
+        },
+        {
+          "char": "😟",
+          "label": "Endişeli Yüz"
+        },
+        {
+          "char": "😕",
+          "label": "Kafası Karışmış Yüz"
+        },
+        {
+          "char": "😥",
+          "label": "Üzgün Ama Rahatlamış Yüz"
+        }
+      ]
+    },
+    {
+      "id": "kirik-kalp",
+      "label": "Kırık Kalp",
+      "h2": "Kırık Kalp ve Hüzün Sembolleri",
+      "intro": "Yüz kullanmadan aynı duyguyu veren semboller.",
+      "symbols": [
+        {
+          "char": "💔",
+          "label": "Kırık Kalp"
+        },
+        {
+          "char": "🥀",
+          "label": "Solmuş Gül"
+        },
+        {
+          "char": "🖤",
+          "label": "Siyah Kalp"
+        },
+        {
+          "char": "🌧",
+          "label": "Yağmurlu Bulut"
+        },
+        {
+          "char": "🌫",
+          "label": "Sis"
+        },
+        {
+          "char": "🍂",
+          "label": "Düşen Yaprak"
+        },
+        {
+          "char": "🕯",
+          "label": "Mum"
+        },
+        {
+          "char": "🎻",
+          "label": "Keman"
+        }
+      ]
+    },
+    {
+      "id": "yorgun-yuzler",
+      "label": "Bitkin",
+      "h2": "Bezgin ve Tükenmiş Yüzler",
+      "intro": "Üzüntüden çok yorgunluk ve bıkkınlık anlatanlar.",
+      "symbols": [
+        {
+          "char": "😓",
+          "label": "Soğuk Terleyen Mahzun Yüz"
+        },
+        {
+          "char": "🫤",
+          "label": "Çarpık Ağızlı Yüz"
+        },
+        {
+          "char": "😒",
+          "label": "Keyifsiz Yüz"
+        },
+        {
+          "char": "🫥",
+          "label": "Noktalı Çizgi Yüz"
+        },
+        {
+          "char": "😶‍🌫️",
+          "label": "Bulutlar İçinde Yüz"
+        },
+        {
+          "char": "😮‍💨",
+          "label": "Nefes Veren Yüz"
+        },
+        {
+          "char": "😦",
+          "label": "Ağzı Açık Asık Surat"
+        }
+      ]
+    },
+    {
+      "id": "uzgun-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Üzgün Kaomoji ve Metin Yüzleri",
+      "intro": "Emoji desteklemeyen alanlarda da çalışan, karakterle kurulmuş yüzler.",
+      "symbols": [
+        {
+          "char": "(μ_μ)",
+          "label": "Yere Bakan Kaomoji"
+        },
+        {
+          "char": "(._.)",
+          "label": "Boş Bakış Kaomoji"
+        },
+        {
+          "char": "(´。＿。｀)",
+          "label": "Başı Önde Kaomoji"
+        },
+        {
+          "char": "(◞‸◟)",
+          "label": "Karamsar Kaomoji"
+        },
+        {
+          "char": "( ´•︵•` )",
+          "label": "Somurtan Üzüntü Kaomoji"
+        },
+        {
+          "char": "（ ｉдｉ ）",
+          "label": "Gözü Yaşlı Kaomoji"
+        },
+        {
+          "char": "(〒﹏〒)",
+          "label": "Ağır Yürekli Kaomoji"
+        },
+        {
+          "char": "( ︶︿︶)",
+          "label": "Boyun Eğmiş İç Çekiş Kaomoji"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "nerede-calisir",
+      "label": "Nerede Çalışır",
+      "h2": "Üzgün Emoji ve Kaomoji Nerede Düzgün Görünür?",
+      "paragraphs": [
+        "Bu sayfadaki emojiler tek Unicode karakteri, yani WhatsApp, Instagram, X ve Discord'da sorunsuz gider. Kaomoji ise normal noktalama ve harflerden kurulur — bu yüzden emojiyi engelleyen ya da desteklemeyen alanlarda bile görünür. Oyun içi sohbet ve bazı form alanları için kaomoji daha güvenli seçim.",
+        "Kullanıcı adı alanlarında iş değişir. Instagram ve X kullanıcı adında emojiye izin vermez; görünen ad (display name) alanında ise çoğu zaman verir. Kaomoji'nin özel karakterleri de bazı platformlarda eleniyor — kaydetmeden önce alanın kabul edip etmediğini denemekte fayda var.",
+        "☹ ve 🙁 gibi eski sembol tabanlı karakterler bazı cihazlarda renkli emoji yerine siyah beyaz metin olarak çizilir. Yanlış kopyalamış olmazsın; o karakterin cihazdaki varsayılan gösterimi öyledir. Her yerde renkli görünmesini istiyorsan 😔 ya da 😢 gibi doğrudan emoji olanları tercih et."
+      ]
+    }
+  ],
+  "faq_h2": "Üzgün Emoji Hakkında Sık Sorulanlar",
+  "faq": [
+    {
+      "q": "😢 ile 😭 arasındaki fark ne?",
+      "a": "😢 tek damla gözyaşı — sessiz, içine atılan bir üzüntü. 😭 hüngür hüngür ağlamak ve günlük kullanımda çoğu zaman abartı ya da şaka için atılır. Gerçekten üzgün olduğunu anlatmak istiyorsan 😢 ya da 😔 daha doğru okunur."
+    },
+    {
+      "q": "😔 ile 😞 aynı şey mi?",
+      "a": "Yakınlar ama aynı değil. 😔 daha içe dönük, düşünceli bir mahzunluk; 😞 ise bir beklentinin karşılanmamasından gelen hayal kırıklığı. Biri ruh hâli, diğeri bir olaya tepki."
+    },
+    {
+      "q": "Kaomoji'yi kullanıcı adında kullanabilir miyim?",
+      "a": "Platforma göre değişir. Çoğu oyun ve uygulama kullanıcı adında yalnızca harf, rakam ve birkaç işarete izin verir; kaomoji'deki özel karakterler elenebilir. Görünen ad alanında şansın çok daha yüksek."
+    },
+    {
+      "q": "Emoji neden bende renkli, arkadaşımda siyah beyaz görünüyor?",
+      "a": "☹ ve 🕯 gibi bazı karakterlerin hem metin hem emoji gösterimi var; hangisinin çizileceğine cihaz karar veriyor. Aynı karakteri gönderdin, sadece iki telefon farklı yorumladı."
+    },
+    {
+      "q": "Üzgün emoji bio'da nasıl durur?",
+      "a": "Tek bir emoji ya da kısa bir kaomoji genelde iyi durur; üst üste birkaç tanesi bio'yu dağıtır. Bio karakter sınırı olan alanlarda emojinin çoğu zaman bir karakterden fazla saydığını da unutma."
+    }
+  ],
+  "faq_label": "SSS",
+  "related": [
+    {
+      "href": "/tr/library/yuz-emojileri/",
+      "title": "Yüz Emojileri",
+      "desc": "Bütün yüz ifadeleri tek listede."
+    },
+    {
+      "href": "/tr/library/kalp-sembolleri/",
+      "title": "Kalp Sembolleri",
+      "desc": "Kırık kalp dahil bütün kalp karakterleri."
+    },
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Karakterlerden kurulu yüz ifadeleri."
+    },
+    {
+      "href": "/tr/library/emoji-combos/",
+      "title": "Emoji Kombinasyonları",
+      "desc": "Hazır emoji dizilimleri."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/tr/library/uzgun-emoji/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
+  "lang": "tr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/sad-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/uzgun-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/sad-emoji/"
+    }
+  ],
+  "collection_section": {
+    "id": "hazir-setler",
+    "label": "Hüzün Setleri",
+    "h2": "Hazır Hüzün Setleri",
+    "intro": "Hazır hüzün dizilimleri — sohbete ya da bio'ya tek tıkla."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Kırık Kalp",
+      "flags": [
+        "💔",
+        "🥀",
+        "🖤",
+        "😢"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yağmurlu Mod",
+      "flags": [
+        "🌧",
+        "🌫",
+        "🍂",
+        "😔"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sessiz Üzüntü",
+      "flags": [
+        "😔",
+        "😞",
+        "🖤",
+        "🕯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bitkinlik",
+      "flags": [
+        "😓",
+        "😒",
+        "😮‍💨",
+        "🫤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Hüzün",
+      "flags": [
+        "(◞‸◟)",
+        "(´。＿。｀)",
+        "(μ_μ)"
+      ],
+      "defaultFormat": "inline"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-honduras",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-honduras/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/honduras-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-honduras/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/honduras-emoji-combos/" }
+  ],
+  "title": "Emoji Honduras: Combos 🇭🇳⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Honduras 🇭🇳⚽: los colores de Los Catrachos y sets de fútbol para biografías y publicaciones. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Honduras",
+  "hero_h1": "Combos de Emoji Honduras",
+  "hero_tagline": "Los colores de Los Catrachos y sets de emojis de fútbol para hinchas de Honduras: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Honduras 🇭🇳 casi nunca va solo: los aficionados lo combinan con la pelota ⚽ y con el azul y blanco de Los Catrachos. Vamos Honduras, la H siempre pelea. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Honduras",
+      "h2": "Emojis de Honduras",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🇭🇳", "label": "Bandera de Honduras" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis del Orgullo Catracho",
+      "intro": "Azul y blanco con las cinco estrellas.",
+      "symbols": [
+        { "char": "🔵", "label": "Círculo azul" },
+        { "char": "⚪", "label": "Círculo blanco" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "💙", "label": "Corazón azul" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Los Catrachos",
+      "flags": ["🇭🇳", "⚽", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vamos Honduras",
+      "flags": ["🇭🇳", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Azul y Blanco",
+      "flags": ["🔵", "⚪", "🔵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Hondureño",
+      "flags": ["🇭🇳", "⚽", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "hondurasCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Honduras",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

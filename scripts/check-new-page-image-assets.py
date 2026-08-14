@@ -149,9 +149,15 @@ def main():
         for rel, problem in failures:
             print(f"  ✗ {rel} — {problem}")
         print("")
+        # Emit the exact scoped command. generate-site-art.py refuses a bare
+        # run (it would rewrite all ~1,200 assets), and its slug is the page
+        # path with "/" as "-" — so compute it here rather than making the
+        # reader work it out under time pressure.
+        slugs = sorted({os.path.dirname(rel).replace(os.sep, "-") for rel, _ in failures})
+        paths = sorted({rel for rel, _ in failures})
         print("Fix: generate and commit the art in this same PR —")
-        print("  python3 scripts/generate-site-art.py")
-        print("  python3 scripts/wire-site-art.py")
+        print("  python3 scripts/generate-site-art.py " + " ".join(f"--only {s}" for s in slugs))
+        print("  python3 scripts/wire-site-art.py " + " ".join(paths))
         print("(see docs/image-seo-fixes.md). Don't merge a new/edited page ahead of its")
         print("art and rely on a later cleanup pass — Google crawls new pages within")
         print("hours and records the broken reference before any follow-up fix lands.")

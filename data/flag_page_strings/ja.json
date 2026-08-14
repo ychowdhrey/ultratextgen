@@ -1,0 +1,33 @@
+{
+  "locale": "ja",
+  "sections": {
+    "country_list": {
+      "label": "国別一覧",
+      "h2": "世界195か国の国旗一覧",
+      "intro": "大陸で絞り込んで、旗をタップするとコピーできます。"
+    },
+    "grids": {
+      "label": "まとめてコピー",
+      "h2": "国旗セットをまとめてコピー",
+      "intro": "EU27か国もASEAN10か国も、1タップでグループごとまとめてコピーできます。"
+    }
+  },
+  "regions": {
+    "all": "すべて",
+    "europe": "ヨーロッパ",
+    "asia": "アジア",
+    "americas": "南北アメリカ",
+    "africa": "アフリカ",
+    "oceania": "オセアニア"
+  },
+  "aria_copy_flag": "{name}の国旗をコピー",
+  "groups": {
+    "European Union Members": "EU加盟国",
+    "ASEAN": "ASEAN（東南アジア）",
+    "Middle East": "中東",
+    "G20": "G20",
+    "Nordic Countries": "北欧",
+    "South Asia": "南アジア",
+    "East Asia": "東アジア"
+  }
+}

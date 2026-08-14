@@ -1,0 +1,177 @@
+{
+ "lang": "es",
+ "slug": "emoji-venezuela",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-venezuela/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/venezuela-emoji-combos/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-venezuela/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/venezuela-emoji-combos/"
+  }
+ ],
+ "title": "Emoji Venezuela 🇻🇪⚽ Combos para Copiar y Pegar",
+ "meta_description": "Combos de emoji Venezuela 🇻🇪⚽ — colores de La Vinotinto y sets de fútbol para biografías y publicaciones. Haz clic en cualquier emoji para copiarlo.",
+ "breadcrumb": "Combos de Emojis de Venezuela",
+ "hero_h1": "Combos de Emojis de Venezuela",
+ "hero_tagline": "Los colores de La Vinotinto y sets de emojis de fútbol para los hinchas de Venezuela: haz clic en cualquier emoji o combo para copiarlo.",
+ "intro": "Los combos de emoji Venezuela juntan la bandera 🇻🇪 con el balón ⚽ y los colores de La Vinotinto. ¡Vamos Venezuela! La Vinotinto se lleva en la sangre. Copia un emoji suelto de los de abajo o llévate un set completo con un solo clic.",
+ "sections": [
+  {
+   "id": "nation-emojis",
+   "label": "Venezuela",
+   "h2": "Emojis de Venezuela",
+   "intro": "La bandera, el balón y los colores nacionales.",
+   "symbols": [
+    {
+     "char": "🇻🇪",
+     "label": "Bandera de Venezuela"
+    },
+    {
+     "char": "⚽",
+     "label": "Balón de fútbol"
+    },
+    {
+     "char": "🟤",
+     "label": "Vinotinto"
+    },
+    {
+     "char": "🟡",
+     "label": "Círculo amarillo"
+    },
+    {
+     "char": "🔵",
+     "label": "Círculo azul"
+    },
+    {
+     "char": "🍷",
+     "label": "Copa de vino"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🎉",
+     "label": "Cañón de confeti"
+    }
+   ]
+  },
+  {
+   "id": "pride-emojis",
+   "label": "Orgullo",
+   "h2": "Emojis del Orgullo Venezolano",
+   "intro": "El color vinotinto de La Vinotinto.",
+   "symbols": [
+    {
+     "char": "🟤",
+     "label": "Vinotinto"
+    },
+    {
+     "char": "🟡",
+     "label": "Círculo amarillo"
+    },
+    {
+     "char": "🔵",
+     "label": "Círculo azul"
+    },
+    {
+     "char": "🍷",
+     "label": "Copa de vino"
+    },
+    {
+     "char": "⭐",
+     "label": "Estrella"
+    },
+    {
+     "char": "🏆",
+     "label": "Trofeo"
+    },
+    {
+     "char": "🔥",
+     "label": "Fuego"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "La Vinotinto",
+   "flags": [
+    "🇻🇪",
+    "⚽",
+    "🍷"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Vamos Venezuela",
+   "flags": [
+    "🇻🇪",
+    "⚽",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Amarillo, Azul y Rojo",
+   "flags": [
+    "🟡",
+    "🔵",
+    "🔴"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Orgullo Venezolano",
+   "flags": [
+    "🇻🇪",
+    "⚽",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "venezuelaCombosContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos de Venezuela",
+  "intro": "Copia un combo completo con un clic y pégalo en tu biografía, publicación o nombre de usuario."
+ },
+ "related": [
+  {
+   "href": "/library/world-cup-emoji-combos/",
+   "title": "Combos de Emojis del Mundial",
+   "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+  },
+  {
+   "href": "/es/library/simbolos-de-futbol/",
+   "title": "Símbolos de Fútbol",
+   "desc": "Símbolos de fútbol, trofeos y combos de partido."
+  },
+  {
+   "href": "/es/library/emoji-flags/",
+   "title": "Emojis de Banderas",
+   "desc": "Emojis de banderas de países y regiones listos para copiar y pegar."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Combinaciones estéticas de emojis para cada estado de ánimo y temática."
+  }
+ ]
+}

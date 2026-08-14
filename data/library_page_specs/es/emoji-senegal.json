@@ -1,0 +1,107 @@
+{
+  "lang": "es",
+  "slug": "emoji-senegal",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-senegal/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/senegal-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-senegal/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/senegal-emoji-combos/" }
+  ],
+  "title": "Emoji Senegal: Combos 🇸🇳⚽ para Copiar y Pegar",
+  "meta_description": "Combos de emoji Senegal 🇸🇳⚽ — colores de los Leones de la Teranga y sets de fútbol para biografías y publicaciones. Haz clic para copiar al instante.",
+  "breadcrumb": "Combos de Emoji Senegal",
+  "hero_h1": "Combos de Emoji Senegal",
+  "hero_tagline": "Colores de los Leones de la Teranga y sets de emojis de fútbol para los fans de Senegal — haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "Los fans de Senegal combinan la bandera 🇸🇳 con el balón ⚽ y los colores de los Leones de la Teranga. Allez les Lions ruge por el orgullo teranga. Copia un solo emoji abajo, o llévate un combo completo con un clic.",
+  "sections": [
+    {
+      "id": "senegal-emojis",
+      "label": "Senegal",
+      "h2": "Emojis de Senegal",
+      "intro": "La bandera, el balón y los colores nacionales.",
+      "symbols": [
+        { "char": "🇸🇳", "label": "Bandera de Senegal" },
+        { "char": "⚽", "label": "Balón de fútbol" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🦁", "label": "León" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo de Senegal",
+      "intro": "El verde, el amarillo y el rojo de los Leones.",
+      "symbols": [
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🟡", "label": "Círculo amarillo" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🦁", "label": "León" },
+        { "char": "⭐", "label": "Estrella" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Leones de la Teranga",
+      "flags": ["🇸🇳", "⚽", "🦁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Allez Sénégal",
+      "flags": ["🇸🇳", "⚽", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Verde, Amarillo y Rojo",
+      "flags": ["🟢", "🟡", "🔴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orgullo Senegalés",
+      "flags": ["🇸🇳", "🦁", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "senegalCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Senegal",
+    "intro": "Copia un combo completo con un clic y pégalo en una biografía, una publicación o un nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emojis del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de fans."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis aesthetic para cada ánimo y tema."
+    }
+  ]
+}

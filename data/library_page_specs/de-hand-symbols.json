@@ -1,0 +1,313 @@
+{
+  "slug": "hand-symbole",
+  "title": "Hand Symbole 👍 ✌ 🤝 — Handzeichen und Gesten zum Kopieren | UltraTextGen",
+  "meta_description": "Hand-Symbole zum Kopieren: Zeigefinger ☝ 👉, Daumen 👍 👎, Gesten ✌ 🤞 🤙, Applaus 👏 und Textzeichen ☞ ☜. Antippen zum sofortigen Kopieren.",
+  "breadcrumb": "Hand Symbole",
+  "hero_h1": "Hand- und Gestensymbole",
+  "hero_tagline": "👍 ✌ 👏 ☞ 🤝 — zeigen, zustimmen, gestikulieren, applaudieren. Antippen zum Kopieren.",
+  "intro": "Handzeichen gibt es in zwei Formen: als Emoji, das farbig und mit Hautton erscheint, und als Textzeichen wie ☞ ☜, die die Farbe des Texts übernehmen und dadurch in Listen und Überschriften ruhiger wirken. Beide stehen unten nebeneinander. Antippen kopiert das Zeichen.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Zeigende Hände",
+      "h2": "Zeigende Hände",
+      "intro": "Auf etwas hinweisen.",
+      "symbols": [
+        {
+          "char": "👆",
+          "label": "Daumen nach oben zeigend"
+        },
+        {
+          "char": "👇",
+          "label": "Nach unten zeigend"
+        },
+        {
+          "char": "👈",
+          "label": "Nach links zeigend"
+        },
+        {
+          "char": "👉",
+          "label": "Nach rechts zeigend"
+        },
+        {
+          "char": "☝",
+          "label": "Zeigefinger nach oben"
+        },
+        {
+          "char": "☞",
+          "label": "Zeigefinger nach rechts"
+        },
+        {
+          "char": "☜",
+          "label": "Zeigefinger nach links"
+        },
+        {
+          "char": "☟",
+          "label": "Zeigefinger nach unten"
+        },
+        {
+          "char": "🫵",
+          "label": "Auf den Betrachter zeigend"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Zustimmung und Daumen",
+      "h2": "Zustimmung und Daumen",
+      "intro": "Zustimmen oder ablehnen.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Daumen hoch"
+        },
+        {
+          "char": "👎",
+          "label": "Daumen runter"
+        },
+        {
+          "char": "👌",
+          "label": "OK-Zeichen"
+        },
+        {
+          "char": "🤌",
+          "label": "Zusammengelegte Finger"
+        },
+        {
+          "char": "🙆",
+          "label": "OK-Geste mit Armen"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Handgesten",
+      "h2": "Handgesten",
+      "intro": "Was die Hand sonst sagt.",
+      "symbols": [
+        {
+          "char": "✌",
+          "label": "Victory-Zeichen"
+        },
+        {
+          "char": "🤞",
+          "label": "Gekreuzte Finger"
+        },
+        {
+          "char": "🤟",
+          "label": "Ich liebe dich"
+        },
+        {
+          "char": "🤘",
+          "label": "Pommesgabel"
+        },
+        {
+          "char": "🤙",
+          "label": "Ruf mich an"
+        },
+        {
+          "char": "🫰",
+          "label": "Fingerschnippen"
+        },
+        {
+          "char": "🫱",
+          "label": "Rechte Hand"
+        },
+        {
+          "char": "🫲",
+          "label": "Linke Hand"
+        },
+        {
+          "char": "🫳",
+          "label": "Handfläche nach unten"
+        },
+        {
+          "char": "🫴",
+          "label": "Handfläche nach oben"
+        },
+        {
+          "char": "👐",
+          "label": "Offene Hände"
+        },
+        {
+          "char": "🤲",
+          "label": "Handflächen nach oben"
+        },
+        {
+          "char": "🫡",
+          "label": "Salut"
+        },
+        {
+          "char": "🤦",
+          "label": "Facepalm"
+        },
+        {
+          "char": "🙇",
+          "label": "Verbeugung"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Applaus und Ausdruck",
+      "h2": "Applaus und Ausdruck",
+      "intro": "Reaktion auf andere.",
+      "symbols": [
+        {
+          "char": "🙌",
+          "label": "Erhobene Hände"
+        },
+        {
+          "char": "👏",
+          "label": "Applaus"
+        },
+        {
+          "char": "🤝",
+          "label": "Handschlag"
+        },
+        {
+          "char": "🙏",
+          "label": "Gefaltete Hände"
+        },
+        {
+          "char": "👐",
+          "label": "Offene Hände"
+        },
+        {
+          "char": "🤲",
+          "label": "Handflächen nach oben"
+        },
+        {
+          "char": "🫶",
+          "label": "Herz aus Händen"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Funktionale Handzeichen",
+      "h2": "Funktionale Handzeichen",
+      "intro": "Der Rest der Sammlung.",
+      "symbols": [
+        {
+          "char": "✋",
+          "label": "Erhobene Hand"
+        },
+        {
+          "char": "🖐",
+          "label": "Gespreizte Finger"
+        },
+        {
+          "char": "🖖",
+          "label": "Vulkanischer Gruß"
+        },
+        {
+          "char": "✍",
+          "label": "Schreibende Hand"
+        },
+        {
+          "char": "🤚",
+          "label": "Handrücken"
+        },
+        {
+          "char": "🖕",
+          "label": "Mittelfinger"
+        },
+        {
+          "char": "🦾",
+          "label": "Mechanischer Arm"
+        },
+        {
+          "char": "✊",
+          "label": "Erhobene Faust"
+        },
+        {
+          "char": "👊",
+          "label": "Entgegenkommende Faust"
+        },
+        {
+          "char": "🤛",
+          "label": "Linke Faust"
+        },
+        {
+          "char": "🤜",
+          "label": "Rechte Faust"
+        },
+        {
+          "char": "👋",
+          "label": "Winkende Hand"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Häufige Fragen zu Hand-Symbolen",
+  "faq": [
+    {
+      "q": "Warum sieht 👍 auf anderen Geräten anders aus?",
+      "a": "Emojis zeichnet das Betriebssystem, nicht die Seite. Apple, Google, Samsung und Microsoft haben eigene Sätze, und gerade Handzeichen unterscheiden sich in Haltung und Winkel deutlich. Wer sicher gehen will, nimmt die Textzeichen ☞ ☜, die überall gleich aussehen."
+    },
+    {
+      "q": "Wie ändere ich den Hautton?",
+      "a": "Über die Emoji-Tastatur des Geräts: Symbol gedrückt halten, dann eine der fünf Varianten wählen. Technisch wird ein zusätzliches Zeichen angehängt, weshalb ein Emoji mit Hautton zwei Zeichen statt einem belegt — in Feldern mit Zeichenlimit relevant."
+    },
+    {
+      "q": "Was bedeutet 🤙?",
+      "a": "Ursprünglich das hawaiianische «shaka» für «alles entspannt», in der Surfkultur verbreitet. In Deutschland wird es meist als «ruf mich an» gelesen, weil die Handhaltung an einen Telefonhörer erinnert. Beide Bedeutungen sind gebräuchlich, was gelegentlich zu Missverständnissen führt."
+    },
+    {
+      "q": "Warum sind ☞ und ☜ schwarz statt farbig?",
+      "a": "Weil es keine Emojis sind, sondern typografische Zeigehände aus dem Bleisatz — im Deutschen «Faust» oder «Manicule» genannt. Sie wurden benutzt, um im Fließtext auf eine Stelle zu deuten, und übernehmen deshalb wie ein Buchstabe die Textfarbe."
+    },
+    {
+      "q": "Sind manche Handzeichen in anderen Ländern beleidigend?",
+      "a": "Ja, und das trifft mehr Zeichen, als man erwartet. 👌 gilt in Teilen Südamerikas und im Nahen Osten als grob, 👍 in einigen Regionen ebenfalls, und ✌ mit dem Handrücken nach vorn ist in Großbritannien eine Beleidigung. Bei internationalem Publikum lieber neutral bleiben."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Die Zeigehand ist älter als der Computer",
+      "body": "☞ gehört zu den ältesten Zeichen dieser Sammlung. Als Manicule wanderte die gezeichnete Hand schon im Mittelalter an den Rand von Handschriften, um eine wichtige Stelle zu markieren — von Hand gezeichnet, oft mit sehr langem Zeigefinger. Der Bleisatz übernahm sie als eigene Type, Werbeplakate des 19. Jahrhunderts machten sie allgegenwärtig, und Unicode kodierte sie schließlich als Textzeichen. Sie zeigt heute dasselbe wie damals, nur dass die Ränder nun Bildschirme sind."
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/herz-symbole/",
+      "title": "Herz-Symbole zum Kopieren",
+      "desc": "Eine Sammlung von Herz-Emojis, Unicode-Herzzeichen und Symbolen rund um die Liebe, sortiert nach Farbe und Stil. Von roten und rosa Herzen über gebrochene Herzen bis zu Text-Herzzeichen — einfach anklicken zum Kopieren und direkt in Instagram-Bio oder Namen einfügen."
+    },
+    {
+      "href": "/de/library/solidaritaetsschleifen/",
+      "title": "Solidaritätsschleifen & Awareness-Symbole",
+      "desc": "Schleifen, Medaillen, Herzen und Barrierefreiheits-Zeichen für jedes Anliegen. Klick auf ein Symbol, um es sofort zu kopieren."
+    },
+    {
+      "href": "/de/library/musik-symbole/",
+      "title": "Musik-Symbole",
+      "desc": "Eine Referenzsammlung von Musiknotations-Symbolen, Instrumenten-Emojis und Audio-Unicode-Zeichen. Klick auf ein Symbol, um es sofort zu kopieren."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/de/library/hand-symbole/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "de",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/hand-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/hand-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-ruk/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hand-symbols/"
+    }
+  ]
+}

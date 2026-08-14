@@ -1,0 +1,197 @@
+{
+  "slug": "symboles-clavier",
+  "title": "Symboles Clavier ⌘ ⌥ ⇧ — Touches à Copier-Coller | UltraTextGen",
+  "meta_description": "Symboles du clavier ⌘ ⌥ ⇧ ⌫ à copier : touches de modification Mac, touches d'édition et de navigation, flèches. Cliquez pour copier.",
+  "breadcrumb": "Symboles Clavier",
+  "hero_h1": "Symboles Clavier",
+  "hero_tagline": "Les touches telles qu'on les écrit dans les manuels : ⌘ ⌥ ⇧ ⌫ ⇥ et les flèches, prêtes à coller.",
+  "intro": "Quand on écrit un raccourci — dans un guide, un README, un message — il faut les vrais symboles de touches, pas les mots. Ce sont des caractères Unicode : ils fonctionnent partout, sans image. Cliquez pour copier.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "mac",
+      "label": "Touches de Modification Mac",
+      "h2": "Touches de Modification Mac",
+      "intro": "Les quatre modificateurs, plus Éject et Échap.",
+      "symbols": [
+        {
+          "char": "⌘",
+          "label": "Touche Commande"
+        },
+        {
+          "char": "⌥",
+          "label": "Touche Option"
+        },
+        {
+          "char": "⇧",
+          "label": "Touche Majuscule"
+        },
+        {
+          "char": "⌃",
+          "label": "Touche Contrôle"
+        },
+        {
+          "char": "⇪",
+          "label": "Verrouillage Majuscule"
+        },
+        {
+          "char": "⏏",
+          "label": "Touche Éjection"
+        },
+        {
+          "char": "⎋",
+          "label": "Touche Échap"
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "label": "Touches d'Édition et de Navigation",
+      "h2": "Touches d'Édition et de Navigation",
+      "intro": "Entrée, retour arrière, tabulation et espace.",
+      "symbols": [
+        {
+          "char": "⏎",
+          "label": "Touche Entrée"
+        },
+        {
+          "char": "↵",
+          "label": "Flèche de Retour Chariot"
+        },
+        {
+          "char": "⌫",
+          "label": "Retour Arrière"
+        },
+        {
+          "char": "⌦",
+          "label": "Suppression Avant"
+        },
+        {
+          "char": "⇥",
+          "label": "Touche Tabulation"
+        },
+        {
+          "char": "⇤",
+          "label": "Tabulation Arrière"
+        },
+        {
+          "char": "␣",
+          "label": "Barre d'Espace"
+        }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "Flèches et Touches Spéciales",
+      "h2": "Flèches et Touches Spéciales",
+      "intro": "Directionnelles et symboles de clavier.",
+      "symbols": [
+        {
+          "char": "↑",
+          "label": "Flèche Haut"
+        },
+        {
+          "char": "↓",
+          "label": "Flèche Bas"
+        },
+        {
+          "char": "←",
+          "label": "Flèche Gauche"
+        },
+        {
+          "char": "→",
+          "label": "Flèche Droite"
+        },
+        {
+          "char": "⌨",
+          "label": "Clavier"
+        },
+        {
+          "char": "⎈",
+          "label": "Touche Contrôle (Barre à Roue)"
+        },
+        {
+          "char": "⎙",
+          "label": "Impression Écran"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions Fréquentes sur les Symboles du Clavier",
+  "faq": [
+    {
+      "q": "Pourquoi ⌘ s'appelle-t-il « point d'intérêt » ?",
+      "a": "C'est son nom Unicode : U+2318 vient d'un panneau touristique scandinave signalant un site remarquable. Apple l'a repris pour la touche Commande dans les années 1980 et le nom officiel n'a jamais changé."
+    },
+    {
+      "q": "Fonctionnent-ils sous Windows ?",
+      "a": "Le caractère oui, il s'affiche partout. La touche, non : sous Windows l'équivalent de ⌘ est Ctrl, et ⌥ correspond à Alt."
+    },
+    {
+      "q": "Pourquoi ⇧ apparaît parfois en emoji coloré ?",
+      "a": "Certains systèmes rendent les flèches blanches comme des pictogrammes. Pour forcer le rendu texte, ajoutez le sélecteur de variante U+FE0E après le caractère."
+    },
+    {
+      "q": "Puis-je les utiliser dans un README GitHub ?",
+      "a": "Oui, et c'est même conseillé : ils restent lisibles en texte brut et évitent de passer par des images."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Pourquoi les Touches Ont Leur Propre Caractère",
+      "body": "Ces symboles existent dans Unicode parce que la documentation technique en avait besoin bien avant le web : un manuel imprimé ne pouvait pas insérer une image à chaque raccourci cité. C'est pourquoi ⌘, ⌥ et ⇧ sont de vrais caractères, composables dans une ligne de texte comme n'importe quelle lettre — et c'est aussi pour cela que, collés dans une conversation, ils restent lisibles au lieu de devenir une pièce jointe."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/emoji-combos/",
+      "title": "Combos emoji à copier-coller",
+      "desc": "Des combinaisons d'emoji prêtes à donner une ambiance à ta bio, ton statut et tes légendes — mignon, coquet…"
+    },
+    {
+      "href": "/fr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour…"
+    },
+    {
+      "href": "/fr/library/alphabet-grec/",
+      "title": "Alphabet Grec",
+      "desc": "L'alphabet grec complet — majuscules, minuscules et variantes mathématiques — prêt à copier. Clique sur n'i…"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/symboles-clavier/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-tastiera/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-clavier/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-na-klaviature/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/tastatur-symbole/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/keyboard-kigou/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    }
+  ]
+}

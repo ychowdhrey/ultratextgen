@@ -23,17 +23,15 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryt)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryt)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <path d="M64 210 l24 -56 q8 -18 28 -18 h128 q20 0 28 18 l24 56 v44 h-32
-             a26 26 0 0 1 -52 0 h-64 a26 26 0 0 1 -52 0 h-32 Z" fill="url(#ghlibraryt)"/>
-    <path d="M110 158 h60 v34 h-78 Z" fill="#fff" opacity="0.85"/>
-    <path d="M186 158 h44 l14 34 h-58 Z" fill="#fff" opacity="0.85"/>
-    <circle cx="118" cy="254" r="20" fill="#1a1a2e"/>
-    <circle cx="244" cy="254" r="20" fill="#1a1a2e"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🚕</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🚌</tspan></text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="Noto Color Emoji">🚎</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle"><tspan font-family="Noto Color Emoji">🏎</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryt)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">🚗</tspan></text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <path d="M64 210 l24 -56 q8 -18 28 -18 h128 q20 0 28 18 l24 56 v44 h-32
-             a26 26 0 0 1 -52 0 h-64 a26 26 0 0 1 -52 0 h-32 Z" fill="url(#ghlibraryt)"/>
-    <path d="M110 158 h60 v34 h-78 Z" fill="#fff" opacity="0.85"/>
-    <path d="M186 158 h44 l14 34 h-58 Z" fill="#fff" opacity="0.85"/>
-    <circle cx="118" cy="254" r="20" fill="#1a1a2e"/>
-    <circle cx="244" cy="254" r="20" fill="#1a1a2e"/></g>
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🚕</tspan></text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle"><tspan font-family="Noto Color Emoji">🚌</tspan></text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8"><tspan font-family="Noto Color Emoji">🚎</tspan></text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle"><tspan font-family="Noto Color Emoji">🏎</tspan></text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryt)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle"><tspan font-family="Noto Color Emoji">🚗</tspan></text></g>
 </svg>

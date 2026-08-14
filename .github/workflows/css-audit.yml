@@ -14,6 +14,17 @@ jobs:
   css-audit:
     runs-on: ubuntu-latest
 
+    # Same reason as validate.yml: "Run CSS audit" is `npm run audit:css | tee`,
+    # and a pipeline exits with its LAST command's status. GitHub's default
+    # `run:` shell is `bash -e {0}` — `-e` but no pipefail — so `tee` succeeding
+    # masked the audit's own exit code and this job reported success no matter
+    # what audit-css.js found. Naming `bash` explicitly gets
+    # `bash --noprofile --norc -eo pipefail {0}`. scripts/check-workflows.py
+    # enforces this pairing; do not remove it without removing the `| tee`.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v5

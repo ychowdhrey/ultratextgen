@@ -1,0 +1,192 @@
+{
+  "lang": "es",
+  "slug": "simbolos-del-clima",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-del-clima/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/weather-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-del-clima/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/weather-symbols/" }
+  ],
+  "title": "Símbolos del Clima: Copiar y Pegar Iconos y Emojis del Tiempo",
+  "meta_description": "Explora y copia símbolos del clima, fases de la luna y caracteres Unicode atmosféricos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "breadcrumb": "Símbolos y Emojis del Clima",
+  "hero_h1": "Símbolos y Emojis del Clima",
+  "hero_tagline": "Una colección de referencia con símbolos de condiciones del clima, fases de la luna y caracteres Unicode atmosféricos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Esta biblioteca reúne los símbolos del clima: emojis de condiciones meteorológicas, fases de la luna, indicadores atmosféricos y de temperatura, y otros caracteres Unicode relacionados. Los símbolos están organizados por tipo de clima y por categoría.",
+  "sections": [
+    {
+      "id": "sun-clear-sky",
+      "label": "",
+      "h2": "Símbolos de Sol y Cielo Despejado",
+      "intro": "Símbolos para el clima soleado, los cielos despejados y la luz del día. Para la secuencia canónica del ciclo del día (amanecer → atardecer → noche), consulta la Progresión Solar en los símbolos de luna y celestiales.",
+      "symbols": [
+        { "char": "☀", "label": "Sol" },
+        { "char": "☼", "label": "Sol con rayos" },
+        { "char": "🌞", "label": "Sol con cara" },
+        { "char": "🌤", "label": "Mayormente soleado" },
+        { "char": "🌅", "label": "Amanecer" },
+        { "char": "🌄", "label": "Amanecer sobre montañas" },
+        { "char": "🌇", "label": "Atardecer" }
+      ]
+    },
+    {
+      "id": "cloud-symbols",
+      "label": "",
+      "h2": "Símbolos de Nubes",
+      "intro": "Símbolos para el clima nublado y los cielos cubiertos.",
+      "symbols": [
+        { "char": "☁", "label": "Nube" },
+        { "char": "⛅", "label": "Parcialmente nublado" },
+        { "char": "🌥", "label": "Mayormente nublado" },
+        { "char": "🌦", "label": "Sol y lluvia" },
+        { "char": "🌁", "label": "Neblina" },
+        { "char": "☁️", "label": "Nube" }
+      ]
+    },
+    {
+      "id": "rain-storm",
+      "label": "",
+      "h2": "Símbolos de Lluvia y Tormenta",
+      "intro": "Símbolos de precipitación, tormentas, rayos y clima severo.",
+      "symbols": [
+        { "char": "🌧", "label": "Lluvia" },
+        { "char": "⛈", "label": "Tormenta eléctrica" },
+        { "char": "🌩", "label": "Nube con rayo" },
+        { "char": "⚡", "label": "Rayo" },
+        { "char": "🌂", "label": "Paraguas cerrado" },
+        { "char": "☂", "label": "Paraguas" },
+        { "char": "☔", "label": "Paraguas con lluvia" },
+        { "char": "🌧️", "label": "Nube de lluvia" },
+        { "char": "⛈️", "label": "Nube de tormenta" },
+        { "char": "🌩️", "label": "Nube con rayo" },
+        { "char": "☂️", "label": "Paraguas" },
+        { "char": "🥾", "label": "Bota de lluvia" }
+      ]
+    },
+    {
+      "id": "snow-cold",
+      "label": "",
+      "h2": "Símbolos de Nieve y Frío",
+      "intro": "Variantes de copo de nieve, muñecos de nieve y símbolos de precipitación invernal.",
+      "symbols": [
+        { "char": "🌨", "label": "Nevando" },
+        { "char": "❄", "label": "Copo de nieve" },
+        { "char": "❅", "label": "Copo de nieve alterno" },
+        { "char": "❆", "label": "Copo de nieve grueso" },
+        { "char": "⛄", "label": "Muñeco de nieve" },
+        { "char": "☃", "label": "Muñeco de nieve con nieve" },
+        { "char": "🧊", "label": "Hielo" }
+      ]
+    },
+    {
+      "id": "wind-tornado",
+      "label": "",
+      "h2": "Símbolos de Viento y Tornado",
+      "intro": "Símbolos de viento, tornados y movimiento atmosférico.",
+      "symbols": [
+        { "char": "🌬", "label": "Cara de viento" },
+        { "char": "🌪", "label": "Tornado" },
+        { "char": "🌀", "label": "Ciclón" },
+        { "char": "💨", "label": "Viento" },
+        { "char": "🌪️", "label": "Tornado" },
+        { "char": "🌬️", "label": "Cara de viento" },
+        { "char": "🍃", "label": "Hoja al viento" },
+        { "char": "🎐", "label": "Campana de viento" }
+      ]
+    },
+    {
+      "id": "moon-night",
+      "label": "",
+      "h2": "Símbolos de Luna y Noche",
+      "intro": "Símbolos de la luna, la noche y las fases lunares.",
+      "symbols": [
+        { "char": "🌙", "label": "Luna creciente" },
+        { "char": "🌛", "label": "Cara de luna en cuarto creciente" },
+        { "char": "🌜", "label": "Cara de luna en cuarto menguante" },
+        { "char": "🌝", "label": "Cara de luna llena" },
+        { "char": "🌑", "label": "Luna nueva" },
+        { "char": "🌒", "label": "Luna creciente" },
+        { "char": "🌓", "label": "Cuarto creciente" },
+        { "char": "🌔", "label": "Luna gibosa creciente" },
+        { "char": "🌕", "label": "Luna llena" },
+        { "char": "🌖", "label": "Luna gibosa menguante" },
+        { "char": "🌗", "label": "Cuarto menguante" },
+        { "char": "🌘", "label": "Luna menguante" }
+      ]
+    },
+    {
+      "id": "thermometer-measurement",
+      "label": "",
+      "h2": "Símbolos de Termómetro y Medición",
+      "intro": "Símbolos de medición del clima y de temperatura.",
+      "symbols": [
+        { "char": "🌡", "label": "Termómetro" },
+        { "char": "🔥", "label": "Fuego / Calor" },
+        { "char": "°", "label": "Signo de grado" },
+        { "char": "℃", "label": "Celsius" },
+        { "char": "℉", "label": "Fahrenheit" }
+      ]
+    },
+    {
+      "id": "rainbow-special",
+      "label": "",
+      "h2": "Arcoíris y Símbolos Especiales",
+      "intro": "Arcoíris, cometas y otros fenómenos atmosféricos.",
+      "symbols": [
+        { "char": "🌈", "label": "Arcoíris" },
+        { "char": "☄", "label": "Cometa" },
+        { "char": "🌊", "label": "Ola del mar" },
+        { "char": "💧", "label": "Gota" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-del-zodiaco/",
+      "title": "Símbolos del Zodiaco y Astrología",
+      "desc": "Signos, símbolos planetarios y caracteres de cuerpos celestes del estándar Unicode."
+    },
+    {
+      "href": "/es/simbolos-de-estrella/",
+      "title": "Colección de Símbolos de Estrella",
+      "desc": "Una colección de estrellas, destellos y asteriscos Unicode en distintos estilos."
+    },
+    {
+      "href": "/es/library/simbolos-de-transporte/",
+      "title": "Símbolos de Transporte y Mapas",
+      "desc": "Símbolos Unicode de vehículos, mapas y direcciones organizados por categoría de transporte."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Explorador de Emojis de Banderas",
+      "desc": "Las 195 banderas de países y territorios con sus nombres y puntos de código Unicode."
+    },
+    {
+      "href": "/es/library/simbolos-lgbt/",
+      "title": "Símbolos del Orgullo y LGBTQ",
+      "desc": "La bandera del arcoíris más combos de corazones de color para cada identidad LGBTQ."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-grados-celsius/",
+      "title": "Símbolo de Grados Celsius",
+      "desc": "℃ es un solo carácter Unicode que junta el signo de grado y una C mayúscula en un mismo glifo."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-grados-fahrenheit/",
+      "title": "Símbolo de Grados Fahrenheit",
+      "desc": "℉ combina el signo de grado y una F mayúscula en un solo carácter Unicode."
+    },
+    {
+      "href": "/es/symbol/emoji-de-meteoro/",
+      "title": "Emoji de Meteoro",
+      "desc": "Un meteoro cruzando el cielo, separado por fin de la larga crisis de identidad del cometa."
+    }
+  ]
+}

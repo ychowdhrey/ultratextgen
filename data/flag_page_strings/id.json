@@ -1,0 +1,85 @@
+{
+  "locale": "id",
+  "slug": "emoji-bendera",
+  "title": "Emoji Bendera 🇮🇩 — Salin Bendera Semua Negara",
+  "meta_description": "Emoji bendera semua negara: Indonesia 🇮🇩, Malaysia, Jepang, Korea, sampai 195 negara. Klik benderanya, langsung kesalin — tinggal tempel di bio, nama game, atau chat.",
+  "breadcrumb": "Emoji Bendera",
+  "h1": "Emoji Bendera Semua Negara",
+  "hero_tagline": "Bendera Indonesia, Malaysia, Singapura, Jepang, Korea — sampai 195 negara, lengkap. Klik benderanya, langsung kesalin, tinggal tempel di bio, nama game, caption, atau chat.",
+  "intro": "Emoji bendera itu karakter Unicode asli, bukan gambar yang ditempel. Jadi bisa dicopas ke mana saja — bio Instagram, nama game, status WhatsApp, caption TikTok, nama channel — tanpa install aplikasi atau font apa pun. Bendera Indonesia dan negara yang paling sering dicari ditaruh di bagian atas biar cepat ketemu. Daftar lengkapnya bisa disaring per benua, dan set seperti ASEAN, Uni Eropa, atau G20 bisa disalin utuh sekali klik.",
+  "sections": {
+    "country_list": {
+      "label": "Bendera Negara",
+      "h2": "Semua Bendera Negara",
+      "intro": "Saring per benua, lalu klik benderanya buat menyalin."
+    },
+    "grids": {
+      "label": "Set Bendera",
+      "h2": "Set Bendera Siap Salin",
+      "intro": "Set yang sering dipakai — ASEAN, Uni Eropa, G20 — bisa disalin utuh sekali klik, tanpa perlu klik benderanya satu per satu."
+    },
+    "featured": {
+      "label": "Paling Dicari",
+      "h2": "Bendera yang Paling Sering Dicari",
+      "intro": "Bendera Indonesia dan negara tetangga yang paling banyak dicari, dikumpulkan di atas biar cepat ketemu."
+    }
+  },
+  "regions": {
+    "all": "Semua",
+    "europe": "Eropa",
+    "asia": "Asia",
+    "americas": "Amerika",
+    "africa": "Afrika",
+    "oceania": "Oseania"
+  },
+  "aria_copy_flag": "Salin bendera {name}",
+  "groups": {
+    "European Union Members": "Anggota Uni Eropa",
+    "ASEAN": "ASEAN",
+    "Middle East": "Timur Tengah",
+    "G20": "G20",
+    "Nordic Countries": "Negara Nordik",
+    "South Asia": "Asia Selatan",
+    "East Asia": "Asia Timur"
+  },
+  "special_flags": {
+    "England": "Inggris",
+    "Scotland": "Skotlandia",
+    "Wales": "Wales",
+    "Rainbow Flag": "Bendera Pelangi",
+    "Transgender Flag": "Bendera Transgender",
+    "Chequered Flag": "Bendera Balap",
+    "Triangular Flag": "Bendera Segitiga",
+    "White Flag": "Bendera Putih",
+    "Black Flag": "Bendera Hitam",
+    "Pirate Flag": "Bendera Bajak Laut",
+    "Crossed Flags": "Bendera Bersilang"
+  },
+  "featured_codes": ["ID", "MY", "SG", "PH", "JP", "KR", "CN", "US", "GB", "SA", "PS", "AU", "IN", "TH"],
+  "faq": [
+    {
+      "q": "Kenapa di laptop benderanya jadi tulisan ID, bukan 🇮🇩?",
+      "a": "Emoji bendera sebenarnya dua huruf kode negara yang digabung — 🇮🇩 itu I + D, 🇲🇾 itu M + Y. Perangkat yang punya font bendera akan menggambar gabungan itu jadi bendera; yang tidak punya cuma menampilkan dua hurufnya. Windows secara bawaan memang tidak menyertakan font bendera negara, jadi yang muncul ID, US, atau MY. Karakternya sendiri tetap benar, dan orang yang membuka dari HP Android atau iPhone tetap melihat benderanya utuh."
+    },
+    {
+      "q": "Bendera dihitung berapa karakter di nama game atau bio?",
+      "a": "Umumnya dihitung dua karakter, bukan satu, karena isinya memang dua huruf kode negara. Jadi kalau batas karakter nama cuma 12, satu bendera langsung memakan dua jatah. Cek dulu sebelum disimpan — di beberapa game, nama yang kepanjangan atau memakai karakter tidak valid akan ditolak, dan di Free Fire itu berarti Kartu Ganti Nama terbuang percuma."
+    },
+    {
+      "q": "Kenapa bendera yang saya cari tidak ada?",
+      "a": "Unicode tidak menentukan sendiri mana yang termasuk negara — daftarnya dipinjam dari kode negara ISO. Wilayah yang punya kode di daftar itu kebagian emoji bendera; yang tidak punya kode, atau statusnya masih diperdebatkan secara internasional, memang tidak pernah dibuatkan karakternya. Itu sebabnya Inggris (England), Skotlandia, dan Wales masuk sebagai pengecualian khusus, sementara bendera provinsi atau daerah tidak ada sama sekali."
+    },
+    {
+      "q": "Emoji bendera bisa dipakai di WhatsApp dan Instagram?",
+      "a": "Bisa. Chat WhatsApp, status WA, nama kontak, bio Instagram, caption TikTok, sampai nama Discord semuanya menerima emoji bendera, karena ini karakter Unicode standar dan bukan gambar. Bentuk gambarnya bisa sedikit beda antar aplikasi, tapi karakternya sama. Satu catatan: kolom username atau @ID di sebagian aplikasi hanya menerima huruf dan angka, jadi taruh benderanya di nama tampilan atau bio, bukan di username."
+    },
+    {
+      "q": "Benderanya muncul jadi kotak, itu kenapa?",
+      "a": "Kotak (▯) berarti perangkat yang menampilkan belum punya gambar untuk karakter itu — biasanya HP Android lama atau sistem yang belum diperbarui, dan paling sering terjadi pada bendera yang baru ditambahkan Unicode. Karakternya tidak rusak dan tidak salah salin; di perangkat yang lebih baru bendera itu tampil normal. Perbarui sistem atau aplikasinya, biasanya langsung beres."
+    }
+  ],
+  "editorial": {
+    "h2": "🇮🇩 sebenarnya bukan karakter bendera",
+    "body": "🇮🇩 bukan karakter bendera — isinya huruf indikator I dan D, digambar font jadi Merah Putih. Karena itu Windows menampilkan ID. Unicode meminjam kode ISO agar tak perlu memutuskan mana yang layak disebut negara — juga alasan sebagian bendera tak ada."
+  }
+}

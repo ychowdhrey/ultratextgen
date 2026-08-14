@@ -1,0 +1,33 @@
+{
+  "locale": "it",
+  "sections": {
+    "country_list": {
+      "label": "Elenco Completo",
+      "h2": "Le Bandiere dei 195 Paesi",
+      "intro": "Filtra per continente, poi clicca una bandiera per copiarla."
+    },
+    "grids": {
+      "label": "Set di Bandiere",
+      "h2": "Set di Bandiere Pronti da Copiare",
+      "intro": "Un clic copia tutto il gruppo: le 27 bandiere dell'UE, le 10 dell'ASEAN, l'intero G20."
+    }
+  },
+  "regions": {
+    "all": "Tutti",
+    "europe": "Europa",
+    "asia": "Asia",
+    "americas": "America",
+    "africa": "Africa",
+    "oceania": "Oceania"
+  },
+  "aria_copy_flag": "Copia la bandiera: {name}",
+  "groups": {
+    "European Union Members": "Unione europea (UE)",
+    "ASEAN": "ASEAN (Sud-est asiatico)",
+    "Middle East": "Medio Oriente",
+    "G20": "G20",
+    "Nordic Countries": "Paesi nordici",
+    "South Asia": "Asia meridionale",
+    "East Asia": "Asia orientale"
+  }
+}

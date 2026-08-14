@@ -23,19 +23,9 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhusecases)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhusecases)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <path d="M84 168 q6 -54 66 -54 h60 q60 0 66 54 l12 62 a32 32 0 0 1 -58 26
-             l-18 -30 h-56 l-18 30 a32 32 0 0 1 -58 -26 Z" fill="url(#ghusecases)"/>
-    <rect x="116" y="152" width="10" height="36" rx="4" fill="#fff"/>
-    <rect x="99" y="164" width="44" height="10" rx="4" fill="#fff"/>
-    <circle cx="258" cy="158" r="11" fill="#fff"/>
-    <circle cx="232" cy="182" r="11" fill="#fff" opacity="0.85"/>
-    <circle cx="284" cy="182" r="11" fill="#fff" opacity="0.7"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghusecases)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">ᴡᴏʙʙʟʏʙᴇᴀɴ</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">❀<tspan font-family="FreeSerif">𝒫𝑜𝓅𝓅𝓎</tspan>❀</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85">ᴅᴀꜱʜ</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <path d="M84 168 q6 -54 66 -54 h60 q60 0 66 54 l12 62 a32 32 0 0 1 -58 26
-             l-18 -30 h-56 l-18 30 a32 32 0 0 1 -58 -26 Z" fill="url(#ghusecases)"/>
-    <rect x="116" y="152" width="10" height="36" rx="4" fill="#fff"/>
-    <rect x="99" y="164" width="44" height="10" rx="4" fill="#fff"/>
-    <circle cx="258" cy="158" r="11" fill="#fff"/>
-    <circle cx="232" cy="182" r="11" fill="#fff" opacity="0.85"/>
-    <circle cx="284" cy="182" r="11" fill="#fff" opacity="0.7"/></g>
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghusecases)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="36.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">ᴡᴏʙʙʟʏʙᴇᴀɴ</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="30.0" fill="#8b5cf6" text-anchor="middle" opacity="0.95">❀<tspan font-family="FreeSerif">𝒫𝑜𝓅𝓅𝓎</tspan>❀</text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85">ᴅᴀꜱʜ</text></g>
 </svg>

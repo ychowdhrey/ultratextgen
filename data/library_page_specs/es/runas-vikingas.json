@@ -1,0 +1,197 @@
+{
+  "lang": "es",
+  "slug": "runas-vikingas",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/runas-vikingas/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/norse-viking-runes/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/runas-vikingas/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/norse-viking-runes/" }
+  ],
+  "title": "Runas Vikingas y Nórdicas: Copiar y Pegar Caracteres Rúnicos",
+  "meta_description": "Explora y copia todas las runas vikingas: futhark antiguo, futhark joven, futhorc anglosajón y runas medievales. Haz clic en cualquier runa para copiarla.",
+  "breadcrumb": "Runas vikingas y nórdicas",
+  "hero_h1": "Runas Vikingas y Nórdicas",
+  "hero_tagline": "El conjunto completo de caracteres rúnicos de Unicode: los 89 caracteres del bloque rúnico (U+16A0–U+16FF), organizados por sistema alfabético. Haz clic en cualquier runa para copiarla al instante.",
+  "intro": "El bloque rúnico de Unicode (U+16A0–U+16FF) reúne los caracteres de varios sistemas de escritura rúnica históricos, usados en Escandinavia, Britania y otras regiones germánicas desde aproximadamente el siglo II d. C. en adelante. Aquí encontrarás las runas vikingas y nórdicas organizadas por sistema alfabético: el futhark antiguo de 24 signos, el futhark joven que lo redujo a 16 durante la era vikinga, el futhorc anglosajón que en cambio lo amplió, y el conjunto medieval y especializado que se sumó después. Cada carácter es texto Unicode real, no una imagen, así que se puede copiar y pegar en tu biografía, en una publicación, en un mensaje o en el nombre de tu personaje, siempre que el sitio o la aplicación tenga una fuente capaz de mostrar el alfabeto rúnico.",
+  "sections": [
+    {
+      "id": "elder-futhark",
+      "label": "",
+      "h2": "Futhark antiguo (24 runas)",
+      "intro": "",
+      "symbols": [
+        { "char": "ᚠ", "label": "Fehu (riqueza)" },
+        { "char": "ᚢ", "label": "Uruz (fuerza)" },
+        { "char": "ᚦ", "label": "Thurisaz (gigante)" },
+        { "char": "ᚨ", "label": "Ansuz (dios)" },
+        { "char": "ᚱ", "label": "Raidho (viaje)" },
+        { "char": "ᚲ", "label": "Kenaz (antorcha)" },
+        { "char": "ᚷ", "label": "Gebo (regalo)" },
+        { "char": "ᚹ", "label": "Wunjo (alegría)" },
+        { "char": "ᚺ", "label": "Hagalaz (granizo)" },
+        { "char": "ᚾ", "label": "Nauthiz (necesidad)" },
+        { "char": "ᛁ", "label": "Isa (hielo)" },
+        { "char": "ᛃ", "label": "Jera (año)" },
+        { "char": "ᛇ", "label": "Eihwaz (tejo)" },
+        { "char": "ᛈ", "label": "Perthro (cubilete de dados)" },
+        { "char": "ᛉ", "label": "Algiz (alce)" },
+        { "char": "ᛊ", "label": "Sowilo (sol)" },
+        { "char": "ᛏ", "label": "Tiwaz (el dios Tyr)" },
+        { "char": "ᛒ", "label": "Berkano (abedul)" },
+        { "char": "ᛖ", "label": "Ehwaz (caballo)" },
+        { "char": "ᛗ", "label": "Mannaz (hombre)" },
+        { "char": "ᛚ", "label": "Laguz (agua)" },
+        { "char": "ᛜ", "label": "Ingwaz (fertilidad)" },
+        { "char": "ᛞ", "label": "Dagaz (día)" },
+        { "char": "ᛟ", "label": "Othala (tierra ancestral)" }
+      ]
+    },
+    {
+      "id": "younger-futhark",
+      "label": "",
+      "h2": "Futhark joven",
+      "intro": "",
+      "symbols": [
+        { "char": "ᚠ", "label": "Fe" },
+        { "char": "ᚢ", "label": "Ur" },
+        { "char": "ᚦ", "label": "Thurs" },
+        { "char": "ᚬ", "label": "Oss" },
+        { "char": "ᚱ", "label": "Reid" },
+        { "char": "ᚴ", "label": "Kaun" },
+        { "char": "ᚼ", "label": "Hagall" },
+        { "char": "ᚾ", "label": "Naud" },
+        { "char": "ᛁ", "label": "Is" },
+        { "char": "ᛅ", "label": "Ar" },
+        { "char": "ᛋ", "label": "Sol" },
+        { "char": "ᛏ", "label": "Tyr" },
+        { "char": "ᛒ", "label": "Bjarkan" },
+        { "char": "ᛘ", "label": "Madr" },
+        { "char": "ᛚ", "label": "Logr" },
+        { "char": "ᛦ", "label": "Yr" }
+      ]
+    },
+    {
+      "id": "anglo-saxon",
+      "label": "",
+      "h2": "Futhorc anglosajón",
+      "intro": "",
+      "symbols": [
+        { "char": "ᚪ", "label": "Ac (roble)" },
+        { "char": "ᚫ", "label": "Aesc" },
+        { "char": "ᚣ", "label": "Yr (anglosajona)" },
+        { "char": "ᛠ", "label": "Ear" },
+        { "char": "ᛡ", "label": "Ior" },
+        { "char": "ᛢ", "label": "Cweorth" },
+        { "char": "ᛣ", "label": "Calc" },
+        { "char": "ᛤ", "label": "Cealc" },
+        { "char": "ᛥ", "label": "Stan" },
+        { "char": "ᚩ", "label": "Os (anglosajona)" },
+        { "char": "ᚸ", "label": "Gar" },
+        { "char": "ᛒ", "label": "Beorc" }
+      ]
+    },
+    {
+      "id": "medieval-specialized",
+      "label": "",
+      "h2": "Runas medievales y especializadas",
+      "intro": "",
+      "symbols": [
+        { "char": "ᛧ", "label": "Yr de rama corta" },
+        { "char": "ᛨ", "label": "Yr islandesa" },
+        { "char": "ᛩ", "label": "Q" },
+        { "char": "ᛪ", "label": "X" },
+        { "char": "᛫", "label": "Puntuación rúnica simple" },
+        { "char": "᛬", "label": "Puntuación rúnica múltiple" },
+        { "char": "᛭", "label": "Puntuación rúnica en cruz" },
+        { "char": "ᛮ", "label": "Símbolo Arlaug" },
+        { "char": "ᛯ", "label": "Símbolo Tvimadur" },
+        { "char": "ᛰ", "label": "Símbolo Belgthor" }
+      ]
+    },
+    {
+      "id": "runic-punctuation",
+      "label": "",
+      "h2": "Puntuación y numerales rúnicos",
+      "intro": "",
+      "symbols": [
+        { "char": "᛫", "label": "Puntuación simple" },
+        { "char": "᛬", "label": "Puntuación múltiple" },
+        { "char": "᛭", "label": "Puntuación en cruz" },
+        { "char": "ᛱ", "label": "Letra rúnica K" },
+        { "char": "ᛲ", "label": "Letra rúnica Sh" },
+        { "char": "ᛳ", "label": "Letra rúnica Oo" },
+        { "char": "ᛴ", "label": "Letra rúnica Os del cofre de los francos" },
+        { "char": "ᛵ", "label": "Letra rúnica Is del cofre de los francos" },
+        { "char": "ᛶ", "label": "Letra rúnica Eh del cofre de los francos" },
+        { "char": "ᛷ", "label": "Letra rúnica Ac del cofre de los francos" },
+        { "char": "ᛸ", "label": "Letra rúnica Aesc del cofre de los francos" }
+      ]
+    },
+    {
+      "id": "additional-runic",
+      "label": "",
+      "h2": "Más caracteres del bloque rúnico de Unicode",
+      "intro": "Los puntos de código asignados del bloque rúnico de Unicode (U+16A0–U+16FF) que no aparecen en las secciones anteriores.",
+      "symbols": [
+        { "char": "ᚡ", "label": "Letra rúnica V" },
+        { "char": "ᚤ", "label": "Letra rúnica Y" },
+        { "char": "ᚥ", "label": "Letra rúnica W" },
+        { "char": "ᚧ", "label": "Letra rúnica Eth" },
+        { "char": "ᚭ", "label": "Letra rúnica Oss de rama corta (O)" },
+        { "char": "ᚮ", "label": "Letra rúnica O" },
+        { "char": "ᚯ", "label": "Letra rúnica Oe" },
+        { "char": "ᚰ", "label": "Letra rúnica On" },
+        { "char": "ᚳ", "label": "Letra rúnica Cen" },
+        { "char": "ᚵ", "label": "Letra rúnica G" },
+        { "char": "ᚶ", "label": "Letra rúnica Eng" },
+        { "char": "ᚻ", "label": "Letra rúnica Haegl (H)" },
+        { "char": "ᚽ", "label": "Letra rúnica Hagall de rama corta (H)" },
+        { "char": "ᚿ", "label": "Letra rúnica Naud de rama corta (N)" },
+        { "char": "ᛀ", "label": "Letra rúnica N con punto" },
+        { "char": "ᛂ", "label": "Letra rúnica E" },
+        { "char": "ᛄ", "label": "Letra rúnica Ger" },
+        { "char": "ᛆ", "label": "Letra rúnica Ar de rama corta (A)" },
+        { "char": "ᛌ", "label": "Letra rúnica Sol de rama corta (S)" },
+        { "char": "ᛍ", "label": "Letra rúnica C" },
+        { "char": "ᛎ", "label": "Letra rúnica Z" },
+        { "char": "ᛐ", "label": "Letra rúnica Tyr de rama corta (T)" },
+        { "char": "ᛑ", "label": "Letra rúnica D" },
+        { "char": "ᛓ", "label": "Letra rúnica Bjarkan de rama corta (B)" },
+        { "char": "ᛔ", "label": "Letra rúnica P con punto" },
+        { "char": "ᛕ", "label": "Letra rúnica P abierta" },
+        { "char": "ᛙ", "label": "Letra rúnica Madr de rama corta (M)" },
+        { "char": "ᛛ", "label": "Letra rúnica L con punto" },
+        { "char": "ᛝ", "label": "Letra rúnica Ing" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-religiosos/",
+      "title": "Símbolos religiosos y espirituales",
+      "desc": "Símbolos de fe de todas las grandes religiones del mundo."
+    },
+    {
+      "href": "/es/library/simbolos-witchy-occult/",
+      "title": "Símbolos de brujería y ocultismo",
+      "desc": "Símbolos ocultistas y esotéricos: pentagramas, fases de la luna y signos alquímicos."
+    },
+    {
+      "href": "/es/library/caracteres-especiales/",
+      "title": "Caracteres especiales",
+      "desc": "Símbolos Unicode únicos, con significado propio y fuerza por sí solos."
+    },
+    {
+      "href": "/es/simbolos-aesthetic/",
+      "title": "Símbolos aesthetic",
+      "desc": "Símbolos Unicode decorativos para biografías y publicaciones."
+    }
+  ]
+}
