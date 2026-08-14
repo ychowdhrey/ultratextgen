@@ -68,6 +68,27 @@ def url_to_slug(url):
     return "homepage" if path == "" else path.replace("/", "-")
 
 
+def is_dated_update(url):
+    """True for a DATED updates entry in ANY locale; False for the hub.
+
+    page_type() returns "localized" for every <lang>/... URL and stops before
+    it can see the content type, so `ptype` is never "updates" for a locale
+    entry and the exclusion below silently missed all of them: 56 locale
+    entries were being reported as missing a Pinterest pin that
+    generate-pinterest.py deliberately never generates. EN was unaffected
+    (`updates/foo` classifies as "updates"), which is why the asymmetry went
+    unnoticed — 0 EN entries flagged against 56 locale ones.
+
+    Tests for a segment AFTER "updates" on purpose: per CLAUDE.md the
+    `updates/` hub IS pin-eligible and only the dated entries beneath it are
+    excluded.
+    """
+    seg = [s for s in url.replace(BASE, "").strip("/").split("/") if s]
+    if seg and seg[0] in LOCALES:
+        seg = seg[1:]
+    return len(seg) >= 2 and seg[0] == "updates"
+
+
 def pin_eligible(url, ptype):
     """Mirror of generate-pinterest.py:classify — hubs stay in, only
     legal/info, embed, and updates (dated status log, not visual pin
@@ -76,7 +97,7 @@ def pin_eligible(url, ptype):
         return False
     if ptype == "embed" or "/embed/" in url:
         return False
-    if ptype == "updates":
+    if ptype == "updates" or is_dated_update(url):
         return False
     return True
 
