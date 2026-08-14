@@ -2634,9 +2634,9 @@ PAGES = {
   "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
-  # ar/library batch (2026-08-14) — Saudi-market volume export; see the
-  # Arabic locale research doc. Motifs come from each page's own copy tiles
-  # via motif_from_page(), so the base motif here is only the fallback.
+  # ar/library batch (2026-08-14) — sized on Saudi-market (db=sa) keyword
+  # volume. Motifs come from each page's own copy tiles via motif_from_page(),
+  # so the base motif here is only the fallback.
   "ar-library-text-art": ("رسومات بالرموز", "أحرف الرسم والمكعبات والتظليل للنسخ",
         glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u250c"), K_LIB),
   "ar-library-pubg-symbols": ("رموز ببجي", "رموز اللاعبين والإطارات المقبولة في اللعبة",
