@@ -1516,6 +1516,19 @@
       "verdict": "gate-fail",
       "evidence": "usecase/valorant-name-generator/ -- 7 impressions total (EN only) across the entire 40-day window; the id/tr locale builds (usecase/valorant-name-generator translations) register zero rows at all in either the 6-day or 40-day export. Complete dead zone across every version of this page, EN included. Recorded as a finding only -- no fold/retarget/de-index follows from this entry per user direction 2026-08-11 (see private lab repo review-register). Live first-party GSC data (Landing Page x Country x Date export, no Query dimension; 40-day window Jul 1-Aug 9 2026 across 2,869 site-wide landing pages, cross-checked against an independent 6-day query-level export for Aug 4-9 2026 -- the two samples agreed on every clear case and the fuller 40-day pull resolved the handful of borderline reads, per CLAUDE.md's 'don't render a verdict on partial data' rule. This is the built page's OWN live performance (post-hoc), not the EN-proxy instrument's original pre-build formulation -- recorded per the 2026-08-02 CLAUDE.md precedent that a null-instrument authorization is a bridge and gets backfilled with real numbers once available. Threshold applied: core_parent_set.json's gated-tier bar, >=~1,000/mo. User-directed 2026-08-11 bulk pass; no fold/retarget of any already-live page was authorized in this pass -- see the standing decision in the private lab repo's review-register (2026-08-11): fold only on cannibalization, not on non-performance alone.",
       "recordedBy": "claude-session-universal-page-demand-6u44hc-user-directed"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-15",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 2370,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Scoped to ONE new page: a vi sibling of usecase/aesthetic-instagram-names/ (Instagram name ideas). Clears the gated-tier four-figure volume clause on Vietnamese keyword demand from the user-supplied 2026-08-15 six-market Semrush export (db=vi, single database, no cross-database summing): 'ten instagram hay' 1,900 (KD 54) + 'ten instagram dep' 320 (KD 44) + 'tao ten instagram' 110 (KD 66) + 'ten instagram tieng anh' 20 + 'ten nguoi dung instagram hay' 20 = 2,370/mo across 6 keywords, deduplicated by (keyword, country) with max taken, never summed across seed files. Trend-aliasing check run on the source export: 8 aliased groups found, all at volumes <=40, so no head term counted here is affected. Cannibalization check run per CLAUDE.md before recording: no vi page targets the name-ideas job -- the three vi pages mentioning 'ten instagram' (vi/font-ig/, vi/index.html, vi/chu-nghieng/) all use it incidentally to name the paste DESTINATION ('o ten Instagram' = the Instagram name field) while targeting the text-STYLING job, which is a different intent. NOTE this entry does NOT supersede the 2026-08-11 usecase/* vi gate-fail row above: that row records the live GSC performance of three ALREADY-BUILT vi usecase pages and stands as written. This is a forward-looking keyword-volume pass for a different, not-yet-built page, on a different instrument. Analysis: private lab repo, reports/locale-expansion/hreflang-expansion-master-plan.md section 1 (F-03).",
+      "recordedBy": "claude-session-01Mubgg1uCD9nsrxeLv8P6yJ-user-ratified-2026-08-15"
     }
   ]
 }
