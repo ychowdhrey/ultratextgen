@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "cs",
   "language": "Czech",
-  "phrase_count": 20,
+  "phrase_count": 29,
   "phrases": [
     {
       "phrase_id": "CS-001",
@@ -21,7 +21,7 @@
       "avoid_when": "Do not swap for 'hezké písmo' in title/H1 slots — that variant reads more casual/FAQ-register (see CS-002).",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "CS-002",
@@ -69,7 +69,7 @@
       "avoid_when": "",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "CS-005",
@@ -133,7 +133,23 @@
       "avoid_when": "",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-009",
+      "native_phrase": "neviditelná mezera",
+      "transliteration": "",
+      "english_concept": "invisible space / zero-width space (technical alternate phrasing)",
+      "country_or_market": "CZ",
+      "register": "technical/editorial, neutral",
+      "phrase_type": "search_formulation",
+      "content_surface": "faq",
+      "usage_guidance": "A legitimate alternate search formulation for the same invisible-character concept the site already covers as 'neviditelný znak'. Consider testing as a secondary H2/FAQ phrasing on /library/invisible-character/ rather than replacing the primary term.",
+      "good_example": "Neviditelná mezera neboli zero-width-space odděluje základní tag od jeho skloňované formy.",
+      "avoid_when": "Don't use as the primary gaming-register term (CS-008 'neviditelný znak' is more natural for nickname contexts) — 'neviditelná mezera' reads more like a typography/hashtag-formatting explainer.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "CS-010",
@@ -184,6 +200,70 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "CS-013",
+      "native_phrase": "nick bude automaticky změněn podporou",
+      "transliteration": "",
+      "english_concept": "forced rename / disallowed characters (render-safety pain point)",
+      "country_or_market": "CZ",
+      "register": "formal/official (admin announcement)",
+      "phrase_type": "problem_description",
+      "content_surface": "faq",
+      "usage_guidance": "This is the verbatim pain point behind JTBD-26 (render-safety checker). Use as source material for a future 'will my styled name get rejected/renamed' FAQ or checker feature — do not present as site copy verbatim since it's an official rule announcement, not marketing language.",
+      "good_example": "Po tomto datumu budou na základě stížností nicky se speciálními znaky automaticky měněny podporou.",
+      "avoid_when": "Don't generalize this specific Seafight policy as universal — other games/platforms have different (and often less punitive) handling.",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-014",
+      "native_phrase": "znaky UTF-8",
+      "transliteration": "",
+      "english_concept": "UTF-8 characters (technical/admin jargon for 'allowed characters')",
+      "country_or_market": "CZ",
+      "register": "technical, official/admin",
+      "phrase_type": "platform_shorthand",
+      "content_surface": "none_recommended",
+      "usage_guidance": "Too technical/inside-baseball for general site copy — useful only as background for understanding how games communicate character restrictions to players, e.g. in a render-safety FAQ aside.",
+      "good_example": "Pro vytváření herních nicků jsou povolené pouze znaky UTF-8.",
+      "avoid_when": "Do not use in consumer-facing titles/H1s — reads as a developer/support term, not a player term.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-015",
+      "native_phrase": "moc dlouhý nick",
+      "transliteration": "",
+      "english_concept": "name/nick too long",
+      "country_or_market": "CZ",
+      "register": "informal, conversational",
+      "phrase_type": "problem_description",
+      "content_surface": "faq",
+      "usage_guidance": "Useful phrasing for a FAQ answer explaining why shorter/simpler nicknames are recommended, distinct from the platform-imposed 'limit znaků' (CS-012) — this is about usability/memorability, not a hard platform cap.",
+      "good_example": "Nechci tak dlouhý nick.",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-016",
+      "native_phrase": "třísknout do klávesnice",
+      "transliteration": "",
+      "english_concept": "mocking unoriginal/gimmicky nickname choices (keyboard-mashing, leetspeak)",
+      "country_or_market": "CZ",
+      "register": "informal, blunt, forum banter",
+      "phrase_type": "cultural_phrase",
+      "content_surface": "none_recommended",
+      "usage_guidance": "Not for direct site copy (too blunt/mocking in tone), but valuable as community-norm context: Czech gamers explicitly look down on both keyboard-mash names and gimmicky leetspeak ('adding a 3'), which supports keeping the site's own generator focused on genuinely distinctive Unicode styling rather than random-character gimmicks.",
+      "good_example": "Třísknout do klávesnice a napsat za to CZ, to udělá kdejakej jouda.",
+      "avoid_when": "Never use as marketing copy — it's a put-down, not a term to adopt in first-person site voice.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "CS-017",
       "native_phrase": "aby ho nikdo neměl",
       "transliteration": "",
@@ -198,6 +278,22 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "CS-018",
+      "native_phrase": "klanové nicky",
+      "transliteration": "",
+      "english_concept": "clan tag",
+      "country_or_market": "CZ",
+      "register": "informal, gaming",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "h2_h3",
+      "usage_guidance": "The Czech-ized 'tag klanu' / 'klanová zkratka' construction (seen on gamesites.cz and the sister DarkOrbit CZ/SK board, both real, distinct forums) is the more community-native phrasing than the raw English 'clan tag' the repo currently mixes in mid-sentence on the same page — worth normalizing to Czech phrasing in future copy.",
+      "good_example": "Krátké, snadno zapamatovatelné, ideální jako clan tag.",
+      "avoid_when": "Don't code-switch to raw English 'clan tag' inside otherwise-Czech sentences when a natural Czech equivalent ('tag klanu') exists.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "CS-019",
@@ -326,6 +422,54 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "CS-028",
+      "native_phrase": "stylové písmo",
+      "transliteration": "",
+      "english_concept": "'stylish font' -- collocation with písmo (font/script) rather than text",
+      "country_or_market": "CZ",
+      "register": "neutral, general audience",
+      "phrase_type": "head-term / brand phrase",
+      "content_surface": "already the de facto dominant native phrasing for the head term; confirm cs/ pages already lead with this exact phrasing",
+      "usage_guidance": "",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-033",
+      "native_phrase": "nefunguje diakritika",
+      "transliteration": "",
+      "english_concept": "the actual native search/complaint formulation Czech users type when diacritics fail to display or type correctly",
+      "country_or_market": "CZ",
+      "register": "casual, troubleshooting",
+      "phrase_type": "complaint/search formulation",
+      "content_surface": "candidate FAQ-question phrasing for a future diacritics-compatibility FAQ entry ('Proč mi nefunguje diakritika v [platform]?'), pending a Search Console/Semrush volume check",
+      "usage_guidance": "",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "CS-20260814-p78bm",
+      "native_phrase": "nick",
+      "transliteration": "",
+      "english_concept": "gaming nickname (loanword)",
+      "country_or_market": "CZ",
+      "register": "neutral, gaming",
+      "phrase_type": "borrowed_english_term",
+      "content_surface": "body, faq",
+      "usage_guidance": "Confirmed live, mainstream usage — safe as supporting vocabulary in CS gaming-name copy.",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
     }
   ]
 }
