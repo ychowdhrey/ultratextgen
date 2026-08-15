@@ -1,0 +1,508 @@
+{
+  "slug": "yemek-emojileri",
+  "copy_pattern": "single",
+  "title": "Yemek Emojileri 🍕 🍔 — Kopyala Yapıştır Yiyecek ve İçecek | UltraTextGen",
+  "meta_description": "Yemek emojileri kopyala yapıştır: meyve ve sebzeler, hazır yemekler, tatlılar, içecekler ve mutfak gereçleri. Kopyalamak için tıkla.",
+  "hero_h1": "Yemek ve İçecek Emojileri",
+  "breadcrumb": "Yemek Emojileri",
+  "hero_tagline": "Meyve ve sebzelerden tatlılara, içeceklerden mutfak gereçlerine — eksiksiz yiyecek emoji koleksiyonu. Kopyalamak için tıkla.",
+  "intro": "Yemek emojileri tarif paylaşımlarının, restoran yorumlarının ve menü gönderilerinin ortak dili. Bu sayfa hepsini kullanım alanına göre grupluyor: taze meyve ve sebzeler, pizzadan sushiye hazır yemekler, pasta ve tatlılar, sıcak ve soğuk içecekler, bir de çatal bıçak ve tencere gibi mutfak gereçleri. Emojiler her platformda biraz farklı çizilir — aynı karakter iOS’ta ve Android’de farklı görünebilir, ama anlamı değişmez.",
+  "sections": [
+    {
+      "id": "fruits-vegetables",
+      "label": "Meyve ve Sebze",
+      "h2": "Meyve ve Sebze Emojileri",
+      "intro": "Taze ürünler — tarif ve sağlıklı beslenme paylaşımları için.",
+      "symbols": [
+        {
+          "char": "🍎",
+          "label": "Kırmızı Elma"
+        },
+        {
+          "char": "🥑",
+          "label": "Avokado"
+        },
+        {
+          "char": "🍇",
+          "label": "Üzüm"
+        },
+        {
+          "char": "🍊",
+          "label": "Mandalina"
+        },
+        {
+          "char": "🍋",
+          "label": "Limon"
+        },
+        {
+          "char": "🍌",
+          "label": "Muz"
+        },
+        {
+          "char": "🍉",
+          "label": "Karpuz"
+        },
+        {
+          "char": "🍓",
+          "label": "Çilek"
+        },
+        {
+          "char": "🫐",
+          "label": "Yaban Mersini"
+        },
+        {
+          "char": "🍒",
+          "label": "Kiraz"
+        },
+        {
+          "char": "🍑",
+          "label": "Şeftali"
+        },
+        {
+          "char": "🥭",
+          "label": "Mango"
+        },
+        {
+          "char": "🍍",
+          "label": "Ananas"
+        },
+        {
+          "char": "🥥",
+          "label": "Hindistan Cevizi"
+        },
+        {
+          "char": "🥝",
+          "label": "Kivi"
+        },
+        {
+          "char": "🍅",
+          "label": "Domates"
+        },
+        {
+          "char": "🥦",
+          "label": "Brokoli"
+        },
+        {
+          "char": "🥬",
+          "label": "Yeşil Yapraklı Sebze"
+        },
+        {
+          "char": "🥒",
+          "label": "Salatalık"
+        },
+        {
+          "char": "🌶️",
+          "label": "Acı Biber"
+        },
+        {
+          "char": "🫑",
+          "label": "Dolmalık Biber"
+        },
+        {
+          "char": "🌽",
+          "label": "Mısır"
+        },
+        {
+          "char": "🥕",
+          "label": "Havuç"
+        },
+        {
+          "char": "🧄",
+          "label": "Sarımsak"
+        },
+        {
+          "char": "🧅",
+          "label": "Soğan"
+        },
+        {
+          "char": "🥔",
+          "label": "Patates"
+        },
+        {
+          "char": "🫘",
+          "label": "Fasulye"
+        },
+        {
+          "char": "🍈",
+          "label": "Kavun"
+        }
+      ]
+    },
+    {
+      "id": "prepared-foods",
+      "label": "Hazır Yemekler",
+      "h2": "Hazır Yemek Emojileri",
+      "intro": "Pişmiş yemekler — öğün paylaşımları ve restoran yorumları için.",
+      "symbols": [
+        {
+          "char": "🍕",
+          "label": "Pizza"
+        },
+        {
+          "char": "🍔",
+          "label": "Hamburger"
+        },
+        {
+          "char": "🌭",
+          "label": "Sosisli"
+        },
+        {
+          "char": "🥪",
+          "label": "Sandviç"
+        },
+        {
+          "char": "🌮",
+          "label": "Tako"
+        },
+        {
+          "char": "🌯",
+          "label": "Burrito"
+        },
+        {
+          "char": "🫔",
+          "label": "Tamale"
+        },
+        {
+          "char": "🥙",
+          "label": "Dolgulu Pide"
+        },
+        {
+          "char": "🧆",
+          "label": "Falafel"
+        },
+        {
+          "char": "🥚",
+          "label": "Yumurta"
+        },
+        {
+          "char": "🍳",
+          "label": "Yemek Pişirme"
+        },
+        {
+          "char": "🥘",
+          "label": "Sığ Tava"
+        },
+        {
+          "char": "🍲",
+          "label": "Yemek Tenceresi"
+        },
+        {
+          "char": "🫕",
+          "label": "Fondü"
+        },
+        {
+          "char": "🥣",
+          "label": "Kaşıklı Kâse"
+        },
+        {
+          "char": "🥗",
+          "label": "Yeşil Salata"
+        },
+        {
+          "char": "🍿",
+          "label": "Patlamış Mısır"
+        },
+        {
+          "char": "🧈",
+          "label": "Tereyağı"
+        },
+        {
+          "char": "🧂",
+          "label": "Tuz"
+        },
+        {
+          "char": "🥫",
+          "label": "Konserve"
+        },
+        {
+          "char": "🍟",
+          "label": "Patates Kızartması"
+        },
+        {
+          "char": "🧀",
+          "label": "Peynir Dilimi"
+        },
+        {
+          "char": "🍣",
+          "label": "Suşi"
+        },
+        {
+          "char": "🍱",
+          "label": "Bento Kutusu"
+        },
+        {
+          "char": "🍙",
+          "label": "Pirinç Topu"
+        },
+        {
+          "char": "🍥",
+          "label": "Balık Keki"
+        },
+        {
+          "char": "🍞",
+          "label": "Ekmek"
+        },
+        {
+          "char": "🥖",
+          "label": "Baget"
+        },
+        {
+          "char": "🥐",
+          "label": "Kruvasan"
+        },
+        {
+          "char": "🥯",
+          "label": "Simit"
+        },
+        {
+          "char": "🥨",
+          "label": "Alman Simidi"
+        },
+        {
+          "char": "🍜",
+          "label": "Buharı Tüten Kâse"
+        },
+        {
+          "char": "🍝",
+          "label": "Spagetti"
+        },
+        {
+          "char": "🥞",
+          "label": "Krep"
+        },
+        {
+          "char": "🧇",
+          "label": "Waffle"
+        },
+        {
+          "char": "🥓",
+          "label": "Pastırma"
+        }
+      ]
+    },
+    {
+      "id": "desserts-sweets",
+      "label": "Tatlılar",
+      "h2": "Tatlı ve Şekerleme Emojileri",
+      "intro": "Pastalar, kurabiyeler ve şekerlemeler.",
+      "symbols": [
+        {
+          "char": "🍰",
+          "label": "Yaş Pasta"
+        },
+        {
+          "char": "🎂",
+          "label": "Doğum Günü Pastası"
+        },
+        {
+          "char": "🧁",
+          "label": "Cupcake"
+        },
+        {
+          "char": "🥧",
+          "label": "Turta"
+        },
+        {
+          "char": "🍮",
+          "label": "Krema"
+        },
+        {
+          "char": "🍭",
+          "label": "Lolipop"
+        },
+        {
+          "char": "🍬",
+          "label": "Şeker"
+        },
+        {
+          "char": "🍫",
+          "label": "Çikolata"
+        },
+        {
+          "char": "🍩",
+          "label": "Donut"
+        },
+        {
+          "char": "🍪",
+          "label": "Kurabiye"
+        },
+        {
+          "char": "🍯",
+          "label": "Bal Kavanozu"
+        },
+        {
+          "char": "🍨",
+          "label": "Dondurma"
+        },
+        {
+          "char": "🍦",
+          "label": "Külah Dondurma"
+        },
+        {
+          "char": "🍧",
+          "label": "Kar Helvası"
+        }
+      ]
+    },
+    {
+      "id": "drinks-beverages",
+      "label": "İçecekler",
+      "h2": "İçecek Emojileri",
+      "intro": "Sıcak, soğuk ve alkollü içecekler.",
+      "symbols": [
+        {
+          "char": "☕",
+          "label": "Kahve"
+        },
+        {
+          "char": "🍵",
+          "label": "Kulpsuz Çay Fincanı"
+        },
+        {
+          "char": "🫖",
+          "label": "Demlik"
+        },
+        {
+          "char": "🧋",
+          "label": "Bubble Tea"
+        },
+        {
+          "char": "🥤",
+          "label": "Pipetli Bardak"
+        },
+        {
+          "char": "🧃",
+          "label": "Kutu İçecek"
+        },
+        {
+          "char": "🥛",
+          "label": "Süt Bardağı"
+        },
+        {
+          "char": "🍼",
+          "label": "Biberon"
+        },
+        {
+          "char": "🫗",
+          "label": "Dökülen Sıvı"
+        },
+        {
+          "char": "🍺",
+          "label": "Bira Bardağı"
+        },
+        {
+          "char": "🍻",
+          "label": "Tokuşan Bira Bardakları"
+        },
+        {
+          "char": "🥂",
+          "label": "Kadeh Tokuşturma"
+        },
+        {
+          "char": "🍷",
+          "label": "Şarap Kadehi"
+        },
+        {
+          "char": "🥃",
+          "label": "Viski Bardağı"
+        },
+        {
+          "char": "🍸",
+          "label": "Kokteyl Kadehi"
+        },
+        {
+          "char": "🍹",
+          "label": "Tropikal İçecek"
+        },
+        {
+          "char": "🍾",
+          "label": "Mantarı Patlayan Şişe"
+        },
+        {
+          "char": "🧊",
+          "label": "Buz"
+        }
+      ]
+    },
+    {
+      "id": "kitchen-cooking",
+      "label": "Mutfak",
+      "h2": "Mutfak ve Pişirme Emojileri",
+      "intro": "Çatal bıçak, kap kacak ve mutfak gereçleri.",
+      "symbols": [
+        {
+          "char": "🍽️",
+          "label": "Tabak Çatal Bıçak"
+        },
+        {
+          "char": "🍴",
+          "label": "Çatal Bıçak"
+        },
+        {
+          "char": "🥄",
+          "label": "Kaşık"
+        },
+        {
+          "char": "🔪",
+          "label": "Mutfak Bıçağı"
+        },
+        {
+          "char": "🫙",
+          "label": "Kavanoz"
+        },
+        {
+          "char": "🧑‍🍳",
+          "label": "Aşçı"
+        },
+        {
+          "char": "🥢",
+          "label": "Çubuk"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    },
+    {
+      "href": "/tr/library/emoji-combos/",
+      "title": "Kopyala yapıştır emoji kombinasyonları",
+      "desc": "Bion, durumun ve açıklamaların tek bir havaya bürünsün diye 100+ hazır emoji combosu — coquette, cottagecore, …"
+    },
+    {
+      "href": "/tr/library/estetik-semboller/",
+      "title": "Estetik semboller — kopyala yapıştır",
+      "desc": "Bio, nick, caption ve durum için aesthetic semboller: ✦ ♡ ୨୧ ❀ ⋆ ˚ coquette, kawaii, y2k, soft, kalp, yıldız, …"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/tr/library/yemek-emojileri/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/food-drink-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-comida/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/food-drink-emojis/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/yemek-emojileri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/food-drink-emojis/"
+    }
+  ]
+}

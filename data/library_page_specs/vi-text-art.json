@@ -1,0 +1,342 @@
+{
+  "slug": "text-art",
+  "title": "Text Art: Sao Chép Nghệ Thuật ASCII và Unicode | UltraTextGen",
+  "meta_description": "Text art sao chép dán — mèo ASCII, trái tim braille, khung sao và kaomoji kinh điển, kèm các khối để tự vẽ. Nhấn để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/library/text-art/",
+  "breadcrumb": "Text Art",
+  "hero_h1": "Text Art",
+  "hero_tagline": "Những tác phẩm ASCII và Unicode dán được ngay, kèm đầy đủ ký tự khung, khối và braille để bạn tự vẽ. Nhấn để sao chép.",
+  "intro": "Text art (còn gọi là ASCII art) là tranh vẽ hoàn toàn bằng ký tự — nét khung, khối đổ bóng, chấm braille và các ký hiệu bàn phím thông thường. Nó hiển thị ở bất cứ đâu có chữ: khung chat Discord, sảnh game, bài đăng trên X, bình luận YouTube và tiểu sử văn bản thuần. Trang này tập hợp những tác phẩm nhỏ dán được chỉ với một cú nhấn, cùng từng ký tự thành phần nếu bạn muốn tự vẽ.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Đường Kẻ",
+      "h2": "Ký Tự Khung",
+      "intro": "Đường thẳng, góc và điểm nối — bộ khung của khung viền, bảng và text art có cấu trúc.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Kẻ Ngang Mảnh"
+        },
+        {
+          "char": "│",
+          "label": "Kẻ Dọc Mảnh"
+        },
+        {
+          "char": "┌",
+          "label": "Góc Trên Trái"
+        },
+        {
+          "char": "┐",
+          "label": "Góc Trên Phải"
+        },
+        {
+          "char": "└",
+          "label": "Góc Dưới Trái"
+        },
+        {
+          "char": "┘",
+          "label": "Góc Dưới Phải"
+        },
+        {
+          "char": "├",
+          "label": "Nối Sang Phải"
+        },
+        {
+          "char": "┤",
+          "label": "Nối Sang Trái"
+        },
+        {
+          "char": "┼",
+          "label": "Giao Nhau"
+        },
+        {
+          "char": "═",
+          "label": "Kẻ Ngang Đôi"
+        },
+        {
+          "char": "║",
+          "label": "Kẻ Dọc Đôi"
+        },
+        {
+          "char": "╔",
+          "label": "Góc Đôi Trên Trái"
+        },
+        {
+          "char": "╗",
+          "label": "Góc Đôi Trên Phải"
+        },
+        {
+          "char": "╚",
+          "label": "Góc Đôi Dưới Trái"
+        },
+        {
+          "char": "╝",
+          "label": "Góc Đôi Dưới Phải"
+        }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Khối",
+      "h2": "Ký Tự Khối và Đổ Bóng",
+      "intro": "Khối đặc và khối đổ bóng để tô kín hình và tạo chuyển sắc trong tác phẩm lớn.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Khối Đầy"
+        },
+        {
+          "char": "▀",
+          "label": "Nửa Khối Trên"
+        },
+        {
+          "char": "▄",
+          "label": "Nửa Khối Dưới"
+        },
+        {
+          "char": "▌",
+          "label": "Nửa Khối Trái"
+        },
+        {
+          "char": "▐",
+          "label": "Nửa Khối Phải"
+        },
+        {
+          "char": "░",
+          "label": "Bóng Nhạt"
+        },
+        {
+          "char": "▒",
+          "label": "Bóng Vừa"
+        },
+        {
+          "char": "▓",
+          "label": "Bóng Đậm"
+        },
+        {
+          "char": "▖",
+          "label": "Góc Phần Tư Dưới Trái"
+        },
+        {
+          "char": "▘",
+          "label": "Góc Phần Tư Trên Trái"
+        }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Ký Tự Braille",
+      "intro": "Các mẫu braille cho text art độ phân giải cao nhất — gần như mọi tranh chấm hiện đại đều vẽ bằng chúng.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Braille Chấm 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille Chấm 14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille Chấm 1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille Chấm 123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille Chấm 78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille Chấm 3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille Chấm 235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braille Chấm 12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braille Chấm 1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braille Chấm 4568"
+        }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Hình Khối",
+      "h2": "Hình Học Trang Trí",
+      "intro": "Ký tự hình học đơn giản cho ngôi sao, hình thoi và chi tiết trang trí.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Hình Thoi Đen"
+        },
+        {
+          "char": "◇",
+          "label": "Hình Thoi Trắng"
+        },
+        {
+          "char": "●",
+          "label": "Hình Tròn Đen"
+        },
+        {
+          "char": "○",
+          "label": "Hình Tròn Trắng"
+        },
+        {
+          "char": "▲",
+          "label": "Tam Giác Đen Hướng Lên"
+        },
+        {
+          "char": "△",
+          "label": "Tam Giác Trắng Hướng Lên"
+        },
+        {
+          "char": "▼",
+          "label": "Tam Giác Đen Hướng Xuống"
+        },
+        {
+          "char": "▽",
+          "label": "Tam Giác Trắng Hướng Xuống"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Tác Phẩm",
+    "h2": "Tác Phẩm Text Art Dán Ngay",
+    "intro": "Sao chép cả tác phẩm nhiều dòng chỉ với một cú nhấn — giữ nguyên định dạng dọc để các dòng không lệch."
+  },
+  "collection_container_id": "textArtContainer",
+  "collections": [
+    {
+      "name": "Mèo ASCII",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Trái Tim Braille",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Tháp Hình Thoi",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Khung Ngôi Sao",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀your text⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Kaomoji Kinh Điển",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Dãy Núi",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/vi/library/ten-roblox-dep/",
+      "title": "Text Art Roblox",
+      "desc": "Text art dùng lọt các ô nhập của Roblox."
+    },
+    {
+      "href": "/vi/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật cho mọi tâm trạng. Nhấp vào mặt bất kỳ để sao chép ngay."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Kí Tự Đặc Biệt — bấm là copy",
+      "desc": "Kho kí tự đặc biệt đầy đủ cho tên Free Fire, Liên Quân, bio Facebook, Instagram và caption TikTok: khung ꧁꧂, t…"
+    }
+  ],
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-kunst/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/text-art/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ]
+}

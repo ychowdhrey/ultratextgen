@@ -1,0 +1,284 @@
+{
+  "slug": "iskambil-sembolleri",
+  "copy_pattern": "single",
+  "title": "İskambil Sembolleri ♠ ♥ ♦ ♣ — Kopyala Yapıştır Kart ve Zar | UltraTextGen",
+  "meta_description": "İskambil sembolleri kopyala yapıştır: ♠ maça, ♥ kupa, ♦ karo, ♣ sinek, zar yüzleri, oyun kartı karakterleri. Kopyalamak için tıkla.",
+  "hero_h1": "İskambil ve Oyun Sembolleri",
+  "breadcrumb": "İskambil Sembolleri",
+  "hero_tagline": "Dört takım sembolü dolu ve içi boş hâlleriyle, zar yüzleri, tam kart karakterleri ve oyun emojileri. Kopyalamak için tıkla.",
+  "intro": "İskambil sembolleri Unicode’da iki biçimde bulunur: dolu (♠ ♥ ♦ ♣) ve içi boş (♤ ♡ ♢ ♧). İkisi de gerçek metin karakteridir — görsel değil — yani belgelere, tablolara, oyun isimlerine ve mesajlara doğrudan yapıştırılır. Bu sayfa dört takımı her iki biçimiyle, zar yüzlerini, Playing Cards bloğundaki tam kart karakterlerini (🂡 maça ası gibi) ve ilgili oyun emojilerini bir arada veriyor. Not: tam kart karakterleri yeni bir Unicode bloğundadır ve eski cihazlarda kutu görünebilir.",
+  "sections": [
+    {
+      "id": "standard-suits",
+      "label": "Dolu Takımlar",
+      "h2": "Standart Kart Takımları",
+      "intro": "Çoğu iskambil destesinde kullanılan dört dolu takım sembolü.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Maça Sembolü"
+        },
+        {
+          "char": "♥",
+          "label": "Kupa Sembolü"
+        },
+        {
+          "char": "♦",
+          "label": "Karo Sembolü"
+        },
+        {
+          "char": "♣",
+          "label": "Sinek Sembolü"
+        }
+      ]
+    },
+    {
+      "id": "outlined-suits",
+      "label": "İçi Boş Takımlar",
+      "h2": "İçi Boş Kart Takımları",
+      "intro": "Dört standart takımın içi boş (beyaz) çeşitlemeleri.",
+      "symbols": [
+        {
+          "char": "♤",
+          "label": "Beyaz Maça"
+        },
+        {
+          "char": "♡",
+          "label": "Beyaz Kupa"
+        },
+        {
+          "char": "♢",
+          "label": "Beyaz Karo"
+        },
+        {
+          "char": "♧",
+          "label": "Beyaz Sinek"
+        }
+      ]
+    },
+    {
+      "id": "card-suits-combined",
+      "label": "Sekiz Takım",
+      "h2": "Kart Takımları — Dolu ve İçi Boş (8)",
+      "intro": "Sekiz Unicode kart takımı karakterinin tamamı bir arada.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Maça"
+        },
+        {
+          "char": "♥",
+          "label": "Kupa"
+        },
+        {
+          "char": "♦",
+          "label": "Karo"
+        },
+        {
+          "char": "♣",
+          "label": "Sinek"
+        },
+        {
+          "char": "♤",
+          "label": "Beyaz Maça"
+        },
+        {
+          "char": "♡",
+          "label": "Beyaz Kupa"
+        },
+        {
+          "char": "♢",
+          "label": "Beyaz Karo"
+        },
+        {
+          "char": "♧",
+          "label": "Beyaz Sinek"
+        }
+      ]
+    },
+    {
+      "id": "dice",
+      "label": "Zar",
+      "h2": "Zar Yüzleri",
+      "intro": "Standart altı yüzlü zarın her yüzü için ayrı Unicode karakteri.",
+      "symbols": [
+        {
+          "char": "⚀",
+          "label": "Zar Yüzü 1"
+        },
+        {
+          "char": "⚁",
+          "label": "Zar Yüzü 2"
+        },
+        {
+          "char": "⚂",
+          "label": "Zar Yüzü 3"
+        },
+        {
+          "char": "⚃",
+          "label": "Zar Yüzü 4"
+        },
+        {
+          "char": "⚄",
+          "label": "Zar Yüzü 5"
+        },
+        {
+          "char": "⚅",
+          "label": "Zar Yüzü 6"
+        }
+      ]
+    },
+    {
+      "id": "playing-card-emojis",
+      "label": "Kart Emojileri",
+      "h2": "Oyun Kartı Emojileri",
+      "intro": "Emoji biçimindeki kart ve oyun sembolleri.",
+      "symbols": [
+        {
+          "char": "🃏",
+          "label": "Joker"
+        },
+        {
+          "char": "🎴",
+          "label": "Çiçekli Oyun Kartları"
+        },
+        {
+          "char": "🀄",
+          "label": "Mahjong Kırmızı Ejderha"
+        }
+      ]
+    },
+    {
+      "id": "trump-and-special-cards",
+      "label": "Tam Kartlar",
+      "h2": "Tam Kart ve Özel Kart Sembolleri",
+      "intro": "Playing Cards bloğundaki tek tek kart karakterleri.",
+      "symbols": [
+        {
+          "char": "🂠",
+          "label": "Kart Arkası"
+        },
+        {
+          "char": "🂡",
+          "label": "Maça Ası"
+        },
+        {
+          "char": "🂢",
+          "label": "Maça İkilisi"
+        },
+        {
+          "char": "🂮",
+          "label": "Maça Papazı"
+        },
+        {
+          "char": "🂱",
+          "label": "Kupa Ası"
+        },
+        {
+          "char": "🂾",
+          "label": "Kupa Papazı"
+        },
+        {
+          "char": "🃁",
+          "label": "Karo Ası"
+        },
+        {
+          "char": "🃎",
+          "label": "Karo Papazı"
+        },
+        {
+          "char": "🃑",
+          "label": "Sinek Ası"
+        },
+        {
+          "char": "🃞",
+          "label": "Sinek Papazı"
+        }
+      ]
+    },
+    {
+      "id": "game-symbols",
+      "label": "Oyun",
+      "h2": "Oyun Sembolleri",
+      "intro": "Kart oyunlarına eşlik eden diğer oyun emojileri.",
+      "symbols": [
+        {
+          "char": "🎰",
+          "label": "Slot Makinesi"
+        },
+        {
+          "char": "🎲",
+          "label": "Oyun Zarı"
+        },
+        {
+          "char": "🎯",
+          "label": "Tam İsabet"
+        },
+        {
+          "char": "🎱",
+          "label": "Bilardo Sekiz Topu"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/satranc-sembolleri/",
+      "title": "Satranç Sembolleri",
+      "desc": "Satranç taşlarının, tahta karelerinin ve notasyonun Unicode sembollerinden oluşan bir başvuru koleksiyonu. Anı…"
+    },
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    },
+    {
+      "href": "/tr/library/emoji-combos/",
+      "title": "Kopyala yapıştır emoji kombinasyonları",
+      "desc": "Bion, durumun ve açıklamaların tek bir havaya bürünsün diye 100+ hazır emoji combosu — coquette, cottagecore, …"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/tr/library/iskambil-sembolleri/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/spielkarten-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-cartas/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/trump-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/teureompeu-kadeu-giho/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-kart/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/iskambil-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/card-suit-symbols/"
+    }
+  ]
+}

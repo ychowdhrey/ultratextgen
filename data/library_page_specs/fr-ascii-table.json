@@ -1,0 +1,332 @@
+{
+  "slug": "table-ascii",
+  "title": "Table ASCII : Codes et Caractères à Copier-Coller | UltraTextGen",
+  "meta_description": "Table ASCII complète avec les codes décimal, hexadécimal, binaire et octal pour la ponctuation, les chiffres, les lettres et les symboles. Cliquez sur un caractère pour le copier.",
+  "canonical": "https://ultratextgen.com/fr/library/table-ascii/",
+  "breadcrumb": "Table ASCII",
+  "hero_h1": "Table ASCII",
+  "hero_tagline": "Les caractères ASCII imprimables 33–126 avec leurs codes décimal, hexadécimal, binaire et octal. Cliquez sur un caractère pour le copier.",
+  "intro": "La table ASCII associe les 128 caractères de l’American Standard Code for Information Interchange aux nombres 0–127 — la base de tout encodage de texte moderne et les 128 premiers points de code d’Unicode. Cette référence couvre la plage imprimable (33–126), regroupée par type, chaque caractère étant étiqueté avec son code décimal, hexadécimal, binaire et octal. Les codes 0–31 sont des caractères de contrôle non imprimables (comme 10, le saut de ligne), et 32 correspond à l’espace.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "Ponctuation 33–47",
+      "h2": "Ponctuation et Symboles ASCII (33–47)",
+      "intro": "Le premier bloc imprimable : ponctuation et symboles arithmétiques.",
+      "symbols": [
+        {
+          "char": "!",
+          "label": "33 / 0x21 / 0b0100001 / 0o41 — Point d’Exclamation"
+        },
+        {
+          "char": "\"",
+          "label": "34 / 0x22 / 0b0100010 / 0o42 — Guillemet"
+        },
+        {
+          "char": "#",
+          "label": "35 / 0x23 / 0b0100011 / 0o43 — Croisillon"
+        },
+        {
+          "char": "$",
+          "label": "36 / 0x24 / 0b0100100 / 0o44 — Signe Dollar"
+        },
+        {
+          "char": "%",
+          "label": "37 / 0x25 / 0b0100101 / 0o45 — Signe Pourcent"
+        },
+        {
+          "char": "&",
+          "label": "38 / 0x26 / 0b0100110 / 0o46 — Esperluette"
+        },
+        {
+          "char": "'",
+          "label": "39 / 0x27 / 0b0100111 / 0o47 — Apostrophe"
+        },
+        {
+          "char": "(",
+          "label": "40 / 0x28 / 0b0101000 / 0o50 — Parenthèse Gauche"
+        },
+        {
+          "char": ")",
+          "label": "41 / 0x29 / 0b0101001 / 0o51 — Parenthèse Droite"
+        },
+        {
+          "char": "*",
+          "label": "42 / 0x2A / 0b0101010 / 0o52 — Astérisque"
+        },
+        {
+          "char": "+",
+          "label": "43 / 0x2B / 0b0101011 / 0o53 — Signe Plus"
+        },
+        {
+          "char": ",",
+          "label": "44 / 0x2C / 0b0101100 / 0o54 — Virgule"
+        },
+        {
+          "char": "-",
+          "label": "45 / 0x2D / 0b0101101 / 0o55 — Trait d’Union"
+        },
+        {
+          "char": ".",
+          "label": "46 / 0x2E / 0b0101110 / 0o56 — Point"
+        },
+        {
+          "char": "/",
+          "label": "47 / 0x2F / 0b0101111 / 0o57 — Barre Oblique"
+        }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "Chiffres 48–57",
+      "h2": "Chiffres ASCII (48–57)",
+      "intro": "Les dix chiffres décimaux — le code de chaque chiffre vaut 48 plus sa valeur.",
+      "symbols": [
+        {
+          "char": "0",
+          "label": "48 / 0x30 / 0b0110000 / 0o60 — Chiffre Zéro"
+        },
+        {
+          "char": "1",
+          "label": "49 / 0x31 / 0b0110001 / 0o61 — Chiffre Un"
+        },
+        {
+          "char": "2",
+          "label": "50 / 0x32 / 0b0110010 / 0o62 — Chiffre Deux"
+        },
+        {
+          "char": "3",
+          "label": "51 / 0x33 / 0b0110011 / 0o63 — Chiffre Trois"
+        },
+        {
+          "char": "4",
+          "label": "52 / 0x34 / 0b0110100 / 0o64 — Chiffre Quatre"
+        },
+        {
+          "char": "5",
+          "label": "53 / 0x35 / 0b0110101 / 0o65 — Chiffre Cinq"
+        },
+        {
+          "char": "6",
+          "label": "54 / 0x36 / 0b0110110 / 0o66 — Chiffre Six"
+        },
+        {
+          "char": "7",
+          "label": "55 / 0x37 / 0b0110111 / 0o67 — Chiffre Sept"
+        },
+        {
+          "char": "8",
+          "label": "56 / 0x38 / 0b0111000 / 0o70 — Chiffre Huit"
+        },
+        {
+          "char": "9",
+          "label": "57 / 0x39 / 0b0111001 / 0o71 — Chiffre Neuf"
+        }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "Ponctuation 58–64",
+      "h2": "Ponctuation et Symboles ASCII (58–64)",
+      "intro": "Les symboles situés entre les chiffres et les majuscules.",
+      "symbols": [
+        {
+          "char": ":",
+          "label": "58 / 0x3A / 0b0111010 / 0o72 — Deux-Points"
+        },
+        {
+          "char": ";",
+          "label": "59 / 0x3B / 0b0111011 / 0o73 — Point-Virgule"
+        },
+        {
+          "char": "<",
+          "label": "60 / 0x3C / 0b0111100 / 0o74 — Signe Inférieur"
+        },
+        {
+          "char": "=",
+          "label": "61 / 0x3D / 0b0111101 / 0o75 — Signe Égal"
+        },
+        {
+          "char": ">",
+          "label": "62 / 0x3E / 0b0111110 / 0o76 — Signe Supérieur"
+        },
+        {
+          "char": "?",
+          "label": "63 / 0x3F / 0b0111111 / 0o77 — Point d’Interrogation"
+        },
+        {
+          "char": "@",
+          "label": "64 / 0x40 / 0b1000000 / 0o100 — Arobase"
+        }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "Lettres 65–122",
+      "h2": "Lettres ASCII (65–90 et 97–122)",
+      "intro": "Les majuscules vont de 65 (A) à 90 (Z) ; les minuscules de 97 (a) à 122 (z) — toujours la majuscule plus 32.",
+      "symbols": [
+        {
+          "char": "A",
+          "label": "65 / 0x41 / 0b1000001 / 0o101 — Lettre Majuscule A"
+        },
+        {
+          "char": "B",
+          "label": "66 / 0x42 / 0b1000010 / 0o102 — Lettre Majuscule B"
+        },
+        {
+          "char": "C",
+          "label": "67 / 0x43 / 0b1000011 / 0o103 — Lettre Majuscule C"
+        },
+        {
+          "char": "M",
+          "label": "77 / 0x4D / 0b1001101 / 0o115 — Lettre Majuscule M"
+        },
+        {
+          "char": "N",
+          "label": "78 / 0x4E / 0b1001110 / 0o116 — Lettre Majuscule N"
+        },
+        {
+          "char": "X",
+          "label": "88 / 0x58 / 0b1011000 / 0o130 — Lettre Majuscule X"
+        },
+        {
+          "char": "Y",
+          "label": "89 / 0x59 / 0b1011001 / 0o131 — Lettre Majuscule Y"
+        },
+        {
+          "char": "Z",
+          "label": "90 / 0x5A / 0b1011010 / 0o132 — Lettre Majuscule Z"
+        },
+        {
+          "char": "a",
+          "label": "97 / 0x61 / 0b1100001 / 0o141 — Lettre Minuscule A"
+        },
+        {
+          "char": "b",
+          "label": "98 / 0x62 / 0b1100010 / 0o142 — Lettre Minuscule B"
+        },
+        {
+          "char": "m",
+          "label": "109 / 0x6D / 0b1101101 / 0o155 — Lettre Minuscule M"
+        },
+        {
+          "char": "n",
+          "label": "110 / 0x6E / 0b1101110 / 0o156 — Lettre Minuscule N"
+        },
+        {
+          "char": "x",
+          "label": "120 / 0x78 / 0b1111000 / 0o170 — Lettre Minuscule X"
+        },
+        {
+          "char": "z",
+          "label": "122 / 0x7A / 0b1111010 / 0o172 — Lettre Minuscule Z"
+        }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "Crochets 91–96",
+      "h2": "Crochets et Signes ASCII (91–96)",
+      "intro": "Crochets, barre oblique inverse, accent circonflexe, tiret bas et accent grave.",
+      "symbols": [
+        {
+          "char": "[",
+          "label": "91 / 0x5B / 0b1011011 / 0o133 — Crochet Gauche"
+        },
+        {
+          "char": "\\",
+          "label": "92 / 0x5C / 0b1011100 / 0o134 — Barre Oblique Inverse"
+        },
+        {
+          "char": "]",
+          "label": "93 / 0x5D / 0b1011101 / 0o135 — Crochet Droit"
+        },
+        {
+          "char": "^",
+          "label": "94 / 0x5E / 0b1011110 / 0o136 — Accent Circonflexe"
+        },
+        {
+          "char": "_",
+          "label": "95 / 0x5F / 0b1011111 / 0o137 — Tiret Bas"
+        },
+        {
+          "char": "`",
+          "label": "96 / 0x60 / 0b1100000 / 0o140 — Accent Grave"
+        }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "Accolades 123–126",
+      "h2": "Accolades et Tilde ASCII (123–126)",
+      "intro": "Les derniers caractères imprimables avant le code de contrôle DEL, en 127.",
+      "symbols": [
+        {
+          "char": "{",
+          "label": "123 / 0x7B / 0b1111011 / 0o173 — Accolade Gauche"
+        },
+        {
+          "char": "|",
+          "label": "124 / 0x7C / 0b1111100 / 0o174 — Barre Verticale"
+        },
+        {
+          "char": "}",
+          "label": "125 / 0x7D / 0b1111101 / 0o175 — Accolade Droite"
+        },
+        {
+          "char": "~",
+          "label": "126 / 0x7E / 0b1111110 / 0o176 — Tilde"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/codes-alt/",
+      "title": "Codes Alt Windows",
+      "desc": "Les codes Alt utiles pour taper les majuscules accentuées, les guillemets français et les symboles que le clav…"
+    },
+    {
+      "href": "/fr/library/caracteres-speciaux/",
+      "title": "Caractères Spéciaux",
+      "desc": "Une collection de référence de symboles Unicode uniques : infini, paix, science, marques légales, décorations …"
+    },
+    {
+      "href": "/fr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour le…"
+    }
+  ],
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/ascii-table/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/ascii-tabelle/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/tabla-ascii/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/tabela-ascii/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/table-ascii/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/ascii-table/"
+    }
+  ]
+}

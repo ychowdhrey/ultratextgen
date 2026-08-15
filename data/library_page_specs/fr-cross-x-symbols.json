@@ -1,0 +1,320 @@
+{
+  "slug": "symboles-croix",
+  "copy_pattern": "single",
+  "title": "Symboles Croix ✝ ✖ ❌ — Copier-Coller Toutes les Croix Unicode | UltraTextGen",
+  "meta_description": "Symboles croix à copier-coller : croix de multiplication, X de rejet, croix religieuses ✝ ☦, croix décoratives, dagues et marques d’erreur. Cliquez pour copier.",
+  "hero_h1": "Symboles Croix et X",
+  "breadcrumb": "Symboles Croix",
+  "hero_tagline": "Toutes les formes de croix d’Unicode — multiplication, X de rejet, croix religieuses, croix décoratives, dagues et marques d’annulation. Cliquez pour copier.",
+  "intro": "Unicode contient bien plus d’une croix, et elles ne sont pas interchangeables : le × de multiplication n’est pas la lettre x, le ✗ des formulaires n’est pas le ❌ emoji, et une croix latine ✝ n’a pas le même sens qu’une croix de Malte ✠. Cette page les regroupe par usage réel — notation mathématique, cases à cocher et interfaces, contexte religieux, décoration, notes de bas de page, et marques d’erreur ou d’interdiction — pour que vous choisissiez le bon caractère plutôt que le plus proche visuellement.",
+  "sections": [
+    {
+      "id": "math-x",
+      "label": "Multiplication",
+      "h2": "Multiplication et X Mathématique",
+      "intro": "Croix utilisées en notation mathématique et scientifique.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Signe de Multiplication"
+        },
+        {
+          "char": "✕",
+          "label": "X de Multiplication"
+        },
+        {
+          "char": "✖",
+          "label": "X de Multiplication Gras"
+        },
+        {
+          "char": "⨯",
+          "label": "Produit Vectoriel"
+        },
+        {
+          "char": "⋇",
+          "label": "Division Fois"
+        },
+        {
+          "char": "⨰",
+          "label": "Signe de Multiplication Pointé"
+        },
+        {
+          "char": "✖️",
+          "label": "X de Multiplication Gras (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "ballot-x",
+      "label": "X de Rejet",
+      "h2": "X de Formulaire et de Rejet",
+      "intro": "X employés dans les formulaires, les listes et les interfaces.",
+      "symbols": [
+        {
+          "char": "✗",
+          "label": "X de Bulletin"
+        },
+        {
+          "char": "✘",
+          "label": "X de Bulletin Gras"
+        },
+        {
+          "char": "❌",
+          "label": "Croix de Rejet (emoji)"
+        },
+        {
+          "char": "❎",
+          "label": "Bouton Croix (emoji)"
+        },
+        {
+          "char": "☓",
+          "label": "Sautoir"
+        },
+        {
+          "char": "𐄂",
+          "label": "Marque Égéenne"
+        }
+      ]
+    },
+    {
+      "id": "religious-crosses",
+      "label": "Croix Religieuses",
+      "h2": "Croix Religieuses",
+      "intro": "Croix employées dans un contexte religieux ou spirituel.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Croix Latine"
+        },
+        {
+          "char": "✞",
+          "label": "Croix Latine Ombrée"
+        },
+        {
+          "char": "✟",
+          "label": "Croix Latine Contournée"
+        },
+        {
+          "char": "✠",
+          "label": "Croix de Malte"
+        },
+        {
+          "char": "☦",
+          "label": "Croix Orthodoxe"
+        },
+        {
+          "char": "☧",
+          "label": "Chrisme"
+        },
+        {
+          "char": "☨",
+          "label": "Croix de Lorraine"
+        }
+      ]
+    },
+    {
+      "id": "decorative-crosses",
+      "label": "Croix Décoratives",
+      "h2": "Croix Décoratives et Grasses",
+      "intro": "Formes de croix stylisées pour la mise en valeur.",
+      "symbols": [
+        {
+          "char": "✙",
+          "label": "Croix Grecque Contournée"
+        },
+        {
+          "char": "✚",
+          "label": "Croix Grecque Grasse"
+        },
+        {
+          "char": "✛",
+          "label": "Croix à Centre Ouvert"
+        },
+        {
+          "char": "✜",
+          "label": "Croix Grasse à Centre Ouvert"
+        },
+        {
+          "char": "✡",
+          "label": "Étoile de David"
+        },
+        {
+          "char": "✢",
+          "label": "Astérisque à Quatre Gouttes"
+        },
+        {
+          "char": "✣",
+          "label": "Astérisque à Quatre Ballons"
+        },
+        {
+          "char": "✤",
+          "label": "Astérisque Gras à Quatre Ballons"
+        },
+        {
+          "char": "✥",
+          "label": "Astérisque à Quatre Trèfles"
+        }
+      ]
+    },
+    {
+      "id": "daggers",
+      "label": "Dagues",
+      "h2": "Dagues Typographiques",
+      "intro": "Signes de renvoi employés en note de bas de page et pour les dates de décès.",
+      "symbols": [
+        {
+          "char": "†",
+          "label": "Dague"
+        },
+        {
+          "char": "‡",
+          "label": "Double Dague"
+        },
+        {
+          "char": "⸵",
+          "label": "Point-Virgule Retourné"
+        },
+        {
+          "char": "⸸",
+          "label": "Dague Retournée"
+        },
+        {
+          "char": "🗡",
+          "label": "Dague (emoji)"
+        },
+        {
+          "char": "⚔",
+          "label": "Épées Croisées"
+        }
+      ]
+    },
+    {
+      "id": "special-cross",
+      "label": "Croix Spéciales",
+      "h2": "Autres Caractères Croix",
+      "intro": "Caractères croix venus d’autres blocs Unicode.",
+      "symbols": [
+        {
+          "char": "╳",
+          "label": "Croix Diagonale de Filet"
+        },
+        {
+          "char": "⨉",
+          "label": "Opérateur N-Aire Fois"
+        },
+        {
+          "char": "⦻",
+          "label": "Cercle avec X Superposé"
+        },
+        {
+          "char": "⊗",
+          "label": "Cercle Multiplicatif"
+        }
+      ]
+    },
+    {
+      "id": "warning-cancel",
+      "label": "Erreur et Interdiction",
+      "h2": "Marques d’Erreur, d’Annulation et d’Interdiction",
+      "intro": "Croix signifiant « non », « annulé », « erreur » ou « interdit ».",
+      "symbols": [
+        {
+          "char": "❌",
+          "label": "Croix de Rejet (emoji)"
+        },
+        {
+          "char": "❎",
+          "label": "Bouton Croix (emoji)"
+        },
+        {
+          "char": "🚫",
+          "label": "Sens Interdit (emoji)"
+        },
+        {
+          "char": "⛔",
+          "label": "Entrée Interdite (emoji)"
+        },
+        {
+          "char": "🛑",
+          "label": "Panneau Stop (emoji)"
+        },
+        {
+          "char": "⊘",
+          "label": "Cercle Barré"
+        },
+        {
+          "char": "✗",
+          "label": "X de Bulletin pour Élément Rejeté"
+        },
+        {
+          "char": "✘ Cancelled",
+          "label": "Ligne de Statut Annulé"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/symboles-religieux/",
+      "title": "Symboles Religieux et Spirituels",
+      "desc": "Une collection de référence des symboles Unicode religieux, spirituels et liés à la foi issus des grandes trad…"
+    },
+    {
+      "href": "/fr/library/symbole-coche/",
+      "title": "Symbole coche",
+      "desc": "✓ ✔ ☑ ✅ et tout ce qui les accompagne : croix, pastilles d'état, cases à cocher, numéros d'étape. Clique pour …"
+    },
+    {
+      "href": "/fr/library/symboles-mathematiques/",
+      "title": "Symboles Mathématiques",
+      "desc": "Copie et colle des caractères mathématiques Unicode — opérateurs, lettres grecques, théorie des ensembles, cal…"
+    }
+  ],
+  "lang": "fr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/fr/library/symboles-croix/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/cross-x-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/cross-x-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/kreuz-x-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolo-x/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-salib/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/gyocha-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/kruis-symbool/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-cruz-e-x/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-croix/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/cross-x-symbols/"
+    }
+  ]
+}
