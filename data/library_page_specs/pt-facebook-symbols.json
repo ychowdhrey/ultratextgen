@@ -1,0 +1,325 @@
+{
+  "slug": "simbolos-para-facebook",
+  "title": "Símbolos para Facebook ★ ♥ — Copiar e Colar para Posts e Bio | UltraTextGen",
+  "meta_description": "Símbolos para Facebook copiar e colar: corações, estrelas, marcadores, setas e símbolos para nome de página e grupo. Clique para copiar.",
+  "canonical": "https://ultratextgen.com/pt/library/simbolos-para-facebook/",
+  "breadcrumb": "Símbolos para Facebook",
+  "hero_h1": "Símbolos para Facebook",
+  "hero_tagline": "Corações, estrelas, marcadores e divisores que funcionam em posts, bios, nomes de página e grupos. Clique para copiar.",
+  "intro": "O Facebook não tem botão de formatação, então símbolos Unicode são a única forma de dar estrutura e destaque a um post. Todos os caracteres desta página são texto de verdade — não imagens — então colam direto no post, na bio, no nome da página ou do grupo, e continuam legíveis no celular e no computador. Estão organizados por uso: símbolos de reação, corações, estrelas, marcadores e setas para separar ideias, marcas de verificação e símbolos para nome de página.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "single",
+  "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: competitor gap analysis — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
+  "sections": [
+    {
+      "id": "reaction-symbols",
+      "label": "Reações",
+      "h2": "Símbolos de Reação do Facebook",
+      "intro": "Equivalentes em texto das reações mais usadas.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Coração Preenchido"
+        },
+        {
+          "char": "❤️",
+          "label": "Coração Vazado"
+        },
+        {
+          "char": "🥰",
+          "label": "Joinha"
+        },
+        {
+          "char": "😆",
+          "label": "Rosto Sorridente"
+        },
+        {
+          "char": "😮",
+          "label": "Rosto Triste"
+        },
+        {
+          "char": "😢",
+          "label": "Estrela"
+        },
+        {
+          "char": "😠",
+          "label": "Fogo"
+        }
+      ]
+    },
+    {
+      "id": "hearts",
+      "label": "Corações",
+      "h2": "Corações para Posts e Bios",
+      "intro": "Variações de coração que funcionam em qualquer campo de texto.",
+      "symbols": [
+        {
+          "char": "♥",
+          "label": "Coração Preto"
+        },
+        {
+          "char": "♡",
+          "label": "Coração Branco"
+        },
+        {
+          "char": "❣",
+          "label": "Coração Girado"
+        },
+        {
+          "char": "💕",
+          "label": "Dois Corações"
+        },
+        {
+          "char": "💙",
+          "label": "Coração com Fita"
+        },
+        {
+          "char": "💚",
+          "label": "Coração Decorativo"
+        },
+        {
+          "char": "💛",
+          "label": "Coração Pequeno"
+        },
+        {
+          "char": "🖤",
+          "label": "Coração Cintilante"
+        }
+      ]
+    },
+    {
+      "id": "stars-sparkles",
+      "label": "Estrelas",
+      "h2": "Estrelas e Brilhos",
+      "intro": "Para destacar avaliações, listas e chamadas.",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "Estrela Cheia"
+        },
+        {
+          "char": "☆",
+          "label": "Estrela Vazada"
+        },
+        {
+          "char": "✦",
+          "label": "Estrela de Quatro Pontas"
+        },
+        {
+          "char": "✧",
+          "label": "Estrela Brilhante"
+        },
+        {
+          "char": "✩",
+          "label": "Estrela de Seis Pontas"
+        },
+        {
+          "char": "✨",
+          "label": "Faísca"
+        },
+        {
+          "char": "🌟",
+          "label": "Asterisco Floral"
+        }
+      ]
+    },
+    {
+      "id": "bullets-dividers",
+      "label": "Marcadores",
+      "h2": "Marcadores, Setas e Divisores para Posts",
+      "intro": "Para organizar listas e separar blocos de texto.",
+      "symbols": [
+        {
+          "char": "•",
+          "label": "Marcador Redondo"
+        },
+        {
+          "char": "‣",
+          "label": "Marcador Quadrado"
+        },
+        {
+          "char": "▪",
+          "label": "Seta para a Direita"
+        },
+        {
+          "char": "➤",
+          "label": "Seta Dupla"
+        },
+        {
+          "char": "→",
+          "label": "Traço Longo"
+        },
+        {
+          "char": "─",
+          "label": "Linha Divisória"
+        },
+        {
+          "char": "┈",
+          "label": "Losango"
+        },
+        {
+          "char": "│",
+          "label": "Triângulo"
+        }
+      ]
+    },
+    {
+      "id": "checks-status",
+      "label": "Verificação",
+      "h2": "Marcas de Verificação e Status",
+      "intro": "Para listas de tarefas, regras de grupo e avisos.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Marca de Verificação"
+        },
+        {
+          "char": "✔",
+          "label": "Verificação Pesada"
+        },
+        {
+          "char": "✅",
+          "label": "X de Cancelamento"
+        },
+        {
+          "char": "☑",
+          "label": "Círculo Cheio"
+        },
+        {
+          "char": "✗",
+          "label": "Círculo Vazio"
+        },
+        {
+          "char": "❌",
+          "label": "Exclamação"
+        }
+      ]
+    },
+    {
+      "id": "page-name-symbols",
+      "label": "Nome de Página",
+      "h2": "Símbolos para Nome de Página e Grupo",
+      "intro": "Símbolos discretos que o Facebook aceita em nomes.",
+      "symbols": [
+        {
+          "char": "꒰",
+          "label": "Ponto Médio"
+        },
+        {
+          "char": "꒱",
+          "label": "Barra Vertical"
+        },
+        {
+          "char": "【",
+          "label": "Til"
+        },
+        {
+          "char": "】",
+          "label": "Sublinhado"
+        },
+        {
+          "char": "「",
+          "label": "Aspas Angulares"
+        },
+        {
+          "char": "」",
+          "label": "Chave Decorativa"
+        },
+        {
+          "char": "⋆",
+          "label": "Coroa"
+        },
+        {
+          "char": "⊹",
+          "label": "Raio"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para copiar e colar",
+      "desc": "Coleção de símbolos para nick, bio do Instagram, status do WhatsApp e legenda — estrelas, corações, molduras ꧁…"
+    },
+    {
+      "href": "/pt/library/kaomoji/",
+      "title": "Kaomoji &amp; carinhas japonesas",
+      "desc": "Copie e cole kaomoji — as carinhas japonesas de texto feitas com caracteres Unicode. Carinhas feliz, triste, d…"
+    },
+    {
+      "href": "/pt/library/emoji-combos/",
+      "title": "Combos de emoji para copiar e colar",
+      "desc": "Combinações de emoji prontas pra deixar sua bio, status e legenda com uma vibe só — fofo, coquette, amor, dark…"
+    }
+  ],
+  "lang": "pt",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/facebook-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/facebook-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/facebook-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-facebook/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-facebook/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-facebook/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-facebook/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/facebook-giho/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/facebook-symboler/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-facebook/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/facebook-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/facebook-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/ki-tu-facebook/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/facebook-fuhao/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-para-facebook/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/facebook-symbols/"
+    }
+  ]
+}

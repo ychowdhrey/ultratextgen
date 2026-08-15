@@ -1,0 +1,238 @@
+{
+  "slug": "ky-tu-game",
+  "title": "Ký Tự Game: Sao Chép Ký Tự Đặc Biệt Đặt Tên Game | UltraTextGen",
+  "meta_description": "Ký tự game sao chép dán — khung tên clan ꧁꧂, ký tự HUD, biểu tượng chiến đấu và bộ combo đặt tên nhân vật. Nhấn để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/library/ky-tu-game/",
+  "breadcrumb": "Ký Tự Game",
+  "hero_h1": "Ký Tự Game",
+  "hero_tagline": "Khung tên clan, thanh HUD, biểu tượng chiến đấu và hiệu ứng năng lượng — ký tự đặc biệt dành riêng cho tên game. Nhấn để sao chép.",
+  "intro": "Ký tự game là những ký tự đặc biệt người chơi ghép vào tên nhân vật, tên clan và tiểu sử trong game để trông nổi bật hơn. Trang này gom các khung tên kiểu ꧁꧂, thanh HUD và dấu phân cách, biểu tượng chiến đấu và lên cấp, cùng hiệu ứng lửa và tia chớp — kèm những bộ combo ghép sẵn. Lưu ý mỗi game giới hạn số ký tự khác nhau, nên hãy thử dán trước khi dùng thẻ đổi tên.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "tag-frames",
+      "label": "Khung Tên Clan",
+      "h2": "Khung và Viền Tên Clan",
+      "intro": "Những cặp ký tự bao quanh tên để tạo thành thẻ clan.",
+      "symbols": [
+        {
+          "char": "꧁",
+          "label": "Khung Cánh Trái"
+        },
+        {
+          "char": "꧂",
+          "label": "Khung Cánh Phải"
+        },
+        {
+          "char": "「",
+          "label": "Hoa Văn Trái"
+        },
+        {
+          "char": "」",
+          "label": "Hoa Văn Phải"
+        },
+        {
+          "char": "『",
+          "label": "Ngôi Sao Ấn Độ"
+        },
+        {
+          "char": "』",
+          "label": "Dấu Trang Trí"
+        },
+        {
+          "char": "彡",
+          "label": "Vương Miện Nhỏ"
+        }
+      ]
+    },
+    {
+      "id": "battle-icons",
+      "label": "Biểu Tượng Chiến Đấu",
+      "h2": "Emoji Chiến Đấu và Lên Cấp",
+      "intro": "Biểu tượng cho pha hạ gục, thăng hạng và khoe thành tích.",
+      "symbols": [
+        {
+          "char": "🎮",
+          "label": "Kiếm Chéo"
+        },
+        {
+          "char": "🏹",
+          "label": "Khiên"
+        },
+        {
+          "char": "🛡️",
+          "label": "Cung Tên"
+        },
+        {
+          "char": "🏆",
+          "label": "Bom"
+        },
+        {
+          "char": "🎯",
+          "label": "Mục Tiêu"
+        },
+        {
+          "char": "👾",
+          "label": "Cúp"
+        },
+        {
+          "char": "💥",
+          "label": "Huy Chương Vàng"
+        }
+      ]
+    },
+    {
+      "id": "hud-bars",
+      "label": "Thanh HUD",
+      "h2": "Thanh HUD và Dấu Phân Cách",
+      "intro": "Ký tự khối dùng dựng thanh máu, thanh nạp và dòng phân cách.",
+      "symbols": [
+        {
+          "char": "▰",
+          "label": "Khối Đầy"
+        },
+        {
+          "char": "▱",
+          "label": "Khối Đậm"
+        },
+        {
+          "char": "━",
+          "label": "Khối Vừa"
+        },
+        {
+          "char": "▮",
+          "label": "Khối Nhạt"
+        },
+        {
+          "char": "▯",
+          "label": "Kẻ Ngang"
+        },
+        {
+          "char": "⌖",
+          "label": "Kẻ Đôi"
+        }
+      ]
+    },
+    {
+      "id": "energy-fx",
+      "label": "Hiệu Ứng",
+      "h2": "Emoji Năng Lượng, Lửa và Tia Chớp",
+      "intro": "Hiệu ứng đặt cuối tên để tăng độ ngầu.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Lửa"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Cao Thế"
+        },
+        {
+          "char": "💯",
+          "label": "Bùng Nổ"
+        },
+        {
+          "char": "⚔️",
+          "label": "Lấp Lánh"
+        },
+        {
+          "char": "👑",
+          "label": "Sao Băng"
+        }
+      ]
+    }
+  ],
+  "collection_container_id": "gamingAestheticCollectionsContainer",
+  "collection_section": {
+    "id": "gaming-aesthetic-collections",
+    "label": "Bộ Combo",
+    "h2": "Bộ Ký Tự Game Ghép Sẵn",
+    "intro": "Sao chép trọn một bộ chỉ với một cú nhấn rồi chèn tên bạn vào giữa."
+  },
+  "collections": [
+    {
+      "name": "Khung Tên Clan",
+      "flags": [
+        "꧁",
+        "彡",
+        "꧂"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dấu Phân Cách Lên Cấp",
+      "flags": [
+        "▰",
+        "▰",
+        "▰",
+        "▱",
+        "▱"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Combo Game Thủ",
+      "flags": [
+        "👑",
+        "🎮",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hiệu Ứng Hạ Gục",
+      "flags": [
+        "🔥",
+        "⚔️",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chữ Ký HUD",
+      "flags": [
+        "━",
+        "▮",
+        "⌖",
+        "▮",
+        "━"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/library/ky-tu-dac-biet-free-fire/",
+      "title": "Ký tự đặc biệt cho nick Free Fire",
+      "desc": "꧁ ༒ ★ ツ ⚔ — khung, vương miện, ký tự nét, sao và dao kiếm. Chạm để copy."
+    },
+    {
+      "href": "/vi/library/ky-tu-dac-biet-ten/",
+      "title": "Ký tự đặc biệt cho tên",
+      "desc": "꧁ ༺ ツ ♛ ★ ϟ — khung cánh, mặt cười, vương miện, sao và ký tự chiến. Chạm để copy."
+    },
+    {
+      "href": "/vi/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật cho mọi tâm trạng. Nhấp vào mặt bất kỳ để sao chép ngay."
+    }
+  ],
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/gaming-aesthetic-symbols/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-game/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/gaming-aesthetic-symbols/"
+    }
+  ]
+}

@@ -3725,5 +3725,35 @@ PAGES.update({
         glyphs("\u270c", "\U0001f54a", "\u262e", "\u262f", "\U0001f9d8"), K_LIB),
 })
 
+# ---- 2026-08-15: library/* Phase B single-locale expansion ----
+PAGES.update({
+    "vi-library-ky-tu-game": ("K\u00fd T\u1ef1 Game", "K\u00fd t\u1ef1 \u0111\u1eb7c bi\u1ec7t \u0111\u1eb7t t\u00ean game",
+        glyphs("\ua9c1", "\ua9c2", "\u2694", "\u2605", "\u16d7"), K_LIB),
+    "th-library-emoji-sao": ("\u0e2d\u0e34\u0e42\u0e21\u0e08\u0e34\u0e40\u0e28\u0e23\u0e49\u0e32", "\u0e2b\u0e19\u0e49\u0e32\u0e40\u0e28\u0e23\u0e49\u0e32\u0e41\u0e25\u0e30\u0e04\u0e32\u0e42\u0e2d\u0e42\u0e21\u0e08\u0e34",
+        glyphs("\U0001f622", "\U0001f62d", "\U0001f97a", "\U0001f494", "\U0001f327"), K_LIB),
+    "tr-library-uyari-sembolleri": ("Uyar\u0131 Sembolleri", "Tehlike, dikkat ve yasak i\u015faretleri",
+        glyphs("\u26a0", "\u2622", "\u2623", "\u26a1", "\u2620"), K_LIB),
+    "tr-library-parti-emojileri": ("Parti Emojileri", "Konfeti, pasta ve kutlama kombinleri",
+        glyphs("\U0001f389", "\U0001f38a", "\U0001f382", "\U0001f973", "\U0001f37e"), K_LIB),
+    "tr-library-isim-sembolleri": ("\u0130sim Sembolleri", "Nick s\u00fcsleri, kanat \u00e7er\u00e7eveler ve ta\u00e7lar",
+        glyphs("\ua9c1", "\ua9c2", "\u2654", "\u2605", "\u30c4"), K_LIB),
+    "pt-library-simbolos-para-facebook": ("S\u00edmbolos para Facebook", "Cora\u00e7\u00f5es, estrelas e divisores para posts",
+        glyphs("\u2665", "\u2605", "\u2726", "\u25cf", "\u2713"), K_LIB),
+    "th-library-sanyalak-rasi": ("\u0e2a\u0e31\u0e0d\u0e25\u0e31\u0e01\u0e29\u0e13\u0e4c\u0e23\u0e32\u0e28\u0e35", "\u0e08\u0e31\u0e01\u0e23\u0e23\u0e32\u0e28\u0e35\u0e04\u0e23\u0e1a 12 \u0e23\u0e32\u0e28\u0e35",
+        glyphs("\u2648", "\u2649", "\u264a", "\u264b", "\u264c"), K_LIB),
+    "tr-library-ay-sembolleri": ("Ay Sembolleri", "Ay evreleri, hilaller ve gece g\u00f6\u011f\u00fc",
+        glyphs("\u263d", "\u263e", "\U0001f319", "\u2600", "\u2726"), K_LIB),
+    "fr-library-symboles-croix": ("Symboles Croix", "Croix, X, dagues et marques d\u2019erreur",
+        glyphs("\u2715", "\u271d", "\u2720", "\u2020", "\u2717"), K_LIB),
+    "tr-library-iskambil-sembolleri": ("\u0130skambil Sembolleri", "Ma\u00e7a, kupa, karo, sinek ve zar",
+        glyphs("\u2660", "\u2665", "\u2666", "\u2663", "\u2680"), K_LIB),
+    "fr-library-emojis-sport": ("Emojis Sport", "Ballons, fitness, m\u00e9dailles et troph\u00e9es",
+        glyphs("\u26bd", "\U0001f3c0", "\U0001f3c6", "\U0001f947", "\U0001f3be"), K_LIB),
+    "pt-library-simbolos-para-twitter": ("S\u00edmbolos para Twitter", "O \U0001d54f, threads, cita\u00e7\u00f5es e bio",
+        glyphs("\u2713", "\u2726", "\u00b7", "\u2502", "\u2605"), K_LIB),
+    "tr-library-yemek-emojileri": ("Yemek Emojileri", "Meyve, haz\u0131r yemek, tatl\u0131 ve i\u00e7ecek",
+        glyphs("\U0001f355", "\U0001f354", "\U0001f370", "\u2615", "\U0001f34e"), K_LIB),
+})
+
 if __name__ == "__main__":
     sys.exit(main())

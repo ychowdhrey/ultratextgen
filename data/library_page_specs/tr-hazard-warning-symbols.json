@@ -1,0 +1,184 @@
+{
+  "slug": "uyari-sembolleri",
+  "copy_pattern": "single",
+  "title": "Uyarı Sembolleri ⚠ ☢ ☣ — Kopyala Yapıştır Tehlike İşaretleri | UltraTextGen",
+  "meta_description": "Uyarı sembolleri kopyala yapıştır: ⚠ dikkat, ☢ radyoaktif, ☣ biyolojik tehlike, ⚡ yüksek voltaj, 🚫 yasak işaretleri. Kopyalamak için tıkla.",
+  "hero_h1": "Uyarı ve Tehlike Sembolleri",
+  "breadcrumb": "Uyarı Sembolleri",
+  "hero_tagline": "Radyoaktif, biyolojik tehlike, dikkat, yüksek voltaj, ünlem ve yasak işaretleri — belgelerde ve arayüzlerde çalışan düz metin karakterleri. Kopyalamak için tıkla.",
+  "intro": "Uyarı sembolleri bir metne görsel eklemeden dikkat çekmenin en hızlı yoludur. Buradaki karakterlerin hepsi gerçek Unicode karakteridir — resim değil — yani belgelere, tablolara, kod yorumlarına, arayüz metinlerine ve mesajlara doğrudan yapıştırılır ve her boyutta net kalır. Zehirli, radyoaktif ve biyolojik tehlike işaretleri, dikkat ve elektrik uyarıları, farklı ağırlıklarda ünlem işaretleri, bir de yasak ve girilmez işaretleri bir arada.",
+  "sections": [
+    {
+      "id": "toxic-radioactive",
+      "label": "Zehirli ve Radyoaktif",
+      "h2": "Zehirli, Radyoaktif ve Biyolojik Tehlike",
+      "intro": "Radyasyon, biyolojik tehlike ve zehir için klasik tehlike işaretleri.",
+      "symbols": [
+        {
+          "char": "☢",
+          "label": "Radyoaktif İşareti"
+        },
+        {
+          "char": "☣",
+          "label": "Biyolojik Tehlike İşareti"
+        },
+        {
+          "char": "☠",
+          "label": "Kuru Kafa ve Çapraz Kemik"
+        },
+        {
+          "char": "⚰",
+          "label": "Tabut"
+        },
+        {
+          "char": "⚱",
+          "label": "Cenaze Vazosu"
+        }
+      ]
+    },
+    {
+      "id": "warning-electrical",
+      "label": "Dikkat ve Elektrik",
+      "h2": "Dikkat, Uyarı ve Elektrik",
+      "intro": "Genel uyarı işaretleri ile yüksek voltaj ve elektrik tehlikesi işaretleri.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "Uyarı İşareti"
+        },
+        {
+          "char": "☡",
+          "label": "Dikkat İşareti"
+        },
+        {
+          "char": "⚡",
+          "label": "Yüksek Voltaj İşareti"
+        },
+        {
+          "char": "☇",
+          "label": "Şimşek"
+        },
+        {
+          "char": "⌁",
+          "label": "Elektrik Oku"
+        }
+      ]
+    },
+    {
+      "id": "alert-marks",
+      "label": "Ünlem",
+      "h2": "Alarm ve Ünlem İşaretleri",
+      "intro": "Bir tehlikeye ya da hataya dikkat çekmek için kullanılan ünlem ve çarpı işaretleri.",
+      "symbols": [
+        {
+          "char": "‼",
+          "label": "Çift Ünlem İşareti"
+        },
+        {
+          "char": "⁉",
+          "label": "Ünlem Soru İşareti"
+        },
+        {
+          "char": "❗",
+          "label": "Kalın Ünlem İşareti"
+        },
+        {
+          "char": "❕",
+          "label": "Beyaz Ünlem Süsü"
+        },
+        {
+          "char": "❌",
+          "label": "Çarpı İşareti"
+        },
+        {
+          "char": "⛔",
+          "label": "Girilmez"
+        }
+      ]
+    },
+    {
+      "id": "no-sign",
+      "label": "Yasak İşaretleri",
+      "h2": "Yasak ve Girilmez İşaretleri",
+      "intro": "Yasak işareti ve ilgili girilmez, yapılmaz işaretleri.",
+      "symbols": [
+        {
+          "char": "🚫",
+          "label": "Yasak İşareti"
+        },
+        {
+          "char": "∅",
+          "label": "Boş Küme"
+        },
+        {
+          "char": "Ø",
+          "label": "Çizgili O"
+        },
+        {
+          "char": "🚭",
+          "label": "Sigara İçilmez"
+        },
+        {
+          "char": "🚷",
+          "label": "Yaya Giremez"
+        },
+        {
+          "char": "📵",
+          "label": "Cep Telefonu Yasak"
+        },
+        {
+          "char": "🔞",
+          "label": "18 Yaşından Küçükler Giremez"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    },
+    {
+      "href": "/tr/library/semboller/",
+      "title": "Şekilli semboller — kopyala yapıştır",
+      "desc": "Nick, Instagram bio'su, WhatsApp durumu ve açıklamalar için sembol koleksiyonu — yıldızlar, kalpler, kelebek, …"
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri Koleksiyonu",
+      "desc": "Artı eksi, çarpı, bölü, eşitsizlik ve küme sembollerinden oluşan referans koleksiyonu — klavyede tuşu olmayan …"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/tr/library/uyari-sembolleri/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/warnsymbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-peligro/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-pericolo/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/uyari-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
+    }
+  ]
+}
