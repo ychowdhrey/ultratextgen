@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-08-03T02:50:45.737Z_
+_Generated: 2026-08-15T10:29:30.389Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -8,29 +8,29 @@ _Generated: 2026-08-03T02:50:45.737Z_
 
 | Metric | Value |
 | --- | --- |
-| HTML files scanned | 3804 |
+| HTML files scanned | 4449 |
 | CSS files | 17 |
-| JS files scanned | 130 |
-| Inline `style="..."` occurrences | 9040 |
-| Files containing inline styles | 3802 |
-| Inline risk (low / med / high) | 636 / 876 / 7528 |
+| JS files scanned | 139 |
+| Inline `style="..."` occurrences | 10447 |
+| Files containing inline styles | 4446 |
+| Inline risk (low / med / high) | 651 / 929 / 8867 |
 | `<style>` blocks in HTML | 11 |
-| Unique HTML classes | 724 |
-| Component class candidates | 376 |
-| One-off class candidates | 248 |
-| Repeated inline patterns | 26 |
-| style.css selectors parsed | 1493 |
-| …referenced (HTML/JS/structural) | 1328 |
-| …unreferenced (needs verification) | 165 |
+| Unique HTML classes | 760 |
+| Component class candidates | 416 |
+| One-off class candidates | 242 |
+| Repeated inline patterns | 31 |
+| style.css selectors parsed | 1580 |
+| …referenced (HTML/JS/structural) | 1400 |
+| …unreferenced (needs verification) | 180 |
 
-Page-type breakdown: other: 1441, category: 26, embed: 8, localized: 1902, platform: 13, guide: 33, library: 337, usecase: 44
+Page-type breakdown: other: 1618, category: 26, embed: 8, localized: 2368, platform: 13, guide: 33, library: 337, usecase: 46
 
 ## 2. Top Problems
 
-1. **9040 inline styles** across 3802 files — the biggest maintainability drag. 636 are low-risk and safe to consolidate.
-2. **26 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 3801× and should become a utility class.
+1. **10447 inline styles** across 4446 files — the biggest maintainability drag. 651 are low-risk and safe to consolidate.
+2. **31 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 4445× and should become a utility class.
 3. **11 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **165 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+4. **180 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -51,18 +51,18 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 | pt/letra-cursiva/index.html | 49 |
 | tr/el-yazisi-fontu/index.html | 49 |
 | guide/index.html | 36 |
-| usecase/index.html | 35 |
+| usecase/index.html | 36 |
 | guide/personal-branding-through-typography/index.html | 10 |
 | embed/index.html | 9 |
+| es/imprimibles/monograma/index.html | 9 |
 | guide/linkedin-comments-guide/index.html | 9 |
 | printables/monogram-maker/index.html | 9 |
 | roblox/name-generator/index.html | 9 |
+| es/imprimibles/letras-graffiti/index.html | 8 |
 | guide/comments-that-stand-out/index.html | 8 |
+| printables/graffiti-letters/index.html | 8 |
 | ar/guide/index.html | 7 |
 | bs/guide/index.html | 7 |
-| cs/guide/index.html | 7 |
-| da/guide/index.html | 7 |
-| de/guide/index.html | 7 |
 
 Sample occurrences with risk classification:
 
@@ -100,23 +100,23 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 
 | File | Line | CSS lines | Assessment | Risk |
 | --- | --- | --- | --- | --- |
-| ar/library/index.html | 99 | 28 | page-specific | low |
-| es/library/index.html | 161 | 404 | page-specific | high |
-| fr/library/index.html | 159 | 404 | page-specific | high |
-| id/library/index.html | 159 | 404 | page-specific | high |
-| it/library/index.html | 165 | 404 | page-specific | high |
+| ar/library/index.html | 100 | 28 | page-specific | low |
+| es/library/index.html | 162 | 404 | page-specific | high |
+| fr/library/index.html | 160 | 404 | page-specific | high |
+| id/library/index.html | 160 | 404 | page-specific | high |
+| it/library/index.html | 166 | 404 | page-specific | high |
 | js/decorator/decoratorEngine.test.html | 7 | 8 | page-specific | low |
 | js/vertical/verticalLayouts.test.html | 7 | 6 | page-specific | low |
-| ko/library/index.html | 177 | 402 | page-specific | high |
-| library/index.html | 118 | 404 | page-specific | high |
-| pt/library/index.html | 159 | 404 | page-specific | high |
-| tr/library/index.html | 160 | 404 | page-specific | high |
+| ko/library/index.html | 178 | 402 | page-specific | high |
+| library/index.html | 119 | 404 | page-specific | high |
+| pt/library/index.html | 160 | 404 | page-specific | high |
+| tr/library/index.html | 161 | 404 | page-specific | high |
 
 ## 5. CSS File Inventory
 
 | File | Size | Lines | Inferred purpose |
 | --- | --- | --- | --- |
-| style.css | 204.3 KB | 8467 | global site stylesheet |
+| style.css | 216.3 KB | 8851 | global site stylesheet |
 | usecase/zalgo-text/zalgo-text.css | 16.5 KB | 802 | page-specific usecase styling |
 | usecase/before-after-emoji/before-after-emoji.css | 11.4 KB | 510 | page-specific usecase styling |
 | 404.css | 8.1 KB | 401 | error page styling |
@@ -124,13 +124,13 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 | usecase/comment-font/comment-font.css | 6.9 KB | 408 | page-specific usecase styling |
 | js/emoji/emoji-tool.css | 6.2 KB | 224 | page/feature specific styling (inferred from path) |
 | roblox/name-generator/roblox-generator.css | 5.9 KB | 320 | page/feature specific styling (inferred from path) |
+| usecase/bio-font/bio-font.css | 5.5 KB | 249 | page-specific usecase styling |
 | symbol-explorer.css | 5.4 KB | 247 | symbol explorer feature styling |
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
-| usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
 | snapchat/snapchat-context.css | 4.9 KB | 190 | platform-specific (Discord) styling |
 | tiktok/tiktok-context.css | 3.0 KB | 147 | platform-specific (Discord) styling |
 | youtube/name-generator/name-generator.css | 2.5 KB | 151 | page/feature specific styling (inferred from path) |
-| youtube/youtube-context.css | 1.9 KB | 100 | platform-specific (Discord) styling |
+| youtube/youtube-context.css | 2.5 KB | 131 | platform-specific (Discord) styling |
 | facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
 | tiktok/name-generator/name-generator.css | 1.2 KB | 69 | page/feature specific styling (inferred from path) |
 
@@ -140,43 +140,43 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Class | Pages | Occurrences |
 | --- | --- | --- |
-| hero-headline | 3789 | 3789 |
-| hero | 3786 | 3898 |
-| hero-inner | 3773 | 3885 |
-| editorial-section | 3740 | 14748 |
-| hero-tagline | 3713 | 3713 |
-| footer | 3661 | 3661 |
-| footer-inner | 3661 | 3661 |
-| article-section-label | 3288 | 19369 |
-| cta-btn | 3245 | 3296 |
-| cta-card | 3242 | 3288 |
-| compare-grid | 3112 | 3397 |
-| compare-card | 3112 | 14416 |
-| variant-muted | 3112 | 14270 |
-| editorial-block | 3070 | 4957 |
-| section-divider | 3051 | 16369 |
-| u-no-underline | 3011 | 13968 |
-| symbol-toast | 2916 | 2916 |
-| symbol-tile | 2806 | 62003 |
-| flag-rows | 2641 | 9096 |
-| flag-row | 2641 | 56182 |
-| flag-emoji | 2641 | 56190 |
-| flag-label | 2637 | 55342 |
-| breadcrumbs | 2630 | 2630 |
-| breadcrumb-current | 2630 | 2630 |
-| breadcrumb-separator | 2629 | 4427 |
+| hero-headline | 4433 | 4433 |
+| hero | 4430 | 4546 |
+| hero-inner | 4417 | 4533 |
+| editorial-section | 4384 | 17075 |
+| hero-tagline | 4351 | 4352 |
+| footer | 4303 | 4303 |
+| footer-inner | 4301 | 4301 |
+| article-section-label | 3856 | 23045 |
+| cta-btn | 3820 | 3872 |
+| cta-card | 3817 | 3864 |
+| compare-grid | 3659 | 3961 |
+| compare-card | 3659 | 19442 |
+| variant-muted | 3658 | 19277 |
+| section-divider | 3638 | 19936 |
+| editorial-block | 3625 | 6117 |
+| u-no-underline | 3553 | 18938 |
+| symbol-toast | 3414 | 3414 |
+| symbol-tile | 3281 | 89618 |
+| flag-rows | 3111 | 11484 |
+| flag-row | 3111 | 83713 |
+| flag-emoji | 3111 | 83721 |
+| flag-label | 3107 | 82585 |
+| faq-item | 2844 | 14191 |
+| faq-question | 2844 | 14191 |
+| faq-answer | 2844 | 14191 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| display:none; visibility:hidden | 3801 | u-hidden (verify JS toggling first) | high |
-| border:none; height:0; left:-1000px; top:-1000px; widt… | 3707 | (propose a utility/component class) | high |
+| display:none; visibility:hidden | 4445 | u-hidden (verify JS toggling first) | high |
+| border:none; height:0; left:-1000px; top:-1000px; widt… | 4402 | (propose a utility/component class) | high |
 | ultra script | 363 | (propose a utility/component class) | low |
-| max-width:820px | 256 | u-maxw-* | medium |
+| max-width:820px | 302 | u-maxw-* | medium |
 | max-width:800px | 174 | u-maxw-* | medium |
 | max-width:900px | 174 | u-maxw-* | medium |
-| align-items:stretch; flex-direction:column; gap:8px | 159 | (propose a utility/component class) | medium |
+| align-items:stretch; flex-direction:column; gap:8px | 160 | (propose a utility/component class) | medium |
 | ultra script bold | 144 | (propose a utility/component class) | low |
 | text-decoration:none | 25 | u-no-underline | low |
 | align-items:stretch; flex-direction:column; gap:12px | 22 | (propose a utility/component class) | medium |
@@ -191,14 +191,14 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | margin-top:1rem | 11 | u-mt-* | low |
 | align-items:center; display:flex; gap:0.5rem | 8 | u-flex | medium |
 | margin-top:1.5rem | 6 | u-mt-* | low |
+| align-items:center; flex-direction:column; gap:0.35rem | 6 | (propose a utility/component class) | medium |
+| font-size:1.5rem; padding:0; text-align:center; width:… | 6 | u-text-center | medium |
 | display:grid; gap:1rem; grid-template-columns:repeat(a… | 5 | u-mt-* | medium |
 | font-size:1.35rem | 5 | u-fs-* | low |
-| ultra gothic bold | 3 | (propose a utility/component class) | low |
-| align-items:center; flex-direction:column; gap:0.35rem | 3 | (propose a utility/component class) | medium |
 
 ### One-off classes (used on a single page)
 
-248 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+242 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
@@ -214,9 +214,9 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | ascii-font-picker | 1 |
 | ascii-font-picker-label | 1 |
 | brackets-grid | 1 |
+| breadcrumb-sep | 2 |
 | cat-anchor | 22 |
 | cat-overview-table | 1 |
-| censor-bar-chip | 10 |
 
 ## 7. Possible Unused CSS (NEEDS VERIFICATION)
 
@@ -229,45 +229,45 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .cursive-alphabet | 1193 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 | .cursive-alphabet-note | 1212 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .variation-char-over | 2184 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-row | 3595 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-row-label | 3601 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-tabs | 3608 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-preview-wrap | 3641 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-preview | 3651 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-preview-meta | 3659 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-actions | 3669 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-btn | 3675 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-btn-primary | 3686 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-btn-primary:hover | 3691 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-btn-ghost:hover | 3692 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-frame-card | 3699 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-frame-name | 3709 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-frame-out | 3716 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-frame-copy | 3722 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-frame-copy:hover | 3732 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-shuffle | 3735 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-rare-grid | 3736 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-rare-chip | 3741 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-preview | 3744 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .ts-actions .ts-btn | 3745 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| #bubblePrintRoot | 3960 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .format-chip | 4018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .format-chip:hover | 4032 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .safemode-chip | 4067 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .safemode-chip:hover | 4082 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .preview-btn | 4648 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .preview-btn:hover | 4662 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-mode-tab | 5014 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-mode-tab:hover | 5030 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-mode-tab-label | 5040 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-mode-tab-hint | 5045 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-control-group | 5057 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-panel-note | 5065 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
-| .tattoo-date-fields | 5070 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-head | 3694 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-line | 3696 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-note | 3700 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-row | 3717 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-row-label | 3723 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-tabs | 3730 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview-wrap | 3763 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview | 3773 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview-meta | 3781 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-actions | 3791 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn | 3797 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-primary | 3808 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-primary:hover | 3813 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-ghost:hover | 3814 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-card | 3821 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-name | 3831 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-out | 3838 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-copy | 3844 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-copy:hover | 3854 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-shuffle | 3857 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-rare-grid | 3858 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-rare-chip | 3863 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview | 3866 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-actions .ts-btn | 3867 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| #bubblePrintRoot | 4082 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .format-chip | 4140 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .format-chip:hover | 4154 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .safemode-chip | 4189 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .safemode-chip:hover | 4204 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .preview-btn | 4770 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .preview-btn:hover | 4784 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab | 5136 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab:hover | 5152 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab-label | 5162 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab-hint | 5167 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-…and 125 more in `css-audit-data.json`.
+…and 140 more in `css-audit-data.json`.
 
-JS class-reference tokens collected: 605 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 636 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 

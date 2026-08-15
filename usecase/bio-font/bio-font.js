@@ -69,7 +69,19 @@
     "『 {name} 』 ⚔ grind · win · repeat",
     "⋆ {name} ⋆ — keep it simple",
     "☾ {name} · coffee · chaos · ✨",
-    "❀ {name} ❀ · she/her · 🌸"
+    "❀ {name} ❀ · she/her · 🌸",
+    // Multi-line block templates. Every entry above is a single line, but a
+    // real Instagram/TikTok bio is 3–4 stacked lines, and the layout people
+    // actually search for ("bio template", "bio layout") is a bordered block
+    // — the one shape this list was missing. Newlines paste through fine on
+    // Instagram, TikTok, Discord and Telegram; X/Twitter collapses them, so
+    // the platform picker's own limit warning still applies.
+    "╭┈┈┈┈┈┈┈┈┈┈╮\n  ✦ {name} ✦\n  ˚ · dreamer\n  ˚ · creator\n╰┈┈┈┈┈┈┈┈┈┈╯",
+    "┌─────────────┐\n   {name}\n   ✧ 18 · she/her\n   ✧ dm open\n└─────────────┘",
+    "· · · · · · · · · ·\n   ♡ {name} ♡\n   ⋆ living slow\n   ⋆ coffee first\n· · · · · · · · · ·",
+    "◜◝◜◝◜◝◜◝◜◝\n  ☾ {name}\n  ✦ new post ↓\n  ✦ link below\n◟◞◟◞◟◞◟◞◟◞",
+    "▸ {name}\n▸ ⚔ rank grind\n▸ 🎮 daily uploads\n▸ ↓ join the squad",
+    "❀ ────────── ❀\n    {name}\n  ˚ · art · 🌸\n  ˚ · commissions open\n❀ ────────── ❀"
   ];
 
   /* ----------------------------------------------------------------------
@@ -250,7 +262,11 @@
      handler (and analytics) work without duplication.
      ---------------------------------------------------------------------- */
   function escapeAttr(s) {
-    return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    // \n is encoded explicitly rather than left literal: a raw newline inside
+    // an attribute value survives most parsers, but &#10; is the only form
+    // guaranteed to round-trip, and the multi-line block templates below
+    // depend on the copied text matching the previewed text exactly.
+    return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "&#10;");
   }
   function escapeHtml(s) {
     return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -262,8 +278,12 @@
     const templates = window.UTG_BIO_TEMPLATES || DEFAULT_TEMPLATES;
     el.templateGrid.innerHTML = templates.map((tpl) => {
       const filled = tpl.replace(/\{name\}/g, name);
+      // Multi-line blocks need the newlines preserved on screen (the CSS
+      // class below) and carried intact through the copy button's data
+      // attribute, so what gets pasted matches what was previewed.
+      const multi = filled.indexOf("\n") !== -1;
       return (
-        '<div class="bf-template">' +
+        '<div class="bf-template' + (multi ? " bf-template-block" : "") + '">' +
           '<div class="bf-template-text">' + escapeHtml(filled) + "</div>" +
           '<button class="copy-btn" data-text="' + escapeAttr(filled) + '" title="Copy to clipboard">Copy</button>' +
         "</div>"
