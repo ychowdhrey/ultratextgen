@@ -1528,6 +1528,10 @@ PAGES = {
   "usecase-group-name-generator": ("Group Name Generator", "Cool names for squads, circles & group chats", m_chat, K_USE),
   "id-usecase-nama-grup-keren": ("Nama Grup Keren", "Nama grup WA & circle aesthetic", m_chat, K_USE),
 
+  # ---- TikTok name-ideas locale expansion (2026-08-15) ----
+  "tr-tiktok-isimleri": ("TikTok İsimleri", "İsim önerileri ve kullanıcı adı fikirleri", m_play, K_PLAT),
+  "vi-ten-tiktok-hay": ("Tên TikTok Hay", "Gợi ý tên TikTok độc lạ", m_play, K_PLAT),
+
   # ---- Instagram name-ideas locale expansion (2026-08-15) ----
   "tr-usecase-instagram-isim-onerileri": ("Instagram İsim Önerileri", "Kullanıcı adı fikirleri ve şekilli nickler", m_profile, K_USE),
   "vi-usecase-ten-instagram-hay": ("Tên Instagram Hay", "Gợi ý tên IG đẹp và độc lạ", m_profile, K_USE),

@@ -73,6 +73,12 @@
       "rationale": "The invisible-character / blank-text / counter tool the strategy doc names as a Core exception. In the current site structure this job lives as a top-level page (character-counter/), not under usecase/ — tiered here to match the real page rather than inventing a usecase/ path that doesn't exist."
     },
     {
+      "pattern": "tiktok/name-generator/*",
+      "tier": "gated",
+      "scriptIndependent": true,
+      "rationale": "Per-platform name generator. Added 2026-08-15 by user decision, after the six-market locale-expansion pass found that NO pattern in this file matches any platform directory (tiktok/, discord/, instagram/, ...), so every one of them classifies as 'unclassified'. That is not a harmless default: the flowchart sends unclassified to the gated tail, and check-locale-parent-gap.js then demands a data/locale_parent_gap_audit.json entry keyed on a NULL pattern, which no entry can ever match -- the same never-satisfiable-gate bug the script's own comments already document for the ratified-local-only case. A tr or vi sibling of tiktok/name-generator/ could not be shipped until this key existed. Tiered 'gated', deliberately matching usecase/*'s treatment of the per-game name generators (free-fire-, valorant-, pubg-, ...) rather than the two generic 'core' carve-outs: a per-PLATFORM name generator is the same long-tail shape as a per-GAME one, so the burden of proof stays on translating. scriptIndependent: true because the job (pick a handle) and the mechanism (Unicode substitution plus decorative wrapping) carry into any script; only the demand check decides a given locale. SCOPE NOTE: this classifies ONE page, not the platform lane. youtube/name-generator/ is headless with the identical problem, and the platform hubs (tiktok/, discord/, instagram/) are still unclassified -- classifying the lane is a broader structural claim and should be its own discussed pass, not a side effect of this one."
+    },
+    {
       "pattern": "usecase/*",
       "tier": "gated",
       "scriptIndependent": false,

@@ -1529,6 +1529,32 @@
       "verdict": "gate-pass",
       "evidence": "Scoped to ONE new page: a vi sibling of usecase/aesthetic-instagram-names/ (Instagram name ideas). Clears the gated-tier four-figure volume clause on Vietnamese keyword demand from the user-supplied 2026-08-15 six-market Semrush export (db=vi, single database, no cross-database summing): 'ten instagram hay' 1,900 (KD 54) + 'ten instagram dep' 320 (KD 44) + 'tao ten instagram' 110 (KD 66) + 'ten instagram tieng anh' 20 + 'ten nguoi dung instagram hay' 20 = 2,370/mo across 6 keywords, deduplicated by (keyword, country) with max taken, never summed across seed files. Trend-aliasing check run on the source export: 8 aliased groups found, all at volumes <=40, so no head term counted here is affected. Cannibalization check run per CLAUDE.md before recording: no vi page targets the name-ideas job -- the three vi pages mentioning 'ten instagram' (vi/font-ig/, vi/index.html, vi/chu-nghieng/) all use it incidentally to name the paste DESTINATION ('o ten Instagram' = the Instagram name field) while targeting the text-STYLING job, which is a different intent. NOTE this entry does NOT supersede the 2026-08-11 usecase/* vi gate-fail row above: that row records the live GSC performance of three ALREADY-BUILT vi usecase pages and stands as written. This is a forward-looking keyword-volume pass for a different, not-yet-built page, on a different instrument. Analysis: private lab repo, reports/locale-expansion/hreflang-expansion-master-plan.md section 1 (F-03).",
       "recordedBy": "claude-session-01Mubgg1uCD9nsrxeLv8P6yJ-user-ratified-2026-08-15"
+    },
+    {
+      "pattern": "tiktok/name-generator/*",
+      "locale": "tr",
+      "checkedDate": "2026-08-15",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 7140,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Scoped to ONE new page: a tr sibling of tiktok/name-generator/ (TikTok name ideas). Clears the gated-tier four-figure volume clause on Turkish keyword demand from the user-supplied 2026-08-15 six-market Semrush export (db=tr, SINGLE database, no cross-database summing): 'tiktok isimleri' 3,600 (KD 32) + 'tiktok isim onerileri' 2,400 (KD 31) + 'tiktok kullanici adlari' 880 + 'tiktok kullanici adi onerileri' 260 (KD 24) + 'tiktok nickleri' 0 = 7,140/mo across 5 keywords. Deduplicated by (keyword, country) with max taken, never summed across seed files; the source export's trend column was checked for aliasing first (8 aliased groups, all at volumes <=40, so no head term counted here is affected). Cannibalization checked per locale before recording, on all three axes the analysis identified: (1) vs the locale's TikTok FONT page (tr/tiktok-yazi-tipi/) -- different job, and it names TikTok only as a paste destination; (2) vs the locale's generic nickname page (tr/sekilli-nick/) -- generic/game-focused, claims no platform; (3) vs the Instagram name-ideas sibling shipped the same day (tr/usecase/instagram-isim-onerileri/) -- verified to contain ZERO mentions of TikTok, so the adjacent-platform overlap was never created. Every other tr page matching a TikTok-name grep uses the phrase incidentally to name the paste DESTINATION, not as a target. Design rule applied: one platform per name page, in title, H1 and meta. Analysis: private lab repo, reports/locale-expansion/hreflang-expansion-master-plan.md section 2 (F-02).",
+      "recordedBy": "claude-session-01Mubgg1uCD9nsrxeLv8P6yJ-user-ratified-2026-08-15"
+    },
+    {
+      "pattern": "tiktok/name-generator/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-15",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 4370,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Scoped to ONE new page: a vi sibling of tiktok/name-generator/ (TikTok name ideas). Clears the gated-tier four-figure volume clause on Vietnamese keyword demand from the user-supplied 2026-08-15 six-market Semrush export (db=vi, SINGLE database, no cross-database summing): 'ten tiktok hay' 2,900 (KD 28) + 'dat ten tiktok hay' 880 (KD 39) + 'ten tiktok doc la' 590 (KD 36) = 4,370/mo across 3 keywords. Deduplicated by (keyword, country) with max taken, never summed across seed files; the source export's trend column was checked for aliasing first (8 aliased groups, all at volumes <=40, so no head term counted here is affected). Cannibalization checked per locale before recording, on all three axes the analysis identified: (1) vs the locale's TikTok FONT page (vi/chu-kieu-tiktok/) -- different job, and it names TikTok only as a paste destination; (2) vs the locale's generic nickname page (vi/usecase/ten-game-hay/) -- generic/game-focused, claims no platform; (3) vs the Instagram name-ideas sibling shipped the same day (vi/usecase/ten-instagram-hay/) -- verified to contain ZERO mentions of TikTok, so the adjacent-platform overlap was never created. Every other vi page matching a TikTok-name grep uses the phrase incidentally to name the paste DESTINATION, not as a target. Design rule applied: one platform per name page, in title, H1 and meta. Analysis: private lab repo, reports/locale-expansion/hreflang-expansion-master-plan.md section 2 (F-02).",
+      "recordedBy": "claude-session-01Mubgg1uCD9nsrxeLv8P6yJ-user-ratified-2026-08-15"
     }
   ]
 }
