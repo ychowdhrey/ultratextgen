@@ -1,0 +1,540 @@
+{
+  "slug": "hayvan-emojileri",
+  "copy_pattern": "single",
+  "title": "Hayvan Emojileri 🐶 🦁 — Kopyala Yapıştır Tüm Hayvanlar | UltraTextGen",
+  "meta_description": "Hayvan emojileri kopyala yapıştır: evcil hayvanlar, çiftlik hayvanları, vahşi hayvanlar, kuşlar, deniz canlıları, böcekler ve efsanevi yaratıklar. Kopyalamak için tıkla.",
+  "hero_h1": "Hayvan Emojileri",
+  "breadcrumb": "Hayvan Emojileri",
+  "hero_tagline": "Evcil hayvanlardan vahşi doğaya, deniz canlılarından efsanevi yaratıklara — eksiksiz hayvan emoji koleksiyonu. Kopyalamak için tıkla.",
+  "intro": "Hayvan emojileri biyografilerde, evcil hayvan paylaşımlarında, takma adlarda ve doğa içeriklerinde en çok kullanılan emoji ailelerinden biri. Bu sayfa hepsini yaşam alanına göre grupluyor: evcil hayvanlar, çiftlik hayvanları, vahşi memeliler, kuşlar, deniz canlıları, böcekler, sürüngenler ve efsanevi yaratıklar. Bazı hayvanların hem yüz hem tam gövde hâli vardır (🐶 ile 🐕 gibi) — yüz olanlar sohbette daha sıcak durur, tam gövdeli olanlar daha nötrdür.",
+  "sections": [
+    {
+      "id": "domestic-animals",
+      "label": "Evcil Hayvanlar",
+      "h2": "Evcil Hayvan Emojileri",
+      "intro": "Ev hayvanları ve yol arkadaşları.",
+      "symbols": [
+        {
+          "char": "🐶",
+          "label": "Köpek Yüzü"
+        },
+        {
+          "char": "🐕",
+          "label": "Köpek"
+        },
+        {
+          "char": "🐩",
+          "label": "Kaniş"
+        },
+        {
+          "char": "🐱",
+          "label": "Kedi Yüzü"
+        },
+        {
+          "char": "🐈",
+          "label": "Kedi"
+        },
+        {
+          "char": "🐹",
+          "label": "Hamster"
+        },
+        {
+          "char": "🐰",
+          "label": "Tavşan Yüzü"
+        },
+        {
+          "char": "🐠",
+          "label": "Tropikal Balık"
+        },
+        {
+          "char": "🐇",
+          "label": "Tavşan"
+        },
+        {
+          "char": "🐾",
+          "label": "Patiler"
+        }
+      ]
+    },
+    {
+      "id": "farm-animals",
+      "label": "Çiftlik",
+      "h2": "Çiftlik Hayvanı Emojileri",
+      "intro": "Çiftlikte yaygın olarak bulunan hayvanlar.",
+      "symbols": [
+        {
+          "char": "🐄",
+          "label": "İnek"
+        },
+        {
+          "char": "🐮",
+          "label": "İnek Yüzü"
+        },
+        {
+          "char": "🐷",
+          "label": "Domuz Yüzü"
+        },
+        {
+          "char": "🐖",
+          "label": "Domuz"
+        },
+        {
+          "char": "🐑",
+          "label": "Koyun"
+        },
+        {
+          "char": "🐐",
+          "label": "Keçi"
+        },
+        {
+          "char": "🐔",
+          "label": "Tavuk"
+        },
+        {
+          "char": "🐓",
+          "label": "Horoz"
+        },
+        {
+          "char": "🐴",
+          "label": "At Yüzü"
+        },
+        {
+          "char": "🐎",
+          "label": "At"
+        },
+        {
+          "char": "🦃",
+          "label": "Hindi"
+        },
+        {
+          "char": "🐂",
+          "label": "Öküz"
+        },
+        {
+          "char": "🐃",
+          "label": "Manda"
+        },
+        {
+          "char": "🐽",
+          "label": "Domuz Burnu"
+        }
+      ]
+    },
+    {
+      "id": "wild-mammals",
+      "label": "Vahşi Hayvanlar",
+      "h2": "Vahşi Memeli Emojileri",
+      "intro": "Ormanda, savanda ve doğada yaşayan memeliler.",
+      "symbols": [
+        {
+          "char": "🦁",
+          "label": "Aslan"
+        },
+        {
+          "char": "🐯",
+          "label": "Kaplan Yüzü"
+        },
+        {
+          "char": "🐻",
+          "label": "Ayı"
+        },
+        {
+          "char": "🐼",
+          "label": "Panda"
+        },
+        {
+          "char": "🐨",
+          "label": "Koala"
+        },
+        {
+          "char": "🦊",
+          "label": "Tilki"
+        },
+        {
+          "char": "🐺",
+          "label": "Kurt"
+        },
+        {
+          "char": "🐘",
+          "label": "Fil"
+        },
+        {
+          "char": "🦒",
+          "label": "Zürafa"
+        },
+        {
+          "char": "🦏",
+          "label": "Gergedan"
+        },
+        {
+          "char": "🦛",
+          "label": "Su Aygırı"
+        },
+        {
+          "char": "🐒",
+          "label": "Maymun"
+        },
+        {
+          "char": "🐵",
+          "label": "Maymun Yüzü"
+        },
+        {
+          "char": "🦌",
+          "label": "Geyik"
+        },
+        {
+          "char": "🐿",
+          "label": "Sincap"
+        },
+        {
+          "char": "🐅",
+          "label": "Kaplan"
+        },
+        {
+          "char": "🐆",
+          "label": "Leopar"
+        },
+        {
+          "char": "🦍",
+          "label": "Goril"
+        },
+        {
+          "char": "🦧",
+          "label": "Orangutan"
+        },
+        {
+          "char": "🙈",
+          "label": "Görmeyen Maymun"
+        },
+        {
+          "char": "🙉",
+          "label": "Duymayan Maymun"
+        },
+        {
+          "char": "🙊",
+          "label": "Konuşmayan Maymun"
+        },
+        {
+          "char": "🐻‍❄️",
+          "label": "Kutup Ayısı"
+        },
+        {
+          "char": "🦓",
+          "label": "Zebra"
+        },
+        {
+          "char": "🦝",
+          "label": "Rakun"
+        },
+        {
+          "char": "🦣",
+          "label": "Mamut"
+        },
+        {
+          "char": "🐭",
+          "label": "Fare Yüzü"
+        },
+        {
+          "char": "🐁",
+          "label": "Fare"
+        },
+        {
+          "char": "🐀",
+          "label": "Sıçan"
+        },
+        {
+          "char": "🦇",
+          "label": "Yarasa"
+        }
+      ]
+    },
+    {
+      "id": "birds",
+      "label": "Kuşlar",
+      "h2": "Kuş Emojileri",
+      "intro": "Yaygın türlerden egzotik kuşlara.",
+      "symbols": [
+        {
+          "char": "🐦",
+          "label": "Kuş"
+        },
+        {
+          "char": "🐧",
+          "label": "Penguen"
+        },
+        {
+          "char": "🦅",
+          "label": "Kartal"
+        },
+        {
+          "char": "🦆",
+          "label": "Ördek"
+        },
+        {
+          "char": "🦉",
+          "label": "Baykuş"
+        },
+        {
+          "char": "🦜",
+          "label": "Papağan"
+        },
+        {
+          "char": "🦚",
+          "label": "Tavus Kuşu"
+        },
+        {
+          "char": "🦢",
+          "label": "Kuğu"
+        },
+        {
+          "char": "🦩",
+          "label": "Flamingo"
+        },
+        {
+          "char": "🕊",
+          "label": "Güvercin"
+        },
+        {
+          "char": "🪿",
+          "label": "Kaz"
+        },
+        {
+          "char": "🐤",
+          "label": "Civciv"
+        },
+        {
+          "char": "🐣",
+          "label": "Yumurtadan Çıkan Civciv"
+        },
+        {
+          "char": "🐥",
+          "label": "Önden Bakan Civciv"
+        }
+      ]
+    },
+    {
+      "id": "ocean-life",
+      "label": "Deniz Canlıları",
+      "h2": "Deniz Canlısı Emojileri",
+      "intro": "Deniz hayvanları ve su altı canlıları.",
+      "symbols": [
+        {
+          "char": "🐳",
+          "label": "Su Püskürten Balina"
+        },
+        {
+          "char": "🐋",
+          "label": "Balina"
+        },
+        {
+          "char": "🐬",
+          "label": "Yunus"
+        },
+        {
+          "char": "🦈",
+          "label": "Köpekbalığı"
+        },
+        {
+          "char": "🐙",
+          "label": "Ahtapot"
+        },
+        {
+          "char": "🐚",
+          "label": "Sarmal Deniz Kabuğu"
+        },
+        {
+          "char": "🦑",
+          "label": "Kalamar"
+        },
+        {
+          "char": "🦐",
+          "label": "Karides"
+        },
+        {
+          "char": "🐡",
+          "label": "Kirpi Balığı"
+        },
+        {
+          "char": "🦭",
+          "label": "Fok"
+        },
+        {
+          "char": "🐟",
+          "label": "Balık"
+        },
+        {
+          "char": "🦞",
+          "label": "Istakoz"
+        }
+      ]
+    },
+    {
+      "id": "insects-and-small-creatures",
+      "label": "Böcekler",
+      "h2": "Böcek ve Küçük Canlı Emojileri",
+      "intro": "Böcekler ve diğer küçük canlılar.",
+      "symbols": [
+        {
+          "char": "🐛",
+          "label": "Böcek"
+        },
+        {
+          "char": "🦋",
+          "label": "Kelebek"
+        },
+        {
+          "char": "🐌",
+          "label": "Salyangoz"
+        },
+        {
+          "char": "🐜",
+          "label": "Karınca"
+        },
+        {
+          "char": "🐝",
+          "label": "Bal Arısı"
+        },
+        {
+          "char": "🪲",
+          "label": "Kın Kanatlı Böcek"
+        },
+        {
+          "char": "🐞",
+          "label": "Uğur Böceği"
+        },
+        {
+          "char": "🦗",
+          "label": "Cırcır Böceği"
+        },
+        {
+          "char": "🕷",
+          "label": "Örümcek"
+        },
+        {
+          "char": "🦂",
+          "label": "Akrep"
+        },
+        {
+          "char": "🪳",
+          "label": "Hamam Böceği"
+        },
+        {
+          "char": "🪱",
+          "label": "Solucan"
+        }
+      ]
+    },
+    {
+      "id": "reptiles-and-amphibians",
+      "label": "Sürüngenler",
+      "h2": "Sürüngen ve İki Yaşamlı Emojileri",
+      "intro": "Yılanlar, kertenkeleler ve kurbağalar.",
+      "symbols": [
+        {
+          "char": "🐍",
+          "label": "Yılan"
+        },
+        {
+          "char": "🦎",
+          "label": "Kertenkele"
+        },
+        {
+          "char": "🐊",
+          "label": "Timsah"
+        },
+        {
+          "char": "🐢",
+          "label": "Kaplumbağa"
+        },
+        {
+          "char": "🐸",
+          "label": "Kurbağa"
+        },
+        {
+          "char": "🦕",
+          "label": "Sauropod"
+        },
+        {
+          "char": "🦖",
+          "label": "T-Rex"
+        }
+      ]
+    },
+    {
+      "id": "mythical-animals",
+      "label": "Efsanevi",
+      "h2": "Efsanevi Hayvan Emojileri",
+      "intro": "Fantastik ve mitolojik yaratıklar.",
+      "symbols": [
+        {
+          "char": "🦄",
+          "label": "Tek Boynuzlu At"
+        },
+        {
+          "char": "🐉",
+          "label": "Ejderha"
+        },
+        {
+          "char": "🐲",
+          "label": "Ejderha Yüzü"
+        },
+        {
+          "char": "🐦‍🔥",
+          "label": "Anka Kuşu"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    },
+    {
+      "href": "/tr/library/emoji-combos/",
+      "title": "Kopyala yapıştır emoji kombinasyonları",
+      "desc": "Bion, durumun ve açıklamaların tek bir havaya bürünsün diye 100+ hazır emoji combosu — coquette, cottagecore, …"
+    },
+    {
+      "href": "/tr/library/estetik-semboller/",
+      "title": "Estetik semboller — kopyala yapıştır",
+      "desc": "Bio, nick, caption ve durum için aesthetic semboller: ✦ ♡ ୨୧ ❀ ⋆ ˚ coquette, kawaii, y2k, soft, kalp, yıldız, …"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/tr/library/hayvan-emojileri/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/animal-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-animales/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-hewan/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/animal-emojis/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/hayvan-emojileri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
+    }
+  ]
+}

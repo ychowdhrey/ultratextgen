@@ -3755,5 +3755,27 @@ PAGES.update({
         glyphs("\U0001f355", "\U0001f354", "\U0001f370", "\u2615", "\U0001f34e"), K_LIB),
 })
 
+# ---- 2026-08-15: library/* Phase A deferred four (flower, instagram, geometric, animal) ----
+PAGES.update({
+    "tr-library-cicek-emojileri": ("\u00c7i\u00e7ek Emojileri", "\u00c7i\u00e7ek emoji ve sembolleri",
+        glyphs("\U0001f338", "\U0001f339", "\U0001f33b", "\u273f", "\u2740"), K_LIB),
+    "pt-library-emoji-de-flores": ("Emoji de Flores", "Emojis e s\u00edmbolos de flor",
+        glyphs("\U0001f338", "\U0001f339", "\U0001f33b", "\u273f", "\u2740"), K_LIB),
+    "vi-library-emoji-hoa": ("Emoji Hoa", "Emoji v\u00e0 k\u00fd t\u1ef1 hoa",
+        glyphs("\U0001f338", "\U0001f339", "\U0001f33b", "\u273f", "\u2740"), K_LIB),
+    "pt-library-simbolos-para-instagram": ("S\u00edmbolos para Instagram", "Enfeites de bio, divisores e destaques",
+        glyphs("\u2728", "\u2726", "\u2022", "\u2502", "\u2661"), K_LIB),
+    "tr-library-instagram-sembolleri": ("Instagram Sembolleri", "Biyografi s\u00fcsleri ve ayra\u00e7lar",
+        glyphs("\u2728", "\u2726", "\u2022", "\u2502", "\u2661"), K_LIB),
+    "tr-library-geometrik-semboller": ("Geometrik Semboller", "Daire, baklava, kare ve \u00fc\u00e7gen",
+        glyphs("\u25cf", "\u25c6", "\u25a0", "\u25b2", "\u2b21"), K_LIB),
+    "pt-library-simbolos-geometricos": ("S\u00edmbolos Geom\u00e9tricos", "C\u00edrculos, losangos, quadrados e tri\u00e2ngulos",
+        glyphs("\u25cf", "\u25c6", "\u25a0", "\u25b2", "\u2b21"), K_LIB),
+    "tr-library-hayvan-emojileri": ("Hayvan Emojileri", "Evcil, vah\u015fi, deniz ve efsanevi hayvanlar",
+        glyphs("\U0001f436", "\U0001f981", "\U0001f43c", "\U0001f419", "\U0001f98a"), K_LIB),
+    "fr-library-emojis-animaux": ("Emojis Animaux", "Compagnie, faune sauvage, mer et mythes",
+        glyphs("\U0001f436", "\U0001f981", "\U0001f43c", "\U0001f419", "\U0001f98a"), K_LIB),
+})
+
 if __name__ == "__main__":
     sys.exit(main())

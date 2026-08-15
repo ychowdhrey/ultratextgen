@@ -1,0 +1,456 @@
+{
+  "slug": "simbolos-geometricos",
+  "copy_pattern": "single",
+  "title": "Símbolos Geométricos ● ◆ ■ ▲ — Copiar e Colar Formas | UltraTextGen",
+  "meta_description": "Símbolos geométricos para copiar e colar: círculos, losangos, quadrados, triângulos, marcadores de lista e hexágonos, cheios e vazados. Clique para copiar.",
+  "hero_h1": "Símbolos Geométricos",
+  "breadcrumb": "Símbolos Geométricos",
+  "hero_tagline": "Círculos, losangos, quadrados, triângulos, marcadores e formas menos comuns — cheios, vazados e coloridos. Clique para copiar.",
+  "intro": "Símbolos geométricos são a forma mais prática de dar estrutura a um texto sem usar imagem — como marcador de lista, como divisor ou como indicador de status numa tabela. A maior parte dos caracteres desta página é Unicode de verdade e assume a cor da fonte; já os quadrados e círculos coloridos são emojis e aparecem sempre nas cores deles. Estão agrupados por forma: círculos, losangos, quadrados, triângulos, marcadores de lista e formas mais raras como hexágonos e pentágonos.",
+  "sections": [
+    {
+      "id": "circles",
+      "label": "Círculos",
+      "h2": "Símbolos de Círculo",
+      "intro": "Círculos cheios, vazados e coloridos em Unicode e emoji.",
+      "symbols": [
+        {
+          "char": "●",
+          "label": "Círculo Preto"
+        },
+        {
+          "char": "○",
+          "label": "Círculo Branco"
+        },
+        {
+          "char": "◉",
+          "label": "Olho de Peixe"
+        },
+        {
+          "char": "◎",
+          "label": "Alvo"
+        },
+        {
+          "char": "⊙",
+          "label": "Círculo com Ponto"
+        },
+        {
+          "char": "⊚",
+          "label": "Círculo com Anel"
+        },
+        {
+          "char": "⬤",
+          "label": "Círculo Preto Grande"
+        },
+        {
+          "char": "◌",
+          "label": "Círculo Pontilhado"
+        },
+        {
+          "char": "🔴",
+          "label": "Círculo Vermelho"
+        },
+        {
+          "char": "🟡",
+          "label": "Círculo Amarelo"
+        },
+        {
+          "char": "🟢",
+          "label": "Círculo Verde"
+        },
+        {
+          "char": "🔵",
+          "label": "Círculo Azul"
+        },
+        {
+          "char": "⚪",
+          "label": "Círculo Branco Emoji"
+        },
+        {
+          "char": "⚫",
+          "label": "Círculo Preto Emoji"
+        },
+        {
+          "char": "🟠",
+          "label": "Círculo Laranja"
+        },
+        {
+          "char": "🟣",
+          "label": "Círculo Roxo"
+        },
+        {
+          "char": "🟤",
+          "label": "Círculo Marrom"
+        }
+      ]
+    },
+    {
+      "id": "diamonds",
+      "label": "Losangos",
+      "h2": "Símbolos de Losango",
+      "intro": "Losangos e formas de rombo em Unicode e emoji.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Losango Preto"
+        },
+        {
+          "char": "◇",
+          "label": "Losango Branco"
+        },
+        {
+          "char": "♦",
+          "label": "Naipe de Ouros"
+        },
+        {
+          "char": "◈",
+          "label": "Losango Branco com Ponto"
+        },
+        {
+          "char": "🔶",
+          "label": "Losango Laranja Grande"
+        },
+        {
+          "char": "🔷",
+          "label": "Losango Azul Grande"
+        },
+        {
+          "char": "💎",
+          "label": "Pedra Preciosa"
+        },
+        {
+          "char": "💠",
+          "label": "Losango com Ponto"
+        },
+        {
+          "char": "♢",
+          "label": "Naipe de Ouros Vazado"
+        }
+      ]
+    },
+    {
+      "id": "squares",
+      "label": "Quadrados",
+      "h2": "Símbolos de Quadrado",
+      "intro": "Quadrados cheios e vazados em Unicode e emojis coloridos.",
+      "symbols": [
+        {
+          "char": "■",
+          "label": "Quadrado Preto"
+        },
+        {
+          "char": "□",
+          "label": "Quadrado Branco"
+        },
+        {
+          "char": "◼",
+          "label": "Quadrado Preto Médio"
+        },
+        {
+          "char": "◻",
+          "label": "Quadrado Branco Médio"
+        },
+        {
+          "char": "▪",
+          "label": "Quadrado Preto Pequeno"
+        },
+        {
+          "char": "▫",
+          "label": "Quadrado Branco Pequeno"
+        },
+        {
+          "char": "🟥",
+          "label": "Quadrado Vermelho"
+        },
+        {
+          "char": "🟧",
+          "label": "Quadrado Laranja"
+        },
+        {
+          "char": "🟨",
+          "label": "Quadrado Amarelo"
+        },
+        {
+          "char": "🟩",
+          "label": "Quadrado Verde"
+        },
+        {
+          "char": "🟦",
+          "label": "Quadrado Azul"
+        },
+        {
+          "char": "🟪",
+          "label": "Quadrado Roxo"
+        },
+        {
+          "char": "🟫",
+          "label": "Quadrado Marrom"
+        },
+        {
+          "char": "⬛",
+          "label": "Quadrado Preto Grande"
+        },
+        {
+          "char": "⬜",
+          "label": "Quadrado Branco Grande"
+        },
+        {
+          "char": "▭",
+          "label": "Retângulo Branco"
+        },
+        {
+          "char": "▬",
+          "label": "Retângulo Preto"
+        },
+        {
+          "char": "▯",
+          "label": "Retângulo Vertical Branco"
+        },
+        {
+          "char": "▮",
+          "label": "Retângulo Vertical Preto"
+        },
+        {
+          "char": "▢",
+          "label": "Quadrado Branco de Cantos Arredondados"
+        }
+      ]
+    },
+    {
+      "id": "triangles",
+      "label": "Triângulos",
+      "h2": "Símbolos de Triângulo",
+      "intro": "Triângulos cheios e vazados apontando para todos os lados.",
+      "symbols": [
+        {
+          "char": "▲",
+          "label": "Triângulo Preto para Cima"
+        },
+        {
+          "char": "△",
+          "label": "Triângulo Branco para Cima"
+        },
+        {
+          "char": "▼",
+          "label": "Triângulo Preto para Baixo"
+        },
+        {
+          "char": "▽",
+          "label": "Triângulo Branco para Baixo"
+        },
+        {
+          "char": "◀",
+          "label": "Triângulo Preto para a Esquerda"
+        },
+        {
+          "char": "▶",
+          "label": "Triângulo Preto para a Direita"
+        },
+        {
+          "char": "◄",
+          "label": "Ponteiro Preto para a Esquerda"
+        },
+        {
+          "char": "►",
+          "label": "Ponteiro Preto para a Direita"
+        },
+        {
+          "char": "◁",
+          "label": "Triângulo Branco para a Esquerda"
+        },
+        {
+          "char": "▷",
+          "label": "Triângulo Branco para a Direita"
+        },
+        {
+          "char": "🔺",
+          "label": "Triângulo Vermelho para Cima"
+        },
+        {
+          "char": "🔻",
+          "label": "Triângulo Vermelho para Baixo"
+        },
+        {
+          "char": "⏫",
+          "label": "Botão Rápido para Cima"
+        },
+        {
+          "char": "⏬",
+          "label": "Botão Rápido para Baixo"
+        }
+      ]
+    },
+    {
+      "id": "bullets",
+      "label": "Marcadores",
+      "h2": "Marcadores de Lista",
+      "intro": "Símbolos geométricos pequenos, ideais para listas com marcador.",
+      "symbols": [
+        {
+          "char": "‣",
+          "label": "Marcador Triangular"
+        },
+        {
+          "char": "▸",
+          "label": "Marcador Cheio para a Direita"
+        },
+        {
+          "char": "▹",
+          "label": "Marcador Vazado para a Direita"
+        },
+        {
+          "char": "▪",
+          "label": "Quadrado Preto Pequeno"
+        },
+        {
+          "char": "▫",
+          "label": "Quadrado Branco Pequeno"
+        },
+        {
+          "char": "◆",
+          "label": "Losango Preto"
+        },
+        {
+          "char": "◇",
+          "label": "Losango Branco"
+        },
+        {
+          "char": "•",
+          "label": "Marcador"
+        },
+        {
+          "char": "◦",
+          "label": "Marcador Branco"
+        },
+        {
+          "char": "∙",
+          "label": "Operador Marcador"
+        },
+        {
+          "char": "‧",
+          "label": "Ponto de Hifenização"
+        },
+        {
+          "char": "⁃",
+          "label": "Marcador de Hífen"
+        },
+        {
+          "char": "⦿",
+          "label": "Marcador em Círculo"
+        },
+        {
+          "char": "⦾",
+          "label": "Marcador Branco em Círculo"
+        }
+      ]
+    },
+    {
+      "id": "misc-shapes",
+      "label": "Outras Formas",
+      "h2": "Outras Formas Geométricas",
+      "intro": "Hexágonos, pentágonos e formas menos comuns.",
+      "symbols": [
+        {
+          "char": "⬡",
+          "label": "Hexágono Branco"
+        },
+        {
+          "char": "⬢",
+          "label": "Hexágono Preto"
+        },
+        {
+          "char": "⬠",
+          "label": "Pentágono Branco"
+        },
+        {
+          "char": "⬟",
+          "label": "Pentágono Preto"
+        },
+        {
+          "char": "⏣",
+          "label": "Anel de Benzeno com Círculo"
+        },
+        {
+          "char": "⎔",
+          "label": "Símbolo de Função de Software"
+        },
+        {
+          "char": "⌬",
+          "label": "Anel de Benzeno"
+        },
+        {
+          "char": "⏢",
+          "label": "Trapézio Branco"
+        },
+        {
+          "char": "☐",
+          "label": "Caixa de Seleção"
+        },
+        {
+          "char": "☑",
+          "label": "Caixa Marcada"
+        },
+        {
+          "char": "☒",
+          "label": "Caixa com X"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos-de-marcadores/",
+      "title": "Símbolos de Marcadores",
+      "desc": "Copie e cole caracteres de marcador (bullet point) para posts do LinkedIn, e-mails, documentos e redes sociais…"
+    },
+    {
+      "href": "/pt/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Copie e cole caracteres Unicode de matemática — operadores, letras gregas, teoria dos conjuntos, cálculo e mai…"
+    },
+    {
+      "href": "/pt/library/naipes-de-baralho/",
+      "title": "Símbolos de Naipes de Baralho ♠ ♥ ♦ ♣",
+      "desc": "Uma coleção de símbolos de naipes de baralho, dados, peças de dominó e caracteres Unicode de jogos. Clique em …"
+    }
+  ],
+  "lang": "pt",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/pt/library/simbolos-geometricos/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-geometricos/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-geometri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-geometrici/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/dohyeong-giho/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/geometriske-symboler/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-geometricos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    }
+  ]
+}

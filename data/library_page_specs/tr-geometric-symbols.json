@@ -1,0 +1,456 @@
+{
+  "slug": "geometrik-semboller",
+  "copy_pattern": "single",
+  "title": "Geometrik Semboller ● ◆ ■ ▲ — Kopyala Yapıştır Şekil Karakterleri | UltraTextGen",
+  "meta_description": "Geometrik semboller kopyala yapıştır: daire, baklava, kare, üçgen, madde işareti ve altıgen karakterleri, dolu ve içi boş hâlleriyle. Kopyalamak için tıkla.",
+  "hero_h1": "Geometrik Semboller",
+  "breadcrumb": "Geometrik Semboller",
+  "hero_tagline": "Daireler, baklavalar, kareler, üçgenler, madde işaretleri ve daha az bilinen şekiller — dolu, içi boş ve renkli hâlleriyle. Kopyalamak için tıkla.",
+  "intro": "Geometrik semboller, bir metne görsel eklemeden yapı kazandırmanın en pratik yoludur — madde işareti olarak, ayraç olarak ya da bir tabloda durum göstergesi olarak. Buradaki karakterlerin çoğu gerçek Unicode karakteridir ve yazının rengini alır; renkli kare ve daireler ise emojidir, her zaman kendi renklerinde görünür. Şekle göre gruplanmış hâlde: daireler, baklavalar, kareler, üçgenler, liste işaretleri ve altıgen, beşgen gibi daha seyrek şekiller.",
+  "sections": [
+    {
+      "id": "circles",
+      "label": "Daireler",
+      "h2": "Daire Sembolleri",
+      "intro": "Unicode ve emoji olarak dolu, içi boş ve renkli daire karakterleri.",
+      "symbols": [
+        {
+          "char": "●",
+          "label": "Siyah Daire"
+        },
+        {
+          "char": "○",
+          "label": "Beyaz Daire"
+        },
+        {
+          "char": "◉",
+          "label": "Balıkgözü"
+        },
+        {
+          "char": "◎",
+          "label": "Hedef Tahtası"
+        },
+        {
+          "char": "⊙",
+          "label": "Daire İçinde Nokta"
+        },
+        {
+          "char": "⊚",
+          "label": "Daire İçinde Halka"
+        },
+        {
+          "char": "⬤",
+          "label": "Büyük Siyah Daire"
+        },
+        {
+          "char": "◌",
+          "label": "Noktalı Daire"
+        },
+        {
+          "char": "🔴",
+          "label": "Kırmızı Daire"
+        },
+        {
+          "char": "🟡",
+          "label": "Sarı Daire"
+        },
+        {
+          "char": "🟢",
+          "label": "Yeşil Daire"
+        },
+        {
+          "char": "🔵",
+          "label": "Mavi Daire"
+        },
+        {
+          "char": "⚪",
+          "label": "Beyaz Daire Emojisi"
+        },
+        {
+          "char": "⚫",
+          "label": "Siyah Daire Emojisi"
+        },
+        {
+          "char": "🟠",
+          "label": "Turuncu Daire"
+        },
+        {
+          "char": "🟣",
+          "label": "Mor Daire"
+        },
+        {
+          "char": "🟤",
+          "label": "Kahverengi Daire"
+        }
+      ]
+    },
+    {
+      "id": "diamonds",
+      "label": "Baklavalar",
+      "h2": "Baklava Sembolleri",
+      "intro": "Unicode ve emoji olarak baklava ve eşkenar dörtgen şekilleri.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Siyah Baklava"
+        },
+        {
+          "char": "◇",
+          "label": "Beyaz Baklava"
+        },
+        {
+          "char": "♦",
+          "label": "Karo Takımı"
+        },
+        {
+          "char": "◈",
+          "label": "Ortası Noktalı Beyaz Baklava"
+        },
+        {
+          "char": "🔶",
+          "label": "Büyük Turuncu Baklava"
+        },
+        {
+          "char": "🔷",
+          "label": "Büyük Mavi Baklava"
+        },
+        {
+          "char": "💎",
+          "label": "Değerli Taş"
+        },
+        {
+          "char": "💠",
+          "label": "Noktalı Baklava"
+        },
+        {
+          "char": "♢",
+          "label": "Beyaz Karo Takımı"
+        }
+      ]
+    },
+    {
+      "id": "squares",
+      "label": "Kareler",
+      "h2": "Kare Sembolleri",
+      "intro": "Dolu ve içi boş kare şekilleri ile renkli kare emojileri.",
+      "symbols": [
+        {
+          "char": "■",
+          "label": "Siyah Kare"
+        },
+        {
+          "char": "□",
+          "label": "Beyaz Kare"
+        },
+        {
+          "char": "◼",
+          "label": "Orta Siyah Kare"
+        },
+        {
+          "char": "◻",
+          "label": "Orta Beyaz Kare"
+        },
+        {
+          "char": "▪",
+          "label": "Küçük Siyah Kare"
+        },
+        {
+          "char": "▫",
+          "label": "Küçük Beyaz Kare"
+        },
+        {
+          "char": "🟥",
+          "label": "Kırmızı Kare"
+        },
+        {
+          "char": "🟧",
+          "label": "Turuncu Kare"
+        },
+        {
+          "char": "🟨",
+          "label": "Sarı Kare"
+        },
+        {
+          "char": "🟩",
+          "label": "Yeşil Kare"
+        },
+        {
+          "char": "🟦",
+          "label": "Mavi Kare"
+        },
+        {
+          "char": "🟪",
+          "label": "Mor Kare"
+        },
+        {
+          "char": "🟫",
+          "label": "Kahverengi Kare"
+        },
+        {
+          "char": "⬛",
+          "label": "Büyük Siyah Kare"
+        },
+        {
+          "char": "⬜",
+          "label": "Büyük Beyaz Kare"
+        },
+        {
+          "char": "▭",
+          "label": "Beyaz Dikdörtgen"
+        },
+        {
+          "char": "▬",
+          "label": "Siyah Dikdörtgen"
+        },
+        {
+          "char": "▯",
+          "label": "Beyaz Dikey Dikdörtgen"
+        },
+        {
+          "char": "▮",
+          "label": "Siyah Dikey Dikdörtgen"
+        },
+        {
+          "char": "▢",
+          "label": "Yuvarlak Köşeli Beyaz Kare"
+        }
+      ]
+    },
+    {
+      "id": "triangles",
+      "label": "Üçgenler",
+      "h2": "Üçgen Sembolleri",
+      "intro": "Her yöne bakan dolu ve içi boş üçgenler.",
+      "symbols": [
+        {
+          "char": "▲",
+          "label": "Siyah Yukarı Üçgen"
+        },
+        {
+          "char": "△",
+          "label": "Beyaz Yukarı Üçgen"
+        },
+        {
+          "char": "▼",
+          "label": "Siyah Aşağı Üçgen"
+        },
+        {
+          "char": "▽",
+          "label": "Beyaz Aşağı Üçgen"
+        },
+        {
+          "char": "◀",
+          "label": "Siyah Sola Üçgen"
+        },
+        {
+          "char": "▶",
+          "label": "Siyah Sağa Üçgen"
+        },
+        {
+          "char": "◄",
+          "label": "Siyah Sola İşaretçi"
+        },
+        {
+          "char": "►",
+          "label": "Siyah Sağa İşaretçi"
+        },
+        {
+          "char": "◁",
+          "label": "Beyaz Sola Üçgen"
+        },
+        {
+          "char": "▷",
+          "label": "Beyaz Sağa Üçgen"
+        },
+        {
+          "char": "🔺",
+          "label": "Kırmızı Yukarı Üçgen"
+        },
+        {
+          "char": "🔻",
+          "label": "Kırmızı Aşağı Üçgen"
+        },
+        {
+          "char": "⏫",
+          "label": "Hızlı Yukarı Düğmesi"
+        },
+        {
+          "char": "⏬",
+          "label": "Hızlı Aşağı Düğmesi"
+        }
+      ]
+    },
+    {
+      "id": "bullets",
+      "label": "Madde İşaretleri",
+      "h2": "Madde İşareti ve Liste Sembolleri",
+      "intro": "Madde işareti ve liste biçimlendirmesi için küçük geometrik karakterler.",
+      "symbols": [
+        {
+          "char": "‣",
+          "label": "Üçgen Madde İşareti"
+        },
+        {
+          "char": "▸",
+          "label": "Küçük Dolu Sağ İşaret"
+        },
+        {
+          "char": "▹",
+          "label": "Küçük Konturlu Sağ İşaret"
+        },
+        {
+          "char": "▪",
+          "label": "Küçük Siyah Kare"
+        },
+        {
+          "char": "▫",
+          "label": "Küçük Beyaz Kare"
+        },
+        {
+          "char": "◆",
+          "label": "Siyah Baklava"
+        },
+        {
+          "char": "◇",
+          "label": "Beyaz Baklava"
+        },
+        {
+          "char": "•",
+          "label": "Madde İşareti"
+        },
+        {
+          "char": "◦",
+          "label": "Beyaz Madde İşareti"
+        },
+        {
+          "char": "∙",
+          "label": "Madde İşleci"
+        },
+        {
+          "char": "‧",
+          "label": "Heceleme Noktası"
+        },
+        {
+          "char": "⁃",
+          "label": "Kısa Çizgi Madde İşareti"
+        },
+        {
+          "char": "⦿",
+          "label": "Daire İçinde Madde İşareti"
+        },
+        {
+          "char": "⦾",
+          "label": "Daire İçinde Beyaz Madde İşareti"
+        }
+      ]
+    },
+    {
+      "id": "misc-shapes",
+      "label": "Diğer Şekiller",
+      "h2": "Diğer Geometrik Şekiller",
+      "intro": "Altıgen, beşgen ve daha seyrek kullanılan geometrik şekiller.",
+      "symbols": [
+        {
+          "char": "⬡",
+          "label": "Beyaz Altıgen"
+        },
+        {
+          "char": "⬢",
+          "label": "Siyah Altıgen"
+        },
+        {
+          "char": "⬠",
+          "label": "Beyaz Beşgen"
+        },
+        {
+          "char": "⬟",
+          "label": "Siyah Beşgen"
+        },
+        {
+          "char": "⏣",
+          "label": "Daireli Benzen Halkası"
+        },
+        {
+          "char": "⎔",
+          "label": "Yazılım İşlevi Sembolü"
+        },
+        {
+          "char": "⌬",
+          "label": "Benzen Halkası"
+        },
+        {
+          "char": "⏢",
+          "label": "Beyaz Yamuk"
+        },
+        {
+          "char": "☐",
+          "label": "Onay Kutusu"
+        },
+        {
+          "char": "☑",
+          "label": "İşaretli Onay Kutusu"
+        },
+        {
+          "char": "☒",
+          "label": "Çarpı İşaretli Onay Kutusu"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/madde-imi-sembolleri/",
+      "title": "Madde İmi Sembolleri",
+      "desc": "LinkedIn gönderileri, e-postalar, belgeler ve sosyal medya için madde imi karakterlerini ve liste işaretlerini…"
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri Koleksiyonu",
+      "desc": "Artı eksi, çarpı, bölü, eşitsizlik ve küme sembollerinden oluşan referans koleksiyonu — klavyede tuşu olmayan …"
+    },
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/tr/library/geometrik-semboller/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-geometricos/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-geometri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-geometrici/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/dohyeong-giho/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/geometriske-symboler/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/geometrik-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/geometric-symbols/"
+    }
+  ]
+}
