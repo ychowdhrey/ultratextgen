@@ -1,0 +1,342 @@
+{
+  "slug": "yazi-sanati",
+  "title": "Yazı Sanatı: ASCII ve Unicode Sanatı Kopyala Yapıştır | UltraTextGen",
+  "meta_description": "Yazı sanatı kopyala yapıştır — ASCII kediler, braille kalpler, yıldız çerçeveler ve klasik kaomoji, ayrıca kendi çizimin için bloklar. Kopyalamak için tıkla.",
+  "canonical": "https://ultratextgen.com/tr/library/yazi-sanati/",
+  "breadcrumb": "Yazı Sanatı",
+  "hero_h1": "Yazı Sanatı",
+  "hero_tagline": "Hazır ASCII ve Unicode sanat parçaları, ayrıca kendi çizimini yapman için gereken tüm çerçeve, blok ve braille karakterleri. Kopyalamak için tıkla.",
+  "intro": "Yazı sanatı (ASCII art olarak da bilinir) tamamen karakterlerle çizilen bir resimdir — çerçeve çizgileri, gölgeli bloklar, braille noktaları ve klavyedeki sıradan simgeler. Metnin geçtiği her yerde çalışır: Discord sohbetleri, oyun lobileri, X gönderileri, YouTube yorumları ve düz metin biyografiler. Bu sayfa tek tıkla yapıştırabileceğin küçük hazır parçaları, ayrıca kendi çizimini yapmak istersen tek tek yapı taşı karakterleri bir araya getiriyor.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Çizgiler",
+      "h2": "Çerçeve Karakterleri",
+      "intro": "Düz çizgiler, köşeler ve birleşimler — çerçevelerin, tabloların ve düzenli yazı sanatının iskeleti.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "İnce Yatay Çizgi"
+        },
+        {
+          "char": "│",
+          "label": "İnce Dikey Çizgi"
+        },
+        {
+          "char": "┌",
+          "label": "Sol Üst Köşe"
+        },
+        {
+          "char": "┐",
+          "label": "Sağ Üst Köşe"
+        },
+        {
+          "char": "└",
+          "label": "Sol Alt Köşe"
+        },
+        {
+          "char": "┘",
+          "label": "Sağ Alt Köşe"
+        },
+        {
+          "char": "├",
+          "label": "Sağa Birleşim"
+        },
+        {
+          "char": "┤",
+          "label": "Sola Birleşim"
+        },
+        {
+          "char": "┼",
+          "label": "Kesişim"
+        },
+        {
+          "char": "═",
+          "label": "Çift Yatay Çizgi"
+        },
+        {
+          "char": "║",
+          "label": "Çift Dikey Çizgi"
+        },
+        {
+          "char": "╔",
+          "label": "Çift Sol Üst Köşe"
+        },
+        {
+          "char": "╗",
+          "label": "Çift Sağ Üst Köşe"
+        },
+        {
+          "char": "╚",
+          "label": "Çift Sol Alt Köşe"
+        },
+        {
+          "char": "╝",
+          "label": "Çift Sağ Alt Köşe"
+        }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Bloklar",
+      "h2": "Blok ve Gölge Karakterleri",
+      "intro": "Şekilleri doldurmak ve büyük parçalarda geçiş oluşturmak için dolu ve gölgeli bloklar.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Tam Blok"
+        },
+        {
+          "char": "▀",
+          "label": "Üst Yarım Blok"
+        },
+        {
+          "char": "▄",
+          "label": "Alt Yarım Blok"
+        },
+        {
+          "char": "▌",
+          "label": "Sol Yarım Blok"
+        },
+        {
+          "char": "▐",
+          "label": "Sağ Yarım Blok"
+        },
+        {
+          "char": "░",
+          "label": "Açık Gölge"
+        },
+        {
+          "char": "▒",
+          "label": "Orta Gölge"
+        },
+        {
+          "char": "▓",
+          "label": "Koyu Gölge"
+        },
+        {
+          "char": "▖",
+          "label": "Sol Alt Çeyrek"
+        },
+        {
+          "char": "▘",
+          "label": "Sol Üst Çeyrek"
+        }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Braille Karakterleri",
+      "intro": "Braille desenleri yazı sanatına en yüksek çözünürlüğü verir — modern nokta sanatının neredeyse tamamı bunlarla çizilir.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Braille Nokta 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille Nokta 14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille Nokta 1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille Nokta 123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille Nokta 78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille Nokta 3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille Nokta 235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braille Nokta 12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braille Nokta 1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braille Nokta 4568"
+        }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Şekiller",
+      "h2": "Geometrik Şekiller",
+      "intro": "Yıldızlar, baklava dilimleri ve süsleme detayları için basit geometrik karakterler.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Siyah Baklava"
+        },
+        {
+          "char": "◇",
+          "label": "Beyaz Baklava"
+        },
+        {
+          "char": "●",
+          "label": "Siyah Daire"
+        },
+        {
+          "char": "○",
+          "label": "Beyaz Daire"
+        },
+        {
+          "char": "▲",
+          "label": "Yukarı Siyah Üçgen"
+        },
+        {
+          "char": "△",
+          "label": "Yukarı Beyaz Üçgen"
+        },
+        {
+          "char": "▼",
+          "label": "Aşağı Siyah Üçgen"
+        },
+        {
+          "char": "▽",
+          "label": "Aşağı Beyaz Üçgen"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Sanat Parçaları",
+    "h2": "Hazır Yazı Sanatı Parçaları",
+    "intro": "Çok satırlı bir parçayı tek tıkla kopyala — satırların hizalı kalması için dikey biçimi bozma."
+  },
+  "collection_container_id": "textArtContainer",
+  "collections": [
+    {
+      "name": "ASCII Kedi",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Braille Kalp",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Baklava Kulesi",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Yıldız Çerçeve",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀your text⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Klasik Kaomoji",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Dağ Sırası",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji — Japon emojileri",
+      "desc": "Kaomoji kopyala yapıştır — Unicode karakterlerinden kurulu, Japon usulü metin yüzleri. Mutlu yüzler, üzgün yüz…"
+    },
+    {
+      "href": "/tr/library/estetik-semboller/",
+      "title": "Estetik semboller — kopyala yapıştır",
+      "desc": "Bio, nick, caption ve durum için aesthetic semboller: ✦ ♡ ୨୧ ❀ ⋆ ˚ coquette, kawaii, y2k, soft, kalp, yıldız, …"
+    },
+    {
+      "href": "/tr/library/semboller/",
+      "title": "Şekilli semboller — kopyala yapıştır",
+      "desc": "Nick, Instagram bio'su, WhatsApp durumu ve açıklamalar için sembol koleksiyonu — yıldızlar, kalpler, kelebek, …"
+    }
+  ],
+  "lang": "tr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-kunst/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/yazi-sanati/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ]
+}

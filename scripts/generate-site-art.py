@@ -3666,5 +3666,64 @@ def report_orphan_keys():
             print("  -", s)
 
 
+# ---- 2026-08-15: library/* multi-locale expansion (Semrush-validated demand) ----
+# One block per EN parent; see the expansion matrix behind this batch.
+PAGES.update({
+    # text-art (es already live)
+    "pt-library-arte-de-texto": ("Arte de Texto", "Arte ASCII e Unicode para copiar",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u25c6"), K_LIB),
+    "fr-library-text-art": ("Text Art", "Art ASCII et Unicode \u00e0 copier",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u25c6"), K_LIB),
+    "tr-library-yazi-sanati": ("Yaz\u0131 Sanat\u0131", "Kopyalanabilir ASCII ve Unicode sanat\u0131",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u25c6"), K_LIB),
+    "vi-library-text-art": ("Text Art", "Ngh\u1ec7 thu\u1eadt ASCII v\u00e0 Unicode",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u25c6"), K_LIB),
+    "th-library-text-art": ("Text Art", "\u0e07\u0e32\u0e19\u0e28\u0e34\u0e25\u0e1b\u0e4c ASCII \u0e41\u0e25\u0e30 Unicode",
+        glyphs("\u2588", "\u2593", "\u2592", "\u2591", "\u25c6"), K_LIB),
+    # ascii-table (es, pt already live)
+    "fr-library-table-ascii": ("Table ASCII", "Codes d\u00e9cimal, hex, binaire et octal",
+        glyphs("!", "#", "@", "?", "~"), K_LIB),
+    "vi-library-bang-ma-ascii": ("B\u1ea3ng M\u00e3 ASCII", "M\u00e3 th\u1eadp ph\u00e2n, hex, nh\u1ecb ph\u00e2n",
+        glyphs("!", "#", "@", "?", "~"), K_LIB),
+    "tr-library-ascii-tablosu": ("ASCII Tablosu", "Onluk, onalt\u0131l\u0131k ve ikilik kodlar",
+        glyphs("!", "#", "@", "?", "~"), K_LIB),
+    "th-library-ascii-table": ("\u0e15\u0e32\u0e23\u0e32\u0e07 ASCII", "\u0e23\u0e2b\u0e31\u0e2a\u0e10\u0e32\u0e19\u0e2a\u0e34\u0e1a \u0e2e\u0e01\u0e0b\u0e4c \u0e10\u0e32\u0e19\u0e2a\u0e2d\u0e07",
+        glyphs("!", "#", "@", "?", "~"), K_LIB),
+    # happy-emoji (es already live)
+    "pt-library-emoji-feliz": ("Emoji Feliz", "Carinhas felizes e kaomoji alegres",
+        glyphs("\U0001f60a", "\U0001f604", "\U0001f970", "\U0001f929", "\U0001f31e"), K_LIB),
+    "tr-library-mutlu-emoji": ("Mutlu Emoji", "G\u00fcl\u00fcmseyen y\u00fczler ve ne\u015feli kaomoji",
+        glyphs("\U0001f60a", "\U0001f604", "\U0001f970", "\U0001f929", "\U0001f31e"), K_LIB),
+    "fr-library-emoji-heureux": ("Emoji Heureux", "Visages souriants et kaomoji joyeux",
+        glyphs("\U0001f60a", "\U0001f604", "\U0001f970", "\U0001f929", "\U0001f31e"), K_LIB),
+    # angry-emoji (es already live)
+    "tr-library-kizgin-emoji": ("K\u0131zg\u0131n Emoji", "\u00d6fke y\u00fczleri ve masa deviren kaomoji",
+        glyphs("\U0001f621", "\U0001f620", "\U0001f92c", "\U0001f624", "\U0001f4a2"), K_LIB),
+    "fr-library-emoji-colere": ("Emoji Col\u00e8re", "Visages furieux et kaomoji renverse-table",
+        glyphs("\U0001f621", "\U0001f620", "\U0001f92c", "\U0001f624", "\U0001f4a2"), K_LIB),
+    "vi-library-emoji-tuc-gian": ("Emoji T\u1ee9c Gi\u1eadn", "M\u1eb7t gi\u1eadn v\u00e0 kaomoji l\u1eadt b\u00e0n",
+        glyphs("\U0001f621", "\U0001f620", "\U0001f92c", "\U0001f624", "\U0001f4a2"), K_LIB),
+    # wink-emoji (es already live)
+    "fr-library-emoji-clin-doeil": ("Emoji Clin d\u2019\u0152il", "Visages complices et kaomoji taquins",
+        glyphs("\U0001f609", "\U0001f61c", "\U0001f92a", "\U0001f60f", "\U0001f618"), K_LIB),
+    "tr-library-goz-kirpan-emoji": ("G\u00f6z K\u0131rpan Emoji", "\u015eakac\u0131 y\u00fczler ve kaomoji",
+        glyphs("\U0001f609", "\U0001f61c", "\U0001f92a", "\U0001f60f", "\U0001f618"), K_LIB),
+    # fire-emoji (es, tr already live)
+    "fr-library-emoji-feu": ("Emoji Feu", "Le \U0001f525 hype et ses associations",
+        glyphs("\U0001f525", "\U0001f4af", "\U0001f680", "\u26a1", "\U0001f451"), K_LIB),
+    "vi-library-emoji-lua": ("Emoji L\u1eeda", "Bi\u1ec3u t\u01b0\u1ee3ng \U0001f525 v\u00e0 c\u00e1c c\u1eb7p hype",
+        glyphs("\U0001f525", "\U0001f4af", "\U0001f680", "\u26a1", "\U0001f451"), K_LIB),
+    # money-emojis (es already live)
+    "tr-library-para-emojileri": ("Para Emojileri", "Nakit, banknot ve zenginlik kombinleri",
+        glyphs("\U0001f4b0", "\U0001f4b8", "\U0001f911", "\U0001f4b5", "\U0001f48e"), K_LIB),
+    "fr-library-emojis-argent": ("Emojis Argent", "Cash, billets et combos riches",
+        glyphs("\U0001f4b0", "\U0001f4b8", "\U0001f911", "\U0001f4b5", "\U0001f48e"), K_LIB),
+    # peace-emoji (es already live)
+    "tr-library-baris-sembolu": ("Bar\u0131\u015f Sembol\u00fc", "Zafer eli, g\u00fcvercin ve uyum emojileri",
+        glyphs("\u270c", "\U0001f54a", "\u262e", "\u262f", "\U0001f9d8"), K_LIB),
+    "pt-library-simbolos-de-paz": ("S\u00edmbolos de Paz", "M\u00e3o de vit\u00f3ria, pomba e harmonia",
+        glyphs("\u270c", "\U0001f54a", "\u262e", "\u262f", "\U0001f9d8"), K_LIB),
+})
+
 if __name__ == "__main__":
     sys.exit(main())

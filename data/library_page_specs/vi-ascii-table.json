@@ -1,0 +1,327 @@
+{
+  "slug": "bang-ma-ascii",
+  "title": "Bảng Mã ASCII: Tra Cứu và Sao Chép Ký Tự | UltraTextGen",
+  "meta_description": "Bảng mã ASCII đầy đủ kèm mã thập phân, thập lục phân, nhị phân và bát phân cho dấu câu, chữ số, chữ cái và ký hiệu. Nhấn vào ký tự để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/library/bang-ma-ascii/",
+  "breadcrumb": "Bảng Mã ASCII",
+  "hero_h1": "Bảng Mã ASCII",
+  "hero_tagline": "Các ký tự ASCII in được từ 33–126 kèm mã thập phân, thập lục phân, nhị phân và bát phân. Nhấn vào ký tự để sao chép.",
+  "intro": "Bảng mã ASCII ánh xạ 128 ký tự của American Standard Code for Information Interchange sang các số 0–127 — nền tảng của mọi cách mã hóa văn bản hiện đại và cũng là 128 điểm mã đầu tiên của Unicode. Bảng tra cứu này bao trùm dải in được (33–126), nhóm theo loại, mỗi ký tự đều ghi kèm mã thập phân, thập lục phân, nhị phân và bát phân. Mã 0–31 là các ký tự điều khiển không in được (ví dụ 10 là xuống dòng), còn 32 là dấu cách.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "Dấu Câu 33–47",
+      "h2": "Dấu Câu và Ký Hiệu ASCII (33–47)",
+      "intro": "Khối in được đầu tiên: dấu câu và ký hiệu số học.",
+      "symbols": [
+        {
+          "char": "!",
+          "label": "33 / 0x21 / 0b0100001 / 0o41 — Dấu Chấm Than"
+        },
+        {
+          "char": "\"",
+          "label": "34 / 0x22 / 0b0100010 / 0o42 — Dấu Ngoặc Kép"
+        },
+        {
+          "char": "#",
+          "label": "35 / 0x23 / 0b0100011 / 0o43 — Dấu Thăng"
+        },
+        {
+          "char": "$",
+          "label": "36 / 0x24 / 0b0100100 / 0o44 — Dấu Đô La"
+        },
+        {
+          "char": "%",
+          "label": "37 / 0x25 / 0b0100101 / 0o45 — Dấu Phần Trăm"
+        },
+        {
+          "char": "&",
+          "label": "38 / 0x26 / 0b0100110 / 0o46 — Dấu Và"
+        },
+        {
+          "char": "'",
+          "label": "39 / 0x27 / 0b0100111 / 0o47 — Dấu Nháy Đơn"
+        },
+        {
+          "char": "(",
+          "label": "40 / 0x28 / 0b0101000 / 0o50 — Ngoặc Đơn Trái"
+        },
+        {
+          "char": ")",
+          "label": "41 / 0x29 / 0b0101001 / 0o51 — Ngoặc Đơn Phải"
+        },
+        {
+          "char": "*",
+          "label": "42 / 0x2A / 0b0101010 / 0o52 — Dấu Sao"
+        },
+        {
+          "char": "+",
+          "label": "43 / 0x2B / 0b0101011 / 0o53 — Dấu Cộng"
+        },
+        {
+          "char": ",",
+          "label": "44 / 0x2C / 0b0101100 / 0o54 — Dấu Phẩy"
+        },
+        {
+          "char": "-",
+          "label": "45 / 0x2D / 0b0101101 / 0o55 — Dấu Gạch Nối"
+        },
+        {
+          "char": ".",
+          "label": "46 / 0x2E / 0b0101110 / 0o56 — Dấu Chấm"
+        },
+        {
+          "char": "/",
+          "label": "47 / 0x2F / 0b0101111 / 0o57 — Dấu Gạch Chéo"
+        }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "Chữ Số 48–57",
+      "h2": "Chữ Số ASCII (48–57)",
+      "intro": "Mười chữ số thập phân — mã của mỗi chữ số bằng 48 cộng với giá trị của nó.",
+      "symbols": [
+        {
+          "char": "0",
+          "label": "48 / 0x30 / 0b0110000 / 0o60 — Chữ Số Không"
+        },
+        {
+          "char": "1",
+          "label": "49 / 0x31 / 0b0110001 / 0o61 — Chữ Số Một"
+        },
+        {
+          "char": "2",
+          "label": "50 / 0x32 / 0b0110010 / 0o62 — Chữ Số Hai"
+        },
+        {
+          "char": "3",
+          "label": "51 / 0x33 / 0b0110011 / 0o63 — Chữ Số Ba"
+        },
+        {
+          "char": "4",
+          "label": "52 / 0x34 / 0b0110100 / 0o64 — Chữ Số Bốn"
+        },
+        {
+          "char": "5",
+          "label": "53 / 0x35 / 0b0110101 / 0o65 — Chữ Số Năm"
+        },
+        {
+          "char": "6",
+          "label": "54 / 0x36 / 0b0110110 / 0o66 — Chữ Số Sáu"
+        },
+        {
+          "char": "7",
+          "label": "55 / 0x37 / 0b0110111 / 0o67 — Chữ Số Bảy"
+        },
+        {
+          "char": "8",
+          "label": "56 / 0x38 / 0b0111000 / 0o70 — Chữ Số Tám"
+        },
+        {
+          "char": "9",
+          "label": "57 / 0x39 / 0b0111001 / 0o71 — Chữ Số Chín"
+        }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "Dấu Câu 58–64",
+      "h2": "Dấu Câu và Ký Hiệu ASCII (58–64)",
+      "intro": "Các ký hiệu nằm giữa chữ số và chữ hoa.",
+      "symbols": [
+        {
+          "char": ":",
+          "label": "58 / 0x3A / 0b0111010 / 0o72 — Dấu Hai Chấm"
+        },
+        {
+          "char": ";",
+          "label": "59 / 0x3B / 0b0111011 / 0o73 — Dấu Chấm Phẩy"
+        },
+        {
+          "char": "<",
+          "label": "60 / 0x3C / 0b0111100 / 0o74 — Dấu Nhỏ Hơn"
+        },
+        {
+          "char": "=",
+          "label": "61 / 0x3D / 0b0111101 / 0o75 — Dấu Bằng"
+        },
+        {
+          "char": ">",
+          "label": "62 / 0x3E / 0b0111110 / 0o76 — Dấu Lớn Hơn"
+        },
+        {
+          "char": "?",
+          "label": "63 / 0x3F / 0b0111111 / 0o77 — Dấu Hỏi"
+        },
+        {
+          "char": "@",
+          "label": "64 / 0x40 / 0b1000000 / 0o100 — Dấu A Còng"
+        }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "Chữ Cái 65–122",
+      "h2": "Chữ Cái ASCII (65–90 và 97–122)",
+      "intro": "Chữ hoa chạy từ 65 (A) đến 90 (Z); chữ thường từ 97 (a) đến 122 (z) — luôn bằng chữ hoa cộng 32.",
+      "symbols": [
+        {
+          "char": "A",
+          "label": "65 / 0x41 / 0b1000001 / 0o101 — Chữ Hoa A"
+        },
+        {
+          "char": "B",
+          "label": "66 / 0x42 / 0b1000010 / 0o102 — Chữ Hoa B"
+        },
+        {
+          "char": "C",
+          "label": "67 / 0x43 / 0b1000011 / 0o103 — Chữ Hoa C"
+        },
+        {
+          "char": "M",
+          "label": "77 / 0x4D / 0b1001101 / 0o115 — Chữ Hoa M"
+        },
+        {
+          "char": "N",
+          "label": "78 / 0x4E / 0b1001110 / 0o116 — Chữ Hoa N"
+        },
+        {
+          "char": "X",
+          "label": "88 / 0x58 / 0b1011000 / 0o130 — Chữ Hoa X"
+        },
+        {
+          "char": "Y",
+          "label": "89 / 0x59 / 0b1011001 / 0o131 — Chữ Hoa Y"
+        },
+        {
+          "char": "Z",
+          "label": "90 / 0x5A / 0b1011010 / 0o132 — Chữ Hoa Z"
+        },
+        {
+          "char": "a",
+          "label": "97 / 0x61 / 0b1100001 / 0o141 — Chữ Thường A"
+        },
+        {
+          "char": "b",
+          "label": "98 / 0x62 / 0b1100010 / 0o142 — Chữ Thường B"
+        },
+        {
+          "char": "m",
+          "label": "109 / 0x6D / 0b1101101 / 0o155 — Chữ Thường M"
+        },
+        {
+          "char": "n",
+          "label": "110 / 0x6E / 0b1101110 / 0o156 — Chữ Thường N"
+        },
+        {
+          "char": "x",
+          "label": "120 / 0x78 / 0b1111000 / 0o170 — Chữ Thường X"
+        },
+        {
+          "char": "z",
+          "label": "122 / 0x7A / 0b1111010 / 0o172 — Chữ Thường Z"
+        }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "Ngoặc Vuông 91–96",
+      "h2": "Ngoặc Vuông và Dấu ASCII (91–96)",
+      "intro": "Ngoặc vuông, gạch chéo ngược, dấu mũ, gạch dưới và dấu huyền.",
+      "symbols": [
+        {
+          "char": "[",
+          "label": "91 / 0x5B / 0b1011011 / 0o133 — Ngoặc Vuông Trái"
+        },
+        {
+          "char": "\\",
+          "label": "92 / 0x5C / 0b1011100 / 0o134 — Dấu Gạch Chéo Ngược"
+        },
+        {
+          "char": "]",
+          "label": "93 / 0x5D / 0b1011101 / 0o135 — Ngoặc Vuông Phải"
+        },
+        {
+          "char": "^",
+          "label": "94 / 0x5E / 0b1011110 / 0o136 — Dấu Mũ"
+        },
+        {
+          "char": "_",
+          "label": "95 / 0x5F / 0b1011111 / 0o137 — Dấu Gạch Dưới"
+        },
+        {
+          "char": "`",
+          "label": "96 / 0x60 / 0b1100000 / 0o140 — Dấu Huyền"
+        }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "Ngoặc Nhọn 123–126",
+      "h2": "Ngoặc Nhọn và Dấu Ngã ASCII (123–126)",
+      "intro": "Những ký tự in được cuối cùng trước mã điều khiển DEL ở vị trí 127.",
+      "symbols": [
+        {
+          "char": "{",
+          "label": "123 / 0x7B / 0b1111011 / 0o173 — Ngoặc Nhọn Trái"
+        },
+        {
+          "char": "|",
+          "label": "124 / 0x7C / 0b1111100 / 0o174 — Dấu Sổ Đứng"
+        },
+        {
+          "char": "}",
+          "label": "125 / 0x7D / 0b1111101 / 0o175 — Ngoặc Nhọn Phải"
+        },
+        {
+          "char": "~",
+          "label": "126 / 0x7E / 0b1111110 / 0o176 — Dấu Ngã"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/library/ky-tu-dac-biet-unicode/",
+      "title": "Ký Tự Đặc Biệt Unicode",
+      "desc": "Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và…"
+    },
+    {
+      "href": "/vi/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật cho mọi tâm trạng. Nhấp vào mặt bất kỳ để sao chép ngay."
+    }
+  ],
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/ascii-table/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/ascii-tabelle/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/tabla-ascii/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/tabela-ascii/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/bang-ma-ascii/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/ascii-table/"
+    }
+  ]
+}

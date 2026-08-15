@@ -1,0 +1,342 @@
+{
+  "slug": "text-art",
+  "title": "Text Art : Copier-Coller de l’Art ASCII et Unicode | UltraTextGen",
+  "meta_description": "Text art à copier-coller — chats en ASCII, cœurs en braille, cadres étoilés et kaomoji classiques, plus les blocs pour dessiner le vôtre. Un clic pour copier.",
+  "canonical": "https://ultratextgen.com/fr/library/text-art/",
+  "breadcrumb": "Text Art",
+  "hero_h1": "Text Art",
+  "hero_tagline": "Des pièces d’art ASCII et Unicode prêtes à coller, plus tous les caractères de cadre, de bloc et de braille pour dessiner les vôtres. Cliquez pour copier.",
+  "intro": "Le text art (ou art ASCII) est un dessin composé uniquement de caractères — traits de cadre, blocs ombrés, points braille et symboles du clavier. Il passe partout où le texte passe : conversations Discord, salons de jeu, posts sur X, commentaires YouTube et bios en texte brut. Cette page rassemble de petites pièces prêtes à coller en un clic, ainsi que les caractères de base si vous voulez dessiner quelque chose d’original.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Traits",
+      "h2": "Caractères de Cadre",
+      "intro": "Traits, angles et jonctions — le squelette des cadres, des tableaux et du text art structuré.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Trait Horizontal Simple"
+        },
+        {
+          "char": "│",
+          "label": "Trait Vertical Simple"
+        },
+        {
+          "char": "┌",
+          "label": "Angle Haut Gauche"
+        },
+        {
+          "char": "┐",
+          "label": "Angle Haut Droit"
+        },
+        {
+          "char": "└",
+          "label": "Angle Bas Gauche"
+        },
+        {
+          "char": "┘",
+          "label": "Angle Bas Droit"
+        },
+        {
+          "char": "├",
+          "label": "Jonction à Droite"
+        },
+        {
+          "char": "┤",
+          "label": "Jonction à Gauche"
+        },
+        {
+          "char": "┼",
+          "label": "Croisement"
+        },
+        {
+          "char": "═",
+          "label": "Trait Horizontal Double"
+        },
+        {
+          "char": "║",
+          "label": "Trait Vertical Double"
+        },
+        {
+          "char": "╔",
+          "label": "Angle Double Haut Gauche"
+        },
+        {
+          "char": "╗",
+          "label": "Angle Double Haut Droit"
+        },
+        {
+          "char": "╚",
+          "label": "Angle Double Bas Gauche"
+        },
+        {
+          "char": "╝",
+          "label": "Angle Double Bas Droit"
+        }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Blocs",
+      "h2": "Caractères de Bloc et d’Ombre",
+      "intro": "Blocs pleins et ombrés pour remplir des formes et créer des dégradés dans les grandes pièces.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Bloc Plein"
+        },
+        {
+          "char": "▀",
+          "label": "Demi-Bloc Haut"
+        },
+        {
+          "char": "▄",
+          "label": "Demi-Bloc Bas"
+        },
+        {
+          "char": "▌",
+          "label": "Demi-Bloc Gauche"
+        },
+        {
+          "char": "▐",
+          "label": "Demi-Bloc Droit"
+        },
+        {
+          "char": "░",
+          "label": "Ombre Claire"
+        },
+        {
+          "char": "▒",
+          "label": "Ombre Moyenne"
+        },
+        {
+          "char": "▓",
+          "label": "Ombre Foncée"
+        },
+        {
+          "char": "▖",
+          "label": "Quadrant Bas Gauche"
+        },
+        {
+          "char": "▘",
+          "label": "Quadrant Haut Gauche"
+        }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Caractères Braille",
+      "intro": "Les motifs braille donnent au text art sa finesse maximale — presque tout l’art en points s’écrit avec eux.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Braille Point 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille Points 14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille Points 1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille Points 123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille Points 78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille Points 3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille Points 235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braille Points 12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braille Points 1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braille Points 4568"
+        }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Formes",
+      "h2": "Formes Géométriques",
+      "intro": "Des caractères géométriques simples pour les étoiles, les losanges et les détails décoratifs.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Losange Noir"
+        },
+        {
+          "char": "◇",
+          "label": "Losange Blanc"
+        },
+        {
+          "char": "●",
+          "label": "Cercle Noir"
+        },
+        {
+          "char": "○",
+          "label": "Cercle Blanc"
+        },
+        {
+          "char": "▲",
+          "label": "Triangle Noir vers le Haut"
+        },
+        {
+          "char": "△",
+          "label": "Triangle Blanc vers le Haut"
+        },
+        {
+          "char": "▼",
+          "label": "Triangle Noir vers le Bas"
+        },
+        {
+          "char": "▽",
+          "label": "Triangle Blanc vers le Bas"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Pièces d’Art",
+    "h2": "Pièces de Text Art Prêtes à Coller",
+    "intro": "Copiez une pièce complète sur plusieurs lignes en un clic — gardez le format vertical pour que les lignes restent alignées."
+  },
+  "collection_container_id": "textArtContainer",
+  "collections": [
+    {
+      "name": "Chat ASCII",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Cœur en Braille",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Pile de Losanges",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Cadre Étoilé",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀your text⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Kaomoji Classiques",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Chaîne de Montagnes",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/fr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour le…"
+    },
+    {
+      "href": "/fr/library/symboles/",
+      "title": "Symboles à copier-coller — cœurs, étoiles &amp; caractères spéciaux",
+      "desc": "La collection de symboles pour ta bio Instagram, ton pseudo, ton statut WhatsApp et tes légendes — cœurs ♡, ét…"
+    },
+    {
+      "href": "/fr/library/caracteres-speciaux/",
+      "title": "Caractères Spéciaux",
+      "desc": "Une collection de référence de symboles Unicode uniques : infini, paix, science, marques légales, décorations …"
+    }
+  ],
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-kunst/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/text-art/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ]
+}
