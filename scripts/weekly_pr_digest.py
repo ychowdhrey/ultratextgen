@@ -75,6 +75,8 @@ LANE_RULES = [
     ("character-counter/", "Category pages"),
     ("hiragana-chart/", "Category pages"),
     ("katakana-chart/", "Category pages"),
+    ("calligraphy/", "Category pages"),
+    ("fancy-letters/", "Category pages"),
     ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
     # CI audit-artifact output (css-audit.yml uploads reports/ as an
@@ -110,6 +112,8 @@ LANE_RULES = [
     ("sitemap.xml", "SEO / sitemap"),
     ("robots.txt", "SEO / sitemap"),
     ("_redirects", "Routing"),
+    ("_routes.json", "Routing"),
+    ("_headers", "Routing"),
     ("functions/", "Routing"),
     ("locales/", "i18n"),
 ]
