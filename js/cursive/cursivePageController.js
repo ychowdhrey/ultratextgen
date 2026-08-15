@@ -142,8 +142,16 @@
       png.className = "cursive-png-btn";
       png.textContent = "PNG";
       png.title = t("downloadPngTitle", "Download as PNG image");
-      png.addEventListener("click", () => downloadTextPNG(text, o.pngName || name));
+      png.addEventListener("click", () => downloadTextPNG(text, o.pngName || name, { transparent: transparentBg }));
       actions.appendChild(png);
+
+      const svg = document.createElement("button");
+      svg.type = "button";
+      svg.className = "cursive-png-btn";
+      svg.textContent = "SVG";
+      svg.title = t("downloadSvgTitle", "Download as SVG — stays sharp at any size");
+      svg.addEventListener("click", () => downloadTextSVG(text, o.pngName || name, { transparent: transparentBg }));
+      actions.appendChild(svg);
     }
 
     card.appendChild(actions);
@@ -243,15 +251,38 @@
     return out;
   }
 
+  // Shared filename slug for every signature download.
+  function sigSlug(label) {
+    return String(label || "signature").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "signature";
+  }
+
+  // Hand a Blob to the browser as a download, then release the object URL.
+  function saveBlob(blob, filename) {
+    if (!blob) return;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   // Render any text (signature, word) onto a wide canvas, scaling the font
-  // down so long names still fit, and download it as a PNG.
-  function downloadTextPNG(text, label) {
+  // down so long names still fit, and download it as a PNG. Leaving the
+  // canvas unpainted keeps the alpha channel intact, which is what makes a
+  // signature usable over a document, a photo, or a dark email footer —
+  // painting white first (the old behaviour) baked in a background that
+  // could never be removed afterwards.
+  function downloadTextPNG(text, label, opts) {
+    const o = opts || {};
     const width = 1600, height = 640, pad = 120;
     const canvas = document.createElement("canvas");
     canvas.width = width; canvas.height = height;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, width, height);
+    if (!o.transparent) {
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+    }
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     let fontSize = 220;
@@ -261,18 +292,53 @@
       fontSize = Math.max(60, Math.floor(fontSize * (width - pad * 2) / measured));
       ctx.font = "700 " + fontSize + "px " + GLYPH_FONT;
     }
-    ctx.fillStyle = "#1a1a2e";
+    ctx.fillStyle = o.ink || "#1a1a2e";
     ctx.fillText(text, width / 2, height * 0.52);
-    const slug = String(label || "signature").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "signature";
-    canvas.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "cursive-" + slug + ".png";
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }, "image/png");
+    canvas.toBlob((blob) => saveBlob(blob, "cursive-" + sigSlug(label) + ".png"), "image/png");
+  }
+
+  // Vector export. Same <text>-element approach printablesEngine.js already
+  // uses for its word outlines: native SVG, no bundled font binary, and it
+  // stays sharp at any size — which a 1600px raster cannot do when someone
+  // scales a signature up for print or a logo.
+  function downloadTextSVG(text, label, opts) {
+    const o = opts || {};
+    const width = 1600, height = 640, pad = 120;
+    // Measure with a throwaway canvas so the viewBox fits the actual glyphs.
+    const probe = document.createElement("canvas").getContext("2d");
+    let fontSize = 220;
+    probe.font = "700 " + fontSize + "px " + GLYPH_FONT;
+    const measured = probe.measureText(text).width;
+    if (measured > width - pad * 2) {
+      fontSize = Math.max(60, Math.floor(fontSize * (width - pad * 2) / measured));
+    }
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+    svg.setAttribute("width", String(width));
+    svg.setAttribute("height", String(height));
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", text);
+    if (!o.transparent) {
+      const bg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      bg.setAttribute("width", String(width));
+      bg.setAttribute("height", String(height));
+      bg.setAttribute("fill", "#ffffff");
+      svg.appendChild(bg);
+    }
+    const node = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    node.setAttribute("x", String(width / 2));
+    node.setAttribute("y", String(height * 0.52));
+    node.setAttribute("text-anchor", "middle");
+    node.setAttribute("dominant-baseline", "central");
+    node.setAttribute("font-family", GLYPH_FONT);
+    node.setAttribute("font-weight", "700");
+    node.setAttribute("font-size", String(fontSize));
+    node.setAttribute("fill", o.ink || "#1a1a2e");
+    node.textContent = text;
+    svg.appendChild(node);
+    const markup = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(svg);
+    saveBlob(new Blob([markup], { type: "image/svg+xml;charset=utf-8" }), "cursive-" + sigSlug(label) + ".svg");
   }
 
   function downloadLetterPNG(ch, glyphPair) {
@@ -492,6 +558,7 @@
 
   let activeDecorator = null;   // one of D.signatureDecorators, null = None
   let activeJoiner = ".";       // monogram-initials joiner
+  let transparentBg = true;     // PNG/SVG export background — transparent by default
 
   function renderNames() {
     if (!el.nameResults) return;
@@ -558,6 +625,15 @@
       (D.monogramJoiners || ["."]).map((j) => ({ label: "O" + j + "G", value: j })),
       (chip) => chip.value === activeJoiner,
       (chip) => { activeJoiner = chip.value; }
+    ));
+    el.sigControls.appendChild(chipRow(
+      t("backgroundLabel", "Download background"),
+      [
+        { label: t("bgTransparent", "Transparent"), value: true },
+        { label: t("bgWhite", "White"), value: false },
+      ],
+      (chip) => chip.value === transparentBg,
+      (chip) => { transparentBg = chip.value; }
     ));
   }
 

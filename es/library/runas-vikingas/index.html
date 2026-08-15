@@ -250,6 +250,21 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="rune-converter">
+  <span class="article-section-label">Conversor</span>
+  <h2>Escribe tu nombre en runas</h2>
+  <p>Escribe un nombre o una palabra para transliterarlo al futhark antiguo con las 24 runas del cuadro anterior. El resultado es texto Unicode normal, así que se copia y se pega en cualquier sitio.</p>
+  <div class="runic-converter">
+    <label class="runic-label" for="runicInput">Tu nombre o palabra</label>
+    <input type="text" class="main-input runic-input" id="runicInput" placeholder="Ragnar" maxlength="60" autocomplete="off">
+    <output class="runic-output" id="runicOutput" for="runicInput" aria-live="polite"></output>
+    <p class="runic-note" id="runicNote" hidden></p>
+    <button type="button" class="copy-btn runic-copy" id="runicCopy" disabled>Copiar</button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="mood-explainers" id="younger-futhark">
   <h2>Futhark joven</h2>
   <div class="flag-rows">
@@ -629,6 +644,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+window.runicI18n = {
+  demoName: "Ragnar",
+  copied: "Copiado",
+  sharedRune: "El futhark antiguo tiene 24 runas para 26 letras: {letters} comparten ᚲ (Kaunan).",
+  noEquivalent: "No hay equivalente en futhark antiguo para {chars}: se muestra sin cambios en lugar de sustituirlo por una runa con otro significado."
+};
+</script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/runic/runicConverter.js" defer></script>
 <script src="/footer.js"></script>
 </body>
 </html>

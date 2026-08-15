@@ -8829,6 +8829,26 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .pt-name-color input[type="color"] { width: 34px; height: 26px; padding: 0; border: 1px solid var(--border-light); border-radius: 6px; background: transparent; cursor: pointer; }
 .pt-name-solid-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; }
 
+/* Runic name converter (library/norse-viking-runes/ + locale siblings) */
+.runic-converter { display: flex; flex-direction: column; gap: 0.7rem; align-items: flex-start; margin-top: 0.9rem; }
+.runic-label { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); }
+.runic-input { max-width: 420px; }
+.runic-output {
+  display: block;
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.7rem 0.9rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  word-break: break-word;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.runic-output-demo { opacity: 0.55; }
+.runic-note { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin: 0; max-width: 60ch; }
+
 /* ---- Halfwidth/Fullwidth width converter (js/width/width-converter.js) ---- */
 .width-converter { display: flex; flex-direction: column; gap: 0.9rem; }
 .wc-directions { display: flex; gap: 0.5rem; flex-wrap: wrap; }

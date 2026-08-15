@@ -267,6 +267,21 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="rune-converter">
+  <span class="article-section-label">Converter</span>
+  <h2>Write Your Name in Runes</h2>
+  <p>Type a name or word to transliterate it into Elder Futhark, using the 24 runes charted above. The result is plain Unicode text, so it copies and pastes anywhere.</p>
+  <div class="runic-converter">
+    <label class="runic-label" for="runicInput">Your name or word</label>
+    <input type="text" class="main-input runic-input" id="runicInput" placeholder="Ragnar" maxlength="60" autocomplete="off">
+    <output class="runic-output" id="runicOutput" for="runicInput" aria-live="polite"></output>
+    <p class="runic-note" id="runicNote" hidden></p>
+    <button type="button" class="copy-btn runic-copy" id="runicCopy" disabled>Copy</button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="mood-explainers" id="younger-futhark">
   <span class="article-section-label">Younger Futhark</span>
   <h2>Younger Futhark</h2>
@@ -667,6 +682,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js" defer></script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/runic/runicConverter.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

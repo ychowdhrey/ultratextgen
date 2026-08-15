@@ -20,6 +20,8 @@
     "check:new-symbol-peer-links": "python3 scripts/check-new-symbol-peer-links.py",
     "audit:faq-schema": "node scripts/audit-faq-schema.js",
     "check:faq-schema": "node scripts/check-faq-schema.js",
+    "audit:locale-translation": "node scripts/audit-locale-translation.js",
+    "check:locale-translation": "node scripts/check-locale-translation.js",
     "audit:translation-parity": "node scripts/audit-translation-parity.js",
     "check:translation-parity": "node scripts/check-translation-parity.js",
     "sync:locale-mesh": "node scripts/sync-locale-mesh.js",

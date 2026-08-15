@@ -229,6 +229,16 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+/* Multi-line block templates: box-drawing borders only line up when every
+   cell is the same width, so these render in a monospace stack. The
+   single-line templates keep the proportional face above. */
+.bf-template-block .bf-template-text {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  word-break: normal;
+  overflow-x: auto;
+}
 
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
