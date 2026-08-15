@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "hr",
   "language": "Croatian",
-  "phrase_count": 20,
+  "phrase_count": 23,
   "phrases": [
     {
       "phrase_id": "HR-001",
@@ -216,6 +216,38 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "HR-014",
+      "native_phrase": "nick / nickovi",
+      "transliteration": "",
+      "english_concept": "in-game handle/nickname",
+      "country_or_market": "HR",
+      "register": "informal, gaming community",
+      "phrase_type": "borrowed_english_term",
+      "content_surface": "ready_made_example, faq",
+      "usage_guidance": "Useful as a secondary/informal synonym alongside 'nadimak' in gaming-specific copy (e.g. 'nadimak (nick)') to match how gamers actually talk about it in forums, without replacing 'nadimak'/'generator nadimaka' as the primary site term.",
+      "good_example": "LoL Nickovi (da se ekipa lakše skupi)",
+      "avoid_when": "formal/editorial copy, non-gaming contexts",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "HR-015",
+      "native_phrase": "klanski nadimak / klanski tag",
+      "transliteration": "",
+      "english_concept": "short clan tag / clan nickname",
+      "country_or_market": "HR",
+      "register": "informal, gaming",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "h3, ready_made_example",
+      "usage_guidance": "Use as a sub-heading for a short-nickname collection intended for clan tags, distinct from longer decorated 'aesthetic' nicknames.",
+      "good_example": "Kratki / klanski nadimci — kratko, lako pamtljivo, savršeno za klanski tag.",
+      "avoid_when": "n/a",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "HR-016",
       "native_phrase": "nadimak s razmakom",
       "transliteration": "",
@@ -326,6 +358,22 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "HR-024",
+      "native_phrase": "fensi (slova / font)",
+      "transliteration": "",
+      "english_concept": "fancy (phonetic Croatian slang, code-switched borrowing)",
+      "country_or_market": "HR",
+      "register": "informal, youth/gaming",
+      "phrase_type": "borrowed_english_term",
+      "content_surface": "title, h1, meta_description, hero_tagline",
+      "usage_guidance": "Already live as the primary head term on hr/generator-nadimaka/ (title, meta, hero) — treat as an established, working register choice for that page rather than something to replace. Don't assume it generalizes to other hr/ pages without separate evidence; it may be specific to the nickname-generator audience.",
+      "good_example": "Fensi Slova za Nadimak",
+      "avoid_when": "Formal/explanatory copy (guides, technical FAQ) where 'estetski' reads more natural.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
     }
   ]
 }

@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "hu",
   "language": "Hungarian",
-  "phrase_count": 20,
+  "phrase_count": 25,
   "phrases": [
     {
       "phrase_id": "HU-001",
@@ -168,6 +168,22 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "HU-011",
+      "native_phrase": "ernyő szimbólum / payung szimbólum",
+      "transliteration": "",
+      "english_concept": "frame/wrapper symbols used to bracket a gaming nickname (꧁꧂)",
+      "country_or_market": "HU",
+      "register": "casual, gamer",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "FAQ, symbol palette labels",
+      "usage_guidance": "Repo's own FAQ correctly explains the Javanese/Rerenggan origin and gives the community nickname ('ikerernyőre hasonlítanak' — resemble a twin umbrella) — good, accurate, and matches how these are discussed internationally (rarely a native single-word HU term beyond the descriptive 'ernyő').",
+      "good_example": "Ezek jávai Unicode karakterek (Rerenggan) — ꧁ balra és ꧂ jobbra —, amelyek ikerernyőre hasonlítanak.",
+      "avoid_when": "n/a",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "HU-012",
       "native_phrase": "Nitro nélkül",
       "transliteration": "",
@@ -182,6 +198,38 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "HU-013",
+      "native_phrase": "kiszűri a karaktereket",
+      "transliteration": "",
+      "english_concept": "a username/handle field strips out styled Unicode characters",
+      "country_or_market": "HU",
+      "register": "neutral, mildly technical",
+      "phrase_type": "problem_description",
+      "content_surface": "FAQ answers",
+      "usage_guidance": "Accurate and natural way to explain why @handles reject styled text while bio fields accept it. Used consistently across dolt-szoveg, felkover-szoveg, gotikus-betuk FAQs.",
+      "good_example": "néhány @felhasználónév mező kiszűri ezeket a karaktereket — magában a félkövér szövegben nincs semmi rossz",
+      "avoid_when": "n/a",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "HU-014",
+      "native_phrase": "ízléses vs. kockázatos",
+      "transliteration": "",
+      "english_concept": "tasteful vs. risky (styled Discord name moderation framing)",
+      "country_or_market": "HU",
+      "register": "neutral, editorial",
+      "phrase_type": "style_description",
+      "content_surface": "guide prose, comparison table",
+      "usage_guidance": "Strong, natural editorial framing native to this guide (not a borrowed structure) — correctly separates 'does it work' from 'will a mod flag it', which is the guide's whole thesis.",
+      "good_example": "Egy stilizált név nem azért kockázatos, mert díszített. Akkor kockázatos, ha...",
+      "avoid_when": "n/a",
+      "confidence": "medium",
+      "status": "approved",
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "HU-015",
@@ -326,6 +374,38 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "HU-025",
+      "native_phrase": "profilnév",
+      "transliteration": "",
+      "english_concept": "Instagram display-name field (distinct from the @handle)",
+      "country_or_market": "HU",
+      "register": "neutral",
+      "phrase_type": "platform_shorthand",
+      "content_surface": "meta description, FAQ",
+      "usage_guidance": "Correctly distinguishes the editable display-name field from the fixed @felhasználónév handle and from bió (bio) — a distinction the guide content depends on to explain where styled text does/doesn't work.",
+      "good_example": "illeszd be a stilizált betűt a bióba, a profilnévbe, a leírásba és a kommentekbe.",
+      "avoid_when": "n/a",
+      "confidence": "medium",
+      "status": "approved",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "HU-20260814-kwfdv",
+      "native_phrase": "magyar ékezetes betűtípus",
+      "transliteration": "",
+      "english_concept": "font supporting Hungarian diacritics",
+      "country_or_market": "HU",
+      "register": "neutral",
+      "phrase_type": "problem_description",
+      "content_surface": "faq, body",
+      "usage_guidance": "Frame Hungarian font-style content around full-diacritic support explicitly — this is a named, recurring requirement, not an assumption.",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "approved",
+      "last_verified": "2026-08-15"
     }
   ]
 }
