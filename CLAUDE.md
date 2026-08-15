@@ -1118,6 +1118,76 @@ entry shape.
   logic) — the audit and the enforcement gate must never define "changed" or
   "cluster" differently, so that shared logic lives in one place.
 
+### Structure is not language — the completeness gate (added 2026-08-15)
+
+Everything above compares **structure**: link sets, `<h2>`/FAQ/tile counts. A
+locale page that is 90% translated has exactly the same structure as one that is
+100% translated, so it passes. Every other gate is blind to language too — the
+mesh gate reads hrefs, the image gate reads asset paths, the FAQ gate compares a
+page against *itself*. **Nothing was checking whether a locale page is actually
+in its own language.**
+
+Three classes shipped through all five gates during the 2026-08-15 library
+expansion, each found only after the previous one was fixed:
+
+1. **Body prose.** Seven pages went live with an English intro paragraph, an
+   English combo blurb and the English "Transform text with Unicode fonts" CTA
+   card. Verification had looked at aria-labels, headings and links — all
+   genuinely complete — and nothing looked at prose.
+2. **Visible tile labels.** Every symbol tile carries its name **twice**: once in
+   `aria-label="Copy X"` and again as visible text in
+   `<span class="flag-label">X</span>`. Only the aria-label was being translated,
+   so **24 already-pushed pages showed English labels under localised buttons**.
+3. **Clipboard payloads.** `data-symbol="☑ Done"` pastes English *from a locale
+   page* — the one-click copy that is the page's whole point.
+
+The pattern is the lesson: each fix caught the surface it was written for and
+missed the next one. So the check is not pattern-based. It extracts every
+translatable string from the page's **own English parent** (via that page's
+`hreflang="en"`) and asserts that none survives verbatim.
+
+#### Tooling
+
+- **`npm run audit:locale-translation`** (`scripts/audit-locale-translation.js`)
+  — whole-site dashboard, per-locale counts, `--full` for every string,
+  `--locale <code>` to scope, `--json`/`--report` to save. Discovery tool, not in
+  CI. The first run found **2,256 of 3,580 locale pages** carrying at least one
+  English source string — led by the shared CTA paragraph on **406** pages and
+  `aria-label="Breadcrumb"` on **527**. That backlog is real and is not this
+  gate's job to clear.
+- **`npm run check:locale-translation`** (`scripts/check-locale-translation.js`)
+  — the enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  step. Diff-scoped like `check-faq-schema.js`.
+- Both share **`scripts/lib/locale-translation-audit.js`**, so "untranslated"
+  can never mean two different things.
+
+**It measures the delta, not the state** — the same reasoning as the parity
+gate's convergence carve-out, and for the same reason. Mesh, hreflang and asset
+passes legitimately touch hundreds of pages without changing a word of their
+copy; failing a PR for English it did not introduce is how a gate gets ignored.
+A string counts against a branch only if it survives **now** and did not survive
+at the merge base (compared against the base's *own* EN parent, so an English
+page growing a new string cannot silently indict every translation that hasn't
+caught up). Pre-existing survivors are **reported, never silenced** — verified
+on the branch that added this: 0 introduced, 73 pre-existing surfaced, exit 0.
+
+**Two comparison rules that are not optional.** Compare extracted string *sets*,
+never substrings — a naive `enString in localeHtml` test reports "Dove" as
+untranslated on an Italian page, because *dove* is an ordinary Italian word. And
+a candidate needs a run of four Latin letters, which is what keeps glyph tiles
+(♠ ☮ ✓) and CJK/Arabic/Cyrillic strings out of the set entirely.
+
+**`data/translation_identical_strings.json`** holds strings whose *correct*
+translation is byte-identical to the English — "Cupcake" in Dutch, "Joystick" in
+German, Jupiter/Mars/Pluto in Dutch. Each entry carries a reason and the page
+that surfaced it. It is a ledger, not a suppression list: **never add an entry to
+silence a string you have not translated** — same bar as every other ledger here.
+
+Verified per this file's own rule before being trusted (see "Adding a validator
+script is not the same as gating on it"): three defects were injected into a
+finished Japanese page — one per class above — and the gate exited 1 naming all
+three. Do not trust a future edit to it without repeating that.
+
 ### EN is the source locale — two structural carve-outs (added 2026-08-02)
 
 The rule above was written as if EN and a locale page were peers that drift
@@ -1957,6 +2027,15 @@ Standing protocol:
   `data/translation_parity_exceptions.json`. See "Translation Parity" above
   — this runs both directions (EN changed without locale catching up, or
   vice versa) and `scripts/check-translation-parity.js` enforces it in CI.
+- Do not ship a locale page that still carries English verbatim from its own EN
+  parent — not in prose, not in a visible `<span class="flag-label">` (the tile
+  name appears twice; translating only the `aria-label` leaves the visible one
+  English), and not in a `data-symbol` clipboard payload. See "Structure is not
+  language" above. `npm run check:locale-translation` gates this on every page a
+  PR touches; `npm run audit:locale-translation` gives the whole-site picture.
+  A byte-identical correct translation goes in
+  `data/translation_identical_strings.json` with its reason — never use that
+  ledger to silence a string you have not translated.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
