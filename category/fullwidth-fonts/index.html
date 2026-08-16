@@ -48,9 +48,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fullwidth Text Generator (Vaporwave) | UltraTextGen</title>
-  <meta name="description" content="Convert text into fullwidth vaporwave letters with wide, aesthetic spacing. Copy and paste ﬁ Ａ Ｅ Ｓ Ｔ Ｈ Ｅ Ｔ Ｉ Ｃ text anywhere.">
+  <meta name="description" content="Convert text into fullwidth vaporwave letters with wide, aesthetic spacing. Copy and paste Ａ Ｅ Ｓ Ｔ Ｈ Ｅ Ｔ Ｉ Ｃ text anywhere — or convert fullwidth back to halfwidth.">
   <link rel="canonical" href="https://ultratextgen.com/category/fullwidth-fonts/">
 <link rel="alternate" hreflang="en" href="https://ultratextgen.com/category/fullwidth-fonts/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/hankaku-zenkaku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/jeongak-bangak/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/category/fullwidth-fonts/">
   <meta property="og:title" content="Fullwidth Text Generator (Vaporwave) | UltraTextGen">
   <meta property="og:description" content="Turn plain text into wide fullwidth vaporwave letters you can copy and paste.">
@@ -98,6 +100,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {"@type": "Question", "name": "How do I convert fullwidth text back to normal (halfwidth)?", "acceptedAnswer": {"@type": "Answer", "text": "Use the Fullwidth ⇔ Halfwidth converter on this page: choose “To Halfwidth” and paste your text. It converts fullwidth letters, digits, punctuation and spaces back to their normal forms, and can also convert halfwidth katakana in either direction."}},
     {"@type":"Question","name":"What is fullwidth text?","acceptedAnswer":{"@type":"Answer","text":"Fullwidth text uses Unicode “fullwidth” forms of normal letters and numbers. Each character takes a full CJK-width cell, which creates the wide, spaced-out vaporwave look."}},
     {"@type":"Question","name":"Does fullwidth text work everywhere?","acceptedAnswer":{"@type":"Answer","text":"Yes. Fullwidth characters are part of core Unicode and render on almost every platform, including Instagram, TikTok, X, WhatsApp, and Discord."}},
     {"@type":"Question","name":"Why is it called vaporwave text?","acceptedAnswer":{"@type":"Answer","text":"The wide spacing became a signature of vaporwave aesthetics online, so fullwidth text is often searched for as “vaporwave” or “aesthetic” text."}}
@@ -133,20 +136,41 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="breadcrumb-current">Fullwidth Fonts</span>
 </nav>
 
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/category-fullwidth-fonts.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Fullwidth Text Generator</h1>
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea><span class="char-count"><span id="charCount">0</span>/500</span></div>
   <div class="decoration-section"><div class="decoration-label">Add decoration to results</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symbols</button><button class="decoration-tab" data-deco-tab="frames">Frames</button><button class="decoration-tab" data-deco-tab="emojis">Emojis</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/category-fullwidth-fonts.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
 
 
 <main class="container">
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
+
+
+    <section class="editorial-section" id="halfwidth-converter">
+      <h2>Fullwidth ⇔ Halfwidth Converter</h2>
+      <p>Need the reverse direction? Paste text below to convert between halfwidth and
+      fullwidth forms — letters, digits, punctuation, spaces, even halfwidth katakana
+      (ｶ + ﾞ fuses into ガ, and splits back the other way). Pick which character
+      classes to touch; everything else passes through unchanged.</p>
+      <div class="width-converter" data-width-converter>
+    <div class="wc-directions"><label class="wc-dir-option"><input type="radio" name="wc-dir" value="half"> To Halfwidth</label><label class="wc-dir-option"><input type="radio" name="wc-dir" value="full" checked> To Fullwidth</label></div>
+    <div class="wc-classes"><label class="wc-class-option"><input type="checkbox" data-wc-class="alnum" checked> Letters &amp; digits</label><label class="wc-class-option"><input type="checkbox" data-wc-class="punct" checked> Punctuation</label><label class="wc-class-option"><input type="checkbox" data-wc-class="space" checked> Spaces</label><label class="wc-class-option"><input type="checkbox" data-wc-class="kana" checked> Katakana</label></div>
+    <div class="wc-io">
+      <textarea class="wc-input" placeholder="Paste your text here…" maxlength="5000"></textarea>
+      <textarea class="wc-output" readonly aria-label="Converted text"></textarea>
+    </div>
+    <div class="wc-footer">
+      <span class="wc-counts">fullwidth <strong data-wc-count-full>0</strong> · halfwidth <strong data-wc-count-half>0</strong> · approx. bytes (Shift-JIS) <strong data-wc-count-bytes>0</strong></span>
+      <button class="wc-copy" type="button" data-copied-label="Copied!">Copy result</button>
+    </div>
+  </div>
+    </section>
 
     <!-- Related links -->
     <section class="editorial-section">
@@ -170,6 +194,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <footer class="footer"><div class="footer-inner">
   <h2 class="faq-category">Fullwidth &amp; Vaporwave Tips</h2>
+  <div class="faq-item"><button class="faq-question" type="button">How do I convert fullwidth text back to normal (halfwidth)?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Use the Fullwidth ⇔ Halfwidth converter on this page: choose “To Halfwidth” and paste your text. It converts fullwidth letters, digits, punctuation and spaces back to their normal forms, and can also convert halfwidth katakana in either direction.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">What is fullwidth text?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Fullwidth text uses Unicode “fullwidth” forms of normal letters and numbers. Each character takes a full CJK-width cell, which creates the wide, spaced-out vaporwave look.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Does fullwidth text work everywhere?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yes. Fullwidth characters are part of core Unicode and render on almost every platform, including Instagram, TikTok, X, WhatsApp, and Discord.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Why is it called vaporwave text?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">The wide spacing became a signature of vaporwave aesthetics online, so fullwidth text is often searched for as “vaporwave” or “aesthetic” text.</div></div>

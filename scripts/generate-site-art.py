@@ -1411,6 +1411,10 @@ PAGES = {
   "hr-generator-nadimaka": ("Generator Nadimaka", "Fensi nadimci za igre", m_trophy, K_USE),
   "hr-posebni-znakovi": ("Posebni Znakovi", "Simboli za kopiranje", m_grid, K_LIB),
 
+  # ---- half/full-width converter pair (ja/ko, 2026-08-15) ----
+  "ja-hankaku-zenkaku": ("半角・全角変換", "英数字・カタカナ・記号を一括変換", m_transform, K_USE),
+  "ko-jeongak-bangak": ("전각·반각 변환기", "영문·숫자·기호·자모 일괄 변환", m_transform, K_USE),
+
   # ---- zh-tw (Traditional Chinese / Taiwan) pilot locale ----
   # Root gets the highest-opportunity keyword for this market (kaomoji,
   # per data/tw_piliapp_niche_keywords research: 110K volume, incumbent

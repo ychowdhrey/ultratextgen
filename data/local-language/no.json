@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "no",
   "language": "Norwegian",
-  "phrase_count": 15,
+  "phrase_count": 25,
   "phrases": [
     {
       "phrase_id": "NO-001",
@@ -56,6 +56,22 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "NO-004",
+      "native_phrase": "kursiv",
+      "transliteration": "",
+      "english_concept": "italic (slanted) typeface style — the TRUE dictionary meaning of 'kursiv' in Norwegian",
+      "country_or_market": "NO",
+      "register": "neutral, formal-adjacent (typography/editorial term)",
+      "phrase_type": "standard_everyday_term",
+      "content_surface": "category page, FAQ, editorial",
+      "usage_guidance": "Standard Norwegian dictionary/editorial term. Confirmed directly: korrekturavdelingen.no opens with 'Kursiv er skråstilt tekst' (kursiv is slanted text) and defines it purely as the italic typeface tradition (chancery-hand-derived slanted type), with no mention of cursive/joined handwriting. Reserve 'kursiv' for the ITALIC font family/style only.",
+      "good_example": "Kursiv er skråstilt tekst.",
+      "avoid_when": "Never use 'kursiv' to label a flowing/joined cursive-script Unicode style (𝓬𝓾𝓻𝓼𝓲𝓿𝓮) — that is a different concept in Norwegian. See NO-005.",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "NO-006",
       "native_phrase": "spesialtegn",
       "transliteration": "",
@@ -69,7 +85,7 @@
       "avoid_when": "",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-14"
     },
     {
       "phrase_id": "NO-007",
@@ -118,6 +134,54 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "NO-011",
+      "native_phrase": "kult",
+      "transliteration": "",
+      "english_concept": "cool (name/style quality)",
+      "country_or_market": "NO",
+      "register": "casual, colloquial",
+      "phrase_type": "colloquial_term",
+      "content_surface": "generator FAQ/example copy",
+      "usage_guidance": "Natural casual descriptor when a forum user asks for name ideas. Safe for informal generator-example copy, gaming pages; avoid in formal/accessibility explainer sections.",
+      "good_example": "noen 'kult' eller spessielt (gaming-name request thread)",
+      "avoid_when": "Formal/legal/accessibility copy.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "NO-012",
+      "native_phrase": "orginalt / unikt",
+      "transliteration": "",
+      "english_concept": "unique / not common (desired quality of a name/style, distinct from generic 'unique')",
+      "country_or_market": "NO",
+      "register": "casual",
+      "phrase_type": "style_description",
+      "content_surface": "generator prose, gaming-name pages",
+      "usage_guidance": "The way Norwegian gamers actually phrase the 'unique/not common' idea is negatively framed — 'not what hundreds of others already have' — rather than a single adjective. Good raw material for FAQ/prose on a gaming-name generator page: address the 'will this look like everyone else's' worry directly rather than just claiming 'unique'.",
+      "good_example": "Finn noe orginalt, noe ikke flere hundre andre har allerede.",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "NO-014",
+      "native_phrase": "klan navn / klantag",
+      "transliteration": "",
+      "english_concept": "clan name / clan tag",
+      "country_or_market": "NO",
+      "register": "casual",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "gaming-name generator prose",
+      "usage_guidance": "Recurring, sustained forum topic across many years (threads from 2007 through 2020s) — 'klan navn' is the standard term; tags are conventionally wrapped in brackets or asterisks before/around the name, e.g. '[KIMS]', '{NV}', '*KIMS*'. Relevant if a clan/tag-generator feature is ever scoped for NO.",
+      "good_example": "stilig navn på klan?",
+      "avoid_when": "",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
     },
     {
       "phrase_id": "NO-015",
@@ -216,6 +280,22 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "NO-022",
+      "native_phrase": "kjælenavn",
+      "transliteration": "",
+      "english_concept": "pet name / term of endearment for a romantic partner",
+      "country_or_market": "NO",
+      "register": "casual, intimate",
+      "phrase_type": "relationship_or_identity_phrase",
+      "content_surface": "romantic/relationship-naming feature copy (does not currently exist on no/)",
+      "usage_guidance": "The correct, distinct NO term for a romantic pet name (not the same as 'kallenavn', which is a generic nickname). Confirmed via VG (major Norwegian newspaper) editorial coverage citing real examples: 'pus', 'skatt', 'trusepus'. Relevant if any romantic/relationship-address naming content is ever built for NO — do not substitute the generic 'kallenavn'.",
+      "good_example": "Kjælenavn på kjæresten styrker forholdet (VG headline)",
+      "avoid_when": "Do not use 'kallenavn' as a substitute when the context is specifically romantic.",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "NO-023",
       "native_phrase": "zalgo-tekst",
       "transliteration": "",
@@ -232,6 +312,22 @@
       "last_verified": "2026-07-25"
     },
     {
+      "phrase_id": "NO-024",
+      "native_phrase": "vises som firkanter / rare tegn",
+      "transliteration": "",
+      "english_concept": "text rendering as boxes/squares/question marks (missing glyph / 'tofu' problem)",
+      "country_or_market": "NO",
+      "register": "neutral, casual",
+      "phrase_type": "problem_description",
+      "content_surface": "guide/FAQ troubleshooting prose",
+      "usage_guidance": "The site's homepage FAQ already covers this concept ('Ruter, tomme blokker eller spørsmålstegn') without using the exact phrase 'firkanter' — real Norwegian users describe the same failure as text turning into 'rare tegn' (weird characters) or, per Dagbladet mainstream coverage of the emoji version of this problem, 'en firkant med spørsmålstegn i' (a square with a question mark in it). Both are natural, safe troubleshooting phrasings.",
+      "good_example": "Får du bare opp en firkant med spørsmålstegn i? (Dagbladet)",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "approved",
+      "last_verified": "2026-08-15"
+    },
+    {
       "phrase_id": "NO-025",
       "native_phrase": "bio",
       "transliteration": "",
@@ -246,6 +342,70 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "NO-026",
+      "native_phrase": "klø seg i hodet",
+      "transliteration": "",
+      "english_concept": "idiom for confused/frustrated head-scratching over a tech problem",
+      "country_or_market": "NO",
+      "register": "informal, conversational blog voice",
+      "phrase_type": "idiom",
+      "content_surface": "authentic voice/idiom for describing user frustration with input methods",
+      "usage_guidance": "",
+      "good_example": "",
+      "avoid_when": "formal/technical documentation register",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "NO-028",
+      "native_phrase": "navn i runer / navnet i runer",
+      "transliteration": "",
+      "english_concept": "name in runes -- the natural NO compound for transliterating a name into runic script",
+      "country_or_market": "NO",
+      "register": "neutral",
+      "phrase_type": "compound noun phrase, niche/heritage",
+      "content_surface": "vocabulary anchor if this heritage-adjacent niche is ever evaluated further",
+      "usage_guidance": "",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "NO-029",
+      "native_phrase": "langkvistruner / kortkvistruner (normalruner / stuttruner)",
+      "transliteration": "",
+      "english_concept": "Younger Futhark rune-system sub-variant names (long-branch / short-twig runes)",
+      "country_or_market": "NO",
+      "register": "neutral, slightly academic",
+      "phrase_type": "technical/heritage taxonomy term",
+      "content_surface": "precise native terminology for Younger Futhark sub-variants, in case accuracy is needed for any rune-adjacent content",
+      "usage_guidance": "",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "NO-030",
+      "native_phrase": "kule bokstaver",
+      "transliteration": "",
+      "english_concept": "cool/decorative letters — the vernacular anchor phrase for the fancy-font job",
+      "country_or_market": "NO",
+      "register": "casual, mainstream",
+      "phrase_type": "colloquial_term",
+      "content_surface": "title/H1/hero, body copy",
+      "usage_guidance": "Strong candidate for the NO homepage/hero title — found independently, 3 years apart, in two unrelated communities (gaming forum 2006, wedding-planning forum 2009), which is a better real-language signal than a single-source hit.",
+      "good_example": "",
+      "avoid_when": "",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-15"
     }
   ]
 }

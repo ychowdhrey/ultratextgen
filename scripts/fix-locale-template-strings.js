@@ -49,18 +49,27 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
-// aria-label on the breadcrumb <nav>. h = harvested from the site's own pages.
+// aria-label on the breadcrumb <nav>.
+//
+// A parallel session shipped the same breadcrumb pass as PR #771 while this one
+// was open, and the two agreed on 23 of 30 values independently — which is the
+// best evidence available that those 23 are right. The 7 that differed (bs, fi,
+// id, ms, ro, sr, tr) are reconciled here ONTO PR #771's choice, because that is
+// what is live; a merge conflict is the wrong place to relitigate wording.
+//
+// This table must keep matching what shipped, or re-running the script would
+// silently revert someone else's merged decision.
 const BREADCRUMB = {
-  ar: 'مسار التنقّل',           bs: 'Putanja navigacije',   cs: 'Drobečková navigace',
+  ar: 'مسار التنقّل',           bs: 'Navigacijski trag',    cs: 'Drobečková navigace',
   da: 'Brødkrummesti',          de: 'Brotkrümelnavigation', es: 'Ruta de navegación',
-  fi: 'Murupolku',              fr: "Fil d'Ariane",         hi: 'नेविगेशन पथ',
-  hr: 'Navigacijski trag',      hu: 'Morzsamenü',           id: 'Navigasi remah roti',
+  fi: 'Navigointipolku',        fr: "Fil d'Ariane",         hi: 'नेविगेशन पथ',
+  hr: 'Navigacijski trag',      hu: 'Morzsamenü',           id: 'Remah roti',
   it: 'Percorso di navigazione', ja: 'パンくずリスト',        ko: '탐색 경로',
-  ms: 'Navigasi remah roti',    nl: 'Kruimelpad',           no: 'Brødsmulesti',
-  pl: 'Ścieżka nawigacji',      pt: 'Trilha de navegação',  ro: 'Traseu de navigare',
-  ru: 'Хлебные крошки',         sk: 'Navigačná cesta',      sr: 'Putanja navigacije',
+  ms: 'Remah roti',             nl: 'Kruimelpad',           no: 'Brødsmulesti',
+  pl: 'Ścieżka nawigacji',      pt: 'Trilha de navegação',  ro: 'Fir de navigare',
+  ru: 'Хлебные крошки',         sk: 'Navigačná cesta',      sr: 'Putanja',
   sv: 'Brödsmulor',             th: 'เส้นทางนำทาง',          tl: 'Landas ng nabigasyon',
-  tr: 'İçerik haritası',        vi: 'Đường dẫn',            'zh-tw': '麵包屑導覽'
+  tr: 'Gezinme yolu',           vi: 'Đường dẫn',            'zh-tw': '麵包屑導覽'
 };
 
 // aria-label on the language-switcher container.
