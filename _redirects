@@ -160,10 +160,16 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # simbolo-de-grado = copy-paste collection framing). 0010bce41 (2026-07-23)
 # picked signo-de-grado as the closer symbol/-scope match but only touched
 # 2 of the cluster's 18 pages; 016abfdab (2026-07-25) reintroduced the
-# duplicate across the rest. Retired simbolo-de-grado for good this time —
-# deduped hreflang on all 18 cluster members, repointed every internal link.
-/es/symbol/simbolo-de-grado/             /es/symbol/signo-de-grado/  301
-/es/symbol/simbolo-de-grado/index.html   /es/symbol/signo-de-grado/  301
+# duplicate across the rest.
+# CORRECTION 2026-08-16: the simbolo-de-grado -> signo-de-grado rules that
+# lived here were REMOVED. The 2026-08-03 duplicate-claimant merge (see its
+# block near the end of this file) reversed the survivor on Semrush evidence
+# — simbolo-de-grado won, 16,700/mo vs 9,500/mo — but these earlier
+# opposite-direction rules were left behind, and first-match-wins turned the
+# pair into a live redirect LOOP (simbolo -> signo -> simbolo): both URLs
+# served ERR_TOO_MANY_REDIRECTS from 2026-08-03 until this fix. Verified by
+# live curl in both directions before removal. Lesson: reversing a survivor
+# decision must delete the losing direction's rules, not just add new ones.
 
 # Library → Symbol pillar (i18n): single-glyph translated pages shipped under
 # <lang>/library/ instead of <lang>/symbol/ (see docs/unicode-library-workflow.md §7).
@@ -184,8 +190,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/library/signo-de-euro/index.html        /es/symbol/signo-de-euro/                  301
 /es/library/signo-de-libra/                 /es/symbol/signo-de-libra/                 301
 /es/library/signo-de-libra/index.html       /es/symbol/signo-de-libra/                 301
-/es/library/simbolo-de-grado/               /es/symbol/signo-de-grado/                 301
-/es/library/simbolo-de-grado/index.html     /es/symbol/signo-de-grado/                 301
+/es/library/simbolo-de-grado/               /es/symbol/simbolo-de-grado/               301
+/es/library/simbolo-de-grado/index.html     /es/symbol/simbolo-de-grado/               301
 /es/library/simbolo-de-infinito/            /es/symbol/simbolo-de-infinito/            301
 /es/library/simbolo-de-infinito/index.html  /es/symbol/simbolo-de-infinito/            301
 /id/library/simbol-derajat/                 /id/symbol/simbol-derajat/                 301
