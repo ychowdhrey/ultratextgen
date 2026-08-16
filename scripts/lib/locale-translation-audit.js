@@ -73,6 +73,59 @@ const UNIVERSAL_ALLOW = new RegExp(
 );
 
 /**
+ * Strings that are FORMAL IDENTIFIERS, not English prose. Translating any of
+ * these breaks the page, so they can never be translation debt.
+ *
+ * The rules were derived by reading the strings a whole-site run actually
+ * produced, not reasoned up front — see the audit doc's taxonomy. Between them
+ * they account for ~2,160 of the occurrences a naive comparison reports.
+ */
+const IDENTIFIER_RULES = [
+  // Unicode codepoint names: "Thin Space — U+2009", "Black Chess Pawn (U+265F)"
+  [/U\+[0-9A-Fa-f]{4}/, 'unicode-codepoint'],
+  // literal CSS/LaTeX the reader copies: content: "\007C", \sqrt{x}, \surd
+  [/content:\s*"|\\|\{|\}|&#/, 'code-literal'],
+  // key names are not localised on the keyboard itself
+  [/\b(?:Option|Alt|Ctrl|Cmd|Shift|Fn)\s*\+/, 'keyboard-shortcut'],
+  [/&(?:amp;)?[a-zA-Z]{2,6};/, 'html-entity'],
+  // Markdown/formatting examples, where the syntax IS the content
+  [/\*\*|__|~~|`/, 'markdown-syntax']
+];
+
+/** ALL-CAPS formal Unicode character names: DIVISION SIGN, SQUARE ROOT. */
+function isFormalUnicodeName(s) {
+  return s === s.toUpperCase() && /[A-Z]/.test(s) && s.split(/\s+/).length <= 4;
+}
+
+function identifierClass(s) {
+  for (const [re, name] of IDENTIFIER_RULES) if (re.test(s)) return name;
+  if (isFormalUnicodeName(s)) return 'formal-unicode-name';
+  return null;
+}
+
+/**
+ * Slots whose text is page COPY (a heading, a card title, a section label, an
+ * announced label). Everything else — prose, table cells, list items — can
+ * legitimately carry a cited identifier in the middle of translated text.
+ *
+ * This split is what lets a Unicode block name be exempt in
+ * `<td>Latin-1 Supplement</td>` while the same words stay a real defect in
+ * `<h4>Currency Symbols</h4>`, which is a related-card heading linking to the
+ * currency-symbols library page. Both occur on this site; a string-level
+ * exemption would wrongly clear 14 genuine card headings.
+ */
+const COPY_SLOT_EXTRACTORS = [
+  /<title>([\s\S]*?)<\/title>/g,
+  /name="description" content="([^"]*)"/g,
+  /<h1[^>]*>([\s\S]*?)<\/h1>/g,
+  /<h2[^>]*>([\s\S]*?)<\/h2>/g,
+  /<h3[^>]*>([\s\S]*?)<\/h3>/g,
+  /<h4[^>]*>([\s\S]*?)<\/h4>/g,
+  /class="article-section-label"[^>]*>([\s\S]*?)</g,
+  /aria-label="([^"]*)"/g
+];
+
+/**
  * Every surface a reader can see or a screen reader can speak. Order does not
  * matter — results go into a set.
  *
@@ -80,13 +133,7 @@ const UNIVERSAL_ALLOW = new RegExp(
  * to the clipboard, so an untranslated payload is a worse defect than an
  * untranslated label, not a lesser one.
  */
-const EXTRACTORS = [
-  /<title>([\s\S]*?)<\/title>/g,
-  /name="description" content="([^"]*)"/g,
-  /<h1[^>]*>([\s\S]*?)<\/h1>/g,
-  /<h2[^>]*>([\s\S]*?)<\/h2>/g,
-  /<h3[^>]*>([\s\S]*?)<\/h3>/g,
-  /<h4[^>]*>([\s\S]*?)<\/h4>/g,
+const BODY_SLOT_EXTRACTORS = [
   /<p[^>]*>([\s\S]*?)<\/p>/g,
   /<li[^>]*>([\s\S]*?)<\/li>/g,
   /<th[^>]*>([\s\S]*?)<\/th>/g,
@@ -95,11 +142,11 @@ const EXTRACTORS = [
   /<figcaption[^>]*>([\s\S]*?)<\/figcaption>/g,
   /<button[^>]*>([\s\S]*?)<\/button>/g,
   /<span class="[^"]*label"[^>]*>([\s\S]*?)<\/span>/g,
-  /class="article-section-label"[^>]*>([\s\S]*?)</g,
-  /aria-label="([^"]*)"/g,
   /data-symbol="([^"]*)"/g,
   /\bname:\s*"([^"]*)"/g
 ];
+
+const EXTRACTORS = [...COPY_SLOT_EXTRACTORS, ...BODY_SLOT_EXTRACTORS];
 
 function stripTags(s) {
   return s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -124,10 +171,9 @@ function bodyOf(html) {
  * and CJK/Arabic/Cyrillic strings that contain no Latin at all — those cannot
  * be "untranslated English" in any useful sense.
  */
-function translatableStrings(html) {
-  const body = bodyOf(html);
+function extractWith(patterns, body) {
   const out = new Set();
-  for (const re of EXTRACTORS) {
+  for (const re of patterns) {
     re.lastIndex = 0;
     let m;
     while ((m = re.exec(body)) !== null) {
@@ -138,6 +184,96 @@ function translatableStrings(html) {
       out.add(text);
     }
   }
+  return out;
+}
+
+function translatableStrings(html) {
+  return extractWith(EXTRACTORS, bodyOf(html));
+}
+
+/** Only the strings sitting in a copy slot — headings, card titles, aria-labels. */
+function copySlotStrings(html) {
+  return extractWith(COPY_SLOT_EXTRACTORS, bodyOf(html));
+}
+
+/**
+ * Unicode block names, harvested from the ENGLISH pages' own "Unicode block"
+ * property rows rather than hardcoded. Self-sourcing for the same reason
+ * generate-site-art.py reads a page's own tiles: the site is the authority on
+ * which blocks it actually cites, and the list maintains itself.
+ *
+ * These stay English by decision (2026-08-15): a Unicode block is a proper name
+ * in the standard, and the other Latin-script languages on this site cite it by
+ * that name inside otherwise-translated prose — Spanish "en el bloque Latin-1
+ * Supplement", French "du bloc « Latin-1 Supplement »", German "im Block
+ * Currency Symbols von Unicode". Several locales even set it in citation quotes,
+ * which is the tell that it is being quoted, not left untranslated.
+ */
+/**
+ * Place names, harvested from the English emoji-flags page's own registry.
+ *
+ * Same decision and same reasoning as the block names above: a country is a
+ * proper name, and where the target language uses that same name there is
+ * nothing to translate. Verified rather than assumed before exempting them —
+ * the flag pages translate every name that DOES differ (Germany→Duitsland in
+ * Dutch, →Germania in Italian, →Đức in Vietnamese) and keep only the ones that
+ * genuinely coincide. Those pages were the three worst in the first whole-site
+ * run precisely BECAUSE they are complete: a fully-translated 200-tile page
+ * throws more identical-name coincidences than a half-translated 20-tile one.
+ */
+let placeCache = null;
+function placeNames(root = ROOT) {
+  if (placeCache) return placeCache;
+  const out = new Set(['Africa', 'Asia', 'Oceania', 'Europe', 'Americas', 'Antarctica']);
+  try {
+    const src = fs.readFileSync(path.join(root, 'library', 'emoji-flags', 'index.html'), 'utf8');
+    // The JS registry holds the 202 countries; the hand-written tiles above it
+    // hold the rest (Scotland, Wales, England — subdivisions with their own flag
+    // but no row in the registry). Both are read, and ONLY from this page, so a
+    // flag-label on any other page still means an ordinary tile name.
+    for (const re of [/\bname:\s*"([^"]*)"/g, /<span class="flag-label"[^>]*>([\s\S]*?)<\/span>/g]) {
+      let m;
+      while ((m = re.exec(src)) !== null) {
+        const v = stripTags(m[1]);
+        if (v) out.add(v);
+      }
+    }
+  } catch {
+    /* best effort */
+  }
+  placeCache = out;
+  return out;
+}
+
+let blockCache = null;
+function unicodeBlockNames(root = ROOT) {
+  if (blockCache) return blockCache;
+  const out = new Set();
+  const walkEn = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        if (e.name.startsWith('.') || e.name === 'node_modules') continue;
+        // English pages only — a locale directory cannot define the canonical name
+        if (dir === root && /^[a-z]{2}(-[a-z]{2})?$/.test(e.name) && e.name !== 'js') continue;
+        walkEn(p);
+      } else if (e.name === 'index.html') {
+        const html = fs.readFileSync(p, 'utf8');
+        const re = /<td>Unicode block<\/td>\s*<td>([\s\S]*?)<\/td>/gi;
+        let m;
+        while ((m = re.exec(html)) !== null) {
+          const v = stripTags(m[1]);
+          if (v) out.add(v);
+        }
+      }
+    }
+  };
+  try {
+    walkEn(root);
+  } catch {
+    /* best effort — an unreadable tree just means no exemptions */
+  }
+  blockCache = out;
   return out;
 }
 
@@ -179,18 +315,39 @@ function loadLedger() {
  * The core comparison, on two HTML strings rather than two paths, so callers
  * can feed it git blobs as easily as files on disk.
  */
-function auditPair(localeHtml, parentHtml, locale) {
+function auditPair(localeHtml, parentHtml, locale, { root = ROOT } = {}) {
   const en = translatableStrings(parentHtml);
   const loc = translatableStrings(localeHtml);
   const ledger = loadLedger().get(locale) || new Set();
+  const properNames = new Set([...unicodeBlockNames(root), ...placeNames(root)]);
+  const copySlots = copySlotStrings(localeHtml);
   const survivors = [];
   const ledgered = [];
+  const identifiers = [];
   for (const s of en) {
     if (!loc.has(s)) continue;
-    (ledger.has(s) ? ledgered : survivors).push(s);
+    if (ledger.has(s)) {
+      ledgered.push(s);
+      continue;
+    }
+    const cls = identifierClass(s);
+    if (cls) {
+      identifiers.push(s);
+      continue;
+    }
+    // A proper name — a Unicode block, a country — is exempt only where it is
+    // CITED: in prose, a table cell, a tile label. The same words in a heading
+    // or card title are page copy and stay a defect. Both occur here:
+    // "Currency Symbols" is a cited block name in a <td> on symbol pages AND a
+    // related-card <h4> on 14 others.
+    if (properNames.has(s) && !copySlots.has(s)) {
+      identifiers.push(s);
+      continue;
+    }
+    survivors.push(s);
   }
   survivors.sort();
-  return { survivors, ledgered, enCount: en.size };
+  return { survivors, ledgered, identifiers, enCount: en.size };
 }
 
 /**
@@ -215,19 +372,26 @@ function auditLocalePage(relPath, { root = ROOT, readFile } = {}) {
   const parentPath = path.join(root, parentRel);
   if (!fs.existsSync(parentPath)) return { status: 'parent-missing', locale, parent: parentRel };
 
-  const { survivors, ledgered, enCount } = auditPair(html, read(parentPath), locale);
+  const { survivors, ledgered, identifiers, enCount } = auditPair(
+    html, read(parentPath), locale, { root }
+  );
   return {
     status: survivors.length ? 'untranslated' : 'ok',
     locale,
     parent: parentRel,
     survivors,
     ledgered,
+    identifiers,
     enCount
   };
 }
 
 module.exports = {
   auditPair,
+  identifierClass,
+  unicodeBlockNames,
+  placeNames,
+  copySlotStrings,
   auditLocalePage,
   translatableStrings,
   englishParentOf,

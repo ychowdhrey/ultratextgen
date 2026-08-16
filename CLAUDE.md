@@ -1183,6 +1183,36 @@ German, Jupiter/Mars/Pluto in Dutch. Each entry carries a reason and the page
 that surfaced it. It is a ledger, not a suppression list: **never add an entry to
 silence a string you have not translated** — same bar as every other ledger here.
 
+**A formal identifier is not English (decided 2026-08-15).** A Unicode block
+name, a Unicode character name, a CSS/LaTeX literal, a keyboard shortcut, an
+HTML entity and a country name are all *proper names or code*, and the other
+Latin-script languages here cite them by that same name inside otherwise
+translated prose — Spanish "en el bloque Latin-1 Supplement", French "du bloc
+« Latin-1 Supplement »", German "im Block Currency Symbols von Unicode". Several
+locales set them in citation quotes, which is the tell. They never count as debt,
+and the rules live in `scripts/lib/locale-translation-audit.js` rather than in an
+analyst's script, so the number does not have to be re-derived each time.
+
+**The exemption is scoped by slot, not by string, and that distinction is
+load-bearing.** A proper name is exempt where it is *cited* — prose, a table
+cell, a tile label — but stays a defect in a heading, card title, section label
+or `aria-label`, because those are page copy. Both cases exist on this site at
+once: `Currency Symbols` is a cited Unicode block name in a `<td>` on
+`symbol/bitcoin-symbol` **and** a related-card `<h4>` on 14 other pages. A
+string-level exemption would silently clear those 14 real defects; verify any
+change to this rule against exactly that pair.
+
+Both lists are **harvested from the site's own English pages** — block names from
+`<td>Unicode block</td>` property rows, country names from
+`library/emoji-flags`'s own registry — never hardcoded, for the same reason
+`generate-site-art.py` reads a page's own tiles: the site is the authority on
+what it cites, and the list maintains itself.
+
+**Do not widen this into "descriptive" names.** Title-case renderings of Unicode
+character names (`Heavy Check Mark`, `Downwards Arrow From Bar`) are **not**
+exempt — this site translates them everywhere else, so they are ordinary debt.
+Only the ALL-CAPS formal form (`DIVISION SIGN`) is an identifier.
+
 Verified per this file's own rule before being trusted (see "Adding a validator
 script is not the same as gating on it"): three defects were injected into a
 finished Japanese page — one per class above — and the gate exited 1 naming all
