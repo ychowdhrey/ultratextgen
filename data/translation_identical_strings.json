@@ -7,6 +7,26 @@
     "added": "YYYY-MM-DD"
   },
   "entries": {
+    "ar": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "ar/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "ar/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "ar/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
     "de": [
       {
         "string": "Clown Emoji &amp; Kaomoji",
@@ -99,6 +119,58 @@
         "added": "2026-08-15"
       }
     ],
+    "es": [
+      {
+        "string": "Katakana N",
+        "reason": "the romanised name of the kana ン — a letter name, identical in every Latin-script language",
+        "found_on": "es/library/simbolos-para-fortnite/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Katakana So",
+        "reason": "the romanised name of the kana ソ — a letter name, identical in every Latin-script language",
+        "found_on": "es/library/simbolos-para-fortnite/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "es/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "es/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "es/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
+    "fr": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "fr/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "fr/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "fr/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
     "id": [
       {
         "string": "Breadcrumb ›",
@@ -107,9 +179,45 @@
         "added": "2026-08-16"
       },
       {
+        "string": "Bullseye",
+        "reason": "kept by the page's own translator alongside fully translated neighbours (Pedang Bersilang, Kena Sasaran); \"bullseye\" is the term Indonesian gaming copy uses",
+        "found_on": "id/library/simbol-fortnite/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Dropdown ▾",
         "reason": "same section, same reason — 'dropdown' is the term used in Indonesian interface copy, not a missed translation",
         "found_on": "id/library/simbol-panah/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Katakana N",
+        "reason": "the romanised name of the kana ン — a letter name, identical in every Latin-script language",
+        "found_on": "id/library/simbol-fortnite/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Katakana So",
+        "reason": "the romanised name of the kana ソ — a letter name, identical in every Latin-script language",
+        "found_on": "id/library/simbol-fortnite/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "id/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "id/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "id/answers/what-font-does-whatsapp-use/",
         "added": "2026-08-16"
       }
     ],
@@ -145,6 +253,24 @@
         "added": "2026-08-15"
       },
       {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "it/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "it/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "it/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "XOXO",
         "reason": "an initialism, not translated",
         "found_on": "it/library/emoji-bacio/",
@@ -164,6 +290,24 @@
       }
     ],
     "ja": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "ja/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "ja/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "ja/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      },
       {
         "string": "XOXO",
         "reason": "an initialism, kept in Latin script in Japanese copy",
@@ -251,6 +395,30 @@
         "added": "2026-08-15"
       },
       {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "nl/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "nl/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "nl/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Tool",
+        "reason": "Dutch software copy uses the English word; \"gereedschap\" means a physical tool. The badge next to it on the same page is translated (\"Antwoord\"), so this is a choice, not a miss",
+        "found_on": "nl/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Uranus",
         "reason": "planet name, identical in Dutch",
         "found_on": "nl/library/sterrenbeeld-symbolen/",
@@ -289,6 +457,24 @@
         "added": "2026-08-15"
       },
       {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "pl/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "pl/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "pl/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Yin Yang",
         "reason": "transliteration, identical in Polish",
         "found_on": "pl/library/emoji-pokoju/",
@@ -299,6 +485,86 @@
         "reason": "loanword, spelled identically in Polish",
         "found_on": "pl/library/symbole-halloween/",
         "added": "2026-08-15"
+      }
+    ],
+    "pt": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "pt/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "pt/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "pt/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
+    "ru": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "ru/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "ru/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "ru/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
+    "th": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "th/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "th/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "th/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
+      }
+    ],
+    "tr": [
+      {
+        "string": "Poppins",
+        "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
+        "found_on": "tr/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Poppins (Medium/SemiBold)",
+        "reason": "a typeface name plus its weight names, which Google Fonts publishes only in English",
+        "found_on": "tr/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Roboto (Google Fonts)",
+        "reason": "a typeface name and the foundry that publishes it — both product names",
+        "found_on": "tr/answers/what-font-does-whatsapp-use/",
+        "added": "2026-08-16"
       }
     ]
   }
