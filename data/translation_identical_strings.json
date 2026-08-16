@@ -27,7 +27,39 @@
         "added": "2026-08-16"
       }
     ],
+    "cs": [
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "\"Retro\" and \"Pixel\" are the ordinary words in this language",
+        "found_on": "cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-16"
+      }
+    ],
     "de": [
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the word gaming is used untranslated in this market; the rest of the same tab row is translated, so this is a choice",
+        "found_on": "de/usecase/bio-schriftart/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "German uses the English word for this style — the locale's own page slug is aesthetic-schrift",
+        "found_on": "de/usecase/bio-schriftart/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "\"Retro\" and \"Pixel\" are the ordinary words in this language",
+        "found_on": "de/usecase/bio-schriftart/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "🫧 Bubble",
+        "reason": "German lettering copy calls this style \"Bubble\"; there is no established German name for it",
+        "found_on": "de/usecase/bio-schriftart/",
+        "added": "2026-08-16"
+      },
       {
         "string": "Clown Emoji &amp; Kaomoji",
         "reason": "both nouns are loanwords in German; the ampersand form is identical",
@@ -121,6 +153,24 @@
     ],
     "es": [
       {
+        "string": "☾ Celestial",
+        "reason": "\"celestial\" is the Spanish adjective, spelled identically",
+        "found_on": "es/usecase/letras-para-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the word gaming is used untranslated in this market; the rest of the same tab row is translated, so this is a choice",
+        "found_on": "es/usecase/letras-para-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "aesthetic is used untranslated as a style label in this market",
+        "found_on": "es/usecase/letras-para-bio/",
+        "added": "2026-08-16"
+      },
+      {
         "string": "Katakana N",
         "reason": "the romanised name of the kana ン — a letter name, identical in every Latin-script language",
         "found_on": "es/library/simbolos-para-fortnite/",
@@ -152,6 +202,24 @@
       }
     ],
     "fr": [
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the word gaming is used untranslated in this market; the rest of the same tab row is translated, so this is a choice",
+        "found_on": "fr/usecase/ecriture-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "aesthetic is used untranslated as a style label in this market",
+        "found_on": "fr/usecase/ecriture-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Chevrons",
+        "reason": "chevron is the ordinary French word for this bracket shape",
+        "found_on": "fr/usecase/ecriture-bio/",
+        "added": "2026-08-16"
+      },
       {
         "string": "Poppins",
         "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",
@@ -222,6 +290,24 @@
       }
     ],
     "it": [
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the word gaming is used untranslated in this market; the rest of the same tab row is translated, so this is a choice",
+        "found_on": "it/usecase/font-per-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "aesthetic is used untranslated as a style label in this market",
+        "found_on": "it/usecase/font-per-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "\"Retro\" and \"Pixel\" are the ordinary words in this language",
+        "found_on": "it/usecase/font-per-bio/",
+        "added": "2026-08-16"
+      },
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "a codepoint line; Tilde is also the Italian word",
@@ -316,6 +402,24 @@
       }
     ],
     "nl": [
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the word gaming is used untranslated in this market; the rest of the same tab row is translated, so this is a choice",
+        "found_on": "nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "aesthetic is used untranslated as a style label in this market",
+        "found_on": "nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "\"Retro\" and \"Pixel\" are the ordinary words in this language",
+        "found_on": "nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-16"
+      },
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "a codepoint line; Tilde is also the Dutch word",
@@ -488,6 +592,12 @@
       }
     ],
     "pt": [
+      {
+        "string": "☾ Celestial",
+        "reason": "\"celestial\" is the Portuguese adjective, spelled identically",
+        "found_on": "pt/usecase/fontes-para-bio/",
+        "added": "2026-08-16"
+      },
       {
         "string": "Poppins",
         "reason": "a typeface name (Google Fonts) — a product name, not translated in any language",

@@ -73,10 +73,88 @@ const TABLES = {
     'Kaomoji Generator': '顏文字產生器'
   },
   es: {
-    'Kaomoji Generator': 'Generador de Kaomoji'
+    'Kaomoji Generator': 'Generador de Kaomoji',
+    '📟 Retro / Pixel': '📟 Retro / Píxel'
   },
   vi: {
     'Kaomoji Generator': 'Trình tạo Kaomoji'
+  },
+
+  /*
+   * usecase/bio-font style-category tabs.
+   *
+   * sk, th and ja translated this whole row; fr, es, it, nl and pt translated
+   * it except for the words their own markets use untranslated. de, cs, tr and
+   * ar left all ten in English, which is the gap below.
+   *
+   * tl is deliberately absent. Its tab row and half its chips are English, but
+   * the page's own translator kept "Gaming Frame", "Bracket" and "Blade Frame"
+   * while translating Sparkle→Kislap, Star→Bituin, Crown→Korona — the
+   * code-switching pattern of real Filipino UI copy. Which side of that line
+   * each tab belongs on is a native-speaker call, so per the audit's own stop
+   * rule the rows stay English and get flagged rather than guessed.
+   *
+   * Loanwords each language genuinely uses are kept and ledgered, not forced:
+   * German "Gaming" and "Aesthetic" (the locale's own page slug is
+   * aesthetic-schrift), "Retro"/"Pixel"/"Kawaii"/"Hype"/"Minimal" broadly.
+   */
+  de: {
+    '💀 Edgy / Dark': '💀 Edgy / Dunkel',
+    '👑 Royal / Elite': '👑 Königlich / Elite',
+    '🌸 Cute / Kawaii': '🌸 Süß / Kawaii',
+    '🔥 Bold / Hype': '🔥 Fett / Hype',
+    '🎯 Clean / Minimal': '🎯 Schlicht / Minimal',
+    '🌀 Mystical': '🌀 Mystisch',
+    '🌿 Nature / Organic': '🌿 Natur / Organisch'
+  },
+  // Mirrors the site's own fully-translated Slovak row, which Czech tracks
+  // closely (Herné→Herní, Kráľovské→Královské, Príroda→Příroda).
+  cs: {
+    '⚔️ Gaming': '⚔️ Herní',
+    '✨ Aesthetic': '✨ Estetické',
+    '💀 Edgy / Dark': '💀 Temné',
+    '👑 Royal / Elite': '👑 Královské / Elitní',
+    '🌸 Cute / Kawaii': '🌸 Roztomilé / Kawaii',
+    '🔥 Bold / Hype': '🔥 Výrazné / Hype',
+    '🎯 Clean / Minimal': '🎯 Čisté / Minimalistické',
+    '🌀 Mystical': '🌀 Mystické',
+    '🌿 Nature / Organic': '🌿 Příroda / Organické'
+  },
+  tr: {
+    '⚔️ Gaming': '⚔️ Oyun',
+    '✨ Aesthetic': '✨ Estetik',                     // the locale's own slug is estetik-yazi
+    '💀 Edgy / Dark': '💀 Sert / Karanlık',
+    '👑 Royal / Elite': '👑 Kraliyet / Elit',
+    '🌸 Cute / Kawaii': '🌸 Sevimli / Kawaii',
+    '🔥 Bold / Hype': '🔥 İddialı / Hype',
+    '🎯 Clean / Minimal': '🎯 Sade / Minimal',
+    '🌀 Mystical': '🌀 Mistik',
+    '📟 Retro / Pixel': '📟 Retro / Piksel',
+    '🌿 Nature / Organic': '🌿 Doğa / Organik'
+  },
+  ar: {
+    '⚔️ Gaming': '⚔️ ألعاب',
+    '✨ Aesthetic': '✨ جمالي',
+    '💀 Edgy / Dark': '💀 حاد / داكن',
+    '👑 Royal / Elite': '👑 ملكي / نخبوي',
+    '🌸 Cute / Kawaii': '🌸 لطيف / كاواي',
+    '🔥 Bold / Hype': '🔥 عريض / صاخب',
+    '🎯 Clean / Minimal': '🎯 نظيف / بسيط',
+    '🌀 Mystical': '🌀 غامض',
+    '📟 Retro / Pixel': '📟 ريترو / بكسل',
+    '🌿 Nature / Organic': '🌿 طبيعي / عضوي'
+  },
+  it: {
+    '🫧 Bubble': '🫧 Bolle'
+  },
+  nl: {
+    '🏰 Gothic': '🏰 Gotisch'
+  },
+  fr: {
+    '🫧 Bubble': '🫧 Bulles',
+    // "Cursive" and "script" are both French words for these hands; only the
+    // ampersand made the label read as English.
+    '✍️ Cursive &amp; Script': '✍️ Cursive et script'
   }
 };
 
