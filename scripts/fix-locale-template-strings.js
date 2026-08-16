@@ -150,6 +150,72 @@ const CTA = {
         btn: '開啟 UltraTextGen →' }
 };
 
+// ── Pass 4: section kickers (added 2026-08-16) ───────────────────────────────
+//
+// `<span class="article-section-label">` is the small kicker above a section's
+// <h2>. On 77 pages it is still English while everything under it — including
+// that very <h2> — is fully translated, so this is the same page-furniture class
+// as the three passes above, not content debt.
+//
+// Two provenance tiers, kept visibly separate because they carry different
+// confidence:
+//
+//   HARVESTED — the locale's own dominant existing form, counted across its
+//   already-correct pages. "Quick answer" was unanimous in 11 of 12 locales
+//   (pt 3/4). "Related Resources" resolves to each locale's dominant
+//   related-pages kicker; note `id` uses `Halaman Terkait` (×170) rather than
+//   the generator's `Sumber Terkait` (×30) — same settle-on-the-majority rule
+//   pass 1 used for the German breadcrumb.
+//
+//   SUPPLIED — `The details`, `Keep exploring` and `Style your own text` are
+//   the template's generic defaults. Better-authored pages replace them with
+//   bespoke labels, so there is nothing to harvest and these are written here.
+//   They are short UI kickers, and each sits directly above an already-
+//   translated <h2> that fixes the register (nl "Style your own text" sits on
+//   "Zelf tekst stylen voor Pinterest").
+//
+// Stop rule unchanged: a locale absent from a table keeps the English string.
+const SECTION_LABEL = {
+  // harvested                    supplied ───────────────────────────────────
+  ar: { 'Quick answer': 'الإجابة السريعة',  'Related Resources': null,
+        'The details': 'التفاصيل', 'Keep exploring': 'تصفح المزيد', 'Style your own text': 'نسّق نصك' },
+  es: { 'Quick answer': 'Respuesta corta',  'Related Resources': null,
+        'The details': 'En detalle', 'Keep exploring': 'Sigue explorando', 'Style your own text': 'Dale estilo a tu texto' },
+  fr: { 'Quick answer': 'Réponse courte',   'Related Resources': null,
+        'The details': 'En détail', 'Keep exploring': 'À explorer aussi', 'Style your own text': 'Stylise ton texte' },
+  id: { 'Quick answer': 'Jawaban singkat',  'Related Resources': 'Halaman Terkait',
+        'The details': 'Rinciannya', 'Keep exploring': 'Jelajahi lainnya', 'Style your own text': 'Gaya teksmu sendiri' },
+  it: { 'Quick answer': 'Risposta breve',   'Related Resources': null,
+        'The details': 'In dettaglio', 'Keep exploring': 'Continua a esplorare', 'Style your own text': 'Personalizza il tuo testo' },
+  ja: { 'Quick answer': 'かんたんな答え',    'Related Resources': null,
+        'The details': '詳細', 'Keep exploring': '関連ページ', 'Style your own text': '自分のテキストを装飾' },
+  ms: { 'Quick answer': null,               'Related Resources': 'Halaman Berkaitan',
+        'The details': null, 'Keep exploring': null, 'Style your own text': null },
+  nl: { 'Quick answer': 'Kort antwoord',    'Related Resources': null,
+        'The details': 'De details', 'Keep exploring': 'Verder kijken', 'Style your own text': 'Zelf tekst stylen' },
+  pl: { 'Quick answer': 'Krótka odpowiedź', 'Related Resources': null,
+        'The details': 'Szczegóły', 'Keep exploring': 'Zobacz więcej', 'Style your own text': 'Ostyluj swój tekst' },
+  pt: { 'Quick answer': 'Resposta curta',   'Related Resources': 'Páginas relacionadas',
+        'The details': 'Em detalhe', 'Keep exploring': 'Continue explorando', 'Style your own text': 'Estilize seu texto' },
+  ru: { 'Quick answer': 'Короткий ответ',   'Related Resources': null,
+        'The details': 'Подробности', 'Keep exploring': 'Смотрите также', 'Style your own text': 'Оформите свой текст' },
+  th: { 'Quick answer': 'คำตอบสั้นๆ',        'Related Resources': 'หน้าที่เกี่ยวข้อง',
+        'The details': 'รายละเอียด', 'Keep exploring': 'สำรวจต่อ', 'Style your own text': 'จัดสไตล์ข้อความของคุณ' },
+  tr: { 'Quick answer': 'Kısa cevap',       'Related Resources': null,
+        'The details': 'Ayrıntılar', 'Keep exploring': 'Keşfetmeye devam', 'Style your own text': 'Kendi metnini biçimlendir' },
+  'zh-tw': { 'Quick answer': null,          'Related Resources': '相關頁面',
+        'The details': null, 'Keep exploring': null, 'Style your own text': null }
+};
+
+// The FAQ <h2>. Harvested dominant form per locale; `fr`/`nl`/`ru` legitimately
+// use the loanword "FAQ" as their own dominant heading and are recorded as such.
+const FAQ_H2 = {
+  ar: 'الأسئلة الشائعة', es: 'Preguntas Frecuentes', fr: 'Questions Fréquentes',
+  id: 'Pertanyaan yang Sering Ditanya', it: 'Domande Frequenti', ja: 'よくある質問',
+  nl: 'Veelgestelde Vragen', pl: 'Najczęstsze pytania', pt: 'Perguntas Frequentes',
+  ru: 'Частые Вопросы', th: 'คำถามที่พบบ่อย', tr: 'Sıkça Sorulan Sorular'
+};
+
 const args = process.argv.slice(2);
 const write = args.includes('--write');
 const localeArg = args.includes('--locale') ? args[args.indexOf('--locale') + 1] : null;
@@ -175,15 +241,17 @@ function walk(dir, acc = []) {
 }
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const counts = { breadcrumb: 0, langSwitcher: 0, cta: 0, files: 0 };
+const counts = { breadcrumb: 0, langSwitcher: 0, cta: 0, kicker: 0, faqH2: 0, files: 0 };
 const perLocale = {};
 
 for (const loc of locales) {
   const bc = BREADCRUMB[loc];
   const ls = LANG_SWITCHER[loc];
   const cta = CTA[loc];
-  if (!bc && !ls && !cta) continue; // stop rule: unknown locale is left alone
-  const stat = { breadcrumb: 0, langSwitcher: 0, cta: 0, files: 0 };
+  const kick = SECTION_LABEL[loc];
+  const faqH2 = FAQ_H2[loc];
+  if (!bc && !ls && !cta && !kick && !faqH2) continue; // stop rule: unknown locale is left alone
+  const stat = { breadcrumb: 0, langSwitcher: 0, cta: 0, kicker: 0, faqH2: 0, files: 0 };
 
   for (const file of walk(path.join(ROOT, loc))) {
     const before = fs.readFileSync(file, 'utf8');
@@ -228,6 +296,24 @@ for (const loc of locales) {
       );
     }
 
+    if (kick) {
+      // Scoped to the kicker element itself, so these short words can never be
+      // rewritten anywhere else on the page.
+      for (const [en, native] of Object.entries(kick)) {
+        if (!native) continue; // stop rule, per string not just per locale
+        const re = new RegExp(
+          `(<span class="article-section-label">)\\s*${esc(en)}\\s*(</span>)`, 'g'
+        );
+        const n = (html.match(re) || []).length;
+        if (n) { html = html.replace(re, `$1${native}$2`); stat.kicker += n; }
+      }
+    }
+    if (faqH2) {
+      const re = /(<h2>)\s*Frequently Asked Questions\s*(<\/h2>)/g;
+      const n = (html.match(re) || []).length;
+      if (n) { html = html.replace(re, `$1${faqH2}$2`); stat.faqH2 += n; }
+    }
+
     if (html !== before) {
       stat.files++;
       if (write) fs.writeFileSync(file, html, 'utf8');
@@ -239,24 +325,28 @@ for (const loc of locales) {
     counts.breadcrumb += stat.breadcrumb;
     counts.langSwitcher += stat.langSwitcher;
     counts.cta += stat.cta;
+    counts.kicker += stat.kicker;
+    counts.faqH2 += stat.faqH2;
     counts.files += stat.files;
   }
 }
 
 console.log(write ? 'Applying locale template-string fixes' : 'Dry run — no files written');
 console.log('');
-console.log(`${'locale'.padEnd(8)}${'files'.padStart(7)}${'breadcrumb'.padStart(12)}${'lang-sw'.padStart(9)}${'CTA'.padStart(6)}`);
+console.log(`${'locale'.padEnd(8)}${'files'.padStart(7)}${'breadcrumb'.padStart(12)}${'lang-sw'.padStart(9)}${'CTA'.padStart(6)}${'kicker'.padStart(8)}${'faqH2'.padStart(7)}`);
 for (const [loc, s] of Object.entries(perLocale).sort((a, b) => b[1].files - a[1].files)) {
   console.log(
     `${loc.padEnd(8)}${String(s.files).padStart(7)}${String(s.breadcrumb).padStart(12)}` +
-      `${String(s.langSwitcher).padStart(9)}${String(s.cta).padStart(6)}`
+      `${String(s.langSwitcher).padStart(9)}${String(s.cta).padStart(6)}` +
+      `${String(s.kicker).padStart(8)}${String(s.faqH2).padStart(7)}`
   );
 }
 console.log('');
 console.log(
   `${counts.files} file(s): ${counts.breadcrumb} breadcrumb label(s), ` +
-    `${counts.langSwitcher} language-switcher label(s), ${counts.cta} CTA card(s)`
+    `${counts.langSwitcher} language-switcher label(s), ${counts.cta} CTA card(s), ` +
+    `${counts.kicker} section kicker(s), ${counts.faqH2} FAQ heading(s)`
 );
-const skipped = locales.filter((l) => !BREADCRUMB[l] && !LANG_SWITCHER[l] && !CTA[l]);
+const skipped = locales.filter((l) => !BREADCRUMB[l] && !LANG_SWITCHER[l] && !CTA[l] && !SECTION_LABEL[l] && !FAQ_H2[l]);
 if (skipped.length) console.log(`Left in English (no confident form): ${skipped.join(', ')}`);
 if (!write) console.log('\nRe-run with --write to apply.');
