@@ -85,6 +85,10 @@ const IDENTIFIER_RULES = [
   [/U\+[0-9A-Fa-f]{4}/, 'unicode-codepoint'],
   // literal CSS/LaTeX the reader copies: content: "\007C", \sqrt{x}, \surd
   [/content:\s*"|\\|\{|\}|&#/, 'code-literal'],
+  // A bare CSS property reference — "CSS content" is the name of the `content`
+  // property, cited the same way as `content: "\\007C"` a row below it. The
+  // existing code-literal rule only fires when the colon is present.
+  [/^CSS [a-z-]+$/, 'css-property'],
   // key names are not localised on the keyboard itself
   [/\b(?:Option|Alt|Ctrl|Cmd|Shift|Fn)\s*\+/, 'keyboard-shortcut'],
   [/&(?:amp;)?[a-zA-Z]{2,6};/, 'html-entity'],
@@ -222,6 +226,82 @@ function copySlotStrings(html) {
  * throws more identical-name coincidences than a half-translated 20-tile one.
  */
 let placeCache = null;
+/**
+ * True when every word in a cell is a brand/acronym rather than ordinary English.
+ *
+ * The column this reads also carries USAGE CONTEXTS — "Documents, emails, bios",
+ * "Recommended form", "Mobile keyboard" — which every locale genuinely translates.
+ * Harvesting those as proper names would silently exempt real defects, so the
+ * shape test is what separates `Windows (Word)` from `Recommended form`. Both
+ * were in the first raw harvest; only the first should be exempt.
+ */
+function isProperNounPhrase(v) {
+  const words = v.replace(/[(),/]/g, ' ').split(/\s+/).filter(Boolean);
+  if (!words.length) return false;
+  return words.every(
+    (w) =>
+      /^[A-Z0-9][A-Za-z0-9.+#-]*$/.test(w) || // Mac, Windows, HTML, AutoCAD, Word
+      /^i[A-Z]/.test(w) ||                    // iOS, iPhone
+      /^[a-z]{1,3}$/.test(w)                  // short joiners: "on", "or"
+  );
+}
+
+let platformCache = null;
+/**
+ * Platform / tool names cited in the input-method tables — "Windows (Word)",
+ * "Mac", "iOS / Android", "HTML", "CSS content".
+ *
+ * Harvested from the ENGLISH pages' own tables, exactly like unicodeBlockNames
+ * above and for the same reason: the site is the authority on what it cites,
+ * and a harvested list maintains itself as pages change.
+ *
+ * These are product names and code identifiers. Every locale on this site
+ * already cites them untranslated inside otherwise-translated tables — the
+ * Italian page that says `<th>Metodo</th>` still says `<td>Mac</td>` — which is
+ * the same citation pattern the Unicode block names follow.
+ *
+ * They enter `properNames`, NOT `IDENTIFIER_RULES`, so the exemption stays
+ * SLOT-SCOPED: exempt in a cited `<td>`, still a real defect in a heading or a
+ * card title. That distinction is load-bearing and is regression-tested against
+ * the `Currency Symbols` pair described above.
+ *
+ * Scoped to the first column of a two-column table whose header pair is one of
+ * the known input-method shapes, so ordinary content cells cannot leak in.
+ */
+function platformToolNames(root = ROOT) {
+  if (platformCache) return platformCache;
+  const out = new Set();
+  // ONLY the input-method tables. `Property|Value` is deliberately excluded: its
+  // first column holds row LABELS ("Category", "Formal name", "Introduced in")
+  // which every locale genuinely translates, and harvesting those would silently
+  // exempt real defects. Caught by reading what a first, wider pattern matched.
+  const HEADERS = /<tr><th>(?:Method|Platform|Platform \/ Tool)<\/th><th>(?:Input|Works\?|Method)<\/th><\/tr>/i;
+  const walkEn = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        if (e.name.startsWith('.') || e.name === 'node_modules') continue;
+        if (dir === root && /^[a-z]{2}(-[a-z]{2})?$/.test(e.name) && e.name !== 'js') continue;
+        walkEn(p);
+      } else if (e.name === 'index.html') {
+        const html = fs.readFileSync(p, 'utf8');
+        for (const tbl of html.match(/<table[^>]*>[\s\S]*?<\/table>/gi) || []) {
+          if (!HEADERS.test(tbl)) continue;
+          const re = /<tr><td>([\s\S]*?)<\/td>/gi;
+          let m;
+          while ((m = re.exec(tbl)) !== null) {
+            const v = stripTags(m[1]);
+            if (v && v.length <= 24 && !/[.!?]/.test(v) && isProperNounPhrase(v)) out.add(v);
+          }
+        }
+      }
+    }
+  };
+  try { walkEn(root); } catch { /* best effort */ }
+  platformCache = out;
+  return out;
+}
+
 function placeNames(root = ROOT) {
   if (placeCache) return placeCache;
   const out = new Set(['Africa', 'Asia', 'Oceania', 'Europe', 'Americas', 'Antarctica']);
@@ -319,7 +399,11 @@ function auditPair(localeHtml, parentHtml, locale, { root = ROOT } = {}) {
   const en = translatableStrings(parentHtml);
   const loc = translatableStrings(localeHtml);
   const ledger = loadLedger().get(locale) || new Set();
-  const properNames = new Set([...unicodeBlockNames(root), ...placeNames(root)]);
+  const properNames = new Set([
+    ...unicodeBlockNames(root),
+    ...placeNames(root),
+    ...platformToolNames(root)
+  ]);
   const copySlots = copySlotStrings(localeHtml);
   const survivors = [];
   const ledgered = [];
@@ -391,6 +475,7 @@ module.exports = {
   identifierClass,
   unicodeBlockNames,
   placeNames,
+  platformToolNames,
   copySlotStrings,
   auditLocalePage,
   translatableStrings,
