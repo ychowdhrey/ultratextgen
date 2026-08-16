@@ -82,6 +82,9 @@ These run across page types rather than producing a type.
 | Local Language Intelligence (evidence-backed locally-native vocabulary per market) | ❌ none (data-only; the canonical dataset is maintained internally and synced into `data/local-language/*.json`) | `CLAUDE.md` "Local Language Intelligence" section + [`local-language-intelligence.md`](./local-language-intelligence.md) | as needed, continuous capture |
 | External reference check (no tracked file may point readers at a repo, doc, or tool that isn't published here — comments, docstrings, ledger evidence text) | `check-external-refs.js` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (found + cleared ~35 hits across 28 files, 2026-08-06) |
 | Counter claim-consistency (a number written in prose/`<meta>` must match the code that produces it — structural validators can't see a figure inside a `<td>` or a description tag) | `check-counter-claims.js` | ❌ none (script's own header doc); see also Testing section for the counter's manual test suites | CI (`validate.yml`, gating) — new this week, born from the character-counter rebuild (PRs #719/#724 et al.) after two stale-number regressions shipped green |
+| Document head structure (fails when markup lands above `<!DOCTYPE html>` or outside `<head>` — a bug a text-level grep audit cannot see, since it counts the tag whether or not a browser or crawler ever would) | `check-document-head.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (PR #747, 2026-08-13), born from `es/decorador-de-texto` and `es/simbolos-para-free-fire` shipping a single-quoted `hreflang` link spliced above the doctype; gates because the backlog was zero the day it shipped |
+| Tile codepoint check (a copy tile must contain the exact codepoint its own label names — catches NFC silently normalizing U+2126/U+212A and NBSP-family spaces down to lookalikes) | `check-tile-codepoints.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (PR #747, 2026-08-13), born from a sweep that found 172 mismatched tiles across 89 pages; gates for the same zero-backlog reason as the row above |
+| Locale spec check (validates a locale spec against its live EN parent *before* any HTML is generated — tile-count parity, hreflang self-reference, related-link targets resolving on disk, duplicate claimants) | `check_locale_spec.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-set — small enough not to carry a backlog) — added 2026-08-08 (PR #731) |
 
 ---
 
@@ -97,7 +100,8 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
-| `validate.yml` | on `pull_request` (+ manual) | **required, blocking gates (12)**: `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-faq-schema.js`, `check-locale-parent-gap.js`, `check-external-refs.js`. Plus three whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), and `audit-locale-parent-gap.js` (locale translation coverage). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on three consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08) as gates were added without a matching edit here — see Known gaps #16 for the systematize recommendation. |
+| `workflow-lint.yml` | on `pull_request` + `push` (master/main) + manual, no path filter | `check-workflows.py` (gating, no `continue-on-error`) — lints every `.github/workflows/*.yml` for the shape Actions needs (trigger, `jobs`, `runs-on`, steps with `uses`/`run`), plus the two failure modes that hid past incidents: a step that pipes into `tee`/similar with no `pipefail` in effect, and a `continue-on-error: true` step whose `outcome` nobody reads. Added 2026-08-08 (PR #731) as a **second, deliberately separate** lint surface from `validate.yml`'s own copy of the same check — a step inside `validate.yml` can't catch `validate.yml` itself failing to parse (exactly what happened 2026-08-07), so this file exists to survive when the big one breaks; do not consolidate them. Was itself missing from this table with zero footprint until now, the same blind spot Known gaps #16 already tracks for the `validate.yml` row below. |
+| `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. **Required, blocking gates (15):** `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-document-head.py`, `check-tile-codepoints.py`, `check-faq-schema.js`, `check-locale-parent-gap.js`, `check_locale_spec.py`, `check-external-refs.js`. Plus three whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), and `audit-locale-parent-gap.js` (locale translation coverage). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **four** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15 — three new gates this time: `check-document-head.py`, `check-tile-codepoints.py`, `check_locale_spec.py`, all added by PRs #731/#747) as gates were added without a matching edit here — see Known gaps #16 for the systematize recommendation, still not picked up. |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -299,7 +303,17 @@ here so they aren't lost. Update as they're closed or new ones appear.
     gap is patched each time; the actual question — fold these under
     `/category/`, or treat "shorter root slug" as an intentional, now
     seven-times-repeated pattern that deserves its own naming rule — is still
-    undecided and now the more pressing half of this gap.
+    undecided and now the more pressing half of this gap. **Update
+    (2026-08-15):** two more landed this week — `/calligraphy/` and
+    `/fancy-letters/` (both `WebApplication` schema, both PR #739, "Add
+    Calligraphy Font Generator & Fancy Letters pages"), both surfacing as
+    Unclassified in this week's digest. Added both directory names to
+    `LANE_RULES` as "Category pages," bringing the total to **nine**
+    root-level tool pages across five weekly reviews now (2026-07-18 and
+    2026-08-15 both added new ones). The naming-convention question this gap
+    has flagged since 2026-07-18 is unchanged and, at nine unplanned
+    instances, is now itself the recurring-3+-weeks candidate the review's
+    own step 4 says to systematize.
 12. ~~**`/symbol/` lane missing from the map and the classifier.**~~ **Closed
     (2026-07-18)** — `/symbol/` has been documented at length in `CLAUDE.md`
     (its own "Library vs Symbol" section, own generator routing via
@@ -396,28 +410,43 @@ here so they aren't lost. Update as they're closed or new ones appear.
       that it needs wiring.
     - **The recurring cost worth systematizing (review step 4):** this
       map's own `validate.yml` row (Automated workflows, above) has now
-      gone stale and been hand-corrected on three separate review cycles —
+      gone stale and been hand-corrected on **four** separate review cycles —
       2026-07-31 (row didn't exist yet for 5 shipped gates), 2026-08-01
-      (gap #15, row rebuilt), and this review (2026-08-08:
-      `audit-hreflang-completeness.js`, `check-funding-choices.js`,
-      `check-counter-claims.js`, and `check-external-refs.js` had all
-      shipped as live gates with zero footprint here). Each fix so far has
-      been a manual read of the workflow file. A script that diffs
-      `validate.yml`'s own step `id`s against this row — or generates the
-      row from the workflow file directly — would close this permanently
-      instead of relying on a reviewer to notice drift again next month.
-    - **Separately: this review's own digest input was five days stale.**
-      `infra-review/latest.md` covered 2026-07-27 → 2026-08-03 (the last
-      automated Monday run), but this review fired 2026-08-08, after 28
-      more PRs had merged — including both fixes above. Rather than review
-      a stale window, this pass reconstructed the actual last-7-days PR set
-      (2026-08-01 → 2026-08-08, 43 PRs) directly from `git`/GitHub and
-      regenerated `infra-review/2026-08-08.md` + `latest.md` from it. If
-      the scheduled review routine's cadence isn't already set to run
-      shortly after `weekly-pr-digest.yml`'s Monday 06:00 UTC firing, a
-      future review could silently work off a stale digest and miss the
-      most recent days entirely — worth checking the routine's schedule at
-      `claude.ai/code/routines`.
+      (gap #15, row rebuilt), 2026-08-08 (`audit-hreflang-completeness.js`,
+      `check-funding-choices.js`, `check-counter-claims.js`, and
+      `check-external-refs.js` had all shipped as live gates with zero
+      footprint here), and this review (2026-08-15: three more —
+      `check-document-head.py`, `check-tile-codepoints.py`,
+      `check_locale_spec.py` — plus the entire `workflow-lint.yml` workflow
+      discovered with **no row at all**, not just a stale one, the same
+      blind spot one level up). Each fix so far has been a manual read of
+      the workflow files. A script that diffs each workflow's own step
+      `id`s (and the set of workflow files itself) against this table — or
+      generates the rows directly — would close this permanently instead of
+      relying on a reviewer to notice drift again next month. Four
+      consecutive weekly recurrences is well past this review's own "3+
+      weeks" threshold for flagging systematization; repeating the
+      recommendation a fifth time without escalating it is no longer
+      pulling its weight — the next review that finds this row stale again
+      should treat building the generator as the fix, not another hand-edit.
+    - **The digest-staleness gap this review flagged last week recurred,
+      unchanged, exactly as predicted.** `infra-review/latest.md` covered
+      2026-08-03 → 2026-08-10 (the last automated Monday run) when this
+      review fired 2026-08-15, five days later — the identical five-day gap
+      the 2026-08-08 review found and warned would recur if the routine's
+      cadence wasn't checked against `weekly-pr-digest.yml`'s Monday 06:00
+      UTC run. It wasn't checked: this review's own trigger date (2026-08-08)
+      and this one (2026-08-15) are both **Saturdays**, five full days after
+      each Monday digest, so every future firing on this cadence will open
+      the exact same gap. Rather than review a stale window, this pass again
+      reconstructed the actual last-7-days PR set (2026-08-08 → 2026-08-15,
+      32 PRs) directly from `git` and regenerated `infra-review/2026-08-15.md`
+      + `latest.md` from it. This is now confirmed as recurring, not
+      hypothetical — moving the routine's weekly trigger to Monday
+      (shortly after 06:00 UTC, matching `weekly-review-prompt.md`'s own
+      stated intent) at `claude.ai/code/routines` would close it; that
+      change lives outside this repo, so it isn't made here, but it no
+      longer needs "checking" — it needs doing.
 
 ---
 
