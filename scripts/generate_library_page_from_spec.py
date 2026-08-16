@@ -176,7 +176,11 @@ LOCALE_UI_STRINGS = {
     "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
     "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
     "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
-    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
+    # nl cta_btn is deliberately NOT "Open UltraTextGen →": that string is
+    # byte-identical to the English default, so check-locale-translation.js
+    # counts it as untranslated English surviving on a Dutch page. Use a real
+    # Dutch label instead (matches the hand-written labels already on /nl/).
+    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
     "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
     "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored

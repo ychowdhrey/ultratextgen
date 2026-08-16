@@ -1,0 +1,269 @@
+{
+  "slug": "poep-emoji",
+  "title": "Poep Emoji 💩 (Poop) — Kopiëren en Plakken | UltraTextGen",
+  "meta_description": "Poep emoji 💩 kopiëren en plakken, met wc's, stankwolken, vieze gezichten en grappige memecombo's voor grappen en groepschats. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/poep-emoji/",
+  "breadcrumb": "Poep Emoji",
+  "hero_h1": "Poep Emoji 💩",
+  "hero_tagline": "De lachende drol 💩 en elke wc, stankwolk en vies gezicht dat ernaast hoort. Klik op een symbool of combo om het te kopiëren.",
+  "intro": "De poep emoji 💩 — officieel Pile of Poo, in het Nederlands gewoon de drol — is al sinds de begindagen van emoji de favoriete wc-humor van het internet, compleet met die vriendelijke glimlach. Hij duikt op in plaagberichtjes, verjaardagsroasts, hondenuitlaat-updates en groepschatchaos. Deze pagina verzamelt de poep emoji met zijn hele badkamergezelschap, de grappigste reactiegezichten om ernaast te zetten, en kant-en-klare combo's voor maximaal effect.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "poop-bathroom",
+      "label": "Poep en badkamer",
+      "h2": "Poep- en badkamer-emoji",
+      "intro": "De ster van de show plus alles wat er in de badkamer omheen staat.",
+      "symbols": [
+        {
+          "char": "💩",
+          "label": "Drol"
+        },
+        {
+          "char": "🚽",
+          "label": "Wc-pot"
+        },
+        {
+          "char": "🧻",
+          "label": "Wc-rol"
+        },
+        {
+          "char": "🪠",
+          "label": "Ontstopper"
+        },
+        {
+          "char": "🚾",
+          "label": "Toiletteken"
+        },
+        {
+          "char": "🧼",
+          "label": "Zeep"
+        },
+        {
+          "char": "🚻",
+          "label": "Toiletten"
+        }
+      ]
+    },
+    {
+      "id": "laughing-faces",
+      "label": "Lachende gezichten",
+      "h2": "Lachende reactiegezichten",
+      "intro": "De gezichten die het lachwerk doen zodra de poep emoji in de chat landt.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Huilen van het lachen"
+        },
+        {
+          "char": "🤣",
+          "label": "Rollen over de vloer van het lachen"
+        },
+        {
+          "char": "😆",
+          "label": "Lachend gezicht met dichtgeknepen ogen"
+        },
+        {
+          "char": "🤭",
+          "label": "Gezicht met hand voor de mond"
+        },
+        {
+          "char": "😜",
+          "label": "Knipogend gezicht met tong"
+        },
+        {
+          "char": "🤪",
+          "label": "Dol gezicht"
+        }
+      ]
+    },
+    {
+      "id": "gross-out",
+      "label": "Bah-emoji",
+      "h2": "Vieze en stinkende emoji",
+      "intro": "Misselijke gezichten, stinkdieren en stofwolken voor het complete geurverhaal.",
+      "symbols": [
+        {
+          "char": "🤢",
+          "label": "Misselijk gezicht"
+        },
+        {
+          "char": "🤮",
+          "label": "Overgevend gezicht"
+        },
+        {
+          "char": "😷",
+          "label": "Gezicht met mondkapje"
+        },
+        {
+          "char": "🤧",
+          "label": "Niezend gezicht"
+        },
+        {
+          "char": "🦨",
+          "label": "Stinkdier"
+        },
+        {
+          "char": "💨",
+          "label": "Wegstuivende wolk"
+        },
+        {
+          "char": "🙊",
+          "label": "Aap die niets zegt"
+        }
+      ]
+    },
+    {
+      "id": "warning-signs",
+      "label": "Waarschuwingsborden",
+      "h2": "Waarschuwings- en gevarenborden",
+      "intro": "Afzetlint voor het echt catastrofale badkamerincident.",
+      "symbols": [
+        {
+          "char": "⚠️",
+          "label": "Waarschuwing"
+        },
+        {
+          "char": "☣️",
+          "label": "Biologisch gevaar"
+        },
+        {
+          "char": "🚫",
+          "label": "Verboden"
+        },
+        {
+          "char": "⛔",
+          "label": "Verboden toegang"
+        },
+        {
+          "char": "🚧",
+          "label": "Wegwerkzaamheden"
+        },
+        {
+          "char": "🚨",
+          "label": "Zwaailicht"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo's",
+    "h2": "Grappige poepcombo's",
+    "intro": "Kopieer in één klik een complete poep-emoji-combo — kant-en-klare grappen voor berichten, comments en groepschats."
+  },
+  "collection_container_id": "poopSetsContainer",
+  "collections": [
+    {
+      "name": "Klassieke stinkerd",
+      "flags": [
+        "💩",
+        "💨",
+        "🦨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sprint naar de wc",
+      "flags": [
+        "🏃",
+        "💨",
+        "🚽",
+        "💩"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Code bruin",
+      "flags": [
+        "🚨",
+        "⚠️",
+        "💩",
+        "🚨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Erom lachen",
+      "flags": [
+        "💩",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bah-combo",
+      "flags": [
+        "🤢",
+        "💩",
+        "🤮"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Badkamerbenodigdheden",
+      "flags": [
+        "🚽",
+        "🧻",
+        "🪠",
+        "🧼"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Poepparade",
+      "flags": [
+        "💩",
+        "💩",
+        "💩",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/clown-emoji/",
+      "title": "Clown Emoji",
+      "desc": "Het 🤡 clownsgezicht met meme- en grapcombo's."
+    },
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combo's",
+      "desc": "Kant-en-klare meme- en grapcombinaties om te kopiëren en plakken."
+    },
+    {
+      "href": "/nl/library/iphone-emoji/",
+      "title": "iPhone Emoji",
+      "desc": "Alle iPhone-emoji's op een rij, klaar om te kopiëren."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/poop-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-caca/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/poep-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/poop-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}

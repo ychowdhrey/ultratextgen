@@ -1,0 +1,255 @@
+{
+  "slug": "tongue-emoji",
+  "title": "Tongue Emoji 😛 Kopiëren — Tong-Emoji, Kaomoji & Combo's | UltraTextGen",
+  "meta_description": "Tongue emoji 😛 😜 😝 🤪, gekke combo-sets en tong-kaomoji zoals :P en (≧∇≦) voor speelse chats en reacties. Klik op een symbool om het te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/tongue-emoji/",
+  "breadcrumb": "Tongue Emoji & Kaomoji",
+  "hero_h1": "Tongue Emoji & Kaomoji — tong-emoji's kopiëren",
+  "hero_tagline": "Speelse gezichtjes met de tong uit, het geschifte 🤪, de 👅 tong zelf en brutale tong-kaomoji — elke vorm van gekkigheid en plagen. Klik op een symbool om het meteen te kopiëren.",
+  "intro": "De tong-emoji 😛 is de internetafkorting voor 'grapje' — een luchtig, plagerig gezichtje dat een mop of een steek onder water verzacht. Deze pagina verzamelt het hele gekke bereik: de knipogende 😜, de 😝 met dichtgeknepen ogen, het compleet geschifte 🤪 en de 👅 tong op zichzelf voor likken, proeven en brutale reacties. Draagt een emoji net niet de juiste toon, dan plakken klassieke tong-kaomoji zoals :P en (≧∇≦) overal waar platte tekst werkt. Pak één gezichtje, of kopieer een kant-en-klare combo voor speelse chats, reacties en comments.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-tongue-faces",
+      "label": "Basis tonggezichtjes",
+      "h2": "De belangrijkste emoji met de tong uit",
+      "intro": "De alledaagse gezichtjes met de tong uit, van een simpele uitgestoken tong tot een knipogende plaagstoot.",
+      "symbols": [
+        {
+          "char": "😛",
+          "label": "Gezicht met tong"
+        },
+        {
+          "char": "😜",
+          "label": "Knipogend gezicht met tong"
+        },
+        {
+          "char": "😝",
+          "label": "Gezicht met tong en dichtgeknepen ogen"
+        },
+        {
+          "char": "😋",
+          "label": "Smullend gezicht"
+        }
+      ]
+    },
+    {
+      "id": "silly-zany",
+      "label": "Gek & geschift",
+      "h2": "Gekke en geschifte gezichtjes",
+      "intro": "Malle, duizelige en compleet doorgedraaide gezichten voor maximale chaos-energie.",
+      "symbols": [
+        {
+          "char": "🤪",
+          "label": "Geschift gezicht"
+        },
+        {
+          "char": "🥴",
+          "label": "Duizelig gezicht"
+        },
+        {
+          "char": "🤤",
+          "label": "Kwijlend gezicht"
+        },
+        {
+          "char": "😵‍💫",
+          "label": "Gezicht met spiraalogen"
+        },
+        {
+          "char": "🙃",
+          "label": "Ondersteboven gezicht"
+        }
+      ]
+    },
+    {
+      "id": "tongue-emoji",
+      "label": "De tong-emoji",
+      "h2": "De 👅 tong-emoji",
+      "intro": "De tong zelf — de bekendste lichaamsdeel-emoji — plus de mond-emoji die er het dichtst bij liggen.",
+      "symbols": [
+        {
+          "char": "👅",
+          "label": "Tong"
+        },
+        {
+          "char": "👄",
+          "label": "Mond"
+        },
+        {
+          "char": "🫦",
+          "label": "Op de lip bijten"
+        },
+        {
+          "char": "💋",
+          "label": "Kusafdruk"
+        }
+      ]
+    },
+    {
+      "id": "tongue-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji met tong en gekkigheid",
+      "intro": "Tekstgezichtjes die hun tong uitsteken, plagen en grijnzen in platte tekst.",
+      "symbols": [
+        {
+          "char": ":P",
+          "label": "Tong uitsteken"
+        },
+        {
+          "char": ":-P",
+          "label": "Brutale tong"
+        },
+        {
+          "char": "xP",
+          "label": "Lachende tong"
+        },
+        {
+          "char": ";P",
+          "label": "Knipogende tong"
+        },
+        {
+          "char": "(≧∇≦)",
+          "label": "Dolblij kaomoji"
+        },
+        {
+          "char": "(￣ρ￣)",
+          "label": "Kwijlende tong-kaomoji"
+        },
+        {
+          "char": "(・ε・)",
+          "label": "Plagerig pruil-kaomoji"
+        },
+        {
+          "char": "ヽ(≧∀≦)ノ",
+          "label": "Uitgelaten gek kaomoji"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo-sets",
+    "h2": "Tong-emoji combo-sets",
+    "intro": "Kopieer een complete gekke combo met één klik — van een snelle plaagstoot tot volledige chaos."
+  },
+  "collection_container_id": "tongueSetsContainer",
+  "collections": [
+    {
+      "name": "Gekke bui",
+      "flags": [
+        "😛",
+        "😜",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gewoon plagen",
+      "flags": [
+        "😜",
+        "😋",
+        "👅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Compleet geschift",
+      "flags": [
+        "🤪",
+        "🥴",
+        "😵‍💫"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Malle bende",
+      "flags": [
+        "😝",
+        "🤪",
+        "🤤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lekker puh",
+      "flags": [
+        "😛",
+        "👅",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Speelse knipoog",
+      "flags": [
+        "😜",
+        "😉",
+        "😛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kwijlen",
+      "flags": [
+        "😋",
+        "🤤",
+        "👅"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chaosgezicht",
+      "flags": [
+        "🤪",
+        "😜",
+        "🥴",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/tekstgezichten-kaomoji/",
+      "title": "Tekstgezichten & Kaomoji",
+      "desc": "Elke kaomoji-stemming, van speels tot pruilend en alles ertussenin."
+    },
+    {
+      "href": "/nl/library/kus-emoji/",
+      "title": "Kus Emoji & Kaomoji",
+      "desc": "Kushandjes, lippen en monden — de emoji naast de tong."
+    },
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combinaties",
+      "desc": "Kant-en-klare combo's voor grappen, gekkigheid en reacties."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/tongue-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-lengua/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/tongue-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/tongue-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}
