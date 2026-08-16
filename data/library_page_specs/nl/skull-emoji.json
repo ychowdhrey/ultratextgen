@@ -1,0 +1,266 @@
+{
+  "slug": "skull-emoji",
+  "title": "Skull Emoji 💀 Kopiëren en Plakken — Betekenis en Combo's | UltraTextGen",
+  "meta_description": "Skull emoji 💀 ☠️ 🦴 kopiëren en plakken, plus de \"ik ben dood\"-lachcombo's en x_x kaomoji voor reacties en captions. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/skull-emoji/",
+  "breadcrumb": "Skull Emoji & Kaomoji",
+  "hero_h1": "Skull Emoji & Kaomoji",
+  "hero_tagline": "Van het gewone doodshoofd 💀 tot de populairste manier om online \"ik ben dood van het lachen\" te zeggen — plus botten, gevaarsymbolen en kaomoji als x_x. Klik op een symbool om het te kopiëren.",
+  "intro": "De skull emoji 💀 is een van de meest beladen tekens op internet: hij gaat al jaren niet meer over de dood, maar betekent vooral \"ik ben dood\" — iets is zó grappig dat je erin blijft. Daarmee heeft het doodshoofd stilletjes de plek van 😂 overgenomen. Op deze pagina staan de doodshoofd-emoji zelf (💀 ☠️), de botten- en gevaarsymbolen die er goed bij passen, en skull-kaomoji van één regel zoals x_x en (☠‿☠). Kopieer los een teken, of pak een kant-en-klare combo als 💀😂🤣 voor een reactie die zegt: dit is zo grappig dat ik dood ben. Zoek je juist het doodshoofd dat uit meerdere regels tekstkarakters is opgebouwd? Dat staat op de ASCII-kunstpagina hieronder.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-skull",
+      "label": "Skull emoji",
+      "h2": "De belangrijkste skull emoji",
+      "intro": "De twee iconische doodshoofd-emoji waarmee elke combo begint.",
+      "symbols": [
+        {
+          "char": "💀",
+          "label": "Doodshoofd"
+        },
+        {
+          "char": "☠️",
+          "label": "Doodshoofd met botten"
+        }
+      ]
+    },
+    {
+      "id": "dead-from-laughing",
+      "label": "Dood van het lachen",
+      "h2": "Emoji's voor \"dood van het lachen\"",
+      "intro": "De meme-groep waarin 💀 de plek van het huilend-lachende gezicht inneemt — combineer 'm met deze.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Gezicht met vreugdetranen"
+        },
+        {
+          "char": "🤣",
+          "label": "Rollend over de vloer van het lachen"
+        },
+        {
+          "char": "⚰️",
+          "label": "Doodskist"
+        },
+        {
+          "char": "💯",
+          "label": "Honderd punten"
+        },
+        {
+          "char": "🪦",
+          "label": "Grafsteen"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-danger",
+      "label": "Skelet & gevaar",
+      "h2": "Skelet-, bot- en gevaarsymbolen",
+      "intro": "Botten, piratenvlaggen en waarschuwingsborden voor de duisterdere, hardere kant van skull-posts.",
+      "symbols": [
+        {
+          "char": "🦴",
+          "label": "Bot"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Piratenvlag"
+        },
+        {
+          "char": "☣️",
+          "label": "Biologisch gevaar"
+        },
+        {
+          "char": "☢️",
+          "label": "Radioactief"
+        }
+      ]
+    },
+    {
+      "id": "skull-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Skull-kaomoji en tekstgezichtjes",
+      "intro": "Tekstgezichtjes van één regel met dode ogen, die je overal kunt plakken waar platte tekst werkt.",
+      "symbols": [
+        {
+          "char": "x_x",
+          "label": "Dode-ogen kaomoji"
+        },
+        {
+          "char": "X_X",
+          "label": "Knock-out kaomoji"
+        },
+        {
+          "char": "(x_x)",
+          "label": "Duizelig-dood kaomoji"
+        },
+        {
+          "char": "†（‡＾ᴗ＾）†",
+          "label": "Grafkruis-kaomoji"
+        },
+        {
+          "char": "(☠‿☠)",
+          "label": "Lachend doodshoofd-kaomoji"
+        },
+        {
+          "char": "✖‿✖",
+          "label": "Dode glimlach-kaomoji"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo-sets",
+    "h2": "Skull emoji combo-sets",
+    "intro": "Kopieer een complete skull-combo met één klik en plak 'm direct in een reactie, caption of antwoord."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Dood van het lachen",
+      "flags": [
+        "💀",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gevarenzone",
+      "flags": [
+        "☠️",
+        "☣️",
+        "☢️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Piratenmodus",
+      "flags": [
+        "☠️",
+        "🏴‍☠️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Compleet overleden",
+      "flags": [
+        "💀",
+        "⚰️",
+        "🪦"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Halloween-doodshoofd",
+      "flags": [
+        "💀",
+        "🎃",
+        "👻"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zo grappig dat ik dood ben",
+      "flags": [
+        "💀",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "IJzingwekkend",
+      "flags": [
+        "💀",
+        "🦴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP ik",
+      "flags": [
+        "💀",
+        "⚰️"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/lach-emoji/",
+      "title": "Lach Emoji & Kaomoji",
+      "desc": "LOL-gezichtjes, huilend-lachende reacties en de skull-combo's die hetzelfde betekenen."
+    },
+    {
+      "href": "/nl/library/ascii-kunst/",
+      "title": "ASCII Kunst",
+      "desc": "Tekeningen van meerdere regels, opgebouwd uit gewone tekstkarakters."
+    },
+    {
+      "href": "/nl/library/tekstgezichten-kaomoji/",
+      "title": "Tekstgezichten & Kaomoji",
+      "desc": "De complete kaomoji-collectie voor elke stemming en reactie."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-tengkorak/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/kurukafa-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/totenkopf-emoji/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/dokuro-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-teschio/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-tete-de-mort/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/emoji-caveira/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/haegol-imoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-calavera/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/skull-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/skull-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}

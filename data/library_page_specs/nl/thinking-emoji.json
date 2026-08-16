@@ -1,0 +1,244 @@
+{
+  "slug": "thinking-emoji",
+  "title": "Thinking Emoji 🤔 Kopiëren en Plakken — Denk-emoji en Combo's | UltraTextGen",
+  "meta_description": "Thinking emoji 🤔 🧐 🤨, kant-en-klare twijfel- en schouderophaalcombo's en denk-kaomoji zoals (・_・?) voor chats en comments. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/thinking-emoji/",
+  "breadcrumb": "Thinking Emoji en Kaomoji",
+  "hero_h1": "Thinking Emoji en Kaomoji",
+  "hero_tagline": "Het denkende gezicht 🤔, sceptische blikken, eerlijke schouderophalen en peinzende kaomoji — elke tint van \"hmm\" en \"misschien\". Klik op een symbool om het te kopiëren.",
+  "intro": "De thinking emoji 🤔 — de denk-emoji met de hand onder de kin — is internetjargon voor \"hmm, daar moet ik even over nadenken\": wenkbrauw omhoog, oordeel nog niet geveld. Deze pagina verzamelt het hele peinzende spectrum: de sceptische blik van 🧐, de opgetrokken wenkbrauw van 🤨, het eerlijke schouderophalen 🤷 voor als je het echt niet weet, en de gedachtewolk 💭 en 🧠 voor een big brain-moment. Vangt een emoji het net niet, dan plak je klassieke denk-kaomoji als (・_・?) en ¯\\_(ツ)_/¯ overal waar platte tekst werkt. Pak één gezichtje, of kopieer in één klik een kant-en-klare combo voor chats, comments en reacties.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-thinking",
+      "label": "Het denkende gezicht",
+      "h2": "De thinking emoji zelf",
+      "intro": "De emoji waar iedereen naar grijpt als er even over iets nagedacht moet worden.",
+      "symbols": [
+        {
+          "char": "🤔",
+          "label": "Denkend gezicht"
+        }
+      ]
+    },
+    {
+      "id": "skeptical-scrutinizing",
+      "label": "Sceptisch en onderzoekend",
+      "h2": "Sceptische en onderzoekende gezichten",
+      "intro": "Samengeknepen ogen en opgetrokken wenkbrauwen voor als je het niet helemaal gelooft.",
+      "symbols": [
+        {
+          "char": "🧐",
+          "label": "Gezicht met monocle"
+        },
+        {
+          "char": "🤨",
+          "label": "Gezicht met opgetrokken wenkbrauw"
+        },
+        {
+          "char": "🫤",
+          "label": "Gezicht met schuine mond"
+        },
+        {
+          "char": "😑",
+          "label": "Uitdrukkingsloos gezicht"
+        },
+        {
+          "char": "🙄",
+          "label": "Gezicht met rollende ogen"
+        }
+      ]
+    },
+    {
+      "id": "shrugging-unsure",
+      "label": "Schouderophalen en twijfel",
+      "h2": "Schouderophaal- en twijfel-emoji's",
+      "intro": "Open handen en gedachtewolken voor een eerlijk \"ik weet het echt niet\".",
+      "symbols": [
+        {
+          "char": "🤷",
+          "label": "Schouderophalend persoon"
+        },
+        {
+          "char": "🤷‍♂️",
+          "label": "Schouderophalende man"
+        },
+        {
+          "char": "🤷‍♀️",
+          "label": "Schouderophalende vrouw"
+        },
+        {
+          "char": "💭",
+          "label": "Gedachtewolk"
+        },
+        {
+          "char": "🧠",
+          "label": "Hersenen"
+        }
+      ]
+    },
+    {
+      "id": "thinking-kaomoji",
+      "label": "Denk-kaomoji",
+      "h2": "Denk-kaomoji en tekstgezichtjes",
+      "intro": "Tekstgezichtjes in Japanse stijl die peinzen, grijnzen en hun schouders ophalen in platte tekst.",
+      "symbols": [
+        {
+          "char": "(・_・?)",
+          "label": "Nieuwsgierige vraag-kaomoji"
+        },
+        {
+          "char": "(¬‿¬)",
+          "label": "Zelfvoldane weet-het-kaomoji"
+        },
+        {
+          "char": "ヽ(´ー｀)ノ",
+          "label": "Zorgeloze schouderophaal-kaomoji"
+        },
+        {
+          "char": "(￣～￣;)",
+          "label": "Twijfelende peins-kaomoji"
+        },
+        {
+          "char": "(・∀・)",
+          "label": "Overwegende grijns-kaomoji"
+        },
+        {
+          "char": "( ˘ ³˘)?",
+          "label": "Verwarde vraag-kaomoji"
+        },
+        {
+          "char": "¯\\_(ツ)_/¯",
+          "label": "Schouderophaal-kaomoji"
+        },
+        {
+          "char": "(๑•́ ₃ •̀๑)",
+          "label": "Peinzende pruil-kaomoji"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo's",
+    "h2": "Thinking-emoji combo's",
+    "intro": "Kopieer in één klik een complete denkcombo — van een snelle \"hmm\" tot volle big brain-modus."
+  },
+  "collection_container_id": "thinkingSetsContainer",
+  "collections": [
+    {
+      "name": "Hmm, even denken",
+      "flags": [
+        "🤔",
+        "💭"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big brain-moment",
+      "flags": [
+        "🤔",
+        "🧠"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ik weet het zo net nog niet",
+      "flags": [
+        "🤔",
+        "🤷"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sceptische blik",
+      "flags": [
+        "🧐",
+        "🤨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Geen idee",
+      "flags": [
+        "🤷",
+        "🤷‍♂️",
+        "🤷‍♀️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Diepe gedachten",
+      "flags": [
+        "🤔",
+        "💭",
+        "🧠"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Achterdochtig maar nieuwsgierig",
+      "flags": [
+        "🧐",
+        "🤔"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Schouders ophalen",
+      "flags": [
+        "🤷",
+        "¯\\_(ツ)_/¯"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/tekstgezichten-kaomoji/",
+      "title": "Tekstgezichtjes en Kaomoji",
+      "desc": "De complete kaomoji-bibliotheek — van vrolijk tot sceptisch."
+    },
+    {
+      "href": "/nl/library/ogen-emoji/",
+      "title": "Ogen Emoji",
+      "desc": "Kijkende, loerende en argwanende ogen-emoji's om te kopiëren."
+    },
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combo's",
+      "desc": "Kant-en-klare emoji-combinaties voor chats en comments."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/thinking-emoji/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/saenggak-imoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-pensando/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/thinking-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/thinking-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}
