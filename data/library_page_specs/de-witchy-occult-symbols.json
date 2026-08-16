@@ -1,0 +1,322 @@
+{
+ "slug": "okkulte-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Okkulte Symbole & Hexensymbole zum Kopieren — Bedeutung | UltraTextGen",
+ "meta_description": "Okkulte Symbole zum Kopieren: Pentagramm, Planetenzeichen, alchemistische Symbole und esoterische Zeichen — mit ihrer historischen Bedeutung erklärt.",
+ "breadcrumb": "Okkulte Symbole",
+ "hero_h1": "Okkulte Symbole",
+ "hero_tagline": "Pentagramme, Planetenzeichen, Alchemie — mit Herkunft statt Halbwissen.",
+ "intro": "Die meisten Zeichen dieser Seite stammen nicht aus dem Okkultismus, sondern aus Astronomie, Alchemie und Metallkunde — und sind dorthin erst später gewandert. Das Venuszeichen ♀ war das Zeichen für Kupfer, bevor es für den Planeten und dann für das weibliche Geschlecht stand. Diese Seite ordnet sie nach Herkunft und nennt, wofür sie ursprünglich standen.",
+ "sections": [
+  {
+   "id": "pentagramm",
+   "label": "Pentagramme und Sterne",
+   "h2": "Pentagramme und Sterne",
+   "intro": "Fünfzackige Sterne in allen Ausrichtungen.",
+   "symbols": [
+    {
+     "char": "★",
+     "label": "Gefüllter Stern"
+    },
+    {
+     "char": "☆",
+     "label": "Leerer Stern"
+    },
+    {
+     "char": "⚹",
+     "label": "Sextil"
+    },
+    {
+     "char": "✡",
+     "label": "Davidstern"
+    },
+    {
+     "char": "⚜",
+     "label": "Lilie"
+    },
+    {
+     "char": "⛤",
+     "label": "Pentagramm"
+    },
+    {
+     "char": "⛥",
+     "label": "Pentagramm nach rechts"
+    },
+    {
+     "char": "⛦",
+     "label": "Pentagramm nach links"
+    },
+    {
+     "char": "⛧",
+     "label": "Umgekehrtes Pentagramm"
+    },
+    {
+     "char": "✴",
+     "label": "Achtzackiger Stern"
+    },
+    {
+     "char": "✪",
+     "label": "Stern im Kreis"
+    },
+    {
+     "char": "✶",
+     "label": "Sechszackiger Stern"
+    }
+   ]
+  },
+  {
+   "id": "planeten",
+   "label": "Klassische Planeten",
+   "h2": "Klassische Planeten",
+   "intro": "Die sieben klassischen Planeten — zugleich die alchemistischen Metallzeichen.",
+   "symbols": [
+    {
+     "char": "☉",
+     "label": "Sonne — Gold"
+    },
+    {
+     "char": "☽",
+     "label": "Mond — Silber"
+    },
+    {
+     "char": "☿",
+     "label": "Merkur — Quecksilber"
+    },
+    {
+     "char": "♀",
+     "label": "Venus — Kupfer"
+    },
+    {
+     "char": "♂",
+     "label": "Mars — Eisen"
+    },
+    {
+     "char": "♃",
+     "label": "Jupiter — Zinn"
+    },
+    {
+     "char": "♄",
+     "label": "Saturn — Blei"
+    }
+   ]
+  },
+  {
+   "id": "astrologie",
+   "label": "Astrologische Zeichen",
+   "h2": "Astrologische Zeichen",
+   "intro": "Die vollständige Reihe einschließlich der modernen Planeten.",
+   "symbols": [
+    {
+     "char": "☉",
+     "label": "Sonne"
+    },
+    {
+     "char": "☽",
+     "label": "Mond"
+    },
+    {
+     "char": "☿",
+     "label": "Merkur"
+    },
+    {
+     "char": "♀",
+     "label": "Venus"
+    },
+    {
+     "char": "♁",
+     "label": "Erde"
+    },
+    {
+     "char": "♂",
+     "label": "Mars"
+    },
+    {
+     "char": "♃",
+     "label": "Jupiter"
+    },
+    {
+     "char": "♄",
+     "label": "Saturn"
+    },
+    {
+     "char": "♅",
+     "label": "Uranus"
+    },
+    {
+     "char": "♆",
+     "label": "Neptun"
+    },
+    {
+     "char": "♇",
+     "label": "Pluto"
+    },
+    {
+     "char": "⚸",
+     "label": "Schwarzer Mond Lilith"
+    }
+   ]
+  },
+  {
+   "id": "alchemie",
+   "label": "Alchemie",
+   "h2": "Alchemie",
+   "intro": "Die vier Elemente und die Lösungsmittel der Alchemisten.",
+   "symbols": [
+    {
+     "char": "🜀",
+     "label": "Quintessenz"
+    },
+    {
+     "char": "🜁",
+     "label": "Luft"
+    },
+    {
+     "char": "🜂",
+     "label": "Feuer"
+    },
+    {
+     "char": "🜃",
+     "label": "Erde"
+    },
+    {
+     "char": "🜄",
+     "label": "Wasser"
+    },
+    {
+     "char": "🜅",
+     "label": "Scheidewasser"
+    },
+    {
+     "char": "🜆",
+     "label": "Königswasser"
+    },
+    {
+     "char": "🜈",
+     "label": "Weingeist"
+    },
+    {
+     "char": "🜊",
+     "label": "Essig"
+    },
+    {
+     "char": "⚗",
+     "label": "Destillierkolben"
+    }
+   ]
+  },
+  {
+   "id": "esoterik",
+   "label": "Weitere esoterische Zeichen",
+   "h2": "Weitere esoterische Zeichen",
+   "intro": "Was sonst regelmäßig in diesem Zusammenhang gesucht wird.",
+   "symbols": [
+    {
+     "char": "☥",
+     "label": "Anch"
+    },
+    {
+     "char": "☯",
+     "label": "Yin und Yang"
+    },
+    {
+     "char": "☘",
+     "label": "Kleeblatt"
+    },
+    {
+     "char": "⚷",
+     "label": "Chiron"
+    },
+    {
+     "char": "⚰",
+     "label": "Sarg"
+    },
+    {
+     "char": "⚱",
+     "label": "Urne"
+    },
+    {
+     "char": "⚛",
+     "label": "Atomsymbol"
+    },
+    {
+     "char": "⚡",
+     "label": "Blitz"
+    },
+    {
+     "char": "☼",
+     "label": "Sonne mit Strahlen"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu okkulten Symbolen",
+ "faq": [
+  {
+   "q": "Ist das Pentagramm ein satanisches Zeichen?",
+   "a": "In seiner aufrechten Form ⛤ nicht. Der fünfzackige Stern ist eines der ältesten Symbole überhaupt und stand bei den Pythagoreern für Gesundheit, im Christentum für die fünf Wunden Christi. Erst das umgekehrte Pentagramm ⛧ wurde im 19. Jahrhundert umgedeutet, und auch das ist eine junge Zuschreibung."
+  },
+  {
+   "q": "Warum sind Planetenzeichen zugleich Metallzeichen?",
+   "a": "Weil die Alchemie beides gleichsetzte: sieben Planeten, sieben Metalle. Gold gehörte zur Sonne, Silber zum Mond, Quecksilber zu Merkur — daher trägt das Element bis heute den Namen des Planeten. Die Zeichen sind identisch, weil die Zuordnung als real galt."
+  },
+  {
+   "q": "Was bedeutet ⚸, der Schwarze Mond Lilith?",
+   "a": "Kein Himmelskörper, sondern ein berechneter Punkt: das erdfernste Ende der Mondbahn. In der Astrologie wird ihm Bedeutung zugeschrieben, astronomisch ist es schlicht ein Bahnparameter."
+  },
+  {
+   "q": "Werden die Alchemie-Zeichen überall angezeigt?",
+   "a": "Nicht zuverlässig. Der Alchemie-Block liegt in einer hohen Unicode-Ebene und fehlt vielen Schriften. Auf Systemen mit vollständigen Symbolschriften erscheinen sie korrekt, sonst als Kästchen."
+  },
+  {
+   "q": "Woher kommt das Anch-Zeichen ☥?",
+   "a": "Aus dem alten Ägypten, wo es „Leben“ bedeutete und Göttern in die Hand gelegt wurde. Der heutige esoterische Gebrauch ist eine Wiederentdeckung des 19. Jahrhunderts; die Hieroglyphe selbst ist über viertausend Jahre alt."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Die meisten dieser Zeichen sind älter als ihre Deutung",
+   "body": "Was heute als okkultes Symbol gilt, war fast immer zuerst etwas Nüchternes: eine Notation für Metalle, ein Kürzel für einen Planeten, eine Abkürzung in einem Laborbuch. Alchemisten schrieben ♀ für Kupfer, weil sie Kupfer der Venus zuordneten — es war Fachsprache, keine Beschwörung. Die esoterische Aufladung kam im 19. Jahrhundert, als okkulte Zirkel die alten Notationen wiederentdeckten und mit neuer Bedeutung versahen. Wer diese Schichtung kennt, liest die Zeichen genauer: Das Alter eines Symbols sagt nichts über das Alter seiner heutigen Bedeutung."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/sternzeichen-symbole/",
+   "title": "Sternzeichen-Symbole",
+   "desc": "Die zwölf Tierkreiszeichen und ihre Symbole."
+  },
+  {
+   "href": "/de/library/religioese-symbole/",
+   "title": "Religiöse Symbole",
+   "desc": "Symbole der Weltreligionen mit ihrer Bedeutung."
+  },
+  {
+   "href": "/de/symbol/pentagramm-symbol/",
+   "title": "Pentagramm (⛤)",
+   "desc": "Geschichte des fünfzackigen Sterns und seiner Umdeutungen."
+  },
+  {
+   "href": "/de/symbol/schwarzer-mond-lilith/",
+   "title": "Schwarzer Mond Lilith (⚸)",
+   "desc": "Was der berechnete Bahnpunkt astrologisch bedeutet."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/okkulte-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/witchy-occult-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/okkulte-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/witchy-occult-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

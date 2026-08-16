@@ -1,0 +1,229 @@
+{
+ "slug": "oster-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Oster-Symbole zum Kopieren — Hase, Ei, Kreuz und Frühlingsblumen | UltraTextGen",
+ "meta_description": "Oster-Symbole zum Kopieren: Osterhase, Ostereier, Küken, Lamm, Kreuz und Frühlingsblumen — für Grußkarten, Nachrichten und Einladungen.",
+ "breadcrumb": "Oster-Symbole",
+ "hero_h1": "Oster-Symbole",
+ "hero_tagline": "Hase und Ei, Kreuz und Taube, dazu die Frühlingsblumen — nach Bildwelt getrennt.",
+ "intro": "Ostern hat zwei Bildwelten, die sich im Zeichenvorrat deutlich trennen: die volkstümliche mit Hase, Ei und Küken und die kirchliche mit Kreuz, Taube und Lamm. Diese Seite hält beide auseinander und ergänzt die Frühlingsblumen, die zu beiden passen.",
+ "sections": [
+  {
+   "id": "hase",
+   "label": "Hase und Eier",
+   "h2": "Hase und Eier",
+   "intro": "Die volkstümliche Bildwelt.",
+   "symbols": [
+    {
+     "char": "🐰",
+     "label": "Hasengesicht"
+    },
+    {
+     "char": "🐇",
+     "label": "Hase"
+    },
+    {
+     "char": "🥚",
+     "label": "Ei"
+    },
+    {
+     "char": "🪺",
+     "label": "Nest mit Eiern"
+    },
+    {
+     "char": "🪹",
+     "label": "Leeres Nest"
+    },
+    {
+     "char": "🧺",
+     "label": "Korb"
+    },
+    {
+     "char": "🍫",
+     "label": "Schokolade"
+    },
+    {
+     "char": "🎀",
+     "label": "Schleife"
+    }
+   ]
+  },
+  {
+   "id": "kueken",
+   "label": "Küken und Frühlingstiere",
+   "h2": "Küken und Frühlingstiere",
+   "intro": "Was im Frühling dazugehört.",
+   "symbols": [
+    {
+     "char": "🐣",
+     "label": "Schlüpfendes Küken"
+    },
+    {
+     "char": "🐤",
+     "label": "Küken"
+    },
+    {
+     "char": "🐥",
+     "label": "Küken von vorn"
+    },
+    {
+     "char": "🐑",
+     "label": "Schaf"
+    },
+    {
+     "char": "🐏",
+     "label": "Widder"
+    },
+    {
+     "char": "🦋",
+     "label": "Schmetterling"
+    },
+    {
+     "char": "🐝",
+     "label": "Biene"
+    }
+   ]
+  },
+  {
+   "id": "kirche",
+   "label": "Kreuz und Glaube",
+   "h2": "Kreuz und Glaube",
+   "intro": "Die kirchliche Bildwelt.",
+   "symbols": [
+    {
+     "char": "✝",
+     "label": "Lateinisches Kreuz"
+    },
+    {
+     "char": "☦",
+     "label": "Orthodoxes Kreuz"
+    },
+    {
+     "char": "⛪",
+     "label": "Kirche"
+    },
+    {
+     "char": "🙏",
+     "label": "Gefaltete Hände"
+    },
+    {
+     "char": "🕊",
+     "label": "Taube"
+    },
+    {
+     "char": "📖",
+     "label": "Aufgeschlagenes Buch"
+    }
+   ]
+  },
+  {
+   "id": "fruehling",
+   "label": "Frühlingsblumen",
+   "h2": "Frühlingsblumen",
+   "intro": "Passt zu beiden Bildwelten.",
+   "symbols": [
+    {
+     "char": "🌷",
+     "label": "Tulpe"
+    },
+    {
+     "char": "🌼",
+     "label": "Blüte"
+    },
+    {
+     "char": "🌸",
+     "label": "Kirschblüte"
+    },
+    {
+     "char": "🌻",
+     "label": "Sonnenblume"
+    },
+    {
+     "char": "🪻",
+     "label": "Hyazinthe"
+    },
+    {
+     "char": "💐",
+     "label": "Blumenstrauß"
+    },
+    {
+     "char": "🌱",
+     "label": "Keimling"
+    },
+    {
+     "char": "☀",
+     "label": "Sonne"
+    },
+    {
+     "char": "🌈",
+     "label": "Regenbogen"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Oster-Symbolen",
+ "faq": [
+  {
+   "q": "Gibt es ein Osterhasen-Emoji?",
+   "a": "Kein eigenes. 🐰 und 🐇 sind allgemeine Hasen — Unicode kennt keinen Osterhasen. Üblich ist deshalb die Kombination 🐰🥚, die den Anlass erst zusammen ergibt."
+  },
+  {
+   "q": "Welche Zeichen passen zu einem kirchlichen Ostergruß?",
+   "a": "✝ oder ☦ mit 🕊 und ⛪. Hase und Ei sind volkstümlich und stammen aus vorchristlichen Frühlingsbräuchen — in einer Gemeindenachricht wirken sie fehl am Platz. Die beiden Bildwelten werden im deutschsprachigen Raum deutlicher getrennt als etwa im angelsächsischen."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen 🪺 und 🪹?",
+   "a": "🪺 ist ein Nest mit Eiern, 🪹 ein leeres. Beide kamen 2021 dazu; das leere Nest wird auch übertragen für den Auszug der Kinder verwendet."
+  },
+  {
+   "q": "Gibt es ein Emoji für ein bemaltes Osterei?",
+   "a": "Nein, 🥚 ist ein schlichtes weißes Ei. Für den bunten Eindruck werden meist mehrere Blütenzeichen danebengesetzt, oder es wird auf 🐣 ausgewichen."
+  },
+  {
+   "q": "Passen die Zeichen auf eine gedruckte Karte?",
+   "a": "Im Layoutprogramm ja, aber Emojis werden im Druck oft schwarzweiß ausgegeben. Für Gedrucktes sind einfarbige Zeichen wie ✝ ❀ ✿ die verlässlichere Wahl."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Zwei Traditionen, ein Fest",
+   "body": "Dass Hase und Kreuz im selben Zeichenvorrat stehen, aber selten zusammen verwendet werden, hat einen historischen Grund: Der Osterhase stammt aus regionalen Frühlingsbräuchen und ist erst seit dem 17. Jahrhundert schriftlich belegt, das Kreuz aus der Liturgie. Im deutschsprachigen Raum werden beide Bildwelten bis heute getrennt gehalten — eine Gemeindenachricht mit 🐰 wirkt so unpassend wie eine Kindergarteneinladung mit ✝. Die Frühlingsblumen sind die Ausnahme: Tulpe, Krokus und Hyazinthe funktionieren in beiden Zusammenhängen."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/weihnachtssymbole/",
+   "title": "Weihnachtssymbole",
+   "desc": "Alle Zeichen für die Advents- und Weihnachtszeit."
+  },
+  {
+   "href": "/de/library/blumen-symbole/",
+   "title": "Blumen-Symbole",
+   "desc": "Blüten, Sträuße und florale Ornamente zum Kopieren."
+  },
+  {
+   "href": "/de/library/religioese-symbole/",
+   "title": "Religiöse Symbole",
+   "desc": "Symbole der Weltreligionen mit ihrer Bedeutung."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/oster-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/easter-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/oster-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/easter-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

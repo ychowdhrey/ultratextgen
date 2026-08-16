@@ -1,0 +1,390 @@
+{
+ "slug": "glitzer-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Glitzer-Symbole & Sternchen zum Kopieren — ✨ ✦ ⊹ für Bio und Deko | UltraTextGen",
+ "meta_description": "Glitzer-Symbole zum Kopieren: ✨ Funkeln, Sternchen ✦ ✧, Blüten ✿ ❀, Ornamente und Trennlinien — die Zeichen für dekorative Bios und Captions.",
+ "breadcrumb": "Glitzer-Symbole",
+ "hero_h1": "Glitzer-Symbole",
+ "hero_tagline": "Funkeln, Sternchen, Blüten und Ornamente — die Bausteine dekorativer Bios.",
+ "intro": "Für eine geschmückte Bio braucht es keine Sonderschrift, nur die richtigen Zeichen. Diese Seite sammelt sie nach Funktion: die Funkel-Emojis für Aufmerksamkeit, die einfarbigen Sternchen für feine Akzente, Blüten und Ornamente für Dekoration und die Striche für Trennlinien.",
+ "sections": [
+  {
+   "id": "funkeln",
+   "label": "Funkeln",
+   "h2": "Funkeln",
+   "intro": "Die farbigen Zeichen — auffällig, aber nicht überall passend.",
+   "symbols": [
+    {
+     "char": "✨",
+     "label": "Funkeln"
+    },
+    {
+     "char": "💫",
+     "label": "Schwindel-Stern"
+    },
+    {
+     "char": "🌟",
+     "label": "Leuchtender Stern"
+    },
+    {
+     "char": "⭐",
+     "label": "Stern"
+    },
+    {
+     "char": "🔆",
+     "label": "Hohe Helligkeit"
+    },
+    {
+     "char": "💎",
+     "label": "Edelstein"
+    },
+    {
+     "char": "🔮",
+     "label": "Kristallkugel"
+    },
+    {
+     "char": "🪩",
+     "label": "Discokugel"
+    },
+    {
+     "char": "💥",
+     "label": "Aufprall"
+    }
+   ]
+  },
+  {
+   "id": "sternchen",
+   "label": "Sternchen",
+   "h2": "Sternchen",
+   "intro": "Einfarbige Sternchen — die eigentlichen Arbeitspferde dekorativer Bios.",
+   "symbols": [
+    {
+     "char": "✦",
+     "label": "Gefüllter Vierzackstern"
+    },
+    {
+     "char": "✧",
+     "label": "Leerer Vierzackstern"
+    },
+    {
+     "char": "⁂",
+     "label": "Asterismus"
+    },
+    {
+     "char": "✱",
+     "label": "Fettes Sternchen"
+    },
+    {
+     "char": "❇",
+     "label": "Funkelzeichen"
+    },
+    {
+     "char": "✺",
+     "label": "Sechzehnzackiges Sternchen"
+    },
+    {
+     "char": "✻",
+     "label": "Tropfenförmiges Sternchen"
+    },
+    {
+     "char": "✼",
+     "label": "Sternchen mit offener Mitte"
+    },
+    {
+     "char": "✽",
+     "label": "Fettes Tropfensternchen"
+    },
+    {
+     "char": "❈",
+     "label": "Fettes Funkelzeichen"
+    },
+    {
+     "char": "✵",
+     "label": "Achtzackiger Windradstern"
+    },
+    {
+     "char": "✹",
+     "label": "Zwölfzackiger Stern"
+    }
+   ]
+  },
+  {
+   "id": "dekor",
+   "label": "Dekorzeichen",
+   "h2": "Dekorzeichen",
+   "intro": "Die kleinen Zeichen, die zwischen Wörtern stehen.",
+   "symbols": [
+    {
+     "char": "⊹",
+     "label": "Hermitesch-Zeichen"
+    },
+    {
+     "char": "₊",
+     "label": "Tiefgestelltes Plus"
+    },
+    {
+     "char": "˖",
+     "label": "Modifikator-Plus"
+    },
+    {
+     "char": "°",
+     "label": "Gradzeichen"
+    },
+    {
+     "char": "✿",
+     "label": "Gefüllte Blüte"
+    },
+    {
+     "char": "❀",
+     "label": "Leere Blüte"
+    },
+    {
+     "char": "❁",
+     "label": "Achtblättrige Blüte"
+    },
+    {
+     "char": "❃",
+     "label": "Fette Blüte"
+    },
+    {
+     "char": "⚘",
+     "label": "Blume"
+    },
+    {
+     "char": "❋",
+     "label": "Fette achtblättrige Blüte"
+    },
+    {
+     "char": "•",
+     "label": "Aufzählungspunkt"
+    },
+    {
+     "char": "※",
+     "label": "Verweiszeichen"
+    }
+   ]
+  },
+  {
+   "id": "sterne",
+   "label": "Sterne",
+   "h2": "Sterne",
+   "intro": "Fünfzackige Sterne in allen Füllungen.",
+   "symbols": [
+    {
+     "char": "★",
+     "label": "Gefüllter Stern"
+    },
+    {
+     "char": "☆",
+     "label": "Leerer Stern"
+    },
+    {
+     "char": "✩",
+     "label": "Umrissener Stern"
+    },
+    {
+     "char": "✪",
+     "label": "Stern im Kreis"
+    },
+    {
+     "char": "✫",
+     "label": "Stern mit offener Mitte"
+    },
+    {
+     "char": "✬",
+     "label": "Stern mit schwarzer Mitte"
+    },
+    {
+     "char": "✭",
+     "label": "Umrissener gefüllter Stern"
+    },
+    {
+     "char": "✮",
+     "label": "Fett umrissener Stern"
+    },
+    {
+     "char": "✯",
+     "label": "Windradstern"
+    },
+    {
+     "char": "✰",
+     "label": "Schattierter Stern"
+    }
+   ]
+  },
+  {
+   "id": "ornamente",
+   "label": "Ornamente",
+   "h2": "Ornamente",
+   "intro": "Herzblätter und Rankenzeichen aus dem Dingbat-Block.",
+   "symbols": [
+    {
+     "char": "❖",
+     "label": "Gefüllte Raute mit Kerbe"
+    },
+    {
+     "char": "❧",
+     "label": "Gedrehtes Blattherz"
+    },
+    {
+     "char": "❦",
+     "label": "Blattherz"
+    },
+    {
+     "char": "❥",
+     "label": "Gedrehtes Herz"
+    },
+    {
+     "char": "☙",
+     "label": "Umgekehrtes Blattherz"
+    },
+    {
+     "char": "✤",
+     "label": "Vierblättriges Ornament"
+    },
+    {
+     "char": "✥",
+     "label": "Vierblättriges Kleeornament"
+    },
+    {
+     "char": "❊",
+     "label": "Weißer Punkt im Kreis"
+    },
+    {
+     "char": "❉",
+     "label": "Ballon-Sternchen"
+    },
+    {
+     "char": "✾",
+     "label": "Sechsblättrige Blüte"
+    }
+   ]
+  },
+  {
+   "id": "trenner",
+   "label": "Trennlinien",
+   "h2": "Trennlinien",
+   "intro": "Für die Zeilen zwischen den Abschnitten einer Bio.",
+   "symbols": [
+    {
+     "char": "─",
+     "label": "Dünne Linie"
+    },
+    {
+     "char": "═",
+     "label": "Doppelte Linie"
+    },
+    {
+     "char": "━",
+     "label": "Dicke Linie"
+    },
+    {
+     "char": "┄",
+     "label": "Gestrichelt (dünn)"
+    },
+    {
+     "char": "╌",
+     "label": "Zweifach gestrichelt"
+    },
+    {
+     "char": "┈",
+     "label": "Vierfach gestrichelt"
+    },
+    {
+     "char": "╍",
+     "label": "Zweifach gestrichelt (dick)"
+    },
+    {
+     "char": "┅",
+     "label": "Dreifach gestrichelt (dick)"
+    },
+    {
+     "char": "┉",
+     "label": "Vierfach gestrichelt (dick)"
+    },
+    {
+     "char": "⎯",
+     "label": "Linienverlängerung"
+    },
+    {
+     "char": "⋆",
+     "label": "Sternoperator"
+    },
+    {
+     "char": "·",
+     "label": "Mittelpunkt"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Glitzer-Symbolen",
+ "faq": [
+  {
+   "q": "Funktionieren die Zeichen in der Instagram-Bio?",
+   "a": "Die einfarbigen fast alle — ✦ ✧ ⊹ ✿ ❀ sind gewöhnliche Unicode-Zeichen und werden überall angezeigt. Im @-Benutzernamen dagegen funktioniert keines davon: dort lassen die meisten Plattformen nur Buchstaben, Ziffern, Punkt und Unterstrich zu."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen ✨ und ✦?",
+   "a": "✨ ist ein Emoji und wird farbig gezeichnet, ✦ ein typografisches Zeichen und bleibt in der Textfarbe. Für dezente Dekoration ist ✦ meist die bessere Wahl, weil es sich in den Text einfügt statt ihn zu unterbrechen."
+  },
+  {
+   "q": "Warum sehen manche Zeichen bei anderen als Kästchen aus?",
+   "a": "Weil die Dingbat- und Ornamentzeichen nicht in jeder Schrift enthalten sind. ★ ☆ ✦ ✧ ✿ sind sehr verbreitet und praktisch überall sicher; die selteneren Ornamente (❋ ✾ ❊) fehlen häufiger, vor allem auf älteren Android-Geräten."
+  },
+  {
+   "q": "Wie viele Zeichen sollte eine Bio enthalten?",
+   "a": "Wenige. Zwei oder drei setzen Akzente, ein Dutzend macht den Text unlesbar — und Screenreader lesen jedes einzelne vor, was eine dekorierte Bio für blinde Nutzerinnen und Nutzer in eine lange Zeichenaufzählung verwandelt."
+  },
+  {
+   "q": "Gibt es ein Zeichen, das wirklich glitzert?",
+   "a": "Nein. Unicode kodiert Zeichen, keine Animation. Was nach Glitzer aussieht, ist immer eine Anordnung statischer Zeichen — der Eindruck entsteht durch Wiederholung und Streuung, nicht durch Bewegung."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum die einfarbigen Zeichen die besseren Dekorationen sind",
+   "body": "Emojis stehen in einer eigenen Schrift, die farbig gezeichnet wird und ihre eigene Größe mitbringt. Setzt man ✨ mitten in eine Zeile, springt es heraus, verschiebt die Zeilenhöhe und wirkt oft lauter als beabsichtigt. Die typografischen Zeichen — ✦ ⊹ ✿ ❀ — werden dagegen in derselben Schrift und Farbe wie der übrige Text gesetzt. Sie fügen sich ein, skalieren mit der Schriftgröße und funktionieren auch dann noch, wenn die Umgebung keine Emojis darstellt. Für dekorative Bios ist das der praktische Unterschied zwischen einem gestalteten und einem überladenen Eindruck."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/aesthetische-symbole/",
+   "title": "Ästhetische Symbole",
+   "desc": "Zeichen für dekorative Bios und Captions."
+  },
+  {
+   "href": "/de/library/stern-symbole/",
+   "title": "Stern-Symbole",
+   "desc": "Sterne in allen Zacken und Stilarten."
+  },
+  {
+   "href": "/de/library/blumen-symbole/",
+   "title": "Blumen-Symbole",
+   "desc": "Blüten, Sträuße und florale Ornamente."
+  },
+  {
+   "href": "/de/library/instagram-symbole/",
+   "title": "Instagram-Symbole",
+   "desc": "Die Zeichen, die in Bio und Captions am besten funktionieren."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/glitzer-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/sparkle-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/glitzer-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/sparkle-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

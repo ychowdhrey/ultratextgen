@@ -1,0 +1,194 @@
+{
+ "slug": "regenbogen-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Regenbogen- & Pride-Symbole zum Kopieren — Flaggen und Zeichen | UltraTextGen",
+ "meta_description": "Regenbogen- und Pride-Symbole zum Kopieren: Regenbogenflagge, Trans-Flagge, Geschlechtszeichen und die Farbfolgen der wichtigsten Pride-Flaggen.",
+ "breadcrumb": "Regenbogen- und Pride-Symbole",
+ "hero_h1": "Regenbogen- und Pride-Symbole",
+ "hero_tagline": "Flaggen, Identitätszeichen und die Farbfolgen zum Nachbauen.",
+ "intro": "Unicode kennt genau zwei Pride-Flaggen als Emoji: die Regenbogenflagge und die Trans-Flagge. Alle anderen werden aus farbigen Herzen nachgebaut — deshalb stehen unten neben den Zeichen auch die Farbfolgen der gängigen Flaggen, die sich als Kombination kopieren lassen.",
+ "sections": [
+  {
+   "id": "flaggen",
+   "label": "Pride-Flaggen",
+   "h2": "Pride-Flaggen",
+   "intro": "Die beiden Flaggen, die es als eigenes Emoji gibt.",
+   "symbols": [
+    {
+     "char": "🏳️‍🌈",
+     "label": "Regenbogenflagge"
+    },
+    {
+     "char": "🏳️‍⚧️",
+     "label": "Trans-Flagge"
+    }
+   ]
+  },
+  {
+   "id": "zeichen",
+   "label": "Identitätszeichen",
+   "h2": "Identitätszeichen",
+   "intro": "Die typografischen Zeichen aus dem Symbolblock.",
+   "symbols": [
+    {
+     "char": "⚧",
+     "label": "Transgender-Zeichen"
+    },
+    {
+     "char": "⚢",
+     "label": "Doppeltes Venuszeichen — lesbisch"
+    },
+    {
+     "char": "⚣",
+     "label": "Doppeltes Marszeichen — schwul"
+    },
+    {
+     "char": "⚥",
+     "label": "Venus und Mars verbunden"
+    },
+    {
+     "char": "⚦",
+     "label": "Venus mit Strich"
+    }
+   ]
+  },
+  {
+   "id": "regenbogen",
+   "label": "Regenbogen und Solidarität",
+   "h2": "Regenbogen und Solidarität",
+   "intro": "Was im Alltag daneben verwendet wird.",
+   "symbols": [
+    {
+     "char": "🌈",
+     "label": "Regenbogen"
+    },
+    {
+     "char": "🫶",
+     "label": "Herzhände"
+    },
+    {
+     "char": "🤝",
+     "label": "Handschlag"
+    },
+    {
+     "char": "❤️",
+     "label": "Rotes Herz"
+    },
+    {
+     "char": "🧡",
+     "label": "Oranges Herz"
+    },
+    {
+     "char": "💛",
+     "label": "Gelbes Herz"
+    },
+    {
+     "char": "💚",
+     "label": "Grünes Herz"
+    },
+    {
+     "char": "💙",
+     "label": "Blaues Herz"
+    },
+    {
+     "char": "💜",
+     "label": "Lila Herz"
+    },
+    {
+     "char": "🤍",
+     "label": "Weißes Herz"
+    },
+    {
+     "char": "🩷",
+     "label": "Rosa Herz"
+    },
+    {
+     "char": "🩵",
+     "label": "Hellblaues Herz"
+    },
+    {
+     "char": "🩶",
+     "label": "Graues Herz"
+    },
+    {
+     "char": "🖤",
+     "label": "Schwarzes Herz"
+    },
+    {
+     "char": "🤎",
+     "label": "Braunes Herz"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Pride-Symbolen",
+ "faq": [
+  {
+   "q": "Warum gibt es nur zwei Pride-Flaggen als Emoji?",
+   "a": "Weil Unicode keine Flaggen für Gruppen kodiert, sondern nur für Länder — mit zwei Ausnahmen, die als Sequenzen aus weißer Flagge plus Symbol gebaut sind: 🏳️‍🌈 und 🏳️‍⚧️. Weitere Pride-Flaggen wurden mehrfach vorgeschlagen und abgelehnt, weil eine Aufnahme die Frage aufwerfen würde, welche Identitäten eine eigene Flagge bekommen und welche nicht."
+  },
+  {
+   "q": "Wie baue ich andere Pride-Flaggen nach?",
+   "a": "Mit farbigen Herzen in der Reihenfolge der Flaggenstreifen. Bisexuell ist 🩷💜💙, pansexuell 🩷💛🩵, nichtbinär 💛🤍💜🖤, asexuell 🖤🩶🤍💜, lesbisch 🧡🩷🤍. Die grauen, rosa und hellblauen Herzen kamen erst 2022 dazu — auf älteren Geräten erscheinen sie als Kästchen."
+  },
+  {
+   "q": "Was bedeutet ⚧?",
+   "a": "Das Transgender-Zeichen: Venus- und Marssymbol mit einem dritten, kombinierten Arm. Es ist seit Unicode 13 offiziell kodiert und wird auch als eigenständiges Zeichen ohne Flagge verwendet."
+  },
+  {
+   "q": "Werden die Flaggen überall angezeigt?",
+   "a": "Nicht überall. Beide sind Zeichensequenzen mit einem unsichtbaren Verbinder — kennt eine App die Sequenz nicht, erscheinen die Teile getrennt: eine weiße Flagge und daneben ein Regenbogen. Das passiert vor allem in älteren Chatprogrammen und in manchen Spielenamen."
+  },
+  {
+   "q": "Funktionieren sie im Benutzernamen?",
+   "a": "In der Bio und im Anzeigenamen meist ja, im @-Benutzernamen praktisch nie. Manche Plattformen filtern zusammengesetzte Flaggen-Sequenzen zusätzlich heraus, weil sie aus mehreren Codepoints bestehen."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum die Farbfolge das eigentliche Symbol ist",
+   "body": "Bei Pride-Flaggen trägt nicht die Form die Bedeutung, sondern die Streifenfolge — und genau deshalb funktioniert der Nachbau aus Herzen so gut. 🩷💜💙 ist für jeden lesbar, der die Bi-Flagge kennt, obwohl kein einziges Zeichen darin eine Flagge ist. Das ist ein seltener Fall, in dem eine Emoji-Kombination nicht nur andeutet, sondern tatsächlich dieselbe Information trägt wie das Original. Die Einschränkung ist technisch: die 2022 ergänzten Herzfarben fehlen auf älteren Geräten, und ohne Rosa und Hellblau bricht die halbe Sammlung."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/geschlechter-symbole/",
+   "title": "Geschlechter-Symbole",
+   "desc": "Venus, Mars und die kombinierten Zeichen mit ihrer Bedeutung."
+  },
+  {
+   "href": "/de/library/herz-symbole/",
+   "title": "Herz-Symbole",
+   "desc": "Herzen in allen Farben und Formen zum Kopieren."
+  },
+  {
+   "href": "/de/library/emoji-flags/",
+   "title": "Flaggen-Emojis",
+   "desc": "Alle Länderflaggen als Emoji zum Kopieren."
+  },
+  {
+   "href": "/de/library/solidaritaetsschleifen/",
+   "title": "Solidaritätsschleifen",
+   "desc": "Schleifen-Symbole und wofür die einzelnen Farben stehen."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/regenbogen-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/pride-lgbtq-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/regenbogen-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/pride-lgbtq-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

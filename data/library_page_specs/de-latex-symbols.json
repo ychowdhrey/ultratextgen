@@ -1,0 +1,377 @@
+{
+ "slug": "latex-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "LaTeX-Symbole zum Kopieren — Befehle und Zeichen im Überblick | UltraTextGen",
+ "meta_description": "LaTeX-Symbole mit Befehl und Zeichen: griechische Buchstaben, Operatoren, Relationen, Mengenlehre, Pfeile. Zum Kopieren für Formeln, Notizen und Arbeiten.",
+ "breadcrumb": "LaTeX-Symbole",
+ "hero_h1": "LaTeX-Symbole",
+ "hero_tagline": "Jedes Zeichen mit seinem Befehl — zum Nachschlagen und zum Kopieren.",
+ "intro": "Wer in LaTeX schreibt, braucht zwei Dinge: den Befehl für die Formel und das Zeichen für alles außerhalb davon — den Fließtext, die Abbildungsbeschriftung, die E-Mail an die Betreuung. Diese Seite listet beides nebeneinander. Der Befehl steht bei jedem Zeichen, das Zeichen selbst lässt sich mit einem Klick kopieren.",
+ "sections": [
+  {
+   "id": "griechisch",
+   "label": "Griechische Buchstaben",
+   "h2": "Griechische Buchstaben",
+   "intro": "Die Formelzeichen, die in praktisch jeder Arbeit vorkommen.",
+   "symbols": [
+    {
+     "char": "α",
+     "label": "\\alpha — Alpha"
+    },
+    {
+     "char": "β",
+     "label": "\\beta — Beta"
+    },
+    {
+     "char": "γ",
+     "label": "\\gamma — Gamma"
+    },
+    {
+     "char": "δ",
+     "label": "\\delta — Delta (klein)"
+    },
+    {
+     "char": "θ",
+     "label": "\\theta — Theta"
+    },
+    {
+     "char": "λ",
+     "label": "\\lambda — Lambda"
+    },
+    {
+     "char": "μ",
+     "label": "\\mu — My"
+    },
+    {
+     "char": "π",
+     "label": "\\pi — Pi"
+    },
+    {
+     "char": "σ",
+     "label": "\\sigma — Sigma (klein)"
+    },
+    {
+     "char": "φ",
+     "label": "\\varphi — Phi"
+    },
+    {
+     "char": "Δ",
+     "label": "\\Delta — Delta (groß)"
+    },
+    {
+     "char": "Ω",
+     "label": "\\Omega — Omega (groß)"
+    }
+   ]
+  },
+  {
+   "id": "operatoren",
+   "label": "Operatoren",
+   "h2": "Operatoren",
+   "intro": "Summe, Produkt, Integral und die Grundrechenzeichen.",
+   "symbols": [
+    {
+     "char": "∑",
+     "label": "\\sum — Summe"
+    },
+    {
+     "char": "∏",
+     "label": "\\prod — Produkt"
+    },
+    {
+     "char": "∫",
+     "label": "\\int — Integral"
+    },
+    {
+     "char": "∬",
+     "label": "\\iint — Doppelintegral"
+    },
+    {
+     "char": "∮",
+     "label": "\\oint — Kurvenintegral"
+    },
+    {
+     "char": "√",
+     "label": "\\sqrt — Wurzel"
+    },
+    {
+     "char": "∂",
+     "label": "\\partial — Partielle Ableitung"
+    },
+    {
+     "char": "∇",
+     "label": "\\nabla — Nabla"
+    },
+    {
+     "char": "±",
+     "label": "\\pm — Plusminus"
+    },
+    {
+     "char": "×",
+     "label": "\\times — Mal"
+    },
+    {
+     "char": "÷",
+     "label": "\\div — Geteilt"
+    },
+    {
+     "char": "⋅",
+     "label": "\\cdot — Malpunkt"
+    }
+   ]
+  },
+  {
+   "id": "relationen",
+   "label": "Relationen",
+   "h2": "Relationen",
+   "intro": "Vergleichszeichen für Gleichungen und Abschätzungen.",
+   "symbols": [
+    {
+     "char": "≤",
+     "label": "\\leq — Kleiner oder gleich"
+    },
+    {
+     "char": "≥",
+     "label": "\\geq — Größer oder gleich"
+    },
+    {
+     "char": "≠",
+     "label": "\\neq — Ungleich"
+    },
+    {
+     "char": "≈",
+     "label": "\\approx — Ungefähr gleich"
+    },
+    {
+     "char": "≡",
+     "label": "\\equiv — Identisch"
+    },
+    {
+     "char": "∼",
+     "label": "\\sim — Ähnlich"
+    },
+    {
+     "char": "≅",
+     "label": "\\cong — Kongruent"
+    },
+    {
+     "char": "∝",
+     "label": "\\propto — Proportional"
+    }
+   ]
+  },
+  {
+   "id": "mengen",
+   "label": "Mengen und Logik",
+   "h2": "Mengen und Logik",
+   "intro": "Mengenlehre und die logischen Junktoren.",
+   "symbols": [
+    {
+     "char": "∈",
+     "label": "\\in — Element von"
+    },
+    {
+     "char": "∉",
+     "label": "\\notin — Kein Element von"
+    },
+    {
+     "char": "⊂",
+     "label": "\\subset — Echte Teilmenge"
+    },
+    {
+     "char": "⊆",
+     "label": "\\subseteq — Teilmenge"
+    },
+    {
+     "char": "∪",
+     "label": "\\cup — Vereinigung"
+    },
+    {
+     "char": "∩",
+     "label": "\\cap — Schnittmenge"
+    },
+    {
+     "char": "∅",
+     "label": "\\emptyset — Leere Menge"
+    },
+    {
+     "char": "∀",
+     "label": "\\forall — Für alle"
+    },
+    {
+     "char": "∃",
+     "label": "\\exists — Es existiert"
+    },
+    {
+     "char": "¬",
+     "label": "\\neg — Nicht"
+    },
+    {
+     "char": "∧",
+     "label": "\\land — Und"
+    },
+    {
+     "char": "∨",
+     "label": "\\lor — Oder"
+    }
+   ]
+  },
+  {
+   "id": "pfeile",
+   "label": "Pfeile",
+   "h2": "Pfeile",
+   "intro": "Implikation, Äquivalenz und Abbildungen.",
+   "symbols": [
+    {
+     "char": "→",
+     "label": "\\rightarrow — Pfeil nach rechts"
+    },
+    {
+     "char": "←",
+     "label": "\\leftarrow — Pfeil nach links"
+    },
+    {
+     "char": "↔",
+     "label": "\\leftrightarrow — Doppelpfeil"
+    },
+    {
+     "char": "⇒",
+     "label": "\\Rightarrow — Folgt"
+    },
+    {
+     "char": "⇔",
+     "label": "\\Leftrightarrow — Äquivalent"
+    },
+    {
+     "char": "↦",
+     "label": "\\mapsto — Wird abgebildet auf"
+    }
+   ]
+  },
+  {
+   "id": "weitere",
+   "label": "Weitere Zeichen",
+   "h2": "Weitere Zeichen",
+   "intro": "Was sonst regelmäßig gebraucht wird.",
+   "symbols": [
+    {
+     "char": "∞",
+     "label": "\\infty — Unendlich"
+    },
+    {
+     "char": "ℵ",
+     "label": "\\aleph — Aleph"
+    },
+    {
+     "char": "ℏ",
+     "label": "\\hbar — Reduziertes Plancksches Wirkungsquantum"
+    },
+    {
+     "char": "ℓ",
+     "label": "\\ell — Kleines L (Schreibschrift)"
+    },
+    {
+     "char": "⊥",
+     "label": "\\perp — Senkrecht"
+    },
+    {
+     "char": "∥",
+     "label": "\\parallel — Parallel"
+    },
+    {
+     "char": "∠",
+     "label": "\\angle — Winkel"
+    },
+    {
+     "char": "⌈",
+     "label": "\\lceil — Aufrundungsklammer links"
+    },
+    {
+     "char": "⌋",
+     "label": "\\rfloor — Abrundungsklammer rechts"
+    },
+    {
+     "char": "⋯",
+     "label": "\\cdots — Auslassungspunkte (mittig)"
+    },
+    {
+     "char": "∴",
+     "label": "\\therefore — Daraus folgt"
+    },
+    {
+     "char": "∵",
+     "label": "\\because — Weil"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu LaTeX-Symbolen",
+ "faq": [
+  {
+   "q": "Wann brauche ich den Befehl und wann das Zeichen?",
+   "a": "Im Mathematikmodus zwischen Dollarzeichen immer den Befehl — nur so wird korrekt gesetzt und die Abstände stimmen. Außerhalb davon, etwa in einer Abbildungsbeschriftung, einer Präsentation oder einer E-Mail, ist das kopierte Unicode-Zeichen der schnellere Weg."
+  },
+  {
+   "q": "Kann ich Unicode-Zeichen direkt in eine LaTeX-Datei schreiben?",
+   "a": "Mit LuaLaTeX und XeLaTeX ja, sie verarbeiten UTF-8 nativ. Bei pdfLaTeX braucht es das Paket inputenc mit utf8, und selbst dann sind viele Mathezeichen nur über den Befehl erreichbar. Für portable Dokumente bleibt der Befehl die sichere Wahl."
+  },
+  {
+   "q": "Warum gibt es \\varphi und \\phi?",
+   "a": "Zwei Schreibweisen desselben Buchstabens: φ ist die geschwungene Variante, ϕ die aufrechte. In der Physik ist φ für Winkel und Phasen üblich, in der Mathematik häufiger ϕ. Innerhalb einer Arbeit sollte man sich für eine entscheiden."
+  },
+  {
+   "q": "Wie finde ich den Befehl zu einem Zeichen, das ich sehe?",
+   "a": "Detexify ist dafür das übliche Werkzeug — man zeichnet das Symbol und bekommt den Befehl vorgeschlagen. Für die hier gelisteten Standardzeichen genügt diese Seite."
+  },
+  {
+   "q": "Funktionieren die Zeichen auch in Word?",
+   "a": "Ja, alle hier gelisteten sind gewöhnliche Unicode-Zeichen. Words eigener Formeleditor versteht zusätzlich einen Teil der LaTeX-Syntax — dort lässt sich \\alpha eintippen und wird automatisch umgesetzt."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum LaTeX für Formeln immer noch die Referenz ist",
+   "body": "Der Grund liegt nicht im Zeichenvorrat, sondern in den Abständen. LaTeX kennt den Unterschied zwischen einem Minuszeichen als Operator und einem als Vorzeichen und setzt beide verschieden; es weiß, dass um ein Gleichheitszeichen mehr Luft gehört als um einen Malpunkt. Ein aus Unicode zusammengesetzter Ausdruck sieht deshalb auch dann falsch aus, wenn jedes einzelne Zeichen stimmt. Für den Fließtext um die Formel herum gilt das Gegenteil: dort ist ein kopiertes ≈ schneller und völlig ausreichend."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/mathe-symbole/",
+   "title": "Mathematische Symbole",
+   "desc": "Alle Rechen-, Vergleichs- und Mengenzeichen zum Kopieren."
+  },
+  {
+   "href": "/de/library/griechische-symbole/",
+   "title": "Griechische Buchstaben",
+   "desc": "Das griechische Alphabet — Grundlage der meisten Formelzeichen."
+  },
+  {
+   "href": "/de/library/elektro-symbole/",
+   "title": "Elektro-Symbole",
+   "desc": "Schaltzeichen, Einheiten und Logikgatter für die Technik."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/latex-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/latex-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/latex-symbole/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/latex-symbolen/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/latex-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}
