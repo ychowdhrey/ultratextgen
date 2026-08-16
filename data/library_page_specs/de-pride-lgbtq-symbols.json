@@ -2,7 +2,7 @@
  "slug": "regenbogen-symbole",
  "lang": "de",
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "title": "Regenbogen- & Pride-Symbole zum Kopieren — Flaggen und Zeichen | UltraTextGen",
  "meta_description": "Regenbogen- und Pride-Symbole zum Kopieren: Regenbogenflagge, Trans-Flagge, Geschlechtszeichen und die Farbfolgen der wichtigsten Pride-Flaggen.",
  "breadcrumb": "Regenbogen- und Pride-Symbole",
@@ -46,11 +46,11 @@
     },
     {
      "char": "⚥",
-     "label": "Venus und Mars verbunden"
+     "label": "Männlich-und-weiblich-Zeichen"
     },
     {
      "char": "⚦",
-     "label": "Venus mit Strich"
+     "label": "Männlich-Zeichen mit Strich"
     }
    ]
   },
@@ -71,54 +71,6 @@
     {
      "char": "🤝",
      "label": "Handschlag"
-    },
-    {
-     "char": "❤️",
-     "label": "Rotes Herz"
-    },
-    {
-     "char": "🧡",
-     "label": "Oranges Herz"
-    },
-    {
-     "char": "💛",
-     "label": "Gelbes Herz"
-    },
-    {
-     "char": "💚",
-     "label": "Grünes Herz"
-    },
-    {
-     "char": "💙",
-     "label": "Blaues Herz"
-    },
-    {
-     "char": "💜",
-     "label": "Lila Herz"
-    },
-    {
-     "char": "🤍",
-     "label": "Weißes Herz"
-    },
-    {
-     "char": "🩷",
-     "label": "Rosa Herz"
-    },
-    {
-     "char": "🩵",
-     "label": "Hellblaues Herz"
-    },
-    {
-     "char": "🩶",
-     "label": "Graues Herz"
-    },
-    {
-     "char": "🖤",
-     "label": "Schwarzes Herz"
-    },
-    {
-     "char": "🤎",
-     "label": "Braunes Herz"
     }
    ]
   }
@@ -190,5 +142,115 @@
   }
  ],
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16"
+ "date_modified": "2026-08-16",
+ "collection_container_id": "prideFlagCombosContainer",
+ "collection_section": {
+  "id": "flag-color-combos",
+  "label": "Flaggen-Farbkombis",
+  "h2": "Pride-Flaggen als Farbkombis (Herz-Ersatz)",
+  "intro": "Unicode hat den meisten Pride-Flaggen kein eigenes Zeichen gegeben — kopiere stattdessen eine farblich passende Herz-Kombination: Jedes Set folgt der echten Streifenreihenfolge dieser Flagge, von oben nach unten."
+ },
+ "collections": [
+  {
+   "name": "Regenbogen-Pride (6 Streifen)",
+   "flags": [
+    "❤️",
+    "🧡",
+    "💛",
+    "💚",
+    "💙",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Transgender-Pride",
+   "flags": [
+    "🩵",
+    "🩷",
+    "🤍",
+    "🩷",
+    "🩵"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Bisexuelle Pride",
+   "flags": [
+    "🩷",
+    "💜",
+    "💙"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Pansexuelle Pride",
+   "flags": [
+    "🩷",
+    "💛",
+    "🩵"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Lesbische Pride (Sunset-Töne)",
+   "flags": [
+    "🧡",
+    "🩷",
+    "🤍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Nichtbinäre Pride",
+   "flags": [
+    "💛",
+    "🤍",
+    "💜",
+    "🖤"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Genderfluide Pride",
+   "flags": [
+    "🩷",
+    "🤍",
+    "💜",
+    "🖤",
+    "💙"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Asexuelle Pride",
+   "flags": [
+    "🖤",
+    "🩶",
+    "🤍",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Progress-Pride (Regenbogen + inklusive Töne)",
+   "flags": [
+    "🏳️‍🌈",
+    "🤎",
+    "🖤",
+    "🩵",
+    "🩷",
+    "🤍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Intersex-Pride",
+   "flags": [
+    "💛",
+    "💜"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
 }
