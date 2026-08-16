@@ -104,6 +104,126 @@
      "label": "Frage- und Ausrufezeichen"
     }
    ]
+  },
+  {
+   "id": "fragezeichen",
+   "label": "Fragezeichen",
+   "h2": "Fragezeichen, Ausrufezeichen & Semikolon",
+   "intro": "Fragezeichen und Ausrufezeichen samt der umgedrehten spanischen Formen und dem oft mitgesuchten Semikolon.",
+   "symbols": [
+    {
+     "char": "?",
+     "label": "Fragezeichen"
+    },
+    {
+     "char": "!",
+     "label": "Ausrufezeichen"
+    },
+    {
+     "char": ";",
+     "label": "Semikolon"
+    },
+    {
+     "char": "？",
+     "label": "Fragezeichen (Vollbreite)"
+    },
+    {
+     "char": "！",
+     "label": "Ausrufezeichen (Vollbreite)"
+    }
+   ]
+  },
+  {
+   "id": "doppelpunkt",
+   "label": "Doppelpunkt",
+   "h2": "Doppelpunkt & Unterstrich",
+   "intro": "Doppelpunkt, Unterstrich und verwandte Verbinder- und Trennzeichen für Text, Code und Benutzernamen.",
+   "symbols": [
+    {
+     "char": ":",
+     "label": "Doppelpunkt"
+    },
+    {
+     "char": "_",
+     "label": "Unterstrich"
+    },
+    {
+     "char": "：",
+     "label": "Doppelpunkt (Vollbreite)"
+    },
+    {
+     "char": "﹍",
+     "label": "Gestrichelte Unterlinie"
+    },
+    {
+     "char": "‿",
+     "label": "Unterbogen"
+    }
+   ]
+  },
+  {
+   "id": "komma",
+   "label": "Komma",
+   "h2": "Komma & Klammern",
+   "intro": "Komma, Klammern und verwandte Trennzeichen für sauber gesetzten Text — samt der ostasiatischen Vollbreiten-Formen.",
+   "symbols": [
+    {
+     "char": ",",
+     "label": "Komma"
+    },
+    {
+     "char": "(",
+     "label": "Klammer auf"
+    },
+    {
+     "char": ")",
+     "label": "Klammer zu"
+    },
+    {
+     "char": "，",
+     "label": "Komma (Vollbreite)"
+    },
+    {
+     "char": "、",
+     "label": "Ideografisches Komma"
+    },
+    {
+     "char": "（",
+     "label": "Klammer auf (Vollbreite)"
+    },
+    {
+     "char": "）",
+     "label": "Klammer zu (Vollbreite)"
+    }
+   ]
+  },
+  {
+   "id": "anfuehrungszeichen",
+   "label": "Anführungszeichen",
+   "h2": "Anführungszeichen",
+   "intro": "Gerade, typografische und französische Anführungszeichen. Im Deutschen stehen die typografischen Zeichen als „unten und oben“, nicht wie im Englischen beide oben.",
+   "symbols": [
+    {
+     "char": "\"",
+     "label": "Gerades Anführungszeichen"
+    },
+    {
+     "char": "“",
+     "label": "Linkes doppeltes Anführungszeichen"
+    },
+    {
+     "char": "”",
+     "label": "Rechtes doppeltes Anführungszeichen"
+    },
+    {
+     "char": "«",
+     "label": "Guillemet links (französisch)"
+    },
+    {
+     "char": "»",
+     "label": "Guillemet rechts (französisch)"
+    }
+   ]
   }
  ],
  "faq_h2": "Häufige Fragen zu Satzzeichen",
