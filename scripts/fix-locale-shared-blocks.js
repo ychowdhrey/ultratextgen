@@ -158,6 +158,55 @@ const TABLES = {
   }
 };
 
+/*
+ * aria-label values, which live in an attribute rather than in element text
+ * and so need their own pass.
+ *
+ * `aria-label="Language switcher"` is a screen-reader label: on 312 locale
+ * pages a Turkish, Vietnamese or Korean user hears an English phrase
+ * announcing their own language menu. It is the same accessibility class as
+ * the breadcrumb label that PR #771 cleared, and the last one left.
+ *
+ * 16 of the 30 values are harvested from the site's own pages — the form that
+ * locale already uses, with its page count beside it. The other 14 had no
+ * form anywhere and are new.
+ */
+const ARIA_TABLES = {
+  'Language switcher': {
+    it: 'Selettore di lingua',      // ×108
+    fr: 'Sélecteur de langue',      // ×30
+    nl: 'Taalkeuze',                // ×24
+    'zh-tw': '語言切換',              // ×22
+    pl: 'Wybór języka',             // ×20
+    de: 'Sprachauswahl',            // ×18
+    es: 'Selector de idioma',       // ×15
+    id: 'Pemilih bahasa',           // ×10
+    pt: 'Seletor de idioma',        // ×9
+    th: 'ตัวเลือกภาษา',                 // ×8
+    tr: 'Dil seçici',               // ×7
+    ja: '言語切り替え',                // ×6
+    ar: 'اختيار اللغة',                // ×6
+    ko: '언어 선택',                   // ×5
+    ru: 'Выбор языка',              // ×4
+    vi: 'Bộ chọn ngôn ngữ',         // ×3
+    // No form existed anywhere on the site for these.
+    ms: 'Pemilih bahasa',           // Malay and Indonesian share the phrase
+    ro: 'Selector de limbă',
+    cs: 'Výběr jazyka',
+    sk: 'Výber jazyka',
+    hr: 'Odabir jezika',
+    bs: 'Odabir jezika',
+    sr: 'Избор језика',
+    hu: 'Nyelvválasztó',
+    fi: 'Kielen valinta',
+    sv: 'Språkväljare',
+    no: 'Språkvelger',
+    da: 'Sprogvælger',
+    hi: 'भाषा चयनकर्ता',
+    tl: 'Pumili ng wika'
+  }
+};
+
 /* ------------------------------------------------------------------ */
 
 const SKIP_DIRS = new Set(['node_modules', '.git', 'assets', 'scripts', 'data', 'docs', 'functions', 'js', '.github']);
@@ -178,8 +227,15 @@ let total = 0;
 let files = 0;
 const perString = new Map();
 
-for (const [locale, table] of Object.entries(TABLES)) {
+// Every locale that has either an element-text table or an aria value.
+const allLocales = new Set(Object.keys(TABLES));
+for (const byLocale of Object.values(ARIA_TABLES)) {
+  for (const l of Object.keys(byLocale)) allLocales.add(l);
+}
+
+for (const locale of allLocales) {
   if (onlyLocale && locale !== onlyLocale) continue;
+  const table = TABLES[locale] || {};
   const dir = path.join(ROOT, locale);
   if (!fs.existsSync(dir)) {
     console.error(`✗ ${locale}/ does not exist`);
@@ -190,6 +246,18 @@ for (const [locale, table] of Object.entries(TABLES)) {
     const before = fs.readFileSync(abs, 'utf8');
     let out = before;
     let n = 0;
+
+    for (const [en, byLocale] of Object.entries(ARIA_TABLES)) {
+      const local = byLocale[locale];
+      if (!local) continue;
+      const re = new RegExp(`aria-label="${escapeRe(en)}"`, 'g');
+      const hits = (out.match(re) || []).length;
+      if (!hits) continue;
+      out = out.replace(re, `aria-label="${local}"`);
+      n += hits;
+      const k = `${locale} :: aria ${en}`;
+      perString.set(k, (perString.get(k) || 0) + hits);
+    }
 
     for (const [en, local] of Object.entries(table)) {
       // Exact element-content match, so a short key can never hit a substring
