@@ -63,6 +63,14 @@
     {
      "char": "✶",
      "label": "Sechszackiger Stern"
+    },
+    {
+     "char": "✦",
+     "label": "Funkelstern"
+    },
+    {
+     "char": "◯",
+     "label": "Großer Kreis"
     }
    ]
   },
@@ -155,6 +163,22 @@
     {
      "char": "⚸",
      "label": "Schwarzer Mond Lilith"
+    },
+    {
+     "char": "⚳",
+     "label": "Ceres"
+    },
+    {
+     "char": "⚴",
+     "label": "Pallas"
+    },
+    {
+     "char": "⚵",
+     "label": "Juno"
+    },
+    {
+     "char": "⚶",
+     "label": "Vesta"
     }
    ]
   },
@@ -203,6 +227,226 @@
     {
      "char": "⚗",
      "label": "Destillierkolben"
+    },
+    {
+     "char": "🜇",
+     "label": "Königswasser II"
+    },
+    {
+     "char": "🜉",
+     "label": "Aqua Vitae II"
+    },
+    {
+     "char": "🜋",
+     "label": "Essig II"
+    },
+    {
+     "char": "🜌",
+     "label": "Essig III"
+    },
+    {
+     "char": "🜍",
+     "label": "Schwefel"
+    },
+    {
+     "char": "🜎",
+     "label": "Schwefel II"
+    },
+    {
+     "char": "🜏",
+     "label": "Schwefel III"
+    },
+    {
+     "char": "🜐",
+     "label": "Salz"
+    },
+    {
+     "char": "🜑",
+     "label": "Salz II"
+    },
+    {
+     "char": "🜒",
+     "label": "Salz III"
+    },
+    {
+     "char": "🜓",
+     "label": "Quecksilbersublimat"
+    },
+    {
+     "char": "🜔",
+     "label": "Quecksilbersublimat II"
+    },
+    {
+     "char": "🜕",
+     "label": "Quecksilbersublimat III"
+    },
+    {
+     "char": "🜖",
+     "label": "Zinnober"
+    },
+    {
+     "char": "🜗",
+     "label": "Ammoniaksalz"
+    },
+    {
+     "char": "🜘",
+     "label": "Vitriol"
+    },
+    {
+     "char": "🜙",
+     "label": "Vitriol II"
+    },
+    {
+     "char": "🜚",
+     "label": "Gold"
+    },
+    {
+     "char": "🜛",
+     "label": "Silber"
+    },
+    {
+     "char": "🜜",
+     "label": "Eisenerz"
+    },
+    {
+     "char": "🜝",
+     "label": "Eisenerz II"
+    },
+    {
+     "char": "🜞",
+     "label": "Eisensafran"
+    },
+    {
+     "char": "🜟",
+     "label": "Eisenregulus"
+    },
+    {
+     "char": "🜠",
+     "label": "Kupfererz"
+    },
+    {
+     "char": "🜡",
+     "label": "Eisen-Kupfer-Erz"
+    },
+    {
+     "char": "🜢",
+     "label": "Kupfersublimat"
+    },
+    {
+     "char": "🜣",
+     "label": "Kupfersafran"
+    },
+    {
+     "char": "🜤",
+     "label": "Kupferantimoniat"
+    },
+    {
+     "char": "🜥",
+     "label": "Salz des Kupferantimoniats"
+    },
+    {
+     "char": "🜦",
+     "label": "Sublimat des Kupfersalzes"
+    },
+    {
+     "char": "🜧",
+     "label": "Grünspan"
+    },
+    {
+     "char": "🜨",
+     "label": "Zinnerz"
+    },
+    {
+     "char": "🜩",
+     "label": "Bleierz"
+    },
+    {
+     "char": "🜪",
+     "label": "Erde des Bleierzes"
+    },
+    {
+     "char": "🜫",
+     "label": "Antimon"
+    },
+    {
+     "char": "🜬",
+     "label": "Antimon II"
+    },
+    {
+     "char": "🜭",
+     "label": "Antimonsublimat"
+    },
+    {
+     "char": "🜮",
+     "label": "Antimonsalz"
+    },
+    {
+     "char": "🜯",
+     "label": "Sublimat des Antimonsalzes"
+    },
+    {
+     "char": "🜰",
+     "label": "Antimonessig"
+    },
+    {
+     "char": "🜱",
+     "label": "Antimonregulus"
+    },
+    {
+     "char": "🜲",
+     "label": "Antimonregulus II"
+    },
+    {
+     "char": "🜳",
+     "label": "Regulus"
+    },
+    {
+     "char": "🜴",
+     "label": "Regulus II"
+    },
+    {
+     "char": "🜵",
+     "label": "Regulus III"
+    },
+    {
+     "char": "🜶",
+     "label": "Regulus IV"
+    },
+    {
+     "char": "🜷",
+     "label": "Alkali"
+    },
+    {
+     "char": "🜸",
+     "label": "Alkali II"
+    },
+    {
+     "char": "🜹",
+     "label": "Markasit"
+    },
+    {
+     "char": "🜺",
+     "label": "Salmiak"
+    },
+    {
+     "char": "🜻",
+     "label": "Arsen"
+    },
+    {
+     "char": "🜼",
+     "label": "Realgar"
+    },
+    {
+     "char": "🜽",
+     "label": "Realgar II"
+    },
+    {
+     "char": "🜾",
+     "label": "Auripigment"
+    },
+    {
+     "char": "🜿",
+     "label": "Wismuterz"
     }
    ]
   },
@@ -247,6 +491,58 @@
     {
      "char": "☼",
      "label": "Sonne mit Strahlen"
+    },
+    {
+     "char": "❤",
+     "label": "Herz"
+    },
+    {
+     "char": "♲",
+     "label": "Recycling-Ring"
+    },
+    {
+     "char": "☦",
+     "label": "Orthodoxes Kreuz"
+    },
+    {
+     "char": "☢",
+     "label": "Radioaktiv"
+    },
+    {
+     "char": "☣",
+     "label": "Biogefährdung"
+    },
+    {
+     "char": "🔮",
+     "label": "Kristallkugel"
+    },
+    {
+     "char": "🧿",
+     "label": "Nazar-Amulett"
+    },
+    {
+     "char": "🃏",
+     "label": "Tarotkarte"
+    },
+    {
+     "char": "🕯️",
+     "label": "Kerze"
+    },
+    {
+     "char": "🐍",
+     "label": "Schlange"
+    },
+    {
+     "char": "∞",
+     "label": "Unendlichkeit"
+    },
+    {
+     "char": "⟳",
+     "label": "Kreislaufpfeil"
+    },
+    {
+     "char": "↻",
+     "label": "Offener Kreispfeil"
     }
    ]
   }

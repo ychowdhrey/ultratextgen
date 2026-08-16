@@ -63,6 +63,54 @@
     {
      "char": "ᛃ",
      "label": "Jera — Jahr, Ernte"
+    },
+    {
+     "char": "ᛇ",
+     "label": "Eihwaz (Eibe)"
+    },
+    {
+     "char": "ᛈ",
+     "label": "Perthro (Würfelbecher)"
+    },
+    {
+     "char": "ᛉ",
+     "label": "Algiz (Elch)"
+    },
+    {
+     "char": "ᛊ",
+     "label": "Sowilo (Sonne)"
+    },
+    {
+     "char": "ᛏ",
+     "label": "Tiwaz (Gott Tyr)"
+    },
+    {
+     "char": "ᛒ",
+     "label": "Berkano (Birke)"
+    },
+    {
+     "char": "ᛖ",
+     "label": "Ehwaz (Pferd)"
+    },
+    {
+     "char": "ᛗ",
+     "label": "Mannaz (Mensch)"
+    },
+    {
+     "char": "ᛚ",
+     "label": "Laguz (Wasser)"
+    },
+    {
+     "char": "ᛜ",
+     "label": "Ingwaz (Fruchtbarkeit)"
+    },
+    {
+     "char": "ᛞ",
+     "label": "Dagaz (Tag)"
+    },
+    {
+     "char": "ᛟ",
+     "label": "Othala (Erbland)"
     }
    ]
   },
@@ -119,6 +167,22 @@
     {
      "char": "ᛏ",
      "label": "Tyr — der Gott Tyr"
+    },
+    {
+     "char": "ᛒ",
+     "label": "Bjarkan"
+    },
+    {
+     "char": "ᛘ",
+     "label": "Madr"
+    },
+    {
+     "char": "ᛚ",
+     "label": "Logr"
+    },
+    {
+     "char": "ᛦ",
+     "label": "Yr"
     }
    ]
   },
@@ -179,6 +243,62 @@
    ]
   },
   {
+   "id": "mittelalter",
+   "label": "Mittelalterliche Runen und Sonderformen",
+   "h2": "Mittelalterliche Runen und Sonderformen",
+   "intro": "Spätere Runen aus mittelalterlichen und regionalen Inschriften.",
+   "symbols": [
+    {
+     "char": "ᛧ",
+     "label": "Kurzzweig-Yr"
+    },
+    {
+     "char": "ᛨ",
+     "label": "Isländisches Yr"
+    },
+    {
+     "char": "ᛩ",
+     "label": "Runenbuchstabe Q"
+    },
+    {
+     "char": "ᛪ",
+     "label": "Runenbuchstabe X"
+    },
+    {
+     "char": "ᛱ",
+     "label": "Runenbuchstabe K"
+    },
+    {
+     "char": "ᛲ",
+     "label": "Runenbuchstabe Sh"
+    },
+    {
+     "char": "ᛳ",
+     "label": "Runenbuchstabe Oo"
+    },
+    {
+     "char": "ᛴ",
+     "label": "Runenbuchstabe Os (Franks Casket)"
+    },
+    {
+     "char": "ᛵ",
+     "label": "Runenbuchstabe Is (Franks Casket)"
+    },
+    {
+     "char": "ᛶ",
+     "label": "Runenbuchstabe Eh (Franks Casket)"
+    },
+    {
+     "char": "ᛷ",
+     "label": "Runenbuchstabe Ac (Franks Casket)"
+    },
+    {
+     "char": "ᛸ",
+     "label": "Runenbuchstabe Aesc (Franks Casket)"
+    }
+   ]
+  },
+  {
    "id": "interpunktion",
    "label": "Runen-Interpunktion",
    "h2": "Runen-Interpunktion",
@@ -207,6 +327,130 @@
     {
      "char": "ᛰ",
      "label": "Belgthor — Goldene Zahl 19"
+    }
+   ]
+  },
+  {
+   "id": "weitere-runen",
+   "label": "Weitere Zeichen aus dem Unicode-Runenblock",
+   "h2": "Weitere Zeichen aus dem Unicode-Runenblock",
+   "intro": "Der Rest des Unicode-Runenblocks — Punkt-, Kurzzweig- und Buchstabenvarianten.",
+   "symbols": [
+    {
+     "char": "ᚡ",
+     "label": "Runenbuchstabe V"
+    },
+    {
+     "char": "ᚤ",
+     "label": "Runenbuchstabe Y"
+    },
+    {
+     "char": "ᚥ",
+     "label": "Runenbuchstabe W"
+    },
+    {
+     "char": "ᚧ",
+     "label": "Runenbuchstabe Eth"
+    },
+    {
+     "char": "ᚭ",
+     "label": "Runenbuchstabe Kurzzweig-Oss O"
+    },
+    {
+     "char": "ᚮ",
+     "label": "Runenbuchstabe O"
+    },
+    {
+     "char": "ᚯ",
+     "label": "Runenbuchstabe Oe"
+    },
+    {
+     "char": "ᚰ",
+     "label": "Runenbuchstabe On"
+    },
+    {
+     "char": "ᚳ",
+     "label": "Runenbuchstabe Cen"
+    },
+    {
+     "char": "ᚵ",
+     "label": "Runenbuchstabe G"
+    },
+    {
+     "char": "ᚶ",
+     "label": "Runenbuchstabe Eng"
+    },
+    {
+     "char": "ᚻ",
+     "label": "Runenbuchstabe Haegl H"
+    },
+    {
+     "char": "ᚽ",
+     "label": "Runenbuchstabe Kurzzweig-Hagall H"
+    },
+    {
+     "char": "ᚿ",
+     "label": "Runenbuchstabe Kurzzweig-Naud N"
+    },
+    {
+     "char": "ᛀ",
+     "label": "Runenbuchstabe Punktiertes N"
+    },
+    {
+     "char": "ᛂ",
+     "label": "Runenbuchstabe E"
+    },
+    {
+     "char": "ᛄ",
+     "label": "Runenbuchstabe Ger"
+    },
+    {
+     "char": "ᛆ",
+     "label": "Runenbuchstabe Kurzzweig-Ar A"
+    },
+    {
+     "char": "ᛌ",
+     "label": "Runenbuchstabe Kurzzweig-Sol S"
+    },
+    {
+     "char": "ᛍ",
+     "label": "Runenbuchstabe C"
+    },
+    {
+     "char": "ᛎ",
+     "label": "Runenbuchstabe Z"
+    },
+    {
+     "char": "ᛐ",
+     "label": "Runenbuchstabe Kurzzweig-Tyr T"
+    },
+    {
+     "char": "ᛑ",
+     "label": "Runenbuchstabe D"
+    },
+    {
+     "char": "ᛓ",
+     "label": "Runenbuchstabe Kurzzweig-Bjarkan B"
+    },
+    {
+     "char": "ᛔ",
+     "label": "Runenbuchstabe Punktiertes P"
+    },
+    {
+     "char": "ᛕ",
+     "label": "Runenbuchstabe Offenes P"
+    },
+    {
+     "char": "ᛙ",
+     "label": "Runenbuchstabe Kurzzweig-Madr M"
+    },
+    {
+     "char": "ᛛ",
+     "label": "Runenbuchstabe Punktiertes L"
+    },
+    {
+     "char": "ᛝ",
+     "label": "Runenbuchstabe Ing"
     }
    ]
   }

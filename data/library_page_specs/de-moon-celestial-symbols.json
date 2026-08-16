@@ -83,6 +83,10 @@
     {
      "char": "☪",
      "label": "Stern und Halbmond"
+    },
+    {
+     "char": "ⵉ",
+     "label": "Tifinagh-Yi (als Stern-Akzent)"
     }
    ]
   },
@@ -111,6 +115,10 @@
     {
      "char": "☀",
      "label": "Schwarze Sonne mit Strahlen"
+    },
+    {
+     "char": "𖤓",
+     "label": "Sechszackiger schwarzer Stern"
     }
    ]
   },
@@ -143,6 +151,34 @@
     {
      "char": "⭒",
      "label": "Umrissener Stern (klein)"
+    },
+    {
+     "char": "𖤐",
+     "label": "Bamum-Zeichen Ngkeuri (als „schwarze Sonne“)"
+    }
+   ]
+  },
+  {
+   "id": "sonnenlauf",
+   "label": "Sonnenlauf-Sequenz",
+   "h2": "Sonnenlauf-Sequenz",
+   "intro": "Der Tagesbogen von Sonnenaufgang bis Nacht — als Folge kopierbar.",
+   "symbols": [
+    {
+     "char": "🌅",
+     "label": "Sonnenaufgang"
+    },
+    {
+     "char": "🌞",
+     "label": "Mittagssonne"
+    },
+    {
+     "char": "🌇",
+     "label": "Sonnenuntergang"
+    },
+    {
+     "char": "🌃",
+     "label": "Nacht mit Sternen"
     }
    ]
   },
@@ -171,6 +207,46 @@
     {
      "char": "🛸",
      "label": "Fliegende Untertasse"
+    }
+   ]
+  },
+  {
+   "id": "sonne-mond-paare",
+   "label": "Sonne-Mond-Paare und Nachthimmel-Sets",
+   "h2": "Sonne-Mond-Paare und Nachthimmel-Sets",
+   "intro": "Fertige Paare und Nachthimmel-Kombinationen für Bio, Nickname und Status.",
+   "symbols": [
+    {
+     "char": "☀☾",
+     "label": "Sonne & Mond"
+    },
+    {
+     "char": "☼☽",
+     "label": "Tag & Nacht"
+    },
+    {
+     "char": "🌞🌚",
+     "label": "Gesichter-Paar"
+    },
+    {
+     "char": "☀️ ⋆ 🌙",
+     "label": "Sonne · Mond"
+    },
+    {
+     "char": "⋆｡˚☾˚｡⋆",
+     "label": "Gerahmter Mond"
+    },
+    {
+     "char": "˚₊‧꒰ა ☾ ໒꒱ ‧₊˚",
+     "label": "Mondflügel"
+    },
+    {
+     "char": "✦ ˚ ☾ ˚ ✦",
+     "label": "Sternenmond"
+    },
+    {
+     "char": "🌙✨⭐",
+     "label": "Nachthimmel"
     }
    ]
   }

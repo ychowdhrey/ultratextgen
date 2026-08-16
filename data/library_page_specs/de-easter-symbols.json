@@ -115,6 +115,10 @@
     {
      "char": "📖",
      "label": "Aufgeschlagenes Buch"
+    },
+    {
+     "char": "✝️",
+     "label": "Lateinisches Kreuz (Emoji)"
     }
    ]
   },
@@ -159,6 +163,34 @@
     {
      "char": "🌈",
      "label": "Regenbogen"
+    }
+   ]
+  },
+  {
+   "id": "kombis",
+   "label": "Oster-Grußkombinationen",
+   "h2": "Oster-Grußkombinationen",
+   "intro": "Fertige Frühlingsgrüße und Verzierungen — jeder Button kopiert die ganze Kombination auf einmal.",
+   "symbols": [
+    {
+     "char": "🐰🥚 Frohe Ostern 🥚🐰",
+     "label": "Frohe-Ostern-Gruß"
+    },
+    {
+     "char": "🌷🐣🌷 Der Frühling ist da 🌷🐣🌷",
+     "label": "Der-Frühling-ist-da-Gruß"
+    },
+    {
+     "char": "✝🕊✝ Er ist auferstanden ✝🕊✝",
+     "label": "Auferstehungsgruß"
+    },
+    {
+     "char": "•✿────🐰────✿•",
+     "label": "Hasen-Trenner"
+    },
+    {
+     "char": "🥚🍫🧺🍫🥚",
+     "label": "Osterkorb-Kombination"
     }
    ]
   }

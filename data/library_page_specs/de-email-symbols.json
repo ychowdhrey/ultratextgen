@@ -227,6 +227,10 @@
     {
      "char": "⏰",
      "label": "Frist"
+    },
+    {
+     "char": "📌",
+     "label": "Pinnnadel"
     }
    ]
   },
@@ -283,6 +287,18 @@
     {
      "char": "✆",
      "label": "Telefonzeichen (Text)"
+    },
+    {
+     "char": "☏",
+     "label": "Telefon (Textzeichen)"
+    },
+    {
+     "char": "⌂",
+     "label": "Haus / Adresse (Textzeichen)"
+    },
+    {
+     "char": "✎",
+     "label": "Bleistift (Textzeichen)"
     }
    ]
   },
