@@ -410,51 +410,51 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <!-- Intro / topical anchor -->
   <section class="editorial-section" aria-labelledby="intro-heading">
-    <h2 id="intro-heading">What this fancy text generator actually does</h2>
+    <h2 id="intro-heading">Hva denne tekstgeneratoren faktisk gjør</h2>
     <p>
-      UltraTextGen is a free Unicode font generator. You type plain text, it swaps each letter for a styled character that lives inside the Unicode standard, and you copy the result wherever you want it: an Instagram bio, a TikTok caption, a Discord display name, a LinkedIn headline, a Roblox profile, a WhatsApp status, even an email subject line. Because the styled letters <em>are</em> the text — not a font file your phone has to load, and not Markdown that gets stripped — they survive copy-paste into apps that don’t allow formatting.
+      UltraTextGen er en gratis Unicode-skriftgenerator. Du skriver vanlig tekst, og hver bokstav byttes ut med et stylet tegn som allerede finnes i Unicode-standarden — du kopierer resultatet dit du vil ha det: en Instagram-bio, en TikTok-bildetekst, et Discord-visningsnavn, en LinkedIn-overskrift, en Roblox-profil, en WhatsApp-status, til og med en e-post-emnelinje. Fordi de stylede bokstavene <em>er</em> teksten — ikke en fontfil telefonen din må laste inn, og ikke Markdown som blir fjernet — overlever de copy-paste i apper som ikke tillater formatering.
     </p>
     <p>
-      Type <code>hello</code> and you get:
-      𝗵𝗲𝗹𝗹𝗼 (bold),
-      𝘩𝘦𝘭𝘭𝘰 (italic),
-      𝒽ℯ𝓁𝓁ℴ (cursive script),
-      𝔥𝔢𝔩𝔩𝔬 (gothic),
-      🅗🅔🅛🅛🅞 (bubble),
-      ʰᵉˡˡᵒ (tiny / superscript),
+      Skriv <code>hello</code>, og du får:
+      𝗵𝗲𝗹𝗹𝗼 (fet),
+      𝘩𝘦𝘭𝘭𝘰 (kursiv),
+      𝒽ℯ𝓁𝓁ℴ (håndskrift),
+      𝔥𝔢𝔩𝔩𝔬 (gotisk),
+      🅗🅔🅛🅛🅞 (boble),
+      ʰᵉˡˡᵒ (liten / hevet skrift),
       ʜᴇʟʟᴏ (small caps),
-      ⓗⓔⓛⓛⓞ (circled),
+      ⓗⓔⓛⓛⓞ (innringet),
       ｈｅｌｌｏ (fullwidth),
-      h̶e̶l̶l̶o̶ (strikethrough),
-      h̳e̳l̳l̳o̳ (underline),
-      oʅʅǝɥ (upside-down),
-      ollǝɥ (mirror),
+      h̶e̶l̶l̶o̶ (gjennomstreket),
+      h̳e̳l̳l̳o̳ (understreket),
+      oʅʅǝɥ (opp ned),
+      ollǝɥ (speilvendt),
       h̷̢̛e̴̜͝l̸̼͝l̷͔͠o̵̗͝ (Zalgo / glitch),
-      and roughly 50 more — including aesthetic spaced styles like <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong> people use for Pinterest pins and Y2K-style usernames.
+      og rundt 50 til — inkludert luftige aesthetic-stiler som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong> folk bruker til Pinterest-pins og Y2K-aktige brukernavn.
     </p>
-    <h3>Where these fonts actually work (and where they don’t)</h3>
+    <h3>Hvor disse skriftene faktisk fungerer (og hvor de ikke gjør det)</h3>
     <p>
-      Compatibility varies because Unicode rendering depends on the device font, not the website. Here’s what we’ve tested:
+      Kompatibilitet varierer fordi Unicode-visning avhenger av enhetens font, ikke nettsiden. Her er hva vi har testet:
     </p>
     <ul class="compat-list">
-      <li><strong>Instagram</strong> — bio, post caption, comments, story stickers: works in every style. Username field: works only with Latin-script styles (bold, italic, cursive, bubble); won’t accept Zalgo or fullwidth.</li>
-      <li><strong>TikTok</strong> — bio, caption, comments, video description: works in all core styles. The "nickname" field is more permissive than Instagram’s username.</li>
-      <li><strong>Discord</strong> — server nickname, display name, messages, “About me”: Unicode fonts work without Nitro. Markdown bold (<code>**text**</code>) only renders inside messages; Unicode bold renders <em>everywhere</em>, including your nickname.</li>
-      <li><strong>LinkedIn</strong> — headline, About section, post body: bold, italic and small caps render reliably. Avoid Zalgo and heavily decorated styles on a professional profile — they trigger recruiter filters and screen-reader issues.</li>
-      <li><strong>WhatsApp</strong> — status, group names, broadcasts: all Unicode fonts work. WhatsApp’s own <code>*bold*</code>, <code>_italic_</code> and <code>~strike~</code> only render inside chat messages, so Unicode is the only option for status and group names.</li>
-      <li><strong>X (Twitter)</strong> — display name, bio, tweets: works everywhere. Some Zalgo styles get visually clipped on mobile.</li>
-      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong> — bios, captions, messages: all work.</li>
-      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — display names usually accept bold/italic/gothic. Each platform’s name filter rejects different characters — try a different style if one is blocked.</li>
-      <li><strong>Email subject lines</strong> (Gmail, Outlook, Apple Mail) — render Unicode fonts as written. This is the one place where there is no rich-text alternative.</li>
-      <li><strong>Won’t work:</strong> Microsoft Word, Google Docs body text styling (use the built-in toolbar instead), printed documents with non-Unicode fonts, and anywhere the recipient’s device is missing the glyph (rare on phones made after 2018).</li>
+      <li><strong>Instagram</strong> — bio, bildetekst, kommentarer, story-klistremerker: fungerer i alle stiler. Brukernavnfeltet: fungerer bare med latinske stiler (fet, kursiv, håndskrift, boble); godtar ikke Zalgo eller fullwidth.</li>
+      <li><strong>TikTok</strong> — bio, bildetekst, kommentarer, videobeskrivelse: fungerer i alle kjernestiler. «Kallenavn»-feltet er mer tillatende enn Instagrams brukernavnfelt.</li>
+      <li><strong>Discord</strong> — serverkallenavn, visningsnavn, meldinger, «Om meg»: Unicode-skrifter fungerer uten Nitro. Markdown-fet (<code>**tekst**</code>) vises bare inne i meldinger; Unicode-fet vises <em>overalt</em>, også i kallenavnet ditt.</li>
+      <li><strong>LinkedIn</strong> — overskrift, Om-seksjon, innleggstekst: fet, kursiv og small caps vises pålitelig. Unngå Zalgo og sterkt dekorerte stiler på en profesjonell profil — de utløser rekrutteringsfiltre og skjermleser-problemer.</li>
+      <li><strong>WhatsApp</strong> — status, gruppenavn, kringkastinger: alle Unicode-skrifter fungerer. WhatsApps egne <code>*fet*</code>, <code>_kursiv_</code> og <code>~gjennomstreket~</code> vises bare inne i chat-meldinger, så Unicode er eneste alternativ for status og gruppenavn.</li>
+      <li><strong>X (Twitter)</strong> — visningsnavn, bio, tweets: fungerer overalt. Enkelte Zalgo-stiler blir visuelt klippet på mobil.</li>
+      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong> — bioer, bildetekster, meldinger: alt fungerer.</li>
+      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — visningsnavn godtar vanligvis fet/kursiv/gotisk. Hver plattforms navnefilter avviser ulike tegn — prøv en annen stil hvis én blir blokkert.</li>
+      <li><strong>E-post-emnelinjer</strong> (Gmail, Outlook, Apple Mail) — viser Unicode-skrifter som skrevet. Dette er det ene stedet hvor det ikke finnes noe riktekst-alternativ.</li>
+      <li><strong>Fungerer ikke:</strong> Microsoft Word, Google Docs’ brødtekst-styling (bruk verktøylinjen i stedet), utskrevne dokumenter med ikke-Unicode-skrifter, og steder der mottakerens enhet mangler tegnet (sjeldent på telefoner fra 2018 eller nyere).</li>
     </ul>
-    <h3>Why Unicode fonts ≠ regular fonts</h3>
+    <h3>Hvorfor Unicode-skrifter ≠ vanlige skrifttyper</h3>
     <p>
-      A regular font (Helvetica, Arial, the LinkedIn Sans typeface, etc.) is a file that lives on your device and tells the screen how to draw a letter. If the website doesn’t load that font, the letter still says "A" — it just gets drawn in a default font instead. Unicode “fonts” aren’t fonts at all in that sense. They’re separate characters in the Unicode standard — A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ are all different characters with different code points. That’s why they travel: you’re not styling the letter A, you’re using a different letter entirely that happens to look styled.
+      En vanlig skrifttype (Helvetica, Arial, LinkedIn Sans-fonten osv.) er en fil som ligger på enheten din og forteller skjermen hvordan en bokstav skal tegnes. Hvis nettsiden ikke laster inn den fonten, står bokstaven fortsatt som «A» — den tegnes bare med en standardfont i stedet. Unicode-«skrifter» er ikke skrifttyper i det hele tatt i den forstand. De er egne tegn i Unicode-standarden — A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ er alle forskjellige tegn med forskjellige kodepunkter. Derfor overlever de: du stiler ikke bokstaven A, du bruker en helt annen bokstav som tilfeldigvis ser stylet ut.
     </p>
-    <h3>What’s in the library</h3>
+    <h3>Hva som finnes i stilbiblioteket</h3>
     <p>
-      About 65 styles across twelve families: <strong>bold</strong> (sans, serif, italic-bold), <strong>italic</strong>, <strong>cursive / script</strong> (regular and bold), <strong>gothic / fraktur</strong>, <strong>bubble</strong> (filled, light, tiles, curly, angle, spaced, and more — 12 variants), <strong>strikethrough</strong> (slash, tilde, short, long), <strong>underline</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps and superscript</strong>, <strong>aesthetic / spaced</strong>, <strong>upside-down + mirror + backwards</strong>, <strong>Zalgo (glitch)</strong>, and a ten-style <strong>text decorator</strong> that auto-brackets each word with symbols. Stack two styles together with one click, or wrap the whole result in a frame, divider, arrow, emoji or flag.
+      Rundt 65 stiler fordelt på tolv familier: <strong>fet</strong> (grotesk, antikva, kursiv-fet), <strong>kursiv</strong>, <strong>håndskrift / script</strong> (vanlig og fet), <strong>gotisk / fraktur</strong>, <strong>boble</strong> (fylt, lett, fliser, buet, vinklet, luftig og flere — 12 varianter), <strong>gjennomstreket</strong> (skråstrek, tilde, kort, lang), <strong>understreket</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps og hevet skrift</strong>, <strong>aesthetic / luftig</strong>, <strong>opp ned + speilvendt + baklengs</strong>, <strong>Zalgo (glitch)</strong>, og en ti-stils <strong>tekstdekoratør</strong> som automatisk rammer inn hvert ord med symboler. Kombiner to stiler med ett klikk, eller ramm inn hele resultatet med en ramme, skillelinje, pil, emoji eller flagg.
     </p>
   </section>
 
