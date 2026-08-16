@@ -14,8 +14,10 @@
       { "string": "Clown Emoji &amp; Kaomoji", "reason": "both nouns are loanwords in German; the ampersand form is identical", "found_on": "de/library/clown-emoji/", "added": "2026-08-15" },
       { "string": "Cupcake", "reason": "loanword, spelled identically in German", "found_on": "de/library/geschenk-emoji/", "added": "2026-08-15" },
       { "string": "Emoji Combos", "reason": "both words are used untranslated in German", "found_on": "de/library/geschenk-emoji/", "added": "2026-08-15" },
+      { "string": "Emojis", "reason": "German pluralises the loanword exactly this way; 16 of 19 German decoration tabs render \"Emojis\"", "found_on": "de/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Joker", "reason": "loanword, spelled identically in German", "found_on": "de/library/clown-emoji/", "added": "2026-08-15" },
       { "string": "Joystick", "reason": "loanword, spelled identically in German", "found_on": "de/library/geist-emoji/", "added": "2026-08-15" },
+      { "string": "Minimal", "reason": "standard German adjective; the site's own German decoration tabs use it on 14 pages against 8 \"Minimalistisch\" — the majority form, not an untranslated one", "found_on": "de/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "de/library/kuss-emoji/", "added": "2026-08-15" },
       { "string": "Namaste &amp; Balance", "reason": "Namaste is a loanword and Balance is the ordinary German noun", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" },
       { "string": "Peace Out", "reason": "English slang used untranslated in German", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" },
@@ -27,8 +29,16 @@
       { "string": "Yin Yang", "reason": "transliteration, identical in German", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" },
       { "string": "Zombie", "reason": "loanword, spelled identically in German", "found_on": "de/library/teufel-emoji/", "added": "2026-08-15" }
     ],
+    "es": [
+      { "string": "Emojis", "reason": "Spanish pluralises the loanword identically; all 25 Spanish decoration tabs render \"Emojis\"", "found_on": "es/usecase/* decoration tabs", "added": "2026-08-16" },
+      { "string": "Minimal", "reason": "used as-is in Spanish; 19 of 26 Spanish decoration tabs render \"Minimal\" against 7 \"Minimalista\"", "found_on": "es/usecase/* decoration tabs", "added": "2026-08-16" }
+    ],
+    "fr": [
+      { "string": "Emojis", "reason": "French pluralises the loanword identically; 10 of 14 French decoration tabs render \"Emojis\"", "found_on": "fr/usecase/* decoration tabs", "added": "2026-08-16" }
+    ],
     "id": [
       { "string": "Font", "reason": "loanword; Indonesian uses 'font' untranslated, as every id page on the site does", "found_on": "id/symbol/* tables", "added": "2026-08-16" },
+      { "string": "Minimal", "reason": "\"minimal\" is ordinary Indonesian; 41 of 43 Indonesian decoration tabs render it, against 2 \"Minimalis\"", "found_on": "id/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Platform", "reason": "loanword; Indonesian spells it 'Platform' — id's own longer header 'Platform / Alat' keeps the word untranslated and translates only 'Tool'", "found_on": "id/symbol/* input-method tables", "added": "2026-08-16" }
     ],
     "it": [
@@ -37,6 +47,7 @@
       { "string": "Cupcake", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-regalo/", "added": "2026-08-15" },
       { "string": "Font", "reason": "loanword; Italian uses 'font' for a typeface, and the site's Italian pages use it untranslated throughout", "found_on": "it/symbol/* tables", "added": "2026-08-16" },
       { "string": "Goblin", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-diavolo/", "added": "2026-08-15" },
+      { "string": "Minimal", "reason": "used as-is in Italian design vocabulary; 23 of 26 Italian decoration tabs render \"Minimal\" against 3 \"Minimo\"", "found_on": "it/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "it/library/emoji-bacio/", "added": "2026-08-15" },
       { "string": "XOXO", "reason": "an initialism, not translated", "found_on": "it/library/emoji-bacio/", "added": "2026-08-15" },
       { "string": "Yin Yang", "reason": "transliteration, identical in Italian", "found_on": "it/library/emoji-pace/", "added": "2026-08-15" },
@@ -44,6 +55,9 @@
     ],
     "ja": [
       { "string": "XOXO", "reason": "an initialism, kept in Latin script in Japanese copy", "found_on": "ja/library/kisu-emoji/", "added": "2026-08-15" }
+    ],
+    "ms": [
+      { "string": "Minimal", "reason": "\"minimal\" is ordinary Malay; all 8 Malay decoration tabs render it", "found_on": "ms/usecase/* decoration tabs", "added": "2026-08-16" }
     ],
     "nl": [
       { "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde", "reason": "a codepoint line; Tilde is also the Dutch word", "found_on": "nl/library/ascii-tabel/", "added": "2026-08-15" },
@@ -71,7 +85,11 @@
       { "string": "Yin Yang", "reason": "transliteration, identical in Polish", "found_on": "pl/library/emoji-pokoju/", "added": "2026-08-15" },
       { "string": "Zombie", "reason": "loanword, spelled identically in Polish", "found_on": "pl/library/symbole-halloween/", "added": "2026-08-15" }
     ],
+    "pt": [
+      { "string": "Emojis", "reason": "Portuguese pluralises the loanword identically; all 21 Portuguese decoration tabs render \"Emojis\"", "found_on": "pt/usecase/* decoration tabs", "added": "2026-08-16" }
+    ],
     "tr": [
+      { "string": "Minimal", "reason": "\"minimal\" is ordinary Turkish; all 23 Turkish decoration tabs render it", "found_on": "tr/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Platform", "reason": "loanword; Turkish spells it 'Platform' — confirmed by tr's own dominant table header 'Platform|Çalışır mı?' (×74 pages), i.e. the site already settled on this form in Turkish", "found_on": "tr/symbol/* input-method tables", "added": "2026-08-16" }
     ]
   }
