@@ -49,6 +49,34 @@
    ]
   },
   {
+   "id": "daumen-runter",
+   "label": "Daumen runter in jedem Hautton",
+   "h2": "Daumen runter in jedem Hautton",
+   "intro": "Das Gegenstück, ebenfalls in allen fünf Hauttönen.",
+   "symbols": [
+    {
+     "char": "👎🏻",
+     "label": "Daumen runter, heller Hautton"
+    },
+    {
+     "char": "👎🏼",
+     "label": "Daumen runter, mittelheller Hautton"
+    },
+    {
+     "char": "👎🏽",
+     "label": "Daumen runter, mittlerer Hautton"
+    },
+    {
+     "char": "👎🏾",
+     "label": "Daumen runter, mitteldunkler Hautton"
+    },
+    {
+     "char": "👎🏿",
+     "label": "Daumen runter, dunkler Hautton"
+    }
+   ]
+  },
+  {
    "id": "daumendruecken",
    "label": "Daumen drücken",
    "h2": "Daumen drücken — Glück wünschen",
@@ -125,6 +153,62 @@
     {
      "char": "🤝",
      "label": "Handschlag"
+    },
+    {
+     "char": "✌",
+     "label": "Victory-Zeichen"
+    },
+    {
+     "char": "🤙",
+     "label": "Shaka-Zeichen"
+    },
+    {
+     "char": "🫰",
+     "label": "Hand mit gekreuztem Zeigefinger und Daumen"
+    },
+    {
+     "char": "💪",
+     "label": "Angespannter Bizeps"
+    },
+    {
+     "char": "👊",
+     "label": "Entgegenkommende Faust"
+    },
+    {
+     "char": "🫶",
+     "label": "Herz-Hände"
+    }
+   ]
+  },
+  {
+   "id": "zeigen",
+   "label": "Zeigende und erhobene Hände",
+   "h2": "Zeigende und erhobene Hände",
+   "intro": "Zeigefinger in alle vier Richtungen und die offenen Handzeichen.",
+   "symbols": [
+    {
+     "char": "👆",
+     "label": "Zeigefinger nach oben"
+    },
+    {
+     "char": "👇",
+     "label": "Zeigefinger nach unten"
+    },
+    {
+     "char": "👈",
+     "label": "Zeigefinger nach links"
+    },
+    {
+     "char": "👉",
+     "label": "Zeigefinger nach rechts"
+    },
+    {
+     "char": "🖐",
+     "label": "Hand mit gespreizten Fingern"
+    },
+    {
+     "char": "🖖",
+     "label": "Vulkanischer Gruß"
     }
    ]
   },
@@ -165,6 +249,22 @@
     {
      "char": "❦",
      "label": "Blattornament"
+    },
+    {
+     "char": "🆗",
+     "label": "OK-Zeichen"
+    },
+    {
+     "char": "🆒",
+     "label": "Cool-Zeichen"
+    },
+    {
+     "char": "❌",
+     "label": "Rotes Kreuz (Emoji)"
+    },
+    {
+     "char": "⭕",
+     "label": "Roter Kreis"
     }
    ]
   }
@@ -244,7 +344,90 @@
   }
  ],
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16"
+ "date_modified": "2026-08-16",
+ "collection_container_id": "thumbsUpSetsContainer",
+ "collection_section": {
+  "id": "approval-combos",
+  "label": "Zustimmungs-Kombis",
+  "h2": "Zustimmungs-Kombinationen zum Kopieren",
+  "intro": "Fertige Zustimmungs-Sets — jeder Button kopiert die ganze Kombination auf einmal."
+ },
+ "collections": [
+  {
+   "name": "Volle Zustimmung",
+   "flags": [
+    "👍",
+    "💯",
+    "✅"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Gut gemacht",
+   "flags": [
+    "👏",
+    "👏",
+    "👏",
+    "🙌"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Abgemacht",
+   "flags": [
+    "🤝",
+    "👍",
+    "✅"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Klares Nein",
+   "flags": [
+    "👎",
+    "❌",
+    "😬"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Alles gut",
+   "flags": [
+    "👌",
+    "😎",
+    "👍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Klares Ja",
+   "flags": [
+    "💪",
+    "🔥",
+    "👍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Team-Sieg",
+   "flags": [
+    "🙌",
+    "🎉",
+    "👍",
+    "💯"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Daumen drücken",
+   "flags": [
+    "🤞",
+    "🍀",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
 }

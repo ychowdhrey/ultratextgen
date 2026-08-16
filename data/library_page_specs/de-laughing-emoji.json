@@ -45,6 +45,10 @@
     {
      "char": "😅",
      "label": "Lachen mit Schweißtropfen"
+    },
+    {
+     "char": "😁",
+     "label": "Strahlendes Gesicht mit lachenden Augen"
     }
    ]
   },
@@ -85,6 +89,26 @@
     {
      "char": "🗿",
      "label": "Moai — trockener Humor"
+    },
+    {
+     "char": "☠",
+     "label": "Totenkopf mit gekreuzten Knochen"
+    },
+    {
+     "char": "🪦",
+     "label": "Grabstein"
+    },
+    {
+     "char": "🫵",
+     "label": "Zeigefinger auf den Betrachter"
+    },
+    {
+     "char": "😵",
+     "label": "Gesicht mit ausgekreuzten Augen"
+    },
+    {
+     "char": "😮‍💨",
+     "label": "Ausatmendes Gesicht"
     }
    ]
   },
@@ -94,10 +118,6 @@
    "h2": "Verlegenes und schadenfrohes Lachen",
    "intro": "Lachen, das nicht ganz reine Freude ist.",
    "symbols": [
-    {
-     "char": "😅",
-     "label": "Verlegenes Lachen"
-    },
     {
      "char": "😬",
      "label": "Grimasse — peinlich berührt"
@@ -125,6 +145,18 @@
     {
      "char": "🤪",
      "label": "Verrücktes Gesicht"
+    },
+    {
+     "char": "😝",
+     "label": "Zusammengekniffenes Gesicht mit Zunge"
+    },
+    {
+     "char": "😛",
+     "label": "Gesicht mit Zunge"
+    },
+    {
+     "char": "🙃",
+     "label": "Umgedrehtes Gesicht"
     }
    ]
   },
@@ -165,6 +197,34 @@
     {
      "char": "(*≧ω≦*)",
      "label": "Kicherndes Gesicht"
+    },
+    {
+     "char": "ヽ(´▽`)/",
+     "label": "Lach-Kaomoji mit erhobenen Armen"
+    },
+    {
+     "char": "(´∀｀)",
+     "label": "Entspanntes Grinsen (Kaomoji)"
+    },
+    {
+     "char": "（＾ｖ＾）",
+     "label": "Freches Lächeln (Kaomoji)"
+    },
+    {
+     "char": "(＾ω＾)",
+     "label": "Fröhliches Schmunzeln (Kaomoji)"
+    },
+    {
+     "char": "(≧∇≦)/",
+     "label": "Winkendes Lachen (Kaomoji)"
+    },
+    {
+     "char": "ヾ(≧▽≦*)o",
+     "label": "Unkontrollierbares Lachen (Kaomoji)"
+    },
+    {
+     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+     "label": "Funkelndes Lachen (Kaomoji)"
     }
    ]
   }
@@ -244,7 +304,93 @@
   }
  ],
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "date_published": "2026-08-16",
- "date_modified": "2026-08-16"
+ "date_modified": "2026-08-16",
+ "collection_container_id": "laughingSetsContainer",
+ "collection_section": {
+  "id": "laugh-combos",
+  "label": "Lach-Kombis",
+  "h2": "Lach-Kombinationen zum Kopieren",
+  "intro": "Fertige Reaktions-Sets — jeder Button kopiert die ganze Kombination auf einmal."
+ },
+ "collections": [
+  {
+   "name": "Tränen-Lach-Spam",
+   "flags": [
+    "😂",
+    "😂",
+    "😂",
+    "🤣"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Ich bin tot",
+   "flags": [
+    "💀",
+    "💀",
+    "🙏",
+    "😭"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "LMAO-Paket",
+   "flags": [
+    "🤣",
+    "✋",
+    "😭",
+    "💀"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kicheranfall",
+   "flags": [
+    "😆",
+    "😮‍💨",
+    "😂",
+    "💨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Zeigen und Lachen",
+   "flags": [
+    "🫵",
+    "😂",
+    "🤣"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Versuch nicht zu lachen",
+   "flags": [
+    "🤭",
+    "😬",
+    "😂",
+    "💥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Clown-Nummer",
+   "flags": [
+    "🤡",
+    "🎪",
+    "😂"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kaomoji-LOL-Paket",
+   "flags": [
+    "(≧▽≦)",
+    "ヽ(´▽`)/",
+    "(≧∇≦)/"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
 }
