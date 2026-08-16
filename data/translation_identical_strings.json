@@ -8,59 +8,298 @@
   },
   "entries": {
     "de": [
-      { "string": "Clown Emoji &amp; Kaomoji", "reason": "both nouns are loanwords in German; the ampersand form is identical", "found_on": "de/library/clown-emoji/", "added": "2026-08-15" },
-      { "string": "Cupcake", "reason": "loanword, spelled identically in German", "found_on": "de/library/geschenk-emoji/", "added": "2026-08-15" },
-      { "string": "Emoji Combos", "reason": "both words are used untranslated in German", "found_on": "de/library/geschenk-emoji/", "added": "2026-08-15" },
-      { "string": "Joker", "reason": "loanword, spelled identically in German", "found_on": "de/library/clown-emoji/", "added": "2026-08-15" },
-      { "string": "Joystick", "reason": "loanword, spelled identically in German", "found_on": "de/library/geist-emoji/", "added": "2026-08-15" },
-      { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "de/library/kuss-emoji/", "added": "2026-08-15" },
-      { "string": "Namaste &amp; Balance", "reason": "Namaste is a loanword and Balance is the ordinary German noun", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" },
-      { "string": "Peace Out", "reason": "English slang used untranslated in German", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" },
-      { "string": "Radio", "reason": "identical noun in German", "found_on": "de/library/tanz-emoji/", "added": "2026-08-15" },
-      { "string": "Rose", "reason": "identical noun in German", "found_on": "de/library/geschenk-emoji/", "added": "2026-08-15" },
-      { "string": "Silent Disco", "reason": "the German term for the concept is the English one", "found_on": "de/library/tanz-emoji/", "added": "2026-08-15" },
-      { "string": "Wolf", "reason": "identical noun in German", "found_on": "de/library/anime-symbole/", "added": "2026-08-15" },
-      { "string": "XOXO", "reason": "an initialism, not translated", "found_on": "de/library/kuss-emoji/", "added": "2026-08-15" },
-      { "string": "Zombie", "reason": "loanword, spelled identically in German", "found_on": "de/library/teufel-emoji/", "added": "2026-08-15" },
-      { "string": "Yin Yang", "reason": "transliteration, identical in German", "found_on": "de/library/friedens-emoji/", "added": "2026-08-15" }
+      {
+        "string": "Clown Emoji &amp; Kaomoji",
+        "reason": "both nouns are loanwords in German; the ampersand form is identical",
+        "found_on": "de/library/clown-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Cupcake",
+        "reason": "loanword, spelled identically in German",
+        "found_on": "de/library/geschenk-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Emoji Combos",
+        "reason": "both words are used untranslated in German",
+        "found_on": "de/library/geschenk-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Joker",
+        "reason": "loanword, spelled identically in German",
+        "found_on": "de/library/clown-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Joystick",
+        "reason": "loanword, spelled identically in German",
+        "found_on": "de/library/geist-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Muah",
+        "reason": "onomatopoeia, written the same way",
+        "found_on": "de/library/kuss-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Namaste &amp; Balance",
+        "reason": "Namaste is a loanword and Balance is the ordinary German noun",
+        "found_on": "de/library/friedens-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Peace Out",
+        "reason": "English slang used untranslated in German",
+        "found_on": "de/library/friedens-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Radio",
+        "reason": "identical noun in German",
+        "found_on": "de/library/tanz-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Rose",
+        "reason": "identical noun in German",
+        "found_on": "de/library/geschenk-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Silent Disco",
+        "reason": "the German term for the concept is the English one",
+        "found_on": "de/library/tanz-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Wolf",
+        "reason": "identical noun in German",
+        "found_on": "de/library/anime-symbole/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "XOXO",
+        "reason": "an initialism, not translated",
+        "found_on": "de/library/kuss-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Yin Yang",
+        "reason": "transliteration, identical in German",
+        "found_on": "de/library/friedens-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Zombie",
+        "reason": "loanword, spelled identically in German",
+        "found_on": "de/library/teufel-emoji/",
+        "added": "2026-08-15"
+      }
+    ],
+    "id": [
+      {
+        "string": "Breadcrumb ›",
+        "reason": "Indonesian UI copy uses the English term 'breadcrumb' for the navigation trail; the page translates every neighbouring role label (Kembali ‹, Item Menu ▸, Ciutkan ▴, Berikutnya ⟩) and keeps this one because it is the Indonesian term",
+        "found_on": "id/library/simbol-panah/",
+        "added": "2026-08-16"
+      },
+      {
+        "string": "Dropdown ▾",
+        "reason": "same section, same reason — 'dropdown' is the term used in Indonesian interface copy, not a missed translation",
+        "found_on": "id/library/simbol-panah/",
+        "added": "2026-08-16"
+      }
     ],
     "it": [
-      { "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde", "reason": "a codepoint line; Tilde is also the Italian word", "found_on": "it/library/tabella-ascii/", "added": "2026-08-15" },
-      { "string": "Clown Check", "reason": "an English meme phrase used untranslated in Italian", "found_on": "it/library/emoji-clown/", "added": "2026-08-15" },
-      { "string": "Cupcake", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-regalo/", "added": "2026-08-15" },
-      { "string": "Goblin", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-diavolo/", "added": "2026-08-15" },
-      { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "it/library/emoji-bacio/", "added": "2026-08-15" },
-      { "string": "XOXO", "reason": "an initialism, not translated", "found_on": "it/library/emoji-bacio/", "added": "2026-08-15" },
-      { "string": "Yin Yang", "reason": "transliteration, identical in Italian", "found_on": "it/library/emoji-pace/", "added": "2026-08-15" },
-      { "string": "Zombie", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-diavolo/", "added": "2026-08-15" }
+      {
+        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "reason": "a codepoint line; Tilde is also the Italian word",
+        "found_on": "it/library/tabella-ascii/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Clown Check",
+        "reason": "an English meme phrase used untranslated in Italian",
+        "found_on": "it/library/emoji-clown/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Cupcake",
+        "reason": "loanword, spelled identically in Italian",
+        "found_on": "it/library/emoji-regalo/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Goblin",
+        "reason": "loanword, spelled identically in Italian",
+        "found_on": "it/library/emoji-diavolo/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Muah",
+        "reason": "onomatopoeia, written the same way",
+        "found_on": "it/library/emoji-bacio/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "XOXO",
+        "reason": "an initialism, not translated",
+        "found_on": "it/library/emoji-bacio/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Yin Yang",
+        "reason": "transliteration, identical in Italian",
+        "found_on": "it/library/emoji-pace/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Zombie",
+        "reason": "loanword, spelled identically in Italian",
+        "found_on": "it/library/emoji-diavolo/",
+        "added": "2026-08-15"
+      }
     ],
     "ja": [
-      { "string": "XOXO", "reason": "an initialism, kept in Latin script in Japanese copy", "found_on": "ja/library/kisu-emoji/", "added": "2026-08-15" }
+      {
+        "string": "XOXO",
+        "reason": "an initialism, kept in Latin script in Japanese copy",
+        "found_on": "ja/library/kisu-emoji/",
+        "added": "2026-08-15"
+      }
     ],
     "nl": [
-      { "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde", "reason": "a codepoint line; Tilde is also the Dutch word", "found_on": "nl/library/ascii-tabel/", "added": "2026-08-15" },
-      { "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand", "reason": "a codepoint line; Ampersand is also the Dutch word", "found_on": "nl/library/ascii-tabel/", "added": "2026-08-15" },
-      { "string": "Clown Emoji &amp; Kaomoji", "reason": "both nouns are loanwords in Dutch; the ampersand form is identical", "found_on": "nl/library/clown-emoji/", "added": "2026-08-15" },
-      { "string": "Cupcake", "reason": "loanword, spelled identically in Dutch", "found_on": "nl/library/cadeau-emoji/", "added": "2026-08-15" },
-      { "string": "Element", "reason": "identical noun in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Joker", "reason": "loanword, spelled identically in Dutch", "found_on": "nl/library/clown-emoji/", "added": "2026-08-15" },
-      { "string": "Jupiter", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Letters 65–122", "reason": "'Letters' is the Dutch plural too, and the range is numeric", "found_on": "nl/library/ascii-tabel/", "added": "2026-08-15" },
-      { "string": "Mars", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "nl/library/kus-emoji/", "added": "2026-08-15" },
-      { "string": "Namaste &amp; Balance", "reason": "Namaste is a loanword and Balance is used in Dutch", "found_on": "nl/library/vrede-emoji/", "added": "2026-08-15" },
-      { "string": "Peace Out", "reason": "English slang used untranslated in Dutch", "found_on": "nl/library/vrede-emoji/", "added": "2026-08-15" },
-      { "string": "Pluto", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Uranus", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Venus", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "Water", "reason": "identical noun in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
-      { "string": "XOXO", "reason": "an initialism, not translated", "found_on": "nl/library/kus-emoji/", "added": "2026-08-15" },
-      { "string": "Yin Yang", "reason": "transliteration, identical in Dutch", "found_on": "nl/library/vrede-emoji/", "added": "2026-08-15" }
+      {
+        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "reason": "a codepoint line; Tilde is also the Dutch word",
+        "found_on": "nl/library/ascii-tabel/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "reason": "a codepoint line; Ampersand is also the Dutch word",
+        "found_on": "nl/library/ascii-tabel/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Clown Emoji &amp; Kaomoji",
+        "reason": "both nouns are loanwords in Dutch; the ampersand form is identical",
+        "found_on": "nl/library/clown-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Cupcake",
+        "reason": "loanword, spelled identically in Dutch",
+        "found_on": "nl/library/cadeau-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Element",
+        "reason": "identical noun in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Joker",
+        "reason": "loanword, spelled identically in Dutch",
+        "found_on": "nl/library/clown-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Jupiter",
+        "reason": "planet name, identical in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Letters 65–122",
+        "reason": "'Letters' is the Dutch plural too, and the range is numeric",
+        "found_on": "nl/library/ascii-tabel/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Mars",
+        "reason": "planet name, identical in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Muah",
+        "reason": "onomatopoeia, written the same way",
+        "found_on": "nl/library/kus-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Namaste &amp; Balance",
+        "reason": "Namaste is a loanword and Balance is used in Dutch",
+        "found_on": "nl/library/vrede-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Peace Out",
+        "reason": "English slang used untranslated in Dutch",
+        "found_on": "nl/library/vrede-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Pluto",
+        "reason": "planet name, identical in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Uranus",
+        "reason": "planet name, identical in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Venus",
+        "reason": "planet name, identical in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Water",
+        "reason": "identical noun in Dutch",
+        "found_on": "nl/library/sterrenbeeld-symbolen/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "XOXO",
+        "reason": "an initialism, not translated",
+        "found_on": "nl/library/kus-emoji/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Yin Yang",
+        "reason": "transliteration, identical in Dutch",
+        "found_on": "nl/library/vrede-emoji/",
+        "added": "2026-08-15"
+      }
     ],
     "pl": [
-      { "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand", "reason": "a codepoint line; Ampersand is the Polish term too", "found_on": "pl/library/tabela-ascii/", "added": "2026-08-15" },
-      { "string": "Yin Yang", "reason": "transliteration, identical in Polish", "found_on": "pl/library/emoji-pokoju/", "added": "2026-08-15" },
-      { "string": "Zombie", "reason": "loanword, spelled identically in Polish", "found_on": "pl/library/symbole-halloween/", "added": "2026-08-15" }
+      {
+        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "reason": "a codepoint line; Ampersand is the Polish term too",
+        "found_on": "pl/library/tabela-ascii/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Yin Yang",
+        "reason": "transliteration, identical in Polish",
+        "found_on": "pl/library/emoji-pokoju/",
+        "added": "2026-08-15"
+      },
+      {
+        "string": "Zombie",
+        "reason": "loanword, spelled identically in Polish",
+        "found_on": "pl/library/symbole-halloween/",
+        "added": "2026-08-15"
+      }
     ]
   }
 }
