@@ -358,21 +358,20 @@ COLUMNS = ["slug", "image_path", "width", "height", "board", "pin_title",
 
 
 def main():
-    import cairosvg
-    pin_dir = os.path.join(ROOT, "assets", "pinterest", LOCALE)
+    import sys
+    sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+    import r2_pinterest as R2
     csv_out = os.path.join(ROOT, "data", f"{LOCALE}_pinterest_pins.csv")
-    os.makedirs(pin_dir, exist_ok=True)
 
     out = []
     for pin in GLYPHS:
         dest = f"{SYM}/{pin['slug']}/"
         svg = glyph_pin_svg(pin)
-        path = os.path.join(pin_dir, f"{pin['slug']}.png")
-        cairosvg.svg2png(bytestring=svg.encode(), write_to=path,
-                         output_width=PIN_W, output_height=PIN_H)
+        r2_key = f"pinterest/boards/{LOCALE}/{pin['slug']}.png"
+        R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
         out.append({
             "slug": pin["slug"],
-            "image_path": f"assets/pinterest/{LOCALE}/{pin['slug']}.png",
+            "image_path": r2_key,
             "width": str(PIN_W), "height": str(PIN_H),
             "board": BOARD, "pin_title": pin["title"],
             "pin_description": describe_glyph(pin),
@@ -384,12 +383,11 @@ def main():
 
     for pin in REFS:
         svg = LPK.pin_svg(pin, CTA, SUFFIX)
-        path = os.path.join(pin_dir, f"{pin['slug']}.png")
-        cairosvg.svg2png(bytestring=svg.encode(), write_to=path,
-                         output_width=PIN_W, output_height=PIN_H)
+        r2_key = f"pinterest/boards/{LOCALE}/{pin['slug']}.png"
+        R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
         out.append({
             "slug": pin["slug"],
-            "image_path": f"assets/pinterest/{LOCALE}/{pin['slug']}.png",
+            "image_path": r2_key,
             "width": str(PIN_W), "height": str(PIN_H),
             "board": BOARD, "pin_title": pin["title"],
             "pin_description": describe_ref(pin),
@@ -403,7 +401,8 @@ def main():
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out)
-    print(f"generated {len(out)} {LOCALE} pins -> assets/pinterest/{LOCALE}/")
+    print(f"uploaded {len(out)} {LOCALE} pins -> R2 "
+          f"{R2.public_base_url()}/pinterest/boards/{LOCALE}/")
     print(f"wrote inventory -> data/{LOCALE}_pinterest_pins.csv")
 
     BU = _load(os.path.join(HERE, "build_pinterest_upload.py"), "buildupload")

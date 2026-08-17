@@ -67,11 +67,18 @@ ultratextgen/
 │   ├── generate-id-pins.py       # /id/ board generator (mirror this for new boards)
 │   ├── generate-vertical-text-pins.py # vertical-text board generator
 │   ├── pinterest_csv.py    # SINGLE source of truth for the Pinterest upload schema
-│   └── build_pinterest_upload.py # inventory CSV -> *_upload.csv (importer-ready)
+│   ├── build_pinterest_upload.py # inventory CSV -> *_upload.csv (importer-ready)
+│   ├── lib/r2_pinterest.py # SINGLE source of truth for the R2 client + object keys
+│   ├── migrate_pinterest_to_r2.py   # one-time backfill of pre-R2 committed pins
+│   └── validate_pinterest_r2_migration.py # the 10-check pre-deletion validation pass
 │
-├── assets/pinterest/<board>/ # Pin images (1000×1500 PNG, 2:3) — the ONLY place pins go
-├── data/*_pinterest_pins.csv      # internal inventory CSVs (never uploaded)
-├── data/*_pinterest_pins_upload.csv # importer-ready CSVs (upload these only)
+├── (Pinterest pin images live on Cloudflare R2, not in git — generators
+│    render in memory and upload directly. See docs/pinterest-r2-migration.md.
+│    assets/pinterest/ and assets/collection-pins/ are gitignored.)
+├── data/*_pinterest_pins.csv      # internal inventory CSVs (never uploaded; image-path
+│                                  #   columns hold R2 object keys, e.g. pinterest/base/x.png)
+├── data/*_pinterest_pins_upload.csv # importer-ready CSVs (upload these only; Media URL
+│                                    #   points at https://media.ultratextgen.com/...)
 │
 ├── category/               # Category landing pages (bold, cursive, etc.)
 ├── usecase/                # Use case pages (bio, comment, etc.)
@@ -872,8 +879,16 @@ Do not add a test framework unless explicitly requested.
 - Do not create a new Pinterest board off-system. Read
   `docs/pinterest-pin-generation.md` ("Adding a new pin board") FIRST, every time.
   Specifically: do not put pins in a new top-level folder (e.g. `pinterest-kit/`)
-  or under `docs/` — they go in `assets/pinterest/<board>/`; do not write a
-  bespoke generator or visual template — mirror `scripts/generate-id-pins.py` and
-  import the brand skin from `scripts/generate-site-art.py`; do not bundle `.ttf`
-  font files; do not invent a pin look (no Poppins/pills/saturated colors/green
-  CTA — use the off-white panel + dot grid + purple→blue brand skin).
+  or under `docs/` — render in memory and upload to R2 at `pinterest/boards/<board>/`
+  via `scripts/lib/r2_pinterest.py` (see `docs/pinterest-r2-migration.md`); do not
+  write a bespoke generator or visual template — mirror `scripts/generate-id-pins.py`
+  and import the brand skin from `scripts/generate-site-art.py`; do not bundle
+  `.ttf` font files; do not invent a pin look (no Poppins/pills/saturated
+  colors/green CTA — use the off-white panel + dot grid + purple→blue brand skin).
+- Do not write a Pinterest pin PNG to `assets/pinterest/` or
+  `assets/collection-pins/`, and do not commit one. Since the 2026-08-17 R2
+  migration (`docs/pinterest-r2-migration.md`), every generator renders in
+  memory and uploads straight to Cloudflare R2 via `scripts/lib/r2_pinterest.py`
+  — both directories are gitignored. Never hardcode R2 credentials; read
+  `R2_ENDPOINT`/`R2_ACCESS_KEY_ID`/`R2_SECRET_ACCESS_KEY` from the environment
+  (GitHub Secrets in CI) only.

@@ -14,29 +14,34 @@ the OG cards — soft off-white panel, brand purple->blue gradients, faint dot
 grid, one focal motif — just stacked vertically with a big keyword title on
 top and the UltraTextGen.com wordmark at the bottom.
 
-For every *eligible* content page in data/image_seo_status.csv it emits:
-  - assets/pinterest/<slug>.png   1000x1500 vertical pin
+For every *eligible* content page in data/image_seo_status.csv it renders a
+1000x1500 vertical pin **in memory and uploads it straight to Cloudflare R2**
+(object key "pinterest/base/<slug>.png", see scripts/lib/r2_pinterest.py) --
+nothing is written under assets/pinterest/ or committed to git (see
+docs/pinterest-r2-migration.md).
 
 and writes the full pin inventory to:
-  - data/pinterest_pins.csv
+  - data/pinterest_pins.csv   (pinterest_image_path holds the R2 object key)
 
 Run:  python3 scripts/generate-pinterest.py
-Requires: cairosvg (PNG rasterization).
+Requires: cairosvg (PNG rasterization) and boto3, plus R2_ENDPOINT/
+R2_ACCESS_KEY_ID/R2_SECRET_ACCESS_KEY in the environment.
 """
 import csv
 import functools
 import importlib.util
 import os
 import re
+import sys
 import textwrap
 from html import unescape
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PIN_DIR = os.path.join(ROOT, "assets", "pinterest")
 CSV_IN = os.path.join(ROOT, "data", "image_seo_status.csv")
 CSV_OUT = os.path.join(ROOT, "data", "pinterest_pins.csv")
-os.makedirs(PIN_DIR, exist_ok=True)
+sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+import r2_pinterest as R2  # noqa: E402
 
 DOMAIN = "https://ultratextgen.com/"
 
@@ -566,7 +571,6 @@ COLUMNS = [
 
 
 def main():
-    import cairosvg
     rows = list(csv.DictReader(open(CSV_IN, encoding="utf-8")))
     out_rows = []
     generated = 0
@@ -636,10 +640,10 @@ def main():
                 ptitle = ptitle[:100 - len(suffix)].rstrip(" —:|,.") + suffix
         used_titles.add(ptitle)
 
-        pin_path = f"assets/pinterest/{slug}.png"
+        r2_key = f"pinterest/base/{slug}.png"
         rec.update({
             "include_in_pinterest": "yes",
-            "pinterest_image_path": pin_path,
+            "pinterest_image_path": r2_key,
             "pinterest_image_width": str(PIN_W),
             "pinterest_image_height": str(PIN_H),
             "pinterest_board_primary": primary,
@@ -655,12 +659,12 @@ def main():
             "notes": "",
         })
 
-        # render the pin image
+        # render the pin image in memory and upload straight to R2 -- never
+        # written under assets/pinterest/, never committed
         svg = pin_svg(slug, title, sub, motif, kicker)
-        cairosvg.svg2png(bytestring=svg.encode(),
-                         write_to=os.path.join(PIN_DIR, f"{slug}.png"),
-                         output_width=PIN_W, output_height=PIN_H)
-        generated += 1
+        _, status = R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
+        if status != "skipped-identical":
+            generated += 1
         out_rows.append(rec)
 
         # copy-length diagnostics
@@ -675,7 +679,8 @@ def main():
         w.writerows(out_rows)
 
     print(f"reviewed {len(rows)} pages | included {included} | excluded {excluded}")
-    print(f"generated {generated} pinterest images -> assets/pinterest/")
+    print(f"uploaded {generated} pinterest images -> R2 "
+          f"{R2.bucket()}/{R2.KEY_PREFIX}/base/ ({R2.public_base_url()}/pinterest/base/)")
     print(f"wrote inventory -> data/pinterest_pins.csv")
     # derive the Pinterest-importer-ready upload CSV (schema owned by
     # scripts/pinterest_csv.py); never upload the inventory above directly.

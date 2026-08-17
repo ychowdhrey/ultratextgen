@@ -10,9 +10,13 @@ keyword gap, existing Pinterest reach, and how visual/Pinterest-native the
 query is — see BOARD_OPPORTUNITY_WEIGHT below), it renders extra creative
 variants of the same pin pointing at the same real destination URL:
 
-  - assets/pinterest/<slug>--v2.png, --v3.png, ...  (1000x1500, same brand skin)
+  - pinterest/variants/<slug>--v2.png, --v3.png, ...  (1000x1500, same brand
+    skin) uploaded straight to Cloudflare R2 -- rendered in memory, never
+    written under assets/pinterest/, never committed (see
+    docs/pinterest-r2-migration.md)
   - data/pinterest_pins_variants.csv                (inventory, same schema
-    family as data/pinterest_pins.csv plus a variant_index column)
+    family as data/pinterest_pins.csv plus a variant_index column;
+    pinterest_image_path holds the R2 object key)
   - data/pinterest_pins_variants_upload.csv          (importer-ready, built via
     build_pinterest_upload.py -> pinterest_csv.py, same as every other board)
 
@@ -41,9 +45,10 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PIN_DIR = os.path.join(ROOT, "assets", "pinterest")
 CSV_IN = os.path.join(ROOT, "data", "image_seo_status.csv")
 CSV_OUT = os.path.join(ROOT, "data", "pinterest_pins_variants.csv")
+sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+import r2_pinterest as R2  # noqa: E402
 
 
 def _load(path, name):
@@ -352,7 +357,6 @@ def allocate(rows):
 
 
 def main():
-    import cairosvg
     rows = list(csv.DictReader(open(CSV_IN, encoding="utf-8")))
     counts = allocate(rows)
     out_rows = []
@@ -401,11 +405,10 @@ def main():
 
             headline, subline = variant_image_text(name, n)
             svg = GP.pin_svg(slug, headline, subline, motif, kicker)
-            img_path = f"assets/pinterest/{slug}--v{n}.png"
-            cairosvg.svg2png(bytestring=svg.encode(),
-                             write_to=os.path.join(ROOT, img_path),
-                             output_width=GP.PIN_W, output_height=GP.PIN_H)
-            generated += 1
+            r2_key = f"pinterest/variants/{slug}--v{n}.png"
+            _, status = R2.render_and_upload(svg, r2_key, GP.PIN_W, GP.PIN_H)
+            if status != "skipped-identical":
+                generated += 1
 
             rec = {c: "" for c in COLUMNS}
             rec.update({
@@ -418,7 +421,7 @@ def main():
                 "include_in_pinterest": "yes",
                 "exclusion_reason": "",
                 "og_image_path": (row.get("OG image path") or "").strip(),
-                "pinterest_image_path": img_path,
+                "pinterest_image_path": r2_key,
                 "pinterest_image_width": str(GP.PIN_W),
                 "pinterest_image_height": str(GP.PIN_H),
                 "pinterest_board_primary": board,
@@ -443,7 +446,8 @@ def main():
         w.writeheader()
         w.writerows(out_rows)
 
-    print(f"generated {generated} variant pins -> assets/pinterest/")
+    print(f"uploaded {generated} variant pins -> R2 "
+          f"{R2.public_base_url()}/pinterest/variants/")
     print(f"wrote inventory -> data/pinterest_pins_variants.csv ({len(out_rows)} rows)")
     _load(os.path.join(HERE, "build_pinterest_upload.py"), "build_upload").convert("variants")
     print("--- variant pins per board ---")

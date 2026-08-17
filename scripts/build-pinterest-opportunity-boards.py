@@ -2,10 +2,11 @@
 """
 Build focused Pinterest importer CSVs from the main page pin inventory.
 
-The repo already has one broad page inventory at data/pinterest_pins.csv and one
-vertical pin image per page in assets/pinterest/. This script creates focused
-Pinterest upload CSVs for the clearest incremental board opportunities from the
-football, country and player page clusters, without re-rendering images.
+The repo already has one broad page inventory at data/pinterest_pins.csv, whose
+pinterest_image_path column holds an R2 object key (see
+docs/pinterest-r2-migration.md). This script creates focused Pinterest upload
+CSVs for the clearest incremental board opportunities from the football,
+country and player page clusters, without re-rendering images.
 
 Outputs:
   data/country_flags_pinterest_upload.csv
@@ -16,7 +17,8 @@ Outputs:
 Run:
   python3 scripts/build-pinterest-opportunity-boards.py
 
-Set PIN_MEDIA_DOMAIN to use raw GitHub media URLs before the site deploys.
+Set PIN_MEDIA_DOMAIN to override the R2 public base URL (e.g. for a staging
+bucket) -- defaults to R2_PUBLIC_BASE_URL / https://media.ultratextgen.com.
 """
 import csv
 import importlib.util
@@ -27,7 +29,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA = os.path.join(ROOT, "data")
 SOURCE = os.path.join(DATA, "pinterest_pins.csv")
-DOMAIN = os.environ.get("PIN_MEDIA_DOMAIN", "https://ultratextgen.com")
+DOMAIN = (os.environ.get("PIN_MEDIA_DOMAIN")
+          or os.environ.get("R2_PUBLIC_BASE_URL", "https://media.ultratextgen.com"))
 
 
 def _load(path, name):

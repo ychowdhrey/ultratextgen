@@ -13,12 +13,20 @@ For every indexable HTML page it checks:
      it points at exists on disk
   2. twitter:image is present and its file exists on disk
   3. the hero figure image (if the page has one) exists on disk
-  4. a per-page Pinterest pin (assets/pinterest/<slug>.png) exists, unless the
-     page is excluded from Pinterest (legal/info or embed)
+  4. a per-page Pinterest pin exists for the page's slug, unless the page is
+     excluded from Pinterest (legal/info, embed or updates)
+
+Since the R2 migration (docs/pinterest-r2-migration.md), Pinterest pins are
+uploaded straight to Cloudflare R2 and never touch local disk, so check #4
+looks the page's slug up in data/pinterest_pins.csv (the same inventory
+scripts/generate-pinterest.py writes) instead of checking a file on disk.
+OG/Twitter/hero art (checks #1-3) is untouched by that migration and still
+lives under assets/og/, so those checks still stat the filesystem.
 
 Exit status: 0 when every page passes, 1 when any check fails.
 Run:  python3 scripts/check-image-assets.py
 """
+import csv
 import glob
 import os
 import re
@@ -27,6 +35,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://ultratextgen.com"
 LOGO = f"{BASE}/logo.png"
+PINTEREST_INVENTORY = os.path.join(ROOT, "data", "pinterest_pins.csv")
 LOCALES = ("ar", "bs", "cs", "da", "de", "es", "fr", "hi", "hr", "hu", "id",
            "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk",
            "sr", "sv", "th", "tl", "tr", "vi", "zh-tw")
@@ -87,10 +96,30 @@ def local_path(url_or_path):
     return os.path.join(ROOT, rel)
 
 
+def load_pinterest_slugs():
+    """Slugs with a real, uploaded-to-R2 Pinterest pin -- every row in
+    data/pinterest_pins.csv with include_in_pinterest=yes and a non-empty
+    pinterest_image_path (the R2 object key)."""
+    if not os.path.isfile(PINTEREST_INVENTORY):
+        return None  # inventory missing entirely -- caller decides how to treat this
+    slugs = set()
+    with open(PINTEREST_INVENTORY, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            included = (row.get("include_in_pinterest") or "").strip().lower() == "yes"
+            has_image = bool((row.get("pinterest_image_path") or "").strip())
+            if included and has_image:
+                slugs.add(url_to_slug(row.get("page_url", "").strip()))
+    return slugs
+
+
 def main():
     os.chdir(ROOT)
     failures = []      # (page, problem)
     checked = 0
+    pinterest_slugs = load_pinterest_slugs()
+    if pinterest_slugs is None:
+        print(f"WARNING: {PINTEREST_INVENTORY} not found -- skipping Pinterest "
+              f"pin check entirely (run scripts/generate-pinterest.py first)")
 
     for path in sorted(glob.glob("**/*.html", recursive=True)):
         if path.endswith(".test.html") or "/embed/" in path or path == "_root.html":
@@ -126,11 +155,13 @@ def main():
         if hero_src and not os.path.exists(local_path(hero_src)):
             failures.append((path, f"hero image file not found on disk: {hero_src}"))
 
-        # 4. per-page Pinterest pin (when eligible)
-        if pin_eligible(canonical, ptype):
-            pin = os.path.join("assets", "pinterest", url_to_slug(url) + ".png")
-            if not os.path.exists(pin):
-                failures.append((path, f"missing Pinterest pin: {pin}"))
+        # 4. per-page Pinterest pin (when eligible) -- lives on R2, not disk;
+        # checked against the inventory CSV (see load_pinterest_slugs above)
+        if pinterest_slugs is not None and pin_eligible(canonical, ptype):
+            slug = url_to_slug(url)
+            if slug not in pinterest_slugs:
+                failures.append((path, f"missing Pinterest pin for slug: {slug} "
+                                       f"(not in {os.path.relpath(PINTEREST_INVENTORY, ROOT)})"))
 
     print("Image-asset check")
     print(f"  Indexable pages checked : {checked}")
