@@ -29,7 +29,6 @@ import collections
 import concurrent.futures
 import csv
 import hashlib
-import glob
 import importlib.util
 import os
 import random
@@ -49,6 +48,22 @@ MIGRATE = importlib.util.spec_from_file_location(
 _migrate_mod = importlib.util.module_from_spec(MIGRATE)
 MIGRATE.loader.exec_module(_migrate_mod)
 discover = _migrate_mod.discover
+
+_BU_SPEC = importlib.util.spec_from_file_location(
+    "build_pinterest_upload", os.path.join(HERE, "build_pinterest_upload.py"))
+_bu_mod = importlib.util.module_from_spec(_BU_SPEC)
+_BU_SPEC.loader.exec_module(_bu_mod)
+# The exact set of upload CSVs this repo's generator pipeline actually
+# produces/maintains (build_pinterest_upload.py's own SOURCES registry,
+# plus collection.csv's own upload file). Deliberately NOT a glob over
+# data/*_upload.csv -- this repo also carries several one-off, intentionally
+# frozen historical batch exports (pinterest_upload_top200.csv,
+# fr_expansion_pinterest_pins_upload.csv, pinterest_upload_batch2.csv, ...)
+# that predate this migration and were built for a specific already-run (or
+# separately superseded) upload pass; rewriting their Media URLs now would
+# falsify a historical record this repo's own conventions say never to
+# silently rewrite. Only the live, regenerated-by-this-pipeline CSVs count.
+MAINTAINED_UPLOAD_CSVS = sorted({s["out"] for s in _bu_mod.SOURCES.values()})
 
 INVENTORY_SOURCES = [
     ("pinterest_pins.csv", "pinterest_image_path", "base"),
@@ -131,23 +146,40 @@ def check_dimensions(items):
     return bad
 
 
-def check_public_urls(items, sample_n):
+def check_public_urls(items, sample_n, workers):
+    """Fetch a sample of public URLs directly (bypassing R2/boto3). Sends a
+    real browser-like User-Agent -- Cloudflare's bot management returns a
+    bare HTTP 403 for Python's default 'Python-urllib/3.x' UA even though
+    the object itself is served fine (confirmed: identical request with
+    UA='curl/8.5.0' returns 200). That's a fetch-client artifact, not an R2
+    problem -- checks 1/2/3/6/7 already prove the objects exist and are
+    byte-identical independently of this check."""
     sample = random.sample(items, min(sample_n, len(items)))
-    bad = []
-    for item in sample:
+
+    def _one(item):
         url = R2.public_url(item["r2_key"])
         try:
-            req = urllib.request.Request(url, method="HEAD")
+            req = urllib.request.Request(
+                url, method="HEAD",
+                headers={"User-Agent": "Mozilla/5.0 (compatible; "
+                                       "UltraTextGenValidator/1.0)"})
             with urllib.request.urlopen(req, timeout=15) as resp:
                 cl = resp.headers.get("Content-Length")
                 if resp.status != 200:
-                    bad.append((url, f"HTTP {resp.status}"))
-                elif cl is not None and int(cl) != item["local_size"]:
-                    bad.append((url, f"Content-Length {cl} != {item['local_size']}"))
+                    return (url, f"HTTP {resp.status}")
+                if cl is not None and int(cl) != item["local_size"]:
+                    return (url, f"Content-Length {cl} != {item['local_size']}")
+                return None
         except urllib.error.HTTPError as e:
-            bad.append((url, f"HTTP {e.code}"))
+            return (url, f"HTTP {e.code}")
         except Exception as e:  # noqa: BLE001
-            bad.append((url, repr(e)[:150]))
+            return (url, repr(e)[:150])
+
+    bad = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
+        for r in ex.map(_one, sample):
+            if r is not None:
+                bad.append(r)
     return sample, bad
 
 
@@ -182,8 +214,8 @@ def check_csv_paths():
                 if not val.startswith("pinterest/"):
                     bad_inventory.append((fname, val))
 
-    upload_files = sorted(glob.glob(os.path.join(DATA, "*_pinterest_pins*_upload.csv")))
-    upload_files += sorted(glob.glob(os.path.join(DATA, "collection_pins_upload.csv")))
+    upload_files = [os.path.join(DATA, f) for f in MAINTAINED_UPLOAD_CSVS
+                    if os.path.isfile(os.path.join(DATA, f))]
     upload_rows = 0
     for path in upload_files:
         with open(path, encoding="utf-8-sig") as f:
@@ -262,7 +294,7 @@ def main():
 
     # 4 -----------------------------------------------------------------
     c4 = Check(4, "Public URLs work (sampled)")
-    sample, bad_urls = check_public_urls(results, args.sample_urls)
+    sample, bad_urls = check_public_urls(results, args.sample_urls, args.workers)
     if bad_urls:
         c4.fail(f"{len(bad_urls)}/{len(sample)} sampled public URLs failed",
                 *[f"{u}: {why}" for u, why in bad_urls[:20]])
