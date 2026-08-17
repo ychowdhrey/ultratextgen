@@ -128,6 +128,17 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /category/popular/            /category/ 301
 /category/popular/index.html  /category/ 301
 
+# Locale casing: the zh-tw directory is lowercase (matches the actual repo
+# path and every href on-site — hreflang="zh-TW" attribute values use the
+# BCP-47 convention, but their href targets are always lowercase /zh-tw/).
+# Cloudflare Pages routing is case-sensitive, so an uppercase-cased request
+# 404s even though the real page exists. Nothing in this repo links the
+# uppercase form; the requests are external (bots/old backlinks guessing the
+# hreflang casing). Redirect rather than leave a real page 404ing on a casing
+# mismatch (GSC 404 cleanup).
+/zh-TW/            /zh-tw/          301
+/zh-TW/library/    /zh-tw/library/  301
+
 # Root asset: /og.png was renamed to a descriptive, convention-aligned asset
 # (see docs/image-seo-fixes.md). Redirect stale crawled/cached references
 # instead of letting them 404 (GSC 404 cleanup).
