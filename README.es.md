@@ -401,7 +401,6 @@ Sin frameworks. Sin herramientas de build requeridas para el frontend. Código p
 - https://ultratextgen.com/library/happy-kaomoji/
 - https://ultratextgen.com/library/hazard-warning-symbols/
 - https://ultratextgen.com/library/heart-ascii-art/
-- https://ultratextgen.com/library/heart-emoji/
 - https://ultratextgen.com/library/heart-kaomoji/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/high-five-emoji/
