@@ -156,24 +156,36 @@ def check_public_urls(items, sample_n, workers):
     byte-identical independently of this check."""
     sample = random.sample(items, min(sample_n, len(items)))
 
+    def _fetch(url):
+        req = urllib.request.Request(
+            url, method="HEAD",
+            headers={"User-Agent": "Mozilla/5.0 (compatible; "
+                                   "UltraTextGenValidator/1.0)"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.status, resp.headers.get("Content-Length")
+
     def _one(item):
         url = R2.public_url(item["r2_key"])
-        try:
-            req = urllib.request.Request(
-                url, method="HEAD",
-                headers={"User-Agent": "Mozilla/5.0 (compatible; "
-                                       "UltraTextGenValidator/1.0)"})
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                cl = resp.headers.get("Content-Length")
-                if resp.status != 200:
-                    return (url, f"HTTP {resp.status}")
+        # one retry -- a high-concurrency HEAD sweep through the sandbox's
+        # egress proxy occasionally hits a transient connection reset that
+        # has nothing to do with R2 (confirmed: a direct re-fetch of any
+        # sample failure here has always returned 200 on retry).
+        last_err = None
+        for attempt in range(2):
+            try:
+                status, cl = _fetch(url)
+                if status != 200:
+                    last_err = f"HTTP {status}"
+                    continue
                 if cl is not None and int(cl) != item["local_size"]:
-                    return (url, f"Content-Length {cl} != {item['local_size']}")
+                    last_err = f"Content-Length {cl} != {item['local_size']}"
+                    continue
                 return None
-        except urllib.error.HTTPError as e:
-            return (url, f"HTTP {e.code}")
-        except Exception as e:  # noqa: BLE001
-            return (url, repr(e)[:150])
+            except urllib.error.HTTPError as e:
+                last_err = f"HTTP {e.code}"
+            except Exception as e:  # noqa: BLE001
+                last_err = repr(e)[:150]
+        return (url, f"{last_err} (after retry)")
 
     bad = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
