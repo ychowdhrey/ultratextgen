@@ -1,0 +1,77 @@
+{
+  "slug": "simbolo-trattino-basso",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Trattino Basso: Copia e Incolla _ ＿ ‾ — Dal Sottolineato a Macchina allo snake_case",
+  "meta_description": "Copia e incolla il trattino basso (_, U+005F LOW LINE), la sua variante a larghezza intera ＿ e il soprasegno ‾ — e scopri come un trucco delle macchine da scrivere sia diventato lo snake_case e il carattere \"salva-spazio\" di username e indirizzi email. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-trattino-basso/",
+  "breadcrumb": "Trattino Basso",
+  "hero_h1": "Trattino Basso (_)",
+  "hero_tagline": "Il trattino basso della tastiera (_), nato come trucco per sottolineare a macchina da scrivere e diventato lo snake_case — l'unico carattere che username, email e nomi di file accettano al posto di uno spazio — insieme ai parenti stretti: la variante a larghezza intera ＿, quella doppia ‗ e il soprasegno ‾. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Il trattino basso, o low line (_, U+005F LOW LINE), è il tratto orizzontale che poggia sulla linea di base nel blocco Unicode Basic Latin, dove rientra nella categoria generale Connector Punctuation. È nato come puro espediente meccanico: su una macchina da scrivere si sottolineava una parola scrivendola, riportando il carrello all'inizio e ribattendo lo stesso tratto con il tasto dedicato al trattino basso — presente già su modelli come la Caligraph del 1881. Il carattere è entrato nell'ASCII nel 1967, occupando la posizione 95 (0x5F) lasciata libera dalla freccia sinistra (←) che sostituiva, dopo che l'EBCDIC di IBM lo aveva già introdotto nel 1964 come \"break character\". I programmatori lo hanno poi trasformato in un separatore di parole — lo stile con trattini bassi al posto degli spazi risale al linguaggio C di fine anni '60 e a The C Programming Language (1978), anche se il nome \"snake_case\" è stato coniato solo intorno al 2004 dalla comunità Ruby (le PEP 8 di Python lo chiamano ancora \"lower_case_with_underscores\"). Oggi è l'unico carattere ammesso al posto dello spazio in username, indirizzi email, nomi di file e slug degli URL, e in Markdown _un trattino singolo_ genera il corsivo mentre __quello doppio__ genera il grassetto. Viene spesso confuso con il trattino (-, U+002D) e con i suoi cugini più larghi, il trattino basso a larghezza intera ＿ (U+FF3F) e il doppio trattino basso ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-trattino-basso/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-underscore",
+      "label": "Il Trattino Basso",
+      "h2": "Trattino Basso, Larghezza Intera e Doppio",
+      "intro": "Il semplice low line da tastiera e le sue due varianti di larghezza — la forma a larghezza intera usata nella composizione tipografica dell'Asia orientale e il trattino basso doppio, più spaziato. Pronti da incollare ovunque.",
+      "symbols": [
+        { "char": "_", "label": "Trattino Basso / Low Line (U+005F)" },
+        { "char": "＿", "label": "Trattino Basso a Larghezza Intera (U+FF3F)" },
+        { "char": "‗", "label": "Doppio Trattino Basso (U+2017)" }
+      ]
+    },
+    {
+      "id": "overline",
+      "label": "Il Soprasegno",
+      "h2": "Il Soprasegno: Lo Stesso Tratto, Sopra il Testo",
+      "intro": "Il soprasegno è l'immagine speculare del trattino basso — lo stesso tratto orizzontale, posto sopra il testo invece che sotto, motivo per cui i due vengono spesso scambiati per opposti. Il macron è il trattino corto che molti digitano quando in realtà intendono un soprasegno.",
+      "symbols": [
+        { "char": "‾", "label": "Soprasegno / Spacing Overscore (U+203E)" },
+        { "char": "¯", "label": "Macron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "confused-hyphen",
+      "label": "Vs. Trattino e Lineetta",
+      "h2": "Trattino Basso vs. la Famiglia di Trattini e Lineette",
+      "intro": "In URL, username e nomi di file, il trattino basso e il trattino vengono scambiati di continuo — ma occupano altezze diverse e codepoint diversi, e ciascuno svolge un compito differente.",
+      "symbols": [
+        { "char": "-", "label": "Trattino-Meno / Trattino da Tastiera (U+002D)" },
+        { "char": "‐", "label": "Trattino Tipografico (U+2010)" },
+        { "char": "–", "label": "Trattino Medio (U+2013)" },
+        { "char": "−", "label": "Segno Meno (U+2212)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Simboli da Tastiera",
+      "desc": "Il trattino basso, il trattino, l'asterisco e il resto dei segni di punteggiatura e dei caratteri con Shift presenti su una tastiera standard."
+    },
+    {
+      "href": "/it/library/simboli-punteggiatura/",
+      "title": "Simboli di Punteggiatura",
+      "desc": "Trattini, parentesi, virgolette e la punteggiatura di uso quotidiano di Unicode in un unico riferimento."
+    },
+    {
+      "href": "/it/symbol/simbolo-chiocciola/",
+      "title": "Simbolo Chiocciola (@)",
+      "desc": "L'altro carattere speciale al centro degli indirizzi email e degli handle social, dove il trattino basso fa da separatore salva-spazio."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "saudi-rial-zeichen",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Saudisches Rial-Zeichen: ⃁ kopieren & einfügen — per königlichem Erlass genehmigt, final seit Unicode 17.0",
+  "meta_description": "Das saudische Rial-Zeichen (⃁, U+20C1) wurde im Februar 2025 von König Salman genehmigt und im September 2025 mit Unicode 17.0 final kodiert — bereits abgeschlossen, auch wenn die meisten Schriftarten es noch nicht darstellen. Design, Geschichte und heutige Nutzung.",
+  "canonical": "https://ultratextgen.com/de/symbol/saudi-rial-zeichen/",
+  "breadcrumb": "Saudisches Rial-Zeichen",
+  "hero_h1": "Saudisches Rial-Zeichen",
+  "hero_tagline": "Saudi-Arabiens offizielles Währungssymbol, per königlichem Erlass genehmigt und mit Unicode 17.0 final kodiert — bereits abgeschlossen, auch wenn Schriftarten und Tastaturen noch nicht nachgezogen haben.",
+  "intro": "Das saudische Rial-Zeichen (⃁, U+20C1) ist Saudi-Arabiens offizielles Währungssymbol, entwickelt im Auftrag eines königlichen Erlasses von einem Gremium aus der saudischen Zentralbank (SAMA), dem Kulturministerium, dem Medienministerium und der saudischen Normungsorganisation. Sein Design greift auf arabische Kalligrafie zurück und bildet die arabischen Buchstaben von „ريال“ (Rial), wobei der Strich des Buchstabens rāʾ (ر) zugleich als Querbalken dient — in derselben visuellen Familie wie andere querbalkenbasierte Währungszeichen wie Dollar und Pfund. König Salman genehmigte das Design offiziell am 20. Februar 2025, und SAMA reichte es kurz darauf zur Unicode-Kodierung ein (Vorschlag L2/25-075 vom 7. März 2025). Das Unicode Technical Committee genehmigte es auf seiner 183. Sitzung vom 22. bis 24. April 2025 unverändert, und es erschien am 9. September 2025 als finales, ratifiziertes Zeichen in Unicode 17.0 — eine volle Unicode-Version vor dem VAE-Dirham, dem omanischen Rial und dem maledivischen Rufiyaa-Zeichen, die sich zum Zeitpunkt dieses Textes noch in der Beta von Unicode 18.0 befinden. Final zu sein bedeutet aber noch nicht, überall angezeigt zu werden: Ein offenes GitHub-Issue bei Inter, einer der meistgenutzten Open-Source-Schriftarten, fordert die Aufnahme der Glyphe — ein Zeichen dafür, dass die breite Schriftartenunterstützung selbst eine volle Unicode-Version nach der Ratifizierung noch aufholt. In der Zwischenzeit gibt es bereits eine speziell für dieses Zeichen entwickelte Open-Source-Schriftart sowie Community-Anleitungen für die Verwendung in Word, Excel und im Web.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/saudi-rial-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "saudisches-rial-zeichen",
+      "label": "Saudisches Rial-Zeichen",
+      "h2": "Saudisches Rial-Zeichen",
+      "intro": "Das bestätigte, finale Zeichen — kodiert mit Unicode 17.0, schon heute kopierbar, auch wenn die meisten Schriftarten es noch nicht nativ darstellen.",
+      "symbols": [
+        { "char": "⃁", "label": "Saudisches Rial-Zeichen (U+20C1, final seit Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "weitere-neue-golf-waehrungssymbole",
+      "label": "Weitere Golf-Währungssymbole",
+      "h2": "Weitere neue Golf-Währungssymbole",
+      "intro": "Drei weitere Währungen der Region erhielten in der folgenden Unicode-Version, 18.0, ihre eigenen Zeichen — zum Zeitpunkt dieses Textes noch in der Beta.",
+      "symbols": [
+        { "char": "⃃", "label": "VAE-Dirham-Zeichen (U+20C3, Unicode-18.0-Beta)" },
+        { "char": "⃄", "label": "Omanisches Rial-Zeichen (U+20C4, Unicode-18.0-Beta)" },
+        { "char": "⃂", "label": "Maledivisches Rufiyaa-Zeichen (U+20C2, Unicode-18.0-Beta)" }
+      ]
+    },
+    {
+      "id": "bereits-ueberall-tippbare-nahost-waehrungssymbole",
+      "label": "Bereits etablierte Nahost-Symbole",
+      "h2": "Nahost-Währungssymbole, die schon überall funktionieren",
+      "intro": "Zum Vergleich — regionale Währungssymbole, die die Lücke zwischen Standard und Schriftart bereits vor Jahren geschlossen haben und heute auf praktisch jedem Gerät angezeigt werden.",
+      "symbols": [
+        { "char": "₪", "label": "Israelisches-Neuer-Schekel-Zeichen" },
+        { "char": "₺", "label": "Türkisches-Lira-Zeichen" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/waehrungssymbole/",
+      "title": "Währungssymbole",
+      "desc": "Jedes Währungssymbol der Welt, das du schon heute kopieren und einfügen kannst."
+    },
+    {
+      "href": "/de/symbol/dirham-zeichen/",
+      "title": "Dirham-Zeichen",
+      "desc": "Das neue Währungssymbol der VAE — eine Unicode-Version dahinter, noch in der Beta."
+    },
+    {
+      "href": "/de/symbol/omani-rial-zeichen/",
+      "title": "Omanisches Rial-Zeichen",
+      "desc": "Ein weiteres Golf-Währungssymbol aus derselben Unicode-18.0-Beta."
+    },
+    {
+      "href": "/de/updates/vae-dirham-symbol-unicode-18/",
+      "title": "VAE-Dirham-Symbol Unicode 18.0",
+      "desc": "Der datierte Status-Tracker, den auch dieses Zeichens engster Golf-Cousin erhält."
+    }
+  ]
+}

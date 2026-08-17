@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gheventsth" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvheventsth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowheventsth" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsheventsth" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsheventsth)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowheventsth)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvheventsth)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <circle cx="180" cy="200" r="95" fill="url(#gheventsth)"/>
+    <circle cx="180" cy="200" r="95" fill="none" stroke="#FBFBFE" stroke-width="6" opacity="0.5"/>
+    <path d="M180 200 L180 118 A82 82 0 0 1 251 241 Z" fill="#FBFBFE" opacity="0.28"/>
+    <line x1="180" y1="200" x2="180" y2="118" stroke="#FBFBFE" stroke-width="4" opacity="0.6"/>
+    <line x1="180" y1="200" x2="251" y2="241" stroke="#FBFBFE" stroke-width="4" opacity="0.6"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <circle cx="180" cy="200" r="95" fill="url(#gheventsth)"/>
+    <circle cx="180" cy="200" r="95" fill="none" stroke="#FBFBFE" stroke-width="6" opacity="0.5"/>
+    <path d="M180 200 L180 118 A82 82 0 0 1 251 241 Z" fill="#FBFBFE" opacity="0.28"/>
+    <line x1="180" y1="200" x2="180" y2="118" stroke="#FBFBFE" stroke-width="4" opacity="0.6"/>
+    <line x1="180" y1="200" x2="251" y2="241" stroke="#FBFBFE" stroke-width="4" opacity="0.6"/></g>
+</svg>

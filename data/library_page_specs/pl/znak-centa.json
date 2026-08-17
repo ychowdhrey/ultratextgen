@@ -1,0 +1,77 @@
+{
+  "slug": "znak-centa",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Centa: Skopiuj Symbol Waluty ¢",
+  "meta_description": "Skopiuj znak centa (¢) — dlaczego brakuje go na większości klawiatur, jego znaki mylące oraz jak go wpisać na Windows i Mac. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-centa/",
+  "breadcrumb": "Znak Centa",
+  "hero_h1": "Znak Centa ¢",
+  "hero_tagline": "¢ oznacza ułamek dolara — i to jeden z popularnych symboli walut, który nie ma własnego klawisza niemal na żadnej klawiaturze. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak centa (¢, Unicode U+00A2) oznacza podjednostkę waluty — jedną setną dolara, jak w zapisie 99¢. To jeden z najstarszych symboli walut w bloku Unicode Latin-1 Supplement, odziedziczony po starszych kodowaniach 8-bitowych — dlatego tak łatwo wpisać go kodem Alt, mimo że niemal żadna klawiatura nie daje mu własnego klawisza, tak jak ma to $.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cent-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-centa/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cent-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-centa",
+      "label": "Cent",
+      "h2": "Znak Centa",
+      "intro": "Właściwy unicode'owy znak centa, gotowy do wklejenia zaraz po liczbie.",
+      "symbols": [
+        { "char": "¢", "label": "Znak Centa" }
+      ]
+    },
+    {
+      "id": "znaki-mylone-ze-znakiem-centa",
+      "label": "Znaki Mylone",
+      "h2": "Symbole Często Mylone ze Znakiem Centa",
+      "intro": "Te znaki w praktyce zastępują ¢ — każdy to osobny znak z własnym znaczeniem.",
+      "symbols": [
+        { "char": "₵", "label": "Znak Cedi (Ghana) — To Nie Znak Centa" },
+        { "char": "₡", "label": "Znak Colón (Kostaryka / Salwador)" },
+        { "char": "¤", "label": "Ogólny Znak Waluty" },
+        { "char": "c", "label": "Zwykła Litera C (Popularny Zamiennik Klawiaturowy)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-walut",
+      "label": "Powiązane Waluty",
+      "h2": "Inne Główne Symbole Walut",
+      "intro": "Inne światowe symbole walut, które pojawiają się obok ¢ w treściach o cenach i finansach.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "€", "label": "Znak Euro" },
+        { "char": "£", "label": "Znak Funta" },
+        { "char": "¥", "label": "Znak Jena" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol euro zaprojektowany celowo w 1996 roku, plus symbole innych walut świata."
+    },
+    {
+      "href": "/symbol/pound-sign/",
+      "title": "Pound Sign (£)",
+      "desc": "Symbol funta liczący sobie ponad tysiąc lat, wywodzący się z łacińskiego libra."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "All Currency Symbols",
+      "desc": "Wszystkie światowe symbole walut, uporządkowane według regionu."
+    }
+  ]
+}

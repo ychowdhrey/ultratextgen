@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>자폐 기호 (♾️ 무한대): 퍼즐 조각이 아닙니다 — 복사 붙여넣기</title>
+<meta name="description" content="자폐 당사자 커뮤니티가 자폐와 신경다양성을 나타낼 때 쓰는 무한대 기호(∞ ♾️)를 복사하세요. 퍼즐 조각이 왜 밀려났는지, 금색과 무지개색 무한대의 차이까지.">
+
+<link rel="canonical" href="https://ultratextgen.com/ko/symbol/japye-giho/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/symbol/autism-symbol/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/symbol/japye-giho/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/symbol/autism-symbol/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/symbol/otizm-sembolu/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/symbol/sanyalak-autism/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/symbol/simvol-autizma/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/symbol/simbolo-do-autismo/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/symbol/symbol-autyzmu/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/symbol/autisme-symbool/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/symbol/jiheishou-kigou/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/symbol/simbolo-autismo/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/symbol/simbol-autisme/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/symbol/symbole-autisme/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/symbol/simbolo-de-autismo/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/symbol/autismus-symbol/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/symbol/ramz-altawahhud/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/symbol/autism-symbol/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ko-symbol-japye-giho.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="자폐 기호 (♾️ 무한대): 퍼즐 조각이 아닙니다 — 복사 붙여넣기">
+<meta name="twitter:description" content="자폐 당사자 커뮤니티가 자폐와 신경다양성을 나타낼 때 쓰는 무한대 기호(∞ ♾️)를 복사하세요. 퍼즐 조각이 왜 밀려났는지, 금색과 무지개색 무한대의 차이까지.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ko-symbol-japye-giho.png">
+<meta property="og:title" content="자폐 기호 (♾️ 무한대): 퍼즐 조각이 아닙니다 — 복사 붙여넣기">
+<meta property="og:description" content="자폐 당사자 커뮤니티가 자폐와 신경다양성을 나타낼 때 쓰는 무한대 기호(∞ ♾️)를 복사하세요. 퍼즐 조각이 왜 밀려났는지, 금색과 무지개색 무한대의 차이까지.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ko/symbol/japye-giho/">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "자폐 기호 (♾️ 무한대): 퍼즐 조각이 아닙니다 — 복사 붙여넣기",
+  "description": "자폐 당사자 커뮤니티가 자폐와 신경다양성을 나타낼 때 쓰는 무한대 기호(∞ ♾️)를 복사하세요. 퍼즐 조각이 왜 밀려났는지, 금색과 무지개색 무한대의 차이까지.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/ko/symbol/japye-giho/",
+  "inLanguage": "ko",
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-07-25",
+  "image": "https://ultratextgen.com/assets/og/ko-symbol-japye-giho.png",
+  "alternateName": [
+    "자폐 무한대 기호",
+    "자폐 인식 기호",
+    "신경다양성 기호",
+    "무지개 무한대"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://ultratextgen.com/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "기호",
+      "item": "https://ultratextgen.com/ko/symbol/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "자폐 기호 (♾️)",
+      "item": "https://ultratextgen.com/ko/symbol/japye-giho/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "왜 많은 자폐인이 퍼즐 조각 기호를 싫어하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1963년 퍼즐 조각과 우는 아이를 짝지은 로고, 그리고 2005년 이후 오티즘 스픽스가 이를 사용한 데서 비롯됐다는 비판이 있습니다 — 오티즘 스픽스는 많은 자폐 당사자 활동가들이 자폐를 받아들여야 할 차이가 아니라 고쳐야 할 문제로 프레이밍한다고 비판하는 단체입니다. 이 기호는 자폐인이 자신의 일부를 잃은 것처럼 암시한다는 해석이 널리 퍼져 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "공식적인 자폐 기호가 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공식적이거나 모두가 동의하는 단일 기호는 없습니다. 무한대 기호 — 특히 금색이나 무지개색 — 가 현재 대부분의 자폐 당사자 주도 단체가 선호하는 기호이지만, 일부 단체와 가족은 여전히 퍼즐 조각을 쓰며, 커뮤니티 자체도 둘 중 어느 쪽에도 완전히 합의하지 않았습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "색이 있는 무한대 기호는 어떻게 붙여넣나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반 유니코드 텍스트는 색을 담을 수 없어서 ∞ 하나만으로는 항상 폰트나 테마가 정한 색으로 표시됩니다. 실제로 사람들이 쓰는 방법은 신경다양성의 의미를 위해 🌈 무지개 이모지와 조합하는 것(🌈♾️)이며, ‘금색’을 일반 텍스트에서 문자 하나로 나타낼 방법은 따로 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "금색과 무지개색 무한대는 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "금색은 자폐를 구체적으로 나타냅니다 — 금의 화학 기호 Au에서 착안했습니다. 무지개색은 신경다양성을 더 넓게 나타내며, 자폐와 함께 ADHD·난독증·발달성 협응장애 등 다른 신경다양성 조건을 함께 아우릅니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="탐색 경로">
+  <a href="/ko/">홈</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ko/symbol/">기호</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">자폐 기호 (♾️)</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">자폐 기호</h1>
+    <p class="hero-tagline">자폐 당사자와 신경다양성 운동이 자폐와 신경다양성을 나타내기 위해 쓰는 무한대 기호(∞ ♾️) — 그리고 이것이 퍼즐 조각(🧩)을 대신하게 된 이유. 클릭 한 번으로 바로 복사됩니다.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ko-symbol-japye-giho.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>‘공식’ 자폐 상징은 하나로 정해져 있지 않으며, 가장 널리 쓰이는 두 기호는 서로 정면으로 충돌합니다. 퍼즐 조각은 1963년부터 쓰였고 2005년 이후 오티즘 스픽스(Autism Speaks)의 파란색 로고로 널리 퍼졌습니다 — 오늘날 많은 자폐 성인은 이를 자폐를 ‘사람에게서 빠진 조각’으로 묘사한다는 이유로 불쾌하게 여깁니다. 무한대 기호는 역시 2005년, 오티스틱 프라이드 데이(Autistic Pride Day)에서 유래했으며, 신경다양성 운동이 그 대신 선택한 상징입니다 — 금색은 자폐를 구체적으로, 무지개색은 신경다양성 전반을 나타냅니다. 미국자폐협회(Autism Society of America)는 2023년 퍼즐 조각을 공식적으로 폐기했습니다.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="muhandae-giho-section">
+  <span class="article-section-label">무한대</span>
+  <h2>무한대 기호</h2>
+  <p class="u-secondary-tight">자폐 당사자와 신경다양성 운동이 선호하는 기호로, 고쳐야 할 결핍이 아니라 무한한 다양성과 가능성을 나타냅니다.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="∞" aria-label="∞ 복사">∞</button>
+      <span class="flag-label">무한대</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="♾️" aria-label="♾️ 복사">♾️</button>
+      <span class="flag-label">무한대 이모지</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="saek-byeonhyeong">
+  <span class="article-section-label">색상 변형</span>
+  <h2>금색, 무지개색 &amp; 색상의 의미</h2>
+  <p class="u-secondary-tight">여기서는 색이 구체적인 의미를 담습니다: 금색은 자폐를 구체적으로 가리키고(금의 화학 기호 Au에서 착안), 무지개색은 자폐·ADHD·난독증 등을 함께 아우르는 신경다양성 전반을 가리킵니다. 일반 텍스트 ∞ 자체는 색을 담을 수 없어, 무지개 버전은 보통 조합으로 붙여 씁니다.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌈♾️" aria-label="🌈♾️ 복사">🌈♾️</button>
+      <span class="flag-label">무지개 무한대(신경다양성)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌈" aria-label="🌈 복사">🌈</button>
+      <span class="flag-label">무지개</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="gwageo-sangjing">
+  <span class="article-section-label">레거시 기호</span>
+  <h2>퍼즐 조각 — 논쟁적인 옛 상징</h2>
+  <p class="u-secondary-tight">여전히 널리 알려져 있고 일부 단체와 가족이 계속 쓰지만, 더는 대부분의 자폐 당사자 주도 단체가 쓰는 기호가 아닙니다. 참고용으로 실었을 뿐 추천하는 것은 아닙니다.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🧩" aria-label="🧩 복사">🧩</button>
+      <span class="flag-label">퍼즐 조각</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💙" aria-label="💙 복사">💙</button>
+      <span class="flag-label">파란 하트(Light It Up Blue)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">역사</span>
+  <h2>두 기호, 전혀 다른 두 이야기</h2>
+  <div class="editorial-block">
+    <p>퍼즐 조각이 더 오래된 기호입니다. 1963년 런던의 전국자폐협회(National Autistic Society)가 채택했으며, 원래 로고는 퍼즐 조각 하나와 울고 있는 아이의 이미지를 짝지어 자폐가 ‘수수께끼 같은’ 상태임을 전달하려 했습니다. 이 기호는 2005년 설립된 오티즘 스픽스가 파란색 퍼즐 조각과 매년 4월의 ‘Light It Up Blue’ 캠페인을 브랜드로 삼으면서 훨씬 더 널리 퍼졌습니다.</p>
+    <p>바로 그 점이 많은 자폐 성인이 반발하는 이유이기도 합니다. 비평가들은 퍼즐 조각이 자폐인을 불완전하거나, 알 수 없거나, 풀어야 할 문제로 규정한다고 지적합니다 — 자폐를 받아들여야 할 차이가 아니라 고쳐야 할 결핍으로 다루는 의학적 모델과 일치한다는 것입니다. 전국자폐협회는 2000년대 초 자체 브랜딩에서 퍼즐 조각을 뺐습니다. 미국자폐협회도 2023년 이를 따랐고, 2021년에는 다른 장애 단체들과 함께 4월의 기념 명칭을 ‘자폐 인식의 달(Autism Awareness Month)’에서 ‘자폐 수용의 달(Autism Acceptance Month)’로 바꾸는 데 동참했습니다 — 퍼즐 조각이 담고 있던 프레임에서 의도적으로 멀어지는 움직임이었습니다.</p>
+    <p>무한대 기호는 어떤 단체가 아니라 커뮤니티 자체에서 나왔습니다. Aspies For Freedom은 2005년 6월 18일 첫 오티스틱 프라이드 데이를 위해 무지개색 무한대 기호를 선택해, 신경다양성을 지닌 마음속의 ‘무한한 변주와 무한한 가능성’을 나타냈습니다. 이후 Autistic UK가 금색 변형을 내놓았는데, 금의 화학 기호 Au에 착안해 ‘자폐(autism)’를 구체적으로 가리키는 약칭으로 삼았으며, ADHD·난독증·발달성 협응장애 등 다른 신경다양성 조건을 함께 아우르는 무지개 버전의 더 넓은 의미와는 구분됩니다.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<div class="cta-card">
+  <h3>다른 폰트도 필요하신가요?</h3>
+  <p>UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.</p>
+  <a href="/ko/" class="cta-btn">UltraTextGen 열기 →</a>
+</div>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">자주 묻는 질문</span>
+  <h2>자주 묻는 질문</h2>
+  <details class="faq-item">
+    <summary class="faq-question">왜 많은 자폐인이 퍼즐 조각 기호를 싫어하나요?</summary>
+    <p class="faq-answer">1963년 퍼즐 조각과 우는 아이를 짝지은 로고, 그리고 2005년 이후 오티즘 스픽스가 이를 사용한 데서 비롯됐다는 비판이 있습니다 — 오티즘 스픽스는 많은 자폐 당사자 활동가들이 자폐를 받아들여야 할 차이가 아니라 고쳐야 할 문제로 프레이밍한다고 비판하는 단체입니다. 이 기호는 자폐인이 자신의 일부를 잃은 것처럼 암시한다는 해석이 널리 퍼져 있습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">공식적인 자폐 기호가 있나요?</summary>
+    <p class="faq-answer">공식적이거나 모두가 동의하는 단일 기호는 없습니다. 무한대 기호 — 특히 금색이나 무지개색 — 가 현재 대부분의 자폐 당사자 주도 단체가 선호하는 기호이지만, 일부 단체와 가족은 여전히 퍼즐 조각을 쓰며, 커뮤니티 자체도 둘 중 어느 쪽에도 완전히 합의하지 않았습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">색이 있는 무한대 기호는 어떻게 붙여넣나요?</summary>
+    <p class="faq-answer">일반 유니코드 텍스트는 색을 담을 수 없어서 ∞ 하나만으로는 항상 폰트나 테마가 정한 색으로 표시됩니다. 실제로 사람들이 쓰는 방법은 신경다양성의 의미를 위해 🌈 무지개 이모지와 조합하는 것(🌈♾️)이며, ‘금색’을 일반 텍스트에서 문자 하나로 나타낼 방법은 따로 없습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">금색과 무지개색 무한대는 어떻게 다른가요?</summary>
+    <p class="faq-answer">금색은 자폐를 구체적으로 나타냅니다 — 금의 화학 기호 Au에서 착안했습니다. 무지개색은 신경다양성을 더 넓게 나타내며, 자폐와 함께 ADHD·난독증·발달성 협응장애 등 다른 신경다양성 조건을 함께 아우릅니다.</p>
+  </details>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">관련 기호</span>
+  <div class="compare-grid">
+    <a href="/ko/library/suhak-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>수학 기호 모음</h4>
+      <p>수학의 무한대 기호를 포함한 연산자·근호·그리스 문자 모음.</p>
+    </a>
+    <a href="/ko/library/hateu-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>하트 기호 모음</h4>
+      <p>모든 색과 스타일의 하트 이모지와 유니코드 하트 문자.</p>
+    </a>
+    <a href="/ko/symbol/baiohajeodeu-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>바이오해저드 기호</h4>
+      <p>1966년 다우 케미컬 연구실에서 즉시 기억에 남으면서도 그 자체로는 완전히 무의미하게끔 설계된 삼엽형-원 기호(☣).</p>
+    </a>
+    <a href="/ko/symbol/pentageuraem-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>펜타그램 기호</h4>
+      <p>다섯 개의 꼭짓점을 가진 별(⛤) — 위로 향하면 위카의 신성한 오행 기호이고, 아래로 향하면 1966년부터 사탄교회 상징의 기반이 됩니다.</p>
+    </a>
+    <a href="/ko/symbol/sigma-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>시그마 기호</h4>
+      <p>그리스 문자 Σ σ, '시그마 남성' 밈에서 사람들이 실제로 붙여넣는 🗿 모아이 이모지, 그리고 시그마의 진짜 수학적 의미까지 — 한자리에 모았습니다.</p>
+    </a>
+    <a href="/ko/symbol/hwilcheeo-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>휠체어 기호</h4>
+      <p>1968년 디자인된, 파란색과 흰색의 국제 장애인 접근 기호(♿)와, 아직 결론나지 않은 &amp;#8216;다이내믹&amp;#8217; 접근성 아이콘 재디자인 논쟁까지.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

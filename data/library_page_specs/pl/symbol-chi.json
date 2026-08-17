@@ -1,0 +1,105 @@
+{
+  "slug": "symbol-chi",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Chi: Skopiuj χ Χ — X w „Xmas”, Chi-Rho i Test χ²",
+  "meta_description": "Skopiuj chi — małe χ i wielkie Χ — literę stojącą za monogramem Chi-Rho, literą „X” w Xmas i statystycznym testem χ². Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-chi/",
+  "breadcrumb": "Symbol Chi",
+  "hero_h1": "Symbol Chi",
+  "hero_tagline": "Małe χ napędzające statystyczny test χ², wielkie Χ otwierające po grecku słowo „Chrystus” i dające początek monogramowi Chi-Rho oraz „X” w Xmas — jedyna grecka litera nieustannie mylona z łacińskim X. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Chi to 22. litera greckiego alfabetu, zapisywana małym χ (U+03C7, GREEK SMALL LETTER CHI) i wielkim Χ (U+03A7, GREEK CAPITAL LETTER CHI) — glif na tyle bliski łacińskiemu X, że oba znaki są nieustannie mylone. To podobieństwo to właśnie powód, dla którego chi niesie tyle historii. Wielkie Χ to pierwsza litera słowa Χριστός (Christós), po grecku „Chrystus”, a skrybowie używali jej jako skrótu tego imienia od ponad tysiąca lat — zapis „Xres mæsse” pojawia się w Kronice Anglosaskiej około 1100 roku, i ten sam nawyk jest powodem, dla którego w angielskim wciąż pisze się dziś „Xmas”. Połącz chi z kolejną literą, ro, a otrzymasz monogram Chi-Rho ☧ (U+2627, CHI RHO), wczesny chrystogram, który rzymski cesarz Konstantyn I przyjął jako swój wojskowy sztandar, labarum, po relacjonowanej wizji przed bitwą przy moście Mulwijskim 28 października 312 roku n.e. — przekaz, który dociera do nas za pośrednictwem starożytnych pisarzy Euzebiusza i Laktancjusza, a nie neutralnego zapisu. We współczesnej matematyce i nauce małe χ to koń roboczy testu chi-kwadrat (χ²), miary dobroci dopasowania, którą Karl Pearson wprowadził w 1900 roku i która jest dziś podstawą statystyki i analizy danych.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-chi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-chi",
+      "label": "Symbol Chi",
+      "h2": "Symbol Chi — Χ i χ",
+      "intro": "Sama grecka litera, w obu wersjach. Wielkie Χ niesie religijną i skrótową historię chi; małe χ wykonuje większość współczesnej pracy matematycznej i naukowej.",
+      "symbols": [
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7)" },
+        { "char": "χ", "label": "Mała Grecka Litera Chi (U+03C7)" }
+      ]
+    },
+    {
+      "id": "chi-rho-i-xmas",
+      "label": "Chi-Rho i Xmas",
+      "h2": "Chi-Rho, Xmas i Chrześcijański Monogram",
+      "intro": "Ponieważ wielkie Χ otwiera Χριστός („Chrystus”), stało się liczącym sobie wieki skrótem tego imienia — źródłem zarówno monogramu Chi-Rho, który Konstantyn niósł jako sztandar bitewny, jak i współczesnego „Xmas”. Wklej tu elementy tej historii.",
+      "symbols": [
+        { "char": "☧", "label": "Chi Rho (U+2627) — Chrystogram/Labarum ΧΡ" },
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7) — Χ Otwierające Χριστός" },
+        { "char": "X", "label": "Łacińska Wielka Litera X (U+0058) — X w „Xmas”" }
+      ]
+    },
+    {
+      "id": "chi-w-statystyce",
+      "label": "Statystyka i Nauka",
+      "h2": "Chi-Kwadrat (χ²) w Statystyce i Nauce",
+      "intro": "Małe χ to koń roboczy nauki: test dobroci dopasowania χ², który Karl Pearson wprowadził w 1900 roku, a także charakterystyka Eulera w topologii i podatność magnetyczna w fizyce. Weź literę i górny indeks dwa, by samodzielnie złożyć χ².",
+      "symbols": [
+        { "char": "χ", "label": "Mała Grecka Litera Chi (U+03C7) — Statystyka Testu χ²" },
+        { "char": "²", "label": "Górny Indeks Dwa (U+00B2) — do Złożenia χ²" },
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7) — Oznacza Też Zmienne Losowe" }
+      ]
+    },
+    {
+      "id": "chi-a-lacinskie-x",
+      "label": "Chi a X",
+      "h2": "Chi kontra Łacińskie X — Sobowtóry",
+      "intro": "Chi wygląda niemal identycznie jak łacińska litera X, ale każda z nich ma własny punkt kodowy — ciche zamienienie ich miejscami psuje wyszukiwanie, kod i równania. Oto wszystkie cztery, byś mógł skopiować dokładnie tę, o którą chodzi.",
+      "symbols": [
+        { "char": "χ", "label": "Mała Grecka Litera Chi (U+03C7)" },
+        { "char": "Χ", "label": "Wielka Grecka Litera Chi (U+03A7)" },
+        { "char": "x", "label": "Łacińska Mała Litera X (U+0078)" },
+        { "char": "X", "label": "Łacińska Wielka Litera X (U+0058)" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Chi to 22. litera greckiego alfabetu, leżąca między fi a psi. Oto jej sąsiedzi i inne greckie litery kopiowane razem z nią najczęściej.",
+      "symbols": [
+        { "char": "φ", "label": "Mała Grecka Litera Fi" },
+        { "char": "ψ", "label": "Mała Grecka Litera Psi" },
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Chi-kwadrat, górne indeksy oraz operatory i litery greckie wypełniające równanie."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Chi-Rho, krzyże i inne symbole chrześcijańskie oraz wiary zebrane w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-pi/",
+      "title": "Symbol Pi",
+      "desc": "Kolejna grecka litera z podwójnym życiem — słynna stała matematyczna π i wielki operator iloczynu Π."
+    }
+  ]
+}

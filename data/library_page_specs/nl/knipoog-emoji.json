@@ -1,0 +1,265 @@
+{
+  "slug": "knipoog-emoji",
+  "title": "Knipoog Emoji 😉 (Wink) — Kopiëren en Plakken | UltraTextGen",
+  "meta_description": "Knipoog emoji 😉 😜 🤪, speelse plaagcombo's en knipoog-kaomoji zoals (^_-) voor flirterige reacties en chats. Klik op een symbool om het te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/knipoog-emoji/",
+  "breadcrumb": "Knipoog Emoji en Kaomoji",
+  "hero_h1": "Knipoog Emoji en Kaomoji",
+  "hero_tagline": "Het knipogende gezicht 😉, tong-uit-grijnzen, sluwe blikken en brutale knipoog-kaomoji — elke tint van speels en \"grapje\". Klik op een symbool om het te kopiëren.",
+  "intro": "De knipoog emoji 😉 — in het Engels de wink — is het zetje van het internet: hij maakt van een droge zin een grap, verzacht een plagerij en geeft een flirterige ondertoon zonder één extra woord. Deze pagina verzamelt het hele speelse spectrum: het klassieke knipogende gezicht en zijn kus-buren, de tong-uit-crew 😜 🤪 😝, sluwe grijnzen en gegniffel achter de hand, en knipoog-kaomoji als (^_-) en (^_~) die je overal plakt waar platte tekst werkt. Pak één gezichtje, of kopieer in één klik een kant-en-klare combo voor flirterige reacties, groepschats en comments.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-wink",
+      "label": "De knipoog emoji",
+      "h2": "Het knipogende gezicht",
+      "intro": "Het knipoogje met één oog — plus de kusgezichtjes die er direct naast wonen.",
+      "symbols": [
+        {
+          "char": "😉",
+          "label": "Knipogend gezicht"
+        },
+        {
+          "char": "😘",
+          "label": "Gezicht dat een kus blaast"
+        },
+        {
+          "char": "😗",
+          "label": "Kussend gezicht"
+        },
+        {
+          "char": "😙",
+          "label": "Kussend gezicht met lachende ogen"
+        }
+      ]
+    },
+    {
+      "id": "playful-winks",
+      "label": "Speelse knipogen en tongen",
+      "h2": "Speelse knipogen en uitgestoken tongen",
+      "intro": "Uitgestoken tongen en dolle ogen voor volle grapjesmodus.",
+      "symbols": [
+        {
+          "char": "😜",
+          "label": "Knipogend gezicht met tong"
+        },
+        {
+          "char": "🤪",
+          "label": "Dol gezicht"
+        },
+        {
+          "char": "😝",
+          "label": "Gezicht met dichtgeknepen ogen en tong"
+        },
+        {
+          "char": "😛",
+          "label": "Gezicht met tong"
+        },
+        {
+          "char": "😋",
+          "label": "Gezicht dat smult"
+        }
+      ]
+    },
+    {
+      "id": "silly-teasing",
+      "label": "Gekke en plagende gezichten",
+      "h2": "Gekke en plagende gezichten",
+      "intro": "Zelfvoldane grijnzen, schijnheilige engeltjes en gegniffel achter de hand voor een sluwe plagerij.",
+      "symbols": [
+        {
+          "char": "😏",
+          "label": "Zelfvoldaan gezicht"
+        },
+        {
+          "char": "😊",
+          "label": "Lachend gezicht met lachende ogen"
+        },
+        {
+          "char": "🤭",
+          "label": "Gezicht met hand voor de mond"
+        },
+        {
+          "char": "🫢",
+          "label": "Gezicht met grote ogen en hand voor de mond"
+        },
+        {
+          "char": "😈",
+          "label": "Lachend gezicht met hoorntjes"
+        },
+        {
+          "char": "😇",
+          "label": "Lachend gezicht met halo"
+        }
+      ]
+    },
+    {
+      "id": "wink-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Knipoog-kaomoji en tekstgezichtjes",
+      "intro": "Tekstgezichtjes in Japanse stijl die knipogen, grijnzen en plagen in platte tekst.",
+      "symbols": [
+        {
+          "char": "(^_-)",
+          "label": "Klassieke knipoog-kaomoji"
+        },
+        {
+          "char": "(^_~)",
+          "label": "Knipogende glimlach-kaomoji"
+        },
+        {
+          "char": "(^_-)☆",
+          "label": "Knipoog met sterretje-kaomoji"
+        },
+        {
+          "char": "(･ω<)",
+          "label": "Brutale knipoog-kaomoji"
+        },
+        {
+          "char": "(>ω^)",
+          "label": "Sluwe knipoog-kaomoji"
+        },
+        {
+          "char": ";)",
+          "label": "Knipogende smiley-kaomoji"
+        },
+        {
+          "char": ";-)",
+          "label": "Klassieke knipoog-emoticon"
+        },
+        {
+          "char": "(￣ω￣)",
+          "label": "Speelse grijns-kaomoji"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo's",
+    "h2": "Knipoog-emoji combo's",
+    "intro": "Kopieer in één klik een complete speelse combo — van een lichte plagerij tot volle gekkigheid."
+  },
+  "collection_container_id": "winkSetsContainer",
+  "collections": [
+    {
+      "name": "Grapje",
+      "flags": [
+        "😉",
+        "😆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Speelse plagerij",
+      "flags": [
+        "😜",
+        "😝"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Knipoog en kus",
+      "flags": [
+        "😘",
+        "😉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gekkigheidsmodus",
+      "flags": [
+        "🤪",
+        "😜",
+        "😛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sluwe knipoog",
+      "flags": [
+        "😏",
+        "😉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Knipoog knipoog",
+      "flags": [
+        "😉",
+        "😉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Brutale streken",
+      "flags": [
+        "😈",
+        "😉",
+        "😜"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tong uit",
+      "flags": [
+        "😝",
+        "😛",
+        "😋"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/tekstgezichten-kaomoji/",
+      "title": "Tekstgezichtjes en Kaomoji",
+      "desc": "De complete kaomoji-bibliotheek — van vrolijk tot plagerig."
+    },
+    {
+      "href": "/nl/library/kus-emoji/",
+      "title": "Kus Emoji",
+      "desc": "Kusgezichtjes, hartjes en lipjes voor lieve en flirterige berichten."
+    },
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combo's",
+      "desc": "Kant-en-klare emoji-combinaties voor chats en comments."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/wink-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-guino/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/goz-kirpan-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-clin-doeil/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/knipoog-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/wink-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}

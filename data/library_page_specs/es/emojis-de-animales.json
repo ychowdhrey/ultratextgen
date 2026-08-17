@@ -1,0 +1,547 @@
+{
+  "lang": "es",
+  "slug": "emojis-de-animales",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/emojis-de-animales/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-animales/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
+    }
+  ],
+  "title": "Emojis de Animales: Copiar y Pegar Todos los Símbolos",
+  "meta_description": "Explora y copia emojis de animales: mascotas, fauna salvaje, criaturas marinas, aves y seres mitológicos. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emojis de Animales",
+  "hero_h1": "Emojis de Animales y Criaturas",
+  "hero_tagline": "Una colección de referencia con emojis de animales: mascotas, fauna salvaje, criaturas marinas, aves y seres mitológicos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Aquí puedes explorar y copiar emojis de animales organizados por categoría. Desde mascotas de casa y depredadores salvajes hasta criaturas del océano, bestias mitológicas y animales de granja: todos los bichos reunidos en un solo lugar.",
+  "sections": [
+    {
+      "id": "domestic-animals",
+      "label": "",
+      "h2": "Emojis de Animales Domésticos",
+      "intro": "Las mascotas y animales de compañía más comunes.",
+      "symbols": [
+        {
+          "char": "🐶",
+          "label": "Cara de perro"
+        },
+        {
+          "char": "🐕",
+          "label": "Perro"
+        },
+        {
+          "char": "🐩",
+          "label": "Poodle"
+        },
+        {
+          "char": "🐱",
+          "label": "Cara de gato"
+        },
+        {
+          "char": "🐈",
+          "label": "Gato"
+        },
+        {
+          "char": "🐹",
+          "label": "Hámster"
+        },
+        {
+          "char": "🐰",
+          "label": "Cara de conejo"
+        },
+        {
+          "char": "🐠",
+          "label": "Pez tropical"
+        },
+        {
+          "char": "🐇",
+          "label": "Conejo"
+        },
+        {
+          "char": "🐾",
+          "label": "Huellas de patitas"
+        }
+      ]
+    },
+    {
+      "id": "farm-animals",
+      "label": "",
+      "h2": "Emojis de Animales de Granja",
+      "intro": "Ganado y animales que se ven habitualmente en el campo.",
+      "symbols": [
+        {
+          "char": "🐄",
+          "label": "Vaca"
+        },
+        {
+          "char": "🐮",
+          "label": "Cara de vaca"
+        },
+        {
+          "char": "🐷",
+          "label": "Cara de cerdo"
+        },
+        {
+          "char": "🐖",
+          "label": "Cerdo"
+        },
+        {
+          "char": "🐑",
+          "label": "Oveja"
+        },
+        {
+          "char": "🐐",
+          "label": "Cabra"
+        },
+        {
+          "char": "🐔",
+          "label": "Gallina"
+        },
+        {
+          "char": "🐓",
+          "label": "Gallo"
+        },
+        {
+          "char": "🐴",
+          "label": "Cara de caballo"
+        },
+        {
+          "char": "🐎",
+          "label": "Caballo"
+        },
+        {
+          "char": "🦃",
+          "label": "Pavo"
+        },
+        {
+          "char": "🐂",
+          "label": "Buey"
+        },
+        {
+          "char": "🐃",
+          "label": "Búfalo de agua"
+        },
+        {
+          "char": "🐽",
+          "label": "Hocico de cerdo"
+        }
+      ]
+    },
+    {
+      "id": "wild-mammals",
+      "label": "",
+      "h2": "Emojis de Mamíferos Salvajes",
+      "intro": "Mamíferos silvestres, incluidos animales de bosque, sabana y selva.",
+      "symbols": [
+        {
+          "char": "🦁",
+          "label": "León"
+        },
+        {
+          "char": "🐯",
+          "label": "Cara de tigre"
+        },
+        {
+          "char": "🐻",
+          "label": "Oso"
+        },
+        {
+          "char": "🐼",
+          "label": "Panda"
+        },
+        {
+          "char": "🐨",
+          "label": "Koala"
+        },
+        {
+          "char": "🦊",
+          "label": "Zorro"
+        },
+        {
+          "char": "🐺",
+          "label": "Lobo"
+        },
+        {
+          "char": "🐘",
+          "label": "Elefante"
+        },
+        {
+          "char": "🦒",
+          "label": "Jirafa"
+        },
+        {
+          "char": "🦏",
+          "label": "Rinoceronte"
+        },
+        {
+          "char": "🦛",
+          "label": "Hipopótamo"
+        },
+        {
+          "char": "🐒",
+          "label": "Mono"
+        },
+        {
+          "char": "🐵",
+          "label": "Cara de mono"
+        },
+        {
+          "char": "🦌",
+          "label": "Venado"
+        },
+        {
+          "char": "🐿",
+          "label": "Ardilla"
+        },
+        {
+          "char": "🐅",
+          "label": "Tigre"
+        },
+        {
+          "char": "🐆",
+          "label": "Leopardo"
+        },
+        {
+          "char": "🦍",
+          "label": "Gorila"
+        },
+        {
+          "char": "🦧",
+          "label": "Orangután"
+        },
+        {
+          "char": "🙈",
+          "label": "Mono que no ve"
+        },
+        {
+          "char": "🙉",
+          "label": "Mono que no oye"
+        },
+        {
+          "char": "🙊",
+          "label": "Mono que no habla"
+        },
+        {
+          "char": "🐻‍❄️",
+          "label": "Oso polar"
+        },
+        {
+          "char": "🦓",
+          "label": "Cebra"
+        },
+        {
+          "char": "🦝",
+          "label": "Mapache"
+        },
+        {
+          "char": "🦣",
+          "label": "Mamut"
+        },
+        {
+          "char": "🐭",
+          "label": "Cara de ratón"
+        },
+        {
+          "char": "🐁",
+          "label": "Ratón"
+        },
+        {
+          "char": "🐀",
+          "label": "Rata"
+        },
+        {
+          "char": "🦇",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "id": "birds",
+      "label": "",
+      "h2": "Emojis de Aves",
+      "intro": "Emojis de aves, desde las más comunes hasta las más exóticas.",
+      "symbols": [
+        {
+          "char": "🐦",
+          "label": "Pájaro"
+        },
+        {
+          "char": "🐧",
+          "label": "Pingüino"
+        },
+        {
+          "char": "🦅",
+          "label": "Águila"
+        },
+        {
+          "char": "🦆",
+          "label": "Pato"
+        },
+        {
+          "char": "🦉",
+          "label": "Búho"
+        },
+        {
+          "char": "🦜",
+          "label": "Loro"
+        },
+        {
+          "char": "🦚",
+          "label": "Pavo real"
+        },
+        {
+          "char": "🦢",
+          "label": "Cisne"
+        },
+        {
+          "char": "🦩",
+          "label": "Flamenco"
+        },
+        {
+          "char": "🕊",
+          "label": "Paloma"
+        },
+        {
+          "char": "🪿",
+          "label": "Ganso"
+        },
+        {
+          "char": "🐤",
+          "label": "Pollito"
+        },
+        {
+          "char": "🐣",
+          "label": "Pollito saliendo del huevo"
+        },
+        {
+          "char": "🐥",
+          "label": "Pollito de frente"
+        }
+      ]
+    },
+    {
+      "id": "ocean-life",
+      "label": "",
+      "h2": "Emojis de Vida Marina",
+      "intro": "Animales marinos y criaturas del mar.",
+      "symbols": [
+        {
+          "char": "🐳",
+          "label": "Ballena echando agua"
+        },
+        {
+          "char": "🐋",
+          "label": "Ballena"
+        },
+        {
+          "char": "🐬",
+          "label": "Delfín"
+        },
+        {
+          "char": "🦈",
+          "label": "Tiburón"
+        },
+        {
+          "char": "🐙",
+          "label": "Pulpo"
+        },
+        {
+          "char": "🐚",
+          "label": "Caracol de mar"
+        },
+        {
+          "char": "🦑",
+          "label": "Calamar"
+        },
+        {
+          "char": "🦐",
+          "label": "Camarón"
+        },
+        {
+          "char": "🐡",
+          "label": "Pez globo"
+        },
+        {
+          "char": "🦭",
+          "label": "Foca"
+        },
+        {
+          "char": "🐟",
+          "label": "Pez"
+        },
+        {
+          "char": "🦞",
+          "label": "Langosta"
+        }
+      ]
+    },
+    {
+      "id": "insects-and-small-creatures",
+      "label": "",
+      "h2": "Emojis de Insectos y Bichos Pequeños",
+      "intro": "Bichos, insectos y otros animales pequeños.",
+      "symbols": [
+        {
+          "char": "🐛",
+          "label": "Oruga"
+        },
+        {
+          "char": "🦋",
+          "label": "Mariposa"
+        },
+        {
+          "char": "🐌",
+          "label": "Caracol"
+        },
+        {
+          "char": "🐜",
+          "label": "Hormiga"
+        },
+        {
+          "char": "🐝",
+          "label": "Abeja"
+        },
+        {
+          "char": "🪲",
+          "label": "Escarabajo"
+        },
+        {
+          "char": "🐞",
+          "label": "Mariquita"
+        },
+        {
+          "char": "🦗",
+          "label": "Grillo"
+        },
+        {
+          "char": "🕷",
+          "label": "Araña"
+        },
+        {
+          "char": "🦂",
+          "label": "Escorpión"
+        },
+        {
+          "char": "🪳",
+          "label": "Cucaracha"
+        },
+        {
+          "char": "🪱",
+          "label": "Lombriz"
+        }
+      ]
+    },
+    {
+      "id": "reptiles-and-amphibians",
+      "label": "",
+      "h2": "Emojis de Reptiles y Anfibios",
+      "intro": "Animales de sangre fría: serpientes, lagartijas y ranas.",
+      "symbols": [
+        {
+          "char": "🐍",
+          "label": "Serpiente"
+        },
+        {
+          "char": "🦎",
+          "label": "Lagartija"
+        },
+        {
+          "char": "🐊",
+          "label": "Cocodrilo"
+        },
+        {
+          "char": "🐢",
+          "label": "Tortuga"
+        },
+        {
+          "char": "🐸",
+          "label": "Rana"
+        },
+        {
+          "char": "🦕",
+          "label": "Saurópodo"
+        },
+        {
+          "char": "🦖",
+          "label": "Tiranosaurio Rex"
+        }
+      ]
+    },
+    {
+      "id": "mythical-animals",
+      "label": "",
+      "h2": "Emojis de Animales Mitológicos",
+      "intro": "Emojis de criaturas de fantasía y mitología.",
+      "symbols": [
+        {
+          "char": "🦄",
+          "label": "Unicornio"
+        },
+        {
+          "char": "🐉",
+          "label": "Dragón"
+        },
+        {
+          "char": "🐲",
+          "label": "Cara de dragón"
+        },
+        {
+          "char": "🐦‍🔥",
+          "label": "Fénix"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/usecase/traductor-de-emojis/",
+      "title": "Convertidor de Texto a Emojis",
+      "desc": "Convierte cualquier frase en emojis, escribe nombres con letras emoji o descifra emojis a texto: gratis y al instante."
+    },
+    {
+      "href": "/es/library/simbolos-del-zodiaco/",
+      "title": "Símbolos del Zodiaco y la Astrología",
+      "desc": "Los 12 signos del zodiaco occidental más los planetas y los animales del zodiaco chino."
+    },
+    {
+      "href": "/es/library/simbolos-de-flor/",
+      "title": "Símbolos de Flores y Naturaleza",
+      "desc": "Emojis de flores, símbolos de plantas y caracteres Unicode con tema natural."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras y Emociones",
+      "desc": "Caritas felices, caras de enojo, encogimiento de hombros, confusión y otros caracteres Unicode expresivos."
+    },
+    {
+      "href": "/es/library/emoji-caballito-de-mar/",
+      "title": "Emoji de Caballito de Mar",
+      "desc": "Por qué no existe el emoji de caballito de mar y cuáles son las alternativas marinas más parecidas."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Explorador de Emojis de Banderas",
+      "desc": "Explora todos los emojis de banderas de países organizados por región."
+    },
+    {
+      "href": "/es/symbol/emoji-de-mariposa-monarca/",
+      "title": "Emoji de Mariposa Monarca",
+      "desc": "Una especie concreta, nacida de las diferencias con que cada plataforma dibuja el emoji genérico de mariposa."
+    }
+  ]
+}

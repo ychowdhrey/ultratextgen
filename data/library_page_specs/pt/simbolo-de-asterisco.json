@@ -1,0 +1,81 @@
+{
+  "slug": "simbolo-de-asterisco",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Símbolo de Asterisco: Copiar e Colar * ⁂ ✱ — a Marca de Nota de Rodapé que Virou Coringa e Estrela de Censura",
+  "meta_description": "Copie e cole o asterisco (*), o asterismo ⁂ e o ✱ mais pesado — a marca de nota de rodapé que também comanda buscas com coringa e censura palavrões. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/simbolo-de-asterisco/",
+  "breadcrumb": "Símbolo de Asterisco",
+  "hero_h1": "Símbolo de Asterisco (*)",
+  "hero_tagline": "O asterisco (*) que você usa em notas de rodapé, o coringa * que combina com qualquer coisa em buscas e código, e a estrela de censura em p**ta — mais seus primos tipográficos, como o asterismo de três pontas ⁂. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O asterisco (*, Unicode U+002A) é a marca em forma de estrela que divide a tecla do número 8 no teclado, e seu nome vem direto do grego antigo asteriskos, «estrelinha» — um diminutivo de astēr, «estrela». É uma das marcas editoriais mais antigas da tradição ocidental: o estudioso alexandrino Aristarco de Samotrácia (c. 220–143 a.C.) usava o asteriskos em suas edições de Homero para sinalizar versos que julgava duplicados em outro trecho, e o teólogo Orígenes depois o colocou em sua Hexapla para marcar texto presente no hebraico mas ausente no grego. Hoje o mesmo glifo cumpre três funções bem diferentes: é a clássica marca de nota de rodapé que manda o leitor até uma nota no pé da página, é o coringa que combina com qualquer coisa em buscas de arquivo, padrões glob e no SELECT * do SQL, e é o substituto padrão de censura para as letras que as pessoas preferem trocar por asteriscos, como em p**ta. A tipografia mantém uma família de parentes por perto — o ASTERISMO ⁂ (U+2042) empilha três asteriscos num triângulo como quebra de seção, o ASTERISCO PESADO ✱ (U+2731) e o ASTERISCO DE OITO PONTAS ✳ (U+2733) são formas de exibição mais robustas, e o OPERADOR ASTERISCO ∗ (U+2217) é o glifo específico de multiplicação usado em matemática. Nenhuma dessas formas é a estrela decorativa — a estrela preta ★ (U+2605) ou o emoji de estrela amarela ⭐ (U+2B50) — que pertencem a um registro ornamental diferente.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-asterisco/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "the-asterisk",
+      "label": "O Asterisco",
+      "h2": "O Asterisco e Suas Variantes de Exibição",
+      "intro": "O asterisco comum do teclado, mais as formas de exibição mais robustas e o operador específico de matemática. Todos prontos para colar.",
+      "symbols": [
+        { "char": "*", "label": "Asterisco (U+002A) — Nota de Rodapé, Coringa e Marca de Censura" },
+        { "char": "✱", "label": "Asterisco Pesado (U+2731)" },
+        { "char": "✳", "label": "Asterisco de Oito Pontas (U+2733)" },
+        { "char": "∗", "label": "Operador Asterisco (U+2217) — o Glifo de Multiplicação da Matemática" },
+        { "char": "＊", "label": "Asterisco de Largura Total (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterism-editorial",
+      "label": "Asterismo e Marcas Editoriais",
+      "h2": "Asterismo e Marcas de Quebra de Seção",
+      "intro": "Marcas editoriais construídas a partir do asterisco — o asterismo de três pontas que quebra seções, mais seus primos empilhados e rebaixados.",
+      "symbols": [
+        { "char": "⁂", "label": "Asterismo (U+2042) — Três Asteriscos num Triângulo" },
+        { "char": "⁑", "label": "Dois Asteriscos Alinhados Verticalmente (U+2051)" },
+        { "char": "⁎", "label": "Asterisco Baixo (U+204E)" }
+      ]
+    },
+    {
+      "id": "stars-confused-with",
+      "label": "Estrelas com que É Confundido",
+      "h2": "Formas de Estrela com que É Confundido",
+      "intro": "Glifos em forma de estrela que as pessoas usam quando querem dizer asterisco. São estrelas decorativas — um registro ornamental, não uma ferramenta de nota de rodapé ou pontuação.",
+      "symbols": [
+        { "char": "★", "label": "Estrela Preta (U+2605)" },
+        { "char": "☆", "label": "Estrela Branca (U+2606)" },
+        { "char": "⭐", "label": "Estrela Média Branca (U+2B50) — o Emoji de Estrela Amarela" },
+        { "char": "✦", "label": "Estrela Preta de Quatro Pontas (U+2726)" },
+        { "char": "✧", "label": "Estrela Branca de Quatro Pontas (U+2727)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/simbolo-de-estrela/",
+      "title": "Símbolo de Estrela (★)",
+      "desc": "A estrela decorativa de cinco pontas e o emoji de estrela amarela — as primas ornamentais com que o asterisco é confundido."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-secao/",
+      "title": "Símbolo de Seção (§)",
+      "desc": "O sinal § — outro símbolo editorial e ligado a notas de rodapé, vindo do mundo da impressão."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    }
+  ]
+}

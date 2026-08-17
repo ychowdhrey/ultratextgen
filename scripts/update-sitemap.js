@@ -43,16 +43,70 @@ function findIndexFiles(dir, relativePath = '') {
 const OG_IMAGE_RE = /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/;
 const LOGO_FALLBACK = `${BASE_URL}/logo.png`;
 
-function getOgImage(filePath) {
+// Decorative figures are stripped before scanning for content images. The hero
+// banner restates the page's own <h1>, so wire-site-art.py ships it as
+// aria-hidden with a null alt — the WCAG-correct call for an image that adds
+// nothing a screen reader user isn't already getting. An image sitemap should
+// list images we want *indexed*, and a decorative one is by definition not that.
+const DECORATIVE_FIGURE_RE = /<figure\b[^>]*\baria-hidden=["']true["'][^>]*>[\s\S]*?<\/figure>/gi;
+const IMG_TAG_RE = /<img\b[^>]*>/gi;
+const SRC_RE = /\bsrc=["']([^"']+)["']/i;
+const ALT_RE = /\balt=["']([^"']*)["']/i;
+
+// Content images: an <img> with a real (non-empty) alt, outside any decorative
+// figure. That rule is the reason specimen charts (assets/specimen/*.png — a
+// rendered grid of the page's own symbols, which carries information the prose
+// does not) get declared, while the ~2,000 decorative hero SVGs never do. It is
+// deliberately a property of the markup rather than a hardcoded path: any future
+// content image described well enough to deserve indexing qualifies on its own,
+// and nothing here needs updating when one is added.
+function getContentImages(html) {
+  const out = [];
+  for (const tag of html.replace(DECORATIVE_FIGURE_RE, '').match(IMG_TAG_RE) || []) {
+    if (/\baria-hidden=["']true["']/i.test(tag)) continue;
+    const alt = tag.match(ALT_RE);
+    if (!alt || !alt[1].trim()) continue;
+    const src = tag.match(SRC_RE);
+    if (!src) continue;
+    const url = src[1].trim();
+    // Same-origin only. A data: URI has no URL to index, and an image we do not
+    // host is not ours to declare. `//host/path` is protocol-relative and points
+    // at another origin despite its leading slash — prefixing it would produce
+    // https://ultratextgen.com//cdn.example.com/... and declare an image that
+    // 404s. Caught by update-sitemap.test.js rather than by review.
+    if (url.startsWith('//')) continue;
+    if (url.startsWith('/')) out.push(`${BASE_URL}${url}`);
+    else if (url.startsWith(`${BASE_URL}/`)) out.push(url);
+  }
+  return out;
+}
+
+// Every image this page wants indexed, og:image first, de-duplicated. A page may
+// legitimately declare several — the sitemap spec allows up to 1,000 per URL.
+function getPageImages(filePath) {
   let html;
   try {
     html = fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8');
   } catch {
-    return null;
+    return [];
   }
-  const m = html.match(OG_IMAGE_RE);
-  if (!m || m[1] === LOGO_FALLBACK) return null;
-  return m[1];
+  const images = [];
+  const og = html.match(OG_IMAGE_RE);
+  if (og && og[1] !== LOGO_FALLBACK) images.push(og[1]);
+  images.push(...getContentImages(html));
+  return [...new Set(images)];
+}
+
+// A sitemap is a list of pages we WANT indexed — advertising a noindex page
+// (the /usecase/*/embed/ widgets, etc.) sends crawlers a contradictory signal.
+const NOINDEX_RE = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']/i;
+
+function isNoindex(filePath) {
+  try {
+    return NOINDEX_RE.test(fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8'));
+  } catch {
+    return false;
+  }
 }
 
 // ─── URL helpers ──────────────────────────────────────────────────────────────
@@ -108,7 +162,7 @@ function todayDate() {
 
 // ─── XML builder ──────────────────────────────────────────────────────────────
 
-function buildUrlBlock(url, lastmod, changefreq, priority, image) {
+function buildUrlBlock(url, lastmod, changefreq, priority, images) {
   const lines = [
     '  <url>',
     `    <loc>${BASE_URL}${url}</loc>`,
@@ -116,7 +170,7 @@ function buildUrlBlock(url, lastmod, changefreq, priority, image) {
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority}</priority>`,
   ];
-  if (image) {
+  for (const image of images || []) {
     lines.push('    <image:image>', `      <image:loc>${image}</image:loc>`, '    </image:image>');
   }
   lines.push('  </url>');
@@ -125,7 +179,7 @@ function buildUrlBlock(url, lastmod, changefreq, priority, image) {
 
 function buildSitemap(urlEntries) {
   const blocks = urlEntries.map(e =>
-    buildUrlBlock(e.url, e.lastmod, e.changefreq, e.priority, e.image)
+    buildUrlBlock(e.url, e.lastmod, e.changefreq, e.priority, e.images)
   );
 
   return [
@@ -153,8 +207,12 @@ function urlSortKey(url) {
 function generateSitemap() {
   console.log('🔍 Scanning for index.html pages...');
 
-  const indexFiles = findIndexFiles(REPO_ROOT);
-  console.log(`   Pages discovered: ${indexFiles.length}`);
+  const discovered = findIndexFiles(REPO_ROOT);
+  const indexFiles = discovered.filter(f => !isNoindex(f));
+  console.log(`   Pages discovered: ${discovered.length}`);
+  if (discovered.length !== indexFiles.length) {
+    console.log(`   Skipped noindex:  ${discovered.length - indexFiles.length}`);
+  }
 
   // Build URL entries — fully derived from filesystem, no sitemap.xml read
   const urlEntries = indexFiles
@@ -162,8 +220,8 @@ function generateSitemap() {
       const url      = pathToUrl(filePath);
       const lastmod  = getGitLastMod(filePath);
       const defaults = getUrlDefaults(url);
-      const image    = getOgImage(filePath);
-      return { url, lastmod, image, ...defaults };
+      const images   = getPageImages(filePath);
+      return { url, lastmod, images, ...defaults };
     })
     .sort((a, b) => urlSortKey(a.url).localeCompare(urlSortKey(b.url)));
 
@@ -187,4 +245,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { generateSitemap };
+module.exports = { generateSitemap, getContentImages };

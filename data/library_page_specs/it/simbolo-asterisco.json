@@ -1,0 +1,86 @@
+{
+  "slug": "simbolo-asterisco",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo Asterisco: Copia e Incolla * ⁂ ✱ — Il Segno di Nota a Piè di Pagina Diventato Carattere Jolly e Stella di Censura",
+  "meta_description": "Copia e incolla l'asterisco (*), l'asterismo ⁂ e il ✱ pieno — il segno di nota a piè di pagina che gestisce anche la ricerca con carattere jolly e censura le parolacce. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-asterisco/",
+  "breadcrumb": "Simbolo Asterisco",
+  "hero_h1": "Simbolo Asterisco (*)",
+  "hero_tagline": "L'asterisco (*) che usi per le note a piè di pagina, il carattere jolly * che in ricerca e nel codice corrisponde a qualsiasi cosa, e la stellina di censura in una parolaccia — più i suoi cugini tipografici come l'asterismo a triangolo ⁂. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "L'asterisco (*, Unicode U+002A) è il segno a forma di stella che condivide con il tasto numero 8 della tastiera, e il suo nome viene direttamente dal greco antico asteriskos, \"piccola stella\" — un diminutivo di astēr, \"stella\". È uno dei più antichi segni editoriali della tradizione occidentale: lo studioso alessandrino Aristarco di Samotracia (circa 220–143 a.C.) usò l'asteriskos nelle sue edizioni di Omero per segnalare versi che riteneva duplicati altrove, e il teologo Origene lo collocò più tardi nella sua Hexapla per marcare il testo presente nell'ebraico ma assente nel greco. Oggi lo stesso glifo svolge tre compiti molto diversi: è il classico segno di nota a piè di pagina che rimanda il lettore a un'annotazione in fondo alla pagina, è il carattere jolly che corrisponde a qualsiasi cosa nella ricerca di file, negli schemi glob e nel SELECT * di SQL, ed è il sostituto predefinito di censura per le lettere che si preferisce oscurare, come in c***o. La tipografia mantiene attorno a esso una famiglia di parenti — l'ASTERISM ⁂ (U+2042) impila tre asterischi in un triangolo come interruzione di sezione, il HEAVY ASTERISK ✱ (U+2731) e l'EIGHT SPOKED ASTERISK ✳ (U+2733) sono forme più marcate per la visualizzazione, e l'ASTERISK OPERATOR ∗ (U+2217) è il glifo specifico della moltiplicazione in matematica. Nessuno di questi va confuso con le forme di stella decorative — la stella nera ★ (U+2605) o l'emoji stella gialla ⭐ (U+2B50) — che appartengono a un registro diverso, puramente ornamentale.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-asterisco/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-asterisk",
+      "label": "L'Asterisco",
+      "h2": "L'Asterisco e le Sue Varianti di Visualizzazione",
+      "intro": "Il semplice asterisco da tastiera più le forme più marcate per la visualizzazione e l'operatore specifico della matematica. Ognuno è pronto da incollare.",
+      "symbols": [
+        { "char": "*", "label": "Asterisco (U+002A) — Nota a Piè di Pagina, Carattere Jolly e Censura" },
+        { "char": "✱", "label": "Heavy Asterisk (U+2731)" },
+        { "char": "✳", "label": "Eight-Spoked Asterisk (U+2733)" },
+        { "char": "∗", "label": "Asterisk Operator (U+2217) — Il Glifo Matematico della Moltiplicazione" },
+        { "char": "＊", "label": "Asterisco a Larghezza Intera (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterism-editorial",
+      "label": "Asterismo e Segni Editoriali",
+      "h2": "Asterismo e Segni di Interruzione di Sezione",
+      "intro": "Segni editoriali costruiti a partire dall'asterisco — l'asterismo a triangolo che interrompe le sezioni, più i suoi cugini impilati e abbassati.",
+      "symbols": [
+        { "char": "⁂", "label": "Asterismo (U+2042) — Tre Asterischi a Triangolo" },
+        { "char": "⁑", "label": "Due Asterischi Allineati Verticalmente (U+2051)" },
+        { "char": "⁎", "label": "Asterisco Basso (U+204E)" }
+      ]
+    },
+    {
+      "id": "stars-confused-with",
+      "label": "Stelle con Cui Viene Confuso",
+      "h2": "Forme di Stella con Cui Viene Confuso",
+      "intro": "Glifi a forma di stella a cui si ricorre pensando a un asterisco. Sono stelle decorative — un registro ornamentale, non uno strumento di nota a piè di pagina o punteggiatura.",
+      "symbols": [
+        { "char": "★", "label": "Stella Nera (U+2605)" },
+        { "char": "☆", "label": "Stella Bianca (U+2606)" },
+        { "char": "⭐", "label": "Stella Media Bianca (U+2B50) — L'Emoji Stella Gialla" },
+        { "char": "✦", "label": "Stella Nera a Quattro Punte (U+2726)" },
+        { "char": "✧", "label": "Stella Bianca a Quattro Punte (U+2727)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-punteggiatura/",
+      "title": "Simboli di Punteggiatura",
+      "desc": "Trattini, parentesi, virgolette e la famiglia di punteggiatura quotidiana a cui appartiene l'asterisco."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "L'asterisco, la e commerciale, il cancelletto e il resto dei simboli stampati sulle righe della tastiera."
+    },
+    {
+      "href": "/it/symbol/simbolo-stella/",
+      "title": "Simbolo Stella (★)",
+      "desc": "La stella decorativa ★ e l'emoji stella gialla ⭐ — le cugine ornamentali con cui l'asterisco viene confuso."
+    },
+    {
+      "href": "/it/symbol/simbolo-di-sezione/",
+      "title": "Simbolo di Sezione (§)",
+      "desc": "Il segno § di sezione — un altro simbolo editoriale, vicino al mondo delle note a piè di pagina, ereditato dalla stampa."
+    }
+  ]
+}

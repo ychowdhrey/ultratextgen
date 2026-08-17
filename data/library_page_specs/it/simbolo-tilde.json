@@ -1,0 +1,80 @@
+{
+  "slug": "simbolo-tilde",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo Tilde: Copia e Incolla ~ ˜ ∼ ≈ — Dallo Scriba Medievale alla Cartella Home di Unix",
+  "meta_description": "Copia e incolla la tilde (~), la piccola tilde ˜, il segno diacritico combinante che dà la ñ, e le tilde matematiche ∼ e ≈ — più la storia dello scriba medievale da cui nasce la ñ. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-tilde/",
+  "breadcrumb": "Simbolo Tilde",
+  "hero_h1": "Simbolo Tilde (~)",
+  "hero_tagline": "La tilde da tastiera (~) che indica la cartella home su Unix e significa \"circa\", la piccola tilde ˜ e il segno combinante che sta sopra ñ, ã e õ, e le tilde matematiche ∼ e ≈ con cui viene continuamente confusa. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "La tilde (~, U+007E TILDE) è il segno ondulato nel tasto in alto a sinistra della tastiera, e svolge più compiti di quasi ogni altro segno di punteggiatura. In una shell Unix o Linux è l'abbreviazione della cartella home (~/) — una convenzione che risale al terminale Lear-Siegler ADM-3A degli anni '70, la cui tastiera stampava \"~\" e la parola \"Home\" sullo stesso tasto. Nel linguaggio informale significa \"circa\" o \"più o meno\" (~5 minuti), e i programmatori la chiamano \"twiddle\". Il suo nome viene dallo spagnolo tilde, dal latino titulus (\"titolo\" o \"soprascritta\"), e la sua storia comincia con gli scribi medievali: un piccolo segno ondulato scritto sopra una lettera indicava una \"n\" o una \"m\" omessa, risparmiando prezioso vello e inchiostro. È proprio da questa scorciatoia che nasce la ñ spagnola — gli scribi scrivevano una sola \"n\" con il segno sopra per indicare una \"nn\" raddoppiata. Quel segno diacritico sopravvive oggi come tilde combinante (◌̃, U+0303), un carattere diverso dalla piccola tilde autonoma (˜, U+02DC) e dalla semplice ~ da tastiera. Viene anche regolarmente confusa con i segni matematici a cui somiglia: l'operatore tilde ∼ (U+223C, \"simile a\") e il segno di quasi-uguale ≈ (U+2248) sono caratteri Unicode a sé, non la tilde ASCII.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-tilde/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-tilde",
+      "label": "La Tilde",
+      "h2": "La Tilde ~ e i Suoi Sosia",
+      "intro": "Tre caratteri Unicode distinti che tutti chiamano \"la tilde\" — il tasto da tastiera, un modificatore autonomo e il segno diacritico combinante che si posiziona sopra una lettera.",
+      "symbols": [
+        { "char": "~", "label": "Tilde (U+007E) — il Tasto da Tastiera" },
+        { "char": "˜", "label": "Piccola Tilde (U+02DC) — Modificatore Autonomo" },
+        { "char": "̃", "label": "Tilde Combinante (U+0303) — Sopra una Lettera" }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Lettere con la Tilde",
+      "h2": "Le Lettere Che Portano la Tilde",
+      "intro": "La tilde combinante in azione. La ñ spagnola e la ã e õ portoghesi sono le eredi quotidiane dell'abbreviazione medievale per una \"n\" omessa.",
+      "symbols": [
+        { "char": "ñ", "label": "Lettera Latina Minuscola N con Tilde (U+00F1)" },
+        { "char": "Ñ", "label": "Lettera Latina Maiuscola N con Tilde (U+00D1)" },
+        { "char": "ã", "label": "Lettera Latina Minuscola A con Tilde (U+00E3)" },
+        { "char": "õ", "label": "Lettera Latina Minuscola O con Tilde (U+00F5)" }
+      ]
+    },
+    {
+      "id": "math-tilde",
+      "label": "Tilde Matematiche",
+      "h2": "Tilde Matematiche: Simile-a e Quasi-Uguale",
+      "intro": "Nelle equazioni la tilde significa \"simile a\" o \"circa\", ma i veri segni matematici sono caratteri Unicode a parte — non la ~ ASCII che di solito si digita al loro posto.",
+      "symbols": [
+        { "char": "∼", "label": "Operatore Tilde (U+223C) — \"Simile a\"" },
+        { "char": "≈", "label": "Quasi Uguale (U+2248) — \"Approssimativamente Uguale\"" },
+        { "char": "≅", "label": "Approssimativamente Uguale a (U+2245)" },
+        { "char": "≃", "label": "Asintoticamente Uguale a (U+2243)" },
+        { "char": "~", "label": "Tilde (U+007E) — la Tilde ASCII Spesso Digitata al Suo Posto" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Simboli da Tastiera",
+      "desc": "La tilde, l'apice inverso, la e commerciale e il resto dei tasti di punteggiatura e segni su una tastiera standard, pronti da copiare."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Simboli Matematici",
+      "desc": "Quasi-uguale, simile-a, e gli operatori e le relazioni che completano un'equazione insieme alla tilde."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accenti e Segni Diacritici",
+      "desc": "La tilde combinante sopra ñ e ã, più accenti acuti, gravi, dieresi e gli altri segni che si posizionano su una lettera."
+    }
+  ]
+}

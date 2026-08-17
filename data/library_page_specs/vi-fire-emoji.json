@@ -1,0 +1,232 @@
+{
+  "slug": "emoji-lua",
+  "title": "Emoji Lửa 🔥 và Kaomoji: Sao Chép Combo Cháy | UltraTextGen",
+  "meta_description": "Emoji lửa 🔥 mang nghĩa “cháy quá”, kèm các cặp 💯 🚀, ký hiệu nóng và bộ combo cho caption và bình luận. Nhấn để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/library/emoji-lua/",
+  "breadcrumb": "Emoji Lửa",
+  "hero_h1": "Emoji Lửa và Kaomoji",
+  "hero_tagline": "Biểu tượng 🔥 mang nghĩa “cháy quá” — các cặp hype, ký hiệu nóng và nguy hiểm, kaomoji rực lửa và combo dán ngay. Nhấn để sao chép.",
+  "intro": "Emoji lửa 🔥 từ lâu đã vượt khỏi nghĩa ngọn lửa theo nghĩa đen — ngày nay nó chủ yếu mang nghĩa “cháy quá”, cách nói tắt cho thứ gì đó quá đỉnh, quá nóng. Trang này gom chính biểu tượng 🔥, những emoji hype và tán thưởng thường đi kèm (💯 🚀 ⚡ 🙌 👑), các ký hiệu nóng và nguy hiểm như 🌋 và 🥵 đẩy thông điệp lên hết cỡ, cùng vài kaomoji đậm chất lửa cho các khung chat văn bản thuần. Bên dưới các mục là những bộ combo nhấn một lần — “Cháy Quá”, “Cháy Hết Nấc” và nhiều bộ khác — dựng sẵn cho caption, bình luận và các câu trả lời bắt trend.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-fire",
+      "label": "Emoji Lửa",
+      "h2": "Biểu Tượng Lửa",
+      "intro": "Ký tự duy nhất mang trọn nghĩa “cháy quá”.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Lửa"
+        }
+      ]
+    },
+    {
+      "id": "hype-approval",
+      "label": "Hype",
+      "h2": "Cặp Đôi Hype và Tán Thưởng",
+      "intro": "Những emoji biến 🔥 thành lời khen trọn vẹn — điểm tuyệt đối, tên lửa, năng lượng thuần.",
+      "symbols": [
+        {
+          "char": "💯",
+          "label": "Một Trăm Điểm"
+        },
+        {
+          "char": "🚀",
+          "label": "Tên Lửa"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Cao Thế"
+        },
+        {
+          "char": "🙌",
+          "label": "Giơ Hai Tay"
+        },
+        {
+          "char": "👑",
+          "label": "Vương Miện"
+        }
+      ]
+    },
+    {
+      "id": "heat-danger",
+      "label": "Nóng",
+      "h2": "Ký Hiệu Nóng và Nguy Hiểm",
+      "intro": "Những ký hiệu nóng theo nghĩa đen, đẩy một nhận định gắt thành lời cảnh báo.",
+      "symbols": [
+        {
+          "char": "🌋",
+          "label": "Núi Lửa"
+        },
+        {
+          "char": "♨️",
+          "label": "Suối Nước Nóng"
+        },
+        {
+          "char": "🥵",
+          "label": "Mặt Nóng Bức"
+        },
+        {
+          "char": "🧯",
+          "label": "Bình Chữa Cháy"
+        }
+      ]
+    },
+    {
+      "id": "fire-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Lửa và Ngọn Lửa",
+      "intro": "Lửa rất khó vẽ bằng chữ, nên đây là những mặt chữ hừng hực và lấp lánh gần nhất.",
+      "symbols": [
+        {
+          "char": "(๑ᵔ⌣ᵔ๑)",
+          "label": "Kaomoji Thấy Nóng"
+        },
+        {
+          "char": "ᕙ(⇀‸↼‶)ᕗ",
+          "label": "Kaomoji Gồng Lửa"
+        },
+        {
+          "char": "(҂ `з´ )ﾉ⌒☆",
+          "label": "Kaomoji Bắn Tia Lửa"
+        },
+        {
+          "char": "✧⁠٩⁠(⁠ˊ⁠ᗜ⁠ˋ⁠*⁠)⁠و⁠✧",
+          "label": "Kaomoji Cháy và Lấp Lánh"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Kaomoji Sục Sôi"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo",
+    "h2": "Bộ Combo Emoji Lửa",
+    "intro": "Sao chép trọn một combo hype chỉ với một cú nhấn — lời khen, độ nóng hay lửa thuần."
+  },
+  "collection_container_id": "fireSetsContainer",
+  "collections": [
+    {
+      "name": "Cháy Quá",
+      "flags": [
+        "🔥",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cháy Hết Nấc",
+      "flags": [
+        "🔥",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nhận Định Gắt",
+      "flags": [
+        "🔥",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tên Lửa Lên Đỉnh",
+      "flags": [
+        "🔥",
+        "🚀",
+        "⚡"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chỉ Toàn Lửa",
+      "flags": [
+        "🔥",
+        "🔥",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tăng Nhiệt",
+      "flags": [
+        "🔥",
+        "♨️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Năng Lượng Vua",
+      "flags": [
+        "🔥",
+        "👑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nóng Nguy Hiểm",
+      "flags": [
+        "🔥",
+        "🌋",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật cho mọi tâm trạng. Nhấp vào mặt bất kỳ để sao chép ngay."
+    },
+    {
+      "href": "/vi/combo-emoji/",
+      "title": "Combo emoji copy paste — bấm là dán",
+      "desc": "Combo emoji sẵn để bio, tên và caption cùng một vibe — cute, tình yêu, dark, cool và thiên nhiên. Bấm vào comb…"
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Kí Tự Đặc Biệt — bấm là copy",
+      "desc": "Kho kí tự đặc biệt đầy đủ cho tên Free Fire, Liên Quân, bio Facebook, Instagram và caption TikTok: khung ꧁꧂, t…"
+    }
+  ],
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/fire-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-fuego/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/bulkkot-imoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ates-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/emoji-lua/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    }
+  ]
+}

@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Wpisz tekst...",
-    "advertisement": "Reklama"
+    "advertisement": "Reklama",
+    "categoryTabs": {
+      "popular": "Popularne",
+      "bold-fonts": "Pogrubione",
+      "italic-fonts": "Kursywa",
+      "bubble-fonts": "Bąbelkowe",
+      "cursive-fonts": "Odręczne",
+      "gothic-fonts": "Gotyckie",
+      "strikethrough-text": "Przekreślone",
+      "underline-text": "Podkreślone",
+      "small-text": "Mały tekst",
+      "cute-fonts": "Słodkie",
+      "aesthetic-fonts": "Estetyczne",
+      "upside-down-text": "Do góry nogami",
+      "text-decorator": "Dekorator tekstu",
+      "classified": "Utajnione / Ocenzurowane",
+      "fullwidth-fonts": "Pełna szerokość",
+      "faux-fonts": "Fałszywe alfabety",
+      "ancient-fonts": "Starożytne i runy",
+      "emoji-letter-fonts": "Litery emoji",
+      "novelty-fonts": "Nietypowe"
+    },
+    "scopeControl": {
+      "label": "Zastosuj styl do",
+      "ariaLabel": "Wybierz, ile tekstu ostylować",
+      "whole": "Cały tekst",
+      "wholeTitle": "Stylizuje każdą linię Twojego tekstu.",
+      "firstLine": "Tylko pierwsza linia",
+      "firstLineTag": "do postów",
+      "firstLineTitle": "Stylizuje tylko pierwszą linię (Twój nagłówek lub zdanie przyciągające uwagę), a resztę zostawia jako zwykły, czytelny tekst — idealne do postów w mediach społecznościowych.",
+      "share": "Udostępnij",
+      "shareTitle": "Udostępnij link, który ponownie otwiera tę stronę z Twoim tekstem już wpisanym",
+      "linkCopied": "Link skopiowany"
+    },
+    "safeMode": {
+      "label": "Bezpieczeństwo wklejania",
+      "ariaLabel": "Sprawdź, które style dobrze wyświetlają się na innych urządzeniach",
+      "toggleLabel": "Tryb bezpieczny",
+      "hint": "Oznacza style, które mogą wyświetlać się jako kwadraciki (▯) na starszych telefonach innych osób."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Może wyświetlać się jako kwadraciki u niektórych osób",
+      "boxesWarningTitle": "Ten styl używa rzadkich znaków Unicode, których niektóre telefony i starsze urządzenia nie obsługują. Może wyświetlać się jako kwadraciki (▯) u osoby, której go wyślesz. Jeśli Twoi odbiorcy mogą używać starszych urządzeń, wybierz prostszy lub szerzej wspierany styl.",
+      "emojiWarning": "⚠ Zawiera emoji — może wyglądać inaczej na starszych urządzeniach",
+      "emojiWarningTitle": "Ten styl zawiera emoji. Emoji wyświetlają się dobrze na nowoczesnych urządzeniach, ale na bardzo starych telefonach mogą wyglądać inaczej lub jako kwadraciki.",
+      "modernDevices": "Dobrze wyświetla się na nowoczesnych urządzeniach",
+      "modernDevicesTitle": "Te stylizowane litery Unicode wyświetlają się na wszystkich obecnych telefonach i komputerach. Na bardzo starym Androidzie (mniej więcej sprzed 2016) lub z minimalnymi czcionkami systemowymi część znaków może nadal wyglądać jak kwadraciki (▯). Przetestuj wcześniej, jeśli Twoi odbiorcy mogą używać starszych urządzeń.",
+      "rendersEverywhere": "✓ Dobrze wyświetla się wszędzie",
+      "rendersEverywhereTitle": "Ten styl to zwykły tekst — dobrze wyświetla się wszędzie, bez ryzyka kwadracików na żadnym urządzeniu.",
+      "deviceWarning": "⚠ Może nie wyświetlać się na Twoim urządzeniu",
+      "deviceWarningTitle": "Czcionki Twojego urządzenia nie obsługują tego stylu — może wyświetlać się jako kwadraciki (□). Na innych urządzeniach nadal może wyglądać dobrze.",
+      "safeAnywhere": "✓ Bezpieczny wszędzie",
+      "safeAnywhereTitle": "Wyświetla się na wszystkich głównych platformach. Uwaga: czytniki ekranu mogą literować stylizowane litery jedna po drugiej, więc główny tekst zostaw zwykły.",
+      "worksBestOn": "⚠ Działa najlepiej na {platforms}",
+      "worksBestOnTitle": "Działa najlepiej na: {platforms}. Inne platformy mogą go usunąć lub wyświetlić błędnie — przetestuj przed publikacją."
+    },
+    "savedStyles": {
+      "ariaLabel": "Twoje zapisane style",
+      "heading": "Twoje zapisane style",
+      "clearAll": "Wyczyść wszystko",
+      "hint": "Zapisane na tym urządzeniu — będą tu czekać, gdy wrócisz."
+    },
+    "textStats": {
+      "wordSingular": "1 słowo",
+      "wordPlural": "{n} słów",
+      "charSingular": "1 znak",
+      "charPlural": "{n} znaków"
+    },
+    "decorationsNone": "Brak",
+    "categoryTabsToggle": {
+      "more": "Więcej",
+      "less": "Mniej"
+    },
+    "demoText": "Witaj w UltraTextGen.\nWpisz cokolwiek. Zrób z tego ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "imię",
+        "tabs": {
+          "playful": "Zabawne",
+          "hearts": "Serduszka",
+          "sparkle": "Brokat",
+          "faces": "Buźki",
+          "stars": "Gwiazdki"
+        }
+      },
+      "bio": {
+        "word": "imię",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetyczne",
+          "edgy": "Mroczne",
+          "royal": "Królewskie",
+          "cute": "Słodkie",
+          "bold": "Pogrubione",
+          "clean": "Czyste",
+          "mystical": "Mistyczne",
+          "retro": "Retro",
+          "nature": "Natura"
+        }
+      },
+      "small-text": {
+        "word": "tekst",
+        "tabs": {
+          "subtle": "Subtelne",
+          "tiny": "Malutkie",
+          "brackets": "Nawiasy",
+          "minimal": "Minimalne"
+        }
+      },
+      "bubble": {
+        "word": "imię",
+        "tabs": {
+          "rounded": "Okrągłe",
+          "soft": "Delikatne",
+          "stars": "Gwiazdki",
+          "hearts": "Serduszka",
+          "minimal": "Minimalne"
+        }
+      },
+      "cute": {
+        "word": "imię",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Buźki",
+          "hearts": "Serduszka",
+          "sparkle": "Brokat",
+          "pastel": "Pastelowe"
+        }
+      },
+      "aesthetic": {
+        "word": "tekst",
+        "tabs": {
+          "celestial": "Niebiańskie",
+          "sparkle": "Brokat",
+          "y2k": "Y2K",
+          "soft": "Delikatne",
+          "minimal": "Minimalne"
+        }
+      },
+      "nickname": {
+        "word": "imię",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetyczne",
+          "symbols": "Symbole",
+          "hearts": "Serduszka",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Do czego ludzie tego najczęściej używają",
@@ -91,7 +240,7 @@
           },
           {
             "question": "Da się zrobić nick do gry albo na Discorda?",
-            "answer": "Jasne — to chyba najczęstszy powód, dla którego ludzie wpadają na takie generatory. Discord, Roblox, Steam, Minecraft, większość gier akceptuje Unicode w nickach.\n    <br><br>\n    <strong>Przykład</strong><br>\n    Zwykły nick: „DarkWolf\"<br>\n    Po stylizacji: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (gotyk), „ⒹⓐⓡⓚⓌⓞⓛⓕ\" (bubble) albo „๖ۣۜDarkWolf\" (z ozdobnikiem z boku).\n    <br><br>\n    <strong>Uwaga:</strong> część gier ma filtry i nie przyjmie egzotycznych znaków. Jak jeden styl nie wchodzi, daj inny — bold i kursywa zwykle przechodzą wszędzie."
+            "answer": "Jasne — to chyba najczęstszy powód, dla którego ludzie wpadają na takie generatory. Discord, Roblox, Steam, Minecraft, większość gier akceptuje Unicode w nickach.\n    <br><br>\n    <strong>Przykład</strong><br>\n    Zwykły nick: „DarkWolf\"<br>\n    Po stylizacji: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (gotyk), „ⒹⓐⓡⓚⓌⓞⓛⓕ\" (bubble) albo „๖ۣۜDarkWolf\" (z ozdobnikiem z boku).\n    <br><br>\n    <strong>Uwaga:</strong> część gier ma filtry i nie przyjmie egzotycznych znaków. Jak jeden styl nie wchodzi, daj inny — bold i kursywa zwykle przechodzą wszędzie. Chcesz zamiast tego całkowicie pustą nazwę? Zobacz <a href=\"/pl/answers/jak-zrobic-pusta-nazwe/\">jak zrobić pustą nazwę</a>."
           },
           {
             "question": "Działa w statusie WhatsAppa, na Telegramie i w Messengerze?",
@@ -133,11 +282,11 @@
           },
           {
             "question": "Czemu komuś wyświetlają się kwadraty zamiast literek?",
-            "answer": "Bo czcionka systemowa po stronie odbiorcy nie zawiera danego znaku Unicode. To nie problem z twoim tekstem — po prostu jego telefon czy aplikacja nie ma tego konkretnego znaczka w zestawie.\n    <br><br>\n    Trzymaj się <strong>bold</strong>, <strong>italic</strong> i <strong>bubble</strong> — mają najszersze wsparcie. Bardzo egzotyczne style (fullwidth, kwadraciki) mogą wyświetlić się jako □ na starszych Androidach albo niektórych klientach pocztowych."
+            "answer": "Bo czcionka systemowa po stronie odbiorcy nie zawiera danego znaku Unicode. To nie problem z twoim tekstem — po prostu jego telefon czy aplikacja nie ma tego konkretnego znaczka w zestawie.\n    <br><br>\n    Trzymaj się <strong>bold</strong>, <strong>italic</strong> i <strong>bubble</strong> — mają najszersze wsparcie. Bardzo egzotyczne style (fullwidth, kwadraciki) mogą wyświetlić się jako □ na starszych Androidach albo niektórych klientach pocztowych. Pełne wyjaśnienie i szybka naprawa: dlaczego nazwa wyświetla się jako kwadraciki."
           },
           {
             "question": "Instagram wyciął część znaków w moim nicku — co teraz?",
-            "answer": "Insta ma filtr na pole <strong>nazwa użytkownika</strong> (czyli @login) — przyjmuje tylko litery, cyfry, kropki i podkreślenia. Tu stylowanych literek nie wkleisz.\n    <br><br>\n    Ale w polu <strong>„Imię\"</strong> (nazwa wyświetlana) i w <strong>bio</strong> już tak — i tu wchodzi większość stylów. Jak jeden się nie zapisuje, daj inny. Bold zwykle przechodzi bez problemu."
+            "answer": "Insta ma filtr na pole <strong>nazwa użytkownika</strong> (czyli @login) — przyjmuje tylko litery, cyfry, kropki i podkreślenia. Tu stylowanych literek nie wkleisz.\n    <br><br>\n    Ale w polu <strong>„Imię\"</strong> (nazwa wyświetlana) i w <strong>bio</strong> już tak — i tu wchodzi większość stylów. Jak jeden się nie zapisuje, daj inny. Bold zwykle przechodzi bez problemu. Więcej o tym podziale: nazwa użytkownika czy nazwa wyświetlana."
           },
           {
             "question": "Są jakieś znaki, których w ogóle się nie da zamienić?",

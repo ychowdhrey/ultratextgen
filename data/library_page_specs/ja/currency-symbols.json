@@ -1,0 +1,439 @@
+{
+  "slug": "currency-symbols",
+  "lang": "ja",
+  "title": "通貨記号：コピペで使える世界の通貨シンボル一覧",
+  "meta_description": "世界の通貨記号・貨幣シンボル・金融関連のUnicode文字をコピー&ペースト。記号をクリックするとすぐにコピーできます。",
+  "breadcrumb": "通貨記号",
+  "hero_h1": "通貨記号",
+  "hero_tagline": "世界の通貨記号、貨幣シンボル、金融関連Unicode文字のリファレンス集。記号をクリックするとすぐにコピーできます。",
+  "intro": "このページには、主要国の通貨記号、地域ごとの貨幣シンボル、歴史的な通貨記号、そして関連する金融系Unicode文字をまとめています。記号は地域と用途ごとに分類されています。すべて通常のUnicodeテキストなので、プロフィール、商品ページ、表計算ソフト、SNS投稿にそのまま貼り付けられます。特定の記号の由来・Altコード・入力方法を詳しく知りたい場合は、ドル（$）、ユーロ（€）、セント（¢）、ビットコイン（₿）に個別ページがあります。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ja/library/currency-symbols/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/currency-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-moneda/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-euro/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwapye-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/euroteken/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/para-birimi-sembolleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/valuta-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/waehrungssymbole/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/valuta-symboler/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-monetaires/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-mata-uang/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/currency-symbols/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-walut/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-moeda/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-valyut/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/currency-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/ja/",
+  "crumb_home": "ホーム",
+  "library_url": "https://ultratextgen.com/ja/library/",
+  "sections": [
+    {
+      "id": "major-currencies",
+      "label": "主要通貨",
+      "h2": "世界の主要通貨記号",
+      "intro": "世界で最も取引量が多く、広く知られている通貨の記号。",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "ドル"
+        },
+        {
+          "char": "€",
+          "label": "ユーロ"
+        },
+        {
+          "char": "£",
+          "label": "ポンド"
+        },
+        {
+          "char": "¥",
+          "label": "円 / 元"
+        },
+        {
+          "char": "₹",
+          "label": "インド・ルピー"
+        },
+        {
+          "char": "₽",
+          "label": "ルーブル"
+        },
+        {
+          "char": "₩",
+          "label": "ウォン"
+        },
+        {
+          "char": "₿",
+          "label": "ビットコイン"
+        }
+      ]
+    },
+    {
+      "id": "european-currencies",
+      "label": "ヨーロッパ",
+      "h2": "ヨーロッパの通貨記号",
+      "intro": "現行・歴史的なものを含む、ヨーロッパ諸国の通貨記号。",
+      "symbols": [
+        {
+          "char": "€",
+          "label": "ユーロ"
+        },
+        {
+          "char": "£",
+          "label": "ポンド"
+        },
+        {
+          "char": "₴",
+          "label": "フリヴニャ"
+        },
+        {
+          "char": "₾",
+          "label": "ラリ"
+        },
+        {
+          "char": "₺",
+          "label": "トルコ・リラ"
+        },
+        {
+          "char": "ƒ",
+          "label": "フロリン"
+        },
+        {
+          "char": "₣",
+          "label": "フランス・フラン"
+        },
+        {
+          "char": "₤",
+          "label": "リラ"
+        },
+        {
+          "char": "₯",
+          "label": "ドラクマ"
+        },
+        {
+          "char": "₼",
+          "label": "マナト"
+        }
+      ]
+    },
+    {
+      "id": "african-currencies",
+      "label": "アフリカ",
+      "h2": "アフリカの通貨記号",
+      "intro": "アフリカ諸国で使われている通貨単位の記号。",
+      "symbols": [
+        {
+          "char": "₦",
+          "label": "ナイラ"
+        },
+        {
+          "char": "₵",
+          "label": "セディ"
+        }
+      ]
+    },
+    {
+      "id": "asian-currencies",
+      "label": "アジア",
+      "h2": "アジアの通貨記号",
+      "intro": "東アジア・南アジア・中央アジア・中東の通貨記号。",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "円 / 元"
+        },
+        {
+          "char": "₹",
+          "label": "インド・ルピー"
+        },
+        {
+          "char": "₩",
+          "label": "ウォン"
+        },
+        {
+          "char": "₭",
+          "label": "キープ"
+        },
+        {
+          "char": "₮",
+          "label": "トゥグルク"
+        },
+        {
+          "char": "₸",
+          "label": "テンゲ"
+        },
+        {
+          "char": "₪",
+          "label": "シェケル"
+        },
+        {
+          "char": "﷼",
+          "label": "リヤル"
+        },
+        {
+          "char": "₨",
+          "label": "ルピー記号"
+        },
+        {
+          "char": "₫",
+          "label": "ドン"
+        },
+        {
+          "char": "৳",
+          "label": "タカ"
+        },
+        {
+          "char": "௹",
+          "label": "タミル・ルピー"
+        }
+      ]
+    },
+    {
+      "id": "americas-currencies",
+      "label": "南北アメリカ",
+      "h2": "南北アメリカの通貨記号",
+      "intro": "北米・中米・南米の通貨記号。",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "ドル"
+        },
+        {
+          "char": "¢",
+          "label": "セント"
+        },
+        {
+          "char": "₡",
+          "label": "コロン"
+        },
+        {
+          "char": "₲",
+          "label": "グアラニー"
+        },
+        {
+          "char": "₱",
+          "label": "ペソ"
+        }
+      ]
+    },
+    {
+      "id": "historic-currencies",
+      "label": "歴史的通貨",
+      "h2": "歴史的な通貨記号",
+      "intro": "現在は一般に使われていない、歴史的な意味を持つ通貨記号。",
+      "symbols": [
+        {
+          "char": "₧",
+          "label": "ペセタ"
+        },
+        {
+          "char": "₰",
+          "label": "ドイツ・ペニヒ"
+        },
+        {
+          "char": "₳",
+          "label": "アウストラル"
+        },
+        {
+          "char": "₶",
+          "label": "リーブル・トゥルノワ"
+        },
+        {
+          "char": "₷",
+          "label": "スペスミロ"
+        }
+      ]
+    },
+    {
+      "id": "financial-symbols",
+      "label": "金融記号",
+      "h2": "金融・その他の記号",
+      "intro": "汎用的な金融記号、パーミル記号、暗号資産の記号。",
+      "symbols": [
+        {
+          "char": "¤",
+          "label": "通貨記号"
+        },
+        {
+          "char": "‰",
+          "label": "パーミル"
+        },
+        {
+          "char": "‱",
+          "label": "パーミリアド"
+        },
+        {
+          "char": "Ξ",
+          "label": "イーサリアム"
+        },
+        {
+          "char": "₠",
+          "label": "ユーロ通貨記号"
+        }
+      ]
+    },
+    {
+      "id": "additional-currency-symbols",
+      "label": "Unicodeブロック全体",
+      "h2": "Unicode通貨記号ブロックのその他の文字",
+      "intro": "上記に含まれない、Unicodeの通貨記号ブロック（U+20A0〜U+20CF）の残りの符号位置。",
+      "symbols": [
+        {
+          "char": "₢",
+          "label": "クルゼイロ"
+        },
+        {
+          "char": "₥",
+          "label": "ミル"
+        },
+        {
+          "char": "₻",
+          "label": "北欧マルク"
+        },
+        {
+          "char": "⃀",
+          "label": "ソム"
+        }
+      ]
+    },
+    {
+      "id": "cryptocurrency",
+      "label": "暗号資産",
+      "h2": "暗号資産・デジタル通貨の記号",
+      "intro": "主要な暗号資産に使われている記号。",
+      "symbols": [
+        {
+          "char": "₿",
+          "label": "ビットコイン"
+        },
+        {
+          "char": "Ξ",
+          "label": "イーサリアム"
+        },
+        {
+          "char": "Ł",
+          "label": "ライトコイン"
+        },
+        {
+          "char": "Ð",
+          "label": "ドージコイン"
+        },
+        {
+          "char": "Ɱ",
+          "label": "モネロ"
+        },
+        {
+          "char": "฿",
+          "label": "バーツ / ビットコイン"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "円記号は ¥ と ￥ のどちらが正しいですか？",
+      "a": "用途によって使い分けます。¥（U+00A5）は半角の円記号で、Unicodeの標準文字です。￥（U+FFE5）は全角版で、日本語の文書内で他の全角文字と幅をそろえたいときに使われます。ウェブやSNSでは半角の ¥ が無難です。なお ¥ は中国の人民元にも使われます。"
+    },
+    {
+      "q": "通貨記号が四角い箱で表示されるのはなぜですか？",
+      "a": "空白の四角（tofu と呼ばれます）は、端末のフォントにその文字が含まれていないことを示します。キルギスのソム（⃀）や北欧マルク（₻）のような新しい記号・珍しい記号で起こりがちです。$、€、£、¥ などの一般的な記号はどこでも表示されるので安心して使えます。"
+    },
+    {
+      "q": "金額の前と後ろ、どちらに記号を置きますか？",
+      "a": "言語の慣習によります。日本語では記号を金額の前に置きます（¥1,000）。一方フランス語などでは金額の後ろに置きます（12,50 €）。Unicode文字自体はどちらも同じで、変わるのは表記の慣習だけです。"
+    },
+    {
+      "q": "₨ と ₹ の違いは何ですか？",
+      "a": "₨ は汎用のルピー記号で、パキスタン、スリランカ、ネパール、モーリシャスなど複数の国のルピーに使われます。₹ はインド・ルピー専用の記号で、2010年にインドが採用し、同年Unicodeに追加されました。インド・ルピーの金額には ₹ を使います。"
+    }
+  ],
+  "cta": "UltraTextGenを使えば、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントに変換できます。無料ですぐに使えます。",
+  "related": [
+    {
+      "href": "/ja/symbol/doru-kigou/",
+      "title": "ドル記号（$）",
+      "desc": "ドル記号の由来、Altコード、入力方法。"
+    },
+    {
+      "href": "/ja/symbol/yuuro-kigou/",
+      "title": "ユーロ記号（€）",
+      "desc": "ユーロ記号の歴史と、あらゆる入力方法。"
+    },
+    {
+      "href": "/ja/symbol/bittokoin-kigou/",
+      "title": "ビットコイン記号（₿）",
+      "desc": "ビットコイン記号の符号位置と対応状況。"
+    },
+    {
+      "href": "/ja/symbol/sento-kigou/",
+      "title": "セント記号（¢）",
+      "desc": "セント記号のAltコードと使い方。"
+    },
+    {
+      "href": "/ja/library/math-symbols/",
+      "title": "数学記号",
+      "desc": "プラスマイナス、掛ける、割る、ルート、無限大の記号。"
+    }
+  ]
+}

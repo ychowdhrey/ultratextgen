@@ -1,0 +1,136 @@
+{
+  "_readme": "Core Parent Set registry (data-driven, not tribal knowledge) — implements the 'Two new registries' governance change from the locale/parent strategy decision that authorized this file (see CLAUDE.md, 'Locale Parent Governance'). Read by scripts/lib/locale-parent-registry.js's classifyParent(relPath), which does most-specific-pattern-wins matching against the `parents` array below: a pattern ending in '/*' matches any path under that prefix; a pattern with no '*' (e.g. 'category/index.html') matches only that exact file. When more than one pattern matches a path, the entry whose pattern is the longer/more specific literal prefix wins — this is how, e.g., 'usecase/nickname-generator/*' overrides the general 'usecase/*' gated default for that one spoke, without needing to enumerate every non-core usecase page separately. `tiers` describes each tier's default action and which instrument governs a veto (core) or a pass (gated) — see docs/locale-parent-governance.md for the full per-(parent,locale) decision flowchart. Do NOT edit the tier of a parent, or add/remove/reweight a pattern, unilaterally — every entry here reflects a discussed strategy decision, the same bar CLAUDE.md sets for data/translation_parity_exceptions.json. If a parent's tier looks wrong, raise it with the user first rather than editing this file to fit a page you want to ship.",
+  "tiers": {
+    "core": {
+      "defaultAction": "mirror",
+      "burdenOfProof": "innocent-until-proven-empty",
+      "instrument": "Veto only. A Core parent mirrors into a qualified locale by default; it takes a recorded pre-build check showing genuinely negligible demand (no competitor presence in the locale AND sub-~50/mo keyword signal) to skip it. Record a veto in data/locale_parent_gap_audit.json with verdict \"veto\"."
+    },
+    "gated": {
+      "defaultAction": "do-not-mirror",
+      "burdenOfProof": "guilty-until-proven-present",
+      "instrument": "Pass only. A gated-tail parent does not mirror by default; it takes a recorded pre-build check clearing threshold on ANY of: a ranking competitor in the target locale, four-figure+/mo keyword volume in the target locale, or material EN-page GSC impressions from that locale's language queries. Record a pass in data/locale_parent_gap_audit.json with verdict \"gate-pass\"."
+    },
+    "never": {
+      "defaultAction": "do-not-mirror",
+      "burdenOfProof": "n/a",
+      "instrument": "n/a — never mirror regardless of any demand signal (dated, volatile, or pure-config content)."
+    }
+  },
+  "parents": [
+    {
+      "pattern": "symbol/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Flagship script-independent single-item Unicode/emoji identity pages — a euro sign is a euro sign in any language. This is literally the FR /symbol/ lane where substantial French demand (euro-sign, micro-sign, not-equal-sign, delta, +more) sat undetected: EN had 77 symbol pages, FR had 6, and nothing flagged the gap until a manual keyword pull found it."
+    },
+    {
+      "pattern": "library/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Flagship script-independent browse/collection pillar — same job as symbol/*, one level up (a currency-symbols or zodiac-signs collection page copies identically regardless of the visitor's language)."
+    },
+    {
+      "pattern": "category/strikethrough-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision on executed evidence. category/* is Latin-only because most of the pillar is Unicode math-alphanumeric SUBSTITUTION (a lookup table with no non-Latin entries). Strikethrough is not: renderer.js's decorator functions are `splitGraphemes(t).map(c => c + '\\u0336')` — they APPEND a combining mark to any grapheme, with no lookup table at all. Verified by executing the production styles.js+renderer.js against 7 non-Latin scripts: all 9 styles in this family transform Hindi, Arabic, Thai, Korean, Japanese, Chinese and Cyrillic correctly (नमस्ते -> न̶म̶स्ते̶). Production precedent already live and unquestioned: ru/zacherknutyy-tekst/ ships Cyrillic strikethrough in its own H1. Setting scriptIndependent per-page rather than per-pattern is what the most-specific-pattern-wins resolver exists for."
+    },
+    {
+      "pattern": "category/underline-text/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision — same mechanism and same verification as category/strikethrough-text/* above (combining U+0332 via splitGraphemes; all 6 styles in the family transform all 7 tested non-Latin scripts; ru/podcherknutyy-tekst/ is the live production precedent). This is also the pillar's best-converting page — 2.76x its own GSC position-curve band — which is why the mis-tiering was expensive rather than academic."
+    },
+    {
+      "pattern": "category/text-decorator/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "OVERRIDE of category/*'s scriptIndependent:false, added 2026-08-11 by user decision. This family wraps or frames text in symbols rather than substituting letterforms, so the job is script-irrelevant by construction; all 10 styles verified transforming all 7 tested non-Latin scripts. NOTE the demand caveat recorded with the decision: unlike the two above, this page has near-zero measured EN demand (13 impressions/60d), so the tier is corrected here for consistency of the mechanism claim — it is NOT a build recommendation, and no locale build is authorized by this entry alone."
+    },
+    {
+      "pattern": "category/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Universal, high-EN-authority style pillar (bold/cursive/italic/etc.). scriptIndependent flipped false->true 2026-08-15 BY USER DECISION, retiring the CJK/Arabic/Indic auto-skip. The flag conflated two questions: (1) does the mechanism transform the locale's own script? (still mostly no - the math-alphanumeric tables are Latin-only, unchanged); (2) is the job real for that locale's users? The evidence says yes: CJK users search in their own language for LATIN-text jobs - their romaji/English handles, bios and form fields. Live proof already on this site: ko/font-byeonhwan/ and zh-tw/yingwen-ziti/ are ratified 'CJK-script-user tool for decorating Latin/English text' pages, and ja/insta-font/ + ja/tiktok-font/ ship the same shape. External proof: Japan's incumbent market for this exact category (shapoco/PlainStyle, piliapp JP) is Japanese-language sites serving Latin decoration - piliapp even warns users 'English letters only' in Japanese. Trigger case: category/fullwidth-fonts x ja/ko, where the skip was blocking ~45,300/mo of measured demand (hankaku 27,100 + zenkaku 14,800 db=jp; jeongak 2,400 + bangak 1,000 db=kr) for a job that is CJK-native by construction. Locale pages built under this default should present the Latin-input framing honestly in local copy (what it does to Latin text, what it leaves unchanged). The three per-page scriptIndependent:true overrides above (strikethrough/underline/text-decorator) are now redundant with this default but kept for their verified evidence trails. printables/* and other scriptIndependent:false patterns are NOT touched by this decision - a Latin-letterform tracing sheet is a genuinely different case, argued separately if ever."
+    },
+    {
+      "pattern": "usecase/nickname-generator/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Generic name/username decoration generator (not a per-game page) — one of the two usecase Core carve-outs the strategy doc names. The underlying job (decorate my display name) is universal, not locale- or script-specific."
+    },
+    {
+      "pattern": "usecase/stylish-name/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Generic stylish-name generator serving a broad nickname-decoration audience — the other Core usecase carve-out. Distinguished from the per-game name pages below (which stay gated) the same way data/translation_parity_exceptions.json's zh-TW entry already distinguishes this generic EN parent from a locale-specific per-game (Arena of Valor) expansion built on top of it."
+    },
+    {
+      "pattern": "character-counter/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "The invisible-character / blank-text / counter tool the strategy doc names as a Core exception. In the current site structure this job lives as a top-level page (character-counter/), not under usecase/ — tiered here to match the real page rather than inventing a usecase/ path that doesn't exist."
+    },
+    {
+      "pattern": "usecase/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Default for the usecase/ section — long-tail spokes (per-game name pages like free-fire-name-generator/valorant-name-generator/clan-tag-generator, niche generators) gate on a pre-build demand check. The two carve-outs above are more specific patterns and win via most-specific-pattern-first precedence, so they don't inherit this default."
+    },
+    {
+      "pattern": "printables/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Printable letterform spokes (bubble/cursive/block/calligraphy alphabets, tracing and coloring sheets). Added 2026-08-12: these previously matched NO pattern at all, so classifyParent returned pattern:null and tier:'unclassified', which the flowchart already treated as gated tail — its own rationale said to 'raise it with the user rather than assuming it's Core'. This entry codifies that existing de-facto treatment rather than changing it, and gives the pattern a real key so a per-locale gate-pass can actually be recorded in data/locale_parent_gap_audit.json (a null key could not be). Deliberately `gated`, not `core`: the printables engine renders Latin letterforms, and per-locale demand varies enormously — the 2026-07-10 i18n demand pass found strong evidence in es/fr/de/pt/pl, medium in it, and rated several other locales weak. Marked scriptIndependent:false for the same reason category/* is — a Latin-letterform tracing sheet is not meaningful for a non-Latin script. Note printables/index.html remains a separate, more-specific `core` entry: the pillar HUB mirrors by default, the spokes beneath it gate."
+    },
+    {
+      "pattern": "answers/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Long-tail zero-click answer spokes — gate on a pre-build demand check (competitor footprint / keyword volume / EN page's own GSC impressions from that locale's language queries)."
+    },
+    {
+      "pattern": "guide/*",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Educational/authority long-tail — gate on a pre-build demand check, same instrument as answers/*."
+    },
+    {
+      "pattern": "category/index.html",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Locale pillar hub index page for the Category pillar. Most locales currently route this pillar to the English hub because the locale-native hub was never built ('no locale has those hubs built' for 4 of 7 pillars, per the strategy doc) — this file is Core once built. Marked script-independent (unlike category/* generally) because the hub itself is a nav/browse page, not a Latin-transform generator; the deeper style spokes under category/* keep the script-dependent rule."
+    },
+    {
+      "pattern": "usecase/index.html",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Locale pillar hub index page for the Use Cases pillar — same 'hub not built per locale' gap as category/index.html above. Overrides the usecase/* gated default for this one file only; the long-tail spokes beneath it stay gated."
+    },
+    {
+      "pattern": "answers/index.html",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Locale pillar hub index page for the Answers pillar — same rationale as usecase/index.html. Overrides the answers/* gated default for this one file only."
+    },
+    {
+      "pattern": "printables/index.html",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Locale pillar hub index page for the Printables pillar (grouped with Events as 'Printables/Events' in the strategy doc's pillar count) — same 'hub not built per locale' gap."
+    },
+    {
+      "pattern": "events/index.html",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Locale pillar hub index page for the Events (holiday/calendar generator) pillar — same rationale as printables/index.html, grouped with it in the strategy doc's pillar count."
+    },
+    {
+      "pattern": "updates/*",
+      "tier": "core",
+      "scriptIndependent": true,
+      "rationale": "Dated Unicode/platform/game rule-change log. Re-tiered from \"never\" to \"core\" on 2026-08-05 by user decision: updates/ is news, not demand-gated reference content, so per-locale search volume is the wrong instrument for it — a rule change that affects a locale's readers is worth carrying in that locale regardless of what a keyword tool says. Prose is script-independent, so it mirrors into any script. NOTE the standing cost the old rationale was pointing at, which is real and unchanged: these pages go stale on external events, so every mirrored entry multiplies the correction sweep when one does (UTC #188 invalidated the 18.0 beta entry and required rewriting 8 locale siblings in one pass). Mirror deliberately, and correct the whole cluster when the underlying fact moves."
+    }
+  ]
+}

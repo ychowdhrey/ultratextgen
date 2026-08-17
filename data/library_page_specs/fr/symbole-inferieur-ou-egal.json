@@ -1,0 +1,68 @@
+{
+  "slug": "symbole-inferieur-ou-egal",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Inférieur ou Égal : Copier-Coller ≤ — Signification, Code Alt & LaTeX",
+  "meta_description": "Copie et colle le symbole inférieur ou égal ≤ (U+2264) — Alt+243, la commande LaTeX \\leq, son entité HTML, et les sosies ≦ ⩽ ≲. Clique pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-inferieur-ou-egal/",
+  "breadcrumb": "Symbole Inférieur ou Égal",
+  "hero_h1": "Symbole Inférieur ou Égal (≤)",
+  "hero_tagline": "Le ≤ que l'on utilise quand une valeur peut être plus petite qu'une autre ou exactement égale à elle — Alt+243 sous Windows, \\leq en LaTeX, et &le; en HTML. Clique pour le copier instantanément.",
+  "intro": "Le symbole inférieur ou égal (≤, U+2264) combine le signe inférieur à avec une barre horizontale en dessous, indiquant qu'une valeur peut être plus petite qu'une autre ou exactement égale à elle — la relation derrière les inégalités les plus simples comme les intervalles fermés de l'analyse. Contrairement aux signes stricts < et >, que le mathématicien anglais Thomas Harriot a introduits en 1631, la paire combinée ≤/≥ est un raffinement plus tardif : le mathématicien français Pierre Bouguer en est généralement crédité pour son introduction en 1734, dans son essai sur la gradation de la lumière. L'ASCII n'a jamais réservé de case propre à ≤, ce qui explique pourquoi presque tous les langages de programmation se rabattent sur les deux caractères <= plutôt que sur le glyphe Unicode à part entière.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-inferieur-ou-egal/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "inferieur-ou-egal",
+      "label": "Inférieur ou Égal",
+      "h2": "Inférieur ou Égal, en Maths et en Code",
+      "intro": "Le symbole mathématique, et le substitut à deux caractères qu'utilisent la plupart des langages de programmation puisque ≤ lui-même n'a jamais fait partie de l'ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Inférieur ou Égal (Maths)" },
+        { "char": "<=", "label": "Inférieur ou Égal (Code — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "sosies-confondus",
+      "label": "Sosies Confondus",
+      "h2": "Symboles Souvent Confondus avec ≤",
+      "intro": "Tous signifient à peu près la même chose, mais ce sont des caractères Unicode distincts issus de traditions typographiques différentes.",
+      "symbols": [
+        { "char": "≦", "label": "Inférieur au-Dessus d'Égal (U+2266)" },
+        { "char": "⩽", "label": "Inférieur ou Égal Incliné (U+2A7D) — la forme préférée par la norme ISO 31-11" },
+        { "char": "≲", "label": "Inférieur ou Équivalent (U+2272)" },
+        { "char": "≪", "label": "Beaucoup Plus Petit Que (U+226A) — une relation différente, pas une variante de ≤" }
+      ]
+    },
+    {
+      "id": "symboles-comparaison-associes",
+      "label": "Symboles de Comparaison Associés",
+      "h2": "Symboles de Comparaison Associés",
+      "intro": "Les autres symboles de relation avec lesquels ≤ s'associe dans les inégalités et la notation ensembliste.",
+      "symbols": [
+        { "char": "≥", "label": "Supérieur ou Égal (U+2265)" },
+        { "char": "<", "label": "Inférieur à" },
+        { "char": ">", "label": "Supérieur à" },
+        { "char": "≠", "label": "Différent de" },
+        { "char": "=", "label": "Signe Égal" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Opérateurs, notation ensembliste et constantes mathématiques réunis dans une même référence à parcourir (en anglais)." },
+    { "href": "/fr/symbol/symbole-different/", "title": "Symbole Différent (≠)", "desc": "Utilisé par Euler, absent de l'ASCII, et pourquoi le code utilise != à la place." },
+    { "href": "/fr/symbol/symbole-inferieur-superieur/", "title": "Symboles Inférieur & Supérieur", "desc": "Les symboles de comparaison stricts dont ≤ et ≥ sont construits, et pourquoi ils peuvent casser le HTML." }
+  ]
+}

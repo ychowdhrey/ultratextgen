@@ -1,0 +1,61 @@
+{
+  "slug": "copyright-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Bản Quyền (©): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu bản quyền © (U+00A9) được giải thích — nguồn gốc pháp lý năm 1909, liệu bạn còn cần nó không, và cách gõ trên Windows/Mac.",
+  "canonical": "https://ultratextgen.com/vi/symbol/copyright-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Bản Quyền",
+  "hero_h1": "Ký Hiệu Bản Quyền (©)",
+  "hero_tagline": "© nghĩa là gì, liệu bạn có còn cần nó không, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "Thông báo chữ C khoanh tròn được chính thức đưa vào luật Mỹ qua Đạo luật Bản quyền năm 1909, thay thế các thông báo bắt buộc cũ kỹ và cồng kềnh hơn như «Entered according to Act of Congress». Công ước Bản quyền Toàn cầu năm 1952 giúp chuẩn hóa © trên phạm vi quốc tế như cách viết tắt được công nhận để khẳng định bản quyền. Sức nặng pháp lý của nó thay đổi vào năm 1989, khi Mỹ gia nhập Công ước Berne: sự bảo hộ bản quyền trở nên tự động ngay khi một tác phẩm gốc được tạo ra, không cần bất kỳ thông báo nào. © vẫn là tập quán tiêu chuẩn dù vậy — nó thông báo rõ ràng cho công chúng về yêu cầu bản quyền và có thể giúp xác lập thời điểm biết đến sớm hơn trong một tranh chấp vi phạm, dù không còn bắt buộc về mặt pháp lý nữa.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/copyright-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/copyright-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/copyright-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "copyright-sign",
+      "label": "Ký Hiệu Bản Quyền",
+      "h2": "Ký Hiệu Bản Quyền",
+      "intro": "Ký hiệu bản quyền, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "©", "label": "Ký Hiệu Bản Quyền (U+00A9)" }
+      ]
+    },
+    {
+      "id": "legal-marks",
+      "label": "Các Dấu Hiệu Pháp Lý Khác",
+      "h2": "Các Dấu Hiệu Pháp Lý Khác",
+      "intro": "Những ký hiệu pháp lý thường bị nhầm hoặc gộp chung với ©.",
+      "symbols": [
+        { "char": "™", "label": "Ký Hiệu Nhãn Hiệu (U+2122) — bảo vệ tên thương hiệu và logo, không phải tác phẩm sáng tạo" },
+        { "char": "®", "label": "Ký Hiệu Nhãn Hiệu Đã Đăng Ký (U+00AE) — về mặt pháp lý chỉ dùng cho các nhãn hiệu đã thực sự đăng ký với cơ quan nhãn hiệu" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Liên Quan",
+      "h2": "Các Ký Tự Đặc Biệt Khác",
+      "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng nội dung về ký hiệu pháp lý và thương hiệu.",
+      "symbols": [
+        { "char": "™", "label": "Ký Hiệu Nhãn Hiệu" },
+        { "char": "§", "label": "Ký Hiệu Điều Khoản" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/trademark-symbol/", "title": "Ký Hiệu Nhãn Hiệu (™)", "desc": "Một tuyên bố thương hiệu chưa đăng ký, và cách nó khác với ®." },
+    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },
+    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+  ]
+}

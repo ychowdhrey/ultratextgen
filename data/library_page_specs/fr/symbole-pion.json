@@ -1,0 +1,80 @@
+{
+  "slug": "symbole-pion",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Pion : Copier-Coller ♟ ♙ — Le Fantassin qui peut Devenir Reine",
+  "meta_description": "Copie et colle le symbole pion — noir ♟ (U+265F) et blanc ♙ (U+2659) — la pièce d'échecs de plus faible valeur, nommée d'après un fantassin, capable de se promouvoir en reine. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-pion/",
+  "breadcrumb": "Symbole Pion",
+  "hero_h1": "Symbole Pion (♟ ♙)",
+  "hero_tagline": "Le pion d'échecs noir ♟ et blanc ♙ — la pièce de plus faible valeur du plateau, son fantassin, celui qui peut marcher jusqu'à la rangée adverse et se transformer en reine, et le mot que le français a repris pour désigner quiconque sert de jouet dans le jeu d'un autre. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le symbole pion existe sous deux formes Unicode — le noir ♟ (U+265F, BLACK CHESS PAWN) et le blanc ♙ (U+2659, WHITE CHESS PAWN) — tous deux appartenant au bloc Miscellaneous Symbols, aux côtés du jeu d'échecs complet de 12 pièces qui va de U+2654 à U+265F. Le mot anglais « pawn » remonte à l'anglo-normand « poun » et à l'ancien français « peon », issu du latin médiéval « pedonem » (fantassin), lui-même du latin « pes », le pied — le pion était littéralement l'infanterie du plateau. C'est la pièce de plus faible valeur aux échecs, cotée à 1 point dans le système standard où le cavalier ou le fou valent 3, la tour 5 et la reine 9. C'est aussi la seule pièce qui se déplace et capture différemment : il avance d'une case en ligne droite — ou de deux à son tout premier coup — mais ne capture qu'en diagonale, et il peut être pris « en passant » par un pion adverse qu'il tente de dépasser. Une fois la rangée adverse atteinte, un pion se promeut en reine, tour, fou ou cavalier — n'importe quoi sauf un roi, et il ne peut pas rester pion. En notation, un pion se note « P » (blancs) ou « p » (noirs) en FEN, et ne porte aucune lettre du tout en notation algébrique, seulement la case d'arrivée. Dès les années 1580, « pawn » était déjà devenu la métaphore courante pour désigner une personne utilisée comme outil sacrifiable dans le plan de quelqu'un d'autre.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-pion/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbole-pion",
+      "label": "Le Symbole Pion",
+      "h2": "Le Symbole Pion — ♟ & ♙",
+      "intro": "Les deux glyphes de pion. Le ♟ noir plein est celui que la plupart des gens collent ; le ♙ blanc, en contour, est son jumeau du camp clair. Les deux sont des caractères Unicode uniques, prêts à s'insérer dans n'importe quel texte.",
+      "symbols": [
+        { "char": "♟", "label": "Pion Noir (U+265F)" },
+        { "char": "♙", "label": "Pion Blanc (U+2659)" }
+      ]
+    },
+    {
+      "id": "pieces-noires",
+      "label": "Pièces Noires",
+      "h2": "Les Coéquipières du Pion Noir",
+      "intro": "Le reste du camp noir aligné derrière le pion — roi, reine, tour, fou et cavalier, occupant la plage U+265A à U+265E dans le même bloc Unicode.",
+      "symbols": [
+        { "char": "♚", "label": "Roi Noir (U+265A)" },
+        { "char": "♛", "label": "Reine Noire (U+265B)" },
+        { "char": "♜", "label": "Tour Noire (U+265C)" },
+        { "char": "♝", "label": "Fou Noir (U+265D)" },
+        { "char": "♞", "label": "Cavalier Noir (U+265E)" }
+      ]
+    },
+    {
+      "id": "pieces-blanches",
+      "label": "Pièces Blanches",
+      "h2": "Les Pièces d'Échecs Blanches",
+      "intro": "Le camp blanc en contour qui fait face au pion noir de l'autre côté du plateau, occupant la plage U+2654 à U+2658 — la reine qu'il devra peut-être un jour redouter, et le roi qu'il ne pourra jamais devenir.",
+      "symbols": [
+        { "char": "♔", "label": "Roi Blanc (U+2654)" },
+        { "char": "♕", "label": "Reine Blanche (U+2655)" },
+        { "char": "♖", "label": "Tour Blanche (U+2656)" },
+        { "char": "♗", "label": "Fou Blanc (U+2657)" },
+        { "char": "♘", "label": "Cavalier Blanc (U+2658)" }
+      ]
+    },
+    {
+      "id": "promotion-du-pion",
+      "label": "Promotion",
+      "h2": "Ce que Peut Devenir un Pion",
+      "intro": "Un pion qui atteint l'extrémité opposée du plateau doit se promouvoir — en reine, tour, fou ou cavalier de sa propre couleur. Il ne peut jamais devenir roi, et il ne peut pas rester pion. La reine est le choix habituel ; toute autre pièce constitue une « sous-promotion ».",
+      "symbols": [
+        { "char": "♛", "label": "Reine Noire (U+265B) — la promotion habituelle" },
+        { "char": "♜", "label": "Tour Noire (U+265C)" },
+        { "char": "♝", "label": "Fou Noir (U+265D)" },
+        { "char": "♞", "label": "Cavalier Noir (U+265E) — une sous-promotion" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/chess-symbols/", "title": "Chess Symbols", "desc": "Le jeu d'échecs Unicode complet — rois, reines, tours, fous, cavaliers et les deux pions — dans une même référence à copier-coller (en anglais)." },
+    { "href": "/library/card-suit-symbols/", "title": "Card Suit Symbols", "desc": "Piques, cœurs, carreaux et trèfles — les autres glyphes de jeu, juste à côté des pièces d'échecs dans le bloc Miscellaneous Symbols d'Unicode (en anglais)." },
+    { "href": "/library/crown-royalty-symbols/", "title": "Crown & Royalty Symbols", "desc": "Couronnes, trônes et régalia — une compagnie qui sied bien à un pion qui rêve d'être promu reine (en anglais)." }
+  ]
+}

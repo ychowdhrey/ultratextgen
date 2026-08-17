@@ -1,0 +1,237 @@
+{
+  "slug": "ten-roblox-dep",
+  "title": "Tên Roblox đẹp █ ⣿ ツ — ký tự và text art cho Roblox | UltraTextGen",
+  "meta_description": "Ký tự tạo tên Roblox đẹp: khối █ ▓ ░, chấm Braille ⣿ ⠿, mặt ツ ಠ ◉ và ký hiệu game ⚔ ★ ϟ. Chạm vào ký tự để copy ngay.",
+  "breadcrumb": "Tên Roblox đẹp",
+  "hero_h1": "Ký tự và text art cho Roblox",
+  "hero_tagline": "█ ▓ ⣿ ツ ⚔ — khối, chấm Braille, mặt và ký hiệu game. Chạm để copy.",
+  "intro": "Roblox lọc khá mạnh, nên phần lớn ký tự trang trí bị chặn ở ô tên tài khoản. Những gì còn dùng được là các khối vẽ, chấm Braille và vài ký hiệu cũ — chủ yếu hợp với tên hiển thị, tên nhóm và bảng thông báo trong game. Chạm vào ký tự là nó vào bộ nhớ tạm.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Ký tự khối dùng được trong chat",
+      "h2": "Ký tự khối dùng được trong chat",
+      "intro": "Vẽ thanh và mảng đặc.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Khối đặc"
+        },
+        {
+          "char": "▀",
+          "label": "Nửa khối trên"
+        },
+        {
+          "char": "▄",
+          "label": "Nửa khối dưới"
+        },
+        {
+          "char": "░",
+          "label": "Nền thưa"
+        },
+        {
+          "char": "▒",
+          "label": "Nền vừa"
+        },
+        {
+          "char": "▓",
+          "label": "Nền dày"
+        },
+        {
+          "char": "▌",
+          "label": "Nửa khối trái"
+        },
+        {
+          "char": "▐",
+          "label": "Nửa khối phải"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Ký tự chấm Braille",
+      "h2": "Ký tự chấm Braille",
+      "intro": "Chấm dày thưa khác nhau.",
+      "symbols": [
+        {
+          "char": "⣿",
+          "label": "Braille tám chấm đầy"
+        },
+        {
+          "char": "⣷",
+          "label": "Braille bảy chấm"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille sáu chấm dưới"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille bốn chấm dưới"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille hai chấm dưới"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille sáu chấm"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille bốn chấm giữa"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille hai chấm trên"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Ký tự làm mặt và biểu cảm",
+      "h2": "Ký tự làm mặt và biểu cảm",
+      "intro": "Ghép thành gương mặt.",
+      "symbols": [
+        {
+          "char": "ツ",
+          "label": "Chữ tsu (mặt cười)"
+        },
+        {
+          "char": "ಠ",
+          "label": "Chữ Kannada (mắt lì)"
+        },
+        {
+          "char": "◉",
+          "label": "Mắt cá"
+        },
+        {
+          "char": "◕",
+          "label": "Mắt liếc"
+        },
+        {
+          "char": "ʘ",
+          "label": "Mắt mở to"
+        },
+        {
+          "char": "﹏",
+          "label": "Miệng lo lắng"
+        },
+        {
+          "char": "︶",
+          "label": "Miệng bình thản"
+        },
+        {
+          "char": "︿",
+          "label": "Miệng buồn"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Ký hiệu game cho Roblox",
+      "h2": "Ký hiệu game cho Roblox",
+      "intro": "Đặt cạnh tên.",
+      "symbols": [
+        {
+          "char": "⚔",
+          "label": "Kiếm bắt chéo"
+        },
+        {
+          "char": "☠",
+          "label": "Đầu lâu xương chéo"
+        },
+        {
+          "char": "★",
+          "label": "Sao đặc"
+        },
+        {
+          "char": "✪",
+          "label": "Sao trong vòng tròn"
+        },
+        {
+          "char": "ϟ",
+          "label": "Tia sét"
+        },
+        {
+          "char": "♛",
+          "label": "Hậu cờ vua đen"
+        },
+        {
+          "char": "乂",
+          "label": "Chữ nghĩa (nét chéo)"
+        },
+        {
+          "char": "彡",
+          "label": "Bộ sam (vệt chuyển động)"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Câu hỏi thường gặp về tên Roblox đẹp",
+  "faq": [
+    {
+      "q": "Vì sao Roblox không cho tôi đặt ký tự đặc biệt vào tên?",
+      "a": "Tên tài khoản Roblox chỉ nhận chữ cái, chữ số và một dấu gạch dưới. Không có ký tự đặc biệt nào lọt được. Chỗ dùng được là tên hiển thị, tên nhóm, mô tả và bảng thông báo trong game — và ngay cả ở đó bộ lọc vẫn có thể chặn."
+    },
+    {
+      "q": "Ký tự khối dùng để làm gì?",
+      "a": "Để vẽ thanh và mảng trong chat hoặc bảng thông báo: thanh máu, thanh tiến độ, khung viền. █ ▓ ▒ ░ là bốn mức đậm nhạt, ghép lại thành dải chuyển màu đơn giản."
+    },
+    {
+      "q": "Braille có đọc được không?",
+      "a": "Đây là ký tự chữ nổi thật, nên trình đọc màn hình sẽ đọc chúng thành chữ. Một bức tranh Braille có thể biến thành một tràng vô nghĩa dài với người dùng trình đọc. Dùng ít thôi, và đừng đặt vào chỗ mang thông tin quan trọng."
+    },
+    {
+      "q": "Vì sao tên tôi hiện thành ô vuông với người khác?",
+      "a": "Vì máy họ thiếu phông cho ký tự đó. Ký tự Braille và một số ký hiệu ít gặp hay bị như vậy trên máy cũ và trên console. ★ ☆ ツ ⚔ là những lựa chọn an toàn nhất."
+    },
+    {
+      "q": "Dùng text art có bị khoá tài khoản không?",
+      "a": "Ký tự thì không sao. Nhưng dùng ký tự để né bộ lọc từ ngữ — viết từ cấm bằng ký tự nhìn giống chữ — là vi phạm điều khoản và bị xử lý. Trang trí thì được, né lọc thì không."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Vì sao Roblox lại nghiêm hơn các game khác",
+      "body": "Phần lớn game chỉ chặn ký tự làm hỏng giao diện. Roblox chặn nhiều hơn vì người chơi phần lớn là trẻ em, nên bộ lọc phải ngăn cả cách viết lách né từ cấm — thay chữ bằng ký hiệu nhìn giống. Đó là lý do một ký tự vô hại như ★ cũng có thể bị từ chối ở chỗ này mà lại được chấp nhận ở chỗ khác: bộ lọc không xét từng ký tự, nó xét cả chuỗi. Hiểu điều đó thì việc thử-và-sai bớt khó hiểu đi nhiều."
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/ki-tu-roblox/",
+      "title": "Kí Tự Roblox",
+      "desc": "Kí tự trang trí cho tên hiển thị, bio và group Roblox. Tất cả đã được thử để hoạt động với bộ lọc tên của Roblox — bấm là copy ngay."
+    },
+    {
+      "href": "/vi/library/ky-tu-dac-biet-unicode/",
+      "title": "Ký Tự Đặc Biệt Unicode",
+      "desc": "Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu hiếm. Nhấn vào ký hiệu bất kỳ để sao chép ngay."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Kí Tự Đặc Biệt — bấm là copy",
+      "desc": "Kho kí tự đặc biệt đầy đủ cho tên Free Fire, Liên Quân, bio Facebook, Instagram và caption TikTok: khung ꧁꧂, trái tim ♡, ngôi sao ✦, mũi tên ➤, hoa ✿. Bấm kí hiệu để copy, hoặc gõ chữ vào ô dưới để bọc khung tự động."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/vi/library/ten-roblox-dep/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/roblox-text-art/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ten-roblox-dep/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/roblox-text-art/"
+    }
+  ]
+}

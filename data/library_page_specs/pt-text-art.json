@@ -1,0 +1,342 @@
+{
+  "slug": "arte-de-texto",
+  "title": "Arte de Texto: Copiar e Colar Arte ASCII e Unicode | UltraTextGen",
+  "meta_description": "Arte de texto para copiar e colar — gatos em ASCII, corações em braille, molduras de estrelas e kaomoji clássicos, mais os blocos para desenhar a sua. Um clique para copiar.",
+  "canonical": "https://ultratextgen.com/pt/library/arte-de-texto/",
+  "breadcrumb": "Arte de Texto",
+  "hero_h1": "Arte de Texto",
+  "hero_tagline": "Peças prontas de arte ASCII e Unicode, mais todos os caracteres de moldura, bloco e braille para desenhar a sua. Clique para copiar.",
+  "intro": "Arte de texto (também chamada de arte ASCII) é desenho feito só com caracteres — linhas de moldura, blocos sombreados, pontos em braille e símbolos comuns do teclado. Funciona em qualquer lugar onde haja texto: conversas no Discord, lobbies de jogos, posts no X, comentários do YouTube e bios em texto puro. Esta página reúne peças pequenas e prontas para colar com um clique, além dos caracteres soltos caso queira desenhar algo original.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Linhas",
+      "h2": "Caracteres de Moldura",
+      "intro": "Linhas retas, cantos e junções — o esqueleto de molduras, tabelas e arte de texto estruturada.",
+      "symbols": [
+        {
+          "char": "─",
+          "label": "Traço Horizontal Simples"
+        },
+        {
+          "char": "│",
+          "label": "Traço Vertical Simples"
+        },
+        {
+          "char": "┌",
+          "label": "Canto Superior Esquerdo"
+        },
+        {
+          "char": "┐",
+          "label": "Canto Superior Direito"
+        },
+        {
+          "char": "└",
+          "label": "Canto Inferior Esquerdo"
+        },
+        {
+          "char": "┘",
+          "label": "Canto Inferior Direito"
+        },
+        {
+          "char": "├",
+          "label": "Junção à Direita"
+        },
+        {
+          "char": "┤",
+          "label": "Junção à Esquerda"
+        },
+        {
+          "char": "┼",
+          "label": "Cruzamento"
+        },
+        {
+          "char": "═",
+          "label": "Traço Horizontal Duplo"
+        },
+        {
+          "char": "║",
+          "label": "Traço Vertical Duplo"
+        },
+        {
+          "char": "╔",
+          "label": "Canto Duplo Superior Esquerdo"
+        },
+        {
+          "char": "╗",
+          "label": "Canto Duplo Superior Direito"
+        },
+        {
+          "char": "╚",
+          "label": "Canto Duplo Inferior Esquerdo"
+        },
+        {
+          "char": "╝",
+          "label": "Canto Duplo Inferior Direito"
+        }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Blocos",
+      "h2": "Caracteres de Bloco e Sombra",
+      "intro": "Blocos sólidos e sombreados para preencher formas e criar gradientes em peças maiores.",
+      "symbols": [
+        {
+          "char": "█",
+          "label": "Bloco Cheio"
+        },
+        {
+          "char": "▀",
+          "label": "Meio Bloco Superior"
+        },
+        {
+          "char": "▄",
+          "label": "Meio Bloco Inferior"
+        },
+        {
+          "char": "▌",
+          "label": "Meio Bloco Esquerdo"
+        },
+        {
+          "char": "▐",
+          "label": "Meio Bloco Direito"
+        },
+        {
+          "char": "░",
+          "label": "Sombra Clara"
+        },
+        {
+          "char": "▒",
+          "label": "Sombra Média"
+        },
+        {
+          "char": "▓",
+          "label": "Sombra Escura"
+        },
+        {
+          "char": "▖",
+          "label": "Quadrante Inferior Esquerdo"
+        },
+        {
+          "char": "▘",
+          "label": "Quadrante Superior Esquerdo"
+        }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Caracteres Braille",
+      "intro": "Os padrões braille dão à arte de texto a maior resolução — quase toda arte de pontos moderna é desenhada com eles.",
+      "symbols": [
+        {
+          "char": "⠁",
+          "label": "Braille Ponto 1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille Pontos 14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille Pontos 1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille Pontos 123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille Pontos 78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille Pontos 3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille Pontos 235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braille Pontos 12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braille Pontos 1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braille Pontos 4568"
+        }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Formas",
+      "h2": "Formas Geométricas",
+      "intro": "Caracteres geométricos simples para estrelas, losangos e detalhes decorativos.",
+      "symbols": [
+        {
+          "char": "◆",
+          "label": "Losango Preto"
+        },
+        {
+          "char": "◇",
+          "label": "Losango Branco"
+        },
+        {
+          "char": "●",
+          "label": "Círculo Preto"
+        },
+        {
+          "char": "○",
+          "label": "Círculo Branco"
+        },
+        {
+          "char": "▲",
+          "label": "Triângulo Preto para Cima"
+        },
+        {
+          "char": "△",
+          "label": "Triângulo Branco para Cima"
+        },
+        {
+          "char": "▼",
+          "label": "Triângulo Preto para Baixo"
+        },
+        {
+          "char": "▽",
+          "label": "Triângulo Branco para Baixo"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Peças de Arte",
+    "h2": "Peças Prontas de Arte de Texto",
+    "intro": "Copie uma peça completa de várias linhas com um clique — mantenha o formato vertical para as linhas continuarem alinhadas."
+  },
+  "collection_container_id": "textArtContainer",
+  "collections": [
+    {
+      "name": "Gato em ASCII",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Coração em Braille",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Pilha de Losangos",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Moldura de Estrelas",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀your text⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Kaomoji Clássicos",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Cordilheira",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/pt/library/kaomoji/",
+      "title": "Kaomoji &amp; carinhas japonesas",
+      "desc": "Copie e cole kaomoji — as carinhas japonesas de texto feitas com caracteres Unicode. Carinhas feliz, triste, d…"
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para copiar e colar",
+      "desc": "Coleção de símbolos para nick, bio do Instagram, status do WhatsApp e legenda — estrelas, corações, molduras ꧁…"
+    },
+    {
+      "href": "/pt/library/caracteres-especiais/",
+      "title": "Caracteres Especiais",
+      "desc": "Uma coleção de referência de símbolos Unicode únicos — infinito, paz, ciência, marcas legais, enfeites estétic…"
+    }
+  ],
+  "lang": "pt",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-art/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/text-art/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/arte-de-texto/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-kunst/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/arte-de-texto/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-art/"
+    }
+  ]
+}

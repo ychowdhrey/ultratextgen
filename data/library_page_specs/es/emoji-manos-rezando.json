@@ -1,0 +1,146 @@
+{
+  "lang": "es",
+  "slug": "emoji-manos-rezando",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-manos-rezando/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/praying-hands-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-manos-rezando/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/praying-hands-emoji/" }
+  ],
+  "title": "Emoji Manos Rezando: Copiar y Pegar 🙏 Combos de Oración y Gratitud",
+  "meta_description": "Copia y pega el emoji manos rezando 🙏 🤲, kaomoji de reverencia como m(_ _)m y combos para orar, agradecer y celebrar. Haz clic para copiar al instante.",
+  "breadcrumb": "Emoji Manos Rezando y Kaomoji",
+  "hero_h1": "Emoji Manos Rezando y Kaomoji",
+  "hero_tagline": "Oración, gratitud, un \"por favor\" o un choca esos cinco: el emoji 🙏 significa todo eso a la vez. Encuentra manos juntas, palmas arriba, kaomoji de reverencia y combos listos. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji manos rezando 🙏 es uno de los caracteres más discutidos de internet: unos lo leen como oración, muchísimos lo usan para decir gracias o \"por favor\", y hay quienes juran que en realidad son dos personas chocando esos cinco. Unicode lo nombra oficialmente \"manos juntas\", lo que esquiva la discusión y le permite cargar todos los significados a la vez. Esta página reúne el emoji de manos rezando y su primo de palmas hacia arriba 🤲, los símbolos de fe y recogimiento que lo acompañan, los kaomoji clásicos de reverencia y súplica como m(_ _)m, y sets de combos de un solo clic para agradecer, pedir oraciones o cerrar una publicación con buena vibra. Sea cual sea tu bando en la discusión del choca esos cinco, cada símbolo de abajo se copia con un solo toque.",
+  "sections": [
+    {
+      "id": "core-praying-hands",
+      "label": "Manos Rezando",
+      "h2": "El Emoji de Manos Rezando",
+      "intro": "Los dos emojis de manos que están en el centro de la oración, el agradecimiento y el \"por favor\".",
+      "symbols": [
+        { "char": "🙏", "label": "Manos juntas" },
+        { "char": "🤲", "label": "Palmas juntas hacia arriba" }
+      ]
+    },
+    {
+      "id": "related-hand-gestures",
+      "label": "Gestos con las Manos",
+      "h2": "Gestos con las Manos Relacionados",
+      "intro": "Manos abiertas, unidas y aplaudiendo que comparten el ánimo de gratitud y celebración.",
+      "symbols": [
+        { "char": "👐", "label": "Manos abiertas" },
+        { "char": "🫶", "label": "Corazón con las manos" },
+        { "char": "🤝", "label": "Apretón de manos" },
+        { "char": "👏", "label": "Manos aplaudiendo" },
+        { "char": "✋", "label": "Mano levantada" }
+      ]
+    },
+    {
+      "id": "faith-reflection",
+      "label": "Fe y Recogimiento",
+      "h2": "Símbolos de Fe y Recogimiento",
+      "intro": "Palomas, personas de rodillas y símbolos religiosos para la oración y el recogimiento.",
+      "symbols": [
+        { "char": "🕊️", "label": "Paloma" },
+        { "char": "🧎", "label": "Persona arrodillada" },
+        { "char": "✝️", "label": "Cruz latina" },
+        { "char": "☪️", "label": "Estrella y media luna" },
+        { "char": "🕉️", "label": "Om" }
+      ]
+    },
+    {
+      "id": "gratitude-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de Gratitud y Súplica",
+      "intro": "Caritas de texto al estilo japonés que hacen reverencia o ruegan; se pegan donde funcione el texto normal.",
+      "symbols": [
+        { "char": "m(_ _)m", "label": "Kaomoji de reverencia profunda" },
+        { "char": "(｡•̀ᴗ-)✧", "label": "Kaomoji de guiño agradecido" },
+        { "char": "_(:3」∠)_", "label": "Kaomoji de gracias postrado" },
+        { "char": "(≧∇≦)ﾉ", "label": "Kaomoji de gracias con alegría" },
+        { "char": "orz", "label": "Kaomoji de reverencia de rodillas" },
+        { "char": "( ᵕ人ᵕ)", "label": "Kaomoji de manos suplicantes" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Mando Oraciones",
+      "flags": ["🙏", "🕊️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mil Gracias",
+      "flags": ["🙏", "💕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Por Favor y Gracias",
+      "flags": ["🙏", "🥺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Solo Buena Vibra",
+      "flags": ["🙏", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Corazón Agradecido",
+      "flags": ["🙏", "❤️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Choca Esos Cinco",
+      "flags": ["🙏", "🙌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Reverencia de Respeto",
+      "flags": ["🙏", "🧎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bendecido",
+      "flags": ["🙏", "🕊️", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "prayingHandsSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Manos Rezando",
+    "intro": "Copia un combo completo de manos rezando con un solo clic: desde un gracias de corazón hasta pura buena vibra."
+  },
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-manos/",
+      "title": "Símbolos de Manos",
+      "desc": "Manos que señalan, saludan y gesticulan en una sola cuadrícula."
+    },
+    {
+      "href": "/es/library/simbolos-religiosos/",
+      "title": "Símbolos Religiosos",
+      "desc": "Cruces, medias lunas, om y símbolos de fe de todas las tradiciones."
+    },
+    {
+      "href": "/es/library/emoji-pulgar-arriba/",
+      "title": "Emoji de Pulgar Arriba",
+      "desc": "Aprobación, acuerdo y el visto bueno hecho con la mano."
+    },
+    {
+      "href": "/es/library/emojis-de-amistad/",
+      "title": "Emojis de Amistad",
+      "desc": "Corazones con las manos, abrazos y combos de mejores amigos para compartir."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "locale": "nl",
+  "slug": "emoji-vlaggen",
+  "title": "Vlaggen Emoji — Alle Landenvlaggen Kopiëren en Plakken",
+  "meta_description": "Nederlandse vlag 🇳🇱 en alle landenvlaggen als emoji. Klik op een vlag om te kopiëren en plak hem in je bio, naam of bericht. Ook complete vlaggensets.",
+  "breadcrumb": "Vlaggen Emoji",
+  "h1": "Vlaggen Emoji — Alle Landenvlaggen",
+  "hero_tagline": "Klik op een vlag en hij staat meteen op je klembord: de Nederlandse vlag, België, Duitsland en elk ander land. Plakken in je bio, weergavenaam, caption of bericht — zonder app.",
+  "intro": "Elke landenvlag is één klik weg. Blader door de vlaggen van bijna 200 landen, filter op werelddeel en kopieer elke vlagemoji direct. Vlaggen-emoji's zijn echte Unicode-tekens en geen plaatjes, dus je plakt ze net als gewone tekst in posts, bio's, captions en berichten op WhatsApp, Instagram, TikTok, Discord en Telegram — en in naamvelden van games. Bovenaan staan de Nederlandse vlag en de meestgezochte landen klaar; onderaan kopieer je een hele set in één keer, zoals de EU-landen, de G20 of de Noordse landen.",
+  "sections": {
+    "country_list": {
+      "label": "Landenvlaggen",
+      "h2": "Alle landenvlaggen",
+      "intro": "Bijna 200 landenvlaggen, te filteren op werelddeel. Klik op een vlag om te kopiëren:"
+    },
+    "grids": {
+      "label": "Vlaggensets",
+      "h2": "Vlaggensets per regio",
+      "intro": "Kopieer een complete set vlaggen in één klik — handig voor een post, een lijst of een caption."
+    },
+    "featured": {
+      "label": "Populaire vlaggen",
+      "h2": "Meestgezochte vlaggen",
+      "intro": "De Nederlandse vlag en de landen die hier het vaakst worden gezocht. Klik om te kopiëren:"
+    }
+  },
+  "regions": {
+    "all": "Alle",
+    "europe": "Europa",
+    "asia": "Azië",
+    "americas": "Amerika",
+    "africa": "Afrika",
+    "oceania": "Oceanië"
+  },
+  "aria_copy_flag": "Vlag van {name} kopiëren",
+  "groups": {
+    "European Union Members": "EU-landen",
+    "ASEAN": "ASEAN-landen",
+    "Middle East": "Midden-Oosten",
+    "G20": "G20-landen",
+    "Nordic Countries": "Noordse landen",
+    "South Asia": "Zuid-Azië",
+    "East Asia": "Oost-Azië"
+  },
+  "special_flags": {
+    "England": "Engeland",
+    "Scotland": "Schotland",
+    "Wales": "Wales",
+    "Rainbow Flag": "Regenboogvlag",
+    "Transgender Flag": "Transgendervlag",
+    "Chequered Flag": "Finishvlag",
+    "Triangular Flag": "Driehoekige vlag",
+    "White Flag": "Witte vlag",
+    "Black Flag": "Zwarte vlag",
+    "Pirate Flag": "Piratenvlag",
+    "Crossed Flags": "Gekruiste Japanse vlaggen"
+  },
+  "featured_codes": ["NL", "BE", "DE", "FR", "GB", "US", "ES", "IT", "MA", "TR", "SR", "ID", "PL"],
+  "faq": [
+    {
+      "q": "Waarom zie ik “NL” in plaats van de vlag?",
+      "a": "Dan mist je apparaat het lettertype dat vlaggen tekent. Windows toont landenvlaggen standaard niet en laat in plaats daarvan de twee letters van de landcode zien (NL, BE, DE). Op iPhone, Android en Mac verschijnt de vlag gewoon. Het teken dat je kopieert is hoe dan ook correct: wie meeleest op een telefoon ziet de vlag wél."
+    },
+    {
+      "q": "Hoeveel tekens telt een vlagemoji?",
+      "a": "Minimaal twee. Elke vlag bestaat uit twee regioletters, dus 🇳🇱 kost in een bio van 150 tekens al 2 tekens van je tekenlimiet. Sommige naamvelden in games en apps rekenen strenger (4 per vlag) of weigeren emoji helemaal — krijg je een melding over ongeldige tekens, houd de naam dan simpel met één vlag."
+    },
+    {
+      "q": "Waarom bestaan sommige vlaggen niet als emoji?",
+      "a": "Omdat vlaggen niet los worden ontworpen: Unicode zet alleen tweeletterige ISO-landcodes om in een vlag. Heeft een gebied geen officiële landcode, dan is er ook geen vlagemoji. Engeland, Schotland en Wales zijn de paar uitzonderingen, toegevoegd via een andere techniek."
+    },
+    {
+      "q": "Werken vlaggen-emoji's in WhatsApp, Telegram en Instagram?",
+      "a": "Ja. Het zijn gewone Unicode-tekens en geen functie van één app, dus ze plakken overal: WhatsApp, Telegram, Instagram, TikTok, Discord en X. Hoe ze eruitzien bepaalt niet de app maar het apparaat van de lezer — dezelfde vlag ziet er op iPhone, Android en Windows anders uit."
+    },
+    {
+      "q": "Waarom zie ik een vierkantje in plaats van een vlag?",
+      "a": "Dan kent het emoji-lettertype van dat apparaat de vlag niet, meestal op een oudere telefoon of een systeem dat lang niet is bijgewerkt. Het teken zelf blijft intact, het kan alleen niet getekend worden — na een systeemupdate verschijnt de vlag alsnog."
+    }
+  ],
+  "editorial": {
+    "h2": "🇳🇱 is helemaal geen vlagteken",
+    "body": "🇳🇱 bestaat niet als vlagteken: het zijn Ⓝ + Ⓛ, twee regioletters die je lettertype als vlag tekent. Vandaar die letters op Windows. Unicode leende de ISO-landcodes om nooit te bepalen wat een land is — daarom ontbreken sommige vlaggen simpelweg."
+  }
+}

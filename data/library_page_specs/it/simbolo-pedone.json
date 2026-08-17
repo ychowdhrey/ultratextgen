@@ -1,0 +1,92 @@
+{
+  "slug": "simbolo-pedone",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo Pedone: Copia e Incolla ♟ ♙ — Il Fante che Può Diventare Regina",
+  "meta_description": "Copia e incolla il simbolo del pedone — nero ♟ (U+265F) e bianco ♙ (U+2659) — il pezzo di minor valore degli scacchi, chiamato come un fante di fanteria, che può promuovere a regina. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-pedone/",
+  "breadcrumb": "Simbolo Pedone",
+  "hero_h1": "Simbolo Pedone (♟ ♙)",
+  "hero_tagline": "Il pedone nero ♟ e bianco ♙ degli scacchi — il pezzo di minor valore della scacchiera, il fante che può marciare fino all'ultima traversa e trasformarsi in regina, e la parola che l'italiano usa anche per chi viene usato nel gioco di qualcun altro. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Il simbolo del pedone esiste in due forme Unicode — quella nera ♟ (U+265F, BLACK CHESS PAWN) e quella bianca ♙ (U+2659, WHITE CHESS PAWN) — entrambe parte del blocco Miscellaneous Symbols, insieme all'intero set di 12 pezzi da U+2654 a U+265F. Il termine italiano \"pedone\" viene dal latino medievale \"pedonem\" (fante, soldato a piedi), a sua volta dal latino \"pes\", piede — il pedone era letteralmente la fanteria della scacchiera, e la stessa radice ha dato all'inglese \"pawn\" attraverso l'antico francese \"peon\". È il pezzo di minor valore degli scacchi, che vale 1 punto nel sistema standard in cui un cavallo o un alfiere ne vale 3, una torre 5 e la regina 9. È anche l'unico pezzo che si muove e cattura in modo diverso: avanza di una casella in linea retta — o di due alla prima mossa — ma cattura solo in diagonale, e può essere catturato \"en passant\" da un pedone avversario che tenta di superarlo. Se raggiunge l'ultima traversa, il pedone promuove a regina, torre, alfiere o cavallo — qualsiasi cosa tranne il re, e non può restare pedone. In notazione è \"P\" (bianco) o \"p\" (nero) in FEN, e non porta alcuna lettera nella notazione algebrica delle mosse, solo la casella di destinazione. Già negli anni 1580 \"pawn\" era diventata la metafora quotidiana inglese per una persona usata come strumento sacrificabile nel piano di qualcun altro — lo stesso senso figurato che l'italiano \"pedina\" porta ancora oggi.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-pedone/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "pawn-symbol",
+      "label": "Il Simbolo Pedone",
+      "h2": "Il Simbolo Pedone — ♟ e ♙",
+      "intro": "I due glifi del pedone. Il ♟ nero pieno è quello che copiano quasi tutti; il ♙ bianco a contorno è il suo gemello del lato chiaro. Entrambi sono singoli caratteri Unicode, pronti da inserire in qualsiasi testo.",
+      "symbols": [
+        { "char": "♟", "label": "Black Chess Pawn (U+265F)" },
+        { "char": "♙", "label": "White Chess Pawn (U+2659)" }
+      ]
+    },
+    {
+      "id": "black-chess-pieces",
+      "label": "Pezzi Neri",
+      "h2": "I Compagni di Squadra del Pedone Nero",
+      "intro": "Il resto dello schieramento nero che si allinea dietro il pedone — re, regina, torre, alfiere e cavallo, da U+265A a U+265E nello stesso blocco Unicode.",
+      "symbols": [
+        { "char": "♚", "label": "Black Chess King (U+265A)" },
+        { "char": "♛", "label": "Black Chess Queen (U+265B)" },
+        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
+        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
+        { "char": "♞", "label": "Black Chess Knight (U+265E)" }
+      ]
+    },
+    {
+      "id": "white-chess-pieces",
+      "label": "Pezzi Bianchi",
+      "h2": "I Pezzi Bianchi degli Scacchi",
+      "intro": "Lo schieramento bianco a contorno che affronta il pedone nero dall'altra parte della scacchiera, occupando da U+2654 a U+2658 — la regina che un giorno potrebbe dover temere, e il re che non potrà mai diventare.",
+      "symbols": [
+        { "char": "♔", "label": "White Chess King (U+2654)" },
+        { "char": "♕", "label": "White Chess Queen (U+2655)" },
+        { "char": "♖", "label": "White Chess Rook (U+2656)" },
+        { "char": "♗", "label": "White Chess Bishop (U+2657)" },
+        { "char": "♘", "label": "White Chess Knight (U+2658)" }
+      ]
+    },
+    {
+      "id": "pawn-promotion",
+      "label": "Promozione",
+      "h2": "Cosa Può Diventare un Pedone",
+      "intro": "Un pedone che raggiunge l'estremità opposta della scacchiera deve promuovere — a regina, torre, alfiere o cavallo del proprio colore. Non può mai diventare re, e non può restare pedone. La regina è la scelta abituale; qualsiasi altra è una \"sotto-promozione\".",
+      "symbols": [
+        { "char": "♛", "label": "Black Chess Queen (U+265B) — la promozione abituale" },
+        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
+        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
+        { "char": "♞", "label": "Black Chess Knight (U+265E) — una sotto-promozione" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "L'intero set Unicode degli scacchi — re, regine, torri, alfieri, cavalli ed entrambi i pedoni — in un unico riferimento da copiare e incollare."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "Picche, cuori, quadri e fiori — gli altri glifi da gioco, proprio accanto ai pezzi degli scacchi nel blocco Miscellaneous Symbols di Unicode."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Corone, troni e insegne reali — compagnia adatta per un pedone che sogna la promozione a regina."
+    }
+  ]
+}

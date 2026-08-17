@@ -1,0 +1,85 @@
+{
+  "slug": "theta-symbol",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Theta-Symbol: θ Θ ϑ kopieren & einfügen — der „Buchstabe des Todes“ im antiken Griechenland",
+  "meta_description": "Das Theta-Symbol kopieren und einfügen — das kleine θ, das große Θ und die offene Mathe-Variante ϑ. Der Buchstabe, mit dem athenische Geschworene einst ein Todesurteil auf ein Stimmtäfelchen ritzten. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/theta-symbol/",
+  "breadcrumb": "Theta-Symbol",
+  "hero_h1": "Theta-Symbol",
+  "hero_tagline": "Das kleine θ, das in der Trigonometrie einen Winkel markiert, das große Θ der Big-Theta-Notation und die offene Mathe-Variante ϑ — derselbe Buchstabe, den das klassische Athen einst als Todesurteil auf ein Stimmtäfelchen ritzte. Ein Klick genügt zum Kopieren.",
+  "intro": "Theta ist der achte Buchstabe des griechischen Alphabets, und sein Kleinbuchstabe θ (U+03B8, GREEK SMALL LETTER THETA) — ein von einem waagerechten Balken durchkreuzter Kreis — trägt eine der düstersten Vorgeschichten aller Buchstaben. In der Antike war Theta der „Buchstabe des Todes“: Er stand für θάνατος (thánatos, „Tod“), und athenische Geschworene konnten ihn auf ein Stimmtäfelchen oder eine Tonscherbe ritzen, um für die Verurteilung oder Hinrichtung eines Angeklagten zu stimmen — ein Brauch, der so berüchtigt war, dass der römische Dichter Ennius Theta angeblich den unglücklichsten aller Buchstaben nannte. Die Großform Θ (U+0398) und eine eigenständige offene Variante ϑ (U+03D1, GREEK THETA SYMBOL) vervollständigen die Familie — ϑ ist eine kursive, in Physik und Mathematik verwendete Glyphe, kein eigener Buchstabe. Heute ist Thetas Arbeit deutlich harmloser: Das kleine θ ist das Standardzeichen für einen unbekannten oder gemessenen Winkel in Trigonometrie und Geometrie, während das große Θ die Big-Theta-Notation benennt — die „enge Schranke“ der Algorithmenanalyse, die Donald Knuth 1976 in seiner Arbeit „Big Omicron and Big Omega and Big Theta“ formalisierte. Im griechischen Zahlensystem trägt Theta außerdem den Wert 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/theta-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-theta-symbol",
+      "label": "Das Theta-Symbol",
+      "h2": "Das Theta-Symbol — θ, Θ & ϑ",
+      "intro": "Theta kommt in drei Glyphen vor, die tatsächlich eingefügt werden: das alltägliche kleine θ, das große Θ und die offene ϑ-Variante, reserviert für Mathematik und Physik. Eine vierte, überstrichene Großform existiert rein als mathematisches Zeichen.",
+      "symbols": [
+        { "char": "θ", "label": "Griechischer Kleinbuchstabe Theta (U+03B8) — das Winkelzeichen" },
+        { "char": "Θ", "label": "Griechischer Großbuchstabe Theta (U+0398) — Big-Theta-Notation" },
+        { "char": "ϑ", "label": "Griechisches Theta-Symbol (U+03D1) — die offene Mathe-Variante" },
+        { "char": "ϴ", "label": "Griechisches Theta-Symbol, Großform (U+03F4) — die überstrichene Variante" }
+      ]
+    },
+    {
+      "id": "theta-in-mathematik",
+      "label": "Mathematik & Wissenschaft",
+      "h2": "Theta in Mathematik und Informatik",
+      "intro": "Zwei ganz unterschiedliche Aufgaben teilen sich denselben Buchstaben. Das kleine θ ist das Standardzeichen für einen Winkel; das große Θ ist die enge Schranke der Komplexitätsanalyse, zwischen Big-O (obere Schranke) und Big-Omega (untere Schranke).",
+      "symbols": [
+        { "char": "θ", "label": "Kleines Theta (U+03B8) — Winkel in Trigonometrie & Geometrie" },
+        { "char": "Θ", "label": "Großes Theta (U+0398) — Big-Theta, die enge Schranke" },
+        { "char": "Ω", "label": "Großes Omega (U+03A9) — Big-Omega, die untere Schranke" },
+        { "char": "ϑ", "label": "Theta-Symbol (U+03D1) — die physikalische Schreibvariante" }
+      ]
+    },
+    {
+      "id": "verwandte-griechische-buchstaben",
+      "label": "Griechische Buchstaben",
+      "h2": "Verwandte griechische Buchstaben",
+      "intro": "Theta ist der 8. Buchstabe des griechischen Alphabets. Hier sind die Nachbarn, die am häufigsten daneben gesucht und kopiert werden.",
+      "symbols": [
+        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" },
+        { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" },
+        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
+        { "char": "α", "label": "Griechischer Kleinbuchstabe Alpha" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/griechische-symbole/",
+      "title": "Griechische Symbole",
+      "desc": "Das komplette griechische Alphabet in Groß-, Kleinschreibung und mathematischen Sonderformen zum Kopieren."
+    },
+    {
+      "href": "/de/library/mathe-symbole/",
+      "title": "Mathe-Symbole",
+      "desc": "Winkel, Operatoren und die griechischen Buchstaben, die eine Gleichung vervollständigen."
+    },
+    {
+      "href": "/de/symbol/omega-symbol/",
+      "title": "Omega-Symbol",
+      "desc": "Thetas Partner in der Komplexitätsnotation: Θ ist die enge Schranke, Ω die untere Schranke in der Algorithmenanalyse."
+    },
+    {
+      "href": "/de/symbol/delta-symbol/",
+      "title": "Delta-Symbol",
+      "desc": "Ein weiterer griechischer Buchstabe mit einem tiefen Mathe-Leben — Änderung, Differenz und die Diskriminante."
+    }
+  ]
+}

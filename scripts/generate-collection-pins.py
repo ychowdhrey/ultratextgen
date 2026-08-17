@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generates Pinterest-ready "collection" pins + upload inventory for every KEEP
-collection in data/collection_copy_audit.csv (~164 library pages).
+collection in data/collection_pin_targets.csv (~164 library pages).
 
 WHY THIS IS A DIFFERENT VISUAL LOGIC (vs scripts/generate-site-art.py /assets/og/
 and scripts/generate-pinterest.py):
@@ -48,7 +48,7 @@ from playwright.sync_api import sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-AUDIT = os.path.join(ROOT, "data", "collection_copy_audit.csv")
+AUDIT = os.path.join(ROOT, "data", "collection_pin_targets.csv")
 SPEC_DIR = os.path.join(ROOT, "data", "library_page_specs")
 CSV_OUT = os.path.join(ROOT, "data", "collection_pins.csv")
 sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))

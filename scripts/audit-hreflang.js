@@ -8,6 +8,21 @@ const { globSync } = require('glob');
 const ROOT = path.resolve(__dirname, '..');
 const FIX = process.argv.includes('--fix');
 
+// --scope-files <path...> (only meaningful with --fix): the audit always
+// scans the WHOLE tree — reciprocity can't be judged from a subset — but
+// writes are restricted to the named files plus the members of their own
+// hreflang clusters. Siblings must stay writable (adding a page means its
+// cluster gains back-links), but pages in unrelated clusters must never be
+// mutated by a scoped run. This exists because an unscoped fix pass once
+// edited two ratified local-only pages in a cluster the invoking PR never
+// touched (`148fcd59`).
+const argvTail = process.argv.slice(2);
+const scopeIdx = argvTail.indexOf('--scope-files');
+const scopeFiles = [];
+if (scopeIdx !== -1) {
+  for (let i = scopeIdx + 1; i < argvTail.length && !argvTail[i].startsWith('--'); i++) scopeFiles.push(argvTail[i]);
+}
+
 // Same skip pattern as check-gtm.js — embeds/widgets/tests don't carry a real hreflang cluster.
 const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
@@ -98,6 +113,7 @@ console.log(`  Pages declaring hreflang:        ${pages.length}`);
 const brokenList = []; // target href matches no known page at all
 const headless = new Map(); // target record -> [{ sourcePage, hreflang }]  (target exists, but has zero alternates)
 const nonReciprocal = []; // { page, target, hreflang }  (target exists, has alternates, doesn't link back)
+const placeholderEnFallback = []; // { page, target, hreflang } — subpage claims a bare homepage as its "EN version"
 
 for (const page of pages) {
   for (const alt of page.alternates) {
@@ -119,20 +135,96 @@ for (const page of pages) {
 
     const linksBack = target.alternates.some((a) => a.href === page.canonical);
     if (!linksBack && page.ownLang) {
-      nonReciprocal.push({ page, target, hreflang: page.ownLang });
+      // A SUBPAGE claiming a bare homepage as its "EN version" is the
+      // documented placeholder for a ratified local-only page (CLAUDE.md,
+      // "Ratified local-only exceptions": x-default/en fall back to the bare
+      // EN homepage "as a generic default only … not a translation-equivalence
+      // claim, so it does not need to be (and should not be) auto-propagated
+      // as a real sibling relationship"). The --fix pass has always refused to
+      // repair these, so reporting them as blocking issues made the audit
+      // permanently red on a state it declines to change. Classify them
+      // separately: informational, never blocking. Homepage-to-homepage claims
+      // (locale homepages listing each other) are a real cluster and stay in
+      // nonReciprocal.
+      if (isHomepage(target.canonical) && !isHomepage(page.canonical)) {
+        placeholderEnFallback.push({ page, target, hreflang: page.ownLang });
+      } else {
+        nonReciprocal.push({ page, target, hreflang: page.ownLang });
+      }
     }
   }
 }
 
+// Whether a placeholder-homepage claim is a ratified local-only exception or an
+// unratified one is adjudicated by the English-Parent Rule ledger, and enforced
+// on newly-added pages by scripts/check-locale-parent-gap.js. This audit only
+// annotates, so an unratified claim is still visible here rather than silent.
+const ratifiedLocalOnly = (() => {
+  try {
+    const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/english_parent_exceptions.json'), 'utf8'));
+    return new Set((raw.exceptions || []).map((e) => normalize(e.localeUrl)));
+  } catch {
+    return new Set();
+  }
+})();
+
+// x-default direction. CLAUDE.md: x-default ALWAYS points at the English
+// canonical, and must never point at a non-EN page (least of all at itself).
+// Reciprocity alone can't catch this — a cluster can be perfectly reciprocal
+// while every member's x-default points at the Spanish URL — so it needs its
+// own pass. This has been the single most-repeated hreflang bug on the site.
+const badXDefault = []; // { page, current, expected }
+const conflictedBlocks = []; // pages whose own block declares a code twice
+for (const page of pages) {
+  const xd = page.alternates.find((a) => a.hreflang === 'x-default');
+  if (!xd) continue;
+
+  // A block that declares the same hreflang code twice with different hrefs is
+  // two clusters stacked into one page. Which cluster owns the page is an
+  // editorial call, so retargeting its x-default would be picking a side.
+  // Same policy the --fix pass already applies to conflicting codes: flag for
+  // manual review, never auto-resolve.
+  const seen = new Map();
+  let conflicted = false;
+  for (const a of page.alternates) {
+    if (a.hreflang === 'x-default') continue;
+    if (seen.has(a.hreflang) && seen.get(a.hreflang) !== a.href) conflicted = true;
+    seen.set(a.hreflang, a.href);
+  }
+  if (conflicted) {
+    conflictedBlocks.push(page);
+    continue;
+  }
+
+  // The cluster's English member, as this page itself declares it.
+  const enAlt = page.alternates.find((a) => a.hreflang === 'en');
+  if (!enAlt) continue; // no EN member declared — nothing to assert against
+  if (xd.href !== enAlt.href) {
+    badXDefault.push({ page, current: xd.href, expected: enAlt.href });
+  }
+}
+
 console.log(`  Non-reciprocal pairs:            ${nonReciprocal.length}`);
+console.log(`  Placeholder EN-homepage claims:  ${placeholderEnFallback.length} (informational)`);
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
+console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
 
 if (nonReciprocal.length) {
   console.log('');
   console.log('Non-reciprocal (target does not link back to source):');
   for (const item of nonReciprocal) {
     console.log(`  ✗ ${item.page.rel}  ->  ${item.target.rel}  (missing hreflang="${item.hreflang}")`);
+  }
+}
+if (placeholderEnFallback.length) {
+  console.log('');
+  console.log('Placeholder EN-homepage claims (subpage names the bare homepage as its EN version — the homepage is NOT expected to link back; never auto-fixed):');
+  for (const item of placeholderEnFallback) {
+    const tag = ratifiedLocalOnly.has(item.page.canonical)
+      ? 'ratified local-only'
+      : 'NOT in data/english_parent_exceptions.json — verify this claim';
+    console.log(`  · ${item.page.rel}  ->  ${item.target.rel}  [${tag}]`);
   }
 }
 if (headless.size) {
@@ -148,6 +240,21 @@ if (brokenList.length) {
   console.log('Broken targets (declared href matches no page anywhere in the repo):');
   for (const line of brokenList) console.log(`  ✗ ${line}`);
 }
+if (badXDefault.length) {
+  console.log('');
+  console.log('x-default pointing somewhere other than the cluster\'s EN member:');
+  for (const item of badXDefault) {
+    console.log(`  ✗ ${item.page.rel}  x-default -> ${item.current}  (should be ${item.expected})`);
+  }
+}
+if (conflictedBlocks.length) {
+  console.log('');
+  console.log('Conflicted hreflang blocks (same code declared twice with different hrefs — two clusters stacked on one page). x-default left untouched; resolve cluster membership by hand:');
+  for (const page of conflictedBlocks) console.log(`  ⚠ ${page.rel}`);
+}
+
+let skippedOutOfScope = 0;
+const conflictWarnings = [];
 
 // ─── --fix ─────────────────────────────────────────────────────────────────
 //
@@ -163,19 +270,44 @@ if (FIX) {
   let filesFixed = 0;
   let linksAdded = 0;
 
-  // 1. Non-reciprocal — append into an existing alternate block. Only skip
-  // when a SUBPAGE claims a homepage as its "EN version" (a common
-  // placeholder when no real translated counterpart exists yet) — writing
-  // that back would turn the homepage into linking to one arbitrary subpage.
+  // Build the write-allowed set when --scope-files was given: each named
+  // file, every page its alternates point at, and every page that points an
+  // alternate at it (both directions, so a stale one-way link still keeps
+  // the pair in scope). null = unscoped, whole tree writable.
+  let allowedFiles = null;
+  if (scopeFiles.length) {
+    allowedFiles = new Set();
+    const scopeRels = new Set(
+      scopeFiles.map((f) => path.relative(ROOT, path.resolve(ROOT, f)).replace(/\\/g, '/'))
+    );
+    const scopeRecs = [...byUrl.values()].filter((r) => scopeRels.has(r.rel));
+    for (const rec of scopeRecs) {
+      allowedFiles.add(rec.filePath);
+      for (const a of rec.alternates) {
+        const t = byUrl.get(a.href);
+        if (t) allowedFiles.add(t.filePath);
+      }
+      for (const p of byUrl.values()) {
+        if (p.alternates.some((a) => a.href === rec.canonical)) allowedFiles.add(p.filePath);
+      }
+    }
+    console.log('');
+    console.log(`  fix scope: ${scopeFiles.length} named file(s) -> ${allowedFiles.size} writable file(s) (named files + their cluster members)`);
+  }
+
+  // 1. Non-reciprocal — append into an existing alternate block. Pairs where a
+  // SUBPAGE claims a homepage as its "EN version" never reach here: they are
+  // classified as placeholderEnFallback above and are not repairable — writing
+  // one back would turn the homepage into linking to one arbitrary subpage.
   // Homepage-to-homepage claims (every locale homepage listing every other
-  // locale homepage) are the normal, legitimate cluster pattern and must
-  // still be fixed reciprocally, e.g. a new locale's homepage needs every
-  // existing locale homepage to link back to it.
+  // locale homepage) are the normal, legitimate cluster pattern and are fixed
+  // reciprocally, e.g. a new locale's homepage needs every existing locale
+  // homepage to link back to it.
   const fixesByFile = new Map(); // filePath -> [{hreflang, href}]
-  let skippedHomepageTargets = 0;
+  const skippedHomepageTargets = placeholderEnFallback.length;
   for (const item of nonReciprocal) {
-    if (isHomepage(item.target.canonical) && !isHomepage(item.page.canonical)) {
-      skippedHomepageTargets++;
+    if (allowedFiles && !allowedFiles.has(item.target.filePath)) {
+      skippedOutOfScope++;
       continue;
     }
     const arr = fixesByFile.get(item.target.filePath) || [];
@@ -191,22 +323,65 @@ if (FIX) {
     let xDefaultIdx = -1;
     let indent = '  ';
     lines.forEach((line, i) => {
-      if (/<link\b[^>]*rel="alternate"/i.test(line)) {
+      if (/<link\b[^>]*rel=["']alternate["']/i.test(line)) {
         lastAltIdx = i;
         const m = line.match(/^(\s*)/);
         if (m) indent = m[1];
-        if (/hreflang="x-default"/i.test(line)) xDefaultIdx = i;
+        if (/hreflang=["']x-default["']/i.test(line)) xDefaultIdx = i;
       }
     });
 
-    const insertAt = xDefaultIdx !== -1 ? xDefaultIdx : lastAltIdx + 1;
-    if (insertAt < 0) continue;
+    // lastAltIdx === -1 means this file declares no alternates we recognised.
+    // `lastAltIdx + 1` would then be 0, which splices the new <link> ABOVE
+    // <!DOCTYPE> — outside <head>, invisible to crawlers, and enough to put the
+    // page in quirks mode. That is not hypothetical: it shipped on
+    // es/decorador-de-texto and es/simbolos-para-free-fire, whose alternates are
+    // single-quoted and so matched none of the double-quote-only regexes above.
+    // Fall back to the canonical line, and skip rather than guess if there is
+    // no anchor at all.
+    let insertAt = xDefaultIdx !== -1 ? xDefaultIdx : (lastAltIdx !== -1 ? lastAltIdx + 1 : -1);
+    if (insertAt < 0) {
+      const canonIdx = lines.findIndex((l) => /<link\b[^>]*rel=["']canonical["']/i.test(l));
+      if (canonIdx < 0) {
+        console.warn(`  ! ${filePath}: no alternate or canonical anchor — skipped rather than inserting at the top of the file`);
+        continue;
+      }
+      insertAt = canonIdx + 1;
+    }
 
     const existing = new Set(lines.map((l) => l.trim()));
+
+    // Conflict guard: never insert a second entry for an hreflang code the
+    // file already declares with a DIFFERENT href. Two entries for one code
+    // is always wrong (the duplicate-`zh-TW` failure in `148fcd59`); which
+    // href is correct is a judgment call, so flag it for manual review
+    // instead of stacking a duplicate.
+    const existingByLang = new Map(); // lang(lower) -> Set of normalized hrefs
+    for (const line of lines) {
+      if (!/<link\b[^>]*rel\s*=\s*["']alternate["']/i.test(line)) continue;
+      const lang = getAttr(line, 'hreflang');
+      const href = getAttr(line, 'href');
+      if (!lang || !href) continue;
+      const key = lang.toLowerCase();
+      if (!existingByLang.has(key)) existingByLang.set(key, new Set());
+      existingByLang.get(key).add(normalize(href));
+    }
+
     const deduped = links.filter(
       (l, idx, arr) => arr.findIndex((x) => x.hreflang === l.hreflang && x.href === l.href) === idx
     );
-    const newLines = deduped
+    const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
+    const nonConflicting = deduped.filter((l) => {
+      const have = existingByLang.get(l.hreflang.toLowerCase());
+      if (have && !have.has(normalize(l.href))) {
+        conflictWarnings.push(
+          `${rel}: already declares hreflang="${l.hreflang}" with a different href — wanted to add ${l.href}; resolve by hand`
+        );
+        return false;
+      }
+      return true;
+    });
+    const newLines = nonConflicting
       .map((l) => `${indent}<link rel="alternate" hreflang="${l.hreflang}" href="${l.href}">`)
       .filter((line) => !existing.has(line.trim()));
 
@@ -219,6 +394,10 @@ if (FIX) {
 
   // 2. Headless — build a brand-new block from every source that references it.
   for (const [target, sources] of headless) {
+    if (allowedFiles && !allowedFiles.has(target.filePath)) {
+      skippedOutOfScope++;
+      continue;
+    }
     const cluster = new Map(); // hreflang -> href
     let xDefaultHref = null;
 
@@ -245,7 +424,7 @@ if (FIX) {
     let canonIdx = -1;
     let indent = '  ';
     lines.forEach((line, i) => {
-      if (/<link\b[^>]*rel="canonical"/i.test(line)) {
+      if (/<link\b[^>]*rel=["']canonical["']/i.test(line)) {
         canonIdx = i;
         const m = line.match(/^(\s*)/);
         if (m) indent = m[1];
@@ -266,21 +445,55 @@ if (FIX) {
   }
 
   console.log('');
+  // 3. x-default direction — rewrite the href in place. This is a pure
+  // retarget of an existing tag (no insertion, no cluster reconstruction), so
+  // it runs independently of the two repairs above and can apply to a file
+  // they never touched.
+  let xDefaultFixed = 0;
+  for (const item of badXDefault) {
+    if (allowedFiles && !allowedFiles.has(item.page.filePath)) {
+      skippedOutOfScope++;
+      continue;
+    }
+    const html = fs.readFileSync(item.page.filePath, 'utf8');
+    const patched = html.replace(
+      /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")([^"]*)(")/i,
+      `$1${item.expected}$3`
+    );
+    if (patched === html) continue; // tag shape didn't match — leave for manual review
+    fs.writeFileSync(item.page.filePath, patched);
+    xDefaultFixed++;
+  }
+
   console.log(`🔧 Fixed ${filesFixed} file(s), added ${linksAdded} hreflang link(s).`);
+  if (xDefaultFixed) {
+    console.log(`🔧 Repointed ${xDefaultFixed} x-default tag(s) at their cluster's EN canonical.`);
+  }
   if (skippedHomepageTargets) {
-    console.log(`⚠️  Skipped ${skippedHomepageTargets} pair(s) whose target is a homepage — a subpage claims the homepage as its placeholder translation; fix the subpage's own claim by hand instead.`);
+    console.log(`ℹ️  ${skippedHomepageTargets} placeholder EN-homepage claim(s) left untouched — a subpage names the homepage as its EN version; that is the ratified local-only shape, not a repairable gap.`);
+  }
+  if (skippedOutOfScope) {
+    console.log(`⚠️  Skipped ${skippedOutOfScope} fix(es) outside --scope-files (named files + their cluster members). Run unscoped to apply site-wide.`);
+  }
+  if (conflictWarnings.length) {
+    console.log(`⚠️  ${conflictWarnings.length} conflicting hreflang entr${conflictWarnings.length === 1 ? 'y' : 'ies'} left unfixed (same code, different href — never auto-stacked):`);
+    for (const w of conflictWarnings) console.log(`    ${w}`);
   }
 }
 
-const totalIssues = nonReciprocal.length + headless.size + brokenList.length;
+const totalIssues = nonReciprocal.length + headless.size + brokenList.length + badXDefault.length;
 if (totalIssues && !FIX) {
   console.log('');
-  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs and headless targets.`);
+  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and misdirected x-default tags.`);
   process.exit(1);
 } else if (brokenList.length) {
   console.log('');
   console.log(`❌ ${brokenList.length} broken hreflang target(s) remain (no matching page anywhere — verify the URL/slug by hand).`);
   process.exit(1);
+} else if (FIX && (skippedOutOfScope || conflictWarnings.length)) {
+  console.log('');
+  console.log('✅ In-scope clusters repaired. Issues outside --scope-files, or flagged conflicts, remain — see warnings above; run unscoped (or resolve conflicts by hand) to clear them.');
+  process.exit(0);
 } else {
   console.log('');
   console.log('✅ All hreflang clusters are fully reciprocal (or the sole remaining gaps are homepage-placeholder claims, left for manual review).');

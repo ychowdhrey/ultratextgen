@@ -740,6 +740,9 @@
     stopWords: MOTS_VIDES,
     strings: {
       resultPlaceholder: "Ta traduction en emojis apparaît ici.",
+      copied: "Copié !",
+      copy: "Copier",
+      surpriseMe: "🎲 Surprends-moi",
       inputPlaceholders: {
         default: "Tape ta phrase ici…",
         decode: "Colle des emojis ici pour les décoder…",

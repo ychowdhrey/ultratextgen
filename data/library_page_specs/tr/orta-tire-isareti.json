@@ -1,0 +1,124 @@
+{
+  "slug": "orta-tire-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Orta Tire (–): Kopyala Yapıştır + Herkesin Tire Diye Yazdığı Aralık İşareti",
+  "meta_description": "1939–1945 gibi aralıklar ve New York–Londra gibi bileşikler için orta tireyi (–) kopyala yapıştır — kendi klavye tuşu olmayan aralık işareti. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/orta-tire-isareti/",
+  "breadcrumb": "Orta Tire",
+  "hero_h1": "Orta Tire (–)",
+  "hero_tagline": "Sayı ve tarih aralıklarını birleştiren orta tire (–) — 1939–1945, 10–20. sayfalar, 09.00–17.00 — ve New York–Londra uçuşu ya da II. Dünya Savaşı öncesi gibi iki parçalı ilişkileri bağlar. Tireden uzun, uzun tireden kısa, kendi tuşu olmayan tek işaret. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Orta tire (–, Unicode U+2013), düz tire ile daha uzun uzun tire arasında oturan orta uzunluktaki tiredir — adını, bir uzun tirenin yaklaşık yarısı genişliğinde, kabaca büyük bir N harfi genişliğinde olmasından alır. İki temel iş görür: aralıkları ve dönemleri işaretler (1939–1945, 10–20. sayfalar, 09.00–17.00, Mayıs–Eylül sayısı) ve bir tirenin fazla zayıf kalacağı iki parçalı ilişkileri ile açık bileşikleri bağlar (New York–Londra uçuşu, Clinton–Gore listesi, II. Dünya Savaşı öncesi). Hiçbir klavyede özel bir orta tire tuşu olmadığı için sürekli tire-eksi (-, U+002D) ile yanlış yazılır; doğru girmek için Mac'te Option+Tire, Windows sayısal tuş takımında Alt+0150 tuşlarına basılır, Microsoft Word'ün Otomatik Biçimlendirmesi ise aralıklı bir tireyi (kelime - kelime) otomatik olarak dönüştürür. Stil rehberleri konuda ayrışır: Chicago Manual of Style aralıklar için orta tireyi kullanır (3–11. sayfalar), Associated Press Stylebook ise hiç orta tire kullanmaz, aralıkları düz bir tireyle yazar. Ayrıca tipografik tireyle (‐, U+2010), eksi işaretiyle (−, U+2212) ve uzun tireyle (—, U+2014) de sıkça karıştırılır.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "en-dash",
+      "label": "Orta Tire",
+      "h2": "Orta Tire ve Rakam Tiresi",
+      "intro": "Aralıklar ve bileşikler için orta tire, artı aynı genişlikteki ama rakamlara ayrılan rakam tiresi — böylece tablolarda ve telefon numaralarında basamaklar düzgün hizalanır. Her yere yapıştırılmaya hazır.",
+      "symbols": [
+        {
+          "char": "–",
+          "label": "En Dash (U+2013)"
+        },
+        {
+          "char": "‒",
+          "label": "Figure Dash (U+2012)"
+        }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Karıştırılan Çizgiler",
+      "h2": "Karıştırıldığı Çizgiler ve Tireler",
+      "intro": "Orta tirenin yerine yanlışlıkla yazıldığı işaretler — her birinin kendi genişliği, kod noktası ve işi vardır, sade klavye tiresinden uzun tireye ve gerçek eksi işaretine kadar.",
+      "symbols": [
+        {
+          "char": "—",
+          "label": "Em Dash (U+2014)"
+        },
+        {
+          "char": "-",
+          "label": "Hyphen-Minus (Klavye)"
+        },
+        {
+          "char": "‐",
+          "label": "Hyphen (Tipografik, U+2010)"
+        },
+        {
+          "char": "−",
+          "label": "Minus Sign (U+2212)"
+        },
+        {
+          "char": "―",
+          "label": "Horizontal Bar (U+2015)"
+        }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Ara Söz İşaretleri",
+      "h2": "Aralıklı Bir Orta Tirenin Yerini Aldığı İşaretler",
+      "intro": "İngiliz, Avustralya ve Kanada kullanımında aralıklı bir orta tire – tıpkı bunun gibi – bir ara sözü ayırır, Amerikan İngilizcesi ise bunun yerine bitişik bir uzun tire kullanır; bunlar orta tirenin yanında çalıştığı ya da yerini aldığı işaretlerdir.",
+      "symbols": [
+        {
+          "char": ",",
+          "label": "Virgül"
+        },
+        {
+          "char": ":",
+          "label": "İki Nokta Üst Üste"
+        },
+        {
+          "char": ";",
+          "label": "Noktalı Virgül"
+        },
+        {
+          "char": "(",
+          "label": "Sol Parantez"
+        },
+        {
+          "char": ")",
+          "label": "Sağ Parantez"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Tire ve Çizgi Sembolleri",
+      "desc": "Orta tireler, uzun tireler, tireler ve eksi işaretleri, tek bir referansta kod noktalarıyla yan yana."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Noktalama Sembolleri",
+      "desc": "Tireler, tırnak işaretleri, parantezler ve Unicode'un gündelik noktalamasının geri kalanı, kopyalamaya hazır."
+    },
+    {
+      "href": "/tr/symbol/uzun-tire-isareti/",
+      "title": "Uzun Tire (—)",
+      "desc": "Orta tirenin daha geniş kardeşi: kesintiler ve ara sözler için uzun tire, yaklaşık iki kat genişlikte ve farklı bir iş."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/orta-tire-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

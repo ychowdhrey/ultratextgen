@@ -1,0 +1,68 @@
+{
+  "slug": "trattino-medio",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Trattino Medio (–): Copia e Incolla + Il Trattino per Intervalli che Tutti Digitano Come un Trattino Breve",
+  "meta_description": "Copia e incolla il trattino medio (–) per intervalli come 1939–1945 e composti come New York–Londra — il trattino per gli intervalli che non ha un tasto dedicato. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/trattino-medio/",
+  "breadcrumb": "Trattino Medio",
+  "hero_h1": "Trattino Medio (–)",
+  "hero_tagline": "Il trattino medio (–) che unisce intervalli di numeri e date — 1939–1945, pagine 10–20, 9–17 — e collega relazioni a due termini come il volo New York–Londra o pre–Seconda Guerra Mondiale. Più lungo di un trattino breve, più corto di una lineetta, e l'unico segno senza un tasto tutto suo. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Il trattino medio (–, Unicode U+2013) è il trattino di lunghezza intermedia che sta tra il semplice trattino breve e la più lunga lineetta — chiamato così perché è largo circa la metà di una lineetta, all'incirca quanto una N maiuscola. Svolge due compiti principali: segna intervalli e periodi (1939–1945, pagine 10–20, 9–17, il numero di maggio–settembre), e collega relazioni a due termini e composti aperti dove un trattino breve sarebbe troppo debole (il volo New York–Londra, la coppia Clinton–Gore, pre–Seconda Guerra Mondiale). Poiché nessuna tastiera ha un tasto dedicato al trattino medio, viene continuamente digitato per errore come il trattino-meno da tastiera (-, U+002D); per inserirlo correttamente si preme Opzione+Trattino su Mac o Alt+0150 sul tastierino numerico di Windows, e l'AutoFormato di Microsoft Word converte automaticamente un trattino spaziato (parola - parola) in uno. Le guide di stile sono divise: il Chicago Manual of Style usa il trattino medio per gli intervalli (pagine 3–11), mentre l'Associated Press Stylebook non usa affatto trattini medi, impostando gli intervalli con un semplice trattino breve. Viene inoltre spesso confuso con il trattino tipografico (‐, U+2010), il segno meno (−, U+2212) e la lineetta (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/trattino-medio/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "en-dash",
+      "label": "Trattino Medio",
+      "h2": "Il Trattino Medio e il Trattino da Cifre",
+      "intro": "Il trattino medio per intervalli e composti, più il trattino da cifre — la stessa larghezza, riservata alle cifre numeriche perché i numeri si allineino con precisione in tabelle e numeri di telefono. Pronto da incollare ovunque.",
+      "symbols": [
+        { "char": "–", "label": "Trattino Medio (U+2013)" },
+        { "char": "‒", "label": "Trattino da Cifre (U+2012)" }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Trattini Facilmente Confusi",
+      "h2": "Trattini e Lineette con Cui Viene Confuso",
+      "intro": "I segni con cui il trattino medio viene scambiato — ognuno ha la propria larghezza, il proprio codepoint e il proprio compito, dal semplice trattino da tastiera alla lineetta fino al vero segno meno.",
+      "symbols": [
+        { "char": "—", "label": "Lineetta (U+2014)" },
+        { "char": "-", "label": "Trattino-Meno (da Tastiera)" },
+        { "char": "‐", "label": "Trattino Tipografico (U+2010)" },
+        { "char": "−", "label": "Segno Meno (U+2212)" },
+        { "char": "―", "label": "Barra Orizzontale (U+2015)" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Segni tra Parentesi",
+      "h2": "Segni che un Trattino Medio Spaziato Sostituisce",
+      "intro": "Nell'uso britannico, australiano e canadese un trattino medio spaziato – come questo – isola un inciso dove l'inglese americano chiude una lineetta senza spazi; questi sono i segni con cui lavora fianco a fianco o che sostituisce.",
+      "symbols": [
+        { "char": ",", "label": "Virgola" },
+        { "char": ":", "label": "Due Punti" },
+        { "char": ";", "label": "Punto e Virgola" },
+        { "char": "(", "label": "Parentesi Tonda Sinistra" },
+        { "char": ")", "label": "Parentesi Tonda Destra" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/dash-hyphen-symbols/", "title": "Dash & Hyphen Symbols", "desc": "Trattini medi, lineette, trattini brevi e segni meno affiancati con i loro codepoint in un unico riferimento." },
+    { "href": "/it/library/simboli-punteggiatura/", "title": "Simboli di Punteggiatura", "desc": "Trattini, virgolette, parentesi e il resto della punteggiatura quotidiana di Unicode, pronti da copiare." },
+    { "href": "/it/symbol/trattino-lungo/", "title": "Trattino Lungo (—)", "desc": "Il fratello più largo del trattino medio: il trattino lungo per interruzioni e incisi, circa il doppio della larghezza e con un compito diverso." }
+  ]
+}

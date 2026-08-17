@@ -1,0 +1,209 @@
+{
+  "slug": "emoji-bandiere",
+  "title": "Emoji Bandiere 🏳️ — Bandiere da Copiare e Incollare | UltraTextGen",
+  "meta_description": "Emoji bandiere da copiare: bandiere di paesi, di organizzazioni, regionali, identitarie e simboliche. Clicca per copiare.",
+  "breadcrumb": "Emoji Bandiere",
+  "hero_h1": "Emoji Bandiere",
+  "hero_tagline": "Le bandiere più usate, per categoria — paesi, organizzazioni, regioni, identità e bandiere simboliche.",
+  "intro": "Un'emoji bandiera non è un'immagine ma una coppia di lettere regionali che il sistema trasforma in bandiera. Ecco perché a volte si vedono due lettere al posto della bandiera. Clicca per copiare.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "country",
+      "label": "Bandiere di Paesi",
+      "h2": "Bandiere di Paesi",
+      "intro": "Le più frequenti nelle bio.",
+      "symbols": [
+        {
+          "char": "🇺🇸",
+          "label": "Stati Uniti"
+        },
+        {
+          "char": "🇲🇽",
+          "label": "Messico"
+        },
+        {
+          "char": "🇮🇳",
+          "label": "India"
+        },
+        {
+          "char": "🇧🇷",
+          "label": "Brasile"
+        },
+        {
+          "char": "🇨🇦",
+          "label": "Canada"
+        },
+        {
+          "char": "🇵🇷",
+          "label": "Porto Rico"
+        },
+        {
+          "char": "🇬🇧",
+          "label": "Regno Unito"
+        },
+        {
+          "char": "🇮🇪",
+          "label": "Irlanda"
+        }
+      ]
+    },
+    {
+      "id": "org",
+      "label": "Bandiere di Organizzazioni",
+      "h2": "Bandiere di Organizzazioni",
+      "intro": "Unioni e istituzioni.",
+      "symbols": [
+        {
+          "char": "🇪🇺",
+          "label": "Unione Europea"
+        },
+        {
+          "char": "🇺🇳",
+          "label": "Nazioni Unite"
+        }
+      ]
+    },
+    {
+      "id": "regional",
+      "label": "Bandiere Regionali",
+      "h2": "Bandiere Regionali",
+      "intro": "Nazioni costitutive del Regno Unito.",
+      "symbols": [
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "label": "Inghilterra"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "label": "Scozia"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+          "label": "Galles"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "Bandiere Identitarie",
+      "h2": "Bandiere Identitarie",
+      "intro": "Bandiere del pride.",
+      "symbols": [
+        {
+          "char": "🏳️‍🌈",
+          "label": "Pride Arcobaleno"
+        },
+        {
+          "char": "🏳️‍⚧️",
+          "label": "Pride Transgender"
+        }
+      ]
+    },
+    {
+      "id": "symbolic",
+      "label": "Bandiere Simboliche",
+      "h2": "Bandiere Simboliche",
+      "intro": "Bandiere che non indicano un territorio.",
+      "symbols": [
+        {
+          "char": "🏁",
+          "label": "Bandiera a Scacchi"
+        },
+        {
+          "char": "🚩",
+          "label": "Bandierina Triangolare"
+        },
+        {
+          "char": "🏳",
+          "label": "Bandiera Bianca"
+        },
+        {
+          "char": "🏴",
+          "label": "Bandiera Nera"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Bandiera Pirata"
+        },
+        {
+          "char": "🎌",
+          "label": "Bandiere Incrociate"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Domande Frequenti sulle Emoji Bandiere",
+  "faq": [
+    {
+      "q": "Perché vedo «IT» invece della bandiera?",
+      "a": "Un'emoji bandiera è una coppia di indicatori regionali, qui I e T. Se il sistema non ha l'immagine corrispondente mostra le due lettere: è il comportamento previsto, non un errore."
+    },
+    {
+      "q": "Perché su Windows le bandiere non si vedono?",
+      "a": "Windows non include le immagini delle bandiere nazionali e rende le coppie di lettere. Il carattere è corretto: sul telefono la bandiera comparirà."
+    },
+    {
+      "q": "Perché Inghilterra e Scozia funzionano in modo diverso?",
+      "a": "Sono bandiere di sotto-regione, costruite con una sequenza di tag e non con due lettere. Sono più recenti e meno supportate."
+    },
+    {
+      "q": "Posso mettere una bandiera nel nickname?",
+      "a": "Nel nome visualizzato di solito sì. Alcune piattaforme rimuovono le bandiere nazionali per ragioni di moderazione, a differenza degli altri emoji."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Perché una Bandiera Non è Davvero un Carattere",
+      "body": "🇮🇹 non esiste come carattere singolo: sono due «indicatori regionali», 🇮 e 🇹, che il sistema riconosce come codice paese e sostituisce con un'immagine. Unicode ha scelto questa strada apposta, per non dover decidere quali entità meritino una bandiera — l'elenco viene dallo standard ISO dei codici paese, non da una delibera del consorzio. Per questo una bandiera può apparire su un dispositivo e restare due lettere su un altro."
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/kaomoji/",
+      "title": "Kaomoji e faccine giapponesi",
+      "desc": "Copia e incolla i kaomoji — emoticon testuali in stile giapponese costruite con caratteri Unicode. Facce fe…"
+    },
+    {
+      "href": "/it/library/caratteri-speciali-simboli/",
+      "title": "Caratteri Speciali",
+      "desc": "Una raccolta di riferimento di simboli Unicode unici — infinito, pace, scienza, marchi legali, elementi est…"
+    },
+    {
+      "href": "/it/library/codici-alt/",
+      "title": "Codici Alt Windows",
+      "desc": "I codici Alt utili per digitare le vocali maiuscole accentate, le virgolette basse e i caporali, e i simbol…"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/it/library/emoji-bandiere/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "it",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-drapeaux/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/kokki-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-bandiere/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/guoqi-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-flags/"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "kleiner-gleich-zeichen",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Kleiner-gleich-Zeichen: ≤ kopieren & einfügen — Bedeutung, Alt-Code & LaTeX",
+  "meta_description": "Das Kleiner-gleich-Zeichen ≤ (U+2264) kopieren und einfügen — Alt+243, der LaTeX-Befehl \\leq, seine HTML-Entität und die Doppelgänger ≦ ⩽ ≲. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/kleiner-gleich-zeichen/",
+  "breadcrumb": "Kleiner-gleich-Zeichen",
+  "hero_h1": "Kleiner-gleich-Zeichen (≤)",
+  "hero_tagline": "Das ≤, das du brauchst, wenn ein Wert kleiner als ein anderer oder genau gleich groß sein darf — Alt+243 unter Windows, \\leq in LaTeX und &le; in HTML. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Kleiner-gleich-Zeichen (≤, U+2264) verbindet das Kleiner-als-Zeichen mit einem waagerechten Balken darunter und zeigt an, dass ein Wert kleiner als ein anderer oder genau gleich groß sein kann — die Relation hinter allem von einfachen Ungleichungen bis zu den geschlossenen Intervallen der Analysis. Anders als die strengen Zeichen < und >, die der englische Mathematiker Thomas Harriot 1631 einführte, ist das kombinierte Paar ≤/≥ eine spätere Verfeinerung: Dem französischen Mathematiker Pierre Bouguer wird allgemein zugeschrieben, es 1734 in seinem Essay über die Abstufung des Lichts eingeführt zu haben. ASCII reservierte für ≤ nie einen eigenen Platz, weshalb fast jede Programmiersprache stattdessen auf die zweizeichige Schreibweise <= zurückgreift statt auf die einzelne Unicode-Glyphe.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/kleiner-gleich-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "kleiner-gleich",
+      "label": "Kleiner gleich",
+      "h2": "Kleiner gleich, in Mathematik und Code",
+      "intro": "Das Mathe-Zeichen und die zweizeichige Notlösung, auf die fast jede Programmiersprache zurückgreift, da ≤ selbst nie Teil von ASCII war.",
+      "symbols": [
+        { "char": "≤", "label": "Kleiner-gleich (Mathematik)" },
+        { "char": "<=", "label": "Kleiner-gleich (Code — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "verwechselbare-nachbarn",
+      "label": "Verwechselbare Nachbarn",
+      "h2": "Zeichen, die oft mit ≤ verwechselt werden",
+      "intro": "Diese bedeuten alle ungefähr dasselbe, sind aber eigenständige Unicode-Zeichen aus unterschiedlichen Schreibtraditionen.",
+      "symbols": [
+        { "char": "≦", "label": "Kleiner-als über Gleichzeichen (U+2266)" },
+        { "char": "⩽", "label": "Kleiner-als oder schräges Gleichzeichen (U+2A7D) — die nach ISO 31-11 bevorzugte Form" },
+        { "char": "≲", "label": "Kleiner-als oder äquivalent (U+2272)" },
+        { "char": "≪", "label": "Viel kleiner als (U+226A) — eine andere Relation, keine Variante von ≤" }
+      ]
+    },
+    {
+      "id": "verwandte-vergleichszeichen",
+      "label": "Verwandte Vergleichszeichen",
+      "h2": "Verwandte Vergleichszeichen",
+      "intro": "Die übrigen Relationszeichen, mit denen ≤ in Ungleichungen und Mengennotation gepaart wird.",
+      "symbols": [
+        { "char": "≥", "label": "Größer-gleich (U+2265)" },
+        { "char": "<", "label": "Kleiner als" },
+        { "char": ">", "label": "Größer als" },
+        { "char": "≠", "label": "Ungleichzeichen" },
+        { "char": "=", "label": "Gleichheitszeichen" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/mathe-symbole/",
+      "title": "Mathe-Symbole",
+      "desc": "Operatoren, Mengennotation und mathematische Konstanten in einer durchstöberbaren Referenz."
+    },
+    {
+      "href": "/de/symbol/ungleichzeichen/",
+      "title": "Ungleichzeichen (≠)",
+      "desc": "Von Euler benutzt, aus ASCII ausgespart — und warum Code stattdessen != verwendet."
+    },
+    {
+      "href": "/de/symbol/kleiner-und-groesser-zeichen/",
+      "title": "Kleiner- & Größer-Zeichen",
+      "desc": "Die strengen Vergleichszeichen, aus denen ≤ und ≥ aufgebaut sind, und warum sie HTML kaputt machen können."
+    }
+  ]
+}

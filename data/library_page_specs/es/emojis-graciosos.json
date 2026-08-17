@@ -1,0 +1,176 @@
+{
+  "lang": "es",
+  "slug": "emojis-graciosos",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emojis-graciosos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/funny-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emojis-graciosos/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/funny-emoji-combos/" }
+  ],
+  "title": "Emojis Graciosos: Combos de Memes y Chistes para Copiar y Pegar",
+  "meta_description": "Emojis graciosos para copiar y pegar: momentos de payaso 🤡, caras de risa 😂, el trío de monitos 🙈 y combos de chiste para el grupo. Haz clic para copiar.",
+  "breadcrumb": "Combos de Emojis Graciosos",
+  "hero_h1": "Combos de Emojis Graciosos",
+  "hero_tagline": "Chistes armados, momentos de payaso y ataques de risa en forma de emoji — haz clic en cualquiera para copiarlo al instante.",
+  "intro": "Los emojis graciosos rematan un chiste más rápido que cualquier remate hablado — un momento de payaso 🤡, el trío de monitos 🙈 🙉 🙊, o un bien puesto 🐸 ☕ de 'pero eso no es asunto mío'. Esta biblioteca reúne las caras más chistosas, los emojis de meme clásicos y combinaciones de chiste listas para grupos de chat, secciones de comentarios y descripciones. Copia un solo emoji o pega un combo completo con un clic.",
+  "sections": [
+    {
+      "id": "laughing-faces",
+      "label": "Risa",
+      "h2": "Combos de Risa y Carcajadas",
+      "intro": "Sets de llorar de risa para cuando un mensaje es demasiado gracioso como para contestar.",
+      "symbols": [
+        { "char": "😂", "label": "Cara llorando de risa" },
+        { "char": "🤣", "label": "Revolcándose de risa" },
+        { "char": "😹", "label": "Gato llorando de risa" },
+        { "char": "😆", "label": "Cara sonriente con ojos cerrados" },
+        { "char": "😝", "label": "Cara con lengua y ojos cerrados" },
+        { "char": "🤪", "label": "Cara de loco" },
+        { "char": "😜", "label": "Cara guiñando con lengua" }
+      ]
+    },
+    {
+      "id": "goofy-silly",
+      "label": "Payasadas",
+      "h2": "Combos Tontos y de Payasada",
+      "intro": "Sets de payaso, derretimiento y cabeza al revés para el caos de burlarse de uno mismo.",
+      "symbols": [
+        { "char": "🤡", "label": "Cara de payaso" },
+        { "char": "🥴", "label": "Cara mareada" },
+        { "char": "🫠", "label": "Cara derritiéndose" },
+        { "char": "😵‍💫", "label": "Cara con ojos en espiral" },
+        { "char": "🙃", "label": "Cara al revés" },
+        { "char": "🤭", "label": "Cara con mano en la boca" },
+        { "char": "😛", "label": "Cara sacando la lengua" }
+      ]
+    },
+    {
+      "id": "meme-favorites",
+      "label": "Memes",
+      "h2": "Combos de Memes Favoritos",
+      "intro": "La calavera, el moái y la rana — los emojis que cargan un chiste por sí solos.",
+      "symbols": [
+        { "char": "💀", "label": "Calavera" },
+        { "char": "🗿", "label": "Moái" },
+        { "char": "🤓", "label": "Cara de nerd" },
+        { "char": "🥸", "label": "Cara disfrazada" },
+        { "char": "🐸", "label": "Rana" },
+        { "char": "👻", "label": "Fantasma" },
+        { "char": "💩", "label": "Caca" },
+        { "char": "🦆", "label": "Pato" }
+      ]
+    },
+    {
+      "id": "speak-no-evil",
+      "label": "Uy",
+      "h2": "Combos de Monitos, Muecas y 'Uy'",
+      "intro": "Sets de 'yo no vi nada' para el momento en que dijiste en voz alta lo que debía quedarse callado.",
+      "symbols": [
+        { "char": "🙈", "label": "Mono que no ve" },
+        { "char": "🙉", "label": "Mono que no oye" },
+        { "char": "🙊", "label": "Mono que no habla" },
+        { "char": "😬", "label": "Cara de mueca" },
+        { "char": "🫢", "label": "Cara con ojos abiertos y mano en la boca" },
+        { "char": "🤐", "label": "Cara con boca de cremallera" }
+      ]
+    },
+    {
+      "id": "joke-props",
+      "label": "Utilería",
+      "h2": "Combos de Utilería y Remate",
+      "intro": "Sets de té, circo y megáfono para rematar el chiste.",
+      "symbols": [
+        { "char": "☕", "label": "Bebida caliente" },
+        { "char": "🎪", "label": "Carpa de circo" },
+        { "char": "🤹", "label": "Malabarista" },
+        { "char": "🚨", "label": "Luz de patrulla" },
+        { "char": "📢", "label": "Altavoz" },
+        { "char": "🧠", "label": "Cerebro" },
+        { "char": "🍌", "label": "Plátano" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Momento de Payaso",
+      "flags": ["🤡", "🎪", "🤹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Me Morí de Risa",
+      "flags": ["😂", "💀", "⚰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Risa Nerviosa",
+      "flags": ["😅", "🫠", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Travesuras de Monos",
+      "flags": ["🙈", "🙉", "🙊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Energía Caótica",
+      "flags": ["🤪", "🔥", "😜", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ataque de Risa",
+      "flags": ["😂", "🤣", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "El Té de la Rana René",
+      "flags": ["🐸", "☕", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cerebro Vacío",
+      "flags": ["🧠", "❌", "🦗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teléfono de Plátano",
+      "flags": ["🍌", "📞", "🤙"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "funnySetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emojis Graciosos",
+    "intro": "Copia un combo de chiste completo con un clic y suéltalo en el grupo."
+  },
+  "related": [
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Emojis de Brainrot y Jerga",
+      "desc": "Combos de sigma, rizz y calavera sacados de la jerga de internet actual."
+    },
+    {
+      "href": "/es/library/emoji-riendo/",
+      "title": "Emoji Riendo y Kaomoji",
+      "desc": "Caras de risa y combos de carcajada para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-caca/",
+      "title": "Emoji de Caca",
+      "desc": "El emoji 💩 y sus combinaciones más chistosas."
+    },
+    {
+      "href": "/es/library/emoji-side-eye/",
+      "title": "Emoji Side Eye y Kaomoji",
+      "desc": "Miradas de juicio, combos de 'te cacharon en 4K' y kaomoji de desaprobación."
+    }
+  ]
+}

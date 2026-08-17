@@ -82,10 +82,20 @@
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
       printBook: "Print as a book — one page per letter",
+      nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
+      nameSolidLabel: "Colour it in now (solid fill)",
+      pngTransparent: "PNG (transparent)",
       classSet: "Class set — one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "banner flags", ofWord: "of",
+      flagCount: { one: "flag", other: "flags" },
+      pageCount: { one: "page", other: "pages" },
+      modelCount: { one: "model", other: "model" },
+      traceCount: { one: "trace", other: "trace" },
+      blankCount: { one: "blank", other: "blank" },
       trace: {
         solid:    { label: "Solid model", hint: "Full dark letters — trace right on top" },
         "bold-dot": { label: "Bold dotted", hint: "Thick, closely-spaced dots to join" },
@@ -121,6 +131,9 @@
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
       printBook: "Imprimer en livret — une page par lettre",
+      nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
+      nameSolidLabel: "Colorier maintenant (remplissage plein)",
+      pngTransparent: "PNG (transparent)",
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
       classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Imprimer pour toute la série.",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
@@ -160,6 +173,9 @@
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
       printBook: "Imprimir como libro — una página por letra",
+      nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
+      nameSolidLabel: "Colorear ahora (relleno sólido)",
+      pngTransparent: "PNG (transparente)",
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
       classSetPngHint: "El PNG descarga el nombre actual; usa Imprimir para el juego completo.",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
@@ -199,6 +215,9 @@
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printBook: "Imprimir como livro — uma página por letra",
+      nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
+      nameSolidLabel: "Colorir agora (preenchimento sólido)",
+      pngTransparent: "PNG (transparente)",
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
       classSetPngHint: "O PNG baixa o nome atual; use Imprimir para o conjunto completo.",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
@@ -238,6 +257,9 @@
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printBook: "Stampa come libretto — una pagina per lettera",
+      nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
+      nameSolidLabel: "Colora adesso (riempimento pieno)",
+      pngTransparent: "PNG (trasparente)",
       classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Stampa per l'intero set.",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
@@ -277,10 +299,17 @@
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
       printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
+      nameStyleLabel: "Styl", nameFillLabel: "Wypełnienie", nameStrokeLabel: "Kontur",
+      nameSolidLabel: "Pokoloruj od razu (pełne wypełnienie)",
+      pngTransparent: "PNG (przezroczyste tło)",
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
       classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "chorągiewki", ofWord: "z",
+      flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
+      pageCount: { one: "strona", few: "strony", many: "stron" },
       trace: {
         solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
         "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
@@ -316,10 +345,17 @@
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printBook: "Als Heft drucken — eine Seite pro Buchstabe",
+      nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
+      nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
+      pngTransparent: "PNG (transparent)",
       classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      usLetter: "US Letter",
+      modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
+      traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
+      blankCount: { one: "Leerzeile", other: "Leerzeilen" },
       trace: {
         solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben — direkt nachfahren" },
         "bold-dot": { label: "Dick gepunktet", hint: "Dicke, eng gesetzte Punkte zum Verbinden" },
@@ -342,8 +378,79 @@
         small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt — ideal für eine Pinnwand" }
       }
     }
+,
+    /* Indonesian. Sizes are metric (like de/fr/es/pt, unlike en's inches).
+       "mading" (majalah dinding) is the Indonesian school wall-display that
+       does the job en calls a bulletin board. Indonesian marks no plural, so
+       every count form deliberately repeats one word. */
+    id: {
+      letterWord: "huruf", numberWord: "angka",
+      copied: "Tersalin!",
+      printThisLetter: "Cetak huruf ini", printThisNumber: "Cetak angka ini",
+      downloadPng: "Unduh PNG",
+      copyPaste: "Salin-tempel", copy: "Salin", howToDraw: "Cara menulisnya", lowerSuffix: " \u00b7 kecil",
+      level: "Tingkat", nameLabel: "Nama:", dateLabel: "Tanggal:", space: "spasi",
+      dotToDot: "sambung titik", bannerFlag: "Bendera banner \u2014",
+      dotsCount: "titik", dotNumbers: "Titik bernomor",
+      dotLadderTitle: "Tangga latihan",
+      dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
+      pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
+      printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
+      nameStyleLabel: "Gaya", nameFillLabel: "Warna isi", nameStrokeLabel: "Garis tepi",
+      nameSolidLabel: "Langsung diwarnai (isi penuh)",
+      pngTransparent: "PNG (transparan)",
+      classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
+      classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Cetak untuk seluruh setnya.",
+      bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
+      puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "bendera banner", ofWord: "dari",
+      flagCount: { one: "bendera", other: "bendera" },
+      pageCount: { one: "halaman", other: "halaman" },
+      modelCount: { one: "contoh", other: "contoh" },
+      traceCount: { one: "tebalkan", other: "tebalkan" },
+      blankCount: { one: "kosong", other: "kosong" },
+      trace: {
+        solid:    { label: "Contoh penuh", hint: "Huruf gelap utuh \u2014 langsung ditebalkan di atasnya" },
+        "bold-dot": { label: "Titik tebal", hint: "Titik besar dan rapat sehingga mudah dihubungkan" },
+        "fine-dot": { label: "Titik halus", hint: "Titik lebih tipis dengan jarak sedikit lebih renggang" },
+        dashed:   { label: "Garis putus-putus", hint: "Garis terputus \u2014 lebih banyak yang harus dilengkapi" },
+        faded:    { label: "Bayangan samar", hint: "Huruf abu-abu muda untuk ditimpa" },
+        faint:    { label: "Panduan tipis", hint: "Garis nyaris tak terlihat \u2014 hampir tanpa bantuan" },
+        blank:    { label: "Garis kosong", hint: "Tanpa panduan \u2014 tulis dari ingatan" }
+      },
+      dot: {
+        easy:   { label: "Mudah", hint: "Jarak lebar, titik sedikit \u2014 untuk anak paling kecil" },
+        medium: { label: "Sedang", hint: "Sambung titik yang seimbang" },
+        hard:   { label: "Sulit", hint: "Lebih banyak titik dan detail hurufnya lebih halus" },
+        expert: { label: "Ahli", hint: "Titiknya banyak \u2014 tantangan sungguhan" }
+      },
+      size: {
+        label: "Ukuran cetak",
+        full:   { label: "Satu halaman penuh", hint: "Satu huruf besar per lembar \u2014 setelan bawaan saat ini" },
+        medium: { label: "Sedang (~10 cm)", hint: "Beberapa huruf per lembar \u2014 cocok untuk poster" },
+        small:  { label: "Kecil (~5 cm)", hint: "Banyak huruf per lembar \u2014 pas untuk mading" }
+      }
+    }
   };
   const T = I18N[LANG] || I18N.en;
+
+  // Locale-aware pluralizer for the small count labels below (banner flags/
+  // pages, handwriting model/trace/blank rows). English deliberately keeps
+  // its labels invariant ("3 trace", not "3 traces" — a byte-for-byte-
+  // preserved stylistic choice, not an oversight), so its `forms` objects
+  // just repeat the same word for `one` and `other`. German only needs a
+  // one/other split. Polish needs a real one/few(2-4)/many(5+, excluding
+  // 12-14) split, per standard Polish cardinal-number agreement.
+  function plural(n, forms) {
+    if (LANG === "pl") {
+      if (n === 1) return forms.one;
+      const mod10 = n % 10, mod100 = n % 100;
+      if (forms.few && mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return forms.few;
+      return forms.many || forms.other || forms.one;
+    }
+    return n === 1 ? forms.one : (forms.other || forms.one);
+  }
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -396,8 +503,13 @@
     nameRoster: $("#pt-name-roster"),
     namePrint: $("#pt-name-print"),
     namePng: $("#pt-name-png"),
+    namePngT: $("#pt-name-png-transparent"),
     namePreview: $("#pt-name-preview"),
     nameRows: $("#pt-name-rows"),
+    nameStyles: $("#pt-name-styles"),
+    nameFill: $("#pt-name-fill"),
+    nameStroke: $("#pt-name-stroke"),
+    nameSolid: $("#pt-name-solid"),
     strokeToggle: $("#pt-stroke-toggle"),
     // Difficulty generator (handwriting-worksheet-generator)
     genInput: $("#pt-gen-input"),
@@ -561,11 +673,14 @@
 
   // A whole word as one rounded outline SVG (used by the name worksheet in
   // outline mode). Width scales with the word so long names stay readable.
+  // opts.font / opts.spacing / opts.fill / opts.strokeColor / opts.strokeWidth
+  // override the page defaults — the name-style designer path; every default
+  // preserves the original behaviour for pages without a designer.
   function wordOutlineSVG(word, opts) {
     const o = opts || {};
     const chars = [...String(word)];
     const fontSize = 150;
-    const spacing = fontSize * LETTER_SPACING;
+    const spacing = fontSize * (o.spacing != null ? o.spacing : LETTER_SPACING);
     const w = Math.max(200, chars.length * 118 + 80 + Math.max(0, chars.length - 1) * spacing);
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " 200");
@@ -577,12 +692,12 @@
     text.setAttribute("y", "112");
     text.setAttribute("text-anchor", "middle");
     text.setAttribute("dominant-baseline", "central");
-    text.setAttribute("font-family", FONT);
+    text.setAttribute("font-family", o.font || FONT);
     text.setAttribute("font-weight", "700");
     text.setAttribute("font-size", String(fontSize));
-    text.setAttribute("fill", o.solid ? INK : "#ffffff");
-    text.setAttribute("stroke", o.solid ? "none" : "#8b93a7");
-    text.setAttribute("stroke-width", o.solid ? "0" : "3");
+    text.setAttribute("fill", o.solid ? (o.fill || INK) : "#ffffff");
+    text.setAttribute("stroke", o.solid ? (o.strokeColor || "none") : (o.strokeColor || "#8b93a7"));
+    text.setAttribute("stroke-width", o.solid ? String(o.strokeColor ? (o.strokeWidth != null ? o.strokeWidth : 4) : 0) : String(o.strokeWidth != null ? o.strokeWidth : 3));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
     // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
@@ -764,8 +879,8 @@
      PNG export (Canvas)
      --------------------------------------------------------------- */
 
-  function withFont(cb) {
-    const fam = primaryFontName();
+  function withFont(cb, famOverride) {
+    const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
       document.fonts.load("700 200px " + fam).then(cb).catch(cb);
     } else {
@@ -839,37 +954,55 @@
     });
   }
 
-  // A word / name -> wide PNG.
-  function wordPNG(text) {
+  // A word / name -> wide PNG. opts (all optional — the name-style designer
+  // path): font / spacing / fill / strokeColor / solid / transparent.
+  function wordPNG(text, opts) {
+    const o = opts || {};
+    const fam = o.font || FONT;
+    const spacingEm = o.spacing != null ? o.spacing : LETTER_SPACING;
     withFont(() => {
       const width = 1600, height = 520, pad = 90;
       const canvas = document.createElement("canvas");
       canvas.width = width; canvas.height = height;
       const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, width, height);
+      if (!o.transparent) {
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, width, height);
+      }
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
       const out = RENDER === "glyph" ? renderGlyph(text) : text;
       // Match the on-screen/print letter spacing (em fraction of the font size).
       const applySpacing = (px) => {
-        if (LETTER_SPACING && "letterSpacing" in ctx) ctx.letterSpacing = px + "px";
+        if (spacingEm && "letterSpacing" in ctx) ctx.letterSpacing = px + "px";
       };
       let fontSize = 300;
-      ctx.font = "700 " + fontSize + "px " + FONT;
-      applySpacing(fontSize * LETTER_SPACING);
+      ctx.font = "700 " + fontSize + "px " + fam;
+      applySpacing(fontSize * spacingEm);
       const measured = ctx.measureText(out).width;
       if (measured > width - pad * 2) {
         fontSize = Math.max(54, Math.floor(fontSize * (width - pad * 2) / measured));
-        ctx.font = "700 " + fontSize + "px " + FONT;
-        applySpacing(fontSize * LETTER_SPACING);
+        ctx.font = "700 " + fontSize + "px " + fam;
+        applySpacing(fontSize * spacingEm);
       }
-      if (RENDER === "outline") {
-        ctx.fillStyle = "#ffffff";
+      if (o.solid) {
+        ctx.fillStyle = o.fill || INK;
         ctx.fillText(out, width / 2, height * 0.52);
+        if (o.strokeColor) {
+          ctx.lineWidth = Math.max(4, Math.round(fontSize * 0.025));
+          ctx.strokeStyle = o.strokeColor;
+          ctx.strokeText(out, width / 2, height * 0.52);
+        }
+      } else if (RENDER === "outline") {
+        // Hollow outline. On a transparent canvas a white interior would
+        // read as a white slab — keep the interior a real hole instead.
+        if (!o.transparent) {
+          ctx.fillStyle = "#ffffff";
+          ctx.fillText(out, width / 2, height * 0.52);
+        }
         ctx.lineWidth = Math.max(6, Math.round(fontSize * 0.06));
-        ctx.strokeStyle = INK;
+        ctx.strokeStyle = o.strokeColor || INK;
         ctx.strokeText(out, width / 2, height * 0.52);
       } else {
         ctx.fillStyle = INK;
@@ -877,7 +1010,7 @@
       }
       if (RENDER !== "glyph") drawCredit(ctx, width, height);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png");
-    });
+    }, o.font ? String(o.font).split(",")[0].trim().replace(/^['"]|['"]$/g, "") : null);
   }
 
   /* ---------------------------------------------------------------
@@ -1325,6 +1458,76 @@
 
   const NAME_DEMO = CFG.nameDemo || "Alex";
 
+  // Optional style/colour designer for the name tool (CFG.nameStyles — the
+  // graffiti-generator pages). Each entry: { key, font, strokeWidth,
+  // letterSpacing }; the buttons themselves are page-authored (crawlable,
+  // translated) inside #pt-name-styles, same pattern as the handwriting
+  // script picker. Absent config leaves every existing page untouched.
+  const NAME_STYLES = Array.isArray(CFG.nameStyles) && CFG.nameStyles.length ? CFG.nameStyles : null;
+  let nameStyleKey = NAME_STYLES ? NAME_STYLES[0].key : null;
+
+  function activeNameStyle() {
+    if (!NAME_STYLES) return null;
+    return NAME_STYLES.find((s) => s.key === nameStyleKey) || NAME_STYLES[0];
+  }
+
+  function nameSolidOn() { return !!(el.nameSolid && el.nameSolid.checked); }
+
+  // Render options for one name row/preview. kind: "preview" | "model" |
+  // "trace". Without a designer this returns the legacy opts unchanged.
+  function nameRenderOpts(kind) {
+    const style = activeNameStyle();
+    if (!style) return { solid: kind === "model" };
+    const o = {
+      font: style.font,
+      spacing: style.letterSpacing != null ? style.letterSpacing : LETTER_SPACING
+    };
+    const solid = nameSolidOn();
+    if (kind === "trace") {
+      // Trace rows stay the light guide regardless of colour choices —
+      // they exist to be drawn over.
+      o.solid = false;
+      return o;
+    }
+    if (solid) {
+      o.solid = true;
+      o.fill = el.nameFill ? el.nameFill.value : INK;
+      o.strokeColor = el.nameStroke ? el.nameStroke.value : INK;
+      o.strokeWidth = Math.max(3, Math.round((style.strokeWidth != null ? style.strokeWidth : STROKE) / 2));
+    } else if (kind === "model") {
+      o.solid = true;
+    } else {
+      // Hollow preview: the page's fat colour-it-in outline, in the chosen
+      // style's own weight, outline colour still user-pickable.
+      o.solid = false;
+      o.strokeColor = el.nameStroke ? el.nameStroke.value : INK;
+      o.strokeWidth = style.strokeWidth != null ? style.strokeWidth : STROKE;
+    }
+    return o;
+  }
+
+  function setNameStyle(key) {
+    if (!NAME_STYLES) return;
+    const style = NAME_STYLES.find((s) => s.key === key) || NAME_STYLES[0];
+    nameStyleKey = style.key;
+    if (el.nameStyles) {
+      $$(".pt-name-style-opt", el.nameStyles).forEach((b) => {
+        const on = b.dataset.style === nameStyleKey;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    withFont(renderNamePreview, nameFontFamily());
+  }
+
+  // First family name of the active style, for document.fonts.load.
+  function nameFontFamily() {
+    const style = activeNameStyle();
+    if (!style || !style.font) return null;
+    const first = String(style.font).split(",")[0].trim();
+    return first.replace(/^['"]|['"]$/g, "");
+  }
+
   function nameValue() {
     const raw = el.nameInput ? el.nameInput.value : "";
     return (raw && raw.trim()) ? raw.trim().slice(0, 40) : NAME_DEMO;
@@ -1339,6 +1542,10 @@
       p.className = "pt-glyph-figure pt-name-glyph";
       p.textContent = renderGlyph(name);
       el.namePreview.appendChild(p);
+    } else if (NAME_STYLES) {
+      const o = nameRenderOpts("preview");
+      o.overlay = strokeOverlayOn();
+      el.namePreview.appendChild(wordOutlineSVG(name, o));
     } else {
       el.namePreview.appendChild(wordOutlineSVG(name, { solid: false, overlay: strokeOverlayOn() }));
     }
@@ -1388,6 +1595,10 @@
       span.className = "pt-name-word" + (kind === "trace" ? " is-trace" : "");
       span.textContent = renderGlyph(name);
       row.appendChild(span);
+    } else if (NAME_STYLES) {
+      const o = nameRenderOpts(kind);
+      o.overlay = strokeOverlayOn();
+      row.appendChild(wordOutlineSVG(name, o));
     } else {
       row.appendChild(wordOutlineSVG(name, { solid: kind === "model", overlay: strokeOverlayOn() }));
     }
@@ -1638,12 +1849,12 @@
     }
     if (el.genPreviewMeta) {
       const parts = [];
-      if (genModelOn() && level !== 1) parts.push("1 model");
-      parts.push(genRowCount() + " trace");
-      if (level !== TRACE_LEVELS.length) parts.push("2 blank");
+      if (genModelOn() && level !== 1) parts.push("1 " + plural(1, T.modelCount));
+      parts.push(genRowCount() + " " + plural(genRowCount(), T.traceCount));
+      if (level !== TRACE_LEVELS.length) parts.push("2 " + plural(2, T.blankCount));
       const rosterN = rosterNames(el.genRoster).length;
       if (rosterN >= 2) parts.push(rosterN + " " + T.sheets);
-      el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+      el.genPreviewMeta.textContent = parts.join(" · ") + " · " + T.usLetter;
     }
     if (SCRIPT_OPTIONS) {
       const active = SCRIPT_OPTIONS.find((o) => o.key === genScriptKey) || SCRIPT_OPTIONS[0];
@@ -2802,7 +3013,8 @@
       head.className = "pt-banner-page-head";
       const title = document.createElement("p");
       title.className = "pt-banner-page-title";
-      title.textContent = phrase.toUpperCase() + " — banner flags — page " + (pi + 1) + " of " + pages.length;
+      title.textContent = phrase.toUpperCase() + " — " + T.bannerFlagsLabel + " — " +
+        T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       head.appendChild(title);
       if (pi === 0) {
         const instr = document.createElement("p");
@@ -2854,8 +3066,8 @@
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
     if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + (total === 1 ? " flag" : " flags") + " · " +
-        pages.length + (pages.length === 1 ? " page" : " pages") + " · US Letter";
+      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
+        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
     }
   }
 
@@ -3240,7 +3452,26 @@
       renderNamePreview();
     }
     if (el.namePrint) el.namePrint.addEventListener("click", buildNameWorksheet);
-    if (el.namePng) el.namePng.addEventListener("click", () => wordPNG(nameValue()));
+    const namePngOpts = (transparent) => {
+      if (!NAME_STYLES) return transparent ? { transparent: true } : undefined;
+      const o = nameRenderOpts("preview");
+      o.transparent = !!transparent;
+      return o;
+    };
+    if (el.namePng) el.namePng.addEventListener("click", () => wordPNG(nameValue(), namePngOpts(false)));
+    if (el.namePngT) el.namePngT.addEventListener("click", () => wordPNG(nameValue(), namePngOpts(true)));
+
+    // Name-style designer (CFG.nameStyles pages): style chips + colour
+    // inputs + the solid-fill toggle all repaint the live preview.
+    if (NAME_STYLES && el.nameStyles) {
+      $$(".pt-name-style-opt", el.nameStyles).forEach((b) => {
+        b.addEventListener("click", () => setNameStyle(b.dataset.style));
+      });
+      setNameStyle(nameStyleKey);
+    }
+    [el.nameFill, el.nameStroke, el.nameSolid].forEach((c) => {
+      if (c) c.addEventListener("input", renderNamePreview);
+    });
 
     if (el.strip || el.panel) {
       // CFG.initialChar locks a page to a single letter on load (spoke pages);

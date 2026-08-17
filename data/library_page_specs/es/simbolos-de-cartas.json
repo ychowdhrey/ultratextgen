@@ -1,0 +1,283 @@
+{
+ "lang": "es",
+ "slug": "simbolos-de-cartas",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/es/library/simbolos-de-cartas/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/card-suit-symbols/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/simbolos-de-cartas/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/card-suit-symbols/"
+  }
+ ],
+ "title": "Símbolos de Cartas ♠♥♦♣ — Palos de Baraja para Copiar y Pegar",
+ "meta_description": "Explora y copia símbolos de cartas, palos de baraja, dados, fichas de dominó y caracteres Unicode de juegos. Haz clic en cualquier símbolo para copiarlo.",
+ "breadcrumb": "Símbolos de Cartas ♠ ♥ ♦ ♣",
+ "hero_h1": "Símbolos de Cartas ♠ ♥ ♦ ♣",
+ "hero_tagline": "Una colección de referencia con los palos de la baraja, dados, fichas de dominó y caracteres Unicode de juegos. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "Esta biblioteca reúne los símbolos de cartas en Unicode: los palos de la baraja (corazones, diamantes, tréboles y picas), caracteres de cartas individuales, caras de dados y otras marcas relacionadas con juegos. Los símbolos están agrupados por tipo de juego y categoría.",
+ "sections": [
+  {
+   "id": "standard-suits",
+   "label": "",
+   "h2": "Palos de Cartas Estándar",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "♠",
+     "label": "Pica"
+    },
+    {
+     "char": "♥",
+     "label": "Corazón"
+    },
+    {
+     "char": "♦",
+     "label": "Diamante"
+    },
+    {
+     "char": "♣",
+     "label": "Trébol"
+    }
+   ]
+  },
+  {
+   "id": "outlined-suits",
+   "label": "",
+   "h2": "Palos de Cartas en Contorno",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "♤",
+     "label": "Pica Blanca"
+    },
+    {
+     "char": "♡",
+     "label": "Corazón Blanco"
+    },
+    {
+     "char": "♢",
+     "label": "Diamante Blanco"
+    },
+    {
+     "char": "♧",
+     "label": "Trébol Blanco"
+    }
+   ]
+  },
+  {
+   "id": "card-suits-combined",
+   "label": "",
+   "h2": "Palos de Cartas — Rellenos y en Contorno (8)",
+   "intro": "Los ocho glifos Unicode de palos de cartas juntos — rellenos (♠ ♥ ♦ ♣) y en contorno (♤ ♡ ♢ ♧) — el \"set con nombre\" clásico para decorar con motivos de baraja.",
+   "symbols": [
+    {
+     "char": "♠",
+     "label": "Pica"
+    },
+    {
+     "char": "♥",
+     "label": "Corazón"
+    },
+    {
+     "char": "♦",
+     "label": "Diamante"
+    },
+    {
+     "char": "♣",
+     "label": "Trébol"
+    },
+    {
+     "char": "♤",
+     "label": "Pica Blanca"
+    },
+    {
+     "char": "♡",
+     "label": "Corazón Blanco"
+    },
+    {
+     "char": "♢",
+     "label": "Diamante Blanco"
+    },
+    {
+     "char": "♧",
+     "label": "Trébol Blanco"
+    }
+   ]
+  },
+  {
+   "id": "dice",
+   "label": "",
+   "h2": "Caras de Dados",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "⚀",
+     "label": "Cara de Dado 1"
+    },
+    {
+     "char": "⚁",
+     "label": "Cara de Dado 2"
+    },
+    {
+     "char": "⚂",
+     "label": "Cara de Dado 3"
+    },
+    {
+     "char": "⚃",
+     "label": "Cara de Dado 4"
+    },
+    {
+     "char": "⚄",
+     "label": "Cara de Dado 5"
+    },
+    {
+     "char": "⚅",
+     "label": "Cara de Dado 6"
+    }
+   ]
+  },
+  {
+   "id": "playing-card-emojis",
+   "label": "",
+   "h2": "Emojis de Cartas de Juego",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "🃏",
+     "label": "Comodín"
+    },
+    {
+     "char": "🎴",
+     "label": "Cartas de Flores"
+    },
+    {
+     "char": "🀄",
+     "label": "Dragón Rojo de Mahjong"
+    }
+   ]
+  },
+  {
+   "id": "trump-and-special-cards",
+   "label": "",
+   "h2": "Símbolos de Triunfos y Cartas Especiales",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "🂠",
+     "label": "Reverso de Carta"
+    },
+    {
+     "char": "🂡",
+     "label": "As de Picas"
+    },
+    {
+     "char": "🂢",
+     "label": "Dos de Picas"
+    },
+    {
+     "char": "🂮",
+     "label": "Rey de Picas"
+    },
+    {
+     "char": "🂱",
+     "label": "As de Corazones"
+    },
+    {
+     "char": "🂾",
+     "label": "Rey de Corazones"
+    },
+    {
+     "char": "🃁",
+     "label": "As de Diamantes"
+    },
+    {
+     "char": "🃎",
+     "label": "Rey de Diamantes"
+    },
+    {
+     "char": "🃑",
+     "label": "As de Tréboles"
+    },
+    {
+     "char": "🃞",
+     "label": "Rey de Tréboles"
+    }
+   ]
+  },
+  {
+   "id": "game-symbols",
+   "label": "",
+   "h2": "Símbolos de Juegos",
+   "intro": "",
+   "symbols": [
+    {
+     "char": "🎰",
+     "label": "Máquina Tragamonedas"
+    },
+    {
+     "char": "🎲",
+     "label": "Dado"
+    },
+    {
+     "char": "🎯",
+     "label": "Diana"
+    },
+    {
+     "char": "🎱",
+     "label": "Bola 8 de Billar"
+    }
+   ]
+  }
+ ],
+ "related": [
+  {
+   "href": "/es/library/simbolos-de-ajedrez/",
+   "title": "Símbolos de Ajedrez",
+   "desc": "Piezas de ajedrez en Unicode — reyes, reinas, torres, alfiles, caballos y peones, blancos y negros."
+  },
+  {
+   "href": "/es/simbolos-de-corazon/",
+   "title": "Colección de Símbolos de Corazón",
+   "desc": "Una colección de símbolos y emojis de corazón en Unicode, incluido el clásico corazón de la baraja."
+  },
+  {
+   "href": "/es/simbolos-de-estrella/",
+   "title": "Colección de Símbolos de Estrella",
+   "desc": "Símbolos de estrellas, asteriscos y destellos disponibles en Unicode."
+  },
+  {
+   "href": "/guide/linkedin-comment-styling/",
+   "title": "Estilo en los Comentarios de LinkedIn",
+   "desc": "Técnicas para agregar negrita, cursiva y símbolos al formato de tus comentarios en LinkedIn."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-corazon/",
+   "title": "Símbolo de Corazón",
+   "desc": "El símbolo de corazón (♥ ❤) — un palo de la baraja que se volvió el signo universal del amor — más sus versiones en emoji y el corazón de texto <3."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-peon/",
+   "title": "Símbolo de Peón (♟ ♙)",
+   "desc": "El peón de ajedrez negro ♟ y el blanco ♙."
+  },
+  {
+   "href": "/es/symbol/simbolo-de-picas/",
+   "title": "Símbolo de Picas",
+   "desc": "El palo de picas en sus dos formas Unicode — relleno ♠ (U+2660) y hueco ♤ (U+2664)."
+  }
+ ]
+}

@@ -1528,6 +1528,17 @@ const textStyles = {
     platforms: ["all","instagram","tiktok","x","discord"]
   },
 
+  'Ultra Cuping': {
+    type: 'procedure',
+    procedureId: 'cuping',
+    note: 'Font Cuping · Indonesian "cute typing" phonetic respelling',
+    category: 'novelty',
+    familySlug: ['cuping'],
+    groupSlug: 'cuping',
+    slug: 'cuping',
+    platforms: ["all","instagram","tiktok","whatsapp","discord"]
+  },
+
   /* =========================
      CASE CONVERTER
      Plain ASCII case transforms — type: 'procedure', keyed by slug in

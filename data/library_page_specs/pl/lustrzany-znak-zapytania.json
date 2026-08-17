@@ -1,0 +1,68 @@
+{
+  "slug": "lustrzany-znak-zapytania",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Lustrzany Znak Zapytania: Skopiuj ⸮ — To Nie To Samo Co ¿",
+  "meta_description": "Skopiuj lustrzany znak zapytania (⸮) z XVI wieku, przeznaczony do pytań retorycznych — i zobacz, dlaczego różni się od ¿, który jest obrócony, a nie odbity lustrzanie.",
+  "canonical": "https://ultratextgen.com/pl/symbol/lustrzany-znak-zapytania/",
+  "breadcrumb": "Lustrzany Znak Zapytania",
+  "hero_h1": "Lustrzany Znak Zapytania",
+  "hero_tagline": "⸮ U+2E2E REVERSED QUESTION MARK — odbity lustrzanie lewo-prawo, co to zupełnie inna operacja niż ¿, który jest obrócony o 180°. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Pod pojęciem „lustrzany znak zapytania” najczęściej kryje się ⸮ (U+2E2E, REVERSED QUESTION MARK) — zwykły znak „?” odbity lewo-prawo jak w lustrze. Angielski drukarz Henry Denham zaproponował go około 1575 roku jako punctus percontativus — znak mający zamykać pytanie retoryczne i odróżniać je od pytania rzeczywistego; nie przyjął się i dziś przetrwał głównie jako ciekawostka oraz w zapisie lingwistycznym zdań gramatycznie wątpliwych, a nie faktycznych pytań. Łatwo pomylić go z dwoma podobnie wyglądającymi znakami, które są jednak zupełnie inną transformacją: ¿ (U+00BF, INVERTED QUESTION MARK) jest obrócony o 180°, a nie odbity lustrzanie — to właśnie ten znak hiszpański i kataloński stawiają na początku pytania, niezwiązany z propozycją Denhama. Z kolei ؟ (U+061F, ARABIC QUESTION MARK) jest odbity lustrzanie tak jak ⸮, ale wcale nie jest ciekawostką — to po prostu zwykły znak zapytania w językach arabskim, perskim i urdu, dopasowany kształtem do kierunku pisma tych języków, od prawej do lewej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/lustrzany-znak-zapytania/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" }
+  ],
+  "sections": [
+    {
+      "id": "lustrzany-znak-zapytania",
+      "label": "Lustrzany Znak Zapytania",
+      "h2": "Odbity Lustrzanie a Obrócony Znak Zapytania",
+      "intro": "Trzy znaki wrzucane do jednego worka jako „odwrócone”, a każdy z nich to inna transformacja tego samego znaku.",
+      "symbols": [
+        { "char": "⸮", "label": "Lustrzany Znak Zapytania" },
+        { "char": "؟", "label": "Arabski Znak Zapytania" },
+        { "char": "¿", "label": "Obrócony (Hiszpański) Znak Zapytania" },
+        { "char": "?", "label": "Znak Zapytania" }
+      ]
+    },
+    {
+      "id": "interpunkcja-retoryczna",
+      "label": "Interpunkcja Retoryczna",
+      "h2": "Inne Historyczne Znaki Retoryczne",
+      "intro": "⸮ należy do niewielkiej rodziny proponowanych, lecz w większości porzuconych znaków interpunkcyjnych, mających oddać ton, którego nie chwytają zwykłe znaki.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang" },
+        { "char": "⸘", "label": "Odwrócony Interrobang" },
+        { "char": "⁇", "label": "Podwójny Znak Zapytania" },
+        { "char": "⁈", "label": "Znak Zapytania z Wykrzyknikiem" }
+      ]
+    },
+    {
+      "id": "interpunkcja-ogolna",
+      "label": "Interpunkcja",
+      "h2": "Ogólne Symbole Interpunkcyjne",
+      "intro": "Codzienny zestaw interpunkcyjny, obok którego ⸮ stoi, gdy zejdziemy już z poziomu ciekawostek.",
+      "symbols": [
+        { "char": "!", "label": "Wykrzyknik" },
+        { "char": "‥", "label": "Podwójny Znak Opuszczenia" },
+        { "char": "…", "label": "Wielokropek Poziomy" },
+        { "char": "‽", "label": "Interrobang" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    { "href": "/pl/library/symbole-punktowania/", "title": "Symbole Punktowania", "desc": "Pełny zestaw znaków interpunkcyjnych i porządkujących tekst do skopiowania." },
+    { "href": "/pl/symbol/cudzyslow-polski/", "title": "Cudzysłów Polski", "desc": "Kolejny znak interpunkcyjny z większą liczbą regionalnych wariantów, niż pokazuje klawiatura." },
+    { "href": "/pl/odwrocony-tekst/", "title": "Generator Odwróconego Tekstu", "desc": "Do odwracania całych zdań, a nie tylko jednego znaku — obrót, a nie odbicie lustrzane, ta sama różnica co między ¿ a ⸮." }
+  ]
+}

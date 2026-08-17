@@ -129,26 +129,41 @@ UltraTextGen распределяет трансформации Unicode-шри�
 <!-- START_USECASES -->
 **Все сценарии использования:** https://ultratextgen.com/usecase/
 
+- https://ultratextgen.com/usecase/aesthetic-contact-names/
+- https://ultratextgen.com/usecase/aesthetic-instagram-names/
 - https://ultratextgen.com/usecase/before-after-emoji/
 - https://ultratextgen.com/usecase/bio-font/
 - https://ultratextgen.com/usecase/clan-tag-generator/
+- https://ultratextgen.com/usecase/clash-of-clans-name-generator/
+- https://ultratextgen.com/usecase/clash-royale-name-generator/
 - https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
 - https://ultratextgen.com/usecase/emoji-letters/
 - https://ultratextgen.com/usecase/emoji-to-text/
 - https://ultratextgen.com/usecase/football-font/
+- https://ultratextgen.com/usecase/fortnite-name-generator/
+- https://ultratextgen.com/usecase/free-fire-clan-tag-generator/
 - https://ultratextgen.com/usecase/free-fire-guild-name-generator/
 - https://ultratextgen.com/usecase/free-fire-name-generator/
+- https://ultratextgen.com/usecase/group-name-generator/
 - https://ultratextgen.com/usecase/linkedin-headline/
+- https://ultratextgen.com/usecase/mobile-legends-name-generator/
+- https://ultratextgen.com/usecase/mobile-legends-squad-name-generator/
+- https://ultratextgen.com/usecase/name-to-symbols/
 - https://ultratextgen.com/usecase/nickname-generator/
 - https://ultratextgen.com/usecase/old-english-translator/
 - https://ultratextgen.com/usecase/pirate-translator/
+- https://ultratextgen.com/usecase/playstation-name-generator/
+- https://ultratextgen.com/usecase/pubg-name-generator/
 - https://ultratextgen.com/usecase/repeat-text/
 - https://ultratextgen.com/usecase/scrolling-text/
+- https://ultratextgen.com/usecase/stumble-guys-name-generator/
 - https://ultratextgen.com/usecase/stylish-name/
 - https://ultratextgen.com/usecase/tattoo-fonts/
 - https://ultratextgen.com/usecase/text-to-emoji/
+- https://ultratextgen.com/usecase/valorant-name-generator/
 - https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/xbox-name-generator/
 - https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
@@ -186,6 +201,7 @@ UltraTextGen распределяет трансформации Unicode-шри�
 - https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/tiktok-font-changed/
+- https://ultratextgen.com/guide/unicode-symbol-approval-process/
 - https://ultratextgen.com/guide/vertical-text-guide/
 - https://ultratextgen.com/guide/whatsapp-text-formatting-explained/
 - https://ultratextgen.com/guide/why-fonts-show-as-boxes/
@@ -385,7 +401,6 @@ ultratextgen/
 - https://ultratextgen.com/library/happy-kaomoji/
 - https://ultratextgen.com/library/hazard-warning-symbols/
 - https://ultratextgen.com/library/heart-ascii-art/
-- https://ultratextgen.com/library/heart-emoji/
 - https://ultratextgen.com/library/heart-kaomoji/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/high-five-emoji/
@@ -473,6 +488,7 @@ ultratextgen/
 - https://ultratextgen.com/library/praying-hands-emoji/
 - https://ultratextgen.com/library/preppy-emoji-combos/
 - https://ultratextgen.com/library/pride-lgbtq-symbols/
+- https://ultratextgen.com/library/pubg-symbols/
 - https://ultratextgen.com/library/punctuation-symbols/
 - https://ultratextgen.com/library/qatar-emoji-combos/
 - https://ultratextgen.com/library/rashford-emoji-combos/
@@ -523,6 +539,7 @@ ultratextgen/
 - https://ultratextgen.com/library/star-emoji/
 - https://ultratextgen.com/library/star-kaomoji/
 - https://ultratextgen.com/library/star-symbols/
+- https://ultratextgen.com/library/steam-symbols/
 - https://ultratextgen.com/library/suarez-emoji-combos/
 - https://ultratextgen.com/library/sunglasses-emoji/
 - https://ultratextgen.com/library/sweden-emoji-combos/
@@ -551,6 +568,7 @@ ultratextgen/
 - https://ultratextgen.com/library/venezuela-emoji-combos/
 - https://ultratextgen.com/library/vertical-line-symbols/
 - https://ultratextgen.com/library/vinicius-emoji-combos/
+- https://ultratextgen.com/library/vrchat-symbols/
 - https://ultratextgen.com/library/wales-emoji-combos/
 - https://ultratextgen.com/library/wave-kaomoji/
 - https://ultratextgen.com/library/weapon-tool-emojis/
@@ -570,10 +588,9 @@ ultratextgen/
 
 <!-- START_EMBED -->
 - https://ultratextgen.com/embed/bio-font-generator/
+- https://ultratextgen.com/embed/character-counter/
 - https://ultratextgen.com/embed/linkedin-headline-generator/
+- https://ultratextgen.com/embed/name-checker/
 - https://ultratextgen.com/embed/nickname-generator/
 - https://ultratextgen.com/embed/zalgo-text-generator/
-- https://ultratextgen.com/usecase/bio-font/embed/
-- https://ultratextgen.com/usecase/nickname-generator/embed/
-- https://ultratextgen.com/usecase/zalgo-text/embed/
 <!-- END_EMBED -->

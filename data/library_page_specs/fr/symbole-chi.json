@@ -1,0 +1,89 @@
+{
+  "slug": "symbole-chi",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Chi : Copier-Coller χ Χ — Le X de « Xmas », le Chi-Rho & le Test χ²",
+  "meta_description": "Copie et colle chi — χ minuscule et Χ majuscule — la lettre derrière le monogramme Chi-Rho, le X de Xmas, et le test statistique χ². Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-chi/",
+  "breadcrumb": "Symbole Chi",
+  "hero_h1": "Symbole Chi",
+  "hero_tagline": "Le χ minuscule qui alimente le test statistique χ², le Χ majuscule qui ouvre « Christ » en grec et a donné le monogramme Chi-Rho ainsi que le « X » de Xmas — la seule lettre grecque perpétuellement prise pour un X latin. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Chi est la 22ᵉ lettre de l'alphabet grec, s'écrivant χ en minuscule (U+03C7, GREEK SMALL LETTER CHI) et Χ en majuscule (U+03A7, GREEK CAPITAL LETTER CHI) — un glyphe si proche du X latin que les deux sont perpétuellement confondus. Cette ressemblance explique justement tout le poids historique de chi. Le Χ majuscule est la première lettre de Χριστός (Christós), « Christ » en grec, et les scribes l'utilisent en abréviation du nom depuis plus de mille ans — l'orthographe « Xres mæsse » apparaît dans la Chronique anglo-saxonne vers 1100, et c'est cette même habitude qui explique pourquoi l'anglais écrit encore « Xmas » aujourd'hui. Associe chi à la lettre suivante, rho, et tu obtiens le monogramme Chi-Rho ☧ (U+2627, CHI RHO), le christogramme paléochrétien que l'empereur romain Constantin Ier a adopté comme étendard militaire, le labarum, après une vision rapportée avant la bataille du pont Milvius, le 28 octobre 312 apr. J.-C. — un récit qui nous parvient par les auteurs anciens Eusèbe et Lactance plutôt que par une source neutre. En mathématiques et en science modernes, le χ minuscule est le pilier du test du χ² (khi-deux), la statistique d'adéquation que Karl Pearson a introduite en 1900 et qui reste aujourd'hui un incontournable des statistiques et de la science des données.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-chi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-symbole-chi",
+      "label": "Le Symbole Chi",
+      "h2": "Le Symbole Chi — Χ & χ",
+      "intro": "La lettre grecque elle-même, dans ses deux casses. Le Χ majuscule porte l'histoire religieuse et l'abréviation de chi ; le χ minuscule assure l'essentiel du travail scientifique et mathématique moderne.",
+      "symbols": [
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7)" },
+        { "char": "χ", "label": "Chi Minuscule Grec (U+03C7)" }
+      ]
+    },
+    {
+      "id": "chi-rho-et-xmas",
+      "label": "Chi-Rho & Xmas",
+      "h2": "Chi-Rho, Xmas & le Monogramme Chrétien",
+      "intro": "Parce que le Χ majuscule ouvre Χριστός (« Christ »), il est devenu une abréviation vieille de plusieurs siècles pour ce nom — la source à la fois du monogramme Chi-Rho que Constantin a arboré comme étendard de bataille et du « Xmas » moderne. Colle ici les pièces de cette histoire.",
+      "symbols": [
+        { "char": "☧", "label": "Chi Rho (U+2627) — le christogramme/labarum ΧΡ" },
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7) — le Χ qui ouvre Χριστός" },
+        { "char": "X", "label": "X Majuscule Latin (U+0058) — le X de « Xmas »" }
+      ]
+    },
+    {
+      "id": "chi-en-stats-et-sciences",
+      "label": "Stats & Sciences",
+      "h2": "Le Chi-Deux (χ²) en Statistiques & en Sciences",
+      "intro": "Le χ minuscule est un pilier scientifique : le test d'adéquation χ² que Karl Pearson a introduit en 1900, plus la caractéristique d'Euler en topologie et la susceptibilité magnétique en physique. Associe la lettre à un deux en exposant pour composer χ² toi-même.",
+      "symbols": [
+        { "char": "χ", "label": "Chi Minuscule Grec (U+03C7) — la statistique de test χ²" },
+        { "char": "²", "label": "Deux en Exposant (U+00B2) — pour composer χ²" },
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7) — nomme aussi des variables aléatoires" }
+      ]
+    },
+    {
+      "id": "chi-vs-x-latin",
+      "label": "Chi vs. X",
+      "h2": "Chi vs. le X Latin — les Sosies",
+      "intro": "Chi ressemble presque trait pour trait à la lettre latine X, mais chacun a son propre point de code — les permuter casse silencieusement une recherche, du code ou des équations. Voici les quatre pour copier exactement celui que tu veux.",
+      "symbols": [
+        { "char": "χ", "label": "Chi Minuscule Grec (U+03C7)" },
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7)" },
+        { "char": "x", "label": "X Minuscule Latin (U+0078)" },
+        { "char": "X", "label": "X Majuscule Latin (U+0058)" }
+      ]
+    },
+    {
+      "id": "lettres-grecques-associees",
+      "label": "Lettres Grecques",
+      "h2": "Lettres Grecques Associées",
+      "intro": "Chi est la 22ᵉ lettre de l'alphabet grec, entre phi et psi. Voici ses voisines et les autres lettres grecques que l'on copie le plus souvent à ses côtés.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Minuscule Grec" },
+        { "char": "ψ", "label": "Psi Minuscule Grec" },
+        { "char": "π", "label": "Pi Minuscule Grec" },
+        { "char": "Σ", "label": "Sigma Majuscule Grec" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet, majuscules, minuscules et variantes mathématiques, prêt à copier-coller." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Le chi-deux, les exposants, et les opérateurs et lettres grecques qui complètent une équation (en anglais)." },
+    { "href": "/library/religious-symbols/", "title": "Religious Symbols", "desc": "Le Chi-Rho, les croix et les autres symboles chrétiens et religieux réunis dans une même référence (en anglais)." },
+    { "href": "/fr/symbol/symbole-pi/", "title": "Symbole Pi", "desc": "Une autre lettre grecque à la double vie : la célèbre constante mathématique π et l'opérateur produit Π majuscule." }
+  ]
+}

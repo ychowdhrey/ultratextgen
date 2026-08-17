@@ -31,9 +31,9 @@
   }
 
   // Locale-aware footer — same Tier-1 locale set and same no-hub fallback
-  // rule as header.js (see that file's NAV comment + the roadmap doc in the
-  // private lab repo for why Category/Use Cases/Answers/Events still point
-  // at the English hub for every locale today). "tools" and "categories"
+  // rule as header.js (see that file's NAV comment for why Category/Use
+  // Cases/Answers/Events still point at the English hub for every locale
+  // today). "tools" and "categories"
   // link to real, on-disk native-slug pages verified 2026-07-20 — not
   // translated guesses. "company" labels are translated but the About/
   // Privacy/Terms/Contact pages themselves have no locale versions yet, so
@@ -270,11 +270,671 @@
       ],
       colTitles: { explore: "Jelajahi", tools: "Alat Populer", categories: "Kategori Populer", company: "Perusahaan" },
       copyright: "© 2026 UltraTextGen. Tulisan aesthetic & font keren yang nempel ke mana pun."
+    },
+    ar: {
+      home: { label: "الرئيسية", href: "/ar/" },
+      explore: [
+        { label: "الأدلة", href: "/ar/guide/" },
+        { label: "الإجابات", href: "/answers/" },
+        { label: "الاستخدامات", href: "/usecase/" },
+        { label: "الفئات", href: "/category/" },
+        { label: "المكتبة", href: "/ar/library/" },
+        { label: "للطباعة", href: "/printables/" },
+        { label: "المناسبات", href: "/events/" }
+      ],
+      tools: [
+        { label: "خط للبايو", href: "/ar/usecase/khat-bio/" },
+        { label: "خط للوشم", href: "/usecase/tattoo-fonts/" },
+        { label: "مترجم إيموجي", href: "/ar/usecase/mutarjim-emoji/" },
+        { label: "كتابة عمودية", href: "/ar/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "خط عريض", href: "/category/bold-fonts/" },
+        { label: "خط مائل", href: "/category/cursive-fonts/" },
+        { label: "خط قوطي", href: "/category/gothic-fonts/" },
+        { label: "نص صغير", href: "/category/small-text/" },
+        { label: "نص مشطوب", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "من نحن", href: "/about/" },
+        { label: "سياسة الخصوصية", href: "/privacy/" },
+        { label: "شروط الخدمة", href: "/terms/" },
+        { label: "اتصل بنا", href: "/contact/" }
+      ],
+      colTitles: { explore: "استكشف", tools: "أدوات شائعة", categories: "فئات شائعة", company: "الشركة" },
+      copyright: "© 2026 UltraTextGen. خطوط ورموز مميزة تُلصق في أي مكان."
+    },
+    bs: {
+      home: { label: "Početna", href: "/bs/" },
+      explore: [
+        { label: "Vodiči", href: "/bs/guide/" },
+        { label: "Odgovori", href: "/answers/" },
+        { label: "Upotrebe", href: "/usecase/" },
+        { label: "Kategorije", href: "/category/" },
+        { label: "Biblioteka", href: "/library/" },
+        { label: "Za štampanje", href: "/printables/" },
+        { label: "Događaji", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font za bio", href: "/usecase/bio-font/" },
+        { label: "Slova za tetovažu", href: "/usecase/tattoo-fonts/" },
+        { label: "Prevodilac emojija", href: "/usecase/text-to-emoji/" },
+        { label: "Vertikalni tekst", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Podebljana Slova", href: "/bs/podebljana-slova/" },
+        { label: "Kurziv", href: "/bs/kurziv/" },
+        { label: "Gotička Slova", href: "/bs/goticka-slova/" },
+        { label: "Mala Slova", href: "/bs/mala-slova/" },
+        { label: "Precrtan Tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "O nama", href: "/about/" },
+        { label: "Politika privatnosti", href: "/privacy/" },
+        { label: "Uslovi korištenja", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Istraži", tools: "Popularni alati", categories: "Popularne kategorije", company: "Kompanija" },
+      copyright: "© 2026 UltraTextGen. Stilizovana slova za kopiranje bilo gdje."
+    },
+    cs: {
+      home: { label: "Domů", href: "/cs/" },
+      explore: [
+        { label: "Návody", href: "/cs/guide/" },
+        { label: "Odpovědi", href: "/answers/" },
+        { label: "Použití", href: "/usecase/" },
+        { label: "Kategorie", href: "/category/" },
+        { label: "Knihovna", href: "/library/" },
+        { label: "K tisku", href: "/printables/" },
+        { label: "Události", href: "/events/" }
+      ],
+      tools: [
+        { label: "Písmo pro bio", href: "/cs/usecase/pismo-pro-bio/" },
+        { label: "Písmo pro tetování", href: "/usecase/tattoo-fonts/" },
+        { label: "Překladač emoji", href: "/usecase/text-to-emoji/" },
+        { label: "Svislý text", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Tučné písmo", href: "/cs/tucne-pismo/" },
+        { label: "Kurzíva", href: "/cs/kurziva/" },
+        { label: "Gotické písmo", href: "/cs/goticke-pismo/" },
+        { label: "Malé písmo", href: "/cs/male-pismo/" },
+        { label: "Přeškrtnutý text", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "O nás", href: "/about/" },
+        { label: "Zásady ochrany osobních údajů", href: "/privacy/" },
+        { label: "Podmínky služby", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Prozkoumat", tools: "Oblíbené nástroje", categories: "Oblíbené kategorie", company: "Společnost" },
+      copyright: "© 2026 UltraTextGen. Stylové písmo, které funguje kdekoli."
+    },
+    da: {
+      home: { label: "Hjem", href: "/da/" },
+      explore: [
+        { label: "Guides", href: "/da/guide/" },
+        { label: "Svar", href: "/answers/" },
+        { label: "Anvendelser", href: "/usecase/" },
+        { label: "Kategorier", href: "/category/" },
+        { label: "Bibliotek", href: "/da/library/" },
+        { label: "Til print", href: "/printables/" },
+        { label: "Begivenheder", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio-skrifttype", href: "/usecase/bio-font/" },
+        { label: "Tatoveringsskrift", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji-oversætter", href: "/usecase/text-to-emoji/" },
+        { label: "Lodret tekst", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Fed skrift", href: "/category/bold-fonts/" },
+        { label: "Kursiv skrift", href: "/category/cursive-fonts/" },
+        { label: "Gotisk skrift", href: "/category/gothic-fonts/" },
+        { label: "Lille tekst", href: "/category/small-text/" },
+        { label: "Gennemstreget tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Om os", href: "/about/" },
+        { label: "Privatlivspolitik", href: "/privacy/" },
+        { label: "Servicevilkår", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Udforsk", tools: "Populære værktøjer", categories: "Populære kategorier", company: "Virksomhed" },
+      copyright: "© 2026 UltraTextGen. Stilfulde bogstaver, der virker overalt."
+    },
+    hi: {
+      home: { label: "होम", href: "/hi/" },
+      explore: [
+        { label: "गाइड", href: "/hi/guide/" },
+        { label: "जवाब", href: "/answers/" },
+        { label: "उपयोग", href: "/usecase/" },
+        { label: "श्रेणियाँ", href: "/category/" },
+        { label: "लाइब्रेरी", href: "/library/" },
+        { label: "प्रिंट के लिए", href: "/printables/" },
+        { label: "इवेंट्स", href: "/events/" }
+      ],
+      tools: [
+        { label: "बायो फॉन्ट", href: "/usecase/bio-font/" },
+        { label: "टैटू फॉन्ट", href: "/usecase/tattoo-fonts/" },
+        { label: "इमोजी अनुवादक", href: "/hi/usecase/emoji-anuvadak/" },
+        { label: "वर्टिकल टेक्स्ट", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "बोल्ड फॉन्ट", href: "/category/bold-fonts/" },
+        { label: "कर्सिव फॉन्ट", href: "/category/cursive-fonts/" },
+        { label: "गॉथिक फॉन्ट", href: "/category/gothic-fonts/" },
+        { label: "स्मॉल टेक्स्ट", href: "/category/small-text/" },
+        { label: "स्ट्राइकथ्रू टेक्स्ट", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "हमारे बारे में", href: "/about/" },
+        { label: "गोपनीयता नीति", href: "/privacy/" },
+        { label: "सेवा की शर्तें", href: "/terms/" },
+        { label: "संपर्क करें", href: "/contact/" }
+      ],
+      colTitles: { explore: "एक्सप्लोर करें", tools: "लोकप्रिय टूल्स", categories: "लोकप्रिय श्रेणियाँ", company: "कंपनी" },
+      copyright: "© 2026 UltraTextGen. स्टाइलिश फॉन्ट जो हर जगह चलते हैं।"
+    },
+    hr: {
+      home: { label: "Početna", href: "/hr/" },
+      explore: [
+        { label: "Vodiči", href: "/hr/guide/" },
+        { label: "Odgovori", href: "/answers/" },
+        { label: "Upotrebe", href: "/usecase/" },
+        { label: "Kategorije", href: "/category/" },
+        { label: "Biblioteka", href: "/library/" },
+        { label: "Za ispis", href: "/printables/" },
+        { label: "Događaji", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font za bio", href: "/usecase/bio-font/" },
+        { label: "Slova za tetovažu", href: "/usecase/tattoo-fonts/" },
+        { label: "Prevoditelj emojija", href: "/usecase/text-to-emoji/" },
+        { label: "Okomiti tekst", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Podebljana Slova", href: "/hr/podebljana-slova/" },
+        { label: "Kurziv", href: "/hr/kurziv/" },
+        { label: "Gotička Slova", href: "/hr/goticka-slova/" },
+        { label: "Mala Slova", href: "/hr/mala-slova/" },
+        { label: "Precrtani Tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "O nama", href: "/about/" },
+        { label: "Pravila privatnosti", href: "/privacy/" },
+        { label: "Uvjeti korištenja", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Istraži", tools: "Popularni alati", categories: "Popularne kategorije", company: "Tvrtka" },
+      copyright: "© 2026 UltraTextGen. Stilizirana slova za kopiranje bilo gdje."
+    },
+    hu: {
+      home: { label: "Kezdőlap", href: "/hu/" },
+      explore: [
+        { label: "Útmutatók", href: "/hu/guide/" },
+        { label: "Válaszok", href: "/answers/" },
+        { label: "Felhasználások", href: "/usecase/" },
+        { label: "Kategóriák", href: "/category/" },
+        { label: "Könyvtár", href: "/library/" },
+        { label: "Nyomtatható", href: "/printables/" },
+        { label: "Események", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio betűtípus", href: "/usecase/bio-font/" },
+        { label: "Tetoválás betűtípus", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji fordító", href: "/usecase/text-to-emoji/" },
+        { label: "Függőleges szöveg", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Félkövér Szöveg", href: "/hu/felkover-szoveg/" },
+        { label: "Dőlt Szöveg", href: "/hu/dolt-szoveg/" },
+        { label: "Gotikus Betűk", href: "/hu/gotikus-betuk/" },
+        { label: "Apró Betűk", href: "/hu/apro-betuk/" },
+        { label: "Áthúzott Szöveg", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Rólunk", href: "/about/" },
+        { label: "Adatvédelmi irányelvek", href: "/privacy/" },
+        { label: "Felhasználási feltételek", href: "/terms/" },
+        { label: "Kapcsolat", href: "/contact/" }
+      ],
+      colTitles: { explore: "Felfedezés", tools: "Népszerű eszközök", categories: "Népszerű kategóriák", company: "Cég" },
+      copyright: "© 2026 UltraTextGen. Stílusos betűk, amik mindenhol működnek."
+    },
+    ja: {
+      home: { label: "ホーム", href: "/ja/" },
+      explore: [
+        { label: "ガイド", href: "/ja/guide/" },
+        { label: "回答", href: "/answers/" },
+        { label: "使い方", href: "/usecase/" },
+        { label: "カテゴリー", href: "/category/" },
+        { label: "ライブラリ", href: "/ja/library/" },
+        { label: "印刷用", href: "/printables/" },
+        { label: "イベント", href: "/events/" }
+      ],
+      tools: [
+        { label: "プロフィール文字装飾", href: "/ja/usecase/bio-font/" },
+        { label: "タトゥーフォント", href: "/usecase/tattoo-fonts/" },
+        { label: "絵文字トランスレーター", href: "/usecase/text-to-emoji/" },
+        { label: "縦書きジェネレーター", href: "/ja/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "太字フォント", href: "/category/bold-fonts/" },
+        { label: "筆記体変換", href: "/ja/hikkitai/" },
+        { label: "ブラックレター風文字", href: "/category/gothic-fonts/" },
+        { label: "小さい文字", href: "/category/small-text/" },
+        { label: "取り消し線テキスト", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "サイトについて", href: "/about/" },
+        { label: "プライバシーポリシー", href: "/privacy/" },
+        { label: "利用規約", href: "/terms/" },
+        { label: "お問い合わせ", href: "/contact/" }
+      ],
+      colTitles: { explore: "探す", tools: "人気ツール", categories: "人気カテゴリー", company: "会社情報" },
+      copyright: "© 2026 UltraTextGen. どこにでも貼れるおしゃれなフォント。"
+    },
+    ko: {
+      home: { label: "홈", href: "/ko/" },
+      explore: [
+        { label: "가이드", href: "/ko/guide/" },
+        { label: "답변", href: "/answers/" },
+        { label: "활용법", href: "/usecase/" },
+        { label: "카테고리", href: "/category/" },
+        { label: "라이브러리", href: "/ko/library/" },
+        { label: "인쇄용", href: "/printables/" },
+        { label: "이벤트", href: "/events/" }
+      ],
+      tools: [
+        { label: "바이오 폰트", href: "/usecase/bio-font/" },
+        { label: "타투 폰트", href: "/usecase/tattoo-fonts/" },
+        { label: "이모지 번역기", href: "/usecase/text-to-emoji/" },
+        { label: "세로 텍스트 생성기", href: "/ko/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "굵은 글씨", href: "/category/bold-fonts/" },
+        { label: "필기체 변환", href: "/ko/pilgichae-byeonhwan/" },
+        { label: "블랙레터체", href: "/category/gothic-fonts/" },
+        { label: "작은 글씨", href: "/category/small-text/" },
+        { label: "취소선 텍스트", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "소개", href: "/about/" },
+        { label: "개인정보처리방침", href: "/privacy/" },
+        { label: "이용약관", href: "/terms/" },
+        { label: "문의하기", href: "/contact/" }
+      ],
+      colTitles: { explore: "둘러보기", tools: "인기 도구", categories: "인기 카테고리", company: "회사" },
+      copyright: "© 2026 UltraTextGen. 어디에나 붙여넣을 수 있는 스타일리시한 글꼴."
+    },
+    nl: {
+      home: { label: "Home", href: "/nl/" },
+      explore: [
+        { label: "Guides", href: "/nl/guide/" },
+        { label: "Antwoorden", href: "/answers/" },
+        { label: "Toepassingen", href: "/usecase/" },
+        { label: "Categorieën", href: "/category/" },
+        { label: "Bibliotheek", href: "/nl/library/" },
+        { label: "Afdrukbaar", href: "/printables/" },
+        { label: "Evenementen", href: "/events/" }
+      ],
+      tools: [
+        { label: "Lettertype voor Bio", href: "/nl/usecase/lettertype-voor-bio/" },
+        { label: "Tattoo Letters", href: "/nl/usecase/tattoo-letters/" },
+        { label: "Emoji Vertaler", href: "/usecase/text-to-emoji/" },
+        { label: "Verticale Tekst", href: "/nl/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Vetgedrukte Letters", href: "/nl/vetgedrukte-letters/" },
+        { label: "Cursieve Letters", href: "/nl/cursieve-letters/" },
+        { label: "Gotische Letters", href: "/category/gothic-fonts/" },
+        { label: "Kleine Letters", href: "/nl/kleine-letters/" },
+        { label: "Doorgestreepte Tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Over ons", href: "/about/" },
+        { label: "Privacybeleid", href: "/privacy/" },
+        { label: "Servicevoorwaarden", href: "/terms/" },
+        { label: "Contact", href: "/contact/" }
+      ],
+      colTitles: { explore: "Verkennen", tools: "Populaire Tools", categories: "Populaire Categorieën", company: "Bedrijf" },
+      copyright: "© 2026 UltraTextGen. Stijlvolle letters die overal werken."
+    },
+    no: {
+      home: { label: "Hjem", href: "/no/" },
+      explore: [
+        { label: "Guider", href: "/no/guide/" },
+        { label: "Svar", href: "/answers/" },
+        { label: "Bruksområder", href: "/usecase/" },
+        { label: "Kategorier", href: "/category/" },
+        { label: "Bibliotek", href: "/no/library/" },
+        { label: "Til utskrift", href: "/printables/" },
+        { label: "Arrangementer", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio-skrift", href: "/usecase/bio-font/" },
+        { label: "Tatoveringsskrift", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji-oversetter", href: "/usecase/text-to-emoji/" },
+        { label: "Vertikal tekst", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Fet skrift", href: "/category/bold-fonts/" },
+        { label: "Kursiv Tekst", href: "/no/kursiv-tekst/" },
+        { label: "Gotisk skrift", href: "/category/gothic-fonts/" },
+        { label: "Liten tekst", href: "/category/small-text/" },
+        { label: "Gjennomstreket tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Om oss", href: "/about/" },
+        { label: "Personvernerklæring", href: "/privacy/" },
+        { label: "Vilkår for bruk", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Utforsk", tools: "Populære verktøy", categories: "Populære kategorier", company: "Selskap" },
+      copyright: "© 2026 UltraTextGen. Stilige bokstaver som fungerer overalt."
+    },
+    ro: {
+      home: { label: "Acasă", href: "/ro/" },
+      explore: [
+        { label: "Ghiduri", href: "/ro/guide/" },
+        { label: "Răspunsuri", href: "/answers/" },
+        { label: "Utilizări", href: "/usecase/" },
+        { label: "Categorii", href: "/category/" },
+        { label: "Bibliotecă", href: "/library/" },
+        { label: "De printat", href: "/printables/" },
+        { label: "Evenimente", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font pentru bio", href: "/usecase/bio-font/" },
+        { label: "Litere pentru tatuaj", href: "/usecase/tattoo-fonts/" },
+        { label: "Traducător emoji", href: "/usecase/text-to-emoji/" },
+        { label: "Text vertical", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Text Îngroșat", href: "/ro/text-ingrosat/" },
+        { label: "Text Cursiv", href: "/ro/text-cursiv/" },
+        { label: "Scriere Gotică", href: "/ro/scriere-gotica/" },
+        { label: "Text Mic", href: "/ro/text-mic/" },
+        { label: "Text Tăiat", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Despre noi", href: "/about/" },
+        { label: "Politica de confidențialitate", href: "/privacy/" },
+        { label: "Termeni și condiții", href: "/terms/" },
+        { label: "Contact", href: "/contact/" }
+      ],
+      colTitles: { explore: "Explorează", tools: "Instrumente populare", categories: "Categorii populare", company: "Companie" },
+      copyright: "© 2026 UltraTextGen. Litere stilate, gata de copiat oriunde."
+    },
+    ru: {
+      home: { label: "Главная", href: "/ru/" },
+      explore: [
+        { label: "Руководства", href: "/ru/guide/" },
+        { label: "Ответы", href: "/answers/" },
+        { label: "Применение", href: "/usecase/" },
+        { label: "Категории", href: "/category/" },
+        { label: "Библиотека", href: "/ru/library/" },
+        { label: "Для печати", href: "/printables/" },
+        { label: "События", href: "/events/" }
+      ],
+      tools: [
+        { label: "Шрифт для био", href: "/usecase/bio-font/" },
+        { label: "Шрифт для тату", href: "/usecase/tattoo-fonts/" },
+        { label: "Переводчик эмодзи", href: "/usecase/text-to-emoji/" },
+        { label: "Вертикальный текст", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Жирный шрифт", href: "/ru/zhirnyy-shrift/" },
+        { label: "Курсив", href: "/ru/kursiv/" },
+        { label: "Готический шрифт", href: "/ru/goticheskiy-shrift/" },
+        { label: "Маленький текст", href: "/ru/malenkiy-tekst/" },
+        { label: "Зачёркнутый текст", href: "/ru/zacherknutyy-tekst/" }
+      ],
+      company: [
+        { label: "О нас", href: "/about/" },
+        { label: "Политика конфиденциальности", href: "/privacy/" },
+        { label: "Условия использования", href: "/terms/" },
+        { label: "Контакты", href: "/contact/" }
+      ],
+      colTitles: { explore: "Разделы", tools: "Популярные инструменты", categories: "Популярные категории", company: "Компания" },
+      copyright: "© 2026 UltraTextGen. Стильный текст, который вставляется куда угодно."
+    },
+    sk: {
+      home: { label: "Domov", href: "/sk/" },
+      explore: [
+        { label: "Sprievodcovia", href: "/sk/guide/" },
+        { label: "Odpovede", href: "/answers/" },
+        { label: "Použitie", href: "/usecase/" },
+        { label: "Kategórie", href: "/category/" },
+        { label: "Knižnica", href: "/library/" },
+        { label: "Na tlač", href: "/printables/" },
+        { label: "Podujatia", href: "/events/" }
+      ],
+      tools: [
+        { label: "Písmo pre bio", href: "/sk/usecase/pismo-pre-bio/" },
+        { label: "Písmo pre tetovanie", href: "/usecase/tattoo-fonts/" },
+        { label: "Prekladač emoji", href: "/usecase/text-to-emoji/" },
+        { label: "Zvislý text", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Tučné písmo", href: "/sk/tucne-pismo/" },
+        { label: "Kurzíva", href: "/sk/kurziva/" },
+        { label: "Gotické písmo", href: "/sk/goticke-pismo/" },
+        { label: "Malé písmo", href: "/sk/male-pismo/" },
+        { label: "Preškrtnutý text", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "O nás", href: "/about/" },
+        { label: "Zásady ochrany osobných údajov", href: "/privacy/" },
+        { label: "Podmienky používania", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Preskúmať", tools: "Obľúbené nástroje", categories: "Obľúbené kategórie", company: "Spoločnosť" },
+      copyright: "© 2026 UltraTextGen. Štýlové písmo, ktoré funguje kdekoľvek."
+    },
+    sr: {
+      home: { label: "Početna", href: "/sr/" },
+      explore: [
+        { label: "Vodiči", href: "/sr/guide/" },
+        { label: "Odgovori", href: "/answers/" },
+        { label: "Upotrebe", href: "/usecase/" },
+        { label: "Kategorije", href: "/category/" },
+        { label: "Biblioteka", href: "/library/" },
+        { label: "Za štampu", href: "/printables/" },
+        { label: "Događaji", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font za bio", href: "/usecase/bio-font/" },
+        { label: "Slova za tetovažu", href: "/usecase/tattoo-fonts/" },
+        { label: "Prevodilac emodžija", href: "/usecase/text-to-emoji/" },
+        { label: "Vertikalni tekst", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Podebljana Slova", href: "/sr/podebljana-slova/" },
+        { label: "Kurziv", href: "/sr/kurziv/" },
+        { label: "Gotička Slova", href: "/sr/goticka-slova/" },
+        { label: "Mala Slova", href: "/sr/mala-slova/" },
+        { label: "Precrtan Tekst", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "O nama", href: "/about/" },
+        { label: "Politika privatnosti", href: "/privacy/" },
+        { label: "Uslovi korišćenja", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Istraži", tools: "Popularni alati", categories: "Popularne kategorije", company: "Kompanija" },
+      copyright: "© 2026 UltraTextGen. Stilizovana slova za kopiranje bilo gde."
+    },
+    sv: {
+      home: { label: "Startsida", href: "/sv/" },
+      explore: [
+        { label: "Guider", href: "/sv/guide/" },
+        { label: "Svar", href: "/answers/" },
+        { label: "Användningar", href: "/usecase/" },
+        { label: "Kategorier", href: "/category/" },
+        { label: "Bibliotek", href: "/sv/library/" },
+        { label: "Utskrifter", href: "/printables/" },
+        { label: "Evenemang", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio-typsnitt", href: "/usecase/bio-font/" },
+        { label: "Tatueringstypsnitt", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji-översättare", href: "/usecase/text-to-emoji/" },
+        { label: "Vertikal text", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Fet text", href: "/category/bold-fonts/" },
+        { label: "Kursiv text", href: "/category/cursive-fonts/" },
+        { label: "Gotisk text", href: "/category/gothic-fonts/" },
+        { label: "Liten text", href: "/category/small-text/" },
+        { label: "Genomstruken text", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Om oss", href: "/about/" },
+        { label: "Integritetspolicy", href: "/privacy/" },
+        { label: "Användarvillkor", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Utforska", tools: "Populära verktyg", categories: "Populära kategorier", company: "Företag" },
+      copyright: "© 2026 UltraTextGen. Snygga typsnitt som fungerar överallt."
+    },
+    th: {
+      home: { label: "หน้าแรก", href: "/th/" },
+      explore: [
+        { label: "คู่มือ", href: "/th/guide/" },
+        { label: "คำตอบ", href: "/answers/" },
+        { label: "การใช้งาน", href: "/usecase/" },
+        { label: "หมวดหมู่", href: "/category/" },
+        { label: "คลังสัญลักษณ์", href: "/th/library/" },
+        { label: "พิมพ์ได้", href: "/printables/" },
+        { label: "กิจกรรม", href: "/events/" }
+      ],
+      tools: [
+        { label: "ฟอนต์ไบโอไอจี", href: "/th/usecase/bio-font-ig/" },
+        { label: "ฟอนต์รอยสัก", href: "/usecase/tattoo-fonts/" },
+        { label: "ตัวแปลอีโมจิ", href: "/usecase/text-to-emoji/" },
+        { label: "ข้อความแนวตั้ง", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "ตัวหนา", href: "/category/bold-fonts/" },
+        { label: "ตัวเอียง", href: "/category/cursive-fonts/" },
+        { label: "ฟอนต์กอทิก", href: "/category/gothic-fonts/" },
+        { label: "ตัวอักษรเล็ก", href: "/category/small-text/" },
+        { label: "ขีดฆ่า", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "เกี่ยวกับเรา", href: "/about/" },
+        { label: "นโยบายความเป็นส่วนตัว", href: "/privacy/" },
+        { label: "ข้อกำหนดการใช้บริการ", href: "/terms/" },
+        { label: "ติดต่อเรา", href: "/contact/" }
+      ],
+      colTitles: { explore: "สำรวจ", tools: "เครื่องมือยอดนิยม", categories: "หมวดหมู่ยอดนิยม", company: "บริษัท" },
+      copyright: "© 2026 UltraTextGen. ฟอนต์สวยๆ คัดลอกวางได้ทุกที่"
+    },
+    tl: {
+      home: { label: "Home", href: "/tl/" },
+      explore: [
+        { label: "Mga Gabay", href: "/tl/guide/" },
+        { label: "Mga Sagot", href: "/answers/" },
+        { label: "Mga Gamit", href: "/usecase/" },
+        { label: "Mga Kategorya", href: "/category/" },
+        { label: "Aklatan", href: "/library/" },
+        { label: "Pwedeng I-print", href: "/printables/" },
+        { label: "Mga Kaganapan", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio Font", href: "/tl/usecase/bio-font/" },
+        { label: "Tattoo Font", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji Translator", href: "/usecase/text-to-emoji/" },
+        { label: "Vertical Text", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Bold Text", href: "/category/bold-fonts/" },
+        { label: "Cursive Text", href: "/category/cursive-fonts/" },
+        { label: "Gothic Font", href: "/category/gothic-fonts/" },
+        { label: "Maliit na Text", href: "/category/small-text/" },
+        { label: "Strikethrough Text", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "Tungkol Sa Amin", href: "/about/" },
+        { label: "Patakaran sa Privacy", href: "/privacy/" },
+        { label: "Mga Tuntunin ng Serbisyo", href: "/terms/" },
+        { label: "Makipag-ugnayan", href: "/contact/" }
+      ],
+      colTitles: { explore: "Tuklasin", tools: "Sikat na Tools", categories: "Sikat na Kategorya", company: "Kumpanya" },
+      copyright: "© 2026 UltraTextGen. Cute at stylish na font na pwedeng i-paste kahit saan."
+    },
+    vi: {
+      home: { label: "Trang chủ", href: "/vi/" },
+      explore: [
+        { label: "Hướng dẫn", href: "/vi/guide/" },
+        { label: "Câu trả lời", href: "/answers/" },
+        { label: "Cách dùng", href: "/usecase/" },
+        { label: "Danh mục", href: "/category/" },
+        { label: "Thư viện", href: "/vi/library/" },
+        { label: "Bản in", href: "/printables/" },
+        { label: "Sự kiện", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font Chữ Cho Bio", href: "/usecase/bio-font/" },
+        { label: "Chữ Xăm Hình", href: "/usecase/tattoo-fonts/" },
+        { label: "Dịch Emoji", href: "/vi/usecase/dich-emoji/" },
+        { label: "Chữ Dọc", href: "/vi/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Chữ In Đậm", href: "/vi/chu-in-dam/" },
+        { label: "Chữ Nghiêng", href: "/vi/chu-nghieng/" },
+        { label: "Font Gothic", href: "/vi/font-gothic/" },
+        { label: "Chữ Nhỏ", href: "/vi/chu-nho/" },
+        { label: "Chữ Gạch Ngang", href: "/vi/chu-gach-ngang/" }
+      ],
+      company: [
+        { label: "Giới thiệu", href: "/about/" },
+        { label: "Chính sách bảo mật", href: "/privacy/" },
+        { label: "Điều khoản dịch vụ", href: "/terms/" },
+        { label: "Liên hệ", href: "/contact/" }
+      ],
+      colTitles: { explore: "Khám phá", tools: "Công cụ phổ biến", categories: "Danh mục phổ biến", company: "Công ty" },
+      copyright: "© 2026 UltraTextGen. Chữ đẹp dán được ở mọi nơi."
+    },
+    "zh-tw": {
+      home: { label: "首頁", href: "/zh-tw/" },
+      explore: [
+        { label: "指南", href: "/zh-tw/guide/" },
+        { label: "問答", href: "/answers/" },
+        { label: "使用情境", href: "/usecase/" },
+        { label: "分類", href: "/category/" },
+        { label: "符號庫", href: "/library/" },
+        { label: "可列印", href: "/printables/" },
+        { label: "活動", href: "/events/" }
+      ],
+      tools: [
+        { label: "個人簡介字體", href: "/usecase/bio-font/" },
+        { label: "刺青字體", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji 翻譯器", href: "/usecase/text-to-emoji/" },
+        { label: "直式文字", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "粗體字", href: "/category/bold-fonts/" },
+        { label: "手寫斜體字", href: "/category/cursive-fonts/" },
+        { label: "哥德字體", href: "/category/gothic-fonts/" },
+        { label: "小型文字", href: "/category/small-text/" },
+        { label: "刪除線文字", href: "/category/strikethrough-text/" }
+      ],
+      company: [
+        { label: "關於我們", href: "/about/" },
+        { label: "隱私權政策", href: "/privacy/" },
+        { label: "服務條款", href: "/terms/" },
+        { label: "聯絡我們", href: "/contact/" }
+      ],
+      colTitles: { explore: "探索", tools: "熱門工具", categories: "熱門分類", company: "公司" },
+      copyright: "© 2026 UltraTextGen. 時尚字體，到處都能貼上使用。"
     }
   };
 
   function detectLocale() {
-    var m = path.match(/^\/([a-z]{2})\//);
+    var m = path.match(/^\/([a-z]{2}(?:-[a-z]{2})?)\//);
     return m && FOOTER[m[1]] ? m[1] : "en";
   }
 
@@ -377,6 +1037,30 @@
       ],
       bridge: '¿Buscas fuentes para bio y publicaciones? <a href="/es/" class="footer-link">Prueba el generador de fuentes →</a>',
       copyright: "© 2026 UltraTextGen. Letras y alfabetos gratis para imprimir."
+    },
+    tr: {
+      colTitle: "Baskılar",
+      items: [
+        { label: "Tüm Baskılar", href: "/printables/" },
+        { label: "El Yazısı Alfabesi", href: "/printables/cursive-alphabet/" },
+        { label: "Alfabe Boyama Sayfaları", href: "/printables/alphabet-coloring-pages/" },
+        { label: "Balon Harfler A–Z", href: "/printables/bubble-letters/" },
+        { label: "İsim İzleme Sayfası", href: "/printables/name-tracing/" }
+      ],
+      bridge: 'Biyografi ve gönderiler için yazı tipi mi arıyorsun? <a href="/tr/" class="footer-link">Yazı tipi oluşturucuyu dene →</a>',
+      copyright: "© 2026 UltraTextGen. Yazdırılabilir harfler ve alfabeler ücretsiz."
+    },
+    id: {
+      colTitle: "Cetak",
+      items: [
+        { label: "Semua Cetakan", href: "/printables/" },
+        { label: "Alfabet Kursif", href: "/printables/cursive-alphabet/" },
+        { label: "Halaman Mewarnai Alfabet", href: "/printables/alphabet-coloring-pages/" },
+        { label: "Huruf Balon A–Z", href: "/printables/bubble-letters/" },
+        { label: "Lembar Jiplak Nama", href: "/printables/name-tracing/" }
+      ],
+      bridge: 'Mencari font untuk bio dan postingan? <a href="/id/" class="footer-link">Coba generator font →</a>',
+      copyright: "© 2026 UltraTextGen. Huruf dan alfabet cetak gratis."
     }
   };
 

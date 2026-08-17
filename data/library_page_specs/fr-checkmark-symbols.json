@@ -1,0 +1,505 @@
+{
+  "slug": "symbole-coche",
+  "title": "Symbole coche ✓ ✔ ☑ — coches et croix à copier-coller | UltraTextGen",
+  "meta_description": "Symboles de coche ✓ ✔ ☑ ✅ à copier : croix, pastilles d'état, cases à cocher et numéros d'étape. Clique sur un symbole pour le copier aussitôt.",
+  "breadcrumb": "Symbole coche",
+  "hero_h1": "Symbole coche",
+  "hero_tagline": "✓ ✔ ☑ ✅ et tout ce qui les accompagne : croix, pastilles d'état, cases à cocher, numéros d'étape. Clique pour copier.",
+  "intro": "Une coche sert rarement seule : à côté d'elle viennent presque toujours la croix qui lui répond, une pastille de couleur qui donne l'état, et la case encore vide. Les huit groupes ci-dessous suivent cet usage réel. Clique sur un symbole, il part dans le presse-papiers.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "Coches classiques",
+      "h2": "Coches classiques",
+      "intro": "Les quatre ou cinq qui servent presque toujours.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Coche"
+        },
+        {
+          "char": "✔",
+          "label": "Coche grasse"
+        },
+        {
+          "char": "☑",
+          "label": "Case cochée"
+        },
+        {
+          "char": "✅",
+          "label": "Coche verte (emoji)"
+        },
+        {
+          "char": "☐",
+          "label": "Case vide"
+        },
+        {
+          "char": "▣",
+          "label": "Carré au centre plein"
+        },
+        {
+          "char": "✔️",
+          "label": "Coche grasse (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "Croix et symboles de refus",
+      "h2": "Croix et symboles de refus",
+      "intro": "Le contraire de la coche.",
+      "symbols": [
+        {
+          "char": "✗",
+          "label": "Croix"
+        },
+        {
+          "char": "✘",
+          "label": "Croix grasse"
+        },
+        {
+          "char": "❌",
+          "label": "Croix rouge (emoji)"
+        },
+        {
+          "char": "☒",
+          "label": "Case avec une croix"
+        },
+        {
+          "char": "✕",
+          "label": "Croix de multiplication"
+        },
+        {
+          "char": "❎",
+          "label": "Bouton croix"
+        },
+        {
+          "char": "✖",
+          "label": "Croix de multiplication grasse"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "label": "Pastilles d'état",
+      "h2": "Pastilles d'état",
+      "intro": "Quand l'état se lit à la couleur.",
+      "symbols": [
+        {
+          "char": "🟢",
+          "label": "Pastille verte (actif)"
+        },
+        {
+          "char": "🔴",
+          "label": "Pastille rouge (erreur)"
+        },
+        {
+          "char": "🟡",
+          "label": "Pastille jaune (attention)"
+        },
+        {
+          "char": "⚪",
+          "label": "Pastille blanche (inactif)"
+        },
+        {
+          "char": "⚫",
+          "label": "Pastille noire (hors ligne)"
+        },
+        {
+          "char": "⬤",
+          "label": "Grand cercle"
+        },
+        {
+          "char": "○",
+          "label": "Cercle vide"
+        },
+        {
+          "char": "●",
+          "label": "Cercle plein"
+        },
+        {
+          "char": "🔵",
+          "label": "Pastille bleue (info)"
+        },
+        {
+          "char": "🟠",
+          "label": "Pastille orange (prudence)"
+        },
+        {
+          "char": "🟣",
+          "label": "Pastille violette"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "Validation et vérification",
+      "h2": "Validation et vérification",
+      "intro": "Le signe que quelqu'un a contrôlé.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Pouce en haut"
+        },
+        {
+          "char": "👎",
+          "label": "Pouce en bas"
+        },
+        {
+          "char": "👌",
+          "label": "Main OK"
+        },
+        {
+          "char": "💯",
+          "label": "Cent points"
+        },
+        {
+          "char": "⭐",
+          "label": "Étoile"
+        },
+        {
+          "char": "🔰",
+          "label": "Symbole japonais du débutant"
+        },
+        {
+          "char": "🛡️",
+          "label": "Bouclier"
+        },
+        {
+          "char": "🏅",
+          "label": "Médaille"
+        }
+      ]
+    },
+    {
+      "id": "warning",
+      "label": "Avertissements et informations",
+      "h2": "Avertissements et informations",
+      "intro": "Quand il faut arrêter l'œil.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "Panneau d'avertissement"
+        },
+        {
+          "char": "⚠️",
+          "label": "Avertissement (emoji)"
+        },
+        {
+          "char": "ℹ️",
+          "label": "Information"
+        },
+        {
+          "char": "🔔",
+          "label": "Cloche"
+        },
+        {
+          "char": "📢",
+          "label": "Haut-parleur"
+        },
+        {
+          "char": "📣",
+          "label": "Mégaphone"
+        },
+        {
+          "char": "🚨",
+          "label": "Gyrophare"
+        },
+        {
+          "char": "⛔",
+          "label": "Sens interdit"
+        },
+        {
+          "char": "🚫",
+          "label": "Interdit"
+        },
+        {
+          "char": "🔺",
+          "label": "Triangle rouge vers le haut"
+        },
+        {
+          "char": "🔻",
+          "label": "Triangle rouge vers le bas"
+        },
+        {
+          "char": "‼",
+          "label": "Double point d'exclamation"
+        },
+        {
+          "char": "❗",
+          "label": "Point d'exclamation"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "Indicateurs d'avancement",
+      "h2": "Indicateurs d'avancement",
+      "intro": "Étapes et état des travaux.",
+      "symbols": [
+        {
+          "char": "⏳",
+          "label": "Sablier en cours"
+        },
+        {
+          "char": "⌛",
+          "label": "Sablier terminé"
+        },
+        {
+          "char": "🔄",
+          "label": "Flèches d'actualisation"
+        },
+        {
+          "char": "⏺",
+          "label": "Bouton enregistrer"
+        },
+        {
+          "char": "⏸",
+          "label": "Bouton pause"
+        },
+        {
+          "char": "⏹",
+          "label": "Bouton stop"
+        },
+        {
+          "char": "①",
+          "label": "Étape 1"
+        },
+        {
+          "char": "②",
+          "label": "Étape 2"
+        },
+        {
+          "char": "③",
+          "label": "Étape 3"
+        },
+        {
+          "char": "④",
+          "label": "Étape 4"
+        },
+        {
+          "char": "⑤",
+          "label": "Étape 5"
+        },
+        {
+          "char": "⑥",
+          "label": "Étape 6"
+        },
+        {
+          "char": "⑦",
+          "label": "Étape 7"
+        },
+        {
+          "char": "⑧",
+          "label": "Étape 8"
+        },
+        {
+          "char": "⑨",
+          "label": "Étape 9"
+        },
+        {
+          "char": "⑩",
+          "label": "Étape 10"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "label": "Cases à cocher",
+      "h2": "Cases à cocher",
+      "intro": "Les petits carrés devant une liste.",
+      "symbols": [
+        {
+          "char": "☐",
+          "label": "Case vide"
+        },
+        {
+          "char": "☑",
+          "label": "Case cochée"
+        },
+        {
+          "char": "☒",
+          "label": "Case barrée"
+        },
+        {
+          "char": "🗹",
+          "label": "Case à cocher grasse"
+        },
+        {
+          "char": "🗸",
+          "label": "Coche fine"
+        },
+        {
+          "char": "🗴",
+          "label": "Croix fine"
+        },
+        {
+          "char": "▢",
+          "label": "Carré arrondi"
+        },
+        {
+          "char": "⊠",
+          "label": "Carré barré"
+        },
+        {
+          "char": "☑️",
+          "label": "Case cochée (emoji)"
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "Modèles de liste de tâches",
+      "h2": "Modèles de liste de tâches",
+      "intro": "Des lignes prêtes à copier telles quelles.",
+      "symbols": [
+        {
+          "char": "☑ Done",
+          "label": "Ligne « fait »"
+        },
+        {
+          "char": "☐ To-do",
+          "label": "Ligne « à faire »"
+        },
+        {
+          "char": "✔ Completed · ✘ Pending",
+          "label": "Paire terminé / en attente"
+        },
+        {
+          "char": "[✓]",
+          "label": "Coche entre crochets"
+        },
+        {
+          "char": "[ ]",
+          "label": "Crochets vides"
+        },
+        {
+          "char": "✅ Yes  ❌ No",
+          "label": "Oui / Non"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions fréquentes sur le symbole coche",
+  "faq": [
+    {
+      "q": "Quelle différence entre ✓ et ✅ ?",
+      "a": "✓ est un caractère de texte : il prend la couleur et la taille du texte autour et reste discret dans un document en noir et blanc. ✅ est un emoji, donc il sort partout en carré vert et plus grand que la ligne. Pour un document, un CV ou un tableau, prends ✓ ; en messagerie et sur les réseaux, ✅ passe mieux."
+    },
+    {
+      "q": "Comment taper une coche au clavier ?",
+      "a": "Sous Windows, ouvre le panneau emoji avec Win + point ; dans Word, tape 2713 puis Alt + X. Sur Mac, le panneau de caractères s'ouvre avec Ctrl + Cmd + Espace. Copier depuis cette page reste plus rapide."
+    },
+    {
+      "q": "Puis-je mettre une coche dans mon nom Instagram ou WhatsApp ?",
+      "a": "Dans le nom affiché, oui, presque partout. Dans l'identifiant avec @, Instagram et X refusent les symboles. Dans les jeux, cela dépend du titre : teste avant de valider ton pseudo."
+    },
+    {
+      "q": "Pourquoi ✔ et ✔️ existent-ils tous les deux ?",
+      "a": "C'est le même caractère, mais le second porte un sélecteur invisible qui demande un rendu emoji. ✔ reste du texte (souvent noir), ✔️ devient coloré. Dans un tableau, ✔ est préférable : il ne casse pas l'alignement."
+    },
+    {
+      "q": "Est-ce que ça marche dans Excel et Google Sheets ?",
+      "a": "Oui. Collé dans une cellule, le symbole reste tel quel et peut servir dans une formule, par exemple comme critère de NB.SI. Attention toutefois aux emoji comme ✅ : leur rendu à l'impression dépend de la police, donc pour un tableau imprimé ✓ est plus sûr."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Pourquoi une coche seule ne suffit pas",
+      "body": "Qui cherche un symbole de coche est en général en train de construire une liste. Or une liste ne tient pas sur le seul « fait » : pour que l'état se lise, il faut aussi ce qui n'a pas commencé (☐), ce qui est en cours (⏳) et ce qui a été écarté (✗). Cette page ne rassemble donc pas seulement la famille ✓ : son contraire et les états intermédiaires sont placés au même niveau. Les pastilles de couleur sont là pour la même raison : dans un document la coche est plus commode, mais dans un tableau de bord ou un compte rendu de réunion, le trio 🟢🟡🔴 se lit bien plus vite."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/symboles-fleches/",
+      "title": "Symboles Flèche",
+      "desc": "Une collection de flèches directionnelles — droites, courbes, doubles, triangulaires et emoji. Clique sur un symbole pour le copier instantanément."
+    },
+    {
+      "href": "/fr/symbol/symbole-coche/",
+      "title": "Symbole coche (✓)",
+      "desc": "La coche ✓ et ✔ — le signe de « fait », « correct » ou « validé » —, la case cochée ☑, l'emoji vert ✅, et le √ qu'on tape par erreur. Clique sur un symbole pour le copier aussitôt."
+    },
+    {
+      "href": "/fr/library/caracteres-speciaux/",
+      "title": "Caractères Spéciaux",
+      "desc": "Une collection de référence de symboles Unicode uniques : infini, paix, science, marques légales, décorations esthétiques et curiosités rares. Cliquez sur un symbole pour le copier instantanément."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/symbole-coche/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symbole-coche/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/flueben-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/haekchen-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-verificacion/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-centang/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simbolo-spunta/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/checkmark-kigou/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chekeu-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/vinkje/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/hakesymboler/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbol-ptaszka/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvol-galochki/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/bock-symboler/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/onay-isaretleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/checkmark-symbols/"
+    }
+  ]
+}

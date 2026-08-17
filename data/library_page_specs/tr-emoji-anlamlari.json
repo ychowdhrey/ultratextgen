@@ -1,0 +1,351 @@
+{
+  "slug": "emoji-anlamlari",
+  "title": "Emoji Anlamları 😊 💜 🔥 — Hangi Emoji Ne Demek? | UltraTextGen",
+  "meta_description": "Emoji anlamları tek sayfada: yüz emojileri, el işaretleri, kalp renkleri ve çift anlamlı emojiler. Hangi emoji ne demek, nerede kullanılır — tıkla kopyala.",
+  "breadcrumb": "Emoji Anlamları",
+  "hero_h1": "Emoji Anlamları",
+  "hero_tagline": "Sohbette gelen emojinin ne demek istediğini çöz. Yüz ifadeleri, el işaretleri, kalp renkleri ve herkesin bildiği ama kimsenin söylemediği ikinci anlamlar.",
+  "intro": "Aynı emoji, gönderene göre bambaşka anlama gelebiliyor: 🙄 bir arkadaşında şaka, patronunda soğuk duş. Bu sayfa en çok kullanılan emojileri anlamlarıyla birlikte topluyor — hangisi ne mesaj veriyor, nerede kullanılır, nerede yanlış anlaşılır. Emojinin üstüne tıkladığında panoya kopyalanır.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "yuz-emojileri",
+      "label": "Yüz",
+      "h2": "Yüz Emojileri ve Anlamları",
+      "intro": "Sohbetin tonunu belirleyen ifadeler — en çok karıştırılanlar da bunlar.",
+      "symbols": [
+        {
+          "char": "😊",
+          "label": "Samimi mutluluk, iyi niyet"
+        },
+        {
+          "char": "😂",
+          "label": "Gülmekten ağlama"
+        },
+        {
+          "char": "🥺",
+          "label": "Yalvaran bakış, rica"
+        },
+        {
+          "char": "😏",
+          "label": "Bilmiş, çapkın, muzip"
+        },
+        {
+          "char": "🤔",
+          "label": "Düşünüyor, şüpheli"
+        },
+        {
+          "char": "😐",
+          "label": "İfadesiz — soğuk, etkilenmemiş"
+        },
+        {
+          "char": "🙄",
+          "label": "Göz devirme, bıkkınlık"
+        },
+        {
+          "char": "😤",
+          "label": "Burnundan soluma — hırs ya da öfke"
+        }
+      ]
+    },
+    {
+      "id": "el-isaretleri",
+      "label": "El",
+      "h2": "El ve Jest Emojileri Anlamları",
+      "intro": "Yazıya gerek kalmadan onay, ret ya da teşekkür.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Onay, beğeni, tamam"
+        },
+        {
+          "char": "👎",
+          "label": "Ret, beğenmeme"
+        },
+        {
+          "char": "🤝",
+          "label": "Anlaşma, ortaklık"
+        },
+        {
+          "char": "🙏",
+          "label": "Teşekkür, rica — dua eden eller"
+        },
+        {
+          "char": "✌️",
+          "label": "Zafer, barış işareti"
+        },
+        {
+          "char": "🤞",
+          "label": "Şans dilemek"
+        },
+        {
+          "char": "🤙",
+          "label": "Ara beni, takıl"
+        },
+        {
+          "char": "👋",
+          "label": "Selam ya da hoşça kal"
+        }
+      ]
+    },
+    {
+      "id": "kalp-renkleri",
+      "label": "Kalp",
+      "h2": "Kalp Emojisi Renkleri ve Anlamları",
+      "intro": "Kalbin rengi mesajı tamamen değiştirir — en sık sorulan konu bu.",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "Kırmızı — aşk, tutku"
+        },
+        {
+          "char": "🧡",
+          "label": "Turuncu — sıcaklık, dostluk"
+        },
+        {
+          "char": "💛",
+          "label": "Sarı — mutluluk, arkadaşlık"
+        },
+        {
+          "char": "💚",
+          "label": "Yeşil — doğa, sağlık, kıskançlık"
+        },
+        {
+          "char": "💙",
+          "label": "Mavi — güven, sadakat, platonik"
+        },
+        {
+          "char": "💜",
+          "label": "Mor — şefkat, gizem"
+        },
+        {
+          "char": "🖤",
+          "label": "Siyah — kara mizah, yas"
+        },
+        {
+          "char": "🤍",
+          "label": "Beyaz — saflık, huzur"
+        },
+        {
+          "char": "🤎",
+          "label": "Kahverengi — sıcaklık, toprak"
+        },
+        {
+          "char": "💗",
+          "label": "Pembe — sevgi, büyüyen hisler"
+        }
+      ]
+    },
+    {
+      "id": "hayvan-emojileri",
+      "label": "Hayvan",
+      "h2": "Hayvan Emojilerinin Sembolik Anlamları",
+      "intro": "Hayvanlar çoğu zaman hayvanı değil, bir karakter özelliğini anlatır.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Dönüşüm, özgürlük"
+        },
+        {
+          "char": "🐍",
+          "label": "Hainlik, arkadan iş çevirme"
+        },
+        {
+          "char": "🦊",
+          "label": "Kurnaz, zeki"
+        },
+        {
+          "char": "🐸",
+          "label": "Meme kültürü, 'bana ne'"
+        },
+        {
+          "char": "🐝",
+          "label": "Çalışkan, durmak bilmeyen"
+        },
+        {
+          "char": "🦄",
+          "label": "Nadir, sıra dışı"
+        }
+      ]
+    },
+    {
+      "id": "cift-anlamli",
+      "label": "Çift Anlam",
+      "h2": "Çift Anlamlı ve Gizli Anlamlı Emojiler",
+      "intro": "Masum görünüp bambaşka yerde kullanılanlar — göndermeden önce iki kez düşün.",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "Şeftali — imalı kullanımı yaygın"
+        },
+        {
+          "char": "🍆",
+          "label": "Patlıcan — imalı kullanımı yaygın"
+        },
+        {
+          "char": "🔥",
+          "label": "Ateş — çok iyi, çok yakışmış"
+        },
+        {
+          "char": "💀",
+          "label": "Kurukafa — 'öldüm' yani çok güldüm"
+        },
+        {
+          "char": "🤡",
+          "label": "Palyaço — kendini rezil etmek"
+        },
+        {
+          "char": "🧢",
+          "label": "Şapka — yalan, 'no cap'"
+        }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "emoji-nerede-degisir",
+      "label": "Cihaz Farkı",
+      "h2": "Aynı Emoji Neden Farklı Görünüyor?",
+      "paragraphs": [
+        "Bu sayfadaki her emoji tek bir Unicode karakteri — yani gönderdiğin şey her telefonda aynı karakter. Değişen tek şey o karakteri kimin çizdiği: Apple, Google, Samsung ve WhatsApp aynı emojiyi kendi setiyle gösterir. Bu yüzden iPhone'dan attığın 😊 Android'de biraz farklı görünür ama anlamı değişmez.",
+        "Anlam kayması cihazdan değil, kültürden gelir. 🙏 Batı'da çoğunlukla teşekkür veya rica okunurken Japonya'da özür anlamı taşır; 👍 birçok yerde onaydır ama bazı bölgelerde kaba bulunur. Resmî bir yazışmada emoji seçerken bunu hesaba katmak yanlış anlaşılmayı baştan keser.",
+        "Emoji kutu (□) ya da soru işareti olarak çıkıyorsa cihazın o karakteri tanımıyordur — genelde işletim sistemi eski olduğu için. Yeni emojiler sisteme güncellemeyle gelir; sen doğru karakteri göndermiş olsan bile karşı taraf eski sürümdeyse boş kutu görür."
+      ]
+    }
+  ],
+  "faq_h2": "Emoji Anlamları Hakkında Sık Sorulanlar",
+  "faq": [
+    {
+      "q": "En çok kullanılan emoji hangisi?",
+      "a": "Dünya genelinde açık ara 😂 önde; onu ❤️ ve 🤣 takip ediyor. Türkiye'de de tablo benzer: gülme ve kalp emojileri günlük yazışmanın büyük kısmını kaplıyor."
+    },
+    {
+      "q": "💀 emojisi neden gülmek için kullanılıyor?",
+      "a": "'Öldüm' esprisinin kısayolu. Bir şey çok komik olduğunda 'güldüm öldüm' demek yerine 💀 atılıyor. Yani ölüm ya da tehlikeyle ilgisi yok — 😂 yerine geçen daha abartılı bir tepki."
+    },
+    {
+      "q": "Kalp renklerinin gerçekten ayrı anlamı var mı?",
+      "a": "Kesin bir kural yok ama yaygın bir mutabakat var: ❤️ romantik, 💙 platonik ve güvene dayalı, 💜 şefkat, 🖤 kara mizah. Karşındaki bu ayrımı bilmiyorsa mesaj yerine ulaşmayabilir — yakın arkadaş sohbetinde işler, resmî yazışmada işlemez."
+    },
+    {
+      "q": "İş yazışmasında emoji kullanmak doğru mu?",
+      "a": "Kuruma göre değişir ama güvenli sınır dar tutmak: 👍 ve 🙏 çoğu ortamda sorunsuz okunur. 🙄, 😏 ve çift anlamlı olanlar (🍑 🍆) iş yazışmasının dışında kalmalı — niyetin masum olsa bile okuyanın yorumu senin elinde değil."
+    },
+    {
+      "q": "Emoji anlamları zamanla değişiyor mu?",
+      "a": "Sürekli değişiyor. 🧢 birkaç yıl önce sadece şapkaydı, şimdi 'yalan' demek; 🗿 meme kültürüyle bambaşka bir anlam kazandı. Emojinin resmî Unicode adı sabit kalır, sokaktaki karşılığı kalmaz."
+    }
+  ],
+  "faq_label": "SSS",
+  "related": [
+    {
+      "href": "/tr/library/yuz-emojileri/",
+      "title": "Yüz Emojileri",
+      "desc": "Bütün yüz ifadeleri tek listede — tıkla kopyala."
+    },
+    {
+      "href": "/tr/library/kalp-sembolleri/",
+      "title": "Kalp Sembolleri",
+      "desc": "Kalp emojileri ve kalp karakterleri bir arada."
+    },
+    {
+      "href": "/tr/library/emoji-combos/",
+      "title": "Emoji Kombinasyonları",
+      "desc": "Hazır emoji dizilimleri — bio ve altyazı için."
+    },
+    {
+      "href": "/tr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Karakterlerden kurulu yüz ifadeleri (◕‿◕)"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/tr/library/emoji-anlamlari/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "UltraTextGen ile düz yazını kalın, italik, el yazısı ve 100+ Unicode stiline çevir — ücretsiz, üyeliksiz, tek tıkla kopyala.",
+  "lang": "tr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/emoji-anlamlari/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+    }
+  ],
+  "collection_section": {
+    "id": "hazir-setler",
+    "label": "Anlam Setleri",
+    "h2": "Hazır Anlam Setleri",
+    "intro": "En çok birlikte kullanılan emojileri tek tıkla kopyala — anlamı zaten yerleşmiş dizilimler."
+  },
+  "collection_container_id": "meaningSetsContainer",
+  "collections": [
+    {
+      "name": "Onay ve Tebrik",
+      "flags": [
+        "👍",
+        "🤝",
+        "🙏",
+        "✌️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sevgi ve Şefkat",
+      "flags": [
+        "❤️",
+        "💗",
+        "🧡",
+        "💛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gülme Tepkisi",
+      "flags": [
+        "😂",
+        "💀",
+        "🤡",
+        "😏"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Düşünme ve Şüphe",
+      "flags": [
+        "🤔",
+        "😐",
+        "🙄",
+        "😏"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teşekkür",
+      "flags": [
+        "🙏",
+        "🤝",
+        "💛",
+        "😊"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kutlama",
+      "flags": [
+        "🔥",
+        "🦋",
+        "✌️",
+        "🦄"
+      ],
+      "defaultFormat": "inline"
+    }
+  ]
+}

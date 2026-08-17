@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "stopbord-emoji",
+  "title": "Stopbord-symbool: Kopieer en Plak 🛑 — Betekenis, Codepunt & het Teken waarmee het Verward Wordt",
+  "meta_description": "Kopieer en plak de stopbord-emoji (🛑), ontdek waarom het een achthoek is, en leer het verschil tussen 🛑 stop en ⛔ verboden toegang — twee tekens die voortdurend door elkaar worden gehaald.",
+  "canonical": "https://ultratextgen.com/nl/symbol/stopbord-emoji/",
+  "breadcrumb": "Stopbord-symbool",
+  "hero_h1": "Stopbord-symbool",
+  "hero_tagline": "🛑 U+1F6D1 — de achthoekige stopbord-emoji, het enige verkeersbord dat met opzet die vorm heeft, plus de ⛔-verboden-toegang-cirkel waar het steeds mee wordt verward. Klik op een teken om het direct te kopiëren.",
+  "intro": "De stopbord-emoji (🛑, U+1F6D1, officieel OCTAGONAL SIGN genoemd) kopieert de vorm van het echte bord om een echte reden: de achthoek is de enige bordvorm die in het Amerikaanse Manual on Uniform Traffic Control Devices exclusief voor 'stop' is gereserveerd, aangenomen in 1922 juist zodat bestuurders het van achteren, door sneeuw heen, of in een achteruitkijkspiegel konden herkennen — geen enkele andere vorm draagt die betekenis, dus de omtrek alleen al vertelt je wat je moet doen nog vóórdat je iets kunt lezen. Unicode voegde 🛑 toe in versie 9.0 (2016). Het is een rode achthoek met witte rand en geen tekst in de glyph zelf ingebakken, anders dan sommige vroege providerspecifieke emoji die een echt 'STOP'-label toonden — de meeste platforms tonen tegenwoordig een platte vorm.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/stop-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/stopbord-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/stop-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "stopbord",
+      "label": "Stopbord",
+      "h2": "Stopbord-emoji",
+      "intro": "De achthoek zelf, en de twee tekens die er qua betekenis het dichtst bij liggen maar niet hetzelfde zijn.",
+      "symbols": [
+        {
+          "char": "🛑",
+          "label": "Stopbord"
+        },
+        {
+          "char": "⛔",
+          "label": "Verboden Toegang"
+        },
+        {
+          "char": "🚫",
+          "label": "Verboden"
+        }
+      ]
+    },
+    {
+      "id": "verkeer-waarschuwing",
+      "label": "Verkeer & Waarschuwing",
+      "h2": "Verkeers- & Waarschuwingssymbolen",
+      "intro": "Verwante waarschuwings- en gevarentekens die vaak samen met stopborden voorkomen in bewegwijzering en berichten.",
+      "symbols": [
+        {
+          "char": "⚠️",
+          "label": "Waarschuwing"
+        },
+        {
+          "char": "🚧",
+          "label": "Wegwerkzaamheden"
+        },
+        {
+          "char": "⚡",
+          "label": "Hoogspanning"
+        },
+        {
+          "char": "☢️",
+          "label": "Radioactief"
+        },
+        {
+          "char": "☣️",
+          "label": "Biohazard"
+        }
+      ]
+    },
+    {
+      "id": "alarm-interpunctie",
+      "label": "Alarmtekens",
+      "h2": "Alarm- & Waarschuwingsinterpunctie",
+      "intro": "De interpunctie-equivalenten waar mensen naar grijpen om urgentie toe te voegen zonder een volledig bordteken.",
+      "symbols": [
+        {
+          "char": "❗",
+          "label": "Uitroepteken"
+        },
+        {
+          "char": "❕",
+          "label": "Wit Uitroepteken"
+        },
+        {
+          "char": "‼️",
+          "label": "Dubbel Uitroepteken"
+        },
+        {
+          "char": "⁉️",
+          "label": "Uitroep-Vraagteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "De bredere set waarschuwings-, straling- en biohazard-tekens waar stopborden meestal naast staan (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/biohazard-symbool/",
+      "title": "Biohazard-symbool",
+      "desc": "Nog een teken waarvan de vorm alleen al de waarschuwing is — in 1966 ontworpen om betekenisloos te zijn totdat het je wordt aangeleerd, en dan onvergetelijk."
+    },
+    {
+      "href": "/nl/symbol/rolstoel-symbool/",
+      "title": "Rolstoel-symbool",
+      "desc": "Een ander soort gestandaardiseerd bordteken, met zijn eigen ontwerpgeschiedenis uit 1968 en een modern herzieningsdebat."
+    }
+  ]
+}

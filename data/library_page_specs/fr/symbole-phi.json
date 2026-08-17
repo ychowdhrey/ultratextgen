@@ -1,0 +1,67 @@
+{
+  "slug": "symbole-phi",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Phi : Copier-Coller φ Φ ϕ — La Lettre du Nombre d'Or Nommée d'après Phidias",
+  "meta_description": "Copie et colle le symbole phi — φ minuscule (U+03C6), Φ majuscule, et la variante mathématique fermée ϕ — la lettre du nombre d'or (≈1,618) que Mark Barr a nommée vers 1909 d'après le sculpteur Phidias. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-phi/",
+  "breadcrumb": "Symbole Phi",
+  "hero_h1": "Symbole Phi",
+  "hero_tagline": "Le φ minuscule qui représente le nombre d'or (≈1,618), le Φ majuscule que les physiciens utilisent pour le flux magnétique, et la variante mathématique fermée ϕ — la lettre que Mark Barr a nommée vers 1909 d'après le sculpteur Phidias. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le glyphe minuscule de phi, φ (U+03C6, GREEK SMALL LETTER PHI), est la 21ᵉ lettre de l'alphabet grec, mais elle est surtout célèbre comme symbole du nombre d'or — le nombre irrationnel (1 + √5) / 2 ≈ 1,6180339887 que les artistes et architectes poursuivent depuis des siècles. Ce choix de nom est étonnamment récent : le nombre s'écrivait longtemps avec la lettre grecque tau (τ), jusqu'à ce que le mathématicien américain Mark Barr propose φ vers 1909, le choisissant comme première lettre de Phidias (Φειδίας, v. 490–430 av. J.-C.), le sculpteur associé aux proportions du Parthénon. Phi présente aussi une particularité qu'aucune autre lettre grecque de cette page n'a — deux glyphes minuscules. La lettre courante φ (U+03C6) se rend habituellement sous sa forme « bouclée », ouverte, tandis qu'un symbole phi grec encodé séparément, ϕ (U+03D5), est la forme « fermée », barrée — un cercle traversé d'une ligne verticale — qu'Unicode recommande pour les mathématiques depuis la version 3.0, même si la forme réellement affichée dépend de la police. Le Φ majuscule (U+03A6) porte un rôle plus lourd dans les sciences : c'est le symbole standard du flux magnétique en physique, tandis que le φ minuscule marque la fonction indicatrice d'Euler, φ(n), en théorie des nombres.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-phi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-symbole-phi",
+      "label": "Le Symbole Phi",
+      "h2": "Le Symbole Phi — φ, Φ & ϕ",
+      "intro": "Les trois formes que l'on entend par « le symbole phi » : la lettre minuscule courante, la majuscule, et la variante mathématique dédiée. Colle celle dont tu as besoin.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Minuscule Grec (U+03C6) — la Lettre du Nombre d'Or, Forme Ouverte « Bouclée »" },
+        { "char": "Φ", "label": "Phi Majuscule Grec (U+03A6) — Flux Magnétique en Physique" },
+        { "char": "ϕ", "label": "Symbole Phi Grec (U+03D5) — la Variante Mathématique « Fermée », Barrée" }
+      ]
+    },
+    {
+      "id": "phi-nombre-d-or-maths",
+      "label": "Nombre d'Or & Maths",
+      "h2": "Phi : le Nombre d'Or & les Usages Mathématiques",
+      "intro": "Le rôle le plus recherché de phi. Le φ minuscule nomme le nombre d'or ≈ 1,618, défini par (1 + √5) / 2 ; depuis Unicode 3.0, le ϕ fermé (U+03D5) est le glyphe recommandé pour cet usage mathématique, et le Φ majuscule marque le flux magnétique.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Minuscule (U+03C6) — Nombre d'Or ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Symbole Phi Grec (U+03D5) — le Glyphe Fermé Recommandé en Maths" },
+        { "char": "Φ", "label": "Phi Majuscule (U+03A6) — Flux Magnétique" },
+        { "char": "√", "label": "Racine Carrée (U+221A) — Apparaît dans la Formule (1 + √5) / 2 de Phi" }
+      ]
+    },
+    {
+      "id": "lettres-grecques-associees",
+      "label": "Lettres Grecques",
+      "h2": "Lettres Grecques Associées",
+      "intro": "Phi est la 21ᵉ lettre de l'alphabet grec. Voici les voisines et les constantes célèbres les plus recherchées à ses côtés.",
+      "symbols": [
+        { "char": "π", "label": "Pi Minuscule Grec" },
+        { "char": "Σ", "label": "Sigma Majuscule Grec" },
+        { "char": "Ω", "label": "Oméga Majuscule Grec" },
+        { "char": "θ", "label": "Thêta Minuscule Grec" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet, majuscules, minuscules et variantes mathématiques, prêt à copier-coller." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Le nombre d'or, la racine carrée, et les opérateurs et lettres grecques qui complètent une équation (en anglais)." },
+    { "href": "/fr/symbol/symbole-pi/", "title": "Symbole Pi", "desc": "L'autre constante célèbre de phi : une autre lettre grecque, π ≈ 3,14159, qui représente un nombre plutôt qu'un son." }
+  ]
+}

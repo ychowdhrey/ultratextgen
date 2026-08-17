@@ -1,0 +1,122 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "duim-wijsteken-emoji",
+  "title": "Duim-wijsteken-emoji: Kopieer en Plak 🫹 🫺 — het Richtinggebaar-paar van Unicode 18.0",
+  "meta_description": "Duim naar Links en Duim naar Rechts (🫹 U+1FAF9, 🫺 U+1FAFA) zijn conceptkandidaten voor Emoji 18.0, verwacht samen met Unicode 18.0 in september 2026 — richtingaanwijzende gebaren, los van Duim Omhoog/Omlaag. Nog niet goedgekeurd, en nog door geen lettertype gerenderd.",
+  "canonical": "https://ultratextgen.com/nl/symbol/duim-wijsteken-emoji/",
+  "breadcrumb": "Duim-wijsteken-emoji",
+  "hero_h1": "Duim-wijsteken-emoji naar Links & Rechts",
+  "hero_tagline": "Een richtingaanwijzend paar, geen extra goedkeuringsgebaar — ontworpen als concept voor Emoji 18.0, verwacht samen met Unicode 18.0 in september 2026. Alleen nog concept: nog niet goedgekeurd, en nog door geen lettertype gerenderd. Klik toch om een van beide codepunten te kopiëren.",
+  "intro": "Duim naar Links (🫹, U+1FAF9) en Duim naar Rechts (🫺, U+1FAFA) vormen een gekoppelde set kandidaat-emoji, ontworpen voor Emoji 18.0, de emoji-tegenhanger van Unicode 18.0, die naar verwachting in september 2026 definitief wordt. Ondanks de naam zijn het geen extra goedkeuringsgebaar naast Duim Omhoog en Duim Omlaag — het zijn horizontale, wijzende tekens, qua taak dichter bij de bestaande Wijzende-Hand-Naar-Links/Rechts-emoji dan bij een verticale duim. Het paar beantwoordt een langlopende klacht uit de gemeenschap: Unicodes gebarenset neigde altijd al naar rechtshandige, verticale goedkeuringstekens, zonder nette manier om met een duim 'naar deze' te wijzen versus 'naar die' in een reactie of vergelijking. Er is echte precedent voor deze categorie — het Pushing-Hand-voorstel uit 2021 vestigde al richtingaanwijzende handgebaren als legitieme emoji-categorie, verder dan alleen simpele duim-omhoog-goedkeuring. Samen dragen de twee concepten 10 huidskleurvarianten zodra ze zijn goedgekeurd (vijf elk). Omdat het nog concepten zijn, biedt geen enkel besturingssysteem, toetsenbord of lettertype momenteel ondersteuning voor een van beide; verwacht een leeg vakje of plaatshoudersglyph totdat Emoji 18.0 is goedgekeurd en platforms ondersteuning uitrollen, waarschijnlijk ergens in 2027.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/duim-wijsteken-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "duim-wijsteken",
+      "label": "Duim-wijsteken",
+      "h2": "Duim naar Links & Duim naar Rechts",
+      "intro": "De twee concepttekens zelf — vandaag al te kopiëren als codepunten, ook al kan nog geen lettertype ze renderen.",
+      "symbols": [
+        {
+          "char": "🫹",
+          "label": "Duim naar Links (concept, U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Duim naar Rechts (concept, U+1FAFA)"
+        }
+      ]
+    },
+    {
+      "id": "los-van",
+      "label": "Los van",
+      "h2": "De Emoji waarmee het Wordt Verward",
+      "intro": "Al gecodeerde gebaren waar Duim-wijsteken het vaakst mee wordt vergeleken, of van dubbeling mee wordt beschuldigd.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Duim Omhoog — verticale goedkeuring, geen richtingaanduiding"
+        },
+        {
+          "char": "👎",
+          "label": "Duim Omlaag — verticale afkeuring, geen richtingaanduiding"
+        },
+        {
+          "char": "👈",
+          "label": "Wijzende Hand naar Links"
+        },
+        {
+          "char": "👉",
+          "label": "Wijzende Hand naar Rechts"
+        }
+      ]
+    },
+    {
+      "id": "mede-conceptkandidaten",
+      "label": "Mede-conceptkandidaten",
+      "h2": "Andere Emoji-18.0-conceptkandidaten",
+      "intro": "Duim-wijsteken is niet het enige nog niet goedgekeurde teken in deze release — deze zijn er tegelijk mee ontworpen, evenzeer ongerenderd tot aan de beslissing van september 2026.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Barstend Gezicht (concept, U+1FAEB) — won de publieke stemming"
+        },
+        {
+          "char": "🫝",
+          "label": "Augurk (concept, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteoor (concept, U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarchvlinder (concept, U+1FACC)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Gesture Symbols",
+      "desc": "Wijzende handen, goedkeuringsgebaren en elk al gecodeerd handteken (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/barstend-gezicht-emoji/",
+      "title": "Barstend-Gezicht-emoji",
+      "desc": "De Emoji-18.0-conceptkandidaat die de publieke stemming won."
+    },
+    {
+      "href": "/nl/symbol/augurk-emoji/",
+      "title": "Augurk-emoji",
+      "desc": "Nog een Emoji-18.0-conceptkandidaat — overgenomen van een uitgesteld Apple-Core-voorstel."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "De volledige conceptlijst van 9 kandidaten, gerangschikt op publieke stemming (Engelstalige update)."
+    }
+  ]
+}

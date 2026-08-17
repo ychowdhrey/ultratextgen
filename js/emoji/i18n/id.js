@@ -736,6 +736,9 @@
     stopWords: STOPPWOERTER,
     strings: {
       resultPlaceholder: "Terjemahan emoji Anda muncul di sini.",
+      copied: "Disalin!",
+      copy: "Salin",
+      surpriseMe: "🎲 Kejutkan saya",
       inputPlaceholders: {
         default: "Ketik kalimat Anda di sini…",
         decode: "Tempel emoji di sini untuk diterjemahkan…",

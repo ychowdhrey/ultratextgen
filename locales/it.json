@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Scrivi qui la tua frase…",
-    "advertisement": "Pubblicità"
+    "advertisement": "Pubblicità",
+    "categoryTabs": {
+      "popular": "Popolari",
+      "bold-fonts": "Grassetto",
+      "italic-fonts": "Corsivo",
+      "bubble-fonts": "Bolla",
+      "cursive-fonts": "Script",
+      "gothic-fonts": "Gotico",
+      "strikethrough-text": "Barrato",
+      "underline-text": "Sottolineato",
+      "small-text": "Testo piccolo",
+      "cute-fonts": "Carino",
+      "aesthetic-fonts": "Estetico",
+      "upside-down-text": "Capovolto",
+      "text-decorator": "Decoratore di testo",
+      "classified": "Censurato",
+      "fullwidth-fonts": "Larghezza piena",
+      "faux-fonts": "Alfabeti finti",
+      "ancient-fonts": "Antico & rune",
+      "emoji-letter-fonts": "Lettere emoji",
+      "novelty-fonts": "Originali"
+    },
+    "scopeControl": {
+      "label": "Applica stile a",
+      "ariaLabel": "Scegli quanto testo stilizzare",
+      "whole": "Tutto il testo",
+      "wholeTitle": "Applica lo stile a ogni riga del tuo testo.",
+      "firstLine": "Solo prima riga",
+      "firstLineTag": "per i post",
+      "firstLineTitle": "Stilizza solo la prima riga (il tuo titolo o aggancio) e lascia il resto come testo normale e leggibile — ideale per i post sui social.",
+      "share": "Condividi",
+      "shareTitle": "Condividi un link che riapre questa pagina con il tuo testo già inserito",
+      "linkCopied": "Link copiato"
+    },
+    "safeMode": {
+      "label": "Sicurezza incolla",
+      "ariaLabel": "Controlla quali stili si vedono bene su altri dispositivi",
+      "toggleLabel": "Modalità sicura",
+      "hint": "Segnala gli stili che potrebbero apparire come quadratini (▯) sui telefoni vecchi di altre persone."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Può apparire come quadratini per alcune persone",
+      "boxesWarningTitle": "Questo stile usa caratteri Unicode rari che alcuni telefoni e dispositivi vecchi non hanno. Può apparire come quadratini (▯) a chi lo riceve. Scegli uno stile più semplice o più supportato se il tuo pubblico potrebbe usare dispositivi vecchi.",
+      "emojiWarning": "⚠ Usa emoji — può variare su dispositivi vecchi",
+      "emojiWarningTitle": "Questo stile include emoji. Le emoji si vedono bene sui dispositivi moderni, ma possono apparire diverse, o come quadratini, sui telefoni molto vecchi.",
+      "modernDevices": "Si vede bene sui dispositivi moderni",
+      "modernDevicesTitle": "Queste lettere Unicode stilizzate compaiono su tutti i telefoni e computer attuali. Su Android molto vecchi (circa prima del 2016) o con font di sistema minimi, alcune potrebbero comunque apparire come quadratini (▯). Prova prima se il tuo pubblico potrebbe usare dispositivi vecchi.",
+      "rendersEverywhere": "✓ Si vede bene ovunque",
+      "rendersEverywhereTitle": "Questo stile è testo semplice: si vede bene ovunque, senza rischio di quadratini su nessun dispositivo.",
+      "deviceWarning": "⚠ Potrebbe non essere visibile sul tuo dispositivo",
+      "deviceWarningTitle": "I font del tuo dispositivo non possono mostrare questo stile — potrebbe apparire come quadratini (□). Su altri dispositivi potrebbe comunque risultare corretto.",
+      "safeAnywhere": "✓ Sicuro ovunque",
+      "safeAnywhereTitle": "Si vede bene su tutte le principali piattaforme. Attenzione: gli screen reader possono leggere le lettere stilizzate una per una, quindi mantieni il testo del corpo normale.",
+      "worksBestOn": "⚠ Funziona meglio su {platforms}",
+      "worksBestOnTitle": "Funziona meglio su: {platforms}. Altre piattaforme potrebbero rimuoverlo o mostrarlo male — fai una prova prima di pubblicare."
+    },
+    "savedStyles": {
+      "ariaLabel": "I tuoi stili salvati",
+      "heading": "I tuoi stili salvati",
+      "clearAll": "Cancella tutto",
+      "hint": "Salvati su questo dispositivo — saranno qui ad aspettarti quando torni."
+    },
+    "textStats": {
+      "wordSingular": "1 parola",
+      "wordPlural": "{n} parole",
+      "charSingular": "1 carattere",
+      "charPlural": "{n} caratteri"
+    },
+    "decorationsNone": "Nessuno",
+    "categoryTabsToggle": {
+      "more": "Altro",
+      "less": "Meno"
+    },
+    "demoText": "Benvenuto su UltraTextGen.\nScrivi quello che vuoi. Rendilo ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nome",
+        "tabs": {
+          "playful": "Giocoso",
+          "hearts": "Cuori",
+          "sparkle": "Scintillio",
+          "faces": "Faccine",
+          "stars": "Stelle"
+        }
+      },
+      "bio": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetico",
+          "edgy": "Edgy",
+          "royal": "Reale",
+          "cute": "Carino",
+          "bold": "Grassetto",
+          "clean": "Pulito",
+          "mystical": "Mistico",
+          "retro": "Retro",
+          "nature": "Natura"
+        }
+      },
+      "small-text": {
+        "word": "testo",
+        "tabs": {
+          "subtle": "Sottile",
+          "tiny": "Minuscolo",
+          "brackets": "Parentesi",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nome",
+        "tabs": {
+          "rounded": "Tondo",
+          "soft": "Morbido",
+          "stars": "Stelle",
+          "hearts": "Cuori",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nome",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Faccine",
+          "hearts": "Cuori",
+          "sparkle": "Scintillio",
+          "pastel": "Pastello"
+        }
+      },
+      "aesthetic": {
+        "word": "testo",
+        "tabs": {
+          "celestial": "Celeste",
+          "sparkle": "Scintillio",
+          "y2k": "Y2K",
+          "soft": "Morbido",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetico",
+          "symbols": "Simboli",
+          "hearts": "Cuori",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Idee per usare le scritte",
@@ -121,7 +270,7 @@
           },
           {
             "question": "Posso usare le scritte stilizzate come nickname o nome utente?",
-            "answer": "Sì, ed è esattamente l'effetto \"nickname stiloso\" che si distingue da tutti gli altri. La maggior parte delle piattaforme accetta i caratteri Unicode nel nome visualizzato — Instagram, TikTok, Discord, Roblox, Steam, Twitch, persino diversi giochi mobile.\n    <br><br>\n    <strong>Esempi</strong><br>\n    \"LucaGamer\" → 𝓛𝓾𝓬𝓪𝓖𝓪𝓶𝓮𝓻 (script) o 𝕷𝖚𝖈𝖆𝖌𝖆𝖒𝖊𝖗 (gothic)<br>\n    \"sofia\" → ꜱᴏꜰɪᴀ (small caps) o ѕσғια (mix)\n    <br><br>\n    <strong>Piccola nota</strong><br>\n    L'@handle (lo username vero) spesso accetta solo lettere normali. Le lettere strane funzionano sicuro nel display name / nome visualizzato. Se una piattaforma rifiuta uno stile, ripiega su bold o italic — sono i più compatibili."
+            "answer": "Sì, ed è esattamente l'effetto \"nickname stiloso\" che si distingue da tutti gli altri. La maggior parte delle piattaforme accetta i caratteri Unicode nel nome visualizzato — Instagram, TikTok, Discord, Roblox, Steam, Twitch, persino diversi giochi mobile.\n    <br><br>\n    <strong>Esempi</strong><br>\n    \"LucaGamer\" → 𝓛𝓾𝓬𝓪𝓖𝓪𝓶𝓮𝓻 (script) o 𝕷𝖚𝖈𝖆𝖌𝖆𝖒𝖊𝖗 (gothic)<br>\n    \"sofia\" → ꜱᴏꜰɪᴀ (small caps) o ѕσғια (mix)\n    <br><br>\n    <strong>Piccola nota</strong><br>\n    L'@handle (lo username vero) spesso accetta solo lettere normali. Le lettere strane funzionano sicuro nel display name / nome visualizzato. Se una piattaforma rifiuta uno stile, ripiega su bold o italic — sono i più compatibili.\n    <br><br>\n    Per la mappa completa campo per campo, vedi nome utente o nome visualizzato."
           },
           {
             "question": "Su quali app posso incollare il testo stilizzato?",
@@ -142,7 +291,7 @@
           },
           {
             "question": "Perché su alcuni telefoni vedo dei quadratini al posto delle lettere?",
-            "answer": "Succede quando il dispositivo di chi legge non ha il font installato per quei caratteri Unicode. Non è un errore del testo — è un limite del dispositivo dall'altra parte.\n    <br><br>\n    <strong>Cosa fare</strong><br>\n    Su iPhone, Android e browser aggiornati la maggior parte degli stili si vede bene. Se vedi quadratini in anteprima, cambia stile: bold, italic, bubble e small caps sono i più universali.\n    <br><br>\n    Per piattaforme specifiche (Discord, Instagram, TikTok) puoi usare le nostre pagine dedicate, dove gli stili sono già filtrati per compatibilità."
+            "answer": "Succede quando il dispositivo di chi legge non ha il font installato per quei caratteri Unicode. Non è un errore del testo — è un limite del dispositivo dall'altra parte.\n    <br><br>\n    <strong>Cosa fare</strong><br>\n    Su iPhone, Android e browser aggiornati la maggior parte degli stili si vede bene. Se vedi quadratini in anteprima, cambia stile: bold, italic, bubble e small caps sono i più universali.\n    <br><br>\n    Per piattaforme specifiche (Discord, Instagram, TikTok) puoi usare le nostre pagine dedicate, dove gli stili sono già filtrati per compatibilità.\n    <br><br>\n    Per la soluzione rapida, vedi perché il mio nome appare come quadratini."
           }
         ]
       },
@@ -194,11 +343,11 @@
           },
           {
             "question": "Dove trovo le scritte stilizzate e le scritte aesthetic da copiare?",
-            "answer": "Proprio qui. Scrivi la tua parola o frase nel generatore in alto e ottieni decine di scritte stilizzate e scritte aesthetic da copiare con un tocco.<br><br>Se ti serve solo l'alfabeto, nella sezione \"Alfabeto in scritte aesthetic (A–Z)\" trovi A–Z e i numeri 0–9 nei vari stili, già pronti da copiare riga per riga.<br><br>\"Scritta stilizzata\" e \"scritte aesthetic\" sono lo stesso risultato: cambia solo il nome che usi tu."
+            "answer": "Scrivi la tua parola o frase nel generatore in alto e ottieni decine di scritte stilizzate da copiare con un tocco.<br><br>L'alfabeto completo A–Z e i numeri 0–9 sono nella sezione «Alfabeto in scritte aesthetic» più sotto. Per una pagina dedicata solo al copia e incolla del font, senza il resto del sito intorno, vai su <a href=\"/it/font-copia-e-incolla/\">font copia e incolla</a>."
           },
           {
             "question": "Dove trovo i simboli aesthetic da copiare e incollare?",
-            "answer": "Nella sezione \"Simboli aesthetic copia e incolla\" qui sopra: stelle, cuori, lune, fiori, cornici e separatori, ognuno con un tocco per copiarlo.<br><br>Sono perfetti per separare le righe della bio Instagram, decorare un nickname o aggiungere un dettaglio nelle caption. Esempi: ⋆˙⟡ frase ⟡˙⋆ oppure ꒰♡꒱ frase.<br><br>Per avvolgere automaticamente la frase tra cornici e simboli, usa le schede <strong>Simboli</strong>, <strong>Cornici</strong> e <strong>Divisori</strong> del generatore in alto."
+            "answer": "Nella sezione «Simboli aesthetic copia e incolla» più sopra: stelle, cuori, lune, fiori, cornici e separatori, un tocco per copiarli.<br><br>Per la raccolta completa, con più varianti e categorie, vai sulla pagina <a href=\"/it/library/simboli/\">simboli da copiare e incollare</a>."
           }
         ]
       }

@@ -1,0 +1,69 @@
+{
+  "slug": "star-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Ngôi Sao: Sao Chép & Dán ★ ☆ Ký Hiệu Sao & Emoji Sao",
+  "meta_description": "Sao chép ký hiệu ngôi sao (★, U+2605) — sao đặc và sao viền dùng cho đánh giá và mục yêu thích, các ngôi sao trang trí nhiều cánh, emoji sao ⭐, và vì sao ★ không phải dấu hoa thị. Nhấp vào bất kỳ ký hiệu nào để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/symbol/star-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Ngôi Sao",
+  "hero_h1": "Ký Hiệu Ngôi Sao",
+  "hero_tagline": "Ký hiệu ngôi sao (★ ☆) — ngôi sao năm cánh đứng sau các đánh giá, mục yêu thích và trang trí tiểu sử — cùng các biến thể sao trang trí, emoji ⭐, và dấu hoa thị mà nó không phải. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu ngôi sao (★, Unicode U+2605 BLACK STAR) và người anh em dạng viền của nó (☆, U+2606 WHITE STAR) là những ngôi sao năm cánh trong khối Miscellaneous Symbols, dùng ở khắp mọi nơi từ đánh giá ★★★★☆ đến mục yêu thích, dấu đầu dòng và trang trí hồ sơ. Unicode cũng mã hóa cả một họ sao trang trí phong phú trong khối Dingbats, cùng emoji sao ⭐ riêng biệt. ★ năm cánh là một ký tự khác hoàn toàn với dấu hoa thị trên bàn phím (*), vốn là một ký hiệu đánh máy dùng cho chú thích, phép nhân và ký tự đại diện.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/star-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "star-symbol",
+      "label": "Ngôi Sao",
+      "h2": "Ký Hiệu Ngôi Sao",
+      "intro": "Ngôi sao năm cánh dạng đặc và dạng viền dùng cho đánh giá và mục yêu thích.",
+      "symbols": [
+        { "char": "★", "label": "Sao Đen (U+2605)" },
+        { "char": "☆", "label": "Sao Trắng / Viền (U+2606)" }
+      ]
+    },
+    {
+      "id": "decorative-stars",
+      "label": "Sao Trang Trí",
+      "h2": "Sao Trang Trí & Nhiều Cánh",
+      "intro": "Các glyph sao trang trí từ khối Dingbats dùng cho tiểu sử và chú thích.",
+      "symbols": [
+        { "char": "✦", "label": "Sao Bốn Cánh Đen (U+2726)" },
+        { "char": "✧", "label": "Sao Bốn Cánh Trắng (U+2727)" },
+        { "char": "✩", "label": "Sao Trắng Viền Nhấn (U+2729)" },
+        { "char": "✪", "label": "Sao Trắng Trong Vòng Tròn (U+272A)" },
+        { "char": "✭", "label": "Sao Trắng Tâm Đen (U+272D)" },
+        { "char": "✴", "label": "Sao Đen Tám Cánh (U+2734)" }
+      ]
+    },
+    {
+      "id": "star-emoji-confusables",
+      "label": "Emoji & Dễ Nhầm Lẫn",
+      "h2": "Emoji Sao & Các Ký Hiệu Dễ Nhầm Với ★",
+      "intro": "Emoji sao có màu và các ký hiệu người ta hay dùng nhầm thay cho ★.",
+      "symbols": [
+        { "char": "⭐", "label": "Emoji Sao (U+2B50)" },
+        { "char": "🌟", "label": "Sao Sáng Rực" },
+        { "char": "✨", "label": "Lấp Lánh" },
+        { "char": "*", "label": "Dấu Hoa Thị (U+002A) — Không Phải Ngôi Sao" },
+        { "char": "✱", "label": "Dấu Hoa Thị Đậm (U+2731)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/star-symbols/", "title": "Ký Hiệu Ngôi Sao", "desc": "Mọi ký tự sao, lấp lánh và sao đánh giá trong một trang tổng hợp." },
+    { "href": "/vi/symbol/heart-symbol/", "title": "Ký Hiệu Trái Tim (♥)", "desc": "Chất bài trái tim đã trở thành dấu hiệu của tình yêu." },
+    { "href": "/library/aesthetic-symbols/", "title": "Ký Hiệu Thẩm Mỹ", "desc": "Sao, lấp lánh và các dấu trang trí cho tiểu sử và tên người dùng." }
+  ]
+}

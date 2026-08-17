@@ -1,0 +1,79 @@
+{
+  "slug": "simbolo-phi",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo Phi: Copia e Incolla φ Φ ϕ — La Lettera della Sezione Aurea Chiamata Così in Onore di Fidia",
+  "meta_description": "Copia e incolla il simbolo phi — la minuscola φ (U+03C6), la maiuscola Φ e la variante matematica chiusa ϕ — la lettera della sezione aurea (≈1,618) che Mark Barr battezzò intorno al 1909 in onore dello scultore Fidia. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-phi/",
+  "breadcrumb": "Simbolo Phi",
+  "hero_h1": "Simbolo Phi",
+  "hero_tagline": "La φ minuscola che rappresenta la sezione aurea (≈1,618), la Φ maiuscola che i fisici usano per il flusso magnetico, e la variante matematica chiusa ϕ — la lettera che Mark Barr battezzò intorno al 1909 in onore dello scultore Fidia. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "Il glifo minuscolo di phi, φ (U+03C6, GREEK SMALL LETTER PHI), è la 21ª lettera dell'alfabeto greco, ma è famosa soprattutto come simbolo della sezione aurea — il numero irrazionale (1 + √5) / 2 ≈ 1,6180339887 che artisti e architetti inseguono da secoli. Questa scelta di nome è sorprendentemente recente: il rapporto veniva a lungo indicato con la lettera greca tau (τ) finché il matematico americano Mark Barr non propose φ intorno al 1909, scegliendola come iniziale di Fidia (Φειδίας, circa 490–430 a.C.), lo scultore legato alle proporzioni del Partenone. Phi porta con sé anche una particolarità che nessun'altra lettera greca qui presente possiede — due glifi minuscoli. La lettera di uso quotidiano φ (U+03C6) si presenta di solito nella forma \"aperta\" e arrotondata, mentre un simbolo greco phi codificato separatamente, ϕ (U+03D5), è la forma \"chiusa\" e barrata — un cerchio attraversato da una linea verticale — che Unicode raccomanda per la matematica fin dalla versione 3.0, anche se quale forma mostri effettivamente un font varia da un carattere tipografico all'altro. La Φ maiuscola (U+03A6) svolge un compito più pesante nelle scienze: è il simbolo standard del flusso magnetico in fisica, mentre la φ minuscola indica la funzione toziente di Eulero, φ(n), in teoria dei numeri.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-phi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-phi-symbol",
+      "label": "Il Simbolo Phi",
+      "h2": "Il Simbolo Phi — φ, Φ e ϕ",
+      "intro": "Le tre forme che si intendono con \"il simbolo phi\": la lettera minuscola di uso quotidiano, la maiuscola e la variante matematica dedicata. Copia quella che ti serve.",
+      "symbols": [
+        { "char": "φ", "label": "Lettera Greca Minuscola Phi (U+03C6) — La Lettera della Sezione Aurea, Forma Aperta \"Loopy\"" },
+        { "char": "Φ", "label": "Lettera Greca Maiuscola Phi (U+03A6) — Flusso Magnetico in Fisica" },
+        { "char": "ϕ", "label": "Simbolo Greco Phi (U+03D5) — La Variante Matematica \"Chiusa\" e Barrata" }
+      ]
+    },
+    {
+      "id": "phi-golden-ratio-math",
+      "label": "Sezione Aurea e Matematica",
+      "h2": "Phi: la Sezione Aurea e gli Usi Matematici",
+      "intro": "Il compito più cercato di phi. La φ minuscola indica la sezione aurea ≈ 1,618, definita come (1 + √5) / 2; dalla versione 3.0 di Unicode, la ϕ chiusa (U+03D5) è il glifo raccomandato per quell'uso matematico, e la Φ maiuscola indica il flusso magnetico.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Minuscola (U+03C6) — Sezione Aurea ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Simbolo Greco Phi (U+03D5) — Il Glifo Chiuso Preferito in Matematica" },
+        { "char": "Φ", "label": "Phi Maiuscola (U+03A6) — Flusso Magnetico" },
+        { "char": "√", "label": "Radice Quadrata (U+221A) — Compare nella Formula di Phi (1 + √5) / 2" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Lettere Greche",
+      "h2": "Lettere Greche Correlate",
+      "intro": "Phi è la 21ª lettera dell'alfabeto greco. Ecco le lettere vicine e le costanti più famose che le persone cercano più spesso insieme a lei.",
+      "symbols": [
+        { "char": "π", "label": "Lettera Greca Minuscola Pi" },
+        { "char": "Σ", "label": "Lettera Greca Maiuscola Sigma" },
+        { "char": "Ω", "label": "Lettera Greca Maiuscola Omega" },
+        { "char": "θ", "label": "Lettera Greca Minuscola Theta" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-greci/",
+      "title": "Simboli Greci",
+      "desc": "L'intero alfabeto greco in maiuscolo, minuscolo e nelle varianti matematiche, da copiare e incollare."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "La sezione aurea, la radice quadrata e gli operatori e le lettere greche che completano un'equazione."
+    },
+    {
+      "href": "/it/symbol/simbolo-pi-greco/",
+      "title": "Simbolo Pi Greco",
+      "desc": "L'altra costante famosa di phi: un'altra lettera greca, π ≈ 3,14159, che rappresenta un numero invece di un suono."
+    }
+  ]
+}

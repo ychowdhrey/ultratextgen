@@ -1,0 +1,85 @@
+{
+  "slug": "kwadrat-i-szescian",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Kwadrat (²) i Sześcian (³): Symbole Potęg do Skopiowania",
+  "meta_description": "Skopiuj symbole kwadratu (²) i sześcianu (³) używane w potęgach oraz skrótach jednostek jak m² i cm³ — i dlaczego działają niemal wszędzie. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/kwadrat-i-szescian/",
+  "breadcrumb": "Kwadrat i Sześcian",
+  "hero_h1": "Kwadrat (²) i Sześcian (³)",
+  "hero_tagline": "Dwie cyfry górnego indeksu starsze niż reszta zestawu — do potęg, skrótów jednostek i zapisu „x do kwadratu”. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "² i ³ (górny indeks dwa i trzy, U+00B2 i U+00B3) to znaki potęg stojące za x², wzorem E=mc² oraz skrótami jednostek jak m² czy cm³. W przeciwieństwie do reszty cyfr górnego indeksu są częścią standardowego zestawu Latin-1 już od lat 80. XX wieku — dlatego wyświetlają się poprawnie w znacznie większej liczbie miejsc niż ⁰, ¹ czy ⁴–⁹, które dodano do Unicode dużo później.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/squared-cubed/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/kwadrat-i-szescian/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/squared-cubed/" }
+  ],
+  "sections": [
+    {
+      "id": "kwadrat-i-szescian",
+      "label": "Kwadrat i Sześcian",
+      "h2": "Symbole Kwadratu i Sześcianu",
+      "intro": "Dwie klasyczne cyfry górnego indeksu, gotowe do wklejenia zaraz po liczbie lub jednostce.",
+      "symbols": [
+        { "char": "²", "label": "Górny Indeks Dwa (Kwadrat)" },
+        { "char": "³", "label": "Górny Indeks Trzy (Sześcian)" }
+      ]
+    },
+    {
+      "id": "pozostale-cyfry-gornego-indeksu",
+      "label": "Pozostałe Cyfry",
+      "h2": "Reszta Cyfr Górnego Indeksu",
+      "intro": "Pozostałe cyfry górnego indeksu — dodane do Unicode znacznie później i w innym bloku niż ² i ³, dlatego bywają mniej stabilne w starszych czcionkach.",
+      "symbols": [
+        { "char": "⁰", "label": "Górny Indeks Zero" },
+        { "char": "¹", "label": "Górny Indeks Jeden" },
+        { "char": "⁴", "label": "Górny Indeks Cztery" },
+        { "char": "⁵", "label": "Górny Indeks Pięć" },
+        { "char": "⁶", "label": "Górny Indeks Sześć" },
+        { "char": "⁷", "label": "Górny Indeks Siedem" },
+        { "char": "⁸", "label": "Górny Indeks Osiem" },
+        { "char": "⁹", "label": "Górny Indeks Dziewięć" }
+      ]
+    },
+    {
+      "id": "skroty-jednostek",
+      "label": "Skróty Jednostek",
+      "h2": "Popularne Skróty Jednostek z Kwadratem i Sześcianem",
+      "intro": "Najczęściej kopiowane, realne zastosowania ² i ³ — jednostki powierzchni i objętości.",
+      "symbols": [
+        { "char": "m²", "label": "Metr Kwadratowy" },
+        { "char": "cm²", "label": "Centymetr Kwadratowy" },
+        { "char": "km²", "label": "Kilometr Kwadratowy" },
+        { "char": "ft²", "label": "Stopa Kwadratowa" },
+        { "char": "m³", "label": "Metr Sześcienny" },
+        { "char": "cm³", "label": "Centymetr Sześcienny" },
+        { "char": "ft³", "label": "Stopa Sześcienna" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-mnozenia/",
+      "title": "Znak Mnożenia (×)",
+      "desc": "Operator „razy” i to, czym różni się od zwykłej litery x."
+    },
+    {
+      "href": "/pl/symbol/pierwiastek-kwadratowy/",
+      "title": "Pierwiastek Kwadratowy (√)",
+      "desc": "Rodowód z 1525 roku i rola kreski (winkulum)."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory, litery greckie i pełny zestaw znaków matematycznych do skopiowania."
+    }
+  ]
+}

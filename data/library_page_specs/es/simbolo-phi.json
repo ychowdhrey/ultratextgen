@@ -1,0 +1,74 @@
+{
+  "lang": "es",
+  "slug": "simbolo-phi",
+  "page_type": "symbol",
+  "title": "Símbolo Phi: Copiar y Pegar φ Φ ϕ — la Letra de la Proporción Áurea que Debe su Nombre a Fidias",
+  "meta_description": "Copia y pega el símbolo phi — la φ minúscula (U+03C6), la Φ mayúscula y la variante matemática cerrada ϕ — la letra de la proporción áurea (≈1,618) que Mark Barr nombró hacia 1909 en honor al escultor Fidias. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/simbolo-phi/",
+  "breadcrumb": "Símbolo Phi",
+  "hero_h1": "Símbolo Phi",
+  "hero_tagline": "La φ minúscula que representa la proporción áurea (≈1,618), la Φ mayúscula que la física usa para el flujo magnético, y la variante matemática cerrada ϕ — la letra que Mark Barr nombró hacia 1909 en honor al escultor Fidias. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El glifo minúsculo de phi, φ (U+03C6, GREEK SMALL LETTER PHI), es la vigesimoprimera letra del alfabeto griego, pero se hizo famosa sobre todo como el símbolo de la proporción áurea — el número irracional (1 + √5) / 2 ≈ 1,6180339887 que artistas y arquitectos llevan siglos persiguiendo. Ese nombre es sorprendentemente reciente: la proporción se escribió durante mucho tiempo con la letra griega tau (τ), hasta que el matemático estadounidense Mark Barr propuso φ hacia 1909, eligiéndola como la primera letra de Fidias (Φειδίας, c. 490–430 a. C.), el escultor vinculado a las proporciones del Partenón. Phi también tiene una particularidad que ninguna otra letra griega de este sitio comparte — dos glifos en minúscula. La letra cotidiana φ (U+03C6) suele representarse en su forma abierta, «con bucle», mientras que un carácter aparte, el símbolo griego phi, ϕ (U+03D5), es la forma «cerrada», con trazo — un círculo cruzado por una línea vertical — que Unicode recomienda para las matemáticas desde la versión 3.0, aunque la forma que muestre cada fuente tipográfica varía. La Φ mayúscula (U+03A6) tiene un trabajo más pesado en las ciencias: es el símbolo estándar del flujo magnético en física, mientras que la φ minúscula marca la función indicatriz de Euler, φ(n), en teoría de números.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-phi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "el-simbolo-phi",
+      "label": "El Símbolo Phi",
+      "h2": "El Símbolo Phi — φ, Φ y ϕ",
+      "intro": "Las tres formas a las que la gente se refiere con «el símbolo phi»: la letra minúscula cotidiana, la mayúscula y la variante matemática dedicada. Pega la que necesites.",
+      "symbols": [
+        { "char": "φ", "label": "Letra Griega Phi Minúscula (U+03C6) — la Letra de la Proporción Áurea, Forma Abierta «con Bucle»" },
+        { "char": "Φ", "label": "Letra Griega Phi Mayúscula (U+03A6) — Flujo Magnético en Física" },
+        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5) — la Variante Matemática Cerrada, con Trazo" }
+      ]
+    },
+    {
+      "id": "phi-proporcion-aurea-y-matematicas",
+      "label": "Proporción Áurea y Matemáticas",
+      "h2": "Phi: la Proporción Áurea y sus Usos Matemáticos",
+      "intro": "El uso más buscado de phi. La φ minúscula nombra la proporción áurea ≈ 1,618, definida como (1 + √5) / 2; desde Unicode 3.0, la ϕ cerrada (U+03D5) es el glifo recomendado para ese uso matemático, y la Φ mayúscula marca el flujo magnético.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Minúscula (U+03C6) — Proporción Áurea ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5) — el Glifo Cerrado Preferido en Matemáticas" },
+        { "char": "Φ", "label": "Phi Mayúscula (U+03A6) — Flujo Magnético" },
+        { "char": "√", "label": "Raíz Cuadrada (U+221A) — Aparece en la Fórmula de Phi (1 + √5) / 2" }
+      ]
+    },
+    {
+      "id": "letras-griegas-relacionadas",
+      "label": "Letras Griegas",
+      "h2": "Letras Griegas Relacionadas",
+      "intro": "Phi es la vigesimoprimera letra del alfabeto griego. Estas son las vecinas y constantes famosas que más se buscan junto a ella.",
+      "symbols": [
+        { "char": "π", "label": "Letra Griega Pi Minúscula" },
+        { "char": "Σ", "label": "Letra Griega Sigma Mayúscula" },
+        { "char": "Ω", "label": "Letra Griega Omega Mayúscula" },
+        { "char": "θ", "label": "Letra Griega Theta Minúscula" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Símbolos de Letras Griegas",
+      "desc": "El alfabeto griego completo en mayúsculas, minúsculas y variantes matemáticas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "La proporción áurea, la raíz cuadrada y los operadores y letras griegas que completan una ecuación."
+    },
+    {
+      "href": "/es/symbol/simbolo-pi/",
+      "title": "Símbolo Pi",
+      "desc": "La otra constante famosa de phi: otra letra griega, π ≈ 3,14159, que representa un número en vez de un sonido."
+    }
+  ]
+}

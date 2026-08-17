@@ -743,6 +743,9 @@
     stopWords: STOPPWOERTER,
     strings: {
       resultPlaceholder: "ستظهر ترجمتك بالإيموجي هنا.",
+      copied: "تم النسخ!",
+      copy: "نسخ",
+      surpriseMe: "🎲 فاجئني",
       inputPlaceholders: {
         default: "اكتب جملتك هنا…",
         decode: "الصق الإيموجي هنا لفك الترميز…"

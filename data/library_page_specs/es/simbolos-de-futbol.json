@@ -1,0 +1,123 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-futbol",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-futbol/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/football-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-de-futbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/football-symbols/" }
+  ],
+  "title": "Símbolos de Fútbol y Combos ⚽🏆 para Copiar y Pegar",
+  "meta_description": "Símbolos de fútbol: pelota, portería, trofeos, tarjetas y combos de partido — ⚽ 🥅 🏆 🟨 🟥 🥇 🐐. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Símbolos de Fútbol",
+  "hero_h1": "Símbolos de Fútbol y Combos",
+  "hero_tagline": "El centro de los símbolos de fútbol: la pelota, la portería, los trofeos, las tarjetas, los campeones y los sets de festejo. Haz clic en cualquier símbolo para copiarlo.",
+  "intro": "Esta es la página base de los símbolos de fútbol. Reúne la pelota y la portería de Unicode, los trofeos y medallas que marcan a un campeón, las tarjetas amarilla y roja del árbitro y los símbolos de festejo que usan los hinchas durante un torneo. Úsalos en nombres de usuario, biografías, banners y publicaciones de día de partido — haz clic en cualquier símbolo para copiarlo.",
+  "sections": [
+    {
+      "id": "core",
+      "label": "Básicos",
+      "h2": "Símbolos de fútbol y balón",
+      "intro": "Lo esencial de la cancha.",
+      "symbols": [
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🏈", "label": "Fútbol americano" },
+        { "char": "🏉", "label": "Pelota de rugby" },
+        { "char": "🥅", "label": "Portería" },
+        { "char": "🏟️", "label": "Estadio" },
+        { "char": "🧤", "label": "Guantes de portero" },
+        { "char": "🚩", "label": "Banderín de córner" }
+      ]
+    },
+    {
+      "id": "champion",
+      "label": "Campeón",
+      "h2": "Símbolos de campeón y trofeos",
+      "intro": "Ganadores, medallas y coronas para la bota de oro y la copa.",
+      "symbols": [
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🥇", "label": "Medalla de oro" },
+        { "char": "🥈", "label": "Medalla de plata" },
+        { "char": "🥉", "label": "Medalla de bronce" },
+        { "char": "🏅", "label": "Medalla deportiva" },
+        { "char": "🎖️", "label": "Medalla militar" },
+        { "char": "👑", "label": "Corona" }
+      ]
+    },
+    {
+      "id": "match",
+      "label": "Partido",
+      "h2": "Goles, tarjetas y símbolos de partido",
+      "intro": "Tarjetas del árbitro, el reloj y las señales del juego.",
+      "symbols": [
+        { "char": "🟨", "label": "Tarjeta amarilla" },
+        { "char": "🟥", "label": "Tarjeta roja" },
+        { "char": "⏱️", "label": "Cronómetro" },
+        { "char": "⚡", "label": "Contragolpe / velocidad" },
+        { "char": "📺", "label": "Pantalla del VAR (televisión)" },
+        { "char": "📋", "label": "Alineación (portapapeles)" },
+        { "char": "📣", "label": "Megáfono" }
+      ]
+    },
+    {
+      "id": "fan",
+      "label": "Hinchada",
+      "h2": "Símbolos de festejo y de hinchada",
+      "intro": "Festejos de gol y aliento de la tribuna.",
+      "symbols": [
+        { "char": "🎉", "label": "Cañón de confeti" },
+        { "char": "🎊", "label": "Bola de confeti" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🐐", "label": "Cabra (el GOAT)" },
+        { "char": "💪", "label": "Bíceps flexionado" },
+        { "char": "✨", "label": "Destellos" },
+        { "char": "🏁", "label": "Bandera a cuadros" }
+      ]
+    },
+    {
+      "id": "dividers",
+      "label": "Separadores",
+      "h2": "Separadores y líneas de fútbol",
+      "intro": "Líneas separadoras con pelota para biografías, publicaciones y banners.",
+      "symbols": [
+        { "char": "⚽▬▬▬▬▬▬▬⚽", "label": "Separador de barras con pelota" },
+        { "char": "•◦•◦⚽◦•◦•", "label": "Separador punteado con pelota" },
+        { "char": "─────⚽─────", "label": "Separador de línea con pelota" },
+        { "char": "✦•·····⚽·····•✦", "label": "Separador con destellos y pelota" },
+        { "char": "▰▰▰▰⚽▰▰▰▰", "label": "Separador de bloques con pelota" },
+        { "char": "═══════⚽═══════", "label": "Separador de doble línea" },
+        { "char": "↞−−−−⚽−−−−↠", "label": "Separador de flechas con pelota" },
+        { "char": "꒰⚽꒱─────────", "label": "Separador de corchetes con pelota" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/soccer-emoji-copy-paste/",
+      "title": "Lista de Emojis de Fútbol",
+      "desc": "El set completo de emojis de fútbol, listo para copiar y pegar."
+    },
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de hinchas."
+    },
+    {
+      "href": "/es/library/emojis-de-deportes/",
+      "title": "Emojis de Deportes",
+      "desc": "Todos los emojis de deportes y actividades, ordenados por categoría."
+    },
+    {
+      "href": "/es/library/emojis-de-fiesta/",
+      "title": "Emojis de Fiesta y Celebración",
+      "desc": "Confeti, fuegos artificiales y emojis de festejo para los grandes momentos."
+    }
+  ]
+}

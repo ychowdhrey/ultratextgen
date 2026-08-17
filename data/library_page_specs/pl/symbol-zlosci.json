@@ -1,0 +1,68 @@
+{
+  "slug": "symbol-zlosci",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Złości: Skopiuj 💢 — Wyjaśniamy Znaczek z Mangi",
+  "meta_description": "Skopiuj symbol złości (💢), czteroramienny znaczek „pękającej żyły” z japońskiej mangi — plus emoji złości i wściekłości, z którymi najczęściej się go łączy.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-zlosci/",
+  "breadcrumb": "Symbol Złości",
+  "hero_h1": "Symbol Złości",
+  "hero_tagline": "💢 U+1F4A2 — czteroramienny krzyżyk rysujący pulsującą żyłę na czole w japońskiej mandze, dziś samodzielne emoji oznaczające „ktoś jest wściekły” wszędzie indziej. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol złości (💢, U+1F4A2) ma prostą, oficjalną unikodową nazwę ANGER SYMBOL, ale jego kształt pochodzi wprost z japońskich komiksów: twórcy mangi rysują mały, krzyżykowaty rozbłysk na czole albo skroni postaci, by przedstawić nabrzmiałą, pulsującą żyłę — skrót myślowy na ledwo powstrzymywaną wściekłość, czytelny natychmiast, nawet gdy twarz postaci pozostaje spokojna. Ta konwencja ma w japońskim własną nazwę, ikari-mark (怒りマーク), i o dekady poprzedza emoji w druku. Do Unicode trafiła w wersji 6.0 (2010 rok) jako jeden z pierwotnych japońskich znaków operatorskich, przejętych w całości z prywatnych zestawów emoji SoftBanku i DoCoMo, obok 💥, 💦 i 💤 — niewielkiego zestawu mangowych znaczków dźwiękowych, które stały się emoji zamiast być zaprojektowane jako emoji od podstaw.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/anger-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-zlosci/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/anger-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-zlosci",
+      "label": "Symbol Złości",
+      "h2": "Symbol Złości (Żyła z Mangi)",
+      "intro": "Sam znaczek żyły oraz efekty z paneli komiksowych, do których rodziny należy.",
+      "symbols": [
+        { "char": "💢", "label": "Symbol Złości" },
+        { "char": "💥", "label": "Zderzenie" },
+        { "char": "💦", "label": "Krople Potu" },
+        { "char": "💤", "label": "Zzz (Śpiący)" }
+      ]
+    },
+    {
+      "id": "wsciekle-twarze",
+      "label": "Wściekłe Twarze",
+      "h2": "Emoji Złości i Wściekłości",
+      "intro": "Miny, z którymi łączy się 💢, by wzmocnić reakcję od zirytowanej po wściekłą.",
+      "symbols": [
+        { "char": "😠", "label": "Zła Twarz" },
+        { "char": "😡", "label": "Twarz Dąsająca się (Wściekłość)" },
+        { "char": "🤬", "label": "Twarz z Symbolami na Ustach" },
+        { "char": "🗯️", "label": "Prawy Dymek Złości" }
+      ]
+    },
+    {
+      "id": "frustracja",
+      "label": "Frustracja",
+      "h2": "Symbole Frustracji i Irytacji",
+      "intro": "Spokojniejsze znaczki na irytację, która jeszcze nie przerodziła się w pełną wściekłość.",
+      "symbols": [
+        { "char": "😤", "label": "Twarz z Parą z Nosa" },
+        { "char": "🙄", "label": "Twarz z Przewróconymi Oczami" },
+        { "char": "😒", "label": "Twarz Znudzona" },
+        { "char": "⚡", "label": "Wysokie Napięcie" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    { "href": "/library/emoji-combos/", "title": "Emoji Combos", "desc": "Gotowe zestawy emoji na różne klimaty i reakcje, w tym kilka zbudowanych wokół złości i wściekłości." },
+    { "href": "/symbol/stop-sign/", "title": "Stop Sign Symbol", "desc": "Kolejne emoji, którego całe znaczenie opiera się na rozpoznawalnym kształcie ze świata realnego, a nie na twarzy." },
+    { "href": "/pl/usecase/zalgo-text/", "title": "Generator Tekstu Glitch (Zalgo)", "desc": "Gdy zwykła zła buźka to za mało — przeklęty tekst zalgo z gotowymi ustawieniami jednym kliknięciem." }
+  ]
+}

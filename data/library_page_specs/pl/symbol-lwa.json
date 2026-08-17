@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-lwa",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Lwa: Skopiuj ♌ — Jedyny Znak Ognia Rządzony Przez Samo Słońce",
+  "meta_description": "Skopiuj symbol zodiakalnego Lwa (♌) i mit o Lwie Nemejskim stojący za tym znakiem — pierwszą pracę Heraklesa i to, dlaczego Lew to jeden z tylko dwóch znaków rządzonych przez ciało niebieskie, a nie planetę. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-lwa/",
+  "breadcrumb": "Symbol Lwa",
+  "hero_h1": "Symbol Lwa",
+  "hero_tagline": "Glif Lwa (♌) sięga do Lwa Nemejskiego, niewrażliwej na ciosy bestii, którą Herakles udusił gołymi rękami w swojej pierwszej pracy — a Lew to jeden z tylko dwóch znaków zodiaku rządzonych przez ciało niebieskie, Słońce, a nie przez planetę. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Lwa (♌, U+264C) to stylizowana głowa i grzywa lwa. Jego mit to Lew Nemejski, niewrażliwa na ciosy bestia, z którą Herakles zmierzył się jako z pierwszą z dwunastu prac — nie mogąc przebić jego skóry bronią, udusił go gołymi rękami, po czym umieścił wśród gwiazd. Lew trwa od 23 lipca do 22 sierpnia, jest znakiem Ognia o modalności stałej i jest rządzony przez samo Słońce — co czyni go jednym z tylko dwóch znaków zodiaku (obok rządzonego przez Księżyc Raka) sterowanych przez ciało niebieskie, a nie jedną z tradycyjnych planet.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/leo-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-lwa/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/leo-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-lwa",
+      "label": "Lew",
+      "h2": "Symbol Lwa",
+      "intro": "Unicode'owy glif zodiakalnego Lwa, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♌", "label": "Symbol Lwa" },
+        { "char": "♌️", "label": "Symbol Lwa (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Lwu.",
+      "symbols": [
+        { "char": "☉", "label": "Słońce (Planeta Rządząca)" },
+        { "char": "🜂", "label": "Ogień (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Lwa (Wodnik).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♒", "label": "Wodnik (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-wodnika/",
+      "title": "Symbol Wodnika",
+      "desc": "Astrologiczne przeciwieństwo Lwa, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-byka/",
+      "title": "Symbol Byka",
+      "desc": "Prawdopodobnie najstarszy nieprzerwanie śledzony gwiazdozbiór w całym zodiaku."
+    }
+  ]
+}

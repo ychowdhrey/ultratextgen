@@ -1,0 +1,141 @@
+{
+  "slug": "lambda-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Lambda Sembolü: Kopyala Yapıştır λ Λ — Eşcinsel Özgürleşme İşareti ve Church'ün Lambda Hesabı",
+  "meta_description": "Lambda sembolünü kopyala yapıştır — küçük λ (dalga boyu, 1970'in eşcinsel özgürleşme işareti) ve büyük Λ (kozmolojik sabit) — ayrıca Python'un lambda'sını ve AWS Lambda'yı nasıl adlandırdığı. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/lambda-sembolu/",
+  "breadcrumb": "Lambda Sembolü",
+  "hero_h1": "Lambda Sembolü",
+  "hero_tagline": "Grafik tasarımcı Tom Doerr'in 1970'te eşcinsel özgürleşme amblemine dönüştürdüğü küçük λ, Alonzo Church'ün lambda hesabının ve fizikte dalga boyunun ardındaki aynı harf, ve kozmolojik sabiti simgeleyen büyük Λ. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Lambda'nın küçük harf glifi λ (U+03BB, GREEK SMALL LETTER LAMDA), Yunan alfabesinin 11. harfidir — ama tek bir karakterin taşıyabileceği en ağır iki anlamdan ikisini birden yüklenir. 1970'te, Aralık 1969'da New York'ta kurulan Gay Activists Alliance'ın (Eşcinsel Aktivistler İttifakı) kurucu üyelerinden grafik tasarımcı Tom Doerr, küçük λ'yı grubun amblemi olarak seçti — söylenene göre \"enerjinin tam bir alışverişi\" anlamına gelen fizik anlamından esinlenerek — ve Aralık 1974'e gelindiğinde Edinburgh'daki Uluslararası Eşcinsel Hakları Kongresi bunu eşcinsel ve lezbiyen hakları için uluslararası bir sembol ilan etmişti; hâlâ Lambda Legal ve Lambda Literary Foundation'a adını vermektedir. Aynı harf bilgisayar biliminde de bir dayanak noktasıdır: Alonzo Church, 1930'larda lambda hesabını inşa etti — bu biçimsel sistem daha sonra Python'a isimsiz fonksiyonlar için lambda anahtar sözcüğünü (1994'te eklendi) ve Amazon'a AWS Lambda sunucusuz hizmetini kazandırdı. Fizikte λ dalga boyunun standart sembolüdür, büyük harf Λ (U+039B) ise kozmolojik sabiti — genişleyen evrenin ΛCDM modelindeki karanlık enerji terimini — belirtir. İki biçim de 1993'te Unicode 1.1 ile standarda girdi.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-lambda-letter",
+      "label": "Harf",
+      "h2": "Lambda Sembolü — λ ve Λ",
+      "intro": "Yunan harfinin kendisi — alfabenin 11. harfi, Yunan sayı sisteminde 30 değerinde, Fenike harfi lamed'den türemiştir. Küçük λ kültürel işin neredeyse tamamını yürütür; büyük Λ ise ayrı bir matematik ve kozmoloji sembolüdür.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB)"
+        },
+        {
+          "char": "Λ",
+          "label": "Greek Capital Letter Lambda (U+039B)"
+        }
+      ]
+    },
+    {
+      "id": "gay-liberation-symbol",
+      "label": "Eşcinsel Özgürleşmesi",
+      "h2": "Bir Eşcinsel Özgürleşme Sembolü Olarak Lambda",
+      "intro": "New York'un Gay Activists Alliance'ı küçük λ'yı 1970'te benimsedi, 1974'te ise Uluslararası Eşcinsel Hakları Kongresi bunu eşcinsel ve lezbiyen hakları için uluslararası bir sembol ilan etti — hareketin en eski amblemlerinden biri. Bugün yanında yer aldığı gurur glifleriyle birlikte kopyala.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB) — Eşcinsel Özgürleşme İşareti"
+        },
+        {
+          "char": "🏳️‍🌈",
+          "label": "Rainbow Flag"
+        },
+        {
+          "char": "⚧",
+          "label": "Transgender Symbol (U+26A7)"
+        }
+      ]
+    },
+    {
+      "id": "lambda-code-science",
+      "label": "Kod ve Bilim",
+      "h2": "Kod, Matematik ve Fizikte Lambda",
+      "intro": "Harfin teknik yaşamı. Küçük λ, Alonzo Church'ün lambda hesabından Python'un lambda anahtar sözcüğüne ve AWS Lambda'ya uzanan isimsiz fonksiyonları işaretler, ayrıca fizikte dalga boyunu simgeler; büyük Λ ise ΛCDM modelinin kozmolojik sabitidir.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB) — Dalga Boyu ve Lambda Hesabı"
+        },
+        {
+          "char": "Λ",
+          "label": "Greek Capital Letter Lambda (U+039B) — Kozmolojik Sabit"
+        },
+        {
+          "char": "𝜆",
+          "label": "Mathematical Italic Lambda (U+1D706) — Denklem Varyantı"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Yunan Harfleri",
+      "h2": "İlgili Yunan Harfleri",
+      "intro": "Lambda, Yunan alfabesinin 11. harfidir. İşte onun yanında en çok kopyalanan komşu harfler.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/yunan-alfabesi-sembolleri/",
+      "title": "Yunan Alfabesi Sembolleri",
+      "desc": "Alfa, lambda, pi, sigma, omega — tam Yunan alfabesi büyük ve küçük harflerle kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "Dalga boyu, kozmolojik sabit ve bir denklemi tamamlayan işleçler ile Yunan harfleri."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Gurur ve LGBTQ+ Sembolleri",
+      "desc": "Lambda, gökkuşağı, labrys ve LGBTQ+ kimliğinin diğer amblemleri, kopyalamak için tek yerde."
+    },
+    {
+      "href": "/tr/symbol/pi-sembolu/",
+      "title": "Pi Sembolü",
+      "desc": "Matematiğin çok ötesinde bir hayatı olan bir başka Yunan harfi — William Jones'un 1706'da adlandırdığı sabit."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/lambda-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

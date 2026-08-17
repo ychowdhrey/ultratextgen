@@ -1,0 +1,137 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "em-streep",
+  "title": "Em-streep (—): Kopieer en Plak + Waarom het het ‘AI-schrijf’-signaal Werd",
+  "meta_description": "Kopieer en plak de em-streep (—, ook wel kastlijn genoemd), zie het verschil met de en-streep (–), het koppelteken en het minteken, en waarom het een AI-schrijf-signaal werd. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/em-streep/",
+  "breadcrumb": "Em-streep",
+  "hero_h1": "Em-streep (—)",
+  "hero_tagline": "De lange em-streep (—) — ook bekend als kastlijn — die een onderbreking, een dramatische pauze of een tussenzin markeert, en het leesteken achter de discussie van 2025 over of lange streepjes een teken van AI-geschreven tekst zijn. Klik op een teken om het direct te kopiëren.",
+  "intro": "De em-streep (—, Unicode U+2014), in de Nederlandse typografie ook wel de kastlijn genoemd, is de lange streep die schrijvers gebruiken om een plotselinge onderbreking, een dramatische pauze of een tussenzin af te bakenen — ongeveer de taak van een komma, dubbele punt of haakjes. Het is ook het teken dat centraal staat in een aanhoudende discussie over AI-geschreven tekst, en het teken dat het vaakst wordt verward met de kortere en-streep en het gewone toetsenbord-koppelteken.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/em-dash/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/em-streep/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/em-dash/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "em-streep",
+      "label": "Em-streep",
+      "h2": "Em-streep, Dubbele & Drievoudige Kastlijn",
+      "intro": "De em-streep en zijn dubbel- en drievoud-brede redactionele neven — de bredere varianten markeren weggelaten tekst en herhaalde auteursnamen in bibliografieën. Overal direct te plakken.",
+      "symbols": [
+        {
+          "char": "—",
+          "label": "Em-streep (Kastlijn)"
+        },
+        {
+          "char": "⸺",
+          "label": "Dubbele Em-streep"
+        },
+        {
+          "char": "⸻",
+          "label": "Drievoudige Em-streep"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-streepjes",
+      "label": "Verwarrende Streepjes",
+      "h2": "Streepjes en Koppeltekens waarmee het Verward Wordt",
+      "intro": "De kortere tekens waarmee de em-streep per ongeluk wordt verwisseld — elk met een eigen breedte, codepunt en taak.",
+      "symbols": [
+        {
+          "char": "–",
+          "label": "En-streep"
+        },
+        {
+          "char": "-",
+          "label": "Koppelteken (Toetsenbord)"
+        },
+        {
+          "char": "‐",
+          "label": "Koppelteken (Typografisch)"
+        },
+        {
+          "char": "−",
+          "label": "Minteken"
+        },
+        {
+          "char": "‒",
+          "label": "Cijferstreepje (Figure Dash)"
+        },
+        {
+          "char": "―",
+          "label": "Horizontale Balk (Aanhalingsstreep)"
+        }
+      ]
+    },
+    {
+      "id": "verwante-interpunctie",
+      "label": "Verwante Interpunctie",
+      "h2": "Verwante Interpunctie- & Pauzetekens",
+      "intro": "Tekens met een verwante taak — de komma, dubbele punt en haakjes die een em-streep vaak vervangt, plus de puntkomma en het beletselteken waar hij soms mee wordt gegroepeerd.",
+      "symbols": [
+        {
+          "char": ",",
+          "label": "Komma"
+        },
+        {
+          "char": ":",
+          "label": "Dubbele Punt"
+        },
+        {
+          "char": "(",
+          "label": "Haakje Openen"
+        },
+        {
+          "char": ")",
+          "label": "Haakje Sluiten"
+        },
+        {
+          "char": ";",
+          "label": "Puntkomma"
+        },
+        {
+          "char": "…",
+          "label": "Beletselteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Em-strepen, en-strepen, koppeltekens en mintekens naast elkaar in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Speciale Tekens",
+      "desc": "Aanhalingstekens, streepjes, haakjes en andere alledaagse interpunctie in Unicode."
+    },
+    {
+      "href": "/nl/symbol/alinea-teken/",
+      "title": "Alineateken (¶)",
+      "desc": "Het paragraafteken — nog een redactioneel typografisch teken met een lange druk-geschiedenis."
+    }
+  ]
+}

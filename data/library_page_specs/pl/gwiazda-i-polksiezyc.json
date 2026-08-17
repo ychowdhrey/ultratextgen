@@ -1,0 +1,87 @@
+{
+  "slug": "gwiazda-i-polksiezyc",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Gwiazda i Półksiężyc: Skopiuj ☪ — Emblemat Osmański, Nie Symbol Koraniczny",
+  "meta_description": "Skopiuj gwiazdę i półksiężyc (☪, U+262A) — emblemat na fladze kojarzony z islamem, który w rzeczywistości wywodzi się od Osmanów, nie z Koranu. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/gwiazda-i-polksiezyc/",
+  "breadcrumb": "Gwiazda i Półksiężyc",
+  "hero_h1": "Gwiazda i Półksiężyc (☪)",
+  "hero_tagline": "Gwiazda i półksiężyc (☪ ☪️) — motyw księżyca i gwiazdy powiewający na flagach Turcji, Pakistanu, Algierii i Tunezji, znak, który większość ludzi odczytuje jako „islam”, mimo że wywodzi się z emblematów osmańskich i przedislamskich, a nie z pisma świętego. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Gwiazda i półksiężyc (☪, U+262A) to motyw sierpa księżyca i pięcioramiennej gwiazdy, który dziś większość ludzi odczytuje jako symbol islamu — a jednak nie pojawia się nigdzie w Koranie ani w hadisach, a wielu muzułmanów w ogóle odrzuca go jako symbol religijny. Jego korzenie sięgają znacznie dalej niż islam: połączenie półksiężyca z gwiazdą było starożytną ikonografią Bliskiego Wschodu, kojarzoną w Mezopotamii z bogiem księżyca Sin i boginią Isztar (Wenus, gwiazdą poranną), i krążyło na monetach greckiego miasta Bizancjum wieki przed naszą erą. Wersja znana dziś światu wywodzi się z Imperium Osmańskiego, które przyjęło ją jako emblemat państwowy pod koniec XVIII wieku — za sułtanów od Mustafy III (1757–1774) po Selima III (1789–1807) — a czerwona flaga ustandaryzowana w 1844 roku stała się wzorem dla współczesnej flagi Turcji. Dopiero w XX wieku, dzięki pozycji Osmanów jako czołowego mocarstwa islamskiego, znak zaczął być szeroko kojarzony z samym islamem. Unicode koduje go jako U+262A STAR AND CRESCENT, dodany w wersji 1.1 w 1993 roku; forma emoji ☪️ dodaje selektor wariantu (U+262A U+FE0F). Dziś pojawia się na flagach Turcji, Pakistanu, Algierii, Tunezji i Azerbejdżanu, między innymi.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/gwiazda-i-polksiezyc/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+  ],
+  "sections": [
+    {
+      "id": "gwiazda-i-polksiezyc",
+      "label": "Gwiazda i Półksiężyc",
+      "h2": "Symbol Gwiazdy i Półksiężyca — ☪ i ☪️",
+      "intro": "Unicode'owa gwiazda i półksiężyc, gotowa do wklejenia w bio, poście czy na profilu. Dwie formy: zwykły czarny glif i pełnokolorowe emoji.",
+      "symbols": [
+        { "char": "☪", "label": "Gwiazda i Półksiężyc (U+262A)" },
+        { "char": "☪️", "label": "Emoji Gwiazdy i Półksiężyca (U+262A U+FE0F)" }
+      ]
+    },
+    {
+      "id": "polksiezyc-i-gwiazda-osobno",
+      "label": "Osobno",
+      "h2": "To Nie To Samo Co Zwykły Półksiężyc albo Gwiazda",
+      "intro": "Gwiazda i półksiężyc to jeden, połączony glif. Osobne znaki półksiężyca i gwiazdy, po które ludzie sięgają zamiast niego, mają własne punkty kodowe i własne zadania.",
+      "symbols": [
+        { "char": "☾", "label": "Ostatnia Kwadra Księżyca (U+263E) — Zwykły Półksiężyc" },
+        { "char": "☽", "label": "Pierwsza Kwadra Księżyca (U+263D)" },
+        { "char": "🌙", "label": "Emoji Sierpa Księżyca (U+1F319)" },
+        { "char": "⭐", "label": "Biała Gwiazda Średnia (U+2B50)" },
+        { "char": "★", "label": "Czarna Gwiazda (U+2605)" },
+        { "char": "☆", "label": "Biała Gwiazda (U+2606)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-wiary",
+      "label": "Symbole Wiary",
+      "h2": "Inne Symbole Wiary, z Którymi Bywa Grupowana",
+      "intro": "Gwiazda i półksiężyc jest zwykle wyszukiwana i pokazywana obok symboli tożsamości innych światowych religii. Oto te, obok których stoi najczęściej.",
+      "symbols": [
+        { "char": "✡️", "label": "Gwiazda Dawida (U+2721)" },
+        { "char": "✝️", "label": "Krzyż Łaciński (U+271D)" },
+        { "char": "☸️", "label": "Koło Dharmy (U+2638)" },
+        { "char": "🕉️", "label": "Om (U+1F549)" },
+        { "char": "☯️", "label": "Yin Yang (U+262F)" },
+        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary z każdej większej światowej religii w jednym przeglądalnym zestawie."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "Gwiazda i półksiężyc obok kaligrafii Allah, meczetu, modlitwy i innych symboli związanych z islamem."
+    },
+    {
+      "href": "/pl/symbol/gwiazda-dawida/",
+      "title": "Gwiazda Dawida (✡)",
+      "desc": "Kolejny emblemat wiary znany głównie z flagi narodowej, o wspólnej geometrii znacznie starszej niż religia, którą dziś reprezentuje."
+    },
+    {
+      "href": "/pl/symbol/hamsa/",
+      "title": "Symbol Hamsa",
+      "desc": "Dłoń Fatimy — ochronny znak wspólny dla islamu i judaizmu, który, podobnie jak gwiazda i półksiężyc, nie ma nakazu w piśmie świętym."
+    }
+  ]
+}

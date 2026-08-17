@@ -1,0 +1,296 @@
+{
+  "slug": "st-patricks-day",
+  "event_name": "St Patrick's Day",
+  "aliases": [
+    "Saint Patrick's Day",
+    "Paddy's Day",
+    "St Paddy's Day"
+  ],
+  "title": "St Patrick's Day Fonts, Symbols & Irish Sayings | UltraTextGen",
+  "meta_description": "Style a St Patrick's Day message live, copy shamrock, clover, and rainbow emoji, Celtic symbols, kaomoji, ASCII art, and ready-made Irish blessings and toasts to paste anywhere.",
+  "hero_h1": "St Patrick's Day Text & Symbol Generator",
+  "hero_tagline": "Type a name or toast and style it in Celtic, gothic, and bold fonts, then copy shamrock, clover, and rainbow emoji, kaomoji, and ASCII art — or tap a ready-made Irish blessing to style it instantly.",
+  "intro": "St Patrick's Day runs on a small, well-worn set of words: a blessing, a toast, and a joke about being pinched for not wearing green. This page gathers everything for styling them: curated Celtic-leaning and bold fonts you can preview on your own text, the shamrock, clover, and rainbow emoji people actually paste, Celtic knot and cross symbols, kaomoji, a few original ASCII art pieces, and a bank of Irish blessings, toasts, and captions — from the full \"May the road rise up to meet you\" to a two-word story caption.",
+  "date_window": "March 17 every year",
+  "hub_card_desc": "Style a St Patrick's Day toast live, then copy matching fonts, symbols, kaomoji, and ready-made blessings.",
+  "sample_phrase": "Happy St Patrick's Day",
+  "canonical": "https://ultratextgen.com/events/st-patricks-day/",
+  "occurrence": {
+    "type": "fixed",
+    "month": 3,
+    "day": 17
+  },
+  "fonts": {
+    "curated_keys": [
+      "Ultra Gothic",
+      "Ultra Gothic Bold",
+      "Ultra Old English Banner",
+      "Ultra Script Bold",
+      "Ultra Bold Serif",
+      "Ultra Small Caps",
+      "Ultra Double-Struck",
+      "Ultra Bold",
+      "Ultra Gothic Script",
+      "Ultra Squared"
+    ],
+    "min_count": 8
+  },
+  "emoji_symbol_collections": [
+    {
+      "name": "St Patrick's Day Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": [
+        "🍀",
+        "☘️",
+        "🌈",
+        "🍺",
+        "🍻",
+        "💚",
+        "🎩",
+        "🪙",
+        "🇮🇪",
+        "🥔",
+        "🎻",
+        "✨",
+        "🧝",
+        "🌿"
+      ]
+    },
+    {
+      "name": "Celtic & Green Symbols",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": [
+        "☘",
+        "✤",
+        "✥",
+        "❦",
+        "❧",
+        "⚜",
+        "✠",
+        "☓",
+        "♣",
+        "❁",
+        "✿",
+        "❀"
+      ]
+    }
+  ],
+  "kaomoji": [
+    {
+      "text": "(づ￣ ³￣)づ",
+      "label": "cheers"
+    },
+    {
+      "text": "٩(^‿^)۶",
+      "label": "celebrating"
+    },
+    {
+      "text": "( ˘▽˘)っ♨",
+      "label": "pint in hand"
+    },
+    {
+      "text": "(•̀ᴗ•́)و",
+      "label": "lucky"
+    },
+    {
+      "text": "☘( ˆ◡ˆ)☘",
+      "label": "shamrocks"
+    },
+    {
+      "text": "(ノ^_^)ノ",
+      "label": "dancing"
+    }
+  ],
+  "ascii_art": {
+    "items": [
+      {
+        "art": "   _\\|/_\n  (  o  )\n   \\_|_/\n     |",
+        "label": "Shamrock"
+      },
+      {
+        "art": "  ☘   ☘   ☘\n ☘   ☘   ☘\n  ☘   ☘   ☘",
+        "label": "Clover field"
+      },
+      {
+        "art": "╔══════════════╗\n║  LUCK OF THE ║\n║     IRISH    ║\n╚══════════════╝",
+        "label": "Luck of the Irish banner"
+      },
+      {
+        "art": "   ___\n  |   |\n  |___|\n /_____\\",
+        "label": "Top hat"
+      },
+      {
+        "art": " .-~~~-.\n(  o o  )\n \\  ~  /\n  '---'",
+        "label": "Leprechaun"
+      },
+      {
+        "art": "✧･ﾟ ☘ HAPPY ST PADDY'S ☘ ･ﾟ✧",
+        "label": "Sparkle line"
+      }
+    ]
+  },
+  "phrase_bank": [
+    {
+      "text": "Happy St Patrick's Day",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Luck of the Irish",
+      "group": "Classic greetings",
+      "translation": "The most-reached-for phrase of the day."
+    },
+    {
+      "text": "Erin Go Bragh",
+      "group": "Classic greetings",
+      "translation": "Ireland Forever — an anglicised Irish rallying phrase."
+    },
+    {
+      "text": "Sláinte",
+      "group": "Classic greetings",
+      "native_script": "Sláinte",
+      "romanization": "SLAWN-cha",
+      "translation": "Health — the standard Irish toast, said before drinking.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy Paddy's Day",
+      "group": "Classic greetings",
+      "translation": "What people in Ireland actually say — never 'Patty's'."
+    },
+    {
+      "text": "Happy St Patrick's Day to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
+    },
+    {
+      "text": "Sláinte to that",
+      "group": "Replies",
+      "translation": "Returning a toast."
+    },
+    {
+      "text": "May the road rise up to meet you",
+      "group": "Irish blessings",
+      "translation": "The opening line of the best-known Irish blessing."
+    },
+    {
+      "text": "May the wind be always at your back",
+      "group": "Irish blessings",
+      "translation": "The second line — pairs with the one above."
+    },
+    {
+      "text": "May your troubles be less and your blessings be more",
+      "group": "Irish blessings",
+      "translation": "Complete blessing in one line."
+    },
+    {
+      "text": "May your glass be ever full",
+      "group": "Irish blessings",
+      "translation": "Toast-shaped blessing."
+    },
+    {
+      "text": "May you be in heaven half an hour before the devil knows you're dead",
+      "group": "Irish blessings",
+      "translation": "The classic cheeky blessing."
+    },
+    {
+      "text": "Happy St Patrick's Day to the whole family",
+      "group": "For family",
+      "translation": "Family card wording."
+    },
+    {
+      "text": "Wishing you luck and a bit of mischief",
+      "group": "For family",
+      "translation": "Light family message."
+    },
+    {
+      "text": "Green from head to toe today",
+      "group": "For family",
+      "translation": "For a kids' photo."
+    },
+    {
+      "text": "Get your green on",
+      "group": "For friends",
+      "translation": "Group-chat reminder."
+    },
+    {
+      "text": "Pinch-proof and ready",
+      "group": "For friends",
+      "translation": "Nods to the no-green pinching rule."
+    },
+    {
+      "text": "Shamrock and roll",
+      "group": "For friends",
+      "translation": "The pun that always lands."
+    },
+    {
+      "text": "First round's on me",
+      "group": "For friends",
+      "translation": "Short and generous."
+    },
+    {
+      "text": "Feeling lucky, acting reckless",
+      "group": "For friends",
+      "translation": "Playful night-out line."
+    },
+    {
+      "text": "Happy St Patrick's Day from all of us",
+      "group": "Formal & work",
+      "translation": "Safe for a team or company post."
+    },
+    {
+      "text": "Wishing you a lucky St Patrick's Day",
+      "group": "Formal & work",
+      "translation": "The safe-for-work version."
+    },
+    {
+      "text": "Happy St Patrick's Day",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Shamrockin'",
+      "group": "Short for a caption",
+      "translation": "One word, high energy."
+    },
+    {
+      "text": "Feeling lucky",
+      "group": "Short for a caption",
+      "translation": "Two words, works in any bio."
+    },
+    {
+      "text": "Green with envy",
+      "group": "Short for a caption",
+      "translation": "Pun caption for an outfit photo."
+    },
+    {
+      "text": "Chasing rainbows",
+      "group": "Short for a caption",
+      "translation": "Softer caption option."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower & Leaf Symbols",
+      "desc": "Clover, floral, and leaf characters to copy and paste."
+    },
+    {
+      "href": "/category/gothic-fonts/",
+      "title": "Gothic Fonts",
+      "desc": "Blackletter styles that suit a Celtic look."
+    },
+    {
+      "href": "/category/old-english-fonts/",
+      "title": "Old English Fonts",
+      "desc": "Blackletter and Celtic-leaning styles for a name or toast."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Turn any word or name into a live block-letter banner."
+    }
+  ]
+}

@@ -110,7 +110,7 @@
       const chip = el("button", "uname-chip symbol-tile");
       chip.type = "button";
       chip.setAttribute("data-symbol", composed);
-      chip.setAttribute("aria-label", "Salin nama");
+      chip.setAttribute("aria-label", text.copyLabel || "Copy name");
       chip.textContent = composed;
       card.appendChild(chip);
 
@@ -145,8 +145,8 @@
     function render() {
       const pair = currentPair();
       output.innerHTML = "";
-      output.appendChild(buildCard(text.labelA || "Kamu", pair.a));
-      output.appendChild(buildCard(text.labelB || "Pasangan", pair.b));
+      output.appendChild(buildCard(text.labelA || "You", pair.a));
+      output.appendChild(buildCard(text.labelB || "Partner", pair.b));
     }
 
     // ---- Wiring ---------------------------------------------------------

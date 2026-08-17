@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghtrusecas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhtrusecas" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhtrusecas" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshtrusecas" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshtrusecas)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhtrusecas)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhtrusecas)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghtrusecas)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="20.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">✿ <tspan font-family="FreeSerif">𝓚𝓪𝓯𝓪𝓭𝓪𝓻𝓵𝓪𝓻</tspan> ✿</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="13.8" fill="#8b5cf6" text-anchor="middle" opacity="0.95"><tspan font-family="Noto Sans Javanese">꧁</tspan> <tspan font-family="FreeSerif">𝟮𝟬𝟮𝟲</tspan> <tspan font-family="FreeSerif">𝓜𝓮𝔃𝓾𝓷𝓵𝓪𝓻𝓲</tspan> <tspan font-family="Noto Sans Javanese">꧂</tspan></text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Unifont">꒰</tspan> <tspan font-family="FreeSerif">𝓖𝓪𝓷𝓰</tspan> <tspan font-family="Unifont">꒱</tspan></text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <rect x="34" y="70" width="292" height="232" rx="30" fill="url(#ghtrusecas)" opacity="0.10"/>
+    <text x="180" y="116" font-family="DejaVu Sans, sans-serif" font-size="20.0" fill="#1a1a2e" text-anchor="middle" opacity="1.0">✿ <tspan font-family="FreeSerif">𝓚𝓪𝓯𝓪𝓭𝓪𝓻𝓵𝓪𝓻</tspan> ✿</text><text x="180" y="194" font-family="DejaVu Sans, sans-serif" font-size="13.8" fill="#8b5cf6" text-anchor="middle" opacity="0.95"><tspan font-family="Noto Sans Javanese">꧁</tspan> <tspan font-family="FreeSerif">𝟮𝟬𝟮𝟲</tspan> <tspan font-family="FreeSerif">𝓜𝓮𝔃𝓾𝓷𝓵𝓪𝓻𝓲</tspan> <tspan font-family="Noto Sans Javanese">꧂</tspan></text><text x="180" y="272" font-family="DejaVu Sans, sans-serif" font-size="26.0" fill="#64748b" text-anchor="middle" opacity="0.85"><tspan font-family="Unifont">꒰</tspan> <tspan font-family="FreeSerif">𝓖𝓪𝓷𝓰</tspan> <tspan font-family="Unifont">꒱</tspan></text></g>
+</svg>

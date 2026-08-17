@@ -1,0 +1,92 @@
+{
+  "slug": "symbol-piona",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Piona: Skopiuj ♟ ♙ — Żołnierz Piechoty, Który Może Zostać Hetmanem",
+  "meta_description": "Skopiuj symbol piona — czarny ♟ (U+265F) i biały ♙ (U+2659) — najniżej wartościowaną bierkę w szachach, nazwaną od żołnierza piechoty, która może się przemienić w hetmana. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-piona/",
+  "breadcrumb": "Symbol Piona",
+  "hero_h1": "Symbol Piona (♟ ♙)",
+  "hero_tagline": "Czarny ♟ i biały ♙ pion szachowy — najniżej wartościowana bierka na szachownicy, piechur, który może dojść do ostatniej linii i zamienić się w hetmana. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol piona występuje w dwóch formach Unicode — czarnej ♟ (U+265F, BLACK CHESS PAWN) i białej ♙ (U+2659, WHITE CHESS PAWN) — obie należą do bloku Miscellaneous Symbols, obok pełnego, 12-bierkowego kompletu szachowego od U+2654 do U+265F. Angielskie słowo „pawn” wywodzi się z anglo-francuskiego „poun” i starofrancuskiego „peon”, od średniowiecznej łaciny „pedonem” (żołnierz pieszy), ostatecznie od łacińskiego „pes”, stopa — pion był dosłownie piechotą szachownicy. To najniżej wartościowana bierka w szachach, warta 1 punkt w standardowym systemie, gdzie skoczek albo goniec to 3 punkty, wieża 5, a hetman 9. To też jedyna bierka, która porusza się i bije inaczej: idzie o jedno pole prosto do przodu — albo o dwa przy pierwszym ruchu — ale bije wyłącznie po skosie, i może zostać zbity „w przelocie” przez pionek przeciwnika, którego próbuje minąć. Gdy dotrze do ostatniej linii, pion przemienia się w hetmana, wieżę, gońca albo skoczka — w cokolwiek poza królem, i nie może pozostać pionem. W notacji pion oznaczany jest jako „P” (biały) albo „p” (czarny) w FEN, a w zapisie algebraicznym nie nosi żadnej litery — tylko pole docelowe. Już w latach 80. XVI wieku „pawn” stało się w angielskim codzienną metaforą osoby wykorzystywanej jako jednorazowe narzędzie w cudzej grze.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-piona/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-piona",
+      "label": "Symbol Piona",
+      "h2": "Symbol Piona — ♟ i ♙",
+      "intro": "Dwa glify piona. Pełny czarny ♟ to ten, którego wklejają najczęściej; konturowy biały ♙ to jego jasny bliźniak. Oba to pojedyncze znaki Unicode, gotowe do wklejenia w dowolnym tekście.",
+      "symbols": [
+        { "char": "♟", "label": "Czarny Pion Szachowy (U+265F)" },
+        { "char": "♙", "label": "Biały Pion Szachowy (U+2659)" }
+      ]
+    },
+    {
+      "id": "czarne-bierki",
+      "label": "Czarne Bierki",
+      "h2": "Drużyna Czarnego Piona",
+      "intro": "Reszta czarnej strony ustawionej za pionem — król, hetman, wieża, goniec i skoczek, w tym samym bloku Unicode od U+265A do U+265E.",
+      "symbols": [
+        { "char": "♚", "label": "Czarny Król Szachowy (U+265A)" },
+        { "char": "♛", "label": "Czarny Hetman Szachowy (U+265B)" },
+        { "char": "♜", "label": "Czarna Wieża Szachowa (U+265C)" },
+        { "char": "♝", "label": "Czarny Goniec Szachowy (U+265D)" },
+        { "char": "♞", "label": "Czarny Skoczek Szachowy (U+265E)" }
+      ]
+    },
+    {
+      "id": "biale-bierki",
+      "label": "Białe Bierki",
+      "h2": "Białe Bierki Szachowe",
+      "intro": "Konturowy biały komplet stojący naprzeciw czarnego piona po drugiej stronie szachownicy, zajmujący pola od U+2654 do U+2658 — hetman, którego pion może kiedyś się obawiać, i król, którym nigdy nie może się stać.",
+      "symbols": [
+        { "char": "♔", "label": "Biały Król Szachowy (U+2654)" },
+        { "char": "♕", "label": "Biały Hetman Szachowy (U+2655)" },
+        { "char": "♖", "label": "Biała Wieża Szachowa (U+2656)" },
+        { "char": "♗", "label": "Biały Goniec Szachowy (U+2657)" },
+        { "char": "♘", "label": "Biały Skoczek Szachowy (U+2658)" }
+      ]
+    },
+    {
+      "id": "promocja-piona",
+      "label": "Przemiana",
+      "h2": "W Co Może Zamienić Się Pion",
+      "intro": "Pion, który dotrze do przeciwległego końca szachownicy, musi się przemienić — w hetmana, wieżę, gońca albo skoczka we własnym kolorze. Nigdy nie może stać się królem i nie może pozostać pionem. Hetman to zwykły wybór; wszystko inne to „podpromocja”.",
+      "symbols": [
+        { "char": "♛", "label": "Czarny Hetman Szachowy (U+265B) — zwykła przemiana" },
+        { "char": "♜", "label": "Czarna Wieża Szachowa (U+265C)" },
+        { "char": "♝", "label": "Czarny Goniec Szachowy (U+265D)" },
+        { "char": "♞", "label": "Czarny Skoczek Szachowy (U+265E) — podpromocja" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "Pełny unicode'owy komplet szachowy — króle, hetmany, wieże, gońce, skoczki i oba piony — w jednym miejscu do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/symbol-pika/",
+      "title": "Symbol Pika",
+      "desc": "Inne bierki gier planszowych, sąsiadujące z szachami w unikodowym bloku Miscellaneous Symbols."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Korony, trony i insygnia — pasujące towarzystwo dla piona marzącego o przemianie w hetmana."
+    }
+  ]
+}

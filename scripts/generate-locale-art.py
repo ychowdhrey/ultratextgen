@@ -18,8 +18,17 @@ gradients and card layout), using:
 Run:
   python3 scripts/generate-locale-art.py --dry-run   # report only, no writes
   python3 scripts/generate-locale-art.py              # generate + rewire
+  python3 scripts/generate-locale-art.py --only ar/symbol/   # scope to a path prefix
+
+--only <prefix> restricts collect() to pages whose path starts with <prefix>
+(repeatable). Without it, a run touches every not-yet-correctly-wired page
+sitewide, not just the ones a given session just built — confirmed to have
+swept 31 unrelated pre-existing pages into a single batch's diff before this
+flag existed (confirmed by an internal analysis pass over the symbol/*
+backlog). Always scope a translation batch with --only.
 """
 import glob
+import html as html_entities
 import importlib.util
 import os
 import re
@@ -34,9 +43,9 @@ spec = importlib.util.spec_from_file_location(
 gsa = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gsa)
 
-LOCALES = ["ar", "bs", "cs", "de", "es", "fr", "hi", "hr", "hu", "id", "it",
-           "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sr",
-           "sv", "th", "tl", "tr", "vi", "zh-tw"]
+LOCALES = ["ar", "bs", "cs", "de", "es", "fi", "fr", "hi", "hr", "hu", "id",
+           "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk",
+           "sr", "sv", "th", "tl", "tr", "vi", "zh-tw"]
 
 
 # Content is matched with a backreference to its own opening quote (.*?\1 /
@@ -145,18 +154,25 @@ def motif_kicker_for(english_slug, old_og_base, old_hero_base):
 
 
 def clean_title(html):
+    # meta/title content is HTML-escaped in the source page (a literal '"'
+    # or '&' is correctly written as &quot;/&amp;) - unescape here so the
+    # SVG builder's own esc() doesn't double-escape it into a literal
+    # "&amp;quot;" visible in the rendered PNG.
     m = OG_TITLE.search(html)
     if m and m.group(3).strip():
-        t = m.group(3).strip()
+        t = html_entities.unescape(m.group(3).strip())
     else:
         m = TITLE_TAG.search(html)
         if not m:
             return ""
-        t = re.split(r'\s*[|–—]\s*UltraTextGen', m.group(1).strip())[0].strip()
+        t = re.split(r'\s*[|–—]\s*UltraTextGen', html_entities.unescape(m.group(1).strip()))[0].strip()
     # Full SEO titles run 50-90 chars; the card wants a short headline, so
     # prefer the clause before the first delimiter (mirrors how the
     # hand-authored PAGES entries keep titles to 2-4 words).
-    head = re.split(r'\s*[:\|–—(]\s*', t)[0].strip()
+    # U+FF1A FULLWIDTH COLON is the title/subtitle delimiter CJK titles
+    # actually use — without it every zh/ja/ko title counted as one clause
+    # and rendered the whole SEO title onto the card, overrunning the motif.
+    head = re.split(r'\s*[:：\|–—(]\s*', t)[0].strip()
     # CJK/Thai titles pack a complete concept into very few characters, so
     # the Latin-tuned "is this head substantial enough" bar needs to be low.
     if len(head) >= 3:
@@ -169,7 +185,7 @@ def clean_title(html):
 def clean_sub(html):
     m = OG_DESC.search(html)
     if m and m.group(3).strip():
-        s = m.group(3).strip()
+        s = html_entities.unescape(m.group(3).strip())
         # The subtitle renders as one unwrapped line next to the motif
         # graphic (see og_png_svg) — past ~55 Latin chars it runs under it.
         if len(s) > 55:
@@ -178,16 +194,27 @@ def clean_sub(html):
     return ""
 
 
-def collect(force=False):
+def collect(force=False, only=None):
     rows = []
     for loc in LOCALES:
         for path in sorted(glob.glob(os.path.join(loc, "**", "index.html"),
                                       recursive=True)):
+            if only and not any(path.startswith(p) for p in only):
+                continue
             html = open(path, encoding="utf-8").read()
             slug = slug_for(path)
             og_base, og_href, hero_base = current_asset_basenames(html)
-            already_ok = (og_base == slug) and (hero_base in (slug, None))
-            if already_ok and not force:
+            named_ok = (og_base == slug) and (hero_base in (slug, None))
+            # A correctly-NAMED reference is not the same as a present file.
+            # A page whose art was never generated already points at the right
+            # path, so a name-only check skips it and reports "0 pages needing
+            # art" while the OG image 404s -- precisely the case CLAUDE.md's
+            # "art ships with the page" rule exists to prevent. Require the
+            # files on disk too, so a missing asset is collected without --force.
+            assets_present = os.path.exists(os.path.join(gsa.OG, f"{slug}.png")) and (
+                hero_base is None
+                or os.path.exists(os.path.join(gsa.HERO, f"{slug}.svg")))
+            if named_ok and assets_present and not force:
                 continue
             m = HREFLANG_EN.search(html)
             href = m.group(4) if m else None
@@ -202,11 +229,48 @@ def collect(force=False):
     return rows
 
 
+KNOWN_FLAGS = {"--dry-run", "--force", "--only", "--help", "-h"}
+
+
+def parse_args(argv):
+    """Parse argv, or exit. Returns (dry, force, only).
+
+    Hand-rolled rather than argparse to keep --only repeatable exactly as it
+    has always behaved. Two things it must do that a bare `in sys.argv` scan
+    did not: honour --help WITHOUT running (this script writes files and
+    rewires pages, so `--help` used to perform a real run), and reject an
+    unknown flag instead of silently ignoring it -- a typo'd `--onlyy foo`
+    would otherwise drop the scope and sweep the whole tree, which is the one
+    thing --only exists to prevent.
+    """
+    if "--help" in argv or "-h" in argv:
+        print(__doc__)
+        sys.exit(0)
+    dry = "--dry-run" in argv
+    force = "--force" in argv
+    only = []
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--only":
+            if i + 1 >= len(argv) or argv[i + 1].startswith("-"):
+                sys.exit("error: --only requires a path prefix, e.g. --only fr/symbol/")
+            only.append(argv[i + 1])
+            i += 2
+            continue
+        if arg.startswith("-") and arg not in KNOWN_FLAGS:
+            sys.exit(f"error: unknown flag {arg!r} (run with --help)")
+        if not arg.startswith("-"):
+            sys.exit(f"error: unexpected argument {arg!r} (paths go after --only)")
+        i += 1
+    return dry, force, only
+
+
 def main():
-    dry = "--dry-run" in sys.argv
-    force = "--force" in sys.argv
-    rows = collect(force=force)
-    print(f"pages needing locale art: {len(rows)}")
+    dry, force, only = parse_args(sys.argv[1:])
+    rows = collect(force=force, only=(only or None))
+    print(f"pages needing locale art: {len(rows)}" +
+          (f" (scoped to {only})" if only else ""))
 
     no_hreflang = [r for r in rows if r["eng_slug"] is None]
     fallback = []
@@ -221,7 +285,16 @@ def main():
         slug = r["slug"]
         native = gsa.NATIVE_SCRIPT.get(r["slug"].split("-", 1)[0])
         if native:
-            cap = 26 if native.startswith("Noto Sans CJK") or native == "Noto Sans Thai" else 46
+            # The cap is about GLYPH WIDTH, not which font file we picked:
+            # CJK and Thai glyphs are ~2x a Latin character, so the same
+            # character count runs under the motif graphic. Testing the
+            # family name missed zh — its family is "WenQuanYi Zen Hei",
+            # which neither starts with "Noto Sans CJK" nor is Thai, so
+            # Traditional Chinese subtitles were capped at the Latin 46 and
+            # overran the card.
+            wide = native in ("Noto Sans Thai", "WenQuanYi Zen Hei") or \
+                native.startswith("Noto Sans CJK")
+            cap = 26 if wide else 46
             if len(sub) > cap:
                 sub = sub[:cap].rsplit(" ", 1)[0].rstrip() + "..."
 

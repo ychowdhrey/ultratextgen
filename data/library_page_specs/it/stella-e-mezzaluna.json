@@ -1,0 +1,87 @@
+{
+  "slug": "stella-e-mezzaluna",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Stella e Mezzaluna: Copia e Incolla ☪ — Emblema Ottomano, Non un Simbolo Coranico",
+  "meta_description": "Copia e incolla la stella e mezzaluna (☪, U+262A) — l'emblema associato all'Islam che in realtà risale agli Ottomani, non al Corano. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/stella-e-mezzaluna/",
+  "breadcrumb": "Stella e Mezzaluna",
+  "hero_h1": "Stella e Mezzaluna (☪)",
+  "hero_tagline": "La stella e mezzaluna (☪ ☪️) — il simbolo di luna e stella che sventola sulle bandiere di Turchia, Pakistan, Algeria e Tunisia, e il segno che la maggior parte delle persone legge come \"Islam\" anche se discende da emblemi ottomani e pre-islamici piuttosto che dalle scritture. Tocca un simbolo per copiarlo all'istante.",
+  "intro": "La stella e mezzaluna (☪, U+262A) è il simbolo composto da una mezzaluna e una stella a cinque punte che oggi la maggior parte delle persone legge come simbolo dell'Islam — eppure non compare da nessuna parte nel Corano o negli Hadith, e molti musulmani rifiutano l'idea stessa che sia un simbolo religioso. Le sue radici affondano molto più indietro dell'Islam: l'accostamento di una mezzaluna con una stella era iconografia del Vicino Oriente antico, associata in Mesopotamia al dio lunare Sin e alla dea Ishtar (Venere, la stella del mattino), e circolava sulle monete della città greca di Bisanzio secoli prima dell'era volgare. La versione che il mondo conosce oggi discende dall'Impero Ottomano, che la adottò come emblema di stato verso la fine del XVIII secolo — sotto sultani da Mustafa III (1757–1774) fino a Selim III (1789–1807) — con la bandiera rossa standardizzata nel 1844 che divenne il modello della moderna bandiera turca. Solo nel XX secolo, grazie al ruolo degli Ottomani come potenza islamica di primo piano, il simbolo si è associato in modo diffuso all'Islam stesso. Unicode lo codifica come U+262A STAR AND CRESCENT, aggiunto nella versione 1.1 del 1993; la forma emoji ☪️ aggiunge un selettore di variazione (U+262A U+FE0F). Oggi compare sulle bandiere di Turchia, Pakistan, Algeria, Tunisia e Azerbaigian, tra le altre.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/stella-e-mezzaluna/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+  ],
+  "sections": [
+    {
+      "id": "star-and-crescent",
+      "label": "Stella e Mezzaluna",
+      "h2": "Simbolo Stella e Mezzaluna — ☪ e ☪️",
+      "intro": "La stella e mezzaluna di Unicode, pronta da incollare in una bio, un post o un profilo. Due forme: il glifo semplice in nero e l'emoji a colori pieni.",
+      "symbols": [
+        { "char": "☪", "label": "Stella e Mezzaluna (U+262A)" },
+        { "char": "☪️", "label": "Emoji Stella e Mezzaluna (U+262A U+FE0F)" }
+      ]
+    },
+    {
+      "id": "crescent-and-star-apart",
+      "label": "Mezzaluna e Stella Separate",
+      "h2": "Non È lo Stesso di una Semplice Mezzaluna o Stella",
+      "intro": "La stella e mezzaluna è un unico glifo combinato. I caratteri separati di mezzaluna e stella a cui spesso ci si rivolge invece hanno ciascuno il proprio codepoint e il proprio compito.",
+      "symbols": [
+        { "char": "☾", "label": "Ultimo Quarto di Luna (U+263E) — Mezzaluna Semplice" },
+        { "char": "☽", "label": "Primo Quarto di Luna (U+263D)" },
+        { "char": "🌙", "label": "Emoji Mezzaluna (U+1F319)" },
+        { "char": "⭐", "label": "Stella Media Bianca (U+2B50)" },
+        { "char": "★", "label": "Stella Nera (U+2605)" },
+        { "char": "☆", "label": "Stella Bianca (U+2606)" }
+      ]
+    },
+    {
+      "id": "related-faith-symbols",
+      "label": "Simboli Religiosi",
+      "h2": "Altri Simboli Religiosi con Cui Viene Raggruppata",
+      "intro": "La stella e mezzaluna viene di solito cercata e mostrata accanto ai simboli identitari di altre religioni mondiali. Ecco quelli con cui compare più spesso.",
+      "symbols": [
+        { "char": "✡️", "label": "Stella di David (U+2721)" },
+        { "char": "✝️", "label": "Croce Latina (U+271D)" },
+        { "char": "☸️", "label": "Ruota del Dharma (U+2638)" },
+        { "char": "🕉️", "label": "Om (U+1F549)" },
+        { "char": "☯️", "label": "Yin e Yang (U+262F)" },
+        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Simboli religiosi di ogni grande fede mondiale in un unico riferimento sfogliabile."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "La stella e mezzaluna insieme alla calligrafia di Allah, la moschea, la preghiera e altri simboli legati all'Islam."
+    },
+    {
+      "href": "/it/symbol/stella-di-david/",
+      "title": "Stella di David (✡)",
+      "desc": "Un altro emblema religioso noto soprattutto tramite una bandiera nazionale, con una geometria condivisa molto più antica della religione che oggi rappresenta."
+    },
+    {
+      "href": "/it/symbol/simbolo-hamsa/",
+      "title": "Simbolo Hamsa",
+      "desc": "La Mano di Fatima — un segno protettivo condiviso tra Islam ed Ebraismo che, come la stella e mezzaluna, non è un obbligo scritturale."
+    }
+  ]
+}

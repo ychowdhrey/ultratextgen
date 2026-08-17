@@ -1,0 +1,84 @@
+{
+  "slug": "interrobang",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Interrobang: Copia e Incolla ‽ — Coniato nel 1962, per un Breve Periodo un Vero Tasto della Macchina da Scrivere",
+  "meta_description": "Copia e incolla l'interrobang (‽) e l'interrobang invertito (⸘) — il segno che fonde \"?\" e \"!\" coniato dal pubblicitario Martin Speckter nel 1962. Tocca un simbolo per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/interrobang/",
+  "breadcrumb": "Interrobang",
+  "hero_h1": "Interrobang (‽)",
+  "hero_tagline": "L'interrobang (‽) che fonde \"?\" e \"!\" in un unico segno per una domanda stupita — coniato dal pubblicitario Martin Speckter nel 1962 e venduto per un breve periodo come vero tasto di macchina da scrivere — più il suo gemello in stile spagnolo che apre la frase, l'interrobang invertito (⸘). Tocca un simbolo per copiarlo all'istante.",
+  "intro": "L'interrobang (‽, Unicode U+203D) è un unico glifo che fonde un punto interrogativo con un punto esclamativo, costruito per punteggiare una frase che chiede e esclama allo stesso tempo — \"Hai fatto cosa‽\" Il pubblicitario americano Martin K. Speckter lo propose nel 1962 in un articolo intitolato \"Making a New Point, or, How About That…\" su TYPEtalks, la rivista che dirigeva; costruì il nome da interrogatio (in latino, una domanda retorica) e bang (gergo tipografico per il punto esclamativo), scartando candidati come \"exclamaquest\" ed \"exclarotive\". Per un breve periodo diventò hardware reale: il carattere tipografico Americana del 1965 di Richard Isbell lo includeva, alcune macchine da scrivere Remington offrivano un tasto interrobang già nel 1968, e tasti di ricambio raggiunsero le macchine Smith-Corona negli anni '70 — ma non entrò mai nella tastiera standard e sparì verso la fine degli anni '70. Unicode lo codifica ancora, insieme alla sua immagine speculare, l'interrobang invertito (⸘, U+2E18, aggiunto in Unicode 5.1 nel 2008), pensato per aprire una frase nel modo in cui ¿ e ¡ aprono domande ed esclamazioni in spagnolo. Da non confondere con il punto interrogativo rovesciato (⸮), un segno retorico separato del 1575 con una propria pagina dedicata.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/interrobang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+  ],
+  "sections": [
+    {
+      "id": "the-interrobang",
+      "label": "L'Interrobang",
+      "h2": "L'Interrobang — ‽ e ⸘",
+      "intro": "Il segno stesso e la sua immagine speculare: l'interrobang standard che chiude una domanda stupita, e la forma invertita costruita per aprirne una.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang (U+203D) — Domanda + Esclamazione in un Solo Glifo" },
+        { "char": "⸘", "label": "Interrobang Invertito (U+2E18) — Il Gemello che Apre la Frase" }
+      ]
+    },
+    {
+      "id": "marks-it-merges",
+      "label": "Cosa Fonde",
+      "h2": "Il Punto Interrogativo e il Punto Esclamativo che Combina",
+      "intro": "L'interrobang comprime questi due segni quotidiani in uno solo. Quando una tastiera non può produrlo, si digita la coppia — oppure si ricorre alle forme combinate già pronte di Unicode.",
+      "symbols": [
+        { "char": "?", "label": "Punto Interrogativo (U+003F)" },
+        { "char": "!", "label": "Punto Esclamativo (U+0021)" },
+        { "char": "⁉", "label": "Exclamation Question Mark (U+2049)" },
+        { "char": "⁈", "label": "Question Exclamation Mark (U+2048)" },
+        { "char": "⁇", "label": "Double Question Mark (U+2047)" }
+      ]
+    },
+    {
+      "id": "opening-punctuation",
+      "label": "Punteggiatura di Apertura",
+      "h2": "Perché Esiste l'Interrobang Invertito",
+      "intro": "Lo spagnolo e le lingue affini aprono una domanda con ¿ e un'esclamazione con ¡; l'interrobang invertito ⸘ fonde quella coppia di apertura, rispecchiando all'inizio della frase ciò che ‽ fa alla fine. Il punto interrogativo rovesciato ⸮ è un segno completamente diverso — vedi la sua pagina dedicata.",
+      "symbols": [
+        { "char": "¿", "label": "Punto Interrogativo Rovesciato (U+00BF)" },
+        { "char": "¡", "label": "Punto Esclamativo Rovesciato (U+00A1)" },
+        { "char": "⸘", "label": "Interrobang Invertito (U+2E18)" },
+        { "char": "⸮", "label": "Punto Interrogativo Rovesciato Retorico (U+2E2E)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-punteggiatura/",
+      "title": "Simboli di Punteggiatura",
+      "desc": "L'intero riferimento della punteggiatura quotidiana e specialistica di Unicode, dai trattini alle parentesi fino ai segni insoliti come l'interrobang."
+    },
+    {
+      "href": "/it/symbol/punto-interrogativo-inverso/",
+      "title": "Punto Interrogativo Rovesciato (⸮)",
+      "desc": "Un diverso segno retorico storico — il punto interrogativo rovesciato del 1575, non una fusione di domanda ed esclamazione come l'interrobang."
+    },
+    {
+      "href": "/it/symbol/trattino-lungo/",
+      "title": "Trattino Lungo (—)",
+      "desc": "Un altro segno di punteggiatura con un retroscena vivace e una famiglia di sosia con cui viene costantemente confuso."
+    },
+    {
+      "href": "/it/symbol/simbolo-di-paragrafo/",
+      "title": "Simbolo di Paragrafo (¶)",
+      "desc": "Il segno di paragrafo — un simbolo tipografico ed editoriale con una lunga storia propria nella stampa."
+    }
+  ]
+}

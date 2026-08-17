@@ -1,0 +1,79 @@
+{
+  "slug": "symbol-fi",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Fi: Skopiuj φ Φ ϕ — Litera Złotej Liczby Nazwana na Cześć Fidiasza",
+  "meta_description": "Skopiuj symbol fi — małe φ (U+03C6), wielkie Φ i matematyczny wariant zamknięty ϕ — literę złotej liczby (≈1,618), którą Mark Barr nazwał około 1909 roku na cześć rzeźbiarza Fidiasza. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-fi/",
+  "breadcrumb": "Symbol Fi",
+  "hero_h1": "Symbol Fi",
+  "hero_tagline": "Małe φ oznaczające złotą liczbę (≈1,618), wielkie Φ używane przez fizyków dla strumienia magnetycznego oraz matematyczny wariant zamknięty ϕ — litera, którą Mark Barr nazwał około 1909 roku na cześć rzeźbiarza Fidiasza. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Mały glif fi, φ (U+03C6, GREEK SMALL LETTER PHI), to 21. litera greckiego alfabetu, ale najbardziej znana jest jako symbol złotej liczby — niewymiernej liczby (1 + √5) / 2 ≈ 1,6180339887, za którą artyści i architekci gonią od wieków. To nazewnictwo jest zaskakująco świeże: liczbę przez długi czas zapisywano grecką literą tau (τ), dopóki amerykański matematyk Mark Barr nie zaproponował około 1909 roku φ, wybierając ją jako pierwszą literę imienia Fidiasz (Φειδίας, ok. 490–430 p.n.e.), rzeźbiarza kojarzonego z proporcjami Partenonu. Fi niesie też osobliwość, jakiej nie ma żadna inna grecka litera na tej stronie — dwa małe glify. Codzienna litera φ (U+03C6) zwykle wyświetla się w „pętelkowej”, otwartej formie, podczas gdy osobno zakodowany grecki symbol fi, ϕ (U+03D5), to forma „zamknięta”, z kreską — okrąg przecięty pionową linią — którą Unicode zaleca dla matematyki już od wersji 3.0, choć to, który kształt pokazuje dana czcionka, zależy od kroju pisma. Wielkie Φ (U+03A6) wykonuje w naukach ścisłych cięższą pracę: to standardowy symbol strumienia magnetycznego w fizyce, podczas gdy małe φ oznacza w teorii liczb funkcję Eulera, φ(n).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-fi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-fi",
+      "label": "Symbol Fi",
+      "h2": "Symbol Fi — φ, Φ i ϕ",
+      "intro": "Trzy formy, o które chodzi, gdy mówimy o „symbolu fi”: codzienna mała litera, wielka litera i dedykowany wariant matematyczny. Wklej tę, której potrzebujesz.",
+      "symbols": [
+        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6) — Litera Złotej Liczby, Forma Otwarta „Pętelkowa”" },
+        { "char": "Φ", "label": "Wielka Grecka Litera Fi (U+03A6) — Strumień Magnetyczny w Fizyce" },
+        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5) — Matematyczny Wariant „Zamknięty”, z Kreską" }
+      ]
+    },
+    {
+      "id": "zlota-liczba-i-matematyka",
+      "label": "Złota Liczba i Matematyka",
+      "h2": "Fi: Złota Liczba i Zastosowania Matematyczne",
+      "intro": "Najczęściej wyszukiwane zastosowanie fi. Małe φ nazywa złotą liczbę ≈ 1,618, zdefiniowaną jako (1 + √5) / 2; od Unicode 3.0 zamknięte ϕ (U+03D5) to glif zalecany do tego matematycznego zastosowania, a wielkie Φ oznacza strumień magnetyczny.",
+      "symbols": [
+        { "char": "φ", "label": "Małe Fi (U+03C6) — Złota Liczba ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5) — Preferowany w Matematyce Glif Zamknięty" },
+        { "char": "Φ", "label": "Wielkie Fi (U+03A6) — Strumień Magnetyczny" },
+        { "char": "√", "label": "Pierwiastek Kwadratowy (U+221A) — Pojawia się we Wzorze Fi (1 + √5) / 2" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Fi to 21. litera greckiego alfabetu. Oto sąsiedzi i słynne stałe, których szuka się najczęściej razem z nią.",
+      "symbols": [
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "θ", "label": "Mała Grecka Litera Theta" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Złota liczba, pierwiastek kwadratowy oraz operatory i litery greckie wypełniające równanie."
+    },
+    {
+      "href": "/pl/symbol/symbol-pi/",
+      "title": "Symbol Pi",
+      "desc": "Druga słynna stała fi: kolejna grecka litera, π ≈ 3,14159, oznaczająca liczbę, a nie głoskę."
+    }
+  ]
+}

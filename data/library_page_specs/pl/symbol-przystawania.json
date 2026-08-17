@@ -1,0 +1,77 @@
+{
+  "slug": "symbol-przystawania",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Przystawania: Skopiuj ≅ — Znak, Którego Unicode Nawet Nie Nazywa „Przystawaniem”",
+  "meta_description": "Skopiuj symbol przystawania ≅ — geometryczny znak „ten sam kształt i rozmiar”, który Unicode oficjalnie nazywa „w przybliżeniu równe” (U+2245) — i odróżnij go od podobnych ≈ i ≡. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-przystawania/",
+  "breadcrumb": "Symbol Przystawania",
+  "hero_h1": "Symbol Przystawania",
+  "hero_tagline": "≅, którego każda lekcja geometrii używa dla figur przystających — ten sam kształt, ten sam rozmiar — mimo że oficjalna nazwa Unicode dla tego znaku to „w przybliżeniu równe”. Plus podobne ≈ i ≡, z którymi bywa nieustannie mylony. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol przystawania, ≅, to znak, który nauczyciele geometrii rysują, gdy dwie figury są przystające — identyczne zarówno pod względem kształtu, jak i rozmiaru. Jest w tym pewien haczyk: Unicode wcale tak go nie nazywa. Oficjalna nazwa tego znaku (U+2245) to „APPROXIMATELY EQUAL TO” („w przybliżeniu równe”), etykieta w ogóle nie wspominająca o przystawaniu, a mimo to ≅ to dokładnie ten glif, po który sięgają klasy geometrii na całym świecie. Znak czyta się jako dwie idee ułożone jedna na drugiej — ≈ przybliżenia nad = równości — i sąsiaduje w gęsto zaludnionej okolicy łatwo mylonych krewnych. ≈ (U+2248, ALMOST EQUAL TO) oznacza „w przybliżeniu”, ten, którego użyjesz dla π ≈ 3,14. ≡ (U+2261, IDENTICAL TO) oznacza coś mocniejszego — tożsamość, a w teorii liczb jest znakiem przystawania w arytmetyce modularnej, jak w zapisie „17 ≡ 2 (mod 5)”. Trzy symbole, trzy zadania, wszystkie zbudowane z ułożonych poziomych kresek, i wszystkie regularnie wpisywane jeden zamiast drugiego. Ta strona porządkuje je i pozwala skopiować dokładnie ten, którego potrzebujesz.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/congruent-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-przystawania/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/congruent-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-przystawania",
+      "label": "Symbol Przystawania",
+      "h2": "Symbol Przystawania — ≅",
+      "intro": "Glif używany w geometrii dla przystawania — ten sam kształt i rozmiar — mimo że oficjalna nazwa Unicode dla tego znaku nie wspomina tego słowa. Jego bliski wizualny kuzyn ≃ ma pojedynczą tyldę zamiast podwójnej.",
+      "symbols": [
+        { "char": "≅", "label": "Przystaje do — Oficjalnie „W Przybliżeniu Równe” (U+2245)" },
+        { "char": "≃", "label": "Asymptotycznie Równe (U+2243) — Kuzyn z Pojedynczą Tyldą" }
+      ]
+    },
+    {
+      "id": "jak-je-odroznic",
+      "label": "Jak Je Odróżnić",
+      "h2": "≅ kontra ≈ kontra ≡ — Znaki Mylone",
+      "intro": "Trzy symbole zbudowane z ułożonych kresek, nieustannie zamieniane miejscami, z których każdy ma własne zadanie. Przystawanie (ten sam kształt i rozmiar), przybliżona równość (zgrubne oszacowanie) i tożsamość (prawdziwa identyczność oraz przystawanie modularne).",
+      "symbols": [
+        { "char": "≅", "label": "W Przybliżeniu Równe (U+2245) — Używane dla Przystawania Geometrycznego" },
+        { "char": "≈", "label": "Prawie Równe (U+2248) — Przybliżenie, np. π ≈ 3,14" },
+        { "char": "≡", "label": "Identyczne (U+2261) — Tożsamość i Przystawanie Modularne" }
+      ]
+    },
+    {
+      "id": "wiecej-znakow-relacji",
+      "label": "Znaki Relacji",
+      "h2": "Więcej Matematycznych Znaków Relacji",
+      "intro": "Reszta „rodziny znaku równości”, żyjąca obok znaku przystawania w równaniach i dowodach.",
+      "symbols": [
+        { "char": "≠", "label": "Różne Od (U+2260)" },
+        { "char": "=", "label": "Znak Równości" },
+        { "char": "≤", "label": "Mniejsze lub Równe" },
+        { "char": "≥", "label": "Większe lub Równe" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Pełny zestaw relacji, operatorów i liter greckich, wśród których żyje znak przystawania."
+    },
+    {
+      "href": "/pl/symbol/znak-rozne-od/",
+      "title": "Znak Różne Od",
+      "desc": "Relacja przeciwna — bliski sąsiad z tej samej „rodziny znaku równości”."
+    },
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Kolejny znak, którego codzienna tożsamość — znak oma dla rezystancji elektrycznej — nie jest nazwą oficjalnie nadaną mu przez Unicode."
+    }
+  ]
+}

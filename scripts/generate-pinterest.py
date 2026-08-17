@@ -224,6 +224,27 @@ def pin_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
 
 
 # ---------------------------------------------------------------- eligibility
+# Locale-aware twin of the `ptype == "updates"` test in classify(). The "Page
+# type" column comes from build-image-seo-status.py:page_type, which returns
+# "localized" for every <lang>/... URL and never reaches the content type — so
+# a locale updates entry reads as "localized" and would be pinned, while its EN
+# original is correctly excluded. Kept as a mirror of
+# check-image-assets.py:is_dated_update; if you change one, change both.
+_UPD_LOCALES = ("ar", "bs", "cs", "da", "de", "es", "fi", "fr", "hi", "hr",
+                "hu", "id", "it", "ja", "ko", "ms", "nl", "no", "pl", "pt",
+                "ro", "ru", "sk", "sr", "sv", "th", "tl", "tr", "vi", "zh-tw")
+
+
+def _is_dated_update(url):
+    """True for a dated updates entry in any locale; False for the hub."""
+    path = url.split("://", 1)[-1]
+    path = path.split("/", 1)[1] if "/" in path else ""
+    seg = [s for s in path.strip("/").split("/") if s]
+    if seg and seg[0] in _UPD_LOCALES:
+        seg = seg[1:]
+    return len(seg) >= 2 and seg[0] == "updates"
+
+
 def classify(row):
     """Return (include: bool, exclusion_reason: str). exclusion_reason is ''
     when the page is included."""
@@ -234,7 +255,7 @@ def classify(row):
                        else "utility page")
     if ptype == "embed" or slug.startswith("embed-") or "/embed/" in row["Page URL"]:
         return False, "embed page"
-    if ptype == "updates":
+    if ptype == "updates" or _is_dated_update(row["Page URL"]):
         return False, "dated status/verification log, not visual pin material"
     # The overview hubs (/category/, /usecase/, /library/, /answers/, /guide/)
     # are kept: each is a strong topical landing page with real keyword + visual
@@ -560,7 +581,7 @@ def utm_url(page_url, slug):
 # ---------------------------------------------------------------- main
 COLUMNS = [
     "page_url", "page_path", "page_type", "primary_intent", "priority",
-    "search_volume", "include_in_pinterest", "exclusion_reason",
+    "include_in_pinterest", "exclusion_reason",
     "og_image_path", "pinterest_image_path", "pinterest_image_width",
     "pinterest_image_height", "pinterest_board_primary",
     "pinterest_board_secondary", "pin_title", "pin_description",
@@ -591,7 +612,6 @@ def main():
         if intent == "/" or not intent:
             intent = slug.replace("-", " ")
         priority = (row.get("Priority") or "").strip()
-        svol = (row.get("Search volume") or "").strip()
         og = (row.get("OG image path") or "").strip()
 
         rec = {c: "" for c in COLUMNS}
@@ -601,7 +621,6 @@ def main():
             "page_type": ptype,
             "primary_intent": intent,
             "priority": priority,
-            "search_volume": svol,
             "og_image_path": og,
             "pin_status": "pending",
         })

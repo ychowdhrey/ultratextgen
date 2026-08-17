@@ -1,0 +1,69 @@
+{
+  "slug": "peso-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Peso: Sao Chép & Dán ₱ — Chỉ Peso Philippines Có Ký Hiệu Riêng; Còn Lại Đều Dùng $",
+  "meta_description": "Sao chép ký hiệu peso ₱ (U+20B1) — ký hiệu riêng của đồng peso Philippines, trong khi các đồng peso Mexico, Argentina, Colombia và nhiều nước khác đều được viết bằng $ thông thường. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/peso-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Peso",
+  "hero_h1": "Ký Hiệu Peso (₱)",
+  "hero_tagline": "₱ thuộc về đồng peso Philippines — đồng peso duy nhất trên thế giới có ký hiệu riêng, trong khi các đồng peso Mexico, Argentina và Colombia đều phải dùng tạm ký hiệu đô la thông thường. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu peso (₱, Unicode U+20B1 PESO SIGN) là ký hiệu riêng của đồng peso Philippines — và, bất chấp cái tên chung chung, đây là đồng peso duy nhất trên thế giới có ký hiệu riêng. Mọi đồng tiền khác cũng mang tên «peso» — peso Mexico (MXN), Argentina (ARS), Colombia (COP), Chile (CLP), Cuba (CUP), Cộng hòa Dominica (DOP) và Uruguay (UYU), trong số đó — đều được viết theo quy ước bằng ký hiệu đô la thông thường, $ (U+0024), thường được phân biệt trong thực tế bằng tiền tố quốc gia như MX$ hay COL$. Việc dùng chung glyph đó không phải ngẫu nhiên: bản thân ký hiệu đô la được nhiều người tin là bắt nguồn từ một chữ viết tắt tay thế kỷ 18 của đồng peso Tây Ban Nha, chính là lý do vì sao một ký hiệu duy nhất vẫn phục vụ cả đô la lẫn hầu hết các đồng peso ngày nay. Philippines lại đi theo hướng khác. Sắc lệnh Hành pháp số 66, do chính quyền thực dân Mỹ ban hành ngày 3 tháng 8 năm 1903, quy định một chữ P hoa bị gạch ngang bởi hai vạch song song, riêng để phân biệt đồng peso Philippines với đô la Mỹ và peseta Tây Ban Nha. Unicode mã hóa ₱ ở phiên bản 3.2, phát hành năm 2002; mã ISO 4217 của đồng tiền này là PHP và do Ngân hàng Trung ương Philippines (Bangko Sentral ng Pilipinas) phát hành.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/peso-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "peso-sign",
+      "label": "Ký Hiệu Peso",
+      "h2": "Hai Ký Hiệu Cùng Được Gọi Là «Ký Hiệu Peso» — ₱ và $",
+      "intro": "Cả hai ký hiệu này đều được gọi là ký hiệu peso. ₱ là ký tự riêng của đồng peso Philippines; $ là ký hiệu mà gần như mọi đồng peso khác sử dụng — vì bản thân ký hiệu đô la có lẽ khởi đầu như một cách viết tắt cho đồng peso Tây Ban Nha. Liệu nó bắt nguồn từ chữ viết tay «Ps» hay từ hình ảnh Trụ Cột Hercules quấn chữ S trên đồng tiền Tây Ban Nha vẫn còn là điều các sử gia thật sự tranh cãi.",
+      "symbols": [
+        { "char": "₱", "label": "Ký Hiệu Peso (U+20B1) — Glyph Riêng Của Đồng Peso Philippines" },
+        { "char": "$", "label": "Ký Hiệu Đô La (U+0024) — Ký Hiệu Mà Đồng Peso Mexico, Argentina Và Nhiều Nước Khác Thực Sự Dùng" }
+      ]
+    },
+    {
+      "id": "struck-letter-currencies",
+      "label": "Cùng Cấu Trúc Với Peso",
+      "h2": "Nhóm Ký Hiệu Tiền Tệ «Chữ Gạch Ngang»",
+      "intro": "Ký hiệu peso là một chữ P hoa bị gạch ngang bởi hai vạch song song — chính công thức đứng sau cả một thế hệ ký hiệu tiền tệ hiện đại, mỗi ký hiệu là một chữ cái quốc gia bị gạch bởi một hoặc hai vạch. Sẵn sàng để dán ở bất cứ đâu.",
+      "symbols": [
+        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9) — Chữ R Gạch Ngang, Chính Thức Thông Qua Năm 2010" },
+        { "char": "₩", "label": "Ký Hiệu Won (U+20A9) — Chữ W Với Hai Vạch" },
+        { "char": "₦", "label": "Ký Hiệu Naira (U+20A6) — Chữ N Gạch Ngang (Nigeria)" },
+        { "char": "₴", "label": "Ký Hiệu Hryvnia (U+20B4) — Chữ Cái Gạch Ngang Của Ukraine" },
+        { "char": "₫", "label": "Ký Hiệu Đồng (U+20AB) — Chữ D Có Vạch Ngang (Việt Nam)" },
+        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — Chữ E Tròn Với Hai Nét Gạch" }
+      ]
+    },
+    {
+      "id": "peso-lookalikes",
+      "label": "Đừng Nhầm Lẫn Với",
+      "h2": "Ký Tự Dễ Bị Nhầm Với ₱",
+      "intro": "Vì ₱ về cơ bản là chữ P bị gạch ngang, nó thường bị hoán đổi với các ký tự hình chữ P khác — kể cả một ký tự thuộc về một đồng tiền hoàn toàn khác. Mỗi ký tự là một mã điểm Unicode riêng, không phải một biến thể kiểu chữ.",
+      "symbols": [
+        { "char": "₽", "label": "Ký Hiệu Ruble (U+20BD) — Tiền Tệ Của Nga, Cũng Là Chữ P Gạch Ngang Nhưng Khác Vạch" },
+        { "char": "P", "label": "Chữ Latin Hoa P (U+0050) — Ký Tự Thay Thế Đơn Giản Thường Được Gõ Cho Peso" },
+        { "char": "Ᵽ", "label": "Chữ Latin Hoa P Có Gạch Ngang (U+2C63) — Dùng Trong Ngôn Ngữ Học, Không Phải Tiền Tệ" },
+        { "char": "Ρ", "label": "Chữ Hoa Hy Lạp Rho (U+03A1) — Trông Giống Chữ P" },
+        { "char": "Р", "label": "Chữ Cyrillic Hoa Er (U+0420) — Một Ký Tự Khác Dễ Nhầm Với P" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Duyệt qua mọi ký hiệu tiền tệ thế giới — đô la, euro, bảng Anh, yên và peso — cạnh nhau trong một trang." },
+    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu mà gần như mọi đồng peso thực sự dùng: chỉ peso Philippines có ký hiệu riêng ₱, còn peso Mexico, Argentina và Colombia đều dùng $." },
+    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee (₹)", "desc": "Đồng rupee Ấn Độ — giống ₱, một ký hiệu tiền tệ hiện đại được quyết định riêng cho một quốc gia bằng cách gạch một chữ cái với các vạch song song." }
+  ]
+}

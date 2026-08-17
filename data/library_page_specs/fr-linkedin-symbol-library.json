@@ -1,0 +1,2341 @@
+{
+  "slug": "symboles-linkedin",
+  "title": "Symboles LinkedIn → ✓ ▪ — la bibliothèque de caractères pour vos posts | UltraTextGen",
+  "meta_description": "Symboles pour LinkedIn à copier : flèches →, puces ▪ •, coches ✓, numéros ①, séparateurs et combinaisons prêtes à coller. Clique pour copier.",
+  "breadcrumb": "Symboles LinkedIn",
+  "hero_h1": "Bibliothèque de symboles pour LinkedIn",
+  "hero_tagline": "→ ✓ ▪ ① ❖ — flèches, puces, coches, numéros et séparateurs, testés pour les posts LinkedIn. Clique pour copier.",
+  "intro": "LinkedIn n'a pas d'éditeur de texte enrichi : ni gras, ni liste à puces, ni titre. Tout ce qui structure un post doit donc être un caractère, tapé dans le texte lui-même. Les seize groupes ci-dessous rassemblent ceux qui passent sans casser la mise en page, et se terminent par des lignes entières prêtes à coller. Clique sur un symbole pour le copier.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Flèches directionnelles",
+      "h2": "Flèches directionnelles",
+      "intro": "Pour enchaîner une idée sur la suivante.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "Flèche vers la droite"
+        },
+        {
+          "char": "⇒",
+          "label": "Double flèche droite"
+        },
+        {
+          "char": "➜",
+          "label": "Flèche pleine droite"
+        },
+        {
+          "char": "➝",
+          "label": "Flèche fine droite"
+        },
+        {
+          "char": "⟶",
+          "label": "Flèche longue droite"
+        },
+        {
+          "char": "⟹",
+          "label": "Double flèche longue droite"
+        },
+        {
+          "char": "⇢",
+          "label": "Flèche pointillée droite"
+        },
+        {
+          "char": "⇨",
+          "label": "Flèche contour droite"
+        },
+        {
+          "char": "⇾",
+          "label": "Flèche à queue droite"
+        },
+        {
+          "char": "⇰",
+          "label": "Flèche à embout droite"
+        },
+        {
+          "char": "↓",
+          "label": "Flèche vers le bas"
+        },
+        {
+          "char": "⇩",
+          "label": "Double flèche bas"
+        },
+        {
+          "char": "⬇",
+          "label": "Flèche bas pleine"
+        },
+        {
+          "char": "↑",
+          "label": "Flèche vers le haut"
+        },
+        {
+          "char": "⇧",
+          "label": "Double flèche haut"
+        },
+        {
+          "char": "⬆",
+          "label": "Flèche haut pleine"
+        },
+        {
+          "char": "↗",
+          "label": "Flèche haut-droite"
+        },
+        {
+          "char": "↘",
+          "label": "Flèche bas-droite"
+        },
+        {
+          "char": "↖",
+          "label": "Flèche haut-gauche"
+        },
+        {
+          "char": "↙",
+          "label": "Flèche bas-gauche"
+        },
+        {
+          "char": "↩",
+          "label": "Flèche retour gauche"
+        },
+        {
+          "char": "↪",
+          "label": "Flèche retour droite"
+        },
+        {
+          "char": "↺",
+          "label": "Flèche circulaire antihoraire"
+        },
+        {
+          "char": "↻",
+          "label": "Flèche circulaire horaire"
+        },
+        {
+          "char": "←",
+          "label": "Flèche vers la gauche"
+        },
+        {
+          "char": "⇐",
+          "label": "Double flèche gauche"
+        },
+        {
+          "char": "⟵",
+          "label": "Flèche longue gauche"
+        },
+        {
+          "char": "⇦",
+          "label": "Flèche contour gauche"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Puces et marqueurs de liste",
+      "h2": "Puces et marqueurs de liste",
+      "intro": "Là où la mise en forme ne passe pas.",
+      "symbols": [
+        {
+          "char": "•",
+          "label": "Puce"
+        },
+        {
+          "char": "◦",
+          "label": "Puce creuse"
+        },
+        {
+          "char": "●",
+          "label": "Rond plein"
+        },
+        {
+          "char": "○",
+          "label": "Rond creux"
+        },
+        {
+          "char": "▪",
+          "label": "Petit carré plein"
+        },
+        {
+          "char": "▫",
+          "label": "Petit carré creux"
+        },
+        {
+          "char": "◾",
+          "label": "Carré plein moyen"
+        },
+        {
+          "char": "◽",
+          "label": "Carré creux moyen"
+        },
+        {
+          "char": "■",
+          "label": "Carré plein"
+        },
+        {
+          "char": "□",
+          "label": "Carré creux"
+        },
+        {
+          "char": "◆",
+          "label": "Losange plein"
+        },
+        {
+          "char": "◇",
+          "label": "Losange creux"
+        },
+        {
+          "char": "◈",
+          "label": "Losange à point central"
+        },
+        {
+          "char": "►",
+          "label": "Pointeur droit"
+        },
+        {
+          "char": "▸",
+          "label": "Petite pointe pleine"
+        },
+        {
+          "char": "▹",
+          "label": "Petite pointe creuse"
+        },
+        {
+          "char": "▻",
+          "label": "Pointe blanche droite"
+        },
+        {
+          "char": "▶",
+          "label": "Triangle plein droit"
+        },
+        {
+          "char": "▌",
+          "label": "Demi-bloc gauche"
+        },
+        {
+          "char": "▍",
+          "label": "Bloc trois huitièmes"
+        },
+        {
+          "char": "▏",
+          "label": "Bloc fin"
+        },
+        {
+          "char": "❘",
+          "label": "Barre verticale fine"
+        },
+        {
+          "char": "❙",
+          "label": "Barre verticale moyenne"
+        },
+        {
+          "char": "❚",
+          "label": "Barre verticale épaisse"
+        },
+        {
+          "char": "–",
+          "label": "Tiret demi-cadratin"
+        },
+        {
+          "char": "—",
+          "label": "Tiret cadratin"
+        },
+        {
+          "char": "‣",
+          "label": "Puce triangulaire"
+        },
+        {
+          "char": "⁃",
+          "label": "Puce tiret"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Coches, croix et validation",
+      "h2": "Coches, croix et validation",
+      "intro": "Ce qui est fait, ce qui ne l'est pas.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Coche"
+        },
+        {
+          "char": "✔",
+          "label": "Coche grasse"
+        },
+        {
+          "char": "☑",
+          "label": "Case cochée"
+        },
+        {
+          "char": "🗸",
+          "label": "Coche fine"
+        },
+        {
+          "char": "✕",
+          "label": "Croix de multiplication"
+        },
+        {
+          "char": "✖",
+          "label": "Croix grasse"
+        },
+        {
+          "char": "✗",
+          "label": "Croix"
+        },
+        {
+          "char": "✘",
+          "label": "Croix grasse pleine"
+        },
+        {
+          "char": "☒",
+          "label": "Case barrée"
+        },
+        {
+          "char": "☐",
+          "label": "Case vide"
+        },
+        {
+          "char": "☑",
+          "label": "Case cochée"
+        },
+        {
+          "char": "☒",
+          "label": "Case barrée"
+        },
+        {
+          "char": "⚠",
+          "label": "Panneau d'avertissement"
+        },
+        {
+          "char": "❗",
+          "label": "Point d'exclamation"
+        },
+        {
+          "char": "‼",
+          "label": "Double point d'exclamation"
+        },
+        {
+          "char": "⁉",
+          "label": "Point exclamatif-interrogatif"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Numéros de progression",
+      "h2": "Numéros de progression",
+      "intro": "Numéroter sans liste automatique.",
+      "symbols": [
+        {
+          "char": "①",
+          "label": "Chiffre 1 cerclé"
+        },
+        {
+          "char": "②",
+          "label": "Chiffre 2 cerclé"
+        },
+        {
+          "char": "③",
+          "label": "Chiffre 3 cerclé"
+        },
+        {
+          "char": "④",
+          "label": "Chiffre 4 cerclé"
+        },
+        {
+          "char": "⑤",
+          "label": "Chiffre 5 cerclé"
+        },
+        {
+          "char": "⑥",
+          "label": "Chiffre 6 cerclé"
+        },
+        {
+          "char": "⑦",
+          "label": "Chiffre 7 cerclé"
+        },
+        {
+          "char": "⑧",
+          "label": "Chiffre 8 cerclé"
+        },
+        {
+          "char": "⑨",
+          "label": "Chiffre 9 cerclé"
+        },
+        {
+          "char": "⑩",
+          "label": "Chiffre 10 cerclé"
+        },
+        {
+          "char": "⑪",
+          "label": "Chiffre 11 cerclé"
+        },
+        {
+          "char": "⑫",
+          "label": "Chiffre 12 cerclé"
+        },
+        {
+          "char": "⑬",
+          "label": "Chiffre 13 cerclé"
+        },
+        {
+          "char": "⑭",
+          "label": "Chiffre 14 cerclé"
+        },
+        {
+          "char": "⑮",
+          "label": "Chiffre 15 cerclé"
+        },
+        {
+          "char": "⑯",
+          "label": "Chiffre 16 cerclé"
+        },
+        {
+          "char": "⑰",
+          "label": "Chiffre 17 cerclé"
+        },
+        {
+          "char": "⑱",
+          "label": "Chiffre 18 cerclé"
+        },
+        {
+          "char": "⑲",
+          "label": "Chiffre 19 cerclé"
+        },
+        {
+          "char": "⑳",
+          "label": "Chiffre 20 cerclé"
+        },
+        {
+          "char": "❶",
+          "label": "Chiffre 1 cerclé plein"
+        },
+        {
+          "char": "❷",
+          "label": "Chiffre 2 cerclé plein"
+        },
+        {
+          "char": "❸",
+          "label": "Chiffre 3 cerclé plein"
+        },
+        {
+          "char": "❹",
+          "label": "Chiffre 4 cerclé plein"
+        },
+        {
+          "char": "❺",
+          "label": "Chiffre 5 cerclé plein"
+        },
+        {
+          "char": "❻",
+          "label": "Chiffre 6 cerclé plein"
+        },
+        {
+          "char": "❼",
+          "label": "Chiffre 7 cerclé plein"
+        },
+        {
+          "char": "❽",
+          "label": "Chiffre 8 cerclé plein"
+        },
+        {
+          "char": "❾",
+          "label": "Chiffre 9 cerclé plein"
+        },
+        {
+          "char": "❿",
+          "label": "Chiffre 10 cerclé plein"
+        },
+        {
+          "char": "⑴",
+          "label": "Chiffre 1 entre parenthèses"
+        },
+        {
+          "char": "⑵",
+          "label": "Chiffre 2 entre parenthèses"
+        },
+        {
+          "char": "⑶",
+          "label": "Chiffre 3 entre parenthèses"
+        },
+        {
+          "char": "⑷",
+          "label": "Chiffre 4 entre parenthèses"
+        },
+        {
+          "char": "⑸",
+          "label": "Chiffre 5 entre parenthèses"
+        },
+        {
+          "char": "⑹",
+          "label": "Chiffre 6 entre parenthèses"
+        },
+        {
+          "char": "⑺",
+          "label": "Chiffre 7 entre parenthèses"
+        },
+        {
+          "char": "⑻",
+          "label": "Chiffre 8 entre parenthèses"
+        },
+        {
+          "char": "⑼",
+          "label": "Chiffre 9 entre parenthèses"
+        },
+        {
+          "char": "⑽",
+          "label": "Chiffre 10 entre parenthèses"
+        },
+        {
+          "char": "⑾",
+          "label": "Chiffre 11 entre parenthèses"
+        },
+        {
+          "char": "⑿",
+          "label": "Chiffre 12 entre parenthèses"
+        },
+        {
+          "char": "⒀",
+          "label": "Chiffre 13 entre parenthèses"
+        },
+        {
+          "char": "⒁",
+          "label": "Chiffre 14 entre parenthèses"
+        },
+        {
+          "char": "⒂",
+          "label": "Chiffre 15 entre parenthèses"
+        },
+        {
+          "char": "⒃",
+          "label": "Chiffre 16 entre parenthèses"
+        },
+        {
+          "char": "⒄",
+          "label": "Chiffre 17 entre parenthèses"
+        },
+        {
+          "char": "⒅",
+          "label": "Chiffre 18 entre parenthèses"
+        },
+        {
+          "char": "⒆",
+          "label": "Chiffre 19 entre parenthèses"
+        },
+        {
+          "char": "⒇",
+          "label": "Chiffre 20 entre parenthèses"
+        },
+        {
+          "char": "⒈",
+          "label": "Chiffre 1 suivi d'un point"
+        },
+        {
+          "char": "⒉",
+          "label": "Chiffre 2 suivi d'un point"
+        },
+        {
+          "char": "⒊",
+          "label": "Chiffre 3 suivi d'un point"
+        },
+        {
+          "char": "⒋",
+          "label": "Chiffre 4 suivi d'un point"
+        },
+        {
+          "char": "⒌",
+          "label": "Chiffre 5 suivi d'un point"
+        },
+        {
+          "char": "⒍",
+          "label": "Chiffre 6 suivi d'un point"
+        },
+        {
+          "char": "⒎",
+          "label": "Chiffre 7 suivi d'un point"
+        },
+        {
+          "char": "⒏",
+          "label": "Chiffre 8 suivi d'un point"
+        },
+        {
+          "char": "⒐",
+          "label": "Chiffre 9 suivi d'un point"
+        },
+        {
+          "char": "⒑",
+          "label": "Chiffre 10 suivi d'un point"
+        },
+        {
+          "char": "⒒",
+          "label": "Chiffre 11 suivi d'un point"
+        },
+        {
+          "char": "⒓",
+          "label": "Chiffre 12 suivi d'un point"
+        },
+        {
+          "char": "⒔",
+          "label": "Chiffre 13 suivi d'un point"
+        },
+        {
+          "char": "⒕",
+          "label": "Chiffre 14 suivi d'un point"
+        },
+        {
+          "char": "⒖",
+          "label": "Chiffre 15 suivi d'un point"
+        },
+        {
+          "char": "⒗",
+          "label": "Chiffre 16 suivi d'un point"
+        },
+        {
+          "char": "⒘",
+          "label": "Chiffre 17 suivi d'un point"
+        },
+        {
+          "char": "⒙",
+          "label": "Chiffre 18 suivi d'un point"
+        },
+        {
+          "char": "⒚",
+          "label": "Chiffre 19 suivi d'un point"
+        },
+        {
+          "char": "⒛",
+          "label": "Chiffre 20 suivi d'un point"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Marqueurs alphabétiques",
+      "h2": "Marqueurs alphabétiques",
+      "intro": "Pour des repères A, B, C dans un post.",
+      "symbols": [
+        {
+          "char": "Ⓐ",
+          "label": "Lettre A cerclée"
+        },
+        {
+          "char": "Ⓑ",
+          "label": "Lettre B cerclée"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "Lettre C cerclée"
+        },
+        {
+          "char": "Ⓓ",
+          "label": "Lettre D cerclée"
+        },
+        {
+          "char": "Ⓔ",
+          "label": "Lettre E cerclée"
+        },
+        {
+          "char": "Ⓕ",
+          "label": "Lettre F cerclée"
+        },
+        {
+          "char": "Ⓖ",
+          "label": "Lettre G cerclée"
+        },
+        {
+          "char": "Ⓗ",
+          "label": "Lettre H cerclée"
+        },
+        {
+          "char": "Ⓘ",
+          "label": "Lettre I cerclée"
+        },
+        {
+          "char": "Ⓙ",
+          "label": "Lettre J cerclée"
+        },
+        {
+          "char": "Ⓚ",
+          "label": "Lettre K cerclée"
+        },
+        {
+          "char": "Ⓛ",
+          "label": "Lettre L cerclée"
+        },
+        {
+          "char": "Ⓜ",
+          "label": "Lettre M cerclée"
+        },
+        {
+          "char": "Ⓝ",
+          "label": "Lettre N cerclée"
+        },
+        {
+          "char": "Ⓞ",
+          "label": "Lettre O cerclée"
+        },
+        {
+          "char": "Ⓟ",
+          "label": "Lettre P cerclée"
+        },
+        {
+          "char": "Ⓠ",
+          "label": "Lettre Q cerclée"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "Lettre R cerclée"
+        },
+        {
+          "char": "Ⓢ",
+          "label": "Lettre S cerclée"
+        },
+        {
+          "char": "Ⓣ",
+          "label": "Lettre T cerclée"
+        },
+        {
+          "char": "Ⓤ",
+          "label": "Lettre U cerclée"
+        },
+        {
+          "char": "Ⓥ",
+          "label": "Lettre V cerclée"
+        },
+        {
+          "char": "Ⓦ",
+          "label": "Lettre W cerclée"
+        },
+        {
+          "char": "Ⓧ",
+          "label": "Lettre X cerclée"
+        },
+        {
+          "char": "Ⓨ",
+          "label": "Lettre Y cerclée"
+        },
+        {
+          "char": "Ⓩ",
+          "label": "Lettre Z cerclée"
+        },
+        {
+          "char": "ⓐ",
+          "label": "Lettre a cerclée"
+        },
+        {
+          "char": "ⓑ",
+          "label": "Lettre b cerclée"
+        },
+        {
+          "char": "ⓒ",
+          "label": "Lettre c cerclée"
+        },
+        {
+          "char": "ⓓ",
+          "label": "Lettre d cerclée"
+        },
+        {
+          "char": "ⓔ",
+          "label": "Lettre e cerclée"
+        },
+        {
+          "char": "ⓕ",
+          "label": "Lettre f cerclée"
+        },
+        {
+          "char": "ⓖ",
+          "label": "Lettre g cerclée"
+        },
+        {
+          "char": "ⓗ",
+          "label": "Lettre h cerclée"
+        },
+        {
+          "char": "ⓘ",
+          "label": "Lettre i cerclée"
+        },
+        {
+          "char": "ⓙ",
+          "label": "Lettre j cerclée"
+        },
+        {
+          "char": "ⓚ",
+          "label": "Lettre k cerclée"
+        },
+        {
+          "char": "ⓛ",
+          "label": "Lettre l cerclée"
+        },
+        {
+          "char": "ⓜ",
+          "label": "Lettre m cerclée"
+        },
+        {
+          "char": "ⓝ",
+          "label": "Lettre n cerclée"
+        },
+        {
+          "char": "ⓞ",
+          "label": "Lettre o cerclée"
+        },
+        {
+          "char": "ⓟ",
+          "label": "Lettre p cerclée"
+        },
+        {
+          "char": "ⓠ",
+          "label": "Lettre q cerclée"
+        },
+        {
+          "char": "ⓡ",
+          "label": "Lettre r cerclée"
+        },
+        {
+          "char": "ⓢ",
+          "label": "Lettre s cerclée"
+        },
+        {
+          "char": "ⓣ",
+          "label": "Lettre t cerclée"
+        },
+        {
+          "char": "ⓤ",
+          "label": "Lettre u cerclée"
+        },
+        {
+          "char": "ⓥ",
+          "label": "Lettre v cerclée"
+        },
+        {
+          "char": "ⓦ",
+          "label": "Lettre w cerclée"
+        },
+        {
+          "char": "ⓧ",
+          "label": "Lettre x cerclée"
+        },
+        {
+          "char": "ⓨ",
+          "label": "Lettre y cerclée"
+        },
+        {
+          "char": "ⓩ",
+          "label": "Lettre z cerclée"
+        },
+        {
+          "char": "🅐",
+          "label": "Lettre A cerclée pleine"
+        },
+        {
+          "char": "🅑",
+          "label": "Lettre B cerclée pleine"
+        },
+        {
+          "char": "🅒",
+          "label": "Lettre C cerclée pleine"
+        },
+        {
+          "char": "🅓",
+          "label": "Lettre D cerclée pleine"
+        },
+        {
+          "char": "🅔",
+          "label": "Lettre E cerclée pleine"
+        },
+        {
+          "char": "🅕",
+          "label": "Lettre F cerclée pleine"
+        },
+        {
+          "char": "🅖",
+          "label": "Lettre G cerclée pleine"
+        },
+        {
+          "char": "🅗",
+          "label": "Lettre H cerclée pleine"
+        },
+        {
+          "char": "🅘",
+          "label": "Lettre I cerclée pleine"
+        },
+        {
+          "char": "🅙",
+          "label": "Lettre J cerclée pleine"
+        },
+        {
+          "char": "🅚",
+          "label": "Lettre K cerclée pleine"
+        },
+        {
+          "char": "🅛",
+          "label": "Lettre L cerclée pleine"
+        },
+        {
+          "char": "🅜",
+          "label": "Lettre M cerclée pleine"
+        },
+        {
+          "char": "🅝",
+          "label": "Lettre N cerclée pleine"
+        },
+        {
+          "char": "🅞",
+          "label": "Lettre O cerclée pleine"
+        },
+        {
+          "char": "🅟",
+          "label": "Lettre P cerclée pleine"
+        },
+        {
+          "char": "🅠",
+          "label": "Lettre Q cerclée pleine"
+        },
+        {
+          "char": "🅡",
+          "label": "Lettre R cerclée pleine"
+        },
+        {
+          "char": "🅢",
+          "label": "Lettre S cerclée pleine"
+        },
+        {
+          "char": "🅣",
+          "label": "Lettre T cerclée pleine"
+        },
+        {
+          "char": "🅤",
+          "label": "Lettre U cerclée pleine"
+        },
+        {
+          "char": "🅥",
+          "label": "Lettre V cerclée pleine"
+        },
+        {
+          "char": "🅦",
+          "label": "Lettre W cerclée pleine"
+        },
+        {
+          "char": "🅧",
+          "label": "Lettre X cerclée pleine"
+        },
+        {
+          "char": "🅨",
+          "label": "Lettre Y cerclée pleine"
+        },
+        {
+          "char": "🅩",
+          "label": "Lettre Z cerclée pleine"
+        },
+        {
+          "char": "🄰",
+          "label": "Lettre A encadrée"
+        },
+        {
+          "char": "🄱",
+          "label": "Lettre B encadrée"
+        },
+        {
+          "char": "🄲",
+          "label": "Lettre C encadrée"
+        },
+        {
+          "char": "🄳",
+          "label": "Lettre D encadrée"
+        },
+        {
+          "char": "🄴",
+          "label": "Lettre E encadrée"
+        },
+        {
+          "char": "🄵",
+          "label": "Lettre F encadrée"
+        },
+        {
+          "char": "🄶",
+          "label": "Lettre G encadrée"
+        },
+        {
+          "char": "🄷",
+          "label": "Lettre H encadrée"
+        },
+        {
+          "char": "🄸",
+          "label": "Lettre I encadrée"
+        },
+        {
+          "char": "🄹",
+          "label": "Lettre J encadrée"
+        },
+        {
+          "char": "🄺",
+          "label": "Lettre K encadrée"
+        },
+        {
+          "char": "🄻",
+          "label": "Lettre L encadrée"
+        },
+        {
+          "char": "🄼",
+          "label": "Lettre M encadrée"
+        },
+        {
+          "char": "🄽",
+          "label": "Lettre N encadrée"
+        },
+        {
+          "char": "🄾",
+          "label": "Lettre O encadrée"
+        },
+        {
+          "char": "🄿",
+          "label": "Lettre P encadrée"
+        },
+        {
+          "char": "🅀",
+          "label": "Lettre Q encadrée"
+        },
+        {
+          "char": "🅁",
+          "label": "Lettre R encadrée"
+        },
+        {
+          "char": "🅂",
+          "label": "Lettre S encadrée"
+        },
+        {
+          "char": "🅃",
+          "label": "Lettre T encadrée"
+        },
+        {
+          "char": "🅄",
+          "label": "Lettre U encadrée"
+        },
+        {
+          "char": "🅅",
+          "label": "Lettre V encadrée"
+        },
+        {
+          "char": "🅆",
+          "label": "Lettre W encadrée"
+        },
+        {
+          "char": "🅇",
+          "label": "Lettre X encadrée"
+        },
+        {
+          "char": "🅈",
+          "label": "Lettre Y encadrée"
+        },
+        {
+          "char": "🅉",
+          "label": "Lettre Z encadrée"
+        },
+        {
+          "char": "⒜",
+          "label": "Lettre a entre parenthèses"
+        },
+        {
+          "char": "⒝",
+          "label": "Lettre b entre parenthèses"
+        },
+        {
+          "char": "⒞",
+          "label": "Lettre c entre parenthèses"
+        },
+        {
+          "char": "⒟",
+          "label": "Lettre d entre parenthèses"
+        },
+        {
+          "char": "⒠",
+          "label": "Lettre e entre parenthèses"
+        },
+        {
+          "char": "⒡",
+          "label": "Lettre f entre parenthèses"
+        },
+        {
+          "char": "⒢",
+          "label": "Lettre g entre parenthèses"
+        },
+        {
+          "char": "⒣",
+          "label": "Lettre h entre parenthèses"
+        },
+        {
+          "char": "⒤",
+          "label": "Lettre i entre parenthèses"
+        },
+        {
+          "char": "⒥",
+          "label": "Lettre j entre parenthèses"
+        },
+        {
+          "char": "⒦",
+          "label": "Lettre k entre parenthèses"
+        },
+        {
+          "char": "⒧",
+          "label": "Lettre l entre parenthèses"
+        },
+        {
+          "char": "⒨",
+          "label": "Lettre m entre parenthèses"
+        },
+        {
+          "char": "⒩",
+          "label": "Lettre n entre parenthèses"
+        },
+        {
+          "char": "⒪",
+          "label": "Lettre o entre parenthèses"
+        },
+        {
+          "char": "⒫",
+          "label": "Lettre p entre parenthèses"
+        },
+        {
+          "char": "⒬",
+          "label": "Lettre q entre parenthèses"
+        },
+        {
+          "char": "⒭",
+          "label": "Lettre r entre parenthèses"
+        },
+        {
+          "char": "⒮",
+          "label": "Lettre s entre parenthèses"
+        },
+        {
+          "char": "⒯",
+          "label": "Lettre t entre parenthèses"
+        },
+        {
+          "char": "⒰",
+          "label": "Lettre u entre parenthèses"
+        },
+        {
+          "char": "⒱",
+          "label": "Lettre v entre parenthèses"
+        },
+        {
+          "char": "⒲",
+          "label": "Lettre w entre parenthèses"
+        },
+        {
+          "char": "⒳",
+          "label": "Lettre x entre parenthèses"
+        },
+        {
+          "char": "⒴",
+          "label": "Lettre y entre parenthèses"
+        },
+        {
+          "char": "⒵",
+          "label": "Lettre z entre parenthèses"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Chiffres romains",
+      "h2": "Chiffres romains",
+      "intro": "Pour des étapes ou des versions.",
+      "symbols": [
+        {
+          "char": "Ⅰ",
+          "label": "Chiffre romain I (majuscule)"
+        },
+        {
+          "char": "Ⅱ",
+          "label": "Chiffre romain II (majuscule)"
+        },
+        {
+          "char": "Ⅲ",
+          "label": "Chiffre romain III (majuscule)"
+        },
+        {
+          "char": "Ⅳ",
+          "label": "Chiffre romain IV (majuscule)"
+        },
+        {
+          "char": "Ⅴ",
+          "label": "Chiffre romain V (majuscule)"
+        },
+        {
+          "char": "Ⅵ",
+          "label": "Chiffre romain VI (majuscule)"
+        },
+        {
+          "char": "Ⅶ",
+          "label": "Chiffre romain VII (majuscule)"
+        },
+        {
+          "char": "Ⅷ",
+          "label": "Chiffre romain VIII (majuscule)"
+        },
+        {
+          "char": "Ⅸ",
+          "label": "Chiffre romain IX (majuscule)"
+        },
+        {
+          "char": "Ⅹ",
+          "label": "Chiffre romain X (majuscule)"
+        },
+        {
+          "char": "Ⅺ",
+          "label": "Chiffre romain XI (majuscule)"
+        },
+        {
+          "char": "Ⅻ",
+          "label": "Chiffre romain XII (majuscule)"
+        },
+        {
+          "char": "ⅰ",
+          "label": "Chiffre romain i (minuscule)"
+        },
+        {
+          "char": "ⅱ",
+          "label": "Chiffre romain ii (minuscule)"
+        },
+        {
+          "char": "ⅲ",
+          "label": "Chiffre romain iii (minuscule)"
+        },
+        {
+          "char": "ⅳ",
+          "label": "Chiffre romain iv (minuscule)"
+        },
+        {
+          "char": "ⅴ",
+          "label": "Chiffre romain v (minuscule)"
+        },
+        {
+          "char": "ⅵ",
+          "label": "Chiffre romain vi (minuscule)"
+        },
+        {
+          "char": "ⅶ",
+          "label": "Chiffre romain vii (minuscule)"
+        },
+        {
+          "char": "ⅷ",
+          "label": "Chiffre romain viii (minuscule)"
+        },
+        {
+          "char": "ⅸ",
+          "label": "Chiffre romain ix (minuscule)"
+        },
+        {
+          "char": "ⅹ",
+          "label": "Chiffre romain x (minuscule)"
+        },
+        {
+          "char": "ⅺ",
+          "label": "Chiffre romain xi (minuscule)"
+        },
+        {
+          "char": "ⅻ",
+          "label": "Chiffre romain xii (minuscule)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Statut, priorité et évaluation",
+      "h2": "Statut, priorité et évaluation",
+      "intro": "Montrer un état d'un coup d'œil.",
+      "symbols": [
+        {
+          "char": "▲",
+          "label": "Triangle plein haut"
+        },
+        {
+          "char": "△",
+          "label": "Triangle creux haut"
+        },
+        {
+          "char": "▼",
+          "label": "Triangle plein bas"
+        },
+        {
+          "char": "▽",
+          "label": "Triangle creux bas"
+        },
+        {
+          "char": "●",
+          "label": "Rond plein"
+        },
+        {
+          "char": "○",
+          "label": "Rond creux"
+        },
+        {
+          "char": "◉",
+          "label": "Œil-de-poisson"
+        },
+        {
+          "char": "◎",
+          "label": "Cible"
+        },
+        {
+          "char": "⬤",
+          "label": "Grand rond plein"
+        },
+        {
+          "char": "◯",
+          "label": "Grand rond creux"
+        },
+        {
+          "char": "■",
+          "label": "Carré plein"
+        },
+        {
+          "char": "□",
+          "label": "Carré creux"
+        },
+        {
+          "char": "▣",
+          "label": "Carré à centre plein"
+        },
+        {
+          "char": "▤",
+          "label": "Trame horizontale"
+        },
+        {
+          "char": "▥",
+          "label": "Trame verticale"
+        },
+        {
+          "char": "▦",
+          "label": "Trame quadrillée"
+        },
+        {
+          "char": "▧",
+          "label": "Trame diagonale"
+        },
+        {
+          "char": "▨",
+          "label": "Trame diagonale inverse"
+        },
+        {
+          "char": "▩",
+          "label": "Trame croisée"
+        },
+        {
+          "char": "★",
+          "label": "Étoile pleine"
+        },
+        {
+          "char": "☆",
+          "label": "Étoile creuse"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile-éclat"
+        },
+        {
+          "char": "✧",
+          "label": "Étoile-éclat creuse"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "Séparateurs et encadrements",
+      "h2": "Séparateurs et encadrements",
+      "intro": "Aérer un post sans saut de ligne.",
+      "symbols": [
+        {
+          "char": "|",
+          "label": "Barre verticale"
+        },
+        {
+          "char": "‖",
+          "label": "Double barre verticale"
+        },
+        {
+          "char": "¦",
+          "label": "Barre brisée"
+        },
+        {
+          "char": "┃",
+          "label": "Barre verticale épaisse"
+        },
+        {
+          "char": "─",
+          "label": "Trait horizontal"
+        },
+        {
+          "char": "━",
+          "label": "Trait horizontal épais"
+        },
+        {
+          "char": "═",
+          "label": "Double trait horizontal"
+        },
+        {
+          "char": "·",
+          "label": "Point médian"
+        },
+        {
+          "char": "⋅",
+          "label": "Point d'opérateur"
+        },
+        {
+          "char": "•",
+          "label": "Puce"
+        },
+        {
+          "char": "‧",
+          "label": "Point de césure"
+        },
+        {
+          "char": "▬",
+          "label": "Rectangle plein"
+        },
+        {
+          "char": "▭",
+          "label": "Rectangle creux"
+        },
+        {
+          "char": "▮",
+          "label": "Rectangle vertical plein"
+        },
+        {
+          "char": "▯",
+          "label": "Rectangle vertical creux"
+        },
+        {
+          "char": "█",
+          "label": "Bloc plein"
+        },
+        {
+          "char": "▓",
+          "label": "Trame dense"
+        },
+        {
+          "char": "▒",
+          "label": "Trame moyenne"
+        },
+        {
+          "char": "░",
+          "label": "Trame légère"
+        },
+        {
+          "char": "⟡",
+          "label": "Losange fin"
+        },
+        {
+          "char": "❖",
+          "label": "Losange ouvragé"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile-éclat"
+        },
+        {
+          "char": "◇",
+          "label": "Losange creux"
+        },
+        {
+          "char": "◆",
+          "label": "Losange plein"
+        },
+        {
+          "char": "■",
+          "label": "Carré plein"
+        },
+        {
+          "char": "□",
+          "label": "Carré creux"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "Crochets, guillemets et structure",
+      "h2": "Crochets, guillemets et structure",
+      "intro": "Encadrer un titre ou une citation.",
+      "symbols": [
+        {
+          "char": "【",
+          "label": "Crochet noir gauche"
+        },
+        {
+          "char": "】",
+          "label": "Crochet noir droit"
+        },
+        {
+          "char": "〔",
+          "label": "Crochet tortue gauche"
+        },
+        {
+          "char": "〕",
+          "label": "Crochet tortue droit"
+        },
+        {
+          "char": "〈",
+          "label": "Chevron simple gauche"
+        },
+        {
+          "char": "〉",
+          "label": "Chevron simple droit"
+        },
+        {
+          "char": "《",
+          "label": "Double chevron gauche"
+        },
+        {
+          "char": "》",
+          "label": "Double chevron droit"
+        },
+        {
+          "char": "「",
+          "label": "Crochet d'angle gauche"
+        },
+        {
+          "char": "」",
+          "label": "Crochet d'angle droit"
+        },
+        {
+          "char": "『",
+          "label": "Crochet d'angle blanc gauche"
+        },
+        {
+          "char": "』",
+          "label": "Crochet d'angle blanc droit"
+        },
+        {
+          "char": "“",
+          "label": "Guillemet-apostrophe double ouvrant"
+        },
+        {
+          "char": "”",
+          "label": "Guillemet-apostrophe double fermant"
+        },
+        {
+          "char": "‘",
+          "label": "Guillemet-apostrophe simple ouvrant"
+        },
+        {
+          "char": "’",
+          "label": "Guillemet-apostrophe simple fermant"
+        },
+        {
+          "char": "«",
+          "label": "Guillemet français ouvrant"
+        },
+        {
+          "char": "»",
+          "label": "Guillemet français fermant"
+        },
+        {
+          "char": "‹",
+          "label": "Guillemet simple ouvrant"
+        },
+        {
+          "char": "›",
+          "label": "Guillemet simple fermant"
+        },
+        {
+          "char": "※",
+          "label": "Signe de référence japonais"
+        },
+        {
+          "char": "‡",
+          "label": "Double obèle"
+        },
+        {
+          "char": "†",
+          "label": "Obèle"
+        },
+        {
+          "char": "‣",
+          "label": "Puce triangulaire"
+        },
+        {
+          "char": "⁂",
+          "label": "Astérisme"
+        },
+        {
+          "char": "⁑",
+          "label": "Deux astérisques alignés"
+        },
+        {
+          "char": "⁕",
+          "label": "Astérisque ouvragé"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "Mathématiques, logique et comparaison",
+      "h2": "Mathématiques, logique et comparaison",
+      "intro": "Quand un chiffre a besoin d'un signe.",
+      "symbols": [
+        {
+          "char": "±",
+          "label": "Plus ou moins"
+        },
+        {
+          "char": "×",
+          "label": "Signe de multiplication"
+        },
+        {
+          "char": "÷",
+          "label": "Signe de division"
+        },
+        {
+          "char": "≠",
+          "label": "Différent de"
+        },
+        {
+          "char": "≤",
+          "label": "Inférieur ou égal"
+        },
+        {
+          "char": "≥",
+          "label": "Supérieur ou égal"
+        },
+        {
+          "char": "≈",
+          "label": "Environ égal"
+        },
+        {
+          "char": "~",
+          "label": "Tilde"
+        },
+        {
+          "char": "∞",
+          "label": "Infini"
+        },
+        {
+          "char": "∑",
+          "label": "Somme"
+        },
+        {
+          "char": "∆",
+          "label": "Delta (variation)"
+        },
+        {
+          "char": "√",
+          "label": "Racine carrée"
+        },
+        {
+          "char": "∴",
+          "label": "Donc"
+        },
+        {
+          "char": "∵",
+          "label": "Car"
+        },
+        {
+          "char": "∈",
+          "label": "Appartient à"
+        },
+        {
+          "char": "∉",
+          "label": "N'appartient pas à"
+        },
+        {
+          "char": "∩",
+          "label": "Intersection"
+        },
+        {
+          "char": "∪",
+          "label": "Union"
+        },
+        {
+          "char": "⊂",
+          "label": "Inclus dans"
+        },
+        {
+          "char": "⊃",
+          "label": "Contient"
+        },
+        {
+          "char": "∀",
+          "label": "Quel que soit"
+        },
+        {
+          "char": "∃",
+          "label": "Il existe"
+        },
+        {
+          "char": "∂",
+          "label": "Dérivée partielle"
+        },
+        {
+          "char": "∫",
+          "label": "Intégrale"
+        },
+        {
+          "char": "π",
+          "label": "Pi"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "label": "Étoiles et éclats",
+      "h2": "Étoiles et éclats",
+      "intro": "Mettre un passage en relief.",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "Étoile pleine"
+        },
+        {
+          "char": "☆",
+          "label": "Étoile creuse"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile-éclat"
+        },
+        {
+          "char": "✧",
+          "label": "Étoile-éclat creuse"
+        },
+        {
+          "char": "✪",
+          "label": "Étoile cerclée"
+        },
+        {
+          "char": "✰",
+          "label": "Étoile ombrée"
+        },
+        {
+          "char": "✮",
+          "label": "Étoile à contour épais"
+        },
+        {
+          "char": "✯",
+          "label": "Étoile moulinet"
+        },
+        {
+          "char": "✶",
+          "label": "Étoile à six branches"
+        },
+        {
+          "char": "✷",
+          "label": "Étoile à sept branches"
+        },
+        {
+          "char": "✸",
+          "label": "Étoile à huit branches"
+        },
+        {
+          "char": "✹",
+          "label": "Étoile à douze branches"
+        },
+        {
+          "char": "✺",
+          "label": "Étoile ouvragée"
+        },
+        {
+          "char": "✻",
+          "label": "Astérisque en gouttes"
+        },
+        {
+          "char": "✼",
+          "label": "Astérisque ouvert"
+        },
+        {
+          "char": "✽",
+          "label": "Astérisque fleuri"
+        },
+        {
+          "char": "❋",
+          "label": "Astérisque à huit pétales"
+        },
+        {
+          "char": "❊",
+          "label": "Puce cerclée"
+        },
+        {
+          "char": "❈",
+          "label": "Astérisque à contour"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "label": "Formes géométriques",
+      "h2": "Formes géométriques",
+      "intro": "Formes pleines, creuses et partielles.",
+      "symbols": [
+        {
+          "char": "■",
+          "label": "Carré plein"
+        },
+        {
+          "char": "□",
+          "label": "Carré creux"
+        },
+        {
+          "char": "▪",
+          "label": "Petit carré plein"
+        },
+        {
+          "char": "▫",
+          "label": "Petit carré creux"
+        },
+        {
+          "char": "◾",
+          "label": "Carré plein moyen"
+        },
+        {
+          "char": "◽",
+          "label": "Carré creux moyen"
+        },
+        {
+          "char": "▢",
+          "label": "Carré à angles arrondis"
+        },
+        {
+          "char": "▲",
+          "label": "Triangle plein haut"
+        },
+        {
+          "char": "△",
+          "label": "Triangle creux haut"
+        },
+        {
+          "char": "▼",
+          "label": "Triangle plein bas"
+        },
+        {
+          "char": "▽",
+          "label": "Triangle creux bas"
+        },
+        {
+          "char": "◁",
+          "label": "Triangle creux gauche"
+        },
+        {
+          "char": "▷",
+          "label": "Triangle creux droit"
+        },
+        {
+          "char": "◀",
+          "label": "Triangle plein gauche"
+        },
+        {
+          "char": "▶",
+          "label": "Triangle plein droit"
+        },
+        {
+          "char": "●",
+          "label": "Rond plein"
+        },
+        {
+          "char": "○",
+          "label": "Rond creux"
+        },
+        {
+          "char": "◐",
+          "label": "Rond moitié gauche"
+        },
+        {
+          "char": "◑",
+          "label": "Rond moitié droite"
+        },
+        {
+          "char": "◒",
+          "label": "Rond moitié bas"
+        },
+        {
+          "char": "◓",
+          "label": "Rond moitié haut"
+        },
+        {
+          "char": "◔",
+          "label": "Rond quart plein"
+        },
+        {
+          "char": "◕",
+          "label": "Rond trois quarts plein"
+        },
+        {
+          "char": "◆",
+          "label": "Losange plein"
+        },
+        {
+          "char": "◇",
+          "label": "Losange creux"
+        },
+        {
+          "char": "◈",
+          "label": "Losange à point central"
+        },
+        {
+          "char": "♦",
+          "label": "Carreau (jeu de cartes)"
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "label": "Devises et affaires",
+      "h2": "Devises et affaires",
+      "intro": "Symboles monétaires du monde entier.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dollar"
+        },
+        {
+          "char": "€",
+          "label": "Euro"
+        },
+        {
+          "char": "£",
+          "label": "Livre sterling"
+        },
+        {
+          "char": "¥",
+          "label": "Yen"
+        },
+        {
+          "char": "₹",
+          "label": "Roupie indienne"
+        },
+        {
+          "char": "₩",
+          "label": "Won"
+        },
+        {
+          "char": "₽",
+          "label": "Rouble"
+        },
+        {
+          "char": "₿",
+          "label": "Bitcoin"
+        },
+        {
+          "char": "¢",
+          "label": "Cent"
+        },
+        {
+          "char": "₱",
+          "label": "Peso philippin"
+        },
+        {
+          "char": "₪",
+          "label": "Nouveau shekel"
+        },
+        {
+          "char": "₫",
+          "label": "Dong"
+        },
+        {
+          "char": "₴",
+          "label": "Hryvnia"
+        },
+        {
+          "char": "₦",
+          "label": "Naira"
+        },
+        {
+          "char": "₡",
+          "label": "Colón"
+        },
+        {
+          "char": "₢",
+          "label": "Cruzeiro"
+        },
+        {
+          "char": "₣",
+          "label": "Franc français"
+        },
+        {
+          "char": "₤",
+          "label": "Livre italienne"
+        },
+        {
+          "char": "₥",
+          "label": "Mill"
+        },
+        {
+          "char": "₧",
+          "label": "Peseta"
+        },
+        {
+          "char": "₨",
+          "label": "Roupie"
+        },
+        {
+          "char": "₭",
+          "label": "Kip"
+        },
+        {
+          "char": "₮",
+          "label": "Tugrik"
+        },
+        {
+          "char": "₯",
+          "label": "Drachme"
+        },
+        {
+          "char": "₰",
+          "label": "Pfennig"
+        },
+        {
+          "char": "₲",
+          "label": "Guarani"
+        },
+        {
+          "char": "₳",
+          "label": "Austral"
+        },
+        {
+          "char": "₵",
+          "label": "Cedi"
+        },
+        {
+          "char": "₶",
+          "label": "Livre-tournois"
+        },
+        {
+          "char": "₷",
+          "label": "Spesmilo"
+        },
+        {
+          "char": "₸",
+          "label": "Tenge"
+        },
+        {
+          "char": "₺",
+          "label": "Livre turque"
+        },
+        {
+          "char": "₻",
+          "label": "Manat turkmène"
+        },
+        {
+          "char": "₼",
+          "label": "Manat azerbaïdjanais"
+        },
+        {
+          "char": "₾",
+          "label": "Lari"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "label": "Mentions légales et éditoriales",
+      "h2": "Mentions légales et éditoriales",
+      "intro": "Droits, marques et références.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Copyright"
+        },
+        {
+          "char": "®",
+          "label": "Marque déposée"
+        },
+        {
+          "char": "™",
+          "label": "Marque de commerce"
+        },
+        {
+          "char": "§",
+          "label": "Signe de paragraphe"
+        },
+        {
+          "char": "¶",
+          "label": "Pied-de-mouche"
+        },
+        {
+          "char": "†",
+          "label": "Obèle"
+        },
+        {
+          "char": "‡",
+          "label": "Double obèle"
+        },
+        {
+          "char": "※",
+          "label": "Signe de référence japonais"
+        },
+        {
+          "char": "℠",
+          "label": "Marque de service"
+        },
+        {
+          "char": "℗",
+          "label": "Copyright phonographique"
+        },
+        {
+          "char": "℃",
+          "label": "Degré Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Degré Fahrenheit"
+        },
+        {
+          "char": "№",
+          "label": "Numéro"
+        },
+        {
+          "char": "℞",
+          "label": "Signe d'ordonnance (Rx)"
+        },
+        {
+          "char": "℡",
+          "label": "Signe téléphone"
+        },
+        {
+          "char": "℀",
+          "label": "Aux bons soins de (a/s)"
+        },
+        {
+          "char": "℁",
+          "label": "Aux bons soins de (variante)"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "label": "Décoratifs adaptés à LinkedIn",
+      "h2": "Décoratifs adaptés à LinkedIn",
+      "intro": "Discrets, jamais tape-à-l'œil.",
+      "symbols": [
+        {
+          "char": "❖",
+          "label": "Losange ouvragé"
+        },
+        {
+          "char": "❘",
+          "label": "Barre verticale fine"
+        },
+        {
+          "char": "❙",
+          "label": "Barre verticale moyenne"
+        },
+        {
+          "char": "❚",
+          "label": "Barre verticale épaisse"
+        },
+        {
+          "char": "⟡",
+          "label": "Losange fin"
+        },
+        {
+          "char": "◇",
+          "label": "Losange creux"
+        },
+        {
+          "char": "◆",
+          "label": "Losange plein"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile-éclat"
+        },
+        {
+          "char": "❧",
+          "label": "Feuille de lierre"
+        },
+        {
+          "char": "☙",
+          "label": "Feuille de lierre inversée"
+        },
+        {
+          "char": "❦",
+          "label": "Cœur fleuri"
+        },
+        {
+          "char": "❡",
+          "label": "Pied-de-mouche ouvragé"
+        },
+        {
+          "char": "☸",
+          "label": "Roue du dharma"
+        },
+        {
+          "char": "⚙",
+          "label": "Engrenage"
+        },
+        {
+          "char": "⚡",
+          "label": "Éclair"
+        },
+        {
+          "char": "✾",
+          "label": "Fleurette à six pétales"
+        },
+        {
+          "char": "❀",
+          "label": "Fleurette blanche"
+        },
+        {
+          "char": "☘",
+          "label": "Trèfle"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "label": "Combinaisons prêtes à copier",
+      "h2": "Combinaisons prêtes à copier",
+      "intro": "Lignes entières, à coller telles quelles.",
+      "symbols": [
+        {
+          "char": "→ À retenir",
+          "label": "Point à retenir"
+        },
+        {
+          "char": "✓ Ce qui a marché",
+          "label": "Ce qui a fonctionné"
+        },
+        {
+          "char": "✗ Ce qui a échoué",
+          "label": "Ce qui a échoué"
+        },
+        {
+          "char": "① Premier principe",
+          "label": "Principe 1"
+        },
+        {
+          "char": "② Deuxième principe",
+          "label": "Principe 2"
+        },
+        {
+          "char": "③ Troisième principe",
+          "label": "Principe 3"
+        },
+        {
+          "char": "★ Enseignement clé",
+          "label": "Enseignement principal"
+        },
+        {
+          "char": "• Premier point",
+          "label": "Point d'une liste"
+        },
+        {
+          "char": "▸ Action à mener",
+          "label": "Étape d'action"
+        },
+        {
+          "char": "【Méthode】",
+          "label": "Titre de méthode"
+        },
+        {
+          "char": "《Étude de cas》",
+          "label": "Titre d'étude de cas"
+        },
+        {
+          "char": "▲ Croissance",
+          "label": "Indicateur en hausse"
+        },
+        {
+          "char": "▼ Recul",
+          "label": "Indicateur en baisse"
+        },
+        {
+          "char": "™ Note de marque",
+          "label": "Mention de marque"
+        },
+        {
+          "char": "⟹ Donc",
+          "label": "Conclusion"
+        },
+        {
+          "char": "↪ Rebondissement",
+          "label": "Retournement"
+        },
+        {
+          "char": "◆ Fait marquant",
+          "label": "Fait clé"
+        },
+        {
+          "char": "☐ Non commencé",
+          "label": "Tâche à faire"
+        },
+        {
+          "char": "☑ Terminé",
+          "label": "Tâche terminée"
+        },
+        {
+          "char": "☒ Bloqué",
+          "label": "Tâche bloquée"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Questions fréquentes sur les symboles LinkedIn",
+  "faq": [
+    {
+      "q": "Pourquoi LinkedIn ne propose-t-il pas de liste à puces ?",
+      "a": "Parce que le champ de publication n'accepte que du texte brut : il n'existe aucun bouton de mise en forme, et le HTML collé depuis Word ou Google Docs est retiré à l'envoi. Un caractère comme • ou ▸ fait partie de la chaîne de texte, il survit donc là où une mise en forme disparaît."
+    },
+    {
+      "q": "Les symboles nuisent-ils à la portée d'un post ?",
+      "a": "Rien n'indique que LinkedIn pénalise les caractères Unicode en eux-mêmes. Le vrai risque est ailleurs : les lettres stylisées (𝗴𝗿𝗮𝘀, 𝘪𝘵𝘢𝘭𝘪𝘲𝘶𝘦) sont des caractères mathématiques que les lecteurs d'écran épellent un par un ou ignorent, et qui rendent le texte non recherchable. Les symboles listés ici sont de la ponctuation et des formes : ils ne remplacent aucune lettre."
+    },
+    {
+      "q": "Combien de symboles par post ?",
+      "a": "Peu, et toujours pour la même fonction. Une flèche qui introduit systématiquement une conclusion et une puce unique pour les listes se lisent comme une structure ; six symboles différents dans dix lignes se lisent comme du bruit. La contrainte n'est pas technique, elle est de lisibilité."
+    },
+    {
+      "q": "Ces caractères passent-ils aussi dans le titre du profil ?",
+      "a": "Oui, le champ de titre les accepte, et un séparateur discret (❖ ou •) y est courant pour séparer deux fonctions. Attention à la limite de 220 caractères et au fait que le titre est tronqué dans le fil : ce qui compte doit venir avant le premier séparateur."
+    },
+    {
+      "q": "Pourquoi certains symboles apparaissent-ils comme un carré vide ?",
+      "a": "L'appareil du lecteur n'a pas de police pour ce caractère. Cela touche surtout les blocs récents : les lettres encadrées 🄰 🄱, les lettres cerclées pleines 🅐 🅑 et 🗸. Les formes anciennes — → ✓ • ▪ ★ ① — s'affichent partout, y compris sur l'application mobile."
+    },
+    {
+      "q": "Comment copier les combinaisons prêtes à l'emploi ?",
+      "a": "Le dernier groupe ne contient pas des caractères isolés mais des lignes complètes, espace compris. Un clic copie la ligne entière ; colle-la telle quelle, puis remplace le texte après le symbole par le tien."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Un éditeur absent, remplacé par des caractères",
+      "body": "La bibliothèque de symboles pour LinkedIn existe à cause d'une décision de produit : le champ de publication est resté du texte brut alors que le réseau devenait un lieu d'écriture longue. Sans gras ni titres, la hiérarchie visuelle d'un post doit passer par le seul élément que le champ accepte — le caractère lui-même. D'où des conventions devenues reconnaissables : une flèche pour la conclusion, un chiffre cerclé pour une étape, un séparateur pour respirer. Ce ne sont pas des ornements, ce sont les balises d'un format qui n'en a pas. Cela impose aussi une discipline : puisque chaque symbole occupe la place d'un signe de ponctuation, en multiplier les formes revient à écrire avec plusieurs alphabets à la fois."
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/symboles-fleches/",
+      "title": "Symboles Flèche",
+      "desc": "Une collection de flèches directionnelles — droites, courbes, doubles, triangulaires et emoji. Clique sur un symbole pour le copier instantanément."
+    },
+    {
+      "href": "/fr/library/symboles-puces/",
+      "title": "Symboles Puce",
+      "desc": "Copie et colle des puces et des points de liste pour LinkedIn, tes e-mails, tes documents et les réseaux sociaux. Clique sur un symbole pour le copier instantanément."
+    },
+    {
+      "href": "/fr/library/symbole-coche/",
+      "title": "Symbole coche",
+      "desc": "✓ ✔ ☑ ✅ et tout ce qui les accompagne : croix, pastilles d'état, cases à cocher, numéros d'étape. Clique pour copier."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/fr/library/symboles-linkedin/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/linkedin-symbol-library/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-linkedin/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/linkedin-symbol-library/"
+    }
+  ]
+}

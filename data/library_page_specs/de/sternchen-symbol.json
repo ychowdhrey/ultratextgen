@@ -1,0 +1,86 @@
+{
+  "slug": "sternchen-symbol",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Sternchen-Symbol: * ⁂ ✱ kopieren & einfügen — vom Fußnotenzeichen zum Platzhalter & Zensurstern",
+  "meta_description": "Das Sternchen (*) kopieren und einfügen, dazu den Asterismus ⁂ und das fette ✱ — das antike Fußnotenzeichen, das auch als Platzhalter in der Suche dient und Kraftausdrücke zensiert. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/sternchen-symbol/",
+  "breadcrumb": "Sternchen-Symbol",
+  "hero_h1": "Sternchen-Symbol (*)",
+  "hero_tagline": "Das Sternchen (*) für Fußnoten, der Platzhalter *, der in Suche und Code für beliebige Zeichen steht, und der Zensurstern in Sch***, dazu typografische Verwandte wie der dreifache Asterismus ⁂. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Sternchen (*, Unicode U+002A) ist das sternförmige Zeichen, das sich die Tastatur mit der Ziffer 8 teilt, und sein Name stammt direkt vom altgriechischen asteriskos, „kleiner Stern“ — einer Verkleinerungsform von astēr, „Stern“. Es ist eines der ältesten Lektoratszeichen der westlichen Tradition: Der alexandrinische Gelehrte Aristarchos von Samothrake (ca. 220–143 v. Chr.) nutzte den asteriskos in seinen Homer-Ausgaben, um Zeilen zu markieren, die er für andernorts wiederholt hielt, und der Theologe Origenes setzte ihn später in seiner Hexapla ein, um Text zu kennzeichnen, der im Hebräischen, aber nicht im Griechischen vorhanden war. Heute erfüllt dieselbe Glyphe drei ganz unterschiedliche Aufgaben: Sie ist das klassische Fußnotenzeichen, das zu einer Anmerkung am Seitenende führt, sie ist der Platzhalter, der in Dateisuche, Glob-Mustern und SQLs SELECT * für beliebige Zeichen steht, und sie ist der Standard-Ersatz zum Zensieren von Buchstaben, wie in Sch***. Die Typografie hält eine ganze Familie von Verwandten bereit — der ASTERISMUS ⁂ (U+2042) stapelt drei Sternchen zu einem Dreieck als Abschnittstrenner, das FETTE ASTERISK ✱ (U+2731) und der ACHTSTRAHLIGE ASTERISK ✳ (U+2733) sind kräftigere Anzeigeformen, und der ASTERISK-OPERATOR ∗ (U+2217) ist die für die Multiplikation reservierte Mathe-Glyphe. Keiner davon ist mit den dekorativen Sternformen zu verwechseln — dem schwarzen Stern ★ (U+2605) oder dem gelben Stern-Emoji ⭐ (U+2B50) —, die zu einem anderen, rein ornamentalen Register gehören.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/sternchen-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-sternchen",
+      "label": "Das Sternchen",
+      "h2": "Das Sternchen & seine Anzeigevarianten",
+      "intro": "Das schlichte Tastatur-Sternchen plus die kräftigeren Anzeigeformen und der mathematikspezifische Operator. Jedes davon zum Kopieren bereit.",
+      "symbols": [
+        { "char": "*", "label": "Sternchen (U+002A) — Fußnote, Platzhalter & Zensurzeichen" },
+        { "char": "✱", "label": "Fettes Sternchen (U+2731)" },
+        { "char": "✳", "label": "Achtstrahliges Sternchen (U+2733)" },
+        { "char": "∗", "label": "Asterisk-Operator (U+2217) — die mathematische Multiplikationsglyphe" },
+        { "char": "＊", "label": "Sternchen in voller Breite (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterismus-und-lektoratszeichen",
+      "label": "Asterismus & Lektoratszeichen",
+      "h2": "Asterismus & Abschnittstrenner",
+      "intro": "Lektoratszeichen, aus dem Sternchen aufgebaut — der dreifache, dreiecksförmige Asterismus, der Abschnitte trennt, dazu seine gestapelten und tiefer gesetzten Verwandten.",
+      "symbols": [
+        { "char": "⁂", "label": "Asterismus (U+2042) — drei Sternchen im Dreieck" },
+        { "char": "⁑", "label": "Zwei senkrecht angeordnete Sternchen (U+2051)" },
+        { "char": "⁎", "label": "Tief gesetztes Sternchen (U+204E)" }
+      ]
+    },
+    {
+      "id": "sterne-zum-verwechseln",
+      "label": "Verwechselte Sterne",
+      "h2": "Sternformen, mit denen es verwechselt wird",
+      "intro": "Sternförmige Glyphen, zu denen viele greifen, wenn sie eigentlich ein Sternchen meinen. Das hier sind dekorative Sterne — ein ornamentales Register, kein Fußnoten- oder Interpunktionswerkzeug.",
+      "symbols": [
+        { "char": "★", "label": "Schwarzer Stern (U+2605)" },
+        { "char": "☆", "label": "Weißer Stern (U+2606)" },
+        { "char": "⭐", "label": "Mittlerer weißer Stern (U+2B50) — der gelbe Stern-Emoji" },
+        { "char": "✦", "label": "Schwarzer vierzackiger Stern (U+2726)" },
+        { "char": "✧", "label": "Weißer vierzackiger Stern (U+2727)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Gedankenstriche, Klammern, Anführungszeichen und die alltägliche Interpunktions-Familie, zu der das Sternchen gehört."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Sternchen, Et-Zeichen, Raute und die übrigen Zeichen, die über die Reihen einer Standardtastatur verteilt sind."
+    },
+    {
+      "href": "/de/symbol/stern-symbol/",
+      "title": "Stern-Symbol (★)",
+      "desc": "Der dekorative Stern ★ und der gelbe Stern-Emoji ⭐ — die ornamentalen Cousins, mit denen das Sternchen verwechselt wird."
+    },
+    {
+      "href": "/de/symbol/paragraphenzeichen/",
+      "title": "Paragraphenzeichen (§)",
+      "desc": "Das §-Zeichen — ein weiteres redaktions- und fußnotennahes Symbol aus der Welt des Drucks."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "lang": "es",
+  "slug": "emoji-de-microfono",
+  "page_type": "symbol",
+  "title": "Emoji de Micrófono: Copiar y Pegar 🎤 — Significado, Historia y Todas las Formas de Escribirlo",
+  "meta_description": "Copia y pega el emoji de micrófono 🎤 (U+1F3A4) — qué significa, su historia en Unicode desde 2010, y en qué se diferencia del micrófono de estudio 🎙️. Haz clic para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/emoji-de-microfono/",
+  "breadcrumb": "Emoji de Micrófono",
+  "hero_h1": "Emoji de Micrófono (🎤)",
+  "hero_tagline": "El micrófono de mano al que recurres para hablar de cantar, karaoke, presentar, entrevistas y esos momentos de «mic drop» — no lo confundas con el micrófono de estudio sobre trípode 🎙️. Haz clic para copiarlo al instante.",
+  "intro": "El emoji de micrófono (🎤, U+1F3A4 MICROPHONE) representa un micrófono de mano con la cabeza inclinada hacia la boca — la forma que se usa para cantar, hacer karaoke, presentar, entrevistar, hacer monólogos de humor y esos momentos de «mic drop». Forma parte del conjunto estándar de emoji desde Unicode 6.0, en 2010, entre la primera oleada de emoji incorporados a partir de las fuentes de operadoras móviles japonesas, y se representa a todo color en cualquier plataforma importante sin necesitar un selector de variación. Haz clic más abajo para copiarlo al instante.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-microfono/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "emoji-de-microfono",
+      "label": "Micrófono",
+      "h2": "El Emoji de Micrófono",
+      "intro": "El micrófono de mano en sí — listo para pegar donde se admitan emoji.",
+      "symbols": [
+        { "char": "🎤", "label": "Micrófono (U+1F3A4)" }
+      ]
+    },
+    {
+      "id": "confundibles-del-microfono",
+      "label": "Vecinos Confundibles",
+      "h2": "Emoji con los que se Confunde",
+      "intro": "Símbolos que la gente busca esperando el micrófono de mano, pero que en realidad son emoji distintos y con un código propio.",
+      "symbols": [
+        { "char": "🎙️", "label": "Micrófono de Estudio (U+1F399) — el micrófono de trípode para radiodifusión y pódcast" },
+        { "char": "🔊", "label": "Altavoz con Volumen Alto (U+1F50A)" },
+        { "char": "🗣️", "label": "Cabeza Hablando (U+1F5E3 FE0F)" },
+        { "char": "📢", "label": "Megáfono de Anuncio Público (U+1F4E2)" }
+      ]
+    },
+    {
+      "id": "emoji-de-musica-relacionados",
+      "label": "Emoji de Música Relacionados",
+      "h2": "Emoji de Música y Actuación que lo Acompañan",
+      "intro": "Emoji que suelen aparecer junto al micrófono en pies de foto de canciones, conciertos y pódcast.",
+      "symbols": [
+        { "char": "🎧", "label": "Auricular (U+1F3A7)" },
+        { "char": "🎵", "label": "Nota Musical (U+1F3B5)" },
+        { "char": "🎶", "label": "Notas Musicales (U+1F3B6)" },
+        { "char": "🎸", "label": "Guitarra (U+1F3B8)" },
+        { "char": "🥁", "label": "Tambor (U+1F941)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Emoji de Objetos",
+      "desc": "Todo emoji de objeto cotidiano — tecnología, hogar y oficina — incluido el micrófono, explorable en una sola cuadrícula."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combinaciones de Emoji",
+      "desc": "Combinaciones de emoji listas para usar en biografías y pies de foto, incluidos temas de música y actuación."
+    },
+    {
+      "href": "/es/library/simbolos-de-musica/",
+      "title": "Símbolos de Música",
+      "desc": "La notación musical de Unicode — ♪ ♫ ♬ — el primo en texto de la familia de emoji musicales."
+    }
+  ]
+}

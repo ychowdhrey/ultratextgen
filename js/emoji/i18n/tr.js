@@ -735,6 +735,9 @@
     stopWords: STOPPWOERTER,
     strings: {
       resultPlaceholder: "Emoji çevirin burada görünecek.",
+      copied: "Kopyalandı!",
+      copy: "Kopyala",
+      surpriseMe: "🎲 Beni şaşırt",
       inputPlaceholders: {
         default: "Cümleni buraya yaz…",
         decode: "Çözmek için emojileri buraya yapıştır…",

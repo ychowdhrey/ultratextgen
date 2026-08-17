@@ -1,0 +1,121 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "microteken",
+  "title": "Microteken: Kopieer en Plak µ vs. Griekse Mu (μ) — Welke Gebruik Je?",
+  "meta_description": "Kopieer en plak het microteken (µ) voor micron en microgram, en ontdek waarom het een ander Unicode-teken is dan de Griekse letter mu (μ) waar het identiek uitziet. Klik om direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/microteken/",
+  "breadcrumb": "Microteken",
+  "hero_h1": "Microteken (µ)",
+  "hero_tagline": "Het microteken (µ) voor micron, microgram en microseconde — en waarom het een compleet ander teken is dan de identiek ogende Griekse letter mu. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het microteken (µ, U+00B5) en de Griekse kleine letter mu (μ, U+03BC) worden in bijna elk lettertype weergegeven als exact hetzelfde glyph, maar Unicode behandelt ze als twee aparte tekens. Welke van de twee je plakt, kan zoekfuncties, regex-matching en bestandsnamen stilletjes laten mislukken, zonder dat er op het scherm ook maar iets fout uitziet.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/microteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "microteken",
+      "label": "Microteken",
+      "h2": "Microteken (U+00B5)",
+      "intro": "Het klassieke microteken, in Unicode bewaard voor compatibiliteit met oudere Latin-1-systemen (ISO/IEC 8859-1). Gebruikt voor µm (micron), µg (microgram), µs (microseconde).",
+      "symbols": [
+        {
+          "char": "µ",
+          "label": "Microteken"
+        },
+        {
+          "char": "µs",
+          "label": "Afkorting Microseconde"
+        },
+        {
+          "char": "µg",
+          "label": "Afkorting Microgram"
+        }
+      ]
+    },
+    {
+      "id": "griekse-mu",
+      "label": "Griekse Mu",
+      "h2": "Griekse Kleine Letter Mu (U+03BC)",
+      "intro": "De échte twaalfde letter van het Griekse alfabet — visueel identiek aan het microteken, en het teken dat Unicodes eigen normalisatieregels prefereren.",
+      "symbols": [
+        {
+          "char": "μ",
+          "label": "Griekse Kleine Letter Mu"
+        },
+        {
+          "char": "Μ",
+          "label": "Griekse Hoofdletter Mu"
+        }
+      ]
+    },
+    {
+      "id": "verwante-eenheidstekens",
+      "label": "Verwante Eenheidstekens",
+      "h2": "Tekens die vaak samen met het Microteken Voorkomen",
+      "intro": "Andere maat- en wetenschappelijke-notatietekens die je in technische tekst naast µ tegenkomt.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Ohm-teken"
+        },
+        {
+          "char": "°",
+          "label": "Gradenteken"
+        },
+        {
+          "char": "±",
+          "label": "Plusminusteken"
+        },
+        {
+          "char": "‰",
+          "label": "Promilleteken"
+        },
+        {
+          "char": "∞",
+          "label": "Oneindigheidsteken"
+        },
+        {
+          "char": "≈",
+          "label": "Ongeveer Gelijk Aan"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Metrische, imperiale en wetenschappelijke eenheidstekens voor technische teksten (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/griekse-letters/",
+      "title": "Griekse Letters",
+      "desc": "Het volledige Griekse alfabet in Unicode, hoofdletters en kleine letters."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Wiskundige operatoren, Griekse letters, wortels en oneindigheidstekens."
+    }
+  ]
+}

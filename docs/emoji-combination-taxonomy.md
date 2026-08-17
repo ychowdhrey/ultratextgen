@@ -2,7 +2,7 @@
 
 The canonical reference for the **different kinds of multi-glyph content** the
 library ships, so we stop conflating them when we plan pages. It formalizes the
-`copy_patterns` field used in `data/library_opportunities.csv` and the copy
+`copy_patterns` field used in `the internal opportunity backlog` and the copy
 mechanics in [`unicode-library-workflow.md`](./unicode-library-workflow.md) §5,
 and sits beside [`page-vs-section-decisions.md`](./page-vs-section-decisions.md)
 (when a thing earns a page) and [`jtbd-principles.md`](./jtbd-principles.md)
@@ -322,13 +322,13 @@ Practical order of operations when writing a page's `alternateName`:
    reference this doc and list all five `copy_patterns` values (it currently
    names only two), **and** the four `presentation_class` values (§8).
 2. **Audit `presentation_class` + `alternateName` across the library** (separate
-   PR). Add the `presentation_class` column to `data/library_opportunities.csv`,
+   PR). Add the `presentation_class` column to `the internal opportunity backlog`,
    classify every live page per §8, flag pages that should **merge/split** per
    §9, and reconcile each page's `alternateName` set against §10 (off-intent
    synonyms to remove, missing class-synonyms to add). Wire the §10 rule into
    `scripts/validate-alternatenames.py` where checkable.
 3. ~~**Let the auditor know `combo` is volume-exempt.**~~ **Done.**
-   `scripts/audit_library_opportunities.py` now waives
+   `the internal opportunity-audit tool` now waives
    `flag_missing_search_volume` / `flag_low_demand_confidence` (and the
    resulting `needs-research` verdict) for `copy_patterns = combo` rows with
    `forum_evidence` `medium`+ (§7), via the `is_volume_exempt(...)` helper.

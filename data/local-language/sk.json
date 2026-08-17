@@ -1,0 +1,59 @@
+{
+  "_generated": true,
+  "_generated_by": "generated — see docs/local-language-intelligence.md",
+  "_do_not_hand_edit": true,
+  "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
+  "locale": "sk",
+  "language": "Slovak",
+  "phrase_count": 3,
+  "phrases": [
+    {
+      "phrase_id": "SK-004",
+      "native_phrase": "písať bez diakritiky",
+      "transliteration": "",
+      "english_concept": "writing Slovak without diacritics — same habit as Romanian, opposite cultural stance and opposite tool ecology",
+      "country_or_market": "SK",
+      "register": "describes informal typing; the discussion of it is neutral-to-critical",
+      "phrase_type": "cultural_phrase",
+      "content_surface": "faq, body — and as a rule governing the searched form of every other sk phrase",
+      "usage_guidance": "Same standing rule as RO1: expect sk queries to arrive without diacritics ('ozdobne pismo na kopirovanie'), but publish sk/ copy with full correct diacritics. Do NOT build a diacritics-restoration feature off the back of this — that is a different product (corpus/NLP-backed), it is well served by academic and commercial Slovak tools already, and it is the opposite of this site's decorate-don't-normalise job.",
+      "good_example": "Generátor funguje rovnako, či píšeš s diakritikou alebo bez nej.",
+      "avoid_when": "Do not take a side on whether writing without diacritics is acceptable; and do not publish sk copy without diacritics.",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "SK-005",
+      "native_phrase": "herný nick / herná prezývka",
+      "transliteration": "",
+      "english_concept": "in-game handle — the colloquial loanword vs the native/official term",
+      "country_or_market": "SK",
+      "register": "'nick' informal/player-facing; 'prezývka' neutral/official",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "h2_h3, body, tool copy, faq",
+      "usage_guidance": "Already in use — sk/pismo-pre-discord/ is titled 'písmená do nicku a bia'. Keep 'nick' as the player-facing word; reach for 'prezývka' when explaining a platform's own field label or writing anything policy-shaped, because that is the word the platform's Slovak UI will have used.",
+      "good_example": "Skopíruj štýl a vlož ho do nicku — na Discorde sa zmení hneď.",
+      "avoid_when": "Do not use 'nick' in a sentence about a platform's rules or an accessibility caveat; use 'prezývka' or 'meno' there.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "phrase_id": "SK-019",
+      "native_phrase": "poangličtené meno / prezývka",
+      "transliteration": "",
+      "english_concept": "anglicized nickname (self-description style)",
+      "country_or_market": "SK",
+      "register": "informal, everyday",
+      "phrase_type": "style_description",
+      "content_surface": "generator_instruction, ready_made_example, faq",
+      "usage_guidance": "Useful for describing ONE recognizable nickname-generation pattern (anglicizing a real Slovak name) if SK generator copy ever explains different nickname styles/strategies.",
+      "good_example": "Skús poangličtenú verziu svojho mena.",
+      "avoid_when": "Don't present as the ONLY nickname strategy — the same thread shows several other patterns (childhood nicknames, pet names, favourite numbers) with no single dominant native term.",
+      "confidence": "low",
+      "status": "limited_use",
+      "last_verified": "2026-08-15"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "slug": "euro-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "歐元符號 €：複製貼上、Alt 代碼與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製歐元符號 €，附 Windows Alt+0128、Mac 快捷鍵與 HTML 代碼，以及英鎊、日幣等其他貨幣符號。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/euro-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "歐元符號",
+  "hero_h1": "歐元符號（€）",
+  "hero_tagline": "€ 代表什麼、怎麼打出來——點一下就複製。",
+  "intro": "€（U+20AC，EURO SIGN）是歐盟官方貨幣歐元的符號，1996 年由歐盟執委會定案，字形取自希臘字母 epsilon（ε），中間兩條橫線象徵貨幣的穩定。Unicode 在 2.1 版專門為它新增了碼位。輸入方式：Windows 按住 Alt 再輸入 0128，Mac 用 Option+Shift+2，HTML 寫成 &euro; 或 &#8364;。台灣使用者最常在報價單、旅遊記帳和跨境購物比價時需要它。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/euro-sign/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-evro/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/yuuro-kigou/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-yuro/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-euro/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/euro-zeichen/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/symbol/eurotegn/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-euro/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/signo-de-euro/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-euro/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/euro-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-euro/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-euro/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/euro-symbool/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/yuro-giho/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/khreuangmai-euro/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/euro-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/euro-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/euro-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/euro-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "euro-sign-symbol",
+      "label": "歐元符號",
+      "h2": "歐元符號",
+      "intro": "歐元符號本體與常見的全形變體。",
+      "symbols": [
+        {
+          "char": "€",
+          "label": "歐元符號（U+20AC）"
+        },
+        {
+          "char": "＄",
+          "label": "全形貨幣符號（排版對齊用）"
+        }
+      ]
+    },
+    {
+      "id": "other-currencies",
+      "label": "其他常見貨幣符號",
+      "h2": "其他常見貨幣符號",
+      "intro": "報價單和旅遊記帳最常一起出現的幾個貨幣符號。",
+      "symbols": [
+        {
+          "char": "£",
+          "label": "英鎊"
+        },
+        {
+          "char": "¥",
+          "label": "日幣／人民幣"
+        },
+        {
+          "char": "₩",
+          "label": "韓元"
+        },
+        {
+          "char": "$",
+          "label": "美元"
+        }
+      ]
+    },
+    {
+      "id": "currency-marks",
+      "label": "貨幣相關標記",
+      "h2": "貨幣相關標記",
+      "intro": "與金額並用的其他符號。",
+      "symbols": [
+        {
+          "char": "¢",
+          "label": "分（cent）"
+        },
+        {
+          "char": "₿",
+          "label": "比特幣"
+        },
+        {
+          "char": "₹",
+          "label": "印度盧比"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/pound-sign/",
+      "title": "英鎊符號（£）",
+      "desc": "英國英鎊的貨幣符號與輸入方式。"
+    },
+    {
+      "href": "/zh-tw/symbol/yen-sign/",
+      "title": "日幣符號（¥）",
+      "desc": "日幣（日圓）與人民幣共用的貨幣符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/won-sign/",
+      "title": "韓元符號（₩）",
+      "desc": "韓國韓元的貨幣符號。"
+    },
+    {
+      "href": "/zh-tw/library/facebook-fuhao/",
+      "title": "Facebook（FB）符號大全",
+      "desc": "貼文與個人簡介可用的符號整理。"
+    }
+  ]
+}

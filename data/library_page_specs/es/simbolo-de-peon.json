@@ -1,0 +1,87 @@
+{
+  "lang": "es",
+  "slug": "simbolo-de-peon",
+  "page_type": "symbol",
+  "title": "Símbolo de Peón: Copiar y Pegar ♟ ♙ — el Soldado de Infantería que Puede Convertirse en Reina",
+  "meta_description": "Copia y pega el símbolo de peón — negro ♟ (U+265F) y blanco ♙ (U+2659) — la pieza de menor valor del ajedrez, llamada así por un soldado de infantería, que puede coronar como reina. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/simbolo-de-peon/",
+  "breadcrumb": "Símbolo de Peón",
+  "hero_h1": "Símbolo de Peón (♟ ♙)",
+  "hero_tagline": "El peón de ajedrez negro ♟ y blanco ♙ — la pieza de menor valor del tablero, su soldado de infantería, la que puede llegar hasta la última fila y coronar como reina, y la palabra que el español usa para cualquiera al que manejan como una pieza en el juego de otro. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El símbolo del peón tiene dos formas Unicode — el negro ♟ (U+265F, BLACK CHESS PAWN) y el blanco ♙ (U+2659, WHITE CHESS PAWN) — ambas dentro del bloque Miscellaneous Symbols, junto al set completo de 12 piezas de ajedrez que ocupa de U+2654 a U+265F. La palabra «peón» viene del latín medieval «pedonem» (soldado de a pie), en última instancia de «pes», pie — el peón era literalmente la infantería del tablero, la misma raíz que en inglés dio «pawn» a través del francés antiguo «peon». Es la pieza de menor valor del ajedrez, con 1 punto en el sistema estándar, frente a los 3 de un caballo o un alfil, los 5 de una torre y los 9 de la reina. Es también la única pieza que se mueve y captura de forma distinta: avanza una casilla en línea recta — o dos en su primer movimiento — pero solo captura en diagonal, y puede ser capturado «al paso» por un peón enemigo al que intenta esquivar. Si llega a la última fila, un peón corona como reina, torre, alfil o caballo — cualquiera menos rey, y no puede quedarse como peón. En notación, un peón es «P» (blancas) o «p» (negras) en FEN, y no lleva ninguna letra en la notación algebraica de las jugadas, solo la casilla de destino. Ya en la década de 1580, «peón» se había convertido en la metáfora habitual para una persona usada como herramienta prescindible en el plan de otro.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-peon/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "simbolo-de-peon",
+      "label": "El Símbolo de Peón",
+      "h2": "El Símbolo de Peón — ♟ y ♙",
+      "intro": "Los dos glifos de peón. El ♟ negro y sólido es el que la mayoría pega; el ♙ blanco y de contorno es su gemelo del bando claro. Ambos son un único carácter Unicode, listos para insertar en cualquier texto.",
+      "symbols": [
+        { "char": "♟", "label": "Peón de Ajedrez Negro (U+265F)" },
+        { "char": "♙", "label": "Peón de Ajedrez Blanco (U+2659)" }
+      ]
+    },
+    {
+      "id": "piezas-negras",
+      "label": "Piezas Negras",
+      "h2": "Los Compañeros del Peón Negro",
+      "intro": "El resto del bando negro que se alinea detrás del peón — rey, reina, torre, alfil y caballo, de U+265A a U+265E en el mismo bloque Unicode.",
+      "symbols": [
+        { "char": "♚", "label": "Rey de Ajedrez Negro (U+265A)" },
+        { "char": "♛", "label": "Reina de Ajedrez Negra (U+265B)" },
+        { "char": "♜", "label": "Torre de Ajedrez Negra (U+265C)" },
+        { "char": "♝", "label": "Alfil de Ajedrez Negro (U+265D)" },
+        { "char": "♞", "label": "Caballo de Ajedrez Negro (U+265E)" }
+      ]
+    },
+    {
+      "id": "piezas-blancas",
+      "label": "Piezas Blancas",
+      "h2": "Las Piezas Blancas de Ajedrez",
+      "intro": "El set blanco de contorno que enfrenta al peón negro al otro lado del tablero, ocupando de U+2654 a U+2658 — la reina a la que quizá tenga que temer algún día, y el rey en el que nunca podrá convertirse.",
+      "symbols": [
+        { "char": "♔", "label": "Rey de Ajedrez Blanco (U+2654)" },
+        { "char": "♕", "label": "Reina de Ajedrez Blanca (U+2655)" },
+        { "char": "♖", "label": "Torre de Ajedrez Blanca (U+2656)" },
+        { "char": "♗", "label": "Alfil de Ajedrez Blanco (U+2657)" },
+        { "char": "♘", "label": "Caballo de Ajedrez Blanco (U+2658)" }
+      ]
+    },
+    {
+      "id": "coronacion-del-peon",
+      "label": "Coronación",
+      "h2": "En Qué Puede Convertirse un Peón",
+      "intro": "Un peón que llega al extremo opuesto del tablero debe coronar — en reina, torre, alfil o caballo de su propio color. Nunca puede convertirse en rey, y no puede quedarse como peón. La reina es la elección habitual; cualquier otra opción es una «subpromoción».",
+      "symbols": [
+        { "char": "♛", "label": "Reina de Ajedrez Negra (U+265B) — la coronación habitual" },
+        { "char": "♜", "label": "Torre de Ajedrez Negra (U+265C)" },
+        { "char": "♝", "label": "Alfil de Ajedrez Negro (U+265D)" },
+        { "char": "♞", "label": "Caballo de Ajedrez Negro (U+265E) — una subpromoción" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Símbolos de Ajedrez",
+      "desc": "El set completo de ajedrez en Unicode — reyes, reinas, torres, alfiles, caballos y ambos peones — en una sola referencia para copiar y pegar."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Símbolos de Palos de Baraja",
+      "desc": "Los otros glifos de juego: picas, corazones, diamantes y tréboles, justo al lado de las piezas de ajedrez en el bloque Miscellaneous Symbols de Unicode."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Símbolos de Corona y Realeza",
+      "desc": "Coronas, tronos e insignias — buena compañía para un peón que sueña con coronar como reina."
+    }
+  ]
+}

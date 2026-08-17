@@ -1,0 +1,77 @@
+{
+  "slug": "kolory-serc-na-snapchacie",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Kolory Serc na Snapchacie: Co Oznacza Każde Emoji Serca (💛 ❤️ 💕)",
+  "meta_description": "Co oznacza emoji serca obok imienia znajomego na Snapchacie — klasyczna progresja 💛 do ❤️ do 💕 najlepszego przyjaciela, plus ogólne znaczenia kolorów serc. Można to zmienić — sprawdź własne Ustawienia.",
+  "canonical": "https://ultratextgen.com/pl/symbol/kolory-serc-na-snapchacie/",
+  "breadcrumb": "Kolory Serc na Snapchacie",
+  "hero_h1": "Kolory Serc na Snapchacie",
+  "hero_tagline": "Co naprawdę oznacza emoji serca obok imienia znajomego na Snapchacie — klasyczna progresja kolorów najlepszego przyjaciela, wyjaśniona uczciwie, plus krótkie przypomnienie ogólnego znaczenia kolorów serc. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Snapchat pokazuje małe emoji serca obok imion niektórych znajomych, a kolor nie jest przypadkowy — śledzi, jak długo jesteście dla siebie nawzajem najlepszym przyjacielem numer jeden. Ta strona skupia się głównie na tym, specyficznym dla Snapchata znaczeniu, plus krótkie przypomnienie, co ogólnie oznacza każdy kolor serca w Unicode (pełniejszą wersję tej ogólnej historii znajdziesz na stronach symbolu serca i emoji serca, do których linki są poniżej). Jedno uczciwe zastrzeżenie na wstępie: Snapchat pozwala dostosować albo całkowicie wyłączyć Friend Emoji w Ustawieniach, więc traktuj poniższą progresję jako długoletni, klasyczny domyślny układ, a nie na stałe ustalony schemat — i sprawdź Ustawienia > Friend Emoji, żeby zobaczyć swój aktualny zestaw.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/kolory-serc-na-snapchacie/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+  ],
+  "sections": [
+    {
+      "id": "serca-na-snapchacie",
+      "label": "Serca na Snapchacie",
+      "h2": "Kolory Serc Używane przez Snapchata",
+      "intro": "Trzy kolory serca, które pojawiają się w klasycznej progresji najlepszego przyjaciela na Snapchacie.",
+      "symbols": [
+        { "char": "💛", "label": "Żółte Serce" },
+        { "char": "❤️", "label": "Czerwone Serce" },
+        { "char": "💕", "label": "Dwa Serca (Różowe)" }
+      ]
+    },
+    {
+      "id": "inne-kolory-serc",
+      "label": "Inne Kolory Serc",
+      "h2": "Inne Kolory Emoji Serca (Znaczenie Ogólne)",
+      "intro": "Reszta unikodowej palety kolorów serc — pełną listę i każde znaczenie znajdziesz na pełnym hubie emoji serca, do którego link jest poniżej.",
+      "symbols": [
+        { "char": "🧡", "label": "Pomarańczowe Serce" },
+        { "char": "💚", "label": "Zielone Serce" },
+        { "char": "💙", "label": "Niebieskie Serce" },
+        { "char": "💜", "label": "Fioletowe Serce" }
+      ]
+    },
+    {
+      "id": "formy-symbolu-serca",
+      "label": "Formy Symbolu Serca",
+      "h2": "Symbol Serca i Formy Tekstowe",
+      "intro": "Bezbarwne glify serca — unikodowe karciane serce i klasyczne tekstowe serduszko.",
+      "symbols": [
+        { "char": "♥", "label": "Czarne Serce Karciane (U+2665)" },
+        { "char": "<3", "label": "Tekstowe Serduszko ASCII" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Snapchat Symbols & Emoji",
+      "desc": "Symbole do bio na Snapchacie do skopiowania oraz pełne wyjaśnienie systemu Friend Emoji."
+    },
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Heart Emoji & Kaomoji",
+      "desc": "Każdy kolor serca, jego znaczenie i zestawy kombinacji w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-serca/",
+      "title": "Symbol Serca",
+      "desc": "Pochodzenie karcianego serca, jego punkty kodowe i sposób wpisania."
+    }
+  ]
+}

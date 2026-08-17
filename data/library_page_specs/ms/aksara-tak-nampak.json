@@ -1,0 +1,164 @@
+{
+  "slug": "aksara-tak-nampak",
+  "lang": "ms",
+  "page_type": "symbol",
+  "title": "Aksara Tak Nampak (⠀): Nama Kosong, Maksud & Cara Guna | UltraTextGen",
+  "meta_description": "Aksara tak nampak ⠀ (U+2800) diterangkan — kenapa ia lulus pengesahan nama kosong sedangkan simbol halimunan lain ditapis, dan cara menaipnya. Klik untuk salin.",
+  "canonical": "https://ultratextgen.com/ms/symbol/aksara-tak-nampak/",
+  "home_url": "https://ultratextgen.com/ms/",
+  "crumb_home": "Laman Utama",
+  "crumb_library": "Simbol",
+  "library_url": "https://ultratextgen.com/ms/symbol/",
+  "breadcrumb": "Aksara Tak Nampak",
+  "hero_h1": "Aksara Tak Nampak (⠀)",
+  "hero_tagline": "Aksara yang kelihatan kosong di sebalik nama pengguna dan nama panggilan kosong — klik untuk terus menyalinnya.",
+  "intro": "⠀ (U+2800) bukan aksara ruang — ia datang daripada blok Braille Patterns dalam Unicode, yang mengekod kesemua 256 kombinasi sel braille, dan U+2800 ialah kombinasi tanpa satu titik pun. Butiran teknikal itulah yang menjadikannya berguna: kod pengesahan biasanya memangkas aksara ruang sebenar dan menolak medan yang hanya berisi ruang, tetapi membiarkan U+2800 lalu kerana ia dikira simbol boleh cetak yang biasa. Sebab itulah ia boleh menghasilkan nama kosong dalam nama permainan, nama paparan Discord dan bio Instagram, sedangkan bar ruang biasa gagal.",
+  "date_published": "2026-08-07",
+  "date_modified": "2026-08-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "invisible-character",
+      "label": "Aksara Tak Nampak",
+      "h2": "Aksara Tak Nampak (Braille Pattern Blank)",
+      "intro": "Aksaranya sendiri — kelihatan kosong tetapi ia aksara Unicode yang sebenar, boleh terus disalin.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank (U+2800)"
+        }
+      ]
+    },
+    {
+      "id": "other-invisible-characters",
+      "label": "Jangan Keliru Dengan",
+      "h2": "Aksara 'Halimunan' Lain — & Kenapa Pilihan Itu Penting",
+      "intro": "Aksara ini juga kelihatan kosong, tetapi setiap satu berkelakuan berbeza apabila berdepan pengesahan platform.",
+      "symbols": [
+        {
+          "char": "​",
+          "label": "Zero Width Space (U+200B) — lebarnya benar-benar sifar; banyak pengesah memangkasnya sebagai ruang, jadi ia selalu gagal di tempat U+2800 berjaya"
+        },
+        {
+          "char": " ",
+          "label": "No-Break Space (U+00A0) — aksara ruang yang sebenar; hampir selalu dipangkas atau terus ditolak"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler (U+3164) — pilihan nama kosong popular yang lain; berfungsi pada sesetengah platform yang menolak U+2800, dan sebaliknya"
+        }
+      ]
+    },
+    {
+      "id": "zero-width-format-characters",
+      "label": "Aksara Format Lebar Sifar",
+      "h2": "Aksara Format Lebar Sifar Yang Lain",
+      "intro": "Sekeluarga dengan zero width space — aksara Unicode yang sah ini tidak memaparkan apa-apa tetapi mempunyai peranan susun atur teksnya sendiri, bukan untuk memintas pengesahan nama kosong.",
+      "symbols": [
+        {
+          "char": "‌",
+          "label": "Zero Width Non-Joiner (U+200C)"
+        },
+        {
+          "char": "‍",
+          "label": "Zero Width Joiner (U+200D)"
+        },
+        {
+          "char": "⁠",
+          "label": "Word Joiner (U+2060)"
+        },
+        {
+          "char": "­",
+          "label": "Soft Hyphen (U+00AD)"
+        }
+      ]
+    }
+  ],
+  "cta": "Guna UltraTextGen untuk menukar teks biasa kepada tebal, condong, kursif dan 100+ gaya fon Unicode lain — percuma dan serta-merta.",
+  "related": [
+    {
+      "href": "/ms/library/ruang-kosong/",
+      "title": "Semua Aksara Kosong",
+      "desc": "Zero width space, aksara pengisi dan braille kosong."
+    },
+    {
+      "href": "/ms/answers/cara-buat-nama-kosong/",
+      "title": "Cara Buat Nama Kosong",
+      "desc": "Kaedah aksara tak nampak, dan perkara yang perlu diberi perhatian."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/invisible-character/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/nevidimyy-simvol/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/karakter-tak-terlihat/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/unsichtbares-schriftzeichen/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/caractere-invisible/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/gorunmez-yazi-karakteri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-carattere-invisibile/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-caractere-invisivel/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/caracter-invisible/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-harf-ghayr-marii/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/mienai-moji/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/tua-akson-long-hon/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/pusty-znak-brajla/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/onzichtbaar-teken/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/invisible-character/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/tumyeong-munja-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/invisible-character/"
+    },
+    {
+      "lang": "ms",
+      "href": "https://ultratextgen.com/ms/symbol/aksara-tak-nampak/"
+    }
+  ]
+}

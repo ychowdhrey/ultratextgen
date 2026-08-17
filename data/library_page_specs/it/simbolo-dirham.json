@@ -1,0 +1,98 @@
+{
+  "slug": "simbolo-dirham",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo del Dirham: Copia e Incolla ⃃ — Il Nuovo Segno Valutario degli EAU, Bloccato per la Pubblicazione in Unicode 18.0",
+  "meta_description": "Il simbolo del dirham degli EAU (⃃, U+20C3) è bloccato per la pubblicazione in Unicode 18.0, attesa a settembre 2026 — approvato e stabile, ma non ancora su nessuna tastiera. Ecco il suo codepoint, la storia e come lo stanno già usando gli sviluppatori.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-dirham/",
+  "breadcrumb": "Simbolo del Dirham",
+  "hero_h1": "Simbolo del Dirham",
+  "hero_tagline": "Il nuovo simbolo valutario della Banca Centrale degli Emirati Arabi Uniti, assegnato a U+20C3 e bloccato per la pubblicazione in Unicode 18.0 — più definito delle emoji in bozza di questa release, ma ancora non digitabile su nessuna tastiera.",
+  "intro": "Il simbolo del dirham (⃃, U+20C3) è il nuovo simbolo valutario della Banca Centrale degli Emirati Arabi Uniti, svelato nel marzo 2025 insieme a un segno complementare per il dirham digitale. È stato sottoposto allo Unicode Consortium per la codifica, approvato e pubblicato nella beta pubblica di Unicode 18.0 il 27 maggio 2026, insieme al rial omanita e al segno della rufiyaa delle Maldive. Al momento della stesura porta lo stato \"white\" nella documentazione della pipeline di Unicode — cioè è bloccato per la pubblicazione, in attesa della sola approvazione ISO, uno stato in realtà più consolidato delle stesse emoji candidate in bozza di questa release (diverse delle quali portano ancora segnalazioni di cambio nome in sospeso). Unicode 18.0 nel suo insieme dovrebbe pubblicarsi come definitivo a settembre 2026. La pubblicazione da sola, però, non basta a metterlo su una tastiera: nessun sistema operativo, font o metodo di input offre oggi supporto nativo, e la stessa raccomandazione della guida di stile della Banca Centrale degli EAU (il tasto numero 6) resta solo un suggerimento finché i produttori di dispositivi non agiranno di conseguenza. Nel frattempo gli sviluppatori hanno già costruito strumenti reali attorno al codepoint confermato: un pacchetto npm open-source, un web font e componenti CSS/React/Vue/Angular/Svelte (pubblicati come \"dirham\" su npm e GitHub) permettono di codificare già oggi il carattere corretto tramite un livello di rendering temporaneo, pensato per essere abbandonato non appena arriverà il supporto nativo del sistema operativo.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-dirham/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "dirham-sign",
+      "label": "Simbolo del Dirham",
+      "h2": "Simbolo del Dirham",
+      "intro": "Il carattere confermato in sé — copiabile già oggi tramite codepoint, anche se nessun font lo renderizza ancora in modo nativo.",
+      "symbols": [
+        { "char": "⃃", "label": "Simbolo del Dirham degli EAU (U+20C3, bloccato per la pubblicazione)" }
+      ]
+    },
+    {
+      "id": "other-new-gulf-currency-symbols",
+      "label": "Altri Nuovi Simboli Valutari",
+      "h2": "Altri Nuovi Simboli Valutari del Golfo in Questa Release",
+      "intro": "Il dirham non è l'unico nuovo simbolo valutario in arrivo con Unicode 18.0 — altre due valute regionali hanno ottenuto un proprio segno nella stessa beta.",
+      "symbols": [
+        { "char": "⃄", "label": "Simbolo del Rial Omanita (U+20C4)" },
+        { "char": "⃂", "label": "Simbolo della Rufiyaa delle Maldive (U+20C2)" }
+      ]
+    },
+    {
+      "id": "existing-currency-you-can-type",
+      "label": "Simboli Valutari Già Esistenti",
+      "h2": "Simboli Valutari Già Esistenti Che Puoi Digitare Oggi",
+      "intro": "Per contrasto — simboli valutari che hanno colmato questo stesso divario tra standard e tastiera già da anni e sono pienamente digitabili oggi.",
+      "symbols": [
+        { "char": "$", "label": "Simbolo del Dollaro" },
+        { "char": "€", "label": "Simbolo dell'Euro" },
+        { "char": "£", "label": "Simbolo della Sterlina" }
+      ]
+    },
+    {
+      "id": "gulf-currency-a-version-ahead",
+      "label": "Una Versione in Anticipo",
+      "h2": "Il Simbolo Valutario del Golfo Pubblicato una Versione Prima",
+      "intro": "Il segno del riyal saudita ha percorso lo stesso cammino un'intera versione Unicode prima — già definitivo da Unicode 17.0, non solo in beta.",
+      "symbols": [
+        { "char": "⃁", "label": "Simbolo del Riyal Saudita (U+20C1, definitivo da Unicode 17.0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-euro/",
+      "title": "Simboli delle Valute",
+      "desc": "Ogni simbolo valutario mondiale già copiabile e incollabile oggi."
+    },
+    {
+      "href": "/it/symbol/simbolo-rial-omanita/",
+      "title": "Simbolo del Rial Omanita",
+      "desc": "Un altro simbolo valutario del Golfo in arrivo nella stessa beta di Unicode 18.0."
+    },
+    {
+      "href": "/it/symbol/simbolo-riyal-saudita/",
+      "title": "Simbolo del Riyal Saudita",
+      "desc": "Un simbolo valutario del Golfo già definitivo, una versione Unicode in anticipo."
+    },
+    {
+      "href": "/it/symbol/simbolo-dollaro/",
+      "title": "Simbolo del Dollaro",
+      "desc": "Il simbolo valutario più riconosciuto al mondo — e la sua origine controversa."
+    },
+    {
+      "href": "/updates/uae-dirham-symbol-unicode-18/",
+      "title": "UAE Dirham Symbol Update",
+      "desc": "Il tracker di stato datato per il percorso di questo simbolo attraverso Unicode 18.0 fino alle tastiere reali."
+    },
+    {
+      "href": "/updates/unicode-18-beta-review-opens/",
+      "title": "Unicode 18.0 Beta Review Opens",
+      "desc": "L'intera release di cui questo simbolo fa parte — script, simboli ed emoji in bozza."
+    }
+  ]
+}

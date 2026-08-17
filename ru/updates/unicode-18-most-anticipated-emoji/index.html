@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="ru"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании | UltraTextGen</title>
+  <meta name="description" content="В черновом списке Emoji 18.0 — 9 новых эмодзи-кандидатов. «Трескающееся лицо» победило в публичном голосовании Emojipedia, обойдя «Солёный огурец» и «Метеор». Рассказываем, что изображает каждый эмодзи, чем он отличается от уже существующих и на каком этапе он находится перед финальным утверждением в сентябре 2026 года.">
+  <link rel="canonical" href="https://ultratextgen.com/ru/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="en" href="https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/updates/unicode-18-emoji-abstimmung/">
+  <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/updates/unicode-18-nuevos-emojis-votacion/">
+  <link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/updates/unicode-18-nouveaux-emojis-vote/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/updates/unicode-18-emoji-baru-voting/">
+  <link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/updates/unicode-18-imoji-tupyo/">
+  <link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/updates/unicode-18-nieuwe-emoji-stemming/">
+  <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/updates/unicode-18-nowe-emoji-glosowanie/">
+  <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/updates/unicode-18-novos-emojis-votacao/">
+  <link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/updates/unicode-18-most-anticipated-emoji/">
+  <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/updates/unicode-18-yeni-emoji-oylama/">
+  <link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/updates/unicode-18-xin-biaoqing-fuhao/">
+  <link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/updates/emoji-moi-unicode-18/">
+  <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/">
+  <meta property="og:title" content="Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании">
+  <meta property="og:description" content="9 эмодзи-кандидатов по итогам публичного голосования — лидируют «Трескающееся лицо», «Солёный огурец» и «Метеор». Пока ни один не утверждён официально. Рассказываем, что изображает каждый и на каком этапе он находится.">
+  <meta property="og:url" content="https://ultratextgen.com/ru/updates/unicode-18-most-anticipated-emoji/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/ru-updates-unicode-18-most-anticipated-emoji.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании">
+  <meta name="twitter:description" content="9 эмодзи-кандидатов по итогам публичного голосования — лидируют «Трескающееся лицо», «Солёный огурец» и «Метеор». Пока ни один не утверждён.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/ru-updates-unicode-18-most-anticipated-emoji.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании",
+  "description": "В черновом списке Emoji 18.0 — 9 новых эмодзи-кандидатов. «Трескающееся лицо» победило в публичном голосовании Emojipedia, обойдя «Солёный огурец» и «Метеор». Пока ни один эмодзи не утверждён официально.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/ru-updates-unicode-18-most-anticipated-emoji.png",
+  "mainEntityOfPage": "https://ultratextgen.com/ru/updates/unicode-18-most-anticipated-emoji/",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ultratextgen.com/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Обновления", "item": "https://ultratextgen.com/updates/" },
+    { "@type": "ListItem", "position": 3, "name": "Новые эмодзи Unicode 18.0", "item": "https://ultratextgen.com/ru/updates/unicode-18-most-anticipated-emoji/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие новые эмодзи появятся в Unicode 18.0?",
+      "acceptedAnswer": { "@type": "Answer", "text": "В черновом списке Emoji 18.0 — 9 новых эмодзи: «Трескающееся лицо», «Большой палец влево», «Большой палец вправо», «Бабочка-монарх», «Солёный огурец», «Маяк», «Метеор», «Ластик» и «Сачок». У двух концепций с большим пальцем в сумме есть ещё 10 вариантов тона кожи." }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой из новых эмодзи пока самый популярный?",
+      "acceptedAnswer": { "@type": "Answer", "text": "«Трескающееся лицо» победило в публичном голосовании Emojipedia, набрав «сотни и сотни голосов», опередив «Солёный огурец» на втором месте и «Метеор» на третьем. «Бабочка-монарх» и «Маяк» замкнули пятёрку лидеров. Это результат публичного голосования, а не официального рейтинга Unicode — сам консорциум Unicode не ранжирует кандидатов по популярности." }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли уже использовать эти новые эмодзи?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Все 9 кандидатов пока остаются черновиками. Emoji 18.0 должен быть утверждён вместе с Unicode 18.0 в сентябре 2026 года, а платформы затем добавляют собственную отрисовку — внедрение у Apple предположительно ожидается в iOS 27, вероятно в конце 2026 или начале 2027 года." }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему новый эмодзи ещё не отображается на моём телефоне?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ни один из кандидатов Emoji 18.0 пока не утверждён, поэтому ни одно устройство их не поддерживает. Даже после того как Unicode утвердит набор, каждой платформе обычно требуется ещё несколько месяцев на обновление собственного шрифта и клавиатуры — тот же разрыв, который мы отслеживали для прошлогодних эмодзи Unicode 17.0." }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем «Трескающееся лицо» отличается от других эмодзи-лиц?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Оно изображает лицо в момент эмоции, «трескающееся» от напряжения или стресса — в отличие от уже существующих в стандарте эмодзи гримасничающего и напряжённого лица. У него также есть своя история кодовой точки: оно не входило в первоначальный черновик января 2026 года, а заменило собой ранее предложенную концепцию менее чем через две недели. Подробности — на его отдельной странице." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <a href="/ru/">Главная</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/updates/">Обновления</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Новые эмодзи Unicode 18.0</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в публичном голосовании</h1>
+    <p class="hero-tagline">Для Emoji 18.0 — набора эмодзи, сопровождающего релиз Unicode 18.0 в этом году, — предложено 9 новых эмодзи. «Трескающееся лицо» возглавило публичное голосование Emojipedia, обойдя «Солёный огурец» и «Метеор». Рассказываем, что изображает каждый кандидат и на каком именно этапе он находится перед финальным утверждением.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Черновик Emoji 18.0</span>
+      <span class="guide-pill">Голосование завершено</span>
+      <span class="guide-pill">9 кандидатов</span>
+    </div>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ru-updates-unicode-18-most-anticipated-emoji.svg" width="1200" height="340"
+       loading="lazy" alt="">
+</figure>
+
+<section class="editorial-section">
+  <span class="article-section-label">Что вышло</span>
+  <h2>9 эмодзи-кандидатов: рейтинг по итогам голосования</h2>
+  <div class="editorial-block">
+    <p>Вместе с новыми письменностями и символами Unicode 18.0 подкомитет Unicode по эмодзи (Unicode Emoji Subcommittee) опубликовал черновой список из <strong>9 новых эмодзи</strong> для <strong>Emoji 18.0</strong>: «Трескающееся лицо», «Большой палец влево», «Большой палец вправо», «Бабочка-монарх», «Солёный огурец», «Маяк», «Метеор», «Ластик» и «Сачок». У двух концепций с большим пальцем в сумме есть ещё 10 вариантов тона кожи.</p>
+    <p>Emojipedia провела публичное голосование, чтобы узнать, какие эмодзи-кандидаты пользователи ждут больше всего. <strong><a href="/ru/symbol/emodzi-treskayushcheesya-litso/">«Трескающееся лицо»</a> победило, набрав «сотни и сотни голосов»,</strong> опередив <strong><a href="/ru/symbol/emodzi-marinovannogo-ogurtsa/">«Солёный огурец»</a></strong> на втором месте и <strong><a href="/ru/symbol/emodzi-meteor/">«Метеор»</a></strong> на третьем — <a href="/ru/symbol/emodzi-babochka-monarkh/">«Бабочка-монарх»</a> и «Маяк» замкнули пятёрку лидеров. Сильнее всего на тематических форумах реагировали на солёный огурец: один широко разошедшийся комментарий на MacRumors шутил, что «этот огурец сломает интернет». Другие выражали усталость от постоянного расширения набора эмодзи в целом, задаваясь вопросом, «наступит ли когда-нибудь день, когда консорциум Unicode решит, что эмодзи уже достаточно». У «Трескающегося лица», «Солёного огурца», «Метеора», «Бабочки-монарх» и пары <a href="/ru/symbol/znak-bolshogo-paltsa/">«Знак большого пальца»</a> есть отдельные страницы-идентификаторы — с историей кодовых точек, похожими символами и полной предысторией — ссылки на них ниже и в таблице.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Проверка</span>
+  <h2>Разбор по символам: что на самом деле изображает каждый</h2>
+  <div class="editorial-block">
+    <p>Одно только название может ввести в заблуждение — некоторые из этих эмодзи на первый взгляд выглядят дубликатами уже существующих. Вот что изображает каждый кандидат и чем он отличается от похожих эмодзи.</p>
+  </div>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Кандидат</th><th>Изображает</th><th>Отличие от</th><th>Голосование</th></tr></thead>
+      <tbody>
+        <tr><td><strong><a href="/ru/symbol/emodzi-treskayushcheesya-litso/">Трескающееся лицо</a></strong></td><td>Лицо в момент эмоции, «трескающееся» от напряжения или стресса</td><td>Уже существующие эмодзи гримасничающего/напряжённого лица</td><td>#1</td></tr>
+        <tr><td><strong><a href="/ru/symbol/emodzi-marinovannogo-ogurtsa/">Солёный огурец</a></strong></td><td>Целый маринованный огурец (корнишон)</td><td>🍆 Баклажан, 🥒 Огурец</td><td>#2</td></tr>
+        <tr><td><strong><a href="/ru/symbol/emodzi-meteor/">Метеор</a></strong></td><td>Метеор / болид, оставляющий след в небе</td><td>☄️ Комета</td><td>#3</td></tr>
+        <tr><td><strong><a href="/ru/symbol/emodzi-babochka-monarkh/">Бабочка-монарх</a></strong></td><td>Именно бабочка-монарх, конкретный вид</td><td>🦋 Бабочка (обобщённый вид)</td><td>#4</td></tr>
+        <tr><td><strong>Маяк</strong></td><td>Прибрежный маяк</td><td>—</td><td>#5</td></tr>
+        <tr><td><strong><a href="/ru/symbol/znak-bolshogo-paltsa/">Большой палец влево</a></strong></td><td>Большой палец, направленный влево — для указания направления</td><td>👍 Большой палец вверх, 👎 Большой палец вниз</td><td>Не вошёл в топ-5</td></tr>
+        <tr><td><strong><a href="/ru/symbol/znak-bolshogo-paltsa/">Большой палец вправо</a></strong></td><td>Большой палец, направленный вправо — для указания направления</td><td>👍 Большой палец вверх, 👎 Большой палец вниз</td><td>Не вошёл в топ-5</td></tr>
+        <tr><td><strong>Ластик</strong></td><td>Ластик для карандаша</td><td>—</td><td>Не вошёл в топ-5</td></tr>
+        <tr><td><strong>Сачок</strong></td><td>Сачок для ловли насекомых/бабочек</td><td>—</td><td>Не вошёл в топ-5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="section-subline">Рейтинг голосования отражает результаты публичного опроса Emojipedia, а не официальный показатель популярности Unicode — сам консорциум Unicode кандидатов не ранжирует. Все девять эмодзи остаются черновиками до финального утверждения Emoji 18.0, ожидаемого вместе с Unicode 18.0 в сентябре 2026 года.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Почему это важно</span>
+  <h2>Черновой эмодзи — ещё не настоящий</h2>
+  <div class="editorial-block">
+    <p>Это тот же разрыв между стандартом и реальными устройствами, который наш <a href="/updates/unicode-17-new-emoji-rollout/">трекер внедрения новых эмодзи Unicode 17.0</a> уже отслеживает платформа за платформой — разница в том, что ни один из этих девяти эмодзи пока даже не прошёл финальное утверждение, так что отслеживать пока нечего. Как только Emoji 18.0 будет утверждён вместе с остальной частью <a href="/updates/unicode-18-beta-review-opens/">Unicode 18.0</a>, мы соберём такой же трекер и для этого набора.</p>
+    <p>А пока вопрос «почему это отображается как квадратик?» про любой из этих девяти эмодзи имеет простой ответ, разобранный в нашем гайде <a href="/guide/why-fonts-show-as-boxes/">почему шрифты отображаются как квадратики</a>: ни одно устройство не может отрисовать символ, который ещё не утверждён в стандарте. А когда они всё же выйдут, они пополнят эстетичные сочетания, уже собранные в нашей библиотеке <a href="/ru/library/emoji-combos/">сочетаний эмодзи</a>.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Что дальше</span>
+  <h2>Финальное утверждение ожидается в сентябре 2026 года</h2>
+  <div class="editorial-block">
+    <p>Финальное утверждение Emoji 18.0 ожидается в сентябре 2026 года — вместе с самим Unicode 18.0. Внедрение у Apple предположительно произойдёт в iOS 27, вероятно в конце 2026 или начале 2027 года, а остальные платформы последуют по собственному графику — текущий черновик всё ещё может измениться в процессе рассмотрения Unicode. Как только состоится утверждение, мы опубликуем трекер внедрения по платформам для этого набора — так же, как сделали для <a href="/updates/unicode-17-new-emoji-rollout/">новых эмодзи Unicode 17.0</a>.</p>
+  </div>
+</section>
+
+<div class="pull-quote">Публика уже выбрала своего фаворита.<br>Unicode пока не утвердил ни одного из них.<br><br>Черновой эмодзи не станет настоящим до сентября.</div>
+
+<div class="cta-card">
+  <h3>Смотрите сочетания эмодзи уже сегодня</h3>
+  <p>Копируйте эстетичные сочетания эмодзи — лица, еда, природа и многое другое — прямо сейчас, без ожидания новой версии Unicode.</p>
+  <a href="/ru/library/emoji-combos/" class="cta-btn">Смотреть сочетания эмодзи →</a>
+</div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Источники</span>
+  <div class="editorial-block">
+    <p>Черновой список и контекст пополнения репертуара — по <a href="https://blog.unicode.org/2026/05/unicode-180-beta-review-opens-for.html" rel="nofollow noopener" target="_blank">официальному анонсу Unicode Consortium об открытии бета-обзора</a> и <a href="https://symbl.cc/en/blog/what-s-coming-in-unicode-18-0-ancient-scripts-currency-symbols-and-new-emoji/" rel="nofollow noopener" target="_blank">symbl.cc</a>. Результаты публичного голосования и история кандидатов — по <a href="https://blog.emojipedia.org/the-most-anticipated-emoji-of-2026-is/" rel="nofollow noopener" target="_blank">отчёту Emojipedia «Most Anticipated Emoji of 2026»</a> и <a href="https://blog.emojipedia.org/draft-emoji-list-for-2026-2027/" rel="nofollow noopener" target="_blank">черновому списку эмодзи от Emojipedia</a>. Реакция сообщества и предположения о сроках внедрения у Apple — по данным <a href="https://www.macrumors.com/2026/01/09/new-unicode-emoji-18-coming-to-ios/" rel="nofollow noopener" target="_blank">MacRumors</a>.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Частые вопросы</h2>
+  <div class="faq-section">
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Какие новые эмодзи появятся в Unicode 18.0?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">В черновом списке Emoji 18.0 — 9 новых эмодзи: «Трескающееся лицо», «Большой палец влево», «Большой палец вправо», «Бабочка-монарх», «Солёный огурец», «Маяк», «Метеор», «Ластик» и «Сачок». У двух концепций с большим пальцем в сумме есть ещё 10 вариантов тона кожи.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Какой из новых эмодзи пока самый популярный?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">«Трескающееся лицо» победило в публичном голосовании Emojipedia, набрав «сотни и сотни голосов», опередив «Солёный огурец» на втором месте и «Метеор» на третьем. «Бабочка-монарх» и «Маяк» замкнули пятёрку лидеров. Это результат публичного голосования, а не официального рейтинга Unicode — сам консорциум Unicode не ранжирует кандидатов по популярности.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Можно ли уже использовать эти новые эмодзи?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">Нет. Все 9 кандидатов пока остаются черновиками. Emoji 18.0 должен быть утверждён вместе с Unicode 18.0 в сентябре 2026 года, а платформы затем добавляют собственную отрисовку — внедрение у Apple предположительно ожидается в iOS 27, вероятно в конце 2026 или начале 2027 года.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Почему новый эмодзи ещё не отображается на моём телефоне?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">Ни один из кандидатов Emoji 18.0 пока не утверждён, поэтому ни одно устройство их не поддерживает. Даже после того как Unicode утвердит набор, каждой платформе обычно требуется ещё несколько месяцев на обновление собственного шрифта и клавиатуры — тот же разрыв, который мы отслеживали для прошлогодних эмодзи Unicode 17.0.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Чем «Трескающееся лицо» отличается от других эмодзи-лиц?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">Оно изображает лицо в момент эмоции, «трескающееся» от напряжения или стресса — в отличие от уже существующих в стандарте эмодзи гримасничающего и напряжённого лица. У него также есть своя история кодовой точки: оно не входило в первоначальный черновик января 2026 года, а заменило собой ранее предложенную концепцию менее чем через две недели. Все подробности — на его <a href="/ru/symbol/emodzi-treskayushcheesya-litso/">отдельной странице</a>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Читайте дальше</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/updates/">
+      <span class="related-tag">🗞</span>
+      <span class="related-title">Все обновления</span>
+      <span class="related-desc">Все изменения Unicode, платформ и игровых правил, которые мы отслеживали.</span>
+    </a>
+    <a class="related-card" href="/updates/unicode-18-beta-review-opens/">
+      <span class="related-tag">📜</span>
+      <span class="related-title">Открытие бета-обзора Unicode 18.0</span>
+      <span class="related-desc">Полный релиз — письменности, символы валют и этот набор эмодзи.</span>
+    </a>
+    <a class="related-card" href="/ru/symbol/emodzi-treskayushcheesya-litso/">
+      <span class="related-tag">🫫</span>
+      <span class="related-title">Эмодзи «Трескающееся лицо»</span>
+      <span class="related-desc">Полная страница-идентификатор — история кодовой точки, значение и похожие символы.</span>
+    </a>
+    <a class="related-card" href="/ru/symbol/emodzi-marinovannogo-ogurtsa/">
+      <span class="related-tag">🫝</span>
+      <span class="related-title">Эмодзи «Солёный огурец»</span>
+      <span class="related-desc">Полная страница-идентификатор — отложенный слот «Огрызка яблока», который он унаследовал, и чем он на самом деле не является.</span>
+    </a>
+    <a class="related-card" href="/ru/symbol/emodzi-meteor/">
+      <span class="related-tag">🪋</span>
+      <span class="related-title">Эмодзи «Метеор»</span>
+      <span class="related-desc">Полная страница-идентификатор — путаницу с отрисовкой «Кометы», которую он разрешает.</span>
+    </a>
+    <a class="related-card" href="/ru/symbol/emodzi-babochka-monarkh/">
+      <span class="related-tag">🫌</span>
+      <span class="related-title">Эмодзи «Бабочка-монарх»</span>
+      <span class="related-desc">Полная страница-идентификатор — путаницу с бабочкой Морфо, которую он устраняет.</span>
+    </a>
+    <a class="related-card" href="/ru/symbol/znak-bolshogo-paltsa/">
+      <span class="related-tag">🫹</span>
+      <span class="related-title">Эмодзи «Знак большого пальца»</span>
+      <span class="related-desc">Полная страница-идентификатор — пара для направленных жестов и почему это не «Большой палец вверх/вниз».</span>
+    </a>
+    <a class="related-card" href="/updates/unicode-17-new-emoji-rollout/">
+      <span class="related-tag">🔤</span>
+      <span class="related-title">Внедрение новых эмодзи Unicode 17.0</span>
+      <span class="related-desc">Утверждённые в прошлом году эмодзи — трекер по платформам.</span>
+    </a>
+    <a class="related-card" href="/ru/library/emoji-combos/">
+      <span class="related-tag">😊</span>
+      <span class="related-title">Сочетания эмодзи</span>
+      <span class="related-desc">100+ эстетичных сочетаний эмодзи для копирования — уже доступны сегодня.</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner"></div></footer>
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body></html>

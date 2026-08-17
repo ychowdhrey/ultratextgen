@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>다윗의 별: 복사 &amp; 붙여넣기 ✡ — 공유된 육각별이 유대교 상징이 된 사연</title>
+<meta name="description" content="다윗의 별(✡)을 복사하고 그 겹겹의 역사를 알아보세요 — 여러 문화가 공유한 고대 기하학적 문양에서 유대교의 상징으로 자리 잡기까지. 기호를 클릭하면 바로 복사됩니다.">
+
+<link rel="canonical" href="https://ultratextgen.com/ko/symbol/dawidui-byeol-giho/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/symbol/star-of-david/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/symbol/dawidui-byeol-giho/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/symbol/star-of-david/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/symbol/davut-yildizi/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/symbol/dao-haeng-david/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/symbol/zvezda-davida/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/symbol/estrela-de-davi/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/symbol/gwiazda-dawida/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/symbol/davidster/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/symbol/dabide-no-hoshi/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/symbol/stella-di-david/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/symbol/bintang-daud/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/symbol/etoile-de-david/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/symbol/estrella-de-david/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/symbol/davidstern/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/symbol/ramz-najmat-dawud/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/symbol/star-of-david/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ko-symbol-dawidui-byeol-giho.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="다윗의 별: 복사 &amp; 붙여넣기 ✡ — 공유된 육각별이 유대교 상징이 된 사연">
+<meta name="twitter:description" content="다윗의 별(✡)을 복사하고 그 겹겹의 역사를 알아보세요 — 여러 문화가 공유한 고대 기하학적 문양에서 유대교의 상징으로 자리 잡기까지. 기호를 클릭하면 바로 복사됩니다.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ko-symbol-dawidui-byeol-giho.png">
+<meta property="og:title" content="다윗의 별: 복사 &amp; 붙여넣기 ✡ — 공유된 육각별이 유대교 상징이 된 사연">
+<meta property="og:description" content="다윗의 별(✡)을 복사하고 그 겹겹의 역사를 알아보세요 — 여러 문화가 공유한 고대 기하학적 문양에서 유대교의 상징으로 자리 잡기까지. 기호를 클릭하면 바로 복사됩니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ko/symbol/dawidui-byeol-giho/">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "다윗의 별: 복사 & 붙여넣기 ✡ — 공유된 육각별이 유대교 상징이 된 사연",
+  "description": "다윗의 별(✡)을 복사하고 그 겹겹의 역사를 알아보세요 — 여러 문화가 공유한 고대 기하학적 문양에서 유대교의 상징으로 자리 잡기까지. 기호를 클릭하면 바로 복사됩니다.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/ko/symbol/dawidui-byeol-giho/",
+  "inLanguage": "ko",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "image": "https://ultratextgen.com/assets/og/ko-symbol-dawidui-byeol-giho.png",
+  "alternateName": [
+    "마겐 다비드",
+    "다윗의 방패",
+    "유대인의 별",
+    "다윗의 별 복사 붙여넣기",
+    "헥사그램 기호",
+    "✡ 기호"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://ultratextgen.com/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "기호",
+      "item": "https://ultratextgen.com/ko/symbol/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "다윗의 별",
+      "item": "https://ultratextgen.com/ko/symbol/dawidui-byeol-giho/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "다윗의 별은 고대 유대교 상징인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "많은 사람이 짐작하는 것만큼 고대의 것도, 오로지 유대교만의 것도 아닙니다. 육각별(헥사그램)은 그 역사 대부분에서 여러 문화가 공유한 흔한 장식 문양이었습니다 — 4세기 갈릴리 지역의 시나고그와 그리스도교 교회 양쪽에서 순전히 장식으로 등장합니다. 카발라 학자 게르숌 숄렘은 기원전 7세기로 거슬러 올라가는 시돈의 한 유대인 인장에서 육각별을 기록했지만, 그것은 유대교와 무관하다고 알려진 다른 기호들과 함께 놓여 있었습니다. 유대교의 표장으로서의 역할은 훨씬 나중에 생겨났습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "다윗의 별은 언제 유대교 상징이 되었나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "점진적으로, 그리고 비교적 최근에 그렇게 되었습니다. 유대 공동체가 이를 공식적으로 사용한 최초의 기록은 1354년 프라하에서, 신성로마제국 황제 카를 4세가 이 도시의 유대 공동체에 육각별이 그려진 깃발을 가질 권리를 부여했을 때입니다. 17세기 빈의 한 표지판이 유대인 구역의 경계를 표시하는 데 이를 사용한 것이 다윗의 방패가 유대교 자체를 뜻한다는 최초의 명확한 사용으로 흔히 인용됩니다. 유럽의 유대 공동체들은 19세기에 이를 널리 채택했고, 1897년 제1차 시온주의자 대회에서 이 운동의 상징으로 확립되었습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "육각별은 이슬람 예술과 전통에서도 쓰였나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 상당히 그렇습니다. 이슬람 전통에서 같은 육각별은 예언자 술라이만과 다우드를 기리는 \"카팀 술라이만\"(솔로몬의 인장) 또는 \"나즈마트 다우드\"라 불립니다. 주화에 새겨지고, 도자기와 타일에 그려지고, 미니어처 회화에 쓰이고, 채색된 코란 필사본에도 그려졌으며, 오스만 제독 하이레딘 바르바로사의 깃발에도 등장했습니다. 숄렘은 유대 전통이 실제로 \"솔로몬의 인장\"이라는 용어를 이슬람의 신비주의 문헌에서 빌려왔다고 지적했습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "홀로코스트 당시 나치 배지에 다윗의 별이 등장한 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "홀로코스트 기간 동안 나치 독일은 유대인들에게 박해와 식별의 표시로 노란색 다윗의 별 배지를 강제로 달게 했습니다. 1949년 잡지 Commentary에 기고하며 게르숌 숄렘은 이 억압적이고 강요된 사용이 역설적으로 제2차 세계대전 이후 유대교의 표장으로서 이 기호를 되찾는 과정을 \"증폭\"시켰다고 주장했습니다 — 그 상징성은 그대로 이스라엘 국가의 국기로 이어졌습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "다윗의 별 기호는 어떻게 입력하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windows에서는 Word에서 <code>2721</code>을 입력한 뒤 <code>Alt+X</code>를 누릅니다. Mac에서는 문자 보기(<code>Cmd+Ctrl+Space</code>)를 열어 \"star of david\" 또는 \"hexagram\"을 검색합니다. HTML에서는 <code>&amp;#10017;</code>(10진수) 또는 <code>&amp;#x2721;</code>(16진수)를 사용합니다 — 명명된 엔터티는 없습니다. 휴대폰에서는 이모지 키보드에서 \"star of david\"를 검색하면 ✡️가 나옵니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="탐색 경로">
+  <a href="/ko/">홈</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ko/symbol/">기호</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">다윗의 별</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">다윗의 별</h1>
+    <p class="hero-tagline">육각형의 다윗의 별(✡ ✡️) — 마겐 다비드, 즉 '다윗의 방패' — 이 상징이 유대교의 표장이 된 과정은 대부분이 짐작하는 것보다 훨씬 최근이고 훨씬 겹겹이 쌓여 있습니다. 기호를 클릭하면 바로 복사됩니다.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/ko-symbol-dawidui-byeol-giho.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>다윗의 별(✡, U+2721) — 히브리어로 "다윗의 방패"를 뜻하는 마겐 다비드 — 은 오늘날 유대교의 상징이자 이스라엘 국기 한가운데 놓인 표장으로 인식되는 육각별입니다. 하지만 이 육각형 도형 자체는 그 역할이 시사하는 것보다 훨씬 오래되었고 훨씬 널리 공유되어 왔습니다 — 대부분의 역사 동안 여러 문화에서 함께 쓰인 흔한 기하학적 문양이었으며, 그것이 특별히 유대교적인 기호로 자리 잡은 과정은 비교적 최근이며 잘 문서화된 이야기입니다.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="star-of-david">
+  <span class="article-section-label">다윗의 별</span>
+  <h2>다윗의 별 기호</h2>
+  <p class="u-secondary-tight">유니코드 다윗의 별, 자기소개, 게시물, 프로필 어디에든 바로 붙여넣을 수 있습니다. 두 가지 형태 — 평범한 글리프와 완전한 색을 가진 이모지입니다.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✡" aria-label="✡ 복사">✡</button>
+      <span class="flag-label">다윗의 별</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✡️" aria-label="✡️ 복사">✡️</button>
+      <span class="flag-label">다윗의 별 이모지</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="jewish-symbols">
+  <span class="article-section-label">유대교 기호</span>
+  <h2>관련 유대교 기호</h2>
+  <p class="u-secondary-tight">다윗의 별이 자주 함께 등장하는 유대 전통의 그 밖의 기호들.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🕎" aria-label="🕎 복사">🕎</button>
+      <span class="flag-label">메노라</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🕍" aria-label="🕍 복사">🕍</button>
+      <span class="flag-label">시나고그</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="חי" aria-label="חי 복사">חי</button>
+      <span class="flag-label">차이 (생명)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="hexagram-variants">
+  <span class="article-section-label">육각별 &amp; 헥사그램</span>
+  <h2>육각별 &amp; 헥사그램 변형</h2>
+  <p class="u-secondary-tight">같은 육각형 기하학은 어느 한 전통을 훨씬 뛰어넘어 등장합니다 — 장식으로, 천문학과 신비주의에서, 그리고 평범한 기하학적 도형으로도.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔯" aria-label="🔯 복사">🔯</button>
+      <span class="flag-label">점이 있는 육각별</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✶" aria-label="✶ 복사">✶</button>
+      <span class="flag-label">육각형 검은 별</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬡" aria-label="⬡ 복사">⬡</button>
+      <span class="flag-label">흰 육각형</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬢" aria-label="⬢ 복사">⬢</button>
+      <span class="flag-label">검은 육각형</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">역사</span>
+  <h2>공유된 육각별이 어떻게 유대교의 표장이 되었을까</h2>
+  <div class="editorial-block">
+    <p>대부분의 사람들은 다윗의 별이 고대의, 그리고 오로지 유대교만의 상징이라고 짐작하지만, 역사 기록은 더 겹겹이 쌓인 이야기를 전합니다. 두 개의 삼각형이 겹쳐 이루어진 육각별인 헥사그램은 그 역사 대부분에서 고대 근동 전역에 널리 쓰인 흔한 장식·기하학적 문양이었을 뿐, 특정 민족이나 신앙만의 표식이 아니었습니다. 카발라 학자 게르숌 숄렘 — 그의 연구는 지금도 이 기호의 역사에 대한 토대로 남아 있습니다 — 은 기원전 7세기로 거슬러 올라가는 시돈의 한 유대인 인장에서 육각별을 발견했다고 기록했지만, 그것은 유대교와 무관하다고 알려진 다른 기호들과 함께 놓여 있었으며, 당시 이 도형 자체가 특별히 유대교적인 의미를 지니지 않았음을 보여줍니다. 같은 육각별이 4세기 갈릴리 지역의 시나고그와 그리스도교 교회 양쪽 모두에서 순전히 장식으로 등장하는데, 서로 다른 두 종교 공동체의 건축을 특별한 의미 없이 꾸미고 있었던 것입니다.</p>
+    <p>이 육각별은 이슬람 세계에서도 독자적으로 풍성한 삶을 이어갔는데, 이슬람에서 인정하는 예언자 술라이만(솔로몬)과 다우드(다윗)를 기리는 "카팀 술라이만"(솔로몬의 인장) 또는 "나즈마트 다우드"로 불렸으며, 유대교 정체성과는 아무 관련이 없었습니다. 이는 주화에 새겨지고, 도자기와 타일에 그려지고, 미니어처 회화에 쓰이고, 코란 필사본의 삽화에까지 그려졌습니다. 아나톨리아의 여러 베이국과 오스만 제국의 해적이자 제독이었던 하이레딘 바르바로사를 포함한 역사적 이슬람 정치 세력도 이를 사용했으며, 바르바로사는 자신의 깃발에 이를 걸었습니다. 숄렘 스스로도 많은 사람이 놀랄 만한 방향으로 영향이 흘렀다고 지적했습니다 — 유대 전통이 "솔로몬의 인장"이라는 용어를 이슬람의 마법·신비주의 문헌에서 빌려온 것입니다.</p>
+    <p>이 기호가 구체적으로 유대교적인 것이 되어가는 과정은 추적 가능하며, 종교적 상징의 기준으로 볼 때 상당히 늦은 시기에 속합니다. 유대 공동체가 이를 공동체의 표장으로 공식 사용한 최초의 기록은 1354년 프라하에서였는데, 신성로마제국 황제 카를 4세가 이 도시의 유대 공동체에 육각별이 그려진 자체 깃발을 가질 권리를 부여했습니다. 17세기 빈의 한 표지판 — 그리스도교 구역과 유대인 구역의 경계를 표시하기 위해 십자가 옆에 다윗의 방패를 놓은 것 — 은 역사학자들이 이 방패, 즉 다윗의 별이 단순한 장식이 아니라 구체적으로 유대교 자체를 뜻하는 명확하고 모호하지 않은 첫 사례로 흔히 인용합니다.</p>
+    <p>이때부터 유럽의 유대 공동체들은 19세기에 이 기호를 단순하고 눈에 띄는 유대교의 표장으로 널리 채택했습니다 — 역사학자들이 지적하듯, 명시적으로 그리스도교의 십자가를 본떠서, 유대교도 그 자체로 즉시 알아볼 수 있는 하나의 공동체 표식을 갖게 하려는 의도였습니다. 이 기호는 테오도어 헤르츨이 주도한 1897년 제1차 시온주의자 대회에서 유대교와 유대 민족의 세계적 상징으로 공식 확립되었으며, 이 운동은 이를 자신들의 표장으로 채택했습니다.</p>
+    <p>이 기호의 현대적 의미는 비극을 통해서도 형성되었습니다. 홀로코스트 기간 동안 나치 독일은 유대인들에게 박해와 식별의 표시로 노란색 다윗의 별 배지를 강제로 달게 했습니다. 1949년 잡지 Commentary에 기고한 글에서 게르숌 숄렘은 이 억압적이고 강요된 사용이 역설적으로 제2차 세계대전 이후 유대교의 표장으로서 이 기호를 되찾고 받아들이는 과정을 "증폭"시켰다고 주장했습니다. 그렇게 되찾은 의미는 그대로 이스라엘 국기의 상징으로 이어졌고, 다윗의 별은 지금도 그 한가운데 자리하고 있습니다.</p>
+    <p>유니코드에서 이 기호는 딩뱃(Dingbats) 블록에 속한 U+2721 STAR OF DAVID로 인코딩되어 있습니다. 이는 평범한 흑백 글리프(✡)로, 또는 이모지 변이 선택자를 붙이면 완전한 색을 가진 이모지(✡️)로 렌더링됩니다. 관련되어 있지만 서로 다른 문자인 U+1F52F SIX POINTED STAR WITH MIDDLE DOT(🔯)은 별개의 글리프로, 다윗의 별이 아닙니다 — 이 육각형 도형이 그 가장 유명한 의미보다 훨씬 오래 살아남았고 지금도 그 의미보다 더 널리 쓰이고 있다는 사실을 다시 보여줍니다.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<div class="cta-card">
+  <h3>다른 폰트도 필요하신가요?</h3>
+  <p>UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.</p>
+  <a href="/ko/" class="cta-btn">UltraTextGen 열기 →</a>
+</div>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">자주 묻는 질문</span>
+  <h2>자주 묻는 질문</h2>
+  <details class="faq-item">
+    <summary class="faq-question">다윗의 별은 고대 유대교 상징인가요?</summary>
+    <p class="faq-answer">많은 사람이 짐작하는 것만큼 고대의 것도, 오로지 유대교만의 것도 아닙니다. 육각별(헥사그램)은 그 역사 대부분에서 여러 문화가 공유한 흔한 장식 문양이었습니다 — 4세기 갈릴리 지역의 시나고그와 그리스도교 교회 양쪽에서 순전히 장식으로 등장합니다. 카발라 학자 게르숌 숄렘은 기원전 7세기로 거슬러 올라가는 시돈의 한 유대인 인장에서 육각별을 기록했지만, 그것은 유대교와 무관하다고 알려진 다른 기호들과 함께 놓여 있었습니다. 유대교의 표장으로서의 역할은 훨씬 나중에 생겨났습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">다윗의 별은 언제 유대교 상징이 되었나요?</summary>
+    <p class="faq-answer">점진적으로, 그리고 비교적 최근에 그렇게 되었습니다. 유대 공동체가 이를 공식적으로 사용한 최초의 기록은 1354년 프라하에서, 신성로마제국 황제 카를 4세가 이 도시의 유대 공동체에 육각별이 그려진 깃발을 가질 권리를 부여했을 때입니다. 17세기 빈의 한 표지판이 유대인 구역의 경계를 표시하는 데 이를 사용한 것이 다윗의 방패가 유대교 자체를 뜻한다는 최초의 명확한 사용으로 흔히 인용됩니다. 유럽의 유대 공동체들은 19세기에 이를 널리 채택했고, 1897년 제1차 시온주의자 대회에서 이 운동의 상징으로 확립되었습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">육각별은 이슬람 예술과 전통에서도 쓰였나요?</summary>
+    <p class="faq-answer">네, 상당히 그렇습니다. 이슬람 전통에서 같은 육각별은 예언자 술라이만과 다우드를 기리는 "카팀 술라이만"(솔로몬의 인장) 또는 "나즈마트 다우드"라 불립니다. 주화에 새겨지고, 도자기와 타일에 그려지고, 미니어처 회화에 쓰이고, 채색된 코란 필사본에도 그려졌으며, 오스만 제독 하이레딘 바르바로사의 깃발에도 등장했습니다. 숄렘은 유대 전통이 실제로 "솔로몬의 인장"이라는 용어를 이슬람의 신비주의 문헌에서 빌려왔다고 지적했습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">홀로코스트 당시 나치 배지에 다윗의 별이 등장한 이유는 무엇인가요?</summary>
+    <p class="faq-answer">홀로코스트 기간 동안 나치 독일은 유대인들에게 박해와 식별의 표시로 노란색 다윗의 별 배지를 강제로 달게 했습니다. 1949년 잡지 Commentary에 기고하며 게르숌 숄렘은 이 억압적이고 강요된 사용이 역설적으로 제2차 세계대전 이후 유대교의 표장으로서 이 기호를 되찾는 과정을 "증폭"시켰다고 주장했습니다 — 그 상징성은 그대로 이스라엘 국가의 국기로 이어졌습니다.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">다윗의 별 기호는 어떻게 입력하나요?</summary>
+    <p class="faq-answer">Windows에서는 Word에서 &lt;code&gt;2721&lt;/code&gt;을 입력한 뒤 &lt;code&gt;Alt+X&lt;/code&gt;를 누릅니다. Mac에서는 문자 보기(&lt;code&gt;Cmd+Ctrl+Space&lt;/code&gt;)를 열어 "star of david" 또는 "hexagram"을 검색합니다. HTML에서는 &lt;code&gt;&amp;amp;#10017;&lt;/code&gt;(10진수) 또는 &lt;code&gt;&amp;amp;#x2721;&lt;/code&gt;(16진수)를 사용합니다 — 명명된 엔터티는 없습니다. 휴대폰에서는 이모지 키보드에서 "star of david"를 검색하면 ✡️가 나옵니다.</p>
+  </details>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">관련 기호</span>
+  <div class="compare-grid">
+    <a href="/ko/library/jonggyo-gihou/" class="compare-card variant-muted u-no-underline">
+      <h4>종교 상징</h4>
+      <p>모든 주요 세계 종교의 신앙 상징을 한자리에.</p>
+    </a>
+    <a href="/ko/symbol/kanda-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>칸다 기호</h4>
+      <p>실제로 추적 가능한 역사를 가진 또 다른 구체적인 종교 표장.</p>
+    </a>
+    <a href="/ko/library/byeol-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>별 기호</h4>
+      <p>네 개, 다섯 개, 여섯 개, 여덟 개 꼭짓점의 별까지 모든 종류의 별을 한 참고 자료로.</p>
+    </a>
+    <a href="/ko/symbol/beullaekmun-rilliseu-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>블랙문 릴리스 기호</h4>
+      <p>⚸ U+26B8 — 행성·달·소행성이 아니라 달 궤도상의 수학적 한 지점을 나타내는 점성 글리프입니다.</p>
+    </a>
+    <a href="/ko/symbol/choseungdal-byeol-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>초승달과 별 기호</h4>
+      <p>초승달과 별(☪ ☪️) — 터키·파키스탄·알제리·튀니지 국기에 등장하는 달과 별 도안으로, 대부분의 사람이 ‘이슬람’으로 읽지만 실제로는 경전이 아닌 오스만과 이슬람 이전 표장에서 내려온 것입니다.</p>
+    </a>
+    <a href="/ko/symbol/peulleoreudeuriseu-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>플뢰르 드 리스 기호</h4>
+      <p>플뢰르 드 리스(⚜) — 프랑스 왕실의 상징이었던 백합 문양으로, 지금은 스카우트 세계 휘장과 뉴올리언스 세인츠 로고에도 살아 있습니다.</p>
+    </a>
+    <a href="/ko/symbol/hamsa-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>함사 기호</h4>
+      <p>손바닥 모양의 보호 부적, 함사(🪬) — 유대교와 이슬람교보다 오래된 상징이지만 오늘날 두 전통이 각자 다른 이름으로 함께 씁니다: 미리암의 손과 파티마의 손.</p>
+    </a>
+    <a href="/ko/symbol/jeonggyohoe-sipjiga-giho/" class="compare-card variant-muted u-no-underline">
+      <h4>정교회 십자가</h4>
+      <p>러시아 정교회와 가장 밀접하게 연관된 세 개의 가로선 십자가(☦) — 윗선은 빌라도의 명패를, 기울어진 아랫선은 예수와 함께 십자가에 못 박힌 두 강도와 연결된 수 세기 된 특정한 의미를 담고 있습니다.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

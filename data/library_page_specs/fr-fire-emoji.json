@@ -1,0 +1,232 @@
+{
+  "slug": "emoji-feu",
+  "title": "Emoji Feu 🔥 et Kaomoji : Copier-Coller des Combos Hype | UltraTextGen",
+  "meta_description": "Emoji feu 🔥 au sens « c’est du feu », plus les associations 💯 🚀, les symboles de chaleur et les combos pour légendes et commentaires. Cliquez pour copier.",
+  "canonical": "https://ultratextgen.com/fr/library/emoji-feu/",
+  "breadcrumb": "Emoji Feu",
+  "hero_h1": "Emoji Feu et Kaomoji",
+  "hero_tagline": "Le 🔥 qui veut dire « c’est du feu » — associations hype, symboles chaleur-et-danger, kaomoji enflammés et combos prêts à coller. Cliquez pour copier.",
+  "intro": "L’emoji feu 🔥 a depuis longtemps dépassé les flammes littérales — aujourd’hui il signifie surtout « c’est du feu », raccourci pour quelque chose d’excellent, de brûlant, de totalement réussi. Cette page rassemble le 🔥 lui-même, les emoji de hype et d’approbation qui l’accompagnent (💯 🚀 ⚡ 🙌 👑), les symboles de chaleur et de danger comme 🌋 et 🥵 qui poussent un message à la limite, et quelques kaomoji enflammés pour les conversations en texte brut. Sous les sections, des combos en un clic — « C’est du feu », « Totalement enflammé » et d’autres — pensés pour les légendes, les commentaires et les réponses hype.",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-fire",
+      "label": "L’Emoji Feu",
+      "h2": "L’Emoji Feu",
+      "intro": "Le seul glyphe qui porte tout le sens « c’est du feu ».",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Feu"
+        }
+      ]
+    },
+    {
+      "id": "hype-approval",
+      "label": "Hype",
+      "h2": "Associations Hype et Approbation",
+      "intro": "Les emoji qui transforment 🔥 en éloge complet — un cent, une fusée, de l’énergie pure.",
+      "symbols": [
+        {
+          "char": "💯",
+          "label": "Cent Points"
+        },
+        {
+          "char": "🚀",
+          "label": "Fusée"
+        },
+        {
+          "char": "⚡",
+          "label": "Haute Tension"
+        },
+        {
+          "char": "🙌",
+          "label": "Mains Levées"
+        },
+        {
+          "char": "👑",
+          "label": "Couronne"
+        }
+      ]
+    },
+    {
+      "id": "heat-danger",
+      "label": "Chaleur",
+      "h2": "Symboles de Chaleur et de Danger",
+      "intro": "Les symboles de chaleur littérale qui font passer un avis brûlant en avertissement.",
+      "symbols": [
+        {
+          "char": "🌋",
+          "label": "Volcan"
+        },
+        {
+          "char": "♨️",
+          "label": "Sources Chaudes"
+        },
+        {
+          "char": "🥵",
+          "label": "Visage qui a Chaud"
+        },
+        {
+          "char": "🧯",
+          "label": "Extincteur"
+        }
+      ]
+    },
+    {
+      "id": "fire-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Feu et Flammes",
+      "intro": "Le feu se dessine mal en texte : voici les visages les plus enflammés et étincelants.",
+      "symbols": [
+        {
+          "char": "(๑ᵔ⌣ᵔ๑)",
+          "label": "Kaomoji Sensation de Chaleur"
+        },
+        {
+          "char": "ᕙ(⇀‸↼‶)ᕗ",
+          "label": "Kaomoji Muscles en Feu"
+        },
+        {
+          "char": "(҂ `з´ )ﾉ⌒☆",
+          "label": "Kaomoji qui Lance des Étincelles"
+        },
+        {
+          "char": "✧⁠٩⁠(⁠ˊ⁠ᗜ⁠ˋ⁠*⁠)⁠و⁠✧",
+          "label": "Kaomoji Enflammé et Étincelant"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Kaomoji Gonflé à Bloc"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos d’Emoji Feu",
+    "intro": "Copiez un combo hype complet en un clic — éloge, chaleur ou flamme pure."
+  },
+  "collection_container_id": "fireSetsContainer",
+  "collections": [
+    {
+      "name": "C’est du Feu",
+      "flags": [
+        "🔥",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Totalement Enflammé",
+      "flags": [
+        "🔥",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Avis Brûlant",
+      "flags": [
+        "🔥",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fusée vers le Sommet",
+      "flags": [
+        "🔥",
+        "🚀",
+        "⚡"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Que du Feu",
+      "flags": [
+        "🔥",
+        "🔥",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Monter la Chaleur",
+      "flags": [
+        "🔥",
+        "♨️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Énergie de Roi",
+      "flags": [
+        "🔥",
+        "👑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Danger Brûlant",
+      "flags": [
+        "🔥",
+        "🌋",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/fr/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour le…"
+    },
+    {
+      "href": "/fr/library/emoji-combos/",
+      "title": "Combos emoji à copier-coller",
+      "desc": "Des combinaisons d'emoji prêtes à donner une ambiance à ta bio, ton statut et tes légendes — mignon, coquette,…"
+    },
+    {
+      "href": "/fr/library/symboles/",
+      "title": "Symboles à copier-coller — cœurs, étoiles &amp; caractères spéciaux",
+      "desc": "La collection de symboles pour ta bio Instagram, ton pseudo, ton statut WhatsApp et tes légendes — cœurs ♡, ét…"
+    }
+  ],
+  "lang": "fr",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/fire-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-fuego/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/bulkkot-imoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ates-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-feu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    }
+  ]
+}

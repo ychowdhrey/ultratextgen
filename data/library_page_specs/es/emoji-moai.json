@@ -1,0 +1,150 @@
+{
+  "lang": "es",
+  "slug": "emoji-moai",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-moai/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/moai-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-moai/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/moai-emoji/" }
+  ],
+  "title": "Emoji Moai 🗿: Copiar y Pegar Combos de Memes de Piedra",
+  "meta_description": "El emoji moai 🗿 con caras inexpresivas, kaomoji de piedra y combos de memes como 🗿 🍷 para respuestas secas. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji moai",
+  "hero_h1": "Emoji Moai 🗿",
+  "hero_tagline": "El moai 🗿 con cara de piedra y todas las caras inexpresivas, rocas y combos de memes que lo acompañan. Haz clic en cualquier símbolo o combo para copiarlo al instante.",
+  "intro": "El emoji moai 🗿 representa las cabezas monolíticas de piedra de la Isla de Pascua (Rapa Nui), pero internet lo adoptó como la reacción inexpresiva universal: una cara de piedra a la que nada le mueve un pelo. Es el corazón de combos de memes como 🗿 🍷 y de muros enteros de juicio silencioso en los comentarios de TikTok, Discord y X. Esta página reúne el emoji moai, sus parientes de roca y piedra, las caras sin expresión y los kaomoji que le hacen juego, y sets de combos de memes listos para copiar con un clic.",
+  "sections": [
+    {
+      "id": "moai-stone",
+      "label": "Moai y piedra",
+      "h2": "Emojis de moai y piedra",
+      "intro": "El moai en sí, más las rocas, montañas y monumentos de su familia.",
+      "symbols": [
+        { "char": "🗿", "label": "Moai" },
+        { "char": "🪨", "label": "Roca" },
+        { "char": "🗻", "label": "Monte Fuji" },
+        { "char": "⛰", "label": "Montaña" },
+        { "char": "🌋", "label": "Volcán" },
+        { "char": "🏛", "label": "Edificio clásico" },
+        { "char": "🏝", "label": "Isla desierta" }
+      ]
+    },
+    {
+      "id": "deadpan-faces",
+      "label": "Caras inexpresivas",
+      "h2": "Caras inexpresivas y sin emoción",
+      "intro": "Caras con la misma energía fría de piedra que el moai.",
+      "symbols": [
+        { "char": "😐", "label": "Cara neutral" },
+        { "char": "😑", "label": "Cara sin expresión" },
+        { "char": "😶", "label": "Cara sin boca" },
+        { "char": "🫥", "label": "Cara de línea punteada" },
+        { "char": "🙃", "label": "Cara al revés" },
+        { "char": "😏", "label": "Cara con sonrisa maliciosa" },
+        { "char": "💀", "label": "Calavera" }
+      ]
+    },
+    {
+      "id": "meme-companions",
+      "label": "Compañeros de meme",
+      "h2": "Compañeros del moai en los memes",
+      "intro": "Los emojis que más se pegan junto al 🗿 en las respuestas: vino, fuego y aprobación silenciosa.",
+      "symbols": [
+        { "char": "🍷", "label": "Copa de vino" },
+        { "char": "🥃", "label": "Vaso corto" },
+        { "char": "☕", "label": "Bebida caliente" },
+        { "char": "📸", "label": "Cámara con flash" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "👍", "label": "Pulgar arriba" },
+        { "char": "💪", "label": "Bíceps flexionado" }
+      ]
+    },
+    {
+      "id": "stone-kaomoji",
+      "label": "Kaomoji de piedra",
+      "h2": "Kaomoji con cara de piedra",
+      "intro": "Caritas de texto con la misma mirada plana y poco impresionada, armadas con caracteres Unicode reales.",
+      "symbols": [
+        { "char": "ಠ_ಠ", "label": "Mirada de desaprobación" },
+        { "char": "(¬_¬)", "label": "Cara de reojo" },
+        { "char": "(-_-)", "label": "Cara de texto sin expresión" },
+        { "char": "(；一_一)", "label": "Cara de texto sin gracia" },
+        { "char": "•_•", "label": "Cara con mirada vacía" },
+        { "char": "(ㆆ_ㆆ)", "label": "Cara con mirada desconfiada" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Noche de vino moai",
+      "flags": ["🗿", "🍷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Muro de moais",
+      "flags": ["🗿", "🗿", "🗿", "🗿", "🗿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Respuesta seca",
+      "flags": ["🗿", "💀", "😐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aprobación de piedra",
+      "flags": ["🗿", "👍", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Atrapado en 4K",
+      "flags": ["📸", "🗿", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mirada sigma",
+      "flags": ["🗿", "🥃", "😏"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Orígenes de la isla",
+      "flags": ["🏝", "🗿", "🌋", "⛰"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "moaiSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de memes con el emoji moai",
+    "intro": "Copia un combo de meme moai completo con un solo clic: desde el clásico con copa de vino hasta un muro entero de piedra."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-caca/",
+      "title": "Emoji de caca",
+      "desc": "El emoji 💩 con combos graciosos para bromas y chats grupales."
+    },
+    {
+      "href": "/es/library/emojis-brainrot/",
+      "title": "Emojis brainrot y de jerga",
+      "desc": "Combos de emojis con jerga sigma, rizz y de la generación Z."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de emojis graciosos",
+      "desc": "Combinaciones de emojis para memes y bromas, listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/arte-de-texto-memes/",
+      "title": "Arte de texto de memes",
+      "desc": "Arte con puntos y versiones copypasta de los memes clásicos."
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Şekilli Yazı, Havalı Nick ve Güzel Fontlar — Kopyala Yapıştır",
-    "description": "Şekilli yazı, font ve nick oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
+    "title": "Şekilli Yazı, Şekilli Harf ve Güzel Fontlar — Kopyala Yapıştır",
+    "description": "Şekilli yazı, şekilli harf ve font oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
   },
   "hero": {
-    "title": "Şekilli Yazı ve Havalı Nick Oluşturucu",
-    "subtitle": "Yazını yaz, kalın, italik, el yazısı, gotik veya balon stil seç, tek tıkla kopyala. Instagram bio, oyun nicki, WhatsApp durumu ve Discord — hepsinde aynen görünür."
+    "title": "Şekilli Yazı, Şekilli Harf ve Font Oluşturucu",
+    "subtitle": "Yazını yaz, kalın, italik, el yazısı, gotik veya balon stil seç, tek tıkla kopyala. Instagram bio, WhatsApp durumu ve Discord — hepsinde aynen görünür."
   },
   "decorations": {
     "label": "Yazını sembollerle süsle",
@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Yazını buraya yaz...",
-    "advertisement": "Reklam"
+    "advertisement": "Reklam",
+    "categoryTabs": {
+      "popular": "Popüler",
+      "bold-fonts": "Kalın",
+      "italic-fonts": "İtalik",
+      "bubble-fonts": "Baloncuk",
+      "cursive-fonts": "El Yazısı",
+      "gothic-fonts": "Gotik",
+      "strikethrough-text": "Üstü Çizili",
+      "underline-text": "Altı Çizili",
+      "small-text": "Küçük Yazı",
+      "cute-fonts": "Sevimli",
+      "aesthetic-fonts": "Estetik",
+      "upside-down-text": "Ters",
+      "text-decorator": "Metin Süsleyici",
+      "classified": "Gizli / Sansürlü",
+      "fullwidth-fonts": "Tam Genişlik",
+      "faux-fonts": "Sahte Alfabeler",
+      "ancient-fonts": "Antik & Runik",
+      "emoji-letter-fonts": "Emoji Harfler",
+      "novelty-fonts": "İlginç"
+    },
+    "scopeControl": {
+      "label": "Stili uygula:",
+      "ariaLabel": "Ne kadar metnin stillendirileceğini seç",
+      "whole": "Tüm metin",
+      "wholeTitle": "Metninin her satırını stillendirir.",
+      "firstLine": "Sadece ilk satır",
+      "firstLineTag": "gönderiler için",
+      "firstLineTitle": "Sadece ilk satırı (başlığını veya dikkat çekici cümleni) stillendirir, geri kalanını sade ve okunabilir metin olarak bırakır — sosyal medya gönderileri için ideal.",
+      "share": "Paylaş",
+      "shareTitle": "Metnin dolu şekilde bu sayfayı yeniden açan bir bağlantı paylaş",
+      "linkCopied": "Bağlantı kopyalandı"
+    },
+    "safeMode": {
+      "label": "Yapıştırma güvenliği",
+      "ariaLabel": "Hangi stillerin başkalarının cihazlarında düzgün göründüğünü kontrol et",
+      "toggleLabel": "Güvenli mod",
+      "hint": "Başkalarının eski telefonlarında kutucuk (▯) olarak görünebilecek stilleri işaretler."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Bazı kişilerde kutucuk olarak görünebilir",
+      "boxesWarningTitle": "Bu stil, bazı telefon ve eski cihazlarda karşılığı olmayan nadir Unicode karakterleri kullanır. Yapıştırdığın kişide kutucuk (▯) olarak görünebilir. Kitlen eski cihaz kullanıyor olabilirse daha sade veya daha geniş desteklenen bir stil tercih et.",
+      "emojiWarning": "⚠ Emoji içeriyor — eski cihazlarda farklı görünebilir",
+      "emojiWarningTitle": "Bu stil emoji içerir. Emoji modern cihazlarda düzgün görünür ama çok eski telefonlarda farklı görünebilir veya kutucuk olarak çıkabilir.",
+      "modernDevices": "Modern cihazlarda düzgün görünür",
+      "modernDevicesTitle": "Bu stillendirilmiş Unicode harfler tüm güncel telefon ve bilgisayarlarda görünür. Çok eski Android'lerde (yaklaşık 2016 öncesi) veya minimal sistem yazı tiplerinde bazıları yine de kutucuk (▯) olarak görünebilir. Kitlen eski cihaz kullanıyor olabilirse önce test et.",
+      "rendersEverywhere": "✓ Her yerde düzgün görünür",
+      "rendersEverywhereTitle": "Bu stil sade metindir — hiçbir cihazda kutucuk riski olmadan her yerde düzgün görünür.",
+      "deviceWarning": "⚠ Cihazında görünmeyebilir",
+      "deviceWarningTitle": "Cihazının yazı tipleri bu stili gösteremiyor — kutucuk (□) olarak görünebilir. Yine de başka cihazlarda düzgün görünebilir.",
+      "safeAnywhere": "✓ Her yerde güvenli",
+      "safeAnywhereTitle": "Tüm büyük platformlarda düzgün görünür. Not: ekran okuyucular stillendirilmiş harfleri tek tek hecelemiş gibi okuyabilir, bu yüzden gövde metnini sade tut.",
+      "worksBestOn": "⚠ En iyi {platforms} üzerinde çalışır",
+      "worksBestOnTitle": "En iyi şurada çalışır: {platforms}. Diğer platformlar kaldırabilir veya bozuk gösterebilir — paylaşmadan önce test et."
+    },
+    "savedStyles": {
+      "ariaLabel": "Kaydettiğin stiller",
+      "heading": "Kaydettiğin stiller",
+      "clearAll": "Tümünü temizle",
+      "hint": "Bu cihazda kaydedildi — geri döndüğünde burada seni bekliyor olacaklar."
+    },
+    "textStats": {
+      "wordSingular": "1 kelime",
+      "wordPlural": "{n} kelime",
+      "charSingular": "1 karakter",
+      "charPlural": "{n} karakter"
+    },
+    "decorationsNone": "Yok",
+    "categoryTabsToggle": {
+      "more": "Daha fazla",
+      "less": "Daha az"
+    },
+    "demoText": "UltraTextGen'e hoş geldin.\nBir şeyler yaz. Ultra hâle getir.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "isim",
+        "tabs": {
+          "playful": "Eğlenceli",
+          "hearts": "Kalpler",
+          "sparkle": "Parıltı",
+          "faces": "Yüzler",
+          "stars": "Yıldızlar"
+        }
+      },
+      "bio": {
+        "word": "isim",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "edgy": "Edgy",
+          "royal": "Kraliyet",
+          "cute": "Sevimli",
+          "bold": "Kalın",
+          "clean": "Sade",
+          "mystical": "Mistik",
+          "retro": "Retro",
+          "nature": "Doğa"
+        }
+      },
+      "small-text": {
+        "word": "metin",
+        "tabs": {
+          "subtle": "İnce",
+          "tiny": "Minik",
+          "brackets": "Parantez",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "isim",
+        "tabs": {
+          "rounded": "Yuvarlak",
+          "soft": "Yumuşak",
+          "stars": "Yıldızlar",
+          "hearts": "Kalpler",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "isim",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Yüzler",
+          "hearts": "Kalpler",
+          "sparkle": "Parıltı",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "metin",
+        "tabs": {
+          "celestial": "Göksel",
+          "sparkle": "Parıltı",
+          "y2k": "Y2K",
+          "soft": "Yumuşak",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "isim",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "symbols": "Semboller",
+          "hearts": "Kalpler",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Nerelerde Kullanabilirsin?",
@@ -33,7 +182,7 @@
       },
       {
         "title": "Oyun Nicki ve Discord İsmi",
-        "description": "PUBG, Free Fire, Mobile Legends ve Discord için havalı nick yaz — ★彡, ︻デ═══ gibi sembollerle süsle, tek tıkla kopyala."
+        "description": "Oyun ve Discord isimleri için hazır çerçeveli örnekler şekilli nick sayfasında."
       },
       {
         "title": "Emoji Çevirici",
@@ -117,11 +266,11 @@
         ]
       },
       {
-        "title": "Oyun Nicki, Discord ve PUBG için Havalı Nick",
+        "title": "Oyun ve Discord'da Karakter Uyumluluğu",
         "items": [
           {
-            "question": "PUBG, Free Fire ve Mobile Legends için havalı nick nasıl yazılır?",
-            "answer": "Oyun nicki yazarken iki şeye dikkat: stil okunaklı kalmalı, oyun da bu karakterleri kabul etmeli.\n    <br><br>\n    <strong>PUBG için yaygın kombinasyonlar</strong><br>\n    — ︻デ═══一 𝓚𝓪𝓮𝓼𝓪𝓻 一═══デ︻<br>\n    — ★彡[𝕊𝕒𝕧𝕒𝕤̧]彡★<br>\n    — ꧁༒𝓢𝓱𝓪𝓭𝓸𝔀༒꧂\n    <br><br>\n    <strong>Free Fire için sade ama dikkat çekici</strong><br>\n    — 『MK』•𝗞𝗮𝗻𝘀𝘂𝘇<br>\n    — ▄︻デEFEデ═══一\n    <br><br>\n    <strong>Mobile Legends</strong><br>\n    Oyun bazı sembolleri kabul etmez — kalın, gotik ve italik genelde sorunsuz. Süsleme eklemek için yıldız, kalp ve karakter çerçeveleri en güvenli seçim.\n    <br><br>\n    Yazını yaz, stili seç, sembolleri ekle, kopyala yapıştır — bitti."
+            "question": "Oyunlar hangi karakterleri kabul ediyor?",
+            "answer": "Oyunlar Unicode karakterleri farklı destekliyor: kalın, gotik ve italik stiller neredeyse her yerde sorunsuz geçer; çok katmanlı süslemeler bazı oyunlarda reddedilebilir.\n    <br><br>\n    Stili seç, oyuna yapıştırmadan önce test et — reddedilirse daha sade bir stile geç.\n    <br><br>\n    Hazır çerçeveli oyun isimleri (kopyala yapıştır) <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında; oyuna özel örnekler için <a href=\"/tr/usecase/free-fire-nick/\">Free Fire</a> ve <a href=\"/tr/usecase/mobile-legends-nick/\">Mobile Legends</a> sayfalarına bak."
           },
           {
             "question": "Discord'da nick ve görünen isim için kullanılır mı?",
@@ -132,8 +281,8 @@
             "answer": "Platforma göre kısıtlamalar değişiyor. Bir karakter reddedilirse çözüm basit: <strong>başka bir stile geç</strong>.\n    <br><br>\n    En geniş uyumlu olanlar — neredeyse her yerde geçen güvenli stiller:<br>\n    — Kalın (Ultra Bold)<br>\n    — İtalik (Ultra Italic)<br>\n    — Küçük büyük harf (Small Caps)<br>\n    — Balon (Bubble)\n    <br><br>\n    Karmaşık süslemeli stiller (Zalgo, çok katmanlı gotik) bazı oyun ve uygulamalar tarafından bloklanabilir. Sadeden başla, fazlasını yavaş yavaş ekle."
           },
           {
-            "question": "Kalpli, kelebekli ve kılıçlı şekilli isim nasıl yapılır?",
-            "answer": "İsmini yaz, etrafına tek tıkla sembol sar — kalp, kelebek, kılıç, yıldız.\n    <br><br>\n    — <strong>Kalpli:</strong> ♡ 𝓜𝓮𝓵𝓲𝓼𝓪 ♡, ❤ 𝕄𝕖𝕝𝕚𝕤𝕒 ❤<br>\n    — <strong>Kelebekli:</strong> ƸӜƷ 𝓔𝓯𝓮 ƸӜƷ<br>\n    — <strong>Kılıç / silah:</strong> ︻デ═══一 𝓚𝓪𝓪𝓷 一═══デ︻<br>\n    — <strong>Yıldızlı:</strong> ★彡 𝓢𝓮𝓭𝓪 彡★\n    <br><br>\n    Önce ismini yaz, stilini seç (gotik ve el yazısı en çok tutuyor), sonra <em>Çerçeveler</em> veya <em>Semboller</em> sekmesinden süslemeyi ekle. Instagram bio, oyun nicki ve Discord ismi için birebir."
+            "question": "Yazının etrafına sembol nasıl eklenir?",
+            "answer": "Yazını yaz, <em>Çerçeveler</em> veya <em>Semboller</em> sekmesinden süslemeyi seç — sembol otomatik olarak metnin etrafına sarılır.\n    <br><br>\n    Hazır kalpli ve kelebekli isim örnekleri (kopyala yapıştır) <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
           }
         ]
       },
@@ -145,8 +294,8 @@
             "answer": "Yıldız, kalp, ok, çiçek, kılıç, taç — bunlar klavyede yok ama Unicode'da var. UltraTextGen'in <em>Sembol</em> sekmesine girip istediğine tıklayınca anında kopyalanıyor.\n    <br><br>\n    En çok kullanılan semboller:<br>\n    ★ ✦ ✧ ✩ ✯ — yıldızlar<br>\n    ♥ ❤ ღ ♡ — kalpler<br>\n    ➤ → ↣ ⟶ — oklar<br>\n    ✿ ❀ ❁ ✾ — çiçekler<br>\n    ☾ ☽ ✨ ⋆ — gece ve parıltı<br>\n    ︻デ═══一 ╾━╤デ╦︻ — silah / oyun süslemeleri\n    <br><br>\n    Hepsini tek tıkla kopyala yapıştır."
           },
           {
-            "question": "Nick için süslemeli sembol nereden bulunur?",
-            "answer": "Oyun nicki, Discord ismi ve Instagram bio'su için en sevilen sembol kombinasyonları:\n    <br><br>\n    — ꧁༒ ✦ ꧂ — kraliyet / VIP tarzı<br>\n    — ︻デ═══一 — silah / PUBG için klasik<br>\n    — ★彡 …彡★ — kuyruklu yıldız çerçevesi<br>\n    — ╰‿╯ — sevimli, kawaii<br>\n    — ▄︻デ — sniper süslemesi<br>\n    — ⊰ … ⊱ — minimal estetik kapanış<br>\n    — ƸӜƷ — kelebek\n    <br><br>\n    Yazını yaz, çerçeveyi seç, etrafını otomatik sarsın."
+            "question": "Yazıyı süslemek için hangi semboller kullanılıyor?",
+            "answer": "Bio ve açıklamalarda en çok kullanılan sembol kombinasyonları:\n    <br><br>\n    — ꧁༒ ✦ ꧂ — kraliyet / VIP tarzı<br>\n    — ★彡 …彡★ — kuyruklu yıldız çerçevesi<br>\n    — ƸӜƷ — kelebek\n    <br><br>\n    Yazını yaz, çerçeveyi seç, etrafını otomatik sarsın. Hazır kopyala-yapıştır isimler <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
           },
           {
             "question": "Şekilli kalp, emoji ve süslü harf nasıl yapılır?",

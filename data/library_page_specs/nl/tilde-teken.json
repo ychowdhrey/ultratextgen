@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "tilde-teken",
+  "title": "Tilde (~): Kopieer en Plak ~ ˜ ∼ ≈ — Van Middeleeuwse Afkorting tot Unix Home-map",
+  "meta_description": "Kopieer en plak de tilde (~), de kleine tilde (˜), het combinerende ñ-teken en de wiskundige tildes ∼ en ≈ — plus hoe een middeleeuwse schrijversafkorting tot ñ leidde. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/tilde-teken/",
+  "breadcrumb": "Tilde",
+  "hero_h1": "Tilde (~)",
+  "hero_tagline": "De toetsenbord-tilde (~) die je Unix-thuismap markeert en ‘ongeveer’ betekent, de kleine tilde ˜ en het combinerende teken boven ñ, ã en õ, en de wiskundige tildes ∼ en ≈ waarmee ze voortdurend worden verward. Klik op een teken om het direct te kopiëren.",
+  "intro": "De tilde (~, U+007E TILDE) is het golvende teken linksboven op je toetsenbord, en het vervult meer taken dan bijna elk ander leesteken. In een Unix- of Linux-shell is het de afkorting voor je thuismap (~/) — een conventie die teruggaat op de Lear-Siegler ADM-3A-terminal uit de jaren 70, waarvan het toetsenbord ‘~’ en het woord ‘Home’ op dezelfde toets afdrukte. In informele chats betekent het ‘ongeveer’ of ‘rond de’ (~5 minuten), en programmeurs noemen het de ‘twiddle’. De naam komt van het Spaanse tilde, van het Latijnse titulus (‘titel’ of ‘opschrift’), en het verhaal begint bij middeleeuwse schrijvers: een klein golvend streepje boven een letter stond voor een weggelaten ‘n’ of ‘m’, om kostbaar perkament en inkt te besparen. Precies die afkorting is waarom het Spaans de ñ heeft — schrijvers zetten een enkele ‘n’ met het streepje erboven om een dubbele ‘nn’ te vervangen. Dat diakritische teken bestaat vandaag nog als de combinerende tilde (◌̃, U+0303), een ander teken dan de losstaande kleine tilde (˜, U+02DC) en dan de gewone toetsenbord-~. Het wordt ook voortdurend verward met de wiskundige tekens waar het op lijkt: de tilde-operator ∼ (U+223C, ‘gelijksoortig aan’) en ongeveer-gelijk ≈ (U+2248) zijn losse Unicode-tekens, niet de ASCII-tilde.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/tilde-teken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "de-tilde",
+      "label": "De Tilde",
+      "h2": "De Tilde ~ en zijn Look-alikes",
+      "intro": "Drie losse Unicode-tekens die iedereen ‘de tilde’ noemt — de toetsenbordtoets, een losstaande spatiëringsvariant, en het combinerende diakritische teken boven een letter.",
+      "symbols": [
+        {
+          "char": "~",
+          "label": "Tilde (U+007E) — de Toetsenbordtoets"
+        },
+        {
+          "char": "˜",
+          "label": "Kleine Tilde (U+02DC) — Losstaande Spatiëringsvariant"
+        },
+        {
+          "char": "̃",
+          "label": "Combinerende Tilde (U+0303) — Staat boven een Letter"
+        }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Tilde-letters",
+      "h2": "Letters met een Tilde",
+      "intro": "De combinerende tilde in actie. De Spaanse ñ en de Portugese ã en õ zijn de alledaagse overlevenden van de schrijversafkorting voor een weggelaten ‘n’.",
+      "symbols": [
+        {
+          "char": "ñ",
+          "label": "Latijnse Kleine Letter N met Tilde (U+00F1)"
+        },
+        {
+          "char": "Ñ",
+          "label": "Latijnse Hoofdletter N met Tilde (U+00D1)"
+        },
+        {
+          "char": "ã",
+          "label": "Latijnse Kleine Letter A met Tilde (U+00E3)"
+        },
+        {
+          "char": "õ",
+          "label": "Latijnse Kleine Letter O met Tilde (U+00F5)"
+        }
+      ]
+    },
+    {
+      "id": "wiskundige-tilde",
+      "label": "Wiskundige Tildes",
+      "h2": "Wiskundige Tildes: Gelijksoortig-aan en Ongeveer-gelijk",
+      "intro": "In vergelijkingen betekent de tilde ‘gelijksoortig aan’ of ‘ongeveer’, maar de echte wiskundige tekens zijn eigen Unicode-tekens — niet de ASCII-~ die mensen er meestal voor typen.",
+      "symbols": [
+        {
+          "char": "∼",
+          "label": "Tilde-operator (U+223C) — ‘Gelijksoortig Aan’"
+        },
+        {
+          "char": "≈",
+          "label": "Ongeveer Gelijk Aan (U+2248)"
+        },
+        {
+          "char": "≅",
+          "label": "Approximately Equal To (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asymptotisch Gelijk Aan (U+2243)"
+        },
+        {
+          "char": "~",
+          "label": "Tilde (U+007E) — de ASCII-toets die er vaak voor wordt getypt"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Ongeveer-gelijk, gelijksoortig-aan en de operatoren en relaties die een vergelijking naast de tilde vullen."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accent Marks & Diacritics",
+      "desc": "De combinerende tilde boven ñ en ã, plus accenten, umlauten en de andere tekens die op een letter staan (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Speciale Tekens",
+      "desc": "Hartjes, sterretjes, kaders en de andere klassiekers — één tik om te kopiëren."
+    }
+  ]
+}

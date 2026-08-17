@@ -737,6 +737,9 @@
     stopWords: STOPPWOERTER,
     strings: {
       resultPlaceholder: "आपका इमोजी अनुवाद यहाँ दिखेगा।",
+      copied: "कॉपी हो गया!",
+      copy: "कॉपी करें",
+      surpriseMe: "🎲 मुझे सरप्राइज़ करें",
       inputPlaceholders: {
         default: "यहाँ अपना वाक्य टाइप करें…",
         decode: "डिकोड करने के लिए यहाँ इमोजी पेस्ट करें…",

@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "woede-symbool",
+  "title": "Woede-symbool: Kopieer en Plak 💢 — het Manga-adertje, Uitgelegd",
+  "meta_description": "Kopieer en plak het woedesymbool (💢), het viertakkige 'poppende ader'-teken uit Japanse manga — plus de boosheid- en woede-emoji waar het het vaakst mee wordt gecombineerd.",
+  "canonical": "https://ultratextgen.com/nl/symbol/woede-symbool/",
+  "breadcrumb": "Woede-symbool",
+  "hero_h1": "Woede-symbool",
+  "hero_tagline": "💢 U+1F4A2 — het viertakkige kruis dat in Japanse manga een poppende voorhoofdader tekent, nu overal elders een op zichzelf staande 'iemand-is-boos'-emoji. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het woedesymbool (💢, U+1F4A2) heeft de platte Unicode-naam ANGER SYMBOL, maar de vorm komt rechtstreeks uit de Japanse strip: mangatekenaars tekenen een kleine kruisvormige uitbarsting op het voorhoofd of de slaap van een personage om een bonkende, gezwollen ader voor te stellen — steno voor nauwelijks bedwongen woede die meteen leesbaar is, zelfs als het gezicht van het personage verder kalm blijft. De conventie heeft een Japanse naam, ikari-mark (怒りマーク), en bestond al decennia vóór emoji in gedrukte vorm. Het kwam in versie 6.0 (2010) in Unicode terecht, als een van de oorspronkelijke Japanse providersymbolen die in hun geheel werden overgenomen uit de eigen emoji-sets van SoftBank en DoCoMo, samen met 💥, 💦 en 💤 — het kleine setje manga-geluidseffecttekens dat emoji werd in plaats van vanaf nul als emoji te zijn ontworpen.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/anger-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/woede-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/anger-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "woede-symbool",
+      "label": "Woede-symbool",
+      "h2": "Woede-symbool (Manga-ader)",
+      "intro": "Het adertje zelf, en de stripplaateffecten waar het deel van dezelfde familie mee uitmaakt.",
+      "symbols": [
+        {
+          "char": "💢",
+          "label": "Woede-symbool"
+        },
+        {
+          "char": "💥",
+          "label": "Botsing"
+        },
+        {
+          "char": "💦",
+          "label": "Zweetdruppels"
+        },
+        {
+          "char": "💤",
+          "label": "Zzz (Slapen)"
+        }
+      ]
+    },
+    {
+      "id": "boze-gezichten",
+      "label": "Boze Gezichten",
+      "h2": "Boze & Woedende Gezicht-emoji",
+      "intro": "De gezichtsuitdrukkingen waar 💢 mee wordt gecombineerd om een reactie van geïrriteerd naar razend te duwen.",
+      "symbols": [
+        {
+          "char": "😠",
+          "label": "Boos Gezicht"
+        },
+        {
+          "char": "😡",
+          "label": "Pruilend Gezicht (Woede)"
+        },
+        {
+          "char": "🤬",
+          "label": "Gezicht met Symbolen op de Mond"
+        },
+        {
+          "char": "🗯️",
+          "label": "Woedebel naar Rechts"
+        }
+      ]
+    },
+    {
+      "id": "frustratie",
+      "label": "Frustratie",
+      "h2": "Frustratie- & Ergernissymbolen",
+      "intro": "Rustigere tekens voor irritatie die nog niet is omgeslagen in volledige woede.",
+      "symbols": [
+        {
+          "char": "😤",
+          "label": "Gezicht met Stoom uit Neus"
+        },
+        {
+          "char": "🙄",
+          "label": "Gezicht met Rollende Ogen"
+        },
+        {
+          "char": "😒",
+          "label": "Ongeïnteresseerd Gezicht"
+        },
+        {
+          "char": "⚡",
+          "label": "Hoogspanning"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Kant-en-klare esthetische en reactiecombo's, waaronder verschillende opgebouwd rond boze en woedende gezichten (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/stopbord-emoji/",
+      "title": "Stopbord-symbool",
+      "desc": "Nog een emoji waarvan de hele betekenis leunt op een herkenbare vorm uit de echte wereld in plaats van een gezicht."
+    },
+    {
+      "href": "/category/upside-down-text/",
+      "title": "Glitch Text Generator",
+      "desc": "Voor wanneer een gewoon boos gezicht niet ontregeld genoeg is — vervloekte Zalgo-tekst met kant-en-klare presets (Engelstalige tool)."
+    }
+  ]
+}

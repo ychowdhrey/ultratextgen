@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "recycling-symbool",
+  "title": "Recycling-symbool: Kopieer en Plak ♻ — Ontworpen door een 23-jarige Student voor een Earth-Day-wedstrijd uit 1970",
+  "meta_description": "Kopieer en plak het recyclingsymbool (♻ U+267B), de driepijl-Möbiuslus die in 1970 werd ontworpen door USC-student Gary Anderson voor een wedstrijd van de Container Corporation of America rond de eerste Earth Day. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/recycling-symbool/",
+  "breadcrumb": "Recycling-symbool",
+  "hero_h1": "Recycling-symbool",
+  "hero_tagline": "Het recyclingsymbool (♻) — de driepijl-Möbiuslus die in 1970 werd ontworpen door Gary Anderson, toen een 23-jarige USC-student, voor een wedstrijd rond de eerste Earth Day. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het recyclingsymbool (♻, U+267B BLACK UNIVERSAL RECYCLING SYMBOL) heeft een ongewoon goed gedocumenteerde oorsprong. Het werd in 1970 ontworpen door Gary Anderson, toen een 23-jarige student aan de University of Southern California, als inzending voor een ontwerpwedstrijd gesponsord door de Container Corporation of America ter gelegenheid van de eerste Earth Day. De wedstrijd trok meer dan 500 inzendingen en werd beoordeeld door vooraanstaande ontwerpers van die tijd, waaronder Saul Bass; Anderson won een beurs van 2.500 dollar, en zijn ontwerp werd in het publieke domein geplaatst. De drie achtervolgende pijlen vormen een Möbiusband — Anderson heeft gezegd dat hij papier wilde oproepen dat door rollen beweegt, en het idee van materialen die eindeloos in nieuwe producten circuleren. De populaire lezing van de drie pijlen als 'verminderen, hergebruiken, recyclen' kwam later; dat was niet de oorspronkelijk vermelde betekenis van het ontwerp, die simpelweg de doorlopende lus zelf was. Unicode codeerde de gevulde versie op U+267B in versie 3.2 (2002); een holle omlijnde variant, het UNIVERSAL RECYCLING SYMBOL, staat apart op U+2672.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/recycling-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/recycling-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/recycling-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "recycling-glyphs",
+      "label": "Recycling",
+      "h2": "Recyclingsymbolen",
+      "intro": "Unicode bevat verschillende recyclingtekens: het vertrouwde gevulde symbool, zijn holle omlijning, en de papier-recyclingvariant.",
+      "symbols": [
+        {
+          "char": "♻",
+          "label": "Recyclingsymbool"
+        },
+        {
+          "char": "♲",
+          "label": "Universeel Recyclingsymbool (Omlijning)"
+        },
+        {
+          "char": "♼",
+          "label": "Gerecycled-papier-symbool"
+        }
+      ]
+    },
+    {
+      "id": "milieu-natuur",
+      "label": "Milieu & Natuur",
+      "h2": "Milieu- & Natuursymbolen",
+      "intro": "Symbolen die vaak samen met recycling worden gebruikt in milieu- en duurzaamheidsboodschappen.",
+      "symbols": [
+        {
+          "char": "🌱",
+          "label": "Kiemplant"
+        },
+        {
+          "char": "🌍",
+          "label": "Wereldbol met Europa-Afrika"
+        },
+        {
+          "char": "🍃",
+          "label": "Blad in de Wind"
+        },
+        {
+          "char": "🌳",
+          "label": "Loofboom"
+        },
+        {
+          "char": "💧",
+          "label": "Druppel"
+        }
+      ]
+    },
+    {
+      "id": "borden-pictogrammen",
+      "label": "Borden & Pictogrammen",
+      "h2": "Borden & Gestandaardiseerde Pictogrammen",
+      "intro": "Andere internationaal gestandaardiseerde pictogrammen en waarschuwingstekens uit dezelfde functionele familie.",
+      "symbols": [
+        {
+          "char": "♿",
+          "label": "Rolstoel-symbool"
+        },
+        {
+          "char": "☣️",
+          "label": "Biohazard"
+        },
+        {
+          "char": "⚠️",
+          "label": "Waarschuwing"
+        },
+        {
+          "char": "☢️",
+          "label": "Radioactief"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Recycle & Environment Symbols",
+      "desc": "Recyclingtekens, ecolabels en natuursymbolen in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/biohazard-symbool/",
+      "title": "Biohazard-symbool",
+      "desc": "Nog een modern pictogram met een gedocumenteerde bedrijfsontwerpoorsprong — gemaakt bij Dow Chemical in 1966 om bewust 'memorabel maar betekenisloos' te zijn."
+    },
+    {
+      "href": "/nl/symbol/rolstoel-symbool/",
+      "title": "Rolstoel-symbool",
+      "desc": "Nog een internationaal gestandaardiseerd pictogram met een specifieke, traceerbare ontwerpgeschiedenis."
+    }
+  ]
+}

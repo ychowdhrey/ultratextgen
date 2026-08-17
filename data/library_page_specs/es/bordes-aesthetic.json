@@ -1,0 +1,132 @@
+{
+  "lang": "es",
+  "slug": "bordes-aesthetic",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/bordes-aesthetic/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/aesthetic-borders-frames/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/bordes-aesthetic/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/aesthetic-borders-frames/" }
+  ],
+  "title": "Bordes Aesthetic y Marcos para Copiar y Pegar — Separadores Bonitos",
+  "meta_description": "Bordes aesthetic, marcos y separadores decorativos para biografías y publicaciones. Patrones bonitos con flores, estrellas y corazones listos para copiar.",
+  "breadcrumb": "Bordes Aesthetic y Marcos",
+  "hero_h1": "Bordes Aesthetic y Marcos",
+  "hero_tagline": "Bordes, marcos y separadores decorativos para biografías y publicaciones aesthetic. Haz clic en cualquier patrón para copiar el borde completo al instante.",
+  "intro": "Los bordes aesthetic y los marcos son patrones de varios caracteres que envuelven un texto o crean pausas visuales en biografías, publicaciones y descripciones. Desde separadores florales sencillos y marcos de estrellas hasta patrones elaborados para enmarcar tu nombre, todos estos combos están listos para copiar y pegar. Úsalos en Instagram, TikTok, Discord y Tumblr para darle estructura visual y personalidad a cualquier texto.",
+  "sections": [
+    {
+      "id": "floral-borders",
+      "label": "",
+      "h2": "Bordes Florales",
+      "intro": "",
+      "symbols": [
+        { "char": "❀━━━━━❀", "label": "Marco de flor con línea" },
+        { "char": "✿━━━━━━━━━✿", "label": "Marco de flor ancho" },
+        { "char": "❁ ━━━━━━━━━ ❁", "label": "Marco de pétalos con línea" },
+        { "char": "༻❁༺", "label": "Marco tibetano de pétalos" },
+        { "char": "*＊✿❀ ❀✿＊*", "label": "Borde de estrellas y flores" }
+      ]
+    },
+    {
+      "id": "star-borders",
+      "label": "",
+      "h2": "Bordes de Estrellas",
+      "intro": "",
+      "symbols": [
+        { "char": ".⭒☆━━━✰━━━☆⭒.", "label": "Borde de estrellas con línea" },
+        { "char": "✧･ﾟ: *✧･ﾟ:*", "label": "Patrón de estrellas y puntos" },
+        { "char": "⋆⋆☆⋆⋆⋆⋆☆⋆⋆", "label": "Cadena de estrellas" },
+        { "char": "╔════▣◎▣════╗", "label": "Encabezado con caja y estrella" }
+      ]
+    },
+    {
+      "id": "heart-borders",
+      "label": "",
+      "h2": "Bordes de Corazones",
+      "intro": "",
+      "symbols": [
+        { "char": "♡━━━━━━━♡", "label": "Marco de corazones con línea" },
+        { "char": "꘎♡━━━━━♡꘎", "label": "Marco de corazones decorado" },
+        { "char": "*ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚", "label": "Borde de estrellas y templo" }
+      ]
+    },
+    {
+      "id": "soft-corner-frames",
+      "label": "",
+      "h2": "Marcos Suaves y de Esquina",
+      "intro": "",
+      "symbols": [
+        { "char": "╭┈ • ┈ ୨୧ ┈ • ┈╮", "label": "Marco de esquinas redondeadas" },
+        { "char": "╭━━━━━━ ⋆⋅☆⋅⋆ ━━━━━━╮", "label": "Marco de esquina con estrella" },
+        { "char": "┊┊┊┊ ➶ ❁ ｡˚ ✧", "label": "Líneas verticales con estrella" }
+      ]
+    },
+    {
+      "id": "minimalist-dividers",
+      "label": "",
+      "h2": "Separadores Minimalistas",
+      "intro": "",
+      "symbols": [
+        { "char": "─── ⋆⋅☆⋅⋆ ───", "label": "Separador clásico de estrella" },
+        { "char": "─── ❀ ───", "label": "Separador de flor" },
+        { "char": "── ✦ ──", "label": "Separador de estrella" },
+        { "char": "・・・", "label": "Separador de puntos katakana" },
+        { "char": "»»——⍟——««", "label": "Separador de flechas y estrella" }
+      ]
+    },
+    {
+      "id": "box-drawing-borders",
+      "label": "",
+      "h2": "Bordes con Caracteres de Cuadro",
+      "intro": "Los glifos básicos del bloque Unicode de dibujo de cuadros: esquinas, líneas simples y variantes de línea doble, las piezas con las que se arman bordes y marcos de texto a mano.",
+      "symbols": [
+        { "char": "┌", "label": "Esquina superior izquierda simple" },
+        { "char": "┐", "label": "Esquina superior derecha simple" },
+        { "char": "└", "label": "Esquina inferior izquierda simple" },
+        { "char": "┘", "label": "Esquina inferior derecha simple" },
+        { "char": "─", "label": "Línea horizontal simple" },
+        { "char": "│", "label": "Línea vertical simple" },
+        { "char": "╔", "label": "Esquina superior izquierda doble" },
+        { "char": "╗", "label": "Esquina superior derecha doble" },
+        { "char": "╚", "label": "Esquina inferior izquierda doble" },
+        { "char": "╝", "label": "Esquina inferior derecha doble" },
+        { "char": "═", "label": "Línea horizontal doble" },
+        { "char": "║", "label": "Línea vertical doble" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/simbolos-aesthetic/",
+      "title": "Símbolos Aesthetic",
+      "desc": "Caracteres Unicode aesthetic seleccionados para biografías."
+    },
+    {
+      "href": "/es/library/separadores-de-texto/",
+      "title": "Símbolos de Líneas Separadoras",
+      "desc": "Separadores y líneas horizontales para dividir texto."
+    },
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Símbolos de Corazón",
+      "desc": "Todos los emojis y caracteres Unicode de corazón."
+    },
+    {
+      "href": "/es/library/simbolos-de-brillo/",
+      "title": "Símbolos de Brillo",
+      "desc": "Estrellas, destellos y caracteres decorativos que brillan."
+    },
+    {
+      "href": "/es/library/simbolos-de-flor/",
+      "title": "Símbolos de Flores",
+      "desc": "Flores, hojas y símbolos decorativos de la naturaleza."
+    }
+  ]
+}

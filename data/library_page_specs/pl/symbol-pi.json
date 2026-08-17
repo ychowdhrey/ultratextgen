@@ -1,0 +1,78 @@
+{
+  "slug": "symbol-pi",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Pi: Skopiuj π Π ∏ — Wprowadzony w 1706, Upowszechniony przez Eulera",
+  "meta_description": "Skopiuj symbol pi — małe π (stałą matematyczną), wielkie Π (operator iloczynu) i dedykowany znak iloczynu ∏ — i poznaj historię, jak William Jones wprowadził go w 1706 roku, zanim Euler uczynił go światowym standardem. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-pi/",
+  "breadcrumb": "Symbol Pi",
+  "hero_h1": "Symbol Pi",
+  "hero_tagline": "Małe π, o którym wszyscy myślą, mówiąc „symbol pi”, wielkie Π oznaczające w matematyce „iloczyn” oraz dedykowany operator iloczynu ∏ — notacja, którą William Jones wprowadził w 1706 roku, a Leonhard Euler uczynił światowym standardem. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Mały glif pi, π (U+03C0, GREEK SMALL LETTER PI), to jeden z najbardziej rozpoznawalnych znaków w całej matematyce — stosunek obwodu dowolnego okręgu do jego średnicy, w przybliżeniu 3,14159, ciągnący się w nieskończoność bez powtórzeń. Niewiele osób zdaje sobie sprawę, że symbol jest znacznie młodszy niż sama liczba: walijski matematyk William Jones jako pierwszy użył π w tym znaczeniu w swojej książce z 1706 roku „Synopsis Palmariorum Matheseos”, zapożyczając grecką literę rozpoczynającą słowo „periphery” (obwód). Przez trzy dekady nic się z tym nie działo — dopóki Leonhard Euler, najbardziej wpływowy matematyk swojej epoki, nie przyjął go około 1737 roku i nie utrwalił jako globalnego standardu w swoim dziele z 1748 roku „Introductio in analysin infinitorum”. Wielka forma, Π (U+03A0), pełni zupełnie inną funkcję: w matematyce to operator iloczynu, mnożnikowy bliźniak sumowania Σ, i ma własny, dedykowany glif ∏ (U+220F, N-ARY PRODUCT). Pi jest zarówno liczbą niewymierną (udowodnił to Lambert w 1761 roku), jak i przestępną (Lindemann, 1882 rok) — ma nawet swoje własne święto, obchodzone co roku 14 marca.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pi-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-pi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-pi",
+      "label": "Symbol Pi",
+      "h2": "Symbol Pi — π i Π",
+      "intro": "Sama grecka litera. Małe π to słynna stała matematyczna; wielkie Π to zupełnie inne narzędzie.",
+      "symbols": [
+        { "char": "π", "label": "Mała Grecka Litera Pi (U+03C0) — Stała Matematyczna ≈ 3,14159" },
+        { "char": "Π", "label": "Wielka Grecka Litera Pi (U+03A0) — Operator Iloczynu" }
+      ]
+    },
+    {
+      "id": "pi-w-matematyce",
+      "label": "Matematyka i Operatory",
+      "h2": "Pi w Matematyce: Iloczyn kontra Sumowanie",
+      "intro": "Wielkie Π to operator iloczynu i — dokładnie jak sigma — ma dedykowany glif matematyczny, ∏ (N-ARY PRODUCT), czyli osobny znak Unicode, inny niż sama litera. To mnożnikowe lustrzane odbicie sumowania ∑, litera po literze.",
+      "symbols": [
+        { "char": "∏", "label": "Iloczyn N-arny (U+220F) — Dedykowany Operator Iloczynu" },
+        { "char": "Π", "label": "Wielkie Pi (U+03A0) — Litera Często Wpisywana Zamiast Iloczynu" },
+        { "char": "∑", "label": "Sumowanie N-arne (U+2211) — Addytywny Bliźniak Iloczynu" },
+        { "char": "Σ", "label": "Wielka Sigma (U+03A3) — Litera Stojąca za Sumowaniem" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Pi to 16. litera greckiego alfabetu. Oto sąsiedzi, których szuka się najczęściej razem z nią.",
+      "symbols": [
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa" },
+        { "char": "θ", "label": "Mała Grecka Litera Theta" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Iloczyn, sumowanie i operatory oraz litery greckie wypełniające równania."
+    },
+    {
+      "href": "/pl/symbol/symbol-sigma/",
+      "title": "Symbol Sigma",
+      "desc": "Operatorowy bliźniak pi: tak jak Π łączy się ze znakiem iloczynu ∏, tak Σ łączy się ze znakiem sumowania ∑."
+    }
+  ]
+}

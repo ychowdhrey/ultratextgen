@@ -1,0 +1,80 @@
+{
+  "slug": "travessao-curto",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Travessão Curto (–): Copiar e Colar + o En Dash Que Todo Mundo Digita como Hífen",
+  "meta_description": "Copie e cole o travessão curto (–) para intervalos como 1939–1945 e ligações como Rio–São Paulo — o travessão sem tecla própria no teclado. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/travessao-curto/",
+  "breadcrumb": "Travessão Curto (En Dash)",
+  "hero_h1": "Travessão Curto (–)",
+  "hero_tagline": "O travessão curto (–), ou en dash, que une intervalos de números e datas — 1939–1945, páginas 10–20, 9h–17h — e liga relações de duas partes como o voo Rio–São Paulo. Mais longo que o hífen, mais curto que o travessão longo, e o único sinal sem tecla própria. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O travessão curto, ou en dash (–, Unicode U+2013), é o traço de comprimento médio que fica entre o hífen comum e o travessão longo, mais extenso — recebeu esse nome em inglês (en dash) por ter cerca da metade da largura de um travessão longo, aproximadamente a largura de um N maiúsculo. Ele cumpre duas funções principais: marca intervalos e faixas (1939–1945, páginas 10–20, 9h–17h, a edição de maio–setembro) e liga relações de duas partes e compostos abertos em que um hífen seria fraco demais (o voo Rio–São Paulo, a chapa Lula–Alckmin, pré–Segunda Guerra Mundial). Como nenhum teclado tem uma tecla dedicada para o travessão curto, ele é constantemente digitado por engano como o hífen-menos (-, U+002D); para inseri-lo corretamente, use Option+Hífen no Mac ou Alt+0150 no teclado numérico do Windows, e o AutoFormatação do Microsoft Word converte automaticamente um hífen com espaços (palavra - palavra) nesse sinal. Os guias de estilo divergem: o Chicago Manual of Style usa o travessão curto para intervalos (páginas 3–11), enquanto o Associated Press Stylebook não usa travessões curtos, preferindo o hífen comum também para faixas. Ele também é frequentemente confundido com o hífen tipográfico (‐, U+2010), o sinal de menos (−, U+2212) e o travessão longo (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/travessao-curto/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "en-dash",
+      "label": "Travessão Curto",
+      "h2": "O Travessão Curto e o Figure Dash",
+      "intro": "O travessão curto para intervalos e ligações, mais o figure dash — mesma largura, reservado para numerais, para que os dígitos se alinhem certinho em tabelas e números de telefone. Pronto para colar em qualquer lugar.",
+      "symbols": [
+        { "char": "–", "label": "Travessão Curto / En Dash (U+2013)" },
+        { "char": "‒", "label": "Figure Dash (U+2012)" }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Travessões Confundíveis",
+      "h2": "Travessões e Hífens com que É Confundido",
+      "intro": "As marcas pelas quais o travessão curto é trocado — cada uma com sua própria largura, código e função, do hífen comum do teclado ao travessão longo e ao verdadeiro sinal de menos.",
+      "symbols": [
+        { "char": "—", "label": "Travessão Longo / Em Dash (U+2014)" },
+        { "char": "-", "label": "Hífen-Menos (Teclado)" },
+        { "char": "‐", "label": "Hífen Tipográfico (U+2010)" },
+        { "char": "−", "label": "Sinal de Menos (U+2212)" },
+        { "char": "―", "label": "Barra Horizontal (U+2015)" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Marcas Parentéticas",
+      "h2": "Marcas que um Travessão Curto com Espaços Substitui",
+      "intro": "No uso britânico, australiano e canadense, um travessão curto com espaços – como este aqui – isola um comentário à parte onde o inglês americano fecha com um travessão longo; estas são as marcas com que ele funciona junto ou no lugar das quais entra.",
+      "symbols": [
+        { "char": ",", "label": "Vírgula" },
+        { "char": ":", "label": "Dois-Pontos" },
+        { "char": ";", "label": "Ponto e Vírgula" },
+        { "char": "(", "label": "Parêntese Esquerdo" },
+        { "char": ")", "label": "Parêntese Direito" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/travessao-longo/",
+      "title": "Travessão Longo (Em Dash)",
+      "desc": "O irmão mais largo do travessão curto: o traço longo para pausas e comentários à parte, com o dobro da largura e uma função diferente."
+    },
+    {
+      "href": "/pt/symbol/sublinhado/",
+      "title": "Sublinhado (_)",
+      "desc": "Outro caractere de traço horizontal com o qual o travessão curto é frequentemente comparado e confundido."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    }
+  ]
+}

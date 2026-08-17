@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-06-07T07:34:01.317Z_
+_Generated: 2026-08-15T10:29:30.389Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -8,29 +8,29 @@ _Generated: 2026-06-07T07:34:01.317Z_
 
 | Metric | Value |
 | --- | --- |
-| HTML files scanned | 155 |
-| CSS files | 12 |
-| JS files scanned | 28 |
-| Inline `style="..."` occurrences | 287 |
-| Files containing inline styles | 153 |
-| Inline risk (low / med / high) | 45 / 86 / 156 |
-| `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 342 |
-| Component class candidates | 89 |
-| One-off class candidates | 228 |
-| Repeated inline patterns | 15 |
-| style.css selectors parsed | 365 |
-| …referenced (HTML/JS/structural) | 364 |
-| …unreferenced (needs verification) | 1 |
+| HTML files scanned | 4449 |
+| CSS files | 17 |
+| JS files scanned | 139 |
+| Inline `style="..."` occurrences | 10447 |
+| Files containing inline styles | 4446 |
+| Inline risk (low / med / high) | 651 / 929 / 8867 |
+| `<style>` blocks in HTML | 11 |
+| Unique HTML classes | 760 |
+| Component class candidates | 416 |
+| One-off class candidates | 242 |
+| Repeated inline patterns | 31 |
+| style.css selectors parsed | 1580 |
+| …referenced (HTML/JS/structural) | 1400 |
+| …unreferenced (needs verification) | 180 |
 
-Page-type breakdown: other: 21, category: 20, localized: 20, platform: 13, embed: 1, guide: 8, library: 62, usecase: 10
+Page-type breakdown: other: 1618, category: 26, embed: 8, localized: 2368, platform: 13, guide: 33, library: 337, usecase: 46
 
 ## 2. Top Problems
 
-1. **287 inline styles** across 153 files — the biggest maintainability drag. 45 are low-risk and safe to consolidate.
-2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 153× and should become a utility class.
-3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **1 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+1. **10447 inline styles** across 4446 files — the biggest maintainability drag. 651 are low-risk and safe to consolidate.
+2. **31 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 4445× and should become a utility class.
+3. **11 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
+4. **180 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -38,61 +38,61 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 
 | File | Inline styles |
 | --- | --- |
-| category/index.html | 43 |
-| guide/index.html | 12 |
-| usecase/index.html | 11 |
-| usecase/vertical-text/index.html | 10 |
-| guide/personal-branding-through-typography/index.html | 9 |
-| guide/linkedin-comments-guide/index.html | 8 |
-| embed/linkedin-headline-generator/index.html | 7 |
-| guide/stop-the-scroll-with-font-variation/index.html | 6 |
-| guide/style-linkedin-hooks-to-stand-out/index.html | 6 |
-| linkedin/index.html | 4 |
-| usecase/before-after-emoji/index.html | 4 |
-| about/index.html | 3 |
-| contact/index.html | 3 |
-| guide/vertical-text-guide/index.html | 3 |
-| privacy/index.html | 3 |
-| terms/index.html | 3 |
-| usecase/bio-font/index.html | 3 |
-| usecase/linkedin-headline/index.html | 3 |
-| usecase/text-to-emoji/index.html | 3 |
-| answers/how-to-change-roblox-username/index.html | 2 |
-| category/classified/index.html | 2 |
-| discord/index.html | 2 |
-| guide/branding-with-fonts-for-social-media/index.html | 2 |
-| guide/the-rhetoric-of-fonts/index.html | 2 |
-| library/index.html | 2 |
+| category/index.html | 66 |
+| fi/kaunokirjoitus/index.html | 50 |
+| category/cursive-fonts/index.html | 49 |
+| de/schreibschrift/index.html | 49 |
+| es/letra-cursiva/index.html | 49 |
+| fr/ecriture-cursive/index.html | 49 |
+| id/tulisan-sambung/index.html | 49 |
+| it/lettere-in-corsivo/index.html | 49 |
+| nl/cursieve-letters/index.html | 49 |
+| no/kursiv-tekst/index.html | 49 |
+| pt/letra-cursiva/index.html | 49 |
+| tr/el-yazisi-fontu/index.html | 49 |
+| guide/index.html | 36 |
+| usecase/index.html | 36 |
+| guide/personal-branding-through-typography/index.html | 10 |
+| embed/index.html | 9 |
+| es/imprimibles/monograma/index.html | 9 |
+| guide/linkedin-comments-guide/index.html | 9 |
+| printables/monogram-maker/index.html | 9 |
+| roblox/name-generator/index.html | 9 |
+| es/imprimibles/letras-graffiti/index.html | 8 |
+| guide/comments-that-stand-out/index.html | 8 |
+| printables/graffiti-letters/index.html | 8 |
+| ar/guide/index.html | 7 |
+| bs/guide/index.html | 7 |
 
 Sample occurrences with risk classification:
 
 | File | Line | Snippet | Risk |
 | --- | --- | --- | --- |
-| 404.html | 39 | style="display:none;visibility:hidden" | high |
-| about/index.html | 60 | style="display:none;visibility:hidden" | high |
-| about/index.html | 66 | style="max-width:800px;" | medium |
-| about/index.html | 73 | style="max-width:900px;" | medium |
-| answers/change-font-size-on-facebook/index.html | 86 | style="display:none;visibility:hidden" | high |
-| answers/discord-allowed-characters/index.html | 58 | style="display:none;visibility:hidden" | high |
-| answers/do-you-need-nitro-for-discord-fonts/index.html | 58 | style="display:none;visibility:hidden" | high |
-| answers/how-to-change-roblox-username/index.html | 112 | style="display:none;visibility:hidden" | high |
-| answers/how-to-change-roblox-username/index.html | 296 | style="margin-top:24px;" | low |
-| answers/how-to-change-tiktok-username/index.html | 86 | style="display:none;visibility:hidden" | high |
-| answers/index.html | 53 | style="display:none;visibility:hidden" | high |
-| answers/is-linkedin-bold-text-safe/index.html | 96 | style="display:none;visibility:hidden" | high |
-| answers/what-font-does-discord-use/index.html | 58 | style="display:none;visibility:hidden" | high |
-| answers/what-font-does-facebook-use/index.html | 86 | style="display:none;visibility:hidden" | high |
-| answers/what-font-does-linkedin-use/index.html | 88 | style="display:none;visibility:hidden" | high |
-| answers/what-font-does-snapchat-use/index.html | 88 | style="display:none;visibility:hidden" | high |
-| answers/what-is-a-tiktok-handle/index.html | 86 | style="display:none;visibility:hidden" | high |
-| category/aesthetic-fonts/index.html | 67 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/alternating/index.html | 62 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/bold/index.html | 108 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/bold-italic/index.html | 108 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/index.html | 142 | style="display:none;visibility:hidden" | high |
-| category/bubble-fonts/circle/index.html | 108 | style="display:none;visibility:hidden" | high |
-| category/bubble-fonts/index.html | 150 | style="display:none;visibility:hidden" | high |
-| category/classified/index.html | 102 | style="display:none;visibility:hidden" | high |
+| 404.html | 84 | style="display:none;visibility:hidden" | high |
+| 404.html | 4 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| about/index.html | 102 | style="display:none;visibility:hidden" | high |
+| about/index.html | 109 | style="max-width:800px;" | medium |
+| about/index.html | 122 | style="max-width:900px;" | medium |
+| about/index.html | 4 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/can-you-search-fancy-text/index.html | 196 | style="display:none;visibility:hidden" | high |
+| answers/can-you-search-fancy-text/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/change-font-size-on-facebook/index.html | 183 | style="display:none;visibility:hidden" | high |
+| answers/change-font-size-on-facebook/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/christmas-card-what-to-write/index.html | 177 | style="display:none;visibility:hidden" | high |
+| answers/christmas-card-what-to-write/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/cny-greetings-what-to-say/index.html | 184 | style="display:none;visibility:hidden" | high |
+| answers/cny-greetings-what-to-say/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/discord-allowed-characters/index.html | 256 | style="display:none;visibility:hidden" | high |
+| answers/discord-allowed-characters/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/diwali-wishes-what-to-say/index.html | 184 | style="display:none;visibility:hidden" | high |
+| answers/diwali-wishes-what-to-say/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/do-fancy-fonts-work-on-iphone/index.html | 196 | style="display:none;visibility:hidden" | high |
+| answers/do-fancy-fonts-work-on-iphone/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/do-fancy-fonts-work-with-arabic/index.html | 196 | style="display:none;visibility:hidden" | high |
+| answers/do-fancy-fonts-work-with-arabic/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/do-fancy-fonts-work-with-vietnamese/index.html | 181 | style="display:none;visibility:hidden" | high |
+| answers/do-fancy-fonts-work-with-vietnamese/index.html | 2 | style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;' | high |
+| answers/do-you-need-nitro-for-discord-fonts/index.html | 272 | style="display:none;visibility:hidden" | high |
 
 Risk legend: **low** = low risk — safe to move into style.css; **medium** = medium risk — check visually before changing; **high** = high risk — likely page-specific or interactive, do not move blindly.
 
@@ -100,26 +100,37 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 
 | File | Line | CSS lines | Assessment | Risk |
 | --- | --- | --- | --- | --- |
-| embed/linkedin-headline-generator/index.html | 52 | 70 | page-specific | medium |
+| ar/library/index.html | 100 | 28 | page-specific | low |
+| es/library/index.html | 162 | 404 | page-specific | high |
+| fr/library/index.html | 160 | 404 | page-specific | high |
+| id/library/index.html | 160 | 404 | page-specific | high |
+| it/library/index.html | 166 | 404 | page-specific | high |
+| js/decorator/decoratorEngine.test.html | 7 | 8 | page-specific | low |
 | js/vertical/verticalLayouts.test.html | 7 | 6 | page-specific | low |
-| library/index.html | 57 | 404 | page-specific | high |
-| usecase/linkedin-headline/embed/index.html | 43 | 74 | page-specific | medium |
-| usecase/text-to-emoji/index.html | 138 | 125 | page-specific | medium |
+| ko/library/index.html | 178 | 402 | page-specific | high |
+| library/index.html | 119 | 404 | page-specific | high |
+| pt/library/index.html | 160 | 404 | page-specific | high |
+| tr/library/index.html | 161 | 404 | page-specific | high |
 
 ## 5. CSS File Inventory
 
 | File | Size | Lines | Inferred purpose |
 | --- | --- | --- | --- |
-| style.css | 50.5 KB | 2455 | global site stylesheet |
+| style.css | 216.3 KB | 8851 | global site stylesheet |
+| usecase/zalgo-text/zalgo-text.css | 16.5 KB | 802 | page-specific usecase styling |
 | usecase/before-after-emoji/before-after-emoji.css | 11.4 KB | 510 | page-specific usecase styling |
-| usecase/zalgo-text/zalgo-text.css | 10.9 KB | 514 | page-specific usecase styling |
 | 404.css | 8.1 KB | 401 | error page styling |
+| category/upside-down-text/upside-down.css | 7.4 KB | 317 | page/feature specific styling (inferred from path) |
 | usecase/comment-font/comment-font.css | 6.9 KB | 408 | page-specific usecase styling |
+| js/emoji/emoji-tool.css | 6.2 KB | 224 | page/feature specific styling (inferred from path) |
+| roblox/name-generator/roblox-generator.css | 5.9 KB | 320 | page/feature specific styling (inferred from path) |
+| usecase/bio-font/bio-font.css | 5.5 KB | 249 | page-specific usecase styling |
+| symbol-explorer.css | 5.4 KB | 247 | symbol explorer feature styling |
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
-| symbol-explorer.css | 5.2 KB | 244 | symbol explorer feature styling |
-| usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
+| snapchat/snapchat-context.css | 4.9 KB | 190 | platform-specific (Discord) styling |
 | tiktok/tiktok-context.css | 3.0 KB | 147 | platform-specific (Discord) styling |
-| roblox/name-generator/roblox-generator.css | 2.7 KB | 169 | page/feature specific styling (inferred from path) |
+| youtube/name-generator/name-generator.css | 2.5 KB | 151 | page/feature specific styling (inferred from path) |
+| youtube/youtube-context.css | 2.5 KB | 131 | platform-specific (Discord) styling |
 | facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
 | tiktok/name-generator/name-generator.css | 1.2 KB | 69 | page/feature specific styling (inferred from path) |
 
@@ -129,73 +140,83 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Class | Pages | Occurrences |
 | --- | --- | --- |
-| hero-headline | 152 | 152 |
-| hero | 150 | 150 |
-| footer | 141 | 141 |
-| footer-inner | 141 | 141 |
-| hero-inner | 139 | 139 |
-| editorial-section | 123 | 395 |
-| hero-tagline | 115 | 115 |
-| editorial-block | 94 | 282 |
-| cta-btn | 92 | 99 |
-| cta-card | 89 | 94 |
-| section-divider | 86 | 547 |
-| article-section-label | 85 | 600 |
-| compare-grid | 80 | 103 |
-| compare-card | 80 | 390 |
-| variant-muted | 80 | 357 |
-| u-no-underline | 70 | 285 |
-| mood-explainers | 67 | 439 |
-| breadcrumbs | 66 | 66 |
-| breadcrumb-separator | 66 | 122 |
-| breadcrumb-current | 66 | 66 |
-| container | 60 | 67 |
-| symbol-tile | 60 | 4630 |
-| symbol-toast | 60 | 60 |
-| flag-rows | 59 | 344 |
-| flag-row | 59 | 4097 |
+| hero-headline | 4433 | 4433 |
+| hero | 4430 | 4546 |
+| hero-inner | 4417 | 4533 |
+| editorial-section | 4384 | 17075 |
+| hero-tagline | 4351 | 4352 |
+| footer | 4303 | 4303 |
+| footer-inner | 4301 | 4301 |
+| article-section-label | 3856 | 23045 |
+| cta-btn | 3820 | 3872 |
+| cta-card | 3817 | 3864 |
+| compare-grid | 3659 | 3961 |
+| compare-card | 3659 | 19442 |
+| variant-muted | 3658 | 19277 |
+| section-divider | 3638 | 19936 |
+| editorial-block | 3625 | 6117 |
+| u-no-underline | 3553 | 18938 |
+| symbol-toast | 3414 | 3414 |
+| symbol-tile | 3281 | 89618 |
+| flag-rows | 3111 | 11484 |
+| flag-row | 3111 | 83713 |
+| flag-emoji | 3111 | 83721 |
+| flag-label | 3107 | 82585 |
+| faq-item | 2844 | 14191 |
+| faq-question | 2844 | 14191 |
+| faq-answer | 2844 | 14191 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| display:none; visibility:hidden | 153 | u-hidden (verify JS toggling first) | high |
-| align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
-| text-decoration:none | 17 | u-no-underline | low |
-| color:var(--text-primary); font-weight:600; text-decor… | 13 | (propose a utility/component class) | medium |
-| align-items:stretch; flex-direction:column; gap:12px | 13 | (propose a utility/component class) | medium |
-| color:var(--text-secondary); font-size:0.875rem; line-… | 13 | u-text-secondary | medium |
-| max-width:800px | 8 | u-maxw-* | medium |
-| max-width:900px | 8 | u-maxw-* | medium |
-| margin-top:2rem | 5 | u-mt-* | low |
-| font-size:1.35rem | 4 | u-fs-* | low |
-| margin-top:1rem | 4 | u-mt-* | low |
-| border-bottom:2px solid rgba(255,255,255,0.15); paddin… | 4 | u-text-left | medium |
-| padding:0.75rem | 4 | (propose a utility/component class) | low |
-| display:none | 3 | u-hidden (verify JS toggling first) | high |
-| color:var(--text-secondary); font-size:0.925rem; margi… | 3 | u-mb-* | medium |
+| display:none; visibility:hidden | 4445 | u-hidden (verify JS toggling first) | high |
+| border:none; height:0; left:-1000px; top:-1000px; widt… | 4402 | (propose a utility/component class) | high |
+| ultra script | 363 | (propose a utility/component class) | low |
+| max-width:820px | 302 | u-maxw-* | medium |
+| max-width:800px | 174 | u-maxw-* | medium |
+| max-width:900px | 174 | u-maxw-* | medium |
+| align-items:stretch; flex-direction:column; gap:8px | 160 | (propose a utility/component class) | medium |
+| ultra script bold | 144 | (propose a utility/component class) | low |
+| text-decoration:none | 25 | u-no-underline | low |
+| align-items:stretch; flex-direction:column; gap:12px | 22 | (propose a utility/component class) | medium |
+| color:var(--text-secondary); font-size:0.875rem; line-… | 22 | u-text-secondary | medium |
+| display:none | 20 | u-hidden (verify JS toggling first) | high |
+| color:${cat.color} | 18 | (propose a utility/component class) | low |
+| color:var(--text-secondary); font-size:0.925rem; margi… | 18 | u-mb-* | medium |
+| font-size:1.25rem; margin-bottom:1rem | 17 | u-mb-* | low |
+| color:var(--text-primary); font-weight:600; text-decor… | 17 | (propose a utility/component class) | medium |
+| margin-top:2rem | 12 | u-mt-* | low |
+| ultra gothic script | 11 | (propose a utility/component class) | low |
+| margin-top:1rem | 11 | u-mt-* | low |
+| align-items:center; display:flex; gap:0.5rem | 8 | u-flex | medium |
+| margin-top:1.5rem | 6 | u-mt-* | low |
+| align-items:center; flex-direction:column; gap:0.35rem | 6 | (propose a utility/component class) | medium |
+| font-size:1.5rem; padding:0; text-align:center; width:… | 6 | u-text-center | medium |
+| display:grid; gap:1rem; grid-template-columns:repeat(a… | 5 | u-mt-* | medium |
+| font-size:1.35rem | 5 | u-fs-* | low |
 
 ### One-off classes (used on a single page)
 
-228 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+242 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
-| aesthetic-card-desc | 16 |
-| aesthetic-card-symbols | 7 |
-| alpha-count | 1 |
-| bf-chip-grid | 1 |
-| bf-compat | 1 |
-| bf-counter | 1 |
-| bf-platform-row | 1 |
-| bf-platform-tab | 11 |
-| bf-preview | 1 |
-| bf-preview-avatar | 1 |
-| bf-preview-bio | 1 |
-| bf-preview-head | 1 |
-| bf-preview-meta | 1 |
-| bf-preview-name | 1 |
-| bf-preview-platform | 1 |
+| alpha-family | 5 |
+| ar-lib-no-results | 1 |
+| ar-lib-search-wrap | 1 |
+| ascii-art-empty | 1 |
+| ascii-art-field | 1 |
+| ascii-art-output | 1 |
+| ascii-art-output-head | 1 |
+| ascii-art-output-wrap | 1 |
+| ascii-art-tool | 1 |
+| ascii-font-picker | 1 |
+| ascii-font-picker-label | 1 |
+| brackets-grid | 1 |
+| breadcrumb-sep | 2 |
+| cat-anchor | 22 |
+| cat-overview-table | 1 |
 
 ## 7. Possible Unused CSS (NEEDS VERIFICATION)
 
@@ -203,9 +224,50 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 
 | Selector | Line | Verdict | Note |
 | --- | --- | --- | --- |
-| .variation-char-over | 2018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .scope-chip | 473 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .scope-chip:hover | 488 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .cursive-alphabet | 1193 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .cursive-alphabet-note | 1212 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .variation-char-over | 2184 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-head | 3694 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-line | 3696 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-verdict-note | 3700 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-row | 3717 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-row-label | 3723 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-tabs | 3730 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview-wrap | 3763 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview | 3773 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview-meta | 3781 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-actions | 3791 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn | 3797 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-primary | 3808 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-primary:hover | 3813 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-btn-ghost:hover | 3814 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-card | 3821 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-name | 3831 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-out | 3838 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-copy | 3844 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-frame-copy:hover | 3854 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-shuffle | 3857 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-rare-grid | 3858 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-rare-chip | 3863 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-preview | 3866 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .ts-actions .ts-btn | 3867 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| #bubblePrintRoot | 4082 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .format-chip | 4140 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .format-chip:hover | 4154 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .safemode-chip | 4189 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .safemode-chip:hover | 4204 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .preview-btn | 4770 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .preview-btn:hover | 4784 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab | 5136 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab:hover | 5152 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab-label | 5162 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .tattoo-mode-tab-hint | 5167 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-JS class-reference tokens collected: 252 (strict). These were used to avoid falsely flagging JS-driven CSS.
+…and 140 more in `css-audit-data.json`.
+
+JS class-reference tokens collected: 636 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 

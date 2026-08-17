@@ -3008,21 +3008,63 @@ button.clear-decoration {
 }
 
 /* Which-format comparison table (was inline-styled in the page HTML) */
+/* Reference tables carry a lot of this site's value, so they get a real
+   style rather than bare padding: row rules for tracking across a wide row,
+   a zebra tint, tabular numerals so figures line up in a column, and a
+   scroll container so a wide table never forces the page sideways on a
+   phone. Numeric columns are opted in with .num. */
+.comparison-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.comparison-table-wrap .comparison-table {
+  margin: 0;
+  min-width: 34rem;
 }
 
 .comparison-table th {
   text-align: left;
-  padding: 0.75rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--border-color, rgba(127, 127, 127, 0.35));
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .comparison-table td {
-  padding: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border-light, rgba(127, 127, 127, 0.18));
+  vertical-align: top;
 }
+
+.comparison-table tbody tr:nth-child(even) {
+  background: var(--border-light, rgba(127, 127, 127, 0.06));
+}
+
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+
+/* Number columns: right-aligned, tabular, and never wrapped mid-figure. */
+.comparison-table th.num,
+.comparison-table td.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* First column is the row's identity — let it keep its own weight. */
+.comparison-table td:first-child { font-weight: 600; }
 
 /* Visible Breadcrumb Navigation */
 .breadcrumbs {
@@ -3117,6 +3159,26 @@ button.clear-decoration {
 
 .guide-hero-figure img,
 .page-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Specimen chart — a rendered grid of the page's own symbols, sitting above
+   the footer. Unlike the hero banner above it this is content, not decoration:
+   it is the saveable/shareable version of what the page offers, and the one
+   artifact on the page that Google Images can actually index (live text can't
+   be). Deliberately lazy-loaded and below the fold — see
+   scripts/generate-specimen-art.py for why it must not carry fetchpriority. */
+.specimen-figure {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.specimen-figure img {
   display: block;
   width: 100%;
   height: auto;
@@ -3581,6 +3643,66 @@ button.clear-decoration {
   color: var(--text-primary);
   font-size: 0.95rem;
   text-align: center;
+}
+
+/* Game selector — the first decision, because it decides whether decoration is
+   even legal in the field the player is filling. */
+.ts-game-row {
+  max-width: 720px;
+  margin: 0 auto 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ts-game-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ts-game-select {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+.ts-game-select:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+
+/* Verdict panel — empty and invisible until a game is picked. */
+.ts-verdict:empty { display: none; }
+
+.ts-verdict {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-light);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+}
+
+.ts-verdict.is-ok { border-left-color: var(--ts-safe); }
+.ts-verdict.is-fail { border-left-color: var(--ts-fail); }
+.ts-verdict.is-info { border-left-color: var(--accent-blue); }
+
+.ts-verdict-head { font-weight: 600; color: var(--text-primary); }
+.ts-verdict-line { margin-top: 0.4rem; color: var(--text-primary); }
+.ts-verdict.is-ok .ts-verdict-line { color: var(--ts-safe); font-weight: 600; }
+.ts-verdict.is-fail .ts-verdict-line { color: var(--ts-fail); font-weight: 600; }
+.ts-verdict-line.is-over { color: var(--ts-fail); font-weight: 700; }
+
+.ts-verdict-note {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
 }
 
 .ts-studio {
@@ -7173,11 +7295,14 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border: 1px solid transparent;
 }
 .cc-badge-ok { color: var(--ts-safe); border-color: var(--ts-safe); }
+.cc-badge-warn { color: var(--ts-warn, #d99100); border-color: var(--ts-warn, #d99100); }
 .cc-badge-fail { color: var(--ts-fail); border-color: var(--ts-fail); }
 .cc-badge-empty { color: var(--text-muted); }
 .cc-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cc-count.is-over { color: var(--ts-fail); font-weight: 700; }
 .cc-bar {
+  position: relative;
+  overflow: visible;
   height: 6px;
   border-radius: 999px;
   background: var(--border-light);
@@ -7191,6 +7316,187 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   transition: width 0.15s ease;
 }
 .cc-bar-fill.is-over { background: var(--ts-fail); }
+.cc-bar-fill.is-past-fold { background: var(--ts-warn, #d99100); }
+/* Where the feed truncates, marked on the bar itself. */
+.cc-bar-fold {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 10px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--text-secondary);
+}
+.cc-note {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Target-first picker: platform -> field, sitting ABOVE the text box so you
+   choose the destination before you write, not after. */
+.cc-selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.cc-selects .cc-select { flex: 1 1 12rem; min-width: 0; }
+.cc-bar-fill.is-close { background: var(--ts-warn, #d99100); }
+
+/* Live count that lives with the box */
+.counter-live {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.12));
+}
+.counter-live.is-close { color: var(--ts-warn, #d99100); }
+.counter-live.is-over { color: var(--ts-fail); font-weight: 700; }
+.counter-textarea.is-over-limit { border-color: var(--ts-fail); }
+
+.counter-field { display: block; }
+.counter-inspect {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* The fix layer — what every other counter is missing */
+.counter-fix {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.25));
+  background: var(--surface-2, rgba(127, 127, 127, 0.06));
+}
+.counter-fix.is-over { border-color: var(--ts-fail); }
+.cc-fix-lead {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  color: var(--ts-fail);
+}
+.cc-fix-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cc-fix-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.3));
+  background: var(--surface-1, transparent);
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.cc-fix-btn:hover { border-color: var(--accent-color, #6c4df6); }
+.cc-fix-btn-save {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--ts-safe);
+  font-size: 0.8rem;
+}
+.cc-fix-btn-trim .cc-fix-btn-save { color: var(--text-secondary); }
+.cc-fix-btn-undo { color: var(--text-muted); }
+
+/* The fold — what shows before "see more".
+   The preview is the payload: the text above the cut reads normally, the cut
+   is a real rule across the block, and everything after it is dimmed so the
+   cost of a slow hook is visible at a glance rather than described. */
+.counter-fold {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.3));
+  border-radius: 12px;
+  background: var(--card-bg, transparent);
+}
+.cc-fold-head {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.cc-fold-preview {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.cc-fold-shown { color: var(--text-color); }
+.cc-fold-more {
+  color: var(--accent-color, #6c4df6);
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* The cut itself: the hidden remainder starts on its own line, behind a rule. */
+.cc-fold-hidden {
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-color, rgba(127, 127, 127, 0.4));
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.cc-fold-meta {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.cc-fold-devices { color: var(--text-muted); }
+.counter-fold.is-cut { border-color: var(--accent-color, #6c4df6); }
+.cc-fold-others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.counter-footnote {
+  max-width: 900px;
+  margin: 0.75rem auto 0;
+  padding: 0 24px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Fits-everywhere grid */
+.counter-fits { margin-top: 1rem; }
+.counter-fits-head {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.cc-fit-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cc-fit-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.25));
+}
+.cc-fit-chip.is-fit { color: var(--text-secondary); }
+.cc-fit-chip.is-unfit { color: var(--ts-fail); border-color: var(--ts-fail); }
+.cc-fit-chip.is-active { border-color: var(--accent-color, #6c4df6); font-weight: 600; }
+.cc-fit-num { font-variant-numeric: tabular-nums; opacity: 0.85; }
+.cc-fit-toggle {
+  border: none;
+  background: none;
+  padding: 0.25rem 0.4rem;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--accent-color, #6c4df6);
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /* Inline "name check" callout — the game-rules checker rendered as a compact
    live readout inside the generator card (between the input and the decoration
@@ -7963,30 +8269,12 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   line-height: 1.4;
 }
 
-/* Dedicated ad slots — injected by header.js on every page.
+/* Dedicated ad slot — injected by header.js on every page.
    Right rail only has room once the viewport clears the 900px container
    plus its own 300px width on both sides without overlapping content. */
 .ad-slot {
   display: flex;
   justify-content: center;
-}
-
-.ad-top-banner {
-  width: 100%;
-  max-width: 900px;
-  margin: 16px auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-  /* Reserve space before the AdSense creative loads so it doesn't push
-     section.hero down once it fills in — this was measured as a real CLS
-     regression (Cloudflare Web Analytics, section.hero up to 0.615). */
-  min-height: 100px;
-}
-
-@media (min-width: 768px) {
-  .ad-top-banner {
-    min-height: 250px;
-  }
 }
 
 .ad-rail-right {
@@ -8210,6 +8498,7 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .lib-clear-btn.visible {
   display: inline-flex;
+}
 
 /* Cursive hub A-Z chart (crawlable text glyphs, links to letter guides) */
 .cursive-chart-grid {
@@ -8244,3 +8533,340 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border-left: 3px solid var(--accent-purple);
   padding-left: 1rem;
 }
+
+/* Event phrase bank — optional grouped layout.
+   The bank's container is a .compare-grid; when the spec gives its phrases a
+   `group`, eventPageController.js emits one labelled block per group. Each
+   block spans the full row so its own nested grid controls the columns. */
+.event-phrase-group {
+  grid-column: 1 / -1;
+}
+
+.event-phrase-group-title {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1rem 0 0;
+}
+
+.event-phrase-group:first-child .event-phrase-group-title {
+  margin-top: 0;
+}
+
+/* Next-occurrence line under an event page's hero tagline. Static for
+   fixed-date events, filled in at runtime for lunar ones (js/events/eventDates.js). */
+.event-next-date {
+  margin: .5rem 0 0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+
+/* Native-script copy tiles on event pages ("<Event> in Arabic/Hindi/Chinese").
+   Wider than a normal .glyph-copy tile because the payload is a phrase, not a
+   single glyph, and it carries its romanization underneath. */
+.event-native-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  min-width: 0;
+  padding: .75rem 1rem;
+  height: auto;
+  line-height: 1.4;
+}
+
+.event-native-script {
+  font-size: 1.25rem;
+}
+
+.event-native-roman {
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+
+/* /events/ hub cards — emoji marker plus the next-occurrence chip.
+   Order and the lunar chips are set at runtime by js/events/eventDates.js. */
+.event-hub-emoji {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+
+.event-hub-when {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 0 0 .35rem;
+}
+
+.event-hub-when:empty {
+  display: none;
+}
+
+/* ============================================================
+   Instagram surface router (/instagram/ and its locale siblings)
+   Pick the field the text is going into; the counter rebinds to
+   that field's real limit and the verdict states whether styled
+   text survives there. Uses the shared --ts-* safety tokens.
+   ============================================================ */
+.ig-surface {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.ig-surface-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.ig-surface-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ig-surface-tab {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ig-surface-tab:hover,
+.ig-surface-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.ig-counter {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ig-counter.over {
+  color: var(--ts-fail);
+  font-weight: 600;
+}
+
+.ig-verdict {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.ig-verdict::before {
+  content: "●";
+  font-size: 0.7rem;
+  line-height: 1.9;
+  flex-shrink: 0;
+}
+
+.ig-verdict[data-status="safe"] { border-color: var(--ts-safe); }
+.ig-verdict[data-status="safe"]::before { color: var(--ts-safe); }
+.ig-verdict[data-status="partial"] { border-color: var(--ts-risk); }
+.ig-verdict[data-status="partial"]::before { color: var(--ts-risk); }
+.ig-verdict[data-status="blocked"] { border-color: var(--ts-fail); }
+.ig-verdict[data-status="blocked"]::before { color: var(--ts-fail); }
+
+.ig-verdict-detail {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Where-it-works matrix ---------------------------------------- */
+.ig-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.92rem;
+}
+
+.ig-matrix th,
+.ig-matrix td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ig-matrix th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ig-matrix td:first-child { font-weight: 600; }
+
+.ig-yes { color: var(--ts-safe); font-weight: 600; }
+.ig-partial { color: var(--ts-risk); font-weight: 600; }
+.ig-no { color: var(--ts-fail); font-weight: 600; }
+
+.ig-matrix-wrap { overflow-x: auto; }
+
+/* Spoke routing cards ------------------------------------------ */
+.ig-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.ig-route {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ig-route:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.ig-route-title {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.ig-route-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Per-letter anchored letter grid. Two pages use it, for the same reason:
+   a page ranks for single-letter queries but only offers whole-alphabet copy
+   rows, so the searcher lands on a wall of 26 letters instead of the one they
+   asked for. Each cell is individually anchored so the query can deep-link to
+   its own letter. Layout mirrors .cursive-letter-grid; no JS of its own — the
+   buttons inside are ordinary .glyph-copy targets, picked up by script.js's
+   delegated handler.
+
+   .sierletter-* — nl/sierlijke-letters. GSC showed 23 distinct single-letter
+   queries ("sierlijke b", "sierletter o", …) at pos ~7.9 with almost no clicks.
+   .letter-anchor-* — the generic name, added 2026-08-10 for ja/hikkitai, where
+   a Semrush pull found 39 single-letter cursive queries ("s 筆記体", "筆記体 f",
+   both word orders) worth ~115,850/mo combined against a page whose own intro
+   promised per-letter glyphs but shipped only two whole-alphabet buttons.
+   Prefer .letter-anchor-* for any new page; .sierletter-* is kept so the
+   existing Dutch markup kept working unchanged. */
+.sierletter-grid,
+.letter-anchor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+.sierletter-cell,
+.letter-anchor-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  scroll-margin-top: 90px;
+}
+.sierletter-cell .alpha-label,
+.letter-anchor-cell .alpha-label {
+  flex: none;
+}
+.sierletter-cell .glyph-copy,
+.letter-anchor-cell .glyph-copy {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  padding: 2px 6px;
+}
+
+/* Characters-to-words converter (/character-counter/characters-to-words/) */
+.ctw-input { min-height: auto; }
+.ctw-picks { margin-top: 0.75rem; }
+
+/* Graffiti name-style designer (printables/graffiti-letters/ + siblings) */
+.pt-name-designer { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; margin: 0.65rem 0 0.25rem; }
+.pt-name-designer-label { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); }
+.pt-name-color { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.pt-name-color input[type="color"] { width: 34px; height: 26px; padding: 0; border: 1px solid var(--border-light); border-radius: 6px; background: transparent; cursor: pointer; }
+.pt-name-solid-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; }
+
+/* Runic name converter (library/norse-viking-runes/ + locale siblings) */
+.runic-converter { display: flex; flex-direction: column; gap: 0.7rem; align-items: flex-start; margin-top: 0.9rem; }
+.runic-label { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); }
+.runic-input { max-width: 420px; }
+.runic-output {
+  display: block;
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.7rem 0.9rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  word-break: break-word;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.runic-output-demo { opacity: 0.55; }
+.runic-note { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin: 0; max-width: 60ch; }
+
+/* ---- Halfwidth/Fullwidth width converter (js/width/width-converter.js) ---- */
+.width-converter { display: flex; flex-direction: column; gap: 0.9rem; }
+.wc-directions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.wc-dir-option { display: inline-flex; align-items: center; gap: 0.45rem; padding: 8px 16px; border: 2px solid var(--border-light); border-radius: 999px; font-size: 0.9rem; font-weight: 700; color: var(--text-secondary); cursor: pointer; background: var(--bg-white); transition: border-color 0.15s, color 0.15s; }
+.wc-dir-option input { accent-color: var(--accent-purple); }
+.wc-dir-option:has(input:checked) { border-color: var(--accent-purple); color: var(--text-primary); }
+.wc-classes { display: flex; gap: 0.4rem 1rem; flex-wrap: wrap; }
+.wc-class-option { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; }
+.wc-class-option input { accent-color: var(--accent-purple); }
+.wc-io { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+@media (max-width: 640px) { .wc-io { grid-template-columns: 1fr; } }
+.wc-input, .wc-output { width: 100%; min-height: 120px; padding: 14px; border: 2px solid var(--border-light); border-radius: var(--radius); font-family: inherit; font-size: 1.05rem; resize: vertical; background: var(--bg-white); color: var(--text-primary); }
+.wc-input:focus { outline: none; border-color: var(--accent-purple); }
+.wc-output { background: var(--bg-base); }
+.wc-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+.wc-counts { font-size: 0.8rem; color: var(--text-muted); }
+.wc-counts strong { color: var(--text-secondary); }
+.wc-copy { padding: 10px 22px; border: none; border-radius: 999px; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: #fff; font-family: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s; }
+.wc-copy:hover { opacity: 0.88; }
+.wc-copy.wc-copied { background: var(--ts-safe); }
+html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }

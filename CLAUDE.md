@@ -27,7 +27,7 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 | Frontend | Pure HTML5, CSS3, Vanilla JavaScript (ES6+) |
 | Build tools | Node.js (sitemap gen only), Python (tweet queue only) |
 | CI/CD | GitHub Actions |
-| Hosting | Static site (Netlify, inferred from `_redirects`) |
+| Hosting | Cloudflare Pages (static assets + `functions/` middleware) |
 | Analytics | Google Tag Manager (GTM-P55HXK8Q) |
 
 **There are no frontend frameworks** (no React, Vue, Angular, etc.) and no bundlers (no Webpack, Vite, Rollup). Do not introduce them.
@@ -52,7 +52,13 @@ ultratextgen/
 ├── fonts.json              # Font category mappings
 ├── robots.txt              # Search engine directives
 ├── sitemap.xml              # Auto-generated (do not edit manually)
-├── _redirects              # Netlify redirect rules
+├── _redirects              # Cloudflare Pages redirect rules — PATH ONLY,
+│                           #   query strings are silently ignored (see below)
+├── _headers                # Cloudflare Pages response headers
+├── _routes.json            # Pages Functions routing: ONLY `/` invokes the
+│                           #   Function — keeps every other request a free
+│                           #   static asset (see What NOT to Do)
+├── functions/_middleware.js# Pages Function: owns `/` (English homepage + ?lang=)
 │
 ├── .github/workflows/
 │   ├── tweet-queue.yml     # Daily social queue (09:00 UTC)
@@ -153,6 +159,33 @@ repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
 `youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
 instead of the now-retired one.
 
+### `answers/` is deliberately not linked from any homepage (recorded 2026-07-31)
+
+The EN homepage links `/library/`, `/guide/`, `/usecase/` and `/category/`
+but **not** `/answers/`, and no locale homepage links its own
+`<lang>/answers/` hub either. **This is intentional, not the "missing link"
+bug described under "Locale-native internal linking" below.**
+
+The `answers/` pillar exists for **AEO** — it is built to be landed on
+directly from a search engine or an AI answer surface, resolve one question,
+and stop. Funnelling homepage visitors into it works against that: someone
+who arrived to use the generator does not need a 59-page Q&A index, and
+sending them there loses them.
+
+So the pillar's discovery is search-driven by design, the same standing
+decision `symbol/` carries (see "Content Types: Library vs Symbol" —
+"**No nav entry** — landed on via search engines/pins"). The difference is
+that `answers/` *does* keep its `header.js` nav entry; what it does not get
+is homepage body links.
+
+**Do not "fix" this.** A homepage→pillar link audit will flag it every time,
+because it is structurally identical to the real bug — a pillar with no
+inbound homepage link. It was flagged and corrected on exactly that basis on
+2026-07-31, during the pass that added the 13 missing homepage→`library/`
+links. `library/` genuinely needed those (it is the only route into each
+locale's `symbol/` cluster); `answers/` does not, and should be left alone
+unless this decision is explicitly revisited.
+
 ---
 
 ## Content Types: Library vs Symbol
@@ -220,6 +253,54 @@ is idempotent. Still add one entry back on `symbol/index.html` by hand.
 `scripts/validate_library_pages.py` scans `symbol/*` by default alongside
 `library/*` and **fails on orphan spokes** (a spoke no `library/` hub links to),
 so a forgotten sync run is caught before the PR.
+
+**Peer linking between `symbol/` spokes (the page's own "Related Symbols"
+section) is automated too, separately from hub↔spoke linking above.** When a
+spoke's `related` block names another `/symbol/` page (not a `/library/`
+hub), that's a declared peer relation, and it should be reciprocal — the
+named peer's own Related Symbols grid should link back. This doesn't happen
+by default: a page's compare-grid is static HTML written once at creation
+time, so a peer added weeks or months later never gets woven back into
+older, already-shipped siblings' grids unless something does it explicitly.
+Real case: `symbol/euro-sign/`, `symbol/pound-sign/`, `symbol/yen-sign/`,
+and `symbol/rupee-sign/` (all shipped 2026-07-11/12) cross-linked each
+other, but `symbol/ruble-sign/` (07-18), `symbol/dirham-sign/`, and
+`symbol/saudi-riyal-sign/` (both 07-22) — which claimed those older pages as
+peers — were never added back in, leaving three real pages with only 1–2
+inbound editorial links each. Root-cause analysis: an internal audit
+(2026-07-24).
+
+`scripts/sync_symbol_spoke_links.py --write --reciprocal` fixes both
+directions in one pass — hub reciprocity (as before) and peer reciprocity
+(new): for every spoke, it now also checks whether its declared `/symbol/`
+peers link back, and injects a `compare-card` into the peer's own grid if
+not (`npm run sync:symbol-peer-links`). Read-only mode
+(`npm run check:symbol-peer-links`, i.e. the script with no `--write`) is
+the whole-site audit — unlike hub-orphans, a spoke with **zero** declared
+peers is not an error (not every symbol has a natural sibling); only a
+**one-directional** declared relation is flagged.
+`scripts/check-new-symbol-peer-links.py` (`npm run
+check:new-symbol-peer-links`) is the diff-scoped PR gate, wired into
+`.github/workflows/validate.yml`: for every `/symbol/` page a PR adds or
+changes, its declared peers must currently link back, or the PR fails with
+the exact pair and the fix (run the generator, commit the result).
+
+**Locale propagation (added 2026-08-06).** `sync_symbol_spoke_links.py` used
+to walk EN `symbol/*` only, which made `--write --reciprocal` a trap: it
+repaired the EN side and left the same relation missing on all 1,645
+`<lang>/symbol/*` pages, whose compare-grids are static HTML written once at
+creation time exactly like EN's. Running it produced 113 EN fixes and **493
+translation-parity pairs**. It now mirrors the peer graph into every language:
+for each EN relation A↔B and each language L where **both** ends have a live
+sibling, L's copy of A gets a card pointing at L's copy of B. Cluster
+membership comes from each locale page's own `hreflang="en"` link (the same
+source `scripts/lib/translation-clusters.js` uses), never from guessing a
+locale slug. Card copy is read from the **target locale page's own** `<h1>`
+and hero tagline — nothing is translated here, and a peer with no sibling in
+L is skipped rather than linked in English. `--no-locales` restores EN-only
+behaviour. The first full run cleared a 2,537-link backlog across 1,009 pages
+in 19 languages. `check-new-symbol-peer-links.py` (the PR gate) is still
+EN-only and diff-scoped.
 
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
@@ -371,14 +452,33 @@ it). Both mean Rule 3 was never applied — fix the hub, don't rebuild the spoke
   another page.
 
 **Case study (2026-07-18):** a GSC query×page pull (last 3 months, queries
-containing "discord") showed `/discord/` at 1,247 clicks / 89,848 impressions while
-`/answers/discord-allowed-characters/` had **0 clicks on 3,656 impressions** (pos
-7.85), `/answers/do-you-need-nitro-for-discord-fonts/` **0 clicks on 3,567**
-(7.45), and `/guide/discord-text-formatting-explained/` **0 clicks on 452** at
-position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
+containing "discord") showed `/discord/` taking effectively all of the cluster's
+clicks, while `/answers/discord-allowed-characters/`,
+`/answers/do-you-need-nitro-for-discord-fonts/` and
+`/guide/discord-text-formatting-explained/` each drew **zero clicks despite real
+impressions at first-page positions** — all indexed, all on-SERP, all starved by
+the hub above them.
 `answers/how-to-make-bold-text-in-discord` drew essentially no impressions because
 the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
 pages, near-zero traffic, because Rule 3 was never applied to the hub.
+
+**These four rules apply within each locale independently (clarified
+2026-07-26).** A translated spoke batch can collide with that locale's own
+existing hubs even when the EN side is clean — the batch mirrors EN's
+hub/spoke split, but the locale's hubs may have grown their own extra prose
+in the meantime. When the collision surfaces on pages too new to have any
+GSC signal (zero impressions, nothing to adjudicate a demand-based split
+with), do not invent a locale-specific judgment call: resolve structurally
+by mirroring what the live EN parent hub already does — same de-targeting,
+same reciprocal `compare-card` links, no more and no less. **Case study
+(2026-07-26):** a 452-page `symbol/*` translation batch produced four
+`nl/symbol/*` spokes overlapping two existing NL library hubs;
+`nl/library/vraagteken/` carried FAQ content its EN parent
+(`library/punctuation-symbols`) never had — a real Rule 3 violation — while
+`nl/library/kruis-symbool/` already matched its parent and only needed its
+Rule 4 links. Both fixed by mirroring the EN parent's shape (`1c6e9bbb`),
+per explicit user direction, because no NL demand data existed to support
+anything else.
 
 ---
 
@@ -404,26 +504,61 @@ Scripts are loaded in a strict order in every HTML page:
 - Defines `window.textStyles` — the global Unicode font registry
 - Each style maps A–Z, a–z, 0–9 to Unicode equivalents
 - Defines `CATEGORY_PAGES` and `SITE_PAGES` routing objects
-- Style object shape:
+- Style object shape (verified against the live registry 2026-08-11 — see the
+  correction note below):
   ```js
   {
-    upper: { A: '𝗔', B: '𝗕', ... },
-    lower: { a: '𝗮', b: '𝗯', ... },
-    nums:  { 0: '𝟬', 1: '𝟭', ... },
-    type: 'map',           // 'map' | 'zalgo' | 'upside-down' | 'transform'
+    // POSITIONAL STRING, not an object keyed by letter. Index 0 = A, 25 = Z.
+    upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+    lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+    nums:  '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+    type: 'map',           // see the five real values below
     category: 'bold',
-    familySlug: 'bold-fonts',
-    groupSlug: 'bold'
+    familySlug: 'bold-fonts',   // string OR array of strings
+    groupSlug: 'bold',
+    slug: 'bold',
+    platforms: [ … ]
   }
   ```
+  `upper`/`lower`/`nums` may **also** be a real JS **array**, and one style
+  requires it: `Ultra Regional Indicator`, whose "letters" are two codepoints
+  each (regional indicator + U+2060 word joiner) and would be torn apart by
+  the positional string reader. `mapToArray()` in `renderer.js` accepts either
+  form (`Array.isArray` → returned as-is; string → parsed positionally, with
+  special-case parsers for wrapped forms like `⦅❨A❩⦆` and `→A←`).
+
+  Non-`map` types carry different fields instead of `upper`/`lower`/`nums`:
+  `procedureId` (procedure), `decoratorId` (decorator), `transform`
+  (function), `redactChar`/`redactMode` (redact); plus optional `note` and
+  `accentSafe`.
+
+  **Correction (2026-08-11).** This block previously documented `upper` as an
+  object map (`{ A: '𝗔', … }`) and `type` as `'map' | 'zalgo' | 'upside-down'
+  | 'transform'`. Neither matched the code, and the drift was live long enough
+  to mislead: a pass reading this file wrote `style.upper['A']` against a
+  string and silently got `undefined` for all 26 letters, falling back to
+  plain ASCII with no error. Zero styles have ever used a type named `zalgo`,
+  `upside-down` or `transform` — `transform` is a *field*, not a type.
 
 #### `renderer.js`
-- Exports `window.UltraTextGenRender` with main method `renderAny(text, styleKey, options)`
-- Handles rendering types:
-  - **`map`**: Character-by-character Unicode substitution
-  - **`zalgo`**: Glitch text with stacked diacritics
-  - **`upside-down`**: Text reversal + character flipping with fallback modes
-  - **`transform`**: Custom transforms (backwards, smallCaps, mirror)
+- Exports `window.UltraTextGenRender` with its single method
+  `renderAny(text, style)` — **two** arguments, and the second is the resolved
+  **style object**, not a key and not followed by an options bag. Every call
+  site passes `styles[styleKey]` (see `gothic-tools.js`). *(Corrected
+  2026-08-11; previously documented as `renderAny(text, styleKey, options)`.)*
+- Dispatch is on `style.type`. `function` is checked **before** the switch
+  (`style.type === 'function' && style.transform`); everything else falls
+  through a `switch`, whose `default` is `renderMap`. The five values in live
+  use, with their counts as of 2026-08-11 (114 styles total):
+  - **`map`** (50) — positional Unicode substitution via `renderMap`
+  - **`procedure`** (30) — named algorithm by `procedureId` (this is where
+    zalgo, gal-moji, cuping and similar transforms actually live)
+  - **`decorator`** (15) — named decorator by `decoratorId`
+  - **`function`** (11) — `transform` fn; today this is the upside-down family
+  - **`redact`** (8) — `redactChar`/`redactMode`
+- `renderer.js` also has a `case 'pattern'` calling `renderPattern`, but
+  **no style currently uses it** — supported, unused. Don't assume it's dead
+  without checking; don't assume it's reachable either.
 
 #### `script.js`
 - Main IIFE wrapping all UI state and event logic
@@ -528,10 +663,40 @@ All pages follow this structure and must maintain:
 To add a new text style, edit `styles.js`:
 
 1. Add an entry to `window.textStyles` with the shape shown above
-2. Map all 26 uppercase letters (`A`–`Z`), 26 lowercase (`a`–`z`), and 10 digits (`0`–`9`)
+2. Supply **exactly** 26 uppercase, 26 lowercase and 10 digits, **in order** —
+   `upper`/`lower`/`nums` are read **positionally** (`upperArr[0]` is `A`), not
+   looked up by letter
 3. Set `type: 'map'` for standard character substitution
 4. Assign `category`, `familySlug`, and `groupSlug` that match existing category pages
-5. Characters that have no Unicode equivalent should be omitted (the renderer falls back to the original character)
+5. **A letter with no Unicode equivalent must still occupy its slot** — repeat
+   the plain character (`…HIJ` with a plain `I`) rather than leaving it out.
+   Omitting one shifts every later letter by a position, so a style missing `I`
+   silently renders `J` for `I`, `K` for `J`, and so on to `Z`. Only a
+   *trailing* omission is harmless, because `mapChar` falls back to the
+   original character when the index is absent (`upperArr[u] || ch`).
+6. Use an **array** instead of a string when a single "letter" is more than one
+   codepoint — that is why `Ultra Regional Indicator` is an array. A positional
+   string would split it mid-glyph.
+7. Check the lengths before shipping: `renderMap` validates 26/26/10, but only
+   warns behind `window.UTG_DEBUG`, so a bad map is **silent in production**.
+   Run the renderer's own check rather than counting characters yourself —
+   several styles store wrapped forms (`⦅❨A❩⦆`, `→A←`, `[A]`, `‹A›`, `‖A‖`,
+   `|A|`) that `mapToArray()` parses with dedicated regexes, so a naive
+   `Array.from(...).length` reports 8 well-formed styles as broken:
+   ```bash
+   node -e "
+   global.window={UTG_DEBUG:true};require('./styles.js');require('./renderer.js');
+   const bad=[],w=console.warn;
+   console.warn=(m,slug,lens)=>{if(String(m).includes('Bad map lengths'))bad.push([slug,JSON.stringify(lens)])};
+   for(const s of Object.values(window.textStyles)){if(s.type!=='map')continue;
+     window.UltraTextGenRender.renderAny('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',s);}
+   console.warn=w;bad.forEach(b=>console.log('BAD',b[0],b[1]));
+   console.log(bad.length?bad.length+' malformed':'all map styles well-formed');"
+   ```
+   Verified 2026-08-11: all 50 `map` styles pass. `mapToArray` is not exported,
+   which is exactly why this drives the check through `renderAny` instead of
+   reimplementing the parsing — a second copy of that logic would drift from
+   the first, the failure this whole section documents.
 
 ---
 
@@ -603,7 +768,16 @@ already exist at the equivalent `/category/`, `/library/`, `/symbol/`,
   wiring, translate the copy, and wire full reciprocal `hreflang` (every
   locale variant links every other variant, `x-default` points at the EN
   canonical). Missing reciprocity is a real, recurring bug on this site, not
-  a hypothetical — see the case study below.
+  a hypothetical — see the case study below. **"Reciprocal" includes the
+  page itself (clarified 2026-07-26):** every page's hreflang block must
+  contain a self-referencing entry for its own URL, and `x-default` must
+  never point at the page itself on a non-EN page. The missing
+  self-reference has been the single most-repeated mesh bug on this site —
+  fixed on 26 `symbol/` pages (`43690ed8`), then 356 EN pages site-wide
+  (`c3ead3d8`), then 12 more (`f749fe3c`), plus a third variant where
+  the self-reference existed but pointed at a subtly wrong URL. When adding
+  or auditing a cluster, check self-reference and `x-default` direction
+  explicitly, not just cross-links between siblings.
 - **No** → do not build the localized page directly. Build the English
   version first (it usually also captures a bigger, unvalidated EN/global
   search pool the localized-only page would leave on the table), *then*
@@ -631,6 +805,208 @@ can compete with it instead of adding coverage. (E.g.: don't split a
 dedicated German small-caps page off from `de/kleine-schrift/`, which
 already ranks for "Kapitälchen," without checking whether the split adds
 net-new coverage or just fragments an existing ranking.)
+
+**Ratified local-only exceptions (2026-07-25):** a site-wide hreflang-mesh
+audit surfaced `ja/gal-moji/` (a Japanese hiragana/katakana lookalike-glyph
+cipher, registered in `styles.js` as a Japanese-script-only `procedureId`)
+and the `ko/font-byeonhwan/` + `zh-tw/yingwen-ziti/` pair (a CJK-script-user
+tool for decorating Latin/English text, distinct in H1/framing from each
+locale's own homepage) as pages with no live English parent. Both were
+discussed and explicitly ratified as genuinely local-only — no English
+speaker would search "gal moji converter" or "English font generator" as
+a distinct query from the plain homepage generator. `x-default` on all
+three falls back to the bare EN homepage as a generic default only, per
+CLAUDE.md's own distinction — this is *not* a translation-equivalence claim,
+so it does not need to be (and should not be) auto-propagated as a real
+sibling relationship. A same-day sibling, `ja/font-henkan/`, was reviewed
+in the same pass and found to be a different case — cannibalization, not a
+legitimate local-only exception (identical title/H1 to `ja/index.html`,
+thinner content, zero cross-links) — and was 301-redirected to `ja/index.html`
+instead of ratified.
+
+**Ratified local-only exception (2026-07-26): `id/tulisan-cuping/`.** "Cuping"
+(cute typing) is an Indonesian RP/Telegram trend that respells *Indonesian*
+words phonetically to sound cuter (r→l, s→c, drop final h — `sering`→`celing`,
+`jangan`→`janan`), with a few community-fixed forms the general rule doesn't
+derive (`marah`→`mayah`). The transform operates on Indonesian phonemes, so an
+English parent would not be a translation of this feature — English cute-speak
+/uwu-typing is a different algorithm on different phonetics — and would sit at
+zero demand by construction, since "cuping" isn't a term English speakers
+search. Same shape of argument as `ja/gal-moji/` above, and it takes the same
+structural form: no hreflang cluster at all, `id/`-only marketing page, with
+the transform itself living in the shared global `renderer.js`/`styles.js`
+registry like every other style (the *code* is never locale-partitioned; only
+the page presenting it is). Demand evidence: "font cuping"/"cuping font"
+substantial combined ID-market demand at low difficulty with weak incumbents.
+
+Note this is a **precedent, not a template** — it does not license
+speculatively building other locales' internet-slang transforms. Each future
+case needs its own demand evidence and its own discussion, exactly as this one
+did.
+
+**Ratified exceptions, `id/usecase/nama-discord-keren/` and
+`nl/sierlijke-letters/` (2026-08-03).** Both surfaced from a site-wide
+duplicate-claimant scan (see "Parallel sessions build the same thing under
+different names" below): each was a second page in its locale declaring an EN
+parent another page already claimed. In both cases the pages are **not**
+duplicates of each other — they serve different queries — so the fix was to
+drop the wrong parent claim, not to merge. Both now carry a locale-only
+hreflang block with `x-default` on the bare EN homepage as a generic default,
+and their visible language switchers were trimmed to match (a switcher that
+still lists a cluster the page has left is the same bug in the visible layer).
+
+- **`id/usecase/nama-discord-keren/`** claimed `usecase/nickname-generator/`,
+  which `id/usecase/nama-panggilan/` already owns. GSC (Jul 2–28) shows no
+  query overlap at all: nama-discord-keren draws 118 impressions led by "nama
+  discord keren" (63) and "nama role discord keren" (13), while nama-panggilan
+  draws 28 led by "buat nama panggilan keren" (5). It is a Discord-name page,
+  and **this site has no EN Discord-name parent** — `/discord/` is the
+  generator hub and `usecase/nickname-generator/` is the general nickname
+  page. Ratified as local-only rather than force-fitted to either.
+- **`nl/sierlijke-letters/`** claimed `category/cursive-fonts/`, which
+  `nl/cursieve-letters/` already owns — and in Dutch those are two different
+  concepts: *cursief* is italic/slanted (what the Word button does), while
+  *sierletters* are ornamental/calligraphic. GSC confirms the split, decisively
+  and in the surprising direction: sierlijke-letters draws **1,768 imp / 45
+  clicks** ("sierletters" alone 795/29) against cursieve-letters' 200 imp / 1
+  click, despite being the smaller, less-linked page. Merging would have 301'd
+  away the best-performing NL asset on the site. No EN "sierletters" parent
+  exists; ratified as local-only. Rule 3 was applied in the same change —
+  `nl/cursieve-letters/` had "sierlijke letters A–Z" in its own `<title>` and
+  meta description, i.e. the hub was targeting the spoke's head term; that is
+  now "cursief schrift A–Z".
+
+**Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
+`fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
+`fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
+flagged as no-EN-parent with no discussed exception. A query-level GSC pull
+(France, 26 days) settled the other three (`fr/ecriture-style/`,
+`fr/generateur-de-texte/` retired via 301 to `fr/`; `fr/ecriture-speciale/`
+left as-is, negligible volume either way — see commit for the full
+per-page breakdown) but confirmed these three pass the site's own
+Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
+(100% of impressions on queries `fr/index.html` never ranks for at all —
+"change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
+copier coller"), and `police-d-ecriture` (54%, largest and still-growing
+volume of the six — "police d'écriture"/"police ecriture", where the
+homepage barely shows while this page holds a strong first-page position on
+the exact same query).
+
+**Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
+*not* a "no English speaker would search this" claim** — "font" and
+"calligraphy" are high-volume English concepts too. The actual reason no
+EN parent exists is a **market-specific SERP-consolidation difference**:
+the already-resolved "font converter" EN-parent question (`AUDIT-ACTIONS.md`
+row 17, closed by `GOLD-ANALYSIS-2026-07-25.md`/`LOCALE-OPPORTUNITY-HUNT-
+2026-07-25.md` §1c) found English/Spanish/Italian SERPs for that concept
+pull the *same* competitor set as "font generator" — Google treats them as
+synonyms there, so a standalone EN page would cannibalize the EN homepage.
+The French GSC data above shows the opposite holds in the French market:
+`fr/index.html` doesn't compete on these queries at all. This EN-side
+synonym-consolidation read is inferred from the row-17 close-out, not
+independently verified against EN GSC for "font"/"calligraphy" specifically
+— worth a direct check before treating it as settled, but it's the reason
+these three stay unbuilt in EN rather than a claim that the underlying
+concept lacks English demand. `x-default` on all three (plus the live
+non-English sibling `it/font-copia-e-incolla/` on the `changeur-de-police`
+cluster) falls back to the bare EN homepage as a generic default only, same
+as the trio above — not a translation-equivalence claim. *(Correction
+2026-08-02: `it/caratteri-speciali/` was previously also listed on this
+cluster, making two `it` claimants on one hreflang cluster — invalid, and
+flagged by `audit-hreflang.js` as a stacked-cluster conflict.
+`it/font-copia-e-incolla/` keeps the slot as the concept-equivalent of
+"changeur de police"; `it/caratteri-speciali/` now stands alone with only a
+self-reference + homepage `x-default`, same ratified no-EN-parent shape.)*
+
+**Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
+picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
+changeur-vs-générateur distinction FAQ, a before/after example) matched to
+its GSC query cluster. Its live IT siblings, `it/font-copia-e-incolla/` and
+`it/caratteri-speciali/`, were **not** updated — `check-translation-parity.js`
+confirmed this is outside its own scope (it diffs EN↔locale pairs only; this
+is an IT-FR-only cluster with no EN member), so nothing enforced a sync, and
+none was done. This is a real gap: the site's tooling has no mechanism for
+locale↔locale parity when neither side is EN. Needs a decision — port the
+same content to the two IT pages, or record the divergence deliberately
+(and if the latter, decide where: `data/translation_parity_exceptions.json`
+requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
+by default.
+
+**Ratified local-only exception pair, `vi/usecase/ten-lien-quan-dep/` +
+`zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/` (2026-08-03):** both are
+nickname/special-character generators for the *same* specific game — Liên
+Quân Mobile in Vietnam, 傳說對決 (Arena of Valor) in Taiwan — Tencent's MOBA
+with no meaningful English-market presence and no EN name-generator page for
+it anywhere in `usecase/` (checked: no `arena-of-valor-name-generator`
+exists). Discovered as a byproduct of an unrelated hreflang audit: both pages
+were mis-parented onto the generic `usecase/nickname-generator/` hub, which
+only has room for one `vi` and one `zh-TW` claimant — but `nickname-
+generator` is genuinely generic (any game/platform), while these two are
+narrowly game-specific, so neither was a good match for that hub's `x-default`
+identity in the first place. Resolved by pairing them into their own isolated
+2-locale cluster, exactly mirroring the existing `ko/font-byeonhwan/` +
+`zh-tw/yingwen-ziti/` precedent above: `en`/`x-default` both fall back to the
+bare homepage as a placeholder, not a translation-equivalence claim (per this
+section's own established distinction). `usecase/nickname-generator/`'s `vi`
+slot was reassigned to `vi/usecase/ten-game-hay/` (generic "cool game name,"
+not tied to one game), which is the page that actually matches that hub's
+intent. No Semrush/GSC demand check was run for this pair specifically —
+Semrush was out of API units at the time — so unlike the `id/tulisan-cuping/`
+or `fr/calligraphie` precedents, this exception rests on the structural/
+linguistic argument (specific regional game, no EN equivalent exists to
+translate) rather than confirmed search volume. Revisit with real numbers
+if either page's ranking ever becomes a live question.
+
+**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
+consolidation** case, the same shape as the `fr/calligraphie` trio and
+explicitly *not* a "no English speaker would search this" claim. The page
+targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
+obviously has English demand — but **the EN homepage already *is* that page**:
+its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
+no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
+spokes *about* fancy text, a different content type). Building an EN parent
+would cannibalise the site's own homepage.
+
+On the Turkish side the two do not compete, which is what makes the page worth
+keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **the
+overwhelming majority of its impressions on `süslü` queries**, at first-page
+positions, while sitting far down the SERP on the `şekilli yaz*` family that
+`/tr/` owns. The page was retargeted
+onto `süslü` on 2026-08-01 for exactly that reason.
+
+**What is not verified:** the cannibalisation premise rests on this repo's own
+structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
+since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
+`fr/calligraphie` entry carries.
+
+**Ratified exceptions are ledgered state, not just prose (2026-08-01):**
+every ratified local-only exception above is also recorded in
+**`data/english_parent_exceptions.json`** — the machine-readable ledger
+`scripts/check-locale-parent-gap.js` consults, so a listed page passes the
+gate's `no-en-parent` check and an unlisted one fails it. The prose above
+stays the reasoning of record; the ledger is the state. Same bar as every
+other ledger in this repo: entries are discussed decisions, never added
+unilaterally to make a page pass. Each entry carries a `nextRecheck` date —
+exceptions are standing claims about EN demand, and claims get re-verified,
+not grandfathered.
+
+**When EN demand appears later — ownership check before build (2026-08-01):**
+if EN-side demand evidence surfaces for a page holding a local-only
+exception, do **not** build the EN parent directly. Run the "check who
+already owns it" test (see "Before building a page for a keyword" above) on
+the **English** SERP/GSC first. Two outcomes only:
+
+- **Build** — the EN SERP for the concept is distinct and no existing EN
+  page owns it → build the EN parent, wire the hreflang cluster, and remove
+  the page's `data/english_parent_exceptions.json` entry (it's now a normal
+  translation).
+- **Veto** — the EN SERP consolidates the term onto an existing page (the
+  `fr/calligraphie` trio's situation: real EN "font"/"calligraphy" volume,
+  but building a parent would cannibalize the EN homepage) → record a dated
+  `veto` in the entry's `verdict` and push out `nextRecheck`.
+
+Demand alone never auto-triggers the build — that shortcut is how the
+`vi/chu-kieu/` class of cannibalization happens on the EN side.
 
 ### Locale-native internal linking — check every time you touch a locale page
 
@@ -749,12 +1125,731 @@ entry shape.
   logic) — the audit and the enforcement gate must never define "changed" or
   "cluster" differently, so that shared logic lives in one place.
 
+### Structure is not language — the completeness gate (added 2026-08-15)
+
+Everything above compares **structure**: link sets, `<h2>`/FAQ/tile counts. A
+locale page that is 90% translated has exactly the same structure as one that is
+100% translated, so it passes. Every other gate is blind to language too — the
+mesh gate reads hrefs, the image gate reads asset paths, the FAQ gate compares a
+page against *itself*. **Nothing was checking whether a locale page is actually
+in its own language.**
+
+Three classes shipped through all five gates during the 2026-08-15 library
+expansion, each found only after the previous one was fixed:
+
+1. **Body prose.** Seven pages went live with an English intro paragraph, an
+   English combo blurb and the English "Transform text with Unicode fonts" CTA
+   card. Verification had looked at aria-labels, headings and links — all
+   genuinely complete — and nothing looked at prose.
+2. **Visible tile labels.** Every symbol tile carries its name **twice**: once in
+   `aria-label="Copy X"` and again as visible text in
+   `<span class="flag-label">X</span>`. Only the aria-label was being translated,
+   so **24 already-pushed pages showed English labels under localised buttons**.
+3. **Clipboard payloads.** `data-symbol="☑ Done"` pastes English *from a locale
+   page* — the one-click copy that is the page's whole point.
+
+The pattern is the lesson: each fix caught the surface it was written for and
+missed the next one. So the check is not pattern-based. It extracts every
+translatable string from the page's **own English parent** (via that page's
+`hreflang="en"`) and asserts that none survives verbatim.
+
+#### Tooling
+
+- **`npm run audit:locale-translation`** (`scripts/audit-locale-translation.js`)
+  — whole-site dashboard, per-locale counts, `--full` for every string,
+  `--locale <code>` to scope, `--json`/`--report` to save. Discovery tool, not in
+  CI. The first run found **2,256 of 3,580 locale pages** carrying at least one
+  English source string — led by the shared CTA paragraph on **406** pages and
+  `aria-label="Breadcrumb"` on **527**. That backlog is real and is not this
+  gate's job to clear.
+- **`npm run check:locale-translation`** (`scripts/check-locale-translation.js`)
+  — the enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  step. Diff-scoped like `check-faq-schema.js`.
+- Both share **`scripts/lib/locale-translation-audit.js`**, so "untranslated"
+  can never mean two different things.
+
+**It measures the delta, not the state** — the same reasoning as the parity
+gate's convergence carve-out, and for the same reason. Mesh, hreflang and asset
+passes legitimately touch hundreds of pages without changing a word of their
+copy; failing a PR for English it did not introduce is how a gate gets ignored.
+A string counts against a branch only if it survives **now** and did not survive
+at the merge base (compared against the base's *own* EN parent, so an English
+page growing a new string cannot silently indict every translation that hasn't
+caught up). Pre-existing survivors are **reported, never silenced** — verified
+on the branch that added this: 0 introduced, 73 pre-existing surfaced, exit 0.
+
+**Two comparison rules that are not optional.** Compare extracted string *sets*,
+never substrings — a naive `enString in localeHtml` test reports "Dove" as
+untranslated on an Italian page, because *dove* is an ordinary Italian word. And
+a candidate needs a run of four Latin letters, which is what keeps glyph tiles
+(♠ ☮ ✓) and CJK/Arabic/Cyrillic strings out of the set entirely.
+
+**`data/translation_identical_strings.json`** holds strings whose *correct*
+translation is byte-identical to the English — "Cupcake" in Dutch, "Joystick" in
+German, Jupiter/Mars/Pluto in Dutch. Each entry carries a reason and the page
+that surfaced it. It is a ledger, not a suppression list: **never add an entry to
+silence a string you have not translated** — same bar as every other ledger here.
+
+**A formal identifier is not English (decided 2026-08-15).** A Unicode block
+name, a Unicode character name, a CSS/LaTeX literal, a keyboard shortcut, an
+HTML entity and a country name are all *proper names or code*, and the other
+Latin-script languages here cite them by that same name inside otherwise
+translated prose — Spanish "en el bloque Latin-1 Supplement", French "du bloc
+« Latin-1 Supplement »", German "im Block Currency Symbols von Unicode". Several
+locales set them in citation quotes, which is the tell. They never count as debt,
+and the rules live in `scripts/lib/locale-translation-audit.js` rather than in an
+analyst's script, so the number does not have to be re-derived each time.
+
+**The exemption is scoped by slot, not by string, and that distinction is
+load-bearing.** A proper name is exempt where it is *cited* — prose, a table
+cell, a tile label — but stays a defect in a heading, card title, section label
+or `aria-label`, because those are page copy. Both cases exist on this site at
+once: `Currency Symbols` is a cited Unicode block name in a `<td>` on
+`symbol/bitcoin-symbol` **and** a related-card `<h4>` on 14 other pages. A
+string-level exemption would silently clear those 14 real defects; verify any
+change to this rule against exactly that pair.
+
+Both lists are **harvested from the site's own English pages** — block names from
+`<td>Unicode block</td>` property rows, country names from
+`library/emoji-flags`'s own registry — never hardcoded, for the same reason
+`generate-site-art.py` reads a page's own tiles: the site is the authority on
+what it cites, and the list maintains itself.
+
+**Do not widen this into "descriptive" names.** Title-case renderings of Unicode
+character names (`Heavy Check Mark`, `Downwards Arrow From Bar`) are **not**
+exempt — this site translates them everywhere else, so they are ordinary debt.
+Only the ALL-CAPS formal form (`DIVISION SIGN`) is an identifier.
+
+Verified per this file's own rule before being trusted (see "Adding a validator
+script is not the same as gating on it"): three defects were injected into a
+finished Japanese page — one per class above — and the gate exited 1 naming all
+three. Do not trust a future edit to it without repeating that.
+
+### EN is the source locale — two structural carve-outs (added 2026-08-02)
+
+The rule above was written as if EN and a locale page were peers that drift
+apart. They aren't: **EN is where pages are born.** A new EN page gets linked
+from existing EN pages immediately, and translated later or never. Without
+allowing for that, the gate fires on essentially *every* new EN page, and a
+gate that fires on everything trains people to ignore it. Two carve-outs, both
+in the shared fingerprint logic so the audit and the gate can't disagree:
+
+**1. Catalogue indexes don't diff their inventory links.** A pillar index lists
+the pages that exist *in its own locale*. EN `library/index.html` carries ~306
+content links; its locale siblings carry 7–50, and every locale
+`category/index.html` carries **0**. That gap is correct — a Danish catalogue
+must not link an English-only page (see "Locale-native internal linking"). So
+for the eight pillar indexes in **`data/parity_catalogue_pages.json`** (and
+their locale equivalents), the internal-link set is dropped from the
+fingerprint. **`<h2>` count, FAQ-schema question count and `.symbol-tile` count
+are still compared**, so adding a real section or FAQ to an index still fires.
+A hub that merely links many spokes (`library/currency-symbols`) is *not* a
+catalogue — its links are editorial and keep full coverage.
+
+**2. Adding a link to a page that doesn't exist in the sibling's locale
+doesn't require that sibling to be touched.** When the *only* structural change
+to a page is added outbound links, the gate now resolves each new target
+against the sibling's language: if none of them has a translation in that
+language, the pair is skipped, because linking the English page from a locale
+page is precisely what the locale-native rule forbids. The moment a translation
+of the target exists, the pair is flagged again — which is the right trigger,
+since the sibling can now link its native equivalent.
+
+Deliberately still flagged, in both carve-outs: a **removed** link, a changed
+`<h2>`/FAQ/tile count, and a new link to a page that **does** have a sibling in
+that locale (verified: adding a `/library/currency-symbols/` link to
+`/discord/` flags exactly `fr` and `id` — the two of its eleven siblings that
+have that translation). `linksUnreachableFor()` is conservative by
+construction: an unresolvable link target counts as reachable, so an unknown
+link can never silently suppress a flag.
+
+### Repairing drift is not creating it — the convergence carve-out (added 2026-08-06)
+
+The gate infers drift from *"one side of a cluster moved, the other didn't."*
+That proxy **inverts on a backfill**. A pass that adds content the sibling
+already has — the locale half of a peer-link sync, a missing FAQ ported over,
+an EN page catching up to links its translations already carry — necessarily
+touches one side only, so the gate reads the repair exactly like the damage.
+Not hypothetical: the locale peer-link sync above tripped it **353 times**,
+in both directions, with every single pair ending up measurably *closer* to
+its sibling than it started.
+
+So `check-translation-parity.js` now measures the thing the rule is about
+instead of inferring it. `convergedTowards()` scores pairwise divergence
+before vs after against the untouched sibling as a fixed reference (same
+shared fingerprint/diff/score the audit uses); a **strict** decrease means the
+page moved toward its sibling and there is nothing to sync. Applied on both
+branches — per-sibling on the EN branch, since one EN edit can converge toward
+some siblings while diverging from others. Converged pairs are **reported**
+with their before→after scores, never silenced.
+
+Strict `<`, not `<=`, on purpose: trading one divergence for another nets to
+zero and is precisely the drift this check exists for. New pages are
+unaffected (no prior state to have converged from). Verified still catching
+real drift: an added `/library/currency-symbols/` link on `/discord/` flags 7
+pairs, and deleting one peer card from a locale symbol page flags that pair.
+
+*(Note: the carve-out section above records that probe as flagging "exactly
+`fr` and `id`". It flags **7** locales as of 2026-08-06 — five more have since
+gained a currency-symbols translation. The probe still works; the expected
+count moves as the site grows.)*
+
+**This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
+exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
+classifies a *page type* whose link list is an inventory. Adding a pattern to
+it is a structural claim about the template and should be raised like any other
+registry change — but it is not a per-page permission and must never be used as
+one.
+
+**Watch out when running the gate locally:** it diffs `merge-base..HEAD`, so
+**uncommitted work is invisible to it**. Running it with changes still in the
+working tree reports on an unrelated delta and can read as a false green —
+commit first, then run.
+
 **Do not add an entry to `data/translation_parity_exceptions.json`
 unilaterally.** Every entry there is supposed to represent a real,
 discussed decision between you and the user — the same bar the English-
 Parent Rule sets for locale-first exceptions above. If `check-translation-
 parity.js` flags a pair, either sync it or raise the divergence with the
 user before recording it as intentional.
+
+---
+
+## Local Language Intelligence
+
+There is a researched, evidence-backed dictionary of locally-native
+vocabulary for this site's top-opportunity locales, distinct from a plain
+translation memory. It captures, per concept per market: the literal/
+dictionary translation, the grammatically correct translation, the phrase
+locals actually say, the phrase locals actually type into search engines/
+forums/games, and when that phrase is and isn't appropriate. Public,
+approved-only snapshot: `data/local-language/<locale>.json` (one file per
+locale + `index.json`). Full methodology, schema, and every locale's write-up:
+`docs/local-language-intelligence.md`.
+
+**The core rule: use locally natural vocabulary when it fits the user's
+exact intent, platform, audience, and register — never insert a phrase
+merely because it's in the dictionary.** This is a decision aid, not a
+keyword-insertion engine.
+
+1. Before writing or materially editing localized copy for one of the
+   covered locales, check `data/local-language/<locale>.json` for that
+   locale (and its `country_or_market` field if the locale has regional
+   splits — see below).
+2. Use a local phrase only when it naturally fits the exact meaning,
+   platform, game, audience, and register of the sentence you're writing.
+   Do not try to use every available phrase, do not set a keyword-density
+   target, and do not stuff several near-synonym variants into the same
+   title or heading.
+3. Every page keeps **one primary query target** — a local phrase never
+   overrides that. It supports the existing title/H1, it doesn't compete
+   with it. Follow this file's existing Hub vs Spoke, cannibalization, and
+   English-Parent rules first; the local-language dictionary is an input to
+   *how* you word a page, never a reason to restructure or duplicate one.
+4. **A local phrase discovered in research does not, by itself, justify a
+   new page.** "This phrase exists" is not a build brief.
+5. Do not mix vocabulary from neighboring countries/markets without
+   evidence — e.g. Mexican Spanish into an `es_ES`-targeted section,
+   Portugal-Portuguese into `pt_BR` copy, Gulf Arabic into pan-Arabic MSA
+   copy. Each snapshot record's `country_or_market` field tells you which
+   market it's evidenced for; a record's `avoid_when` field tells you the
+   specific situations to skip it in.
+6. Respect `content_surface` and `register` on each record — a phrase
+   flagged for FAQ/generator-example use only should not be promoted into a
+   title or H1, and community/gaming jargon does not belong in legal,
+   accessibility, or technical explanatory copy just because it tested well
+   elsewhere.
+7. **Continuous capture rule:** whenever research (forum reading,
+   competitor research, GSC query analysis, keyword research, social/game/
+   platform research, user feedback, a content audit, an issue/PR
+   discussion, or native-speaker review) surfaces a locally meaningful word,
+   phrase, abbreviation, cultural expression, platform term, gaming term,
+   problem description, or search formulation relevant to UltraTextGen —
+   record it in the internal Local Language Intelligence
+   Library as a new `candidate` record (or add evidence to an existing
+   `phrase_id` if the same phrase already exists — search for a match
+   before creating a new record). Do this even if you don't end up using
+   the phrase on any page this session.
+8. **A newly discovered phrase must never be inserted directly into
+   production copy the same pass it's discovered.** It goes into the
+   research library as `candidate` first. Only `approved` or `limited_use`
+   phrases (the ones that make it into the public snapshot here) are meant
+   for production copy, and even then only per rule 2 above.
+9. This public snapshot is generated, read-only data — regenerated from the
+   canonical research dataset maintained internally. Do not hand-edit the
+   JSON files under `data/local-language/`; if a phrase needs a status change
+   or correction, that happens internally and gets re-synced here.
+10. A local phrase, however well-evidenced, never guarantees ranking — it's
+    a fit signal, not a growth lever on its own.
+
+---
+
+## Locale Parent Governance — Core Parent Set, Locale Qualification Tiers, and the pre-build gap check
+
+The English-Parent Rule (above) governs *does a parent exist*. Translation
+Parity (above) governs *do EN and a locale sibling stay in sync after both
+exist*. Neither one answers *should this parent even be mirrored into this
+locale by default*, and the site went a long time answering that question
+by "wait for a forum thread to surface it" — a mechanism with a proven,
+expensive blind spot: EN `/symbol/` had 77 pages, FR `/symbol/` had 6, and
+nothing flagged it until a one-off manual Semrush pull (2026-07-14) found
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign,
+micro-sign, not-equal-sign, delta-symbol, +11 more slugs) sitting there undetected the whole time the
+English parents were live.
+
+**The rule:** two data-driven registries replace tribal knowledge about
+which parents/locales get mirrored, and the default only flips to "mirror"
+at their intersection:
+
+- **`data/core_parent_set.json`** — tiers page-pattern prefixes (`symbol/*`,
+  `library/*`, `category/*`, specific `usecase/` carve-outs, pillar hub-index
+  overrides, …) as `core` (mirror by default — burden of proof is on NOT
+  translating), `gated` (translate only on a cleared demand check — burden
+  of proof is on translating), or `never`. Most-specific-pattern wins when
+  more than one entry matches a path.
+- **`data/locale_qualification_tiers.json`** — tiers every one of the 29
+  canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
+  (qualify via the existing 7-point gate, then mirror Core), or Tier 3
+  (hold/stub, no spec mirroring). A locale can additionally carry
+  `hold: true` within Tier 2 for a non-content reason (authority/indexing
+  gap rather than a content gap) — no locale currently does. `vi` carried
+  this from 2026-07-24 to 2026-08-06 (lifted per user decision — see
+  "What passes a gate" §3 below for the override history, and
+  `docs/locale-parent-governance.md` §2 for the full record); it's plain
+  Tier 2 now, same as its qualify-then-mirror-Core siblings.
+
+`scripts/lib/locale-parent-registry.js`'s `decide(relPath, localeCode)` walks
+the full 5-step flowchart (Tier-3/held locale → skip; script-incompatible
+Core parent → skip this parent here; Core parent → mirror by default; gated
+tail → gate by default; on ship, mesh is generated automatically) and
+returns a decision object, not a bare string. Run
+`node scripts/check-locale-parent-tier.js <path> <locale>` before starting
+any new locale-page work to see exactly what it returns. Full schema, the
+complete flowchart, and every script's flags/exit codes:
+**`docs/locale-parent-governance.md`**.
+
+### Tooling
+
+- **`node scripts/sync-locale-mesh.js`** (`npm run sync:locale-mesh`) —
+  generates the reciprocal hreflang set (by delegating to the existing
+  `scripts/audit-hreflang.js --fix`, gated on this script's own `--fix` flag)
+  and locale-native internal-link rewrites (via the new
+  `scripts/lib/locale-link-rewrite.js`), scoped to `--files <path...>` or the
+  whole tree by default. Report mode (no `--fix`) is safe/read-only; `--fix`
+  mutates in place. This is the Phase-0 "generated, not audited" mesh
+  automation — `scripts/generate_library_page_from_spec.py` calls it
+  automatically (best-effort, `--fix --files <new page>`) right after writing
+  any non-English page; other generators should get the same hook the next
+  time they're touched. **Scoping (fixed 2026-07-26, same day the caveat
+  was written):** `--files` now scopes BOTH passes — the hreflang `--fix`
+  is forwarded as `--scope-files`, which still scans the whole tree
+  (reciprocity can't be judged from a subset) but only writes to the named
+  files plus members of their own hreflang clusters. Before this fix the
+  hreflang pass was unscoped and could mutate files far outside the paths
+  you named (case: `148fcd59`, where a scoped run stamped a duplicate
+  `zh-TW` alternate onto `ja/font-henkan` and `ko/font-byeonhwan` — two
+  ratified local-only exception pages in a completely unrelated cluster).
+  The fixer also now refuses to insert an entry for an hreflang code the
+  file already declares with a different href — that's a conflict flagged
+  for manual review, never auto-stacked. A site-wide (no `--files`) `--fix`
+  run remains intentionally unscoped: still review its diff before
+  committing, and revert out-of-scope edits rather than shipping them as
+  drive-by fixes. Related hazard: the ratified local-only pages (see
+  "Ratified local-only exceptions" above) intentionally do NOT form a full
+  translation-sibling mesh — automated mesh tooling doesn't know that, so
+  treat any tool-made hreflang change to those pages as a bug to revert,
+  not a fix.
+- **`node scripts/check-locale-mesh.js`** (`npm run check:locale-mesh`) —
+  the enforcing, diff-scoped PR gate, wired into `.github/workflows/validate.yml`.
+  For every changed locale page: fails if its hreflang cluster has a
+  non-reciprocal or headless member, or if it links an English hub/spoke
+  where a locale-native equivalent already exists and wasn't rewritten. Fix
+  is always `npm run sync:locale-mesh -- --fix`.
+- **`node scripts/audit-hreflang-completeness.js`** (`npm run
+  check:hreflang-completeness`) — whole-site, blocking (like
+  `audit-hreflang.js`), wired into `.github/workflows/validate.yml`. Checks a
+  DIFFERENT failure mode than `audit-hreflang.js`/`check-locale-mesh.js`:
+  those two check pairwise reciprocity (if A links B, does B link back to
+  A), which can only inspect edges that actually exist. If two cluster
+  members BOTH omit each other — no edge in either direction — there is
+  nothing for a reciprocity walk to catch. This script instead reconstructs
+  true cluster membership independent of the edges being checked (a page's
+  cluster is whichever EN URL its own `hreflang="en"` entry points at, same
+  as `scripts/lib/translation-clusters.js` uses for translation-parity), then
+  requires every member to link every other member. `--fix` inserts the
+  missing entries; run unscoped, review the diff, commit. It also detects
+  (but never auto-fixes) **duplicate-page clusters** — two members that
+  declare the *same* locale for one EN parent, a content bug not a
+  completeness gap (see "Parallel sessions build the same thing under
+  different names" above) — surfaced in its output for manual resolution,
+  which does not block the exit code.
+  **Case study (2026-08-05):** the mutual-omission gap was first discovered
+  2026-07-26 by a routine reciprocity spot-check that found 5 of 8 members
+  of `library/cross-x-symbols/` (es, ko, pt, ar, id) each missing 1-2
+  sibling entries, invisible to `audit-hreflang.js` because every gap was a
+  mutual omission. This script was built the same day and a first site-wide
+  `--fix` run (PR #702) queued a backfill of 8,414 links across 1,702 pages
+  — but by the time that PR was actually landed the site had grown
+  substantially further (new locale pages, new clusters), so the branch was
+  regenerated from a fresh run against current `main` instead of merging the
+  stale diff (and regenerated a second time after `main` moved again mid-work
+  — see the PR's own thread for the exact commit this run landed against).
+  The fresh run found a larger gap, consistent with that growth: 1,980 pages
+  across 277 clusters missing 13,495 sibling entries in total, auto-fixed in
+  one pass. It surfaced zero duplicate-page clusters this
+  time, but did catch one different kind of pre-existing bug the auto-fixer
+  correctly refused to touch: `fi/kaunokirjoitus/index.html` already
+  declared `hreflang="no"` pointing at its own URL (a mislabeled entry, not
+  a real Norwegian sibling link) instead of `no/kursiv-tekst/` — flagged as
+  a conflict and left for manual resolution rather than silently
+  overwritten. **Placeholder EN-homepage claims (2026-08-06):** a *subpage*
+  naming the bare homepage as its `hreflang="en"` is the documented shape of
+  a ratified local-only page, and `audit-hreflang.js --fix` has always refused
+  to repair it (writing it back would make the homepage link one arbitrary
+  subpage). The audit nonetheless counted those pairs as blocking
+  non-reciprocal issues — demanding a repair its own fixer declines to make,
+  which would have turned every PR red the moment the workflow started
+  gating. They now classify separately: reported in their own informational
+  section, annotated against `data/english_parent_exceptions.json` so an
+  *unratified* claim is still visible, and excluded from the exit code.
+  Homepage-to-homepage claims (locale homepages listing each other) are a real
+  cluster and are still checked and fixed. Also watch for genuine
+  **duplicate-page clusters** as a
+  byproduct of any run — two members that declare the same locale for one
+  EN parent (a content bug, not a completeness gap) — which this script
+  surfaces but never auto-fixes; resolve those by hand per the "Parallel
+  sessions" protocol (keep the more-integrated page, 301 the other, repoint
+  references). A related, structurally-hidden variant is a page that never
+  declares `hreflang="en"` at all — invisible to this script's own
+  cluster-membership detection, which requires that declaration — so an
+  occasional manual spot-check for headless pages (`audit-hreflang.js`
+  already reports these as "Headless targets") remains worthwhile alongside
+  this tool.
+  **Cross-cluster edges (added 2026-08-08) — a third failure mode, blocking.**
+  Page A names B as its sibling for locale L, but B's own `hreflang="en"`
+  claims a *different* EN parent, so the two sit in different clusters and A
+  is advertising another cluster's page as its translation. Neither prior
+  check can see it: completeness reconstructs membership from each page's own
+  `hreflang="en"`, so B is simply not a member of A's cluster and the stray
+  edge is never examined; reciprocity only asks whether an edge points both
+  ways, and a cross-cluster edge can be **perfectly reciprocal and still
+  wrong**. Real case, the one that prompted the check: every member of
+  `library/aesthetic-symbols/` correctly listed `it/library/simboli/` as its
+  Italian page, while `nl/library/speciale-tekens/` — a member of
+  `library/special-characters/` — listed that same Italian page as *its*
+  Italian version, and `simboli` listed `speciale-tekens` back as its Dutch
+  version. Two EN parents claiming one translation, in both directions,
+  invisible to both existing audits. Never auto-fixed (which side is wrong is
+  a content call: drop the stray entry, or repoint it at that locale's real
+  page in this cluster). Unlike duplicate-page clusters — a pre-existing
+  backlog this script only surfaces — this class was driven to zero in the
+  same change that added the check, so it **fails the build**; there is no
+  legitimate case for two EN parents sharing a translation.
+- **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
+  check:locale-parent-tier`) — advisory (always exits 0). Prints the
+  registry's decision for a candidate (parent, locale) pair and, if a
+  pre-build gap check is required, the exact instrument questions to answer.
+  Run this before starting new locale-page work, not after.
+- **`node scripts/audit-locale-parent-gap.js`** (`npm run
+  audit:locale-parent-gap`) — whole-site discovery pass, the systematic
+  version of the FR `/symbol/` find: for every Core parent x qualified
+  locale, flags a cell as an unaudited gap when translation coverage is
+  near-zero and no `data/locale_parent_gap_audit.json` entry exists.
+  Informational only (like `check-image-assets.py`) — the site carries a
+  real, deliberately-paced translation backlog this will not zero out in one
+  pass.
+- **`node scripts/check-locale-parent-gap.js`** (`npm run
+  check:locale-parent-gap`) — the enforcing, diff-scoped PR gate, wired into
+  `.github/workflows/validate.yml`. For every newly-added locale page,
+  requires a passing `data/locale_parent_gap_audit.json` entry whenever the
+  registry's decision needed one (a gated-tail build, a Tier-3/held-locale
+  exception, or a script-incompatible-parent exception) — i.e. the page was
+  built against the registry's default recommendation without a recorded
+  reason.
+
+**Do not add or edit an entry in `data/locale_parent_gap_audit.json`,
+`data/core_parent_set.json`, `data/locale_qualification_tiers.json`, or
+`data/english_parent_exceptions.json` unilaterally.** Every entry in all three reflects a discussed decision
+between you and the user — the same bar CLAUDE.md's English-Parent Rule sets
+for locale-first exceptions, and the same bar `data/translation_parity_exceptions.json`
+sets for parity divergences. If one of the gap-check scripts flags a
+missing entry, either raise the divergence with the user or run the actual
+instrument check and record it — don't edit the registry to make a page you
+want to ship pass.
+
+### What passes a gate — and what doesn't (clarified 2026-07-26)
+
+Three recurring points of confusion, each resolved by a real case:
+
+1. **"Sibling precedent" is never a gate pass.** "Other locales already have
+   this cluster" is not demand evidence for *this* locale — it's exactly the
+   heuristic the governance registries replaced. **Case:** the Wave-1
+   `answers/*` cluster (44 pages, 11 locales) was built under sibling
+   precedent before the gate existed; when merging main brought the gate in,
+   the pages were pulled back out of the branch (`4eeb80a2`) rather than
+   grandfathered, because no per-locale demand check had ever been run.
+2. **Instruments unavailable → hold, don't improvise.** If Semrush is out of
+   API units (or GSC has no data for pages too new to index), the demand
+   check cannot be run — so the build waits, or the user explicitly
+   authorizes. Never fabricate a gap-audit entry, and never downgrade to a
+   weaker proxy without saying so. Same case as above: the revert was chosen
+   specifically over "force an undocumented pass."
+3. **A locale hold is a default the user can override — explicitly,
+   per-batch, without flipping the flag.** `vi` is Tier 2 `hold: true`
+   ("needs backlinks, not translations"). The user, told this directly,
+   still chose to include vi in a `symbol/*` build; the authorization was
+   recorded as a `data/locale_parent_gap_audit.json` entry with `null`
+   instruments and evidence text naming it a user authorization
+   (`f09d35b5`) — vi's hold flag and tier were left untouched at the time.
+   That's the template for a per-batch override: the override lives in the
+   ledger as a dated, attributed decision; the registry keeps stating the
+   standing default. Presenting the hold reasoning to the user *before* they
+   decide is part of the override being legitimate — a hold silently
+   ignored is a violation, a hold knowingly overridden is a decision.
+   (Superseded 2026-08-06: this per-batch-override pattern is now historical
+   for `vi` specifically — the user lifted the hold flag itself rather than
+   overriding it batch-by-batch. The pattern above still applies to any
+   future locale that picks up a hold.)
+4. **An all-instruments-null authorization is a bridge, not a pass
+   (2026-08-01).** A `data/locale_parent_gap_audit.json` entry recorded with
+   every instrument `null` (a user authorization in lieu of a real pull) must
+   name a scheduled re-check date in the ops review register, and the entry
+   is complete only when its instruments are backfilled with real numbers or
+   a dated veto is recorded. If a later backfill contradicts the recorded
+   verdict, do not silently flip it — the pages are live by then, so the
+   call (fold/de-index/keep) is a discussion with the user, flagged with the
+   data.
+
+### Governance arrives mid-flight: merged-in rules bind unshipped work
+
+When merging main into a long-running branch brings in a new gate, registry,
+or rule, that rule applies to everything the branch has built but not yet
+merged — "it was allowed when I built it" holds only for work already on
+main. Re-run all four PR gates (`check-translation-parity`,
+`check-locale-mesh`, `check-locale-parent-gap`,
+`check-new-page-image-assets`) after every merge of main, and re-validate
+in-flight pages against any governance the merge introduced (the `4eeb80a2`
+revert above is this rule applied honestly).
+
+---
+
+## New pages must ship with their hero/OG/Twitter art in the same change
+
+A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
+hero figure must point at files that exist on disk **in the same commit/PR**
+that ships the page — never a follow-up "generate the missing art" pass.
+Google crawls new pages within hours of the sitemap picking them up (see
+`generate-site-art.py --only <slug>` / `wire-site-art.py`'s standard pipeline —
+a bare `generate-site-art.py` run is refused, see "Scoping" below); if the art
+isn't there yet, Googlebot's first fetch of that image 404s, and that broken
+first impression is recorded before any later fix lands. This has been a
+real, recurring pattern in this repo's own history (see
+`docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
+that backfilled hero/OG art for pages already shipped) — most recently
+diagnosed from live GSC crawl-stats data in an internal audit (2026-07-24).
+
+### Tooling — why there are two image-asset scripts, not one
+
+**Scoping (added 2026-08-11).** `generate-site-art.py` **refuses a bare run**
+and exits 2. Use `--only <slug>` (repeatable; slug = the page path with `/`
+replaced by `-`, so `tr/gotik-yazi/index.html` is `tr-gotik-yazi`), or `--all`
+for a genuine full regeneration. `--dry-run` lists what a run would write
+without writing it, and an `--only` prefix matching no registered page is an
+error rather than a silent no-op. **`--only` matches by prefix, not exact
+slug** — `--only answers` regenerates all 86 `answers-*` pages, and `--only
+category` all of `category-*`. When you mean an exact set, check `git status`
+against the set you intended and revert the surplus; a slug that is a prefix of
+its siblings will quietly pull them in (a 555-page run wrote 701 pairs this
+way).
+
+**A run also now skips any page whose hero+OG already exist** — "already there"
+means "done", so a run only ever fills gaps and costs nothing for pages that are
+finished. `--force` re-renders anyway (needed when the brand skin itself
+changes). This removes the churn at the root rather than only behind a flag: a
+full `--all` run on an unchanged tree now writes **0** files instead of 119.
+
+The default was flipped because a full run rasterises ~1,200 pages, and on a
+machine whose font build differs from the one that produced the committed PNGs
+that rewrites hundreds of **visually identical but byte-different** files —
+churn that then has to be spotted and reverted by hand before committing. That
+happened on three consecutive locale batches on 2026-08-11 (119 files the first
+time) and was caught each time only by reading `git status`. A capable filter
+already existed as an undocumented positional argument; nobody used it because
+nothing said it was there and the dangerous path was the default one. The
+positional still works, hidden, for backwards compatibility.
+
+**Page-derived motifs (added 2026-08-11).** The registry in `PAGES` pairs each
+page with a motif function. 718 of 1,209 pages were registered against a motif
+that takes **no per-page argument**, so every page sharing it got a
+byte-identical drawing: 66 country emoji-combo pages all showed the same
+anonymous flag, and `library/moai-emoji` and `library/clown-emoji` shared one
+generic smiley. Meanwhile `scatter_glyphs`, which *does* take the glyphs as an
+argument, was already producing 190 distinct images across 239 `symbol/` pages.
+The mechanism worked; it just was not applied.
+
+`motif_from_page(slug, motif)` closes that by reading the page's **own** copy
+tiles (`data-symbol` / `data-text` / `data-copy` / `data-char`) — authoritative,
+zero-maintenance, and self-correcting when a page's symbols change. It is
+deliberately conservative: a motif already carrying per-page arguments is
+returned untouched, and a page with nothing to read keeps its hand-chosen
+motif, so `answers/*` prose pages still get the Q&A card that actually suits
+them. Result: **488 → 884 distinct drawings across 1,209 pages**. `--no-page-motifs`
+restores the registry's literal motif.
+
+Three routing rules, each learned from a wrong result rather than reasoned up
+front — do not "simplify" them without re-rendering the named pages:
+
+- **Emoji tiles win outright.** `library/moai-emoji` leads with the moai it is
+  about and carries unrelated kaomoji further down; preferring runs drew a face
+  on the moai page.
+- **Otherwise runs beat single glyphs.** Every free-fire page opens with the
+  same ornament tray (`꧁ ༒ ࿐ …`), so drawing those gives all of them one
+  picture, while their sample names are genuinely their own.
+- **For emoji, take the page's leading grid, not a spread.** Sampling across
+  everything a page mentions put a bank and a bicep on the moai card.
+
+**Four font rules the motifs depend on.** cairosvg has no per-glyph fallback —
+it takes the first matched family and draws tofu for anything that family lacks
+— so motif text goes through the existing `spanned()`/`_resolve_family()`
+resolver, the same one Arabic and Devanagari titles already use. Beyond that:
+
+- **Emoji resolve to Noto Color Emoji ahead of Noto Sans Symbols2**, which
+  carries monochrome outlines for part of the emoji range and would otherwise
+  leave a set half in colour and half in black. The priority is gated on
+  `Emoji_Presentation`, not on a codepoint range: `⚽` and `✅` are pictures,
+  while `♥ ★ ♛ ⚜ ⚔` a few codepoints away are typographic ornaments, and
+  routing those to a colour font puts a glossy red heart inside an ASCII
+  kaomoji.
+- **`_resolve_family` takes the base font it is resolving *against*.** Titles
+  are set in `SANS` (Liberation), motifs in `SYM` (DejaVu). Testing a motif
+  glyph against Liberation reports `₿` as already covered and leaves it
+  unwrapped — which draws tofu, because DejaVu Sans has no such glyph.
+- **`spanned()` takes the enclosing element's family** so a run resolving to
+  that same family is emitted as plain text. Without it every decorative glyph
+  in DejaVu-but-not-Liberation picks up a wrapper that restates the font it is
+  already in: ~1,100 files of diff noise on art that did not change.
+- **Never select a tile no installed font can draw.** `spanned()` drops
+  uncovered characters, so an undrawable tile fails silently as an *empty*
+  card rather than as tofu. `library/egyptian-hieroglyphs` is the real case —
+  U+13000.. is in no font here, and selecting it produced a brand chip with
+  nothing on it. `_drawable()` filters those out, and a page whose tiles are
+  all undrawable keeps its registered motif.
+
+**Before regenerating art, check your fonts.** `_FALLBACK_FONTS` and
+`_NATIVE_FONT_FILE` name specific files; a character no installed font covers is
+**dropped**, not drawn as tofu. On a container missing `fonts-noto-core` /
+`fonts-noto-cjk` / `fonts-wqy-zenhei` that silently deletes glyphs from
+regenerated cards. Install them first (`apt-get install -y fonts-noto-core
+fonts-noto-cjk fonts-wqy-zenhei`) and confirm every path in those two tables
+exists.
+
+- **`scripts/check-image-assets.py`** (`npm run check:images`) — whole-site
+  audit. Requires every indexable page to have `og:image`, `twitter:image`,
+  a real hero file (if declared), **and** a Pinterest pin. The site carries a
+  large, deliberately-paced Pinterest-pin backlog (see
+  `docs/pinterest-pin-generation.md`), so this script is close to always
+  reporting failures site-wide — useful as a dashboard/audit, but it can
+  never function as a per-PR merge gate without being permanently red
+  regardless of what any given PR touches. Its CI step is intentionally
+  informational only (see `.github/workflows/validate.yml`'s comments).
+- **`scripts/check-new-page-image-assets.py`** (`npm run
+  check:new-page-images`) — the actual gate, same architecture as
+  `check-translation-parity.js`: diffs the PR against its base and checks
+  **only** the HTML files this branch actually adds or changes, for
+  `og:image`/`twitter:image`/hero (not Pinterest pins — intentionally out of
+  scope here, see above). Because it's diff-scoped, pre-existing site-wide
+  backlog can never make it fail — only a genuinely new problem this PR
+  introduces can. This is wired into `.github/workflows/validate.yml` as a
+  gating step.
+
+**If this keeps recurring anyway, the gap is branch-protection configuration,
+not the script.** `validate.yml`'s job reports a status per PR, but whether
+GitHub actually blocks merging on it depends on whether "Validate Site" (or
+its individual checks) is configured as a **required status check** under
+Settings → Branches for the target branch — that's a repository setting, not
+something in this repo's tracked files, and it was not verified as part of
+adding this tooling. If new pages are still shipping without their art after
+this, check that setting before assuming the scripts are wrong.
+
+**Root cause found, and it was neither (2026-08-06): the whole workflow was
+inert.** Every validator step in `validate.yml` is `<validator> | tee X.log`.
+A pipeline exits with its **last** command's status, `tee` always succeeds,
+and GitHub's default `run:` shell is `bash -e {0}` — `-e` but **no
+pipefail**. So every step recorded `outcome == 'success'` no matter what the
+validator exited with, and the final "Fail the job if any gating validator
+reported problems" step, which keys off exactly those outcomes, could never
+fire. Fixed by declaring `defaults.run.shell: bash` on the job, which is
+`bash --noprofile --norc -eo pipefail {0}`.
+
+Two consequences worth carrying forward:
+- **A green "Validate Site" on any PR before 2026-08-06 carries no
+  information.** Do not cite one as evidence a page passed anything.
+- **Adding a validator script is not the same as gating on it.** Before
+  trusting a new check, confirm it actually fails a PR — run it against a
+  deliberately broken input and watch the job go red. Every gate in this file
+  had been reasoned about, documented, and wired, and none of them worked.
+
+Also wired the same day: `npm run check:funding-choices`, which existed but
+was never added to the workflow — which is how 37 pages shipped without the
+ad-blocking-recovery tag. Unlike the other whole-site checks it gates rather
+than informs, because it has no backlog to be permanently red against (the
+tag is either in `<head>` or not, and
+`scripts/inject-funding-choices-tag.js` closes any gap in one idempotent run).
+
+**It happened again on 2026-08-07, a different way: the workflow stopped
+parsing.** An `if:` written at column 0 and a `run: |` folded onto the line
+above left `validate.yml` invalid YAML. It sat broken for a day, and every PR
+merged in that window was unchecked, including a 22-page locale batch.
+
+**Where an unparseable workflow does and doesn't show up** — verified against
+the real runs on 2026-08-08, because the intuitive answer is wrong in both
+directions:
+
+- On **`push`**, GitHub *does* create a failed run. It is named after the file
+  path (`.github/workflows/validate.yml`) rather than its `name:`, because the
+  `name:` is inside the file it could not parse. Nine of these accumulated
+  across 08-07.
+- On **`pull_request`**, it creates **nothing**. GitHub cannot know the file
+  wanted to run on `pull_request` — that trigger is also inside the unparsed
+  file. So the entry simply disappears from the PR's checks list. For commits
+  `09e0935f6`, `76237e264` and `d85029f66` the PR checks were CSS Audit, GTM
+  Check, Ads Check, and nothing else.
+
+That asymmetry is the whole trap: the failure was loud in the Actions tab,
+where nobody looks, and absent from the PR checks list, which is what merges
+gate on. **A vanished check reads exactly like a check that was never
+required.**
+
+The two incidents share a shape worth naming: **a check that reports nothing
+is indistinguishable from a check that passes.** Both times the evidence of
+health was the absence of a complaint.
+
+**`npm run check:workflows`** (`scripts/check-workflows.py`) closes it. It
+parses every `.github/workflows/*.yml`, requires the shape Actions actually
+needs (a trigger, `jobs`, per job a `runs-on` and steps that have `uses` or
+`run`), and encodes both incidents as rules:
+
+- **pipefail** — a step that pipes (`| tee`) with no `shell: bash` in effect
+  is an error, because GitHub's default `bash -e` has no pipefail. `||` is
+  explicitly not a pipe; flagging the repo's own `git diff --quiet || git
+  commit` idiom would train people to ignore the check.
+- **swallowed failures** — a `continue-on-error: true` step must have an `id`,
+  and `steps.<id>.` must be referenced somewhere in the file. A step allowed
+  to fail whose outcome nobody reads is a check that does nothing.
+
+**It runs from two places on purpose, and both are needed.** A step inside
+`validate.yml` cannot catch `validate.yml` failing to parse, so the lint also
+runs from its own small workflow, `.github/workflows/workflow-lint.yml` —
+whichever of the two still parses reports on the one that doesn't. Do not
+consolidate them.
+
+Verified per this section's own rule before being trusted: run against four
+deliberately broken inputs — the real 2026-08-07 parse break, the real
+2026-08-06 missing `defaults.run.shell`, a `continue-on-error` step with no
+`id`, and a step with neither `uses` nor `run` — each exits non-zero. Its
+first real run also found the pipefail bug live in a *second* workflow,
+`css-audit.yml`, which had been reporting success regardless of what
+`audit-css.js` found; fixed in the same change.
 
 ---
 
@@ -805,15 +1900,100 @@ Every page includes JSON-LD for:
 
 When editing page content, preserve and update the JSON-LD structured data to match. Use schema.org vocabulary.
 
+### FAQ schema must mirror visible page content
+
+`FAQPage`/`QAPage` JSON-LD may only contain questions and answers the reader
+can actually see on the page. Google's structured-data policy is explicit
+that FAQ markup has to mirror on-page content; a page that ships a
+`FAQPage` block describing Q&A it never renders is invisible-content markup
+— it forfeits the rich result and is spammy-structured-markup territory for
+a manual action. Content inside an accordion/disclosure widget **is**
+visible for this purpose; content that exists only in the JSON-LD is not.
+
+The rule cuts both ways, and both halves have failed here before:
+
+- **Never add FAQ schema for Q&A the page doesn't render.** If the copy is
+  worth marking up, put it on the page.
+- **Never edit or trim a visible FAQ without updating the JSON-LD.** The
+  stale-schema half is the more common failure: the visible FAQ gets
+  rewritten, the JSON-LD keeps the old wording, and the questions silently
+  stop matching. Paraphrase is not a match — Google compares the actual
+  strings.
+
+House markup for a rendered FAQ is either the JS-bound accordion
+(`<div class="faq-item"><button class="faq-question">` + `.faq-answer`, which
+`script.js` wires up) or the JS-free disclosure variant
+(`<details class="faq-item"><summary class="faq-question">` + `.faq-answer`).
+Prefer the `<details>` variant on any page that does not load `/script.js` —
+it needs no binding and cannot double-bind against `script.js`'s own
+`.faq-question` handler.
+
+**Case study (2026-07-26):** a 2026-07-12 structural audit found two pages
+(`usecase/stylish-name`, `usecase/zalgo-text`) shipping FAQ schema with no
+visible FAQ and recorded it as a two-page defect. A site-wide scan found the
+real number was **214 pages** — 155 with FAQ schema and no FAQ section at
+all, plus 59 whose visible FAQ had drifted out of sync with its own JSON-LD
+(212 orphan questions). Nothing had been watching for it because nothing
+could: the audit was a manual read, so the count it produced was the count
+someone happened to open. Fixed in one pass, and the reason it can't
+silently return is the tooling below, not vigilance.
+
+#### Tooling
+
+- **`npm run audit:faq-schema`** (`scripts/audit-faq-schema.js`) — whole-site
+  dashboard. Reports per page whether every FAQ-schema question is visible,
+  broken down by locale, with `--full` for the individual questions and
+  `--json`/`--report` to save a snapshot. Discovery tool; not wired into CI.
+- **`npm run check:faq-schema`** (`scripts/check-faq-schema.js`) — the
+  enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  check. Diff-scoped like `check-translation-parity.js`: it only inspects
+  HTML this PR adds or changes, so pre-existing backlog elsewhere can never
+  make it permanently red. Fails the PR listing the exact unmatched
+  questions.
+- **`node scripts/fix-faq-schema-visibility.js`** — the repair pass, kept
+  because the same two repairs apply every time this recurs. `--dry-run`
+  reports; `--write` applies; a file list scopes it. It renders the schema's
+  own Q&A into a house-style section when the page has no FAQ at all, and
+  prunes-then-backfills the JSON-LD against the visible FAQ when the page
+  does. It never invents copy: rendered text is the schema's own, backfilled
+  text is the page's own.
+- All three share `scripts/lib/faq-schema-audit.js`, so the audit, the gate
+  and the fixer can never disagree about what counts as "visible."
+
 ---
 
 ## Testing
 
-There is no automated test framework. Testing is manual and browser-based:
+There is no automated test framework, and no runner — every test here is a
+plain file you open or a plain file you `node`. Testing is otherwise manual
+and browser-based:
+
 - `js/vertical/verticalLayouts.test.html` — manual test page for vertical layout module
+- `js/counter/counterRules.test.js` — `node js/counter/counterRules.test.js`.
+  Assertions for the pure half of the character counter: counting modes,
+  per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
+  `LIMITS` table integrity. No DOM, no dependencies.
+- `js/counter/counter.test.html` — the DOM half, which needs a browser: the
+  two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
+  ordering, SMS segments, soft-limit warning, clear. Open it and read the
+  panel, or drive it headlessly and read `window.__UTG_TEST` (`{ pass, fail,
+  lines, summary }`). It runs against a deliberately **non-English** I18N
+  block, so it also asserts that a translated page renders translated fix-bar
+  buttons instead of falling back to English — a regression that would
+  otherwise only ever be noticed by a reader of that language.
 - Test changes by opening HTML files in a browser
 
-Do not add a test framework unless explicitly requested.
+**Why the counter has tests when nothing else does.** It is the one surface
+whose entire value proposition is numerical correctness, and it shipped a
+wrong number: Bluesky was billing code points while the page's own reference
+table said graphemes, so 👨‍👩‍👧‍👦 cost 7 instead of 1. A visual check
+cannot catch that. Any future page that *asserts facts* — limits, counts,
+encodings — deserves the same treatment; a page that merely renders copy does
+not.
+
+Do not add a test framework unless explicitly requested. Adding another
+zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
+framework" and needs no permission.
 
 ---
 
@@ -824,6 +2004,37 @@ Do not add a test framework unless explicitly requested.
 - **Branch naming**: `claude/<description>-<session-id>` for AI-generated branches
 - **CI tags**: Use `[skip ci]` in auto-generated commit messages to prevent circular workflows
 - **`sitemap.xml`**: Never manually edit — always auto-generated
+- **"Shipped" means merged to master through a PR** — nothing else. A commit
+  pushed to a branch is not shipped, and a commit pushed to a branch whose
+  PR already merged is invisible (no open PR tracks it; it will never reach
+  master). Before recording anything as shipped, confirm the PR shows
+  merged, or that `git branch -r --contains <commit>` includes
+  `origin/master`.
+
+### Parallel sessions build the same thing under different names
+
+Multiple AI sessions often work this repo concurrently, and translation
+work is where they collide: two sessions closing the same locale gap can
+pick **different locale slugs for the same EN parent** (e.g.
+`id/symbol/yin-yang/` vs `id/symbol/simbol-yin-yang/`). Git's path-based
+conflict detection cannot catch this — both directories merge cleanly and
+silently coexist as duplicates. **Case (2026-07-25):** 26 such duplicate
+pairs survived a merge of main; caught only because
+`validate_library_pages.py` flagged one duplicate meta description, then
+confirmed by checking every `id/symbol/` page's `hreflang="en"` back-link
+for multiple claimants of the same EN parent (`4164fc6f`).
+
+Standing protocol:
+1. **Before starting a translation batch**, fetch and merge main, then list
+   what already exists for that locale/lane — main may have grown pages your
+   branch's plan assumes are missing.
+2. **After every merge of main into a branch that adds locale pages**, check
+   for duplicate claimants: no two pages in one locale may declare the same
+   `hreflang="en"` parent. That check, not path conflicts, is the collision
+   detector.
+3. **When duplicates are found**, keep the set that's more deeply integrated
+   (better meshed, more inbound links — usually main's), remove the other,
+   and repoint every reference to the removed slug at the survivor.
 
 ---
 
@@ -853,6 +2064,15 @@ Do not add a test framework unless explicitly requested.
   `data/translation_parity_exceptions.json`. See "Translation Parity" above
   — this runs both directions (EN changed without locale catching up, or
   vice versa) and `scripts/check-translation-parity.js` enforces it in CI.
+- Do not ship a locale page that still carries English verbatim from its own EN
+  parent — not in prose, not in a visible `<span class="flag-label">` (the tile
+  name appears twice; translating only the `aria-label` leaves the visible one
+  English), and not in a `data-symbol` clipboard payload. See "Structure is not
+  language" above. `npm run check:locale-translation` gates this on every page a
+  PR touches; `npm run audit:locale-translation` gives the whole-site picture.
+  A byte-identical correct translation goes in
+  `data/translation_identical_strings.json` with its reason — never use that
+  ledger to silence a string you have not translated.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
@@ -864,6 +2084,28 @@ Do not add a test framework unless explicitly requested.
   tracing, mazes, word searches, math worksheets, pre-writing motor strokes with no letterform.
   See "Printables scope boundary" above. This demand is real but tracked for a possible future,
   separate property — not this repo.
+- Do not put a query string in a `_redirects` source path. This is Cloudflare
+  Pages, not Netlify: Pages matches the **path only** and silently drops the
+  query, so `/?lang=fr  /fr/  301` is read as `/  /fr/  301` and 301s the
+  English homepage to French for every visitor and crawler. That shipped in
+  PR #566 and sat live from 2026-07-15 to 2026-07-26 — during that window
+  `functions/_middleware.js` (which exists specifically to keep `/` English)
+  was not executing, so nothing intercepted the bad rule. Note the ordering:
+  when Functions ARE active on a route (per `_routes.json`), the Function
+  runs *before* `_redirects` — verified on production 2026-08-10, where the
+  middleware's `?lang=` 301s fire on `/` even though `_redirects` also has a
+  `/` rule. Query matching belongs in `functions/_middleware.js`
+  (`LANG_REDIRECTS`), which can actually read `url.searchParams`.
+- Do not widen `_routes.json`'s `include` list, add new files under
+  `functions/`, or delete `_routes.json`, without checking the Functions
+  invocation budget. Every included route bills one Workers-quota invocation
+  per request; with no `_routes.json`, Cloudflare auto-generates one that
+  routes **every** request (CSS, JS, images, all pages) through the root
+  middleware just to run `context.next()`. That was live until 2026-08-10
+  and burned ~100k invocations/day — the entire Workers free daily quota —
+  at ~36k pageviews/day. Static asset requests are free and unlimited only
+  when they do not invoke a Function. Only `/` needs the Function (English
+  homepage + legacy `?lang=` 301s); everything else must stay excluded.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
@@ -872,6 +2114,16 @@ Do not add a test framework unless explicitly requested.
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not ship `FAQPage`/`QAPage` JSON-LD whose questions aren't rendered on
+  the page, and do not edit a visible FAQ without updating its JSON-LD to
+  match — see "FAQ schema must mirror visible page content" above.
+  `npm run check:faq-schema` enforces this in CI on every page a PR touches;
+  `npm run audit:faq-schema` gives the whole-site picture.
+- Do not ship a new or edited page's HTML before its hero/OG/Twitter art is
+  generated and committed in the same change, and don't rely on a later
+  cleanup pass to backfill it — see "New pages must ship with their hero/OG/
+  Twitter art in the same change" above. Run `npm run check:new-page-images`
+  before opening the PR.
 - Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`
@@ -892,3 +2144,20 @@ Do not add a test framework unless explicitly requested.
   — both directories are gitignored. Never hardcode R2 credentials; read
   `R2_ENDPOINT`/`R2_ACCESS_KEY_ID`/`R2_SECRET_ACCESS_KEY` from the environment
   (GitHub Secrets in CI) only.
+- Do not ship a new locale page for a gated-tail parent, or for a Tier-3/held
+  locale, without a recorded, passing entry in
+  `data/locale_parent_gap_audit.json`. See "Locale Parent Governance" above
+  — `scripts/check-locale-parent-gap.js` enforces this in CI, and
+  `scripts/check-locale-parent-tier.js <path> <locale>` tells you the answer
+  before you start building.
+- Do not hand-edit hreflang `<link>` tags or a locale page's internal links
+  to route around a missing sibling or a stale English-hub link — run
+  `npm run sync:locale-mesh -- --fix` instead. See "Locale Parent Governance"
+  above — `scripts/check-locale-mesh.js` enforces the result in CI.
+- Do not hand-add a `symbol/` page's "Related Symbols" `compare-card` (or
+  edit an existing one) without also running `npm run sync:symbol-peer-links`
+  — a peer relation you declare on one page must be reciprocated on the
+  named peer's own page, and the generator is what keeps that mechanical
+  instead of manual. See "Content Types: Library vs Symbol" above —
+  `scripts/check-new-symbol-peer-links.py` enforces this in CI for any
+  `symbol/` page a PR touches.

@@ -1,18 +1,77 @@
 name: Validate Site
 
 # Required, blocking checks for structural correctness that must never merge
-# broken: hreflang reciprocity, /library/ and /symbol/ page structure,
-# per-page social/Pinterest image assets, and (new) translation parity —
-# an EN <-> locale content change introduced by this PR without its
-# sibling being updated. Each validator already exits non-zero on failure
-# (see scripts/audit-hreflang.js, scripts/validate_library_pages.py,
-# scripts/check-image-assets.py, scripts/check-translation-parity.js) —
-# this workflow is what actually wires that into CI so a PR can't merge
-# broken pages.
+# broken: hreflang reciprocity, hreflang cluster completeness (every member
+# of a cluster links every other member — a distinct check from reciprocity,
+# see scripts/audit-hreflang-completeness.js's own header comment for why
+# pairwise reciprocity alone misses mutual omissions), /library/ and
+# /symbol/ page structure, the Funding Choices ad-blocking-recovery tag,
+# per-page social/Pinterest image assets,
+# new/changed pages' image assets specifically, new/changed /symbol/ pages'
+# Related-Symbols peer-link reciprocity, translation parity — an EN <->
+# locale content change introduced by this PR without its sibling being
+# updated — locale mesh health (hreflang reciprocity + locale-native
+# internal links on any locale page this PR touches), the locale-parent-gap
+# pre-build check on any new locale page, FAQ schema visibility
+# (FAQPage/QAPage JSON-LD whose questions aren't actually on the page), and
+# the external-reference check (no tracked file may point readers at a repo,
+# doc or tool that isn't published here — see scripts/check-external-refs.js
+# for why a dangling pointer is worse than none). Each
+# validator already exits non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/audit-hreflang-completeness.js,
+# scripts/validate_library_pages.py, scripts/check-image-assets.py,
+# scripts/check-new-page-image-assets.py,
+# scripts/check-new-symbol-peer-links.py,
+# scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
+# scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js,
+# scripts/check-locale-translation.js,
+# scripts/check-funding-choices.js, scripts/check-external-refs.js) — this
+# workflow is what actually wires that into CI so a PR can't merge broken
+# pages.
 #
-# All four run every time (continue-on-error on each step) so a single PR
-# shows every problem at once instead of stopping at the first failure; the
-# final step fails the job if any validator reported an error.
+# That wiring was inert from the day it was written until 2026-08-06: every
+# step pipes into `| tee`, and a pipeline exits with its LAST command's status,
+# so `tee` succeeding masked every validator's failure and `steps.<id>.outcome`
+# was always 'success'. See the `defaults.run.shell` block on the job below —
+# do not remove it. Consequence worth remembering: a green "Validate Site" on
+# any PR before that date carries no information.
+#
+# scripts/check-image-assets.py is a whole-site audit (also requires a
+# Pinterest pin per page) and the site carries a large, deliberately-paced
+# Pinterest-pin backlog — so its "failure" step below is informational, not
+# gating (see the step's own comment). scripts/check-new-page-image-assets.py
+# is the actual gate for this: diff-scoped to only the pages this PR adds or
+# changes, checking just og:image/twitter:image/hero (not Pinterest pins), so
+# pre-existing site-wide backlog can never make it permanently red. This
+# exists specifically to stop new pages shipping ahead of their hero/OG art —
+# a recurring pattern confirmed from live GSC crawl-stats data.
+#
+# scripts/sync_symbol_spoke_links.py --check (no --write) is likewise a
+# whole-site audit — it reports every /symbol/ page whose declared "Related
+# Symbols" peer relation isn't reciprocated, alongside the existing hub-orphan
+# check — so its step below is informational only; hub-orphans are already
+# gated separately by scripts/validate_library_pages.py, and peer-link
+# backlog (real at the time this was added, since fixed in the same PR) is a
+# dashboard, not a per-PR blocker on its own. scripts/check-new-symbol-peer-
+# links.py is the actual gate: diff-scoped to only /symbol/ pages this PR
+# adds or changes, so a newly-introduced one-directional peer relation can't
+# merge silently, without pre-existing backlog elsewhere ever contributing to
+# a failure. Fix is always scripts/sync_symbol_spoke_links.py --write
+# --reciprocal (also npm run sync:symbol-peer-links).
+#
+# scripts/audit-locale-parent-gap.js is likewise a whole-site discovery pass
+# (which Core-parent x qualified-locale cells have near-zero translation
+# coverage and no recorded pre-build gap check) and stays informational for
+# the same reason check-image-assets.py does: the site carries a real,
+# deliberately-paced locale-translation backlog, so this can't be a per-PR
+# gate without being permanently red. scripts/check-locale-mesh.js and
+# scripts/check-locale-parent-gap.js are the diff-scoped gates that actually
+# enforce mesh health and the pre-build gap check on what a PR adds/changes —
+# see CLAUDE.md, "Locale Parent Governance", and docs/locale-parent-governance.md.
+#
+# All steps run every time (continue-on-error on each) so a single PR shows
+# every problem at once instead of stopping at the first failure; the final
+# step fails the job if any *gating* validator reported an error.
 
 on:
   pull_request:
@@ -24,9 +83,22 @@ jobs:
     permissions:
       contents: read
 
+    # Every validator step below is `<validator> | tee <name>.log`, and a
+    # pipeline's exit status is its LAST command's — `tee` always succeeds, so
+    # without pipefail every one of these steps reported success no matter what
+    # the validator itself exited with. GitHub's default shell for `run:` is
+    # `bash -e {0}`, which has no pipefail; naming `bash` explicitly gets
+    # `bash --noprofile --norc -eo pipefail {0}`. Until this was set, the whole
+    # gating block below was inert: `steps.<id>.outcome` was 'success'
+    # unconditionally, so the "Fail the job" step never fired. Do not remove
+    # this without also removing the `| tee` from every step.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # check-translation-parity.js diffs this PR against its base branch,
           # which needs real history — a shallow (depth-1) checkout has no
@@ -34,37 +106,147 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
       - name: Install Node dependencies
         run: npm install
 
+      # First, and gating (no continue-on-error). If a workflow in this repo
+      # does not parse, GitHub does not run it and does not report it as
+      # failing — it just silently vanishes from the PR's checks, which is how
+      # this very file sat dead from 2026-08-07 to 2026-08-08 while PRs merged
+      # unchecked. .github/workflows/workflow-lint.yml runs the same script
+      # from its own workflow, because a step in here cannot catch THIS file
+      # failing to parse. The two cover each other; keep both.
+      - name: Lint GitHub Actions workflows
+        run: pip install pyyaml >/dev/null && python3 scripts/check-workflows.py
+
       - name: Run hreflang reciprocity audit
         id: hreflang
         continue-on-error: true
         run: npm run check:hreflang | tee hreflang-audit.log
+
+      - name: Run hreflang cluster completeness audit
+        id: hreflang_completeness
+        continue-on-error: true
+        run: npm run check:hreflang-completeness | tee hreflang-completeness.log
 
       - name: Run library/symbol page validator
         id: library
         continue-on-error: true
         run: python3 scripts/validate_library_pages.py | tee library-validate.log
 
-      - name: Run image asset check
+      # Whole-site and gating, unlike the other whole-site checks below: this
+      # one has no backlog to be permanently red against — the tag either is
+      # or isn't in a page's <head>, and scripts/inject-funding-choices-tag.js
+      # fixes any gap in one idempotent run. It was previously unwired, which
+      # is how 37 pages (27 zh-tw/symbol, 7 vi/library, and the whole
+      # free-fire-clan-tag cluster) shipped without ad-blocking-recovery
+      # tagging across several unrelated PRs before anyone noticed.
+      - name: Run Funding Choices tag check
+        id: funding_choices
+        continue-on-error: true
+        run: npm run check:funding-choices | tee funding-choices.log
+
+      # Gating. Structural validators cannot see a number written in prose or
+      # in a <meta>, which is how "LinkedIn cuts at 210" survived the rule
+      # changing and how "27 platform limits" stayed in the snippet text long
+      # after the table grew to 38. This asserts every figure these pages
+      # state still matches js/counter/counterRules.js.
+      - name: Run counter claim-consistency check
+        id: counter_claims
+        continue-on-error: true
+        run: npm run check:counter-claims | tee counter-claims.log
+
+      - name: Run image asset check (whole-site audit, informational only)
         id: images
         continue-on-error: true
         run: npm run check:images | tee image-assets.log
+
+      - name: Run new-page image asset check
+        id: new_images
+        continue-on-error: true
+        run: npm run check:new-page-images -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-page-images.log
+
+      - name: Run symbol peer-link check (whole-site, informational)
+        id: symbol_peer_links_audit
+        continue-on-error: true
+        run: npm run check:symbol-peer-links | tee symbol-peer-links-audit.log
+
+      - name: Run new-page symbol peer-link check
+        id: new_symbol_peer_links
+        continue-on-error: true
+        run: npm run check:new-symbol-peer-links -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-symbol-peer-links.log
 
       - name: Run translation parity check
         id: parity
         continue-on-error: true
         run: npm run check:translation-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee translation-parity.log
+
+      - name: Run locale mesh check
+        id: locale_mesh
+        continue-on-error: true
+        run: npm run check:locale-mesh -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-mesh.log
+
+      # Whole-site and gating, unlike most whole-site checks here, because its
+      # backlog is zero: the 172 tiles that failed it were all repaired in the
+      # change that added it. A tile whose label names U+2126 must copy U+2126;
+      # NFC silently rewrites that character (and U+212A) to a lookalike, so
+      # this cannot be left to vigilance.
+      # Structural, and gating for the same reason as the tile codepoint check:
+      # zero violations after the change that added it. Catches what a text-level
+      # audit structurally cannot — a <head> tag that is not actually in <head>.
+      - name: Run document head structure check
+        id: document_head
+        continue-on-error: true
+        run: python3 scripts/check-document-head.py | tee document-head.log
+
+      - name: Run tile codepoint check
+        id: tile_codepoints
+        continue-on-error: true
+        run: python3 scripts/check-tile-codepoints.py | tee tile-codepoints.log
+
+      - name: Run FAQ schema visibility check
+        id: faq_schema
+        continue-on-error: true
+        run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
+
+      - name: Run locale translation completeness check
+        id: locale_translation
+        continue-on-error: true
+        run: npm run check:locale-translation -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-translation.log
+
+      - name: Run locale parent gap check
+        id: locale_parent_gap
+        continue-on-error: true
+        run: npm run check:locale-parent-gap -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-parent-gap.log
+
+      - name: Run locale parent gap audit (whole-site, informational)
+        id: locale_parent_gap_audit
+        continue-on-error: true
+        run: npm run audit:locale-parent-gap | tee locale-parent-gap-audit.log
+
+      # Validates every locale SPEC against its live EN parent before any HTML
+      # exists — tile parity, hreflang self-reference, related links resolving
+      # on disk, duplicate claimants. Whole-set rather than diff-scoped: the
+      # spec set is small and every check is relative to the EN parent, so it
+      # cannot go permanently red on backlog the way check:images does.
+      - name: Run locale spec check
+        id: locale_spec
+        continue-on-error: true
+        run: npm run check:locale-spec | tee locale-spec.log
+
+      - name: Run external-reference check
+        id: external_refs
+        continue-on-error: true
+        run: npm run check:external-refs | tee external-refs.log
 
       - name: Build step summary
         if: always()
@@ -77,24 +259,116 @@ jobs:
             cat hreflang-audit.log
             echo '```'
             echo ""
+            echo "### hreflang cluster completeness audit — \`${{ steps.hreflang_completeness.outcome }}\`"
+            echo '```'
+            cat hreflang-completeness.log
+            echo '```'
+            echo ""
             echo "### Library/symbol page validator — \`${{ steps.library.outcome }}\`"
             echo '```'
             cat library-validate.log
             echo '```'
             echo ""
-            echo "### Image asset check — \`${{ steps.images.outcome }}\`"
+            echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
+            echo '```'
+            cat funding-choices.log
+            echo '```'
+            echo ""
+            echo "### Image asset check (whole-site audit, informational) — \`${{ steps.images.outcome }}\`"
             echo '```'
             cat image-assets.log
+            echo '```'
+            echo ""
+            echo "### New-page image asset check — \`${{ steps.new_images.outcome }}\`"
+            echo '```'
+            cat new-page-images.log
+            echo '```'
+            echo ""
+            echo "### Symbol peer-link check (whole-site, informational) — \`${{ steps.symbol_peer_links_audit.outcome }}\`"
+            echo '```'
+            cat symbol-peer-links-audit.log
+            echo '```'
+            echo ""
+            echo "### New-page symbol peer-link check — \`${{ steps.new_symbol_peer_links.outcome }}\`"
+            echo '```'
+            cat new-symbol-peer-links.log
             echo '```'
             echo ""
             echo "### Translation parity check — \`${{ steps.parity.outcome }}\`"
             echo '```'
             cat translation-parity.log
             echo '```'
+            echo ""
+            echo "### Locale mesh check — \`${{ steps.locale_mesh.outcome }}\`"
+            echo '```'
+            cat locale-mesh.log
+            echo '```'
+            echo ""
+            echo "### Document head structure check — \`${{ steps.document_head.outcome }}\`"
+            echo '```'
+            cat document-head.log
+            echo '```'
+            echo ""
+            echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
+            echo '```'
+            cat tile-codepoints.log
+            echo '```'
+            echo ""
+            echo "### FAQ schema visibility check — \`${{ steps.faq_schema.outcome }}\`"
+            echo '```'
+            cat faq-schema.log
+            echo '```'
+            echo ""
+            echo "### Locale translation completeness check — \`${{ steps.locale_translation.outcome }}\`"
+            echo '```'
+            cat locale-translation.log
+            echo '```'
+            echo ""
+            echo "### Locale parent gap check — \`${{ steps.locale_parent_gap.outcome }}\`"
+            echo '```'
+            cat locale-parent-gap.log
+            echo '```'
+            echo ""
+            echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
+            echo '```'
+            cat external-refs.log
+            echo '```'
+            echo ""
+            echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
+            echo '```'
+            cat locale-parent-gap-audit.log
+            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Fail the job if any validator reported problems
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.images.outcome == 'failure' || steps.parity.outcome == 'failure'
+      - name: Fail the job if any gating validator reported problems
+        # steps.images, steps.symbol_peer_links_audit, and
+        # steps.locale_parent_gap_audit (all whole-site audits) are
+        # deliberately excluded — see their step names/comments above:
+        # informational by design (the Pinterest-pin backlog for images; the
+        # peer-link dashboard for symbol pages, whose hub-orphan half is
+        # already gated by steps.library; the site-wide, deliberately-
+        # unfinished locale-parent translation backlog for the gap audit),
+        # not because failures there don't matter. steps.new_images,
+        # steps.new_symbol_peer_links, steps.locale_mesh, and
+        # steps.locale_parent_gap are the diff-scoped gates that actually
+        # enforce these systems on new/changed pages.
+        if: steps.hreflang.outcome == 'failure' ||
+          steps.hreflang_completeness.outcome == 'failure' ||
+          steps.library.outcome == 'failure' ||
+          steps.funding_choices.outcome == 'failure' ||
+          steps.new_images.outcome == 'failure' ||
+          steps.new_symbol_peer_links.outcome == 'failure' ||
+          steps.parity.outcome == 'failure' ||
+          steps.locale_mesh.outcome == 'failure' ||
+          steps.locale_translation.outcome == 'failure' ||
+          steps.locale_parent_gap.outcome == 'failure' ||
+          steps.locale_spec.outcome == 'failure' ||
+          steps.faq_schema.outcome == 'failure' ||
+          steps.external_refs.outcome == 'failure' ||
+          steps.counter_claims.outcome == 'failure' ||
+          steps.tile_codepoints.outcome == 'failure' ||
+          steps.document_head.outcome == 'failure'
         run: |
-          echo "One or more validators failed — see the Summary tab above for details."
+          echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

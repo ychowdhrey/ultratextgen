@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Skrifttyper – 88 Unicode-skrifttyper (kopiér og indsæt)",
-    "description": "Skrifttyper der gør almindelig tekst om til sej tekst: 88 Unicode-skrifttyper med fed skrift, kursiv/script, håndskrift, gotisk, bobler, små bogstaver, aesthetic, på hovedet og Zalgo. Kopiér til Instagram-bio, TikTok, Discord, LinkedIn og WhatsApp. Gratis, hurtigt og uden konto."
+    "title": "Seje Skrifttyper – 88 Unicode-skrifttyper (kopiér og indsæt)",
+    "description": "Seje skrifttyper der gør almindelig tekst om til sej tekst: 88 Unicode-skrifttyper med fed skrift, kursiv/script, håndskrift, gotisk, bobler, små bogstaver, aesthetic, på hovedet og Zalgo. Kopiér til Instagram-bio, TikTok, Discord, LinkedIn og WhatsApp. Gratis, hurtigt og uden konto."
   },
   "hero": {
-    "title": "Skrifttyper til kopiér og indsæt",
+    "title": "Seje skrifttyper til kopiér og indsæt",
     "subtitle": "Skriv én gang, og få 88 seje skrifttyper du kan kopiere og indsætte med det samme: kursiv/script, fed skrift, håndskrift, fine bogstaver, Instagram-skrifttyper, TikTok-tekst, Discord-navne og WhatsApp-status."
   },
   "decorations": {
@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Skriv din tekst her...",
-    "advertisement": "Annonce"
+    "advertisement": "Annonce",
+    "categoryTabs": {
+      "popular": "Populær",
+      "bold-fonts": "Fed",
+      "italic-fonts": "Kursiv",
+      "bubble-fonts": "Boble",
+      "cursive-fonts": "Håndskrift",
+      "gothic-fonts": "Gotisk",
+      "strikethrough-text": "Gennemstreget",
+      "underline-text": "Understreget",
+      "small-text": "Lille tekst",
+      "cute-fonts": "Sød",
+      "aesthetic-fonts": "Æstetisk",
+      "upside-down-text": "På hovedet",
+      "text-decorator": "Tekstdekoration",
+      "classified": "Censureret",
+      "fullwidth-fonts": "Fuld bredde",
+      "faux-fonts": "Falske alfabeter",
+      "ancient-fonts": "Oldtid & runer",
+      "emoji-letter-fonts": "Emoji-bogstaver",
+      "novelty-fonts": "Sjove"
+    },
+    "scopeControl": {
+      "label": "Anvend stil på",
+      "ariaLabel": "Vælg hvor meget tekst der skal stylet",
+      "whole": "Hele teksten",
+      "wholeTitle": "Stylet hver linje i din tekst.",
+      "firstLine": "Kun første linje",
+      "firstLineTag": "til opslag",
+      "firstLineTitle": "Stylet kun første linje (din overskrift eller krog) og lader resten være almindelig, læsbar tekst — perfekt til opslag på sociale medier.",
+      "share": "Del",
+      "shareTitle": "Del et link, der genåbner denne side med din tekst allerede udfyldt",
+      "linkCopied": "Link kopieret"
+    },
+    "safeMode": {
+      "label": "Indsætningssikkerhed",
+      "ariaLabel": "Se hvilke stile der vises korrekt på andres enheder",
+      "toggleLabel": "Sikker tilstand",
+      "hint": "Markerer stile, der kan vises som firkanter (▯) på andres ældre telefoner."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kan vises som firkanter for nogle",
+      "boxesWarningTitle": "Denne stil bruger sjældne Unicode-tegn, som nogle telefoner og ældre enheder mangler. Den kan vises som firkanter (▯) hos den person, du sender den til. Vælg en enklere eller mere udbredt stil, hvis din målgruppe kan bruge ældre enheder.",
+      "emojiWarning": "⚠ Bruger emoji — kan variere på ældre enheder",
+      "emojiWarningTitle": "Denne stil indeholder emoji. Emoji vises korrekt på moderne enheder, men kan se anderledes ud, eller vises som firkanter, på meget gamle telefoner.",
+      "modernDevices": "Vises korrekt på moderne enheder",
+      "modernDevicesTitle": "Disse stylede Unicode-bogstaver vises på alle nuværende telefoner og computere. På meget gamle Android-enheder (cirka før 2016) eller med minimale systemskrifttyper kan enkelte tegn stadig vises som firkanter (▯). Test det først, hvis din målgruppe kan bruge ældre enheder.",
+      "rendersEverywhere": "✓ Vises korrekt overalt",
+      "rendersEverywhereTitle": "Denne stil er almindelig tekst — den vises korrekt overalt uden risiko for firkanter på nogen enhed.",
+      "deviceWarning": "⚠ Vises muligvis ikke på din enhed",
+      "deviceWarningTitle": "Skrifttyperne på din enhed kan ikke vise denne stil — den kan vises som firkanter (□). Den kan stadig se korrekt ud på andre enheder.",
+      "safeAnywhere": "✓ Sikker overalt",
+      "safeAnywhereTitle": "Vises på alle større platforme. Bemærk: skærmlæsere kan stave stylede bogstaver ét ad gangen, så hold selve teksten almindelig.",
+      "worksBestOn": "⚠ Fungerer bedst på {platforms}",
+      "worksBestOnTitle": "Fungerer bedst på: {platforms}. Andre platforme kan fjerne den eller vise den forkert — test den, før du poster."
+    },
+    "savedStyles": {
+      "ariaLabel": "Dine gemte stile",
+      "heading": "Dine gemte stile",
+      "clearAll": "Ryd alle",
+      "hint": "Gemt på denne enhed — de venter her, når du kommer tilbage."
+    },
+    "textStats": {
+      "wordSingular": "1 ord",
+      "wordPlural": "{n} ord",
+      "charSingular": "1 tegn",
+      "charPlural": "{n} tegn"
+    },
+    "decorationsNone": "Ingen",
+    "categoryTabsToggle": {
+      "more": "Mere",
+      "less": "Mindre"
+    },
+    "demoText": "Velkommen til UltraTextGen.\nSkriv hvad som helst. Gør det ultra.",
+    "copyButtons": {
+      "copy": "Kopiér",
+      "copied": "✓ Kopieret",
+      "failed": "✗ Mislykkedes",
+      "copyTitle": "Kopiér til udklipsholder",
+      "save": "Gem",
+      "saved": "Gemt",
+      "saveTitle": "Gem denne stil",
+      "unsaveTitle": "Fjern fra gemte stile",
+      "empty": "Skriv noget ovenfor...",
+      "noStyles": "Ingen stile fundet. Prøv et andet filter eller søgeord."
+    }
   },
   "useCases": {
     "title": "Hvad folk bruger sej tekst til",

@@ -23,17 +23,17 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhfrtextee)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhfrtextee)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="128"
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="120"
           font-weight="800" font-style="normal" fill="url(#ghfrtextee)"
-          text-anchor="middle" opacity="0.12">Bold</text>
+          text-anchor="middle" opacity="0.12">Gras</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghfrtextee)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="88" font-weight="800" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Bold</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">strong &amp; striking</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="80" font-weight="800" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Gras</text></g>
+    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">épais et net</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="128"
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="120"
           font-weight="800" font-style="normal" fill="url(#ghfrtextee)"
-          text-anchor="middle" opacity="0.12">Bold</text>
+          text-anchor="middle" opacity="0.12">Gras</text>
     <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghfrtextee)"/>
-    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="88" font-weight="800" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Bold</text></g>
-    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">strong &amp; striking</text></g>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="80" font-weight="800" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">Gras</text></g>
+    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">épais et net</text></g>
 </svg>

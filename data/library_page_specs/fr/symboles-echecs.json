@@ -1,0 +1,336 @@
+{
+  "slug": "symboles-echecs",
+  "lang": "fr",
+  "title": "Symboles d'Échecs : Copier-Coller les Pièces ♔ ♛",
+  "meta_description": "Parcourez et copiez les symboles Unicode des pièces d'échecs, des cases et de la notation. Cliquez sur un symbole pour le copier instantanément.",
+  "breadcrumb": "Symboles d'Échecs",
+  "hero_h1": "Symboles d'Échecs",
+  "hero_tagline": "Une collection de référence des symboles Unicode de pièces d'échecs, de cases et de notation. Cliquez sur un symbole pour le copier instantanément.",
+  "intro": "Cette bibliothèque rassemble les symboles Unicode des pièces d'échecs — roi, dame, tour, fou, cavalier et pion, en blanc comme en noir — ainsi que les cases de l'échiquier et les signes de la notation algébrique. Les symboles sont classés par couleur de pièce et par usage.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/fr/library/symboles-echecs/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "library_url": "https://ultratextgen.com/fr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Pièces blanches",
+      "h2": "Pièces Blanches",
+      "intro": "Les six pièces blanches standard d'Unicode : roi, dame, tour, fou, cavalier et pion.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Roi blanc"
+        },
+        {
+          "char": "♕",
+          "label": "Dame blanche"
+        },
+        {
+          "char": "♖",
+          "label": "Tour blanche"
+        },
+        {
+          "char": "♗",
+          "label": "Fou blanc"
+        },
+        {
+          "char": "♘",
+          "label": "Cavalier blanc"
+        },
+        {
+          "char": "♙",
+          "label": "Pion blanc"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Pièces noires",
+      "h2": "Pièces Noires",
+      "intro": "Les six pièces noires standard d'Unicode, dans le même ordre.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Roi noir"
+        },
+        {
+          "char": "♛",
+          "label": "Dame noire"
+        },
+        {
+          "char": "♜",
+          "label": "Tour noire"
+        },
+        {
+          "char": "♝",
+          "label": "Fou noir"
+        },
+        {
+          "char": "♞",
+          "label": "Cavalier noir"
+        },
+        {
+          "char": "♟",
+          "label": "Pion noir"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Échiquier",
+      "h2": "Cases de l'Échiquier et Symboles de Jeu",
+      "intro": "Caractères de case de différentes tailles pour représenter un échiquier.",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "Case blanche"
+        },
+        {
+          "char": "⬛",
+          "label": "Case noire"
+        },
+        {
+          "char": "▪",
+          "label": "Petite case noire"
+        },
+        {
+          "char": "▫",
+          "label": "Petite case blanche"
+        },
+        {
+          "char": "◻",
+          "label": "Case blanche moyenne"
+        },
+        {
+          "char": "◼",
+          "label": "Case noire moyenne"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Pièces étendues",
+      "h2": "Symboles d'Échecs Étendus",
+      "intro": "Pièces d'échecs féeriques et symboles de notation du bloc Unicode des échecs, y compris les pièces neutres et les variantes pivotées.",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "Roi neutre"
+        },
+        {
+          "char": "🨁",
+          "label": "Dame neutre"
+        },
+        {
+          "char": "🨂",
+          "label": "Tour neutre"
+        },
+        {
+          "char": "🨃",
+          "label": "Fou neutre"
+        },
+        {
+          "char": "🨄",
+          "label": "Cavalier neutre"
+        },
+        {
+          "char": "🨅",
+          "label": "Pion neutre"
+        },
+        {
+          "char": "🨆",
+          "label": "Cavalier blanc pivoté à 45°"
+        },
+        {
+          "char": "🨇",
+          "label": "Cavalier noir pivoté à 45°"
+        },
+        {
+          "char": "🨈",
+          "label": "Cavalier neutre pivoté à 45°"
+        },
+        {
+          "char": "🨉",
+          "label": "Roi blanc pivoté à 90°"
+        },
+        {
+          "char": "🨊",
+          "label": "Dame blanche pivotée à 90°"
+        },
+        {
+          "char": "🨋",
+          "label": "Tour blanche pivotée à 90°"
+        },
+        {
+          "char": "🨌",
+          "label": "Fou blanc pivoté à 90°"
+        },
+        {
+          "char": "🨍",
+          "label": "Cavalier blanc pivoté à 90°"
+        },
+        {
+          "char": "🨎",
+          "label": "Pion blanc pivoté à 90°"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Notation",
+      "h2": "Symboles de Notation et d'Annotation",
+      "intro": "Les signes utilisés dans la notation pour indiquer les échecs, les prises et la qualité d'un coup.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Prise"
+        },
+        {
+          "char": "+",
+          "label": "Échec"
+        },
+        {
+          "char": "#",
+          "label": "Échec et mat"
+        },
+        {
+          "char": "‡",
+          "label": "Mat"
+        },
+        {
+          "char": "!",
+          "label": "Bon coup"
+        },
+        {
+          "char": "!!",
+          "label": "Coup brillant"
+        },
+        {
+          "char": "?",
+          "label": "Erreur"
+        },
+        {
+          "char": "??",
+          "label": "Grosse erreur"
+        },
+        {
+          "char": "!?",
+          "label": "Coup intéressant"
+        },
+        {
+          "char": "?!",
+          "label": "Coup douteux"
+        },
+        {
+          "char": "=",
+          "label": "Position égale"
+        },
+        {
+          "char": "±",
+          "label": "Avantage aux blancs"
+        },
+        {
+          "char": "∓",
+          "label": "Avantage aux noirs"
+        },
+        {
+          "char": "⩲",
+          "label": "Léger avantage"
+        }
+      ]
+    }
+  ],
+  "cta": "Utilisez UltraTextGen pour convertir du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    {
+      "href": "/fr/library/symboles-etoiles/",
+      "title": "Symboles Étoile",
+      "desc": "Étoiles, astérisques et scintillements à copier."
+    },
+    {
+      "href": "/fr/symbol/symbole-pion/",
+      "title": "Symbole du Pion (♟)",
+      "desc": "Origine, signification et usage du symbole du pion."
+    },
+    {
+      "href": "/fr/library/symboles/",
+      "title": "Symboles Esthétiques",
+      "desc": "Caractères Unicode esthétiques pour bios et légendes."
+    },
+    {
+      "href": "/fr/library/symboles-mathematiques/",
+      "title": "Symboles Mathématiques",
+      "desc": "Plus-moins, multiplication, division, racine et infini."
+    }
+  ]
+}

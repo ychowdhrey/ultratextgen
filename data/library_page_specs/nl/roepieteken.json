@@ -1,0 +1,110 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "roepieteken",
+  "title": "Indiase Roepieteken: Kopieer en Plak ₹ — Ontwerpverhaal uit 2010 & Hoe Je Het Typt",
+  "meta_description": "Wat het Indiase roepieteken ₹ betekent, het ontwerpverhaal uit 2010 en hoe je het typt. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/roepieteken/",
+  "breadcrumb": "Indiase Roepieteken",
+  "hero_h1": "Indiase Roepieteken (₹)",
+  "hero_tagline": "Wat ₹ betekent, het ontwerpverhaal uit 2010 en hoe je het typt. Klik om te kopiëren.",
+  "intro": "Anders dan valutatekens die geleidelijk zijn ontstaan uit eeuwen handschrift, heeft ₹ een ongewoon goed gedocumenteerde, bewuste oorsprong. De Indiase overheid organiseerde in 2009–2010 een open publieke ontwerpwedstrijd, specifiek om de roepie een eigen teken te geven, los van de platte afkorting 'Rs.' die tot dan toe werd gebruikt. D. Udaya Kumar, een postdoctoraal student van IIT Guwahati, won de wedstrijd, en het ontwerp werd in 2010 officieel aangenomen door de Indiase overheid. Het winnende ontwerp versmelt de Devanagari-letter 'र' (ra, de eerste klank van 'roepie') met de Latijnse hoofdletter R, met twee evenwijdige horizontale lijnen erboven. Die lijnen worden algemeen gelezen als een verwijzing naar de Indiase nationale vlag en, in lijn met een gangbare conventie bij valutatekens, als echo van het isgelijkteken — bedoeld om economische gelijkheid en balans te suggereren.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/rupee-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/roepieteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/rupee-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "roepieteken",
+      "label": "Roepie",
+      "h2": "Indiase Roepieteken",
+      "intro": "Het teken zelf, aangenomen in 2010.",
+      "symbols": [
+        {
+          "char": "₹",
+          "label": "Indiase Roepieteken (U+20B9)"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-tekens",
+      "label": "Andere Valutatekens",
+      "h2": "Andere Valutatekens",
+      "intro": "Deze worden soms verward met ₹ of delen er de context mee.",
+      "symbols": [
+        {
+          "char": "€",
+          "label": "Euroteken (U+20AC) — een ander bewust ontworpen modern valutateken"
+        },
+        {
+          "char": "£",
+          "label": "Pondteken (U+00A3) — meer dan 1000 jaar oud, van het Latijnse libra"
+        }
+      ]
+    },
+    {
+      "id": "verwante-valuta",
+      "label": "Verwante Valutatekens",
+      "h2": "Andere Belangrijke Valutatekens",
+      "intro": "Andere wereldvalutatekens die vaak samen met ₹ worden genoemd.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dollarteken"
+        },
+        {
+          "char": "€",
+          "label": "Euroteken"
+        },
+        {
+          "char": "£",
+          "label": "Pondteken"
+        },
+        {
+          "char": "¥",
+          "label": "Yenteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/dollarteken/",
+      "title": "Dollarteken ($)",
+      "desc": "Het bekendste valutateken ter wereld — en zijn omstreden oorsprong."
+    },
+    {
+      "href": "/nl/symbol/euro-symbool/",
+      "title": "Euroteken (€)",
+      "desc": "Een valutasymbool dat in 1996 bewust is ontworpen."
+    },
+    {
+      "href": "/nl/symbol/pondteken/",
+      "title": "Pondteken (£)",
+      "desc": "Meer dan duizend jaar oud, van het Latijnse libra."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "All Currency Symbols",
+      "desc": "Dollar, euro, pond, yen en andere wereldvalutatekens (Engelstalige bibliotheek)."
+    }
+  ]
+}

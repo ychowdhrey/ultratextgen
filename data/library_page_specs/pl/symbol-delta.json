@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-delta",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Delta: Skopiuj Δ δ — Litera, Która w Każdym Równaniu Znaczy „Zmiana”",
+  "meta_description": "Skopiuj symbol delta — wielkie Δ (uniwersalny znak „zmiany”) i małe δ — i poznaj ich prawdziwe znaczenia w matematyce, fizyce, chemii i handlu opcjami, plus znak przyrostu ∆, z którym bywa mylone. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-delta/",
+  "breadcrumb": "Symbol Delta",
+  "hero_h1": "Symbol Delta",
+  "hero_tagline": "Wielkie Δ oznaczające „zmianę” w matematyce, fizyce i inżynierii, oraz małe δ używane dla wielkości nieskończenie małych i cząstkowych ładunków wiązania polarnego. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Delta to czwarta litera greckiego alfabetu, a jej wielka forma, Δ (U+0394, GREEK CAPITAL LETTER DELTA), to matematyczny skrót, co do którego zgadza się cały świat: oznacza „zmianę”. Napisz Δx, a każdy naukowiec odczyta to jako „zmianę x”; Δt to czas, jaki upłynął, ΔV to zmiana napięcia. Mała forma, δ (U+03B4), zajmuje się mniejszymi zadaniami — nieskończenie małą zmianą w rachunku różniczkowym, a w chemii cząstkowymi ładunkami δ+ i δ−, oznaczającymi lekko dodatni i lekko ujemny koniec wiązania polarnego. Trójkątna wielka litera nazwała nawet formę terenu: wachlarzowate ujście rzeki nazywa się „deltą”, bo jego kształt przypomina Δ — porównanie, które starożytni Grecy zastosowali do Nilu. Delta sięga też do finansów, gdzie „delta” opcji mierzy, o ile zmienia się jej cena przy każdej zmianie ceny instrumentu bazowego o 1 dolara. Jedna litera, tuzin dziedzin — wszystkie zbudowane na jednej idei różnicy.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/delta-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-delta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/delta-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-delta",
+      "label": "Symbol Delta",
+      "h2": "Symbol Delta — Δ i δ",
+      "intro": "Sama grecka litera, w obu wersjach. Wielkie Δ to znak „zmiany”; małe δ zajmuje się zadaniami w mniejszej skali.",
+      "symbols": [
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta (U+0394) — „Zmiana”" },
+        { "char": "δ", "label": "Mała Grecka Litera Delta (U+03B4) — Wielkość Nieskończenie Mała / Ładunek Cząstkowy" }
+      ]
+    },
+    {
+      "id": "pomylka-ze-znakiem-przyrostu",
+      "label": "Znak Przyrostu",
+      "h2": "Pomyłka ze Znakiem Przyrostu",
+      "intro": "Istnieje osobny znak matematyczny, ∆ INCREMENT, który wyświetla się niemal identycznie jak wielka delta, ale ma inny punkt kodowy — ta sama pułapka sobowtóra co znak oma i omega. Niektóre czcionki i czytniki ekranu traktują je inaczej.",
+      "symbols": [
+        { "char": "∆", "label": "Przyrost (U+2206) — Operator Matematyczny Wyglądający jak Δ, Inny Punkt Kodowy" },
+        { "char": "Δ", "label": "Wielka Delta (U+0394) — Sama Grecka Litera" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Delta sąsiaduje z innymi, najczęściej wyszukiwanymi literami greckimi. Skopiuj tę, której potrzebuje Twoje równanie.",
+      "symbols": [
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Delta „zmiany” obok operatorów, relacji i liter greckich wypełniających równanie."
+    },
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Jedna z dwóch greckich liter najściślej powiązanych z deltą w matematyce — omega zamyka alfabet, delta łączy się z nią w równaniach."
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "lang": "es",
+  "slug": "emoji-cansado",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-cansado/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/tired-emoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-cansado/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/tired-emoji/"
+    }
+  ],
+  "title": "Emoji Cansado y Kaomoji: Copiar y Pegar 😴 🥱 Combos de Agotamiento",
+  "meta_description": "Copia y pega el emoji cansado 😴 🥱 😫, kaomoji con sueño como (-_-)zzz y combos de agotamiento. Haz clic en cualquier símbolo para copiarlo.",
+  "breadcrumb": "Emoji Cansado y Kaomoji",
+  "hero_h1": "Emoji Cansado y Kaomoji",
+  "hero_tagline": "Desde un 🥱 bostezo de sueño hasta el 😩 agotamiento total: todas las formas de estar cansado, más kaomoji dormilones y combos listos para usar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji cansado abarca dos estados muy distintos: el sueño rico del final del día 😴, cuando ya solo quieres cama, y el 😫 agotamiento de quien anda con las pilas en cero. Esta página los separa con claridad: de un lado los bostezos y los símbolos de irse a dormir, del otro las caras exhaustas y derretidas de tanto cansancio. Alrededor están los accesorios del modo recuperación, como el ☕ café y la 🌙 luna, los kaomoji clásicos de sueño como (-_-)zzz, y combos de un solo clic para leyendas de madrugada y respuestas de \"ya no puedo más\". Toma una sola cara o copia el combo completo, según qué tan cansado estés en realidad.",
+  "sections": [
+    {
+      "id": "sleepy-ready-bed",
+      "label": "Con Sueño y Listo para la Cama",
+      "h2": "Emojis de Sueño y de Irse a Dormir",
+      "intro": "El cansancio suave, el de bajar el ritmo: bostezos y párpados pesados al final del día.",
+      "symbols": [
+        {
+          "char": "😴",
+          "label": "Cara Durmiendo"
+        },
+        {
+          "char": "🥱",
+          "label": "Cara Bostezando"
+        },
+        {
+          "char": "😪",
+          "label": "Cara con Sueño"
+        }
+      ]
+    },
+    {
+      "id": "exhausted-weary",
+      "label": "Agotado y Sin Fuerzas",
+      "h2": "Caras de Agotamiento y Cansancio Extremo",
+      "intro": "El cansancio de estar quemado, con las pilas en cero: desgastado, sobrepasado y sin más.",
+      "symbols": [
+        {
+          "char": "😫",
+          "label": "Cara Cansada"
+        },
+        {
+          "char": "😩",
+          "label": "Cara Agotada"
+        },
+        {
+          "char": "🫠",
+          "label": "Cara Derritiéndose"
+        },
+        {
+          "char": "😮‍💨",
+          "label": "Cara Exhalando"
+        }
+      ]
+    },
+    {
+      "id": "recovery-mode",
+      "label": "Modo Recuperación",
+      "h2": "Símbolos de Descanso y Recuperación",
+      "intro": "Los complementos que acompañan un mensaje de cansancio: café para aguantar o cama para rendirse.",
+      "symbols": [
+        {
+          "char": "☕",
+          "label": "Bebida Caliente"
+        },
+        {
+          "char": "💤",
+          "label": "Zzz"
+        },
+        {
+          "char": "🛌",
+          "label": "Persona en la Cama"
+        },
+        {
+          "char": "🌙",
+          "label": "Luna Creciente"
+        },
+        {
+          "char": "🧸",
+          "label": "Oso de Peluche"
+        }
+      ]
+    },
+    {
+      "id": "tired-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji y Caritas de Texto de Cansancio",
+      "intro": "Caritas de texto al estilo japonés que se quedan dormidas con sus zzz: pégalas donde funcione el texto simple.",
+      "symbols": [
+        {
+          "char": "(-_-)zzz",
+          "label": "Kaomoji Quedándose Dormido"
+        },
+        {
+          "char": "(=_=)",
+          "label": "Kaomoji Agotado"
+        },
+        {
+          "char": "( ˘_˘ )",
+          "label": "Kaomoji de Ojos Somnolientos"
+        },
+        {
+          "char": "(。-ω-)zzz",
+          "label": "Kaomoji Cayendo Dormido"
+        },
+        {
+          "char": "(¦3[▓▓]",
+          "label": "Kaomoji Desplomado en la Cama"
+        },
+        {
+          "char": "(˘̩̩̩ε˘̩̩̩)",
+          "label": "Kaomoji con Puchero de Agotamiento"
+        },
+        {
+          "char": "ヾ(_ _。)ゝ",
+          "label": "Kaomoji que se Despide Cansado"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Ya No Doy Más Hoy",
+      "flags": [
+        "😩",
+        "😫"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Con las Pilas en Cero",
+      "flags": [
+        "🥱",
+        "😴"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Necesito Café Ya",
+      "flags": [
+        "☕",
+        "😩"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hora de Dormir",
+      "flags": [
+        "😴",
+        "💤",
+        "🌙"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Derritiéndome de Cansancio",
+      "flags": [
+        "🫠",
+        "😮‍💨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mándenme a la Cama",
+      "flags": [
+        "🛌",
+        "💤"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Apenas Funcionando",
+      "flags": [
+        "😪",
+        "☕"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Recuperación Acogedora",
+      "flags": [
+        "🧸",
+        "🌙",
+        "💤"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "tiredSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de Emoji Cansado",
+    "intro": "Copia un combo de cansancio completo en un solo clic: desde un bostezo rápido hasta el agotamiento total."
+  },
+  "related": [
+    {
+      "href": "/library/sleepy-kaomoji/",
+      "title": "Kaomoji con Sueño",
+      "desc": "Caritas de texto somnolientas y kaomoji con zzz para bajar el ritmo."
+    },
+    {
+      "href": "/es/library/emoji-llorando/",
+      "title": "Emoji Llorando y Kaomoji",
+      "desc": "Caras con lágrimas y kaomoji de llanto para los días más difíciles."
+    },
+    {
+      "href": "/es/library/emoji-triste/",
+      "title": "Emoji Triste y Kaomoji",
+      "desc": "Caras melancólicas y de ánimo bajo para cuando el cansancio se vuelve tristeza."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de Caras",
+      "desc": "La cuadrícula completa de emojis de caras, lista para copiar."
+    }
+  ]
+}

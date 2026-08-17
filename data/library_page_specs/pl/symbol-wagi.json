@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-wagi",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Wagi: Skopiuj ♎ — Jedyny Znak Zodiaku Będący Przedmiotem",
+  "meta_description": "Skopiuj symbol zodiakalnej Wagi (♎) — dosłowną wagę szalkową i jedyny symbol w całym zodiaku przedstawiający przedmiot, a nie zwierzę czy człowieka. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-wagi/",
+  "breadcrumb": "Symbol Wagi",
+  "hero_h1": "Symbol Wagi",
+  "hero_tagline": "Glif Wagi (♎) to dosłowna waga szalkowa — jedyny symbol spośród wszystkich 12 znaków zodiaku, który przedstawia przedmiot, a nie zwierzę, człowieka czy mitologiczną hybrydę. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Wagi (♎, U+264E) rysowany jest jako waga szalkowa i jest pod tym względem naprawdę wyjątkowy w zodiaku: każdy inny znak symbolizuje zwierzę, osobę albo mitologiczną hybrydę — Waga jest jedynym, który przedstawia przedmiot nieożywiony. Szalki wagi wywodzą się od Temidy, greckiej bogini prawa i porządku boskiego (a w niektórych wersjach mitu — od jej córki Astrei) — to te same szalki, które stoją za dzisiejszym obrazem „Wagi Sprawiedliwości” używanym w salach sądowych i symbolice prawniczej. Waga trwa od 23 września do 22 października, jest rządzona przez Wenus i jest znakiem Powietrza o modalności kardynalnej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/libra-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-wagi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/libra-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-wagi",
+      "label": "Waga",
+      "h2": "Symbol Wagi",
+      "intro": "Unicode'owy glif zodiakalnej Wagi, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♎", "label": "Symbol Wagi" },
+        { "char": "♎️", "label": "Symbol Wagi (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Wadze.",
+      "symbols": [
+        { "char": "♀", "label": "Wenus (Planeta Rządząca)" },
+        { "char": "🜁", "label": "Powietrze (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Wagi (Baran).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♈", "label": "Baran (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/symbol/aries-symbol/",
+      "title": "Aries Symbol",
+      "desc": "Astrologiczne przeciwieństwo Wagi, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-strzelca/",
+      "title": "Symbol Strzelca",
+      "desc": "Łucznik, którego gwiazdozbiór wskazuje wprost centrum galaktyki."
+    }
+  ]
+}

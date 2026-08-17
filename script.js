@@ -75,7 +75,34 @@
           noStyles: "Không tìm thấy kiểu chữ nào. Thử bộ lọc hoặc từ khóa khác." }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
-  const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
+
+  // Read a nested window.UTG_I18N.ui.<dot.path> value, falling back to the
+  // given English default when the locale fetch hasn't resolved yet (or
+  // doesn't cover this key). Same shape as i18n.js's own nested-value lookup
+  // and as this file's existing getCategoryTabLabel() (see "RENDER:
+  // Decorations" below) — this is the generalized version of that pattern,
+  // used for every other hardcoded string in this file. getCategoryTabLabel
+  // itself is left as its own hand-written lookup, untouched.
+  function uiText(path, fallback) {
+    const i18n = window.UTG_I18N;
+    if (!i18n || !i18n.ui) return fallback;
+    const val = path.split(".").reduce((acc, key) => (acc != null ? acc[key] : undefined), i18n.ui);
+    return val != null ? val : fallback;
+  }
+
+  // UI_STRINGS above is the older, per-locale copy/save button dictionary —
+  // it only covers 11 of the ~28 supported locales. window.UTG_I18N.ui.copyButtons
+  // (populated once i18n.js's locale fetch resolves, see i18n.js) is the
+  // newer, fuller-coverage source; when present its keys are merged over the
+  // UI_STRINGS fallback tier so the other locales get real translations too,
+  // without breaking the ones that already work via the old dictionary.
+  function computeStr() {
+    const fallback = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
+    const i18n = window.UTG_I18N;
+    const localized = i18n && i18n.ui && i18n.ui.copyButtons;
+    return localized ? Object.assign({}, fallback, localized) : fallback;
+  }
+  let STR = computeStr();
 
  /* ===================
    DATA: Decorations
@@ -325,9 +352,14 @@ const decorations = window.UTG_DECORATIONS
   // Demo text rendered through every style while the input is empty, so the
   // first paint shows the whole catalog styled instead of placeholder rows.
   // Two lines on purpose: the first-line scope and heading use cases read
-  // naturally. Pages can override via window.UTG_DEMO_TEXT.
-  const DEMO_TEXT = window.UTG_DEMO_TEXT ||
-    "Welcome to UltraTextGen.\nType anything. Make it ultra.";
+  // naturally. Precedence: window.UTG_DEMO_TEXT (per-page override, set by
+  // some pages explicitly and must keep winning) → window.UTG_I18N.ui.demoText
+  // (locale default) → hardcoded English (final fallback).
+  function computeDemoText() {
+    return window.UTG_DEMO_TEXT ||
+      uiText("demoText", "Welcome to UltraTextGen.\nType anything. Make it ultra.");
+  }
+  let DEMO_TEXT = computeDemoText();
 
   // Per-style copy counts + last-used timestamps, persisted per device.
   // Most-copied styles float to the top of the grid on the next render.
@@ -797,15 +829,23 @@ const decorations = window.UTG_DECORATIONS
   function coverageBadgeHtml(name, style) {
     const w = styleCoverage(name, style);
     if (w >= 3) {
-      return `<span class="ts-pill ts-pill-risk" title="This style uses rare Unicode characters that some phones and older devices don't include a glyph for. It can show as boxes (▯) for the person you paste it to. Prefer a plain or wide-support style if your audience may be on older devices.">⚠ May show as boxes for some people</span>`;
+      const title = uiText("safetyBadges.boxesWarningTitle", "This style uses rare Unicode characters that some phones and older devices don't include a glyph for. It can show as boxes (▯) for the person you paste it to. Prefer a plain or wide-support style if your audience may be on older devices.");
+      const label = uiText("safetyBadges.boxesWarning", "⚠ May show as boxes for some people");
+      return `<span class="ts-pill ts-pill-risk" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
     if (w === 2) {
-      return `<span class="ts-pill ts-pill-risk" title="This style includes emoji. Emoji render on modern devices but can look different, or show as boxes, on very old phones.">⚠ Uses emoji — may vary on old devices</span>`;
+      const title = uiText("safetyBadges.emojiWarningTitle", "This style includes emoji. Emoji render on modern devices but can look different, or show as boxes, on very old phones.");
+      const label = uiText("safetyBadges.emojiWarning", "⚠ Uses emoji — may vary on old devices");
+      return `<span class="ts-pill ts-pill-risk" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
     if (w === 1) {
-      return `<span class="ts-pill ts-pill-safe" title="These styled Unicode letters display on all current phones and computers. On very old Android (roughly pre-2016) or minimal system fonts, a few may still show as boxes (▯). Test first if your audience uses older devices.">Renders on modern devices</span>`;
+      const title = uiText("safetyBadges.modernDevicesTitle", "These styled Unicode letters display on all current phones and computers. On very old Android (roughly pre-2016) or minimal system fonts, a few may still show as boxes (▯). Test first if your audience uses older devices.");
+      const label = uiText("safetyBadges.modernDevices", "Renders on modern devices");
+      return `<span class="ts-pill ts-pill-safe" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
-    return `<span class="ts-pill ts-pill-safe" title="This style is plain text — it renders everywhere, with no risk of boxes on any device.">✓ Renders everywhere</span>`;
+    const title = uiText("safetyBadges.rendersEverywhereTitle", "This style is plain text — it renders everywhere, with no risk of boxes on any device.");
+    const label = uiText("safetyBadges.rendersEverywhere", "✓ Renders everywhere");
+    return `<span class="ts-pill ts-pill-safe" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
   }
 
   // Compact per-card trust signal built from the style's own `platforms`
@@ -815,7 +855,9 @@ const decorations = window.UTG_DECORATIONS
     if (!style) return "";
     const glyph = sampleGlyph(style);
     if (glyph && !deviceRendersGlyph(glyph)) {
-      return `<span class="ts-pill ts-pill-risk" title="Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.">⚠ May not show on your device</span>`;
+      const title = uiText("safetyBadges.deviceWarningTitle", "Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.");
+      const label = uiText("safetyBadges.deviceWarning", "⚠ May not show on your device");
+      return `<span class="ts-pill ts-pill-risk" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
     // Safe mode on → answer the cross-device "will this box for others?"
     // question with a coverage badge (supersedes the platform hints below,
@@ -828,11 +870,15 @@ const decorations = window.UTG_DECORATIONS
     // works — only the device warning above adds signal there.
     if (window.UTG_SHOW_PLATFORMS && platforms && platforms.length) return "";
     if (platforms && platforms.includes("all")) {
-      return `<span class="ts-pill ts-pill-safe" title="Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.">✓ Safe anywhere</span>`;
+      const title = uiText("safetyBadges.safeAnywhereTitle", "Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.");
+      const label = uiText("safetyBadges.safeAnywhere", "✓ Safe anywhere");
+      return `<span class="ts-pill ts-pill-safe" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
     if (platforms && platforms.length) {
       const names = platforms.map((p) => PLATFORM_LABELS[p]).filter(Boolean).join(", ");
-      return `<span class="ts-pill ts-pill-risk" title="Best on: ${safeAttr(names)}. Other platforms may strip or garble it — paste a test first.">⚠ Works best on ${safeAttr(names)}</span>`;
+      const label = uiText("safetyBadges.worksBestOn", "⚠ Works best on {platforms}").replace("{platforms}", names);
+      const title = uiText("safetyBadges.worksBestOnTitle", "Best on: {platforms}. Other platforms may strip or garble it — paste a test first.").replace("{platforms}", names);
+      return `<span class="ts-pill ts-pill-risk" title="${safeAttr(title)}">${escapeHtml(label)}</span>`;
     }
     return "";
   }
@@ -874,6 +920,22 @@ const decorations = window.UTG_DECORATIONS
   /* ===================
      RENDER: Decorations
      =================== */
+  // Translated label for a category tab, with English fallback. Reads the
+  // object i18n.js stores on window.UTG_I18N once its locale fetch resolves
+  // (see i18n.js's "utg:i18nready" event) — on the English site that fetch
+  // never happens, window.UTG_I18N stays undefined, and category.label (the
+  // English text from fonts.json) is used unchanged.
+  function getCategoryTabLabel(key, category) {
+    const i18n = window.UTG_I18N;
+    const translated = i18n && i18n.ui && i18n.ui.categoryTabs && i18n.ui.categoryTabs[key];
+    return translated || category.label;
+  }
+
+  function categoryTabText(key, category) {
+    const label = getCategoryTabLabel(key, category);
+    return category.icon ? `${category.icon} ${label}` : label;
+  }
+
   function renderCategoryTabs() {
     const tabsContainer = $("#categoryTabs");
     if (!tabsContainer || !fontCategories) return;
@@ -889,13 +951,13 @@ const decorations = window.UTG_DECORATIONS
     Object.entries(fontCategories.categories).forEach(([key, category]) => {
       let tab;
       const isActive = isCategoryMode ? (key === urlCategorySlug) : (key === currentCategory);
-      const tabText = category.icon ? `${category.icon} ${category.label}` : category.label;
-      
+      const tabText = categoryTabText(key, category);
+
       if (isCategoryMode) {
         // Category mode: render as <a> elements
         tab = document.createElement("a");
         tab.className = "category-tab";
-        
+
         if (isActive) {
           tab.classList.add("active");
           // Active tab should not be clickable - don't set href
@@ -903,7 +965,8 @@ const decorations = window.UTG_DECORATIONS
           // Other tabs navigate to their category pages
           tab.href = `/category/${key}/`;
         }
-        
+
+        tab.dataset.categoryId = key;
         tab.textContent = tabText;
       } else {
         // Homepage mode: render as buttons with click handlers
@@ -913,8 +976,9 @@ const decorations = window.UTG_DECORATIONS
           tab.classList.add("active");
         }
         tab.dataset.category = key;
+        tab.dataset.categoryId = key;
         tab.textContent = tabText;
-        
+
         tab.addEventListener("click", () => {
           $$(".category-tab").forEach((t) => t.classList.remove("active"));
           tab.classList.add("active");
@@ -922,7 +986,7 @@ const decorations = window.UTG_DECORATIONS
           renderResults();
         });
       }
-      
+
       tabsContainer.appendChild(tab);
     });
 
@@ -931,6 +995,29 @@ const decorations = window.UTG_DECORATIONS
       collapseCategoryTabs();
     }, 0);
   }
+
+  // i18n.js's translation fetch is async and may resolve after this page has
+  // already rendered category tabs once with the English fallback labels.
+  // Rather than tearing the tabs down and rebuilding them (which would drop
+  // the collapse/"More" state and cause a jarring re-flow), just swap each
+  // existing tab's text in place once the translations land.
+  function updateCategoryTabLabels() {
+    if (!fontCategories) return;
+    const tabsContainer = $("#categoryTabs");
+    if (!tabsContainer) return;
+
+    $$(".category-tab[data-category-id]", tabsContainer).forEach((tab) => {
+      const key = tab.dataset.categoryId;
+      const category = fontCategories.categories[key];
+      if (!category) return;
+      tab.textContent = categoryTabText(key, category);
+    });
+  }
+
+  // On English pages i18n.js returns early and never fetches, so this event
+  // never fires and tabs stay exactly as rendered (English) — zero behavior
+  // change there.
+  document.addEventListener("utg:i18nready", updateCategoryTabLabels);
 
   // Collapse overflowing category tabs into two visible rows on desktop,
   // hide the rest and render a "More" button to expand and show all.
@@ -996,7 +1083,7 @@ const decorations = window.UTG_DECORATIONS
     const moreBtn = document.createElement("button");
     moreBtn.className = "category-more";
     moreBtn.type = "button";
-    moreBtn.textContent = "More";
+    moreBtn.textContent = uiText("categoryTabsToggle.more", "More");
     moreBtn.addEventListener("click", () => {
       const isExpanded = tabsContainer.classList.contains("expanded");
       if (isExpanded) {
@@ -1009,7 +1096,7 @@ const decorations = window.UTG_DECORATIONS
           h.removeAttribute("aria-hidden");
           h.classList.remove("hidden-category");
         });
-        moreBtn.textContent = "Less";
+        moreBtn.textContent = uiText("categoryTabsToggle.less", "Less");
         tabsContainer.classList.add("expanded");
       }
     });
@@ -1108,7 +1195,7 @@ const decorations = window.UTG_DECORATIONS
 
     const clearBtn = document.createElement("span");
     clearBtn.className = "clear-decoration";
-    clearBtn.textContent = "✕ None";
+    clearBtn.textContent = "✕ " + uiText("decorationsNone", "None");
     clearBtn.addEventListener("click", () => {
       selectedDecoration = null;
       $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
@@ -1163,15 +1250,24 @@ const decorations = window.UTG_DECORATIONS
     control = document.createElement("div");
     control.className = "scope-control";
     control.id = "scopeControl";
+    const scopeLabel = uiText("scopeControl.label", "Apply style to");
+    const scopeAriaLabel = uiText("scopeControl.ariaLabel", "Choose how much text to style");
+    const wholeText = uiText("scopeControl.whole", "Whole text");
+    const wholeTitle = uiText("scopeControl.wholeTitle", "Style every line of your text.");
+    const firstLineText = uiText("scopeControl.firstLine", "First line only");
+    const firstLineTag = uiText("scopeControl.firstLineTag", "for posts");
+    const firstLineTitle = uiText("scopeControl.firstLineTitle", "Style only the first line (your headline or hook) and leave the rest as plain, readable text — ideal for social posts.");
+    const shareTitle = uiText("scopeControl.shareTitle", "Share a link that reopens this page with your text filled in");
+    const shareText = uiText("scopeControl.share", "Share");
     control.innerHTML = `
-      <span class="scope-control-label">Apply style to</span>
-      <div class="scope-chips" role="group" aria-label="Choose how much text to style">
-        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole" title="Style every line of your text.">Whole text</button>
-        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line" title="Style only the first line (your headline or hook) and leave the rest as plain, readable text — ideal for social posts.">First line only <span class="scope-chip-tag">for posts</span></button>
+      <span class="scope-control-label">${escapeHtml(scopeLabel)}</span>
+      <div class="scope-chips" role="group" aria-label="${safeAttr(scopeAriaLabel)}">
+        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole" title="${safeAttr(wholeTitle)}">${escapeHtml(wholeText)}</button>
+        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line" title="${safeAttr(firstLineTitle)}">${escapeHtml(firstLineText)} <span class="scope-chip-tag">${escapeHtml(firstLineTag)}</span></button>
       </div>
-      <button class="share-btn" id="shareBtn" type="button" title="Share a link that reopens this page with your text filled in">
+      <button class="share-btn" id="shareBtn" type="button" title="${safeAttr(shareTitle)}">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>
-        Share
+        ${escapeHtml(shareText)}
       </button>
     `;
     host.insertBefore(control, el.resultsGrid);
@@ -1198,10 +1294,10 @@ const decorations = window.UTG_DECORATIONS
           await navigator.clipboard.writeText(url);
           const label = shareBtn.lastChild;
           shareBtn.classList.add("copied");
-          label.textContent = " Link copied";
+          label.textContent = " " + uiText("scopeControl.linkCopied", "Link copied");
           setTimeout(() => {
             shareBtn.classList.remove("copied");
-            label.textContent = " Share";
+            label.textContent = " " + uiText("scopeControl.share", "Share");
           }, 1500);
         } catch (err) {
           console.error("Share failed:", err);
@@ -1301,14 +1397,18 @@ const decorations = window.UTG_DECORATIONS
     control = document.createElement("div");
     control.className = "safemode-control";
     control.id = "safeModeControl";
+    const safeModeLabel = uiText("safeMode.label", "Paste safety");
+    const safeModeAriaLabel = uiText("safeMode.ariaLabel", "Check which styles render on other people's devices");
+    const safeModeToggleLabel = uiText("safeMode.toggleLabel", "Safe mode");
+    const safeModeHint = uiText("safeMode.hint", "Flags styles that may show as boxes (▯) on other people's older phones.");
     control.innerHTML = `
-      <span class="safemode-control-label">Paste safety</span>
-      <div class="safemode-chips" role="group" aria-label="Check which styles render on other people's devices">
+      <span class="safemode-control-label">${escapeHtml(safeModeLabel)}</span>
+      <div class="safemode-chips" role="group" aria-label="${safeAttr(safeModeAriaLabel)}">
         <button class="safemode-chip${safeMode ? " active" : ""}" type="button" data-safemode aria-pressed="${safeMode}">
-          <span class="safemode-chip-dot" aria-hidden="true"></span>Safe mode
+          <span class="safemode-chip-dot" aria-hidden="true"></span>${escapeHtml(safeModeToggleLabel)}
         </button>
       </div>
-      <span class="safemode-hint">Flags styles that may show as boxes (▯) on other people's older phones.</span>
+      <span class="safemode-hint">${escapeHtml(safeModeHint)}</span>
     `;
     // Sit after the format control if present, else after the scope control,
     // else straight above the grid.
@@ -1359,10 +1459,12 @@ const decorations = window.UTG_DECORATIONS
     bar.className = "text-stats-bar";
     bar.id = "textStatsBar";
     bar.hidden = true;
+    const zeroWords = uiText("textStats.wordPlural", "{n} words").replace("{n}", "0");
+    const zeroChars = uiText("textStats.charPlural", "{n} characters").replace("{n}", "0");
     bar.innerHTML =
-      '<span id="textStatsWords">0 words</span>' +
+      `<span id="textStatsWords">${escapeHtml(zeroWords)}</span>` +
       '<span class="text-stats-sep" aria-hidden="true">·</span>' +
-      '<span id="textStatsChars">0 characters</span>';
+      `<span id="textStatsChars">${escapeHtml(zeroChars)}</span>`;
     anchor.parentNode.insertBefore(bar, anchor.nextSibling);
 
     el.textStatsBar = bar;
@@ -1377,8 +1479,12 @@ const decorations = window.UTG_DECORATIONS
     const words = trimmed ? trimmed.split(/\s+/).length : 0;
     const chars = Array.from(val).length;
     el.textStatsBar.hidden = chars === 0;
-    el.textStatsWords.textContent = words === 1 ? "1 word" : words + " words";
-    el.textStatsChars.textContent = chars === 1 ? "1 character" : chars + " characters";
+    el.textStatsWords.textContent = words === 1
+      ? uiText("textStats.wordSingular", "1 word")
+      : uiText("textStats.wordPlural", "{n} words").replace("{n}", String(words));
+    el.textStatsChars.textContent = chars === 1
+      ? uiText("textStats.charSingular", "1 character")
+      : uiText("textStats.charPlural", "{n} characters").replace("{n}", String(chars));
   }
 
   /* ===================
@@ -1396,14 +1502,17 @@ const decorations = window.UTG_DECORATIONS
     section = document.createElement("section");
     section.className = "saved-section";
     section.id = "savedSection";
-    section.setAttribute("aria-label", "Your saved styles");
+    section.setAttribute("aria-label", uiText("savedStyles.ariaLabel", "Your saved styles"));
     section.hidden = true;
+    const savedHeading = uiText("savedStyles.heading", "Your saved styles");
+    const savedClearAll = uiText("savedStyles.clearAll", "Clear all");
+    const savedHint = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
     section.innerHTML = `
       <div class="saved-header">
-        <h2 class="saved-title">★ Your saved styles</h2>
-        <button class="saved-clear" id="savedClearBtn" type="button">Clear all</button>
+        <h2 class="saved-title">★ ${escapeHtml(savedHeading)}</h2>
+        <button class="saved-clear" id="savedClearBtn" type="button">${escapeHtml(savedClearAll)}</button>
       </div>
-      <p class="saved-hint">Saved on this device — they'll be waiting here when you come back.</p>
+      <p class="saved-hint">${escapeHtml(savedHint)}</p>
       <div class="results-grid saved-grid" id="savedGrid"></div>
     `;
     host.insertBefore(section, host.firstChild);
@@ -1925,6 +2034,110 @@ document.addEventListener("copy", () => {
   }
 });
      }
+
+  /* ===================
+     RUNTIME I18N PATCH-ON-ARRIVAL
+     =================== */
+  // Everything else in this file that's hardcoded English, beyond the
+  // per-category tab labels getCategoryTabLabel/updateCategoryTabLabels
+  // already handle above (left untouched). Same reasoning as that pair:
+  // i18n.js's locale fetch is async, so anything already painted before it
+  // resolves used the English fallback via uiText()/computeStr()/
+  // computeDemoText() above. The scope control, safe-mode control, and
+  // saved-styles section are singleton controls built once and never torn
+  // down (their ensure*() functions no-op on repeat calls), so they need
+  // their static text patched in place here. The results grid, saved grid,
+  // and decoration chips are already fully torn down and rebuilt on almost
+  // every user interaction elsewhere in this file (scope/format/safe-mode
+  // toggles, typing, decoration picks), so a plain re-render is enough for
+  // those — no special-case DOM patching needed, and it picks up the
+  // localized copy/save button chrome, safety badges, empty/no-styles
+  // placeholders, and demo text all at once.
+  //
+  // On the English site window.UTG_I18N is never set and this event never
+  // fires (see i18n.js's init(), which returns early for lang === "en"), so
+  // none of this ever runs there — zero behavior change.
+  function applyRuntimeI18nUpdates() {
+    STR = computeStr();
+    DEMO_TEXT = computeDemoText();
+
+    const scopeControl = $("#scopeControl");
+    if (scopeControl) {
+      const label = $(".scope-control-label", scopeControl);
+      if (label) label.textContent = uiText("scopeControl.label", "Apply style to");
+      const chipsGroup = $(".scope-chips", scopeControl);
+      if (chipsGroup) chipsGroup.setAttribute("aria-label", uiText("scopeControl.ariaLabel", "Choose how much text to style"));
+      const wholeBtn = $('[data-scope="whole"]', scopeControl);
+      if (wholeBtn) {
+        wholeBtn.title = uiText("scopeControl.wholeTitle", "Style every line of your text.");
+        wholeBtn.textContent = uiText("scopeControl.whole", "Whole text");
+      }
+      const firstLineBtn = $('[data-scope="first-line"]', scopeControl);
+      if (firstLineBtn) {
+        firstLineBtn.title = uiText("scopeControl.firstLineTitle",
+          "Style only the first line (your headline or hook) and leave the rest as plain, readable text — ideal for social posts.");
+        const firstTextNode = Array.from(firstLineBtn.childNodes).find((n) => n.nodeType === Node.TEXT_NODE);
+        if (firstTextNode) firstTextNode.textContent = uiText("scopeControl.firstLine", "First line only") + " ";
+        const tag = $(".scope-chip-tag", firstLineBtn);
+        if (tag) tag.textContent = uiText("scopeControl.firstLineTag", "for posts");
+      }
+      const shareBtn = $("#shareBtn", scopeControl);
+      if (shareBtn) {
+        shareBtn.title = uiText("scopeControl.shareTitle", "Share a link that reopens this page with your text filled in");
+        if (!shareBtn.classList.contains("copied") && shareBtn.lastChild) {
+          shareBtn.lastChild.textContent = " " + uiText("scopeControl.share", "Share");
+        }
+      }
+    }
+
+    const safeModeControl = $("#safeModeControl");
+    if (safeModeControl) {
+      const label = $(".safemode-control-label", safeModeControl);
+      if (label) label.textContent = uiText("safeMode.label", "Paste safety");
+      const chipsGroup = $(".safemode-chips", safeModeControl);
+      if (chipsGroup) chipsGroup.setAttribute("aria-label", uiText("safeMode.ariaLabel", "Check which styles render on other people's devices"));
+      const chip = $(".safemode-chip", safeModeControl);
+      if (chip) {
+        const textNode = Array.from(chip.childNodes).find((n) => n.nodeType === Node.TEXT_NODE);
+        if (textNode) textNode.textContent = uiText("safeMode.toggleLabel", "Safe mode");
+      }
+      const hint = $(".safemode-hint", safeModeControl);
+      if (hint) hint.textContent = uiText("safeMode.hint", "Flags styles that may show as boxes (▯) on other people's older phones.");
+    }
+
+    const savedSection = $("#savedSection");
+    if (savedSection) {
+      savedSection.setAttribute("aria-label", uiText("savedStyles.ariaLabel", "Your saved styles"));
+      const title = $(".saved-title", savedSection);
+      if (title) title.textContent = "★ " + uiText("savedStyles.heading", "Your saved styles");
+      const clearBtn = $("#savedClearBtn", savedSection);
+      if (clearBtn) clearBtn.textContent = uiText("savedStyles.clearAll", "Clear all");
+      const hint = $(".saved-hint", savedSection);
+      if (hint) hint.textContent = uiText("savedStyles.hint", "Saved on this device — they'll be waiting here when you come back.");
+    }
+
+    if (el.textStatsBar) {
+      applyTextStats(el.mainInput ? el.mainInput.value : "");
+    }
+
+    const moreBtn = $("#categoryTabs .category-more");
+    if (moreBtn) {
+      const tabsContainer = $("#categoryTabs");
+      const expanded = tabsContainer && tabsContainer.classList.contains("expanded");
+      moreBtn.textContent = expanded
+        ? uiText("categoryTabsToggle.less", "Less")
+        : uiText("categoryTabsToggle.more", "More");
+    }
+
+    // Re-render the pieces that are already idempotently rebuilt elsewhere in
+    // this file — picks up the localized "None" chip, copy/save button
+    // chrome, safety badges, empty/no-styles placeholders, and demo text.
+    renderDecorations();
+    renderSavedStyles();
+    renderResults();
+  }
+
+  document.addEventListener("utg:i18nready", applyRuntimeI18nUpdates);
 
   /* ===================
      INIT

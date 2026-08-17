@@ -1,0 +1,123 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "dirhamteken",
+  "title": "Dirhamteken: Kopieer en Plak ⃃ — het Nieuwe Valutateken van de VAE, Bevroren voor Publicatie in Unicode 18.0",
+  "meta_description": "Het VAE-dirhamteken (⃃, U+20C3) is bevroren voor publicatie in Unicode 18.0, verwacht in september 2026 — goedgekeurd en stabiel, maar nog op geen enkel toetsenbord te typen. Codepunt, geschiedenis en hoe ontwikkelaars het nu al gebruiken.",
+  "canonical": "https://ultratextgen.com/nl/symbol/dirhamteken/",
+  "breadcrumb": "Dirhamteken",
+  "hero_h1": "Dirhamteken",
+  "hero_tagline": "Het nieuwe valutateken van de Centrale Bank van de VAE, toegewezen aan U+20C3 en bevroren voor publicatie in Unicode 18.0 — steviger vastgelegd dan de conceptemoji's van deze release, maar nog altijd niet te typen op enig toetsenbord.",
+  "intro": "Het dirhamteken (⃃, U+20C3) is het nieuwe valutateken van de Centrale Bank van de Verenigde Arabische Emiraten, onthuld in maart 2025 samen met een bijbehorend teken voor de digitale dirham. Het werd bij het Unicode-consortium ingediend voor codering, goedgekeurd, en gepubliceerd in de publieke bèta van Unicode 18.0 op 27 mei 2026, samen met de tekens voor de Omaanse rial en de Malediven-rufiyaa. Op het moment van schrijven draagt het de status 'white' in Unicodes eigen pipeline-documentatie — wat betekent dat het bevroren is voor publicatie, in afwachting van alleen nog ISO-goedkeuring, wat eigenlijk een steviger vastgelegde status is dan de conceptemoji-kandidaten van diezelfde release (waarvan er meerdere nog een naamswijzigingsvlag dragen). Unicode 18.0 zelf wordt naar verwachting in september 2026 definitief gepubliceerd. Publicatie alleen zet het echter nog niet op een toetsenbord: geen enkel besturingssysteem, lettertype of invoermethode biedt momenteel native ondersteuning, en de aanbeveling van de Centrale Bank van de VAE in haar eigen stijlgids (de cijfertoets 6) blijft slechts een aanbeveling totdat toestelfabrikanten ernaar handelen. Ondertussen hebben ontwikkelaars al echte tooling gebouwd rond het bevestigde codepunt: een open-source-npm-package, webfont en CSS/React/Vue/Angular/Svelte-componenten (gepubliceerd als 'dirham' op npm en GitHub) laten je het juiste teken vandaag al coderen via een tijdelijke renderlaag, ontworpen om te verdwijnen zodra native OS-ondersteuning verschijnt.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/dirhamteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "dirhamteken",
+      "label": "Dirhamteken",
+      "h2": "Dirhamteken",
+      "intro": "Het bevestigde teken zelf — vandaag al te kopiëren via het codepunt, ook al rendert nog geen enkel lettertype het native.",
+      "symbols": [
+        {
+          "char": "⃃",
+          "label": "VAE-Dirhamteken (U+20C3, bevroren voor publicatie)"
+        }
+      ]
+    },
+    {
+      "id": "andere-golfvaluta",
+      "label": "Andere Nieuwe Valutatekens",
+      "h2": "Andere Nieuwe Golf-valutatekens in deze Release",
+      "intro": "De dirham is niet het enige nieuwe valutateken in Unicode 18.0 — twee andere regionale munten kregen in dezelfde bèta hun eigen teken.",
+      "symbols": [
+        {
+          "char": "⃄",
+          "label": "Omaanse-Rial-teken (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Malediven-Rufiyaateken (U+20C2)"
+        }
+      ]
+    },
+    {
+      "id": "bestaande-valuta",
+      "label": "Bestaande Valutatekens",
+      "h2": "Bestaande Valutatekens die Je Nu al Kunt Typen",
+      "intro": "Ter vergelijking — valutatekens die deze sprong van standaard naar toetsenbord al jaren geleden maakten en vandaag volledig typbaar zijn.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dollarteken"
+        },
+        {
+          "char": "€",
+          "label": "Euroteken"
+        },
+        {
+          "char": "£",
+          "label": "Pondteken"
+        }
+      ]
+    },
+    {
+      "id": "een-versie-voor",
+      "label": "Eén Versie Voor",
+      "h2": "Het Golf-valutateken dat Eén Versie Eerder Verscheen",
+      "intro": "Saoedi-Arabiës riyal-teken doorliep dit pad al een volledige Unicode-versie eerder — al definitief sinds Unicode 17.0, niet enkel in bèta.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi-Riyal-teken (U+20C1, definitief sinds Unicode 17.0)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Elk wereldvalutateken dat je vandaag al kunt kopiëren en plakken (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/omaanse-rial-teken/",
+      "title": "Omaanse-Rial-teken",
+      "desc": "Nog een Golf-valutateken dat in dezelfde Unicode-18.0-bèta verschijnt."
+    },
+    {
+      "href": "/nl/symbol/saudi-riyal-teken/",
+      "title": "Saudi-Riyal-teken",
+      "desc": "Een Golf-valutateken dat al definitief is, één Unicode-versie eerder."
+    },
+    {
+      "href": "/nl/symbol/dollarteken/",
+      "title": "Dollarteken ($)",
+      "desc": "Het bekendste valutateken ter wereld — en zijn omstreden oorsprong."
+    },
+    {
+      "href": "/updates/uae-dirham-symbol-unicode-18/",
+      "title": "UAE Dirham Symbol Update",
+      "desc": "De gedateerde statustracker voor het pad van dit teken door Unicode 18.0 en naar echte toetsenborden (Engelstalige update)."
+    }
+  ]
+}

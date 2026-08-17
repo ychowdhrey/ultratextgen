@@ -1,0 +1,241 @@
+{
+ "lang": "es",
+ "slug": "emoji-gafas-de-sol",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "canonical": "https://ultratextgen.com/es/library/emoji-gafas-de-sol/",
+ "home_url": "https://ultratextgen.com/es/",
+ "crumb_home": "Inicio",
+ "library_url": "https://ultratextgen.com/es/library/",
+ "date_published": "2026-08-12",
+ "date_modified": "2026-08-12",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/sunglasses-emoji/"
+  },
+  {
+   "lang": "es",
+   "href": "https://ultratextgen.com/es/library/emoji-gafas-de-sol/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/sunglasses-emoji/"
+  }
+ ],
+ "title": "Emoji Gafas de Sol y Kaomoji 😎 Copiar y Pegar Combos Cool",
+ "meta_description": "Emoji de gafas de sol 😎 🕶️, caras seguras y presumidas, combos de verano y kaomoji cool como (⌐■_■) para chats y publicaciones. Un clic y lo copias.",
+ "breadcrumb": "Emoji de Gafas de Sol y Kaomoji",
+ "hero_h1": "Emoji de Gafas de Sol y Kaomoji",
+ "hero_tagline": "Cool, seguro y sin inmutarse: el emoji de gafas de sol, las caras presumidas, la vibra veraniega y los kaomoji con lentes en todas sus versiones. Haz clic en cualquier símbolo para copiarlo al instante.",
+ "intro": "El emoji gafas de sol 😎 es la forma más rápida de decir cool, seguro y totalmente tranquilo: la cara que mandas cuando algo te salió bien o cuando quieres verte en control sin esfuerzo. Esta página reúne los dos emojis básicos de lentes (😎 y 🕶️), las caras presumidas y seguras que los acompañan, los símbolos de verano y vacaciones como ☀️ 🏖️ 🌴 que arman el ambiente de piscina, y los kaomoji clásicos como (⌐■_■) y la mítica animación de ponerse los lentes. Más abajo, los sets de combos de un solo clic lo juntan todo —Deal With It, modo vacaciones, relax en la piscina— listos para pegar en una publicación, un comentario o el chat del grupo. Ya sea que estés presumiendo una pequeña victoria o solo irradiando calma, aquí hay una cara cool que te queda.",
+ "sections": [
+  {
+   "id": "core-cool",
+   "label": "El emoji cool",
+   "h2": "Variantes del Emoji de Gafas de Sol",
+   "intro": "Los dos emojis básicos de lentes: la cara cool y las gafas por sí solas.",
+   "symbols": [
+    {
+     "char": "😎",
+     "label": "Cara sonriente con gafas de sol"
+    },
+    {
+     "char": "🕶️",
+     "label": "Gafas de sol"
+    }
+   ]
+  },
+  {
+   "id": "confident-smug",
+   "label": "Seguro y presumido",
+   "h2": "Caras Seguras y Presumidas",
+   "intro": "Las sonrisas de lado, los flex y las señas que combinan con una actitud segura.",
+   "symbols": [
+    {
+     "char": "😏",
+     "label": "Cara con sonrisa de lado"
+    },
+    {
+     "char": "🤙",
+     "label": "Seña de llámame"
+    },
+    {
+     "char": "🆒",
+     "label": "Botón COOL"
+    },
+    {
+     "char": "💪",
+     "label": "Bíceps flexionado"
+    },
+    {
+     "char": "🤘",
+     "label": "Seña de cuernos"
+    }
+   ]
+  },
+  {
+   "id": "summer-vacation",
+   "label": "Vibra veraniega",
+   "h2": "Vibras de Verano y Vacaciones",
+   "intro": "Sol, playa y piscina: los símbolos que combinan naturalmente con las gafas de sol.",
+   "symbols": [
+    {
+     "char": "☀️",
+     "label": "Sol"
+    },
+    {
+     "char": "🏖️",
+     "label": "Playa con sombrilla"
+    },
+    {
+     "char": "🌴",
+     "label": "Palmera"
+    },
+    {
+     "char": "🍹",
+     "label": "Bebida tropical"
+    },
+    {
+     "char": "🚗",
+     "label": "Automóvil"
+    }
+   ]
+  },
+  {
+   "id": "cool-kaomoji",
+   "label": "Kaomoji",
+   "h2": "Kaomoji y Caritas de Texto Cool",
+   "intro": "Caritas de texto con lentes, desde el clásico deal with it hasta las pistolas con los dedos: pégalas donde funcione el texto plano.",
+   "symbols": [
+    {
+     "char": "(⌐■_■)",
+     "label": "Kaomoji Deal With It"
+    },
+    {
+     "char": "B-)",
+     "label": "Kaomoji carita con gafas de sol"
+    },
+    {
+     "char": "(•_•) ( •_•)>⌐■-■ (•_•)",
+     "label": "Kaomoji poniéndose las gafas"
+    },
+    {
+     "char": "( ͡° ͜ʖ ͡°)",
+     "label": "Kaomoji Lenny Face"
+    },
+    {
+     "char": "ᕙ(⇀‸↼‶)ᕗ",
+     "label": "Kaomoji flexionando los músculos"
+    },
+    {
+     "char": "(☞ﾟヮﾟ)☞",
+     "label": "Kaomoji pistolas con los dedos"
+    },
+    {
+     "char": "( ๑>ᴗ<)。*'✧",
+     "label": "Kaomoji cool con brillos"
+    }
+   ]
+  }
+ ],
+ "collections": [
+  {
+   "name": "Demasiado cool para esto",
+   "flags": [
+    "😎",
+    "🕶️"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Deal With It",
+   "flags": [
+    "😎",
+    "👍"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Modo vacaciones de verano",
+   "flags": [
+    "😎",
+    "🏖️",
+    "☀️"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Relax en la piscina",
+   "flags": [
+    "😎",
+    "🍹",
+    "🌴"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Confianza al máximo",
+   "flags": [
+    "😎",
+    "💪"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Galán tranquilo",
+   "flags": [
+    "😏",
+    "😎"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Listos para el viaje",
+   "flags": [
+    "😎",
+    "🚗",
+    "🌴"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Escuadrón cool",
+   "flags": [
+    "😎",
+    "😎",
+    "😎"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "collection_container_id": "sunglassesSetsContainer",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Sets de Combos",
+  "h2": "Sets de Combos del Emoji de Gafas de Sol",
+  "intro": "Copia un combo cool completo con un clic y pégalo directo en una publicación, un comentario o una respuesta."
+ },
+ "related": [
+  {
+   "href": "/es/library/emojis-de-caras/",
+   "title": "Emojis de Caras",
+   "desc": "Todos los emojis de caritas y sonrisas en una sola cuadrícula para explorar."
+  },
+  {
+   "href": "/es/library/caritas-felices/",
+   "title": "Emojis y Kaomoji Felices",
+   "desc": "Caras sonrientes y radiantes para publicaciones de buen humor."
+  },
+  {
+   "href": "/es/library/emoji-nerd/",
+   "title": "Emoji y Kaomoji de Nerd",
+   "desc": "Caras de nerd con lentes y combos de inteligencia con orgullo."
+  },
+  {
+   "href": "/es/library/emoji-combos/",
+   "title": "Combos de Emojis",
+   "desc": "Sets de combos de emojis listos para cada momento y estado de ánimo."
+  }
+ ]
+}

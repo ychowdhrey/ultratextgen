@@ -1,0 +1,81 @@
+{
+  "slug": "symbol-gwiazdy",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Gwiazdy: Skopiuj ★ ☆ Gwiazdki i Emoji Gwiazdy",
+  "meta_description": "Skopiuj symbol gwiazdy (★, U+2605) — pełną i konturową gwiazdkę do ocen i ulubionych, ozdobne gwiazdki wielopromienne, emoji ⭐ oraz to, dlaczego ★ to nie gwiazdka klawiaturowa. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-gwiazdy/",
+  "breadcrumb": "Symbol Gwiazdy",
+  "hero_h1": "Symbol Gwiazdy",
+  "hero_tagline": "Symbol gwiazdy (★ ☆) — pięcioramienna gwiazda stojąca za ocenami, ulubionymi i ozdobami w bio — plus ozdobne warianty gwiazd, emoji ⭐ i gwiazdka klawiaturowa, z którą nie ma nic wspólnego. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol gwiazdy (★, Unicode U+2605 BLACK STAR) i jego konturowy bliźniak (☆, U+2606 WHITE STAR) to pięcioramienne gwiazdy z bloku Miscellaneous Symbols, używane wszędzie — od ocen ★★★★☆, przez ulubione, po ozdobniki w bio. Unicode koduje też szeroką rodzinę ozdobnych gwiazdek z bloku Dingbats oraz osobne, kolorowe emoji ⭐. Pięcioramienny znak ★ to zupełnie inny znak niż zwykła gwiazdka klawiaturowa (*), która służy do przypisów, mnożenia i symboli wieloznacznych.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-gwiazdy/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-gwiazdy",
+      "label": "Gwiazda",
+      "h2": "Symbol Gwiazdy",
+      "intro": "Pełna i konturowa pięcioramienna gwiazda używana do ocen i ulubionych.",
+      "symbols": [
+        { "char": "★", "label": "Czarna Gwiazda (U+2605)" },
+        { "char": "☆", "label": "Biała Gwiazda / Kontur (U+2606)" }
+      ]
+    },
+    {
+      "id": "ozdobne-gwiazdki",
+      "label": "Ozdobne Gwiazdki",
+      "h2": "Ozdobne i Wielopromienne Gwiazdki",
+      "intro": "Ozdobne gwiazdki z bloku Dingbats do bio i podpisów.",
+      "symbols": [
+        { "char": "✦", "label": "Czarna Gwiazdka Czteroramienna (U+2726)" },
+        { "char": "✧", "label": "Biała Gwiazdka Czteroramienna (U+2727)" },
+        { "char": "✩", "label": "Gwiazdka z Konturem Akcentowanym (U+2729)" },
+        { "char": "✪", "label": "Gwiazdka w Okręgu (U+272A)" },
+        { "char": "✭", "label": "Gwiazdka z Czarnym Środkiem (U+272D)" },
+        { "char": "✴", "label": "Czarna Gwiazdka Ośmioramienna (U+2734)" }
+      ]
+    },
+    {
+      "id": "emoji-i-znaki-mylone",
+      "label": "Emoji i Znaki Mylone",
+      "h2": "Emoji Gwiazdy i Znaki Mylone z ★",
+      "intro": "Kolorowe emoji gwiazdy oraz znaki, po które ludzie sięgają zamiast ★.",
+      "symbols": [
+        { "char": "⭐", "label": "Emoji Gwiazdy (U+2B50)" },
+        { "char": "🌟", "label": "Świecąca Gwiazda" },
+        { "char": "✨", "label": "Iskierki" },
+        { "char": "*", "label": "Gwiazdka Klawiaturowa (U+002A) — To Nie Gwiazda" },
+        { "char": "✱", "label": "Pogrubiona Gwiazdka (U+2731)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole Gwiazdek",
+      "desc": "Cała kolekcja gwiazdek, iskierek i gwiazdek ocen do skopiowania w jednym miejscu."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Heart Symbol (♥)",
+      "desc": "Karciany symbol serca, który stał się znakiem miłości."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole Serca",
+      "desc": "Serduszka i symbole miłości do skopiowania — na ozdoby w bio i wiadomości."
+    }
+  ]
+}

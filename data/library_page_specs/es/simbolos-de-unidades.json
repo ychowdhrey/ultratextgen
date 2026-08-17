@@ -1,0 +1,167 @@
+{
+  "lang": "es",
+  "slug": "simbolos-de-unidades",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-de-unidades/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/unit-measurement-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-unidades/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/unit-measurement-symbols/"
+    }
+  ],
+  "title": "Símbolos de Unidades de Medida: Copiar y Pegar Ω µ Å ℧",
+  "meta_description": "Copia y pega símbolos de unidades científicas y de medida: ohmio (Ω), micro (µ), ángstrom (Å), mho (℧), cuadrados métricos y marcas de por mil.",
+  "breadcrumb": "Símbolos de Unidades de Medida",
+  "hero_h1": "Símbolos de Unidades de Medida",
+  "hero_tagline": "Ohmio, micro, ángstrom y todo el set de glifos de unidades científicas para física, química e ingeniería. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La escritura científica y de ingeniería depende de símbolos de unidades en Unicode que un teclado normal no ofrece. Esta biblioteca reúne los signos eléctricos y de física como el ohmio (Ω), el micro (µ), el mho (℧) y el ángstrom (Å); los cuadrados métricos precompuestos del bloque de compatibilidad CJK, como ㎏ y ㎜; y las marcas de temperatura y proporción que se usan en las mediciones. Haz clic en cualquier carácter para copiarlo y usarlo en reportes de laboratorio, hojas de datos o publicaciones técnicas.",
+  "sections": [
+    {
+      "id": "electrical-physics-units",
+      "label": "Física",
+      "h2": "Unidades eléctricas y de física",
+      "intro": "Signos de un solo carácter para resistencia, conductancia y medición a escala atómica.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Signo de ohmio"
+        },
+        {
+          "char": "µ",
+          "label": "Signo de micro"
+        },
+        {
+          "char": "℧",
+          "label": "Signo de ohmio invertido (mho / siemens)"
+        },
+        {
+          "char": "Å",
+          "label": "Signo de ángstrom"
+        },
+        {
+          "char": "ℏ",
+          "label": "Constante de Planck reducida"
+        },
+        {
+          "char": "ℓ",
+          "label": "L cursiva minúscula (litro)"
+        },
+        {
+          "char": "℮",
+          "label": "Signo de cantidad estimada"
+        }
+      ]
+    },
+    {
+      "id": "metric-unit-squares",
+      "label": "Cuadrados métricos",
+      "h2": "Unidades métricas del SI en cuadrado",
+      "intro": "Unidades métricas precompuestas del bloque de compatibilidad CJK que caben en una sola celda de carácter.",
+      "symbols": [
+        {
+          "char": "㎏",
+          "label": "Cuadrado kg (kilogramo)"
+        },
+        {
+          "char": "㎜",
+          "label": "Cuadrado mm (milímetro)"
+        },
+        {
+          "char": "㎝",
+          "label": "Cuadrado cm (centímetro)"
+        },
+        {
+          "char": "㎞",
+          "label": "Cuadrado km (kilómetro)"
+        },
+        {
+          "char": "㎡",
+          "label": "Cuadrado m² (metro cuadrado)"
+        },
+        {
+          "char": "㎥",
+          "label": "Cuadrado m³ (metro cúbico)"
+        },
+        {
+          "char": "㎒",
+          "label": "Cuadrado MHz (megahercio)"
+        },
+        {
+          "char": "㎓",
+          "label": "Cuadrado GHz (gigahercio)"
+        },
+        {
+          "char": "㏄",
+          "label": "Cuadrado cc (centímetro cúbico)"
+        }
+      ]
+    },
+    {
+      "id": "temperature-ratio-marks",
+      "label": "Temperatura y proporción",
+      "h2": "Marcas de temperatura y proporción",
+      "intro": "Signos de las escalas de temperatura y los caracteres de prima y proporción que se usan en la notación de medidas.",
+      "symbols": [
+        {
+          "char": "℃",
+          "label": "Grado Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Grado Fahrenheit"
+        },
+        {
+          "char": "K",
+          "label": "Signo de kelvin"
+        },
+        {
+          "char": "′",
+          "label": "Prima (pies / minutos de arco)"
+        },
+        {
+          "char": "″",
+          "label": "Doble prima (pulgadas / segundos de arco)"
+        },
+        {
+          "char": "‰",
+          "label": "Signo de por mil"
+        },
+        {
+          "char": "‱",
+          "label": "Signo de por diez mil"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos matemáticos",
+      "desc": "Operadores matemáticos, letras griegas, raíces y signos de infinito."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-grado/",
+      "title": "Símbolo de grado",
+      "desc": "El signo de grado junto con los caracteres de temperatura, ángulo y prima."
+    },
+    {
+      "href": "/es/library/simbolos-de-moneda/",
+      "title": "Símbolos de monedas",
+      "desc": "Dólar, euro, libra, yen y decenas de signos de monedas del mundo."
+    }
+  ]
+}

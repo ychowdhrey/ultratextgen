@@ -1,0 +1,92 @@
+{
+  "slug": "simbolo-de-peao",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Símbolo de Peão: Copiar e Colar ♟ ♙ — o Soldado de Infantaria Que Pode Virar Rainha",
+  "meta_description": "Copie e cole o símbolo de peão — o preto ♟ (U+265F) e o branco ♙ (U+2659) — a peça de menor valor do xadrez, batizada com o nome de um soldado de infantaria, que pode ser promovida a rainha. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/simbolo-de-peao/",
+  "breadcrumb": "Símbolo de Peão",
+  "hero_h1": "Símbolo de Peão (♟ ♙)",
+  "hero_tagline": "O peão preto ♟ e o branco ♙ do xadrez — a peça de menor valor do tabuleiro e seu soldado de infantaria, a única que pode marchar até a última fileira e virar rainha, e a palavra que o português adotou para designar quem é usado no jogo de outra pessoa. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O símbolo de peão vem em duas formas no Unicode — o preto ♟ (U+265F, BLACK CHESS PAWN) e o branco ♙ (U+2659, WHITE CHESS PAWN) — ambos parte do bloco Miscellaneous Symbols, junto com o conjunto completo de 12 peças de xadrez, de U+2654 a U+265F. A palavra «peão» remonta ao francês antigo «peon» e ao latim medieval «pedonem» (soldado de infantaria), em última instância do latim «pes», pé — o peão era literalmente a infantaria do tabuleiro. É a peça de menor valor do xadrez, valendo 1 ponto no sistema padrão, em que um cavalo ou bispo vale 3, uma torre 5 e a rainha 9. É também a única peça que se move e captura de formas diferentes: avança uma casa em linha reta — ou duas em seu primeiríssimo lance — mas só captura na diagonal, e pode ser capturado «en passant» por um peão inimigo que tenta escapulir ao seu lado. Ao alcançar a última fileira, um peão é promovido a rainha, torre, bispo ou cavalo — qualquer peça menos um rei, e não pode continuar sendo peão. Na notação, um peão é «P» (branco) ou «p» (preto) em FEN, e não carrega letra nenhuma na notação algébrica de lances, apenas a casa de destino. Já na década de 1580, «peão» tinha virado a metáfora cotidiana para alguém usado como instrumento descartável no plano de outra pessoa.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-peao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "pawn-symbol",
+      "label": "O Símbolo de Peão",
+      "h2": "O Símbolo de Peão — ♟ e ♙",
+      "intro": "Os dois glifos de peão. O ♟ preto sólido é o que a maioria das pessoas cola; o ♙ branco contornado é seu gêmeo do lado claro. Ambos são caracteres Unicode únicos, prontos para soltar em qualquer texto.",
+      "symbols": [
+        { "char": "♟", "label": "Peão de Xadrez Preto (U+265F)" },
+        { "char": "♙", "label": "Peão de Xadrez Branco (U+2659)" }
+      ]
+    },
+    {
+      "id": "black-chess-pieces",
+      "label": "Peças Pretas",
+      "h2": "Os Companheiros de Time do Peão Preto",
+      "intro": "O resto do lado preto que se alinha atrás do peão — rei, rainha, torre, bispo e cavalo, de U+265A a U+265E, no mesmo bloco Unicode.",
+      "symbols": [
+        { "char": "♚", "label": "Rei de Xadrez Preto (U+265A)" },
+        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B)" },
+        { "char": "♜", "label": "Torre de Xadrez Preta (U+265C)" },
+        { "char": "♝", "label": "Bispo de Xadrez Preto (U+265D)" },
+        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E)" }
+      ]
+    },
+    {
+      "id": "white-chess-pieces",
+      "label": "Peças Brancas",
+      "h2": "As Peças Brancas de Xadrez",
+      "intro": "O conjunto branco contornado que enfrenta o peão preto do outro lado do tabuleiro, ocupando de U+2654 a U+2658 — a rainha que ele pode um dia temer, e o rei que jamais poderá se tornar.",
+      "symbols": [
+        { "char": "♔", "label": "Rei de Xadrez Branco (U+2654)" },
+        { "char": "♕", "label": "Rainha de Xadrez Branca (U+2655)" },
+        { "char": "♖", "label": "Torre de Xadrez Branca (U+2656)" },
+        { "char": "♗", "label": "Bispo de Xadrez Branco (U+2657)" },
+        { "char": "♘", "label": "Cavalo de Xadrez Branco (U+2658)" }
+      ]
+    },
+    {
+      "id": "pawn-promotion",
+      "label": "Promoção",
+      "h2": "No que um Peão Pode Se Transformar",
+      "intro": "Um peão que alcança a extremidade oposta do tabuleiro precisa ser promovido — a uma rainha, torre, bispo ou cavalo da sua própria cor. Nunca pode virar rei, e não pode continuar sendo peão. A rainha é a escolha usual; qualquer outra é uma «sub-promoção».",
+      "symbols": [
+        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B) — a promoção usual" },
+        { "char": "♜", "label": "Torre de Xadrez Preta (U+265C)" },
+        { "char": "♝", "label": "Bispo de Xadrez Preto (U+265D)" },
+        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E) — uma sub-promoção" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos-de-xadrez/",
+      "title": "Símbolos de Xadrez",
+      "desc": "O conjunto completo de xadrez do Unicode — reis, rainhas, torres, bispos, cavalos e os dois peões — numa referência única para copiar e colar."
+    },
+    {
+      "href": "/pt/library/naipes-de-baralho/",
+      "title": "Naipes de Baralho",
+      "desc": "Espadas, copas, ouros e paus — os outros glifos de jogo, logo ao lado das peças de xadrez no bloco Miscellaneous Symbols do Unicode."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-espadas/",
+      "title": "Símbolo de Espadas",
+      "desc": "Companhia à altura de um peão que sonha em ser promovido a rainha — outro naipe do mesmo bloco de símbolos de jogo."
+    }
+  ]
+}

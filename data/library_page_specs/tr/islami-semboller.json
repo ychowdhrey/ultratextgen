@@ -1,0 +1,280 @@
+{
+  "slug": "islami-semboller",
+  "lang": "tr",
+  "title": "İslami Semboller: Kopyala Yapıştır ☪ ﷲ ﷺ",
+  "meta_description": "Kopyalanabilir İslami semboller — ay yıldız, Allah ve Besmele ligatürleri, cami ve dua emojileri, bayram tebrikleri. Kopyalamak için sembole tıkla.",
+  "breadcrumb": "İslami Semboller",
+  "hero_h1": "İslami Semboller",
+  "hero_tagline": "Ay yıldız, Arapça hürmet ligatürleri, cami ve dua karakterleri ve Ramazan tebrikleri. Anında kopyalamak için herhangi bir sembole tıkla.",
+  "intro": "Unicode'daki İslami semboller, bilinen ay yıldızın ☪ çok ötesine geçer. Arapça Sunum Biçimleri bloğu, tam hürmet ligatürlerini içerir: tek bir karakterle Allah lafzını (ﷲ), Peygamber'in adından sonra okunan salavatı (ﷺ) ve Besmele'nin tamamını (﷽) gösteren karakterler. Bu sayfa, o ligatürleri cami, Kâbe ve dua emojileriyle birlikte, Ramazan ve bayram tebrikleri, biyografiler ve inançla ilgili paylaşımlar için saygıyla derliyor. Lütfen hürmet ligatürlerini taşıdıkları hürmetle kullan.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/tr/library/islami-semboller/",
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "library_url": "https://ultratextgen.com/tr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/islamic-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/islamische-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-islamiques/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-islami/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-islamici/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/islamic-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/islam-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/islamitische-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-islamskie/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/islamskie-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/islamic-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/islami-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "star-crescent",
+      "label": "Ay yıldız",
+      "h2": "Ay Yıldız Sembolleri",
+      "intro": "Hilal ve yıldız — İslam'la ilişkilendirilen en yaygın bilinen simge.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Ay yıldız"
+        },
+        {
+          "char": "☪️",
+          "label": "Ay yıldız (emoji stili)"
+        },
+        {
+          "char": "☫",
+          "label": "Farsça sembolü (İran arması)"
+        },
+        {
+          "char": "🌙",
+          "label": "Hilal"
+        },
+        {
+          "char": "☽",
+          "label": "İlk dördün"
+        },
+        {
+          "char": "☾",
+          "label": "Son dördün"
+        },
+        {
+          "char": "⭐",
+          "label": "Yıldız"
+        },
+        {
+          "char": "✨",
+          "label": "Parıltılar"
+        }
+      ]
+    },
+    {
+      "id": "arabic-ligatures",
+      "label": "Ligatürler",
+      "h2": "Arapça Hürmet Ligatürleri",
+      "intro": "Tek başına kutsal kelimelerin ve hürmet ifadelerinin tamamını gösteren Unicode karakterleri — özenle kullan.",
+      "symbols": [
+        {
+          "char": "ﷲ",
+          "label": "Allah lafzı ligatürü"
+        },
+        {
+          "char": "ﷺ",
+          "label": "Sallallahu aleyhi vesellem ligatürü"
+        },
+        {
+          "char": "﷽",
+          "label": "Bismillahirrahmanirrahim ligatürü"
+        },
+        {
+          "char": "ﷻ",
+          "label": "Celle celaluhu ligatürü"
+        },
+        {
+          "char": "ﷴ",
+          "label": "Muhammed ligatürü"
+        },
+        {
+          "char": "۞",
+          "label": "Rub'ul hizb başlangıç işareti"
+        },
+        {
+          "char": "۝",
+          "label": "Ayet sonu işareti"
+        }
+      ]
+    },
+    {
+      "id": "mosque-worship",
+      "label": "İbadet yerleri",
+      "h2": "Cami ve Kâbe",
+      "intro": "Cami, Mekke'deki Kâbe ve genel olarak ibadet yerleri için emojiler.",
+      "symbols": [
+        {
+          "char": "🕌",
+          "label": "Cami"
+        },
+        {
+          "char": "🕋",
+          "label": "Kâbe"
+        },
+        {
+          "char": "🛐",
+          "label": "İbadet yeri"
+        }
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "label": "Dua ve namaz",
+      "h2": "Namaz ve Dua",
+      "intro": "Namaz, dua ve günlük ibadetle ilgili karakterler.",
+      "symbols": [
+        {
+          "char": "📿",
+          "label": "Tespih"
+        },
+        {
+          "char": "🤲",
+          "label": "Açık avuçlar"
+        },
+        {
+          "char": "🧎",
+          "label": "Diz çökmüş kişi"
+        },
+        {
+          "char": "🧕",
+          "label": "Başörtülü kadın"
+        }
+      ]
+    },
+    {
+      "id": "ramadan-eid",
+      "label": "Ramazan ve bayram",
+      "h2": "Ramazan ve Bayram Kutlaması",
+      "intro": "İftar davetleri, bayram paylaşımları ve aile tebrikleri için bayramlık karakterler.",
+      "symbols": [
+        {
+          "char": "🎊",
+          "label": "Konfeti topu"
+        },
+        {
+          "char": "🎉",
+          "label": "Parti patlangacı"
+        },
+        {
+          "char": "🍬",
+          "label": "Şeker"
+        },
+        {
+          "char": "🐑",
+          "label": "Koyun"
+        },
+        {
+          "char": "🌴",
+          "label": "Hurma ağacı"
+        },
+        {
+          "char": "🫖",
+          "label": "Çaydanlık"
+        }
+      ]
+    },
+    {
+      "id": "islamic-greetings",
+      "label": "Tebrikler",
+      "h2": "Ramazan ve Bayram Tebrik Kombinasyonları",
+      "intro": "Hazır, saygılı tebrikler — her düğme tüm kombinasyonu tek tıkla kopyalar.",
+      "symbols": [
+        {
+          "char": "☪️🌙 Ramadan Mubarak 🌙☪️",
+          "label": "\"Ramadan Mubarak\" tebriği"
+        },
+        {
+          "char": "🕌✨ Eid Mubarak ✨🕌",
+          "label": "\"Eid Mubarak\" tebriği"
+        },
+        {
+          "char": "🤲📿 Jumma Mubarak 📿🤲",
+          "label": "\"Jumma Mubarak\" tebriği"
+        }
+      ]
+    }
+  ],
+  "cta": "Düz metni kalın, italik, el yazısı ve 100'den fazla Unicode font stiline dönüştürmek için UltraTextGen'i kullan — ücretsiz ve anında.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Dini Semboller",
+      "desc": "Dünyanın farklı geleneklerinden inanç ve maneviyat sembolleri."
+    },
+    {
+      "href": "/tr/library/yildiz-sembolleri/",
+      "title": "Yıldız Sembolleri",
+      "desc": "Yıldızlar, yıldız işaretleri ve parıltılar."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Ay ve Gök Sembolleri",
+      "desc": "Ay evreleri, yıldızlar ve gök cisimleri."
+    },
+    {
+      "href": "/tr/symbol/baris-isareti/",
+      "title": "Barış Sembolü (☮)",
+      "desc": "Barış sembolünün tarihi ve kullanımı."
+    }
+  ]
+}

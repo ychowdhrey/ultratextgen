@@ -1,0 +1,197 @@
+{
+  "slug": "keyboard-kigou",
+  "title": "キーボード 記号 ⌘ ⌥ ⇧ 一覧 — キーの記号をコピペ | UltraTextGen",
+  "meta_description": "キーボードの記号 ⌘ ⌥ ⇧ ⌫ をコピペで。Mac の修飾キー、編集・移動キー、矢印キーをまとめて掲載。タップするとコピーされます。",
+  "breadcrumb": "キーボード 記号",
+  "hero_h1": "キーボード 記号",
+  "hero_tagline": "マニュアルで使われるキーの記号 ⌘ ⌥ ⇧ ⌫ ⇥ と矢印。そのまま貼り付けられます。",
+  "intro": "ショートカットを書くとき——手順書でも README でもメッセージでも——言葉ではなくキーの記号そのものが要ります。Unicode の文字なので画像なしでどこでも使えます。タップでコピーできます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "mac",
+      "label": "Mac の修飾キー",
+      "h2": "Mac の修飾キー",
+      "intro": "4つの修飾キーと Eject・Esc。",
+      "symbols": [
+        {
+          "char": "⌘",
+          "label": "コマンドキー"
+        },
+        {
+          "char": "⌥",
+          "label": "オプションキー"
+        },
+        {
+          "char": "⇧",
+          "label": "シフトキー"
+        },
+        {
+          "char": "⌃",
+          "label": "コントロールキー"
+        },
+        {
+          "char": "⇪",
+          "label": "Caps Lock"
+        },
+        {
+          "char": "⏏",
+          "label": "イジェクトキー"
+        },
+        {
+          "char": "⎋",
+          "label": "Esc キー"
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "label": "編集・移動のキー",
+      "h2": "編集・移動のキー",
+      "intro": "Enter、Backspace、Tab、スペース。",
+      "symbols": [
+        {
+          "char": "⏎",
+          "label": "Enter キー"
+        },
+        {
+          "char": "↵",
+          "label": "改行の矢印"
+        },
+        {
+          "char": "⌫",
+          "label": "Backspace"
+        },
+        {
+          "char": "⌦",
+          "label": "前方向削除"
+        },
+        {
+          "char": "⇥",
+          "label": "Tab キー"
+        },
+        {
+          "char": "⇤",
+          "label": "逆 Tab"
+        },
+        {
+          "char": "␣",
+          "label": "スペースキー"
+        }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "矢印キーと特殊キー",
+      "h2": "矢印キーと特殊キー",
+      "intro": "方向キーとキーボード記号。",
+      "symbols": [
+        {
+          "char": "↑",
+          "label": "上矢印キー"
+        },
+        {
+          "char": "↓",
+          "label": "下矢印キー"
+        },
+        {
+          "char": "←",
+          "label": "左矢印キー"
+        },
+        {
+          "char": "→",
+          "label": "右矢印キー"
+        },
+        {
+          "char": "⌨",
+          "label": "キーボード"
+        },
+        {
+          "char": "⎈",
+          "label": "コントロールキー（舵輪）"
+        },
+        {
+          "char": "⎙",
+          "label": "Print Screen"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "キーボード記号のよくある質問",
+  "faq": [
+    {
+      "q": "⌘ が「名所」という名前なのはなぜ？",
+      "a": "Unicode 上の名称がそうなっているためです。U+2318 は北欧の観光案内標識で名所を示す記号がもとで、Apple が1980年代にコマンドキーへ採用しました。正式名称は今も変わっていません。"
+    },
+    {
+      "q": "Windows でも使えますか？",
+      "a": "文字としてはどこでも表示されます。ただしキー自体はありません。Windows では ⌘ にあたるのが Ctrl、⌥ にあたるのが Alt です。"
+    },
+    {
+      "q": "⇧ がカラー絵文字になるのはなぜ？",
+      "a": "白い矢印を絵記号として描く環境があるためです。文字として表示したい場合は、文字のあとに異体字セレクタ U+FE0E を付けます。"
+    },
+    {
+      "q": "GitHub の README で使えますか？",
+      "a": "使えますし、そのほうが適しています。プレーンテキストのまま読め、画像を用意する必要がありません。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "キーの記号が文字として存在する理由",
+      "body": "これらの記号が Unicode にあるのは、ウェブより前に技術文書が必要としていたからです。印刷された手順書では、ショートカットを書くたびに図版を入れるわけにいきませんでした。だから ⌘ や ⌥ や ⇧ は文字そのもので、本文の一行に文字と同じように組み込めます。チャットに貼っても添付ではなく読める形で残るのは、同じ理由です。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/special-characters/",
+      "title": "特殊文字 一覧（かわいい記号コピペ）",
+      "desc": "かわいい特殊文字をジャンル別にまとめました。キラキラ・ハート・星・矢印・飾り括弧・音符まで — クリックするだけでコピーできて、インスタのプロフィールやゲームの名前にそのまま使えます。"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号（コピペ一覧）",
+      "desc": "インスタやX・TikTokの名前やプロフィールを飾る、おしゃれな特殊文字を集めました。キラキラ・ハート・花・区切り線・飾り括弧まで — クリックするだけでコピーできます。"
+    },
+    {
+      "href": "/ja/library/emoji-combos/",
+      "title": "絵文字コンボ 一覧",
+      "desc": "かわいい絵文字コンボ（組み合わせ）を、雰囲気別にまとめました。量産型・シンプル・韓国っぽ・推し活・季節・誕生日まで — クリックするだけでコンボごとコピーできて、インスタやLINE、Xにそのまま貼れます。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/keyboard-kigou/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-tastiera/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-clavier/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-na-klaviature/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/tastatur-symbole/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/keyboard-kigou/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    }
+  ]
+}

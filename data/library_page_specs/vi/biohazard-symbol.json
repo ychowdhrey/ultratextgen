@@ -1,0 +1,66 @@
+{
+  "slug": "biohazard-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Nguy Hại Sinh Học: Sao Chép & Dán ☣ — Thiết Kế «Dễ Nhớ Nhưng Vô Nghĩa» Năm 1966",
+  "meta_description": "Sao chép ký hiệu nguy hại sinh học (☣) và tìm hiểu vì sao nó được thiết kế có chủ đích năm 1966 để không mang ý nghĩa gì cả khi đứng riêng. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/biohazard-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Nguy Hại Sinh Học",
+  "hero_h1": "Ký Hiệu Nguy Hại Sinh Học",
+  "hero_tagline": "Dấu hiệu ba cánh và vòng tròn (☣) được thiết kế trong một phòng thí nghiệm của Dow Chemical năm 1966 để vừa dễ nhớ tức thì vừa hoàn toàn vô nghĩa khi đứng một mình. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu nguy hại sinh học (☣, U+2623) đánh dấu bất cứ thứ gì nguy hiểm về mặt sinh học — chất thải nhiễm khuẩn, mẫu vật truyền nhiễm, khu vực cách ly. Không giống hầu hết các dấu hiệu nguy hiểm khác, vốn tiến hóa chậm rãi từ các hình tượng cũ, ký hiệu này được xây dựng từ đầu trong một dự án thiết kế duy nhất năm 1966 với một yêu cầu khác thường: khiến nó ghi sâu vào trí nhớ của mọi người trước cả khi họ biết nó có nghĩa là gì.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/biohazard-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "biohazard-sign",
+      "label": "Nguy Hại Sinh Học",
+      "h2": "Dấu Hiệu Nguy Hại Sinh Học",
+      "intro": "Ký tự nguy hại sinh học trong Unicode, sẵn sàng để dán vào bất cứ đâu — tiểu sử, thẻ chơi game, hoặc trường hợp thật.",
+      "symbols": [
+        { "char": "☣", "label": "Dấu Hiệu Nguy Hại Sinh Học" },
+        { "char": "☣️", "label": "Emoji Nguy Hại Sinh Học" }
+      ]
+    },
+    {
+      "id": "radiological-lab-symbols",
+      "label": "Ký Hiệu Phóng Xạ & Phòng Thí Nghiệm",
+      "h2": "Ký Hiệu Nguy Hại Phóng Xạ & Phòng Thí Nghiệm",
+      "intro": "Những ký hiệu «anh em» gần gũi nhất của nguy hại sinh học — những ký hiệu thường bị nhầm hoặc đi cùng nó trong biển báo thực tế.",
+      "symbols": [
+        { "char": "☢", "label": "Dấu Hiệu Phóng Xạ" },
+        { "char": "⚡", "label": "Điện Áp Cao" },
+        { "char": "🧫", "label": "Đĩa Petri" },
+        { "char": "🧪", "label": "Ống Nghiệm" }
+      ]
+    },
+    {
+      "id": "warning-prohibition-symbols",
+      "label": "Cảnh Báo & Cấm",
+      "h2": "Biển Báo Cảnh Báo & Cấm",
+      "intro": "Biển báo nguy hiểm và «không được» tổng quát mà nguy hại sinh học thường xuất hiện cùng.",
+      "symbols": [
+        { "char": "⚠", "label": "Dấu Hiệu Cảnh Báo" },
+        { "char": "☠", "label": "Đầu Lâu Xương Chéo" },
+        { "char": "⛔", "label": "Cấm Vào" },
+        { "char": "🚫", "label": "Cấm" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/hazard-warning-symbols/", "title": "Ký Hiệu Nguy Hại & Cảnh Báo", "desc": "Biển báo độc hại, phóng xạ, điện và cảnh báo trong một trang tra cứu." },
+    { "href": "/vi/symbol/autism-symbol/", "title": "Ký Hiệu Tự Kỷ", "desc": "Một ký hiệu khác với câu chuyện thiết kế/ý nghĩa thật sự, được ghi chép đầy đủ." },
+    { "href": "/library/witchy-occult-symbols/", "title": "Ký Hiệu Phù Thủy & Huyền Bí", "desc": "Ngôi sao năm cánh, dấu giả kim và các ký hiệu khác thường dùng trong cùng tiểu sử thẩm mỹ tối màu." }
+  ]
+}

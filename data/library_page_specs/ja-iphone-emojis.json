@@ -1,0 +1,401 @@
+{
+  "slug": "iphone-emoji",
+  "title": "iPhone 絵文字 🍎 コピペ一覧 — Apple の絵文字まとめ | UltraTextGen",
+  "meta_description": "iPhone（Apple）の絵文字をコピペで。顔文字系・ハート・手のジェスチャーを一覧に。タップでコピー、Android と見た目が違う理由も解説。",
+  "breadcrumb": "iPhone 絵文字",
+  "hero_h1": "iPhone 絵文字",
+  "hero_tagline": "Apple がデザインした絵文字。顔、ハート、ハンドサイン、iPhone らしさが出るものをまとめました。",
+  "intro": "iPhone の絵文字は Android と別の文字ではありません。同じ Unicode を Apple が独自にデザインしているだけです。よく使われるものを4つのグループに分けました。タップするとコピーされるので、プロフィールや投稿にそのまま貼れます。",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "yuzler",
+      "label": "iPhone のよく使う顔の絵文字",
+      "h2": "iPhone のよく使う顔の絵文字",
+      "intro": "定番の表情を Apple のデザインで。",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "うれし泣き"
+        },
+        {
+          "char": "🥹",
+          "label": "涙をこらえる顔"
+        },
+        {
+          "char": "🥲",
+          "label": "涙ぐんだ笑顔"
+        },
+        {
+          "char": "😊",
+          "label": "にっこり笑顔"
+        },
+        {
+          "char": "🥰",
+          "label": "ハートに包まれた笑顔"
+        },
+        {
+          "char": "😍",
+          "label": "ハートの目"
+        },
+        {
+          "char": "😎",
+          "label": "サングラス顔"
+        },
+        {
+          "char": "🤔",
+          "label": "考える顔"
+        },
+        {
+          "char": "🙃",
+          "label": "逆さの顔"
+        },
+        {
+          "char": "😭",
+          "label": "大泣き"
+        },
+        {
+          "char": "🥺",
+          "label": "うるうる顔"
+        },
+        {
+          "char": "😅",
+          "label": "冷や汗の笑顔"
+        },
+        {
+          "char": "😏",
+          "label": "にやり顔"
+        },
+        {
+          "char": "😴",
+          "label": "寝ている顔"
+        },
+        {
+          "char": "🤩",
+          "label": "きらきら目"
+        },
+        {
+          "char": "🤯",
+          "label": "頭が爆発"
+        },
+        {
+          "char": "😡",
+          "label": "怒った顔"
+        },
+        {
+          "char": "🫠",
+          "label": "溶ける顔"
+        }
+      ]
+    },
+    {
+      "id": "kalpler",
+      "label": "iPhone のハート絵文字",
+      "h2": "iPhone のハート絵文字",
+      "intro": "色違いのハートをまとめて。",
+      "symbols": [
+        {
+          "char": "❤️",
+          "label": "赤いハート"
+        },
+        {
+          "char": "🩷",
+          "label": "ピンクのハート"
+        },
+        {
+          "char": "🧡",
+          "label": "オレンジのハート"
+        },
+        {
+          "char": "💛",
+          "label": "黄色いハート"
+        },
+        {
+          "char": "💚",
+          "label": "緑のハート"
+        },
+        {
+          "char": "💙",
+          "label": "青いハート"
+        },
+        {
+          "char": "🩵",
+          "label": "水色のハート"
+        },
+        {
+          "char": "💜",
+          "label": "紫のハート"
+        },
+        {
+          "char": "🖤",
+          "label": "黒いハート"
+        },
+        {
+          "char": "🩶",
+          "label": "灰色のハート"
+        },
+        {
+          "char": "🤍",
+          "label": "白いハート"
+        },
+        {
+          "char": "🤎",
+          "label": "茶色のハート"
+        },
+        {
+          "char": "💕",
+          "label": "ふたつのハート"
+        },
+        {
+          "char": "💖",
+          "label": "きらめくハート"
+        },
+        {
+          "char": "💔",
+          "label": "割れたハート"
+        },
+        {
+          "char": "❤️‍🔥",
+          "label": "燃えるハート"
+        }
+      ]
+    },
+    {
+      "id": "eller",
+      "label": "iPhone の手・ジェスチャー絵文字",
+      "h2": "iPhone の手・ジェスチャー絵文字",
+      "intro": "親指、拍手、指ハートなど。",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "いいね"
+        },
+        {
+          "char": "👎",
+          "label": "よくないね"
+        },
+        {
+          "char": "🙏",
+          "label": "合掌"
+        },
+        {
+          "char": "👏",
+          "label": "拍手"
+        },
+        {
+          "char": "🙌",
+          "label": "バンザイ"
+        },
+        {
+          "char": "🤝",
+          "label": "握手"
+        },
+        {
+          "char": "👌",
+          "label": "OK サイン"
+        },
+        {
+          "char": "🤌",
+          "label": "つまんだ指"
+        },
+        {
+          "char": "🤞",
+          "label": "指クロス"
+        },
+        {
+          "char": "🫶",
+          "label": "ハートハンド"
+        },
+        {
+          "char": "🤙",
+          "label": "電話のジェスチャー"
+        },
+        {
+          "char": "✌️",
+          "label": "ピース"
+        },
+        {
+          "char": "🤟",
+          "label": "アイラブユー"
+        },
+        {
+          "char": "👋",
+          "label": "手を振る"
+        },
+        {
+          "char": "🫰",
+          "label": "指ハート"
+        },
+        {
+          "char": "💪",
+          "label": "力こぶ"
+        }
+      ]
+    },
+    {
+      "id": "iphone",
+      "label": "いちばん「iPhone らしい」絵文字",
+      "h2": "いちばん「iPhone らしい」絵文字",
+      "intro": "見ただけで iPhone とわかるもの。",
+      "symbols": [
+        {
+          "char": "🍑",
+          "label": "もも"
+        },
+        {
+          "char": "💩",
+          "label": "うんち"
+        },
+        {
+          "char": "🔥",
+          "label": "炎"
+        },
+        {
+          "char": "✨",
+          "label": "キラキラ"
+        },
+        {
+          "char": "💯",
+          "label": "100点"
+        },
+        {
+          "char": "🗿",
+          "label": "モアイ"
+        },
+        {
+          "char": "🦋",
+          "label": "ちょう"
+        },
+        {
+          "char": "🌙",
+          "label": "三日月"
+        },
+        {
+          "char": "⭐",
+          "label": "星"
+        },
+        {
+          "char": "💀",
+          "label": "どくろ"
+        },
+        {
+          "char": "👀",
+          "label": "目"
+        },
+        {
+          "char": "🫶🏼",
+          "label": "指ハート（肌の色）"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "iPhone 絵文字のよくある質問",
+  "faq": [
+    {
+      "q": "iPhone の絵文字は Android と違うものですか？",
+      "a": "文字そのものは同じです。Unicode の同じコードを Apple と Google がそれぞれデザインしているだけで、送った内容は変わりません。ここからコピーした絵文字はどちらでも使えます。"
+    },
+    {
+      "q": "Android で見ると絵文字の見た目が変わるのはなぜ？",
+      "a": "端末が Google のデザインで表示しているからです。文字が壊れているわけでも、間違っているわけでもありません。"
+    },
+    {
+      "q": "パソコンや Android から iPhone の絵文字をコピーできますか？",
+      "a": "できます。ここでコピーされるのは画像ではなく文字なので、どの端末でも貼り付けられます。表示は相手の端末のデザインになります。"
+    },
+    {
+      "q": "絵文字が四角や「?」で表示されるのはなぜ？",
+      "a": "その端末がまだその文字を知らないためで、OS が古いときに起きます。新しく追加された絵文字でよくありますが、文字自体は正しいので更新済みの端末では表示されます。"
+    },
+    {
+      "q": "Android で iPhone の絵文字を表示するフォントはありますか？",
+      "a": "ありません。絵文字は OS の一部なので、Apple のデザインで見るには Apple の端末が必要です。そう宣伝するアプリには注意してください。"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "iPhone と Android — 同じ絵文字、違う絵",
+      "body": "iPhone から 😂 を送るとき、送っているのは画像ではなく Unicode の U+1F602 という符号です。相手の端末がそれを自分のデザイン（Apple、Google、Samsung、WhatsApp など）で描きます。だから見た目は変わっても意味は変わりません。実際に困るのは、相手の OS がその絵文字をまだ知らない場合だけで、そのときは四角が出ます。更新すれば直ります。"
+    }
+  ],
+  "related": [
+    {
+      "href": "/ja/library/emoji-combos/",
+      "title": "絵文字の組み合わせ",
+      "desc": "そのまま使える絵文字の並び。"
+    },
+    {
+      "href": "/ja/library/heart-symbols/",
+      "title": "ハート記号",
+      "desc": "ハートの絵文字と文字記号。"
+    },
+    {
+      "href": "/ja/library/kaomoji/",
+      "title": "顔文字",
+      "desc": "テキストで作る顔の一覧。"
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ja/library/iphone-emoji/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "ja",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/emoji-iphone/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/iphone-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-iphone/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/emodzi-ayfon/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/iphone-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/iphone-emojis/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/emojis-iphone/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/emoji-iphone/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-iphone/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/emoji-iphone/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/iphone-emoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/iphone-emojis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/iphone-emojis/"
+    }
+  ]
+}

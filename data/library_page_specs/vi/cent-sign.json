@@ -1,0 +1,65 @@
+{
+  "slug": "cent-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Cent: Sao Chép & Dán ¢ Ký Hiệu Tiền Tệ",
+  "meta_description": "Sao chép ký hiệu cent (¢) — vì sao nó vắng mặt trên hầu hết bàn phím, các ký hiệu dễ nhầm lẫn với nó, và cách gõ trên Windows và Mac. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/cent-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Cent",
+  "hero_h1": "Ký Hiệu Cent",
+  "hero_tagline": "Ký hiệu ¢ định giá một phần của đồng đô la — và là ký hiệu tiền tệ phổ biến duy nhất không có phím riêng trên hầu như mọi bàn phím. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu cent (¢, Unicode U+00A2) đánh dấu một đơn vị nhỏ hơn của tiền tệ — một phần trăm của đô la, như trong 99¢. Đây là một trong những ký hiệu tiền tệ cổ nhất trong khối Latin-1 Supplement của Unicode, kế thừa từ các bảng mã 8-bit cũ, chính điều đó lý giải vì sao nó dễ dàng gõ được bằng mã Alt dù gần như không bàn phím nào dành riêng cho nó một phím như $.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cent-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/cent-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cent-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "cent-sign",
+      "label": "Cent",
+      "h2": "Ký Hiệu Cent",
+      "intro": "Ký hiệu cent Unicode chính xác, sẵn sàng để dán sau một con số.",
+      "symbols": [
+        { "char": "¢", "label": "Ký Hiệu Cent" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Các Ký Hiệu Thường Bị Nhầm Với Cent",
+      "intro": "Những ký hiệu này thường bị dùng thay cho ¢ trong thực tế — mỗi cái là một ký tự riêng biệt với ý nghĩa riêng.",
+      "symbols": [
+        { "char": "₵", "label": "Ký Hiệu Cedi (Ghana) — Không Phải Ký Hiệu Cent" },
+        { "char": "₡", "label": "Ký Hiệu Colón (Costa Rica / El Salvador)" },
+        { "char": "¤", "label": "Ký Hiệu Tiền Tệ Chung" },
+        { "char": "c", "label": "Chữ Cái C Thường (Cách Thay Thế Phổ Biến Trên Bàn Phím)" }
+      ]
+    },
+    {
+      "id": "related-currency",
+      "label": "Ký Hiệu Tiền Tệ Liên Quan",
+      "h2": "Các Ký Hiệu Tiền Tệ Lớn Khác",
+      "intro": "Các ký hiệu tiền tệ thế giới khác thường sánh đôi cùng ¢ trong nội dung giá cả và tài chính.",
+      "symbols": [
+        { "char": "$", "label": "Ký Hiệu Đô La" },
+        { "char": "€", "label": "Ký Hiệu Euro" },
+        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
+        { "char": "¥", "label": "Ký Hiệu Yên" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
+    { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
+    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Mọi ký hiệu tiền tệ thế giới, sắp xếp theo khu vực." }
+  ]
+}

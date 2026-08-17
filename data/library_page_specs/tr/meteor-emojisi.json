@@ -1,0 +1,104 @@
+{
+  "slug": "meteor-emojisi",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Meteor Emojisi: Kopyala Yapıştır 🪋 — Comet'ten Ayrılan Unicode 18.0 Adayı",
+  "meta_description": "Meteor (🪋, U+1FA8B), Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için bir taslak aday. Yıllardır süren bir Comet görüntüleme ayrışmasını çözüyor — henüz onaylanmadı ve bugün hiçbir yazı tipi göstermiyor. Arka planı, anlamı ve durumu.",
+  "canonical": "https://ultratextgen.com/tr/symbol/meteor-emojisi/",
+  "breadcrumb": "Meteor Emojisi",
+  "hero_h1": "Meteor Emojisi",
+  "hero_tagline": "Comet'in on yıldır süren kimlik krizinden ayrılan, gökyüzünde iz bırakan bir meteor — Eylül 2026'da beklenen Unicode 18.0 ile gelecek Emoji 18.0 için taslak. Yalnızca taslak: hiçbir yazı tipi henüz göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
+  "intro": "Meteor (🪋, U+1FA8B), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş bir aday emojidir. Atmosfere giren, iz bırakan bir ateş topunu betimler — ve tam olarak mevcut Comet emojisini (☄️) ilk günden beri rahatsız eden bir satıcı görüntüleme ayrışmasını düzeltmek için var: bazı platformlar Comet'i mavi, parıldayan bir buz topu olarak çizerken, diğerleri onu çarpışmanın ortasındaki kızgın bir taş olarak yeniden tasarladı — aynı kod noktasını paylaşan gerçekten iki farklı kavram. Unicode'un kendi duyurusu bunu açıkça ortaya koydu: \"bir yıldıza dilek tutmak ile bir yok oluş düzeyi olayına tanıklık etmek tamamen farklı iki enerjidir.\" Meteor, ateş topu anlamını devralıyor, böylece Comet her yerde tutarlı bir mavi-buz tasarımına geri dönebiliyor. Hâlâ bir taslak olduğu için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda bunu göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar, muhtemelen 2027 civarında, boş bir kutu ya da yer tutucu bir glif bekle.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "meteor",
+      "label": "Meteor",
+      "h2": "Meteor Emojisi",
+      "intro": "Taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "symbols": [
+        {
+          "char": "🪋",
+          "label": "Meteor (taslak, U+1FA8B)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Farklı Olduğu Emoji",
+      "h2": "En Çok Karıştırıldığı Emoji",
+      "intro": "Meteor'un en sık kıyaslandığı ya da onunla örtüştüğü söylenen, zaten kodlanmış gökyüzü emojileri.",
+      "symbols": [
+        {
+          "char": "☄️",
+          "label": "Comet — Meteor'un ayrıldığı tasarım"
+        },
+        {
+          "char": "🌠",
+          "label": "Shooting Star"
+        },
+        {
+          "char": "⭐",
+          "label": "Star"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Diğer Taslak Adaylar",
+      "h2": "Diğer Emoji 18.0 Taslak Adayları",
+      "intro": "Meteor, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (taslak, U+1FAEB) — halk oylamasını kazandı"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (taslak, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (taslak, U+1FACC)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Hava Durumu Sembolleri",
+      "desc": "Güneş, yağmur, kar ve Comet dâhil zaten kodlanmış her gökyüzü karakteri."
+    },
+    {
+      "href": "/tr/symbol/catlayan-yuz-emojisi/",
+      "title": "Çatlayan Yüz Emojisi",
+      "desc": "Halk oylamasını kazanan Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/tursu-emojisi/",
+      "title": "Turşu Emojisi",
+      "desc": "Ertelenen bir Apple Core önerisinden devralınmış bir başka Emoji 18.0 taslak adayı."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/meteor-emojisi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

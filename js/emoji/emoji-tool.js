@@ -1065,10 +1065,10 @@
       const text = emojiOutput.textContent;
       if (!text || text === PLACEHOLDER) return;
       navigator.clipboard.writeText(text).then(() => {
-        copyOutputBtn.textContent = 'Copied!';
+        copyOutputBtn.textContent = STRINGS.copied || 'Copied!';
         copyOutputBtn.classList.add('copied');
         setTimeout(() => {
-          copyOutputBtn.textContent = 'Copy';
+          copyOutputBtn.textContent = STRINGS.copy || 'Copy';
           copyOutputBtn.classList.remove('copied');
         }, 1500);
       });
@@ -1122,7 +1122,7 @@
       const surprise = document.createElement('button');
       surprise.type = 'button';
       surprise.className = 'phrase-chip surprise';
-      surprise.textContent = '🎲 Surprise me';
+      surprise.textContent = STRINGS.surpriseMe || '🎲 Surprise me';
       surprise.addEventListener('click', () => {
         surpriseIdx = (surpriseIdx + 1) % STARTER_PHRASES.length;
         loadPhrase(STARTER_PHRASES[surpriseIdx]);

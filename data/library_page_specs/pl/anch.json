@@ -1,0 +1,79 @@
+{
+  "slug": "anch",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Anch: Skopiuj ☥ — Egipski Hieroglif „Życia” Przekształcony przez Koptów w Krzyż",
+  "meta_description": "Skopiuj anch (☥ U+2625), starożytny egipski hieroglif oznaczający „życie”, trzymany przez bogów i faraonów — oraz zapętlony krzyż, crux ansata, który stworzyli z niego wcześni koptyjscy chrześcijanie. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/anch/",
+  "breadcrumb": "Anch",
+  "hero_h1": "Symbol Anch",
+  "hero_tagline": "Anch (☥) — starożytny egipski hieroglif znaczący „życie”, później zaadaptowany przez wczesnych koptyjskich chrześcijan w formę zapętlonego krzyża zwanego crux ansata. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Anch (☥, U+2625) to starożytny egipski symbol oznaczający „życie” albo „żyć”. Był czymś więcej niż ikoną: w systemie pisma hieroglificznego był prawdziwym znakiem — skatalogowanym jako S34 na liście znaków Gardinera — zapisującym trójspółgłoskową sekwencję ꜥ-n-ḫ (anch), egipskie słowo oznaczające życie. W sztuce grobowej i świątynnej pojawia się trzymany przez bóstwa i ofiarowywany faraonom, jako gest przedstawiający dar życia i odrodzenia w zaświatach. Unicode umieścił go w bloku Miscellaneous Symbols w ramach Unicode 1.1 w 1993 roku. Dobrze udokumentowany zwrot w jego historii nastąpił w okresie koptyjskim Egiptu: gdy szerzyło się tam chrześcijaństwo, niektórzy wcześni koptyjscy chrześcijanie zaadaptowali zapętlony kształt anchu w formę krzyża chrześcijańskiego znaną jako crux ansata — po łacinie „krzyż z uchwytem”. Dziś anch krąży też w kontekstach świeckich i duchowych — jako biżuteria, w sztuce tatuażu i w ramach współczesnej praktyki kemetyckiej (odrodzonej religii starożytnego Egiptu). Ta strona relacjonuje tę historię jako udokumentowaną, bez przypisywania symbolowi żadnej współczesnej wyłączności.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ankh-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/anch/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ankh-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "anch",
+      "label": "Anch",
+      "h2": "Symbol Anch",
+      "intro": "Znaczek anch oraz formy krzyża, z którymi jego zapętlony kształt jest historycznie powiązany.",
+      "symbols": [
+        { "char": "☥", "label": "Anch (Klucz Życia)" },
+        { "char": "✝️", "label": "Krzyż Łaciński" },
+        { "char": "☦️", "label": "Krzyż Prawosławny" }
+      ]
+    },
+    {
+      "id": "symbole-egipskie",
+      "label": "Symbole Egipskie",
+      "h2": "Symbole Starożytnego Egiptu",
+      "intro": "Emoji często kojarzone ze starożytnym Egiptem i obrazami, wśród których pojawia się anch.",
+      "symbols": [
+        { "char": "🪲", "label": "Chrząszcz Skarabeusz" },
+        { "char": "🐍", "label": "Wąż" },
+        { "char": "👁️", "label": "Oko" },
+        { "char": "🐈", "label": "Kot" }
+      ]
+    },
+    {
+      "id": "symbole-duchowe-i-ochronne",
+      "label": "Duchowość i Ochrona",
+      "h2": "Symbole Duchowe i Ochronne",
+      "intro": "Inne pojedyncze symbole duchowe i ochronne, obok których anch jest często wyszukiwany.",
+      "symbols": [
+        { "char": "🧿", "label": "Amulet Nazar (Złe Oko)" },
+        { "char": "🪬", "label": "Dłoń Hamsa" },
+        { "char": "☯️", "label": "Yin Yang" },
+        { "char": "☮️", "label": "Symbol Pokoju" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/egyptian-hieroglyphs/",
+      "title": "Egyptian Hieroglyphs",
+      "desc": "Pełny system pisma hieroglificznego, do którego należy anch (znak S34)."
+    },
+    {
+      "href": "/pl/symbol/krzyz-lacinski/",
+      "title": "Symbol Krzyża",
+      "desc": "Krzyż chrześcijański, którego wczesna forma „crux ansata” wyrosła bezpośrednio z zapętlonego kształtu anchu w koptyjskim Egipcie."
+    },
+    {
+      "href": "/pl/symbol/hamsa/",
+      "title": "Symbol Hamsa",
+      "desc": "Kolejny starożytny symbol życia i ochrony, opisany jako udokumentowana historia, bez stawania po żadnej ze stron."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "theta-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Theta: Sao Chép & Dán θ Θ ϑ — «Chữ Cái Của Cái Chết» Thời Hy Lạp Cổ Đại",
+  "meta_description": "Sao chép ký hiệu theta — chữ thường θ, chữ hoa Θ, và biến thể toán học vòng hở ϑ — chữ cái mà người Athens cổ đại từng khắc lên lá phiếu để bỏ phiếu tử hình. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/theta-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Theta",
+  "hero_h1": "Ký Hiệu Theta",
+  "hero_tagline": "Chữ thường θ đánh dấu một góc trong lượng giác, chữ hoa Θ trong ký hiệu Big-Theta của độ phức tạp thuật toán, và biến thể toán học vòng hở ϑ — cùng một chữ cái mà người Athens cổ đại từng khắc lên lá phiếu để bỏ phiếu tử hình. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Theta là chữ cái thứ tám trong bảng chữ cái Hy Lạp, và ký tự viết thường θ (U+03B8, GREEK SMALL LETTER THETA) — một vòng tròn bị cắt ngang bởi một vạch ngang — mang một trong những câu chuyện đen tối nhất của mọi chữ cái. Trong thời cổ đại, theta là «chữ cái của cái chết»: nó đại diện cho θάνατος (thánatos, «cái chết»), và các bồi thẩm đoàn Athens có thể khắc nó lên lá phiếu hoặc mảnh gốm để bỏ phiếu kết án hoặc xử tử một bị cáo — một cách dùng khét tiếng đến mức nhà thơ La Mã Ennius được cho là đã gọi theta là chữ cái xui xẻo nhất trong tất cả. Dạng viết hoa Θ (U+0398) và một biến thể vòng hở riêng biệt ϑ (U+03D1, GREEK THETA SYMBOL) hoàn thiện gia đình chữ cái này — ϑ là một glyph kiểu chữ thảo được dùng trong một số cách trình bày vật lý và toán học, không phải một chữ cái riêng biệt. Ngày nay, công việc của theta hiền hòa hơn nhiều: chữ thường θ là ký hiệu chuẩn cho một góc chưa biết hoặc đã đo trong lượng giác và hình học, còn chữ hoa Θ đặt tên cho ký hiệu Big-Theta, «cận chặt» trong phân tích thuật toán mà Donald Knuth hệ thống hóa trong bài báo năm 1976 «Big Omicron and Big Omega and Big Theta». Trong hệ số đếm Hy Lạp, theta cũng mang giá trị 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/theta-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-theta-symbol",
+      "label": "Ký Hiệu Theta",
+      "h2": "Ký Hiệu Theta — θ, Θ & ϑ",
+      "intro": "Theta có ba glyph mà mọi người thực sự dán: chữ thường θ dùng hằng ngày, chữ hoa Θ, và biến thể vòng hở ϑ dành riêng cho toán học và vật lý. Một dạng thứ tư, chữ hoa có gạch ngang, chỉ tồn tại như một ký hiệu toán học.",
+      "symbols": [
+        { "char": "θ", "label": "Chữ Thường Hy Lạp Theta (U+03B8) — Ký Hiệu Góc" },
+        { "char": "Θ", "label": "Chữ Hoa Hy Lạp Theta (U+0398) — Ký Hiệu Big-Theta" },
+        { "char": "ϑ", "label": "Ký Hiệu Theta Hy Lạp (U+03D1) — Biến Thể Toán Học Vòng Hở" },
+        { "char": "ϴ", "label": "Ký Hiệu Theta Hoa Hy Lạp (U+03F4) — Biến Thể Có Gạch Ngang" }
+      ]
+    },
+    {
+      "id": "theta-in-math",
+      "label": "Toán Học & Khoa Học",
+      "h2": "Theta Trong Toán Học & Khoa Học Máy Tính",
+      "intro": "Hai công việc rất khác nhau cùng chia sẻ một chữ cái. Chữ thường θ là tên gọi quen thuộc cho một góc; chữ hoa Θ là cận chặt trong phân tích độ phức tạp, nằm giữa Big-O (cận trên) và Big-Omega (cận dưới).",
+      "symbols": [
+        { "char": "θ", "label": "Theta Thường (U+03B8) — Góc Trong Lượng Giác & Hình Học" },
+        { "char": "Θ", "label": "Theta Hoa (U+0398) — Big-Theta, Cận Chặt" },
+        { "char": "Ω", "label": "Omega Hoa (U+03A9) — Big-Omega, «Người Anh Em» Cận Dưới" },
+        { "char": "ϑ", "label": "Ký Hiệu Theta (U+03D1) — Biến Thể Dùng Trong Trình Bày Vật Lý" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Theta là chữ cái thứ 8 trong bảng chữ cái Hy Lạp. Đây là những chữ cái lân cận được tìm kiếm và sao chép nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
+        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" },
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
+        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Góc, toán tử, và các chữ cái Hy Lạp như theta lấp đầy một phương trình." },
+    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "«Người anh em» trong ký hiệu độ phức tạp của theta: Θ là cận chặt, Ω là cận dưới trong phân tích thuật toán." },
+    { "href": "/vi/symbol/delta-symbol/", "title": "Ký Hiệu Delta", "desc": "Một chữ cái Hy Lạp đơn lẻ khác với đời sống toán học sâu sắc — sự thay đổi, khác biệt và biệt thức." }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "krzyz-lacinski",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Krzyża: Skopiuj ✝ Krzyż Łaciński (Krzyż Chrześcijański)",
+  "meta_description": "Skopiuj krzyż łaciński (✝, U+271D), główny symbol chrześcijaństwa — plus krzyż prawosławny, maltański i inne, oraz to, czym różni się od sztyletu † i znaczka ✗. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/krzyz-lacinski/",
+  "breadcrumb": "Krzyż Łaciński",
+  "hero_h1": "Symbol Krzyża",
+  "hero_tagline": "Krzyż łaciński (✝) — centralny symbol chrześcijaństwa — wraz z krzyżem prawosławnym, cieniowanym i maltańskim, z którymi tworzy rodzinę, oraz sztyletem † i znaczkami X, z którymi bywa mylony. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol krzyża (✝, Unicode U+271D LATIN CROSS) to najbardziej rozpoznawalny symbol chrześcijaństwa: pionowy krzyż z dłuższym dolnym ramieniem, kształt tradycyjnie kojarzony z ukrzyżowaniem. Unicode umieszcza go w bloku Dingbats obok rodziny powiązanych krzyży, a z selektorem wariantu emoji wyświetla się jako krzyż ✝️. To inny znak niż znaczki mnożenia i skreślenia X (✕ ✗) oraz typograficzny sztylet (†), mimo że tych czterech znaków często używa się zamiennie.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cross-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/krzyz-lacinski/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cross-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "krzyz-lacinski",
+      "label": "Krzyż Łaciński",
+      "h2": "Symbol Krzyża Łacińskiego",
+      "intro": "Krzyż łaciński w zwykłym tekście i jego kolorowa wersja emoji.",
+      "symbols": [
+        { "char": "✝", "label": "Krzyż Łaciński (U+271D)" },
+        { "char": "✝️", "label": "Emoji Krzyża Łacińskiego" }
+      ]
+    },
+    {
+      "id": "krzyze-chrzescijanskie",
+      "label": "Krzyże Chrześcijańskie",
+      "h2": "Inne Krzyże Chrześcijańskie i Liturgiczne",
+      "intro": "Warianty krzyża używane w różnych tradycjach chrześcijańskich — każdy to osobny znak Unicode.",
+      "symbols": [
+        { "char": "☦", "label": "Krzyż Prawosławny (U+2626)" },
+        { "char": "✞", "label": "Biały Krzyż Łaciński z Cieniem (U+271E)" },
+        { "char": "✟", "label": "Krzyż Łaciński Konturowy (U+271F)" },
+        { "char": "✠", "label": "Krzyż Maltański (U+2720)" },
+        { "char": "♰", "label": "Krzyż Zachodniosyryjski (U+2670)" },
+        { "char": "♱", "label": "Krzyż Wschodniosyryjski (U+2671)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone-z-krzyzem",
+      "label": "To Nie Krzyż Łaciński",
+      "h2": "Znaki Mylone z Krzyżem",
+      "intro": "Te znaki wyglądają jak krzyż, ale niosą niepowiązane znaczenia — żaden z nich nie jest krzyżem chrześcijańskim.",
+      "symbols": [
+        { "char": "†", "label": "Sztylet (U+2020) — Przypisy i Osoby Zmarłe" },
+        { "char": "‡", "label": "Podwójny Sztylet (U+2021)" },
+        { "char": "✕", "label": "Znaczek Mnożenia X (U+2715)" },
+        { "char": "✗", "label": "Znaczek Głosowania X (U+2717) — Odrzucenie" },
+        { "char": "⛨", "label": "Czarny Krzyż na Tarczy (U+26E8)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol (☮)",
+      "desc": "Projekt Geralda Holtoma z 1958 roku i powiązane symbole dobrej woli."
+    },
+    {
+      "href": "/pl/symbol/khanda/",
+      "title": "Symbol Khanda (☬)",
+      "desc": "Sikhijski emblemat, z tej samej biblioteki symboli religijnych."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary z każdej większej światowej religii w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/krzyz-prawoslawny/",
+      "title": "Krzyż Prawosławny",
+      "desc": "Trzybelkowy krzyż i to, co naprawdę oznaczają jego dodatkowe poprzeczki."
+    }
+  ]
+}

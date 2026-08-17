@@ -31,15 +31,44 @@
      limit        max glyphs the name field accepts
      min          min glyphs
      weighted     true = decorative Unicode counts as 2 glyphs (Free Fire)
+     weightUncertain
+                  true = the field is BELIEVED to count something other than
+                  glyphs, but the rule is not sourced. `effective` stays at 1x
+                  (we never assert an unverified limit), and instead a name that
+                  fits at 1x but would NOT fit counting UTF-16 code units raises
+                  a "weight-uncertain" warning. Use this instead of guessing at
+                  `weighted` when the evidence is a pile of player reports rather
+                  than a document.
      asciiPattern set = the field only accepts this charset (username-locked
                   games); everything else is rejected outright
      noSpace      true = a plain space is rejected (invisible chars instead)
      field        which name this rule describes: 'display' or 'username'
      ============================ */
   const RULES = {
-    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display" },
+    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display", reportedBlocked: "ㅤ" },
     ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
-    pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, noSpace: true, field: "display" },
+    // Krafton publishes NO name rules for PUBG Mobile. The help centre article
+    // ("How do I change my in-game nickname?", unchanged since at least 2022)
+    // documents only the Rename Card flow — level-10 Growth Mission, Shop ->
+    // Cards, one use per day — and says nothing about length, minimum, charset,
+    // price, or what happens when a name is rejected. The 14 here comes from the
+    // client's own error string, "Name cannot exceed 14 characters", quoted with
+    // identical wording across independent community sources and with its own
+    // troubleshooting-video genre. That is strong evidence of a real client
+    // string, but it is not a document — treat it as such.
+    // Beware: the "4-16 characters, letters/digits/hyphen/underscore only" rule
+    // circulating for this game is Krafton's PUBG: BATTLEGROUNDS (PC) policy,
+    // laundered into mobile articles. It is wrong here.
+    // weightUncertain: players repeatedly report the 14-character error firing
+    // on names that LOOK shorter than 14. That is consistent with the field
+    // counting UTF-16 code units rather than glyphs — every classic decoration
+    // (꧁ ꧂ ༒ 彡 乡 ★ ツ) and every small-caps letter is 1 unit, but every
+    // mathematical-alphanumeric letter (bold/script/fraktur) is 2, so a fully
+    // bold name would cap at 7 visible letters rather than 14. Nobody documents
+    // the counting behaviour, so we do NOT assert it: `effective` stays at 1x
+    // and we only warn inside the ambiguous band. One controlled in-client test
+    // would settle it.
+    pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, weightUncertain: true, noSpace: true, field: "display" },
     coc: { label: "Clash of Clans", limit: 15, min: 2, weighted: false, noSpace: false, field: "display" },
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
@@ -49,8 +78,194 @@
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
     robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display" },
-    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ }
+    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ },
+    // Stumble Guys' rename screen enforces 4-12 characters (Stumble Guys Help
+    // Center) and its official UI form-validates against symbol characters —
+    // but players widely report styled Unicode letters (Cyrillic/Greek/small
+    // caps look-alikes) and common decorative symbols (crowns, stars, arrows)
+    // surviving in practice, the same "may not always stick" profile as
+    // Fortnite/Valorant, hence strict rather than an outright block.
+    stumbleguys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display", strict: true },
+    // Xbox Gamertags are plain text only — styled Unicode has never been
+    // accepted here, at any character count. As of Microsoft's July 2026
+    // console update, a gamertag that is unique, available, and Latin-only
+    // can run up to 15 characters, but any name needing the auto-assigned
+    // #1234 suffix (i.e. not unique) or written in a non-Latin script stays
+    // capped at the old 12-character limit. We validate against the
+    // guaranteed 12-char floor rather than the conditional 15, since
+    // uniqueness can't be known until the player actually tries to claim
+    // the name — see /updates/xbox-gamertag-15-character-limit/.
+    xbox: { label: "Xbox Gamertag", limit: 12, min: 1, weighted: false, noSpace: false, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9]*(?: [A-Za-z0-9]+)*$/ },
+    // PSN Online IDs are plain ASCII only (no styled Unicode, ever): 3-16
+    // characters, must start with a letter, then letters/numbers/hyphens/
+    // underscores only (Sony's own account-signup documentation).
+    psn: { label: "PSN Online ID", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9_-]*$/ },
+    // Clash Royale names: 2-15 characters (Supercell Support). Unlike Free
+    // Fire/Clash of Clans, Supercell's own article warns that symbols and
+    // non-Latin characters "may not be displayed properly" and can make a
+    // name appear invisible to other players — so we flag decorative
+    // Unicode as a warning here (strict) rather than treating it as safe.
+    clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // YouTube channel names (display names) accept Unicode freely — styled
+    // letters, symbols and emoji all save. Google's own help pages document
+    // the rename throttle ("You can change your channel name twice within a
+    // 14-day period", support.google.com/youtube/answer/2657964) but publish
+    // NO character maximum for the name field; the 50 here is the widely
+    // reported client-side limit and matches the field's observed maxlength,
+    // not a Google document — treat it like PUBG's 14 (real client behaviour,
+    // no official source). One caveat worth knowing that this engine cannot
+    // encode: since 2022 YouTube limits names spelled ENTIRELY in lookalike
+    // special characters (its own example: "¥ouⓉube") as an impersonation/
+    // spam measure — decorated-but-readable names pass, all-symbol names can
+    // be rejected. The page copy owns that nuance.
+    youtube: { label: "YouTube (channel name)", limit: 50, min: 1, weighted: false, noSpace: false, field: "display" },
+    // YouTube @handles are the opposite field: 3-30 characters, letters and
+    // numbers plus underscores, hyphens, periods and Latin middle dots (·) —
+    // none of those four at the start or end — unique across YouTube, and no
+    // decorative Unicode ever (support.google.com/youtube/answer/11585688).
+    // Google also allows letters from ~75 non-Latin scripts with SHORTER
+    // script-specific limits (Han/Hangul 1-10, kana/Ethiopic 2-20); this
+    // ASCII pattern validates the Latin path only, so the page's fail copy
+    // must say "plain letters and numbers" rather than claim non-Latin
+    // handles are impossible.
+    youtubeHandle: { label: "YouTube @handle", limit: 30, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9](?:[A-Za-z0-9._·-]*[A-Za-z0-9])?$/ },
+    // VRChat Display Names are 4-15 characters and can only be changed once
+    // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
+    // my name" help article — by far the longest rename cooldown of any rule
+    // in this table, which is exactly why checking before pasting matters here.
+    // Charset: VRChat publishes no allowed-character list, and its own
+    // community forum has an open, unanswered request for one; users there
+    // report that most Unicode works but "not all unicodes do". So this is
+    // strict (decorative Unicode flagged as a warning) rather than safe or
+    // blocked. Deliberately NOT weighted: the widely-repeated claim that some
+    // Unicode counts as two characters here could not be verified against
+    // VRChat documentation or any staff response, so it is not encoded.
+    vrchat: { label: "VRChat (display name)", limit: 15, min: 4, weighted: false, noSpace: false, field: "display", strict: true }
   };
+
+  /* ============================
+     Clan/guild TAG fields
+
+     A clan tag field is NOT the name field, and treating them as one is the
+     single most common error in this space — every competing generator we
+     looked at offers decorated `꧁TAG꧂` output "for PUBG", where the actual
+     clan tag field is ASCII-only and four characters long.
+
+     kind tells the player which situation they are in, because it decides
+     whether decoration is even legal:
+       "dedicated"  the game has its own tag field with its own rules; the tag
+                    is stored separately and prefixed onto your name by the game
+       "folded"     no tag field exists; players put the tag inside their own
+                    display name, so it spends the display-name budget
+       "guild"      there is a clan/guild NAME but member names are not prefixed
+                    with a tag, so there is nothing to budget against
+       "identifier" "clan tag" here means an auto-generated #ABC123 code used to
+                    FIND a clan — you cannot choose it (Supercell games)
+       "unknown"    the field exists but we have no source we trust. We say so
+                    rather than publishing a number.
+
+     Only entries with a first-party or wiki-grade `source` carry a `limit`.
+     Where sources disagree (Call of Duty: 4 vs 5 vs 6 across secondary
+     articles, with the authoritative wiki Cloudflare-blocked) we ship
+     kind:"unknown" and no number. Being confidently wrong is worse than being
+     silent on a page whose entire pitch is "check before you spend 990
+     G-COIN".
+     ============================ */
+  const TAG_FIELDS = {
+    pubgPc: {
+      label: "PUBG: BATTLEGROUNDS (PC/Console)", kind: "dedicated",
+      limit: 4, min: 2, noSpace: true,
+      asciiPattern: /^[A-Za-z0-9][A-Za-z0-9_-]*$/,
+      minAlnum: 2, cost: "990 G-COIN",
+      source: "PUBG Wiki — Clan System"
+    },
+    // PUBG MOBILE is a different product with a different clan system, and
+    // Krafton documents neither its tag length nor its charset. Do NOT copy
+    // the PC numbers above into it — that laundering is exactly the error
+    // warned about on RULES.pubg.
+    pubgMobile: { label: "PUBG Mobile", kind: "unknown" },
+    codm: { label: "Call of Duty (Warzone / MW / Mobile)", kind: "unknown" },
+    // Free Fire guilds have a guild NAME; members are not given a tag prefix,
+    // so players who want one fold it into their own nickname instead.
+    ff: { label: "Free Fire", kind: "guild" },
+    // MLBB squads carry a shortname, but the only length rule we could find
+    // describes a UTF-8 BYTE budget, not a character count, from a secondary
+    // source. Not enough to publish a number against.
+    ml: { label: "Mobile Legends", kind: "unknown" },
+    fortnite: { label: "Fortnite", kind: "folded", nameRule: "fortnite" },
+    // Valorant's Riot ID does end in #TAG, but that tagline is an account
+    // discriminator, not a clan tag — you cannot share it with your team.
+    valorant: {
+      label: "Valorant", kind: "folded", nameRule: "valorant",
+      note: "The #TAG in a Riot ID is an account discriminator, not a clan tag."
+    },
+    roblox: { label: "Roblox", kind: "folded", nameRule: "robloxDisplay" },
+    coc: { label: "Clash of Clans", kind: "identifier" },
+    clashroyale: { label: "Clash Royale", kind: "identifier" },
+    discord: { label: "Discord", kind: "folded", nameRule: "discord" }
+  };
+
+  /* Validate a clan tag against a game's TAG field.
+     Returns { kind, label, ok, level, issues, limit, glyphs, ... } — level is
+     "ok" | "warn" | "fail" | "n/a", where "n/a" means the question does not
+     apply to that game (identifier/guild) or we have no sourced rule. */
+  function analyzeTag(str, gameId) {
+    const f = TAG_FIELDS[gameId];
+    const tag = str || "";
+    const chars = Array.from(tag);
+    const out = {
+      gameId: gameId, label: f ? f.label : "", kind: f ? f.kind : "unknown",
+      glyphs: chars.length, issues: [], limit: null,
+      cost: (f && f.cost) || null, note: (f && f.note) || null,
+      source: (f && f.source) || null
+    };
+    if (!f || f.kind === "unknown" || f.kind === "identifier" || f.kind === "guild") {
+      out.level = "n/a";
+      out.ok = null;
+      return out;
+    }
+
+    if (f.kind === "folded") {
+      // No tag field: the tag is spent out of the display-name budget, so the
+      // real question is how much of the name is left. analyze() owns that.
+      const nameRule = RULES[f.nameRule];
+      out.limit = nameRule ? nameRule.limit : null;
+      out.level = "n/a";
+      out.ok = null;
+      return out;
+    }
+
+    // kind === "dedicated": a real, sourced ruleset.
+    out.limit = f.limit || null;
+    if (f.limit && chars.length > f.limit) out.issues.push("too-long");
+    if (f.min && chars.length && chars.length < f.min) out.issues.push("too-short");
+    if (f.noSpace && /\s/.test(tag)) out.issues.push("space");
+    if (f.asciiPattern && tag && !f.asciiPattern.test(tag)) out.issues.push("charset");
+    if (f.minAlnum) {
+      const alnum = (tag.match(/[A-Za-z0-9]/g) || []).length;
+      if (tag && alnum < f.minAlnum) out.issues.push("min-alnum");
+    }
+    out.level = out.issues.length ? "fail" : "ok";
+    out.ok = !out.issues.length;
+    return out;
+  }
+
+  /* How many characters are left for the player's own name once the tag is
+     folded in. Only meaningful for kind:"folded" (and for anyone who prefixes
+     a tag by hand). Returns null when we have no sourced name limit. */
+  function tagBudget(composedTag, gameId, separator) {
+    const f = TAG_FIELDS[gameId];
+    const ruleId = (f && f.nameRule) || gameId;
+    const rule = RULES[ruleId];
+    if (!rule || !rule.limit) return null;
+    const spent = Array.from(composedTag || "").length
+      + Array.from(separator || "").length;
+    return {
+      label: rule.label, limit: rule.limit, spent: spent,
+      left: rule.limit - spent, noSpace: !!rule.noSpace,
+      asciiOnly: !!rule.asciiPattern
+    };
+  }
 
   /* ============================
      Character classification
@@ -72,7 +287,12 @@
     "‹›«»❰❱❬❭❮❯" + // quotes/ornate brackets
     "™®©∞×÷✖❌" + // ™ ® © ∞ ×
     "☀☁☂☔⛱✈✻✼☘❤" + // ☀ ☁ ☂ ☔ ⛱ payung set
-    "᲼ㅤ​⠀" + // invisible fillers (ㅤ U+3164, braille blank, ZWSP)
+    // Invisible fillers. "Safe" here means "the field accepts the codepoint",
+    // NOT "every game still accepts it" — a game can start rejecting one
+    // without anything else changing. Per-game exceptions live in RULES'
+    // `reportedBlocked` (see Free Fire and U+3164), which is checked before
+    // this table so a name the game will refuse can't come back "safe".
+    "᲼ㅤ​⠀" + // ㅤ U+3164 Hangul Filler, braille blank U+2800, ZWSP
     "■□▲△▼▽●○◆◇▀▄︻︼" + // geometry / ▄▀ / ︻︼ sniper art
     "一丶丿"; // stroke marks
 
@@ -155,6 +375,12 @@
     // ch may be a multi-codepoint grapheme (base + combining marks) — classify
     // by its first codepoint, same base that carries the visible glyph.
     const base = Array.from(ch)[0] || ch;
+    // Checked before SAFE_SYMBOLS: a character can be structurally valid and
+    // still be refused by one specific game. Warn rather than fail — the
+    // reports are consistent but we have no in-game confirmation, and saying
+    // "this may be refused" is the honest claim. Saying nothing is not: a
+    // rename is paid, so a false all-clear costs the player real money.
+    if (rule.reportedBlocked && rule.reportedBlocked.indexOf(base) !== -1) return "warn";
     const cls = classifyChar(base);
     if (cls === "ascii" || cls === "space") return "pass";
     if (cls === "unknown") return "warn"; // may render as a box, client-dependent
@@ -188,6 +414,10 @@
 
     const glyphs = chars.length;
     const effective = rule.weighted ? weightedLen : glyphs;
+    // JS strings are UTF-16, so str.length IS the code-unit count — the thing a
+    // field counts when it counts "characters" the naive way. Only used by
+    // weightUncertain; never fed into `effective`.
+    const utf16 = (str || "").length;
     const issues = [];
 
     if (!glyphs) issues.push("empty");
@@ -199,8 +429,16 @@
       const u = str.split("_").length - 1;
       if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
     }
+    // Fits counting glyphs, would not fit counting UTF-16 units. We cannot say
+    // which the game does, so we say exactly that rather than picking one.
+    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf16 > rule.limit) {
+      issues.push("weight-uncertain");
+    }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
     if (rule.strict && (safe + styled + emoji + unknown) > 0) issues.push("strict-symbols");
+    if (rule.reportedBlocked && graphemes(str || "").some(function (ch) {
+      return rule.reportedBlocked.indexOf(Array.from(ch)[0] || ch) !== -1;
+    })) issues.push("reported-blocked");
 
     // Level: fail = the game will reject it; warn = may render as boxes
     // or be rejected on some clients; ok = clears every structural rule.
@@ -212,7 +450,12 @@
       issues.indexOf("space") !== -1 ||
       issues.indexOf("too-short") !== -1
     ) level = "fail";
-    else if (issues.indexOf("unknown-chars") !== -1 || issues.indexOf("strict-symbols") !== -1) level = "warn";
+    else if (
+      issues.indexOf("unknown-chars") !== -1 ||
+      issues.indexOf("strict-symbols") !== -1 ||
+      issues.indexOf("reported-blocked") !== -1 ||
+      issues.indexOf("weight-uncertain") !== -1
+    ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
 
     // Per-glyph breakdown for the compatibility panel — grapheme clusters,
@@ -226,6 +469,7 @@
       rule: rule,
       glyphs: glyphs,
       effective: effective,
+      utf16: utf16,
       limit: rule.limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,
@@ -246,7 +490,8 @@
          inputLabel, placeholder, counterOver,
          ok, warn, fail, empty,               // badge labels
          issue: { 'over-limit': …, space: …, charset: …, underscore: …,
-                  'unknown-chars': …, 'strict-symbols': …, 'too-short': … },
+                  'unknown-chars': …, 'strict-symbols': …, 'too-short': …,
+                  'weight-uncertain': … },
          weightNote                            // e.g. "symbols count as 2"
        }
      }
@@ -264,11 +509,18 @@
     if (!mount) return;
 
     const text = cfg.text || {};
-    const issueText = text.issue || {};
+    // A page supplies its own translated issue strings. `reported-blocked` is
+    // newer than most pages' config blocks, so it falls back to English rather
+    // than rendering nothing — an untranslated warning still tells the player
+    // their rename may fail, which silence does not. Pages should override it.
+    const issueText = Object.assign(
+      { "reported-blocked": "Players report this game no longer accepts one of these characters — try another if the rename is refused." },
+      text.issue || {}
+    );
     const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
     if (!games.length) return;
 
-    const state = { game: games[0], dirty: false };
+    const state = { game: games[0], dirty: false, lastLevel: null, priming: true };
 
     mount.innerHTML = "";
     mount.classList.add("gr-checker");
@@ -287,6 +539,10 @@
         const tab = e.target.closest(".gr-tab");
         if (!tab) return;
         state.game = tab.getAttribute("data-game");
+        // Same name against a different game's rules is a genuinely new check
+        // (a name that fits Discord's 32 may fail Free Fire's weighted 12), so
+        // clear the last verdict rather than suppressing the event as a repeat.
+        state.lastLevel = null;
         render();
       });
       mount.appendChild(tabsWrap);
@@ -393,14 +649,53 @@
           charRow.appendChild(tile);
         });
       }
+
+      reportVerdict(report);
+    }
+
+    /* Completion event. render() runs on every keystroke, so this fires only
+       when the verdict LEVEL actually changes (empty -> ok -> warn -> fail),
+       not per character — a name being typed produces at most a couple of
+       events, not one per key. The empty state is never reported: it is the
+       initial condition, not an outcome the user reached.
+
+       What this is for: the checker is the site's main product-completion
+       surface on the game-name pages and it has never emitted a single event,
+       so nothing downstream can tell whether it is used, whether it catches
+       real problems, or whether it is ignored furniture. `verdict` is the
+       answer the user actually got; `over_limit` separates "too long" from
+       "unsupported characters", which are different product failures with
+       different fixes. */
+    function reportVerdict(report) {
+      const level = report.level;
+      if (!level || level === "empty") return;
+      // The first render happens at init, against whatever the generator was
+      // pre-filled with — reporting it would count page loads as checks. Record
+      // the level so a later real change still registers as a transition, but
+      // don't emit for it.
+      if (state.priming) { state.lastLevel = level; return; }
+      if (level === state.lastLevel) return;
+      state.lastLevel = level;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "name_check",
+        check_game: state.game,
+        check_verdict: level,
+        check_over_limit: !!(report.limit && report.effective > report.limit)
+      });
     }
 
     render();
+    state.priming = false;
   }
 
   ns.gameRules = {
     RULES: RULES,
+    TAG_FIELDS: TAG_FIELDS,
     analyze: analyze,
+    analyzeTag: analyzeTag,
+    tagBudget: tagBudget,
     initChecker: initChecker,
     classifyChar: classifyChar,
     graphemes: graphemes,

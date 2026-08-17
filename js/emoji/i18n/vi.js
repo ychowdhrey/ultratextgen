@@ -732,6 +732,9 @@
     stopWords: STOPPWOERTER,
     strings: {
       resultPlaceholder: "Bản dịch emoji của bạn sẽ hiện ở đây.",
+      copied: "Đã sao chép!",
+      copy: "Sao chép",
+      surpriseMe: "🎲 Cho tôi bất ngờ",
       inputPlaceholders: {
         default: "Nhập câu của bạn vào đây…",
         decode: "Dán emoji vào đây để giải mã…",

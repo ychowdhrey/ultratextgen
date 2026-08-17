@@ -693,7 +693,34 @@ function renderMap(text, style) {
     // splitGraphemes so a base kana + any trailing combining mark is treated
     // as one unit rather than substituted mid-cluster.
     'gal-moji': text =>
-      splitGraphemes(text).map(c => galMojiMap[c] || c).join('')
+      splitGraphemes(text).map(c => galMojiMap[c] || c).join(''),
+
+    // Font Cuping ("cute typing") — Indonesian RP/Telegram phonetic respelling.
+    // A handful of everyday words have a community-fixed cute form that the
+    // general r→l / s→c / drop-final-h formula doesn't derive cleanly (e.g.
+    // "marah" is attested as "mayah", not the rule's "mala"), so those are
+    // looked up first; everything else falls back to the general formula.
+    'cuping': text => {
+      const CUPING_LEXICON = {
+        jangan: 'janan', boleh: 'bole', sering: 'celing',
+        marah: 'mayah', sendiri: 'cendili', lucu: 'luwssyu'
+      };
+      return text.split(/(\s+)/).map(token => {
+        if (!token.trim()) return token;
+        const m = token.match(/^(\p{L}+)(.*)$/su);
+        if (!m) return token;
+        const [, word, rest] = m;
+        const lower = word.toLowerCase();
+        let out = CUPING_LEXICON[lower] ||
+          lower.replace(/r/g, 'l').replace(/s/g, 'c').replace(/h$/, '');
+        if (word.length > 1 && word === word.toUpperCase()) {
+          out = out.toUpperCase();
+        } else if (/^\p{Lu}/u.test(word)) {
+          out = out.charAt(0).toUpperCase() + out.slice(1);
+        }
+        return out + rest;
+      }).join('');
+    }
   };
 
   /* -----------------------------

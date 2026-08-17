@@ -1,0 +1,88 @@
+{
+  "slug": "symbol-psi",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Psi: Skopiuj ψ Ψ — Kwantowa Funkcja Falowa Schrödingera i Ikona Psychologii",
+  "meta_description": "Skopiuj symbol psi — małe ψ (U+03C8) i wielkie Ψ (U+03A8), literę oznaczającą kwantową funkcję falową wybraną przez Schrödingera w 1926 roku oraz glif trójzębu przyjęty przez psychologię od słowa „psyche”. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-psi/",
+  "breadcrumb": "Symbol Psi",
+  "hero_h1": "Symbol Psi",
+  "hero_tagline": "Małe ψ i wielkie Ψ — litera, którą Erwin Schrödinger wybrał na oznaczenie funkcji falowej, oraz glif w kształcie trójzębu używany na świecie jako ikona psychologii i psychiatrii. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Mały glif psi, ψ (U+03C8, GREEK SMALL LETTER PSI), i jego wielka forma, Ψ (U+03A8), tworzą 23. i przedostatnią literę greckiego alfabetu — tę tuż przed omegą, wymawianą jak /ps/ w angielskim „lapse”, wartą 700 w greckim systemie liczbowym. Oba punkty kodowe trafiły do Unicode w wersji 1.1, jeszcze w 1993 roku. To, co sprawia, że psi wybija się ponad inne greckie litery, to jej miejsce we współczesnej nauce: na początku 1926 roku Erwin Schrödinger wybrał ψ na oznaczenie funkcji falowej w swojej nowej mechanice falowej, i tak już zostało — dziś wielkie Ψ zwykle nazywa pełną, zależną od czasu funkcję falową układu, a małe ψ oznacza funkcję stacjonarną albo przestrzenną. Psi to też niemal uniwersalna ikona psychologii i psychiatrii, i to z udokumentowanego powodu: greckie słowo „psyche” (ψυχή, „umysł” albo „dusza”) zaczyna się właśnie od tej litery. Często powtarzana opowieść, jakoby jej trójzębny kształt zapożyczono z diabelskich wideł, to mit — trójramienna sylwetka przypominająca kamerton to po prostu sam kształt litery, ten sam, który Indiana University rejestruje jako swoje logo trójzębu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/psi-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-psi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/psi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-psi",
+      "label": "Symbol Psi",
+      "h2": "Symbol Psi — ψ i Ψ",
+      "intro": "Sama grecka litera, w obu wersjach. Małe ψ i wielkie Ψ to dwie formy, po które sięga każdy — wklej tę, której potrzebuje Twoje równanie albo logo.",
+      "symbols": [
+        { "char": "ψ", "label": "Mała Grecka Litera Psi (U+03C8)" },
+        { "char": "Ψ", "label": "Wielka Grecka Litera Psi (U+03A8)" }
+      ]
+    },
+    {
+      "id": "psi-w-mechanice-kwantowej",
+      "label": "Kwanty i Nauka",
+      "h2": "Psi w Mechanice Kwantowej",
+      "intro": "Charakterystyczna rola psi: funkcja falowa Schrödingera. Zgodnie z konwencją wielkie Ψ to pełna, zależna od czasu funkcja falowa układu, a małe ψ to jej stacjonarny, niezależny od czasu wariant — często w parze z φ (fi) dla stanu towarzyszącego.",
+      "symbols": [
+        { "char": "Ψ", "label": "Wielkie Psi (U+03A8) — Funkcja Falowa Zależna od Czasu" },
+        { "char": "ψ", "label": "Małe Psi (U+03C8) — Funkcja Falowa Stacjonarna" },
+        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6) — Stan Towarzyszący Często Łączony z ψ" }
+      ]
+    },
+    {
+      "id": "psi-w-psychologii",
+      "label": "Psychologia i Trójząb",
+      "h2": "Psi w Psychologii i Kształt Trójzębu",
+      "intro": "Wielkie Ψ to globalny znak psychologii, psychiatrii i parapsychologii — wybrany, bo „psyche” zaczyna się od psi, a nie z powodu legendy o diabelskich widłach. Jej trójramienna sylwetka to powód, dla którego kojarzy się z trójzębem, bronią Posejdona.",
+      "symbols": [
+        { "char": "Ψ", "label": "Wielkie Psi (U+03A8) — Ikona Psychologii i Psychiatrii" },
+        { "char": "ψ", "label": "Małe Psi (U+03C8) — Litera „Psyche”" },
+        { "char": "🔱", "label": "Emblemat Trójzębu (U+1F531) — Trójząb Posejdona, Kształt Echa Psi" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Psi to 23. litera grecka, tuż przed omegą zamykającą alfabet. Oto sąsiedzi, których kopiuje się razem z nią najczęściej.",
+      "symbols": [
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega — Litera Zaraz Po Psi" },
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Funkcje falowe, operatory i litery greckie wypełniające równanie fizyczne lub matematyczne."
+    },
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Sąsiadka psi — ostatnia grecka litera i standardowy symbol rezystancji w omach."
+    }
+  ]
+}

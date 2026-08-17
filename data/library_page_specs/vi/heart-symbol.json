@@ -1,0 +1,69 @@
+{
+  "slug": "heart-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Trái Tim: Sao Chép & Dán ♥ ❤ Ký Hiệu Trái Tim & Trái Tim Bằng Chữ",
+  "meta_description": "Sao chép ký hiệu trái tim (♥, U+2665) — trái tim chất bài, trái tim đậm ❤, emoji trái tim màu, và trái tim bằng chữ như <3 — cùng cách gõ chúng trên Windows và Mac. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/heart-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Trái Tim",
+  "hero_h1": "Ký Hiệu Trái Tim",
+  "hero_tagline": "Ký hiệu trái tim (♥ ❤) — một glyph chất bài trở thành dấu hiệu phổ quát cho tình yêu — cùng các phiên bản emoji của nó và trái tim bằng chữ <3. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu trái tim (♥, Unicode U+2665 BLACK HEART SUIT) khởi đầu là một dấu chất bài trong bộ bài Tây và giờ đây là một trong những ký tự được sao chép nhiều nhất trên Internet. Unicode thực ra có nhiều trái tim: trái tim chất bài đơn sắc ♥, trái tim đậm hơn ❤ (U+2764) trở thành emoji trái tim đỏ ❤️ khi có bộ chọn biến thể, dạng viền ♡, và cả một bảng màu đầy đủ các emoji trái tim màu sắc. Hình dạng cách điệu này chưa bao giờ khớp với một trái tim giải phẫu thật — nguồn gốc của nó vẫn còn gây tranh cãi — nhưng nó đã mang nghĩa tình yêu và tình cảm trong nghệ thuật phương Tây từ thời Trung Cổ.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/heart-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/heart-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/heart-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "heart-symbol",
+      "label": "Trái Tim",
+      "h2": "Ký Hiệu Trái Tim",
+      "intro": "Các glyph trái tim cốt lõi: trái tim chất bài, trái tim đen đậm làm nền cho emoji, và dạng viền.",
+      "symbols": [
+        { "char": "♥", "label": "Trái Tim Chất Bài Đen (U+2665)" },
+        { "char": "❤", "label": "Trái Tim Đen Đậm (U+2764)" },
+        { "char": "♡", "label": "Trái Tim Trắng / Viền (U+2661)" }
+      ]
+    },
+    {
+      "id": "heart-emoji",
+      "label": "Emoji Trái Tim",
+      "h2": "Emoji Trái Tim Màu",
+      "intro": "Các phiên bản emoji có bộ chọn biến thể ở những màu phổ biến.",
+      "symbols": [
+        { "char": "❤️", "label": "Trái Tim Đỏ" },
+        { "char": "🖤", "label": "Trái Tim Đen (U+1F5A4)" },
+        { "char": "💙", "label": "Trái Tim Xanh Dương" },
+        { "char": "💜", "label": "Trái Tim Tím" },
+        { "char": "💚", "label": "Trái Tim Xanh Lá" }
+      ]
+    },
+    {
+      "id": "text-hearts",
+      "label": "Trái Tim Chữ & Trang Trí",
+      "h2": "Trái Tim Bằng Chữ & Trái Tim Trang Trí",
+      "intro": "Các cách viết tắt gõ và trái tim trang trí dùng trong tiểu sử và chú thích.",
+      "symbols": [
+        { "char": "<3", "label": "Trái Tim Bằng Chữ ASCII" },
+        { "char": "❣", "label": "Chấm Than Trái Tim Đậm (U+2763)" },
+        { "char": "❥", "label": "Trái Tim Đen Đậm Xoay (U+2765)" },
+        { "char": "❦", "label": "Trái Tim Hoa (U+2766)" },
+        { "char": "💔", "label": "Trái Tim Tan Vỡ" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/star-symbol/", "title": "Ký Hiệu Ngôi Sao (★)", "desc": "Ngôi sao năm cánh dùng cho đánh giá, mục yêu thích và tiểu sử." },
+    { "href": "/library/heart-symbols/", "title": "Ký Hiệu Trái Tim", "desc": "Mọi ký tự trái tim và emoji trái tim màu trong một trang tra cứu duy nhất." },
+    { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "♥ ♦ ♣ ♠ — bốn chất bài Tây mà trái tim bắt nguồn từ đó." }
+  ]
+}

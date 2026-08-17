@@ -1,0 +1,66 @@
+{
+  "slug": "pi-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Pi: Sao Chép & Dán π Π ∏ — Ra Đời Năm 1706, Được Euler Phổ Biến Toàn Cầu",
+  "meta_description": "Sao chép ký hiệu pi — chữ thường π (hằng số toán học), chữ hoa Π (toán tử tích), và ký hiệu tích chuyên dụng ∏ — cùng câu chuyện William Jones đặt ra ký hiệu này năm 1706 trước khi Euler biến nó thành chuẩn mực toàn cầu. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/pi-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Pi",
+  "hero_h1": "Ký Hiệu Pi",
+  "hero_tagline": "Chữ thường π mà ai cũng nghĩ đến khi nói «ký hiệu pi», chữ hoa Π mang nghĩa «tích» trong toán học, và toán tử tích chuyên dụng ∏ — ký hiệu mà William Jones đưa ra năm 1706 và Leonhard Euler biến thành chuẩn mực toàn cầu. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Chữ thường của pi, π (U+03C0, GREEK SMALL LETTER PI), là một trong những ký tự dễ nhận biết nhất trong toàn bộ toán học — tỉ số giữa chu vi và đường kính của bất kỳ đường tròn nào, xấp xỉ 3,14159 và kéo dài vô tận không lặp lại. Điều ít người biết là ký hiệu này trẻ hơn nhiều so với con số nó đại diện: nhà toán học người xứ Wales William Jones là người đầu tiên dùng π với nghĩa này, trong cuốn sách «Synopsis Palmariorum Matheseos» năm 1706, mượn chữ cái Hy Lạp mở đầu từ «periphery» (chu vi). Suốt ba thập niên sau đó, ký hiệu này chẳng đi đến đâu — cho đến khi Leonhard Euler, nhà toán học có ảnh hưởng nhất thời đại, sử dụng nó vào khoảng năm 1737 và củng cố nó thành chuẩn mực toàn cầu qua tác phẩm «Introductio in analysin infinitorum» năm 1748. Dạng viết hoa, Π (U+03A0), lại đảm nhận một công việc hoàn toàn khác: trong toán học đó là toán tử tích, «người anh em» nhân của toán tử tổng Σ, và nó có ký hiệu chuyên dụng riêng, ∏ (U+220F, N-ARY PRODUCT). Pi vừa là số vô tỉ (Lambert chứng minh năm 1761) vừa là số siêu việt (Lindemann, năm 1882) — và mỗi năm còn có hẳn một ngày lễ riêng vào 14 tháng 3.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pi-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pi-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-pi-symbol",
+      "label": "Ký Hiệu Pi",
+      "h2": "Ký Hiệu Pi — π & Π",
+      "intro": "Chính chữ cái Hy Lạp. Chữ thường π là hằng số toán học nổi tiếng; chữ hoa Π lại là một công cụ hoàn toàn khác.",
+      "symbols": [
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi (U+03C0) — Hằng Số Toán Học ≈ 3,14159" },
+        { "char": "Π", "label": "Chữ Hoa Hy Lạp Pi (U+03A0) — Toán Tử Tích" }
+      ]
+    },
+    {
+      "id": "pi-in-math",
+      "label": "Toán Học & Toán Tử",
+      "h2": "Pi Trong Toán Học: Tích So Với Tổng",
+      "intro": "Chữ hoa Π là toán tử tích, và — giống hệt sigma — nó có ký hiệu toán học chuyên dụng riêng, ∏ (N-ARY PRODUCT), một ký tự Unicode tách biệt với chữ cái. Đây chính là «bản sao chép nhân» của toán tử tổng ∑, chữ cái tương ứng nhau từng cặp.",
+      "symbols": [
+        { "char": "∏", "label": "Tích N Phần Tử (U+220F) — Toán Tử Tích Chuyên Dụng" },
+        { "char": "Π", "label": "Pi Hoa (U+03A0) — Chữ Cái Thường Được Gõ Thay Cho Toán Tử Tích" },
+        { "char": "∑", "label": "Tổng N Phần Tử (U+2211) — «Anh Em» Cộng Của Toán Tử Tích" },
+        { "char": "Σ", "label": "Sigma Hoa (U+03A3) — Chữ Cái Đứng Sau Toán Tử Tổng" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Pi là chữ cái thứ 16 trong bảng chữ cái Hy Lạp. Đây là những chữ cái lân cận được tìm kiếm nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
+        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" },
+        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha" },
+        { "char": "θ", "label": "Chữ Thường Hy Lạp Theta" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Tích, tổng, và các toán tử cùng chữ cái Hy Lạp sống cạnh pi trong phương trình." },
+    { "href": "/vi/symbol/sigma-symbol/", "title": "Ký Hiệu Sigma", "desc": "«Người anh em» toán tử của pi: cũng như Π đi cùng ký hiệu tích ∏, Σ đi cùng ký hiệu tổng ∑." }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "emoji-papillon-monarque",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Emoji Papillon Monarque : Copier-Coller 🫌 — le Candidat d'Unicode 18.0 qui Corrige une Confusion d'Espèce",
+  "meta_description": "Papillon Monarque (🫌, U+1FACC) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Il corrige des années de rendu incohérent de l'emoji Papillon selon les plateformes — pas encore approuvé, et aucune police ne l'affiche à ce jour.",
+  "canonical": "https://ultratextgen.com/fr/symbol/emoji-papillon-monarque/",
+  "breadcrumb": "Emoji Papillon Monarque",
+  "hero_h1": "Emoji Papillon Monarque",
+  "hero_tagline": "Une espèce précise, détachée du décalage de rendu multiplateforme de l'emoji Papillon générique — provisoirement retenue pour Emoji 18.0, attendue avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : pas encore approuvée, et aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
+  "intro": "Papillon Monarque (🫌, U+1FACC) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Il répond à un vrai problème de fragmentation : l'emoji Papillon générique existant (🦋) s'affiche comme un morpho bleu et scintillant sur certaines plateformes, et comme quelque chose de plus proche d'un monarque sur d'autres — deux personnes peuvent donc s'échanger exactement le même code et voir deux insectes différents, « tu leur envoyais peut-être un papillon monarque pendant qu'ils voyaient un morpho ». Les demandes pour ce glyphe remontent à plusieurs années sur les forums communautaires d'Apple, où les utilisateurs mettent en avant la coloration orange et noire emblématique du monarque et son statut d'espèce menacée comme raisons de lui accorder sa propre case. Unicode se montre normalement réticent à approuver des variantes spécifiques à une espèce, mais des données de fréquence montrant que Papillon est l'emoji animal le plus utilisé de sa sous-catégorie ont justifié d'en isoler l'espèce la plus reconnaissable. L'emoji lui-même porte l'histoire migratoire du monarque — « résilience générationnelle, endurance et mémoire ancestrale profonde », une créature qui parcourt des milliers de kilomètres sur des cycles de vie qu'elle n'achève jamais elle-même. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support, probablement courant 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-papillon-monarque/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "papillon-monarque",
+      "label": "Papillon Monarque",
+      "h2": "Emoji Papillon Monarque",
+      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "symbols": [
+        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" }
+      ]
+    },
+    {
+      "id": "a-distinguer-de",
+      "label": "À Distinguer de",
+      "h2": "L'Emoji Auquel on le Confond",
+      "intro": "L'emoji générique déjà encodé dont Papillon Monarque est extrait, et le voisin dont on le confond le plus souvent par erreur.",
+      "symbols": [
+        { "char": "🦋", "label": "Papillon — l'espèce générique dont Papillon Monarque est extrait" }
+      ]
+    },
+    {
+      "id": "autres-candidats",
+      "label": "Autres Candidats Provisoires",
+      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
+      "intro": "Papillon Monarque n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB) — grand gagnant du vote public" },
+        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
+        { "char": "🪋", "label": "Météore (brouillon, U+1FA8B)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/animal-emojis/", "title": "Animal & Creature Emojis", "desc": "Tous les emoji d'animaux déjà encodés, dont le Papillon générique, à parcourir et copier-coller dès aujourd'hui (en anglais)." },
+    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public." },
+    { "href": "/fr/symbol/emoji-cornichon/", "title": "Emoji Cornichon", "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente." }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "dun-hao",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "頓號怎麼打？、符號複製貼上與正確用法 | UltraTextGen",
+  "meta_description": "點一下複製頓號（、），附電腦、手機輸入法怎麼打頓號，以及頓號和逗號、句號的正確用法差異。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/dun-hao/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "頓號",
+  "hero_h1": "頓號（、）",
+  "hero_tagline": "列舉並列詞語用的標點——點一下就複製，下面附輸入法打法。",
+  "intro": "頓號（、，Unicode U+3001 IDEOGRAPHIC COMMA）是中文標點符號之一，專門用來分隔並列的詞語或短語，例如「蘋果、香蕉、橘子」；和逗號（，）不同——逗號用來分隔句子中的停頓或子句，頓號只用在並列的列舉項目之間。日文也使用外型相同的符號（読点，とうてん），但功能不一樣，是句中停頓用的一般標點，不是專門的列舉符號，兩者不要混用參考。",
+  "date_published": "2026-08-11",
+  "date_modified": "2026-08-11",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ideographic-comma/" },
+    { "lang": "zh-TW", "href": "https://ultratextgen.com/zh-tw/symbol/dun-hao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ideographic-comma/" }
+  ],
+  "sections": [
+    {
+      "id": "dun-hao-symbol",
+      "label": "頓號",
+      "h2": "頓號本體",
+      "intro": "可直接複製貼上到聊天、文件或遊戲名稱裡。",
+      "symbols": [
+        { "char": "、", "label": "頓號（U+3001）——列舉並列項目" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "相關標點符號",
+      "h2": "容易和頓號搞混的標點",
+      "intro": "頓號常和這幾個標點一起出現，但用法各不相同。",
+      "symbols": [
+        { "char": "，", "label": "逗號——分隔子句停頓" },
+        { "char": "。", "label": "句號——結束一個完整句子" },
+        { "char": "；", "label": "分號——並列兩個完整分句" }
+      ]
+    },
+    {
+      "id": "other-cjk-punctuation",
+      "label": "其他常見中文標點",
+      "h2": "其他常見中文標點符號",
+      "intro": "和頓號一樣，這些全形標點在一般英文鍵盤上都打不出來，複製貼上最快。",
+      "symbols": [
+        { "char": "「", "label": "左引號" },
+        { "char": "」", "label": "右引號" },
+        { "char": "《", "label": "左書名號" },
+        { "char": "》", "label": "右書名號" }
+      ]
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "how-to-type",
+      "label": "怎麼打頓號",
+      "h2": "電腦、手機怎麼打出頓號",
+      "paragraphs": [
+        "最快、最不會出錯的方式是直接從這頁複製貼上——不管在電腦或手機上都能直接用。",
+        "如果想用輸入法直接打：切換到中文輸入法之後，大多數注音、拼音輸入法（如新注音、搜狗輸入法）會把鍵盤上的反斜線鍵「\\」對應到頓號，按一下就會打出「、」，不需要額外切換符號選單。iOS 和 Android 的中文注音／拼音鍵盤通常也把頓號放在符號鍵盤的常用標點區。",
+        "純英文鍵盤沒有直接對應頓號的按鍵，這種情況下複製貼上仍然是最穩定的做法。"
+      ]
+    },
+    {
+      "id": "usage-rules",
+      "label": "正確用法",
+      "h2": "頓號、逗號、分號怎麼分",
+      "paragraphs": [
+        "<strong>頓號（、）</strong>：只用在並列的詞語或短語之間，例如「筆記型電腦、手機、平板都要充電」。項目之間如果本身還有逗號，最後一項前也可以視情況用「和」「與」取代頓號。",
+        "<strong>逗號（，）</strong>：用來分隔句子裡的停頓或子句，不是列舉並列項目——「我今天很忙，所以晚點回訊息」用的是逗號，不是頓號。",
+        "<strong>分號（；）</strong>：用來並列兩個或多個結構完整、可以各自獨立成句的分句，比頓號分隔的單位更大。"
+      ]
+    },
+    {
+      "id": "game-name-caveat",
+      "label": "遊戲名稱注意事項",
+      "h2": "頓號能不能用在遊戲暱稱、ID 裡？",
+      "paragraphs": [
+        "有些玩家會把頓號當裝飾符號加在暱稱或 ID 裡，但要注意：不少遊戲的暱稱欄位只接受英文、中文和數字，頓號這類標點符號可能會被系統判定為不合法字元而遭拒——貼上前建議先用該遊戲自己的改名確認畫面（或本站的名字檢查功能，如果該遊戲有支援）確認會不會被拒絕，避免白白浪費改名道具。"
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/shan-jie-hao/",
+      "title": "刪節號（……）",
+      "desc": "中文六點刪節號的寫法與複製貼上。"
+    },
+    {
+      "href": "/zh-tw/library/teshu-fuhao/",
+      "title": "特殊符號大全",
+      "desc": "複製貼上獨特 Unicode 符號的完整整理。"
+    },
+    {
+      "href": "/zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/",
+      "title": "傳說對決暱稱特殊符號產生器",
+      "desc": "遊戲暱稱裝飾與改名字數即時檢查。"
+    },
+    {
+      "href": "/zh-tw/usecase/youxi-mingzi-fuhao/",
+      "title": "遊戲暱稱特殊符號產生器",
+      "desc": "各遊戲通用的暱稱符號裝飾工具。"
+    }
+  ]
+}

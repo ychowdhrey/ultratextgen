@@ -1,0 +1,70 @@
+{
+  "slug": "anarchy-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Vô Chính Phủ: Sao Chép & Dán Ⓐ — Nguồn Gốc Năm 1964 Của Chữ A Trong Vòng Tròn",
+  "meta_description": "Sao chép ký hiệu vô chính phủ (Ⓐ, chữ A trong vòng tròn) và tìm hiểu nguồn gốc được xác định chính xác năm 1964, ý nghĩa gây tranh cãi «A trong O = Order», và cách ban nhạc punk Crass đưa nó ra toàn cầu. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/anarchy-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Vô Chính Phủ",
+  "hero_h1": "Ký Hiệu Vô Chính Phủ",
+  "hero_tagline": "Chữ A trong vòng tròn (Ⓐ) — được Tomás Ibáñez hình thành năm 1964 và ban nhạc punk Crass đưa ra toàn cầu. Nó không có mã điểm Unicode riêng; được viết bằng Ⓐ, CIRCLED LATIN CAPITAL LETTER A (U+24B6). Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu vô chính phủ — chữ A hoa trong một vòng tròn (Ⓐ) — là một trong những dấu phản kháng và tiểu văn hóa dễ nhận biết nhất thế giới. Nó có một nguồn gốc được ghi chép chính xác đến bất ngờ tại Paris thập niên 1960, một truyền thuyết dân gian về ý nghĩa của nó mà chính một trong những người tạo ra nó lại bác bỏ, và một đời sống thứ hai trong âm nhạc punk đã khiến nó trở nên phổ biến toàn cầu. Unicode không có ký tự vô chính phủ được xây dựng riêng: ký hiệu này được gõ bằng Ⓐ (U+24B6, CIRCLED LATIN CAPITAL LETTER A), một glyph tổng quát từ khối «Enclosed Alphanumerics» mà các phong trào vô chính phủ đã chọn dùng cho ý nghĩa cụ thể này.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/anarchy-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "anarchy-glyphs",
+      "label": "Vô Chính Phủ",
+      "h2": "Ký Hiệu Vô Chính Phủ (Chữ A Trong Vòng Tròn)",
+      "intro": "Chính chữ A trong vòng tròn, sẵn sàng để dán bất cứ đâu. Unicode không có ký tự vô chính phủ chuyên dụng — đây là các glyph chữ A bao quanh đứng thay cho nó.",
+      "symbols": [
+        { "char": "Ⓐ", "label": "Chữ Latin Hoa A Trong Vòng Tròn (U+24B6)" },
+        { "char": "🅐", "label": "Chữ A Trong Vòng Tròn Âm Bản (Biến Thể Tô Đặc)" }
+      ]
+    },
+    {
+      "id": "punk-subculture-symbols",
+      "label": "Ký Hiệu Punk & Tiểu Văn Hóa",
+      "h2": "Ký Hiệu Punk & Tiểu Văn Hóa",
+      "intro": "Các dấu thẩm mỹ thay thế mà chữ A trong vòng tròn thường đi cùng nhất — biểu tượng punk và DIY đã mang nó đi khắp thế giới.",
+      "symbols": [
+        { "char": "☠", "label": "Đầu Lâu Xương Chéo" },
+        { "char": "💀", "label": "Đầu Lâu" },
+        { "char": "⚡", "label": "Điện Áp Cao" },
+        { "char": "🤘", "label": "Ký Hiệu Sừng" },
+        { "char": "★", "label": "Ngôi Sao Đen" },
+        { "char": "🎸", "label": "Đàn Guitar" }
+      ]
+    },
+    {
+      "id": "protest-political-symbols",
+      "label": "Ký Hiệu Phản Kháng & Chính Trị",
+      "h2": "Ký Hiệu Phản Kháng & Chính Trị",
+      "intro": "Các dấu phong trào và phản kháng khác mà ký hiệu vô chính phủ thường được xếp cùng — gồm cả lá cờ đen từ lâu gắn liền với chủ nghĩa vô chính phủ.",
+      "symbols": [
+        { "char": "☮", "label": "Ký Hiệu Hòa Bình" },
+        { "char": "✊", "label": "Nắm Đấm Giơ Lên" },
+        { "char": "🏴", "label": "Cờ Đen (Đang Bay)" },
+        { "char": "⚑", "label": "Cờ Đen" },
+        { "char": "✌️", "label": "Dấu Hiệu Chiến Thắng" },
+        { "char": "🕊️", "label": "Chim Bồ Câu Hòa Bình" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/goth-grunge-symbols/", "title": "Ký Hiệu Goth & Grunge", "desc": "Các dấu punk, goth và thẩm mỹ thay thế mà chữ A trong vòng tròn hòa hợp hoàn hảo." },
+    { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình", "desc": "Một biểu tượng phản kháng khác với câu chuyện nguồn gốc do một nhà thiết kế duy nhất tạo ra, được ghi chép chính xác." },
+    { "href": "/library/pride-lgbtq-symbols/", "title": "Ký Hiệu Cầu Vồng & LGBTQ", "desc": "Thêm các biểu tượng phong trào và bản sắc được tiểu văn hóa dùng cho phản kháng và sự thuộc về." }
+  ]
+}

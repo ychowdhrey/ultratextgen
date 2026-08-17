@@ -1,0 +1,186 @@
+{
+  "slug": "delta-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "德爾塔符號 Δ／δ：複製貼上與用途說明 | UltraTextGen",
+  "meta_description": "點一下複製希臘字母 德爾塔 Δ 與 δ，附 Unicode 碼位、常見用途與其他希臘字母。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/delta-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "德爾塔符號",
+  "hero_h1": "德爾塔符號（Δ / δ）",
+  "hero_tagline": "Δ 是什麼、用在哪——點一下就複製。",
+  "intro": "Δ／δ（U+0394／U+03B4）中文譯作「德爾塔」。大寫 Δ 表示「變化量」或「差」，例如 ΔT 是溫度變化、Δx 是位移；也用在數學的判別式。小寫 δ 在微積分裡表示無窮小量，在克羅內克函數裡表示指標。三角形外形也讓 Δ 常被借用為「改變」的視覺象徵。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/delta-symbol/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-delta/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/deruta-kigou/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-delta/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-delta/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-delta/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/delta-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/delta-sembolu/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-delta/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-delta/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/simbolo-delta/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/delta-giho/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/sanyalak-delta/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/symbol-delta/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/delta-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/delta-symbool/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/delta-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/delta-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/delta-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "delta-symbol-symbol",
+      "label": "德爾塔符號",
+      "h2": "德爾塔符號",
+      "intro": "大小寫兩種形式都可以直接複製。",
+      "symbols": [
+        {
+          "char": "Δ",
+          "label": "小寫 delta"
+        },
+        {
+          "char": "δ",
+          "label": "大寫 delta"
+        }
+      ]
+    },
+    {
+      "id": "other-greek",
+      "label": "其他希臘字母",
+      "h2": "其他希臘字母",
+      "intro": "數理領域常用的希臘字母。",
+      "symbols": [
+        {
+          "char": "α",
+          "label": "阿爾法"
+        },
+        {
+          "char": "θ",
+          "label": "西塔"
+        },
+        {
+          "char": "Σ",
+          "label": "西格瑪"
+        },
+        {
+          "char": "∞",
+          "label": "無限"
+        }
+      ]
+    },
+    {
+      "id": "math-marks",
+      "label": "相關數學符號",
+      "h2": "相關數學符號",
+      "intro": "與希臘字母並用的數學符號。",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "無限"
+        },
+        {
+          "char": "±",
+          "label": "正負"
+        },
+        {
+          "char": "≈",
+          "label": "約等於"
+        },
+        {
+          "char": "≠",
+          "label": "不等於"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/omega-symbol/",
+      "title": "歐米加符號（Ω）",
+      "desc": "歐姆與希臘字母 omega。"
+    },
+    {
+      "href": "/zh-tw/symbol/theta-symbol/",
+      "title": "西塔符號（θ）",
+      "desc": "三角學的角度符號。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    },
+    {
+      "href": "/zh-tw/library/jiantou-fuhao/",
+      "title": "箭頭符號大全",
+      "desc": "各種方向的箭頭符號整理。"
+    }
+  ]
+}

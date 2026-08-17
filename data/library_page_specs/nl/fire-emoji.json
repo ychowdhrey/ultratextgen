@@ -1,0 +1,245 @@
+{
+  "slug": "fire-emoji",
+  "title": "Fire Emoji 🔥 Kopiëren en Plakken — Betekenis en Combo's | UltraTextGen",
+  "meta_description": "Fire emoji 🔥 kopiëren en plakken: de betekenis van \"dit is fire\", hype-emoji's als 💯 🚀, hitte-symbolen en kant-en-klare combo's. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/library/fire-emoji/",
+  "breadcrumb": "Fire Emoji & Kaomoji",
+  "hero_h1": "Fire Emoji & Kaomoji",
+  "hero_tagline": "De 🔥 die \"dit is fire\" betekent — hype-combinaties, hitte- en gevaarsymbolen, vlammen-kaomoji en kant-en-klare combo's. Klik op een symbool om het te kopiëren.",
+  "intro": "De fire emoji 🔥 gaat allang niet meer over echte vlammen — tegenwoordig betekent hij vooral \"dit is fire\": iets is goed, heet of gewoon helemaal top. Op deze pagina staat de 🔥 zelf, samen met de hype- en waarderingsemoji's die er standaard bij horen (💯 🚀 ⚡ 🙌 👑), de hitte- en gevaarsymbolen als 🌋 en 🥵 waarmee je een bericht nog een stap verder duwt, en een handvol vlammen-kaomoji voor chats waar alleen platte tekst werkt. Onder de secties vind je kant-en-klare combo's — \"Dit is fire\", \"Helemaal lit\" en meer — gemaakt voor captions, reacties en hype-antwoorden. Kopieer één teken, of pak in één klik een hele set.",
+  "date_published": "2026-08-16",
+  "date_modified": "2026-08-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-fire",
+      "label": "De fire emoji",
+      "h2": "De fire emoji",
+      "intro": "Het ene teken dat de hele \"dit is fire\"-betekenis draagt.",
+      "symbols": [
+        {
+          "char": "🔥",
+          "label": "Vuur"
+        }
+      ]
+    },
+    {
+      "id": "hype-approval",
+      "label": "Hype & waardering",
+      "h2": "Hype- en waarderingscombinaties",
+      "intro": "De emoji's die 🔥 veranderen in pure lof — honderd punten, een raket, rauwe energie.",
+      "symbols": [
+        {
+          "char": "💯",
+          "label": "Honderd punten"
+        },
+        {
+          "char": "🚀",
+          "label": "Raket"
+        },
+        {
+          "char": "⚡",
+          "label": "Hoogspanning"
+        },
+        {
+          "char": "🙌",
+          "label": "Geheven handen"
+        },
+        {
+          "char": "👑",
+          "label": "Kroon"
+        }
+      ]
+    },
+    {
+      "id": "heat-danger",
+      "label": "Hitte & gevaar",
+      "h2": "Hitte- en gevaarsymbolen",
+      "intro": "Symbolen voor echte hitte, waarmee je een hete take opschaalt tot een waarschuwing.",
+      "symbols": [
+        {
+          "char": "🌋",
+          "label": "Vulkaan"
+        },
+        {
+          "char": "♨️",
+          "label": "Warmwaterbron"
+        },
+        {
+          "char": "🥵",
+          "label": "Oververhit gezicht"
+        },
+        {
+          "char": "🧯",
+          "label": "Brandblusser"
+        }
+      ]
+    },
+    {
+      "id": "fire-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Vuur- en vlammen-kaomoji",
+      "intro": "Vuur is lastig te tekenen met tekst, dus dit zijn de dichtstbijzijnde opgefokte, fonkelende tekstgezichtjes.",
+      "symbols": [
+        {
+          "char": "(๑ᵔ⌣ᵔ๑)",
+          "label": "Heet-gevoel kaomoji"
+        },
+        {
+          "char": "ᕙ(⇀‸↼‶)ᕗ",
+          "label": "Spierballen-kaomoji"
+        },
+        {
+          "char": "(҂ `з´ )ﾉ⌒☆",
+          "label": "Vonken-gooien-kaomoji"
+        },
+        {
+          "char": "✧⁠٩⁠(⁠ˊ⁠ᗜ⁠ˋ⁠*⁠)⁠و⁠✧",
+          "label": "Fonkelend lit-kaomoji"
+        },
+        {
+          "char": "ᕦ(ò_óˇ)ᕤ",
+          "label": "Opgefokt kaomoji"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo-sets",
+    "h2": "Fire emoji combo-sets",
+    "intro": "Kopieer een complete hype-combo met één klik — lof, hitte of pure vlammen."
+  },
+  "collection_container_id": "fireSetsContainer",
+  "collections": [
+    {
+      "name": "Dit is fire",
+      "flags": [
+        "🔥",
+        "💯"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Helemaal lit",
+      "flags": [
+        "🔥",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hete take",
+      "flags": [
+        "🔥",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Raket naar de top",
+      "flags": [
+        "🔥",
+        "🚀",
+        "⚡"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Alleen fire emoji",
+      "flags": [
+        "🔥",
+        "🔥",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zet de hitte hoger",
+      "flags": [
+        "🔥",
+        "♨️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Koningsenergie",
+      "flags": [
+        "🔥",
+        "👑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gevaarlijk heet",
+      "flags": [
+        "🔥",
+        "🌋",
+        "🥵"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/emoji-combos/",
+      "title": "Emoji Combinaties",
+      "desc": "Kant-en-klare emoji-reeksen voor elke stemming en elk moment."
+    },
+    {
+      "href": "/nl/library/happy-emoji/",
+      "title": "Happy Emoji & Kaomoji",
+      "desc": "Lachende gezichtjes en vrolijke combo's voor positieve reacties."
+    },
+    {
+      "href": "/nl/library/tekstgezichten-kaomoji/",
+      "title": "Tekstgezichten & Kaomoji",
+      "desc": "De complete kaomoji-collectie voor elke emotie."
+    }
+  ],
+  "lang": "nl",
+  "page_type": "library",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Bibliotheek",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ates-emoji/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/bulkkot-imoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emoji-fuego/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/fire-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/emoji-lua/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emoji-feu/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/fire-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/fire-emoji/"
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct."
+}

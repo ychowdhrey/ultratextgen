@@ -1,0 +1,62 @@
+{
+  "slug": "monarch-butterfly-emoji",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Emoji Bướm Chúa: Sao Chép & Dán 🫌 — Ứng Viên Unicode 18.0 Sửa Lỗi Nhầm Lẫn Loài",
+  "meta_description": "Monarch Butterfly / Bướm Chúa (🫌, U+1FACC) là ứng viên bản nháp cho Emoji 18.0, dự kiến ra mắt cùng Unicode 18.0 vào tháng 9/2026. Nó khắc phục nhiều năm nhầm lẫn hiển thị Butterfly giữa các nền tảng — chưa được phê duyệt, chưa phông chữ nào hiển thị được.",
+  "canonical": "https://ultratextgen.com/vi/symbol/monarch-butterfly-emoji/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Emoji Bướm Chúa",
+  "hero_h1": "Emoji Bướm Chúa (Monarch Butterfly)",
+  "hero_tagline": "Một loài cụ thể, tách ra từ sự mâu thuẫn hiển thị giữa các nền tảng của emoji Butterfly chung chung — được phác thảo cho Emoji 18.0, dự kiến ra mắt cùng Unicode 18.0 vào tháng 9/2026. Chỉ là bản nháp: cứ nhấp để sao chép mã điểm trước.",
+  "intro": "Monarch Butterfly / Bướm Chúa (🫌, U+1FACC) là một emoji ứng viên được phác thảo cho Emoji 18.0, phiên bản emoji đi kèm Unicode 18.0, dự kiến hoàn thiện vào tháng 9/2026. Nó tồn tại để giải quyết một vấn đề phân mảnh có thật: emoji Butterfly (🦋) chung chung hiện có hiển thị như một con bướm Morpho xanh trên một số nền tảng và giống một con Bướm Chúa hơn trên số khác, khiến hai người có thể trao đổi cùng một mã điểm nhưng lại hình dung ra hai loài côn trùng khác nhau — «có thể bạn đã nhắn một con Bướm Chúa cho họ trong khi họ lại nhìn thấy một con Morpho». Các yêu cầu bổ sung ký hiệu này đã xuất hiện từ nhiều năm trên chính diễn đàn cộng đồng của Apple, nơi người dùng chỉ ra màu cam-đen đặc trưng của Bướm Chúa và tình trạng nguy cấp của loài này như lý do nó xứng đáng có vị trí riêng. Unicode thường e dè trong việc phê duyệt các biến thể theo loài cụ thể, nhưng dữ liệu tần suất cho thấy Butterfly là emoji động vật được dùng nhiều nhất trong tiểu mục của nó đã củng cố lý do tách riêng loài dễ nhận biết nhất. Bản thân emoji này mang theo câu chuyện di cư của Bướm Chúa — «sức bền qua nhiều thế hệ, sự kiên trì, và ký ức tổ tiên sâu sắc», một sinh vật vượt hàng ngàn dặm qua những vòng đời mà nó không bao giờ hoàn thành trọn vẹn. Vì vẫn còn là bản nháp, chưa có hệ điều hành, bàn phím hay phông chữ nào hiển thị được nó; hãy chờ đợi một ô trống hoặc glyph giữ chỗ cho đến khi Emoji 18.0 được phê duyệt và các nền tảng triển khai hỗ trợ, có khả năng vào khoảng năm 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/monarch-butterfly-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "monarch-butterfly",
+      "label": "Bướm Chúa",
+      "h2": "Emoji Bướm Chúa",
+      "intro": "Ký tự bản nháp chính nó — sao chép được ngay hôm nay dưới dạng mã điểm, dù chưa phông chữ nào có thể hiển thị nó.",
+      "symbols": [
+        { "char": "🫌", "label": "Monarch Butterfly / Bướm Chúa (bản nháp, U+1FACC)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Khác Với",
+      "h2": "Emoji Nó Thường Bị Nhầm Lẫn",
+      "intro": "Emoji chung chung đã được mã hóa mà Bướm Chúa được tách ra từ đó, và người hàng xóm mà nó thường bị hiển thị nhầm thành.",
+      "symbols": [
+        { "char": "🦋", "label": "Butterfly — loài chung chung mà Bướm Chúa được tách ra" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Các Ứng Viên Khác",
+      "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
+      "intro": "Bướm Chúa không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB) — thắng cuộc bình chọn công khai" },
+        { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" },
+        { "char": "🪋", "label": "Meteor (bản nháp, U+1FA8B)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/animal-emojis/", "title": "Ký Hiệu Động Vật & Sinh Vật", "desc": "Mọi emoji sinh vật đã được mã hóa, bao gồm cả Butterfly chung chung, duyệt và sao chép ngay hôm nay." },
+    { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai." },
+    { "href": "/vi/symbol/pickle-emoji/", "title": "Emoji Pickle", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn." },
+    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Các Emoji Mới Của Unicode 18.0", "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai." }
+  ]
+}

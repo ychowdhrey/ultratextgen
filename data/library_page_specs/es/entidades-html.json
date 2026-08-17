@@ -1,0 +1,344 @@
+{
+  "lang": "es",
+  "slug": "entidades-html",
+  "page_type": "library",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/entidades-html/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/html-entities/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/entidades-html/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/html-entities/"
+    }
+  ],
+  "title": "Entidades HTML: Códigos de Símbolos para Copiar y Pegar",
+  "meta_description": "Referencia de entidades HTML: códigos con nombre como &amp;, &copy; y &hearts; con el carácter que producen, por categoría. Haz clic para copiar cualquiera.",
+  "breadcrumb": "Entidades HTML",
+  "hero_h1": "Entidades HTML",
+  "hero_tagline": "Códigos de entidades HTML con nombre y los caracteres que producen: caracteres reservados, puntuación, matemáticas y más. Haz clic en cualquier carácter para copiarlo al instante.",
+  "intro": "Las entidades HTML son códigos con nombre como &amp; y &copy; que te permiten escribir caracteres especiales sin romper el marcado web: son imprescindibles para los caracteres reservados &, < y >, y muy cómodas para símbolos difíciles de teclear. Esta referencia reúne las entidades HTML más útiles agrupadas por categoría, con cada carácter identificado por el nombre de su entidad. Haz clic en un carácter para copiar el símbolo, o escribe en tu HTML el código de entidad que aparece en su etiqueta.",
+  "sections": [
+    {
+      "id": "reserved-characters",
+      "label": "Reservados",
+      "h2": "Caracteres reservados de HTML",
+      "intro": "Los caracteres que siempre hay que escapar dentro del marcado HTML.",
+      "symbols": [
+        {
+          "char": "&",
+          "label": "&amp; — Ampersand (y comercial)"
+        },
+        {
+          "char": "<",
+          "label": "&lt; — Signo menor que"
+        },
+        {
+          "char": ">",
+          "label": "&gt; — Signo mayor que"
+        },
+        {
+          "char": "\"",
+          "label": "&quot; — Comillas dobles"
+        },
+        {
+          "char": "'",
+          "label": "&apos; — Apóstrofo"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-entities",
+      "label": "Puntuación",
+      "h2": "Entidades de puntuación y tipografía",
+      "intro": "Comillas tipográficas, rayas y marcas de tipografía para una web bien escrita.",
+      "symbols": [
+        {
+          "char": " ",
+          "label": "&nbsp; — Espacio de no separación (se ve en blanco)"
+        },
+        {
+          "char": "–",
+          "label": "&ndash; — Raya corta (en dash)"
+        },
+        {
+          "char": "—",
+          "label": "&mdash; — Raya larga (em dash)"
+        },
+        {
+          "char": "…",
+          "label": "&hellip; — Puntos suspensivos"
+        },
+        {
+          "char": "•",
+          "label": "&bull; — Viñeta"
+        },
+        {
+          "char": "§",
+          "label": "&sect; — Signo de sección"
+        },
+        {
+          "char": "¶",
+          "label": "&para; — Signo de párrafo"
+        },
+        {
+          "char": "“",
+          "label": "&ldquo; — Comilla doble de apertura"
+        },
+        {
+          "char": "”",
+          "label": "&rdquo; — Comilla doble de cierre"
+        },
+        {
+          "char": "‘",
+          "label": "&lsquo; — Comilla simple de apertura"
+        },
+        {
+          "char": "’",
+          "label": "&rsquo; — Comilla simple de cierre"
+        },
+        {
+          "char": "«",
+          "label": "&laquo; — Comilla angular de apertura"
+        },
+        {
+          "char": "»",
+          "label": "&raquo; — Comilla angular de cierre"
+        }
+      ]
+    },
+    {
+      "id": "currency-legal-entities",
+      "label": "Moneda y legales",
+      "h2": "Entidades de moneda y símbolos legales",
+      "intro": "Símbolos de dinero más los signos de copyright, marca registrada y marca comercial.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "&copy; — Signo de copyright"
+        },
+        {
+          "char": "®",
+          "label": "&reg; — Signo de marca registrada"
+        },
+        {
+          "char": "™",
+          "label": "&trade; — Signo de marca comercial"
+        },
+        {
+          "char": "€",
+          "label": "&euro; — Signo de euro"
+        },
+        {
+          "char": "£",
+          "label": "&pound; — Signo de libra"
+        },
+        {
+          "char": "¥",
+          "label": "&yen; — Signo de yen"
+        },
+        {
+          "char": "¢",
+          "label": "&cent; — Signo de centavo"
+        }
+      ]
+    },
+    {
+      "id": "math-entities",
+      "label": "Matemáticas",
+      "h2": "Entidades matemáticas y de medida",
+      "intro": "Operadores, fracciones y símbolos de comparación para páginas técnicas.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "&times; — Signo de multiplicación"
+        },
+        {
+          "char": "÷",
+          "label": "&divide; — Signo de división"
+        },
+        {
+          "char": "±",
+          "label": "&plusmn; — Signo de más-menos"
+        },
+        {
+          "char": "½",
+          "label": "&frac12; — Fracción un medio"
+        },
+        {
+          "char": "¼",
+          "label": "&frac14; — Fracción un cuarto"
+        },
+        {
+          "char": "¾",
+          "label": "&frac34; — Fracción tres cuartos"
+        },
+        {
+          "char": "°",
+          "label": "&deg; — Signo de grado"
+        },
+        {
+          "char": "µ",
+          "label": "&micro; — Signo de micro"
+        },
+        {
+          "char": "∞",
+          "label": "&infin; — Infinito"
+        },
+        {
+          "char": "≈",
+          "label": "&asymp; — Aproximadamente igual a"
+        },
+        {
+          "char": "≠",
+          "label": "&ne; — Distinto de"
+        },
+        {
+          "char": "≤",
+          "label": "&le; — Menor o igual que"
+        },
+        {
+          "char": "≥",
+          "label": "&ge; — Mayor o igual que"
+        },
+        {
+          "char": "√",
+          "label": "&radic; — Raíz cuadrada"
+        }
+      ]
+    },
+    {
+      "id": "arrows-shapes-entities",
+      "label": "Flechas y formas",
+      "h2": "Entidades de flechas, corazones y formas",
+      "intro": "Flechas direccionales, palos de baraja y estrellas con su código de entidad.",
+      "symbols": [
+        {
+          "char": "←",
+          "label": "&larr; — Flecha hacia la izquierda"
+        },
+        {
+          "char": "→",
+          "label": "&rarr; — Flecha hacia la derecha"
+        },
+        {
+          "char": "↑",
+          "label": "&uarr; — Flecha hacia arriba"
+        },
+        {
+          "char": "↓",
+          "label": "&darr; — Flecha hacia abajo"
+        },
+        {
+          "char": "↔",
+          "label": "&harr; — Flecha izquierda-derecha"
+        },
+        {
+          "char": "♥",
+          "label": "&hearts; — Corazón de baraja"
+        },
+        {
+          "char": "♦",
+          "label": "&diams; — Diamante de baraja"
+        },
+        {
+          "char": "♣",
+          "label": "&clubs; — Trébol de baraja"
+        },
+        {
+          "char": "♠",
+          "label": "&spades; — Pica de baraja"
+        },
+        {
+          "char": "★",
+          "label": "&starf; — Estrella negra"
+        },
+        {
+          "char": "☆",
+          "label": "&star; — Estrella blanca"
+        }
+      ]
+    },
+    {
+      "id": "accented-entities",
+      "label": "Letras acentuadas",
+      "h2": "Entidades de letras acentuadas",
+      "intro": "Letras europeas con acentos y sus entidades con nombre.",
+      "symbols": [
+        {
+          "char": "é",
+          "label": "&eacute; — E con acento agudo"
+        },
+        {
+          "char": "è",
+          "label": "&egrave; — E con acento grave"
+        },
+        {
+          "char": "ê",
+          "label": "&ecirc; — E con circunflejo"
+        },
+        {
+          "char": "ñ",
+          "label": "&ntilde; — Eñe (N con tilde)"
+        },
+        {
+          "char": "ü",
+          "label": "&uuml; — U con diéresis"
+        },
+        {
+          "char": "ç",
+          "label": "&ccedil; — C con cedilla"
+        },
+        {
+          "char": "å",
+          "label": "&aring; — A con anillo"
+        },
+        {
+          "char": "ø",
+          "label": "&oslash; — O con barra"
+        },
+        {
+          "char": "æ",
+          "label": "&aelig; — Ligadura AE"
+        },
+        {
+          "char": "ß",
+          "label": "&szlig; — S fuerte (Eszett)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/codigos-alt/",
+      "title": "Códigos Alt",
+      "desc": "Códigos de la tecla Alt para escribir caracteres especiales."
+    },
+    {
+      "href": "/es/library/tabla-ascii/",
+      "title": "Tabla ASCII",
+      "desc": "Códigos decimales y hexadecimales de cada carácter ASCII imprimible."
+    },
+    {
+      "href": "/es/library/simbolos-latex/",
+      "title": "Símbolos de LaTeX",
+      "desc": "Caracteres de notación matemática con sus comandos de LaTeX."
+    },
+    {
+      "href": "/es/library/simbolos-copyright/",
+      "title": "Símbolos de copyright y marca registrada",
+      "desc": "©, ® y ™ y otras marcas legales para copiar y pegar."
+    }
+  ]
+}

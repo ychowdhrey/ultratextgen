@@ -1,0 +1,77 @@
+{
+  "lang": "es",
+  "slug": "colores-de-corazones-de-snapchat",
+  "page_type": "symbol",
+  "title": "Colores de los Corazones de Snapchat: Qué Significa Cada Emoji de Corazón (💛 ❤️ 💕)",
+  "meta_description": "Qué significa el emoji de corazón junto al nombre de un amigo en Snapchat — la progresión clásica de 💛 a ❤️ y 💕 de mejores amigos, más el significado general de cada color de corazón. Personalizable — revisa tu propia Configuración.",
+  "canonical": "https://ultratextgen.com/es/symbol/colores-de-corazones-de-snapchat/",
+  "breadcrumb": "Colores de Corazones de Snapchat",
+  "hero_h1": "Colores de los Corazones de Snapchat",
+  "hero_tagline": "Qué significa de verdad el emoji de corazón junto al nombre de un amigo en Snapchat — la progresión clásica de color de mejores amigos, explicada con honestidad, más un repaso rápido al significado general de cada color de corazón. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Snapchat muestra un pequeño emoji de corazón junto al nombre de algunos de tus amigos, y el color no es aleatorio — refleja cuánto tiempo lleváis siendo, el uno para el otro, el mejor amigo número uno. Esta página se centra sobre todo en ese significado propio de Snapchat, y añade un breve repaso de lo que significa cada color de corazón en el uso general de Unicode (la versión completa de esa historia general vive en las páginas de símbolo de corazón y emoji de corazón enlazadas más abajo). Una advertencia honesta por delante: Snapchat te deja personalizar o desactivar por completo los Emoji de Amigos desde Configuración, así que trata la progresión de abajo como el clásico de siempre por defecto, no como una tabla fija para siempre — y revisa Configuración > Emoji de Amigos para ver tu propio conjunto actual.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/colores-de-corazones-de-snapchat/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+  ],
+  "sections": [
+    {
+      "id": "corazones-relevantes-en-snapchat",
+      "label": "Corazones en Snapchat",
+      "h2": "Colores de Corazón que Usa Snapchat",
+      "intro": "Los tres colores de corazón que aparecen en la progresión clásica de mejores amigos de Snapchat.",
+      "symbols": [
+        { "char": "💛", "label": "Corazón Amarillo" },
+        { "char": "❤️", "label": "Corazón Rojo" },
+        { "char": "💕", "label": "Dos Corazones (Rosa)" }
+      ]
+    },
+    {
+      "id": "otros-colores-de-corazon",
+      "label": "Otros Colores de Corazón",
+      "h2": "Otros Colores de Emoji de Corazón (Significado General)",
+      "intro": "El resto de la paleta de colores de corazón de Unicode — consulta el centro completo de emoji de corazón enlazado abajo para ver la lista entera y todos los significados.",
+      "symbols": [
+        { "char": "🧡", "label": "Corazón Naranja" },
+        { "char": "💚", "label": "Corazón Verde" },
+        { "char": "💙", "label": "Corazón Azul" },
+        { "char": "💜", "label": "Corazón Morado" }
+      ]
+    },
+    {
+      "id": "formas-del-simbolo-de-corazon",
+      "label": "Formas del Símbolo de Corazón",
+      "h2": "Símbolo de Corazón y Formas en Texto",
+      "intro": "Los glifos de corazón que no llevan color — el corazón de palo de baraja Unicode y el clásico corazón de texto.",
+      "symbols": [
+        { "char": "♥", "label": "Palo de Corazones Negro (U+2665)" },
+        { "char": "<3", "label": "Corazón en Texto ASCII" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Símbolos y Emoji de Snapchat",
+      "desc": "Símbolos para la biografía de Snapchat y la explicación completa del sistema de Emoji de Amigos."
+    },
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Emoji y Kaomoji de Corazón",
+      "desc": "Cada color de corazón, su significado y sets de combinaciones en un solo centro."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-corazon/",
+      "title": "Símbolo de Corazón",
+      "desc": "El origen del corazón de palo de baraja, sus códigos y cómo escribirlo."
+    },
+    {
+      "href": "/es/symbol/emoji-de-gafas-de-sol/",
+      "title": "Emoji de Gafas de Sol",
+      "desc": "El código del glifo 😎 y su papel en el sistema de Emoji de Amigos de Snapchat."
+    }
+  ]
+}

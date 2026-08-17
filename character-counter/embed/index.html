@@ -51,19 +51,27 @@
   <div class="embed-wrapper">
     <div class="hero-card">
       <h1 class="hero-headline">Character Counter</h1>
-      <p class="hero-tagline">Live word &amp; character stats, plus a checker for 26 platform limits.</p>
+      <p class="hero-tagline">Live counts for 39 fields across 17 platforms — counted the way each one counts, with one-click fixes when you are over.</p>
 
       <div class="counter-tool">
-        <div>
+        <div id="platformChecker"></div>
+
+        <div class="counter-field">
           <div class="counter-field-head">
             <label for="counterInput">Your text</label>
             <div class="counter-field-actions">
+              <span class="counter-live" id="counterLiveCount">0 / 280</span>
               <button class="copy-btn" type="button" id="counterCopyBtn">Copy</button>
               <button class="counter-clear-btn" type="button" id="counterClearBtn" hidden>Clear</button>
             </div>
           </div>
           <textarea class="counter-textarea" id="counterInput" placeholder="Type or paste your text here…" spellcheck="false"></textarea>
+          <p class="counter-inspect" id="counterInspect" hidden></p>
         </div>
+
+        <div class="counter-fold" id="counterFold" hidden></div>
+
+        <div class="counter-fix" id="counterFixBar" hidden></div>
 
         <div class="counter-stats-grid">
           <div class="counter-stat"><span class="counter-stat-value" id="statWords">0</span><span class="counter-stat-label">Words</span></div>
@@ -71,10 +79,12 @@
           <div class="counter-stat"><span class="counter-stat-value" id="statCharsNoSpaces">0</span><span class="counter-stat-label">Chars (no spaces)</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statSentences">0</span><span class="counter-stat-label">Sentences</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statParagraphs">0</span><span class="counter-stat-label">Paragraphs</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statLines">0</span><span class="counter-stat-label">Lines</span></div>
           <div class="counter-stat"><span class="counter-stat-value" id="statReadingTime">0 sec</span><span class="counter-stat-label">Reading time</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statGraphemes">0</span><span class="counter-stat-label">Graphemes (visible)</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statUtf16">0</span><span class="counter-stat-label">UTF-16 units</span></div>
+          <div class="counter-stat"><span class="counter-stat-value" id="statBytes">0</span><span class="counter-stat-label">UTF-8 bytes</span></div>
         </div>
-
-        <div id="platformChecker"></div>
       </div>
     </div>
 
@@ -87,5 +97,6 @@
   </div>
 
   <script src="/js/counter/counterRules.js"></script>
+  <script src="/js/counter/counterReduce.js"></script>
   <script src="/js/counter/counterController.js" defer></script>
 </body></html>

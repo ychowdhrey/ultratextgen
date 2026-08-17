@@ -4,7 +4,7 @@
     "description": "Gerador de fontes online: letras diferentes, fontes bonitas e símbolos aesthetic para copiar e colar na bio do Instagram, nick de Free Fire, status do WhatsApp, Discord e TikTok. Tem zalgo, sublinhado e símbolos y2k."
   },
   "hero": {
-    "title": "Letras diferentes para copiar e colar",
+    "title": "Fontes e símbolos aesthetic para copiar e colar",
     "subtitle": "Cola seu texto e vê na hora em várias fontes bonitas — cursiva, gótica, bold, bubble, com símbolos aesthetic. Pra bio do Insta, nick de Free Fire, status do Zap, nome no Discord e qualquer canto que aceite letra."
   },
   "decorations": {
@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Digite seu texto aqui...",
-    "advertisement": "Publicidade"
+    "advertisement": "Publicidade",
+    "categoryTabs": {
+      "popular": "Populares",
+      "bold-fonts": "Negrito",
+      "italic-fonts": "Itálico",
+      "bubble-fonts": "Bolha",
+      "cursive-fonts": "Cursiva",
+      "gothic-fonts": "Gótica",
+      "strikethrough-text": "Tachado",
+      "underline-text": "Sublinhado",
+      "small-text": "Texto pequeno",
+      "cute-fonts": "Fofa",
+      "aesthetic-fonts": "Estética",
+      "upside-down-text": "De cabeça para baixo",
+      "text-decorator": "Decorador de texto",
+      "classified": "Confidencial / Censurado",
+      "fullwidth-fonts": "Largura total",
+      "faux-fonts": "Alfabetos falsos",
+      "ancient-fonts": "Antigas e rúnicas",
+      "emoji-letter-fonts": "Letras emoji",
+      "novelty-fonts": "Inusitadas"
+    },
+    "scopeControl": {
+      "label": "Aplicar estilo a",
+      "ariaLabel": "Escolha quanto texto estilizar",
+      "whole": "Todo o texto",
+      "wholeTitle": "Estiliza cada linha do seu texto.",
+      "firstLine": "Só a primeira linha",
+      "firstLineTag": "para posts",
+      "firstLineTitle": "Estiliza só a primeira linha (seu título ou gancho) e deixa o resto como texto normal e legível — ideal para posts em redes sociais.",
+      "share": "Compartilhar",
+      "shareTitle": "Compartilhe um link que reabre esta página com seu texto já preenchido",
+      "linkCopied": "Link copiado"
+    },
+    "safeMode": {
+      "label": "Segurança ao colar",
+      "ariaLabel": "Veja quais estilos aparecem bem em outros dispositivos",
+      "toggleLabel": "Modo seguro",
+      "hint": "Sinaliza estilos que podem aparecer como quadrados (▯) em celulares antigos de outras pessoas."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Pode aparecer como quadrados para algumas pessoas",
+      "boxesWarningTitle": "Este estilo usa caracteres Unicode raros que alguns celulares e dispositivos antigos não têm. Pode aparecer como quadrados (▯) para quem você enviar. Prefira um estilo mais simples ou com mais compatibilidade se seu público pode usar dispositivos antigos.",
+      "emojiWarning": "⚠ Usa emoji — pode variar em dispositivos antigos",
+      "emojiWarningTitle": "Este estilo inclui emoji. Emoji aparecem bem em dispositivos modernos, mas podem parecer diferentes, ou como quadrados, em celulares muito antigos.",
+      "modernDevices": "Aparece bem em dispositivos modernos",
+      "modernDevicesTitle": "Essas letras Unicode estilizadas aparecem em todos os celulares e computadores atuais. Em Android muito antigo (mais ou menos antes de 2016) ou com fontes de sistema mínimas, algumas ainda podem aparecer como quadrados (▯). Teste antes se seu público pode usar dispositivos antigos.",
+      "rendersEverywhere": "✓ Aparece bem em qualquer lugar",
+      "rendersEverywhereTitle": "Este estilo é texto simples — aparece bem em qualquer lugar, sem risco de quadrados em nenhum dispositivo.",
+      "deviceWarning": "⚠ Pode não aparecer no seu dispositivo",
+      "deviceWarningTitle": "As fontes do seu dispositivo não conseguem mostrar este estilo — pode aparecer como quadrados (□). Ainda assim pode aparecer bem em outros dispositivos.",
+      "safeAnywhere": "✓ Seguro em qualquer lugar",
+      "safeAnywhereTitle": "Aparece bem em todas as principais plataformas. Aviso: leitores de tela podem soletrar as letras estilizadas uma por uma, então mantenha o texto do corpo normal.",
+      "worksBestOn": "⚠ Funciona melhor em {platforms}",
+      "worksBestOnTitle": "Funciona melhor em: {platforms}. Outras plataformas podem removê-lo ou bagunçá-lo — teste antes de publicar."
+    },
+    "savedStyles": {
+      "ariaLabel": "Seus estilos salvos",
+      "heading": "Seus estilos salvos",
+      "clearAll": "Limpar tudo",
+      "hint": "Salvos neste dispositivo — vão estar aqui quando você voltar."
+    },
+    "textStats": {
+      "wordSingular": "1 palavra",
+      "wordPlural": "{n} palavras",
+      "charSingular": "1 caractere",
+      "charPlural": "{n} caracteres"
+    },
+    "decorationsNone": "Nenhum",
+    "categoryTabsToggle": {
+      "more": "Mais",
+      "less": "Menos"
+    },
+    "demoText": "Bem-vindo ao UltraTextGen.\nDigite qualquer coisa. Deixe ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nome",
+        "tabs": {
+          "playful": "Divertido",
+          "hearts": "Corações",
+          "sparkle": "Brilho",
+          "faces": "Carinhas",
+          "stars": "Estrelas"
+        }
+      },
+      "bio": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "edgy": "Sombrio",
+          "royal": "Real",
+          "cute": "Fofa",
+          "bold": "Negrito",
+          "clean": "Limpo",
+          "mystical": "Místico",
+          "retro": "Retrô",
+          "nature": "Natureza"
+        }
+      },
+      "small-text": {
+        "word": "texto",
+        "tabs": {
+          "subtle": "Sutil",
+          "tiny": "Minúsculo",
+          "brackets": "Colchetes",
+          "minimal": "Minimalista"
+        }
+      },
+      "bubble": {
+        "word": "nome",
+        "tabs": {
+          "rounded": "Arredondado",
+          "soft": "Suave",
+          "stars": "Estrelas",
+          "hearts": "Corações",
+          "minimal": "Minimalista"
+        }
+      },
+      "cute": {
+        "word": "nome",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Carinhas",
+          "hearts": "Corações",
+          "sparkle": "Brilho",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texto",
+        "tabs": {
+          "celestial": "Celestial",
+          "sparkle": "Brilho",
+          "y2k": "Y2K",
+          "soft": "Suave",
+          "minimal": "Minimalista"
+        }
+      },
+      "nickname": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "symbols": "Símbolos",
+          "hearts": "Corações",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Pra onde a galera mais usa",
@@ -116,7 +265,7 @@
           },
           {
             "question": "Dá pra usar no nick do Free Fire, Roblox e outros games?",
-            "answer": "Dá. Nick de Free Fire (FF), <a href=\"/pt/usecase/nomes-para-roblox/\">Roblox</a>, Steam, Minecraft, COD Mobile, Valorant — todos aceitam caracteres Unicode.\n    <br><br>\n    <strong>Receita pra um nick estiloso</strong><br>\n    Mistura uma letra diferente (gótica ou bubble costuma render mais) com um ou dois símbolos.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    「꧁༒𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋༒꧂」\n    <br><br>\n    Se o jogo recusar algum caractere específico (alguns são bloqueados pra evitar nicks ilegíveis), troca por outro estilo e tenta de novo. Em geral, gótica e fraktur passam bem em quase todos os games."
+            "answer": "Dá. Nick de Free Fire (FF), <a href=\"/pt/usecase/nomes-para-roblox/\">Roblox</a>, Steam, Minecraft, COD Mobile, Valorant — todos aceitam caracteres Unicode.\n    <br><br>\n    <strong>Receita pra um nick estiloso</strong><br>\n    Mistura uma letra diferente (gótica ou bubble costuma render mais) com um ou dois símbolos.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    「꧁༒𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋༒꧂」\n    <br><br>\n    Se o jogo recusar algum caractere específico (alguns são bloqueados pra evitar nicks ilegíveis), troca por outro estilo e tenta de novo. Em geral, gótica e fraktur passam bem em quase todos os games. Se o jogo recusar o nick, veja <a href=\"/pt/answers/por-que-meu-nome-foi-rejeitado-no-jogo/\">por que meu nome foi rejeitado no jogo</a>."
           },
           {
             "question": "E no WhatsApp e Telegram, funciona?",
@@ -154,7 +303,7 @@
           },
           {
             "question": "Funciona com acento (á, é, ã, ç, ô)?",
-            "answer": "Os caracteres acentuados (á, é, í, ó, ú, ã, õ, â, ê, ô, ç) costumam ser mantidos como estão na maioria dos estilos, porque o Unicode não tem variante estilizada pra todas as letras com acento. O resto da palavra é convertido normalmente.\n    <br><br>\n    <strong>Dica</strong><br>\n    Se quiser que todas as letras saiam no mesmo estilo (importante pra nick e bio), dá pra escrever sem acento — tipo «nao» no lugar de «não», «coracao» no lugar de «coração». Fica menos correto gramaticalmente mas mais consistente visualmente."
+            "answer": "Os caracteres acentuados (á, é, í, ó, ú, ã, õ, â, ê, ô, ç) são estilizados junto com o resto da palavra na maioria dos estilos: o gerador separa a letra-base do acento, aplica o estilo na letra e devolve o acento por cima — «coração» vira 𝗰𝗼𝗿𝗮𝗰̧𝗮̃𝗼 em negrito. Só alguns poucos estilos (texto de cabeça pra baixo, e letras sem forma acentuada como ł đ ø ß) ainda caem pra letra normal.\n    <br><br>\n    <strong>Dica</strong><br>\n    Não precisa mais tirar os acentos pra manter o visual uniforme — escreve normal, com acento mesmo."
           },
           {
             "question": "Tem app pra baixar ou só funciona no navegador?",

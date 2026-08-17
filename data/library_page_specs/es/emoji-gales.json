@@ -1,0 +1,91 @@
+{
+  "lang": "es",
+  "slug": "emoji-gales",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-gales/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/wales-emoji-combos/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-gales/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/wales-emoji-combos/" }
+  ],
+  "title": "Emoji Gales 🏴󠁧󠁢󠁷󠁬󠁳󠁿⚽: Combos para Copiar y Pegar",
+  "meta_description": "Combos de emoji Gales 🏴󠁧󠁢󠁷󠁬󠁳󠁿⚽: los colores de los Dragones y sets de fútbol para biografías. Haz clic en cualquier combo para copiarlo.",
+  "breadcrumb": "Combos de Emoji Gales",
+  "hero_h1": "Combos de Emoji Gales",
+  "hero_tagline": "Los colores de los Dragones y sets de emojis de fútbol para aficionados de Gales: haz clic en cualquier emoji o combo para copiarlo.",
+  "intro": "El emoji Gales 🏴󠁧󠁢󠁷󠁬󠁳󠁿 se combina con la pelota ⚽ y con los colores de los Dragones. Cymru am byth: el Dragón Rojo ruge. Copia un emoji suelto de los de abajo o toma un set completo con un solo clic.",
+  "sections": [
+    {
+      "id": "nation-emojis",
+      "label": "Gales",
+      "h2": "Emojis de Gales",
+      "intro": "La bandera, la pelota y los colores nacionales.",
+      "symbols": [
+        { "char": "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "label": "Bandera de Gales" },
+        { "char": "⚽", "label": "Pelota de fútbol" },
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🎉", "label": "Cañón de confeti" }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Orgullo",
+      "h2": "Emojis de Orgullo Galés",
+      "intro": "Rojo y verde con el dragón galés.",
+      "symbols": [
+        { "char": "🔴", "label": "Círculo rojo" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🐉", "label": "Dragón" },
+        { "char": "🟢", "label": "Círculo verde" },
+        { "char": "🔥", "label": "Fuego" },
+        { "char": "🏆", "label": "Trofeo" },
+        { "char": "🔥", "label": "Fuego" }
+      ]
+    }
+  ],
+  "collections": [
+    { "name": "Los Dragones", "flags": ["🏴󠁧󠁢󠁷󠁬󠁳󠁿", "⚽", "🐉"], "defaultFormat": "inline" },
+    { "name": "Cymru am byth", "flags": ["🏴󠁧󠁢󠁷󠁬󠁳󠁿", "⚽", "🔥"], "defaultFormat": "inline" },
+    { "name": "Dragón Rojo", "flags": ["🐉", "🔴", "⚽"], "defaultFormat": "inline" },
+    { "name": "Orgullo Galés", "flags": ["🏴󠁧󠁢󠁷󠁬󠁳󠁿", "⚽", "🏆"], "defaultFormat": "inline" }
+  ],
+  "collection_container_id": "walesCombosContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Sets de Combos de Gales",
+    "intro": "Copia un combo completo con un clic y pégalo en tu biografía, en una publicación o en tu nombre de usuario."
+  },
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "Combos de Emoji del Mundial",
+      "desc": "Sets y combos de emojis del Mundial para biografías y publicaciones de aficionados."
+    },
+    {
+      "href": "/es/library/simbolos-de-futbol/",
+      "title": "Símbolos de Fútbol",
+      "desc": "Símbolos de fútbol, trofeos y combos para los días de partido."
+    },
+    {
+      "href": "/es/library/emoji-flags/",
+      "title": "Emojis de Banderas",
+      "desc": "Banderas de países y regiones listas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/emoji-combos/",
+      "title": "Combos de Emojis",
+      "desc": "Combinaciones de emojis estéticas para cada estado de ánimo y temática."
+    }
+  ]
+}

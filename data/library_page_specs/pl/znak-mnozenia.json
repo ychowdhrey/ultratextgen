@@ -1,0 +1,79 @@
+{
+  "slug": "znak-mnozenia",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Mnożenia (×): Symbol do Skopiowania — Nie Litera X",
+  "meta_description": "Skopiuj znak mnożenia (×) — jego rodowód z 1631 roku, różnicę względem litery x i kropki mnożenia oraz jak go wpisać. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-mnozenia/",
+  "breadcrumb": "Znak Mnożenia",
+  "hero_h1": "Znak Mnożenia ×",
+  "hero_tagline": "× oznacza „razy” — to nie litera x — plus kropka mnożenia i znaczki X, z którymi jest stale mylony. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak mnożenia (×, Unicode U+00D7) to osobny operator „razy” używany w arytmetyce i algebrze — 6 × 7, a nie 6x7. Wygląda na tyle podobnie do łacińskiej litery x, że większość osób wpisuje po prostu małe x zamiast niego, dlatego × ma swoją własną, wartą wyjaśnienia historię znaków, z którymi bywa mylony.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/multiplication-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-mnozenia/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/multiplication-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-mnozenia",
+      "label": "Mnożenie",
+      "h2": "Znak Mnożenia",
+      "intro": "Właściwy, unicode'owy znak mnożenia — inny znak niż litera x.",
+      "symbols": [
+        { "char": "×", "label": "Znak Mnożenia" }
+      ]
+    },
+    {
+      "id": "znaki-mylone-ze-znakiem-mnozenia",
+      "label": "Znaki Mylone ze Znakiem Mnożenia",
+      "h2": "Symbole Często Mylone ze Znakiem Mnożenia",
+      "intro": "Te znaki nieustannie zastępują × — każdy z nich oznacza coś innego albo inaczej się wyświetla.",
+      "symbols": [
+        { "char": "x", "label": "Mała Litera X (To Nie Znak Matematyczny)" },
+        { "char": "X", "label": "Wielka Litera X" },
+        { "char": "⋅", "label": "Kropka Mnożenia — alternatywny znak „razy”" },
+        { "char": "∙", "label": "Operator Punktowy (Bullet)" },
+        { "char": "✕", "label": "Znaczek X Mnożenia (Dingbat)" },
+        { "char": "✖", "label": "Pogrubiony Znaczek X Mnożenia (Dingbat)" }
+      ]
+    },
+    {
+      "id": "powiazane-operatory",
+      "label": "Powiązane Operatory",
+      "h2": "Powiązane Operatory Arytmetyczne",
+      "intro": "Inne podstawowe operatory, które w równaniach występują razem ze znakiem ×.",
+      "symbols": [
+        { "char": "÷", "label": "Znak Dzielenia" },
+        { "char": "±", "label": "Znak Plus-Minus" },
+        { "char": "−", "label": "Znak Minus" },
+        { "char": "=", "label": "Znak Równości" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-dzielenia/",
+      "title": "Znak Dzielenia (÷)",
+      "desc": "Obelus i dlaczego podręczniki od niego odeszły."
+    },
+    {
+      "href": "/pl/symbol/znak-plus-minus/",
+      "title": "Znak Plus-Minus (±)",
+      "desc": "Dwie możliwe wartości w jednym symbolu i jego lustrzane odbicie ∓."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory, litery greckie i pełny zestaw znaków matematycznych do skopiowania."
+    }
+  ]
+}

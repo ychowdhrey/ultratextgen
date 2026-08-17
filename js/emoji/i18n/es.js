@@ -742,6 +742,9 @@
     stopWords: STOP_WORDS,
     strings: {
       resultPlaceholder: "Tu traducción de emojis aparecerá aquí.",
+      copied: "¡Copiado!",
+      copy: "Copiar",
+      surpriseMe: "🎲 Sorpréndeme",
       inputPlaceholders: {
         default: "Escribe tu frase aquí…",
         decode: "Pega los emojis aquí para descifrarlos…",

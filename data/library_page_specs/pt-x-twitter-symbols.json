@@ -1,0 +1,315 @@
+{
+  "slug": "simbolos-para-twitter",
+  "copy_pattern": "single",
+  "title": "Símbolos para Twitter (X) 𝕏 ✓ — Copiar e Colar para Bio e Threads | UltraTextGen",
+  "meta_description": "Símbolos para Twitter (X) copiar e colar: 𝕏 do logo, marcadores de thread, aspas, marcas de verificação e enfeites de bio. Clique para copiar.",
+  "hero_h1": "Símbolos para Twitter (X)",
+  "breadcrumb": "Símbolos para Twitter",
+  "hero_tagline": "O 𝕏 do logo, símbolos para organizar threads, aspas de citação, marcas de verificação e enfeites de bio. Clique para copiar.",
+  "intro": "O X (antigo Twitter) não tem formatação de texto, então símbolos Unicode são o único jeito de dar estrutura a uma thread ou destaque a uma bio. Esta página reúne o 𝕏 estilizado que muita gente usa como o próprio logo, os símbolos que numeram e separam threads, as aspas e setas para marcar citações e respostas, enfeites para hashtags, marcas de verificação, e os caracteres mais usados em bios. Tudo é texto de verdade — cola direto no post, na bio ou no nome de exibição.",
+  "sections": [
+    {
+      "id": "x-mark-symbols",
+      "label": "Símbolo X",
+      "h2": "Símbolo X e Marcas de Cruz",
+      "intro": "O 𝕏 estilizado usado como logo, mais as variações de X.",
+      "symbols": [
+        {
+          "char": "𝕏",
+          "label": "X de Dupla Barra (estilo logo)"
+        },
+        {
+          "char": "✕",
+          "label": "X de Multiplicação"
+        },
+        {
+          "char": "✖",
+          "label": "X de Multiplicação Pesado"
+        },
+        {
+          "char": "✗",
+          "label": "X de Cédula"
+        },
+        {
+          "char": "✘",
+          "label": "X de Cédula Pesado"
+        },
+        {
+          "char": "╳",
+          "label": "X de Desenho de Caixa"
+        },
+        {
+          "char": "⨯",
+          "label": "Produto Vetorial"
+        },
+        {
+          "char": "×",
+          "label": "Sinal de Multiplicação"
+        },
+        {
+          "char": "☓",
+          "label": "Cruz de Santo André"
+        },
+        {
+          "char": "ⓧ",
+          "label": "X em Círculo"
+        }
+      ]
+    },
+    {
+      "id": "thread-formatting-symbols",
+      "label": "Threads",
+      "h2": "Símbolos para Organizar Threads",
+      "intro": "Para numerar e separar as partes de uma thread.",
+      "symbols": [
+        {
+          "char": "🧵",
+          "label": "Linha e Agulha (thread)"
+        },
+        {
+          "char": "①",
+          "label": "Número 1 em Círculo"
+        },
+        {
+          "char": "②",
+          "label": "Número 2 em Círculo"
+        },
+        {
+          "char": "③",
+          "label": "Número 3 em Círculo"
+        },
+        {
+          "char": "▸",
+          "label": "Ponteiro para a Direita"
+        },
+        {
+          "char": "→",
+          "label": "Seta para a Direita"
+        },
+        {
+          "char": "•",
+          "label": "Marcador"
+        },
+        {
+          "char": "──────────",
+          "label": "Separador de Thread"
+        }
+      ]
+    },
+    {
+      "id": "quote-reply-markers",
+      "label": "Citações",
+      "h2": "Marcadores de Citação e Resposta",
+      "intro": "Para marcar visualmente um trecho citado ou uma resposta.",
+      "symbols": [
+        {
+          "char": "❝",
+          "label": "Aspas de Abertura Pesadas"
+        },
+        {
+          "char": "❞",
+          "label": "Aspas de Fechamento Pesadas"
+        },
+        {
+          "char": "«",
+          "label": "Aspas Angulares à Esquerda"
+        },
+        {
+          "char": "»",
+          "label": "Aspas Angulares à Direita"
+        },
+        {
+          "char": "↩",
+          "label": "Seta com Gancho à Esquerda"
+        },
+        {
+          "char": "↪",
+          "label": "Seta com Gancho à Direita"
+        }
+      ]
+    },
+    {
+      "id": "hashtag-enhancement-symbols",
+      "label": "Hashtags",
+      "h2": "Símbolos para Destacar Hashtags",
+      "intro": "Colocados ao redor de hashtags para chamar atenção.",
+      "symbols": [
+        {
+          "char": "✨",
+          "label": "Brilhos"
+        },
+        {
+          "char": "🔥",
+          "label": "Fogo"
+        },
+        {
+          "char": "⚡",
+          "label": "Raio"
+        },
+        {
+          "char": "★",
+          "label": "Estrela Preta"
+        },
+        {
+          "char": "▶",
+          "label": "Triângulo para a Direita"
+        },
+        {
+          "char": "◆",
+          "label": "Losango Preto"
+        }
+      ]
+    },
+    {
+      "id": "checkmarks-verification",
+      "label": "Verificação",
+      "h2": "Marcas de Verificação",
+      "intro": "Para listas, confirmações e status em posts.",
+      "symbols": [
+        {
+          "char": "✓",
+          "label": "Marca de Verificação"
+        },
+        {
+          "char": "✔",
+          "label": "Marca de Verificação Pesada"
+        },
+        {
+          "char": "✅",
+          "label": "Verificação Branca Pesada"
+        },
+        {
+          "char": "☑",
+          "label": "Caixa Marcada"
+        },
+        {
+          "char": "✗",
+          "label": "X de Cédula"
+        },
+        {
+          "char": "✘",
+          "label": "X de Cédula Pesado"
+        }
+      ]
+    },
+    {
+      "id": "bio-profile-decoration",
+      "label": "Bio",
+      "h2": "Símbolos para Bio e Perfil no X",
+      "intro": "Os caracteres mais usados para dar estilo a uma bio.",
+      "symbols": [
+        {
+          "char": "♡",
+          "label": "Coração Vazado"
+        },
+        {
+          "char": "✦",
+          "label": "Estrela de Quatro Pontas"
+        },
+        {
+          "char": "·",
+          "label": "Ponto Médio"
+        },
+        {
+          "char": "│",
+          "label": "Barra Vertical"
+        },
+        {
+          "char": "⊹",
+          "label": "Conjugado Hermitiano"
+        },
+        {
+          "char": "📌",
+          "label": "Alfinete (post fixado)"
+        },
+        {
+          "char": "🔗",
+          "label": "Elo"
+        },
+        {
+          "char": "📍",
+          "label": "Marcador de Local"
+        },
+        {
+          "char": "✧",
+          "label": "Estrela Branca de Quatro Pontas"
+        },
+        {
+          "char": "✰",
+          "label": "Estrela Sombreada"
+        },
+        {
+          "char": "❥",
+          "label": "Coração Girado"
+        },
+        {
+          "char": "❀",
+          "label": "Florete Branco"
+        },
+        {
+          "char": "✿",
+          "label": "Florete Preto"
+        },
+        {
+          "char": "➤",
+          "label": "Ponta de Seta Preta"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qual é o símbolo do X (Twitter) para copiar e colar?",
+      "a": "É o 𝕏 — a letra X em dupla barra (U+1D54F), o caractere Unicode mais próximo do logo atual. Não é o logo oficial, é um caractere matemático, mas é o que a maioria das pessoas usa em bios e nomes de exibição porque cola em qualquer campo de texto."
+    },
+    {
+      "q": "Como coloco símbolos na minha bio do X (Twitter)?",
+      "a": "Clique em qualquer símbolo desta página para copiá-lo, depois abra Editar perfil e cole no campo da bio. Os símbolos contam para o limite de 160 caracteres da bio, e alguns caracteres Unicode contam como mais de um — se a bio ficar cortada, remova um símbolo antes de reescrever o texto."
+    },
+    {
+      "q": "Por que alguns símbolos aparecem como quadrados no X?",
+      "a": "O quadrado significa que o aparelho de quem está lendo não tem uma fonte com aquele caractere. Isso é mais comum em caracteres de blocos Unicode recentes e em aparelhos antigos. Os símbolos mais seguros são os clássicos — ★ ♡ ✓ • │ — que existem em praticamente todas as fontes."
+    }
+  ],
+  "faq_h2": "Perguntas frequentes sobre símbolos para Twitter",
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para copiar e colar",
+      "desc": "Coleção de símbolos para nick, bio do Instagram, status do WhatsApp e legenda — estrelas, corações, molduras ꧁…"
+    },
+    {
+      "href": "/pt/library/kaomoji/",
+      "title": "Kaomoji &amp; carinhas japonesas",
+      "desc": "Copie e cole kaomoji — as carinhas japonesas de texto feitas com caracteres Unicode. Carinhas feliz, triste, d…"
+    },
+    {
+      "href": "/pt/library/emoji-combos/",
+      "title": "Combos de emoji para copiar e colar",
+      "desc": "Combinações de emoji prontas pra deixar sua bio, status e legenda com uma vibe só — fofo, coquette, amor, dark…"
+    }
+  ],
+  "lang": "pt",
+  "page_type": "library",
+  "canonical": "https://ultratextgen.com/pt/library/simbolos-para-twitter/",
+  "date_published": "2026-08-15",
+  "date_modified": "2026-08-15",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/x-twitter-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-para-twitter/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-para-twitter/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/x-twitter-symbols/"
+    }
+  ]
+}

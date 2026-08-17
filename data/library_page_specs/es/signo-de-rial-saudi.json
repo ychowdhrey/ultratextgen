@@ -1,0 +1,74 @@
+{
+  "lang": "es",
+  "slug": "signo-de-rial-saudi",
+  "page_type": "symbol",
+  "title": "Signo del Rial Saudí: Copiar y Pegar ⃁ — Aprobado por Decreto Real, Vigente desde Unicode 17.0",
+  "meta_description": "El signo del rial saudí (⃁, U+20C1) fue aprobado por el rey Salmán en febrero de 2025 y codificado en Unicode 17.0 en septiembre de 2025 — ya definitivo, aunque la mayoría de fuentes tipográficas todavía no lo representan. Su diseño, historia y cómo usarlo hoy.",
+  "canonical": "https://ultratextgen.com/es/symbol/signo-de-rial-saudi/",
+  "breadcrumb": "Signo del Rial Saudí",
+  "hero_h1": "Signo del Rial Saudí",
+  "hero_tagline": "El símbolo monetario oficial de Arabia Saudí, aprobado por decreto real y codificado en Unicode 17.0 — ya definitivo, aunque la mayoría de fuentes tipográficas y teclados todavía no se han puesto al día.",
+  "intro": "El signo del rial saudí (⃁, U+20C1) es el símbolo monetario oficial de Arabia Saudí, desarrollado bajo un decreto real por un comité que reunió al Banco Central Saudí (SAMA), el Ministerio de Cultura, el Ministerio de Medios de Comunicación y el organismo Saudi Standards. Su diseño se apoya en la caligrafía árabe, formando las letras árabes de «ريال» (rial) con el trazo de la letra rāʾ (ر) haciendo también de barra transversal — la misma familia visual que otros signos de moneda construidos con una barra atravesada, como el dólar o la libra. El rey Salmán aprobó oficialmente el diseño el 20 de febrero de 2025, y el SAMA lo presentó para su codificación en Unicode poco después (propuesta L2/25-075, fechada el 7 de marzo de 2025). El Comité Técnico de Unicode lo aprobó sin cambios en su 183.ª reunión, del 22 al 24 de abril de 2025, y salió como carácter definitivo y ratificado en Unicode 17.0 el 9 de septiembre de 2025 — una versión completa por delante del dirham emiratí, el rial omaní y el rufiyaa maldivo, que en el momento de escribir esto siguen en fase beta de Unicode 18.0. Que sea definitivo no significa que ya esté en todas partes: un issue abierto en GitHub sobre Inter, una de las tipografías de código abierto más usadas, pide que se añada el glifo — una señal de que la cobertura tipográfica general sigue poniéndose al día incluso una versión entera de Unicode después de la ratificación. Mientras tanto, ya existen una fuente de código abierto (construida específicamente para este símbolo) y guías de la comunidad para usarlo en Word, Excel y en la web.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-rial-saudi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "signo-de-rial-saudi",
+      "label": "Signo del Rial Saudí",
+      "h2": "Signo del Rial Saudí",
+      "intro": "El carácter confirmado y definitivo — codificado en Unicode 17.0, copiable hoy mismo, aunque la mayoría de fuentes todavía no lo representan de forma nativa.",
+      "symbols": [
+        { "char": "⃁", "label": "Signo del Rial Saudí (U+20C1, definitivo desde Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "otros-signos-de-moneda-del-golfo",
+      "label": "Otros Signos de Moneda del Golfo",
+      "h2": "Otros Nuevos Signos de Moneda del Golfo",
+      "intro": "Otras tres monedas regionales consiguieron su propio signo Unicode en la versión siguiente, Unicode 18.0 — todavía en fase beta en el momento de escribir esto.",
+      "symbols": [
+        { "char": "⃃", "label": "Signo del Dirham de los Emiratos (U+20C3, beta de Unicode 18.0)" },
+        { "char": "⃄", "label": "Signo del Rial Omaní (U+20C4, beta de Unicode 18.0)" },
+        { "char": "⃂", "label": "Signo del Rufiyaa Maldivo (U+20C2, beta de Unicode 18.0)" }
+      ]
+    },
+    {
+      "id": "monedas-de-oriente-medio-que-ya-puedes-escribir",
+      "label": "Símbolos de Moneda de Oriente Medio ya Existentes",
+      "h2": "Símbolos de Moneda de Oriente Medio que ya Funcionan en Todas Partes",
+      "intro": "Por contraste — símbolos de moneda regionales que superaron hace años el salto de estándar a fuente tipográfica y se representan hoy en prácticamente cualquier dispositivo.",
+      "symbols": [
+        { "char": "₪", "label": "Nuevo Shéquel Israelí" },
+        { "char": "₺", "label": "Lira Turca" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-moneda/",
+      "title": "Símbolos de Moneda",
+      "desc": "Todos los símbolos de moneda del mundo que ya puedes copiar y pegar hoy."
+    },
+    {
+      "href": "/es/symbol/signo-de-dirham/",
+      "title": "Signo del Dirham",
+      "desc": "El nuevo símbolo de moneda de los Emiratos — una versión de Unicode por detrás, todavía en fase beta."
+    },
+    {
+      "href": "/es/symbol/signo-de-rial-omani/",
+      "title": "Signo del Rial Omaní",
+      "desc": "Otro símbolo de moneda del Golfo que se publica en la misma beta de Unicode 18.0."
+    },
+    {
+      "href": "/es/updates/simbolo-dirham-emiratos-unicode-18/",
+      "title": "Actualización del Símbolo del Dirham Emiratí",
+      "desc": "El seguimiento fechado que recibe el primo de este símbolo en el Golfo."
+    }
+  ]
+}

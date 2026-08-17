@@ -164,11 +164,31 @@
   function renderEmojiCollections() {
     const cfg = DATA.emojiCollections;
     if (!cfg || !cfg.groups || !cfg.groups.length) return;
-    const ns = window.UltraTextGen;
-    if (!ns || typeof ns.buildGrids !== "function") return;
     const containerId = cfg.containerId || "eventEmojiGrids";
     if (!$("#" + containerId)) return;
-    ns.buildGrids(containerId, cfg.groups);
+
+    /* buildGrids lives in symbol-explorer.js, which every generated event
+       page loads AFTER this file — both deferred, so it executes later, and
+       init() runs during this script's own deferred execution (readyState is
+       already "interactive", so the DOMContentLoaded branch below is not
+       taken). At this moment the helper does not exist yet.
+
+       This used to `return` here, which silently left the section as a
+       heading and a "Tap any character to copy it" line above an empty div
+       on every event page. Nothing surfaced it: the guard is indistinguishable
+       from "this page has no emoji configured". Retry on `load`, by which
+       point every deferred script has run. */
+    const ns = window.UltraTextGen;
+    if (ns && typeof ns.buildGrids === "function") {
+      ns.buildGrids(containerId, cfg.groups);
+      return;
+    }
+    window.addEventListener("load", function () {
+      const late = window.UltraTextGen;
+      if (late && typeof late.buildGrids === "function") {
+        late.buildGrids(containerId, cfg.groups);
+      }
+    }, { once: true });
   }
 
   /* --------------------------------------------------------------------------
@@ -252,29 +272,84 @@
      styles.js only maps A-Z/a-z/0-9, so native-script characters (e.g. 恭喜發財)
      pass through the Unicode font maps unchanged.
      -------------------------------------------------------------------------- */
+  function sameText(a, b) {
+    if (!a || !b) return false;
+    return a.trim().toLowerCase() === b.trim().toLowerCase();
+  }
+
+  function buildPhraseCard(phrase) {
+    const card = el("button", "compare-card event-phrase-card");
+    card.type = "button";
+
+    // The headline is the native script where there is one, otherwise the
+    // phrase itself. Without this, an English-only phrase (no nativeScript)
+    // rendered no <h4> at all and led with whatever was in `romanization` —
+    // which for those entries just repeats `text`.
+    card.appendChild(el("h4", null, phrase.nativeScript || phrase.text));
+
+    // Only show romanization/translation when they add information. Several
+    // specs carry English-only phrases whose `romanization` duplicates `text`
+    // verbatim and whose `translation` is editorial commentary about the
+    // phrase; echoing the same words three times made the bank look padded.
+    const head = phrase.nativeScript || phrase.text;
+    if (phrase.romanization && !sameText(phrase.romanization, head) && !sameText(phrase.romanization, phrase.text)) {
+      card.appendChild(el("p", null, phrase.romanization));
+    }
+    if (phrase.translation && !sameText(phrase.translation, head) && !sameText(phrase.translation, phrase.text)) {
+      card.appendChild(el("p", "u-secondary-tight", phrase.translation));
+    }
+
+    card.addEventListener("click", function () {
+      const input = $("#mainInput");
+      if (!input) return;
+      input.value = phrase.text;
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+
+    return card;
+  }
+
+  /* Phrases may carry an optional `group` ("Classic", "For family", "Short for
+     a caption", ...). When any do, the bank renders one labelled subsection per
+     group in first-seen order, so a long bank is scannable by the job the
+     reader actually has. With no `group` anywhere it renders exactly as before,
+     one flat grid. */
   function renderPhraseBank() {
     const grid = $("#eventPhraseGrid");
     if (!grid) return;
     grid.innerHTML = "";
 
-    (DATA.phraseBank || []).forEach(function (phrase) {
-      if (!phrase || !phrase.text) return;
-      const card = el("button", "compare-card event-phrase-card");
-      card.type = "button";
+    const phrases = (DATA.phraseBank || []).filter(function (p) {
+      return p && p.text;
+    });
+    if (!phrases.length) return;
 
-      if (phrase.nativeScript) card.appendChild(el("h4", null, phrase.nativeScript));
-      if (phrase.romanization) card.appendChild(el("p", null, phrase.romanization));
-      if (phrase.translation) card.appendChild(el("p", null, phrase.translation));
+    const grouped = phrases.some(function (p) { return p.group; });
+    if (!grouped) {
+      phrases.forEach(function (phrase) { grid.appendChild(buildPhraseCard(phrase)); });
+      return;
+    }
 
-      card.addEventListener("click", function () {
-        const input = $("#mainInput");
-        if (!input) return;
-        input.value = phrase.text;
-        input.dispatchEvent(new Event("input", { bubbles: true }));
-        input.scrollIntoView({ block: "center", behavior: "smooth" });
-      });
+    const order = [];
+    const buckets = new Map();
+    const fallback = t("phraseGroupOther", "More");
+    phrases.forEach(function (phrase) {
+      const key = phrase.group || fallback;
+      if (!buckets.has(key)) { buckets.set(key, []); order.push(key); }
+      buckets.get(key).push(phrase);
+    });
 
-      grid.appendChild(card);
+    // The container is a .compare-grid, so a group is emitted as a heading plus
+    // its own nested grid, wrapped in a full-width block that opts out of the
+    // parent grid's columns.
+    order.forEach(function (key) {
+      const wrap = el("div", "event-phrase-group");
+      wrap.appendChild(el("h3", "event-phrase-group-title", key));
+      const inner = el("div", "compare-grid");
+      buckets.get(key).forEach(function (phrase) { inner.appendChild(buildPhraseCard(phrase)); });
+      wrap.appendChild(inner);
+      grid.appendChild(wrap);
     });
   }
 
@@ -291,7 +366,38 @@
     renderTimer = setTimeout(renderLive, 120);
   }
 
+  /* --------------------------------------------------------------------------
+     6. Native-script section — one copy tile per phrase that has one. This is
+     a different job from the wishes bank above it: there the card *styles* the
+     Latin phrase in the input, here a tap copies the native-script string
+     itself, which is what "eid mubarak in arabic" is actually asking for.
+     Same .glyph-copy contract, so script.js's delegated handler does the copy.
+     -------------------------------------------------------------------------- */
+  function renderNativeScript() {
+    const grid = $("#eventNativeGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    const seen = new Set();
+    (DATA.phraseBank || []).forEach(function (phrase) {
+      if (!phrase || !phrase.nativeScript) return;
+      if (seen.has(phrase.nativeScript)) return; // banks repeat a form for captions
+      seen.add(phrase.nativeScript);
+
+      const tile = el("button", "glyph-copy event-native-tile");
+      tile.type = "button";
+      tile.dataset.text = phrase.nativeScript;
+      tile.appendChild(el("span", "event-native-script", phrase.nativeScript));
+      if (phrase.romanization) {
+        tile.appendChild(el("span", "event-native-roman", phrase.romanization));
+      }
+      tile.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + phrase.nativeScript);
+      grid.appendChild(tile);
+    });
+  }
+
   function renderStatic() {
+    renderNativeScript();
     renderEmojiCollections();
     renderKaomoji();
     renderAsciiArt();

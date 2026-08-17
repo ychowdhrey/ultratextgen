@@ -1,0 +1,303 @@
+{
+  "slug": "emoji-malaikat",
+  "title": "Emoji Malaikat 👼 — Salin & Tempel Simbol Penjaga & Kenangan | UltraTextGen",
+  "meta_description": "Salin & tempel emoji malaikat 👼, simbol malaikat pelindung dan surga, plus kombinasi kenangan seperti 🕊️🙏💐 buat postingan mengenang dan caption.",
+  "breadcrumb": "Emoji Malaikat",
+  "hero_h1": "Emoji Malaikat",
+  "hero_tagline": "Malaikat kecil, malaikat pelindung, dan citra surga buat penghormatan, kenangan, dan doa — beda dari emoji wajah berlingkar cahaya. Klik simbolnya, langsung kesalin.",
+  "intro": "Emoji malaikat 👼 menggambarkan bayi bersayap, dan pemakaian paling harfiahnya memang untuk bayi atau anak kecil. Sebagai malaikat pelindung, emoji yang sama menandakan seseorang yang menjaga kamu — untuk perlindungan, keberuntungan, atau doa — dan sering dipasangkan dengan perisai 🛡️, salib ✝️, atau tasbih 📿. Dia juga salah satu emoji paling umum di postingan mengenang: menggantikan orang tua, kakek-nenek, hewan peliharaan, atau teman yang sudah tiada, biasanya bersama merpati 🕊️, tangan merapat 🙏, buket 💐, lilin 🕯️, atau nisan 🪦.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "baby-angel-heavenly",
+      "label": "Malaikat & Surga",
+      "h2": "Emoji Malaikat Kecil & Surga",
+      "intro": "Bayi malaikatnya sendiri, plus sayap, langit, dan simbol surgawi yang membentuk nuansa \"sudah di surga\".",
+      "symbols": [
+        {
+          "char": "👼",
+          "label": "Malaikat Kecil"
+        },
+        {
+          "char": "🪽",
+          "label": "Sayap"
+        },
+        {
+          "char": "☁️",
+          "label": "Awan"
+        },
+        {
+          "char": "🌈",
+          "label": "Pelangi"
+        },
+        {
+          "char": "🌠",
+          "label": "Bintang Jatuh"
+        },
+        {
+          "char": "🌙",
+          "label": "Bulan Sabit"
+        }
+      ]
+    },
+    {
+      "id": "guardian-protection",
+      "label": "Pelindung",
+      "h2": "Simbol Malaikat Pelindung",
+      "intro": "Simbol untuk makna malaikat pelindung — seseorang yang menjaga kamu, untuk perlindungan, iman, dan doa.",
+      "symbols": [
+        {
+          "char": "🛡️",
+          "label": "Perisai"
+        },
+        {
+          "char": "✝️",
+          "label": "Salib Latin"
+        },
+        {
+          "char": "📿",
+          "label": "Tasbih"
+        },
+        {
+          "char": "⛪",
+          "label": "Gereja"
+        },
+        {
+          "char": "💫",
+          "label": "Bintang Berputar"
+        },
+        {
+          "char": "🔔",
+          "label": "Lonceng"
+        }
+      ]
+    },
+    {
+      "id": "memorial-tribute",
+      "label": "Mengenang",
+      "h2": "Emoji Mengenang & Penghormatan",
+      "intro": "Set khusus yang muncul di postingan mengenang, berita duka, dan caption untuk orang atau hewan peliharaan yang sudah tiada.",
+      "symbols": [
+        {
+          "char": "🕊️",
+          "label": "Merpati Perdamaian"
+        },
+        {
+          "char": "🙏",
+          "label": "Tangan Merapat"
+        },
+        {
+          "char": "💐",
+          "label": "Buket Bunga"
+        },
+        {
+          "char": "🌟",
+          "label": "Bintang Bersinar"
+        },
+        {
+          "char": "🕯️",
+          "label": "Lilin"
+        },
+        {
+          "char": "🪦",
+          "label": "Batu Nisan"
+        },
+        {
+          "char": "🌹",
+          "label": "Mawar"
+        }
+      ]
+    },
+    {
+      "id": "angel-baby-family",
+      "label": "Keluarga",
+      "h2": "Emoji Penghormatan Anak & Keluarga",
+      "intro": "Sisi penghormatan keluarga dari 👼 — istilah lembut untuk anak yang hilang saat kehamilan atau masa bayi, dan simbol yang biasa menyertainya.",
+      "symbols": [
+        {
+          "char": "👶",
+          "label": "Bayi"
+        },
+        {
+          "char": "🎀",
+          "label": "Pita"
+        },
+        {
+          "char": "🧸",
+          "label": "Boneka Beruang"
+        },
+        {
+          "char": "🦋",
+          "label": "Kupu-kupu"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulip"
+        },
+        {
+          "char": "🌼",
+          "label": "Bunga Mekar"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Malaikat",
+    "intro": "Kombinasi malaikat siap pakai — salin satu set sekaligus dan tempel ke postingan kenangan, caption penghormatan, atau bio."
+  },
+  "collection_container_id": "angelSetsContainer",
+  "collections": [
+    {
+      "name": "Malaikat Pelindung",
+      "flags": [
+        "👼",
+        "🛡️",
+        "🕊️"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dalam Kenangan",
+      "flags": [
+        "🕊️",
+        "🙏",
+        "🌟"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Beristirahat dengan Tenang",
+      "flags": [
+        "🪦",
+        "🕯️",
+        "🌹"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kenangan untuk Si Kecil",
+      "flags": [
+        "👼",
+        "🎀",
+        "🦋"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kiriman dari Langit",
+      "flags": [
+        "👼",
+        "☁️",
+        "🌈"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Didoakan & Dijaga",
+      "flags": [
+        "🙏",
+        "💫",
+        "🔔"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bunga Duka",
+      "flags": [
+        "💐",
+        "🌷",
+        "🌹"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sayap Malaikat",
+      "flags": [
+        "🪽",
+        "✝️",
+        "🕊️"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "editorial_sections": [
+    {
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Malaikat di Tiap Perangkat",
+      "paragraphs": [
+        "👼 digambar cukup berbeda antar vendor — sebagian menggambarnya sebagai bayi bersayap dengan lingkar cahaya, sebagian tanpa lingkar cahaya sama sekali. Yang lebih penting: warna kulitnya punya varian, dan varian itu ikut terkirim sebagai bagian dari karakternya.",
+        "Yang sering tertukar itu <strong>😇 Wajah Tersenyum Berlingkar Cahaya</strong>, yang bukan emoji malaikat. 😇 hampir selalu dipakai bercanda — \"pura-pura polos\" — sementara 👼 dipakai serius, di konteks kenangan dan penghormatan. Menukarnya di postingan duka bisa terbaca sangat salah.",
+        "Buat simbol keagamaan versi <em>teks polos</em> yang nempel di kolom apa pun — ✝ ☪ ☸ dan lainnya — lihat halaman <a href=\"/id/library/simbol-keagamaan/\">simbol keagamaan</a>."
+      ]
+    }
+  ],
+  "faq_h2": "Emoji Malaikat, Dijawab",
+  "faq": [
+    {
+      "q": "Apa bedanya 👼 sama 😇?",
+      "a": "👼 adalah bayi bersayap dan dipakai serius — untuk bayi, malaikat pelindung, dan postingan mengenang. 😇 adalah wajah tersenyum dengan lingkar cahaya dan hampir selalu dipakai bercanda, untuk 'pura-pura polos'. Jangan menukarnya di konteks duka."
+    },
+    {
+      "q": "Emoji apa yang pantas buat postingan berduka?",
+      "a": "🕊️ merpati, 🙏 tangan merapat, 💐 buket, 🕯️ lilin, dan 🤍 hati putih. Kombinasi 'Dalam Kenangan' di atas menyusun yang paling umum. Hindari emoji yang nadanya ceria seperti ✨ atau 🎉."
+    },
+    {
+      "q": "👼 punya varian warna kulit?",
+      "a": "Punya. Seperti emoji orang lainnya, 👼 menerima modifier warna kulit, dan pilihan itu ikut terkirim sebagai bagian dari karakternya ke perangkat lain."
+    },
+    {
+      "q": "Boleh pakai emoji malaikat di bio?",
+      "a": "Boleh, dan itu umum — biasanya menandakan seseorang yang dikenang, atau makna 'dijaga'. Kalau kamu mau nuansa yang lebih ringan tanpa konotasi duka, ✨ atau 🤍 lebih netral."
+    },
+    {
+      "q": "Ada simbol malaikat versi teks?",
+      "a": "Nggak ada satu karakter Unicode yang secara resmi berarti 'malaikat', tapi salib ✝, bintang ✦, dan simbol keagamaan lain semuanya karakter teks biasa yang bisa ditempel ke kolom yang menolak emoji."
+    }
+  ],
+  "related": [
+    {
+      "href": "/id/library/simbol-keagamaan/",
+      "title": "Simbol Keagamaan",
+      "desc": "Salib, bulan bintang, dan simbol spiritual versi teks polos."
+    },
+    {
+      "href": "/id/library/simbol-salib/",
+      "title": "Simbol Salib",
+      "desc": "Semua bentuk salib Unicode buat bio, caption, dan nama."
+    },
+    {
+      "href": "/id/library/simbol-bunga/",
+      "title": "Simbol Bunga",
+      "desc": "Bunga dan simbol alam buat caption lembut dan postingan duka."
+    },
+    {
+      "href": "/id/library/emoji-combos/",
+      "title": "Kombinasi Emoji",
+      "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/emoji-malaikat/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/angel-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-malaikat/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/angel-emoji/"
+    }
+  ]
+}

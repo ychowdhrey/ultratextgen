@@ -1,0 +1,79 @@
+{
+  "slug": "symbol-fahrenheita",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Fahrenheita: Skopiuj ℉ Znak Stopnia Fahrenheita",
+  "meta_description": "Skopiuj znak stopnia Fahrenheita (℉, U+2109) — jednoznakową ligaturę temperatury, dlaczego Unicode zaleca zwykłe °F, oraz jak go wpisać na Windows i Mac. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-fahrenheita/",
+  "breadcrumb": "Symbol Fahrenheita",
+  "hero_h1": "Symbol Fahrenheita",
+  "hero_tagline": "℉ łączy znak stopnia i wielką literę F w jeden znak Unicode — szybki do wklejenia, choć większość poradników stylistycznych wciąż woli dwuznakowe °F. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak stopnia Fahrenheita (℉, Unicode U+2109) to złożony znak z bloku Letterlike Symbols, łączący znak stopnia (°) z wielką literą F. Podobnie jak jego odpowiednik dla Celsjusza, ℃, został dodany do Unicode głównie po to, by starsze wschodnioazjatyckie teksty — gdzie odczyt temperatury często zajmował jedną komórkę znaku — mogły być bezstratnie konwertowane. W codziennym piśmie zalecaną formą jest znak stopnia, po którym następuje zwykłe F (°F), ale pojedynczy znak ℉ jest najszybszym glifem do skopiowania, gdy potrzebujesz tylko tego jednego znaku.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-fahrenheita/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-fahrenheita",
+      "label": "Fahrenheit",
+      "h2": "Znak Stopnia Fahrenheita",
+      "intro": "Jednoznakowy ℉ oraz dwuznakowa sekwencja °F, którą preferuje Unicode.",
+      "symbols": [
+        { "char": "℉", "label": "Stopień Fahrenheita (Jeden Znak)" },
+        { "char": "°F", "label": "Znak Stopnia + F (Forma Zalecana)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Symbole Często Mylone z ℉",
+      "intro": "Znaki, którymi bywa zastępowany ℉ — każdy to osobny znak.",
+      "symbols": [
+        { "char": "°", "label": "Znak Stopnia (U+00B0)" },
+        { "char": "℃", "label": "Stopień Celsjusza (U+2103)" },
+        { "char": "K", "label": "Znak Kelwina (U+212A)" },
+        { "char": "F", "label": "Zwykła Litera F" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-miar",
+      "label": "Powiązane Znaki Miar",
+      "h2": "Inne Symbole Miar i Jednostek",
+      "intro": "Prim, stosunek i znaki notacji naukowej, które łączy się z ℉.",
+      "symbols": [
+        { "char": "′", "label": "Prim (Minuty / Stopy)" },
+        { "char": "″", "label": "Bis (Sekundy / Cale)" },
+        { "char": "‰", "label": "Znak Promila" },
+        { "char": "µ", "label": "Znak Mikro (U+00B5)" },
+        { "char": "Ω", "label": "Znak Oma (U+2126)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/symbol-celsjusza/",
+      "title": "Symbol Celsjusza (℃)",
+      "desc": "Złożony znak stopnia Celsjusza i preferowane przez Unicode °C."
+    },
+    {
+      "href": "/pl/symbol/stopnie-i-temperatura/",
+      "title": "Znak Stopnia i Temperatury",
+      "desc": "Samodzielny znak stopnia stojący za ℉, kątami i współrzędnymi."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Temperatura, jednostki SI i znaki notacji naukowej w jednym miejscu."
+    }
+  ]
+}

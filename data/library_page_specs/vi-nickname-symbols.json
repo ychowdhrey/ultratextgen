@@ -1,0 +1,289 @@
+{
+  "slug": "ky-tu-dac-biet-ten",
+  "title": "Ký tự đặc biệt tên ꧁༺ ツ ♛ — ký tự trang trí nick copy dán | UltraTextGen",
+  "meta_description": "Ký tự đặc biệt để trang trí tên: khung cánh ꧁ ༺, mặt cười ツ シ, vương miện ♛ ♔, sao ★ và ký tự chiến ϟ ⚔. Chạm để copy ngay.",
+  "breadcrumb": "Ký tự đặc biệt tên",
+  "hero_h1": "Ký tự đặc biệt cho tên",
+  "hero_tagline": "꧁ ༺ ツ ♛ ★ ϟ — khung cánh, mặt cười, vương miện, sao và ký tự chiến. Chạm để copy.",
+  "intro": "Tên trong game thường chỉ cho phép một dòng ngắn, nên phần trang trí phải gánh toàn bộ phong cách. Bốn nhóm dưới đây là những ký tự thực sự lọt qua ô nhập tên: khung bao hai đầu, mặt cười katakana, vương miện và ngôi sao, rồi các nét mạnh. Chạm vào ký tự là nó vào bộ nhớ tạm.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Khung cánh và dấu ngoặc trang trí",
+      "h2": "Khung cánh và dấu ngoặc trang trí",
+      "intro": "Bao lấy tên từ hai phía.",
+      "symbols": [
+        {
+          "char": "꧁",
+          "label": "Cánh trái (Java)"
+        },
+        {
+          "char": "꧂",
+          "label": "Cánh phải (Java)"
+        },
+        {
+          "char": "༺",
+          "label": "Hoa văn trái (Tạng)"
+        },
+        {
+          "char": "༻",
+          "label": "Hoa văn phải (Tạng)"
+        },
+        {
+          "char": "『",
+          "label": "Ngoặc góc rỗng trái"
+        },
+        {
+          "char": "』",
+          "label": "Ngoặc góc rỗng phải"
+        },
+        {
+          "char": "「",
+          "label": "Ngoặc góc trái"
+        },
+        {
+          "char": "」",
+          "label": "Ngoặc góc phải"
+        },
+        {
+          "char": "【",
+          "label": "Ngoặc đen trái"
+        },
+        {
+          "char": "】",
+          "label": "Ngoặc đen phải"
+        },
+        {
+          "char": "❮",
+          "label": "Ngoặc nhọn đậm trái"
+        },
+        {
+          "char": "❯",
+          "label": "Ngoặc nhọn đậm phải"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Ký tự katakana và CJK tạo nét",
+      "h2": "Ký tự katakana và CJK tạo nét",
+      "intro": "Nét mặt và vệt chuyển động.",
+      "symbols": [
+        {
+          "char": "ツ",
+          "label": "Chữ tsu (mặt cười)"
+        },
+        {
+          "char": "シ",
+          "label": "Chữ shi (mặt cười)"
+        },
+        {
+          "char": "ッ",
+          "label": "Chữ tsu nhỏ (cười nhẹ)"
+        },
+        {
+          "char": "乂",
+          "label": "Chữ nghĩa (nét chéo)"
+        },
+        {
+          "char": "彡",
+          "label": "Bộ sam (vệt chuyển động)"
+        },
+        {
+          "char": "ミ",
+          "label": "Chữ mi (vệt chuyển động)"
+        },
+        {
+          "char": "亗",
+          "label": "Chữ tuế (khối xếp)"
+        },
+        {
+          "char": "龍",
+          "label": "Long — rồng"
+        },
+        {
+          "char": "神",
+          "label": "Thần"
+        },
+        {
+          "char": "王",
+          "label": "Vương — vua"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Vương miện và ngôi sao",
+      "h2": "Vương miện và ngôi sao",
+      "intro": "Đặt trước hoặc sau tên.",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "Hậu cờ vua đen"
+        },
+        {
+          "char": "♚",
+          "label": "Vua cờ vua đen"
+        },
+        {
+          "char": "♕",
+          "label": "Hậu cờ vua trắng"
+        },
+        {
+          "char": "♔",
+          "label": "Vua cờ vua trắng"
+        },
+        {
+          "char": "★",
+          "label": "Sao đặc"
+        },
+        {
+          "char": "☆",
+          "label": "Sao rỗng"
+        },
+        {
+          "char": "✰",
+          "label": "Sao có bóng"
+        },
+        {
+          "char": "✯",
+          "label": "Sao chong chóng"
+        },
+        {
+          "char": "⍟",
+          "label": "Sao trong vòng tròn"
+        },
+        {
+          "char": "㊝",
+          "label": "Chữ ưu trong vòng tròn"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Ký tự mạnh và chiến đấu",
+      "h2": "Ký tự mạnh và chiến đấu",
+      "intro": "Thêm phần sắc lạnh.",
+      "symbols": [
+        {
+          "char": "ϟ",
+          "label": "Tia sét (koppa)"
+        },
+        {
+          "char": "ψ",
+          "label": "Đinh ba nhỏ (psi)"
+        },
+        {
+          "char": "Ψ",
+          "label": "Đinh ba lớn (psi)"
+        },
+        {
+          "char": "☠",
+          "label": "Đầu lâu xương chéo"
+        },
+        {
+          "char": "⚔",
+          "label": "Kiếm bắt chéo"
+        },
+        {
+          "char": "✞",
+          "label": "Thánh giá có bóng"
+        },
+        {
+          "char": "➤",
+          "label": "Mũi tên đặc"
+        },
+        {
+          "char": "ヾ",
+          "label": "Dấu lặp katakana"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Câu hỏi thường gặp về ký tự đặc biệt cho tên",
+  "faq": [
+    {
+      "q": "Vì sao game của tôi không nhận những ký tự này?",
+      "a": "Mỗi game có một danh sách ký tự riêng. Nhiều game chỉ cho chữ cái, chữ số và vài dấu; số khác chặn riêng dấu ngoặc hoặc ký tự ngoài bảng Latin. Không có cách nào biết trước ngoài việc thử — dán vào ô đổi tên và xem game có báo lỗi không, trước khi tiêu thẻ đổi tên."
+    },
+    {
+      "q": "Ký tự trang trí có tính vào giới hạn ký tự không?",
+      "a": "Có, và thường tốn nhiều hơn bạn tưởng. ꧁ và ༺ mỗi cái là một ký tự, nhưng một khung đầy đủ ꧁༺...༻꧂ đã chiếm bốn chỗ trước cả khi bạn gõ tên. Với ô giới hạn 12 ký tự thì phần tên chỉ còn tám."
+    },
+    {
+      "q": "ツ có nghĩa là gì?",
+      "a": "Đó là chữ katakana «tsu» trong tiếng Nhật, không phải mặt cười. Nó được dùng như mặt cười vì hình dáng giống, và cách dùng này lan ra từ cộng đồng game quốc tế chứ không phải từ Nhật."
+    },
+    {
+      "q": "Vì sao tên tôi hiện thành ô vuông với người khác?",
+      "a": "Vì máy họ không có phông chữ vẽ ký tự đó. Ký tự Java (꧁), Tạng (༺) và CJK hay gặp lỗi này nhất trên máy cũ. Nếu muốn chắc chắn ai cũng thấy, hãy dùng ★ ☆ ♛ ✌ — những ký tự có mặt gần như ở mọi nơi."
+    },
+    {
+      "q": "Dùng ký tự đặc biệt có bị khoá tài khoản không?",
+      "a": "Bản thân ký tự thì không. Nhưng nếu tên giả dạng nhân viên, chứa ký tự vô hình để né bộ lọc từ ngữ, hoặc bắt chước tên người khác thì vẫn bị xử lý — vấn đề nằm ở ý đồ, không nằm ở ký tự."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Vì sao ký tự trang trí lại đến từ những bảng chữ xa lạ",
+      "body": "꧁ là dấu trang trí trong chữ Java, ༺ là dấu mở đoạn trong chữ Tạng, ツ là một âm tiết tiếng Nhật. Không cái nào sinh ra để làm khung tên. Chúng được chọn vì cùng một lý do: chúng nằm trong Unicode, hầu hết bàn phím không gõ ra được, và trông cân đối. Cộng đồng game đã lục soát toàn bộ bảng mã để tìm những hình có sẵn — nên phần lớn phong cách tên game hôm nay thực chất là kho hoa văn của các hệ chữ viết khác, được dùng lại cho một việc hoàn toàn khác."
+    }
+  ],
+  "related": [
+    {
+      "href": "/vi/ki-tu-roblox/",
+      "title": "Kí Tự Roblox",
+      "desc": "Kí tự trang trí cho tên hiển thị, bio và group Roblox. Tất cả đã được thử để hoạt động với bộ lọc tên của Roblox — bấm là copy ngay."
+    },
+    {
+      "href": "/vi/usecase/ten-game-hay/",
+      "title": "Tên Game Hay",
+      "desc": "Tạo tên game hay với kí tự đặc biệt ꧁꧂ và font Unicode ngầu — dùng được cho Free Fire, Liên Quân, PUBG Mobile, Roblox, Play Together, Genshin. Gõ tên của bạn, chọn kiểu, copy — dán thẳng vào ô đổi tên trong game. Miễn phí, không cần app."
+    },
+    {
+      "href": "/vi/library/ky-tu-dac-biet-unicode/",
+      "title": "Ký Tự Đặc Biệt Unicode",
+      "desc": "Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu hiếm. Nhấn vào ký hiệu bất kỳ để sao chép ngay."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-ten/",
+  "date_published": "2026-08-10",
+  "date_modified": "2026-08-10",
+  "lang": "vi",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/nickname-symbols/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-ten/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-para-nombres/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-nickname/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/ozdobniki/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/simbolos-para-nick/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-dlya-nika/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/nickname-symbols/"
+    }
+  ]
+}

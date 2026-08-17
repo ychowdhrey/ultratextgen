@@ -1,0 +1,151 @@
+{
+  "lang": "es",
+  "slug": "emoji-guino",
+  "page_type": "library",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/es/library/emoji-guino/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "date_published": "2026-08-12",
+  "date_modified": "2026-08-12",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/wink-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/emoji-guino/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/wink-emoji/" }
+  ],
+  "title": "Emoji Guiño y Kaomoji: Copiar y Pegar 😉😜 Combos Coquetos",
+  "meta_description": "El emoji guiño 😉 😜 🤪, combos juguetones y coquetos, y kaomoji como (^_-) para chats, respuestas y comentarios. Haz clic y cópialo al instante.",
+  "breadcrumb": "Emoji guiño y kaomoji",
+  "hero_h1": "Emoji Guiño y Kaomoji",
+  "hero_tagline": "La cara que guiña el ojo 😉, las sonrisas alocadas con la lengua afuera, las miradas pícaras y los kaomoji traviesos: todos los matices de lo juguetón y del \"es broma\". Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El emoji guiño 😉 es el codazo de internet: convierte una frase seca en un chiste, suaviza una burla y agrega un tono coqueto sin necesidad de una sola palabra extra. Esta página reúne todo el registro juguetón: la clásica cara guiñando el ojo y sus primas besuconas, el equipo alocado de las lenguas afuera 😜 🤪 😝, las sonrisas pícaras y las risitas con la mano en la boca, y los kaomoji de guiño como (^_-) y (^_~) que se pegan en cualquier lugar donde funcione el texto plano. Toma una sola carita o copia un combo ya armado para tus respuestas coquetas, tus chats de grupo y tus comentarios.",
+  "sections": [
+    {
+      "id": "core-wink",
+      "label": "El emoji guiño",
+      "h2": "El emoji de cara guiñando el ojo",
+      "intro": "El codazo de un solo ojo, más las caritas de beso que viven justo al lado.",
+      "symbols": [
+        { "char": "😉", "label": "Cara guiñando el ojo" },
+        { "char": "😘", "label": "Cara lanzando un beso" },
+        { "char": "😗", "label": "Cara besando" },
+        { "char": "😙", "label": "Cara besando con ojos sonrientes" }
+      ]
+    },
+    {
+      "id": "playful-winks",
+      "label": "Guiños juguetones",
+      "h2": "Guiños juguetones y con la lengua afuera",
+      "intro": "Lenguas afuera y ojos alocados para la energía de payaso total y de \"es broma\".",
+      "symbols": [
+        { "char": "😜", "label": "Cara guiñando con la lengua afuera" },
+        { "char": "🤪", "label": "Cara alocada" },
+        { "char": "😝", "label": "Cara con ojos cerrados y lengua afuera" },
+        { "char": "😛", "label": "Cara con la lengua afuera" },
+        { "char": "😋", "label": "Cara saboreando comida" }
+      ]
+    },
+    {
+      "id": "silly-teasing",
+      "label": "Caritas traviesas",
+      "h2": "Caritas tontas y burlonas",
+      "intro": "Sonrisas pícaras, gestos de inocencia con aureola y risitas tapadas con la mano para una burla suave.",
+      "symbols": [
+        { "char": "😏", "label": "Cara con sonrisa pícara" },
+        { "char": "😊", "label": "Cara sonriente con ojos sonrientes" },
+        { "char": "🤭", "label": "Cara con la mano en la boca" },
+        { "char": "🫢", "label": "Cara con ojos abiertos y mano en la boca" },
+        { "char": "😈", "label": "Cara sonriente con cuernos" },
+        { "char": "😇", "label": "Cara sonriente con aureola" }
+      ]
+    },
+    {
+      "id": "wink-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji de guiño y caritas de texto",
+      "intro": "Caritas de estilo japonés que guiñan, sonríen y molestan usando solo texto.",
+      "symbols": [
+        { "char": "(^_-)", "label": "Kaomoji de guiño clásico" },
+        { "char": "(^_~)", "label": "Kaomoji sonriendo y guiñando" },
+        { "char": "(^_-)☆", "label": "Kaomoji de guiño con brillo" },
+        { "char": "(･ω<)", "label": "Kaomoji de guiño travieso" },
+        { "char": "(>ω^)", "label": "Kaomoji de guiño pícaro" },
+        { "char": ";)", "label": "Carita guiñando" },
+        { "char": ";-)", "label": "Emoticón clásico de guiño" },
+        { "char": "(￣ω￣)", "label": "Kaomoji de sonrisa juguetona" }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Es broma",
+      "flags": ["😉", "😆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Burla juguetona",
+      "flags": ["😜", "😝"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Guiño y beso",
+      "flags": ["😘", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modo tonto",
+      "flags": ["🤪", "😜", "😛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Guiño pícaro",
+      "flags": ["😏", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Codazo, codazo",
+      "flags": ["😉", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Travesura descarada",
+      "flags": ["😈", "😉", "😜"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lengua afuera",
+      "flags": ["😝", "😛", "😋"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "collection_container_id": "winkSetsContainer",
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combos",
+    "h2": "Combos de emoji guiño",
+    "intro": "Copia un combo juguetón completo con un clic: desde una burla suave hasta el modo payaso total."
+  },
+  "related": [
+    {
+      "href": "/es/library/emoji-riendo/",
+      "title": "Emoji riendo y kaomoji",
+      "desc": "Caras llorando de risa y combos de carcajada para cuando el guiño termina en risa."
+    },
+    {
+      "href": "/es/library/caritas-felices/",
+      "title": "Emoji feliz y kaomoji",
+      "desc": "Caritas alegres y luminosas para acompañar un guiño juguetón."
+    },
+    {
+      "href": "/es/library/emojis-graciosos/",
+      "title": "Combos de emojis graciosos",
+      "desc": "Combos de chiste y reacción listos para chats y comentarios."
+    },
+    {
+      "href": "/es/library/emojis-de-caras/",
+      "title": "Emojis de caras",
+      "desc": "La cuadrícula completa de emojis de caras, ordenada por emoción."
+    }
+  ]
+}

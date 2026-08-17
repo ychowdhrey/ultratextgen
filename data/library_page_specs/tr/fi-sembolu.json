@@ -1,0 +1,120 @@
+{
+  "slug": "fi-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Fi Sembolü: Kopyala Yapıştır φ Φ ϕ — Phidias'tan Adını Alan Altın Oran Harfi",
+  "meta_description": "Fi sembolünü kopyala yapıştır — küçük φ (U+03C6), büyük Φ ve kapalı matematik varyantı ϕ — Mark Barr'ın 1909 civarında heykeltıraş Phidias'tan adlandırdığı altın oran harfi (≈1,618). Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/fi-sembolu/",
+  "breadcrumb": "Fi Sembolü",
+  "hero_h1": "Fi Sembolü",
+  "hero_tagline": "Altın oranı (≈1,618) simgeleyen küçük φ, fizikçilerin manyetik akı için kullandığı büyük Φ ve kapalı matematik varyantı ϕ — Mark Barr'ın 1909 civarında heykeltıraş Phidias'tan esinlenerek adlandırdığı harf. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Fi'nin küçük harf glifi φ (U+03C6, GREEK SMALL LETTER PHI), Yunan alfabesinin 21. harfidir, ama en çok altın oranın sembolü olarak tanınır — sanatçıların ve mimarların yüzyıllardır peşinden koştuğu irrasyonel sayı (1 + √5) / 2 ≈ 1,6180339887. Bu adlandırma sanılandan çok daha yenidir: oran uzun süre Yunan harfi tau (τ) ile yazıldı, ta ki Amerikalı matematikçi Mark Barr 1909 civarında φ'yi önerene kadar — seçimi, Parthenon'un oranlarıyla anılan heykeltıraş Phidias'ın (Φειδίας, MÖ y. 490–430) adının ilk harfiydi. Fi ayrıca buradaki hiçbir Yunan harfinin taşımadığı bir tuhaflığa sahiptir — iki küçük harf glifi. Gündelik harf φ (U+03C6) genellikle \"ilmekli\", açık biçimde görünür; ayrıca kodlanmış bir Yunan fi sembolü olan ϕ (U+03D5) ise \"kapalı\", çizgili biçimdir — dikey bir çizginin kestiği bir daire — ve Unicode 3.0'dan beri matematik için önerilmiştir, gerçi bir yazı tipinin hangi şekli gösterdiği yazı tipine göre değişir. Büyük harf Φ (U+03A6) bilimde daha ağır bir yük taşır: fizikte manyetik akının standart sembolüdür, küçük φ ise sayılar teorisinde Euler'in totient fonksiyonunu, φ(n), işaretler.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-phi-symbol",
+      "label": "Fi Sembolü",
+      "h2": "Fi Sembolü — φ, Φ ve ϕ",
+      "intro": "İnsanların \"fi sembolü\" derken kastettiği üç biçim: gündelik küçük harf, büyük harf ve matematiğe ayrılan özel varyant. Hangisine ihtiyacın varsa onu kopyala.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi (U+03C6) — Altın Oran Harfi, 'İlmekli' Açık Biçim"
+        },
+        {
+          "char": "Φ",
+          "label": "Greek Capital Letter Phi (U+03A6) — Fizikte Manyetik Akı"
+        },
+        {
+          "char": "ϕ",
+          "label": "Greek Phi Symbol (U+03D5) — 'Kapalı', Çizgili Matematik Varyantı"
+        }
+      ]
+    },
+    {
+      "id": "phi-golden-ratio-math",
+      "label": "Altın Oran ve Matematik",
+      "h2": "Fi: Altın Oran ve Matematikteki Kullanımları",
+      "intro": "Finin en çok arananan işi. Küçük φ, (1 + √5) / 2 olarak tanımlanan ≈ 1,618 değerindeki altın oranı adlandırır; Unicode 3.0'dan beri bu matematiksel kullanım için önerilen glif kapalı ϕ'dir (U+03D5), büyük Φ ise manyetik akıyı işaretler.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Lowercase Phi (U+03C6) — Altın Oran ≈ 1,6180339887"
+        },
+        {
+          "char": "ϕ",
+          "label": "Greek Phi Symbol (U+03D5) — Matematikte Tercih Edilen Kapalı Glif"
+        },
+        {
+          "char": "Φ",
+          "label": "Capital Phi (U+03A6) — Manyetik Akı"
+        },
+        {
+          "char": "√",
+          "label": "Square Root (U+221A) — Finin (1 + √5) / 2 Formülünde Geçer"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Yunan Harfleri",
+      "h2": "İlgili Yunan Harfleri",
+      "intro": "Fi, Yunan alfabesinin 21. harfidir. İşte onun yanında en çok aranan komşu harfler ve ünlü sabitler.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/yunan-alfabesi-sembolleri/",
+      "title": "Yunan Alfabesi Sembolleri",
+      "desc": "Tam Yunan alfabesi — büyük, küçük ve matematik varyant biçimleriyle kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "Altın oran, karekök ve bir denklemi tamamlayan işleçler ile Yunan harfleri."
+    },
+    {
+      "href": "/tr/symbol/pi-sembolu/",
+      "title": "Pi Sembolü",
+      "desc": "Finin ünlü sabit kardeşi: bir ses yerine bir sayıyı simgeleyen π ≈ 3,14159."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/fi-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

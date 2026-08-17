@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "en-streep",
+  "title": "En-streep (–): Kopieer en Plak + Het Bereik-streepje dat Iedereen als Koppelteken Typt",
+  "meta_description": "Kopieer en plak de en-streep (–) voor bereiken zoals 1939–1945 en samenstellingen zoals New York–Londen — het bereik-streepje zonder eigen toetsenbordtoets. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/en-streep/",
+  "breadcrumb": "En-streep",
+  "hero_h1": "En-streep (–)",
+  "hero_tagline": "De en-streep (–) die getal- en datumbereiken verbindt — 1939–1945, pagina's 10–20, 9.00–17.00 uur — en tweeledige relaties koppelt zoals de vlucht New York–Londen. Langer dan een koppelteken, korter dan een em-streep, en het enige teken zonder eigen toets. Klik op een teken om het direct te kopiëren.",
+  "intro": "De en-streep (–, Unicode U+2013) is de middellange streep die tussen het gewone koppelteken en de langere em-streep in zit — genoemd omdat hij ongeveer de halve breedte van een em-streep heeft, zowat de breedte van een hoofdletter N. Hij doet twee hoofdtaken: hij markeert spannen en bereiken (1939–1945, pagina's 10–20, 9.00–17.00 uur, het mei–september-nummer), en hij koppelt tweeledige relaties en open samenstellingen waar een koppelteken te zwak zou zijn (de vlucht New York–Londen, de deal Shell–ExxonMobil, de periode 1900–1950). Omdat geen enkel toetsenbord een eigen en-streep-toets heeft, wordt hij voortdurend verkeerd getypt als het koppelteken (-, U+002D); om hem correct in te voeren druk je op een Mac Option+Koppelteken of op Windows Alt+0150 op het numerieke toetsenblok, en Microsofts Word AutoFormat zet een gespatieerd koppelteken (woord - woord) automatisch om. Stijlgidsen zijn verdeeld: de Chicago Manual of Style gebruikt de en-streep voor bereiken, terwijl de Associated Press Stylebook helemaal geen en-strepen gebruikt en bereiken gewoon met een koppelteken zet. Hij wordt ook regelmatig verward met het typografische koppelteken (‐, U+2010), het minteken (−, U+2212) en de em-streep (—, U+2014).",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/en-streep/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "en-streep",
+      "label": "En-streep",
+      "h2": "De En-streep & het Cijferstreepje",
+      "intro": "De en-streep voor bereiken en samenstellingen, plus het cijferstreepje — dezelfde breedte, gereserveerd voor cijfers zodat getallen netjes uitlijnen in tabellen en telefoonnummers. Overal direct te plakken.",
+      "symbols": [
+        {
+          "char": "–",
+          "label": "En-streep (U+2013)"
+        },
+        {
+          "char": "‒",
+          "label": "Cijferstreepje (Figure Dash, U+2012)"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-streepjes",
+      "label": "Verwarrende Streepjes",
+      "h2": "Streepjes en Koppeltekens waarmee het Verward Wordt",
+      "intro": "De tekens waarmee de en-streep wordt verwisseld — elk met een eigen breedte, codepunt en taak, van het gewone toetsenbord-koppelteken tot de em-streep en het echte minteken.",
+      "symbols": [
+        {
+          "char": "—",
+          "label": "Em-streep (U+2014)"
+        },
+        {
+          "char": "-",
+          "label": "Koppelteken (Toetsenbord)"
+        },
+        {
+          "char": "‐",
+          "label": "Koppelteken (Typografisch, U+2010)"
+        },
+        {
+          "char": "−",
+          "label": "Minteken (U+2212)"
+        },
+        {
+          "char": "―",
+          "label": "Horizontale Balk (U+2015)"
+        }
+      ]
+    },
+    {
+      "id": "tussenzin-tekens",
+      "label": "Tussenzin-tekens",
+      "h2": "Tekens die een Gespatieerde En-streep Vervangt",
+      "intro": "In Brits, Australisch en Canadees taalgebruik zet een gespatieerde en-streep – zoals deze – een tussenzin af waar Amerikaans Engels een aaneengesloten em-streep gebruikt; dit zijn de tekens waar hij mee samenwerkt of voor in de plaats komt.",
+      "symbols": [
+        {
+          "char": ",",
+          "label": "Komma"
+        },
+        {
+          "char": ":",
+          "label": "Dubbele Punt"
+        },
+        {
+          "char": ";",
+          "label": "Puntkomma"
+        },
+        {
+          "char": "(",
+          "label": "Haakje Openen"
+        },
+        {
+          "char": ")",
+          "label": "Haakje Sluiten"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "En-strepen, em-strepen, koppeltekens en mintekens met codepunten naast elkaar in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Speciale Tekens",
+      "desc": "Streepjes, aanhalingstekens, haakjes en de rest van alledaagse interpunctie in Unicode."
+    },
+    {
+      "href": "/nl/symbol/em-streep/",
+      "title": "Em-streep (—)",
+      "desc": "De bredere zus van de en-streep: de lange streep voor onderbrekingen en tussenzinnen, ongeveer twee keer zo breed en met een andere taak."
+    }
+  ]
+}
