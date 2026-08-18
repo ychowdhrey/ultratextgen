@@ -120,7 +120,16 @@ def main():
     if not board_id and not args.dry_run:
         import pinterest_api as API
         token = API.get_access_token()
-        board = API.get_board_by_name(token, board_name)
+        try:
+            board = API.get_board_by_name(token, board_name)
+        except API.PinterestAPIError as exc:
+            print(json.dumps({
+                "pinId": None, "httpStatus": exc.status_code, "publishedAt": None,
+                "boardId": None, "boardName": board_name,
+                "utgDestinationUrl": destination_url, "imageUrl": image_url,
+                "status": "failed", "error": f"Board lookup failed: {exc}",
+            }, indent=2))
+            sys.exit(1)
         if not board:
             sys.exit(
                 f"No Pinterest board named {board_name!r} found on this account. "

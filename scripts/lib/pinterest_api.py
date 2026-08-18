@@ -17,7 +17,17 @@ Configuration -- environment variables only, NEVER hardcoded:
   PINTEREST_APP_ID          optional, only needed to auto-refresh an
   PINTEREST_APP_SECRET      expired access token.
   PINTEREST_REFRESH_TOKEN   optional, ditto. Pinterest issues this alongside
-                             the access token during the OAuth code exchange.
+                             the access token during the full OAuth code
+                             exchange -- NOT alongside a dashboard "Generate
+                             Access Tokens" test/sandbox token, which has no
+                             refresh token at all (regenerate manually
+                             instead; it's valid 30 days).
+  PINTEREST_API_ENV         optional, "sandbox" (default) or "production".
+                             Sandbox and production are separate Pinterest
+                             API hosts, and a token from one 401s against
+                             the other -- see api_base() below. This app
+                             currently only issues Sandbox tokens (Trial
+                             access), so sandbox is the correct default.
 
 Never hardcode any of the above, and never log a token value -- see
 _mask_token(). Set these as GitHub Actions repository secrets in CI, or
@@ -42,9 +52,28 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-API_BASE = "https://api.pinterest.com/v5"
-OAUTH_TOKEN_URL = f"{API_BASE}/oauth_token"
+PRODUCTION_API_BASE = "https://api.pinterest.com/v5"
+SANDBOX_API_BASE = "https://api-sandbox.pinterest.com/v5"
+# The OAuth token endpoint itself is environment-agnostic -- only the
+# resource-serving host below differs between sandbox and production.
+OAUTH_TOKEN_URL = f"{PRODUCTION_API_BASE}/oauth_token"
 _USER_AGENT = "UltraTextGenPinterestPublisher/1.0 (+https://ultratextgen.com)"
+
+
+def api_base():
+    """Sandbox and production are genuinely different hosts on Pinterest's
+    side -- a Sandbox-generated token 401s against api.pinterest.com and a
+    production token 401s against api-sandbox.pinterest.com (verified
+    2026-08-18: this repo's own first live test hit exactly that 401 before
+    this function existed). Defaults to sandbox, because that's what this
+    app can actually issue right now (Trial access, "Sandbox" token type in
+    the dashboard's Generate Access Tokens panel) -- set
+    PINTEREST_API_ENV=production once the app has Standard access and a
+    real production token."""
+    env = _env("PINTEREST_API_ENV").lower() or "sandbox"
+    if env not in ("sandbox", "production"):
+        sys.exit(f"pinterest_api: PINTEREST_API_ENV must be 'sandbox' or 'production', got {env!r}")
+    return SANDBOX_API_BASE if env == "sandbox" else PRODUCTION_API_BASE
 
 # Same limits pinterest_csv.py already enforces for the bulk-CSV path --
 # the API path must reject exactly the same things, at the same bar, so a
@@ -162,11 +191,11 @@ def refresh_access_token():
 
 
 def _request(method, path, token, body=None, params=None, max_retries=4, _retried_auth=False):
-    """Core HTTP call against API_BASE + path. Retries 429/5xx with backoff
+    """Core HTTP call against api_base() + path. Retries 429/5xx with backoff
     (respecting Retry-After when Pinterest sends one), retries a 401 exactly
     once via refresh_access_token(), and raises PinterestAPIError for every
     other non-2xx response. Never logs the token."""
-    url = f"{API_BASE}{path}"
+    url = f"{api_base()}{path}"
     if params:
         url += "?" + urllib.parse.urlencode({k: v for k, v in params.items() if v is not None})
     data = json.dumps(body).encode() if body is not None else None
