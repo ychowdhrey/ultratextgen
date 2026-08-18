@@ -7,13 +7,24 @@ cards in `assets/og/` are not. Those OG cards are correct for OG, Twitter,
 LinkedIn, Facebook and Google Images and are **left untouched**. This system
 adds a separate, redesigned vertical pin for every eligible content page.
 
-- **Images:** `assets/pinterest/<slug>.png` — 1000×1500 PNG (2:3)
-- **Inventory:** `data/pinterest_pins.csv`
+**Images live on Cloudflare R2, not in git.** Every generator renders its pin
+in memory and uploads it straight to R2 — see
+[`docs/pinterest-r2-migration.md`](./pinterest-r2-migration.md) for the full
+architecture, the object-key convention, and the required `R2_*` environment
+variables. `assets/pinterest/` and `assets/collection-pins/` are gitignored;
+nothing image-shaped is committed anymore.
+
+- **Images:** `pinterest/base/<slug>.png` on R2 — 1000×1500 PNG (2:3), public
+  at `https://media.ultratextgen.com/pinterest/base/<slug>.png`
+- **Inventory:** `data/pinterest_pins.csv` (`pinterest_image_path` holds the
+  R2 object key)
 - **Generator:** `scripts/generate-pinterest.py`
 - **Source of truth:** `data/image_seo_status.csv`
 
 Run `python3 scripts/generate-pinterest.py` to regenerate everything
-(idempotent). Requires `cairosvg`.
+(idempotent — unchanged pins are skipped on R2 via checksum, not re-uploaded).
+Requires `cairosvg`, `boto3`, and `R2_ENDPOINT`/`R2_ACCESS_KEY_ID`/
+`R2_SECRET_ACCESS_KEY` in the environment.
 
 ---
 
@@ -28,7 +39,7 @@ to be reworked — don't be the fourth. The rules below are non-negotiable.
 | What | Where it goes | Example |
 |---|---|---|
 | Generator script | `scripts/generate-<board>-pins.py` | `scripts/generate-id-pins.py` |
-| Pin images (1000×1500 PNG, 2:3) | `assets/pinterest/<board>/<slug>.png` | `assets/pinterest/vertical-text/copy-paste.png` |
+| Pin images (1000×1500 PNG, 2:3) | R2: `pinterest/boards/<board>/<slug>.png` | `pinterest/boards/vertical-text/copy-paste.png` |
 | Internal inventory CSV | `data/<board>_pinterest_pins.csv` | `data/id_pinterest_pins.csv` |
 | Importer-ready upload CSV | `data/<board>_pinterest_pins_upload.csv` | `data/id_pinterest_pins_upload.csv` |
 
@@ -41,8 +52,9 @@ boards are the reference implementations — mirror them.
 
 Mirror `scripts/generate-id-pins.py` / `scripts/generate-vertical-text-pins.py`.
 Each imports the shared tokens and helpers from `scripts/generate-site-art.py`
-(the single source of truth for the brand look) so every pin renders identically
-to `assets/pinterest/`:
+(the single source of truth for the brand look), and uploads via
+`scripts/lib/r2_pinterest.py` (see [`pinterest-r2-migration.md`](./pinterest-r2-migration.md)),
+so every pin renders identically and lands on R2 the same way:
 
 - soft off-white panel + faint dot grid + brand **purple→blue** gradient
 - left accent bar, kicker, large keyword title + underline
@@ -75,7 +87,9 @@ schema fails Pinterest's importer.
 
 - [ ] Generator at `scripts/generate-<board>-pins.py`, mirrors an existing one
 - [ ] Imports brand tokens from `generate-site-art.py` (no new visual template)
-- [ ] Images at `assets/pinterest/<board>/`, all exactly 1000×1500
+- [ ] Renders in memory and uploads via `scripts/lib/r2_pinterest.py` to
+      `pinterest/boards/<board>/`, all exactly 1000×1500 — never written to
+      `assets/pinterest/`
 - [ ] No bundled fonts, no new top-level folder, no SVGs under `docs/`
 - [ ] Inventory + `_upload.csv` in `data/`, board registered in `build_pinterest_upload.py`
 

@@ -10,9 +10,13 @@ keyword gap, existing Pinterest reach, and how visual/Pinterest-native the
 query is — see BOARD_OPPORTUNITY_WEIGHT below), it renders extra creative
 variants of the same pin pointing at the same real destination URL:
 
-  - assets/pinterest/<slug>--v2.png, --v3.png, ...  (1000x1500, same brand skin)
+  - pinterest/variants/<slug>--v2.png, --v3.png, ...  (1000x1500, same brand
+    skin) uploaded straight to Cloudflare R2 -- rendered in memory, never
+    written under assets/pinterest/, never committed (see
+    docs/pinterest-r2-migration.md)
   - data/pinterest_pins_variants.csv                (inventory, same schema
-    family as data/pinterest_pins.csv plus a variant_index column)
+    family as data/pinterest_pins.csv plus a variant_index column;
+    pinterest_image_path holds the R2 object key)
   - data/pinterest_pins_variants_upload.csv          (importer-ready, built via
     build_pinterest_upload.py -> pinterest_csv.py, same as every other board)
 
@@ -41,9 +45,10 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PIN_DIR = os.path.join(ROOT, "assets", "pinterest")
 CSV_IN = os.path.join(ROOT, "data", "image_seo_status.csv")
 CSV_OUT = os.path.join(ROOT, "data", "pinterest_pins_variants.csv")
+sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+import r2_pinterest as R2  # noqa: E402
 
 
 def _load(path, name):
@@ -70,7 +75,18 @@ GP = _load(os.path.join(HERE, "generate-pinterest.py"), "genpin")
 # the page's own Priority multiplier below.
 # ---------------------------------------------------------------------------
 BOARD_OPPORTUNITY_WEIGHT = {
-    # placeholder — filled from opportunity analysis before running
+    GP.B_EMOJI: 72.2,
+    GP.B_FANCY: 63.4,
+    GP.B_DISCORD: 62.9,
+    GP.B_SPECIAL: 61.0,
+    GP.B_GAMING: 57.9,
+    GP.B_INTL: 54.8,
+    GP.B_TEXTART: 52.5,
+    GP.B_INSTA: 51.4,
+    GP.B_CUTE: 46.6,
+    GP.B_GUIDES: 45.5,
+    GP.B_TIKTOK: 42.5,
+    GP.B_LINKEDIN: 29.7,
 }
 
 PRIORITY_WEIGHT = {
@@ -86,7 +102,7 @@ PRIORITY_WEIGHT = {
 # existing generate-id-pins.py precedent tops out at 27 pins to one URL.
 MAX_PINS_PER_PAGE = 40
 
-TOTAL_VARIANT_BUDGET = 12598  # 15,000 target total - 2,402 existing base pins
+TOTAL_VARIANT_BUDGET = 12850  # 15,000 target total - 2,402 existing base pins (net of rounding loss)
 
 
 # ---------------------------------------------------------------------------
@@ -208,6 +224,26 @@ DESC_BANK = {
 }
 DESC_BANK["default"] = DESC_BANK["platform_vertical"]
 
+# Appended, independently-rotating closer clause. A page's base template
+# alone repeats every len(DESC_BANK[tmpl]) variants (3-6) -- far short of
+# MAX_PINS_PER_PAGE -- so without this, high-variant-count pages would carry
+# several pins with byte-identical descriptions pointing at the same URL.
+# Rotating the closer on a different cycle (base_len steps) keeps every
+# combination distinct for len(bank) * len(DESC_CLOSER_BANK) variants, well
+# above the cap.
+DESC_CLOSER_BANK = [
+    "Works great for gifts, greeting cards and social posts too.",
+    "New styles get added regularly, so check back often.",
+    "Fast on mobile or desktop — no watermark, no clutter.",
+    "One tap, and it's on your clipboard, ready to paste.",
+    "No account, no email, no catch — just copy and go.",
+    "Thousands of people use UltraTextGen for this every day.",
+    "Try a few variations before you pick your favorite.",
+    "Built to be fast — no loading screens, no pop-ups.",
+    "Save this one for later — you'll want it again.",
+    "Made for creators who need clean text in a hurry.",
+]
+
 
 def variant_title(tmpl, name, n):
     openers, closers = TITLE_BANK.get(tmpl, TITLE_BANK["default"])
@@ -224,8 +260,17 @@ def variant_title(tmpl, name, n):
 
 def variant_description(tmpl, n, **fmt):
     bank = DESC_BANK.get(tmpl, DESC_BANK["default"])
-    idx = (n - 2) % len(bank)
-    d = bank[idx].format(**fmt)
+    idx = n - 2
+    base = bank[idx % len(bank)].format(**fmt)
+    closer = DESC_CLOSER_BANK[(idx // len(bank)) % len(DESC_CLOSER_BANK)]
+    # Reserve room for the closer before truncating, so a long page subtitle
+    # can't push the closer entirely past the 300-char cut -- otherwise
+    # every closer for a given base template collapses to the same
+    # truncated string, silently undoing the whole point of rotating it.
+    max_base = 300 - len(closer) - 1
+    if len(base) > max_base:
+        base = base[:max_base - 1].rsplit(" ", 1)[0] + "…"
+    d = f"{base} {closer}"
     if len(d) > 300:
         d = d[:297].rsplit(" ", 1)[0] + "…"
     if len(d) < 150:
@@ -237,21 +282,29 @@ def variant_description(tmpl, n, **fmt):
 # Short headline/sub variants for the IMAGE itself (independent of the CSV
 # title/description above) so variant pins also read as visually distinct in
 # a Pinterest feed, not just re-captioned duplicates of the same graphic.
+# Indexed on two independent axes (like variant_title's opener x closer) so
+# a page doesn't repeat the exact same headline+subline pair until
+# len(HEADLINE_BANK) * len(SUBLINE_BANK) variants in -- comfortably above
+# MAX_PINS_PER_PAGE.
 HEADLINE_BANK = ["{name}", "Copy & Paste {name}", "Free {name}",
-                 "{name} — Copy Paste", "{name} Online"]
+                 "{name} — Copy Paste", "{name} Online", "Try {name}",
+                 "{name} Now", "Get {name}"]
 SUBLINE_BANK = [
     "Tap to copy — free, no sign-up needed",
     "Works on Instagram, Discord, TikTok & more",
     "Free Unicode fonts & symbols, ready to paste",
     "Copy instantly in your browser, no app needed",
     "Fast, free & mobile-friendly copy and paste",
+    "No account needed — just tap and copy",
+    "Always free, always ready to paste",
+    "Fresh styles, updated regularly",
 ]
 
 
 def variant_image_text(name, n):
     idx = n - 2
     headline = HEADLINE_BANK[idx % len(HEADLINE_BANK)].format(name=name)
-    subline = SUBLINE_BANK[idx % len(SUBLINE_BANK)]
+    subline = SUBLINE_BANK[(idx // len(HEADLINE_BANK)) % len(SUBLINE_BANK)]
     return headline, subline
 
 
@@ -304,7 +357,6 @@ def allocate(rows):
 
 
 def main():
-    import cairosvg
     rows = list(csv.DictReader(open(CSV_IN, encoding="utf-8")))
     counts = allocate(rows)
     out_rows = []
@@ -353,11 +405,10 @@ def main():
 
             headline, subline = variant_image_text(name, n)
             svg = GP.pin_svg(slug, headline, subline, motif, kicker)
-            img_path = f"assets/pinterest/{slug}--v{n}.png"
-            cairosvg.svg2png(bytestring=svg.encode(),
-                             write_to=os.path.join(ROOT, img_path),
-                             output_width=GP.PIN_W, output_height=GP.PIN_H)
-            generated += 1
+            r2_key = f"pinterest/variants/{slug}--v{n}.png"
+            _, status = R2.render_and_upload(svg, r2_key, GP.PIN_W, GP.PIN_H)
+            if status != "skipped-identical":
+                generated += 1
 
             rec = {c: "" for c in COLUMNS}
             rec.update({
@@ -370,7 +421,7 @@ def main():
                 "include_in_pinterest": "yes",
                 "exclusion_reason": "",
                 "og_image_path": (row.get("OG image path") or "").strip(),
-                "pinterest_image_path": img_path,
+                "pinterest_image_path": r2_key,
                 "pinterest_image_width": str(GP.PIN_W),
                 "pinterest_image_height": str(GP.PIN_H),
                 "pinterest_board_primary": board,
@@ -395,7 +446,8 @@ def main():
         w.writeheader()
         w.writerows(out_rows)
 
-    print(f"generated {generated} variant pins -> assets/pinterest/")
+    print(f"uploaded {generated} variant pins -> R2 "
+          f"{R2.public_base_url()}/pinterest/variants/")
     print(f"wrote inventory -> data/pinterest_pins_variants.csv ({len(out_rows)} rows)")
     _load(os.path.join(HERE, "build_pinterest_upload.py"), "build_upload").convert("variants")
     print("--- variant pins per board ---")

@@ -24,14 +24,20 @@ symbols copy and paste ~12K, copy and paste hearts/emojis). Each pin gets a
 copy-paste-led primary board + a topical secondary board for extra reach.
 
 Outputs:
-  - assets/collection-pins/<slug>.png   1000x1500 vertical pin (2:3)
-  - data/collection_pins.csv            per-pin upload inventory
+  - pinterest/collection/<slug>.png     1000x1500 vertical pin (2:3), rendered
+    in memory (Playwright screenshot -> Pillow resize, both in-process) and
+    uploaded straight to Cloudflare R2 -- never written under
+    assets/collection-pins/, never committed. See docs/pinterest-r2-migration.md.
+  - data/collection_pins.csv            per-pin upload inventory (pin_image_path
+    holds the R2 object key)
 
 Run:  python3 scripts/generate-collection-pins.py [slug ...]   # optional filter
-Requires: playwright (+chromium), Pillow, fonts-noto-core/extra, Twemoji CDN.
+Requires: playwright (+chromium), Pillow, boto3, fonts-noto-core/extra,
+Twemoji CDN, and R2_ENDPOINT/R2_ACCESS_KEY_ID/R2_SECRET_ACCESS_KEY in the env.
 """
 import csv
 import html
+import io
 import json
 import os
 import subprocess
@@ -42,11 +48,11 @@ from playwright.sync_api import sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-OUT = os.path.join(ROOT, "assets", "collection-pins")
 AUDIT = os.path.join(ROOT, "data", "collection_pin_targets.csv")
 SPEC_DIR = os.path.join(ROOT, "data", "library_page_specs")
 CSV_OUT = os.path.join(ROOT, "data", "collection_pins.csv")
-os.makedirs(OUT, exist_ok=True)
+sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+import r2_pinterest as R2  # noqa: E402
 
 DOMAIN = "https://ultratextgen.com"
 PIN_W, PIN_H = 1000, 1500
@@ -304,7 +310,7 @@ def build_record(row):
         "pin_keywords": ", ".join(kw[:9]),
         "pin_alt_text": f"Vertical Pinterest pin showing {phrase.lower()} to copy and paste from UltraTextGen.",
         "page_url": url, "utm_url": utm,
-        "pin_image_path": f"assets/collection-pins/{slug}.png",
+        "pin_image_path": f"pinterest/collection/{slug}.png",
     }
 
 
@@ -315,6 +321,8 @@ def row_html(name, sset, size):
 
 
 def render_pin(page, rec):
+    """Render one pin fully in memory -- Playwright screenshot bytes -> Pillow
+    resize into a BytesIO buffer -> R2 upload. Nothing touches local disk."""
     size = 92 if rec["is_emoji"] else 58
     rows = "".join(row_html(n, s, size) for n, s in rec["rows"])
     page.set_content(PAGE.format(css=CSS, kicker=html.escape(rec["kicker"]),
@@ -324,11 +332,11 @@ def render_pin(page, rec):
     page.wait_for_function("window.__ready===true", timeout=20000)
     page.evaluate("""async()=>{const i=[...document.images];
         await Promise.all(i.map(x=>x.complete?1:new Promise(r=>{x.onload=x.onerror=r;})));}""")
-    raw = os.path.join(OUT, f"{rec['slug']}@2x.png")
-    page.locator(".pin").screenshot(path=raw)
-    Image.open(raw).convert("RGB").resize((PIN_W, PIN_H), Image.LANCZOS).save(
-        os.path.join(OUT, f"{rec['slug']}.png"))
-    os.remove(raw)
+    raw_bytes = page.locator(".pin").screenshot()
+    buf = io.BytesIO()
+    Image.open(io.BytesIO(raw_bytes)).convert("RGB").resize(
+        (PIN_W, PIN_H), Image.LANCZOS).save(buf, format="PNG")
+    R2.upload_bytes(buf.getvalue(), rec["pin_image_path"])
 
 
 COLUMNS = ["slug", "page_url", "is_emoji_pin", "category", "board_primary",
@@ -380,7 +388,7 @@ def main():
         w.writeheader()
         w.writerows(out_rows)
 
-    print(f"\nrendered {len(out_rows)} pins -> assets/collection-pins/")
+    print(f"\nuploaded {len(out_rows)} pins -> R2 {R2.public_base_url()}/pinterest/collection/")
     print(f"inventory -> data/collection_pins.csv")
     # derive the Pinterest-importer-ready upload CSV (schema owned by
     # scripts/pinterest_csv.py); never upload the inventory above directly.

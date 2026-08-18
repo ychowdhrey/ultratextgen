@@ -30,9 +30,7 @@ import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PIN_DIR = os.path.join(ROOT, "assets", "pinterest", "es")
 CSV_OUT = os.path.join(ROOT, "data", "es_pinterest_pins.csv")
-os.makedirs(PIN_DIR, exist_ok=True)
 
 DEST = "https://ultratextgen.com/es/"
 PIN_W, PIN_H = 1000, 1500
@@ -435,16 +433,17 @@ COLUMNS = ["slug", "image_path", "width", "height", "board", "pin_title",
 
 
 def main():
-    import cairosvg
+    import sys
+    sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+    import r2_pinterest as R2
     out = []
     for pin in PINS:
         svg = pin_svg(pin)
-        path = os.path.join(PIN_DIR, f"{pin['slug']}.png")
-        cairosvg.svg2png(bytestring=svg.encode(), write_to=path,
-                         output_width=PIN_W, output_height=PIN_H)
+        r2_key = f"pinterest/boards/es/{pin['slug']}.png"
+        R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
         out.append({
             "slug": pin["slug"],
-            "image_path": f"assets/pinterest/es/{pin['slug']}.png",
+            "image_path": r2_key,
             "width": str(PIN_W), "height": str(PIN_H),
             "board": BOARD,
             "pin_title": pin["title"],
@@ -458,7 +457,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out)
-    print(f"generated {len(out)} Spanish pins -> assets/pinterest/es/")
+    print(f"uploaded {len(out)} Spanish pins -> R2 {R2.public_base_url()}/pinterest/boards/es/")
     print(f"wrote inventory -> data/es_pinterest_pins.csv")
 
     # build the Pinterest-importer CSV through the shared pipeline

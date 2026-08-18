@@ -157,7 +157,7 @@ def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
                 describe, alt):
     """Render every pin, write the inventory CSV, and build the importer CSV.
 
-    locale       e.g. "de" -> assets/pinterest/de/, data/de_pinterest_pins.csv
+    locale       e.g. "de" -> pinterest/boards/de/ on R2, data/de_pinterest_pins.csv
     pins         list of pin dicts (each: slug, kicker, headline, benefit,
                  rows, title, kw; optional `dest` overrides the destination URL)
     board        Pinterest board name (native)
@@ -168,21 +168,23 @@ def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
     describe     fn(pin) -> native pin description
     alt          fn(pin) -> native alt text
     """
-    import cairosvg
-    pin_dir = os.path.join(ROOT, "assets", "pinterest", locale)
+    import sys
+    sys.path.insert(0, os.path.join(ROOT, "scripts", "lib"))
+    import r2_pinterest as R2
     csv_out = os.path.join(ROOT, "data", f"{locale}_pinterest_pins.csv")
-    os.makedirs(pin_dir, exist_ok=True)
 
     out = []
+    uploaded = 0
     for pin in pins:
         svg = pin_svg(pin, cta, url_suffix)
-        path = os.path.join(pin_dir, f"{pin['slug']}.png")
-        cairosvg.svg2png(bytestring=svg.encode(), write_to=path,
-                         output_width=PIN_W, output_height=PIN_H)
+        r2_key = f"pinterest/boards/{locale}/{pin['slug']}.png"
+        _, status = R2.render_and_upload(svg, r2_key, PIN_W, PIN_H)
+        if status != "skipped-identical":
+            uploaded += 1
         pin_dest = pin.get("dest", dest)
         out.append({
             "slug": pin["slug"],
-            "image_path": f"assets/pinterest/{locale}/{pin['slug']}.png",
+            "image_path": r2_key,
             "width": str(PIN_W), "height": str(PIN_H),
             "board": board,
             "pin_title": pin["title"],
@@ -196,7 +198,8 @@ def build_board(locale, pins, board, dest, campaign, cta, url_suffix,
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out)
-    print(f"generated {len(out)} {locale} pins -> assets/pinterest/{locale}/")
+    print(f"uploaded {uploaded}/{len(out)} {locale} pins -> R2 "
+          f"{R2.public_base_url()}/pinterest/boards/{locale}/")
     print(f"wrote inventory -> data/{locale}_pinterest_pins.csv")
 
     # build the Pinterest-importer CSV through the shared pipeline
