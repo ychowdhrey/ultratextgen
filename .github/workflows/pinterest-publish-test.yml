@@ -1,0 +1,66 @@
+name: Pinterest Publish (manual, single pin)
+
+# Phase-3 proof of concept ONLY: one image -> one Pinterest API call -> one
+# Pin. Deliberately workflow_dispatch-only -- no `schedule:` trigger, no
+# looping over many rows. See docs/pinterest-api-publishing.md for the
+# queued/scheduled design this is a stepping stone toward, not a shortcut
+# around.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Page slug to publish, e.g. ascii-art-generator'
+        required: true
+      csv:
+        description: 'Inventory CSV to read the row from'
+        required: false
+        default: 'data/pinterest_pins.csv'
+      dry_run:
+        description: 'Validate only -- no Pinterest API call, no token needed'
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  publish-one-pin:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Publish one Pin
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+        run: |
+          ARGS="--slug ${{ inputs.slug }} --csv ${{ inputs.csv }}"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          else
+            ARGS="$ARGS --sync-csv --commit-log"
+          fi
+          python3 scripts/publish-pinterest-pin.py $ARGS
+
+      - name: Upload publish log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinterest-publish-log
+          path: data/pinterest_publish_log.jsonl
+          if-no-files-found: ignore
