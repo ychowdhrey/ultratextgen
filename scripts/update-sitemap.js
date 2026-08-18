@@ -3,10 +3,12 @@
 const fs   = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { significanceHash } = require('./lib/content-significance');
 
 const BASE_URL     = 'https://ultratextgen.com';
 const SITEMAP_PATH = path.resolve(__dirname, '..', 'sitemap.xml');
 const REPO_ROOT    = path.resolve(__dirname, '..');
+const LASTMOD_CACHE = path.resolve(__dirname, '..', 'data', 'sitemap-lastmod-cache.json');
 
 const EXCLUDED_FOLDERS = [
   'assets', 'css', 'js', 'images', 'img',
@@ -160,6 +162,51 @@ function todayDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+// ─── lastmod significance cache ───────────────────────────────────────────────
+//
+// <lastmod> must mean "the content meaningfully changed", not "some byte in the
+// file moved". getGitLastMod() alone cannot tell the difference: on 2026-08-15/16
+// two cosmetic passes (breadcrumb aria-labels, three template strings) bumped
+// 2,533 pages without altering a word a reader could see, and 69% of pages were
+// advertising a lastmod newer than their real content change, median 11 days.
+//
+// So we keep {url: {hash, lastmod}} beside the sitemap. Each run hashes the page
+// (scripts/lib/content-significance.js) and only advances lastmod when the hash
+// moves. O(1) per page, no history walking.
+//
+// SEEDING: on the very first run the cache does not exist. Do NOT stamp today —
+// that would bump every URL at once, which is precisely the failure being fixed.
+// Seed from the lastmod values already in sitemap.xml instead, so the first run
+// after this change writes an identical file.
+
+function loadLastmodCache() {
+  try {
+    return JSON.parse(fs.readFileSync(LASTMOD_CACHE, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function seedFromExistingSitemap() {
+  const seed = {};
+  try {
+    const xml = fs.readFileSync(SITEMAP_PATH, 'utf8');
+    const re = /<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g;
+    let m;
+    while ((m = re.exec(xml)) !== null) seed[m[1].replace(BASE_URL, '')] = m[2];
+  } catch {
+    /* no sitemap yet — every page is genuinely new */
+  }
+  return seed;
+}
+
+function saveLastmodCache(cache) {
+  fs.mkdirSync(path.dirname(LASTMOD_CACHE), { recursive: true });
+  const ordered = {};
+  for (const k of Object.keys(cache).sort()) ordered[k] = cache[k];
+  fs.writeFileSync(LASTMOD_CACHE, JSON.stringify(ordered, null, 1) + '\n', 'utf8');
+}
+
 // ─── XML builder ──────────────────────────────────────────────────────────────
 
 function buildUrlBlock(url, lastmod, changefreq, priority, images) {
@@ -202,10 +249,52 @@ function urlSortKey(url) {
   return url;
 }
 
+let resolveLastMod; // assigned inside generateSitemap (closes over the cache)
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 function generateSitemap() {
   console.log('🔍 Scanning for index.html pages...');
+
+  const priorCache = loadLastmodCache();
+  const cache      = priorCache || {};
+  const seed       = priorCache ? null : seedFromExistingSitemap();
+  const nextCache  = {};
+  let bumped = 0;
+  let held   = 0;
+
+  resolveLastMod = function (filePath, url) {
+    let html = '';
+    try {
+      html = fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8');
+    } catch {
+      return getGitLastMod(filePath);
+    }
+    const hash = significanceHash(html);
+    const prev = cache[url];
+
+    let lastmod;
+    if (prev && prev.hash === hash) {
+      lastmod = prev.lastmod;                 // unchanged content — hold the date
+      held++;
+    } else if (!prev && seed && seed[url]) {
+      lastmod = seed[url];                    // first run — inherit, never mass-bump
+      held++;
+    } else {
+      // Real change, or a genuinely new page. getGitLastMod is right in CI, where
+      // the sitemap job runs after the commit lands. But if the edit is still only
+      // in the working tree, git reports the PREVIOUS commit's date — older than
+      // the date we already cached — and lastmod would silently fail to advance
+      // even though the content moved. Fall back to today in exactly that case.
+      const gitDate = getGitLastMod(filePath);
+      lastmod = (prev && gitDate <= prev.lastmod) ? todayDate() : gitDate;
+      bumped++;
+    }
+    nextCache[url] = { hash, lastmod };
+    return lastmod;
+  };
+
+  generateSitemap._report = () => ({ bumped, held, nextCache });
 
   const discovered = findIndexFiles(REPO_ROOT);
   const indexFiles = discovered.filter(f => !isNoindex(f));
@@ -218,7 +307,7 @@ function generateSitemap() {
   const urlEntries = indexFiles
     .map(filePath => {
       const url      = pathToUrl(filePath);
-      const lastmod  = getGitLastMod(filePath);
+      const lastmod  = resolveLastMod(filePath, url);
       const defaults = getUrlDefaults(url);
       const images   = getPageImages(filePath);
       return { url, lastmod, images, ...defaults };
@@ -229,7 +318,12 @@ function generateSitemap() {
 
   fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
 
+  const { bumped: b, held: h, nextCache: nc } = generateSitemap._report();
+  saveLastmodCache(nc);
+
   console.log(`   URLs written:     ${urlEntries.length}`);
+  console.log(`   lastmod advanced: ${b}  (content actually changed)`);
+  console.log(`   lastmod held:     ${h}  (no meaningful change)`);
   console.log(`   Output path:      ${SITEMAP_PATH}`);
   console.log('✅ sitemap.xml fully regenerated.');
 }
