@@ -34,6 +34,25 @@ import r2_pinterest as R2  # noqa: E402
 import pinterest_publisher as PUB  # noqa: E402
 
 
+_IMAGE_EXT = (".png", ".jpg", ".jpeg", ".webp")
+
+
+def _normalize_slug(value):
+    """--slug is documented as a bare slug ('ascii-art-generator'), but the
+    most natural thing to paste is the R2 image URL or path itself (that's
+    what a first live test actually did: 'https://media.ultratextgen.com/
+    pinterest/base/answers-can-you-search-fancy-text.png'). Accept that too
+    -- take the last path segment and strip a known image extension -- so
+    the obvious input just works instead of failing with 'no row found'."""
+    if not value:
+        return value
+    tail = value.rstrip("/").split("/")[-1] if ("://" in value or "/" in value) else value
+    for ext in _IMAGE_EXT:
+        if tail.lower().endswith(ext):
+            return tail[: -len(ext)]
+    return tail
+
+
 def _find_row(csv_path, slug=None, page_url=None):
     with open(csv_path, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -103,6 +122,7 @@ def main():
     if not args.slug and not args.page_url:
         ap.error("one of --slug or --page-url is required")
 
+    args.slug = _normalize_slug(args.slug)
     row = _find_row(args.csv, slug=args.slug, page_url=args.page_url)
     if not row:
         sys.exit(f"No row found in {args.csv} matching slug={args.slug!r} page_url={args.page_url!r}")
