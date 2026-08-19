@@ -36,9 +36,17 @@ Title, Media URL, Pinterest board, Thumbnail, Description, Link, Publish date, K
   `.png/.jpg/.jpeg/.webp/.mp4`. Built as `DOMAIN + inventory image path`, where
   `DOMAIN` defaults to `R2_PUBLIC_BASE_URL` (`https://media.ultratextgen.com`) —
   see [`pinterest-r2-migration.md`](./pinterest-r2-migration.md).
-- **Pinterest board** — required, must match an **existing** board name in the
-  account (create the board first). Bulk CSV has one board column, so pins are
+- **Pinterest board** — required. Bulk CSV has one board column, so pins are
   filed to their *primary* board; secondary boards are a manual re-pin.
+  **Correction (2026-08-18):** this previously said the board name "must match
+  an existing board in the account (create the board first)" — that's wrong.
+  Pinterest's own bulk-upload help doc states plainly: *"If the board or
+  section doesn't exist, it will be created for you."* Verified directly
+  against that page while building the API publishing pipeline
+  (`docs/pinterest-api-publishing.md`) — a missing board is auto-created by
+  the bulk importer, not a hard requirement. Copy the board title exactly
+  (spaces, capitalization) and don't include a `/` unless you mean a board
+  section, since `/` is parsed as the board/section separator.
 - **Thumbnail** — video pins only (blank for image pins).
 - **Description** — ≤ 500 chars.
 - **Link** — destination URL (with UTM).

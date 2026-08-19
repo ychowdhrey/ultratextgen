@@ -108,6 +108,12 @@ def main():
     ap.add_argument("--page-url", help="Exact page_url value instead of --slug")
     ap.add_argument("--board-id", help="Override: publish straight to this Pinterest board ID")
     ap.add_argument("--board-name", help="Override the board name to resolve (default: row's pinterest_board_primary)")
+    ap.add_argument("--create-board", action="store_true",
+                     help="If the resolved board name doesn't exist on the account, create it via POST /v5/boards "
+                          "instead of failing. Off by default -- board creation stays a deliberate opt-in.")
+    ap.add_argument("--list-boards", action="store_true",
+                     help="List every board on the account (name + id) via GET /v5/boards, then exit. "
+                          "Needs only PINTEREST_ACCESS_TOKEN (boards:read) -- no publish attempted.")
     ap.add_argument("--dry-run", action="store_true",
                      help="Validate everything (image reachability, field lengths) without calling Pinterest or requiring a token")
     ap.add_argument("--force", action="store_true", help="Bypass duplicate protection and publish again")
@@ -118,6 +124,13 @@ def main():
                           "publish -- this is what makes duplicate protection durable across CI runs, which "
                           "each start from a fresh checkout. Mirrors scripts/tweet_queue.py's state-file commit.")
     args = ap.parse_args()
+
+    if args.list_boards:
+        import pinterest_api as API
+        token = API.get_access_token()
+        boards = list(API.list_boards(token))
+        print(json.dumps([{"id": b.get("id"), "name": b.get("name")} for b in boards], indent=2))
+        sys.exit(0)
 
     if not args.slug and not args.page_url:
         ap.error("one of --slug or --page-url is required")
@@ -150,11 +163,23 @@ def main():
                 "status": "failed", "error": f"Board lookup failed: {exc}",
             }, indent=2))
             sys.exit(1)
+        if not board and args.create_board:
+            try:
+                board = API.create_board(token, board_name)
+                print(f"Created board {board_name!r} (id={board['id']}).", file=sys.stderr)
+            except API.PinterestAPIError as exc:
+                print(json.dumps({
+                    "pinId": None, "httpStatus": exc.status_code, "publishedAt": None,
+                    "boardId": None, "boardName": board_name,
+                    "utgDestinationUrl": destination_url, "imageUrl": image_url,
+                    "status": "failed", "error": f"Board creation failed: {exc}",
+                }, indent=2))
+                sys.exit(1)
         if not board:
             sys.exit(
                 f"No Pinterest board named {board_name!r} found on this account. "
-                f"Create it in the Pinterest UI first (this script does not "
-                f"auto-create boards), or pass --board-id explicitly."
+                f"Pass --create-board to create it via the API, create it manually "
+                f"on pinterest.com first, or pass --board-id explicitly."
             )
         board_id = board["id"]
     elif not board_id:
