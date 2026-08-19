@@ -35,8 +35,8 @@
  *
  * ── The stop rule ─────────────────────────────────────────────────────────────
  * A locale with no entry below is left in English rather than guessed at. A wrong
- * aria-label is worse for a screen-reader user than an English one — see
- * docs/LOCALE-TRANSLATION-COMPLETENESS-AUDIT (lab repo) §7.
+ * aria-label is worse for a screen-reader user than an English one — this is the
+ * standing stop rule for this script, not a one-off judgment call.
  *
  * Usage:
  *   node scripts/fix-locale-template-strings.js --dry-run   # report only

@@ -1322,9 +1322,25 @@ vocabulary for this site's top-opportunity locales, distinct from a plain
 translation memory. It captures, per concept per market: the literal/
 dictionary translation, the grammatically correct translation, the phrase
 locals actually say, the phrase locals actually type into search engines/
-forums/games, and when that phrase is and isn't appropriate. Public,
-approved-only snapshot: `data/local-language/<locale>.json` (one file per
-locale + `index.json`). Full methodology, schema, and every locale's write-up:
+forums/games, and when that phrase is and isn't appropriate.
+
+**None of this data lives in this repo (changed 2026-08-19), and it is not
+meant to.** It lives exclusively in a separate, non-public workspace's own
+`forum-intelligence/language-dictionaries/local-language-lexicon.csv`. A
+generated, approved-only public snapshot used to be synced into
+`data/local-language/<locale>.json` here; it was removed because nothing on
+the live site ever read it (confirmed: no page JS, no HTML, no Cloudflare
+Function consumed it) and it was publishing real research judgment
+(`usage_guidance`, `avoid_when`, `confidence` — not just the phrase itself)
+into a **public** GitHub repo for no operational reason. Any work needing
+this data now attaches that workspace as a sibling checkout and reads the
+canonical CSV directly, filtered to `status` in `{approved, limited_use}` —
+`scripts/plan-library-locale-batch.py`'s `native_phrases()` is the reference
+implementation (it discovers the file by that path shape under any sibling
+directory rather than a hardcoded name), and it fails loudly (non-zero exit,
+explicit message) if no such workspace is attached, rather than silently
+treating an unchecked locale as if it had no vocabulary on record. Full
+methodology, schema, and every locale's write-up:
 `docs/local-language-intelligence.md`.
 
 **The core rule: use locally natural vocabulary when it fits the user's
@@ -1333,9 +1349,10 @@ merely because it's in the dictionary.** This is a decision aid, not a
 keyword-insertion engine.
 
 1. Before writing or materially editing localized copy for one of the
-   covered locales, check `data/local-language/<locale>.json` for that
-   locale (and its `country_or_market` field if the locale has regional
-   splits — see below).
+   covered locales, attach the workspace that holds the library (if not
+   already attached) and check its `local-language-lexicon.csv` for that
+   locale, filtered to `status` in `{approved, limited_use}` (and its
+   `country_or_market` field if the locale has regional splits — see below).
 2. Use a local phrase only when it naturally fits the exact meaning,
    platform, game, audience, and register of the sentence you're writing.
    Do not try to use every available phrase, do not set a keyword-density
@@ -1351,7 +1368,7 @@ keyword-insertion engine.
 5. Do not mix vocabulary from neighboring countries/markets without
    evidence — e.g. Mexican Spanish into an `es_ES`-targeted section,
    Portugal-Portuguese into `pt_BR` copy, Gulf Arabic into pan-Arabic MSA
-   copy. Each snapshot record's `country_or_market` field tells you which
+   copy. Each lexicon record's `country_or_market` field tells you which
    market it's evidenced for; a record's `avoid_when` field tells you the
    specific situations to skip it in.
 6. Respect `content_surface` and `register` on each record — a phrase
@@ -1372,13 +1389,15 @@ keyword-insertion engine.
    the phrase on any page this session.
 8. **A newly discovered phrase must never be inserted directly into
    production copy the same pass it's discovered.** It goes into the
-   research library as `candidate` first. Only `approved` or `limited_use`
-   phrases (the ones that make it into the public snapshot here) are meant
-   for production copy, and even then only per rule 2 above.
-9. This public snapshot is generated, read-only data — regenerated from the
-   canonical research dataset maintained internally. Do not hand-edit the
-   JSON files under `data/local-language/`; if a phrase needs a status change
-   or correction, that happens internally and gets re-synced here.
+   library's own research workspace as `candidate` first. Only `approved` or
+   `limited_use` phrases are meant for production copy, and even then only
+   per rule 2 above.
+9. **This repo carries no copy of the lexicon and never should** — see
+   "Where the data lives" in `docs/local-language-intelligence.md` for why
+   the old public snapshot was removed 2026-08-19. If a phrase needs a
+   status change or correction, that happens directly in the workspace that
+   holds the library (never here) — see that workspace's own capture/
+   promotion workflow documentation.
 10. A local phrase, however well-evidenced, never guarantees ranking — it's
     a fit signal, not a growth lever on its own.
 
