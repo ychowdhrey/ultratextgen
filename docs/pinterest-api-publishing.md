@@ -169,30 +169,73 @@ future call mysteriously 403s.
 
 ---
 
-## 7. Reporting / analytics — what's available, not yet built
+## 7. Reporting / analytics — what's available, now built (2026-08-19)
 
-The app also requests Reporting access, so this phase identifies what's
-there without building an analytics system yet, per the task's own
-instruction.
+Originally scoped as "identify what's available, don't build a system yet"
+(§7 history below), then explicitly requested once the goal pivoted: Trial
+access can't publish public Pins (§10), but its read scopes
+(`pins:read`/`boards:read`/`user_accounts:read`) work against whatever real,
+pre-existing pin history the account already has — verified: this account
+has real (non-sandbox) activity, so there's real data to read *right now*,
+independent of the Standard-access application in flight.
 
 - **`GET /v5/pins/{pin_id}/analytics`** — per-Pin daily + summary metrics:
   `IMPRESSION`, `SAVE`, `SAVE_RATE`, `PIN_CLICK`, `OUTBOUND_CLICK`, plus
   video metrics where applicable. Wired as `get_pin_analytics()`.
 - **`GET /v5/user_account/analytics`** — the same metric vocabulary,
   account-wide. Wired as `get_account_analytics()`.
-- **Board-level** analytics exist under the same pattern
-  (`/boards/{board_id}/analytics`) but weren't wired into `pinterest_api.py`
-  this phase — trivial to add the same way once there's a use for it.
-- **Trial-access caveat:** Trial/sandbox Pins are only visible to their
-  creator, so their analytics are meaningless test data, not real
-  performance — this only becomes useful once the app is on Standard
-  access.
-- **Feeding UTG's existing content-performance dataset:** every published
-  Pin's log entry (`data/pinterest_publish_log.jsonl`) already carries
-  `pinId`, `sourcePage` and `destinationUrl` — the natural join key into a
-  future analytics pull is `pinId`, keyed back to the UTG page via
-  `sourcePage`. **Not built this phase** — the task explicitly asked to
-  identify availability, not build the system.
+- **`GET /v5/boards/{board_id}/analytics`** — same vocabulary, one board.
+  Wired as `get_board_analytics()`.
+- **`GET /v5/pins`** — lists every real Pin on the account (paginated, same
+  `bookmark` convention as `list_boards()`). Wired as `list_pins()`.
+- **Trial-access nuance, corrected from the original scoping above:** it's
+  not "Trial analytics are meaningless" — it's specifically *sandbox-created*
+  Pins whose analytics are meaningless (no real audience ever saw them). A
+  Trial-access token reading the account's real, non-sandbox pin history
+  (`PINTEREST_API_ENV=production`, read-only scopes — no Standard access
+  needed for *reading*) gets real numbers.
+
+### `scripts/pinterest-insights.py` — read-only report, no writes
+
+Pulls account analytics + per-pin analytics for every real Pin, and reports
+two ranked views: **outbound CTR** (the traffic-to-ultratextgen.com metric —
+the actual End Goal) and **save rate** (Pinterest's own resonance/quality
+signal, which feeds future distribution). Same rigor this repo's own GSC
+tooling applies to raw CTR: pins below a **50-impression floor**
+(`MIN_IMPRESSIONS_FOR_RATE`) are reported but excluded from the ranked
+lists — a 1-click-of-3-impressions pin is not a 33% CTR, it's an unread
+sample. Zero-impression pins get their own bucket with the same caveat this
+repo's GSC register documents for the analogous "no-impressions" case:
+absence of impressions measures whether Pinterest is showing the pin, not
+whether the underlying keyword/board has demand.
+
+```sh
+python3 scripts/pinterest-insights.py --days 30
+python3 scripts/pinterest-insights.py --days 90 --limit 50 \
+  --report docs/pinterest-insights-2026-08-19.md --json out.json
+```
+
+`.github/workflows/pinterest-insights.yml` runs this self-serve, read-only
+(`contents: write` only to commit the report file itself — no board/pin
+mutation anywhere in the workflow), and commits the dated Markdown report
+to `docs/` by default.
+
+**Feeding UTG's existing content-performance dataset:** every published
+Pin's log entry (`data/pinterest_publish_log.jsonl`) carries `pinId`,
+`sourcePage` and `destinationUrl` — once real (Standard-access) publishing
+starts, that's the join key back to a UTG page. The account's *pre-existing*
+pins predate this pipeline and won't all resolve to a `pinterest_pins.csv`
+row by `link` — `pinterest-insights.py` reports them by their own
+title/board/link regardless, rather than assuming every real pin traces
+back to this repo's inventory.
+
+**What this does not do yet, on purpose:** it doesn't rewrite any pin
+title/description, and it doesn't feed findings back into
+`generate-pinterest.py`'s copy templates automatically. Turning "pin X has a
+2.5% outbound CTR at this board, pin Y has 0.3%" into a specific,
+title/keyword-level recommendation for the *next* batch of generated pins is
+real analysis, not just plumbing — a deliberate next step (§11), not
+something to fold in unreviewed.
 
 ---
 
@@ -402,6 +445,22 @@ In order, each gated on the previous actually working:
    no new idempotency design needed, just a loop around what exists.
 4. **Secret-rotation automation** for the 30-day access-token expiry, once
    there's been at least one real cycle to design it against.
-5. **Wire `get_pin_analytics()`/`get_account_analytics()`** into whatever
-   this repo's GSC/content-performance pipeline already is, once Standard
-   access makes the numbers real rather than sandbox noise (§7).
+5. **Done, ahead of schedule (2026-08-19):** `get_pin_analytics()`/
+   `get_account_analytics()` are wired into `scripts/pinterest-insights.py`
+   (§7) — this didn't need to wait on Standard access, since the account's
+   real pre-existing pin history is readable under Trial's read scopes
+   right now. Next: run it, read the report, and turn the ranked
+   outbound-CTR/save-rate findings into specific title/keyword adjustments
+   for `generate-pinterest.py`'s copy templates — deliberately not
+   automated, per this file's own standing rule about research not
+   auto-earning production changes.
+
+**Goal pivot recorded (2026-08-19):** publishing all pins publicly is
+blocked on the pending Standard-access review (step 2 above), not on
+anything in this codebase — confirmed against Pinterest's own access-tier
+table (Trial's "Writing standard Pins" row: *"Visible only to the user who
+creates them"*). While that's pending, the priority shifted to the
+Reporting side (step 5): use Trial's real read access on the account's
+existing pin history to find what's actually working, so the eventual
+Standard-access publish batch is informed by real Pinterest performance
+data, not guesses.

@@ -394,10 +394,41 @@ def get_pin_analytics(token, pin_id, start_date, end_date, metric_types=PIN_METR
 
 def get_account_analytics(token, start_date, end_date, metric_types=PIN_METRICS):
     """GET /user_account/analytics -- account-level rollup, same metric
-    vocabulary as get_pin_analytics(). Requires Standard access."""
+    vocabulary as get_pin_analytics(). Works under Trial access too, for
+    whatever real (non-sandbox) pin history the account already has --
+    verified 2026-08-19: the account this repo publishes through has real
+    prior activity, so this isn't gated on Standard access the way
+    *creating* a public pin is."""
     params = {
         "start_date": start_date,
         "end_date": end_date,
         "metric_types": ",".join(metric_types),
     }
     return _request("GET", "/user_account/analytics", token, params=params)
+
+
+def get_board_analytics(token, board_id, start_date, end_date, metric_types=PIN_METRICS):
+    """GET /boards/{board_id}/analytics -- same metric vocabulary, one board."""
+    params = {
+        "start_date": start_date,
+        "end_date": end_date,
+        "metric_types": ",".join(metric_types),
+    }
+    return _request("GET", f"/boards/{board_id}/analytics", token, params=params)
+
+
+def list_pins(token, page_size=100, bookmark=None):
+    """Yield every Pin on the account (real pins -- this reads whatever the
+    account already has, sandbox or not, depending on which host api_base()
+    resolves to), following `bookmark` pagination exactly like
+    list_boards()."""
+    while True:
+        params = {"page_size": page_size}
+        if bookmark:
+            params["bookmark"] = bookmark
+        resp = _request("GET", "/pins", token, params=params)
+        for pin in resp.get("items", []):
+            yield pin
+        bookmark = resp.get("bookmark")
+        if not bookmark:
+            return
