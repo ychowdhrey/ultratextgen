@@ -21,12 +21,12 @@ Priority model — three signals, all computable from the repo, no API needed:
   2. cluster  — how many locales already translated it. A page 12 locales have is
                 a proven-portable topic; a page nobody has translated is either
                 new or nobody thought it worth it.
-  3. native   — whether the Local Language Intelligence Library (canonical CSV in
-                the private ychowdhrey/ultratextgen-lab- repo -- must be attached as
-                a sibling checkout; there is no local copy in this repo, see
-                CLAUDE.md's "Local Language Intelligence" section) carries an
-                approved or limited_use phrase matching the topic. Presence does not
-                raise priority on its own; it is reported so a batch can be
+  3. native   — whether the Local Language Intelligence Library (a researched,
+                evidence-backed vocabulary dataset kept intentionally outside this
+                repo -- there is no local copy here, see CLAUDE.md's "Local
+                Language Intelligence" section for why and how to reach it) carries
+                an approved or limited_use phrase matching the topic. Presence does
+                not raise priority on its own; it is reported so a batch can be
                 sequenced to put well-evidenced pages first and flag the rest for
                 review.
 
@@ -135,16 +135,31 @@ def inbound_link_counts():
     return counts
 
 
-LAB_REPO_LEXICON = os.path.join(
-    ROOT, "..", "ultratextgen-lab-", "forum-intelligence", "language-dictionaries",
+NATIVE_LEXICON_GLOB = os.path.join(
+    ROOT, "..", "*", "forum-intelligence", "language-dictionaries",
     "local-language-lexicon.csv",
 )
 NATIVE_PUBLIC_STATUSES = {"approved", "limited_use"}
 
 
+def _find_native_lexicon():
+    """Locate the Local Language Intelligence Library's canonical CSV.
+
+    This repo deliberately keeps no copy of it and no hardcoded path to it
+    (see CLAUDE.md's "Local Language Intelligence" section) -- it is
+    discovered by shape, not by name, in whichever sibling checkout carries
+    it. NATIVE_LEXICON_PATH overrides the search with an explicit path.
+    """
+    env_path = os.environ.get("NATIVE_LEXICON_PATH")
+    if env_path:
+        return env_path if os.path.exists(env_path) else None
+    hits = sorted(glob.glob(NATIVE_LEXICON_GLOB))
+    return hits[0] if hits else None
+
+
 def native_phrases(locale):
     """Approved/limited_use phrases for one locale, read directly from the
-    private ychowdhrey/ultratextgen-lab- repo's canonical CSV.
+    Local Language Intelligence Library's canonical CSV.
 
     There used to be a public data/local-language/<locale>.json snapshot in
     THIS repo, generated from that same canonical dataset. It was removed
@@ -155,25 +170,25 @@ def native_phrases(locale):
     GitHub repo for no operational reason. See CLAUDE.md's "Local Language
     Intelligence" section.
 
-    Fails loudly if the lab repo isn't attached, rather than returning []
+    Fails loudly if the library isn't attached, rather than returning []
     which would look identical to "checked, nothing on record" and let a
     page ship on an unresearched slug -- exactly what this check exists to
     prevent.
     """
-    if not os.path.exists(LAB_REPO_LEXICON):
+    path = _find_native_lexicon()
+    if not path:
         print(
             "ERROR: cannot find the Local Language Intelligence Library.\n"
-            f"  Expected: {os.path.abspath(LAB_REPO_LEXICON)}\n"
-            "  This data lives ONLY in the private ychowdhrey/ultratextgen-lab-\n"
-            "  repo (never duplicated into this public repo -- see CLAUDE.md's\n"
-            "  'Local Language Intelligence' section for why). Attach that repo\n"
-            "  as a sibling checkout (../ultratextgen-lab-) before running this\n"
-            "  script -- do not proceed by treating an unchecked locale as if it\n"
-            "  had no native-vocabulary evidence.",
+            "  This data lives ONLY outside this repo -- see CLAUDE.md's\n"
+            "  'Local Language Intelligence' section for where and why.\n"
+            "  Attach the sibling checkout that carries it (or set\n"
+            "  NATIVE_LEXICON_PATH to its local-language-lexicon.csv) before\n"
+            "  running this script -- do not proceed by treating an unchecked\n"
+            "  locale as if it had no native-vocabulary evidence.",
             file=sys.stderr,
         )
         sys.exit(2)
-    with open(LAB_REPO_LEXICON, newline="", encoding="utf-8") as fh:
+    with open(path, newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     return [
         r for r in rows
@@ -327,8 +342,8 @@ def main():
     print(f"  already translated   : {len(pages) - len(missing)}")
     print(f"  missing              : {len(missing)}")
     print(f"  native phrases avail : {len(phrases)} "
-          f"(approved/limited_use, locale={loc}, from the lab repo's "
-          f"local-language-lexicon.csv)")
+          f"(approved/limited_use, locale={loc}, from the Local Language "
+          f"Intelligence Library's local-language-lexicon.csv)")
     if demand is None:
         basis = "inbound*2 + locales*3  [STRUCTURAL — pass --gsc for real demand]"
     elif args.market:

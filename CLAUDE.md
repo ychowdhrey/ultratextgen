@@ -1324,8 +1324,8 @@ dictionary translation, the grammatically correct translation, the phrase
 locals actually say, the phrase locals actually type into search engines/
 forums/games, and when that phrase is and isn't appropriate.
 
-**None of this data lives in this repo (changed 2026-08-19).** It lives
-exclusively in the private `ychowdhrey/ultratextgen-lab-` repo's
+**None of this data lives in this repo (changed 2026-08-19), and it is not
+meant to.** It lives exclusively in a separate, non-public workspace's own
 `forum-intelligence/language-dictionaries/local-language-lexicon.csv`. A
 generated, approved-only public snapshot used to be synced into
 `data/local-language/<locale>.json` here; it was removed because nothing on
@@ -1333,13 +1333,15 @@ the live site ever read it (confirmed: no page JS, no HTML, no Cloudflare
 Function consumed it) and it was publishing real research judgment
 (`usage_guidance`, `avoid_when`, `confidence` — not just the phrase itself)
 into a **public** GitHub repo for no operational reason. Any work needing
-this data now attaches the lab repo as a sibling checkout and reads the
+this data now attaches that workspace as a sibling checkout and reads the
 canonical CSV directly, filtered to `status` in `{approved, limited_use}` —
 `scripts/plan-library-locale-batch.py`'s `native_phrases()` is the reference
-implementation, and it fails loudly (non-zero exit, explicit message) if the
-lab repo isn't attached, rather than silently treating an unchecked locale
-as if it had no vocabulary on record. Full methodology, schema, and every
-locale's write-up: `docs/local-language-intelligence.md`.
+implementation (it discovers the file by that path shape under any sibling
+directory rather than a hardcoded name), and it fails loudly (non-zero exit,
+explicit message) if no such workspace is attached, rather than silently
+treating an unchecked locale as if it had no vocabulary on record. Full
+methodology, schema, and every locale's write-up:
+`docs/local-language-intelligence.md`.
 
 **The core rule: use locally natural vocabulary when it fits the user's
 exact intent, platform, audience, and register — never insert a phrase
@@ -1347,7 +1349,7 @@ merely because it's in the dictionary.** This is a decision aid, not a
 keyword-insertion engine.
 
 1. Before writing or materially editing localized copy for one of the
-   covered locales, attach the `ychowdhrey/ultratextgen-lab-` repo (if not
+   covered locales, attach the workspace that holds the library (if not
    already attached) and check its `local-language-lexicon.csv` for that
    locale, filtered to `status` in `{approved, limited_use}` (and its
    `country_or_market` field if the locale has regional splits — see below).
@@ -1386,16 +1388,16 @@ keyword-insertion engine.
    before creating a new record). Do this even if you don't end up using
    the phrase on any page this session.
 8. **A newly discovered phrase must never be inserted directly into
-   production copy the same pass it's discovered.** It goes into the lab
-   repo's research library as `candidate` first. Only `approved` or
+   production copy the same pass it's discovered.** It goes into the
+   library's own research workspace as `candidate` first. Only `approved` or
    `limited_use` phrases are meant for production copy, and even then only
    per rule 2 above.
 9. **This repo carries no copy of the lexicon and never should** — see
    "Where the data lives" in `docs/local-language-intelligence.md` for why
    the old public snapshot was removed 2026-08-19. If a phrase needs a
-   status change or correction, that happens in the lab repo directly (never
-   here) — see that repo's own `CLAUDE.md` for the capture/promotion
-   workflow.
+   status change or correction, that happens directly in the workspace that
+   holds the library (never here) — see that workspace's own capture/
+   promotion workflow documentation.
 10. A local phrase, however well-evidenced, never guarantees ranking — it's
     a fit signal, not a growth lever on its own.
 

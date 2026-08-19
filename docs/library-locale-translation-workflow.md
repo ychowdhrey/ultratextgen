@@ -71,8 +71,8 @@ small enough that one bad decision doesn't contaminate 40 pages.
 For each page in the batch, the planner prints one of:
 
 - **`native [XX-000 TITLE-SAFE]: <phrase>`** — an approved or limited-use phrase
-  from the Local Language Intelligence Library (canonical CSV in the private
-  `ychowdhrey/ultratextgen-lab-` repo — attach it as a sibling checkout before
+  from the Local Language Intelligence Library (canonical CSV kept outside
+  this repo — attach the workspace that holds it as a sibling checkout before
   running the planner; see `docs/local-language-intelligence.md`). Use it for
   the slug, title and H1. Read its `avoid_when` before doing so; some phrases
   are body-only or carry a register restriction.

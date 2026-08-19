@@ -18,10 +18,12 @@ For every concept (e.g. "fancy/stylish text", "invisible/blank name",
 
 ## Where the data lives (changed 2026-08-19 — read this before looking for a local file)
 
-**None of this data lives in this repo, and it never leaves the private
-`ychowdhrey/ultratextgen-lab-` repo.** There used to be a generated,
-approved-only public snapshot at `data/local-language/<locale>.json` in
-*this* repo — it was removed 2026-08-19.
+**None of this data lives in this repo, on purpose, and it is not meant to.**
+The full researched dictionary — including the reasoning behind each entry,
+not just the phrase itself — is maintained in a separate, non-public
+workspace and is deliberately never duplicated here. There used to be a
+generated, approved-only public snapshot at `data/local-language/<locale>.json`
+in *this* repo — it was removed 2026-08-19.
 
 Why: nothing at runtime ever read it (no page JS, no HTML, no Cloudflare
 Function — grep confirmed this before removal). Its only consumer was
@@ -31,34 +33,33 @@ fields it published went well beyond "here's a word we used" — `usage_guidance
 (what markets are prioritized, what mistakes have already been found and
 avoided, why a phrase fits one context and not another), not just its output.
 Publishing that into a **public** GitHub repo (confirmed public via the
-GitHub API, not assumed) handed a competitor the localization research
-playbook for free, for a mechanism that had no live-site reason to exist
-outside this one authoring-time script.
+GitHub API, not assumed) handed away the localization research playbook for
+free, for a mechanism that had no live-site reason to exist outside this one
+authoring-time script.
 
 **The fix is not "publish less" — it's "don't publish at all."** Any
-session/script that needs this data now attaches the private
-`ychowdhrey/ultratextgen-lab-` repo as a sibling checkout and reads its
-canonical CSV directly:
+session/script that needs this data attaches the workspace that holds it as
+a sibling checkout and reads its canonical CSV directly:
 
 ```
-../ultratextgen-lab-/forum-intelligence/language-dictionaries/local-language-lexicon.csv
+<sibling checkout>/forum-intelligence/language-dictionaries/local-language-lexicon.csv
 ```
 
 filtered to `status` in `{approved, limited_use}` and the target `locale`.
 `scripts/plan-library-locale-batch.py`'s `native_phrases()` is the reference
-implementation — copy its approach rather than reinventing the filter.
-If that repo isn't attached, the check **fails loudly** (exits non-zero
-with an explicit message), not silently — treating "the check didn't run"
-identically to "the check ran and found nothing" is exactly the failure
-this whole mechanism exists to prevent (see `native: NONE ON RECORD` in
+implementation — it discovers the file by that path shape under any sibling
+directory (not by a fixed directory name), so copy its approach rather than
+reinventing the filter or hardcoding a path. If no sibling checkout carries
+that file, the check **fails loudly** (exits non-zero with an explicit
+message), not silently — treating "the check didn't run" identically to "the
+check ran and found nothing" is exactly the failure this whole mechanism
+exists to prevent (see `native: NONE ON RECORD` in
 `docs/library-locale-translation-workflow.md`).
 
 This means: **locale-page planning is cross-repo work by default now.**
-Attach both repos to the session before running `plan-library-locale-batch.py`
-or writing new locale copy that needs a vetted native term. This isn't a new
-pattern — it's the same "attach both repos to a single session's scope"
-model the lab repo's own `CLAUDE.md` already describes for any work that
-needs both strategic research and shippable code.
+Attach the workspace that holds the library to the session before running
+`plan-library-locale-batch.py` or writing new locale copy that needs a
+vetted native term.
 
 ## Covered locales (confirmed 2026-07-25, extended 2026-07-25)
 
@@ -86,10 +87,10 @@ for authority/indexing reasons unrelated to content, see the priority
 matrix) are not yet covered by this library — treat absence as "not yet
 researched," not as "no local vocabulary exists." (`bs` has picked up one
 cross-referenced record since as a byproduct of an unrelated content audit
-— see the lab repo's own research log; still not a researched locale in
+— see the library's own research log; still not a researched locale in
 its own right.)
 
-## Record shape (in the lab repo's `local-language-lexicon.csv`)
+## Record shape (in the library's `local-language-lexicon.csv`)
 
 | Field | Meaning |
 |---|---|
@@ -112,8 +113,8 @@ its own right.)
 (gaming-only, FAQ-only, dated/ironic) — usable per its `avoid_when` guidance,
 but not as a primary title/H1 term. `approved` is unrestricted subject to the
 core rule below. The full schema (including evidence-trail fields not
-listed here) is `forum-intelligence/language-dictionaries/schema.json` in
-the lab repo.
+listed here) is `forum-intelligence/language-dictionaries/schema.json`
+alongside the canonical CSV.
 
 ## The core rule
 
@@ -137,8 +138,8 @@ Never:
 
 ## Workflow: writing or editing localized copy
 
-1. **Attach the lab repo** (`ychowdhrey/ultratextgen-lab-`) to the session if
-   it isn't already — see "Where the data lives" above.
+1. **Attach the workspace that holds the library** to the session if it isn't
+   already — see "Where the data lives" above.
 2. Check `local-language-lexicon.csv` (filtered to `status` in
    `{approved, limited_use}`) for the locale you're editing. If it has
    regional markets, filter to the `country_or_market` that matches your
@@ -154,10 +155,10 @@ Never:
    cannibalization, and English-Parent rules first.
 5. If you discover a **new** locally meaningful word/phrase/abbreviation/
    platform term while doing this work — one that isn't in the lexicon —
-   do not add it to production copy directly. Capture it in the lab repo
-   per its own Continuous Capture Rule (mint a `phrase_id`/`evidence_id`,
-   record it as `candidate`). It needs evidence and review before it can
-   become `approved`/`limited_use`.
+   do not add it to production copy directly. Capture it in the library's
+   own Continuous Capture Rule (mint a `phrase_id`/`evidence_id`, record it
+   as `candidate`). It needs evidence and review before it can become
+   `approved`/`limited_use`.
 6. If the same phrase already exists under a different record, don't create
    a mental duplicate — reuse the existing guidance, or add corroborating
    evidence to that record instead of a near-duplicate.
