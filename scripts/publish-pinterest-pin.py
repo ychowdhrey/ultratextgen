@@ -168,13 +168,22 @@ def main():
                 board = API.create_board(token, board_name)
                 print(f"Created board {board_name!r} (id={board['id']}).", file=sys.stderr)
             except API.PinterestAPIError as exc:
-                print(json.dumps({
-                    "pinId": None, "httpStatus": exc.status_code, "publishedAt": None,
-                    "boardId": None, "boardName": board_name,
-                    "utgDestinationUrl": destination_url, "imageUrl": image_url,
-                    "status": "failed", "error": f"Board creation failed: {exc}",
-                }, indent=2))
-                sys.exit(1)
+                if API.is_duplicate_board_error(exc):
+                    # Pinterest says a board with this name already exists,
+                    # even though the lookup just above found none -- listing
+                    # can lag. Look it up again and use it instead of failing.
+                    print(f"Board {board_name!r} already exists per Pinterest "
+                          f"(listing hadn't caught up) -- re-resolving instead of creating.",
+                          file=sys.stderr)
+                    board = API.get_board_by_name(token, board_name)
+                if not board:
+                    print(json.dumps({
+                        "pinId": None, "httpStatus": exc.status_code, "publishedAt": None,
+                        "boardId": None, "boardName": board_name,
+                        "utgDestinationUrl": destination_url, "imageUrl": image_url,
+                        "status": "failed", "error": f"Board creation failed: {exc}",
+                    }, indent=2))
+                    sys.exit(1)
         if not board:
             sys.exit(
                 f"No Pinterest board named {board_name!r} found on this account. "

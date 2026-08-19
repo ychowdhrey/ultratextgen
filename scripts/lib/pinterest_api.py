@@ -306,11 +306,26 @@ def get_board_by_name(token, name):
 
 def create_board(token, name, description="", privacy="PUBLIC"):
     """POST /boards -- off the default publish path; only called when a
-    caller explicitly opts in (--create-board), per this repo's standing
-    rule against creating Pinterest boards off-system without a deliberate
-    decision (see CLAUDE.md's Pinterest-board section)."""
+    caller explicitly opts in (--create-board). Kept opt-in as a deliberate
+    choice, not because Pinterest requires pre-creation -- its own bulk-CSV
+    importer auto-creates a missing board ("if the board or section doesn't
+    exist, it will be created for you" -- Pinterest Help)."""
     body = {"name": name, "description": description, "privacy": privacy}
     return _request("POST", "/boards", token, body=body)
+
+
+def is_duplicate_board_error(exc):
+    """True if a create_board() PinterestAPIError means 'a board with this
+    name already exists' (Pinterest error code 58) rather than a real
+    failure. Real case (2026-08-19): a live create_board() call hit this
+    immediately after get_board_by_name() had just reported no match for
+    the same name -- board listing can lag a just-created (or otherwise
+    already-existing) board. Callers should treat this as 'go look it up
+    again and use it', not a terminal error."""
+    body = getattr(exc, "body", None)
+    if isinstance(body, dict) and body.get("code") == 58:
+        return True
+    return "already have a board with this name" in str(exc).lower()
 
 
 # --------------------------------------------------------------------------
