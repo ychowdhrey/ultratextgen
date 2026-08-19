@@ -24,7 +24,10 @@ Publish date | Keywords
 
   - Title           required, <= 100 chars
   - Media URL       required, public http(s) link ending in .png/.jpg/.jpeg/.mp4
-  - Pinterest board required, must match an existing board name in the account
+  - Pinterest board required. Copy the title exactly (spaces, capitalization);
+                    a missing board is auto-created by Pinterest's importer, not
+                    a hard prerequisite -- corrected 2026-08-18, see
+                    docs/pinterest-csv-format.md.
   - Thumbnail       video pins only (blank for image pins)
   - Description     <= 500 chars
   - Link            destination URL (with UTM)

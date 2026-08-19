@@ -39,7 +39,7 @@ api-client` OpenAPI-derived docs on GitHub — not memory, not an old version.
 | 2 | Required scopes | `pins:write` to create, `boards:read` to resolve a board by name (`boards:write` only if this pipeline is ever allowed to create boards itself — see #6). |
 | 3 | Sandbox behavior | **Trial access is a full sandbox**: "all Pins and Boards created with Trial access are only visible to their creator" — never public, never real reach. Trial only grants read scopes by default; write scopes need the Standard-access upgrade. |
 | 4 | Board retrieval | `GET /v5/boards` (list, paginated via a `bookmark` cursor — not offset/page-number), `GET /v5/boards/{board_id}` (single). |
-| 5 | Board creation | `POST /v5/boards` — supported, but deliberately **not wired into the default publish path** in this implementation (see §4). |
+| 5 | Board creation | `POST /v5/boards` — supported, and now wired in as `--create-board` (opt-in, off by default — see §9's live-test update). **Correction (2026-08-18):** this row originally said board creation is "not wired in... because this repo has a standing rule against creating Pinterest boards off-system." That standing rule (CLAUDE.md) is about the pin-*image* generation system (`generate-<board>-pins.py`, R2 layout, brand skin) — a different concern from creating the actual board object on the live Pinterest account, which this pipeline exists to do. The real reason board creation stayed opt-in is simpler: keep it a deliberate step, same posture as everything else here. |
 | 6 | Image URL requirements | Must be a public `http(s)` URL Pinterest's own fetcher can reach; `media_source.source_type: "image_url"`. This repo's R2 public URLs already satisfy that — verified live (see §1.4). |
 | 7 | Destination/link support | `link` field on the Pin — exactly what `utm_destination_url` in the existing CSVs already is. |
 | 8 | Title/description limits | Not stated as a hard number in the current live-fetchable docs, so this implementation adopts the **same limits `scripts/pinterest_csv.py` already enforces for the bulk-CSV path** (Title ≤ 100 chars, Description ≤ 500 chars) — those were sourced from Pinterest's own bulk-upload help doc, and using the same numbers means a pin can't pass one publishing route and fail the other for the same reason. |
@@ -64,7 +64,7 @@ gets created, but is only visible to the UTG account itself).
 |---|---|---|
 | Create a Pin | **API preferred** | `POST /v5/pins` does exactly this, reliably, without a browser. |
 | List/resolve a board by name | **API preferred** | `GET /v5/boards`. |
-| Create a board | **API preferred** (available, not wired in by default) | `POST /v5/boards` exists; left as an explicit opt-in (`--create-board`, not built yet — see §9) because this repo has a standing rule against creating Pinterest boards off-system without a deliberate decision. |
+| Create a board | **API preferred** | `POST /v5/boards`, wired as `--create-board` (opt-in, off by default) after a live test hit a missing-board error — see §9. Pinterest's own bulk-CSV importer does this automatically ("if the board or section doesn't exist, it will be created for you" — Pinterest Help), so API auto-creation on request is consistent with Pinterest's own house behavior, not a departure from it. |
 | Pin/board/account performance reporting | **API preferred** | `GET /pins/{id}/analytics`, `/user_account/analytics` — see §7. |
 | Rendering the pin **image** itself | **No longer relevant to this decision** | Already solved, already API-adjacent (cairosvg/Playwright → R2), untouched by this work. |
 | Anything requiring a **live, human Pinterest session** with no API surface (e.g. reading UI-only analytics dashboards Pinterest hasn't exposed via `/analytics`, or manual account settings) | **Playwright required, if ever needed** | Not needed for anything in this task's scope; noted only so a future session doesn't assume the API covers 100% of Pinterest's UI. |
@@ -154,7 +154,7 @@ checkout every time, so the log has to be **committed back**, exactly like
 | Rate limits (429) | Retried with backoff, honoring a `Retry-After` header when Pinterest sends one, else this repo's own established schedule (2s/4s/8s/16s). Persistent 429 → `PinterestRateLimitError`. |
 | Expired tokens (401) | One automatic refresh attempt via `PINTEREST_REFRESH_TOKEN`/`PINTEREST_APP_ID`/`PINTEREST_APP_SECRET`, then the original request is retried once. No refresh creds, or refresh itself fails → clear `PinterestAuthError`, not a silent retry loop. |
 | Invalid image URL | HEAD-checked (with a real `User-Agent` — see the note below) *before* ever calling Pinterest, so this fails as "Image URL not publicly reachable" instead of an opaque Pinterest 400. Runs even in `--dry-run`, with no Pinterest credentials involved. |
-| Missing board | Resolved by name via `GET /boards` before publishing; not found → clear error naming the board, no board is ever auto-created (see §9). |
+| Missing board | Resolved by name via `GET /boards` before publishing; not found → clear error naming the board and offering `--create-board`, which calls `POST /boards` (opt-in, never automatic — see §9). |
 | Duplicate jobs | Covered above. |
 | Partial failures | Covered above (log-before-CSV ordering). |
 | 5xx / transient network errors | Same retry/backoff as 429. |
@@ -301,6 +301,37 @@ not a bug to route around. The fix is committed and dry-run-verified; live
 confirmation is the next actual live call, whenever it's run next (by the
 user directly, or by asking this session again).
 
+**Update — the user ran the live workflow directly (2026-08-18/19), twice.**
+First run left `dry_run` checked (the form's default), which only proved the
+`--slug`-normalization fix end-to-end (image/board resolved correctly, no
+Pinterest call made). Second run, `dry_run` unchecked: **the sandbox-host fix
+is now confirmed live** — `GET /v5/boards` returned a real, authenticated
+response — but `create_pin` never got called because the row's board,
+`"Font Guides & Typography Tips"`, doesn't exist on the account yet. Sizing
+the real scope of "all boards": `data/pinterest_pins.csv` alone has **2,400**
+eligible pins across **12** distinct board names (`International Fancy Font
+Generators`, `Fancy Text Generator & Copy Paste Fonts`, `Emoji Copy Paste &
+Emoji Combos`, `Instagram Bio Symbols & Aesthetic Text`, `Font Guides &
+Typography Tips`, `Special Characters, Unicode & Keyboard Symbols`, `Cute
+Symbols, Hearts & Decorative Text`, `Text Art, Kaomoji & ASCII Faces`,
+`Gaming Symbols & Usernames`, `TikTok, Snapchat & WhatsApp Fonts`, `Discord
+Fonts, Symbols & Names`, `LinkedIn Fonts & Professional Text`) — before the
+~15 other board-specific CSVs are even counted.
+
+This also caught a real error in this doc and in the pre-existing
+`docs/pinterest-csv-format.md`/`scripts/pinterest_csv.py`: both stated a
+board "must match an existing board name in the account (create the board
+first)." **That's wrong.** Pinterest's own bulk-upload help page states
+directly: *"If the board or section doesn't exist, it will be created for
+you."* All three docs are corrected as of this pass. Since `POST /v5/boards`
+already existed in `pinterest_api.py` (§3), it's now wired into the CLI as
+`--create-board` (opt-in, off by default — board creation stays a deliberate
+step, not because Pinterest requires pre-creation) and a companion
+`--list-boards` read-only mode (`GET /v5/boards`, needs only
+`boards:read`) was added so board state can be checked without ever needing
+the token in chat again — both run through the same workflow, using the
+stored secret.
+
 ---
 
 ## 10. Pinterest API limitations discovered
@@ -350,10 +381,12 @@ user directly, or by asking this session again).
 
 In order, each gated on the previous actually working:
 
-1. **Get real credentials into GitHub Secrets** and run the workflow live,
-   in Trial/sandbox mode, on this exact POC pin. Confirm the Pin actually
-   appears (to the UTG account) on Pinterest, and that the committed
-   `data/pinterest_publish_log.jsonl` entry matches.
+1. **Done: credentials are in GitHub Secrets, sandbox auth is confirmed
+   live.** Remaining before the first real Pin exists: run once more with
+   `list_boards` to see what's already on the account, then either
+   `create_board: true` on this one POC row or create the 12 boards above
+   directly on pinterest.com, then re-run live and confirm the Pin appears
+   (to the UTG account) and `data/pinterest_publish_log.jsonl` gets committed.
 2. **Apply for Standard access** (OAuth-flow demo video + privacy policy,
    per §2.11) once step 1 proves the mechanics work — Trial's 300/day
    `org_write` cap and sandbox-only visibility make it fine for proving the
