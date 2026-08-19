@@ -1758,11 +1758,7 @@
       "agreed": "2026-08-08"
     },
     {
-      "enUrl": "https://ultratextgen.com/usecase/free-fire-name-generator/",
-      "localeUrl": "https://ultratextgen.com/ar/usecase/asmaa-free-fire/",
-      "reason": "PR #705/#723 added a related-link card on the EN page pointing to the new usecase/free-fire-clan-tag-generator/ page. This locale has no native translation of that page (nor of the generic usecase/clan-tag-generator/, which carries zero locale translations of any kind), so there is currently nothing native to link to — linking the EN-only page would itself violate the locale-native-linking rule. Whether to BUILD a native clan-tag page for this locale is a separate, still-open Locale Parent Governance question (usecase/* is a gated-tail parent per data/core_parent_set.json): competitor-footprint checked via WebSearch 2026-08-08, found no dedicated native-language clan-tag competitor page (only the adjacent, already-served \"clan name\" job). Semrush (keyword volume) and Search Console (EN page impressions from this locale's language) were both unavailable this session (Semrush out of API units, no GSC connector), so neither of the other two instruments could be checked — per CLAUDE.md, this is recorded as an unresolved gate, not a fabricated pass or veto. Locale is Tier 2 (qualify-then-mirror-core); usecase/* is gated-tail. SERP for this query is almost entirely TikTok/video, not blog/tool pages.",
-      "agreed": "2026-08-08",
-"enUrl": "https://ultratextgen.com/",
+      "enUrl": "https://ultratextgen.com/",
       "localeUrl": "https://ultratextgen.com/es/imprimibles/abecedario-para-colorear/letra-enye/",
       "reason": "RATIFIED LOCAL-ONLY PAGE — the pair the gate names is not a real translation pair. Ñ is the 27th letter of the Spanish alphabet and does not exist in English, so this page has no English parent and cannot have one; per CLAUDE.md's documented shape for ratified local-only pages its hreflang=\"en\" and x-default fall back to the bare EN homepage as a GENERIC DEFAULT, explicitly not a translation-equivalence claim. check-translation-parity resolves that placeholder as the page's sibling and therefore asks for index.html to be updated to match — which would mean editing the English homepage to mirror a Spanish letter-Ñ colouring sheet. There is nothing to sync in either direction, now or ever. Full reasoning and demand evidence (1,220/mo for 'letra ñ para colorear') live in the page's data/english_parent_exceptions.json entry, agreed 2026-08-12; this entry is the parity-side record of the same single decision. Its 26 A-Z siblings under the same parent are normal translations of live printables/alphabet-coloring-pages/letter-<x>/ pages with full reciprocal hreflang and are NOT covered here.",
       "agreed": "2026-08-12"
@@ -1772,6 +1768,54 @@
       "localeUrl": "https://ultratextgen.com/nl/cursieve-letters/",
       "reason": "Depth difference, not drift, and it predates this change on every member of the cluster. nl/cursieve-letters/ was rebuilt 2026-08-12 onto the standard italic template (UTG_FAMILY=\"italic\", the same dynamic-generator shell de/kursive-schrift, es/letras-italicas, hr/kurziv and the rest use) because it had been rendering the script/cursive Unicode family while named and parented as italic. The rebuilt page carries 7 FAQ questions under 1 heading; the EN parent carries 21 questions grouped under 7 headings, which is what the fingerprint reads as a 5-section / 3-FAQ gap. Verified this is a cluster-wide property rather than something this branch introduced: ALL 20 locale siblings are flagged against the same EN parent, scores 7-16, with nl at 11 — better than ru (16), pl/hu/sr/sk/ro/hr/cs/bs (14) and de/pt (12). Link-set differences were checked individually and are all correctly absent: the 3 links EN has that nl lacks (/category/, /guide/branding-with-fonts-for-social-media/, /usecase/linkedin-headline/) have no Dutch sibling at all, so linking them would violate the locale-native internal-linking rule; the 6 nl-only links are the EN-parent switcher entry plus locale-native equivalents. Deliberately NOT closing the gap by translating EN's extra questions: first-party GSC (3 months) shows FAQ depth has no relationship to traffic in this cluster — fi/kursivoitu-teksti/ carries the deepest page (22 questions, from a complete-locale-launch pass) and does not reach the top 1000 pages (<45 impressions), while id/tulisan-miring/ carries 5 questions and draws 25,673 impressions. The EN parent itself is the weakest page in its own cluster at 28 impressions. Every page in the cluster is also at or above its own position band (nl 3.92x, curve built from the same export), so there is no CTR problem to fix either.",
       "agreed": "2026-08-14"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/free-fire-name-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-ff/",
+      "reason": "PR #787 (2026-08-19) added two FAQ items to the ID page, backed by real GSC query-level data and Local Language Intelligence Library research: \"epep\" (Indonesian gamer slang for Free Fire, an already-approved dictionary term) and \"logo\" (nickname-decoration slang, corroborated via TikTok/Pinterest). Both are Indonesian-specific vocabulary/slang explanations with no meaningful English-language equivalent question — an English speaker does not search \"what does epep mean\" because the term itself is Indonesian gamer shorthand for the game's own name. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/line-divider-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-garis/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item explaining \"strip\" as a KBBI-documented Indonesian colloquial term for a dash/line character, plus aesthetic framing tied to Indonesian search behavior. This is an Indonesian-vocabulary explanation (why locals call a dash \"strip\") with no English-language equivalent question. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/arrow-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-panah/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item confirming \"tanda panah\" as an Indonesian synonym for \"simbol panah\" (arrow symbol), backed by GSC query data. This is a same-language-synonym clarification specific to Indonesian phrasing, with no English equivalent (English has no comparable \"arrow symbol\" vs. \"arrow sign\" search-behavior split worth an FAQ). Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/fraction-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-pecahan/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item confirming \"lambang\" as an Indonesian synonym for \"simbol\" in the fraction/number-symbol register, backed by GSC query data. Indonesian-synonym clarification with no English equivalent. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/currency-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-mata-uang/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item confirming \"logo mata uang\" as an Indonesian synonym for \"simbol mata uang\" (currency symbol), backed by GSC query data. Indonesian-synonym clarification with no English equivalent. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/kiss-emoji/",
+      "localeUrl": "https://ultratextgen.com/id/library/emoji-cium/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item explaining \"muah\" as an Indonesian kiss-sound onomatopoeia, backed by Local Language Intelligence Library research. This is an Indonesian onomatopoeia explanation with no English equivalent question (English kiss-sound onomatopoeia, e.g. \"mwah,\" is a different word with different search behavior, not covered by this research pass). Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/discord-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-discord/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item about \"spasi kosong\" (invisible space), linked to the ID-only id/spasi-kosong/ page per the locale-native-internal-linking rule. The FAQ content itself is generic (an invisible-space trick), but the internal link target is Indonesian-only, so a synced EN version would either link nothing or link a different, unresearched target. Held out of this pass rather than building an EN link relationship that wasn't researched. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/bracket-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-kurung/",
+      "reason": "PR #787 (2026-08-19) added an FAQ item confirming \"kurung aesthetic\"/\"simbol kurung aesthetic\" as real Indonesian search phrasing for decorative brackets, backed by GSC query data. Indonesian-search-phrasing clarification with no English equivalent question. Not synced to the EN parent.",
+      "agreed": "2026-08-19"
     }
   ]
 }
