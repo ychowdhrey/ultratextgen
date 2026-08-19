@@ -21,10 +21,14 @@ Priority model — three signals, all computable from the repo, no API needed:
   2. cluster  — how many locales already translated it. A page 12 locales have is
                 a proven-portable topic; a page nobody has translated is either
                 new or nobody thought it worth it.
-  3. native   — whether data/local-language/<locale>.json carries an approved or
-                limited_use phrase matching the topic. Presence does not raise
-                priority on its own; it is reported so a batch can be sequenced to
-                put well-evidenced pages first and flag the rest for review.
+  3. native   — whether the Local Language Intelligence Library (canonical CSV in
+                the private ychowdhrey/ultratextgen-lab- repo -- must be attached as
+                a sibling checkout; there is no local copy in this repo, see
+                CLAUDE.md's "Local Language Intelligence" section) carries an
+                approved or limited_use phrase matching the topic. Presence does not
+                raise priority on its own; it is reported so a batch can be
+                sequenced to put well-evidenced pages first and flag the rest for
+                review.
 
   4. demand   — OPTIONAL and strongly preferred when available. Pass --gsc with a
                 Search Console export (columns: Landing Page, Impressions, Url
@@ -64,6 +68,7 @@ Usage:
 
 import argparse
 import collections
+import csv
 import glob
 import json
 import os
@@ -130,13 +135,50 @@ def inbound_link_counts():
     return counts
 
 
+LAB_REPO_LEXICON = os.path.join(
+    ROOT, "..", "ultratextgen-lab-", "forum-intelligence", "language-dictionaries",
+    "local-language-lexicon.csv",
+)
+NATIVE_PUBLIC_STATUSES = {"approved", "limited_use"}
+
+
 def native_phrases(locale):
-    path = os.path.join(ROOT, "data", "local-language", f"{locale}.json")
-    if not os.path.exists(path):
-        return []
-    with open(path, encoding="utf-8") as fh:
-        data = json.load(fh)
-    return data.get("phrases", []) if isinstance(data, dict) else []
+    """Approved/limited_use phrases for one locale, read directly from the
+    private ychowdhrey/ultratextgen-lab- repo's canonical CSV.
+
+    There used to be a public data/local-language/<locale>.json snapshot in
+    THIS repo, generated from that same canonical dataset. It was removed
+    2026-08-19: nothing at runtime ever read it (grep confirmed -- no JS, no
+    HTML, no Cloudflare Function), its only consumer was this planning
+    script, and it was shipping real research judgement (usage_guidance,
+    avoid_when, confidence -- not just the phrase itself) into a public
+    GitHub repo for no operational reason. See CLAUDE.md's "Local Language
+    Intelligence" section.
+
+    Fails loudly if the lab repo isn't attached, rather than returning []
+    which would look identical to "checked, nothing on record" and let a
+    page ship on an unresearched slug -- exactly what this check exists to
+    prevent.
+    """
+    if not os.path.exists(LAB_REPO_LEXICON):
+        print(
+            "ERROR: cannot find the Local Language Intelligence Library.\n"
+            f"  Expected: {os.path.abspath(LAB_REPO_LEXICON)}\n"
+            "  This data lives ONLY in the private ychowdhrey/ultratextgen-lab-\n"
+            "  repo (never duplicated into this public repo -- see CLAUDE.md's\n"
+            "  'Local Language Intelligence' section for why). Attach that repo\n"
+            "  as a sibling checkout (../ultratextgen-lab-) before running this\n"
+            "  script -- do not proceed by treating an unchecked locale as if it\n"
+            "  had no native-vocabulary evidence.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+    with open(LAB_REPO_LEXICON, newline="", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    return [
+        r for r in rows
+        if r.get("locale") == locale and r.get("status") in NATIVE_PUBLIC_STATUSES
+    ]
 
 
 STOP = {
@@ -285,7 +327,8 @@ def main():
     print(f"  already translated   : {len(pages) - len(missing)}")
     print(f"  missing              : {len(missing)}")
     print(f"  native phrases avail : {len(phrases)} "
-          f"(approved/limited_use in data/local-language/{loc}.json)")
+          f"(approved/limited_use, locale={loc}, from the lab repo's "
+          f"local-language-lexicon.csv)")
     if demand is None:
         basis = "inbound*2 + locales*3  [STRUCTURAL — pass --gsc for real demand]"
     elif args.market:

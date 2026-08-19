@@ -16,20 +16,49 @@ For every concept (e.g. "fancy/stylish text", "invisible/blank name",
    communities, and social platforms
 5. The situations where that phrase is appropriate — and where it isn't
 
-## Where the data lives
+## Where the data lives (changed 2026-08-19 — read this before looking for a local file)
 
-- **Public, approved-only snapshot (this repo):** `data/local-language/<locale>.json`,
-  one file per covered locale, plus `data/local-language/index.json`. This is
-  the only local-language dictionary data tracked in this repository, and it
-  is **generated** — do not hand-edit it. It was produced by an internal
-  research process and synced in as plain data; the process that generated
-  it is not part of this repository and this repo carries no other reference
-  to it.
-- Only phrases with status `approved` or `limited_use` appear here. Weaker
-  research candidates, rejected phrases, and the full evidence trail (source
-  URLs, native quotes, dates) are intentionally **not** included in this
-  public snapshot — this file is scoped to what's safe and ready to use in
-  copy, not a research archive.
+**None of this data lives in this repo, and it never leaves the private
+`ychowdhrey/ultratextgen-lab-` repo.** There used to be a generated,
+approved-only public snapshot at `data/local-language/<locale>.json` in
+*this* repo — it was removed 2026-08-19.
+
+Why: nothing at runtime ever read it (no page JS, no HTML, no Cloudflare
+Function — grep confirmed this before removal). Its only consumer was
+`scripts/plan-library-locale-batch.py`'s locale-page-planning check. And the
+fields it published went well beyond "here's a word we used" — `usage_guidance`,
+`avoid_when`, `confidence`, `register` are the actual research reasoning
+(what markets are prioritized, what mistakes have already been found and
+avoided, why a phrase fits one context and not another), not just its output.
+Publishing that into a **public** GitHub repo (confirmed public via the
+GitHub API, not assumed) handed a competitor the localization research
+playbook for free, for a mechanism that had no live-site reason to exist
+outside this one authoring-time script.
+
+**The fix is not "publish less" — it's "don't publish at all."** Any
+session/script that needs this data now attaches the private
+`ychowdhrey/ultratextgen-lab-` repo as a sibling checkout and reads its
+canonical CSV directly:
+
+```
+../ultratextgen-lab-/forum-intelligence/language-dictionaries/local-language-lexicon.csv
+```
+
+filtered to `status` in `{approved, limited_use}` and the target `locale`.
+`scripts/plan-library-locale-batch.py`'s `native_phrases()` is the reference
+implementation — copy its approach rather than reinventing the filter.
+If that repo isn't attached, the check **fails loudly** (exits non-zero
+with an explicit message), not silently — treating "the check didn't run"
+identically to "the check ran and found nothing" is exactly the failure
+this whole mechanism exists to prevent (see `native: NONE ON RECORD` in
+`docs/library-locale-translation-workflow.md`).
+
+This means: **locale-page planning is cross-repo work by default now.**
+Attach both repos to the session before running `plan-library-locale-batch.py`
+or writing new locale copy that needs a vetted native term. This isn't a new
+pattern — it's the same "attach both repos to a single session's scope"
+model the lab repo's own `CLAUDE.md` already describes for any work that
+needs both strategic research and shippable code.
 
 ## Covered locales (confirmed 2026-07-25, extended 2026-07-25)
 
@@ -54,17 +83,17 @@ growth opportunity (evidence & demand, coverage gap, competitive weakness,
 strategic reuse) as of 2026-07-25. Other supported locales (da, sv, ro, sk,
 bs, and vi — the latter deliberately excluded from the ranked build order
 for authority/indexing reasons unrelated to content, see the priority
-matrix) are not yet covered by this library — treat absence from
-`data/local-language/` as "not yet researched," not as "no local vocabulary
-exists."
+matrix) are not yet covered by this library — treat absence as "not yet
+researched," not as "no local vocabulary exists." (`bs` has picked up one
+cross-referenced record since as a byproduct of an unrelated content audit
+— see the lab repo's own research log; still not a researched locale in
+its own right.)
 
-## Snapshot record shape
-
-Each entry in `data/local-language/<locale>.json` → `phrases[]`:
+## Record shape (in the lab repo's `local-language-lexicon.csv`)
 
 | Field | Meaning |
 |---|---|
-| `phrase_id` | Stable ID, e.g. `TR-014`. |
+| `phrase_id` | Stable ID, e.g. `TR-014` or the newer `TR-20260819-5net7` dated-slug form. |
 | `native_phrase` | The phrase exactly as natively written (original script/diacritics preserved). |
 | `transliteration` | Latin transliteration, kept separate — never use this in place of `native_phrase`. |
 | `english_concept` | Short label for the job the phrase does. |
@@ -76,13 +105,15 @@ Each entry in `data/local-language/<locale>.json` → `phrases[]`:
 | `good_example` | A short example of correct in-context usage. |
 | `avoid_when` | Concrete conditions under which it should **not** be used. |
 | `confidence` | high / medium / low. |
-| `status` | `approved` or `limited_use` (the only two statuses that reach this public snapshot — see below). |
+| `status` | `candidate` / `verified` / `approved` / `limited_use` / `rejected` / `deprecated`. Only `approved` and `limited_use` are safe for production copy — see the core rule below. |
 | `last_verified` | Date of the most recent evidence-gathering pass. |
 
 `limited_use` means the phrase is real and verified but register/context-restricted
 (gaming-only, FAQ-only, dated/ironic) — usable per its `avoid_when` guidance,
 but not as a primary title/H1 term. `approved` is unrestricted subject to the
-core rule below.
+core rule below. The full schema (including evidence-trail fields not
+listed here) is `forum-intelligence/language-dictionaries/schema.json` in
+the lab repo.
 
 ## The core rule
 
@@ -106,34 +137,30 @@ Never:
 
 ## Workflow: writing or editing localized copy
 
-1. Check `data/local-language/<locale>.json` for the locale you're editing.
-   If it has regional markets, filter to the `country_or_market` that
-   matches your target audience.
-2. Ask: does one of these phrases fit the *exact* meaning, platform, game,
+1. **Attach the lab repo** (`ychowdhrey/ultratextgen-lab-`) to the session if
+   it isn't already — see "Where the data lives" above.
+2. Check `local-language-lexicon.csv` (filtered to `status` in
+   `{approved, limited_use}`) for the locale you're editing. If it has
+   regional markets, filter to the `country_or_market` that matches your
+   target audience.
+3. Ask: does one of these phrases fit the *exact* meaning, platform, game,
    audience, and register of the sentence you're about to write? If yes,
    and its `content_surface` matches where you'd use it, use it. If no,
    write the natural/standard phrasing you'd otherwise use — most sentences
    on this site should NOT contain a dictionary phrase, and that's expected.
-3. Keep the page's existing single primary query target. A local phrase
+4. Keep the page's existing single primary query target. A local phrase
    supports that target; it never gets stacked alongside it or used to
    justify restructuring the page. Follow this repo's Hub vs Spoke,
    cannibalization, and English-Parent rules first.
-4. If you discover a **new** locally meaningful word/phrase/abbreviation/
-   platform term while doing this work — one that isn't in the snapshot —
-   do not add it to production copy directly. Flag it (in the PR
-   description or an issue) as a candidate for the next research pass. It
-   needs evidence and review before it can become `approved`/`limited_use`
-   and reach this snapshot.
-5. If the same phrase already exists in the snapshot under a different
-   record, don't create a mental duplicate — reuse the existing guidance.
-
-## Regenerating this snapshot
-
-`data/local-language/*.json` is generated output. If it looks stale or a
-correction is needed, that happens upstream (the internal research process
-that produces it) — do not hand-edit these files directly in a page-content
-PR. A hand-edit here will be overwritten by the next regeneration and won't
-be reflected in the underlying research record.
+5. If you discover a **new** locally meaningful word/phrase/abbreviation/
+   platform term while doing this work — one that isn't in the lexicon —
+   do not add it to production copy directly. Capture it in the lab repo
+   per its own Continuous Capture Rule (mint a `phrase_id`/`evidence_id`,
+   record it as `candidate`). It needs evidence and review before it can
+   become `approved`/`limited_use`.
+6. If the same phrase already exists under a different record, don't create
+   a mental duplicate — reuse the existing guidance, or add corroborating
+   evidence to that record instead of a near-duplicate.
 
 ## What this library is not
 
@@ -144,3 +171,7 @@ be reflected in the underlying research record.
 - Not a substitute for this file's other localization rules (English-Parent
   Rule, Translation Parity, locale-native internal linking, Hub vs Spoke) —
   see `CLAUDE.md`. A local phrase never overrides those.
+- Not something this repo stores, generates, or has any tooling for beyond
+  the one read-only planning-script consumer described above. If you find
+  yourself about to write a new file under `data/local-language/` in this
+  repo, stop — that's the exact thing that was removed.

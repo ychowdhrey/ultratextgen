@@ -71,9 +71,11 @@ small enough that one bad decision doesn't contaminate 40 pages.
 For each page in the batch, the planner prints one of:
 
 - **`native [XX-000 TITLE-SAFE]: <phrase>`** — an approved or limited-use phrase
-  from `data/local-language/<locale>.json`. Use it for the slug, title and H1.
-  Read its `avoid_when` before doing so; some phrases are body-only or carry a
-  register restriction.
+  from the Local Language Intelligence Library (canonical CSV in the private
+  `ychowdhrey/ultratextgen-lab-` repo — attach it as a sibling checkout before
+  running the planner; see `docs/local-language-intelligence.md`). Use it for
+  the slug, title and H1. Read its `avoid_when` before doing so; some phrases
+  are body-only or carry a register restriction.
 - **`native: NONE ON RECORD`** — **do not invent a slug and do not
   machine-translate the English one.** This repo has repeatedly shipped the wrong
   native term that way and had to retarget the page afterwards: German
