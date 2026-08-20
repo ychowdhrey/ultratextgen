@@ -364,6 +364,30 @@
       events: { label: "活動", href: "/events/" },
       search: "搜尋字體樣式…",
       darkMode: "切換深色模式"
+    },
+    fi: {
+      home: "/fi/",
+      guide: { label: "Oppaat", href: "/fi/guide/" },
+      answers: { label: "Vastaukset", href: "/answers/" },
+      category: { label: "Kategoriat", href: "/category/" },
+      usecase: { label: "Käyttötavat", href: "/usecase/" },
+      library: { label: "Kirjasto", href: "/library/" },
+      printables: { label: "Tulostettavat", href: "/printables/" },
+      events: { label: "Tapahtumat", href: "/events/" },
+      search: "Hae fonttityylejä…",
+      darkMode: "Vaihda tumma tila"
+    },
+    ms: {
+      home: "/ms/",
+      guide: { label: "Panduan", href: "/ms/guide/" },
+      answers: { label: "Jawapan", href: "/answers/" },
+      category: { label: "Kategori", href: "/category/" },
+      usecase: { label: "Kegunaan", href: "/usecase/" },
+      library: { label: "Pustaka", href: "/library/" },
+      printables: { label: "Boleh Cetak", href: "/printables/" },
+      events: { label: "Acara", href: "/events/" },
+      search: "Cari gaya font…",
+      darkMode: "Tukar mod gelap"
     }
   };
 

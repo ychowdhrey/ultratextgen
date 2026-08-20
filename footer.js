@@ -930,6 +930,105 @@
       ],
       colTitles: { explore: "探索", tools: "熱門工具", categories: "熱門分類", company: "公司" },
       copyright: "© 2026 UltraTextGen. 時尚字體，到處都能貼上使用。"
+    },
+    fi: {
+      home: { label: "Etusivu", href: "/fi/" },
+      explore: [
+        { label: "Oppaat", href: "/fi/guide/" },
+        { label: "Vastaukset", href: "/answers/" },
+        { label: "Käyttötavat", href: "/usecase/" },
+        { label: "Kategoriat", href: "/category/" },
+        { label: "Kirjasto", href: "/library/" },
+        { label: "Tulostettavat", href: "/printables/" },
+        { label: "Tapahtumat", href: "/events/" }
+      ],
+      tools: [
+        { label: "Merkkilaskuri", href: "/fi/merkkilaskuri/" },
+        { label: "Bio-fontti", href: "/usecase/bio-font/" },
+        { label: "Tatuointifontit", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji-kääntäjä", href: "/usecase/text-to-emoji/" }
+      ],
+      categories: [
+        { label: "Lihavoitu teksti", href: "/fi/lihavoitu-teksti/" },
+        { label: "Kursivoitu teksti", href: "/fi/kursivoitu-teksti/" },
+        { label: "Goottilaiset kirjaimet", href: "/fi/goottilaiset-kirjaimet/" },
+        { label: "Pieni teksti", href: "/fi/pieni-teksti/" },
+        { label: "Kaunokirjoitus", href: "/fi/kaunokirjoitus/" }
+      ],
+      company: [
+        { label: "Tietoa meistä", href: "/about/" },
+        { label: "Tietosuojakäytäntö", href: "/privacy/" },
+        { label: "Käyttöehdot", href: "/terms/" },
+        { label: "Ota yhteyttä", href: "/contact/" }
+      ],
+      colTitles: { explore: "Selaa", tools: "Suositut työkalut", categories: "Suositut kategoriat", company: "Yritys" },
+      copyright: "© 2026 UltraTextGen. Tyylikkäät kirjaimet, jotka toimivat kaikkialla."
+    },
+    ms: {
+      home: { label: "Laman Utama", href: "/ms/" },
+      explore: [
+        { label: "Panduan", href: "/ms/guide/" },
+        { label: "Jawapan", href: "/answers/" },
+        { label: "Kegunaan", href: "/usecase/" },
+        { label: "Kategori", href: "/category/" },
+        { label: "Pustaka", href: "/library/" },
+        { label: "Boleh Cetak", href: "/printables/" },
+        { label: "Acara", href: "/events/" }
+      ],
+      tools: [
+        { label: "Nama Free Fire", href: "/ms/usecase/nama-ff-hebat/" },
+        { label: "Nama Mobile Legends", href: "/ms/usecase/nama-ml-hebat/" },
+        { label: "Font Bio", href: "/usecase/bio-font/" },
+        { label: "Teks Menegak", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Tulisan Tebal", href: "/ms/tulisan-tebal/" },
+        { label: "Tulisan Condong", href: "/ms/tulisan-condong/" },
+        { label: "Tulisan Gotik", href: "/ms/tulisan-gotik/" },
+        { label: "Tulisan Kecil", href: "/ms/tulisan-kecil/" },
+        { label: "Huruf Besar Kecil", href: "/ms/huruf-besar-kecil/" }
+      ],
+      company: [
+        { label: "Tentang Kami", href: "/about/" },
+        { label: "Dasar Privasi", href: "/privacy/" },
+        { label: "Terma Perkhidmatan", href: "/terms/" },
+        { label: "Hubungi Kami", href: "/contact/" }
+      ],
+      colTitles: { explore: "Terokai", tools: "Alat Popular", categories: "Kategori Popular", company: "Syarikat" },
+      copyright: "© 2026 UltraTextGen. Tulisan bergaya yang berfungsi di mana-mana."
+    },
+    pl: {
+      home: { label: "Strona główna", href: "/pl/" },
+      explore: [
+        { label: "Poradniki", href: "/pl/guide/" },
+        { label: "Odpowiedzi", href: "/pl/answers/" },
+        { label: "Zastosowania", href: "/pl/usecase/" },
+        { label: "Kategorie", href: "/pl/category/" },
+        { label: "Biblioteka", href: "/pl/library/" },
+        { label: "Do druku", href: "/pl/do-druku/" },
+        { label: "Wydarzenia", href: "/events/" }
+      ],
+      tools: [
+        { label: "Licznik znaków", href: "/pl/licznik-slow-i-znakow/" },
+        { label: "Czcionki na tatuaż", href: "/pl/usecase/czcionki-tatuaze/" },
+        { label: "Tłumacz emoji", href: "/pl/usecase/tlumacz-emoji/" },
+        { label: "Tekst pionowy", href: "/pl/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Pogrubiona czcionka", href: "/pl/pogrubiona-czcionka/" },
+        { label: "Kursywa", href: "/pl/kursywa/" },
+        { label: "Czcionki gotyckie", href: "/pl/czcionki-gotyckie/" },
+        { label: "Małe litery", href: "/pl/male-litery/" },
+        { label: "Przekreślony tekst", href: "/pl/przekreslony-tekst/" }
+      ],
+      company: [
+        { label: "O nas", href: "/about/" },
+        { label: "Polityka prywatności", href: "/privacy/" },
+        { label: "Regulamin", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Przeglądaj", tools: "Popularne narzędzia", categories: "Popularne kategorie", company: "Firma" },
+      copyright: "© 2026 UltraTextGen. Stylowe litery, które działają wszędzie."
     }
   };
 
