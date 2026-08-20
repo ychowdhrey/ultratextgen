@@ -56,8 +56,25 @@ prior record of when/how — recorded here so they're not lost twice)
 
 - **Yandex:** `<meta name="yandex-verification" content="aa326290e0338f4f">`
   — present since at least PR #740 (2026-08-xx baseline); no dedicated doc
-  or PR could be found that introduced it. No sitemap-submission status
-  known.
+  or PR could be found that introduced it.
+  **Confirmed live and actively indexing (2026-08-20)**, via two
+  user-provided Yandex Webmaster "Search query statistics" exports:
+  - A monthly top-query export, **Feb 2025 – Jul 2026 (18 months)** — proof
+    Yandex has been crawling and serving this site's `/ru/` pages for well
+    over a year, not just since this doc's original writing.
+  - A full daily query export, **Aug 5–18 2026, 4,792 distinct queries** —
+    matches the Webmaster UI's own summary for the same window (20,669
+    impressions / 732 clicks / 3.54% CTR / avg. position 8.14).
+  - Traffic is overwhelmingly `/ru/library/*` and `/ru/symbol/*` (e.g.
+    `символы для дискорда` → `/ru/library/simvoly-discord/`, `нижнее
+    подчеркивание` → `/ru/symbol/nizhnee-podcherkivanie/`), plus a few EN
+    pages (`/library/text-art/`, `/library/aesthetic-symbols/`,
+    `/library/coquette-symbols/`) also pulling Russian-language query
+    volume.
+  - **Sitemap-submission status still not directly confirmed** — these are
+    query-performance exports, not the Sitemaps report; the sustained
+    18-month crawl history makes it very likely indexing is healthy either
+    way, but the Sitemaps page itself hasn't been checked.
 - **Pinterest domain verification:**
   `<meta name="p:domain_verify" content="b2362cbc0f13ddea34e632da9bc7df05"/>`
   — same as above, present since at least PR #740, origin undocumented.
