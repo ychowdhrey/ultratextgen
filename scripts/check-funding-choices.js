@@ -19,6 +19,16 @@ const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 // Also skip files under build/helper directories (node_modules, etc.)
 const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
 
+// Search-engine site-ownership verification files (e.g. Naver's HTML-upload
+// method — see naverfc08aab480545cfd1d61489b3536a5e6.html) are plain-text
+// stubs at the site root, not real pages: they must stay byte-exact to what
+// the search engine issued, so page-infra tags like this one can never be
+// injected into them. Detected by content signature rather than filename,
+// so a future engine's verification file doesn't need a new entry here —
+// every major search engine's file-upload method emits a single
+// "<service>-site-verification: <filename>" line as the entire content.
+const VERIFICATION_STUB_RE = /^[\w-]+-site-verification:\s/;
+
 function shouldSkip(filePath) {
   const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
   const segments = rel.split('/');
@@ -48,6 +58,11 @@ for (const file of files) {
 
   const rel = path.relative(ROOT, file);
   const content = fs.readFileSync(file, 'utf8');
+
+  if (VERIFICATION_STUB_RE.test(content.trimStart())) {
+    skipped++;
+    continue;
+  }
 
   const markerCount = (content.match(new RegExp(MARKER.replace(/\./g, '\\.'), 'g')) || []).length;
   const hasClient = content.includes(AD_CLIENT + '?ers=1');
