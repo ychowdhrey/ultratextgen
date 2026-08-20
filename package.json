@@ -38,6 +38,9 @@
     "plan:library-locale": "python3 scripts/plan-library-locale-batch.py",
     "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py",
     "check:document-head": "python3 scripts/check-document-head.py",
+    "build:static-footer": "node scripts/build-static-footer.js --write",
+    "check:static-footer": "node scripts/build-static-footer.js",
+    "fix:footer-nested-content": "python3 scripts/fix-footer-nested-content.py --write",
     "check:ci-gates": "python3 scripts/run-ci-gates.py"
   },
   "dependencies": {
