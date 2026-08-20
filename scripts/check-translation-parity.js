@@ -36,9 +36,9 @@ const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters')
 
 const SITE = 'https://ultratextgen.com';
 const { createFingerprinter } = require('./lib/content-fingerprint');
+const { loadExceptions, createExceptionResolver, EXCEPTIONS_PATH } = require('./lib/parity-exceptions');
 
 const ROOT = path.resolve(__dirname, '..');
-const EXCEPTIONS_PATH = path.join(ROOT, 'data', 'translation_parity_exceptions.json');
 
 const args = process.argv.slice(2);
 const baseIdx = args.indexOf('--base');
@@ -110,19 +110,42 @@ for (const [enUrl, members] of clusters) {
 }
 
 // ─── Exceptions ledger ──────────────────────────────────────────────────
+// Semantics (including what `suppress` scopes) live in
+// scripts/lib/parity-exceptions.js, shared with audit-translation-parity.js
+// so the audit and the gate can't read the same entry two different ways.
 
-let exceptions = [];
-if (fs.existsSync(EXCEPTIONS_PATH)) {
-  try {
-    const parsed = JSON.parse(fs.readFileSync(EXCEPTIONS_PATH, 'utf8'));
-    exceptions = Array.isArray(parsed) ? parsed : parsed.exceptions || [];
-  } catch (e) {
-    console.error(`WARNING: could not parse ${path.relative(ROOT, EXCEPTIONS_PATH)}: ${e.message}`);
-  }
-}
+const exceptions = loadExceptions(EXCEPTIONS_PATH);
+const { findException, isBlanket, applySuppression } = createExceptionResolver(exceptions);
 
-function hasException(enUrl, localeUrl) {
-  return exceptions.some((ex) => ex.enUrl === enUrl && ex.localeUrl === localeUrl);
+const partiallyExcused = []; // { enUrl, localeUrl } — entry exists but doesn't cover this change
+
+/**
+ * Does this pair's ledger entry excuse THIS branch's change to the page?
+ *
+ * An entry with no `suppress` block excuses the pair outright, as it always
+ * has. A scoped entry excuses only what it names: `suppress` is subtracted
+ * from the page's own before/after diff, and the pair is excused only if
+ * nothing is left over. So an entry agreed for an <h2> difference stops
+ * covering that pair the moment the same page loses an FAQ or a symbol tile.
+ *
+ * Before this, the gate matched on (enUrl, localeUrl) and ignored `suppress`
+ * entirely, making all 98 scoped entries behave as blanket ones in CI while
+ * the audit read them as written.
+ *
+ * `structuralDiff` is null for a page this branch adds — there is no prior
+ * state to scope against, so an entry excuses it outright.
+ */
+function pairExcused(enUrl, localeUrl, structuralDiff) {
+  const ex = findException(enUrl, localeUrl);
+  if (!ex) return false;
+  if (isBlanket(ex) || structuralDiff === null) return true;
+  // linksDirectionless: the gate's diff is before-vs-after of one page, so its
+  // onlyInEN/onlyInLocale mean removed/added rather than the audit's
+  // EN-side/locale-side. See parity-exceptions.js, "TWO DIFFS, ONE LEDGER".
+  const left = applySuppression(ex, structuralDiff, { linksDirectionless: true });
+  if (score(left) === 0) return true;
+  partiallyExcused.push({ enUrl, localeUrl });
+  return false;
 }
 
 /**
@@ -234,7 +257,7 @@ for (const rel of changedFiles) {
     const pairKey = `${enAnchor}|${rec.canonical}`;
     if (checkedPairs.has(pairKey)) continue;
     checkedPairs.add(pairKey);
-    if (hasException(enAnchor, rec.canonical)) continue;
+    if (pairExcused(enAnchor, rec.canonical, structuralDiff)) continue;
     if (changedSet.has(enRec.rel)) continue; // EN parent touched — presumed synced
 
     // Repairing drift is not creating it — see convergedTowards().
@@ -248,7 +271,7 @@ for (const rel of changedFiles) {
     // EN parent changed — any touched locale sibling counts as the sync
     const siblingRecs = members.map((u) => ({ url: u, rec: byUrl.get(u) })).filter((s) => s.rec);
     if (siblingRecs.length === 0) continue;
-    const nonExcepted = siblingRecs.filter((s) => !hasException(rec.canonical, s.url));
+    const nonExcepted = siblingRecs.filter((s) => !pairExcused(rec.canonical, s.url, structuralDiff));
     if (nonExcepted.length === 0) continue; // every pair individually excepted
 
     // EN is the source locale: a new EN page gets linked from existing EN
@@ -308,10 +331,19 @@ if (converged.length) {
 }
 
 if (flagged.length) {
+  const partial = new Set(partiallyExcused.map((p) => `${p.enUrl}|${p.localeUrl}`));
   for (const f of flagged) {
     console.log(`✗ ${f.changedRel} changed content, but its translation sibling was not updated in this branch:`);
     console.log(`    EN:     ${f.enRel}`);
     console.log(`    locale: ${f.localeRel}`);
+    if (partial.has(`${f.enUrl}|${f.localeUrl}`)) {
+      // Without this line a scoped entry reads as a ledger that isn't working.
+      console.log(
+        `    NOTE: this pair HAS a translation_parity_exceptions.json entry, but its` +
+          ` "suppress" block does not cover what changed here. Widen the entry only if` +
+          ` the new divergence was also discussed and agreed.`
+      );
+    }
     console.log(
       `    Fix: update the sibling in this PR, or add an entry to data/translation_parity_exceptions.json` +
         ` documenting why they're allowed to diverge (see CLAUDE.md, "Translation Parity").`
