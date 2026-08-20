@@ -34,6 +34,7 @@ import argparse
 import html
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -474,8 +475,18 @@ def render_page(spec):
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
     )
-    date_pub = spec.get("date_published", "2026-01-01")
-    date_mod = spec.get("date_modified", date_pub)
+    def _iso_datetime(d):
+        # Google's structured-data validator flags a bare "YYYY-MM-DD" as an
+        # "Invalid datetime value" / "missing a timezone" non-critical issue
+        # on datePublished/dateModified. Upgrade to a full ISO-8601 datetime
+        # with an explicit UTC offset; leave anything already carrying a "T"
+        # (a spec that already supplies a full datetime) untouched.
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
+            return f"{d}T00:00:00+00:00"
+        return d
+
+    date_pub = _iso_datetime(spec.get("date_published", "2026-01-01"))
+    date_mod = _iso_datetime(spec.get("date_modified", spec.get("date_published", "2026-01-01")))
     cta = spec.get(
         "cta",
         ui.get(

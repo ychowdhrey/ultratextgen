@@ -8,6 +8,11 @@ the same two reasons:
    which the importer rejects ("Missing header column / Missing video title").
 2. **Non-public Media URL.** The importer fetches each image over the web. A repo
    path (`assets/pinterest/id/x.png`) is not fetchable, so the import fails.
+   This is also why pin images now live on Cloudflare R2 rather than in git —
+   see [`pinterest-r2-migration.md`](./pinterest-r2-migration.md) — the
+   inventory's image-path column holds an R2 object key
+   (`pinterest/base/x.png`), and `Media URL` below resolves it against
+   `R2_PUBLIC_BASE_URL` into a real public link.
 
 This doc + the code below make that mistake structurally hard to repeat.
 
@@ -28,10 +33,20 @@ Title, Media URL, Pinterest board, Thumbnail, Description, Link, Publish date, K
 
 - **Title** — required, ≤ 100 chars.
 - **Media URL** — required, **public** `http(s)` link to the image file, ending in
-  `.png/.jpg/.jpeg/.webp/.mp4`. Built as `DOMAIN + inventory image path`.
-- **Pinterest board** — required, must match an **existing** board name in the
-  account (create the board first). Bulk CSV has one board column, so pins are
+  `.png/.jpg/.jpeg/.webp/.mp4`. Built as `DOMAIN + inventory image path`, where
+  `DOMAIN` defaults to `R2_PUBLIC_BASE_URL` (`https://media.ultratextgen.com`) —
+  see [`pinterest-r2-migration.md`](./pinterest-r2-migration.md).
+- **Pinterest board** — required. Bulk CSV has one board column, so pins are
   filed to their *primary* board; secondary boards are a manual re-pin.
+  **Correction (2026-08-18):** this previously said the board name "must match
+  an existing board in the account (create the board first)" — that's wrong.
+  Pinterest's own bulk-upload help doc states plainly: *"If the board or
+  section doesn't exist, it will be created for you."* Verified directly
+  against that page while building the API publishing pipeline
+  (`docs/pinterest-api-publishing.md`) — a missing board is auto-created by
+  the bulk importer, not a hard requirement. Copy the board title exactly
+  (spaces, capitalization) and don't include a `/` unless you mean a board
+  section, since `/` is parsed as the board/section separator.
 - **Thumbnail** — video pins only (blank for image pins).
 - **Description** — ≤ 500 chars.
 - **Link** — destination URL (with UTM).

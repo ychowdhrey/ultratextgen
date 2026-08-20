@@ -21,10 +21,14 @@ Priority model — three signals, all computable from the repo, no API needed:
   2. cluster  — how many locales already translated it. A page 12 locales have is
                 a proven-portable topic; a page nobody has translated is either
                 new or nobody thought it worth it.
-  3. native   — whether data/local-language/<locale>.json carries an approved or
-                limited_use phrase matching the topic. Presence does not raise
-                priority on its own; it is reported so a batch can be sequenced to
-                put well-evidenced pages first and flag the rest for review.
+  3. native   — whether the Local Language Intelligence Library (a researched,
+                evidence-backed vocabulary dataset kept intentionally outside this
+                repo -- there is no local copy here, see CLAUDE.md's "Local
+                Language Intelligence" section for why and how to reach it) carries
+                an approved or limited_use phrase matching the topic. Presence does
+                not raise priority on its own; it is reported so a batch can be
+                sequenced to put well-evidenced pages first and flag the rest for
+                review.
 
   4. demand   — OPTIONAL and strongly preferred when available. Pass --gsc with a
                 Search Console export (columns: Landing Page, Impressions, Url
@@ -64,6 +68,7 @@ Usage:
 
 import argparse
 import collections
+import csv
 import glob
 import json
 import os
@@ -130,13 +135,65 @@ def inbound_link_counts():
     return counts
 
 
+NATIVE_LEXICON_GLOB = os.path.join(
+    ROOT, "..", "*", "forum-intelligence", "language-dictionaries",
+    "local-language-lexicon.csv",
+)
+NATIVE_PUBLIC_STATUSES = {"approved", "limited_use"}
+
+
+def _find_native_lexicon():
+    """Locate the Local Language Intelligence Library's canonical CSV.
+
+    This repo deliberately keeps no copy of it and no hardcoded path to it
+    (see CLAUDE.md's "Local Language Intelligence" section) -- it is
+    discovered by shape, not by name, in whichever sibling checkout carries
+    it. NATIVE_LEXICON_PATH overrides the search with an explicit path.
+    """
+    env_path = os.environ.get("NATIVE_LEXICON_PATH")
+    if env_path:
+        return env_path if os.path.exists(env_path) else None
+    hits = sorted(glob.glob(NATIVE_LEXICON_GLOB))
+    return hits[0] if hits else None
+
+
 def native_phrases(locale):
-    path = os.path.join(ROOT, "data", "local-language", f"{locale}.json")
-    if not os.path.exists(path):
-        return []
-    with open(path, encoding="utf-8") as fh:
-        data = json.load(fh)
-    return data.get("phrases", []) if isinstance(data, dict) else []
+    """Approved/limited_use phrases for one locale, read directly from the
+    Local Language Intelligence Library's canonical CSV.
+
+    There used to be a public data/local-language/<locale>.json snapshot in
+    THIS repo, generated from that same canonical dataset. It was removed
+    2026-08-19: nothing at runtime ever read it (grep confirmed -- no JS, no
+    HTML, no Cloudflare Function), its only consumer was this planning
+    script, and it was shipping real research judgement (usage_guidance,
+    avoid_when, confidence -- not just the phrase itself) into a public
+    GitHub repo for no operational reason. See CLAUDE.md's "Local Language
+    Intelligence" section.
+
+    Fails loudly if the library isn't attached, rather than returning []
+    which would look identical to "checked, nothing on record" and let a
+    page ship on an unresearched slug -- exactly what this check exists to
+    prevent.
+    """
+    path = _find_native_lexicon()
+    if not path:
+        print(
+            "ERROR: cannot find the Local Language Intelligence Library.\n"
+            "  This data lives ONLY outside this repo -- see CLAUDE.md's\n"
+            "  'Local Language Intelligence' section for where and why.\n"
+            "  Attach the sibling checkout that carries it (or set\n"
+            "  NATIVE_LEXICON_PATH to its local-language-lexicon.csv) before\n"
+            "  running this script -- do not proceed by treating an unchecked\n"
+            "  locale as if it had no native-vocabulary evidence.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+    with open(path, newline="", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    return [
+        r for r in rows
+        if r.get("locale") == locale and r.get("status") in NATIVE_PUBLIC_STATUSES
+    ]
 
 
 STOP = {
@@ -285,7 +342,8 @@ def main():
     print(f"  already translated   : {len(pages) - len(missing)}")
     print(f"  missing              : {len(missing)}")
     print(f"  native phrases avail : {len(phrases)} "
-          f"(approved/limited_use in data/local-language/{loc}.json)")
+          f"(approved/limited_use, locale={loc}, from the Local Language "
+          f"Intelligence Library's local-language-lexicon.csv)")
     if demand is None:
         basis = "inbound*2 + locales*3  [STRUCTURAL — pass --gsc for real demand]"
     elif args.market:

@@ -29,6 +29,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
+          # The cache must be committed alongside the sitemap. The generator
+          # writes it every run; if only sitemap.xml is staged, the cache is
+          # silently discarded and every later run compares against a frozen
+          # snapshot instead of the previous run's state.
+          git add sitemap.xml data/sitemap-lastmod-cache.json
           git diff --cached --quiet || git commit -m "chore: regenerate sitemap.xml [skip ci]"
           git push

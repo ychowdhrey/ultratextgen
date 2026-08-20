@@ -199,8 +199,11 @@ def wire(path, slug, title, tiles, dims):
     alt text is the page's own <h1> plus the tile count — the H1 is already in
     the page's own language, so nothing here authors new localized copy. A
     localized caption would be genuinely better and is a deliberate follow-up:
-    it needs the data/local-language/<locale>.json check that CLAUDE.md
-    requires before writing localized copy, which is not this change."""
+    it needs the Local Language Intelligence Library check that CLAUDE.md
+    requires before writing localized copy (see scripts/plan-library-locale-batch.py's
+    native_phrases() for the reference implementation -- that dataset is kept
+    intentionally outside this repo, with no local copy here, per CLAUDE.md's
+    "Local Language Intelligence" section), which is not this change."""
     html = open(path, encoding="utf-8").read()
     w, h = dims
     # The H1 alone, not H1 + a generated English suffix: it names exactly what

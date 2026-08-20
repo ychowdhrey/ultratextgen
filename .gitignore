@@ -7,3 +7,12 @@ data/library_opportunities_audit.csv
 
 # Transient Claude Code agent worktrees (auto-created/cleaned)
 .claude/worktrees/
+
+# Pinterest pin images -- generators render every pin in memory and upload
+# it straight to Cloudflare R2 (see docs/pinterest-r2-migration.md); nothing
+# is written under these directories by a normal run anymore. Ignored as a
+# backstop in case a script or a manual export ever drops a file here.
+# Inventory CSVs, generator scripts and the migration/validation tooling
+# under scripts/ and data/ are unaffected and stay tracked.
+assets/pinterest/
+assets/collection-pins/
