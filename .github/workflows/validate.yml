@@ -270,6 +270,17 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, and with no backlog to be red against: library/index.html's
+      # static directory either matches its own LIBRARY array or it doesn't,
+      # and `npm run build:library-directory` closes any gap in one idempotent
+      # run. The hub's 336 spoke links are the only thing a non-JS crawler
+      # (GPTBot, ClaudeBot, Amazonbot, meta-externalagent, Google-Extended)
+      # can see, so an entry added to the array without regenerating would
+      # silently go uncrawlable.
+      - name: Run library directory freshness check
+        id: library_directory
+        continue-on-error: true
+        run: npm run check:library-directory | tee library-directory.log
 
       - name: Build step summary
         if: always()
@@ -363,6 +374,11 @@ jobs:
             cat external-refs.log
             echo '```'
             echo ""
+            echo "### Library directory freshness check — \`${{ steps.library_directory.outcome }}\`"
+            echo '```'
+            cat library-directory.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -397,7 +413,8 @@ jobs:
           steps.counter_claims.outcome == 'failure' ||
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
-          steps.static_footer.outcome == 'failure'
+          steps.static_footer.outcome == 'failure' ||
+          steps.library_directory.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
