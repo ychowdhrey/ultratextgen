@@ -46,6 +46,7 @@
       { "string": "Clown Check", "reason": "an English meme phrase used untranslated in Italian", "found_on": "it/library/emoji-clown/", "added": "2026-08-15" },
       { "string": "Cupcake", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-regalo/", "added": "2026-08-15" },
       { "string": "Font", "reason": "loanword; Italian uses 'font' for a typeface, and the site's Italian pages use it untranslated throughout", "found_on": "it/symbol/* tables", "added": "2026-08-16" },
+      { "string": "glitch", "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss", "found_on": "it/usecase/zalgo-text/", "added": "2026-08-19" },
       { "string": "Goblin", "reason": "loanword, spelled identically in Italian", "found_on": "it/library/emoji-diavolo/", "added": "2026-08-15" },
       { "string": "Minimal", "reason": "used as-is in Italian design vocabulary; 23 of 26 Italian decoration tabs render \"Minimal\" against 3 \"Minimo\"", "found_on": "it/usecase/* decoration tabs", "added": "2026-08-16" },
       { "string": "Muah", "reason": "onomatopoeia, written the same way", "found_on": "it/library/emoji-bacio/", "added": "2026-08-15" },
