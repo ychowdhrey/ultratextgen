@@ -248,6 +248,29 @@ jobs:
         continue-on-error: true
         run: npm run check:external-refs | tee external-refs.log
 
+      # Whole-site and gating, for the same reason as the tile-codepoint and
+      # document-head checks above: its backlog is zero, because the change
+      # that added it baked the footer into all 4,582 pages at once.
+      #
+      # The footer is the site's densest block of internal links (~27 per page,
+      # in the visitor's own language) and it used to exist only at runtime —
+      # footer.js filled an empty shell on load. Googlebot renders JS and saw
+      # them; GPTBot/ClaudeBot/Amazonbot/Google-Extended/meta-externalagent,
+      # which robots.txt explicitly invites, do a plain fetch and saw none.
+      # scripts/build-static-footer.js bakes footer.js's own output into the
+      # HTML, so now that the markup is committed, editing footer.js no longer
+      # reaches the pages — this is what catches that drift.
+      #
+      # It also guards scripts/fix-footer-nested-content.py's repair: page
+      # content nested inside <footer> (727 pages carried whole FAQ sections
+      # there, where readability-style extractors discard it as boilerplate)
+      # is by definition a deviation from the generated markup, so it fails
+      # here too. Fix is always `npm run build:static-footer`.
+      - name: Run static footer check
+        id: static_footer
+        continue-on-error: true
+        run: npm run check:static-footer | tee static-footer.log
+
       - name: Build step summary
         if: always()
         run: |
@@ -310,6 +333,11 @@ jobs:
             cat document-head.log
             echo '```'
             echo ""
+            echo "### Static footer check — \`${{ steps.static_footer.outcome }}\`"
+            echo '```'
+            cat static-footer.log
+            echo '```'
+            echo ""
             echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
             echo '```'
             cat tile-codepoints.log
@@ -368,7 +396,8 @@ jobs:
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
           steps.tile_codepoints.outcome == 'failure' ||
-          steps.document_head.outcome == 'failure'
+          steps.document_head.outcome == 'failure' ||
+          steps.static_footer.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
