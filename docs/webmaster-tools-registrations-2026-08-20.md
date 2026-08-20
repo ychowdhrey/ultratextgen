@@ -33,6 +33,24 @@ sitemap has already been submitted somewhere.
   locale) content — it's the same flat multi-locale sitemap every other
   registered search engine gets.
 
+## Google Search Console (confirmed live 2026-08-20)
+
+- **Status:** confirmed registered and actively collecting data — user
+  screenshot of the Performance report shows real query/click data (73
+  clicks, Jul 18–Aug 20 window; top queries include several Russian-language
+  Discord-symbol terms).
+- **Verification method: unknown.** No `google-site-verification` meta tag
+  exists anywhere in this repo's HTML, so verification is not via the
+  HTML-tag method — most likely a DNS TXT record, or ownership inherited
+  through a linked Google Analytics/Tag Manager property (GTM-P55HXK8Q is
+  already wired site-wide per this file's own SEO section). Either method
+  leaves no trace in the codebase, which is why this wasn't already
+  documented. Not something to "fix" — just noting why no matching tag will
+  ever be found here.
+- **Sitemap-submission status: not confirmed.** Worth checking directly in
+  GSC's Sitemaps report next time someone's in there, same as the
+  outstanding Yandex question below.
+
 ## Other existing registrations (found already live in `index.html`, no
 prior record of when/how — recorded here so they're not lost twice)
 
