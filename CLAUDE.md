@@ -1294,6 +1294,55 @@ pairs, and deleting one peer card from a locale symbol page flags that pair.
 gained a currency-symbols translation. The probe still works; the expected
 count moves as the site grows.)*
 
+### The fingerprint must measure content, not metadata (added 2026-08-21)
+
+Two defects in `scripts/lib/content-fingerprint.js` made the parity gate report
+**repairs as drift**. Together they flagged 24 pairs in one PR, none of which had
+actually diverged. Both are the same failure as the two carve-outs above — the
+proxy inverting on a legitimate repair — so read them as a third instance of that
+pattern, not a new one.
+
+**1. `faqCount` counted JSON-LD questions, which is metadata, not content.** The
+two routinely disagree: this file names the stale-schema case (visible FAQ edited,
+JSON-LD left behind) as the more common FAQ failure mode, and the site once
+carried 214 pages of it at once. So backfilling `category/underline-text`'s
+JSON-LD from 10 questions to the **24 its page had been rendering all along**
+changed no page copy whatsoever, yet moved `faqCount` by 14 and flagged all 10 of
+its locale siblings — whose real gap against it had not moved by one item.
+
+Worse, it set two gates in this repo against each other: `check-faq-schema`
+*requires* the JSON-LD to match the visible FAQ, and paying that debt cost you a
+red parity check. The incentive pointed at leaving the schema stale.
+
+It now counts rendered `.faq-item` elements, which covers both house variants (the
+JS-bound `div` accordion and the JS-free `details` disclosure). **No-op for 2,813
+of the 2,871 FAQ-bearing pages** — the 58 that differ are precisely the stale ones.
+A page shipping orphan schema now counts 0 here; that defect belongs to
+`check-faq-schema.js`, which owns and gates on it. Verified the division holds:
+a JSON-LD-only question added to `symbol/euro-sign` is **ignored by parity** (no
+content moved) and **caught by `check-faq-schema`** (exit 1) in the same run.
+
+**2. `score()` treated its three count axes as booleans**, so a page 20 sections
+short of its sibling scored the same `1` as a page short by one. That silently
+broke the convergence carve-out above on those axes: a page catching up could only
+register as converged by landing **exactly** equal, so every partial step read as
+no movement at all. Both genuine cases in that PR were exactly this —
+`tr/symbol/dolar-isareti` porting in the "why $ shows up outside pricing" section
+its EN parent already had (h2 gap 3→2, tiles 5→4), and
+`ru/library/html-spetssimvoly` deleting an empty section its EN parent never had
+(h2 gap 2→1). Both moved toward their sibling; both were reported as moving away.
+Magnitudes fix it; convergence still requires a strict decrease, so trading one
+divergence for another still nets non-negative.
+
+Verified per this file's own rule ("Adding a validator script is not the same as
+gating on it") against four probes, each on a page **outside the branch's changed
+set** — that scoping matters, and getting it wrong reads as a false green: the
+first attempt probed pages the branch had already touched, where a touched sibling
+legitimately counts as the sync, and all three came back exit 0. On clean pages:
+adding a `/library/currency-symbols/` link to `/discord/` flags 7; removing a peer
+card from `fr/symbol/symbole-euro` flags 1; adding an h2 section EN lacks flags 1;
+adding a **visible** FAQ item to `symbol/euro-sign` flags 16.
+
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
 classifies a *page type* whose link list is an inventory. Adding a pattern to
