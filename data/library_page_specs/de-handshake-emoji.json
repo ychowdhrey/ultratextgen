@@ -1,0 +1,277 @@
+{
+ "slug": "handschlag-emoji",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "title": "Handschlag-Emoji 🤝 zum Kopieren — Einigung, Gruß und Partnerschaft | UltraTextGen",
+ "meta_description": "Handschlag-Emoji 🤝 zum Kopieren, dazu Winken, Salutieren und Zeichen für Abschluss und Partnerschaft — mit Hinweis auf die berufliche Verwendung.",
+ "breadcrumb": "Handschlag-Emoji",
+ "hero_h1": "Handschlag-Emoji",
+ "hero_tagline": "🤝 und die Zeichen für Gruß, Einigung und Zusammenarbeit.",
+ "intro": "🤝 ist eines der wenigen Emojis, das im beruflichen Chat uneingeschränkt funktioniert: Es steht für Einigung, Partnerschaft und Zusammenarbeit, ohne unangemessen locker zu wirken. Diese Seite hat es samt Begrüßungsgesten, den Zeichen für einen Abschluss und den passenden Kaomoji.",
+ "sections": [
+  {
+   "id": "handschlag",
+   "label": "Handschlag",
+   "h2": "Handschlag",
+   "intro": "Das Zeichen und die verwandten Handhaltungen.",
+   "symbols": [
+    {
+     "char": "🤝",
+     "label": "Handschlag"
+    },
+    {
+     "char": "🫱",
+     "label": "Hand nach rechts"
+    },
+    {
+     "char": "🫲",
+     "label": "Hand nach links"
+    },
+    {
+     "char": "🤲",
+     "label": "Offene Handflächen"
+    },
+    {
+     "char": "👐",
+     "label": "Offene Hände"
+    }
+   ]
+  },
+  {
+   "id": "gruss",
+   "label": "Begrüßung",
+   "h2": "Begrüßung",
+   "intro": "Für den Anfang eines Gesprächs.",
+   "symbols": [
+    {
+     "char": "👋",
+     "label": "Winkende Hand"
+    },
+    {
+     "char": "✋",
+     "label": "Erhobene Hand"
+    },
+    {
+     "char": "🖐",
+     "label": "Hand mit gespreizten Fingern"
+    },
+    {
+     "char": "🤗",
+     "label": "Umarmendes Gesicht"
+    },
+    {
+     "char": "🫡",
+     "label": "Salutierendes Gesicht"
+    }
+   ]
+  },
+  {
+   "id": "abschluss",
+   "label": "Abschluss",
+   "h2": "Abschluss",
+   "intro": "Für Vereinbarung und Zusage.",
+   "symbols": [
+    {
+     "char": "💼",
+     "label": "Aktentasche"
+    },
+    {
+     "char": "🙌",
+     "label": "Erhobene Hände"
+    },
+    {
+     "char": "👏",
+     "label": "Klatschende Hände"
+    },
+    {
+     "char": "🤜",
+     "label": "Faust nach rechts"
+    },
+    {
+     "char": "🤛",
+     "label": "Faust nach links"
+    },
+    {
+     "char": "✅",
+     "label": "Häkchen"
+    },
+    {
+     "char": "🤞",
+     "label": "Gekreuzte Finger"
+    }
+   ]
+  },
+  {
+   "id": "kaomoji",
+   "label": "Gruß-Kaomoji",
+   "h2": "Gruß-Kaomoji",
+   "intro": "Aus Zeichen gebaute Begrüßungen.",
+   "symbols": [
+    {
+     "char": "( ・∇・)ノ",
+     "label": "Freundliches Winken"
+    },
+    {
+     "char": "(^-^)/",
+     "label": "Fröhliches Winken"
+    },
+    {
+     "char": "ヽ(・∀・)ﾉ",
+     "label": "Begeisterte Begrüßung"
+    },
+    {
+     "char": "( ﾟ▽ﾟ)/",
+     "label": "Großes Hallo"
+    },
+    {
+     "char": "( ´ ▽ ` )ﾉ",
+     "label": "Herzliches Willkommen"
+    },
+    {
+     "char": "ヾ(＾∇＾)",
+     "label": "Frohe Begrüßung"
+    },
+    {
+     "char": "m(_ _)m",
+     "label": "Respektvolle Verbeugung"
+    },
+    {
+     "char": "(￣ー￣)ゞ",
+     "label": "Grußsalut"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zum Handschlag-Emoji",
+ "faq": [
+  {
+   "q": "Kann ich 🤝 beruflich verwenden?",
+   "a": "Ja, es ist eines der wenigen Emojis, die in geschäftlicher Kommunikation unauffällig sind. Es signalisiert Einigung ohne Vertraulichkeit — anders als 👍, das je nach Empfänger kühl wirkt, oder 🔥, das eindeutig zu locker ist."
+  },
+  {
+   "q": "Hat 🤝 Hauttöne?",
+   "a": "Seit Unicode 14 ja, und zwar getrennt für beide Hände — man kann zwei verschiedene Hauttöne kombinieren. Ältere Systeme zeigen diese Kombination nicht korrekt an und fallen auf die gelbe Standardform zurück."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen 🤝 und 🙏?",
+   "a": "🤝 sind zwei Hände verschiedener Personen, die sich schütteln — Einigung. 🙏 sind zwei Hände derselben Person, gefaltet — Dank oder Bitte. Die Verwechslung ist häufig, die Bedeutungen sind es nicht."
+  },
+  {
+   "q": "Wofür steht 🫡?",
+   "a": "Das salutierende Gesicht, seit 2021 im Zeichensatz. Es meint „verstanden“ oder „wird gemacht“ und hat sich in Arbeitschats schnell als knappe Bestätigung etabliert — freundlicher als ein bloßes 👍."
+  },
+  {
+   "q": "Warum sehen die Hände auf manchen Geräten gleich aus?",
+   "a": "Weil ältere Darstellungen beide Hände in derselben Farbe zeichnen. Erst neuere Versionen erlauben zwei getrennte Hauttöne, und nicht jede Plattform hat die Umstellung vollzogen."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum 🤝 im Beruflichen funktioniert, wo andere Emojis scheitern",
+   "body": "Der Handschlag ist eine formelle Geste — er gehört in Situationen, in denen sich Menschen einigen, nicht in solche, in denen sie sich nahestehen. Genau das überträgt sich auf das Zeichen: 🤝 signalisiert Zustimmung mit professioneller Distanz. Andere Zustimmungszeichen tragen eine Bewertung mit (🔥, 💯) oder wirken abgekürzt (👍); der Handschlag nicht. Er ist damit eines der wenigen Emojis, die in einer E-Mail an Kundschaft nicht deplatziert wirken — vorausgesetzt, er steht am Ende einer Vereinbarung und nicht als Ersatz für eine Antwort."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/hand-symbole/",
+   "title": "Hand-Symbole und Gesten",
+   "desc": "Alle Handzeichen von Victory bis Faust."
+  },
+  {
+   "href": "/de/library/daumen-hoch-emoji/",
+   "title": "Daumen hoch Emoji",
+   "desc": "👍 in allen Hauttönen, plus Daumendrücken."
+  },
+  {
+   "href": "/de/library/emoji-bedeutung/",
+   "title": "Emoji Bedeutung",
+   "desc": "Was die gebräuchlichsten Emojis wirklich aussagen."
+  },
+  {
+   "href": "/de/library/email-symbole/",
+   "title": "E-Mail-Symbole",
+   "desc": "Aufzählungen, Trenner und Statuszeichen für die Korrespondenz."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/handschlag-emoji/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/handshake-emoji/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/handschlag-emoji/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/handshake-emoji/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Kombinationen",
+  "h2": "Gruß-Kombinationen",
+  "intro": "Komplette Kombinationen mit einem Klick kopieren."
+ },
+ "collection_container_id": "handshakeSetsContainer",
+ "collections": [
+  {
+   "name": "Freut mich",
+   "flags": [
+    "🤝",
+    "👋",
+    "😊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Abgemacht",
+   "flags": [
+    "🤝",
+    "💼",
+    "✅"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Willkommen an Bord",
+   "flags": [
+    "👋",
+    "🙌",
+    "🎉"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Auf gute Zusammenarbeit",
+   "flags": [
+    "🤝",
+    "💼",
+    "💪"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Herzlich willkommen",
+   "flags": [
+    "👋",
+    "🤗",
+    "😄"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Partnerschaft",
+   "flags": [
+    "🤝",
+    "🤲",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
+}

@@ -369,6 +369,11 @@ jobs:
             cat locale-parent-gap.log
             echo '```'
             echo ""
+            echo "### Locale spec check — \`${{ steps.locale_spec.outcome }}\`"
+            echo '```'
+            cat locale-spec.log
+            echo '```'
+            echo ""
             echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
             echo '```'
             cat external-refs.log

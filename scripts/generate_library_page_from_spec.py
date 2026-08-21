@@ -170,33 +170,33 @@ def validate_spec(spec):
 # locale (not invented) wherever a generator-built precedent existed, and
 # a plain natural translation of the English default otherwise.
 LOCALE_UI_STRINGS = {
-    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
-    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
-    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
-    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
-    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
-    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
-    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_body": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
+    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_body": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
+    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_body": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
+    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_body": "UltraTextGen ile düz metni kalın, italik, el yazısı ve 100’den fazla Unicode yazı stiline anında ve ücretsiz çevir.", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
+    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_body": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
+    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_body": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
+    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     # nl cta_btn is deliberately NOT "Open UltraTextGen →": that string is
     # byte-identical to the English default, so check-locale-translation.js
     # counts it as untranslated English surviving on a Dutch page. Use a real
     # Dutch label instead (matches the hand-written labels already on /nl/).
-    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
-    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
-    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
+    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_body": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
+    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_body": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_body": "UltraTextGenillä muunnat tavallisen tekstin lihavoiduksi, kursivoiduksi, kaunokirjoitukseksi ja yli sadaksi muuksi Unicode-fonttityyliksi — ilmaiseksi ja heti.", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored
     # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
     # so generated and hand-authored pages read the same inside one locale.
-    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
-    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
-    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_body": "استخدم UltraTextGen لتحويل النص العادي إلى خط عريض ومائل وخط يد وأكثر من 100 نمط يونيكود آخر — مجاناً وفوراً.", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
+    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_body": "Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и 100+ других стилей Unicode — бесплатно и мгновенно.", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
+    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_body": "UltraTextGen なら、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントスタイルに変換できます — 無料ですぐに使えます。", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
     # zh-TW was missing entirely, so every Traditional-Chinese page fell back to
     # English chrome ("Copy", "Related Resources") while its 23 live siblings
     # carry proper Chinese. Caught 2026-08-10 on the iphone-emojis batch.
-    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
-    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
-    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
-    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
+    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_body": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
+    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_body": "UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
+    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_body": "ใช้ UltraTextGen เปลี่ยนข้อความธรรมดาให้เป็นฟอนต์ Unicode ตัวหนา ตัวเอียง ลายมือ และอีกกว่า 100 แบบ — ฟรีและทันที", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
+    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_body": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
 
 # Section label for the optional FAQ block, per locale. Falls back to English.
@@ -489,8 +489,11 @@ def render_page(spec):
     date_mod = _iso_datetime(spec.get("date_modified", spec.get("date_published", "2026-01-01")))
     cta = spec.get(
         "cta",
-        "Use UltraTextGen to convert plain text into bold, italic, cursive, "
-        "and 100+ other Unicode font styles — free and instant.",
+        ui.get(
+            "cta_body",
+            "Use UltraTextGen to convert plain text into bold, italic, cursive, "
+            "and 100+ other Unicode font styles — free and instant.",
+        ),
     )
 
     # JSON-LD must use real (entity-decoded) strings; json.dumps handles escaping.

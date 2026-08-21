@@ -1,0 +1,322 @@
+{
+ "slug": "mond-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Mond-Symbole & Himmelszeichen zum Kopieren — alle Mondphasen | UltraTextGen",
+ "meta_description": "Mond-Symbole zum Kopieren: alle acht Mondphasen, Halbmond, Sonne, Sterne und kosmische Zeichen — mit Erklärung, welche Phase welches Zeichen zeigt.",
+ "breadcrumb": "Mond-Symbole",
+ "hero_h1": "Mond-Symbole",
+ "hero_tagline": "Alle acht Mondphasen, dazu Sonne, Sterne und kosmische Zeichen.",
+ "intro": "Unicode bildet den vollständigen Mondzyklus ab — acht Phasen von Neumond bis abnehmender Sichel, dazu die typografischen Halbmondzeichen ☽ ☾, die älter sind als jedes Emoji. Diese Seite hat beides, dazu Sonnen, Sterne und die kosmischen Zeichen, die üblicherweise dazugesetzt werden.",
+ "sections": [
+  {
+   "id": "phasen",
+   "label": "Mondphasen",
+   "h2": "Mondphasen",
+   "intro": "Der vollständige Zyklus in der richtigen Reihenfolge.",
+   "symbols": [
+    {
+     "char": "🌑",
+     "label": "Neumond"
+    },
+    {
+     "char": "🌒",
+     "label": "Zunehmende Sichel"
+    },
+    {
+     "char": "🌓",
+     "label": "Erstes Viertel"
+    },
+    {
+     "char": "🌔",
+     "label": "Zunehmender Mond"
+    },
+    {
+     "char": "🌕",
+     "label": "Vollmond"
+    },
+    {
+     "char": "🌖",
+     "label": "Abnehmender Mond"
+    },
+    {
+     "char": "🌗",
+     "label": "Letztes Viertel"
+    },
+    {
+     "char": "🌘",
+     "label": "Abnehmende Sichel"
+    },
+    {
+     "char": "🌙",
+     "label": "Mondsichel"
+    },
+    {
+     "char": "🌚",
+     "label": "Neumond mit Gesicht"
+    },
+    {
+     "char": "🌛",
+     "label": "Erstes Viertel mit Gesicht"
+    },
+    {
+     "char": "🌜",
+     "label": "Letztes Viertel mit Gesicht"
+    }
+   ]
+  },
+  {
+   "id": "halbmond",
+   "label": "Halbmond-Zeichen",
+   "h2": "Halbmond-Zeichen",
+   "intro": "Die einfarbigen typografischen Zeichen — für Text, in dem bunte Emojis stören.",
+   "symbols": [
+    {
+     "char": "☽",
+     "label": "Zunehmender Halbmond"
+    },
+    {
+     "char": "☾",
+     "label": "Abnehmender Halbmond"
+    },
+    {
+     "char": "☪",
+     "label": "Stern und Halbmond"
+    },
+    {
+     "char": "ⵉ",
+     "label": "Tifinagh-Yi (als Stern-Akzent)"
+    }
+   ]
+  },
+  {
+   "id": "sonne",
+   "label": "Sonnenzeichen",
+   "h2": "Sonnenzeichen",
+   "intro": "Sonnen in Text- und Emoji-Form.",
+   "symbols": [
+    {
+     "char": "☼",
+     "label": "Sonne mit Strahlen"
+    },
+    {
+     "char": "☉",
+     "label": "Sonnenzeichen (Astronomie)"
+    },
+    {
+     "char": "🌞",
+     "label": "Sonne mit Gesicht"
+    },
+    {
+     "char": "🌝",
+     "label": "Vollmond mit Gesicht"
+    },
+    {
+     "char": "☀",
+     "label": "Schwarze Sonne mit Strahlen"
+    },
+    {
+     "char": "𖤓",
+     "label": "Sechszackiger schwarzer Stern"
+    }
+   ]
+  },
+  {
+   "id": "sterne",
+   "label": "Sterne und Funkeln",
+   "h2": "Sterne und Funkeln",
+   "intro": "Für Nachthimmel und dekorative Akzente.",
+   "symbols": [
+    {
+     "char": "⋆",
+     "label": "Sechszackiger Stern (klein)"
+    },
+    {
+     "char": "✦",
+     "label": "Gefüllter Vierzackstern"
+    },
+    {
+     "char": "✧",
+     "label": "Leerer Vierzackstern"
+    },
+    {
+     "char": "✩",
+     "label": "Umrissener Stern"
+    },
+    {
+     "char": "✪",
+     "label": "Stern im Kreis"
+    },
+    {
+     "char": "⭒",
+     "label": "Umrissener Stern (klein)"
+    },
+    {
+     "char": "𖤐",
+     "label": "Bamum-Zeichen Ngkeuri (als „schwarze Sonne“)"
+    }
+   ]
+  },
+  {
+   "id": "sonnenlauf",
+   "label": "Sonnenlauf-Sequenz",
+   "h2": "Sonnenlauf-Sequenz",
+   "intro": "Der Tagesbogen von Sonnenaufgang bis Nacht — als Folge kopierbar.",
+   "symbols": [
+    {
+     "char": "🌅",
+     "label": "Sonnenaufgang"
+    },
+    {
+     "char": "🌞",
+     "label": "Mittagssonne"
+    },
+    {
+     "char": "🌇",
+     "label": "Sonnenuntergang"
+    },
+    {
+     "char": "🌃",
+     "label": "Nacht mit Sternen"
+    }
+   ]
+  },
+  {
+   "id": "kosmos",
+   "label": "Kosmische Zeichen",
+   "h2": "Kosmische Zeichen",
+   "intro": "Komet, Planet und Milchstraße.",
+   "symbols": [
+    {
+     "char": "☄",
+     "label": "Komet"
+    },
+    {
+     "char": "🪐",
+     "label": "Planet mit Ring"
+    },
+    {
+     "char": "🌌",
+     "label": "Milchstraße"
+    },
+    {
+     "char": "✨",
+     "label": "Funkeln"
+    },
+    {
+     "char": "🛸",
+     "label": "Fliegende Untertasse"
+    }
+   ]
+  },
+  {
+   "id": "sonne-mond-paare",
+   "label": "Sonne-Mond-Paare und Nachthimmel-Sets",
+   "h2": "Sonne-Mond-Paare und Nachthimmel-Sets",
+   "intro": "Fertige Paare und Nachthimmel-Kombinationen für Bio, Nickname und Status.",
+   "symbols": [
+    {
+     "char": "☀☾",
+     "label": "Sonne & Mond"
+    },
+    {
+     "char": "☼☽",
+     "label": "Tag & Nacht"
+    },
+    {
+     "char": "🌞🌚",
+     "label": "Gesichter-Paar"
+    },
+    {
+     "char": "☀️ ⋆ 🌙",
+     "label": "Sonne · Mond"
+    },
+    {
+     "char": "⋆｡˚☾˚｡⋆",
+     "label": "Gerahmter Mond"
+    },
+    {
+     "char": "˚₊‧꒰ა ☾ ໒꒱ ‧₊˚",
+     "label": "Mondflügel"
+    },
+    {
+     "char": "✦ ˚ ☾ ˚ ✦",
+     "label": "Sternenmond"
+    },
+    {
+     "char": "🌙✨⭐",
+     "label": "Nachthimmel"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Mond-Symbolen",
+ "faq": [
+  {
+   "q": "Wie erkenne ich zu- und abnehmenden Mond?",
+   "a": "An der Richtung der Sichel. Auf der Nordhalbkugel gilt die Merkregel: Sieht die Sichel aus wie ein „a“ ohne Strich, nimmt sie ab; wie ein „z“ ohne Strich, nimmt sie zu. Auf der Südhalbkugel ist es umgekehrt — die Emojis zeigen durchgehend die Nordhalbkugel-Ansicht."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen 🌙 und ☽?",
+   "a": "🌙 ist ein Emoji und wird farbig dargestellt, ☽ ein typografisches Zeichen aus dem astronomischen Block und bleibt einfarbig. In Fließtext, Bios und überall dort, wo bunte Zeichen stören, ist ☽ die bessere Wahl."
+  },
+  {
+   "q": "Warum gibt es Monde mit Gesicht?",
+   "a": "Weil die japanischen Ursprungszeichensätze sie hatten — der Mond mit Gesicht ist in der japanischen Bildsprache verbreitet. 🌚 hat dabei eine eigene Bedeutung bekommen: es wird für Hintergedanken und trockenen Spott verwendet, nicht für den Neumond."
+  },
+  {
+   "q": "Was bedeutet ☪?",
+   "a": "Stern und Halbmond gelten heute als Symbol des Islam, sind aber deutlich älter — sie stammen aus Byzanz und wurden vom Osmanischen Reich übernommen. Als religiöses Zeichen sind sie erst im 20. Jahrhundert etabliert worden."
+  },
+  {
+   "q": "Zeigen die Mondphasen den aktuellen Mond?",
+   "a": "Nein, jedes Zeichen zeigt eine feste Phase. Für den tatsächlichen aktuellen Mond braucht es eine Berechnung — die Zeichen sind ein Vorrat, keine Anzeige."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Zwei Systeme, zwei Zwecke",
+   "body": "Die Mondzeichen in Unicode stammen aus zwei getrennten Welten. ☽ und ☾ gehören zum astronomischen Zeichensatz und stehen dort neben den Planetenzeichen — sie sind Fachnotation, einfarbig, seit Jahrhunderten in Almanachen und Ephemeriden in Gebrauch. Die Mondphasen-Emojis 🌑 bis 🌘 kamen erst mit dem Emoji-Satz und zeigen den Mond als Bild. Praktisch heißt das: Für einen astrologischen oder astronomischen Text sind die einfarbigen Zeichen richtig, für eine Bio oder eine Nachricht die Emojis. Beide bezeichnen dasselbe, aber sie sprechen unterschiedliche Register."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/wetter-symbole/",
+   "title": "Wetter-Symbole",
+   "desc": "Sonne, Wolken, Regen und Schnee als Zeichen."
+  },
+  {
+   "href": "/de/library/stern-symbole/",
+   "title": "Stern-Symbole",
+   "desc": "Sterne in allen Zacken und Stilarten zum Kopieren."
+  },
+  {
+   "href": "/de/library/sternzeichen-symbole/",
+   "title": "Sternzeichen-Symbole",
+   "desc": "Die zwölf Tierkreiszeichen und ihre Symbole."
+  },
+  {
+   "href": "/de/symbol/stern-und-halbmond/",
+   "title": "Stern und Halbmond (☪)",
+   "desc": "Herkunft des Zeichens und seine heutige Bedeutung."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/mond-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/moon-celestial-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/mond-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/moon-celestial-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}
