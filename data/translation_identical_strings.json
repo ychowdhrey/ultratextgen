@@ -31,10 +31,12 @@
     ],
     "es": [
       { "string": "Emojis", "reason": "Spanish pluralises the loanword identically; all 25 Spanish decoration tabs render \"Emojis\"", "found_on": "es/usecase/* decoration tabs", "added": "2026-08-16" },
+      { "string": "glitch", "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss", "found_on": "es/usecase/zalgo-text/", "added": "2026-08-21" },
       { "string": "Minimal", "reason": "used as-is in Spanish; 19 of 26 Spanish decoration tabs render \"Minimal\" against 7 \"Minimalista\"", "found_on": "es/usecase/* decoration tabs", "added": "2026-08-16" }
     ],
     "fr": [
-      { "string": "Emojis", "reason": "French pluralises the loanword identically; 10 of 14 French decoration tabs render \"Emojis\"", "found_on": "fr/usecase/* decoration tabs", "added": "2026-08-16" }
+      { "string": "Emojis", "reason": "French pluralises the loanword identically; 10 of 14 French decoration tabs render \"Emojis\"", "found_on": "fr/usecase/* decoration tabs", "added": "2026-08-16" },
+      { "string": "glitch", "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss", "found_on": "fr/usecase/zalgo-text/", "added": "2026-08-21" }
     ],
     "id": [
       { "string": "Font", "reason": "loanword; Indonesian uses 'font' untranslated, as every id page on the site does", "found_on": "id/symbol/* tables", "added": "2026-08-16" },
@@ -66,6 +68,7 @@
       { "string": "Clown Emoji &amp; Kaomoji", "reason": "both nouns are loanwords in Dutch; the ampersand form is identical", "found_on": "nl/library/clown-emoji/", "added": "2026-08-15" },
       { "string": "Cupcake", "reason": "loanword, spelled identically in Dutch", "found_on": "nl/library/cadeau-emoji/", "added": "2026-08-15" },
       { "string": "Element", "reason": "identical noun in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
+      { "string": "glitch", "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss", "found_on": "nl/usecase/zalgo-text/", "added": "2026-08-21" },
       { "string": "Joker", "reason": "loanword, spelled identically in Dutch", "found_on": "nl/library/clown-emoji/", "added": "2026-08-15" },
       { "string": "Jupiter", "reason": "planet name, identical in Dutch", "found_on": "nl/library/sterrenbeeld-symbolen/", "added": "2026-08-15" },
       { "string": "Letters 65–122", "reason": "'Letters' is the Dutch plural too, and the range is numeric", "found_on": "nl/library/ascii-tabel/", "added": "2026-08-15" },
@@ -87,7 +90,8 @@
       { "string": "Zombie", "reason": "loanword, spelled identically in Polish", "found_on": "pl/library/symbole-halloween/", "added": "2026-08-15" }
     ],
     "pt": [
-      { "string": "Emojis", "reason": "Portuguese pluralises the loanword identically; all 21 Portuguese decoration tabs render \"Emojis\"", "found_on": "pt/usecase/* decoration tabs", "added": "2026-08-16" }
+      { "string": "Emojis", "reason": "Portuguese pluralises the loanword identically; all 21 Portuguese decoration tabs render \"Emojis\"", "found_on": "pt/usecase/* decoration tabs", "added": "2026-08-16" },
+      { "string": "glitch", "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss", "found_on": "pt/usecase/zalgo-text/", "added": "2026-08-21" }
     ],
     "tr": [
       { "string": "Minimal", "reason": "\"minimal\" is ordinary Turkish; all 23 Turkish decoration tabs render it", "found_on": "tr/usecase/* decoration tabs", "added": "2026-08-16" },
