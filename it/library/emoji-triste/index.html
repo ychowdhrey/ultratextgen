@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Perché Esistono Così Tanti Emoji Tristi</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Set di Combo</span>
+  <h2>Set di combo con l’emoji triste</h2>
+  <p class="u-secondary-block">Malinconia con un clic — copia un combo triste completo e incollalo in una bio, in una didascalia o in un messaggio.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -441,6 +441,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Set da Cuore Spezzato",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Malinconia da Giorno di Pioggia",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Notti Malinconiche",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sospiro di Delusione",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Estetica Appassita",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mi Manchi",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pacchetto Kaomoji Tristi",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
