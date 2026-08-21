@@ -1968,7 +1968,7 @@ silently return is the tooling below, not vigilance.
   check. Diff-scoped like `check-translation-parity.js`: it only inspects
   HTML this PR adds or changes, so pre-existing backlog elsewhere can never
   make it permanently red. Fails the PR listing the exact unmatched
-  questions.
+  questions **and** the answers that drifted (see below).
 - **`node scripts/fix-faq-schema-visibility.js`** — the repair pass, kept
   because the same two repairs apply every time this recurs. `--dry-run`
   reports; `--write` applies; a file list scopes it. It renders the schema's
@@ -1978,6 +1978,56 @@ silently return is the tooling below, not vigilance.
   text is the page's own.
 - All three share `scripts/lib/faq-schema-audit.js`, so the audit, the gate
   and the fixer can never disagree about what counts as "visible."
+
+**The gate only ever checked half the rule (fixed 2026-08-21).** The rule above
+has two halves — questions must be visible, and an answer must not claim content
+the page never renders — and only the first was enforced. The shared lib did
+compute an answer comparison, but `check-faq-schema.js` never read it, so the
+answer half was **present, documented, and dead**. That is the same shape as the
+two `validate.yml` incidents above: *a check that reports nothing is
+indistinguishable from a check that passes.*
+
+It was found the way it had to be found — by shipping the defect. A correction
+pass on `updates/unicode-18-most-anticipated-emoji` appended one sentence to a
+JSON-LD answer ("See our Unicode 18.0 Release Date Confirmed update…") that the
+visible answer never got. The gate reported `mismatched: 0`; a review agent
+caught it by reading the page.
+
+**It measures the delta, not the state** — the same design as
+`check-locale-translation.js`, and adopted for the same measured reason. A
+state check is not viable here: the site carries **923 drifted answer pairs
+across 336 files** (measured 2026-08-21; ≥5 tokens still leaves 310, ≥12 leaves
+38). Almost all of it is benign rewording where a translator tightened a
+sentence. A gate red on 336 files regardless of the PR is a gate people learn to
+ignore. So a pair counts against a branch only if its divergence **grew by
+`DRIFT_TOLERANCE` (4) content tokens or more** since the merge base — roughly a
+clause; the real regression added 5. Pre-existing drift is **reported, never
+silenced**: the clean run on the branch that added this printed 0 introduced and
+21 pre-existing, exit 0.
+
+**The measurement is direction-neutral, which matters**, because CLAUDE.md names
+the *stale-schema* half — visible FAQ rewritten, JSON-LD left alone — as the more
+common failure. Both edits produce the same observable: schema tokens with no
+home in the visible answer. The failure message says so rather than assuming the
+JSON-LD is what moved.
+
+**`visibleAnswers()` deliberately reads "the FAQ item's text minus its question"
+rather than selecting `.faq-answer`.** Selecting the class reports **97 answers
+across 21 pages as blank**, because those pages carry invalid nested markup —
+`<p class="faq-answer"><p>…</p></p>`, which every parser auto-closes, leaving the
+`.faq-answer` element genuinely empty. That markup bug is real and still
+outstanding; it is not this gate's job, and the gate must not be fooled by it.
+
+Verified per this file's own rule before being trusted (see "Adding a validator
+script is not the same as gating on it"), against **two differently-shaped**
+broken inputs so the check could not be tuned to one bug: the real regression
+re-injected on `updates/unicode-18-most-anticipated-emoji` (JSON-LD grew a
+sentence), and a visible answer trimmed on `category/underline-text` with its
+JSON-LD left stale (0 → 16 tokens). Both exit 1; `audit-faq-schema.js` and
+`fix-faq-schema-visibility.js` are unaffected. Note for anyone repeating this:
+**do not pipe the run through `grep` to read the result** — `$?` is then grep's
+status, which is the exact pipefail trap this file documents twice, and it
+reported a false EXIT=0 on the first attempt here.
 
 ---
 

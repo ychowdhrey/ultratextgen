@@ -10,6 +10,19 @@
  * a FAQPage block describing Q&A the reader never sees is invisible-content
  * markup, which forfeits the rich result and is manual-action territory.
  *
+ * It checks BOTH halves of the rule. Questions: every schema question must
+ * be visible. Answers: a schema answer must not claim a sentence's worth of
+ * content its own visible answer never renders — the half that used to be
+ * computed and then never read, which is how an appended JSON-LD-only
+ * sentence shipped on updates/unicode-18-most-anticipated-emoji on
+ * 2026-08-21 with this gate reporting "mismatched: 0".
+ *
+ * The answer half gates on the DELTA against the merge base, never on the
+ * state. The site carries ~920 paraphrase-drifted pairs across ~336 pages
+ * (measured 2026-08-21) — real, mostly benign rewording that a state check
+ * would fire on forever. Same reasoning, and same shape, as
+ * check-locale-translation.js. Pre-existing drift is reported, never failed.
+ *
  * This is the enforcement half of scripts/audit-faq-schema.js. Both share
  * scripts/lib/faq-schema-audit.js so "visible" can never mean two different
  * things. Diff-scoped like scripts/check-translation-parity.js and
@@ -29,11 +42,20 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 const {
   auditHtml,
+  answerDrift,
   findBinderScripts,
   unboundFaqItems
 } = require('./lib/faq-schema-audit');
 
 const ROOT = path.resolve(__dirname, '..');
+
+/**
+ * How many content tokens a schema answer may gain over its own visible
+ * answer before this branch is held responsible. 4 is roughly a clause;
+ * the real 2026-08-21 regression added 5. Below this, ordinary rewording
+ * and markup churn dominate.
+ */
+const DRIFT_TOLERANCE = 4;
 
 const args = process.argv.slice(2);
 const baseIdx = args.indexOf('--base');
@@ -97,6 +119,8 @@ if (changedFiles.length === 0) {
 
 const flagged = [];
 const unbound = [];
+const driftFlagged = [];
+const driftPreExisting = [];
 let checked = 0;
 
 // Which local JS files bind the accordion. Scanned once, not per page.
@@ -116,6 +140,26 @@ for (const rel of changedFiles) {
   const result = auditHtml(html);
   if (!result.hasFaqSchema) continue;
   checked++;
+
+  // Answer half, delta-scoped. A page absent from the base is new: its
+  // baseline is zero, so a new page must render what its schema claims.
+  const nowDrift = answerDrift(html);
+  let baseHtml = null;
+  try {
+    baseHtml = git(['show', `${mergeBase}:${rel}`]);
+  } catch {
+    baseHtml = null;
+  }
+  const baseDrift = baseHtml ? answerDrift(baseHtml) : new Map();
+  for (const [question, extra] of nowDrift) {
+    const before = baseDrift.has(question) ? baseDrift.get(question) : 0;
+    if (extra - before >= DRIFT_TOLERANCE) {
+      driftFlagged.push({ rel, question, before, after: extra });
+    } else if (extra > 0) {
+      driftPreExisting.push({ rel, question, extra });
+    }
+  }
+
   if (result.status === 'ok') continue;
   flagged.push({ rel, ...result });
 }
@@ -123,6 +167,8 @@ for (const rel of changedFiles) {
 console.log(`  with FAQ schema:    ${checked}`);
 console.log(`  mismatched:         ${flagged.length}`);
 console.log(`  unbound accordions: ${unbound.length}`);
+console.log(`  answer drift introduced: ${driftFlagged.length}`);
+console.log(`  answer drift pre-existing (reported, not failed): ${driftPreExisting.length}`);
 console.log('');
 
 if (unbound.length) {
@@ -147,10 +193,46 @@ if (unbound.length) {
   console.log('');
 }
 
-if (!flagged.length && !unbound.length) {
-  console.log('Every FAQ schema question on the changed pages is visible on the page. ✓');
+if (driftPreExisting.length) {
+  console.log(
+    'Reported, not failed — schema answers already diverging from their own visible\n' +
+      'answer at the merge base, on pages this branch touched:'
+  );
+  for (const d of driftPreExisting.slice(0, 10)) {
+    console.log(`    · ${d.rel} — "${d.question.slice(0, 60)}" (+${d.extra} tokens)`);
+  }
+  if (driftPreExisting.length > 10) {
+    console.log(`    … and ${driftPreExisting.length - 10} more`);
+  }
+  console.log('  Whole-site picture: npm run audit:faq-schema');
+  console.log('');
+}
+
+if (!flagged.length && !unbound.length && !driftFlagged.length) {
+  console.log('Every FAQ schema question on the changed pages is visible, and no');
+  console.log('schema answer claims content its own visible answer omits. ✓');
   process.exit(0);
 }
+
+for (const d of driftFlagged) {
+  console.log(
+    `✗ ${d.rel} — this branch left the JSON-LD answer claiming content the page does not show:`
+  );
+  console.log(`    Q: ${d.question}`);
+  console.log(
+    `    content tokens in the schema answer but not in its own visible answer: ` +
+      `${d.before} at the merge base -> ${d.after} now`
+  );
+  console.log('');
+}
+
+if (driftFlagged.length) console.log(
+  'Fix: make the two copies say the same thing. Either side may be the one that moved —\n' +
+    '     the JSON-LD grew a sentence the page never renders, or the visible answer was\n' +
+    '     trimmed and the JSON-LD kept the old wording. Render the missing content, or\n' +
+    '     drop it from the JSON-LD. Google compares the actual strings; paraphrase is not\n' +
+    '     a match. See CLAUDE.md, "FAQ schema must mirror visible page content".'
+);
 
 for (const f of flagged) {
   const label =
