@@ -19,11 +19,15 @@ const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 // Also skip files under build/helper directories (node_modules, etc.)
 const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
 
-// Search-engine ownership-verification files are not pages. They are a bare
-// token the engine reads verbatim, given a .html name because the engine asks
-// for one — no <head>, so there is nowhere for the tag to go, and no visitor
-// ever lands on them. The token run keeps this from matching real content.
-const VERIFICATION_FILE = /^(naver|google|yandex|baidu|bing)[0-9a-f]{8,}\.html$/i;
+// Search-engine site-ownership verification files (e.g. Naver's HTML-upload
+// method — see naverfc08aab480545cfd1d61489b3536a5e6.html) are plain-text
+// stubs at the site root, not real pages: they must stay byte-exact to what
+// the search engine issued, so page-infra tags like this one can never be
+// injected into them. Detected by content signature rather than filename,
+// so a future engine's verification file doesn't need a new entry here —
+// every major search engine's file-upload method emits a single
+// "<service>-site-verification: <filename>" line as the entire content.
+const VERIFICATION_STUB_RE = /^[\w-]+-site-verification:\s/;
 
 function shouldSkip(filePath) {
   const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
@@ -35,7 +39,6 @@ function shouldSkip(filePath) {
     if (SKIP_DIRS.includes(lower)) return true;
     // skip test/demo filenames
     if (/\.(test|demo|widget|embed)\b/i.test(seg)) return true;
-    if (VERIFICATION_FILE.test(seg)) return true;
   }
   return false;
 }
@@ -55,6 +58,11 @@ for (const file of files) {
 
   const rel = path.relative(ROOT, file);
   const content = fs.readFileSync(file, 'utf8');
+
+  if (VERIFICATION_STUB_RE.test(content.trimStart())) {
+    skipped++;
+    continue;
+  }
 
   const markerCount = (content.match(new RegExp(MARKER.replace(/\./g, '\\.'), 'g')) || []).length;
   const hasClient = content.includes(AD_CLIENT + '?ers=1');
