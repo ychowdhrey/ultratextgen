@@ -6,8 +6,8 @@
  * Language-independent "structural fingerprint" of a page: which content
  * pages it links to (resolved through the hreflang cluster map so a
  * locale-native link and its EN equivalent count as the same target — see
- * "Locale-native internal linking" in CLAUDE.md), plus FAQ/h2/symbol-tile
- * counts. Shared by audit-translation-parity.js (point-in-time site sweep)
+ * "Locale-native internal linking" in CLAUDE.md), plus rendered-FAQ/h2/
+ * symbol-tile counts. Shared by audit-translation-parity.js (point-in-time site sweep)
  * and check-translation-parity.js (per-PR diff gate) so "did this page's
  * content actually change" means the same thing in both places.
  */
@@ -107,24 +107,34 @@ function createFingerprinter(byUrl, localeCodes) {
     }
   }
 
-  function countJsonLdQuestions(html) {
-    const scriptRe = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-    let m;
-    let count = 0;
-    const walk = (node) => {
-      if (!node || typeof node !== 'object') return;
-      if (Array.isArray(node)) return node.forEach(walk);
-      if (node['@type'] === 'Question') count++;
-      for (const k of Object.keys(node)) walk(node[k]);
-    };
-    while ((m = scriptRe.exec(html))) {
-      try {
-        walk(JSON.parse(m[1]));
-      } catch {
-        // malformed JSON-LD is a separate problem, not this tool's job
-      }
-    }
-    return count;
+  /**
+   * How many FAQ entries the page actually RENDERS.
+   *
+   * This counted `@type: "Question"` entries in the page's JSON-LD until
+   * 2026-08-21. That is metadata describing the content, not the content,
+   * and the two routinely disagree: CLAUDE.md names the stale-schema case
+   * (visible FAQ edited, JSON-LD left behind) as the more common of the two
+   * FAQ failure modes, and the site once carried 214 pages of it at once.
+   *
+   * Counting the schema made this fingerprint read a *repair* as *drift*.
+   * Backfilling category/underline-text's JSON-LD from 10 questions to the
+   * 24 its page had been rendering all along changed no page copy at all,
+   * yet moved faqCount by 14 and flagged all 10 of its locale siblings —
+   * whose own real gap against it had not moved by one item. Worse, it made
+   * the two gates pull against each other: check-faq-schema requires the
+   * JSON-LD to match the visible FAQ, and fixing it cost you this one.
+   *
+   * `.faq-item` covers both house variants (the JS-bound `div` accordion and
+   * the JS-free `details` disclosure). A page rendering no FAQ counts 0
+   * whether or not it ships orphan schema — that defect belongs to
+   * check-faq-schema.js, which owns it and gates on it.
+   *
+   * Blast radius when this changed: 2,813 of the 2,871 FAQ-bearing pages
+   * already had visible === schema, so this is a no-op for 98% of the site;
+   * the 58 that differ are precisely the pages whose schema is stale.
+   */
+  function countVisibleFaqItems($) {
+    return $('.faq-item').length;
   }
 
   /**
@@ -150,7 +160,7 @@ function createFingerprinter(byUrl, localeCodes) {
       links,
       catalogue,
       h2Count: $('h2').length,
-      faqCount: countJsonLdQuestions(html),
+      faqCount: countVisibleFaqItems($),
       symbolTileCount: $('.symbol-tile').length,
     };
   }
@@ -165,13 +175,38 @@ function createFingerprinter(byUrl, localeCodes) {
     };
   }
 
+  /**
+   * How far apart two pages are. Used two ways: `> 0` answers "did anything
+   * structural move", and before/after comparison answers "did this edit move
+   * the page toward its sibling" (check-translation-parity.js's convergence
+   * carve-out).
+   *
+   * The three count axes were scored as booleans until 2026-08-21 — a page
+   * 20 sections short of its sibling scored the same 1 as a page short by
+   * one. That silently broke the convergence carve-out on those axes: a page
+   * catching up could only ever register as converged by landing *exactly*
+   * equal, so every partial step read as no movement and got flagged as
+   * drift. Both real cases in the PR that surfaced this were exactly that —
+   * tr/symbol/dolar-isareti porting in the "why $ shows up outside pricing"
+   * section its EN parent already had (h2 gap 3 -> 2, tiles 5 -> 4), and
+   * ru/library/html-spetssimvoly deleting an empty section its EN parent
+   * never had (h2 gap 2 -> 1). Both moved toward their sibling; both were
+   * reported as having moved away from it.
+   *
+   * Magnitudes fix that without weakening the check: adding a section the
+   * sibling lacks still raises the score, trading one divergence for another
+   * still nets non-negative, and convergence still requires a strict
+   * decrease. Units are deliberately mixed (links + sections + FAQs + tiles)
+   * — this is only ever compared against itself for one pair, never against
+   * a threshold.
+   */
   function score(d) {
     return (
       d.onlyInEN.length +
       d.onlyInLocale.length +
-      (d.h2Delta !== 0 ? 1 : 0) +
-      (d.faqDelta !== 0 ? 1 : 0) +
-      (d.symbolTilesDelta !== 0 ? 1 : 0)
+      Math.abs(d.h2Delta) +
+      Math.abs(d.faqDelta) +
+      Math.abs(d.symbolTilesDelta)
     );
   }
 
