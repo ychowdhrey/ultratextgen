@@ -44,7 +44,7 @@
       home: { label: "Início", href: "/pt/" },
       explore: [
         { label: "Guias", href: "/pt/guide/" },
-        { label: "Respostas", href: "/answers/" },
+        { label: "Respostas", href: "/pt/answers/" },
         { label: "Usos", href: "/pt/usecase/" },
         { label: "Categorias", href: "/pt/category/" },
         { label: "Biblioteca", href: "/pt/library/" },
@@ -77,7 +77,7 @@
       home: { label: "Accueil", href: "/fr/" },
       explore: [
         { label: "Guides", href: "/fr/guide/" },
-        { label: "Réponses", href: "/answers/" },
+        { label: "Réponses", href: "/fr/answers/" },
         { label: "Usages", href: "/fr/usecase/" },
         { label: "Catégories", href: "/fr/category/" },
         { label: "Bibliothèque", href: "/fr/library/" },
@@ -143,7 +143,7 @@
       home: { label: "Home", href: "/it/" },
       explore: [
         { label: "Guide", href: "/it/guide/" },
-        { label: "Risposte", href: "/answers/" },
+        { label: "Risposte", href: "/it/answers/" },
         { label: "Usi", href: "/it/usecase/" },
         { label: "Categorie", href: "/it/category/" },
         { label: "Libreria", href: "/it/library/" },
@@ -176,7 +176,7 @@
       home: { label: "Ana Sayfa", href: "/tr/" },
       explore: [
         { label: "Rehberler", href: "/tr/guide/" },
-        { label: "Yanıtlar", href: "/answers/" },
+        { label: "Yanıtlar", href: "/tr/answers/" },
         { label: "Kullanımlar", href: "/tr/usecase/" },
         { label: "Kategoriler", href: "/tr/category/" },
         { label: "Kütüphane", href: "/tr/library/" },
@@ -209,7 +209,7 @@
       home: { label: "Inicio", href: "/es/" },
       explore: [
         { label: "Guías", href: "/es/guide/" },
-        { label: "Respuestas", href: "/answers/" },
+        { label: "Respuestas", href: "/es/answers/" },
         { label: "Usos", href: "/es/usecase/" },
         { label: "Categorías", href: "/es/category/" },
         { label: "Biblioteca", href: "/es/library/" },
@@ -242,11 +242,11 @@
       home: { label: "Beranda", href: "/id/" },
       explore: [
         { label: "Panduan", href: "/id/guide/" },
-        { label: "Jawaban", href: "/answers/" },
+        { label: "Jawaban", href: "/id/answers/" },
         { label: "Kegunaan", href: "/id/usecase/" },
         { label: "Kategori", href: "/id/category/" },
         { label: "Perpustakaan", href: "/id/library/" },
-        { label: "Cetak", href: "/printables/" },
+        { label: "Cetak", href: "/id/printables/" },
         { label: "Acara", href: "/events/" }
       ],
       tools: [
@@ -275,8 +275,8 @@
       home: { label: "الرئيسية", href: "/ar/" },
       explore: [
         { label: "الأدلة", href: "/ar/guide/" },
-        { label: "الإجابات", href: "/answers/" },
-        { label: "الاستخدامات", href: "/usecase/" },
+        { label: "الإجابات", href: "/ar/answers/" },
+        { label: "الاستخدامات", href: "/ar/usecase/" },
         { label: "الفئات", href: "/category/" },
         { label: "المكتبة", href: "/ar/library/" },
         { label: "للطباعة", href: "/printables/" },
@@ -506,7 +506,7 @@
       home: { label: "ホーム", href: "/ja/" },
       explore: [
         { label: "ガイド", href: "/ja/guide/" },
-        { label: "回答", href: "/answers/" },
+        { label: "回答", href: "/ja/answers/" },
         { label: "使い方", href: "/usecase/" },
         { label: "カテゴリー", href: "/category/" },
         { label: "ライブラリ", href: "/ja/library/" },
@@ -572,8 +572,8 @@
       home: { label: "Home", href: "/nl/" },
       explore: [
         { label: "Guides", href: "/nl/guide/" },
-        { label: "Antwoorden", href: "/answers/" },
-        { label: "Toepassingen", href: "/usecase/" },
+        { label: "Antwoorden", href: "/nl/answers/" },
+        { label: "Toepassingen", href: "/nl/usecase/" },
         { label: "Categorieën", href: "/category/" },
         { label: "Bibliotheek", href: "/nl/library/" },
         { label: "Afdrukbaar", href: "/printables/" },
@@ -588,7 +588,7 @@
       categories: [
         { label: "Vetgedrukte Letters", href: "/nl/vetgedrukte-letters/" },
         { label: "Cursieve Letters", href: "/nl/cursieve-letters/" },
-        { label: "Gotische Letters", href: "/category/gothic-fonts/" },
+        { label: "Gotische Letters", href: "/nl/gotische-letters/" },
         { label: "Kleine Letters", href: "/nl/kleine-letters/" },
         { label: "Doorgestreepte Tekst", href: "/category/strikethrough-text/" }
       ],
@@ -671,7 +671,7 @@
       home: { label: "Главная", href: "/ru/" },
       explore: [
         { label: "Руководства", href: "/ru/guide/" },
-        { label: "Ответы", href: "/answers/" },
+        { label: "Ответы", href: "/ru/answers/" },
         { label: "Применение", href: "/usecase/" },
         { label: "Категории", href: "/category/" },
         { label: "Библиотека", href: "/ru/library/" },
@@ -803,8 +803,8 @@
       home: { label: "หน้าแรก", href: "/th/" },
       explore: [
         { label: "คู่มือ", href: "/th/guide/" },
-        { label: "คำตอบ", href: "/answers/" },
-        { label: "การใช้งาน", href: "/usecase/" },
+        { label: "คำตอบ", href: "/th/answers/" },
+        { label: "การใช้งาน", href: "/th/usecase/" },
         { label: "หมวดหมู่", href: "/category/" },
         { label: "คลังสัญลักษณ์", href: "/th/library/" },
         { label: "พิมพ์ได้", href: "/printables/" },
@@ -905,19 +905,19 @@
         { label: "問答", href: "/answers/" },
         { label: "使用情境", href: "/usecase/" },
         { label: "分類", href: "/category/" },
-        { label: "符號庫", href: "/library/" },
+        { label: "符號庫", href: "/zh-tw/library/" },
         { label: "可列印", href: "/printables/" },
         { label: "活動", href: "/events/" }
       ],
       tools: [
         { label: "個人簡介字體", href: "/usecase/bio-font/" },
-        { label: "刺青字體", href: "/usecase/tattoo-fonts/" },
+        { label: "刺青字體", href: "/zh-tw/usecase/ciqing-ziti/" },
         { label: "Emoji 翻譯器", href: "/usecase/text-to-emoji/" },
         { label: "直式文字", href: "/usecase/vertical-text/" }
       ],
       categories: [
         { label: "粗體字", href: "/category/bold-fonts/" },
-        { label: "手寫斜體字", href: "/category/cursive-fonts/" },
+        { label: "手寫斜體字", href: "/zh-tw/shufa-ziti/" },
         { label: "哥德字體", href: "/category/gothic-fonts/" },
         { label: "小型文字", href: "/category/small-text/" },
         { label: "刪除線文字", href: "/category/strikethrough-text/" }
@@ -930,6 +930,105 @@
       ],
       colTitles: { explore: "探索", tools: "熱門工具", categories: "熱門分類", company: "公司" },
       copyright: "© 2026 UltraTextGen. 時尚字體，到處都能貼上使用。"
+    },
+    fi: {
+      home: { label: "Etusivu", href: "/fi/" },
+      explore: [
+        { label: "Oppaat", href: "/fi/guide/" },
+        { label: "Vastaukset", href: "/answers/" },
+        { label: "Käyttötavat", href: "/usecase/" },
+        { label: "Kategoriat", href: "/category/" },
+        { label: "Kirjasto", href: "/library/" },
+        { label: "Tulostettavat", href: "/printables/" },
+        { label: "Tapahtumat", href: "/events/" }
+      ],
+      tools: [
+        { label: "Merkkilaskuri", href: "/fi/merkkilaskuri/" },
+        { label: "Bio-fontti", href: "/usecase/bio-font/" },
+        { label: "Tatuointifontit", href: "/usecase/tattoo-fonts/" },
+        { label: "Emoji-kääntäjä", href: "/usecase/text-to-emoji/" }
+      ],
+      categories: [
+        { label: "Lihavoitu teksti", href: "/fi/lihavoitu-teksti/" },
+        { label: "Kursivoitu teksti", href: "/fi/kursivoitu-teksti/" },
+        { label: "Goottilaiset kirjaimet", href: "/fi/goottilaiset-kirjaimet/" },
+        { label: "Pieni teksti", href: "/fi/pieni-teksti/" },
+        { label: "Kaunokirjoitus", href: "/fi/kaunokirjoitus/" }
+      ],
+      company: [
+        { label: "Tietoa meistä", href: "/about/" },
+        { label: "Tietosuojakäytäntö", href: "/privacy/" },
+        { label: "Käyttöehdot", href: "/terms/" },
+        { label: "Ota yhteyttä", href: "/contact/" }
+      ],
+      colTitles: { explore: "Selaa", tools: "Suositut työkalut", categories: "Suositut kategoriat", company: "Yritys" },
+      copyright: "© 2026 UltraTextGen. Tyylikkäät kirjaimet, jotka toimivat kaikkialla."
+    },
+    ms: {
+      home: { label: "Laman Utama", href: "/ms/" },
+      explore: [
+        { label: "Panduan", href: "/ms/guide/" },
+        { label: "Jawapan", href: "/answers/" },
+        { label: "Kegunaan", href: "/usecase/" },
+        { label: "Kategori", href: "/category/" },
+        { label: "Pustaka", href: "/library/" },
+        { label: "Boleh Cetak", href: "/printables/" },
+        { label: "Acara", href: "/events/" }
+      ],
+      tools: [
+        { label: "Nama Free Fire", href: "/ms/usecase/nama-ff-hebat/" },
+        { label: "Nama Mobile Legends", href: "/ms/usecase/nama-ml-hebat/" },
+        { label: "Font Bio", href: "/usecase/bio-font/" },
+        { label: "Teks Menegak", href: "/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Tulisan Tebal", href: "/ms/tulisan-tebal/" },
+        { label: "Tulisan Condong", href: "/ms/tulisan-condong/" },
+        { label: "Tulisan Gotik", href: "/ms/tulisan-gotik/" },
+        { label: "Tulisan Kecil", href: "/ms/tulisan-kecil/" },
+        { label: "Huruf Besar Kecil", href: "/ms/huruf-besar-kecil/" }
+      ],
+      company: [
+        { label: "Tentang Kami", href: "/about/" },
+        { label: "Dasar Privasi", href: "/privacy/" },
+        { label: "Terma Perkhidmatan", href: "/terms/" },
+        { label: "Hubungi Kami", href: "/contact/" }
+      ],
+      colTitles: { explore: "Terokai", tools: "Alat Popular", categories: "Kategori Popular", company: "Syarikat" },
+      copyright: "© 2026 UltraTextGen. Tulisan bergaya yang berfungsi di mana-mana."
+    },
+    pl: {
+      home: { label: "Strona główna", href: "/pl/" },
+      explore: [
+        { label: "Poradniki", href: "/pl/guide/" },
+        { label: "Odpowiedzi", href: "/pl/answers/" },
+        { label: "Zastosowania", href: "/pl/usecase/" },
+        { label: "Kategorie", href: "/pl/category/" },
+        { label: "Biblioteka", href: "/pl/library/" },
+        { label: "Do druku", href: "/pl/do-druku/" },
+        { label: "Wydarzenia", href: "/events/" }
+      ],
+      tools: [
+        { label: "Licznik znaków", href: "/pl/licznik-slow-i-znakow/" },
+        { label: "Czcionki na tatuaż", href: "/pl/usecase/czcionki-tatuaze/" },
+        { label: "Tłumacz emoji", href: "/pl/usecase/tlumacz-emoji/" },
+        { label: "Tekst pionowy", href: "/pl/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Pogrubiona czcionka", href: "/pl/pogrubiona-czcionka/" },
+        { label: "Kursywa", href: "/pl/kursywa/" },
+        { label: "Czcionki gotyckie", href: "/pl/czcionki-gotyckie/" },
+        { label: "Małe litery", href: "/pl/male-litery/" },
+        { label: "Przekreślony tekst", href: "/pl/przekreslony-tekst/" }
+      ],
+      company: [
+        { label: "O nas", href: "/about/" },
+        { label: "Polityka prywatności", href: "/privacy/" },
+        { label: "Regulamin", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Przeglądaj", tools: "Popularne narzędzia", categories: "Popularne kategorie", company: "Firma" },
+      copyright: "© 2026 UltraTextGen. Stylowe litery, które działają wszędzie."
     }
   };
 

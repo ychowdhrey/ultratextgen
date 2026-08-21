@@ -1,8 +1,38 @@
 name: Update Sitemap
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # every day at midnight UTC
+  # ── PAUSED 2026-08-20, resume on or after 2026-08-27 ──────────────────────
+  #
+  # The daily schedule is deliberately commented out, not deleted. Restore it
+  # by uncommenting the two lines below.
+  #
+  # Why: organic search collapsed on 2026-08-16 and the cause is still open.
+  # PR #790 touched all 4,582 pages (it added the footer's ~27 internal links
+  # to every page's HTML), and the significance hash counts visible text and
+  # the internal link set — so the next run would advance <lastmod> on 4,576
+  # of 4,576 URLs and advertise "the entire site changed today" in the middle
+  # of an unresolved incident. Measured, not assumed:
+  #     lastmod advanced: 4576   lastmod held: 0
+  #
+  # That is the exact signal scripts/lib/content-significance.js was written
+  # to prevent — a 15–16 August cosmetic pass bumped 2,533 pages the day
+  # before onset, and "deployment regression" is still a live hypothesis.
+  # The bump here is honest (the links are real), but the signal Google
+  # receives is identical, so it waits.
+  #
+  # Pausing costs very little: Crawl Stats for the 90 days to 2026-08-15 show
+  # 84% of crawling is Refresh, ~877 refresh HTML fetches/day against ~4,576
+  # pages — a full re-crawl pass roughly every 5 days with no sitemap ping at
+  # all. No new URLs are being added during the pause, so there is nothing
+  # the sitemap needs to announce. (Caveat: that export ends 08-15 and
+  # contains no day of the event window.)
+  #
+  # workflow_dispatch is kept so the sitemap can still be regenerated on
+  # demand while the schedule is off.
+  #
+  # schedule:
+  #   - cron: '0 0 * * *'  # every day at midnight UTC
+  workflow_dispatch:
 
 jobs:
   update-sitemap:

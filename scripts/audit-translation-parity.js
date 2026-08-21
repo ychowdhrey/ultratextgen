@@ -31,9 +31,9 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 const { discoverClusters } = require('./lib/translation-clusters');
 const { createFingerprinter } = require('./lib/content-fingerprint');
+const { loadExceptions, createExceptionResolver, EXCEPTIONS_PATH } = require('./lib/parity-exceptions');
 
 const ROOT = path.resolve(__dirname, '..');
-const EXCEPTIONS_PATH = path.join(ROOT, 'data', 'translation_parity_exceptions.json');
 
 const args = process.argv.slice(2);
 const reportIdx = args.indexOf('--report');
@@ -72,39 +72,12 @@ function lastCommit(rel) {
 }
 
 // ─── Exceptions ledger ──────────────────────────────────────────────────
+// Semantics (including what `suppress` scopes) live in
+// scripts/lib/parity-exceptions.js, shared with check-translation-parity.js
+// so the audit and the gate can't read the same entry two different ways.
 
-let exceptions = [];
-if (fs.existsSync(EXCEPTIONS_PATH)) {
-  try {
-    const parsed = JSON.parse(fs.readFileSync(EXCEPTIONS_PATH, 'utf8'));
-    exceptions = Array.isArray(parsed) ? parsed : parsed.exceptions || [];
-  } catch (e) {
-    console.error(`WARNING: could not parse ${path.relative(ROOT, EXCEPTIONS_PATH)}: ${e.message}`);
-  }
-}
-
-function findException(enUrl, localeUrl) {
-  return exceptions.find((ex) => ex.enUrl === enUrl && ex.localeUrl === localeUrl) || null;
-}
-
-function applySuppression(ex, diff) {
-  if (!ex) return diff;
-  const sup = ex.suppress || null;
-  if (!sup) {
-    // blanket exception: whole pair excused
-    return { onlyInEN: [], onlyInLocale: [], h2Delta: 0, faqDelta: 0, symbolTilesDelta: 0, suppressedAll: true };
-  }
-  const onlyInEN = diff.onlyInEN.filter((h) => !(sup.onlyInEN || []).includes(h));
-  const onlyInLocale = diff.onlyInLocale.filter((h) => !(sup.onlyInLocale || []).includes(h));
-  return {
-    onlyInEN,
-    onlyInLocale,
-    h2Delta: sup.h2Delta ? 0 : diff.h2Delta,
-    faqDelta: sup.faqDelta ? 0 : diff.faqDelta,
-    symbolTilesDelta: sup.symbolTilesDelta ? 0 : diff.symbolTilesDelta,
-    suppressedAll: false,
-  };
-}
+const exceptions = loadExceptions(EXCEPTIONS_PATH);
+const { findException, applySuppression } = createExceptionResolver(exceptions);
 
 // ─── Diff every cluster ────────────────────────────────────────────────
 
