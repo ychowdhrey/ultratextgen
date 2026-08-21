@@ -19,6 +19,12 @@ const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 // Also skip files under build/helper directories (node_modules, etc.)
 const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
 
+// Search-engine ownership-verification files are not pages. They are a bare
+// token the engine reads verbatim, given a .html name because the engine asks
+// for one — no <head>, so there is nowhere for the tag to go, and no visitor
+// ever lands on them. The token run keeps this from matching real content.
+const VERIFICATION_FILE = /^(naver|google|yandex|baidu|bing)[0-9a-f]{8,}\.html$/i;
+
 function shouldSkip(filePath) {
   const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
   const segments = rel.split('/');
@@ -29,6 +35,7 @@ function shouldSkip(filePath) {
     if (SKIP_DIRS.includes(lower)) return true;
     // skip test/demo filenames
     if (/\.(test|demo|widget|embed)\b/i.test(seg)) return true;
+    if (VERIFICATION_FILE.test(seg)) return true;
   }
   return false;
 }
