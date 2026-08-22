@@ -1919,6 +1919,21 @@ first real run also found the pipefail bug live in a *second* workflow,
 `css-audit.yml`, which had been reporting success regardless of what
 `audit-css.js` found; fixed in the same change.
 
+**A third rule, added 2026-08-22 after shipping the bug it catches.** In a
+double-quoted bash string a backtick is **command substitution**. A step-summary
+line written as ``echo "### Check — `${{ steps.x.outcome }}`"`` makes bash try to
+*run* the expanded value: the log records `success: command not found` and the
+summary renders an empty value where the outcome should be. That shipped on the
+`zalgo-decodes` summary line — every neighbouring line escaped its backticks as
+`` \` `` and only the new one did not, so the job stayed green while its own
+summary under-reported. Same family as the two incidents above: the failure was
+in the reporting layer, where nothing was watching.
+
+The rule is scoped to a backtick touching a `${{ }}` expression, because you can
+never usefully command-substitute one — so there are no legitimate hits, and
+ordinary command substitution elsewhere is left alone. Verified by re-injecting
+the exact line that shipped: exit 1, naming the file, job, step and line.
+
 ---
 
 ## Build & Development

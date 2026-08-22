@@ -368,7 +368,7 @@ jobs:
             cat faq-schema.log
             echo '```'
             echo ""
-            echo "### Zalgo example decode check — `${{ steps.zalgo_decodes.outcome }}`"
+            echo "### Zalgo example decode check — \`${{ steps.zalgo_decodes.outcome }}\`"
             echo '```'
             cat zalgo-decodes.log
             echo '```'
