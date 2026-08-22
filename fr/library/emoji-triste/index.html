@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Pourquoi Il Existe Autant d'Emoji Tristes</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Combos</span>
+  <h2>Combos d'Emoji Triste</h2>
+  <p class="u-secondary-block">La mélancolie en un clic — copiez un combo triste complet pour une bio, une légende ou un message.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -444,6 +444,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Cœur Brisé",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mélancolie Pluvieuse",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Heures Sombres",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Soupir Déçu",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Esthétique Fanée",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Tu Me Manques",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pack Kaomoji Triste",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Vì Sao Có Nhiều Emoji Buồn Đến Thế</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Bộ Combo Emoji Buồn</span>
+  <h2>Bộ Combo Emoji Buồn</h2>
+  <p class="u-secondary-block">Bấm một cái là buồn trọn bộ — sao chép nguyên combo cho bio, caption hay tin nhắn.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -425,7 +425,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí…</p>
     </a>
     <a href="/vi/library/bullet-point-symbols/" class="compare-card variant-muted u-no-underline">
-      <h4>Ký Hiệu Chấm Tròn &amp;amp; Dấu Đầu Dòng</h4>
+      <h4>Ký Hiệu Chấm Tròn &amp; Dấu Đầu Dòng</h4>
       <p>Sao chép và dán ký hiệu chấm tròn và dấu đầu dòng cho bài đăng LinkedIn, email và tài liệu. Nhấp vào ký hiệ…</p>
     </a>
   </div>
@@ -443,7 +443,55 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script src="/symbol-explorer.js"></script>
-<script src="/footer.js"></script>
+<script src="/symbol-explorer.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Bộ Trái Tim Tan Vỡ",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "U Sầu Ngày Mưa",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Giờ Ủ Rũ",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Thở Dài Thất Vọng",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Phong Cách Héo Tàn",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nhớ Người",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ Kaomoji Buồn",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

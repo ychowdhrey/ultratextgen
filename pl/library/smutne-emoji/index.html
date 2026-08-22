@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Dlaczego Smutnych Emoji Jest Aż Tyle</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Zestawy Combo</span>
+  <h2>Zestawy combo ze smutnymi emoji</h2>
+  <p class="u-secondary-block">Melancholia jednym kliknięciem — skopiuj cały smutny zestaw i wklej go prosto w bio, podpis albo wiadomość.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -444,6 +444,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Zestaw ze złamanym sercem",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Deszczowa melancholia",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nocne smutki",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zawiedzione westchnienie",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zwiędła estetyka",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Tęsknota",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pakiet smutnych kaomoji",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

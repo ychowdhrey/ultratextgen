@@ -141,6 +141,12 @@
         "added": "2026-08-16"
       },
       {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
         "string": "Minimal",
         "reason": "used as-is in Spanish; 19 of 26 Spanish decoration tabs render \"Minimal\" against 7 \"Minimalista\"",
         "found_on": "es/usecase/* decoration tabs",
@@ -171,6 +177,12 @@
         "reason": "French pluralises the loanword identically; 10 of 14 French decoration tabs render \"Emojis\"",
         "found_on": "fr/usecase/* decoration tabs",
         "added": "2026-08-16"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-08-21"
       },
       {
         "string": "Poppins",
@@ -253,6 +265,12 @@
         "reason": "loanword; Italian uses 'font' for a typeface, and the site's Italian pages use it untranslated throughout",
         "found_on": "it/symbol/* tables",
         "added": "2026-08-16"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-08-19"
       },
       {
         "string": "Goblin",
@@ -361,6 +379,12 @@
         "reason": "identical noun in Dutch",
         "found_on": "nl/library/sterrenbeeld-symbolen/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-08-21"
       },
       {
         "string": "Joker",
@@ -509,6 +533,12 @@
         "reason": "Portuguese pluralises the loanword identically; all 21 Portuguese decoration tabs render \"Emojis\"",
         "found_on": "pt/usecase/* decoration tabs",
         "added": "2026-08-16"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-08-21"
       },
       {
         "string": "Poppins",

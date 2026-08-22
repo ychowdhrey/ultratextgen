@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Por Que Existem Tantos Emojis Tristes</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Combos</span>
+  <h2>Combos de Emoji Triste</h2>
+  <p class="u-secondary-block">Melancolia em um clique — copie um combo triste inteiro para a bio, uma legenda ou uma mensagem.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -425,7 +425,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Ache a carinha exata pro que você quer dizer — beijo, piscadinha, sorriso de lado, olhos revirados, rosto c…</p>
     </a>
     <a href="/pt/library/kaomoji/" class="compare-card variant-muted u-no-underline">
-      <h4>Kaomoji &amp;amp; carinhas japonesas</h4>
+      <h4>Kaomoji &amp; carinhas japonesas</h4>
       <p>Copie e cole kaomoji — as carinhas japonesas de texto feitas com caracteres Unicode. Carinhas feliz, triste…</p>
     </a>
   </div>
@@ -444,6 +444,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Coração Partido",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Melancolia de Chuva",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Madrugada Triste",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Suspiro de Decepção",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Estética Murcha",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Saudade de Você",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pacote Kaomoji Triste",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
