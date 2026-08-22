@@ -2113,6 +2113,49 @@ Do not add a test framework unless explicitly requested. Adding another
 zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
 framework" and needs no permission.
 
+### Zalgo example cards must decode back to their own label (added 2026-08-22)
+
+`usecase/zalgo-text` and its eleven locale siblings each show six copy-paste
+example cards, with the page's own **unzalgo** widget directly below them. That
+widget strips combining marks **by codepoint range** (`zalgo-text.js`) — it does
+not decompose. So a card only works while its marks are stored as *base +
+combining mark*.
+
+**Every zalgo string on this site is therefore NFC-fragile, by construction.**
+Run any tool that NFC-normalises these files and 69 of them compose into
+different letters at once — `A`+U+0328 becomes the single codepoint `Ą`, and no
+range-strip can ever undo it. That already happened to EN and IT: twelve cards
+decoded to `ZĄLGO`, `hellō`, `çiao`, `incȕbó`, each sitting immediately above the
+box that claimed to reverse it. Nothing caught it — the markup was valid, the
+strings looked like zalgo, and no check compared a card to its own label.
+
+The inversion worth remembering: the pages that **work** are NFC-*unstable*, and
+the pages that were **broken** were NFC-*stable*. Being NFC-stable is the symptom.
+A generation pass that "helpfully" requires NFC-stable output will reject every
+correct string — verified, it rejected all 4,000 candidates on the first attempt.
+
+**`npm run check:zalgo-decodes`** (`scripts/check-zalgo-decodes.js`) is the
+tripwire, wired into `.github/workflows/validate.yml` as a **gating** step. It
+gates rather than informs — unlike the whole-site image and peer-link audits —
+because it has no backlog to be permanently red against: a card either decodes
+or it does not, and all 72 do. It fails on two shapes: a card that decodes to
+anything other than its label, and a card carrying **no combining marks at all**
+(a plain word passes a decode test trivially — that gap was found by probing the
+check itself, not by reasoning).
+
+**Never hand-type or hand-edit a zalgo string.** Generate it with the page's own
+`generateZalgo()`, sliced out of the live `zalgo-text.js` rather than
+reimplemented, and accept a candidate only if stripping the decoder's own ranges
+returns the label *and* every codepoint is either one of the generator's marks or
+the next base character in order. Match the card's existing mark density —
+the six cards are a deliberate light-to-heavy gradient (≈1.8 marks/char up to 17),
+not uniform.
+
+Verified per this file's own rule before being trusted, against two
+differently-shaped broken inputs: NFC-normalising one EN card (the real
+regression) exits 1 naming it, and replacing a `ru` card with the plain word
+exits 1 as unmarked.
+
 ---
 
 ## Git Workflow
@@ -2191,6 +2234,11 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
+  page's unzalgo widget strips marks by codepoint range and cannot undo a
+  precomposed character, so composition silently breaks the card against the
+  very widget below it. See "Zalgo example cards must decode back to their own
+  label" above. `npm run check:zalgo-decodes` gates this in CI.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
