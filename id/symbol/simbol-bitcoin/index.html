@@ -198,6 +198,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         "@type": "Answer",
         "text": "Tidak. ₿ adalah simbolnya, sementara BTC adalah kode ticker tiga huruf yang dipakai di bursa dan daftar harga. Hubungannya sama seperti $ dengan USD — satu adalah glyph yang ditaruh di samping angka, satu lagi singkatan yang dipakai di tabel dan pasangan trading."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara mengetik simbol Bitcoin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cara tercepat adalah menyalinnya langsung dari halaman ini. Di Word for Windows, ketik <code>20BF</code> lalu tekan Alt+X; tidak ada Alt code NumPad klasik karena ₿ tidak ada di code page Windows-1252 lama. Di Mac, buka Character Viewer (Cmd+Ctrl+Space) dan cari \"bitcoin\". Di HTML pakai <code>&#8383;</code> (desimal) atau <code>&#x20BF;</code> (heksadesimal) — tidak ada named entity — dan di CSS pakai <code>content: \"\\20BF\"</code>."
+      }
     }
   ]
 }
@@ -334,6 +342,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<!-- HOW TO TYPE IT -->
+<section class="editorial-section" id="cara-mengetik">
+  <span class="article-section-label">Cara Mengetik</span>
+  <h2>Cara mengetik simbol Bitcoin per platform</h2>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Platform / Alat</th><th>Metode</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Word / Windows (input Unicode)</td><td>Ketik <code>20BF</code>, lalu tekan <code>Alt+X</code></td></tr>
+        <tr><td>Windows (Alt code NumPad lama)</td><td>Tidak tersedia — ₿ tidak ada di code page Windows-1252</td></tr>
+        <tr><td>Mac</td><td>Character Viewer (<code>Cmd+Ctrl+Space</code>), cari "bitcoin"</td></tr>
+        <tr><td>iPhone / Android</td><td>Tidak ada tombol khusus — salin dari halaman ini, atau simpan sebagai pintasan teks di keyboard</td></tr>
+        <tr><td>HTML</td><td><code>&amp;#8383;</code> (desimal) atau <code>&amp;#x20BF;</code> (heksadesimal) — tidak ada named entity</td></tr>
+        <tr><td>CSS <code>content</code></td><td><code>content: "\20BF"</code></td></tr>
+        <tr><td>LaTeX</td><td>Tidak ada paket yang banyak dipakai menyediakan perintah <code>\bitcoin</code> khusus — pakai karakter Unicode-nya langsung lewat XeLaTeX atau LuaLaTeX</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">FAQ</span>
@@ -353,6 +385,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <details class="faq-item">
     <summary class="faq-question">Apakah ₿ sama dengan BTC?</summary>
     <p class="faq-answer">Tidak. ₿ adalah simbolnya, sementara BTC adalah kode ticker tiga huruf yang dipakai di bursa dan daftar harga. Hubungannya sama seperti $ dengan USD — satu adalah glyph yang ditaruh di samping angka, satu lagi singkatan yang dipakai di tabel dan pasangan trading.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Bagaimana cara mengetik simbol Bitcoin?</summary>
+    <p class="faq-answer">Cara tercepat adalah menyalinnya langsung dari halaman ini. Di Word for Windows, ketik <code>20BF</code> lalu tekan Alt+X; tidak ada Alt code NumPad klasik karena ₿ tidak ada di code page Windows-1252 lama. Di Mac, buka Character Viewer (Cmd+Ctrl+Space) dan cari "bitcoin". Di HTML pakai <code>&amp;#8383;</code> (desimal) atau <code>&amp;#x20BF;</code> (heksadesimal) — tidak ada named entity — dan di CSS pakai <code>content: "\20BF"</code>.</p>
   </details>
 </section>
 

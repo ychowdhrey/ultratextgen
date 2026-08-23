@@ -136,6 +136,35 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dlaczego znak < psuje mój kod HTML?",
+      "acceptedAnswer": { "@type": "Answer", "text": "HTML używa < do otwierania każdego tagu, więc gdy przeglądarka natrafi na surowy znak < w twoim tekście, próbuje zinterpretować go jako początek tagu, a reszta treści może zniknąć albo wyświetlić się źle. Zapisuj go jako &lt; (a > jako &gt;) zawsze, gdy piszesz < lub > wewnątrz HTML, nie tylko wewnątrz samego tagu." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak wpisać < i > na klawiaturze?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To standardowe klawisze na każdej klawiaturze — Shift+przecinek dla < i Shift+kropka dla > w układzie US. Nie potrzeba żadnego kodu Alt ani specjalnego wprowadzania." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jaka jest różnica między < a ‹ lub «?",
+      "acceptedAnswer": { "@type": "Answer", "text": "< (U+003C) to zwykły operator porównania ASCII, używany w matematyce i kodzie. ‹ › (U+2039/U+203A) to pojedyncze cudzysłowy kątowe, a « » (U+00AB/U+00BB) to podwójne cudzysłowy kątowe — oba to znaki interpunkcyjne używane we francuskiej, niemieckiej i innej europejskiej typografii, a nie symbole porównania, mimo że wyglądają podobnie." }
+    },
+    {
+      "@type": "Question",
+      "name": "Co oznaczają ≤ i ≥ w porównaniu do < i >?",
+      "acceptedAnswer": { "@type": "Answer", "text": "< i > to porównania ścisłe (wykluczają równość); ≤ i ≥ dopuszczają możliwość równości. 3 < 3 jest fałszywe, ale 3 ≤ 3 jest prawdziwe. Zarówno ≤, jak i ≥ to osobne, gotowe znaki Unicode, opisane w bibliotece symboli matematycznych." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -152,10 +181,77 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
-<!-- INTRO -->
+<!-- IDENTITY -->
 <section class="editorial-section">
+  <span class="article-section-label">W skrócie</span>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Właściwość</th><th>Znak Mniejszości</th><th>Znak Większości</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Znak</td><td>&lt;</td><td>&gt;</td></tr>
+        <tr><td>Punkt kodowy Unicode</td><td><code>U+003C</code></td><td><code>U+003E</code></td></tr>
+        <tr><td>Nazwa Unicode</td><td>LESS-THAN SIGN</td><td>GREATER-THAN SIGN</td></tr>
+        <tr><td>Blok Unicode</td><td colspan="2">Basic Latin (standardowy ASCII)</td></tr>
+        <tr><td>Kategoria</td><td colspan="2">Symbol matematyczny / porównania</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MEANING -->
+<section class="editorial-section">
+  <span class="article-section-label">Znaczenie i zastosowanie</span>
+  <h2>Co Oznaczają &lt; i &gt;</h2>
   <div class="editorial-block">
-    <p>&lt; i &gt; to operatory nierówności: a &lt; b oznacza, że a jest mniejsze od b, a a &gt; b oznacza, że a jest większe od b. Są częścią standardowej notacji matematycznej od XVII wieku i trafiły wprost do pierwotnego zestawu znaków ASCII, dlatego znajdują się w bloku Basic Latin, a nie w dedykowanym bloku Mathematical Operators, do którego trafiły symbole takie jak ≠ czy ∞, dodane wraz z Unicode. To umiejscowienie z ery ASCII to też powód, dla którego &lt; i &gt; wykonują drugie zadanie, na które trafia niemal każdy użytkownik klawiatury: w HTML i XML znak &lt; otwiera każdy tag. Przypadkowo wpisany &lt; jako zwykły tekst może sprawić, że przeglądarka zacznie analizować tag, który nigdy nie miał istnieć — dlatego HTML wymaga zapisywania ich jako &amp;lt; i &amp;gt; wszędzie tam, gdzie występują jako zwykły tekst, a nie znaczniki. Oba znaki działają na Instagramie, Discordzie, TikToku i WhatsAppie, ale platformy takie jak Roblox, PlayStation i Xbox blokują &lt; i &gt; w nazwach wyświetlanych, bo mogą zostać wzięte za znaczniki albo kod. Na klawiaturze w układzie US wpisuje się je Shift+przecinek dla &lt; i Shift+kropka dla &gt;.</p>
+    <p>&lt; i &gt; to operatory nierówności: a &lt; b oznacza, że a jest mniejsze od b, a a &gt; b oznacza, że a jest większe od b. Są częścią standardowej notacji matematycznej od XVII wieku i trafiły wprost do pierwotnego zestawu znaków ASCII, dlatego znajdują się w bloku Basic Latin, a nie w dedykowanym bloku Mathematical Operators, do którego trafiły symbole takie jak ≠ czy ∞, dodane wraz z Unicode.</p>
+    <p>To umiejscowienie z ery ASCII to też powód, dla którego &lt; i &gt; wykonują drugie zadanie, na które trafia niemal każdy użytkownik klawiatury: w HTML i XML znak &lt; otwiera każdy tag. Przypadkowo wpisany &lt; jako zwykły tekst może sprawić, że przeglądarka zacznie analizować tag, który nigdy nie miał istnieć — dlatego HTML wymaga zapisywania ich jako <code>&amp;lt;</code> i <code>&amp;gt;</code> wszędzie tam, gdzie występują jako zwykły tekst, a nie znaczniki.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PLATFORM SUITABILITY -->
+<section class="editorial-section">
+  <span class="article-section-label">Gdzie działa</span>
+  <h2>Kompatybilność z Platformami</h2>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Platforma</th><th>Działa?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bio / opis na Instagramie</td><td>Tak</td></tr>
+        <tr><td>Discord</td><td>Tak</td></tr>
+        <tr><td>Nazwa wyświetlana na TikToku</td><td>Tak</td></tr>
+        <tr><td>WhatsApp</td><td>Tak</td></tr>
+        <tr><td>Nazwa użytkownika w Roblox / PlayStation / Xbox</td><td>Nie — te platformy blokują &lt; i &gt; w nazwach wyświetlanych, bo mogą zostać wzięte za znaczniki albo kod</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ALT INPUT -->
+<section class="editorial-section">
+  <span class="article-section-label">Jak wpisać i zabezpieczyć znaki</span>
+  <h2>Skróty Klawiszowe i Zapis w Kodzie</h2>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Metoda</th><th>Znak Mniejszości</th><th>Znak Większości</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Klawiatura (układ US)</td><td><code>Shift+,</code></td><td><code>Shift+.</code></td></tr>
+        <tr><td>Encja HTML</td><td><code>&amp;lt;</code></td><td><code>&amp;gt;</code></td></tr>
+        <tr><td>CSS content</td><td><code>content: "\003C"</code></td><td><code>content: "\003E"</code></td></tr>
+        <tr><td>LaTeX (tryb matematyczny)</td><td><code>&lt;</code></td><td><code>&gt;</code></td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -267,6 +363,43 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- END static footer -->
 </div>
 </footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Najczęściej Zadawane Pytania</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Dlaczego znak &lt; psuje mój kod HTML?</button>
+    <div class="faq-answer">
+      <p>HTML używa &lt; do otwierania każdego tagu, więc gdy przeglądarka natrafi na surowy znak &lt; w twoim tekście, próbuje zinterpretować go jako początek tagu, a reszta treści może zniknąć albo wyświetlić się źle. Zapisuj go jako &amp;lt; (a &gt; jako &amp;gt;) zawsze, gdy piszesz &lt; lub &gt; wewnątrz HTML, nie tylko wewnątrz samego tagu.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Jak wpisać &lt; i &gt; na klawiaturze?</button>
+    <div class="faq-answer">
+      <p>To standardowe klawisze na każdej klawiaturze — Shift+przecinek dla &lt; i Shift+kropka dla &gt; w układzie US. Nie potrzeba żadnego kodu Alt ani specjalnego wprowadzania.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Jaka jest różnica między &lt; a ‹ lub «?</button>
+    <div class="faq-answer">
+      <p>&lt; (U+003C) to zwykły operator porównania ASCII, używany w matematyce i kodzie. ‹ › (U+2039/U+203A) to pojedyncze cudzysłowy kątowe, a « » (U+00AB/U+00BB) to podwójne cudzysłowy kątowe — oba to znaki interpunkcyjne używane we francuskiej, niemieckiej i innej europejskiej typografii, a nie symbole porównania, mimo że wyglądają podobnie.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Co oznaczają ≤ i ≥ w porównaniu do &lt; i &gt;?</button>
+    <div class="faq-answer">
+      <p>&lt; i &gt; to porównania ścisłe (wykluczają równość); ≤ i ≥ dopuszczają możliwość równości. 3 &lt; 3 jest fałszywe, ale 3 ≤ 3 jest prawdziwe. Zarówno ≤, jak i ≥ to osobne, gotowe znaki Unicode, opisane w bibliotece symboli matematycznych.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn){
+    btn.addEventListener('click', function(){ this.closest('.faq-item').classList.toggle('open'); });
+  });
+</script>
 
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>

@@ -218,6 +218,15 @@ jobs:
         continue-on-error: true
         run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
 
+      # Whole-site and gating, like the Funding Choices tag check and unlike the
+      # informational whole-site audits: there is no backlog to be permanently
+      # red against — a zalgo example card either decodes back to its own label
+      # or it does not, and all 72 currently do.
+      - name: Run zalgo example decode check
+        id: zalgo_decodes
+        continue-on-error: true
+        run: npm run check:zalgo-decodes | tee zalgo-decodes.log
+
       - name: Run locale translation completeness check
         id: locale_translation
         continue-on-error: true
@@ -359,6 +368,11 @@ jobs:
             cat faq-schema.log
             echo '```'
             echo ""
+            echo "### Zalgo example decode check — \`${{ steps.zalgo_decodes.outcome }}\`"
+            echo '```'
+            cat zalgo-decodes.log
+            echo '```'
+            echo ""
             echo "### Locale translation completeness check — \`${{ steps.locale_translation.outcome }}\`"
             echo '```'
             cat locale-translation.log
@@ -409,6 +423,7 @@ jobs:
           steps.locale_parent_gap.outcome == 'failure' ||
           steps.locale_spec.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
+          steps.zalgo_decodes.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
           steps.tile_codepoints.outcome == 'failure' ||
