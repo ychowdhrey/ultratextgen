@@ -1828,6 +1828,38 @@ const decorations = window.UTG_DECORATIONS
      =================== */
   function bindEvents() {
     let urlSyncTimer = null;
+
+    // Analytics: one generate_text per page session, ~800ms after the visitor
+    // stops typing. The generator renders on every keystroke, so the event has
+    // to mean "someone used it", not "renderResults() ran".
+    let generateEventSent = false;
+    const queueGenerateEvent = debounce(() => {
+      const len = el.mainInput.value.trim().length;
+      if (generateEventSent || len < 2) return;
+      generateEventSent = true;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "generate_text",
+        input_length: len,
+        locale: PAGE_LANG
+      });
+    }, 800);
+
+    // Only a real change to the text counts. A ?q= link fills the field before
+    // any listener is bound, and several pages dispatch a synthetic "input" on
+    // #mainInput purely to force a re-render (the mood tabs on
+    // category/classified and usecase/bio-font, before-after-emoji's arc
+    // switcher) — neither is generator use. Quick-fill chips, which do change
+    // the text, still count.
+    let lastTrackedValue = el.mainInput ? el.mainInput.value : "";
+    function trackGenerateUse() {
+      const val = el.mainInput.value;
+      if (generateEventSent || val === lastTrackedValue) return;
+      lastTrackedValue = val;
+      if (val.trim().length >= 2) queueGenerateEvent();
+    }
+
     function syncInputUI() {
       const val = el.mainInput.value;
       const len = val.length;
@@ -1851,6 +1883,7 @@ const decorations = window.UTG_DECORATIONS
     if (el.mainInput) {
       el.mainInput.addEventListener("input", () => {
         syncInputUI();
+        trackGenerateUse();
         clearTimeout(urlSyncTimer);
         urlSyncTimer = setTimeout(pushUrlState, 400);
         renderSavedStyles();
@@ -1873,6 +1906,7 @@ const decorations = window.UTG_DECORATIONS
       el.inputClearBtn.addEventListener("click", () => {
         el.mainInput.value = "";
         syncInputUI();
+        trackGenerateUse();
         pushUrlState();
         el.mainInput.focus();
         renderSavedStyles();
