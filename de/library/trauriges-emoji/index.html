@@ -370,11 +370,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Warum Es So Viele Traurige Emojis Gibt</h2>
-  <div class="editorial-block">
-
-  </div>
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Kombi-Sets</span>
+  <h2>Kombi-Sets mit traurigem Emoji</h2>
+  <p class="u-secondary-block">Melancholie mit einem Klick — kopiere eine komplette traurige Kombi für Bio, Bildunterschrift oder Nachricht.</p>
+  <div id="sadSetsContainer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -425,7 +425,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Finde genau das Gesicht, das du meinst — Kuss, Zwinkern, Schmunzeln, Augenrollen, Erröten, Bitten, Sonnenbr…</p>
     </a>
     <a href="/de/library/kaomoji/" class="compare-card variant-muted u-no-underline">
-      <h4>Kaomoji &amp;amp; Text-Emoticons</h4>
+      <h4>Kaomoji &amp; Text-Emoticons</h4>
       <p>Kaomoji kopieren und einfügen — Text-Emoticons im japanischen Stil aus Unicode-Zeichen. Fröhliche Gesichter…</p>
     </a>
   </div>
@@ -444,6 +444,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Herzschmerz-Set",
+      flags: ["💔", "😢", "🥀", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Regentag-Melancholie",
+      flags: ["🌧", "😔", "☔", "🎧", "🕯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Traurige Nachtstunden",
+      flags: ["🌙", "😔", "💭", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Enttäuschtes Seufzen",
+      flags: ["😞", "😮‍💨", "🫤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Verwelkte Ästhetik",
+      flags: ["🥀", "🍂", "🌫", "🖤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Du fehlst mir",
+      flags: ["😢", "💌", "🌙", "💭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Trauriges Kaomoji-Paket",
+      flags: ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sadSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

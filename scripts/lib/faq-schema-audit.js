@@ -192,6 +192,99 @@ function answerCoverage(answer, visible) {
   return hits / unique.length;
 }
 
+/* ───────────── per-answer drift (the enforceable half) ───────────── */
+
+/**
+ * `answerCoverage` above asks "does this schema answer have *a* counterpart
+ * somewhere in the body" — it searches the WHOLE page text and passes at 50%
+ * token overlap. Two holes follow from that, and both are real:
+ *
+ *   1. Tokens matched anywhere on the page count, so a schema answer can
+ *      claim a sentence the page never renders and still score high on words
+ *      borrowed from unrelated sections.
+ *   2. Adding content to the schema barely moves a ratio, so an appended
+ *      sentence is invisible to it.
+ *
+ * A live case (2026-08-21): `updates/unicode-18-most-anticipated-emoji`
+ * shipped a JSON-LD answer ending "See our Unicode 18.0 Release Date
+ * Confirmed update for the full story." that its visible answer did not
+ * contain. `answerCoverage` scored it far above threshold — and the gate
+ * never read the result anyway.
+ *
+ * This pairs each schema answer with **its own** visible answer and reports
+ * the content tokens the schema claims that that answer does not show. It is
+ * deliberately a *count*, not a boolean: the whole-site backlog is ~920
+ * paraphrase-drifted pairs across ~336 pages (measured 2026-08-21), so the
+ * consumer gates on the DELTA against the merge base, never on the state —
+ * the same reasoning `check-locale-translation.js` documents.
+ */
+
+/** Schema answers routinely embed markup (`<p>`, `<a href>`, `<strong>`). */
+function stripSchemaHtml(input) {
+  return String(input == null ? '' : input)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;|&#\d+;/gi, ' ');
+}
+
+function contentTokens(input) {
+  return normalizeText(stripSchemaHtml(input))
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter((t) => t.length > 3);
+}
+
+/**
+ * Visible answer text keyed by normalized question.
+ *
+ * The answer is read as "everything in the .faq-item except the question",
+ * not by selecting `.faq-answer`. That is not a stylistic choice: 21 pages
+ * carry invalid nested markup (`<p class="faq-answer"><p>…</p></p>`), and
+ * every HTML parser auto-closes the outer `<p>` at the inner one — leaving
+ * `.faq-answer` an EMPTY element with the real text hoisted out as its
+ * sibling. Selecting `.faq-answer` reports those 97 answers as blank and
+ * scores them 100% drifted, which is how this function was first written
+ * and why it is written this way now.
+ */
+function visibleAnswers($) {
+  const map = new Map();
+  $('.faq-item').each((_i, el) => {
+    const $el = $(el);
+    const $q = $el.find('.faq-question').first().clone();
+    $q.find('svg').remove();
+    const key = normalizeQuestion($q.text());
+    if (!key || map.has(key)) return;
+    const $rest = $el.clone();
+    $rest.find('.faq-question').remove();
+    $rest.find('svg').remove();
+    map.set(key, $rest.text());
+  });
+  return map;
+}
+
+/**
+ * @returns {Map<string,number>} normalized question -> count of content
+ *   tokens the schema answer claims that its own visible answer omits.
+ *   Questions with no visible counterpart are absent (that is
+ *   `missingQuestions`' job, reported separately).
+ */
+function answerDrift(html) {
+  const drift = new Map();
+  if (!html || (!html.includes('FAQPage') && !html.includes('QAPage'))) return drift;
+  const $ = cheerio.load(html);
+  const schema = extractSchemaQuestions($);
+  if (!schema.length) return drift;
+  const visible = visibleAnswers($);
+  for (const item of schema) {
+    const key = normalizeQuestion(item.question);
+    if (!key || !visible.has(key)) continue;
+    const shown = new Set(contentTokens(visible.get(key)));
+    const claimed = new Set(contentTokens(item.answer));
+    let extra = 0;
+    for (const t of claimed) if (!shown.has(t)) extra++;
+    drift.set(key, extra);
+  }
+  return drift;
+}
+
 /**
  * Audit one HTML document.
  *
@@ -305,6 +398,9 @@ function unboundFaqItems(html, { pagePath = '', binderScripts = new Set() } = {}
 
 module.exports = {
   auditHtml,
+  answerDrift,
+  visibleAnswers,
+  contentTokens,
   findBinderScripts,
   unboundFaqItems,
   extractSchemaQuestions,

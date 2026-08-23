@@ -61,6 +61,7 @@ These run across page types rather than producing a type.
 | Retention & engagement (saved styles, prefs, return triggers) | `script.js` (`utg_saved_styles`/`save_style`/`?q=`), `header.js` (dark-mode pref) | ❌ none | per batch + monthly metric |
 | Image SEO (hero art, OG cards) | `make-hero-decorative.py`, `add-og-dimensions.py`, `build-image-seo-status.py` | [`image-seo-fixes.md`](./image-seo-fixes.md) | per batch |
 | Pinterest pins (+ new boards) | `generate-pinterest.py`, `generate-id-pins.py`, `generate-vertical-text-pins.py` (skin: `generate-site-art.py`); CSV: `pinterest_csv.py` + `build_pinterest_upload.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) (board conventions) + [`pinterest-csv-format.md`](./pinterest-csv-format.md) | per batch |
+| ↳ Pinterest API publishing + insights (new this week) | `scripts/lib/pinterest_api.py`, `scripts/publish-pinterest-pin.py` (v5 publish pipeline, PRs #780–#782), `scripts/pinterest-insights.py` (read-only account/pin analytics, PRs #783/#785); workflows `pinterest-publish-test.yml` (manual, single-pin proof of concept only — no `schedule:` trigger yet) + `pinterest-insights.yml` (manual, read-only) | [`pinterest-api-publishing.md`](./pinterest-api-publishing.md) | manual (`workflow_dispatch`) — phase-3 proof of concept, not yet the queued/scheduled publisher the doc describes as the target |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | ❌ none | ad hoc |
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
@@ -69,6 +70,7 @@ These run across page types rather than producing a type.
 | Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | the internal opportunity backlog `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | Consent management (Google Funding Choices) | `check-funding-choices.js`, `inject-funding-choices-tag.js` — tag deployed to every HTML page (PR #660, 2026-07-25) | ❌ none | CI (`validate.yml`, gating — wired 2026-08-06). Unlike the other whole-site checks it has no backlog to be permanently red against (the tag either is or isn't in a page's `<head>`), so it gates rather than informs. Was unwired for over a week first, which is how 37 pages across three unrelated PRs shipped without it before anyone noticed — see Known gaps #9 and #16 |
+| Search-engine webmaster verification (site-ownership files/tags, sitemap submission tracking per engine) | none — root-level verification stub per engine (e.g. `naverfc08aab480545cfd1d61489b3536a5e6.html`, PR #793); `check-ads.js`/`check-funding-choices.js` both skip these by content signature (`VERIFICATION_STUB_RE`) so page-infra tags can never be injected into them | [`webmaster-tools-registrations-2026-08-20.md`](./webmaster-tools-registrations-2026-08-20.md) | ad hoc, per engine — new this week (Naver Search Advisor registered + verified; Google Search Console and Bing Webmaster Tools confirmed live retroactively; Yahoo Japan/Thailand skipped, Seznam/Cốc Cốc considered and deferred — all recorded in the doc) |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`); its `reports/` artifact output is also sometimes committed directly by PRs — `LANE_RULES` learned this path 2026-08-08 (see Known gaps #16) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
 | Image asset check | `check-image-assets.py` (whole-site, informational) + `check-new-page-image-assets.py` (diff-scoped, gating) | ❌ none (CI-only) | CI (`validate.yml`, folded in from the retired `image-assets-check.yml`) |
@@ -85,6 +87,8 @@ These run across page types rather than producing a type.
 | Document head structure (fails when markup lands above `<!DOCTYPE html>` or outside `<head>` — a bug a text-level grep audit cannot see, since it counts the tag whether or not a browser or crawler ever would) | `check-document-head.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (PR #747, 2026-08-13), born from `es/decorador-de-texto` and `es/simbolos-para-free-fire` shipping a single-quoted `hreflang` link spliced above the doctype; gates because the backlog was zero the day it shipped |
 | Tile codepoint check (a copy tile must contain the exact codepoint its own label names — catches NFC silently normalizing U+2126/U+212A and NBSP-family spaces down to lookalikes) | `check-tile-codepoints.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-site) — new this week (PR #747, 2026-08-13), born from a sweep that found 172 mismatched tiles across 89 pages; gates for the same zero-backlog reason as the row above |
 | Locale spec check (validates a locale spec against its live EN parent *before* any HTML is generated — tile-count parity, hreflang self-reference, related-link targets resolving on disk, duplicate claimants) | `check_locale_spec.py` | ❌ none (script's own header doc) | CI (`validate.yml`, gating, whole-set — small enough not to carry a backlog) — added 2026-08-08 (PR #731) |
+| Locale translation completeness (structure ≠ language — a locale page can pass every structural gate above and still carry untranslated English prose, tile labels, or clipboard payloads) | `audit-locale-translation.js` (whole-site, informational) + `check-locale-translation.js` (diff-scoped, gating) + shared `scripts/lib/locale-translation-audit.js`; ledger: `data/translation_identical_strings.json` | `CLAUDE.md` "Structure is not language" section (no dedicated `docs/` file) | CI (`validate.yml`, gating) + per-batch audit — **missing from this map until now**; gate wired 2026-08-15 (PR #767, same week as the last review but after it was authored — see Known gaps #16) |
+| Crawler visibility for non-rendering bots (`robots.txt` invites GPTBot/ClaudeBot/Amazonbot/Google-Extended/meta-externalagent, which fetch plain HTML and run no JS — content that only ever existed as JS-rendered output was invisible to them) | `build-static-footer.js` (bakes `footer.js`'s own output into every page's HTML; `--write` to build, no flag to check) + `fix-footer-nested-content.py` (moved 727 pages' FAQ sections out of `<footer>`, where content-extractors discard them as boilerplate) + `build-library-directory.js` (pre-renders the library hub's 336 spoke links as static HTML, `--check` to check) | ❌ none (PR bodies only — #789, #790) | CI (`validate.yml`, gating, whole-site, zero backlog) — new this week |
 
 ---
 
@@ -99,9 +103,11 @@ These run across page types rather than producing a type.
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
+| `pinterest-publish-test.yml` | manual (`workflow_dispatch`) | `scripts/publish-pinterest-pin.py` — single-pin Pinterest API v5 publish, deliberately a phase-3 proof of concept (no `schedule:` trigger, no looping over rows yet) |
+| `pinterest-insights.yml` | manual (`workflow_dispatch`) | `scripts/pinterest-insights.py` — read-only account/per-pin analytics from the real Pinterest account; never writes |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
 | `workflow-lint.yml` | on `pull_request` + `push` (master/main) + manual, no path filter | `check-workflows.py` (gating, no `continue-on-error`) — lints every `.github/workflows/*.yml` for the shape Actions needs (trigger, `jobs`, `runs-on`, steps with `uses`/`run`), plus the two failure modes that hid past incidents: a step that pipes into `tee`/similar with no `pipefail` in effect, and a `continue-on-error: true` step whose `outcome` nobody reads. Added 2026-08-08 (PR #731) as a **second, deliberately separate** lint surface from `validate.yml`'s own copy of the same check — a step inside `validate.yml` can't catch `validate.yml` itself failing to parse (exactly what happened 2026-08-07), so this file exists to survive when the big one breaks; do not consolidate them. Was itself missing from this table with zero footprint until now, the same blind spot Known gaps #16 already tracks for the `validate.yml` row below. |
-| `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. **Required, blocking gates (15):** `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-document-head.py`, `check-tile-codepoints.py`, `check-faq-schema.js`, `check-locale-parent-gap.js`, `check_locale_spec.py`, `check-external-refs.js`. Plus three whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), and `audit-locale-parent-gap.js` (locale translation coverage). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **four** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15 — three new gates this time: `check-document-head.py`, `check-tile-codepoints.py`, `check_locale_spec.py`, all added by PRs #731/#747) as gates were added without a matching edit here — see Known gaps #16 for the systematize recommendation, still not picked up. |
+| `validate.yml` | on `pull_request` (+ manual) | Its own copy of `check-workflows.py` runs first and is also gating. **Required, blocking gates (18):** `audit-hreflang.js`, `audit-hreflang-completeness.js`, `validate_library_pages.py`, `check-funding-choices.js`, `check-counter-claims.js`, `check-new-page-image-assets.py`, `check-new-symbol-peer-links.py`, `check-translation-parity.js`, `check-locale-mesh.js`, `check-locale-translation.js`, `check-document-head.py`, `check-tile-codepoints.py`, `check-faq-schema.js`, `check-locale-parent-gap.js`, `check_locale_spec.py`, `check-external-refs.js`, `build-static-footer.js` (`check:static-footer`), `build-library-directory.js` (`check:library-directory`). Plus three whole-site audits that run every PR but are **informational only** (`continue-on-error`, never fail the job) because they carry a large, deliberately-paced backlog that would otherwise be permanently red: `check-image-assets.py` (Pinterest pins), `sync_symbol_spoke_links.py --check` (symbol peer-link dashboard), and `audit-locale-parent-gap.js` (locale translation coverage). Supersedes the old path-filtered `image-assets-check.yml` (retired). **Historical caveat (found + fixed 2026-08-05/06, PRs #714/#715):** every step here pipes into `tee`, and a pipeline's exit status is its *last* command's — `tee` always succeeds, so `steps.<id>.outcome` was `'success'` regardless of the validator's own exit code until `defaults.run.shell: bash` (which enables `pipefail`) was added at the job level. Every gate listed above was **silently non-blocking from 2026-07-22 (when this workflow was written) until 2026-08-06** — **a green "Validate Site" check on any PR merged before that date carries no information; do not cite one as evidence a page passed anything.** Full writeup in the workflow file's own header comment and in `CLAUDE.md`. This row itself has now gone stale and been hand-corrected on **five** consecutive review cycles (2026-07-31, 2026-08-01, 2026-08-08, 2026-08-15, and this one — three more gates found missing this time: `check-locale-translation.js` [wired 2026-08-15 by PR #767, after the prior review was authored — legitimately new to this review, not a miss], plus `build-static-footer.js`/`build-library-directory.js` [both added 2026-08-20 by PRs #790/#789]) as gates were added without a matching edit here — see Known gaps #16, whose own text already said the *next* recurrence should be a generator, not another hand-edit; still hand-edited here because this review's mandate is a small, additive diff to this file only; flagging the escalation rather than unilaterally taking on a new tooling build. |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -210,13 +216,28 @@ here so they aren't lost. Update as they're closed or new ones appear.
    PR surfaced as partially Unclassified — added now. The classifier
    otherwise correctly routes established platform directories to "Platform
    pages" via path rules in `LANE_RULES`.
-6. **Pinterest off-system patterns (two).** (a) The Spanish `/es/` board lives
-   in `pinterest-kit/` (own generator, bundled fonts, hand-named CSV) instead
-   of the `assets/pinterest/<board>/` + `data/*_upload.csv` pipeline. (b) ~334
-   pins for category, answers, and library pages are stored flat in
-   `assets/pinterest/` root rather than a named board subdirectory — these
-   should be moved to `assets/pinterest/<board>/` and wired into the upload
-   pipeline. Migrate both per `docs/pinterest-pin-generation.md`.
+6. ~~**Pinterest off-system patterns (two).**~~ **Closed (2026-08-22)** — both
+   halves are superseded, not migrated in place: PR #648 ("generate 12,429
+   opportunity-weighted Pinterest pin variants," merged 2026-08-18 after
+   sitting since before the R2 migration) landed carrying the
+   Cloudflare R2 migration itself in the same branch. Resolving that
+   branch's conflicts against `main` **deleted** the 2,942 committed PNGs
+   the old branch had staged, rather than reintroducing them — confirmed via
+   `git diff-tree --diff-filter=D` on the merge commit. `assets/pinterest/`
+   and `assets/collection-pins/` are both empty and gitignored on `main` now
+   (0 tracked files under either, verified via `git ls-tree`), and the
+   migration's own validation report
+   (`docs/pinterest-r2-migration-validation.md`) confirms all 15,376
+   pre-existing images (base/variants/boards/collection) landed byte-identical
+   on R2. (b)'s "~334 flat root pins" were the `base` category (2,411 files,
+   `scripts/generate-pinterest.py`) and now live at `pinterest/base/<slug>.png`
+   object keys instead of a bare `assets/pinterest/` root. (a)'s `pinterest-kit/`
+   directory does not exist anywhere in the current tree, and the Spanish
+   board already runs through the standard per-board generator pattern
+   (`scripts/generate-es-pins.py`, one of the ~15 dedicated board generators
+   PR #648 updated to the R2 client) — no evidence a bespoke off-pipeline
+   Spanish generator survived to be migrated; if one existed it was already
+   gone before this window. See `docs/pinterest-r2-migration.md`.
 7. ~~**Homepage (`index.html`, `_root.html`) has no lane or owner.**~~ **Closed
    (2026-07-10)** — given its own row in the page-type table ("Root pages":
    `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`,
@@ -447,6 +468,27 @@ here so they aren't lost. Update as they're closed or new ones appear.
       stated intent) at `claude.ai/code/routines` would close it; that
       change lives outside this repo, so it isn't made here, but it no
       longer needs "checking" — it needs doing.
+    - **Both blind spots recurred again this review (2026-08-22), a fifth
+      and third consecutive occurrence respectively.** The `validate.yml`
+      row was found stale again — three gates short this time
+      (`check-locale-translation.js`, `build-static-footer.js`,
+      `build-library-directory.js`) — and hand-corrected again in the
+      Automated workflows table above, even though this entry already said
+      the next occurrence should be a generator instead: this review's own
+      mandate was scoped to a small, additive diff to this file, so the
+      generator wasn't built here, but the recommendation is now
+      unambiguously overdue rather than newly discovered. Separately,
+      `infra-review/latest.md` was still 2026-08-10 → 2026-08-17 (the last
+      Monday digest) when this review fired 2026-08-22, five days stale —
+      the identical gap flagged 2026-08-08 and confirmed recurring
+      2026-08-15. This review again reconstructed the true last-7-days PR
+      set directly from `git` rather than reviewing a stale window (see the
+      commit message for the reconstruction method: `git log --first-parent
+      --merges` since the prior review's merge commit, cross-checked against
+      `git diff-tree` file lists and `weekly_pr_digest.py`'s own classifier).
+      The fix (move the routine's trigger to Monday, after the digest's
+      06:00 UTC run) lives outside this repo and still hasn't been made,
+      three occurrences in.
 
 ---
 
