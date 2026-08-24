@@ -25,6 +25,9 @@
 
   const Render = window.UltraTextGenRender;
   const stylesRegistry = window.textStyles || {};
+  /* Shared namespace owned by script.js — result sharing lives there so every
+     generator uses one implementation (script.js loads before this file). */
+  const UTG = window.UltraTextGen || {};
   const DATA = window.UTG_REPEAT_DATA;
   const SCROLL_DATA = window.UTG_SCROLL_DATA;
   const B = window.UTG_SCROLL_BUILDERS;
@@ -155,6 +158,18 @@
   /* --------------------------------------------------------------------------
      Result cards
      -------------------------------------------------------------------------- */
+  /* Result sharing — id is the style's own registry slug, or "normal" for the
+     plain unstyled block this page leads with. The shape and copy count ride
+     along so a shared link rebuilds the same arrangement. */
+  function shareIdFor(name) {
+    let style = stylesRegistry[name];
+    return (style && style.slug) || (name ? String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-") : "");
+  }
+
+  function shareParams() {
+    return { shape: currentShapeId, n: SHAPES_API.clampCount(repeatCount) };
+  }
+
   function buildCard(name, text) {
     let card = el("div", "style-card scroll-style-card repeat-style-card");
     let info = el("div", "style-info");
@@ -171,9 +186,28 @@
     btn.dataset.text = text;
     btn.dataset.style = name;
     if (!text) btn.disabled = true;
-    info.appendChild(btn);
+
+    /* Copy + Share share one action row — these cards carry no Save button,
+       so the core generator's triangle reduces to a pair here. */
+    let actions = el("div", "result-share-row");
+    actions.appendChild(btn);
+    info.appendChild(actions);
+
+    /* Result-level Share, built by the shared factory in script.js. The phrase
+       lives in #repeatPhraseInput, not #mainInput, so it is stamped here. */
+    let shareId = shareIdFor(name);
+    if (UTG && UTG.buildShareButton) {
+      actions.appendChild(UTG.buildShareButton({
+        styleId: shareId,
+        name: name,
+        input: (($("#repeatPhraseInput") || {}).value || ""),
+        params: shareParams(),
+        disabled: !text
+      }));
+    }
 
     card.appendChild(info);
+    if (UTG && UTG.markSharedCard) UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -208,6 +242,8 @@
     items.slice(0, INITIAL_CARDS).forEach(function (item) {
       grid.appendChild(buildCard(item.name, item.text));
     });
+
+    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
 
     if (items.length > INITIAL_CARDS) {
       let sentinel = el("div", "scroll-lazy-sentinel");

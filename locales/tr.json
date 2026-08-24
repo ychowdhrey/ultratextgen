@@ -55,6 +55,14 @@
       "shareTitle": "Metnin dolu şekilde bu sayfayı yeniden açan bir bağlantı paylaş",
       "linkCopied": "Bağlantı kopyalandı"
     },
+    "shareResult": {
+      "label": "Paylaş",
+      "title": "Bu sonucu paylaş — bağlantı, metnini bu stille açar",
+      "ariaLabel": "{style} sonucunu paylaş",
+      "linkCopied": "Bağlantı kopyalandı",
+      "afterCopy": "Bu stili paylaş",
+      "sharedTag": "Paylaşılan stil"
+    },
     "safeMode": {
       "label": "Yapıştırma güvenliği",
       "ariaLabel": "Hangi stillerin başkalarının cihazlarında düzgün göründüğünü kontrol et",

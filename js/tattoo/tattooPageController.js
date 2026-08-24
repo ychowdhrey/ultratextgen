@@ -21,6 +21,9 @@
   const Render = window.UltraTextGenRender;
   const stylesRegistry = window.textStyles || {};
   const DATA = window.UTG_TATTOO_DATA;
+  /* Shared namespace owned by script.js — result sharing lives there so every
+     generator uses one implementation (script.js loads before this file). */
+  const UTG = window.UltraTextGen || {};
   if (!Render || !DATA) return;
 
   const I18N = window.tattooI18n || {};
@@ -113,6 +116,41 @@
      Card building — same .style-card / .copy-btn contract as the core
      generator, so script.js's document-level copy handler does copy + toast.
      -------------------------------------------------------------------------- */
+  /* Result sharing — a lettering/roman card's id is its style's own registry
+     slug (the LETTERING/ROMAN_STYLES keys ARE registry names), so it matches
+     the identifier every other generator uses. Cards with no style behind them
+     (plain figures, classic roman) get a stable slug from their own label,
+     namespaced by kind so the two families can never collide. */
+  function slugify(str) {
+    return String(str || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  function shareIdForStyle(styleKey, fallbackLabel, prefix) {
+    const style = styleKey && window.textStyles ? window.textStyles[styleKey] : null;
+    if (style && style.slug) return style.slug;
+    const base = slugify(fallbackLabel);
+    return base ? (prefix ? prefix + "-" + base : base) : "";
+  }
+
+  /* The state a shared link needs to rebuild this exact card: always the mode,
+     plus whichever inputs that mode actually reads. */
+  function shareParams() {
+    const params = { mode: mode, size: sizeView !== 'close' ? sizeView : '' };
+    if (mode === 'date') {
+      const typed = readDateInputs();
+      params.order = dateOrder;
+      params.sep = dateSep;
+      if (!isNaN(typed.d)) params.d = typed.d;
+      if (!isNaN(typed.m)) params.m = typed.m;
+      if (!isNaN(typed.y)) params.y = typed.y;
+    } else if (mode === 'letters') {
+      params.a = monoFirst;
+      params.b = monoSecond;
+      params.joiner = monoJoiner;
+    }
+    return params;
+  }
+
   function buildCard(opts) {
     const card = el('div', 'style-card tattoo-card');
 
@@ -139,6 +177,19 @@
     if (opts.styleKey) btn.dataset.style = opts.styleKey;
     card.appendChild(btn);
 
+    /* Result-level Share, built by the shared factory in script.js. Sample
+       cards (no text typed yet) disable it, matching the core generator. */
+    const shareId = opts.shareId || '';
+    if (UTG && UTG.buildShareButton) {
+      card.appendChild(UTG.buildShareButton({
+        styleId: shareId,
+        name: opts.label,
+        params: shareParams(),
+        disabled: !opts.text || !!opts.sample
+      }));
+    }
+
+    if (UTG && UTG.markSharedCard) UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -172,6 +223,7 @@
         note: pickField('lettering', entry.key, 'note', entry.note),
         text: applyStyle(text, entry.key),
         styleKey: entry.key,
+        shareId: shareIdForStyle(entry.key, entry.label, 'lettering'),
         sample: !raw
       }));
     });
@@ -230,6 +282,7 @@
         note: pickField('roman', entry.label, 'note', entry.note),
         text: entry.key ? applyStyle(romanPlain, entry.key) : romanPlain,
         styleKey: entry.key || '',
+        shareId: shareIdForStyle(entry.key, entry.label, 'roman'),
         sample: state.sample
       }));
     });
@@ -250,6 +303,7 @@
         family: 'Figures',
         note: pickField('digits', font.label, 'note', font.note),
         text: text,
+        shareId: shareIdForStyle('', font.label, 'figures'),
         sample: state.sample
       }));
     });
@@ -277,7 +331,8 @@
         family: entry.family,
         hold: entry.hold,
         text: text,
-        styleKey: entry.key
+        styleKey: entry.key,
+        shareId: shareIdForStyle(entry.key, entry.label, 'lettering')
       }));
     });
   }
@@ -318,6 +373,8 @@
     else if (mode === 'date') renderDate(grid);
     else if (mode === 'letters') renderLetters(grid);
     else renderSymbols(grid);
+
+    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
   }
 
   function triggerRender() {
@@ -513,6 +570,23 @@
   /* --------------------------------------------------------------------------
      Init
      -------------------------------------------------------------------------- */
+  /* Values a shared link restored that must wait for their own panel to exist. */
+  const restoredDate = {};
+
+  function applyRestoredFields() {
+    [['day', '#tattooDay'], ['month', '#tattooMonth'], ['year', '#tattooYear']]
+      .forEach(function (spec) {
+        if (restoredDate[spec[0]] == null) return;
+        const field = $(spec[1]);
+        if (field && !field.value) field.value = String(restoredDate[spec[0]]);
+      });
+    /* The select is built with no explicit value, so a restored second
+       initial has to be reflected back into it or the control contradicts
+       the result it produced. */
+    const select = $('.tattoo-second-select');
+    if (select && monoSecond) select.value = monoSecond;
+  }
+
   function readUrlState() {
     try {
       const params = new URLSearchParams(window.location.search);
@@ -521,6 +595,35 @@
       if (text && input && !input.value) input.value = text;
       const urlMode = params.get('mode');
       if (urlMode && MODES.some(function (m) { return m.id === urlMode; })) mode = urlMode;
+
+      /* Per-mode state from a result-level share link. Everything is validated
+         against this page's own vocabulary and clamped to sane ranges; unknown
+         or out-of-range values are ignored and the page opens with defaults. */
+      const size = params.get('size');
+      if (size === 'arm' || size === 'room') sizeView = size;
+
+      const order = params.get('order');
+      if (order === 'dmy' || order === 'mdy' || order === 'y') dateOrder = order;
+
+      const sep = params.get('sep');
+      if (sep && DATA.DATE_SEPARATORS.some(function (x) { return x.id === sep; })) dateSep = sep;
+
+      /* The date inputs and the second-initial select do not exist yet —
+         buildDatePanel/buildLettersPanel run after this. Stash the validated
+         values and apply them once those panels are built (see
+         applyRestoredFields below). Getting this wrong is silent: the page
+         still renders the SAMPLE date, which looks like a working restore. */
+      [['d', 'day', 31], ['m', 'month', 12], ['y', 'year', 3999]].forEach(function (spec) {
+        const raw = parseInt(params.get(spec[0]), 10);
+        if (!isNaN(raw) && raw >= 1 && raw <= spec[2]) restoredDate[spec[1]] = raw;
+      });
+
+      const first = params.get('a');
+      if (first) monoFirst = String(first).slice(0, 1).toUpperCase();
+      const second = params.get('b');
+      if (second != null) monoSecond = String(second).slice(0, 1).toUpperCase();
+      const joiner = params.get('joiner');
+      if (joiner && DATA.JOINERS.some(function (j) { return j.id === joiner; })) monoJoiner = joiner;
     } catch (e) {}
   }
 
@@ -534,6 +637,9 @@
     buildDatePanel(host);
     buildLettersPanel(host);
     buildSymbolsPanel(host);
+
+    /* Panels exist now — push any shared-link values into their controls. */
+    applyRestoredFields();
 
     const input = $('#mainInput');
     if (input) input.addEventListener('input', triggerRender);

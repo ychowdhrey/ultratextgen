@@ -55,6 +55,14 @@
       "shareTitle": "Distribuie un link care redeschide această pagină cu textul tău deja completat",
       "linkCopied": "Link copiat"
     },
+    "shareResult": {
+      "label": "Distribuie",
+      "title": "Distribuie acest rezultat — linkul se deschide cu textul tău în acest stil",
+      "ariaLabel": "Distribuie rezultatul {style}",
+      "linkCopied": "Link copiat",
+      "afterCopy": "Distribuie acest stil",
+      "sharedTag": "Stil distribuit"
+    },
     "safeMode": {
       "label": "Siguranță la lipire",
       "ariaLabel": "Verifică ce stiluri se afișează corect pe alte dispozitive",

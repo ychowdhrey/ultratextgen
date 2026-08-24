@@ -1,0 +1,95 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale. These pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, saved styles). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy.",
+  "ui": {
+    "copyButtons": {
+      "copy": "Másolás",
+      "copied": "✓ Másolva",
+      "failed": "✗ Sikertelen",
+      "copyTitle": "Másolás a vágólapra",
+      "save": "Mentés",
+      "saved": "Mentve",
+      "saveTitle": "Stílus mentése",
+      "unsaveTitle": "Eltávolítás a mentett stílusok közül",
+      "empty": "Írj be valamit fent...",
+      "noStyles": "Nincs találat. Próbálj másik szűrőt vagy keresőszót."
+    },
+    "categoryTabs": {
+      "popular": "Népszerű",
+      "bold-fonts": "Félkövér betűk",
+      "italic-fonts": "Dőlt betűk",
+      "bubble-fonts": "Buborékbetűk",
+      "cursive-fonts": "Kézírásos betűk",
+      "gothic-fonts": "Gót betűk",
+      "strikethrough-text": "Áthúzott szöveg",
+      "underline-text": "Aláhúzott szöveg",
+      "small-text": "Apró betűk",
+      "cute-fonts": "Cuki betűk",
+      "aesthetic-fonts": "Esztétikus betűk",
+      "upside-down-text": "Fejjel lefelé",
+      "text-decorator": "Szövegdíszítő",
+      "classified": "Kitakart szöveg",
+      "fullwidth-fonts": "Teljes szélességű",
+      "faux-fonts": "Ál-kézírás",
+      "ancient-fonts": "Ősi írások és rúnák",
+      "emoji-letter-fonts": "Emoji betűk",
+      "novelty-fonts": "Különleges"
+    },
+    "scopeControl": {
+      "label": "Stílus alkalmazása",
+      "ariaLabel": "Válaszd ki, mennyi szöveg kapjon stílust",
+      "whole": "Teljes szöveg",
+      "wholeTitle": "Stílus alkalmazása a szöveg minden sorára.",
+      "firstLine": "Csak az első sor",
+      "firstLineTag": "posztokhoz",
+      "firstLineTitle": "Csak az első sor (a címsor vagy a figyelemfelkeltő mondat) kap stílust, a többi sima, jól olvasható szöveg marad — ideális közösségi posztokhoz."
+    },
+    "shareResult": {
+      "label": "Megosztás",
+      "title": "Oszd meg ezt az eredményt — a link a szövegeddel, ebben a stílusban nyílik meg",
+      "ariaLabel": "{style} eredmény megosztása",
+      "linkCopied": "Link másolva",
+      "afterCopy": "Oszd meg ezt a stílust",
+      "sharedTag": "Megosztott stílus"
+    },
+    "safeMode": {
+      "label": "Beillesztési biztonság",
+      "ariaLabel": "Nézd meg, mely stílusok jelennek meg mások eszközén",
+      "toggleLabel": "Biztonságos mód",
+      "hint": "Megjelöli azokat a stílusokat, amelyek mások régebbi telefonján négyzetként (▯) jelenhetnek meg."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Egyeseknél négyzetként jelenhet meg",
+      "boxesWarningTitle": "Ez a stílus ritka Unicode-karaktereket használ, amelyekhez egyes telefonokon és régebbi eszközökön nincs betűkép. Annál, akinek beilleszted, négyzetként (▯) jelenhet meg. Ha a közönséged régebbi eszközt használhat, válassz sima vagy széles körben támogatott stílust.",
+      "emojiWarning": "⚠ Emojit tartalmaz — régi eszközökön eltérhet",
+      "emojiWarningTitle": "Ez a stílus emojit tartalmaz. Az emojik modern eszközökön megjelennek, de nagyon régi telefonokon másképp nézhetnek ki, vagy négyzetként jelenhetnek meg.",
+      "modernDevices": "Modern eszközökön megjelenik",
+      "modernDevicesTitle": "Ezek a stilizált Unicode-betűk minden jelenlegi telefonon és számítógépen megjelennek. Nagyon régi Androidon (nagyjából 2016 előtt) vagy minimális rendszerbetűtípusokkal néhány még mindig négyzetként (▯) jelenhet meg. Ha a közönséged régebbi eszközt használ, előbb teszteld.",
+      "rendersEverywhere": "✓ Mindenhol megjelenik",
+      "rendersEverywhereTitle": "Ez a stílus sima szöveg — mindenhol megjelenik, semmilyen eszközön nem lesz belőle négyzet.",
+      "deviceWarning": "⚠ Lehet, hogy nem jelenik meg az eszközödön",
+      "deviceWarningTitle": "Az eszközöd betűtípusai nem tudják megjeleníteni ezt a stílust — négyzetként (□) jelenhet meg. Más eszközökön ettől még jól nézhet ki.",
+      "safeAnywhere": "✓ Mindenhol biztonságos",
+      "safeAnywhereTitle": "Minden nagyobb platformon megjelenik. Figyelem: a képernyőolvasók a stilizált betűket karakterenként betűzhetik ki, ezért a törzsszöveg maradjon sima.",
+      "worksBestOn": "⚠ Leginkább itt működik: {platforms}",
+      "worksBestOnTitle": "Legjobb ezeken: {platforms}. Más platformok eltávolíthatják vagy összezavarhatják — előbb illeszd be próbaként."
+    },
+    "savedStyles": {
+      "ariaLabel": "Mentett stílusaid",
+      "heading": "Mentett stílusaid",
+      "clearAll": "Összes törlése",
+      "hint": "Ezen az eszközön mentve — itt várnak rád, amikor visszatérsz."
+    },
+    "textStats": {
+      "wordSingular": "1 szó",
+      "wordPlural": "{n} szó",
+      "charSingular": "1 karakter",
+      "charPlural": "{n} karakter"
+    },
+    "decorationsNone": "Nincs",
+    "categoryTabsToggle": {
+      "more": "Több",
+      "less": "Kevesebb"
+    },
+    "demoText": "Üdv az UltraTextGenben.\nÍrj bármit. Tedd különlegessé."
+  }
+}

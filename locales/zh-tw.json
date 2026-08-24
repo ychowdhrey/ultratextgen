@@ -1,0 +1,95 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale. These pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, saved styles). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy.",
+  "ui": {
+    "copyButtons": {
+      "copy": "複製",
+      "copied": "✓ 已複製",
+      "failed": "✗ 失敗",
+      "copyTitle": "複製到剪貼簿",
+      "save": "儲存",
+      "saved": "已儲存",
+      "saveTitle": "儲存這個字體",
+      "unsaveTitle": "從已儲存字體中移除",
+      "empty": "在上方輸入文字…",
+      "noStyles": "找不到字體。請換一個篩選條件或搜尋詞。"
+    },
+    "categoryTabs": {
+      "popular": "熱門",
+      "bold-fonts": "粗體字",
+      "italic-fonts": "斜體字",
+      "bubble-fonts": "泡泡字",
+      "cursive-fonts": "手寫體",
+      "gothic-fonts": "哥德體",
+      "strikethrough-text": "刪除線",
+      "underline-text": "底線",
+      "small-text": "小字",
+      "cute-fonts": "可愛字體",
+      "aesthetic-fonts": "美學字體",
+      "upside-down-text": "顛倒文字",
+      "text-decorator": "文字裝飾",
+      "classified": "遮蔽處理",
+      "fullwidth-fonts": "全形",
+      "faux-fonts": "仿手寫",
+      "ancient-fonts": "古文字與盧恩",
+      "emoji-letter-fonts": "表情符號字母",
+      "novelty-fonts": "創意字體"
+    },
+    "scopeControl": {
+      "label": "套用範圍",
+      "ariaLabel": "選擇要為多少文字套用樣式",
+      "whole": "全部文字",
+      "wholeTitle": "為文字的每一行套用樣式。",
+      "firstLine": "僅第一行",
+      "firstLineTag": "適合貼文",
+      "firstLineTitle": "只為第一行（標題或開頭句）套用樣式，其餘保持易讀的純文字 — 最適合社群貼文。"
+    },
+    "shareResult": {
+      "label": "分享",
+      "title": "分享這個結果 — 開啟連結就會看到你的文字以這個字體呈現",
+      "ariaLabel": "分享 {style} 結果",
+      "linkCopied": "已複製連結",
+      "afterCopy": "分享這個字體",
+      "sharedTag": "分享的字體"
+    },
+    "safeMode": {
+      "label": "貼上安全性",
+      "ariaLabel": "檢查哪些字體能在別人的裝置上顯示",
+      "toggleLabel": "安全模式",
+      "hint": "標示在別人較舊的手機上可能顯示為方框（▯）的字體。"
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ 部分人可能看到方框",
+      "boxesWarningTitle": "這個字體使用了罕見的 Unicode 字元，部分手機與較舊裝置沒有對應字形。貼給對方時可能顯示為方框（▯）。若你的讀者可能使用舊裝置，建議選擇純文字或支援度較廣的字體。",
+      "emojiWarning": "⚠ 含表情符號 — 在舊裝置上可能不同",
+      "emojiWarningTitle": "這個字體含有表情符號。表情符號在現代裝置上可正常顯示，但在很舊的手機上可能顯示不同或變成方框。",
+      "modernDevices": "可在現代裝置上顯示",
+      "modernDevicesTitle": "這些樣式化的 Unicode 字母能在目前所有手機與電腦上顯示。在很舊的 Android（約 2016 年以前）或精簡系統字型上，少數字元仍可能顯示為方框（▯）。若你的讀者使用舊裝置，請先測試。",
+      "rendersEverywhere": "✓ 到處都能顯示",
+      "rendersEverywhereTitle": "這個字體是純文字 — 在任何裝置上都能顯示，不會出現方框。",
+      "deviceWarning": "⚠ 可能無法在你的裝置上顯示",
+      "deviceWarningTitle": "你裝置上的字型無法顯示這個字體 — 可能出現方框（□）。在其他裝置上仍可能正常顯示。",
+      "safeAnywhere": "✓ 到處都安全",
+      "safeAnywhereTitle": "可在所有主要平台顯示。提醒：螢幕閱讀器可能逐字唸出樣式化字母，因此內文請保持純文字。",
+      "worksBestOn": "⚠ 最適合用於 {platforms}",
+      "worksBestOnTitle": "最適合：{platforms}。其他平台可能會移除或顯示錯亂 — 請先貼上測試。"
+    },
+    "savedStyles": {
+      "ariaLabel": "你儲存的字體",
+      "heading": "你儲存的字體",
+      "clearAll": "全部清除",
+      "hint": "儲存在這台裝置 — 下次回來時仍會在這裡。"
+    },
+    "textStats": {
+      "wordSingular": "1 個字詞",
+      "wordPlural": "{n} 個字詞",
+      "charSingular": "1 個字元",
+      "charPlural": "{n} 個字元"
+    },
+    "decorationsNone": "無",
+    "categoryTabsToggle": {
+      "more": "更多",
+      "less": "收合"
+    },
+    "demoText": "歡迎使用 UltraTextGen。\n輸入任何文字，讓它與眾不同。"
+  }
+}

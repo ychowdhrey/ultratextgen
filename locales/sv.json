@@ -55,6 +55,14 @@
       "shareTitle": "Dela en länk som öppnar den här sidan igen med din text redan ifylld",
       "linkCopied": "Länk kopierad"
     },
+    "shareResult": {
+      "label": "Dela",
+      "title": "Dela det här resultatet — länken öppnas med din text i den här stilen",
+      "ariaLabel": "Dela {style}-resultat",
+      "linkCopied": "Länk kopierad",
+      "afterCopy": "Dela den här stilen",
+      "sharedTag": "Delad stil"
+    },
     "safeMode": {
       "label": "Klistersäkerhet",
       "ariaLabel": "Se vilka stilar som visas korrekt på andras enheter",

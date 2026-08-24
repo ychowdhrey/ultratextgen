@@ -55,6 +55,14 @@
       "shareTitle": "Podeli link koji ponovo otvara ovu stranicu sa već unetim tekstom",
       "linkCopied": "Link kopiran"
     },
+    "shareResult": {
+      "label": "Podeli",
+      "title": "Podeli ovaj rezultat — link se otvara sa tvojim tekstom u ovom stilu",
+      "ariaLabel": "Podeli rezultat {style}",
+      "linkCopied": "Link kopiran",
+      "afterCopy": "Podeli ovaj stil",
+      "sharedTag": "Podeljeni stil"
+    },
     "safeMode": {
       "label": "Bezbednost lepljenja",
       "ariaLabel": "Proveri koji se stilovi ispravno prikazuju na tuđim uređajima",

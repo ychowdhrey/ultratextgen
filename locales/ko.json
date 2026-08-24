@@ -1,0 +1,95 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale. These pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, saved styles). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy.",
+  "ui": {
+    "copyButtons": {
+      "copy": "복사",
+      "copied": "✓ 복사됨",
+      "failed": "✗ 실패",
+      "copyTitle": "클립보드에 복사",
+      "save": "저장",
+      "saved": "저장됨",
+      "saveTitle": "이 스타일 저장",
+      "unsaveTitle": "저장한 스타일에서 제거",
+      "empty": "위에 입력해 보세요...",
+      "noStyles": "스타일을 찾을 수 없습니다. 다른 필터나 검색어를 사용해 보세요."
+    },
+    "categoryTabs": {
+      "popular": "인기",
+      "bold-fonts": "굵은 글씨",
+      "italic-fonts": "기울임꼴",
+      "bubble-fonts": "버블 글씨",
+      "cursive-fonts": "필기체",
+      "gothic-fonts": "고딕체",
+      "strikethrough-text": "취소선",
+      "underline-text": "밑줄",
+      "small-text": "작은 글씨",
+      "cute-fonts": "귀여운 글씨",
+      "aesthetic-fonts": "감성 글씨",
+      "upside-down-text": "거꾸로 글씨",
+      "text-decorator": "텍스트 꾸미기",
+      "classified": "가림 처리",
+      "fullwidth-fonts": "전각",
+      "faux-fonts": "흘림체 느낌",
+      "ancient-fonts": "고대 문자 & 룬",
+      "emoji-letter-fonts": "이모지 글자",
+      "novelty-fonts": "이색 글씨"
+    },
+    "scopeControl": {
+      "label": "스타일 적용 범위",
+      "ariaLabel": "텍스트에 스타일을 얼마나 적용할지 선택",
+      "whole": "전체 텍스트",
+      "wholeTitle": "텍스트의 모든 줄에 스타일을 적용합니다.",
+      "firstLine": "첫 줄만",
+      "firstLineTag": "게시물용",
+      "firstLineTitle": "첫 줄(제목이나 후킹 문구)에만 스타일을 적용하고 나머지는 읽기 쉬운 일반 텍스트로 둡니다 — SNS 게시물에 적합합니다."
+    },
+    "shareResult": {
+      "label": "공유",
+      "title": "이 결과 공유 — 링크를 열면 이 스타일로 내 텍스트가 나타납니다",
+      "ariaLabel": "{style} 결과 공유",
+      "linkCopied": "링크 복사됨",
+      "afterCopy": "이 스타일 공유",
+      "sharedTag": "공유된 스타일"
+    },
+    "safeMode": {
+      "label": "붙여넣기 안전성",
+      "ariaLabel": "다른 사람의 기기에서 표시되는 스타일 확인",
+      "toggleLabel": "안전 모드",
+      "hint": "다른 사람의 구형 휴대폰에서 네모(▯)로 보일 수 있는 스타일을 표시합니다."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ 일부 사용자에게 네모로 보일 수 있음",
+      "boxesWarningTitle": "이 스타일은 일부 휴대폰과 구형 기기에 글리프가 없는 희귀 유니코드 문자를 사용합니다. 붙여넣은 상대방에게 네모(▯)로 보일 수 있습니다. 상대방이 구형 기기를 쓴다면 일반 텍스트나 지원 범위가 넓은 스타일을 사용하세요.",
+      "emojiWarning": "⚠ 이모지 사용 — 구형 기기에서 다르게 보일 수 있음",
+      "emojiWarningTitle": "이 스타일에는 이모지가 포함됩니다. 최신 기기에서는 표시되지만 아주 오래된 휴대폰에서는 다르게 보이거나 네모로 나타날 수 있습니다.",
+      "modernDevices": "최신 기기에서 표시됨",
+      "modernDevicesTitle": "이 스타일의 유니코드 글자는 현재 사용되는 모든 휴대폰과 컴퓨터에서 표시됩니다. 아주 오래된 안드로이드(대략 2016년 이전)나 최소 시스템 글꼴에서는 일부가 네모(▯)로 보일 수 있습니다. 대상이 구형 기기를 쓴다면 먼저 테스트하세요.",
+      "rendersEverywhere": "✓ 어디서나 표시됨",
+      "rendersEverywhereTitle": "이 스타일은 일반 텍스트입니다 — 어떤 기기에서도 네모로 깨질 위험 없이 표시됩니다.",
+      "deviceWarning": "⚠ 내 기기에서 표시되지 않을 수 있음",
+      "deviceWarningTitle": "이 기기의 글꼴로는 이 스타일을 표시할 수 없어 네모(□)로 보일 수 있습니다. 다른 기기에서는 정상적으로 보일 수 있습니다.",
+      "safeAnywhere": "✓ 어디서나 안전",
+      "safeAnywhereTitle": "모든 주요 플랫폼에서 표시됩니다. 참고: 스크린 리더가 꾸민 글자를 한 자씩 읽을 수 있으므로 본문은 일반 텍스트로 두세요.",
+      "worksBestOn": "⚠ {platforms}에서 가장 잘 작동",
+      "worksBestOnTitle": "{platforms}에 가장 적합합니다. 다른 플랫폼에서는 제거되거나 깨질 수 있으니 먼저 테스트해 보세요."
+    },
+    "savedStyles": {
+      "ariaLabel": "저장한 스타일",
+      "heading": "저장한 스타일",
+      "clearAll": "모두 지우기",
+      "hint": "이 기기에 저장됩니다 — 다시 방문하면 여기에 그대로 있습니다."
+    },
+    "textStats": {
+      "wordSingular": "1단어",
+      "wordPlural": "{n}단어",
+      "charSingular": "1자",
+      "charPlural": "{n}자"
+    },
+    "decorationsNone": "없음",
+    "categoryTabsToggle": {
+      "more": "더 보기",
+      "less": "접기"
+    },
+    "demoText": "UltraTextGen에 오신 것을 환영합니다.\n무엇이든 입력하세요. 특별하게 만들어 보세요."
+  }
+}

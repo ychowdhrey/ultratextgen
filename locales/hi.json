@@ -1,0 +1,95 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale. These pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, saved styles). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy.",
+  "ui": {
+    "copyButtons": {
+      "copy": "कॉपी",
+      "copied": "✓ कॉपी हो गया",
+      "failed": "✗ विफल",
+      "copyTitle": "क्लिपबोर्ड पर कॉपी करें",
+      "save": "सेव",
+      "saved": "सेव हो गया",
+      "saveTitle": "यह स्टाइल सेव करें",
+      "unsaveTitle": "सेव की गई स्टाइल से हटाएं",
+      "empty": "ऊपर कुछ लिखें...",
+      "noStyles": "कोई स्टाइल नहीं मिली। कोई दूसरा फ़िल्टर या खोज शब्द आज़माएं।"
+    },
+    "categoryTabs": {
+      "popular": "लोकप्रिय",
+      "bold-fonts": "बोल्ड फ़ॉन्ट",
+      "italic-fonts": "इटैलिक फ़ॉन्ट",
+      "bubble-fonts": "बबल फ़ॉन्ट",
+      "cursive-fonts": "कर्सिव फ़ॉन्ट",
+      "gothic-fonts": "गॉथिक फ़ॉन्ट",
+      "strikethrough-text": "स्ट्राइकथ्रू टेक्स्ट",
+      "underline-text": "अंडरलाइन टेक्स्ट",
+      "small-text": "छोटा टेक्स्ट",
+      "cute-fonts": "क्यूट फ़ॉन्ट",
+      "aesthetic-fonts": "एस्थेटिक फ़ॉन्ट",
+      "upside-down-text": "उल्टा टेक्स्ट",
+      "text-decorator": "टेक्स्ट डेकोरेटर",
+      "classified": "छिपाया गया",
+      "fullwidth-fonts": "फुलविड्थ",
+      "faux-fonts": "नकली स्क्रिप्ट",
+      "ancient-fonts": "प्राचीन और रून",
+      "emoji-letter-fonts": "इमोजी अक्षर",
+      "novelty-fonts": "नॉवेल्टी"
+    },
+    "scopeControl": {
+      "label": "स्टाइल कहाँ लगाएं",
+      "ariaLabel": "चुनें कि कितने टेक्स्ट पर स्टाइल लगेगी",
+      "whole": "पूरा टेक्स्ट",
+      "wholeTitle": "आपके टेक्स्ट की हर पंक्ति पर स्टाइल लगाएं।",
+      "firstLine": "सिर्फ़ पहली पंक्ति",
+      "firstLineTag": "पोस्ट के लिए",
+      "firstLineTitle": "सिर्फ़ पहली पंक्ति (आपकी हेडलाइन या हुक) पर स्टाइल लगाएं और बाकी को सादा, पढ़ने योग्य टेक्स्ट रहने दें — सोशल पोस्ट के लिए आदर्श।"
+    },
+    "shareResult": {
+      "label": "शेयर",
+      "title": "यह नतीजा शेयर करें — लिंक खुलने पर आपका टेक्स्ट इसी स्टाइल में दिखेगा",
+      "ariaLabel": "{style} नतीजा शेयर करें",
+      "linkCopied": "लिंक कॉपी हो गया",
+      "afterCopy": "यह स्टाइल शेयर करें",
+      "sharedTag": "शेयर की गई स्टाइल"
+    },
+    "safeMode": {
+      "label": "पेस्ट सुरक्षा",
+      "ariaLabel": "देखें कौन सी स्टाइल दूसरों के डिवाइस पर दिखती है",
+      "toggleLabel": "सेफ़ मोड",
+      "hint": "उन स्टाइल को चिह्नित करता है जो दूसरों के पुराने फ़ोन पर डिब्बे (▯) जैसी दिख सकती हैं।"
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ कुछ लोगों को डिब्बे जैसी दिख सकती है",
+      "boxesWarningTitle": "यह स्टाइल ऐसे दुर्लभ यूनिकोड अक्षरों का उपयोग करती है जिनके लिए कुछ फ़ोन और पुराने डिवाइस में ग्लिफ़ नहीं होता। जिसे आप पेस्ट करेंगे उसे यह डिब्बों (▯) जैसी दिख सकती है। अगर आपके दर्शक पुराने डिवाइस पर हैं तो सादा या व्यापक समर्थन वाली स्टाइल चुनें।",
+      "emojiWarning": "⚠ इमोजी का उपयोग — पुराने डिवाइस पर अलग दिख सकता है",
+      "emojiWarningTitle": "इस स्टाइल में इमोजी शामिल हैं। इमोजी आधुनिक डिवाइस पर दिखते हैं लेकिन बहुत पुराने फ़ोन पर अलग दिख सकते हैं या डिब्बों जैसे नज़र आ सकते हैं।",
+      "modernDevices": "आधुनिक डिवाइस पर दिखती है",
+      "modernDevicesTitle": "ये स्टाइल किए गए यूनिकोड अक्षर सभी मौजूदा फ़ोन और कंप्यूटर पर दिखते हैं। बहुत पुराने एंड्रॉइड (लगभग 2016 से पहले) या सीमित सिस्टम फ़ॉन्ट पर कुछ अक्षर अब भी डिब्बों (▯) जैसे दिख सकते हैं। अगर आपके दर्शक पुराने डिवाइस उपयोग करते हैं तो पहले जाँच लें।",
+      "rendersEverywhere": "✓ हर जगह दिखती है",
+      "rendersEverywhereTitle": "यह स्टाइल सादा टेक्स्ट है — यह हर जगह दिखती है, किसी भी डिवाइस पर डिब्बे बनने का खतरा नहीं।",
+      "deviceWarning": "⚠ आपके डिवाइस पर नहीं दिख सकती",
+      "deviceWarningTitle": "आपके डिवाइस के फ़ॉन्ट यह स्टाइल नहीं दिखा सकते — यह डिब्बों (□) जैसी दिख सकती है। दूसरे डिवाइस पर यह ठीक दिख सकती है।",
+      "safeAnywhere": "✓ हर जगह सुरक्षित",
+      "safeAnywhereTitle": "सभी प्रमुख प्लेटफ़ॉर्म पर दिखती है। ध्यान दें: स्क्रीन रीडर स्टाइल किए अक्षरों को एक-एक करके बोल सकते हैं, इसलिए मुख्य टेक्स्ट सादा रखें।",
+      "worksBestOn": "⚠ {platforms} पर सबसे अच्छा काम करती है",
+      "worksBestOnTitle": "सबसे अच्छा: {platforms}। दूसरे प्लेटफ़ॉर्म इसे हटा या बिगाड़ सकते हैं — पहले एक बार पेस्ट करके जाँचें।"
+    },
+    "savedStyles": {
+      "ariaLabel": "आपकी सेव की गई स्टाइल",
+      "heading": "आपकी सेव की गई स्टाइल",
+      "clearAll": "सभी हटाएं",
+      "hint": "इसी डिवाइस पर सेव — जब आप लौटेंगे तो ये यहीं मिलेंगी।"
+    },
+    "textStats": {
+      "wordSingular": "1 शब्द",
+      "wordPlural": "{n} शब्द",
+      "charSingular": "1 अक्षर",
+      "charPlural": "{n} अक्षर"
+    },
+    "decorationsNone": "कोई नहीं",
+    "categoryTabsToggle": {
+      "more": "और",
+      "less": "कम"
+    },
+    "demoText": "UltraTextGen में आपका स्वागत है।\nकुछ भी लिखें। उसे ख़ास बनाएं।"
+  }
+}
