@@ -800,6 +800,21 @@
       cursor: not-allowed;
     }
 
+    /* Compact result cards on the specialized generators (vertical, scrolling,
+       repeat) carry Copy + Share but no Save, so the triangle above reduces to
+       one row here. Same gap and button language as .style-actions. */
+    .result-share-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .result-share-row .share-result-btn {
+      align-self: auto;
+    }
+
     /* Shared-result emphasis: the card a ?style= share link points at keeps
        a subtle standing highlight; the reveal pulse runs once on arrival. */
     .style-card.is-shared {
@@ -1161,6 +1176,20 @@
         align-self: stretch;
         justify-content: center;
         padding: 9px 14px;
+      }
+
+      /* On the compact specialized cards Copy and Share are a pair, so they
+         split the row rather than each spanning it. */
+      .result-share-row {
+        width: 100%;
+      }
+
+      .result-share-row .copy-btn,
+      .result-share-row .share-result-btn {
+        flex: 1;
+        width: auto;
+        align-self: auto;
+        justify-content: center;
       }
 
       .category-section {

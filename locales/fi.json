@@ -1,0 +1,95 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale. These pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, saved styles). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy.",
+  "ui": {
+    "copyButtons": {
+      "copy": "Kopioi",
+      "copied": "✓ Kopioitu",
+      "failed": "✗ Epäonnistui",
+      "copyTitle": "Kopioi leikepöydälle",
+      "save": "Tallenna",
+      "saved": "Tallennettu",
+      "saveTitle": "Tallenna tämä tyyli",
+      "unsaveTitle": "Poista tallennetuista tyyleistä",
+      "empty": "Kirjoita jotain yläpuolelle...",
+      "noStyles": "Tyylejä ei löytynyt. Kokeile toista suodatinta tai hakusanaa."
+    },
+    "categoryTabs": {
+      "popular": "Suositut",
+      "bold-fonts": "Lihavoidut fontit",
+      "italic-fonts": "Kursivoidut fontit",
+      "bubble-fonts": "Kuplafontit",
+      "cursive-fonts": "Kaunokirjoitusfontit",
+      "gothic-fonts": "Goottilaiset fontit",
+      "strikethrough-text": "Yliviivattu teksti",
+      "underline-text": "Alleviivattu teksti",
+      "small-text": "Pieni teksti",
+      "cute-fonts": "Söpöt fontit",
+      "aesthetic-fonts": "Esteettiset fontit",
+      "upside-down-text": "Ylösalaisin",
+      "text-decorator": "Tekstikoristelu",
+      "classified": "Peitetty teksti",
+      "fullwidth-fonts": "Täysleveä",
+      "faux-fonts": "Kaunokirjoitusjäljitelmä",
+      "ancient-fonts": "Muinaiset ja riimut",
+      "emoji-letter-fonts": "Emoji-kirjaimet",
+      "novelty-fonts": "Erikoiset"
+    },
+    "scopeControl": {
+      "label": "Muotoilun laajuus",
+      "ariaLabel": "Valitse, kuinka suuri osa tekstistä muotoillaan",
+      "whole": "Koko teksti",
+      "wholeTitle": "Muotoile tekstin jokainen rivi.",
+      "firstLine": "Vain ensimmäinen rivi",
+      "firstLineTag": "julkaisuihin",
+      "firstLineTitle": "Muotoile vain ensimmäinen rivi (otsikko tai koukku) ja jätä loput tavalliseksi, helposti luettavaksi tekstiksi — ihanteellinen sosiaalisen median julkaisuihin."
+    },
+    "shareResult": {
+      "label": "Jaa",
+      "title": "Jaa tämä tulos — linkki avautuu tekstisi kanssa tässä tyylissä",
+      "ariaLabel": "Jaa {style}-tulos",
+      "linkCopied": "Linkki kopioitu",
+      "afterCopy": "Jaa tämä tyyli",
+      "sharedTag": "Jaettu tyyli"
+    },
+    "safeMode": {
+      "label": "Liittämisen turvallisuus",
+      "ariaLabel": "Tarkista, mitkä tyylit näkyvät muiden laitteilla",
+      "toggleLabel": "Turvatila",
+      "hint": "Merkitsee tyylit, jotka voivat näkyä laatikkoina (▯) muiden vanhemmissa puhelimissa."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Voi näkyä laatikkoina joillekin",
+      "boxesWarningTitle": "Tämä tyyli käyttää harvinaisia Unicode-merkkejä, joille joistakin puhelimista ja vanhemmista laitteista puuttuu kirjasinmuoto. Se voi näkyä laatikkoina (▯) sille, jolle liität tekstin. Jos yleisösi saattaa käyttää vanhempia laitteita, valitse tavallinen tai laajasti tuettu tyyli.",
+      "emojiWarning": "⚠ Sisältää emojia — voi vaihdella vanhoilla laitteilla",
+      "emojiWarningTitle": "Tämä tyyli sisältää emojia. Emojit näkyvät nykyaikaisilla laitteilla, mutta voivat näyttää erilaisilta tai näkyä laatikkoina hyvin vanhoissa puhelimissa.",
+      "modernDevices": "Näkyy nykyaikaisilla laitteilla",
+      "modernDevicesTitle": "Nämä muotoillut Unicode-kirjaimet näkyvät kaikissa nykyisissä puhelimissa ja tietokoneissa. Hyvin vanhassa Androidissa (suunnilleen ennen vuotta 2016) tai suppeilla järjestelmäfonteilla osa voi silti näkyä laatikkoina (▯). Testaa ensin, jos yleisösi käyttää vanhempia laitteita.",
+      "rendersEverywhere": "✓ Näkyy kaikkialla",
+      "rendersEverywhereTitle": "Tämä tyyli on tavallista tekstiä — se näkyy kaikkialla eikä muutu laatikoiksi millään laitteella.",
+      "deviceWarning": "⚠ Ei ehkä näy laitteellasi",
+      "deviceWarningTitle": "Laitteesi fontit eivät pysty näyttämään tätä tyyliä — se voi näkyä laatikkoina (□). Muilla laitteilla se voi silti näyttää hyvältä.",
+      "safeAnywhere": "✓ Turvallinen kaikkialla",
+      "safeAnywhereTitle": "Näkyy kaikilla suurilla alustoilla. Huomio: ruudunlukuohjelmat voivat lukea muotoillut kirjaimet merkki kerrallaan, joten pidä leipäteksti tavallisena.",
+      "worksBestOn": "⚠ Toimii parhaiten: {platforms}",
+      "worksBestOnTitle": "Parhaiten: {platforms}. Muut alustat voivat poistaa tai sekoittaa sen — liitä ensin testiksi."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tallentamasi tyylit",
+      "heading": "Tallentamasi tyylit",
+      "clearAll": "Tyhjennä kaikki",
+      "hint": "Tallennettu tälle laitteelle — ne odottavat täällä, kun palaat."
+    },
+    "textStats": {
+      "wordSingular": "1 sana",
+      "wordPlural": "{n} sanaa",
+      "charSingular": "1 merkki",
+      "charPlural": "{n} merkkiä"
+    },
+    "decorationsNone": "Ei mitään",
+    "categoryTabsToggle": {
+      "more": "Lisää",
+      "less": "Vähemmän"
+    },
+    "demoText": "Tervetuloa UltraTextGeniin.\nKirjoita mitä tahansa. Tee siitä upeaa."
+  }
+}

@@ -372,7 +372,6 @@ const decorations = window.UTG_DECORATIONS
   // holds the registry key of that style so its card can be emphasized.
   const SHARE_STYLE_PARAM = "style";
   let sharedStyleName = null;
-  let sharedCardRevealed = false;
 
   /* ===================
      ELEMENTS
@@ -591,6 +590,15 @@ const decorations = window.UTG_DECORATIONS
     const params = new URLSearchParams();
     if (c.input) params.set("q", c.input);
     if (c.styleId) params.set(SHARE_STYLE_PARAM, c.styleId);
+    // Page-specific state (a layout, a mode, a repeat count) — each generator
+    // names its own params; this core stays agnostic about what they mean.
+    const extra = c.params && typeof c.params === "object" ? c.params : null;
+    if (extra) {
+      Object.keys(extra).forEach((key) => {
+        const val = extra[key];
+        if (val !== null && val !== undefined && val !== "") params.set(key, String(val));
+      });
+    }
     const qs = params.toString();
     return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
   };
@@ -625,6 +633,96 @@ const decorations = window.UTG_DECORATIONS
       console.error("Share failed:", err);
       return "failed";
     }
+  };
+
+  // One share icon, used by both the main generator's card template and the
+  // buildShareButton factory below, so the two can never drift apart.
+  const SHARE_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>';
+
+  // Build a result Share button for any page that follows the
+  // .style-card / .copy-btn contract. The specialized generators (vertical,
+  // scroll, repeat, tattoo) build cards in their own controllers, so they call
+  // this instead of hand-rolling the markup — one class, one icon, one label.
+  //   opts: { styleId, name, input, text, params, disabled }
+  // `input` and `text` may be omitted when the page uses #mainInput and a
+  // sibling .copy-btn — the delegated handler reads both from the DOM.
+  UTG.buildShareButton = function (opts) {
+    const o = opts || {};
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "share-result-btn";
+    if (o.styleId) btn.dataset.shareId = String(o.styleId);
+    if (o.input != null) btn.dataset.shareQ = String(o.input);
+    if (o.text != null) btn.dataset.shareText = String(o.text);
+    if (o.params && typeof o.params === "object") {
+      try {
+        btn.dataset.shareParams = JSON.stringify(o.params);
+      } catch (err) {
+        /* non-serializable state — share still works, minus the extra params */
+      }
+    }
+    if (o.disabled) btn.disabled = true;
+    btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+    btn.setAttribute("aria-label",
+      uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", o.name || ""));
+    btn.innerHTML = SHARE_ICON_SVG + '<span class="share-result-label"></span>';
+    const label = $(".share-result-label", btn);
+    if (label) label.textContent = uiText("shareResult.label", "Share");
+    return btn;
+  };
+
+  // The ?style= value this page was opened with, normalized. Only ever
+  // compared against ids the page itself produced — never rendered.
+  let sharedStyleId = null;
+  try {
+    const rawSharedStyle = new URLSearchParams(window.location.search).get(SHARE_STYLE_PARAM);
+    if (rawSharedStyle) sharedStyleId = String(rawSharedStyle).toLowerCase().replace(/_/g, "-");
+  } catch (err) {
+    /* malformed query string — behave as if no style was shared */
+  }
+  UTG.sharedStyleId = function () { return sharedStyleId; };
+
+  // Emphasize a card if it is the one a ?style= link points at. Returns whether
+  // it matched, so a caller can scroll to it or count matches.
+  UTG.markSharedCard = function (card, styleId) {
+    if (!card || !styleId || !sharedStyleId) return false;
+    if (String(styleId).toLowerCase() !== sharedStyleId) return false;
+    card.classList.add("is-shared");
+    const nameEl = $(".style-name", card);
+    if (nameEl && !$(".shared-style-tag", nameEl)) {
+      const tag = document.createElement("span");
+      tag.className = "style-tag shared-style-tag";
+      tag.textContent = uiText("shareResult.sharedTag", "Shared style");
+      nameEl.appendChild(tag);
+    }
+    return true;
+  };
+
+  // First time the shared card lands in a grid, bring it into view and pulse
+  // it once. Afterwards it keeps only the standing is-shared border while the
+  // recipient browses normally.
+  let sharedCardRevealed = false;
+  UTG.revealSharedCard = function (grid) {
+    if (!sharedStyleId || sharedCardRevealed || !grid) return;
+    const card = $(".style-card.is-shared", grid);
+    if (!card) return;
+    sharedCardRevealed = true;
+    setTimeout(() => {
+      // A rerender (e.g. the async i18n pass) can replace the grid before this
+      // fires — release the flag so the next render retries the reveal.
+      if (!card.isConnected) {
+        sharedCardRevealed = false;
+        return;
+      }
+      const rect = card.getBoundingClientRect();
+      const viewportH = window.innerHeight || document.documentElement.clientHeight;
+      const fullyVisible = rect.top >= 0 && rect.bottom <= viewportH;
+      if (!fullyVisible && card.scrollIntoView) {
+        card.scrollIntoView({ block: "center", behavior: "smooth" });
+      }
+      card.classList.add("shared-reveal");
+      setTimeout(() => card.classList.remove("shared-reveal"), 2400);
+    }, 150);
   };
 
   // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
@@ -958,20 +1056,16 @@ const decorations = window.UTG_DECORATIONS
     const safeName = safeAttr(name);
 
     // Result-level sharing: every card carries its own Share, bound to this
-    // exact creation (input + this style) via data-style — never a generic
-    // page link. Disabled alongside Copy while the card is only a demo.
-    const isShared = sharedStyleName === name;
-    if (isShared) card.classList.add("is-shared");
-    const sharedTagHtml = isShared
-      ? ` <span class="style-tag shared-style-tag">${escapeHtml(uiText("shareResult.sharedTag", "Shared style"))}</span>`
-      : "";
+    // exact creation (input + this style) via the style's stable registry
+    // slug — never a generic page link. Disabled alongside Copy on demo cards.
     const shareLabel = uiText("shareResult.label", "Share");
     const shareTitle = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
     const shareAria = uiText("shareResult.ariaLabel", "Share {style} result").replace("{style}", name);
+    const shareId = (style && style.slug) || "";
 
     card.innerHTML = `
       <div class="style-info">
-        <p class="style-name">${name}${sharedTagHtml}</p>
+        <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || STR.empty}</p>
         ${decoHtml}
@@ -983,12 +1077,13 @@ const decorations = window.UTG_DECORATIONS
           <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${STR.copy} <kbd class="copy-kbd">↵</kbd></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
-        <button class="share-result-btn" data-style="${safeName}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg><span class="share-result-label">${escapeHtml(shareLabel)}</span>
+        <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
+          ${SHARE_ICON_SVG}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
         </button>
       </div>
     `;
 
+    UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -1694,34 +1789,7 @@ const decorations = window.UTG_DECORATIONS
       grid.appendChild(empty);
     }
 
-    maybeRevealSharedCard(grid);
-  }
-
-  // First time the shared result's card lands in the grid, bring it into view
-  // and pulse its emphasis once — after that the card just keeps its subtle
-  // is-shared border (re-applied by createStyleCard on every rerender) while
-  // the recipient browses, edits, and shares normally.
-  function maybeRevealSharedCard(grid) {
-    if (!sharedStyleName || sharedCardRevealed) return;
-    const card = $(".style-card.is-shared", grid);
-    if (!card) return;
-    sharedCardRevealed = true;
-    setTimeout(() => {
-      // A rerender (e.g. the async i18n pass) can replace the grid before
-      // this fires — release the flag so the next render retries the reveal.
-      if (!card.isConnected) {
-        sharedCardRevealed = false;
-        return;
-      }
-      const rect = card.getBoundingClientRect();
-      const viewportH = window.innerHeight || document.documentElement.clientHeight;
-      const fullyVisible = rect.top >= 0 && rect.bottom <= viewportH;
-      if (!fullyVisible && card.scrollIntoView) {
-        card.scrollIntoView({ block: "center", behavior: "smooth" });
-      }
-      card.classList.add("shared-reveal");
-      setTimeout(() => card.classList.remove("shared-reveal"), 2400);
-    }, 150);
+    UTG.revealSharedCard(grid);
   }
 
   /* ===================
@@ -2111,18 +2179,31 @@ document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".share-result-btn") : null;
   if (!btn || btn.disabled) return;
 
-  const name = btn.dataset.style || "";
-  const style = stylesRegistry[name];
-  if (!style) return;
+  // Generic across every generator on the site: the creation state is read
+  // from the card itself (its own .copy-btn already holds the exact text the
+  // user would paste, so Share and Copy can never disagree), plus whatever
+  // page state the builder stamped onto the button.
+  const card = btn.closest ? btn.closest(".style-card") : null;
+  const copyBtn = card ? $(".copy-btn", card) : null;
+  const output = btn.dataset.shareText || (copyBtn ? copyBtn.dataset.text : "") || "";
+  const input = btn.dataset.shareQ != null
+    ? btn.dataset.shareQ
+    : (el.mainInput ? el.mainInput.value : "");
 
-  const input = el.mainInput ? el.mainInput.value : "";
-  const converted = applyFormatMarks(applyScope(input, style));
-  const output = selectedDecoration ? applyDecoration(converted) : converted;
+  let params = null;
+  if (btn.dataset.shareParams) {
+    try {
+      params = JSON.parse(btn.dataset.shareParams);
+    } catch (err) {
+      params = null; // malformed state — share the input + style alone
+    }
+  }
 
   const outcome = await UTG.shareCreation({
     input,
     output,
-    styleId: style.slug,
+    styleId: btn.dataset.shareId || "",
+    params,
     title: document.title
   });
 
@@ -2309,9 +2390,8 @@ document.addEventListener("copy", () => {
     // links). Matched against the registry's stable slugs only — an unknown or
     // stale identifier is simply ignored (the generator opens normally), and
     // the raw param value is never rendered into the page.
-    const urlStyle = new URLSearchParams(window.location.search).get(SHARE_STYLE_PARAM);
-    if (urlStyle) {
-      const slug = String(urlStyle).toLowerCase().replace(/_/g, "-");
+    const slug = UTG.sharedStyleId();
+    if (slug) {
       for (const [name, style] of Object.entries(stylesRegistry)) {
         if (style && style.slug === slug) {
           sharedStyleName = name;
