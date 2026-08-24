@@ -55,6 +55,14 @@
       "shareTitle": "Teile einen Link, der diese Seite mit deinem Text wieder öffnet",
       "linkCopied": "Link kopiert"
     },
+    "shareResult": {
+      "label": "Teilen",
+      "title": "Dieses Ergebnis teilen — der Link öffnet deinen Text in diesem Stil",
+      "ariaLabel": "{style}-Ergebnis teilen",
+      "linkCopied": "Link kopiert",
+      "afterCopy": "Diesen Stil teilen",
+      "sharedTag": "Geteilter Stil"
+    },
     "safeMode": {
       "label": "Einfüge-Sicherheit",
       "ariaLabel": "Prüfe, welche Stile auf anderen Geräten korrekt angezeigt werden",

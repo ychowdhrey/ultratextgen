@@ -55,6 +55,14 @@
       "shareTitle": "Sdílej odkaz, který znovu otevře tuto stránku s tvým textem už vyplněným",
       "linkCopied": "Odkaz zkopírován"
     },
+    "shareResult": {
+      "label": "Sdílet",
+      "title": "Sdílet tento výsledek — odkaz se otevře s vaším textem v tomto stylu",
+      "ariaLabel": "Sdílet výsledek {style}",
+      "linkCopied": "Odkaz zkopírován",
+      "afterCopy": "Sdílet tento styl",
+      "sharedTag": "Sdílený styl"
+    },
     "safeMode": {
       "label": "Bezpečnost vkládání",
       "ariaLabel": "Zjisti, které styly se správně zobrazí na jiných zařízeních",

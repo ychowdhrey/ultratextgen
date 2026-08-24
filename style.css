@@ -743,6 +743,79 @@
       color: var(--accent-purple);
     }
 
+    /* Result-level actions: Copy + Save on top, Share centered beneath —
+       the "triangle". The stack wrapper exists so .style-actions itself
+       (reused by the decorator/event page controllers with a lone Copy
+       button) keeps its original row layout untouched. */
+    .style-actions-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Share is the distribution utility — visible, but quieter than Copy
+       (the primary utility): smaller type, muted color, same border/radius
+       language as its siblings. */
+    .share-result-btn {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      max-width: 100%;
+      padding: 5px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .share-result-btn .share-result-label {
+      white-space: nowrap;
+    }
+
+    .share-result-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .share-result-btn.copied {
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .share-result-btn.share-error {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .share-result-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Shared-result emphasis: the card a ?style= share link points at keeps
+       a subtle standing highlight; the reveal pulse runs once on arrival. */
+    .style-card.is-shared {
+      border-color: rgba(139, 92, 246, 0.45);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12), var(--shadow-soft);
+    }
+
+    .style-card.shared-reveal {
+      animation: sharedReveal 1.6s ease;
+    }
+
+    @keyframes sharedReveal {
+      0%, 25% { box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.28), var(--shadow-soft); }
+      100% { box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12), var(--shadow-soft); }
+    }
+
     /* Saved styles section (return-driving) */
     .saved-section {
       margin-bottom: 20px;
@@ -1067,6 +1140,11 @@
         width: 100%;
       }
 
+      .style-actions-stack {
+        width: 100%;
+        gap: 8px;
+      }
+
       .style-actions .copy-btn {
         width: auto;
         flex: 1;
@@ -1075,6 +1153,14 @@
 
       .save-btn {
         justify-content: center;
+      }
+
+      /* Full-width Share keeps the [Copy][Save] / [Share] relationship while
+         giving a comfortable tap target on narrow screens. */
+      .share-result-btn {
+        align-self: stretch;
+        justify-content: center;
+        padding: 9px 14px;
       }
 
       .category-section {
@@ -4790,30 +4876,9 @@ body.theme-gothic .category-section { position: static; background: transparent;
   .preview-label { display: none; }
 }
 
-/* Share button rides the scope-control row, pushed to the right */
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-  padding: 6px 14px;
-  border: 1px solid var(--border-light);
-  border-radius: 999px;
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-}
-.share-btn:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
-}
-.share-btn.copied {
-  border-color: var(--ts-safe);
-  color: var(--ts-safe);
-}
+/* The page-level Share button that used to ride the scope-control row was
+   replaced by per-result Share buttons on each style card (.share-result-btn,
+   styled with the other card actions near .style-actions). */
 
 /* --- Platform preview modal ------------------------------------------- */
 body.preview-open { overflow: hidden; }

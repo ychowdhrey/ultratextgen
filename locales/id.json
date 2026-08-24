@@ -55,6 +55,14 @@
       "shareTitle": "Bagikan tautan yang membuka kembali halaman ini dengan teksmu sudah terisi",
       "linkCopied": "Tautan disalin"
     },
+    "shareResult": {
+      "label": "Bagikan",
+      "title": "Bagikan hasil ini — tautannya terbuka dengan teksmu dalam gaya ini",
+      "ariaLabel": "Bagikan hasil {style}",
+      "linkCopied": "Tautan disalin",
+      "afterCopy": "Bagikan gaya ini",
+      "sharedTag": "Gaya yang dibagikan"
+    },
     "safeMode": {
       "label": "Keamanan tempel",
       "ariaLabel": "Cek gaya mana yang tampil dengan baik di perangkat orang lain",

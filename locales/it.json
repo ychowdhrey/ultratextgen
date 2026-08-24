@@ -55,6 +55,14 @@
       "shareTitle": "Condividi un link che riapre questa pagina con il tuo testo già inserito",
       "linkCopied": "Link copiato"
     },
+    "shareResult": {
+      "label": "Condividi",
+      "title": "Condividi questo risultato — il link si apre con il tuo testo in questo stile",
+      "ariaLabel": "Condividi il risultato {style}",
+      "linkCopied": "Link copiato",
+      "afterCopy": "Condividi questo stile",
+      "sharedTag": "Stile condiviso"
+    },
     "safeMode": {
       "label": "Sicurezza incolla",
       "ariaLabel": "Controlla quali stili si vedono bene su altri dispositivi",

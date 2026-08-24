@@ -55,6 +55,14 @@
       "shareTitle": "Comparte un enlace que reabre esta página con tu texto ya escrito",
       "linkCopied": "Enlace copiado"
     },
+    "shareResult": {
+      "label": "Compartir",
+      "title": "Comparte este resultado: el enlace se abre con tu texto en este estilo",
+      "ariaLabel": "Compartir el resultado {style}",
+      "linkCopied": "Enlace copiado",
+      "afterCopy": "Compartir este estilo",
+      "sharedTag": "Estilo compartido"
+    },
     "safeMode": {
       "label": "Seguridad al pegar",
       "ariaLabel": "Comprueba qué estilos se ven bien en otros dispositivos",
