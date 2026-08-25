@@ -175,6 +175,7 @@
     btn.type = 'button';
     btn.dataset.text = opts.text;
     if (opts.styleKey) btn.dataset.style = opts.styleKey;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
     card.appendChild(btn);
 
     /* Result-level Share, built by the shared factory in script.js. Sample

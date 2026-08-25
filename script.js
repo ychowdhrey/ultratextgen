@@ -637,7 +637,25 @@ const decorations = window.UTG_DECORATIONS
 
   // One share icon, used by both the main generator's card template and the
   // buildShareButton factory below, so the two can never drift apart.
-  const SHARE_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>';
+  const SHARE_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>';
+
+  // Copy gets an icon too, so the three card actions read as one family
+  // (Save already carries its star). Same outline style as the share icon.
+  const COPY_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>';
+
+  // Give any .copy-btn the icon + label-span structure. Idempotent, and safe
+  // for buttons built elsewhere with plain textContent (the specialized
+  // controllers call this on theirs). The label lives in its own span so the
+  // copied/failed state swaps can update the text without destroying the
+  // icon — the old whole-button textContent swap silently deleted the ↵
+  // keyboard hint after the first copy.
+  UTG.decorateCopyButton = function (btn) {
+    if (!btn || $(".copy-label", btn)) return btn;
+    const text = btn.textContent;
+    btn.innerHTML = COPY_ICON_SVG + '<span class="copy-label"></span>';
+    $(".copy-label", btn).textContent = text;
+    return btn;
+  };
 
   // Build a result Share button for any page that follows the
   // .style-card / .copy-btn contract. The specialized generators (vertical,
@@ -1074,7 +1092,7 @@ const decorations = window.UTG_DECORATIONS
       </div>
       <div class="style-actions-stack">
         <div class="style-actions">
-          <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${STR.copy} <kbd class="copy-kbd">↵</kbd></button>
+          <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${COPY_ICON_SVG}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
         <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
@@ -2116,6 +2134,15 @@ $$(".faq-question").forEach((q) => {
     toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
   }
 
+// Update a copy button's visible label. Decorated buttons keep their icon and
+// ↵ hint intact; undecorated ones (other controllers' plain buttons) fall back
+// to the old whole-button swap.
+function setCopyBtnLabel(btn, text) {
+  const label = $(".copy-label", btn);
+  if (label) label.textContent = text;
+  else btn.textContent = text;
+}
+
 document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
   if (!btn || btn.disabled) return;
@@ -2135,11 +2162,11 @@ document.addEventListener("click", async (e) => {
       style_name: styleName
     });
 
-    btn.textContent = STR.copied;
+    setCopyBtnLabel(btn, STR.copied);
     btn.classList.add("copied");
     showCopyToast();
     setTimeout(() => {
-      btn.textContent = STR.copy;
+      setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copied");
     }, 1500);
 
@@ -2150,10 +2177,10 @@ document.addEventListener("click", async (e) => {
     if (copiedCard) nudgeShareAfterCopy(copiedCard);
   } catch (err) {
     console.error("Copy failed:", err);
-    btn.textContent = STR.failed;
+    setCopyBtnLabel(btn, STR.failed);
     btn.classList.add("copy-error");
     setTimeout(() => {
-      btn.textContent = STR.copy;
+      setCopyBtnLabel(btn, STR.copy);
       btn.classList.remove("copy-error");
     }, 1500);
   }

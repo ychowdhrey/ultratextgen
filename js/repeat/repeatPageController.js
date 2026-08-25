@@ -186,6 +186,7 @@
     btn.dataset.text = text;
     btn.dataset.style = name;
     if (!text) btn.disabled = true;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
 
     /* Copy + Share share one action row — these cards carry no Save button,
        so the core generator's triangle reduces to a pair here. */

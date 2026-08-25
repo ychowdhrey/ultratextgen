@@ -700,6 +700,7 @@
     copyBtn.dataset.text = item.text;
     copyBtn.dataset.style = item.name;
     if (!item.text || !item.text.trim()) copyBtn.disabled = true;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(copyBtn);
 
     info.appendChild(nameLine);
     info.appendChild(meta);
