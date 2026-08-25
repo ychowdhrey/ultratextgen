@@ -21,6 +21,50 @@
         "added": "2026-08-21"
       }
     ],
+    "cs": [
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      }
+    ],
     "da": [
       {
         "string": "Platform",
@@ -131,6 +175,60 @@
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/teufel-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established German loanword for this style — the site's own de/aesthetic-schrift/ carries the H1 'Aesthetic Schrift Generator'",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'Retro' and 'Pixel' are both ordinary German words spelled identically to the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
       }
     ],
     "es": [
@@ -139,12 +237,6 @@
         "reason": "Spanish pluralises the loanword identically; all 25 Spanish decoration tabs render \"Emojis\"",
         "found_on": "es/usecase/* decoration tabs",
         "added": "2026-08-16"
-      },
-      {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "es/usecase/zalgo-text/",
-        "added": "2026-08-21"
       },
       {
         "string": "Minimal",
@@ -169,20 +261,80 @@
         "reason": "typeface proper name plus the Google Fonts product name; both are brands and are cited unchanged inside translated prose",
         "found_on": "/es/answers/what-font-does-whatsapp-use/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "☾ Celestial",
+        "reason": "'celestial' is an ordinary Spanish adjective spelled identically to the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established Spanish loanword for this style — cf. the site's own es/letras-aesthetic/ and es/simbolos-aesthetic/",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
       }
     ],
     "fr": [
+      {
+        "string": "Chevrons",
+        "reason": "'chevrons' is the ordinary French word for this bracket shape, spelled identically to the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
       {
         "string": "Emojis",
         "reason": "French pluralises the loanword identically; 10 of 14 French decoration tabs render \"Emojis\"",
         "found_on": "fr/usecase/* decoration tabs",
         "added": "2026-08-16"
-      },
-      {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "fr/usecase/zalgo-text/",
-        "added": "2026-08-21"
       },
       {
         "string": "Poppins",
@@ -201,6 +353,60 @@
         "reason": "typeface proper name plus the Google Fonts product name; both are brands and are cited unchanged inside translated prose",
         "found_on": "/fr/answers/what-font-does-whatsapp-use/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established French loanword for this style — cf. the site's own fr/ecriture-aesthetic/",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
       }
     ],
     "id": [
@@ -267,12 +473,6 @@
         "added": "2026-08-16"
       },
       {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "it/usecase/zalgo-text/",
-        "added": "2026-08-19"
-      },
-      {
         "string": "Goblin",
         "reason": "loanword, spelled identically in Italian",
         "found_on": "it/library/emoji-diavolo/",
@@ -325,6 +525,66 @@
         "reason": "loanword, spelled identically in Italian",
         "found_on": "it/library/emoji-diavolo/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-08-19"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established Italian loanword for this style — cf. the site's own it/scritte-aesthetic/",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'retro' and 'pixel' are both ordinary Italian words spelled identically to the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
       }
     ],
     "ja": [
@@ -339,6 +599,36 @@
         "reason": "an initialism, kept in Latin script in Japanese copy",
         "found_on": "ja/library/kisu-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/ja/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/ja/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/ja/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/ja/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/ja/usecase/bio-font/",
+        "added": "2026-08-25"
       }
     ],
     "ms": [
@@ -379,12 +669,6 @@
         "reason": "identical noun in Dutch",
         "found_on": "nl/library/sterrenbeeld-symbolen/",
         "added": "2026-08-15"
-      },
-      {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "nl/usecase/zalgo-text/",
-        "added": "2026-08-21"
       },
       {
         "string": "Joker",
@@ -487,6 +771,60 @@
         "reason": "transliteration, identical in Dutch",
         "found_on": "nl/library/vrede-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'retro' and 'pixel' are both ordinary Dutch words spelled identically to the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
       }
     ],
     "pl": [
@@ -535,12 +873,6 @@
         "added": "2026-08-16"
       },
       {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "pt/usecase/zalgo-text/",
-        "added": "2026-08-21"
-      },
-      {
         "string": "Poppins",
         "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
         "found_on": "/pt/answers/what-font-does-pinterest-use/",
@@ -557,6 +889,60 @@
         "reason": "typeface proper name plus the Google Fonts product name; both are brands and are cited unchanged inside translated prose",
         "found_on": "/pt/answers/what-font-does-whatsapp-use/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "☾ Celestial",
+        "reason": "'celestial' is an ordinary Portuguese adjective spelled identically to the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
       }
     ],
     "ru": [
@@ -579,12 +965,142 @@
         "added": "2026-08-21"
       }
     ],
+    "sk": [
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      }
+    ],
     "th": [
       {
         "string": "Poppins",
         "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
         "found_on": "/th/answers/what-font-does-pinterest-use/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
+        "added": "2026-08-25"
+      }
+    ],
+    "tl": [
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
+        "added": "2026-08-25"
       }
     ],
     "tr": [
@@ -617,6 +1133,48 @@
         "reason": "typeface proper name plus the Google Fonts product name; both are brands and are cited unchanged inside translated prose",
         "found_on": "/tr/answers/what-font-does-whatsapp-use/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
       }
     ]
   }
