@@ -626,7 +626,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Simboli Discord, le risposte</h2>
   <details class="faq-item">
     <summary class="faq-question">Serve Nitro per usare i simboli su Discord?</summary>
-    <p class="faq-answer">No. I simboli di questa pagina sono normali caratteri Unicode, quindi funzionano su qualsiasi account Discord — gratuito o Nitro. Nitro aggiunge emoji personalizzate e animate, upload più grandi ed extra per il profilo, ma i simboli di testo e i font Unicode non lo richiedono mai. (Vedi <a href="/answers/discord-allowed-characters/">Discord allowed characters</a> per le regole campo per campo.)</p>
+    <p class="faq-answer">No. I simboli di questa pagina sono normali caratteri Unicode, quindi funzionano su qualsiasi account Discord — gratuito o Nitro. Nitro aggiunge emoji personalizzate e animate, upload più grandi ed extra per il profilo, ma i simboli di testo e i font Unicode non lo richiedono mai. (Vedi <a href="/answers/discord-allowed-characters/">caratteri consentiti su Discord</a> per le regole campo per campo.)</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Come aggiungo i simboli al nome o alla bio di Discord?</summary>
@@ -670,7 +670,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Ogni emoji cuore e carattere Unicode a forma di cuore.</p>
     </a>
     <a href="/library/sparkle-symbols/" class="compare-card variant-muted u-no-underline">
-      <h4>Sparkle Symbols</h4>
+      <h4>Simboli Scintillio e Decorativi</h4>
       <p>Stelle, scintille e caratteri decorativi luminosi.</p>
     </a>
     <a href="/it/library/simboli-parentesi/" class="compare-card variant-muted u-no-underline">
@@ -678,7 +678,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p>Tutti i tipi di parentesi e segni di racchiusura Unicode.</p>
     </a>
     <a href="/answers/discord-allowed-characters/" class="compare-card variant-muted u-no-underline">
-      <h4>Discord Allowed Characters</h4>
+      <h4>Caratteri consentiti su Discord</h4>
       <p>Regole Unicode campo per campo per nomi utente, nomi visualizzati, canali e bio.</p>
     </a>
   </div>
@@ -722,12 +722,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [
-    { name: "Discord Channel Divider", flags: ["━━━┈┈┈━━━"], defaultFormat: "inline" },
-    { name: "Star Bracket Username Combo", flags: ["꒰","✦","⊹","✧","꒱"], defaultFormat: "inline" },
-    { name: "Heart Frame Bio Combo", flags: ["𓆩♡𓆪"], defaultFormat: "inline" },
-    { name: "Sparkle Bio Accent", flags: ["⋆","˚","⊹","✦","⊹","˚","⋆"], defaultFormat: "inline" },
-    { name: "Corner Bracket Channel Name", flags: ["「","✧","・","✧","」"], defaultFormat: "inline" },
-    { name: "Dotted Server Divider", flags: ["・","⊹","┈","┈","⊹","・"], defaultFormat: "inline" }
+    { name: "Separatore di canale Discord", flags: ["━━━┈┈┈━━━"], defaultFormat: "inline" },
+    { name: "Combo nome utente con stelle e parentesi", flags: ["꒰","✦","⊹","✧","꒱"], defaultFormat: "inline" },
+    { name: "Combo bio con cornice di cuori", flags: ["𓆩♡𓆪"], defaultFormat: "inline" },
+    { name: "Accento bio scintillante", flags: ["⋆","˚","⊹","✦","⊹","˚","⋆"], defaultFormat: "inline" },
+    { name: "Nome canale con parentesi angolari", flags: ["「","✧","・","✧","」"], defaultFormat: "inline" },
+    { name: "Separatore di server puntinato", flags: ["・","⊹","┈","┈","⊹","・"], defaultFormat: "inline" }
   ];
 
   ns.buildGrids("discordCollectionsContainer", GROUPS);

@@ -89,8 +89,14 @@ const IDENTIFIER_RULES = [
   // property, cited the same way as `content: "\\007C"` a row below it. The
   // existing code-literal rule only fires when the colon is present.
   [/^CSS [a-z-]+$/, 'css-property'],
-  // key names are not localised on the keyboard itself
-  [/\b(?:Option|Alt|Ctrl|Cmd|Shift|Fn)\s*\+/, 'keyboard-shortcut'],
+  // key names are not localised on the keyboard itself. The spelled-out macOS
+  // names matter as much as the abbreviations: `Control + Command + Space` is
+  // the Mac emoji-panel shortcut, cited inside <code> in otherwise fully
+  // translated Russian, Japanese, Korean, Arabic and Indonesian pages.
+  [/\b(?:Option|Alt|Ctrl|Cmd|Shift|Fn|Control|Command|Windows|Win|Return|Enter|Esc|Escape|Tab)\s*\+/, 'keyboard-shortcut'],
+  // chat shortcodes — :microphone: is what Discord/Slack/GitHub accept, so a
+  // translated one would simply not work.
+  [/^:[a-z0-9_+-]{2,}:$/, 'chat-shortcode'],
   [/&(?:amp;)?[a-zA-Z]{2,6};/, 'html-entity'],
   // Markdown/formatting examples, where the syntax IS the content
   [/\*\*|__|~~|`/, 'markdown-syntax']
@@ -137,6 +143,9 @@ const COPY_SLOT_EXTRACTORS = [
  * to the clipboard, so an untranslated payload is a worse defect than an
  * untranslated label, not a lesser one.
  */
+/** A bare host or host+path used as its own link text: `symbl.cc`. */
+const DOMAIN_TEXT = /^(?:https?:\/\/)?[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/\S*)?$/i;
+
 const BODY_SLOT_EXTRACTORS = [
   /<p[^>]*>([\s\S]*?)<\/p>/g,
   /<li[^>]*>([\s\S]*?)<\/li>/g,
@@ -147,7 +156,43 @@ const BODY_SLOT_EXTRACTORS = [
   /<button[^>]*>([\s\S]*?)<\/button>/g,
   /<span class="[^"]*label"[^>]*>([\s\S]*?)<\/span>/g,
   /data-symbol="([^"]*)"/g,
-  /\bname:\s*"([^"]*)"/g
+  // Anchor text — nav labels, CTA buttons, and the in-prose links a reader
+  // clicks. Added 2026-08-25: the list above had no <a> at all, so a footer
+  // whose "Home"/"Guides"/"Contact" labels were never translated was invisible
+  // on ~1,270 pages, as was a CTA button reading "Open UltraTextGen →" on an
+  // otherwise fully Malay page.
+  //
+  // Restricted to anchors with no BLOCK child on purpose. A compare-card is an
+  // <a> wrapping <h4> + <p>; reading it would report the card's title and
+  // description CONCATENATED as a separate defect from the two the heading and
+  // paragraph extractors already report — one bug counted three times.
+  //
+  // Off-site citation anchors are dropped by anchorStrings() below rather than
+  // here, because the test needs the href as well as the text.
+];
+
+/**
+ * The one extractor that must read <script>, and the only one.
+ *
+ * Combo/flag registries are JS arrays of `{ name: "…", … }` that the page
+ * renders into real tiles, so their names are visible content. Everything else
+ * is read from script-stripped markup — measured before splitting them:
+ * `data-symbol` never occurs inside <script> anywhere on the site (0 of 94,844)
+ * and `name:` only ever occurs inside it (8,219 of 8,219), so the split is
+ * exact rather than a guess.
+ */
+const SCRIPT_SLOT_EXTRACTORS = [
+  /\bname:\s*"([^"]*)"/g,
+  // `name:` was the only key read when scripts were first excluded from the
+  // element extractors, and that left a blind spot: inline registries on this
+  // site also carry `title:` (729), `label:` (418), `text:` (217) and `desc:`
+  // (2) string values that render as visible content — filter chips, card
+  // titles, preset names. Adding them keeps the exclusion from trading one
+  // class of false positive for a class of invisible defect.
+  /\btitle:\s*"([^"]*)"/g,
+  /\blabel:\s*"([^"]*)"/g,
+  /\btext:\s*"([^"]*)"/g,
+  /\bdesc:\s*"([^"]*)"/g
 ];
 
 const EXTRACTORS = [...COPY_SLOT_EXTRACTORS, ...BODY_SLOT_EXTRACTORS];
@@ -191,13 +236,63 @@ function extractWith(patterns, body) {
   return out;
 }
 
+/**
+ * An <h3> inside a JavaScript string is not an <h3> in the DOM.
+ *
+ * Several locale library indexes build their A-Z list in inline JS, so the
+ * element extractors above were matching the SOURCE of that code and reporting
+ * `' + escHtml(item.title) + '` as untranslated English on seven locale pages.
+ * Code is never translation debt, and a detector that says it is teaches people
+ * to skim its output.
+ */
+function stripScripts(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ');
+}
+
+/**
+ * Anchor text, with off-site source citations removed.
+ *
+ * `<a href="https://macrumors.com/…">MacRumors</a>` inside otherwise fully
+ * translated prose is a citation of a publication, exactly like the Unicode
+ * block names and platform names above, and every locale on this site cites
+ * them by name. `<a href="…">Unicode Consortium's official beta review
+ * announcement</a>` is not — it is a descriptive English phrase, and it fails
+ * the proper-noun shape test, so it stays a defect.
+ *
+ * The href is what separates the two cases, which is why this cannot be a plain
+ * text-only extractor like the rest. INTERNAL anchors are never exempted: our
+ * own page names ("Invisible Character", "Vertical Text") pass the same shape
+ * test and are ordinary debt.
+ */
+function anchorStrings(body) {
+  const out = new Set();
+  const re = /<a\b([^>]*)>((?:(?!<\/a>)(?!<(?:h[1-6]|p|div|section|ul|ol|li|table)\b)[\s\S]){4,300}?)<\/a>/g;
+  let m;
+  while ((m = re.exec(body)) !== null) {
+    const href = (/href="([^"]*)"/.exec(m[1]) || [])[1] || '';
+    const text = stripTags(m[2]);
+    if (text.length <= 3 || !/[A-Za-z]{4}/.test(text) || UNIVERSAL_ALLOW.test(text)) continue;
+    const external = /^https?:\/\//i.test(href) && !/^https?:\/\/(?:www\.)?ultratextgen\.com/i.test(href);
+    if (external && (DOMAIN_TEXT.test(text) || isProperNounPhrase(text))) continue;
+    out.add(text);
+  }
+  return out;
+}
+
 function translatableStrings(html) {
-  return extractWith(EXTRACTORS, bodyOf(html));
+  const body = bodyOf(html);
+  const noScript = stripScripts(body);
+  const out = extractWith(EXTRACTORS, noScript);
+  for (const s of extractWith(SCRIPT_SLOT_EXTRACTORS, body)) out.add(s);
+  for (const s of anchorStrings(noScript)) out.add(s);
+  return out;
 }
 
 /** Only the strings sitting in a copy slot — headings, card titles, aria-labels. */
 function copySlotStrings(html) {
-  return extractWith(COPY_SLOT_EXTRACTORS, bodyOf(html));
+  return extractWith(COPY_SLOT_EXTRACTORS, stripScripts(bodyOf(html)));
 }
 
 /**
@@ -472,6 +567,8 @@ function auditLocalePage(relPath, { root = ROOT, readFile } = {}) {
 
 module.exports = {
   auditPair,
+  stripScripts,
+  anchorStrings,
   identifierClass,
   unicodeBlockNames,
   placeNames,

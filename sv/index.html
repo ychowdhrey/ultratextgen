@@ -361,7 +361,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <p class="hero-tagline" data-i18n="hero.subtitle">Skriv en gång och få 88 snygga typsnitt du kan kopiera och klistra in direkt: skrivstil, fet text, kursiv, fina bokstäver, Instagram-typsnitt, TikTok-caption, Discord-namn och WhatsApp-status.</p>
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Skriv din text här..." data-i18n-placeholder="ui.placeholder" maxlength="500" autofocus></textarea>
-          <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
+          <button class="input-clear-btn" id="inputClearBtn" aria-label="Rensa inmatningen" hidden>✕</button>
           <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
         </div>
 
@@ -369,7 +369,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="accent-notice" id="accentNotice" role="note" hidden>
           <span class="accent-notice-icon" aria-hidden="true">◌́</span>
           <span class="accent-notice-text">Din text innehåller accenttecken. Fet, skrivstil, gotisk och de flesta andra stilar behåller nu <b>å</b>, <b>ä</b> och <b>ö</b> med tecknet — några få (upp-och-nedvänd text, och bokstäver utan accentform som <b>ł đ ø ß</b>) faller tillbaka till vanliga bokstäver. <a href="/guide/fancy-fonts-and-accents/">Vilka stilar behåller accenter →</a></span>
-          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Stäng">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -410,12 +410,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <!-- Intro / topical anchor -->
   <section class="editorial-section" aria-labelledby="intro-heading">
-    <h2 id="intro-heading">What this fancy text generator actually does</h2>
+    <h2 id="intro-heading">Vad den här textgeneratorn faktiskt gör</h2>
     <p>
-      UltraTextGen is a free Unicode font generator. You type plain text, it swaps each letter for a styled character that lives inside the Unicode standard, and you copy the result wherever you want it: an Instagram bio, a TikTok caption, a Discord display name, a LinkedIn headline, a Roblox profile, a WhatsApp status, even an email subject line. Because the styled letters <em>are</em> the text — not a font file your phone has to load, and not Markdown that gets stripped — they survive copy-paste into apps that don’t allow formatting.
+      UltraTextGen är en gratis Unicode-typsnittsgenerator. Du skriver vanlig text, den byter ut varje bokstav mot ett stiliserat tecken som finns i Unicode-standarden, och du kopierar resultatet dit du vill ha det: en Instagram-bio, en TikTok-caption, ett visningsnamn på Discord, en LinkedIn-rubrik, en Roblox-profil, en WhatsApp-status, till och med en ämnesrad i ett mejl. Eftersom de stiliserade bokstäverna <em>är</em> själva texten — inte en typsnittsfil som telefonen måste ladda, och inte Markdown som rensas bort — klarar de att kopieras och klistras in i appar som inte tillåter formatering.
     </p>
     <p>
-      Type <code>hello</code> and you get:
+      Skriv <code>hello</code> så får du:
       𝗵𝗲𝗹𝗹𝗼 (bold),
       𝘩𝘦𝘭𝘭𝘰 (italic),
       𝒽ℯ𝓁𝓁ℴ (cursive script),
@@ -430,31 +430,31 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       oʅʅǝɥ (upside-down),
       ollǝɥ (mirror),
       h̷̢̛e̴̜͝l̸̼͝l̷͔͠o̵̗͝ (Zalgo / glitch),
-      and roughly 50 more — including aesthetic spaced styles like <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong> people use for Pinterest pins and Y2K-style usernames.
+      och ungefär 50 till — inklusive aesthetic-stilar med mellanrum som <strong>𝓱 𝓮 𝓵 𝓵 𝓸</strong>, som folk använder till Pinterest-pins och Y2K-inspirerade användarnamn.
     </p>
-    <h3>Where these fonts actually work (and where they don’t)</h3>
+    <h3>Var de här typsnitten faktiskt fungerar (och var de inte gör det)</h3>
     <p>
-      Compatibility varies because Unicode rendering depends on the device font, not the website. Here’s what we’ve tested:
+      Kompatibiliteten varierar eftersom Unicode-återgivning beror på enhetens typsnitt, inte på webbplatsen. Så här ser våra tester ut:
     </p>
     <ul class="compat-list">
-      <li><strong>Instagram</strong> — bio, post caption, comments, story stickers: works in every style. Username field: works only with Latin-script styles (bold, italic, cursive, bubble); won’t accept Zalgo or fullwidth.</li>
-      <li><strong>TikTok</strong> — bio, caption, comments, video description: works in all core styles. The "nickname" field is more permissive than Instagram’s username.</li>
+      <li><strong>Instagram</strong> — bio, bildtext, kommentarer, story-stickers: fungerar i alla stilar. Användarnamnsfältet: fungerar bara med stilar i latinsk skrift (fet, kursiv, skrivstil, bubbla); accepterar inte Zalgo eller fullwidth.</li>
+      <li><strong>TikTok</strong> — bio, caption, kommentarer, videobeskrivning: fungerar i alla grundstilar. Fältet för smeknamn är mer tillåtande än Instagrams användarnamn.</li>
       <li><strong>Discord</strong> — server nickname, display name, messages, “About me”: Unicode fonts work without Nitro. Markdown bold (<code>**text**</code>) only renders inside messages; Unicode bold renders <em>everywhere</em>, including your nickname.</li>
-      <li><strong>LinkedIn</strong> — headline, About section, post body: bold, italic and small caps render reliably. Avoid Zalgo and heavily decorated styles on a professional profile — they trigger recruiter filters and screen-reader issues.</li>
+      <li><strong>LinkedIn</strong> — rubrik, Om-avsnittet, inläggstext: fet, kursiv och small caps återges pålitligt. Undvik Zalgo och tungt dekorerade stilar på en professionell profil — de triggar rekryterarfilter och skapar problem för skärmläsare.</li>
       <li><strong>WhatsApp</strong> — status, group names, broadcasts: all Unicode fonts work. WhatsApp’s own <code>*bold*</code>, <code>_italic_</code> and <code>~strike~</code> only render inside chat messages, so Unicode is the only option for status and group names.</li>
-      <li><strong>X (Twitter)</strong> — display name, bio, tweets: works everywhere. Some Zalgo styles get visually clipped on mobile.</li>
-      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong> — bios, captions, messages: all work.</li>
-      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — display names usually accept bold/italic/gothic. Each platform’s name filter rejects different characters — try a different style if one is blocked.</li>
-      <li><strong>Email subject lines</strong> (Gmail, Outlook, Apple Mail) — render Unicode fonts as written. This is the one place where there is no rich-text alternative.</li>
+      <li><strong>X (Twitter)</strong> — visningsnamn, bio, inlägg: fungerar överallt. Vissa Zalgo-stilar klipps av visuellt i mobilen.</li>
+      <li><strong>Snapchat, Pinterest, Telegram, Signal, iMessage</strong> — bios, bildtexter, meddelanden: allt fungerar.</li>
+      <li><strong>Roblox, Steam, Minecraft, Fortnite</strong> — visningsnamn accepterar oftast fet/kursiv/gotisk. Varje plattforms namnfilter avvisar olika tecken — testa en annan stil om en blockeras.</li>
+      <li><strong>Ämnesrader i mejl</strong> (Gmail, Outlook, Apple Mail) — återger Unicode-typsnitt precis som de skrivs. Det här är det enda stället där det inte finns något alternativ med formaterad text.</li>
       <li><strong>Won’t work:</strong> Microsoft Word, Google Docs body text styling (use the built-in toolbar instead), printed documents with non-Unicode fonts, and anywhere the recipient’s device is missing the glyph (rare on phones made after 2018).</li>
     </ul>
-    <h3>Why Unicode fonts ≠ regular fonts</h3>
+    <h3>Varför Unicode-typsnitt ≠ vanliga typsnitt</h3>
     <p>
-      A regular font (Helvetica, Arial, the LinkedIn Sans typeface, etc.) is a file that lives on your device and tells the screen how to draw a letter. If the website doesn’t load that font, the letter still says "A" — it just gets drawn in a default font instead. Unicode “fonts” aren’t fonts at all in that sense. They’re separate characters in the Unicode standard — A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ are all different characters with different code points. That’s why they travel: you’re not styling the letter A, you’re using a different letter entirely that happens to look styled.
+      Ett vanligt typsnitt (Helvetica, Arial, LinkedIn Sans och så vidare) är en fil som ligger på din enhet och talar om för skärmen hur en bokstav ska ritas. Om webbplatsen inte laddar det typsnittet står det fortfarande "A" — bokstaven ritas bara i ett standardtypsnitt i stället. Unicode-”typsnitt” är inte typsnitt alls i den meningen. De är egna tecken i Unicode-standarden — A, 𝐀, 𝘈, 𝓐, 𝔄, 𝕬, Ⓐ är alla olika tecken med olika kodpunkter. Det är därför de följer med: du formaterar inte bokstaven A, du använder en helt annan bokstav som råkar se formaterad ut.
     </p>
-    <h3>What’s in the library</h3>
+    <h3>Vad som finns i biblioteket</h3>
     <p>
-      About 65 styles across twelve families: <strong>bold</strong> (sans, serif, italic-bold), <strong>italic</strong>, <strong>cursive / script</strong> (regular and bold), <strong>gothic / fraktur</strong>, <strong>bubble</strong> (filled, light, tiles, curly, angle, spaced, and more — 12 variants), <strong>strikethrough</strong> (slash, tilde, short, long), <strong>underline</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps and superscript</strong>, <strong>aesthetic / spaced</strong>, <strong>upside-down + mirror + backwards</strong>, <strong>Zalgo (glitch)</strong>, and a ten-style <strong>text decorator</strong> that auto-brackets each word with symbols. Stack two styles together with one click, or wrap the whole result in a frame, divider, arrow, emoji or flag.
+      Ungefär 65 stilar i tolv familjer: <strong>fet</strong> (sans, serif, fet kursiv), <strong>kursiv</strong>, <strong>skrivstil</strong> (vanlig och fet), <strong>gotisk / fraktur</strong>, <strong>bubbla</strong> (fylld, tunn, rutor, rundad, vinklad, med mellanrum och fler — 12 varianter), <strong>genomstruken</strong> (snedstreck, tilde, kort, lång), <strong>understruken</strong>, <strong>monospace / fullwidth</strong>, <strong>small caps och upphöjd text</strong>, <strong>aesthetic / med mellanrum</strong>, <strong>upp-och-ner + spegelvänd + baklänges</strong>, <strong>Zalgo (glitch)</strong>, och en <strong>textdekorator</strong> i tio stilar som automatiskt ramar in varje ord med symboler. Lägg två stilar på varandra med ett klick, eller svep in hela resultatet i en ram, avdelare, pil, emoji eller flagga.
     </p>
   </section>
 
@@ -462,30 +462,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section">
     <h2 data-i18n="useCases.title">Vad folk använder snygg text till</h2>
     <div class="tips-grid">
-      <a class="tip-card" href="/usecase/linkedin-headline/" aria-label="LinkedIn headline font generator">
+      <a class="tip-card" href="/usecase/linkedin-headline/" aria-label="Typsnittsgenerator för LinkedIn-rubriker">
         <div class="tip-icon">💼</div>
         <h3 data-i18n="useCases.items.0.title">Instagram-bio, namn och captions</h3>
         <p data-i18n="useCases.items.0.description">Gör din bio eller ditt visningsnamn mer personligt med skrivstil, fet text, fina bokstäver och diskreta symboler som går att klistra in direkt.</p>
       </a>
-      <a class="tip-card" href="/usecase/comment-font/" aria-label="Comment fonts for Instagram, YouTube and TikTok">
+      <a class="tip-card" href="/usecase/comment-font/" aria-label="Typsnitt för kommentarer på Instagram, YouTube och TikTok">
         <div class="tip-icon">💬</div>
         <h3 data-i18n="useCases.items.1.title">TikTok-captions som syns</h3>
         <p data-i18n="useCases.items.1.description">Ge första raden mer drag med fet, kursiv eller aesthetic text så att din caption sticker ut utan att bli svårläst.</p>
       </a>
-      <a class="tip-card" href="/usecase/vertical-text/" aria-label="Vertical and stacked text generator">
+      <a class="tip-card" href="/usecase/vertical-text/" aria-label="Generator för vertikal och staplad text">
         <div class="tip-icon">↕️</div>
         <h3 data-i18n="useCases.items.2.title">Discord, Roblox och gaming-namn</h3>
         <p data-i18n="useCases.items.2.description">Byt stil på ditt display name, servernamn eller gamertag med gotiska bokstäver, bubbeltext, small caps eller glitch-effekter. Ingen app, inget Nitro.</p>
       </a>
-      <a class="tip-card" href="/discord/" aria-label="Discord font generator">
+      <a class="tip-card" href="/discord/" aria-label="Typsnittsgenerator för Discord">
         <div class="tip-icon">🎮</div>
         <h3 data-i18n="useCases.items.3.title">Skrivstil och vertikal text</h3>
         <p data-i18n="useCases.items.3.description">Skapa gammaldags skrivstil, staplad text och dekorativa radbrytningar för profiler, grupper, pins och meddelanden.</p>
       </a>
-      <a class="tip-card" href="/usecase/zalgo-text/" aria-label="Zalgo glitch text generator">
+      <a class="tip-card" href="/usecase/zalgo-text/" aria-label="Zalgo-generator för glitch-text">
         <div class="tip-icon">👻</div>
-        <h3>Zalgo &amp; cursed glitch text</h3>
-        <p>Corrupt any text with stacked Unicode marks — one-click presets from subtle to full chaos, a "will it fit?" check for Discord and X limits, plus a decoder that un-zalgos text back to normal.</p>
+        <h3>Zalgo och förvrängd glitch-text</h3>
+        <p>Förvräng vilken text som helst med staplade Unicode-tecken — färdiga nivåer från diskret till fullt kaos, en "får det plats?"-koll mot teckengränserna på Discord och X, plus en avkodare som återställer texten.</p>
       </a>
     </div>
     <p class="u-mt-15 u-text-center"><a class="cat-cta" href="/usecase/" data-i18n="useCases.viewAll">Visa alla användningsfall -&gt;</a></p>
@@ -495,17 +495,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <section class="editorial-section">
     <h2 data-i18n="guides.title">Populära guider</h2>
     <div class="tips-grid">
-      <a class="tip-card" href="/guide/the-rhetoric-of-fonts/" aria-label="The Rhetoric of Fonts guide">
+      <a class="tip-card" href="/guide/the-rhetoric-of-fonts/" aria-label="Guide: typsnittens retorik">
         <div class="tip-icon">📚</div>
         <h3 data-i18n="guides.items.0.title">Vilket typsnitt passar vilken känsla?</h3>
         <p data-i18n="guides.items.0.description">Lätt, elegant, tydligt eller edgy: lär dig välja Unicode-stil efter bio, caption, rubrik eller namn.</p>
       </a>
-      <a class="tip-card" href="/guide/personal-branding-through-typography/" aria-label="Personal Branding Through Typography guide">
+      <a class="tip-card" href="/guide/personal-branding-through-typography/" aria-label="Guide: personligt varumärke med typografi">
         <div class="tip-icon">🎨</div>
         <h3 data-i18n="guides.items.1.title">Personligt varumärke med typografi</h3>
         <p data-i18n="guides.items.1.description">Skapa en igenkännbar stil i alla sociala kanaler utan att behöva bilder, appar eller specialfonter.</p>
       </a>
-      <a class="tip-card" href="/guide/stop-the-scroll-with-font-variation/" aria-label="Stop the Scroll With Font Variation guide">
+      <a class="tip-card" href="/guide/stop-the-scroll-with-font-variation/" aria-label="Guide: stoppa scrollen med textvariation">
         <div class="tip-icon">📱</div>
         <h3 data-i18n="guides.items.2.title">Stoppa scrollen med textvariation</h3>
         <p data-i18n="guides.items.2.description">Se hur små skillnader i fet, kursiv, small caps och symboler kan göra en rad mer synlig i flödet.</p>
@@ -516,30 +516,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <!-- Popular Categories -->
   <section class="editorial-section">
-    <h2>Popular font categories</h2>
+    <h2>Populära typsnittskategorier</h2>
     <div class="tips-grid">
-      <a class="tip-card" href="/category/bold-fonts/" aria-label="Bold font generator">
+      <a class="tip-card" href="/category/bold-fonts/" aria-label="Generator för fet text">
         <div class="tip-icon">🅱️</div>
-        <h3>Bold (𝗕𝗼𝗹𝗱 / 𝐁𝐨𝐥𝐝)</h3>
-        <p>The most-used style on the site. Sans and serif variants, plus bold-italic. Use it for the first line of a LinkedIn post, the hook in an Instagram caption, or to make a single word in a paragraph carry weight.</p>
+        <h3>Fet (𝗕𝗼𝗹𝗱 / 𝐁𝐨𝐥𝐝)</h3>
+        <p>Den mest använda stilen på sajten. Varianter i sans och serif, plus fet kursiv. Använd den till första raden i ett LinkedIn-inlägg, kroken i en Instagram-caption, eller för att ge ett enskilt ord tyngd i ett stycke.</p>
       </a>
-      <a class="tip-card" href="/category/cursive-fonts/" aria-label="Cursive and script font generator">
+      <a class="tip-card" href="/category/cursive-fonts/" aria-label="Generator för skrivstil">
         <div class="tip-icon">✍️</div>
-        <h3>Cursive &amp; script (𝓒𝓾𝓻𝓼𝓲𝓿𝓮)</h3>
-        <p>Two flowing script variants. People paste these into Instagram bios, Pinterest pin titles, wedding-y captions, and aesthetic usernames. Bold script reads better at small sizes — use it on TikTok.</p>
+        <h3>Skrivstil (𝓒𝓾𝓻𝓼𝓲𝓿𝓮)</h3>
+        <p>Två flytande skrivstilsvarianter. Folk klistrar in dem i Instagram-bios, rubriker på Pinterest-pins, bröllopsaktiga bildtexter och aesthetic-användarnamn. Fet skrivstil är lättare att läsa i små storlekar — använd den på TikTok.</p>
       </a>
-      <a class="tip-card" href="/category/gothic-fonts/" aria-label="Gothic and fraktur font generator">
+      <a class="tip-card" href="/category/gothic-fonts/" aria-label="Generator för gotisk text och fraktur">
         <div class="tip-icon">🖤</div>
-        <h3>Gothic / fraktur (𝔊𝔬𝔱𝔥𝔦𝔠)</h3>
-        <p>Old-English / Fraktur letterforms. Common in gaming clan tags, metal/horror branding, dark academia bios, and Discord display names. Looks heaviest at large sizes — pair with one decorative symbol, not five.</p>
+        <h3>Gotisk / fraktur (𝔊𝔬𝔱𝔥𝔦𝔠)</h3>
+        <p>Bokstavsformer i old english/fraktur. Vanliga i clan-taggar inom gaming, metal- och skräckestetik, dark academia-bios och visningsnamn på Discord. Ser tyngst ut i stora storlekar — kombinera med en dekorativ symbol, inte fem.</p>
       </a>
-      <a class="tip-card" href="/category/bubble-fonts/" aria-label="Bubble and aesthetic font generator">
+      <a class="tip-card" href="/category/bubble-fonts/" aria-label="Generator för bubbeltext och aesthetic">
         <div class="tip-icon">🫧</div>
-        <h3>Bubble &amp; aesthetic (🅑🅤🅑🅑🅛🅔)</h3>
-        <p>12 bubble variants plus aesthetic spaced styles. Top pick for Y2K, kidcore, and "aesthetic font copy and paste" energy on TikTok, Pinterest, and Tumblr. Filled-bubble has the widest device support; the rest can break on older Android.</p>
+        <h3>Bubbla &amp; aesthetic (🅑🅤🅑🅑🅛🅔)</h3>
+        <p>12 bubbelvarianter plus aesthetic-stilar med mellanrum. Förstahandsvalet för Y2K, kidcore och den där "aesthetic font copy and paste"-känslan på TikTok, Pinterest och Tumblr. Fylld bubbla har bredast enhetsstöd; övriga kan gå sönder på äldre Android.</p>
       </a>
     </div>
-    <p class="u-mt-15 u-text-center"><a class="cat-cta" href="/category/">Browse all font categories →</a></p>
+    <p class="u-mt-15 u-text-center"><a class="cat-cta" href="/category/">Se alla typsnittskategorier →</a></p>
   </section>
 
   <!-- Popular Library References -->
@@ -556,32 +556,32 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <h3>Stjärnsymboler</h3>
         <p>Stjärnor, gnistertecken och asterisk-varianter i Unicode — plus färdiga betygsstjärnor och bio-dekorationer. Klicka på en symbol för att kopiera den direkt.</p>
       </a>
-      <a class="tip-card" href="/library/aesthetic-symbols/" aria-label="Aesthetic symbols library">
+      <a class="tip-card" href="/library/aesthetic-symbols/" aria-label="Bibliotek med aesthetic-symboler">
         <div class="tip-icon">✦</div>
-        <h3>Aesthetic symbols</h3>
-        <p>Coquette, Y2K, kawaii and soft decorative characters for usernames, bios and captions. Tap any symbol to copy it instantly.</p>
+        <h3>Aesthetic-symboler</h3>
+        <p>Coquette, Y2K, kawaii och mjuka dekorativa tecken för användarnamn, bios och bildtexter. Tryck på en symbol för att kopiera den direkt.</p>
       </a>
-      <a class="tip-card" href="/sv/library/emoji-combos/" aria-label="Emoji combos library">
+      <a class="tip-card" href="/sv/library/emoji-combos/" aria-label="Bibliotek med emoji-kombinationer">
         <div class="tip-icon">🎀🌸✨</div>
-        <h3>Emoji combos</h3>
-        <p>100+ aesthetic emoji combos — soft girl, cottagecore, night sky, Y2K and more. Tap any combo to copy the whole set for your bio, caption or username.</p>
+        <h3>Emoji-kombinationer</h3>
+        <p>100+ aesthetic emoji-kombinationer — soft girl, cottagecore, natthimmel, Y2K och mer. Tryck på en kombination för att kopiera hela seten till din bio, bildtext eller ditt användarnamn.</p>
       </a>
-      <a class="tip-card" href="/sv/library/y2k-symboler/" aria-label="Y2K symbols library">
+      <a class="tip-card" href="/sv/library/y2k-symboler/" aria-label="Bibliotek med Y2K-symboler">
         <div class="tip-icon">✦♱🦋</div>
-        <h3>Y2K symbols</h3>
-        <p>80+ Y2K aesthetic symbols — sparkle stars, gothic crosses, butterflies, CDs and cyber glyphs. Tap any symbol or combo to copy it straight into a bio or caption.</p>
+        <h3>Y2K-symboler</h3>
+        <p>80+ Y2K-symboler — gnistrande stjärnor, gotiska kors, fjärilar, cd-skivor och cybertecken. Tryck på en symbol eller kombination för att kopiera den rakt in i en bio eller bildtext.</p>
       </a>
-      <a class="tip-card" href="/library/special-characters/" aria-label="Special characters library">
+      <a class="tip-card" href="/library/special-characters/" aria-label="Bibliotek med specialtecken">
         <div class="tip-icon">✧</div>
-        <h3>Special characters</h3>
-        <p>Unusual Unicode symbols, fancy punctuation and rare glyphs for names, design and formatting — a quick reference you can copy from in one tap.</p>
+        <h3>Specialtecken</h3>
+        <p>Ovanliga Unicode-symboler, snygga skiljetecken och sällsynta glyfer för namn, design och formatering — en snabbreferens du kan kopiera från med ett tryck.</p>
       </a>
     </div>
     <p class="u-mt-15 u-text-center"><a class="cat-cta" href="/sv/library/">Se hela symbol- och emoji-biblioteket →</a></p>
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq-section-wrapper" aria-label="Frequently asked questions">
+  <section class="faq-section-wrapper" aria-label="Vanliga frågor">
     <div class="faq-inner">
 
 <!-- Basics -->
