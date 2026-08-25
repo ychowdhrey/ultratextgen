@@ -1294,6 +1294,55 @@ pairs, and deleting one peer card from a locale symbol page flags that pair.
 gained a currency-symbols translation. The probe still works; the expected
 count moves as the site grows.)*
 
+### The fingerprint must measure content, not metadata (added 2026-08-21)
+
+Two defects in `scripts/lib/content-fingerprint.js` made the parity gate report
+**repairs as drift**. Together they flagged 24 pairs in one PR, none of which had
+actually diverged. Both are the same failure as the two carve-outs above — the
+proxy inverting on a legitimate repair — so read them as a third instance of that
+pattern, not a new one.
+
+**1. `faqCount` counted JSON-LD questions, which is metadata, not content.** The
+two routinely disagree: this file names the stale-schema case (visible FAQ edited,
+JSON-LD left behind) as the more common FAQ failure mode, and the site once
+carried 214 pages of it at once. So backfilling `category/underline-text`'s
+JSON-LD from 10 questions to the **24 its page had been rendering all along**
+changed no page copy whatsoever, yet moved `faqCount` by 14 and flagged all 10 of
+its locale siblings — whose real gap against it had not moved by one item.
+
+Worse, it set two gates in this repo against each other: `check-faq-schema`
+*requires* the JSON-LD to match the visible FAQ, and paying that debt cost you a
+red parity check. The incentive pointed at leaving the schema stale.
+
+It now counts rendered `.faq-item` elements, which covers both house variants (the
+JS-bound `div` accordion and the JS-free `details` disclosure). **No-op for 2,813
+of the 2,871 FAQ-bearing pages** — the 58 that differ are precisely the stale ones.
+A page shipping orphan schema now counts 0 here; that defect belongs to
+`check-faq-schema.js`, which owns and gates on it. Verified the division holds:
+a JSON-LD-only question added to `symbol/euro-sign` is **ignored by parity** (no
+content moved) and **caught by `check-faq-schema`** (exit 1) in the same run.
+
+**2. `score()` treated its three count axes as booleans**, so a page 20 sections
+short of its sibling scored the same `1` as a page short by one. That silently
+broke the convergence carve-out above on those axes: a page catching up could only
+register as converged by landing **exactly** equal, so every partial step read as
+no movement at all. Both genuine cases in that PR were exactly this —
+`tr/symbol/dolar-isareti` porting in the "why $ shows up outside pricing" section
+its EN parent already had (h2 gap 3→2, tiles 5→4), and
+`ru/library/html-spetssimvoly` deleting an empty section its EN parent never had
+(h2 gap 2→1). Both moved toward their sibling; both were reported as moving away.
+Magnitudes fix it; convergence still requires a strict decrease, so trading one
+divergence for another still nets non-negative.
+
+Verified per this file's own rule ("Adding a validator script is not the same as
+gating on it") against four probes, each on a page **outside the branch's changed
+set** — that scoping matters, and getting it wrong reads as a false green: the
+first attempt probed pages the branch had already touched, where a touched sibling
+legitimately counts as the sync, and all three came back exit 0. On clean pages:
+adding a `/library/currency-symbols/` link to `/discord/` flags 7; removing a peer
+card from `fr/symbol/symbole-euro` flags 1; adding an h2 section EN lacks flags 1;
+adding a **visible** FAQ item to `symbol/euro-sign` flags 16.
+
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
 classifies a *page type* whose link list is an inventory. Adding a pattern to
@@ -1870,6 +1919,21 @@ first real run also found the pipefail bug live in a *second* workflow,
 `css-audit.yml`, which had been reporting success regardless of what
 `audit-css.js` found; fixed in the same change.
 
+**A third rule, added 2026-08-22 after shipping the bug it catches.** In a
+double-quoted bash string a backtick is **command substitution**. A step-summary
+line written as ``echo "### Check — `${{ steps.x.outcome }}`"`` makes bash try to
+*run* the expanded value: the log records `success: command not found` and the
+summary renders an empty value where the outcome should be. That shipped on the
+`zalgo-decodes` summary line — every neighbouring line escaped its backticks as
+`` \` `` and only the new one did not, so the job stayed green while its own
+summary under-reported. Same family as the two incidents above: the failure was
+in the reporting layer, where nothing was watching.
+
+The rule is scoped to a backtick touching a `${{ }}` expression, because you can
+never usefully command-substitute one — so there are no legitimate hits, and
+ordinary command substitution elsewhere is left alone. Verified by re-injecting
+the exact line that shipped: exit 1, naming the file, job, step and line.
+
 ---
 
 ## Build & Development
@@ -1968,7 +2032,7 @@ silently return is the tooling below, not vigilance.
   check. Diff-scoped like `check-translation-parity.js`: it only inspects
   HTML this PR adds or changes, so pre-existing backlog elsewhere can never
   make it permanently red. Fails the PR listing the exact unmatched
-  questions.
+  questions **and** the answers that drifted (see below).
 - **`node scripts/fix-faq-schema-visibility.js`** — the repair pass, kept
   because the same two repairs apply every time this recurs. `--dry-run`
   reports; `--write` applies; a file list scopes it. It renders the schema's
@@ -1978,6 +2042,56 @@ silently return is the tooling below, not vigilance.
   text is the page's own.
 - All three share `scripts/lib/faq-schema-audit.js`, so the audit, the gate
   and the fixer can never disagree about what counts as "visible."
+
+**The gate only ever checked half the rule (fixed 2026-08-21).** The rule above
+has two halves — questions must be visible, and an answer must not claim content
+the page never renders — and only the first was enforced. The shared lib did
+compute an answer comparison, but `check-faq-schema.js` never read it, so the
+answer half was **present, documented, and dead**. That is the same shape as the
+two `validate.yml` incidents above: *a check that reports nothing is
+indistinguishable from a check that passes.*
+
+It was found the way it had to be found — by shipping the defect. A correction
+pass on `updates/unicode-18-most-anticipated-emoji` appended one sentence to a
+JSON-LD answer ("See our Unicode 18.0 Release Date Confirmed update…") that the
+visible answer never got. The gate reported `mismatched: 0`; a review agent
+caught it by reading the page.
+
+**It measures the delta, not the state** — the same design as
+`check-locale-translation.js`, and adopted for the same measured reason. A
+state check is not viable here: the site carries **923 drifted answer pairs
+across 336 files** (measured 2026-08-21; ≥5 tokens still leaves 310, ≥12 leaves
+38). Almost all of it is benign rewording where a translator tightened a
+sentence. A gate red on 336 files regardless of the PR is a gate people learn to
+ignore. So a pair counts against a branch only if its divergence **grew by
+`DRIFT_TOLERANCE` (4) content tokens or more** since the merge base — roughly a
+clause; the real regression added 5. Pre-existing drift is **reported, never
+silenced**: the clean run on the branch that added this printed 0 introduced and
+21 pre-existing, exit 0.
+
+**The measurement is direction-neutral, which matters**, because CLAUDE.md names
+the *stale-schema* half — visible FAQ rewritten, JSON-LD left alone — as the more
+common failure. Both edits produce the same observable: schema tokens with no
+home in the visible answer. The failure message says so rather than assuming the
+JSON-LD is what moved.
+
+**`visibleAnswers()` deliberately reads "the FAQ item's text minus its question"
+rather than selecting `.faq-answer`.** Selecting the class reports **97 answers
+across 21 pages as blank**, because those pages carry invalid nested markup —
+`<p class="faq-answer"><p>…</p></p>`, which every parser auto-closes, leaving the
+`.faq-answer` element genuinely empty. That markup bug is real and still
+outstanding; it is not this gate's job, and the gate must not be fooled by it.
+
+Verified per this file's own rule before being trusted (see "Adding a validator
+script is not the same as gating on it"), against **two differently-shaped**
+broken inputs so the check could not be tuned to one bug: the real regression
+re-injected on `updates/unicode-18-most-anticipated-emoji` (JSON-LD grew a
+sentence), and a visible answer trimmed on `category/underline-text` with its
+JSON-LD left stale (0 → 16 tokens). Both exit 1; `audit-faq-schema.js` and
+`fix-faq-schema-visibility.js` are unaffected. Note for anyone repeating this:
+**do not pipe the run through `grep` to read the result** — `$?` is then grep's
+status, which is the exact pipefail trap this file documents twice, and it
+reported a false EXIT=0 on the first attempt here.
 
 ---
 
@@ -2013,6 +2127,49 @@ not.
 Do not add a test framework unless explicitly requested. Adding another
 zero-dependency `.test.js` / `.test.html` in the idiom above is not "adding a
 framework" and needs no permission.
+
+### Zalgo example cards must decode back to their own label (added 2026-08-22)
+
+`usecase/zalgo-text` and its eleven locale siblings each show six copy-paste
+example cards, with the page's own **unzalgo** widget directly below them. That
+widget strips combining marks **by codepoint range** (`zalgo-text.js`) — it does
+not decompose. So a card only works while its marks are stored as *base +
+combining mark*.
+
+**Every zalgo string on this site is therefore NFC-fragile, by construction.**
+Run any tool that NFC-normalises these files and 69 of them compose into
+different letters at once — `A`+U+0328 becomes the single codepoint `Ą`, and no
+range-strip can ever undo it. That already happened to EN and IT: twelve cards
+decoded to `ZĄLGO`, `hellō`, `çiao`, `incȕbó`, each sitting immediately above the
+box that claimed to reverse it. Nothing caught it — the markup was valid, the
+strings looked like zalgo, and no check compared a card to its own label.
+
+The inversion worth remembering: the pages that **work** are NFC-*unstable*, and
+the pages that were **broken** were NFC-*stable*. Being NFC-stable is the symptom.
+A generation pass that "helpfully" requires NFC-stable output will reject every
+correct string — verified, it rejected all 4,000 candidates on the first attempt.
+
+**`npm run check:zalgo-decodes`** (`scripts/check-zalgo-decodes.js`) is the
+tripwire, wired into `.github/workflows/validate.yml` as a **gating** step. It
+gates rather than informs — unlike the whole-site image and peer-link audits —
+because it has no backlog to be permanently red against: a card either decodes
+or it does not, and all 72 do. It fails on two shapes: a card that decodes to
+anything other than its label, and a card carrying **no combining marks at all**
+(a plain word passes a decode test trivially — that gap was found by probing the
+check itself, not by reasoning).
+
+**Never hand-type or hand-edit a zalgo string.** Generate it with the page's own
+`generateZalgo()`, sliced out of the live `zalgo-text.js` rather than
+reimplemented, and accept a candidate only if stripping the decoder's own ranges
+returns the label *and* every codepoint is either one of the generator's marks or
+the next base character in order. Match the card's existing mark density —
+the six cards are a deliberate light-to-heavy gradient (≈1.8 marks/char up to 17),
+not uniform.
+
+Verified per this file's own rule before being trusted, against two
+differently-shaped broken inputs: NFC-normalising one EN card (the real
+regression) exits 1 naming it, and replacing a `ru` card with the plain word
+exits 1 as unmarked.
 
 ---
 
@@ -2092,6 +2249,11 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
+  page's unzalgo widget strips marks by codepoint range and cannot undo a
+  precomposed character, so composition silently breaks the card against the
+  very widget below it. See "Zalgo example cards must decode back to their own
+  label" above. `npm run check:zalgo-decodes` gates this in CI.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable

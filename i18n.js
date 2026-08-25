@@ -19,9 +19,21 @@
     }, obj);
   }
 
+  // detectLang() reads the lowercased URL path segment, so a region subtag
+  // comes back as "zh-tw" while the page's own markup (and every canonical/
+  // hreflang reference to it) uses the conventional "zh-TW". BCP-47 is
+  // case-insensitive, but rewriting a live lang attribute is still a change
+  // nobody asked for — so keep the document's own casing whenever it differs
+  // only by case.
+  function setDocumentLang(lang) {
+    var current = document.documentElement.lang || "";
+    if (current && current.toLowerCase() === String(lang).toLowerCase()) return;
+    document.documentElement.lang = lang;
+  }
+
   function applyTranslations(lang, t) {
     // Set html lang + direction attributes
-    document.documentElement.lang = lang;
+    setDocumentLang(lang);
     applyDir(lang);
 
     // Update <title> via data-i18n on the title element
@@ -130,19 +142,26 @@
     var lang = detectLang();
 
     // Always set html lang + direction attributes
-    document.documentElement.lang = lang;
+    setDocumentLang(lang);
     applyDir(lang);
 
     markActiveLang(lang);
 
     if (lang === "en") return; // English is already in the HTML
 
-    // Only fetch a translation file for locales that actually ship one. The
-    // prerendered "shadow" locales (ko, hi, zh-tw), the hu stub, and fi (same
-    // static-HTML pattern as hu — see fi/index.html) have no /locales/<lang>.json,
-    // so their pages already carry translated HTML and only needed the lang/dir
-    // attributes set above — skip the fetch that would 404.
-    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro"];
+    // Only fetch a translation file for locales that actually ship one.
+    //
+    // The prerendered "shadow" locales (ko, hi, zh-tw, hu, fi) carry fully
+    // translated HTML and no data-i18n attributes, so they long skipped this
+    // fetch entirely. That left a real gap: every control script.js *injects*
+    // at runtime — Copy, Save, Share, the scope row, safe mode, saved styles,
+    // the safety badges — reads window.UTG_I18N, which only this fetch
+    // populates. A Korean page therefore rendered Korean prose with English
+    // buttons on it. They now ship a UI-only /locales/<lang>.json (see that
+    // file's own _readme) purely to fill that object; because those pages
+    // declare no data-i18n hooks, applyTranslations() cannot touch their
+    // prerendered copy.
+    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "ko", "hi", "zh-tw", "hu", "fi"];
     if (withRuntimeJson.indexOf(lang) === -1) return;
 
     fetch("/locales/" + lang + ".json")

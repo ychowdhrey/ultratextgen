@@ -23,6 +23,9 @@
   "use strict";
 
   const Render = window.UltraTextGenRender;
+  /* Shared namespace owned by script.js — result sharing lives there so every
+     generator uses one implementation (script.js loads before this file). */
+  const UTG = window.UltraTextGen || {};
   const stylesRegistry = window.textStyles || {};
   const DATA = window.UTG_SCROLL_DATA;
   const B = window.UTG_SCROLL_BUILDERS;
@@ -183,6 +186,25 @@
       "↕ = longer than that field's limit, so it overflows the fixed-height box and scrolls. Counts are approximate and use the plain (unstyled) text."));
   }
 
+  /* Result sharing — id is the style's own registry slug ("normal" for the
+     unstyled card), matching every other generator. Page state rides along so
+     the link reopens this exact arrangement. */
+  function shareIdFor(name) {
+    let style = stylesRegistry[name];
+    return (style && style.slug) || (name ? String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-") : "");
+  }
+
+  function shareParams() {
+    return {
+      mode: "bio",
+      divider: currentDivider ? currentDivider.id : "",
+      rep: repeatMode,
+      n: repeatMode === "count" ? repeatCount : "",
+      fill: repeatMode === "fill" ? fillPlatformId : "",
+      join: joinMode
+    };
+  }
+
   function buildBioCard(name, text) {
     let card = el("div", "style-card scroll-style-card");
     let info = el("div", "style-info");
@@ -199,9 +221,30 @@
     btn.dataset.text = text;
     btn.dataset.style = name;
     if (!text) btn.disabled = true;
-    info.appendChild(btn);
+
+    /* Copy + Share share one action row — these cards carry no Save button,
+       so the core generator's triangle reduces to a pair here. */
+    let actions = el("div", "result-share-row");
+    actions.appendChild(btn);
+    info.appendChild(actions);
+
+    /* Result-level Share, built by the shared factory in script.js. The
+       creation is this bio's own text plus the divider/repeat/join settings
+       that produced it, so a shared link rebuilds the same block. The input
+       lives in #scrollBioInput, not #mainInput, so it is stamped explicitly. */
+    let shareId = shareIdFor(name);
+    if (UTG && UTG.buildShareButton) {
+      actions.appendChild(UTG.buildShareButton({
+        styleId: shareId,
+        name: name,
+        input: (($("#scrollBioInput") || {}).value || ""),
+        params: shareParams(),
+        disabled: !text
+      }));
+    }
 
     card.appendChild(info);
+    if (UTG && UTG.markSharedCard) UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -226,6 +269,8 @@
       seen[styled] = true;
       items.push({ name: name, text: styled });
     });
+
+    if (UTG && UTG.revealSharedCard) setTimeout(function () { UTG.revealSharedCard(grid); }, 0);
 
     items.slice(0, INITIAL_CARDS).forEach(function (item) {
       grid.appendChild(buildBioCard(item.name, item.text));
@@ -602,6 +647,38 @@
       let text = params.get("text") || params.get("q");
       let input = $("#scrollBioInput");
       if (text && input && !input.value) input.value = text;
+
+      /* Arrangement state from a result-level share link. Every value is
+         validated against this page's own vocabulary; anything unknown is
+         ignored and the page opens with its defaults. */
+      let divider = params.get("divider");
+      if (divider) {
+        Object.keys(DATA.DIVIDERS || {}).forEach(function (tab) {
+          (DATA.DIVIDERS[tab] || []).forEach(function (d) {
+            if (d && d.id === divider) {
+              currentDivider = d;
+              currentDividerTab = tab;
+            }
+          });
+        });
+      }
+
+      let rep = params.get("rep");
+      if (rep === "count" || rep === "fill") repeatMode = rep;
+
+      let n = params.get("n");
+      if (n) {
+        let parsed = parseInt(n, 10);
+        if (parsed > 0) repeatCount = Math.min(parsed, 50);
+      }
+
+      let fill = params.get("fill");
+      if (fill && (DATA.PLATFORM_LIMITS || []).some(function (pl) { return pl.id === fill; })) {
+        fillPlatformId = fill;
+      }
+
+      let join = params.get("join");
+      if (join === "own-line" || join === "inline") joinMode = join;
     } catch (e) {}
   }
 

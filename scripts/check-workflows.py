@@ -150,6 +150,28 @@ def check_file(path):
                       f"reports success whenever the LAST command in the pipe succeeds "
                       f"(e.g. `| tee`). Add `defaults: {{run: {{shell: bash}}}}` to the job.")
 
+            # --- unescaped backtick around a ${{ }} expression --------------
+            # In a double-quoted bash string a backtick is COMMAND SUBSTITUTION.
+            # Writing  echo "### Check — `${{ steps.x.outcome }}`"  in a step
+            # summary makes bash try to RUN the expanded value: the log shows
+            # `success: command not found` and the summary renders an empty
+            # value where the outcome should be. Shipped exactly once, on the
+            # zalgo-decodes summary line, 2026-08-22 — every neighbouring line
+            # correctly escaped them as \` and only the new one did not, so the
+            # summary quietly under-reported while the job stayed green.
+            # Scoped deliberately to a backtick touching a ${{ }} expression:
+            # you can never usefully command-substitute one, so there are no
+            # legitimate hits, and real command substitution is left alone.
+            if isinstance(run, str):
+                for ln in run.splitlines():
+                    if re.search(r"(?<!\\)`\s*\$\{\{", ln) or re.search(r"\}\}\s*(?<!\\)`", ln):
+                        J(f"{label}: unescaped backtick next to a ${{{{ }}}} expression — "
+                          f"bash reads it as command substitution and tries to RUN the "
+                          f"expanded value (`success: command not found`), leaving the "
+                          f"rendered output blank. Escape them as \\` like the "
+                          f"surrounding lines. Offending line: {ln.strip()[:90]}")
+                        break
+
             # --- swallowed failures ----------------------------------------
             if step.get("continue-on-error") is True:
                 sid = step.get("id")

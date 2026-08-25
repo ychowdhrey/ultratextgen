@@ -130,6 +130,17 @@ LANE_RULES = [
 # "Core JS" rule above) is never miscaptured.
 LOCALE_DIR_RE = re.compile(r"^[a-z]{2}(-[a-z]{2})?/")
 
+# Search-engine site-ownership verification stub files, dropped at the repo
+# root by each engine's HTML-file-upload method (Google, Naver, Yandex, ...).
+# First seen 2026-08-22: `naverfc08aab480545cfd1d61489b3536a5e6.html` (PR
+# #793) surfaced as this week's only Unclassified signal. These aren't a new
+# lane — they're the same "Root pages" bucket as favicon.ico/robots.txt, just
+# with an engine-generated filename instead of an enumerable one, so a
+# pattern rule (not another one-off entry per engine) is the fix — same
+# reasoning as LOCALE_DIR_RE below. See docs/README.md's "Search-engine
+# webmaster verification" operational-tracks row.
+ROOT_VERIFICATION_RE = re.compile(r"^[a-z]+[0-9a-f]{12,}\.html$")
+
 # A lane label used when no rule matched any of a PR's files. These are the
 # signal the review is looking for: work that doesn't fit a known lane.
 UNCLASSIFIED = "Unclassified — possible new lane (signal!)"
@@ -146,6 +157,8 @@ def classify_paths(paths):
                 break
         if not matched and LOCALE_DIR_RE.match(p):
             matched = "i18n"
+        if not matched and "/" not in p and ROOT_VERIFICATION_RE.match(p):
+            matched = "Root pages"
         lanes.add(matched if matched else UNCLASSIFIED)
     # If a PR touched real lanes *and* something unclassified, keep both — the
     # unclassified part is still a signal worth surfacing.

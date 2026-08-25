@@ -1816,6 +1816,114 @@
       "localeUrl": "https://ultratextgen.com/id/library/simbol-kurung/",
       "reason": "PR #787 (2026-08-19) added an FAQ item confirming \"kurung aesthetic\"/\"simbol kurung aesthetic\" as real Indonesian search phrasing for decorative brackets, backed by GSC query data. Indonesian-search-phrasing clarification with no English equivalent question. Not synced to the EN parent.",
       "agreed": "2026-08-19"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/ar/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/da/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/es/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/id/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/it/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/ja/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/ko/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/no/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/ru/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/th/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/vi/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/zh-tw/library/",
+      "reason": "library/index.html is a catalogue index: its <h2> count is a function of how many collections that locale actually has. EN carries 336 entries across 26 letter sections (28 <h2>); the locale indexes carry 0-25 entries and 3-6 <h2>. That is the same inventory difference data/parity_catalogue_pages.json already excuses for the link set, and it is permanent and intended -- a locale catalogue must not list English-only pages. The 26 letter headings were ALWAYS <h2> at runtime; the 2026-08-20 static-directory change only moved them into the served HTML for non-JS crawlers, so the rendered page did not change. suppress.h2Delta is honoured by scripts/audit-translation-parity.js (so the whole-site audit keeps reporting any FAQ/tile drift on these pairs while ignoring the h2 gap); scripts/check-translation-parity.js matches on the pair alone, so in CI this is a full pair exception.",
+      "agreed": "2026-08-20",
+      "suppress": {
+        "h2Delta": true
+      }
     }
   ]
 }

@@ -55,6 +55,14 @@
       "shareTitle": "Del et link, der genåbner denne side med din tekst allerede udfyldt",
       "linkCopied": "Link kopieret"
     },
+    "shareResult": {
+      "label": "Del",
+      "title": "Del dette resultat — linket åbner med din tekst i denne stil",
+      "ariaLabel": "Del {style}-resultat",
+      "linkCopied": "Link kopieret",
+      "afterCopy": "Del denne stil",
+      "sharedTag": "Delt stil"
+    },
     "safeMode": {
       "label": "Indsætningssikkerhed",
       "ariaLabel": "Se hvilke stile der vises korrekt på andres enheder",

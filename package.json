@@ -7,6 +7,8 @@
     "prebuild": "node scripts/update-sitemap.js",
     "build": "cp index.html _root.html",
     "sync-readme": "node scripts/sync-readme.js",
+    "build:library-directory": "node scripts/build-library-directory.js",
+    "check:library-directory": "node scripts/build-library-directory.js --check",
     "audit:css": "node scripts/audit-css.js",
     "check:gtm": "node scripts/check-gtm.js",
     "check:ads": "node scripts/check-ads.js",
@@ -20,6 +22,7 @@
     "check:new-symbol-peer-links": "python3 scripts/check-new-symbol-peer-links.py",
     "audit:faq-schema": "node scripts/audit-faq-schema.js",
     "check:faq-schema": "node scripts/check-faq-schema.js",
+    "check:zalgo-decodes": "node scripts/check-zalgo-decodes.js",
     "audit:locale-translation": "node scripts/audit-locale-translation.js",
     "check:locale-translation": "node scripts/check-locale-translation.js",
     "audit:translation-parity": "node scripts/audit-translation-parity.js",
@@ -38,6 +41,9 @@
     "plan:library-locale": "python3 scripts/plan-library-locale-batch.py",
     "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py",
     "check:document-head": "python3 scripts/check-document-head.py",
+    "build:static-footer": "node scripts/build-static-footer.js --write",
+    "check:static-footer": "node scripts/build-static-footer.js",
+    "fix:footer-nested-content": "python3 scripts/fix-footer-nested-content.py --write",
     "check:ci-gates": "python3 scripts/run-ci-gates.py"
   },
   "dependencies": {

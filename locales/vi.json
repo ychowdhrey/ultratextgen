@@ -55,6 +55,14 @@
       "shareTitle": "Chia sẻ liên kết mở lại trang này với văn bản của bạn đã được điền sẵn",
       "linkCopied": "Đã sao chép liên kết"
     },
+    "shareResult": {
+      "label": "Chia sẻ",
+      "title": "Chia sẻ kết quả này — liên kết sẽ mở với văn bản của bạn ở kiểu chữ này",
+      "ariaLabel": "Chia sẻ kết quả {style}",
+      "linkCopied": "Đã sao chép liên kết",
+      "afterCopy": "Chia sẻ kiểu chữ này",
+      "sharedTag": "Kiểu chữ được chia sẻ"
+    },
     "safeMode": {
       "label": "An toàn khi dán",
       "ariaLabel": "Kiểm tra kiểu chữ nào hiển thị tốt trên thiết bị của người khác",

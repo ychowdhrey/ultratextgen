@@ -55,6 +55,14 @@
       "shareTitle": "Mag-share ng link na magbubukas ulit ng page na ito kasama ang naka-fill in nang teksto mo",
       "linkCopied": "Nakopya ang link"
     },
+    "shareResult": {
+      "label": "I-share",
+      "title": "I-share ang resultang ito — bubuksan ng link ang text mo sa istilong ito",
+      "ariaLabel": "I-share ang resulta ng {style}",
+      "linkCopied": "Nakopya ang link",
+      "afterCopy": "I-share ang istilong ito",
+      "sharedTag": "Ibinahaging istilo"
+    },
     "safeMode": {
       "label": "Kaligtasan sa pag-paste",
       "ariaLabel": "Tingnan kung aling mga istilo ang maayos na lumalabas sa device ng iba",

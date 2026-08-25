@@ -55,6 +55,14 @@
       "shareTitle": "Deel een link die deze pagina opnieuw opent met je tekst al ingevuld",
       "linkCopied": "Link gekopieerd"
     },
+    "shareResult": {
+      "label": "Delen",
+      "title": "Deel dit resultaat — de link opent met jouw tekst in deze stijl",
+      "ariaLabel": "Deel {style}-resultaat",
+      "linkCopied": "Link gekopieerd",
+      "afterCopy": "Deel deze stijl",
+      "sharedTag": "Gedeelde stijl"
+    },
     "safeMode": {
       "label": "Plakveiligheid",
       "ariaLabel": "Controleer welke stijlen goed weergeven op andermans apparaten",

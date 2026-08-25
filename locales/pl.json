@@ -55,6 +55,14 @@
       "shareTitle": "Udostępnij link, który ponownie otwiera tę stronę z Twoim tekstem już wpisanym",
       "linkCopied": "Link skopiowany"
     },
+    "shareResult": {
+      "label": "Udostępnij",
+      "title": "Udostępnij ten wynik — link otworzy Twój tekst w tym stylu",
+      "ariaLabel": "Udostępnij wynik {style}",
+      "linkCopied": "Link skopiowany",
+      "afterCopy": "Udostępnij ten styl",
+      "sharedTag": "Udostępniony styl"
+    },
     "safeMode": {
       "label": "Bezpieczeństwo wklejania",
       "ariaLabel": "Sprawdź, które style dobrze wyświetlają się na innych urządzeniach",

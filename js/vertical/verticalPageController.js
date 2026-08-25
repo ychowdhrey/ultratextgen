@@ -13,6 +13,9 @@
   var DecoData   = window.UTG_VERTICAL_DECORATORS || {};
   var Render     = window.UltraTextGenRender;
   var stylesRegistry = window.textStyles || {};
+  /* Shared namespace owned by script.js — result sharing lives there so every
+     generator uses one implementation (script.js loads before this file). */
+  var UTG        = window.UltraTextGen || {};
 
   /* Localized pages define window.verticalI18n before this script loads
      (same pattern as window.zalgoI18n on the zalgo page). Missing keys fall
@@ -630,6 +633,29 @@
         renderRest();
       }
     }
+
+    if (UTG && UTG.revealSharedCard) UTG.revealSharedCard(grid);
+  }
+
+  /* --------------------------------------------------------------------------
+     Result sharing — the stable id is the style's own registry slug (never its
+     display name), matching every other generator on the site. The page's own
+     arrangement state rides along as extra params so a shared link reopens the
+     same layout, not just the same text.
+     -------------------------------------------------------------------------- */
+  function shareIdFor(styleName) {
+    var style = stylesRegistry[styleName];
+    return (style && style.slug) || '';
+  }
+
+  function shareParams() {
+    return {
+      layout: selectedLayoutId,
+      wrap: wordBreakMode,
+      divider: wordDividerMode !== 'none' ? wordDividerMode : '',
+      deco: selectedDecorator && selectedDecorator.id !== 'custom' ? selectedDecorator.id : '',
+      safe: platformSafe ? '' : 'off'
+    };
   }
 
   /* --------------------------------------------------------------------------
@@ -678,8 +704,31 @@
     info.appendChild(nameLine);
     info.appendChild(meta);
     info.appendChild(preview);
-    info.appendChild(copyBtn);
+
+    /* Copy + Share share one action row. These compact cards carry no Save
+       button, so the core generator's Copy/Save/Share triangle reduces to a
+       pair here — same classes, same spacing language. */
+    var actions = document.createElement('div');
+    actions.className = 'result-share-row';
+    actions.appendChild(copyBtn);
+    info.appendChild(actions);
+
+    /* Result-level Share — built by the shared factory in script.js so this
+       page gets the same button, handler, label and localisation as the core
+       generator. The creation is the input plus this layout/decorator/wrap
+       state, so the recipient sees exactly this arrangement, not a default. */
+    var shareId = shareIdFor(item.name);
+    if (UTG && UTG.buildShareButton) {
+      actions.appendChild(UTG.buildShareButton({
+        styleId: shareId,
+        name: item.name,
+        params: shareParams(),
+        disabled: !item.text || !item.text.trim()
+      }));
+    }
+
     card.appendChild(info);
+    if (UTG && UTG.markSharedCard) UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -687,6 +736,42 @@
      Init
      -------------------------------------------------------------------------- */
   var DEFAULT_SAMPLE_TEXT = t('sampleText', 'Hello');
+
+  /* Restore the arrangement a shared link encodes. Every value is validated
+     against this page's own vocabulary — an unknown layout, wrap or decorator
+     is ignored and the page opens normally, and nothing read here is ever
+     rendered into the DOM. Runs after the persisted prefs so an explicit link
+     wins over this device's last session. */
+  function readUrlState() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+
+      var layout = params.get('layout');
+      if (layout && Layouts.LAYOUTS.some(function (l) { return l.id === layout; })) {
+        selectedLayoutId = layout;
+      }
+
+      var wrap = params.get('wrap');
+      if (wrap === 'stack' || wrap === 'continuous' || wrap === 'word-lines') wordBreakMode = wrap;
+
+      var divider = params.get('divider');
+      if (divider === 'blank-line' || divider === 'divider-line') wordDividerMode = divider;
+
+      if (params.get('safe') === 'off') platformSafe = false;
+
+      var deco = params.get('deco');
+      if (deco) {
+        Object.keys(DecoData).forEach(function (tab) {
+          (DecoData[tab] || []).forEach(function (d) {
+            if (d && d.id === deco && !selectedDecorator) {
+              selectedDecorator = d;
+              currentDecoTab = tab;
+            }
+          });
+        });
+      }
+    } catch (e) { /* malformed query — open with the defaults */ }
+  }
 
   function init() {
     /* Add vertical-specific class to results grid */
@@ -696,6 +781,9 @@
     /* Restore persisted preferences */
     selectedLayoutId = loadLayoutPref();
     platformSafe = loadSafePref();
+
+    /* …then let an explicit shared link override them */
+    readUrlState();
 
     /* Preload sample text so results are visible on first load */
     var input = document.getElementById('mainInput');
