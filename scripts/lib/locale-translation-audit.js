@@ -143,8 +143,6 @@ const COPY_SLOT_EXTRACTORS = [
  * to the clipboard, so an untranslated payload is a worse defect than an
  * untranslated label, not a lesser one.
  */
-const ANCHOR_RE = /<a\b[^>]*>((?:(?!<\/a>)(?!<(?:h[1-6]|p|div|section|ul|ol|li|table)\b)[\s\S]){4,300}?)<\/a>/g;
-
 /** A bare host or host+path used as its own link text: `symbl.cc`. */
 const DOMAIN_TEXT = /^(?:https?:\/\/)?[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/\S*)?$/i;
 
@@ -184,7 +182,17 @@ const BODY_SLOT_EXTRACTORS = [
  * exact rather than a guess.
  */
 const SCRIPT_SLOT_EXTRACTORS = [
-  /\bname:\s*"([^"]*)"/g
+  /\bname:\s*"([^"]*)"/g,
+  // `name:` was the only key read when scripts were first excluded from the
+  // element extractors, and that left a blind spot: inline registries on this
+  // site also carry `title:` (729), `label:` (418), `text:` (217) and `desc:`
+  // (2) string values that render as visible content — filter chips, card
+  // titles, preset names. Adding them keeps the exclusion from trading one
+  // class of false positive for a class of invisible defect.
+  /\btitle:\s*"([^"]*)"/g,
+  /\blabel:\s*"([^"]*)"/g,
+  /\btext:\s*"([^"]*)"/g,
+  /\bdesc:\s*"([^"]*)"/g
 ];
 
 const EXTRACTORS = [...COPY_SLOT_EXTRACTORS, ...BODY_SLOT_EXTRACTORS];
