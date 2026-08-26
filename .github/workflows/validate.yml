@@ -291,6 +291,40 @@ jobs:
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
 
+      # Editorial Footprint Risk — SHADOW MODE, and deliberately not in the
+      # gating list below. It reports what it WOULD fail on and exits 0.
+      #
+      # Two reasons it starts here rather than gating. First, the backlog is
+      # total: 52,766 em dashes across 98.9% of pages, and one shared CTA card
+      # on 46.6% of English pages — and most of that is generated, with 6,918
+      # em dashes hardcoded across 572 spec files and 116 generator scripts, so
+      # the fix is upstream and not in the HTML a PR touches. Second, this
+      # repository has twice shipped a check that reported nothing and was
+      # indistinguishable from one that passed; the cure is to watch a rule fire
+      # on real pull requests before trusting it, not to switch it on and hope.
+      #
+      # Its two deterministic rules (model/tooling leakage, and the SEO
+      # Preservation Gate) already exit 1 under --enforce and have been verified
+      # against deliberately broken inputs. Promotion to gating is a documented
+      # step in docs/editorial-footprint-risk.md, not a silent flag flip.
+      #
+      # `--annotations` emits GitHub file/line annotations so findings appear on
+      # the diff rather than only in this log.
+      - name: Run editorial footprint check (shadow mode, informational)
+        id: editorial_footprint
+        continue-on-error: true
+        run: npm run check:editorial-footprint -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee editorial-footprint.log
+
+      # Gating, and with no backlog to be red against: these are unit tests over
+      # fixtures, not a measurement of the site. They encode the false positives
+      # this system actually produced (a quoted em dash, the em dash on the page
+      # ABOUT the em dash, the character "underscore" in username rules) so a
+      # future edit cannot silently reintroduce them.
+      - name: Run editorial footprint tests
+        id: editorial_footprint_tests
+        continue-on-error: true
+        run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
+
       - name: Build step summary
         if: always()
         run: |
@@ -393,6 +427,16 @@ jobs:
             cat library-directory.log
             echo '```'
             echo ""
+            echo "### Editorial footprint check (shadow mode, informational) — \`${{ steps.editorial_footprint.outcome }}\`"
+            echo '```'
+            cat editorial-footprint.log
+            echo '```'
+            echo ""
+            echo "### Editorial footprint tests — \`${{ steps.editorial_footprint_tests.outcome }}\`"
+            echo '```'
+            cat editorial-footprint-tests.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -400,6 +444,11 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
+        # steps.editorial_footprint is excluded on purpose: it runs in SHADOW
+        # MODE and exits 0 by design (see its own step comment). Its unit tests,
+        # steps.editorial_footprint_tests, ARE gating — they have no backlog to
+        # be red against.
+        #
         # steps.images, steps.symbol_peer_links_audit, and
         # steps.locale_parent_gap_audit (all whole-site audits) are
         # deliberately excluded — see their step names/comments above:
@@ -429,7 +478,8 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
-          steps.library_directory.outcome == 'failure'
+          steps.library_directory.outcome == 'failure' ||
+          steps.editorial_footprint_tests.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
