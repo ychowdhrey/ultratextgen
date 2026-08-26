@@ -325,6 +325,16 @@ jobs:
         continue-on-error: true
         run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
 
+      # Gating, zero backlog: unit tests over fixtures. Guards the four
+      # printables generators, which are FULL regenerators and were measured
+      # deleting five later site-wide repairs (Funding Choices tag, static
+      # footer, the FAQ's position in <main>, hreflang alternates, social image
+      # tags) from 90 live pages in one unmodified run.
+      - name: Run printables generator parity tests
+        id: printables_parity_tests
+        continue-on-error: true
+        run: npm run test:printables-parity | tee printables-parity-tests.log
+
       - name: Build step summary
         if: always()
         run: |
@@ -437,6 +447,11 @@ jobs:
             cat editorial-footprint-tests.log
             echo '```'
             echo ""
+            echo "### Printables generator parity tests — \`${{ steps.printables_parity_tests.outcome }}\`"
+            echo '```'
+            cat printables-parity-tests.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -479,7 +494,8 @@ jobs:
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
-          steps.editorial_footprint_tests.outcome == 'failure'
+          steps.editorial_footprint_tests.outcome == 'failure' ||
+          steps.printables_parity_tests.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

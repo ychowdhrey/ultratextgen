@@ -259,6 +259,8 @@ a deliberately broken input.
 | date | change | reason |
 |---|---|---|
 | 2026-08-26 | System created. Stage 2 (shadow) entered. `model-leakage` and `seo-preservation` verified blocking under `--enforce` against seven probes. | initial build |
+| 2026-08-26 | First remediation applied (Batch A): the four printables generators de-templated. Print-guidance answers went from 2 distinct across 26 bubble-letter pages to 26; the 184-page shared trust line and the 88-page "Yes — every letter…" opener are gone from generator output. **No live page changed**, and 0 title/H1/canonical/meta lines moved — the SEO Preservation Gate constrains its own author, since these titles carry em dashes and the rule is forward-only. | approved cleanup |
+| 2026-08-26 | `npm run test:printables-parity` added as a **gating** check (14 assertions, no backlog). Acting on Batch A found the four generators would delete five shipped site-wide repairs from 90 live pages; `scripts/lib/printables_parity.py` now refuses such a write. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §1a. | safety finding |
 
 ---
 

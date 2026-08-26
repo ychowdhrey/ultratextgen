@@ -68,6 +68,78 @@ page generated from it; it does not rewrite 4,528 live pages, and it must not.
 
 ---
 
+## 1a. The four printables generators are STALE, and running them destroys shipped repairs (found 2026-08-26, acting on Batch A)
+
+This is the most important thing this pass found, and it inverts the
+recommendation that produced it. Batch A was proposed as "four generator edits,
+no live page changes until regeneration". The generator edits are done. **The
+regeneration half is not safe and must not be run.**
+
+Running the four generators unmodified against the live tree changes **90 files**,
+and the entire diff is five later site-wide passes being silently undone:
+
+| what a run deletes | pages | owning pass | gated? |
+|---|---:|---|---|
+| Funding Choices ad-blocking-recovery tag | 90 | `inject-funding-choices-tag.js` | **yes** |
+| Baked static footer markup | 90 | `build-static-footer.js` | **yes** |
+| The FAQ's position inside `<main>` | 88 | `fix-footer-nested-content.py` | no, but it re-creates the 727-page defect that pass repaired |
+| hreflang alternates (orphans the `es/imprimibles/…` siblings) | 27 | `sync-locale-mesh.js` | **yes** — 28 issues |
+| `og:image` / `twitter:image` / `og:image:alt` | 53 | `generate-site-art.py` + `wire-site-art.py` | **yes** for new/changed pages |
+
+Plus hand edits that never went back into the spec — several meta descriptions
+now mention "save it as a PDF", which the generators do not produce.
+
+**Three of these are now fixed in the generators** (Funding Choices tag, the
+footer-nesting, and the copy). **Two are not**: the generators have no model of
+the hreflang mesh or the art pipeline, and giving them one is a real project, not
+a copy fix.
+
+### The guard
+
+`scripts/lib/printables_parity.py` makes the remaining gap loud. Before writing,
+each generator diffs its output against the live page and **refuses to overwrite**
+(exit 4) if the live page carries anything the new page lacks, naming the file,
+the missing element, and the pass that owns it. `--force-stale` overrides and
+prints what it is overriding. Verified by probe: a real run now exits 4 with
+nothing written; `npm run test:printables-parity` holds it there with 14
+assertions, including the deliberate non-catches (a new page, reordered tags, a
+copy-only edit).
+
+**Why a guard rather than a full parity fix.** A generator that silently deletes
+a shipped repair is the same failure this repository has recorded twice in CI: a
+check that reports nothing is indistinguishable from a check that passes. The
+damage here would not surface until a gate went red on someone else's later PR.
+Making it loud is cheap and immediate; teaching four generators the hreflang mesh
+and the art pipeline is a scoped project that needs its own decision.
+
+### What this means for the copy fix
+
+The improved copy is committed and correct, and it will land the next time these
+pages are legitimately regenerated. Until then the live pages are unchanged —
+which is also what the publishing freeze wants. The measured improvement, taken
+from a generated-vs-generated comparison (so the staleness above cannot
+contaminate it):
+
+| | before | after |
+|---|---:|---:|
+| distinct print-guidance answers across the 26 bubble-letter pages | **2** | **26** |
+| pages carrying "Everything runs in your browser — no app or sign-up." | 98 | 10 |
+| pages opening a FAQ answer with "Yes — every letter A–Z has its own…" | 88 | 0 |
+| em dashes across the three regenerated clusters | 1,743 | 1,319 |
+| title / H1 / canonical / meta-description lines changed | — | **0** |
+
+That last row is the SEO Preservation Gate doing its job on its own author: the
+titles of these pages carry em dashes, and changing a title to remove one is a
+blocking `title-changed` finding. The em dash rule is forward-only for exactly
+this reason.
+
+The 10 remaining pages are `printables/alphabet-coloring-pages/number-*`, which
+**no generator owns** — they are hand-maintained. Editing 10 live pages by hand
+during a publishing freeze is not what Batch A approved, so they are left, and
+recorded here instead.
+
+---
+
 ## 2. The shared CTA card — 421 English pages (46.6%)
 
 > "Transform text with Unicode fonts — Use UltraTextGen to convert plain text
@@ -154,9 +226,12 @@ Everything else above is a build-system change.
 
 ## 7. Ranked recommendation
 
-1. **Four printables generators** — 184 pages, four edits, clears em dash and
+1. ~~**Four printables generators** — 184 pages, four edits, clears em dash and
    template debt at once. Zero risk: no live HTML changes until the next
-   generation run.
+   generation run.~~ **DONE 2026-08-26, and the "zero risk" clause was wrong** —
+   see §1a. The copy is fixed in the generators; the regeneration that would
+   apply it is blocked because these generators would delete five shipped
+   repairs, and a guard now enforces that. Live pages are unchanged.
 2. **The CTA default + 89 specs** — 421 English pages plus their translations.
 3. **A spec-level duplicate-`lead` check** — stops item 3 recurring. Prevention,
    not repair.
