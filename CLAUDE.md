@@ -1936,6 +1936,118 @@ the exact line that shipped: exit 1, naming the file, job, step and line.
 
 ---
 
+## Editorial Footprint Risk — measuring how templated our own prose reads
+
+Every gate above measures structure, language completeness, schema or assets.
+None of them looks at whether the prose is any good. This one does: it measures
+**observable editorial characteristics** of the site's own visible text —
+formulaic phrasing, repeated syntax, promotional vagueness, low information
+density, and sameness across our own pages — as a 0–100 Editorial Footprint Risk
+score, higher meaning "reads more like a filled-in template than like something
+written about this subject."
+
+**It is not an AI detector, and must never be described as one.** It emits no
+probability of machine authorship, consumes no commercial detector score, and no
+output of it supports a claim that any page was machine-written. That line is
+correctness, not modesty: detectors lose 5–30 AUROC points out of domain, they
+misclassify **61.3%** of non-native English writing as machine-generated — which
+would systematically indict this site's 29 locales — and the population studies
+behind every marker list state explicitly that they cannot identify individual
+documents. `npm run test:editorial-footprint` asserts that no phrase-bank entry
+makes an authorship claim.
+
+**Read `docs/editorial-footprint-risk.md` before changing a rule**, and
+`docs/editorial-footprint-research-2026-08-26.md` before changing a weight.
+
+### The finding that shaped everything else
+
+The widely-cited marker list does not describe this site. Across 904 indexable
+English pages, `delve`, `showcase`, `tapestry`, `in today's`, `at its core`,
+`when it comes to`, `it is worth noting`, `robust`, `vibrant`, `pivotal` and
+`comprehensive` occur **zero times**. Two of its apparent hits are worse than
+misses:
+
+* **`transform`** — 911 occurrences on 443 pages — is the shared CTA card
+  ("Transform text with Unicode fonts"). One template string, not vocabulary.
+* **`underscore`** — 169 occurrences on 65 pages — is the **character `_`**, in
+  factual platform username rules. Banning it would delete facts.
+
+What the site actually carries is **52,766 em dashes on 98.9% of pages** and one
+CTA card on 46.6% of English pages — and **6,918 of those em dashes are hardcoded
+in 572 spec files and 116 generator scripts**. The footprint here is a build
+artifact far more than a writing habit, which is why every pattern is measured
+with a `variety` figure (distinct containing sentences ÷ pages):
+
+* **variety ≈ 0** — one shared string. Fix the **template**.
+* **variety ≈ 1** — the same idea written many times. Fix the **writing**.
+
+Asking 220 pages to each hand-edit one shared string is the failure this
+distinction exists to prevent. `docs/editorial-footprint-upstream-findings-2026-08-26.md`
+ranks the upstream sources.
+
+### Tooling
+
+- **`npm run audit:editorial-footprint`** — whole-site dashboard, writes
+  `data/editorial_footprint_ledger.csv` and the report. **Informational, never
+  gating**, same reason as `check:images` and `audit:locale-parent-gap`: the
+  backlog is total and a permanently-red check is one people learn to ignore.
+- **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
+  into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
+  would fail on and exits 0. Promotion to blocking is a documented step in
+  `docs/editorial-footprint-risk.md`, not a silent flag flip. Only two rules are
+  eligible today (`model-leakage`, `seo-preservation` errors), both verified
+  against deliberately broken inputs.
+- **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
+  `data/editorial_phrase_bank.json`.
+- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+  to be red against.
+- Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
+  `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
+  `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
+  gate can never disagree about what any of it means.
+
+### Two things about it that are easy to get wrong
+
+**Raw scores are not comparable across locales.** A locale page has no English
+phrase rules, so those dimensions leave its denominator — and since they score
+~0 for everybody, the exclusion *raises* its normalised score. Measured,
+`fr/library/emojis-argent` reads 41.1 and its English parent
+`library/money-emojis` reads 20.1 on near-identical inputs. Neither number is
+wrong; comparing them is. Always rank and threshold on the ledger's
+`locale_percentile`.
+
+**An unmeasured dimension is `null`, never `0`.** Zero and unmeasured are
+opposite claims, and printing one as the other is what makes an unmeasured
+locale look clean. The three-item detector exists for 27 locales and is
+deliberately absent for CJK and Thai, which list with an ideographic comma and no
+spacing.
+
+### The SEO Preservation Gate is a separate check, and stays separate
+
+It never averages into the editorial score, because a lower score bought by
+dropping the page's primary query language is a loss and a blended number would
+hide the trade. Blocking on: canonical, title, H1, `robots`, hreflang,
+search-protected terms, codepoints/limits/versions, and internal links. Warning
+on: anchor text, FAQ questions, examples, headings, a >25% depth drop.
+
+Ranking sensitivity is `unknown` unless a performance overlay is supplied at run
+time (`--sensitivity`), and **`unknown` is the conservative posture, never a
+licence**. Search Console data is first-party competitive information and does
+not live in this repo — same boundary, and same reasoning, as the Local Language
+Intelligence lexicon.
+
+### The remediation principle
+
+Never a synonym swap. Google's spam policy names *"automated transformations like
+synonymizing"* as scaled content abuse, so trading words to lower a score moves
+toward the policy, not away from it. The transformation asked for is: generic
+claim → concrete information; abstract benefit → observable behaviour; filler
+introduction → direct answer; template sentence → topic-specific knowledge. And
+never "humanise" by adding randomness, slang or deliberate imperfections — that
+lowers a metric and lowers the page.
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -2254,6 +2366,29 @@ Standing protocol:
   precomposed character, so composition silently breaks the card against the
   very widget below it. See "Zalgo example cards must decode back to their own
   label" above. `npm run check:zalgo-decodes` gates this in CI.
+- Do not describe the Editorial Footprint Risk score as an AI-detection signal,
+  add a commercial detector score as an input to it, or phrase any finding as a
+  claim about who or what wrote a page. See "Editorial Footprint Risk" above —
+  detectors misclassify 61.3% of non-native English writing, which would indict
+  this site's own locales, and `npm run test:editorial-footprint` asserts the
+  phrase bank makes no authorship claim.
+- Do not lower an editorial score by swapping a flagged word for a synonym,
+  removing a search-protected term, deleting a codepoint or example, or dropping
+  an internal link. Google's spam policy names "automated transformations like
+  synonymizing" as scaled content abuse, and the SEO Preservation Gate blocks the
+  rest. Replace a generic claim with the fact behind it instead.
+- Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
+  in 572 spec files and 116 generator scripts, so the edit is undone by the next
+  generator run — the gate names the upstream file when it can find it. And do
+  not run a site-wide purge: the rule is forward-only, and Google's own guidance
+  warns against removing a page element because you heard it was bad.
+- Do not add an entry to `data/editorial_phrase_bank.json` unilaterally, and
+  never to make a page pass. Same bar as `data/translation_parity_exceptions.json`
+  and `data/english_parent_exceptions.json`. Every entry carries its measured
+  corpus frequency; an entry with no corpus evidence is a forward-looking guard
+  and must say so.
+- Do not compare Editorial Footprint Risk scores across locales, or read an
+  unmeasured dimension as a zero. Rank on `locale_percentile`.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
