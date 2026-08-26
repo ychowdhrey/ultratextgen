@@ -232,6 +232,11 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-translation -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-translation.log
 
+      - name: Run library hub parity check
+        id: library_hub_parity
+        continue-on-error: true
+        run: npm run check:library-hub-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee library-hub-parity.log
+
       - name: Run locale parent gap check
         id: locale_parent_gap
         continue-on-error: true
@@ -531,7 +536,8 @@ jobs:
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.printables_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
-          steps.spec_sentence_reuse_tests.outcome == 'failure'
+          steps.spec_sentence_reuse_tests.outcome == 'failure' ||
+          steps.library_hub_parity.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
