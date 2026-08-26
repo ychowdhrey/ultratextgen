@@ -7,7 +7,7 @@ Run: python3 scripts/check-spec-sentence-reuse.test.py
      (npm run test:spec-sentence-reuse)
 
 Zero dependencies, no framework — the same idiom as
-scripts/lib/printables_parity.test.py and js/counter/counterRules.test.js.
+scripts/lib/generator_parity.test.py and js/counter/counterRules.test.js.
 
 WHAT THESE ASSERT, AND WHY EACH ONE IS HERE
 -------------------------------------------

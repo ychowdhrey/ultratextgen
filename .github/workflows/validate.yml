@@ -343,10 +343,10 @@ jobs:
       # deleting five later site-wide repairs (Funding Choices tag, static
       # footer, the FAQ's position in <main>, hreflang alternates, social image
       # tags) from 90 live pages in one unmodified run.
-      - name: Run printables generator parity tests
-        id: printables_parity_tests
+      - name: Run generator parity tests
+        id: generator_parity_tests
         continue-on-error: true
-        run: npm run test:printables-parity | tee printables-parity-tests.log
+        run: npm run test:generator-parity | tee generator-parity-tests.log
 
       # Gating, zero backlog: unit tests over fixtures for the check above. The
       # first specification of that check compared whole FIELDS, and the corpus
@@ -358,6 +358,32 @@ jobs:
         id: spec_sentence_reuse_tests
         continue-on-error: true
         run: npm run test:spec-sentence-reuse | tee spec-sentence-reuse-tests.log
+
+      # Gating, zero backlog: unit tests over the two classifiers behind the
+      # cta_click event. They decide what every future CTA number means, and
+      # both carry a real trap — /js/ is a genuine two-letter top-level
+      # directory and is not a locale, and a pillar index is a different answer
+      # from a page inside that pillar. The test SLICES the functions out of the
+      # live header.js rather than reimplementing them, the same technique
+      # check-zalgo-decodes.js uses for generateZalgo().
+      - name: Run CTA click-tracking tests
+        id: cta_tracking_tests
+        continue-on-error: true
+        run: npm run test:cta-tracking | tee cta-tracking-tests.log
+
+      # Gating, zero backlog: unit tests over the CTA routing table and the
+      # in-place pass that applies it. Three things they pin down, each a
+      # silent defect rather than a crash: no <lang>/ page may ever route (no
+      # locale build of any destination tool exists, and linking an English
+      # tool from a locale page is what the locale-native rule forbids); the
+      # pass is idempotent and never reclaims a card already pointed somewhere
+      # specific; and the card copy quotes limits read back out of
+      # js/counter/counterRules.js, so it cannot drift from the tool it
+      # describes.
+      - name: Run CTA routing tests
+        id: cta_routing_tests
+        continue-on-error: true
+        run: npm run test:cta-routing | tee cta-routing-tests.log
 
       - name: Build step summary
         if: always()
@@ -471,9 +497,9 @@ jobs:
             cat editorial-footprint-tests.log
             echo '```'
             echo ""
-            echo "### Printables generator parity tests — \`${{ steps.printables_parity_tests.outcome }}\`"
+            echo "### Generator parity tests — \`${{ steps.generator_parity_tests.outcome }}\`"
             echo '```'
-            cat printables-parity-tests.log
+            cat generator-parity-tests.log
             echo '```'
             echo ""
             echo "### Spec sentence-reuse check — \`${{ steps.spec_sentence_reuse.outcome }}\`"
@@ -484,6 +510,16 @@ jobs:
             echo "### Spec sentence-reuse tests — \`${{ steps.spec_sentence_reuse_tests.outcome }}\`"
             echo '```'
             cat spec-sentence-reuse-tests.log
+            echo '```'
+            echo ""
+            echo "### CTA click-tracking tests — \`${{ steps.cta_tracking_tests.outcome }}\`"
+            echo '```'
+            cat cta-tracking-tests.log
+            echo '```'
+            echo ""
+            echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
+            echo '```'
+            cat cta-routing-tests.log
             echo '```'
             echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
@@ -529,9 +565,11 @@ jobs:
           steps.static_footer.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
-          steps.printables_parity_tests.outcome == 'failure' ||
+          steps.generator_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
-          steps.spec_sentence_reuse_tests.outcome == 'failure'
+          steps.spec_sentence_reuse_tests.outcome == 'failure' ||
+          steps.cta_tracking_tests.outcome == 'failure' ||
+          steps.cta_routing_tests.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

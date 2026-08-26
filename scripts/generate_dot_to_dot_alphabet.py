@@ -48,7 +48,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-from lib.printables_parity import assert_no_regression  # noqa: E402
+from lib.generator_parity import assert_no_regression  # noqa: E402
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_dot_to_dot_alphabet.json"
 PRINTABLES_DIR = REPO / "printables"
