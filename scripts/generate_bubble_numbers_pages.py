@@ -38,6 +38,8 @@ import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+from lib.printables_parity import assert_no_regression  # noqa: E402
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_bubble_numbers.json"
 STYLES_PATH = REPO / "styles.js"
@@ -49,6 +51,44 @@ DIGITS = "0123456789"
 
 class SpecError(Exception):
     """Raised when the data spec fails validation."""
+
+
+# --------------------------------------------------------------------------
+# Shipped-page parity: two things a generated page MUST carry
+# --------------------------------------------------------------------------
+# These generators are full regenerators, so anything they omit is silently
+# DELETED from every page they rewrite. Both omissions below were live: running
+# these four scripts unmodified against the tree changed 90 files, and the whole
+# diff was site-wide repairs the generators had never learned about.
+#
+#   1. The Funding Choices (ad-blocking recovery) tag. Absent here, a
+#      regeneration strips it and scripts/check-funding-choices.js - a GATING
+#      check - fails. Read from the same single source of truth the injector
+#      uses so the two can never emit different snippets.
+#
+#   2. The FAQ has to sit inside <main>. These templates emitted it inside
+#      <footer class="footer">, which is exactly the defect
+#      scripts/fix-footer-nested-content.py repaired across 727 pages -
+#      readability-style extractors discard footer content as boilerplate. All
+#      210 live printables pages currently have it in <main>; regenerating would
+#      have put 88 of them back.
+#
+# After running any of these generators, run `npm run build:static-footer` to
+# bake the footer markup back in. The generator leaves the footer shell empty on
+# purpose: build-static-footer.js is its owner, and a second copy here would
+# drift from footer.js the first time footer.js changed.
+FUNDING_TAG_PATH = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+
+
+def funding_choices_tag():
+    """The Funding Choices tag, from the source scripts/inject-funding-choices-tag.js shares."""
+    try:
+        return FUNDING_TAG_PATH.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise SystemExit(
+            f"[error] cannot read the Funding Choices tag at {FUNDING_TAG_PATH}: {exc}. "
+            "Generated pages would fail scripts/check-funding-choices.js."
+        )
 
 
 def esc(text):
@@ -219,6 +259,12 @@ def faq_accordion(faqs):
     return "\n\n".join(items)
 
 
+# The per-usecase print guidance lives in generate_bubble_letters_pages.py and is
+# imported rather than copied. Two copies of one table is precisely the drift
+# this repository has paid for elsewhere; the sibling script is the single owner.
+from generate_bubble_letters_pages import print_note  # noqa: E402
+
+
 # --------------------------------------------------------------------------
 # Spoke page
 # --------------------------------------------------------------------------
@@ -230,6 +276,7 @@ def render_spoke(spec, index):
     D = e["digit"]
     i = int(D)
     craft = e["craft"]
+    usecase = e.get("usecase", "")
     intro = e["intro"]
     draw = e["draw"]
     canonical = f"{SITE}/printables/{slug}/number-{D}/"
@@ -272,14 +319,15 @@ def render_spoke(spec, index):
             f"What is on the bubble number {D} page?",
             f"A large {esc(D)} shown as a rounded, puffy bubble outline. Use "
             f"<strong>Print this number</strong> to print it for tracing or colouring, "
-            f"or <strong>Download PNG</strong> to save it — great for {esc(craft)}.",
+            f"or <strong>Download PNG</strong> to save it. The shape suits {esc(craft)}.",
             None,
         ),
         (
             f"How do I print or download bubble number {D}?",
-            "Use <strong>Print this number</strong> to send just this outline to your printer, "
-            "or <strong>Download PNG</strong> to save a high-resolution image you can print or "
-            "reuse. Everything runs in your browser — no app or sign-up.",
+            f"Use <strong>Print this number</strong> to send just the {esc(D)} outline to your "
+            "printer, or <strong>Download PNG</strong> to save a high-resolution image. The "
+            "sheet is drawn in the page itself, so nothing is uploaded and no account is "
+            f"needed. {esc(print_note(usecase))}",
             None,
         ),
         (
@@ -291,7 +339,7 @@ def render_spoke(spec, index):
         ),
         (
             "Do you have the letters in bubble writing too?",
-            'Yes — every letter A–Z has its own bubble page. Head back to '
+            'All 26 letters have their own page, alongside the ten digits. Head back to '
             f'<a href="/printables/{slug}/">Printable Bubble Letters</a> for the whole alphabet '
             f'and number set, or start at <a href="/printables/{slug}/letter-a/">bubble letter A</a>.',
             None,
@@ -325,6 +373,7 @@ def render_spoke(spec, index):
     config = CONFIG_TEMPLATE.replace("__D__", D)
 
     return f"""<!DOCTYPE html><html lang="en"><head>
+{funding_choices_tag()}
 {GTM_HEAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -428,14 +477,16 @@ def render_spoke(spec, index):
       <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
     </div>
 
-  </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
       <h2 class="faq-category">Bubble Number {esc(D)} — FAQ</h2>
 
 {faq_accordion(faqs)}
 
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
     </div>
   </footer>
 
@@ -484,6 +535,12 @@ def main(argv=None):
         "--dry-run", action="store_true", help="validate and report without writing"
     )
     parser.add_argument(
+        "--force-stale",
+        action="store_true",
+        help="write even though this generator would delete shipped repairs "
+             "(hreflang, social art, ...). Re-run the owning passes afterwards.",
+    )
+    parser.add_argument(
         "--no-force",
         action="store_true",
         help="refuse to overwrite existing pages (default overwrites)",
@@ -525,6 +582,9 @@ def main(argv=None):
                 + "\n"
             )
             return 3
+
+    assert_no_regression(targets, force=args.force_stale)
+
 
     for path, html_str in targets:
         path.parent.mkdir(parents=True, exist_ok=True)

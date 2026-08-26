@@ -43,6 +43,8 @@ import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+from lib.printables_parity import assert_no_regression  # noqa: E402
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_bubble_letters.json"
 STYLES_PATH = REPO / "styles.js"
@@ -54,6 +56,44 @@ ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 class SpecError(Exception):
     """Raised when the data spec fails validation."""
+
+
+# --------------------------------------------------------------------------
+# Shipped-page parity: two things a generated page MUST carry
+# --------------------------------------------------------------------------
+# These generators are full regenerators, so anything they omit is silently
+# DELETED from every page they rewrite. Both omissions below were live: running
+# these four scripts unmodified against the tree changed 90 files, and the whole
+# diff was site-wide repairs the generators had never learned about.
+#
+#   1. The Funding Choices (ad-blocking recovery) tag. Absent here, a
+#      regeneration strips it and scripts/check-funding-choices.js - a GATING
+#      check - fails. Read from the same single source of truth the injector
+#      uses so the two can never emit different snippets.
+#
+#   2. The FAQ has to sit inside <main>. These templates emitted it inside
+#      <footer class="footer">, which is exactly the defect
+#      scripts/fix-footer-nested-content.py repaired across 727 pages -
+#      readability-style extractors discard footer content as boilerplate. All
+#      210 live printables pages currently have it in <main>; regenerating would
+#      have put 88 of them back.
+#
+# After running any of these generators, run `npm run build:static-footer` to
+# bake the footer markup back in. The generator leaves the footer shell empty on
+# purpose: build-static-footer.js is its owner, and a second copy here would
+# drift from footer.js the first time footer.js changed.
+FUNDING_TAG_PATH = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+
+
+def funding_choices_tag():
+    """The Funding Choices tag, from the source scripts/inject-funding-choices-tag.js shares."""
+    try:
+        return FUNDING_TAG_PATH.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise SystemExit(
+            f"[error] cannot read the Funding Choices tag at {FUNDING_TAG_PATH}: {exc}. "
+            "Generated pages would fail scripts/check-funding-choices.js."
+        )
 
 
 def esc(text):
@@ -227,6 +267,85 @@ def faq_accordion(faqs):
 
 
 # --------------------------------------------------------------------------
+# Per-page print guidance
+# --------------------------------------------------------------------------
+# The shared line these replace ("Everything runs in your browser - no app or
+# sign-up.") was one string on 184 generated pages. It also asserted a benefit
+# instead of describing behaviour, which is the shape the editorial phrase bank
+# calls a generic claim.
+#
+# Each entry below states something true and USEFUL about printing this
+# particular kind of sheet, keyed on the page's own `usecase`. That is the
+# transformation docs/editorial-footprint-risk.md asks for - generic claim to
+# concrete information - and it is deliberately NOT a synonym rotation: Google's
+# spam policy names "automated transformations like synonymizing" as scaled
+# content abuse, so trading words while keeping the same empty sentence would
+# move the wrong way.
+#
+# Keep these accurate. A print-dialog behaviour stated here has to be one the
+# reader will actually find in Chrome, Edge, Safari or Firefox.
+PRINT_NOTES = {
+    "monogram": (
+        "At 100% scale the outline fills a folded A6 card front; raise the scale in "
+        "the print dialog for a framed print."
+    ),
+    "poster": (
+        "The outline is vector, so raising the scale in the print dialog keeps the "
+        "edges crisp instead of pixelating them."
+    ),
+    "banner": (
+        "Print one character per sheet at full scale, then trim the margins and tape "
+        "the sheets edge to edge."
+    ),
+    "classroom": (
+        "The PNG is high-resolution enough to survive a photocopier, so one print can "
+        "become a class set."
+    ),
+    "bujo": (
+        "Drop the scale to around 40% in the print dialog to fit several on one page "
+        "for cutting out."
+    ),
+    "scrapbook": (
+        "The PNG has a transparent background, so it drops straight into a photo-book "
+        "layout without a white box around it."
+    ),
+    "gifttag": (
+        "Reduce the scale and print several per sheet, then cut them apart and punch a "
+        "corner for ribbon."
+    ),
+    "nametag": (
+        "Print at a reduced scale for a badge, or full scale for a door or locker sign."
+    ),
+    "milestone": (
+        "Choose \u201cSave as PDF\u201d as the print destination if you are sending it to a "
+        "print shop rather than a home printer."
+    ),
+    "birthday": (
+        "Print one digit per sheet and tape them together for a bunting-style number."
+    ),
+    "houseNumber": (
+        "Raise the scale in the print dialog until the digit measures what you need, "
+        "then trace it onto card or vinyl."
+    ),
+    "jersey": (
+        "Print at full scale and use the outline as a cutting template for iron-on vinyl."
+    ),
+    "countdown": (
+        "Print the digits you need in one run, then flip a sheet each day."
+    ),
+}
+DEFAULT_PRINT_NOTE = (
+    "Both buttons act on this page only, so nothing else in the set is sent to the "
+    "printer."
+)
+
+
+def print_note(usecase):
+    """Concrete, page-appropriate printing guidance. Never a generic benefit line."""
+    return PRINT_NOTES.get(usecase, DEFAULT_PRINT_NOTE)
+
+
+# --------------------------------------------------------------------------
 # Spoke page
 # --------------------------------------------------------------------------
 def render_spoke(spec, index):
@@ -238,6 +357,7 @@ def render_spoke(spec, index):
     low = L.lower()
     i = ord(L) - ord("A")
     craft = e["craft"]
+    usecase = e.get("usecase", "")
     intro = e["intro"]
     draw = e["draw"]
     canonical = f"{SITE}/printables/{slug}/letter-{low}/"
@@ -280,14 +400,16 @@ def render_spoke(spec, index):
             f"What is on the bubble letter {L} page?",
             f"A large capital {esc(L)} and lowercase {esc(low)} shown as a rounded, puffy "
             f"bubble outline. Use <strong>Print this letter</strong> to print it for tracing "
-            f"or colouring, or <strong>Download PNG</strong> to save it — great for {esc(craft)}.",
+            f"or colouring, or <strong>Download PNG</strong> to save it. The shape suits "
+            f"{esc(craft)}.",
             None,
         ),
         (
             f"How do I print or download bubble letter {L}?",
-            "Use <strong>Print this letter</strong> to send just this outline to your printer, "
-            "or <strong>Download PNG</strong> to save a high-resolution image you can print or "
-            "reuse. Everything runs in your browser — no app or sign-up.",
+            f"Use <strong>Print this letter</strong> to send just the {esc(L)} outline to your "
+            "printer, or <strong>Download PNG</strong> to save a high-resolution image. The "
+            "sheet is drawn in the page itself, so nothing is uploaded and no account is "
+            f"needed. {esc(print_note(usecase))}",
             None,
         ),
         (
@@ -299,8 +421,8 @@ def render_spoke(spec, index):
         ),
         (
             "Do you have the other letters in bubble writing?",
-            'Yes — every letter A–Z has its own bubble page. Head back to '
-            f'<a href="/printables/{slug}/">Printable Bubble Letters</a> for the whole alphabet, '
+            'All 26 letters have their own page, and so do the digits 0 to 9. Head back to '
+            f'<a href="/printables/{slug}/">Printable Bubble Letters</a> for the whole set, '
             "or jump to another letter with the strip above.",
             None,
         ),
@@ -333,6 +455,7 @@ def render_spoke(spec, index):
     config = CONFIG_TEMPLATE.replace("__L__", L)
 
     return f"""<!DOCTYPE html><html lang="en"><head>
+{funding_choices_tag()}
 {GTM_HEAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -440,14 +563,16 @@ def render_spoke(spec, index):
       <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
     </div>
 
-  </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
       <h2 class="faq-category">Bubble Letter {esc(L)} — FAQ</h2>
 
 {faq_accordion(faqs)}
 
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
     </div>
   </footer>
 
@@ -496,6 +621,12 @@ def main(argv=None):
         "--dry-run", action="store_true", help="validate and report without writing"
     )
     parser.add_argument(
+        "--force-stale",
+        action="store_true",
+        help="write even though this generator would delete shipped repairs "
+             "(hreflang, social art, ...). Re-run the owning passes afterwards.",
+    )
+    parser.add_argument(
         "--no-force",
         action="store_true",
         help="refuse to overwrite existing pages (default overwrites)",
@@ -537,6 +668,9 @@ def main(argv=None):
                 + "\n"
             )
             return 3
+
+    assert_no_regression(targets, force=args.force_stale)
+
 
     for path, html_str in targets:
         path.parent.mkdir(parents=True, exist_ok=True)
