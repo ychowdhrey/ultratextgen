@@ -4,8 +4,9 @@
 /**
  * build-library-directory.js
  *
- * Pre-renders the unfiltered /library/ directory into `library/index.html` as
- * real static HTML.
+ * Pre-renders the unfiltered library directory into a hub's own `index.html` as
+ * real static HTML — for English and for every locale that uses the directory
+ * template.
  *
  * WHY
  * ---
@@ -31,9 +32,19 @@
  * the pre-rendered DOM until a filter changes what should be shown, so the
  * search / alphabet / pill behaviour is unchanged.
  *
+ * LOCALES
+ * -------
+ * This script was written for English and, for a long time, could only ever
+ * reach English: `PAGE` was hardcoded to `library/index.html`. So the exact
+ * problem the docstring above describes — a hub page with zero links to the
+ * pages it is a hub for — stayed live on all seven locale directory hubs, whose
+ * entries existed only inside their `LIBRARY` array. It now walks every hub
+ * carrying the markup markers, English included.
+ *
  * Usage:
- *   node scripts/build-library-directory.js            # write
- *   node scripts/build-library-directory.js --check    # verify, exit 1 on drift
+ *   node scripts/build-library-directory.js                  # write, all hubs
+ *   node scripts/build-library-directory.js --locale es      # one hub ('en' for English)
+ *   node scripts/build-library-directory.js --check          # verify, exit 1 on drift
  *   npm run build:library-directory
  *   npm run check:library-directory
  */
@@ -43,7 +54,25 @@ const path = require('path');
 const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..');
-const PAGE = path.join(ROOT, 'library', 'index.html');
+const { LOCALES } = require('./lib/locale-parent-registry');
+
+/**
+ * Every library hub that carries the markup markers, English first. Discovery is
+ * from the canonical locale list rather than a filesystem glob — the same bug
+ * `scripts/validate_library_pages.py` carried, where `glob("??")` silently
+ * skipped `zh-tw` because the code is five characters.
+ */
+function hubPages(onlyLocale) {
+  const candidates = [{ locale: 'en', file: path.join(ROOT, 'library', 'index.html') }];
+  for (const code of LOCALES) {
+    candidates.push({ locale: code, file: path.join(ROOT, code, 'library', 'index.html') });
+  }
+  return candidates.filter((c) => {
+    if (onlyLocale && c.locale !== onlyLocale) return false;
+    if (!fs.existsSync(c.file)) return false;
+    return fs.readFileSync(c.file, 'utf8').includes(BEGIN_MARKER);
+  });
+}
 
 const BEGIN_MARKER = '/* library-directory-markup:begin */';
 const END_MARKER = '/* library-directory-markup:end */';
@@ -54,8 +83,14 @@ const GENERATED_NOTE =
   '`npm run build:library-directory`. They are static so non-JS crawlers see every ' +
   'library link; the page\'s script reuses this DOM until a filter changes it. -->';
 
+// The aria-label is localized on every locale hub ("Directorio de simbolos",
+// "Sembol dizini", ...), so the opening tag is captured and REUSED rather than
+// rewritten. An earlier version matched loosely but still emitted the English
+// `aria-label="Library directory"` in its replacement, which overwrote every
+// locale hub's own label — caught by `npm run check:locale-translation`, which
+// is exactly the sort of regression that gate exists for.
 const MAIN_RE =
-  /<main class="lib-directory" id="libDirectory" aria-label="Library directory"[^>]*>[\s\S]*?<\/main>/;
+  /<main class="lib-directory" id="libDirectory"([^>]*)>[\s\S]*?<\/main>/;
 
 /**
  * Slice out a bracketed literal starting at `start` (which must index the
@@ -104,11 +139,11 @@ function sliceBalanced(src, start) {
   throw new Error('unbalanced ' + open + ' starting at offset ' + start);
 }
 
-function extractLibrary(html) {
-  const decl = 'var LIBRARY = ';
-  const at = html.indexOf(decl);
-  if (at === -1) throw new Error('could not find `var LIBRARY = ` in ' + PAGE);
-  const bracket = html.indexOf('[', at);
+function extractLibrary(html, page) {
+  // English declares `var LIBRARY`, the locale hubs `const LIBRARY`.
+  const decl = /\b(?:var|const|let)\s+LIBRARY\s*=\s*\[/.exec(html);
+  if (!decl) throw new Error('could not find a `LIBRARY = [` declaration in ' + page);
+  const bracket = html.indexOf('[', decl.index);
   const literal = sliceBalanced(html, bracket);
 
   const items = vm.runInNewContext('(' + literal + ')', Object.create(null), {
@@ -120,13 +155,13 @@ function extractLibrary(html) {
   return items;
 }
 
-function extractMarkupFn(html) {
+function extractMarkupFn(html, page) {
   const begin = html.indexOf(BEGIN_MARKER);
   const end = html.indexOf(END_MARKER);
   if (begin === -1 || end === -1 || end < begin) {
     throw new Error(
       'could not find the ' + BEGIN_MARKER + ' … ' + END_MARKER +
-      ' block in ' + PAGE
+      ' block in ' + page
     );
   }
   const source = html.slice(begin + BEGIN_MARKER.length, end);
@@ -158,15 +193,20 @@ function formatForSource(html) {
     .trim();
 }
 
-function buildMain(html) {
-  const items = extractLibrary(html);
-  const directoryHtml = extractMarkupFn(html);
+function buildMain(html, page) {
+  const items = extractLibrary(html, page);
+  const directoryHtml = extractMarkupFn(html, page);
   const body = formatForSource(directoryHtml(items));
+
+  // Reuse the page's own attributes verbatim (its localized aria-label above
+  // all), adding only the marker that says this block is generated.
+  let attrs = (MAIN_RE.exec(html)[1] || '').trimEnd();
+  if (!/\bdata-static-directory\b/.test(attrs)) attrs += ' data-static-directory';
 
   return {
     count: items.length,
     markup:
-      '<main class="lib-directory" id="libDirectory" aria-label="Library directory" data-static-directory>\n' +
+      '<main class="lib-directory" id="libDirectory"' + attrs + '>\n' +
       GENERATED_NOTE + '\n' +
       body + '\n' +
       '</main>'
@@ -174,34 +214,57 @@ function buildMain(html) {
 }
 
 function main() {
-  const check = process.argv.includes('--check');
-  const html = fs.readFileSync(PAGE, 'utf8');
+  const argv = process.argv.slice(2);
+  const check = argv.includes('--check');
+  const localeIdx = argv.indexOf('--locale');
+  const onlyLocale = localeIdx !== -1 ? argv[localeIdx + 1] : null;
 
-  if (!MAIN_RE.test(html)) {
-    console.error('ERROR: could not find the #libDirectory <main> element in ' + PAGE);
-    process.exit(1);
-  }
-
-  const built = buildMain(html);
-  const next = html.replace(MAIN_RE, () => built.markup);
-
-  const rel = path.relative(ROOT, PAGE);
-
-  if (next === html) {
-    console.log('library directory up to date — ' + built.count + ' static entries in ' + rel);
-    return;
-  }
-
-  if (check) {
+  const pages = hubPages(onlyLocale);
+  if (pages.length === 0) {
     console.error(
-      'ERROR: ' + rel + ' is out of date with its own LIBRARY array.\n' +
-      '       Run `npm run build:library-directory` and commit the result.'
+      onlyLocale
+        ? 'ERROR: no library hub with the markup markers for --locale ' + onlyLocale
+        : 'ERROR: no library hub carries the ' + BEGIN_MARKER + ' block'
     );
     process.exit(1);
   }
 
-  fs.writeFileSync(PAGE, next);
-  console.log('wrote ' + built.count + ' static directory entries into ' + rel);
+  let stale = 0;
+  let wrote = 0;
+
+  for (const { locale, file } of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    const rel = path.relative(ROOT, file);
+
+    if (!MAIN_RE.test(html)) {
+      console.error('ERROR: could not find the #libDirectory <main> element in ' + rel);
+      process.exit(1);
+    }
+
+    const built = buildMain(html, rel);
+    const next = html.replace(MAIN_RE, () => built.markup);
+
+    if (next === html) {
+      console.log(locale.padEnd(6) + 'up to date — ' + built.count + ' static entries in ' + rel);
+      continue;
+    }
+
+    if (check) {
+      console.error(
+        'ERROR: ' + rel + ' is out of date with its own LIBRARY array.\n' +
+        '       Run `npm run build:library-directory` and commit the result.'
+      );
+      stale++;
+      continue;
+    }
+
+    fs.writeFileSync(file, next);
+    wrote++;
+    console.log(locale.padEnd(6) + 'wrote ' + built.count + ' static directory entries into ' + rel);
+  }
+
+  if (check && stale) process.exit(1);
+  if (!check && wrote === 0) console.log('all ' + pages.length + ' library hub(s) already up to date');
 }
 
 main();

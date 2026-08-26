@@ -52,6 +52,7 @@ Exit status is non-zero if any ERROR-level issue is found, so the script is
 CI-friendly. WARN-level issues do not fail the run.
 """
 
+import json
 import argparse
 import re
 import sys
@@ -60,6 +61,12 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
+# The canonical locale codes, read from the registry every other piece of
+# locale tooling here agrees on rather than re-listed by hand.
+LOCALE_CODES = tuple(
+    json.loads((REPO / "data" / "locale_qualification_tiers.json").read_text(encoding="utf-8"))["locales"]
+)
+
 LIBRARY_DIR = REPO / "library"
 SYMBOL_DIR = REPO / "symbol"
 
@@ -275,9 +282,14 @@ def gather_paths(args_paths):
         return paths
     paths = sorted(LIBRARY_DIR.glob("*/index.html")) + sorted(SYMBOL_DIR.glob("*/index.html"))
     # Every translated lane (<lang>/library/, <lang>/symbol/) gets the same
-    # scan by default — a two-letter top-level dir with no such subfolder
-    # (e.g. js/) simply contributes nothing.
-    for lang_dir in sorted(REPO.glob("??")):
+    # scan by default. Locales come from the canonical code list, never from a
+    # filesystem glob: this loop used to be `REPO.glob("??")`, which is two
+    # characters, so `zh-tw` (five) was silently never scanned — 73 pages
+    # invisible to every check in this file, including the orphan-spoke pass —
+    # while `js/` was scanned as though it were a locale. Found by the
+    # 2026-08-26 locale library hub coverage audit.
+    for code in LOCALE_CODES:
+        lang_dir = REPO / code
         if not lang_dir.is_dir():
             continue
         for lane in ("library", "symbol"):
