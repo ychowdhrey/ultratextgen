@@ -166,13 +166,95 @@ page-specific line has to be written.
 
 ## 3. "Click any symbol to copy it instantly" — 220 English pages
 
-**Source:** not a generator default. It is written into **182 of 573**
+**Source:** not a generator default. It is written into
 `data/library_page_specs/*.json` files by hand, one at a time.
 
-That distinction changes the fix. A generator default is one edit; 182
-copy-pasted spec fields are a content-authoring habit, and the durable fix is a
-spec-level check that rejects a new spec reusing an existing spec's `lead`
-verbatim. `scripts/check_locale_spec.py` is the natural home for that rule.
+That distinction changes the fix. A generator default is one edit; a couple of
+hundred copy-pasted spec fields are a content-authoring habit, and the durable
+fix is a spec-level check.
+
+### Correction (2026-08-26, same day, acting on Batch C)
+
+**The fix proposed above was specified at the wrong granularity and would have
+shipped a gate that could never fire.** It read: *"a spec-level check that
+rejects a new spec reusing an existing spec's `lead` verbatim."* Run that design
+and it finds **nothing** — the corpus contains **zero** exact duplicate
+`hero_tagline`, `meta_description`, `title` or `intro` values. Every one of
+those taglines is unique *overall*; what repeats is a **sentence inside** an
+otherwise page-specific field:
+
+> "Ancient Greek letters for maths and fraternities. Click any symbol to copy it
+> instantly."
+
+Field equality says that spec is clean. It is not. Re-measured at sentence
+level across **591 specs**:
+
+| specs | field | sentence |
+|---:|---|---|
+| 171 | `hero_tagline` | "Click any symbol to copy it instantly." |
+| 148 | `meta_description` | "Click any symbol to copy it instantly." |
+| 91 | `meta_description` | "Click any emoji or combo to copy it instantly." |
+| 86 | `intro` | "Copy a single emoji below, or grab a full combo set with one click." |
+| 55 | `cta` | "Use UltraTextGen to convert plain text into bold, italic, …" |
+| 21 | `meta_description` | "Click any to copy it instantly." — and that one is ungrammatical |
+
+**45 sentences repeat across more than one spec; 416 of 591 specs carry at least
+one.** The `meta_description` rows are the sharper half: a meta description
+duplicated across 148 pages is a plain SEO defect, not only an editorial one.
+
+The last row is the tell that this is paste, not authorship. "Click any to copy
+it instantly" is missing its noun — someone deleted "symbol" out of the copied
+line and never replaced it, and it shipped to 21 pages.
+
+### The gate
+
+**`npm run check:spec-sentence-reuse`** (`scripts/check-spec-sentence-reuse.py`),
+wired into `.github/workflows/validate.yml` as a **gating** step, with
+**`npm run test:spec-sentence-reuse`** (19 assertions) gating alongside it.
+
+- It keys on the **sentence**, never on `(field, sentence)` — a tagline pasted
+  into `intro` is the same reused line, and a field-scoped key would let it hide
+  by moving. The 171 and the 148 above are therefore one index entry covering
+  181 specs; the per-field split is what tells you where to fix it.
+- **Delta-scoped**, the same design as `check-locale-translation.js` and
+  `check-faq-schema.js` and for the same measured reason: 416 of 591 specs are
+  already in the backlog, and a state check red on every PR regardless of what it
+  touched is a check people learn to ignore. A sentence counts against a branch
+  only when the branch puts it into a spec that did not carry it at the merge
+  base. Pre-existing reuse is **reported, never silenced**.
+- **Threshold:** a sentence already in **3 or more other** specs. Two specs
+  sharing a line is a coincidence; four is a template forming.
+- **Floor:** sentences under 25 characters are ignored. "Free, no sign-up." is a
+  fragment where reuse is not meaningfully avoidable.
+- **Scope:** `hero_tagline`, `meta_description`, `intro`, `cta`, `title` only.
+  Scanning every string field would pull in slugs, hrefs and symbol labels, where
+  reuse is correct.
+- `--audit` prints the whole-corpus picture (`npm run audit:spec-sentence-reuse`).
+
+Verified per CLAUDE.md's own rule before being trusted ("Adding a validator
+script is not the same as gating on it"), against real inputs on the live tree:
+
+- **Catch** — pasting the 181-spec tagline sentence into
+  `data/library_page_specs/algeria-emoji-combos.json` reports `reuse introduced:
+  1`, `pre-existing: 2`, **exit 1**.
+- **Non-catch** — replacing it with page-specific copy ("Green, white and the
+  crescent star of the Algerian flag…") reports `reuse introduced: 0`, **exit 0**.
+- The unit tests were themselves probed against three deliberately broken
+  variants of the script — dropping the self-subtraction so a spec is counted
+  against itself, treating pre-existing reuse as introduced, and reverting to
+  field-level keys — and each one turns the suite red.
+
+**Note the direction of the fix.** The failure message does not ask for a synonym
+swap; Google's spam policy names *"automated transformations like synonymizing"*
+as scaled content abuse, so trading words to pass would move toward the policy.
+It asks for a sentence about *this* page — what the symbol is for, where it
+breaks, what it is confused with — or, when a line genuinely must be shared, for
+it to live in the generator default where it is one string with one owner.
+
+**Not started: the 416-spec backlog.** This gate is forward-only by design. The
+existing reuse is a separate, explicitly-approved remediation pass, and
+CLAUDE.md's standing rule applies — do not begin a bulk cleanup unless it is part
+of an approved task.
 
 ---
 
@@ -233,8 +315,12 @@ Everything else above is a build-system change.
    apply it is blocked because these generators would delete five shipped
    repairs, and a guard now enforces that. Live pages are unchanged.
 2. **The CTA default + 89 specs** — 421 English pages plus their translations.
-3. **A spec-level duplicate-`lead` check** — stops item 3 recurring. Prevention,
-   not repair.
+3. ~~**A spec-level duplicate-`lead` check** — stops item 3 recurring.
+   Prevention, not repair.~~ **DONE 2026-08-26, at a different granularity** —
+   `lead`-level comparison finds zero duplicates in the whole corpus and would
+   have shipped a permanently-green gate. `npm run check:spec-sentence-reuse`
+   compares **sentences inside** the copy fields instead; see §3's correction.
+   Prevention only — the 416-spec backlog it measures is untouched.
 4. **`scripts/build_category_locale_pages.py` (284 em dashes) and
    `scripts/answer-pages-content.js` (198)** — the two densest code sources.
 

@@ -185,6 +185,9 @@ without the data.
 | `npm run audit:editorial-footprint` | whole site | **informational**, never gating |
 | `npm run check:editorial-footprint` | diff-scoped | **shadow mode** — reports, exits 0 |
 | `npm run test:editorial-footprint` | fixtures | **gating** — no backlog to be red against |
+| `npm run check:spec-sentence-reuse` | diff-scoped | **gating** — a spec may not paste a sentence 3+ other specs already carry |
+| `npm run audit:spec-sentence-reuse` | whole corpus | **informational** — the 416-spec backlog |
+| `npm run test:spec-sentence-reuse` | fixtures | **gating** — 19 assertions, no backlog to be red against |
 
 **The gate measures the delta, not the state.** A finding counts against a branch
 only if it exists now and did not exist at the merge base; pre-existing findings
@@ -261,6 +264,7 @@ a deliberately broken input.
 | 2026-08-26 | System created. Stage 2 (shadow) entered. `model-leakage` and `seo-preservation` verified blocking under `--enforce` against seven probes. | initial build |
 | 2026-08-26 | First remediation applied (Batch A): the four printables generators de-templated. Print-guidance answers went from 2 distinct across 26 bubble-letter pages to 26; the 184-page shared trust line and the 88-page "Yes — every letter…" opener are gone from generator output. **No live page changed**, and 0 title/H1/canonical/meta lines moved — the SEO Preservation Gate constrains its own author, since these titles carry em dashes and the rule is forward-only. | approved cleanup |
 | 2026-08-26 | `npm run test:printables-parity` added as a **gating** check (14 assertions, no backlog). Acting on Batch A found the four generators would delete five shipped site-wide repairs from 90 live pages; `scripts/lib/printables_parity.py` now refuses such a write. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §1a. | safety finding |
+| 2026-08-26 | `npm run check:spec-sentence-reuse` added as a **gating**, diff-scoped check, with `npm run test:spec-sentence-reuse` (19 assertions) gating alongside it. It stops a new or edited spec pasting a sentence 3+ other specs already carry. **The design it replaces was wrong**: field-level comparison of `hero_tagline`/`meta_description`/`title`/`intro` finds **zero** duplicates in the corpus and would have shipped a gate that could never fire — the reuse is a *sentence inside* an otherwise page-specific field (171 taglines, 148 meta descriptions, one line). Backlog measured and **left untouched**: 45 sentences across 416 of 591 specs. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §3. | prevention (Batch C) |
 
 ---
 

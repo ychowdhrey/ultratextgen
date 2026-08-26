@@ -325,6 +325,19 @@ jobs:
         continue-on-error: true
         run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
 
+      # Diff-scoped and GATING. Page copy is hand-written once per spec in
+      # data/library_page_specs/, and nothing compared those specs to each
+      # other: 45 sentences repeat across more than one spec and 416 of 591
+      # specs carry at least one. The worst is a hero_tagline on 181 specs, and
+      # a meta_description duplicated across 91 is an SEO defect, not only an
+      # editorial one. That backlog is REPORTED, never failed — only a spec this
+      # branch adds or changes can fail, and only when it copies a sentence
+      # already in 3+ other specs. `--audit` gives the whole-corpus picture.
+      - name: Run spec sentence-reuse check
+        id: spec_sentence_reuse
+        continue-on-error: true
+        run: npm run check:spec-sentence-reuse -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee spec-sentence-reuse.log
+
       # Gating, zero backlog: unit tests over fixtures. Guards the four
       # printables generators, which are FULL regenerators and were measured
       # deleting five later site-wide repairs (Funding Choices tag, static
@@ -334,6 +347,17 @@ jobs:
         id: printables_parity_tests
         continue-on-error: true
         run: npm run test:printables-parity | tee printables-parity-tests.log
+
+      # Gating, zero backlog: unit tests over fixtures for the check above. The
+      # first specification of that check compared whole FIELDS, and the corpus
+      # has zero duplicate hero_tagline/meta_description/title/intro values — it
+      # would have shipped a gate that could never fire. Several cases pin the
+      # sentence-level granularity down, and the NON-catches pin the delta rule
+      # that keeps the 416-spec backlog reported rather than failed.
+      - name: Run spec sentence-reuse tests
+        id: spec_sentence_reuse_tests
+        continue-on-error: true
+        run: npm run test:spec-sentence-reuse | tee spec-sentence-reuse-tests.log
 
       - name: Build step summary
         if: always()
@@ -452,6 +476,16 @@ jobs:
             cat printables-parity-tests.log
             echo '```'
             echo ""
+            echo "### Spec sentence-reuse check — \`${{ steps.spec_sentence_reuse.outcome }}\`"
+            echo '```'
+            cat spec-sentence-reuse.log
+            echo '```'
+            echo ""
+            echo "### Spec sentence-reuse tests — \`${{ steps.spec_sentence_reuse_tests.outcome }}\`"
+            echo '```'
+            cat spec-sentence-reuse-tests.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -495,7 +529,9 @@ jobs:
           steps.static_footer.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
-          steps.printables_parity_tests.outcome == 'failure'
+          steps.printables_parity_tests.outcome == 'failure' ||
+          steps.spec_sentence_reuse.outcome == 'failure' ||
+          steps.spec_sentence_reuse_tests.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

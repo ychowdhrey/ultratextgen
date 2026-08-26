@@ -2001,6 +2001,17 @@ ranks the upstream sources.
   `data/editorial_phrase_bank.json`.
 - **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
   to be red against.
+- **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
+  hand-written once per spec in `data/library_page_specs/` and nothing compared
+  those specs to each other: **45 sentences repeat across more than one spec and
+  416 of 591 carry at least one**, led by a `hero_tagline` on 171 and the same
+  line as a `meta_description` on 148 — which makes it an SEO defect as much as
+  an editorial one. It keys on the **sentence**, never on `(field, sentence)`: a
+  tagline pasted into `intro` is the same reused line. Field-level comparison —
+  the obvious design — finds **zero** duplicates in the whole corpus and would
+  have shipped a gate that could never fire. `npm run audit:spec-sentence-reuse`
+  is the whole-corpus picture; `npm run test:spec-sentence-reuse` (19 assertions)
+  gates alongside it.
 - Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
   `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
@@ -2382,6 +2393,12 @@ Standing protocol:
   generator run — the gate names the upstream file when it can find it. And do
   not run a site-wide purge: the rule is forward-only, and Google's own guidance
   warns against removing a page element because you heard it was bad.
+- Do not paste a sentence from one page spec into another. `npm run
+  check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
+  sentence 3+ other specs already carry, and the fix is a sentence about *this*
+  page — what the symbol is for, where it breaks, what it is confused with — not
+  a synonym swap. A line that genuinely must be shared belongs in the generator
+  default, where it is one string with one owner.
 - Do not add an entry to `data/editorial_phrase_bank.json` unilaterally, and
   never to make a page pass. Same bar as `data/translation_parity_exceptions.json`
   and `data/english_parent_exceptions.json`. Every entry carries its measured
