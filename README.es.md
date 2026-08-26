@@ -1,9 +1,9 @@
-🌍 Languages  
+🌍 Idiomas  
 [English](README.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português](README.pt.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [Polski](README.pl.md) | [Türkçe](README.tr.md)
 
 # UltraTextGen
 
-UltraTextGen es un generador de texto Unicode rápido y limpio, creado para personas que no quieren perder el tiempo.
+UltraTextGen es un generador de texto Unicode rápido y limpio, creado para quienes no quieren perder el tiempo.
 
 - Sin páginas pesadas.
 - Sin cargas innecesarias.
@@ -14,64 +14,100 @@ Escribe tu texto, cópialo y sigue adelante.
 
 ## Por Qué UltraTextGen
 
-La mayoría de las herramientas de texto llamativas son lentas, desordenadas y están sobrecargadas de efectos que nunca usarás.
+La mayoría de las herramientas de texto decorativo son lentas, recargadas y llenas de efectos que nunca usarás.
 
-UltraTextGen es todo lo contrario.
+UltraTextGen es lo contrario.
 
 Carga al instante  
-Funciona completamente en el navegador  
-Sin registros, sin popups  
-Sin imágenes que simulan ser texto
+Funciona por completo en el navegador  
+Sin registros, sin ventanas emergentes  
+Nada entre tú y el botón de copiar
 
-Está construido para ahorrar tiempo, no para consumirlo.
+Está hecho para ahorrar tiempo, no para consumirlo.
 
 
 ## Qué Hace
 
-UltraTextGen convierte texto normal en estilos basados en Unicode que funcionan en plataformas sociales y aplicaciones de mensajería.
+**Texto con estilo que puedes pegar en cualquier parte.** UltraTextGen convierte
+el texto normal en estilos basados en Unicode — 114 en total — que funcionan en
+redes sociales y aplicaciones de mensajería. El resultado es texto real, no una
+imagen: se copia, se pega y sobrevive allí donde lo pongas.
 
-Obtienes texto que parece estilizado, pero que se comporta como texto normal cuando lo copias y pegas.
+**Nombres decorados para juegos y perfiles.** Una capa de adornos compone
+marcos, coronas y separadores alrededor de un nombre, y un motor de reglas por
+juego comprueba el resultado frente al límite de caracteres que el juego
+aplicará realmente — antes de gastar un cambio de nombre.
+
+**Salida imprimible y visual, cuando los caracteres no bastan.** Fichas de
+práctica en letra burbuja y cursiva, páginas para colorear, texto curvado y en
+arco, lettering para tatuajes. Todo se genera como SVG/PNG en tu navegador y es
+el paso siguiente para lo que el copiar y pegar no resuelve — calcar, colorear,
+imprimir — nunca la respuesta por defecto.
+
+Todo lo anterior se ejecuta en el cliente. Nada se genera en un servidor y no se
+descarga ningún archivo de fuente para que funcione.
 
 
 ## Para Quién Es
 
-Creadores que actualizan bios y pies de foto  
-Gestores de redes sociales que prueban variaciones  
+Creadores que actualizan biografías y pies de foto  
+Community managers que prueban variantes  
 Comunidades de Discord y gaming  
-Cualquiera que quiera énfasis visual sin complicaciones
+Cualquiera que quiera énfasis visual sin fricción
 
 Si la velocidad importa, esta herramienta encaja.
 
 
-## Construido para la Velocidad
+## Diseñado Para La Velocidad
 
-UltraTextGen es intencionalmente ligero.
+UltraTextGen es deliberadamente ligero.
 
 - Sin frameworks
-- Sin scripts pesados
+- Sin bundlers
+- Sin dependencias en el navegador
 - Sin animaciones innecesarias
 
-Todo está diseñado para cargar rápido y mantenerse responsivo incluso en conexiones lentas.
+Todo está pensado para cargar rápido y responder bien incluso con conexiones lentas.
 
 
-## Filosofía de Diseño
+## Filosofía De Diseño
 
-- Rapidez sobre lo vistoso
-- Claridad sobre lo ingenioso
-- Utilidad sobre lo impresionante
+- Rápido antes que vistoso
+- Claro antes que ingenioso
+- Útil antes que impresionante
 
-Si algo no ayuda al usuario a moverse más rápido, no se incluye.
-
-
-## Herramienta en Vivo
+Si algo no ayuda al usuario a avanzar más rápido, no se publica.
 
 
-## Página Principal
-https://ultratextgen.com
+## Sitio En Vivo
 
-## Páginas de Plataformas
+**Página principal:** https://ultratextgen.com
 
-UltraTextGen incluye páginas dedicadas a cada plataforma principal para que los estilos se rendericen exactamente como se espera.
+### Qué hay en el sitio
+
+Cada sección de abajo tiene su propia página índice con búsqueda y navegación
+incorporadas — es la forma más rápida de encontrar algo. Las cifras se
+actualizan cada semana a partir de `sitemap.xml`.
+
+<!-- START_PILLARS -->
+| Sección | Páginas en inglés | Páginas localizadas |
+|---|---:|---:|
+| [Biblioteca](https://ultratextgen.com/library/) | 336 | 1084 |
+| [Símbolos](https://ultratextgen.com/symbol/) | 113 | 1652 |
+| [Respuestas](https://ultratextgen.com/answers/) | 65 | 75 |
+| [Casos de Uso](https://ultratextgen.com/usecase/) | 36 | 144 |
+| [Guías](https://ultratextgen.com/guide/) | 32 | 90 |
+| [Categorías](https://ultratextgen.com/category/) | 23 | 0 |
+| [Novedades](https://ultratextgen.com/updates/) | 11 | 56 |
+| [Herramientas Integrables](https://ultratextgen.com/embed/) | 6 | 0 |
+
+**4576 URLs en total**, en 30 idiomas.
+<!-- END_PILLARS -->
+
+
+## Páginas De Plataformas
+
+Páginas dedicadas a cada plataforma principal, para que los estilos se muestren exactamente como se espera.
 
 <!-- START_PLATFORMS -->
 ### Plataformas de Redes Sociales
@@ -90,501 +126,23 @@ UltraTextGen incluye páginas dedicadas a cada plataforma principal para que los
 **WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
-## Páginas de Categorías
 
-UltraTextGen organiza las transformaciones de fuentes Unicode en categorías estructuradas basadas en el tono.
+## Idiomas
 
-<!-- START_CATEGORIES -->
-**Todas las categorías:** https://ultratextgen.com/category/
+Gran parte del sitio está localizada, no solo la interfaz: cada idioma tiene sus
+propias páginas, escritas para ese mercado en lugar de traducidas
+automáticamente del inglés.
 
-- https://ultratextgen.com/category/aesthetic-fonts/
-- https://ultratextgen.com/category/ancient-fonts/
-- https://ultratextgen.com/category/bold-fonts/
-- https://ultratextgen.com/category/bubble-fonts/
-- https://ultratextgen.com/category/case-converter/
-- https://ultratextgen.com/category/classified/
-- https://ultratextgen.com/category/cursive-fonts/
-- https://ultratextgen.com/category/cute-fonts/
-- https://ultratextgen.com/category/emoji-letter-fonts/
-- https://ultratextgen.com/category/faux-fonts/
-- https://ultratextgen.com/category/fullwidth-fonts/
-- https://ultratextgen.com/category/gothic-fonts/
-- https://ultratextgen.com/category/italic-fonts/
-- https://ultratextgen.com/category/novelty-fonts/
-- https://ultratextgen.com/category/old-english-fonts/
-- https://ultratextgen.com/category/small-caps/
-- https://ultratextgen.com/category/small-text/
-- https://ultratextgen.com/category/strikethrough-text/
-- https://ultratextgen.com/category/subscript/
-- https://ultratextgen.com/category/superscript/
-- https://ultratextgen.com/category/text-decorator/
-- https://ultratextgen.com/category/underline-text/
-- https://ultratextgen.com/category/upside-down-text/
-<!-- END_CATEGORIES -->
+<!-- START_LOCALES -->
+El sitio está disponible en 30 idiomas:
 
-## Casos de Uso
+العربية (`ar`) · Bosanski (`bs`) · Čeština (`cs`) · Dansk (`da`) · Deutsch (`de`) · Español (`es`) · Suomi (`fi`) · Français (`fr`) · हिन्दी (`hi`) · Hrvatski (`hr`) · Magyar (`hu`) · Bahasa Indonesia (`id`) · Italiano (`it`) · 日本語 (`ja`) · 한국어 (`ko`) · Bahasa Melayu (`ms`) · Nederlands (`nl`) · Norsk (`no`) · Polski (`pl`) · Português (`pt`) · Română (`ro`) · Русский (`ru`) · Slovenčina (`sk`) · Српски (`sr`) · Svenska (`sv`) · ไทย (`th`) · Tagalog (`tl`) · Türkçe (`tr`) · Tiếng Việt (`vi`) · 繁體中文 (`zh-tw`)
+<!-- END_LOCALES -->
 
-Páginas contextuales diseñadas en torno a objetivos específicos del usuario, cada una con herramientas adaptadas y estilos Unicode curados.
 
-<!-- START_USECASES -->
-**Todos los casos de uso:** https://ultratextgen.com/usecase/
+## Herramientas Integrables
 
-- https://ultratextgen.com/usecase/aesthetic-contact-names/
-- https://ultratextgen.com/usecase/aesthetic-instagram-names/
-- https://ultratextgen.com/usecase/before-after-emoji/
-- https://ultratextgen.com/usecase/bio-font/
-- https://ultratextgen.com/usecase/clan-tag-generator/
-- https://ultratextgen.com/usecase/clash-of-clans-name-generator/
-- https://ultratextgen.com/usecase/clash-royale-name-generator/
-- https://ultratextgen.com/usecase/comment-font/
-- https://ultratextgen.com/usecase/emoji-combinations/
-- https://ultratextgen.com/usecase/emoji-letters/
-- https://ultratextgen.com/usecase/emoji-to-text/
-- https://ultratextgen.com/usecase/football-font/
-- https://ultratextgen.com/usecase/fortnite-name-generator/
-- https://ultratextgen.com/usecase/free-fire-clan-tag-generator/
-- https://ultratextgen.com/usecase/free-fire-guild-name-generator/
-- https://ultratextgen.com/usecase/free-fire-name-generator/
-- https://ultratextgen.com/usecase/group-name-generator/
-- https://ultratextgen.com/usecase/linkedin-headline/
-- https://ultratextgen.com/usecase/mobile-legends-name-generator/
-- https://ultratextgen.com/usecase/mobile-legends-squad-name-generator/
-- https://ultratextgen.com/usecase/name-to-symbols/
-- https://ultratextgen.com/usecase/nickname-generator/
-- https://ultratextgen.com/usecase/old-english-translator/
-- https://ultratextgen.com/usecase/pirate-translator/
-- https://ultratextgen.com/usecase/playstation-name-generator/
-- https://ultratextgen.com/usecase/pubg-name-generator/
-- https://ultratextgen.com/usecase/repeat-text/
-- https://ultratextgen.com/usecase/scrolling-text/
-- https://ultratextgen.com/usecase/stumble-guys-name-generator/
-- https://ultratextgen.com/usecase/stylish-name/
-- https://ultratextgen.com/usecase/tattoo-fonts/
-- https://ultratextgen.com/usecase/text-to-emoji/
-- https://ultratextgen.com/usecase/valorant-name-generator/
-- https://ultratextgen.com/usecase/vertical-text/
-- https://ultratextgen.com/usecase/xbox-name-generator/
-- https://ultratextgen.com/usecase/zalgo-text/
-<!-- END_USECASES -->
-
-## Guías
-
-Las fuentes no son decoración. Son señales.
-Estos recursos exploran cómo la tipografía Unicode codifica el tono, la autoridad, la ironía y el énfasis en las plataformas en línea.
-
-<!-- START_GUIDES -->
-- https://ultratextgen.com/guide/bio-formatting-without-spam/
-- https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/
-- https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-- https://ultratextgen.com/guide/comments-that-stand-out/
-- https://ultratextgen.com/guide/discord-colored-text-guide/
-- https://ultratextgen.com/guide/discord-safe-name-styling/
-- https://ultratextgen.com/guide/discord-text-formatting-explained/
-- https://ultratextgen.com/guide/discord-where-fonts-work/
-- https://ultratextgen.com/guide/dividers-separators-guide/
-- https://ultratextgen.com/guide/emoticon-vs-emoji-vs-kaomoji/
-- https://ultratextgen.com/guide/fancy-fonts-accessibility-guide/
-- https://ultratextgen.com/guide/fancy-fonts-and-accents/
-- https://ultratextgen.com/guide/font-personality-and-brand/
-- https://ultratextgen.com/guide/fonts-and-search-visibility/
-- https://ultratextgen.com/guide/game-username-allowed-symbols/
-- https://ultratextgen.com/guide/how-unicode-fonts-work/
-- https://ultratextgen.com/guide/instagram-bio-line-breaks/
-- https://ultratextgen.com/guide/instagram-font-ideas/
-- https://ultratextgen.com/guide/instagram-fonts-shadowban-myth/
-- https://ultratextgen.com/guide/linkedin-bold-text-reach/
-- https://ultratextgen.com/guide/linkedin-comment-styling/
-- https://ultratextgen.com/guide/linkedin-comments-guide/
-- https://ultratextgen.com/guide/linkedin-fonts-recruiters-ats/
-- https://ultratextgen.com/guide/personal-branding-through-typography/
-- https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-- https://ultratextgen.com/guide/tiktok-font-changed/
-- https://ultratextgen.com/guide/unicode-symbol-approval-process/
-- https://ultratextgen.com/guide/vertical-text-guide/
-- https://ultratextgen.com/guide/whatsapp-text-formatting-explained/
-- https://ultratextgen.com/guide/why-fonts-show-as-boxes/
-<!-- END_GUIDES -->
-
-## Estructura del Proyecto
-
-```
-ultratextgen/
-├── index.html              # Página principal
-├── style.css               # Hoja de estilos global
-├── script.js               # Lógica principal de la aplicación
-├── styles.js               # Definiciones de estilos de fuentes Unicode
-├── renderer.js             # Motor de renderizado de texto
-├── fonts.json              # Datos de mapeo de fuentes
-├── sitemap.xml             # Sitemap generado automáticamente
-├── robots.txt              # Directivas para motores de búsqueda
-├── _redirects              # Reglas de redirección de URL
-├── scripts/
-│   ├── inject-faq-jsonld.js    # Inyector de datos estructurados FAQ
-│   └── update-sitemap.js       # Script de generación del sitemap
-├── category/               # Páginas de categorías de fuentes
-├── usecase/                # Páginas de casos de uso
-├── guide/                  # Páginas de guías editoriales
-├── discord/                # Página de plataforma Discord
-├── facebook/               # Página de plataforma Facebook
-├── instagram/              # Página de plataforma Instagram
-├── linkedin/               # Página de plataforma LinkedIn
-├── pinterest/              # Página de plataforma Pinterest
-├── snapchat/               # Página de plataforma Snapchat
-├── telegram/               # Página de plataforma Telegram
-├── tiktok/                 # Página de plataforma TikTok
-├── whatsapp/               # Página de plataforma WhatsApp
-├── x/                      # Página de plataforma X (Twitter)
-└── youtube/                # Página de plataforma YouTube
-```
-
-## Stack Tecnológico
-
-- **HTML** — 91,4%
-- **JavaScript** — 6,3%
-- **CSS** — 2,3%
-
-Sin frameworks. Sin herramientas de build requeridas para el frontend. Código puro nativo del navegador.
-
-<!-- START_LIBRARY -->
-- https://ultratextgen.com/library/accent-marks-diacritics/
-- https://ultratextgen.com/library/achievement-symbols/
-- https://ultratextgen.com/library/aesthetic-borders-frames/
-- https://ultratextgen.com/library/aesthetic-symbols/
-- https://ultratextgen.com/library/algeria-emoji-combos/
-- https://ultratextgen.com/library/alt-codes/
-- https://ultratextgen.com/library/angel-emoji/
-- https://ultratextgen.com/library/angry-emoji/
-- https://ultratextgen.com/library/angry-kaomoji/
-- https://ultratextgen.com/library/animal-emojis/
-- https://ultratextgen.com/library/anime-symbols/
-- https://ultratextgen.com/library/annoyed-emoji/
-- https://ultratextgen.com/library/argentina-emoji-combos/
-- https://ultratextgen.com/library/arrow-symbols/
-- https://ultratextgen.com/library/art-stationery-emojis/
-- https://ultratextgen.com/library/ascii-table/
-- https://ultratextgen.com/library/australia-emoji-combos/
-- https://ultratextgen.com/library/austria-emoji-combos/
-- https://ultratextgen.com/library/awareness-ribbons/
-- https://ultratextgen.com/library/bear-kaomoji/
-- https://ultratextgen.com/library/beauty-nails-emojis/
-- https://ultratextgen.com/library/belgium-emoji-combos/
-- https://ultratextgen.com/library/bellingham-emoji-combos/
-- https://ultratextgen.com/library/benzema-emoji-combos/
-- https://ultratextgen.com/library/blush-emoji/
-- https://ultratextgen.com/library/blushing-kaomoji/
-- https://ultratextgen.com/library/body-language-emojis/
-- https://ultratextgen.com/library/bow-ribbon-symbols/
-- https://ultratextgen.com/library/box-drawing-symbols/
-- https://ultratextgen.com/library/bracket-symbols/
-- https://ultratextgen.com/library/braille-pattern-symbols/
-- https://ultratextgen.com/library/brainrot-slang-emojis/
-- https://ultratextgen.com/library/brazil-emoji-combos/
-- https://ultratextgen.com/library/bullet-point-symbols/
-- https://ultratextgen.com/library/bunny-kaomoji/
-- https://ultratextgen.com/library/cameroon-emoji-combos/
-- https://ultratextgen.com/library/canada-emoji-combos/
-- https://ultratextgen.com/library/card-emoji-soccer/
-- https://ultratextgen.com/library/card-suit-symbols/
-- https://ultratextgen.com/library/cat-ascii-art/
-- https://ultratextgen.com/library/cat-kaomoji/
-- https://ultratextgen.com/library/check-mark-emoji/
-- https://ultratextgen.com/library/checkmark-symbols/
-- https://ultratextgen.com/library/chefs-kiss-emoji/
-- https://ultratextgen.com/library/chess-symbols/
-- https://ultratextgen.com/library/chile-emoji-combos/
-- https://ultratextgen.com/library/china-emoji-combos/
-- https://ultratextgen.com/library/chinese-symbols/
-- https://ultratextgen.com/library/choking-emoji/
-- https://ultratextgen.com/library/christmas-symbols/
-- https://ultratextgen.com/library/clap-emoji/
-- https://ultratextgen.com/library/clock-time-symbols/
-- https://ultratextgen.com/library/clothing-fashion-emojis/
-- https://ultratextgen.com/library/clown-emoji/
-- https://ultratextgen.com/library/colombia-emoji-combos/
-- https://ultratextgen.com/library/color-emoji-combos/
-- https://ultratextgen.com/library/confused-emoji/
-- https://ultratextgen.com/library/copyright-trademark-symbols/
-- https://ultratextgen.com/library/coquette-symbols/
-- https://ultratextgen.com/library/costa-rica-emoji-combos/
-- https://ultratextgen.com/library/cottagecore-symbols/
-- https://ultratextgen.com/library/cowboy-emoji/
-- https://ultratextgen.com/library/cringe-emoji/
-- https://ultratextgen.com/library/croatia-emoji-combos/
-- https://ultratextgen.com/library/cross-x-symbols/
-- https://ultratextgen.com/library/crown-emoji/
-- https://ultratextgen.com/library/crown-royalty-symbols/
-- https://ultratextgen.com/library/crying-emoji/
-- https://ultratextgen.com/library/crying-kaomoji/
-- https://ultratextgen.com/library/currency-symbols/
-- https://ultratextgen.com/library/cute-kaomoji/
-- https://ultratextgen.com/library/dancing-emoji/
-- https://ultratextgen.com/library/dark-academia-symbols/
-- https://ultratextgen.com/library/dash-hyphen-symbols/
-- https://ultratextgen.com/library/de-bruyne-emoji-combos/
-- https://ultratextgen.com/library/denmark-emoji-combos/
-- https://ultratextgen.com/library/devil-emoji/
-- https://ultratextgen.com/library/di-maria-emoji-combos/
-- https://ultratextgen.com/library/dice-domino-symbols/
-- https://ultratextgen.com/library/discord-symbols/
-- https://ultratextgen.com/library/divider-kaomoji/
-- https://ultratextgen.com/library/diwali-symbols/
-- https://ultratextgen.com/library/dog-ascii-art/
-- https://ultratextgen.com/library/dog-kaomoji/
-- https://ultratextgen.com/library/dongers/
-- https://ultratextgen.com/library/dreamcore-weirdcore-symbols/
-- https://ultratextgen.com/library/easter-symbols/
-- https://ultratextgen.com/library/ecuador-emoji-combos/
-- https://ultratextgen.com/library/eggplant-emoji/
-- https://ultratextgen.com/library/egypt-emoji-combos/
-- https://ultratextgen.com/library/egyptian-hieroglyphs/
-- https://ultratextgen.com/library/electrical-circuit-symbols/
-- https://ultratextgen.com/library/email-symbols/
-- https://ultratextgen.com/library/embarrassed-emoji/
-- https://ultratextgen.com/library/emoji-combos/
-- https://ultratextgen.com/library/emoji-flags/
-- https://ultratextgen.com/library/emoji-meanings-guide/
-- https://ultratextgen.com/library/england-emoji-combos/
-- https://ultratextgen.com/library/evil-eye-hamsa-symbols/
-- https://ultratextgen.com/library/excited-kaomoji/
-- https://ultratextgen.com/library/eye-roll-emoji/
-- https://ultratextgen.com/library/eyes-emoji/
-- https://ultratextgen.com/library/face-emojis/
-- https://ultratextgen.com/library/facebook-symbols/
-- https://ultratextgen.com/library/facepalm-emoji/
-- https://ultratextgen.com/library/fairycore-symbols/
-- https://ultratextgen.com/library/fantasy-mythical-emojis/
-- https://ultratextgen.com/library/fire-emoji/
-- https://ultratextgen.com/library/flower-kaomoji/
-- https://ultratextgen.com/library/flower-symbols/
-- https://ultratextgen.com/library/foden-emoji-combos/
-- https://ultratextgen.com/library/food-drink-emojis/
-- https://ultratextgen.com/library/football-ascii-art/
-- https://ultratextgen.com/library/football-emoji-copy-paste/
-- https://ultratextgen.com/library/football-kaomoji/
-- https://ultratextgen.com/library/football-reaction-emojis/
-- https://ultratextgen.com/library/football-symbols/
-- https://ultratextgen.com/library/football-trophy-emoji/
-- https://ultratextgen.com/library/football-username-ideas/
-- https://ultratextgen.com/library/fortnite-symbols/
-- https://ultratextgen.com/library/fourth-of-july-symbols/
-- https://ultratextgen.com/library/fraction-symbols/
-- https://ultratextgen.com/library/france-emoji-combos/
-- https://ultratextgen.com/library/freaky-emoji/
-- https://ultratextgen.com/library/free-fire-name-symbols/
-- https://ultratextgen.com/library/friendship-emojis/
-- https://ultratextgen.com/library/funny-emoji-combos/
-- https://ultratextgen.com/library/gaming-aesthetic-symbols/
-- https://ultratextgen.com/library/gavi-emoji-combos/
-- https://ultratextgen.com/library/gender-symbols/
-- https://ultratextgen.com/library/geometric-symbols/
-- https://ultratextgen.com/library/germany-emoji-combos/
-- https://ultratextgen.com/library/ghana-emoji-combos/
-- https://ultratextgen.com/library/ghost-emoji/
-- https://ultratextgen.com/library/gift-emoji/
-- https://ultratextgen.com/library/goal-emoji-combos/
-- https://ultratextgen.com/library/goat-emoji-combos/
-- https://ultratextgen.com/library/goth-grunge-symbols/
-- https://ultratextgen.com/library/greece-emoji-combos/
-- https://ultratextgen.com/library/greek-letter-symbols/
-- https://ultratextgen.com/library/greeting-message-emojis/
-- https://ultratextgen.com/library/griezmann-emoji-combos/
-- https://ultratextgen.com/library/guess-soccer-player-by-emoji/
-- https://ultratextgen.com/library/guess-soccer-team-by-emoji/
-- https://ultratextgen.com/library/haaland-emoji-combos/
-- https://ultratextgen.com/library/halloween-symbols/
-- https://ultratextgen.com/library/halo-emoji/
-- https://ultratextgen.com/library/hand-symbols/
-- https://ultratextgen.com/library/handshake-emoji/
-- https://ultratextgen.com/library/happy-emoji/
-- https://ultratextgen.com/library/happy-kaomoji/
-- https://ultratextgen.com/library/hazard-warning-symbols/
-- https://ultratextgen.com/library/heart-ascii-art/
-- https://ultratextgen.com/library/heart-kaomoji/
-- https://ultratextgen.com/library/heart-symbols/
-- https://ultratextgen.com/library/high-five-emoji/
-- https://ultratextgen.com/library/hindi-symbols/
-- https://ultratextgen.com/library/honduras-emoji-combos/
-- https://ultratextgen.com/library/html-entities/
-- https://ultratextgen.com/library/hug-kaomoji/
-- https://ultratextgen.com/library/india-emoji-combos/
-- https://ultratextgen.com/library/instagram-symbols/
-- https://ultratextgen.com/library/invisible-character/
-- https://ultratextgen.com/library/ipa-phonetic-symbols/
-- https://ultratextgen.com/library/iphone-emojis/
-- https://ultratextgen.com/library/iran-emoji-combos/
-- https://ultratextgen.com/library/ireland-emoji-combos/
-- https://ultratextgen.com/library/islamic-symbols/
-- https://ultratextgen.com/library/italy-emoji-combos/
-- https://ultratextgen.com/library/ivory-coast-emoji-combos/
-- https://ultratextgen.com/library/jamaica-emoji-combos/
-- https://ultratextgen.com/library/japan-emoji-combos/
-- https://ultratextgen.com/library/japanese-symbols/
-- https://ultratextgen.com/library/jewelry-gem-emojis/
-- https://ultratextgen.com/library/kane-emoji-combos/
-- https://ultratextgen.com/library/kawaii-cute-symbols/
-- https://ultratextgen.com/library/keyboard-symbols/
-- https://ultratextgen.com/library/kiss-emoji/
-- https://ultratextgen.com/library/kiss-kaomoji/
-- https://ultratextgen.com/library/korean-symbols/
-- https://ultratextgen.com/library/kvaratskhelia-emoji-combos/
-- https://ultratextgen.com/library/latex-symbols/
-- https://ultratextgen.com/library/laughing-emoji/
-- https://ultratextgen.com/library/laughing-kaomoji/
-- https://ultratextgen.com/library/laundry-care-symbols/
-- https://ultratextgen.com/library/lautaro-martinez-emoji-combos/
-- https://ultratextgen.com/library/lenny-face/
-- https://ultratextgen.com/library/lewandowski-emoji-combos/
-- https://ultratextgen.com/library/line-divider-symbols/
-- https://ultratextgen.com/library/linkedin-symbol-library/
-- https://ultratextgen.com/library/lip-bite-emoji/
-- https://ultratextgen.com/library/loading-text-symbols/
-- https://ultratextgen.com/library/love-kaomoji/
-- https://ultratextgen.com/library/math-symbols/
-- https://ultratextgen.com/library/mbappe-emoji-combos/
-- https://ultratextgen.com/library/media-control-symbols/
-- https://ultratextgen.com/library/medical-symbols/
-- https://ultratextgen.com/library/meme-text-art/
-- https://ultratextgen.com/library/messi-emoji-combos/
-- https://ultratextgen.com/library/mexico-emoji-combos/
-- https://ultratextgen.com/library/middle-finger-emoji/
-- https://ultratextgen.com/library/minecraft-symbols/
-- https://ultratextgen.com/library/ml-name-symbols/
-- https://ultratextgen.com/library/moai-emoji/
-- https://ultratextgen.com/library/modric-emoji-combos/
-- https://ultratextgen.com/library/money-emojis/
-- https://ultratextgen.com/library/moon-celestial-symbols/
-- https://ultratextgen.com/library/morocco-emoji-combos/
-- https://ultratextgen.com/library/movie-night-emojis/
-- https://ultratextgen.com/library/muscle-emoji/
-- https://ultratextgen.com/library/musiala-emoji-combos/
-- https://ultratextgen.com/library/music-kaomoji/
-- https://ultratextgen.com/library/music-symbols/
-- https://ultratextgen.com/library/nature-emojis/
-- https://ultratextgen.com/library/nerd-emoji/
-- https://ultratextgen.com/library/netherlands-emoji-combos/
-- https://ultratextgen.com/library/new-zealand-emoji-combos/
-- https://ultratextgen.com/library/neymar-emoji-combos/
-- https://ultratextgen.com/library/nickname-symbols/
-- https://ultratextgen.com/library/nigeria-emoji-combos/
-- https://ultratextgen.com/library/nkunku-emoji-combos/
-- https://ultratextgen.com/library/norse-viking-runes/
-- https://ultratextgen.com/library/norway-emoji-combos/
-- https://ultratextgen.com/library/number-symbols/
-- https://ultratextgen.com/library/object-emojis/
-- https://ultratextgen.com/library/osimhen-emoji-combos/
-- https://ultratextgen.com/library/panama-emoji-combos/
-- https://ultratextgen.com/library/paraguay-emoji-combos/
-- https://ultratextgen.com/library/party-celebration-emojis/
-- https://ultratextgen.com/library/peace-emoji/
-- https://ultratextgen.com/library/pedri-emoji-combos/
-- https://ultratextgen.com/library/people-profession-emojis/
-- https://ultratextgen.com/library/peru-emoji-combos/
-- https://ultratextgen.com/library/pleading-emoji/
-- https://ultratextgen.com/library/poland-emoji-combos/
-- https://ultratextgen.com/library/poop-emoji/
-- https://ultratextgen.com/library/portugal-emoji-combos/
-- https://ultratextgen.com/library/praying-hands-emoji/
-- https://ultratextgen.com/library/preppy-emoji-combos/
-- https://ultratextgen.com/library/pride-lgbtq-symbols/
-- https://ultratextgen.com/library/pubg-symbols/
-- https://ultratextgen.com/library/punctuation-symbols/
-- https://ultratextgen.com/library/qatar-emoji-combos/
-- https://ultratextgen.com/library/rashford-emoji-combos/
-- https://ultratextgen.com/library/recycle-environment-symbols/
-- https://ultratextgen.com/library/religious-symbols/
-- https://ultratextgen.com/library/roblox-symbols/
-- https://ultratextgen.com/library/roblox-text-art/
-- https://ultratextgen.com/library/rocket-emoji/
-- https://ultratextgen.com/library/rodri-emoji-combos/
-- https://ultratextgen.com/library/rodrygo-emoji-combos/
-- https://ultratextgen.com/library/ronaldo-emoji-combos/
-- https://ultratextgen.com/library/sad-emoji/
-- https://ultratextgen.com/library/sad-kaomoji/
-- https://ultratextgen.com/library/saka-emoji-combos/
-- https://ultratextgen.com/library/salah-emoji-combos/
-- https://ultratextgen.com/library/salute-emoji/
-- https://ultratextgen.com/library/saudi-arabia-emoji-combos/
-- https://ultratextgen.com/library/scared-emoji/
-- https://ultratextgen.com/library/school-education-emojis/
-- https://ultratextgen.com/library/scotland-emoji-combos/
-- https://ultratextgen.com/library/seahorse-emoji/
-- https://ultratextgen.com/library/seasonal-emoji-combos/
-- https://ultratextgen.com/library/senegal-emoji-combos/
-- https://ultratextgen.com/library/serbia-emoji-combos/
-- https://ultratextgen.com/library/shocked-emoji/
-- https://ultratextgen.com/library/shocked-kaomoji/
-- https://ultratextgen.com/library/shrug-kaomoji/
-- https://ultratextgen.com/library/sick-emoji/
-- https://ultratextgen.com/library/side-eye-emoji/
-- https://ultratextgen.com/library/sigh-emoji/
-- https://ultratextgen.com/library/skull-ascii-art/
-- https://ultratextgen.com/library/skull-emoji/
-- https://ultratextgen.com/library/slash-backslash-symbols/
-- https://ultratextgen.com/library/sleepy-kaomoji/
-- https://ultratextgen.com/library/smiley-face-guide/
-- https://ultratextgen.com/library/smirk-emoji/
-- https://ultratextgen.com/library/snapchat-symbols/
-- https://ultratextgen.com/library/soccer-emoji-copy-paste/
-- https://ultratextgen.com/library/son-emoji-combos/
-- https://ultratextgen.com/library/south-africa-emoji-combos/
-- https://ultratextgen.com/library/south-korea-emoji-combos/
-- https://ultratextgen.com/library/spain-emoji-combos/
-- https://ultratextgen.com/library/sparkle-kaomoji/
-- https://ultratextgen.com/library/sparkle-symbols/
-- https://ultratextgen.com/library/special-characters/
-- https://ultratextgen.com/library/sports-emojis/
-- https://ultratextgen.com/library/star-ascii-art/
-- https://ultratextgen.com/library/star-emoji/
-- https://ultratextgen.com/library/star-kaomoji/
-- https://ultratextgen.com/library/star-symbols/
-- https://ultratextgen.com/library/steam-symbols/
-- https://ultratextgen.com/library/suarez-emoji-combos/
-- https://ultratextgen.com/library/sunglasses-emoji/
-- https://ultratextgen.com/library/sweden-emoji-combos/
-- https://ultratextgen.com/library/switzerland-emoji-combos/
-- https://ultratextgen.com/library/table-flip-kaomoji/
-- https://ultratextgen.com/library/tech-status-symbols/
-- https://ultratextgen.com/library/text-art/
-- https://ultratextgen.com/library/text-faces-kaomoji/
-- https://ultratextgen.com/library/thanksgiving-symbols/
-- https://ultratextgen.com/library/therian-symbols/
-- https://ultratextgen.com/library/thinking-emoji/
-- https://ultratextgen.com/library/thumbs-up-emoji/
-- https://ultratextgen.com/library/thumbs-up-kaomoji/
-- https://ultratextgen.com/library/tiktok-symbols/
-- https://ultratextgen.com/library/tired-emoji/
-- https://ultratextgen.com/library/tongue-emoji/
-- https://ultratextgen.com/library/traffic-road-sign-symbols/
-- https://ultratextgen.com/library/transport-symbols/
-- https://ultratextgen.com/library/travel-vacation-emojis/
-- https://ultratextgen.com/library/tunisia-emoji-combos/
-- https://ultratextgen.com/library/turkey-emoji-combos/
-- https://ultratextgen.com/library/ukraine-emoji-combos/
-- https://ultratextgen.com/library/unit-measurement-symbols/
-- https://ultratextgen.com/library/uruguay-emoji-combos/
-- https://ultratextgen.com/library/usa-emoji-combos/
-- https://ultratextgen.com/library/venezuela-emoji-combos/
-- https://ultratextgen.com/library/vertical-line-symbols/
-- https://ultratextgen.com/library/vinicius-emoji-combos/
-- https://ultratextgen.com/library/vrchat-symbols/
-- https://ultratextgen.com/library/wales-emoji-combos/
-- https://ultratextgen.com/library/wave-kaomoji/
-- https://ultratextgen.com/library/weapon-tool-emojis/
-- https://ultratextgen.com/library/weather-symbols/
-- https://ultratextgen.com/library/wedding-anniversary-emojis/
-- https://ultratextgen.com/library/whatsapp-symbols/
-- https://ultratextgen.com/library/wink-emoji/
-- https://ultratextgen.com/library/wink-kaomoji/
-- https://ultratextgen.com/library/wirtz-emoji-combos/
-- https://ultratextgen.com/library/witchy-occult-symbols/
-- https://ultratextgen.com/library/world-cup-emoji-combos/
-- https://ultratextgen.com/library/x-twitter-symbols/
-- https://ultratextgen.com/library/y2k-symbols/
-- https://ultratextgen.com/library/yamal-emoji-combos/
-- https://ultratextgen.com/library/zodiac-symbols/
-<!-- END_LIBRARY -->
+Versiones ligeras e integrables de las herramientas de UltraTextGen, pensadas para incrustarse en páginas y plataformas externas.
 
 <!-- START_EMBED -->
 - https://ultratextgen.com/embed/bio-font-generator/
@@ -594,3 +152,73 @@ Sin frameworks. Sin herramientas de build requeridas para el frontend. Código p
 - https://ultratextgen.com/embed/nickname-generator/
 - https://ultratextgen.com/embed/zalgo-text-generator/
 <!-- END_EMBED -->
+
+
+## Estructura Del Proyecto
+
+```
+ultratextgen/
+├── index.html               # Página principal
+├── style.css                # Hoja de estilos global
+├── script.js                # Lógica de interfaz — entrada, rejilla, copia, adornos
+├── styles.js                # Registro de estilos Unicode (114 estilos)
+├── renderer.js              # Motor de renderizado — despacha según style.type
+├── header.js                # Inyector de navegación compartida
+├── sitemap.xml              # Generado automáticamente — nunca editar a mano
+├── _redirects, _headers     # Configuración de Cloudflare Pages
+├── _routes.json             # Enrutado de Pages Functions (solo `/` invoca una)
+├── functions/               # Middleware de Cloudflare Pages
+│
+├── js/                      # Módulos de funcionalidad, uno por directorio
+│   ├── flair/               #   packs de decoración de nombres
+│   ├── gamename/            #   reglas de nombre por juego + verificador
+│   ├── counter/             #   contador de caracteres (con pruebas)
+│   ├── printables/          #   motor de fichas imprimibles
+│   ├── curved/  tattoo/     #   modos de salida SVG/PNG
+│   ├── vertical/  kaomoji/  #   …y unos 20 más
+│
+├── category/  usecase/      # Pilares de contenido (ver «Qué hay en el sitio»)
+├── guide/     answers/
+├── library/   symbol/
+├── updates/   embed/
+│
+├── <lang>/                  # 30 árboles localizados del sitio (de/, es/, ja/, …)
+│
+├── discord/  instagram/     # Páginas de plataformas
+├── linkedin/ tiktok/  …
+│
+├── data/                    # Registros y catálogos que lee el utillaje
+├── docs/                    # Documentación técnica y de procesos
+└── scripts/                 # Scripts de build, validación y generación
+```
+
+`CLAUDE.md` en la raíz del repositorio es la guía técnica completa — reglas de
+contenido, flujo de localización, controles de validación y convenciones.
+
+
+## Stack Técnico
+
+| Capa | Tecnología |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript puro (ES6+) — sin frameworks, sin bundlers |
+| Salida visual | Canvas/SVG nativos, renderizados en el cliente |
+| Utillaje de build | Node.js (sitemap, validadores), Python (generación de recursos) |
+| CI/CD | GitHub Actions |
+| Alojamiento | Cloudflare Pages + Pages Functions |
+
+El frontend no tiene paso de compilación. Node y Python se usan solo para
+utillaje que corre antes del despliegue, nunca en el navegador.
+
+
+## Desarrollo
+
+```bash
+npm install            # Solo utillaje de build — nada llega al navegador
+
+npx serve .            # Servir en local; o: python3 -m http.server 8080
+npm run prebuild       # Regenerar sitemap.xml
+npm run sync-readme    # Actualizar los bloques generados de este archivo
+```
+
+No hay paso de compilación para el frontend — abre `index.html` directamente o
+sirve el directorio con cualquier servidor de archivos estáticos.
