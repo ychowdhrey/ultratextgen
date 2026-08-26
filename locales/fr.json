@@ -61,7 +61,10 @@
       "ariaLabel": "Partager le résultat {style}",
       "linkCopied": "Lien copié",
       "afterCopy": "Partager ce style",
-      "sharedTag": "Style partagé"
+      "sharedTag": "Style partagé",
+      "imageTitle": "Partager en image",
+      "imageAriaLabel": "Partager le résultat {style} en image",
+      "imageSaved": "Image prête"
     },
     "safeMode": {
       "label": "Sécurité au collage",

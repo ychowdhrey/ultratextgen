@@ -49,7 +49,10 @@
       "ariaLabel": "分享 {style} 結果",
       "linkCopied": "已複製連結",
       "afterCopy": "分享這個字體",
-      "sharedTag": "分享的字體"
+      "sharedTag": "分享的字體",
+      "imageTitle": "以圖片分享",
+      "imageAriaLabel": "以圖片形式分享 {style} 結果",
+      "imageSaved": "圖片已就緒"
     },
     "safeMode": {
       "label": "貼上安全性",

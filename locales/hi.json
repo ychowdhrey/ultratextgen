@@ -49,7 +49,10 @@
       "ariaLabel": "{style} नतीजा शेयर करें",
       "linkCopied": "लिंक कॉपी हो गया",
       "afterCopy": "यह स्टाइल शेयर करें",
-      "sharedTag": "शेयर की गई स्टाइल"
+      "sharedTag": "शेयर की गई स्टाइल",
+      "imageTitle": "छवि के रूप में साझा करें",
+      "imageAriaLabel": "{style} परिणाम छवि के रूप में साझा करें",
+      "imageSaved": "छवि तैयार है"
     },
     "safeMode": {
       "label": "पेस्ट सुरक्षा",

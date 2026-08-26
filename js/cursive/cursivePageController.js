@@ -58,6 +58,8 @@
      Rendering helpers
      --------------------------------------------------------------- */
 
+  const UTG = window.UltraTextGen || {};
+
   function registry() { return window.textStyles || {}; }
 
   function cursiveStyles() {
@@ -127,6 +129,7 @@
     btn.type = "button";
     btn.className = "copy-btn";
     btn.textContent = t("copy", "Copy");
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
     if (o.demo || !text) {
       btn.disabled = true;
       btn.title = t("typeFirst", "Type your text above first");
@@ -155,6 +158,15 @@
     }
 
     card.appendChild(actions);
+
+    if (o.shareId && !o.demo && text && UTG.buildShareActions) {
+      card.appendChild(UTG.buildShareActions({
+        styleId: o.shareId,
+        name: name,
+        text: text
+      }));
+    }
+    if (o.shareId && UTG.markSharedCard) UTG.markSharedCard(card, o.shareId);
     return card;
   }
 
@@ -175,18 +187,21 @@
       const out = renderWith(text, name);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(styleLabel(name), out, { demo: isDemo, styleName: name }));
+      const reg = registry()[name] || {};
+      frag.appendChild(buildCard(styleLabel(name), out, { demo: isDemo, styleName: name, shareId: reg.slug || "" }));
     });
 
     (D.presets || []).forEach((preset) => {
       const out = renderPreset(text, preset);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(pick("presets", preset.name, preset.name), out, { demo: isDemo, styleName: preset.name }));
+      const presetId = "cur-" + String(preset.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      frag.appendChild(buildCard(pick("presets", preset.name, preset.name), out, { demo: isDemo, styleName: preset.name, shareId: presetId }));
     });
 
     el.resultsGrid.innerHTML = "";
     el.resultsGrid.appendChild(frag);
+    if (UTG.revealSharedCard) UTG.revealSharedCard(el.resultsGrid);
     renderFitBadges(isDemo ? "" : renderWith(raw, "Ultra Script"));
   }
 

@@ -157,6 +157,8 @@
   var selectedFont  = 'none';
   var customSymbol  = '';       // user-supplied emoji/symbol (🇵🇰, ★, …)
 
+  var UTG = window.UltraTextGen || {};
+
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
 
@@ -367,12 +369,14 @@
       customSymbol: customSymbol.trim()
     });
 
-    results.forEach(function (r) {
-      grid.appendChild(createDecoratorCard(r));
+    results.forEach(function (r, i) {
+      grid.appendChild(createDecoratorCard(r, i));
     });
+
+    if (UTG.revealSharedCard) UTG.revealSharedCard(grid);
   }
 
-  function createDecoratorCard(result) {
+  function createDecoratorCard(result, index) {
     var card = document.createElement('div');
     card.className = 'style-card decorator-card';
 
@@ -400,9 +404,26 @@
     copyBtn.className = 'copy-btn';
     copyBtn.textContent = ui('copy');
     copyBtn.dataset.text = result.text;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(copyBtn);
 
     actions.appendChild(copyBtn);
     card.appendChild(actions);
+
+    /* Identity = theme + position in the deterministic result set; the seed
+       in the params re-creates the identical set on the recipient's side. */
+    var shareId = 'deco-' + result.theme + '-' + index;
+    if (UTG.buildShareActions) {
+      var shareParams = { vibe: selectedTheme, dseed: seed, dsc: scope, din: intensity };
+      if (selectedFont !== 'none') shareParams.dfont = selectedFont;
+      if (customSymbol.trim()) shareParams.dsym = customSymbol.trim();
+      card.appendChild(UTG.buildShareActions({
+        styleId: shareId,
+        name: nameLine.textContent,
+        text: result.text,
+        params: shareParams
+      }));
+    }
+    if (UTG.markSharedCard) UTG.markSharedCard(card, shareId);
     return card;
   }
 
@@ -422,6 +443,23 @@
       if (vibe && (vibe === 'all' || Engine.THEMES.some(function (t) { return t.key === vibe; }))) {
         selectedTheme = vibe;
       }
+    } catch (e) {}
+
+    /* Share-link restore: a result card's share URL re-creates the exact
+       generated set — the seed makes generate() deterministic — and ?vibe=
+       above already carries the theme. Beats saved prefs, like ?vibe= does. */
+    try {
+      var sp = new URLSearchParams(window.location.search);
+      var dseed = parseInt(sp.get('dseed'), 10);
+      if (dseed >= 1 && dseed < 100000) seed = dseed;
+      var dsc = sp.get('dsc');
+      if (dsc === 'words' || dsc === 'text' || dsc === 'letters') scope = dsc;
+      var din = parseInt(sp.get('din'), 10);
+      if (din >= 1 && din <= 3) intensity = din;
+      var dfont = sp.get('dfont');
+      if (dfont && FONT_OPTIONS.some(function (f) { return f.key === dfont; })) selectedFont = dfont;
+      var dsym = sp.get('dsym');
+      if (typeof dsym === 'string' && dsym) customSymbol = dsym.slice(0, 8);
     } catch (e) {}
 
     /* Preload sample text (or ?q= share param) so the page always shows
