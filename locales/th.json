@@ -61,7 +61,10 @@
       "ariaLabel": "แชร์ผลลัพธ์ {style}",
       "linkCopied": "คัดลอกลิงก์แล้ว",
       "afterCopy": "แชร์สไตล์นี้",
-      "sharedTag": "สไตล์ที่แชร์มา"
+      "sharedTag": "สไตล์ที่แชร์มา",
+      "imageTitle": "แชร์เป็นรูปภาพ",
+      "imageAriaLabel": "แชร์ผลลัพธ์ {style} เป็นรูปภาพ",
+      "imageSaved": "รูปภาพพร้อมแล้ว"
     },
     "safeMode": {
       "label": "ความปลอดภัยในการวาง",

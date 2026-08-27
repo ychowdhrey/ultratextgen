@@ -181,8 +181,8 @@
     /* Result-level Share, built by the shared factory in script.js. Sample
        cards (no text typed yet) disable it, matching the core generator. */
     const shareId = opts.shareId || '';
-    if (UTG && UTG.buildShareButton) {
-      card.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      card.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: opts.label,
         params: shareParams(),

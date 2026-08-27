@@ -197,8 +197,8 @@
     /* Result-level Share, built by the shared factory in script.js. The phrase
        lives in #repeatPhraseInput, not #mainInput, so it is stamped here. */
     let shareId = shareIdFor(name);
-    if (UTG && UTG.buildShareButton) {
-      actions.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      actions.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: name,
         input: (($("#repeatPhraseInput") || {}).value || ""),

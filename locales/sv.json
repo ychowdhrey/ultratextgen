@@ -61,7 +61,10 @@
       "ariaLabel": "Dela {style}-resultat",
       "linkCopied": "Länk kopierad",
       "afterCopy": "Dela den här stilen",
-      "sharedTag": "Delad stil"
+      "sharedTag": "Delad stil",
+      "imageTitle": "Dela som bild",
+      "imageAriaLabel": "Dela {style}-resultatet som bild",
+      "imageSaved": "Bilden är klar"
     },
     "safeMode": {
       "label": "Klistersäkerhet",

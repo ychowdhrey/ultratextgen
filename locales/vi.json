@@ -61,7 +61,10 @@
       "ariaLabel": "Chia sẻ kết quả {style}",
       "linkCopied": "Đã sao chép liên kết",
       "afterCopy": "Chia sẻ kiểu chữ này",
-      "sharedTag": "Kiểu chữ được chia sẻ"
+      "sharedTag": "Kiểu chữ được chia sẻ",
+      "imageTitle": "Chia sẻ dưới dạng ảnh",
+      "imageAriaLabel": "Chia sẻ kết quả {style} dưới dạng ảnh",
+      "imageSaved": "Ảnh đã sẵn sàng"
     },
     "safeMode": {
       "label": "An toàn khi dán",

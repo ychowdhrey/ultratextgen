@@ -61,7 +61,10 @@
       "ariaLabel": "Compartilhar resultado {style}",
       "linkCopied": "Link copiado",
       "afterCopy": "Compartilhar este estilo",
-      "sharedTag": "Estilo compartilhado"
+      "sharedTag": "Estilo compartilhado",
+      "imageTitle": "Compartilhar como imagem",
+      "imageAriaLabel": "Compartilhar o resultado {style} como imagem",
+      "imageSaved": "Imagem pronta"
     },
     "safeMode": {
       "label": "Segurança ao colar",

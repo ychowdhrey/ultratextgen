@@ -30,6 +30,8 @@
 // _redirects sources on the path only and silently drops the query
 // string — `/?lang=fr  /fr/  301` becomes `/  /fr/  301` and 301s the
 // English homepage to French for everyone. See the note in _redirects.
+import { previewMeta } from "./_og-preview.js";
+
 const LANG_REDIRECTS = {
   fr: "/fr/",
   de: "/de/",
@@ -108,9 +110,35 @@ export async function onRequest(context) {
     return context.next();
   }
 
+  // ── Result-specific link preview for shared ?style= URLs ────────────
+  // A share link from a result card is /?q=<text>&style=<slug>. Platform
+  // scrapers fetch it without running JS, so the preview they see is
+  // whatever meta tags this response carries — swap og/twitter image and
+  // title to the shared style's pre-generated card (assets/og/style/*,
+  // built by scripts/generate-style-og-cards.py) and, for deterministic
+  // per-character styles, render the shared text itself into the title.
+  // Costs nothing extra: `/` already invokes this Function on every hit.
+  // Unknown or absent ?style= leaves the static tags untouched.
+  const preview = previewMeta(
+    url.searchParams.get("style"),
+    url.searchParams.get("q"),
+    url.origin
+  );
+  if (preview) {
+    response = new HTMLRewriter()
+      .on('meta[property="og:image"]', { element(el) { el.setAttribute("content", preview.image); } })
+      .on('meta[name="twitter:image"]', { element(el) { el.setAttribute("content", preview.image); } })
+      .on('meta[property="og:title"]', { element(el) { el.setAttribute("content", preview.title); } })
+      .on('meta[name="twitter:title"]', { element(el) { el.setAttribute("content", preview.title); } })
+      .on('meta[property="og:description"]', { element(el) { el.setAttribute("content", preview.description); } })
+      .on('meta[name="twitter:description"]', { element(el) { el.setAttribute("content", preview.description); } })
+      .transform(response);
+  }
+
   // ── Build the final response with anti-cache headers ────────────────
   // _root.html is a build-time copy of index.html, so its own title/meta/
-  // canonical/OG/Twitter tags are already correct — no rewriting needed.
+  // canonical/OG/Twitter tags are already correct — no rewriting needed
+  // beyond the ?style= preview swap above.
   const outHeaders = new Headers(response.headers);
   outHeaders.set("Cache-Control", "no-store");
   outHeaders.set("Vary", "Accept-Language");

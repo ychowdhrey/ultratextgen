@@ -61,7 +61,10 @@
       "ariaLabel": "Sdílet výsledek {style}",
       "linkCopied": "Odkaz zkopírován",
       "afterCopy": "Sdílet tento styl",
-      "sharedTag": "Sdílený styl"
+      "sharedTag": "Sdílený styl",
+      "imageTitle": "Sdílet jako obrázek",
+      "imageAriaLabel": "Sdílet výsledek {style} jako obrázek",
+      "imageSaved": "Obrázek připraven"
     },
     "safeMode": {
       "label": "Bezpečnost vkládání",

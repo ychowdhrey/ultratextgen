@@ -61,7 +61,10 @@
       "ariaLabel": "{style}の結果を共有",
       "linkCopied": "リンクをコピーしました",
       "afterCopy": "このスタイルを共有",
-      "sharedTag": "共有されたスタイル"
+      "sharedTag": "共有されたスタイル",
+      "imageTitle": "画像として共有",
+      "imageAriaLabel": "{style}の結果を画像として共有",
+      "imageSaved": "画像が完成しました"
     },
     "safeMode": {
       "label": "貼り付け安全性",

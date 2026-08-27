@@ -758,6 +758,44 @@
     /* Share matches Copy/Save in size, type and color — the hierarchy comes
        from its position (centered on its own row beneath the pair), not from
        shrinking it. */
+    /* Icon-only image-share companion shares the Share button's full visual
+       language; only the geometry differs (square, no label). */
+    .share-image-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .share-image-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .share-image-btn.copied {
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .share-image-btn.share-error {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .share-image-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .share-result-btn {
       align-self: center;
       display: inline-flex;
@@ -813,6 +851,17 @@
 
     .result-share-row .share-result-btn {
       align-self: auto;
+    }
+
+    /* On the main generator's three-action stack the pair sits centered under
+       Copy/Save; the link half takes the flexible width. */
+    .style-actions-stack > .result-share-row {
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    .style-actions-stack > .result-share-row .share-result-btn {
+      flex: 0 1 auto;
     }
 
     /* Shared-result emphasis: the card a ?style= share link points at keeps
@@ -1190,6 +1239,12 @@
         width: auto;
         align-self: auto;
         justify-content: center;
+      }
+
+      .result-share-row .share-image-btn {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
       }
 
       .category-section {
@@ -2906,6 +2961,11 @@ button.cta-btn { border: 0; cursor: pointer; }
   font-size: 0.75rem;
 }
 
+.vertical-style-card .share-image-btn {
+  width: 30px;
+  height: 30px;
+}
+
 /* The compact sizing above is too short for touch — restore full-height tap
    targets for the vertical card's Copy/Share pair on mobile. Lives after the
    compact rules on purpose: equal specificity, so source order decides. */
@@ -2913,6 +2973,11 @@ button.cta-btn { border: 0; cursor: pointer; }
   .vertical-style-card .copy-btn,
   .vertical-style-card .share-result-btn {
     padding: 8px 12px;
+  }
+
+  .vertical-style-card .share-image-btn {
+    width: 40px;
+    height: 40px;
   }
 }
 

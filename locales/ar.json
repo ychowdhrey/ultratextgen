@@ -61,7 +61,10 @@
       "ariaLabel": "مشاركة نتيجة {style}",
       "linkCopied": "تم نسخ الرابط",
       "afterCopy": "شارك هذا النمط",
-      "sharedTag": "النمط المُشارَك"
+      "sharedTag": "النمط المُشارَك",
+      "imageTitle": "مشاركة كصورة",
+      "imageAriaLabel": "مشاركة نتيجة {style} كصورة",
+      "imageSaved": "الصورة جاهزة"
     },
     "safeMode": {
       "label": "أمان اللصق",
