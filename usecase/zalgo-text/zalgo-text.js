@@ -894,6 +894,9 @@
     if (params.has('shape'))     state.shape     = params.get('shape');
     if (params.has('freq'))      state.frequency = parseFloat(params.get('freq'));
     if (params.has('amp'))       state.amplitude = parseInt(params.get('amp'), 10);
+    if (params.has('variant') && VARIANTS.some(v => v.id === params.get('variant'))) {
+      sharedVariant = params.get('variant');
+    }
   }
 
   function syncToURL() {
@@ -923,6 +926,84 @@
   };
 
   // ── Init ────────────────────────────────────────────────────────
+  // ── Result sharing ──────────────────────────────────────────────
+  // The shared UltraTextGen core (script.js, loaded headless on this page)
+  // owns the act of sharing; this block only builds the buttons and keeps
+  // their creation-state datasets current. This page already live-syncs its
+  // settings into the address bar (syncToURL above), so the exact current
+  // URL is the share link — stamped via data-share-url, which the delegated
+  // handlers prefer over composing ?q=&style=.
+  let sharedVariant = null;
+
+  function syncShareState() {
+    const UTG = window.UltraTextGen;
+    if (!UTG || !UTG.buildShareActions) return;
+    const input = $('#mainInput');
+    const q = input ? input.value.trim() : '';
+
+    const stamp = (row, text, url) => {
+      if (!row) return;
+      row.querySelectorAll('.share-result-btn, .share-image-btn').forEach(btn => {
+        btn.dataset.shareText = text || '';
+        btn.dataset.shareQ = q;
+        btn.dataset.shareUrl = url;
+        btn.disabled = !text;
+      });
+    };
+
+    // The live URL minus any incoming variant marker — otherwise a recipient
+    // re-sharing a variant would stack variant params.
+    let base = window.location.href;
+    try {
+      const u = new URL(base);
+      u.searchParams.delete('variant');
+      base = u.toString();
+    } catch (e) { /* keep href as-is */ }
+    stamp($('#zalgoShareRow'), state.output, base);
+    VARIANTS.forEach(v => {
+      const row = document.querySelector('[data-variant-share="' + v.id + '"]');
+      const url = base + (base.indexOf('?') === -1 ? '?' : '&') + 'variant=' + v.id;
+      stamp(row, variantOutputs[v.id] || '', url);
+    });
+  }
+
+  function wireShare() {
+    const UTG = window.UltraTextGen;
+    if (!UTG || !UTG.buildShareActions) return;
+
+    // Main output: the pair rides under the output panel.
+    const outputSection = document.querySelector('#zalgoOutputSection .output-section');
+    if (outputSection && !$('#zalgoShareRow')) {
+      const row = UTG.buildShareActions({ styleId: 'zalgo', name: 'Zalgo', disabled: !state.output });
+      row.id = 'zalgoShareRow';
+      row.classList.add('zalgo-share-row');
+      outputSection.appendChild(row);
+    }
+
+    // One compact pair per fixed-flavour variant row.
+    VARIANTS.forEach(v => {
+      const varRow = document.querySelector('.variant-row[data-variant="' + v.id + '"]');
+      if (!varRow || varRow.querySelector('.result-share-row')) return;
+      const pair = UTG.buildShareActions({ styleId: 'zalgo-' + v.id, name: i18n[v.labelKey] || v.id, disabled: true });
+      pair.setAttribute('data-variant-share', v.id);
+      varRow.appendChild(pair);
+    });
+
+    syncShareState();
+
+    // A shared variant link scrolls to and pulses its row once.
+    if (sharedVariant) {
+      const target = document.querySelector('.variant-row[data-variant="' + sharedVariant + '"]');
+      sharedVariant = null; // wireShare can run twice (DOMContentLoaded + load)
+      if (target) {
+        target.classList.add('variant-shared');
+        setTimeout(() => {
+          if (target.scrollIntoView) target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }
+
   function init() {
     loadFromURL();
     buildControls();
@@ -942,7 +1023,7 @@
     // Use a MutationObserver-style approach: just observe output changes.
     const observer = new MutationObserver(() => {
       clearTimeout(syncTimer);
-      syncTimer = setTimeout(syncToURL, 300);
+      syncTimer = setTimeout(() => { syncToURL(); syncShareState(); }, 300);
     });
     const outputBody = $('#outputBody');
     if (outputBody) {
@@ -951,6 +1032,15 @@
 
     // Initial generate
     runGenerate();
+
+    // The share core arrives with the deferred script.js; this file runs at
+    // parse time, so wire the buttons once the deferred scripts have run.
+    if (document.readyState === 'loading' || document.readyState === 'interactive') {
+      window.addEventListener('load', wireShare);
+      document.addEventListener('DOMContentLoaded', wireShare);
+    } else {
+      wireShare();
+    }
   }
 
   // ── Boot ────────────────────────────────────────────────────────

@@ -61,7 +61,10 @@
       "ariaLabel": "Distribuie rezultatul {style}",
       "linkCopied": "Link copiat",
       "afterCopy": "Distribuie acest stil",
-      "sharedTag": "Stil distribuit"
+      "sharedTag": "Stil distribuit",
+      "imageTitle": "Distribuie ca imagine",
+      "imageAriaLabel": "Distribuie rezultatul {style} ca imagine",
+      "imageSaved": "Imagine gata"
     },
     "safeMode": {
       "label": "Siguranță la lipire",

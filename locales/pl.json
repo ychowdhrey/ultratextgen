@@ -61,7 +61,10 @@
       "ariaLabel": "Udostępnij wynik {style}",
       "linkCopied": "Link skopiowany",
       "afterCopy": "Udostępnij ten styl",
-      "sharedTag": "Udostępniony styl"
+      "sharedTag": "Udostępniony styl",
+      "imageTitle": "Udostępnij jako obraz",
+      "imageAriaLabel": "Udostępnij wynik {style} jako obraz",
+      "imageSaved": "Obraz gotowy"
     },
     "safeMode": {
       "label": "Bezpieczeństwo wklejania",

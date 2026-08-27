@@ -61,7 +61,10 @@
       "ariaLabel": "Podijeli rezultat {style}",
       "linkCopied": "Link kopiran",
       "afterCopy": "Podijeli ovaj stil",
-      "sharedTag": "Podijeljeni stil"
+      "sharedTag": "Podijeljeni stil",
+      "imageTitle": "Podijeli kao sliku",
+      "imageAriaLabel": "Podijeli {style} rezultat kao sliku",
+      "imageSaved": "Slika je spremna"
     },
     "safeMode": {
       "label": "Sigurnost lijepljenja",

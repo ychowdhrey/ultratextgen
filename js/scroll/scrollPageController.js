@@ -234,8 +234,8 @@
        that produced it, so a shared link rebuilds the same block. The input
        lives in #scrollBioInput, not #mainInput, so it is stamped explicitly. */
     let shareId = shareIdFor(name);
-    if (UTG && UTG.buildShareButton) {
-      actions.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      actions.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: name,
         input: (($("#scrollBioInput") || {}).value || ""),

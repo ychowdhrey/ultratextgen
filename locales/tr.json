@@ -61,7 +61,10 @@
       "ariaLabel": "{style} sonucunu paylaş",
       "linkCopied": "Bağlantı kopyalandı",
       "afterCopy": "Bu stili paylaş",
-      "sharedTag": "Paylaşılan stil"
+      "sharedTag": "Paylaşılan stil",
+      "imageTitle": "Görsel olarak paylaş",
+      "imageAriaLabel": "{style} sonucunu görsel olarak paylaş",
+      "imageSaved": "Görsel hazır"
     },
     "safeMode": {
       "label": "Yapıştırma güvenliği",

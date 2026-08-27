@@ -689,6 +689,195 @@ const decorations = window.UTG_DECORATIONS
     return btn;
   };
 
+  // Picture-frame icon for the image-share button — same 13px outline family
+  // as the share and copy icons above.
+  const IMAGE_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>';
+  const CHECK_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+
+  // Draw a creation onto a branded square card. Everything here is native
+  // Canvas in the recipient... the *sharer's* browser — the client-side-only
+  // hard line for visual output, applied to sharing. The card is the one
+  // asset that survives surfaces where pasted Unicode gets normalized or
+  // filtered (story text overlays, some chat pipelines) — especially zalgo,
+  // whose combining marks are exactly what those pipelines strip.
+  UTG.renderCreationImage = function (creation) {
+    const c = creation || {};
+    const text = String(c.output || "").trim();
+    if (!text) return null;
+
+    const SIZE = 1080;
+    const PAD = 120;
+    const canvas = document.createElement("canvas");
+    canvas.width = SIZE;
+    canvas.height = SIZE;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    // Panel: off-white ground, faint dot grid, brand gradient bar up top.
+    ctx.fillStyle = "#faf9f7";
+    ctx.fillRect(0, 0, SIZE, SIZE);
+    ctx.fillStyle = "rgba(99, 102, 241, 0.10)";
+    for (let y = 60; y < SIZE; y += 48) {
+      for (let x = 60; x < SIZE; x += 48) {
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    const grad = ctx.createLinearGradient(0, 0, SIZE, 0);
+    grad.addColorStop(0, "#7c3aed");
+    grad.addColorStop(1, "#2563eb");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, SIZE, 14);
+
+    // Combining-mark-heavy text (zalgo) needs tall lines and head/footroom so
+    // the stacks don't collide with the frame; everything else sits tighter.
+    const marky = /[\u0300-\u036f\u0483-\u0489\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/.test(text);
+    const lineFactor = marky ? 2.6 : 1.35;
+    const family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif';
+    const maxW = SIZE - PAD * 2;
+    const maxH = SIZE - PAD * 2 - 90; // reserve the cred line's band
+
+    // Fit: shrink until the wrapped block fits both axes. Wrapping is
+    // word-first with a raw-slice fallback for unbroken runs (usernames).
+    let fontSize = 120;
+    let lines = [];
+    while (fontSize >= 26) {
+      ctx.font = fontSize + "px " + family;
+      lines = [];
+      const paragraphs = text.split("\n");
+      for (const para of paragraphs) {
+        let line = "";
+        for (const word of para.split(" ")) {
+          const probe = line ? line + " " + word : word;
+          if (ctx.measureText(probe).width <= maxW) {
+            line = probe;
+          } else {
+            if (line) lines.push(line);
+            if (ctx.measureText(word).width <= maxW) {
+              line = word;
+            } else {
+              let chunk = "";
+              for (const ch of word) {
+                if (ctx.measureText(chunk + ch).width > maxW && chunk) {
+                  lines.push(chunk);
+                  chunk = ch;
+                } else {
+                  chunk += ch;
+                }
+              }
+              line = chunk;
+            }
+          }
+        }
+        lines.push(line);
+      }
+      if (lines.length * fontSize * lineFactor <= maxH || fontSize === 26) break;
+      fontSize -= 6;
+    }
+
+    ctx.fillStyle = "#1a1d27";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const blockH = lines.length * fontSize * lineFactor;
+    let y = (SIZE - 90) / 2 - blockH / 2 + (fontSize * lineFactor) / 2;
+    for (const line of lines) {
+      ctx.fillText(line, SIZE / 2, y);
+      y += fontSize * lineFactor;
+    }
+
+    // Style caption + cred line. The cred sits on the card, never in the
+    // copied Unicode — the no-watermark promise governs copied text only.
+    if (c.name) {
+      ctx.font = '28px ' + family;
+      ctx.fillStyle = "#6b7280";
+      ctx.fillText(String(c.name), SIZE / 2, SIZE - 118);
+    }
+    ctx.font = '30px ' + family;
+    ctx.fillStyle = "#9ca3af";
+    ctx.fillText("ultratextgen.com", SIZE / 2, SIZE - 64);
+    return canvas;
+  };
+
+  // Share the creation as a PNG file via the native sheet, falling back to a
+  // plain download. Resolves "image" | "image_download" | "aborted" | "failed"
+  // so the caller owns its button feedback, mirroring shareCreation above.
+  UTG.shareCreationAsImage = async function (creation) {
+    const c = creation || {};
+    const canvas = UTG.renderCreationImage(c);
+    if (!canvas) return "failed";
+
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+    if (!blob) return "failed";
+    const fileName = "ultratextgen-" + (String(c.styleId || "text").replace(/[^a-z0-9-]/gi, "") || "text") + ".png";
+    const file = new File([blob], fileName, { type: "image/png" });
+
+    const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "share_text", share_method: canShareFiles ? "image" : "image_download" });
+
+    if (canShareFiles) {
+      try {
+        // The link rides along as text so the recipient can still open the
+        // generator; targets that take files-only simply drop it.
+        await navigator.share({
+          files: [file],
+          title: c.title || document.title,
+          text: c.url || UTG.buildShareUrl(c)
+        });
+        return "image";
+      } catch (err) {
+        if (err && err.name === "AbortError") return "aborted";
+        // fall through to download
+      }
+    }
+    try {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      return "image_download";
+    } catch (err) {
+      console.error("Image share failed:", err);
+      return "failed";
+    }
+  };
+
+  // Square icon-only companion to the Share button — same datasets, so the
+  // delegated handler reads identical creation state from either.
+  UTG.buildShareImageButton = function (opts) {
+    const o = opts || {};
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "share-image-btn";
+    if (o.styleId) btn.dataset.shareId = String(o.styleId);
+    if (o.input != null) btn.dataset.shareQ = String(o.input);
+    if (o.text != null) btn.dataset.shareText = String(o.text);
+    if (o.name) btn.dataset.shareName = String(o.name);
+    if (o.params && typeof o.params === "object") {
+      try { btn.dataset.shareParams = JSON.stringify(o.params); } catch (err) { /* share works without extras */ }
+    }
+    if (o.disabled) btn.disabled = true;
+    btn.title = uiText("shareResult.imageTitle", "Share as an image");
+    btn.setAttribute("aria-label",
+      uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", o.name || ""));
+    btn.innerHTML = IMAGE_ICON_SVG;
+    return btn;
+  };
+
+  // The Share-link + Share-image pair every result card carries. Specialized
+  // controllers append this instead of composing the two buttons themselves.
+  UTG.buildShareActions = function (opts) {
+    const row = document.createElement("div");
+    row.className = "result-share-row";
+    row.appendChild(UTG.buildShareButton(opts));
+    row.appendChild(UTG.buildShareImageButton(opts));
+    return row;
+  };
+
   // The ?style= value this page was opened with, normalized. Only ever
   // compared against ids the page itself produced — never rendered.
   let sharedStyleId = null;
@@ -704,7 +893,9 @@ const decorations = window.UTG_DECORATIONS
   // it matched, so a caller can scroll to it or count matches.
   UTG.markSharedCard = function (card, styleId) {
     if (!card || !styleId || !sharedStyleId) return false;
-    if (String(styleId).toLowerCase() !== sharedStyleId) return false;
+    // Normalize the same way sharedStyleId was (a handful of registry slugs
+    // use underscores, and the URL param arrives normalized to dashes).
+    if (String(styleId).toLowerCase().replace(/_/g, "-") !== sharedStyleId) return false;
     card.classList.add("is-shared");
     const nameEl = $(".style-name", card);
     if (nameEl && !$(".shared-style-tag", nameEl)) {
@@ -1095,9 +1286,12 @@ const decorations = window.UTG_DECORATIONS
           <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${COPY_ICON_SVG}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
-        <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
-          ${SHARE_ICON_SVG}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
-        </button>
+        <div class="result-share-row">
+          <button class="share-result-btn" data-style="${safeName}" data-share-id="${safeAttr(shareId)}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(shareTitle)}" aria-label="${safeAttr(shareAria)}">
+            ${SHARE_ICON_SVG}<span class="share-result-label">${escapeHtml(shareLabel)}</span>
+          </button>
+          <button class="share-image-btn" data-share-id="${safeAttr(shareId)}" data-share-name="${safeName}" type="button" ${!fullText ? "disabled" : ""} title="${safeAttr(uiText("shareResult.imageTitle", "Share as an image"))}" aria-label="${safeAttr(uiText("shareResult.imageAriaLabel", "Share {style} result as an image").replace("{style}", name))}">${IMAGE_ICON_SVG}</button>
+        </div>
       </div>
     `;
 
@@ -2125,132 +2319,15 @@ $$(".faq-question").forEach((q) => {
         q.parentElement.classList.toggle("open");
       });
     });
-  let toastTimer = null;
-  function showCopyToast() {
-    const toast = el.copyToast;
-    if (!toast) return;
-    toast.classList.add("is-visible");
-    if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
-  }
 
-// Update a copy button's visible label. Decorated buttons keep their icon and
-// ↵ hint intact; undecorated ones (other controllers' plain buttons) fall back
-// to the old whole-button swap.
-function setCopyBtnLabel(btn, text) {
-  const label = $(".copy-label", btn);
-  if (label) label.textContent = text;
-  else btn.textContent = text;
-}
 
-document.addEventListener("click", async (e) => {
-  const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
-  if (!btn || btn.disabled) return;
-
-  const text = btn.dataset.text || "";
-
-  try {
-    await navigator.clipboard.writeText(text);
-
-    const styleName = btn.dataset.style || "";
-    recordStyleUsage(styleName);
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "button",
-      style_name: styleName
-    });
-
-    setCopyBtnLabel(btn, STR.copied);
-    btn.classList.add("copied");
-    showCopyToast();
-    setTimeout(() => {
-      setCopyBtnLabel(btn, STR.copy);
-      btn.classList.remove("copied");
-    }, 1500);
-
-    // Copy is the "I like this one" moment — briefly point the same card's
-    // Share label at sharing this exact creation. Label-only swap, no new
-    // elements, so the card's layout doesn't move.
-    const copiedCard = btn.closest(".style-card");
-    if (copiedCard) nudgeShareAfterCopy(copiedCard);
-  } catch (err) {
-    console.error("Copy failed:", err);
-    setCopyBtnLabel(btn, STR.failed);
-    btn.classList.add("copy-error");
-    setTimeout(() => {
-      setCopyBtnLabel(btn, STR.copy);
-      btn.classList.remove("copy-error");
-    }, 1500);
-  }
-});
 
 // Per-result Share — delegated like copy/save, so it needs no per-card
 // listeners, carries no IDs, and survives every rerender. The card only
 // provides the creation state (its style via data-style, the live input);
 // UTG.shareCreation owns the act of sharing.
-function nudgeShareAfterCopy(card) {
-  const shareBtn = $(".share-result-btn", card);
-  if (!shareBtn || shareBtn.disabled || shareBtn.classList.contains("copied")) return;
-  const label = $(".share-result-label", shareBtn);
-  if (!label) return;
-  label.textContent = uiText("shareResult.afterCopy", "Share this style");
-  setTimeout(() => {
-    if (!label.isConnected || shareBtn.classList.contains("copied")) return;
-    label.textContent = uiText("shareResult.label", "Share");
-  }, 2500);
-}
 
-document.addEventListener("click", async (e) => {
-  const btn = e.target.closest ? e.target.closest(".share-result-btn") : null;
-  if (!btn || btn.disabled) return;
 
-  // Generic across every generator on the site: the creation state is read
-  // from the card itself (its own .copy-btn already holds the exact text the
-  // user would paste, so Share and Copy can never disagree), plus whatever
-  // page state the builder stamped onto the button.
-  const card = btn.closest ? btn.closest(".style-card") : null;
-  const copyBtn = card ? $(".copy-btn", card) : null;
-  const output = btn.dataset.shareText || (copyBtn ? copyBtn.dataset.text : "") || "";
-  const input = btn.dataset.shareQ != null
-    ? btn.dataset.shareQ
-    : (el.mainInput ? el.mainInput.value : "");
-
-  let params = null;
-  if (btn.dataset.shareParams) {
-    try {
-      params = JSON.parse(btn.dataset.shareParams);
-    } catch (err) {
-      params = null; // malformed state — share the input + style alone
-    }
-  }
-
-  const outcome = await UTG.shareCreation({
-    input,
-    output,
-    styleId: btn.dataset.shareId || "",
-    params,
-    title: document.title
-  });
-
-  const label = $(".share-result-label", btn);
-  if (outcome === "copied") {
-    btn.classList.add("copied");
-    if (label) label.textContent = uiText("shareResult.linkCopied", "Link copied");
-    setTimeout(() => {
-      btn.classList.remove("copied");
-      if (label && label.isConnected) label.textContent = uiText("shareResult.label", "Share");
-    }, 1500);
-  } else if (outcome === "failed") {
-    btn.classList.add("share-error");
-    if (label) label.textContent = STR.failed;
-    setTimeout(() => {
-      btn.classList.remove("share-error");
-      if (label && label.isConnected) label.textContent = uiText("shareResult.label", "Share");
-    }, 1500);
-  }
-});
 
 document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".glyph-copy") : null;
@@ -2330,6 +2407,19 @@ document.addEventListener("copy", () => {
     STR = computeStr();
     DEMO_TEXT = computeDemoText();
 
+    // Share buttons built before the locale JSON arrived (static surfaces —
+    // the zalgo page — never rebuild their cards, so relabel them in place).
+    $$(".share-result-btn").forEach((btn) => {
+      const label = $(".share-result-label", btn);
+      if (label && !btn.classList.contains("copied")) {
+        label.textContent = uiText("shareResult.label", "Share");
+      }
+      btn.title = uiText("shareResult.title", "Share this result — the link opens with your text in this style");
+    });
+    $$(".share-image-btn").forEach((btn) => {
+      btn.title = uiText("shareResult.imageTitle", "Share as an image");
+    });
+
     const scopeControl = $("#scopeControl");
     if (scopeControl) {
       const label = $(".scope-control-label", scopeControl);
@@ -2405,6 +2495,15 @@ document.addEventListener("copy", () => {
      INIT
      =================== */
   function init() {
+    // Headless mode: pages that opt in via window.UTG_HEADLESS (currently the
+    // zalgo pages) load this file only for the shared result-sharing core and
+    // the document-level delegated handlers. Their own controllers own the
+    // input, rendering, and URL state, so none of the main generator's UI
+    // (scope/format controls, decorations, the results grid, saved styles)
+    // may be injected — the anchors those helpers target belong to a
+    // different tool on such pages.
+    if (window.UTG_HEADLESS) return;
+
     // Restore input text from URL ?q= param (shareable links)
     if (el.mainInput) {
       const urlQ = new URLSearchParams(window.location.search).get("q");
@@ -2420,7 +2519,7 @@ document.addEventListener("copy", () => {
     const slug = UTG.sharedStyleId();
     if (slug) {
       for (const [name, style] of Object.entries(stylesRegistry)) {
-        if (style && style.slug === slug) {
+        if (style && style.slug && String(style.slug).toLowerCase().replace(/_/g, "-") === slug) {
           sharedStyleName = name;
           break;
         }
@@ -2471,4 +2570,193 @@ document.addEventListener("copy", () => {
   } else {
     init();
   }
+
+  /* ═══════════════════════════════════════════════════════════════
+     DELEGATED DOCUMENT-LEVEL HANDLERS — registered unconditionally.
+     These lived inside bindEvents() for a long time, which silently
+     meant a headless page (window.UTG_HEADLESS — the zalgo pages) got
+     share BUTTONS but no click handling: init() returns early there,
+     so bindEvents never ran. They are document-level and page-agnostic
+     by design (no IDs, state read from the clicked card), so they
+     belong here, outside any init path.
+     ═══════════════════════════════════════════════════════════════ */
+
+  let toastTimer = null;
+  function showCopyToast() {
+    const toast = el.copyToast;
+    if (!toast) return;
+    toast.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
+  }
+
+// Update a copy button's visible label. Decorated buttons keep their icon and
+// ↵ hint intact; undecorated ones (other controllers' plain buttons) fall back
+// to the old whole-button swap.
+function setCopyBtnLabel(btn, text) {
+  const label = $(".copy-label", btn);
+  if (label) label.textContent = text;
+  else btn.textContent = text;
+}
+
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
+  if (!btn || btn.disabled) return;
+
+  const text = btn.dataset.text || "";
+
+  try {
+    await navigator.clipboard.writeText(text);
+
+    const styleName = btn.dataset.style || "";
+    recordStyleUsage(styleName);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "copy_text",
+      copy_method: "button",
+      style_name: styleName
+    });
+
+    setCopyBtnLabel(btn, STR.copied);
+    btn.classList.add("copied");
+    showCopyToast();
+    setTimeout(() => {
+      setCopyBtnLabel(btn, STR.copy);
+      btn.classList.remove("copied");
+    }, 1500);
+
+    // Copy is the "I like this one" moment — briefly point the same card's
+    // Share label at sharing this exact creation. Label-only swap, no new
+    // elements, so the card's layout doesn't move.
+    const copiedCard = btn.closest(".style-card");
+    if (copiedCard) nudgeShareAfterCopy(copiedCard);
+  } catch (err) {
+    console.error("Copy failed:", err);
+    setCopyBtnLabel(btn, STR.failed);
+    btn.classList.add("copy-error");
+    setTimeout(() => {
+      setCopyBtnLabel(btn, STR.copy);
+      btn.classList.remove("copy-error");
+    }, 1500);
+  }
+});
+
+function nudgeShareAfterCopy(card) {
+  const shareBtn = $(".share-result-btn", card);
+  if (!shareBtn || shareBtn.disabled || shareBtn.classList.contains("copied")) return;
+  const label = $(".share-result-label", shareBtn);
+  if (!label) return;
+  label.textContent = uiText("shareResult.afterCopy", "Share this style");
+  setTimeout(() => {
+    if (!label.isConnected || shareBtn.classList.contains("copied")) return;
+    label.textContent = uiText("shareResult.label", "Share");
+  }, 2500);
+}
+
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest ? e.target.closest(".share-result-btn") : null;
+  if (!btn || btn.disabled) return;
+
+  // Generic across every generator on the site: the creation state is read
+  // from the card itself (its own .copy-btn already holds the exact text the
+  // user would paste, so Share and Copy can never disagree), plus whatever
+  // page state the builder stamped onto the button.
+  const card = btn.closest ? btn.closest(".style-card") : null;
+  const copyBtn = card ? $(".copy-btn", card) : null;
+  const output = btn.dataset.shareText || (copyBtn ? copyBtn.dataset.text : "") || "";
+  const input = btn.dataset.shareQ != null
+    ? btn.dataset.shareQ
+    : (el.mainInput ? el.mainInput.value : "");
+
+  let params = null;
+  if (btn.dataset.shareParams) {
+    try {
+      params = JSON.parse(btn.dataset.shareParams);
+    } catch (err) {
+      params = null; // malformed state — share the input + style alone
+    }
+  }
+
+  const outcome = await UTG.shareCreation({
+    input,
+    output,
+    styleId: btn.dataset.shareId || "",
+    params,
+    // Pages that maintain their own live URL state (zalgo) stamp the exact
+    // link to share; everyone else lets buildShareUrl compose ?q=&style=.
+    url: btn.dataset.shareUrl || undefined,
+    title: document.title
+  });
+
+  const label = $(".share-result-label", btn);
+  if (outcome === "copied") {
+    btn.classList.add("copied");
+    if (label) label.textContent = uiText("shareResult.linkCopied", "Link copied");
+    setTimeout(() => {
+      btn.classList.remove("copied");
+      if (label && label.isConnected) label.textContent = uiText("shareResult.label", "Share");
+    }, 1500);
+  } else if (outcome === "failed") {
+    btn.classList.add("share-error");
+    if (label) label.textContent = STR.failed;
+    setTimeout(() => {
+      btn.classList.remove("share-error");
+      if (label && label.isConnected) label.textContent = uiText("shareResult.label", "Share");
+    }, 1500);
+  }
+});
+
+// Image-share companion — same delegated pattern, same creation-state reads
+// (the card's own .copy-btn text wins so the picture can never disagree with
+// what Copy pastes). Feedback is icon-swap only: the button has no label.
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest ? e.target.closest(".share-image-btn") : null;
+  if (!btn || btn.disabled || btn.classList.contains("share-image-busy")) return;
+
+  const card = btn.closest ? btn.closest(".style-card") : null;
+  const copyBtn = card ? $(".copy-btn", card) : null;
+  const output = btn.dataset.shareText || (copyBtn ? copyBtn.dataset.text : "") || "";
+  const input = btn.dataset.shareQ != null
+    ? btn.dataset.shareQ
+    : (el.mainInput ? el.mainInput.value : "");
+
+  let params = null;
+  if (btn.dataset.shareParams) {
+    try { params = JSON.parse(btn.dataset.shareParams); } catch (err) { params = null; }
+  }
+
+  const name = btn.dataset.shareName
+    || (card && $(".style-name", card) ? $(".style-name", card).textContent : "");
+
+  btn.classList.add("share-image-busy");
+  const outcome = await UTG.shareCreationAsImage({
+    input,
+    output,
+    styleId: btn.dataset.shareId || "",
+    name,
+    params,
+    url: btn.dataset.shareUrl || undefined,
+    title: document.title
+  });
+  btn.classList.remove("share-image-busy");
+
+  if (outcome === "image" || outcome === "image_download") {
+    btn.classList.add("copied");
+    btn.innerHTML = CHECK_ICON_SVG;
+    const doneTitle = uiText("shareResult.imageSaved", "Image ready");
+    const oldTitle = btn.title;
+    btn.title = doneTitle;
+    setTimeout(() => {
+      if (!btn.isConnected) return;
+      btn.classList.remove("copied");
+      btn.innerHTML = IMAGE_ICON_SVG;
+      btn.title = oldTitle;
+    }, 1500);
+  } else if (outcome === "failed") {
+    btn.classList.add("share-error");
+    setTimeout(() => btn.classList.remove("share-error"), 1500);
+  }
+});
+
 })();

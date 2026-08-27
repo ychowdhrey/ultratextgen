@@ -728,7 +728,11 @@ function renderMap(text, style) {
      ----------------------------- */
 function renderProcedure(text, style) {
   if (!text) return '';
-  const fn = procedures[style.slug];
+  // Slug first (most procedure keys are the slug itself), then procedureId —
+  // four styles (the alternating/switch-serifs family) register their
+  // algorithm under procedureId only, and the slug-only lookup silently
+  // rendered them as plain text: fn undefined -> input returned unchanged.
+  const fn = procedures[style.slug] || procedures[style.procedureId];
   return fn ? fn(text) : text;
 }
 
