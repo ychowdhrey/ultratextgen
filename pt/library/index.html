@@ -157,428 +157,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<style>
-/* ── Library A–Z Directory ── */
-
-.lib-hero {
-  padding: 3rem 1.5rem 2rem;
-  text-align: center;
-}
-.lib-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem;
-}
-.lib-hero p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin: 0;
-}
-
-/* ── Controls ── */
-.lib-controls {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.lib-search-wrap {
-  position: relative;
-}
-.lib-search-wrap svg {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-  flex-shrink: 0;
-}
-#libSearch {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.65rem 1rem 0.65rem 2.6rem;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-#libSearch:focus {
-  border-color: var(--accent-purple);
-}
-
-.lib-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-.lib-filter-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  margin-right: 0.25rem;
-  white-space: nowrap;
-}
-
-/* ── Filter pills ── */
-.lib-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  white-space: nowrap;
-  user-select: none;
-}
-.lib-pill:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-pill.active {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-pill .pill-count {
-  opacity: 0.75;
-  font-size: 0.72rem;
-}
-.lib-pill.active .pill-count {
-  opacity: 0.9;
-}
-
-.lib-clear-btn {
-  display: none;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-muted);
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: color 0.12s;
-}
-.lib-clear-btn:hover {
-  color: var(--text-primary);
-}
-.lib-clear-btn.visible {
-  display: inline-flex;
-}
-
-/* ── Alpha jump bar ── */
-.lib-alpha-bar {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0.5rem 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--bg-page, #f5f7f5);
-  backdrop-filter: saturate(180%) blur(6px);
-  -webkit-backdrop-filter: saturate(180%) blur(6px);
-}
-.lib-alpha-btn.is-current {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-alpha-btn.is-current .alpha-count {
-  color: rgba(255, 255, 255, 0.85);
-}
-.lib-alpha-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 2rem;
-  padding: 0.3rem 0.4rem 0.2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 6px;
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  text-decoration: none;
-  line-height: 1;
-}
-.lib-alpha-btn .alpha-count {
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 0.1rem;
-}
-.lib-alpha-btn:hover:not(.disabled) {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-alpha-btn.disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-/* ── Directory ── */
-.lib-directory {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-.lib-letter-section {
-  margin-bottom: 2rem;
-}
-.lib-letter-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-light);
-  margin: 0 0 0.75rem;
-  font-size: inherit;
-  font-weight: inherit;
-}
-.lib-letter-heading .letter {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-purple);
-  line-height: 1;
-}
-.lib-letter-heading .lcount {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* ── Entry rows ── */
-.lib-entry {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  gap: 0.1rem 1rem;
-  padding: 0.7rem 0.5rem;
-  border-radius: 8px;
-  color: inherit;
-  border: 1px solid transparent;
-}
-.lib-entry-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  line-height: 1.3;
-}
-.lib-entry-title-link {
-  color: inherit;
-  text-decoration: none;
-  border-radius: 3px;
-}
-.lib-entry-title-link:hover,
-.lib-entry-title-link:focus-visible {
-  color: var(--accent-purple);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-.lib-entry-title-link:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0;
-}
-.lib-entry-preview {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  grid-column: 2;
-  grid-row: 1 / 3;
-  align-self: center;
-  white-space: nowrap;
-  text-align: right;
-  letter-spacing: 0.05em;
-}
-.lib-entry-meta {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
-}
-.lib-entry-tag {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.65rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: var(--bg-page, #eef0ee);
-  color: var(--text-muted);
-  border: 1px solid var(--border-light);
-  line-height: 1.4;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-}
-.lib-entry-tag:hover {
-  background: var(--bg-white);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-entry-tag:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-tag.is-type {
-  color: var(--accent-purple);
-  border-color: var(--accent-purple);
-  background: transparent;
-}
-
-@media (max-width: 540px) {
-  .lib-entry {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .lib-entry-preview {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: left;
-    margin-top: 0.2rem;
-  }
-  .lib-entry-meta {
-    grid-row: 4;
-  }
-}
-
-/* ── No-results ── */
-.lib-empty {
-  display: none;
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-secondary);
-}
-.lib-empty.visible {
-  display: block;
-}
-.lib-empty p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-}
-.lib-empty-btn {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: border-color 0.12s;
-}
-.lib-empty-btn:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-/* ── CTA card ── */
-.lib-cta {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-/* ── Result count ── */
-.lib-result-count {
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-.lib-result-count[hidden] {
-  display: none;
-}
-
-/* ── Visually hidden (a11y) ── */
-.lib-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ── Back to top ── */
-.lib-back-top {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
-}
-.lib-back-top:hover,
-.lib-back-top:focus-visible {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-  outline: none;
-}
-.lib-back-top.visible {
-  display: inline-flex;
-}
-</style>
 </head>
 <body>
   <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
@@ -601,64 +179,911 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>Biblioteca de símbolos e caracteres Unicode para copiar e colar — de <a href="/pt/library/simbolos/">símbolos aesthetic</a> e corações a estrelas, setas, check, alfabeto grego e kaomoji. Busque, filtre por uso ou plataforma e clique para copiar. Todos os caracteres (ou <i>símbolos</i>) já ficam prontos para colar na bio, na legenda, no Discord e no nick.</p>
 </div>
 
-<!-- CONTROLS -->
-<div class="lib-controls" id="libControls">
-  <!-- Search -->
-  <div class="lib-search-wrap">
-    <label for="libSearch" class="lib-sr-only">Buscar símbolo</label>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="libSearch" placeholder="Buscar símbolo…" autocomplete="off">
-  </div>
-
-  <!-- Subject filter -->
-  <div class="lib-filter-row" id="subjectRow">
-    <span class="lib-filter-label">Categoria</span>
-  </div>
-
-  <!-- Use Case filter -->
-  <div class="lib-filter-row" id="useCaseRow">
-    <span class="lib-filter-label">Uso</span>
-  </div>
-
-  <!-- Platform filter -->
-  <div class="lib-filter-row" id="platformRow">
-    <span class="lib-filter-label">Plataforma</span>
-  </div>
-
-  <!-- Type filter -->
-  <div class="lib-filter-row" id="typeRow">
-    <span class="lib-filter-label">Tipo</span>
-  </div>
-
-  <!-- Clear filters -->
-  <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="lib-clear-btn" id="clearFilters" aria-label="Limpar todos os filtros">✕ Limpar filtros</button>
-  </div>
-</div>
-
-<!-- ALPHA JUMP BAR -->
-<div class="lib-alpha-bar" id="alphaBar" aria-label="Pular para a letra"></div>
-
-<!-- RESULT COUNT -->
-<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
-
-<!-- DIRECTORY -->
-
-
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/pt-library.svg" width="1200" height="340"
        fetchpriority="high" alt="">
 </figure>
-<main class="lib-directory" id="libDirectory" aria-label="Diretório de símbolos">
-<section class="lib-letter-section" id="lib-letter-A" aria-labelledby="lib-letter-heading-A"><h2 class="lib-letter-heading" id="lib-letter-heading-A"><span class="letter">A</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-0"><a class="lib-entry-title-link" href="/pt/library/alfabeto-grego/">Alfabeto Grego</a></h3><p class="lib-entry-desc">Alfabeto grego completo Α–Ω — alfa, beta, sigma, delta e ômega, maiúsculas e minúsculas, para bio, fórmulas e referência.</p><span class="lib-entry-preview" aria-hidden="true">Α Β Σ Δ Ω</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button></div></article></section><section class="lib-letter-section" id="lib-letter-C" aria-labelledby="lib-letter-heading-C"><h2 class="lib-letter-heading" id="lib-letter-heading-C"><span class="letter">C</span><span class="lcount">(3)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-0"><a class="lib-entry-title-link" href="/pt/library/caracteres-especiais/">Caracteres Especiais</a></h3><p class="lib-entry-desc">Infinito ∞, paz ☮, ciência, marcas legais © ™ e curiosidades Unicode para copiar.</p><span class="lib-entry-preview" aria-hidden="true">∞ ☮ © ™ ✧</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-1"><a class="lib-entry-title-link" href="/pt/library/codigos-alt/">Códigos Alt</a></h3><p class="lib-entry-desc">Lista completa de códigos Alt do teclado — Alt+0169 para ©, moeda, matemática, letras acentuadas e símbolos clássicos do DOS.</p><span class="lib-entry-preview" aria-hidden="true">© ± ÷ ♥</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-2"><a class="lib-entry-title-link" href="/pt/library/emoji-combos/">Combos de Emoji</a></h3><p class="lib-entry-desc">Combos de emoji prontos para copiar e colar — fofo, coquette, amor, dark e praia — para deixar a bio, o status e a legenda com uma vibe só.</p><span class="lib-entry-preview" aria-hidden="true">🦋 ✨ 🌸</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Combo de Emoji" aria-label="Filtrar por type: Combo de Emoji">Combo de Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por platforms: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-E" aria-labelledby="lib-letter-heading-E"><h2 class="lib-letter-heading" id="lib-letter-heading-E"><span class="letter">E</span><span class="lcount">(5)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-0"><a class="lib-entry-title-link" href="/pt/library/emojis-de-rosto/">Emojis de Rosto</a></h3><p class="lib-entry-desc">Emojis de rosto por sentimento 😘 😉 😏 🙄 — beijo, piscadinha, sorriso de lado, olhos revirados e mais, com significado e combos prontos.</p><span class="lib-entry-preview" aria-hidden="true">😘 😉 😏 🙄</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por type: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-1"><a class="lib-entry-title-link" href="/pt/library/emoji-flags/">Emoji de Bandeiras</a></h3><p class="lib-entry-desc">Emoji de bandeiras — Brasil 🇧🇷, Portugal 🇵🇹, EUA e todos os países para copiar no nick, na bio e nas mensagens.</p><span class="lib-entry-preview" aria-hidden="true">🇧🇷 🇵🇹 🇺🇸</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por type: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-2"><a class="lib-entry-title-link" href="/pt/library/ronaldo-emoji-combos/">Emoji do Cristiano Ronaldo</a></h3><p class="lib-entry-desc">Combos de emoji do Cristiano Ronaldo 🇵🇹⚽🐐 (CR7, GOAT, SIU) prontos para legenda, comentário e bio de torcedor.</p><span class="lib-entry-preview" aria-hidden="true">🇵🇹 ⚽ 🐐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Combo de Emoji" aria-label="Filtrar por type: Combo de Emoji">Combo de Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por platforms: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-3"><a class="lib-entry-title-link" href="/pt/library/neymar-emoji-combos/">Emoji do Neymar</a></h3><p class="lib-entry-desc">Combos de emoji do Neymar 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.</p><span class="lib-entry-preview" aria-hidden="true">🇧🇷 ⚽ 🐐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Combo de Emoji" aria-label="Filtrar por type: Combo de Emoji">Combo de Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por platforms: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-4"><a class="lib-entry-title-link" href="/pt/library/vinicius-emoji-combos/">Emoji do Vini Jr</a></h3><p class="lib-entry-desc">Combos de emoji do Vini Jr 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.</p><span class="lib-entry-preview" aria-hidden="true">🇧🇷 ⚽ 🐐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Combo de Emoji" aria-label="Filtrar por type: Combo de Emoji">Combo de Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por platforms: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-K" aria-labelledby="lib-letter-heading-K"><h2 class="lib-letter-heading" id="lib-letter-heading-K"><span class="letter">K</span><span class="lcount">(6)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-0"><a class="lib-entry-title-link" href="/pt/library/love-kaomoji/">Kaomoji de Amor</a></h3><p class="lib-entry-desc">Kaomoji de amor (♥‿♥) e corações para carinho, beijo e abraço no comentário e na bio.</p><span class="lib-entry-preview" aria-hidden="true">(♥‿♥)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-1"><a class="lib-entry-title-link" href="/pt/library/cat-kaomoji/">Kaomoji de Gato</a></h3><p class="lib-entry-desc">Carinhas de gato em texto (=^・ω・^=) — gatinho feliz, sonolento e fofo para comentário e legenda.</p><span class="lib-entry-preview" aria-hidden="true">(=^･ω･^=)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-2"><a class="lib-entry-title-link" href="/pt/library/happy-kaomoji/">Kaomoji Felizes</a></h3><p class="lib-entry-desc">Carinhas felizes e sorridentes (◠‿◠) para comentário, legenda e status animado.</p><span class="lib-entry-preview" aria-hidden="true">(◠‿◠)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-3"><a class="lib-entry-title-link" href="/pt/library/cute-kaomoji/">Kaomoji Fofos</a></h3><p class="lib-entry-desc">Kaomoji fofos (◕‿◕) com olhinhos brilhantes e bochechas rosadas para bio, comentário e recado.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-4"><a class="lib-entry-title-link" href="/pt/library/sad-kaomoji/">Kaomoji Tristes</a></h3><p class="lib-entry-desc">Carinhas tristes e chorosas (´･_･`) para decepção, saudade e clima melancólico.</p><span class="lib-entry-preview" aria-hidden="true">(´･_･`)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-5"><a class="lib-entry-title-link" href="/pt/library/kaomoji/">Kaomoji — Carinhas Japonesas</a></h3><p class="lib-entry-desc">Coleção de carinhas japonesas de texto — fofas, felizes, tristes, de amor, animais e Lenny face.</p><span class="lib-entry-preview" aria-hidden="true">(ᵕ‿ᵕ) (◕‿◕)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Kaomoji" aria-label="Filtrar por type: Kaomoji">Kaomoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article></section><section class="lib-letter-section" id="lib-letter-N" aria-labelledby="lib-letter-heading-N"><h2 class="lib-letter-heading" id="lib-letter-heading-N"><span class="letter">N</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-N-0"><a class="lib-entry-title-link" href="/pt/library/naipes-de-baralho/">Naipes de Baralho</a></h3><p class="lib-entry-desc">Naipes de baralho ♠ ♥ ♦ ♣ em versões preenchida e vazada para copiar e colar na bio, na legenda e em jogos.</p><span class="lib-entry-preview" aria-hidden="true">♠ ♥ ♦ ♣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-N-1"><a class="lib-entry-title-link" href="/pt/library/simbolos-musicais/">Notas Musicais</a></h3><p class="lib-entry-desc">Notas ♪ ♫ ♬, claves, sustenido/bemol e ícones de instrumentos 🎸🎹🎤 para bio e legenda.</p><span class="lib-entry-preview" aria-hidden="true">♪ ♫ ♬ 🎵 🎸</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-S" aria-labelledby="lib-letter-heading-S"><h2 class="lib-letter-heading" id="lib-letter-heading-S"><span class="letter">S</span><span class="lcount">(27)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-0"><a class="lib-entry-title-link" href="/pt/library/simbolos-islamicos/">Símbolos Islâmicos</a></h3><p class="lib-entry-desc">Estrela e crescente ☪, ligaduras árabes ﷲ ﷺ, mesquita e votos de Eid.</p><span class="lib-entry-preview" aria-hidden="true">☪ ﷲ ﷺ 🕌 📿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-1"><a class="lib-entry-title-link" href="/pt/library/simbolos-religiosos/">Símbolos Religiosos</a></h3><p class="lib-entry-desc">Cruzes ✝, crescente ☪, estrela de Davi ✡, roda do Dharma ☸ e outros símbolos de fé.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☪ ✡ ☸ ☯</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-2"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-moeda/">Símbolos de Moeda</a></h3><p class="lib-entry-desc">Sinais de moeda $ € £ ¥ ₹ — moedas mundiais, regionais, históricas e criptomoedas.</p><span class="lib-entry-preview" aria-hidden="true">$ € £ ¥ ₿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-3"><a class="lib-entry-title-link" href="/pt/library/simbolos-copyright-marca-registrada/">Símbolos de Copyright e Marca Registrada</a></h3><p class="lib-entry-desc">Símbolos de copyright, marca registrada e comercial — ©, ®, ™, ℠, ℗ — além de marcas de seção, parágrafo e referência.</p><span class="lib-entry-preview" aria-hidden="true">© ® ™ §</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-4"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-natal/">Símbolos de Natal</a></h3><p class="lib-entry-desc">Símbolos e emojis de Natal — árvores, flocos de neve, presentes e combos de saudação prontos para copiar.</p><span class="lib-entry-preview" aria-hidden="true">🎄 ❄ ☃ 🎁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por type: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-5"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-xadrez/">Símbolos de Xadrez</a></h3><p class="lib-entry-desc">Símbolos de peças de xadrez em Unicode — reis, damas, torres, bispos, cavalos e peões, brancos e pretos, com notação.</p><span class="lib-entry-preview" aria-hidden="true">♔ ♕ ♞ ♟</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="Filtrar por platforms: Discord">Discord</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-6"><a class="lib-entry-title-link" href="/pt/library/simbolos/">Símbolos para Copiar e Colar</a></h3><p class="lib-entry-desc">Biblioteca geral de símbolos para copiar e colar — estrelas, corações, setas e ornamentos para nick, Instagram e bio.</p><span class="lib-entry-preview" aria-hidden="true">✦ ★ ♡ ☾ ⋆</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-7"><a class="lib-entry-title-link" href="/pt/library/simbolos-coquette/">Símbolos Coquette</a></h3><p class="lib-entry-desc">Laços 🎀, corações ♡, fitas e brilhos rosa no estilo coquette para bio e nome de usuário.</p><span class="lib-entry-preview" aria-hidden="true">🎀 ♡ ✿ ⋆ ˚</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-8"><a class="lib-entry-title-link" href="/pt/library/simbolos-cottagecore/">Símbolos Cottagecore</a></h3><p class="lib-entry-desc">Cogumelos 🍄, flores 🌸, abelhas 🐝 e motivos campestres para decorar a bio com vibe cottagecore.</p><span class="lib-entry-preview" aria-hidden="true">🍄 🌸 🐝 ✿ 🌿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-9"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-confirmacao/">Símbolos de Confirmação</a></h3><p class="lib-entry-desc">Check e visto ✓ ✔ ✅ ☑ mais X ✗ ❌ para listas, enquetes e marcar tarefas concluídas.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ✅ ☑ ✗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por useCases: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por platforms: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-10"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-coracao/">Símbolos de Coração</a></h3><p class="lib-entry-desc">Corações ♥ ♡ ❤ ❥ ꨄ para bio do Insta e do Zap, nick de casal, legenda e recado.</p><span class="lib-entry-preview" aria-hidden="true">♥ ♡ ❤ ❥ ꨄ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-11"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-cruz-e-x/">Símbolos de Cruz e X</a></h3><p class="lib-entry-desc">Cruzes ✝ ☦ ✠ e formatos de X ✗ ✕ para logo, bio, legenda e referência.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☦ ✠ ✗ ✕</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-12"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-estrela/">Símbolos de Estrela</a></h3><p class="lib-entry-desc">Estrelas ★ ☆ ✦ ✧ ⋆ para avaliação, enfeite de nick e bio com vibe aesthetic.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ✦ ✧ ⋆</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-13"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-marcadores/">Símbolos de Marcadores</a></h3><p class="lib-entry-desc">Marcadores e pontos • ● ◦ ‣ ▪ mais setas e estrelas para listas organizadas na legenda e na bio.</p><span class="lib-entry-preview" aria-hidden="true">• ● ◦ ‣ ▪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por useCases: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-14"><a class="lib-entry-title-link" href="/pt/library/simbolos-discord/">Símbolos para Discord</a></h3><p class="lib-entry-desc">Decoração para nomes, canais e cargos do Discord — ▸ ┊ ➤ ꒱ ⟢, divisores, corações e estrelas.</p><span class="lib-entry-preview" aria-hidden="true">▸ ┊ ➤ ꒱ ⟢</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="Filtrar por platforms: Discord">Discord</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-15"><a class="lib-entry-title-link" href="/pt/library/simbolos-para-free-fire/">Símbolos para Free Fire</a></h3><p class="lib-entry-desc">Guarda-chuva ꧁꧂, coroas, katakana e espadas prontos para copiar e colar no nick de Free Fire — também funcionam em ML e Roblox.</p><span class="lib-entry-preview" aria-hidden="true">꧁ ꧂ ♛ メ ★</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Clã" aria-label="Filtrar por useCases: Clã">Clã</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Free Fire" aria-label="Filtrar por platforms: Free Fire">Free Fire</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Mobile Legends" aria-label="Filtrar por platforms: Mobile Legends">Mobile Legends</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-16"><a class="lib-entry-title-link" href="/pt/library/simbolos-dreamcore-weirdcore/">Símbolos Dreamcore &amp; Weirdcore</a></h3><p class="lib-entry-desc">Olhos surreais 👁, arco-íris 🌈 e blocos de glitch para posts liminais dreamcore e weirdcore.</p><span class="lib-entry-preview" aria-hidden="true">👁 🌈 ⋆ ▚ ⛩</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por platforms: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-17"><a class="lib-entry-title-link" href="/pt/library/simbolos-fairycore/">Símbolos Fairycore</a></h3><p class="lib-entry-desc">Fadas 🧚, cogumelos 🍄, brilhos ✨ e florzinhas para uma bio com clima mágico fairycore.</p><span class="lib-entry-preview" aria-hidden="true">🧚 🍄 ✨ ✿ ⋆</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-18"><a class="lib-entry-title-link" href="/pt/library/simbolos-goth-grunge/">Símbolos Goth &amp; Grunge</a></h3><p class="lib-entry-desc">Símbolos dark goth e grunge — cruz, caveira, aranha e adaga para perfil alternativo.</p><span class="lib-entry-preview" aria-hidden="true">✝ 🕷 🗡 ☠ ⛧</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-19"><a class="lib-entry-title-link" href="/pt/library/simbolos-japoneses/">Símbolos Japoneses</a></h3><p class="lib-entry-desc">Kanji 桜 愛, hiragana, katakana e pontuação japonesa para bio sem teclado especial.</p><span class="lib-entry-preview" aria-hidden="true">桜 愛 あ ア ・</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-20"><a class="lib-entry-title-link" href="/pt/library/simbolos-kawaii-cute/">Símbolos Kawaii &amp; Fofos</a></h3><p class="lib-entry-desc">Corações suaves, carinhas mini, brilhos e decoração pastel no estilo kawaii para bio e recado.</p><span class="lib-entry-preview" aria-hidden="true">♡ ⋆ ✿ ˚ ⊹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por useCases: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-21"><a class="lib-entry-title-link" href="/pt/library/simbolos-matematicos/">Símbolos Matemáticos</a></h3><p class="lib-entry-desc">Operadores, comparação, teoria dos conjuntos, raiz, potência e o sinal de infinito ∞.</p><span class="lib-entry-preview" aria-hidden="true">± × ÷ √ ∞</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-22"><a class="lib-entry-title-link" href="/pt/library/simbolos-roblox/">Símbolos do Roblox</a></h3><p class="lib-entry-desc">40+ símbolos ✦ ⚡ ♡ para nome de exibição, bio e grupo do Roblox — testados com o filtro de nomes atual.</p><span class="lib-entry-preview" aria-hidden="true">✦ ⚡ ♡ ★ ◈</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Roblox" aria-label="Filtrar por platforms: Roblox">Roblox</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-23"><a class="lib-entry-title-link" href="/pt/library/simbolos-therian/">Símbolos Therian</a></h3><p class="lib-entry-desc">Theta-delta θΔ, pegadas, fases da lua e símbolos animais da comunidade therian e alterhuman.</p><span class="lib-entry-preview" aria-hidden="true">θ Δ ☾ 🐾 ⧖</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-24"><a class="lib-entry-title-link" href="/pt/library/simbolos-witchy-occult/">Símbolos Witchy &amp; Ocultos</a></h3><p class="lib-entry-desc">Pentagrama, fases da lua, sinais planetários e alquimia para a estética witchy e ocultista.</p><span class="lib-entry-preview" aria-hidden="true">☽ ⛤ ☿ 🜁 ✵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-25"><a class="lib-entry-title-link" href="/pt/library/simbolos-y2k/">Símbolos Y2K</a></h3><p class="lib-entry-desc">Estrelas ✰, brilhos ✧, cruz ♱, borboleta 🦋 e CD 💿 para bio e nome com vibe Y2K.</p><span class="lib-entry-preview" aria-hidden="true">✰ ✧ ♱ 🦋 💿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por type: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por platforms: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-26"><a class="lib-entry-title-link" href="/pt/library/setas/">Símbolos de Seta</a></h3><p class="lib-entry-desc">Setas → ← ↑ ↓ ➤ ⇒ » para enfeitar nick, apontar direção e organizar listas.</p><span class="lib-entry-preview" aria-hidden="true">→ ← ↑ ↓ ➤</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Nick" aria-label="Filtrar por useCases: Nick">Nick</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por useCases: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por useCases: Bio">Bio</button></div></article></section><section class="lib-letter-section" id="lib-letter-T" aria-labelledby="lib-letter-heading-T"><h2 class="lib-letter-heading" id="lib-letter-heading-T"><span class="letter">T</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-T-0"><a class="lib-entry-title-link" href="/pt/library/tabela-ascii/">Tabela ASCII</a></h3><p class="lib-entry-desc">Tabela ASCII com códigos decimal, hexadecimal, binário e octal de pontuação, dígitos, letras e símbolos.</p><span class="lib-entry-preview" aria-hidden="true">! A z ~</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por type: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por useCases: Referência">Referência</button></div></article></section>
-</main>
 
-<!-- NO RESULTS -->
-<div class="lib-empty" id="libEmpty" role="status" aria-live="polite">
-  <p>Nenhuma coleção combina com essa combinação.<br>Tente remover um ou mais filtros.</p>
-  <button class="lib-empty-btn" id="emptyResetBtn">Limpar todos os filtros</button>
+<!-- library-hub:begin (generated by scripts/build-library-hub.js) -->
+<div class="lib-controls" id="libControls">
+  <div class="lib-search-wrap">
+    <label class="u-visually-hidden" for="libSearch">Buscar na biblioteca</label>
+    <input type="search" id="libSearch" autocomplete="off"
+           placeholder="Buscar símbolo…" aria-label="Buscar na biblioteca">
+  </div>
+  <div class="lib-filters">
+      <div class="lib-filter-row" id="libTypeFilters"></div>
+      <div class="lib-filter-row" id="libUseCaseFilters"></div>
+      <div class="lib-filter-row" id="libPlatformFilters"></div>
+  </div>
+  <div class="lib-controls-foot">
+    <p class="lib-result-count" id="libResultCount" hidden></p>
+    <button type="button" class="lib-clear" id="libClearFilters">Limpar filtros</button>
+  </div>
+  <nav class="lib-alpha-bar" id="libAlphaBar" aria-label="Pular para a letra"></nav>
 </div>
 
+<main class="lib-directory" id="libDirectory" aria-label="Diretório de símbolos" data-static-directory>
+<section class="lib-letter-section" id="lib-letter-A" aria-labelledby="lib-letter-heading-A"><h2 class="lib-letter-heading" id="lib-letter-heading-A"><span class="letter">A</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-0"><a class="lib-entry-title-link" href="/pt/library/alfabeto-grego/">Alfabeto Grego</a></h3><p class="lib-entry-desc">Copie e cole todas as letras gregas — maiúsculas, minúsculas e variantes matemáticas como alpha, beta, delta, sigma, ômega e pi. Clique em qualquer letra para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">Α Β Γ Δ Ε</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-1"><a class="lib-entry-title-link" href="/pt/library/arte-de-texto/">Arte de Texto</a></h3><p class="lib-entry-desc">Arte de texto para copiar e colar — gatos em ASCII, corações em braille, molduras de estrelas e kaomoji clássicos, mais os blocos para desenhar a sua. Um clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">─ │ ┌ ┐ └</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Filtrar por: X">X</button></div></article></section><section class="lib-letter-section" id="lib-letter-C" aria-labelledby="lib-letter-heading-C"><h2 class="lib-letter-heading" id="lib-letter-heading-C"><span class="letter">C</span><span class="lcount">(3)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-0"><a class="lib-entry-title-link" href="/pt/library/caracteres-especiais/">Caracteres Especiais</a></h3><p class="lib-entry-desc">Explore e copie caracteres especiais únicos — infinito, paz, ciência, marcas legais, enfeites estéticos e curiosidades Unicode. Clique em qualquer símbolo para copiá-lo na hora.</p><span class="lib-entry-preview" aria-hidden="true">∞ ♾️ ⧜ ⧝ ⧞</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-1"><a class="lib-entry-title-link" href="/pt/library/codigos-alt/">Códigos Alt</a></h3><p class="lib-entry-desc">Lista completa de códigos Alt do teclado — Alt+0169 para ©, moeda, matemática, letras acentuadas e símbolos clássicos do DOS. Clique em qualquer caractere para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">© ® ™ ° ±</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="E-mail" aria-label="Filtrar por: E-mail">E-mail</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-2"><a class="lib-entry-title-link" href="/pt/library/emoji-combos/">Combos de emoji para copiar e colar</a></h3><p class="lib-entry-desc">Combos de emoji prontos para copiar e colar: fofo, coquette, amor, dark e praia. Combinações estéticas de emoji pra bio do Insta, status e legenda — grátis.</p><span class="lib-entry-preview" aria-hidden="true">🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-E" aria-labelledby="lib-letter-heading-E"><h2 class="lib-letter-heading" id="lib-letter-heading-E"><span class="letter">E</span><span class="lcount">(10)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-0"><a class="lib-entry-title-link" href="/pt/library/emoji-caveira/">Emoji Caveira</a></h3><p class="lib-entry-desc">Emoji caveira 💀 ☠ para copiar, com os emojis de «morri de rir», os símbolos de ossos e perigo e os kaomoji de caveira. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">💀 ☠️ 😂 🤣 ⚰️</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-1"><a class="lib-entry-title-link" href="/pt/library/emoji-flags/">Emoji de Bandeiras — Bandeiras dos Países</a></h3><p class="lib-entry-desc">Copie emoji de bandeiras de todos os países: bandeira do Brasil 🇧🇷, dos Estados Unidos 🇺🇸, da Coreia do Sul, do Vaticano e de Portugal. Clique na bandeira pra copiar e cole no nome do jogo, bio, legenda ou mensagem. </p><span class="lib-entry-preview" aria-hidden="true">🇺🇸 🇧🇷 🇰🇷 🇻🇦 🇷🇺</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Viagem" aria-label="Filtrar por: Viagem">Viagem</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-2"><a class="lib-entry-title-link" href="/pt/library/emoji-de-flores/">Emoji de Flores e Símbolos de Flor</a></h3><p class="lib-entry-desc">Emoji de flores 🌸 🌹 🌻 e símbolos de flor ❀ ✿ para copiar e colar: folhas, árvores, natureza e enfeites para bio. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">🌸 🌹 🌺 🌻 🌼</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-3"><a class="lib-entry-title-link" href="/pt/library/ronaldo-emoji-combos/">Emoji do Cristiano Ronaldo</a></h3><p class="lib-entry-desc">Emoji do Cristiano Ronaldo 🇵🇹⚽🐐 — combos CR7, GOAT e Siuuu pra bio e legenda de fã. Clique em qualquer emoji ou combo pra copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🇵🇹 ⚽ 🐐 👑 🏆</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-4"><a class="lib-entry-title-link" href="/pt/library/neymar-emoji-combos/">Emoji do Neymar</a></h3><p class="lib-entry-desc">Emoji do Neymar 🇧🇷⚽ — combos do Brasil, joga bonito e camisa 10 pra bio e legenda. Clique em qualquer emoji ou combo pra copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🇧🇷 ⚽ 🐐 💎 🔟</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-5"><a class="lib-entry-title-link" href="/pt/library/vinicius-emoji-combos/">Emoji do Vini Jr</a></h3><p class="lib-entry-desc">Emoji do Vini Jr (Vinicius Júnior) 🇧🇷⚽ — combos de fã pra bio, legenda e comentário. Clique em qualquer emoji ou combo pra copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🇧🇷 ⚽ 🐐 💃 7️⃣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-6"><a class="lib-entry-title-link" href="/pt/library/emoji-feliz/">Emoji Feliz e Kaomoji</a></h3><p class="lib-entry-desc">Emoji feliz 😊 😄 🥰, kaomoji alegres como ヽ(´▽`)/ e combos ensolarados para animar bios, legendas e mensagens. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">😊 😀 😃 😄 🙂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Celebração" aria-label="Filtrar por: Celebração">Celebração</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-7"><a class="lib-entry-title-link" href="/pt/library/emoji-triste/">Emoji Triste</a></h3><p class="lib-entry-desc">Emoji triste 😢 😞 😔 para copiar e colar: rostos chorando, coração partido, rostos esgotados e kaomoji tristes. Um clique e está copiado.</p><span class="lib-entry-preview" aria-hidden="true">😢 😞 😔 ☹ 🙁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-8"><a class="lib-entry-title-link" href="/pt/library/emojis-de-rosto/">Emojis de rosto por sentimento</a></h3><p class="lib-entry-desc">Copie emojis de rosto por sentimento — beijo 😘, piscadinha 😉, sorriso de lado 😏, olhos revirados 🙄, rosto corado 😊, suplicante 🥺, óculos escuros 😎, auréola 😇 e mais, com significado e combos prontos. Toque em qua</p><span class="lib-entry-preview" aria-hidden="true">😘 😗 😙 😚 💋</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-9"><a class="lib-entry-title-link" href="/pt/library/emojis-iphone/">Emojis iPhone</a></h3><p class="lib-entry-desc">Emojis do iPhone para copiar e colar: carinhas, corações, mãos e os emojis que todo mundo reconhece como Apple. Clique para copiar — e por que no Android eles mudam.</p><span class="lib-entry-preview" aria-hidden="true">😂 🥹 🥲 😊 🥰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-H" aria-labelledby="lib-letter-heading-H"><h2 class="lib-letter-heading" id="lib-letter-heading-H"><span class="letter">H</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-H-0"><a class="lib-entry-title-link" href="/pt/library/hieroglifos-egipcios/">Hieróglifos Egípcios</a></h3><p class="lib-entry-desc">Hieróglifos egípcios 𓂀 𓃀 𓅓 para copiar e colar: mais de 1000 caracteres Unicode organizados pela classificação Gardiner. Clique num sinal para copiar.</p><span class="lib-entry-preview" aria-hidden="true">𓀀 𓀁 𓀂 𓀃 𓀄</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button></div></article></section><section class="lib-letter-section" id="lib-letter-K" aria-labelledby="lib-letter-heading-K"><h2 class="lib-letter-heading" id="lib-letter-heading-K"><span class="letter">K</span><span class="lcount">(6)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-0"><a class="lib-entry-title-link" href="/pt/library/kaomoji/">Kaomoji &amp; carinhas japonesas</a></h3><p class="lib-entry-desc">Kaomoji e carinhas japonesas para copiar e colar: carinhas feliz, triste, de dar de ombros, fofas, de amor, animais e Lenny faces. Toque em qualquer carinha pra copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Filtrar por: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-1"><a class="lib-entry-title-link" href="/pt/library/love-kaomoji/">Kaomoji de Amor</a></h3><p class="lib-entry-desc">Explore e copie kaomoji de amor e coração — carinhas de texto japonesas para carinho, beijos e abraços. Clique para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-2"><a class="lib-entry-title-link" href="/pt/library/cat-kaomoji/">Kaomoji de Gato</a></h3><p class="lib-entry-desc">Explore e copie kaomoji de gato — carinhas de texto japonesas de gatinhos fofos com bigodes e patinhas. Gatos felizes, tristes e sonolentos. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-3"><a class="lib-entry-title-link" href="/pt/library/happy-kaomoji/">Kaomoji Felizes</a></h3><p class="lib-entry-desc">Explore e copie kaomoji felizes — carinhas de texto japonesas que sorriem, comemoram e estão alegres. Clique para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-4"><a class="lib-entry-title-link" href="/pt/library/cute-kaomoji/">Kaomoji Fofos</a></h3><p class="lib-entry-desc">Explore e copie kaomoji fofos — carinhas de texto japonesas kawaii com olhos brilhantes, bochechas coradas e bichinhos. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-5"><a class="lib-entry-title-link" href="/pt/library/sad-kaomoji/">Kaomoji Tristes</a></h3><p class="lib-entry-desc">Explore e copie kaomoji tristes — carinhas de texto japonesas para tristeza, decepção e mau humor. Clique para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Filtrar por: X">X</button></div></article></section><section class="lib-letter-section" id="lib-letter-N" aria-labelledby="lib-letter-heading-N"><h2 class="lib-letter-heading" id="lib-letter-heading-N"><span class="letter">N</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-N-0"><a class="lib-entry-title-link" href="/pt/library/simbolos-musicais/">Notas Musicais e Símbolos Musicais</a></h3><p class="lib-entry-desc">Copie e cole notas musicais, claves, acidentes e símbolos de música — além de emojis de instrumentos e áudio. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">♩ ♪ ♫ ♬ 🎵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-S" aria-labelledby="lib-letter-heading-S"><h2 class="lib-letter-heading" id="lib-letter-heading-S"><span class="letter">S</span><span class="lcount">(33)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-0"><a class="lib-entry-title-link" href="/pt/library/simbolos-coquette/">Símbolos Coquette</a></h3><p class="lib-entry-desc">Símbolos coquette aesthetic para copiar e colar — laços 🎀, fitas, corações ♡ e flores rosa para bio, nome de usuário e perfis. Caracteres suaves e delicados estilo dollette.</p><span class="lib-entry-preview" aria-hidden="true">🎀 ୨୧ ʚɞ ⊰ ⊱</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-1"><a class="lib-entry-title-link" href="/pt/library/simbolos-cottagecore/">Símbolos Cottagecore</a></h3><p class="lib-entry-desc">Símbolos cottagecore aesthetic para copiar e colar — cogumelos 🍄, flores, abelhas e motivos da vida no campo para bio, legenda e nome de usuário. Copie com um toque.</p><span class="lib-entry-preview" aria-hidden="true">🍄 🌿 🌱 🪴 🌾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-2"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-confirmacao/">Símbolos de Confirmação (Check)</a></h3><p class="lib-entry-desc">Navegue e copie símbolos de confirmação (check), marcas de X e indicadores de status para listas, comparações e formatação profissional. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ☑ ✅ ☐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-3"><a class="lib-entry-title-link" href="/pt/library/simbolos-copyright-marca-registrada/">Símbolos de Copyright, Marca Registrada e Jurídicos</a></h3><p class="lib-entry-desc">Copie e cole símbolos Unicode de copyright, marca registrada, comercial e outros símbolos jurídicos — ©, ®, ™, ℠, ℗, §, ¶ e mais. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">© ® ℗ Ⓒ Ⓡ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-4"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-coracao/">Símbolos de coração</a></h3><p class="lib-entry-desc">Copie emojis de coração e caracteres Unicode de coração — vermelho, coloridos, partido e decorativos. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🌈 ❤ 🧡 💛 💚</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-5"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-cruz-e-x/">Símbolos de Cruz e X</a></h3><p class="lib-entry-desc">Navegue e copie todo símbolo de cruz e X — sinais de multiplicação, marcas de votação, cruzes religiosas, símbolos decorativos de adaga e mais. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">× ✕ ✖ ⨯ ⋇</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-6"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-estrela/">Símbolos de Estrela (Copiar e Colar)</a></h3><p class="lib-entry-desc">Símbolos de estrela, estrelinhas, asteriscos e brilhos em Unicode para copiar e colar. Clique em qualquer símbolo para copiá-lo na hora e use na bio, no nome ou nas legendas.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ✦ ✧ ✡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-7"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-marcadores/">Símbolos de Marcadores</a></h3><p class="lib-entry-desc">Navegue e copie símbolos de marcadores (bullet points), setas, checkmarks e marcadores decorativos para documentos e posts. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">• ‣ ◦ ⁃ ∙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-8"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-moeda/">Símbolos de Moeda</a></h3><p class="lib-entry-desc">Copie e cole símbolos de moeda, sinais monetários e caracteres financeiros Unicode do mundo todo. Clique em qualquer símbolo para copiá-lo na hora.</p><span class="lib-entry-preview" aria-hidden="true">$ € £ ¥ ₹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-9"><a class="lib-entry-title-link" href="/pt/library/naipes-de-baralho/">Símbolos de Naipes de Baralho ♠ ♥ ♦ ♣</a></h3><p class="lib-entry-desc">Navegue e copie símbolos de naipes de baralho, dados, dominós e caracteres Unicode de jogos. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">♠ ♥ ♦ ♣ ♤</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-10"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-natal/">Símbolos de Natal</a></h3><p class="lib-entry-desc">Símbolos e emojis de Natal — árvores, flocos de neve, bonecos de neve, presentes e combos de saudação prontos. Toque em qualquer caractere para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🎄 🌲 ⭐ 🌟 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Celebração" aria-label="Filtrar por: Celebração">Celebração</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-11"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-paz/">Símbolos de Paz e Emojis</a></h3><p class="lib-entry-desc">Copie e cole o ✌️ sinal de paz das fotos, a 🕊️ pomba da paz, os símbolos ☮️ e ☯️ de harmonia e combos de vibe tranquila. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Filtrar por: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-12"><a class="lib-entry-title-link" href="/pt/library/simbolos-de-xadrez/">Símbolos de Peças de Xadrez</a></h3><p class="lib-entry-desc">Copie e cole símbolos de peças de xadrez em Unicode — reis, damas, torres, bispos, cavalos e peões, com nomes das peças e marcas de notação. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">♔ ♕ ♖ ♗ ♘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-13"><a class="lib-entry-title-link" href="/pt/library/setas/">Símbolos de Seta</a></h3><p class="lib-entry-desc">Explore e copie símbolos de seta — setas retas, curvas, duplas, triangulares e emojis de seta para documentos, posts e formatação. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">→ ← ↑ ↓ ↗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-14"><a class="lib-entry-title-link" href="/pt/library/simbolos-roblox/">Símbolos do Roblox</a></h3><p class="lib-entry-desc">Copie e cole mais de 40 símbolos do Roblox para nomes de exibição, bios e grupos — testados no filtro de nomes atual do Roblox, além da verdade sobre os ícones de Robux, Premium e Verificado.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ⊹ ✦ ✧ ★</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-15"><a class="lib-entry-title-link" href="/pt/library/simbolos-dreamcore-weirdcore/">Símbolos Dreamcore e Weirdcore</a></h3><p class="lib-entry-desc">Símbolos dreamcore e weirdcore — olhos surreais 👁, arco-íris 🌈, blocos de glitch, portas e combos sleepcore para posts liminais. Toque em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">👁 👁️ 👀 𓂀 𓁹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-16"><a class="lib-entry-title-link" href="/pt/library/simbolos-fairycore/">Símbolos Fairycore</a></h3><p class="lib-entry-desc">Símbolos e combos de emoji fairycore — fadas 🧚, cogumelos 🍄, brilhos ✨ e caracteres de flores delicadas para bios encantadas. Toque em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-17"><a class="lib-entry-title-link" href="/pt/library/simbolos-geometricos/">Símbolos Geométricos</a></h3><p class="lib-entry-desc">Símbolos geométricos para copiar e colar: círculos, losangos, quadrados, triângulos, marcadores de lista e hexágonos, cheios e vazados. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">● ○ ◉ ◎ ⊙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Listas" aria-label="Filtrar por: Listas">Listas</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Separadores" aria-label="Filtrar por: Separadores">Separadores</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-18"><a class="lib-entry-title-link" href="/pt/library/simbolos-goth-grunge/">Símbolos goth e grunge</a></h3><p class="lib-entry-desc">Símbolos dark aesthetic para bios goth e grunge. Cruzes, caveiras, aranhas, adagas e decorações de moda alt para nomes de usuário e perfis.</p><span class="lib-entry-preview" aria-hidden="true">♱ † ‡ ✟ 🗡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-19"><a class="lib-entry-title-link" href="/pt/library/simbolos-islamicos/">Símbolos Islâmicos</a></h3><p class="lib-entry-desc">Símbolos islâmicos para copiar e colar — estrela e crescente, ligaduras de Allah e da Basmala, emojis de mesquita e oração, e votos de Eid. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">☪ ☪️ ☫ 🌙 ☽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Celebração" aria-label="Filtrar por: Celebração">Celebração</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por: WhatsApp">WhatsApp</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-20"><a class="lib-entry-title-link" href="/pt/library/simbolos-japoneses/">Símbolos Japoneses</a></h3><p class="lib-entry-desc">Símbolos japoneses para copiar e colar — kanji como 桜 e 愛, hiragana, katakana e pontuação com significado. Clique em qualquer caractere para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">桜 愛 夢 月 星</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-21"><a class="lib-entry-title-link" href="/pt/library/simbolos-kawaii-cute/">Símbolos Kawaii Fofos</a></h3><p class="lib-entry-desc">Símbolos kawaii e fofos para bio, nome de usuário e mensagens. Corações suaves, carinhas pequenas, brilhos e decorações pastel da estética kawaii. Copie com um toque.</p><span class="lib-entry-preview" aria-hidden="true">♡ ෆ ❤ ❥ ʚɞ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-22"><a class="lib-entry-title-link" href="/pt/library/simbolos-matematicos/">Símbolos Matemáticos</a></h3><p class="lib-entry-desc">Navegue e copie símbolos matemáticos — operadores, letras gregas, teoria dos conjuntos, cálculo e caracteres sobrescritos. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">± × ÷ ∓ ∣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Publicações profissionais" aria-label="Filtrar por: Publicações profissionais">Publicações profissionais</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Filtrar por: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-23"><a class="lib-entry-title-link" href="/pt/library/simbolos/">Símbolos para copiar e colar</a></h3><p class="lib-entry-desc">Símbolos para copiar e colar: símbolos para nick, bio do Instagram, corações, estrelas, setas e símbolos góticos. Toque e o símbolo já é copiado.</p><span class="lib-entry-preview" aria-hidden="true">★ ✰ ♡ ꧁ ꧂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-24"><a class="lib-entry-title-link" href="/pt/library/simbolos-discord/">Símbolos para Discord</a></h3><p class="lib-entry-desc">Copie e cole símbolos para Discord — decorações para nomes de canais (▸ ┊ ➤ ꒱ ⟢), servidores, cargos e perfis. Clique em qualquer símbolo para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">⌗ ➤ ▸ │ ⊹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-25"><a class="lib-entry-title-link" href="/pt/library/simbolos-para-facebook/">Símbolos para Facebook</a></h3><p class="lib-entry-desc">Símbolos para Facebook copiar e colar: corações, estrelas, marcadores, setas e símbolos para nome de página e grupo. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">👍 ❤️ 🥰 😆 😮</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Facebook" aria-label="Filtrar por: Facebook">Facebook</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-26"><a class="lib-entry-title-link" href="/pt/library/simbolos-para-instagram/">Símbolos para Instagram</a></h3><p class="lib-entry-desc">Símbolos para Instagram copiar e colar: enfeites de bio, divisores, corações, estrelas e símbolos para capa de destaque. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">✨ • · │ ⌇</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-27"><a class="lib-entry-title-link" href="/pt/library/simbolos-para-free-fire/">Símbolos para Nick de Free Fire</a></h3><p class="lib-entry-desc">Símbolos para nick de Free Fire (FF) prontos para copiar e colar: guarda-chuva ꧁꧂, coroas ♛, katakana メ 彡 e estrelas ★. Também funcionam em ML, Roblox e bios — clique para copiar. Grátis, sem app.</p><span class="lib-entry-preview" aria-hidden="true">꧁ ꧂ ༒ ༺ ༻</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Filtrar por: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-28"><a class="lib-entry-title-link" href="/pt/library/simbolos-para-twitter/">Símbolos para Twitter (X)</a></h3><p class="lib-entry-desc">Símbolos para Twitter (X) copiar e colar: 𝕏 do logo, marcadores de thread, aspas, marcas de verificação e enfeites de bio. Clique para copiar.</p><span class="lib-entry-preview" aria-hidden="true">𝕏 ✕ ✖ ✗ ✘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Comentário" aria-label="Filtrar por: Comentário">Comentário</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Filtrar por: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-29"><a class="lib-entry-title-link" href="/pt/library/simbolos-religiosos/">Símbolos Religiosos e Espirituais</a></h3><p class="lib-entry-desc">Explore e copie símbolos Unicode religiosos, espirituais e de fé das grandes tradições do mundo. Clique em qualquer símbolo para copiá-lo na hora.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☦ ✞ ✟ ♰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-30"><a class="lib-entry-title-link" href="/pt/library/simbolos-therian/">Símbolos Therian</a></h3><p class="lib-entry-desc">Símbolos therian para copiar e colar — a marca theta-delta (θΔ), patas, fases da lua e emojis de animais usados pela comunidade therian e alterhuman. Toque para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">θΔ ΘΔ θ Θ Δ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Símbolo" aria-label="Filtrar por: Símbolo">Símbolo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Filtrar por: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-31"><a class="lib-entry-title-link" href="/pt/library/simbolos-witchy-occult/">Símbolos Witchy e Ocultos</a></h3><p class="lib-entry-desc">Símbolos witchy e ocultos para copiar e colar — pentagramas, fases da lua, signos planetários, símbolos alquímicos e outros caracteres esotéricos. Toque em qualquer um para copiar.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ⚹ ✡ ⚜</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-32"><a class="lib-entry-title-link" href="/pt/library/simbolos-y2k/">Símbolos Y2K</a></h3><p class="lib-entry-desc">Símbolos Y2K aesthetic para copiar e colar — estrelas ✰, brilhos ⋆｡°✩, cruzes e caracteres cyber para bio, nome de usuário e perfis aesthetic. Copie com um toque.</p><span class="lib-entry-preview" aria-hidden="true">✦ ✮ ♱ 🦋 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Decorativo" aria-label="Filtrar por: Decorativo">Decorativo</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Filtrar por: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Legenda" aria-label="Filtrar por: Legenda">Legenda</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reações" aria-label="Filtrar por: Reações">Reações</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Filtrar por: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-T" aria-labelledby="lib-letter-heading-T"><h2 class="lib-letter-heading" id="lib-letter-heading-T"><span class="letter">T</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-T-0"><a class="lib-entry-title-link" href="/pt/library/tabela-ascii/">Tabela ASCII</a></h3><p class="lib-entry-desc">Tabela ASCII com códigos decimal, hexadecimal, binário e octal de pontuação, dígitos, letras e símbolos — uma referência rápida para desenvolvedores. Clique em qualquer caractere para copiar na hora.</p><span class="lib-entry-preview" aria-hidden="true">! &quot; # $ %</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referência" aria-label="Filtrar por: Referência">Referência</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Formatação de e-mail" aria-label="Filtrar por: Formatação de e-mail">Formatação de e-mail</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="E-mail" aria-label="Filtrar por: E-mail">E-mail</button></div></article></section>
+</main>
+
+<div class="lib-empty" id="libEmpty" role="status" aria-live="polite" hidden>
+  <p class="lib-empty-title">Nenhum resultado</p>
+  <p class="lib-empty-body">Nenhuma coleção combina com essa combinação. Tente remover um ou mais filtros.</p>
+  <button type="button" class="lib-clear" id="libEmptyReset">Limpar todos os filtros</button>
+</div>
+
+<button type="button" class="lib-back-top" id="libBackTop"
+        aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<script>
+window.UTG_LIBRARY_HUB = {
+ "locale": "pt",
+ "basePath": "/pt/library/",
+ "i18n": {
+  "searchLabel": "Buscar na biblioteca",
+  "searchPlaceholder": "Buscar símbolo…",
+  "clearFilters": "Limpar filtros",
+  "resultCount": "{shown} de {total} coleções",
+  "emptyTitle": "Nenhum resultado",
+  "emptyBody": "Nenhuma coleção combina com essa combinação. Tente remover um ou mais filtros.",
+  "emptyReset": "Limpar todos os filtros",
+  "backTop": "Voltar ao topo",
+  "filterBy": "Filtrar por",
+  "alphaJump": "Pular para a letra",
+  "noItems": "sem itens",
+  "directoryLabel": "Diretório de símbolos"
+ },
+ "items": [
+  {
+   "title": "Alfabeto Grego",
+   "slug": "alfabeto-grego",
+   "description": "Copie e cole todas as letras gregas — maiúsculas, minúsculas e variantes matemáticas como alpha, beta, delta, sigma, ômega e pi. Clique em qualquer letra para copiar na hora.",
+   "preview": "Α Β Γ Δ Ε",
+   "type": "Símbolo",
+   "useCases": [
+    "Publicações profissionais",
+    "Legenda",
+    "Bio"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Arte de Texto",
+   "slug": "arte-de-texto",
+   "description": "Arte de texto para copiar e colar — gatos em ASCII, corações em braille, molduras de estrelas e kaomoji clássicos, mais os blocos para desenhar a sua. Um clique para copiar.",
+   "preview": "─ │ ┌ ┐ └",
+   "type": "Decorativo",
+   "useCases": [
+    "Legenda",
+    "Comentário"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Caracteres Especiais",
+   "slug": "caracteres-especiais",
+   "description": "Explore e copie caracteres especiais únicos — infinito, paz, ciência, marcas legais, enfeites estéticos e curiosidades Unicode. Clique em qualquer símbolo para copiá-lo na hora.",
+   "preview": "∞ ♾️ ⧜ ⧝ ⧞",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Publicações profissionais"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Kaomoji de Gato",
+   "slug": "cat-kaomoji",
+   "description": "Explore e copie kaomoji de gato — carinhas de texto japonesas de gatinhos fofos com bigodes e patinhas. Gatos felizes, tristes e sonolentos. Clique para copiar.",
+   "preview": "(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)",
+   "type": "Símbolo",
+   "useCases": [
+    "Reações",
+    "Legenda",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Códigos Alt",
+   "slug": "codigos-alt",
+   "description": "Lista completa de códigos Alt do teclado — Alt+0169 para ©, moeda, matemática, letras acentuadas e símbolos clássicos do DOS. Clique em qualquer caractere para copiar na hora.",
+   "preview": "© ® ™ ° ±",
+   "type": "Referência",
+   "useCases": [
+    "Referência",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "E-mail"
+   ]
+  },
+  {
+   "title": "Kaomoji Fofos",
+   "slug": "cute-kaomoji",
+   "description": "Explore e copie kaomoji fofos — carinhas de texto japonesas kawaii com olhos brilhantes, bochechas coradas e bichinhos. Clique para copiar.",
+   "preview": "(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Caveira",
+   "slug": "emoji-caveira",
+   "description": "Emoji caveira 💀 ☠ para copiar, com os emojis de «morri de rir», os símbolos de ossos e perigo e os kaomoji de caveira. Clique para copiar.",
+   "preview": "💀 ☠️ 😂 🤣 ⚰️",
+   "type": "Emoji",
+   "useCases": [
+    "Reações",
+    "Comentário"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Combos de emoji para copiar e colar",
+   "slug": "emoji-combos",
+   "description": "Combos de emoji prontos para copiar e colar: fofo, coquette, amor, dark e praia. Combinações estéticas de emoji pra bio do Insta, status e legenda — grátis.",
+   "preview": "🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji de Flores e Símbolos de Flor",
+   "slug": "emoji-de-flores",
+   "description": "Emoji de flores 🌸 🌹 🌻 e símbolos de flor ❀ ✿ para copiar e colar: folhas, árvores, natureza e enfeites para bio. Clique para copiar.",
+   "preview": "🌸 🌹 🌺 🌻 🌼",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Feliz e Kaomoji",
+   "slug": "emoji-feliz",
+   "description": "Emoji feliz 😊 😄 🥰, kaomoji alegres como ヽ(´▽`)/ e combos ensolarados para animar bios, legendas e mensagens. Clique para copiar.",
+   "preview": "😊 😀 😃 😄 🙂",
+   "type": "Emoji",
+   "useCases": [
+    "Legenda",
+    "Comentário",
+    "Celebração"
+   ],
+   "platforms": [
+    "Instagram",
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Emoji de Bandeiras — Bandeiras dos Países",
+   "slug": "emoji-flags",
+   "description": "Copie emoji de bandeiras de todos os países: bandeira do Brasil 🇧🇷, dos Estados Unidos 🇺🇸, da Coreia do Sul, do Vaticano e de Portugal. Clique na bandeira pra copiar e cole no nome do jogo, bio, legenda ou mensagem. ",
+   "preview": "🇺🇸 🇧🇷 🇰🇷 🇻🇦 🇷🇺",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Viagem"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Triste",
+   "slug": "emoji-triste",
+   "description": "Emoji triste 😢 😞 😔 para copiar e colar: rostos chorando, coração partido, rostos esgotados e kaomoji tristes. Um clique e está copiado.",
+   "preview": "😢 😞 😔 ☹ 🙁",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emojis de rosto por sentimento",
+   "slug": "emojis-de-rosto",
+   "description": "Copie emojis de rosto por sentimento — beijo 😘, piscadinha 😉, sorriso de lado 😏, olhos revirados 🙄, rosto corado 😊, suplicante 🥺, óculos escuros 😎, auréola 😇 e mais, com significado e combos prontos. Toque em qua",
+   "preview": "😘 😗 😙 😚 💋",
+   "type": "Emoji",
+   "useCases": [
+    "Reações",
+    "Legenda",
+    "Comentário"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emojis iPhone",
+   "slug": "emojis-iphone",
+   "description": "Emojis do iPhone para copiar e colar: carinhas, corações, mãos e os emojis que todo mundo reconhece como Apple. Clique para copiar — e por que no Android eles mudam.",
+   "preview": "😂 🥹 🥲 😊 🥰",
+   "type": "Emoji",
+   "useCases": [
+    "Legenda",
+    "Reações",
+    "Referência"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji Felizes",
+   "slug": "happy-kaomoji",
+   "description": "Explore e copie kaomoji felizes — carinhas de texto japonesas que sorriem, comemoram e estão alegres. Clique para copiar na hora.",
+   "preview": "(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)",
+   "type": "Símbolo",
+   "useCases": [
+    "Reações",
+    "Legenda",
+    "Comentário"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Hieróglifos Egípcios",
+   "slug": "hieroglifos-egipcios",
+   "description": "Hieróglifos egípcios 𓂀 𓃀 𓅓 para copiar e colar: mais de 1000 caracteres Unicode organizados pela classificação Gardiner. Clique num sinal para copiar.",
+   "preview": "𓀀 𓀁 𓀂 𓀃 𓀄",
+   "type": "Símbolo",
+   "useCases": [
+    "Legenda",
+    "Bio",
+    "Reações"
+   ]
+  },
+  {
+   "title": "Kaomoji & carinhas japonesas",
+   "slug": "kaomoji",
+   "description": "Kaomoji e carinhas japonesas para copiar e colar: carinhas feliz, triste, de dar de ombros, fofas, de amor, animais e Lenny faces. Toque em qualquer carinha pra copiar na hora.",
+   "preview": "◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ",
+   "type": "Decorativo",
+   "useCases": [
+    "Reações",
+    "Comentário",
+    "Legenda"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Kaomoji de Amor",
+   "slug": "love-kaomoji",
+   "description": "Explore e copie kaomoji de amor e coração — carinhas de texto japonesas para carinho, beijos e abraços. Clique para copiar na hora.",
+   "preview": "(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)",
+   "type": "Símbolo",
+   "useCases": [
+    "Reações",
+    "Legenda",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Naipes de Baralho ♠ ♥ ♦ ♣",
+   "slug": "naipes-de-baralho",
+   "description": "Navegue e copie símbolos de naipes de baralho, dados, dominós e caracteres Unicode de jogos. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "♠ ♥ ♦ ♣ ♤",
+   "type": "Símbolo",
+   "useCases": [
+    "Legenda",
+    "Reações",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji do Neymar",
+   "slug": "neymar-emoji-combos",
+   "description": "Emoji do Neymar 🇧🇷⚽ — combos do Brasil, joga bonito e camisa 10 pra bio e legenda. Clique em qualquer emoji ou combo pra copiar na hora.",
+   "preview": "🇧🇷 ⚽ 🐐 💎 🔟",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji do Cristiano Ronaldo",
+   "slug": "ronaldo-emoji-combos",
+   "description": "Emoji do Cristiano Ronaldo 🇵🇹⚽🐐 — combos CR7, GOAT e Siuuu pra bio e legenda de fã. Clique em qualquer emoji ou combo pra copiar na hora.",
+   "preview": "🇵🇹 ⚽ 🐐 👑 🏆",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Comentário"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Kaomoji Tristes",
+   "slug": "sad-kaomoji",
+   "description": "Explore e copie kaomoji tristes — carinhas de texto japonesas para tristeza, decepção e mau humor. Clique para copiar na hora.",
+   "preview": "(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)",
+   "type": "Símbolo",
+   "useCases": [
+    "Reações",
+    "Comentário",
+    "Legenda"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Símbolos de Seta",
+   "slug": "setas",
+   "description": "Explore e copie símbolos de seta — setas retas, curvas, duplas, triangulares e emojis de seta para documentos, posts e formatação. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "→ ← ↑ ↓ ↗",
+   "type": "Símbolo",
+   "useCases": [
+    "Listas",
+    "Publicações profissionais"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos para copiar e colar",
+   "slug": "simbolos",
+   "description": "Símbolos para copiar e colar: símbolos para nick, bio do Instagram, corações, estrelas, setas e símbolos góticos. Toque e o símbolo já é copiado.",
+   "preview": "★ ✰ ♡ ꧁ ꧂",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Copyright, Marca Registrada e Jurídicos",
+   "slug": "simbolos-copyright-marca-registrada",
+   "description": "Copie e cole símbolos Unicode de copyright, marca registrada, comercial e outros símbolos jurídicos — ©, ®, ™, ℠, ℗, §, ¶ e mais. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "© ® ℗ Ⓒ Ⓡ",
+   "type": "Símbolo",
+   "useCases": [
+    "Publicações profissionais",
+    "Referência",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos Coquette",
+   "slug": "simbolos-coquette",
+   "description": "Símbolos coquette aesthetic para copiar e colar — laços 🎀, fitas, corações ♡ e flores rosa para bio, nome de usuário e perfis. Caracteres suaves e delicados estilo dollette.",
+   "preview": "🎀 ୨୧ ʚɞ ⊰ ⊱",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Cottagecore",
+   "slug": "simbolos-cottagecore",
+   "description": "Símbolos cottagecore aesthetic para copiar e colar — cogumelos 🍄, flores, abelhas e motivos da vida no campo para bio, legenda e nome de usuário. Copie com um toque.",
+   "preview": "🍄 🌿 🌱 🪴 🌾",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Confirmação (Check)",
+   "slug": "simbolos-de-confirmacao",
+   "description": "Navegue e copie símbolos de confirmação (check), marcas de X e indicadores de status para listas, comparações e formatação profissional. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "✓ ✔ ☑ ✅ ☐",
+   "type": "Símbolo",
+   "useCases": [
+    "Listas",
+    "Publicações profissionais",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos de coração",
+   "slug": "simbolos-de-coracao",
+   "description": "Copie emojis de coração e caracteres Unicode de coração — vermelho, coloridos, partido e decorativos. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "🌈 ❤ 🧡 💛 💚",
+   "type": "Símbolo",
+   "useCases": [
+    "Reações",
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Cruz e X",
+   "slug": "simbolos-de-cruz-e-x",
+   "description": "Navegue e copie todo símbolo de cruz e X — sinais de multiplicação, marcas de votação, cruzes religiosas, símbolos decorativos de adaga e mais. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "× ✕ ✖ ⨯ ⋇",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Listas",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Estrela (Copiar e Colar)",
+   "slug": "simbolos-de-estrela",
+   "description": "Símbolos de estrela, estrelinhas, asteriscos e brilhos em Unicode para copiar e colar. Clique em qualquer símbolo para copiá-lo na hora e use na bio, no nome ou nas legendas.",
+   "preview": "★ ☆ ✦ ✧ ✡",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Listas",
+    "Legenda"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos de Marcadores",
+   "slug": "simbolos-de-marcadores",
+   "description": "Navegue e copie símbolos de marcadores (bullet points), setas, checkmarks e marcadores decorativos para documentos e posts. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "• ‣ ◦ ⁃ ∙",
+   "type": "Símbolo",
+   "useCases": [
+    "Listas",
+    "Publicações profissionais",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos de Moeda",
+   "slug": "simbolos-de-moeda",
+   "description": "Copie e cole símbolos de moeda, sinais monetários e caracteres financeiros Unicode do mundo todo. Clique em qualquer símbolo para copiá-lo na hora.",
+   "preview": "$ € £ ¥ ₹",
+   "type": "Símbolo",
+   "useCases": [
+    "Publicações profissionais",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos de Natal",
+   "slug": "simbolos-de-natal",
+   "description": "Símbolos e emojis de Natal — árvores, flocos de neve, bonecos de neve, presentes e combos de saudação prontos. Toque em qualquer caractere para copiar na hora.",
+   "preview": "🎄 🌲 ⭐ 🌟 ✨",
+   "type": "Emoji",
+   "useCases": [
+    "Celebração",
+    "Legenda",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Paz e Emojis",
+   "slug": "simbolos-de-paz",
+   "description": "Copie e cole o ✌️ sinal de paz das fotos, a 🕊️ pomba da paz, os símbolos ☮️ e ☯️ de harmonia e combos de vibe tranquila. Clique para copiar.",
+   "preview": "✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾",
+   "type": "Emoji",
+   "useCases": [
+    "Legenda",
+    "Bio",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos de Peças de Xadrez",
+   "slug": "simbolos-de-xadrez",
+   "description": "Copie e cole símbolos de peças de xadrez em Unicode — reis, damas, torres, bispos, cavalos e peões, com nomes das peças e marcas de notação. Clique para copiar.",
+   "preview": "♔ ♕ ♖ ♗ ♘",
+   "type": "Símbolo",
+   "useCases": [
+    "Legenda",
+    "Reações",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos para Discord",
+   "slug": "simbolos-discord",
+   "description": "Copie e cole símbolos para Discord — decorações para nomes de canais (▸ ┊ ➤ ꒱ ⟢), servidores, cargos e perfis. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "⌗ ➤ ▸ │ ⊹",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Dreamcore e Weirdcore",
+   "slug": "simbolos-dreamcore-weirdcore",
+   "description": "Símbolos dreamcore e weirdcore — olhos surreais 👁, arco-íris 🌈, blocos de glitch, portas e combos sleepcore para posts liminais. Toque em qualquer símbolo para copiar na hora.",
+   "preview": "👁 👁️ 👀 𓂀 𓁹",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Símbolos Fairycore",
+   "slug": "simbolos-fairycore",
+   "description": "Símbolos e combos de emoji fairycore — fadas 🧚, cogumelos 🍄, brilhos ✨ e caracteres de flores delicadas para bios encantadas. Toque em qualquer símbolo para copiar na hora.",
+   "preview": "🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Símbolos Geométricos",
+   "slug": "simbolos-geometricos",
+   "description": "Símbolos geométricos para copiar e colar: círculos, losangos, quadrados, triângulos, marcadores de lista e hexágonos, cheios e vazados. Clique para copiar.",
+   "preview": "● ○ ◉ ◎ ⊙",
+   "type": "Símbolo",
+   "useCases": [
+    "Listas",
+    "Separadores",
+    "Publicações profissionais"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Símbolos goth e grunge",
+   "slug": "simbolos-goth-grunge",
+   "description": "Símbolos dark aesthetic para bios goth e grunge. Cruzes, caveiras, aranhas, adagas e decorações de moda alt para nomes de usuário e perfis.",
+   "preview": "♱ † ‡ ✟ 🗡",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Islâmicos",
+   "slug": "simbolos-islamicos",
+   "description": "Símbolos islâmicos para copiar e colar — estrela e crescente, ligaduras de Allah e da Basmala, emojis de mesquita e oração, e votos de Eid. Clique para copiar.",
+   "preview": "☪ ☪️ ☫ 🌙 ☽",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Celebração"
+   ],
+   "platforms": [
+    "WhatsApp",
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Japoneses",
+   "slug": "simbolos-japoneses",
+   "description": "Símbolos japoneses para copiar e colar — kanji como 桜 e 愛, hiragana, katakana e pontuação com significado. Clique em qualquer caractere para copiar na hora.",
+   "preview": "桜 愛 夢 月 星",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Kawaii Fofos",
+   "slug": "simbolos-kawaii-cute",
+   "description": "Símbolos kawaii e fofos para bio, nome de usuário e mensagens. Corações suaves, carinhas pequenas, brilhos e decorações pastel da estética kawaii. Copie com um toque.",
+   "preview": "♡ ෆ ❤ ❥ ʚɞ",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Matemáticos",
+   "slug": "simbolos-matematicos",
+   "description": "Navegue e copie símbolos matemáticos — operadores, letras gregas, teoria dos conjuntos, cálculo e caracteres sobrescritos. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "± × ÷ ∓ ∣",
+   "type": "Símbolo",
+   "useCases": [
+    "Publicações profissionais",
+    "Legenda"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Notas Musicais e Símbolos Musicais",
+   "slug": "simbolos-musicais",
+   "description": "Copie e cole notas musicais, claves, acidentes e símbolos de música — além de emojis de instrumentos e áudio. Clique em qualquer símbolo para copiar na hora.",
+   "preview": "♩ ♪ ♫ ♬ 🎵",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos para Facebook",
+   "slug": "simbolos-para-facebook",
+   "description": "Símbolos para Facebook copiar e colar: corações, estrelas, marcadores, setas e símbolos para nome de página e grupo. Clique para copiar.",
+   "preview": "👍 ❤️ 🥰 😆 😮",
+   "type": "Referência",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Facebook"
+   ]
+  },
+  {
+   "title": "Símbolos para Nick de Free Fire",
+   "slug": "simbolos-para-free-fire",
+   "description": "Símbolos para nick de Free Fire (FF) prontos para copiar e colar: guarda-chuva ꧁꧂, coroas ♛, katakana メ 彡 e estrelas ★. Também funcionam em ML, Roblox e bios — clique para copiar. Grátis, sem app.",
+   "preview": "꧁ ꧂ ༒ ༺ ༻",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Símbolos para Instagram",
+   "slug": "simbolos-para-instagram",
+   "description": "Símbolos para Instagram copiar e colar: enfeites de bio, divisores, corações, estrelas e símbolos para capa de destaque. Clique para copiar.",
+   "preview": "✨ • · │ ⌇",
+   "type": "Referência",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos para Twitter (X)",
+   "slug": "simbolos-para-twitter",
+   "description": "Símbolos para Twitter (X) copiar e colar: 𝕏 do logo, marcadores de thread, aspas, marcas de verificação e enfeites de bio. Clique para copiar.",
+   "preview": "𝕏 ✕ ✖ ✗ ✘",
+   "type": "Referência",
+   "useCases": [
+    "Legenda",
+    "Reações",
+    "Comentário"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Símbolos Religiosos e Espirituais",
+   "slug": "simbolos-religiosos",
+   "description": "Explore e copie símbolos Unicode religiosos, espirituais e de fé das grandes tradições do mundo. Clique em qualquer símbolo para copiá-lo na hora.",
+   "preview": "✝ ☦ ✞ ✟ ♰",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos do Roblox",
+   "slug": "simbolos-roblox",
+   "description": "Copie e cole mais de 40 símbolos do Roblox para nomes de exibição, bios e grupos — testados no filtro de nomes atual do Roblox, além da verdade sobre os ícones de Robux, Premium e Verificado.",
+   "preview": "⋆ ⊹ ✦ ✧ ★",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Therian",
+   "slug": "simbolos-therian",
+   "description": "Símbolos therian para copiar e colar — a marca theta-delta (θΔ), patas, fases da lua e emojis de animais usados pela comunidade therian e alterhuman. Toque para copiar na hora.",
+   "preview": "θΔ ΘΔ θ Θ Δ",
+   "type": "Símbolo",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Símbolos Witchy e Ocultos",
+   "slug": "simbolos-witchy-occult",
+   "description": "Símbolos witchy e ocultos para copiar e colar — pentagramas, fases da lua, signos planetários, símbolos alquímicos e outros caracteres esotéricos. Toque em qualquer um para copiar.",
+   "preview": "★ ☆ ⚹ ✡ ⚜",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Símbolos Y2K",
+   "slug": "simbolos-y2k",
+   "description": "Símbolos Y2K aesthetic para copiar e colar — estrelas ✰, brilhos ⋆｡°✩, cruzes e caracteres cyber para bio, nome de usuário e perfis aesthetic. Copie com um toque.",
+   "preview": "✦ ✮ ♱ 🦋 ✨",
+   "type": "Decorativo",
+   "useCases": [
+    "Bio",
+    "Legenda",
+    "Reações"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Tabela ASCII",
+   "slug": "tabela-ascii",
+   "description": "Tabela ASCII com códigos decimal, hexadecimal, binário e octal de pontuação, dígitos, letras e símbolos — uma referência rápida para desenvolvedores. Clique em qualquer caractere para copiar na hora.",
+   "preview": "! \" # $ %",
+   "type": "Referência",
+   "useCases": [
+    "Referência",
+    "Formatação de e-mail"
+   ],
+   "platforms": [
+    "E-mail"
+   ]
+  },
+  {
+   "title": "Emoji do Vini Jr",
+   "slug": "vinicius-emoji-combos",
+   "description": "Emoji do Vini Jr (Vinicius Júnior) 🇧🇷⚽ — combos de fã pra bio, legenda e comentário. Clique em qualquer emoji ou combo pra copiar na hora.",
+   "preview": "🇧🇷 ⚽ 🐐 💃 7️⃣",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Legenda"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  }
+ ]
+};
+</script>
+<script src="/js/library/library-hub.js" defer></script>
+<!-- library-hub:end -->
 <!-- CTA -->
 <div class="lib-cta">
   <div class="cta-card">
@@ -690,64 +1115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </details>
 </section>
 
-<!-- STATIC INDEX (crawlable links to every collection) -->
-<nav class="lib-index" aria-label="Todas as coleções de símbolos">
-  <div class="lib-index-inner">
-    <h2 class="lib-index-title">Todas as Coleções A–Z</h2>
-    <p class="lib-index-note">Cada coleção de símbolos, emojis e kaomoji da Biblioteca UltraTextGen. Explore o diretório completo acima, ou vá direto para uma das páginas abaixo.</p>
-    <ul class="lib-index-list">
-      <li><a href="/pt/library/alfabeto-grego/">Alfabeto Grego</a></li>
-      <li><a href="/pt/library/emoji-caveira/">Emoji Caveira</a></li>
-      <li><a href="/pt/library/emoji-triste/">Emoji Triste</a></li>
-      <li><a href="/pt/library/hieroglifos-egipcios/">Hieróglifos Egípcios</a></li>
-      <li><a href="/pt/library/caracteres-especiais/">Caracteres Especiais</a></li>
-      <li><a href="/pt/library/codigos-alt/">Códigos Alt</a></li>
-      <li><a href="/pt/library/emoji-combos/">Combos de Emoji</a></li>
-      <li><a href="/pt/library/emojis-iphone/">Emojis iPhone</a></li>
-      <li><a href="/pt/library/emoji-flags/">Emoji de Bandeiras</a></li>
-      <li><a href="/pt/library/emojis-de-rosto/">Emojis de Rosto</a></li>
-      <li><a href="/pt/library/ronaldo-emoji-combos/">Emoji do Cristiano Ronaldo</a></li>
-      <li><a href="/pt/library/neymar-emoji-combos/">Emoji do Neymar</a></li>
-      <li><a href="/pt/library/vinicius-emoji-combos/">Emoji do Vini Jr</a></li>
-      <li><a href="/pt/library/love-kaomoji/">Kaomoji de Amor</a></li>
-      <li><a href="/pt/library/cat-kaomoji/">Kaomoji de Gato</a></li>
-      <li><a href="/pt/library/happy-kaomoji/">Kaomoji Felizes</a></li>
-      <li><a href="/pt/library/cute-kaomoji/">Kaomoji Fofos</a></li>
-      <li><a href="/pt/library/sad-kaomoji/">Kaomoji Tristes</a></li>
-      <li><a href="/pt/library/kaomoji/">Kaomoji — Carinhas Japonesas</a></li>
-      <li><a href="/pt/library/naipes-de-baralho/">Naipes de Baralho</a></li>
-      <li><a href="/pt/library/simbolos-musicais/">Notas Musicais</a></li>
-      <li><a href="/pt/library/simbolos-de-moeda/">Símbolos de Moeda</a></li>
-      <li><a href="/pt/library/simbolos-islamicos/">Símbolos Islâmicos</a></li>
-      <li><a href="/pt/library/simbolos/">Símbolos para Copiar e Colar</a></li>
-      <li><a href="/pt/library/simbolos-coquette/">Símbolos Coquette</a></li>
-      <li><a href="/pt/library/simbolos-cottagecore/">Símbolos Cottagecore</a></li>
-      <li><a href="/pt/library/simbolos-de-confirmacao/">Símbolos de Confirmação</a></li>
-      <li><a href="/pt/library/simbolos-copyright-marca-registrada/">Símbolos de Copyright e Marca Registrada</a></li>
-      <li><a href="/pt/library/simbolos-de-coracao/">Símbolos de Coração</a></li>
-      <li><a href="/pt/library/simbolos-de-cruz-e-x/">Símbolos de Cruz e X</a></li>
-      <li><a href="/pt/library/simbolos-de-estrela/">Símbolos de Estrela</a></li>
-      <li><a href="/pt/library/simbolos-de-marcadores/">Símbolos de Marcadores</a></li>
-      <li><a href="/pt/library/simbolos-de-natal/">Símbolos de Natal</a></li>
-      <li><a href="/pt/library/simbolos-de-xadrez/">Símbolos de Xadrez</a></li>
-      <li><a href="/pt/library/simbolos-discord/">Símbolos para Discord</a></li>
-      <li><a href="/pt/library/simbolos-para-free-fire/">Símbolos para Free Fire</a></li>
-      <li><a href="/pt/library/simbolos-dreamcore-weirdcore/">Símbolos Dreamcore &amp; Weirdcore</a></li>
-      <li><a href="/pt/library/simbolos-fairycore/">Símbolos Fairycore</a></li>
-      <li><a href="/pt/library/simbolos-goth-grunge/">Símbolos Goth &amp; Grunge</a></li>
-      <li><a href="/pt/library/simbolos-japoneses/">Símbolos Japoneses</a></li>
-      <li><a href="/pt/library/simbolos-kawaii-cute/">Símbolos Kawaii &amp; Fofos</a></li>
-      <li><a href="/pt/library/simbolos-matematicos/">Símbolos Matemáticos</a></li>
-      <li><a href="/pt/library/simbolos-roblox/">Símbolos do Roblox</a></li>
-      <li><a href="/pt/library/simbolos-religiosos/">Símbolos Religiosos</a></li>
-      <li><a href="/pt/library/simbolos-therian/">Símbolos Therian</a></li>
-      <li><a href="/pt/library/simbolos-witchy-occult/">Símbolos Witchy &amp; Ocultos</a></li>
-      <li><a href="/pt/library/simbolos-y2k/">Símbolos Y2K</a></li>
-      <li><a href="/pt/library/setas/">Símbolos de Seta</a></li>
-      <li><a href="/pt/library/tabela-ascii/">Tabela ASCII</a></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -759,870 +1126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- BACK TO TOP -->
-<button type="button" class="lib-back-top" id="libBackTop" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
 
-<script>
-(function () {
-  "use strict";
-
-  /* ── Data ───────────────────────────────────────────────────── */
-  const LIBRARY = [
-    {
-      title: "Símbolos Islâmicos",
-      slug: "simbolos-islamicos",
-      description: "Estrela e crescente ☪, ligaduras árabes ﷲ ﷺ, mesquita e votos de Eid.",
-      preview: "☪ ﷲ ﷺ 🕌 📿",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Espiritual & Crenças",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Religiosos",
-      slug: "simbolos-religiosos",
-      description: "Cruzes ✝, crescente ☪, estrela de Davi ✡, roda do Dharma ☸ e outros símbolos de fé.",
-      preview: "✝ ☪ ✡ ☸ ☯",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Espiritual & Crenças",
-      alpha: "S"
-    },
-    {
-      title: "Caracteres Especiais",
-      slug: "caracteres-especiais",
-      description: "Infinito ∞, paz ☮, ciência, marcas legais © ™ e curiosidades Unicode para copiar.",
-      preview: "∞ ☮ © ™ ✧",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Sinais & Indicadores",
-      alpha: "C"
-    },
-    {
-      title: "Símbolos de Moeda",
-      slug: "simbolos-de-moeda",
-      description: "Sinais de moeda $ € £ ¥ ₹ — moedas mundiais, regionais, históricas e criptomoedas.",
-      preview: "$ € £ ¥ ₿",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Sinais & Indicadores",
-      alpha: "S"
-    },
-    {
-      title: "Alfabeto Grego",
-      slug: "alfabeto-grego",
-      description: "Alfabeto grego completo Α–Ω — alfa, beta, sigma, delta e ômega, maiúsculas e minúsculas, para bio, fórmulas e referência.",
-      preview: "Α Β Σ Δ Ω",
-      useCases: ["Referência", "Bio", "Nick"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Cultura & Idioma",
-      alpha: "A"
-    },
-    {
-      title: "Códigos Alt",
-      slug: "codigos-alt",
-      description: "Lista completa de códigos Alt do teclado — Alt+0169 para ©, moeda, matemática, letras acentuadas e símbolos clássicos do DOS.",
-      preview: "© ± ÷ ♥",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Ciência & Técnica",
-      alpha: "C"
-    },
-    {
-      title: "Símbolos de Copyright e Marca Registrada",
-      slug: "simbolos-copyright-marca-registrada",
-      description: "Símbolos de copyright, marca registrada e comercial — ©, ®, ™, ℠, ℗ — além de marcas de seção, parágrafo e referência.",
-      preview: "© ® ™ §",
-      useCases: ["Bio", "Legenda", "Referência"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Sinais & Indicadores",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Natal",
-      slug: "simbolos-de-natal",
-      description: "Símbolos e emojis de Natal — árvores, flocos de neve, presentes e combos de saudação prontos para copiar.",
-      preview: "🎄 ❄ ☃ 🎁",
-      useCases: ["Legenda", "Bio", "Comentário"],
-      platforms: ["Instagram", "WhatsApp", "Universal"],
-      type: "Emoji",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Xadrez",
-      slug: "simbolos-de-xadrez",
-      description: "Símbolos de peças de xadrez em Unicode — reis, damas, torres, bispos, cavalos e peões, brancos e pretos, com notação.",
-      preview: "♔ ♕ ♞ ♟",
-      useCases: ["Referência", "Bio"],
-      platforms: ["Discord", "Universal"],
-      type: "Símbolo",
-      subject: "Jogos & Plataformas",
-      alpha: "S"
-    },
-    {
-      title: "Tabela ASCII",
-      slug: "tabela-ascii",
-      description: "Tabela ASCII com códigos decimal, hexadecimal, binário e octal de pontuação, dígitos, letras e símbolos.",
-      preview: "! A z ~",
-      useCases: ["Referência"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Ciência & Técnica",
-      alpha: "T"
-    },
-    {
-      title: "Combos de Emoji",
-      slug: "emoji-combos",
-      description: "Combos de emoji prontos para copiar e colar — fofo, coquette, amor, dark e praia — para deixar a bio, o status e a legenda com uma vibe só.",
-      preview: "🦋 ✨ 🌸",
-      useCases: ["Bio", "Legenda", "Comentário"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Combo de Emoji",
-      subject: "Estético & Decorativo",
-      alpha: "C"
-    },
-    {
-      title: "Emojis de Rosto",
-      slug: "emojis-de-rosto",
-      description: "Emojis de rosto por sentimento 😘 😉 😏 🙄 — beijo, piscadinha, sorriso de lado, olhos revirados e mais, com significado e combos prontos.",
-      preview: "😘 😉 😏 🙄",
-      useCases: ["Legenda", "Bio", "Comentário"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Emoji",
-      subject: "Emoções & Expressões",
-      alpha: "E"
-    },
-    {
-      title: "Emoji de Bandeiras",
-      slug: "emoji-flags",
-      description: "Emoji de bandeiras — Brasil 🇧🇷, Portugal 🇵🇹, EUA e todos os países para copiar no nick, na bio e nas mensagens.",
-      preview: "🇧🇷 🇵🇹 🇺🇸",
-      useCases: ["Nick", "Bio", "Comentário"],
-      platforms: ["Universal", "Instagram"],
-      type: "Emoji",
-      subject: "Cultura & Idioma",
-      alpha: "E"
-    },
-    {
-      title: "Emoji do Cristiano Ronaldo",
-      slug: "ronaldo-emoji-combos",
-      description: "Combos de emoji do Cristiano Ronaldo 🇵🇹⚽🐐 (CR7, GOAT, SIU) prontos para legenda, comentário e bio de torcedor.",
-      preview: "🇵🇹 ⚽ 🐐",
-      useCases: ["Legenda", "Comentário", "Bio"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Combo de Emoji",
-      subject: "Futebol & Ídolos",
-      alpha: "E"
-    },
-    {
-      title: "Emoji do Neymar",
-      slug: "neymar-emoji-combos",
-      description: "Combos de emoji do Neymar 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.",
-      preview: "🇧🇷 ⚽ 🐐",
-      useCases: ["Legenda", "Comentário", "Bio"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Combo de Emoji",
-      subject: "Futebol & Ídolos",
-      alpha: "E"
-    },
-    {
-      title: "Emoji do Vini Jr",
-      slug: "vinicius-emoji-combos",
-      description: "Combos de emoji do Vini Jr 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.",
-      preview: "🇧🇷 ⚽ 🐐",
-      useCases: ["Legenda", "Comentário", "Bio"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Combo de Emoji",
-      subject: "Futebol & Ídolos",
-      alpha: "E"
-    },
-    {
-      title: "Kaomoji de Amor",
-      slug: "love-kaomoji",
-      description: "Kaomoji de amor (♥‿♥) e corações para carinho, beijo e abraço no comentário e na bio.",
-      preview: "(♥‿♥)",
-      useCases: ["Comentário", "Legenda", "Bio"],
-      platforms: ["Universal", "WhatsApp", "Instagram"],
-      type: "Kaomoji",
-      subject: "Emoções & Expressões",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji de Gato",
-      slug: "cat-kaomoji",
-      description: "Carinhas de gato em texto (=^・ω・^=) — gatinho feliz, sonolento e fofo para comentário e legenda.",
-      preview: "(=^･ω･^=)",
-      useCases: ["Comentário", "Legenda"],
-      platforms: ["Universal", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Natureza & Animais",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji Felizes",
-      slug: "happy-kaomoji",
-      description: "Carinhas felizes e sorridentes (◠‿◠) para comentário, legenda e status animado.",
-      preview: "(◠‿◠)",
-      useCases: ["Comentário", "Legenda"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emoções & Expressões",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji Fofos",
-      slug: "cute-kaomoji",
-      description: "Kaomoji fofos (◕‿◕) com olhinhos brilhantes e bochechas rosadas para bio, comentário e recado.",
-      preview: "(◕‿◕)",
-      useCases: ["Comentário", "Legenda", "Bio"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emoções & Expressões",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji Tristes",
-      slug: "sad-kaomoji",
-      description: "Carinhas tristes e chorosas (´･_･`) para decepção, saudade e clima melancólico.",
-      preview: "(´･_･`)",
-      useCases: ["Comentário", "Legenda"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emoções & Expressões",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji — Carinhas Japonesas",
-      slug: "kaomoji",
-      description: "Coleção de carinhas japonesas de texto — fofas, felizes, tristes, de amor, animais e Lenny face.",
-      preview: "(ᵕ‿ᵕ) (◕‿◕)",
-      useCases: ["Comentário", "Legenda", "Bio"],
-      platforms: ["Universal", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Emoções & Expressões",
-      alpha: "K"
-    },
-    {
-      title: "Naipes de Baralho",
-      slug: "naipes-de-baralho",
-      description: "Naipes de baralho ♠ ♥ ♦ ♣ em versões preenchida e vazada para copiar e colar na bio, na legenda e em jogos.",
-      preview: "♠ ♥ ♦ ♣",
-      useCases: ["Legenda", "Bio", "Referência"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Formas & Geometria",
-      alpha: "N"
-    },
-    {
-      title: "Notas Musicais",
-      slug: "simbolos-musicais",
-      description: "Notas ♪ ♫ ♬, claves, sustenido/bemol e ícones de instrumentos 🎸🎹🎤 para bio e legenda.",
-      preview: "♪ ♫ ♬ 🎵 🎸",
-      useCases: ["Bio", "Legenda"],
-      platforms: ["Universal", "Instagram"],
-      type: "Símbolo",
-      subject: "Música & Arte",
-      alpha: "N"
-    },
-    {
-      title: "Símbolos para Copiar e Colar",
-      slug: "simbolos",
-      description: "Biblioteca geral de símbolos para copiar e colar — estrelas, corações, setas e ornamentos para nick, Instagram e bio.",
-      preview: "✦ ★ ♡ ☾ ⋆",
-      useCases: ["Bio", "Nick", "Legenda"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Símbolo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Coquette",
-      slug: "simbolos-coquette",
-      description: "Laços 🎀, corações ♡, fitas e brilhos rosa no estilo coquette para bio e nome de usuário.",
-      preview: "🎀 ♡ ✿ ⋆ ˚",
-      useCases: ["Bio", "Nick"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Cottagecore",
-      slug: "simbolos-cottagecore",
-      description: "Cogumelos 🍄, flores 🌸, abelhas 🐝 e motivos campestres para decorar a bio com vibe cottagecore.",
-      preview: "🍄 🌸 🐝 ✿ 🌿",
-      useCases: ["Bio", "Legenda"],
-      platforms: ["Universal", "Instagram"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Confirmação",
-      slug: "simbolos-de-confirmacao",
-      description: "Check e visto ✓ ✔ ✅ ☑ mais X ✗ ❌ para listas, enquetes e marcar tarefas concluídas.",
-      preview: "✓ ✔ ✅ ☑ ✗",
-      useCases: ["Listas", "Legenda", "Bio"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Símbolo",
-      subject: "Sinais & Indicadores",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Coração",
-      slug: "simbolos-de-coracao",
-      description: "Corações ♥ ♡ ❤ ❥ ꨄ para bio do Insta e do Zap, nick de casal, legenda e recado.",
-      preview: "♥ ♡ ❤ ❥ ꨄ",
-      useCases: ["Bio", "Nick", "Legenda"],
-      platforms: ["Universal", "Instagram", "WhatsApp"],
-      type: "Símbolo",
-      subject: "Emoções & Expressões",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Cruz e X",
-      slug: "simbolos-de-cruz-e-x",
-      description: "Cruzes ✝ ☦ ✠ e formatos de X ✗ ✕ para logo, bio, legenda e referência.",
-      preview: "✝ ☦ ✠ ✗ ✕",
-      useCases: ["Bio", "Legenda", "Referência"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Espiritual & Crenças",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Estrela",
-      slug: "simbolos-de-estrela",
-      description: "Estrelas ★ ☆ ✦ ✧ ⋆ para avaliação, enfeite de nick e bio com vibe aesthetic.",
-      preview: "★ ☆ ✦ ✧ ⋆",
-      useCases: ["Legenda", "Nick", "Bio"],
-      platforms: ["Universal", "Instagram"],
-      type: "Símbolo",
-      subject: "Formas & Geometria",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Marcadores",
-      slug: "simbolos-de-marcadores",
-      description: "Marcadores e pontos • ● ◦ ‣ ▪ mais setas e estrelas para listas organizadas na legenda e na bio.",
-      preview: "• ● ◦ ‣ ▪",
-      useCases: ["Listas", "Legenda", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Sinais & Indicadores",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos para Discord",
-      slug: "simbolos-discord",
-      description: "Decoração para nomes, canais e cargos do Discord — ▸ ┊ ➤ ꒱ ⟢, divisores, corações e estrelas.",
-      preview: "▸ ┊ ➤ ꒱ ⟢",
-      useCases: ["Nick", "Bio"],
-      platforms: ["Discord", "Universal"],
-      type: "Decorativo",
-      subject: "Jogos & Plataformas",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos para Free Fire",
-      slug: "simbolos-para-free-fire",
-      description: "Guarda-chuva ꧁꧂, coroas, katakana e espadas prontos para copiar e colar no nick de Free Fire — também funcionam em ML e Roblox.",
-      preview: "꧁ ꧂ ♛ メ ★",
-      useCases: ["Nick", "Clã"],
-      platforms: ["Free Fire", "Mobile Legends", "Roblox"],
-      type: "Decorativo",
-      subject: "Jogos & Plataformas",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Dreamcore & Weirdcore",
-      slug: "simbolos-dreamcore-weirdcore",
-      description: "Olhos surreais 👁, arco-íris 🌈 e blocos de glitch para posts liminais dreamcore e weirdcore.",
-      preview: "👁 🌈 ⋆ ▚ ⛩",
-      useCases: ["Bio", "Legenda"],
-      platforms: ["Universal", "TikTok"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Fairycore",
-      slug: "simbolos-fairycore",
-      description: "Fadas 🧚, cogumelos 🍄, brilhos ✨ e florzinhas para uma bio com clima mágico fairycore.",
-      preview: "🧚 🍄 ✨ ✿ ⋆",
-      useCases: ["Bio", "Nick"],
-      platforms: ["Universal", "Instagram"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Goth & Grunge",
-      slug: "simbolos-goth-grunge",
-      description: "Símbolos dark goth e grunge — cruz, caveira, aranha e adaga para perfil alternativo.",
-      preview: "✝ 🕷 🗡 ☠ ⛧",
-      useCases: ["Bio", "Nick"],
-      platforms: ["Universal", "Instagram"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Japoneses",
-      slug: "simbolos-japoneses",
-      description: "Kanji 桜 愛, hiragana, katakana e pontuação japonesa para bio sem teclado especial.",
-      preview: "桜 愛 あ ア ・",
-      useCases: ["Bio", "Nick", "Referência"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Cultura & Idioma",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Kawaii & Fofos",
-      slug: "simbolos-kawaii-cute",
-      description: "Corações suaves, carinhas mini, brilhos e decoração pastel no estilo kawaii para bio e recado.",
-      preview: "♡ ⋆ ✿ ˚ ⊹",
-      useCases: ["Bio", "Nick", "Comentário"],
-      platforms: ["Universal", "Instagram"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Matemáticos",
-      slug: "simbolos-matematicos",
-      description: "Operadores, comparação, teoria dos conjuntos, raiz, potência e o sinal de infinito ∞.",
-      preview: "± × ÷ √ ∞",
-      useCases: ["Referência", "Legenda"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Ciência & Técnica",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos do Roblox",
-      slug: "simbolos-roblox",
-      description: "40+ símbolos ✦ ⚡ ♡ para nome de exibição, bio e grupo do Roblox — testados com o filtro de nomes atual.",
-      preview: "✦ ⚡ ♡ ★ ◈",
-      useCases: ["Nick", "Bio"],
-      platforms: ["Roblox", "Universal"],
-      type: "Decorativo",
-      subject: "Jogos & Plataformas",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Therian",
-      slug: "simbolos-therian",
-      description: "Theta-delta θΔ, pegadas, fases da lua e símbolos animais da comunidade therian e alterhuman.",
-      preview: "θ Δ ☾ 🐾 ⧖",
-      useCases: ["Bio", "Nick"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Witchy & Ocultos",
-      slug: "simbolos-witchy-occult",
-      description: "Pentagrama, fases da lua, sinais planetários e alquimia para a estética witchy e ocultista.",
-      preview: "☽ ⛤ ☿ 🜁 ✵",
-      useCases: ["Bio", "Legenda"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Espiritual & Crenças",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos Y2K",
-      slug: "simbolos-y2k",
-      description: "Estrelas ✰, brilhos ✧, cruz ♱, borboleta 🦋 e CD 💿 para bio e nome com vibe Y2K.",
-      preview: "✰ ✧ ♱ 🦋 💿",
-      useCases: ["Bio", "Nick", "Legenda"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Decorativo",
-      subject: "Estético & Decorativo",
-      alpha: "S"
-    },
-    {
-      title: "Símbolos de Seta",
-      slug: "setas",
-      description: "Setas → ← ↑ ↓ ➤ ⇒ » para enfeitar nick, apontar direção e organizar listas.",
-      preview: "→ ← ↑ ↓ ➤",
-      useCases: ["Nick", "Legenda", "Bio"],
-      platforms: ["Universal"],
-      type: "Símbolo",
-      subject: "Formas & Geometria",
-      alpha: "S"
-    }
-  ];
-
-  /* ── Controlled vocabularies ── */
-  const SUBJECTS   = ["Estético & Decorativo","Emoções & Expressões","Formas & Geometria","Sinais & Indicadores","Ciência & Técnica","Cultura & Idioma","Jogos & Plataformas","Música & Arte","Espiritual & Crenças","Natureza & Animais","Futebol & Ídolos"];
-  const USE_CASES  = ["Bio","Legenda","Nick","Comentário","Listas","Referência"];
-  const PLATFORMS  = ["Instagram","TikTok","WhatsApp","Discord","Roblox","Universal"];
-  const TYPES      = ["Símbolo","Emoji","Decorativo","Kaomoji","Combo de Emoji"];
-
-  /* ── State ── */
-  let activeSubject = null;
-  let activeUseCase = null;
-  let activePlatform = null;
-  let activeType = null;
-  let searchQuery = "";
-
-  /* ── Helpers ── */
-  function countBy(data, key, value) {
-    return data.filter(function (item) {
-      if (key === "useCases") return item.useCases.indexOf(value) !== -1;
-      if (key === "platforms") return item.platforms.indexOf(value) !== -1;
-      if (key === "type") return item.type === value;
-      if (key === "subject") return item.subject === value;
-      return false;
-    }).length;
-  }
-
-  function buildPills(containerId, vocab, key, getActive, setActive) {
-    const row = document.getElementById(containerId);
-    vocab.forEach(function (val) {
-      const total = countBy(LIBRARY, key, val);
-      if (total === 0) return;
-      const btn = document.createElement("button");
-      btn.className = "lib-pill";
-      btn.dataset.value = val;
-      btn.setAttribute("aria-pressed", "false");
-      btn.innerHTML = val + ' <span class="pill-count">(' + total + ')</span>';
-      btn.addEventListener("click", function () {
-        if (getActive() === val) {
-          setActive(null);
-        } else {
-          setActive(val);
-        }
-        render();
-      });
-      row.appendChild(btn);
-    });
-  }
-
-  function updatePillStates() {
-    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeSubject;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeUseCase;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#platformRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activePlatform;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#typeRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeType;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    const clearBtn = document.getElementById("clearFilters");
-    clearBtn.classList.toggle("visible", !!anyFilter);
-  }
-
-  function getFiltered() {
-    return LIBRARY.filter(function (item) {
-      if (activeSubject && item.subject !== activeSubject) return false;
-      if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
-      if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
-      if (activeType && item.type !== activeType) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        if (item.title.toLowerCase().indexOf(q) === -1 &&
-            item.description.toLowerCase().indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-  }
-
-  /* ── Alphabet bar ── */
-  function buildAlphaBar(filtered) {
-    const bar = document.getElementById("alphaBar");
-    bar.innerHTML = "";
-    const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    ALPHABET.forEach(function (letter) {
-      const count = filtered.filter(function (item) { return item.alpha === letter; }).length;
-      const hasItems = count > 0;
-      const btn = document.createElement("a");
-      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
-      btn.dataset.letter = letter;
-      if (hasItems) {
-        btn.href = "#lib-letter-" + letter;
-      } else {
-        btn.setAttribute("aria-disabled", "true");
-        btn.setAttribute("tabindex", "-1");
-      }
-      btn.setAttribute("aria-label", letter + (hasItems ? " — " + count + " coleções" : " — nenhuma coleção"));
-      btn.innerHTML = letter + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
-      bar.appendChild(btn);
-    });
-  }
-
-  /* ── Directory render ── */
-  let letterObserver = null;
-
-  function render() {
-    const filtered = getFiltered();
-    const dir = document.getElementById("libDirectory");
-    const empty = document.getElementById("libEmpty");
-    const countEl = document.getElementById("libResultCount");
-
-    updatePillStates();
-    buildAlphaBar(filtered);
-
-    // Update result count line
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    if (anyFilter) {
-      countEl.hidden = false;
-      countEl.textContent = "Mostrando " + filtered.length + " de " + LIBRARY.length + " coleções";
-    } else {
-      countEl.hidden = true;
-      countEl.textContent = "";
-    }
-
-    if (filtered.length === 0) {
-      dir.innerHTML = "";
-      empty.classList.add("visible");
-      teardownLetterObserver();
-      return;
-    }
-    empty.classList.remove("visible");
-
-    // Group by alpha
-    const groups = {};
-    filtered.forEach(function (item) {
-      if (!groups[item.alpha]) groups[item.alpha] = [];
-      groups[item.alpha].push(item);
-    });
-
-    const letters = Object.keys(groups).sort();
-    let html = "";
-    letters.forEach(function (letter) {
-      const items = groups[letter];
-      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-labelledby="lib-letter-heading-' + letter + '">';
-      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + letter + '"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></h2>';
-      items.forEach(function (item, idx) {
-        const titleId = "lib-entry-title-" + letter + "-" + idx;
-        const tags = [];
-        function tagBtn(filterKey, val, extraClass) {
-          const cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
-          const label = "Filtrar por " + filterKey + ": " + val;
-          return '<button type="button" class="' + cls + '"' +
-            ' data-filter="' + escHtml(filterKey) + '"' +
-            ' data-value="' + escHtml(val) + '"' +
-            ' aria-label="' + escHtml(label) + '">' +
-            escHtml(val) + '</button>';
-        }
-        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
-        (item.useCases || []).slice(0, 3).forEach(function (uc) {
-          tags.push(tagBtn("useCases", uc));
-        });
-        (item.platforms || []).slice(0, 2).forEach(function (pl) {
-          if (pl === "Universal") return;
-          tags.push(tagBtn("platforms", pl));
-        });
-
-        html += '<article class="lib-entry">';
-        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
-          '<a class="lib-entry-title-link" href="' + (item.url || ("/pt/library/" + encodeURIComponent(item.slug) + "/")) + '">' +
-          escHtml(item.title) + '</a></h3>';
-        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
-        html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
-        if (tags.length) {
-          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
-        }
-        html += '</article>';
-      });
-      html += '</section>';
-    });
-
-    dir.innerHTML = html;
-
-    setupLetterObserver();
-  }
-
-  /* ── Active letter highlighting ── */
-  function teardownLetterObserver() {
-    if (letterObserver) {
-      letterObserver.disconnect();
-      letterObserver = null;
-    }
-    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
-      el.classList.remove("is-current");
-    });
-  }
-
-  function setupLetterObserver() {
-    teardownLetterObserver();
-    if (!("IntersectionObserver" in window)) return;
-
-    const sections = document.querySelectorAll(".lib-letter-section");
-    if (!sections.length) return;
-
-    const visible = {};
-    letterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        const id = entry.target.id; // lib-letter-X
-        const letter = id.replace("lib-letter-", "");
-        if (entry.isIntersecting) {
-          visible[letter] = entry.intersectionRatio;
-        } else {
-          delete visible[letter];
-        }
-      });
-
-      // Pick the topmost visible letter
-      let current = null;
-      let topY = Infinity;
-      Object.keys(visible).forEach(function (letter) {
-        const el = document.getElementById("lib-letter-" + letter);
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < topY) {
-          topY = rect.top;
-          current = letter;
-        }
-      });
-
-      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
-        btn.classList.toggle("is-current", btn.dataset.letter === current);
-      });
-    }, {
-      // Top offset accounts for the sticky alpha bar (~80px tall);
-      // bottom offset prevents the next section from activating too early.
-      rootMargin: "-80px 0px -60% 0px",
-      threshold: [0, 0.25, 0.5, 1]
-    });
-
-    sections.forEach(function (sec) { letterObserver.observe(sec); });
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function clearAll() {
-    activeSubject = null;
-    activeUseCase = null;
-    activePlatform = null;
-    activeType = null;
-    searchQuery = "";
-    document.getElementById("libSearch").value = "";
-    render();
-  }
-
-  /* ── Init ── */
-  buildPills("subjectRow", SUBJECTS, "subject",
-    function () { return activeSubject; },
-    function (v) { activeSubject = v; });
-
-  buildPills("useCaseRow", USE_CASES, "useCases",
-    function () { return activeUseCase; },
-    function (v) { activeUseCase = v; });
-
-  buildPills("platformRow", PLATFORMS, "platforms",
-    function () { return activePlatform; },
-    function (v) { activePlatform = v; });
-
-  buildPills("typeRow", TYPES, "type",
-    function () { return activeType; },
-    function (v) { activeType = v; });
-
-  document.getElementById("libSearch").addEventListener("input", function () {
-    searchQuery = this.value.trim();
-    render();
-  });
-
-  document.getElementById("clearFilters").addEventListener("click", clearAll);
-  document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
-
-  /* ── Tag-button → filter (event delegation) ── */
-  document.getElementById("libDirectory").addEventListener("click", function (e) {
-    const btn = e.target.closest && e.target.closest(".lib-entry-tag");
-    if (!btn) return;
-    const key = btn.dataset.filter;
-    const val = btn.dataset.value;
-    if (!key || !val) return;
-    if (key === "type") {
-      activeType = (activeType === val) ? null : val;
-    } else if (key === "useCases") {
-      activeUseCase = (activeUseCase === val) ? null : val;
-    } else if (key === "platforms") {
-      activePlatform = (activePlatform === val) ? null : val;
-    } else {
-      return;
-    }
-    render();
-  });
-
-  /* ── Back-to-top ── */
-  const backTop = document.getElementById("libBackTop");
-  if (backTop) {
-    const toggleBackTop = function () {
-      if (window.scrollY > 600) {
-        backTop.classList.add("visible");
-      } else {
-        backTop.classList.remove("visible");
-      }
-    };
-    window.addEventListener("scroll", toggleBackTop, { passive: true });
-    backTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    toggleBackTop();
-  }
-
-  /* ── ItemList JSON-LD (SEO) ── */
-  function injectItemListJsonLd() {
-    const itemListElement = LIBRARY.map(function (item, idx) {
-      return {
-        "@type": "ListItem",
-        "position": idx + 1,
-        "url": "https://ultratextgen.com" + (item.url || ("/pt/library/" + item.slug + "/")),
-        "name": item.title
-      };
-    });
-    const data = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Biblioteca de Símbolos UltraTextGen",
-      "url": "https://ultratextgen.com/pt/library/",
-      "numberOfItems": LIBRARY.length,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "itemListElement": itemListElement
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-  }
-  injectItemListJsonLd();
-
-  render();
-})();
-</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

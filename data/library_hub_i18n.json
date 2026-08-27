@@ -155,6 +155,186 @@
       "directoryLabel": "Symbolverzeichnis"
     }
   },
+  "es": {
+    "labels": {
+      "types": {
+        "Decorative": "Decorativo",
+        "Emojis": "Emoji",
+        "Guide": "Guía",
+        "Reference": "Referencia",
+        "Symbols": "Símbolo"
+      },
+      "useCases": {
+        "Bios": "Biografía",
+        "Bullet Points": "Listas",
+        "Captions": "Caption",
+        "Care Labels": "Etiquetas de cuidado",
+        "Celebration": "Celebración",
+        "Comments": "Comentarios",
+        "DMs": "Mensajes directos",
+        "Dividers": "Separadores",
+        "Email Formatting": "Formato de correo",
+        "Professional Posts": "Publicaciones profesionales",
+        "Profile": "Perfil",
+        "Reactions": "Reacciones",
+        "Reference": "Referencia",
+        "Travel": "Viajes",
+        "Usernames": "Nombre de usuario"
+      },
+      "platforms": {
+        "Email": "Correo electrónico"
+      }
+    },
+    "ui": {
+      "searchLabel": "Buscar en la biblioteca",
+      "searchPlaceholder": "Buscar símbolo…",
+      "clearFilters": "Quitar filtros",
+      "resultCount": "{shown} de {total} colecciones",
+      "emptyTitle": "Sin resultados",
+      "emptyBody": "Ninguna colección coincide con esta combinación. Prueba a quitar uno o varios filtros.",
+      "emptyReset": "Quitar todos los filtros",
+      "backTop": "Volver arriba",
+      "filterBy": "Filtrar por",
+      "alphaJump": "Saltar a la letra",
+      "noItems": "sin elementos",
+      "directoryLabel": "Directorio de símbolos"
+    }
+  },
+  "fr": {
+    "labels": {
+      "types": {
+        "Decorative": "Décoratif",
+        "Emojis": "Emoji",
+        "Guide": "Tutoriel",
+        "Reference": "Référence",
+        "Symbols": "Symbole"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Listes à puces",
+        "Captions": "Légende",
+        "Care Labels": "Étiquettes d'entretien",
+        "Celebration": "Célébration",
+        "Comments": "Commentaire",
+        "DMs": "Messages privés",
+        "Dividers": "Séparateurs",
+        "Email Formatting": "Mise en forme d'e-mail",
+        "Professional Posts": "Publications professionnelles",
+        "Profile": "Profil",
+        "Reactions": "Réactions",
+        "Reference": "Référence",
+        "Travel": "Voyage",
+        "Usernames": "Pseudo"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Rechercher dans la bibliothèque",
+      "searchPlaceholder": "Chercher un symbole…",
+      "clearFilters": "Effacer les filtres",
+      "resultCount": "{shown} sur {total} collections",
+      "emptyTitle": "Aucun résultat",
+      "emptyBody": "Aucune collection ne correspond à cette combinaison. Essaie d'enlever un ou plusieurs filtres.",
+      "emptyReset": "Effacer tous les filtres",
+      "backTop": "Retour en haut",
+      "filterBy": "Filtrer par",
+      "alphaJump": "Aller à une lettre",
+      "noItems": "aucun élément",
+      "directoryLabel": "Annuaire des symboles"
+    }
+  },
+  "id": {
+    "labels": {
+      "types": {
+        "Decorative": "Dekoratif",
+        "Emojis": "Emoji",
+        "Guide": "Panduan",
+        "Reference": "Referensi",
+        "Symbols": "Simbol"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Daftar & List",
+        "Captions": "Keterangan",
+        "Care Labels": "Label Perawatan",
+        "Celebration": "Perayaan",
+        "Comments": "Komentar",
+        "DMs": "Pesan Langsung",
+        "Dividers": "Pemisah",
+        "Email Formatting": "Format Surel",
+        "Professional Posts": "Postingan Profesional",
+        "Profile": "Profil",
+        "Reactions": "Reaksi",
+        "Reference": "Referensi",
+        "Travel": "Perjalanan",
+        "Usernames": "Nama Pengguna"
+      },
+      "platforms": {
+        "Email": "Surel"
+      }
+    },
+    "ui": {
+      "searchLabel": "Cari di pustaka",
+      "searchPlaceholder": "Cari simbol…",
+      "clearFilters": "Hapus filter",
+      "resultCount": "{shown} dari {total} koleksi",
+      "emptyTitle": "Tidak ada hasil",
+      "emptyBody": "Tidak ada koleksi yang cocok dengan kombinasi ini. Coba hapus satu atau beberapa filter.",
+      "emptyReset": "Hapus semua filter",
+      "backTop": "Kembali ke atas",
+      "filterBy": "Saring menurut",
+      "alphaJump": "Lompat ke huruf",
+      "noItems": "tidak ada item",
+      "directoryLabel": "Direktori simbol"
+    }
+  },
+  "it": {
+    "labels": {
+      "types": {
+        "Decorative": "Decorativo",
+        "Emojis": "Emoji",
+        "Guide": "Guida",
+        "Reference": "Riferimento",
+        "Symbols": "Simbolo"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Elenchi puntati",
+        "Captions": "Didascalia",
+        "Care Labels": "Etichette di lavaggio",
+        "Celebration": "Celebrazione",
+        "Comments": "Commenti",
+        "DMs": "Messaggi diretti",
+        "Dividers": "Separatori",
+        "Email Formatting": "Formattazione e-mail",
+        "Professional Posts": "Post professionali",
+        "Profile": "Profilo",
+        "Reactions": "Reazioni",
+        "Reference": "Riferimento",
+        "Travel": "Viaggi",
+        "Usernames": "Nome utente"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Cerca nella libreria",
+      "searchPlaceholder": "Cerca simboli…",
+      "clearFilters": "Cancella filtri",
+      "resultCount": "{shown} di {total} raccolte",
+      "emptyTitle": "Nessun risultato",
+      "emptyBody": "Nessuna raccolta corrisponde a questa combinazione. Prova a togliere uno o più filtri.",
+      "emptyReset": "Cancella tutti i filtri",
+      "backTop": "Torna su",
+      "filterBy": "Filtra per",
+      "alphaJump": "Salta alla lettera",
+      "noItems": "nessun elemento",
+      "directoryLabel": "Direttorio dei simboli"
+    }
+  },
   "ja": {
     "labels": {
       "types": {
@@ -196,6 +376,51 @@
       "alphaJump": "文字へジャンプ",
       "noItems": "項目なし",
       "directoryLabel": "記号ディレクトリ"
+    }
+  },
+  "ko": {
+    "labels": {
+      "types": {
+        "Decorative": "꾸밈",
+        "Emojis": "이모지",
+        "Guide": "가이드",
+        "Reference": "참고",
+        "Symbols": "기호"
+      },
+      "useCases": {
+        "Bios": "프로필·바이오",
+        "Bullet Points": "목록·구분",
+        "Captions": "캡션·게시물",
+        "Care Labels": "세탁 기호",
+        "Celebration": "축하",
+        "Comments": "댓글",
+        "DMs": "다이렉트 메시지",
+        "Dividers": "구분선",
+        "Email Formatting": "이메일 서식",
+        "Professional Posts": "비즈니스 게시물",
+        "Profile": "프로필",
+        "Reactions": "리액션",
+        "Reference": "참고",
+        "Travel": "여행",
+        "Usernames": "아이디"
+      },
+      "platforms": {
+        "Email": "이메일"
+      }
+    },
+    "ui": {
+      "searchLabel": "라이브러리 검색",
+      "searchPlaceholder": "기호 검색…",
+      "clearFilters": "필터 해제",
+      "resultCount": "{total}개 중 {shown}개",
+      "emptyTitle": "결과 없음",
+      "emptyBody": "이 조건에 맞는 모음이 없습니다. 필터를 하나 이상 해제해 보세요.",
+      "emptyReset": "필터 모두 해제",
+      "backTop": "맨 위로",
+      "filterBy": "필터 기준",
+      "alphaJump": "초성으로 이동",
+      "noItems": "항목 없음",
+      "directoryLabel": "기호 모음 디렉터리"
     }
   },
   "nl": {
@@ -327,6 +552,51 @@
       "directoryLabel": "Katalog symboli"
     }
   },
+  "pt": {
+    "labels": {
+      "types": {
+        "Decorative": "Decorativo",
+        "Emojis": "Emoji",
+        "Guide": "Guia",
+        "Reference": "Referência",
+        "Symbols": "Símbolo"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Listas",
+        "Captions": "Legenda",
+        "Care Labels": "Etiquetas de cuidados",
+        "Celebration": "Celebração",
+        "Comments": "Comentário",
+        "DMs": "Mensagens diretas",
+        "Dividers": "Separadores",
+        "Email Formatting": "Formatação de e-mail",
+        "Professional Posts": "Publicações profissionais",
+        "Profile": "Perfil",
+        "Reactions": "Reações",
+        "Reference": "Referência",
+        "Travel": "Viagem",
+        "Usernames": "Nome de usuário"
+      },
+      "platforms": {
+        "Email": "E-mail"
+      }
+    },
+    "ui": {
+      "searchLabel": "Buscar na biblioteca",
+      "searchPlaceholder": "Buscar símbolo…",
+      "clearFilters": "Limpar filtros",
+      "resultCount": "{shown} de {total} coleções",
+      "emptyTitle": "Nenhum resultado",
+      "emptyBody": "Nenhuma coleção combina com essa combinação. Tente remover um ou mais filtros.",
+      "emptyReset": "Limpar todos os filtros",
+      "backTop": "Voltar ao topo",
+      "filterBy": "Filtrar por",
+      "alphaJump": "Pular para a letra",
+      "noItems": "sem itens",
+      "directoryLabel": "Diretório de símbolos"
+    }
+  },
   "ru": {
     "labels": {
       "types": {
@@ -454,6 +724,51 @@
       "alphaJump": "ข้ามไปที่ตัวอักษร",
       "noItems": "ไม่มีรายการ",
       "directoryLabel": "ไดเรกทอรีสัญลักษณ์"
+    }
+  },
+  "tr": {
+    "labels": {
+      "types": {
+        "Decorative": "Dekoratif",
+        "Emojis": "Emoji",
+        "Guide": "Rehber",
+        "Reference": "Referans",
+        "Symbols": "Sembol"
+      },
+      "useCases": {
+        "Bios": "Bio",
+        "Bullet Points": "Madde işaretleri",
+        "Captions": "Açıklama",
+        "Care Labels": "Yıkama etiketleri",
+        "Celebration": "Kutlama",
+        "Comments": "Yorum",
+        "DMs": "Direkt mesaj",
+        "Dividers": "Ayırıcılar",
+        "Email Formatting": "E-posta biçimlendirme",
+        "Professional Posts": "Profesyonel gönderiler",
+        "Profile": "Profil",
+        "Reactions": "Tepkiler",
+        "Reference": "Referans",
+        "Travel": "Seyahat",
+        "Usernames": "Kullanıcı adı"
+      },
+      "platforms": {
+        "Email": "E-posta"
+      }
+    },
+    "ui": {
+      "searchLabel": "Kütüphanede ara",
+      "searchPlaceholder": "Sembol ara…",
+      "clearFilters": "Filtreleri temizle",
+      "resultCount": "{total} koleksiyondan {shown} tanesi",
+      "emptyTitle": "Sonuç yok",
+      "emptyBody": "Bu filtre kombinasyonuna uyan koleksiyon yok. Bir veya birkaç filtreyi kaldırmayı dene.",
+      "emptyReset": "Tüm filtreleri temizle",
+      "backTop": "Başa dön",
+      "filterBy": "Şuna göre filtrele",
+      "alphaJump": "Harfe atla",
+      "noItems": "öğe yok",
+      "directoryLabel": "Sembol dizini"
     }
   },
   "vi": {

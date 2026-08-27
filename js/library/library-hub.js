@@ -92,6 +92,24 @@
    * letters sorting *after* Z, so folding those into A/O would put them in the
    * wrong bucket entirely. So folding is applied per script, never globally.
    */
+  /* ── Hangul 초성 (initial-consonant) index ──
+     A Korean "alphabetical" index is the 가나다 초성, not the syllable: a reader
+     looks 감귤 up under ㄱ, exactly as a Thai reader looks past a vowel sign to
+     the consonant below. Without this every syllable becomes its own bucket —
+     measured on ko/library: 48 buckets for 56 entries, an index with roughly one
+     entry per letter, which is no index at all.
+
+     Syllables are algorithmic, not combining sequences, so NFD + mark-stripping
+     (what VOWEL_SIGN_SCRIPTS does) cannot reach them: U+AC00 + i/588 is the only
+     way in. The five tensed initials fold onto their base the way Korean indexes
+     print them, giving the conventional 14 buckets rather than 19.
+
+     Ported from the pre-migration ko/library/index.html, which got this right in
+     its own hand-written CHO/CHO_BASE tables. */
+  const HANGUL_CHO = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
+                      'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+  const HANGUL_CHO_BASE = { 'ㄲ': 'ㄱ', 'ㄸ': 'ㄷ', 'ㅃ': 'ㅂ', 'ㅆ': 'ㅅ', 'ㅉ': 'ㅈ' };
+
   const VOWEL_SIGN_SCRIPTS =
     /[\u0900-\u0DFF\u0E00-\u0EFF\u0F00-\u0FFF\u1000-\u109F\u1780-\u17FF\u0600-\u06FF\u0750-\u077F]/;
 
@@ -111,6 +129,11 @@
       if (!it.done) g = it.value.segment;
     } else {
       g = Array.from(s)[0];
+    }
+    const cp = g.codePointAt(0);
+    if (cp >= 0xAC00 && cp <= 0xD7A3) {
+      const cho = HANGUL_CHO[Math.floor((cp - 0xAC00) / 588)];
+      return HANGUL_CHO_BASE[cho] || cho;
     }
     if (VOWEL_SIGN_SCRIPTS.test(g)) {
       // Drop the vowel signs, keep the consonant the reader would look under.
