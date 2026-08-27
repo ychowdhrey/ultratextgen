@@ -799,3 +799,24 @@
   line-height: 1.7;
   margin-bottom: 12px;
 }
+
+
+/* ── Result sharing (buttons themselves are styled by the global
+      style.css .share-result-btn / .share-image-btn rules) ───────── */
+.zalgo-share-row {
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.variant-row .result-share-row {
+  margin-top: 0;
+  flex: 0 0 auto;
+}
+
+/* The variant a shared link points at — same standing emphasis language as
+   style.css's .style-card.is-shared. */
+.variant-row.variant-shared {
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+  border-radius: 8px;
+}

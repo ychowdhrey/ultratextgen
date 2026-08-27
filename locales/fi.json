@@ -49,7 +49,10 @@
       "ariaLabel": "Jaa {style}-tulos",
       "linkCopied": "Linkki kopioitu",
       "afterCopy": "Jaa tämä tyyli",
-      "sharedTag": "Jaettu tyyli"
+      "sharedTag": "Jaettu tyyli",
+      "imageTitle": "Jaa kuvana",
+      "imageAriaLabel": "Jaa {style}-tulos kuvana",
+      "imageSaved": "Kuva valmis"
     },
     "safeMode": {
       "label": "Liittämisen turvallisuus",

@@ -1,5 +1,10 @@
-🌍 Languages  
-[English](README.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português](README.pt.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [Polski](README.pl.md) | [Türkçe](README.tr.md)
+🌍 **Languages**
+
+<!-- START_LOCALES -->
+Available in 30 languages — each with its own pages, not a translated interface:
+
+[العربية](https://ultratextgen.com/ar/) · [Bosanski](https://ultratextgen.com/bs/) · [Čeština](https://ultratextgen.com/cs/) · [Dansk](https://ultratextgen.com/da/) · [Deutsch](https://ultratextgen.com/de/) · [Español](https://ultratextgen.com/es/) · [Suomi](https://ultratextgen.com/fi/) · [Français](https://ultratextgen.com/fr/) · [हिन्दी](https://ultratextgen.com/hi/) · [Hrvatski](https://ultratextgen.com/hr/) · [Magyar](https://ultratextgen.com/hu/) · [Bahasa Indonesia](https://ultratextgen.com/id/) · [Italiano](https://ultratextgen.com/it/) · [日本語](https://ultratextgen.com/ja/) · [한국어](https://ultratextgen.com/ko/) · [Bahasa Melayu](https://ultratextgen.com/ms/) · [Nederlands](https://ultratextgen.com/nl/) · [Norsk](https://ultratextgen.com/no/) · [Polski](https://ultratextgen.com/pl/) · [Português](https://ultratextgen.com/pt/) · [Română](https://ultratextgen.com/ro/) · [Русский](https://ultratextgen.com/ru/) · [Slovenčina](https://ultratextgen.com/sk/) · [Српски](https://ultratextgen.com/sr/) · [Svenska](https://ultratextgen.com/sv/) · [ไทย](https://ultratextgen.com/th/) · [Tagalog](https://ultratextgen.com/tl/) · [Türkçe](https://ultratextgen.com/tr/) · [Tiếng Việt](https://ultratextgen.com/vi/) · [繁體中文](https://ultratextgen.com/zh-tw/)
+<!-- END_LOCALES -->
 
 # UltraTextGen
 
@@ -126,17 +131,6 @@ Dedicated pages for each major platform, so styles render exactly as expected.
 **WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
-
-## Languages
-
-Most of the site is localized, not just the interface — each language has its
-own pages, written for that market rather than machine-translated from English.
-
-<!-- START_LOCALES -->
-The site ships in 30 languages:
-
-العربية (`ar`) · Bosanski (`bs`) · Čeština (`cs`) · Dansk (`da`) · Deutsch (`de`) · Español (`es`) · Suomi (`fi`) · Français (`fr`) · हिन्दी (`hi`) · Hrvatski (`hr`) · Magyar (`hu`) · Bahasa Indonesia (`id`) · Italiano (`it`) · 日本語 (`ja`) · 한국어 (`ko`) · Bahasa Melayu (`ms`) · Nederlands (`nl`) · Norsk (`no`) · Polski (`pl`) · Português (`pt`) · Română (`ro`) · Русский (`ru`) · Slovenčina (`sk`) · Српски (`sr`) · Svenska (`sv`) · ไทย (`th`) · Tagalog (`tl`) · Türkçe (`tr`) · Tiếng Việt (`vi`) · 繁體中文 (`zh-tw`)
-<!-- END_LOCALES -->
 
 
 ## Embed Tools

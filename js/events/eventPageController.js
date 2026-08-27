@@ -70,6 +70,7 @@
   "use strict";
 
   const Render = window.UltraTextGenRender;
+  const UTG = window.UltraTextGen || {};
   const stylesRegistry = window.textStyles || {};
   const DATA = window.UTG_EVENT_DATA;
   if (!Render || !DATA) return;
@@ -126,8 +127,23 @@
     btn.type = "button";
     btn.dataset.text = text;
     btn.dataset.style = styleKey;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
     actions.appendChild(btn);
     card.appendChild(actions);
+
+    // Same share pair as the core generator's cards: these ARE registry
+    // styles, so the plain ?q=&style= link restores the exact card here.
+    const style = styleFor(styleKey);
+    const shareId = (style && style.slug) || "";
+    if (shareId && UTG.buildShareActions) {
+      card.appendChild(UTG.buildShareActions({
+        styleId: shareId,
+        name: label,
+        text: text,
+        disabled: isSample
+      }));
+    }
+    if (UTG.markSharedCard) UTG.markSharedCard(card, shareId);
 
     return card;
   }
@@ -153,6 +169,8 @@
       if (!styleFor(key)) return; // silently skip a key that doesn't exist in styles.js
       grid.appendChild(buildFontCard(key, applyStyle(text, key), key, !raw));
     });
+
+    if (UTG.revealSharedCard) UTG.revealSharedCard(grid);
   }
 
   /* --------------------------------------------------------------------------

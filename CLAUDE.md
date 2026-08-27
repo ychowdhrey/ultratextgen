@@ -2018,19 +2018,32 @@ to report all 374 as defects. Keyed by route, with a reason and a date.
 unilaterally to make a page pass. If the gate flags a page, the default fix is to
 register it. The list ships empty on purpose.
 
-### Two upstream repairs shipped alongside it
+### Two builders pre-render the directory hubs, split by lane
 
-**`build-library-directory.js` now takes a locale.** It exists to stop a hub
-being invisible to non-JS crawlers — its own docstring names GPTBot, ClaudeBot,
-Amazonbot, meta-externalagent and Google-Extended, every one of which
-`robots.txt` explicitly invites. It was hardcoded to `library/index.html`, so
-**the fix was built for English and never reached a locale**: EN carried 336
-pre-rendered entries and all seven locale directory hubs carried zero. Their
-`render()` built the same markup inline, with no extraction markers, which is why
-the generator could never reach them; that block is now factored into a
-marker-delimited `directoryHtml(items)` on each, verified byte-identical to the
-inline output before anything was written. `--locale <code>` scopes a run; a bare
-run does every hub carrying the markers. 265 locale entries became crawlable HTML.
+`build-library-directory.js` owns `library/index.html` and runs that page's own
+marker-delimited `directoryHtml()`. `build-locale-library-directory.js` owns the
+seven locale directory hubs and lifts each page's own `LIBRARY` array, `escHtml`
+and group-by-alpha block dynamically — resolving whatever outer constant that
+block reaches for (`ALPHABET` on `tr`/`fr`, `INITIAL_ID` on `ko`) by running it
+and lifting the named declaration on a `ReferenceError`. Neither re-implements
+the markup, so static and runtime output cannot drift.
+
+**Why two and not one:** the English hub carries extraction markers and the
+locale hubs deliberately do not — the locale builder was written so they never
+need them. The cost of that split is that **a locale hub's static block goes
+stale silently if its `LIBRARY` array changes and nobody re-runs the locale
+builder.** `npm run check:locale-library-directory` is what closes it; run both
+builders after touching any hub array.
+
+**Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
+The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
+migration lived only inside the JS array and cost nothing while the hub rendered
+client-side. Pre-rendering turned each into a real `<a href>` to a 301. Clear a
+stale array entry *before* regenerating, or the generator ships the link. The
+same applied to EN's `heart-emoji`, folded into `heart-symbols` on 2026-08-13,
+where `library/index.html` was the only file in the repo still pointing at the
+old URL. All five are cleared, so the orphan count is 0 and a new one is a real
+regression.
 
 **`validate_library_pages.py` discovers locales from the canonical code list.**
 It used `REPO.glob("??")` — two characters — so **`zh-tw` was silently never
@@ -2534,9 +2547,10 @@ Standing protocol:
   `data/library_hub_exclusions.json` with a reason — never to make a PR pass.
 - Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, and
   do not narrow the five inventory mechanisms to the one a hub you are looking at
-  happens to use. Run `npm run build:library-directory` (optionally
-  `-- --locale <code>`); the static markup and the runtime markup come from the
-  same function over the same array precisely so they cannot drift.
+  happens to use. Run `npm run build:library-directory` for English and
+  `npm run build:locale-library-directory` for the locale hubs; the static markup
+  and the runtime markup come from the same code over the same array precisely so
+  they cannot drift.
 - Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
   `glob("??")` silently skipped 73 of its pages for as long as that line existed.
   Read the canonical list from `data/locale_qualification_tiers.json` (Python) or

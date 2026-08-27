@@ -61,7 +61,10 @@
       "ariaLabel": "Del {style}-resultat",
       "linkCopied": "Link kopieret",
       "afterCopy": "Del denne stil",
-      "sharedTag": "Delt stil"
+      "sharedTag": "Delt stil",
+      "imageTitle": "Del som billede",
+      "imageAriaLabel": "Del {style}-resultatet som billede",
+      "imageSaved": "Billedet er klart"
     },
     "safeMode": {
       "label": "Indsætningssikkerhed",

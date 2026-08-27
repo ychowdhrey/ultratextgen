@@ -4,14 +4,13 @@
 /**
  * sync-readme.js
  *
- * Reads sitemap.xml and refreshes the marker-delimited blocks in README.md and
- * every translated README.
+ * Reads sitemap.xml and refreshes the marker-delimited blocks in README.md.
  *
- * Markers (identical in every language file):
+ * Markers:
  *   <!-- START_PILLARS -->   … <!-- END_PILLARS -->    section index + live counts
  *   <!-- START_PLATFORMS --> … <!-- END_PLATFORMS -->  the 11 platform pages
  *   <!-- START_EMBED -->     … <!-- END_EMBED -->      embeddable widgets
- *   <!-- START_LOCALES -->   … <!-- END_LOCALES -->    languages the site ships in
+ *   <!-- START_LOCALES -->   … <!-- END_LOCALES -->    switcher → live locale homepages
  *
  * Design note — why this syncs counts, not page lists (2026-08-26):
  *
@@ -35,6 +34,28 @@
  *   covers the 3,667 localized pages too. Counts stay honest automatically and
  *   cost ~20 lines instead of 634.
  *
+ * One README, not nine (decided 2026-08-26):
+ *
+ *   The eight translated READMEs were dropped. The case for keeping them was
+ *   crawl discovery — nofollow is a hint, not a directive, and GitHub is read
+ *   heavily by search and AI crawlers, so those links genuinely do get
+ *   followed. That mechanism is real; it just does not favour more files.
+ *
+ *   Linking the eight pillar indexes puts ~602 of 624 English pillar pages one
+ *   hop from the repo landing page (library/index.html alone links 339 of its
+ *   336). The old nine-file dump reached 447 and missed symbol/, answers/ and
+ *   updates/ entirely. Extra translations add no new site URLs — they repeat
+ *   the same ~50 links on blob sub-pages, which carry far less crawl priority
+ *   than README.md itself. Nine copies of one link graph is not nine times the
+ *   signal, and sitemap.xml (4,576 URLs, regenerated daily) is the primary
+ *   discovery channel regardless.
+ *
+ *   The language switcher now points at the live locale homepages instead of
+ *   at sibling README files, so it covers all 30 languages rather than 8, adds
+ *   30 real inbound links to the site from the highest-priority page in the
+ *   repo, and sends a non-English reader to the product rather than to a
+ *   translated repo document.
+ *
  * Usage:
  *   node scripts/sync-readme.js
  *   npm run sync-readme
@@ -52,14 +73,6 @@ const CONFIG = {
 
   readmeFiles: [
     { lang: 'en', path: path.join(__dirname, '..', 'README.md') },
-    { lang: 'ar', path: path.join(__dirname, '..', 'README.ar.md') },
-    { lang: 'de', path: path.join(__dirname, '..', 'README.de.md') },
-    { lang: 'es', path: path.join(__dirname, '..', 'README.es.md') },
-    { lang: 'fr', path: path.join(__dirname, '..', 'README.fr.md') },
-    { lang: 'pl', path: path.join(__dirname, '..', 'README.pl.md') },
-    { lang: 'pt', path: path.join(__dirname, '..', 'README.pt.md') },
-    { lang: 'ru', path: path.join(__dirname, '..', 'README.ru.md') },
-    { lang: 'tr', path: path.join(__dirname, '..', 'README.tr.md') },
   ],
 
   // Dry-run mode: print changes without writing any files
@@ -133,71 +146,7 @@ const TRANSLATIONS = {
     pillars:   { library: 'Library', symbol: 'Symbols', answers: 'Answers', usecase: 'Use Cases',
                  guide: 'Guides', category: 'Categories', updates: 'Updates', embed: 'Embed Tools' },
     total:     (t, l) => `**${t} URLs in total**, across ${l} languages.`,
-    locales:   n => `The site ships in ${n} languages:`,
-  },
-  ar: {
-    platforms: { socialHeading: '### منصات التواصل الاجتماعي', messagingHeading: '### منصات المراسلة' },
-    table:     { section: 'القسم', english: 'صفحات إنجليزية', localized: 'صفحات مترجمة' },
-    pillars:   { library: 'المكتبة', symbol: 'الرموز', answers: 'الإجابات', usecase: 'حالات الاستخدام',
-                 guide: 'الأدلة', category: 'الفئات', updates: 'التحديثات', embed: 'أدوات التضمين' },
-    total:     (t, l) => `**${t} رابط إجمالاً**، عبر ${l} لغة.`,
-    locales:   n => `الموقع متاح بـ ${n} لغة:`,
-  },
-  de: {
-    platforms: { socialHeading: '### Social-Media-Plattformen', messagingHeading: '### Messaging-Plattformen' },
-    table:     { section: 'Bereich', english: 'Englische Seiten', localized: 'Lokalisierte Seiten' },
-    pillars:   { library: 'Bibliothek', symbol: 'Symbole', answers: 'Antworten', usecase: 'Anwendungsfälle',
-                 guide: 'Ratgeber', category: 'Kategorien', updates: 'Updates', embed: 'Embed-Tools' },
-    total:     (t, l) => `**Insgesamt ${t} URLs** in ${l} Sprachen.`,
-    locales:   n => `Die Website ist in ${n} Sprachen verfügbar:`,
-  },
-  es: {
-    platforms: { socialHeading: '### Plataformas de Redes Sociales', messagingHeading: '### Plataformas de Mensajería' },
-    table:     { section: 'Sección', english: 'Páginas en inglés', localized: 'Páginas localizadas' },
-    pillars:   { library: 'Biblioteca', symbol: 'Símbolos', answers: 'Respuestas', usecase: 'Casos de Uso',
-                 guide: 'Guías', category: 'Categorías', updates: 'Novedades', embed: 'Herramientas Integrables' },
-    total:     (t, l) => `**${t} URLs en total**, en ${l} idiomas.`,
-    locales:   n => `El sitio está disponible en ${n} idiomas:`,
-  },
-  fr: {
-    platforms: { socialHeading: '### Plateformes de Réseaux Sociaux', messagingHeading: '### Plateformes de Messagerie' },
-    table:     { section: 'Section', english: 'Pages en anglais', localized: 'Pages localisées' },
-    pillars:   { library: 'Bibliothèque', symbol: 'Symboles', answers: 'Réponses', usecase: "Cas d'Usage",
-                 guide: 'Guides', category: 'Catégories', updates: 'Mises à Jour', embed: 'Outils Intégrables' },
-    total:     (t, l) => `**${t} URL au total**, dans ${l} langues.`,
-    locales:   n => `Le site est disponible en ${n} langues :`,
-  },
-  pl: {
-    platforms: { socialHeading: '### Platformy Społecznościowe', messagingHeading: '### Komunikatory' },
-    table:     { section: 'Sekcja', english: 'Strony po angielsku', localized: 'Strony zlokalizowane' },
-    pillars:   { library: 'Biblioteka', symbol: 'Symbole', answers: 'Odpowiedzi', usecase: 'Zastosowania',
-                 guide: 'Poradniki', category: 'Kategorie', updates: 'Aktualizacje', embed: 'Narzędzia do Osadzenia' },
-    total:     (t, l) => `**Łącznie ${t} adresów URL** w ${l} językach.`,
-    locales:   n => `Witryna jest dostępna w ${n} językach:`,
-  },
-  pt: {
-    platforms: { socialHeading: '### Plataformas de Redes Sociais', messagingHeading: '### Plataformas de Mensagens' },
-    table:     { section: 'Seção', english: 'Páginas em inglês', localized: 'Páginas localizadas' },
-    pillars:   { library: 'Biblioteca', symbol: 'Símbolos', answers: 'Respostas', usecase: 'Casos de Uso',
-                 guide: 'Guias', category: 'Categorias', updates: 'Atualizações', embed: 'Ferramentas Incorporáveis' },
-    total:     (t, l) => `**${t} URLs no total**, em ${l} idiomas.`,
-    locales:   n => `O site está disponível em ${n} idiomas:`,
-  },
-  ru: {
-    platforms: { socialHeading: '### Социальные сети', messagingHeading: '### Мессенджеры' },
-    table:     { section: 'Раздел', english: 'Страниц на английском', localized: 'Локализованных страниц' },
-    pillars:   { library: 'Библиотека', symbol: 'Символы', answers: 'Ответы', usecase: 'Сценарии использования',
-                 guide: 'Руководства', category: 'Категории', updates: 'Обновления', embed: 'Встраиваемые инструменты' },
-    total:     (t, l) => `**Всего ${t} URL** на ${l} языках.`,
-    locales:   n => `Сайт доступен на ${n} языках:`,
-  },
-  tr: {
-    platforms: { socialHeading: '### Sosyal Medya Platformları', messagingHeading: '### Mesajlaşma Platformları' },
-    table:     { section: 'Bölüm', english: 'İngilizce sayfa', localized: 'Yerelleştirilmiş sayfa' },
-    pillars:   { library: 'Kütüphane', symbol: 'Semboller', answers: 'Cevaplar', usecase: 'Kullanım Alanları',
-                 guide: 'Rehberler', category: 'Kategoriler', updates: 'Güncellemeler', embed: 'Gömme Araçları' },
-    total:     (t, l) => `**Toplam ${t} URL**, ${l} dilde.`,
-    locales:   n => `Site ${n} dilde mevcut:`,
+    locales:   n => `Available in ${n} languages — each with its own pages, not a translated interface:`,
   },
 };
 
@@ -235,18 +184,10 @@ function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// BCP-47 tag per README language, so thousands separators follow that
-// language's own convention: 4.576 in de/es/tr, 4 576 in fr/pl/ru, 4,576 in en.
-const NUMBER_LOCALES = {
-  // ar-u-nu-latn, not ar-EG: the Arabic README writes every other number in
-  // Western digits, and ar-EG would render these alone as ٤٬٥٧٦.
-  en: 'en-US', ar: 'ar-u-nu-latn', de: 'de-DE', es: 'es-ES',
-  fr: 'fr-FR', pl: 'pl-PL', pt: 'pt-BR', ru: 'ru-RU', tr: 'tr-TR',
-};
 
-/** Format an integer with the thousands separator `lang` actually uses. */
-function fmt(n, lang) {
-  return n.toLocaleString(NUMBER_LOCALES[lang] || 'en-US');
+/** Format an integer with thousands separators. */
+function fmt(n) {
+  return n.toLocaleString('en-US');
 }
 
 /**
@@ -304,11 +245,11 @@ function buildPillarsContent(stats, lang) {
     const c = stats.counts[slug];
     const label = t.pillars[slug];
     const url = `${CONFIG.baseUrl}/${slug}/`;
-    lines.push(`| [${label}](${url}) | ${fmt(c.en, lang)} | ${fmt(c.localized, lang)} |`);
+    lines.push(`| [${label}](${url}) | ${fmt(c.en)} | ${fmt(c.localized)} |`);
   }
 
   lines.push('');
-  lines.push(t.total(fmt(stats.total, lang), stats.locales.length));
+  lines.push(t.total(fmt(stats.total), stats.locales.length));
 
   return lines.join('\n');
 }
@@ -337,11 +278,20 @@ function buildEmbedContent(groups) {
   return groups.embed.map(p => `- ${CONFIG.baseUrl}${p}`).join('\n');
 }
 
-/** Locale list, using endonyms so it is identical in every language file. */
+/**
+ * Language switcher: each endonym links to that locale's own live homepage.
+ *
+ * These used to point at sibling README.<lang>.md files, which sent a
+ * non-English reader to a translated repo document rather than to the product.
+ * Pointing them at the site covers all 30 locales instead of 8, needs no
+ * translation upkeep, and puts 30 real inbound links on the repo landing page.
+ */
 function buildLocalesContent(stats, lang) {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
-  const names = stats.locales.map(code => `${LOCALE_NAMES[code]} (\`${code}\`)`);
-  return `${t.locales(stats.locales.length)}\n\n${names.join(' · ')}`;
+  const links = stats.locales.map(
+    code => `[${LOCALE_NAMES[code]}](${CONFIG.baseUrl}/${code}/)`
+  );
+  return `${t.locales(stats.locales.length)}\n\n${links.join(' · ')}`;
 }
 
 /** Collect the platform and embed paths the two blocks above need. */

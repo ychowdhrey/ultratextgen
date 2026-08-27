@@ -61,7 +61,10 @@
       "ariaLabel": "Bagikan hasil {style}",
       "linkCopied": "Tautan disalin",
       "afterCopy": "Bagikan gaya ini",
-      "sharedTag": "Gaya yang dibagikan"
+      "sharedTag": "Gaya yang dibagikan",
+      "imageTitle": "Bagikan sebagai gambar",
+      "imageAriaLabel": "Bagikan hasil {style} sebagai gambar",
+      "imageSaved": "Gambar siap"
     },
     "safeMode": {
       "label": "Keamanan tempel",
