@@ -1273,72 +1273,6 @@
     ],
     "es": [
       {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "es/library/simbolos-islamicos/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "☾ Celestial",
-        "reason": "'celestial' is an ordinary Spanish adjective spelled identically to the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "'aesthetic' is the established Spanish loanword for this style — cf. the site's own es/letras-aesthetic/ and es/simbolos-aesthetic/",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "es/library/simbolos-islamicos/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "es/library/simbolos-islamicos/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Aesc",
         "reason": "runic letter name from the Old Norse / Anglo-Saxon futhark, cited by its own name",
         "found_on": "es/library/runas-vikingas/",
@@ -1585,21 +1519,9 @@
         "added": "2026-08-16"
       },
       {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Erling Haaland",
         "reason": "footballer, club or national-team proper name, quoted as-is. Note on diacritics: this site renders every player name in ASCII site-wide (33 \"Mbappe\", 29 \"Suarez\", 29 \"Modric\", 39 \"Vinicius\", including in its own URL slugs and on the Portuguese pages), so the unaccented spelling here is the house convention rather than an untranslated English string. Spanish sports media does accent Mbappe and Suarez; whether to change the convention site-wide is an open question, not a translation defect, and \"Victor Osimhen\" is Nigerian and correctly carries no accent in any language.",
         "found_on": "es/library/adivina-el-futbolista-por-emojis/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
       },
       {
@@ -1645,6 +1567,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "GOAT Status",
+        "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
+        "found_on": "es/library/emojis-brainrot/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "Gamma",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from es/library/simbolos-matematicos/ itself: the tiles around it are translated (Alpha → Alfa; Epsilon → Épsilon; Empty Set → Conjunto vacío), so this one is kept because it genuinely matches.",
         "found_on": "es/library/simbolos-matematicos/",
@@ -1657,27 +1585,15 @@
         "added": "2026-08-25"
       },
       {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "es/usecase/zalgo-text/",
-        "added": "2026-08-21"
-      },
-      {
-        "string": "GOAT Status",
-        "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
-        "found_on": "es/library/emojis-brainrot/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Guaraní",
         "reason": "currency name that coincides with the English form in this language. Evidence from es/library/simbolos-de-moneda/ itself: the tiles around it are translated (Cent → Centavo; Tamil Rupee → Rupia tamil; German Penny → Penique alemán), so this one is kept because it genuinely matches.",
         "found_on": "es/library/simbolos-de-moneda/",
         "added": "2026-08-25"
       },
       {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
+        "string": "HTML (decimal)",
+        "reason": "code or platform literal cited verbatim",
+        "found_on": "es/symbol/simbolo-de-silla-de-ruedas/",
         "added": "2026-08-25"
       },
       {
@@ -1726,12 +1642,6 @@
         "string": "Hospital",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from es/library/emojis-de-profesiones/ itself: the tiles around it are translated (Pill → Pastilla; Stethoscope → Estetoscopio; Syringe → Jeringa), so this one is kept because it genuinely matches.",
         "found_on": "es/library/emojis-de-profesiones/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "HTML (decimal)",
-        "reason": "code or platform literal cited verbatim",
-        "found_on": "es/symbol/simbolo-de-silla-de-ruedas/",
         "added": "2026-08-25"
       },
       {
@@ -1792,12 +1702,6 @@
         "string": "Joga Bonito",
         "reason": "a supporters' chant or nickname in its own language, quoted rather than translated",
         "found_on": "es/library/emoji-neymar/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
       },
       {
@@ -2239,6 +2143,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Table Flip Kaomoji",
+        "reason": "genre proper name: \"kaomoji\" is a Japanese loanword no locale on this site translates, and \"table flip\" is the community name of the specific (╯°□°）╯︵ ┻━┻ figure. The page's own <title> and body carry the Spanish gloss (\"la Mesa Volteada\"), so the concept is rendered in Spanish; the H1 keeps the name the figure is known by. Reviewed 2026-08-27 with the user, who chose to keep the name over renaming the H1.",
+        "found_on": "es/library/table-flip-kaomoji/",
+        "added": "2026-08-27"
+      },
+      {
         "string": "Taijitu",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "es/symbol/yin-yang/",
@@ -2308,12 +2218,6 @@
         "string": "Twitter / X",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "es/usecase/vertical-text/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
       },
       {
@@ -2401,12 +2305,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/es/usecase/letras-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "es/contador-de-palabras-y-caracteres/",
@@ -2455,12 +2353,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "zeta",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "es/imprimibles/abecedario-espanol/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Zeta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from es/library/simbolos-matematicos/ itself: the tiles around it are translated (Epsilon → Épsilon; Alpha → Alfa; Empty Set → Conjunto vacío), so this one is kept because it genuinely matches.",
         "found_on": "es/library/simbolos-matematicos/",
@@ -2470,6 +2362,120 @@
         "string": "Zhovto-Blakytni",
         "reason": "a supporters' chant or nickname in its own language, quoted rather than translated",
         "found_on": "es/library/emoji-ucrania/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "zeta",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "es/imprimibles/abecedario-espanol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "es/library/simbolos-islamicos/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☾ Celestial",
+        "reason": "'celestial' is an ordinary Spanish adjective spelled identically to the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established Spanish loanword for this style — cf. the site's own es/letras-aesthetic/ and es/simbolos-aesthetic/",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/es/usecase/letras-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "es/library/simbolos-islamicos/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "es/library/simbolos-islamicos/",
         "added": "2026-08-25"
       }
     ],
