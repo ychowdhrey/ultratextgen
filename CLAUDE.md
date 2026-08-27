@@ -1936,6 +1936,139 @@ the exact line that shipped: exit 1, naming the file, job, step and line.
 
 ---
 
+## Library Hub Coverage — a page is not shipped until its hub knows about it
+
+Every gate above checks a page against a *standard*: its schema, its art, its
+language, its siblings. None of them asked the simpler question — **is this page
+linked from the hub that is supposed to be its front door?** A 2026-08-26 audit
+found **374 pages** where the answer was no: live, indexable, self-canonical, in
+`sitemap.xml`, meshed correctly, and reachable from their own locale's library
+hub by no route at all. 210 of those were `es`, which has the deepest localized
+library on the site (253 library pages) and had **42% hub coverage**.
+
+The `symbol` lane is the control group and it is the whole argument: 17 of 19
+locale symbol hubs card 100% of their spokes, because `sync_symbol_spoke_links.py`
+generates those links and `check-new-symbol-peer-links.py` fails a PR that skips
+it. `library` had neither and drifted to 86%. Same site, same week — the
+difference is whether a machine was doing the remembering.
+
+### Five mechanisms, not one — the part that must not be simplified
+
+There is no shared registry and no route manifest. Each hub carries its own
+hand-maintained copy of its inventory, and *which form* is a property of the hub,
+not of the locale:
+
+| Mechanism | Markup | Visible without JS | Used by |
+|---|---|---|---|
+| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | EN + es, fr, id, it, ko, pt, tr |
+| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | the same eight (generated) |
+| `azIndex` | `<ul class="lib-index-list">` | yes | the same eight |
+| `compareCard` | `<a class="compare-card">` | yes | ar, de, ja, nl, pl, ru, th, vi, zh-tw + every `symbol` hub |
+| `tipCard` | `<a class="tip-card">` inside `.tips-grid` | yes | da, no, sv |
+
+So `registered` means "listed in any of the five" and `crawlable` means "listed
+in one of the four that survive without JavaScript". They are reported separately
+because they answer different questions.
+
+**A checker that knew only `compare-card` would report `da`, `no` and `sv` as
+broken and `es` as fine.** That is not hypothetical — the audit's first pass did
+exactly that, calling those three locales 3, 11 and 10 pages short when all three
+are complete. Do not narrow the mechanism set without re-checking those locales.
+
+### Tooling
+
+- **`npm run audit:library-hub-coverage`** (`scripts/audit-library-hub-coverage.js`)
+  — whole-site dashboard: pages, registered, crawlable, missing, orphans,
+  unsearchable, duplicates, per locale and lane. `--full` for every route,
+  `--locale <code>` to scope, `--json <path>` to save. **Informational, never
+  gating**, same call as `check:images` and `audit:locale-parent-gap` and for the
+  same reason: the 374-page backlog would make it permanently red.
+- **`npm run check:library-hub-coverage`** (`scripts/check-library-hub-coverage.js`)
+  — the enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  step. **Diff-scoped**: for every lane page the branch *adds or renames*, the
+  locale's hub must register it; for every hub file the branch *touches*, every
+  entry must resolve. Pre-existing backlog is reported and never counted.
+- Both share **`scripts/lib/library-hub-registry.js`**, so the audit and the gate
+  can never disagree about what "registered" means.
+
+### Errors and warnings are deliberately different strengths
+
+**Error** — a page the PR adds that no mechanism lists; a hub entry pointing at
+nothing with no `_redirects` rule (a hard 404 straight off the hub).
+**Warning** — a hub entry resolving through a 301 (the visitor lands correctly
+after one hop, so it is lost link equity, not breakage); a page added to a
+directory hub's JS array but not its crawlable index.
+
+Conflating those two would either downgrade a real 404 or turn a lane migration
+into a merge blocker. All five orphans the audit found were the redirect kind:
+four left over from the `<lang>/library/<slug>` → `<lang>/symbol/<slug>` migration
+and one from the `heart-emoji` → `heart-symbols` fold, where `library/index.html`
+was the *only* file in the repo still pointing at the old URL. All five are now
+cleared, so the count is zero and a new one is a real regression.
+
+### `data/library_hub_exclusions.json`
+
+Before this file, the repo had no way to say "this page deliberately does not
+belong in the hub", so every absence was indistinguishable from an oversight —
+which is why the audit could classify nothing as intentionally excluded and had
+to report all 374 as defects. Keyed by route, with a reason and a date.
+
+**Same bar as every other ledger here** (`translation_parity_exceptions.json`,
+`english_parent_exceptions.json`): entries are discussed decisions, never added
+unilaterally to make a page pass. If the gate flags a page, the default fix is to
+register it. The list ships empty on purpose.
+
+### Two builders pre-render the directory hubs, split by lane
+
+`build-library-directory.js` owns `library/index.html` and runs that page's own
+marker-delimited `directoryHtml()`. `build-locale-library-directory.js` owns the
+seven locale directory hubs and lifts each page's own `LIBRARY` array, `escHtml`
+and group-by-alpha block dynamically — resolving whatever outer constant that
+block reaches for (`ALPHABET` on `tr`/`fr`, `INITIAL_ID` on `ko`) by running it
+and lifting the named declaration on a `ReferenceError`. Neither re-implements
+the markup, so static and runtime output cannot drift.
+
+**Why two and not one:** the English hub carries extraction markers and the
+locale hubs deliberately do not — the locale builder was written so they never
+need them. The cost of that split is that **a locale hub's static block goes
+stale silently if its `LIBRARY` array changes and nobody re-runs the locale
+builder.** `npm run check:locale-library-directory` is what closes it; run both
+builders after touching any hub array.
+
+**Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
+The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
+migration lived only inside the JS array and cost nothing while the hub rendered
+client-side. Pre-rendering turned each into a real `<a href>` to a 301. Clear a
+stale array entry *before* regenerating, or the generator ships the link. The
+same applied to EN's `heart-emoji`, folded into `heart-symbols` on 2026-08-13,
+where `library/index.html` was the only file in the repo still pointing at the
+old URL. All five are cleared, so the orphan count is 0 and a new one is a real
+regression.
+
+**`validate_library_pages.py` discovers locales from the canonical code list.**
+It used `REPO.glob("??")` — two characters — so **`zh-tw` was silently never
+scanned**: 41 locale lanes exist, 39 were scanned, and the two skipped were
+`zh-tw/library` and `zh-tw/symbol`, 73 pages, invisible to every check in that
+file including its orphan-spoke pass. (It also matched `js/`, which is not a
+locale.) The fix immediately surfaced a real defect the glob had been hiding —
+`zh-tw/library/happy-kaomoji` storing `data-symbol="ヽ(>∀<☆)ノ"` with the angle
+brackets unescaped, where its own English parent escapes them.
+
+### Verified against deliberately broken inputs before being trusted
+
+Per this file's own rule ("Adding a validator script is not the same as gating on
+it"), five probes, each a different shape so the gate could not be tuned to one:
+
+1. a new `es/library/` page no mechanism lists → **exit 1**;
+2. the same page registered in the `LIBRARY` array → **exit 0**;
+3. a hub entry whose page was deleted, no redirect → **exit 1**, named a hard 404;
+4. the same orphan with a `_redirects` rule added → **warning, exit 0**;
+5. the same unregistered page with a ledger entry → **1 → 0**, exclusion honoured.
+
+Do not trust a future edit to any of this without repeating them.
+
+---
+
 ## Editorial Footprint Risk — measuring how templated our own prose reads
 
 Every gate above measures structure, language completeness, schema or assets.
@@ -2406,6 +2539,22 @@ Standing protocol:
   and must say so.
 - Do not compare Editorial Footprint Risk scores across locales, or read an
   unmeasured dimension as a zero. Rank on `locale_percentile`.
+- Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
+  in that locale's hub — a page no hub links is reachable only from the sitemap.
+  See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates
+  every page a PR adds; `npm run audit:library-hub-coverage` is the whole-site
+  picture. A page that genuinely belongs outside its hub goes in
+  `data/library_hub_exclusions.json` with a reason — never to make a PR pass.
+- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, and
+  do not narrow the five inventory mechanisms to the one a hub you are looking at
+  happens to use. Run `npm run build:library-directory` for English and
+  `npm run build:locale-library-directory` for the locale hubs; the static markup
+  and the runtime markup come from the same code over the same array precisely so
+  they cannot drift.
+- Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
+  `glob("??")` silently skipped 73 of its pages for as long as that line existed.
+  Read the canonical list from `data/locale_qualification_tiers.json` (Python) or
+  `scripts/lib/locale-parent-registry.js`'s `LOCALES` (Node).
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
