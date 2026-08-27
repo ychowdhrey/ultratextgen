@@ -291,6 +291,37 @@ jobs:
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
 
+      # The locale directory hubs are pre-rendered by a SECOND builder
+      # (scripts/build-locale-library-directory.js) because they carry no
+      # extraction markers. It shipped unwired — no npm script, no CI step — so
+      # nothing noticed if a locale hub's LIBRARY array changed and its static
+      # block was not regenerated. Same shape as every other "the check existed
+      # but nothing ran it" incident recorded in CLAUDE.md.
+      - name: Run locale library directory freshness check
+        id: locale_library_directory
+        continue-on-error: true
+        run: npm run check:locale-library-directory | tee locale-library-directory.log
+
+      # Library hub coverage — the DIFF-SCOPED gate. A page can ship correct in
+      # every other respect (indexable, self-canonical, meshed, in the sitemap)
+      # and still be absent from the hub that is supposed to be its front door;
+      # 374 pages were in exactly that state when this was written, 210 of them
+      # in `es`. Diff-scoped for the same reason as check:translation-parity —
+      # a whole-site check would be red on every PR regardless of what the PR
+      # did, and a permanently-red check is one people learn to ignore.
+      - name: Run library hub coverage check
+        id: library_hub_coverage
+        continue-on-error: true
+        run: npm run check:library-hub-coverage -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee library-hub-coverage.log
+
+      # Whole-site hub coverage picture — informational only, same call as the
+      # image and locale-parent-gap audits: it reports the standing backlog the
+      # gate above deliberately does not count against any single branch.
+      - name: Run library hub coverage audit (whole-site, informational)
+        id: library_hub_coverage_audit
+        continue-on-error: true
+        run: npm run audit:library-hub-coverage | tee library-hub-coverage-audit.log
+
       # Editorial Footprint Risk — SHADOW MODE, and deliberately not in the
       # gating list below. It reports what it WOULD fail on and exits 0.
       #
@@ -461,6 +492,21 @@ jobs:
             cat library-directory.log
             echo '```'
             echo ""
+            echo "### Locale library directory freshness check — \`${{ steps.locale_library_directory.outcome }}\`"
+            echo '```'
+            cat locale-library-directory.log
+            echo '```'
+            echo ""
+            echo "### Library hub coverage check — \`${{ steps.library_hub_coverage.outcome }}\`"
+            echo '```'
+            cat library-hub-coverage.log
+            echo '```'
+            echo ""
+            echo "### Library hub coverage audit (informational) — \`${{ steps.library_hub_coverage_audit.outcome }}\`"
+            echo '```'
+            cat library-hub-coverage-audit.log
+            echo '```'
+            echo ""
             echo "### Editorial footprint check (shadow mode, informational) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
@@ -528,6 +574,8 @@ jobs:
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
+          steps.locale_library_directory.outcome == 'failure' ||
+          steps.library_hub_coverage.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.printables_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
