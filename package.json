@@ -35,6 +35,8 @@
     "check:locale-mesh": "node scripts/check-locale-mesh.js",
     "check:locale-parent-tier": "node scripts/check-locale-parent-tier.js",
     "audit:locale-parent-gap": "node scripts/audit-locale-parent-gap.js",
+    "check:library-hub-parity": "node scripts/check-library-hub-parity.js",
+    "audit:library-hub-parity": "node scripts/check-library-hub-parity.js --all",
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
     "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
     "check:workflows": "python3 scripts/check-workflows.py",
