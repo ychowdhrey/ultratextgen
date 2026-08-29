@@ -2229,6 +2229,46 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 
 ---
 
+## Discovery Model — multi-surface (added 2026-08-29)
+
+UltraTextGen does not optimize for a single discovery algorithm. Pages,
+tools, images, printables, embeds, and data files are built to be useful on
+their own terms and discoverable through many independent systems: Google,
+Bing, Naver, Yandex and other search engines; AI assistants, answer engines
+and their crawlers; image search; social sharing; embeds on other sites;
+citations; and direct return visits. Google matters and is served well — it
+is one distribution surface, not the operating system the site is designed
+around.
+
+Practical implications when working in this repo:
+
+- **A page or asset should have a defensible reason to exist even if Google
+  never sends it a visitor** — real utility, a share/print/embed path, or
+  reference value an AI or a person would cite. "A keyword exists" is not,
+  by itself, that reason.
+- **Machine legibility is a distribution feature, not hygiene.** Several
+  search and AI crawlers do not execute JavaScript; content and links that
+  matter for discovery should be present in static HTML where feasible
+  (the static footer and pre-rendered library-hub directories exist for
+  exactly this reason — see "Library Hub Coverage" above). `robots.txt`
+  deliberately welcomes AI crawlers.
+- **Engine-specific registrations and their state live in
+  `docs/webmaster-tools-registrations-2026-08-20.md`** (Google, Bing, Naver,
+  Yandex, Pinterest domain verification). Sitemap and structured-data
+  changes serve every registered engine, not just Google — weigh a
+  Google-motivated change against its effect on the others.
+- **The sharing/embed layer is part of discovery**: per-result share links
+  (`?q=&style=`) with their OG preview Function, the `/embed/` widgets and
+  their UTM conventions, and the printables' cred-line attribution are
+  distribution surfaces. Keep them working, and extend them through their
+  existing conventions (UTM naming, the OG style registry, the embed hub)
+  rather than ad hoc.
+- **None of this loosens the existing content rules.** Hub-vs-spoke,
+  English-Parent, parity, ledger discipline, and any active publishing
+  restrictions apply unchanged — multi-surface discovery is about
+  distributing and exposing well-built assets, never about generating more
+  pages.
+
 ## SEO & Structured Data
 
 Every page includes JSON-LD for:
