@@ -2386,6 +2386,8 @@ PAGES = {
   "library-side-eye-emoji": ("Side-Eye Emoji", "The look that says it all", m_smiley, K_LIB),
   "library-tech-status-symbols": ("Tech & Status Symbols", "Gears, power and signal marks",
         m_gear, K_LIB),
+  "library-speech-bubble-symbols": ("Speech Bubble Symbols", "Balloons, quote bubbles and tails",
+      m_kaomoji, K_LIB),
   "library-text-art": ("Text Art Gallery", "ASCII and Unicode art, copy-ready", m_kaomoji, K_LIB),
   "library-thanksgiving-symbols": ("Thanksgiving Symbols", "Harvest, gratitude and autumn",
         glyphs("❀", "❁", "☘", "✿", "✦"), K_LIB),
