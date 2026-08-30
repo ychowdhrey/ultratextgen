@@ -1,0 +1,360 @@
+{
+  "slug": "nickname-giho",
+  "title": "닉네임 특수문자 ꧁ ༺ ♛ ツ — 게임 닉네임 꾸미기 기호 | UltraTextGen",
+  "meta_description": "닉네임 특수문자 모음 ꧁꧂ ༺༻ ♛ ★ ツ ϟ ⚔. 게임 아이디와 프로필 이름을 꾸미는 기호 40개를 눌러서 복사하세요.",
+  "breadcrumb": "닉네임 특수문자",
+  "hero_h1": "닉네임 특수문자",
+  "hero_tagline": "꧁ ꧂ ༺ ༻ ♛ ★ ツ ϟ ⚔ — 이름 양옆에 두는 날개와 왕관.",
+  "intro": "게임 아이디와 프로필 이름을 꾸밀 때 쓰는 기호들입니다. 이름 양옆을 감싸는 날개형 괄호, 얼굴처럼 보이는 가타카나, 순위를 드러내는 왕관과 별, 전투 느낌의 번개와 검으로 나눴습니다. 다만 게임마다 허용 문자가 달라서, 넣기 전에 <a href=\"/ko/library/teuksu-munja/\">특수문자 모음</a>에서 확인하거나 실제 입력칸에 시험해 보는 편이 안전합니다.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "wing-brackets",
+      "label": "날개와 괄호 장식",
+      "h2": "날개와 괄호 장식",
+      "intro": "이름을 감싸는 ꧁꧂ 날개와 장식 괄호.",
+      "symbols": [
+        {
+          "char": "꧁",
+          "label": "자바 문자 왼쪽 날개"
+        },
+        {
+          "char": "꧂",
+          "label": "자바 문자 오른쪽 날개"
+        },
+        {
+          "char": "༺",
+          "label": "티베트 왼쪽 장식"
+        },
+        {
+          "char": "༻",
+          "label": "티베트 오른쪽 장식"
+        },
+        {
+          "char": "『",
+          "label": "여는 겹낫표"
+        },
+        {
+          "char": "』",
+          "label": "닫는 겹낫표"
+        },
+        {
+          "char": "「",
+          "label": "여는 낫표"
+        },
+        {
+          "char": "」",
+          "label": "닫는 낫표"
+        },
+        {
+          "char": "【",
+          "label": "여는 검은 렌즈 괄호"
+        },
+        {
+          "char": "】",
+          "label": "닫는 검은 렌즈 괄호"
+        },
+        {
+          "char": "❮",
+          "label": "굵은 왼쪽 홑화살괄호"
+        },
+        {
+          "char": "❯",
+          "label": "굵은 오른쪽 홑화살괄호"
+        }
+      ]
+    },
+    {
+      "id": "cjk-flair",
+      "label": "가타카나·한자 장식",
+      "h2": "가타카나·한자 장식",
+      "intro": "얼굴이나 효과선처럼 보이는 일본어·한자 문자.",
+      "symbols": [
+        {
+          "char": "ツ",
+          "label": "가타카나 츠 (웃는 얼굴)"
+        },
+        {
+          "char": "シ",
+          "label": "가타카나 시 (웃는 얼굴)"
+        },
+        {
+          "char": "ッ",
+          "label": "작은 츠 (작은 미소)"
+        },
+        {
+          "char": "乂",
+          "label": "한자 예 (엇갈린 X)"
+        },
+        {
+          "char": "彡",
+          "label": "삼 부수 (효과선)"
+        },
+        {
+          "char": "ミ",
+          "label": "가타카나 미 (효과선)"
+        },
+        {
+          "char": "亗",
+          "label": "한자 (쌓인 산 모양)"
+        },
+        {
+          "char": "龍",
+          "label": "용"
+        },
+        {
+          "char": "神",
+          "label": "신"
+        },
+        {
+          "char": "王",
+          "label": "왕"
+        }
+      ]
+    },
+    {
+      "id": "crowns-stars",
+      "label": "왕관과 별 기호",
+      "h2": "왕관과 별 기호",
+      "intro": "이름 옆에서 등급과 지위를 드러내는 기호.",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "검은 퀸"
+        },
+        {
+          "char": "♚",
+          "label": "검은 킹"
+        },
+        {
+          "char": "♕",
+          "label": "흰 퀸"
+        },
+        {
+          "char": "♔",
+          "label": "흰 킹"
+        },
+        {
+          "char": "★",
+          "label": "검은 별"
+        },
+        {
+          "char": "☆",
+          "label": "흰 별"
+        },
+        {
+          "char": "✰",
+          "label": "그림자 별"
+        },
+        {
+          "char": "✯",
+          "label": "바람개비 별"
+        },
+        {
+          "char": "⍟",
+          "label": "원 안의 별"
+        },
+        {
+          "char": "㊝",
+          "label": "원 안의 우수"
+        }
+      ]
+    },
+    {
+      "id": "power-accents",
+      "label": "번개와 전투 장식",
+      "h2": "번개와 전투 장식",
+      "intro": "공격적인 느낌을 주는 번개·해골·검.",
+      "symbols": [
+        {
+          "char": "ϟ",
+          "label": "그리스 문자 코파 (번개)"
+        },
+        {
+          "char": "ψ",
+          "label": "작은 프시 (삼지창)"
+        },
+        {
+          "char": "Ψ",
+          "label": "대문자 프시 (삼지창)"
+        },
+        {
+          "char": "☠",
+          "label": "해골과 뼈"
+        },
+        {
+          "char": "⚔",
+          "label": "엇갈린 검"
+        },
+        {
+          "char": "✞",
+          "label": "그림자 십자가"
+        },
+        {
+          "char": "➤",
+          "label": "검은 오른쪽 화살촉"
+        },
+        {
+          "char": "ヾ",
+          "label": "가타카나 반복 기호"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "닉네임 특수문자 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "게임에서 특수문자가 안 들어가요.",
+      "a": "게임마다 허용 문자 목록이 다릅니다. 한글과 영문·숫자만 받는 곳이 많고, 그런 곳에서는 ꧁ ツ ♛ 같은 문자가 통째로 거부됩니다. 리그 오브 레전드나 메이플스토리처럼 제한이 엄격한 게임은 특히 그렇습니다."
+    },
+    {
+      "q": "글자 수는 어떻게 세나요?",
+      "a": "대부분의 게임은 눈에 보이는 글자 수가 아니라 코드 단위로 셉니다. ꧁ 하나가 한 글자로 세어질 수도, 두 글자로 세어질 수도 있어서 실제로 넣어 봐야 정확합니다. 닉네임 칸이 빠듯하면 양옆 장식을 한쪽만 쓰는 방법도 있습니다."
+    },
+    {
+      "q": "상대방에게도 똑같이 보이나요?",
+      "a": "상대 기기 글꼴에 그 문자가 있어야 보입니다. ★ ♛ ツ 는 거의 모든 곳에서 나오지만 ꧁ ༺ 처럼 덜 쓰이는 문자는 오래된 기기에서 네모로 보일 수 있습니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "날개 기호는 원래 날개가 아니다",
+      "body": "게임 닉네임에서 가장 널리 쓰이는 ꧁ ꧂ 는 자바 문자의 문단 장식 기호입니다. 인도네시아에서 글의 시작과 끝을 표시하던 문장부호이고, 날개와는 아무 관련이 없습니다. ༺ ༻ 도 마찬가지로 티베트 문헌의 구간 표시입니다. 두 기호가 게임에서 자리를 잡은 이유는 뜻이 아니라 좌우 대칭과 화려한 곡선 때문입니다. 이름 양옆에 놓았을 때 균형이 맞고, 대부분의 필터가 문장부호로 분류해 걸러 내지 않았습니다. 지금은 원래 용도를 아는 사람보다 게임 장식으로 아는 사람이 훨씬 많습니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호와 특수문자를 종류별로 모은 전체 목록."
+    },
+    {
+      "href": "/ko/library/wanggwan-imoji/",
+      "title": "왕관 이모지",
+      "desc": "👑 왕관과 관련 이모지 모음."
+    },
+    {
+      "href": "/ko/library/gamseong-giho/",
+      "title": "감성 특수문자",
+      "desc": "반짝이·하트·구분선 등 프로필 꾸미기 기호."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/nickname-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/nickname-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/simbolos-para-nombres/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-nickname/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/simbolos-para-nick/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/ozdobniki/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-ten/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-dlya-nika/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/isim-sembolleri/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/nickname-giho/"
+    }
+  ],
+  "collection_section": {
+    "id": "nick-decorations",
+    "label": "닉네임 장식",
+    "h2": "바로 쓰는 닉네임 장식",
+    "intro": "장식 세트를 통째로 복사한 다음, 가운데 '닉네임'만 본인 이름으로 바꾸세요."
+  },
+  "collection_container_id": "nickDecorationsContainer",
+  "collections": [
+    {
+      "name": "기본 날개",
+      "flags": [
+        "꧁ 닉네임 ꧂",
+        "꧁༺ 닉네임 ༻꧂",
+        "꧁❮ 닉네임 ❯꧂",
+        "꧁♛ 닉네임 ♛꧂",
+        "꧁★ 닉네임 ★꧂"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "스마일 태그",
+      "flags": [
+        "ツ 닉네임",
+        "닉네임 シ",
+        "꧁ツ 닉네임 ツ꧂",
+        "彡 닉네임 彡",
+        "ミ★ 닉네임 ★ミ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "왕관 닉네임",
+      "flags": [
+        "♛ 닉네임 ♛",
+        "♚닉네임♚",
+        "【♔ 닉네임 ♔】",
+        "『닉네임』",
+        "㊝ 닉네임 ㊝"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "프로 게이머 태그",
+      "flags": [
+        "ᴳᵒᵈ•닉네임",
+        "亗 닉네임 亗",
+        "乂•닉네임•乂",
+        "닉네임彡",
+        "꧁亗 닉네임 亗꧂"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "다크 스타일",
+      "flags": [
+        "☠ 닉네임 ☠",
+        "ϟ닉네임ϟ",
+        "꧁☠ 닉네임 ☠꧂",
+        "⚔ 닉네임 ⚔",
+        "✞ 닉네임 ✞"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "별 액자",
+      "flags": [
+        "★彡 닉네임 彡★",
+        "✰ 닉네임 ✰",
+        "☆꧁ 닉네임 ꧂☆",
+        "⍟ 닉네임 ⍟",
+        "✯닉네임✯"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ]
+}

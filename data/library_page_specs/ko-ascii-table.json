@@ -1,0 +1,393 @@
+{
+  "slug": "ascii-codepyo",
+  "title": "아스키 코드표 — ASCII 문자·10진수·16진수 전체 표 | UltraTextGen",
+  "meta_description": "아스키 코드표 전체. 출력 가능한 33–126번 문자와 10진수·16진수·2진수·8진수 코드를 함께 정리했습니다. 문자를 누르면 바로 복사됩니다.",
+  "breadcrumb": "아스키 코드표",
+  "hero_h1": "아스키 코드표",
+  "hero_tagline": "출력 가능한 아스키 문자 33–126번과 10진수·16진수·2진수·8진수 코드. 누르면 복사됩니다.",
+  "intro": "아스키(ASCII)는 영문자와 숫자, 기본 문장부호에 0부터 127까지 번호를 매긴 표입니다. 0–32번과 127번은 화면에 보이지 않는 제어 문자라 이 표에서는 빼고, 실제로 눈에 보이는 33–126번만 담았습니다. 유니코드도 이 구간을 그대로 물려받았기 때문에, 아래 번호는 오늘날의 거의 모든 시스템에서 같은 값으로 통합니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "아스키 문장부호 (33–47)",
+      "h2": "아스키 문장부호 (33–47)",
+      "intro": "출력 가능한 첫 구간. 문장부호와 사칙연산 기호가 모여 있습니다.",
+      "symbols": [
+        {
+          "char": "!",
+          "label": "33 / 0x21 / 0b0100001 / 0o41 — 느낌표"
+        },
+        {
+          "char": "\"",
+          "label": "34 / 0x22 / 0b0100010 / 0o42 — 큰따옴표"
+        },
+        {
+          "char": "#",
+          "label": "35 / 0x23 / 0b0100011 / 0o43 — 샵 기호"
+        },
+        {
+          "char": "$",
+          "label": "36 / 0x24 / 0b0100100 / 0o44 — 달러 기호"
+        },
+        {
+          "char": "%",
+          "label": "37 / 0x25 / 0b0100101 / 0o45 — 퍼센트 기호"
+        },
+        {
+          "char": "&",
+          "label": "38 / 0x26 / 0b0100110 / 0o46 — 앰퍼샌드"
+        },
+        {
+          "char": "'",
+          "label": "39 / 0x27 / 0b0100111 / 0o47 — 작은따옴표"
+        },
+        {
+          "char": "(",
+          "label": "40 / 0x28 / 0b0101000 / 0o50 — 여는 소괄호"
+        },
+        {
+          "char": ")",
+          "label": "41 / 0x29 / 0b0101001 / 0o51 — 닫는 소괄호"
+        },
+        {
+          "char": "*",
+          "label": "42 / 0x2A / 0b0101010 / 0o52 — 별표"
+        },
+        {
+          "char": "+",
+          "label": "43 / 0x2B / 0b0101011 / 0o53 — 더하기 기호"
+        },
+        {
+          "char": ",",
+          "label": "44 / 0x2C / 0b0101100 / 0o54 — 쉼표"
+        },
+        {
+          "char": "-",
+          "label": "45 / 0x2D / 0b0101101 / 0o55 — 붙임표(빼기)"
+        },
+        {
+          "char": ".",
+          "label": "46 / 0x2E / 0b0101110 / 0o56 — 마침표"
+        },
+        {
+          "char": "/",
+          "label": "47 / 0x2F / 0b0101111 / 0o57 — 슬래시"
+        }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "아스키 숫자 (48–57)",
+      "h2": "아스키 숫자 (48–57)",
+      "intro": "십진 숫자 열 개. 각 숫자의 코드는 48에 그 값을 더한 값입니다.",
+      "symbols": [
+        {
+          "char": "0",
+          "label": "48 / 0x30 / 0b0110000 / 0o60 — 숫자 영"
+        },
+        {
+          "char": "1",
+          "label": "49 / 0x31 / 0b0110001 / 0o61 — 숫자 일"
+        },
+        {
+          "char": "2",
+          "label": "50 / 0x32 / 0b0110010 / 0o62 — 숫자 이"
+        },
+        {
+          "char": "3",
+          "label": "51 / 0x33 / 0b0110011 / 0o63 — 숫자 삼"
+        },
+        {
+          "char": "4",
+          "label": "52 / 0x34 / 0b0110100 / 0o64 — 숫자 사"
+        },
+        {
+          "char": "5",
+          "label": "53 / 0x35 / 0b0110101 / 0o65 — 숫자 오"
+        },
+        {
+          "char": "6",
+          "label": "54 / 0x36 / 0b0110110 / 0o66 — 숫자 육"
+        },
+        {
+          "char": "7",
+          "label": "55 / 0x37 / 0b0110111 / 0o67 — 숫자 칠"
+        },
+        {
+          "char": "8",
+          "label": "56 / 0x38 / 0b0111000 / 0o70 — 숫자 팔"
+        },
+        {
+          "char": "9",
+          "label": "57 / 0x39 / 0b0111001 / 0o71 — 숫자 구"
+        }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "아스키 문장부호 (58–64)",
+      "h2": "아스키 문장부호 (58–64)",
+      "intro": "숫자와 대문자 사이에 놓인 기호들.",
+      "symbols": [
+        {
+          "char": ":",
+          "label": "58 / 0x3A / 0b0111010 / 0o72 — 쌍점"
+        },
+        {
+          "char": ";",
+          "label": "59 / 0x3B / 0b0111011 / 0o73 — 쌍반점"
+        },
+        {
+          "char": "<",
+          "label": "60 / 0x3C / 0b0111100 / 0o74 — 작다 기호"
+        },
+        {
+          "char": "=",
+          "label": "61 / 0x3D / 0b0111101 / 0o75 — 등호"
+        },
+        {
+          "char": ">",
+          "label": "62 / 0x3E / 0b0111110 / 0o76 — 크다 기호"
+        },
+        {
+          "char": "?",
+          "label": "63 / 0x3F / 0b0111111 / 0o77 — 물음표"
+        },
+        {
+          "char": "@",
+          "label": "64 / 0x40 / 0b1000000 / 0o100 — 골뱅이"
+        }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "아스키 알파벳 (65–90, 97–122)",
+      "h2": "아스키 알파벳 (65–90, 97–122)",
+      "intro": "대문자는 65(A)부터 90(Z), 소문자는 97(a)부터 122(z)까지입니다.",
+      "symbols": [
+        {
+          "char": "A",
+          "label": "65 / 0x41 / 0b1000001 / 0o101 — 라틴 대문자 A"
+        },
+        {
+          "char": "B",
+          "label": "66 / 0x42 / 0b1000010 / 0o102 — 라틴 대문자 B"
+        },
+        {
+          "char": "C",
+          "label": "67 / 0x43 / 0b1000011 / 0o103 — 라틴 대문자 C"
+        },
+        {
+          "char": "M",
+          "label": "77 / 0x4D / 0b1001101 / 0o115 — 라틴 대문자 M"
+        },
+        {
+          "char": "N",
+          "label": "78 / 0x4E / 0b1001110 / 0o116 — 라틴 대문자 N"
+        },
+        {
+          "char": "X",
+          "label": "88 / 0x58 / 0b1011000 / 0o130 — 라틴 대문자 X"
+        },
+        {
+          "char": "Y",
+          "label": "89 / 0x59 / 0b1011001 / 0o131 — 라틴 대문자 Y"
+        },
+        {
+          "char": "Z",
+          "label": "90 / 0x5A / 0b1011010 / 0o132 — 라틴 대문자 Z"
+        },
+        {
+          "char": "a",
+          "label": "97 / 0x61 / 0b1100001 / 0o141 — 라틴 소문자 A"
+        },
+        {
+          "char": "b",
+          "label": "98 / 0x62 / 0b1100010 / 0o142 — 라틴 소문자 B"
+        },
+        {
+          "char": "m",
+          "label": "109 / 0x6D / 0b1101101 / 0o155 — 라틴 소문자 M"
+        },
+        {
+          "char": "n",
+          "label": "110 / 0x6E / 0b1101110 / 0o156 — 라틴 소문자 N"
+        },
+        {
+          "char": "x",
+          "label": "120 / 0x78 / 0b1111000 / 0o170 — 라틴 소문자 X"
+        },
+        {
+          "char": "z",
+          "label": "122 / 0x7A / 0b1111010 / 0o172 — 라틴 소문자 Z"
+        }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "아스키 괄호와 기호 (91–96)",
+      "h2": "아스키 괄호와 기호 (91–96)",
+      "intro": "대괄호, 역슬래시, 캐럿, 밑줄, 백틱.",
+      "symbols": [
+        {
+          "char": "[",
+          "label": "91 / 0x5B / 0b1011011 / 0o133 — 여는 대괄호"
+        },
+        {
+          "char": "\\",
+          "label": "92 / 0x5C / 0b1011100 / 0o134 — 역슬래시"
+        },
+        {
+          "char": "]",
+          "label": "93 / 0x5D / 0b1011101 / 0o135 — 닫는 대괄호"
+        },
+        {
+          "char": "^",
+          "label": "94 / 0x5E / 0b1011110 / 0o136 — 캐럿"
+        },
+        {
+          "char": "_",
+          "label": "95 / 0x5F / 0b1011111 / 0o137 — 밑줄"
+        },
+        {
+          "char": "`",
+          "label": "96 / 0x60 / 0b1100000 / 0o140 — 백틱"
+        }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "아스키 중괄호와 물결표 (123–126)",
+      "h2": "아스키 중괄호와 물결표 (123–126)",
+      "intro": "DEL 제어 문자 직전의 마지막 출력 가능 문자들.",
+      "symbols": [
+        {
+          "char": "{",
+          "label": "123 / 0x7B / 0b1111011 / 0o173 — 여는 중괄호"
+        },
+        {
+          "char": "|",
+          "label": "124 / 0x7C / 0b1111100 / 0o174 — 세로줄(파이프)"
+        },
+        {
+          "char": "}",
+          "label": "125 / 0x7D / 0b1111101 / 0o175 — 닫는 중괄호"
+        },
+        {
+          "char": "~",
+          "label": "126 / 0x7E / 0b1111110 / 0o176 — 물결표"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "아스키 코드표 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "한글은 아스키에 없나요?",
+      "a": "없습니다. 아스키는 7비트라 128자밖에 담지 못해서 영문자와 기본 기호만 들어갑니다. 한글은 유니코드에서 별도 영역(가–힣, 44032–55203번)에 배정돼 있고, 완성형 한 글자가 아스키 문자 세 개에 해당하는 용량을 씁니다."
+    },
+    {
+      "q": "16진수 코드는 어디에 쓰나요?",
+      "a": "HTML과 CSS, 프로그래밍에서 문자를 코드로 지정할 때 씁니다. 예를 들어 HTML에서 &#x41; 은 A를 뜻하고, CSS의 content 속성에서는 \\0041 처럼 씁니다. 표의 0x 값이 그 숫자입니다."
+    },
+    {
+      "q": "대문자와 소문자 코드는 왜 32 차이인가요?",
+      "a": "6번째 비트 하나만 다르게 설계했기 때문입니다. A는 65, a는 97로 정확히 32 차이이고, 2진수로 보면 한 자리만 뒤집힌 값입니다. 덕분에 대소문자 변환을 비트 연산 한 번으로 처리할 수 있습니다."
+    },
+    {
+      "q": "확장 아스키는 뭔가요?",
+      "a": "128–255번을 쓰는 8비트 확장판들을 통칭하는 말인데, 표준이 하나가 아니라 지역마다 달랐습니다. 같은 번호가 나라마다 다른 글자를 가리켜 문서가 깨지는 일이 잦았고, 그 문제를 해결하려고 만든 것이 유니코드입니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "번호 순서가 우연이 아닌 이유",
+      "body": "아스키 표를 보면 숫자 0–9가 48–57에 연속으로 놓이고, 대문자가 65–90, 소문자가 97–122에 각각 연속으로 놓입니다. 이 배치는 편의가 아니라 계산을 줄이려는 설계였습니다. 숫자 문자에서 48을 빼면 곧바로 그 숫자의 값이 되고, 대문자에 32를 더하면 소문자가 됩니다. 표를 외우지 않아도 뺄셈 한 번으로 변환이 끝나도록 만든 것입니다. 1963년의 이 결정이 지금도 거의 모든 프로그래밍 언어의 문자 처리 코드 안에 그대로 남아 있습니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/alt-kodeu/",
+      "title": "알트 코드",
+      "desc": "윈도우 Alt 코드로 입력하는 기호 전체 목록."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호와 특수문자를 종류별로 모은 전체 목록."
+    },
+    {
+      "href": "/ko/library/ascii-art/",
+      "title": "아스키 아트 재료",
+      "desc": "선·블록·음영·점자 등 문자로 그림 그리는 재료."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/ascii-codepyo/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/ascii-table/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/ascii-tabelle/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/tabela-ascii/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/tabla-ascii/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/bang-ma-ascii/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/ascii-tablosu/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/ascii-table/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/table-ascii/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/library/ascii-biao/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/tablica-ascii/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/tabela-ascii/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/ascii-tabel/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/ascii-hyou/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/tabella-ascii/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/ascii-codepyo/"
+    }
+  ]
+}

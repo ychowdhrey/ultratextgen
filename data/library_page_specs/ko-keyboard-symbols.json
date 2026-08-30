@@ -1,0 +1,205 @@
+{
+  "slug": "keyboard-giho",
+  "title": "키보드 특수문자 ⌘ ⌥ ⇧ ⏎ — 단축키 기호 복사 붙여넣기 | UltraTextGen",
+  "meta_description": "키보드 특수문자 모음 ⌘ ⌥ ⇧ ⌃ ⏎ ⌫ ⇥. 맥 조합키와 편집·방향키 기호 21개를 눌러서 바로 복사하세요.",
+  "breadcrumb": "키보드 특수문자",
+  "hero_h1": "키보드 특수문자",
+  "hero_tagline": "⌘ ⌥ ⇧ ⌃ ⏎ ⌫ ⇥ ␣ — 단축키를 글로 적을 때 쓰는 기호.",
+  "intro": "단축키를 설명할 때 커맨드나 시프트라고 풀어 쓰는 대신 기호를 쓰면 훨씬 짧고 읽기 쉬워집니다. 맥 키보드에 실제로 인쇄된 글자들이 유니코드에 그대로 있어서, 문서나 안내 글에 붙여넣으면 키캡과 같은 모양으로 보입니다. 아래는 맥 조합키·편집키·방향키 순입니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "mac-modifier-keys",
+      "label": "맥 조합키 기호",
+      "h2": "맥 조합키 기호",
+      "intro": "애플 키보드에 인쇄된 조합키 기호들.",
+      "symbols": [
+        {
+          "char": "⌘",
+          "label": "커맨드 키"
+        },
+        {
+          "char": "⌥",
+          "label": "옵션 키"
+        },
+        {
+          "char": "⇧",
+          "label": "시프트 키"
+        },
+        {
+          "char": "⌃",
+          "label": "컨트롤 키"
+        },
+        {
+          "char": "⇪",
+          "label": "캡스 락"
+        },
+        {
+          "char": "⏏",
+          "label": "이젝트 키"
+        },
+        {
+          "char": "⎋",
+          "label": "이스케이프 키"
+        }
+      ]
+    },
+    {
+      "id": "editing-navigation-keys",
+      "label": "편집·이동 키 기호",
+      "h2": "편집·이동 키 기호",
+      "intro": "리턴, 삭제, 탭, 스페이스 기호.",
+      "symbols": [
+        {
+          "char": "⏎",
+          "label": "리턴 키"
+        },
+        {
+          "char": "↵",
+          "label": "캐리지 리턴 화살표"
+        },
+        {
+          "char": "⌫",
+          "label": "백스페이스 (왼쪽 삭제)"
+        },
+        {
+          "char": "⌦",
+          "label": "딜리트 (오른쪽 삭제)"
+        },
+        {
+          "char": "⇥",
+          "label": "탭 키"
+        },
+        {
+          "char": "⇤",
+          "label": "백탭 (역방향 탭)"
+        },
+        {
+          "char": "␣",
+          "label": "스페이스 키"
+        }
+      ]
+    },
+    {
+      "id": "arrows-special-keys",
+      "label": "방향키와 특수 키",
+      "h2": "방향키와 특수 키",
+      "intro": "화살표 키와 나머지 특수 키 기호.",
+      "symbols": [
+        {
+          "char": "↑",
+          "label": "위쪽 화살표 키"
+        },
+        {
+          "char": "↓",
+          "label": "아래쪽 화살표 키"
+        },
+        {
+          "char": "←",
+          "label": "왼쪽 화살표 키"
+        },
+        {
+          "char": "→",
+          "label": "오른쪽 화살표 키"
+        },
+        {
+          "char": "⌨",
+          "label": "키보드"
+        },
+        {
+          "char": "⎈",
+          "label": "컨트롤 키 (조타륜)"
+        },
+        {
+          "char": "⎙",
+          "label": "프린트 스크린"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "키보드 특수문자 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "⌘ 기호는 무슨 뜻인가요?",
+      "a": "유니코드 이름은 명소 표시(Place of Interest Sign)로, 원래 북유럽에서 관광 명소를 가리키던 도로 표지 기호입니다. 애플이 사과 로고를 단축키에 반복해 쓰는 것을 피하려고 이 기호를 가져다 커맨드 키에 붙였고, 그 뒤로 그 뜻으로 굳었습니다."
+    },
+    {
+      "q": "윈도우 키 기호도 있나요?",
+      "a": "유니코드에 정식으로 배정된 윈도우 로고 키 문자는 없습니다. 로고는 상표라서 문자표에 들어가지 않습니다. 윈도우 단축키를 적을 때는 대개 Win 이나 Ctrl 처럼 글자로 씁니다."
+    },
+    {
+      "q": "안드로이드나 윈도우에서도 이 기호가 보이나요?",
+      "a": "⌘ ⇧ ⌥ 같은 기호는 대부분의 기기 글꼴에 있어서 잘 보입니다. 다만 ⎋ ⎈ ⎙ 처럼 덜 쓰이는 것은 빠져 있을 수 있으니, 여러 사람이 볼 문서라면 앞쪽 기호 위주로 쓰는 편이 안전합니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "키 이름을 글자로 만든 이유",
+      "body": "단축키를 글로 옮기면 금세 길어집니다. 커맨드 시프트 옵션 4 라고 쓰면 열 글자가 넘지만 ⌘⇧⌥4 는 네 글자입니다. 애플이 키캡에 기호를 인쇄한 것도 같은 이유였고, 그 기호들이 유니코드에 들어가면서 화면의 안내 글과 실제 키보드가 같은 그림을 쓰게 됐습니다. 사용자가 설명을 읽고 키보드로 눈을 옮겼을 때 똑같이 생긴 것을 찾으면 되니, 번역이 한 단계 줄어드는 셈입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/alt-kodeu/",
+      "title": "알트 코드",
+      "desc": "윈도우 Alt 코드로 입력하는 기호 전체 목록."
+    },
+    {
+      "href": "/ko/library/hwasalpyo-giho/",
+      "title": "화살표 특수문자",
+      "desc": "→ ← ↑ ↓ 방향을 나타내는 화살표 기호 모음."
+    },
+    {
+      "href": "/ko/library/ascii-codepyo/",
+      "title": "아스키 코드표",
+      "desc": "출력 가능한 아스키 문자와 10진수·16진수 코드."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/keyboard-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/keyboard-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-teclado/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/klavye-sembolleri/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-tastiera/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-clavier/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-na-klaviature/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/tastatur-symbole/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/keyboard-kigou/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/rumuz-alkibord/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/keyboard-giho/"
+    }
+  ]
+}
