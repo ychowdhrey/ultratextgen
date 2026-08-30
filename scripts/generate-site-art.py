@@ -2143,6 +2143,8 @@ PAGES = {
         glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
+  "library-kakaotalk-symbols": ("KakaoTalk Symbols", "Name frames, status accents and jamo",
+      glyphs("ʰ", "♡", "⋆", "‹", "‹"), K_LIB),
   "library-discord-symbols": ("Discord Symbols", "Symbols that paste cleanly in Discord",
         glyphs("✦", "★", "⚔", "♥", "➤"), K_LIB),
   "library-divider-kaomoji": ("Kaomoji Dividers", "Cute text dividers & spacers", m_kaomoji, K_LIB),

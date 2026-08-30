@@ -1,0 +1,146 @@
+{
+  "slug": "kakaotalk-symbols",
+  "title": "KakaoTalk Symbols ꒰ ♡ ㅋㅋ — Copy & Paste for Names, Status & Chat | UltraTextGen",
+  "meta_description": "KakaoTalk symbols to copy and paste: ꒰ ꒱ frames for your display name, ⋆ ⊹ accents for status messages, hearts, dividers, and the ㅋㅋ ㅠㅠ jamo shorthand Korean users actually type. Click any symbol to copy.",
+  "breadcrumb": "KakaoTalk Symbols",
+  "hero_h1": "KakaoTalk Symbols",
+  "hero_tagline": "꒰ ꒱ ♡ ⋆ ⊹ ㅋㅋ ㅠㅠ — frames for your name, accents for your status, and the jamo shorthand that carries most of the tone in Korean chat.",
+  "intro": "One thing to clear up first, because it is the reason most people land here: KakaoTalk's own <em>이모티콘</em> are paid, animated sticker packs sold inside the app. Those are licensed artwork — nobody can copy-paste them, here or anywhere. What you <strong>can</strong> paste is Unicode: the bracket frames Korean users wrap display names in, the small accents that decorate a status message, and the Hangul-jamo shorthand that does the work emoji do in English. That is what this page collects.",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "name-frames",
+      "label": "Display Name Frames",
+      "h2": "Display Name Frames",
+      "intro": "Wrapped around a name, these read as a frame. KakaoTalk allows them in the profile name field where emoji are often stripped.",
+      "symbols": [
+        { "char": "꒰", "label": "Soft Bracket (open)" },
+        { "char": "꒱", "label": "Soft Bracket (close)" },
+        { "char": "「", "label": "Corner Bracket (open)" },
+        { "char": "」", "label": "Corner Bracket (close)" },
+        { "char": "『", "label": "White Corner (open)" },
+        { "char": "』", "label": "White Corner (close)" },
+        { "char": "⌜", "label": "Top-Left Corner" },
+        { "char": "⌟", "label": "Bottom-Right Corner" },
+        { "char": "୧", "label": "Left Flourish" },
+        { "char": "୨", "label": "Right Flourish" },
+        { "char": "៚", "label": "Khmer Flourish" },
+        { "char": "❪", "label": "Ornate Parenthesis" }
+      ]
+    },
+    {
+      "id": "status-accents",
+      "label": "Status Message Accents",
+      "h2": "Status Message Accents",
+      "intro": "Small marks for the one-line status under your name. They stay thin at small sizes, which is the whole point there.",
+      "symbols": [
+        { "char": "⋆", "label": "Small Star" },
+        { "char": "⊹", "label": "Thin Cross" },
+        { "char": "✦", "label": "Filled Sparkle" },
+        { "char": "✧", "label": "Hollow Sparkle" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "｡", "label": "Small Circle" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "⁺", "label": "Superscript Plus" },
+        { "char": "◌", "label": "Dotted Circle" },
+        { "char": "❀", "label": "Small Flower" }
+      ]
+    },
+    {
+      "id": "hearts",
+      "label": "Hearts for KakaoTalk",
+      "h2": "Hearts for KakaoTalk",
+      "intro": "Text hearts, not emoji hearts — these keep your text colour instead of turning red.",
+      "symbols": [
+        { "char": "♡", "label": "Hollow Heart" },
+        { "char": "♥", "label": "Filled Heart" },
+        { "char": "❥", "label": "Drooping Heart" },
+        { "char": "❣", "label": "Heart Exclamation" },
+        { "char": "ෆ", "label": "Sinhala Heart" },
+        { "char": "ღ", "label": "Georgian Heart" },
+        { "char": "𓆩♡𓆪", "label": "Winged Heart Frame" },
+        { "char": "♡̶", "label": "Struck Heart" }
+      ]
+    },
+    {
+      "id": "dividers",
+      "label": "Dividers & Separators",
+      "h2": "Dividers & Separators",
+      "intro": "For splitting a status line into parts, or spacing a name out.",
+      "symbols": [
+        { "char": "・", "label": "Katakana Middle Dot" },
+        { "char": "┈", "label": "Dashed Line" },
+        { "char": "┊", "label": "Dashed Vertical" },
+        { "char": "⌇", "label": "Wavy Line" },
+        { "char": "─", "label": "Light Horizontal" },
+        { "char": "╌", "label": "Double Dash" },
+        { "char": "⌒", "label": "Arc" },
+        { "char": "〰", "label": "Wavy Dash" }
+      ]
+    },
+    {
+      "id": "jamo",
+      "label": "Hangul Jamo Shorthand",
+      "h2": "Hangul Jamo Shorthand",
+      "intro": "Not decoration — this is how Korean chat actually carries tone. Consonants only, no vowels, read as sound or as initials.",
+      "symbols": [
+        { "char": "ㅋㅋ", "label": "Laughing (kk)" },
+        { "char": "ㅎㅎ", "label": "Softer Laugh" },
+        { "char": "ㅠㅠ", "label": "Crying" },
+        { "char": "ㅜㅜ", "label": "Crying (variant)" },
+        { "char": "ㅇㅇ", "label": "Yeah / OK" },
+        { "char": "ㄴㄴ", "label": "No / Nope" },
+        { "char": "ㅂㅂ", "label": "Bye Bye" },
+        { "char": "ㄱㅅ", "label": "Thanks (감사)" },
+        { "char": "ㅊㅋ", "label": "Congrats (축하)" },
+        { "char": "ㅅㄱ", "label": "Good Work (수고)" }
+      ]
+    },
+    {
+      "id": "combos",
+      "label": "Ready-Made Combos",
+      "h2": "Ready-Made Combos",
+      "intro": "Put your name in the middle of any of these and paste the whole thing.",
+      "symbols": [
+        { "char": "꒰ ✦ ꒱", "label": "Sparkle Frame" },
+        { "char": "⋆˚｡⋆", "label": "Star Trail" },
+        { "char": "‧₊˚ ♡ ˚₊‧", "label": "Heart Halo" },
+        { "char": "「 ⊹ 」", "label": "Corner Accent" },
+        { "char": "୧ ⋆ ୨", "label": "Flourish Pair" },
+        { "char": "❀ ・ ❀", "label": "Flower Divider" }
+      ]
+    }
+  ],
+  "faq_h2": "KakaoTalk Symbol FAQ",
+  "faq": [
+    {
+      "q": "Can I copy KakaoTalk's actual emoticons?",
+      "a": "No. The animated character sets — Ryan, Apeach, and the rest — are licensed artwork sold as paid packs inside KakaoTalk, and they only exist as images the app renders for accounts that own them. Nothing on this page or any other site can hand you one as text. The symbols here are Unicode characters, which is a different thing that happens to serve the same decorating job."
+    },
+    {
+      "q": "Why do some emoji look different on KakaoTalk than in my Messages app?",
+      "a": "KakaoTalk substitutes its own artwork for part of the standard emoji set, so the same character can be drawn two ways on one phone depending which app you are in. The underlying character never changes, so anything you copy still arrives intact — only the drawing differs."
+    },
+    {
+      "q": "Will these work in my KakaoTalk display name?",
+      "a": "The bracket, star and heart characters generally do, which is exactly why Korean users reach for them — emoji are stripped or rejected in a lot of name fields and these are not. Keep it short: a name padded out with frames gets truncated in the friend list before the frame closes."
+    },
+    {
+      "q": "What does ㅋㅋ actually mean?",
+      "a": "It is the consonant ㅋ repeated, read as a k-k sound — the Korean equivalent of writing haha. Length scales with amusement, so ㅋ is an acknowledgement and ㅋㅋㅋㅋㅋ is genuine laughter. ㅎㅎ is the gentler version, closer to a smile than a laugh."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "Why Korean chat leans on consonants instead of emoji",
+      "body": "Hangul is built from separate consonant and vowel pieces that stack into syllable blocks, and a keyboard types the pieces rather than the finished block. That makes it trivial to send the consonants alone — ㅋㅋ is faster to type than any emoji is to find in a picker, and it arrives as text, so it never fails to render and never gets stripped by a name field. English has no equivalent because Latin letters do not decompose that way; the nearest thing, haha, is a whole word rather than a fragment. The result is that Korean chat evolved a tone layer out of its own writing system, and emoji sit on top of that rather than replacing it."
+    }
+  ],
+  "related": [
+    { "href": "/library/discord-symbols/", "title": "Discord Symbols", "desc": "Frames, dividers and accents that survive Discord's username and bio fields." },
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face, sorted by emotion." },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "Soft decorative marks for bios, names and captions across every platform." }
+  ]
+}
