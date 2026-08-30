@@ -1,0 +1,173 @@
+{
+  "slug": "uiryo-giho",
+  "title": "의료 기호 ⚕ ☤ ℞ 💊 — 병원·약국 기호 복사 붙여넣기 | UltraTextGen",
+  "meta_description": "의료 기호 모음 ⚕ ☤ ⚚ ℞ ✚ 🩺 💊 💉. 의료 지팡이, 처방 기호, 십자 표시 16개를 눌러서 바로 복사하세요.",
+  "breadcrumb": "의료 기호",
+  "hero_h1": "의료 기호",
+  "hero_tagline": "⚕ ☤ ⚚ ℞ ✚ 🩺 💊 — 병원과 약국에서 쓰는 기호.",
+  "intro": "의료 분야에서 쓰는 기호를 모았습니다. 자주 혼동되는 것이 ⚕ 와 ☤ 인데, 뱀 한 마리가 감긴 ⚕ 가 의료를 뜻하는 올바른 기호이고, 뱀 두 마리에 날개가 달린 ☤ 는 원래 상업과 전령의 상징입니다. 미국에서 잘못 쓰이기 시작해 지금도 병원 간판에 종종 보이지만, 정확히 쓰려면 ⚕ 쪽입니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "medical-pharmacy",
+      "label": "의료와 약국 기호",
+      "h2": "의료와 약국 기호",
+      "intro": "전통적인 의료 지팡이와 처방 기호.",
+      "symbols": [
+        {
+          "char": "⚕",
+          "label": "아스클레피오스의 지팡이"
+        },
+        {
+          "char": "⚕️",
+          "label": "의료 기호 (이모지형)"
+        },
+        {
+          "char": "☤",
+          "label": "카두케우스"
+        },
+        {
+          "char": "⚚",
+          "label": "헤르메스의 지팡이"
+        },
+        {
+          "char": "℞",
+          "label": "처방 기호 (Rx)"
+        }
+      ]
+    },
+    {
+      "id": "medical-crosses",
+      "label": "의료 십자와 더하기 기호",
+      "h2": "의료 십자와 더하기 기호",
+      "intro": "병원과 구급에 쓰는 십자·더하기 표시.",
+      "symbols": [
+        {
+          "char": "✚",
+          "label": "굵은 그리스 십자"
+        },
+        {
+          "char": "✛",
+          "label": "가운데 빈 십자"
+        },
+        {
+          "char": "✜",
+          "label": "굵은 가운데 빈 십자"
+        },
+        {
+          "char": "➕",
+          "label": "굵은 더하기 기호"
+        },
+        {
+          "char": "⊕",
+          "label": "원 안의 더하기"
+        }
+      ]
+    },
+    {
+      "id": "health-emergency",
+      "label": "건강과 응급 이모지",
+      "h2": "건강과 응급 이모지",
+      "intro": "진료와 응급 상황에 쓰는 최근 이모지.",
+      "symbols": [
+        {
+          "char": "🩺",
+          "label": "청진기"
+        },
+        {
+          "char": "💊",
+          "label": "알약"
+        },
+        {
+          "char": "💉",
+          "label": "주사기"
+        },
+        {
+          "char": "🩹",
+          "label": "반창고"
+        },
+        {
+          "char": "🧬",
+          "label": "DNA"
+        },
+        {
+          "char": "🚑",
+          "label": "구급차"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "의료 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "⚕ 와 ☤ 중 어느 것이 의료 기호인가요?",
+      "a": "⚕ 입니다. 뱀 한 마리가 감긴 아스클레피오스의 지팡이로, 그리스 의술의 신에게서 왔습니다. ☤ 는 뱀 두 마리에 날개가 달린 카두케우스이고 원래 상업과 전령을 뜻합니다. 미국 군의관 부대가 20세기 초에 잘못 채택하면서 퍼진 오용입니다."
+    },
+    {
+      "q": "℞ 는 무슨 뜻인가요?",
+      "a": "처방전 맨 앞에 쓰는 기호로, 라틴어 recipe(받으라)의 약자에서 왔습니다. R에 사선을 그은 모양이며, 지금도 영어권 처방전과 약국 간판에 쓰입니다."
+    },
+    {
+      "q": "한국 병원 간판의 십자는 어떤 문자인가요?",
+      "a": "대부분 이미지이지 문자가 아닙니다. 글로 옮길 때 가장 가까운 것은 ✚ 나 ➕ 입니다. 적십자 표시는 제네바 협약이 보호하는 표장이라 상업적 용도로 쓰면 안 됩니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "뱀 한 마리와 두 마리의 차이",
+      "body": "의료 기호의 혼동은 100년 넘게 이어진 실수에서 시작됐습니다. 1902년 미 육군 의무대가 부대 표장을 정하면서 카두케우스를 골랐는데, 이 지팡이는 상업과 협상, 전령의 상징이지 의술과는 무관합니다. 의술의 상징은 뱀 한 마리가 감긴 아스클레피오스의 지팡이입니다. 실수가 굳어진 뒤 미국 상업 의료기관이 이를 따라 쓰면서 널리 퍼졌고, 유니코드는 두 기호를 모두 등재했습니다. 정확히 쓰려는 자리에서는 뱀의 수를 세어 보면 됩니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/gyeonggo-giho/",
+      "title": "경고 기호",
+      "desc": "☢ ☣ ⚠ ⚡ 위험과 주의를 알리는 기호 모음."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호와 특수문자를 종류별로 모은 전체 목록."
+    },
+    {
+      "href": "/ko/library/danwi-giho/",
+      "title": "단위 기호",
+      "desc": "℃ ℉ ㎏ ㎖ 단위와 계량 기호 모음."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/uiryo-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/medical-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-medis/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/medizinische-symbole/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/meditsinskie-simvoly/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-medicos/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/rumuz-tibbiya/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/uiryo-giho/"
+    }
+  ]
+}

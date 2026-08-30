@@ -1,0 +1,369 @@
+{
+  "slug": "html-teuksumunja",
+  "title": "HTML 특수문자 &amp; &lt; &copy; — 엔티티 코드 대조표 | UltraTextGen",
+  "meta_description": "HTML 특수문자와 엔티티 코드 대조표 &amp; &lt; &gt; &nbsp; &copy; &trade; &times;. 예약 문자부터 악센트까지 60개를 복사하세요.",
+  "breadcrumb": "HTML 특수문자",
+  "hero_h1": "HTML 특수문자",
+  "hero_tagline": "&amp; &lt; &gt; &nbsp; &copy; &trade; &times; — 엔티티 코드와 실제 문자를 나란히.",
+  "intro": "HTML에서 문자를 코드로 쓸 때 필요한 엔티티 목록입니다. 앞의 다섯 개는 <strong>반드시 escape 해야 하는 예약 문자</strong>로, 그대로 쓰면 태그로 해석돼 화면이 깨집니다. 나머지는 편의를 위한 것이라 유니코드 문자를 직접 넣어도 됩니다. 타일을 누르면 문자가 복사되고, 엔티티 코드는 이름에 함께 적어 두었습니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "reserved-characters",
+      "label": "예약 문자",
+      "h2": "예약 문자",
+      "intro": "HTML에서 반드시 엔티티로 바꿔 써야 하는 문자.",
+      "symbols": [
+        {
+          "char": "&",
+          "label": "&amp; — 앰퍼샌드"
+        },
+        {
+          "char": "<",
+          "label": "&lt; — 작다 기호"
+        },
+        {
+          "char": ">",
+          "label": "&gt; — 크다 기호"
+        },
+        {
+          "char": "\"",
+          "label": "&quot; — 큰따옴표"
+        },
+        {
+          "char": "'",
+          "label": "&apos; — 작은따옴표"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-entities",
+      "label": "문장부호와 조판 엔티티",
+      "h2": "문장부호와 조판 엔티티",
+      "intro": "따옴표, 대시, 줄임표 등 조판용 문자.",
+      "symbols": [
+        {
+          "char": " ",
+          "label": "&nbsp; — 줄바꿈 없는 공백 (빈칸으로 보임)"
+        },
+        {
+          "char": "–",
+          "label": "&ndash; — 엔 대시"
+        },
+        {
+          "char": "—",
+          "label": "&mdash; — 엠 대시"
+        },
+        {
+          "char": "…",
+          "label": "&hellip; — 줄임표"
+        },
+        {
+          "char": "•",
+          "label": "&bull; — 불릿"
+        },
+        {
+          "char": "§",
+          "label": "&sect; — 조항 기호"
+        },
+        {
+          "char": "¶",
+          "label": "&para; — 단락 기호"
+        },
+        {
+          "char": "“",
+          "label": "&ldquo; — 여는 큰따옴표"
+        },
+        {
+          "char": "”",
+          "label": "&rdquo; — 닫는 큰따옴표"
+        },
+        {
+          "char": "‘",
+          "label": "&lsquo; — 여는 작은따옴표"
+        },
+        {
+          "char": "’",
+          "label": "&rsquo; — 닫는 작은따옴표"
+        },
+        {
+          "char": "«",
+          "label": "&laquo; — 왼쪽 겹화살괄호"
+        },
+        {
+          "char": "»",
+          "label": "&raquo; — 오른쪽 겹화살괄호"
+        }
+      ]
+    },
+    {
+      "id": "currency-legal-entities",
+      "label": "통화와 권리 표시 엔티티",
+      "h2": "통화와 권리 표시 엔티티",
+      "intro": "화폐 기호와 저작권·상표 표시.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "&copy; — 저작권 기호"
+        },
+        {
+          "char": "®",
+          "label": "&reg; — 등록상표 기호"
+        },
+        {
+          "char": "™",
+          "label": "&trade; — 상표 기호"
+        },
+        {
+          "char": "€",
+          "label": "&euro; — 유로 기호"
+        },
+        {
+          "char": "£",
+          "label": "&pound; — 파운드 기호"
+        },
+        {
+          "char": "¥",
+          "label": "&yen; — 엔 기호"
+        },
+        {
+          "char": "¢",
+          "label": "&cent; — 센트 기호"
+        }
+      ]
+    },
+    {
+      "id": "math-entities",
+      "label": "수학과 단위 엔티티",
+      "h2": "수학과 단위 엔티티",
+      "intro": "연산자, 분수, 비교 기호와 도 기호.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "&times; — 곱셈 기호"
+        },
+        {
+          "char": "÷",
+          "label": "&divide; — 나눗셈 기호"
+        },
+        {
+          "char": "±",
+          "label": "&plusmn; — 플러스마이너스"
+        },
+        {
+          "char": "½",
+          "label": "&frac12; — 2분의 1"
+        },
+        {
+          "char": "¼",
+          "label": "&frac14; — 4분의 1"
+        },
+        {
+          "char": "¾",
+          "label": "&frac34; — 4분의 3"
+        },
+        {
+          "char": "°",
+          "label": "&deg; — 도 기호"
+        },
+        {
+          "char": "µ",
+          "label": "&micro; — 마이크로 기호"
+        },
+        {
+          "char": "∞",
+          "label": "&infin; — 무한대"
+        },
+        {
+          "char": "≈",
+          "label": "&asymp; — 거의 같음"
+        },
+        {
+          "char": "≠",
+          "label": "&ne; — 같지 않음"
+        },
+        {
+          "char": "≤",
+          "label": "&le; — 작거나 같음"
+        },
+        {
+          "char": "≥",
+          "label": "&ge; — 크거나 같음"
+        },
+        {
+          "char": "√",
+          "label": "&radic; — 제곱근"
+        }
+      ]
+    },
+    {
+      "id": "arrows-shapes-entities",
+      "label": "화살표와 도형 엔티티",
+      "h2": "화살표와 도형 엔티티",
+      "intro": "방향 화살표, 카드 무늬, 별.",
+      "symbols": [
+        {
+          "char": "←",
+          "label": "&larr; — 왼쪽 화살표"
+        },
+        {
+          "char": "→",
+          "label": "&rarr; — 오른쪽 화살표"
+        },
+        {
+          "char": "↑",
+          "label": "&uarr; — 위쪽 화살표"
+        },
+        {
+          "char": "↓",
+          "label": "&darr; — 아래쪽 화살표"
+        },
+        {
+          "char": "↔",
+          "label": "&harr; — 양방향 화살표"
+        },
+        {
+          "char": "♥",
+          "label": "&hearts; — 하트 무늬"
+        },
+        {
+          "char": "♦",
+          "label": "&diams; — 다이아 무늬"
+        },
+        {
+          "char": "♣",
+          "label": "&clubs; — 클로버 무늬"
+        },
+        {
+          "char": "♠",
+          "label": "&spades; — 스페이드 무늬"
+        },
+        {
+          "char": "★",
+          "label": "&starf; — 검은 별"
+        },
+        {
+          "char": "☆",
+          "label": "&star; — 흰 별"
+        }
+      ]
+    },
+    {
+      "id": "accented-entities",
+      "label": "악센트 문자 엔티티",
+      "h2": "악센트 문자 엔티티",
+      "intro": "유럽 언어의 악센트 붙은 문자.",
+      "symbols": [
+        {
+          "char": "é",
+          "label": "&eacute; — 어큐트 붙은 e"
+        },
+        {
+          "char": "è",
+          "label": "&egrave; — 그레이브 붙은 e"
+        },
+        {
+          "char": "ê",
+          "label": "&ecirc; — 서큐플렉스 붙은 e"
+        },
+        {
+          "char": "ñ",
+          "label": "&ntilde; — 틸데 붙은 n"
+        },
+        {
+          "char": "ü",
+          "label": "&uuml; — 움라우트 붙은 u"
+        },
+        {
+          "char": "ç",
+          "label": "&ccedil; — 세디유 붙은 c"
+        },
+        {
+          "char": "å",
+          "label": "&aring; — 고리 붙은 a"
+        },
+        {
+          "char": "ø",
+          "label": "&oslash; — 빗금 붙은 o"
+        },
+        {
+          "char": "æ",
+          "label": "&aelig; — AE 합자"
+        },
+        {
+          "char": "ß",
+          "label": "&szlig; — 에스체트"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "HTML 특수문자 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "엔티티를 꼭 써야 하나요?",
+      "a": "& < > 세 개는 반드시 써야 합니다. 그대로 두면 브라우저가 태그의 일부로 읽어서 화면이 깨집니다. 나머지는 문서가 UTF-8이라면 유니코드 문자를 직접 넣어도 똑같이 나옵니다."
+    },
+    {
+      "q": "&nbsp; 는 왜 화면에 아무것도 안 보이나요?",
+      "a": "줄바꿈이 일어나지 않는 공백이라서 그렇습니다. 눈에는 빈칸으로 보이지만 일반 공백과 달리 이 자리에서 줄이 나뉘지 않습니다. 숫자와 단위 사이처럼 떨어지면 안 되는 곳에 씁니다."
+    },
+    {
+      "q": "한글도 엔티티로 써야 하나요?",
+      "a": "아닙니다. 문서 인코딩이 UTF-8이면 한글을 그대로 쓰면 됩니다. 숫자 참조로 바꿀 수는 있지만 읽기 어려워지기만 하고 얻는 것이 없습니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "이름 있는 엔티티가 살아남은 이유",
+      "body": "HTML은 문자를 숫자로도 지정할 수 있습니다. &#169; 는 &copy; 와 똑같은 저작권 기호입니다. 그런데도 이름 있는 엔티티가 계속 쓰이는 것은 사람이 읽기 때문입니다. 소스를 열어 &copy; 를 보면 무엇인지 바로 알지만 &#169; 는 찾아봐야 합니다. HTML5 표준에는 2,000개가 넘는 이름이 정의돼 있는데, 실제로 쓰이는 것은 이 페이지에 있는 정도가 대부분입니다. 나머지는 정의돼 있으나 아무도 외우지 않는, 사전 속의 단어 같은 존재입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/ascii-codepyo/",
+      "title": "아스키 코드표",
+      "desc": "출력 가능한 아스키 문자와 10진수·16진수 코드."
+    },
+    {
+      "href": "/ko/library/alt-kodeu/",
+      "title": "알트 코드",
+      "desc": "윈도우 Alt 코드로 입력하는 기호 전체 목록."
+    },
+    {
+      "href": "/ko/library/latex-giho/",
+      "title": "LaTeX 수식 기호",
+      "desc": "LaTeX 명령어와 수식 기호 대조표."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/html-teuksumunja/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/html-entities/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/html-tokushu-moji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/html-entities/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/html-spetssimvoly/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/entidades-html/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/html-teuksumunja/"
+    }
+  ]
+}

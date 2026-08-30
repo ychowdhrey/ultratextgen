@@ -1,0 +1,169 @@
+{
+  "slug": "gyeonggo-giho",
+  "title": "경고 기호 ☢ ☣ ⚠ ⚡ ☠ — 위험·주의 표시 복사 | UltraTextGen",
+  "meta_description": "경고 기호 모음 ☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔. 방사능·생물학적 위험·고전압·주의 표시 16개를 눌러서 복사하세요.",
+  "breadcrumb": "경고 기호",
+  "hero_h1": "경고 기호",
+  "hero_tagline": "☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔ — 위험을 알리는 표시.",
+  "intro": "위험과 주의를 알리는 기호들입니다. 실제 안전 표지판을 대신할 수는 없지만, 문서나 안내 글에서 주의를 끌어야 할 때 유용합니다. ⚠ 는 대부분의 기기에서 노란 이모지로 그려지고, ☡ 나 ☇ 처럼 덜 쓰이는 것은 글자 색을 그대로 따라갑니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "toxic-radioactive",
+      "label": "방사능·생물학적 위험·독성",
+      "h2": "방사능·생물학적 위험·독성",
+      "intro": "가장 널리 알려진 위험 표시들.",
+      "symbols": [
+        {
+          "char": "☢",
+          "label": "방사능 표시"
+        },
+        {
+          "char": "☣",
+          "label": "생물학적 위험"
+        },
+        {
+          "char": "☠",
+          "label": "해골과 뼈"
+        },
+        {
+          "char": "⚰",
+          "label": "관"
+        },
+        {
+          "char": "⚱",
+          "label": "유골함"
+        }
+      ]
+    },
+    {
+      "id": "warning-electrical",
+      "label": "주의와 전기 위험",
+      "h2": "주의와 전기 위험",
+      "intro": "일반 주의 표시와 고전압·전기 관련 기호.",
+      "symbols": [
+        {
+          "char": "⚠",
+          "label": "주의 표시"
+        },
+        {
+          "char": "☡",
+          "label": "경고 표시"
+        },
+        {
+          "char": "⚡",
+          "label": "고전압"
+        },
+        {
+          "char": "☇",
+          "label": "번개"
+        },
+        {
+          "char": "⌁",
+          "label": "전기 화살표"
+        }
+      ]
+    },
+    {
+      "id": "alert-marks",
+      "label": "느낌표와 금지 표시",
+      "h2": "느낌표와 금지 표시",
+      "intro": "시선을 끌 때 쓰는 느낌표와 금지 기호.",
+      "symbols": [
+        {
+          "char": "‼",
+          "label": "겹느낌표"
+        },
+        {
+          "char": "⁉",
+          "label": "물음느낌표"
+        },
+        {
+          "char": "❗",
+          "label": "굵은 느낌표"
+        },
+        {
+          "char": "❕",
+          "label": "흰 느낌표"
+        },
+        {
+          "char": "❌",
+          "label": "가위표"
+        },
+        {
+          "char": "⛔",
+          "label": "진입 금지"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "경고 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "☢ 방사능 표시는 아무 데나 써도 되나요?",
+      "a": "문서나 대화에서 비유로 쓰는 것은 문제없습니다. 다만 실제 시설이나 제품에 붙이는 안전 표지에는 규격이 정해져 있어서, 유니코드 문자로 대신할 수 없습니다. 실제 표지는 색과 크기, 비율까지 규정돼 있습니다."
+    },
+    {
+      "q": "⚠ 가 왜 노랗게 나오나요?",
+      "a": "기기가 이모지로 그리기 때문입니다. 색 없이 글자 색으로 쓰고 싶으면 ☡ 를 쓰거나, 변이 선택자를 붙이는 방법이 있지만 앱마다 결과가 다릅니다."
+    },
+    {
+      "q": "생물학적 위험 표시는 왜 저렇게 생겼나요?",
+      "a": "1966년에 다우 케미컬이 의도적으로 무의미하게 디자인한 것입니다. 기존 어떤 상징과도 닮지 않아야 배우기 쉽고 오해가 없다는 판단이었고, 실제로 그 목적을 달성해 지금까지 쓰입니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "뜻이 없어야 좋은 기호",
+      "body": "대부분의 기호는 이미 아는 것에 빗대어 뜻을 전합니다. 십자는 병원, 하트는 애정처럼 말입니다. 생물학적 위험 표시는 정반대의 원칙으로 만들어졌습니다. 1966년 다우 케미컬의 디자이너들은 여섯 가지 후보를 여러 나라 사람들에게 보여 주고, 기존의 어떤 것도 연상시키지 않는 도형을 골랐습니다. 아무 뜻도 없어야 새 뜻을 정확히 담을 수 있고, 문화마다 다르게 읽힐 여지도 없어지기 때문입니다. 위험을 알리는 일에서는 모호함이 곧 사고이므로, 백지에서 시작한 것이 옳은 선택이었습니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/uiryo-giho/",
+      "title": "의료 기호",
+      "desc": "⚕ ☤ ℞ 병원과 약국에서 쓰는 기호 모음."
+    },
+    {
+      "href": "/ko/library/nalssi-giho/",
+      "title": "날씨 기호",
+      "desc": "☀ ☁ ☂ ❄ 날씨를 나타내는 기호 모음."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호와 특수문자를 종류별로 모은 전체 목록."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/gyeonggo-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-pericolo/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/warnsymbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-peligro/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/uyari-sembolleri/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/gyeonggo-giho/"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "slug": "latex-giho",
+  "title": "LaTeX 수식 기호 ∑ ∫ α ≤ ∈ — 명령어와 기호 대조표 | UltraTextGen",
+  "meta_description": "LaTeX 수식 기호와 명령어 대조표 ∑ ∏ ∫ √ α β π ≤ ∈ ∀. 그리스 문자·연산자·집합·화살표 62개를 눌러서 복사하세요.",
+  "breadcrumb": "LaTeX 수식 기호",
+  "hero_h1": "LaTeX 수식 기호",
+  "hero_tagline": "∑ ∫ √ α β π ≤ ≠ ∈ ∀ ∞ — 명령어와 실제 기호를 나란히.",
+  "intro": "LaTeX 명령어와 그 명령어가 만들어 내는 실제 유니코드 기호를 나란히 놓았습니다. 논문이나 과제에서 수식을 쓸 때는 명령어를, 메신저나 문서처럼 LaTeX가 없는 곳에서는 기호를 그대로 복사해 쓰면 됩니다. 수학 기호 전반은 <a href=\"/ko/library/suhak-giho/\">수학 기호</a> 쪽이 더 넓습니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "greek-letters",
+      "label": "그리스 문자",
+      "h2": "그리스 문자",
+      "intro": "수식에서 가장 많이 쓰이는 그리스 문자.",
+      "symbols": [
+        {
+          "char": "α",
+          "label": "\\alpha — 그리스 소문자 알파"
+        },
+        {
+          "char": "β",
+          "label": "\\beta — 그리스 소문자 베타"
+        },
+        {
+          "char": "γ",
+          "label": "\\gamma — 그리스 소문자 감마"
+        },
+        {
+          "char": "δ",
+          "label": "\\delta — 그리스 소문자 델타"
+        },
+        {
+          "char": "θ",
+          "label": "\\theta — 그리스 소문자 세타"
+        },
+        {
+          "char": "λ",
+          "label": "\\lambda — 그리스 소문자 람다"
+        },
+        {
+          "char": "μ",
+          "label": "\\mu — 그리스 소문자 뮤"
+        },
+        {
+          "char": "π",
+          "label": "\\pi — 그리스 소문자 파이"
+        },
+        {
+          "char": "σ",
+          "label": "\\sigma — 그리스 소문자 시그마"
+        },
+        {
+          "char": "φ",
+          "label": "\\varphi — 그리스 소문자 파이(피)"
+        },
+        {
+          "char": "Δ",
+          "label": "\\Delta — 그리스 대문자 델타"
+        },
+        {
+          "char": "Ω",
+          "label": "\\Omega — 그리스 대문자 오메가"
+        }
+      ]
+    },
+    {
+      "id": "operators",
+      "label": "연산자",
+      "h2": "연산자",
+      "intro": "합·곱·적분과 사칙연산 기호.",
+      "symbols": [
+        {
+          "char": "∑",
+          "label": "\\sum — 총합 기호"
+        },
+        {
+          "char": "∏",
+          "label": "\\prod — 총곱 기호"
+        },
+        {
+          "char": "∫",
+          "label": "\\int — 적분"
+        },
+        {
+          "char": "∬",
+          "label": "\\iint — 이중 적분"
+        },
+        {
+          "char": "∮",
+          "label": "\\oint — 선적분"
+        },
+        {
+          "char": "√",
+          "label": "\\sqrt — 제곱근"
+        },
+        {
+          "char": "∂",
+          "label": "\\partial — 편미분"
+        },
+        {
+          "char": "∇",
+          "label": "\\nabla — 나블라"
+        },
+        {
+          "char": "±",
+          "label": "\\pm — 플러스마이너스"
+        },
+        {
+          "char": "×",
+          "label": "\\times — 곱셈 기호"
+        },
+        {
+          "char": "÷",
+          "label": "\\div — 나눗셈 기호"
+        },
+        {
+          "char": "⋅",
+          "label": "\\cdot — 가운뎃점 연산자"
+        }
+      ]
+    },
+    {
+      "id": "relations",
+      "label": "관계 기호",
+      "h2": "관계 기호",
+      "intro": "같음, 부등호, 근사와 합동.",
+      "symbols": [
+        {
+          "char": "≤",
+          "label": "\\leq — 작거나 같음"
+        },
+        {
+          "char": "≥",
+          "label": "\\geq — 크거나 같음"
+        },
+        {
+          "char": "≠",
+          "label": "\\neq — 같지 않음"
+        },
+        {
+          "char": "≈",
+          "label": "\\approx — 거의 같음"
+        },
+        {
+          "char": "≡",
+          "label": "\\equiv — 항등"
+        },
+        {
+          "char": "∼",
+          "label": "\\sim — 닮음"
+        },
+        {
+          "char": "≅",
+          "label": "\\cong — 합동"
+        },
+        {
+          "char": "∝",
+          "label": "\\propto — 비례"
+        }
+      ]
+    },
+    {
+      "id": "sets-logic",
+      "label": "집합과 논리",
+      "h2": "집합과 논리",
+      "intro": "원소, 부분집합, 합집합과 한정 기호.",
+      "symbols": [
+        {
+          "char": "∈",
+          "label": "\\in — 원소"
+        },
+        {
+          "char": "∉",
+          "label": "\\notin — 원소 아님"
+        },
+        {
+          "char": "⊂",
+          "label": "\\subset — 부분집합"
+        },
+        {
+          "char": "⊆",
+          "label": "\\subseteq — 부분집합 또는 같음"
+        },
+        {
+          "char": "∪",
+          "label": "\\cup — 합집합"
+        },
+        {
+          "char": "∩",
+          "label": "\\cap — 교집합"
+        },
+        {
+          "char": "∅",
+          "label": "\\emptyset — 공집합"
+        },
+        {
+          "char": "∀",
+          "label": "\\forall — 모든"
+        },
+        {
+          "char": "∃",
+          "label": "\\exists — 존재"
+        },
+        {
+          "char": "¬",
+          "label": "\\neg — 부정"
+        },
+        {
+          "char": "∧",
+          "label": "\\land — 논리곱"
+        },
+        {
+          "char": "∨",
+          "label": "\\lor — 논리합"
+        }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "화살표",
+      "h2": "화살표",
+      "intro": "증명에서 함의와 대응을 나타내는 화살표.",
+      "symbols": [
+        {
+          "char": "→",
+          "label": "\\rightarrow — 오른쪽 화살표"
+        },
+        {
+          "char": "←",
+          "label": "\\leftarrow — 왼쪽 화살표"
+        },
+        {
+          "char": "↔",
+          "label": "\\leftrightarrow — 양방향 화살표"
+        },
+        {
+          "char": "⇒",
+          "label": "\\Rightarrow — 오른쪽 겹화살표"
+        },
+        {
+          "char": "⇔",
+          "label": "\\Leftrightarrow — 양방향 겹화살표"
+        },
+        {
+          "char": "↦",
+          "label": "\\mapsto — 대응 화살표"
+        }
+      ]
+    },
+    {
+      "id": "misc-math",
+      "label": "그 밖의 수학 기호",
+      "h2": "그 밖의 수학 기호",
+      "intro": "무한대, 기하 표시, 괄호와 증명 기호.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "\\infty — 무한대"
+        },
+        {
+          "char": "ℵ",
+          "label": "\\aleph — 알레프"
+        },
+        {
+          "char": "ℏ",
+          "label": "\\hbar — 환산 플랑크 상수"
+        },
+        {
+          "char": "ℓ",
+          "label": "\\ell — 필기체 소문자 l"
+        },
+        {
+          "char": "⊥",
+          "label": "\\perp — 수직"
+        },
+        {
+          "char": "∥",
+          "label": "\\parallel — 평행"
+        },
+        {
+          "char": "∠",
+          "label": "\\angle — 각"
+        },
+        {
+          "char": "⌈",
+          "label": "\\lceil — 왼쪽 천장 괄호"
+        },
+        {
+          "char": "⌋",
+          "label": "\\rfloor — 오른쪽 바닥 괄호"
+        },
+        {
+          "char": "⋯",
+          "label": "\\cdots — 가운데 줄임표"
+        },
+        {
+          "char": "∴",
+          "label": "\\therefore — 그러므로"
+        },
+        {
+          "char": "∵",
+          "label": "\\because — 왜냐하면"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "LaTeX 수식 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "명령어와 기호 중 뭘 복사해야 하나요?",
+      "a": "쓰는 곳에 달렸습니다. LaTeX·오버리프·수식을 지원하는 노션이라면 명령어를, 카톡이나 일반 문서라면 기호 자체를 복사하세요. 이 페이지의 타일을 누르면 기호가 복사되고, 명령어는 이름에 함께 적어 두었습니다."
+    },
+    {
+      "q": "\\varphi 와 \\phi 는 뭐가 다른가요?",
+      "a": "같은 파이의 두 가지 자형입니다. \\varphi 는 둥근 φ, \\phi 는 곧은 ϕ 로, 분야에 따라 관습이 다릅니다. 한 문서 안에서는 하나로 통일하는 것이 중요합니다."
+    },
+    {
+      "q": "한글 문서에 기호만 붙여넣어도 되나요?",
+      "a": "됩니다. 모두 일반 유니코드 문자라 한글과 섞어 써도 깨지지 않습니다. 다만 글꼴에 따라 크기가 본문과 어긋나 보일 수 있어서, 수식이 많은 문서라면 수식 편집기를 쓰는 편이 깔끔합니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "명령어 이름이 곧 발음이다",
+      "body": "LaTeX 명령어는 대부분 기호의 이름을 그대로 적은 것입니다. \\alpha 는 알파, \\sum 은 summation, \\forall 은 for all입니다. 크누스가 이렇게 설계한 것은 수식을 소리 내어 읽는 방식과 타이핑하는 방식을 일치시키기 위해서였습니다. 수학자가 칠판 앞에서 말하는 순서대로 치면 그대로 수식이 되도록 만든 셈입니다. 40년이 지나도록 이 명령어들이 거의 바뀌지 않은 것은, 이름을 잘 지으면 외울 필요가 없어지기 때문입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/suhak-giho/",
+      "title": "수학 기호",
+      "desc": "∑ ∫ ≤ ∞ 수학 기호 전체 모음."
+    },
+    {
+      "href": "/ko/library/geurisa-munja/",
+      "title": "그리스 문자",
+      "desc": "α β γ 그리스 문자 대소문자 전체."
+    },
+    {
+      "href": "/ko/library/html-teuksumunja/",
+      "title": "HTML 특수문자",
+      "desc": "HTML 엔티티와 기호 대조표."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/latex-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/latex-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-latex/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/latex-symbolen/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/latex-giho/"
+    }
+  ]
+}

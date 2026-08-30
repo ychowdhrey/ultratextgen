@@ -1,0 +1,201 @@
+{
+  "slug": "jeojakgwon-sangpyo-giho",
+  "title": "저작권 상표 기호 © ® ™ § ¶ — 문서 기호 복사 | UltraTextGen",
+  "meta_description": "저작권과 상표 기호 모음 © ® ™ ℗ ℠ № § ¶ † ※. 권리 표시와 문서 참조 기호 23개를 눌러서 복사하세요.",
+  "breadcrumb": "저작권 상표 기호",
+  "hero_h1": "저작권 상표 기호",
+  "hero_tagline": "© ® ™ ℗ ℠ № § ¶ † ※ — 권리 표시와 문서 참조 기호.",
+  "intro": "저작권과 상표를 나타내는 기호, 그리고 문서에서 조항과 각주를 가리키는 기호를 모았습니다. ® 와 ™ 는 법적 의미가 달라서 아무 때나 바꿔 쓸 수 없습니다. 등록을 마친 상표에만 ®, 등록 여부와 무관하게 상표로 주장하는 경우에 ™ 를 씁니다. © 하나만 필요하면 <a href=\"/ko/symbol/jeojakgwon-giho/\">저작권 기호</a> 페이지에 자세한 설명이 있습니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "copyright-registered",
+      "label": "저작권과 등록 기호",
+      "h2": "저작권과 등록 기호",
+      "intro": "권리 소유를 나타내는 표시들.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "저작권 기호"
+        },
+        {
+          "char": "®",
+          "label": "등록상표 기호"
+        },
+        {
+          "char": "℗",
+          "label": "음반 저작권"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "원 안의 대문자 C"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "원 안의 대문자 R"
+        },
+        {
+          "char": "ⓒ",
+          "label": "원 안의 소문자 c"
+        },
+        {
+          "char": "ⓡ",
+          "label": "원 안의 소문자 r"
+        }
+      ]
+    },
+    {
+      "id": "trademark-service",
+      "label": "상표와 서비스표",
+      "h2": "상표와 서비스표",
+      "intro": "브랜드를 주장할 때 쓰는 표시.",
+      "symbols": [
+        {
+          "char": "™",
+          "label": "상표 기호"
+        },
+        {
+          "char": "℠",
+          "label": "서비스표 기호"
+        }
+      ]
+    },
+    {
+      "id": "office-numero",
+      "label": "번호와 사무용 기호",
+      "h2": "번호와 사무용 기호",
+      "intro": "문서에서 번호와 수신을 나타내는 약물.",
+      "symbols": [
+        {
+          "char": "№",
+          "label": "번호 기호"
+        },
+        {
+          "char": "℅",
+          "label": "전교 (…를 통해)"
+        },
+        {
+          "char": "℀",
+          "label": "계정"
+        },
+        {
+          "char": "℁",
+          "label": "수신 참조"
+        },
+        {
+          "char": "℆",
+          "label": "각각"
+        }
+      ]
+    },
+    {
+      "id": "section-reference",
+      "label": "조항과 각주 기호",
+      "h2": "조항과 각주 기호",
+      "intro": "법령과 논문에서 조항·각주를 가리키는 기호.",
+      "symbols": [
+        {
+          "char": "§",
+          "label": "조항 기호"
+        },
+        {
+          "char": "¶",
+          "label": "단락 기호"
+        },
+        {
+          "char": "†",
+          "label": "단검표"
+        },
+        {
+          "char": "‡",
+          "label": "겹단검표"
+        },
+        {
+          "char": "※",
+          "label": "참조 표시"
+        },
+        {
+          "char": "‖",
+          "label": "겹세로줄"
+        },
+        {
+          "char": "⁂",
+          "label": "별표 삼각형"
+        },
+        {
+          "char": "⁑",
+          "label": "세로 두 별표"
+        },
+        {
+          "char": "⸿",
+          "label": "단락 머리표"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "저작권 상표 기호 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "® 와 ™ 는 어떻게 구분해서 쓰나요?",
+      "a": "® 는 특허청에 상표 등록을 마친 경우에만 쓸 수 있습니다. 등록하지 않고 ® 를 붙이면 허위 표시가 될 수 있습니다. ™ 는 등록 여부와 관계없이 상표로 사용하고 있다는 주장이라 제약이 덜합니다."
+    },
+    {
+      "q": "© 를 붙여야 저작권이 생기나요?",
+      "a": "아닙니다. 한국을 포함한 베른 협약 가입국에서는 창작하는 순간 저작권이 발생하고, 표시는 요건이 아닙니다. 다만 권리자와 연도를 밝혀 두면 분쟁에서 도움이 되므로 관행적으로 붙입니다."
+    },
+    {
+      "q": "※ 는 어디에 쓰는 기호인가요?",
+      "a": "참조 표시입니다. 한국과 일본에서 특히 많이 쓰여서, 본문 아래 덧붙이는 주의사항이나 부연 설명 앞에 놓습니다. 서양 문서에서는 같은 자리에 * 나 † 를 쓰는 편입니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "각주 기호에는 순서가 있다",
+      "body": "논문과 법령에서 각주를 표시하는 기호는 아무렇게나 고르는 것이 아니라 전통적인 순서가 있습니다. 별표(*), 단검표(†), 겹단검표(‡), 조항 기호(§), 겹세로줄(‖), 단락 기호(¶) 순으로 쓰고, 더 필요하면 같은 기호를 두 개씩 겹칩니다. 숫자 각주가 흔해지기 전, 활자를 손으로 조판하던 시절에 자리를 덜 차지하면서 본문과 구별되는 기호를 정해 둔 것입니다. 지금도 숫자를 쓰기 곤란한 표나 수식 안에서는 이 순서가 그대로 쓰입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/symbol/jeojakgwon-giho/",
+      "title": "저작권 기호 ©",
+      "desc": "© 하나에 대한 자세한 설명과 입력 방법."
+    },
+    {
+      "href": "/ko/library/munjangbuho-giho/",
+      "title": "문장부호 기호",
+      "desc": "따옴표, 줄표, 괄호 등 문장부호를 한곳에."
+    },
+    {
+      "href": "/ko/library/danwi-giho/",
+      "title": "단위 기호",
+      "desc": "℃ ℉ ㎏ ㎖ 단위와 계량 기호 모음."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/jeojakgwon-sangpyo-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/copyright-marken-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-copyright-marca-registrada/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-copyright/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jeojakgwon-sangpyo-giho/"
+    }
+  ]
+}

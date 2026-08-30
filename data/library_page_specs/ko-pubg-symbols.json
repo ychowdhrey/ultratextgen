@@ -1,0 +1,241 @@
+{
+  "slug": "baegeu-giho",
+  "title": "배그 특수문자 ツ 彡 ꧁ ⚔ — 배틀그라운드 닉네임 기호 | UltraTextGen",
+  "meta_description": "배그 특수문자 모음 ツ ッ 彡 乂 ꧁꧂ ⚔ ☠ ★. 배틀그라운드 닉네임과 클랜 태그에 쓰는 기호 32개를 눌러서 복사하세요.",
+  "breadcrumb": "배그 특수문자",
+  "hero_h1": "배그 특수문자",
+  "hero_tagline": "ツ ッ 彡 乂 ꧁ ꧂ ⚔ ☠ ★ — 닉네임과 클랜 태그용 기호.",
+  "intro": "배틀그라운드와 배그 모바일 닉네임에 쓰는 기호를 모았습니다. 게임이 허용하는 문자가 정해져 있어서, 아무 기호나 되는 것은 아닙니다. 아래는 실제로 통과하는 경우가 많은 것들 위주이고, 그래도 넣기 전에 실제 입력칸에서 한 번 확인하는 편이 안전합니다. 닉네임 장식 전반은 <a href=\"/ko/library/nickname-giho/\">닉네임 특수문자</a>에 더 많습니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s0",
+      "label": "배그에서 통과하는 기호",
+      "h2": "배그에서 통과하는 기호",
+      "intro": "닉네임 칸을 대체로 통과하는 문자들.",
+      "symbols": [
+        {
+          "char": "ツ",
+          "label": "가타카나 츠"
+        },
+        {
+          "char": "ッ",
+          "label": "작은 츠"
+        },
+        {
+          "char": "彡",
+          "label": "삼 (효과선)"
+        },
+        {
+          "char": "乂",
+          "label": "예 (엇갈린 칼)"
+        },
+        {
+          "char": "亗",
+          "label": "수 (계급 표시)"
+        },
+        {
+          "char": "々",
+          "label": "반복 기호"
+        },
+        {
+          "char": "ム",
+          "label": "가타카나 무"
+        },
+        {
+          "char": "王",
+          "label": "왕"
+        },
+        {
+          "char": "爪",
+          "label": "조 (발톱 부수)"
+        },
+        {
+          "char": "★",
+          "label": "검은 별"
+        },
+        {
+          "char": "☆",
+          "label": "흰 별"
+        },
+        {
+          "char": "✦",
+          "label": "검은 네 갈래 별"
+        },
+        {
+          "char": "✧",
+          "label": "흰 네 갈래 별"
+        },
+        {
+          "char": "•",
+          "label": "가운뎃점"
+        },
+        {
+          "char": "×",
+          "label": "곱셈 기호"
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "label": "클랜 태그 괄호",
+      "h2": "클랜 태그 괄호",
+      "intro": "이름과 클랜 태그를 감싸는 괄호.",
+      "symbols": [
+        {
+          "char": "꧁",
+          "label": "자바 문자 왼쪽 날개"
+        },
+        {
+          "char": "꧂",
+          "label": "자바 문자 오른쪽 날개"
+        },
+        {
+          "char": "「",
+          "label": "여는 낫표"
+        },
+        {
+          "char": "」",
+          "label": "닫는 낫표"
+        },
+        {
+          "char": "【",
+          "label": "여는 검은 렌즈 괄호"
+        },
+        {
+          "char": "】",
+          "label": "닫는 검은 렌즈 괄호"
+        },
+        {
+          "char": "《",
+          "label": "여는 겹꺾쇠"
+        },
+        {
+          "char": "》",
+          "label": "닫는 겹꺾쇠"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "전투 기호",
+      "h2": "전투 기호",
+      "intro": "배틀로얄 분위기를 내는 기호들.",
+      "symbols": [
+        {
+          "char": "⚔",
+          "label": "엇갈린 검"
+        },
+        {
+          "char": "☠",
+          "label": "해골과 뼈"
+        },
+        {
+          "char": "➤",
+          "label": "검은 화살촉"
+        },
+        {
+          "char": "⌖",
+          "label": "조준점"
+        },
+        {
+          "char": "†",
+          "label": "단검"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "왕관과 체크 기호",
+      "h2": "왕관과 체크 기호",
+      "intro": "등급과 인증을 나타내는 기호.",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "검은 체스 퀸 (왕관)"
+        },
+        {
+          "char": "♚",
+          "label": "검은 체스 킹 (왕관)"
+        },
+        {
+          "char": "✓",
+          "label": "체크 표시"
+        },
+        {
+          "char": "☑",
+          "label": "체크박스"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "배그 특수문자 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "배그 닉네임에 특수문자가 안 들어가요.",
+      "a": "게임이 허용 문자를 제한하기 때문입니다. 한글·영문·숫자만 받는 경우가 많고, 그럴 때는 ツ 나 ꧁ 같은 문자가 통째로 거부됩니다. PC판과 모바일판의 규칙이 다를 수도 있어서, 쓰려는 쪽에서 직접 확인해야 합니다."
+    },
+    {
+      "q": "닉네임 변경권을 쓰기 전에 확인할 방법이 있나요?",
+      "a": "입력칸에 붙여넣어 보면 대개 즉시 거부 메시지가 뜹니다. 변경권은 확인이 끝난 뒤에 쓰세요. 글자 수도 함께 확인하는 게 좋은데, 기호 하나가 두 글자로 세어지는 경우가 있습니다."
+    },
+    {
+      "q": "ツ 는 무슨 뜻인가요?",
+      "a": "일본어 가타카나 츠입니다. 뜻과 상관없이 씩 웃는 옆얼굴처럼 보여서 게임 닉네임에 오래 쓰였습니다. 외국 문자라 한글 전용 칸에서는 거부될 수 있습니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "허용 문자 목록이 유행을 만든다",
+      "body": "게임마다 닉네임 기호 유행이 다른 것은 취향 차이가 아니라 필터 차이입니다. 어떤 게임은 유니코드 대부분을 받아들이고, 어떤 게임은 한글과 영문만 받습니다. 그 사이 어딘가에서 통과하는 문자들이 그 게임의 표준 장식이 됩니다. ツ 와 彡 이 배틀로얄 게임에서 유독 자주 보이는 것도, 일본어 문자를 허용하면서 이모지는 막는 필터가 많았기 때문입니다. 유행은 대개 규칙이 남긴 빈틈에서 자랍니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/nickname-giho/",
+      "title": "닉네임 특수문자",
+      "desc": "게임 아이디를 꾸미는 날개·왕관·전투 기호 전체."
+    },
+    {
+      "href": "/ko/library/wanggwan-giho/",
+      "title": "왕관 기호",
+      "desc": "♔ ♛ 체스 말과 왕관으로 등급 표시하기."
+    },
+    {
+      "href": "/ko/library/teuksu-munja/",
+      "title": "특수문자 모음",
+      "desc": "기호와 특수문자를 종류별로 모은 전체 목록."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/baegeu-giho/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/pubg-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/pubg-symbols/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-pubg/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-pubg/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/pubg-sembolleri/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/baegeu-giho/"
+    }
+  ]
+}
