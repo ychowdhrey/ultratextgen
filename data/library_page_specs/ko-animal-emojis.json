@@ -1,0 +1,545 @@
+{
+  "slug": "dongmul-imoji",
+  "title": "동물 이모지 🐶 🐱 🐰 🦊 🐼 — 동물 이모지 전체 복사 | UltraTextGen",
+  "meta_description": "동물 이모지 모음 🐶 🐱 🐰 🐻 🦊 🐼 🐧 🐳 🦋 🐢. 반려동물·농장·야생·조류·바다·곤충·파충류 99개를 복사하세요.",
+  "breadcrumb": "동물 이모지",
+  "hero_h1": "동물 이모지",
+  "hero_tagline": "🐶 🐱 🐰 🦊 🐼 🐧 🐳 🦋 🐢 — 99종을 종류별로.",
+  "intro": "동물 이모지를 반려동물·농장·야생·조류·바다·곤충·파충류 일곱 묶음으로 나눴습니다. 같은 동물이라도 얼굴만 있는 것과 몸 전체가 나온 것이 따로 있습니다. 🐶 는 얼굴, 🐕 는 옆모습 전신이라 프로필이나 짧은 글에는 얼굴 쪽이 더 눈에 잘 들어옵니다. 글자로 만든 동물 얼굴을 찾으신다면 <a href=\"/ko/library/goyangi-imotikon/\">고양이 이모티콘</a> 쪽입니다.",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "s0",
+      "label": "반려동물 이모지",
+      "h2": "반려동물 이모지",
+      "intro": "집에서 기르는 동물들. 얼굴형과 전신형이 함께 있습니다.",
+      "symbols": [
+        {
+          "char": "🐶",
+          "label": "강아지 얼굴"
+        },
+        {
+          "char": "🐕",
+          "label": "개"
+        },
+        {
+          "char": "🐩",
+          "label": "푸들"
+        },
+        {
+          "char": "🐱",
+          "label": "고양이 얼굴"
+        },
+        {
+          "char": "🐈",
+          "label": "고양이"
+        },
+        {
+          "char": "🐹",
+          "label": "햄스터"
+        },
+        {
+          "char": "🐰",
+          "label": "토끼 얼굴"
+        },
+        {
+          "char": "🐠",
+          "label": "열대어"
+        },
+        {
+          "char": "🐇",
+          "label": "토끼"
+        },
+        {
+          "char": "🐾",
+          "label": "발자국"
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "label": "농장 동물 이모지",
+      "h2": "농장 동물 이모지",
+      "intro": "가축과 가금류.",
+      "symbols": [
+        {
+          "char": "🐄",
+          "label": "소"
+        },
+        {
+          "char": "🐮",
+          "label": "소 얼굴"
+        },
+        {
+          "char": "🐷",
+          "label": "돼지 얼굴"
+        },
+        {
+          "char": "🐖",
+          "label": "돼지"
+        },
+        {
+          "char": "🐑",
+          "label": "암양"
+        },
+        {
+          "char": "🐐",
+          "label": "염소"
+        },
+        {
+          "char": "🐔",
+          "label": "닭"
+        },
+        {
+          "char": "🐓",
+          "label": "수탉"
+        },
+        {
+          "char": "🐴",
+          "label": "말 얼굴"
+        },
+        {
+          "char": "🐎",
+          "label": "말"
+        },
+        {
+          "char": "🦃",
+          "label": "칠면조"
+        },
+        {
+          "char": "🐂",
+          "label": "황소"
+        },
+        {
+          "char": "🐃",
+          "label": "물소"
+        },
+        {
+          "char": "🐽",
+          "label": "돼지 코"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "야생 동물 이모지",
+      "h2": "야생 동물 이모지",
+      "intro": "포유류 야생 동물 서른 종.",
+      "symbols": [
+        {
+          "char": "🦁",
+          "label": "사자"
+        },
+        {
+          "char": "🐯",
+          "label": "호랑이 얼굴"
+        },
+        {
+          "char": "🐻",
+          "label": "곰"
+        },
+        {
+          "char": "🐼",
+          "label": "판다"
+        },
+        {
+          "char": "🐨",
+          "label": "코알라"
+        },
+        {
+          "char": "🦊",
+          "label": "여우"
+        },
+        {
+          "char": "🐺",
+          "label": "늑대"
+        },
+        {
+          "char": "🐘",
+          "label": "코끼리"
+        },
+        {
+          "char": "🦒",
+          "label": "기린"
+        },
+        {
+          "char": "🦏",
+          "label": "코뿔소"
+        },
+        {
+          "char": "🦛",
+          "label": "하마"
+        },
+        {
+          "char": "🐒",
+          "label": "원숭이"
+        },
+        {
+          "char": "🐵",
+          "label": "원숭이 얼굴"
+        },
+        {
+          "char": "🦌",
+          "label": "사슴"
+        },
+        {
+          "char": "🐿",
+          "label": "다람쥐"
+        },
+        {
+          "char": "🐅",
+          "label": "호랑이"
+        },
+        {
+          "char": "🐆",
+          "label": "표범"
+        },
+        {
+          "char": "🦍",
+          "label": "고릴라"
+        },
+        {
+          "char": "🦧",
+          "label": "오랑우탄"
+        },
+        {
+          "char": "🙈",
+          "label": "보지 않는 원숭이"
+        },
+        {
+          "char": "🙉",
+          "label": "듣지 않는 원숭이"
+        },
+        {
+          "char": "🙊",
+          "label": "말하지 않는 원숭이"
+        },
+        {
+          "char": "🐻‍❄️",
+          "label": "북극곰"
+        },
+        {
+          "char": "🦓",
+          "label": "얼룩말"
+        },
+        {
+          "char": "🦝",
+          "label": "너구리"
+        },
+        {
+          "char": "🦣",
+          "label": "매머드"
+        },
+        {
+          "char": "🐭",
+          "label": "쥐 얼굴"
+        },
+        {
+          "char": "🐁",
+          "label": "생쥐"
+        },
+        {
+          "char": "🐀",
+          "label": "쥐"
+        },
+        {
+          "char": "🦇",
+          "label": "박쥐"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "새 이모지",
+      "h2": "새 이모지",
+      "intro": "조류와 병아리.",
+      "symbols": [
+        {
+          "char": "🐦",
+          "label": "새"
+        },
+        {
+          "char": "🐧",
+          "label": "펭귄"
+        },
+        {
+          "char": "🦅",
+          "label": "독수리"
+        },
+        {
+          "char": "🦆",
+          "label": "오리"
+        },
+        {
+          "char": "🦉",
+          "label": "부엉이"
+        },
+        {
+          "char": "🦜",
+          "label": "앵무새"
+        },
+        {
+          "char": "🦚",
+          "label": "공작"
+        },
+        {
+          "char": "🦢",
+          "label": "백조"
+        },
+        {
+          "char": "🦩",
+          "label": "플라밍고"
+        },
+        {
+          "char": "🕊",
+          "label": "비둘기"
+        },
+        {
+          "char": "🪿",
+          "label": "거위"
+        },
+        {
+          "char": "🐤",
+          "label": "아기 병아리"
+        },
+        {
+          "char": "🐣",
+          "label": "알 깨는 병아리"
+        },
+        {
+          "char": "🐥",
+          "label": "정면 병아리"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "바다 생물 이모지",
+      "h2": "바다 생물 이모지",
+      "intro": "바다에 사는 동물들.",
+      "symbols": [
+        {
+          "char": "🐳",
+          "label": "물 뿜는 고래"
+        },
+        {
+          "char": "🐋",
+          "label": "고래"
+        },
+        {
+          "char": "🐬",
+          "label": "돌고래"
+        },
+        {
+          "char": "🦈",
+          "label": "상어"
+        },
+        {
+          "char": "🐙",
+          "label": "문어"
+        },
+        {
+          "char": "🐚",
+          "label": "소라 껍데기"
+        },
+        {
+          "char": "🦑",
+          "label": "오징어"
+        },
+        {
+          "char": "🦐",
+          "label": "새우"
+        },
+        {
+          "char": "🐡",
+          "label": "복어"
+        },
+        {
+          "char": "🦭",
+          "label": "물개"
+        },
+        {
+          "char": "🐟",
+          "label": "물고기"
+        },
+        {
+          "char": "🦞",
+          "label": "랍스터"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "곤충과 작은 생물 이모지",
+      "h2": "곤충과 작은 생물 이모지",
+      "intro": "벌레와 작은 생물.",
+      "symbols": [
+        {
+          "char": "🐛",
+          "label": "애벌레"
+        },
+        {
+          "char": "🦋",
+          "label": "나비"
+        },
+        {
+          "char": "🐌",
+          "label": "달팽이"
+        },
+        {
+          "char": "🐜",
+          "label": "개미"
+        },
+        {
+          "char": "🐝",
+          "label": "꿀벌"
+        },
+        {
+          "char": "🪲",
+          "label": "딱정벌레"
+        },
+        {
+          "char": "🐞",
+          "label": "무당벌레"
+        },
+        {
+          "char": "🦗",
+          "label": "귀뚜라미"
+        },
+        {
+          "char": "🕷",
+          "label": "거미"
+        },
+        {
+          "char": "🦂",
+          "label": "전갈"
+        },
+        {
+          "char": "🪳",
+          "label": "바퀴벌레"
+        },
+        {
+          "char": "🪱",
+          "label": "지렁이"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "파충류와 양서류 이모지",
+      "h2": "파충류와 양서류 이모지",
+      "intro": "뱀, 개구리, 공룡까지.",
+      "symbols": [
+        {
+          "char": "🐍",
+          "label": "뱀"
+        },
+        {
+          "char": "🦎",
+          "label": "도마뱀"
+        },
+        {
+          "char": "🐊",
+          "label": "악어"
+        },
+        {
+          "char": "🐢",
+          "label": "거북"
+        },
+        {
+          "char": "🐸",
+          "label": "개구리"
+        },
+        {
+          "char": "🦕",
+          "label": "용각류 공룡"
+        },
+        {
+          "char": "🦖",
+          "label": "티라노사우루스"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "동물 이모지 자주 묻는 질문",
+  "faq": [
+    {
+      "q": "얼굴형과 전신형은 어떻게 골라야 하나요?",
+      "a": "짧은 글이나 프로필에는 얼굴형이 낫습니다. 🐶 처럼 얼굴만 있는 것은 작게 표시돼도 알아보기 쉽지만, 🐕 처럼 전신이 옆으로 누운 것은 작아지면 뭉개집니다. 문장 안에서 동물 자체를 가리킬 때만 전신형을 쓰면 됩니다."
+    },
+    {
+      "q": "진돗개나 삽살개 이모지도 있나요?",
+      "a": "없습니다. 견종 이모지는 푸들 🐩 하나뿐이고 나머지는 일반적인 개입니다. 특정 품종을 이모지로 추가하려면 유니코드 컨소시엄에 제안서를 내야 하는데, 특정 지역에만 알려진 대상은 채택되기 어렵습니다."
+    },
+    {
+      "q": "🐰 와 🐇 는 뭐가 다른가요?",
+      "a": "🐰 는 토끼 얼굴, 🐇 는 옆에서 본 토끼 전신입니다. 같은 동물의 두 가지 표현이고, 기기에 따라 색과 자세가 조금씩 다릅니다."
+    },
+    {
+      "q": "동물 이모지를 닉네임에 넣을 수 있나요?",
+      "a": "대부분의 게임과 서비스는 닉네임에 이모지를 허용하지 않습니다. 막힌다면 글자로 만든 동물 얼굴(예: ʕ•ᴥ•ʔ 곰, (=^・ω・^=) 고양이)을 쓰면 통과할 가능성이 높습니다."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "세 마리 원숭이는 왜 이모지가 됐나",
+      "body": "🙈 🙉 🙊 는 다른 동물 이모지와 성격이 다릅니다. 종을 가리키는 것이 아니라 속담을 그린 것이기 때문입니다. 나쁜 것을 보지도 듣지도 말하지도 말라는 가르침으로, 일본 닛코 도쇼구 신사의 조각이 널리 알려져 있습니다. 초기 이모지가 일본에서 만들어졌기에 이 세 마리가 자연스럽게 들어갔고, 지금은 원래 뜻과 무관하게 부끄러움이나 못 본 척을 나타내는 데 더 많이 쓰입니다. 이모지의 뜻은 만든 사람이 아니라 쓰는 사람이 정한다는 것을 잘 보여 주는 예입니다."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ko/library/goyangi-imotikon/",
+      "title": "고양이 이모티콘",
+      "desc": "(=^・ω・^=) 글자로 만든 고양이 얼굴 모음."
+    },
+    {
+      "href": "/ko/library/gom-imotikon/",
+      "title": "곰 이모티콘",
+      "desc": "ʕ•ᴥ•ʔ 둥근 귀 곰돌이 얼굴 문자."
+    },
+    {
+      "href": "/ko/library/tokki-imotikon/",
+      "title": "토끼 이모티콘",
+      "desc": "(•ㅅ•) 한글 자모로 만든 토끼 얼굴."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/ko/library/dongmul-imoji/",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "lang": "ko",
+  "page_type": "library",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/animal-emojis/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/animal-emojis/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-hewan/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/emojis-de-animales/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/hayvan-emojileri/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/emojis-animaux/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/dongmul-imoji/"
+    }
+  ]
+}
