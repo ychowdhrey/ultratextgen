@@ -1613,6 +1613,39 @@ complete flowchart, and every script's flags/exit codes:
   backlog this script only surfaces — this class was driven to zero in the
   same change that added the check, so it **fails the build**; there is no
   legitimate case for two EN parents sharing a translation.
+
+  **A missing `x-default` was invisible to the direction pass (fixed
+  2026-08-30) — the same shape as both incidents above.** `audit-hreflang.js`
+  has always asserted that `x-default` points at the cluster's EN member, and
+  the first line of that pass is `const xd = …find(x-default); if (!xd)
+  continue;`. So a page that never declares the tag was skipped in silence,
+  and the audit printed **`x-default not pointing at EN: 0`** while 30 live
+  pages carried no `x-default` at all — 25 of them shipped two days earlier in
+  one Korean batch. *A check that reports nothing is indistinguishable from a
+  check that passes*, for the third recorded time.
+
+  **Absence and correctness are separate questions and each needs its own
+  pass**, so the audit now counts them separately (`x-default missing
+  entirely`) and `--fix` inserts the tag after the block's last alternate,
+  matching that line's indentation and pointing at the EN member the page
+  itself declares. The insertion is additive — it never edits or moves an
+  existing tag — so it cannot disturb a cluster it did not repair, and a page
+  with no `en` alternate is left alone (nothing to point at; `Headless
+  targets` already owns that class).
+
+  **The upstream cause was a spec, not the page.**
+  `generate_library_page_from_spec.py` writes a spec's `hreflang` array
+  verbatim, so 20 `data/library_page_specs/ko-*.json` files with no
+  `x-default` entry produced 20 pages with no `x-default` tag. Fix the spec as
+  well as the page, or the next generator run puts it back — and note that
+  `check_locale_spec.py` **did** error on all 20 and the batch merged anyway,
+  which is a branch-protection question, not a tooling one.
+
+  Verified per this file's own rule against three differently-shaped probes:
+  deleting an `x-default` exits 1 naming the page and `--fix` restores the
+  file byte-identically; removing a block's `en` entry is **not** flagged (no
+  false positive); and repointing an `x-default` at a Spanish URL still fires
+  the original direction class, not the new one.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
