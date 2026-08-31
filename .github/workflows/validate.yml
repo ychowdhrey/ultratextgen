@@ -487,6 +487,11 @@ jobs:
             cat locale-parent-gap.log
             echo '```'
             echo ""
+            echo "### Locale spec check — \`${{ steps.locale_spec.outcome }}\`"
+            echo '```'
+            cat locale-spec.log
+            echo '```'
+            echo ""
             echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
             echo '```'
             cat external-refs.log
@@ -500,6 +505,11 @@ jobs:
             echo "### Locale library directory freshness check — \`${{ steps.locale_library_directory.outcome }}\`"
             echo '```'
             cat locale-library-directory.log
+            echo '```'
+            echo ""
+            echo "### Library hub parity check — \`${{ steps.library_hub_parity.outcome }}\`"
+            echo '```'
+            cat library-hub-parity.log
             echo '```'
             echo ""
             echo "### Library hub coverage check — \`${{ steps.library_hub_coverage.outcome }}\`"

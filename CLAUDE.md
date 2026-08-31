@@ -1613,6 +1613,39 @@ complete flowchart, and every script's flags/exit codes:
   backlog this script only surfaces — this class was driven to zero in the
   same change that added the check, so it **fails the build**; there is no
   legitimate case for two EN parents sharing a translation.
+
+  **A missing `x-default` was invisible to the direction pass (fixed
+  2026-08-30) — the same shape as both incidents above.** `audit-hreflang.js`
+  has always asserted that `x-default` points at the cluster's EN member, and
+  the first line of that pass is `const xd = …find(x-default); if (!xd)
+  continue;`. So a page that never declares the tag was skipped in silence,
+  and the audit printed **`x-default not pointing at EN: 0`** while 30 live
+  pages carried no `x-default` at all — 25 of them shipped two days earlier in
+  one Korean batch. *A check that reports nothing is indistinguishable from a
+  check that passes*, for the third recorded time.
+
+  **Absence and correctness are separate questions and each needs its own
+  pass**, so the audit now counts them separately (`x-default missing
+  entirely`) and `--fix` inserts the tag after the block's last alternate,
+  matching that line's indentation and pointing at the EN member the page
+  itself declares. The insertion is additive — it never edits or moves an
+  existing tag — so it cannot disturb a cluster it did not repair, and a page
+  with no `en` alternate is left alone (nothing to point at; `Headless
+  targets` already owns that class).
+
+  **The upstream cause was a spec, not the page.**
+  `generate_library_page_from_spec.py` writes a spec's `hreflang` array
+  verbatim, so 20 `data/library_page_specs/ko-*.json` files with no
+  `x-default` entry produced 20 pages with no `x-default` tag. Fix the spec as
+  well as the page, or the next generator run puts it back — and note that
+  `check_locale_spec.py` **did** error on all 20 and the batch merged anyway,
+  which is a branch-protection question, not a tooling one.
+
+  Verified per this file's own rule against three differently-shaped probes:
+  deleting an `x-default` exits 1 naming the page and `--fix` restores the
+  file byte-identically; removing a block's `en` entry is **not** flagged (no
+  false positive); and repointing an `x-default` at a Spanish URL still fires
+  the original direction class, not the new one.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
@@ -2228,6 +2261,46 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 - Confidence threshold: 0.72 (favors HTML/CSS/guide changes; ignores lock files, lint, tests)
 
 ---
+
+## Discovery Model — multi-surface (added 2026-08-29)
+
+UltraTextGen does not optimize for a single discovery algorithm. Pages,
+tools, images, printables, embeds, and data files are built to be useful on
+their own terms and discoverable through many independent systems: Google,
+Bing, Naver, Yandex and other search engines; AI assistants, answer engines
+and their crawlers; image search; social sharing; embeds on other sites;
+citations; and direct return visits. Google matters and is served well — it
+is one distribution surface, not the operating system the site is designed
+around.
+
+Practical implications when working in this repo:
+
+- **A page or asset should have a defensible reason to exist even if Google
+  never sends it a visitor** — real utility, a share/print/embed path, or
+  reference value an AI or a person would cite. "A keyword exists" is not,
+  by itself, that reason.
+- **Machine legibility is a distribution feature, not hygiene.** Several
+  search and AI crawlers do not execute JavaScript; content and links that
+  matter for discovery should be present in static HTML where feasible
+  (the static footer and pre-rendered library-hub directories exist for
+  exactly this reason — see "Library Hub Coverage" above). `robots.txt`
+  deliberately welcomes AI crawlers.
+- **Engine-specific registrations and their state live in
+  `docs/webmaster-tools-registrations-2026-08-20.md`** (Google, Bing, Naver,
+  Yandex, Pinterest domain verification). Sitemap and structured-data
+  changes serve every registered engine, not just Google — weigh a
+  Google-motivated change against its effect on the others.
+- **The sharing/embed layer is part of discovery**: per-result share links
+  (`?q=&style=`) with their OG preview Function, the `/embed/` widgets and
+  their UTM conventions, and the printables' cred-line attribution are
+  distribution surfaces. Keep them working, and extend them through their
+  existing conventions (UTM naming, the OG style registry, the embed hub)
+  rather than ad hoc.
+- **None of this loosens the existing content rules.** Hub-vs-spoke,
+  English-Parent, parity, ledger discipline, and any active publishing
+  restrictions apply unchanged — multi-surface discovery is about
+  distributing and exposing well-built assets, never about generating more
+  pages.
 
 ## SEO & Structured Data
 

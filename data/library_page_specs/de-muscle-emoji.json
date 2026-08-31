@@ -1,0 +1,244 @@
+{
+ "slug": "muskel-emoji",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "title": "Muskel-Emoji 💪 zum Kopieren — alle Hauttöne und Fitness-Zeichen | UltraTextGen",
+ "meta_description": "Muskel-Emoji 💪 in allen Hauttönen zum Kopieren, dazu Fitness-, Motivations- und Erfolgszeichen für Trainingsposts und Statusmeldungen.",
+ "breadcrumb": "Muskel-Emoji",
+ "hero_h1": "Muskel-Emoji",
+ "hero_tagline": "💪 in allen Hauttönen, dazu die Zeichen für Training und Erfolg.",
+ "intro": "💪 meint längst nicht nur Muskeln: Es steht ebenso für Durchhalten, Zuspruch und „das schaffst du“. Diese Seite hat das Zeichen in allen Hauttönen, die Fitness-Emojis und die Kombinationen, die in Trainingsposts üblich sind.",
+ "sections": [
+  {
+   "id": "muskel",
+   "label": "Bizeps in allen Hauttönen",
+   "h2": "Bizeps in allen Hauttönen",
+   "intro": "Grundton plus Modifikatoren, dazu der mechanische Arm.",
+   "symbols": [
+    {
+     "char": "💪",
+     "label": "Angespannter Bizeps"
+    },
+    {
+     "char": "💪🏻",
+     "label": "Bizeps, heller Hautton"
+    },
+    {
+     "char": "💪🏼",
+     "label": "Bizeps, mittelheller Hautton"
+    },
+    {
+     "char": "💪🏽",
+     "label": "Bizeps, mittlerer Hautton"
+    },
+    {
+     "char": "💪🏾",
+     "label": "Bizeps, mitteldunkler Hautton"
+    },
+    {
+     "char": "💪🏿",
+     "label": "Bizeps, dunkler Hautton"
+    },
+    {
+     "char": "🦾",
+     "label": "Mechanischer Arm"
+    }
+   ]
+  },
+  {
+   "id": "fitness",
+   "label": "Training",
+   "h2": "Training",
+   "intro": "Die Zeichen rund ums Training.",
+   "symbols": [
+    {
+     "char": "🏋️",
+     "label": "Person beim Gewichtheben"
+    },
+    {
+     "char": "🏋️‍♀️",
+     "label": "Frau beim Gewichtheben"
+    },
+    {
+     "char": "🏃",
+     "label": "Laufende Person"
+    },
+    {
+     "char": "🤸",
+     "label": "Person beim Rad schlagen"
+    },
+    {
+     "char": "🧗",
+     "label": "Kletternde Person"
+    },
+    {
+     "char": "💦",
+     "label": "Schweißtropfen"
+    },
+    {
+     "char": "🥵",
+     "label": "Überhitztes Gesicht"
+    }
+   ]
+  },
+  {
+   "id": "erfolg",
+   "label": "Motivation und Erfolg",
+   "h2": "Motivation und Erfolg",
+   "intro": "Für das Ergebnis.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Feuer"
+    },
+    {
+     "char": "🥇",
+     "label": "Goldmedaille"
+    },
+    {
+     "char": "🏆",
+     "label": "Pokal"
+    },
+    {
+     "char": "💯",
+     "label": "Hundert Punkte"
+    },
+    {
+     "char": "⚡",
+     "label": "Hochspannung"
+    },
+    {
+     "char": "👊",
+     "label": "Entgegenkommende Faust"
+    },
+    {
+     "char": "🎯",
+     "label": "Volltreffer"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zum Muskel-Emoji",
+ "faq": [
+  {
+   "q": "Bedeutet 💪 nur Sport?",
+   "a": "Nein. Es wird ebenso für Durchhaltevermögen und Zuspruch verwendet — „du schaffst das“ nach einer schwierigen Nachricht, „ich halte durch“ in einer Krankmeldung. Die Fitness-Bedeutung ist die naheliegende, nicht die einzige."
+  },
+  {
+   "q": "Wofür steht 🦾?",
+   "a": "Für einen mechanischen Arm — eine Prothese oder ein Roboterarm. Es kam 2019 als Barrierefreiheits-Emoji dazu und wird daneben in Technik- und Science-Fiction-Zusammenhängen verwendet. Es ist kein Ersatz für 💪."
+  },
+  {
+   "q": "Warum zeigt das Emoji nur einen Arm?",
+   "a": "Weil es eine Geste abbildet, keine Person. Der angewinkelte Arm mit angespanntem Bizeps ist eine eigenständige Geste, die für Stärke steht — ähnlich wie 👍 nur eine Hand zeigt."
+  },
+  {
+   "q": "Gibt es Hauttöne?",
+   "a": "Ja, alle fünf Fitzpatrick-Stufen. Auf dem Handy hält man das Emoji in der Tastatur gedrückt; alternativ von hier kopieren, weil sich ein bereits eingefügtes Zeichen nicht nachträglich umfärben lässt."
+  },
+  {
+   "q": "Passt 💪 in eine berufliche Nachricht?",
+   "a": "In lockeren Teamchats als Zuspruch durchaus. In formeller Korrespondenz wirkt es unpassend — dort trägt ein ausgeschriebener Satz mehr als eine Geste."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Vom Kraftsport zum Zuspruch",
+   "body": "💪 kam 2010 mit Unicode 6.0 als schlichte Abbildung eines angespannten Arms. Die Bedeutungserweiterung zum Zuspruch — „halte durch“, „du schaffst das“ — kam ohne Umweg über eine Redewendung, einfach weil ein Kraftzeichen naheliegend ist, wenn man jemandem Kraft wünscht. Bemerkenswert daran ist, dass die neue Lesart die alte nicht verdrängt hat: Anders als bei 🚀 oder 🤓 stehen beide Bedeutungen gleichberechtigt nebeneinander, und der Kontext trennt sie ohne Missverständnisse."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/hand-symbole/",
+   "title": "Hand-Symbole und Gesten",
+   "desc": "Alle Handzeichen von Victory bis Faust."
+  },
+  {
+   "href": "/de/library/daumen-hoch-emoji/",
+   "title": "Daumen hoch Emoji",
+   "desc": "👍 in allen Hauttönen, plus Daumendrücken."
+  },
+  {
+   "href": "/de/library/emoji-bedeutung/",
+   "title": "Emoji Bedeutung",
+   "desc": "Was die gebräuchlichsten Emojis wirklich aussagen."
+  },
+  {
+   "href": "/de/library/fussball-symbole/",
+   "title": "Fußball-Symbole",
+   "desc": "Zeichen rund um Sport und Wettkampf zum Kopieren."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/muskel-emoji/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/muscle-emoji/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/muskel-emoji/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/muscle-emoji/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Kombinationen",
+  "h2": "Trainings-Kombinationen",
+  "intro": "Komplette Kombinationen mit einem Klick kopieren."
+ },
+ "collection_container_id": "muscleSetsContainer",
+ "collections": [
+  {
+   "name": "Training erledigt",
+   "flags": [
+    "💪",
+    "🏋️",
+    "💦"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Persönliche Bestleistung",
+   "flags": [
+    "💪",
+    "🥇",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Keine Pause",
+   "flags": [
+    "💪",
+    "🏃",
+    "⚡"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Volle Kraft",
+   "flags": [
+    "💪",
+    "💯",
+    "👊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Aufbauphase",
+   "flags": [
+    "💪",
+    "🔥",
+    "🏆"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
+}
