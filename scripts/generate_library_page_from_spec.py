@@ -220,6 +220,37 @@ LOCALE_FAQ_LABEL = {
     "id": "Pertanyaan Umum",
 }
 
+# ---------------------------------------------------------------------------
+# Locale key normalisation.
+#
+# A spec's `lang` is a BCP-47 tag and BCP-47 is case-insensitive, so both
+# "zh-tw" and "zh-TW" are valid and BOTH occur in data/library_page_specs/
+# (33 specs lowercase, 13 with the conventional region casing). The chrome
+# tables above are keyed with the conventional casing only, so a plain
+# `.get(lang)` silently missed every lowercase spec and fell back to English
+# — verified 2026-08-31 by rendering data/library_page_specs/zh-tw/phi-symbol.json,
+# which produced aria-label="Copy 小寫 phi" and "Related Resources" while the
+# live page correctly carries 複製 / 相關頁面. Nothing failed; the page just
+# came out half-English, which is exactly the class of defect
+# check-locale-translation.js exists to catch.
+#
+# `chrome_key` resolves a tag to whatever key the tables actually use;
+# `url_segment` gives the directory name, which is always lowercase because
+# the site serves /zh-tw/ (see the URL_SEGMENT note further down).
+_CHROME_KEYS = {k.lower(): k for k in LOCALE_UI_STRINGS}
+_FAQ_KEYS = {k.lower(): k for k in LOCALE_FAQ_LABEL}
+
+
+def chrome_key(lang, table_keys):
+    """Canonical key for `lang` in a locale table, matched case-insensitively."""
+    return table_keys.get(str(lang).lower(), lang)
+
+
+def url_segment(lang):
+    """Directory segment for a locale. Always lowercase: the site serves /zh-tw/."""
+    return str(lang).lower()
+
+
 
 def render_faq(faq, label, heading=None):
     """Render the optional FAQ block.
@@ -453,8 +484,8 @@ def render_page(spec):
     # English specs render byte-identically).
     lang = spec.get("lang", "en")
     dir_attr = ' dir="rtl"' if lang in RTL_LANGS else ""
-    ui = LOCALE_UI_STRINGS.get(lang, {})
-    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{lang}/"
+    ui = LOCALE_UI_STRINGS.get(chrome_key(lang, _CHROME_KEYS), {})
+    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{url_segment(lang)}/"
     home_url = spec.get("home_url", default_home_url)
     crumb_home = spec.get("crumb_home", ui.get("home", "Home"))
     # page_type "symbol" pages sit under /symbol/ instead of /library/ and
@@ -557,7 +588,10 @@ def render_page(spec):
     # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
     # spec list, so a page can never ship schema for Q&A it doesn't render.
     faq = spec.get("faq") or []
-    faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
+    faq_label = spec.get(
+        "faq_label",
+        LOCALE_FAQ_LABEL.get(chrome_key(lang, _FAQ_KEYS), "Frequently Asked Questions"),
+    )
     faq_h2 = spec.get("faq_h2")
     faq_html = (
         f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label, faq_h2)}"
@@ -751,9 +785,11 @@ def main(argv=None):
     # The hreflang code is not always the directory name: zh-TW is the correct
     # hreflang code but every live Traditional-Chinese URL on this site is
     # /zh-tw/. Writing to REPO/zh-TW/ created a second, unlinked URL space —
-    # caught 2026-08-10 on the iphone-emojis batch. Map explicitly.
-    URL_SEGMENT = {"zh-TW": "zh-tw"}
-    seg = URL_SEGMENT.get(lang, lang)
+    # caught 2026-08-10 on the iphone-emojis batch. `url_segment` lowercases
+    # every tag, which covers zh-TW and any future region-subtagged locale;
+    # it is the same helper render_page() uses for the home-crumb URL, so the
+    # written path and the linked path cannot drift apart.
+    seg = url_segment(lang)
     out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
