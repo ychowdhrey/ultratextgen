@@ -419,84 +419,6 @@
     ],
     "de": [
       {
-        "string": "« » Guillemets",
-        "reason": "character name that coincides with the English form in this language. Evidence from de/symbol/anfuehrungszeichen/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Öffnendes Anführungszeichen (U+201E) — Double Low-9 Quotation Mark, das tiefe öffnende „; Left Double Quotation Mark → Schließendes Anführungszeichen (U+201C) — Left Double Quotation Mark, im Deutschen das hohe schließende “; Single Low-9 Quotation Mark → Einfaches öffnendes (U+201A) — Single Low-9 Quotation Mark, für die Verschachtelung), so this one is kept because it genuinely matches.",
-        "found_on": "de/symbol/anfuehrungszeichen/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "↩️ Emoji → Text",
-        "reason": "mode-tab label; the arrow and both nouns are identical in German",
-        "found_on": "de/usecase/emoji-buchstaben/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "'aesthetic' is the established German loanword for this style — the site's own de/aesthetic-schrift/ carries the H1 'Aesthetic Schrift Generator'",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📟 Retro / Pixel",
-        "reason": "'Retro' and 'Pixel' are both ordinary German words spelled identically to the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Alpha",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
@@ -641,16 +563,16 @@
         "added": "2026-08-25"
       },
       {
-        "string": "Emoji → Text",
-        "reason": "mode-tab label; the arrow and both nouns are identical in German",
-        "found_on": "de/usecase/emoji-buchstaben/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Emoji Combos",
         "reason": "both words are used untranslated in German",
         "found_on": "de/library/geschenk-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "Emoji → Text",
+        "reason": "mode-tab label; the arrow and both nouns are identical in German",
+        "found_on": "de/usecase/emoji-buchstaben/",
+        "added": "2026-08-25"
       },
       {
         "string": "Emoji?",
@@ -668,18 +590,6 @@
         "string": "Epsilon",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
         "added": "2026-08-25"
       },
       {
@@ -731,12 +641,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Hiragana",
         "reason": "Japanese script name, cited unchanged in this language",
         "found_on": "de/library/japanische-symbole/",
@@ -773,12 +677,6 @@
         "added": "2026-08-15"
       },
       {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Joystick",
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/geist-emoji/",
@@ -813,6 +711,12 @@
         "reason": "Japanese script name, cited unchanged in this language",
         "found_on": "de/library/japanische-symbole/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Kaze — Wind",
+        "reason": "kanji gloss for 風. 'Wind' is the correct German noun and is spelled identically to the English. Evidence from de/library/fortnite-zeichen/ itself: every neighbouring gloss in the same section IS translated (Oni — Dämon, Ryu — Drache, Kami — Gott, Kage — Schatten, Ha — Klinge, Kaminari — Donner, Hi — Feuer, Yami — Dunkelheit), so this one coincides genuinely rather than being skipped.",
+        "found_on": "de/library/fortnite-zeichen/",
+        "added": "2026-08-31"
       },
       {
         "string": "Khanda",
@@ -1193,12 +1097,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Venus",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from de/library/sternzeichen-symbole/ itself: the tiles around it are translated (Mercury → Merkur; Earth → Erde; Last Quarter Moon → Abnehmender Halbmond), so this one is kept because it genuinely matches.",
         "found_on": "de/library/sternzeichen-symbole/",
@@ -1215,12 +1113,6 @@
         "reason": "identical noun in German",
         "found_on": "de/library/anime-symbole/",
         "added": "2026-08-15"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
       },
       {
         "string": "XOXO",
@@ -1253,12 +1145,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "zeta",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Zeta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
@@ -1269,6 +1155,126 @@
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/teufel-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "zeta",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "« » Guillemets",
+        "reason": "character name that coincides with the English form in this language. Evidence from de/symbol/anfuehrungszeichen/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Öffnendes Anführungszeichen (U+201E) — Double Low-9 Quotation Mark, das tiefe öffnende „; Left Double Quotation Mark → Schließendes Anführungszeichen (U+201C) — Left Double Quotation Mark, im Deutschen das hohe schließende “; Single Low-9 Quotation Mark → Einfaches öffnendes (U+201A) — Single Low-9 Quotation Mark, für die Verschachtelung), so this one is kept because it genuinely matches.",
+        "found_on": "de/symbol/anfuehrungszeichen/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "↩️ Emoji → Text",
+        "reason": "mode-tab label; the arrow and both nouns are identical in German",
+        "found_on": "de/usecase/emoji-buchstaben/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established German loanword for this style — the site's own de/aesthetic-schrift/ carries the H1 'Aesthetic Schrift Generator'",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'Retro' and 'Pixel' are both ordinary German words spelled identically to the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
       }
     ],
     "es": [
