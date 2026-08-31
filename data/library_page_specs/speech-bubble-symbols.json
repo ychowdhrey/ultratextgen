@@ -1,0 +1,224 @@
+{
+  "slug": "speech-bubble-symbols",
+  "title": "Speech Bubble Symbols 💬 ❝ 「」 — Copy and Paste Text Bubbles | UltraTextGen",
+  "meta_description": "Speech bubble symbols to copy and paste: 💬 🗨️ 💭 speech and thought balloons, ❝ ❞ quote bubbles, 「」 bracket bubbles, and the tails that turn a frame into a bubble. Click any symbol to copy.",
+  "breadcrumb": "Speech Bubble Symbols",
+  "hero_h1": "Speech Bubble Symbols",
+  "hero_tagline": "💬 🗨️ 💭 ❝ ❞ 「」 ◖◗ — the colour balloons redraw themselves on every device; the quote and bracket bubbles never do. Pick by where it has to survive.",
+  "intro": "A speech bubble does two jobs: it marks text as something being said, and it points at whoever said it. Unicode splits those jobs across four groups. The emoji balloons carry the whole shape at once but arrive in colour and change artwork between devices. The quote and bracket forms are plain characters, so they take your text colour and stay identical everywhere — which is why bios and captions tend to use those instead. Pick by where it has to survive, not by which looks best in this list.",
+  "date_published": "2026-08-29",
+  "date_modified": "2026-08-29",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "balloons",
+      "label": "Speech & Thought Balloon Emojis",
+      "h2": "Speech & Thought Balloon Emojis",
+      "intro": "The drawn balloons. These are emoji, so they render in colour and the artwork differs between Apple, Google and Samsung.",
+      "symbols": [
+        {
+          "char": "💬",
+          "label": "Speech Balloon"
+        },
+        {
+          "char": "🗨️",
+          "label": "Left Speech Bubble"
+        },
+        {
+          "char": "🗯️",
+          "label": "Right Anger Bubble"
+        },
+        {
+          "char": "💭",
+          "label": "Thought Balloon"
+        },
+        {
+          "char": "🗣️",
+          "label": "Speaking Head"
+        },
+        {
+          "char": "🫧",
+          "label": "Bubbles"
+        }
+      ]
+    },
+    {
+      "id": "quote-bubbles",
+      "label": "Quote Bubble Symbols",
+      "h2": "Quote Bubble Symbols",
+      "intro": "Plain characters that read as a bubble when they wrap a line. These follow your text colour and never change shape between platforms.",
+      "symbols": [
+        {
+          "char": "❝",
+          "label": "Heavy Double Quote (open)"
+        },
+        {
+          "char": "❞",
+          "label": "Heavy Double Quote (close)"
+        },
+        {
+          "char": "❛",
+          "label": "Heavy Single Quote (open)"
+        },
+        {
+          "char": "❜",
+          "label": "Heavy Single Quote (close)"
+        },
+        {
+          "char": "“",
+          "label": "Left Double Quote"
+        },
+        {
+          "char": "”",
+          "label": "Right Double Quote"
+        },
+        {
+          "char": "‘",
+          "label": "Left Single Quote"
+        },
+        {
+          "char": "’",
+          "label": "Right Single Quote"
+        },
+        {
+          "char": "„",
+          "label": "Double Low Quote"
+        },
+        {
+          "char": "«",
+          "label": "Left Guillemet"
+        },
+        {
+          "char": "»",
+          "label": "Right Guillemet"
+        },
+        {
+          "char": "‹",
+          "label": "Single Left Guillemet"
+        }
+      ]
+    },
+    {
+      "id": "bracket-bubbles",
+      "label": "Bracket Bubble Symbols",
+      "h2": "Bracket Bubble Symbols",
+      "intro": "CJK brackets used as bubbles. They are full-width, so they hold a line apart more strongly than Latin brackets do.",
+      "symbols": [
+        {
+          "char": "「」",
+          "label": "Corner Brackets"
+        },
+        {
+          "char": "『』",
+          "label": "White Corner Brackets"
+        },
+        {
+          "char": "【】",
+          "label": "Black Lenticular"
+        },
+        {
+          "char": "〖〗",
+          "label": "White Lenticular"
+        },
+        {
+          "char": "〔〕",
+          "label": "Tortoise Shell"
+        },
+        {
+          "char": "（）",
+          "label": "Fullwidth Parentheses"
+        },
+        {
+          "char": "〈〉",
+          "label": "Angle Brackets"
+        },
+        {
+          "char": "《》",
+          "label": "Double Angle Brackets"
+        }
+      ]
+    },
+    {
+      "id": "tails",
+      "label": "Bubble Tails & Frame Pieces",
+      "h2": "Bubble Tails & Frame Pieces",
+      "intro": "The tail is what turns a box into a bubble. Combine these with the frame pieces to draw your own.",
+      "symbols": [
+        {
+          "char": "◖",
+          "label": "Left Half Bubble"
+        },
+        {
+          "char": "◗",
+          "label": "Right Half Bubble"
+        },
+        {
+          "char": "▸",
+          "label": "Small Tail Right"
+        },
+        {
+          "char": "◂",
+          "label": "Small Tail Left"
+        },
+        {
+          "char": "╭",
+          "label": "Round Corner (top left)"
+        },
+        {
+          "char": "╮",
+          "label": "Round Corner (top right)"
+        },
+        {
+          "char": "╰",
+          "label": "Round Corner (bottom left)"
+        },
+        {
+          "char": "╯",
+          "label": "Round Corner (bottom right)"
+        }
+      ]
+    }
+  ],
+  "faq_h2": "Speech Bubble Symbol FAQ",
+  "faq": [
+    {
+      "q": "Why does 🗨️ sometimes show as a plain outline instead of a bubble?",
+      "a": "Because it needs a variation selector to be drawn as an emoji. 🗨 on its own is defined with text presentation, so some apps render it as a monochrome glyph. The version on this page already carries the selector — copy from the tile rather than retyping it."
+    },
+    {
+      "q": "Which speech bubble works in a username or display name?",
+      "a": "None of the emoji balloons, on most platforms — fields that accept emoji are the exception rather than the rule. The quote and bracket forms are ordinary characters and usually pass: 「」 and ❝ ❞ are the two that survive the widest range of username fields."
+    },
+    {
+      "q": "How do I make a multi-line speech bubble out of text?",
+      "a": "Use the corner pieces as a frame: ╭───╮ on the first line, your text between two ╎ or │ characters, ╰───╯ on the last, then a ◗ on the line below for the tail. It only lines up in a monospaced font, so it works in Discord code blocks and terminals but drifts in a normal bio field."
+    },
+    {
+      "q": "What is the difference between 💬 and 💭?",
+      "a": "💬 is speech — words actually said out loud. 💭 is a thought balloon, with the trailing circles that comics use for something a character is thinking but not saying. 🗯️ is the jagged one, reserved for shouting or anger."
+    }
+  ],
+  "editorial_sections": [
+    {
+      "h2": "The tail is the whole invention",
+      "body": "A rectangle around text is just a box. What makes a bubble is the small pointer aimed at a speaker, and that piece is barely two hundred years old — early printed cartoons ran dialogue on ribbons floating near a figure's mouth, with no enclosure at all. The enclosed shape with a tail only settled once comics needed to fit many speakers into one frame and had to answer, unambiguously, who was talking. Unicode inherits that split: it gives you the enclosure in one set of characters and the pointer in another, and a bubble is only finished when you have used both."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Every punctuation mark in one place — quotes, dashes, brackets and the marks that sit between them."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Bracket Symbols",
+      "desc": "Round, square, curly, angle and decorative brackets to frame names, bios and headings."
+    },
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "Pictures drawn from characters — frames, dividers and scenes you can paste anywhere."
+    }
+  ]
+}

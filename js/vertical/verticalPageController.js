@@ -700,6 +700,7 @@
     copyBtn.dataset.text = item.text;
     copyBtn.dataset.style = item.name;
     if (!item.text || !item.text.trim()) copyBtn.disabled = true;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(copyBtn);
 
     info.appendChild(nameLine);
     info.appendChild(meta);
@@ -718,8 +719,8 @@
        generator. The creation is the input plus this layout/decorator/wrap
        state, so the recipient sees exactly this arrangement, not a default. */
     var shareId = shareIdFor(item.name);
-    if (UTG && UTG.buildShareButton) {
-      actions.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      actions.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: item.name,
         params: shareParams(),

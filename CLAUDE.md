@@ -1613,6 +1613,39 @@ complete flowchart, and every script's flags/exit codes:
   backlog this script only surfaces — this class was driven to zero in the
   same change that added the check, so it **fails the build**; there is no
   legitimate case for two EN parents sharing a translation.
+
+  **A missing `x-default` was invisible to the direction pass (fixed
+  2026-08-30) — the same shape as both incidents above.** `audit-hreflang.js`
+  has always asserted that `x-default` points at the cluster's EN member, and
+  the first line of that pass is `const xd = …find(x-default); if (!xd)
+  continue;`. So a page that never declares the tag was skipped in silence,
+  and the audit printed **`x-default not pointing at EN: 0`** while 30 live
+  pages carried no `x-default` at all — 25 of them shipped two days earlier in
+  one Korean batch. *A check that reports nothing is indistinguishable from a
+  check that passes*, for the third recorded time.
+
+  **Absence and correctness are separate questions and each needs its own
+  pass**, so the audit now counts them separately (`x-default missing
+  entirely`) and `--fix` inserts the tag after the block's last alternate,
+  matching that line's indentation and pointing at the EN member the page
+  itself declares. The insertion is additive — it never edits or moves an
+  existing tag — so it cannot disturb a cluster it did not repair, and a page
+  with no `en` alternate is left alone (nothing to point at; `Headless
+  targets` already owns that class).
+
+  **The upstream cause was a spec, not the page.**
+  `generate_library_page_from_spec.py` writes a spec's `hreflang` array
+  verbatim, so 20 `data/library_page_specs/ko-*.json` files with no
+  `x-default` entry produced 20 pages with no `x-default` tag. Fix the spec as
+  well as the page, or the next generator run puts it back — and note that
+  `check_locale_spec.py` **did** error on all 20 and the batch merged anyway,
+  which is a branch-protection question, not a tooling one.
+
+  Verified per this file's own rule against three differently-shaped probes:
+  deleting an `x-default` exits 1 naming the page and `--fix` restores the
+  file byte-identically; removing a block's `en` entry is **not** flagged (no
+  false positive); and repointing an `x-default` at a Spanish URL still fires
+  the original direction class, not the new one.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
@@ -1936,6 +1969,262 @@ the exact line that shipped: exit 1, naming the file, job, step and line.
 
 ---
 
+## Library Hub Coverage — a page is not shipped until its hub knows about it
+
+Every gate above checks a page against a *standard*: its schema, its art, its
+language, its siblings. None of them asked the simpler question — **is this page
+linked from the hub that is supposed to be its front door?** A 2026-08-26 audit
+found **374 pages** where the answer was no: live, indexable, self-canonical, in
+`sitemap.xml`, meshed correctly, and reachable from their own locale's library
+hub by no route at all. 210 of those were `es`, which has the deepest localized
+library on the site (253 library pages) and had **42% hub coverage**.
+
+The `symbol` lane is the control group and it is the whole argument: 17 of 19
+locale symbol hubs card 100% of their spokes, because `sync_symbol_spoke_links.py`
+generates those links and `check-new-symbol-peer-links.py` fails a PR that skips
+it. `library` had neither and drifted to 86%. Same site, same week — the
+difference is whether a machine was doing the remembering.
+
+### Five mechanisms, not one — the part that must not be simplified
+
+There is no shared registry and no route manifest. Each hub carries its own
+hand-maintained copy of its inventory, and *which form* is a property of the hub,
+not of the locale:
+
+| Mechanism | Markup | Visible without JS | Used by |
+|---|---|---|---|
+| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | EN + es, fr, id, it, ko, pt, tr |
+| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | the same eight (generated) |
+| `azIndex` | `<ul class="lib-index-list">` | yes | the same eight |
+| `compareCard` | `<a class="compare-card">` | yes | ar, de, ja, nl, pl, ru, th, vi, zh-tw + every `symbol` hub |
+| `tipCard` | `<a class="tip-card">` inside `.tips-grid` | yes | da, no, sv |
+
+So `registered` means "listed in any of the five" and `crawlable` means "listed
+in one of the four that survive without JavaScript". They are reported separately
+because they answer different questions.
+
+**A checker that knew only `compare-card` would report `da`, `no` and `sv` as
+broken and `es` as fine.** That is not hypothetical — the audit's first pass did
+exactly that, calling those three locales 3, 11 and 10 pages short when all three
+are complete. Do not narrow the mechanism set without re-checking those locales.
+
+### Tooling
+
+- **`npm run audit:library-hub-coverage`** (`scripts/audit-library-hub-coverage.js`)
+  — whole-site dashboard: pages, registered, crawlable, missing, orphans,
+  unsearchable, duplicates, per locale and lane. `--full` for every route,
+  `--locale <code>` to scope, `--json <path>` to save. **Informational, never
+  gating**, same call as `check:images` and `audit:locale-parent-gap` and for the
+  same reason: the 374-page backlog would make it permanently red.
+- **`npm run check:library-hub-coverage`** (`scripts/check-library-hub-coverage.js`)
+  — the enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  step. **Diff-scoped**: for every lane page the branch *adds or renames*, the
+  locale's hub must register it; for every hub file the branch *touches*, every
+  entry must resolve. Pre-existing backlog is reported and never counted.
+- Both share **`scripts/lib/library-hub-registry.js`**, so the audit and the gate
+  can never disagree about what "registered" means.
+
+### Errors and warnings are deliberately different strengths
+
+**Error** — a page the PR adds that no mechanism lists; a hub entry pointing at
+nothing with no `_redirects` rule (a hard 404 straight off the hub).
+**Warning** — a hub entry resolving through a 301 (the visitor lands correctly
+after one hop, so it is lost link equity, not breakage); a page added to a
+directory hub's JS array but not its crawlable index.
+
+Conflating those two would either downgrade a real 404 or turn a lane migration
+into a merge blocker. All five orphans the audit found were the redirect kind:
+four left over from the `<lang>/library/<slug>` → `<lang>/symbol/<slug>` migration
+and one from the `heart-emoji` → `heart-symbols` fold, where `library/index.html`
+was the *only* file in the repo still pointing at the old URL. All five are now
+cleared, so the count is zero and a new one is a real regression.
+
+### `data/library_hub_exclusions.json`
+
+Before this file, the repo had no way to say "this page deliberately does not
+belong in the hub", so every absence was indistinguishable from an oversight —
+which is why the audit could classify nothing as intentionally excluded and had
+to report all 374 as defects. Keyed by route, with a reason and a date.
+
+**Same bar as every other ledger here** (`translation_parity_exceptions.json`,
+`english_parent_exceptions.json`): entries are discussed decisions, never added
+unilaterally to make a page pass. If the gate flags a page, the default fix is to
+register it. The list ships empty on purpose.
+
+### Two builders pre-render the directory hubs, split by lane
+
+`build-library-directory.js` owns `library/index.html` and runs that page's own
+marker-delimited `directoryHtml()`. `build-locale-library-directory.js` owns the
+seven locale directory hubs and lifts each page's own `LIBRARY` array, `escHtml`
+and group-by-alpha block dynamically — resolving whatever outer constant that
+block reaches for (`ALPHABET` on `tr`/`fr`, `INITIAL_ID` on `ko`) by running it
+and lifting the named declaration on a `ReferenceError`. Neither re-implements
+the markup, so static and runtime output cannot drift.
+
+**Why two and not one:** the English hub carries extraction markers and the
+locale hubs deliberately do not — the locale builder was written so they never
+need them. The cost of that split is that **a locale hub's static block goes
+stale silently if its `LIBRARY` array changes and nobody re-runs the locale
+builder.** `npm run check:locale-library-directory` is what closes it; run both
+builders after touching any hub array.
+
+**Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
+The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
+migration lived only inside the JS array and cost nothing while the hub rendered
+client-side. Pre-rendering turned each into a real `<a href>` to a 301. Clear a
+stale array entry *before* regenerating, or the generator ships the link. The
+same applied to EN's `heart-emoji`, folded into `heart-symbols` on 2026-08-13,
+where `library/index.html` was the only file in the repo still pointing at the
+old URL. All five are cleared, so the orphan count is 0 and a new one is a real
+regression.
+
+**`validate_library_pages.py` discovers locales from the canonical code list.**
+It used `REPO.glob("??")` — two characters — so **`zh-tw` was silently never
+scanned**: 41 locale lanes exist, 39 were scanned, and the two skipped were
+`zh-tw/library` and `zh-tw/symbol`, 73 pages, invisible to every check in that
+file including its orphan-spoke pass. (It also matched `js/`, which is not a
+locale.) The fix immediately surfaced a real defect the glob had been hiding —
+`zh-tw/library/happy-kaomoji` storing `data-symbol="ヽ(>∀<☆)ノ"` with the angle
+brackets unescaped, where its own English parent escapes them.
+
+### Verified against deliberately broken inputs before being trusted
+
+Per this file's own rule ("Adding a validator script is not the same as gating on
+it"), five probes, each a different shape so the gate could not be tuned to one:
+
+1. a new `es/library/` page no mechanism lists → **exit 1**;
+2. the same page registered in the `LIBRARY` array → **exit 0**;
+3. a hub entry whose page was deleted, no redirect → **exit 1**, named a hard 404;
+4. the same orphan with a `_redirects` rule added → **warning, exit 0**;
+5. the same unregistered page with a ledger entry → **1 → 0**, exclusion honoured.
+
+Do not trust a future edit to any of this without repeating them.
+
+---
+
+## Editorial Footprint Risk — measuring how templated our own prose reads
+
+Every gate above measures structure, language completeness, schema or assets.
+None of them looks at whether the prose is any good. This one does: it measures
+**observable editorial characteristics** of the site's own visible text —
+formulaic phrasing, repeated syntax, promotional vagueness, low information
+density, and sameness across our own pages — as a 0–100 Editorial Footprint Risk
+score, higher meaning "reads more like a filled-in template than like something
+written about this subject."
+
+**It is not an AI detector, and must never be described as one.** It emits no
+probability of machine authorship, consumes no commercial detector score, and no
+output of it supports a claim that any page was machine-written. That line is
+correctness, not modesty: detectors lose 5–30 AUROC points out of domain, they
+misclassify **61.3%** of non-native English writing as machine-generated — which
+would systematically indict this site's 29 locales — and the population studies
+behind every marker list state explicitly that they cannot identify individual
+documents. `npm run test:editorial-footprint` asserts that no phrase-bank entry
+makes an authorship claim.
+
+**Read `docs/editorial-footprint-risk.md` before changing a rule**, and
+`docs/editorial-footprint-research-2026-08-26.md` before changing a weight.
+
+### The finding that shaped everything else
+
+The widely-cited marker list does not describe this site. Across 904 indexable
+English pages, `delve`, `showcase`, `tapestry`, `in today's`, `at its core`,
+`when it comes to`, `it is worth noting`, `robust`, `vibrant`, `pivotal` and
+`comprehensive` occur **zero times**. Two of its apparent hits are worse than
+misses:
+
+* **`transform`** — 911 occurrences on 443 pages — is the shared CTA card
+  ("Transform text with Unicode fonts"). One template string, not vocabulary.
+* **`underscore`** — 169 occurrences on 65 pages — is the **character `_`**, in
+  factual platform username rules. Banning it would delete facts.
+
+What the site actually carries is **52,766 em dashes on 98.9% of pages** and one
+CTA card on 46.6% of English pages — and **6,918 of those em dashes are hardcoded
+in 572 spec files and 116 generator scripts**. The footprint here is a build
+artifact far more than a writing habit, which is why every pattern is measured
+with a `variety` figure (distinct containing sentences ÷ pages):
+
+* **variety ≈ 0** — one shared string. Fix the **template**.
+* **variety ≈ 1** — the same idea written many times. Fix the **writing**.
+
+Asking 220 pages to each hand-edit one shared string is the failure this
+distinction exists to prevent. `docs/editorial-footprint-upstream-findings-2026-08-26.md`
+ranks the upstream sources.
+
+### Tooling
+
+- **`npm run audit:editorial-footprint`** — whole-site dashboard, writes
+  `data/editorial_footprint_ledger.csv` and the report. **Informational, never
+  gating**, same reason as `check:images` and `audit:locale-parent-gap`: the
+  backlog is total and a permanently-red check is one people learn to ignore.
+- **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
+  into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
+  would fail on and exits 0. Promotion to blocking is a documented step in
+  `docs/editorial-footprint-risk.md`, not a silent flag flip. Only two rules are
+  eligible today (`model-leakage`, `seo-preservation` errors), both verified
+  against deliberately broken inputs.
+- **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
+  `data/editorial_phrase_bank.json`.
+- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+  to be red against.
+- **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
+  hand-written once per spec in `data/library_page_specs/` and nothing compared
+  those specs to each other: **45 sentences repeat across more than one spec and
+  416 of 591 carry at least one**, led by a `hero_tagline` on 171 and the same
+  line as a `meta_description` on 148 — which makes it an SEO defect as much as
+  an editorial one. It keys on the **sentence**, never on `(field, sentence)`: a
+  tagline pasted into `intro` is the same reused line. Field-level comparison —
+  the obvious design — finds **zero** duplicates in the whole corpus and would
+  have shipped a gate that could never fire. `npm run audit:spec-sentence-reuse`
+  is the whole-corpus picture; `npm run test:spec-sentence-reuse` (19 assertions)
+  gates alongside it.
+- Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
+  `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
+  `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
+  gate can never disagree about what any of it means.
+
+### Two things about it that are easy to get wrong
+
+**Raw scores are not comparable across locales.** A locale page has no English
+phrase rules, so those dimensions leave its denominator — and since they score
+~0 for everybody, the exclusion *raises* its normalised score. Measured,
+`fr/library/emojis-argent` reads 41.1 and its English parent
+`library/money-emojis` reads 20.1 on near-identical inputs. Neither number is
+wrong; comparing them is. Always rank and threshold on the ledger's
+`locale_percentile`.
+
+**An unmeasured dimension is `null`, never `0`.** Zero and unmeasured are
+opposite claims, and printing one as the other is what makes an unmeasured
+locale look clean. The three-item detector exists for 27 locales and is
+deliberately absent for CJK and Thai, which list with an ideographic comma and no
+spacing.
+
+### The SEO Preservation Gate is a separate check, and stays separate
+
+It never averages into the editorial score, because a lower score bought by
+dropping the page's primary query language is a loss and a blended number would
+hide the trade. Blocking on: canonical, title, H1, `robots`, hreflang,
+search-protected terms, codepoints/limits/versions, and internal links. Warning
+on: anchor text, FAQ questions, examples, headings, a >25% depth drop.
+
+Ranking sensitivity is `unknown` unless a performance overlay is supplied at run
+time (`--sensitivity`), and **`unknown` is the conservative posture, never a
+licence**. Search Console data is first-party competitive information and does
+not live in this repo — same boundary, and same reasoning, as the Local Language
+Intelligence lexicon.
+
+### The remediation principle
+
+Never a synonym swap. Google's spam policy names *"automated transformations like
+synonymizing"* as scaled content abuse, so trading words to lower a score moves
+toward the policy, not away from it. The transformation asked for is: generic
+claim → concrete information; abstract benefit → observable behaviour; filler
+introduction → direct answer; template sentence → topic-specific knowledge. And
+never "humanise" by adding randomness, slang or deliberate imperfections — that
+lowers a metric and lowers the page.
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -1972,6 +2261,46 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 - Confidence threshold: 0.72 (favors HTML/CSS/guide changes; ignores lock files, lint, tests)
 
 ---
+
+## Discovery Model — multi-surface (added 2026-08-29)
+
+UltraTextGen does not optimize for a single discovery algorithm. Pages,
+tools, images, printables, embeds, and data files are built to be useful on
+their own terms and discoverable through many independent systems: Google,
+Bing, Naver, Yandex and other search engines; AI assistants, answer engines
+and their crawlers; image search; social sharing; embeds on other sites;
+citations; and direct return visits. Google matters and is served well — it
+is one distribution surface, not the operating system the site is designed
+around.
+
+Practical implications when working in this repo:
+
+- **A page or asset should have a defensible reason to exist even if Google
+  never sends it a visitor** — real utility, a share/print/embed path, or
+  reference value an AI or a person would cite. "A keyword exists" is not,
+  by itself, that reason.
+- **Machine legibility is a distribution feature, not hygiene.** Several
+  search and AI crawlers do not execute JavaScript; content and links that
+  matter for discovery should be present in static HTML where feasible
+  (the static footer and pre-rendered library-hub directories exist for
+  exactly this reason — see "Library Hub Coverage" above). `robots.txt`
+  deliberately welcomes AI crawlers.
+- **Engine-specific registrations and their state live in
+  `docs/webmaster-tools-registrations-2026-08-20.md`** (Google, Bing, Naver,
+  Yandex, Pinterest domain verification). Sitemap and structured-data
+  changes serve every registered engine, not just Google — weigh a
+  Google-motivated change against its effect on the others.
+- **The sharing/embed layer is part of discovery**: per-result share links
+  (`?q=&style=`) with their OG preview Function, the `/embed/` widgets and
+  their UTM conventions, and the printables' cred-line attribution are
+  distribution surfaces. Keep them working, and extend them through their
+  existing conventions (UTM naming, the OG style registry, the embed hub)
+  rather than ad hoc.
+- **None of this loosens the existing content rules.** Hub-vs-spoke,
+  English-Parent, parity, ledger discipline, and any active publishing
+  restrictions apply unchanged — multi-surface discovery is about
+  distributing and exposing well-built assets, never about generating more
+  pages.
 
 ## SEO & Structured Data
 
@@ -2254,6 +2583,51 @@ Standing protocol:
   precomposed character, so composition silently breaks the card against the
   very widget below it. See "Zalgo example cards must decode back to their own
   label" above. `npm run check:zalgo-decodes` gates this in CI.
+- Do not describe the Editorial Footprint Risk score as an AI-detection signal,
+  add a commercial detector score as an input to it, or phrase any finding as a
+  claim about who or what wrote a page. See "Editorial Footprint Risk" above —
+  detectors misclassify 61.3% of non-native English writing, which would indict
+  this site's own locales, and `npm run test:editorial-footprint` asserts the
+  phrase bank makes no authorship claim.
+- Do not lower an editorial score by swapping a flagged word for a synonym,
+  removing a search-protected term, deleting a codepoint or example, or dropping
+  an internal link. Google's spam policy names "automated transformations like
+  synonymizing" as scaled content abuse, and the SEO Preservation Gate blocks the
+  rest. Replace a generic claim with the fact behind it instead.
+- Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
+  in 572 spec files and 116 generator scripts, so the edit is undone by the next
+  generator run — the gate names the upstream file when it can find it. And do
+  not run a site-wide purge: the rule is forward-only, and Google's own guidance
+  warns against removing a page element because you heard it was bad.
+- Do not paste a sentence from one page spec into another. `npm run
+  check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
+  sentence 3+ other specs already carry, and the fix is a sentence about *this*
+  page — what the symbol is for, where it breaks, what it is confused with — not
+  a synonym swap. A line that genuinely must be shared belongs in the generator
+  default, where it is one string with one owner.
+- Do not add an entry to `data/editorial_phrase_bank.json` unilaterally, and
+  never to make a page pass. Same bar as `data/translation_parity_exceptions.json`
+  and `data/english_parent_exceptions.json`. Every entry carries its measured
+  corpus frequency; an entry with no corpus evidence is a forward-looking guard
+  and must say so.
+- Do not compare Editorial Footprint Risk scores across locales, or read an
+  unmeasured dimension as a zero. Rank on `locale_percentile`.
+- Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
+  in that locale's hub — a page no hub links is reachable only from the sitemap.
+  See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates
+  every page a PR adds; `npm run audit:library-hub-coverage` is the whole-site
+  picture. A page that genuinely belongs outside its hub goes in
+  `data/library_hub_exclusions.json` with a reason — never to make a PR pass.
+- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, and
+  do not narrow the five inventory mechanisms to the one a hub you are looking at
+  happens to use. Run `npm run build:library-directory` for English and
+  `npm run build:locale-library-directory` for the locale hubs; the static markup
+  and the runtime markup come from the same code over the same array precisely so
+  they cannot drift.
+- Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
+  `glob("??")` silently skipped 73 of its pages for as long as that line existed.
+  Read the canonical list from `data/locale_qualification_tiers.json` (Python) or
+  `scripts/lib/locale-parent-registry.js`'s `LOCALES` (Node).
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable

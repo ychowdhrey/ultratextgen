@@ -49,7 +49,10 @@
       "ariaLabel": "{style} eredmény megosztása",
       "linkCopied": "Link másolva",
       "afterCopy": "Oszd meg ezt a stílust",
-      "sharedTag": "Megosztott stílus"
+      "sharedTag": "Megosztott stílus",
+      "imageTitle": "Megosztás képként",
+      "imageAriaLabel": "A(z) {style} eredmény megosztása képként",
+      "imageSaved": "A kép elkészült"
     },
     "safeMode": {
       "label": "Beillesztési biztonság",

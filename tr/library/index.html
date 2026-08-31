@@ -158,428 +158,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<style>
-/* ── Library A–Z Directory ── */
-
-.lib-hero {
-  padding: 3rem 1.5rem 2rem;
-  text-align: center;
-}
-.lib-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem;
-}
-.lib-hero p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin: 0;
-}
-
-/* ── Controls ── */
-.lib-controls {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.lib-search-wrap {
-  position: relative;
-}
-.lib-search-wrap svg {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-  flex-shrink: 0;
-}
-#libSearch {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.65rem 1rem 0.65rem 2.6rem;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-#libSearch:focus {
-  border-color: var(--accent-purple);
-}
-
-.lib-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-.lib-filter-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  margin-right: 0.25rem;
-  white-space: nowrap;
-}
-
-/* ── Filter pills ── */
-.lib-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  white-space: nowrap;
-  user-select: none;
-}
-.lib-pill:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-pill.active {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-pill .pill-count {
-  opacity: 0.75;
-  font-size: 0.72rem;
-}
-.lib-pill.active .pill-count {
-  opacity: 0.9;
-}
-
-.lib-clear-btn {
-  display: none;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-muted);
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: color 0.12s;
-}
-.lib-clear-btn:hover {
-  color: var(--text-primary);
-}
-.lib-clear-btn.visible {
-  display: inline-flex;
-}
-
-/* ── Alpha jump bar ── */
-.lib-alpha-bar {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0.5rem 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--bg-page, #f5f7f5);
-  backdrop-filter: saturate(180%) blur(6px);
-  -webkit-backdrop-filter: saturate(180%) blur(6px);
-}
-.lib-alpha-btn.is-current {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-alpha-btn.is-current .alpha-count {
-  color: rgba(255, 255, 255, 0.85);
-}
-.lib-alpha-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 2rem;
-  padding: 0.3rem 0.4rem 0.2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 6px;
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  text-decoration: none;
-  line-height: 1;
-}
-.lib-alpha-btn .alpha-count {
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 0.1rem;
-}
-.lib-alpha-btn:hover:not(.disabled) {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-alpha-btn.disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-/* ── Directory ── */
-.lib-directory {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-.lib-letter-section {
-  margin-bottom: 2rem;
-}
-.lib-letter-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-light);
-  margin: 0 0 0.75rem;
-  font-size: inherit;
-  font-weight: inherit;
-}
-.lib-letter-heading .letter {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-purple);
-  line-height: 1;
-}
-.lib-letter-heading .lcount {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* ── Entry rows ── */
-.lib-entry {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  gap: 0.1rem 1rem;
-  padding: 0.7rem 0.5rem;
-  border-radius: 8px;
-  color: inherit;
-  border: 1px solid transparent;
-}
-.lib-entry-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  line-height: 1.3;
-}
-.lib-entry-title-link {
-  color: inherit;
-  text-decoration: none;
-  border-radius: 3px;
-}
-.lib-entry-title-link:hover,
-.lib-entry-title-link:focus-visible {
-  color: var(--accent-purple);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-.lib-entry-title-link:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0;
-}
-.lib-entry-preview {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  grid-column: 2;
-  grid-row: 1 / 3;
-  align-self: center;
-  white-space: nowrap;
-  text-align: right;
-  letter-spacing: 0.05em;
-}
-.lib-entry-meta {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
-}
-.lib-entry-tag {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.65rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: var(--bg-page, #eef0ee);
-  color: var(--text-muted);
-  border: 1px solid var(--border-light);
-  line-height: 1.4;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-}
-.lib-entry-tag:hover {
-  background: var(--bg-white);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-entry-tag:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-tag.is-type {
-  color: var(--accent-purple);
-  border-color: var(--accent-purple);
-  background: transparent;
-}
-
-@media (max-width: 540px) {
-  .lib-entry {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .lib-entry-preview {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: left;
-    margin-top: 0.2rem;
-  }
-  .lib-entry-meta {
-    grid-row: 4;
-  }
-}
-
-/* ── No-results ── */
-.lib-empty {
-  display: none;
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-secondary);
-}
-.lib-empty.visible {
-  display: block;
-}
-.lib-empty p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-}
-.lib-empty-btn {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: border-color 0.12s;
-}
-.lib-empty-btn:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-/* ── CTA card ── */
-.lib-cta {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-/* ── Result count ── */
-.lib-result-count {
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-.lib-result-count[hidden] {
-  display: none;
-}
-
-/* ── Visually hidden (a11y) ── */
-.lib-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ── Back to top ── */
-.lib-back-top {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
-}
-.lib-back-top:hover,
-.lib-back-top:focus-visible {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-  outline: none;
-}
-.lib-back-top.visible {
-  display: inline-flex;
-}
-</style>
 </head>
 <body>
   <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
@@ -602,62 +180,1039 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>Unicode sembol ve işaret kütüphanesi — <a href="/tr/library/estetik-semboller/">estetik semboller</a> ve kalplerden yıldız, ok, onay işareti ve Yunan harflerine kadar. Ara, kullanıma veya platforma göre filtrele, dokun ve kopyala. Bütün karakterler (yani <i>semboller</i>) bio, açıklama, Discord ve oyun nicki için hazır. Nick ve bio için hazır süslemeli set mi lazım? <a href="/tr/library/semboller/">Şekilli Semboller</a> sayfasına bak.</p>
 </div>
 
-<!-- CONTROLS -->
-<div class="lib-controls" id="libControls">
-  <!-- Search -->
-  <div class="lib-search-wrap">
-    <label for="libSearch" class="lib-sr-only">Sembol ara</label>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="libSearch" placeholder="Sembol ara…" autocomplete="off">
-  </div>
-
-  <!-- Subject filter -->
-  <div class="lib-filter-row" id="subjectRow">
-    <span class="lib-filter-label">Kategori</span>
-  </div>
-
-  <!-- Use Case filter -->
-  <div class="lib-filter-row" id="useCaseRow">
-    <span class="lib-filter-label">Kullanım</span>
-  </div>
-
-  <!-- Platform filter -->
-  <div class="lib-filter-row" id="platformRow">
-    <span class="lib-filter-label">Platform</span>
-  </div>
-
-  <!-- Type filter -->
-  <div class="lib-filter-row" id="typeRow">
-    <span class="lib-filter-label">Tür</span>
-  </div>
-
-  <!-- Clear filters -->
-  <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="lib-clear-btn" id="clearFilters" aria-label="Tüm filtreleri temizle">✕ Filtreleri temizle</button>
-  </div>
-</div>
-
-<!-- ALPHA JUMP BAR -->
-<div class="lib-alpha-bar" id="alphaBar" aria-label="Harfe atla"></div>
-
-<!-- RESULT COUNT -->
-<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
-
-<!-- DIRECTORY -->
-
-
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/tr-library.svg" width="1200" height="340"
        fetchpriority="high" alt="">
 </figure>
-<main class="lib-directory" id="libDirectory" aria-label="Sembol dizini"></main>
 
-<!-- NO RESULTS -->
-<div class="lib-empty" id="libEmpty" role="status" aria-live="polite">
-  <p>Bu filtre kombinasyonuna uyan koleksiyon yok.<br>Bir veya birkaç filtreyi kaldırmayı dene.</p>
-  <button class="lib-empty-btn" id="emptyResetBtn">Tüm filtreleri temizle</button>
+<!-- library-hub:begin (generated by scripts/build-library-hub.js) -->
+<div class="lib-controls" id="libControls">
+  <div class="lib-search-wrap">
+    <label class="u-visually-hidden" for="libSearch">Kütüphanede ara</label>
+    <input type="search" id="libSearch" autocomplete="off"
+           placeholder="Sembol ara…" aria-label="Kütüphanede ara">
+  </div>
+  <div class="lib-filters">
+      <div class="lib-filter-row" id="libTypeFilters"></div>
+      <div class="lib-filter-row" id="libUseCaseFilters"></div>
+      <div class="lib-filter-row" id="libPlatformFilters"></div>
+  </div>
+  <div class="lib-controls-foot">
+    <p class="lib-result-count" id="libResultCount" hidden></p>
+    <button type="button" class="lib-clear" id="libClearFilters">Filtreleri temizle</button>
+  </div>
+  <nav class="lib-alpha-bar" id="libAlphaBar" aria-label="Harfe atla"></nav>
 </div>
 
+<main class="lib-directory" id="libDirectory" aria-label="Sembol dizini" data-static-directory>
+<section class="lib-letter-section" id="lib-letter-A" aria-labelledby="lib-letter-heading-A"><h2 class="lib-letter-heading" id="lib-letter-heading-A"><span class="letter">A</span><span class="lcount">(6)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-0"><a class="lib-entry-title-link" href="/tr/library/aglayan-emoji/">Ağlayan Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Ağlayan emoji 😭 😢 🥹, gözyaşı sembolleri ve ağlayan kaomoji (╥﹏╥) tek sayfada. Tıkla kopyala, sohbete yapıştır.</p><span class="lib-entry-preview" aria-hidden="true">😭 😢 🥹 🥲 😂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-1"><a class="lib-entry-title-link" href="/tr/library/alt-kodlari/">Alt Kodları</a></h3><p class="lib-entry-desc">Alt tuş kodlarının tam listesi: Türkçe karakterler Ç Ğ İ ı Ö Ş Ü, para birimi, matematik, aksanlı harfler ve klasik DOS sembolleri. Herhangi bir karaktere tıkla, anında kopyala.</p><span class="lib-entry-preview" aria-hidden="true">Ç ç Ö ö Ü</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="E-posta biçimlendirme" aria-label="Şuna göre filtrele: E-posta biçimlendirme">E-posta biçimlendirme</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="E-posta" aria-label="Şuna göre filtrele: E-posta">E-posta</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-2"><a class="lib-entry-title-link" href="/tr/library/ascii-tablosu/">ASCII Tablosu</a></h3><p class="lib-entry-desc">Noktalama, rakam, harf ve simgeler için onluk, onaltılık, ikilik ve sekizlik kodlarıyla tam ASCII tablosu. Kopyalamak için karaktere tıkla.</p><span class="lib-entry-preview" aria-hidden="true">! &quot; # $ %</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="E-posta biçimlendirme" aria-label="Şuna göre filtrele: E-posta biçimlendirme">E-posta biçimlendirme</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="E-posta" aria-label="Şuna göre filtrele: E-posta">E-posta</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-3"><a class="lib-entry-title-link" href="/tr/library/love-kaomoji/">Aşk &amp; Kalp Kaomoji</a></h3><p class="lib-entry-desc">Aşk ve kalp kaomoji&amp;#x27;ye göz at ve kopyala — sevgi, öpücük, sarılma ve tutkular için Japon metin yüzleri. Anında kopyalamak için birine tıkla.</p><span class="lib-entry-preview" aria-hidden="true">(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-4"><a class="lib-entry-title-link" href="/tr/library/ates-emoji/">Ateş Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Ateş emoji 🔥 ve birlikte kullanıldığı emojiler tek sayfada. 🔥 ne anlama geliyor, nerede kullanılır — tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">🔥 💯 🚀 ⚡ 🙌</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-A-5"><a class="lib-entry-title-link" href="/tr/library/ay-sembolleri/">Ay ve Gökyüzü Sembolleri</a></h3><p class="lib-entry-desc">Ay sembolleri kopyala yapıştır: ☽ hilal, 🌙 ay emojisi, ay evreleri, güneş ve yıldız sembolleri, gece göğü süsleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">🌑 🌒 🌓 🌔 🌕</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-B" aria-labelledby="lib-letter-heading-B"><h2 class="lib-letter-heading" id="lib-letter-heading-B"><span class="letter">B</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-B-0"><a class="lib-entry-title-link" href="/tr/library/baris-sembolu/">Barış Sembolü ve Emojileri</a></h3><p class="lib-entry-desc">✌️ barış işareti, 🕊️ barış güvercini, ☮️ ve ☯️ uyum sembolleri ve sakin hava kombinleri kopyala yapıştır. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-B-1"><a class="lib-entry-title-link" href="/tr/library/emoji-bayraklar/">Bayrak Emoji — Ülke Bayrakları Kopyala</a></h3><p class="lib-entry-desc">Türk bayrağı 🇹🇷 ve tüm ülke bayraklarının emojisi. Bayrağa dokun, kopyalansın; oyun ismine, bio&amp;#x27;ya veya mesaja yapıştır. Hazır bayrak setleri de var.</p><span class="lib-entry-preview" aria-hidden="true">🇹🇷 🇦🇿 🇩🇪 🇺🇸 🇬🇧</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Seyahat" aria-label="Şuna göre filtrele: Seyahat">Seyahat</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-C" aria-labelledby="lib-letter-heading-C"><h2 class="lib-letter-heading" id="lib-letter-heading-C"><span class="letter">C</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-0"><a class="lib-entry-title-link" href="/tr/library/coquette-sembolleri/">Coquette Sembolleri</a></h3><p class="lib-entry-desc">Coquette aesthetic sembolleri: fiyonk 🎀, kurdele, kalp ♡, çiçek ✿ ve pembe süsler. Bio ve nick için yumuşak, feminen, dollette tarzı kopyala yapıştır karakterler.</p><span class="lib-entry-preview" aria-hidden="true">🎀 ୨୧ ʚɞ ⊰ ⊱</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-1"><a class="lib-entry-title-link" href="/tr/library/cottagecore-sembolleri/">Cottagecore Sembolleri</a></h3><p class="lib-entry-desc">Cottagecore estetiği sembolleri: mantar 🍄, çiçek, arı 🐝 ve kır motifleri. Bio ve caption için cottage yaşamı süslerini kopyala yapıştır.</p><span class="lib-entry-preview" aria-hidden="true">🍄 🌿 🌱 🪴 🌾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-uc7" aria-labelledby="lib-letter-heading-uc7"><h2 class="lib-letter-heading" id="lib-letter-heading-uc7"><span class="letter">Ç</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-uc7-0"><a class="lib-entry-title-link" href="/tr/library/cicek-emojileri/">Çiçek Emojileri ve Sembolleri</a></h3><p class="lib-entry-desc">Çiçek emojileri 🌸 🌹 🌻 ve çiçek sembolleri ❀ ✿ kopyala yapıştır: yapraklar, ağaçlar, doğa emojileri ve biyografi süsleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">🌸 🌹 🌺 🌻 🌼</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-D" aria-labelledby="lib-letter-heading-D"><h2 class="lib-letter-heading" id="lib-letter-heading-D"><span class="letter">D</span><span class="lcount">(5)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-D-0"><a class="lib-entry-title-link" href="/tr/library/derece-isareti/">Derece İşareti Koleksiyonu</a></h3><p class="lib-entry-desc">Derece işareti (°) kopyala yapıştır: santigrat ℃, fahrenayt ℉, açı ∠, üs (prime) ve geometri sembolleri. Klavyede olmayan işaretler için sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">° ℃ ℉ K ∠</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-D-1"><a class="lib-entry-title-link" href="/tr/library/dini-semboller/">Dini ve Manevi Semboller</a></h3><p class="lib-entry-desc">Dünyanın büyük geleneklerinden dini, manevi ve inançla ilgili Unicode sembollerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☦ ✞ ✟ ♰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-D-2"><a class="lib-entry-title-link" href="/tr/library/discord-sembolleri/">Discord sembolleri — kopyala yapıştır</a></h3><p class="lib-entry-desc">Discord sembolleri kopyala yapıştır: ▸ ┊ ➤ ꒱ ⟢ kanal adı süsleri, sunucu ve kategori ayraçları, rol ve profil işaretleri. Dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">⌗ ➤ ▸ │ ⊹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-D-3"><a class="lib-entry-title-link" href="/tr/library/dreamcore-weirdcore-sembolleri/">Dreamcore &amp; Weirdcore Sembolleri</a></h3><p class="lib-entry-desc">Dreamcore ve weirdcore sembolleri — sürreal gözler 👁, gökkuşakları 🌈, glitch blokları, kapılar ve sleepcore kombinleri liminal paylaşımlar için. Kopyalamak için herhangi bir sembole dokun.</p><span class="lib-entry-preview" aria-hidden="true">👁 👁️ 👀 𓂀 𓁹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-D-4"><a class="lib-entry-title-link" href="/tr/library/yuz-emojileri/">Duyguya Göre Yüz Emojileri</a></h3><p class="lib-entry-desc">Yüz emojilerini duyguya göre kopyala: öpücük 😘, göz kırpma 😉, sırıtma 😏, göz devirme 🙄, kızarma 😊, yalvaran yüz 🥺, güneş gözlüğü 😎, hale 😇 ve fazlası — anlamları ve hazır kombinleriyle. Dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">😘 😗 😙 😚 💋</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-E" aria-labelledby="lib-letter-heading-E"><h2 class="lib-letter-heading" id="lib-letter-heading-E"><span class="letter">E</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-0"><a class="lib-entry-title-link" href="/tr/library/emoji-anlamlari/">Emoji Anlamları</a></h3><p class="lib-entry-desc">Emoji anlamları tek sayfada: yüz emojileri, el işaretleri, kalp renkleri ve çift anlamlı emojiler. Hangi emoji ne demek, nerede kullanılır — tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">😊 😂 🥺 😏 🤔</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Rehber" aria-label="Şuna göre filtrele: Rehber">Rehber</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-1"><a class="lib-entry-title-link" href="/tr/library/estetik-semboller/">Estetik semboller — kopyala yapıştır</a></h3><p class="lib-entry-desc">Estetik semboller kopyala yapıştır: ✦ ♡ ୨୧ ❀ ⋆ coquette, kawaii, y2k, soft, kelebek, kalp, yıldız ve bio ayraçları. Dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">✦ ✧ ⋆ ˚ ♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-F" aria-labelledby="lib-letter-heading-F"><h2 class="lib-letter-heading" id="lib-letter-heading-F"><span class="letter">F</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-F-0"><a class="lib-entry-title-link" href="/tr/library/facebook-sembolleri/">Facebook Sembolleri</a></h3><p class="lib-entry-desc">Facebook sembollerini kopyala yapıştır — gönderiler, yorumlar, bio ve sayfa adları için tepki emojileri, kalpler, yıldızlar ve ayraçlar. Herhangi bir sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">👍 ❤️ 🥰 😆 😮</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Facebook" aria-label="Şuna göre filtrele: Facebook">Facebook</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-F-1"><a class="lib-entry-title-link" href="/tr/library/fairycore-sembolleri/">Fairycore Sembolleri</a></h3><p class="lib-entry-desc">Fairycore sembolleri ve emoji kombinleri — periler 🧚, mantarlar 🍄, parıltılar ✨ ve zarif çiçek karakterleriyle büyülü bio&#39;lar. Kopyalamak için herhangi bir sembole dokun.</p><span class="lib-entry-preview" aria-hidden="true">🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-G" aria-labelledby="lib-letter-heading-G"><h2 class="lib-letter-heading" id="lib-letter-heading-G"><span class="letter">G</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-G-0"><a class="lib-entry-title-link" href="/tr/library/geometrik-semboller/">Geometrik Semboller</a></h3><p class="lib-entry-desc">Geometrik semboller kopyala yapıştır: daire, baklava, kare, üçgen, madde işareti ve altıgen karakterleri, dolu ve içi boş hâlleriyle. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">● ○ ◉ ◎ ⊙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Madde işaretleri" aria-label="Şuna göre filtrele: Madde işaretleri">Madde işaretleri</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Ayırıcılar" aria-label="Şuna göre filtrele: Ayırıcılar">Ayırıcılar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-G-1"><a class="lib-entry-title-link" href="/tr/library/goth-grunge-sembolleri/">Goth &amp; Grunge Sembolleri</a></h3><p class="lib-entry-desc">Goth ve grunge bio&#39;ları için karanlık aesthetic semboller: haçlar ♱ ✟ †, kurukafalar 💀, örümcekler 🕷, hançerler 🗡 ve alt moda süsleri. Nick ve bio için dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">♱ † ‡ ✟ 🗡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-G-2"><a class="lib-entry-title-link" href="/tr/library/goz-kirpan-emoji/">Göz Kırpan Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Göz kırpan emoji 😉 😜 🤪, şakacı ve takılan kombin setleri, ayrıca flörtöz yanıtlar ve sohbetler için (^_-) gibi kaomoji. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">😉 😘 😗 😙 😜</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Direkt mesaj" aria-label="Şuna göre filtrele: Direkt mesaj">Direkt mesaj</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-G-3"><a class="lib-entry-title-link" href="/tr/library/gulen-emoji/">Gülen Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve gülen kaomoji (≧▽≦) tek sayfada. Tıkla kopyala, sohbete yapıştır.</p><span class="lib-entry-preview" aria-hidden="true">😂 🤣 😆 😄 😁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Şuna göre filtrele: X">X</button></div></article></section><section class="lib-letter-section" id="lib-letter-H" aria-labelledby="lib-letter-heading-H"><h2 class="lib-letter-heading" id="lib-letter-heading-H"><span class="letter">H</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-H-0"><a class="lib-entry-title-link" href="/tr/library/hayvan-emojileri/">Hayvan Emojileri</a></h3><p class="lib-entry-desc">Hayvan emojileri kopyala yapıştır: evcil hayvanlar, çiftlik hayvanları, vahşi hayvanlar, kuşlar, deniz canlıları, böcekler ve efsanevi yaratıklar. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">🐶 🐕 🐩 🐱 🐈</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-I" aria-labelledby="lib-letter-heading-I"><h2 class="lib-letter-heading" id="lib-letter-heading-I"><span class="letter">I</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-I-0"><a class="lib-entry-title-link" href="/tr/library/instagram-sembolleri/">Instagram Sembolleri</a></h3><p class="lib-entry-desc">Instagram sembolleri kopyala yapıştır: biyografi süsleri, ayraçlar, kalpler, yıldızlar ve öne çıkan kapak sembolleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">✨ • · │ ⌇</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u130" aria-labelledby="lib-letter-heading-u130"><h2 class="lib-letter-heading" id="lib-letter-heading-u130"><span class="letter">İ</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u130-0"><a class="lib-entry-title-link" href="/tr/library/iphone-emojileri/">iPhone Emojileri</a></h3><p class="lib-entry-desc">iPhone emojileri tek sayfada: yüzler, kalpler, el işaretleri ve en &amp;#x27;iPhone&amp;#x27; duran emojiler. Android&amp;#x27;de neden farklı göründüğü de burada — tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">😂 🥹 🥲 😊 🥰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referans" aria-label="Şuna göre filtrele: Referans">Referans</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u130-1"><a class="lib-entry-title-link" href="/tr/library/isim-sembolleri/">İsim Sembolleri</a></h3><p class="lib-entry-desc">İsim sembolleri kopyala yapıştır: ꧁꧂ kanat çerçeveleri, katakana süsleri, taç ve yıldızlar, hazır nick kombinleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">꧁ ꧂ ༺ ༻ 『</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u130-2"><a class="lib-entry-title-link" href="/tr/library/iskambil-sembolleri/">İskambil ve Oyun Sembolleri</a></h3><p class="lib-entry-desc">İskambil sembolleri kopyala yapıştır: ♠ maça, ♥ kupa, ♦ karo, ♣ sinek, zar yüzleri, oyun kartı karakterleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">♠ ♥ ♦ ♣ ♤</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u130-3"><a class="lib-entry-title-link" href="/tr/library/islami-semboller/">İslami Semboller</a></h3><p class="lib-entry-desc">Kopyalanabilir İslami semboller — ay yıldız, Allah ve Besmele ligatürleri, cami ve dua emojileri, bayram tebrikleri. Kopyalamak için sembole tıkla.</p><span class="lib-entry-preview" aria-hidden="true">☪ ☪️ ☫ 🌙 ☽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Kutlama" aria-label="Şuna göre filtrele: Kutlama">Kutlama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Şuna göre filtrele: WhatsApp">WhatsApp</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-J" aria-labelledby="lib-letter-heading-J"><h2 class="lib-letter-heading" id="lib-letter-heading-J"><span class="letter">J</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-J-0"><a class="lib-entry-title-link" href="/tr/library/japon-alfabesi/">Japon Alfabesi Koleksiyonu</a></h3><p class="lib-entry-desc">Japon alfabesi kopyala yapıştır: hiragana, katakana (ツ シ gibi gülen yüz harfleri) ve anlamlı kanjiler (桜 愛 夢). Japonca nick ve estetik bio için sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">桜 愛 夢 月 星</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-K" aria-labelledby="lib-letter-heading-K"><h2 class="lib-letter-heading" id="lib-letter-heading-K"><span class="letter">K</span><span class="lcount">(8)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-0"><a class="lib-entry-title-link" href="/tr/library/kalp-sembolleri/">Kalp sembolleri — kopyala yapıştır</a></h3><p class="lib-entry-desc">Kalp sembolleri kopyala yapıştır: kalp emojileri, renkli kalpler, Unicode kalp karakterleri ♥ ♡ ❥ ve aşkla ilgili semboller. Herhangi bir kalbe dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">🌈 ❤ 🧡 💛 💚</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-1"><a class="lib-entry-title-link" href="/tr/library/kaomoji/">Kaomoji — Japon emojileri</a></h3><p class="lib-entry-desc">Kaomoji kopyala yapıştır: Japon emojileri ve metin yüzleri — mutlu, üzgün, omuz silkme, aşk, hayvanlar ve Lenny yüzleri. Herhangi bir yüze dokun, anında kopyalansın. Bio, nick ve yorum için.</p><span class="lib-entry-preview" aria-hidden="true">◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Şuna göre filtrele: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-2"><a class="lib-entry-title-link" href="/tr/library/kawaii-cute-sembolleri/">Kawaii &amp; Sevimli Semboller</a></h3><p class="lib-entry-desc">Kawaii ve sevimli semboller kopyala yapıştır: yumuşak kalpler ♡, minik yüzler, parıltılar ve pastel süslemeler. Bio, nick ve mesajlar için dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">♡ ෆ ❤ ❥ ʚɞ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-3"><a class="lib-entry-title-link" href="/tr/library/cat-kaomoji/">Kedi Kaomoji</a></h3><p class="lib-entry-desc">Kedi kaomoji&amp;#x27;ye göz at ve kopyala — bıyıklı ve patili sevimli Japon kedi metin yüzleri. Mutlu, üzgün ve uykulu kediler. Kopyalamak için birine tıkla.</p><span class="lib-entry-preview" aria-hidden="true">(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-4"><a class="lib-entry-title-link" href="/tr/library/kizgin-emoji/">Kızgın Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Kızgın emoji 😡 🤬 😤, öfke kombin setleri ve sohbetlerde içini dökmek için (╯°□°）╯︵ ┻━┻ gibi masa deviren kaomoji. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">😡 😠 🤬 😤 👿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Şuna göre filtrele: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-5"><a class="lib-entry-title-link" href="/tr/library/klavye-sembolleri/">Klavye Sembolleri</a></h3><p class="lib-entry-desc">Klavye sembolleri ⌘ ⌥ ⇧ ⌫ ⇥ tek sayfada: Mac tuş işaretleri, düzenleme ve yön tuşları. Klavyede olmayan sembolleri tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">⌘ ⌥ ⇧ ⌃ ⇪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-6"><a class="lib-entry-title-link" href="/tr/library/emoji-combos/">Kopyala yapıştır emoji kombinasyonları</a></h3><p class="lib-entry-desc">100+ kopyala yapıştır emoji kombinasyonu: coquette, cottagecore, kawaii, Y2K, dark academia, gece gökyüzü, melek, nazar ve daha fazlası. Insta bion, WhatsApp durumun ve TikTok açıklamaların için estetik emoji comboları —</p><span class="lib-entry-preview" aria-hidden="true">🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-7"><a class="lib-entry-title-link" href="/tr/library/kurukafa-emoji/">Kurukafa Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Kurukafa emoji 💀 ☠️, &amp;#x27;öldüm&amp;#x27; anlamındaki gülme emojileri ve kurukafa kaomoji (☠‿☠) tek sayfada. Tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">💀 ☠️ 😂 🤣 ⚰️</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-M" aria-labelledby="lib-letter-heading-M"><h2 class="lib-letter-heading" id="lib-letter-heading-M"><span class="letter">M</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-M-0"><a class="lib-entry-title-link" href="/tr/library/madde-imi-sembolleri/">Madde İmi Sembolleri</a></h3><p class="lib-entry-desc">Madde imi sembollerini ve liste işaretlerini kopyala yapıştır: klasik noktalar, ok işaretleri, onay işaretleri, yıldız ve baklava sembolleri, dekoratif çiçek süsleri ve daire içinde rakamlar. Sembole dokun, anında kopyal</p><span class="lib-entry-preview" aria-hidden="true">• ‣ ◦ ⁃ ∙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Madde işaretleri" aria-label="Şuna göre filtrele: Madde işaretleri">Madde işaretleri</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="E-posta biçimlendirme" aria-label="Şuna göre filtrele: E-posta biçimlendirme">E-posta biçimlendirme</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-M-1"><a class="lib-entry-title-link" href="/tr/library/matematik-sembolleri/">Matematik Sembolleri Koleksiyonu</a></h3><p class="lib-entry-desc">Matematik sembolleri kopyala yapıştır: artı eksi (±), çarpı (×), bölü (÷), büyük eşit (≥), küçük eşit (≤), eşit değildir (≠), küme işaretleri ve daha fazlası. Sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">± × ÷ ∓ −</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-M-2"><a class="lib-entry-title-link" href="/tr/library/mutlu-emoji/">Mutlu Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Mutlu emoji 😊 😄 🥰, ヽ(´▽`)/ gibi neşeli kaomoji ve biyografileri, açıklamaları ve mesajları güneşlendiren kombin setleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">😊 😀 😃 😄 🙂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Kutlama" aria-label="Şuna göre filtrele: Kutlama">Kutlama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Şuna göre filtrele: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-M-3"><a class="lib-entry-title-link" href="/tr/library/muzik-sembolleri/">Müzik Sembolleri</a></h3><p class="lib-entry-desc">Müzik notası sembollerine, enstrüman emojilerine ve sesle ilgili Unicode karakterlerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">♩ ♪ ♫ ♬ 🎵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-N" aria-labelledby="lib-letter-heading-N"><h2 class="lib-letter-heading" id="lib-letter-heading-N"><span class="letter">N</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-N-0"><a class="lib-entry-title-link" href="/tr/library/nazar-sembolleri/">Nazar boncuğu ve nazar sembolleri — kopyala yapıştır</a></h3><p class="lib-entry-desc">Nazar boncuğu 🧿 ve nazar sembolleri kopyala yapıştır: nazar emojisi, hamsa eli 🪬, göz karakterleri ve klasik mavi-beyaz palet. Bio, açıklama ve nick için dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">🧿 🪬 👁 👁️ 👀</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-O" aria-labelledby="lib-letter-heading-O"><h2 class="lib-letter-heading" id="lib-letter-heading-O"><span class="letter">O</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-O-0"><a class="lib-entry-title-link" href="/tr/library/ok-isaretleri/">Ok İşaretleri Koleksiyonu</a></h3><p class="lib-entry-desc">Ok işareti kopyala yapıştır: düz, kalın, çift, kıvrımlı, üçgen ve emoji oklar. Belge, gönderi ve nick için sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">→ ← ↑ ↓ ↗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Madde işaretleri" aria-label="Şuna göre filtrele: Madde işaretleri">Madde işaretleri</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-ud6" aria-labelledby="lib-letter-heading-ud6"><h2 class="lib-letter-heading" id="lib-letter-heading-ud6"><span class="letter">Ö</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-ud6-0"><a class="lib-entry-title-link" href="/tr/library/opucuk-emoji/">Öpücük Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Öpücük emoji 😘 😗 💋 👄, çift emojileri ve öpücük kaomoji ( ˘ ³˘)♥ tek sayfada. Tıkla kopyala, sohbete yapıştır.</p><span class="lib-entry-preview" aria-hidden="true">😘 😗 😙 😚 😽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Direkt mesaj" aria-label="Şuna göre filtrele: Direkt mesaj">Direkt mesaj</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-P" aria-labelledby="lib-letter-heading-P"><h2 class="lib-letter-heading" id="lib-letter-heading-P"><span class="letter">P</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-P-0"><a class="lib-entry-title-link" href="/tr/library/para-birimi-sembolleri/">Para Birimi Sembolleri Koleksiyonu</a></h3><p class="lib-entry-desc">Para birimi sembolleri kopyala yapıştır: Türk Lirası ₺, euro €, dolar $, sterlin £, yen ¥ ve dünyadan onlarca para birimi işareti. Sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">₺ $ € £ ¥</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="E-posta biçimlendirme" aria-label="Şuna göre filtrele: E-posta biçimlendirme">E-posta biçimlendirme</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-P-1"><a class="lib-entry-title-link" href="/tr/library/para-emojileri/">Para Emojileri</a></h3><p class="lib-entry-desc">Para emojileri kopyala yapıştır — 💰 para çantası, 💸 uçan para, 🤑 para suratı — ayrıca zengin estetiği biyografi kombinleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">💰 💵 💴 💶 💷</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Şuna göre filtrele: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-P-2"><a class="lib-entry-title-link" href="/tr/library/parti-emojileri/">Parti ve Kutlama Emojileri</a></h3><p class="lib-entry-desc">Parti emojileri kopyala yapıştır: 🎉 konfeti, 🎂 doğum günü pastası, 🥂 kadeh, havai fişek ve hazır kutlama kombinleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">🎉 🎊 🥳 🪅 🎈</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Kutlama" aria-label="Şuna göre filtrele: Kutlama">Kutlama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Şuna göre filtrele: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-P-3"><a class="lib-entry-title-link" href="/tr/library/pubg-sembolleri/">PUBG ve BGMI Sembolleri ★</a></h3><p class="lib-entry-desc">PUBG Mobile ve BGMI isim sembolleri ★ 彡 乂 ꧁꧂ kopyala yapıştır — oyunun fontuyla test edildi, artı isim değiştirme kartı harcamadan önce hangi sembollerin başarısız olduğunun gerçeği.</p><span class="lib-entry-preview" aria-hidden="true">ツ ッ 彡 乂 亗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button></div></article></section><section class="lib-letter-section" id="lib-letter-R" aria-labelledby="lib-letter-heading-R"><h2 class="lib-letter-heading" id="lib-letter-heading-R"><span class="letter">R</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-R-0"><a class="lib-entry-title-link" href="/tr/library/roblox-sembolleri/">Roblox Sembolleri</a></h3><p class="lib-entry-desc">40+ Roblox sembolü ✦ ⚡ ♡ — görünen ad, bio ve grup için kopyala yapıştır. Roblox&#39;un güncel isim filtresine göre test edildi, artı Robux, Premium ve Doğrulanmış ikonlarının gerçeği.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ⊹ ✦ ✧ ★</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-S" aria-labelledby="lib-letter-heading-S"><h2 class="lib-letter-heading" id="lib-letter-heading-S"><span class="letter">S</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-0"><a class="lib-entry-title-link" href="/tr/library/satranc-sembolleri/">Satranç Sembolleri</a></h3><p class="lib-entry-desc">Satranç taşlarının, tahta karelerinin ve notasyon işaretlerinin Unicode sembollerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">♔ ♕ ♖ ♗ ♘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-1"><a class="lib-entry-title-link" href="/tr/library/cute-kaomoji/">Sevimli Kaomoji</a></h3><p class="lib-entry-desc">Sevimli kaomoji&amp;#x27;ye göz at ve kopyala — parıltılı gözler, kızaran yanaklar ve hayvanlarla kawaii Japon metin yüzleri. Kopyalamak için birine tıkla.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u15e" aria-labelledby="lib-letter-heading-u15e"><h2 class="lib-letter-heading" id="lib-letter-heading-u15e"><span class="letter">Ş</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u15e-0"><a class="lib-entry-title-link" href="/tr/library/semboller/">Şekilli semboller — kopyala yapıştır</a></h3><p class="lib-entry-desc">Şekilli semboller kopyala yapıştır: klavyede olmayan semboller, nick sembolleri ꧁꧂, yıldız ★, kalp ♡, kelebek ve çerçeve sembolleri. Dokun, kopyalansın — PUBG nicki, Instagram bio ve WhatsApp için.</p><span class="lib-entry-preview" aria-hidden="true">★ ✰ ♡ ꧁ ꧂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-T" aria-labelledby="lib-letter-heading-T"><h2 class="lib-letter-heading" id="lib-letter-heading-T"><span class="letter">T</span><span class="lcount">(3)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-T-0"><a class="lib-entry-title-link" href="/tr/library/tac-emoji/">Taç Emoji</a></h3><p class="lib-entry-desc">Taç emoji 👑 🤴 👸, &amp;#x27;queen&amp;#x27; anlamındaki emojiler ve kazanma sembolleri tek sayfada. Bio ve kullanıcı adı için tıkla kopyala.</p><span class="lib-entry-preview" aria-hidden="true">👑 🤴 👸 🫅 💍</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-T-1"><a class="lib-entry-title-link" href="/tr/library/therian-sembolleri/">Therian Sembolleri</a></h3><p class="lib-entry-desc">Therian ve alterhuman topluluğunun kullandığı theta-delta (θΔ) işaretleri, pati izleri, ay evreleri ve hayvan sembollerine göz at. Herhangi bir sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">θΔ ΘΔ θ Θ Δ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-T-2"><a class="lib-entry-title-link" href="/tr/library/onay-isaretleri/">Tik işareti ve onay işaretleri koleksiyonu</a></h3><p class="lib-entry-desc">Tik işareti (✓ ✔ ✅), çarpı işareti (✗ ✘ ❌), durum daireleri ve kontrol listesi sembolleri kopyala yapıştır. Sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ☑ ✅ ☐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Madde işaretleri" aria-label="Şuna göre filtrele: Madde işaretleri">Madde işaretleri</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="E-posta biçimlendirme" aria-label="Şuna göre filtrele: E-posta biçimlendirme">E-posta biçimlendirme</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-U" aria-labelledby="lib-letter-heading-U"><h2 class="lib-letter-heading" id="lib-letter-heading-U"><span class="letter">U</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-U-0"><a class="lib-entry-title-link" href="/tr/library/uyari-sembolleri/">Uyarı ve Tehlike Sembolleri</a></h3><p class="lib-entry-desc">Uyarı sembolleri kopyala yapıştır: ⚠ dikkat, ☢ radyoaktif, ☣ biyolojik tehlike, ⚡ yüksek voltaj, 🚫 yasak işaretleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">☢ ☣ ☠ ⚰ ⚱</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-udc" aria-labelledby="lib-letter-heading-udc"><h2 class="lib-letter-heading" id="lib-letter-heading-udc"><span class="letter">Ü</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-udc-0"><a class="lib-entry-title-link" href="/tr/library/uzgun-emoji/">Üzgün Emoji ve Kaomoji</a></h3><p class="lib-entry-desc">Üzgün emoji 😢 😔 ☹, kırık kalp sembolleri ve hüzünlü kaomoji (◞‸◟) tek sayfada. Tıkla kopyala, sohbete ya da bio&amp;#x27;ya yapıştır.</p><span class="lib-entry-preview" aria-hidden="true">😢 😞 😔 ☹ 🙁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Şuna göre filtrele: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-W" aria-labelledby="lib-letter-heading-W"><h2 class="lib-letter-heading" id="lib-letter-heading-W"><span class="letter">W</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-W-0"><a class="lib-entry-title-link" href="/tr/library/witchy-occult-sembolleri/">Witchy &amp; Okült Sembolleri</a></h3><p class="lib-entry-desc">Witchy ve okült sembollere göz at ve kopyala — pentagramlar, ay evreleri, gezegen işaretleri, simya sembolleri ve diğer ezoterik karakterler. Kopyalamak için herhangi birine dokun.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ⚹ ✡ ⚜</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-Y" aria-labelledby="lib-letter-heading-Y"><h2 class="lib-letter-heading" id="lib-letter-heading-Y"><span class="letter">Y</span><span class="lcount">(5)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-0"><a class="lib-entry-title-link" href="/tr/library/y2k-sembolleri/">Y2K Sembolleri</a></h3><p class="lib-entry-desc">Y2K sembolleri kopyala yapıştır: yıldız ✦ ✮ ⋆, gotik haç ♱ ✟ †, kelebek 🦋, CD 💿 ve parıltı işaretleri. Bio, nick ve caption için dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">✦ ✮ ♱ 🦋 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-1"><a class="lib-entry-title-link" href="/tr/library/yazi-sanati/">Yazı Sanatı</a></h3><p class="lib-entry-desc">Yazı sanatı kopyala yapıştır — ASCII kediler, braille kalpler, yıldız çerçeveler ve klasik kaomoji, ayrıca kendi çizimin için bloklar. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">─ │ ┌ ┐ └</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Yorum" aria-label="Şuna göre filtrele: Yorum">Yorum</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Şuna göre filtrele: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-2"><a class="lib-entry-title-link" href="/tr/library/yemek-emojileri/">Yemek ve İçecek Emojileri</a></h3><p class="lib-entry-desc">Yemek emojileri kopyala yapıştır: meyve ve sebzeler, hazır yemekler, tatlılar, içecekler ve mutfak gereçleri. Kopyalamak için tıkla.</p><span class="lib-entry-preview" aria-hidden="true">🍎 🥑 🍇 🍊 🍋</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Şuna göre filtrele: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-3"><a class="lib-entry-title-link" href="/tr/library/yildiz-sembolleri/">Yıldız Sembolleri Koleksiyonu</a></h3><p class="lib-entry-desc">Yıldız sembolleri kopyala yapıştır: ★ ☆ ✦ ✧ yıldızlar, çok köşeli yıldızlar, parıltı ve yıldız emojileri, yıldızlı puanlama ve bio süsleri. Sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ✦ ✧ ✡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Şuna göre filtrele: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Madde işaretleri" aria-label="Şuna göre filtrele: Madde işaretleri">Madde işaretleri</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-4"><a class="lib-entry-title-link" href="/tr/library/yunan-alfabesi-sembolleri/">Yunan Alfabesi Sembolleri</a></h3><p class="lib-entry-desc">Yunan alfabesi sembolleri kopyala yapıştır: alfa, beta, gama, delta, pi, sigma, omega ve tüm büyük/küçük Yunan harfleri. Matematik, fizik ve sosyal medya için sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">Α Β Γ Δ Ε</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Profesyonel gönderiler" aria-label="Şuna göre filtrele: Profesyonel gönderiler">Profesyonel gönderiler</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Şuna göre filtrele: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-Z" aria-labelledby="lib-letter-heading-Z"><h2 class="lib-letter-heading" id="lib-letter-heading-Z"><span class="letter">Z</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Z-0"><a class="lib-entry-title-link" href="/tr/library/zodyak-sembolleri/">Zodyak sembolleri — 12 burcun sembolü</a></h3><p class="lib-entry-desc">Zodyak sembolleri kopyala yapıştır: Koç ♈, Boğa ♉, İkizler ♊ ve 12 burcun sembolü, gezegen işaretleri, Çin burçları ve astroloji sembolleri. Sembole dokun, anında kopyalansın.</p><span class="lib-entry-preview" aria-hidden="true">♈ ♉ ♊ ♋ ♌</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Sembol" aria-label="Şuna göre filtrele: Sembol">Sembol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Şuna göre filtrele: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Açıklama" aria-label="Şuna göre filtrele: Açıklama">Açıklama</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Tepkiler" aria-label="Şuna göre filtrele: Tepkiler">Tepkiler</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Şuna göre filtrele: Instagram">Instagram</button></div></article></section>
+</main>
+
+<div class="lib-empty" id="libEmpty" role="status" aria-live="polite" hidden>
+  <p class="lib-empty-title">Sonuç yok</p>
+  <p class="lib-empty-body">Bu filtre kombinasyonuna uyan koleksiyon yok. Bir veya birkaç filtreyi kaldırmayı dene.</p>
+  <button type="button" class="lib-clear" id="libEmptyReset">Tüm filtreleri temizle</button>
+</div>
+
+<button type="button" class="lib-back-top" id="libBackTop"
+        aria-label="Başa dön" title="Başa dön">↑</button>
+
+<script>
+window.UTG_LIBRARY_HUB = {
+ "locale": "tr",
+ "basePath": "/tr/library/",
+ "i18n": {
+  "searchLabel": "Kütüphanede ara",
+  "searchPlaceholder": "Sembol ara…",
+  "clearFilters": "Filtreleri temizle",
+  "resultCount": "{total} koleksiyondan {shown} tanesi",
+  "emptyTitle": "Sonuç yok",
+  "emptyBody": "Bu filtre kombinasyonuna uyan koleksiyon yok. Bir veya birkaç filtreyi kaldırmayı dene.",
+  "emptyReset": "Tüm filtreleri temizle",
+  "backTop": "Başa dön",
+  "filterBy": "Şuna göre filtrele",
+  "alphaJump": "Harfe atla",
+  "noItems": "öğe yok",
+  "directoryLabel": "Sembol dizini"
+ },
+ "items": [
+  {
+   "title": "Ağlayan Emoji ve Kaomoji",
+   "slug": "aglayan-emoji",
+   "description": "Ağlayan emoji 😭 😢 🥹, gözyaşı sembolleri ve ağlayan kaomoji (╥﹏╥) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+   "preview": "😭 😢 🥹 🥲 😂",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Alt Kodları",
+   "slug": "alt-kodlari",
+   "description": "Alt tuş kodlarının tam listesi: Türkçe karakterler Ç Ğ İ ı Ö Ş Ü, para birimi, matematik, aksanlı harfler ve klasik DOS sembolleri. Herhangi bir karaktere tıkla, anında kopyala.",
+   "preview": "Ç ç Ö ö Ü",
+   "type": "Referans",
+   "useCases": [
+    "Referans",
+    "E-posta biçimlendirme"
+   ],
+   "platforms": [
+    "E-posta"
+   ]
+  },
+  {
+   "title": "ASCII Tablosu",
+   "slug": "ascii-tablosu",
+   "description": "Noktalama, rakam, harf ve simgeler için onluk, onaltılık, ikilik ve sekizlik kodlarıyla tam ASCII tablosu. Kopyalamak için karaktere tıkla.",
+   "preview": "! \" # $ %",
+   "type": "Referans",
+   "useCases": [
+    "Referans",
+    "E-posta biçimlendirme"
+   ],
+   "platforms": [
+    "E-posta"
+   ]
+  },
+  {
+   "title": "Ateş Emoji ve Kaomoji",
+   "slug": "ates-emoji",
+   "description": "Ateş emoji 🔥 ve birlikte kullanıldığı emojiler tek sayfada. 🔥 ne anlama geliyor, nerede kullanılır — tıkla kopyala.",
+   "preview": "🔥 💯 🚀 ⚡ 🙌",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama",
+    "Yorum"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Ay ve Gökyüzü Sembolleri",
+   "slug": "ay-sembolleri",
+   "description": "Ay sembolleri kopyala yapıştır: ☽ hilal, 🌙 ay emojisi, ay evreleri, güneş ve yıldız sembolleri, gece göğü süsleri. Kopyalamak için tıkla.",
+   "preview": "🌑 🌒 🌓 🌔 🌕",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Barış Sembolü ve Emojileri",
+   "slug": "baris-sembolu",
+   "description": "✌️ barış işareti, 🕊️ barış güvercini, ☮️ ve ☯️ uyum sembolleri ve sakin hava kombinleri kopyala yapıştır. Kopyalamak için tıkla.",
+   "preview": "✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Bio",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kedi Kaomoji",
+   "slug": "cat-kaomoji",
+   "description": "Kedi kaomoji&#x27;ye göz at ve kopyala — bıyıklı ve patili sevimli Japon kedi metin yüzleri. Mutlu, üzgün ve uykulu kediler. Kopyalamak için birine tıkla.",
+   "preview": "(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)",
+   "type": "Sembol",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Çiçek Emojileri ve Sembolleri",
+   "slug": "cicek-emojileri",
+   "description": "Çiçek emojileri 🌸 🌹 🌻 ve çiçek sembolleri ❀ ✿ kopyala yapıştır: yapraklar, ağaçlar, doğa emojileri ve biyografi süsleri. Kopyalamak için tıkla.",
+   "preview": "🌸 🌹 🌺 🌻 🌼",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Coquette Sembolleri",
+   "slug": "coquette-sembolleri",
+   "description": "Coquette aesthetic sembolleri: fiyonk 🎀, kurdele, kalp ♡, çiçek ✿ ve pembe süsler. Bio ve nick için yumuşak, feminen, dollette tarzı kopyala yapıştır karakterler.",
+   "preview": "🎀 ୨୧ ʚɞ ⊰ ⊱",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Cottagecore Sembolleri",
+   "slug": "cottagecore-sembolleri",
+   "description": "Cottagecore estetiği sembolleri: mantar 🍄, çiçek, arı 🐝 ve kır motifleri. Bio ve caption için cottage yaşamı süslerini kopyala yapıştır.",
+   "preview": "🍄 🌿 🌱 🪴 🌾",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Sevimli Kaomoji",
+   "slug": "cute-kaomoji",
+   "description": "Sevimli kaomoji&#x27;ye göz at ve kopyala — parıltılı gözler, kızaran yanaklar ve hayvanlarla kawaii Japon metin yüzleri. Kopyalamak için birine tıkla.",
+   "preview": "(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Derece İşareti Koleksiyonu",
+   "slug": "derece-isareti",
+   "description": "Derece işareti (°) kopyala yapıştır: santigrat ℃, fahrenayt ℉, açı ∠, üs (prime) ve geometri sembolleri. Klavyede olmayan işaretler için sembole dokun, anında kopyalansın.",
+   "preview": "° ℃ ℉ K ∠",
+   "type": "Sembol",
+   "useCases": [
+    "Profesyonel gönderiler",
+    "Açıklama"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Dini ve Manevi Semboller",
+   "slug": "dini-semboller",
+   "description": "Dünyanın büyük geleneklerinden dini, manevi ve inançla ilgili Unicode sembollerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.",
+   "preview": "✝ ☦ ✞ ✟ ♰",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Discord sembolleri — kopyala yapıştır",
+   "slug": "discord-sembolleri",
+   "description": "Discord sembolleri kopyala yapıştır: ▸ ┊ ➤ ꒱ ⟢ kanal adı süsleri, sunucu ve kategori ayraçları, rol ve profil işaretleri. Dokun, anında kopyalansın.",
+   "preview": "⌗ ➤ ▸ │ ⊹",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Dreamcore & Weirdcore Sembolleri",
+   "slug": "dreamcore-weirdcore-sembolleri",
+   "description": "Dreamcore ve weirdcore sembolleri — sürreal gözler 👁, gökkuşakları 🌈, glitch blokları, kapılar ve sleepcore kombinleri liminal paylaşımlar için. Kopyalamak için herhangi bir sembole dokun.",
+   "preview": "👁 👁️ 👀 𓂀 𓁹",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji Anlamları",
+   "slug": "emoji-anlamlari",
+   "description": "Emoji anlamları tek sayfada: yüz emojileri, el işaretleri, kalp renkleri ve çift anlamlı emojiler. Hangi emoji ne demek, nerede kullanılır — tıkla kopyala.",
+   "preview": "😊 😂 🥺 😏 🤔",
+   "type": "Rehber",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama",
+    "Yorum"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Bayrak Emoji — Ülke Bayrakları Kopyala",
+   "slug": "emoji-bayraklar",
+   "description": "Türk bayrağı 🇹🇷 ve tüm ülke bayraklarının emojisi. Bayrağa dokun, kopyalansın; oyun ismine, bio&#x27;ya veya mesaja yapıştır. Hazır bayrak setleri de var.",
+   "preview": "🇹🇷 🇦🇿 🇩🇪 🇺🇸 🇬🇧",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Seyahat"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kopyala yapıştır emoji kombinasyonları",
+   "slug": "emoji-combos",
+   "description": "100+ kopyala yapıştır emoji kombinasyonu: coquette, cottagecore, kawaii, Y2K, dark academia, gece gökyüzü, melek, nazar ve daha fazlası. Insta bion, WhatsApp durumun ve TikTok açıklamaların için estetik emoji comboları —",
+   "preview": "🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Estetik semboller — kopyala yapıştır",
+   "slug": "estetik-semboller",
+   "description": "Estetik semboller kopyala yapıştır: ✦ ♡ ୨୧ ❀ ⋆ coquette, kawaii, y2k, soft, kelebek, kalp, yıldız ve bio ayraçları. Dokun, anında kopyalansın.",
+   "preview": "✦ ✧ ⋆ ˚ ♡",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Facebook Sembolleri",
+   "slug": "facebook-sembolleri",
+   "description": "Facebook sembollerini kopyala yapıştır — gönderiler, yorumlar, bio ve sayfa adları için tepki emojileri, kalpler, yıldızlar ve ayraçlar. Herhangi bir sembole dokun, anında kopyalansın.",
+   "preview": "👍 ❤️ 🥰 😆 😮",
+   "type": "Referans",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Facebook"
+   ]
+  },
+  {
+   "title": "Fairycore Sembolleri",
+   "slug": "fairycore-sembolleri",
+   "description": "Fairycore sembolleri ve emoji kombinleri — periler 🧚, mantarlar 🍄, parıltılar ✨ ve zarif çiçek karakterleriyle büyülü bio'lar. Kopyalamak için herhangi bir sembole dokun.",
+   "preview": "🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Geometrik Semboller",
+   "slug": "geometrik-semboller",
+   "description": "Geometrik semboller kopyala yapıştır: daire, baklava, kare, üçgen, madde işareti ve altıgen karakterleri, dolu ve içi boş hâlleriyle. Kopyalamak için tıkla.",
+   "preview": "● ○ ◉ ◎ ⊙",
+   "type": "Sembol",
+   "useCases": [
+    "Madde işaretleri",
+    "Ayırıcılar",
+    "Profesyonel gönderiler"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Goth & Grunge Sembolleri",
+   "slug": "goth-grunge-sembolleri",
+   "description": "Goth ve grunge bio'ları için karanlık aesthetic semboller: haçlar ♱ ✟ †, kurukafalar 💀, örümcekler 🕷, hançerler 🗡 ve alt moda süsleri. Nick ve bio için dokun, anında kopyalansın.",
+   "preview": "♱ † ‡ ✟ 🗡",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Göz Kırpan Emoji ve Kaomoji",
+   "slug": "goz-kirpan-emoji",
+   "description": "Göz kırpan emoji 😉 😜 🤪, şakacı ve takılan kombin setleri, ayrıca flörtöz yanıtlar ve sohbetler için (^_-) gibi kaomoji. Kopyalamak için tıkla.",
+   "preview": "😉 😘 😗 😙 😜",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Direkt mesaj",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Gülen Emoji ve Kaomoji",
+   "slug": "gulen-emoji",
+   "description": "Gülen emoji 😂 🤣 😆, meme gülme tepkileri (💀) ve gülen kaomoji (≧▽≦) tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+   "preview": "😂 🤣 😆 😄 😁",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Yorum"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Hayvan Emojileri",
+   "slug": "hayvan-emojileri",
+   "description": "Hayvan emojileri kopyala yapıştır: evcil hayvanlar, çiftlik hayvanları, vahşi hayvanlar, kuşlar, deniz canlıları, böcekler ve efsanevi yaratıklar. Kopyalamak için tıkla.",
+   "preview": "🐶 🐕 🐩 🐱 🐈",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Instagram Sembolleri",
+   "slug": "instagram-sembolleri",
+   "description": "Instagram sembolleri kopyala yapıştır: biyografi süsleri, ayraçlar, kalpler, yıldızlar ve öne çıkan kapak sembolleri. Kopyalamak için tıkla.",
+   "preview": "✨ • · │ ⌇",
+   "type": "Referans",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "iPhone Emojileri",
+   "slug": "iphone-emojileri",
+   "description": "iPhone emojileri tek sayfada: yüzler, kalpler, el işaretleri ve en &#x27;iPhone&#x27; duran emojiler. Android&#x27;de neden farklı göründüğü de burada — tıkla kopyala.",
+   "preview": "😂 🥹 🥲 😊 🥰",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Referans"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "İsim Sembolleri",
+   "slug": "isim-sembolleri",
+   "description": "İsim sembolleri kopyala yapıştır: ꧁꧂ kanat çerçeveleri, katakana süsleri, taç ve yıldızlar, hazır nick kombinleri. Kopyalamak için tıkla.",
+   "preview": "꧁ ꧂ ༺ ༻ 『",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "İskambil ve Oyun Sembolleri",
+   "slug": "iskambil-sembolleri",
+   "description": "İskambil sembolleri kopyala yapıştır: ♠ maça, ♥ kupa, ♦ karo, ♣ sinek, zar yüzleri, oyun kartı karakterleri. Kopyalamak için tıkla.",
+   "preview": "♠ ♥ ♦ ♣ ♤",
+   "type": "Sembol",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "İslami Semboller",
+   "slug": "islami-semboller",
+   "description": "Kopyalanabilir İslami semboller — ay yıldız, Allah ve Besmele ligatürleri, cami ve dua emojileri, bayram tebrikleri. Kopyalamak için sembole tıkla.",
+   "preview": "☪ ☪️ ☫ 🌙 ☽",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Kutlama"
+   ],
+   "platforms": [
+    "WhatsApp",
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Japon Alfabesi Koleksiyonu",
+   "slug": "japon-alfabesi",
+   "description": "Japon alfabesi kopyala yapıştır: hiragana, katakana (ツ シ gibi gülen yüz harfleri) ve anlamlı kanjiler (桜 愛 夢). Japonca nick ve estetik bio için sembole dokun, anında kopyalansın.",
+   "preview": "桜 愛 夢 月 星",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kalp sembolleri — kopyala yapıştır",
+   "slug": "kalp-sembolleri",
+   "description": "Kalp sembolleri kopyala yapıştır: kalp emojileri, renkli kalpler, Unicode kalp karakterleri ♥ ♡ ❥ ve aşkla ilgili semboller. Herhangi bir kalbe dokun, anında kopyalansın.",
+   "preview": "🌈 ❤ 🧡 💛 💚",
+   "type": "Sembol",
+   "useCases": [
+    "Tepkiler",
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji — Japon emojileri",
+   "slug": "kaomoji",
+   "description": "Kaomoji kopyala yapıştır: Japon emojileri ve metin yüzleri — mutlu, üzgün, omuz silkme, aşk, hayvanlar ve Lenny yüzleri. Herhangi bir yüze dokun, anında kopyalansın. Bio, nick ve yorum için.",
+   "preview": "◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ",
+   "type": "Dekoratif",
+   "useCases": [
+    "Tepkiler",
+    "Yorum",
+    "Açıklama"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Kawaii & Sevimli Semboller",
+   "slug": "kawaii-cute-sembolleri",
+   "description": "Kawaii ve sevimli semboller kopyala yapıştır: yumuşak kalpler ♡, minik yüzler, parıltılar ve pastel süslemeler. Bio, nick ve mesajlar için dokun, anında kopyalansın.",
+   "preview": "♡ ෆ ❤ ❥ ʚɞ",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kızgın Emoji ve Kaomoji",
+   "slug": "kizgin-emoji",
+   "description": "Kızgın emoji 😡 🤬 😤, öfke kombin setleri ve sohbetlerde içini dökmek için (╯°□°）╯︵ ┻━┻ gibi masa deviren kaomoji. Kopyalamak için tıkla.",
+   "preview": "😡 😠 🤬 😤 👿",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Yorum"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Klavye Sembolleri",
+   "slug": "klavye-sembolleri",
+   "description": "Klavye sembolleri ⌘ ⌥ ⇧ ⌫ ⇥ tek sayfada: Mac tuş işaretleri, düzenleme ve yön tuşları. Klavyede olmayan sembolleri tıkla kopyala.",
+   "preview": "⌘ ⌥ ⇧ ⌃ ⇪",
+   "type": "Sembol",
+   "useCases": [
+    "Profesyonel gönderiler",
+    "Açıklama"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Kurukafa Emoji ve Kaomoji",
+   "slug": "kurukafa-emoji",
+   "description": "Kurukafa emoji 💀 ☠️, &#x27;öldüm&#x27; anlamındaki gülme emojileri ve kurukafa kaomoji (☠‿☠) tek sayfada. Tıkla kopyala.",
+   "preview": "💀 ☠️ 😂 🤣 ⚰️",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Yorum"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Aşk & Kalp Kaomoji",
+   "slug": "love-kaomoji",
+   "description": "Aşk ve kalp kaomoji&#x27;ye göz at ve kopyala — sevgi, öpücük, sarılma ve tutkular için Japon metin yüzleri. Anında kopyalamak için birine tıkla.",
+   "preview": "(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)",
+   "type": "Sembol",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Madde İmi Sembolleri",
+   "slug": "madde-imi-sembolleri",
+   "description": "Madde imi sembollerini ve liste işaretlerini kopyala yapıştır: klasik noktalar, ok işaretleri, onay işaretleri, yıldız ve baklava sembolleri, dekoratif çiçek süsleri ve daire içinde rakamlar. Sembole dokun, anında kopyal",
+   "preview": "• ‣ ◦ ⁃ ∙",
+   "type": "Sembol",
+   "useCases": [
+    "Madde işaretleri",
+    "Profesyonel gönderiler",
+    "E-posta biçimlendirme"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Matematik Sembolleri Koleksiyonu",
+   "slug": "matematik-sembolleri",
+   "description": "Matematik sembolleri kopyala yapıştır: artı eksi (±), çarpı (×), bölü (÷), büyük eşit (≥), küçük eşit (≤), eşit değildir (≠), küme işaretleri ve daha fazlası. Sembole dokun, anında kopyalansın.",
+   "preview": "± × ÷ ∓ −",
+   "type": "Sembol",
+   "useCases": [
+    "Profesyonel gönderiler",
+    "Açıklama"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Mutlu Emoji ve Kaomoji",
+   "slug": "mutlu-emoji",
+   "description": "Mutlu emoji 😊 😄 🥰, ヽ(´▽`)/ gibi neşeli kaomoji ve biyografileri, açıklamaları ve mesajları güneşlendiren kombin setleri. Kopyalamak için tıkla.",
+   "preview": "😊 😀 😃 😄 🙂",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Yorum",
+    "Kutlama"
+   ],
+   "platforms": [
+    "Instagram",
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Müzik Sembolleri",
+   "slug": "muzik-sembolleri",
+   "description": "Müzik notası sembollerine, enstrüman emojilerine ve sesle ilgili Unicode karakterlerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.",
+   "preview": "♩ ♪ ♫ ♬ 🎵",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Nazar boncuğu ve nazar sembolleri — kopyala yapıştır",
+   "slug": "nazar-sembolleri",
+   "description": "Nazar boncuğu 🧿 ve nazar sembolleri kopyala yapıştır: nazar emojisi, hamsa eli 🪬, göz karakterleri ve klasik mavi-beyaz palet. Bio, açıklama ve nick için dokun, anında kopyalansın.",
+   "preview": "🧿 🪬 👁 👁️ 👀",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Ok İşaretleri Koleksiyonu",
+   "slug": "ok-isaretleri",
+   "description": "Ok işareti kopyala yapıştır: düz, kalın, çift, kıvrımlı, üçgen ve emoji oklar. Belge, gönderi ve nick için sembole dokun, anında kopyalansın.",
+   "preview": "→ ← ↑ ↓ ↗",
+   "type": "Sembol",
+   "useCases": [
+    "Madde işaretleri",
+    "Profesyonel gönderiler"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Tik işareti ve onay işaretleri koleksiyonu",
+   "slug": "onay-isaretleri",
+   "description": "Tik işareti (✓ ✔ ✅), çarpı işareti (✗ ✘ ❌), durum daireleri ve kontrol listesi sembolleri kopyala yapıştır. Sembole dokun, anında kopyalansın.",
+   "preview": "✓ ✔ ☑ ✅ ☐",
+   "type": "Sembol",
+   "useCases": [
+    "Madde işaretleri",
+    "Profesyonel gönderiler",
+    "E-posta biçimlendirme"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Öpücük Emoji ve Kaomoji",
+   "slug": "opucuk-emoji",
+   "description": "Öpücük emoji 😘 😗 💋 👄, çift emojileri ve öpücük kaomoji ( ˘ ³˘)♥ tek sayfada. Tıkla kopyala, sohbete yapıştır.",
+   "preview": "😘 😗 😙 😚 😽",
+   "type": "Emoji",
+   "useCases": [
+    "Direkt mesaj",
+    "Açıklama",
+    "Yorum"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Para Birimi Sembolleri Koleksiyonu",
+   "slug": "para-birimi-sembolleri",
+   "description": "Para birimi sembolleri kopyala yapıştır: Türk Lirası ₺, euro €, dolar $, sterlin £, yen ¥ ve dünyadan onlarca para birimi işareti. Sembole dokun, anında kopyalansın.",
+   "preview": "₺ $ € £ ¥",
+   "type": "Sembol",
+   "useCases": [
+    "Profesyonel gönderiler",
+    "E-posta biçimlendirme"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Para Emojileri",
+   "slug": "para-emojileri",
+   "description": "Para emojileri kopyala yapıştır — 💰 para çantası, 💸 uçan para, 🤑 para suratı — ayrıca zengin estetiği biyografi kombinleri. Kopyalamak için tıkla.",
+   "preview": "💰 💵 💴 💶 💷",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram",
+    "X"
+   ]
+  },
+  {
+   "title": "Parti ve Kutlama Emojileri",
+   "slug": "parti-emojileri",
+   "description": "Parti emojileri kopyala yapıştır: 🎉 konfeti, 🎂 doğum günü pastası, 🥂 kadeh, havai fişek ve hazır kutlama kombinleri. Kopyalamak için tıkla.",
+   "preview": "🎉 🎊 🥳 🪅 🎈",
+   "type": "Emoji",
+   "useCases": [
+    "Kutlama",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram",
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "PUBG ve BGMI Sembolleri ★",
+   "slug": "pubg-sembolleri",
+   "description": "PUBG Mobile ve BGMI isim sembolleri ★ 彡 乂 ꧁꧂ kopyala yapıştır — oyunun fontuyla test edildi, artı isim değiştirme kartı harcamadan önce hangi sembollerin başarısız olduğunun gerçeği.",
+   "preview": "ツ ッ 彡 乂 亗",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ]
+  },
+  {
+   "title": "Roblox Sembolleri",
+   "slug": "roblox-sembolleri",
+   "description": "40+ Roblox sembolü ✦ ⚡ ♡ — görünen ad, bio ve grup için kopyala yapıştır. Roblox'un güncel isim filtresine göre test edildi, artı Robux, Premium ve Doğrulanmış ikonlarının gerçeği.",
+   "preview": "⋆ ⊹ ✦ ✧ ★",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Satranç Sembolleri",
+   "slug": "satranc-sembolleri",
+   "description": "Satranç taşlarının, tahta karelerinin ve notasyon işaretlerinin Unicode sembollerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.",
+   "preview": "♔ ♕ ♖ ♗ ♘",
+   "type": "Sembol",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Şekilli semboller — kopyala yapıştır",
+   "slug": "semboller",
+   "description": "Şekilli semboller kopyala yapıştır: klavyede olmayan semboller, nick sembolleri ꧁꧂, yıldız ★, kalp ♡, kelebek ve çerçeve sembolleri. Dokun, kopyalansın — PUBG nicki, Instagram bio ve WhatsApp için.",
+   "preview": "★ ✰ ♡ ꧁ ꧂",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Profesyonel gönderiler"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Taç Emoji",
+   "slug": "tac-emoji",
+   "description": "Taç emoji 👑 🤴 👸, &#x27;queen&#x27; anlamındaki emojiler ve kazanma sembolleri tek sayfada. Bio ve kullanıcı adı için tıkla kopyala.",
+   "preview": "👑 🤴 👸 🫅 💍",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Bio",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Therian Sembolleri",
+   "slug": "therian-sembolleri",
+   "description": "Therian ve alterhuman topluluğunun kullandığı theta-delta (θΔ) işaretleri, pati izleri, ay evreleri ve hayvan sembollerine göz at. Herhangi bir sembole dokun, anında kopyalansın.",
+   "preview": "θΔ ΘΔ θ Θ Δ",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Uyarı ve Tehlike Sembolleri",
+   "slug": "uyari-sembolleri",
+   "description": "Uyarı sembolleri kopyala yapıştır: ⚠ dikkat, ☢ radyoaktif, ☣ biyolojik tehlike, ⚡ yüksek voltaj, 🚫 yasak işaretleri. Kopyalamak için tıkla.",
+   "preview": "☢ ☣ ☠ ⚰ ⚱",
+   "type": "Sembol",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Profesyonel gönderiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Üzgün Emoji ve Kaomoji",
+   "slug": "uzgun-emoji",
+   "description": "Üzgün emoji 😢 😔 ☹, kırık kalp sembolleri ve hüzünlü kaomoji (◞‸◟) tek sayfada. Tıkla kopyala, sohbete ya da bio&#x27;ya yapıştır.",
+   "preview": "😢 😞 😔 ☹ 🙁",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Açıklama"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Witchy & Okült Sembolleri",
+   "slug": "witchy-occult-sembolleri",
+   "description": "Witchy ve okült sembollere göz at ve kopyala — pentagramlar, ay evreleri, gezegen işaretleri, simya sembolleri ve diğer ezoterik karakterler. Kopyalamak için herhangi birine dokun.",
+   "preview": "★ ☆ ⚹ ✡ ⚜",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Y2K Sembolleri",
+   "slug": "y2k-sembolleri",
+   "description": "Y2K sembolleri kopyala yapıştır: yıldız ✦ ✮ ⋆, gotik haç ♱ ✟ †, kelebek 🦋, CD 💿 ve parıltı işaretleri. Bio, nick ve caption için dokun, anında kopyalansın.",
+   "preview": "✦ ✮ ♱ 🦋 ✨",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Yazı Sanatı",
+   "slug": "yazi-sanati",
+   "description": "Yazı sanatı kopyala yapıştır — ASCII kediler, braille kalpler, yıldız çerçeveler ve klasik kaomoji, ayrıca kendi çizimin için bloklar. Kopyalamak için tıkla.",
+   "preview": "─ │ ┌ ┐ └",
+   "type": "Dekoratif",
+   "useCases": [
+    "Açıklama",
+    "Yorum"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Yemek ve İçecek Emojileri",
+   "slug": "yemek-emojileri",
+   "description": "Yemek emojileri kopyala yapıştır: meyve ve sebzeler, hazır yemekler, tatlılar, içecekler ve mutfak gereçleri. Kopyalamak için tıkla.",
+   "preview": "🍎 🥑 🍇 🍊 🍋",
+   "type": "Emoji",
+   "useCases": [
+    "Açıklama",
+    "Tepkiler",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Yıldız Sembolleri Koleksiyonu",
+   "slug": "yildiz-sembolleri",
+   "description": "Yıldız sembolleri kopyala yapıştır: ★ ☆ ✦ ✧ yıldızlar, çok köşeli yıldızlar, parıltı ve yıldız emojileri, yıldızlı puanlama ve bio süsleri. Sembole dokun, anında kopyalansın.",
+   "preview": "★ ☆ ✦ ✧ ✡",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Madde işaretleri",
+    "Açıklama"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Yunan Alfabesi Sembolleri",
+   "slug": "yunan-alfabesi-sembolleri",
+   "description": "Yunan alfabesi sembolleri kopyala yapıştır: alfa, beta, gama, delta, pi, sigma, omega ve tüm büyük/küçük Yunan harfleri. Matematik, fizik ve sosyal medya için sembole dokun, anında kopyalansın.",
+   "preview": "Α Β Γ Δ Ε",
+   "type": "Sembol",
+   "useCases": [
+    "Profesyonel gönderiler",
+    "Açıklama",
+    "Bio"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Duyguya Göre Yüz Emojileri",
+   "slug": "yuz-emojileri",
+   "description": "Yüz emojilerini duyguya göre kopyala: öpücük 😘, göz kırpma 😉, sırıtma 😏, göz devirme 🙄, kızarma 😊, yalvaran yüz 🥺, güneş gözlüğü 😎, hale 😇 ve fazlası — anlamları ve hazır kombinleriyle. Dokun, anında kopyalansın.",
+   "preview": "😘 😗 😙 😚 💋",
+   "type": "Emoji",
+   "useCases": [
+    "Tepkiler",
+    "Açıklama",
+    "Yorum"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Zodyak sembolleri — 12 burcun sembolü",
+   "slug": "zodyak-sembolleri",
+   "description": "Zodyak sembolleri kopyala yapıştır: Koç ♈, Boğa ♉, İkizler ♊ ve 12 burcun sembolü, gezegen işaretleri, Çin burçları ve astroloji sembolleri. Sembole dokun, anında kopyalansın.",
+   "preview": "♈ ♉ ♊ ♋ ♌",
+   "type": "Sembol",
+   "useCases": [
+    "Bio",
+    "Açıklama",
+    "Tepkiler"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  }
+ ]
+};
+</script>
+<script src="/js/library/library-hub.js" defer></script>
+<!-- library-hub:end -->
 <!-- CTA -->
 <div class="lib-cta">
   <div class="cta-card">
@@ -698,64 +1253,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </details>
 </section>
 
-<!-- STATIC INDEX (crawlable links to every collection) -->
-<nav class="lib-index" aria-label="Tüm sembol koleksiyonları">
-  <div class="lib-index-inner">
-    <h2 class="lib-index-title">Tüm Koleksiyonlar A–Z</h2>
-    <p class="lib-index-note">UltraTextGen Kütüphanesi'ndeki her sembol, işaret ve kaomoji koleksiyonu. Üstteki dizini keşfet ya da aşağıdaki sayfalardan birine doğrudan git.</p>
-    <ul class="lib-index-list">
-      <li><a href="/tr/library/emoji-bayraklar/">Bayrak Emoji</a></li>
-      <li><a href="/tr/library/aglayan-emoji/">Ağlayan Emoji</a></li>
-      <li><a href="/tr/library/alt-kodlari/">Alt Kodları</a></li>
-      <li><a href="/tr/library/love-kaomoji/">Aşk &amp; Kalp Kaomoji</a></li>
-      <li><a href="/tr/library/ates-emoji/">Ateş Emoji</a></li>
-      <li><a href="/tr/library/cottagecore-sembolleri/">Cottagecore Sembolleri</a></li>
-      <li><a href="/tr/library/coquette-sembolleri/">Coquette Sembolleri</a></li>
-      <li><a href="/tr/library/derece-isareti/">Derece İşareti</a></li>
-      <li><a href="/tr/library/dini-semboller/">Dini Semboller</a></li>
-      <li><a href="/tr/library/discord-sembolleri/">Discord Sembolleri</a></li>
-      <li><a href="/tr/library/dreamcore-weirdcore-sembolleri/">Dreamcore &amp; Weirdcore Sembolleri</a></li>
-      <li><a href="/tr/library/emoji-anlamlari/">Emoji Anlamları</a></li>
-      <li><a href="/tr/library/emoji-combos/">Emoji Kombinasyonları</a></li>
-      <li><a href="/tr/library/estetik-semboller/">Estetik Semboller</a></li>
-      <li><a href="/tr/library/facebook-sembolleri/">Facebook Sembolleri</a></li>
-      <li><a href="/tr/library/fairycore-sembolleri/">Fairycore Sembolleri</a></li>
-      <li><a href="/tr/library/goth-grunge-sembolleri/">Goth &amp; Grunge Sembolleri</a></li>
-      <li><a href="/tr/library/gulen-emoji/">Gülen Emoji</a></li>
-      <li><a href="/tr/library/iphone-emojileri/">iPhone Emojileri</a></li>
-      <li><a href="/tr/library/islami-semboller/">İslami Semboller</a></li>
-      <li><a href="/tr/library/japon-alfabesi/">Japon Alfabesi</a></li>
-      <li><a href="/tr/library/kalp-sembolleri/">Kalp Sembolleri</a></li>
-      <li><a href="/tr/library/kaomoji/">Kaomoji — Japon Metin Yüzleri</a></li>
-      <li><a href="/tr/library/kawaii-cute-sembolleri/">Kawaii Sevimli Semboller</a></li>
-      <li><a href="/tr/library/cat-kaomoji/">Kedi Kaomoji</a></li>
-      <li><a href="/tr/library/klavye-sembolleri/">Klavye Sembolleri</a></li>
-      <li><a href="/tr/library/kurukafa-emoji/">Kurukafa Emoji</a></li>
-      <li><a href="/tr/library/madde-imi-sembolleri/">Madde İmi Sembolleri</a></li>
-      <li><a href="/tr/library/matematik-sembolleri/">Matematik Sembolleri</a></li>
-      <li><a href="/tr/library/muzik-sembolleri/">Müzik Sembolleri</a></li>
-      <li><a href="/tr/library/nazar-sembolleri/">Nazar Sembolleri</a></li>
-      <li><a href="/tr/library/ok-isaretleri/">Ok İşaretleri</a></li>
-      <li><a href="/tr/library/onay-isaretleri/">Onay İşaretleri</a></li>
-      <li><a href="/tr/library/opucuk-emoji/">Öpücük Emoji</a></li>
-      <li><a href="/tr/library/para-birimi-sembolleri/">Para Birimi Sembolleri</a></li>
-      <li><a href="/tr/library/pubg-sembolleri/">PUBG ve BGMI Sembolleri</a></li>
-      <li><a href="/tr/library/roblox-sembolleri/">Roblox Sembolleri</a></li>
-      <li><a href="/tr/library/satranc-sembolleri/">Satranç Sembolleri</a></li>
-      <li><a href="/tr/library/cute-kaomoji/">Sevimli Kaomoji</a></li>
-      <li><a href="/tr/library/semboller/">Şekilli Semboller</a></li>
-      <li><a href="/tr/library/tac-emoji/">Taç Emoji</a></li>
-      <li><a href="/tr/library/therian-sembolleri/">Therian Sembolleri</a></li>
-      <li><a href="/tr/library/uzgun-emoji/">Üzgün Emoji</a></li>
-      <li><a href="/tr/library/yildiz-sembolleri/">Yıldız Sembolleri</a></li>
-      <li><a href="/tr/library/yunan-alfabesi-sembolleri/">Yunan Alfabesi Sembolleri</a></li>
-      <li><a href="/tr/library/yuz-emojileri/">Yüz Emojileri</a></li>
-      <li><a href="/tr/library/y2k-sembolleri/">Y2K Sembolleri</a></li>
-      <li><a href="/tr/library/zodyak-sembolleri/">Zodyak Sembolleri</a></li>
-      <li><a href="/tr/library/witchy-occult-sembolleri/">Witchy &amp; Okült Sembolleri</a></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -767,776 +1264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- BACK TO TOP -->
-<button type="button" class="lib-back-top" id="libBackTop" aria-label="Başa dön" title="Başa dön">↑</button>
 
-<script>
-(function () {
-  "use strict";
-
-  /* ── Data ───────────────────────────────────────────────────── */
-  const LIBRARY = [
-    {
-      title: "İslami Semboller",
-      slug: "islami-semboller",
-      description: "Ay yıldız ☪, Arapça hürmet ligatürleri ﷲ ﷺ, cami ve bayram tebrikleri.",
-      preview: "☪ ﷲ ﷺ 🕌 📿",
-      useCases: ["Referans", "Bio"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Spiritüel & İnanç",
-      alpha: "İ"
-    },
-    {
-      title: "Dini Semboller",
-      slug: "dini-semboller",
-      description: "Haçlar ✝, hilal ☪, Davut yıldızı ✡, Dharma çarkı ☸ ve diğer inanç sembolleri.",
-      preview: "✝ ☪ ✡ ☸ ☯",
-      useCases: ["Referans", "Bio"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Spiritüel & İnanç",
-      alpha: "D"
-    },
-    {
-      title: "Satranç Sembolleri",
-      slug: "satranc-sembolleri",
-      description: "Satranç taşları ♔ ♛, tahta kareleri ve notasyon işaretleri.",
-      preview: "♔ ♕ ♞ ♟ ⬛",
-      useCases: ["Referans", "Bio"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Oyun & Platform",
-      alpha: "S"
-    },
-    {
-      title: "Müzik Sembolleri",
-      slug: "muzik-sembolleri",
-      description: "Notalar ♪ ♫, anahtarlar, değiştirme işaretleri, suslar ve enstrüman emojileri.",
-      preview: "♩ ♪ ♫ 𝄞 🎵",
-      useCases: ["Referans", "Bio"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Kültür & Dil",
-      alpha: "M"
-    },
-    {
-      title: "Aşk & Kalp Kaomoji",
-      slug: "love-kaomoji",
-      description: "Aşk metin yüzleri (♥ω♥) ve kalpler — sevgi, öpücük ve sarılma için.",
-      preview: "(♥ω♥)",
-      useCases: ["Yorum", "Açıklama", "Bio"],
-      platforms: ["Evrensel", "WhatsApp", "Instagram"],
-      type: "Kaomoji",
-      subject: "Duygu & İfade",
-      alpha: "A"
-    },
-    {
-      title: "Coquette Sembolleri",
-      slug: "coquette-sembolleri",
-      description: "Pembe fiyonk 🎀, kalp ♡ ve kurdele — coquette/dollette estetiği için bio ve nick süslemeleri.",
-      preview: "🎀 ♡ ✿ ⋆ ˚",
-      useCases: ["Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "C"
-    },
-    {
-      title: "Cottagecore Sembolleri",
-      slug: "cottagecore-sembolleri",
-      description: "Mantar 🍄, çiçek 🌸, arı 🐝 ve köy motifleri — doğa temalı bio süslemesi için.",
-      preview: "🍄 🌸 🐝 ✿ 🌿",
-      useCases: ["Bio", "Açıklama"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "C"
-    },
-    {
-      title: "Derece İşareti",
-      slug: "derece-isareti",
-      description: "Derece işareti ° santigrat ℃, fahrenayt ℉, kelvin ve açı sembolleri — sıcaklık ve geometri için.",
-      preview: "° ℃ ℉ ∠ ⊾",
-      useCases: ["Referans", "Açıklama"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Bilim & Teknik",
-      alpha: "D"
-    },
-    {
-      title: "Discord Sembolleri",
-      slug: "discord-sembolleri",
-      description: "Kanal, sunucu ve rol süslemeleri — ▸ ┊ ➤ ꒱ ⟢, ayraç, kalp ve yıldız.",
-      preview: "▸ ┊ ➤ ꒱ ⟢",
-      useCases: ["Kullanıcı Adı", "Bio"],
-      platforms: ["Discord", "Evrensel"],
-      type: "Dekoratif",
-      subject: "Oyun & Platform",
-      alpha: "D"
-    },
-    {
-      title: "Dreamcore & Weirdcore Sembolleri",
-      slug: "dreamcore-weirdcore-sembolleri",
-      description: "Sürreal göz 👁, gökkuşağı 🌈 ve glitch blokları — liminal ve rüya estetiği paylaşımları için.",
-      preview: "👁 🌈 ⋆ ▚ ⛩",
-      useCases: ["Bio", "Açıklama"],
-      platforms: ["Evrensel", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "D"
-    },
-    {
-      title: "Estetik Semboller",
-      slug: "estetik-semboller",
-      description: "Havalı estetik semboller, parıltı, kalp, çiçek ve ayraçlar — bio, nick ve açıklama için.",
-      preview: "✦ ✧ ☾ ⋆ ࿐",
-      useCases: ["Bio", "Açıklama", "Kullanıcı Adı"],
-      platforms: ["Evrensel", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "E"
-    },
-    {
-      title: "Facebook Sembolleri",
-      slug: "facebook-sembolleri",
-      description: "Tepki emojileri, kalp, yıldız ve ayraçlar — gönderi, yorum, bio ve Sayfa ismi için.",
-      preview: "👍 ❤ ★ ─ ✦",
-      useCases: ["Yorum", "Bio", "Açıklama"],
-      platforms: ["Facebook", "Evrensel"],
-      type: "Emoji",
-      subject: "Oyun & Platform",
-      alpha: "F"
-    },
-    {
-      title: "Fairycore Sembolleri",
-      slug: "fairycore-sembolleri",
-      description: "Peri 🧚, mantar 🍄, parıltı ✨ ve minik çiçekler — büyülü bio estetiği için.",
-      preview: "🧚 🍄 ✨ ✿ ⋆",
-      useCases: ["Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "F"
-    },
-    {
-      title: "Goth & Grunge Sembolleri",
-      slug: "goth-grunge-sembolleri",
-      description: "Karanlık goth ve grunge işaretleri — haç, kuru kafa, örümcek ve hançer — alt profiller için.",
-      preview: "✝ 🕷 🗡 ☠ ⛧",
-      useCases: ["Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "G"
-    },
-    {
-      title: "Japon Alfabesi",
-      slug: "japon-alfabesi",
-      description: "Hiragana, katakana ve kanji 桜 愛 — özel klavye olmadan Japonca yazı ve bio için.",
-      preview: "桜 愛 あ ア ・",
-      useCases: ["Bio", "Kullanıcı Adı", "Referans"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Kültür & Dil",
-      alpha: "J"
-    },
-    {
-      title: "Kalp Sembolleri",
-      slug: "kalp-sembolleri",
-      description: "Kalp ♡ ♥ ❤ 💕 ᥫ᭡ — IG/WA bio, çift nicki, açıklama ve mesajlar için.",
-      preview: "♡ ♥ ❤ 💕 ᥫ᭡",
-      useCases: ["Bio", "Oyun Nicki", "Açıklama"],
-      platforms: ["Evrensel", "Instagram", "WhatsApp"],
-      type: "Sembol",
-      subject: "Duygu & İfade",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji — Japon Metin Yüzleri",
-      slug: "kaomoji",
-      description: "Japon metin yüzleri koleksiyonu — sevimli, mutlu, üzgün, aşk, hayvan ve Lenny face.",
-      preview: "(ᵕ‿ᵕ) (◕‿◕)",
-      useCases: ["Yorum", "Açıklama", "Bio"],
-      platforms: ["Evrensel", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Duygu & İfade",
-      alpha: "K"
-    },
-    {
-      title: "Kedi Kaomoji",
-      slug: "cat-kaomoji",
-      description: "Sevimli kedi metin yüzleri (=^･ω･^=) — mutlu, üzgün ve uykulu kediler.",
-      preview: "(=^･ω･^=)",
-      useCases: ["Yorum", "Açıklama"],
-      platforms: ["Evrensel", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Doğa & Hayvan",
-      alpha: "K"
-    },
-    {
-      title: "Kawaii Sevimli Semboller",
-      slug: "kawaii-cute-sembolleri",
-      description: "Yumuşak kalp, minik yüz, parıltı ve pastel süslemeler — bio ve mesajlar için.",
-      preview: "♡ ⋆ ✿ ˚ ⊹",
-      useCases: ["Bio", "Kullanıcı Adı", "Yorum"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "K"
-    },
-    {
-      title: "Matematik Sembolleri",
-      slug: "matematik-sembolleri",
-      description: "Artı eksi ±, çarpı ×, bölü ÷, eşitsizlik, kök, üs ve sonsuz ∞ işaretleri.",
-      preview: "± × ÷ √ ∞",
-      useCases: ["Referans", "Açıklama"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Bilim & Teknik",
-      alpha: "M"
-    },
-    {
-      title: "Nazar Sembolleri",
-      slug: "nazar-sembolleri",
-      description: "Nazar 🧿, hamsa eli 🪬, göz karakterleri ve mavi-beyaz palet — bio, açıklama ve nick için.",
-      preview: "🧿 🪬 👁 ◉ 💙",
-      useCases: ["Bio", "Açıklama", "Kullanıcı Adı"],
-      platforms: ["Evrensel", "Instagram", "WhatsApp"],
-      type: "Sembol",
-      subject: "Spiritüel & İnanç",
-      alpha: "N"
-    },
-    {
-      title: "Ok İşaretleri",
-      slug: "ok-isaretleri",
-      description: "Yön okları → ← ↑ ↓ ➤ ⇒ » — nick süslemesi, bio ve yön göstergesi için.",
-      preview: "→ ← ↑ ↓ ➤",
-      useCases: ["Oyun Nicki", "Açıklama", "Bio"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Şekil & Geometri",
-      alpha: "O"
-    },
-    {
-      title: "Onay İşaretleri",
-      slug: "onay-isaretleri",
-      description: "Tik ✓ ✔ ✅ ☑ ve çarpı ✗ ❌ — liste, anket ve \"tamamlandı\" göstergesi için.",
-      preview: "✓ ✔ ✅ ☑ ✗",
-      useCases: ["Açıklama", "Bio", "Referans"],
-      platforms: ["Evrensel", "WhatsApp"],
-      type: "Sembol",
-      subject: "İşaret & Gösterge",
-      alpha: "O"
-    },
-    {
-      title: "Para Birimi Sembolleri",
-      slug: "para-birimi-sembolleri",
-      description: "Türk Lirası ₺, Euro €, Dolar $, Sterlin £ ve dünya paraları — fiyat, referans ve bio için.",
-      preview: "₺ € $ £ ¥",
-      useCases: ["Referans", "Açıklama"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "İşaret & Gösterge",
-      alpha: "P"
-    },
-    {
-      title: "Roblox Sembolleri",
-      slug: "roblox-sembolleri",
-      description: "40+ Roblox sembolü ✦ ⚡ ♡ — görünen ad, bio ve grup için, güncel isim filtresiyle test edildi.",
-      preview: "✦ ⚡ ♡ ★ ◈",
-      useCases: ["Oyun Nicki", "Kullanıcı Adı", "Bio"],
-      platforms: ["Roblox", "Evrensel"],
-      type: "Dekoratif",
-      subject: "Oyun & Platform",
-      alpha: "R"
-    },
-    {
-      title: "Sevimli Kaomoji",
-      slug: "cute-kaomoji",
-      description: "Sevimli, tatlı metin yüzleri (◕‿◕) — parlayan gözler, pembe yanaklar ve kawaii ifadeler.",
-      preview: "(◕‿◕)",
-      useCases: ["Yorum", "Açıklama", "Bio"],
-      platforms: ["Evrensel", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Duygu & İfade",
-      alpha: "S"
-    },
-    {
-      title: "Şekilli Semboller",
-      slug: "semboller",
-      description: "Nick ve bio için tüm semboller — yıldız, kalp, kelebek, çerçeve ꧁꧂ ve oklar.",
-      preview: "★ ♡ ꧁ ꧂ ✦",
-      useCases: ["Oyun Nicki", "Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "Ş"
-    },
-    {
-      title: "Therian Sembolleri",
-      slug: "therian-sembolleri",
-      description: "Theta-delta θΔ, pati izi, ay evreleri ve therian & alterhuman toplulukları için semboller.",
-      preview: "θ Δ ☾ 🐾 ⧖",
-      useCases: ["Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Estetik & Dekoratif",
-      alpha: "T"
-    },
-    {
-      title: "Tırnak İşareti",
-      slug: "tirnak-isareti",
-      description: "Düz \" ve kıvrık “ ” ‘ ’ « » tırnaklar, ayrıca Japon köşeli tırnakları — açıklama, alıntı ve bio için.",
-      preview: "“ ” ‘ ’ «",
-      useCases: ["Açıklama", "Bio", "Referans"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "İşaret & Gösterge",
-      alpha: "T"
-    },
-    {
-      title: "Witchy & Okült Sembolleri",
-      slug: "witchy-occult-sembolleri",
-      description: "Pentagram, ay evreleri, gezegen ve simya işaretleri — witchy ve okült estetiği için.",
-      preview: "☽ ⛤ ☿ 🜁 ✵",
-      useCases: ["Bio", "Açıklama"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Spiritüel & İnanç",
-      alpha: "W"
-    },
-    {
-      title: "Y2K Sembolleri",
-      slug: "y2k-sembolleri",
-      description: "Yıldız ✰, parıltı ✧, haç ♱, kelebek 🦋 ve CD 💿 — Y2K bio ve aesthetic nick için.",
-      preview: "✰ ✧ ♱ 🦋 💿",
-      useCases: ["Bio", "Kullanıcı Adı", "Açıklama"],
-      platforms: ["Evrensel", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "Y"
-    },
-    {
-      title: "Yıldız Sembolleri",
-      slug: "yildiz-sembolleri",
-      description: "Yıldız ★ ☆ ✦ ✧ ⋆ — puanlama, oyun nicki süsü ve estetik bio için.",
-      preview: "★ ☆ ✦ ✧ ⋆",
-      useCases: ["Açıklama", "Oyun Nicki", "Bio"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Sembol",
-      subject: "Şekil & Geometri",
-      alpha: "Y"
-    },
-    {
-      title: "Yüz Emojileri",
-      slug: "yuz-emojileri",
-      description: "Duyguya göre yüz emojileri 😘 😉 😏 🙄 🥺 — anlamları, en yakın varyantları ve hazır kombinleri.",
-      preview: "😘 😉 😏 🙄 🥺",
-      useCases: ["Bio", "Açıklama", "Yorum"],
-      platforms: ["Evrensel", "Instagram", "WhatsApp"],
-      type: "Emoji",
-      subject: "Duygu & İfade",
-      alpha: "Y"
-    },
-    {
-      title: "Yunan Alfabesi Sembolleri",
-      slug: "yunan-alfabesi-sembolleri",
-      description: "Yunan alfabesi Α–Ω — alfa, beta, sigma, pi ve phi; büyük ve küçük harf.",
-      preview: "Α Β Σ Δ Ω",
-      useCases: ["Referans", "Bio", "Kullanıcı Adı"],
-      platforms: ["Evrensel"],
-      type: "Sembol",
-      subject: "Kültür & Dil",
-      alpha: "Y"
-    },
-    {
-      title: "PUBG ve BGMI Sembolleri",
-      slug: "pubg-sembolleri",
-      description: "PUBG Mobile ve BGMI isim sembolleri ★ 彡 乂 ꧁꧂ — oyunun fontuyla test edildi, hazır isim kombinasyonlarıyla.",
-      preview: "★ 彡 乂 ꧁꧂",
-      useCases: ["Oyun Nicki", "Kullanıcı Adı", "Klan Tagı"],
-      platforms: ["PUBG Mobile", "BGMI", "Evrensel"],
-      type: "Dekoratif",
-      subject: "Oyun & Platform",
-      alpha: "P"
-    },
-    {
-      title: "Zodyak Sembolleri",
-      slug: "zodyak-sembolleri",
-      description: "12 burcun sembolü ♈ ♉ ♊ — gezegen işaretleri, Çin burçları ve astroloji notasyonu.",
-      preview: "♈ ♉ ♊ ♋ ♌",
-      useCases: ["Bio", "Kullanıcı Adı", "Referans"],
-      platforms: ["Evrensel", "Instagram"],
-      type: "Sembol",
-      subject: "Spiritüel & İnanç",
-      alpha: "Z"
-    }
-  ];
-
-  /* ── Controlled vocabularies ── */
-  const SUBJECTS   = ["Estetik & Dekoratif","Duygu & İfade","Şekil & Geometri","İşaret & Gösterge","Bilim & Teknik","Kültür & Dil","Oyun & Platform","Spiritüel & İnanç","Doğa & Hayvan"];
-  const USE_CASES  = ["Bio","Açıklama","Oyun Nicki","Kullanıcı Adı","Yorum","Referans"];
-  const PLATFORMS  = ["Instagram","TikTok","WhatsApp","Facebook","Discord","Roblox","Evrensel"];
-  const TYPES      = ["Sembol","Emoji","Dekoratif","Kaomoji"];
-
-  /* ── Turkish alphabet order (drives the jump bar + grouping sort) ── */
-  const ALPHABET = ["A","B","C","Ç","D","E","F","G","Ğ","H","I","İ","J","K","L","M","N","O","Ö","P","R","S","Ş","T","U","Ü","V","W","Y","Z"];
-
-  /* ── State ── */
-  let activeSubject = null;
-  let activeUseCase = null;
-  let activePlatform = null;
-  let activeType = null;
-  let searchQuery = "";
-
-  /* ── Helpers ── */
-  function countBy(data, key, value) {
-    return data.filter(function (item) {
-      if (key === "useCases") return item.useCases.indexOf(value) !== -1;
-      if (key === "platforms") return item.platforms.indexOf(value) !== -1;
-      if (key === "type") return item.type === value;
-      if (key === "subject") return item.subject === value;
-      return false;
-    }).length;
-  }
-
-  function buildPills(containerId, vocab, key, getActive, setActive) {
-    const row = document.getElementById(containerId);
-    vocab.forEach(function (val) {
-      const total = countBy(LIBRARY, key, val);
-      if (total === 0) return;
-      const btn = document.createElement("button");
-      btn.className = "lib-pill";
-      btn.dataset.value = val;
-      btn.setAttribute("aria-pressed", "false");
-      btn.innerHTML = val + ' <span class="pill-count">(' + total + ')</span>';
-      btn.addEventListener("click", function () {
-        if (getActive() === val) {
-          setActive(null);
-        } else {
-          setActive(val);
-        }
-        render();
-      });
-      row.appendChild(btn);
-    });
-  }
-
-  function updatePillStates() {
-    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeSubject;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeUseCase;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#platformRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activePlatform;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#typeRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeType;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    const clearBtn = document.getElementById("clearFilters");
-    clearBtn.classList.toggle("visible", !!anyFilter);
-  }
-
-  function getFiltered() {
-    return LIBRARY.filter(function (item) {
-      if (activeSubject && item.subject !== activeSubject) return false;
-      if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
-      if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
-      if (activeType && item.type !== activeType) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLocaleLowerCase("tr");
-        if (item.title.toLocaleLowerCase("tr").indexOf(q) === -1 &&
-            item.description.toLocaleLowerCase("tr").indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-  }
-
-  /* ── Alphabet bar ── */
-  function buildAlphaBar(filtered) {
-    const bar = document.getElementById("alphaBar");
-    bar.innerHTML = "";
-    ALPHABET.forEach(function (letter) {
-      const count = filtered.filter(function (item) { return item.alpha === letter; }).length;
-      const hasItems = count > 0;
-      const btn = document.createElement("a");
-      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
-      btn.dataset.letter = letter;
-      if (hasItems) {
-        btn.href = "#lib-letter-" + letter;
-      } else {
-        btn.setAttribute("aria-disabled", "true");
-        btn.setAttribute("tabindex", "-1");
-      }
-      btn.setAttribute("aria-label", letter + (hasItems ? " — " + count + " koleksiyon" : " — koleksiyon yok"));
-      btn.innerHTML = letter + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
-      bar.appendChild(btn);
-    });
-  }
-
-  /* ── Directory render ── */
-  let letterObserver = null;
-
-  function render() {
-    const filtered = getFiltered();
-    const dir = document.getElementById("libDirectory");
-    const empty = document.getElementById("libEmpty");
-    const countEl = document.getElementById("libResultCount");
-
-    updatePillStates();
-    buildAlphaBar(filtered);
-
-    // Update result count line
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    if (anyFilter) {
-      countEl.hidden = false;
-      countEl.textContent = LIBRARY.length + " koleksiyonun " + filtered.length + " tanesi gösteriliyor";
-    } else {
-      countEl.hidden = true;
-      countEl.textContent = "";
-    }
-
-    if (filtered.length === 0) {
-      dir.innerHTML = "";
-      empty.classList.add("visible");
-      teardownLetterObserver();
-      return;
-    }
-    empty.classList.remove("visible");
-
-    // Group by alpha
-    const groups = {};
-    filtered.forEach(function (item) {
-      if (!groups[item.alpha]) groups[item.alpha] = [];
-      groups[item.alpha].push(item);
-    });
-
-    // Sort letters in Turkish alphabet order
-    const letters = Object.keys(groups).sort(function (a, b) {
-      return ALPHABET.indexOf(a) - ALPHABET.indexOf(b);
-    });
-    let html = "";
-    letters.forEach(function (letter) {
-      const items = groups[letter];
-      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-labelledby="lib-letter-heading-' + letter + '">';
-      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + letter + '"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></h2>';
-      items.forEach(function (item, idx) {
-        const titleId = "lib-entry-title-" + letter + "-" + idx;
-        const tags = [];
-        function tagBtn(filterKey, val, extraClass) {
-          const cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
-          const label = "Filtrele: " + val;
-          return '<button type="button" class="' + cls + '"' +
-            ' data-filter="' + escHtml(filterKey) + '"' +
-            ' data-value="' + escHtml(val) + '"' +
-            ' aria-label="' + escHtml(label) + '">' +
-            escHtml(val) + '</button>';
-        }
-        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
-        (item.useCases || []).slice(0, 3).forEach(function (uc) {
-          tags.push(tagBtn("useCases", uc));
-        });
-        (item.platforms || []).slice(0, 2).forEach(function (pl) {
-          if (pl === "Evrensel") return;
-          tags.push(tagBtn("platforms", pl));
-        });
-
-        html += '<article class="lib-entry">';
-        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
-          '<a class="lib-entry-title-link" href="/tr/library/' + encodeURIComponent(item.slug) + '/">' +
-          escHtml(item.title) + '</a></h3>';
-        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
-        html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
-        if (tags.length) {
-          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
-        }
-        html += '</article>';
-      });
-      html += '</section>';
-    });
-
-    dir.innerHTML = html;
-
-    setupLetterObserver();
-  }
-
-  /* ── Active letter highlighting ── */
-  function teardownLetterObserver() {
-    if (letterObserver) {
-      letterObserver.disconnect();
-      letterObserver = null;
-    }
-    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
-      el.classList.remove("is-current");
-    });
-  }
-
-  function setupLetterObserver() {
-    teardownLetterObserver();
-    if (!("IntersectionObserver" in window)) return;
-
-    const sections = document.querySelectorAll(".lib-letter-section");
-    if (!sections.length) return;
-
-    const visible = {};
-    letterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        const id = entry.target.id; // lib-letter-X
-        const letter = id.replace("lib-letter-", "");
-        if (entry.isIntersecting) {
-          visible[letter] = entry.intersectionRatio;
-        } else {
-          delete visible[letter];
-        }
-      });
-
-      // Pick the topmost visible letter
-      let current = null;
-      let topY = Infinity;
-      Object.keys(visible).forEach(function (letter) {
-        const el = document.getElementById("lib-letter-" + letter);
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < topY) {
-          topY = rect.top;
-          current = letter;
-        }
-      });
-
-      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
-        btn.classList.toggle("is-current", btn.dataset.letter === current);
-      });
-    }, {
-      // Top offset accounts for the sticky alpha bar (~80px tall);
-      // bottom offset prevents the next section from activating too early.
-      rootMargin: "-80px 0px -60% 0px",
-      threshold: [0, 0.25, 0.5, 1]
-    });
-
-    sections.forEach(function (sec) { letterObserver.observe(sec); });
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function clearAll() {
-    activeSubject = null;
-    activeUseCase = null;
-    activePlatform = null;
-    activeType = null;
-    searchQuery = "";
-    document.getElementById("libSearch").value = "";
-    render();
-  }
-
-  /* ── Init ── */
-  buildPills("subjectRow", SUBJECTS, "subject",
-    function () { return activeSubject; },
-    function (v) { activeSubject = v; });
-
-  buildPills("useCaseRow", USE_CASES, "useCases",
-    function () { return activeUseCase; },
-    function (v) { activeUseCase = v; });
-
-  buildPills("platformRow", PLATFORMS, "platforms",
-    function () { return activePlatform; },
-    function (v) { activePlatform = v; });
-
-  buildPills("typeRow", TYPES, "type",
-    function () { return activeType; },
-    function (v) { activeType = v; });
-
-  document.getElementById("libSearch").addEventListener("input", function () {
-    searchQuery = this.value.trim();
-    render();
-  });
-
-  document.getElementById("clearFilters").addEventListener("click", clearAll);
-  document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
-
-  /* ── Tag-button → filter (event delegation) ── */
-  document.getElementById("libDirectory").addEventListener("click", function (e) {
-    const btn = e.target.closest && e.target.closest(".lib-entry-tag");
-    if (!btn) return;
-    const key = btn.dataset.filter;
-    const val = btn.dataset.value;
-    if (!key || !val) return;
-    if (key === "type") {
-      activeType = (activeType === val) ? null : val;
-    } else if (key === "useCases") {
-      activeUseCase = (activeUseCase === val) ? null : val;
-    } else if (key === "platforms") {
-      activePlatform = (activePlatform === val) ? null : val;
-    } else {
-      return;
-    }
-    render();
-  });
-
-  /* ── Back-to-top ── */
-  const backTop = document.getElementById("libBackTop");
-  if (backTop) {
-    const toggleBackTop = function () {
-      if (window.scrollY > 600) {
-        backTop.classList.add("visible");
-      } else {
-        backTop.classList.remove("visible");
-      }
-    };
-    window.addEventListener("scroll", toggleBackTop, { passive: true });
-    backTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    toggleBackTop();
-  }
-
-  /* ── ItemList JSON-LD (SEO) ── */
-  function injectItemListJsonLd() {
-    const itemListElement = LIBRARY.map(function (item, idx) {
-      return {
-        "@type": "ListItem",
-        "position": idx + 1,
-        "url": "https://ultratextgen.com/tr/library/" + item.slug + "/",
-        "name": item.title
-      };
-    });
-    const data = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "UltraTextGen Sembol Kütüphanesi",
-      "url": "https://ultratextgen.com/tr/library/",
-      "numberOfItems": LIBRARY.length,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "itemListElement": itemListElement
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-  }
-  injectItemListJsonLd();
-
-  render();
-})();
-</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

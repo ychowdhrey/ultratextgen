@@ -26,6 +26,6 @@ jobs:
         run: |
           git config --global user.name "ultratextgen-bot"
           git config --global user.email "bot@ultratextgen.com"
-          git add README.md README.*.md
+          git add README.md
           git commit -m "Weekly README sync from sitemap" || echo "No changes"
           git push

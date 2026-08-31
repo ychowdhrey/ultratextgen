@@ -185,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Discord टेक्स्ट फॉर्मेटिंग, आसान भाषा में</h1>
-    <p class="hero-tagline">आपको "fonts" की समस्या नहीं है — आपको तीन-system की समस्या है। Discord बिल्कुल अलग-अलग कामों के लिए Markdown, Unicode कैरेक्टर और Nitro styles इस्तेमाल करता है। एक बार जान लें कि कौन-सा field कौन-सा system चलाता है, तो हर "यह काम क्यों नहीं करता?" अपने आप हल हो जाता है।</p>
+    <p class="hero-tagline">आपको "fonts" की समस्या नहीं है — आपको तीन-system की समस्या है। Discord बिल्कुल अलग-अलग कामों के लिए Markdown, Unicode कैरेक्टर और Nitro स्टाइल इस्तेमाल करता है। एक बार जान लें कि कौन-सा field कौन-सा system चलाता है, तो हर "यह काम क्यों नहीं करता?" अपने आप हल हो जाता है।</p>
     <div class="guide-meta">
       <span class="guide-pill is-accent">Platform में महारत</span>
       <span class="guide-pill">⏱ 8 मिनट पढ़ें</span>
@@ -203,9 +203,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="key-takeaways">
   <h2>मुख्य बातें</h2>
   <ul>
-    <li>Discord के तीन बिना संबंध वाले टेक्स्ट system हैं: <strong>Markdown</strong> (messages), <strong>Unicode "fonts"</strong> (हर जगह नाम), और <strong>Nitro</strong> (paid display-name styles)।</li>
+    <li>Discord के तीन बिना संबंध वाले टेक्स्ट system हैं: <strong>Markdown</strong> (messages), <strong>Unicode "फ़ॉन्ट"</strong> (हर जगह नाम), और <strong>Nitro</strong> (paid display-name styles)।</li>
     <li><code>**bold**</code> जैसा Markdown सिर्फ messages में render होता है — यह username, nickname या server/channel नामों में कभी काम नहीं करता।</li>
-    <li>Unicode "fonts" हर नाम field में काम करते हैं पर कुछ devices पर box दिख सकते हैं और screen reader तोड़ देते हैं।</li>
+    <li>Unicode "फ़ॉन्ट" हर नाम field में काम करते हैं पर कुछ devices पर box दिख सकते हैं और screen reader तोड़ देते हैं।</li>
     <li>Nitro आपके display name पर असली color और effects जोड़ता है — पर server के अंदर आपका role color जीतता है और सिर्फ font दिखता है।</li>
   </ul>
 </section>
@@ -223,11 +223,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="data-table-wrap">
       <table class="data-table">
-        <thead><tr><th>System</th><th>क्या है</th><th>कहां काम करता है</th><th>पेच</th></tr></thead>
+        <thead><tr><th>सिस्टम</th><th>क्या है</th><th>कहां काम करता है</th><th>पेच</th></tr></thead>
         <tbody>
           <tr><td><strong>Markdown</strong></td><td>Discord जो symbol render करता है (<code>**bold**</code>, <code>*italic*</code>, <code>~~strike~~</code>, ANSI color)</td><td>सिर्फ messages</td><td>हर नाम field में मर जाता है; ANSI color सिर्फ desktop पर</td></tr>
-          <tr><td><strong>Unicode "fonts"</strong></td><td>पहले से स्टाइल दिखने वाले substitute कैरेक्टर (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>display name, nickname, server/channel/role नाम, bio, messages</td><td>box दिख सकते हैं; screen reader तोड़ते हैं; @username में रिजेक्ट</td></tr>
-          <tr><td><strong>Nitro styles</strong></td><td>Paid Display Name Styles: असली font + color + effects</td><td>आपका display name</td><td>server के अंदर color/effects नहीं दिखते (role color जीतता है); पैसे लगते हैं</td></tr>
+          <tr><td><strong>Unicode "फ़ॉन्ट"</strong></td><td>पहले से स्टाइल दिखने वाले substitute कैरेक्टर (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>display name, nickname, server/channel/role नाम, bio, messages</td><td>box दिख सकते हैं; screen reader तोड़ते हैं; @username में रिजेक्ट</td></tr>
+          <tr><td><strong>Nitro स्टाइल</strong></td><td>Paid Display Name Styles: असली font + color + effects</td><td>आपका display name</td><td>server के अंदर color/effects नहीं दिखते (role color जीतता है); पैसे लगते हैं</td></tr>
         </tbody>
       </table>
     </div>
@@ -237,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Section: System 1 Markdown -->
   <section class="editorial-section">
-    <span class="article-section-label">System 1</span>
+    <span class="article-section-label">सिस्टम 1</span>
     <h2>Markdown — messages के लिए</h2>
     <div class="editorial-block">
       <p>Markdown वह formatting है जो Discord तब लगाता है जब वह आपका message <em>दिखाता</em> है। आप अपने शब्दों के इर्द-गिर्द symbol टाइप करते हैं और Discord उन्हें असली styling से बदल देता है।</p>
@@ -268,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Section: System 2 Unicode -->
   <section class="editorial-section">
-    <span class="article-section-label">System 2</span>
+    <span class="article-section-label">सिस्टम 2</span>
     <h2>Unicode "Fonts" — नामों के लिए</h2>
     <div class="editorial-block">
       <p>किसी <em>नाम</em> को स्टाइल करने के लिए आप Discord से कुछ render करने को नहीं कह सकते — इसलिए आप ऐसे कैरेक्टर इस्तेमाल करते हैं जो पहले से स्टाइल दिखते हैं। जनरेटर "Nova" को खास <a href="/library/">Unicode कैरेक्टर</a> से 𝗡𝗼𝘃𝗮 या 𝓝𝓸𝓿𝓪 में बदल देता है, और आप तैयार नतीजे को सीधे field में पेस्ट कर देते हैं। कुछ render करने की ज़रूरत नहीं, इसलिए यह वहां भी टिकता है जहां Markdown नहीं टिकता।</p>
@@ -284,7 +284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Section: System 3 Nitro -->
   <section class="editorial-section">
-    <span class="article-section-label">System 3</span>
+    <span class="article-section-label">सिस्टम 3</span>
     <h2>Nitro Display Name Styles — Paid, और आपकी सोच से ज़्यादा सीमित</h2>
     <div class="editorial-block">
       <p>Discord का paid Nitro tier, Display Name Styles देता है — यह feature 2025 के आखिर में आया: आपके display name पर असली font, color और यहां तक कि animated effects। यह आपके profile card पर बढ़िया दिखता है। पर एक पेच है जो लोगों को मुश्किल तरीके से पता चलता है:</p>
@@ -325,10 +325,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tbody>
           <tr><td>message में किसी शब्द को bold/italic करना</td><td>Markdown <code>**…**</code></td></tr>
           <tr><td>अपना display name या nickname स्टाइल करना</td><td>Unicode font (पेस्ट कर दें)</td></tr>
-          <tr><td>server या channel नाम सजाना</td><td>Unicode font + symbols</td></tr>
+          <tr><td>server या channel नाम सजाना</td><td>Unicode फ़ॉन्ट + सिंबल</td></tr>
           <tr><td>अपने यूनिक @username का लुक बदलना</td><td>मुमकिन नहीं — इसके बजाय display name स्टाइल करें</td></tr>
           <tr><td>colored, animated profile नाम</td><td>Nitro Display Name Styles</td></tr>
-          <tr><td>message में colored text</td><td>ANSI code block (desktop, 8 colors)</td></tr>
+          <tr><td>message में colored text</td><td>ANSI कोड ब्लॉक (डेस्कटॉप, 8 रंग)</td></tr>
         </tbody>
       </table>
     </div>
@@ -362,13 +362,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-item">
     <button class="faq-question" type="button">Discord chat में bold काम करता है पर मेरे username में क्यों नहीं?</button>
     <div class="faq-answer">
-      <p>क्योंकि दोनों अलग system इस्तेमाल करते हैं। chat में <code>**bold**</code> Markdown है — Discord इसे तब render करता है जब आपका message दिखाता है। नाम (username, nickname, server, channel, role) Markdown नहीं चलाते, इसलिए asterisks वैसे के वैसे दिख जाते हैं। नाम स्टाइल करने के लिए आपको Unicode "fonts" चाहिए — ऐसे खास कैरेक्टर जो पहले से bold दिखते हैं — जिन्हें सीधे field में पेस्ट करते हैं।</p>
+      <p>क्योंकि दोनों अलग system इस्तेमाल करते हैं। chat में <code>**bold**</code> Markdown है — Discord इसे तब render करता है जब आपका message दिखाता है। नाम (username, nickname, server, channel, role) Markdown नहीं चलाते, इसलिए asterisks वैसे के वैसे दिख जाते हैं। नाम स्टाइल करने के लिए आपको Unicode "फ़ॉन्ट" चाहिए — ऐसे खास कैरेक्टर जो पहले से bold दिखते हैं — जिन्हें सीधे field में पेस्ट करते हैं।</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">क्या Unicode fonts और Discord Nitro fonts एक ही हैं?</button>
     <div class="faq-answer">
-      <p>नहीं। Unicode "fonts" फ्री substitute कैरेक्टर हैं जिन्हें आप कहीं भी पेस्ट कर सकते हैं जहां नाम अनुमत है; ये सबके लिए काम करते हैं पर कुछ devices पर box के रूप में दिख सकते हैं और screen reader तोड़ देते हैं। Nitro Display Name Styles एक paid feature है जो आपके display name पर असली font, color और effects लगाती है — पर color और effects servers के अंदर नहीं दिखते, जहां आपका role color जीतता है; सिर्फ font ही आगे जाता है।</p>
+      <p>नहीं। Unicode "फ़ॉन्ट" फ्री substitute कैरेक्टर हैं जिन्हें आप कहीं भी पेस्ट कर सकते हैं जहां नाम अनुमत है; ये सबके लिए काम करते हैं पर कुछ devices पर box के रूप में दिख सकते हैं और screen reader तोड़ देते हैं। Nitro Display Name Styles एक paid feature है जो आपके display name पर असली font, color और effects लगाती है — पर color और effects servers के अंदर नहीं दिखते, जहां आपका role color जीतता है; सिर्फ font ही आगे जाता है।</p>
     </div>
   </div>
   <div class="faq-item">

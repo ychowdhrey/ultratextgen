@@ -755,22 +755,60 @@
       flex-shrink: 0;
     }
 
-    /* Share is the distribution utility — visible, but quieter than Copy
-       (the primary utility): smaller type, muted color, same border/radius
-       language as its siblings. */
+    /* Share matches Copy/Save in size, type and color — the hierarchy comes
+       from its position (centered on its own row beneath the pair), not from
+       shrinking it. */
+    /* Icon-only image-share companion shares the Share button's full visual
+       language; only the geometry differs (square, no label). */
+    .share-image-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .share-image-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .share-image-btn.copied {
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .share-image-btn.share-error {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .share-image-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .share-result-btn {
       align-self: center;
       display: inline-flex;
       align-items: center;
       gap: 5px;
       max-width: 100%;
-      padding: 5px 14px;
+      padding: 8px 14px;
       border: 1px solid var(--border-light);
       border-radius: 8px;
       background: var(--bg-white);
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-family: inherit;
-      font-size: 0.75rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s;
@@ -813,6 +851,17 @@
 
     .result-share-row .share-result-btn {
       align-self: auto;
+    }
+
+    /* On the main generator's three-action stack the pair sits centered under
+       Copy/Save; the link half takes the flexible width. */
+    .style-actions-stack > .result-share-row {
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    .style-actions-stack > .result-share-row .share-result-btn {
+      flex: 0 1 auto;
     }
 
     /* Shared-result emphasis: the card a ?style= share link points at keeps
@@ -1175,7 +1224,6 @@
       .share-result-btn {
         align-self: stretch;
         justify-content: center;
-        padding: 9px 14px;
       }
 
       /* On the compact specialized cards Copy and Share are a pair, so they
@@ -1184,12 +1232,19 @@
         width: 100%;
       }
 
+
       .result-share-row .copy-btn,
       .result-share-row .share-result-btn {
         flex: 1;
         width: auto;
         align-self: auto;
         justify-content: center;
+      }
+
+      .result-share-row .share-image-btn {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
       }
 
       .category-section {
@@ -2898,6 +2953,32 @@ button.cta-btn { border: 0; cursor: pointer; }
   align-self: flex-start;
   padding: 6px 12px;
   font-size: 0.75rem;
+}
+
+/* Share rides the same row as that compact Copy — keep the pair equal. */
+.vertical-style-card .share-result-btn {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.vertical-style-card .share-image-btn {
+  width: 30px;
+  height: 30px;
+}
+
+/* The compact sizing above is too short for touch — restore full-height tap
+   targets for the vertical card's Copy/Share pair on mobile. Lives after the
+   compact rules on purpose: equal specificity, so source order decides. */
+@media (max-width: 640px) {
+  .vertical-style-card .copy-btn,
+  .vertical-style-card .share-result-btn {
+    padding: 8px 12px;
+  }
+
+  .vertical-style-card .share-image-btn {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Dark mode overrides */
@@ -8964,3 +9045,63 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .wc-copy:hover { opacity: 0.88; }
 .wc-copy.wc-copied { background: var(--ts-safe); }
 html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Library browse UI — shared by every library/ hub (js/library/library-hub.js)
+
+   Lifted out of the English hub's inline <style> block, which CLAUDE.md's CSS
+   conventions forbid ("do not add inline <style> blocks to HTML pages — add to
+   style.css") and which is why twelve locale hubs never got these rules at all.
+   Hardcoded literals were mapped onto the theme tokens on the way in: the
+   inline original ships no dark-mode rule for .lib-*, so its #f5f7f5 panels
+   stay light-on-light when the dark class is set.
+   ───────────────────────────────────────────────────────────────────────────── */
+.lib-hero { padding: 3rem 1.5rem 2rem; text-align: center; }
+.lib-hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: var(--text-primary); margin: 0 0 0.5rem; }
+.lib-hero p { color: var(--text-secondary); font-size: 1.05rem; margin: 0; }
+.lib-controls { max-width: 900px; margin: 0 auto 2rem; padding: 0 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+.lib-search-wrap { position: relative; }
+.lib-search-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; flex-shrink: 0; }
+#libSearch { width: 100%; box-sizing: border-box; padding: 0.65rem 1rem 0.65rem 2.6rem; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--bg-white); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
+#libSearch:focus { border-color: var(--accent-purple); }
+.lib-alpha-bar { max-width: 900px; margin: 0 auto 2rem; padding: 0.5rem 1.25rem; display: flex; flex-wrap: wrap; gap: 0.25rem; position: sticky; top: 0; z-index: 20; background: var(--bg-page, var(--bg-base)); backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); }
+.lib-alpha-btn.is-current { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
+.lib-alpha-btn.is-current .alpha-count { color: rgba(255, 255, 255, 0.85); }
+.lib-alpha-btn { display: inline-flex; flex-direction: column; align-items: center; min-width: 2rem; padding: 0.3rem 0.4rem 0.2rem; border: 1px solid var(--border-light); border-radius: 6px; background: var(--bg-white); color: var(--text-secondary); font-family: inherit; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; text-decoration: none; line-height: 1; }
+.lib-alpha-btn .alpha-count { font-size: 0.6rem; font-weight: 400; color: var(--text-muted); margin-top: 0.1rem; }
+.lib-alpha-btn:hover:not(.disabled) { border-color: var(--accent-purple); color: var(--accent-purple); }
+.lib-alpha-btn.disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+.lib-directory { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+.lib-letter-section { margin-bottom: 2rem; }
+.lib-letter-heading { display: flex; align-items: baseline; gap: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin: 0 0 0.75rem; font-size: inherit; font-weight: inherit; }
+.lib-letter-heading .letter { font-size: 1.5rem; font-weight: 700; color: var(--accent-purple); line-height: 1; }
+.lib-letter-heading .lcount { font-size: 0.75rem; color: var(--text-muted); }
+.lib-entry { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto auto; gap: 0.1rem 1rem; padding: 0.7rem 0.5rem; border-radius: 8px; color: inherit; border: 1px solid transparent; }
+.lib-entry-title { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); grid-column: 1; grid-row: 1; margin: 0; line-height: 1.3; }
+.lib-entry-title-link { color: inherit; text-decoration: none; border-radius: 3px; }
+.lib-entry-title-link:hover,
+.lib-entry-title-link:focus-visible { color: var(--accent-purple); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.lib-entry-title-link:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
+.lib-entry-desc { font-size: 0.82rem; color: var(--text-secondary); grid-column: 1; grid-row: 2; margin: 0; }
+.lib-entry-preview { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-muted); grid-column: 2; grid-row: 1 / 3; align-self: center; white-space: nowrap; text-align: right; letter-spacing: 0.05em; }
+.lib-entry-meta { grid-column: 1 / -1; grid-row: 3; display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+.lib-entry-tag { display: inline-block; font-family: inherit; font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.15rem 0.45rem; border-radius: 999px; background: var(--bg-page, var(--bg-base)); color: var(--text-muted); border: 1px solid var(--border-light); line-height: 1.4; cursor: pointer; transition: background 0.12s, border-color 0.12s, color 0.12s; }
+.lib-entry-tag:hover { background: var(--bg-white); border-color: var(--accent-purple); color: var(--accent-purple); }
+.lib-entry-tag:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
+.lib-entry-tag.is-type { color: var(--accent-purple); border-color: var(--accent-purple); background: transparent; }
+.lib-entry-preview { grid-column: 1; grid-row: 3; text-align: left; margin-top: 0.2rem; }
+.lib-entry-meta { grid-row: 4; }
+.lib-empty { display: none; text-align: center; padding: 3rem 1rem; color: var(--text-secondary); }
+.lib-empty.visible { display: block; }
+.lib-empty p { margin: 0 0 1rem; font-size: 1rem; }
+.lib-empty-btn { display: inline-block; padding: 0.55rem 1.2rem; border-radius: var(--radius); border: 1px solid var(--border-light); background: var(--bg-white); color: var(--text-primary); font-family: inherit; font-size: 0.9rem; cursor: pointer; transition: border-color 0.12s; }
+.lib-empty-btn:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+.lib-cta { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.25rem; }
+.lib-result-count { max-width: 900px; margin: 0 auto 1rem; padding: 0 1.25rem; font-size: 0.85rem; color: var(--text-muted); }
+.lib-result-count[hidden] { display: none; }
+.lib-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.lib-back-top { position: fixed; right: 1.25rem; bottom: 1.25rem; width: 2.75rem; height: 2.75rem; border-radius: 999px; border: 1px solid var(--border-light); background: var(--bg-white); color: var(--text-primary); font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px var(--border-light); display: none; align-items: center; justify-content: center; z-index: 30; transition: background 0.12s, color 0.12s, border-color 0.12s; }
+.lib-back-top:hover,
+.lib-back-top:focus-visible { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; outline: none; }
+.lib-back-top.visible { display: inline-flex; }

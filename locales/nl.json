@@ -61,7 +61,10 @@
       "ariaLabel": "Deel {style}-resultaat",
       "linkCopied": "Link gekopieerd",
       "afterCopy": "Deel deze stijl",
-      "sharedTag": "Gedeelde stijl"
+      "sharedTag": "Gedeelde stijl",
+      "imageTitle": "Delen als afbeelding",
+      "imageAriaLabel": "{style}-resultaat delen als afbeelding",
+      "imageSaved": "Afbeelding klaar"
     },
     "safeMode": {
       "label": "Plakveiligheid",

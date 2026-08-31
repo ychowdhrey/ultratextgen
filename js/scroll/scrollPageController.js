@@ -221,6 +221,7 @@
     btn.dataset.text = text;
     btn.dataset.style = name;
     if (!text) btn.disabled = true;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
 
     /* Copy + Share share one action row — these cards carry no Save button,
        so the core generator's triangle reduces to a pair here. */
@@ -233,8 +234,8 @@
        that produced it, so a shared link rebuilds the same block. The input
        lives in #scrollBioInput, not #mainInput, so it is stamped explicitly. */
     let shareId = shareIdFor(name);
-    if (UTG && UTG.buildShareButton) {
-      actions.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      actions.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: name,
         input: (($("#scrollBioInput") || {}).value || ""),

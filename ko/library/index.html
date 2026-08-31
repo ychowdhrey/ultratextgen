@@ -175,426 +175,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<style>
-/* ── Library 초성 Directory ── */
-
-.lib-hero {
-  padding: 3rem 1.5rem 2rem;
-  text-align: center;
-}
-.lib-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem;
-}
-.lib-hero p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin: 0;
-}
-
-/* ── Controls ── */
-.lib-controls {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.lib-search-wrap {
-  position: relative;
-}
-.lib-search-wrap svg {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-  flex-shrink: 0;
-}
-#libSearch {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.65rem 1rem 0.65rem 2.6rem;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-#libSearch:focus {
-  border-color: var(--accent-purple);
-}
-
-.lib-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-.lib-filter-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--text-muted);
-  margin-right: 0.25rem;
-  white-space: nowrap;
-}
-
-/* ── Filter pills ── */
-.lib-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  white-space: nowrap;
-  user-select: none;
-}
-.lib-pill:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-pill.active {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-pill .pill-count {
-  opacity: 0.75;
-  font-size: 0.72rem;
-}
-.lib-pill.active .pill-count {
-  opacity: 0.9;
-}
-
-.lib-clear-btn {
-  display: none;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-muted);
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: color 0.12s;
-}
-.lib-clear-btn:hover {
-  color: var(--text-primary);
-}
-.lib-clear-btn.visible {
-  display: inline-flex;
-}
-
-/* ── 초성 jump bar ── */
-.lib-alpha-bar {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0.5rem 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--bg-page, #f5f7f5);
-  backdrop-filter: saturate(180%) blur(6px);
-  -webkit-backdrop-filter: saturate(180%) blur(6px);
-}
-.lib-alpha-btn.is-current {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-alpha-btn.is-current .alpha-count {
-  color: rgba(255, 255, 255, 0.85);
-}
-.lib-alpha-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 2rem;
-  padding: 0.3rem 0.4rem 0.2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 6px;
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  text-decoration: none;
-  line-height: 1;
-}
-.lib-alpha-btn .alpha-count {
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 0.1rem;
-}
-.lib-alpha-btn:hover:not(.disabled) {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-alpha-btn.disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-/* ── Directory ── */
-.lib-directory {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-.lib-letter-section {
-  margin-bottom: 2rem;
-}
-.lib-letter-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-light);
-  margin: 0 0 0.75rem;
-  font-size: inherit;
-  font-weight: inherit;
-}
-.lib-letter-heading .letter {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-purple);
-  line-height: 1;
-}
-.lib-letter-heading .lcount {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* ── Entry rows ── */
-.lib-entry {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  gap: 0.1rem 1rem;
-  padding: 0.7rem 0.5rem;
-  border-radius: 8px;
-  color: inherit;
-  border: 1px solid transparent;
-}
-.lib-entry-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  line-height: 1.3;
-}
-.lib-entry-title-link {
-  color: inherit;
-  text-decoration: none;
-  border-radius: 3px;
-}
-.lib-entry-title-link:hover,
-.lib-entry-title-link:focus-visible {
-  color: var(--accent-purple);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-.lib-entry-title-link:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0;
-}
-.lib-entry-preview {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  grid-column: 2;
-  grid-row: 1 / 3;
-  align-self: center;
-  white-space: nowrap;
-  text-align: right;
-  letter-spacing: 0.05em;
-}
-.lib-entry-meta {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
-}
-.lib-entry-tag {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: var(--bg-page, #eef0ee);
-  color: var(--text-muted);
-  border: 1px solid var(--border-light);
-  line-height: 1.4;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-}
-.lib-entry-tag:hover {
-  background: var(--bg-white);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-entry-tag:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-tag.is-type {
-  color: var(--accent-purple);
-  border-color: var(--accent-purple);
-  background: transparent;
-}
-
-@media (max-width: 540px) {
-  .lib-entry {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .lib-entry-preview {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: left;
-    margin-top: 0.2rem;
-  }
-  .lib-entry-meta {
-    grid-row: 4;
-  }
-}
-
-/* ── No-results ── */
-.lib-empty {
-  display: none;
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-secondary);
-}
-.lib-empty.visible {
-  display: block;
-}
-.lib-empty p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-}
-.lib-empty-btn {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: border-color 0.12s;
-}
-.lib-empty-btn:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-/* ── CTA card ── */
-.lib-cta {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-/* ── Result count ── */
-.lib-result-count {
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-.lib-result-count[hidden] {
-  display: none;
-}
-
-/* ── Visually hidden (a11y) ── */
-.lib-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ── Back to top ── */
-.lib-back-top {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
-}
-.lib-back-top:hover,
-.lib-back-top:focus-visible {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-  outline: none;
-}
-.lib-back-top.visible {
-  display: inline-flex;
-}
-</style>
 </head>
 <body>
   <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
@@ -617,60 +197,1188 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>기호와 특수문자를 종류별로 모은 복사 붙여넣기 라이브러리 — <a href="/ko/library/gamseong-giho/">감성 기호</a>와 하트부터 별, 화살표, 수학 기호, 그리스 문자까지. 검색하거나 용도·플랫폼별로 필터한 뒤 클릭해서 복사하세요. 모든 문자(기호)는 인스타 바이오, 카카오톡, 디스코드, 게임 닉네임에 바로 붙여넣을 수 있습니다.</p>
 </div>
 
-<!-- CONTROLS -->
-<div class="lib-controls" id="libControls">
-  <!-- Search -->
-  <div class="lib-search-wrap">
-    <label for="libSearch" class="lib-sr-only">기호 검색</label>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="libSearch" placeholder="기호 검색…" autocomplete="off">
-  </div>
-
-  <!-- Subject filter -->
-  <div class="lib-filter-row" id="subjectRow">
-    <span class="lib-filter-label">분류</span>
-  </div>
-
-  <!-- Use Case filter -->
-  <div class="lib-filter-row" id="useCaseRow">
-    <span class="lib-filter-label">용도</span>
-  </div>
-
-  <!-- Platform filter -->
-  <div class="lib-filter-row" id="platformRow">
-    <span class="lib-filter-label">플랫폼</span>
-  </div>
-
-  <!-- Type filter -->
-  <div class="lib-filter-row" id="typeRow">
-    <span class="lib-filter-label">종류</span>
-  </div>
-
-  <!-- Clear filters -->
-  <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="lib-clear-btn" id="clearFilters" aria-label="필터 모두 해제">✕ 필터 해제</button>
-  </div>
-</div>
-
-<!-- 초성 JUMP BAR -->
-<div class="lib-alpha-bar" id="alphaBar" aria-label="초성으로 이동"></div>
-
-<!-- RESULT COUNT -->
-<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
-
-<!-- DIRECTORY -->
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/ko-library.svg" width="1200" height="340"
        fetchpriority="high" alt="">
 </figure>
-<main class="lib-directory" id="libDirectory" aria-label="기호 모음 디렉터리"></main>
 
-<!-- NO RESULTS -->
-<div class="lib-empty" id="libEmpty" role="status" aria-live="polite">
-  <p>이 조건에 맞는 모음이 없습니다.<br>필터를 하나 이상 해제해 보세요.</p>
-  <button class="lib-empty-btn" id="emptyResetBtn">필터 모두 해제</button>
+<!-- library-hub:begin (generated by scripts/build-library-hub.js) -->
+<div class="lib-controls" id="libControls">
+  <div class="lib-search-wrap">
+    <label class="u-visually-hidden" for="libSearch">라이브러리 검색</label>
+    <input type="search" id="libSearch" autocomplete="off"
+           placeholder="기호 검색…" aria-label="라이브러리 검색">
+  </div>
+  <div class="lib-filters">
+      <div class="lib-filter-row" id="libTypeFilters"></div>
+      <div class="lib-filter-row" id="libUseCaseFilters"></div>
+      <div class="lib-filter-row" id="libPlatformFilters"></div>
+  </div>
+  <div class="lib-controls-foot">
+    <p class="lib-result-count" id="libResultCount" hidden></p>
+    <button type="button" class="lib-clear" id="libClearFilters">필터 해제</button>
+  </div>
+  <nav class="lib-alpha-bar" id="libAlphaBar" aria-label="초성으로 이동"></nav>
 </div>
 
+<main class="lib-directory" id="libDirectory" aria-label="기호 모음 디렉터리" data-static-directory>
+<section class="lib-letter-section" id="lib-letter-u3131" aria-labelledby="lib-letter-heading-u3131"><h2 class="lib-letter-heading" id="lib-letter-heading-u3131"><span class="letter">ㄱ</span><span class="lcount">(15)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-0"><a class="lib-entry-title-link" href="/ko/library/jeom-giho/">가운데 점(·) &amp; 점 기호 모음</a></h3><p class="lib-entry-desc">가운데 점(·) 등 점 기호와 불릿·글머리 기호를 복사해서 붙여넣기. 화살표, 체크, 별, 꽃 모양 글머리 기호까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">· ㆍ ∙ • ‣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="이메일 서식" aria-label="필터 기준: 이메일 서식">이메일 서식</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-1"><a class="lib-entry-title-link" href="/ko/library/gamseong-giho/">감성 특수문자 · 예쁜 기호 모음</a></h3><p class="lib-entry-desc">감성 특수문자와 예쁜 기호를 종류별로 모았습니다. 반짝이·하트·꽃·구분선·괄호 기호를 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 상태 메시지 꾸미기에 바로 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ✦ ✧ ⊹ ࣪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-2"><a class="lib-entry-title-link" href="/ko/library/goyangi-ascii-art/">고양이 아스키 아트</a></h3><p class="lib-entry-desc">고양이 아스키 아트 모음. 한 줄짜리 =^..^=, 작은 얼굴, 식빵 자세, 큰 전신 그림까지. 복사 버튼을 누르면 공백까지 그대로 복사됩니다.</p><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="필터 기준: Discord">Discord</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-3"><a class="lib-entry-title-link" href="/ko/library/goyangi-imotikon/">고양이 이모티콘</a></h3><p class="lib-entry-desc">고양이 이모티콘 모음 (=^・ω・^=) ฅ^•ﻌ•^ฅ (=˘ω˘=). 기본 냥이, 신난 냥이, 우는 냥이, 앞발과 수염까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-4"><a class="lib-entry-title-link" href="/ko/library/gom-imotikon/">곰 이모티콘</a></h3><p class="lib-entry-desc">곰 이모티콘 모음 ʕ•ᴥ•ʔ ʕ≧ᴥ≦ʔ ⊂ʕ•ᴥ•⊂ʔ. 귀여운 곰·신난 곰·안아 주는 곰 17개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">ʕ•ᴥ•ʔ ʕ·ᴥ·ʔ ʕ ꈍᴥꈍʔ ʕ•ﻌ•ʔ ʕ￫ᴥ￩ʔ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-5"><a class="lib-entry-title-link" href="/ko/library/gwalho-giho/">괄호 기호 모음</a></h3><p class="lib-entry-desc">소괄호 () 대괄호 [] 중괄호 {}부터 한국어 낫표 「」 『』, 수학·장식 괄호, 화살괄호 《》까지 복사해서 붙여넣기. 원하는 괄호를 클릭하면 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">( ) [ ] {</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-6"><a class="lib-entry-title-link" href="/ko/library/gubunseon-giho/">구분선 기호 모음</a></h3><p class="lib-entry-desc">가로선 ─ ━, 세로선 │ ┃, 장식 구분선, 파선, 박스 그리기 문자, 밑줄까지 복사해서 붙여넣기. 텍스트를 깔끔하게 나눠 주는 유니코드 구분선을 클릭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">─ ━ ═ ╌ ┄</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="구분선" aria-label="필터 기준: 구분선">구분선</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="이메일 서식" aria-label="필터 기준: 이메일 서식">이메일 서식</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-7"><a class="lib-entry-title-link" href="/ko/library/gubunseon-imotikon/">구분선 이모티콘</a></h3><p class="lib-entry-desc">구분선 이모티콘 모음 ｡･:*:･ﾟ★ ❁ ────── ❁ ╭─────────╮. 반짝이·하트·선·테두리 24개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">｡･:*:･ﾟ★,｡･:*:･ﾟ☆ ✧･ﾟ: *✧･ﾟ:* ⋆｡°✩ ⋆｡°✩ ˚ ✦ . ˚ ✦ . · ˚ ✦ ˚ · ✦ ˚ ·</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="구분선" aria-label="필터 기준: 구분선">구분선</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-8"><a class="lib-entry-title-link" href="/ko/library/gukgi-imoji/">국기 이모지 🇰🇷 모음</a></h3><p class="lib-entry-desc">전 세계 국기 이모지를 한곳에 모았습니다. 태극기 🇰🇷 부터 미국·일본·중국 국기까지 클릭 한 번으로 복사해서 닉네임, 프로필, 카카오톡에 바로 붙여넣으세요. EU·아세안 같은 국기 세트는 통째로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">🇰🇷 🇰🇵 🇺🇸 🇯🇵 🇨🇳</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="여행" aria-label="필터 기준: 여행">여행</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-9"><a class="lib-entry-title-link" href="/ko/library/gwiyeoun-imotikon/">귀여운 이모티콘</a></h3><p class="lib-entry-desc">귀여운 이모티콘 모음 (◕‿◕) ʕ•ᴥ•ʔ (★ω★). 깜찍한 얼굴, 동물, 수줍은 표정, 반짝이는 이모티콘까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-10"><a class="lib-entry-title-link" href="/ko/library/geurisa-munja/">그리스 문자 모음</a></h3><p class="lib-entry-desc">그리스 문자를 복사해서 붙여넣기. 알파(α)·베타(β)·파이(π)·시그마(Σ)·오메가(Ω)까지 대문자·소문자 전체와 수학 변형 기호를 클릭 한 번으로 바로 복사합니다.</p><span class="lib-entry-preview" aria-hidden="true">Α Β Γ Δ Ε</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-11"><a class="lib-entry-title-link" href="/ko/library/gido-imoji/">기도 이모티콘</a></h3><p class="lib-entry-desc">기도 이모티콘 모음 🙏 🤲 m(_ _)m. 두 손 모은 손과 피부색 변형, 신앙 기호, 감사·부탁 조합까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🙏 🤲 👐 🫶 🤝</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="필터 기준: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-12"><a class="lib-entry-title-link" href="/ko/library/gippeun-imotikon/">기쁜 이모티콘</a></h3><p class="lib-entry-desc">기쁜 이모티콘 모음 (^▽^) ヽ(•‿•)ノ ＼(^o^)／. 미소·환호·흐뭇함·춤추는 얼굴까지 20개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-13"><a class="lib-entry-title-link" href="/ko/library/kkot-giho/">꽃 기호 모음</a></h3><p class="lib-entry-desc">꽃·잎·나무 모양의 유니코드 꽃 기호와 이모지 모음. 벚꽃 🌸, 장미 🌹부터 ❀ ✿ ⚘ 흑백 플로렛 문자, 꽃 구분선까지 클릭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🌸 🌹 🌺 🌻 🌼</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3131-14"><a class="lib-entry-title-link" href="/ko/library/kkot-imotikon/">꽃 이모티콘</a></h3><p class="lib-entry-desc">꽃 이모티콘 모음 (◕‿◕✿) ❀(*´▽`*)❀ (๑•́ ω •̀๑)✿. 꽃 미소·꽃 건네기·꽃 액자 18개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕✿) (◠‿◠✿) (✿◕‿◕) (｡◕‿◕｡)✿ (❀◦‿◦)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3134" aria-labelledby="lib-letter-heading-u3134"><h2 class="lib-letter-heading" id="lib-letter-heading-u3134"><span class="letter">ㄴ</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3134-0"><a class="lib-entry-title-link" href="/ko/library/nalssi-giho/">날씨 기호와 이모지</a></h3><p class="lib-entry-desc">날씨 기호 모음 ☀ ☁ 🌧 ❄ 🌪. 해·구름·비·눈·바람·달의 위상·온도 기호까지 한곳에. 눌러서 바로 복사해 프로필이나 문서에 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">☀ ☼ 🌞 🌤 🌅</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="여행" aria-label="필터 기준: 여행">여행</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3134-1"><a class="lib-entry-title-link" href="/ko/library/nollan-imotikon/">놀란 이모티콘</a></h3><p class="lib-entry-desc">놀란 이모티콘 모음 (⊙_⊙) (°ロ°) Σ(っ °Д °;)っ. 눈 커짐·헉·멘붕 17개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(⊙_⊙) (○_○) (☉_☉) (⊙﹏⊙) (°o°)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3137" aria-labelledby="lib-letter-heading-u3137"><h2 class="lib-letter-heading" id="lib-letter-heading-u3137"><span class="letter">ㄷ</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3137-0"><a class="lib-entry-title-link" href="/ko/library/danwi-giho/">단위 기호 모음</a></h3><p class="lib-entry-desc">단위 기호를 복사해서 붙여넣기. 섭씨(℃)·화씨(℉) 온도 기호, 각도 기호(∠), 마이크로 기호(µ), 옴(Ω), ㎏·㎜ 같은 미터법 단위 문자까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">Ω µ ℧ Å ℏ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3137-1"><a class="lib-entry-title-link" href="/ko/library/dohyeong-giho/">도형 기호 모음</a></h3><p class="lib-entry-desc">도형 기호를 복사해서 붙여넣기. 동그라미, 네모, 삼각형, 마름모, 육각형과 불릿 기호까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">● ○ ◉ ◎ ⊙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="구분선" aria-label="필터 기준: 구분선">구분선</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3137-2"><a class="lib-entry-title-link" href="/ko/library/discord-giho/">디스코드 특수문자 (복사·붙여넣기)</a></h3><p class="lib-entry-desc">디스코드 특수문자를 복사해서 채널 이름, 서버 이름, 닉네임, 프로필을 꾸며보세요. 화살표 ▸ ➤, 구분선 ┊ │, 별 ✦, 하트 ♡ 등 어디서나 깨지지 않는 유니코드 기호를 한 번에 복사할 수 있습니다.</p><span class="lib-entry-preview" aria-hidden="true">⌗ ➤ ▸ │ ⊹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3137-3"><a class="lib-entry-title-link" href="/ko/library/ttabong-imotikon/">따봉 이모티콘</a></h3><p class="lib-entry-desc">따봉 이모티콘 모음 d(°∀°)b (๑•̀ㅂ•́)و✧ ( ⌐■_■). 엄지척·잘했어·쿨한 인정 18개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">d(°∀°)b b(￣▽￣)d (b ᵔ▽ᵔ)b (b^_^)b d(-_^)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="필터 기준: Discord">Discord</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3139" aria-labelledby="lib-letter-heading-u3139"><h2 class="lib-letter-heading" id="lib-letter-heading-u3139"><span class="letter">ㄹ</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3139-0"><a class="lib-entry-title-link" href="/ko/library/roblox-giho/">로블록스 특수문자 (복사 붙여넣기)</a></h3><p class="lib-entry-desc">로블록스 닉네임(디스플레이 네임)·프로필·그룹 소개에 넣어도 필터에 안 걸리는 특수문자 40개 이상. 별·하트·꽃·반짝이 기호를 클릭 한 번으로 복사하고, Robux·프리미엄·인증 아이콘의 진실까지 확인하세요 — 2026년 7월 기준 필터로 검증.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ⊹ ✦ ✧ ★</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3141" aria-labelledby="lib-letter-heading-u3141"><h2 class="lib-letter-heading" id="lib-letter-heading-u3141"><span class="letter">ㅁ</span><span class="lcount">(3)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3141-0"><a class="lib-entry-title-link" href="/ko/library/malpungseon-giho/">말풍선 특수문자</a></h3><p class="lib-entry-desc">말풍선 특수문자 모음 💬 🗨️ 💭 ❝ ❞ 「」 ◖◗. 말풍선 이모지, 따옴표 말풍선, 괄호 말풍선, 꼬리 조각까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">💬 🗨️ 🗯️ 💭 🗣️</span></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3141-1"><a class="lib-entry-title-link" href="/ko/library/moai-imoji/">모아이 석상 이모지 🗿</a></h3><p class="lib-entry-desc">모아이 이모지 🗿와 같이 쓰는 무표정 얼굴, 돌·산 이모지, ಠ_ಠ 같은 글자 얼굴, 밈 조합까지 모았습니다. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🗿 🪨 🗻 ⛰ 🌋</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3141-2"><a class="lib-entry-title-link" href="/ko/library/munjangbuho-giho/">문장부호 &amp; 따옴표</a></h3><p class="lib-entry-desc">따옴표와 특수 문장부호를 복사해서 붙여넣기. 곧은·둥근(스마트) 따옴표(“ ” ‘ ’), 겹화살괄호(« »), 단검(†), 문단 기호(¶), 구획 기호(§), 인테러뱅(‽)까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">&quot; &#39; “ ” ‘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3142" aria-labelledby="lib-letter-heading-u3142"><h2 class="lib-letter-heading" id="lib-letter-heading-u3142"><span class="letter">ㅂ</span><span class="lcount">(8)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-0"><a class="lib-entry-title-link" href="/ko/library/banjjak-imotikon/">반짝 이모티콘</a></h3><p class="lib-entry-desc">반짝 이모티콘 모음 (✧ω✧) (★ω★) (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧. 반짝이는 눈·별·마법 16개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(★ω★) (✧ω✧) ✧(•̀ᴗ•́)✧ (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ (☆▽☆)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-1"><a class="lib-entry-title-link" href="/ko/library/byeol-giho/">별 기호 ★ 모음 (복사용)</a></h3><p class="lib-entry-desc">별 기호와 반짝임 특수문자, 별 이모지를 모양·용도별로 한눈에. 클릭 한 번으로 복사되어 인스타 프로필·닉네임·디스코드 이름 꾸미기에 그대로 붙여 쓸 수 있습니다.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ✦ ✧ ✡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-2"><a class="lib-entry-title-link" href="/ko/library/byeol-imotikon/">별 이모티콘</a></h3><p class="lib-entry-desc">별 이모티콘 모음 (★ω★) (☆▽☆) ✧. 눈이 별이 된 얼굴, 신난 표정, 반짝이는 소원, 유성 이모티콘까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(★ω★) (☆▽☆) (✧ω✧) (★▽★) (☆ω☆)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-3"><a class="lib-entry-title-link" href="/ko/library/byeoljari-giho/">별자리 기호</a></h3><p class="lib-entry-desc">별자리 기호 ♈♉♊ 복사 붙여넣기: 12별자리 전부와 행성 기호, 십이지 동물, 점성술 각 기호까지. 클릭하면 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">♈ ♉ ♊ ♋ ♌</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-4"><a class="lib-entry-title-link" href="/ko/library/bukkeureoun-imotikon/">부끄러운 이모티콘</a></h3><p class="lib-entry-desc">부끄러운 이모티콘 모음 (⁄ ⁄•⁄ω⁄•⁄ ⁄) ( 〃▽〃) (//∇//). 볼이 발개진 얼굴, 수줍은 얼굴, 당황한 얼굴, 설레는 얼굴까지. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(⁄ ⁄•⁄ω⁄•⁄ ⁄) ( 〃▽〃) (//∇//) (⑉• •⑉) (๑•́ ₃ •̀๑)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-5"><a class="lib-entry-title-link" href="/ko/library/bunsu-giho/">분수 기호 모음</a></h3><p class="lib-entry-desc">분수 기호를 복사해서 붙여넣기. ½ ⅓ ¼ ⅛ 같은 기성 분수부터 위·아래 첨자와 분수 슬래시로 직접 만드는 분수까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">½ ⅓ ⅔ ¼ ¾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="참고" aria-label="필터 기준: 참고">참고</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="이메일" aria-label="필터 기준: 이메일">이메일</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-6"><a class="lib-entry-title-link" href="/ko/library/bulkkot-imoji/">불꽃 이모티콘</a></h3><p class="lib-entry-desc">불꽃 이모티콘 모음 🔥 🎆 💯. 타오르는 불과 불꽃놀이, 하이프 이모지, 더위 기호, 카오모지와 바로 쓰는 조합까지. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🔥 💯 🚀 ⚡ 🙌</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="필터 기준: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3142-7"><a class="lib-entry-title-link" href="/ko/library/ppoppo-imotikon/">뽀뽀 이모티콘</a></h3><p class="lib-entry-desc">뽀뽀 이모티콘 모음 ( ˘ ³˘)~♥ (づ￣ ³￣)づ (๑ˊ³ˋ)♡. 날리는 뽀뽀·입 내밀기·수줍은 뽀뽀 17개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(づ￣ ³￣)づ (っ˘з(˘⌣˘ ) (ˆ ³ˆ)~♡ ( ˘ ³˘)~♥ (っ˘ε˘)っ ♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3145" aria-labelledby="lib-letter-heading-u3145"><h2 class="lib-letter-heading" id="lib-letter-heading-u3145"><span class="letter">ㅅ</span><span class="lcount">(7)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-0"><a class="lib-entry-title-link" href="/ko/library/sarang-imotikon/">사랑과 하트 이모티콘</a></h3><p class="lib-entry-desc">사랑 이모티콘 모음 (♥ω♥) ( ˘ ³˘)♥ (づ｡◕‿‿◕｡)づ. 하트 눈, 뽀뽀, 포옹, 설레는 얼굴까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-1"><a class="lib-entry-title-link" href="/ko/library/saenggak-imoji/">생각 이모티콘</a></h3><p class="lib-entry-desc">생각 이모티콘 모음 🤔 🧐 🤷 (・_・?). 고민할 때, 의심스러울 때, 모르겠을 때 쓰는 이모지와 얼굴 문자를 상황별로. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🤔 🧐 🤨 🫤 😑</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-2"><a class="lib-entry-title-link" href="/ko/library/seongbyeol-giho/">성별 기호 모음</a></h3><p class="lib-entry-desc">남성 ♂, 여성 ♀, 트랜스젠더 ⚧, 중성, 결합 성별·지향 기호까지 복사해서 붙여넣기. 클릭 한 번으로 바로 복사되는 유니코드 성별 기호 모음입니다.</p><span class="lib-entry-preview" aria-hidden="true">♀ ♂ ⚧ ⚲ ⚪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-3"><a class="lib-entry-title-link" href="/ko/library/suhak-giho/">수학 기호 모음</a></h3><p class="lib-entry-desc">수학 기호를 복사해서 붙여넣기. 사칙연산, 부등호, 집합 기호, 무한대(∞), 근호(√), 위·아래 첨자까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">± × ÷ ∓ ∣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-4"><a class="lib-entry-title-link" href="/ko/library/sutja-giho/">숫자 기호 모음</a></h3><p class="lib-entry-desc">숫자 기호를 복사해서 붙여넣기. 원문자(①), 검은 원문자(❶), 로마 숫자(Ⅷ), 위·아래 첨자, 괄호 숫자, 전각 숫자까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">① ② ③ ④ ⑤</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-5"><a class="lib-entry-title-link" href="/ko/library/seulpeun-imotikon/">슬픈 이모티콘</a></h3><p class="lib-entry-desc">슬픈 이모티콘 모음 (´･_･`) (︶︹︶) ( ╥﹏╥). 시무룩함, 실망, 외로움, 마음이 아플 때까지 단계별로. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3145-6"><a class="lib-entry-title-link" href="/ko/library/sinnan-imotikon/">신난 이모티콘</a></h3><p class="lib-entry-desc">신난 이모티콘 모음 ヽ(&gt;∀&lt;☆)ノ (☆▽☆) (๑˃ᴗ˂)ﻭ. 신남 폭발·별눈·설렘 16개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">ヽ(&gt;∀&lt;☆)ノ ٩(◕‿◕)۶ ＼(≧▽≦)／ ヽ(・∀・)ﾉ o(≧∇≦o)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3147" aria-labelledby="lib-letter-heading-u3147"><h2 class="lib-letter-heading" id="lib-letter-heading-u3147"><span class="letter">ㅇ</span><span class="lcount">(17)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-0"><a class="lib-entry-title-link" href="/ko/library/aipon-imoji/">아이폰 이모티콘</a></h3><p class="lib-entry-desc">아이폰 이모티콘 모음 😂 🥹 ❤️ 🫰 🫶. 얼굴·하트·손 이모지 62개를 눌러서 바로 복사하세요. 아이폰과 갤럭시에서 왜 그림이 다른지도 함께 설명합니다.</p><span class="lib-entry-preview" aria-hidden="true">😂 🥹 🥲 😊 🥰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="참고" aria-label="필터 기준: 참고">참고</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-1"><a class="lib-entry-title-link" href="/ko/library/alt-kodeu/">알트 코드 (Alt Code)</a></h3><p class="lib-entry-desc">닉네임과 프로필 꾸미기에 쓰기 좋은 기호부터 통화, 수학, 악센트 문자, 클래식 DOS 기호까지 — 윈도우 알트 코드(Alt Code) 전체 목록. 클릭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">♥ « » • ►</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="참고" aria-label="필터 기준: 참고">참고</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="참고" aria-label="필터 기준: 참고">참고</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="이메일 서식" aria-label="필터 기준: 이메일 서식">이메일 서식</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="이메일" aria-label="필터 기준: 이메일">이메일</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-2"><a class="lib-entry-title-link" href="/ko/library/eusseuk-imotikon/">어깨 으쓱 이모티콘</a></h3><p class="lib-entry-desc">어깨 으쓱 이모티콘 ¯\_(ツ)_/¯ ┐(´～`)┌ ╮(╯▽╰)╭. 모르겠다·어쩔 수 없지 16개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">¯\_(ツ)_/¯ ¯\_(⊙_ʖ⊙)_/¯ ¯\_(ᵔᵕᵔ)_/¯ ¯\_(◉‿◉)_/¯ ¯\_( ͡° ͜ʖ ͡°)_/¯</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="필터 기준: Discord">Discord</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-3"><a class="lib-entry-title-link" href="/ko/library/eomji-imoji/">엄지 이모지</a></h3><p class="lib-entry-desc">엄지 이모지 모음 👍 👎. 엄지척과 엄지 내리기를 피부색 다섯 가지까지, 좋아요 손짓과 체크 기호도 함께. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">👍 👍🏻 👍🏼 👍🏽 👍🏾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="필터 기준: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-4"><a class="lib-entry-title-link" href="/ko/library/gyocha-giho/">엑스 표시 &amp; 십자가 기호</a></h3><p class="lib-entry-desc">엑스 표시(✗ ✕ ✘ ❌)와 십자가 기호(✝ ☦ ✠)를 복사해서 붙여넣기. 곱셈 X, 체크리스트용 X 표시, 종교·장식 십자가, 단검, 경고·취소 표시까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">× ✕ ✖ ⨯ ⋇</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-5"><a class="lib-entry-title-link" href="/ko/library/yeppeun-teduri/">예쁜 테두리와 프레임</a></h3><p class="lib-entry-desc">프로필과 소개글을 꾸미는 예쁜 테두리, 프레임, 구분선 모음. 꽃·별·하트 무늬를 클릭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">❀━━━━━❀ ✿━━━━━━━━━✿ ❁ ━━━━━━━━━ ❁ ༻❁༺ *＊✿❀ ❀✿＊*</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="구분선" aria-label="필터 기준: 구분선">구분선</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-6"><a class="lib-entry-title-link" href="/ko/library/wanggwan-imoji/">왕관 이모지</a></h3><p class="lib-entry-desc">왕관 이모지 👑와 같이 쓰는 왕실·1등·감성 이모지, 프로필과 댓글에 바로 붙여넣는 조합 모음. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">👑 🤴 👸 🫅 💍</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-7"><a class="lib-entry-title-link" href="/ko/library/uneun-imotikon/">우는 이모티콘</a></h3><p class="lib-entry-desc">우는 이모티콘 모음 (╥﹏╥) (T_T) ㅠㅠ. 눈물 맺힌 얼굴부터 펑펑 우는 얼굴, 한글 자모 ㅠㅠ 계열까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(╥﹏╥) (T_T) (；﹏；) (ㄒoㄒ) (个_个)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-8"><a class="lib-entry-title-link" href="/ko/library/unneun-imotikon/">웃는 이모티콘</a></h3><p class="lib-entry-desc">웃는 이모티콘 모음 (≧▽≦) (＾▽＾) ( ﾟ∀ﾟ). 살짝 웃는 얼굴부터 배를 잡고 웃는 얼굴까지 세기별로. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(≧▽≦) (＾▽＾) ( ˆ ▿ ˆ ) (๑˃ᴗ˂) (o´∀`o)ﾟ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="필터 기준: Discord">Discord</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-9"><a class="lib-entry-title-link" href="/ko/library/wingkeu-imotikon/">윙크 이모티콘</a></h3><p class="lib-entry-desc">윙크 이모티콘 모음 (^_-) (^_-)-☆ (｡•̀ᴗ-)✧. 장난스러운 윙크, 귀여운 윙크, 은근한 윙크까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(^_-) (^_-)-☆ (・ω&lt;) (･ω&lt;)☆ (&gt;ω^)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-10"><a class="lib-entry-title-link" href="/ko/library/eumak-giho/">음악 기호 모음</a></h3><p class="lib-entry-desc">음악 기호를 복사해서 붙여넣기. 음표(♪ ♫ ♬), 음자리표, 올림표·내림표(♯ ♭), 쉼표, 악기 이모지(🎸🎹🎤)까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">♩ ♪ ♫ ♬ 🎵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-11"><a class="lib-entry-title-link" href="/ko/library/eumak-imotikon/">음악 이모티콘</a></h3><p class="lib-entry-desc">음악 이모티콘 모음 ♪(´▽｀) ♪┏(・o･)┛♪ ♪~ ᕕ(ᐛ)ᕗ. 노래·춤·음표 17개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">♪(´▽｀) (っ˘ω˘ς )♪ ♪(๑ᴖ◡ᴖ๑)♪ (♫ˆ ⌣ ˆ) ヽ(o´∀`)ﾉ♪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-12"><a class="lib-entry-title-link" href="/ko/library/imoji-johap/">이모지 조합 (복붙)</a></h3><p class="lib-entry-desc">감성 이모지 조합 100종 이상을 복사·붙여넣기로. 소녀 감성, 코티지코어, 밤하늘, Y2K 등 인스타 프로필·닉네임·캡션·디스코드 상태 메시지에 딱 맞는 이모지 세트를 탭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">🎀🌸✨ 🩰🤍🦢 🌷💗🎀 🍓🥛🤍 🎀💋🪞</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="필터 기준: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-13"><a class="lib-entry-title-link" href="/ko/library/imotikon/">이모티콘 특수문자 모음 (복사·붙여넣기)</a></h3><p class="lib-entry-desc">(◕‿◕) ¯\_(ツ)_/¯ 같은 텍스트 이모티콘(카오모지)과 ㅋㅋ ㅠㅠ 한글 자모 이모티콘을 감정별로 모았어요. 클릭 한 번으로 복사해서 인스타·디스코드 프로필, 닉네임, 카톡, 댓글에 바로 붙여넣기.</p><span class="lib-entry-preview" aria-hidden="true">◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-14"><a class="lib-entry-title-link" href="/ko/library/islam-gihou/">이슬람 기호</a></h3><p class="lib-entry-desc">이슬람 관련 기호 복사 모음 — 초승달과 별, 알라와 바스말라 합자, 모스크와 기도 이모지, 이드 인사말. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">☪ ☪️ ☫ 🌙 ☽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="축하" aria-label="필터 기준: 축하">축하</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="필터 기준: WhatsApp">WhatsApp</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-15"><a class="lib-entry-title-link" href="/ko/library/insa-imotikon/">인사 이모티콘</a></h3><p class="lib-entry-desc">인사 이모티콘 모음 (^-^)/ (・ω・)ノ (^_^)/~. 안녕·잘 가·반가운 인사 17개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(^-^)/ ( ﾟ▽ﾟ)/ (・ω・)ノ ヾ(^ω^*) (＠^◡^)ノ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3147-16"><a class="lib-entry-title-link" href="/ko/library/ilboneo-giho/">일본어 기호 모음</a></h3><p class="lib-entry-desc">일본어 기호를 복사해서 붙여넣기. 히라가나(あ), 가타카나(ツ), 한자(桜·愛), 일본어 문장부호까지 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">桜 愛 夢 月 星</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u3148" aria-labelledby="lib-letter-heading-u3148"><h2 class="lib-letter-heading" id="lib-letter-heading-u3148"><span class="letter">ㅈ</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3148-0"><a class="lib-entry-title-link" href="/ko/library/jollin-imotikon/">졸린 이모티콘</a></h3><p class="lib-entry-desc">졸린 이모티콘 모음 (￣ρ￣)..zzZ (-_-) zzz (∪｡∪)｡｡｡zzz. 나른함·꾸벅꾸벅·곯아떨어짐 17개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(´～`) (=____=) (⇀‸↼‶) (´-ω-`) (ᴗ˳ᴗ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u3148-1"><a class="lib-entry-title-link" href="/ko/library/jonggyo-gihou/">종교·영성 기호</a></h3><p class="lib-entry-desc">세계 주요 전통의 종교·영성·신앙 관련 유니코드 기호를 찾아 복사하세요. 아무 기호나 눌러 바로 복사할 수 있습니다.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☦ ✞ ✟ ♰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u314a" aria-labelledby="lib-letter-heading-u314a"><h2 class="lib-letter-heading" id="lib-letter-heading-u314a"><span class="letter">ㅊ</span><span class="lcount">(4)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314a-0"><a class="lib-entry-title-link" href="/ko/library/chaeksang-dwijipgi-imotikon/">책상 뒤집기 이모티콘</a></h3><p class="lib-entry-desc">책상 뒤집기 이모티콘 (╯°□°）╯︵ ┻━┻ (ノ`Д´)ノ彡┻━┻ ┬─┬ ノ( ゜-゜ノ). 뒤집기와 되돌리기 6개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(╯°□°）╯︵ ┻━┻ (ノ°Д°)ノ︵ ┻━┻ (ノ`Д´)ノ彡┻━┻ ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻ (╯‵□′)╯︵┻━┻</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314a-1"><a class="lib-entry-title-link" href="/ko/library/chess-gihou/">체스 기호</a></h3><p class="lib-entry-desc">체스 말, 체스판 칸, 기보 기호의 유니코드 문자를 복사해서 쓰세요. 아무 기호나 눌러 바로 복사할 수 있습니다.</p><span class="lib-entry-preview" aria-hidden="true">♔ ♕ ♖ ♗ ♘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314a-2"><a class="lib-entry-title-link" href="/ko/library/chekeu-giho/">체크 기호</a></h3><p class="lib-entry-desc">체크 기호 모음 ✓ ✔ ☑ ✅. 엑스 표시, 상태 원, 체크박스, 진행 단계 번호까지 한곳에. 눌러서 바로 복사해 문서·발표자료·프로필에 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ☑ ✅ ☐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="이메일 서식" aria-label="필터 기준: 이메일 서식">이메일 서식</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314a-3"><a class="lib-entry-title-link" href="/ko/library/chukgu-imotikon/">축구 이모티콘</a></h3><p class="lib-entry-desc">축구 이모티콘 모음 ⚽( ◕‿◕ ) ＼(^o^)／ (╯°□°)╯︵ ⚽. 응원·골 세리머니·패배 21개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">⚽( ◕‿◕ ) ヽ(•‿•)ノ⚽ (｡•̀ᴗ-)✧⚽ ⚽~(˘▾˘~) (☞ﾟヮﾟ)☞⚽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="필터 기준: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-u314b" aria-labelledby="lib-letter-heading-u314b"><h2 class="lib-letter-heading" id="lib-letter-heading-u314b"><span class="letter">ㅋ</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314b-0"><a class="lib-entry-title-link" href="/ko/library/kawaii-gwiyeoun-gihou/">카와이 귀여운 기호</a></h3><p class="lib-entry-desc">프로필, 아이디, 메시지에 쓰는 카와이 귀여운 기호. 말랑한 하트, 작은 얼굴, 반짝임, 파스텔 장식을 클릭 한 번으로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">♡ ෆ ❤ ❥ ʚɞ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u314c" aria-labelledby="lib-letter-heading-u314c"><h2 class="lib-letter-heading" id="lib-letter-heading-u314c"><span class="letter">ㅌ</span><span class="lcount">(3)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314c-0"><a class="lib-entry-title-link" href="/ko/library/tokki-imotikon/">토끼 이모티콘</a></h3><p class="lib-entry-desc">토끼 이모티콘 모음 (•ㅅ•) (ᐢ..ᐢ) ／(^ ᆺ ^)＼. 귀여운 토끼·귀 늘어진 토끼·뾰로통한 토끼 20개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(•ㅅ•) (ᐢ..ᐢ) ᕱ⑅ᕱ (ㅇㅅㅇ❀) (՞•֊•՞)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314c-1"><a class="lib-entry-title-link" href="/ko/library/teureompeu-kadeu-giho/">트럼프 카드 기호 ♠ ♥ ♦ ♣</a></h3><p class="lib-entry-desc">트럼프 카드 기호 모음 ♠ ♥ ♦ ♣ ♤ ♡ ♢ ♧. 스페이드·하트·다이아몬드·클로버, 속 빈 무늬, 카드 낱장, 주사위 눈까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">♠ ♥ ♦ ♣ ♤</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314c-2"><a class="lib-entry-title-link" href="/ko/library/teuksu-munja/">특수문자 모음 (닉네임·프로필 꾸미기)</a></h3><p class="lib-entry-desc">닉네임과 프로필을 꾸미는 특수문자 모음. 별·하트·화살표·꾸밈 괄호부터 감성 기호까지 종류별로 정리했습니다. 클릭 한 번으로 복사해서 인스타 바이오, 디스코드, 게임 닉네임에 바로 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">✧ ♡ ⋆ ✿ ☾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-u314d" aria-labelledby="lib-letter-heading-u314d"><h2 class="lib-letter-heading" id="lib-letter-heading-u314d"><span class="letter">ㅍ</span><span class="lcount">(2)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314d-0"><a class="lib-entry-title-link" href="/ko/library/facebook-giho/">페이스북 특수문자</a></h3><p class="lib-entry-desc">페이스북 특수문자를 복사해서 게시물, 댓글, 소개, 페이지 이름을 꾸며보세요. 좋아요·최고예요 등 반응 이모지, 하트 ♡, 별 ★, 구분선까지 어디서나 깨지지 않는 유니코드 기호를 한 번에 복사할 수 있습니다.</p><span class="lib-entry-preview" aria-hidden="true">👍 ❤️ 🥰 😆 😮</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="참고" aria-label="필터 기준: 참고">참고</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Facebook" aria-label="필터 기준: Facebook">Facebook</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314d-1"><a class="lib-entry-title-link" href="/ko/library/poong-imotikon/">포옹 이모티콘</a></h3><p class="lib-entry-desc">포옹 이모티콘 모음 (づ｡◕‿‿◕｡)づ ⊂(・ω・*⊂) ＼(^o^)／. 이리 와·따뜻한 포옹·다 같이 안기 17개. 눌러서 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(っ˘̩╭╮˘̩)っ (つ✧ω✧)つ (⊃｡•́‿•̀｡)⊃ (づ￣ ³￣)づ (っ˘з(˘⌣˘ )</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-u314e" aria-labelledby="lib-letter-heading-u314e"><h2 class="lib-letter-heading" id="lib-letter-heading-u314e"><span class="letter">ㅎ</span><span class="lcount">(6)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-0"><a class="lib-entry-title-link" href="/ko/library/hateu-giho/">하트 기호 ♥ 복사 모음</a></h3><p class="lib-entry-desc">하트 기호와 하트 이모지, 유니코드 하트 문자를 색상·스타일별로 모았습니다. 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 특수문자로 바로 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">🌈 ❤ 🧡 💛 💚</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-1"><a class="lib-entry-title-link" href="/ko/library/hateu-imotikon/">하트 이모티콘</a></h3><p class="lib-entry-desc">하트 이모티콘 모음 (♥‿♥) ( ˘ ³˘)~♥ (♡﹏♡). 하트 눈, 하트 건네기, 수줍은 하트까지 21개. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(♥‿♥) (♥ω♥) (♡°▽°♡) (✿ ♥‿♥) ♥(ˆ⌣ˆԅ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-2"><a class="lib-entry-title-link" href="/ko/library/haegol-imoji/">해골 이모티콘</a></h3><p class="lib-entry-desc">해골 이모티콘 모음 💀 ☠️ 🦴. 웃겨 죽겠을 때 쓰는 조합, 해적기와 위험 표시, x_x 같은 글자 얼굴까지. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">💀 ☠️ 😂 🤣 ⚰️</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="이모지" aria-label="필터 기준: 이모지">이모지</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="필터 기준: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-3"><a class="lib-entry-title-link" href="/ko/library/hwanan-imotikon/">화난 이모티콘</a></h3><p class="lib-entry-desc">화난 이모티콘 모음 (ಠ_ಠ) (╬ Ò﹏Ó) (╯°□°）╯︵ ┻━┻. 가벼운 짜증부터 상 엎기까지 화의 세기별로. 눌러서 바로 복사하세요.</p><span class="lib-entry-preview" aria-hidden="true">(¬_¬) (￣ヘ￣) (；¬_¬) (ಠ_ಠ) (¬､¬)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="댓글" aria-label="필터 기준: 댓글">댓글</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="필터 기준: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-4"><a class="lib-entry-title-link" href="/ko/library/hwasalpyo-giho/">화살표 기호 · 특수문자 모음 (복사용)</a></h3><p class="lib-entry-desc">화살표 기호와 화살표 특수문자를 방향·스타일별로 모았습니다. → ← ↑ ↓ ➤ ➜ ⇒ 같은 기호를 클릭 한 번으로 복사해 인스타 프로필, 닉네임, 디스코드에 바로 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">→ ← ↑ ↓ ↗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="목록·구분" aria-label="필터 기준: 목록·구분">목록·구분</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-u314e-5"><a class="lib-entry-title-link" href="/ko/library/hwapye-giho/">화폐 기호 모음</a></h3><p class="lib-entry-desc">화폐 기호를 복사해서 붙여넣기. 원화(₩), 달러($), 유로(€), 엔·위안(¥), 파운드(£)를 비롯한 세계 각국의 통화 기호가 클릭 한 번으로 바로 복사됩니다.</p><span class="lib-entry-preview" aria-hidden="true">₩ $ € ¥ £</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="기호" aria-label="필터 기준: 기호">기호</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="비즈니스 게시물" aria-label="필터 기준: 비즈니스 게시물">비즈니스 게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="이메일 서식" aria-label="필터 기준: 이메일 서식">이메일 서식</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="필터 기준: LinkedIn">LinkedIn</button></div></article></section><section class="lib-letter-section" id="lib-letter-Y" aria-labelledby="lib-letter-heading-Y"><h2 class="lib-letter-heading" id="lib-letter-heading-Y"><span class="letter">Y</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-Y-0"><a class="lib-entry-title-link" href="/ko/library/y2k-giho/">Y2K 특수문자 (감성 프로필용)</a></h3><p class="lib-entry-desc">Y2K 감성 특수문자 모음 — 별 ✰, 나비 🦋, 십자가 ♱, 반짝이 ⋆｡°✩, CD 💿 까지. 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 이름 꾸미기에 바로 붙여넣으세요.</p><span class="lib-entry-preview" aria-hidden="true">✦ ✮ ♱ 🦋 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="꾸밈" aria-label="필터 기준: 꾸밈">꾸밈</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="프로필·바이오" aria-label="필터 기준: 프로필·바이오">프로필·바이오</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="캡션·게시물" aria-label="필터 기준: 캡션·게시물">캡션·게시물</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="리액션" aria-label="필터 기준: 리액션">리액션</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="필터 기준: Instagram">Instagram</button></div></article></section>
+</main>
+
+<div class="lib-empty" id="libEmpty" role="status" aria-live="polite" hidden>
+  <p class="lib-empty-title">결과 없음</p>
+  <p class="lib-empty-body">이 조건에 맞는 모음이 없습니다. 필터를 하나 이상 해제해 보세요.</p>
+  <button type="button" class="lib-clear" id="libEmptyReset">필터 모두 해제</button>
+</div>
+
+<button type="button" class="lib-back-top" id="libBackTop"
+        aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+window.UTG_LIBRARY_HUB = {
+ "locale": "ko",
+ "basePath": "/ko/library/",
+ "i18n": {
+  "searchLabel": "라이브러리 검색",
+  "searchPlaceholder": "기호 검색…",
+  "clearFilters": "필터 해제",
+  "resultCount": "{total}개 중 {shown}개",
+  "emptyTitle": "결과 없음",
+  "emptyBody": "이 조건에 맞는 모음이 없습니다. 필터를 하나 이상 해제해 보세요.",
+  "emptyReset": "필터 모두 해제",
+  "backTop": "맨 위로",
+  "filterBy": "필터 기준",
+  "alphaJump": "초성으로 이동",
+  "noItems": "항목 없음",
+  "directoryLabel": "기호 모음 디렉터리"
+ },
+ "items": [
+  {
+   "title": "아이폰 이모티콘",
+   "slug": "aipon-imoji",
+   "description": "아이폰 이모티콘 모음 😂 🥹 ❤️ 🫰 🫶. 얼굴·하트·손 이모지 62개를 눌러서 바로 복사하세요. 아이폰과 갤럭시에서 왜 그림이 다른지도 함께 설명합니다.",
+   "preview": "😂 🥹 🥲 😊 🥰",
+   "type": "이모지",
+   "useCases": [
+    "캡션·게시물",
+    "리액션",
+    "참고"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "알트 코드 (Alt Code)",
+   "slug": "alt-kodeu",
+   "description": "닉네임과 프로필 꾸미기에 쓰기 좋은 기호부터 통화, 수학, 악센트 문자, 클래식 DOS 기호까지 — 윈도우 알트 코드(Alt Code) 전체 목록. 클릭 한 번으로 복사하세요.",
+   "preview": "♥ « » • ►",
+   "type": "참고",
+   "useCases": [
+    "참고",
+    "이메일 서식"
+   ],
+   "platforms": [
+    "이메일"
+   ]
+  },
+  {
+   "title": "반짝 이모티콘",
+   "slug": "banjjak-imotikon",
+   "description": "반짝 이모티콘 모음 (✧ω✧) (★ω★) (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧. 반짝이는 눈·별·마법 16개. 눌러서 바로 복사하세요.",
+   "preview": "(★ω★) (✧ω✧) ✧(•̀ᴗ•́)✧ (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ (☆▽☆)",
+   "type": "기호",
+   "useCases": [
+    "캡션·게시물",
+    "프로필·바이오",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "부끄러운 이모티콘",
+   "slug": "bukkeureoun-imotikon",
+   "description": "부끄러운 이모티콘 모음 (⁄ ⁄•⁄ω⁄•⁄ ⁄) ( 〃▽〃) (//∇//). 볼이 발개진 얼굴, 수줍은 얼굴, 당황한 얼굴, 설레는 얼굴까지. 눌러서 복사하세요.",
+   "preview": "(⁄ ⁄•⁄ω⁄•⁄ ⁄) ( 〃▽〃) (//∇//) (⑉• •⑉) (๑•́ ₃ •̀๑)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "불꽃 이모티콘",
+   "slug": "bulkkot-imoji",
+   "description": "불꽃 이모티콘 모음 🔥 🎆 💯. 타오르는 불과 불꽃놀이, 하이프 이모지, 더위 기호, 카오모지와 바로 쓰는 조합까지. 눌러서 복사하세요.",
+   "preview": "🔥 💯 🚀 ⚡ 🙌",
+   "type": "이모지",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "댓글"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "분수 기호 모음",
+   "slug": "bunsu-giho",
+   "description": "분수 기호를 복사해서 붙여넣기. ½ ⅓ ¼ ⅛ 같은 기성 분수부터 위·아래 첨자와 분수 슬래시로 직접 만드는 분수까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "½ ⅓ ⅔ ¼ ¾",
+   "type": "기호",
+   "useCases": [
+    "참고",
+    "비즈니스 게시물",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "이메일"
+   ]
+  },
+  {
+   "title": "별 기호 ★ 모음 (복사용)",
+   "slug": "byeol-giho",
+   "description": "별 기호와 반짝임 특수문자, 별 이모지를 모양·용도별로 한눈에. 클릭 한 번으로 복사되어 인스타 프로필·닉네임·디스코드 이름 꾸미기에 그대로 붙여 쓸 수 있습니다.",
+   "preview": "★ ☆ ✦ ✧ ✡",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "목록·구분",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "별 이모티콘",
+   "slug": "byeol-imotikon",
+   "description": "별 이모티콘 모음 (★ω★) (☆▽☆) ✧. 눈이 별이 된 얼굴, 신난 표정, 반짝이는 소원, 유성 이모티콘까지. 눌러서 바로 복사하세요.",
+   "preview": "(★ω★) (☆▽☆) (✧ω✧) (★▽★) (☆ω☆)",
+   "type": "기호",
+   "useCases": [
+    "캡션·게시물",
+    "프로필·바이오",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "별자리 기호",
+   "slug": "byeoljari-giho",
+   "description": "별자리 기호 ♈♉♊ 복사 붙여넣기: 12별자리 전부와 행성 기호, 십이지 동물, 점성술 각 기호까지. 클릭하면 바로 복사됩니다.",
+   "preview": "♈ ♉ ♊ ♋ ♌",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "책상 뒤집기 이모티콘",
+   "slug": "chaeksang-dwijipgi-imotikon",
+   "description": "책상 뒤집기 이모티콘 (╯°□°）╯︵ ┻━┻ (ノ`Д´)ノ彡┻━┻ ┬─┬ ノ( ゜-゜ノ). 뒤집기와 되돌리기 6개. 눌러서 복사하세요.",
+   "preview": "(╯°□°）╯︵ ┻━┻ (ノ°Д°)ノ︵ ┻━┻ (ノ`Д´)ノ彡┻━┻ ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻ (╯‵□′)╯︵┻━┻",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "체크 기호",
+   "slug": "chekeu-giho",
+   "description": "체크 기호 모음 ✓ ✔ ☑ ✅. 엑스 표시, 상태 원, 체크박스, 진행 단계 번호까지 한곳에. 눌러서 바로 복사해 문서·발표자료·프로필에 붙여넣으세요.",
+   "preview": "✓ ✔ ☑ ✅ ☐",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "비즈니스 게시물",
+    "이메일 서식"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "체스 기호",
+   "slug": "chess-gihou",
+   "description": "체스 말, 체스판 칸, 기보 기호의 유니코드 문자를 복사해서 쓰세요. 아무 기호나 눌러 바로 복사할 수 있습니다.",
+   "preview": "♔ ♕ ♖ ♗ ♘",
+   "type": "기호",
+   "useCases": [
+    "캡션·게시물",
+    "리액션",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "축구 이모티콘",
+   "slug": "chukgu-imotikon",
+   "description": "축구 이모티콘 모음 ⚽( ◕‿◕ ) ＼(^o^)／ (╯°□°)╯︵ ⚽. 응원·골 세리머니·패배 21개. 눌러서 복사하세요.",
+   "preview": "⚽( ◕‿◕ ) ヽ(•‿•)ノ⚽ (｡•̀ᴗ-)✧⚽ ⚽~(˘▾˘~) (☞ﾟヮﾟ)☞⚽",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "단위 기호 모음",
+   "slug": "danwi-giho",
+   "description": "단위 기호를 복사해서 붙여넣기. 섭씨(℃)·화씨(℉) 온도 기호, 각도 기호(∠), 마이크로 기호(µ), 옴(Ω), ㎏·㎜ 같은 미터법 단위 문자까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "Ω µ ℧ Å ℏ",
+   "type": "기호",
+   "useCases": [
+    "비즈니스 게시물",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "디스코드 특수문자 (복사·붙여넣기)",
+   "slug": "discord-giho",
+   "description": "디스코드 특수문자를 복사해서 채널 이름, 서버 이름, 닉네임, 프로필을 꾸며보세요. 화살표 ▸ ➤, 구분선 ┊ │, 별 ✦, 하트 ♡ 등 어디서나 깨지지 않는 유니코드 기호를 한 번에 복사할 수 있습니다.",
+   "preview": "⌗ ➤ ▸ │ ⊹",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "도형 기호 모음",
+   "slug": "dohyeong-giho",
+   "description": "도형 기호를 복사해서 붙여넣기. 동그라미, 네모, 삼각형, 마름모, 육각형과 불릿 기호까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "● ○ ◉ ◎ ⊙",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "구분선",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "엄지 이모지",
+   "slug": "eomji-imoji",
+   "description": "엄지 이모지 모음 👍 👎. 엄지척과 엄지 내리기를 피부색 다섯 가지까지, 좋아요 손짓과 체크 기호도 함께. 눌러서 바로 복사하세요.",
+   "preview": "👍 👍🏻 👍🏼 👍🏽 👍🏾",
+   "type": "이모지",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "음악 기호 모음",
+   "slug": "eumak-giho",
+   "description": "음악 기호를 복사해서 붙여넣기. 음표(♪ ♫ ♬), 음자리표, 올림표·내림표(♯ ♭), 쉼표, 악기 이모지(🎸🎹🎤)까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "♩ ♪ ♫ ♬ 🎵",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "음악 이모티콘",
+   "slug": "eumak-imotikon",
+   "description": "음악 이모티콘 모음 ♪(´▽｀) ♪┏(・o･)┛♪ ♪~ ᕕ(ᐛ)ᕗ. 노래·춤·음표 17개. 눌러서 바로 복사하세요.",
+   "preview": "♪(´▽｀) (っ˘ω˘ς )♪ ♪(๑ᴖ◡ᴖ๑)♪ (♫ˆ ⌣ ˆ) ヽ(o´∀`)ﾉ♪",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "어깨 으쓱 이모티콘",
+   "slug": "eusseuk-imotikon",
+   "description": "어깨 으쓱 이모티콘 ¯\\_(ツ)_/¯ ┐(´～`)┌ ╮(╯▽╰)╭. 모르겠다·어쩔 수 없지 16개. 눌러서 바로 복사하세요.",
+   "preview": "¯\\_(ツ)_/¯ ¯\\_(⊙_ʖ⊙)_/¯ ¯\\_(ᵔᵕᵔ)_/¯ ¯\\_(◉‿◉)_/¯ ¯\\_( ͡° ͜ʖ ͡°)_/¯",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Discord"
+   ]
+  },
+  {
+   "title": "페이스북 특수문자",
+   "slug": "facebook-giho",
+   "description": "페이스북 특수문자를 복사해서 게시물, 댓글, 소개, 페이지 이름을 꾸며보세요. 좋아요·최고예요 등 반응 이모지, 하트 ♡, 별 ★, 구분선까지 어디서나 깨지지 않는 유니코드 기호를 한 번에 복사할 수 있습니다.",
+   "preview": "👍 ❤️ 🥰 😆 😮",
+   "type": "참고",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Facebook"
+   ]
+  },
+  {
+   "title": "감성 특수문자 · 예쁜 기호 모음",
+   "slug": "gamseong-giho",
+   "description": "감성 특수문자와 예쁜 기호를 종류별로 모았습니다. 반짝이·하트·꽃·구분선·괄호 기호를 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 상태 메시지 꾸미기에 바로 붙여넣으세요.",
+   "preview": "⋆ ✦ ✧ ⊹ ࣪",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "그리스 문자 모음",
+   "slug": "geurisa-munja",
+   "description": "그리스 문자를 복사해서 붙여넣기. 알파(α)·베타(β)·파이(π)·시그마(Σ)·오메가(Ω)까지 대문자·소문자 전체와 수학 변형 기호를 클릭 한 번으로 바로 복사합니다.",
+   "preview": "Α Β Γ Δ Ε",
+   "type": "기호",
+   "useCases": [
+    "비즈니스 게시물",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "기도 이모티콘",
+   "slug": "gido-imoji",
+   "description": "기도 이모티콘 모음 🙏 🤲 m(_ _)m. 두 손 모은 손과 피부색 변형, 신앙 기호, 감사·부탁 조합까지. 눌러서 바로 복사하세요.",
+   "preview": "🙏 🤲 👐 🫶 🤝",
+   "type": "이모지",
+   "useCases": [
+    "캡션·게시물",
+    "댓글",
+    "리액션"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "기쁜 이모티콘",
+   "slug": "gippeun-imotikon",
+   "description": "기쁜 이모티콘 모음 (^▽^) ヽ(•‿•)ノ ＼(^o^)／. 미소·환호·흐뭇함·춤추는 얼굴까지 20개. 눌러서 바로 복사하세요.",
+   "preview": "(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "댓글"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "곰 이모티콘",
+   "slug": "gom-imotikon",
+   "description": "곰 이모티콘 모음 ʕ•ᴥ•ʔ ʕ≧ᴥ≦ʔ ⊂ʕ•ᴥ•⊂ʔ. 귀여운 곰·신난 곰·안아 주는 곰 17개. 눌러서 바로 복사하세요.",
+   "preview": "ʕ•ᴥ•ʔ ʕ·ᴥ·ʔ ʕ ꈍᴥꈍʔ ʕ•ﻌ•ʔ ʕ￫ᴥ￩ʔ",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "고양이 아스키 아트",
+   "slug": "goyangi-ascii-art",
+   "description": "고양이 아스키 아트 모음. 한 줄짜리 =^..^=, 작은 얼굴, 식빵 자세, 큰 전신 그림까지. 복사 버튼을 누르면 공백까지 그대로 복사됩니다.",
+   "preview": "",
+   "type": "기호",
+   "useCases": [
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Discord",
+    "X"
+   ]
+  },
+  {
+   "title": "고양이 이모티콘",
+   "slug": "goyangi-imotikon",
+   "description": "고양이 이모티콘 모음 (=^・ω・^=) ฅ^•ﻌ•^ฅ (=˘ω˘=). 기본 냥이, 신난 냥이, 우는 냥이, 앞발과 수염까지. 눌러서 바로 복사하세요.",
+   "preview": "(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "구분선 기호 모음",
+   "slug": "gubunseon-giho",
+   "description": "가로선 ─ ━, 세로선 │ ┃, 장식 구분선, 파선, 박스 그리기 문자, 밑줄까지 복사해서 붙여넣기. 텍스트를 깔끔하게 나눠 주는 유니코드 구분선을 클릭 한 번으로 복사하세요.",
+   "preview": "─ ━ ═ ╌ ┄",
+   "type": "기호",
+   "useCases": [
+    "구분선",
+    "비즈니스 게시물",
+    "이메일 서식"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "구분선 이모티콘",
+   "slug": "gubunseon-imotikon",
+   "description": "구분선 이모티콘 모음 ｡･:*:･ﾟ★ ❁ ────── ❁ ╭─────────╮. 반짝이·하트·선·테두리 24개. 눌러서 복사하세요.",
+   "preview": "｡･:*:･ﾟ★,｡･:*:･ﾟ☆ ✧･ﾟ: *✧･ﾟ:* ⋆｡°✩ ⋆｡°✩ ˚ ✦ . ˚ ✦ . · ˚ ✦ ˚ · ✦ ˚ ·",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "구분선"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "국기 이모지 🇰🇷 모음",
+   "slug": "gukgi-imoji",
+   "description": "전 세계 국기 이모지를 한곳에 모았습니다. 태극기 🇰🇷 부터 미국·일본·중국 국기까지 클릭 한 번으로 복사해서 닉네임, 프로필, 카카오톡에 바로 붙여넣으세요. EU·아세안 같은 국기 세트는 통째로 복사됩니다.",
+   "preview": "🇰🇷 🇰🇵 🇺🇸 🇯🇵 🇨🇳",
+   "type": "이모지",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "여행"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "괄호 기호 모음",
+   "slug": "gwalho-giho",
+   "description": "소괄호 () 대괄호 [] 중괄호 {}부터 한국어 낫표 「」 『』, 수학·장식 괄호, 화살괄호 《》까지 복사해서 붙여넣기. 원하는 괄호를 클릭하면 바로 복사됩니다.",
+   "preview": "( ) [ ] {",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "귀여운 이모티콘",
+   "slug": "gwiyeoun-imotikon",
+   "description": "귀여운 이모티콘 모음 (◕‿◕) ʕ•ᴥ•ʔ (★ω★). 깜찍한 얼굴, 동물, 수줍은 표정, 반짝이는 이모티콘까지. 눌러서 바로 복사하세요.",
+   "preview": "(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "엑스 표시 & 십자가 기호",
+   "slug": "gyocha-giho",
+   "description": "엑스 표시(✗ ✕ ✘ ❌)와 십자가 기호(✝ ☦ ✠)를 복사해서 붙여넣기. 곱셈 X, 체크리스트용 X 표시, 종교·장식 십자가, 단검, 경고·취소 표시까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "× ✕ ✖ ⨯ ⋇",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "목록·구분",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "해골 이모티콘",
+   "slug": "haegol-imoji",
+   "description": "해골 이모티콘 모음 💀 ☠️ 🦴. 웃겨 죽겠을 때 쓰는 조합, 해적기와 위험 표시, x_x 같은 글자 얼굴까지. 눌러서 바로 복사하세요.",
+   "preview": "💀 ☠️ 😂 🤣 ⚰️",
+   "type": "이모지",
+   "useCases": [
+    "리액션",
+    "댓글"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "하트 기호 ♥ 복사 모음",
+   "slug": "hateu-giho",
+   "description": "하트 기호와 하트 이모지, 유니코드 하트 문자를 색상·스타일별로 모았습니다. 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 특수문자로 바로 붙여넣으세요.",
+   "preview": "🌈 ❤ 🧡 💛 💚",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "프로필·바이오",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "하트 이모티콘",
+   "slug": "hateu-imotikon",
+   "description": "하트 이모티콘 모음 (♥‿♥) ( ˘ ³˘)~♥ (♡﹏♡). 하트 눈, 하트 건네기, 수줍은 하트까지 21개. 눌러서 바로 복사하세요.",
+   "preview": "(♥‿♥) (♥ω♥) (♡°▽°♡) (✿ ♥‿♥) ♥(ˆ⌣ˆԅ)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "화난 이모티콘",
+   "slug": "hwanan-imotikon",
+   "description": "화난 이모티콘 모음 (ಠ_ಠ) (╬ Ò﹏Ó) (╯°□°）╯︵ ┻━┻. 가벼운 짜증부터 상 엎기까지 화의 세기별로. 눌러서 바로 복사하세요.",
+   "preview": "(¬_¬) (￣ヘ￣) (；¬_¬) (ಠ_ಠ) (¬､¬)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "화폐 기호 모음",
+   "slug": "hwapye-giho",
+   "description": "화폐 기호를 복사해서 붙여넣기. 원화(₩), 달러($), 유로(€), 엔·위안(¥), 파운드(£)를 비롯한 세계 각국의 통화 기호가 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "₩ $ € ¥ £",
+   "type": "기호",
+   "useCases": [
+    "비즈니스 게시물",
+    "이메일 서식"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "화살표 기호 · 특수문자 모음 (복사용)",
+   "slug": "hwasalpyo-giho",
+   "description": "화살표 기호와 화살표 특수문자를 방향·스타일별로 모았습니다. → ← ↑ ↓ ➤ ➜ ⇒ 같은 기호를 클릭 한 번으로 복사해 인스타 프로필, 닉네임, 디스코드에 바로 붙여넣으세요.",
+   "preview": "→ ← ↑ ↓ ↗",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "일본어 기호 모음",
+   "slug": "ilboneo-giho",
+   "description": "일본어 기호를 복사해서 붙여넣기. 히라가나(あ), 가타카나(ツ), 한자(桜·愛), 일본어 문장부호까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "桜 愛 夢 月 星",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "이모지 조합 (복붙)",
+   "slug": "imoji-johap",
+   "description": "감성 이모지 조합 100종 이상을 복사·붙여넣기로. 소녀 감성, 코티지코어, 밤하늘, Y2K 등 인스타 프로필·닉네임·캡션·디스코드 상태 메시지에 딱 맞는 이모지 세트를 탭 한 번으로 복사하세요.",
+   "preview": "🎀🌸✨ 🩰🤍🦢 🌷💗🎀 🍓🥛🤍 🎀💋🪞",
+   "type": "이모지",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "이모티콘 특수문자 모음 (복사·붙여넣기)",
+   "slug": "imotikon",
+   "description": "(◕‿◕) ¯\\_(ツ)_/¯ 같은 텍스트 이모티콘(카오모지)과 ㅋㅋ ㅠㅠ 한글 자모 이모티콘을 감정별로 모았어요. 클릭 한 번으로 복사해서 인스타·디스코드 프로필, 닉네임, 카톡, 댓글에 바로 붙여넣기.",
+   "preview": "◕‿◕ (◠‿◠) ╰(▔∀▔)╯ (✿◠‿◠) ヽ(•‿•)ノ",
+   "type": "꾸밈",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "인사 이모티콘",
+   "slug": "insa-imotikon",
+   "description": "인사 이모티콘 모음 (^-^)/ (・ω・)ノ (^_^)/~. 안녕·잘 가·반가운 인사 17개. 눌러서 바로 복사하세요.",
+   "preview": "(^-^)/ ( ﾟ▽ﾟ)/ (・ω・)ノ ヾ(^ω^*) (＠^◡^)ノ",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "댓글"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "이슬람 기호",
+   "slug": "islam-gihou",
+   "description": "이슬람 관련 기호 복사 모음 — 초승달과 별, 알라와 바스말라 합자, 모스크와 기도 이모지, 이드 인사말. 눌러서 바로 복사하세요.",
+   "preview": "☪ ☪️ ☫ 🌙 ☽",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "축하"
+   ],
+   "platforms": [
+    "WhatsApp",
+    "Instagram"
+   ]
+  },
+  {
+   "title": "가운데 점(·) & 점 기호 모음",
+   "slug": "jeom-giho",
+   "description": "가운데 점(·) 등 점 기호와 불릿·글머리 기호를 복사해서 붙여넣기. 화살표, 체크, 별, 꽃 모양 글머리 기호까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "· ㆍ ∙ • ‣",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "비즈니스 게시물",
+    "이메일 서식"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "졸린 이모티콘",
+   "slug": "jollin-imotikon",
+   "description": "졸린 이모티콘 모음 (￣ρ￣)..zzZ (-_-) zzz (∪｡∪)｡｡｡zzz. 나른함·꾸벅꾸벅·곯아떨어짐 17개. 눌러서 복사하세요.",
+   "preview": "(´～`) (=____=) (⇀‸↼‶) (´-ω-`) (ᴗ˳ᴗ)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "종교·영성 기호",
+   "slug": "jonggyo-gihou",
+   "description": "세계 주요 전통의 종교·영성·신앙 관련 유니코드 기호를 찾아 복사하세요. 아무 기호나 눌러 바로 복사할 수 있습니다.",
+   "preview": "✝ ☦ ✞ ✟ ♰",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "카와이 귀여운 기호",
+   "slug": "kawaii-gwiyeoun-gihou",
+   "description": "프로필, 아이디, 메시지에 쓰는 카와이 귀여운 기호. 말랑한 하트, 작은 얼굴, 반짝임, 파스텔 장식을 클릭 한 번으로 복사하세요.",
+   "preview": "♡ ෆ ❤ ❥ ʚɞ",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "꽃 기호 모음",
+   "slug": "kkot-giho",
+   "description": "꽃·잎·나무 모양의 유니코드 꽃 기호와 이모지 모음. 벚꽃 🌸, 장미 🌹부터 ❀ ✿ ⚘ 흑백 플로렛 문자, 꽃 구분선까지 클릭 한 번으로 복사하세요.",
+   "preview": "🌸 🌹 🌺 🌻 🌼",
+   "type": "이모지",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "꽃 이모티콘",
+   "slug": "kkot-imotikon",
+   "description": "꽃 이모티콘 모음 (◕‿◕✿) ❀(*´▽`*)❀ (๑•́ ω •̀๑)✿. 꽃 미소·꽃 건네기·꽃 액자 18개. 눌러서 복사하세요.",
+   "preview": "(◕‿◕✿) (◠‿◠✿) (✿◕‿◕) (｡◕‿◕｡)✿ (❀◦‿◦)",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "말풍선 특수문자",
+   "slug": "malpungseon-giho",
+   "description": "말풍선 특수문자 모음 💬 🗨️ 💭 ❝ ❞ 「」 ◖◗. 말풍선 이모지, 따옴표 말풍선, 괄호 말풍선, 꼬리 조각까지. 눌러서 바로 복사하세요.",
+   "preview": "💬 🗨️ 🗯️ 💭 🗣️"
+  },
+  {
+   "title": "모아이 석상 이모지 🗿",
+   "slug": "moai-imoji",
+   "description": "모아이 이모지 🗿와 같이 쓰는 무표정 얼굴, 돌·산 이모지, ಠ_ಠ 같은 글자 얼굴, 밈 조합까지 모았습니다. 눌러서 바로 복사하세요.",
+   "preview": "🗿 🪨 🗻 ⛰ 🌋",
+   "type": "이모지",
+   "useCases": [
+    "리액션",
+    "댓글"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "문장부호 & 따옴표",
+   "slug": "munjangbuho-giho",
+   "description": "따옴표와 특수 문장부호를 복사해서 붙여넣기. 곧은·둥근(스마트) 따옴표(“ ” ‘ ’), 겹화살괄호(« »), 단검(†), 문단 기호(¶), 구획 기호(§), 인테러뱅(‽)까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "\" ' “ ” ‘",
+   "type": "기호",
+   "useCases": [
+    "비즈니스 게시물",
+    "캡션·게시물",
+    "목록·구분"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "날씨 기호와 이모지",
+   "slug": "nalssi-giho",
+   "description": "날씨 기호 모음 ☀ ☁ 🌧 ❄ 🌪. 해·구름·비·눈·바람·달의 위상·온도 기호까지 한곳에. 눌러서 바로 복사해 프로필이나 문서에 붙여넣으세요.",
+   "preview": "☀ ☼ 🌞 🌤 🌅",
+   "type": "이모지",
+   "useCases": [
+    "캡션·게시물",
+    "리액션",
+    "여행"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "놀란 이모티콘",
+   "slug": "nollan-imotikon",
+   "description": "놀란 이모티콘 모음 (⊙_⊙) (°ロ°) Σ(っ °Д °;)っ. 눈 커짐·헉·멘붕 17개. 눌러서 바로 복사하세요.",
+   "preview": "(⊙_⊙) (○_○) (☉_☉) (⊙﹏⊙) (°o°)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "포옹 이모티콘",
+   "slug": "poong-imotikon",
+   "description": "포옹 이모티콘 모음 (づ｡◕‿‿◕｡)づ ⊂(・ω・*⊂) ＼(^o^)／. 이리 와·따뜻한 포옹·다 같이 안기 17개. 눌러서 복사하세요.",
+   "preview": "(っ˘̩╭╮˘̩)っ (つ✧ω✧)つ (⊃｡•́‿•̀｡)⊃ (づ￣ ³￣)づ (っ˘з(˘⌣˘ )",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "뽀뽀 이모티콘",
+   "slug": "ppoppo-imotikon",
+   "description": "뽀뽀 이모티콘 모음 ( ˘ ³˘)~♥ (づ￣ ³￣)づ (๑ˊ³ˋ)♡. 날리는 뽀뽀·입 내밀기·수줍은 뽀뽀 17개. 눌러서 복사하세요.",
+   "preview": "(づ￣ ³￣)づ (っ˘з(˘⌣˘ ) (ˆ ³ˆ)~♡ ( ˘ ³˘)~♥ (っ˘ε˘)っ ♡",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "로블록스 특수문자 (복사 붙여넣기)",
+   "slug": "roblox-giho",
+   "description": "로블록스 닉네임(디스플레이 네임)·프로필·그룹 소개에 넣어도 필터에 안 걸리는 특수문자 40개 이상. 별·하트·꽃·반짝이 기호를 클릭 한 번으로 복사하고, Robux·프리미엄·인증 아이콘의 진실까지 확인하세요 — 2026년 7월 기준 필터로 검증.",
+   "preview": "⋆ ⊹ ✦ ✧ ★",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "생각 이모티콘",
+   "slug": "saenggak-imoji",
+   "description": "생각 이모티콘 모음 🤔 🧐 🤷 (・_・?). 고민할 때, 의심스러울 때, 모르겠을 때 쓰는 이모지와 얼굴 문자를 상황별로. 눌러서 바로 복사하세요.",
+   "preview": "🤔 🧐 🤨 🫤 😑",
+   "type": "이모지",
+   "useCases": [
+    "리액션",
+    "댓글"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "사랑과 하트 이모티콘",
+   "slug": "sarang-imotikon",
+   "description": "사랑 이모티콘 모음 (♥ω♥) ( ˘ ³˘)♥ (づ｡◕‿‿◕｡)づ. 하트 눈, 뽀뽀, 포옹, 설레는 얼굴까지. 눌러서 바로 복사하세요.",
+   "preview": "(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "성별 기호 모음",
+   "slug": "seongbyeol-giho",
+   "description": "남성 ♂, 여성 ♀, 트랜스젠더 ⚧, 중성, 결합 성별·지향 기호까지 복사해서 붙여넣기. 클릭 한 번으로 바로 복사되는 유니코드 성별 기호 모음입니다.",
+   "preview": "♀ ♂ ⚧ ⚲ ⚪",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "슬픈 이모티콘",
+   "slug": "seulpeun-imotikon",
+   "description": "슬픈 이모티콘 모음 (´･_･`) (︶︹︶) ( ╥﹏╥). 시무룩함, 실망, 외로움, 마음이 아플 때까지 단계별로. 눌러서 바로 복사하세요.",
+   "preview": "(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "신난 이모티콘",
+   "slug": "sinnan-imotikon",
+   "description": "신난 이모티콘 모음 ヽ(>∀<☆)ノ (☆▽☆) (๑˃ᴗ˂)ﻭ. 신남 폭발·별눈·설렘 16개. 눌러서 바로 복사하세요.",
+   "preview": "ヽ(>∀<☆)ノ ٩(◕‿◕)۶ ＼(≧▽≦)／ ヽ(・∀・)ﾉ o(≧∇≦o)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "댓글"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "수학 기호 모음",
+   "slug": "suhak-giho",
+   "description": "수학 기호를 복사해서 붙여넣기. 사칙연산, 부등호, 집합 기호, 무한대(∞), 근호(√), 위·아래 첨자까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "± × ÷ ∓ ∣",
+   "type": "기호",
+   "useCases": [
+    "비즈니스 게시물",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "숫자 기호 모음",
+   "slug": "sutja-giho",
+   "description": "숫자 기호를 복사해서 붙여넣기. 원문자(①), 검은 원문자(❶), 로마 숫자(Ⅷ), 위·아래 첨자, 괄호 숫자, 전각 숫자까지 클릭 한 번으로 바로 복사됩니다.",
+   "preview": "① ② ③ ④ ⑤",
+   "type": "기호",
+   "useCases": [
+    "목록·구분",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "특수문자 모음 (닉네임·프로필 꾸미기)",
+   "slug": "teuksu-munja",
+   "description": "닉네임과 프로필을 꾸미는 특수문자 모음. 별·하트·화살표·꾸밈 괄호부터 감성 기호까지 종류별로 정리했습니다. 클릭 한 번으로 복사해서 인스타 바이오, 디스코드, 게임 닉네임에 바로 붙여넣으세요.",
+   "preview": "✧ ♡ ⋆ ✿ ☾",
+   "type": "기호",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "비즈니스 게시물"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "트럼프 카드 기호 ♠ ♥ ♦ ♣",
+   "slug": "teureompeu-kadeu-giho",
+   "description": "트럼프 카드 기호 모음 ♠ ♥ ♦ ♣ ♤ ♡ ♢ ♧. 스페이드·하트·다이아몬드·클로버, 속 빈 무늬, 카드 낱장, 주사위 눈까지. 눌러서 바로 복사하세요.",
+   "preview": "♠ ♥ ♦ ♣ ♤",
+   "type": "기호",
+   "useCases": [
+    "캡션·게시물",
+    "리액션",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "토끼 이모티콘",
+   "slug": "tokki-imotikon",
+   "description": "토끼 이모티콘 모음 (•ㅅ•) (ᐢ..ᐢ) ／(^ ᆺ ^)＼. 귀여운 토끼·귀 늘어진 토끼·뾰로통한 토끼 20개. 눌러서 복사하세요.",
+   "preview": "(•ㅅ•) (ᐢ..ᐢ) ᕱ⑅ᕱ (ㅇㅅㅇ❀) (՞•֊•՞)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "따봉 이모티콘",
+   "slug": "ttabong-imotikon",
+   "description": "따봉 이모티콘 모음 d(°∀°)b (๑•̀ㅂ•́)و✧ ( ⌐■_■). 엄지척·잘했어·쿨한 인정 18개. 눌러서 복사하세요.",
+   "preview": "d(°∀°)b b(￣▽￣)d (b ᵔ▽ᵔ)b (b^_^)b d(-_^)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Discord"
+   ]
+  },
+  {
+   "title": "우는 이모티콘",
+   "slug": "uneun-imotikon",
+   "description": "우는 이모티콘 모음 (╥﹏╥) (T_T) ㅠㅠ. 눈물 맺힌 얼굴부터 펑펑 우는 얼굴, 한글 자모 ㅠㅠ 계열까지. 눌러서 바로 복사하세요.",
+   "preview": "(╥﹏╥) (T_T) (；﹏；) (ㄒoㄒ) (个_个)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "웃는 이모티콘",
+   "slug": "unneun-imotikon",
+   "description": "웃는 이모티콘 모음 (≧▽≦) (＾▽＾) ( ﾟ∀ﾟ). 살짝 웃는 얼굴부터 배를 잡고 웃는 얼굴까지 세기별로. 눌러서 바로 복사하세요.",
+   "preview": "(≧▽≦) (＾▽＾) ( ˆ ▿ ˆ ) (๑˃ᴗ˂) (o´∀`o)ﾟ",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "댓글",
+    "캡션·게시물"
+   ],
+   "platforms": [
+    "Discord"
+   ]
+  },
+  {
+   "title": "왕관 이모지",
+   "slug": "wanggwan-imoji",
+   "description": "왕관 이모지 👑와 같이 쓰는 왕실·1등·감성 이모지, 프로필과 댓글에 바로 붙여넣는 조합 모음. 눌러서 바로 복사하세요.",
+   "preview": "👑 🤴 👸 🫅 💍",
+   "type": "이모지",
+   "useCases": [
+    "캡션·게시물",
+    "프로필·바이오",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "윙크 이모티콘",
+   "slug": "wingkeu-imotikon",
+   "description": "윙크 이모티콘 모음 (^_-) (^_-)-☆ (｡•̀ᴗ-)✧. 장난스러운 윙크, 귀여운 윙크, 은근한 윙크까지. 눌러서 바로 복사하세요.",
+   "preview": "(^_-) (^_-)-☆ (・ω<) (･ω<)☆ (>ω^)",
+   "type": "기호",
+   "useCases": [
+    "리액션",
+    "캡션·게시물",
+    "프로필·바이오"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Y2K 특수문자 (감성 프로필용)",
+   "slug": "y2k-giho",
+   "description": "Y2K 감성 특수문자 모음 — 별 ✰, 나비 🦋, 십자가 ♱, 반짝이 ⋆｡°✩, CD 💿 까지. 클릭 한 번으로 복사해서 인스타 프로필, 닉네임, 디스코드 이름 꾸미기에 바로 붙여넣으세요.",
+   "preview": "✦ ✮ ♱ 🦋 ✨",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "리액션"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "예쁜 테두리와 프레임",
+   "slug": "yeppeun-teduri",
+   "description": "프로필과 소개글을 꾸미는 예쁜 테두리, 프레임, 구분선 모음. 꽃·별·하트 무늬를 클릭 한 번으로 복사하세요.",
+   "preview": "❀━━━━━❀ ✿━━━━━━━━━✿ ❁ ━━━━━━━━━ ❁ ༻❁༺ *＊✿❀ ❀✿＊*",
+   "type": "꾸밈",
+   "useCases": [
+    "프로필·바이오",
+    "캡션·게시물",
+    "구분선"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  }
+ ]
+};
+</script>
+<script src="/js/library/library-hub.js" defer></script>
+<!-- library-hub:end -->
 <!-- CTA -->
 <div class="lib-cta">
   <div class="cta-card">
@@ -702,69 +1410,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </details>
 </section>
 
-<!-- STATIC INDEX (crawlable links to every collection) -->
-<nav class="lib-index" aria-label="모든 기호 모음">
-  <div class="lib-index-inner">
-    <h2 class="lib-index-title">모든 기호 모음 (가나다순)</h2>
-    <p class="lib-index-note">UltraTextGen 한국어 라이브러리의 모든 기호·특수문자·이모티콘 모음입니다. 위 디렉터리에서 검색·필터로 찾거나, 아래에서 원하는 페이지로 바로 이동하세요.</p>
-    <ul class="lib-index-list">
-      <li><a href="/ko/library/gukgi-imoji/">국기 이모지</a></li>
-      <li><a href="/ko/library/goyangi-ascii-art/">고양이 아스키 아트</a></li>
-      <li><a href="/ko/library/wingkeu-imotikon/">윙크 이모티콘</a></li>
-      <li><a href="/ko/library/byeol-imotikon/">별 이모티콘</a></li>
-      <li><a href="/ko/library/seulpeun-imotikon/">슬픈 이모티콘</a></li>
-      <li><a href="/ko/library/sarang-imotikon/">사랑과 하트 이모티콘</a></li>
-      <li><a href="/ko/library/unneun-imotikon/">웃는 이모티콘</a></li>
-      <li><a href="/ko/library/gwiyeoun-imotikon/">귀여운 이모티콘</a></li>
-      <li><a href="/ko/library/goyangi-imotikon/">고양이 이모티콘</a></li>
-      <li><a href="/ko/library/bukkeureoun-imotikon/">부끄러운 이모티콘</a></li>
-      <li><a href="/ko/library/uneun-imotikon/">우는 이모티콘</a></li>
-      <li><a href="/ko/library/hwanan-imotikon/">화난 이모티콘</a></li>
-      <li><a href="/ko/library/eomji-imoji/">엄지 이모지</a></li>
-      <li><a href="/ko/library/moai-imoji/">모아이 석상 이모지</a></li>
-      <li><a href="/ko/library/wanggwan-imoji/">왕관 이모지</a></li>
-      <li><a href="/ko/library/haegol-imoji/">해골 이모티콘</a></li>
-      <li><a href="/ko/library/gido-imoji/">기도 이모티콘</a></li>
-      <li><a href="/ko/library/bulkkot-imoji/">불꽃 이모티콘</a></li>
-      <li><a href="/ko/library/saenggak-imoji/">생각 이모티콘</a></li>
-      <li><a href="/ko/library/teureompeu-kadeu-giho/">트럼프 카드 기호</a></li>
-      <li><a href="/ko/library/nalssi-giho/">날씨 기호와 이모지</a></li>
-      <li><a href="/ko/library/chekeu-giho/">체크 기호</a></li>
-      <li><a href="/ko/library/gamseong-giho/">감성 특수문자</a></li>
-      <li><a href="/ko/library/byeoljari-giho/">별자리 기호</a></li>
-      <li><a href="/ko/library/gwalho-giho/">괄호 기호</a></li>
-      <li><a href="/ko/library/gubunseon-giho/">구분선 기호</a></li>
-      <li><a href="/ko/library/geurisa-munja/">그리스 문자</a></li>
-      <li><a href="/ko/library/kkot-giho/">꽃 기호</a></li>
-      <li><a href="/ko/library/danwi-giho/">단위 기호</a></li>
-      <li><a href="/ko/library/dohyeong-giho/">도형 기호</a></li>
-      <li><a href="/ko/library/discord-giho/">디스코드 특수문자</a></li>
-      <li><a href="/ko/library/roblox-giho/">로블록스 특수문자</a></li>
-      <li><a href="/ko/library/munjangbuho-giho/">문장부호 &amp; 따옴표</a></li>
-      <li><a href="/ko/library/byeol-giho/">별 기호</a></li>
-      <li><a href="/ko/library/bunsu-giho/">분수 기호</a></li>
-      <li><a href="/ko/library/seongbyeol-giho/">성별 기호</a></li>
-      <li><a href="/ko/library/suhak-giho/">수학 기호</a></li>
-      <li><a href="/ko/library/sutja-giho/">숫자 기호</a></li>
-      <li><a href="/ko/library/eumak-giho/">음악 기호</a></li>
-      <li><a href="/ko/library/imoji-johap/">이모지 조합</a></li>
-      <li><a href="/ko/library/imotikon/">이모티콘</a></li>
-      <li><a href="/ko/library/islam-gihou/">이슬람 기호</a></li>
-      <li><a href="/ko/library/ilboneo-giho/">일본어 기호</a></li>
-      <li><a href="/ko/library/jeom-giho/">점 &amp; 불릿 기호</a></li>
-      <li><a href="/ko/library/gyocha-giho/">엑스 표시 &amp; 십자가 기호</a></li>
-      <li><a href="/ko/library/jonggyo-gihou/">종교 기호</a></li>
-      <li><a href="/ko/library/chess-gihou/">체스 기호</a></li>
-      <li><a href="/ko/library/kawaii-gwiyeoun-gihou/">카와이 귀여운 기호</a></li>
-      <li><a href="/ko/library/teuksu-munja/">특수문자 모음</a></li>
-      <li><a href="/ko/library/facebook-giho/">페이스북 특수문자</a></li>
-      <li><a href="/ko/library/hateu-giho/">하트 기호</a></li>
-      <li><a href="/ko/library/hwapye-giho/">화폐 기호</a></li>
-      <li><a href="/ko/library/hwasalpyo-giho/">화살표 기호</a></li>
-      <li><a href="/ko/library/y2k-giho/">Y2K 특수문자</a></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -776,723 +1421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- BACK TO TOP -->
-<button type="button" class="lib-back-top" id="libBackTop" aria-label="맨 위로" title="맨 위로">↑</button>
 
-<script>
-(function () {
-  "use strict";
-
-  /* ── Data ───────────────────────────────────────────────────── */
-  const LIBRARY = [
-    {
-      title: "특수문자 모음",
-      slug: "teuksu-munja",
-      description: "별 ✧, 하트 ♡, 화살표 →, 꾸밈 괄호 ꒰꒱ 등 닉네임·프로필 꾸미기 특수문자.",
-      preview: "✧ ♡ ⋆ ꒰꒱ ➤",
-      useCases: ["프로필", "닉네임"],
-      platforms: ["공통"],
-      type: "기호",
-      subject: "꾸미기",
-      alpha: "ㅌ"
-    },
-    {
-      title: "이슬람 기호",
-      slug: "islam-gihou",
-      description: "초승달과 별 ☪, 아랍어 합자 ﷲ ﷺ, 모스크, 이드 인사말.",
-      preview: "☪ ﷲ ﷺ 🕌 📿",
-      useCases: ["참고", "프로필"],
-      platforms: ["공통"],
-      type: "기호",
-      subject: "문자·언어",
-      alpha: "ㅇ"
-    },
-    {
-      title: "종교 기호",
-      slug: "jonggyo-gihou",
-      description: "십자가 ✝, 초승달 ☪, 다윗의 별 ✡, 법륜 ☸ 등 세계 신앙 기호.",
-      preview: "✝ ☪ ✡ ☸ ☯",
-      useCases: ["참고", "프로필"],
-      platforms: ["공통"],
-      type: "기호",
-      subject: "문자·언어",
-      alpha: "ㅈ"
-    },
-    {
-      title: "체스 기호",
-      slug: "chess-gihou",
-      description: "체스 말 ♔ ♛, 체스판 칸, 기보 기호 모음.",
-      preview: "♔ ♕ ♞ ♟ ⬛",
-      useCases: ["참고", "프로필"],
-      platforms: ["공통"],
-      type: "기호",
-      subject: "게임·플랫폼",
-      alpha: "ㅊ"
-    },
-    {
-      title: "카와이 귀여운 기호",
-      slug: "kawaii-gwiyeoun-gihou",
-      description: "말랑한 하트 ♡, 작은 얼굴, 반짝임, 파스텔 장식 — 프로필과 아이디 꾸미기용.",
-      preview: "♡ ꒰ ⋆ ✧ 🎀",
-      useCases: ["프로필", "아이디"],
-      platforms: ["공통", "인스타그램"],
-      type: "꾸밈",
-      subject: "감성·꾸미기",
-      alpha: "ㅋ"
-    },
-    {
-      title: "감성 특수문자",
-      slug: "gamseong-giho",
-      description: "✧ ♡ ⋆ ꒰꒱ 같은 감성 기호와 예쁜 특수문자. 프로필과 닉네임 꾸미기에 딱 맞습니다.",
-      preview: "✧ ♡ ⋆ ꒰꒱ ☾",
-      useCases: ["프로필·바이오", "닉네임", "캡션·게시물"],
-      platforms: ["인스타그램", "카카오톡", "어디서나"],
-      type: "꾸밈",
-      subject: "감성·꾸미기"
-    },
-    {
-      title: "별 기호",
-      slug: "byeol-giho",
-      description: "★ ☆ ✦ 부터 반짝임 이모지까지, 프로필·닉네임 꾸미기용 별 기호 모음.",
-      preview: "★ ☆ ✦ ✧ ⋆",
-      useCases: ["프로필·바이오", "닉네임", "캡션·게시물"],
-      platforms: ["인스타그램", "어디서나"],
-      type: "기호",
-      subject: "감성·꾸미기"
-    },
-    {
-      title: "하트 기호",
-      slug: "hateu-giho",
-      description: "♡ ♥ ❥ ꨄ 같은 텍스트 하트 특수문자. 프로필과 닉네임 꾸미기에 딱.",
-      preview: "♡ ♥ ❥ ❦ ꨄ",
-      useCases: ["프로필·바이오", "닉네임", "카톡·메신저"],
-      platforms: ["인스타그램", "카카오톡", "어디서나"],
-      type: "기호",
-      subject: "감성·꾸미기"
-    },
-    {
-      title: "꽃 기호",
-      slug: "kkot-giho",
-      description: "❀ ✿ ⚘ 등 꽃 모양 특수문자를 스타일별로 복사.",
-      preview: "❀ ✿ ⚘ ✾ ❁",
-      useCases: ["프로필·바이오", "캡션·게시물"],
-      platforms: ["인스타그램", "어디서나"],
-      type: "기호",
-      subject: "감성·꾸미기"
-    },
-    {
-      title: "Y2K 특수문자",
-      slug: "y2k-giho",
-      description: "✰ ✧ ♱ 🦋 💿 같은 Y2K 감성 별·나비·십자가 기호를 복사.",
-      preview: "✰ ✧ ♱ 🦋 💿",
-      useCases: ["프로필·바이오", "닉네임", "캡션·게시물"],
-      platforms: ["인스타그램", "트위터(X)", "어디서나"],
-      type: "꾸밈",
-      subject: "감성·꾸미기"
-    },
-    {
-      title: "수학 기호",
-      slug: "suhak-giho",
-      description: "사칙연산, 부등호, 집합, 무한대(∞), 근호(√)까지 수학 기호를 복사.",
-      preview: "± × ÷ √ ∞",
-      useCases: ["문서·표기", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "수학·과학"
-    },
-    {
-      title: "분수 기호",
-      slug: "bunsu-giho",
-      description: "½ ⅓ ¼ 같은 분수 특수문자를 클릭 한 번으로 복사.",
-      preview: "½ ⅓ ¼ ⅔ ¾",
-      useCases: ["문서·표기"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "수학·과학"
-    },
-    {
-      title: "화폐 기호",
-      slug: "hwapye-giho",
-      description: "원화(₩)·유로(€)·엔화(¥) 등 세계 화폐 기호를 복사.",
-      preview: "₩ € ¥ $ £",
-      useCases: ["문서·표기", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "통화·단위"
-    },
-    {
-      title: "단위 기호",
-      slug: "danwi-giho",
-      description: "섭씨(℃)·화씨(℉)·각도·마이크로 기호 등 단위 특수문자를 복사.",
-      preview: "℃ ℉ µ ∠ Ω",
-      useCases: ["문서·표기"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "통화·단위"
-    },
-    {
-      title: "그리스 문자",
-      slug: "geurisa-munja",
-      description: "알파(α)부터 오메가(Ω)까지 대문자·소문자 그리스 알파벳 전체를 복사.",
-      preview: "α β Δ Σ Ω",
-      useCases: ["문서·표기", "프로필·바이오", "닉네임"],
-      platforms: ["어디서나"],
-      type: "문자",
-      subject: "문자·언어"
-    },
-    {
-      title: "일본어 기호",
-      slug: "ilboneo-giho",
-      description: "히라가나·가타카나 등 일본어 관련 특수문자를 복사.",
-      preview: "ひ カ 々 ・ 〆",
-      useCases: ["프로필·바이오", "닉네임", "문서·표기"],
-      platforms: ["어디서나"],
-      type: "문자",
-      subject: "문자·언어"
-    },
-    {
-      title: "숫자 기호",
-      slug: "sutja-giho",
-      description: "원문자(①), 로마 숫자(Ⅷ) 등 꾸밈용 숫자 기호를 스타일별로 복사.",
-      preview: "① ② ⑩ Ⅷ ㊀",
-      useCases: ["문서·표기", "목록·구분"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "문자·언어"
-    },
-    {
-      title: "문장부호 & 따옴표",
-      slug: "munjangbuho-giho",
-      description: "스마트 따옴표, 기메(« ») 등 문장부호 특수문자를 복사.",
-      preview: "“ ” ‘ ’ «",
-      useCases: ["문서·표기", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "부호·구두점"
-    },
-    {
-      title: "괄호 기호",
-      slug: "gwalho-giho",
-      description: "소괄호·대괄호·물결괄호부터 「」 같은 한글 문서용 괄호까지 복사.",
-      preview: "( ) [ ] 「」",
-      useCases: ["문서·표기", "닉네임"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "부호·구두점"
-    },
-    {
-      title: "점 & 불릿 기호",
-      slug: "jeom-giho",
-      description: "가운뎃점(·)부터 화살표·체크·별 모양 글머리 기호까지 복사.",
-      preview: "· • ● ‣ ▪",
-      useCases: ["목록·구분", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "부호·구두점"
-    },
-    {
-      title: "구분선 기호",
-      slug: "gubunseon-giho",
-      description: "─ ━ ═ 같은 가로선 등 글을 나누는 구분선 특수문자를 복사.",
-      preview: "─ ━ ═ ┅ ⋯",
-      useCases: ["목록·구분", "프로필·바이오"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "부호·구두점"
-    },
-    {
-      title: "엑스 표시 & 십자가 기호",
-      slug: "gyocha-giho",
-      description: "엑스 표시(✗), 십자가(✝) 등 교차 모양 특수문자를 복사.",
-      preview: "✗ ✕ ✝ ☓ ✚",
-      useCases: ["문서·표기", "목록·구분"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "부호·구두점"
-    },
-    {
-      title: "도형 기호",
-      slug: "dohyeong-giho",
-      description: "삼각형·동그라미·네모 등 도형 특수문자를 스타일별로 복사.",
-      preview: "△ ○ □ ◇ ▷",
-      useCases: ["목록·구분", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "도형·화살표"
-    },
-    {
-      title: "화살표 기호",
-      slug: "hwasalpyo-giho",
-      description: "→ ← ↑ ↓ ➤ 같은 화살표 특수문자. 목록·링크 유도·닉네임 꾸미기에.",
-      preview: "→ ← ↑ ↓ ➤",
-      useCases: ["목록·구분", "닉네임", "캡션·게시물"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "도형·화살표"
-    },
-    {
-      title: "성별 기호",
-      slug: "seongbyeol-giho",
-      description: "♂ ♀ ⚧ 등 성별을 나타내는 특수문자를 복사.",
-      preview: "♂ ♀ ⚧ ⚢ ⚣",
-      useCases: ["프로필·바이오", "문서·표기"],
-      platforms: ["어디서나"],
-      type: "기호",
-      subject: "성별·정체성"
-    },
-    {
-      title: "음악 기호",
-      slug: "eumak-giho",
-      description: "음표·쉼표 등 음악 특수문자를 스타일별로 복사.",
-      preview: "♪ ♫ ♬ ♭ ♯",
-      useCases: ["프로필·바이오", "캡션·게시물"],
-      platforms: ["인스타그램", "어디서나"],
-      type: "기호",
-      subject: "음악"
-    },
-    {
-      title: "디스코드 특수문자",
-      slug: "discord-giho",
-      description: "디스코드 닉네임·서버명·채널명을 꾸미는 특수문자와 기호 모음.",
-      preview: "▸ ┊ ➤ ꒱ ⟢",
-      useCases: ["닉네임", "프로필·바이오"],
-      platforms: ["디스코드", "어디서나"],
-      type: "꾸밈",
-      subject: "게임·플랫폼"
-    },
-    {
-      title: "페이스북 특수문자",
-      slug: "facebook-giho",
-      description: "반응 이모지·하트·별·구분선 등 페이스북 게시물·댓글·프로필용 기호.",
-      preview: "👍 ❤ ★ ─ ✦",
-      useCases: ["캡션·게시물", "프로필·바이오"],
-      platforms: ["페이스북", "어디서나"],
-      type: "이모지",
-      subject: "게임·플랫폼"
-    },
-    {
-      title: "로블록스 특수문자",
-      slug: "roblox-giho",
-      description: "닉네임 필터에 막히지 않는 로블록스 특수문자와 기호 모음.",
-      preview: "★ ✦ ⚡ ♡ ◈",
-      useCases: ["게임 닉네임", "닉네임", "프로필·바이오"],
-      platforms: ["로블록스", "어디서나"],
-      type: "꾸밈",
-      subject: "게임·플랫폼"
-    },
-    {
-      title: "이모지 조합",
-      slug: "imoji-johap",
-      description: "프로필·닉네임에 바로 쓰는 감성 이모지 세트와 조합.",
-      preview: "⋆｡°✩ 🎀 ✧",
-      useCases: ["프로필·바이오", "닉네임", "캡션·게시물"],
-      platforms: ["인스타그램", "카카오톡", "어디서나"],
-      type: "이모지",
-      subject: "이모지·이모티콘"
-    },
-    {
-      title: "이모티콘",
-      slug: "imotikon",
-      description: "ㅇㅅㅇ ⸜(´꒳`)⸝ 같은 텍스트 이모티콘. 감정별로 복사해서 바로 사용.",
-      preview: "(｡•́‿•̀｡)",
-      useCases: ["카톡·메신저", "캡션·게시물"],
-      platforms: ["카카오톡", "디스코드", "어디서나"],
-      type: "이모티콘",
-      subject: "이모지·이모티콘"
-    }
-  ];
-
-  /* ── Controlled vocabularies ── */
-  const SUBJECTS  = ["감성·꾸미기","수학·과학","통화·단위","문자·언어","부호·구두점","도형·화살표","성별·정체성","음악","게임·플랫폼","이모지·이모티콘"];
-  const USE_CASES = ["프로필·바이오","닉네임","게임 닉네임","카톡·메신저","문서·표기","캡션·게시물","목록·구분"];
-  const PLATFORMS = ["인스타그램","카카오톡","디스코드","페이스북","로블록스","트위터(X)","어디서나"];
-  const TYPES     = ["기호","꾸밈","이모지","문자","이모티콘"];
-
-  /* ── 초성 (Hangul initial-consonant) index ──
-     Latin A–Z alphabetization does not map onto Korean; the natural
-     "alphabetical" index for Hangul is the 가나다 초성 (leading consonant)
-     jump bar used across Korean directory/contact UIs. We derive each
-     entry's initial from the first syllable of its Hangul title, collapse
-     the tense consonants (ㄲ→ㄱ, ㄸ→ㄷ, ㅃ→ㅂ, ㅆ→ㅅ, ㅉ→ㅈ) into their
-     base, and route non-Hangul first characters (e.g. "Y2K") to "#". */
-  const KO_INITIALS = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ","#"];
-  const INITIAL_ID  = { "ㄱ":"g","ㄴ":"n","ㄷ":"d","ㄹ":"r","ㅁ":"m","ㅂ":"b","ㅅ":"s","ㅇ":"o","ㅈ":"j","ㅊ":"c","ㅋ":"k","ㅌ":"t","ㅍ":"p","ㅎ":"h","#":"etc" };
-  const CHO = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-  const CHO_BASE = { "ㄲ":"ㄱ","ㄸ":"ㄷ","ㅃ":"ㅂ","ㅆ":"ㅅ","ㅉ":"ㅈ" };
-
-  function getInitial(title) {
-    const first = String(title).trim().charAt(0);
-    const code = first.charCodeAt(0);
-    if (code >= 0xAC00 && code <= 0xD7A3) {
-      const cho = CHO[Math.floor((code - 0xAC00) / 588)];
-      return CHO_BASE[cho] || cho;
-    }
-    if (KO_INITIALS.indexOf(first) !== -1 && first !== "#") {
-      return CHO_BASE[first] || first;
-    }
-    return "#";
-  }
-
-  LIBRARY.forEach(function (item) { item.initial = getInitial(item.title); });
-
-  /* ── State ── */
-  let activeSubject = null;
-  let activeUseCase = null;
-  let activePlatform = null;
-  let activeType = null;
-  let searchQuery = "";
-
-  /* ── Helpers ── */
-  function countBy(data, key, value) {
-    return data.filter(function (item) {
-      if (key === "useCases") return item.useCases.indexOf(value) !== -1;
-      if (key === "platforms") return item.platforms.indexOf(value) !== -1;
-      if (key === "type") return item.type === value;
-      if (key === "subject") return item.subject === value;
-      return false;
-    }).length;
-  }
-
-  function buildPills(containerId, vocab, key, getActive, setActive) {
-    const row = document.getElementById(containerId);
-    vocab.forEach(function (val) {
-      const total = countBy(LIBRARY, key, val);
-      if (total === 0) return;
-      const btn = document.createElement("button");
-      btn.className = "lib-pill";
-      btn.dataset.value = val;
-      btn.setAttribute("aria-pressed", "false");
-      btn.innerHTML = escHtml(val) + ' <span class="pill-count">(' + total + ')</span>';
-      btn.addEventListener("click", function () {
-        if (getActive() === val) {
-          setActive(null);
-        } else {
-          setActive(val);
-        }
-        render();
-      });
-      row.appendChild(btn);
-    });
-  }
-
-  function updatePillStates() {
-    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeSubject;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeUseCase;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#platformRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activePlatform;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#typeRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeType;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    const clearBtn = document.getElementById("clearFilters");
-    clearBtn.classList.toggle("visible", !!anyFilter);
-  }
-
-  function getFiltered() {
-    return LIBRARY.filter(function (item) {
-      if (activeSubject && item.subject !== activeSubject) return false;
-      if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
-      if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
-      if (activeType && item.type !== activeType) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        if (item.title.toLowerCase().indexOf(q) === -1 &&
-            item.description.toLowerCase().indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-  }
-
-  /* ── 초성 bar ── */
-  function buildAlphaBar(filtered) {
-    const bar = document.getElementById("alphaBar");
-    bar.innerHTML = "";
-    KO_INITIALS.forEach(function (initial) {
-      const count = filtered.filter(function (item) { return item.initial === initial; }).length;
-      const hasItems = count > 0;
-      const btn = document.createElement("a");
-      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
-      btn.dataset.letter = initial;
-      if (hasItems) {
-        btn.href = "#lib-letter-" + INITIAL_ID[initial];
-      } else {
-        btn.setAttribute("aria-disabled", "true");
-        btn.setAttribute("tabindex", "-1");
-      }
-      btn.setAttribute("aria-label", initial + (hasItems ? " — " + count + "개 모음" : " — 모음 없음"));
-      btn.innerHTML = initial + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
-      bar.appendChild(btn);
-    });
-  }
-
-  /* ── Directory render ── */
-  let letterObserver = null;
-
-  function render() {
-    const filtered = getFiltered();
-    const dir = document.getElementById("libDirectory");
-    const empty = document.getElementById("libEmpty");
-    const countEl = document.getElementById("libResultCount");
-
-    updatePillStates();
-    buildAlphaBar(filtered);
-
-    // Update result count line
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    if (anyFilter) {
-      countEl.hidden = false;
-      countEl.textContent = "전체 " + LIBRARY.length + "개 중 " + filtered.length + "개 표시";
-    } else {
-      countEl.hidden = true;
-      countEl.textContent = "";
-    }
-
-    if (filtered.length === 0) {
-      dir.innerHTML = "";
-      empty.classList.add("visible");
-      teardownLetterObserver();
-      return;
-    }
-    empty.classList.remove("visible");
-
-    // Group by 초성
-    const groups = {};
-    filtered.forEach(function (item) {
-      if (!groups[item.initial]) groups[item.initial] = [];
-      groups[item.initial].push(item);
-    });
-
-    const initials = Object.keys(groups).sort(function (a, b) {
-      return KO_INITIALS.indexOf(a) - KO_INITIALS.indexOf(b);
-    });
-    let html = "";
-    initials.forEach(function (initial) {
-      const items = groups[initial].sort(function (a, b) {
-        return a.title.localeCompare(b.title, "ko");
-      });
-      const idKey = INITIAL_ID[initial];
-      html += '<section class="lib-letter-section" id="lib-letter-' + idKey + '" aria-labelledby="lib-letter-heading-' + idKey + '">';
-      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + idKey + '"><span class="letter">' + initial + '</span><span class="lcount">(' + items.length + ')</span></h2>';
-      items.forEach(function (item, idx) {
-        const titleId = "lib-entry-title-" + idKey + "-" + idx;
-        const tags = [];
-        function tagBtn(filterKey, val, extraClass) {
-          const cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
-          const label = val + " 기준으로 필터";
-          return '<button type="button" class="' + cls + '"' +
-            ' data-filter="' + escHtml(filterKey) + '"' +
-            ' data-value="' + escHtml(val) + '"' +
-            ' aria-label="' + escHtml(label) + '">' +
-            escHtml(val) + '</button>';
-        }
-        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
-        (item.useCases || []).slice(0, 3).forEach(function (uc) {
-          tags.push(tagBtn("useCases", uc));
-        });
-        (item.platforms || []).slice(0, 2).forEach(function (pl) {
-          if (pl === "어디서나") return;
-          tags.push(tagBtn("platforms", pl));
-        });
-
-        html += '<article class="lib-entry">';
-        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
-          '<a class="lib-entry-title-link" href="/ko/library/' + encodeURIComponent(item.slug) + '/">' +
-          escHtml(item.title) + '</a></h3>';
-        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
-        html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
-        if (tags.length) {
-          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
-        }
-        html += '</article>';
-      });
-      html += '</section>';
-    });
-
-    dir.innerHTML = html;
-
-    setupLetterObserver();
-  }
-
-  /* ── Active initial highlighting ── */
-  function teardownLetterObserver() {
-    if (letterObserver) {
-      letterObserver.disconnect();
-      letterObserver = null;
-    }
-    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
-      el.classList.remove("is-current");
-    });
-  }
-
-  function setupLetterObserver() {
-    teardownLetterObserver();
-    if (!("IntersectionObserver" in window)) return;
-
-    const sections = document.querySelectorAll(".lib-letter-section");
-    if (!sections.length) return;
-
-    // Map section id-key back to its 초성 for highlighting.
-    const idToInitial = {};
-    Object.keys(INITIAL_ID).forEach(function (initial) { idToInitial[INITIAL_ID[initial]] = initial; });
-
-    const visible = {};
-    letterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        const id = entry.target.id; // lib-letter-<idKey>
-        const idKey = id.replace("lib-letter-", "");
-        if (entry.isIntersecting) {
-          visible[idKey] = entry.intersectionRatio;
-        } else {
-          delete visible[idKey];
-        }
-      });
-
-      // Pick the topmost visible section
-      let current = null;
-      let topY = Infinity;
-      Object.keys(visible).forEach(function (idKey) {
-        const el = document.getElementById("lib-letter-" + idKey);
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < topY) {
-          topY = rect.top;
-          current = idToInitial[idKey];
-        }
-      });
-
-      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
-        btn.classList.toggle("is-current", btn.dataset.letter === current);
-      });
-    }, {
-      rootMargin: "-80px 0px -60% 0px",
-      threshold: [0, 0.25, 0.5, 1]
-    });
-
-    sections.forEach(function (sec) { letterObserver.observe(sec); });
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function clearAll() {
-    activeSubject = null;
-    activeUseCase = null;
-    activePlatform = null;
-    activeType = null;
-    searchQuery = "";
-    document.getElementById("libSearch").value = "";
-    render();
-  }
-
-  /* ── Init ── */
-  buildPills("subjectRow", SUBJECTS, "subject",
-    function () { return activeSubject; },
-    function (v) { activeSubject = v; });
-
-  buildPills("useCaseRow", USE_CASES, "useCases",
-    function () { return activeUseCase; },
-    function (v) { activeUseCase = v; });
-
-  buildPills("platformRow", PLATFORMS, "platforms",
-    function () { return activePlatform; },
-    function (v) { activePlatform = v; });
-
-  buildPills("typeRow", TYPES, "type",
-    function () { return activeType; },
-    function (v) { activeType = v; });
-
-  document.getElementById("libSearch").addEventListener("input", function () {
-    searchQuery = this.value.trim();
-    render();
-  });
-
-  document.getElementById("clearFilters").addEventListener("click", clearAll);
-  document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
-
-  /* ── Tag-button → filter (event delegation) ── */
-  document.getElementById("libDirectory").addEventListener("click", function (e) {
-    const btn = e.target.closest && e.target.closest(".lib-entry-tag");
-    if (!btn) return;
-    const key = btn.dataset.filter;
-    const val = btn.dataset.value;
-    if (!key || !val) return;
-    if (key === "type") {
-      activeType = (activeType === val) ? null : val;
-    } else if (key === "useCases") {
-      activeUseCase = (activeUseCase === val) ? null : val;
-    } else if (key === "platforms") {
-      activePlatform = (activePlatform === val) ? null : val;
-    } else {
-      return;
-    }
-    render();
-  });
-
-  /* ── Back-to-top ── */
-  const backTop = document.getElementById("libBackTop");
-  if (backTop) {
-    const toggleBackTop = function () {
-      if (window.scrollY > 600) {
-        backTop.classList.add("visible");
-      } else {
-        backTop.classList.remove("visible");
-      }
-    };
-    window.addEventListener("scroll", toggleBackTop, { passive: true });
-    backTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    toggleBackTop();
-  }
-
-  /* ── ItemList JSON-LD (SEO) ── */
-  function injectItemListJsonLd() {
-    const itemListElement = LIBRARY.map(function (item, idx) {
-      return {
-        "@type": "ListItem",
-        "position": idx + 1,
-        "url": "https://ultratextgen.com/ko/library/" + item.slug + "/",
-        "name": item.title
-      };
-    });
-    const data = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "UltraTextGen 기호 라이브러리",
-      "url": "https://ultratextgen.com/ko/library/",
-      "numberOfItems": LIBRARY.length,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "itemListElement": itemListElement
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-  }
-  injectItemListJsonLd();
-
-  render();
-})();
-</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

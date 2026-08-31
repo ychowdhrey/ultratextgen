@@ -61,7 +61,10 @@
       "ariaLabel": "I-share ang resulta ng {style}",
       "linkCopied": "Nakopya ang link",
       "afterCopy": "I-share ang istilong ito",
-      "sharedTag": "Ibinahaging istilo"
+      "sharedTag": "Ibinahaging istilo",
+      "imageTitle": "Ibahagi bilang larawan",
+      "imageAriaLabel": "Ibahagi ang resulta ng {style} bilang larawan",
+      "imageSaved": "Handa na ang larawan"
     },
     "safeMode": {
       "label": "Kaligtasan sa pag-paste",

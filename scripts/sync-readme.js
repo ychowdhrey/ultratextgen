@@ -4,16 +4,57 @@
 /**
  * sync-readme.js
  *
- * Reads sitemap.xml, extracts URLs, and updates predefined marker-delimited
- * sections in README.md and all translated README files.
+ * Reads sitemap.xml and refreshes the marker-delimited blocks in README.md.
  *
- * Markers (identical in every language file):
- *   <!-- START_PLATFORMS --> … <!-- END_PLATFORMS -->
- *   <!-- START_CATEGORIES --> … <!-- END_CATEGORIES -->
- *   <!-- START_USECASES --> … <!-- END_USECASES -->
- *   <!-- START_GUIDES --> … <!-- END_GUIDES -->
- *   <!-- START_LIBRARY --> … <!-- END_LIBRARY -->
- *   <!-- START_EMBED --> … <!-- END_EMBED -->
+ * Markers:
+ *   <!-- START_PILLARS -->   … <!-- END_PILLARS -->    section index + live counts
+ *   <!-- START_PLATFORMS --> … <!-- END_PLATFORMS -->  the 11 platform pages
+ *   <!-- START_EMBED -->     … <!-- END_EMBED -->      embeddable widgets
+ *   <!-- START_LOCALES -->   … <!-- END_LOCALES -->    switcher → live locale homepages
+ *
+ * Design note — why this syncs counts, not page lists (2026-08-26):
+ *
+ *   Until this rewrite the script emitted one line per page for four pillars,
+ *   which had grown to 447 URL lines out of a 606-line README. That was wrong
+ *   in two directions at once.
+ *
+ *   Too much: those lines are `rel="nofollow"` once GitHub renders them, so the
+ *   dump earned nothing, buried the actual description ~600 lines below the
+ *   fold, and had to be carried in nine languages.
+ *
+ *   Too little: `groupPaths()` had buckets for category/usecase/guide/library
+ *   and none for symbol/, answers/ or updates/, so 189 English pages were read
+ *   out of the sitemap and silently dropped — including symbol/, which is the
+ *   single largest pillar on the site once locales are counted (1,765 pages).
+ *   No amount of re-running fixed that; a list that looks exhaustive and covers
+ *   13% of the site misinforms more than a short one does.
+ *
+ *   So the script now emits per-pillar counts and a link to each pillar's own
+ *   index, which already carries real browse/search UI and — unlike a README —
+ *   covers the 3,667 localized pages too. Counts stay honest automatically and
+ *   cost ~20 lines instead of 634.
+ *
+ * One README, not nine (decided 2026-08-26):
+ *
+ *   The eight translated READMEs were dropped. The case for keeping them was
+ *   crawl discovery — nofollow is a hint, not a directive, and GitHub is read
+ *   heavily by search and AI crawlers, so those links genuinely do get
+ *   followed. That mechanism is real; it just does not favour more files.
+ *
+ *   Linking the eight pillar indexes puts ~602 of 624 English pillar pages one
+ *   hop from the repo landing page (library/index.html alone links 339 of its
+ *   336). The old nine-file dump reached 447 and missed symbol/, answers/ and
+ *   updates/ entirely. Extra translations add no new site URLs — they repeat
+ *   the same ~50 links on blob sub-pages, which carry far less crawl priority
+ *   than README.md itself. Nine copies of one link graph is not nine times the
+ *   signal, and sitemap.xml (4,576 URLs, regenerated daily) is the primary
+ *   discovery channel regardless.
+ *
+ *   The language switcher now points at the live locale homepages instead of
+ *   at sibling README files, so it covers all 30 languages rather than 8, adds
+ *   30 real inbound links to the site from the highest-priority page in the
+ *   repo, and sends a non-English reader to the product rather than to a
+ *   translated repo document.
  *
  * Usage:
  *   node scripts/sync-readme.js
@@ -23,193 +64,35 @@
 const fs   = require('fs');
 const path = require('path');
 
-// ─── Translation config ───────────────────────────────────────────────────────
-// Defines section headings and "all X" links per language.
-// heading: null means no extra heading line is emitted before the list.
-
-const TRANSLATIONS = {
-  en: {
-    platforms: {
-      socialHeading:    '### Social Media Platforms',
-      messagingHeading: '### Messaging Platforms',
-    },
-    categories: {
-      allLink: '**All categories:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**All use cases:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  ar: {
-    platforms: {
-      socialHeading:    '### منصات التواصل الاجتماعي',
-      messagingHeading: '### منصات المراسلة',
-    },
-    categories: {
-      allLink: '**جميع الفئات:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**جميع حالات الاستخدام:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  de: {
-    platforms: {
-      socialHeading:    '### Social-Media-Plattformen',
-      messagingHeading: '### Messaging-Plattformen',
-    },
-    categories: {
-      allLink: '**Alle Kategorien:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Alle Anwendungsfälle:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  es: {
-    platforms: {
-      socialHeading:    '### Plataformas de Redes Sociales',
-      messagingHeading: '### Plataformas de Mensajería',
-    },
-    categories: {
-      allLink: '**Todas las categorías:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Todos los casos de uso:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  fr: {
-    platforms: {
-      socialHeading:    '### Plateformes de Réseaux Sociaux',
-      messagingHeading: '### Plateformes de Messagerie',
-    },
-    categories: {
-      allLink: '**Toutes les catégories:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: "**Tous les cas d'usage:** https://ultratextgen.com/usecase/",
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  pl: {
-    platforms: {
-      socialHeading:    '### Platformy Mediów Społecznościowych',
-      messagingHeading: '### Komunikatory',
-    },
-    categories: {
-      allLink: '**Wszystkie kategorie:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Wszystkie przypadki użycia:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  pt: {
-    platforms: {
-      socialHeading:    '### Plataformas de Redes Sociais',
-      messagingHeading: '### Plataformas de Mensagens',
-    },
-    categories: {
-      allLink: '**Todas as categorias:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Todos os casos de uso:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  ru: {
-    platforms: {
-      socialHeading:    '### Платформы Социальных Сетей',
-      messagingHeading: '### Мессенджеры',
-    },
-    categories: {
-      allLink: '**Все категории:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Все сценарии использования:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-  tr: {
-    platforms: {
-      socialHeading:    '### Sosyal Medya Platformları',
-      messagingHeading: '### Mesajlaşma Platformları',
-    },
-    categories: {
-      allLink: '**Tüm kategoriler:** https://ultratextgen.com/category/',
-    },
-    usecases: {
-      allLink: '**Tüm kullanım senaryoları:** https://ultratextgen.com/usecase/',
-    },
-    guides:  { heading: null },
-    library: { heading: null },
-    embed:   { heading: null },
-  },
-};
-
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 const CONFIG = {
-  // Base URL for the site
   baseUrl: 'https://ultratextgen.com',
 
-  // Path to sitemap.xml relative to project root
   sitemapPath: path.join(__dirname, '..', 'sitemap.xml'),
 
-  // README files to update: { lang, path }
   readmeFiles: [
     { lang: 'en', path: path.join(__dirname, '..', 'README.md') },
-    { lang: 'ar', path: path.join(__dirname, '..', 'README.ar.md') },
-    { lang: 'de', path: path.join(__dirname, '..', 'README.de.md') },
-    { lang: 'es', path: path.join(__dirname, '..', 'README.es.md') },
-    { lang: 'fr', path: path.join(__dirname, '..', 'README.fr.md') },
-    { lang: 'pl', path: path.join(__dirname, '..', 'README.pl.md') },
-    { lang: 'pt', path: path.join(__dirname, '..', 'README.pt.md') },
-    { lang: 'ru', path: path.join(__dirname, '..', 'README.ru.md') },
-    { lang: 'tr', path: path.join(__dirname, '..', 'README.tr.md') },
-  ],
-
-  // URLs to exclude by exact path
-  excludedUrls: [
-    '/about/',
-    '/contact/',
-    '/privacy/',
-    '/terms/',
-    '/guide/',
-    '/usecase/',
-    '/category/',
-    '/usecase/linkedin-headline/embed/',  // old embed path — superseded
-  ],
-
-  // URL substrings or regex patterns to exclude
-  // Add entries here for future noindex pages
-  excludedPatterns: [
-    // Example: '/hidden-page/'
   ],
 
   // Dry-run mode: print changes without writing any files
-  dryRun: false,
+  dryRun: process.argv.includes('--dry-run'),
 };
 
-// ─── Platform grouping ────────────────────────────────────────────────────────
+// ─── Pillars ──────────────────────────────────────────────────────────────────
+// One entry per content section, in the order they appear in the README table.
+// `slug` is both the URL segment and the key used by TRANSLATIONS[lang].pillars.
+
+const PILLARS = [
+  { slug: 'library'  },
+  { slug: 'symbol'   },
+  { slug: 'answers'  },
+  { slug: 'usecase'  },
+  { slug: 'guide'    },
+  { slug: 'category' },
+  { slug: 'updates'  },
+  { slug: 'embed'    },
+];
 
 const SOCIAL_PLATFORMS = [
   '/facebook/', '/instagram/', '/linkedin/', '/pinterest/',
@@ -237,18 +120,41 @@ const LABEL_OVERRIDES = {
   x:         'X (Twitter)',
 };
 
-// ─── Marker names ─────────────────────────────────────────────────────────────
+// ─── Locale endonyms ─────────────────────────────────────────────────────────
+// Native names, so the locale block is byte-identical in all nine READMEs and
+// needs no per-language translation. Keyed by the URL prefix in the sitemap.
 
-const MARKERS = ['PLATFORMS', 'CATEGORIES', 'USECASES', 'GUIDES', 'LIBRARY', 'EMBED'];
+const LOCALE_NAMES = {
+  ar: 'العربية',      bs: 'Bosanski',   cs: 'Čeština',
+  da: 'Dansk',        de: 'Deutsch',    es: 'Español',
+  fi: 'Suomi',        fr: 'Français',   hi: 'हिन्दी',
+  hr: 'Hrvatski',     hu: 'Magyar',     id: 'Bahasa Indonesia',
+  it: 'Italiano',     ja: '日本語',       ko: '한국어',
+  ms: 'Bahasa Melayu', nl: 'Nederlands', no: 'Norsk',
+  pl: 'Polski',       pt: 'Português',  ro: 'Română',
+  ru: 'Русский',      sk: 'Slovenčina', sr: 'Српски',
+  sv: 'Svenska',      th: 'ไทย',         tl: 'Tagalog',
+  tr: 'Türkçe',       vi: 'Tiếng Việt', 'zh-tw': '繁體中文',
+};
+
+// ─── Translation config ───────────────────────────────────────────────────────
+
+const TRANSLATIONS = {
+  en: {
+    platforms: { socialHeading: '### Social Media Platforms', messagingHeading: '### Messaging Platforms' },
+    table:     { section: 'Section', english: 'English pages', localized: 'Localized pages' },
+    pillars:   { library: 'Library', symbol: 'Symbols', answers: 'Answers', usecase: 'Use Cases',
+                 guide: 'Guides', category: 'Categories', updates: 'Updates', embed: 'Embed Tools' },
+    total:     (t, l) => `**${t} URLs in total**, across ${l} languages.`,
+    locales:   n => `Available in ${n} languages — each with its own pages, not a translated interface:`,
+  },
+};
+
+const MARKERS = ['PILLARS', 'PLATFORMS', 'EMBED', 'LOCALES'];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-/**
- * Convert a URL slug to a readable, title-cased label.
- * Applies brand-specific overrides for known names.
- * @param {string} slug  e.g. "linkedin-headline"
- * @returns {string}     e.g. "LinkedIn Headline"
- */
+/** Convert a URL slug to a readable, title-cased label. */
 function slugToLabel(slug) {
   return slug
     .split('-')
@@ -256,12 +162,7 @@ function slugToLabel(slug) {
     .join(' ');
 }
 
-/**
- * Parse <loc> values from sitemap XML using regex.
- * Returns an array of absolute URL strings.
- * @param {string} xml
- * @returns {string[]}
- */
+/** Parse <loc> values from sitemap XML. Returns absolute URL strings. */
 function parseLocUrls(xml) {
   const urls = [];
   const re = /<loc>\s*(https?:\/\/[^\s<]+)\s*<\/loc>/g;
@@ -272,205 +173,147 @@ function parseLocUrls(xml) {
   return urls;
 }
 
-/**
- * Strip the base URL from an absolute URL to get the path.
- * Returns null if the URL does not start with the base URL.
- * @param {string} url
- * @returns {string|null}
- */
+/** Strip the base URL to get a path. Returns null for foreign URLs. */
 function urlToPath(url) {
   if (!url.startsWith(CONFIG.baseUrl)) return null;
   return url.slice(CONFIG.baseUrl.length) || '/';
 }
 
-/**
- * Return true if this path should be excluded from all sections.
- * @param {string} urlPath  e.g. "/about/"
- * @returns {boolean}
- */
-function isExcluded(urlPath) {
-  if (CONFIG.excludedUrls.includes(urlPath)) return true;
-  for (const pattern of CONFIG.excludedPatterns) {
-    if (typeof pattern === 'string' && urlPath.includes(pattern)) return true;
-    if (pattern instanceof RegExp && pattern.test(urlPath)) return true;
-  }
-  return false;
+/** Escape special regex characters in a literal string. */
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+
+/** Format an integer with thousands separators. */
+function fmt(n) {
+  return n.toLocaleString('en-US');
 }
 
 /**
- * Group an array of paths into the six content sections.
- * Returns an object with keys: social, messaging, categories, usecases,
- * guides, library, embed.
- * @param {string[]} paths
- * @returns {object}
+ * Count pages per pillar, split into English and localized, plus the set of
+ * locale prefixes actually present in the sitemap.
+ *
+ * A page counts for a pillar when its path is exactly one segment deep under
+ * that pillar — `/library/<slug>/` or `/<lang>/library/<slug>/`. Pillar index
+ * pages and deeper nested paths are deliberately excluded, so the numbers match
+ * "how many content pages are in this section".
+ *
+ * @param {string[]} paths      content paths, homepage excluded
+ * @param {number}   totalUrls  every URL in the sitemap, homepage included
+ * @returns {{counts: object, locales: string[], total: number}}
  */
-function groupPaths(paths) {
-  const groups = {
-    social:     [],
-    messaging:  [],
-    categories: [],
-    usecases:   [],
-    guides:     [],
-    library:    [],
-    embed:      [],
-  };
+function countPillars(paths, totalUrls) {
+  const counts = {};
+  for (const { slug } of PILLARS) counts[slug] = { en: 0, localized: 0 };
+
+  const locales = new Set();
+  const localeRe = /^\/([a-z]{2}(?:-[a-z]{2})?)\//;
 
   for (const p of paths) {
-    if (isExcluded(p)) continue;
+    const localeMatch = localeRe.exec(p);
+    // Only treat a prefix as a locale if we know it — guards against a future
+    // two-letter top-level directory being miscounted as a language.
+    const locale = localeMatch && LOCALE_NAMES[localeMatch[1]] ? localeMatch[1] : null;
+    if (locale) locales.add(locale);
 
-    // Social platforms (exact match)
-    if (SOCIAL_PLATFORMS.includes(p)) {
-      groups.social.push(p);
-      continue;
-    }
+    const rest = locale ? p.slice(locale.length + 1) : p;
 
-    // Messaging platforms (exact match)
-    if (MESSAGING_PLATFORMS.includes(p)) {
-      groups.messaging.push(p);
-      continue;
+    for (const { slug } of PILLARS) {
+      if (new RegExp(`^/${slug}/[^/]+/$`).test(rest)) {
+        if (locale) counts[slug].localized++;
+        else counts[slug].en++;
+        break;
+      }
     }
-
-    // Embed tools: /embed/<slug>/ or /usecase/<slug>/embed/
-    if (/^\/embed\/[^/]+\/$/.test(p)) {
-      groups.embed.push(p);
-      continue;
-    }
-    if (/^\/usecase\/[^/]+\/embed\/$/.test(p)) {
-      groups.embed.push(p);
-      continue;
-    }
-
-    // Categories: only /category/<slug>/ (one segment after /category/)
-    if (/^\/category\/[^/]+\/$/.test(p)) {
-      groups.categories.push(p);
-      continue;
-    }
-
-    // Use cases: /usecase/<slug>/ (exclude index and embed nested paths)
-    if (/^\/usecase\/[^/]+\/$/.test(p)) {
-      groups.usecases.push(p);
-      continue;
-    }
-
-    // Guides: /guide/<slug>/
-    if (/^\/guide\/[^/]+\/$/.test(p)) {
-      groups.guides.push(p);
-      continue;
-    }
-
-    // Library: /library/<slug>/
-    if (/^\/library\/[^/]+\/$/.test(p)) {
-      groups.library.push(p);
-      continue;
-    }
-    // All other paths are ignored (root, nested sub-pages, etc.)
   }
 
-  // Sort each group alphabetically for deterministic output
-  for (const key of Object.keys(groups)) {
-    groups[key].sort();
-  }
-
-  return groups;
+  return { counts, locales: [...locales].sort(), total: totalUrls };
 }
 
-/**
- * Generate the markdown content for the PLATFORMS block.
- * @param {object}   groups   result of groupPaths()
- * @param {string}   lang     language code
- * @returns {string}
- */
+// ─── Block builders ───────────────────────────────────────────────────────────
+
+/** Section table: one row per pillar, with live English/localized counts. */
+function buildPillarsContent(stats, lang) {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const lines = [];
+
+  lines.push(`| ${t.table.section} | ${t.table.english} | ${t.table.localized} |`);
+  lines.push('|---|---:|---:|');
+
+  for (const { slug } of PILLARS) {
+    const c = stats.counts[slug];
+    const label = t.pillars[slug];
+    const url = `${CONFIG.baseUrl}/${slug}/`;
+    lines.push(`| [${label}](${url}) | ${fmt(c.en)} | ${fmt(c.localized)} |`);
+  }
+
+  lines.push('');
+  lines.push(t.total(fmt(stats.total), stats.locales.length));
+
+  return lines.join('\n');
+}
+
+/** The platform pages, split social vs messaging. */
 function buildPlatformsContent(groups, lang) {
   const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
   const lines = [];
 
   lines.push(t.platforms.socialHeading);
   for (const p of groups.social) {
-    const slug = p.replace(/^\/|\/$/g, '');
-    const label = slugToLabel(slug);
-    lines.push(`**${label}:** ${CONFIG.baseUrl}${p}`);
+    lines.push(`**${slugToLabel(p.replace(/^\/|\/$/g, ''))}:** ${CONFIG.baseUrl}${p}`);
   }
 
   lines.push('');
   lines.push(t.platforms.messagingHeading);
   for (const p of groups.messaging) {
-    const slug = p.replace(/^\/|\/$/g, '');
-    const label = slugToLabel(slug);
-    lines.push(`**${label}:** ${CONFIG.baseUrl}${p}`);
+    lines.push(`**${slugToLabel(p.replace(/^\/|\/$/g, ''))}:** ${CONFIG.baseUrl}${p}`);
   }
 
   return lines.join('\n');
 }
 
-/**
- * Generate the markdown content for the CATEGORIES block.
- * @param {object}   groups
- * @param {string}   lang
- * @returns {string}
- */
-function buildCategoriesContent(groups, lang) {
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
-  const lines = [];
-
-  lines.push(t.categories.allLink);
-  lines.push('');
-  for (const p of groups.categories) {
-    lines.push(`- ${CONFIG.baseUrl}${p}`);
-  }
-
-  return lines.join('\n');
+/** Embeddable widget URLs — bounded, and the audience is integrators. */
+function buildEmbedContent(groups) {
+  return groups.embed.map(p => `- ${CONFIG.baseUrl}${p}`).join('\n');
 }
 
 /**
- * Generate the markdown content for the USECASES block.
- * @param {object}   groups
- * @param {string}   lang
- * @returns {string}
- */
-function buildUsecasesContent(groups, lang) {
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
-  const lines = [];
-
-  lines.push(t.usecases.allLink);
-  lines.push('');
-  for (const p of groups.usecases) {
-    lines.push(`- ${CONFIG.baseUrl}${p}`);
-  }
-
-  return lines.join('\n');
-}
-
-/**
- * Generate a simple bullet-list block (guides, library, embed).
- * @param {string[]} paths
- * @returns {string}
- */
-function buildSimpleList(paths) {
-  return paths.map(p => `- ${CONFIG.baseUrl}${p}`).join('\n');
-}
-
-/**
- * Replace the content between a marker pair in a README string.
- * Returns the updated string.
+ * Language switcher: each endonym links to that locale's own live homepage.
  *
- * The replacement keeps the start/end markers intact and places the new
- * content between them, surrounded by a single newline on each side.
- *
- * @param {string} content   full file content
- * @param {string} name      marker name, e.g. "PLATFORMS"
- * @param {string} newBlock  new markdown to place between the markers
- * @returns {string}
+ * These used to point at sibling README.<lang>.md files, which sent a
+ * non-English reader to a translated repo document rather than to the product.
+ * Pointing them at the site covers all 30 locales instead of 8, needs no
+ * translation upkeep, and puts 30 real inbound links on the repo landing page.
  */
-/** Escape special regex characters in a literal string. */
-function escapeRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function buildLocalesContent(stats, lang) {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const links = stats.locales.map(
+    code => `[${LOCALE_NAMES[code]}](${CONFIG.baseUrl}/${code}/)`
+  );
+  return `${t.locales(stats.locales.length)}\n\n${links.join(' · ')}`;
 }
+
+/** Collect the platform and embed paths the two blocks above need. */
+function groupPaths(paths) {
+  const groups = { social: [], messaging: [], embed: [] };
+
+  for (const p of paths) {
+    if (SOCIAL_PLATFORMS.includes(p))         { groups.social.push(p);    continue; }
+    if (MESSAGING_PLATFORMS.includes(p))      { groups.messaging.push(p); continue; }
+    if (/^\/embed\/[^/]+\/$/.test(p))         { groups.embed.push(p);     continue; }
+  }
+
+  for (const key of Object.keys(groups)) groups[key].sort();
+  return groups;
+}
+
+// ─── Marker replacement ───────────────────────────────────────────────────────
 
 function replaceMarkerBlock(content, name, newBlock) {
   const startMarker = `<!-- START_${name} -->`;
   const endMarker   = `<!-- END_${name} -->`;
 
-  // Use a regex that matches everything (including newlines) between the markers
   const re = new RegExp(
     `(${escapeRegex(startMarker)})[\\s\\S]*?(${escapeRegex(endMarker)})`,
     'g'
@@ -479,109 +322,75 @@ function replaceMarkerBlock(content, name, newBlock) {
   return content.replace(re, `$1\n${newBlock}\n$2`);
 }
 
-/**
- * Verify that all required marker pairs exist in the file content.
- * Throws a descriptive error if any marker is missing.
- * @param {string} content
- * @param {string} filePath
- */
+/** Verify every required marker pair exists; exit non-zero if one is missing. */
 function validateMarkers(content, filePath) {
   for (const name of MARKERS) {
-    const startMarker = `<!-- START_${name} -->`;
-    const endMarker   = `<!-- END_${name} -->`;
-    if (!content.includes(startMarker)) {
-      console.error(`ERROR: Missing marker ${startMarker} in ${filePath}`);
-      process.exit(1);
-    }
-    if (!content.includes(endMarker)) {
-      console.error(`ERROR: Missing marker ${endMarker} in ${filePath}`);
-      process.exit(1);
+    for (const marker of [`<!-- START_${name} -->`, `<!-- END_${name} -->`]) {
+      if (!content.includes(marker)) {
+        console.error(`ERROR: Missing marker ${marker} in ${filePath}`);
+        process.exit(1);
+      }
     }
   }
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-/**
- * Print each section name and its content to stdout (used in dry-run mode).
- * @param {object} sections  map of marker name → markdown content
- */
-function logSections(sections) {
-  for (const [name, newBlock] of Object.entries(sections)) {
-    console.log(`  --- ${name} ---`);
-    console.log(newBlock);
-  }
-}
-
 function main() {
-  // 1. Read sitemap
   if (!fs.existsSync(CONFIG.sitemapPath)) {
     console.error(`ERROR: sitemap.xml not found at ${CONFIG.sitemapPath}`);
     process.exit(1);
   }
+
   const sitemapXml = fs.readFileSync(CONFIG.sitemapPath, 'utf8');
-
-  // 2. Parse and filter URLs
-  const allUrls  = parseLocUrls(sitemapXml);
-  const allPaths = allUrls
+  const sitePaths = parseLocUrls(sitemapXml)
     .map(urlToPath)
-    .filter(p => p !== null && p !== '/');
+    .filter(p => p !== null);
+  // Pillar matching ignores the homepage; the headline total does not.
+  const allPaths = sitePaths.filter(p => p !== '/');
 
-  // 3. Group into sections
+  const stats  = countPillars(allPaths, sitePaths.length);
   const groups = groupPaths(allPaths);
 
-  // 4. Process each README file
   let updatedCount = 0;
 
-  for (const file of CONFIG.readmeFiles) {
-    const { lang, path: filePath } = file;
-
-    // Check file exists
+  for (const { lang, path: filePath } of CONFIG.readmeFiles) {
     if (!fs.existsSync(filePath)) {
       console.error(`ERROR: README file not found: ${filePath}`);
       process.exit(1);
     }
 
     const originalContent = fs.readFileSync(filePath, 'utf8');
-
-    // Validate all markers are present
     validateMarkers(originalContent, filePath);
 
-    // Build section content for this language
     const sections = {
-      PLATFORMS:  buildPlatformsContent(groups, lang),
-      CATEGORIES: buildCategoriesContent(groups, lang),
-      USECASES:   buildUsecasesContent(groups, lang),
-      GUIDES:     buildSimpleList(groups.guides),
-      LIBRARY:    buildSimpleList(groups.library),
-      EMBED:      buildSimpleList(groups.embed),
+      PILLARS:   buildPillarsContent(stats, lang),
+      PLATFORMS: buildPlatformsContent(groups, lang),
+      EMBED:     buildEmbedContent(groups),
+      LOCALES:   buildLocalesContent(stats, lang),
     };
 
-    // Replace each marker block
     let updatedContent = originalContent;
     for (const [name, newBlock] of Object.entries(sections)) {
       updatedContent = replaceMarkerBlock(updatedContent, name, newBlock);
     }
 
     if (CONFIG.dryRun) {
-      if (updatedContent !== originalContent) {
-        console.log(`[DRY RUN] Would update: ${filePath}`);
-        logSections(sections);
-      } else {
-        console.log(`[DRY RUN] No changes: ${filePath}`);
-      }
+      console.log(updatedContent !== originalContent
+        ? `[DRY RUN] Would update: ${filePath}`
+        : `[DRY RUN] No changes: ${filePath}`);
+      continue;
+    }
+
+    if (updatedContent !== originalContent) {
+      fs.writeFileSync(filePath, updatedContent, 'utf8');
+      console.log(`✅ Updated: ${filePath}`);
+      updatedCount++;
     } else {
-      if (updatedContent !== originalContent) {
-        fs.writeFileSync(filePath, updatedContent, 'utf8');
-        console.log(`✅ Updated: ${filePath}`);
-        updatedCount++;
-      } else {
-        console.log(`  No changes: ${filePath}`);
-      }
+      console.log(`  No changes: ${filePath}`);
     }
   }
 
-  // 5. Summary
   if (CONFIG.dryRun) {
     console.log('\n[DRY RUN] Complete. No files were written.');
   } else {

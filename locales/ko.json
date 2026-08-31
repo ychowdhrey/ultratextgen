@@ -49,7 +49,10 @@
       "ariaLabel": "{style} 결과 공유",
       "linkCopied": "링크 복사됨",
       "afterCopy": "이 스타일 공유",
-      "sharedTag": "공유된 스타일"
+      "sharedTag": "공유된 스타일",
+      "imageTitle": "이미지로 공유",
+      "imageAriaLabel": "{style} 결과를 이미지로 공유",
+      "imageSaved": "이미지 준비 완료"
     },
     "safeMode": {
       "label": "붙여넣기 안전성",

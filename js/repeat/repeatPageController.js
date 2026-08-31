@@ -186,6 +186,7 @@
     btn.dataset.text = text;
     btn.dataset.style = name;
     if (!text) btn.disabled = true;
+    if (UTG.decorateCopyButton) UTG.decorateCopyButton(btn);
 
     /* Copy + Share share one action row — these cards carry no Save button,
        so the core generator's triangle reduces to a pair here. */
@@ -196,8 +197,8 @@
     /* Result-level Share, built by the shared factory in script.js. The phrase
        lives in #repeatPhraseInput, not #mainInput, so it is stamped here. */
     let shareId = shareIdFor(name);
-    if (UTG && UTG.buildShareButton) {
-      actions.appendChild(UTG.buildShareButton({
+    if (UTG && UTG.buildShareActions) {
+      actions.appendChild(UTG.buildShareActions({
         styleId: shareId,
         name: name,
         input: (($("#repeatPhraseInput") || {}).value || ""),

@@ -157,428 +157,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<style>
-/* ── Library A–Z Directory ── */
-
-.lib-hero {
-  padding: 3rem 1.5rem 2rem;
-  text-align: center;
-}
-.lib-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem;
-}
-.lib-hero p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin: 0;
-}
-
-/* ── Controls ── */
-.lib-controls {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.lib-search-wrap {
-  position: relative;
-}
-.lib-search-wrap svg {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-  flex-shrink: 0;
-}
-#libSearch {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.65rem 1rem 0.65rem 2.6rem;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-#libSearch:focus {
-  border-color: var(--accent-purple);
-}
-
-.lib-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-}
-.lib-filter-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  margin-right: 0.25rem;
-  white-space: nowrap;
-}
-
-/* ── Filter pills ── */
-.lib-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  white-space: nowrap;
-  user-select: none;
-}
-.lib-pill:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-pill.active {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-pill .pill-count {
-  opacity: 0.75;
-  font-size: 0.72rem;
-}
-.lib-pill.active .pill-count {
-  opacity: 0.9;
-}
-
-.lib-clear-btn {
-  display: none;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-muted);
-  font-family: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: color 0.12s;
-}
-.lib-clear-btn:hover {
-  color: var(--text-primary);
-}
-.lib-clear-btn.visible {
-  display: inline-flex;
-}
-
-/* ── Alpha jump bar ── */
-.lib-alpha-bar {
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0.5rem 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--bg-page, #f5f7f5);
-  backdrop-filter: saturate(180%) blur(6px);
-  -webkit-backdrop-filter: saturate(180%) blur(6px);
-}
-.lib-alpha-btn.is-current {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-}
-.lib-alpha-btn.is-current .alpha-count {
-  color: rgba(255, 255, 255, 0.85);
-}
-.lib-alpha-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 2rem;
-  padding: 0.3rem 0.4rem 0.2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 6px;
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-  text-decoration: none;
-  line-height: 1;
-}
-.lib-alpha-btn .alpha-count {
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 0.1rem;
-}
-.lib-alpha-btn:hover:not(.disabled) {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-alpha-btn.disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-/* ── Directory ── */
-.lib-directory {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-.lib-letter-section {
-  margin-bottom: 2rem;
-}
-.lib-letter-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-light);
-  margin: 0 0 0.75rem;
-  font-size: inherit;
-  font-weight: inherit;
-}
-.lib-letter-heading .letter {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-purple);
-  line-height: 1;
-}
-.lib-letter-heading .lcount {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* ── Entry rows ── */
-.lib-entry {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  gap: 0.1rem 1rem;
-  padding: 0.7rem 0.5rem;
-  border-radius: 8px;
-  color: inherit;
-  border: 1px solid transparent;
-}
-.lib-entry-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  line-height: 1.3;
-}
-.lib-entry-title-link {
-  color: inherit;
-  text-decoration: none;
-  border-radius: 3px;
-}
-.lib-entry-title-link:hover,
-.lib-entry-title-link:focus-visible {
-  color: var(--accent-purple);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-}
-.lib-entry-title-link:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0;
-}
-.lib-entry-preview {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  grid-column: 2;
-  grid-row: 1 / 3;
-  align-self: center;
-  white-space: nowrap;
-  text-align: right;
-  letter-spacing: 0.05em;
-}
-.lib-entry-meta {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
-}
-.lib-entry-tag {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.65rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: var(--bg-page, #eef0ee);
-  color: var(--text-muted);
-  border: 1px solid var(--border-light);
-  line-height: 1.4;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s, color 0.12s;
-}
-.lib-entry-tag:hover {
-  background: var(--bg-white);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-.lib-entry-tag:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-}
-.lib-entry-tag.is-type {
-  color: var(--accent-purple);
-  border-color: var(--accent-purple);
-  background: transparent;
-}
-
-@media (max-width: 540px) {
-  .lib-entry {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .lib-entry-preview {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: left;
-    margin-top: 0.2rem;
-  }
-  .lib-entry-meta {
-    grid-row: 4;
-  }
-}
-
-/* ── No-results ── */
-.lib-empty {
-  display: none;
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-secondary);
-}
-.lib-empty.visible {
-  display: block;
-}
-.lib-empty p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-}
-.lib-empty-btn {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: border-color 0.12s;
-}
-.lib-empty-btn:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-/* ── CTA card ── */
-.lib-cta {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  padding: 0 1.25rem;
-}
-
-/* ── Result count ── */
-.lib-result-count {
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-.lib-result-count[hidden] {
-  display: none;
-}
-
-/* ── Visually hidden (a11y) ── */
-.lib-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ── Back to top ── */
-.lib-back-top {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
-}
-.lib-back-top:hover,
-.lib-back-top:focus-visible {
-  background: var(--accent-purple);
-  border-color: var(--accent-purple);
-  color: #fff;
-  outline: none;
-}
-.lib-back-top.visible {
-  display: inline-flex;
-}
-</style>
 </head>
 <body>
   <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
@@ -601,62 +179,1169 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>Direktori simbol dan lambang Unicode untuk disalin &amp; tempel — dari <a href="/id/library/simbol-aesthetic/">simbol aesthetic</a> dan hati sampai bintang, panah, centang, dan huruf Yunani. Cari, filter berdasarkan kegunaan atau platform, lalu klik untuk menyalin. Semua karakter (atau <i>symbol</i>) siap ditempel ke bio, caption, Discord, dan nama game.</p>
 </div>
 
-<!-- CONTROLS -->
-<div class="lib-controls" id="libControls">
-  <!-- Search -->
-  <div class="lib-search-wrap">
-    <label for="libSearch" class="lib-sr-only">Cari simbol</label>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="libSearch" placeholder="Cari simbol…" autocomplete="off">
-  </div>
-
-  <!-- Subject filter -->
-  <div class="lib-filter-row" id="subjectRow">
-    <span class="lib-filter-label">Kategori</span>
-  </div>
-
-  <!-- Use Case filter -->
-  <div class="lib-filter-row" id="useCaseRow">
-    <span class="lib-filter-label">Kegunaan</span>
-  </div>
-
-  <!-- Platform filter -->
-  <div class="lib-filter-row" id="platformRow">
-    <span class="lib-filter-label">Platform</span>
-  </div>
-
-  <!-- Type filter -->
-  <div class="lib-filter-row" id="typeRow">
-    <span class="lib-filter-label">Jenis</span>
-  </div>
-
-  <!-- Clear filters -->
-  <div style="display:flex;align-items:center;gap:0.5rem;">
-    <button class="lib-clear-btn" id="clearFilters" aria-label="Hapus semua filter">✕ Hapus filter</button>
-  </div>
-</div>
-
-<!-- ALPHA JUMP BAR -->
-<div class="lib-alpha-bar" id="alphaBar" aria-label="Lompat ke huruf"></div>
-
-<!-- RESULT COUNT -->
-<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
-
-<!-- DIRECTORY -->
-
-
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
   <img src="/assets/hero/id-library.svg" width="1200" height="340"
        fetchpriority="high" alt="">
 </figure>
-<main class="lib-directory" id="libDirectory" aria-label="Direktori simbol"></main>
 
-<!-- NO RESULTS -->
-<div class="lib-empty" id="libEmpty" role="status" aria-live="polite">
-  <p>Tidak ada koleksi yang cocok dengan kombinasi ini.<br>Coba hapus satu atau beberapa filter.</p>
-  <button class="lib-empty-btn" id="emptyResetBtn">Hapus semua filter</button>
+<!-- library-hub:begin (generated by scripts/build-library-hub.js) -->
+<div class="lib-controls" id="libControls">
+  <div class="lib-search-wrap">
+    <label class="u-visually-hidden" for="libSearch">Cari di pustaka</label>
+    <input type="search" id="libSearch" autocomplete="off"
+           placeholder="Cari simbol…" aria-label="Cari di pustaka">
+  </div>
+  <div class="lib-filters">
+      <div class="lib-filter-row" id="libTypeFilters"></div>
+      <div class="lib-filter-row" id="libUseCaseFilters"></div>
+      <div class="lib-filter-row" id="libPlatformFilters"></div>
+  </div>
+  <div class="lib-controls-foot">
+    <p class="lib-result-count" id="libResultCount" hidden></p>
+    <button type="button" class="lib-clear" id="libClearFilters">Hapus filter</button>
+  </div>
+  <nav class="lib-alpha-bar" id="libAlphaBar" aria-label="Lompat ke huruf"></nav>
 </div>
 
+<main class="lib-directory" id="libDirectory" aria-label="Direktori simbol" data-static-directory>
+<section class="lib-letter-section" id="lib-letter-C" aria-labelledby="lib-letter-heading-C"><h2 class="lib-letter-heading" id="lib-letter-heading-C"><span class="letter">C</span><span class="lcount">(1)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-C-0"><a class="lib-entry-title-link" href="/id/library/emoji-combos/">Combo emoji &amp; kombinasi emoji copy paste</a></h3><p class="lib-entry-desc">200+ combo emoji aesthetic siap dicopas — lucu, coquette, cottagecore, kawaii, Y2K, dark academia &amp; 20+ vibe lain. Klik kombinasi emoji mana pun buat salin satu set penuh ke bio Instagram, TikTok, atau status WhatsApp.</p><span class="lib-entry-preview" aria-hidden="true">🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article></section><section class="lib-letter-section" id="lib-letter-E" aria-labelledby="lib-letter-heading-E"><h2 class="lib-letter-heading" id="lib-letter-heading-E"><span class="letter">E</span><span class="lcount">(17)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-0"><a class="lib-entry-title-link" href="/id/library/emoji-bendera/">Emoji Bendera Semua Negara</a></h3><p class="lib-entry-desc">Emoji bendera semua negara: Indonesia 🇮🇩, Malaysia, Jepang, Korea, sampai 195 negara. Klik benderanya, langsung kesalin — tinggal tempel di bio, nama game, atau chat.</p><span class="lib-entry-preview" aria-hidden="true">🇮🇩 🇲🇾 🇸🇬 🇵🇭 🇯🇵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perjalanan" aria-label="Saring menurut: Perjalanan">Perjalanan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-1"><a class="lib-entry-title-link" href="/id/library/emoji-bintang/">Emoji Bintang</a></h3><p class="lib-entry-desc">Emoji bintang ⭐ 🌟 ✨ buat rating bintang 5, caption, dan bio aesthetic — lengkap sama kaomoji bermata bintang. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">⭐ 🌟 ✨ 💫 🌠</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-2"><a class="lib-entry-title-link" href="/id/library/emoji-cium/">Emoji Cium &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji cium 😘 💋 👄, wajah mencium, bekas lipstik, dan kaomoji genit seperti ( ˘ ³˘) buat chat, komentar, dan DM. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😘 😗 😙 😚 😽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Pesan Langsung" aria-label="Saring menurut: Pesan Langsung">Pesan Langsung</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-3"><a class="lib-entry-title-link" href="/id/library/emoji-damai/">Emoji Damai</a></h3><p class="lib-entry-desc">Salin &amp; tempel emoji damai — pose tangan peace ✌️, merpati 🕊️, simbol ☮️ dan ☯️, plus kombinasi bervibe tenang. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-4"><a class="lib-entry-title-link" href="/id/library/emoji-hewan/">Emoji Hewan</a></h3><p class="lib-entry-desc">Emoji hewan lengkap — peliharaan, ternak, satwa liar, burung, hewan laut, serangga, reptil, dan makhluk mitologi. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">🐶 🐕 🐩 🐱 🐈</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-5"><a class="lib-entry-title-link" href="/id/library/emoji-iphone/">Emoji iPhone</a></h3><p class="lib-entry-desc">Salin emoji iPhone (Apple) yang paling sering dipakai, plus penjelasan cara kerjanya: emoji iOS itu karakter Unicode yang sama dengan Android — cuma gambarnya beda. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😂 🥹 🥲 😊 🥰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-6"><a class="lib-entry-title-link" href="/id/library/emoji-kaget/">Emoji Kaget &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji kaget 😱 😲 🤯, kaomoji terkejut seperti (⊙_⊙), dan kombinasi plot twist buat reaksi melongo di chat dan komentar. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😱 😨 😲 😮 😯</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-7"><a class="lib-entry-title-link" href="/id/library/emoji-kesal/">Emoji Kesal &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji kesal 😒 🙄 😑 😤, kombinasi sebel dan muak siap pakai, plus kaomoji kesal seperti (￣ヘ￣) buat chat dan komentar. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😒 😑 🙄 😤 🤨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-8"><a class="lib-entry-title-link" href="/id/library/emoji-ketawa/">Emoji Ketawa &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji ketawa 😂 🤣 💀, kaomoji ngakak seperti (≧▽≦), dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😂 🤣 😆 😄 😁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-9"><a class="lib-entry-title-link" href="/id/library/emoji-mahkota/">Emoji Mahkota</a></h3><p class="lib-entry-desc">Emoji mahkota 👑 buat bio, nama tampilan, dan caption — plus kombinasi queen, king, dan flexing menang siap pakai. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">👑 🤴 👸 🫅 💍</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-10"><a class="lib-entry-title-link" href="/id/library/emoji-malaikat/">Emoji Malaikat</a></h3><p class="lib-entry-desc">Salin &amp; tempel emoji malaikat 👼, simbol malaikat pelindung dan surga, plus kombinasi kenangan seperti 🕊️🙏💐 buat postingan mengenang dan caption.</p><span class="lib-entry-preview" aria-hidden="true">👼 🪽 ☁️ 🌈 🌠</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perayaan" aria-label="Saring menurut: Perayaan">Perayaan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-11"><a class="lib-entry-title-link" href="/id/library/emoji-marah/">Emoji Marah &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji marah 😡 🤬 😤, kombinasi ngamuk siap pakai, dan kaomoji gebrak meja (╯°□°）╯︵ ┻━┻ buat ngeluapin kesel di chat dan kolom komentar. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😡 😠 🤬 😤 👿</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-12"><a class="lib-entry-title-link" href="/id/library/emoji-nangis/">Emoji Nangis</a></h3><p class="lib-entry-desc">Emoji nangis 😭 😢 🥹, emoji nahan tangis, kaomoji menangis (T_T), dan kombinasi siap pakai buat caption dan balasan chat. Klik emojinya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😭 😢 🥹 🥲 😂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-13"><a class="lib-entry-title-link" href="/id/library/emoji-sedih/">Emoji Sedih &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji sedih 😢 😔 untuk bio dan caption galau, simbol patah hati 💔, dan kaomoji murung seperti (μ_μ) — lengkap dalam satu koleksi. Klik simbol mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">😢 😞 😔 ☹ 🙁</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-14"><a class="lib-entry-title-link" href="/id/library/emoji-senang/">Emoji Senang &amp; Kaomoji</a></h3><p class="lib-entry-desc">Emoji senang 😊 😄 🥰, kaomoji ceria seperti ヽ(´▽`)/, dan kombinasi cerah buat bio, caption, dan chat. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">😊 😀 😃 😄 🙂</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perayaan" aria-label="Saring menurut: Perayaan">Perayaan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Saring menurut: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-15"><a class="lib-entry-title-link" href="/id/library/emoji-tengkorak/">Emoji Tengkorak &amp; Kaomoji</a></h3><p class="lib-entry-desc">Salin &amp; tempel emoji tengkorak 💀 ☠️ 🦴, kombinasi &quot;gua mati ketawa&quot;, dan kaomoji tengkorak x_x buat reaksi dan caption. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">💀 ☠️ 😂 🤣 ⚰️</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-E-16"><a class="lib-entry-title-link" href="/id/library/emoji-wajah/">Emoji Wajah Sesuai Perasaan</a></h3><p class="lib-entry-desc">Emoji wajah lengkap sesuai perasaan — cium 😘, kedip 😉, senyum sinis 😏, mata memutar 🙄, tersipu 😊, memelas 🥺, kacamata hitam 😎, malaikat 😇 — plus artinya dan kombinasi siap copas. Klik untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">😘 😗 😙 😚 💋</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article></section><section class="lib-letter-section" id="lib-letter-K" aria-labelledby="lib-letter-heading-K"><h2 class="lib-letter-heading" id="lib-letter-heading-K"><span class="letter">K</span><span class="lcount">(10)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-0"><a class="lib-entry-title-link" href="/id/library/kaomoji/">Kaomoji</a></h3><p class="lib-entry-desc">Salin &amp; tempel kaomoji — wajah teks ala Jepang dari karakter Unicode. Kaomoji lucu, senang, sedih, menangis, cinta, hewan, dan Lenny face. Klik mana pun untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">¯\_(ツ)_/¯ ( ͡° ͜ʖ ͡°) (◕‿◕) (≧◡≦) ʕ•ᴥ•ʔ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-1"><a class="lib-entry-title-link" href="/id/library/shrug-kaomoji/">Kaomoji Angkat Bahu</a></h3><p class="lib-entry-desc">Salin dan tempel kaomoji angkat bahu ¯\_(ツ)_/¯ dan wajah angkat bahu lainnya. Klik untuk menyalin shruggie klasik dan variannya.</p><span class="lib-entry-preview" aria-hidden="true">¯\_(ツ)_/¯ ¯\_(⊙_ʖ⊙)_/¯ ¯\_(ᵔᵕᵔ)_/¯ ¯\_(◉‿◉)_/¯ ¯\_( ͡° ͜ʖ ͡°)_/¯</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Discord" aria-label="Saring menurut: Discord">Discord</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-2"><a class="lib-entry-title-link" href="/id/library/love-kaomoji/">Kaomoji Cinta</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji cinta (♥ω♥) dan hati — wajah teks ala Jepang untuk kasih sayang, ciuman, dan pelukan. Klik mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-3"><a class="lib-entry-title-link" href="/id/library/cat-kaomoji/">Kaomoji Kucing</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji kucing (=^・ω・^=) — wajah teks kucing ala Jepang yang lucu dengan kumis dan cakar. Kucing senang, sedih, dan mengantuk. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-4"><a class="lib-entry-title-link" href="/id/library/cute-kaomoji/">Kaomoji Lucu</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji lucu (◕‿◕) — wajah teks ala Jepang yang imut dengan mata berbinar, pipi merona, dan hewan menggemaskan. Klik mana pun untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-5"><a class="lib-entry-title-link" href="/id/library/crying-kaomoji/">Kaomoji Menangis</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji menangis (╥﹏╥) — wajah teks ala Jepang untuk air mata, isak tangis, dan suasana muram. Klik mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">(╥﹏╥) (T_T) (；﹏；) (ㄒoㄒ) (个_个)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-6"><a class="lib-entry-title-link" href="/id/library/sad-kaomoji/">Kaomoji Sedih</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji sedih (´･_･`) — wajah teks ala Jepang untuk kesedihan, kekecewaan, dan suasana murung. Klik mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="X" aria-label="Saring menurut: X">X</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-7"><a class="lib-entry-title-link" href="/id/library/happy-kaomoji/">Kaomoji Senang</a></h3><p class="lib-entry-desc">Jelajahi dan salin kaomoji senang (◠‿◠) — wajah teks ala Jepang yang tersenyum, gembira, dan bahagia. Klik mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-8"><a class="lib-entry-title-link" href="/id/library/karakter-spesial/">Karakter Spesial</a></h3><p class="lib-entry-desc">Jelajahi dan salin karakter spesial unik — tak hingga, perdamaian, sains, tanda hukum, hiasan estetik, dan simbol Unicode langka. Klik simbol mana pun untuk menyalinnya seketika.</p><span class="lib-entry-preview" aria-hidden="true">∞ ♾️ ⧜ ⧝ ⧞</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-K-9"><a class="lib-entry-title-link" href="/id/library/kode-alt/">Kode Alt</a></h3><p class="lib-entry-desc">Daftar lengkap kode Alt keyboard — Alt+0169 untuk ©, mata uang, matematika, huruf beraksen, dan simbol DOS klasik lengkap dengan kodenya. Klik karakter mana pun untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">© ® ™ ° ±</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Format Surel" aria-label="Saring menurut: Format Surel">Format Surel</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Surel" aria-label="Saring menurut: Surel">Surel</button></div></article></section><section class="lib-letter-section" id="lib-letter-S" aria-labelledby="lib-letter-heading-S"><h2 class="lib-letter-heading" id="lib-letter-heading-S"><span class="letter">S</span><span class="lcount">(47)</span></h2><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-0"><a class="lib-entry-title-link" href="/id/library/simbol-jepang/">Simbol &amp; Huruf Jepang</a></h3><p class="lib-entry-desc">Kumpulan simbol Jepang siap salin — kanji seperti 桜 dan 愛, hiragana, katakana, dan tanda baca. Tulisan Jepang untuk bio tanpa keyboard jepang khusus.</p><span class="lib-entry-preview" aria-hidden="true">桜 愛 夢 月 星</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-1"><a class="lib-entry-title-link" href="/id/library/simbol-aesthetic/">Simbol Aesthetic</a></h3><p class="lib-entry-desc">Copas simbol aesthetic buat bio IG, nama &amp; caption — kilau ⋆˚, hati ♡, bunga ✿, pembatas. Tinggal klik buat nyalin. Simbol estetik gratis, tanpa aplikasi.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ✦ ✧ ⊹ ˚</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-2"><a class="lib-entry-title-link" href="/id/library/simbol-bintang/">Simbol Bintang</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol bintang (symbol bintang): ★ ☆ ✦ ✧ ⋆ ⭐ 🌟 dan banyak lagi. Untuk rating di caption, hiasan nama game, dan bio aesthetic — klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ✦ ✧ ⋆</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-3"><a class="lib-entry-title-link" href="/id/library/simbol-poin/">Simbol Bullet Point &amp; Titik</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol bullet point dan titik: • ● ◦ ‣ plus panah dan bintang untuk daftar rapi di caption, bio, dan postingan. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">• ‣ ◦ ⁃ ∙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Format Surel" aria-label="Saring menurut: Format Surel">Format Surel</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-4"><a class="lib-entry-title-link" href="/id/library/simbol-bunga/">Simbol Bunga &amp; Alam</a></h3><p class="lib-entry-desc">Kumpulan simbol bunga, logo bunga, dan simbol alam Unicode — emoji bunga sakura, mawar, pohon, daun, sampai pembatas bunga aesthetic. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">🌸 🌹 🌺 🌻 🌼</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-5"><a class="lib-entry-title-link" href="/id/library/simbol-catur/">Simbol Catur</a></h3><p class="lib-entry-desc">Jelajahi dan salin simbol Unicode bidak catur, kotak papan, dan tanda notasi. Klik simbol mana pun untuk menyalinnya seketika.</p><span class="lib-entry-preview" aria-hidden="true">♔ ♕ ♖ ♗ ♘</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-6"><a class="lib-entry-title-link" href="/id/library/simbol-centang/">Simbol Centang &amp; Ceklis</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol centang dan ceklis: ✓ ✔ ✅ ☑ plus silang ✗ ❌. Untuk daftar tugas di caption, bukti done di story, polling, dan bio — klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ✅ ☑ ☐</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Format Surel" aria-label="Saring menurut: Format Surel">Format Surel</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-7"><a class="lib-entry-title-link" href="/id/library/simbol-coquette/">Simbol Coquette</a></h3><p class="lib-entry-desc">Simbol aesthetic coquette — pita 🎀, hati ♡, bunga ✿, dan debu kilau untuk bio serta nama pengguna. Karakter lembut ala dollette untuk salin &amp; tempel.</p><span class="lib-entry-preview" aria-hidden="true">🎀 ୨୧ ʚɞ ⊰ ⊱</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-8"><a class="lib-entry-title-link" href="/id/library/simbol-cottagecore/">Simbol Cottagecore</a></h3><p class="lib-entry-desc">Simbol aesthetic cottagecore — jamur 🍄, bunga 🌸, lebah 🐝, dan motif pedesaan. Salin &amp; tempel dekorasi nuansa desa untuk bio dan caption.</p><span class="lib-entry-preview" aria-hidden="true">🍄 🌿 🌱 🪴 🌾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-9"><a class="lib-entry-title-link" href="/id/library/simbol-cuaca/">Simbol Cuaca</a></h3><p class="lib-entry-desc">Simbol cuaca lengkap — matahari, awan, hujan, salju, angin, fase bulan, dan simbol suhu. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">☀ ☼ 🌞 🌤 🌅</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perjalanan" aria-label="Saring menurut: Perjalanan">Perjalanan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-10"><a class="lib-entry-title-link" href="/id/library/simbol-discord/">Simbol Discord</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol Discord untuk nama channel, nama server, role, dan profil — dekorasi channel (▸ ┊ ➤ ꒱ ⟢), pembatas, hati, dan bintang yang tampil rapi.</p><span class="lib-entry-preview" aria-hidden="true">⌗ ➤ ▸ │ ⊹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-11"><a class="lib-entry-title-link" href="/id/library/simbol-dreamcore-weirdcore/">Simbol Dreamcore &amp; Weirdcore</a></h3><p class="lib-entry-desc">Simbol dreamcore dan weirdcore — mata surreal 👁, pelangi 🌈, blok glitch, pintu, dan kombo sleepcore untuk postingan liminal. Klik simbol mana pun untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">👁 👁️ 👀 𓂀 𓁹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-12"><a class="lib-entry-title-link" href="/id/library/simbol-facebook/">Simbol Facebook</a></h3><p class="lib-entry-desc">Salin dan tempel simbol Facebook — emoji reaksi, hati, bintang, dan garis pemisah untuk postingan, komentar, bio, dan nama Halaman. Klik simbol mana pun untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">👍 ❤️ 🥰 😆 😮</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Facebook" aria-label="Saring menurut: Facebook">Facebook</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-13"><a class="lib-entry-title-link" href="/id/library/simbol-fairycore/">Simbol Fairycore</a></h3><p class="lib-entry-desc">Simbol dan kombo emoji fairycore — peri 🧚, jamur 🍄, kilau ✨, dan karakter bunga mungil untuk bio bernuansa magis. Klik simbol mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-14"><a class="lib-entry-title-link" href="/id/library/simbol-ff/">Simbol FF ꧁꧂</a></h3><p class="lib-entry-desc">Kumpulan simbol FF siap copy paste: payung ꧁꧂, mahkota ♛, love ♡ ᥫ᭡, katakana メ 彡, bintang ★, plus kombinasi nama jadi. Klik simbol mana pun buat langsung nyalin ke nickname Free Fire kamu.</p><span class="lib-entry-preview" aria-hidden="true">꧁ ꧂ ༒ ࿐ ♛</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Saring menurut: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-15"><a class="lib-entry-title-link" href="/id/library/simbol-fortnite/">Simbol Fortnite ツ</a></h3><p class="lib-entry-desc">Simbol Fortnite sweaty ツ 亗 乂 untuk disalin &amp; tempel — senyum, kanji power, bintang clan tag, dan crosshair, plus kombinasi nama sweaty siap pakai.</p><span class="lib-entry-preview" aria-hidden="true">ツ シ ッ ソ ン</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-16"><a class="lib-entry-title-link" href="/id/library/simbol-garis/">Simbol Garis &amp; Pembatas</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol garis: garis horizontal ─ ━, garis vertikal │ ┃, pembatas dekoratif, dan garis putus-putus. Klik simbol untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">─ ━ ═ ╌ ┄</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Pemisah" aria-label="Saring menurut: Pemisah">Pemisah</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Format Surel" aria-label="Saring menurut: Format Surel">Format Surel</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-17"><a class="lib-entry-title-link" href="/id/library/simbol-gender/">Simbol Gender</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol gender — laki-laki ♂, perempuan ♀, transgender ⚧, non-biner, dan simbol orientasi gabungan. Klik simbol mana pun untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">♀ ♂ ⚧ ⚲ ⚪</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-18"><a class="lib-entry-title-link" href="/id/library/simbol-geometri/">Simbol Geometri</a></h3><p class="lib-entry-desc">Kumpulan simbol geometri — lingkaran, kotak, segitiga, sudut, dan bentuk dekoratif buat bullet list, dekorasi teks, dan desain caption. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">● ○ ◉ ◎ ⊙</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Pemisah" aria-label="Saring menurut: Pemisah">Pemisah</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-19"><a class="lib-entry-title-link" href="/id/library/simbol-goth-grunge/">Simbol Goth &amp; Grunge</a></h3><p class="lib-entry-desc">Simbol aesthetic gelap untuk bio goth dan grunge — salib, tengkorak, laba-laba, belati, dan dekorasi fashion alt untuk nama pengguna dan profil. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">♱ † ‡ ✟ 🗡</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-20"><a class="lib-entry-title-link" href="/id/library/simbol-yunani/">Simbol Huruf Yunani</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol alpha, simbol beta, lambang sigma, simbol miu, dan simbol phi — alfabet Yunani lengkap Α–Ω, huruf besar &amp; kecil. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">Α Β Γ Δ Ε</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-21"><a class="lib-entry-title-link" href="/id/library/simbol-instagram/">Simbol Instagram</a></h3><p class="lib-entry-desc">Simbol Instagram buat bio, caption, dan story — kilau, poin, pembatas, bentuk buat cover highlight, plus kombinasi siap pakai. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">✨ • · │ ⌇</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-22"><a class="lib-entry-title-link" href="/id/library/simbol-islami/">Simbol Islami</a></h3><p class="lib-entry-desc">Simbol islami untuk disalin dan ditempel — bulan sabit dan bintang, ligatur Allah dan Bismillah, emoji masjid dan doa, serta ucapan Idulfitri. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">☪ ☪️ ☫ 🌙 ☽</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perayaan" aria-label="Saring menurut: Perayaan">Perayaan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Saring menurut: WhatsApp">WhatsApp</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-23"><a class="lib-entry-title-link" href="/id/library/simbol-kawaii-cute/">Simbol Kawaii &amp; Lucu</a></h3><p class="lib-entry-desc">Simbol kawaii dan lucu untuk bio, nama pengguna, dan pesan. Hati lembut, wajah mungil, kilau, dan dekorasi pastel dari nuansa kawaii.</p><span class="lib-entry-preview" aria-hidden="true">♡ ෆ ❤ ❥ ʚɞ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-24"><a class="lib-entry-title-link" href="/id/library/simbol-keagamaan/">Simbol Keagamaan &amp; Spiritual</a></h3><p class="lib-entry-desc">Jelajahi dan salin simbol Unicode keagamaan, spiritual, dan keimanan dari tradisi besar dunia. Klik simbol mana pun untuk menyalinnya seketika.</p><span class="lib-entry-preview" aria-hidden="true">✝ ☦ ✞ ✟ ♰</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-25"><a class="lib-entry-title-link" href="/id/library/simbol-korea/">Simbol Korea</a></h3><p class="lib-entry-desc">Simbol Korea — kata Hangul, huruf jamo, dan slang K-pop seperti ㅋㅋㅋ, lengkap dengan cara baca dan artinya. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">사랑 행복 꿈 별 달</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-26"><a class="lib-entry-title-link" href="/id/library/simbol-kurung/">Simbol Kurung</a></h3><p class="lib-entry-desc">Referensi lengkap simbol kurung Unicode — kurung biasa, siku, kurawal, kurung CJK 「」【】, kurung hias, dan versi lebar penuh. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">( ) [ ] {</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-27"><a class="lib-entry-title-link" href="/id/library/simbol-love/">Simbol Love &amp; Hati</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol love dan hati — love symbol / lambang cinta: ♡ ♥ ᥫ᭡ ❤ 🤍 💕 dan banyak lagi. Untuk bio IG/WA, nama ML/FF pasangan, caption, dan ucapan. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">♡ ♥ ᥫ᭡ ❤ 🤍</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-28"><a class="lib-entry-title-link" href="/id/library/simbol-mata-uang/">Simbol Mata Uang</a></h3><p class="lib-entry-desc">Salin dan tempel simbol mata uang, lambang uang, dan karakter finansial Unicode dari seluruh dunia. Klik simbol mana pun untuk menyalinnya seketika.</p><span class="lib-entry-preview" aria-hidden="true">$ € £ ¥ ₹</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Format Surel" aria-label="Saring menurut: Format Surel">Format Surel</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-29"><a class="lib-entry-title-link" href="/id/library/simbol-matematika/">Simbol Matematika</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol matematika: operator dasar, perbandingan, teori himpunan, akar, pangkat, dan tak terhingga. Klik simbol untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">± × ÷ ∓ ∣</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-30"><a class="lib-entry-title-link" href="/id/library/simbol-medis/">Simbol Medis</a></h3><p class="lib-entry-desc">Simbol medis — tongkat Asklepios ⚕, kaduseus ☤, tanda resep ℞, palang kesehatan, dan emoji darurat. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">⚕ ⚕️ ☤ ⚚ ℞</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-31"><a class="lib-entry-title-link" href="/id/library/simbol-minecraft/">Simbol Minecraft ►</a></h3><p class="lib-entry-desc">Simbol Minecraft buat disalin &amp; tempel ke chat, MOTD, dan nama server — panah, blok shading ░▒▓, garis box-drawing, dan ikon gaya game.</p><span class="lib-entry-preview" aria-hidden="true">► ◄ ▶ ◀ «</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Komentar" aria-label="Saring menurut: Komentar">Komentar</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-32"><a class="lib-entry-title-link" href="/id/library/simbol-ml/">Simbol ML ꧁꧂</a></h3><p class="lib-entry-desc">Simbol ML buat nama Mobile Legends — huruf rank kecil ᴳᵒᵈ, bingkai ꧁꧂, kanji, dan simbol MLBB siap pakai. Tinggal klik, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">ᴬ ᴮ ᴳ ᴵ ᴷ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Saring menurut: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-33"><a class="lib-entry-title-link" href="/id/library/simbol-musik/">Simbol Musik</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol musik: not balok ♪ ♫ ♬, kunci not, tanda kres/mol, dan ikon alat musik 🎸🎹🎤. Klik simbol untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">♩ ♪ ♫ ♬ 🎵</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-34"><a class="lib-entry-title-link" href="/id/library/simbol-natal/">Simbol Natal</a></h3><p class="lib-entry-desc">Simbol Natal — pohon, kepingan salju, manusia salju, kado, plus kombinasi ucapan siap pakai buat status, caption, dan kartu. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">🎄 🌲 ⭐ 🌟 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Emoji" aria-label="Saring menurut: Emoji">Emoji</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Perayaan" aria-label="Saring menurut: Perayaan">Perayaan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-35"><a class="lib-entry-title-link" href="/id/library/simbol-nickname/">Simbol Nickname</a></h3><p class="lib-entry-desc">Simbol nickname &amp; dekorasi nick keren siap pakai — sayap ꧁꧂, senyum ツ, mahkota ♛, dan tag pro 亗 untuk nama game apa pun. Klik simbol untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">꧁ ꧂ ༺ ༻ 『</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-36"><a class="lib-entry-title-link" href="/id/library/simbol-panah/">Simbol Panah</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol panah: → ← ↑ ↓ ➜ ➤ ⇒ » dan banyak lagi. Untuk hiasan nama game, bio, caption, dan penunjuk arah — klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">→ ← ↑ ↓ ➜</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-37"><a class="lib-entry-title-link" href="/id/library/simbol-pecahan/">Simbol Pecahan</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol pecahan Unicode: ½ ⅓ ¼ ⅛ ⅔ ¾, plus superscript &amp; subscript untuk pecahan buatan sendiri. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">½ ⅓ ⅔ ¼ ¾</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Referensi" aria-label="Saring menurut: Referensi">Referensi</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Surel" aria-label="Saring menurut: Surel">Surel</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-38"><a class="lib-entry-title-link" href="/id/library/simbol-pubg/">Simbol PUBG &amp; BGMI ★</a></h3><p class="lib-entry-desc">Simbol nama PUBG Mobile &amp; BGMI ★ 彡 乂 ꧁꧂ untuk disalin &amp; tempel — sudah dites sama font game, plus fakta jujur simbol mana yang gagal sebelum kamu pakai kartu ganti nama.</p><span class="lib-entry-preview" aria-hidden="true">ツ ッ 彡 乂 亗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-39"><a class="lib-entry-title-link" href="/id/library/simbol-roblox/">Simbol Roblox</a></h3><p class="lib-entry-desc">40+ simbol Roblox ✦ ⚡ ♡ untuk disalin &amp; tempel ke display name, bio, dan grup — sudah diuji dengan filter nama Roblox terbaru, plus fakta soal ikon Robux, Premium &amp; Verified.</p><span class="lib-entry-preview" aria-hidden="true">⋆ ⊹ ✦ ✧ ★</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-40"><a class="lib-entry-title-link" href="/id/library/simbol-salib/">Simbol Salib</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol salib: ✝ Latin, ☦ Ortodoks, ✠ Maltese, dan salib dekoratif lainnya. Untuk logo, gambar salib, bio, dan caption — klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">✝ ✞ ✟ ✠ ☦</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-41"><a class="lib-entry-title-link" href="/id/library/simbol-tanda-baca/">Simbol Tanda Baca</a></h3><p class="lib-entry-desc">Simbol tanda baca yang nggak ada di keyboard — belati †, pilcrow ¶, tanda rujukan ※, interrobang ‽, tanda kutip, dan lainnya. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">† ‡ ⁑ ⁂ ※</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Postingan Profesional" aria-label="Saring menurut: Postingan Profesional">Postingan Profesional</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Daftar &amp; List" aria-label="Saring menurut: Daftar &amp; List">Daftar &amp; List</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="LinkedIn" aria-label="Saring menurut: LinkedIn">LinkedIn</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-42"><a class="lib-entry-title-link" href="/id/library/simbol-therian/">Simbol Therian</a></h3><p class="lib-entry-desc">Jelajahi tanda theta-delta (θΔ), jejak kaki, fase bulan, dan simbol hewan yang dipakai komunitas therian dan alterhuman. Klik simbol mana pun untuk langsung menyalinnya.</p><span class="lib-entry-preview" aria-hidden="true">θΔ ΘΔ θ Θ Δ</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="TikTok" aria-label="Saring menurut: TikTok">TikTok</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-43"><a class="lib-entry-title-link" href="/id/library/simbol-whatsapp/">Simbol WhatsApp</a></h3><p class="lib-entry-desc">Simbol WhatsApp buat status, bio (Info), dan nama grup — centang, hati, bintang, pembatas, plus hiasan status siap pakai. Klik simbolnya, langsung kesalin.</p><span class="lib-entry-preview" aria-hidden="true">✓ ✔ ✅ ☑ ✗</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="WhatsApp" aria-label="Saring menurut: WhatsApp">WhatsApp</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-44"><a class="lib-entry-title-link" href="/id/library/simbol-witchy-occult/">Simbol Witchy &amp; Occult</a></h3><p class="lib-entry-desc">Jelajahi dan salin simbol witchy dan okultisme — pentagram, fase bulan, tanda planet, simbol alkimia, dan karakter esoterik lainnya. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">★ ☆ ⚹ ✡ ⚜</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-45"><a class="lib-entry-title-link" href="/id/library/simbol-y2k/">Simbol Y2K</a></h3><p class="lib-entry-desc">Simbol Y2K aesthetic untuk salin &amp; tempel — bintang ✰, kilau ✧, salib ♱, kupu-kupu 🦋, dan CD 💿 untuk bio, nama, dan caption. Klik untuk menyalin.</p><span class="lib-entry-preview" aria-hidden="true">✦ ✮ ♱ 🦋 ✨</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Dekoratif" aria-label="Saring menurut: Dekoratif">Dekoratif</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article><article class="lib-entry"><h3 class="lib-entry-title" id="lib-entry-title-S-46"><a class="lib-entry-title-link" href="/id/library/simbol-zodiak/">Simbol Zodiak &amp; Astrologi</a></h3><p class="lib-entry-desc">Salin &amp; tempel simbol zodiak, logo planet, dan zodiak China. 12 lambang zodiak lengkap plus simbol astrologi lain — klik untuk langsung menyalin.</p><span class="lib-entry-preview" aria-hidden="true">♈ ♉ ♊ ♋ ♌</span><div class="lib-entry-meta"><button type="button" class="lib-entry-tag is-type" data-filter="type" data-value="Simbol" aria-label="Saring menurut: Simbol">Simbol</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Bio" aria-label="Saring menurut: Bio">Bio</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Keterangan" aria-label="Saring menurut: Keterangan">Keterangan</button><button type="button" class="lib-entry-tag" data-filter="useCases" data-value="Reaksi" aria-label="Saring menurut: Reaksi">Reaksi</button><button type="button" class="lib-entry-tag" data-filter="platforms" data-value="Instagram" aria-label="Saring menurut: Instagram">Instagram</button></div></article></section>
+</main>
+
+<div class="lib-empty" id="libEmpty" role="status" aria-live="polite" hidden>
+  <p class="lib-empty-title">Tidak ada hasil</p>
+  <p class="lib-empty-body">Tidak ada koleksi yang cocok dengan kombinasi ini. Coba hapus satu atau beberapa filter.</p>
+  <button type="button" class="lib-clear" id="libEmptyReset">Hapus semua filter</button>
+</div>
+
+<button type="button" class="lib-back-top" id="libBackTop"
+        aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+<script>
+window.UTG_LIBRARY_HUB = {
+ "locale": "id",
+ "basePath": "/id/library/",
+ "i18n": {
+  "searchLabel": "Cari di pustaka",
+  "searchPlaceholder": "Cari simbol…",
+  "clearFilters": "Hapus filter",
+  "resultCount": "{shown} dari {total} koleksi",
+  "emptyTitle": "Tidak ada hasil",
+  "emptyBody": "Tidak ada koleksi yang cocok dengan kombinasi ini. Coba hapus satu atau beberapa filter.",
+  "emptyReset": "Hapus semua filter",
+  "backTop": "Kembali ke atas",
+  "filterBy": "Saring menurut",
+  "alphaJump": "Lompat ke huruf",
+  "noItems": "tidak ada item",
+  "directoryLabel": "Direktori simbol"
+ },
+ "items": [
+  {
+   "title": "Kaomoji Kucing",
+   "slug": "cat-kaomoji",
+   "description": "Jelajahi dan salin kaomoji kucing (=^・ω・^=) — wajah teks kucing ala Jepang yang lucu dengan kumis dan cakar. Kucing senang, sedih, dan mengantuk. Klik untuk menyalin.",
+   "preview": "(=^・ω・^=) (=^‥^=) (=｀ω´=) (＾• ω •＾) (=ↀωↀ=)",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Keterangan",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji Menangis",
+   "slug": "crying-kaomoji",
+   "description": "Jelajahi dan salin kaomoji menangis (╥﹏╥) — wajah teks ala Jepang untuk air mata, isak tangis, dan suasana muram. Klik mana pun untuk langsung menyalinnya.",
+   "preview": "(╥﹏╥) (T_T) (；﹏；) (ㄒoㄒ) (个_个)",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Komentar",
+    "Keterangan"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Kaomoji Lucu",
+   "slug": "cute-kaomoji",
+   "description": "Jelajahi dan salin kaomoji lucu (◕‿◕) — wajah teks ala Jepang yang imut dengan mata berbinar, pipi merona, dan hewan menggemaskan. Klik mana pun untuk menyalin.",
+   "preview": "(◕‿◕) (｡◕‿◕｡) (◠‿◠✿) (✿◡‿◡) ( ◜‿◝ )♡",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Bendera Semua Negara",
+   "slug": "emoji-bendera",
+   "description": "Emoji bendera semua negara: Indonesia 🇮🇩, Malaysia, Jepang, Korea, sampai 195 negara. Klik benderanya, langsung kesalin — tinggal tempel di bio, nama game, atau chat.",
+   "preview": "🇮🇩 🇲🇾 🇸🇬 🇵🇭 🇯🇵",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Perjalanan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Bintang",
+   "slug": "emoji-bintang",
+   "description": "Emoji bintang ⭐ 🌟 ✨ buat rating bintang 5, caption, dan bio aesthetic — lengkap sama kaomoji bermata bintang. Klik emojinya, langsung kesalin.",
+   "preview": "⭐ 🌟 ✨ 💫 🌠",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Bio",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Cium & Kaomoji",
+   "slug": "emoji-cium",
+   "description": "Emoji cium 😘 💋 👄, wajah mencium, bekas lipstik, dan kaomoji genit seperti ( ˘ ³˘) buat chat, komentar, dan DM. Klik simbolnya, langsung kesalin.",
+   "preview": "😘 😗 😙 😚 😽",
+   "type": "Emoji",
+   "useCases": [
+    "Pesan Langsung",
+    "Keterangan",
+    "Komentar"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Combo emoji & kombinasi emoji copy paste",
+   "slug": "emoji-combos",
+   "description": "200+ combo emoji aesthetic siap dicopas — lucu, coquette, cottagecore, kawaii, Y2K, dark academia & 20+ vibe lain. Klik kombinasi emoji mana pun buat salin satu set penuh ke bio Instagram, TikTok, atau status WhatsApp.",
+   "preview": "🎀🤍🕊️ 🦋✨🌸 🌷🎀🩰 🍓🤍🫧 🌸🎀🤍✨",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji Damai",
+   "slug": "emoji-damai",
+   "description": "Salin & tempel emoji damai — pose tangan peace ✌️, merpati 🕊️, simbol ☮️ dan ☯️, plus kombinasi bervibe tenang. Klik simbolnya, langsung kesalin.",
+   "preview": "✌️ ✌🏻 ✌🏼 ✌🏽 ✌🏾",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Bio",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Hewan",
+   "slug": "emoji-hewan",
+   "description": "Emoji hewan lengkap — peliharaan, ternak, satwa liar, burung, hewan laut, serangga, reptil, dan makhluk mitologi. Klik emojinya, langsung kesalin.",
+   "preview": "🐶 🐕 🐩 🐱 🐈",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Reaksi",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji iPhone",
+   "slug": "emoji-iphone",
+   "description": "Salin emoji iPhone (Apple) yang paling sering dipakai, plus penjelasan cara kerjanya: emoji iOS itu karakter Unicode yang sama dengan Android — cuma gambarnya beda. Klik emojinya, langsung kesalin.",
+   "preview": "😂 🥹 🥲 😊 🥰",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Reaksi",
+    "Referensi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Kaget & Kaomoji",
+   "slug": "emoji-kaget",
+   "description": "Emoji kaget 😱 😲 🤯, kaomoji terkejut seperti (⊙_⊙), dan kombinasi plot twist buat reaksi melongo di chat dan komentar. Klik simbolnya, langsung kesalin.",
+   "preview": "😱 😨 😲 😮 😯",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Komentar"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji Kesal & Kaomoji",
+   "slug": "emoji-kesal",
+   "description": "Emoji kesal 😒 🙄 😑 😤, kombinasi sebel dan muak siap pakai, plus kaomoji kesal seperti (￣ヘ￣) buat chat dan komentar. Klik simbolnya, langsung kesalin.",
+   "preview": "😒 😑 🙄 😤 🤨",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Komentar"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Emoji Ketawa & Kaomoji",
+   "slug": "emoji-ketawa",
+   "description": "Emoji ketawa 😂 🤣 💀, kaomoji ngakak seperti (≧▽≦), dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.",
+   "preview": "😂 🤣 😆 😄 😁",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Komentar"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Emoji Mahkota",
+   "slug": "emoji-mahkota",
+   "description": "Emoji mahkota 👑 buat bio, nama tampilan, dan caption — plus kombinasi queen, king, dan flexing menang siap pakai. Klik emojinya, langsung kesalin.",
+   "preview": "👑 🤴 👸 🫅 💍",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Bio",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Malaikat",
+   "slug": "emoji-malaikat",
+   "description": "Salin & tempel emoji malaikat 👼, simbol malaikat pelindung dan surga, plus kombinasi kenangan seperti 🕊️🙏💐 buat postingan mengenang dan caption.",
+   "preview": "👼 🪽 ☁️ 🌈 🌠",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Komentar",
+    "Perayaan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Marah & Kaomoji",
+   "slug": "emoji-marah",
+   "description": "Emoji marah 😡 🤬 😤, kombinasi ngamuk siap pakai, dan kaomoji gebrak meja (╯°□°）╯︵ ┻━┻ buat ngeluapin kesel di chat dan kolom komentar. Klik simbolnya, langsung kesalin.",
+   "preview": "😡 😠 🤬 😤 👿",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Komentar"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Emoji Nangis",
+   "slug": "emoji-nangis",
+   "description": "Emoji nangis 😭 😢 🥹, emoji nahan tangis, kaomoji menangis (T_T), dan kombinasi siap pakai buat caption dan balasan chat. Klik emojinya, langsung kesalin.",
+   "preview": "😭 😢 🥹 🥲 😂",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Emoji Sedih & Kaomoji",
+   "slug": "emoji-sedih",
+   "description": "Emoji sedih 😢 😔 untuk bio dan caption galau, simbol patah hati 💔, dan kaomoji murung seperti (μ_μ) — lengkap dalam satu koleksi. Klik simbol mana pun untuk langsung menyalinnya.",
+   "preview": "😢 😞 😔 ☹ 🙁",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji Senang & Kaomoji",
+   "slug": "emoji-senang",
+   "description": "Emoji senang 😊 😄 🥰, kaomoji ceria seperti ヽ(´▽`)/, dan kombinasi cerah buat bio, caption, dan chat. Klik simbolnya, langsung kesalin.",
+   "preview": "😊 😀 😃 😄 🙂",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Komentar",
+    "Perayaan"
+   ],
+   "platforms": [
+    "Instagram",
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Emoji Tengkorak & Kaomoji",
+   "slug": "emoji-tengkorak",
+   "description": "Salin & tempel emoji tengkorak 💀 ☠️ 🦴, kombinasi \"gua mati ketawa\", dan kaomoji tengkorak x_x buat reaksi dan caption. Klik simbolnya, langsung kesalin.",
+   "preview": "💀 ☠️ 😂 🤣 ⚰️",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Komentar"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Emoji Wajah Sesuai Perasaan",
+   "slug": "emoji-wajah",
+   "description": "Emoji wajah lengkap sesuai perasaan — cium 😘, kedip 😉, senyum sinis 😏, mata memutar 🙄, tersipu 😊, memelas 🥺, kacamata hitam 😎, malaikat 😇 — plus artinya dan kombinasi siap copas. Klik untuk langsung menyalin.",
+   "preview": "😘 😗 😙 😚 💋",
+   "type": "Emoji",
+   "useCases": [
+    "Reaksi",
+    "Keterangan",
+    "Komentar"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji Senang",
+   "slug": "happy-kaomoji",
+   "description": "Jelajahi dan salin kaomoji senang (◠‿◠) — wajah teks ala Jepang yang tersenyum, gembira, dan bahagia. Klik mana pun untuk langsung menyalinnya.",
+   "preview": "(◠‿◠) (^▽^) (≧◡≦) ( ´ ▽ ` ) (＾▽＾)",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Keterangan",
+    "Komentar"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji",
+   "slug": "kaomoji",
+   "description": "Salin & tempel kaomoji — wajah teks ala Jepang dari karakter Unicode. Kaomoji lucu, senang, sedih, menangis, cinta, hewan, dan Lenny face. Klik mana pun untuk langsung menyalin.",
+   "preview": "¯\\_(ツ)_/¯ ( ͡° ͜ʖ ͡°) (◕‿◕) (≧◡≦) ʕ•ᴥ•ʔ",
+   "type": "Dekoratif",
+   "useCases": [
+    "Reaksi",
+    "Komentar",
+    "Keterangan"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Karakter Spesial",
+   "slug": "karakter-spesial",
+   "description": "Jelajahi dan salin karakter spesial unik — tak hingga, perdamaian, sains, tanda hukum, hiasan estetik, dan simbol Unicode langka. Klik simbol mana pun untuk menyalinnya seketika.",
+   "preview": "∞ ♾️ ⧜ ⧝ ⧞",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Kode Alt",
+   "slug": "kode-alt",
+   "description": "Daftar lengkap kode Alt keyboard — Alt+0169 untuk ©, mata uang, matematika, huruf beraksen, dan simbol DOS klasik lengkap dengan kodenya. Klik karakter mana pun untuk langsung menyalin.",
+   "preview": "© ® ™ ° ±",
+   "type": "Referensi",
+   "useCases": [
+    "Referensi",
+    "Format Surel"
+   ],
+   "platforms": [
+    "Surel"
+   ]
+  },
+  {
+   "title": "Kaomoji Cinta",
+   "slug": "love-kaomoji",
+   "description": "Jelajahi dan salin kaomoji cinta (♥ω♥) dan hati — wajah teks ala Jepang untuk kasih sayang, ciuman, dan pelukan. Klik mana pun untuk langsung menyalinnya.",
+   "preview": "(♥ω♥) (◍•ᴗ•◍)❤ (✿ ♥‿♥) (｡♥‿♥｡) (♡μ_μ)",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Keterangan",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Kaomoji Sedih",
+   "slug": "sad-kaomoji",
+   "description": "Jelajahi dan salin kaomoji sedih (´･_･`) — wajah teks ala Jepang untuk kesedihan, kekecewaan, dan suasana murung. Klik mana pun untuk langsung menyalinnya.",
+   "preview": "(´･_･`) (._.) (ｰ_ｰ) (´-ω-`) ( ˘･з･)",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Komentar",
+    "Keterangan"
+   ],
+   "platforms": [
+    "X"
+   ]
+  },
+  {
+   "title": "Kaomoji Angkat Bahu",
+   "slug": "shrug-kaomoji",
+   "description": "Salin dan tempel kaomoji angkat bahu ¯\\_(ツ)_/¯ dan wajah angkat bahu lainnya. Klik untuk menyalin shruggie klasik dan variannya.",
+   "preview": "¯\\_(ツ)_/¯ ¯\\_(⊙_ʖ⊙)_/¯ ¯\\_(ᵔᵕᵔ)_/¯ ¯\\_(◉‿◉)_/¯ ¯\\_( ͡° ͜ʖ ͡°)_/¯",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Komentar",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Discord"
+   ]
+  },
+  {
+   "title": "Simbol Aesthetic",
+   "slug": "simbol-aesthetic",
+   "description": "Copas simbol aesthetic buat bio IG, nama & caption — kilau ⋆˚, hati ♡, bunga ✿, pembatas. Tinggal klik buat nyalin. Simbol estetik gratis, tanpa aplikasi.",
+   "preview": "⋆ ✦ ✧ ⊹ ˚",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Bintang",
+   "slug": "simbol-bintang",
+   "description": "Salin & tempel simbol bintang (symbol bintang): ★ ☆ ✦ ✧ ⋆ ⭐ 🌟 dan banyak lagi. Untuk rating di caption, hiasan nama game, dan bio aesthetic — klik untuk menyalin.",
+   "preview": "★ ☆ ✦ ✧ ⋆",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Daftar & List",
+    "Keterangan"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Bunga & Alam",
+   "slug": "simbol-bunga",
+   "description": "Kumpulan simbol bunga, logo bunga, dan simbol alam Unicode — emoji bunga sakura, mawar, pohon, daun, sampai pembatas bunga aesthetic. Klik untuk menyalin.",
+   "preview": "🌸 🌹 🌺 🌻 🌼",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Catur",
+   "slug": "simbol-catur",
+   "description": "Jelajahi dan salin simbol Unicode bidak catur, kotak papan, dan tanda notasi. Klik simbol mana pun untuk menyalinnya seketika.",
+   "preview": "♔ ♕ ♖ ♗ ♘",
+   "type": "Simbol",
+   "useCases": [
+    "Keterangan",
+    "Reaksi",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Centang & Ceklis",
+   "slug": "simbol-centang",
+   "description": "Salin & tempel simbol centang dan ceklis: ✓ ✔ ✅ ☑ plus silang ✗ ❌. Untuk daftar tugas di caption, bukti done di story, polling, dan bio — klik untuk menyalin.",
+   "preview": "✓ ✔ ✅ ☑ ☐",
+   "type": "Simbol",
+   "useCases": [
+    "Daftar & List",
+    "Postingan Profesional",
+    "Format Surel"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Coquette",
+   "slug": "simbol-coquette",
+   "description": "Simbol aesthetic coquette — pita 🎀, hati ♡, bunga ✿, dan debu kilau untuk bio serta nama pengguna. Karakter lembut ala dollette untuk salin & tempel.",
+   "preview": "🎀 ୨୧ ʚɞ ⊰ ⊱",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Cottagecore",
+   "slug": "simbol-cottagecore",
+   "description": "Simbol aesthetic cottagecore — jamur 🍄, bunga 🌸, lebah 🐝, dan motif pedesaan. Salin & tempel dekorasi nuansa desa untuk bio dan caption.",
+   "preview": "🍄 🌿 🌱 🪴 🌾",
+   "type": "Emoji",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Cuaca",
+   "slug": "simbol-cuaca",
+   "description": "Simbol cuaca lengkap — matahari, awan, hujan, salju, angin, fase bulan, dan simbol suhu. Klik simbolnya, langsung kesalin.",
+   "preview": "☀ ☼ 🌞 🌤 🌅",
+   "type": "Emoji",
+   "useCases": [
+    "Keterangan",
+    "Reaksi",
+    "Perjalanan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Discord",
+   "slug": "simbol-discord",
+   "description": "Salin & tempel simbol Discord untuk nama channel, nama server, role, dan profil — dekorasi channel (▸ ┊ ➤ ꒱ ⟢), pembatas, hati, dan bintang yang tampil rapi.",
+   "preview": "⌗ ➤ ▸ │ ⊹",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Dreamcore & Weirdcore",
+   "slug": "simbol-dreamcore-weirdcore",
+   "description": "Simbol dreamcore dan weirdcore — mata surreal 👁, pelangi 🌈, blok glitch, pintu, dan kombo sleepcore untuk postingan liminal. Klik simbol mana pun untuk langsung menyalin.",
+   "preview": "👁 👁️ 👀 𓂀 𓁹",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Simbol Facebook",
+   "slug": "simbol-facebook",
+   "description": "Salin dan tempel simbol Facebook — emoji reaksi, hati, bintang, dan garis pemisah untuk postingan, komentar, bio, dan nama Halaman. Klik simbol mana pun untuk langsung menyalin.",
+   "preview": "👍 ❤️ 🥰 😆 😮",
+   "type": "Referensi",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Facebook"
+   ]
+  },
+  {
+   "title": "Simbol Fairycore",
+   "slug": "simbol-fairycore",
+   "description": "Simbol dan kombo emoji fairycore — peri 🧚, jamur 🍄, kilau ✨, dan karakter bunga mungil untuk bio bernuansa magis. Klik simbol mana pun untuk langsung menyalinnya.",
+   "preview": "🧚 🧚‍♀️ 🧚‍♂️ 🪄 ✨",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram",
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Simbol FF ꧁꧂",
+   "slug": "simbol-ff",
+   "description": "Kumpulan simbol FF siap copy paste: payung ꧁꧂, mahkota ♛, love ♡ ᥫ᭡, katakana メ 彡, bintang ★, plus kombinasi nama jadi. Klik simbol mana pun buat langsung nyalin ke nickname Free Fire kamu.",
+   "preview": "꧁ ꧂ ༒ ࿐ ♛",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Simbol Fortnite ツ",
+   "slug": "simbol-fortnite",
+   "description": "Simbol Fortnite sweaty ツ 亗 乂 untuk disalin & tempel — senyum, kanji power, bintang clan tag, dan crosshair, plus kombinasi nama sweaty siap pakai.",
+   "preview": "ツ シ ッ ソ ン",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Simbol Garis & Pembatas",
+   "slug": "simbol-garis",
+   "description": "Salin & tempel simbol garis: garis horizontal ─ ━, garis vertikal │ ┃, pembatas dekoratif, dan garis putus-putus. Klik simbol untuk langsung menyalin.",
+   "preview": "─ ━ ═ ╌ ┄",
+   "type": "Simbol",
+   "useCases": [
+    "Pemisah",
+    "Postingan Profesional",
+    "Format Surel"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Gender",
+   "slug": "simbol-gender",
+   "description": "Salin & tempel simbol gender — laki-laki ♂, perempuan ♀, transgender ⚧, non-biner, dan simbol orientasi gabungan. Klik simbol mana pun untuk langsung menyalin.",
+   "preview": "♀ ♂ ⚧ ⚲ ⚪",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Geometri",
+   "slug": "simbol-geometri",
+   "description": "Kumpulan simbol geometri — lingkaran, kotak, segitiga, sudut, dan bentuk dekoratif buat bullet list, dekorasi teks, dan desain caption. Klik untuk menyalin.",
+   "preview": "● ○ ◉ ◎ ⊙",
+   "type": "Simbol",
+   "useCases": [
+    "Daftar & List",
+    "Pemisah",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Goth & Grunge",
+   "slug": "simbol-goth-grunge",
+   "description": "Simbol aesthetic gelap untuk bio goth dan grunge — salib, tengkorak, laba-laba, belati, dan dekorasi fashion alt untuk nama pengguna dan profil. Klik untuk menyalin.",
+   "preview": "♱ † ‡ ✟ 🗡",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Instagram",
+   "slug": "simbol-instagram",
+   "description": "Simbol Instagram buat bio, caption, dan story — kilau, poin, pembatas, bentuk buat cover highlight, plus kombinasi siap pakai. Klik simbolnya, langsung kesalin.",
+   "preview": "✨ • · │ ⌇",
+   "type": "Referensi",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Islami",
+   "slug": "simbol-islami",
+   "description": "Simbol islami untuk disalin dan ditempel — bulan sabit dan bintang, ligatur Allah dan Bismillah, emoji masjid dan doa, serta ucapan Idulfitri. Klik untuk menyalin.",
+   "preview": "☪ ☪️ ☫ 🌙 ☽",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Perayaan"
+   ],
+   "platforms": [
+    "WhatsApp",
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol & Huruf Jepang",
+   "slug": "simbol-jepang",
+   "description": "Kumpulan simbol Jepang siap salin — kanji seperti 桜 dan 愛, hiragana, katakana, dan tanda baca. Tulisan Jepang untuk bio tanpa keyboard jepang khusus.",
+   "preview": "桜 愛 夢 月 星",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Kawaii & Lucu",
+   "slug": "simbol-kawaii-cute",
+   "description": "Simbol kawaii dan lucu untuk bio, nama pengguna, dan pesan. Hati lembut, wajah mungil, kilau, dan dekorasi pastel dari nuansa kawaii.",
+   "preview": "♡ ෆ ❤ ❥ ʚɞ",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Keagamaan & Spiritual",
+   "slug": "simbol-keagamaan",
+   "description": "Jelajahi dan salin simbol Unicode keagamaan, spiritual, dan keimanan dari tradisi besar dunia. Klik simbol mana pun untuk menyalinnya seketika.",
+   "preview": "✝ ☦ ✞ ✟ ♰",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Korea",
+   "slug": "simbol-korea",
+   "description": "Simbol Korea — kata Hangul, huruf jamo, dan slang K-pop seperti ㅋㅋㅋ, lengkap dengan cara baca dan artinya. Klik simbolnya, langsung kesalin.",
+   "preview": "사랑 행복 꿈 별 달",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Komentar"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Kurung",
+   "slug": "simbol-kurung",
+   "description": "Referensi lengkap simbol kurung Unicode — kurung biasa, siku, kurawal, kurung CJK 「」【】, kurung hias, dan versi lebar penuh. Klik simbolnya, langsung kesalin.",
+   "preview": "( ) [ ] {",
+   "type": "Simbol",
+   "useCases": [
+    "Daftar & List",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Love & Hati",
+   "slug": "simbol-love",
+   "description": "Salin & tempel simbol love dan hati — love symbol / lambang cinta: ♡ ♥ ᥫ᭡ ❤ 🤍 💕 dan banyak lagi. Untuk bio IG/WA, nama ML/FF pasangan, caption, dan ucapan. Klik untuk menyalin.",
+   "preview": "♡ ♥ ᥫ᭡ ❤ 🤍",
+   "type": "Simbol",
+   "useCases": [
+    "Reaksi",
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Mata Uang",
+   "slug": "simbol-mata-uang",
+   "description": "Salin dan tempel simbol mata uang, lambang uang, dan karakter finansial Unicode dari seluruh dunia. Klik simbol mana pun untuk menyalinnya seketika.",
+   "preview": "$ € £ ¥ ₹",
+   "type": "Simbol",
+   "useCases": [
+    "Postingan Profesional",
+    "Format Surel"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Matematika",
+   "slug": "simbol-matematika",
+   "description": "Salin & tempel simbol matematika: operator dasar, perbandingan, teori himpunan, akar, pangkat, dan tak terhingga. Klik simbol untuk langsung menyalin.",
+   "preview": "± × ÷ ∓ ∣",
+   "type": "Simbol",
+   "useCases": [
+    "Postingan Profesional",
+    "Keterangan"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Medis",
+   "slug": "simbol-medis",
+   "description": "Simbol medis — tongkat Asklepios ⚕, kaduseus ☤, tanda resep ℞, palang kesehatan, dan emoji darurat. Klik simbolnya, langsung kesalin.",
+   "preview": "⚕ ⚕️ ☤ ⚚ ℞",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Minecraft ►",
+   "slug": "simbol-minecraft",
+   "description": "Simbol Minecraft buat disalin & tempel ke chat, MOTD, dan nama server — panah, blok shading ░▒▓, garis box-drawing, dan ikon gaya game.",
+   "preview": "► ◄ ▶ ◀ «",
+   "type": "Simbol",
+   "useCases": [
+    "Komentar",
+    "Referensi"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Simbol ML ꧁꧂",
+   "slug": "simbol-ml",
+   "description": "Simbol ML buat nama Mobile Legends — huruf rank kecil ᴳᵒᵈ, bingkai ꧁꧂, kanji, dan simbol MLBB siap pakai. Tinggal klik, langsung kesalin.",
+   "preview": "ᴬ ᴮ ᴳ ᴵ ᴷ",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Simbol Musik",
+   "slug": "simbol-musik",
+   "description": "Salin & tempel simbol musik: not balok ♪ ♫ ♬, kunci not, tanda kres/mol, dan ikon alat musik 🎸🎹🎤. Klik simbol untuk langsung menyalin.",
+   "preview": "♩ ♪ ♫ ♬ 🎵",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Natal",
+   "slug": "simbol-natal",
+   "description": "Simbol Natal — pohon, kepingan salju, manusia salju, kado, plus kombinasi ucapan siap pakai buat status, caption, dan kartu. Klik simbolnya, langsung kesalin.",
+   "preview": "🎄 🌲 ⭐ 🌟 ✨",
+   "type": "Emoji",
+   "useCases": [
+    "Perayaan",
+    "Keterangan",
+    "Bio"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Nickname",
+   "slug": "simbol-nickname",
+   "description": "Simbol nickname & dekorasi nick keren siap pakai — sayap ꧁꧂, senyum ツ, mahkota ♛, dan tag pro 亗 untuk nama game apa pun. Klik simbol untuk langsung menyalin.",
+   "preview": "꧁ ꧂ ༺ ༻ 『",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Panah",
+   "slug": "simbol-panah",
+   "description": "Salin & tempel simbol panah: → ← ↑ ↓ ➜ ➤ ⇒ » dan banyak lagi. Untuk hiasan nama game, bio, caption, dan penunjuk arah — klik untuk menyalin.",
+   "preview": "→ ← ↑ ↓ ➜",
+   "type": "Simbol",
+   "useCases": [
+    "Daftar & List",
+    "Postingan Profesional"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Pecahan",
+   "slug": "simbol-pecahan",
+   "description": "Salin & tempel simbol pecahan Unicode: ½ ⅓ ¼ ⅛ ⅔ ¾, plus superscript & subscript untuk pecahan buatan sendiri. Klik untuk menyalin.",
+   "preview": "½ ⅓ ⅔ ¼ ¾",
+   "type": "Simbol",
+   "useCases": [
+    "Referensi",
+    "Postingan Profesional",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Surel"
+   ]
+  },
+  {
+   "title": "Simbol Bullet Point & Titik",
+   "slug": "simbol-poin",
+   "description": "Salin & tempel simbol bullet point dan titik: • ● ◦ ‣ plus panah dan bintang untuk daftar rapi di caption, bio, dan postingan. Klik untuk menyalin.",
+   "preview": "• ‣ ◦ ⁃ ∙",
+   "type": "Simbol",
+   "useCases": [
+    "Daftar & List",
+    "Postingan Profesional",
+    "Format Surel"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol PUBG & BGMI ★",
+   "slug": "simbol-pubg",
+   "description": "Simbol nama PUBG Mobile & BGMI ★ 彡 乂 ꧁꧂ untuk disalin & tempel — sudah dites sama font game, plus fakta jujur simbol mana yang gagal sebelum kamu pakai kartu ganti nama.",
+   "preview": "ツ ッ 彡 乂 亗",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ]
+  },
+  {
+   "title": "Simbol Roblox",
+   "slug": "simbol-roblox",
+   "description": "40+ simbol Roblox ✦ ⚡ ♡ untuk disalin & tempel ke display name, bio, dan grup — sudah diuji dengan filter nama Roblox terbaru, plus fakta soal ikon Robux, Premium & Verified.",
+   "preview": "⋆ ⊹ ✦ ✧ ★",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Salib",
+   "slug": "simbol-salib",
+   "description": "Salin & tempel simbol salib: ✝ Latin, ☦ Ortodoks, ✠ Maltese, dan salib dekoratif lainnya. Untuk logo, gambar salib, bio, dan caption — klik untuk menyalin.",
+   "preview": "✝ ✞ ✟ ✠ ☦",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Daftar & List",
+    "Keterangan"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Tanda Baca",
+   "slug": "simbol-tanda-baca",
+   "description": "Simbol tanda baca yang nggak ada di keyboard — belati †, pilcrow ¶, tanda rujukan ※, interrobang ‽, tanda kutip, dan lainnya. Klik simbolnya, langsung kesalin.",
+   "preview": "† ‡ ⁑ ⁂ ※",
+   "type": "Simbol",
+   "useCases": [
+    "Postingan Profesional",
+    "Keterangan",
+    "Daftar & List"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Therian",
+   "slug": "simbol-therian",
+   "description": "Jelajahi tanda theta-delta (θΔ), jejak kaki, fase bulan, dan simbol hewan yang dipakai komunitas therian dan alterhuman. Klik simbol mana pun untuk langsung menyalinnya.",
+   "preview": "θΔ ΘΔ θ Θ Δ",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "TikTok"
+   ]
+  },
+  {
+   "title": "Simbol WhatsApp",
+   "slug": "simbol-whatsapp",
+   "description": "Simbol WhatsApp buat status, bio (Info), dan nama grup — centang, hati, bintang, pembatas, plus hiasan status siap pakai. Klik simbolnya, langsung kesalin.",
+   "preview": "✓ ✔ ✅ ☑ ✗",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan"
+   ],
+   "platforms": [
+    "WhatsApp"
+   ]
+  },
+  {
+   "title": "Simbol Witchy & Occult",
+   "slug": "simbol-witchy-occult",
+   "description": "Jelajahi dan salin simbol witchy dan okultisme — pentagram, fase bulan, tanda planet, simbol alkimia, dan karakter esoterik lainnya. Klik untuk menyalin.",
+   "preview": "★ ☆ ⚹ ✡ ⚜",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Y2K",
+   "slug": "simbol-y2k",
+   "description": "Simbol Y2K aesthetic untuk salin & tempel — bintang ✰, kilau ✧, salib ♱, kupu-kupu 🦋, dan CD 💿 untuk bio, nama, dan caption. Klik untuk menyalin.",
+   "preview": "✦ ✮ ♱ 🦋 ✨",
+   "type": "Dekoratif",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  },
+  {
+   "title": "Simbol Huruf Yunani",
+   "slug": "simbol-yunani",
+   "description": "Salin & tempel simbol alpha, simbol beta, lambang sigma, simbol miu, dan simbol phi — alfabet Yunani lengkap Α–Ω, huruf besar & kecil. Klik untuk menyalin.",
+   "preview": "Α Β Γ Δ Ε",
+   "type": "Simbol",
+   "useCases": [
+    "Postingan Profesional",
+    "Keterangan",
+    "Bio"
+   ],
+   "platforms": [
+    "LinkedIn"
+   ]
+  },
+  {
+   "title": "Simbol Zodiak & Astrologi",
+   "slug": "simbol-zodiak",
+   "description": "Salin & tempel simbol zodiak, logo planet, dan zodiak China. 12 lambang zodiak lengkap plus simbol astrologi lain — klik untuk langsung menyalin.",
+   "preview": "♈ ♉ ♊ ♋ ♌",
+   "type": "Simbol",
+   "useCases": [
+    "Bio",
+    "Keterangan",
+    "Reaksi"
+   ],
+   "platforms": [
+    "Instagram"
+   ]
+  }
+ ]
+};
+</script>
+<script src="/js/library/library-hub.js" defer></script>
+<!-- library-hub:end -->
 <!-- CTA -->
 <div class="lib-cta">
   <div class="cta-card">
@@ -688,91 +1373,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </details>
 </section>
 
-<!-- STATIC INDEX (crawlable links to every collection) -->
-<nav class="lib-index" aria-label="Semua koleksi simbol">
-  <div class="lib-index-inner">
-    <h2 class="lib-index-title">Semua Koleksi A–Z</h2>
-    <p class="lib-index-note">Setiap koleksi simbol, lambang, dan kaomoji di Perpustakaan UltraTextGen. Jelajahi direktori lengkap di atas, atau langsung buka salah satu halaman di bawah.</p>
-    <ul class="lib-index-list">
-      <li><a href="/id/library/emoji-bendera/">Emoji Bendera</a></li>
-      <li><a href="/id/library/karakter-spesial/">Karakter Spesial</a></li>
-      <li><a href="/id/library/simbol-aesthetic/">Simbol Aesthetic</a></li>
-      <li><a href="/id/library/shrug-kaomoji/">Kaomoji Angkat Bahu</a></li>
-      <li><a href="/id/library/simbol-bintang/">Simbol Bintang</a></li>
-      <li><a href="/id/library/simbol-bunga/">Simbol Bunga &amp; Alam</a></li>
-      <li><a href="/id/library/simbol-cuaca/">Simbol Cuaca</a></li>
-      <li><a href="/id/library/simbol-catur/">Simbol Catur</a></li>
-      <li><a href="/id/library/simbol-centang/">Simbol Centang &amp; Ceklis</a></li>
-      <li><a href="/id/library/love-kaomoji/">Kaomoji Cinta</a></li>
-      <li><a href="/id/library/simbol-coquette/">Simbol Coquette</a></li>
-      <li><a href="/id/library/simbol-cottagecore/">Simbol Cottagecore</a></li>
-      <li><a href="/id/symbol/simbol-derajat/">Simbol Derajat</a></li>
-      <li><a href="/id/library/simbol-discord/">Simbol Discord</a></li>
-      <li><a href="/id/library/simbol-dreamcore-weirdcore/">Simbol Dreamcore &amp; Weirdcore</a></li>
-      <li><a href="/id/library/emoji-hewan/">Emoji Hewan</a></li>
-      <li><a href="/id/library/emoji-bintang/">Emoji Bintang</a></li>
-      <li><a href="/id/library/emoji-iphone/">Emoji iPhone</a></li>
-      <li><a href="/id/library/emoji-kaget/">Emoji Kaget</a></li>
-      <li><a href="/id/library/emoji-kesal/">Emoji Kesal</a></li>
-      <li><a href="/id/library/emoji-ketawa/">Emoji Ketawa</a></li>
-      <li><a href="/id/library/emoji-mahkota/">Emoji Mahkota</a></li>
-      <li><a href="/id/library/emoji-malaikat/">Emoji Malaikat</a></li>
-      <li><a href="/id/library/emoji-marah/">Emoji Marah</a></li>
-      <li><a href="/id/library/emoji-nangis/">Emoji Nangis</a></li>
-      <li><a href="/id/library/emoji-cium/">Emoji Cium</a></li>
-      <li><a href="/id/library/emoji-damai/">Emoji Damai</a></li>
-      <li><a href="/id/library/emoji-senang/">Emoji Senang</a></li>
-      <li><a href="/id/library/emoji-tengkorak/">Emoji Tengkorak</a></li>
-      <li><a href="/id/library/emoji-sedih/">Emoji Sedih</a></li>
-      <li><a href="/id/library/emoji-wajah/">Emoji Wajah</a></li>
-      <li><a href="/id/library/simbol-facebook/">Simbol Facebook</a></li>
-      <li><a href="/id/library/simbol-fairycore/">Simbol Fairycore</a></li>
-      <li><a href="/id/library/simbol-ff/">Simbol FF (Free Fire)</a></li>
-      <li><a href="/id/library/simbol-fortnite/">Simbol Fortnite</a></li>
-      <li><a href="/id/library/simbol-garis/">Simbol Garis &amp; Pembatas</a></li>
-      <li><a href="/id/library/simbol-gender/">Simbol Gender</a></li>
-      <li><a href="/id/library/simbol-geometri/">Simbol Geometri</a></li>
-      <li><a href="/id/library/simbol-goth-grunge/">Simbol Goth &amp; Grunge</a></li>
-      <li><a href="/id/library/simbol-instagram/">Simbol Instagram</a></li>
-      <li><a href="/id/library/simbol-islami/">Simbol Islami</a></li>
-      <li><a href="/id/library/simbol-jepang/">Simbol Jepang</a></li>
-      <li><a href="/id/library/kaomoji/">Kaomoji — Wajah Teks Jepang</a></li>
-      <li><a href="/id/library/cat-kaomoji/">Kaomoji Kucing</a></li>
-      <li><a href="/id/library/simbol-kawaii-cute/">Simbol Kawaii &amp; Lucu</a></li>
-      <li><a href="/id/library/emoji-combos/">Kombinasi Emoji</a></li>
-      <li><a href="/id/symbol/simbol-kutip/">Simbol Kutip</a></li>
-      <li><a href="/id/library/cute-kaomoji/">Kaomoji Lucu</a></li>
-      <li><a href="/id/library/simbol-keagamaan/">Simbol Keagamaan</a></li>
-      <li><a href="/id/library/simbol-korea/">Simbol Korea</a></li>
-      <li><a href="/id/library/simbol-kurung/">Simbol Kurung</a></li>
-      <li><a href="/id/library/simbol-love/">Simbol Love &amp; Hati</a></li>
-      <li><a href="/id/library/simbol-mata-uang/">Simbol Mata Uang</a></li>
-      <li><a href="/id/library/simbol-matematika/">Simbol Matematika</a></li>
-      <li><a href="/id/library/crying-kaomoji/">Kaomoji Menangis</a></li>
-      <li><a href="/id/library/simbol-medis/">Simbol Medis</a></li>
-      <li><a href="/id/library/simbol-minecraft/">Simbol Minecraft</a></li>
-      <li><a href="/id/library/simbol-ml/">Simbol ML (Mobile Legends)</a></li>
-      <li><a href="/id/library/simbol-musik/">Simbol Musik</a></li>
-      <li><a href="/id/library/simbol-nickname/">Simbol Nickname</a></li>
-      <li><a href="/id/library/simbol-natal/">Simbol Natal</a></li>
-      <li><a href="/id/library/simbol-panah/">Simbol Panah</a></li>
-      <li><a href="/id/library/simbol-pecahan/">Simbol Pecahan</a></li>
-      <li><a href="/id/library/simbol-poin/">Simbol Poin (Bullet)</a></li>
-      <li><a href="/id/library/simbol-pubg/">Simbol PUBG &amp; BGMI</a></li>
-      <li><a href="/id/library/simbol-roblox/">Simbol Roblox</a></li>
-      <li><a href="/id/library/simbol-salib/">Simbol Salib</a></li>
-      <li><a href="/id/library/happy-kaomoji/">Kaomoji Senang</a></li>
-      <li><a href="/id/library/sad-kaomoji/">Kaomoji Sedih</a></li>
-      <li><a href="/id/library/simbol-tanda-baca/">Simbol Tanda Baca</a></li>
-      <li><a href="/id/library/simbol-therian/">Simbol Therian</a></li>
-      <li><a href="/id/library/simbol-whatsapp/">Simbol WhatsApp</a></li>
-      <li><a href="/id/library/simbol-witchy-occult/">Simbol Witchy &amp; Occult</a></li>
-      <li><a href="/id/library/simbol-y2k/">Simbol Y2K</a></li>
-      <li><a href="/id/library/simbol-yunani/">Simbol Yunani</a></li>
-      <li><a href="/id/library/simbol-zodiak/">Simbol Zodiak</a></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -784,936 +1384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- BACK TO TOP -->
-<button type="button" class="lib-back-top" id="libBackTop" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
 
-<script>
-(function () {
-  "use strict";
-
-  /* ── Data ───────────────────────────────────────────────────── */
-  const LIBRARY = [
-    {
-      title: "Simbol Islami",
-      slug: "simbol-islami",
-      description: "Bulan sabit dan bintang ☪, ligatur Arab ﷲ ﷺ, masjid, dan ucapan Idulfitri.",
-      preview: "☪ ﷲ ﷺ 🕌 📿",
-      useCases: ["Referensi", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Spiritual & Kepercayaan",
-      alpha: "S"
-    },
-    {
-      title: "Simbol Keagamaan",
-      slug: "simbol-keagamaan",
-      description: "Salib ✝, bulan sabit ☪, bintang Daud ✡, roda Dharma ☸, dan simbol iman lainnya.",
-      preview: "✝ ☪ ✡ ☸ ☯",
-      useCases: ["Referensi", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Spiritual & Kepercayaan",
-      alpha: "S"
-    },
-    {
-      title: "Simbol Catur",
-      slug: "simbol-catur",
-      description: "Bidak ♔ ♛, kotak papan, dan tanda notasi catur.",
-      preview: "♔ ♕ ♞ ♟ ⬛",
-      useCases: ["Referensi", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Game & Platform",
-      alpha: "S"
-    },
-    {
-      title: "Karakter Spesial",
-      slug: "karakter-spesial",
-      description: "Tak hingga ∞, damai ☮, sains, tanda hukum © ™, dan simbol Unicode langka.",
-      preview: "∞ ☮ © ™ ✧",
-      useCases: ["Referensi", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Tanda & Indikator",
-      alpha: "K"
-    },
-    {
-      title: "Simbol Mata Uang",
-      slug: "simbol-mata-uang",
-      description: "Lambang mata uang $ € £ ¥ ₹ — mata uang dunia, regional, bersejarah, dan kripto.",
-      preview: "$ € £ ¥ ₿",
-      useCases: ["Referensi", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Tanda & Indikator",
-      alpha: "S"
-    },
-    {
-      title: "Simbol Aesthetic",
-      slug: "simbol-aesthetic",
-      description: "Simbol aesthetic keren, kilau, hati, bunga, dan pembatas untuk bio, nama, dan caption.",
-      preview: "✦ ✧ ☾ ⋆ ࿐",
-      useCases: ["Bio", "Caption", "Username"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "A"
-    },
-    {
-      title: "Simbol Bintang",
-      slug: "simbol-bintang",
-      description: "Bintang ★ ☆ ✦ ✧ ⋆ untuk rating, hiasan nama game, dan bio aesthetic.",
-      preview: "★ ☆ ✦ ✧ ⋆",
-      useCases: ["Caption", "Nama Game", "Bio"],
-      platforms: ["Universal", "Instagram"],
-      type: "Simbol",
-      subject: "Bentuk & Geometri",
-      alpha: "B"
-    },
-    {
-      title: "Simbol Bunga & Alam",
-      slug: "simbol-bunga",
-      description: "Simbol bunga, logo bunga, dan simbol alam — sakura, mawar, daun, sampai pembatas bunga.",
-      preview: "🌸 🌹 ✿ ❀ 🌿",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal", "Instagram"],
-      type: "Emoji",
-      subject: "Alam & Hewan",
-      alpha: "B"
-    },
-    {
-      title: "Simbol Centang & Ceklis",
-      slug: "simbol-centang",
-      description: "Centang dan ceklis ✓ ✔ ✅ ☑ plus silang ✗ ❌ untuk daftar, polling, dan bukti done.",
-      preview: "✓ ✔ ✅ ☑ ✗",
-      useCases: ["Daftar & List", "Caption", "Bio"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Simbol",
-      subject: "Tanda & Indikator",
-      alpha: "C"
-    },
-    {
-      title: "Simbol Coquette",
-      slug: "simbol-coquette",
-      description: "Pita 🎀, hati ♡, bunga ✿, dan kilau ala coquette/dollette untuk bio dan username.",
-      preview: "🎀 ♡ ✿ ⋆ ˚",
-      useCases: ["Bio", "Username"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "C"
-    },
-    {
-      title: "Simbol Cottagecore",
-      slug: "simbol-cottagecore",
-      description: "Jamur 🍄, bunga 🌸, lebah 🐝, dan motif pedesaan untuk dekorasi bio bernuansa desa.",
-      preview: "🍄 🌸 🐝 ✿ 🌿",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "C"
-    },
-    {
-      title: "Simbol Derajat",
-      slug: "simbol-derajat",
-      description: "Simbol derajat ° celcius, fahrenheit, kelvin, dan sudut untuk suhu dan geometri.",
-      preview: "° ℃ ℉ ∠ ⊾",
-      useCases: ["Referensi", "Caption"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Sains & Teknis",
-      alpha: "D"
-    },
-    {
-      title: "Simbol Discord",
-      slug: "simbol-discord",
-      description: "Dekorasi channel, server, dan role Discord — ▸ ┊ ➤ ꒱ ⟢, pembatas, hati, dan bintang.",
-      preview: "▸ ┊ ➤ ꒱ ⟢",
-      useCases: ["Username", "Bio"],
-      platforms: ["Discord", "Universal"],
-      type: "Dekoratif",
-      subject: "Game & Platform",
-      alpha: "D"
-    },
-    {
-      title: "Simbol Dreamcore & Weirdcore",
-      slug: "simbol-dreamcore-weirdcore",
-      description: "Mata surreal 👁, pelangi 🌈, blok glitch, dan kombo sleepcore untuk postingan liminal.",
-      preview: "👁 🌈 ⋆ ▚ ⛩",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "D"
-    },
-    {
-      title: "Simbol Facebook",
-      slug: "simbol-facebook",
-      description: "Emoji reaksi, hati, bintang, dan garis pemisah untuk postingan, komentar, bio, dan nama Halaman.",
-      preview: "👍 ❤ ★ ─ ✦",
-      useCases: ["Komentar", "Bio", "Caption"],
-      platforms: ["Facebook", "Universal"],
-      type: "Emoji",
-      subject: "Game & Platform",
-      alpha: "F"
-    },
-    {
-      title: "Simbol Fairycore",
-      slug: "simbol-fairycore",
-      description: "Peri 🧚, jamur 🍄, kilau ✨, dan bunga mungil untuk bio bernuansa magis.",
-      preview: "🧚 🍄 ✨ ✿ ⋆",
-      useCases: ["Bio", "Username"],
-      platforms: ["Universal", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "F"
-    },
-    {
-      title: "Simbol FF (Free Fire)",
-      slug: "simbol-ff",
-      description: "Simbol nickname Free Fire siap pakai — payung ꧁꧂, mahkota ♛, love ᥫ᭡, katakana メ 彡, dan bintang.",
-      preview: "꧁ ꧂ ♛ ᥫ᭡ メ",
-      useCases: ["Nama Game", "Username", "Bio"],
-      platforms: ["Free Fire", "Universal"],
-      type: "Dekoratif",
-      subject: "Game & Platform",
-      alpha: "F"
-    },
-    {
-      title: "Simbol Garis & Pembatas",
-      slug: "simbol-garis",
-      description: "Garis horizontal ─ ━, vertikal │ ┃, dan pembatas dekoratif untuk memisahkan teks.",
-      preview: "─ ━ │ ┃ ═",
-      useCases: ["Caption", "Bio", "Daftar & List"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Bentuk & Geometri",
-      alpha: "G"
-    },
-    {
-      title: "Simbol Gender",
-      slug: "simbol-gender",
-      description: "Lambang laki-laki ♂, perempuan ♀, transgender ⚧, non-biner, dan orientasi gabungan.",
-      preview: "♂ ♀ ⚧ ⚢ ⚣",
-      useCases: ["Bio", "Referensi"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Gender & Identitas",
-      alpha: "G"
-    },
-    {
-      title: "Simbol Geometri",
-      slug: "simbol-geometri",
-      description: "Lingkaran, kotak, segitiga, sudut, dan bentuk dekoratif untuk bullet list dan desain caption.",
-      preview: "△ ○ □ ◇ ∠",
-      useCases: ["Daftar & List", "Caption"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Bentuk & Geometri",
-      alpha: "G"
-    },
-    {
-      title: "Simbol Goth & Grunge",
-      slug: "simbol-goth-grunge",
-      description: "Simbol gelap goth dan grunge — salib, tengkorak, laba-laba, dan belati untuk profil alt.",
-      preview: "✝ 🕷 🗡 ☠ ⛧",
-      useCases: ["Bio", "Username"],
-      platforms: ["Universal", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "G"
-    },
-    {
-      title: "Simbol Jepang",
-      slug: "simbol-jepang",
-      description: "Kanji 桜 愛, hiragana, katakana, dan tanda baca Jepang untuk bio tanpa keyboard khusus.",
-      preview: "桜 愛 あ ア ・",
-      useCases: ["Bio", "Username", "Referensi"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Budaya & Bahasa",
-      alpha: "J"
-    },
-    {
-      title: "Simbol Kawaii & Lucu",
-      slug: "simbol-kawaii-cute",
-      description: "Hati lembut, wajah mungil, kilau, dan dekorasi pastel bernuansa kawaii untuk bio dan pesan.",
-      preview: "♡ ⋆ ✿ ˚ ⊹",
-      useCases: ["Bio", "Username", "Komentar"],
-      platforms: ["Universal", "Instagram"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "K"
-    },
-    {
-      title: "Kombinasi Emoji",
-      slug: "emoji-combos",
-      description: "100+ kombinasi emoji siap copy paste — coquette, cottagecore, kawaii, Y2K, dark academia, dan pantai — buat bio, status, dan caption.",
-      preview: "🦋 ✨ 🌸",
-      useCases: ["Bio", "Caption", "Status"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Kombinasi Emoji",
-      subject: "Estetik & Dekoratif",
-      alpha: "K"
-    },
-    {
-      title: "Simbol Kutip",
-      slug: "simbol-kutip",
-      description: "Tanda kutip dan petik “ ” ‘ ’ « » plus kutip sudut Jepang untuk caption dan bio.",
-      preview: "“ ” ‘ ’ «",
-      useCases: ["Caption", "Bio", "Referensi"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Tanda & Indikator",
-      alpha: "K"
-    },
-    {
-      title: "Simbol Love & Hati",
-      slug: "simbol-love",
-      description: "Hati ♡ ♥ ᥫ᭡ ❤ 💕 untuk bio IG/WA, nama ML/FF pasangan, caption, dan ucapan.",
-      preview: "♡ ♥ ᥫ᭡ ❤ 💕",
-      useCases: ["Bio", "Nama Game", "Caption"],
-      platforms: ["Universal", "Instagram", "WhatsApp"],
-      type: "Simbol",
-      subject: "Emosi & Ekspresi",
-      alpha: "L"
-    },
-    {
-      title: "Simbol Matematika",
-      slug: "simbol-matematika",
-      description: "Operator, perbandingan, teori himpunan, akar, pangkat, dan lambang tak terhingga ∞.",
-      preview: "± × ÷ √ ∞",
-      useCases: ["Referensi", "Caption"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Sains & Teknis",
-      alpha: "M"
-    },
-    {
-      title: "Simbol Musik",
-      slug: "simbol-musik",
-      description: "Not balok ♪ ♫ ♬, kunci not, tanda kres/mol, dan ikon alat musik 🎸🎹🎤.",
-      preview: "♪ ♫ ♬ 🎵 🎸",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal", "Instagram"],
-      type: "Simbol",
-      subject: "Musik & Seni",
-      alpha: "M"
-    },
-    {
-      title: "Simbol Panah",
-      slug: "simbol-panah",
-      description: "Panah → ← ↑ ↓ ➜ ➤ ⇒ » untuk hiasan nama game, bio, dan penunjuk arah.",
-      preview: "→ ← ↑ ↓ ➤",
-      useCases: ["Nama Game", "Caption", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Bentuk & Geometri",
-      alpha: "P"
-    },
-    {
-      title: "Simbol Pecahan",
-      slug: "simbol-pecahan",
-      description: "Pecahan Unicode ½ ⅓ ¼ ⅛ ⅔ ¾ plus superscript & subscript untuk pecahan buatan sendiri.",
-      preview: "½ ⅓ ¼ ⅔ ¾",
-      useCases: ["Referensi", "Caption"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Sains & Teknis",
-      alpha: "P"
-    },
-    {
-      title: "Simbol Poin (Bullet)",
-      slug: "simbol-poin",
-      description: "Bullet point dan titik • ● ◦ ‣ plus panah dan bintang untuk daftar rapi di caption dan bio.",
-      preview: "• ● ◦ ‣ ▪",
-      useCases: ["Daftar & List", "Caption", "Bio"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Tanda & Indikator",
-      alpha: "P"
-    },
-    {
-      title: "Simbol Roblox",
-      slug: "simbol-roblox",
-      description: "40+ simbol Roblox ✦ ⚡ ♡ untuk display name, bio, dan grup — sudah diuji dengan filter nama terbaru.",
-      preview: "✦ ⚡ ♡ ★ ◈",
-      useCases: ["Nama Game", "Username", "Bio"],
-      platforms: ["Roblox", "Universal"],
-      type: "Dekoratif",
-      subject: "Game & Platform",
-      alpha: "R"
-    },
-    {
-      title: "Simbol Salib",
-      slug: "simbol-salib",
-      description: "Salib ✝ Latin, ☦ Ortodoks, ✠ Maltese, dan salib dekoratif untuk logo, bio, dan caption.",
-      preview: "✝ ☦ ✠ ✟ †",
-      useCases: ["Bio", "Caption", "Referensi"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Spiritual & Kepercayaan",
-      alpha: "S"
-    },
-    {
-      title: "Simbol Therian",
-      slug: "simbol-therian",
-      description: "Tanda theta-delta θΔ, jejak kaki, fase bulan, dan simbol hewan komunitas therian & alterhuman.",
-      preview: "θ Δ ☾ 🐾 ⧖",
-      useCases: ["Bio", "Username"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Estetik & Dekoratif",
-      alpha: "T"
-    },
-    {
-      title: "Simbol Witchy & Occult",
-      slug: "simbol-witchy-occult",
-      description: "Pentagram, fase bulan, tanda planet, dan simbol alkimia untuk estetika witchy dan okultisme.",
-      preview: "☽ ⛤ ☿ 🜁 ✵",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Spiritual & Kepercayaan",
-      alpha: "W"
-    },
-    {
-      title: "Simbol Y2K",
-      slug: "simbol-y2k",
-      description: "Bintang ✰, kilau ✧, salib ♱, kupu-kupu 🦋, dan CD 💿 untuk bio dan nama aesthetic Y2K.",
-      preview: "✰ ✧ ♱ 🦋 💿",
-      useCases: ["Bio", "Username", "Caption"],
-      platforms: ["Universal", "Instagram", "TikTok"],
-      type: "Dekoratif",
-      subject: "Estetik & Dekoratif",
-      alpha: "Y"
-    },
-    {
-      title: "Simbol Yunani",
-      slug: "simbol-yunani",
-      description: "Alfabet Yunani lengkap Α–Ω — lambang alpha, beta, sigma, miu, dan phi, huruf besar & kecil.",
-      preview: "Α Β Σ Δ Ω",
-      useCases: ["Referensi", "Bio", "Username"],
-      platforms: ["Universal"],
-      type: "Simbol",
-      subject: "Budaya & Bahasa",
-      alpha: "Y"
-    },
-    {
-      title: "Simbol Zodiak",
-      slug: "simbol-zodiak",
-      description: "12 lambang zodiak lengkap, logo planet, dan zodiak China untuk bio dan caption astrologi.",
-      preview: "♈ ♉ ♊ ♋ ♌",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Universal", "Instagram"],
-      type: "Simbol",
-      subject: "Spiritual & Kepercayaan",
-      alpha: "Z"
-    },
-    {
-      title: "Kaomoji Kucing",
-      slug: "cat-kaomoji",
-      description: "Wajah teks kucing ala Jepang (=^・ω・^=) — kucing senang, sedih, dan mengantuk.",
-      preview: "(=^･ω･^=)",
-      useCases: ["Komentar", "Caption"],
-      platforms: ["Universal", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Alam & Hewan",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji Menangis",
-      slug: "crying-kaomoji",
-      description: "Wajah teks menangis (╥﹏╥) untuk air mata, isak tangis, dan suasana muram.",
-      preview: "(╥﹏╥)",
-      useCases: ["Komentar", "Caption"],
-      platforms: ["Universal", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "M"
-    },
-    {
-      title: "Kaomoji Lucu",
-      slug: "cute-kaomoji",
-      description: "Wajah teks imut (◕‿◕) dengan mata berbinar, pipi merona, dan hewan menggemaskan.",
-      preview: "(◕‿◕)",
-      useCases: ["Komentar", "Caption", "Bio"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "L"
-    },
-    {
-      title: "Kaomoji Senang",
-      slug: "happy-kaomoji",
-      description: "Wajah teks tersenyum, gembira, dan bahagia (◠‿◠) untuk komentar dan caption.",
-      preview: "(◠‿◠)",
-      useCases: ["Komentar", "Caption"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "S"
-    },
-    {
-      title: "Kaomoji — Wajah Teks Jepang",
-      slug: "kaomoji",
-      description: "Kumpulan wajah teks ala Jepang — lucu, senang, sedih, cinta, hewan, dan Lenny face.",
-      preview: "(ᵕ‿ᵕ) (◕‿◕)",
-      useCases: ["Komentar", "Caption", "Bio"],
-      platforms: ["Universal", "WhatsApp", "Discord"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "K"
-    },
-    {
-      title: "Kaomoji Cinta",
-      slug: "love-kaomoji",
-      description: "Wajah teks cinta (♥ω♥) dan hati untuk kasih sayang, ciuman, dan pelukan.",
-      preview: "(♥ω♥)",
-      useCases: ["Komentar", "Caption", "Bio"],
-      platforms: ["Universal", "WhatsApp", "Instagram"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "C"
-    },
-    {
-      title: "Emoji Sedih",
-      slug: "emoji-sedih",
-      description: "Emoji dan kaomoji sedih 😢 😔 💔 (μ_μ) untuk bio dan caption galau.",
-      preview: "😢 😔 💔 (μ_μ) 🥀",
-      useCases: ["Bio", "Caption"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Emoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "S"
-    },
-    {
-      title: "Emoji Wajah",
-      slug: "emoji-wajah",
-      description: "Emoji wajah sesuai perasaan 😘 😉 😏 🙄 🥺 — arti, variasi terdekat, dan kombinasi siap copas.",
-      preview: "😘 😉 😏 🙄 🥺",
-      useCases: ["Bio", "Caption", "Komentar"],
-      platforms: ["Instagram", "TikTok", "Universal"],
-      type: "Emoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "W"
-    },
-    {
-      title: "Kaomoji Sedih",
-      slug: "sad-kaomoji",
-      description: "Wajah teks sedih (´･_･`) untuk kekecewaan dan suasana murung.",
-      preview: "(´･_･`)",
-      useCases: ["Komentar", "Caption"],
-      platforms: ["Universal", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "S"
-    },
-    {
-      title: "Kaomoji Angkat Bahu",
-      slug: "shrug-kaomoji",
-      description: "Shruggie klasik ¯\\_(ツ)_/¯ dan varian wajah angkat bahu lainnya.",
-      preview: "¯\\_(ツ)_/¯",
-      useCases: ["Komentar", "Caption"],
-      platforms: ["Universal", "Discord", "WhatsApp"],
-      type: "Kaomoji",
-      subject: "Emosi & Ekspresi",
-      alpha: "A"
-    },
-    {
-      title: "Simbol Fortnite",
-      slug: "simbol-fortnite",
-      description: "Simbol Fortnite sweaty ツ 亗 乂 — senyum, kanji power, dan bintang clan tag siap salin.",
-      preview: "ツ 亗 ★ ⚔ ｢★｣",
-      useCases: ["Nama Game", "Username", "Clan Tag"],
-      platforms: ["Fortnite", "Universal"],
-      type: "Dekoratif",
-      subject: "Game & Platform",
-      alpha: "F"
-    },
-    {
-      title: "Simbol Minecraft",
-      slug: "simbol-minecraft",
-      description: "Simbol chat, MOTD, dan nama server Minecraft — panah, blok shading ░▒▓, dan ikon game.",
-      preview: "► ▓ ⛏ ⚔ ☠",
-      useCases: ["Chat Server", "MOTD", "Nama Server"],
-      platforms: ["Minecraft", "Universal"],
-      type: "Simbol",
-      subject: "Game & Platform",
-      alpha: "M"
-    },
-    {
-      title: "Simbol PUBG & BGMI",
-      slug: "simbol-pubg",
-      description: "Simbol nama PUBG Mobile & BGMI ★ 彡 乂 ꧁꧂ yang teruji lolos font game, plus kombinasi nama siap pakai.",
-      preview: "★ 彡 乂 ꧁꧂",
-      useCases: ["Nama Game", "Username", "Clan Tag"],
-      platforms: ["PUBG Mobile", "BGMI", "Universal"],
-      type: "Dekoratif",
-      subject: "Game & Platform",
-      alpha: "P"
-    }
-  ];
-
-  /* ── Controlled vocabularies ── */
-  const SUBJECTS   = ["Estetik & Dekoratif","Emosi & Ekspresi","Bentuk & Geometri","Tanda & Indikator","Sains & Teknis","Budaya & Bahasa","Game & Platform","Musik & Seni","Spiritual & Kepercayaan","Alam & Hewan","Gender & Identitas"];
-  const USE_CASES  = ["Bio","Caption","Nama Game","Username","Komentar","Daftar & List","Referensi"];
-  const PLATFORMS  = ["Instagram","TikTok","WhatsApp","Facebook","Discord","Free Fire","Roblox","Universal"];
-  const TYPES      = ["Simbol","Emoji","Dekoratif","Kaomoji"];
-
-  /* ── State ── */
-  let activeSubject = null;
-  let activeUseCase = null;
-  let activePlatform = null;
-  let activeType = null;
-  let searchQuery = "";
-
-  /* ── Helpers ── */
-  function countBy(data, key, value) {
-    return data.filter(function (item) {
-      if (key === "useCases") return item.useCases.indexOf(value) !== -1;
-      if (key === "platforms") return item.platforms.indexOf(value) !== -1;
-      if (key === "type") return item.type === value;
-      if (key === "subject") return item.subject === value;
-      return false;
-    }).length;
-  }
-
-  function buildPills(containerId, vocab, key, getActive, setActive) {
-    const row = document.getElementById(containerId);
-    vocab.forEach(function (val) {
-      const total = countBy(LIBRARY, key, val);
-      if (total === 0) return;
-      const btn = document.createElement("button");
-      btn.className = "lib-pill";
-      btn.dataset.value = val;
-      btn.setAttribute("aria-pressed", "false");
-      btn.innerHTML = val + ' <span class="pill-count">(' + total + ')</span>';
-      btn.addEventListener("click", function () {
-        if (getActive() === val) {
-          setActive(null);
-        } else {
-          setActive(val);
-        }
-        render();
-      });
-      row.appendChild(btn);
-    });
-  }
-
-  function updatePillStates() {
-    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeSubject;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeUseCase;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#platformRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activePlatform;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("#typeRow .lib-pill").forEach(function (btn) {
-      const active = btn.dataset.value === activeType;
-      btn.classList.toggle("active", active);
-      btn.setAttribute("aria-pressed", String(active));
-    });
-
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    const clearBtn = document.getElementById("clearFilters");
-    clearBtn.classList.toggle("visible", !!anyFilter);
-  }
-
-  function getFiltered() {
-    return LIBRARY.filter(function (item) {
-      if (activeSubject && item.subject !== activeSubject) return false;
-      if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
-      if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
-      if (activeType && item.type !== activeType) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        if (item.title.toLowerCase().indexOf(q) === -1 &&
-            item.description.toLowerCase().indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-  }
-
-  /* ── Alphabet bar ── */
-  function buildAlphaBar(filtered) {
-    const bar = document.getElementById("alphaBar");
-    bar.innerHTML = "";
-    const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    ALPHABET.forEach(function (letter) {
-      const count = filtered.filter(function (item) { return item.alpha === letter; }).length;
-      const hasItems = count > 0;
-      const btn = document.createElement("a");
-      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
-      btn.dataset.letter = letter;
-      if (hasItems) {
-        btn.href = "#lib-letter-" + letter;
-      } else {
-        btn.setAttribute("aria-disabled", "true");
-        btn.setAttribute("tabindex", "-1");
-      }
-      btn.setAttribute("aria-label", letter + (hasItems ? " — " + count + " koleksi" : " — tidak ada koleksi"));
-      btn.innerHTML = letter + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
-      bar.appendChild(btn);
-    });
-  }
-
-  /* ── Directory render ── */
-  let letterObserver = null;
-
-  function render() {
-    const filtered = getFiltered();
-    const dir = document.getElementById("libDirectory");
-    const empty = document.getElementById("libEmpty");
-    const countEl = document.getElementById("libResultCount");
-
-    updatePillStates();
-    buildAlphaBar(filtered);
-
-    // Update result count line
-    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
-    if (anyFilter) {
-      countEl.hidden = false;
-      countEl.textContent = "Menampilkan " + filtered.length + " dari " + LIBRARY.length + " koleksi";
-    } else {
-      countEl.hidden = true;
-      countEl.textContent = "";
-    }
-
-    if (filtered.length === 0) {
-      dir.innerHTML = "";
-      empty.classList.add("visible");
-      teardownLetterObserver();
-      return;
-    }
-    empty.classList.remove("visible");
-
-    // Group by alpha
-    const groups = {};
-    filtered.forEach(function (item) {
-      if (!groups[item.alpha]) groups[item.alpha] = [];
-      groups[item.alpha].push(item);
-    });
-
-    const letters = Object.keys(groups).sort();
-    let html = "";
-    letters.forEach(function (letter) {
-      const items = groups[letter];
-      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-labelledby="lib-letter-heading-' + letter + '">';
-      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + letter + '"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></h2>';
-      items.forEach(function (item, idx) {
-        const titleId = "lib-entry-title-" + letter + "-" + idx;
-        const tags = [];
-        function tagBtn(filterKey, val, extraClass) {
-          const cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
-          const label = "Filter berdasarkan " + filterKey + ": " + val;
-          return '<button type="button" class="' + cls + '"' +
-            ' data-filter="' + escHtml(filterKey) + '"' +
-            ' data-value="' + escHtml(val) + '"' +
-            ' aria-label="' + escHtml(label) + '">' +
-            escHtml(val) + '</button>';
-        }
-        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
-        (item.useCases || []).slice(0, 3).forEach(function (uc) {
-          tags.push(tagBtn("useCases", uc));
-        });
-        (item.platforms || []).slice(0, 2).forEach(function (pl) {
-          if (pl === "Universal") return;
-          tags.push(tagBtn("platforms", pl));
-        });
-
-        html += '<article class="lib-entry">';
-        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
-          '<a class="lib-entry-title-link" href="/id/library/' + encodeURIComponent(item.slug) + '/">' +
-          escHtml(item.title) + '</a></h3>';
-        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
-        html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
-        if (tags.length) {
-          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
-        }
-        html += '</article>';
-      });
-      html += '</section>';
-    });
-
-    dir.innerHTML = html;
-
-    setupLetterObserver();
-  }
-
-  /* ── Active letter highlighting ── */
-  function teardownLetterObserver() {
-    if (letterObserver) {
-      letterObserver.disconnect();
-      letterObserver = null;
-    }
-    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
-      el.classList.remove("is-current");
-    });
-  }
-
-  function setupLetterObserver() {
-    teardownLetterObserver();
-    if (!("IntersectionObserver" in window)) return;
-
-    const sections = document.querySelectorAll(".lib-letter-section");
-    if (!sections.length) return;
-
-    const visible = {};
-    letterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        const id = entry.target.id; // lib-letter-X
-        const letter = id.replace("lib-letter-", "");
-        if (entry.isIntersecting) {
-          visible[letter] = entry.intersectionRatio;
-        } else {
-          delete visible[letter];
-        }
-      });
-
-      // Pick the topmost visible letter
-      let current = null;
-      let topY = Infinity;
-      Object.keys(visible).forEach(function (letter) {
-        const el = document.getElementById("lib-letter-" + letter);
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < topY) {
-          topY = rect.top;
-          current = letter;
-        }
-      });
-
-      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
-        btn.classList.toggle("is-current", btn.dataset.letter === current);
-      });
-    }, {
-      // Top offset accounts for the sticky alpha bar (~80px tall);
-      // bottom offset prevents the next section from activating too early.
-      rootMargin: "-80px 0px -60% 0px",
-      threshold: [0, 0.25, 0.5, 1]
-    });
-
-    sections.forEach(function (sec) { letterObserver.observe(sec); });
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function clearAll() {
-    activeSubject = null;
-    activeUseCase = null;
-    activePlatform = null;
-    activeType = null;
-    searchQuery = "";
-    document.getElementById("libSearch").value = "";
-    render();
-  }
-
-  /* ── Init ── */
-  buildPills("subjectRow", SUBJECTS, "subject",
-    function () { return activeSubject; },
-    function (v) { activeSubject = v; });
-
-  buildPills("useCaseRow", USE_CASES, "useCases",
-    function () { return activeUseCase; },
-    function (v) { activeUseCase = v; });
-
-  buildPills("platformRow", PLATFORMS, "platforms",
-    function () { return activePlatform; },
-    function (v) { activePlatform = v; });
-
-  buildPills("typeRow", TYPES, "type",
-    function () { return activeType; },
-    function (v) { activeType = v; });
-
-  document.getElementById("libSearch").addEventListener("input", function () {
-    searchQuery = this.value.trim();
-    render();
-  });
-
-  document.getElementById("clearFilters").addEventListener("click", clearAll);
-  document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
-
-  /* ── Tag-button → filter (event delegation) ── */
-  document.getElementById("libDirectory").addEventListener("click", function (e) {
-    const btn = e.target.closest && e.target.closest(".lib-entry-tag");
-    if (!btn) return;
-    const key = btn.dataset.filter;
-    const val = btn.dataset.value;
-    if (!key || !val) return;
-    if (key === "type") {
-      activeType = (activeType === val) ? null : val;
-    } else if (key === "useCases") {
-      activeUseCase = (activeUseCase === val) ? null : val;
-    } else if (key === "platforms") {
-      activePlatform = (activePlatform === val) ? null : val;
-    } else {
-      return;
-    }
-    render();
-  });
-
-  /* ── Back-to-top ── */
-  const backTop = document.getElementById("libBackTop");
-  if (backTop) {
-    const toggleBackTop = function () {
-      if (window.scrollY > 600) {
-        backTop.classList.add("visible");
-      } else {
-        backTop.classList.remove("visible");
-      }
-    };
-    window.addEventListener("scroll", toggleBackTop, { passive: true });
-    backTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    toggleBackTop();
-  }
-
-  /* ── ItemList JSON-LD (SEO) ── */
-  function injectItemListJsonLd() {
-    const itemListElement = LIBRARY.map(function (item, idx) {
-      return {
-        "@type": "ListItem",
-        "position": idx + 1,
-        "url": "https://ultratextgen.com/id/library/" + item.slug + "/",
-        "name": item.title
-      };
-    });
-    const data = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Perpustakaan Simbol UltraTextGen",
-      "url": "https://ultratextgen.com/id/library/",
-      "numberOfItems": LIBRARY.length,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "itemListElement": itemListElement
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
-  }
-  injectItemListJsonLd();
-
-  render();
-})();
-</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

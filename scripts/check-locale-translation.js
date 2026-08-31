@@ -109,6 +109,46 @@ function blobAt(rev, rel) {
 }
 
 /**
+ * Is this file byte-identical to a version that already existed in the
+ * repository's own history, before the merge base?
+ *
+ * The delta rule below infers "this branch introduced English" from "surviving
+ * now, not surviving at the merge base". That inference INVERTS on a deliberate
+ * revert: restoring a page to a state the site previously shipped necessarily
+ * re-introduces whatever English that state carried, so the gate reads the
+ * restoration exactly like a regression. Same failure check-translation-parity.js
+ * documents for repairs, where convergedTowards() measures the thing the rule is
+ * about instead of inferring it from "one side moved".
+ *
+ * The honest predicate is content identity, not similarity: a page whose exact
+ * bytes already existed in history is being restored, not written. A hand-edit
+ * that puts English back produces a blob matching nothing in history, and still
+ * fails — verified against exactly that probe.
+ *
+ * Restorations are REPORTED in their own section, never silenced.
+ */
+const HISTORY_DEPTH = 200;
+function restoredFromHistory(rel, currentBlob) {
+  let revs;
+  try {
+    revs = git(['log', `--max-count=${HISTORY_DEPTH}`, '--format=%H', mergeBase, '--', rel])
+      .trim().split('\n').filter(Boolean);
+  } catch {
+    return null;
+  }
+  for (const rev of revs) {
+    let blob;
+    try {
+      blob = git(['rev-parse', `${rev}:${rel}`], { stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    } catch {
+      continue;
+    }
+    if (blob === currentBlob) return rev.slice(0, 8);
+  }
+  return null;
+}
+
+/**
  * Measure the DELTA, not the state — the same reasoning check-translation-parity.js
  * applies with convergedTowards().
  *
@@ -125,6 +165,7 @@ function blobAt(rev, rel) {
  */
 const flagged = [];
 const preExisting = [];
+const restored = [];
 const noParent = [];
 let checked = 0;
 let ledgeredTotal = 0;
@@ -162,16 +203,37 @@ for (const rel of changedFiles) {
 
   const introduced = result.survivors.filter((s) => !priorSurvivors.has(s));
   const carried = result.survivors.filter((s) => priorSurvivors.has(s));
-  if (introduced.length) flagged.push({ rel, ...result, survivors: introduced, carried });
-  else if (carried.length) preExisting.push({ rel, count: carried.length });
+  if (introduced.length) {
+    const blob = git(['rev-parse', `HEAD:${rel}`], { stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    const from = restoredFromHistory(rel, blob);
+    if (from) restored.push({ rel, count: introduced.length, from });
+    else flagged.push({ rel, ...result, survivors: introduced, carried });
+  } else if (carried.length) {
+    preExisting.push({ rel, count: carried.length });
+  }
 }
 
 console.log(`  locale pages checked: ${checked}`);
 console.log(`  English introduced:   ${flagged.length}`);
+if (restored.length) console.log(`  restored from history (not introduced): ${restored.length}`);
 if (preExisting.length) console.log(`  pre-existing (not this branch's): ${preExisting.length}`);
 if (noParent.length) console.log(`  no EN parent (skipped): ${noParent.length}`);
 if (ledgeredTotal) console.log(`  ledgered identities:  ${ledgeredTotal}`);
 console.log('');
+
+if (restored.length) {
+  const shown = restored.slice().sort((a, b) => b.count - a.count).slice(0, MAX_SHOWN);
+  console.log(
+    `\nReported, not failed — ${restored.length} page(s) were RESTORED to a state\n` +
+    'this repository already shipped. Their bytes are identical to a prior commit, so\n' +
+    'the English they carry was not written by this branch. A hand-edit that put\n' +
+    'English back would match no historical blob and would still fail.'
+  );
+  for (const r of shown) console.log(`    \u00b7 ${r.rel} (${r.count}) \u2190 ${r.from}`);
+  if (restored.length > shown.length) {
+    console.log(`    \u2026 and ${restored.length - shown.length} more`);
+  }
+}
 
 if (preExisting.length) {
   const shown = preExisting
