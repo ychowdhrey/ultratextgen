@@ -73,6 +73,48 @@
     ],
     "cs": [
       {
+        "string": "Emoji?",
+        "reason": "\"Emoji\" is the loanword this locale itself uses in running prose on the same page",
+        "found_on": "cs/guide/kde-funguje-pismo-na-discordu/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Markdown",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "cs/guide/formatovani-textu-na-discordu/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Markdown?",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "cs/guide/kde-funguje-pismo-na-discordu/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Nitro Display Name Styles",
+        "reason": "\"Nitro Display Name Styles\" is Discord's own product feature name, cited as such",
+        "found_on": "cs/guide/formatovani-textu-na-discordu/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Story",
+        "reason": "social-platform surface name; this locale uses the English term for the feature",
+        "found_on": "cs/pismo-pro-instagram/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo",
+        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
+        "found_on": "cs/guide/bezpecny-nick-na-discordu/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/cs/usecase/pismo-pro-bio/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "🎮 Discord",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
         "found_on": "/cs/usecase/pismo-pro-bio/",
@@ -106,48 +148,6 @@
         "string": "🔥 Tinder",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
         "found_on": "/cs/usecase/pismo-pro-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Emoji?",
-        "reason": "\"Emoji\" is the loanword this locale itself uses in running prose on the same page",
-        "found_on": "cs/guide/kde-funguje-pismo-na-discordu/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "cs/guide/formatovani-textu-na-discordu/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown?",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "cs/guide/kde-funguje-pismo-na-discordu/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Nitro Display Name Styles",
-        "reason": "\"Nitro Display Name Styles\" is Discord's own product feature name, cited as such",
-        "found_on": "cs/guide/formatovani-textu-na-discordu/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Story",
-        "reason": "social-platform surface name; this locale uses the English term for the feature",
-        "found_on": "cs/pismo-pro-instagram/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/cs/usecase/pismo-pro-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Zalgo",
-        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
-        "found_on": "cs/guide/bezpecny-nick-na-discordu/",
         "added": "2026-08-25"
       }
     ],
@@ -419,84 +419,6 @@
     ],
     "de": [
       {
-        "string": "« » Guillemets",
-        "reason": "character name that coincides with the English form in this language. Evidence from de/symbol/anfuehrungszeichen/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Öffnendes Anführungszeichen (U+201E) — Double Low-9 Quotation Mark, das tiefe öffnende „; Left Double Quotation Mark → Schließendes Anführungszeichen (U+201C) — Left Double Quotation Mark, im Deutschen das hohe schließende “; Single Low-9 Quotation Mark → Einfaches öffnendes (U+201A) — Single Low-9 Quotation Mark, für die Verschachtelung), so this one is kept because it genuinely matches.",
-        "found_on": "de/symbol/anfuehrungszeichen/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "↩️ Emoji → Text",
-        "reason": "mode-tab label; the arrow and both nouns are identical in German",
-        "found_on": "de/usecase/emoji-buchstaben/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "'aesthetic' is the established German loanword for this style — the site's own de/aesthetic-schrift/ carries the H1 'Aesthetic Schrift Generator'",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📟 Retro / Pixel",
-        "reason": "'Retro' and 'Pixel' are both ordinary German words spelled identically to the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "de/library/islamische-symbole/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Alpha",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
@@ -647,16 +569,16 @@
         "added": "2026-08-25"
       },
       {
-        "string": "Emoji → Text",
-        "reason": "mode-tab label; the arrow and both nouns are identical in German",
-        "found_on": "de/usecase/emoji-buchstaben/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Emoji Combos",
         "reason": "both words are used untranslated in German",
         "found_on": "de/library/geschenk-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "Emoji → Text",
+        "reason": "mode-tab label; the arrow and both nouns are identical in German",
+        "found_on": "de/usecase/emoji-buchstaben/",
+        "added": "2026-08-25"
       },
       {
         "string": "Emoji?",
@@ -674,18 +596,6 @@
         "string": "Epsilon",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
         "added": "2026-08-25"
       },
       {
@@ -737,22 +647,16 @@
         "added": "2026-08-25"
       },
       {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
+        "string": "HTML Entities",
+        "reason": "the HTML spec term, cited as such — the same page writes \"Zeichen-Entities\" in German prose and keeps the spec name for the entities themselves",
+        "found_on": "de/library/html-entities/",
+        "added": "2026-08-30"
       },
       {
         "string": "Hiragana",
         "reason": "Japanese script name, cited unchanged in this language",
         "found_on": "de/library/japanische-symbole/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "HTML Entities",
-        "reason": "the HTML spec term, cited as such — the same page writes \"Zeichen-Entities\" in German prose and keeps the spec name for the entities themselves",
-        "found_on": "de/library/html-entities/",
-        "added": "2026-08-30"
       },
       {
         "string": "Information",
@@ -779,22 +683,10 @@
         "added": "2026-08-25"
       },
       {
-        "string": "iPhone Emojis",
-        "reason": "Apple product name plus \"Emojis\", the German plural this locale uses throughout",
-        "found_on": "de/library/iphone-emojis/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Joker",
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/clown-emoji/",
         "added": "2026-08-15"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
       },
       {
         "string": "Joystick",
@@ -1229,12 +1121,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Venus",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from de/library/sternzeichen-symbole/ itself: the tiles around it are translated (Mercury → Merkur; Earth → Erde; Last Quarter Moon → Abnehmender Halbmond), so this one is kept because it genuinely matches.",
         "found_on": "de/library/sternzeichen-symbole/",
@@ -1251,12 +1137,6 @@
         "reason": "identical noun in German",
         "found_on": "de/library/anime-symbole/",
         "added": "2026-08-15"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/de/usecase/bio-schriftart/",
-        "added": "2026-08-25"
       },
       {
         "string": "XOXO",
@@ -1289,12 +1169,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "zeta",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Zeta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from de/library/mathe-symbole/ itself: the tiles around it are translated (Empty Set → Leere Menge; Intersection → Schnittmenge; Union → Vereinigung), so this one is kept because it genuinely matches.",
         "found_on": "de/library/mathe-symbole/",
@@ -1305,15 +1179,135 @@
         "reason": "loanword, spelled identically in German",
         "found_on": "de/library/teufel-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone Emojis",
+        "reason": "Apple product name plus \"Emojis\", the German plural this locale uses throughout",
+        "found_on": "de/library/iphone-emojis/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "zeta",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "« » Guillemets",
+        "reason": "character name that coincides with the English form in this language. Evidence from de/symbol/anfuehrungszeichen/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Öffnendes Anführungszeichen (U+201E) — Double Low-9 Quotation Mark, das tiefe öffnende „; Left Double Quotation Mark → Schließendes Anführungszeichen (U+201C) — Left Double Quotation Mark, im Deutschen das hohe schließende “; Single Low-9 Quotation Mark → Einfaches öffnendes (U+201A) — Single Low-9 Quotation Mark, für die Verschachtelung), so this one is kept because it genuinely matches.",
+        "found_on": "de/symbol/anfuehrungszeichen/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "↩️ Emoji → Text",
+        "reason": "mode-tab label; the arrow and both nouns are identical in German",
+        "found_on": "de/usecase/emoji-buchstaben/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established German loanword for this style — the site's own de/aesthetic-schrift/ carries the H1 'Aesthetic Schrift Generator'",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'Retro' and 'Pixel' are both ordinary German words spelled identically to the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/de/usecase/bio-schriftart/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "de/library/islamische-symbole/",
+        "added": "2026-08-25"
       }
     ],
     "es": [
-      {
-        "string": "⚔️ Gaming",
-        "reason": "the decorated form of the \"Gaming\" tab above",
-        "found_on": "es/usecase/letras-para-bio/",
-        "added": "2026-08-30"
-      },
       {
         "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
         "reason": "Spanish for & is \"ampersand\" (RAE); the prefix is the ASCII code in four bases. nl/pl carry the identical form",
@@ -1363,15 +1357,15 @@
         "added": "2026-08-30"
       },
       {
-        "string": "Allez les Bleus",
-        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
-        "found_on": "es/library/emoji-francia/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Allez Sénégal",
         "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
         "found_on": "es/library/emoji-senegal/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "Allez les Bleus",
+        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
+        "found_on": "es/library/emoji-francia/",
         "added": "2026-08-30"
       },
       {
@@ -1615,12 +1609,6 @@
         "added": "2026-08-30"
       },
       {
-        "string": "cringe",
-        "reason": "the lowercase in-page anchor to the same section",
-        "found_on": "es/library/emojis-de-caras/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Cristiano Ronaldo",
         "reason": "footballer, club or national-team proper name, quoted as-is. Note on diacritics: this site renders every player name in ASCII site-wide (33 \"Mbappe\", 29 \"Suarez\", 29 \"Modric\", 39 \"Vinicius\", including in its own URL slugs and on the Portuguese pages), so the unaccented spelling here is the house convention rather than an untranslated English string. Spanish sports media does accent Mbappe and Suarez; whether to change the convention site-wide is an open question, not a translation defect, and \"Victor Osimhen\" is Nigerian and correctly carries no accent in any language.",
         "found_on": "es/library/adivina-el-futbolista-por-emojis/",
@@ -1813,15 +1801,15 @@
         "added": "2026-08-30"
       },
       {
-        "string": "Força Portugal",
-        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
-        "found_on": "es/library/emoji-portugal/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Forza Italia",
         "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
         "found_on": "es/library/emoji-italia/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "Força Portugal",
+        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
+        "found_on": "es/library/emoji-portugal/",
         "added": "2026-08-30"
       },
       {
@@ -1831,10 +1819,10 @@
         "added": "2026-08-30"
       },
       {
-        "string": "freaky",
-        "reason": "the lowercase in-page anchor to the same section",
-        "found_on": "es/library/emojis-de-caras/",
-        "added": "2026-08-30"
+        "string": "GOAT Status",
+        "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
+        "found_on": "es/library/emojis-brainrot/",
+        "added": "2026-08-25"
       },
       {
         "string": "Galanolefki",
@@ -1847,12 +1835,6 @@
         "reason": "\"gaming\" is the ordinary Spanish loanword; de/en/fr/it/nl keep the same label",
         "found_on": "es/usecase/letras-para-bio/",
         "added": "2026-08-30"
-      },
-      {
-        "string": "GOAT Status",
-        "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
-        "found_on": "es/library/emojis-brainrot/",
-        "added": "2026-08-25"
       },
       {
         "string": "Gamma",
@@ -3031,6 +3013,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Yalla Qatar",
+        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
+        "found_on": "es/library/emoji-qatar/",
+        "added": "2026-08-30"
+      },
+      {
         "string": "Yalla Saudi",
         "reason": "a supporters' chant or nickname in its own language, quoted rather than translated",
         "found_on": "es/library/emoji-arabia-saudita/",
@@ -3049,10 +3037,28 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Yin Yang (Taegeuk)",
+        "reason": "the concept plus the Korean flag emblem’s own name",
+        "found_on": "es/library/emoji-corea-del-sur/",
+        "added": "2026-08-30"
+      },
+      {
         "string": "Yoga",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from es/library/emojis-de-deportes/ itself: the tiles around it are translated (Kick Scooter → Monopatín; Trophy → Trofeo; Roller Skate → Patines), so this one is kept because it genuinely matches.",
         "found_on": "es/library/emojis-de-deportes/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Yosh",
+        "reason": "a Japanese interjection quoted unchanged",
+        "found_on": "es/library/kaomoji-pulgar-arriba/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "Yuan (元)",
+        "reason": "the currency name plus its Chinese character",
+        "found_on": "es/symbol/signo-de-won/",
+        "added": "2026-08-30"
       },
       {
         "string": "Zalgo",
@@ -3079,6 +3085,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "cringe",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "es/library/emojis-de-caras/",
+        "added": "2026-08-30"
+      },
+      {
         "string": "equis",
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "es/imprimibles/abecedario-espanol/",
@@ -3089,6 +3101,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "freaky",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "es/library/emojis-de-caras/",
+        "added": "2026-08-30"
       },
       {
         "string": "glitch",
@@ -3131,6 +3149,12 @@
         "reason": "'celestial' is an ordinary Spanish adjective spelled identically to the English",
         "found_on": "/es/usecase/letras-para-bio/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the decorated form of the \"Gaming\" tab above",
+        "found_on": "es/usecase/letras-para-bio/",
+        "added": "2026-08-30"
       },
       {
         "string": "✨ Aesthetic",
@@ -3191,39 +3215,9 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "es/library/simbolos-islamicos/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "Yalla Qatar",
-        "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
-        "found_on": "es/library/emoji-qatar/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "Yin Yang (Taegeuk)",
-        "reason": "the concept plus the Korean flag emblem’s own name",
-        "found_on": "es/library/emoji-corea-del-sur/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "Yosh",
-        "reason": "a Japanese interjection quoted unchanged",
-        "found_on": "es/library/kaomoji-pulgar-arriba/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "Yuan (元)",
-        "reason": "the currency name plus its Chinese character",
-        "found_on": "es/symbol/signo-de-won/",
-        "added": "2026-08-30"
       }
     ],
     "fi": [
-      {
-        "string": "˖ tiny ˖ Plus",
-        "reason": "the decoration chip renders its example and its label adjacent, so the extracted string is the glyph run plus the label \"Plus\", which is the Finnish word too",
-        "found_on": "fi/pieni-teksti/",
-        "added": "2026-08-30"
-      },
       {
         "string": "Jupiter",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from fi/library/horoskooppimerkit/ itself: the tiles around it are translated (Saturn → Saturnus; Earth → Maa; Neptune → Neptunus), so this one is kept because it genuinely matches.",
@@ -3283,69 +3277,15 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "fi/guide/turvallinen-discord-nimimerkki/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "˖ tiny ˖ Plus",
+        "reason": "the decoration chip renders its example and its label adjacent, so the extracted string is the glyph run plus the label \"Plus\", which is the Finnish word too",
+        "found_on": "fi/pieni-teksti/",
+        "added": "2026-08-30"
       }
     ],
     "fr": [
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "fr/library/symboles-islamiques/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "'aesthetic' is the established French loanword for this style — cf. the site's own fr/ecriture-aesthetic/",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "fr/library/symboles-islamiques/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "fr/library/symboles-islamiques/",
-        "added": "2026-08-25"
-      },
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "French for ~ is \"tilde\"; the prefix is the ASCII code in four bases. de/it/nl carry the identical form",
@@ -3551,18 +3491,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "fr/imprimables/alphabet-espagnol/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "fr/imprimables/alphabet-espagnol/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Ethereum",
         "reason": "currency name that coincides with the English form in this language. Evidence from fr/library/symboles-monetaires/ itself: the tiles around it are translated (Per Ten Thousand → Pour dix mille; Euro-Currency → Euro-monnaie; Per Mille → Pour mille), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-monetaires/",
@@ -3593,21 +3521,9 @@
         "added": "2026-08-25"
       },
       {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "fr/usecase/zalgo-text/",
-        "added": "2026-08-21"
-      },
-      {
         "string": "Guides",
         "reason": "the French word is identical; footer.js and header.js both use it for this locale",
         "found_on": "fr/answers/comment-faire-un-pseudo-vide/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "fr/imprimables/alphabet-espagnol/",
         "added": "2026-08-25"
       },
       {
@@ -3650,12 +3566,6 @@
         "string": "JavaScript / regex",
         "reason": "code or platform literal cited verbatim",
         "found_on": "fr/symbol/symbole-dollar/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "fr/imprimables/alphabet-espagnol/",
         "added": "2026-08-25"
       },
       {
@@ -4031,6 +3941,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 590/mo in the FR database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "fr/library/text-art/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "fr/police-snapchat/",
@@ -4085,12 +4001,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "fr/imprimables/alphabet-espagnol/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Vesta",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from fr/library/symboles-witchy-occult/ itself: the tiles around it are translated (Juno → Junon; Ceres → Cérès; Fire → Feu), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-witchy-occult/",
@@ -4106,12 +4016,6 @@
         "string": "Vitriol II",
         "reason": "alchemical name that coincides with the English form in this language. Evidence from fr/library/symboles-witchy-occult/ itself: the tiles around it are translated (Gold → Or; Salt Ammoniac → Sel Ammoniac; Silver → Argent), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-witchy-occult/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/fr/usecase/ecriture-bio/",
         "added": "2026-08-25"
       },
       {
@@ -4151,9 +4055,111 @@
         "added": "2026-08-25"
       },
       {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texte Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "zeta",
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "fr/imprimables/alphabet-espagnol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "fr/library/symboles-islamiques/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established French loanword for this style — cf. the site's own fr/ecriture-aesthetic/",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/fr/usecase/ecriture-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "fr/library/symboles-islamiques/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "fr/library/symboles-islamiques/",
         "added": "2026-08-25"
       }
     ],
@@ -4254,30 +4260,6 @@
       }
     ],
     "id": [
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "id/library/simbol-islami/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "❄️☃️❄️ Let It Snow ❄️☃️❄️",
-        "reason": "a clipboard payload that is deliberately the English greeting — the page labels it \"Ucapan Let It Snow\" in Indonesian and offers \"Selamat Natal\" separately as the Indonesian one",
-        "found_on": "id/library/simbol-natal/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "id/library/simbol-islami/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "id/library/simbol-islami/",
-        "added": "2026-08-25"
-      },
       {
         "string": "Alien",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from id/library/emoji-wajah/ itself: the tiles around it are translated (Ghost → Hantu; Goblin → Goblin Tengu; Jack-O-Lantern → Labu Halloween), so this one is kept because it genuinely matches.",
@@ -4453,12 +4435,6 @@
         "added": "2026-08-30"
       },
       {
-        "string": "cringe",
-        "reason": "the lowercase in-page anchor to the \"Cringe\" section above",
-        "found_on": "id/library/emoji-wajah/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Dark Coquette",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "id/library/simbol-coquette/",
@@ -4543,15 +4519,15 @@
         "added": "2026-08-25"
       },
       {
-        "string": "Fleur-de-lis",
-        "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
-        "found_on": "id/library/karakter-spesial/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Fleur-de-Lis",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "id/library/simbol-ff/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Fleur-de-lis",
+        "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
+        "found_on": "id/library/karakter-spesial/",
         "added": "2026-08-25"
       },
       {
@@ -4582,12 +4558,6 @@
         "string": "Guaraní",
         "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (Cent → Sen; Tamil Rupee → Rupee Tamil; German Penny → Pfennig Jerman), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-mata-uang/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "id/printables/alfabet-spanyol/",
         "added": "2026-08-25"
       },
       {
@@ -4636,12 +4606,6 @@
         "string": "Interrobang",
         "reason": "\"Interrobang\" is a coined name borrowed whole: this locale's own /symbol/ page for it inflects the word as a native noun (\"L'interrobang\", \"El interrobang\", \"Der Interrobang\", \"De interrobang\", \"O interrobang\")",
         "found_on": "id/library/simbol-tanda-baca/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "id/printables/alfabet-spanyol/",
         "added": "2026-08-25"
       },
       {
@@ -4711,16 +4675,16 @@
         "added": "2026-08-25"
       },
       {
-        "string": "Lari",
-        "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (Turkish Lira → Lira Turki; French Franc → Franc Prancis; Ruble → Rubel), so this one is kept because it genuinely matches.",
-        "found_on": "id/library/simbol-mata-uang/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "LaTeX (math mode)",
         "reason": "LaTeX is the typesetting system and \"math mode\" its own named mode; cited as an identifier in a code-reference table",
         "found_on": "id/symbol/simbol-sigma/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "Lari",
+        "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (Turkish Lira → Lira Turki; French Franc → Franc Prancis; Ruble → Rubel), so this one is kept because it genuinely matches.",
+        "found_on": "id/library/simbol-mata-uang/",
+        "added": "2026-08-25"
       },
       {
         "string": "Leftwards Thumb Sign",
@@ -5191,108 +5155,66 @@
         "added": "2026-08-25"
       },
       {
+        "string": "cringe",
+        "reason": "the lowercase in-page anchor to the \"Cringe\" section above",
+        "found_on": "id/library/emoji-wajah/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "id/printables/alfabet-spanyol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "id/printables/alfabet-spanyol/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "zeta",
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "id/printables/alfabet-spanyol/",
         "added": "2026-08-25"
-      }
-    ],
-    "it": [
-      {
-        "string": "@Username",
-        "reason": "Snapchat’s own field name, cited as the label the app shows",
-        "found_on": "it/font-snapchat/",
-        "added": "2026-08-30"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "it/library/simboli-islamici/",
+        "found_on": "id/library/simbol-islami/",
         "added": "2026-08-25"
       },
       {
-        "string": "⚔️ Gaming",
-        "reason": "the decorated form of the \"Gaming\" tab above",
-        "found_on": "it/usecase/font-per-bio/",
+        "string": "❄️☃️❄️ Let It Snow ❄️☃️❄️",
+        "reason": "a clipboard payload that is deliberately the English greeting — the page labels it \"Ucapan Let It Snow\" in Indonesian and offers \"Selamat Natal\" separately as the Indonesian one",
+        "found_on": "id/library/simbol-natal/",
         "added": "2026-08-30"
-      },
-      {
-        "string": "✦ Cool",
-        "reason": "Italian borrows \"cool\" unchanged in this register; de/fr/nl/pl keep the same tab label",
-        "found_on": "it/font-snapchat/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "'aesthetic' is the established Italian loanword for this style — cf. the site's own it/scritte-aesthetic/",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📟 Retro / Pixel",
-        "reason": "'retro' and 'pixel' are both ordinary Italian words spelled identically to the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
-        "added": "2026-08-25"
       },
       {
         "string": "🕌✨ Eid Mubarak ✨🕌",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "it/library/simboli-islamici/",
+        "found_on": "id/library/simbol-islami/",
         "added": "2026-08-25"
       },
       {
         "string": "🤲📿 Jumma Mubarak 📿🤲",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "it/library/simboli-islamici/",
+        "found_on": "id/library/simbol-islami/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "🫧 Bubble",
-        "reason": "\"bubble\" is the Italian name of this lettering style; de/en/fr/pt/tl keep the same mood tab",
-        "found_on": "it/usecase/font-per-bio/",
-        "added": "2026-08-30"
-      },
+      }
+    ],
+    "it": [
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "a codepoint line; Tilde is also the Italian word",
         "found_on": "it/library/tabella-ascii/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "@Username",
+        "reason": "Snapchat’s own field name, cited as the label the app shows",
+        "found_on": "it/font-snapchat/",
+        "added": "2026-08-30"
       },
       {
         "string": "Aesthetic",
@@ -5361,12 +5283,6 @@
         "added": "2026-08-30"
       },
       {
-        "string": "cringe",
-        "reason": "the lowercase in-page anchor to the same section",
-        "found_on": "it/library/emoji-faccine/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Cupcake",
         "reason": "loanword, spelled identically in Italian",
         "found_on": "it/library/emoji-regalo/",
@@ -5406,18 +5322,6 @@
         "string": "Epsilon",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from it/library/simboli-matematici/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Insieme vuoto; Intersection → Intersezione), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-matematici/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
         "added": "2026-08-25"
       },
       {
@@ -5463,12 +5367,6 @@
         "added": "2026-08-30"
       },
       {
-        "string": "freaky",
-        "reason": "the lowercase in-page anchor to the same section",
-        "found_on": "it/library/emoji-faccine/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Gaming",
         "reason": "\"gaming\" is the ordinary Italian loanword; de/en/es/fr/nl keep the same tab label",
         "found_on": "it/usecase/font-per-bio/",
@@ -5479,12 +5377,6 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from it/library/simboli-matematici/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Insieme vuoto; Intersection → Intersezione), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-matematici/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "it/usecase/zalgo-text/",
-        "added": "2026-08-19"
       },
       {
         "string": "Goblin",
@@ -5502,12 +5394,6 @@
         "string": "Guide",
         "reason": "\"Guide\" is the Italian plural of \"guida\" — identical by correctness, not a miss",
         "found_on": "it/category/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
         "added": "2026-08-25"
       },
       {
@@ -5538,12 +5424,6 @@
         "string": "JavaScript / regex",
         "reason": "code or platform literal cited verbatim",
         "found_on": "it/symbol/simbolo-dollaro/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
         "added": "2026-08-25"
       },
       {
@@ -5835,21 +5715,9 @@
         "added": "2026-08-30"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Vesta",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from it/library/simboli-witchy-occult/ itself: the tiles around it are translated (Juno → Giunone; Quintessence → Quintessenza; Pallas → Pallade), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-witchy-occult/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/it/usecase/font-per-bio/",
         "added": "2026-08-25"
       },
       {
@@ -5889,12 +5757,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "zeta",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "it/da-stampare/alfabeto-spagnolo/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Zeta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from it/library/simboli-matematici/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Insieme vuoto; Intersection → Intersezione), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-matematici/",
@@ -5905,9 +5767,183 @@
         "reason": "loanword, spelled identically in Italian",
         "found_on": "it/library/emoji-diavolo/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "cringe",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "it/library/emoji-faccine/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "freaky",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "it/library/emoji-faccine/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Testo Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-08-19"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "zeta",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "it/da-stampare/alfabeto-spagnolo/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "it/library/simboli-islamici/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the decorated form of the \"Gaming\" tab above",
+        "found_on": "it/usecase/font-per-bio/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "✦ Cool",
+        "reason": "Italian borrows \"cool\" unchanged in this register; de/fr/nl/pl keep the same tab label",
+        "found_on": "it/font-snapchat/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "'aesthetic' is the established Italian loanword for this style — cf. the site's own it/scritte-aesthetic/",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'retro' and 'pixel' are both ordinary Italian words spelled identically to the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/it/usecase/font-per-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "it/library/simboli-islamici/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "it/library/simboli-islamici/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🫧 Bubble",
+        "reason": "\"bubble\" is the Italian name of this lettering style; de/en/fr/pt/tl keep the same mood tab",
+        "found_on": "it/usecase/font-per-bio/",
+        "added": "2026-08-30"
       }
     ],
     "ja": [
+      {
+        "string": "Apple",
+        "reason": "code or platform literal cited verbatim",
+        "found_on": "ja/symbol/karendaa-emoji/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Microsoft",
+        "reason": "code or platform literal cited verbatim",
+        "found_on": "ja/symbol/karendaa-emoji/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Poppins",
+        "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
+        "found_on": "/ja/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "X/Twitter",
+        "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
+        "found_on": "ja/mojisu-kaunto/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "XOXO",
+        "reason": "an initialism, kept in Latin script in Japanese copy",
+        "found_on": "ja/library/kisu-emoji/",
+        "added": "2026-08-15"
+      },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
@@ -5955,57 +5991,9 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "ja/library/islamic-symbols/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "Apple",
-        "reason": "code or platform literal cited verbatim",
-        "found_on": "ja/symbol/karendaa-emoji/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Microsoft",
-        "reason": "code or platform literal cited verbatim",
-        "found_on": "ja/symbol/karendaa-emoji/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Poppins",
-        "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
-        "found_on": "/ja/answers/what-font-does-pinterest-use/",
-        "added": "2026-08-21"
-      },
-      {
-        "string": "X/Twitter",
-        "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
-        "found_on": "ja/mojisu-kaunto/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "XOXO",
-        "reason": "an initialism, kept in Latin script in Japanese copy",
-        "found_on": "ja/library/kisu-emoji/",
-        "added": "2026-08-15"
       }
     ],
     "ko": [
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ko/library/islam-gihou/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ko/library/islam-gihou/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ko/library/islam-gihou/",
-        "added": "2026-08-25"
-      },
       {
         "string": "Caught in 4K",
         "reason": "an English meme phrase quoted as the phrase itself — translating it would stop it being the meme",
@@ -6077,6 +6065,24 @@
         "reason": "provisional Unicode 18.0 candidate name, cited as the Consortium publishes it — the table column is \"Candidate\" and the next column carries the locale's own description",
         "found_on": "ko/updates/unicode-18-imoji-tupyo/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ko/library/islam-gihou/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ko/library/islam-gihou/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ko/library/islam-gihou/",
+        "added": "2026-08-25"
       }
     ],
     "ms": [
@@ -6124,84 +6130,6 @@
       }
     ],
     "nl": [
-      {
-        "string": "« » Guillemets",
-        "reason": "character name that coincides with the English form in this language. Evidence from nl/symbol/aanhalingsteken/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Openend dubbel (U+201E) — het lage openende teken; Right Double Quotation Mark → Sluitend dubbel (U+201D) — het hoge sluitende teken; Single Low-9 Quotation Mark → Openend enkel (U+201A) — voor een aanhaling binnen een aanhaling), so this one is kept because it genuinely matches.",
-        "found_on": "nl/symbol/aanhalingsteken/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "nl/library/islamitische-symbolen/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "⚔️ Gaming",
-        "reason": "the decorated form of the \"Gaming\" tab above",
-        "found_on": "nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "✨ Aesthetic",
-        "reason": "the decorated form of the \"Aesthetic\" tab above",
-        "found_on": "nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📟 Retro / Pixel",
-        "reason": "'retro' and 'pixel' are both ordinary Dutch words spelled identically to the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "nl/library/islamitische-symbolen/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "nl/library/islamitische-symbolen/",
-        "added": "2026-08-25"
-      },
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "a codepoint line; Tilde is also the Dutch word",
@@ -6387,12 +6315,6 @@
         "reason": "\"gaming\" is the ordinary Dutch loanword; de/en/es/fr/it keep the same label",
         "found_on": "nl/usecase/lettertype-voor-bio/",
         "added": "2026-08-30"
-      },
-      {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "nl/usecase/zalgo-text/",
-        "added": "2026-08-21"
       },
       {
         "string": "Hamsa",
@@ -6701,12 +6623,6 @@
         "added": "2026-08-15"
       },
       {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/nl/usecase/lettertype-voor-bio/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "nl/woorden-en-tekens-tellen/",
@@ -6734,6 +6650,96 @@
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "nl/onzichtbare-tekst/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "« » Guillemets",
+        "reason": "character name that coincides with the English form in this language. Evidence from nl/symbol/aanhalingsteken/ itself: the tiles around it are translated (Double Low-9 Quotation Mark (German Opening Quote) → Openend dubbel (U+201E) — het lage openende teken; Right Double Quotation Mark → Sluitend dubbel (U+201D) — het hoge sluitende teken; Single Low-9 Quotation Mark → Openend enkel (U+201A) — voor een aanhaling binnen een aanhaling), so this one is kept because it genuinely matches.",
+        "found_on": "nl/symbol/aanhalingsteken/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "nl/library/islamitische-symbolen/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "⚔️ Gaming",
+        "reason": "the decorated form of the \"Gaming\" tab above",
+        "found_on": "nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "✨ Aesthetic",
+        "reason": "the decorated form of the \"Aesthetic\" tab above",
+        "found_on": "nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📟 Retro / Pixel",
+        "reason": "'retro' and 'pixel' are both ordinary Dutch words spelled identically to the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/nl/usecase/lettertype-voor-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "nl/library/islamitische-symbolen/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "nl/library/islamitische-symbolen/",
         "added": "2026-08-25"
       }
     ],
@@ -6818,30 +6824,6 @@
       }
     ],
     "pl": [
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pl/library/symbole-islamskie/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "✦ Cool",
-        "reason": "Polish borrows \"cool\" unchanged in this register; de/fr/it/nl keep the same tab label",
-        "found_on": "pl/czcionki-na-snapchat/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pl/library/symbole-islamskie/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pl/library/symbole-islamskie/",
-        "added": "2026-08-25"
-      },
       {
         "string": "160 / segment",
         "reason": "code or platform literal cited verbatim",
@@ -6951,18 +6933,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Ethereum",
         "reason": "currency name that coincides with the English form in this language. Evidence from pl/library/symbole-walut/ itself: the tiles around it are translated (Per Ten Thousand → Bazowy punkt; Euro-Currency → Euro-waluta; Per Mille → Promil), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-walut/",
@@ -6999,12 +6969,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Hamsa",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "pl/symbol/hamsa/",
@@ -7032,12 +6996,6 @@
         "string": "Joker",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from pl/library/symbole-kart/ itself: the tiles around it are translated (Die Face 6 → Kostka — sześć oczek; Flower Playing Cards → Karty hanafuda; Die Face 5 → Kostka — pięć oczek), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-kart/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
         "added": "2026-08-25"
       },
       {
@@ -7317,12 +7275,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Whisper / Subliminal",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "pl/library/symbole-estetyczne/",
@@ -7353,12 +7305,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "zeta",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pl/do-druku/alfabet-hiszpanski/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Zeta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from pl/library/symbole-matematyczne/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Zbiór pusty; Intersection → Część wspólna (przecięcie)), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-matematyczne/",
@@ -7369,69 +7315,69 @@
         "reason": "loanword, spelled identically in Polish",
         "found_on": "pl/library/symbole-halloween/",
         "added": "2026-08-15"
-      }
-    ],
-    "pt": [
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "zeta",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pl/do-druku/alfabet-hiszpanski/",
+        "added": "2026-08-25"
+      },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pt/library/simbolos-islamicos/",
+        "found_on": "pl/library/symbole-islamskie/",
         "added": "2026-08-25"
       },
       {
-        "string": "☾ Celestial",
-        "reason": "'celestial' is an ordinary Portuguese adjective spelled identically to the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
-        "added": "2026-08-25"
+        "string": "✦ Cool",
+        "reason": "Polish borrows \"cool\" unchanged in this register; de/fr/it/nl keep the same tab label",
+        "found_on": "pl/czcionki-na-snapchat/",
+        "added": "2026-08-30"
       },
       {
         "string": "🕌✨ Eid Mubarak ✨🕌",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pt/library/simbolos-islamicos/",
+        "found_on": "pl/library/symbole-islamskie/",
         "added": "2026-08-25"
       },
       {
         "string": "🤲📿 Jumma Mubarak 📿🤲",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "pt/library/simbolos-islamicos/",
+        "found_on": "pl/library/symbole-islamskie/",
         "added": "2026-08-25"
-      },
+      }
+    ],
+    "pt": [
       {
         "string": "Ankh",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
@@ -7499,12 +7445,6 @@
         "added": "2026-08-30"
       },
       {
-        "string": "cringe",
-        "reason": "the lowercase in-page anchor to the same section",
-        "found_on": "pt/library/emojis-de-rosto/",
-        "added": "2026-08-30"
-      },
-      {
         "string": "Delta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from pt/library/simbolos-matematicos/ itself: the tiles around it are translated (Gamma → Gama; Epsilon → Épsilon; Alpha → Alfa), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-matematicos/",
@@ -7533,18 +7473,6 @@
         "reason": "Portuguese pluralises the loanword identically; all 21 Portuguese decoration tabs render \"Emojis\"",
         "found_on": "pt/usecase/* decoration tabs",
         "added": "2026-08-16"
-      },
-      {
-        "string": "equis",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "erre",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
-        "added": "2026-08-25"
       },
       {
         "string": "Ethereum",
@@ -7577,15 +7505,9 @@
         "added": "2026-08-25"
       },
       {
-        "string": "glitch",
-        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
-        "found_on": "pt/usecase/zalgo-text/",
-        "added": "2026-08-21"
-      },
-      {
-        "string": "hache",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "string": "HTML (decimal)",
+        "reason": "code or platform literal cited verbatim",
+        "found_on": "pt/symbol/simbolo-de-cadeira-de-rodas/",
         "added": "2026-08-25"
       },
       {
@@ -7604,12 +7526,6 @@
         "string": "Hryvnia",
         "reason": "currency name that coincides with the English form in this language. Evidence from pt/library/simbolos-de-moeda/ itself: the tiles around it are translated (Turkish Lira → Lira turca; Ruble → Rublo; Florin → Florim), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-de-moeda/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "HTML (decimal)",
-        "reason": "code or platform literal cited verbatim",
-        "found_on": "pt/symbol/simbolo-de-cadeira-de-rodas/",
         "added": "2026-08-25"
       },
       {
@@ -7634,12 +7550,6 @@
         "string": "Joga Bonito",
         "reason": "a supporters' chant or nickname in its own language, quoted rather than translated",
         "found_on": "pt/library/neymar-emoji-combos/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "jota",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
         "added": "2026-08-25"
       },
       {
@@ -7907,21 +7817,9 @@
         "added": "2026-08-25"
       },
       {
-        "string": "uve doble",
-        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
-        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "Vesta",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from pt/library/simbolos-witchy-occult/ itself: the tiles around it are translated (Quintessence → Quintessência; Pallas → Palas; Air → Ar), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-witchy-occult/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/pt/usecase/fontes-para-bio/",
         "added": "2026-08-25"
       },
       {
@@ -7949,15 +7847,123 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zeta",
+        "reason": "Greek letter name that coincides with the English form in this language. Evidence from pt/library/simbolos-matematicos/ itself: the tiles around it are translated (Epsilon → Épsilon; Theta → Teta; Gamma → Gama), so this one is kept because it genuinely matches.",
+        "found_on": "pt/library/simbolos-matematicos/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "cringe",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "pt/library/emojis-de-rosto/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "equis",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "erre",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "glitch",
+        "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Texto Glitch\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "hache",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "jota",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "uve doble",
+        "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
+        "found_on": "pt/imprimiveis/alfabeto-espanhol/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "zeta",
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "pt/imprimiveis/alfabeto-espanhol/",
         "added": "2026-08-25"
       },
       {
-        "string": "Zeta",
-        "reason": "Greek letter name that coincides with the English form in this language. Evidence from pt/library/simbolos-matematicos/ itself: the tiles around it are translated (Epsilon → Épsilon; Theta → Teta; Gamma → Gama), so this one is kept because it genuinely matches.",
-        "found_on": "pt/library/simbolos-matematicos/",
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "pt/library/simbolos-islamicos/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "☾ Celestial",
+        "reason": "'celestial' is an ordinary Portuguese adjective spelled identically to the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/pt/usecase/fontes-para-bio/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "pt/library/simbolos-islamicos/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "pt/library/simbolos-islamicos/",
         "added": "2026-08-25"
       }
     ],
@@ -8006,24 +8012,6 @@
       }
     ],
     "ru": [
-      {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ru/library/islamskie-simvoly/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ru/library/islamskie-simvoly/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "ru/library/islamskie-simvoly/",
-        "added": "2026-08-25"
-      },
       {
         "string": "Apple",
         "reason": "code or platform literal cited verbatim",
@@ -8089,9 +8077,63 @@
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ru/schetchik-slov-i-simvolov/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ru/library/islamskie-simvoly/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ru/library/islamskie-simvoly/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "ru/library/islamskie-simvoly/",
+        "added": "2026-08-25"
       }
     ],
     "sk": [
+      {
+        "string": "Emoji?",
+        "reason": "\"Emoji\" is the loanword this locale itself uses in running prose on the same page",
+        "found_on": "sk/guide/kde-funguje-pismo-na-discorde/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Markdown",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "sk/guide/formatovanie-textu-na-discorde/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Markdown?",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "sk/guide/kde-funguje-pismo-na-discorde/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Story",
+        "reason": "social-platform surface name; this locale uses the English term for the feature",
+        "found_on": "sk/pismo-pre-instagram/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo",
+        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
+        "found_on": "sk/guide/bezpecny-nick-na-discorde/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/sk/usecase/pismo-pre-bio/",
+        "added": "2026-08-25"
+      },
       {
         "string": "🎮 Discord",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
@@ -8126,42 +8168,6 @@
         "string": "🔥 Tinder",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
         "found_on": "/sk/usecase/pismo-pre-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Emoji?",
-        "reason": "\"Emoji\" is the loanword this locale itself uses in running prose on the same page",
-        "found_on": "sk/guide/kde-funguje-pismo-na-discorde/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "sk/guide/formatovanie-textu-na-discorde/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown?",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "sk/guide/kde-funguje-pismo-na-discorde/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Story",
-        "reason": "social-platform surface name; this locale uses the English term for the feature",
-        "found_on": "sk/pismo-pre-instagram/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/sk/usecase/pismo-pre-bio/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Zalgo",
-        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
-        "found_on": "sk/guide/bezpecny-nick-na-discorde/",
         "added": "2026-08-25"
       }
     ],
@@ -8198,48 +8204,6 @@
       }
     ],
     "sv": [
-      {
-        "string": "— (text: BD / .د.ب)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Bahraini dinar; both are the currency’s own identifiers",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: IQD / د.ع)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Iraqi dinar",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: JD / د.أ)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Jordanian dinar",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: KD / د.ك)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Kuwaiti dinar",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: LL / ل.ل)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Lebanese pound",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: LS / ل.س)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Syrian pound",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "— (text: QR / ر.ق)",
-        "reason": "ISO code plus the Arabic-script abbreviation for the Qatari riyal",
-        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
-        "added": "2026-08-30"
-      },
       {
         "string": "Asterism",
         "reason": "character name that coincides with the English form in this language. Evidence from sv/library/stjarna-symboler/ itself: the tiles around it are translated (Night with Stars → Natt med stjärnor; Two Asterisks → Två asterisker; Outlined White Star → Konturerad vit stjärna), so this one is kept because it genuinely matches.",
@@ -8605,13 +8569,109 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Tomma mängden; Intersection → Snitt (intersektion)), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "— (text: BD / .د.ب)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Bahraini dinar; both are the currency’s own identifiers",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: IQD / د.ع)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Iraqi dinar",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: JD / د.أ)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Jordanian dinar",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: KD / د.ك)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Kuwaiti dinar",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: LL / ل.ل)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Lebanese pound",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: LS / ل.س)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Syrian pound",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "— (text: QR / ر.ق)",
+        "reason": "ISO code plus the Arabic-script abbreviation for the Qatari riyal",
+        "found_on": "sv/updates/valutasymboler-mellanostern-unicode-18/",
+        "added": "2026-08-30"
       }
     ],
     "th": [
       {
+        "string": "Markdown",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "th/guide/discord-rupbaep-khokhwam/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Markdown?",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "th/guide/discord-font-thamngan-thinai/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Nitro Display Name Styles",
+        "reason": "\"Nitro Display Name Styles\" is Discord's own product feature name, cited as such",
+        "found_on": "th/guide/discord-rupbaep-khokhwam/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Poppins",
+        "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
+        "found_on": "/th/answers/what-font-does-pinterest-use/",
+        "added": "2026-08-21"
+      },
+      {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 1,000/mo in the TH database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "th/library/text-art/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "X/Twitter",
+        "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
+        "found_on": "th/nap-kham-lae-tua-akson/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo",
+        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
+        "found_on": "th/guide/discord-tang-chue-plodphai/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Zero Width",
+        "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
+        "found_on": "th/khokhwam-long-hon/",
+        "added": "2026-08-25"
+      },
+      {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "th/library/islamic-symbols/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/th/usecase/bio-font-ig/",
         "added": "2026-08-25"
       },
       {
@@ -8661,92 +8721,38 @@
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "th/library/islamic-symbols/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "th/guide/discord-rupbaep-khokhwam/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown?",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "th/guide/discord-font-thamngan-thinai/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Nitro Display Name Styles",
-        "reason": "\"Nitro Display Name Styles\" is Discord's own product feature name, cited as such",
-        "found_on": "th/guide/discord-rupbaep-khokhwam/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Poppins",
-        "reason": "typeface proper name; every locale cites it in Latin script inside otherwise fully translated prose and links to fonts.google.com/specimen/Poppins — the Latin name is what a reader needs to find the font",
-        "found_on": "/th/answers/what-font-does-pinterest-use/",
-        "added": "2026-08-21"
-      },
-      {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/th/usecase/bio-font-ig/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "X/Twitter",
-        "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
-        "found_on": "th/nap-kham-lae-tua-akson/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Zalgo",
-        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
-        "found_on": "th/guide/discord-tang-chue-plodphai/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Zero Width",
-        "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
-        "found_on": "th/khokhwam-long-hon/",
-        "added": "2026-08-25"
       }
     ],
     "tl": [
       {
-        "string": "🎮 Discord",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "*italic* → italic",
+        "reason": "a Markdown syntax example: the literal source on the left and its rendered result on the right, both code rather than prose",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
       },
       {
-        "string": "🎵 TikTok",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "About Me / bio",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours. Used 7 times on the page, always in English.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
-        "string": "💬 WhatsApp",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "Channel name (text)",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
-        "string": "📘 Facebook",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "Channel topic",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
-        "string": "📸 Instagram",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🔥 Tinder",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "Display name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours. The page's own running Tagalog prose uses \"display name\" 16 times.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
         "string": "Emoji?",
@@ -8779,73 +8785,103 @@
         "added": "2026-08-25"
       },
       {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tl/usecase/bio-font/",
-        "added": "2026-08-25"
+        "string": "Nitro styles",
+        "reason": "\"Nitro\" is Discord's own product name and \"styles\" is cited with it; the sibling string `Nitro Display Name Styles` is already recorded for tl on this page.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Role name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Server name",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Server nickname",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode \"fonts\"",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode font + symbols",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/discord-text-formatting-paliwanag/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Unicode fonts?",
+        "reason": "the loanword this locale itself uses in running prose on the same page — the page's own Tagalog meta description reads \"ang tatlong magkaibang text system ng Discord (Markdown, Unicode fonts, Nitro)\". Same reason as the `Markdown?` and `Emoji?` entries already recorded for tl on this row.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
+      },
+      {
+        "string": "Username (@handle)",
+        "reason": "Discord's own product feature name, cited as such. Discord ships no Filipino locale (verified against Discord's own developer reference — 32 locales, no fil/tl), so this is the literal text a Filipino reader sees in the app. Matches the `Nitro Display Name Styles` entry already recorded for tl on this same page family, and the `it` entry for `Username (@handle)`; ms and id keep `Username (@)` while translating its neighbours.",
+        "found_on": "tl/guide/saan-gumagana-ang-font-sa-discord/",
+        "added": "2026-08-31"
       },
       {
         "string": "Zalgo",
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "tl/guide/discord-name-na-safe/",
         "added": "2026-08-25"
-      }
-    ],
-    "tr": [
+      },
       {
-        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "tr/library/islami-semboller/",
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "🎮 Discord",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "🎵 TikTok",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "💬 WhatsApp",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "📘 Facebook",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "📸 Instagram",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
       },
       {
         "string": "🔥 Tinder",
         "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "found_on": "/tl/usecase/bio-font/",
         "added": "2026-08-25"
-      },
-      {
-        "string": "🕌✨ Eid Mubarak ✨🕌",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "tr/library/islami-semboller/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "🤲📿 Jumma Mubarak 📿🤲",
-        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "tr/library/islami-semboller/",
-        "added": "2026-08-25"
-      },
+      }
+    ],
+    "tr": [
       {
         "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
         "reason": "Turkish for ~ is \"tilde\"; the same table translates the neighbouring row to \"Kesme İşareti\"",
@@ -8957,12 +8993,6 @@
       {
         "string": "Cringe",
         "reason": "Turkish internet register borrows \"cringe\" unchanged, including in this page’s own running prose (\"Cringe anlar\")",
-        "found_on": "tr/library/yuz-emojileri/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "cringe",
-        "reason": "the lowercase in-page anchor to the same section",
         "found_on": "tr/library/yuz-emojileri/",
         "added": "2026-08-30"
       },
@@ -9351,12 +9381,6 @@
         "added": "2026-08-25"
       },
       {
-        "string": "𝕏 Twitter/X",
-        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
-        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
-        "added": "2026-08-25"
-      },
-      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "tr/karakter-sayaci/",
@@ -9391,27 +9415,75 @@
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "tr/gorunmez-karakter/",
         "added": "2026-08-25"
-      }
-    ],
-    "vi": [
+      },
+      {
+        "string": "cringe",
+        "reason": "the lowercase in-page anchor to the same section",
+        "found_on": "tr/library/yuz-emojileri/",
+        "added": "2026-08-30"
+      },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "found_on": "tr/library/islami-semboller/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "𝕏 Twitter/X",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎮 Discord",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🎵 TikTok",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "💬 WhatsApp",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📘 Facebook",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "📸 Instagram",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🔥 Tinder",
+        "reason": "platform brand proper name; this locale's own platform tabs elsewhere on the site render it in Latin script unchanged, so the correct form coincides with the English",
+        "found_on": "/tr/usecase/biyografi-yazi-tipi/",
         "added": "2026-08-25"
       },
       {
         "string": "🕌✨ Eid Mubarak ✨🕌",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "found_on": "tr/library/islami-semboller/",
         "added": "2026-08-25"
       },
       {
         "string": "🤲📿 Jumma Mubarak 📿🤲",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
-        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "found_on": "tr/library/islami-semboller/",
         "added": "2026-08-25"
-      },
+      }
+    ],
+    "vi": [
       {
         "string": "Alpha",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from vi/library/math-symbols/ itself: the tiles around it are translated (Empty Set → Tập Rỗng; Intersection → Giao; Union → Hợp), so this one is kept because it genuinely matches.",
@@ -9536,12 +9608,6 @@
         "string": "Gothic",
         "reason": "Vietnamese names this lettering style \"Gothic\"; the same page translates the other five (Chữ đậm, In nghiêng, Chữ viết tay, Bong bóng), and id/ms keep it too",
         "found_on": "vi/font-discord/",
-        "added": "2026-08-30"
-      },
-      {
-        "string": "gothic",
-        "reason": "lowercase, in running prose and meta, for the same style name",
-        "found_on": "vi/font-roblox/",
         "added": "2026-08-30"
       },
       {
@@ -9779,6 +9845,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Text Art",
+        "reason": "the untranslated English \"text art\" is what this market actually searches for the picture-built-from-characters job — Semrush 480/mo in the VN database (directly-fetched, 2026-08-15). The obvious native alternatives denote stylised LETTERING, a different concept this locale already owns elsewhere, so renaming into them would be both semantically wrong and a hub-vs-spoke collision. Turkish is the control: it uses the native compound `yazı sanatı` and is not ledgered.",
+        "found_on": "vi/library/text-art/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "Theta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from vi/library/math-symbols/ itself: the tiles around it are translated (Empty Set → Tập Rỗng; Intersection → Giao; Union → Hợp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/math-symbols/",
@@ -9831,9 +9903,45 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from vi/library/math-symbols/ itself: the tiles around it are translated (Empty Set → Tập Rỗng; Intersection → Giao; Union → Hợp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/math-symbols/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "gothic",
+        "reason": "lowercase, in running prose and meta, for the same style name",
+        "found_on": "vi/font-roblox/",
+        "added": "2026-08-30"
+      },
+      {
+        "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🕌✨ Eid Mubarak ✨🕌",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "🤲📿 Jumma Mubarak 📿🤲",
+        "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
+        "found_on": "vi/library/ky-hieu-hoi-giao/",
+        "added": "2026-08-25"
       }
     ],
     "zh-tw": [
+      {
+        "string": "Markdown",
+        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
+        "found_on": "zh-tw/guide/discord-wenzi-geshi/",
+        "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo",
+        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
+        "found_on": "zh-tw/guide/discord-anquan-nicheng/",
+        "added": "2026-08-25"
+      },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "this string is the copy payload (data-symbol), not a label: the whole point of the combo is to paste the set greeting, which is a fixed Arabic transliteration. This page's visible labels ARE translated (the same tile reads 齋月祝福語組合), so the Latin survives only where it is the thing being copied. Unlike ja/ko/th/ru/vi/tr, the zh-tw label does not quote the Latin phrase at all.",
@@ -9850,18 +9958,6 @@
         "string": "🤲📿 Jumma Mubarak 📿🤲",
         "reason": "this string is the copy payload (data-symbol), not a label: the whole point of the combo is to paste the set greeting, which is a fixed Arabic transliteration. This page's visible labels ARE translated (the same tile reads 齋月祝福語組合), so the Latin survives only where it is the thing being copied. Unlike ja/ko/th/ru/vi/tr, the zh-tw label does not quote the Latin phrase at all.",
         "found_on": "zh-tw/library/yisilan-fuhao/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Markdown",
-        "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
-        "found_on": "zh-tw/guide/discord-wenzi-geshi/",
-        "added": "2026-08-25"
-      },
-      {
-        "string": "Zalgo",
-        "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
-        "found_on": "zh-tw/guide/discord-anquan-nicheng/",
         "added": "2026-08-25"
       }
     ]
