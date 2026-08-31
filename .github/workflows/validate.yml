@@ -507,6 +507,11 @@ jobs:
             cat locale-library-directory.log
             echo '```'
             echo ""
+            echo "### Library hub parity check — \`${{ steps.library_hub_parity.outcome }}\`"
+            echo '```'
+            cat library-hub-parity.log
+            echo '```'
+            echo ""
             echo "### Library hub coverage check — \`${{ steps.library_hub_coverage.outcome }}\`"
             echo '```'
             cat library-hub-coverage.log
