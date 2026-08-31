@@ -571,7 +571,7 @@
     nl: {
       home: { label: "Home", href: "/nl/" },
       explore: [
-        { label: "Guides", href: "/nl/guide/" },
+        { label: "Gidsen", href: "/nl/guide/" },
         { label: "Antwoorden", href: "/nl/answers/" },
         { label: "Toepassingen", href: "/nl/usecase/" },
         { label: "Categorieën", href: "/category/" },

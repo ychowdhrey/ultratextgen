@@ -24,7 +24,9 @@
         { "char": "😁", "label": "Beaming Face With Smiling Eyes" },
         { "char": "😅", "label": "Grinning Face With Sweat" },
         { "char": "🤭", "label": "Face With Hand Over Mouth" },
-        { "char": "😹", "label": "Cat With Tears of Joy" }
+        { "char": "😹", "label": "Cat With Tears of Joy" },
+        { "char": "🙂", "label": "Slightly Smiling Face" },
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" }
       ]
     },
     {
@@ -38,7 +40,14 @@
         { "char": "🪦", "label": "Headstone" },
         { "char": "🫵", "label": "Index Pointing at the Viewer" },
         { "char": "😵", "label": "Face With Crossed-Out Eyes" },
-        { "char": "😮‍💨", "label": "Face Exhaling" }
+        { "char": "😮‍💨", "label": "Face Exhaling" },
+        { "char": "⚰️", "label": "Coffin" },
+        { "char": "😭", "label": "Loudly Crying Face" },
+        { "char": "🥲", "label": "Smiling Face With Tear" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" },
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🗿", "label": "Moai" }
       ]
     },
     {
@@ -53,7 +62,9 @@
         { "char": "🤪", "label": "Zany Face" },
         { "char": "😛", "label": "Face With Tongue" },
         { "char": "🙃", "label": "Upside-Down Face" },
-        { "char": "😬", "label": "Grimacing Face" }
+        { "char": "😬", "label": "Grimacing Face" },
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" }
       ]
     },
     {
@@ -70,7 +81,13 @@
         { "char": "(≧∇≦)/", "label": "Waving Laugh Kaomoji" },
         { "char": "ヾ(≧▽≦*)o", "label": "Uncontrollable Laugh Kaomoji" },
         { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Sparkling Laugh Kaomoji" },
-        { "char": "(¬‿¬)", "label": "Sly Grin Kaomoji" }
+        { "char": "(¬‿¬)", "label": "Sly Grin Kaomoji" },
+        { "char": "(＾▽＾)", "label": "Wide Smile Kaomoji" },
+        { "char": "( ˘ ³˘)", "label": "Content Kaomoji" },
+        { "char": "ヽ(♡‿♡)ノ", "label": "Delighted Kaomoji" },
+        { "char": "(ﾉ≧∀≦)ﾉ", "label": "Exuberant Laugh Kaomoji" },
+        { "char": "XD", "label": "Classic XD Emoticon" },
+        { "char": "(*≧ω≦*)", "label": "Giggling Kaomoji" }
       ]
     }
   ],
@@ -84,42 +101,79 @@
   "collections": [
     {
       "name": "Crying Laughing Spam",
-      "flags": ["😂", "😂", "😂", "🤣"],
+      "flags": [
+        "😂",
+        "😂",
+        "😂",
+        "🤣"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "I'm Dead",
-      "flags": ["💀", "💀", "🙏", "😭"],
+      "flags": [
+        "💀",
+        "💀",
+        "🙏",
+        "😭"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "LMAO Pack",
-      "flags": ["🤣", "✋", "😭", "💀"],
+      "flags": [
+        "🤣",
+        "✋",
+        "😭",
+        "💀"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Wheeze Mode",
-      "flags": ["😆", "😮‍💨", "😂", "💨"],
+      "flags": [
+        "😆",
+        "😮‍💨",
+        "😂",
+        "💨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Pointing and Laughing",
-      "flags": ["🫵", "😂", "🤣"],
+      "flags": [
+        "🫵",
+        "😂",
+        "🤣"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Try Not to Laugh",
-      "flags": ["🤭", "😬", "😂", "💥"],
+      "flags": [
+        "🤭",
+        "😬",
+        "😂",
+        "💥"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Clown Show",
-      "flags": ["🤡", "🎪", "😂"],
+      "flags": [
+        "🤡",
+        "🎪",
+        "😂"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Kaomoji LOL Pack",
-      "flags": ["(≧▽≦)", "ヽ(´▽`)/", "(≧∇≦)/"],
+      "flags": [
+        "(≧▽≦)",
+        "ヽ(´▽`)/",
+        "(≧∇≦)/"
+      ],
       "defaultFormat": "inline"
     }
   ],
