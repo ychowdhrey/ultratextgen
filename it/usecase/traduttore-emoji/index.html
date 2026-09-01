@@ -211,6 +211,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href="/guide/fancy-fonts-and-accents/">Quali stili tengono gli accenti →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Chiudi">✕</button>
+        </div>
+
         <div class="phrase-chips" id="phraseChips"></div>
 
         <div class="hero-convert-actions">
@@ -351,6 +358,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <!-- NESSUN /script.js — questa pagina ha la sua logica -->
 
   <script src="/js/emoji/i18n/it.js"></script>

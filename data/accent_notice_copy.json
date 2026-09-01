@@ -1,0 +1,60 @@
+{
+  "_readme": "Copy for the input-aware accent notice (accent-notice.js), one entry per locale, baked into pages by scripts/build-accent-notice.js. The string lives here rather than in 500 copies of the same sentence so it has one owner and one place to fix. A locale with no entry is NOT deployed — absence is the gate, and the builder reports every page it skipped and why. 'default' is for the shared generator; 'upsideDown' is for pages about upside-down text, where the shared sentence is false: measured, 'cafe Strasse' with accents renders as flipped text with the accented letters passing through UPRIGHT and unchanged, so nothing is 'kept styled' and nothing folds to plain. Each locale names the accented letters ITS OWN readers type, which is why these are translations rather than copies. Rebuild with: npm run build:accent-notice",
+  "guideUrl": "/guide/fancy-fonts-and-accents/",
+  "exclusions": {
+    "**/embed/**": "Embed widgets render inside other people's pages; an inline hint linking back to our guide belongs on our own page. None of the notice's original placements is an embed.",
+    "usecase/emoji-letters/**": "js/emoji/emoji-tool.js is a word-to-emoji lexicon and never calls renderAny(), so the notice's claim about styles keeping accents describes a surface this page does not have.",
+    "usecase/emoji-to-text/**": "Same tool as usecase/emoji-letters; see above.",
+    "usecase/text-to-emoji/**": "Same tool as usecase/emoji-letters; see above."
+  },
+  "locales": {
+    "ar": {
+      "dismiss": "إغلاق",
+      "default": "يحتوي نصّك على علامات تشكيل/لهجة. الأنماط العريضة والمخطوطة والقوطية ومعظم الأنماط الأخرى تحافظ الآن على حروف مثل <b>é</b> و<b>ç</b> بعلاماتها — وقليل منها (النص المقلوب، وحروف بلا صيغة بعلامة مثل <b>ł đ ø ß</b>) يعود إلى الحروف العادية. <a href=\"/guide/fancy-fonts-and-accents/\">أي الأنماط تحافظ على علامات اللهجة ←</a>",
+      "icon": "◌́",
+      "propagate": false,
+      "propagateNote": "Not propagated beyond the page it already ships on. Arabic harakat sit at U+064B..U+0652, outside the U+0300..U+036F combining range accent-notice.js tests, and the renderer's map styles leave Arabic unstyled — so on Arabic text the notice can neither fire nor be true. It stays on ar/index.html (where it already shipped, and where it is correct for an Arabic speaker typing an accented Latin name) rather than being removed unilaterally."
+    },
+    "da": {
+      "dismiss": "Luk",
+      "default": "Din tekst indeholder accenttegn. Fed, skrift, gotisk og de fleste andre stilarter bevarer nu <b>é</b> og <b>å</b> med tegnet — enkelte (omvendt tekst, og bogstaver uden accentform som <b>æ ø ł ß</b>) falder tilbage til almindelige bogstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stilarter bevarer accenter →</a>",
+      "icon": "◌́"
+    },
+    "en": {
+      "dismiss": "Dismiss",
+      "default": "Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href=\"/guide/fancy-fonts-and-accents/\">See which styles handle accents →</a>",
+      "icon": "◌́"
+    },
+    "fr": {
+      "dismiss": "Fermer",
+      "default": "Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href=\"/guide/fancy-fonts-and-accents/\">Quels styles gardent les accents →</a>",
+      "icon": "◌́"
+    },
+    "it": {
+      "dismiss": "Chiudi",
+      "default": "Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href=\"/guide/fancy-fonts-and-accents/\">Quali stili tengono gli accenti →</a>",
+      "upsideDown": "Il tuo testo contiene lettere accentate. Alcune lettere come <b>à</b>, <b>è</b> o <b>ù</b> non hanno un gemello capovolto in Unicode e restano dritte. <a href=\"/guide/fancy-fonts-and-accents/\">Come si comportano gli accenti →</a>",
+      "icon": "◌́"
+    },
+    "nl": {
+      "dismiss": "Sluiten",
+      "default": "Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken — een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href=\"/guide/fancy-fonts-and-accents/\">Welke stijlen accenten houden →</a>",
+      "icon": "◌̈"
+    },
+    "no": {
+      "dismiss": "Lukk",
+      "default": "Teksten din inneholder aksenttegn. Fet, skrift, gotisk og de fleste andre stilene beholder nå <b>é</b> og <b>å</b> med tegnet — noen få (opp-ned-tekst, og bokstaver uten aksentform som <b>æ ø ł ß</b>) faller tilbake til vanlige bokstaver. <a href=\"/guide/fancy-fonts-and-accents/\">Hvilke stiler beholder aksenter →</a>",
+      "icon": "◌́"
+    },
+    "pl": {
+      "dismiss": "Zamknij",
+      "default": "Twój tekst zawiera polskie znaki. Pogrubienie, kursywa, gotyk i większość innych stylów zachowują teraz <b>ą</b>, <b>ę</b> i <b>ś</b> ze znakiem — tylko nieliczne (tekst do góry nogami, oraz <b>ł</b>, które nie ma formy ze znakiem) wracają do zwykłych liter. <a href=\"/guide/fancy-fonts-and-accents/\">Które style zachowują znaki diakrytyczne →</a>",
+      "icon": "◌́"
+    },
+    "sv": {
+      "dismiss": "Stäng",
+      "default": "Din text innehåller accenttecken. Fet, skrivstil, gotisk och de flesta andra stilar behåller nu <b>å</b>, <b>ä</b> och <b>ö</b> med tecknet — några få (upp-och-nedvänd text, och bokstäver utan accentform som <b>ł đ ø ß</b>) faller tillbaka till vanliga bokstäver. <a href=\"/guide/fancy-fonts-and-accents/\">Vilka stilar behåller accenter →</a>",
+      "icon": "◌́"
+    }
+  }
+}

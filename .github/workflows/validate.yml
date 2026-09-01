@@ -284,6 +284,18 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, and with no backlog to be red against: the accent notice's copy
+      # either matches data/accent_notice_copy.json or it doesn't, and
+      # `npm run build:accent-notice` closes any gap in one idempotent run. The
+      # sentence is one string per locale baked onto ~200 pages, so a page
+      # edited by hand — or a page added with no notice at all — drifts
+      # silently otherwise. The check also fails on a generator page whose
+      # input wrapper it cannot place the block around, rather than patching
+      # blind.
+      - name: Run accent notice check
+        id: accent_notice
+        continue-on-error: true
+        run: npm run check:accent-notice | tee accent-notice.log
       # Gating, and with no backlog to be red against: library/index.html's
       # static directory either matches its own LIBRARY array or it doesn't,
       # and `npm run build:library-directory` closes any gap in one idempotent
@@ -470,6 +482,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Accent notice check — \`${{ steps.accent_notice.outcome }}\`"
+            echo '```'
+            cat accent-notice.log
+            echo '```'
+            echo ""
             echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
             echo '```'
             cat tile-codepoints.log
@@ -586,6 +603,7 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
