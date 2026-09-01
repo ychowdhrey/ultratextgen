@@ -3036,9 +3036,41 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
+# The card's title block holds at most this many lines. Four is a geometric
+# limit, not a taste call: the block is centred on y=250 and grows upward by 33
+# per line, so at four lines the first line's ascender sits at y=106, clearing
+# the kicker baseline at y=96, and at five it sits at y=73 and collides with it.
+# Anything past the cap cannot be drawn, so `_fit_title` reports it rather than
+# dropping it.
+OG_TITLE_MAX_LINES = 4
+
+# Titles that overflowed during this run: (slug, title, lines, dropped words).
+# Collected rather than raised so one run reports every offender at once.
+TITLE_OVERFLOWS = []
+
+
+def _fit_title(slug, title, native):
+    """Wrap a card title to the lines the layout can actually draw.
+
+    This used to be a bare `[:3]`, which discarded the remainder in silence. An
+    answer-first title is longer than the ones the card was tuned for, and a run
+    that retitled nine pages truncated seven of them mid-phrase with nothing in
+    the output to say so -- 'Middle East Currency Symbols: 5 Have Their Own,'
+    with the answer cut off. The 24 pages already in that state when this was
+    added are why the overflow is reported rather than fatal by default: a check
+    that is red regardless of your change is one people learn to ignore. Pass
+    --strict-titles to make it fatal.
+    """
+    lines = smart_wrap(title, wrap_width_for(title, native))
+    if len(lines) > OG_TITLE_MAX_LINES:
+        TITLE_OVERFLOWS.append((slug, title, len(lines), lines[OG_TITLE_MAX_LINES:]))
+        lines = lines[:OG_TITLE_MAX_LINES]
+    return lines
+
+
 def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
-    wrapped = smart_wrap(title, wrap_width_for(title, native))[:3]
+    wrapped = _fit_title(slug, title, native)
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
     for i, line in enumerate(wrapped):
@@ -3563,6 +3595,12 @@ def main():
     ap.add_argument("--no-page-motifs", action="store_true",
                     help="disable deriving a page's motif from its own copy-tiles "
                          "(see motif_from_page) and use the registered motif as-is.")
+    ap.add_argument("--strict-titles", action="store_true",
+                    help="exit non-zero if any card title needs more lines than the "
+                         "layout can draw. Off by default because 24 registered pages "
+                         "were already in that state when the check was added, and a "
+                         "check that is red regardless of your change is one people "
+                         "learn to ignore.")
     ap.add_argument("--force", action="store_true",
                     help="re-render pages whose art already exists. Without this, an "
                          "existing hero+OG pair is left alone — so a run only fills gaps "
@@ -3617,6 +3655,14 @@ def main():
         selected = keep
 
     if a.dry_run:
+        # og_png_svg never runs on a dry run, so fit the titles here — that makes
+        # `--dry-run --all --strict-titles` a whole-site title check costing no
+        # rasterisation.
+        # over `selected + already`, not `selected`: whether a title fits is a
+        # property of the registry, not of whether a PNG happens to be on disk,
+        # and without `already` a dry run of a finished tree measures nothing.
+        for slug in selected + already:
+            _fit_title(slug, PAGES[slug][0], _native_for_slug(slug))
         if already:
             print(f"[dry-run] {len(already)} page(s) already have their art — skipping "
                   f"(use --force to re-render).")
@@ -3626,7 +3672,7 @@ def main():
         if a.all:
             print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
             print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     if already and not a.dry_run:
         print(f"{len(already)} page(s) already have their art — skipped "
@@ -3651,7 +3697,7 @@ def main():
     # business rewriting the homepage's art.
     if not a.all:
         print(f"wrote {n} hero SVG + OG PNG pair(s) (scoped to: {', '.join(prefixes)})")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
@@ -3679,6 +3725,31 @@ def main():
     print("\nNOTE: a full run rewrites every asset. Review `git status` and revert any "
           "file whose only change is a re-render before committing.")
     report_orphan_keys()
+    return report_title_overflows(a.strict_titles)
+
+
+def report_title_overflows(strict):
+    """Print every title this run could not draw in full, and say what was lost.
+
+    Reported by default, fatal under --strict-titles. The distinction matters:
+    24 registered titles already overflowed when this was added, so a hard
+    failure would have been red on every run regardless of the change being
+    made. Same call, and same reasoning, as check-image-assets.py being
+    informational while check-new-page-image-assets.py gates.
+    """
+    if not TITLE_OVERFLOWS:
+        return 0
+    print(f"\n{len(TITLE_OVERFLOWS)} card title(s) need more than "
+          f"{OG_TITLE_MAX_LINES} lines and were cut:")
+    for slug, title, n_lines, dropped in TITLE_OVERFLOWS:
+        print(f"  {slug}  ({n_lines} lines, {OG_TITLE_MAX_LINES} fit)")
+        print(f"      title:   {title}")
+        print(f"      dropped: {' '.join(dropped)}")
+    print("  Fix: put the head term in the card title and the rest in the sub line, "
+          "which does not wrap.")
+    if strict:
+        print("  --strict-titles: failing.")
+        return 1
     return 0
 
 
