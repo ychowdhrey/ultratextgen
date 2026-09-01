@@ -198,6 +198,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Írd ide a neved vagy becenevet…" maxlength="100">Sanz</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">A szövegedben ékezetes betűk vannak. A félkövér, az írott, a gót és a legtöbb más stílus mostantól megtartja az <b>á</b>, <b>ő</b> és <b>ű</b> ékezetét. Kivétel a fejjel lefelé fordított szöveg: ott az ékezetes betűk fordítás nélkül, állva maradnak. <a href="/guide/fancy-fonts-and-accents/">Melyik stílus tartja meg az ékezeteket →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Bezárás">✕</button>
+  </div>
   <div class="decoration-section"><div class="decoration-label">Díszek hozzáadása az eredményhez</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Szimbólumok</button><button class="decoration-tab" data-deco-tab="minimal">Minimál</button><button class="decoration-tab" data-deco-tab="emojis">Emojik</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -409,7 +416,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- Generator scripts -->
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
-<script src="/script.js" defer></script><script src="/i18n.js" defer></script>
+<script src="/script.js" defer></script>
+<script src="/accent-notice.js" defer></script><script src="/i18n.js" defer></script>
 
 <!-- Symbol explorer + wrappers -->
 <script src="/symbol-explorer.js"></script>

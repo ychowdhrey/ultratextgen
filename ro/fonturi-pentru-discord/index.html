@@ -191,6 +191,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Scrie un nume sau text..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌̆</span>
+        <span class="accent-notice-text">Textul tău conține diacritice. Bold, cursiv, gotic și majoritatea celorlalte stiluri păstrează acum <b>ă</b>, <b>ș</b> și <b>ț</b> cu semnul lor. Excepția este textul întors: acolo literele cu diacritice trec neîntoarse și rămân drepte. <a href="/guide/fancy-fonts-and-accents/">Ce stiluri păstrează diacriticele →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Închide">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Adaugă simboluri și rame la rezultat</div>
         <div class="decoration-tabs">
@@ -364,6 +371,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

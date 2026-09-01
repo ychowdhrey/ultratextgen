@@ -188,6 +188,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Írd be a neved vagy a szöveget..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">A szövegedben ékezetes betűk vannak. A félkövér, az írott, a gót és a legtöbb más stílus mostantól megtartja az <b>á</b>, <b>ő</b> és <b>ű</b> ékezetét. Kivétel a fejjel lefelé fordított szöveg: ott az ékezetes betűk fordítás nélkül, állva maradnak. <a href="/guide/fancy-fonts-and-accents/">Melyik stílus tartja meg az ékezeteket →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Bezárás">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Szimbólumok és keretek hozzáadása az eredményhez</div>
         <div class="decoration-tabs">
@@ -360,7 +367,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
-<script src="/script.js" defer=""></script><script src="/i18n.js" defer></script>
+<script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script><script src="/i18n.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

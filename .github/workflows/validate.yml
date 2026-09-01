@@ -298,6 +298,18 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, and with no backlog to be red against: the accent notice's copy
+      # either matches data/accent_notice_copy.json or it doesn't, and
+      # `npm run build:accent-notice` closes any gap in one idempotent run. The
+      # sentence is one string per locale baked onto ~200 pages, so a page
+      # edited by hand — or a page added with no notice at all — drifts
+      # silently otherwise. The check also fails on a generator page whose
+      # input wrapper it cannot place the block around, rather than patching
+      # blind.
+      - name: Run accent notice check
+        id: accent_notice
+        continue-on-error: true
+        run: npm run check:accent-notice | tee accent-notice.log
       # Gating, and with no backlog to be red against: library/index.html's
       # static directory either matches its own LIBRARY array or it doesn't,
       # and `npm run build:library-directory` closes any gap in one idempotent
@@ -310,16 +322,24 @@ jobs:
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
 
-      # The locale directory hubs are pre-rendered by a SECOND builder
-      # (scripts/build-locale-library-directory.js) because they carry no
-      # extraction markers. It shipped unwired — no npm script, no CI step — so
-      # nothing noticed if a locale hub's LIBRARY array changed and its static
-      # block was not regenerated. Same shape as every other "the check existed
-      # but nothing ran it" incident recorded in CLAUDE.md.
-      - name: Run locale library directory freshness check
+      # The locale directory hubs are pre-rendered so a non-rendering crawler
+      # sees their links. This step used to run check:locale-library-directory,
+      # which reads a `const LIBRARY = [...]` array — a format every locale hub
+      # migrated away from. All 19 skipped, it exited 0, and it printed "All
+      # locale library hubs are pre-rendered and current." The gate had been
+      # verifying nothing for as long as the new format has been live: the
+      # third instance in this repo of "a check that reports nothing is
+      # indistinguishable from a check that passes."
+      #
+      # scripts/build-library-hub.js reads window.UTG_LIBRARY_HUB, which is
+      # what the hubs actually carry, and exits 1 on drift. Wiring it here
+      # immediately caught real staleness in ko/library/index.html.
+      # build-locale-library-directory.js now fails loudly if it ever skips
+      # every target again, rather than reporting success.
+      - name: Run locale library hub freshness check
         id: locale_library_directory
         continue-on-error: true
-        run: npm run check:locale-library-directory | tee locale-library-directory.log
+        run: npm run check:library-hub | tee locale-library-directory.log
 
       # Library hub coverage — the DIFF-SCOPED gate. A page can ship correct in
       # every other respect (indexable, self-canonical, meshed, in the sitemap)
@@ -476,6 +496,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Accent notice check — \`${{ steps.accent_notice.outcome }}\`"
+            echo '```'
+            cat accent-notice.log
+            echo '```'
+            echo ""
             echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
             echo '```'
             cat tile-codepoints.log
@@ -608,6 +633,7 @@ jobs:
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||

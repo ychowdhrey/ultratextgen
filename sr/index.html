@@ -386,6 +386,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count" id="charCountWrapper" hidden=""><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̌</span>
+          <span class="accent-notice-text">Tvoj tekst sadrži dijakritičke znakove. Podebljano, rukopisno, gotičko i većina drugih stilova sada zadržavaju <b>č</b>, <b>ć</b> i <b>ž</b> sa znakom — tek nekoliko njih (obrnuti tekst i <b>đ</b>, koje nema oblik sa znakom) vraća se na obična slova. <a href="/guide/fancy-fonts-and-accents/">Koji stilovi zadržavaju dijakritiku →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Zatvori">✕</button>
+        </div>
+
         <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
@@ -1071,6 +1078,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <script src="/styles.js" defer=""></script>
 <script src="/renderer.js" defer=""></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js" defer=""></script>
 
 

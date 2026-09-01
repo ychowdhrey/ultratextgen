@@ -269,6 +269,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             <textarea class="main-input" id="mainInput" placeholder="Type or load a comment here..." maxlength="500"></textarea>
             <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
           </div>
+
+          <!-- Accent-aware hint: shows only when the input contains diacritics -->
+          <div class="accent-notice" id="accentNotice" role="note" hidden>
+            <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+            <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+            <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+          </div>
           <div class="comment-preview" id="styledPreview">Styled preview appears here as you choose style, frames, and emoji.</div>
           <div class="style-further-row" id="styleFurtherRow" hidden>
             <button class="style-further-btn" id="styleFurtherBtn" type="button">✨ Style it further →</button>
@@ -834,6 +841,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+<script src="/accent-notice.js" defer></script>
   <script src="/usecase/comment-font/comment-font.js" defer></script>
   <script src="/footer.js" defer></script>
   <!-- Phase 2: community/UGC thread -->
