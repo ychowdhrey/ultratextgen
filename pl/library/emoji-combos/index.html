@@ -513,6 +513,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <section class="mood-explainers" id="combo-sets">
+    <span class="article-section-label">Zestawy kombinacji</span>
+    <h2>Gotowe zestawy emoji</h2>
+    <p class="u-secondary-block">Skopiuj całą estetyczną kombinację emoji jednym kliknięciem — idealna do bio, podpisów i statusów.</p>
+    <div id="emojiCombosContainer"></div>
+  </section>
+
   <!-- Comment créer ton propre combo -->
   <section class="editorial-section">
     <h2>Jak stworzyć własną kombinację emoji</h2>
@@ -604,5 +613,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Soft girl",
+      flags: ["🎀", "🌸", "🩰", "🤍", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Morska bryza",
+      flags: ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Wiejski ogród",
+      flags: ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nocne niebo",
+      flags: ["🌙", "⭐", "☁️", "💫", "🔭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Randka na kawie",
+      flags: ["☕", "🥐", "📖", "🍂", "🤎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Blask Y2K",
+      flags: ["💿", "🦋", "💖", "⚡", "🪩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Słodkie zwierzaki",
+      flags: ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Klimat zachodu słońca",
+      flags: ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("emojiCombosContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body></html>

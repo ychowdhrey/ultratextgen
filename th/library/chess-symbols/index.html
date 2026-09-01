@@ -401,6 +401,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">ชุดสัญลักษณ์หมากรุก</span>
+  <h2>ชุดตัวหมากรุกสากล</h2>
+  <p class="u-secondary-block">คัดลอกตัวหมากทั้งฝ่ายตามลำดับสัญกรณ์มาตรฐาน (คิง ควีน รูก บิชอป ไนต์ พอว์น)</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>แปลงข้อความด้วยฟอนต์ Unicode</h3>
@@ -444,6 +453,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "ตัวหมากรุกฝ่ายขาว",
+      flags: ["♔", "♕", "♖", "♗", "♘", "♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ตัวหมากรุกฝ่ายดำ",
+      flags: ["♚", "♛", "♜", "♝", "♞", "♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

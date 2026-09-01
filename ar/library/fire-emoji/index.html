@@ -307,6 +307,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">مجموعات جاهزة</span>
+  <h2>مجموعات إيموجي النار</h2>
+  <p class="u-secondary-block">انسخ مجموعة نار كاملة بنقرة واحدة — للمدح أو الحماس أو اللهب الخالص.</p>
+  <div id="fireSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>كيف تحوّلت النار من وصف إلى حكم</h2>
   <div class="editorial-block">
@@ -381,6 +390,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "هذا نار",
+      flags: ["🔥", "💯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "مشتعل تمامًا",
+      flags: ["🔥", "🎉"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "رأي جريء",
+      flags: ["🔥", "🥵"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "صاروخ إلى القمة",
+      flags: ["🔥", "🚀", "⚡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "نار فقط",
+      flags: ["🔥", "🔥", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ارفع الحرارة",
+      flags: ["🔥", "♨️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "طاقة ملك",
+      flags: ["🔥", "👑"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "حار وخطير",
+      flags: ["🔥", "🌋", "🥵"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("fireSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

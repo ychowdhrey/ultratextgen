@@ -468,6 +468,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="zodiac-collections">
+  <span class="article-section-label">Bộ ký hiệu hoàng đạo</span>
+  <h2>Bộ hoàng đạo và chiêm tinh</h2>
+  <p class="u-secondary-block">Chép trọn vòng hoàng đạo và mười hành tinh chiêm tinh hiện đại theo đúng thứ tự chuẩn.</p>
+  <div id="zodiacCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Vì Sao Ký Hiệu Hoàng Đạo Lại Là Ký Tự Chữ</h2>
   <div class="editorial-block">
@@ -542,6 +551,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Hoàng đạo phương Tây (Bạch Dương → Song Ngư)",
+      flags: ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Con giáp Trung Hoa (Tý → Hợi)",
+      flags: ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "10 hành tinh chiêm tinh hiện đại",
+      flags: ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("zodiacCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -542,6 +542,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">花のコレクション</span>
+  <h2>花のプロフィール・区切り線セット</h2>
+  <p class="u-secondary-block">プロフィールやキャプション、ユーザー名にそのまま貼れる花の区切り線とセット。ワンクリックでまとめてコピーできます。</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>同じ名前で呼ばれる、由来の違う二つの群</h2>
   <div class="editorial-block">
@@ -616,6 +625,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "花のプロフィール枠",
+      flags: ["✿", "❀", "❁", "❀", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "小花のドット区切り",
+      flags: ["✾", "·", "❀", "·", "✾"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ガーデンブルームセット",
+      flags: ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "括弧つき花コンボ",
+      flags: ["꒰❀꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "太い小花ライン",
+      flags: ["❋", "❃", "❋", "❃", "❋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "やわらかい花のキャプション",
+      flags: ["❀", "🌿", "🌸", "🌿", "❀"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

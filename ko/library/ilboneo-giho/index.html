@@ -456,6 +456,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="japanese-sets">
+  <span class="article-section-label">문자 세트</span>
+  <h2>일본어 문자 조합 세트</h2>
+  <p class="u-secondary-block">주제별 일본어 문자 세트나 바로 쓰는 소개글 장식을 한 번의 클릭으로 통째로 복사하세요.</p>
+  <div id="japaneseSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>기호만이 아니라 글자 자체도 바꿀 수 있어요</h3>
@@ -533,6 +542,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "사쿠라 감성 세트",
+      flags: ["桜", "花", "春", "風", "月"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "밤하늘 세트",
+      flags: ["月", "星", "夜", "光", "夢"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "바다와 비 세트",
+      flags: ["海", "波", "雨", "空"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "아이디용 스마일",
+      flags: ["ツ", "シ", "彡", "ノ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "愛 — 사랑",
+      flags: ["愛"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ありがとう — 고마워요",
+      flags: ["ありがとう"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "사쿠라 소개글 프레임",
+      flags: ["☾ 月 ☽", "桜 · 夢 · 愛", "〜 ありがとう 〜"],
+      defaultFormat: "vertical"
+    }
+  ];
+
+  ns.buildGrids("japaneseSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

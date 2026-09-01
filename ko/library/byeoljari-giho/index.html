@@ -468,6 +468,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="zodiac-collections">
+  <span class="article-section-label">별자리 모음</span>
+  <h2>별자리·점성술 세트</h2>
+  <p class="u-secondary-block">12별자리 전체와 현대 점성술의 10개 행성을 표준 순서 그대로 한 번에 복사하세요.</p>
+  <div id="zodiacCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>별자리 기호가 애초에 문자인 이유</h2>
   <div class="editorial-block">
@@ -542,6 +551,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "서양 12별자리 (양자리 → 물고기자리)",
+      flags: ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "십이지 (쥐 → 돼지)",
+      flags: ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "현대 점성술 10행성",
+      flags: ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("zodiacCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

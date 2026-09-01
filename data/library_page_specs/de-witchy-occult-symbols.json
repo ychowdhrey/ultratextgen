@@ -2,7 +2,7 @@
  "slug": "okkulte-symbole",
  "lang": "de",
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "title": "Okkulte Symbole & Hexensymbole zum Kopieren — Bedeutung | UltraTextGen",
  "meta_description": "Okkulte Symbole zum Kopieren: Pentagramm, Planetenzeichen, alchemistische Symbole und esoterische Zeichen — mit ihrer historischen Bedeutung erklärt.",
  "breadcrumb": "Okkulte Symbole",
@@ -574,6 +574,45 @@
   {
    "h2": "Die meisten dieser Zeichen sind älter als ihre Deutung",
    "body": "Was heute als okkultes Symbol gilt, war fast immer zuerst etwas Nüchternes: eine Notation für Metalle, ein Kürzel für einen Planeten, eine Abkürzung in einem Laborbuch. Alchemisten schrieben ♀ für Kupfer, weil sie Kupfer der Venus zuordneten — es war Fachsprache, keine Beschwörung. Die esoterische Aufladung kam im 19. Jahrhundert, als okkulte Zirkel die alten Notationen wiederentdeckten und mit neuer Bedeutung versahen. Wer diese Schichtung kennt, liest die Zeichen genauer: Das Alter eines Symbols sagt nichts über das Alter seiner heutigen Bedeutung."
+  }
+ ],
+ "collection_section": {
+  "id": "witchy-collections",
+  "label": "Okkulte Sets",
+  "h2": "Okkulte Bio- und Rahmen-Sets",
+  "intro": "Fertige okkulte Zeichenketten für Bio, Caption oder Nutzername — ein Klick kopiert die ganze Kombination."
+ },
+ "collection_container_id": "witchyCollectionsContainer",
+ "collections": [
+  {
+   "name": "Pentagramm-Bio-Rahmen",
+   "flags": ["⛧", "˖", "⛤", "˖", "⛧"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Mond-und-Sonne-Kombi",
+   "flags": ["☽", "˚", "✴", "˚", "☉"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Hexen-Sternenspur",
+   "flags": ["✶", "·", "✴", "·", "✶"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Mondsichel-Rahmen",
+   "flags": ["☽⋆ﾟ｡⋆"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Planeten-Bio-Kombi",
+   "flags": ["☽", "☿", "♀", "♂", "♃", "♄"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Ankh-Trennlinie",
+   "flags": ["☥", "˖", "⛤", "˖", "☥"],
+   "defaultFormat": "inline"
   }
  ],
  "related": [

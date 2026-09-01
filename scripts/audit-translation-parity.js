@@ -210,6 +210,14 @@ function printPair(r) {
   if (r.diff.faqDelta !== 0) log(`    FAQ question count delta (EN - ${r.lang}): ${r.diff.faqDelta}`);
   if (r.diff.symbolTilesDelta !== 0)
     log(`    .symbol-tile count delta (EN - ${r.lang}): ${r.diff.symbolTilesDelta}`);
+  for (const c of r.diff.collectionsOnlyInEN || [])
+    log(`    combo-set section EN renders, ${r.lang} does not: #${c.id} (${c.groups} groups)`);
+  for (const c of r.diff.collectionsOnlyInLocale || [])
+    log(`    combo-set section ${r.lang} renders, EN does not: #${c.id} (${c.groups} groups)`);
+  for (const c of r.diff.collectionsRenamed || [])
+    log(`    combo-set container id differs (EN "${c.enId}" vs ${r.lang} "${c.localeId}") — compared positionally`);
+  for (const c of r.diff.collectionGroupDeltas || [])
+    log(`    combo-set group count delta (EN - ${r.lang}) in #${c.id}: ${c.delta}`);
   if (r.exception) log(`    (partial exception on file, reason: "${r.exception.reason}")`);
   log('');
 }

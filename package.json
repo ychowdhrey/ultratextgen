@@ -39,6 +39,8 @@
     "audit:library-hub-parity": "node scripts/check-library-hub-parity.js --all",
     "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js",
     "check:locale-spec": "python3 scripts/check_locale_spec.py --all-locale",
+    "audit:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py --all",
+    "check:locale-collection-parity": "python3 scripts/check-locale-collection-parity.py",
     "check:workflows": "python3 scripts/check-workflows.py",
     "check:external-refs": "node scripts/check-external-refs.js",
     "mine:editorial-phrases": "node scripts/mine-editorial-phrases.js",

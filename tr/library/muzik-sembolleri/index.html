@@ -450,6 +450,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">Müzik koleksiyonları</span>
+  <h2>Nota biyografi ve iz setleri</h2>
+  <p class="u-secondary-block">Biyografine, açıklamana veya çalma listesi adına doğrudan yapıştırabileceğin hazır nota dizilimleri — tüm kombinasyonu tek tıkla kopyala.</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Metni Unicode fontlarla dönüştür</h3>
@@ -493,6 +502,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Biyografi nota izi",
+      flags: ["♪", "˚", "♫", "˚", "♪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Yumuşak melodi çerçevesi",
+      flags: ["⋆｡˚♬˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bağlı nota kombinasyonu",
+      flags: ["♩", "♪", "♫", "♬"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Parıltılı nota ayracı",
+      flags: ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Şimdi çalıyor açıklaması",
+      flags: ["🎶", "˚", "♪", "˚", "🎶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sade nota vurgusu",
+      flags: ["·", "♪", "·", "♬", "·"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -739,6 +739,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">조합 세트</span>
+  <h2>바로 쓰는 이모지 조합</h2>
+  <p class="u-secondary-block">감성 이모지 조합을 한 번의 클릭으로 통째로 복사하세요 — 소개글, 캡션, 상태 메시지에 딱 맞습니다.</p>
+  <div id="emojiCombosContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">FAQ</span>
@@ -799,6 +808,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "소프트 걸",
+      flags: ["🎀", "🌸", "🩰", "🤍", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "바다 바람",
+      flags: ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "시골 정원",
+      flags: ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "밤하늘",
+      flags: ["🌙", "⭐", "☁️", "💫", "🔭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "커피 한 잔",
+      flags: ["☕", "🥐", "📖", "🍂", "🤎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Y2K 반짝임",
+      flags: ["💿", "🦋", "💖", "⚡", "🪩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "귀여운 동물",
+      flags: ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "노을 감성",
+      flags: ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("emojiCombosContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

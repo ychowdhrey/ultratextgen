@@ -257,6 +257,20 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-spec | tee locale-spec.log
 
+      # A locale PAGE must carry its EN parent's combo-set section. That section
+      # renders at runtime through buildGrids(), so it leaves no static markup
+      # and every other gate here is blind to it — 43 locale pages shipped
+      # without it while passing all of them. Diff-scoped, unlike the spec
+      # check above, because a real backlog exists (61 pages missing the
+      # section, 32 short or long on groups) and a permanently red check is one
+      # people learn to ignore. The two are not redundant: the spec check stops
+      # a bad page being GENERATED and only sees the 327 pages that have a
+      # spec; this one stops a bad page being SHIPPED and sees all 798.
+      - name: Run locale combo-set parity check
+        id: locale_collection_parity
+        continue-on-error: true
+        run: npm run check:locale-collection-parity | tee locale-collection-parity.log
+
       - name: Run external-reference check
         id: external_refs
         continue-on-error: true
@@ -492,6 +506,11 @@ jobs:
             cat locale-spec.log
             echo '```'
             echo ""
+            echo "### Locale combo-set parity — \`${{ steps.locale_collection_parity.outcome }}\`"
+            echo '```'
+            cat locale-collection-parity.log
+            echo '```'
+            echo ""
             echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
             echo '```'
             cat external-refs.log
@@ -581,6 +600,7 @@ jobs:
           steps.locale_translation.outcome == 'failure' ||
           steps.locale_parent_gap.outcome == 'failure' ||
           steps.locale_spec.outcome == 'failure' ||
+          steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||

@@ -401,6 +401,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">Bộ ký hiệu cờ vua</span>
+  <h2>Bộ quân cờ vua</h2>
+  <p class="u-secondary-block">Chép trọn một bên quân theo thứ tự ký hiệu chuẩn (vua, hậu, xe, tượng, mã, tốt).</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Chuyển đổi văn bản bằng phông chữ Unicode</h3>
@@ -444,6 +453,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Quân cờ trắng",
+      flags: ["♔", "♕", "♖", "♗", "♘", "♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Quân cờ đen",
+      flags: ["♚", "♛", "♜", "♝", "♞", "♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

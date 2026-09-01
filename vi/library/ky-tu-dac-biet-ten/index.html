@@ -401,6 +401,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="nick-decorations">
+  <span class="article-section-label">Trang trí nickname</span>
+  <h2>Khung trang trí nickname có sẵn</h2>
+  <p class="u-secondary-block">Chép cả bộ mẫu tên có sẵn chỉ với một cú nhấp, rồi thay 'YourName' bằng nick của bạn.</p>
+  <div id="nickDecorationsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Vì sao ký tự trang trí lại đến từ những bảng chữ xa lạ</h2>
   <div class="editorial-block">
@@ -475,6 +484,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Cánh cổ điển",
+      flags: ["꧁ YourName ꧂", "꧁༺ YourName ༻꧂", "꧁❮ YourName ❯꧂", "꧁♛ YourName ♛꧂", "꧁★ YourName ★꧂"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Thẻ mặt cười",
+      flags: ["ツ YourName", "YourName シ", "꧁ツ YourName ツ꧂", "彡 YourName 彡", "ミ★ YourName ★ミ"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Nick hoàng gia",
+      flags: ["♛ YourName ♛", "♚YourName♚", "【♔ YourName ♔】", "『YourName』", "㊝ YourName ㊝"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Thẻ game thủ pro",
+      flags: ["ᴳᵒᵈ•YourName", "亗 YourName 亗", "乂•YourName•乂", "YourName彡", "꧁亗 YourName 亗꧂"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Phong cách tối",
+      flags: ["☠ YourName ☠", "ϟYourNameϟ", "꧁☠ YourName ☠꧂", "⚔ YourName ⚔", "✞ YourName ✞"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Khung ngôi sao",
+      flags: ["★彡 YourName 彡★", "✰ YourName ✰", "☆꧁ YourName ꧂☆", "⍟ YourName ⍟", "✯YourName✯"],
+      defaultFormat: "vertical"
+    }
+  ];
+
+  ns.buildGrids("nickDecorationsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

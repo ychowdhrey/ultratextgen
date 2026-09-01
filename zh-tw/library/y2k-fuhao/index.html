@@ -660,6 +660,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="y2k-collections">
+  <span class="article-section-label">Y2K 組合</span>
+  <h2>Y2K 組合範本</h2>
+  <p class="u-secondary-block">現成的 Y2K 字串，可直接貼到簡介、使用者名稱或貼文說明 — 一鍵複製整組。</p>
+  <div id="y2kCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">常見問題</span>
@@ -713,6 +722,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "賽博使用者名稱組合",
+      flags: ["✮", "⋆", "˚", "𖤐", "˚", "⋆", "✮"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "哥德十字簡介組合",
+      flags: ["♱", "✟", "†", "✟", "♱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "埃及十字邊框",
+      flags: ["𓆩♱𓆪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "蝴蝶簡介組合",
+      flags: ["🦋", "‧₊˚", "🫧", "‧₊˚", "🦋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "暗星組合",
+      flags: ["𖤐", "⛧", "✯", "⛧", "𖤐"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "閃粉分隔線",
+      flags: ["𖥔", "⊹", "‧₊˚", "⊹", "𖥔"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("y2kCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -512,6 +512,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="line-divider-collections">
+  <span class="article-section-label">구분선 모음</span>
+  <h2>미리 만든 구분선·구획선 세트</h2>
+  <p class="u-secondary-block">섹션 사이에 그대로 넣을 수 있는 장식 구분선과 장식 구획선 — 한 줄 전체를 한 번에 복사하세요.</p>
+  <div id="lineDividerCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>선 사이 글자도 감성 폰트로</h3>
@@ -585,6 +594,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "별 중앙 구분선",
+      flags: ["✦────────✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "꽃과 하트 구분선",
+      flags: ["❧──────❧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "마름모 괘선",
+      flags: ["♦───────♦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "점선 구획선",
+      flags: ["•──────────•"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "부드러운 파선 구분선",
+      flags: ["┄┄┄┄┄┄┄┄┄"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "꽃 마름모 구획선",
+      flags: ["✿──❖──✿"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("lineDividerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

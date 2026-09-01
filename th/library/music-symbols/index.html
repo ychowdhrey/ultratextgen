@@ -450,6 +450,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">ชุดสัญลักษณ์ดนตรี</span>
+  <h2>ชุดตัวโน้ตสำหรับไบโอและเส้นคั่น</h2>
+  <p class="u-secondary-block">ชุดตัวโน้ตสำเร็จรูปที่วางลงไบโอ แคปชัน หรือชื่อเพลย์ลิสต์ได้ทันที — คัดลอกทั้งชุดในคลิกเดียว</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>แปลงข้อความด้วยฟอนต์ Unicode</h3>
@@ -493,6 +502,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "เส้นโน้ตสำหรับไบโอ",
+      flags: ["♪", "˚", "♫", "˚", "♪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "กรอบทำนองนุ่มนวล",
+      flags: ["⋆｡˚♬˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ชุดโน้ตคานเชื่อม",
+      flags: ["♩", "♪", "♫", "♬"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "เส้นคั่นโน้ตประกาย",
+      flags: ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "แคปชันกำลังเล่น",
+      flags: ["🎶", "˚", "♪", "˚", "🎶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "จุดเน้นโน้ตมินิมอล",
+      flags: ["·", "♪", "·", "♬", "·"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

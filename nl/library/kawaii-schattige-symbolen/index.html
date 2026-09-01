@@ -368,6 +368,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">Kawaii-collecties</span>
+  <h2>Kawaii-sets voor bio en gebruikersnaam</h2>
+  <p class="u-secondary-block">Kant-en-klare kawaii-combinaties — zachte hartjes, kleine gezichtjes en pastelglinstering, in één klik in een bio, gebruikersnaam of bericht.</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Zet tekst om met Unicode-lettertypes</h3>
@@ -411,6 +420,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Zachte-hartjes-biocombinatie",
+      flags: ["꒰", "♡", "꒱", "⋆", "ෆ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kawaii-glinsterscheiding",
+      flags: ["⊹", "⋆", "✧", "⋆", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bloesemvleugel-gebruikersnaam",
+      flags: ["ʚ ✿ ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pastelstofrand",
+      flags: ["✦", "⋆", "❀", "⋆", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kleine-gezichtjes-biokader",
+      flags: ["(˶˃ ᵕ ˂˶)", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Schattige haakjescombinatie",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

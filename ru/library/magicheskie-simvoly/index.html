@@ -749,6 +749,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="witchy-collections">
+  <span class="article-section-label">Магические наборы</span>
+  <h2>Магические наборы для профиля и рамки</h2>
+  <p class="u-secondary-block">Готовые магические строки для описания, подписи или никнейма — вставляйте всю комбинацию одним кликом.</p>
+  <div id="witchyCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Почему у Венеры и меди один и тот же знак</h2>
   <div class="editorial-block">
@@ -823,6 +832,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Пентаграммная рамка для профиля",
+      flags: ["⛧", "˖", "⛤", "˖", "⛧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Комбинация луны и солнца",
+      flags: ["☽", "˚", "✴", "˚", "☉"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Ведьмин звёздный след",
+      flags: ["✶", "·", "✴", "·", "✶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Рамка из полумесяцев",
+      flags: ["☽⋆ﾟ｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Планетарная комбинация для профиля",
+      flags: ["☽", "☿", "♀", "♂", "♃", "♄"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Разделитель с анхом",
+      flags: ["☥", "˖", "⛤", "˖", "☥"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("witchyCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

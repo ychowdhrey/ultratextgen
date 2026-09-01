@@ -368,6 +368,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">カワイイコレクション</span>
+  <h2>カワイイのプロフィール・ユーザー名セット</h2>
+  <p class="u-secondary-block">すぐ使えるカワイイコンボ — やわらかいハート、小さな顔文字、パステルのきらめきを、プロフィールやユーザー名、メッセージにワンクリックで。</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Unicodeフォントでテキストを変換</h3>
@@ -411,6 +420,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "やわらかハートのプロフィール",
+      flags: ["꒰", "♡", "꒱", "⋆", "ෆ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "カワイイきらめき区切り",
+      flags: ["⊹", "⋆", "✧", "⋆", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "花びらの羽ユーザー名",
+      flags: ["ʚ ✿ ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "パステルダストの枠",
+      flags: ["✦", "⋆", "❀", "⋆", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "小さな顔のプロフィール枠",
+      flags: ["(˶˃ ᵕ ˂˶)", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "かわいい括弧コンボ",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

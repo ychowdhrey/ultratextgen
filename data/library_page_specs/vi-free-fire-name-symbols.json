@@ -6,7 +6,7 @@
   "hero_h1": "Ký tự đặc biệt cho nick Free Fire",
   "hero_tagline": "꧁ ༒ ★ ツ ⚔ — khung, vương miện, ký tự nét, sao và dao kiếm. Chạm để copy.",
   "intro": "Ô đổi tên trong Free Fire cho 12 ký tự, và khung trang trí đã ăn mất bốn chỗ trước khi bạn gõ chữ đầu tiên. Vì thế trang này xếp theo vai trò: cái gì bao ngoài, cái gì đặt trước tên, cái gì chèn giữa. Chạm vào ký tự là nó vào bộ nhớ tạm.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -240,6 +240,50 @@
     {
       "h2": "Mười hai ký tự, và bốn cái đã mất trước khi bắt đầu",
       "body": "Giới hạn tên của Free Fire là thứ định hình toàn bộ thẩm mỹ nick trong game. Với 12 ký tự, một khung hai đầu đã lấy đi ít nhất bốn, đôi khi sáu. Đó là lý do nick Free Fire có xu hướng ngắn và viết tắt — không phải vì người chơi thích thế, mà vì phần trang trí đã tiêu mất một phần ba ngân sách. Khi chọn ký tự, hãy đếm trước phần khung rồi mới nghĩ đến tên; làm ngược lại thì gần như luôn phải cắt tên đi."
+    }
+  ],
+  "collection_section": {
+    "id": "ff-nick-wrappers",
+    "label": "Khung tên nick",
+    "h2": "Khung tên FF có sẵn",
+    "intro": "Chép nguyên một khung tên Free Fire chỉ với một cú nhấp, rồi thay phần chỗ trống bằng tên của bạn ở màn hình thẻ đổi tên."
+  },
+  "collection_container_id": "ffNickWrappersContainer",
+  "collections": [
+    {
+      "name": "Khung Royale cổ điển",
+      "flags": ["꧁༒", "YourNick", "༒꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Khung game thủ pro",
+      "flags": ["꧁•ᴾᴿᴼ•", "YourNick", "꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thẻ hoa văn Tây Tạng",
+      "flags": ["༺", "YourNick", "༻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nick banner lửa",
+      "flags": ["🔥", "YourNick", "࿐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nick Booyah đội vương miện",
+      "flags": ["👑", "YourNick", "♛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Khung dao găm",
+      "flags": ["꧁†", "YourNick", "†꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thẻ Star Squad",
+      "flags": ["★彡", "YourNick", "彡★"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

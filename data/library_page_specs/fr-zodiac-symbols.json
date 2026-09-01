@@ -6,7 +6,7 @@
   "hero_h1": "Symboles Astrologiques",
   "hero_tagline": "Les douze signes du zodiaque en caractères Unicode, avec les planètes, les animaux du zodiaque chinois et les aspects classiques.",
   "intro": "Les symboles du zodiaque sont de vrais caractères Unicode, pas des images, et n'exigent aucune police particulière. Ils fonctionnent dans une bio Instagram, un pseudo Discord, des notes ou des messages. Cliquez pour copier.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "western",
@@ -284,6 +284,30 @@
     {
       "h2": "Pourquoi les Symboles du Zodiaque Sont des Caractères",
       "body": "Les symboles zodiacaux et planétaires viennent des manuscrits astronomiques et alchimiques, où on les composait comme des lettres. C'est exactement pour cela qu'ils sont entrés dans Unicode : non pour décorer, mais pour permettre la composition de textes astronomiques. Cela explique aussi les écarts d'affichage — certains systèmes traitent ♈ comme une lettre et le dessinent en noir, d'autres comme un pictogramme et l'affichent en emoji coloré."
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "Collections du zodiaque",
+    "h2": "Ensembles zodiaque et astrologie",
+    "intro": "Copiez la roue complète du zodiaque et les dix planètes de l'astrologie moderne dans l'ordre canonique."
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "Zodiaque occidental (Bélier → Poissons)",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zodiaque chinois (Rat → Cochon)",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Les 10 planètes de l'astrologie moderne",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

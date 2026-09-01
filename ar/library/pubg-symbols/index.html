@@ -371,6 +371,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="pubg-collections">
+  <span class="article-section-label">تركيبات الأسماء</span>
+  <h2>تركيبات أسماء PUBG / BGMI جاهزة</h2>
+  <p class="u-secondary-block">انسخ التركيبة كاملة بنقرة واحدة ثم ضع اسمك مكان الفراغ — وتذكّر أن الحد الأقصى 14 حرفًا بما في ذلك الإطار.</p>
+  <div id="pubgCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>لماذا صارت الحروف اليابانية علامة لاعبي ببجي</h2>
   <div class="editorial-block">
@@ -445,6 +454,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "إطار كلاسيكي",
+      flags: ["꧁", "Name", "꧂"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار الابتسامة الشرسة",
+      flags: ["ツ", "Name", "ツ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "سيفان متقاطعان",
+      flags: ["乂•", "Name", "•乂"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار نجوم بأقواس",
+      flags: ["「★」", "Name"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار جمجمة المحارب",
+      flags: ["☠", "Name", "☠"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار التاج",
+      flags: ["♛", "Name"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("pubgCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

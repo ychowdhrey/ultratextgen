@@ -401,6 +401,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">체스 모음</span>
+  <h2>체스 기물 세트</h2>
+  <p class="u-secondary-block">표준 기보 순서(킹, 퀸, 룩, 비숍, 나이트, 폰)로 한쪽 진영의 기물을 통째로 복사하세요.</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>유니코드 폰트로 텍스트를 변환해보세요</h3>
@@ -444,6 +453,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "백색 체스 기물",
+      flags: ["♔", "♕", "♖", "♗", "♘", "♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "흑색 체스 기물",
+      flags: ["♚", "♛", "♜", "♝", "♞", "♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

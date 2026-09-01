@@ -363,6 +363,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="roblox-art-sets">
+  <span class="article-section-label">Bộ tranh chữ</span>
+  <h2>Tranh chữ Roblox có sẵn</h2>
+  <p class="u-secondary-block">Chép nguyên một khuôn mặt hoặc banner dùng được trong chat chỉ với một cú nhấp — giữ nguyên định dạng dọc để các dòng thẳng hàng.</p>
+  <div id="robloxTextArtContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Vì sao Roblox lại nghiêm hơn các game khác</h2>
   <div class="editorial-block">
@@ -437,6 +446,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Mặt vô cảm (kiểu Man Face)",
+      flags: ["⣏⣉⣉⣉⣉⣉⣉⣹", "⡇⢀⣀⠀⠀⣀⡀⢸", "⡇⠘⠛⠂⠐⠛⠃⢸", "⡇⠀⠀⠀⠀⠀⠀⢸", "⡇⠐⠶⠶⠶⠶⠂⢸", "⣇⣀⣀⣀⣀⣀⣀⣸"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Mặt nhếch mép (dot art)",
+      flags: ["⡏⠉⠉⠉⠉⠉⠉⢹", "⡇⠀⣤⠀⠀⣤⠀⢸", "⡇⠀⠛⠀⠀⠛⠀⢸", "⡇⠀⠀⠀⠀⠀⠀⢸", "⡇⠀⢀⣠⠤⠒⠁⢸", "⣇⣀⣀⣀⣀⣀⣀⣸"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Nụ cười khối vuông",
+      flags: ["░░░░░░░░░░", "░░██░░██░░", "░░░░░░░░░░", "░██░░░░██░", "░░██████░░"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Bộ emote cho chat",
+      flags: ["( ͡° ͜ʖ ͡°)", "¯\\_(ツ)_/¯", "(ง'̀-'́)ง", "◉_◉", "(✿◠‿◠)", "ᕦ(ò_óˇ)ᕤ"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Thanh kiếm ASCII",
+      flags: ["⠀⠀⠀/\\", "⠀⠀⠀||", "⠀⠀⠀||", "⠀o=++=o", "⠀⠀⠀||", "⠀⠀⠀\\/"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Banner GG",
+      flags: ["╔══════════╗", "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║", "║⠀⠀⠀G⠀G⠀!⠀⠀║", "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║", "╚══════════╝"],
+      defaultFormat: "vertical"
+    }
+  ];
+
+  ns.buildGrids("robloxTextArtContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

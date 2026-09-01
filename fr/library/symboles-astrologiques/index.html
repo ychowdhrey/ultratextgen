@@ -468,6 +468,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="zodiac-collections">
+  <span class="article-section-label">Collections du zodiaque</span>
+  <h2>Ensembles zodiaque et astrologie</h2>
+  <p class="u-secondary-block">Copiez la roue complète du zodiaque et les dix planètes de l'astrologie moderne dans l'ordre canonique.</p>
+  <div id="zodiacCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Pourquoi les Symboles du Zodiaque Sont des Caractères</h2>
   <div class="editorial-block">
@@ -542,6 +551,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Zodiaque occidental (Bélier → Poissons)",
+      flags: ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zodiaque chinois (Rat → Cochon)",
+      flags: ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Les 10 planètes de l'astrologie moderne",
+      flags: ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("zodiacCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

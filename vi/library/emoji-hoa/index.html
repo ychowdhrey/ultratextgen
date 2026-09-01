@@ -496,6 +496,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">Bộ ký hiệu hoa</span>
+  <h2>Bộ hoa cho bio và dòng phân cách</h2>
+  <p class="u-secondary-block">Các dòng phân cách và bộ bio hoa có sẵn, dán thẳng vào bio, chú thích hay tên người dùng — chép cả cụm chỉ với một cú nhấp.</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Chuyển đổi văn bản bằng phông chữ Unicode</h3>
@@ -535,6 +544,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Khung hoa cho bio",
+      flags: ["✿", "❀", "❁", "❀", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Dòng phân cách hoa chấm",
+      flags: ["✾", "·", "❀", "·", "✾"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ hoa vườn",
+      flags: ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Cụm hoa trong ngoặc",
+      flags: ["꒰❀꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Dòng hoa đậm",
+      flags: ["❋", "❃", "❋", "❃", "❋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Chú thích hoa nhẹ nhàng",
+      flags: ["❀", "🌿", "🌸", "🌿", "❀"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

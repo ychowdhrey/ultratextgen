@@ -448,6 +448,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Coleções do Instagram</span>
+  <h2>Combos de bio e legenda para Instagram</h2>
+  <p class="u-secondary-block">Sequências prontas para colar direto na bio, na legenda ou no story — copie o combo inteiro com um clique.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Perguntas Frequentes</span>
@@ -505,6 +514,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Divisória de bio do Instagram",
+      flags: ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de legenda brilhante",
+      flags: ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Separador floral de bio",
+      flags: ["✿", "─", "✿", "─", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Espaçador de bio pontilhado",
+      flags: ["·", "◦", "·", "◦", "·"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Legenda de lua e nuvem",
+      flags: ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de legenda com olhos de coração",
+      flags: ["♡", "˖", "😍", "˖", "♡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

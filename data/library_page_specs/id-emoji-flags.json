@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Bendera Semua Negara",
   "hero_tagline": "Bendera Indonesia, Malaysia, Singapura, Jepang, Korea — sampai 195 negara, lengkap. Klik benderanya, langsung kesalin, tinggal tempel di bio, nama game, caption, atau chat.",
   "intro": "Emoji bendera itu karakter Unicode asli, bukan gambar yang ditempel. Jadi bisa dicopas ke mana saja — bio Instagram, nama game, status WhatsApp, caption TikTok, nama channel — tanpa install aplikasi atau font apa pun. Bendera Indonesia dan negara yang paling sering dicari ditaruh di bagian atas biar cepat ketemu. Daftar lengkapnya bisa disaring per benua, dan set seperti ASEAN, Uni Eropa, atau G20 bisa disalin utuh sekali klik.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -160,6 +160,50 @@
     {
       "h2": "🇮🇩 sebenarnya bukan karakter bendera",
       "body": "🇮🇩 bukan karakter bendera — isinya huruf indikator I dan D, digambar font jadi Merah Putih. Karena itu Windows menampilkan ID. Unicode meminjam kode ISO agar tak perlu memutuskan mana yang layak disebut negara — juga alasan sebagian bendera tak ada."
+    }
+  ],
+  "collection_section": {
+    "id": "flag-grids",
+    "label": "Set Bendera",
+    "h2": "Set Bendera Siap Salin",
+    "intro": "Set yang sering dipakai — ASEAN, Uni Eropa, G20 — bisa disalin utuh sekali klik, tanpa perlu klik benderanya satu per satu."
+  },
+  "collection_container_id": "flagGridContainer",
+  "collections": [
+    {
+      "name": "Anggota Uni Eropa",
+      "flags": ["🇦🇹", "🇧🇪", "🇧🇬", "🇭🇷", "🇨🇾", "🇨🇿", "🇩🇰", "🇪🇪", "🇫🇮", "🇫🇷", "🇩🇪", "🇬🇷", "🇭🇺", "🇮🇪", "🇮🇹", "🇱🇻", "🇱🇹", "🇱🇺", "🇲🇹", "🇳🇱", "🇵🇱", "🇵🇹", "🇷🇴", "🇸🇰", "🇸🇮", "🇪🇸", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ASEAN",
+      "flags": ["🇸🇬", "🇲🇾", "🇮🇩", "🇹🇭", "🇵🇭", "🇻🇳", "🇧🇳", "🇰🇭", "🇱🇦", "🇲🇲"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Timur Tengah",
+      "flags": ["🇸🇦", "🇦🇪", "🇶🇦", "🇰🇼", "🇧🇭", "🇴🇲", "🇮🇱", "🇯🇴", "🇱🇧", "🇮🇶", "🇮🇷", "🇾🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "G20",
+      "flags": ["🇦🇷", "🇦🇺", "🇧🇷", "🇨🇦", "🇨🇳", "🇫🇷", "🇩🇪", "🇮🇳", "🇮🇩", "🇮🇹", "🇯🇵", "🇲🇽", "🇷🇺", "🇸🇦", "🇿🇦", "🇰🇷", "🇹🇷", "🇬🇧", "🇺🇸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Negara Nordik",
+      "flags": ["🇩🇰", "🇫🇮", "🇮🇸", "🇳🇴", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asia Selatan",
+      "flags": ["🇮🇳", "🇵🇰", "🇧🇩", "🇱🇰", "🇳🇵", "🇧🇹", "🇲🇻", "🇦🇫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asia Timur",
+      "flags": ["🇨🇳", "🇯🇵", "🇰🇷", "🇹🇼", "🇲🇳", "🇭🇰", "🇲🇴"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

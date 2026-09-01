@@ -528,6 +528,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">음악 기호 모음</span>
+  <h2>음표 소개글·트레일 세트</h2>
+  <p class="u-secondary-block">소개글, 캡션, 플레이리스트 이름에 바로 붙여 넣을 수 있는 음표 조합 — 한 번의 클릭으로 통째로 복사하세요.</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>기호만이 아니라 글자 자체도 바꿀 수 있어요</h3>
@@ -605,6 +614,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "음표 소개글 트레일",
+      flags: ["♪", "˚", "♫", "˚", "♪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "부드러운 멜로디 테두리",
+      flags: ["⋆｡˚♬˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "이음줄 음표 조합",
+      flags: ["♩", "♪", "♫", "♬"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "반짝임 음표 구분선",
+      flags: ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "지금 재생 중 캡션",
+      flags: ["🎶", "˚", "♪", "˚", "🎶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "미니멀 음표 포인트",
+      flags: ["·", "♪", "·", "♬", "·"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js" defer></script>
 </body>
 </html>

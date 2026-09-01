@@ -288,6 +288,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="star-collections">
+  <span class="article-section-label">Sterrencollecties</span>
+  <h2>Sterrensets voor bio en beoordelingen</h2>
+  <p class="u-secondary-block">Kant-en-klare sterversieringen, slierten en beoordelingsrijen om in een bio, bijschrift of recensie te plakken — kopieer de hele set in één klik.</p>
+  <div id="starCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">FAQ</span>
@@ -352,6 +361,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Fonkelende biorand",
+      flags: ["⋆", "˚", "✦", "✧", "✦", "˚", "⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Vallende-sterrensliert",
+      flags: ["｡˚⋆★彡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sterrenverlichte gebruikersnaam",
+      flags: ["✩", "｡", "✫", "｡", "✩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Rij van vijf sterren",
+      flags: ["★★★★★"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Glinsterende accentgroep",
+      flags: ["✮", "⋆", "˙", "⭒", "˙", "⋆", "✮"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Hemelse bijschriftgloed",
+      flags: ["˚", "₊", "‧", "🌟", "‧", "₊", "˚"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("starCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

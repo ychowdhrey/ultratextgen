@@ -754,6 +754,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="witchy-collections">
+  <span class="article-section-label">Okkulte Sets</span>
+  <h2>Okkulte Bio- und Rahmen-Sets</h2>
+  <p class="u-secondary-block">Fertige okkulte Zeichenketten für Bio, Caption oder Nutzername — ein Klick kopiert die ganze Kombination.</p>
+  <div id="witchyCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Die meisten dieser Zeichen sind älter als ihre Deutung</h2>
   <div class="editorial-block">
@@ -832,6 +841,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Pentagramm-Bio-Rahmen",
+      flags: ["⛧", "˖", "⛤", "˖", "⛧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mond-und-Sonne-Kombi",
+      flags: ["☽", "˚", "✴", "˚", "☉"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Hexen-Sternenspur",
+      flags: ["✶", "·", "✴", "·", "✶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mondsichel-Rahmen",
+      flags: ["☽⋆ﾟ｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Planeten-Bio-Kombi",
+      flags: ["☽", "☿", "♀", "♂", "♃", "♄"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Ankh-Trennlinie",
+      flags: ["☥", "˖", "⛤", "˖", "☥"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("witchyCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Couronne",
   "hero_tagline": "👑 et tout ce qui l'accompagne : la famille royale, le registre « queen », la victoire et les accessoires.",
   "intro": "L'emoji couronne sert rarement seul : il vient soit avec le vocabulaire « queen/king », soit avec la victoire. Les quatre groupes ci-dessous suivent ces usages. Cliquez sur un emoji pour le copier.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "royal",
@@ -164,6 +164,55 @@
     {
       "h2": "Comment la Couronne Est Devenue un Compliment",
       "body": "Dans les premiers jeux d'emojis, 👑 se lisait littéralement : royauté, conte, monarchie. Son sens actuel vient d'ailleurs — du vocabulaire « queen » popularisé par la culture ballroom puis par les réseaux, où il applaudit une posture plutôt qu'un titre. C'est pour cela que les emojis qui l'entourent aujourd'hui — 💅 💯 🙌 — n'ont rien de royal : ils appartiennent au registre du compliment, pas à celui de la couronne."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Sets de combos",
+    "h2": "Combos d'emoji couronne",
+    "intro": "Des combos couronne prêts à l'emploi — un clic copie le set entier, à coller dans une bio, une légende ou un commentaire."
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "Frimer avec la couronne",
+      "flags": ["👑", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Énergie de reine",
+      "flags": ["👑", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Comportement de roi",
+      "flags": ["👑", "😎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ça me ressemble",
+      "flags": ["👑", "💅", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gagnant",
+      "flags": ["👑", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Statut GOAT",
+      "flags": ["👑", "🐐", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glow-up royal",
+      "flags": ["👑", "✨", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mode couronnement",
+      "flags": ["👑", "🎉", "🥂"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

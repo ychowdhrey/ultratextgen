@@ -340,6 +340,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Sets de combos</span>
+  <h2>Combos d'emoji couronne</h2>
+  <p class="u-secondary-block">Des combos couronne prêts à l'emploi — un clic copie le set entier, à coller dans une bio, une légende ou un commentaire.</p>
+  <div id="crownSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Comment la Couronne Est Devenue un Compliment</h2>
   <div class="editorial-block">
@@ -414,6 +423,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Frimer avec la couronne",
+      flags: ["👑", "💯", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Énergie de reine",
+      flags: ["👑", "💅", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Comportement de roi",
+      flags: ["👑", "😎", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Ça me ressemble",
+      flags: ["👑", "💅", "😌"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gagnant",
+      flags: ["👑", "🏆", "🥇"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Statut GOAT",
+      flags: ["👑", "🐐", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Glow-up royal",
+      flags: ["👑", "✨", "💎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mode couronnement",
+      flags: ["👑", "🎉", "🥂"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("crownSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

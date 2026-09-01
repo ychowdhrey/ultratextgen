@@ -2,7 +2,7 @@
  "slug": "glitzer-symbole",
  "lang": "de",
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "title": "Glitzer-Symbole & Sternchen zum Kopieren — ✨ ✦ ⊹ für Bio und Deko | UltraTextGen",
  "meta_description": "Glitzer-Symbole zum Kopieren: ✨ Funkeln, Sternchen ✦ ✧, Blüten ✿ ❀, Ornamente und Trennlinien — die Zeichen für dekorative Bios und Captions.",
  "breadcrumb": "Glitzer-Symbole",
@@ -358,6 +358,40 @@
   {
    "h2": "Warum die einfarbigen Zeichen die besseren Dekorationen sind",
    "body": "Emojis stehen in einer eigenen Schrift, die farbig gezeichnet wird und ihre eigene Größe mitbringt. Setzt man ✨ mitten in eine Zeile, springt es heraus, verschiebt die Zeilenhöhe und wirkt oft lauter als beabsichtigt. Die typografischen Zeichen — ✦ ⊹ ✿ ❀ — werden dagegen in derselben Schrift und Farbe wie der übrige Text gesetzt. Sie fügen sich ein, skalieren mit der Schriftgröße und funktionieren auch dann noch, wenn die Umgebung keine Emojis darstellt. Für dekorative Bios ist das der praktische Unterschied zwischen einem gestalteten und einem überladenen Eindruck."
+  }
+ ],
+ "collection_section": {
+  "id": "sparkle-collections",
+  "label": "Glitzer-Sets",
+  "h2": "Glitzer-Sets für Bio und Trennlinien",
+  "intro": "Fertige Glitzerketten für Bio, Caption oder Nutzername — ein Klick kopiert die ganze Kombination."
+ },
+ "collection_container_id": "sparkleCollectionsContainer",
+ "collections": [
+  {
+   "name": "Glitzer-Trennlinie für die Bio",
+   "flags": ["✦", "₊", "˖", "⊹", "˖", "₊", "✦"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Funkel-Akzent für Captions",
+   "flags": ["✨", "˖", "°", "💫", "°", "˖", "✨"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Zarter Glitzerrahmen",
+   "flags": ["⊹", "₊", "˖", "✿", "˖", "₊", "⊹"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Glitzer-Strich-Trenner",
+   "flags": ["┈", "┈", "✧", "┈", "┈"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sternenname-Kombi",
+   "flags": ["₊", "°", "✦", "⋆", "✩"],
+   "defaultFormat": "inline"
   }
  ],
  "related": [

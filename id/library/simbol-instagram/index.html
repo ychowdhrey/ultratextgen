@@ -464,6 +464,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Koleksi Instagram</span>
+  <h2>Kombinasi Bio dan Caption Instagram</h2>
+  <p class="u-secondary-block">Rangkaian simbol Instagram siap pakai untuk bio, caption, atau story — salin satu kombinasi utuh dengan sekali klik.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section" id="across-platforms">
   <span class="article-section-label">Antar Perangkat</span>
   <h2>Kenapa Sebagian Simbol Hilang dari Bio Instagram</h2>
@@ -545,6 +554,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Pemisah bio Instagram",
+      flags: ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kombinasi caption berkilau",
+      flags: ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pemisah bio bunga",
+      flags: ["✿", "─", "✿", "─", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Spasi bio titik-titik",
+      flags: ["·", "◦", "·", "◦", "·"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Caption bulan dan awan",
+      flags: ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kombinasi caption mata hati",
+      flags: ["♡", "˖", "😍", "˖", "♡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

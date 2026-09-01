@@ -398,6 +398,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="facebook-collections">
+  <span class="article-section-label">Coleções do Facebook</span>
+  <h2>Modelos de combos para bio e publicações no Facebook</h2>
+  <p class="u-secondary-block">Sequências prontas para colar direto na bio, no nome da Página ou numa publicação — copie o combo inteiro com um clique.</p>
+  <div id="facebookCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforme texto com fontes Unicode</h3>
@@ -437,6 +446,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Linha divisória",
+      flags: ["─────", "♥", "─────"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nome de Página com moldura de estrelas",
+      flags: ["★", "⋆", "✦", "⋆", "★"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Detalhe de coração para bio",
+      flags: ["♡", "˖", "❀", "˖", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Prefixo de anúncio",
+      flags: ["📢", "➤"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sequência de reação rápida",
+      flags: ["👍", "❤️", "😆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nome de Página entre colchetes",
+      flags: ["「", "✦", "」"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("facebookCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

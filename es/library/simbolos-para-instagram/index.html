@@ -403,6 +403,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Colecciones de Instagram</span>
+  <h2>Combos de bio y pie de foto para Instagram</h2>
+  <p class="u-secondary-block">Cadenas listas para pegar directamente en la bio, el pie de foto o una historia — copia el combo entero con un clic.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -446,6 +455,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Divisor de bio de Instagram",
+      flags: ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de pie de foto con brillos",
+      flags: ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Separador floral de bio",
+      flags: ["✿", "─", "✿", "─", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Espaciador de bio punteado",
+      flags: ["·", "◦", "·", "◦", "·"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Pie de foto de luna y nube",
+      flags: ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de pie de foto con ojos de corazón",
+      flags: ["♡", "˖", "😍", "˖", "♡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
