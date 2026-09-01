@@ -38,6 +38,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+from collection_sets import sets_in  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://ultratextgen.com"
 
@@ -54,6 +57,13 @@ ENGLISH_TELLS = re.compile(
     r"instantly|browse and copy|for your|of the)\b", re.I)
 
 
+def live_collection_sets(rel):
+    """containerId -> group count for a LIVE page. See scripts/lib/collection_sets.py
+    for why this is read from the page and not from a spec, and why groups are
+    counted by `flags:`."""
+    return sets_in(rd(rel))
+
+
 def rd(path):
     return io.open(os.path.join(ROOT, path), encoding="utf-8", errors="replace").read()
 
@@ -65,33 +75,6 @@ def en_parent_of(spec):
             if m:
                 return m.group(1), m.group(2)
     return None, None
-
-
-def live_collection_sets(rel):
-    """The combo-set sections a LIVE page renders: containerId -> group count.
-
-    Read from the page, not from its spec, for the same reason tile parity is:
-    an EN spec can be stale against its own page.
-
-    A `copy_pattern: "collection"` section renders its tiles through
-    `UltraTextGen.buildGrids(containerId, GROUPS)` after load, so it leaves no
-    static markup at all — an empty `<div id="…Container"></div>` and nothing
-    else. That is why the tile-count check above cannot see it, and why 16
-    locale pages went live without the section their EN parent carries while
-    every check on this site reported them complete.
-
-    Groups are counted by `flags:`, not `defaultFormat:` — a hand-written
-    GROUPS array does not always carry the latter (library/emoji-flags has
-    none), which reported that page's section as empty.
-    """
-    s = rd(rel)
-    out = {}
-    for m in re.finditer(r'<script>(.*?)</script>', s, re.S):
-        js = m.group(1)
-        c = re.search(r'\bbuildGrids\(\s*["\']([^"\']+)["\']', js)
-        if c:
-            out[c.group(1)] = len(re.findall(r'\bflags\s*:', js))
-    return out
 
 
 def live_tile_count(rel):
