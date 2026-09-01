@@ -6,7 +6,7 @@
   "hero_h1": "Krone Emoji",
   "hero_tagline": "👑 und alles drumherum: die königliche Besetzung, das „Queen“-Register, Sieg und Accessoires.",
   "intro": "Das Kronen-Emoji steht selten allein: Es kommt entweder mit dem „Queen/King“-Wortschatz oder mit dem Gewinnen. Die vier Gruppen unten folgen genau diesen Verwendungen. Zum Kopieren ein Emoji anklicken.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "royal",
@@ -164,6 +164,55 @@
     {
       "h2": "Wie die Krone zum Kompliment Wurde",
       "body": "In den ersten Emoji-Sätzen war 👑 wörtlich gemeint: Königtum, Märchen, Monarchie. Die heutige Bedeutung kommt von woanders — aus dem „Queen“-Wortschatz der Ballroom-Kultur, den die sozialen Netzwerke übernommen haben und der eine Haltung feiert, keinen Titel. Deshalb hat auch das Umfeld, in dem die Krone heute steht — 💅 💯 🙌 —, nichts Königliches: Es gehört zum Register des Kompliments, nicht zu dem der Krone."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombi-Sets",
+    "h2": "Kronen-Emoji-Kombis",
+    "intro": "Fertige Kronen-Kombis — ein Klick kopiert das ganze Set, direkt für Bio, Caption oder Kommentar."
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "Krone zeigen",
+      "flags": ["👑", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Queen-Energie",
+      "flags": ["👑", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "King-Verhalten",
+      "flags": ["👑", "😎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Voll mein Stil",
+      "flags": ["👑", "💅", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gewonnen",
+      "flags": ["👑", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "GOAT-Status",
+      "flags": ["👑", "🐐", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Royales Glow-up",
+      "flags": ["👑", "✨", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Krönungsmodus",
+      "flags": ["👑", "🎉", "🥂"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

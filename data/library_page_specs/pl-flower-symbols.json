@@ -6,7 +6,7 @@
   "hero_h1": "Symbole kwiatów i natury",
   "hero_tagline": "✿ ❀ 🌸 🌿 — kwiaty, liście, drzewa i gotowe kwiatowe przerywniki do opisu profilu. Kliknij, aby skopiować.",
   "intro": "Kwiaty w tekście występują w dwóch odmianach, które łatwo pomylić. Emoji 🌸 🌹 🌷 są kolorowe i duże — dobre w wiadomości albo pod zdjęciem. Znaki tekstowe ✿ ❀ ❁ przyjmują kolor otaczającego pisma i dlatego nadają się na ozdobniki w nazwie czy w opisie profilu. Poniżej znajdziesz obie grupy oraz gotowe przerywniki złożone z kilku znaków. Kliknij, a symbol trafi do schowka.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "classic",
@@ -356,6 +356,45 @@
     {
       "h2": "Dwa różne zbiory pod jedną nazwą",
       "body": "„Symbole kwiatów” to w praktyce dwie osobne rzeczy, które szuka się tym samym hasłem. Emoji kwiatowe pochodzą z japońskich zestawów operatorów komórkowych z końca lat dziewięćdziesiątych i od początku były obrazkami — kolorowymi, gotowymi, niezmiennymi. Znaki takie jak ✿ ❀ ❁ trafiły do Unicode zupełnie inną drogą: to typograficzne ozdobniki drukarskie, tak zwane florony, używane w książkach na długo przed powstaniem komputerów. Dlatego zachowują się jak litery — dziedziczą krój, kolor i wielkość. Ta różnica pochodzenia decyduje o tym, którego zestawu użyć: obrazek wstawia się do treści, ozdobnik wplata się w pismo."
+    }
+  ],
+  "collection_section": {
+    "id": "flower-collections",
+    "label": "Zestawy kwiatowe",
+    "h2": "Kwiatowe zestawy do bio i przerywniki",
+    "intro": "Gotowe kwiatowe przerywniki i zestawy do bio — wklej je prosto w bio, podpis lub nazwę użytkownika, kopiując cały układ jednym kliknięciem."
+  },
+  "collection_container_id": "flowerCollectionsContainer",
+  "collections": [
+    {
+      "name": "Kwiatowa ramka do bio",
+      "flags": ["✿", "❀", "❁", "❀", "✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Przerywnik z kropkami i kwiatkami",
+      "flags": ["✾", "·", "❀", "·", "✾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zestaw ogrodowy",
+      "flags": ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kwiaty w nawiasach",
+      "flags": ["꒰❀꒱"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gruba linia z kwiatkami",
+      "flags": ["❋", "❃", "❋", "❃", "❋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Delikatny podpis z kwiatami",
+      "flags": ["❀", "🌿", "🌸", "🌿", "❀"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

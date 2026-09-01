@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Triste",
   "hero_tagline": "Todos los matices de la tristeza: desde la cara levemente contrariada hasta el llanto, más los kaomoji tristes.",
   "intro": "«Triste» no es una sola emoción, y a veces un emoji no basta. Esta página ordena las caras de la más leve a la más pesada, añade los símbolos que se ponen en lugar de las palabras y termina con kaomoji para cuando una cara redonda no dice lo que quieres. Haz clic para copiar.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Por Qué Existen Tantos Emojis Tristes",
       "body": "Unicode no añadió quince caras tristes por exceso: cada una llegó para un uso que las anteriores no cubrían. 😞 viene de los primeros juegos japoneses, donde servía para disculparse. 🥺 llegó mucho después y casi de inmediato se reinterpretó en clave tierna más que triste. 🫠 y 🫤 son de 2021 y hablan de agotamiento, no de pena. La distancia entre lo que dice el nombre Unicode y lo que la gente hace con el emoji es real, y por eso esta página los ordena por intensidad y no por fecha de incorporación."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Variantes de Emoji Triste",
+    "h2": "Variantes de Emoji Triste",
+    "intro": "Melancolía en un clic — copia un combo triste completo para tu bio, un caption o un mensaje."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Corazón Roto",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Melancolía de Lluvia",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Horas Bajas",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Suspiro de Decepción",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estética Marchita",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Te Echo de Menos",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pack de Kaomoji Tristes",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

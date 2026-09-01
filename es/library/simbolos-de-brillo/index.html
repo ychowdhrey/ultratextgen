@@ -57,6 +57,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/sparkle-symbols/">
 <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/simbolos-de-brillo/">
 <link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/sparkle-symbols/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/glitzer-symbole/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/sparkle-symbols/">
 <meta property="og:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-de-brillo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -471,6 +472,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="sparkle-collections">
+  <span class="article-section-label">Colecciones de brillos</span>
+  <h2>Sets de brillos para bio y divisores</h2>
+  <p class="u-secondary-block">Cadenas de brillos listas para pegar directamente en una bio, un pie de foto o un nombre de usuario — copia el combo entero con un clic.</p>
+  <div id="sparkleCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -522,6 +532,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Divisor de bio con brillos",
+      flags: ["✦", "₊", "˖", "⊹", "˖", "₊", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Acento de destello para pie de foto",
+      flags: ["✨", "˖", "°", "💫", "°", "˖", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Borde suave de brillos",
+      flags: ["⊹", "₊", "˖", "✿", "˖", "₊", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisor de guiones con purpurina",
+      flags: ["┈", "┈", "✧", "┈", "┈"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de nombre de usuario estrellado",
+      flags: ["₊", "°", "✦", "⋆", "✩"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sparkleCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

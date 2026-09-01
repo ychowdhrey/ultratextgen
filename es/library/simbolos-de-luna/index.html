@@ -60,6 +60,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/simvoly-luny/">
 <link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/tsuki-kigou/">
 <link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/simboli-luna/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/mond-symbole/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/moon-celestial-symbols/">
 <meta property="og:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-de-luna.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -389,6 +390,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="celestial-collections">
+  <span class="article-section-label">Colecciones celestes</span>
+  <h2>Secuencias celestes</h2>
+  <p class="u-secondary-block">Copia una secuencia celeste completa con un clic: las ocho fases lunares en orden astronómico y el ciclo solar del amanecer a la noche.</p>
+  <div id="celestialCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -444,6 +454,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Fases lunares (orden astronómico)",
+      flags: ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Progresión solar (ciclo del día)",
+      flags: ["🌅", "🌞", "🌇", "🌃"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("celestialCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

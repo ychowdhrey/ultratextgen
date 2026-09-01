@@ -368,6 +368,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">مجموعات كاواي</span>
+  <h2>أطقم كاواي للنبذة واسم المستخدم</h2>
+  <p class="u-secondary-block">تركيبات كاواي جاهزة — قلوب ناعمة ووجوه صغيرة وبريق باستيل تلصقها مباشرة في النبذة أو اسم المستخدم أو الرسالة بنقرة واحدة.</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>حوّل النص بخطوط يونيكود</h3>
@@ -411,6 +420,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "تركيبة قلوب ناعمة",
+      flags: ["꒰", "♡", "꒱", "⋆", "ෆ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "فاصل كاواي لامع",
+      flags: ["⊹", "⋆", "✧", "⋆", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "اسم مستخدم بأجنحة زهر",
+      flags: ["ʚ ✿ ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار غبار باستيل",
+      flags: ["✦", "⋆", "❀", "⋆", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "إطار وجوه صغيرة",
+      flags: ["(˶˃ ᵕ ˂˶)", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "تركيبة أقواس لطيفة",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

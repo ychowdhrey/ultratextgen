@@ -1,0 +1,257 @@
+{
+ "slug": "waschsymbole",
+ "lang": "de",
+ "title": "Waschsymbole & Trockner Symbole — Bedeutung aller Pflegekennzeichen | UltraTextGen",
+ "meta_description": "Waschsymbole verstehen: Waschen, Bleichen, Trocknen, Bügeln und alle Durchstreichungen erklärt — mit Unicode-Zeichen zum Kopieren für Etiketten, Notizen und Aushänge.",
+ "breadcrumb": "Waschsymbole",
+ "hero_h1": "Waschsymbole und ihre Bedeutung",
+ "hero_tagline": "Waschen, Bleichen, Trocknen, Bügeln — die fünf Zeichengruppen auf jedem Pflegeetikett, dazu passende Unicode-Zeichen zum Kopieren.",
+ "intro": "Auf jedem Pflegeetikett stehen dieselben fünf Zeichenfamilien: der Waschbottich, das Bleichdreieck, der Trocknerkreis, das Bügeleisen und der Kreis für die Textilreinigung. Ein Kreuz durch eines dieser Zeichen heißt immer „nicht tun“. Diese Seite erklärt die Systematik und stellt die Unicode-Zeichen bereit, mit denen sich Waschhinweise in Text schreiben lassen — für Aushänge in der Waschküche, Übergabelisten oder Pflegehinweise im Online-Shop.",
+ "sections": [
+  {
+   "id": "waschen",
+   "label": "Waschen",
+   "h2": "Waschen und Wasser",
+   "intro": "Der Waschbottich steht für den Waschgang; die Zahl darin nennt die Höchsttemperatur, Striche darunter die Schonstufe.",
+   "symbols": [
+    {
+     "char": "🧺",
+     "label": "Wäschekorb"
+    },
+    {
+     "char": "🧼",
+     "label": "Seife"
+    },
+    {
+     "char": "🧴",
+     "label": "Waschmittelflasche"
+    },
+    {
+     "char": "💧",
+     "label": "Wassertropfen"
+    },
+    {
+     "char": "🚿",
+     "label": "Dusche"
+    },
+    {
+     "char": "🛁",
+     "label": "Badewanne"
+    },
+    {
+     "char": "♨",
+     "label": "Heiße Quellen (Heißwäsche)"
+    },
+    {
+     "char": "🌊",
+     "label": "Welle"
+    }
+   ]
+  },
+  {
+   "id": "bleichen",
+   "label": "Bleichen",
+   "h2": "Bleichen",
+   "intro": "Das Bleichzeichen ist ein Dreieck. Leer heißt bleichen erlaubt, durchgestrichen heißt nicht bleichen.",
+   "symbols": [
+    {
+     "char": "△",
+     "label": "Weißes Dreieck (Bleichen erlaubt)"
+    },
+    {
+     "char": "▲",
+     "label": "Schwarzes Dreieck"
+    },
+    {
+     "char": "⚠",
+     "label": "Warnzeichen"
+    },
+    {
+     "char": "🧪",
+     "label": "Reagenzglas (Chemie)"
+    },
+    {
+     "char": "☣",
+     "label": "Biogefährdung"
+    },
+    {
+     "char": "🚫",
+     "label": "Verboten (nicht bleichen)"
+    }
+   ]
+  },
+  {
+   "id": "trocknen",
+   "label": "Trocknen",
+   "h2": "Trocknen und Trockner",
+   "intro": "Der Kreis im Quadrat steht für den Trockner, Punkte darin für die Temperatur. Sonne und Quadrat stehen für Lufttrocknen.",
+   "symbols": [
+    {
+     "char": "☀",
+     "label": "Sonne (Lufttrocknen)"
+    },
+    {
+     "char": "🌞",
+     "label": "Sonne mit Gesicht"
+    },
+    {
+     "char": "◯",
+     "label": "Großer Kreis (Trockner)"
+    },
+    {
+     "char": "□",
+     "label": "Weißes Quadrat (liegend trocknen)"
+    },
+    {
+     "char": "💨",
+     "label": "Luftzug (an der Luft trocknen)"
+    },
+    {
+     "char": "🧷",
+     "label": "Sicherheitsnadel (Wäscheklammer)"
+    },
+    {
+     "char": "🌡",
+     "label": "Thermometer (Trocknertemperatur)"
+    }
+   ]
+  },
+  {
+   "id": "buegeln",
+   "label": "Bügeln",
+   "h2": "Bügeln und Hitze",
+   "intro": "Ein, zwei oder drei Punkte im Bügeleisen bedeuten niedrige, mittlere und hohe Temperatur. Diese Punktzeichen bilden dieselbe Abstufung ab.",
+   "symbols": [
+    {
+     "char": "🔥",
+     "label": "Feuer (hohe Hitze)"
+    },
+    {
+     "char": "♨",
+     "label": "Heiße Quellen (Dampf)"
+    },
+    {
+     "char": "•",
+     "label": "Ein Punkt (niedrig, bis 110 °C)"
+    },
+    {
+     "char": "‥",
+     "label": "Zwei Punkte (mittel, bis 150 °C)"
+    },
+    {
+     "char": "…",
+     "label": "Drei Punkte (hoch, bis 200 °C)"
+    },
+    {
+     "char": "♻",
+     "label": "Recycling (Ökoprogramm)"
+    }
+   ]
+  },
+  {
+   "id": "verboten",
+   "label": "Durchgestrichen",
+   "h2": "Durchgestrichene Zeichen: „nicht tun“",
+   "intro": "Ein Kreuz durch ein Pflegezeichen verbietet die Behandlung. In Kombination mit den Zeichen oben lassen sich „nicht waschen“, „nicht bleichen“, „nicht trocknen“ und „nicht bügeln“ schreiben.",
+   "symbols": [
+    {
+     "char": "🚫",
+     "label": "Verbotszeichen"
+    },
+    {
+     "char": "⛔",
+     "label": "Durchfahrt verboten"
+    },
+    {
+     "char": "❌",
+     "label": "Kreuzzeichen"
+    },
+    {
+     "char": "✗",
+     "label": "Kreuz (dünn)"
+    },
+    {
+     "char": "✘",
+     "label": "Kreuz (fett)"
+    },
+    {
+     "char": "⊘",
+     "label": "Durchgestrichener Kreis"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Waschsymbolen",
+ "faq": [
+  {
+   "q": "Was bedeutet das Trockner-Symbol mit einem Punkt?",
+   "a": "Ein Kreis im Quadrat mit einem Punkt heißt: Trocknen im Wäschetrockner erlaubt, aber bei niedriger Temperatur. Zwei Punkte stehen für normale Temperatur, ein durchgestrichener Kreis im Quadrat heißt, dass das Teil nicht in den Trockner darf."
+  },
+  {
+   "q": "Was heißt die Zahl im Waschbottich?",
+   "a": "Die Höchsttemperatur in Grad Celsius — 30, 40, 60 oder 95. Ein Strich unter dem Bottich bedeutet Schonwaschgang, zwei Striche Feinwäsche, eine Hand darin Handwäsche."
+  },
+  {
+   "q": "Woran erkenne ich, dass etwas nicht gewaschen werden darf?",
+   "a": "Am durchgestrichenen Waschbottich. Ein Kreuz durch ein Pflegezeichen heißt immer „nicht tun“ — das gilt für alle fünf Zeichenfamilien gleichermaßen."
+  },
+  {
+   "q": "Was bedeutet der Kreis ohne Quadrat?",
+   "a": "Der einfache Kreis steht für die professionelle Textilreinigung, nicht für den Trockner. Der Buchstabe darin (P oder F) sagt der Reinigung, welches Lösungsmittel zulässig ist — für den Hausgebrauch ist nur wichtig, ob er durchgestrichen ist."
+  },
+  {
+   "q": "Sind die Zeichen auf dieser Seite die echten Pflegesymbole?",
+   "a": "Nein, und das ist ein wichtiger Unterschied. Die genormten Pflegezeichen nach GINETEX sind Bildzeichen und in Unicode nicht enthalten. Was hier steht, sind die nächstliegenden Unicode-Zeichen, mit denen sich ein Waschhinweis in normalem Text ausdrücken lässt — brauchbar für Aushänge und Beschreibungen, kein Ersatz für ein gedrucktes Etikett."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Fünf Zeichen, ein System",
+   "body": "Pflegeetiketten wirken unübersichtlich, folgen aber einer knappen Logik: fünf Grundzeichen in immer derselben Reihenfolge — Waschbottich, Dreieck, Quadrat, Bügeleisen, Kreis. Was ein Zeichen genauer bestimmt, steht darin (eine Zahl, ein Punkt, ein Buchstabe) oder darunter (ein Strich für schonend, zwei für sehr schonend). Wer diese Grammatik einmal verstanden hat, muss kein Etikett mehr auswendig lernen: Zeichen benennt die Behandlung, Inhalt nennt die Grenze, Kreuz verbietet sie."
+  },
+  {
+   "h2": "Warum diese Zeichen nicht in Unicode stehen",
+   "body": "Die genormten Pflegesymbole gehören GINETEX und sind als Bildmarken geschützt — Unicode nimmt geschützte Zeichensysteme grundsätzlich nicht auf. Deshalb gibt es kein Zeichen für „Waschbottich 40 Grad“, das man in eine Nachricht kopieren könnte. Für Fließtext bleibt der Umweg über die Zeichen oben: ein Wassertropfen und eine Temperaturangabe sagen dasselbe wie das Etikett, nur eben in Textform."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/warnsymbole/",
+   "title": "Warn- und Gefahrensymbole",
+   "desc": "GHS-Piktogramme und Warnzeichen mit ihrer Bedeutung — zum Kopieren."
+  },
+  {
+   "href": "/de/library/geometrische-symbole/",
+   "title": "Geometrische Symbole",
+   "desc": "Kreise, Quadrate, Dreiecke und Rauten in allen Varianten."
+  },
+  {
+   "href": "/de/library/haekchen-symbole/",
+   "title": "Häkchen- und Kreuz-Symbole",
+   "desc": "Haken, Kreuze und Verbotszeichen für Listen und Tabellen."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/waschsymbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/waschsymbole/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/wassymbolen/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/laundry-care-symbols/"
+  }
+ ],
+ "page_type": "library",
+ "copy_pattern": "single",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

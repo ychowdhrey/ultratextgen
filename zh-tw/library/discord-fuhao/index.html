@@ -500,6 +500,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="discord-collections">
+  <span class="article-section-label">Discord 組合</span>
+  <h2>Discord 簡介與頻道組合範本</h2>
+  <p class="u-secondary-block">現成的 Discord 字串，可直接貼到使用者名稱、簡介、伺服器名稱或頻道 — 一鍵複製整組。</p>
+  <div id="discordCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">常見問題</span>
@@ -553,6 +562,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Discord 頻道分隔線",
+      flags: ["━━━┈┈┈━━━"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "星星括號使用者名稱組合",
+      flags: ["꒰", "✦", "⊹", "✧", "꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "愛心邊框簡介組合",
+      flags: ["𓆩♡𓆪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "閃亮簡介點綴",
+      flags: ["⋆", "˚", "⊹", "✦", "⊹", "˚", "⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "直角括號頻道名稱",
+      flags: ["「", "✧", "・", "✧", "」"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "點狀伺服器分隔線",
+      flags: ["・", "⊹", "┈", "┈", "⊹", "・"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("discordCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -496,6 +496,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">Coleções florais</span>
+  <h2>Conjuntos florais para bio e divisórias</h2>
+  <p class="u-secondary-block">Divisórias florais e conjuntos de bio prontos para colar direto na bio, na legenda ou no nome de usuário — copie o arranjo inteiro com um clique.</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforme texto com fontes Unicode</h3>
@@ -535,6 +544,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Moldura floral para bio",
+      flags: ["✿", "❀", "❁", "❀", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisória de florzinhas",
+      flags: ["✾", "·", "❀", "·", "✾"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Conjunto jardim florido",
+      flags: ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Flores entre colchetes",
+      flags: ["꒰❀꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Linha de florzinhas cheias",
+      flags: ["❋", "❃", "❋", "❃", "❋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Legenda floral suave",
+      flags: ["❀", "🌿", "🌸", "🌿", "❀"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

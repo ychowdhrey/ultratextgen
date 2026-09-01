@@ -368,6 +368,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">Наборы кавай</span>
+  <h2>Кавайные наборы для профиля и никнейма</h2>
+  <p class="u-secondary-block">Готовые кавайные комбинации — мягкие сердечки, крошечные мордочки и пастельные искры, которые вставляются в описание, никнейм или сообщение одним кликом.</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Преобразите текст с помощью Unicode-шрифтов</h3>
@@ -411,6 +420,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Комбинация с мягкими сердечками",
+      flags: ["꒰", "♡", "꒱", "⋆", "ෆ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Кавайный разделитель с искрами",
+      flags: ["⊹", "⋆", "✧", "⋆", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Никнейм с лепестковыми крыльями",
+      flags: ["ʚ ✿ ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Рамка из пастельной пыли",
+      flags: ["✦", "⋆", "❀", "⋆", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Рамка с крошечными мордочками",
+      flags: ["(˶˃ ᵕ ˂˶)", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Милая комбинация со скобками",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

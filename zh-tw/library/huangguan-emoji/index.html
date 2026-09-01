@@ -340,6 +340,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">組合套組</span>
+  <h2>皇冠表情符號組合</h2>
+  <p class="u-secondary-block">現成的皇冠組合 — 一鍵複製整組，直接貼到自我介紹、貼文說明或留言裡。</p>
+  <div id="crownSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>皇冠怎麼變成一句稱讚</h2>
   <div class="editorial-block">
@@ -414,6 +423,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "炫耀皇冠",
+      flags: ["👑", "💯", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "女王氣場",
+      flags: ["👑", "💅", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "王者風範",
+      flags: ["👑", "😎", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "很有我的風格",
+      flags: ["👑", "💅", "😌"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "冠軍到手",
+      flags: ["👑", "🏆", "🥇"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "史上最強",
+      flags: ["👑", "🐐", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "皇家級蛻變",
+      flags: ["👑", "✨", "💎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "加冕模式",
+      flags: ["👑", "🎉", "🥂"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("crownSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

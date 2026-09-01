@@ -340,6 +340,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Kombi-Sets</span>
+  <h2>Kronen-Emoji-Kombis</h2>
+  <p class="u-secondary-block">Fertige Kronen-Kombis — ein Klick kopiert das ganze Set, direkt für Bio, Caption oder Kommentar.</p>
+  <div id="crownSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Wie die Krone zum Kompliment Wurde</h2>
   <div class="editorial-block">
@@ -414,6 +423,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Krone zeigen",
+      flags: ["👑", "💯", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Queen-Energie",
+      flags: ["👑", "💅", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "King-Verhalten",
+      flags: ["👑", "😎", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Voll mein Stil",
+      flags: ["👑", "💅", "😌"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gewonnen",
+      flags: ["👑", "🏆", "🥇"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "GOAT-Status",
+      flags: ["👑", "🐐", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Royales Glow-up",
+      flags: ["👑", "✨", "💎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Krönungsmodus",
+      flags: ["👑", "🎉", "🥂"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("crownSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -304,6 +304,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">コンボセット</span>
+  <h2>どくろ絵文字のコンボセット</h2>
+  <p class="u-secondary-block">どくろのコンボをワンクリックでまるごとコピーして、コメントやキャプション、返信にそのまま貼れます。</p>
+  <div id="skullSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>ドクロが「笑い」になった経緯</h2>
   <div class="editorial-block">
@@ -374,6 +383,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "笑い死に",
+      flags: ["💀", "😂", "🤣"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "危険地帯",
+      flags: ["☠️", "☣️", "☢️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "海賊モード",
+      flags: ["☠️", "🏴‍☠️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "完全に息絶えた",
+      flags: ["💀", "⚰️", "🪦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ハロウィンのどくろ",
+      flags: ["💀", "🎃", "👻"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "面白すぎて死ぬ",
+      flags: ["💀", "💯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "背筋が凍る",
+      flags: ["💀", "🦴"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "私、RIP",
+      flags: ["💀", "⚰️"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("skullSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

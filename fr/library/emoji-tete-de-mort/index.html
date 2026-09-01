@@ -304,6 +304,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Sets de combos</span>
+  <h2>Combos d'emoji tête de mort</h2>
+  <p class="u-secondary-block">Copiez une combo tête de mort entière en un clic et collez-la directement dans un commentaire, une légende ou une réponse.</p>
+  <div id="skullSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Comment la Tête de Mort Est Devenue un Rire</h2>
   <div class="editorial-block">
@@ -374,6 +383,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Mort de rire",
+      flags: ["💀", "😂", "🤣"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zone de danger",
+      flags: ["☠️", "☣️", "☢️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Mode pirate",
+      flags: ["☠️", "🏴‍☠️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Complètement mort",
+      flags: ["💀", "⚰️", "🪦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Tête de mort d'Halloween",
+      flags: ["💀", "🎃", "👻"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Tellement drôle que j'en meurs",
+      flags: ["💀", "💯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "À glacer le sang",
+      flags: ["💀", "🦴"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "RIP moi",
+      flags: ["💀", "⚰️"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("skullSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -29,7 +29,9 @@
       "symbols": [
         { "char": "⚧", "label": "Transgender Symbol" },
         { "char": "⚢", "label": "Doubled Female Sign — Sapphic / Lesbian Pride" },
-        { "char": "⚣", "label": "Doubled Male Sign — Gay Pride" }
+        { "char": "⚣", "label": "Doubled Male Sign — Gay Pride" },
+        { "char": "⚥", "label": "Male and Female Sign" },
+        { "char": "⚦", "label": "Male With Stroke Sign" }
       ]
     },
     {
@@ -54,52 +56,103 @@
   "collections": [
     {
       "name": "Rainbow Pride (6-Stripe)",
-      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜"],
+      "flags": [
+        "❤️",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "💜"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Transgender Pride",
-      "flags": ["🩵", "🩷", "🤍", "🩷", "🩵"],
+      "flags": [
+        "🩵",
+        "🩷",
+        "🤍",
+        "🩷",
+        "🩵"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Bisexual Pride",
-      "flags": ["🩷", "💜", "💙"],
+      "flags": [
+        "🩷",
+        "💜",
+        "💙"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Pansexual Pride",
-      "flags": ["🩷", "💛", "🩵"],
+      "flags": [
+        "🩷",
+        "💛",
+        "🩵"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Lesbian Pride (Sunset Tones)",
-      "flags": ["🧡", "🩷", "🤍"],
+      "flags": [
+        "🧡",
+        "🩷",
+        "🤍"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Non-Binary Pride",
-      "flags": ["💛", "🤍", "💜", "🖤"],
+      "flags": [
+        "💛",
+        "🤍",
+        "💜",
+        "🖤"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Genderfluid Pride",
-      "flags": ["🩷", "🤍", "💜", "🖤", "💙"],
+      "flags": [
+        "🩷",
+        "🤍",
+        "💜",
+        "🖤",
+        "💙"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Asexual Pride",
-      "flags": ["🖤", "🩶", "🤍", "💜"],
+      "flags": [
+        "🖤",
+        "🩶",
+        "🤍",
+        "💜"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Progress Pride (Rainbow + Inclusive Tones)",
-      "flags": ["🏳️‍🌈", "🤎", "🖤", "🩵", "🩷", "🤍"],
+      "flags": [
+        "🏳️‍🌈",
+        "🤎",
+        "🖤",
+        "🩵",
+        "🩷",
+        "🤍"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Intersex Pride",
-      "flags": ["💛", "💜"],
+      "flags": [
+        "💛",
+        "💜"
+      ],
       "defaultFormat": "inline"
     }
   ],

@@ -1,0 +1,540 @@
+{
+ "slug": "wikinger-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "title": "Wikinger-Symbole & Runen zum Kopieren — Bedeutung des Futhark | UltraTextGen",
+ "meta_description": "Wikinger-Symbole und Runen zum Kopieren: das Ältere Futhark mit Bedeutung, Jüngeres Futhark, angelsächsische Runen und Runen-Interpunktion.",
+ "breadcrumb": "Wikinger-Symbole und Runen",
+ "hero_h1": "Wikinger-Symbole und Runen",
+ "hero_tagline": "Das Ältere Futhark mit Bedeutung, dazu die jüngeren und angelsächsischen Reihen.",
+ "intro": "Runen sind ein Alphabet, kein Symbolvorrat — jedes Zeichen steht für einen Laut und trägt daneben einen Namen mit eigener Bedeutung. Diese Seite listet die drei historischen Reihen: das Ältere Futhark mit 24 Zeichen, das kürzere Jüngere Futhark der Wikingerzeit und die erweiterte angelsächsische Reihe. Jedes Zeichen lässt sich mit einem Klick kopieren.",
+ "sections": [
+  {
+   "id": "aelteres",
+   "label": "Älteres Futhark",
+   "h2": "Älteres Futhark",
+   "intro": "Die älteste Reihe, 2. bis 8. Jahrhundert — hier mit den überlieferten Namen und ihrer Bedeutung.",
+   "symbols": [
+    {
+     "char": "ᚠ",
+     "label": "Fehu — Vieh, Besitz"
+    },
+    {
+     "char": "ᚢ",
+     "label": "Uruz — Auerochse, Kraft"
+    },
+    {
+     "char": "ᚦ",
+     "label": "Thurisaz — Riese, Dorn"
+    },
+    {
+     "char": "ᚨ",
+     "label": "Ansuz — Gott, Odin"
+    },
+    {
+     "char": "ᚱ",
+     "label": "Raidho — Ritt, Reise"
+    },
+    {
+     "char": "ᚲ",
+     "label": "Kenaz — Fackel, Wissen"
+    },
+    {
+     "char": "ᚷ",
+     "label": "Gebo — Gabe"
+    },
+    {
+     "char": "ᚹ",
+     "label": "Wunjo — Freude"
+    },
+    {
+     "char": "ᚺ",
+     "label": "Hagalaz — Hagel"
+    },
+    {
+     "char": "ᚾ",
+     "label": "Nauthiz — Not"
+    },
+    {
+     "char": "ᛁ",
+     "label": "Isa — Eis"
+    },
+    {
+     "char": "ᛃ",
+     "label": "Jera — Jahr, Ernte"
+    },
+    {
+     "char": "ᛇ",
+     "label": "Eihwaz (Eibe)"
+    },
+    {
+     "char": "ᛈ",
+     "label": "Perthro (Würfelbecher)"
+    },
+    {
+     "char": "ᛉ",
+     "label": "Algiz (Elch)"
+    },
+    {
+     "char": "ᛊ",
+     "label": "Sowilo (Sonne)"
+    },
+    {
+     "char": "ᛏ",
+     "label": "Tiwaz (Gott Tyr)"
+    },
+    {
+     "char": "ᛒ",
+     "label": "Berkano (Birke)"
+    },
+    {
+     "char": "ᛖ",
+     "label": "Ehwaz (Pferd)"
+    },
+    {
+     "char": "ᛗ",
+     "label": "Mannaz (Mensch)"
+    },
+    {
+     "char": "ᛚ",
+     "label": "Laguz (Wasser)"
+    },
+    {
+     "char": "ᛜ",
+     "label": "Ingwaz (Fruchtbarkeit)"
+    },
+    {
+     "char": "ᛞ",
+     "label": "Dagaz (Tag)"
+    },
+    {
+     "char": "ᛟ",
+     "label": "Othala (Erbland)"
+    }
+   ]
+  },
+  {
+   "id": "juengeres",
+   "label": "Jüngeres Futhark",
+   "h2": "Jüngeres Futhark",
+   "intro": "Die auf 16 Zeichen verkürzte Reihe der eigentlichen Wikingerzeit.",
+   "symbols": [
+    {
+     "char": "ᚠ",
+     "label": "Fe — Besitz"
+    },
+    {
+     "char": "ᚢ",
+     "label": "Ur — Schlacke, Ur"
+    },
+    {
+     "char": "ᚦ",
+     "label": "Thurs — Riese"
+    },
+    {
+     "char": "ᚬ",
+     "label": "Oss — Gott, Mündung"
+    },
+    {
+     "char": "ᚱ",
+     "label": "Reid — Ritt"
+    },
+    {
+     "char": "ᚴ",
+     "label": "Kaun — Geschwür"
+    },
+    {
+     "char": "ᚼ",
+     "label": "Hagall — Hagel"
+    },
+    {
+     "char": "ᚾ",
+     "label": "Naud — Not"
+    },
+    {
+     "char": "ᛁ",
+     "label": "Is — Eis"
+    },
+    {
+     "char": "ᛅ",
+     "label": "Ar — gutes Jahr"
+    },
+    {
+     "char": "ᛋ",
+     "label": "Sol — Sonne"
+    },
+    {
+     "char": "ᛏ",
+     "label": "Tyr — der Gott Tyr"
+    },
+    {
+     "char": "ᛒ",
+     "label": "Bjarkan"
+    },
+    {
+     "char": "ᛘ",
+     "label": "Madr"
+    },
+    {
+     "char": "ᛚ",
+     "label": "Logr"
+    },
+    {
+     "char": "ᛦ",
+     "label": "Yr"
+    }
+   ]
+  },
+  {
+   "id": "angelsaechsisch",
+   "label": "Angelsächsisches Futhorc",
+   "h2": "Angelsächsisches Futhorc",
+   "intro": "Die erweiterte Reihe auf den britischen Inseln, bis zu 33 Zeichen.",
+   "symbols": [
+    {
+     "char": "ᚪ",
+     "label": "Ac — Eiche"
+    },
+    {
+     "char": "ᚫ",
+     "label": "Aesc — Esche"
+    },
+    {
+     "char": "ᚣ",
+     "label": "Yr — Bogen"
+    },
+    {
+     "char": "ᛠ",
+     "label": "Ear — Erde, Grab"
+    },
+    {
+     "char": "ᛡ",
+     "label": "Ior — Wasserwesen"
+    },
+    {
+     "char": "ᛢ",
+     "label": "Cweorth — Feuerbohrer"
+    },
+    {
+     "char": "ᛣ",
+     "label": "Calc — Kelch"
+    },
+    {
+     "char": "ᛤ",
+     "label": "Cealc — Kalk"
+    },
+    {
+     "char": "ᛥ",
+     "label": "Stan — Stein"
+    },
+    {
+     "char": "ᚩ",
+     "label": "Os — Mund"
+    },
+    {
+     "char": "ᚸ",
+     "label": "Gar — Speer"
+    },
+    {
+     "char": "ᛒ",
+     "label": "Beorc — Birke"
+    }
+   ]
+  },
+  {
+   "id": "mittelalter",
+   "label": "Mittelalterliche Runen und Sonderformen",
+   "h2": "Mittelalterliche Runen und Sonderformen",
+   "intro": "Spätere Runen aus mittelalterlichen und regionalen Inschriften.",
+   "symbols": [
+    {
+     "char": "ᛧ",
+     "label": "Kurzzweig-Yr"
+    },
+    {
+     "char": "ᛨ",
+     "label": "Isländisches Yr"
+    },
+    {
+     "char": "ᛩ",
+     "label": "Runenbuchstabe Q"
+    },
+    {
+     "char": "ᛪ",
+     "label": "Runenbuchstabe X"
+    },
+    {
+     "char": "ᛱ",
+     "label": "Runenbuchstabe K"
+    },
+    {
+     "char": "ᛲ",
+     "label": "Runenbuchstabe Sh"
+    },
+    {
+     "char": "ᛳ",
+     "label": "Runenbuchstabe Oo"
+    },
+    {
+     "char": "ᛴ",
+     "label": "Runenbuchstabe Os (Franks Casket)"
+    },
+    {
+     "char": "ᛵ",
+     "label": "Runenbuchstabe Is (Franks Casket)"
+    },
+    {
+     "char": "ᛶ",
+     "label": "Runenbuchstabe Eh (Franks Casket)"
+    },
+    {
+     "char": "ᛷ",
+     "label": "Runenbuchstabe Ac (Franks Casket)"
+    },
+    {
+     "char": "ᛸ",
+     "label": "Runenbuchstabe Aesc (Franks Casket)"
+    }
+   ]
+  },
+  {
+   "id": "interpunktion",
+   "label": "Runen-Interpunktion",
+   "h2": "Runen-Interpunktion",
+   "intro": "Worttrenner und die Zeichen für die Goldene Zahl im Runenkalender.",
+   "symbols": [
+    {
+     "char": "᛫",
+     "label": "Einfacher Worttrenner"
+    },
+    {
+     "char": "᛬",
+     "label": "Doppelter Worttrenner"
+    },
+    {
+     "char": "᛭",
+     "label": "Kreuzförmiger Trenner"
+    },
+    {
+     "char": "ᛮ",
+     "label": "Arlaug — Goldene Zahl 17"
+    },
+    {
+     "char": "ᛯ",
+     "label": "Tvimadur — Goldene Zahl 18"
+    },
+    {
+     "char": "ᛰ",
+     "label": "Belgthor — Goldene Zahl 19"
+    }
+   ]
+  },
+  {
+   "id": "weitere-runen",
+   "label": "Weitere Zeichen aus dem Unicode-Runenblock",
+   "h2": "Weitere Zeichen aus dem Unicode-Runenblock",
+   "intro": "Der Rest des Unicode-Runenblocks — Punkt-, Kurzzweig- und Buchstabenvarianten.",
+   "symbols": [
+    {
+     "char": "ᚡ",
+     "label": "Runenbuchstabe V"
+    },
+    {
+     "char": "ᚤ",
+     "label": "Runenbuchstabe Y"
+    },
+    {
+     "char": "ᚥ",
+     "label": "Runenbuchstabe W"
+    },
+    {
+     "char": "ᚧ",
+     "label": "Runenbuchstabe Eth"
+    },
+    {
+     "char": "ᚭ",
+     "label": "Runenbuchstabe Kurzzweig-Oss O"
+    },
+    {
+     "char": "ᚮ",
+     "label": "Runenbuchstabe O"
+    },
+    {
+     "char": "ᚯ",
+     "label": "Runenbuchstabe Oe"
+    },
+    {
+     "char": "ᚰ",
+     "label": "Runenbuchstabe On"
+    },
+    {
+     "char": "ᚳ",
+     "label": "Runenbuchstabe Cen"
+    },
+    {
+     "char": "ᚵ",
+     "label": "Runenbuchstabe G"
+    },
+    {
+     "char": "ᚶ",
+     "label": "Runenbuchstabe Eng"
+    },
+    {
+     "char": "ᚻ",
+     "label": "Runenbuchstabe Haegl H"
+    },
+    {
+     "char": "ᚽ",
+     "label": "Runenbuchstabe Kurzzweig-Hagall H"
+    },
+    {
+     "char": "ᚿ",
+     "label": "Runenbuchstabe Kurzzweig-Naud N"
+    },
+    {
+     "char": "ᛀ",
+     "label": "Runenbuchstabe Punktiertes N"
+    },
+    {
+     "char": "ᛂ",
+     "label": "Runenbuchstabe E"
+    },
+    {
+     "char": "ᛄ",
+     "label": "Runenbuchstabe Ger"
+    },
+    {
+     "char": "ᛆ",
+     "label": "Runenbuchstabe Kurzzweig-Ar A"
+    },
+    {
+     "char": "ᛌ",
+     "label": "Runenbuchstabe Kurzzweig-Sol S"
+    },
+    {
+     "char": "ᛍ",
+     "label": "Runenbuchstabe C"
+    },
+    {
+     "char": "ᛎ",
+     "label": "Runenbuchstabe Z"
+    },
+    {
+     "char": "ᛐ",
+     "label": "Runenbuchstabe Kurzzweig-Tyr T"
+    },
+    {
+     "char": "ᛑ",
+     "label": "Runenbuchstabe D"
+    },
+    {
+     "char": "ᛓ",
+     "label": "Runenbuchstabe Kurzzweig-Bjarkan B"
+    },
+    {
+     "char": "ᛔ",
+     "label": "Runenbuchstabe Punktiertes P"
+    },
+    {
+     "char": "ᛕ",
+     "label": "Runenbuchstabe Offenes P"
+    },
+    {
+     "char": "ᛙ",
+     "label": "Runenbuchstabe Kurzzweig-Madr M"
+    },
+    {
+     "char": "ᛛ",
+     "label": "Runenbuchstabe Punktiertes L"
+    },
+    {
+     "char": "ᛝ",
+     "label": "Runenbuchstabe Ing"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Runen und Wikinger-Symbolen",
+ "faq": [
+  {
+   "q": "Kann ich meinen Namen in Runen schreiben?",
+   "a": "Buchstabenweise ja, historisch korrekt eher nicht. Runen bilden Laute ab, nicht deutsche Buchstaben — für ä, ö, ü, c, q und z gibt es keine Entsprechung, und das Ältere Futhark unterschied Laute anders als das heutige Deutsch. Eine Umschrift ist immer eine Annäherung, kein Übersetzen."
+  },
+  {
+   "q": "Welche Runenreihe ist die „echte“ Wikinger-Schrift?",
+   "a": "Das Jüngere Futhark. Die Wikingerzeit reicht etwa von 800 bis 1050, und in diesem Zeitraum war die auf 16 Zeichen verkürzte Reihe in Gebrauch. Das bekanntere Ältere Futhark ist mehrere Jahrhunderte älter."
+  },
+  {
+   "q": "Haben Runen eine magische Bedeutung?",
+   "a": "Jede Rune trägt einen überlieferten Namen mit einer Wortbedeutung — Fehu heißt Vieh, Isa heißt Eis. Die heute verbreiteten Deutungen für Wahrsagerei sind jedoch weitgehend eine Erfindung des 20. Jahrhunderts und nicht historisch belegt. Die Namen sind echt, die Orakelsysteme sind es nicht."
+  },
+  {
+   "q": "Warum sehen manche Runen bei mir als Kästchen aus?",
+   "a": "Weil der Unicode-Runenblock in vielen Standardschriften fehlt. Auf Systemen mit Noto- oder Segoe-UI-Symbolschriften erscheinen sie korrekt; auf älteren Geräten und in manchen Apps nicht. Für Grafiken ist ein Bild deshalb verlässlicher als Text."
+  },
+  {
+   "q": "Sind bestimmte Runen problematisch?",
+   "a": "Ja. Einzelne Runen — vor allem ᛋ in der doppelten Form und die Odal-Rune — wurden im Nationalsozialismus vereinnahmt und werden in Deutschland bis heute so gelesen. Wer Runen öffentlich verwendet, sollte das wissen; die Reihen selbst sind unbelastet, einzelne Zeichen in bestimmter Anordnung nicht."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum Runen kein Symbolvorrat sind",
+   "body": "Der häufigste Irrtum bei Runen ist, sie für Sinnbilder zu halten wie ein Herz oder ein Kreuz. Tatsächlich sind sie ein Alphabet: ᚠ steht für den Laut f, so wie F für f steht. Dass jede Rune zusätzlich einen Namen hat — Fehu, Uruz, Thurisaz — liegt daran, dass die Reihe über ein Merkgedicht gelernt wurde, ähnlich wie Anton, Berta, Cäsar beim Buchstabieren. Aus diesen Merknamen sind später die Bedeutungen geworden, die heute in Tattoo-Vorlagen stehen. Historisch trägt eine einzelne Rune also einen Laut und einen Namen — aber keine Botschaft."
+  }
+ ],
+ "collection_section": {
+  "id": "runes-collections",
+  "label": "Runen-Sets",
+  "h2": "Runenalphabete",
+  "intro": "Kopiere ein vollständiges Runenalphabet in der überlieferten Fuþark-Reihenfolge."
+ },
+ "collection_container_id": "runesCollectionsContainer",
+ "collections": [
+  {
+   "name": "Älteres Futhark (24 Runen)",
+   "flags": ["ᚠ", "ᚢ", "ᚦ", "ᚨ", "ᚱ", "ᚲ", "ᚷ", "ᚹ", "ᚺ", "ᚾ", "ᛁ", "ᛃ", "ᛇ", "ᛈ", "ᛉ", "ᛊ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛜ", "ᛞ", "ᛟ"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Jüngeres Futhark (16 Runen, Langzweigrunen)",
+   "flags": ["ᚠ", "ᚢ", "ᚦ", "ᚬ", "ᚱ", "ᚴ", "ᚼ", "ᚾ", "ᛁ", "ᛅ", "ᛋ", "ᛏ", "ᛒ", "ᛘ", "ᛚ", "ᛦ"],
+   "defaultFormat": "inline"
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/religioese-symbole/",
+   "title": "Religiöse Symbole",
+   "desc": "Symbole der Weltreligionen mit ihrer Bedeutung."
+  },
+  {
+   "href": "/de/library/griechische-symbole/",
+   "title": "Griechische Buchstaben",
+   "desc": "Das griechische Alphabet zum Kopieren."
+  },
+  {
+   "href": "/de/library/aegyptische-hieroglyphen/",
+   "title": "Ägyptische Hieroglyphen",
+   "desc": "Der Unicode-Hieroglyphenblock zum Kopieren."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/wikinger-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/norse-viking-runes/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/wikinger-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/norse-viking-runes/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

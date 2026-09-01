@@ -329,6 +329,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kaomoji-collections">
+  <span class="article-section-label">Bộ sưu tập kaomoji</span>
+  <h2>Bộ kaomoji theo chủ đề</h2>
+  <p class="u-secondary-block">Các bộ kaomoji nhóm theo tâm trạng — chép cả bộ mặt cùng loại chỉ với một cú nhấp, dùng cho tin nhắn, chú thích và bình luận.</p>
+  <div id="kaomojiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Chuyển đổi văn bản bằng phông chữ Unicode</h3>
@@ -372,6 +381,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Bộ kaomoji vui",
+      flags: ["(◠‿◠)", "(^▽^)", "(≧◡≦)", "ヽ(•‿•)ノ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kaomoji thú cưng dễ thương",
+      flags: ["ʕ•ᴥ•ʔ", "(=^・ω・^=)", "(◕ᴗ◕✿)", "(U ᵕ U❁)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ buồn và khóc",
+      flags: ["(T_T)", "╥﹏╥", "(;﹏;)", "(｡•́︿•̀｡)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ nhún vai và lật bàn",
+      flags: ["¯\\_(ツ)_/¯", "(╯°□°）╯︵ ┻━┻", "┬─┬ノ(º_ºノ)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ yêu thương",
+      flags: ["(♥ω♥)", "(◍•ᴗ•◍)❤", "(✿ ♥‿♥)", "(づ｡◕‿‿◕｡)づ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bộ Lenny Face",
+      flags: ["( ͡° ͜ʖ ͡°)", "( ͡~ ͜ʖ ͡°)", "( ͡◉ ͜ʖ ͡◉)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kaomojiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

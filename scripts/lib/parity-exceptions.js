@@ -100,6 +100,10 @@ function createExceptionResolver(exceptions) {
         h2Delta: 0,
         faqDelta: 0,
         symbolTilesDelta: 0,
+        collectionsOnlyInEN: [],
+        collectionsOnlyInLocale: [],
+        collectionGroupDeltas: [],
+        collectionsRenamed: [],
         suppressedAll: true,
       };
     }
@@ -114,6 +118,12 @@ function createExceptionResolver(exceptions) {
       h2Delta: sup.h2Delta ? 0 : diff.h2Delta,
       faqDelta: sup.faqDelta ? 0 : diff.faqDelta,
       symbolTilesDelta: sup.symbolTilesDelta ? 0 : diff.symbolTilesDelta,
+      // No per-collection suppress key exists; a scoped entry passes the
+      // combo-set axes through untouched rather than silently clearing them.
+      collectionsOnlyInEN: diff.collectionsOnlyInEN || [],
+      collectionsOnlyInLocale: diff.collectionsOnlyInLocale || [],
+      collectionGroupDeltas: diff.collectionGroupDeltas || [],
+      collectionsRenamed: diff.collectionsRenamed || [],
       suppressedAll: false,
     };
   }

@@ -6,7 +6,7 @@
   "hero_h1": "王冠 絵文字",
   "hero_tagline": "👑 とその周辺。王室の面々、「クイーン」的な使い方、勝利、そして小物まで。",
   "intro": "王冠の絵文字が単独で使われることはあまりなく、たいてい「クイーン／キング」的な文脈か、勝った話に添えられます。以下の4グループはその使われ方に沿っています。タップするとコピーされます。",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "royal",
@@ -164,6 +164,55 @@
     {
       "h2": "王冠がほめ言葉になった経緯",
       "body": "初期の絵文字セットでの 👑 は文字どおりの意味——王室、おとぎ話、君主——でした。今の使われ方はそこから来たものではなく、ボールルーム文化に由来する「クイーン」という言い回しが SNS に広がったもので、称号ではなく態度をたたえる言葉です。だからいま王冠の周りに並ぶ 💅 💯 🙌 には王室らしさがありません。それらは王冠の語彙ではなく、ほめ言葉の語彙に属しています。"
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "コンボセット",
+    "h2": "王冠絵文字のコンボセット",
+    "intro": "すぐ使える王冠コンボ — ワンクリックでセットごとコピーして、プロフィールやキャプション、コメントにそのまま貼れます。"
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "王冠で自慢",
+      "flags": ["👑", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "クイーンの風格",
+      "flags": ["👑", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "キングの振る舞い",
+      "flags": ["👑", "😎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "自分らしさ全開",
+      "flags": ["👑", "💅", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "優勝",
+      "flags": ["👑", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "史上最強（GOAT）",
+      "flags": ["👑", "🐐", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ロイヤルな垢抜け",
+      "flags": ["👑", "✨", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "戴冠モード",
+      "flags": ["👑", "🎉", "🥂"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

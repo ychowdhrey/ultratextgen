@@ -1,0 +1,367 @@
+{
+ "slug": "party-emojis",
+ "lang": "de",
+ "copy_pattern": "collection",
+ "title": "Party-Emojis 🎉 zum Kopieren — Konfetti, Sekt & Geburtstag | UltraTextGen",
+ "meta_description": "Party-Emojis zum Kopieren: Konfetti, Luftballons, Geburtstagstorte, Sektgläser, Tanzen und Feuerwerk — plus fertige Kombinationen für jeden Anlass.",
+ "breadcrumb": "Party-Emojis",
+ "hero_h1": "Party-Emojis",
+ "hero_tagline": "Konfetti, Sekt, Torte und Feuerwerk — nach Anlass sortiert, mit fertigen Kombinationen.",
+ "intro": "Für Geburtstagsglückwünsche, Einladungen und Feier-Beiträge braucht es meist zwei bis drei Zeichen, nicht zwanzig. Diese Seite sortiert die Party-Emojis nach Anlass — Feiern, Geburtstag, Anstoßen, Musik, Feuerwerk, Auszeichnung — und schließt mit fertigen Kombinationen, die zusammen etwas sagen.",
+ "sections": [
+  {
+   "id": "party",
+   "label": "Grundausstattung",
+   "h2": "Party-Grundausstattung",
+   "intro": "Die Zeichen, die praktisch jede Feier trägt.",
+   "symbols": [
+    {
+     "char": "🎉",
+     "label": "Partytröte"
+    },
+    {
+     "char": "🎊",
+     "label": "Konfettiball"
+    },
+    {
+     "char": "🥳",
+     "label": "Feierndes Gesicht"
+    },
+    {
+     "char": "🪅",
+     "label": "Piñata"
+    },
+    {
+     "char": "🎈",
+     "label": "Luftballon"
+    },
+    {
+     "char": "🎁",
+     "label": "Geschenk"
+    },
+    {
+     "char": "🎀",
+     "label": "Schleife"
+    }
+   ]
+  },
+  {
+   "id": "geburtstag",
+   "label": "Geburtstag",
+   "h2": "Geburtstagstorte und Süßes",
+   "intro": "Für Glückwünsche zum Geburtstag.",
+   "symbols": [
+    {
+     "char": "🎂",
+     "label": "Geburtstagstorte"
+    },
+    {
+     "char": "🧁",
+     "label": "Cupcake"
+    },
+    {
+     "char": "🍰",
+     "label": "Tortenstück"
+    },
+    {
+     "char": "🕯",
+     "label": "Kerze"
+    },
+    {
+     "char": "🍬",
+     "label": "Bonbon"
+    },
+    {
+     "char": "🍭",
+     "label": "Lutscher"
+    }
+   ]
+  },
+  {
+   "id": "anstossen",
+   "label": "Anstoßen",
+   "h2": "Anstoßen und Getränke",
+   "intro": "Sekt, Bier und Cocktails.",
+   "symbols": [
+    {
+     "char": "🥂",
+     "label": "Anstoßende Gläser"
+    },
+    {
+     "char": "🍾",
+     "label": "Sektflasche"
+    },
+    {
+     "char": "🍻",
+     "label": "Anstoßende Bierkrüge"
+    },
+    {
+     "char": "🍹",
+     "label": "Cocktail mit Schirmchen"
+    },
+    {
+     "char": "🍸",
+     "label": "Cocktailglas"
+    }
+   ]
+  },
+  {
+   "id": "musik",
+   "label": "Musik & Tanz",
+   "h2": "Musik und Tanzfläche",
+   "intro": "Für alles, was nach Feiern klingt.",
+   "symbols": [
+    {
+     "char": "💃",
+     "label": "Tanzende Frau"
+    },
+    {
+     "char": "🕺",
+     "label": "Tanzender Mann"
+    },
+    {
+     "char": "🪩",
+     "label": "Discokugel"
+    },
+    {
+     "char": "🎶",
+     "label": "Noten"
+    },
+    {
+     "char": "🎵",
+     "label": "Note"
+    },
+    {
+     "char": "🎤",
+     "label": "Mikrofon"
+    },
+    {
+     "char": "🔊",
+     "label": "Lautsprecher"
+    },
+    {
+     "char": "👯",
+     "label": "Tanzende mit Hasenohren"
+    }
+   ]
+  },
+  {
+   "id": "feuerwerk",
+   "label": "Feuerwerk",
+   "h2": "Feuerwerk und Funkeln",
+   "intro": "Für Silvester und große Momente.",
+   "symbols": [
+    {
+     "char": "🎆",
+     "label": "Feuerwerk"
+    },
+    {
+     "char": "🎇",
+     "label": "Wunderkerze"
+    },
+    {
+     "char": "✨",
+     "label": "Funkeln"
+    },
+    {
+     "char": "🌟",
+     "label": "Leuchtender Stern"
+    },
+    {
+     "char": "⭐",
+     "label": "Stern"
+    },
+    {
+     "char": "💫",
+     "label": "Schwindel-Stern"
+    }
+   ]
+  },
+  {
+   "id": "auszeichnung",
+   "label": "Auszeichnung",
+   "h2": "Pokale, Medaillen und Blumen",
+   "intro": "Wenn es etwas zu feiern gibt, das errungen wurde.",
+   "symbols": [
+    {
+     "char": "🏆",
+     "label": "Pokal"
+    },
+    {
+     "char": "🥇",
+     "label": "Goldmedaille"
+    },
+    {
+     "char": "🎓",
+     "label": "Doktorhut"
+    },
+    {
+     "char": "💐",
+     "label": "Blumenstrauß"
+    },
+    {
+     "char": "🌹",
+     "label": "Rose"
+    },
+    {
+     "char": "👑",
+     "label": "Krone"
+    }
+   ]
+  }
+ ],
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Kombinationen",
+  "h2": "Fertige Party-Kombinationen",
+  "intro": "Komplette Kombinationen mit einem Klick kopieren — Geburtstag, Silvester, Abschluss."
+ },
+ "collection_container_id": "partySetsContainer",
+ "collections": [
+  {
+   "name": "Alles Gute zum Geburtstag",
+   "flags": [
+    "🎂",
+    "🎉",
+    "🎈"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Herzlichen Glückwunsch",
+   "flags": [
+    "🎊",
+    "🥂",
+    "🎁"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Frohes neues Jahr",
+   "flags": [
+    "🎆",
+    "🥂",
+    "✨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Lass uns feiern",
+   "flags": [
+    "🥳",
+    "🎉",
+    "🪩"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Bestanden",
+   "flags": [
+    "🎓",
+    "🏆",
+    "🎊"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Prost",
+   "flags": [
+    "🍻",
+    "🥂",
+    "🍾"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Tanzen bis früh",
+   "flags": [
+    "💃",
+    "🕺",
+    "🎶"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Glückwunsch zum Erfolg",
+   "flags": [
+    "🏆",
+    "🥇",
+    "👑"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Party-Emojis",
+ "faq": [
+  {
+   "q": "Welche Emojis passen zum Geburtstag?",
+   "a": "🎂 ist das eindeutigste — die Torte mit Kerzen steht ausschließlich für Geburtstag. 🎉 und 🎈 ergänzen, 🍰 hingegen ist ein neutrales Tortenstück ohne Geburtstagsbezug und wird oft versehentlich statt 🎂 verschickt."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen 🎉 und 🎊?",
+   "a": "🎉 ist die Partytröte mit herausschießendem Konfetti, 🎊 ein Ball, aus dem Konfetti rieselt. Praktisch werden sie gleichwertig verwendet; 🎉 ist deutlich häufiger und wirkt aktiver."
+  },
+  {
+   "q": "Welches Emoji nimmt man zu Silvester?",
+   "a": "🎆 für Feuerwerk am Himmel, 🎇 für die Wunderkerze in der Hand. Beide zusammen mit 🥂 sind die übliche Silvesterkombination im deutschsprachigen Raum."
+  },
+  {
+   "q": "Gibt es ein Emoji für Karneval?",
+   "a": "Kein eigenes. Üblich sind 🥳, 🎭 und 🎊 in Kombination — Unicode kennt weder Karneval noch Fasching als eigenes Zeichen, weil der Emoji-Satz aus japanischen Vorlagen gewachsen ist."
+  },
+  {
+   "q": "Wie viele Emojis sollte eine Glückwunschnachricht enthalten?",
+   "a": "Zwei bis drei. Längere Ketten lesen sich als Dekoration statt als Aussage, und Screenreader lesen jedes einzelne Zeichen vor — eine Reihe aus zwölf Emojis wird dort zu einem langen, unverständlichen Satz."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum 🎂 und 🍰 nicht dasselbe sind",
+   "body": "Die häufigste Verwechslung auf dieser Seite: 🎂 ist die Geburtstagstorte mit Kerzen und trägt den Anlass in sich, 🍰 ist ein Stück Erdbeertorte ohne jede Geburtstagsbedeutung. Wer „alles Gute“ mit 🍰 schreibt, sagt technisch gesehen „Kuchen“. Der Unterschied fällt kaum auf, ändert aber, wie eindeutig die Nachricht ist — besonders wenn sie ohne Text kommt."
+  },
+  {
+   "h2": "Was in einer Feier-Nachricht wirklich wirkt",
+   "body": "Emojis funktionieren in Glückwünschen als Interpunktion, nicht als Inhalt. Zwei Zeichen am Ende eines geschriebenen Satzes verstärken ihn; zwanzig Zeichen ersetzen ihn und wirken beliebig. Praktisch bewährt hat sich eine Dreierregel: eines für den Anlass (🎂, 🎓, 💍), eines für die Stimmung (🎉, ✨) und höchstens eines für die persönliche Note (❤, 🥂). Alles darüber verwässert."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/emoji-combos/",
+   "title": "Emoji-Kombinationen",
+   "desc": "Fertige Emoji-Combos für Bio, Status und Captions."
+  },
+  {
+   "href": "/de/library/hochzeitssymbole/",
+   "title": "Hochzeitssymbole",
+   "desc": "Ringe, Brautpaar und Glückwunsch-Kombinationen."
+  },
+  {
+   "href": "/de/library/geschenk-emoji/",
+   "title": "Geschenk-Emoji",
+   "desc": "Geschenke, Schleifen und Überraschungen zum Kopieren."
+  },
+  {
+   "href": "/de/library/weihnachtssymbole/",
+   "title": "Weihnachtssymbole",
+   "desc": "Alle Zeichen für die Advents- und Weihnachtszeit."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/party-emojis/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/party-emojis/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/party-celebration-emojis/"
+  }
+ ],
+ "page_type": "library",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

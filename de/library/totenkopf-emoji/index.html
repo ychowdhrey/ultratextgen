@@ -304,6 +304,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Kombi-Sets</span>
+  <h2>Totenkopf-Emoji-Kombis</h2>
+  <p class="u-secondary-block">Eine ganze Totenkopf-Kombi mit einem Klick kopieren und direkt in Kommentar, Caption oder Antwort einfügen.</p>
+  <div id="skullSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Wie aus dem Totenkopf ein Lachen Wurde</h2>
   <div class="editorial-block">
@@ -374,6 +383,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Totgelacht",
+      flags: ["💀", "😂", "🤣"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gefahrenzone",
+      flags: ["☠️", "☣️", "☢️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Piratenmodus",
+      flags: ["☠️", "🏴‍☠️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Vollkommen erledigt",
+      flags: ["💀", "⚰️", "🪦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Halloween-Totenkopf",
+      flags: ["💀", "🎃", "👻"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "So lustig, ich sterbe",
+      flags: ["💀", "💯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Eiskalt",
+      flags: ["💀", "🦴"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "RIP ich",
+      flags: ["💀", "⚰️"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("skullSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

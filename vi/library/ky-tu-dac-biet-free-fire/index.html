@@ -413,6 +413,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="ff-nick-wrappers">
+  <span class="article-section-label">Khung tên nick</span>
+  <h2>Khung tên FF có sẵn</h2>
+  <p class="u-secondary-block">Chép nguyên một khung tên Free Fire chỉ với một cú nhấp, rồi thay phần chỗ trống bằng tên của bạn ở màn hình thẻ đổi tên.</p>
+  <div id="ffNickWrappersContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Mười hai ký tự, và bốn cái đã mất trước khi bắt đầu</h2>
   <div class="editorial-block">
@@ -487,6 +496,54 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Khung Royale cổ điển",
+      flags: ["꧁༒", "YourNick", "༒꧂"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Khung game thủ pro",
+      flags: ["꧁•ᴾᴿᴼ•", "YourNick", "꧂"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Thẻ hoa văn Tây Tạng",
+      flags: ["༺", "YourNick", "༻"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nick banner lửa",
+      flags: ["🔥", "YourNick", "࿐"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nick Booyah đội vương miện",
+      flags: ["👑", "YourNick", "♛"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Khung dao găm",
+      flags: ["꧁†", "YourNick", "†꧂"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Thẻ Star Squad",
+      flags: ["★彡", "YourNick", "彡★"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("ffNickWrappersContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

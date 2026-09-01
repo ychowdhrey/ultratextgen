@@ -60,6 +60,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/simvoly-luny/">
 <link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/tsuki-kigou/">
 <link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/simboli-luna/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/mond-symbole/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/moon-celestial-symbols/">
 <meta property="og:image" content="https://ultratextgen.com/assets/og/tr-library-ay-sembolleri.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -407,6 +408,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="celestial-collections">
+  <span class="article-section-label">Gök cisimleri setleri</span>
+  <h2>Gök cisimleri dizileri</h2>
+  <p class="u-secondary-block">Tam bir gök dizisini tek tıkla kopyala — astronomik sıradaki sekiz ay evresi ve gün doğumundan geceye uzanan güneş döngüsü.</p>
+  <div id="celestialCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Metni Unicode fontlarla dönüştür</h3>
@@ -446,6 +456,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Ay evreleri (astronomik sıra)",
+      flags: ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Güneşin seyri (gün döngüsü)",
+      flags: ["🌅", "🌞", "🌇", "🌃"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("celestialCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

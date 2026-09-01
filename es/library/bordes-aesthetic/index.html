@@ -323,6 +323,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="aesthetic-borders-frames-collections">
+  <span class="article-section-label">Colecciones de bordes y marcos</span>
+  <h2>Bordes y marcos listos para pegar</h2>
+  <p class="u-secondary-block">Bordes decorativos completos y marcos de esquina que puedes pegar alrededor de una bio o un pie de foto — copia el patrón entero con un clic.</p>
+  <div id="bordersFramesCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -370,6 +379,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Marco floral con guiones",
+      flags: ["❀━━━━━━━❀"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Borde de pétalos para bio",
+      flags: ["✿ ━━━━━━ ✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Marco de esquinas con estrellas",
+      flags: ["╭━━━ ⋆⭒☆⭒⋆ ━━━╮"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Marco suave redondeado",
+      flags: ["╭┈ ୨୧ ┈╮"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Borde envolvente de corazones",
+      flags: ["♡━━━━━━━♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisor punteado con estrellas",
+      flags: ["── ✦ ──"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("bordersFramesCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

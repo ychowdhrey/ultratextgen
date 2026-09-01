@@ -174,10 +174,15 @@ const ratifiedLocalOnly = (() => {
 // while every member's x-default points at the Spanish URL — so it needs its
 // own pass. This has been the single most-repeated hreflang bug on the site.
 const badXDefault = []; // { page, current, expected }
+// A block with NO x-default at all. The direction pass below cannot see this
+// class — its first act is `if (!xd) continue`, so a page that never declares
+// the tag is skipped in silence, which is why 30 pages shipped without one
+// while this audit reported "x-default not pointing at EN: 0". Absence and
+// correctness are different questions and each needs its own pass.
+const missingXDefault = []; // { page, expected }
 const conflictedBlocks = []; // pages whose own block declares a code twice
 for (const page of pages) {
   const xd = page.alternates.find((a) => a.hreflang === 'x-default');
-  if (!xd) continue;
 
   // A block that declares the same hreflang code twice with different hrefs is
   // two clusters stacked into one page. Which cluster owns the page is an
@@ -199,7 +204,9 @@ for (const page of pages) {
   // The cluster's English member, as this page itself declares it.
   const enAlt = page.alternates.find((a) => a.hreflang === 'en');
   if (!enAlt) continue; // no EN member declared — nothing to assert against
-  if (xd.href !== enAlt.href) {
+  if (!xd) {
+    missingXDefault.push({ page, expected: enAlt.href });
+  } else if (xd.href !== enAlt.href) {
     badXDefault.push({ page, current: xd.href, expected: enAlt.href });
   }
 }
@@ -209,6 +216,7 @@ console.log(`  Placeholder EN-homepage claims:  ${placeholderEnFallback.length} 
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
 console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
+console.log(`  x-default missing entirely:      ${missingXDefault.length}`);
 
 if (nonReciprocal.length) {
   console.log('');
@@ -245,6 +253,13 @@ if (badXDefault.length) {
   console.log('x-default pointing somewhere other than the cluster\'s EN member:');
   for (const item of badXDefault) {
     console.log(`  ✗ ${item.page.rel}  x-default -> ${item.current}  (should be ${item.expected})`);
+  }
+}
+if (missingXDefault.length) {
+  console.log('');
+  console.log('No x-default tag at all (the cluster names an EN member, the page never points at it):');
+  for (const item of missingXDefault) {
+    console.log(`  ✗ ${item.page.rel}  (should add x-default -> ${item.expected})`);
   }
 }
 if (conflictedBlocks.length) {
@@ -465,7 +480,31 @@ if (FIX) {
     xDefaultFixed++;
   }
 
+  // 4. x-default absent — insert the tag after the block's last alternate,
+  // matching that line's indentation, pointing at the EN member the page
+  // itself declares. Additive and reversible: it inserts a tag, never edits
+  // or moves an existing one, so it cannot disturb a cluster it did not fix.
+  let xDefaultAdded = 0;
+  for (const item of missingXDefault) {
+    if (allowedFiles && !allowedFiles.has(item.page.filePath)) {
+      skippedOutOfScope++;
+      continue;
+    }
+    const lines = fs.readFileSync(item.page.filePath, 'utf8').split('\n');
+    const ALT_LINE = /^(\s*)<link\s+rel="alternate"\s+hreflang="[^"]+"\s+href="[^"]*"\s*\/?>\s*$/i;
+    let last = -1;
+    for (let i = 0; i < lines.length; i++) if (ALT_LINE.test(lines[i])) last = i;
+    if (last === -1) continue; // block isn't one-tag-per-line — leave for manual review
+    const indent = lines[last].match(ALT_LINE)[1];
+    lines.splice(last + 1, 0, `${indent}<link rel="alternate" hreflang="x-default" href="${item.expected}">`);
+    fs.writeFileSync(item.page.filePath, lines.join('\n'));
+    xDefaultAdded++;
+  }
+
   console.log(`🔧 Fixed ${filesFixed} file(s), added ${linksAdded} hreflang link(s).`);
+  if (xDefaultAdded) {
+    console.log(`🔧 Added ${xDefaultAdded} missing x-default tag(s), pointing at each cluster's EN canonical.`);
+  }
   if (xDefaultFixed) {
     console.log(`🔧 Repointed ${xDefaultFixed} x-default tag(s) at their cluster's EN canonical.`);
   }
@@ -481,10 +520,11 @@ if (FIX) {
   }
 }
 
-const totalIssues = nonReciprocal.length + headless.size + brokenList.length + badXDefault.length;
+const totalIssues =
+  nonReciprocal.length + headless.size + brokenList.length + badXDefault.length + missingXDefault.length;
 if (totalIssues && !FIX) {
   console.log('');
-  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and misdirected x-default tags.`);
+  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and missing or misdirected x-default tags.`);
   process.exit(1);
 } else if (brokenList.length) {
   console.log('');

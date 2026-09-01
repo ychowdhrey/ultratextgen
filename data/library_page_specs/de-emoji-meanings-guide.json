@@ -1,0 +1,296 @@
+{
+ "slug": "emoji-bedeutung",
+ "lang": "de",
+ "title": "Emoji Bedeutung — was jedes Emoji wirklich heißt (Liste) | UltraTextGen",
+ "meta_description": "Emoji Bedeutung auf einen Blick: Gesichter, Handzeichen, Herzfarben, Tiere und Emojis mit Zweitbedeutung — verständlich erklärt, mit WhatsApp-Hinweisen. Zum Kopieren anklicken.",
+ "breadcrumb": "Emoji Bedeutung",
+ "hero_h1": "Emoji Bedeutung",
+ "hero_tagline": "Was die gebräuchlichsten Emojis tatsächlich aussagen — nach Gruppen sortiert, nicht alphabetisch.",
+ "intro": "Die meisten Emojis haben zwei Bedeutungen: die, die im Unicode-Namen steht, und die, die im Chat tatsächlich ankommt. Diese Liste nennt beide, wenn sie auseinandergehen. Sortiert ist sie nach Gruppen — Gesichter, Hände, Herzfarben, Tiere, Doppeldeutiges — weil man ein Emoji fast nie alphabetisch sucht, sondern danach, was man ausdrücken möchte. Jedes Zeichen lässt sich mit einem Klick kopieren.",
+ "sections": [
+  {
+   "id": "gesichter",
+   "label": "Gesichter",
+   "h2": "Bedeutung der Gesichts-Emojis",
+   "intro": "Was die häufigsten Gesichter im Gespräch wirklich transportieren.",
+   "symbols": [
+    {
+     "char": "😊",
+     "label": "Lächeln — ehrlich freundlich, warm"
+    },
+    {
+     "char": "😂",
+     "label": "Lachen bis die Tränen kommen"
+    },
+    {
+     "char": "🥺",
+     "label": "Bittender Blick, Dackelblick"
+    },
+    {
+     "char": "😏",
+     "label": "Schmunzeln — wissend, süffisant"
+    },
+    {
+     "char": "🤔",
+     "label": "Nachdenklich, skeptisch, zweifelnd"
+    },
+    {
+     "char": "😐",
+     "label": "Neutrales Gesicht — trocken, unbeeindruckt"
+    },
+    {
+     "char": "🙄",
+     "label": "Augenrollen — genervt, durch damit"
+    },
+    {
+     "char": "😤",
+     "label": "Entschlossen oder trotzig, selten wütend"
+    }
+   ]
+  },
+  {
+   "id": "haende",
+   "label": "Handzeichen",
+   "h2": "Bedeutung der Hand-Emojis",
+   "intro": "Handzeichen verschieben ihre Bedeutung besonders schnell — mehrere meinen heute etwas anderes als bei ihrer Einführung.",
+   "symbols": [
+    {
+     "char": "👍",
+     "label": "Daumen hoch — Zustimmung; auch „Daumen drücken“"
+    },
+    {
+     "char": "👎",
+     "label": "Daumen runter — Ablehnung"
+    },
+    {
+     "char": "🤝",
+     "label": "Handschlag — Einigung, Partnerschaft"
+    },
+    {
+     "char": "🙏",
+     "label": "Betende Hände — Danke oder Bitte"
+    },
+    {
+     "char": "✌️",
+     "label": "Victory- oder Peace-Zeichen"
+    },
+    {
+     "char": "🤞",
+     "label": "Gekreuzte Finger — Glück wünschen"
+    },
+    {
+     "char": "🤙",
+     "label": "Ruf mich an, locker bleiben"
+    },
+    {
+     "char": "👋",
+     "label": "Winken — hallo oder tschüss"
+    }
+   ]
+  },
+  {
+   "id": "herzfarben",
+   "label": "Herzfarben",
+   "h2": "Bedeutung der Herz-Emojis nach Farbe",
+   "intro": "Jede Herzfarbe trägt einen eigenen Ton. Auf Snapchat steht die Farbe zusätzlich für den Freundschaftsstatus — das ist ein eigenes System.",
+   "symbols": [
+    {
+     "char": "❤️",
+     "label": "Rot — Liebe, Leidenschaft"
+    },
+    {
+     "char": "🧡",
+     "label": "Orange — Wärme, Fürsorge"
+    },
+    {
+     "char": "💛",
+     "label": "Gelb — Freundschaft, gute Laune"
+    },
+    {
+     "char": "💚",
+     "label": "Grün — Natur, Gesundheit, auch Eifersucht"
+    },
+    {
+     "char": "💙",
+     "label": "Blau — Vertrauen, platonische Nähe"
+    },
+    {
+     "char": "💜",
+     "label": "Lila — Zuneigung, Fankultur"
+    },
+    {
+     "char": "🖤",
+     "label": "Schwarz — dunkler Humor, Trauer"
+    },
+    {
+     "char": "🤍",
+     "label": "Weiß — Reinheit, Beileid, klare Ästhetik"
+    },
+    {
+     "char": "🤎",
+     "label": "Braun — Geborgenheit, erdig"
+    },
+    {
+     "char": "💗",
+     "label": "Rosa — wachsende Zuneigung"
+    }
+   ]
+  },
+  {
+   "id": "tiere",
+   "label": "Tiere",
+   "h2": "Bedeutung der Tier-Emojis",
+   "intro": "Was Tier-Emojis über das Tier hinaus signalisieren.",
+   "symbols": [
+    {
+     "char": "🦋",
+     "label": "Schmetterling — Verwandlung, Freiheit"
+    },
+    {
+     "char": "🐍",
+     "label": "Schlange — Verrat, Hinterlist"
+    },
+    {
+     "char": "🦊",
+     "label": "Fuchs — schlau, gerissen"
+    },
+    {
+     "char": "🐸",
+     "label": "Frosch — Meme-Kultur, „nicht mein Problem“"
+    },
+    {
+     "char": "🐝",
+     "label": "Biene — fleißig, immer beschäftigt"
+    },
+    {
+     "char": "🦄",
+     "label": "Einhorn — selten, besonders"
+    }
+   ]
+  },
+  {
+   "id": "doppeldeutig",
+   "label": "Zweitbedeutungen",
+   "h2": "Emojis mit Zweitbedeutung",
+   "intro": "Diese Emojis werden fast nie so gemeint, wie ihr Name sagt. Wer sie ahnungslos verschickt, sagt oft etwas anderes als beabsichtigt.",
+   "symbols": [
+    {
+     "char": "🍑",
+     "label": "Pfirsich — meist anzüglich gemeint"
+    },
+    {
+     "char": "🍆",
+     "label": "Aubergine — meist anzüglich gemeint"
+    },
+    {
+     "char": "🔥",
+     "label": "Feuer — „krass“, „heiß“; Snapchat-Serie"
+    },
+    {
+     "char": "💀",
+     "label": "Totenkopf — „ich bin tot vor Lachen“"
+    },
+    {
+     "char": "🤡",
+     "label": "Clown — sich zum Affen gemacht"
+    },
+    {
+     "char": "🧢",
+     "label": "Cap — Lüge; „no cap“ heißt „kein Scherz“"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zur Emoji-Bedeutung",
+ "faq": [
+  {
+   "q": "Bedeutet ein Emoji überall dasselbe?",
+   "a": "Nein. Der Unicode-Name ist weltweit gleich, die Lesart nicht. 👍 gilt in Deutschland als schlichte Zustimmung, wird von jüngeren Nutzerinnen und Nutzern aber zunehmend als kühl oder abweisend empfunden. Im Zweifel entscheidet der Kontext, nicht die Definition."
+  },
+  {
+   "q": "Was bedeuten die Emojis bei WhatsApp?",
+   "a": "Dieselben wie überall — WhatsApp hat keine eigenen Bedeutungen, nur eine eigene Darstellung. Was sich unterscheidet, ist das Aussehen: dasselbe Zeichen wird auf Android, iPhone und WhatsApp Web leicht verschieden gezeichnet. Die Bedeutung bleibt die aus dieser Liste."
+  },
+  {
+   "q": "Was heißt 💀 in einer Nachricht?",
+   "a": "Fast nie Tod. 💀 steht für „ich bin gestorben“ im Sinne von „ich lache mich kaputt“ und hat 😂 in vielen Chats abgelöst, weil 😂 als altmodisch gilt."
+  },
+  {
+   "q": "Was bedeutet das weiße Herz 🤍?",
+   "a": "Zwei Dinge, die man auseinanderhalten sollte: in ästhetisch gestalteten Bios steht es für einen klaren, ruhigen Look, in Beileidsbekundungen für stilles Mitgefühl. Die Umgebung sagt, welches gemeint ist."
+  },
+  {
+   "q": "Warum sieht dasselbe Emoji auf jedem Gerät anders aus?",
+   "a": "Weil Unicode nur festlegt, welches Zeichen gemeint ist, nicht wie es gezeichnet wird. Apple, Google, Samsung und WhatsApp liefern eigene Grafiksätze. Deshalb kann ein Emoji, das auf einem iPhone freundlich wirkt, auf einem anderen Gerät deutlich schärfer aussehen."
+  },
+  {
+   "q": "Kann ich Emojis in meinen Benutzernamen setzen?",
+   "a": "Selten. In der Bio, im Anzeigenamen und in Nachrichten funktionieren sie fast überall, weil das gewöhnliche Unicode-Zeichen sind. Der @-Benutzername ist die übliche Ausnahme: dort lassen die meisten Plattformen nur Buchstaben, Ziffern, Punkt und Unterstrich zu."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum die Bedeutung oft von der Beschreibung abweicht",
+   "body": "Der offizielle Unicode-Name ist eine technische Bezeichnung, keine Gebrauchsanweisung. 😤 heißt dort „Face with Look of Triumph“ — im Chat liest es fast niemand als Triumph, sondern als Trotz oder Empörung. 🥺 heißt „Pleading Face“ und wurde binnen Monaten zu einem Zärtlichkeitszeichen umgedeutet. Diese Lücke zwischen Name und Gebrauch ist der Grund, warum eine reine Namensliste beim Verstehen einer Nachricht kaum hilft. Diese Seite nennt deshalb die gelebte Bedeutung zuerst und den technischen Namen nur dort, wo er tatsächlich weiterhilft."
+  },
+  {
+   "h2": "Herzfarben: die einzige Gruppe mit einem eigenen Nebensystem",
+   "body": "Bei den Herzen kommt eine Besonderheit hinzu: Snapchat vergibt Herzfarben automatisch nach Freundschaftsstatus. Ein gelbes Herz dort heißt nicht „Freundschaft“ im allgemeinen Sinn, sondern „ihr seid gegenseitig beste Freunde“. Wer die Snapchat-Logik auf WhatsApp überträgt, liest die Nachricht falsch — und umgekehrt. Für alles außerhalb von Snapchat gilt die Farbtabelle oben."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/gesichts-emojis/",
+   "title": "Gesichts-Emojis nach Gefühl",
+   "desc": "Alle Gesichter sortiert nach dem Gefühl, das sie ausdrücken — zum Kopieren."
+  },
+  {
+   "href": "/de/library/herz-symbole/",
+   "title": "Herz-Symbole und Herz-Emojis",
+   "desc": "Herzen in allen Farben und Formen, dazu die Herz-Zeichen aus Unicode."
+  },
+  {
+   "href": "/de/library/hand-symbole/",
+   "title": "Hand-Symbole und Gesten",
+   "desc": "Handzeichen von Daumen hoch bis Victory — mit Hinweisen zur Wirkung."
+  },
+  {
+   "href": "/de/symbol/snapchat-herzfarben/",
+   "title": "Snapchat-Herzfarben erklärt",
+   "desc": "Welches Herz Snapchat wann vergibt und was der Freundschaftsstatus dahinter ist."
+  },
+  {
+   "href": "/de/library/whatsapp-symbole/",
+   "title": "WhatsApp-Symbole",
+   "desc": "Die Zeichen und Emojis, die bei WhatsApp am häufigsten gebraucht werden."
+  },
+  {
+   "href": "/de/library/emoji-combos/",
+   "title": "Emoji-Kombinationen",
+   "desc": "Fertige Emoji-Combos für Bio, Status und Captions."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/emoji-bedeutung/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/emoji-betekenis/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/emoji-bedeutung/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/emoji-meanings-guide/"
+  }
+ ],
+ "page_type": "library",
+ "copy_pattern": "single",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

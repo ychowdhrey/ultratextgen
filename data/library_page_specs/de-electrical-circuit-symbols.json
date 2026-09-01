@@ -1,0 +1,366 @@
+{
+ "slug": "elektro-symbole",
+ "lang": "de",
+ "copy_pattern": "single",
+ "title": "Elektro-Symbole & Schaltzeichen zum Kopieren — Installationsplan | UltraTextGen",
+ "meta_description": "Elektro-Symbole und Schaltzeichen zum Kopieren: Erde, Sicherung, Wechselstrom, Logikgatter, Ohm, Mikro und alle Einheiten für Schaltplan und Installationsplan.",
+ "breadcrumb": "Elektro-Symbole",
+ "hero_h1": "Elektro-Symbole und Schaltzeichen",
+ "hero_tagline": "Erde, Sicherung, Wechselstrom, Logikgatter und die Einheitenzeichen — als echte Unicode-Zeichen zum Kopieren.",
+ "intro": "Wer einen Schaltplan beschriftet, eine Installationsplanung dokumentiert oder eine Messung notiert, braucht Zeichen, die die Tastatur nicht hergibt: das Erdungszeichen, das Wechselstromzeichen, Ohm, Mikro. Diese Seite sammelt sie als kopierbare Unicode-Zeichen — sie funktionieren in Word, Excel, CAD-Beschriftungen und E-Mails gleichermaßen.",
+ "sections": [
+  {
+   "id": "energie",
+   "label": "Strom & Energie",
+   "h2": "Strom- und Energiezeichen",
+   "intro": "Spannung, Netzschalter und Stromversorgung.",
+   "symbols": [
+    {
+     "char": "⚡",
+     "label": "Hochspannung"
+    },
+    {
+     "char": "⏻",
+     "label": "Ein-/Ausschalter"
+    },
+    {
+     "char": "⏼",
+     "label": "Ein-Aus-Schalter"
+    },
+    {
+     "char": "⏽",
+     "label": "Einschaltzeichen"
+    },
+    {
+     "char": "⏾",
+     "label": "Bereitschaftszeichen"
+    },
+    {
+     "char": "🔌",
+     "label": "Stecker"
+    },
+    {
+     "char": "🔋",
+     "label": "Batterie"
+    },
+    {
+     "char": "🪫",
+     "label": "Schwache Batterie"
+    }
+   ]
+  },
+  {
+   "id": "schaltzeichen",
+   "label": "Schaltzeichen",
+   "h2": "Erde, Sicherung und Stromart",
+   "intro": "Die Zeichen, die im Schaltplan Erdung, Absicherung und Stromart angeben.",
+   "symbols": [
+    {
+     "char": "⏚",
+     "label": "Erdung"
+    },
+    {
+     "char": "⏛",
+     "label": "Sicherung"
+    },
+    {
+     "char": "⏦",
+     "label": "Wechselstrom"
+    },
+    {
+     "char": "⎓",
+     "label": "Gleichstrom"
+    },
+    {
+     "char": "⌁",
+     "label": "Elektrizitätspfeil"
+    },
+    {
+     "char": "∿",
+     "label": "Sinuswelle"
+    },
+    {
+     "char": "⏧",
+     "label": "Elektrische Kreuzung"
+    },
+    {
+     "char": "↯",
+     "label": "Blitzpfeil"
+    }
+   ]
+  },
+  {
+   "id": "logik",
+   "label": "Logikgatter",
+   "h2": "Logikgatter und Digitaltechnik",
+   "intro": "Die booleschen Operatoren als Zeichen — für Wahrheitstabellen und Schaltungsbeschreibungen.",
+   "symbols": [
+    {
+     "char": "∧",
+     "label": "Und (AND)"
+    },
+    {
+     "char": "∨",
+     "label": "Oder (OR)"
+    },
+    {
+     "char": "¬",
+     "label": "Nicht (Inverter)"
+    },
+    {
+     "char": "⊕",
+     "label": "Exklusiv-Oder (XOR)"
+    },
+    {
+     "char": "⊻",
+     "label": "XOR-Zeichen"
+    },
+    {
+     "char": "⊼",
+     "label": "NAND"
+    },
+    {
+     "char": "⊽",
+     "label": "NOR"
+    },
+    {
+     "char": "⎍",
+     "label": "Monostabiles Element"
+    },
+    {
+     "char": "⎎",
+     "label": "Hysterese"
+    },
+    {
+     "char": "⎏",
+     "label": "Offener Ausgang, H-Typ"
+    },
+    {
+     "char": "⎐",
+     "label": "Offener Ausgang, L-Typ"
+    },
+    {
+     "char": "⎑",
+     "label": "Passiver Pull-down-Ausgang"
+    },
+    {
+     "char": "⎒",
+     "label": "Passiver Pull-up-Ausgang"
+    }
+   ]
+  },
+  {
+   "id": "einheiten",
+   "label": "Einheiten",
+   "h2": "Elektrische Einheiten und Größen",
+   "intro": "Ohm, Mikro und die zusammengesetzten Einheitenzeichen.",
+   "symbols": [
+    {
+     "char": "Ω",
+     "label": "Ohm"
+    },
+    {
+     "char": "℧",
+     "label": "Siemens (Mho)"
+    },
+    {
+     "char": "µ",
+     "label": "Mikro"
+    },
+    {
+     "char": "㎌",
+     "label": "Mikrofarad (µF)"
+    },
+    {
+     "char": "㎷",
+     "label": "Millivolt (mV)"
+    },
+    {
+     "char": "㎸",
+     "label": "Kilovolt (kV)"
+    },
+    {
+     "char": "㎃",
+     "label": "Milliampere (mA)"
+    },
+    {
+     "char": "㎄",
+     "label": "Kiloampere (kA)"
+    },
+    {
+     "char": "㎾",
+     "label": "Kilowatt (kW)"
+    },
+    {
+     "char": "㎿",
+     "label": "Megawatt (MW)"
+    },
+    {
+     "char": "㎐",
+     "label": "Hertz (Hz)"
+    },
+    {
+     "char": "㎒",
+     "label": "Megahertz (MHz)"
+    },
+    {
+     "char": "㏀",
+     "label": "Kiloohm (kΩ)"
+    },
+    {
+     "char": "㏁",
+     "label": "Megaohm (MΩ)"
+    }
+   ]
+  },
+  {
+   "id": "mathe",
+   "label": "Berechnung",
+   "h2": "Mathezeichen für die Schaltungsberechnung",
+   "intro": "Phasenwinkel, Kreisfrequenz und die Zeichen für Wechselstromrechnung.",
+   "symbols": [
+    {
+     "char": "φ",
+     "label": "Phi (Phasenwinkel)"
+    },
+    {
+     "char": "ω",
+     "label": "Omega (Kreisfrequenz)"
+    },
+    {
+     "char": "θ",
+     "label": "Theta (Winkel)"
+    },
+    {
+     "char": "Δ",
+     "label": "Delta (Differenz)"
+    },
+    {
+     "char": "π",
+     "label": "Pi"
+    },
+    {
+     "char": "∑",
+     "label": "Summenzeichen"
+    },
+    {
+     "char": "∫",
+     "label": "Integralzeichen"
+    },
+    {
+     "char": "√",
+     "label": "Wurzel"
+    },
+    {
+     "char": "±",
+     "label": "Plusminus"
+    },
+    {
+     "char": "≈",
+     "label": "Ungefähr gleich"
+    },
+    {
+     "char": "∞",
+     "label": "Unendlich"
+    }
+   ]
+  },
+  {
+   "id": "sicherheit",
+   "label": "Sicherheit",
+   "h2": "Warn- und Sicherheitszeichen",
+   "intro": "Was auf Schaltschrank und Anlage gehört.",
+   "symbols": [
+    {
+     "char": "⚠",
+     "label": "Warnzeichen"
+    },
+    {
+     "char": "☠",
+     "label": "Totenkopf (Lebensgefahr)"
+    },
+    {
+     "char": "⛔",
+     "label": "Zutritt verboten"
+    },
+    {
+     "char": "🚫",
+     "label": "Verbotszeichen"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Elektro-Symbolen",
+ "faq": [
+  {
+   "q": "Sind das genormte Schaltzeichen nach DIN EN 60617?",
+   "a": "Nein. Die genormten Schaltzeichen sind Bildzeichen und in Unicode nicht enthalten — es gibt kein Zeichen für „Widerstand“ oder „Kondensator“, das man in Text kopieren könnte. Was hier steht, sind die Unicode-Zeichen, die es tatsächlich gibt: Erdung, Sicherung, Stromart, Logikoperatoren und alle Einheiten. Für den Plan selbst braucht es ein CAD-Programm, für Beschriftung und Dokumentation reichen diese Zeichen."
+  },
+  {
+   "q": "Wie schreibe ich das Ohm-Zeichen?",
+   "a": "Am einfachsten kopieren. In Word geht auch 2126 gefolgt von Alt+C. Wichtig: Ω (U+2126, Ohm-Zeichen) und Ω (U+03A9, griechisches Omega) sehen gleich aus, sind aber verschiedene Zeichen. Unicode empfiehlt ausdrücklich das griechische Omega — es wird von mehr Schriften korrekt dargestellt."
+  },
+  {
+   "q": "Warum werden die Einheitenzeichen wie ㎾ manchmal falsch dargestellt?",
+   "a": "Weil die zusammengesetzten Einheitenzeichen aus dem CJK-Kompatibilitätsblock stammen und viele westliche Schriften sie nicht enthalten. In technischer Dokumentation ist „kW“ als zwei normale Buchstaben deshalb die sichere Wahl; das Einzelzeichen lohnt nur, wo der Platz wirklich knapp ist."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen ⏚ und dem Schutzleiter-Zeichen?",
+   "a": "⏚ ist das allgemeine Erdungszeichen. Das Schutzleiterzeichen (Erde mit Kreis) und das Masse-Zeichen sind eigene Symbole, die in Unicode fehlen. In der Praxis wird ⏚ für alle drei verwendet und der Typ danebengeschrieben — PE, N oder Masse."
+  },
+  {
+   "q": "Funktionieren die Zeichen in AutoCAD und Eplan?",
+   "a": "Ja, sofern die verwendete Schrift sie enthält. Bei den gängigen technischen Schriften ist das für Ω, µ, ⚡ und die Mathezeichen der Fall; die selteneren Schaltzeichen (⏛, ⏧, ⎍) fehlen häufiger. Vor dem Plotten einmal kontrollieren, ob statt des Zeichens ein Kästchen erscheint."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Was Unicode kann — und was nicht",
+   "body": "Für die Elektrotechnik ist Unicode ein halbes Werkzeug, und es lohnt zu wissen, welche Hälfte. Vorhanden sind alle Größen und Einheiten, die booleschen Operatoren, die Stromarten und die Sicherheitszeichen — also praktisch alles, was in Fließtext, Tabellen und Beschriftungen gebraucht wird. Nicht vorhanden sind die Bauteil-Schaltzeichen selbst: Widerstand, Kondensator, Spule, Transistor. Der Grund ist derselbe wie bei den Pflegesymbolen der Wäscheetiketten — es sind genormte Bildzeichen, keine Schriftzeichen, und Unicode kodiert Schrift. Wer eine Schaltung zeichnen will, braucht ein CAD-Programm; wer sie beschriften oder beschreiben will, findet hier alles."
+  },
+  {
+   "h2": "Die Ohm-Falle",
+   "body": "Ω existiert in Unicode zweimal: einmal als griechischer Großbuchstabe Omega (U+03A9) und einmal als eigenes Ohm-Zeichen (U+2126). Sie sehen identisch aus, verhalten sich aber unterschiedlich — bei Suche, Sortierung und Groß-/Kleinschreibung. Unicode selbst hat das Ohm-Zeichen deshalb als „kanonisch äquivalent“ zum Omega erklärt und rät davon ab, es zu verwenden. Praktische Folge: wer Ω aus einer alten Vorlage kopiert, hat unter Umständen ein Zeichen im Dokument, das die Volltextsuche nicht findet. Im Zweifel das griechische Omega nehmen."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/mathe-symbole/",
+   "title": "Mathematische Symbole",
+   "desc": "Alle Rechen-, Vergleichs- und Mengenzeichen zum Kopieren."
+  },
+  {
+   "href": "/de/library/warnsymbole/",
+   "title": "Warn- und Gefahrensymbole",
+   "desc": "GHS-Piktogramme und Warnzeichen mit ihrer Bedeutung."
+  },
+  {
+   "href": "/de/library/griechische-symbole/",
+   "title": "Griechische Buchstaben",
+   "desc": "Das griechische Alphabet — Grundlage der meisten Formelzeichen."
+  },
+  {
+   "href": "/de/symbol/ohm-zeichen/",
+   "title": "Ohm-Zeichen (Ω)",
+   "desc": "Herkunft, Codepoint und die Verwechslung mit dem griechischen Omega."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/elektro-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/electrical-circuit-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/elektro-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/electrical-circuit-symbols/"
+  }
+ ],
+ "page_type": "library",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

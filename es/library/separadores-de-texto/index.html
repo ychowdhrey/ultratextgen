@@ -384,6 +384,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="line-divider-collections">
+  <span class="article-section-label">Colecciones de separadores</span>
+  <h2>Separadores y divisores prediseñados</h2>
+  <p class="u-secondary-block">Divisores decorativos y separadores ornamentales listos para colocar entre secciones — copia la línea entera con un clic.</p>
+  <div id="lineDividerCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -427,6 +436,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Separador con estrella central",
+      flags: ["✦────────✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisor floral con corazones",
+      flags: ["❧──────❧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Filete de rombos",
+      flags: ["♦───────♦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Corte de sección punteado",
+      flags: ["•──────────•"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisor suave con guiones",
+      flags: ["┄┄┄┄┄┄┄┄┄"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Separador floral de rombos",
+      flags: ["✿──❖──✿"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("lineDividerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

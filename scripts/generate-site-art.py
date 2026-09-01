@@ -1412,6 +1412,47 @@ PAGES = {
   "hr-generator-nadimaka": ("Generator Nadimaka", "Fensi nadimci za igre", m_trophy, K_USE),
   "hr-posebni-znakovi": ("Posebni Znakovi", "Simboli za kopiranje", m_grid, K_LIB),
 
+  # ---- de/nl library expansion, demand-backed (2026-08-16) ----
+  "de-library-emoji-bedeutung": ("Emoji Bedeutung", "Was jedes Emoji wirklich heißt", m_grid, K_LIB),
+  "de-library-waschsymbole": ("Waschsymbole", "Waschen, Trocknen, Bügeln — alle Pflegezeichen", m_grid, K_LIB),
+  "nl-library-wassymbolen": ("Wassymbolen", "Wassen, drogen, strijken — alle wastekens", m_grid, K_LIB),
+  "de-library-daumen-hoch-emoji": ("Daumen hoch Emoji", "👍 in allen Hauttönen zum Kopieren", m_grid, K_LIB),
+  "de-library-lach-emoji": ("Lach-Emoji", "Von Schmunzeln bis Lachkrampf", m_grid, K_LIB),
+
+  "de-library-ascii-kunst": ("ASCII-Kunst", "Rahmen, Blöcke und Braille für Bilder aus Zeichen", m_grid, K_LIB),
+  "de-library-elektro-symbole": ("Elektro-Symbole", "Schaltzeichen, Einheiten und Logikgatter", m_grid, K_LIB),
+  "de-library-hochzeitssymbole": ("Hochzeitssymbole", "Ringe, Brautpaar und Glückwünsche", m_grid, K_LIB),
+  "de-library-feuer-emoji": ("Feuer-Emoji", "🔥 und die passenden Kombinationen", m_grid, K_LIB),
+  "de-library-party-emojis": ("Party-Emojis", "Konfetti, Sekt, Torte und Feuerwerk", m_grid, K_LIB),
+  "de-library-satzzeichen": ("Satzzeichen", "Kreuz, Paragraf, Absatzzeichen, Interrobang", m_grid, K_LIB),
+
+  "de-library-raketen-emoji": ("Raketen-Emoji", "🚀 Mond, Sterne und Kurs-Kombinationen", m_grid, K_LIB),
+  "de-library-wuetendes-emoji": ("Wütendes Emoji", "Von genervt bis Tisch umwerfen", m_grid, K_LIB),
+  "de-library-mittelfinger-emoji": ("Mittelfinger-Emoji", "🖕 in allen Hauttönen", m_grid, K_LIB),
+  "de-library-nerd-emoji": ("Nerd-Emoji", "🤓 Brillen, Bücher und „Also eigentlich“", m_grid, K_LIB),
+
+  "de-library-latex-symbole": ("LaTeX-Symbole", "Befehl und Zeichen nebeneinander", m_grid, K_LIB),
+  "de-library-email-symbole": ("E-Mail-Symbole", "Aufzählungen, Trenner und Signatur", m_grid, K_LIB),
+  "de-library-wikinger-symbole": ("Wikinger-Symbole", "Futhark-Runen mit ihrer Bedeutung", m_grid, K_LIB),
+  "de-library-okkulte-symbole": ("Okkulte Symbole", "Pentagramme, Planeten, Alchemie", m_grid, K_LIB),
+  "de-library-uhr-symbole": ("Uhr-Symbole", "Alle Zifferblätter, Wecker und Sanduhr", m_grid, K_LIB),
+  "de-library-wiedergabe-symbole": ("Wiedergabe-Symbole", "Play, Pause, Stop und Ein/Aus", m_grid, K_LIB),
+  "de-library-mond-symbole": ("Mond-Symbole", "Alle Mondphasen und Himmelszeichen", m_grid, K_LIB),
+  "de-library-glitzer-symbole": ("Glitzer-Symbole", "Funkeln, Sternchen und Ornamente", m_grid, K_LIB),
+
+  "de-library-betende-haende-emoji": ("Betende Hände Emoji", "🙏 Danke, Bitte oder Gebet", m_grid, K_LIB),
+  "de-library-gluecklich-emoji": ("Glückliches Emoji", "Von leisem Lächeln bis Begeisterung", m_grid, K_LIB),
+  "de-library-kackhaufen-emoji": ("Kackhaufen-Emoji", "💩 und warum er ein Gesicht hat", m_grid, K_LIB),
+  "de-library-schock-emoji": ("Schock-Emoji", "Von Überraschung bis Fassungslosigkeit", m_grid, K_LIB),
+  "de-library-high-five-emoji": ("High-Five-Emoji", "Welches Zeichen wirklich passt", m_grid, K_LIB),
+  "de-library-handschlag-emoji": ("Handschlag-Emoji", "🤝 Einigung, Gruß und Partnerschaft", m_grid, K_LIB),
+  "de-library-klatschen-emoji": ("Klatschen-Emoji", "Applaus und Betonung zwischen Wörtern", m_grid, K_LIB),
+  "de-library-muskel-emoji": ("Muskel-Emoji", "💪 Training, Durchhalten und Erfolg", m_grid, K_LIB),
+  "de-library-salutieren-emoji": ("Salutieren-Emoji", "🫡 und die Textvariante o7", m_grid, K_LIB),
+  "de-library-oster-symbole": ("Oster-Symbole", "Hase und Ei, Kreuz und Taube", m_grid, K_LIB),
+
+  "de-library-regenbogen-symbole": ("Regenbogen-Symbole", "Pride-Flaggen und Identitätszeichen", m_grid, K_LIB),
+
   # ---- half/full-width converter pair (ja/ko, 2026-08-15) ----
   "ja-hankaku-zenkaku": ("半角・全角変換", "英数字・カタカナ・記号を一括変換", m_transform, K_USE),
   "ko-jeongak-bangak": ("전각·반각 변환기", "영문·숫자·기호·자모 일괄 변환", m_transform, K_USE),
@@ -1682,6 +1723,10 @@ PAGES = {
         m_tree, K_LIB),
   "id-library-emoji-hewan": ("Emoji Hewan", "Peliharaan, satwa liar, burung, dan hewan laut",
         m_paw, K_LIB),
+  "de-library-fortnite-zeichen": ("Fortnite Zeichen", "Sonderzeichen für deinen Spielernamen",
+        glyphs("ツ", "亗", "乂", "★", "⌖"), K_LIB),
+  "it-library-caratteri-speciali-fortnite": ("Caratteri Speciali Fortnite", "Simboli per il tuo nome di gioco",
+        glyphs("ツ", "亗", "乂", "★", "⌖"), K_LIB),
   "es-library-simbolos-para-fortnite": ("Símbolos para Fortnite", "Signos para tu nombre de jugador",
         m_gamepad, K_LIB),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",

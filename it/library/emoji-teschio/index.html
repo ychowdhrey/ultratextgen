@@ -304,6 +304,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">Set di combo</span>
+  <h2>Combo di emoji teschio</h2>
+  <p class="u-secondary-block">Copia un'intera combo di teschi con un clic e incollala direttamente in un commento, una didascalia o una risposta.</p>
+  <div id="skullSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Come il Teschio è Diventato una Risata</h2>
   <div class="editorial-block">
@@ -374,6 +383,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Morto dal ridere",
+      flags: ["💀", "😂", "🤣"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zona di pericolo",
+      flags: ["☠️", "☣️", "☢️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Modalità pirata",
+      flags: ["☠️", "🏴‍☠️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Deceduto del tutto",
+      flags: ["💀", "⚰️", "🪦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Teschio di Halloween",
+      flags: ["💀", "🎃", "👻"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Così divertente che muoio",
+      flags: ["💀", "💯"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Da far gelare il sangue",
+      flags: ["💀", "🦴"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "RIP io",
+      flags: ["💀", "⚰️"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("skullSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -385,6 +385,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="tiktok-collections">
+  <span class="article-section-label">TikTok-collecties</span>
+  <h2>TikTok-bioscheidingen en divisies</h2>
+  <p class="u-secondary-block">Kant-en-klare TikTok-reeksen om zo in een bio, bijschrift of reactie te plakken — kopieer de hele combinatie in één klik.</p>
+  <div id="tiktokCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Veelgestelde Vragen</span>
@@ -438,6 +447,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "TikTok-bioscheiding",
+      flags: ["✦──✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Esthetische biocombinatie",
+      flags: ["⊹", "‧₊˚", "✧", "‧₊˚", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bijschriftscheiding met streepjes",
+      flags: ["•·——·•"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Vuur-hypecombinatie",
+      flags: ["🔥", "⚡", "💯", "⚡", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Glinsterend bioaccent",
+      flags: ["✨", "₊", "˚", "⭐", "˚", "₊", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sectieafstand met streepbalken",
+      flags: ["│", "·", "│", "·", "│"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("tiktokCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
