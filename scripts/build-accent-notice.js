@@ -135,8 +135,15 @@ function isUpsideDown(rel, html) {
 // path. Read off the page's own hreflang, the same join the rest of the repo
 // uses — never guessed from a slug, because every locale names its pages
 // differently.
+// x-default is the documented fallback: a ratified local-only page declares no
+// hreflang="en" at all, only a self-reference and an x-default on the bare
+// homepage (see CLAUDE.md, "Ratified local-only exceptions"). The homepage is a
+// generator, so those pages have a deployable counterpart even though they have
+// no translation parent — es/fuentes-de-letras, tr/sekilli-yazi, ja/gal-moji
+// and 16 more would otherwise be skipped for the wrong reason.
 function enParentOf(html) {
-  const m = html.match(/hreflang="en"\s+href="https:\/\/ultratextgen\.com(\/[^"]*)"/);
+  const m = html.match(/hreflang="en"\s+href="https:\/\/ultratextgen\.com(\/[^"]*)"/)
+         || html.match(/hreflang="x-default"\s+href="https:\/\/ultratextgen\.com(\/[^"]*)"/);
   if (!m) return null;
   const p = m[1].replace(/^\//, "").replace(/\/$/, "");
   return p ? p + "/index.html" : "index.html";
