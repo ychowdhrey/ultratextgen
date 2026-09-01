@@ -66,7 +66,7 @@ const MAX_SHOWN = 8;
  * docs/editorial-footprint-risk.md carries the promotion record.
  */
 const BLOCKING = new Set([
-  'model-leakage',        // EFR-F-002/003/004: assistant text, placeholders, scaffolding
+  'model-leakage',        // EFR-F-002/003/004/005: assistant text, placeholders, scaffolding
   'seo-preservation'      // identity fields, protected terms, facts, links
   // 'em-dash' is NOT here yet. Shadow first: the rule is new, the backlog is
   // total, and the fix is usually upstream. See the rollout stages.
@@ -128,7 +128,7 @@ function upstreamSource(fragment) {
 
 function ruleOf(hit) {
   if (hit.id === 'EFR-F-001') return 'em-dash';
-  if (hit.id === 'EFR-F-002' || hit.id === 'EFR-F-003' || hit.id === 'EFR-F-004') return 'model-leakage';
+  if (['EFR-F-002', 'EFR-F-003', 'EFR-F-004', 'EFR-F-005'].includes(hit.id)) return 'model-leakage';
   if (hit.category === 'strongly_discouraged') return 'formulaic-phrase';
   if (hit.category === 'density_limited') return 'density-limited';
   return null;

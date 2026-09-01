@@ -75,9 +75,12 @@ function loadBank(p = BANK_PATH) {
   if (_bank && _bank.__path === p) return _bank;
   const raw = JSON.parse(fs.readFileSync(p, 'utf8'));
   for (const e of raw.entries) {
-    e._rx = e.matchType === 'regex'
-      ? new RegExp(e.pattern, e.pattern.startsWith('^') ? 'gim' : 'gi')
-      : null;
+    // `caseSensitive: true` drops the `i` flag for one entry. It exists because
+    // a pattern can need case to mean anything: EFR-F-005's TODO/FIXME/TBD are
+    // placeholders only in caps, and case-folded "TODO" matches the ordinary
+    // Spanish and Portuguese word "todo" on 301 pages.
+    const flags = (e.pattern.startsWith('^') ? 'gm' : 'g') + (e.caseSensitive ? '' : 'i');
+    e._rx = e.matchType === 'regex' ? new RegExp(e.pattern, flags) : null;
   }
   raw.__path = p;
   _bank = raw;
