@@ -6,7 +6,7 @@
   "hero_h1": "Ký tự và text art cho Roblox",
   "hero_tagline": "█ ▓ ⣿ ツ ⚔ — khối, chấm Braille, mặt và ký hiệu game. Chạm để copy.",
   "intro": "Roblox lọc khá mạnh, nên phần lớn ký tự trang trí bị chặn ở ô tên tài khoản. Những gì còn dùng được là các khối vẽ, chấm Braille và vài ký hiệu cũ — chủ yếu hợp với tên hiển thị, tên nhóm và bảng thông báo trong game. Chạm vào ký tự là nó vào bộ nhớ tạm.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -196,6 +196,45 @@
     {
       "h2": "Vì sao Roblox lại nghiêm hơn các game khác",
       "body": "Phần lớn game chỉ chặn ký tự làm hỏng giao diện. Roblox chặn nhiều hơn vì người chơi phần lớn là trẻ em, nên bộ lọc phải ngăn cả cách viết lách né từ cấm — thay chữ bằng ký hiệu nhìn giống. Đó là lý do một ký tự vô hại như ★ cũng có thể bị từ chối ở chỗ này mà lại được chấp nhận ở chỗ khác: bộ lọc không xét từng ký tự, nó xét cả chuỗi. Hiểu điều đó thì việc thử-và-sai bớt khó hiểu đi nhiều."
+    }
+  ],
+  "collection_section": {
+    "id": "roblox-art-sets",
+    "label": "Bộ tranh chữ",
+    "h2": "Tranh chữ Roblox có sẵn",
+    "intro": "Chép nguyên một khuôn mặt hoặc banner dùng được trong chat chỉ với một cú nhấp — giữ nguyên định dạng dọc để các dòng thẳng hàng."
+  },
+  "collection_container_id": "robloxTextArtContainer",
+  "collections": [
+    {
+      "name": "Mặt vô cảm (kiểu Man Face)",
+      "flags": ["⣏⣉⣉⣉⣉⣉⣉⣹", "⡇⢀⣀⠀⠀⣀⡀⢸", "⡇⠘⠛⠂⠐⠛⠃⢸", "⡇⠀⠀⠀⠀⠀⠀⢸", "⡇⠐⠶⠶⠶⠶⠂⢸", "⣇⣀⣀⣀⣀⣀⣀⣸"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Mặt nhếch mép (dot art)",
+      "flags": ["⡏⠉⠉⠉⠉⠉⠉⢹", "⡇⠀⣤⠀⠀⣤⠀⢸", "⡇⠀⠛⠀⠀⠛⠀⢸", "⡇⠀⠀⠀⠀⠀⠀⢸", "⡇⠀⢀⣠⠤⠒⠁⢸", "⣇⣀⣀⣀⣀⣀⣀⣸"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Nụ cười khối vuông",
+      "flags": ["░░░░░░░░░░", "░░██░░██░░", "░░░░░░░░░░", "░██░░░░██░", "░░██████░░"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Bộ emote cho chat",
+      "flags": ["( ͡° ͜ʖ ͡°)", "¯\\_(ツ)_/¯", "(ง'̀-'́)ง", "◉_◉", "(✿◠‿◠)", "ᕦ(ò_óˇ)ᕤ"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Thanh kiếm ASCII",
+      "flags": ["⠀⠀⠀/\\", "⠀⠀⠀||", "⠀⠀⠀||", "⠀o=++=o", "⠀⠀⠀||", "⠀⠀⠀\\/"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Banner GG",
+      "flags": ["╔══════════╗", "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║", "║⠀⠀⠀G⠀G⠀!⠀⠀║", "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║", "╚══════════╝"],
+      "defaultFormat": "vertical"
     }
   ],
   "related": [

@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Triste",
   "hero_tagline": "Tutte le sfumature della tristezza: dalla faccina appena contrariata al pianto, più i kaomoji tristi.",
   "intro": "«Triste» non è un'emozione sola, e a volte una faccina non basta. Questa pagina mette le facce dalla più leggera alla più pesante, aggiunge i simboli che si usano al posto delle parole e chiude con i kaomoji per quando una faccina tonda non dice quello che vuoi. Clicca per copiare.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Perché Esistono Così Tanti Emoji Tristi",
       "body": "Unicode non ha aggiunto quindici facce tristi per eccesso: ognuna è arrivata per un uso che le precedenti non coprivano. 😞 viene dai primi set giapponesi, dove serviva a scusarsi. 🥺 è arrivata molto dopo e quasi subito è stata reinterpretata in chiave tenera più che triste. 🫠 e 🫤 sono del 2021 e parlano di sfinimento, non di dolore. Lo scarto fra quello che dice il nome Unicode e quello che le persone ne fanno è reale: per questo qui sono ordinate per intensità e non per data di inserimento."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Varianti di Emoji Triste",
+    "h2": "Varianti di Emoji Triste",
+    "intro": "Malinconia con un clic — copia un combo triste completo e incollalo in una bio, in una didascalia o in un messaggio."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Set da Cuore Spezzato",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Malinconia da Giorno di Pioggia",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Notti Malinconiche",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sospiro di Delusione",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estetica Appassita",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mi Manchi",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pacchetto Kaomoji Tristi",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

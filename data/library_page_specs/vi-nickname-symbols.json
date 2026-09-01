@@ -6,7 +6,7 @@
   "hero_h1": "Ký tự đặc biệt cho tên",
   "hero_tagline": "꧁ ༺ ツ ♛ ★ ϟ — khung cánh, mặt cười, vương miện, sao và ký tự chiến. Chạm để copy.",
   "intro": "Tên trong game thường chỉ cho phép một dòng ngắn, nên phần trang trí phải gánh toàn bộ phong cách. Bốn nhóm dưới đây là những ký tự thực sự lọt qua ô nhập tên: khung bao hai đầu, mặt cười katakana, vương miện và ngôi sao, rồi các nét mạnh. Chạm vào ký tự là nó vào bộ nhớ tạm.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -228,6 +228,45 @@
     {
       "h2": "Vì sao ký tự trang trí lại đến từ những bảng chữ xa lạ",
       "body": "꧁ là dấu trang trí trong chữ Java, ༺ là dấu mở đoạn trong chữ Tạng, ツ là một âm tiết tiếng Nhật. Không cái nào sinh ra để làm khung tên. Chúng được chọn vì cùng một lý do: chúng nằm trong Unicode, hầu hết bàn phím không gõ ra được, và trông cân đối. Cộng đồng game đã lục soát toàn bộ bảng mã để tìm những hình có sẵn — nên phần lớn phong cách tên game hôm nay thực chất là kho hoa văn của các hệ chữ viết khác, được dùng lại cho một việc hoàn toàn khác."
+    }
+  ],
+  "collection_section": {
+    "id": "nick-decorations",
+    "label": "Trang trí nickname",
+    "h2": "Khung trang trí nickname có sẵn",
+    "intro": "Chép cả bộ mẫu tên có sẵn chỉ với một cú nhấp, rồi thay 'YourName' bằng nick của bạn."
+  },
+  "collection_container_id": "nickDecorationsContainer",
+  "collections": [
+    {
+      "name": "Cánh cổ điển",
+      "flags": ["꧁ YourName ꧂", "꧁༺ YourName ༻꧂", "꧁❮ YourName ❯꧂", "꧁♛ YourName ♛꧂", "꧁★ YourName ★꧂"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Thẻ mặt cười",
+      "flags": ["ツ YourName", "YourName シ", "꧁ツ YourName ツ꧂", "彡 YourName 彡", "ミ★ YourName ★ミ"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Nick hoàng gia",
+      "flags": ["♛ YourName ♛", "♚YourName♚", "【♔ YourName ♔】", "『YourName』", "㊝ YourName ㊝"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Thẻ game thủ pro",
+      "flags": ["ᴳᵒᵈ•YourName", "亗 YourName 亗", "乂•YourName•乂", "YourName彡", "꧁亗 YourName 亗꧂"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Phong cách tối",
+      "flags": ["☠ YourName ☠", "ϟYourNameϟ", "꧁☠ YourName ☠꧂", "⚔ YourName ⚔", "✞ YourName ✞"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Khung ngôi sao",
+      "flags": ["★彡 YourName 彡★", "✰ YourName ✰", "☆꧁ YourName ꧂☆", "⍟ YourName ⍟", "✯YourName✯"],
+      "defaultFormat": "vertical"
     }
   ],
   "related": [

@@ -420,6 +420,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="art-pieces">
+  <span class="article-section-label">قطع فنية</span>
+  <h2>لوحات نصية جاهزة</h2>
+  <p class="u-secondary-block">انسخ لوحة نصية كاملة متعددة الأسطر بنقرة واحدة — حافظ على التنسيق العمودي حتى تبقى الأسطر متراصة.</p>
+  <div id="textArtContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>من أين جاءت أحرف الرسم هذه</h2>
   <div class="editorial-block">
@@ -494,6 +503,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "قطة ASCII",
+      flags: ["⠀⠀/\\_/\\", "⠀( o.o )", "⠀(⠀⠀v⠀⠀)", "⠀⠀|⠀⠀⠀|", "⠀(__|__)"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "قلب بأحرف برايل",
+      flags: ["⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄", "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇", "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿", "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁", "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀", "⠀⠀⠀⠀⠙⠿⠋⠀⠀"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "مجسم ماسي",
+      flags: ["⠀⠀◇", "⠀◇◆◇", "◇◆◆◆◇", "⠀◇◆◇", "⠀⠀◇"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "إطار نجوم",
+      flags: ["✦─────────────✦", "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│", "│⠀⠀your text⠀⠀│", "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│", "✦─────────────✦"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "كاوموجي كلاسيكية",
+      flags: ["¯\\_(ツ)_/¯", "(╯°□°）╯︵ ┻━┻", "( ͡° ͜ʖ ͡°)", "(ノ◕ヮ◕)ノ*:・゚✧", "(◕‿◕)", "ʕ•ᴥ•ʔ"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "سلسلة جبال",
+      flags: ["⠀⠀⠀⠀⠀▲", "⠀⠀⠀⠀▲▲▲", "⠀⠀▲⠀▲▲▲▲▲", "⠀▲▲▲▲▲▲▲▲▲", "▲▲▲▲▲▲▲▲▲▲▲"],
+      defaultFormat: "vertical"
+    }
+  ];
+
+  ns.buildGrids("textArtContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

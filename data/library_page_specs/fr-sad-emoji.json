@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Triste",
   "hero_tagline": "Toutes les nuances du chagrin : du visage légèrement contrarié aux larmes, plus les kaomoji tristes.",
   "intro": "« Triste » n'est pas une seule émotion, et un seul emoji ne suffit pas toujours. Cette page range les visages du plus léger au plus lourd, ajoute les symboles qu'on met à la place des mots, puis les kaomoji quand un visage rond ne rend pas ce qu'on veut dire. Cliquez pour copier.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Pourquoi Il Existe Autant d'Emoji Tristes",
       "body": "Unicode n'a pas ajouté quinze visages tristes par excès de zèle : chacun est arrivé pour un usage que les précédents ne couvraient pas. 😞 date des premières séries japonaises, où il servait à s'excuser. 🥺 est arrivé bien plus tard et a été détourné presque aussitôt en registre affectueux plutôt que triste. 🫠 et 🫤 datent de 2021 et disent l'épuisement, pas le chagrin. L'écart entre ce que le nom Unicode annonce et ce que les gens en font est réel — et c'est pourquoi cette page les range par intensité plutôt que par ordre d'ajout."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Variantes d'Emoji Triste",
+    "h2": "Variantes d'Emoji Triste",
+    "intro": "La mélancolie en un clic — copiez un combo triste complet pour une bio, une légende ou un message."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Cœur Brisé",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mélancolie Pluvieuse",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heures Sombres",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Soupir Déçu",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Esthétique Fanée",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tu Me Manques",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pack Kaomoji Triste",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

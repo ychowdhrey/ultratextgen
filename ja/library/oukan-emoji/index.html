@@ -340,6 +340,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="combo-sets">
+  <span class="article-section-label">コンボセット</span>
+  <h2>王冠絵文字のコンボセット</h2>
+  <p class="u-secondary-block">すぐ使える王冠コンボ — ワンクリックでセットごとコピーして、プロフィールやキャプション、コメントにそのまま貼れます。</p>
+  <div id="crownSetsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>王冠がほめ言葉になった経緯</h2>
   <div class="editorial-block">
@@ -414,6 +423,59 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "王冠で自慢",
+      flags: ["👑", "💯", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "クイーンの風格",
+      flags: ["👑", "💅", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "キングの振る舞い",
+      flags: ["👑", "😎", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "自分らしさ全開",
+      flags: ["👑", "💅", "😌"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "優勝",
+      flags: ["👑", "🏆", "🥇"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "史上最強（GOAT）",
+      flags: ["👑", "🐐", "🔥"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ロイヤルな垢抜け",
+      flags: ["👑", "✨", "💎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "戴冠モード",
+      flags: ["👑", "🎉", "🥂"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("crownSetsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

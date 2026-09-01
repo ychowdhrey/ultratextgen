@@ -6,7 +6,7 @@
   "hero_h1": "Символы для ника",
   "hero_tagline": "꧁ ༺ ツ ♛ ★ ϟ — крылья, улыбки, короны, звёзды и боевые знаки. Нажмите, чтобы скопировать.",
   "intro": "Поле ника обычно короткое, поэтому весь стиль держится на украшениях. Четыре группы ниже — это те символы, которые реально проходят в поля имени: обрамление с двух сторон, катаканские улыбки, короны со звёздами и резкие боевые знаки. Нажатие копирует символ в буфер обмена.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s1",
@@ -228,6 +228,45 @@
     {
       "h2": "Почему украшения приходят из чужих письменностей",
       "body": "꧁ — декоративный знак яванского письма, ༺ — тибетский знак начала фрагмента, ツ — японский слог. Ни один из них не создавался как рамка для ника. Их выбрали по одной и той же причине: они есть в Unicode, их не набрать с обычной клавиатуры, и они выглядят симметрично. Игровое сообщество, по сути, прочесало всю таблицу символов в поисках готовых форм — так что современный стиль игровых ников почти целиком собран из орнаментов чужих алфавитов, приспособленных под совершенно другую задачу."
+    }
+  ],
+  "collection_section": {
+    "id": "nick-decorations",
+    "label": "Украшения для ника",
+    "h2": "Готовые украшения для ника",
+    "intro": "Скопируйте целый набор шаблонов ника одним кликом, затем замените «YourName» на свой ник."
+  },
+  "collection_container_id": "nickDecorationsContainer",
+  "collections": [
+    {
+      "name": "Классические крылья",
+      "flags": ["꧁ YourName ꧂", "꧁༺ YourName ༻꧂", "꧁❮ YourName ❯꧂", "꧁♛ YourName ♛꧂", "꧁★ YourName ★꧂"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Теги со смайлами",
+      "flags": ["ツ YourName", "YourName シ", "꧁ツ YourName ツ꧂", "彡 YourName 彡", "ミ★ YourName ★ミ"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Королевские ники",
+      "flags": ["♛ YourName ♛", "♚YourName♚", "【♔ YourName ♔】", "『YourName』", "㊝ YourName ㊝"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Теги про-игрока",
+      "flags": ["ᴳᵒᵈ•YourName", "亗 YourName 亗", "乂•YourName•乂", "YourName彡", "꧁亗 YourName 亗꧂"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Тёмный стиль",
+      "flags": ["☠ YourName ☠", "ϟYourNameϟ", "꧁☠ YourName ☠꧂", "⚔ YourName ⚔", "✞ YourName ✞"],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Звёздные рамки",
+      "flags": ["★彡 YourName 彡★", "✰ YourName ✰", "☆꧁ YourName ꧂☆", "⍟ YourName ⍟", "✯YourName✯"],
+      "defaultFormat": "vertical"
     }
   ],
   "related": [
