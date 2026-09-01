@@ -6307,6 +6307,12 @@
         "added": "2026-09-01"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; Korean tech coverage cites the Galaxy line by its Latin name",
+        "found_on": "ko/updates/dirham-giho-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "WhatsApp (Android)",
         "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
         "found_on": "ko/updates/unicode-18-imoji-tupyo/",
@@ -6818,6 +6824,12 @@
         "string": "Samsung",
         "reason": "brand/company name; no Dutch form exists",
         "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Dutch form exists",
+        "found_on": "nl/updates/dirham-symbool-unicode-18/",
         "added": "2026-09-01"
       },
       {
@@ -8781,6 +8793,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Swedish form exists",
+        "found_on": "sv/updates/dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (Rupee Sign → Rupietecken; Tamil Rupee → Tamilsk rupie; French Franc → Fransk franc), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
@@ -8893,6 +8911,12 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Tomma mängden; Intersection → Snitt (intersektion)), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Swedish form exists",
+        "found_on": "sv/updates/dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "— (text: BD / .د.ب)",
@@ -9576,6 +9600,12 @@
         "string": "Samsung",
         "reason": "brand/company name; no local form exists",
         "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Turkish form exists",
+        "found_on": "tr/updates/dirhem-sembolu-unicode-18/",
         "added": "2026-09-01"
       },
       {
