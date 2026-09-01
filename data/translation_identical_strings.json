@@ -27,6 +27,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name, cited in Latin script inside otherwise Arabic prose",
+        "found_on": "ar/updates/uae-dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "ar/khat-snapchat/",
@@ -37,6 +43,12 @@
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "ar/nas-ghayr-marii/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names, cited in Latin script inside otherwise Arabic prose",
+        "found_on": "ar/updates/uae-dirham-symbol-unicode-18/",
+        "added": "2026-09-01"
       }
     ],
     "bs": [
@@ -1118,6 +1130,12 @@
         "string": "Samsung",
         "reason": "brand/company name; no local form exists",
         "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no German form exists",
+        "found_on": "de/updates/vae-dirham-symbol-unicode-18/",
         "added": "2026-09-01"
       },
       {
@@ -2824,6 +2842,12 @@
         "string": "Samsung",
         "reason": "brand/company name; no local form exists",
         "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Spanish form exists",
+        "found_on": "es/updates/simbolo-dirham-emiratos-unicode-18/",
         "added": "2026-09-01"
       },
       {
@@ -5847,6 +5871,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung Galaxy",
+        "reason": "brand plus product-line name; no Italian form exists",
+        "found_on": "it/updates/simbolo-dirham-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from it/library/simboli-euro/ itself: the tiles around it are translated (Rupee Sign → Segno di Rupia; Tamil Rupee → Rupia Tamil; Cent → Centesimo), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-euro/",
@@ -6025,6 +6055,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "it/da-stampare/alfabeto-spagnolo/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Italian form exists",
+        "found_on": "it/updates/simbolo-dirham-unicode-18/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
