@@ -551,6 +551,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- UNICODE COVERAGE STATUS -->
+<section class="editorial-section" id="unicode-coverage">
+  <span class="article-section-label">ความครอบคลุม</span>
+  <h2>สกุลเงินที่ยังไม่มีเครื่องหมายของตัวเองในยูนิโค้ด</h2>
+  <p class="u-secondary-block">ทุกเครื่องหมายบนหน้านี้คือรหัสจริงในยูนิโค้ด แต่สกุลเงินที่หมุนเวียนอยู่ในโลกส่วนใหญ่ไม่มีเครื่องหมายของตัวเองเลย ยูนิโค้ดไม่ได้เป็นผู้คิดเครื่องหมายสกุลเงินขึ้นมาเอง ธนาคารกลางต้องออกแบบและประกาศใช้อย่างเป็นทางการก่อน ซึ่งส่วนใหญ่ยังไม่เคยทำ จึงแบ่งออกได้เป็นสามระดับ</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ระดับ</th>
+          <th>ตัวอย่าง</th>
+          <th>สิ่งที่ควรพิมพ์</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>มีเครื่องหมายเฉพาะของตัวเอง</td>
+          <td><code>₪</code> <code>₺</code> <code>⃁</code> <code>⃃</code> <code>⃄</code></td>
+          <td>ตัวเครื่องหมายเอง คัดลอกได้จากตารางด้านบน</td>
+        </tr>
+        <tr>
+          <td>ใช้เครื่องหมายกลางร่วมกัน</td>
+          <td><code>﷼</code> (U+FDFC, 2002). อิหร่านและเยเมนใช้ร่วมกัน</td>
+          <td>เครื่องหมายที่ใช้ร่วมกัน พร้อมชื่อประเทศทุกครั้งที่จำนวนเงินอาจอ่านได้สองทาง</td>
+        </tr>
+        <tr>
+          <td>ไม่มีเครื่องหมายเลย</td>
+          <td>ดีนาร์คูเวต ดีนาร์บาห์เรน ดีนาร์จอร์แดน ดีนาร์อิรัก ริยัลกาตาร์</td>
+          <td>รหัส ISO 4217 (KWD, BHD, JOD, IQD, QAR) หรือตัวย่อท้องถิ่น (KD, BD, JD)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="u-secondary-tight">เมื่อไม่นานมานี้มีสามสกุลเงินที่ขยับขึ้นระดับ: <a href="/th/symbol/khreuangmai-riyal-saudi/">เครื่องหมายริยัลซาอุดี</a> (⃁ U+20C1) ได้ข้อสรุปแล้วในยูนิโค้ด 17.0 ส่วน <a href="/th/symbol/khreuangmai-dirham/">เครื่องหมายดิรฮัม</a> (⃃ U+20C3) และ <a href="/th/symbol/khreuangmai-rial-oman/">เครื่องหมายเรียลโอมาน</a> (⃄ U+20C4) ถูกตรึงไว้รอยูนิโค้ด 18.0</p>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>แปลงข้อความด้วยฟอนต์ Unicode</h3>

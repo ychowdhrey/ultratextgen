@@ -551,6 +551,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- UNICODE COVERAGE STATUS -->
+<section class="editorial-section" id="unicode-coverage">
+  <span class="article-section-label">Охват</span>
+  <h2>Валюты без собственного знака в Unicode</h2>
+  <p class="u-secondary-block">Каждый знак на этой странице — реальная кодовая позиция Unicode, но у большинства обращающихся в мире валют своего знака нет вовсе. Unicode не придумывает денежные знаки: сначала центральный банк рисует знак и официально его утверждает, а большинство банков этого так и не сделали. Отсюда три уровня.</p>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Уровень</th>
+          <th>Пример</th>
+          <th>Что набирать</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Собственный знак</td>
+          <td><code>₪</code> <code>₺</code> <code>⃁</code> <code>⃃</code> <code>⃄</code></td>
+          <td>Сам знак. Скопируйте его из таблиц выше.</td>
+        </tr>
+        <tr>
+          <td>Общий универсальный знак</td>
+          <td><code>﷼</code> (U+FDFC, 2002). Иран и Йемен пользуются им оба.</td>
+          <td>Общий знак плюс название страны везде, где сумму можно прочитать двояко.</td>
+        </tr>
+        <tr>
+          <td>Знака нет вовсе</td>
+          <td>Кувейтский динар, бахрейнский динар, иорданский динар, иракский динар, катарский риал</td>
+          <td>Код ISO 4217 (KWD, BHD, JOD, IQD, QAR) или местное сокращение (KD, BD, JD).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="u-secondary-tight">Три валюты недавно поднялись на уровень выше: <a href="/ru/symbol/znak-saudovskogo-riala/">знак саудовского риала</a> (⃁ U+20C1) окончательно утверждён в Unicode 17.0, а <a href="/ru/symbol/znak-dirkhama/">знак дирхама</a> (⃃ U+20C3) и <a href="/ru/symbol/znak-omanskogo-riala/">знак оманского риала</a> (⃄ U+20C4) заморожены до Unicode 18.0.</p>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Преобразите текст с помощью Unicode-шрифтов</h3>
