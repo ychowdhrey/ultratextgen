@@ -226,6 +226,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="char-counter"><span id="charCount">0</span>/500</div>
       </div>
 
+      <!-- Accent-aware hint: shows only when the input contains diacritics.
+           Copy differs from the shared generator's on purpose — upside-down.js's
+           FLIP and ILLUSION maps contain no accented letters at all, and
+           flipChar() falls back to the original character, so é/ñ/ß/ł pass
+           through upright inside otherwise-flipped text. -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Your text has accent marks. Upside-down text has no flipped form for <b>é ñ ß ł</b> — those letters pass through unchanged, so they stay upright inside the flipped text. Bold, script and gothic styles do keep their marks. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+      </div>
+
       <!-- Controls (populated by upside-down.js) -->
       <div id="udControlPanel"></div>
 
@@ -432,6 +443,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </footer>
 
   <script src="upside-down.js"></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/footer.js" defer></script>
   <script src="/decorations-showcase.js"></script>
 </body></html>

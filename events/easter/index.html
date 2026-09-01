@@ -192,6 +192,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -528,6 +535,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
 <script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
