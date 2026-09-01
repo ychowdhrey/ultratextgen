@@ -1734,6 +1734,12 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* .editorial-block carries only a bottom margin, so a prose block placed after
+   a table sat flush against the table's last row (measured 0px). */
+.data-table-wrap + .editorial-block {
+  margin-top: 1.5rem;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -2074,10 +2080,6 @@ a:hover {
 .compare-card.variant-positive li::before {
   content: "✓ ";
   color: #10b981;
-}
-
-.data-table tr:last-child td {
-  border-bottom: none;
 }
 
 .section-divider {
@@ -2582,8 +2584,19 @@ button.cta-btn { border: 0; cursor: pointer; }
   text-align: center;
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-top: -1rem;
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
+}
+
+/* The negative margin tucks the subline under a heading, which is the only
+   place it was designed for. Applied unconditionally it pulled the subline
+   16px up into whatever sat above it, so a subline placed after a table or a
+   text block overlapped that block's last line. */
+h1 + .section-subline,
+h2 + .section-subline,
+h3 + .section-subline,
+h4 + .section-subline {
+  margin-top: -1rem;
 }
 
 /* Inline CTA link (replaces full-width .cat-cta on use-cases page) */
