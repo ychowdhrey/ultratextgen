@@ -67,6 +67,33 @@ def en_parent_of(spec):
     return None, None
 
 
+def live_collection_sets(rel):
+    """The combo-set sections a LIVE page renders: containerId -> group count.
+
+    Read from the page, not from its spec, for the same reason tile parity is:
+    an EN spec can be stale against its own page.
+
+    A `copy_pattern: "collection"` section renders its tiles through
+    `UltraTextGen.buildGrids(containerId, GROUPS)` after load, so it leaves no
+    static markup at all — an empty `<div id="…Container"></div>` and nothing
+    else. That is why the tile-count check above cannot see it, and why 16
+    locale pages went live without the section their EN parent carries while
+    every check on this site reported them complete.
+
+    Groups are counted by `flags:`, not `defaultFormat:` — a hand-written
+    GROUPS array does not always carry the latter (library/emoji-flags has
+    none), which reported that page's section as empty.
+    """
+    s = rd(rel)
+    out = {}
+    for m in re.finditer(r'<script>(.*?)</script>', s, re.S):
+        js = m.group(1)
+        c = re.search(r'\bbuildGrids\(\s*["\']([^"\']+)["\']', js)
+        if c:
+            out[c.group(1)] = len(re.findall(r'\bflags\s*:', js))
+    return out
+
+
 def live_tile_count(rel):
     s = rd(rel)
     return len(re.findall(r'class="[^"]*symbol-tile', s))
@@ -145,6 +172,29 @@ def check(path, strict=False):
     if live != mine:
         E(f"tile count {mine} != live EN parent's {live} ({en_rel}) — "
           f"check the EN spec is not stale against its own page")
+
+    # --- combo-set parity with the LIVE EN page ------------------------------
+    # ERROR on absence, WARN on a count gap, deliberately different strengths.
+    # Absence is the defect that actually shipped (16 locale pages with no
+    # combo-set section at all) and has no backlog left, so it can gate. A
+    # group-count gap is a thin section, not a missing one, and 17 pairs carry
+    # it today — gating on that would make this permanently red, which is how
+    # a check gets ignored.
+    en_sets = live_collection_sets(en_rel)
+    mine_sets = spec.get("collections") or []
+    if en_sets and not mine_sets:
+        ids = ", ".join(sorted(en_sets))
+        E(f"EN parent {en_rel} renders a combo-set section (#{ids}, "
+          f"{sum(en_sets.values())} groups) but this spec declares no "
+          f"'collections' — those tiles are built at runtime by buildGrids(), "
+          f"so a page without the section still passes every tile count")
+    elif en_sets and mine_sets and spec.get("copy_pattern") != "collection":
+        E("declares 'collections' but copy_pattern is "
+          f"{spec.get('copy_pattern')!r} — the generator only emits the "
+          "section for copy_pattern 'collection'")
+    elif en_sets and mine_sets and sum(en_sets.values()) != len(mine_sets):
+        W(f"{len(mine_sets)} combo-set groups against the live EN parent's "
+          f"{sum(en_sets.values())} ({en_rel})")
 
     # --- the depth the id batch established as the floor ---------------------
     if not spec.get("faq"):

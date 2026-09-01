@@ -448,6 +448,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Instagram koleksiyonları</span>
+  <h2>Instagram biyografi ve açıklama kombinasyonları</h2>
+  <p class="u-secondary-block">Biyografine, açıklamana veya hikâyene doğrudan yapıştırabileceğin hazır Instagram dizilimleri — tüm kombinasyonu tek tıkla kopyala.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Sıkça Sorulan Sorular</span>
@@ -505,6 +514,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Instagram biyografi ayracı",
+      flags: ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Parıltılı açıklama kombinasyonu",
+      flags: ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Çiçekli biyografi ayracı",
+      flags: ["✿", "─", "✿", "─", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Noktalı biyografi boşluğu",
+      flags: ["·", "◦", "·", "◦", "·"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Ay ve bulut açıklaması",
+      flags: ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kalp gözlü açıklama kombinasyonu",
+      flags: ["♡", "˖", "😍", "˖", "♡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

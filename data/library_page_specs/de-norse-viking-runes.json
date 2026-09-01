@@ -2,7 +2,7 @@
  "slug": "wikinger-symbole",
  "lang": "de",
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "title": "Wikinger-Symbole & Runen zum Kopieren — Bedeutung des Futhark | UltraTextGen",
  "meta_description": "Wikinger-Symbole und Runen zum Kopieren: das Ältere Futhark mit Bedeutung, Jüngeres Futhark, angelsächsische Runen und Runen-Interpunktion.",
  "breadcrumb": "Wikinger-Symbole und Runen",
@@ -482,6 +482,25 @@
   {
    "h2": "Warum Runen kein Symbolvorrat sind",
    "body": "Der häufigste Irrtum bei Runen ist, sie für Sinnbilder zu halten wie ein Herz oder ein Kreuz. Tatsächlich sind sie ein Alphabet: ᚠ steht für den Laut f, so wie F für f steht. Dass jede Rune zusätzlich einen Namen hat — Fehu, Uruz, Thurisaz — liegt daran, dass die Reihe über ein Merkgedicht gelernt wurde, ähnlich wie Anton, Berta, Cäsar beim Buchstabieren. Aus diesen Merknamen sind später die Bedeutungen geworden, die heute in Tattoo-Vorlagen stehen. Historisch trägt eine einzelne Rune also einen Laut und einen Namen — aber keine Botschaft."
+  }
+ ],
+ "collection_section": {
+  "id": "runes-collections",
+  "label": "Runen-Sets",
+  "h2": "Runenalphabete",
+  "intro": "Kopiere ein vollständiges Runenalphabet in der überlieferten Fuþark-Reihenfolge."
+ },
+ "collection_container_id": "runesCollectionsContainer",
+ "collections": [
+  {
+   "name": "Älteres Futhark (24 Runen)",
+   "flags": ["ᚠ", "ᚢ", "ᚦ", "ᚨ", "ᚱ", "ᚲ", "ᚷ", "ᚹ", "ᚺ", "ᚾ", "ᛁ", "ᛃ", "ᛇ", "ᛈ", "ᛉ", "ᛊ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛜ", "ᛞ", "ᛟ"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Jüngeres Futhark (16 Runen, Langzweigrunen)",
+   "flags": ["ᚠ", "ᚢ", "ᚦ", "ᚬ", "ᚱ", "ᚴ", "ᚼ", "ᚾ", "ᛁ", "ᛅ", "ᛋ", "ᛏ", "ᛒ", "ᛘ", "ᛚ", "ᛦ"],
+   "defaultFormat": "inline"
   }
  ],
  "related": [

@@ -459,6 +459,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="celestial-collections">
+  <span class="article-section-label">Himmels-Sets</span>
+  <h2>Himmelsfolgen</h2>
+  <p class="u-secondary-block">Kopiere eine komplette Himmelsfolge mit einem Klick — die acht Mondphasen in astronomischer Reihenfolge und den Sonnenlauf vom Sonnenaufgang bis zur Nacht.</p>
+  <div id="celestialCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Zwei Systeme, zwei Zwecke</h2>
   <div class="editorial-block">
@@ -537,6 +546,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Mondphasen (astronomische Reihenfolge)",
+      flags: ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sonnenlauf (Tageszyklus)",
+      flags: ["🌅", "🌞", "🌇", "🌃"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("celestialCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -164,9 +164,13 @@ function createFingerprinter(byUrl, localeCodes) {
    * group count gives the axis a magnitude, which is what lets a partially
    * ported section register as movement (see score()).
    *
-   * `defaultFormat:` appears exactly once per group in the generator's own
-   * emitted `GROUPS` array, and every one of the site's 808 pages carrying a
-   * `buildGrids` call has exactly one such call — verified 2026-09-01.
+   * Groups are counted by `flags:`, not `defaultFormat:`. Both appear once
+   * per group in the generator's emitted `GROUPS` array, but hand-written
+   * arrays do not always carry `defaultFormat` — library/emoji-flags'
+   * FLAG_GROUPS has none, so counting it reported that page's section as 0
+   * groups, i.e. as empty. Across all 808 pages carrying a `buildGrids` call
+   * (exactly one each) `flags:` is never absent and never disagrees with
+   * `defaultFormat:` where both exist — verified 2026-09-01.
    */
   function collectionSets($) {
     const sets = new Map();
@@ -174,7 +178,7 @@ function createFingerprinter(byUrl, localeCodes) {
       const js = $(el).html() || '';
       const m = /\bbuildGrids\(\s*["']([^"']+)["']/.exec(js);
       if (!m) return;
-      sets.set(m[1], (js.match(/\bdefaultFormat\s*:/g) || []).length);
+      sets.set(m[1], (js.match(/\bflags\s*:/g) || []).length);
     });
     return sets;
   }

@@ -1,6 +1,6 @@
 {
   "slug": "ay-sembolleri",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "title": "Ay Sembolleri ☽ 🌙 — Kopyala Yapıştır Ay Evreleri ve Gökyüzü | UltraTextGen",
   "meta_description": "Ay sembolleri kopyala yapıştır: ☽ hilal, 🌙 ay emojisi, ay evreleri, güneş ve yıldız sembolleri, gece göğü süsleri. Kopyalamak için tıkla.",
   "hero_h1": "Ay ve Gökyüzü Sembolleri",
@@ -247,6 +247,25 @@
           "label": "Ay ve Yıldızlar Seti"
         }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "celestial-collections",
+    "label": "Gök cisimleri setleri",
+    "h2": "Gök cisimleri dizileri",
+    "intro": "Tam bir gök dizisini tek tıkla kopyala — astronomik sıradaki sekiz ay evresi ve gün doğumundan geceye uzanan güneş döngüsü."
+  },
+  "collection_container_id": "celestialCollectionsContainer",
+  "collections": [
+    {
+      "name": "Ay evreleri (astronomik sıra)",
+      "flags": ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Güneşin seyri (gün döngüsü)",
+      "flags": ["🌅", "🌞", "🌇", "🌃"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

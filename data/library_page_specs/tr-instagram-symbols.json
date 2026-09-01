@@ -1,6 +1,6 @@
 {
   "slug": "instagram-sembolleri",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "title": "Instagram Sembolleri ✨ ♡ — Kopyala Yapıştır Biyografi Süsleri | UltraTextGen",
   "meta_description": "Instagram sembolleri kopyala yapıştır: biyografi süsleri, ayraçlar, kalpler, yıldızlar ve öne çıkan kapak sembolleri. Kopyalamak için tıkla.",
   "hero_h1": "Instagram Sembolleri",
@@ -272,6 +272,45 @@
     }
   ],
   "faq_h2": "Instagram Sembolleri Hakkında Sık Sorulanlar",
+  "collection_section": {
+    "id": "instagram-collections",
+    "label": "Instagram koleksiyonları",
+    "h2": "Instagram biyografi ve açıklama kombinasyonları",
+    "intro": "Biyografine, açıklamana veya hikâyene doğrudan yapıştırabileceğin hazır Instagram dizilimleri — tüm kombinasyonu tek tıkla kopyala."
+  },
+  "collection_container_id": "instagramCollectionsContainer",
+  "collections": [
+    {
+      "name": "Instagram biyografi ayracı",
+      "flags": ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Parıltılı açıklama kombinasyonu",
+      "flags": ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Çiçekli biyografi ayracı",
+      "flags": ["✿", "─", "✿", "─", "✿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Noktalı biyografi boşluğu",
+      "flags": ["·", "◦", "·", "◦", "·"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ay ve bulut açıklaması",
+      "flags": ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kalp gözlü açıklama kombinasyonu",
+      "flags": ["♡", "˖", "😍", "˖", "♡"],
+      "defaultFormat": "inline"
+    }
+  ],
   "related": [
     {
       "href": "/tr/library/facebook-sembolleri/",

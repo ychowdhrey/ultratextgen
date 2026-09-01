@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Drapeaux",
   "hero_tagline": "Les drapeaux les plus utilisés, par catégorie — pays, organisations, régions, identités et drapeaux symboliques.",
   "intro": "Un emoji drapeau n'est pas une image mais une paire de lettres régionales que le système transforme en drapeau. C'est pour cela qu'il s'affiche parfois en deux lettres au lieu du drapeau. Cliquez pour copier.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "country",
@@ -156,6 +156,50 @@
     {
       "h2": "Pourquoi un Drapeau N'est Pas Vraiment un Caractère",
       "body": "🇫🇷 n'existe pas comme caractère unique : ce sont deux « indicateurs régionaux », 🇫 et 🇷, que le système reconnaît comme un code pays et remplace par une image. Unicode a fait ce choix délibérément, pour ne pas avoir à trancher quelles entités méritent un drapeau — la liste vient de la norme ISO des codes pays, pas d'une décision du consortium. C'est pourquoi un drapeau peut apparaître d'un côté et rester deux lettres de l'autre."
+    }
+  ],
+  "collection_section": {
+    "id": "flag-grids",
+    "label": "Séries de Drapeaux",
+    "h2": "Séries de Drapeaux Prêtes à Copier",
+    "intro": "Un clic copie le groupe entier : les 27 drapeaux de l'UE, les 10 de l'ASEAN, tout le G20."
+  },
+  "collection_container_id": "flagGridContainer",
+  "collections": [
+    {
+      "name": "Union européenne (UE)",
+      "flags": ["🇦🇹", "🇧🇪", "🇧🇬", "🇭🇷", "🇨🇾", "🇨🇿", "🇩🇰", "🇪🇪", "🇫🇮", "🇫🇷", "🇩🇪", "🇬🇷", "🇭🇺", "🇮🇪", "🇮🇹", "🇱🇻", "🇱🇹", "🇱🇺", "🇲🇹", "🇳🇱", "🇵🇱", "🇵🇹", "🇷🇴", "🇸🇰", "🇸🇮", "🇪🇸", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ASEAN (Asie du Sud-Est)",
+      "flags": ["🇸🇬", "🇲🇾", "🇮🇩", "🇹🇭", "🇵🇭", "🇻🇳", "🇧🇳", "🇰🇭", "🇱🇦", "🇲🇲"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moyen-Orient",
+      "flags": ["🇸🇦", "🇦🇪", "🇶🇦", "🇰🇼", "🇧🇭", "🇴🇲", "🇮🇱", "🇯🇴", "🇱🇧", "🇮🇶", "🇮🇷", "🇾🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "G20",
+      "flags": ["🇦🇷", "🇦🇺", "🇧🇷", "🇨🇦", "🇨🇳", "🇫🇷", "🇩🇪", "🇮🇳", "🇮🇩", "🇮🇹", "🇯🇵", "🇲🇽", "🇷🇺", "🇸🇦", "🇿🇦", "🇰🇷", "🇹🇷", "🇬🇧", "🇺🇸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pays nordiques",
+      "flags": ["🇩🇰", "🇫🇮", "🇮🇸", "🇳🇴", "🇸🇪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asie du Sud",
+      "flags": ["🇮🇳", "🇵🇰", "🇧🇩", "🇱🇰", "🇳🇵", "🇧🇹", "🇲🇻", "🇦🇫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asie de l'Est",
+      "flags": ["🇨🇳", "🇯🇵", "🇰🇷", "🇹🇼", "🇲🇳", "🇭🇰", "🇲🇴"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

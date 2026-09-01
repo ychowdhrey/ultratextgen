@@ -496,6 +496,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">Çiçek koleksiyonları</span>
+  <h2>Biyografi ve ayraç çiçek setleri</h2>
+  <p class="u-secondary-block">Biyografine, açıklamana veya kullanıcı adına doğrudan yapıştırabileceğin hazır çiçek ayraçları ve setleri — tüm dizilimi tek tıkla kopyala.</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Metni Unicode fontlarla dönüştür</h3>
@@ -535,6 +544,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Biyografi çiçek çerçevesi",
+      flags: ["✿", "❀", "❁", "❀", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Noktalı çiçek ayracı",
+      flags: ["✾", "·", "❀", "·", "✾"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bahçe çiçekleri seti",
+      flags: ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Parantezli çiçek kombinasyonu",
+      flags: ["꒰❀꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kalın çiçek çizgisi",
+      flags: ["❋", "❃", "❋", "❃", "❋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Yumuşak çiçekli açıklama",
+      flags: ["❀", "🌿", "🌸", "🌿", "❀"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

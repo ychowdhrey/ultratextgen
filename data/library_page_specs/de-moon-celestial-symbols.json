@@ -2,7 +2,7 @@
  "slug": "mond-symbole",
  "lang": "de",
  "page_type": "library",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "title": "Mond-Symbole & Himmelszeichen zum Kopieren — alle Mondphasen | UltraTextGen",
  "meta_description": "Mond-Symbole zum Kopieren: alle acht Mondphasen, Halbmond, Sonne, Sterne und kosmische Zeichen — mit Erklärung, welche Phase welches Zeichen zeigt.",
  "breadcrumb": "Mond-Symbole",
@@ -278,6 +278,25 @@
   {
    "h2": "Zwei Systeme, zwei Zwecke",
    "body": "Die Mondzeichen in Unicode stammen aus zwei getrennten Welten. ☽ und ☾ gehören zum astronomischen Zeichensatz und stehen dort neben den Planetenzeichen — sie sind Fachnotation, einfarbig, seit Jahrhunderten in Almanachen und Ephemeriden in Gebrauch. Die Mondphasen-Emojis 🌑 bis 🌘 kamen erst mit dem Emoji-Satz und zeigen den Mond als Bild. Praktisch heißt das: Für einen astrologischen oder astronomischen Text sind die einfarbigen Zeichen richtig, für eine Bio oder eine Nachricht die Emojis. Beide bezeichnen dasselbe, aber sie sprechen unterschiedliche Register."
+  }
+ ],
+ "collection_section": {
+  "id": "celestial-collections",
+  "label": "Himmels-Sets",
+  "h2": "Himmelsfolgen",
+  "intro": "Kopiere eine komplette Himmelsfolge mit einem Klick — die acht Mondphasen in astronomischer Reihenfolge und den Sonnenlauf vom Sonnenaufgang bis zur Nacht."
+ },
+ "collection_container_id": "celestialCollectionsContainer",
+ "collections": [
+  {
+   "name": "Mondphasen (astronomische Reihenfolge)",
+   "flags": ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sonnenlauf (Tageszyklus)",
+   "flags": ["🌅", "🌞", "🌇", "🌃"],
+   "defaultFormat": "inline"
   }
  ],
  "related": [

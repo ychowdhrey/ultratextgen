@@ -534,6 +534,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="sparkle-collections">
+  <span class="article-section-label">Glitzer-Sets</span>
+  <h2>Glitzer-Sets für Bio und Trennlinien</h2>
+  <p class="u-secondary-block">Fertige Glitzerketten für Bio, Caption oder Nutzername — ein Klick kopiert die ganze Kombination.</p>
+  <div id="sparkleCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Warum die einfarbigen Zeichen die besseren Dekorationen sind</h2>
   <div class="editorial-block">
@@ -612,6 +621,44 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Glitzer-Trennlinie für die Bio",
+      flags: ["✦", "₊", "˖", "⊹", "˖", "₊", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Funkel-Akzent für Captions",
+      flags: ["✨", "˖", "°", "💫", "°", "˖", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zarter Glitzerrahmen",
+      flags: ["⊹", "₊", "˖", "✿", "˖", "₊", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Glitzer-Strich-Trenner",
+      flags: ["┈", "┈", "✧", "┈", "┈"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sternenname-Kombi",
+      flags: ["₊", "°", "✦", "⋆", "✩"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("sparkleCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

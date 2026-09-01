@@ -542,6 +542,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">Zestawy kwiatowe</span>
+  <h2>Kwiatowe zestawy do bio i przerywniki</h2>
+  <p class="u-secondary-block">Gotowe kwiatowe przerywniki i zestawy do bio — wklej je prosto w bio, podpis lub nazwę użytkownika, kopiując cały układ jednym kliknięciem.</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section">
   <h2>Dwa różne zbiory pod jedną nazwą</h2>
   <div class="editorial-block">
@@ -616,6 +625,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Kwiatowa ramka do bio",
+      flags: ["✿", "❀", "❁", "❀", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Przerywnik z kropkami i kwiatkami",
+      flags: ["✾", "·", "❀", "·", "✾"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zestaw ogrodowy",
+      flags: ["🌷", "🌸", "🌼", "🌻", "🌹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kwiaty w nawiasach",
+      flags: ["꒰❀꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gruba linia z kwiatkami",
+      flags: ["❋", "❃", "❋", "❃", "❋"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Delikatny podpis z kwiatami",
+      flags: ["❀", "🌿", "🌸", "🌿", "❀"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
