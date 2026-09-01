@@ -571,6 +571,13 @@
     nl: {
       home: { label: "Home", href: "/nl/" },
       explore: [
+        // "Gidsen", not "Guides": every other locale translates this label
+        // (de Ratgeber, es Guías, pl Poradniki, sv/no Guider), and the only
+        // two that keep the English spelling — fr and da — do so because
+        // "guides" is a real word in both and are ledgered in
+        // data/translation_identical_strings.json. Dutch is not, so this was
+        // the single most-repeated untranslated string on the site: 197 pages,
+        // ~33% of the whole English-leakage backlog, from this one entry.
         { label: "Gidsen", href: "/nl/guide/" },
         { label: "Antwoorden", href: "/nl/answers/" },
         { label: "Toepassingen", href: "/nl/usecase/" },

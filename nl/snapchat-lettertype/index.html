@@ -466,6 +466,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken — een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href="/guide/fancy-fonts-and-accents/">Welke stijlen accenten houden →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Sluiten">✕</button>
+        </div>
+
         <div class="snapchat-context decoration-section" id="snapchatContext">
           <div class="snapchat-context-label decoration-label">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -1432,6 +1439,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer=""></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="snapchat-context.js" defer></script>
 
 

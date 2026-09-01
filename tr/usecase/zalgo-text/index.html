@@ -225,6 +225,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="char-counter"><span id="charCount">14</span>/500</div>
       </div>
 
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href="/guide/fancy-fonts-and-accents/">Hangi stiller Türkçe karakterleri koruyor →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
+      </div>
+
       <!-- Control Panel (populated by zalgo-text.js) -->
       <div id="zalgoControlPanel"></div>
 
@@ -428,6 +435,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/usecase/zalgo-text/zalgo-text.js"></script>
 
 <script src="/footer.js" defer></script>

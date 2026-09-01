@@ -73,16 +73,40 @@
       "language": "*",
       "category": "forbidden",
       "severity": "error",
-      "slots": ["title", "metaDescription", "h1", "headings", "prose", "faqQuestions", "faqAnswers", "cta"],
+      "slots": [
+        "title",
+        "metaDescription",
+        "h1",
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
       "rationale": "House style decision for this site, adopted on a population-level signal and NOT as a claim about any page. Em dash frequency on the web roughly doubled after 2023 and one measurement puts a current model at ~3.3x a human baseline; the same reporting is explicit that spotting machine text this way is 'more art than science'. The rule is therefore about how this site chooses to write, not about what any page is.",
       "evidenceSource": "docs/editorial-footprint-research-2026-08-26.md §1.5, §5.1",
       "corpusFrequency": 52766,
       "pageFrequency": 4528,
       "variety": null,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [
-        { "type": "subject", "values": ["em-dash", "en-dash", "dash-hyphen-symbols", "punctuation-symbols", "hyphen", "minus-sign", "horizontal-bar"] },
-        { "type": "quoted" }
+        {
+          "type": "subject",
+          "values": [
+            "em-dash",
+            "en-dash",
+            "dash-hyphen-symbols",
+            "punctuation-symbols",
+            "hyphen",
+            "minus-sign",
+            "horizontal-bar"
+          ]
+        },
+        {
+          "type": "quoted"
+        }
       ],
       "seoProtection": "none",
       "maxPer1000Words": null,
@@ -98,16 +122,36 @@
       "language": "*",
       "category": "forbidden",
       "severity": "error",
-      "slots": ["title", "metaDescription", "h1", "headings", "prose", "faqQuestions", "faqAnswers", "cta"],
+      "slots": [
+        "title",
+        "metaDescription",
+        "h1",
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
       "rationale": "Assistant self-reference in published page copy is contamination, not style. There is no editorial reading under which a page should say this to a reader.",
       "evidenceSource": "corpus scan 2026-08-26",
       "corpusFrequency": 0,
       "pageFrequency": 0,
       "variety": null,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [
-        { "type": "subject", "values": ["em-dash", "ai-writing", "ai-detector"] },
-        { "type": "quoted" }
+        {
+          "type": "subject",
+          "values": [
+            "em-dash",
+            "ai-writing",
+            "ai-detector"
+          ]
+        },
+        {
+          "type": "quoted"
+        }
       ],
       "seoProtection": "none",
       "maxPer1000Words": null,
@@ -118,25 +162,78 @@
     },
     {
       "id": "EFR-F-003",
-      "pattern": "\\{\\{[^}]{1,40}\\}\\}|\\[(?:INSERT|TODO|PLACEHOLDER|YOUR [A-Z]+|XXX+)[^\\]]{0,30}\\]|\\blorem ipsum\\b|\\b(?:TODO|FIXME|TBD)\\b",
+      "pattern": "\\{\\{[^}]{1,40}\\}\\}|\\[(?:INSERT|TODO|PLACEHOLDER|YOUR [A-Z]+|XXX+)[^\\]]{0,30}\\]|\\blorem ipsum\\b",
       "matchType": "regex",
       "language": "*",
       "category": "forbidden",
       "severity": "error",
-      "slots": ["title", "metaDescription", "h1", "headings", "prose", "faqQuestions", "faqAnswers", "cta"],
+      "slots": [
+        "title",
+        "metaDescription",
+        "h1",
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
       "rationale": "An unrendered template variable or an unfilled placeholder shipped to a reader is a build defect. Deterministic, zero legitimate occurrences.",
       "evidenceSource": "corpus scan 2026-08-26",
       "corpusFrequency": 0,
       "pageFrequency": 0,
       "variety": null,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
-      "lastReviewed": "2026-08-26",
+      "lastReviewed": "2026-09-01",
       "replacementGuidance": "Fill it in, or fix the generator that failed to.",
-      "notes": "Code, <kbd> and <pre> are removed before this runs, so a documented template syntax inside a code sample cannot trip it."
+      "notes": "Code, <kbd> and <pre> are removed before this runs, so a documented template syntax inside a code sample cannot trip it. Split 2026-09-01: the bare TODO/FIXME/TBD tokens moved to EFR-F-005, which is case-sensitive. They cannot live here because this entry needs case-insensitivity for \"lorem ipsum\" and \"[insert name]\", and under that flag \"TODO\" also matches the ordinary Spanish and Portuguese word \"todo\"."
+    },
+    {
+      "id": "EFR-F-005",
+      "pattern": "\\b(?:TODO|FIXME|TBD)\\b",
+      "matchType": "regex",
+      "language": "*",
+      "category": "forbidden",
+      "severity": "error",
+      "slots": [
+        "title",
+        "metaDescription",
+        "h1",
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
+      "rationale": "An unfilled placeholder token shipped to a reader is a build defect. Matched case-sensitively because the all-caps form is the only one that is a placeholder: lowercase \"todo\" is an everyday Spanish and Portuguese word, and \"tbd\" appears inside ordinary text.",
+      "evidenceSource": "corpus scan 2026-09-01",
+      "corpusFrequency": 0,
+      "pageFrequency": 0,
+      "variety": null,
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
+      "seoProtection": "none",
+      "maxPer1000Words": null,
+      "firstAdded": "2026-09-01",
+      "lastReviewed": "2026-09-01",
+      "replacementGuidance": "Fill it in, or fix the generator that failed to.",
+      "notes": "Split out of EFR-F-003 on 2026-09-01 because that entry compiles with the i flag. Measured over every indexable page: case-insensitively this pattern matched 511 times on 301 pages, all of them the Spanish and Portuguese word \"todo\" (211 es, 90 pt) and zero of them a real placeholder. JavaScript \\b is ASCII-only, so it also fired inside accented words such as \"metodo\" with an accent. Case-sensitively it matches 0 pages, and still catches a real all-caps TODO. model-leakage is blocking-eligible, so left as it was this rule would have blocked every PR touching any of those 301 pages the day the gate left shadow mode.",
+      "caseSensitive": true
     },
     {
       "id": "EFR-F-004",
@@ -145,14 +242,29 @@
       "language": "en",
       "category": "forbidden",
       "severity": "error",
-      "slots": ["title", "metaDescription", "h1", "headings", "prose", "faqQuestions", "faqAnswers", "cta"],
+      "slots": [
+        "title",
+        "metaDescription",
+        "h1",
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
       "rationale": "Conversational scaffolding addressed to a commissioner rather than a reader. A page is not a reply.",
       "evidenceSource": "corpus scan 2026-08-26",
       "corpusFrequency": 0,
       "pageFrequency": 0,
       "variety": null,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
@@ -167,14 +279,25 @@
       "language": "en",
       "category": "strongly_discouraged",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription", "cta"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription",
+        "cta"
+      ],
       "rationale": "The strongest genuine editorial habit found on this site: 218 occurrences across 154 EN pages, at variety ~1.0, meaning it was written afresh each time rather than inherited from one template. It asserts fit without naming the property that produces the fit.",
       "evidenceSource": "corpus mining 2026-08-26 ('great for' 159/106 pages, variety 0.92; 'perfect for' 40/30, variety 1.30; 'ideal for' 19/18, variety 1.06)",
       "corpusFrequency": 218,
       "pageFrequency": 154,
       "variety": 1.0,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
@@ -189,14 +312,26 @@
       "language": "en",
       "category": "strongly_discouraged",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription", "headings", "title"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription",
+        "headings",
+        "title"
+      ],
       "rationale": "Negative parallelism manufactures contrast without adding information: the reader learns what the thing is not, which they were not wondering. A large Common Crawl analysis reports this construction nearly TRIPLED on the web after 2023.",
       "evidenceSource": "docs/editorial-footprint-research-2026-08-26.md §1.5; corpus mining 2026-08-26",
       "corpusFrequency": 5,
       "pageFrequency": 5,
       "variety": 1.0,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
@@ -211,14 +346,24 @@
       "language": "en",
       "category": "strongly_discouraged",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription"
+      ],
       "rationale": "Sentence openers that delay the answer. The reader arrived with a question; the first clause should answer it.",
       "evidenceSource": "corpus mining 2026-08-26 — measured 0 occurrences across 904 indexable EN pages",
       "corpusFrequency": 0,
       "pageFrequency": 0,
       "variety": null,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
@@ -233,14 +378,30 @@
       "language": "en",
       "category": "strongly_discouraged",
       "severity": "warning",
-      "slots": ["prose", "metaDescription"],
+      "slots": [
+        "prose",
+        "metaDescription"
+      ],
       "rationale": "The audience-enumerating opener ('Whether you're a student, a designer, or a gamer…') addresses everyone and informs no one, and it costs the first sentence — the one a snippet is most likely to take.",
       "evidenceSource": "corpus mining 2026-08-26 ('whether you' 50 occurrences / 48 pages, variety 1.00; 'looking for' 30/27, variety 1.00)",
       "corpusFrequency": 80,
       "pageFrequency": 73,
       "variety": 1.0,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }, { "type": "slot", "values": ["faqQuestions", "faqAnswers"] }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        },
+        {
+          "type": "slot",
+          "values": [
+            "faqQuestions",
+            "faqAnswers"
+          ]
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
@@ -255,14 +416,27 @@
       "language": "en",
       "category": "density_limited",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription", "headings", "title", "cta"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription",
+        "headings",
+        "title",
+        "cta"
+      ],
       "rationale": "Unsupported benefit adjectives and verbs. Individually ordinary English; at concentration they are the signature of copy written to sound valuable rather than to be informative. Population-level vocabulary studies find style-affecting verbs and adjectives, not content nouns, are what surged post-2023.",
       "evidenceSource": "docs/editorial-footprint-research-2026-08-26.md §4.1; corpus mining 2026-08-26 (11 occurrences / 9 EN pages combined)",
       "corpusFrequency": 11,
       "pageFrequency": 9,
       "variety": 1.2,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": 1.5,
       "firstAdded": "2026-08-26",
@@ -277,14 +451,27 @@
       "language": "en",
       "category": "density_limited",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription", "headings", "title", "cta"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription",
+        "headings",
+        "title",
+        "cta"
+      ],
       "rationale": "The excess-vocabulary set identified by measuring >15 million biomedical abstracts before and after 2022: 379 excess style words in 2024, ~66% verbs and ~14% adjectives. Included as a density signal precisely as the source frames it — a corpus-level marker, not per-document evidence.",
       "evidenceSource": "docs/editorial-footprint-research-2026-08-26.md §4.1 (arXiv:2406.07016); corpus mining 2026-08-26 (4 occurrences / 2 EN pages)",
       "corpusFrequency": 4,
       "pageFrequency": 2,
       "variety": 2.0,
-      "contentFamilies": ["*"],
-      "exemptions": [{ "type": "quoted" }],
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "quoted"
+        }
+      ],
       "seoProtection": "none",
       "maxPer1000Words": 1.0,
       "firstAdded": "2026-08-26",
@@ -299,16 +486,30 @@
       "language": "en",
       "category": "density_limited",
       "severity": "warning",
-      "slots": ["prose", "faqAnswers", "metaDescription", "cta"],
+      "slots": [
+        "prose",
+        "faqAnswers",
+        "metaDescription",
+        "cta"
+      ],
       "rationale": "Purpose and outcome claims with no measurable content. Present but not pervasive here, and legitimate in small numbers — 'stand out' is genuinely part of the user's job on a decorative-text site, which is why this is a cap rather than a ban.",
       "evidenceSource": "corpus mining 2026-08-26 ('stand out' 125 occurrences / 66 pages, variety 1.76; 'designed/built/crafted to' 37/27, variety 1.33; 'easy to use' 1/1)",
       "corpusFrequency": 163,
       "pageFrequency": 88,
       "variety": 1.6,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [
-        { "type": "quoted" },
-        { "type": "slot", "values": ["faqQuestions"] }
+        {
+          "type": "quoted"
+        },
+        {
+          "type": "slot",
+          "values": [
+            "faqQuestions"
+          ]
+        }
       ],
       "seoProtection": "watch",
       "maxPer1000Words": 2.0,
@@ -324,13 +525,17 @@
       "language": "en",
       "category": "search_protected",
       "severity": "info",
-      "slots": ["*"],
+      "slots": [
+        "*"
+      ],
       "rationale": "The site's core job and its highest-volume query family. 1,181 occurrences across 602 of 904 indexable EN pages at variety 1.34 — high frequency AND high variety, which is what genuine subject language looks like as opposed to a template.",
       "evidenceSource": "corpus mining 2026-08-26",
       "corpusFrequency": 1181,
       "pageFrequency": 602,
       "variety": 1.34,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [],
       "seoProtection": "protected",
       "maxPer1000Words": null,
@@ -346,13 +551,17 @@
       "language": "*",
       "category": "search_protected",
       "severity": "info",
-      "slots": ["*"],
+      "slots": [
+        "*"
+      ],
       "rationale": "The subject matter. 4,261 occurrences across 776 EN pages at variety 3.43 — the highest variety of any frequent term measured, i.e. written differently almost every time.",
       "evidenceSource": "corpus mining 2026-08-26",
       "corpusFrequency": 4261,
       "pageFrequency": 776,
       "variety": 3.43,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [],
       "seoProtection": "protected",
       "maxPer1000Words": null,
@@ -368,13 +577,17 @@
       "language": "en",
       "category": "search_protected",
       "severity": "info",
-      "slots": ["*"],
+      "slots": [
+        "*"
+      ],
       "rationale": "Head-term query language. 'font generator' 311 occurrences / 113 pages (variety 1.93); 'fancy text' 141/42 (2.57); 'bold text' 129/62 (1.35); 'text generator' 188/60 (2.52). All high variety.",
       "evidenceSource": "corpus mining 2026-08-26",
       "corpusFrequency": 769,
       "pageFrequency": 277,
       "variety": 2.1,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [],
       "seoProtection": "protected",
       "maxPer1000Words": null,
@@ -390,13 +603,17 @@
       "language": "*",
       "category": "search_protected",
       "severity": "info",
-      "slots": ["*"],
+      "slots": [
+        "*"
+      ],
       "rationale": "Character and Unicode terminology. These are the names of the things this site documents, and several collide head-on with marker lists: 'underscore' appears 169 times across 65 pages as the character _ in factual platform username rules, and would be deleted by a naive ban on the LLM verb 'underscore'.",
       "evidenceSource": "corpus scan 2026-08-26; context inspection of all 65 'underscore' pages",
       "corpusFrequency": 169,
       "pageFrequency": 65,
       "variety": null,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [],
       "seoProtection": "protected",
       "maxPer1000Words": null,
@@ -413,13 +630,17 @@
       "language": "*",
       "category": "search_protected",
       "severity": "info",
-      "slots": ["*"],
+      "slots": [
+        "*"
+      ],
       "rationale": "Platform, game and product entity names. They are the entities pages are retrieved for, and entity coverage is what the SEO Preservation Gate protects.",
       "evidenceSource": "corpus scan 2026-08-26",
       "corpusFrequency": null,
       "pageFrequency": null,
       "variety": null,
-      "contentFamilies": ["*"],
+      "contentFamilies": [
+        "*"
+      ],
       "exemptions": [],
       "seoProtection": "protected",
       "maxPer1000Words": null,
@@ -445,15 +666,63 @@
     ],
     "measured": "2026-08-26 over 904 indexable EN pages",
     "strings": [
-      { "text": "Transform text with Unicode fonts / Use UltraTextGen to convert plain text into…", "pages": 421, "pagePct": 46.6, "variety": 0.0, "source": "shared CTA card", "note": "This single card is the entire reason the word 'transform' scores 911 occurrences on 443 pages. Treating 'transform' as a marker word would have been a pure false positive." },
-      { "text": "Click any symbol to copy it instantly.", "pages": 220, "variety": 0.06, "source": "library/symbol page template" },
-      { "text": "Everything runs in your browser — no app or sign-up.", "pages": 184, "variety": 0.05, "source": "shared trust line", "note": "Also carries an em dash, so one upstream edit clears 184 pages of EFR-F-001 backlog at once. This is the highest-leverage single fix on the site." },
-      { "text": "Free, no sign-up.", "pages": 233, "variety": 0.27, "source": "shared trust line" },
-      { "text": "Copy a full combo in one click and paste it into a bio, caption, or username.", "pages": 91, "variety": 0.0, "source": "emoji-combo template" },
-      { "text": "Head back to …", "pages": 186, "variety": 0.05, "source": "hub back-link line" },
-      { "text": "Choosing \"Save as PDF\" in the same dialog gives you a PDF instead of paper.", "pages": 109, "variety": 0.28, "source": "printables template" },
-      { "text": "Use / Print this letter … / Download PNG to save it …", "pages": 137, "variety": 0.34, "source": "printables per-letter template" },
-      { "text": "Yes — every letter A–Z has its own bubble page.", "pages": 136, "variety": 0.06, "source": "printables FAQ template" }
+      {
+        "text": "Transform text with Unicode fonts / Use UltraTextGen to convert plain text into…",
+        "pages": 421,
+        "pagePct": 46.6,
+        "variety": 0.0,
+        "source": "shared CTA card",
+        "note": "This single card is the entire reason the word 'transform' scores 911 occurrences on 443 pages. Treating 'transform' as a marker word would have been a pure false positive."
+      },
+      {
+        "text": "Click any symbol to copy it instantly.",
+        "pages": 220,
+        "variety": 0.06,
+        "source": "library/symbol page template"
+      },
+      {
+        "text": "Everything runs in your browser — no app or sign-up.",
+        "pages": 184,
+        "variety": 0.05,
+        "source": "shared trust line",
+        "note": "Also carries an em dash, so one upstream edit clears 184 pages of EFR-F-001 backlog at once. This is the highest-leverage single fix on the site."
+      },
+      {
+        "text": "Free, no sign-up.",
+        "pages": 233,
+        "variety": 0.27,
+        "source": "shared trust line"
+      },
+      {
+        "text": "Copy a full combo in one click and paste it into a bio, caption, or username.",
+        "pages": 91,
+        "variety": 0.0,
+        "source": "emoji-combo template"
+      },
+      {
+        "text": "Head back to …",
+        "pages": 186,
+        "variety": 0.05,
+        "source": "hub back-link line"
+      },
+      {
+        "text": "Choosing \"Save as PDF\" in the same dialog gives you a PDF instead of paper.",
+        "pages": 109,
+        "variety": 0.28,
+        "source": "printables template"
+      },
+      {
+        "text": "Use / Print this letter … / Download PNG to save it …",
+        "pages": 137,
+        "variety": 0.34,
+        "source": "printables per-letter template"
+      },
+      {
+        "text": "Yes — every letter A–Z has its own bubble page.",
+        "pages": 136,
+        "variety": 0.06,
+        "source": "printables FAQ template"
+      }
     ]
   }
 }

@@ -240,6 +240,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <textarea class="main-input" id="mainInput" placeholder="Tape ton texte, un mot ou un prénom…" maxlength="500" autofocus></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href="/guide/fancy-fonts-and-accents/">Quels styles gardent les accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fermer">✕</button>
+        </div>
         <div class="cursive-quick-row" id="cursiveQuickRow" aria-label="Exemples rapides"></div>
         <div class="vertical-fit-row" id="cursiveFitRow" hidden></div>
       </div>
@@ -905,6 +912,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <script src="/renderer.js" defer></script>
   <script src="/js/cursive/cursiveData.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/js/cursive/cursivePageController.js" defer></script>
   <script src="/footer.js" defer></script>
 </body></html>

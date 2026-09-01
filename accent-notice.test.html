@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Accent notice — trigger tests</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!--
+  Manual + headless test page for accent-notice.js, in the same idiom as
+  js/counter/counter.test.html and js/vertical/verticalLayouts.test.html.
+  Open it in a browser and read the panel, or drive it headlessly and read
+  window.__UTG_TEST ({ pass, fail, lines, summary }).
+
+  WHY THIS ONE HAS TESTS, when most pages don't: the notice asserts a FACT
+  about what the renderer does to the reader's own letters, and it shipped
+  wrong. Its original predicate tested only đ/Đ/ı, so ł ø ß æ œ þ ð ħ — the
+  rest of the set renderer.js's BASE_LETTER_FALLBACK folds to plain ASCII —
+  could never trigger it, silently, on the eight European locales that need it
+  most. A visual check cannot catch a notice that fails to appear.
+
+  It drives the real module through real input events rather than
+  re-implementing hasAccentedText, because a second copy of that predicate
+  would drift from the first — which is the failure being guarded against.
+-->
+<h1>Accent notice — trigger tests</h1>
+<pre id="results">running…</pre>
+
+<div class="input-wrapper">
+  <textarea class="main-input" id="mainInput"></textarea>
+</div>
+
+<div class="accent-notice" id="accentNotice" role="note" hidden>
+  <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+  <span class="accent-notice-text">Test copy.</span>
+  <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+</div>
+
+<script src="/accent-notice.js"></script>
+<script>
+(function () {
+  "use strict";
+  var input = document.getElementById('mainInput');
+  var notice = document.getElementById('accentNotice');
+  var lines = [], pass = 0, fail = 0;
+
+  function type(text) {
+    input.value = text;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+  function check(label, want) {
+    var got = !notice.hidden;
+    var ok = got === want;
+    ok ? pass++ : fail++;
+    lines.push((ok ? 'PASS  ' : 'FAIL  ') + label + '  (shown=' + got + ', want=' + want + ')');
+  }
+  function shows(text, label) { type(text); check(label || JSON.stringify(text), true); }
+  function silent(text, label) { type(text); check(label || JSON.stringify(text), false); }
+
+  // --- Silent for text with no diacritic. An English user must never see it.
+  silent('', 'empty input');
+  silent('hello world', 'plain ASCII');
+  silent('MiXeD CaSe 123 !@#', 'ASCII punctuation and digits');
+  silent('Привет', 'Cyrillic without й — no combining mark');
+  silent('你好', 'CJK');
+  silent('مرحبا', 'Arabic — harakat are U+064B..U+0652, outside the tested range');
+
+  // --- Fires on a precomposed accent, via NFD.
+  shows('café', 'é — combining acute after NFD');
+  shows('señor', 'ñ');
+  shows('Grüße', 'ü');
+  shows('ữ', 'Vietnamese stacked diacritic');
+  shows('İstanbul', 'İ decomposes to I + combining dot above');
+
+  // --- The regression this page exists for. Every letter with NO Unicode
+  // decomposition, which renderer.js's BASE_LETTER_FALLBACK folds to plain
+  // ASCII. The original predicate covered only đ/Đ/ı and missed the rest.
+  'łŁđĐıøØßẞæÆœŒðÐþÞħĦ'.split('').forEach(function (ch) {
+    shows(ch, 'undecomposable ' + ch);
+  });
+  shows('Straße', 'ß in a word — renders as Strase');
+  shows('cœur', 'œ in a word — renders as cour');
+  shows('Paweł', 'ł in a word — renders as Pawel');
+  shows('ışık', 'Turkish dotless ı — renders as isik');
+
+  // --- Hides again when the accent is removed.
+  type('café'); type('cafe');
+  check('hides again once the accent is deleted', false);
+
+  // --- Dismiss is sticky: it must stay closed as the user keeps typing.
+  type('café');
+  document.getElementById('accentNoticeClose').click();
+  check('dismiss hides it', false);
+  type('café très naïve');
+  check('stays dismissed while typing continues', false);
+
+  var summary = pass + ' passed, ' + fail + ' failed';
+  lines.push('', summary);
+  document.getElementById('results').textContent = lines.join('\n');
+  window.__UTG_TEST = { pass: pass, fail: fail, lines: lines, summary: summary };
+})();
+</script>
+</body>
+</html>

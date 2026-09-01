@@ -191,6 +191,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Digite seu nome ou sua bio aqui..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href="/guide/fancy-fonts-and-accents/">Que estilos mantêm os acentos →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Adicionar símbolos e molduras no resultado</div>
         <div class="decoration-tabs">
@@ -377,6 +384,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js" defer></script>
 </body></html>

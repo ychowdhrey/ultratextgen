@@ -1889,6 +1889,21 @@ Two consequences worth carrying forward:
   trusting a new check, confirm it actually fails a PR — run it against a
   deliberately broken input and watch the job go red. Every gate in this file
   had been reasoned about, documented, and wired, and none of them worked.
+- **Never assemble the gate list by hand — run
+  `npm run check:ci-gates`** (`scripts/run-ci-gates.py`). It parses
+  `validate.yml`, reads the step ids named in the final "Fail the job if any
+  gating validator reported problems" `if:` expression, and runs exactly those,
+  substituting CI's own `--base origin/<base ref>` so the diff-scoped checks
+  resolve the merge base CI resolves. Add a gate to the workflow and it appears
+  here for free; make one informational and it disappears. **A list written out
+  in this file is not a substitute and will drift** — it drifted, twice:
+  `check:locale-spec` was missing from the local list on 2026-08-13, and on
+  2026-08-31 a session ran a 26-check sweep straight from this document, got a
+  clean pass, and was still red in CI on **`check:static-footer`** — a gate this
+  file has never named. Two new pages had shipped with an empty
+  `<div class="footer-inner">`, i.e. no crawlable footer link block at all. The
+  sweep was thorough and it was reconstructed from prose, which is the whole
+  failure. This bullet deliberately does not enumerate the gates.
 
 Also wired the same day: `npm run check:funding-choices`, which existed but
 was never added to the workflow — which is how 37 pages shipped without the
@@ -1993,11 +2008,23 @@ not of the locale:
 
 | Mechanism | Markup | Visible without JS | Used by |
 |---|---|---|---|
-| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | EN + es, fr, id, it, ko, pt, tr |
-| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | the same eight (generated) |
-| `azIndex` | `<ul class="lib-index-list">` | yes | the same eight |
-| `compareCard` | `<a class="compare-card">` | yes | ar, de, ja, nl, pl, ru, th, vi, zh-tw + every `symbol` hub |
+| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | **EN only** |
+| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | EN + all 19 locale hubs (generated) |
+| `azIndex` | `<ul class="lib-index-list">` | yes | the hubs that render an A–Z index |
+| `compareCard` | `<a class="compare-card">` | yes | ar, da, de, ja, nl, no, pl, ru, sv, th, vi, zh-tw + every `symbol` hub |
 | `tipCard` | `<a class="tip-card">` inside `.tips-grid` | yes | da, no, sv |
+
+**Corrected 2026-09-01.** The "Used by" column above previously read
+`EN + es, fr, id, it, ko, pt, tr` for `libraryArray` and "the same eight" twice.
+That is no longer true and had not been for some time: **all 19 locale hubs have
+migrated to `window.UTG_LIBRARY_HUB`**, driven by `build-library-hub.js`, and
+**EN is now the only page in the repo carrying a `LIBRARY` array** (measured, not
+recalled: `grep -c 'UTG_LIBRARY_HUB'` is 1 on every `<lang>/library/index.html`
+and 0 on `library/index.html`; the `LIBRARY =` count is the exact inverse). The
+mechanism *set* is unchanged and still must not be narrowed — that part of this
+section holds, and `da`/`no`/`sv` are still the reason. Only the ownership map
+had drifted. A session acting on the old table in 2026-08-31 hand-edited an
+`items` array that nothing reads, and had to revert it.
 
 So `registered` means "listed in any of the five" and `crawlable` means "listed
 in one of the four that survive without JavaScript". They are reported separately
@@ -2053,20 +2080,35 @@ register it. The list ships empty on purpose.
 
 ### Two builders pre-render the directory hubs, split by lane
 
-`build-library-directory.js` owns `library/index.html` and runs that page's own
-marker-delimited `directoryHtml()`. `build-locale-library-directory.js` owns the
-seven locale directory hubs and lifts each page's own `LIBRARY` array, `escHtml`
-and group-by-alpha block dynamically — resolving whatever outer constant that
-block reaches for (`ALPHABET` on `tr`/`fr`, `INITIAL_ID` on `ko`) by running it
-and lifting the named declaration on a `ReferenceError`. Neither re-implements
-the markup, so static and runtime output cannot drift.
+**There are three now, and the middle one is dormant (corrected 2026-09-01).**
 
-**Why two and not one:** the English hub carries extraction markers and the
-locale hubs deliberately do not — the locale builder was written so they never
-need them. The cost of that split is that **a locale hub's static block goes
-stale silently if its `LIBRARY` array changes and nobody re-runs the locale
-builder.** `npm run check:locale-library-directory` is what closes it; run both
-builders after touching any hub array.
+`build-library-directory.js` owns `library/index.html` and runs that page's own
+marker-delimited `directoryHtml()`. **`build-library-hub.js` owns all 19 locale
+hubs** and derives each entry from the *page's own markup* rather than from a
+hand-maintained array — which is why a locale hub needs no hand-help when a page
+is added, and why hand-editing one is the wrong move.
+`build-locale-library-directory.js` is the **superseded** builder that lifted a
+page's `LIBRARY` array, `escHtml` and group-by-alpha block dynamically; it now
+reports `0 file(s) updated, 19 skipped — no LIBRARY array / render block to
+drive` on every locale hub, because none of them has one any more. Keep running
+it (`check:locale-library-directory` still gates on it) and leave it in place,
+but do not reach for it to fix a locale hub.
+
+**So "run both builders after touching any hub array" is now: run
+`build-library-hub.js` for the locale hubs and `build-library-directory.js` for
+EN.** None of them re-implements the markup, so static and runtime output still
+cannot drift.
+
+**Two live defects this correction surfaced, neither gated and neither fixed
+here.** `build-library-hub.js` exits non-zero on two hubs —
+`ERROR de/library/index.html — no de label for: useCase:Profile, useCase:Care
+Labels` and the same for `nl` on `Care Labels` — so those two cannot be
+regenerated until the labels exist. And a plain run rewrites `es` and `ko`,
+meaning their committed static blocks are stale against their own data. CI is
+green on all three (`check:locale-library-directory`, `check:library-hub-parity`
+and `check:library-hub-coverage` all pass), so nothing is blocking; that is
+precisely why it needs writing down rather than leaving for the next person to
+rediscover.
 
 **Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
 The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
@@ -2618,12 +2660,16 @@ Standing protocol:
   every page a PR adds; `npm run audit:library-hub-coverage` is the whole-site
   picture. A page that genuinely belongs outside its hub goes in
   `data/library_hub_exclusions.json` with a reason — never to make a PR pass.
-- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, and
-  do not narrow the five inventory mechanisms to the one a hub you are looking at
-  happens to use. Run `npm run build:library-directory` for English and
-  `npm run build:locale-library-directory` for the locale hubs; the static markup
-  and the runtime markup come from the same code over the same array precisely so
-  they cannot drift.
+- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, do
+  not hand-edit a hub's entry list, and do not narrow the five inventory
+  mechanisms to the one a hub you are looking at happens to use. Run
+  `npm run build:library-directory` for English and **`node
+  scripts/build-library-hub.js`** for the locale hubs — that one derives entries
+  from each page's own markup, so it needs no hand-help (it has no `npm run`
+  alias, unlike its two siblings). `npm run build:locale-library-directory` is
+  the superseded builder and now skips all 19 locale hubs; it is still gated on,
+  but it is not the tool that fixes one. The static markup and the runtime markup
+  come from the same code over the same source precisely so they cannot drift.
 - Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
   `glob("??")` silently skipped 73 of its pages for as long as that line existed.
   Read the canonical list from `data/locale_qualification_tiers.json` (Python) or

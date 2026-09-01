@@ -148,6 +148,33 @@ t('an unrendered template placeholder is caught', () => {
   assert.ok(ids(bankHits(page('<p>Welcome to {{page_title}} today.</p>'))).includes('EFR-F-003'));
 });
 
+t('an all-caps placeholder token is caught', () => {
+  assert.ok(ids(bankHits(page('<p>Ships TODO before the launch.</p>'))).includes('EFR-F-005'));
+  assert.ok(ids(bankHits(page('<p>The limit is TBD for now.</p>'))).includes('EFR-F-005'));
+});
+
+// The reason EFR-F-005 exists at all. Case-folded, its pattern matched the
+// ordinary Spanish and Portuguese word "todo" on 301 pages and no real
+// placeholder anywhere, in a rule that is eligible to block merges.
+t('the Spanish and Portuguese word "todo" is not a placeholder', () => {
+  for (const prose of ['<p>Sirve para todo el mundo.</p>',
+                       '<p>Funciona em todos os estilos.</p>',
+                       '<p>Ese es el metodo, con acento: m\u00e9todo.</p>']) {
+    assert.ok(!ids(bankHits(page(prose))).includes('EFR-F-005'), prose);
+  }
+});
+
+t('caseSensitive is honoured per entry, not globally', () => {
+  const bank = loadBank();
+  const f003 = bank.entries.find((e) => e.id === 'EFR-F-003');
+  const f005 = bank.entries.find((e) => e.id === 'EFR-F-005');
+  assert.ok(f003._rx.flags.includes('i'), 'EFR-F-003 still needs i for "lorem ipsum"');
+  assert.ok(!f005._rx.flags.includes('i'), 'EFR-F-005 must not fold case');
+  // and the entry that kept the flag still does its job in lower case
+  assert.ok(ids(bankHits(page('<p>Lorem ipsum dolor sit amet.</p>'))).includes('EFR-F-003'));
+  assert.ok(ids(bankHits(page('<p>Enter [insert your name] here.</p>'))).includes('EFR-F-003'));
+});
+
 t('conversational scaffolding is caught', () => {
   assert.ok(ids(bankHits(page('<p>Here is a comprehensive overview of the topic.</p>'))).includes('EFR-F-004'));
 });

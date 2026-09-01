@@ -210,6 +210,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Écris le nom de ta guilde ou de ton squad…" maxlength="100">SQUAD</textarea></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">Ton texte contient des accents. Gras, script, gothique et la plupart des autres styles gardent maintenant <b>é</b>, <b>à</b> et <b>ç</b> accentués — quelques-uns (le texte à l’envers, et des lettres sans forme accentuée comme <b>œ ł ø ß</b>) reviennent en lettres normales. <a href="/guide/fancy-fonts-and-accents/">Quels styles gardent les accents →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fermer">✕</button>
+  </div>
 </div></div></section>
 
 <!-- INTRO -->
@@ -416,6 +423,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- Generator scripts (Tag Studio is the engine — no generic generator UI) -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 
 <!-- Symbol explorer + live tag studio -->
 <script src="/symbol-explorer.js" defer></script>

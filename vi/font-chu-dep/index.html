@@ -174,6 +174,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Gõ chữ để đổi font..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Văn bản của bạn có dấu. Chữ đậm, chữ viết tay, gothic và hầu hết các kiểu khác giờ giữ nguyên <b>ế</b>, <b>ữ</b> và <b>ạ</b> cùng dấu — một vài kiểu (chữ ngược, và <b>đ</b> vốn không có dạng mang dấu) trở về chữ thường. <a href="/guide/fancy-fonts-and-accents/">Kiểu nào giữ được dấu →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Đóng">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Thêm kí hiệu, khung, viền trang trí</div>
         <div class="decoration-tabs">
@@ -319,6 +326,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

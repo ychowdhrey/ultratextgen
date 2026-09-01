@@ -1732,6 +1732,7 @@
 .data-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
 }
 
 /* .editorial-block carries only a bottom margin, so a prose block placed after
@@ -1761,6 +1762,13 @@
   padding: 0.5rem 0.75rem;
   color: var(--text-primary);
   border-bottom: 1px solid var(--border-light);
+}
+
+/* Long unbroken tokens (URLs, codepoint strings) must wrap inside the cell
+   rather than pushing the column wider than its share of the table. */
+.data-table th,
+.data-table td {
+  overflow-wrap: break-word;
 }
 
 .data-table tr:last-child td {
@@ -2183,6 +2191,16 @@ button.cta-btn { border: 0; cursor: pointer; }
   .data-table td {
     padding: .4rem .5rem;
   }
+
+  /* .data-table-wrap already scrolls, but a width:100% table can never
+     exceed it, so the overflow never engaged and three-column tables were
+     crushed into one-word-per-line columns instead. Give a table with three
+     or more columns a floor so it scrolls on a narrow screen. Scoped with
+     :has() so two-column tables, which fit fine, keep filling the width;
+     browsers without :has() simply keep the current behaviour. */
+  .data-table:has(th:nth-child(3)) {
+    min-width: 30rem;
+  }
 }
 /* -----------------------------------------------
    Component: Brand Card (.brand-card)
@@ -2579,7 +2597,11 @@ button.cta-btn { border: 0; cursor: pointer; }
   margin-bottom: 6px;
 }
 
-/* Muted subline beneath section headings */
+/* Muted subline beneath section headings.
+   The -1rem tuck exists to pull the line up under a heading's own bottom
+   margin. It is only valid there: applied after a table, card grid or any
+   other block, it drags the text up over the last row of that block. Scope
+   it to the adjacent-heading case instead of making it the default. */
 .section-subline {
   text-align: center;
   color: var(--text-muted);
@@ -2588,14 +2610,9 @@ button.cta-btn { border: 0; cursor: pointer; }
   margin-bottom: 1.5rem;
 }
 
-/* The negative margin tucks the subline under a heading, which is the only
-   place it was designed for. Applied unconditionally it pulled the subline
-   16px up into whatever sat above it, so a subline placed after a table or a
-   text block overlapped that block's last line. */
 h1 + .section-subline,
 h2 + .section-subline,
-h3 + .section-subline,
-h4 + .section-subline {
+h3 + .section-subline {
   margin-top: -1rem;
 }
 
