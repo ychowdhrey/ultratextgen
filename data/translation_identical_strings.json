@@ -1109,6 +1109,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Saturn",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from de/library/sternzeichen-symbole/ itself: the tiles around it are translated (Neptune → Neptun; Earth → Erde; Rat → Ratte), so this one is kept because it genuinely matches.",
         "found_on": "de/library/sternzeichen-symbole/",
@@ -1277,6 +1283,12 @@
         "added": "2026-08-16"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Whisper / Subliminal",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "de/library/aesthetische-symbole/",
@@ -1347,6 +1359,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "de/zum-ausdrucken/spanisches-alphabet/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "de/updates/unicode-18-emoji-abstimmung/",
+        "added": "2026-09-01"
       },
       {
         "string": "iPhone Emojis",
@@ -2797,6 +2815,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Samurai Blue",
         "reason": "a supporters’ chant/nickname quoted in its own language on an emoji-set page; every locale cites it unchanged",
         "found_on": "es/library/emoji-japon/",
@@ -3151,6 +3175,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "es/contador-de-palabras-y-caracteres/",
@@ -3269,6 +3299,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "es/imprimibles/abecedario-espanol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "es/updates/unicode-18-nuevos-emojis-votacion/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -3989,6 +4025,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Saxophone",
         "reason": "instrument name that coincides with the English form in this language. Evidence from fr/library/symboles-musicaux/ itself: the tiles around it are translated (Violin → Violon; Drum → Batterie; Trumpet → Trompette), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-musicaux/",
@@ -4163,6 +4205,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "fr/compteur-de-mots-et-de-caracteres/",
@@ -4221,6 +4269,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "fr/imprimables/alphabet-espagnol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "fr/updates/unicode-18-nouveaux-emojis-vote/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -5113,6 +5167,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Scorpio",
         "reason": "zodiac sign name that coincides with the English form in this language. Evidence from id/library/simbol-zodiak/ itself: the tiles around it are translated (Aries (Mar 21 – Apr 19) → Aries (21 Mar – 19 Apr); Taurus (Apr 20 – May 20) → Taurus (20 Apr – 20 Mei); Gemini (May 21 – Jun 20) → Gemini (21 Mei – 20 Jun)), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-zodiak/",
@@ -5257,6 +5317,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Windows (Alt code)",
         "reason": "code or platform literal cited verbatim",
         "found_on": "id/symbol/simbol-kuadrat-kubik/",
@@ -5309,6 +5375,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "id/printables/alfabet-spanyol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "id/updates/unicode-18-emoji-baru-voting/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -6077,6 +6149,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ja/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ja/mojisu-kaunto/",
@@ -6087,6 +6165,12 @@
         "reason": "an initialism, kept in Latin script in Japanese copy",
         "found_on": "ja/library/kisu-emoji/",
         "added": "2026-08-15"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ja/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -6209,6 +6293,24 @@
         "reason": "provisional Unicode 18.0 candidate name, cited as the Consortium publishes it — the table column is \"Candidate\" and the next column carries the locale's own description",
         "found_on": "ko/updates/unicode-18-imoji-tupyo/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ko/updates/unicode-18-imoji-tupyo/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -7359,6 +7461,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Saturn",
         "reason": "planet or asteroid name that coincides with the English form in this language. Evidence from pl/library/symbole-witchy-occult/ itself: the tiles around it are translated (Jupiter → Jowisz; Earth → Ziemia; Uranus → Uran), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-witchy-occult/",
@@ -7437,6 +7545,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Whisper / Subliminal",
         "reason": "aesthetic-subculture name borrowed whole; the card's own description on the same page is already in this language",
         "found_on": "pl/library/symbole-estetyczne/",
@@ -7495,6 +7609,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "pl/do-druku/alfabet-hiszpanski/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "pl/updates/unicode-18-nowe-emoji-glosowanie/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -7901,6 +8021,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from pt/library/simbolos-de-moeda/ itself: the tiles around it are translated (Rupee Sign → Sinal de rupia; Tamil Rupee → Rupia tâmil; Cent → Centavo), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-de-moeda/",
@@ -7985,6 +8111,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "pt/contador-de-palavras-e-caracteres/",
@@ -8043,6 +8175,12 @@
         "reason": "Spanish letter name cited on a page about the Spanish alphabet — it is a Spanish word, not untranslated English",
         "found_on": "pt/imprimiveis/alfabeto-espanhol/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "pt/updates/unicode-18-novos-emojis-votacao/",
+        "added": "2026-09-01"
       },
       {
         "string": "jota",
@@ -8223,6 +8361,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Samsung, Google, JoyPixels, Mozilla",
         "reason": "four vendor names listed in one table cell",
         "found_on": "ru/symbol/emodzi-kalendarya/",
@@ -8235,10 +8379,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ru/schetchik-slov-i-simvolov/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "ru/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -8801,6 +8957,18 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "th/nap-kham-lae-tua-akson/",
@@ -8817,6 +8985,12 @@
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "th/khokhwam-long-hon/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "th/updates/unicode-18-most-anticipated-emoji/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -9393,6 +9567,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Sauropod",
         "reason": "the clade name is \"sauropod\" in Turkish; the same page keeps \"T-Rex\" and translates 🦎/🐊 to Kertenkele/Timsah",
         "found_on": "tr/library/hayvan-emojileri/",
@@ -9459,6 +9639,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "tr/karakter-sayaci/",
@@ -9499,6 +9685,12 @@
         "reason": "the lowercase in-page anchor to the same section",
         "found_on": "tr/library/yuz-emojileri/",
         "added": "2026-08-30"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "tr/updates/unicode-18-yeni-emoji-oylama/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
@@ -9887,6 +10079,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Shekel",
         "reason": "currency name that coincides with the English form in this language. Evidence from vi/library/ky-hieu-tien-te/ itself: the tiles around it are translated (Rupee Sign → Ký hiệu rupee; Kip → Kíp; Dong → Đồng), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/ky-hieu-tien-te/",
@@ -9947,6 +10145,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in tech coverage in this language",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Windows (Alt code)",
         "reason": "code or platform literal cited verbatim",
         "found_on": "vi/symbol/quotation-mark/",
@@ -9983,6 +10187,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "vi/updates/emoji-moi-unicode-18/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
         "reason": "the greeting is a set Arabic phrase quoted in Latin transliteration; this locale's own tile label frames it as a quotation (\"Ucapan \\\"Ramadan Mubarak\\\"\", \"Gruß „Eid Mubarak\\\"\")",
         "found_on": "vi/library/ky-hieu-hoi-giao/",
@@ -10009,10 +10219,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no local form exists",
+        "found_on": "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Zalgo",
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "zh-tw/guide/discord-anquan-nicheng/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no local form exists",
+        "found_on": "zh-tw/updates/unicode-18-xin-biaoqing-fuhao/",
+        "added": "2026-09-01"
       },
       {
         "string": "☪️🌙 Ramadan Mubarak 🌙☪️",
