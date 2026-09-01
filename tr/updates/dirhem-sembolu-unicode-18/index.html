@@ -89,7 +89,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "image": "https://ultratextgen.com/assets/og/tr-updates-dirhem-sembolu-unicode-18.png",
   "mainEntityOfPage": "https://ultratextgen.com/tr/updates/dirhem-sembolu-unicode-18/",
   "datePublished": "2026-07-22T00:00:00+00:00",
-  "dateModified": "2026-07-22T00:00:00+00:00"
+  "dateModified": "2026-09-01T00:00:00+00:00"
 }
 </script>
 
@@ -203,8 +203,33 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </tbody>
     </table>
   </div>
-  <p class="section-subline">Sembol için henüz kamuya açıklanmış belirli bir Unicode kod noktası yok — bu ayrıntı, nihai yerleşim gibi, genellikle nihai sürüme yaklaşırken veya o sırada netleşir. Bu tablo, Unicode Konsorsiyumu'nun kendi takip sisteminde anlık bir kontrol değil, bu sayfanın son güncellemesi itibarıyla kamuya bildirilen durumu yansıtır.</p>
+  <p class="section-subline">Kod noktası <strong>U+20C3 (UAE DIRHAM SIGN)</strong>; 22 Temmuz 2025'te Unicode Teknik Komitesi tarafından kabul edildi ve genel beta ile 7 Temmuz 2026'da kapanan görüş penceresi boyunca değişmeden kaldı. Bu tablo, Unicode Konsorsiyumu'nun kendi takip sisteminde anlık bir kontrol değil, bu sayfanın son güncellemesi itibarıyla kamuya bildirilen durumu yansıtır.</p>
 </section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Beklenen dağıtım</span>
+  <h2>Her platformun dirhem sembolünü ne zaman göstermesi bekleniyor</h2>
+  <div class="editorial-block">
+    <p>Hiçbir üretici dirhem desteği için tarih açıklamadı; dolayısıyla dürüst tek tahmin, her platformun bir önceki sürümde gerçekte ne kadar sürdüğünü ölçüp aynı aralığı eklemek. Unicode 17.0 9 Eylül 2025'te yayımlandı, Unicode 18.0 ise 16 Eylül 2026'da yayımlanıyor — neredeyse tam bir yıl arayla, bu da 17.0 döngüsünü temiz bir hesap tabanı yapıyor.</p>
+  </div>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Platform</th><th>Unicode 17.0'dan ölçülen taban</th><th>Dirhem için öngörü (U+20C3)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Kendi yazı tipini yükleyen site veya uygulama</strong></td><td>Üçüncü taraf riyal web yazı tipleri, herhangi bir işletim sistemi U+20C1'i çizmeden aylar önce kullanılabiliyordu</td><td><strong>Bugün zaten mümkün</strong> — bu yol 16 Eylül'ü hiç beklemez</td></tr>
+        <tr><td><strong>iPhone / iPad / Mac</strong></td><td>Apple, 17.0 emoji setini 24 Mart 2026'da iOS, iPadOS ve macOS 26.4 ile getirdi — yaklaşık 6,5 ay</td><td>≈ Mart–Nisan 2027, 27.4 kuşağı güncellemesiyle</td></tr>
+        <tr><td><strong>Samsung Galaxy</strong></td><td>One UI 8.5, 25 Şubat 2026'da Galaxy S26 serisine ulaştı, 25 Mart'tan itibaren daha geniş dağıtım — yaklaşık 5,5 ay</td><td>≈ Şubat–Nisan 2027, önce en yeni amiral gemileri</td></tr>
+        <tr><td><strong>Android (saf / Pixel)</strong></td><td>Noto yazı tipi yayımdan bir gün sonra geldi, ancak cihaz desteği hâlâ tamamlanmadı: Android 17 16 Haziran 2026'da yeni emojiler olmadan çıktı — 12 ay ve sürüyor</td><td>Güvenilir bir tarih yok — yazı tipi kapsaması erken gelebilir, ancak cihaz genelinde destek geçmişte bir yılı aştı</td></tr>
+        <tr><td><strong>Windows</strong></td><td>27 Ağustos 2026'da Release Preview kanalına ulaştı — yaklaşık 11,5 ay, ve hâlâ kararlı bir genel sürümde değil</td><td>Bu hızda en erken 2027 sonu</td></tr>
+        <tr><td><strong>Klavyede kendine ait bir tuş</strong></td><td>Yaygın hiçbir klavye, sembol duyurulduktan bir yıldan uzun süre sonra bile riyal tuşu eklemedi</td><td>Hiçbir üreticinin planında yok — 6 tuşuna yerleştirme merkez bankasının önerisi, dağıtılmış bir değişiklik değil</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="section-subline"><strong>Bunlar öngörü, duyuru değil.</strong> Her değer, o platformun Unicode 17.0'daki kendi gecikmesini 16 Eylül 2026 yayım tarihine uygular; hiçbir üretici bunların hiçbirine bağlanmadı. İki etken gerçek tarihleri öne değil geriye iter. Bu 17.0 aralıkları, tek bir özel yazı tipiyle taşınan <em>emoji</em> seti üzerinden ölçülmüştür; oysa bir para birimi işaretinin sistemin metin yazı tiplerine, her kalınlıkta ulaşması gerekir. Ve <a href="/tr/symbol/suudi-riyali-isareti/">Suudi riyali işareti</a> — var olan en yakın emsal, tam bir yıl önce Unicode 17.0'da kodlandı — hâlâ çoğu sistem yazı tipinde yok, CLDR'de hâlâ varsayılan değil alternatif sembol olarak yer alıyor ve Microsoft Office'te görünmesi için hâlâ elle yazı tipi kurulumu gerekiyor. Bunları mümkün olan en erken tarihler olarak okuyun ve güvenmeden önce sembolü kendi hedef cihazınızda test edin.</p>
+</section>
+
 
 <div class="section-divider"></div>
 
