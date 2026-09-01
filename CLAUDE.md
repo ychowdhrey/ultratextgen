@@ -2110,6 +2110,14 @@ and `check:library-hub-coverage` all pass), so nothing is blocking; that is
 precisely why it needs writing down rather than leaving for the next person to
 rediscover.
 
+*Resolved 2026-09-01, same day:* both defects were fixed — the missing de/nl
+facet labels added and the three stale hubs regenerated (`6b6578afb`), with
+the German label corrected to the singular `Profil` matching every sibling
+locale (`dc8b02456`). Verified after: `npm run check:library-hub` reports all
+19 locale hubs current, de and nl included. The note above stays as the record
+of the find; a `build-library-hub.js` label error or a plain run rewriting a
+hub is once again a real regression, not known debt.
+
 **Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
 The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
 migration lived only inside the JS array and cost nothing while the hub rendered
