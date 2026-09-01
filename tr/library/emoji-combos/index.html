@@ -489,6 +489,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <section class="mood-explainers" id="combo-sets">
+    <span class="article-section-label">Kombinasyon setleri</span>
+    <h2>Hazır emoji kombinasyonları</h2>
+    <p class="u-secondary-block">Estetik bir emoji kombinasyonunun tamamını tek tıkla kopyala — biyografi, açıklama ve durum mesajları için birebir.</p>
+    <div id="emojiCombosContainer"></div>
+  </section>
+
   <!-- Kendi combonu nasıl oluşturursun -->
   <section class="editorial-section">
     <h2>Kendi emoji kombinasyonunu nasıl oluşturursun</h2>
@@ -582,5 +591,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Soft girl",
+      flags: ["🎀", "🌸", "🩰", "🤍", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Deniz meltemi",
+      flags: ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kır bahçesi",
+      flags: ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gece gökyüzü",
+      flags: ["🌙", "⭐", "☁️", "💫", "🔭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kahve buluşması",
+      flags: ["☕", "🥐", "📖", "🍂", "🤎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Y2K parıltısı",
+      flags: ["💿", "🦋", "💖", "⚡", "🪩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sevimli hayvanlar",
+      flags: ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gün batımı havası",
+      flags: ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("emojiCombosContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body></html>

@@ -411,6 +411,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="zodiac-collections">
+  <span class="article-section-label">Colecciones del zodiaco</span>
+  <h2>Sets de zodiaco y astrología</h2>
+  <p class="u-secondary-block">Copia las ruedas completas del zodiaco y los diez planetas de la astrología moderna en el orden canónico.</p>
+  <div id="zodiacCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -506,6 +515,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Zodiaco occidental (Aries → Piscis)",
+      flags: ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Zodiaco chino (Rata → Cerdo)",
+      flags: ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Los 10 planetas de la astrología moderna",
+      flags: ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("zodiacCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

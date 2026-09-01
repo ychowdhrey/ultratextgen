@@ -281,6 +281,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="bow-ribbon-collections">
+  <span class="article-section-label">Colecciones de lazos y cintas</span>
+  <h2>Sets de lazos y cintas para bio</h2>
+  <p class="u-secondary-block">Combos de lazos y cintas listos para pegar en una bio, un nombre de usuario o un pie de foto — copia el set entero con un clic.</p>
+  <div id="bowRibbonCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transforma texto con fuentes Unicode</h3>
@@ -328,6 +337,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Combo de lazo coquette",
+      flags: ["୨୧", "⋆", "🎀", "⋆", "୨୧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Borde de lazos y corazones",
+      flags: ["🎀", "♡", "🎀", "♡", "🎀"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Marco de bio con alas de corazón",
+      flags: ["ʚ♡ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Combo de cintas entre corchetes",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Divisor de cinta anudada",
+      flags: ["⊰", "୨୧", "⋆", "🎀", "⋆", "୨୧", "⊱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Nombre de usuario con cinta suave",
+      flags: ["୨", "♡", "୧"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("bowRibbonCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

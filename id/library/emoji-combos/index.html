@@ -690,6 +690,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <section class="mood-explainers" id="combo-sets">
+    <span class="article-section-label">Set Kombinasi</span>
+    <h2>Kombinasi Emoji Siap Pakai</h2>
+    <p class="u-secondary-block">Salin satu kombinasi emoji estetik lengkap dengan sekali klik — pas untuk bio, caption, dan status.</p>
+    <div id="emojiCombosContainer"></div>
+  </section>
+
   <!-- Cara bikin kombinasi sendiri -->
   <section class="editorial-section">
     <h2>Cara bikin kombinasi emoji sendiri</h2>
@@ -781,5 +790,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Soft girl",
+      flags: ["🎀", "🌸", "🩰", "🤍", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Angin laut",
+      flags: ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Taman pedesaan",
+      flags: ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Langit malam",
+      flags: ["🌙", "⭐", "☁️", "💫", "🔭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Ngopi bareng",
+      flags: ["☕", "🥐", "📖", "🍂", "🤎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kilau Y2K",
+      flags: ["💿", "🦋", "💖", "⚡", "🪩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Hewan lucu",
+      flags: ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Suasana senja",
+      flags: ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("emojiCombosContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body></html>

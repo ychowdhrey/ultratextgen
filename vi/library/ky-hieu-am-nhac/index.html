@@ -450,6 +450,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">Bộ ký hiệu âm nhạc</span>
+  <h2>Bộ nốt nhạc cho bio và dải trang trí</h2>
+  <p class="u-secondary-block">Các dải nốt nhạc có sẵn, dán thẳng vào bio, chú thích hay tên playlist — chép cả cụm chỉ với một cú nhấp.</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Chuyển đổi văn bản bằng phông chữ Unicode</h3>
@@ -493,6 +502,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Dải nốt nhạc cho bio",
+      flags: ["♪", "˚", "♫", "˚", "♪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Khung giai điệu dịu",
+      flags: ["⋆｡˚♬˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Cụm nốt móc nối",
+      flags: ["♩", "♪", "♫", "♬"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Dòng phân cách nốt lấp lánh",
+      flags: ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Chú thích đang phát",
+      flags: ["🎶", "˚", "♪", "˚", "🎶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Điểm nhấn nốt tối giản",
+      flags: ["·", "♪", "·", "♬", "·"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

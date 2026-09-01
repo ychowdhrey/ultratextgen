@@ -399,6 +399,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="art-pieces">
+  <span class="article-section-label">Kunstwerken</span>
+  <h2>Kant-en-klare tekstkunst</h2>
+  <p class="u-secondary-block">Kopieer een compleet tekstkunstwerk van meerdere regels in één klik — houd de verticale opmaak aan zodat de regels uitgelijnd blijven.</p>
+  <div id="textArtContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Veelgestelde Vragen</span>
@@ -452,6 +461,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "ASCII-kat",
+      flags: ["⠀⠀/\\_/\\", "⠀( o.o )", "⠀(⠀⠀v⠀⠀)", "⠀⠀|⠀⠀⠀|", "⠀(__|__)"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Braillehart",
+      flags: ["⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄", "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇", "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿", "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁", "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀", "⠀⠀⠀⠀⠙⠿⠋⠀⠀"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Ruitenstapel",
+      flags: ["⠀⠀◇", "⠀◇◆◇", "◇◆◆◆◇", "⠀◇◆◇", "⠀⠀◇"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Sterrenkader",
+      flags: ["✦─────────────✦", "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│", "│⠀⠀your text⠀⠀│", "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│", "✦─────────────✦"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Kaomoji-klassiekers",
+      flags: ["¯\\_(ツ)_/¯", "(╯°□°）╯︵ ┻━┻", "( ͡° ͜ʖ ͡°)", "(ノ◕ヮ◕)ノ*:・゚✧", "(◕‿◕)", "ʕ•ᴥ•ʔ"],
+      defaultFormat: "vertical"
+    },
+    {
+      name: "Bergketen",
+      flags: ["⠀⠀⠀⠀⠀▲", "⠀⠀⠀⠀▲▲▲", "⠀⠀▲⠀▲▲▲▲▲", "⠀▲▲▲▲▲▲▲▲▲", "▲▲▲▲▲▲▲▲▲▲▲"],
+      defaultFormat: "vertical"
+    }
+  ];
+
+  ns.buildGrids("textArtContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

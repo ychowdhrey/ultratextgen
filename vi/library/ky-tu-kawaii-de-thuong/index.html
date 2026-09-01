@@ -368,6 +368,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">Bộ ký hiệu kawaii</span>
+  <h2>Bộ kawaii cho bio và tên người dùng</h2>
+  <p class="u-secondary-block">Các cụm kawaii có sẵn — tim mềm mại, mặt tí hon và ánh lấp lánh pastel, dán thẳng vào bio, tên người dùng hay tin nhắn chỉ với một cú nhấp.</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Chuyển đổi văn bản bằng phông chữ Unicode</h3>
@@ -411,6 +420,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Cụm tim mềm cho bio",
+      flags: ["꒰", "♡", "꒱", "⋆", "ෆ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Dòng phân cách lấp lánh kawaii",
+      flags: ["⊹", "⋆", "✧", "⋆", "⊹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Tên người dùng cánh hoa",
+      flags: ["ʚ ✿ ɞ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Khung bụi pastel",
+      flags: ["✦", "⋆", "❀", "⋆", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Khung bio mặt tí hon",
+      flags: ["(˶˃ ᵕ ˂˶)", "♡"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Cụm ngoặc dễ thương",
+      flags: ["꒰ ♡ ꒱"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

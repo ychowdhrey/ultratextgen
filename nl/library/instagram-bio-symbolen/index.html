@@ -443,6 +443,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Instagram-collecties</span>
+  <h2>Instagram-bio- en bijschriftcombinaties</h2>
+  <p class="u-secondary-block">Kant-en-klare reeksen om zo in een bio, bijschrift of story te plakken — kopieer de hele combinatie in één klik.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">Veelgestelde Vragen</span>
@@ -496,6 +505,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Instagram-bioscheiding",
+      flags: ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bijschriftcombinatie met glinstering",
+      flags: ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bloemenbioscheiding",
+      flags: ["✿", "─", "✿", "─", "✿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Gestippelde bioafstand",
+      flags: ["·", "◦", "·", "◦", "·"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bijschrift met maan en wolk",
+      flags: ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bijschriftcombinatie met hartjesogen",
+      flags: ["♡", "˖", "😍", "˖", "♡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

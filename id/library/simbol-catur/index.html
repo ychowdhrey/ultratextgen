@@ -401,6 +401,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">Koleksi Catur</span>
+  <h2>Set Bidak Catur</h2>
+  <p class="u-secondary-block">Salin satu sisi bidak lengkap dalam urutan notasi standar (raja, menteri, benteng, gajah, kuda, pion).</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Ubah teks dengan font Unicode</h3>
@@ -444,6 +453,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Bidak catur putih",
+      flags: ["♔", "♕", "♖", "♗", "♘", "♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Bidak catur hitam",
+      flags: ["♚", "♛", "♜", "♝", "♞", "♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -426,6 +426,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="roblox-collections">
+  <span class="article-section-label">Roblox 組合</span>
+  <h2>Roblox 顯示名稱與簡介組合</h2>
+  <p class="u-secondary-block">現成的裝飾字串，可直接貼到 Roblox 顯示名稱、簡介或社群說明 — 一鍵複製整組。</p>
+  <div id="robloxCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">常見問題</span>
@@ -479,6 +488,64 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "星星名稱組合",
+      flags: ["⋆", "★", "✦", "★", "⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "可愛蝴蝶結名稱組合",
+      flags: ["୨୧", "♡", "୨୧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "花朵顯示名稱",
+      flags: ["❀", "✿", "❁", "✿", "❀"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "愛心翅膀組合",
+      flags: ["⋆", "ʚɞ", "⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "括號星星名稱",
+      flags: ["꒰", "⊹", "✧", "⊹", "꒱"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "閃亮簡介分隔線",
+      flags: ["⋆", "☆", "⊹", "☆", "⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "皇冠炫耀組合",
+      flags: ["♛", "★", "♛"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "戰士名稱組合",
+      flags: ["☠", "⚔", "☠"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "勾勾簡介標記",
+      flags: ["☑", "⋆"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("robloxCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

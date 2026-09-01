@@ -329,6 +329,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="kaomoji-collections">
+  <span class="article-section-label">Collections de kaomoji</span>
+  <h2>Sets de kaomoji par thème</h2>
+  <p class="u-secondary-block">Des sets de kaomoji regroupés par humeur — copiez tout un ensemble de visages en un clic pour vos discussions, légendes et commentaires.</p>
+  <div id="kaomojiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transformez votre texte avec des polices Unicode</h3>
@@ -372,6 +381,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Set de kaomoji joyeux",
+      flags: ["(◠‿◠)", "(^▽^)", "(≧◡≦)", "ヽ(•‿•)ノ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Kaomoji d'animaux mignons",
+      flags: ["ʕ•ᴥ•ʔ", "(=^・ω・^=)", "(◕ᴗ◕✿)", "(U ᵕ U❁)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Set triste et larmes",
+      flags: ["(T_T)", "╥﹏╥", "(;﹏;)", "(｡•́︿•̀｡)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Set haussement d'épaules et table renversée",
+      flags: ["¯\\_(ツ)_/¯", "(╯°□°）╯︵ ┻━┻", "┬─┬ノ(º_ºノ)"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Set amour et tendresse",
+      flags: ["(♥ω♥)", "(◍•ᴗ•◍)❤", "(✿ ♥‿♥)", "(づ｡◕‿‿◕｡)づ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Set Lenny Face",
+      flags: ["( ͡° ͜ʖ ͡°)", "( ͡~ ͜ʖ ͡°)", "( ͡◉ ͜ʖ ͡◉)"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("kaomojiCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

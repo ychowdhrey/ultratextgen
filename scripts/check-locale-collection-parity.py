@@ -25,20 +25,36 @@ and a check that is red regardless of what a PR touches is one people learn
 to ignore. Only pages this branch adds or changes can fail it. Pre-existing
 backlog is reported, never counted.
 
-ERRORS AND WARNINGS ARE DELIBERATELY DIFFERENT STRENGTHS
---------------------------------------------------------
-ERROR   the parent renders a combo-set section and this page renders none —
-        a whole section of the page is missing. This is the defect that
-        shipped.
-WARNING the page renders it with a different number of groups — a thin or
-        extended section, not a missing one. Some of those are deliberate
-        (de-text-art carries 8 against its parent's 6). Gating on it would
-        fail PRs for edits nobody made.
+THREE VERDICTS, NOT A COUNT
+---------------------------
+A count difference alone says nothing about whether anything is wrong, and
+adjudicating all 32 of them by hand showed they were three unrelated things.
+The COMBO PAYLOADS separate them, so this compares those, not the tally:
+
+ERROR   `missing`  — the parent renders a combo-set section and this page
+        renders none. A whole section absent. 61 pages shipped this way.
+ERROR   `subset`   — the page carries the parent's OWN combos, byte for byte,
+        with N of them simply dropped. de/library/roblox-symbole ran 6 of the
+        parent's 9. Unambiguous, and at zero backlog, so it gates.
+note    `authored` — not one payload in common: the locale wrote its own set.
+        Turkish "Hüngür Hüngür", Japanese 量産型セット, Russian «цвета биаса»,
+        Swedish "Soft girl & coquette-set". Forcing the English set onto these
+        would destroy real localisation, so this is reported and never failed —
+        including when the locale set is SMALLER, because depth is a demand
+        question, not a parity one.
+note    `extra`    — the page adds a group the parent has no reason to carry:
+        es "Hispanoamérica", pt "CPLP", ko "한글 자모 세트". Never a defect.
+
+Getting this wrong in the obvious direction is the expensive mistake: a
+German page was once read as ahead of its parent on a tile count and nearly
+promoted, when it was the degraded copy. Different is not better OR worse
+until you look at what the payloads actually are.
 
   python3 scripts/check-locale-collection-parity.py [--base origin/main] [--all]
 """
 import argparse
 import os
+import re
 import subprocess
 import sys
 
@@ -67,8 +83,19 @@ def resolve_base(requested):
         return candidate
 
 
+GROUP_PAYLOAD = re.compile(
+    r'\bflags\s*:\s*(\[[^\]]*\])\s*(?:,\s*defaultFormat)?', re.S)
+_WS = re.compile(r"\s+")
+
+
+def payloads(html):
+    """Each group's flags array as normalised source text — the identity of the
+    combo itself, independent of what the group is called in any language."""
+    return [_WS.sub("", m.group(1)) for m in GROUP_PAYLOAD.finditer(html)]
+
+
 def inspect(rel):
-    """(verdict, detail) for one locale page: 'ok' | 'missing' | 'gap' | None."""
+    """(verdict, detail): 'ok' | 'missing' | 'subset' | 'authored' | 'extra'."""
     html = read(ROOT, rel)
     if html is None:
         return None, None
@@ -83,9 +110,18 @@ def inspect(rel):
         return None, None  # parent renders no combo set — nothing to mirror
     if not mine:
         return "missing", (en_rel, sorted(en), sum(en.values()))
-    if sum(mine.values()) != sum(en.values()):
-        return "gap", (en_rel, sum(en.values()), sum(mine.values()))
-    return "ok", None
+    if sum(mine.values()) == sum(en.values()):
+        return "ok", None
+
+    ep, mp = payloads(en_html), payloads(html)
+    absent = [p for p in ep if p not in set(mp)]
+    extra = [p for p in mp if p not in set(ep)]
+    n = (en_rel, sum(en.values()), sum(mine.values()))
+    if absent and not extra:
+        return "subset", n + (len(absent),)
+    if not absent:
+        return "extra", n
+    return "authored", n + (len(ep) - len(absent), len(absent), len(extra))
 
 
 def locale_pages():
@@ -131,38 +167,50 @@ def main():
     print(f"  scope:                 {'whole site' if args.all else args.base}")
     print(f"  locale pages examined: {len(changed)}")
 
-    errors, warns, ok = [], [], 0
+    by = {"ok": [], "missing": [], "subset": [], "authored": [], "extra": []}
     for rel in changed:
         verdict, detail = inspect(rel)
-        if verdict == "missing":
-            errors.append((rel, detail))
-        elif verdict == "gap":
-            warns.append((rel, detail))
-        elif verdict == "ok":
-            ok += 1
-    print(f"  carrying the section:  {ok}")
-    print(f"  missing it entirely:   {len(errors)}")
-    print(f"  group-count gaps:      {len(warns)}\n")
+        if verdict:
+            by[verdict].append((rel, detail))
+    print(f"  matching the parent:   {len(by['ok'])}")
+    print(f"  missing it entirely:   {len(by['missing'])}")
+    print(f"  dropping its combos:   {len(by['subset'])}")
+    print(f"  locale-authored set:   {len(by['authored'])}")
+    print(f"  adding a local group:  {len(by['extra'])}\n")
 
-    for rel, (en_rel, ids, n) in errors:
+    for rel, (en_rel, ids, n) in by["missing"]:
         print(f"  ERROR  {rel}")
         print(f"         its EN parent {en_rel} renders a combo-set section "
               f"(#{', #'.join(ids)}, {n} groups) and this page renders none.")
-        print(f"         Those tiles are built at runtime by buildGrids(), so the "
-              f"page still passes every tile, link and FAQ count.")
-    for rel, (en_rel, en_n, my_n) in warns:
-        print(f"  warn   {rel}: {my_n} combo-set groups against {en_rel}'s {en_n}")
+        print("         Those tiles are built at runtime by buildGrids(), so the "
+              "page still passes every tile, link and FAQ count.")
+    for rel, (en_rel, en_n, my_n, absent) in by["subset"]:
+        print(f"  ERROR  {rel}")
+        print(f"         carries {en_rel}'s own combos but drops {absent} of them "
+              f"({my_n} of {en_n}). Not a locale-authored set — the combos it "
+              f"does carry are byte-identical to the parent's.")
+    for rel, (en_rel, en_n, my_n, shared, absent, extra) in by["authored"]:
+        how = ("none of its payloads are the parent's" if shared == 0
+               else f"{shared} payload(s) shared, {absent} replaced")
+        print(f"  note   {rel}: {my_n} groups against {en_rel}'s {en_n} — {how}, "
+              f"so this is locale-authored copy, not drift")
+    for rel, (en_rel, en_n, my_n) in by["extra"]:
+        print(f"  note   {rel}: {my_n} against {en_rel}'s {en_n}, adding a "
+              f"locale-specific group the parent has no reason to carry")
 
+    failed = by["missing"] + by["subset"]
     if args.all:
         print(f"\nWhole-site scan — informational, never gates. "
-              f"{len(errors)} page(s) missing the section, {len(warns)} short or long on groups.")
+              f"{len(by['missing'])} missing the section, {len(by['subset'])} dropping "
+              f"combos, {len(by['authored']) + len(by['extra'])} legitimately divergent.")
         return 0
-    if errors:
-        print(f"\n{len(errors)} page(s) this branch touches ship without their parent's "
-              f"combo-set section. Mirror the parent's section and its GROUPS script, "
-              f"or the page silently loses a whole section that nothing else can see.")
+    if failed:
+        print(f"\n{len(failed)} page(s) this branch touches lose combos their EN parent "
+              f"ships. Mirror the parent's section and its GROUPS script; a locale that "
+              f"genuinely wants its own set writes its own payloads, which this check "
+              f"reports as `authored` rather than failing.")
         return 1
-    print("Every locale page this branch touches carries its EN parent's combo-set section. ✓")
+    print("Every locale page this branch touches carries its EN parent's combos. ✓")
     return 0
 
 

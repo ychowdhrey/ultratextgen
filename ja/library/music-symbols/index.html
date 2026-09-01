@@ -450,6 +450,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">音楽記号コレクション</span>
+  <h2>音符のプロフィール・トレイルセット</h2>
+  <p class="u-secondary-block">プロフィールやキャプション、プレイリスト名にそのまま貼れる音符の並び。ワンクリックでまとめてコピーできます。</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Unicodeフォントでテキストを変換</h3>
@@ -493,6 +502,49 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "音符のプロフィールトレイル",
+      flags: ["♪", "˚", "♫", "˚", "♪"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "やわらかメロディの枠",
+      flags: ["⋆｡˚♬˚｡⋆"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "連桁つき音符コンボ",
+      flags: ["♩", "♪", "♫", "♬"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "きらめき音符の区切り",
+      flags: ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "再生中キャプション",
+      flags: ["🎶", "˚", "♪", "˚", "🎶"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "ミニマル音符アクセント",
+      flags: ["·", "♪", "·", "♬", "·"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

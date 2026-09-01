@@ -690,6 +690,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <section class="mood-explainers" id="combo-sets">
+    <span class="article-section-label">Sets de combos</span>
+    <h2>Combinaciones de emojis listas para usar</h2>
+    <p class="u-secondary-block">Copia una combinación estética completa con un clic: ideal para bios, pies de foto y estados.</p>
+    <div id="emojiCombosContainer"></div>
+  </section>
+
   <!-- Cómo crear tu propio combo -->
   <section class="editorial-section">
     <h2>Cómo crear tu propia combinación de emojis</h2>
@@ -781,5 +790,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Soft girl",
+      flags: ["🎀", "🌸", "🩰", "🤍", "✨"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Brisa marina",
+      flags: ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Jardín de campo",
+      flags: ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Cielo nocturno",
+      flags: ["🌙", "⭐", "☁️", "💫", "🔭"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Cita de café",
+      flags: ["☕", "🥐", "📖", "🍂", "🤎"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Brillo Y2K",
+      flags: ["💿", "🦋", "💖", "⚡", "🪩"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Animales tiernos",
+      flags: ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Vibra de atardecer",
+      flags: ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("emojiCombosContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body></html>

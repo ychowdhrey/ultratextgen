@@ -442,6 +442,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">西洋棋組合</span>
+  <h2>西洋棋棋子組</h2>
+  <p class="u-secondary-block">依標準記譜順序（王、后、車、象、馬、兵）一鍵複製整方棋子。</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- FAQ -->
 <section class="editorial-section" id="faq">
   <span class="article-section-label">常見問題</span>
@@ -495,6 +504,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "白方棋子",
+      flags: ["♔", "♕", "♖", "♗", "♘", "♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "黑方棋子",
+      flags: ["♚", "♛", "♜", "♝", "♞", "♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
