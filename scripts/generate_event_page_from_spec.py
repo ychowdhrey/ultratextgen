@@ -640,12 +640,20 @@ def when_answer(spec, language, event_name):
     dates = next_occurrences(occurrence) if occurrence else []
     if dates:
         later = [format_date(d, language) for d in dates[1:3]]
-        return tr(
+        answer = tr(
             language, gendered(spec, "faq_when_a_dated"),
             event_name=event_name,
             next_date=format_date(dates[0], language),
             later_dates=(tr(language, "date_join").join(later) if later else format_date(dates[0], language)),
         )
+        # A spec may append a caveat to its own dated answer. Diwali needs one:
+        # its dates come from a table, and regional traditions observe it a day
+        # either side depending on when the tithi falls locally. Stating a bare
+        # date there would be more precise than the fact actually is.
+        note = (spec.get("date_note") or "").strip()
+        if note:
+            answer = f"{answer} {note}"
+        return answer
     if is_lunar(occurrence):
         return tr(
             language, "faq_when_a_lunar",
