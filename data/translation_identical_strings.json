@@ -791,6 +791,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Kaze — Wind",
+        "reason": "kanji gloss for 風. 'Wind' is the correct German noun and is spelled identically to the English. Evidence from de/library/fortnite-zeichen/ itself: every neighbouring gloss in the same section IS translated (Oni — Dämon, Ryu — Drache, Kaminari — Donner, Yami — Dunkelheit), so this one is kept because it genuinely matches.",
+        "found_on": "de/library/fortnite-zeichen/",
+        "added": "2026-08-31"
+      },
+      {
         "string": "Khanda",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "de/symbol/om-symbol/",
