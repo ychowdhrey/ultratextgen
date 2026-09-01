@@ -131,6 +131,17 @@ function isUpsideDown(rel, html) {
 // The icon is per locale, not decoration: Dutch shows a trema (◌̈) because
 // Dutch readers type ë and ï, not é. Hardcoding the acute would have silently
 // overwritten that on seven live pages.
+// The English page a locale page declares as its parent, as a repo-relative
+// path. Read off the page's own hreflang, the same join the rest of the repo
+// uses — never guessed from a slug, because every locale names its pages
+// differently.
+function enParentOf(html) {
+  const m = html.match(/hreflang="en"\s+href="https:\/\/ultratextgen\.com(\/[^"]*)"/);
+  if (!m) return null;
+  const p = m[1].replace(/^\//, "").replace(/\/$/, "");
+  return p ? p + "/index.html" : "index.html";
+}
+
 function block(text, dismiss, indent, openTag, comment, icon) {
   return [
     comment === false ? null : COMMENT,
@@ -195,6 +206,25 @@ function main() {
   }).sort();
 
   const changed = [], ok = [], skipped = new Map(), failed = [];
+
+  // Pass 1 — which English pages are deployable at all. A locale page is then
+  // gated on its own parent, so one rule covers two failures the translation-
+  // parity gate caught: the locale translations of an excluded English page
+  // (fr/usecase/traducteur-emoji and friends run the same emoji-tool.js, so a
+  // path-shaped exclusion missed them), and locale pages that carry a
+  // generator their English parent does not have at all
+  // (pl/ozdobniki, it/combinazioni-emoji, pl/usecase/nazwy-do-robloxa).
+  // Deploying to either widens an EN/locale gap this pass has no business
+  // widening.
+  const deployableEn = new Set();
+  for (const rel of files) {
+    if (localeOf(rel, codes) !== "en") continue;
+    const html = fs.readFileSync(path.join(REPO, rel), "utf8");
+    if (!html.includes('id="mainInput"')) continue;
+    if (excluded(rel, table.exclusions || {})) continue;
+    deployableEn.add(rel);
+  }
+
   for (const rel of files) {
     const abs = path.join(REPO, rel);
     let html = fs.readFileSync(abs, "utf8");
@@ -204,6 +234,15 @@ function main() {
     if (why) { push(skipped, "excluded: " + why, rel); continue; }
 
     const lc = localeOf(rel, codes);
+    if (lc !== "en" && !html.includes('id="accentNotice"')) {
+      const parent = enParentOf(html);
+      if (!parent) {
+        push(skipped, "no declared English parent", rel); continue;
+      }
+      if (!deployableEn.has(parent)) {
+        push(skipped, `English parent is not deployable (${parent})`, rel); continue;
+      }
+    }
     const entry = (table.locales || {})[lc];
     if (!entry) { push(skipped, `no copy for locale "${lc}"`, rel); continue; }
     if (entry.propagate === false && !html.includes('id="accentNotice"')) {
