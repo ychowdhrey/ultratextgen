@@ -6707,6 +6707,12 @@
         "added": "2026-08-21"
       },
       {
+        "string": "Samsung",
+        "reason": "brand/company name; no Dutch form exists",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "Status",
         "reason": "social-platform surface name; this locale uses the English term for the feature",
         "found_on": "nl/updates/dirham-symbool-unicode-18/",
@@ -6767,6 +6773,12 @@
         "added": "2026-08-15"
       },
       {
+        "string": "WhatsApp (Android)",
+        "reason": "brand name plus OS name, both proper nouns cited unchanged in Dutch tech coverage",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
+      },
+      {
         "string": "X/Twitter",
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "nl/woorden-en-tekens-tellen/",
@@ -6801,6 +6813,12 @@
         "reason": "loanword; the page's own pre-existing title, meta, H1 and JSON-LD keywords already use \"glitch\" untranslated (\"Glitch Tekst\") throughout — the new Copy and Paste Examples grid matches the page's own established usage, not an untranslated miss",
         "found_on": "nl/usecase/zalgo-text/",
         "added": "2026-08-21"
+      },
+      {
+        "string": "iPhone / iPad / Mac",
+        "reason": "Apple product names; no Dutch form exists",
+        "found_on": "nl/updates/unicode-18-nieuwe-emoji-stemming/",
+        "added": "2026-09-01"
       },
       {
         "string": "« » Guillemets",
