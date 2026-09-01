@@ -23,6 +23,7 @@ built from vector primitives + raster-safe system-font glyphs only. Colour
 emoji, runic and hieroglyph code points do NOT rasterize in the bundled fonts,
 so those themes use hand-drawn vector motifs instead of baked glyphs.
 """
+import json
 import io
 import os
 import re
@@ -3782,6 +3783,38 @@ PAGES.update({
     "fr-library-emojis-animaux": ("Emojis Animaux", "Compagnie, faune sauvage, mer et mythes",
         glyphs("\U0001f436", "\U0001f981", "\U0001f43c", "\U0001f419", "\U0001f98a"), K_LIB),
 })
+
+
+# ---------------------------------------------------------------------------
+# Generated-page art registry.
+#
+# PAGES above is a hand-maintained literal, and main() refuses any slug that is
+# not in it ("error: no registered page matches"). That made art impossible for
+# a page created by scripts/generate_library_page_from_spec.py without someone
+# first hand-editing this file — so generated pages shipped with og:image
+# pointing at art nobody had made, which is exactly what
+# check-new-page-image-assets.py exists to stop.
+#
+# data/generated_page_art.json lets the page generator register its own page.
+# Merged AFTER every hand-written entry above and with `setdefault`, so a
+# hand-tuned entry always wins over a generated one — the generator can add a
+# page, never silently restyle one someone already art-directed.
+_GEN_ART = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "data", "generated_page_art.json")
+try:
+    with open(_GEN_ART, encoding="utf-8") as _fh:
+        _KICKERS = {"LIB": K_LIB, "SYM": K_SYM, "CAT": K_CAT, "USE": K_USE,
+                    "ANS": K_ANS, "PLAT": K_PLAT, "PRINT": K_PRINT, "SITE": K_SITE}
+        for _slug, _e in (json.load(_fh).get("entries") or {}).items():
+            PAGES.setdefault(_slug, (
+                _e["title"], _e.get("sub", ""),
+                glyphs(*_e["glyphs"]) if _e.get("glyphs") else m_grid,
+                _KICKERS.get(_e.get("kicker", "LIB"), K_LIB),
+            ))
+except FileNotFoundError:
+    pass
+except Exception as _exc:  # noqa: BLE001 - a malformed side file must not break art generation
+    sys.stderr.write(f"[warn] could not merge {_GEN_ART}: {_exc}\n")
 
 if __name__ == "__main__":
     sys.exit(main())

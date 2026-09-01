@@ -246,6 +246,18 @@ def chrome_key(lang, table_keys):
     return table_keys.get(str(lang).lower(), lang)
 
 
+def art_slug(lang, page_type, slug):
+    """The key scripts/generate-site-art.py uses for a page: its path with
+    "/" replaced by "-". symbol/phi-symbol -> "symbol-phi-symbol";
+    zh-tw/library/x -> "zh-tw-library-x". Derived here rather than passed in
+    so the meta tags and the art filename cannot disagree — they did before:
+    og:image was hardcoded to /logo.png, which check-new-page-image-assets.py
+    rejects by name, so every generated page failed that gate on arrival."""
+    base = "symbol" if page_type == "symbol" else "library"
+    parts = ([] if lang == "en" else [url_segment(lang)]) + [base, slug]
+    return "-".join(parts)
+
+
 def url_segment(lang):
     """Directory segment for a locale. Always lowercase: the site serves /zh-tw/."""
     return str(lang).lower()
@@ -491,6 +503,13 @@ def render_page(spec):
     # page_type "symbol" pages sit under /symbol/ instead of /library/ and
     # carry a "Symbols" breadcrumb crumb by default.
     page_type = spec.get("page_type", "library")
+    # A page may deliberately share another page's art card — three locale
+    # pages do (zh-tw/symbol/invisible-character and two ms/ pages reuse the
+    # English cards, whose own art is language-neutral). Without this override
+    # regenerating them would repoint og:image at a PNG that does not exist,
+    # turning a working page into a broken reference. Explicit beats derived
+    # wherever the two disagree.
+    art_key = spec.get("art_slug") or art_slug(lang, page_type, slug)
     default_crumb_library = ui.get("symbols", "Symbols") if page_type == "symbol" else ui.get("library", "Library")
     default_library_url = (
         f"{default_home_url}symbol/" if page_type == "symbol" else f"{default_home_url}library/"
@@ -659,11 +678,11 @@ def render_page(spec):
 <meta name="description" content="{esc_attr(meta)}">
 
 <link rel="canonical" href="{esc_attr(canonical)}">{hreflang_html}
-<meta property="og:image" content="{SITE}/logo.png">
+<meta property="og:image" content="{SITE}/assets/og/{art_key}.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc_attr(title)}">
 <meta name="twitter:description" content="{esc_attr(meta)}">
-<meta name="twitter:image" content="{SITE}/logo.png">
+<meta name="twitter:image" content="{SITE}/assets/og/{art_key}.png">
 <meta property="og:title" content="{esc_attr(title)}">
 <meta property="og:description" content="{esc_attr(meta)}">
 <meta property="og:type" content="article">
@@ -816,6 +835,106 @@ def main(argv=None):
     if lang != "en" and not os.environ.get("SKIP_LOCALE_MESH_HOOK"):
         _sync_locale_mesh(out_path)
 
+    if not os.environ.get("SKIP_LAST_MILE_HOOK"):
+        return _last_mile(out_path, spec, art_key_for(spec))
+
+    return 0
+
+
+def art_key_for(spec):
+    """The art-registry key this spec's page will use."""
+    return spec.get("art_slug") or art_slug(
+        spec.get("lang", "en"), spec.get("page_type", "library"), spec["slug"])
+
+
+def _register_art(spec, key):
+    """Add this page to data/generated_page_art.json so generate-site-art.py
+    will draw it. Without this the art script refuses the slug outright
+    ("no registered page matches"), which is why every generated page used to
+    ship with an og:image nobody had rendered.
+
+    Never overwrites an existing entry — a page someone has art-directed by
+    hand keeps its own card.
+    """
+    path = REPO / "data" / "generated_page_art.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        data = {"entries": {}}
+    entries = data.setdefault("entries", {})
+    if key in entries or spec.get("art_slug"):
+        return False
+    tiles = [sym.get("char") for sec in spec.get("sections", [])
+             for sym in (sec.get("symbols") or []) if sym.get("char")]
+    entries[key] = {
+        "title": spec.get("hero_h1") or spec["slug"],
+        "sub": spec.get("hero_tagline", "")[:70],
+        "glyphs": tiles[:5],
+        "kicker": "SYM" if spec.get("page_type") == "symbol" else "LIB",
+        "added": spec.get("date_published", ""),
+    }
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return True
+
+
+def _run(cmd, label, timeout=300):
+    """Run one last-mile step. Returns True on success; never raises."""
+    try:
+        r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, timeout=timeout)
+        if r.returncode != 0:
+            sys.stderr.write(f"[last-mile] {label} FAILED (exit {r.returncode})\n")
+            if r.stderr.strip():
+                sys.stderr.write("    " + r.stderr.strip().splitlines()[-1] + "\n")
+            return False
+        return True
+    except FileNotFoundError:
+        sys.stderr.write(f"[last-mile] {label} SKIPPED — interpreter not on PATH\n")
+        return False
+    except subprocess.TimeoutExpired:
+        sys.stderr.write(f"[last-mile] {label} TIMED OUT\n")
+        return False
+
+
+def _last_mile(out_path, spec, key):
+    """Everything a generated page needs before it can pass CI.
+
+    A page used to be written and then declared done, while failing three
+    gating checks on arrival: og:image pointed at /logo.png (rejected by name),
+    the footer was an empty shell, and no hub listed the page. Each fix lived
+    in a separate script somebody had to remember, in order. The generator's
+    own success message was therefore indistinguishable from a finished job —
+    the same failure shape this repo has recorded three times in its CI.
+
+    So: run the steps here, and if any of them fails, say so and exit non-zero.
+    A half-generated page must never look like a successful one.
+    """
+    rel = out_path.relative_to(REPO).as_posix()
+    steps = []
+
+    steps.append(("art registry", _register_art(spec, key) or True))
+    steps.append(("art render", _run(
+        ["python3", "scripts/generate-site-art.py", "--only", key], f"art for {key}")))
+    steps.append(("static footer", _run(
+        ["node", "scripts/build-static-footer.js", "--write"], "static footer bake")))
+
+    failed = [name for name, ok in steps if not ok]
+    print(f"\nLast mile for {rel}:")
+    for name, ok in steps:
+        print(f"  {'ok  ' if ok else 'FAIL'} {name}")
+
+    # Hub registration is deliberately NOT automated: which hub a page belongs
+    # to, and where in it, is an editorial call the spec does not carry. It is
+    # named here so it cannot be forgotten silently.
+    print(f"  todo  hub registration — add {rel} to its locale's library/symbol hub,")
+    print("        then: npm run check:library-hub-coverage")
+
+    if failed:
+        sys.stderr.write(
+            f"\n[error] {len(failed)} last-mile step(s) failed: {', '.join(failed)}.\n"
+            "        The page is written but NOT shippable — it will fail CI.\n"
+            "        Fix the step above, or re-run with SKIP_LAST_MILE_HOOK=1 if\n"
+            "        you are deliberately deferring it.\n")
+        return 1
     return 0
 
 
