@@ -197,6 +197,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Escribe un nombre, deseo o saludo..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Tu texto lleva tildes. Negrita, cursiva, gótica y casi todos los demás estilos conservan ahora <b>á</b>, <b>é</b> y <b>ñ</b> con su tilde. La excepción es el texto al revés: ahí las letras con tilde pasan sin voltearse y quedan derechas. <a href="/guide/fancy-fonts-and-accents/">Qué estilos conservan las tildes →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Cerrar">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -550,6 +557,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
 <script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>

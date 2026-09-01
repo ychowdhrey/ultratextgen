@@ -190,6 +190,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Napiš jméno nebo text..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌̌</span>
+        <span class="accent-notice-text">Tvůj text obsahuje diakritiku. Tučné, psací, gotické a většina dalších stylů teď zachovají <b>á</b>, <b>č</b> i <b>ř</b> s čárkou nebo háčkem. Výjimkou je obrácený text: tam písmena s diakritikou zůstanou stát rovně. <a href="/guide/fancy-fonts-and-accents/">Které styly zachovají diakritiku →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Zavřít">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Přidej symboly a rámečky k výsledku</div>
         <div class="decoration-tabs">
@@ -363,6 +370,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

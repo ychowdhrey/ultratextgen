@@ -186,6 +186,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Gõ chữ bạn muốn lộn ngược..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Văn bản của bạn có dấu. Chữ ngược không có dạng lật cho <b>ế ữ ạ đ</b> — những chữ này giữ nguyên và đứng thẳng trong đoạn chữ đã lật. Chữ đậm, chữ viết tay và gothic thì vẫn giữ dấu. <a href="/guide/fancy-fonts-and-accents/">Kiểu nào giữ được dấu →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Đóng">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Thêm kí hiệu, khung, viền trang trí</div>
         <div class="decoration-tabs">
@@ -338,6 +345,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>

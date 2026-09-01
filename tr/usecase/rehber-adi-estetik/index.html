@@ -207,6 +207,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="İsim ya da sevgi sözü yaz…" maxlength="100">Aşkım</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href="/guide/fancy-fonts-and-accents/">Hangi stiller Türkçe karakterleri koruyor →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
+  </div>
   <div class="decoration-section"><div class="decoration-label">Sonuca süsleme ekle</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Sürpriz</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Semboller</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emojiler</button><button class="decoration-tab" data-deco-tab="contact">Kalpler</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -362,6 +369,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 
 <!-- Symbol explorer -->
 <script src="/symbol-explorer.js" defer></script>

@@ -195,6 +195,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Escribe el tag de tu clan (3–6 letras)…" maxlength="100">ZORRO</textarea></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">Tu texto lleva tildes. Negrita, cursiva, gótica y casi todos los demás estilos conservan ahora <b>á</b>, <b>é</b> y <b>ñ</b> con su tilde. La excepción es el texto al revés: ahí las letras con tilde pasan sin voltearse y quedan derechas. <a href="/guide/fancy-fonts-and-accents/">Qué estilos conservan las tildes →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Cerrar">✕</button>
+  </div>
 </div></div></section>
 
 <!-- INTRO -->
@@ -365,6 +372,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- Generator scripts (Tag Studio is the engine — no generic generator UI) -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 
 <!-- Symbol explorer + live tag studio -->
 <script src="/symbol-explorer.js" defer></script>

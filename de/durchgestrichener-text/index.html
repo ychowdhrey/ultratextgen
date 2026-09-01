@@ -214,6 +214,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
+        </div>
+
         <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
@@ -362,5 +369,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/footer.js" defer></script>
 </body></html>
