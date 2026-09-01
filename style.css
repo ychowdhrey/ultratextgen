@@ -2709,6 +2709,46 @@ h3 + .section-subline {
   border-color: var(--accent-purple);
 }
 
+/* -----------------------------------------------
+   Component: Copy Cell (.copy-cell)
+   A click-to-copy control that lives inside a .data-table cell, so a
+   reference table can hand over the character it is describing instead of
+   only naming it.
+
+   It carries .symbol-tile as well, which is what symbol-explorer.js's
+   delegated handler binds to. A .symbol-tile is a square grid tile, so the
+   overrides here are what turn it into a cell-width control that sizes to its
+   content. They rely on being declared AFTER .symbol-tile rather than on
+   higher specificity, the same ordering .uname-chip already depends on: move
+   this block above .symbol-tile and the tiles go square again.
+   ----------------------------------------------- */
+.copy-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  aspect-ratio: auto;
+  width: 100%;
+  padding: 0.3rem 0.55rem;
+  font-family: inherit;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+/* The codepoint or Latin abbreviation that identifies the character sits
+   beside the button, not inside it: the button's whole label is what it
+   copies, and a reader pressing it should not have to guess whether the
+   U+ number comes along. */
+.data-table .cell-note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  white-space: nowrap;
+}
+
 /* Toast notification */
 .symbol-toast {
   position: fixed;

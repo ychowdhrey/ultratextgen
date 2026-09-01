@@ -1779,6 +1779,38 @@ already existed as an undocumented positional argument; nobody used it because
 nothing said it was there and the dangerous path was the default one. The
 positional still works, hidden, for backwards compatibility.
 
+**A card title longer than the layout was silently truncated (fixed 2026-09-01).**
+`og_png_svg` wrapped the title and kept `[:3]`, discarding the rest with nothing in
+the output to say so. The tone-of-voice standard makes titles *longer* — they now
+carry the answer, not the filing system — and the first pass that applied it to nine
+pages truncated **seven** of them mid-phrase: `Middle East Currency Symbols: 5 Have
+Their Own,` with the answer cut off. It was caught by reading a rendered PNG, which
+is the only place it was visible.
+
+Two things changed, and the split matters:
+
+* **The cap was one line too tight.** Four lines fit and five do not, and that is
+  geometry rather than taste: the block is centred on y=250 and grows upward by 33
+  per line, so at four the first line's ascender sits at y=106 and clears the kicker
+  baseline at y=96, and at five it sits at y=73 and collides. `OG_TITLE_MAX_LINES`
+  is 4. That alone repaired **17 of the 24** titles already overflowing.
+* **What still cannot fit is reported, never dropped.** `_fit_title` collects every
+  overflow with the words it lost, and the run prints them at the end.
+  `--strict-titles` makes it exit 1. Reported by default because 24 titles were
+  already in that state — the same call as `check-image-assets.py` informing while
+  `check-new-page-image-assets.py` gates, and for the same reason.
+
+`--dry-run` measures titles without rasterising anything (over the pages already
+holding art too, not just the ones missing it — whether a title fits is a property
+of the registry, not of what is on disk), so **`--dry-run --all --strict-titles` is
+a cheap whole-site title check**.
+
+**The fix for an overflow is never to shorten the answer away.** Put the head term
+in the card title and the answer in the **sub** line, which does not wrap. Seven
+titles remain over the cap, all `unicode-18` emoji-vote and beta-review pages in
+`ar`, `de`, `ko`, `pl`, `ru`, `th`; shortening those is a content decision per page,
+not a mechanical one.
+
 **Page-derived motifs (added 2026-08-11).** The registry in `PAGES` pairs each
 page with a motif function. 718 of 1,209 pages were registered against a motif
 that takes **no per-page argument**, so every page sharing it got a
@@ -2109,6 +2141,14 @@ green on all three (`check:locale-library-directory`, `check:library-hub-parity`
 and `check:library-hub-coverage` all pass), so nothing is blocking; that is
 precisely why it needs writing down rather than leaving for the next person to
 rediscover.
+
+*Resolved 2026-09-01, same day:* both defects were fixed — the missing de/nl
+facet labels added and the three stale hubs regenerated (`6b6578afb`), with
+the German label corrected to the singular `Profil` matching every sibling
+locale (`dc8b02456`). Verified after: `npm run check:library-hub` reports all
+19 locale hubs current, de and nl included. The note above stays as the record
+of the find; a `build-library-hub.js` label error or a plain run rewriting a
+hub is once again a real regression, not known debt.
 
 **Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
 The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
