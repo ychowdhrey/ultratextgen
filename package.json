@@ -11,6 +11,8 @@
     "check:library-directory": "node scripts/build-library-directory.js --check",
     "build:locale-library-directory": "node scripts/build-locale-library-directory.js",
     "check:locale-library-directory": "node scripts/build-locale-library-directory.js --check",
+    "mine:locale-glossary": "python3 scripts/mine-locale-glossary.py --write",
+    "audit:locale-glossary": "python3 scripts/mine-locale-glossary.py --conflicts",
     "build:library-hub": "node scripts/build-library-hub.js",
     "check:library-hub": "node scripts/build-library-hub.js --check",
     "audit:library-hub-coverage": "node scripts/audit-library-hub-coverage.js",
