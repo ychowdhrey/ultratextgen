@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-printables_parity.test.py
+generator_parity.test.py
 
-Run: python3 scripts/lib/printables_parity.test.py   (npm run test:printables-parity)
+Run: python3 scripts/lib/generator_parity.test.py   (npm run test:generator-parity)
 
 Zero dependencies, no framework — the same idiom as
 scripts/lib/editorial-footprint.test.js and js/counter/counterRules.test.js.
@@ -20,7 +20,7 @@ import sys
 import tempfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from lib.printables_parity import find_regressions, assert_no_regression  # noqa: E402
+from lib.generator_parity import find_regressions, assert_no_regression  # noqa: E402
 
 PASS, FAIL, LINES = 0, 0, []
 

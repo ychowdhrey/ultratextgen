@@ -2533,6 +2533,17 @@ ranks the upstream sources.
   have shipped a gate that could never fire. `npm run audit:spec-sentence-reuse`
   is the whole-corpus picture; `npm run test:spec-sentence-reuse` (19 assertions)
   gates alongside it.
+- **`npm run route:cta-cards`** — the in-place pass that routes a page's CTA card
+  to the tool that does the reader's next job. Report-only by default, `--write`
+  applies, **idempotent** (it only ever touches a card still on the shared
+  homepage default, and never reclaims one already pointed somewhere specific).
+  `scripts/lib/cta_routing.py` is the single owner of the routing table AND its
+  copy, read by `scripts/generate_library_page_from_spec.py` too, so a
+  regenerated page and a live page cannot disagree about the card. The copy lives
+  there rather than in the specs because writing it into 214 spec files would
+  paste one sentence into 96 specs, which `check:spec-sentence-reuse` exists to
+  fail. `npm run test:cta-routing` (19 assertions) and `npm run test:cta-tracking`
+  (24) gate it.
 - Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
   `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
@@ -2723,6 +2734,39 @@ scheduled for review on 2026-09-16 after the shadow findings since this change a
 classified. Do not turn `--enforce` on bare: `seo-preservation` would ride along,
 and a deliberate retitle (which the tone standard requires) still has nowhere to
 record its intent.
+
+### Routing the CTA card, and the two things that constrained it (2026-08-26)
+
+The shared CTA card sits on **3,951 pages, 2,758 of them (69.8%) pointing at a
+bare homepage**. The obvious reading of that number is wrong and worth stating
+before anyone acts on it again: **`/` and `/<locale>/` ARE the font generator**,
+so "Open UltraTextGen →" pointing there is a real tool, not a dead end. The
+defect is narrower — pages whose reader has a *different* next job get sent to
+the generator anyway.
+
+So the routing table is deliberately small: **214 English pages**, moved only
+where the site has a tool the generator is not. Everything else keeps its card.
+
+**No locale page routes, and that is not a translation gap — the destinations do
+not exist.** There is no `/fr/character-counter/`, no `/es/kaomoji-generator/`,
+no locale build of any of them. Linking an English tool from a locale page is
+what the locale-native internal linking rule above forbids, and the locale
+homepage already is that locale's generator. `route()` returns `None` for every
+`<lang>/` path and a test asserts it. Do not "finish the job" by routing them.
+
+**It does not lower the Editorial Footprint Risk score, and must not be described
+as doing so.** One shared card replaced by three shared cards is still a
+template; `variety` stays near zero. What changed is that the card is useful and,
+for the first time, measurable — see the `cta_click` event, which fires from
+`header.js` rather than `script.js` because **3,955 of 3,955 CTA pages load
+`header.js` and only 148 load `script.js`**.
+
+**The SEO Preservation Gate blocked its own author here, and was right.** The
+first draft of the new copy dropped `ultratextgen` from the editorial text of all
+214 pages — the old card was its only occurrence outside URLs and JSON-LD — and
+the gate reported `protected-term-lost` on every one. The fix was to put the
+product name back where each sentence already named the tool, never to exempt the
+rule.
 
 ### The remediation principle
 
@@ -3177,6 +3221,15 @@ Standing protocol:
   page — what the symbol is for, where it breaks, what it is confused with — not
   a synonym swap. A line that genuinely must be shared belongs in the generator
   default, where it is one string with one owner.
+- Do not route a locale page's CTA card to an English tool, and do not "finish"
+  the CTA routing by extending it to `<lang>/` pages. No locale build of any
+  destination tool exists; the locale homepage already is that locale's
+  generator. See "Routing the CTA card" above — `scripts/lib/cta_routing.py`
+  returns `None` for every locale path on purpose and a test asserts it.
+- Do not hand-edit a CTA card to change where it points. Change
+  `scripts/lib/cta_routing.py` and run `npm run route:cta-cards -- --write`,
+  which the page generator reads from too — a hand edit drifts the moment the
+  page is regenerated.
 - Do not add an entry to `data/editorial_phrase_bank.json` unilaterally, and
   never to make a page pass. Same bar as `data/translation_parity_exceptions.json`
   and `data/english_parent_exceptions.json`. Every entry carries its measured

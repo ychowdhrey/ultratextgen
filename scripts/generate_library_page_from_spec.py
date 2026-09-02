@@ -44,6 +44,31 @@ REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
 SPECS_DIR = REPO / "data" / "library_page_specs"
 
+# The refuse-to-overwrite guard. This generator is a FULL regenerator: whatever
+# it does not emit is deleted from the page it rewrites. Measured 2026-08-26
+# across a 40-spec sample, 40 of 40 regressed — static footer on all 40,
+# hreflang alternates on 35, social image tags on 21. It had been read as
+# "probably fine" because it emits the Funding Choices tag and calls the mesh
+# sync; that hook only runs for `lang != "en"` and only AFTER the write, so an
+# English page loses its alternates outright. See scripts/lib/generator_parity.py.
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+from lib.generator_parity import assert_no_regression  # noqa: E402
+from lib.cta_routing import DESTINATIONS as CTA_DESTINATIONS, route as cta_route  # noqa: E402
+
+# The strings a spec is allowed to carry that are NOT a real override: they are
+# the shared default, copied in. `scripts/check-spec-sentence-reuse.py` measures
+# how far that spread — the `cta` line alone is byte-identical across 55 specs.
+SHARED_CTA_DEFAULTS = {
+    "cta": (
+        "Use UltraTextGen to convert plain text into bold, italic, cursive, "
+        "and 100+ other Unicode font styles. Free and instant."
+    ),
+    "cta_h3": "Transform text with Unicode fonts",
+    "cta_button_text": "Open UltraTextGen →",
+    "cta_button_href": None,
+}
+
 SITE = "https://ultratextgen.com"
 
 REQUIRED_TOP = [
@@ -518,9 +543,36 @@ def render_page(spec):
     library_url = spec.get("library_url", default_library_url)
     copy_label = spec.get("copy_label", ui.get("copy", "Copy"))
     related_label = spec.get("related_label", ui.get("related", "Related Resources"))
-    cta_h3 = spec.get("cta_h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
-    cta_button_text = spec.get("cta_button_text", ui.get("cta_btn", "Open UltraTextGen →"))
-    cta_button_href = spec.get("cta_button_href", home_url)
+    # Where the reader's next job is one the generator cannot do, the card is
+    # routed to the tool that can. One owner for that decision and its copy:
+    # scripts/lib/cta_routing.py, which scripts/route-cta-cards.py also reads,
+    # so a regenerated page and a live page cannot disagree about this card.
+    # English only by construction (no locale build of any of these tools
+    # exists, and linking an English tool from a locale page is what CLAUDE.md's
+    # locale-native linking rule forbids) — cta_route() returns None for every
+    # <lang>/ path, so locale pages fall through to the ui defaults untouched.
+    _seg = "symbol" if page_type == "symbol" else "library"
+    _routed = CTA_DESTINATIONS.get(cta_route(f'{_seg}/{spec["slug"]}/index.html')) if lang == "en" else None
+
+    def _cta_field(key, routed_key, fallback):
+        """Spec override > routing default > locale/global default.
+
+        With one carve-out that matters: 55 specs "override" `cta` with the
+        SHARED DEFAULT SENTENCE, byte for byte. Treating that as a real override
+        leaves a routed card with a matched heading and button above a paragraph
+        about something else — verified on `cat-kaomoji`, which is exactly that
+        case. A copy of the default is not an override, so routing wins over it.
+        """
+        value = spec.get(key)
+        if isinstance(value, str) and value.strip() and value.strip() != SHARED_CTA_DEFAULTS.get(key):
+            return value
+        if _routed and _routed.get(routed_key):
+            return _routed[routed_key]
+        return value if isinstance(value, str) and value.strip() else fallback
+
+    cta_h3 = _cta_field("cta_h3", "h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
+    cta_button_text = _cta_field("cta_button_text", "button", ui.get("cta_btn", "Open UltraTextGen →"))
+    cta_button_href = _cta_field("cta_button_href", "href", home_url)
     hreflang_html = "".join(
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
@@ -537,14 +589,7 @@ def render_page(spec):
 
     date_pub = _iso_datetime(spec.get("date_published", "2026-01-01"))
     date_mod = _iso_datetime(spec.get("date_modified", spec.get("date_published", "2026-01-01")))
-    cta = spec.get(
-        "cta",
-        ui.get(
-            "cta_body",
-            "Use UltraTextGen to convert plain text into bold, italic, cursive, "
-            "and 100+ other Unicode font styles. Free and instant.",
-        ),
-    )
+    cta = _cta_field("cta", "cta", SHARED_CTA_DEFAULTS["cta"])
 
     # JSON-LD must use real (entity-decoded) strings; json.dumps handles escaping.
     ld_article = json.dumps(
@@ -786,6 +831,9 @@ def main(argv=None):
                         help="validate and print target path without writing")
     parser.add_argument("--force", action="store_true",
                         help="overwrite an existing page")
+    parser.add_argument("--force-stale", action="store_true", dest="force_stale",
+                        help="write even if the live page carries content this "
+                             "generator would delete (prints what it overrides)")
     args = parser.parse_args(argv)
 
     try:
@@ -828,6 +876,11 @@ def main(argv=None):
         print(f"[dry-run] spec OK -> would write {out_path.relative_to(REPO)} "
               f"({len(page)} bytes, pattern={spec['copy_pattern']})")
         return 0
+
+    # Refuse to overwrite a live page that carries something this run would
+    # delete. Runs after --dry-run returns, so a dry run stays read-only, and
+    # before mkdir so a refusal creates nothing.
+    assert_no_regression([(out_path, page)], force=args.force_stale)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path.write_text(page, encoding="utf-8")

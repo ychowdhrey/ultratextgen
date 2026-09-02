@@ -508,9 +508,84 @@
     }
   }
 
+  // ── CTA card instrumentation ─────────────────────────────────────────────
+  //
+  // The shared CTA card sits on 3,955 pages and, until 2026-08-26, was not
+  // instrumented at all: no dataLayer push, no gtag call, no listener anywhere
+  // in script.js or js/. So there was no way to answer "what does this card
+  // convert at" — and therefore no way to know whether a change to it helped.
+  //
+  // It lives in header.js rather than script.js on purpose: of the 3,955 pages
+  // carrying a CTA button, 3,955 load header.js and only 148 load script.js.
+  //
+  // Delegated on document, so it also covers a card injected after load, and
+  // capture:false + no preventDefault, so navigation is never delayed or
+  // blocked by this. GTM's own tag then decides what to do with the event.
+  var CTA_SELECTOR = ".cta-btn, .cta-card a[href]";
+
+  var PILLARS = ["library", "symbol", "category", "usecase", "guide",
+                 "answers", "events", "printables", "updates"];
+
+  // Drop a leading locale segment, using NAV as the authority rather than a
+  // /^[a-z]{2}/ regex. That distinction is load-bearing: `/js/` is a real
+  // two-letter top-level directory on this site and is not a locale, and a
+  // regex would silently treat it as one.
+  function stripLocale(parts) {
+    if (parts.length && NAV[parts[0]]) return parts.slice(1);
+    return parts;
+  }
+
+  // Classify the destination so the data is usable without a page-by-page
+  // lookup. "homepage" is the case that matters most: 2,758 of 3,955 CTA
+  // buttons pointed at a bare homepage when this was written.
+  function ctaDestinationType(href) {
+    var path;
+    try {
+      path = new URL(href, window.location.href).pathname;
+    } catch (err) {
+      return "unknown";
+    }
+    var parts = stripLocale(path.split("/").filter(Boolean));
+    if (!parts.length) return "homepage";
+    if (PILLARS.indexOf(parts[0]) !== -1) {
+      // A pillar INDEX is a browse hub; a deeper path is a specific page.
+      return parts.length === 1 ? parts[0] + "_index" : parts[0];
+    }
+    return "tool";
+  }
+
+  // The page the click happened ON, so a click can be attributed without
+  // joining against a separate page-family table.
+  function ctaSourceFamily() {
+    var parts = stripLocale((window.location.pathname || "/").split("/").filter(Boolean));
+    return parts.length ? parts[0] : "homepage";
+  }
+
+  function initializeCtaTracking() {
+    document.addEventListener("click", function (evt) {
+      var link = evt.target && evt.target.closest && evt.target.closest(CTA_SELECTOR);
+      if (!link || !link.getAttribute("href")) return;
+      var href = link.getAttribute("href");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "cta_click",
+        cta_href: href,
+        cta_destination_type: ctaDestinationType(href),
+        cta_text: (link.textContent || "").trim().slice(0, 80),
+        cta_source_family: ctaSourceFamily(),
+        cta_source_locale: detectLocale(),
+        cta_source_path: window.location.pathname
+      });
+    }, false);
+  }
+
   if (document.body) {
     initializeSharedHeader();
+    initializeCtaTracking();
   } else {
-    document.addEventListener("DOMContentLoaded", initializeSharedHeader);
+    document.addEventListener("DOMContentLoaded", function () {
+      initializeSharedHeader();
+      initializeCtaTracking();
+    });
   }
 })();
