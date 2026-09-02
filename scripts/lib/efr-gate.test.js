@@ -317,6 +317,31 @@ t('the material allowance is 0.5 and the thresholds are the recorded policy', ()
   assert.deepStrictEqual([G.THRESHOLDS.guide.pass, G.THRESHOLDS.guide.review], [7.0, 8.0]);
 });
 
+// ── lever: facts or phrasing ───────────────────────────────────────────────
+
+t('a score carried ≥ 70% by specificityDeficit is facts-led', () => {
+  const lv = G.leverFor({ dimensions: { specificityDeficit: 8.6, rhythmRepetition: 0.7, formulaicSyntax: 0, crossPageSameness: null } });
+  assert.strictEqual(lv.lever, 'facts');
+  assert.strictEqual(lv.dimension, 'specificityDeficit');
+  assert.ok(lv.share >= 0.9);
+  assert.ok(G.leverAdvice(lv).startsWith('facts-led'));
+});
+
+t('a score led by formulaic syntax or phrases is phrasing-led; by template dimensions, template-led', () => {
+  assert.strictEqual(G.leverFor({ dimensions: { formulaicSyntax: 4, promotionalVagueness: 1, specificityDeficit: 0.5 } }).lever, 'phrasing');
+  assert.strictEqual(G.leverFor({ dimensions: { structuralTemplate: 5, crossPageSameness: 1, specificityDeficit: 1 } }).lever, 'template');
+  assert.strictEqual(G.leverFor({ dimensions: { punctuationFingerprint: 8, rhythmRepetition: 1 } }).lever, 'punctuation');
+});
+
+t('no single dimension at 70% means mixed, and an all-zero page has no lever', () => {
+  const mixed = G.leverFor({ dimensions: { specificityDeficit: 5, formulaicSyntax: 4, promotionalVagueness: 3 } });
+  assert.strictEqual(mixed.lever, 'mixed');
+  assert.strictEqual(mixed.dimension, 'specificityDeficit');
+  assert.strictEqual(G.leverFor({ dimensions: { specificityDeficit: 0, formulaicSyntax: 0 } }).lever, 'none');
+  assert.strictEqual(G.leverFor(null), null);
+  assert.strictEqual(G.DOMINANT_SHARE, 0.7);
+});
+
 // ── report ─────────────────────────────────────────────────────────────────
 
 console.log('EFR Quality Gate — tests\n');

@@ -718,6 +718,56 @@ t('weights sum to 100', () => {
   assert.strictEqual(Object.values(WEIGHTS).reduce((a, b) => a + b, 0), 100);
 });
 
+// ── 5b. the widened fact vocabulary (2026-09-02) ───────────────────────────
+
+const { harvestGameNames, gameNameRegex, EXTRA_GAMES } = require('./editorial-footprint');
+
+t('game names are harvested from the rule engine, stripped of their field qualifier', () => {
+  const src = 'x: { label: "Valorant (Riot ID)" }, y: { label: "YouTube @handle" }, z: { label: "Free Fire" }, w: { label: "Liên Quân Mobile" }';
+  const names = harvestGameNames(src);
+  assert.deepStrictEqual(names.sort(), ['Free Fire', 'Liên Quân Mobile', 'Valorant', 'YouTube'].sort());
+});
+
+t('a harvested game the platform rule already matches is dropped, so one mention is one fact', () => {
+  const src = 'a: { label: "PUBG Mobile" }, b: { label: "Xbox Gamertag" }, c: { label: "Free Fire" }';
+  const names = harvestGameNames(src, (v) => /\b(?:PUBG|Xbox)\b/.test(v));
+  assert.deepStrictEqual(names, ['Free Fire']);
+  const s = specificityInventory('PUBG Mobile caps the display name at 14 characters.');
+  assert.strictEqual(s.byKind.game, undefined, 'PUBG Mobile must not count as a game on top of the platform hit');
+  assert.strictEqual(s.byKind.platform, 1);
+});
+
+t('the live harvest reads js/gamename/game-rules.js and includes the games the site checks names for', () => {
+  const rx = gameNameRegex();
+  for (const g of ['Free Fire', 'Mobile Legends', 'Liên Quân Mobile', 'Clash of Clans']) {
+    assert.ok(new RegExp(rx.source).test(g), `${g} should be recognised`);
+  }
+  assert.ok(EXTRA_GAMES.includes('Forza Horizon'), 'a game with no RULES row yet is carried by EXTRA_GAMES');
+  assert.ok(new RegExp(rx.source).test('Forza Horizon 6'));
+});
+
+t('durations, dates, separated figures and percentages are distinct facts, and a bare year is still one', () => {
+  const s = specificityInventory('Since January 1, 2026 the lock runs 1 day to 3 years; the March 2024 notice said 14 July 2026. Free accounts send 4,096 characters, Premium 32,768. Keep hashtags 100% plain.');
+  assert.strictEqual(s.byKind.date, 3, 'three distinct dates');
+  assert.strictEqual(s.byKind.duration, 2, '"1 day" and "3 years"');
+  assert.strictEqual(s.byKind.limit, 1, '"4,096 characters" is one limit, not "096 characters"');
+  assert.strictEqual(s.byKind.figure, 2, '4,096 and 32,768');
+  assert.strictEqual(s.byKind.percentage, 1);
+  const bare = specificityInventory('In 2026 we have 14 archetypes and many years of steam.');
+  assert.deepStrictEqual(bare.byKind, { 'year-or-number': 1 }, 'a bare "14" and "many years" are not facts');
+});
+
+t('publishers, emoji fonts and versions count; "Apple", "Word", "Signal" and "Notion" deliberately do not', () => {
+  const s = specificityInventory('Google ships Noto Color Emoji; Microsoft ships Segoe UI Emoji; Twemoji is on X. Emoji 16.0 arrived with iOS 18.4. The Unicode Consortium decides.');
+  assert.strictEqual(s.byKind.organisation, 3);
+  assert.strictEqual(s.byKind['emoji-font'], 3);
+  assert.strictEqual(s.byKind['emoji-version'], 1);
+  assert.strictEqual(s.byKind['os-version'], 1);
+  const amb = specificityInventory('The Red Apple emoji, a Word document, a Signal from the Notion of style.');
+  assert.strictEqual(amb.byKind.platform, undefined);
+  assert.strictEqual(amb.byKind.organisation, undefined);
+});
+
 // ── report ─────────────────────────────────────────────────────────────────
 
 console.log('Editorial Footprint Risk — tests\n');

@@ -239,6 +239,52 @@ function contributors(result) {
   return `${dims.join(', ') || 'no dimension at or above 0.5'} · ${counts.join(', ')}`;
 }
 
+/**
+ * Which lever a high score answers to: FACTS or PHRASING (or the template).
+ *
+ * Added 2026-09-02 after the first report: every FAIL on the two entry
+ * sections was led by `specificityDeficit`, and an editor reading "9.3 FAIL"
+ * could not tell whether the page needed facts or a rewrite. The two fixes
+ * are different work - one is research, the other is editing - and a
+ * phrasing rewrite of a facts-led page lowers nothing.
+ *
+ * A dimension is DOMINANT when it carries at least `DOMINANT_SHARE` of the
+ * page's weighted score. Below that the page is `mixed` and the contributor
+ * list is the better guide.
+ */
+const DOMINANT_SHARE = 0.7;
+const LEVER_OF = {
+  specificityDeficit: 'facts',
+  formulaicPhraseDensity: 'phrasing', formulaicSyntax: 'phrasing', genericIntroductions: 'phrasing',
+  promotionalVagueness: 'phrasing', rhythmRepetition: 'phrasing',
+  crossPageSameness: 'template', structuralTemplate: 'template',
+  punctuationFingerprint: 'punctuation'
+};
+
+function leverFor(result) {
+  if (!result || !result.dimensions) return null;
+  const dims = Object.entries(result.dimensions).filter(([, v]) => v !== null && v > 0);
+  const total = dims.reduce((a, [, v]) => a + v, 0);
+  if (!total) return { lever: 'none', dimension: null, share: 0 };
+  const [dim, val] = dims.sort((a, b) => b[1] - a[1])[0];
+  const share = +(val / total).toFixed(2);
+  if (share < DOMINANT_SHARE) return { lever: 'mixed', dimension: dim, share };
+  return { lever: LEVER_OF[dim] || 'mixed', dimension: dim, share };
+}
+
+/** One-line editor guidance for a lever, for the report and the gate output. */
+function leverAdvice(lv) {
+  if (!lv) return '';
+  switch (lv.lever) {
+    case 'facts': return 'facts-led: add the specific numbers, names, versions and constraints the page is about; a phrasing rewrite will not move it';
+    case 'phrasing': return 'phrasing-led: replace the formulaic sentences with the information behind them; the facts are already there';
+    case 'template': return 'template-led: the page shares its shape or its sentences with siblings; fix the template or the spec, not the page';
+    case 'punctuation': return 'punctuation-led: em dashes or ellipses well above the cohort; the em-dash policy names the replacements';
+    case 'none': return 'no measured dimension contributes';
+    default: return 'mixed: no single dimension dominates; work the contributor list in order';
+  }
+}
+
 // -- exceptions -------------------------------------------------------------
 
 const ROUTE_RX = /^\/(?:[a-z0-9-]+\/)+$/;
@@ -475,7 +521,7 @@ function loadBaseline(p = BASELINE_PATH) {
 
 module.exports = {
   THRESHOLDS, MATERIAL_DELTA, REMOVAL_ERRORS, REMOVAL_WARNINGS, EXCEPTIONS_PATH, BASELINE_PATH,
-  classifyContent, statusFor, statusLabel, contributors,
+  classifyContent, statusFor, statusLabel, contributors, leverFor, leverAdvice, DOMINANT_SHARE, LEVER_OF,
   validateExceptions, loadExceptions, exceptionFor,
   ratchet, stats, summarize, loadBaseline
 };
