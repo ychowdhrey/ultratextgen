@@ -71,11 +71,18 @@ function buildRows() {
       localePercentile: r.localePercentile, familyPercentile: r.familyPercentile,
       previous: prev, delta, wordCount: r.wordCount,
       contributors: G.contributors(r),
+      lever: G.leverFor(r),
       exception: exception ? { state: exception.state, ...exception.entry } : null,
       prevStatus: cls.calibrated && prev !== null && prev !== undefined ? G.statusFor(cls.section, prev).status : null
     });
   }
   return { rows, baseline, exceptionErrors: errors, exceptions, scoredTotal: results.filter((r) => r.score !== null).length };
+}
+
+/** The lever column: which kind of work a non-PASS page needs. */
+function leverCell(lv) {
+  if (!lv || lv.lever === 'none') return '—';
+  return `${lv.lever}${lv.dimension ? ` (${lv.dimension} ${Math.round(lv.share * 100)}%)` : ''}`;
 }
 
 function sectionSummary(rows, section) {
@@ -140,6 +147,7 @@ function printSummary(d) {
     for (const r of top) {
       console.log(`  ${String(r.score).padStart(5)}  ${r.status.padEnd(7)}  ${fmt(r.previous).padStart(5)}  ${signed(r.delta).padStart(5)}  p${String(r.localePercentile).padEnd(5)} ${r.route}${r.exception ? `  [exception: ${r.exception.state}]` : ''}`);
       console.log(`         ${r.contributors}`);
+      if (r.lever && r.status !== 'PASS') console.log(`         lever: ${r.lever.lever}${r.lever.dimension ? ` (${r.lever.dimension} ${Math.round(r.lever.share * 100)}%)` : ''}`);
     }
     for (const h of S.hubs) console.log(`  ${fmt(h.score).padStart(5)}  ${'UNCLASS'.padEnd(7)}  ${fmt(h.previous).padStart(5)}  ${signed(h.delta).padStart(5)}  ${pct(h.localePercentile).padEnd(6)} ${h.route}  (hub index — no threshold${h.score === null ? '; below the 120-word prose floor, not scored' : ''})`);
     console.log('');
@@ -178,11 +186,11 @@ function buildReport(d) {
       md += `**Since baseline${baseline.date ? ` (${baseline.date})` : ''}:** ${S.changes.compared} pages compared · regressions ${S.changes.regressions} · improvements ${S.changes.improvements} · new failures ${S.changes.newFailures} · resolved failures ${S.changes.resolvedFailures}. A regression or improvement is a move of ${G.MATERIAL_DELTA} or more.\n\n`;
     }
     md += `### Top ${Math.min(TOP, S.rows.length)} ${S.label} by EFR — editorial backlog\n\n`;
-    md += `| EFR | status | band | previous | Δ | pct (${'en'}) | route | major contributors |\n|---:|---|---|---:|---:|---:|---|---|\n`;
+    md += `| EFR | status | band | lever | previous | Δ | pct (${'en'}) | route | major contributors |\n|---:|---|---|---|---:|---:|---:|---|---|\n`;
     for (const r of S.rows.slice().sort((a, b) => b.score - a.score).slice(0, TOP)) {
-      md += `| ${r.score} | ${r.status}${r.exception ? ` (exception ${r.exception.state})` : ''} | ${r.band} | ${fmt(r.previous)} | ${signed(r.delta) || '0'} | p${r.localePercentile} | \`${r.route}\` | ${r.contributors} |\n`;
+      md += `| ${r.score} | ${r.status}${r.exception ? ` (exception ${r.exception.state})` : ''} | ${r.band} | ${leverCell(r.lever)} | ${fmt(r.previous)} | ${signed(r.delta) || '0'} | p${r.localePercentile} | \`${r.route}\` | ${r.contributors} |\n`;
     }
-    for (const h of S.hubs) md += `| ${fmt(h.score)} | UNCLASSIFIED | hub index — no threshold${h.score === null ? '; below the 120-word prose floor, not scored' : ''} | ${fmt(h.previous)} | ${h.delta === null ? '—' : signed(h.delta) || '0'} | ${pct(h.localePercentile)} | \`${h.route}\` | ${h.contributors || '—'} |\n`;
+    for (const h of S.hubs) md += `| ${fmt(h.score)} | UNCLASSIFIED | hub index — no threshold${h.score === null ? '; below the 120-word prose floor, not scored' : ''} | — | ${fmt(h.previous)} | ${h.delta === null ? '—' : signed(h.delta) || '0'} | ${pct(h.localePercentile)} | \`${h.route}\` | ${h.contributors || '—'} |\n`;
     md += `\n`;
     const loc = rows.filter((r) => r.section === section && !r.calibrated && !r.hub && r.score !== null)
       .sort((a, b) => a.locale.localeCompare(b.locale) || (b.localePercentile || 0) - (a.localePercentile || 0));

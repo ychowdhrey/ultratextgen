@@ -244,11 +244,73 @@ function triadRegex(locale) {
 /** Question marks in every script this site publishes in. */
 const RHETORICAL = /[?\u061f\uff1f]\s*$/;
 
+const GAME_RULES_PATH = path.join(ROOT, 'js', 'gamename', 'game-rules.js');
+
+/**
+ * Game names from the site's own nickname rule engine.
+ *
+ * Reads every `label: "…"` in js/gamename/game-rules.js, drops the field
+ * qualifier ("Valorant (Riot ID)" -> "Valorant", "YouTube @handle" ->
+ * "YouTube"), and drops any label the platform rule already recognises so a
+ * name is never two facts. Longest first, so "Free Fire MAX" cannot be cut
+ * to "Free Fire" by an earlier alternative.
+ */
+function harvestGameNames(src, alreadyMatched = () => false) {
+  const names = new Set();
+  const re = /label:\s*"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    const v = m[1].replace(/\s*\([^)]*\)\s*$/, '').replace(/\s*@handle$/, '').trim();
+    if (v && !alreadyMatched(v)) names.add(v);
+  }
+  return [...names].sort((a, b) => b.length - a.length);
+}
+
+const PLATFORM_ALTS = 'Discord|Instagram|TikTok|LinkedIn|WhatsApp|Roblox|Snapchat|Telegram|YouTube|Facebook|Pinterest|Threads|Fortnite|PUBG|Minecraft|Nitro|Markdown|Xbox|PlayStation|PSN|Steam|Valorant|Garena';
+
+/**
+ * Games this site writes about that have no row in the rule engine yet (a
+ * game earns a RULES row when its name checker ships, not when it is first
+ * mentioned). Measured on English pages before adding: Forza Horizon on 5,
+ * BGMI 7, Arena of Valor 2, Warzone 2. Move a name OUT of here the day it
+ * gains a RULES row; the harvest will pick it up and the duplicate is
+ * de-duplicated by the Set anyway.
+ */
+const EXTRA_GAMES = ['Forza Horizon', 'BGMI', 'Arena of Valor', 'Warzone', 'Apex Legends', 'League of Legends', 'Genshin Impact', 'Among Us', 'Honor of Kings', 'Rocket League', 'Overwatch', 'Free Fire MAX'];
+
+function gameNameRegex() {
+  let src = '';
+  try { src = fs.readFileSync(GAME_RULES_PATH, 'utf8'); } catch { src = ''; }
+  const platformRx = new RegExp(`\\b(?:${PLATFORM_ALTS})\\b`);
+  const names = [...new Set([...harvestGameNames(src, (v) => platformRx.test(v)), ...EXTRA_GAMES.filter((v) => !platformRx.test(v))])]
+    .sort((a, b) => b.length - a.length);
+  if (!names.length) return /(?!)/g;
+  const esc = names.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return new RegExp(`\\b(?:${esc.join('|')})\\b`, 'g');
+}
+
 const SPECIFICITY_RULES = [
   { rx: /U\+[0-9A-Fa-f]{4,6}/g, kind: 'codepoint' },
   { rx: /\bUnicode\s+\d+(?:\.\d+)?\b/gi, kind: 'unicode-version' },
   { rx: /\bAlt\s*\+?\s*\d{3,5}\b/gi, kind: 'alt-code' },
-  { rx: /\b\d{1,5}\s*(?:characters?|chars?|bytes?|codepoints?|glyphs?|px|pixels?|dpi|mm|cm|pt)\b/gi, kind: 'limit' },
+  // A limit with a thousands separator ("4,096 characters", "32,768") matched
+  // only by accident before 2026-09-02 - "\b\d{1,5}" caught the "096" - and a
+  // bare "32,768" in a table cell not at all.
+  { rx: /\b(?:\d{1,3}(?:,\d{3})+|\d{1,5})\s*(?:characters?|chars?|bytes?|codepoints?|glyphs?|px|pixels?|dpi|mm|cm|pt)\b/gi, kind: 'limit' },
+  { rx: /\b\d{1,3}(?:,\d{3})+\b/g, kind: 'figure' },
+  // Durations, dates and percentages are the facts a rules-change entry is
+  // made of, and none was counted: `lienquan-mobile-name-penalty-update`
+  // says "1 day to 3 years" and "January 1, 2026" and was credited with the
+  // bare year only, once, however many distinct dates it named.
+  { rx: /\b\d{1,5}\s*(?:seconds?|secs?|minutes?|mins?|hours?|days?|weeks?|months?|years?)\b/gi, kind: 'duration' },
+  { rx: /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(?:\d{1,2},?\s+)?\d{4}\b|\b\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+\d{4}\b/g, kind: 'date' },
+  { rx: /\b\d{1,3}(?:\.\d+)?%/g, kind: 'percentage' },
+  // Engagement counts a social page states as fact: "5-10 comments per day",
+  // "10+ reactions". Deliberately NOT the site's own generic units ("3 styles",
+  // "12 symbols", "two lines"): a first draft counted those and moved the guide
+  // cohort median enough to fail three untouched guides, because every guide
+  // here says "5 fonts" somewhere. A bare "14" is not a fact either.
+  { rx: /\b\d{1,6}\+?\s*(?:comments?|reactions?|replies|posts?|followers?|likes?|views?|shares?|players?|accounts?|subscribers?)\b/gi, kind: 'quantity' },
   { rx: /\b(?:UTF-8|UTF-16|NFC|NFD|NFKC|NFKD|ASCII|GSM-7|ISO[- ]8859|Latin-1)\b/g, kind: 'encoding' },
   { rx: /\b(?:combining|diacritic|ligature|grapheme|glyph|codepoint|surrogate|zero[- ]width|variation selector|serif|monospace|blackletter)\b/gi, kind: 'terminology' },
   // Console and storefront names were missing until 2026-09-01, and this list
@@ -262,8 +324,40 @@ const SPECIFICITY_RULES = [
   // `Steam` is the one ambiguous token (an ordinary English word), which is why
   // this rule stays case-sensitive; all 85 pages carrying capitalised "Steam"
   // mean Valve's, checked 2026-09-01.
-  { rx: /\b(?:Discord|Instagram|TikTok|LinkedIn|WhatsApp|Roblox|Snapchat|Telegram|YouTube|Facebook|Pinterest|Threads|Fortnite|PUBG|Minecraft|Nitro|Markdown|Xbox|PlayStation|PSN|Steam|Valorant|Garena)\b/g, kind: 'platform' },
+  // Widened 2026-09-02 (Twitter through iMessage): every name below is cited
+  // on English pages in the corpus (Twitter on 63, Reddit 9, Twitch 7, Slack 5)
+  // and none is an ordinary English word when capitalised. "Signal", "Word",
+  // "Kick", "Notion" and "Apple" are deliberately NOT here: each is a common
+  // noun or an emoji name ("Red Apple") somewhere on this site, and a rule
+  // that counts them would manufacture facts out of vocabulary.
+  { rx: /\b(?:Discord|Instagram|TikTok|LinkedIn|WhatsApp|Roblox|Snapchat|Telegram|YouTube|Facebook|Pinterest|Threads|Fortnite|PUBG|Minecraft|Nitro|Markdown|Xbox|PlayStation|PSN|Steam|Valorant|Garena|Twitter|Reddit|Twitch|Slack|Bluesky|Mastodon|Messenger|WeChat|KakaoTalk|Zalo|Viber|Tinder|Bumble|iMessage)\b/g, kind: 'platform' },
   { rx: /\b(?:Windows|macOS|iOS|Android|Linux|Chrome|Safari|Firefox|Edge|ChromeOS)\b/g, kind: 'environment' },
+  // Games are HARVESTED from the site's own rule engine
+  // (js/gamename/game-rules.js), not typed here, for the reason
+  // locale-translation-audit.js harvests Unicode block names from the pages:
+  // the site is the authority on what it covers, and a harvested list maintains
+  // itself when a game is added. A label the platform rule above already
+  // matches is dropped from the harvest, so one mention of "PUBG Mobile" is one
+  // fact, not two. Added 2026-09-02, when the vocabulary was widened after the
+  // gate's first report: `lienquan-mobile-name-penalty-update` was FAIL on
+  // specificity with "Liên Quân Mobile" in every other sentence, and the
+  // detector could not read the subject the page is about - the same defect
+  // the console-name omission above had, one list over.
+  { rx: gameNameRegex(), kind: 'game' },
+  // Publishers, vendors and standards bodies. A page that says WHO decided
+  // something is more concrete than one that says "the platform"; measured
+  // before adding: Google is cited on 710 English pages, Microsoft 21,
+  // Samsung 20, Unicode Consortium 15, Emojipedia 6. "Apple" and "Meta" are
+  // excluded (emoji names and an ordinary word respectively).
+  { rx: /\b(?:Unicode Consortium|Emojipedia|Riot Games|Epic Games|Tencent|Supercell|Moonton|Microsoft|Google|Samsung|Nintendo|Sony|Valve)\b/g, kind: 'organisation' },
+  // Emoji font sets - the fact that decides how a character renders, and the
+  // vocabulary the rendering-gap pages are written in (Twemoji on 241 pages,
+  // Noto 19, Segoe 11).
+  { rx: /\b(?:Twemoji|Noto (?:Color Emoji|Emoji|Sans(?: Symbols2?| CJK)?)|Segoe UI(?: Emoji| Symbol)?|Apple Color Emoji|JoyPixels|EmojiOne)\b/g, kind: 'emoji-font' },
+  // "Emoji 16.0" is a dated release like "Unicode 16.0" and was invisible.
+  { rx: /\bEmoji\s+\d+(?:\.\d+)?\b/g, kind: 'emoji-version' },
+  // "iOS 18.4" is a version, a different fact from "iOS" the environment.
+  { rx: /\b(?:iOS|Android|Windows|macOS|One UI)\s+\d+(?:\.\d+)?\b/g, kind: 'os-version' },
   { rx: /\b(?:does not|doesn['’]t|will not|won['’]t|cannot|can['’]t|is rejected|is stripped|falls back|renders as|is ignored)\b/gi, kind: 'constraint' },
   { rx: /\b(?:for example|e\.g\.|such as|for instance|like this)\b/gi, kind: 'example' },
   // Script-agnostic: a codepoint, a version number or a digit-plus-unit is
@@ -762,6 +856,6 @@ module.exports = {
   loadBank, matchBank, subjectExempt, specificityInventory,
   shingles, signature, jaccard, similarityIndex, structureKey,
   scorePage, buildContext, percentiles,
-  NEG_PARALLEL, TRIAD_CONJUNCTIONS, triadRegex, RHETORICAL, SPECIFICITY_RULES,
+  NEG_PARALLEL, TRIAD_CONJUNCTIONS, triadRegex, RHETORICAL, SPECIFICITY_RULES, harvestGameNames, gameNameRegex, GAME_RULES_PATH, EXTRA_GAMES,
   shortfallBelow, excessAbove, ramp
 };

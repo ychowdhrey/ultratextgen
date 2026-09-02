@@ -2601,6 +2601,15 @@ before changing a threshold, and its §9 before calling a high score a defect:
 `specificityDeficit` reads a fixed fact vocabulary, so a 2,983-word guide built
 on fourteen worked archetypes scores 17.5 for naming five recognised facts. That
 is what the exception ledger is for.
+The vocabulary is widened as gaps are found, never per page: game names are
+**harvested** from `js/gamename/game-rules.js` (the site's own rule engine),
+and dates, durations, separated figures, percentages, engagement counts,
+publishers and emoji fonts were added 2026-09-02. **A widening moves the cohort
+median, so untouched pages move too** (that day: three guides crossed into FAIL
+without a word changing, because the bar their cohort demonstrates rose). It
+is a re-baseline event: regenerate `data/editorial_footprint_baseline.json` in
+the same change and re-read the thresholds. The ratchet is unaffected, since it
+scores both sides of a diff in one corpus.
 
 - **`npm run check:efr`** — diff-scoped, **gating** in `validate.yml`. New page
   must meet PASS; a PASS page may not be pushed above it; a page above PASS may
@@ -2615,6 +2624,12 @@ is what the exception ledger is for.
   Top 20 per section as the editorial backlog, written to
   `docs/efr-quality-report.md`.
 - **`npm run test:efr`** — 37 assertions over the policy, **gating**.
+- **The `lever` column** (report and console, added 2026-09-02) says which kind
+  of work a non-PASS page needs: `facts` when `specificityDeficit` carries 70%
+  or more of the score (add the numbers, names, versions and constraints the
+  page is about; a phrasing rewrite will not move it), `phrasing`, `template`,
+  `punctuation`, or `mixed`. Every FAIL on both sections at first measurement
+  was facts-led, and an editor could not tell that from "9.3 FAIL".
 - **`data/efr_exceptions.json`** — one page per entry (no wildcards, no whole
   sections), with the EFR it was agreed at, a reason, an owner, a date and an
   optional review date. Visible in every report, never silent, and the same bar
