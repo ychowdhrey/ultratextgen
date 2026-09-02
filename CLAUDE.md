@@ -302,6 +302,32 @@ behaviour. The first full run cleared a 2,537-link backlog across 1,009 pages
 in 19 languages. `check-new-symbol-peer-links.py` (the PR gate) is still
 EN-only and diff-scoped.
 
+**Only the PEER graph is mirrored, never hub→spoke — and nothing checks the
+difference (added 2026-09-01).** The paragraph above reads as if locale
+propagation is solved. It is solved for peer↔peer (`symbol/A` ↔ `symbol/B`).
+The hub→spoke pass in the same script still walks EN only, so
+`<lang>/library/<hub>` is **never required to link `<lang>/symbol/<spoke>`**,
+and `check-new-symbol-peer-links.py` cannot see it either — it is EN-only and
+checks *peers*, not hubs.
+
+The result is the failure mode this file names three times over: **a check that
+reports nothing is indistinguishable from a check that passes.** A whole-site
+`sync_symbol_spoke_links.py` run reports `0 error(s), 2 warning(s)` — neither in
+the currency lane — while `<lang>/library/currency-symbols` was missing **117
+links to its own locale's currency spokes** across 16 locales: `ar` linked 3 of
+13, `es` 3 of 14, `ko` 3 of 13, `nl` 3 of 13, against EN's 15 of 15. Verified as
+invisible rather than assumed: deleting one injected locale card and re-running
+leaves the site-wide check, the diff-scoped peer gate and
+`check-library-hub-coverage` all at exit 0.
+
+Fixed for the currency lane only (2026-09-01) by importing this script's own
+`load_locale_siblings()`, `page_title_and_desc()` and `inject_card()` rather
+than reimplementing them — a second copy of that logic would drift from the
+first, which is the failure the peer-mirroring paragraph above already
+documents. **Every other `library/` hub × locale is still unaudited**, and the
+general fix is to give the hub→spoke pass the same locale mirroring the peer
+pass already has.
+
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
 translation of a `symbol/<slug>/` page ships to `<lang>/symbol/<slug>/`, even
