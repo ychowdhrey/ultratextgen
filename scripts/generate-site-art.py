@@ -3114,6 +3114,7 @@ PAGES.update({
 "nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool: september 2026", "Officieel op 16-9-2026 · telefoons in 2027, onze schatting", m_doc, K_UPDATE),
 "sv-updates-dirham-symbol-unicode-18": ("Dirhamsymbolen: september 2026", "Officiell 16 sep 2026 · telefoner 2027, vår uppskattning", m_doc, K_UPDATE),
 "tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü: Eylül 2026", "16 Eylül 2026’da resmî · telefonlar 2027, tahminimiz", m_doc, K_UPDATE),
+"updates-omani-rial-symbol-unicode-18": ("Omani Rial Symbol: Coming September 16, 2026", "Official Sept 16, 2026 \u00b7 fonts during 2027, our estimate", m_doc, K_UPDATE),
 "updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols", "5 own signs \u00b7 3 shared \u00b7 7 none \u00b7 every row copies", m_doc, K_UPDATE),
 "ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط", "5 خاصة · 3 مشتركة · 7 بلا رمز · كل صف ينسخ", m_doc, K_UPDATE),
 "de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten", "5 eigene · 3 geteilte · 7 ohne · jede Zeile kopiert", m_doc, K_UPDATE),
