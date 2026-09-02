@@ -2242,12 +2242,14 @@ ranks the upstream sources.
 - **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
   into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
   would fail on and exits 0. Promotion to blocking is a documented step in
-  `docs/editorial-footprint-risk.md`, not a silent flag flip. Only two rules are
-  eligible today (`model-leakage`, `seo-preservation` errors), both verified
-  against deliberately broken inputs.
+  `docs/editorial-footprint-risk.md`, not a silent flag flip, and it happens
+  **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes only the named
+  rules bite. Five rules are eligible today (`model-leakage`, `seo-preservation`
+  errors, and since 2026-09-02 the three em-dash rules — see "Clean on touch"
+  below), each verified against deliberately broken inputs.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
-- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+- **`npm run test:editorial-footprint`** — 63 assertions, **gating**, no backlog
   to be red against.
 - **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
   hand-written once per spec in `data/library_page_specs/` and nothing compared
@@ -2294,6 +2296,53 @@ time (`--sensitivity`), and **`unknown` is the conservative posture, never a
 licence**. Search Console data is first-party competitive information and does
 not live in this repo — same boundary, and same reasoning, as the Local Language
 Intelligence lexicon.
+
+### Clean on touch — forward-only is for the pages you leave alone (added 2026-09-02)
+
+The em-dash rule (`EFR-F-001`) was written forward-only: a branch fails only on em
+dashes it *introduces*, and the 52,766 already on the site are reported, never
+required. That half stands — nobody runs a site-wide purge. But **a page whose own
+copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
+and its copy is brought to the tone-of-voice standard in the same change. User
+direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
+
+Three definitions carry the rule, and each one was chosen against a real case:
+
+* **"Touched" means the page's own copy moved** — title, meta description, H1,
+  headings, prose or FAQ text differs from the merge base. A card injected by the
+  peer-link sync, a regenerated footer or hreflang block, a rebuilt library
+  directory, an asset swap: none of those is a touch, because a mesh pass that
+  rewrites 1,009 pages must not demand 1,009 rewrites. Once a page *is* touched,
+  its cards count too.
+* **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
+  sibling in the cluster that the PR does not itself copy-edit must already be
+  clean, or the gate names it and the parent that pulled it in. Anchored on
+  English on purpose — it is where pages are born and where the standard is
+  applied first — so a translator's one-line fix never obliges an English
+  rewrite, and a new locale batch never obliges the cleanup of every parent it
+  translates. The cost was chosen with the number in view: editing
+  `symbol/euro-sign` pulls 18 siblings carrying 159 em dashes. Plan the sibling
+  pass before opening the PR, not after the gate names them.
+* **Generated inventory is not the hub's copy.** The pre-rendered library
+  directory (`[data-static-directory]`) is rendered from other pages by the hub
+  builders and is dropped from measurement — a hand edit there is overwritten by
+  the next build, and `es/library/index.html` carried 144 of its 157 em dashes
+  inside it. The EN hub's own `LIBRARY` array is the one exception: 25 em dashes
+  in a script block nothing measures, cleared through the array and a rebuild.
+
+Two things this surfaced. `.related-card` had never been in the card slot, so the
+updates hub's eleven dated labels ("Aug 12, 2026 — Telegram …") and the "Keep
+reading" grids on 193 pages were invisible to every rule — the currency scorecard
+shipped its tone rewrite with one em dash left in exactly that slot. And the
+gate's own upstream attribution still applies: when `em-dash-touched` names a spec
+or generator, the fix goes there.
+
+The gate stays in **shadow mode** for now — the three em-dash rules are in
+`BLOCKING` and print "would block", and promotion is one workflow line per rule,
+scheduled for review on 2026-09-16 after the shadow findings since this change are
+classified. Do not turn `--enforce` on bare: `seo-preservation` would ride along,
+and a deliberate retitle (which the tone standard requires) still has nowhere to
+record its intent.
 
 ### The remediation principle
 
@@ -2679,8 +2728,16 @@ Standing protocol:
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
   generator run — the gate names the upstream file when it can find it. And do
-  not run a site-wide purge: the rule is forward-only, and Google's own guidance
-  warns against removing a page element because you heard it was bad.
+  not run a site-wide purge: for pages you leave alone the rule is forward-only,
+  and Google's own guidance warns against removing a page element because you
+  heard it was bad.
+- Do not edit a page's copy and leave its em dashes behind, and do not copy-edit
+  an English page without bringing its locale siblings along. Since 2026-09-02 a
+  page whose title, meta description, H1, headings, prose or FAQ text a PR
+  changes must leave with zero em dashes in every measured slot, cards included,
+  and its siblings must already be clean or be cleaned in the same PR — see "Clean
+  on touch" above. `npm run check:editorial-footprint` reports both as
+  `em-dash-touched` / `em-dash-sibling`.
 - Do not paste a sentence from one page spec into another. `npm run
   check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
   sentence 3+ other specs already carry, and the fix is a sentence about *this*
