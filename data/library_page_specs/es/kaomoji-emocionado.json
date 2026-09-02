@@ -10,9 +10,18 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/excited-kaomoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-emocionado/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/excited-kaomoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/excited-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji-emocionado/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/excited-kaomoji/"
+    }
   ],
   "title": "Kaomoji Emocionado: Caritas de Texto Llenas de Energía",
   "meta_description": "Explora y copia kaomoji emocionados: caritas japonesas de texto con los brazos arriba y pura energía. Haz clic en cualquiera para copiarla.",
@@ -20,7 +29,6 @@
   "hero_h1": "Kaomoji Emocionado",
   "hero_tagline": "Copia y pega kaomoji emocionados: caritas japonesas de texto con los brazos arriba y llenas de energía. Haz clic en cualquier carita para copiarla al instante.",
   "intro": "Un kaomoji emocionado (también escrito kamoji) es una carita japonesa de mucha energía: brazos arriba, ojos brillantes y a punto de estallar de emoción. Caritas como ヽ(>∀<☆)ノ o ٩(◕‿◕)۶ son texto Unicode común y corriente, así que se pegan sin problema en biografías, publicaciones, comentarios y chats. Explora por estilo abajo y haz clic en cualquier carita para copiarla al instante. Ya sea que busques «kaomoji emocionado» o «emocionado kaomoji», todas las caritas de aquí son gratis para copiar y pegar.",
-  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
   "sections": [
     {
       "id": "hyped",
@@ -28,12 +36,30 @@
       "h2": "Kaomoji con Toda la Emoción",
       "intro": "Brazos arriba y energía al máximo.",
       "symbols": [
-        { "char": "ヽ(>∀<☆)ノ", "label": "Súper emocionado" },
-        { "char": "٩(◕‿◕)۶", "label": "¡Yupi!" },
-        { "char": "＼(≧▽≦)／", "label": "Feliz a más no poder" },
-        { "char": "ヽ(・∀・)ﾉ", "label": "Con toda la energía" },
-        { "char": "o(≧∇≦o)", "label": "A punto de estallar" },
-        { "char": "ヽ(＾Д＾)ﾉ", "label": "Festejando" }
+        {
+          "char": "ヽ(>∀<☆)ノ",
+          "label": "Súper emocionado"
+        },
+        {
+          "char": "٩(◕‿◕)۶",
+          "label": "¡Yupi!"
+        },
+        {
+          "char": "＼(≧▽≦)／",
+          "label": "Feliz a más no poder"
+        },
+        {
+          "char": "ヽ(・∀・)ﾉ",
+          "label": "Con toda la energía"
+        },
+        {
+          "char": "o(≧∇≦o)",
+          "label": "A punto de estallar"
+        },
+        {
+          "char": "ヽ(＾Д＾)ﾉ",
+          "label": "Festejando"
+        }
       ]
     },
     {
@@ -42,11 +68,26 @@
       "h2": "Kaomoji de Emoción con Brillos",
       "intro": "Ojos de estrella y pura chispa.",
       "symbols": [
-        { "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "label": "Magia y emoción" },
-        { "char": "(☆▽☆)", "label": "Ojos de estrella" },
-        { "char": "＼(★ω★)／", "label": "Deslumbrado" },
-        { "char": "٩(｡•́‿•̀｡)۶", "label": "Muy emocionado" },
-        { "char": "ヽ(≧◡≦)八(◕‿◕)ノ", "label": "Emocionados juntos" }
+        {
+          "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+          "label": "Magia y emoción"
+        },
+        {
+          "char": "(☆▽☆)",
+          "label": "Ojos de estrella"
+        },
+        {
+          "char": "＼(★ω★)／",
+          "label": "Deslumbrado"
+        },
+        {
+          "char": "٩(｡•́‿•̀｡)۶",
+          "label": "Muy emocionado"
+        },
+        {
+          "char": "ヽ(≧◡≦)八(◕‿◕)ノ",
+          "label": "Emocionados juntos"
+        }
       ]
     },
     {
@@ -55,11 +96,26 @@
       "h2": "Kaomoji de Ansias por Empezar",
       "intro": "Impaciencia y nervios de pura emoción.",
       "symbols": [
-        { "char": "(๑˃ᴗ˂)ﻭ", "label": "No aguanto" },
-        { "char": "＼(^ω^)／", "label": "Aquí vamos" },
-        { "char": "ヽ(*・ω・)ﾉ", "label": "Listo" },
-        { "char": "۹(⌤‿⌤)۶", "label": "Con las pilas puestas" },
-        { "char": "o(*≧▽≦)ツ", "label": "Vamos con todo" }
+        {
+          "char": "(๑˃ᴗ˂)ﻭ",
+          "label": "No aguanto"
+        },
+        {
+          "char": "＼(^ω^)／",
+          "label": "Aquí vamos"
+        },
+        {
+          "char": "ヽ(*・ω・)ﾉ",
+          "label": "Listo"
+        },
+        {
+          "char": "۹(⌤‿⌤)۶",
+          "label": "Con las pilas puestas"
+        },
+        {
+          "char": "o(*≧▽≦)ツ",
+          "label": "Vamos con todo"
+        }
       ]
     }
   ],

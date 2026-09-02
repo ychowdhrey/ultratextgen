@@ -38,9 +38,9 @@
       "h2": "Symbole Często Mylone z ℃",
       "intro": "Każdy z tych znaków bywa podstawiany zamiast ℃, a każdy to osobny znak z własnym znaczeniem.",
       "symbols": [
-        { "char": "°", "label": "Znak Stopnia (U+00B0) — Samodzielny" },
+        { "char": "°", "label": "Znak Stopnia (U+00B0): Samodzielny" },
         { "char": "℉", "label": "Stopień Fahrenheita (U+2109)" },
-        { "char": "K", "label": "Znak Kelwina (U+212A) — Normalizuje się do Zwykłego K" },
+        { "char": "K", "label": "Znak Kelwina (U+212A): Normalizuje się do Zwykłego K" },
         { "char": "C", "label": "Zwykła Litera C" }
       ]
     },
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/symbol-fahrenheita/",

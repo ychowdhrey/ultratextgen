@@ -17,8 +17,14 @@
       "h2": "Official Pride Flag Emoji",
       "intro": "The only two Pride flags with a dedicated, single-character Unicode emoji. Every other flag below is built from color combos instead.",
       "symbols": [
-        { "char": "🏳️‍🌈", "label": "Rainbow Pride Flag" },
-        { "char": "🏳️‍⚧️", "label": "Transgender Pride Flag" }
+        {
+          "char": "🏳️‍🌈",
+          "label": "Rainbow Pride Flag"
+        },
+        {
+          "char": "🏳️‍⚧️",
+          "label": "Transgender Pride Flag"
+        }
       ]
     },
     {
@@ -27,11 +33,26 @@
       "h2": "Core Identity Signs",
       "intro": "Foundational Unicode signs used for gender and orientation. See the full set, including marriage and partnership marks, on Gender Symbols.",
       "symbols": [
-        { "char": "⚧", "label": "Transgender Symbol" },
-        { "char": "⚢", "label": "Doubled Female Sign — Sapphic / Lesbian Pride" },
-        { "char": "⚣", "label": "Doubled Male Sign — Gay Pride" },
-        { "char": "⚥", "label": "Male and Female Sign" },
-        { "char": "⚦", "label": "Male With Stroke Sign" }
+        {
+          "char": "⚧",
+          "label": "Transgender Symbol"
+        },
+        {
+          "char": "⚢",
+          "label": "Doubled Female Sign: Sapphic / Lesbian Pride"
+        },
+        {
+          "char": "⚣",
+          "label": "Doubled Male Sign: Gay Pride"
+        },
+        {
+          "char": "⚥",
+          "label": "Male and Female Sign"
+        },
+        {
+          "char": "⚦",
+          "label": "Male With Stroke Sign"
+        }
       ]
     },
     {
@@ -40,9 +61,18 @@
       "h2": "Rainbow & Everyday Pride Marks",
       "intro": "The rainbow is the single most recognized Pride symbol — see the full rainbow and atmospheric set on Weather Symbols. Pair it with these everyday solidarity marks.",
       "symbols": [
-        { "char": "🌈", "label": "Rainbow" },
-        { "char": "🫶", "label": "Heart Hands — Solidarity & Love" },
-        { "char": "🤝", "label": "Handshake — Unity & Ally" }
+        {
+          "char": "🌈",
+          "label": "Rainbow"
+        },
+        {
+          "char": "🫶",
+          "label": "Heart Hands: Solidarity & Love"
+        },
+        {
+          "char": "🤝",
+          "label": "Handshake: Unity & Ally"
+        }
       ]
     }
   ],
@@ -156,7 +186,6 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/gender-symbols/",

@@ -251,7 +251,18 @@ const SPECIFICITY_RULES = [
   { rx: /\b\d{1,5}\s*(?:characters?|chars?|bytes?|codepoints?|glyphs?|px|pixels?|dpi|mm|cm|pt)\b/gi, kind: 'limit' },
   { rx: /\b(?:UTF-8|UTF-16|NFC|NFD|NFKC|NFKD|ASCII|GSM-7|ISO[- ]8859|Latin-1)\b/g, kind: 'encoding' },
   { rx: /\b(?:combining|diacritic|ligature|grapheme|glyph|codepoint|surrogate|zero[- ]width|variation selector|serif|monospace|blackletter)\b/gi, kind: 'terminology' },
-  { rx: /\b(?:Discord|Instagram|TikTok|LinkedIn|WhatsApp|Roblox|Snapchat|Telegram|YouTube|Facebook|Pinterest|Threads|Fortnite|PUBG|Minecraft|Nitro|Markdown)\b/g, kind: 'platform' },
+  // Console and storefront names were missing until 2026-09-01, and this list
+  // was never social-only: Roblox, Fortnite, PUBG and Minecraft were always in
+  // it. There is no principled reason "Roblox" reads as a concrete fact and
+  // "Xbox" does not, and the omission systematically under-scored the pages
+  // carrying game-identity content. Measured on /updates/, it inflated
+  // specificityDeficit on `forza-horizon-6-gamertag-rules` from 4.18 to 10.51
+  // and on `lienquan-mobile-name-penalty-update` from 7.34 to 9.15, purely
+  // because the detector could not read the subject those pages are about.
+  // `Steam` is the one ambiguous token (an ordinary English word), which is why
+  // this rule stays case-sensitive; all 85 pages carrying capitalised "Steam"
+  // mean Valve's, checked 2026-09-01.
+  { rx: /\b(?:Discord|Instagram|TikTok|LinkedIn|WhatsApp|Roblox|Snapchat|Telegram|YouTube|Facebook|Pinterest|Threads|Fortnite|PUBG|Minecraft|Nitro|Markdown|Xbox|PlayStation|PSN|Steam|Valorant|Garena)\b/g, kind: 'platform' },
   { rx: /\b(?:Windows|macOS|iOS|Android|Linux|Chrome|Safari|Firefox|Edge|ChromeOS)\b/g, kind: 'environment' },
   { rx: /\b(?:does not|doesn['’]t|will not|won['’]t|cannot|can['’]t|is rejected|is stripped|falls back|renders as|is ignored)\b/gi, kind: 'constraint' },
   { rx: /\b(?:for example|e\.g\.|such as|for instance|like this)\b/gi, kind: 'example' },

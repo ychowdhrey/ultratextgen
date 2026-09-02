@@ -28,8 +28,8 @@
       "h2": "Symbol Pi — π i Π",
       "intro": "Sama grecka litera. Małe π to słynna stała matematyczna; wielkie Π to zupełnie inne narzędzie.",
       "symbols": [
-        { "char": "π", "label": "Mała Grecka Litera Pi (U+03C0) — Stała Matematyczna ≈ 3,14159" },
-        { "char": "Π", "label": "Wielka Grecka Litera Pi (U+03A0) — Operator Iloczynu" }
+        { "char": "π", "label": "Mała Grecka Litera Pi (U+03C0): Stała Matematyczna ≈ 3,14159" },
+        { "char": "Π", "label": "Wielka Grecka Litera Pi (U+03A0): Operator Iloczynu" }
       ]
     },
     {
@@ -38,10 +38,10 @@
       "h2": "Pi w Matematyce: Iloczyn kontra Sumowanie",
       "intro": "Wielkie Π to operator iloczynu i — dokładnie jak sigma — ma dedykowany glif matematyczny, ∏ (N-ARY PRODUCT), czyli osobny znak Unicode, inny niż sama litera. To mnożnikowe lustrzane odbicie sumowania ∑, litera po literze.",
       "symbols": [
-        { "char": "∏", "label": "Iloczyn N-arny (U+220F) — Dedykowany Operator Iloczynu" },
-        { "char": "Π", "label": "Wielkie Pi (U+03A0) — Litera Często Wpisywana Zamiast Iloczynu" },
-        { "char": "∑", "label": "Sumowanie N-arne (U+2211) — Addytywny Bliźniak Iloczynu" },
-        { "char": "Σ", "label": "Wielka Sigma (U+03A3) — Litera Stojąca za Sumowaniem" }
+        { "char": "∏", "label": "Iloczyn N-arny (U+220F): Dedykowany Operator Iloczynu" },
+        { "char": "Π", "label": "Wielkie Pi (U+03A0): Litera Często Wpisywana Zamiast Iloczynu" },
+        { "char": "∑", "label": "Sumowanie N-arne (U+2211): Addytywny Bliźniak Iloczynu" },
+        { "char": "Σ", "label": "Wielka Sigma (U+03A3): Litera Stojąca za Sumowaniem" }
       ]
     },
     {
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

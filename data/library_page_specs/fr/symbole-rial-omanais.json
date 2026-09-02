@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-rial-omanais/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-rial-omanais/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Symbole du Rial Omanais",
       "intro": "Le caractère confirmé lui-même — copiable dès aujourd'hui via son code, même si aucune police ne l'affiche encore nativement.",
       "symbols": [
-        { "char": "⃄", "label": "Symbole du Rial Omanais (U+20C4, figé pour publication)" }
+        {
+          "char": "⃄",
+          "label": "Symbole du Rial Omanais (U+20C4, figé pour publication)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Autres Nouveaux Symboles Monétaires de Cette Version",
       "intro": "Le rial omanais n'est pas le seul nouveau symbole monétaire de la version Unicode 18.0 — deux autres monnaies ont reçu leur propre signe dans la même bêta.",
       "symbols": [
-        { "char": "⃃", "label": "Symbole du Dirham des Émirats (U+20C3)" },
-        { "char": "⃂", "label": "Symbole du Rufiyaa Maldivien (U+20C2)" }
+        {
+          "char": "⃃",
+          "label": "Symbole du Dirham des Émirats (U+20C3)"
+        },
+        {
+          "char": "⃂",
+          "label": "Symbole du Rufiyaa Maldivien (U+20C2)"
+        }
       ]
     },
     {
@@ -47,15 +65,33 @@
       "h2": "Le Symbole Monétaire du Golfe qui est Sorti une Version Plus Tôt",
       "intro": "Le symbole du riyal saoudien a franchi ce même chemin une version Unicode entière plus tôt — déjà définitif depuis Unicode 17.0, et non plus simplement en bêta.",
       "symbols": [
-        { "char": "⃁", "label": "Symbole du Riyal Saoudien (U+20C1, définitif depuis Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Symbole du Riyal Saoudien (U+20C1, définitif depuis Unicode 17.0)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "Tous les symboles monétaires mondiaux déjà copiables-collables aujourd'hui (en anglais)." },
-    { "href": "/fr/symbol/symbole-dirham/", "title": "Symbole du Dirham", "desc": "Le nouveau symbole monétaire des Émirats, qui sort dans la même bêta d'Unicode 18.0." },
-    { "href": "/fr/symbol/symbole-riyal-saoudien/", "title": "Symbole du Riyal Saoudien", "desc": "Un symbole monétaire du Golfe déjà définitif, une version Unicode d'avance." },
-    { "href": "/updates/unicode-18-beta-review-opens/", "title": "Unicode 18.0 Beta Review Opens", "desc": "L'ensemble de la version dont ce symbole fait partie (en anglais)." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Tous les symboles monétaires mondiaux déjà copiables-collables aujourd'hui (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-dirham/",
+      "title": "Symbole du Dirham",
+      "desc": "Le nouveau symbole monétaire des Émirats, qui sort dans la même bêta d'Unicode 18.0."
+    },
+    {
+      "href": "/fr/symbol/symbole-riyal-saoudien/",
+      "title": "Symbole du Riyal Saoudien",
+      "desc": "Un symbole monétaire du Golfe déjà définitif, une version Unicode d'avance."
+    },
+    {
+      "href": "/updates/unicode-18-beta-review-opens/",
+      "title": "Unicode 18.0 Beta Review Opens",
+      "desc": "L'ensemble de la version dont ce symbole fait partie (en anglais)."
+    }
   ]
 }

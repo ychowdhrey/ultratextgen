@@ -3036,9 +3036,41 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
+# The card's title block holds at most this many lines. Four is a geometric
+# limit, not a taste call: the block is centred on y=250 and grows upward by 33
+# per line, so at four lines the first line's ascender sits at y=106, clearing
+# the kicker baseline at y=96, and at five it sits at y=73 and collides with it.
+# Anything past the cap cannot be drawn, so `_fit_title` reports it rather than
+# dropping it.
+OG_TITLE_MAX_LINES = 4
+
+# Titles that overflowed during this run: (slug, title, lines, dropped words).
+# Collected rather than raised so one run reports every offender at once.
+TITLE_OVERFLOWS = []
+
+
+def _fit_title(slug, title, native):
+    """Wrap a card title to the lines the layout can actually draw.
+
+    This used to be a bare `[:3]`, which discarded the remainder in silence. An
+    answer-first title is longer than the ones the card was tuned for, and a run
+    that retitled nine pages truncated seven of them mid-phrase with nothing in
+    the output to say so -- 'Middle East Currency Symbols: 5 Have Their Own,'
+    with the answer cut off. The 24 pages already in that state when this was
+    added are why the overflow is reported rather than fatal by default: a check
+    that is red regardless of your change is one people learn to ignore. Pass
+    --strict-titles to make it fatal.
+    """
+    lines = smart_wrap(title, wrap_width_for(title, native))
+    if len(lines) > OG_TITLE_MAX_LINES:
+        TITLE_OVERFLOWS.append((slug, title, len(lines), lines[OG_TITLE_MAX_LINES:]))
+        lines = lines[:OG_TITLE_MAX_LINES]
+    return lines
+
+
 def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
-    wrapped = smart_wrap(title, wrap_width_for(title, native))[:3]
+    wrapped = _fit_title(slug, title, native)
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
     for i, line in enumerate(wrapped):
@@ -3082,24 +3114,24 @@ PAGES.update({
 "nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool: september 2026", "Officieel op 16-9-2026 · telefoons in 2027, onze schatting", m_doc, K_UPDATE),
 "sv-updates-dirham-symbol-unicode-18": ("Dirhamsymbolen: september 2026", "Officiell 16 sep 2026 · telefoner 2027, vår uppskattning", m_doc, K_UPDATE),
 "tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü: Eylül 2026", "16 Eylül 2026’da resmî · telefonlar 2027, tahminimiz", m_doc, K_UPDATE),
-"updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols in Unicode: The Scorecard", "5 have their own sign, 3 share one, 7 have none", m_doc, K_UPDATE),
-"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط في يونيكود: البطاقة التقييمية بعد إصدار 18.0", "5 عملات لها رمزها الخاص. 3 تتشارك رمزاً عاماً. 7 على الأقل بلا رمز.", m_doc, K_UPDATE),
-"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten in Unicode: Die Bilanz nach 18.0", "5 Währungen haben ein eigenes Zeichen. 3 teilen sich eins. Mindestens 7 haben keins.", m_doc, K_UPDATE),
-"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de Moneda de Oriente Medio en Unicode: El Marcador Tras la 18.0", "5 monedas tienen su propio signo. 3 comparten uno genérico. Al menos 7 no tienen ninguno.", m_doc, K_UPDATE),
-"it-updates-simboli-valuta-medio-oriente-unicode-18": ("I Simboli di Valuta del Medio Oriente in Unicode: Il Bilancio Dopo Unicode 18.0", "5 valute hanno un proprio segno. 3 ne condividono uno. Almeno 7 non ne hanno nessuno.", m_doc, K_UPDATE),
-"ko-updates-jungdong-hwapye-giho-unicode-18": ("유니코드 속 중동 화폐 기호: 18.0 이후 현황표", "5개 통화는 전용 기호를 갖췄습니다. 3개는 공용 기호를 씁니다. 최소 7개는 기호가 없습니다.", m_doc, K_UPDATE),
-"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten in Unicode: het scorebord na versie 18.0", "5 valuta's hebben een eigen teken. 3 delen er een. Minstens 7 hebben er geen.", m_doc, K_UPDATE),
-"sv-updates-valutasymboler-mellanostern-unicode-18": ("Mellanösterns valutasymboler i Unicode: Lägesrapporten efter 18.0", "5 valutor har ett eget tecken. 3 delar ett. Minst 7 saknar helt.", m_doc, K_UPDATE),
-"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Unicode'da Orta Doğu Para Birimi Sembolleri: 18.0 Sonrası Karne", "5 para birimi kendi sembolüne sahip. 3'ü ortak sembol kullanıyor. En az 7'sinde sembol yok.", m_doc, K_UPDATE),
-"updates-unicode-18-beta-review-opens": ("Unicode 18.0 Beta Review Opens: What's Shipping", "13,047 new characters, four scripts, 9 draft emoji", m_doc, K_UPDATE),
-"ar-updates-unicode-18-beta-review-opens": ("انطلاق المراجعة التجريبية ليونيكود 18.0: ما الجديد", "13,047 حرفاً جديداً، أربع كتابات، 9 إيموجي أولية", m_doc, K_UPDATE),
-"de-updates-unicode-18-beta-startet": ("Unicode 18.0 Beta startet: Was jetzt kommt", "13.047 neue Zeichen, vier Schriftsysteme, 9 Entwurfs-Emojis", m_doc, K_UPDATE),
-"es-updates-unicode-18-beta-comienza-revision": ("Se Abre la Revisión Beta de Unicode 18.0: Qué Trae", "13.047 caracteres nuevos, cuatro escrituras, 9 emojis provisionales", m_doc, K_UPDATE),
-"it-updates-revisione-beta-unicode-18": ("Revisione Beta di Unicode 18.0 al Via: Cosa Sta Arrivando", "13.047 nuovi caratteri, quattro scritture, 9 emoji provvisorie", m_doc, K_UPDATE),
-"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0 베타 심사 시작: 이번에 추가되는 것들", "새 문자 13,047개, 4종 문자 체계, 초안 이모지 9종", m_doc, K_UPDATE),
-"nl-updates-unicode-18-beta-van-start": ("Unicode 18.0-bèta van start: wat erin zit", "13.047 nieuwe tekens, vier schriftsystemen, 9 concept-emoji", m_doc, K_UPDATE),
-"sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
-"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
+"updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols", "5 own signs \u00b7 3 shared \u00b7 7 none \u00b7 every row copies", m_doc, K_UPDATE),
+"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط", "5 خاصة · 3 مشتركة · 7 بلا رمز · كل صف ينسخ", m_doc, K_UPDATE),
+"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten", "5 eigene · 3 geteilte · 7 ohne · jede Zeile kopiert", m_doc, K_UPDATE),
+"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de moneda de Oriente Medio", "5 propios · 3 compartidos · 7 ninguno · cada fila se copia", m_doc, K_UPDATE),
+"it-updates-simboli-valuta-medio-oriente-unicode-18": ("Simboli di valuta del Medio Oriente", "5 propri · 3 condivisi · 7 assenti · ogni riga si copia", m_doc, K_UPDATE),
+"ko-updates-jungdong-hwapye-giho-unicode-18": ("중동 화폐 기호", "전용 5 · 공용 3 · 없음 7 · 모든 행 복사", m_doc, K_UPDATE),
+"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten", "5 eigen · 3 gedeeld · 7 zonder · elke rij kopieert", m_doc, K_UPDATE),
+"sv-updates-valutasymboler-mellanostern-unicode-18": ("Valutasymboler i Mellanöstern", "5 egna · 3 delade · 7 utan · varje rad kopieras", m_doc, K_UPDATE),
+"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Orta Doğu para birimi sembolleri", "5 kendi · 3 ortak · 7 sembolsüz · her satır kopyalanır", m_doc, K_UPDATE),
+"updates-unicode-18-beta-review-opens": ("What's New in Unicode 18.0", "13,007 characters, three historical scripts, 9 emoji", m_doc, K_UPDATE),
+"ar-updates-unicode-18-beta-review-opens": ("ما الجديد في يونيكود 18.0", "13,007 محرف، ثلاث كتابات تاريخية، 9 إيموجي", m_doc, K_UPDATE),
+"de-updates-unicode-18-beta-startet": ("Was ist neu in Unicode 18.0", "13.007 Zeichen, drei historische Schriften, 9 Emojis", m_doc, K_UPDATE),
+"es-updates-unicode-18-beta-comienza-revision": ("Qué trae Unicode 18.0", "13.007 caracteres, tres escrituras históricas, 9 emojis", m_doc, K_UPDATE),
+"it-updates-revisione-beta-unicode-18": ("Cosa c'è in Unicode 18.0", "13.007 caratteri, tre scritture storiche, 9 emoji", m_doc, K_UPDATE),
+"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0에 뭐가 들어가나", "13,007자, 역사 문자 3종, 이모지 9개", m_doc, K_UPDATE),
+"nl-updates-unicode-18-beta-van-start": ("Wat er in Unicode 18.0 zit", "13.007 tekens, drie historische schriften, 9 emoji", m_doc, K_UPDATE),
+"sv-updates-unicode-18-betagranskning-oppnar": ("Det här finns i Unicode 18.0", "13 007 tecken, tre historiska skriftsystem, 9 emojier", m_doc, K_UPDATE),
+"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0'da neler var", "13.007 karakter, üç tarihî yazı, 9 emoji", m_doc, K_UPDATE),
 "updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
 "ar-updates-unicode-18-release-date-confirmed": ("تأكيد موعد إصدار يونيكود 18.0", "16 سبتمبر 2026 — وكتابة واحدة حُذفت", m_doc, K_UPDATE),
 "de-updates-unicode-18-erscheinungsdatum-bestaetigt": ("Unicode 18.0: Datum bestätigt", "16. September 2026 — eine Schrift gestrichen", m_doc, K_UPDATE),
@@ -3123,18 +3155,18 @@ PAGES.update({
 "th-updates-unicode-18-release-date-confirmed": ("ยืนยันวันปล่อย Unicode 18.0", "16 กันยายน 2026 — ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
 "tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi onaylandı", "16 Eylül 2026 — bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
-"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
-"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
+"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة", "الوجه المتصدّع يفوز بالتصويت العام، ثم المخلل والشهاب", m_doc, K_UPDATE),
+"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Die neuen Emojis", "Berstendes Gesicht gewinnt die Abstimmung, dahinter Essiggurke und Meteor", m_doc, K_UPDATE),
 "es-updates-unicode-18-nuevos-emojis-votacion": ("Los Nuevos Emojis de Unicode 18.0: Cara Agrietada Gana la Votación", "Pepinillo y Meteoro completan el top 3", m_doc, K_UPDATE),
 "fr-updates-unicode-18-nouveaux-emojis-vote": ("Nouveaux Emoji Unicode 18.0 : Visage Fissuré Remporte le Vote", "Cornichon et Météore complètent le top 3", m_doc, K_UPDATE),
 "id-updates-unicode-18-emoji-baru-voting": ("Emoji Baru Unicode 18.0: Cracking Face Menang Voting", "Pickle dan Meteor melengkapi 3 besar", m_doc, K_UPDATE),
 "ja-updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0の新絵文字：「ひび割れ顔」が投票で1位に", "ピクルスと流れ星が続く", m_doc, K_UPDATE),
-"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지: 공개 투표 1위는 Cracking Face", "Pickle과 Meteor가 2, 3위", m_doc, K_UPDATE),
+"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지", "공개 투표 1위 Cracking Face, 2·3위 Pickle과 Meteor", m_doc, K_UPDATE),
 "nl-updates-unicode-18-nieuwe-emoji-stemming": ("Nieuwe emoji in Unicode 18.0: Cracking Face wint de stemming", "Pickle en Meteor maken de top 3 compleet", m_doc, K_UPDATE),
-"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe Emoji Unicode 18.0: Pękająca Twarz Wygrywa Głosowanie", "Kiszony Ogórek i Meteor uzupełniają podium", m_doc, K_UPDATE),
+"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe emoji w Unicode 18.0", "Pękająca Twarz wygrywa głosowanie, dalej Kiszony Ogórek i Meteor", m_doc, K_UPDATE),
 "pt-updates-unicode-18-novos-emojis-votacao": ("Novos Emojis do Unicode 18.0: Rosto Rachando Vence a Votação", "Picles e Meteoro completam o top 3", m_doc, K_UPDATE),
-"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании", "Солёный огурец и Метеор замыкают тройку лидеров", m_doc, K_UPDATE),
-"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ Unicode 18.0: ใบหน้าแตกร้าวคว้าอันดับ 1 โหวต", "แตงกวาดองและดาวตกครองอันดับ 2-3", m_doc, K_UPDATE),
+"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0", "«Трескающееся лицо» побеждает в голосовании, за ним огурец и метеор", m_doc, K_UPDATE),
+"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ใน Unicode 18.0", "ใบหน้าแตกร้าวคว้าอันดับ 1 จากโหวต ตามด้วยแตงกวาดองและดาวตก", m_doc, K_UPDATE),
 "tr-updates-unicode-18-yeni-emoji-oylama": ("Unicode 18.0'ın Yeni Emojileri: Oylamayı Cracking Face Kazandı", "Pickle ve Meteor ilk 3'ü tamamlıyor", m_doc, K_UPDATE),
 "updates-forza-horizon-6-gamertag-rules": ("Forza Horizon 6: Gamertag and Driver Name Split", "Two name fields, two very different rule sets", m_doc, K_UPDATE),
 "updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
@@ -3563,6 +3595,12 @@ def main():
     ap.add_argument("--no-page-motifs", action="store_true",
                     help="disable deriving a page's motif from its own copy-tiles "
                          "(see motif_from_page) and use the registered motif as-is.")
+    ap.add_argument("--strict-titles", action="store_true",
+                    help="exit non-zero if any card title needs more lines than the "
+                         "layout can draw. Off by default because 24 registered pages "
+                         "were already in that state when the check was added, and a "
+                         "check that is red regardless of your change is one people "
+                         "learn to ignore.")
     ap.add_argument("--force", action="store_true",
                     help="re-render pages whose art already exists. Without this, an "
                          "existing hero+OG pair is left alone — so a run only fills gaps "
@@ -3617,6 +3655,14 @@ def main():
         selected = keep
 
     if a.dry_run:
+        # og_png_svg never runs on a dry run, so fit the titles here — that makes
+        # `--dry-run --all --strict-titles` a whole-site title check costing no
+        # rasterisation.
+        # over `selected + already`, not `selected`: whether a title fits is a
+        # property of the registry, not of whether a PNG happens to be on disk,
+        # and without `already` a dry run of a finished tree measures nothing.
+        for slug in selected + already:
+            _fit_title(slug, PAGES[slug][0], _native_for_slug(slug))
         if already:
             print(f"[dry-run] {len(already)} page(s) already have their art — skipping "
                   f"(use --force to re-render).")
@@ -3626,7 +3672,7 @@ def main():
         if a.all:
             print(f"  assets/hero/{HOME_CARD}.svg  +  assets/og/{HOME_CARD}.png")
             print(f"  + {len(LOCALIZED_HOME)} localized homepage card(s)")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     if already and not a.dry_run:
         print(f"{len(already)} page(s) already have their art — skipped "
@@ -3651,7 +3697,7 @@ def main():
     # business rewriting the homepage's art.
     if not a.all:
         print(f"wrote {n} hero SVG + OG PNG pair(s) (scoped to: {', '.join(prefixes)})")
-        return 0
+        return report_title_overflows(a.strict_titles)
 
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
@@ -3679,6 +3725,31 @@ def main():
     print("\nNOTE: a full run rewrites every asset. Review `git status` and revert any "
           "file whose only change is a re-render before committing.")
     report_orphan_keys()
+    return report_title_overflows(a.strict_titles)
+
+
+def report_title_overflows(strict):
+    """Print every title this run could not draw in full, and say what was lost.
+
+    Reported by default, fatal under --strict-titles. The distinction matters:
+    24 registered titles already overflowed when this was added, so a hard
+    failure would have been red on every run regardless of the change being
+    made. Same call, and same reasoning, as check-image-assets.py being
+    informational while check-new-page-image-assets.py gates.
+    """
+    if not TITLE_OVERFLOWS:
+        return 0
+    print(f"\n{len(TITLE_OVERFLOWS)} card title(s) need more than "
+          f"{OG_TITLE_MAX_LINES} lines and were cut:")
+    for slug, title, n_lines, dropped in TITLE_OVERFLOWS:
+        print(f"  {slug}  ({n_lines} lines, {OG_TITLE_MAX_LINES} fit)")
+        print(f"      title:   {title}")
+        print(f"      dropped: {' '.join(dropped)}")
+    print("  Fix: put the head term in the card title and the rest in the sub line, "
+          "which does not wrap.")
+    if strict:
+        print("  --strict-titles: failing.")
+        return 1
     return 0
 
 

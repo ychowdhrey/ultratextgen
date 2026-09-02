@@ -20,15 +20,15 @@
       "symbols": [
         {
           "char": "φ",
-          "label": "Greek Small Letter Phi (U+03C6) — The Golden-Ratio Letter, 'Loopy' Open Form"
+          "label": "Greek Small Letter Phi (U+03C6): The Golden-Ratio Letter, 'Loopy' Open Form"
         },
         {
           "char": "Φ",
-          "label": "Greek Capital Letter Phi (U+03A6) — Magnetic Flux in Physics"
+          "label": "Greek Capital Letter Phi (U+03A6): Magnetic Flux in Physics"
         },
         {
           "char": "ϕ",
-          "label": "Greek Phi Symbol (U+03D5) — The 'Closed,' Stroked Math Variant"
+          "label": "Greek Phi Symbol (U+03D5): The 'Closed,' Stroked Math Variant"
         }
       ]
     },
@@ -40,19 +40,19 @@
       "symbols": [
         {
           "char": "φ",
-          "label": "Lowercase Phi (U+03C6) — Golden Ratio ≈ 1.6180339887"
+          "label": "Lowercase Phi (U+03C6): Golden Ratio ≈ 1.6180339887"
         },
         {
           "char": "ϕ",
-          "label": "Greek Phi Symbol (U+03D5) — The Math-Preferred Closed Glyph"
+          "label": "Greek Phi Symbol (U+03D5): The Math-Preferred Closed Glyph"
         },
         {
           "char": "Φ",
-          "label": "Capital Phi (U+03A6) — Magnetic Flux"
+          "label": "Capital Phi (U+03A6): Magnetic Flux"
         },
         {
           "char": "√",
-          "label": "Square Root (U+221A) — Appears in Phi's Formula (1 + √5) / 2"
+          "label": "Square Root (U+221A): Appears in Phi's Formula (1 + √5) / 2"
         }
       ]
     },

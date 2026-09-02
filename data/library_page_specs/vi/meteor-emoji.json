@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/meteor-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/meteor-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Meteor",
       "intro": "Ký tự bản nháp chính nó — sao chép được ngay hôm nay dưới dạng mã điểm, dù chưa phông chữ nào có thể hiển thị nó.",
       "symbols": [
-        { "char": "🪋", "label": "Meteor (bản nháp, U+1FA8B)" }
+        {
+          "char": "🪋",
+          "label": "Meteor (bản nháp, U+1FA8B)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Các Emoji Thường Bị Nhầm Lẫn",
       "intro": "Những emoji thiên thể đã được mã hóa mà Meteor thường bị so sánh hoặc bị cho là trùng lặp.",
       "symbols": [
-        { "char": "☄️", "label": "Comet — thiết kế mà Meteor tách ra khỏi" },
-        { "char": "🌠", "label": "Shooting Star (Sao Băng)" },
-        { "char": "⭐", "label": "Star (Ngôi Sao)" }
+        {
+          "char": "☄️",
+          "label": "Comet: thiết kế mà Meteor tách ra khỏi"
+        },
+        {
+          "char": "🌠",
+          "label": "Shooting Star (Sao Băng)"
+        },
+        {
+          "char": "⭐",
+          "label": "Star (Ngôi Sao)"
+        }
       ]
     },
     {
@@ -48,17 +69,41 @@
       "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
       "intro": "Meteor không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB) — thắng cuộc bình chọn công khai" },
-        { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" },
-        { "char": "🫌", "label": "Monarch Butterfly (bản nháp, U+1FACC)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bản nháp, U+1FAEB): thắng cuộc bình chọn công khai"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (bản nháp, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bản nháp, U+1FACC)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/weather-symbols/", "title": "Ký Hiệu Thời Tiết", "desc": "Mặt trời, mưa, tuyết và mọi ký tự thiên thể đã được mã hóa, bao gồm cả Comet." },
-    { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai." },
-    { "href": "/vi/symbol/pickle-emoji/", "title": "Emoji Pickle", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn." },
-    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Các Emoji Mới Của Unicode 18.0", "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai." }
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Ký Hiệu Thời Tiết",
+      "desc": "Mặt trời, mưa, tuyết và mọi ký tự thiên thể đã được mã hóa, bao gồm cả Comet."
+    },
+    {
+      "href": "/vi/symbol/cracking-face-emoji/",
+      "title": "Emoji Cracking Face",
+      "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai."
+    },
+    {
+      "href": "/vi/symbol/pickle-emoji/",
+      "title": "Emoji Pickle",
+      "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Các Emoji Mới Của Unicode 18.0",
+      "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai."
+    }
   ]
 }

@@ -64,14 +64,14 @@
       "h2": "W Co Może Zamienić Się Pion",
       "intro": "Pion, który dotrze do przeciwległego końca szachownicy, musi się przemienić — w hetmana, wieżę, gońca albo skoczka we własnym kolorze. Nigdy nie może stać się królem i nie może pozostać pionem. Hetman to zwykły wybór; wszystko inne to „podpromocja”.",
       "symbols": [
-        { "char": "♛", "label": "Czarny Hetman Szachowy (U+265B) — zwykła przemiana" },
+        { "char": "♛", "label": "Czarny Hetman Szachowy (U+265B): zwykła przemiana" },
         { "char": "♜", "label": "Czarna Wieża Szachowa (U+265C)" },
         { "char": "♝", "label": "Czarny Goniec Szachowy (U+265D)" },
-        { "char": "♞", "label": "Czarny Skoczek Szachowy (U+265E) — podpromocja" }
+        { "char": "♞", "label": "Czarny Skoczek Szachowy (U+265E): podpromocja" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/chess-symbols/",

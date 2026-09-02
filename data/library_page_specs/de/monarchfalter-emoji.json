@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/monarchfalter-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/monarchfalter-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "monarchfalter",
@@ -29,7 +37,10 @@
       "h2": "Monarchfalter Emoji",
       "intro": "Das Entwurfszeichen selbst — schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
       "symbols": [
-        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" }
+        {
+          "char": "🫌",
+          "label": "Monarchfalter (Entwurf, U+1FACC)"
+        }
       ]
     },
     {
@@ -38,7 +49,10 @@
       "h2": "Das Emoji, aus dem er herausgelöst wurde",
       "intro": "Das bereits kodierte generische Emoji, aus dem Monarchfalter herausgelöst wird, und der Nachbar, mit dem es am häufigsten fälschlich dargestellt wird.",
       "symbols": [
-        { "char": "🦋", "label": "Schmetterling — die generische Art, aus der Monarchfalter herausgelöst wird" }
+        {
+          "char": "🦋",
+          "label": "Schmetterling: die generische Art, aus der Monarchfalter herausgelöst wird"
+        }
       ]
     },
     {
@@ -47,9 +61,18 @@
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
       "intro": "Monarchfalter ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
-        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB) — Gewinner der öffentlichen Abstimmung" },
-        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (Entwurf, U+1FA8B)" }
+        {
+          "char": "🫫",
+          "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung"
+        },
+        {
+          "char": "🫝",
+          "label": "Essiggurke (Entwurf, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (Entwurf, U+1FA8B)"
+        }
       ]
     }
   ],

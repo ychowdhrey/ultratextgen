@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-peso/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-peso/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "I Due Simboli Chiamati \"Simbolo del Peso\" — ₱ e $",
       "intro": "Entrambi vengono chiamati simbolo del peso. ₱ è il carattere proprio del peso filippino; $ è quello che usano quasi tutti gli altri pesos — perché lo stesso segno del dollaro probabilmente è nato come abbreviazione del peso spagnolo. Se derivi da una \"Ps\" scritta a mano o dalle Colonne d'Ercole avvolte da una S sulle monete spagnole a otto reales è tuttora oggetto di un dibattito storico genuino.",
       "symbols": [
-        { "char": "₱", "label": "Simbolo del Peso (U+20B1) — il glifo dedicato del peso filippino" },
-        { "char": "$", "label": "Simbolo del Dollaro (U+0024) — il segno che usano davvero il peso messicano, argentino e gli altri" }
+        {
+          "char": "₱",
+          "label": "Simbolo del Peso (U+20B1): il glifo dedicato del peso filippino"
+        },
+        {
+          "char": "$",
+          "label": "Simbolo del Dollaro (U+0024): il segno che usano davvero il peso messicano, argentino e gli altri"
+        }
       ]
     },
     {
@@ -39,12 +53,30 @@
       "h2": "La Famiglia delle Valute a Lettera Barrata",
       "intro": "Il simbolo del peso è una P maiuscola attraversata da due barre parallele — la stessa ricetta dietro un'intera generazione di segni valutari moderni, ciascuno una lettera nazionale barrata da una o due linee. Pronti da incollare ovunque.",
       "symbols": [
-        { "char": "₹", "label": "Segno della Rupia Indiana (U+20B9) — una R barrata, adottata ufficialmente nel 2010" },
-        { "char": "₩", "label": "Segno del Won (U+20A9) — una W con due barre" },
-        { "char": "₦", "label": "Segno della Naira (U+20A6) — una N barrata (Nigeria)" },
-        { "char": "₴", "label": "Segno della Hryvnia (U+20B4) — una lettera barrata per l'Ucraina" },
-        { "char": "₫", "label": "Segno del Dong (U+20AB) — una d barrata (Vietnam)" },
-        { "char": "€", "label": "Segno dell'Euro (U+20AC) — una E arrotondata con due tratti" }
+        {
+          "char": "₹",
+          "label": "Segno della Rupia Indiana (U+20B9): una R barrata, adottata ufficialmente nel 2010"
+        },
+        {
+          "char": "₩",
+          "label": "Segno del Won (U+20A9): una W con due barre"
+        },
+        {
+          "char": "₦",
+          "label": "Segno della Naira (U+20A6): una N barrata (Nigeria)"
+        },
+        {
+          "char": "₴",
+          "label": "Segno della Hryvnia (U+20B4): una lettera barrata per l'Ucraina"
+        },
+        {
+          "char": "₫",
+          "label": "Segno del Dong (U+20AB): una d barrata (Vietnam)"
+        },
+        {
+          "char": "€",
+          "label": "Segno dell'Euro (U+20AC): una E arrotondata con due tratti"
+        }
       ]
     },
     {
@@ -53,11 +85,26 @@
       "h2": "Sosia: Glifi Scambiati per ₱",
       "intro": "Poiché ₱ è essenzialmente una P barrata, viene scambiato con altri caratteri a forma di P — incluso uno che è una valuta completamente diversa. Ognuno è un codepoint Unicode a sé, non una variante stilistica.",
       "symbols": [
-        { "char": "₽", "label": "Simbolo del Rublo (U+20BD) — la valuta russa, anch'essa una P barrata ma con una barra diversa" },
-        { "char": "P", "label": "Lettera Latina Maiuscola P (U+0050) — il ripiego semplice spesso digitato per il peso" },
-        { "char": "Ᵽ", "label": "P Latina Maiuscola con Tratto (U+2C63) — una P con una sola barra usata in linguistica, non in valuta" },
-        { "char": "Ρ", "label": "Lettera Greca Maiuscola Rho (U+03A1) — assomiglia a una P" },
-        { "char": "Р", "label": "Lettera Cirillica Maiuscola Er (U+0420) — un altro sosia della P" }
+        {
+          "char": "₽",
+          "label": "Simbolo del Rublo (U+20BD): la valuta russa, anch'essa una P barrata ma con una barra diversa"
+        },
+        {
+          "char": "P",
+          "label": "Lettera Latina Maiuscola P (U+0050): il ripiego semplice spesso digitato per il peso"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "P Latina Maiuscola con Tratto (U+2C63): una P con una sola barra usata in linguistica, non in valuta"
+        },
+        {
+          "char": "Ρ",
+          "label": "Lettera Greca Maiuscola Rho (U+03A1): assomiglia a una P"
+        },
+        {
+          "char": "Р",
+          "label": "Lettera Cirillica Maiuscola Er (U+0420): un altro sosia della P"
+        }
       ]
     }
   ],

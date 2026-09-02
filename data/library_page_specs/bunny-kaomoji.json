@@ -16,12 +16,30 @@
       "h2": "Cute Bunny Kaomoji",
       "intro": "Soft, round-eared rabbits for a sweet touch.",
       "symbols": [
-        { "char": "(•ㅅ•)", "label": "Little Bunny" },
-        { "char": "(ᐢ..ᐢ)", "label": "Round-Eared Bunny" },
-        { "char": "ᕱ⑅ᕱ", "label": "Tiny Rabbit" },
-        { "char": "(ㅇㅅㅇ❀)", "label": "Flower Bunny" },
-        { "char": "(՞•֊•՞)", "label": "Curious Bunny" },
-        { "char": "ᵔ·͈༝·͈ᵔ", "label": "Sleepy Bunny" }
+        {
+          "char": "(•ㅅ•)",
+          "label": "Little Bunny"
+        },
+        {
+          "char": "(ᐢ..ᐢ)",
+          "label": "Round-Eared Bunny"
+        },
+        {
+          "char": "ᕱ⑅ᕱ",
+          "label": "Tiny Rabbit"
+        },
+        {
+          "char": "(ㅇㅅㅇ❀)",
+          "label": "Flower Bunny"
+        },
+        {
+          "char": "(՞•֊•՞)",
+          "label": "Curious Bunny"
+        },
+        {
+          "char": "ᵔ·͈༝·͈ᵔ",
+          "label": "Sleepy Bunny"
+        }
       ]
     },
     {
@@ -30,11 +48,26 @@
       "h2": "Floppy-Eared Bunny Kaomoji",
       "intro": "Long, floppy-eared rabbits drawn with slashes.",
       "symbols": [
-        { "char": "／(^ ᆺ ^)＼", "label": "Floppy Ears" },
-        { "char": "／(･ × ･)＼", "label": "Alert Bunny" },
-        { "char": "○(・x・)", "label": "Peeking Bunny" },
-        { "char": "U・x・U", "label": "Long-Ear Bunny" },
-        { "char": "／(=ㅇㅅㅇ=)＼", "label": "Big Bunny" }
+        {
+          "char": "／(^ ᆺ ^)＼",
+          "label": "Floppy Ears"
+        },
+        {
+          "char": "／(･ × ･)＼",
+          "label": "Alert Bunny"
+        },
+        {
+          "char": "○(・x・)",
+          "label": "Peeking Bunny"
+        },
+        {
+          "char": "U・x・U",
+          "label": "Long-Ear Bunny"
+        },
+        {
+          "char": "／(=ㅇㅅㅇ=)＼",
+          "label": "Big Bunny"
+        }
       ]
     },
     {
@@ -43,11 +76,26 @@
       "h2": "Happy Bunny Kaomoji",
       "intro": "Bouncy, cheerful rabbits for good news.",
       "symbols": [
-        { "char": "(=˃ᆺ˂)", "label": "Excited Bunny" },
-        { "char": "(⁎˃ᆺ˂)", "label": "Happy Hop" },
-        { "char": "٩(•ㅅ•)۶", "label": "Cheering Bunny" },
-        { "char": "(ᐢ ˃ ˕ ˂ ᐢ)", "label": "Delighted Bunny" },
-        { "char": "(•ㅅ•)♡", "label": "Loving Bunny" }
+        {
+          "char": "(=˃ᆺ˂)",
+          "label": "Excited Bunny"
+        },
+        {
+          "char": "(⁎˃ᆺ˂)",
+          "label": "Happy Hop"
+        },
+        {
+          "char": "٩(•ㅅ•)۶",
+          "label": "Cheering Bunny"
+        },
+        {
+          "char": "(ᐢ ˃ ˕ ˂ ᐢ)",
+          "label": "Delighted Bunny"
+        },
+        {
+          "char": "(•ㅅ•)♡",
+          "label": "Loving Bunny"
+        }
       ]
     },
     {
@@ -56,18 +104,45 @@
       "h2": "Grumpy Bunny Kaomoji",
       "intro": "Pouty, unimpressed rabbits with attitude.",
       "symbols": [
-        { "char": "（ÒㅅÓ)", "label": "Grumpy Bunny" },
-        { "char": "(¬ᆺ¬)", "label": "Side-Eye Bunny" },
-        { "char": "(ᐢ˵•̀ ᆺ •́˵ᐢ)", "label": "Annoyed Bunny" },
-        { "char": "(꒰⍢꒱)", "label": "Blank Bunny" }
+        {
+          "char": "（ÒㅅÓ)",
+          "label": "Grumpy Bunny"
+        },
+        {
+          "char": "(¬ᆺ¬)",
+          "label": "Side-Eye Bunny"
+        },
+        {
+          "char": "(ᐢ˵•̀ ᆺ •́˵ᐢ)",
+          "label": "Annoyed Bunny"
+        },
+        {
+          "char": "(꒰⍢꒱)",
+          "label": "Blank Bunny"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/cat-kaomoji/", "title": "Cat Kaomoji", "desc": "Cute cat text faces with whiskers and paws to copy and paste." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." },
-    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful Japanese text faces for any good mood." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Cute cat text faces with whiskers and paws to copy and paste."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces for any good mood."
+    }
   ]
 }

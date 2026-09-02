@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/psi-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-psi/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/psi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/psi-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-psi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/psi-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "the-psi-symbol",
@@ -29,8 +37,14 @@
       "h2": "O Símbolo Psi — ψ e Ψ",
       "intro": "A letra grega em si, nas duas caixas. O ψ minúsculo e o Ψ maiúsculo são as duas formas que todo mundo usa — cole a que a equação ou o logotipo pedir.",
       "symbols": [
-        { "char": "ψ", "label": "Letra Grega Minúscula Psi (U+03C8)" },
-        { "char": "Ψ", "label": "Letra Grega Maiúscula Psi (U+03A8)" }
+        {
+          "char": "ψ",
+          "label": "Letra Grega Minúscula Psi (U+03C8)"
+        },
+        {
+          "char": "Ψ",
+          "label": "Letra Grega Maiúscula Psi (U+03A8)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Psi na Mecânica Quântica",
       "intro": "O papel de destaque de psi: a função de onda de Schrödinger. Por convenção, o Ψ maiúsculo é a função de onda completa e dependente do tempo de um sistema, e o ψ minúsculo é a versão estacionária, independente do tempo — muitas vezes pareada com φ (fi) para um estado companheiro.",
       "symbols": [
-        { "char": "Ψ", "label": "Psi Maiúsculo (U+03A8) — Função de Onda Dependente do Tempo" },
-        { "char": "ψ", "label": "Psi Minúsculo (U+03C8) — Função de Onda Estacionária" },
-        { "char": "φ", "label": "Letra Grega Minúscula Fi (U+03C6) — o Estado Companheiro Frequentemente Pareado com ψ" }
+        {
+          "char": "Ψ",
+          "label": "Psi Maiúsculo (U+03A8): Função de Onda Dependente do Tempo"
+        },
+        {
+          "char": "ψ",
+          "label": "Psi Minúsculo (U+03C8): Função de Onda Estacionária"
+        },
+        {
+          "char": "φ",
+          "label": "Letra Grega Minúscula Fi (U+03C6): o Estado Companheiro Frequentemente Pareado com ψ"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Psi na Psicologia e a Forma de Tridente",
       "intro": "O Ψ maiúsculo é a marca global da psicologia, da psiquiatria e da parapsicologia — escolhida porque «psique» começa com psi, não por causa de nenhuma lenda de forcado do diabo. Sua silhueta de três pontas é a razão de ser comparada a um tridente, a arma de Poseidon.",
       "symbols": [
-        { "char": "Ψ", "label": "Psi Maiúsculo (U+03A8) — o Ícone da Psicologia e da Psiquiatria" },
-        { "char": "ψ", "label": "Psi Minúsculo (U+03C8) — a Letra de «Psique»" },
-        { "char": "🔱", "label": "Emblema de Tridente (U+1F531) — o Tridente de Poseidon, a Forma que Psi Ecoa" }
+        {
+          "char": "Ψ",
+          "label": "Psi Maiúsculo (U+03A8): o Ícone da Psicologia e da Psiquiatria"
+        },
+        {
+          "char": "ψ",
+          "label": "Psi Minúsculo (U+03C8): a Letra de «Psique»"
+        },
+        {
+          "char": "🔱",
+          "label": "Emblema de Tridente (U+1F531): o Tridente de Poseidon, a Forma que Psi Ecoa"
+        }
       ]
     },
     {
@@ -61,10 +93,22 @@
       "h2": "Letras Gregas Relacionadas",
       "intro": "Psi é a 23ª letra grega, bem antes de ômega fechar o alfabeto. Aqui estão as vizinhas que as pessoas copiam junto com ela.",
       "symbols": [
-        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega — a Letra Logo Depois de Psi" },
-        { "char": "π", "label": "Letra Grega Minúscula Pi" },
-        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" },
-        { "char": "Δ", "label": "Letra Grega Maiúscula Delta" }
+        {
+          "char": "Ω",
+          "label": "Letra Grega Maiúscula Ômega: a Letra Logo Depois de Psi"
+        },
+        {
+          "char": "π",
+          "label": "Letra Grega Minúscula Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Letra Grega Maiúscula Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Letra Grega Maiúscula Delta"
+        }
       ]
     }
   ],

@@ -803,7 +803,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "Kaze — Wind",
+        "string": "Kaze: Wind",
         "reason": "kanji gloss for 風. 'Wind' is the correct German noun and is spelled identically to the English. Evidence from de/library/fortnite-zeichen/ itself: every neighbouring gloss in the same section IS translated (Oni — Dämon, Ryu — Drache, Kaminari — Donner, Yami — Dunkelheit), so this one is kept because it genuinely matches.",
         "found_on": "de/library/fortnite-zeichen/",
         "added": "2026-08-31"
@@ -1501,7 +1501,7 @@
     ],
     "es": [
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "Spanish for & is \"ampersand\" (RAE); the prefix is the ASCII code in four bases. nl/pl carry the identical form",
         "found_on": "es/library/tabla-ascii/",
         "added": "2026-08-30"
@@ -3503,7 +3503,7 @@
     ],
     "fr": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "French for ~ is \"tilde\"; the prefix is the ASCII code in four bases. de/it/nl carry the identical form",
         "found_on": "fr/library/table-ascii/",
         "added": "2026-08-30"
@@ -3515,7 +3515,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "39 / 0x27 / 0b0100111 / 0o47 — Apostrophe",
+        "string": "39 / 0x27 / 0b0100111 / 0o47: Apostrophe",
         "reason": "French for the mark is \"apostrophe\"; the prefix is the ASCII code in four bases",
         "found_on": "fr/library/table-ascii/",
         "added": "2026-08-30"
@@ -5451,7 +5451,7 @@
     ],
     "it": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "a codepoint line; Tilde is also the Italian word",
         "found_on": "it/library/tabella-ascii/",
         "added": "2026-08-15"
@@ -6425,7 +6425,7 @@
     ],
     "nl": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "a codepoint line; Tilde is also the Dutch word",
         "found_on": "nl/library/ascii-tabel/",
         "added": "2026-08-15"
@@ -6437,7 +6437,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "a codepoint line; Ampersand is also the Dutch word",
         "found_on": "nl/library/ascii-tabel/",
         "added": "2026-08-15"
@@ -7149,7 +7149,7 @@
         "added": "2026-08-25"
       },
       {
-        "string": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand",
+        "string": "38 / 0x26 / 0b0100110 / 0o46: Ampersand",
         "reason": "a codepoint line; Ampersand is the Polish term too",
         "found_on": "pl/library/tabela-ascii/",
         "added": "2026-08-15"
@@ -9201,7 +9201,7 @@
     ],
     "tr": [
       {
-        "string": "126 / 0x7E / 0b1111110 / 0o176 — Tilde",
+        "string": "126 / 0x7E / 0b1111110 / 0o176: Tilde",
         "reason": "Turkish for ~ is \"tilde\"; the same table translates the neighbouring row to \"Kesme İşareti\"",
         "found_on": "tr/library/ascii-tablosu/",
         "added": "2026-08-30"

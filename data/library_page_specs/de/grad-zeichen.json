@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/degree-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/grad-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/degree-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/degree-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/grad-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/degree-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "related": [
     {
       "href": "/de/library/griechische-symbole/",
@@ -46,10 +54,22 @@
       "h2": "Grad- & Temperaturzeichen",
       "intro": "Das Gradzeichen und die eigenständigen Temperaturskalen-Zeichen.",
       "symbols": [
-        { "char": "°", "label": "Gradzeichen" },
-        { "char": "℃", "label": "Grad Celsius" },
-        { "char": "℉", "label": "Grad Fahrenheit" },
-        { "char": "K", "label": "Kelvin-Zeichen" }
+        {
+          "char": "°",
+          "label": "Gradzeichen"
+        },
+        {
+          "char": "℃",
+          "label": "Grad Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Grad Fahrenheit"
+        },
+        {
+          "char": "K",
+          "label": "Kelvin-Zeichen"
+        }
       ]
     },
     {
@@ -58,14 +78,38 @@
       "h2": "Winkelzeichen",
       "intro": "Winkelzeichen, die häufig zusammen mit Gradangaben geschrieben werden.",
       "symbols": [
-        { "char": "∠", "label": "Winkel" },
-        { "char": "∡", "label": "Gemessener Winkel" },
-        { "char": "∢", "label": "Sphärischer Winkel" },
-        { "char": "∟", "label": "Rechter Winkel" },
-        { "char": "⊾", "label": "Rechter Winkel mit Bogen" },
-        { "char": "⊿", "label": "Rechtwinkliges Dreieck" },
-        { "char": "⦝", "label": "Gemessener rechter Winkel mit Punkt" },
-        { "char": "⟂", "label": "Senkrecht" }
+        {
+          "char": "∠",
+          "label": "Winkel"
+        },
+        {
+          "char": "∡",
+          "label": "Gemessener Winkel"
+        },
+        {
+          "char": "∢",
+          "label": "Sphärischer Winkel"
+        },
+        {
+          "char": "∟",
+          "label": "Rechter Winkel"
+        },
+        {
+          "char": "⊾",
+          "label": "Rechter Winkel mit Bogen"
+        },
+        {
+          "char": "⊿",
+          "label": "Rechtwinkliges Dreieck"
+        },
+        {
+          "char": "⦝",
+          "label": "Gemessener rechter Winkel mit Punkt"
+        },
+        {
+          "char": "⟂",
+          "label": "Senkrecht"
+        }
       ]
     },
     {
@@ -74,13 +118,34 @@
       "h2": "Strich-, Minuten- & Sekundenzeichen",
       "intro": "Strichzeichen für Bogenminuten, Bogensekunden und Koordinatenangaben, einschließlich der gespiegelten Formen.",
       "symbols": [
-        { "char": "′", "label": "Strich (Minute)" },
-        { "char": "″", "label": "Doppelstrich (Sekunde)" },
-        { "char": "‴", "label": "Dreifachstrich" },
-        { "char": "⁗", "label": "Vierfachstrich" },
-        { "char": "‵", "label": "Gespiegelter Strich" },
-        { "char": "‶", "label": "Gespiegelter Doppelstrich" },
-        { "char": "‷", "label": "Gespiegelter Dreifachstrich" }
+        {
+          "char": "′",
+          "label": "Strich (Minute)"
+        },
+        {
+          "char": "″",
+          "label": "Doppelstrich (Sekunde)"
+        },
+        {
+          "char": "‴",
+          "label": "Dreifachstrich"
+        },
+        {
+          "char": "⁗",
+          "label": "Vierfachstrich"
+        },
+        {
+          "char": "‵",
+          "label": "Gespiegelter Strich"
+        },
+        {
+          "char": "‶",
+          "label": "Gespiegelter Doppelstrich"
+        },
+        {
+          "char": "‷",
+          "label": "Gespiegelter Dreifachstrich"
+        }
       ]
     },
     {
@@ -89,12 +154,30 @@
       "h2": "Geometrie & Maße",
       "intro": "Kreis- und Bogenzeichen, die zusammen mit Winkel- und Gradnotation verwendet werden.",
       "symbols": [
-        { "char": "⌀", "label": "Durchmesserzeichen" },
-        { "char": "⌒", "label": "Bogen" },
-        { "char": "⌓", "label": "Segment" },
-        { "char": "⊙", "label": "Eingekreister Punktoperator" },
-        { "char": "⦿", "label": "Eingekreiste Kugel" },
-        { "char": "∅", "label": "Leere Menge" }
+        {
+          "char": "⌀",
+          "label": "Durchmesserzeichen"
+        },
+        {
+          "char": "⌒",
+          "label": "Bogen"
+        },
+        {
+          "char": "⌓",
+          "label": "Segment"
+        },
+        {
+          "char": "⊙",
+          "label": "Eingekreister Punktoperator"
+        },
+        {
+          "char": "⦿",
+          "label": "Eingekreiste Kugel"
+        },
+        {
+          "char": "∅",
+          "label": "Leere Menge"
+        }
       ]
     }
   ]

@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-dirham/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-dirham/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +37,10 @@
       "h2": "Simbolo del Dirham",
       "intro": "Il carattere confermato in sé — copiabile già oggi tramite codepoint, anche se nessun font lo renderizza ancora in modo nativo.",
       "symbols": [
-        { "char": "⃃", "label": "Simbolo del Dirham degli EAU (U+20C3, bloccato per la pubblicazione)" }
+        {
+          "char": "⃃",
+          "label": "Simbolo del Dirham degli EAU (U+20C3, bloccato per la pubblicazione)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Altri Nuovi Simboli Valutari del Golfo in Questa Release",
       "intro": "Il dirham non è l'unico nuovo simbolo valutario in arrivo con Unicode 18.0 — altre due valute regionali hanno ottenuto un proprio segno nella stessa beta.",
       "symbols": [
-        { "char": "⃄", "label": "Simbolo del Rial Omanita (U+20C4)" },
-        { "char": "⃂", "label": "Simbolo della Rufiyaa delle Maldive (U+20C2)" }
+        {
+          "char": "⃄",
+          "label": "Simbolo del Rial Omanita (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Simbolo della Rufiyaa delle Maldive (U+20C2)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Simboli Valutari Già Esistenti Che Puoi Digitare Oggi",
       "intro": "Per contrasto — simboli valutari che hanno colmato questo stesso divario tra standard e tastiera già da anni e sono pienamente digitabili oggi.",
       "symbols": [
-        { "char": "$", "label": "Simbolo del Dollaro" },
-        { "char": "€", "label": "Simbolo dell'Euro" },
-        { "char": "£", "label": "Simbolo della Sterlina" }
+        {
+          "char": "$",
+          "label": "Simbolo del Dollaro"
+        },
+        {
+          "char": "€",
+          "label": "Simbolo dell'Euro"
+        },
+        {
+          "char": "£",
+          "label": "Simbolo della Sterlina"
+        }
       ]
     },
     {
@@ -59,7 +85,10 @@
       "h2": "Il Simbolo Valutario del Golfo Pubblicato una Versione Prima",
       "intro": "Il segno del riyal saudita ha percorso lo stesso cammino un'intera versione Unicode prima — già definitivo da Unicode 17.0, non solo in beta.",
       "symbols": [
-        { "char": "⃁", "label": "Simbolo del Riyal Saudita (U+20C1, definitivo da Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Simbolo del Riyal Saudita (U+20C1, definitivo da Unicode 17.0)"
+        }
       ]
     }
   ],

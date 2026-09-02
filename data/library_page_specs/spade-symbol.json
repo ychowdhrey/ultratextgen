@@ -18,8 +18,8 @@
       "h2": "The Spade Symbol — ♠ & ♤",
       "intro": "The suit itself, in both Unicode forms. The solid ♠ is the default 'black' spade; ♤ is the outline 'white' version, and ♠️ is the emoji-presentation form with a variation selector. Ready to paste anywhere.",
       "symbols": [
-        { "char": "♠", "label": "Black Spade Suit (U+2660) — Solid / Filled" },
-        { "char": "♤", "label": "White Spade Suit (U+2664) — Outline" },
+        { "char": "♠", "label": "Black Spade Suit (U+2660): Solid / Filled" },
+        { "char": "♤", "label": "White Spade Suit (U+2664): Outline" },
         { "char": "♠️", "label": "Spade Suit Emoji (U+2660 U+FE0F)" }
       ]
     },

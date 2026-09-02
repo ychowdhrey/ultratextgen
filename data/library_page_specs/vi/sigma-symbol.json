@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sigma-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/sigma-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sigma-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sigma-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/sigma-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sigma-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Chữ Cái Hy Lạp Sigma",
       "intro": "Sigma là chữ cái thứ 18 trong bảng chữ cái Hy Lạp. Nó có một dạng viết hoa và hai dạng viết thường — σ ở giữa hoặc đầu từ, và ς chỉ ở cuối từ. Dán dạng nào tùy bạn cần.",
       "symbols": [
-        { "char": "Σ", "label": "Sigma Hoa" },
-        { "char": "σ", "label": "Sigma Thường" },
-        { "char": "ς", "label": "Sigma Cuối Từ" }
+        {
+          "char": "Σ",
+          "label": "Sigma Hoa"
+        },
+        {
+          "char": "σ",
+          "label": "Sigma Thường"
+        },
+        {
+          "char": "ς",
+          "label": "Sigma Cuối Từ"
+        }
       ]
     },
     {
@@ -39,9 +57,18 @@
       "h2": "Ký Hiệu Trào Lưu Sigma Male",
       "intro": "Bất chấp cái tên, ký tự mọi người thực sự dán cho trào lưu «sigma male» thường là tượng đá moai 🗿 — gương mặt đá trống rỗng, sắc lạnh của nó lột tả «ánh nhìn sigma» tốt hơn bất kỳ chữ cái nào. Đây là những gương mặt lạnh lùng, vô cảm mang trọn tinh thần trào lưu.",
       "symbols": [
-        { "char": "🗿", "label": "Tượng Moai (ký tự sigma)" },
-        { "char": "😐", "label": "Mặt Trung Tính" },
-        { "char": "😑", "label": "Mặt Vô Cảm" }
+        {
+          "char": "🗿",
+          "label": "Tượng Moai (ký tự sigma)"
+        },
+        {
+          "char": "😐",
+          "label": "Mặt Trung Tính"
+        },
+        {
+          "char": "😑",
+          "label": "Mặt Vô Cảm"
+        }
       ]
     },
     {
@@ -50,17 +77,40 @@
       "h2": "Sigma Trong Toán Học, Thống Kê & Khoa Học",
       "intro": "Vai trò gốc của chữ cái này. Sigma hoa Σ là toán tử tổng, và ký hiệu toán học chuyên dụng ∑ là người anh em gần như giống hệt. Sigma thường σ ký hiệu độ lệch chuẩn trong thống kê và xuất hiện trong nhiều hằng số vật lý.",
       "symbols": [
-        { "char": "∑", "label": "Tổng N Phần Tử" },
-        { "char": "Σ", "label": "Sigma Hoa (Toán Tử Tổng)" },
-        { "char": "σ", "label": "Độ Lệch Chuẩn" },
-        { "char": "μ", "label": "Mu (Trung Bình)" }
+        {
+          "char": "∑",
+          "label": "Tổng N Phần Tử"
+        },
+        {
+          "char": "Σ",
+          "label": "Sigma Hoa (Toán Tử Tổng)"
+        },
+        {
+          "char": "σ",
+          "label": "Độ Lệch Chuẩn"
+        },
+        {
+          "char": "μ",
+          "label": "Mu (Trung Bình)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp — alpha, beta, delta, sigma, omega, pi — ở dạng hoa và thường để sao chép và dán." },
-    { "href": "/vi/symbol/autism-symbol/", "title": "Ký Hiệu Tự Kỷ", "desc": "Một ký hiệu khác mà ý nghĩa trào lưu hay cộng đồng còn quan trọng hơn định nghĩa từ điển." },
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Tổng, độ lệch chuẩn, và các toán tử cùng chữ cái Hy Lạp sống cạnh sigma trong phương trình." }
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Ký Hiệu Chữ Cái Hy Lạp",
+      "desc": "Trọn bộ bảng chữ cái Hy Lạp — alpha, beta, delta, sigma, omega, pi — ở dạng hoa và thường để sao chép và dán."
+    },
+    {
+      "href": "/vi/symbol/autism-symbol/",
+      "title": "Ký Hiệu Tự Kỷ",
+      "desc": "Một ký hiệu khác mà ý nghĩa trào lưu hay cộng đồng còn quan trọng hơn định nghĩa từ điển."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Tổng, độ lệch chuẩn, và các toán tử cùng chữ cái Hy Lạp sống cạnh sigma trong phương trình."
+    }
   ]
 }

@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/tiret-bas/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/tiret-bas/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Le Tiret Bas, Pleine Chasse & Doublé",
       "intro": "Le simple tiret bas du clavier et ses deux variantes de largeur — la forme pleine chasse utilisée en typographie est-asiatique et le tiret bas doublé, plus espacé. Prêts à coller n'importe où.",
       "symbols": [
-        { "char": "_", "label": "Tiret Bas / Low Line (U+005F)" },
-        { "char": "＿", "label": "Tiret Bas Pleine Chasse (U+FF3F)" },
-        { "char": "‗", "label": "Double Tiret Bas (U+2017)" }
+        {
+          "char": "_",
+          "label": "Tiret Bas / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Tiret Bas Pleine Chasse (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Double Tiret Bas (U+2017)"
+        }
       ]
     },
     {
@@ -39,8 +57,14 @@
       "h2": "La Barre Suscrite : le Même Trait, au-Dessus du Texte",
       "intro": "La barre suscrite est l'image miroir du tiret bas — le même trait horizontal placé au-dessus du texte plutôt qu'en dessous, ce qui explique pourquoi on les confond au point de les croire opposés. Le macron est le petit trait que l'on tape souvent par erreur quand on veut une barre suscrite.",
       "symbols": [
-        { "char": "‾", "label": "Barre Suscrite / Overscore (U+203E)" },
-        { "char": "¯", "label": "Macron (U+00AF)" }
+        {
+          "char": "‾",
+          "label": "Barre Suscrite / Overscore (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Macron (U+00AF)"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Tiret Bas vs. la Famille des Traits d'Union & Tirets",
       "intro": "Dans les URL, les noms d'utilisateur et les noms de fichiers, tiret bas et trait d'union sont constamment permutés l'un pour l'autre — pourtant ils n'ont ni la même hauteur ni le même point de code, et chacun remplit un rôle différent.",
       "symbols": [
-        { "char": "-", "label": "Trait d'Union-Signe Moins / Trait du Clavier (U+002D)" },
-        { "char": "‐", "label": "Trait d'Union (U+2010)" },
-        { "char": "–", "label": "Tiret Demi-Cadratin (U+2013)" },
-        { "char": "−", "label": "Signe Moins (U+2212)" }
+        {
+          "char": "-",
+          "label": "Trait d'Union-Signe Moins / Trait du Clavier (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Trait d'Union (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "Tiret Demi-Cadratin (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Signe Moins (U+2212)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
   "related": [
-    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "Le tiret bas, le trait d'union, l'astérisque et le reste des signes de ponctuation d'un clavier standard, prêts à copier (en anglais)." },
-    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "Tirets, crochets, guillemets et toute la ponctuation courante d'Unicode réunie dans une même référence (en anglais)." },
-    { "href": "/fr/symbol/symbole-arobase/", "title": "Symbole Arobase (@)", "desc": "L'autre caractère spécial au cœur des adresses e-mail et des pseudos, là où le tiret bas est le séparateur sans espace." }
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Le tiret bas, le trait d'union, l'astérisque et le reste des signes de ponctuation d'un clavier standard, prêts à copier (en anglais)."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Tirets, crochets, guillemets et toute la ponctuation courante d'Unicode réunie dans une même référence (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-arobase/",
+      "title": "Symbole Arobase (@)",
+      "desc": "L'autre caractère spécial au cœur des adresses e-mail et des pseudos, là où le tiret bas est le séparateur sans espace."
+    }
   ]
 }

@@ -37,15 +37,15 @@
       "symbols": [
         {
           "char": "​",
-          "label": "Zero Width Space (U+200B) — lebarnya benar-benar sifar; banyak pengesah memangkasnya sebagai ruang, jadi ia selalu gagal di tempat U+2800 berjaya"
+          "label": "Zero Width Space (U+200B): lebarnya benar-benar sifar; banyak pengesah memangkasnya sebagai ruang, jadi ia selalu gagal di tempat U+2800 berjaya"
         },
         {
           "char": " ",
-          "label": "No-Break Space (U+00A0) — aksara ruang yang sebenar; hampir selalu dipangkas atau terus ditolak"
+          "label": "No-Break Space (U+00A0): aksara ruang yang sebenar; hampir selalu dipangkas atau terus ditolak"
         },
         {
           "char": "ㅤ",
-          "label": "Hangul Filler (U+3164) — pilihan nama kosong popular yang lain; berfungsi pada sesetengah platform yang menolak U+2800, dan sebaliknya"
+          "label": "Hangul Filler (U+3164): pilihan nama kosong popular yang lain; berfungsi pada sesetengah platform yang menolak U+2800, dan sebaliknya"
         }
       ]
     },

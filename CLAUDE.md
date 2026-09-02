@@ -406,6 +406,69 @@ not enroll a site in Google News. Formal Google News Publisher Center
 submission remains explicitly out of scope, for the same domain-risk reasoning
 as the case study above — this refinement does not reopen that question.
 
+### One verification date per entry, in the pill (added 2026-09-02)
+
+The pillar's value is *"this number was true, and here is when we last
+confirmed it"* — so the verification date is its load-bearing claim. It was
+being made twice, in two slots, with two wordings.
+
+`Last checked <date>` sat in body prose on all 11 entries, from the
+tone-of-voice pass. A later change added a `Published <date> · Verified <date>`
+`guide-pill` to one of them. Nothing reconciled the two, and that entry shipped
+asserting **September 1 in its body and September 2 in its pill** — both
+sentences read fine, the markup was valid, and no check compared them.
+
+**The near-miss is the part worth carrying forward.** The first sweep for this
+grepped `Checked` **case-sensitively** and concluded "no other entry carries an
+inline stamp." Every one of the 11 does; they all say `Last checked`. A
+pattern-matched audit found the surface it was written for and missed the next
+one — the same failure "Structure is not language" documents above. Enumerate
+the class, do not sample a pattern you guessed.
+
+**The rule:** exactly one verification date per entry, as the last
+`guide-pill`, agreeing with the page's own `datePublished`. No verification
+stamp in body prose.
+
+**Three kinds of date live on these pages and only one is a stamp.** Conflating
+them would flag the 19 real event dates on `uae-dirham-symbol-unicode-18`:
+
+| kind | example | where it belongs |
+|---|---|---|
+| **stamp** | "Last checked September 1, 2026" | the pill, page-level |
+| **scoped** | "As of September 2, 2026 no date has been announced" | **stays inline** |
+| **factual** | "Unicode 18.0 publishes on September 16, 2026" | ordinary content |
+
+A scoped qualifier is not a stamp: *"no rollout date has been announced"* is
+only true at a point in time and must carry its own date wherever it sits,
+because a reader cannot infer it from a header pill.
+
+**`dateModified` is not a verification date and must not be used as one.** All
+11 entries carry `2026-09-01` from a single tone-of-voice rewrite — it means
+"when the prose was last edited", which is a different claim. The visible
+verified date is deliberately independent of it.
+
+A stamp in a `<meta name="description">` is allowed — snippet copy is its own
+slot and audience — but the gate **warns** if it disagrees with the pill.
+
+#### Tooling
+
+- **`npm run audit:updates-verification`** — whole-pillar dashboard, oldest
+  check first, i.e. the order a re-verification pass should work in.
+- **`npm run check:updates-verification`** — the enforcing half, wired into
+  `.github/workflows/validate.yml`. It **gates rather than informs** (same call
+  as `check:zalgo-decodes`): there is no backlog to be permanently red against.
+  It is **whole-pillar, not diff-scoped**, on purpose — the shape it catches is
+  an older page drifting out of agreement with a convention set later, which a
+  diff-scoped check cannot see.
+- Both share **`scripts/lib/updates-verification.js`**, so the audit and the
+  gate can never disagree about what a stamp is.
+
+Verified per this file's own rule before being trusted, against five
+differently-shaped broken inputs so the check could not be tuned to one: the
+real regression re-injected into body prose, a deleted pill, a pill contradicting
+`datePublished`, a `Verified` date predating `Published` — each exits 1 — and a
+meta description contradicting the pill, which warns and exits 0.
+
 ---
 
 ## Hub vs Spoke: preventing self-cannibalization
@@ -1251,6 +1314,30 @@ script is not the same as gating on it"): three defects were injected into a
 finished Japanese page — one per class above — and the gate exited 1 naming all
 three. Do not trust a future edit to it without repeating that.
 
+**Punctuation is not English (added 2026-09-02).** The delta rule compares string
+*sets*, so changing an existing untranslated string's punctuation makes the same
+debt, on the same page, in the same words, a string the base set does not
+contain — and the gate reads the edit as an introduction. This is the third
+instance of the inversion `check-locale-translation.js` already documents for
+reverts, and it is measured the same way: `wordKey()` compares the words when
+deciding whether a survivor is the *same* debt as one at the base, and never
+when deciding whether a string is English in the first place. Scoped per page,
+so a survivor on one page can never excuse a new string on another.
+
+Found by the em-dash pass below, which rewrote 2,915 tile labels and turned 9
+byte-identical pre-existing survivors into 9 reported introductions. Verified
+against three probes — a genuinely new English string on both sides of a pair
+(exit 1), an existing survivor with words added (exit 1), and one re-punctuated
+only (exit 0). The first attempt at the first probe was a **false green**: it
+injected a different string on each side, so there was nothing to survive. Build
+the probe as a real pair.
+
+**A ledger entry's text can go stale under it.** Nine
+`data/translation_identical_strings.json` entries stopped matching when the
+labels they name were re-punctuated. Re-pointing an existing entry at the same
+string is maintenance of a decision already taken; it is not the same act as
+adding one, and the standing bar still forbids the latter.
+
 ### EN is the source locale — two structural carve-outs (added 2026-08-02)
 
 The rule above was written as if EN and a locale page were peers that drift
@@ -1368,6 +1455,42 @@ legitimately counts as the sync, and all three came back exit 0. On clean pages:
 adding a `/library/currency-symbols/` link to `/discord/` flags 7; removing a peer
 card from `fr/symbol/symbole-euro` flags 1; adding an h2 section EN lacks flags 1;
 adding a **visible** FAQ item to `symbol/euro-sign` flags 16.
+
+### A table was invisible to every axis (added 2026-09-02)
+
+`<h2>` came closest to seeing a table and missed the case exactly: a table under
+a heading that stays can be deleted outright with links, h2, FAQ, tiles and
+combo-sets all reading zero. PR #836 removed a whole 7-row table from
+`updates/middle-east-currency-symbols-scorecard` and its eight siblings; had it
+touched EN alone, the gate would have reported nothing. Same shape as the
+`events` link-type gap and the runtime combo-set gap above, from a fourth cause.
+
+`tableCount` closes it. **The selector is `table`, not `.data-table`** — the
+house class covers 2,353 of the site's 2,470 tables, and `comparison-table`
+(114) plus `ig-matrix` (2, on `instagram/` and its live `sv` sibling) carry the
+rest. Enumerating classes would recreate `CONTENT_LINK_RE`'s `events` bug
+verbatim: a class added later becomes a table nothing covers, silently. The
+element cannot go stale.
+
+**Rows are reported, never scored.** They are content inside a section and
+differ legitimately by locale: `fr/symbol/symbole-paix` carries an extra
+platform row and an extra input-method row against `symbol/peace-sign`, and a
+longer alphabet always will. Of 3,693 EN/locale pairs, 64 match on table count
+and differ on rows — a set mixing genuine half-ported tables with differences no
+edit can converge. Scoring it would flag pairs with nothing to fix, which is the
+call `pairCollections()` already makes for a renamed container id.
+
+Blast radius measured before landing: 656 of 3,693 pairs (17.8%) already differ
+on table count. The gate is diff-scoped so that backlog cannot make it red, and
+a constant pre-existing offset cancels out of the convergence carve-out, which
+compares one pair against itself.
+
+Verified against four probes on pages **outside the branch's changed set**:
+deleting a 6-row table from `symbol/peace-sign` exits 1 **with every pre-existing
+axis reading 0**, which is the whole finding; a row added to an existing table
+exits 0; a meta-description tweak exits 0; adding a `comparison-table` to
+`de/symbol/friedenszeichen` exits 1, which is also what proves the selector
+choice — `.data-table` would have missed it.
 
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
@@ -1805,6 +1928,38 @@ already existed as an undocumented positional argument; nobody used it because
 nothing said it was there and the dangerous path was the default one. The
 positional still works, hidden, for backwards compatibility.
 
+**A card title longer than the layout was silently truncated (fixed 2026-09-01).**
+`og_png_svg` wrapped the title and kept `[:3]`, discarding the rest with nothing in
+the output to say so. The tone-of-voice standard makes titles *longer* — they now
+carry the answer, not the filing system — and the first pass that applied it to nine
+pages truncated **seven** of them mid-phrase: `Middle East Currency Symbols: 5 Have
+Their Own,` with the answer cut off. It was caught by reading a rendered PNG, which
+is the only place it was visible.
+
+Two things changed, and the split matters:
+
+* **The cap was one line too tight.** Four lines fit and five do not, and that is
+  geometry rather than taste: the block is centred on y=250 and grows upward by 33
+  per line, so at four the first line's ascender sits at y=106 and clears the kicker
+  baseline at y=96, and at five it sits at y=73 and collides. `OG_TITLE_MAX_LINES`
+  is 4. That alone repaired **17 of the 24** titles already overflowing.
+* **What still cannot fit is reported, never dropped.** `_fit_title` collects every
+  overflow with the words it lost, and the run prints them at the end.
+  `--strict-titles` makes it exit 1. Reported by default because 24 titles were
+  already in that state — the same call as `check-image-assets.py` informing while
+  `check-new-page-image-assets.py` gates, and for the same reason.
+
+`--dry-run` measures titles without rasterising anything (over the pages already
+holding art too, not just the ones missing it — whether a title fits is a property
+of the registry, not of what is on disk), so **`--dry-run --all --strict-titles` is
+a cheap whole-site title check**.
+
+**The fix for an overflow is never to shorten the answer away.** Put the head term
+in the card title and the answer in the **sub** line, which does not wrap. Seven
+titles remain over the cap, all `unicode-18` emoji-vote and beta-review pages in
+`ar`, `de`, `ko`, `pl`, `ru`, `th`; shortening those is a content decision per page,
+not a mechanical one.
+
 **Page-derived motifs (added 2026-08-11).** The registry in `PAGES` pairs each
 page with a motif function. 718 of 1,209 pages were registered against a motif
 that takes **no per-page argument**, so every page sharing it got a
@@ -2136,6 +2291,14 @@ and `check:library-hub-coverage` all pass), so nothing is blocking; that is
 precisely why it needs writing down rather than leaving for the next person to
 rediscover.
 
+*Resolved 2026-09-01, same day:* both defects were fixed — the missing de/nl
+facet labels added and the three stale hubs regenerated (`6b6578afb`), with
+the German label corrected to the singular `Profil` matching every sibling
+locale (`dc8b02456`). Verified after: `npm run check:library-hub` reports all
+19 locale hubs current, de and nl included. The note above stays as the record
+of the find; a `build-library-hub.js` label error or a plain run rewriting a
+hub is once again a real regression, not known debt.
+
 **Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
 The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
 migration lived only inside the JS array and cost nothing while the hub rendered
@@ -2228,12 +2391,14 @@ ranks the upstream sources.
 - **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
   into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
   would fail on and exits 0. Promotion to blocking is a documented step in
-  `docs/editorial-footprint-risk.md`, not a silent flag flip. Only two rules are
-  eligible today (`model-leakage`, `seo-preservation` errors), both verified
-  against deliberately broken inputs.
+  `docs/editorial-footprint-risk.md`, not a silent flag flip, and it happens
+  **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes only the named
+  rules bite. Five rules are eligible today (`model-leakage`, `seo-preservation`
+  errors, and since 2026-09-02 the three em-dash rules — see "Clean on touch"
+  below), each verified against deliberately broken inputs.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
-- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+- **`npm run test:editorial-footprint`** — 63 assertions, **gating**, no backlog
   to be red against.
 - **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
   hand-written once per spec in `data/library_page_specs/` and nothing compared
@@ -2280,6 +2445,108 @@ time (`--sensitivity`), and **`unknown` is the conservative posture, never a
 licence**. Search Console data is first-party competitive information and does
 not live in this repo — same boundary, and same reasoning, as the Local Language
 Intelligence lexicon.
+
+### Removing em dashes: by leverage, at the source (added 2026-09-02, user-directed)
+
+The forward-only default above was **overridden by the user**, who asked for as
+many em dashes removed as possible. This records how that was executed, because
+the *how* is what keeps it from becoming the purge the rule warns against.
+
+**Rank before editing.** The site's 118,000 em dashes are not 118,000 decisions.
+Grouping em-dash-bearing strings by how many pages share them verbatim — the
+`variety` measure this section already defines — turns the top of that list into
+a handful of template strings. One CTA line accounted for ~1,800 pages across 17
+languages; one tile-label format accounted for 2,915 more. **10,010 page
+instances came out of ~1,320 authored decisions**, and nothing below the
+template tier was touched.
+
+**Every change is one of the phrase bank's own listed remedies**, never a synonym
+swap and never a deletion: a full stop where the second half is a separate
+thought (the CTA's "…and 100+ other Unicode font styles. Free and instant."), a
+comma where a verdict meets its qualifier ("No, only letters and numbers"), a
+colon where what follows explains what precedes (`Name (U+XXXX): gloss`). Every
+word survives in every string; only the joint moves. `ko` and `tr` had already
+written the CTA as one flowing sentence and were left alone — they were the
+model, not an omission.
+
+**Fix the spec, not only the page — and remember the locale spec directories.**
+`data/library_page_specs/` has 628 EN specs *and 885 more under
+`data/library_page_specs/<lang>/`*. A count taken with `*.json` sees only the
+first set; the locale specs are the upstream for every locale page, so a pass
+that edits locale HTML without them is undone by the next generator run. That
+was nearly this pass's mistake, caught only because a recursive `grep -r` count
+came back higher than the glob count and the discrepancy was chased rather than
+assumed to be corruption.
+
+**Three things this class of pass will surface, none of them its own bug:**
+
+* **A stale-schema split.** Anchoring a rewrite on `>` or `"` reaches the
+  JSON-LD copy of a FAQ answer and not the visible one, because the visible half
+  starts on its own line after the wrapper tag. Widen the anchor to allow the
+  newline, and check `check-faq-schema` before committing.
+* **Pre-existing mesh defects on pages the pass merely touched.** Bringing 2,013
+  locale pages into diff scope surfaced six German pages linking English hubs
+  that have German equivalents. Repair with `sync-locale-mesh --fix` **scoped to
+  those files**, never site-wide.
+* **False "introduced English" reports.** See "Punctuation is not English"
+  above; that gate needed fixing, not the content.
+
+**Do not extend this to prose.** 83,730 em dashes remain in locale pages and
+17,160 in English, and each of those is a sentence with its own decision. For
+pages a branch leaves alone the rule stays forward-only: a branch must not
+introduce one, including in its own new copy — this pass removed 23 it had just
+written on the pages it was rewriting. For a page whose own copy a branch edits,
+the next section applies: it leaves clean. The two sections were written the
+same day by two sessions and reconciled on merge; they are the two halves of one
+policy — source fixes ranked by leverage, and clean-on-touch for the prose.
+
+### Clean on touch — forward-only is for the pages you leave alone (added 2026-09-02)
+
+The em-dash rule (`EFR-F-001`) was written forward-only: a branch fails only on em
+dashes it *introduces*, and the 52,766 already on the site are reported, never
+required. That half stands for prose — the template-tier pass above is a source
+fix ranked by leverage, not a purge of sentences. But **a page whose own
+copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
+and its copy is brought to the tone-of-voice standard in the same change. User
+direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
+
+Three definitions carry the rule, and each one was chosen against a real case:
+
+* **"Touched" means the page's own copy moved** — title, meta description, H1,
+  headings, prose or FAQ text differs from the merge base. A card injected by the
+  peer-link sync, a regenerated footer or hreflang block, a rebuilt library
+  directory, an asset swap: none of those is a touch, because a mesh pass that
+  rewrites 1,009 pages must not demand 1,009 rewrites. Once a page *is* touched,
+  its cards count too.
+* **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
+  sibling in the cluster that the PR does not itself copy-edit must already be
+  clean, or the gate names it and the parent that pulled it in. Anchored on
+  English on purpose — it is where pages are born and where the standard is
+  applied first — so a translator's one-line fix never obliges an English
+  rewrite, and a new locale batch never obliges the cleanup of every parent it
+  translates. The cost was chosen with the number in view: editing
+  `symbol/euro-sign` pulls 18 siblings carrying 159 em dashes. Plan the sibling
+  pass before opening the PR, not after the gate names them.
+* **Generated inventory is not the hub's copy.** The pre-rendered library
+  directory (`[data-static-directory]`) is rendered from other pages by the hub
+  builders and is dropped from measurement — a hand edit there is overwritten by
+  the next build, and `es/library/index.html` carried 144 of its 157 em dashes
+  inside it. The EN hub's own `LIBRARY` array is the one exception: 25 em dashes
+  in a script block nothing measures, cleared through the array and a rebuild.
+
+Two things this surfaced. `.related-card` had never been in the card slot, so the
+updates hub's eleven dated labels ("Aug 12, 2026 — Telegram …") and the "Keep
+reading" grids on 193 pages were invisible to every rule — the currency scorecard
+shipped its tone rewrite with one em dash left in exactly that slot. And the
+gate's own upstream attribution still applies: when `em-dash-touched` names a spec
+or generator, the fix goes there.
+
+The gate stays in **shadow mode** for now — the three em-dash rules are in
+`BLOCKING` and print "would block", and promotion is one workflow line per rule,
+scheduled for review on 2026-09-16 after the shadow findings since this change are
+classified. Do not turn `--enforce` on bare: `seo-preservation` would ride along,
+and a deliberate retitle (which the tone standard requires) still has nowhere to
+record its intent.
 
 ### The remediation principle
 
@@ -2646,6 +2913,13 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not put a verification stamp ("Last checked <date>", "Checked <date>") in
+  an `updates/` entry's body prose, and do not let a second one appear anywhere
+  on the page. One verification date per entry, as the last `guide-pill`,
+  agreeing with `datePublished`. See "One verification date per entry, in the
+  pill" above. An "As of <date>" qualifier on a time-bound claim is a different
+  statement and stays inline. `npm run check:updates-verification` gates this;
+  `npm run audit:updates-verification` gives the whole-pillar picture.
 - Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
   page's unzalgo widget strips marks by codepoint range and cannot undo a
   precomposed character, so composition silently breaks the card against the
@@ -2664,9 +2938,21 @@ Standing protocol:
   rest. Replace a generic claim with the fact behind it instead.
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
-  generator run — the gate names the upstream file when it can find it. And do
-  not run a site-wide purge: the rule is forward-only, and Google's own guidance
-  warns against removing a page element because you heard it was bad.
+  generator run — the gate names the upstream file when it can find it, and the
+  locale specs under `data/library_page_specs/<lang>/` are a second set a `*.json`
+  glob does not see. And do not run a site-wide purge: for pages you leave alone
+  the rule is forward-only, and Google's own guidance warns against removing a
+  page element because you heard it was bad. A **user-directed** removal pass is
+  not a purge and has its own method — rank by shared-page count, fix the
+  template, never the prose; see "Removing em dashes: by leverage, at the source"
+  above.
+- Do not edit a page's copy and leave its em dashes behind, and do not copy-edit
+  an English page without bringing its locale siblings along. Since 2026-09-02 a
+  page whose title, meta description, H1, headings, prose or FAQ text a PR
+  changes must leave with zero em dashes in every measured slot, cards included,
+  and its siblings must already be clean or be cleaned in the same PR — see "Clean
+  on touch" above. `npm run check:editorial-footprint` reports both as
+  `em-dash-touched` / `em-dash-sibling`.
 - Do not paste a sentence from one page spec into another. `npm run
   check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
   sentence 3+ other specs already carry, and the fix is a sentence about *this*

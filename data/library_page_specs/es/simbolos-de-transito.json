@@ -74,15 +74,15 @@
       "symbols": [
         {
           "char": "🔴",
-          "label": "Rojo — Alto"
+          "label": "Rojo: Alto"
         },
         {
           "char": "🟡",
-          "label": "Amarillo — Precaución"
+          "label": "Amarillo: Precaución"
         },
         {
           "char": "🟢",
-          "label": "Verde — Siga"
+          "label": "Verde: Siga"
         },
         {
           "char": "🚦",

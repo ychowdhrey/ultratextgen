@@ -20,11 +20,11 @@
       "symbols": [
         {
           "char": "Δ",
-          "label": "Greek Capital Letter Delta (U+0394) — ‘Change In’"
+          "label": "Greek Capital Letter Delta (U+0394): ‘Change In’"
         },
         {
           "char": "δ",
-          "label": "Greek Small Letter Delta (U+03B4) — Infinitesimal / Partial Charge"
+          "label": "Greek Small Letter Delta (U+03B4): Infinitesimal / Partial Charge"
         }
       ]
     },
@@ -36,11 +36,11 @@
       "symbols": [
         {
           "char": "∆",
-          "label": "Increment (U+2206) — The Math Operator That Looks Like Δ, Different Codepoint"
+          "label": "Increment (U+2206): The Math Operator That Looks Like Δ, Different Codepoint"
         },
         {
           "char": "Δ",
-          "label": "Capital Delta (U+0394) — The Greek Letter Itself"
+          "label": "Capital Delta (U+0394): The Greek Letter Itself"
         }
       ]
     },

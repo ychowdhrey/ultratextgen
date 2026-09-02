@@ -23,6 +23,25 @@
  * counts against a branch only if it exists NOW and did not exist at the merge
  * base. Pre-existing findings are REPORTED, never silenced.
  *
+ * -- Clean on touch (added 2026-09-02, user direction) ----------------------
+ * Forward-only is the rule for pages a branch leaves alone. For a page whose
+ * own copy the branch edits, it is not: that page must leave with ZERO em
+ * dashes in its measured slots, not merely no new ones. "Copy" means the
+ * page's title, meta description, H1, headings, prose or FAQ text changed
+ * between the merge base and HEAD (TOUCH_SLOTS). A card added by a peer-link
+ * sync, a footer or hreflang regeneration, a rebuilt library directory or an
+ * asset swap changes none of those and is not a touch — a mesh pass that
+ * rewrites 1,009 pages must not demand 1,009 rewrites. Once a page IS touched,
+ * every measured slot on it must be clean, cards included.
+ *
+ * An English page that is touched pulls its locale siblings along: each
+ * sibling that this branch does not itself copy-edit must already be clean,
+ * or it is reported under `em-dash-sibling` naming the parent that pulled it
+ * in. The rule is anchored on English on purpose — it is where pages are born
+ * and where the tone standard is applied first — so a translator's one-line
+ * correction never obliges an English rewrite, and a new locale batch never
+ * obliges the cleanup of every parent it translates.
+ *
  * -- It names the upstream source ------------------------------------------
  * When a newly generated page carries a forbidden pattern, the string was very
  * likely written into a spec or a generator, not into the HTML: 6,918 em dashes
@@ -34,7 +53,10 @@
  * Usage:
  *   node scripts/check-editorial-footprint.js                  # shadow, vs origin/main
  *   node scripts/check-editorial-footprint.js --base main
- *   node scripts/check-editorial-footprint.js --enforce         # blocking rules bite
+ *   node scripts/check-editorial-footprint.js --enforce         # every BLOCKING rule bites
+ *   node scripts/check-editorial-footprint.js --enforce em-dash-touched,em-dash-sibling
+ *                                                                # only the named rules bite;
+ *                                                                # the rest still say "would block"
  *   node scripts/check-editorial-footprint.js --annotations     # GitHub Actions annotations
  *
  * Exit codes: 0 clean or shadow; 1 a blocking rule fired under --enforce;
@@ -47,7 +69,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { extractPage } = require('./lib/editorial-corpus');
+const { extractPage, EDITORIAL_SLOTS, joinSlots } = require('./lib/editorial-corpus');
 const { matchBank, loadBank, scorePage, buildContext } = require('./lib/editorial-footprint');
 const { snapshot, compare, posture } = require('./lib/seo-snapshot');
 
@@ -55,6 +77,8 @@ const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
 const flag = (f) => { const i = args.indexOf(f); return i === -1 ? null : args[i + 1]; };
 const ENFORCE = args.includes('--enforce');
+/** `--enforce a,b` scopes the bite to those rules; bare `--enforce` is every BLOCKING rule. */
+const ENFORCE_RULES = parseEnforce(args);
 const ANNOTATE = args.includes('--annotations');
 const MAX_SHOWN = 8;
 
@@ -67,10 +91,118 @@ const MAX_SHOWN = 8;
  */
 const BLOCKING = new Set([
   'model-leakage',        // EFR-F-002/003/004/005: assistant text, placeholders, scaffolding
-  'seo-preservation'      // identity fields, protected terms, facts, links
-  // 'em-dash' is NOT here yet. Shadow first: the rule is new, the backlog is
-  // total, and the fix is usually upstream. See the rollout stages.
+  'seo-preservation',     // identity fields, protected terms, facts, links
+  // The three em-dash rules entered this set on 2026-09-02, when the rule
+  // changed from forward-only to clean-on-touch (user direction). Each is
+  // deterministic and was watched failing on purpose before being added. What
+  // they still need is exposure on real PRs, which is why the workflow step
+  // has not been given `--enforce` yet: promotion is one workflow line, and
+  // `--enforce <rule,rule>` lets it happen per rule, without also promoting
+  // `seo-preservation` (which has its own open prerequisite: a deliberate
+  // retitle has nowhere to record its intent).
+  'em-dash',              // an em dash this branch wrote
+  'em-dash-touched',      // an em dash this branch inherited on a page whose copy it edited
+  'em-dash-sibling'       // an em dash on an untouched locale sibling of a touched EN page
 ]);
+
+/** Does this rule fail the run right now? Shadow → never; --enforce → if in scope. */
+function bites(rule) {
+  return ENFORCE && BLOCKING.has(rule) && (!ENFORCE_RULES || ENFORCE_RULES.has(rule));
+}
+
+/**
+ * `--enforce` with an optional comma list. `--enforce --annotations` is a bare
+ * enforce (the next token is a flag, not a list). Pure; tested directly.
+ */
+function parseEnforce(argv) {
+  const i = argv.indexOf('--enforce');
+  if (i === -1) return null;
+  const next = argv[i + 1];
+  if (!next || next.startsWith('--')) return null;
+  const rules = next.split(',').map((r) => r.trim()).filter(Boolean);
+  return rules.length ? new Set(rules) : null;
+}
+
+/**
+ * Slots whose change means the AUTHOR edited this page's copy. `cta` is
+ * deliberately not one of them: a card is added to a page by the peer-link
+ * sync, by a new hub entry, by a new update landing in the updates grid — none
+ * of which is that page's author writing. Cards are still MEASURED (a touched
+ * page must clear its card labels too); they just do not, on their own, make a
+ * page touched.
+ */
+const TOUCH_SLOTS = EDITORIAL_SLOTS.filter((s) => s !== 'cta');
+
+/** Did this branch edit the page's own copy? A new page is touched by definition. */
+function copyTouched(beforePage, page) {
+  if (!beforePage) return true;
+  return joinSlots(beforePage, TOUCH_SLOTS).join('\n') !== joinSlots(page, TOUCH_SLOTS).join('\n');
+}
+
+/**
+ * Split a page's current hits three ways: what the branch introduced, what it
+ * inherited and may leave, and — on a copy-touched page — the inherited em
+ * dashes it must now clear. Pure; tested directly.
+ *
+ * Delta by COUNT per (rule id, slot), not by surrounding text. Keying on the
+ * context excerpt looks more precise and is wrong: the excerpt is a +/-45-
+ * character window, so inserting a sentence anywhere near an existing hit
+ * shifts the window and re-keys an untouched em dash as newly introduced.
+ * Found by probe, not by reasoning - adding "As an AI" to one paragraph
+ * reported 1 introduced em dash that had been on the page all along. Counts
+ * are shift-proof: only the EXCESS over what was already there counts as
+ * introduced. Contexts are still matched first, so a hit whose exact passage
+ * is unchanged is attributed to the right occurrence when reporting.
+ */
+function classifyHits(nowHits, beforeHits, touched) {
+  const introduced = [], preExisting = [], touchedEmDash = [];
+  const countKey = (h) => `${h.id}|${h.slot}`;
+  const beforeCounts = new Map();
+  const beforeContexts = new Set();
+  for (const h of beforeHits) {
+    beforeCounts.set(countKey(h), (beforeCounts.get(countKey(h)) || 0) + 1);
+    beforeContexts.add(`${countKey(h)}|${h.context}`);
+  }
+  const groups = new Map();
+  for (const h of nowHits) {
+    if (!groups.has(countKey(h))) groups.set(countKey(h), []);
+    groups.get(countKey(h)).push(h);
+  }
+  for (const [key, hitsForKey] of groups) {
+    const had = beforeCounts.get(key) || 0;
+    const excess = hitsForKey.length - had;
+    // Report the passages that are textually new first; they are the most
+    // likely to be what the author actually wrote.
+    const ranked = hitsForKey.slice().sort((a, b) =>
+      (beforeContexts.has(`${key}|${a.context}`) ? 1 : 0) - (beforeContexts.has(`${key}|${b.context}`) ? 1 : 0));
+    ranked.forEach((h, i) => {
+      if (i < excess) introduced.push(h);
+      else if (touched && ruleOf(h) === 'em-dash') touchedEmDash.push(h);
+      else preExisting.push(h);
+    });
+  }
+  return { introduced, preExisting, touchedEmDash };
+}
+
+/**
+ * The EN-anchored sibling rule. For every copy-touched ENGLISH page, each
+ * locale sibling this branch did not itself copy-edit must carry zero em
+ * dashes; the ones that do are returned, each naming the parent that pulled
+ * it in. A sibling that IS copy-touched is not listed here — its own
+ * `em-dash-touched` finding covers it. Pure: cluster lookup and hit counting
+ * are injected, so it is tested without a repository.
+ */
+function siblingObligations(touchedEnRels, touchedSet, siblingsOf, emDashHits) {
+  const out = [];
+  for (const rel of touchedEnRels) {
+    for (const sib of siblingsOf(rel)) {
+      if (touchedSet.has(sib)) continue;
+      const hits = emDashHits(sib);
+      if (hits.length) out.push({ rel: sib, parent: rel, hits });
+    }
+  }
+  return out;
+}
 
 const BASELINE_PATH = path.join(ROOT, 'data', 'editorial_footprint_baseline.json');
 
@@ -143,7 +275,9 @@ function main() {
   const changed = git(['diff', '--name-only', '--diff-filter=ACMR', mergeBase, 'HEAD', '--', '*.html'])
     .split('\n').map((s) => s.trim()).filter(Boolean);
 
-  console.log('Editorial Footprint Risk check' + (ENFORCE ? '' : '  [SHADOW MODE - reports only, exit 0]'));
+  const mode = !ENFORCE ? '  [SHADOW MODE - reports only, exit 0]'
+    : ENFORCE_RULES ? `  [ENFORCING ${[...ENFORCE_RULES].join(', ')}; other blocking rules report only]` : '';
+  console.log('Editorial Footprint Risk check' + mode);
   console.log(`  base:               ${base} (merge-base ${mergeBase.slice(0, 8)})`);
   console.log(`  changed HTML files: ${changed.length}`);
 
@@ -158,8 +292,9 @@ function main() {
     try { baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8')); } catch { baseline = null; }
   }
 
-  const introduced = [];      // findings this branch added
-  const preExisting = [];     // findings already at the merge base
+  const introduced = [];      // findings this branch added, plus the inherited em dashes it must clear
+  const preExisting = [];     // findings already at the merge base that it may leave
+  const touchedRels = [];     // pages whose own copy this branch edited
   const seoFindings = [];
   const newPages = [];
   const regressions = [];
@@ -215,49 +350,18 @@ function main() {
     const beforePage = beforeHtml ? extractPage(beforeHtml, rel) : null;
     const isNew = !beforeHtml;
 
-    // ---- phrase-bank findings, delta-scoped -------------------------------
+    // ---- phrase-bank findings, delta-scoped, clean-on-touch ----------------
+    const touched = copyTouched(beforePage, page);
+    if (touched) touchedRels.push(rel);
     const nowHits = matchBank(page, bank).filter((h) => ruleOf(h));
     const beforeHits = beforePage ? matchBank(beforePage, bank).filter((h) => ruleOf(h)) : [];
-
-    // Delta by COUNT per (rule id, slot), not by surrounding text.
-    //
-    // Keying on the context excerpt looks more precise and is wrong: the
-    // excerpt is a +/-45-character window, so inserting a sentence anywhere
-    // near an existing hit shifts the window and re-keys an untouched em dash
-    // as newly introduced. Found by probe, not by reasoning - adding "As an AI"
-    // to one paragraph reported 1 introduced em dash that had been on the page
-    // all along. Counts are shift-proof: only the EXCESS over what was already
-    // there counts against the branch.
-    //
-    // Contexts are still matched first, so a hit whose exact passage is
-    // unchanged is attributed to the right occurrence when reporting.
-    const countKey = (h) => `${h.id}|${h.slot}`;
-    const beforeCounts = new Map();
-    const beforeContexts = new Set();
-    for (const h of beforeHits) {
-      beforeCounts.set(countKey(h), (beforeCounts.get(countKey(h)) || 0) + 1);
-      beforeContexts.add(`${countKey(h)}|${h.context}`);
-    }
-    const groups = new Map();
-    for (const h of nowHits) {
-      if (!groups.has(countKey(h))) groups.set(countKey(h), []);
-      groups.get(countKey(h)).push(h);
-    }
-    for (const [key, hitsForKey] of groups) {
-      const had = beforeCounts.get(key) || 0;
-      const excess = hitsForKey.length - had;
-      // Report the passages that are textually new first; they are the most
-      // likely to be what the author actually wrote.
-      const ranked = hitsForKey.slice().sort((a, b) =>
-        (beforeContexts.has(`${key}|${a.context}`) ? 1 : 0) - (beforeContexts.has(`${key}|${b.context}`) ? 1 : 0));
-      ranked.forEach((h, i) => {
-        if (i < excess) {
-          introduced.push({ rel, ...h, rule: ruleOf(h), upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, '')) });
-        } else {
-          preExisting.push({ rel, ...h, rule: ruleOf(h) });
-        }
-      });
-    }
+    const split = classifyHits(nowHits, beforeHits, touched);
+    const attribute = (h, rule) => ({
+      rel, ...h, rule, upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, ''))
+    });
+    for (const h of split.introduced) introduced.push(attribute(h, ruleOf(h)));
+    for (const h of split.touchedEmDash) introduced.push(attribute(h, 'em-dash-touched'));
+    for (const h of split.preExisting) preExisting.push({ rel, ...h, rule: ruleOf(h) });
 
     // ---- SEO preservation, existing pages only ----------------------------
     if (beforePage) {
@@ -287,8 +391,45 @@ function main() {
     }
   }
 
+  // ---- sibling obligations: an EN copy-touch pulls its locale siblings ------
+  const touchedSet = new Set(touchedRels);
+  const touchedEn = touchedRels.filter((rel) => {
+    const abs = path.join(ROOT, rel);
+    try { return extractPage(fs.readFileSync(abs, 'utf8'), rel).locale === 'en'; } catch { return false; }
+  });
+  let siblingCount = 0;
+  if (touchedEn.length) {
+    const { discoverClusters } = require('./lib/translation-clusters');
+    const { byUrl, clusters } = discoverClusters(ROOT);
+    const urlOfRel = new Map();
+    for (const [url, rec] of byUrl) urlOfRel.set(rec.rel, url);
+    const siblingsOf = (rel) => {
+      const url = urlOfRel.get(rel);
+      const rec = url && byUrl.get(url);
+      if (!rec || rec.ownLang !== 'en' || !clusters.has(url)) return [];
+      return [...clusters.get(url)].filter((u) => u !== url).map((u) => byUrl.get(u) && byUrl.get(u).rel).filter(Boolean);
+    };
+    const emDashHits = (rel) => {
+      const abs = path.join(ROOT, rel);
+      if (!fs.existsSync(abs)) return [];
+      try {
+        const pg = extractPage(fs.readFileSync(abs, 'utf8'), rel);
+        if (!pg || pg.indexable === false) return [];
+        return matchBank(pg, bank).filter((h) => ruleOf(h) === 'em-dash');
+      } catch { return []; }
+    };
+    for (const ob of siblingObligations(touchedEn, touchedSet, siblingsOf, emDashHits)) {
+      siblingCount++;
+      for (const h of ob.hits) {
+        introduced.push({ rel: ob.rel, ...h, rule: 'em-dash-sibling', parent: ob.parent,
+          upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, '')) });
+      }
+    }
+  }
+
   // ---- report ------------------------------------------------------------
   console.log(`  pages checked:      ${checked}`);
+  console.log(`  copy-touched pages: ${touchedRels.length}` + (touchedEn.length ? ` (${touchedEn.length} English, pulling ${siblingCount} unclean sibling(s))` : ''));
   console.log(`  findings introduced: ${introduced.length}`);
   if (preExisting.length) console.log(`  pre-existing (not this branch's): ${preExisting.length}`);
   console.log(`  SEO preservation findings: ${seoFindings.length}`);
@@ -304,8 +445,11 @@ function main() {
 
   for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
     const blocks = BLOCKING.has(rule);
-    if (blocks) blockingHit = true;
-    console.log(`${blocks ? (ENFORCE ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} introduced`);
+    if (bites(rule)) blockingHit = true;
+    const noun = rule === 'em-dash-touched' ? 'inherited on copy-edited page(s), must be cleared'
+      : rule === 'em-dash-sibling' ? 'on untouched locale sibling(s) of a copy-edited English page'
+        : 'introduced';
+    console.log(`${blocks ? (bites(rule) ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} ${noun}`);
 
     // Summarise rather than flood: one line per page, capped.
     const byPage = new Map();
@@ -317,12 +461,14 @@ function main() {
     for (const [rel, fs_] of byPage) {
       if (shown++ >= MAX_SHOWN) { console.log(`    … and ${byPage.size - MAX_SHOWN} more page(s)`); break; }
       const up = fs_.find((x) => x.upstream);
-      console.log(`    · ${rel} (${fs_.length}) [${fs_[0].slot}]`);
+      const slots = [...new Set(fs_.map((x) => x.slot))].join(', ');
+      console.log(`    · ${rel} (${fs_.length}) [${slots}]`);
       console.log(`        ${fs_[0].context.slice(0, 130)}`);
+      if (fs_[0].parent) console.log(`        pulled in by: ${fs_[0].parent} (copy-edited in this branch)`);
       if (up) console.log(`        upstream: ${up.upstream} ← fix it there, not in the HTML`);
       if (ANNOTATE) {
-        const lvl = blocks && ENFORCE ? 'error' : 'warning';
-        console.log(`::${lvl} file=${rel},title=EFR ${rule}::${fs_.length} introduced. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${up ? ` | upstream: ${up.upstream}` : ''}`);
+        const lvl = bites(rule) ? 'error' : 'warning';
+        console.log(`::${lvl} file=${rel},title=EFR ${rule}::${fs_.length} ${noun}. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${fs_[0].parent ? ` | pulled in by ${fs_[0].parent}` : ''}${up ? ` | upstream: ${up.upstream}` : ''}`);
       }
     }
     console.log('');
@@ -330,12 +476,12 @@ function main() {
 
   if (seoFindings.length) {
     const errs = seoFindings.filter((f) => f.severity === 'error');
-    if (errs.length) blockingHit = true;
-    console.log(`${errs.length ? (ENFORCE ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  seo-preservation - ${errs.length} error(s), ${seoFindings.length - errs.length} warning(s)`);
+    if (errs.length && bites('seo-preservation')) blockingHit = true;
+    console.log(`${errs.length ? (bites('seo-preservation') ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  seo-preservation - ${errs.length} error(s), ${seoFindings.length - errs.length} warning(s)`);
     for (const f of seoFindings.slice(0, MAX_SHOWN)) {
       console.log(`    ${f.severity === 'error' ? '✗' : '⚠'} ${f.rel}: ${f.rule} - ${f.detail}`);
       if (ANNOTATE) {
-        console.log(`::${f.severity === 'error' && ENFORCE ? 'error' : 'warning'} file=${f.rel},title=SEO preservation (${f.rule})::${f.detail.replace(/\n/g, ' ')}`);
+        console.log(`::${f.severity === 'error' && bites('seo-preservation') ? 'error' : 'warning'} file=${f.rel},title=SEO preservation (${f.rule})::${f.detail.replace(/\n/g, ' ')}`);
       }
     }
     if (seoFindings.length > MAX_SHOWN) console.log(`    … and ${seoFindings.length - MAX_SHOWN} more`);
@@ -363,8 +509,9 @@ function main() {
     const byPage = new Map();
     for (const f of preExisting) byPage.set(f.rel, (byPage.get(f.rel) || 0) + 1);
     const top = [...byPage.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
-    console.log(`Reported, not failed - ${preExisting.length} finding(s) on pages this branch touched already`);
-    console.log('existed at the merge base, and this branch did not add to them:');
+    console.log(`Reported, not failed - ${preExisting.length} finding(s) on pages this branch changed already`);
+    console.log('existed at the merge base, this branch did not add to them, and either the page\'s own');
+    console.log('copy was not edited or the rule is not the em-dash rule:');
     for (const [rel, n] of top) console.log(`    · ${rel} (${n})`);
     if (byPage.size > top.length) console.log(`    … and ${byPage.size - top.length} more page(s)`);
     console.log('  Whole-site picture: npm run audit:editorial-footprint');
@@ -377,6 +524,10 @@ function main() {
   }
 
   console.log('How to act on this:');
+  console.log('  · A page whose copy this branch edits leaves with ZERO em dashes in its measured');
+  console.log('    slots - cards included - and an English page pulls its locale siblings along.');
+  console.log('    A colon when what follows explains; a full stop when it is a separate thought;');
+  console.log('    a comma pair for an aside; parentheses for a true parenthetical. Never a hyphen swap.');
   console.log('  · Replace a generic claim with the fact behind it, not with a synonym.');
   console.log('    Google names "automated transformations like synonymizing" as scaled');
   console.log('    content abuse, so swapping words to lower a score moves the wrong way.');
@@ -394,4 +545,7 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, ruleOf };
+module.exports = {
+  BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, TOUCH_SLOTS,
+  ruleOf, bites, parseEnforce, copyTouched, classifyHits, siblingObligations
+};

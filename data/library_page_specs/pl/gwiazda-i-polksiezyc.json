@@ -38,7 +38,7 @@
       "h2": "To Nie To Samo Co Zwykły Półksiężyc albo Gwiazda",
       "intro": "Gwiazda i półksiężyc to jeden, połączony glif. Osobne znaki półksiężyca i gwiazdy, po które ludzie sięgają zamiast niego, mają własne punkty kodowe i własne zadania.",
       "symbols": [
-        { "char": "☾", "label": "Ostatnia Kwadra Księżyca (U+263E) — Zwykły Półksiężyc" },
+        { "char": "☾", "label": "Ostatnia Kwadra Księżyca (U+263E): Zwykły Półksiężyc" },
         { "char": "☽", "label": "Pierwsza Kwadra Księżyca (U+263D)" },
         { "char": "🌙", "label": "Emoji Sierpa Księżyca (U+1F319)" },
         { "char": "⭐", "label": "Biała Gwiazda Średnia (U+2B50)" },
@@ -61,7 +61,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/religious-symbols/",

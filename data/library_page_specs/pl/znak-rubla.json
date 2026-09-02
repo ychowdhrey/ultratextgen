@@ -29,8 +29,8 @@
       "intro": "Sam znak i cyrylicka litera, z której go zbudowano. Zwycięski projekt to wielkie Er (Р) z dodatkową poziomą kreską pod brzuszkiem litery — mała litera р to ta, która pojawiała się w dawnym skrócie „р.”.",
       "symbols": [
         { "char": "₽", "label": "Znak Rubla (U+20BD)" },
-        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420) — Podstawa Znaku" },
-        { "char": "р", "label": "Cyrylicka Mała Litera Er (U+0440) — Użyta w Dawnym Skrócie „р.”" }
+        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420): Podstawa Znaku" },
+        { "char": "р", "label": "Cyrylicka Mała Litera Er (U+0440): Użyta w Dawnym Skrócie „р.”" }
       ]
     },
     {
@@ -39,11 +39,11 @@
       "h2": "Inne Niedawno Przyjęte Znaki Walut",
       "intro": "Znak rubla ma bliskich sąsiadów w unikodowym bloku Currency Symbols — grupę znaków zakodowanych dopiero w latach 2010., gdy państwa postsowieckie i inne nadawały swoim walutom dedykowany glif. Indyjski znak rupii, podobnie jak rubel, wybrano w publicznym konkursie projektowym.",
       "symbols": [
-        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9) — Wybrany w Publicznym Konkursie w 2010 Roku" },
-        { "char": "₺", "label": "Znak Liry Tureckiej (U+20BA) — Przyjęty w 2012 Roku" },
-        { "char": "₸", "label": "Znak Tenge (U+20B8) — Tenge Kazachstański" },
-        { "char": "₼", "label": "Znak Manata (U+20BC) — Manat Azerbejdżański" },
-        { "char": "₾", "label": "Znak Lari (U+20BE) — Lari Gruzińskie" }
+        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9): Wybrany w Publicznym Konkursie w 2010 Roku" },
+        { "char": "₺", "label": "Znak Liry Tureckiej (U+20BA): Przyjęty w 2012 Roku" },
+        { "char": "₸", "label": "Znak Tenge (U+20B8): Tenge Kazachstański" },
+        { "char": "₼", "label": "Znak Manata (U+20BC): Manat Azerbejdżański" },
+        { "char": "₾", "label": "Znak Lari (U+20BE): Lari Gruzińskie" }
       ]
     },
     {
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-euro/",

@@ -52,15 +52,15 @@
       "h2": "Znaki Mylone z Krzyżem",
       "intro": "Te znaki wyglądają jak krzyż, ale niosą niepowiązane znaczenia — żaden z nich nie jest krzyżem chrześcijańskim.",
       "symbols": [
-        { "char": "†", "label": "Sztylet (U+2020) — Przypisy i Osoby Zmarłe" },
+        { "char": "†", "label": "Sztylet (U+2020): Przypisy i Osoby Zmarłe" },
         { "char": "‡", "label": "Podwójny Sztylet (U+2021)" },
         { "char": "✕", "label": "Znaczek Mnożenia X (U+2715)" },
-        { "char": "✗", "label": "Znaczek Głosowania X (U+2717) — Odrzucenie" },
+        { "char": "✗", "label": "Znaczek Głosowania X (U+2717): Odrzucenie" },
         { "char": "⛨", "label": "Czarny Krzyż na Tarczy (U+26E8)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/symbol/peace-sign/",

@@ -16,13 +16,34 @@
       "h2": "Heart Eyes Kaomoji",
       "intro": "Faces with hearts for eyes — smitten, dazzled, and in love.",
       "symbols": [
-        { "char": "(♥‿♥)", "label": "Heart Eyes" },
-        { "char": "(♥ω♥)", "label": "In Love" },
-        { "char": "(♡°▽°♡)", "label": "Dreamy Hearts" },
-        { "char": "(✿ ♥‿♥)", "label": "Flower Heart Eyes" },
-        { "char": "♥(ˆ⌣ˆԅ)", "label": "Smitten" },
-        { "char": "(๑♡⌓♡๑)", "label": "Head Over Heels" },
-        { "char": "(◕‿◕)♥", "label": "Sweet on You" }
+        {
+          "char": "(♥‿♥)",
+          "label": "Heart Eyes"
+        },
+        {
+          "char": "(♥ω♥)",
+          "label": "In Love"
+        },
+        {
+          "char": "(♡°▽°♡)",
+          "label": "Dreamy Hearts"
+        },
+        {
+          "char": "(✿ ♥‿♥)",
+          "label": "Flower Heart Eyes"
+        },
+        {
+          "char": "♥(ˆ⌣ˆԅ)",
+          "label": "Smitten"
+        },
+        {
+          "char": "(๑♡⌓♡๑)",
+          "label": "Head Over Heels"
+        },
+        {
+          "char": "(◕‿◕)♥",
+          "label": "Sweet on You"
+        }
       ]
     },
     {
@@ -31,11 +52,26 @@
       "h2": "Offering a Heart Kaomoji",
       "intro": "Faces holding out or throwing a heart your way.",
       "symbols": [
-        { "char": "(づ￣ ³￣)づ", "label": "Come Here Kiss" },
-        { "char": "(っ˘з(˘⌣˘ )", "label": "Blowing a Kiss" },
-        { "char": "(人♡ω♡)", "label": "Praying Love" },
-        { "char": "♡＼(￣▽￣)／♡", "label": "Arms of Love" },
-        { "char": "٩(♡ε♡ )۶", "label": "Cheering Love" }
+        {
+          "char": "(づ￣ ³￣)づ",
+          "label": "Come Here Kiss"
+        },
+        {
+          "char": "(っ˘з(˘⌣˘ )",
+          "label": "Blowing a Kiss"
+        },
+        {
+          "char": "(人♡ω♡)",
+          "label": "Praying Love"
+        },
+        {
+          "char": "♡＼(￣▽￣)／♡",
+          "label": "Arms of Love"
+        },
+        {
+          "char": "٩(♡ε♡ )۶",
+          "label": "Cheering Love"
+        }
       ]
     },
     {
@@ -44,11 +80,26 @@
       "h2": "Floating Heart Kaomoji",
       "intro": "Happy faces with little hearts drifting around them.",
       "symbols": [
-        { "char": "(｡♥‿♥｡)", "label": "Rosy Love" },
-        { "char": "♡( ◡‿◡ )", "label": "Content Love" },
-        { "char": "(≧◡≦) ♡", "label": "Happy Heart" },
-        { "char": "(◍•ᴗ•◍)❤", "label": "Warm Heart" },
-        { "char": "˚₊‧꒰ა ♡ ໒꒱‧₊˚", "label": "Framed Heart" }
+        {
+          "char": "(｡♥‿♥｡)",
+          "label": "Rosy Love"
+        },
+        {
+          "char": "♡( ◡‿◡ )",
+          "label": "Content Love"
+        },
+        {
+          "char": "(≧◡≦) ♡",
+          "label": "Happy Heart"
+        },
+        {
+          "char": "(◍•ᴗ•◍)❤",
+          "label": "Warm Heart"
+        },
+        {
+          "char": "˚₊‧꒰ა ♡ ໒꒱‧₊˚",
+          "label": "Framed Heart"
+        }
       ]
     },
     {
@@ -57,18 +108,45 @@
       "h2": "Shy & Soft Heart Kaomoji",
       "intro": "Bashful, blushing faces with a quiet heart.",
       "symbols": [
-        { "char": "(♡´౪`♡)", "label": "Bashful Love" },
-        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)♡", "label": "Blushing Heart" },
-        { "char": "( ˶˘ ³˘)♡", "label": "Soft Kiss" },
-        { "char": "(♡﹏♡)", "label": "Melting Heart" }
+        {
+          "char": "(♡´౪`♡)",
+          "label": "Bashful Love"
+        },
+        {
+          "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)♡",
+          "label": "Blushing Heart"
+        },
+        {
+          "char": "( ˶˘ ³˘)♡",
+          "label": "Soft Kiss"
+        },
+        {
+          "char": "(♡﹏♡)",
+          "label": "Melting Heart"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/love-kaomoji/", "title": "Love & Heart Kaomoji", "desc": "Kisses, hugs, and crushes in cute Japanese text-face form." },
-    { "href": "/library/heart-symbols/", "title": "Heart Symbols", "desc": "Single heart characters in every color and style to copy and paste." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Love & Heart Kaomoji",
+      "desc": "Kisses, hugs, and crushes in cute Japanese text-face form."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Single heart characters in every color and style to copy and paste."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    }
   ]
 }

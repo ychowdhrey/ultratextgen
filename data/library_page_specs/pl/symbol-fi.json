@@ -28,9 +28,9 @@
       "h2": "Symbol Fi — φ, Φ i ϕ",
       "intro": "Trzy formy, o które chodzi, gdy mówimy o „symbolu fi”: codzienna mała litera, wielka litera i dedykowany wariant matematyczny. Wklej tę, której potrzebujesz.",
       "symbols": [
-        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6) — Litera Złotej Liczby, Forma Otwarta „Pętelkowa”" },
-        { "char": "Φ", "label": "Wielka Grecka Litera Fi (U+03A6) — Strumień Magnetyczny w Fizyce" },
-        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5) — Matematyczny Wariant „Zamknięty”, z Kreską" }
+        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6): Litera Złotej Liczby, Forma Otwarta „Pętelkowa”" },
+        { "char": "Φ", "label": "Wielka Grecka Litera Fi (U+03A6): Strumień Magnetyczny w Fizyce" },
+        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5): Matematyczny Wariant „Zamknięty”, z Kreską" }
       ]
     },
     {
@@ -39,10 +39,10 @@
       "h2": "Fi: Złota Liczba i Zastosowania Matematyczne",
       "intro": "Najczęściej wyszukiwane zastosowanie fi. Małe φ nazywa złotą liczbę ≈ 1,618, zdefiniowaną jako (1 + √5) / 2; od Unicode 3.0 zamknięte ϕ (U+03D5) to glif zalecany do tego matematycznego zastosowania, a wielkie Φ oznacza strumień magnetyczny.",
       "symbols": [
-        { "char": "φ", "label": "Małe Fi (U+03C6) — Złota Liczba ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5) — Preferowany w Matematyce Glif Zamknięty" },
-        { "char": "Φ", "label": "Wielkie Fi (U+03A6) — Strumień Magnetyczny" },
-        { "char": "√", "label": "Pierwiastek Kwadratowy (U+221A) — Pojawia się we Wzorze Fi (1 + √5) / 2" }
+        { "char": "φ", "label": "Małe Fi (U+03C6): Złota Liczba ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Grecki Symbol Fi (U+03D5): Preferowany w Matematyce Glif Zamknięty" },
+        { "char": "Φ", "label": "Wielkie Fi (U+03A6): Strumień Magnetyczny" },
+        { "char": "√", "label": "Pierwiastek Kwadratowy (U+221A): Pojawia się we Wzorze Fi (1 + √5) / 2" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

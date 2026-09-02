@@ -28,8 +28,8 @@
       "h2": "Symbol Delta — Δ i δ",
       "intro": "Sama grecka litera, w obu wersjach. Wielkie Δ to znak „zmiany”; małe δ zajmuje się zadaniami w mniejszej skali.",
       "symbols": [
-        { "char": "Δ", "label": "Wielka Grecka Litera Delta (U+0394) — „Zmiana”" },
-        { "char": "δ", "label": "Mała Grecka Litera Delta (U+03B4) — Wielkość Nieskończenie Mała / Ładunek Cząstkowy" }
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta (U+0394): „Zmiana”" },
+        { "char": "δ", "label": "Mała Grecka Litera Delta (U+03B4): Wielkość Nieskończenie Mała / Ładunek Cząstkowy" }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "h2": "Pomyłka ze Znakiem Przyrostu",
       "intro": "Istnieje osobny znak matematyczny, ∆ INCREMENT, który wyświetla się niemal identycznie jak wielka delta, ale ma inny punkt kodowy — ta sama pułapka sobowtóra co znak oma i omega. Niektóre czcionki i czytniki ekranu traktują je inaczej.",
       "symbols": [
-        { "char": "∆", "label": "Przyrost (U+2206) — Operator Matematyczny Wyglądający jak Δ, Inny Punkt Kodowy" },
-        { "char": "Δ", "label": "Wielka Delta (U+0394) — Sama Grecka Litera" }
+        { "char": "∆", "label": "Przyrost (U+2206): Operator Matematyczny Wyglądający jak Δ, Inny Punkt Kodowy" },
+        { "char": "Δ", "label": "Wielka Delta (U+0394): Sama Grecka Litera" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",
