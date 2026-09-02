@@ -236,6 +236,52 @@
       "caseSensitive": true
     },
     {
+      "id": "EFR-F-006",
+      "pattern": "(?<=\\S) +- +(?=\\S)",
+      "matchType": "regex",
+      "language": "en",
+      "category": "forbidden",
+      "severity": "error",
+      "slots": [
+        "headings",
+        "prose",
+        "faqQuestions",
+        "faqAnswers",
+        "cta"
+      ],
+      "rationale": "A hyphen-minus with a space on each side, used where a dash would go (word - word). It is the substitute a ban on the em dash invites, and it is worse typography than the thing it replaces. House style decision of 2026-09-02, taken together with the forward-only em dash ban; a rule about how this site writes, not a claim about any page.",
+      "evidenceSource": "corpus scan 2026-09-02 (3 occurrences on 3 EN pages: two subject-page examples and one character list)",
+      "corpusFrequency": 3,
+      "pageFrequency": 3,
+      "variety": null,
+      "contentFamilies": [
+        "*"
+      ],
+      "exemptions": [
+        {
+          "type": "subject",
+          "values": [
+            "em-dash",
+            "en-dash",
+            "dash-hyphen-symbols",
+            "punctuation-symbols",
+            "hyphen",
+            "minus-sign",
+            "horizontal-bar"
+          ]
+        },
+        {
+          "type": "quoted"
+        }
+      ],
+      "seoProtection": "none",
+      "maxPer1000Words": null,
+      "firstAdded": "2026-09-02",
+      "lastReviewed": "2026-09-02",
+      "replacementGuidance": "The same choices as the em dash: a colon, a full stop, a comma pair, or parentheses. A range takes an en dash (2019–2024). A hyphen inside a compound (copy-paste, zero-width) is not this pattern and is never flagged.",
+      "notes": "FORWARD-LOOKING guard with a near-zero measured base rate, recorded so the em dash ban cannot be routed around. English only, and deliberately NOT applied to title, metaDescription or h1: a spaced hyphen is a conventional title separator on the web (this site uses ' | ' and ': ' instead, 430 and 370 EN titles). Delta-scoped like every forbidden rule: only a spaced hyphen a branch introduces counts; the three pre-existing ones are reported."
+    },
+    {
       "id": "EFR-F-004",
       "pattern": "\\b(?:Here(?:'s| is) (?:a|an|the) (?:comprehensive|detailed|revised|updated|rewritten|complete)|Certainly[,!]|I hope this helps|Feel free to (?:let me know|reach out)|In conclusion,)\\b",
       "matchType": "regex",

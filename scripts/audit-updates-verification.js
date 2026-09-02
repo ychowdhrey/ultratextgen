@@ -14,7 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { inspect, iso, bodyOf, DATE_RE } = require('./lib/updates-verification.js');
+const { inspect, inspectLocale, enParentOf, iso, bodyOf, DATE_RE } = require('./lib/updates-verification.js');
 
 const REPO = path.resolve(__dirname, '..');
 const DIR = path.join(REPO, 'updates');
@@ -52,3 +52,34 @@ for (const r of rows) {
 const bad = rows.filter((r) => r.errors.length).length;
 console.log(`\n${rows.length} entries · ${bad} failing · ${rows.filter((r) => r.warnings.length).length} with warnings`);
 console.log('"dates" counts every date literal in the body — most are ordinary factual dates, not stamps.');
+
+// ---- locale entries, grouped by the EN parent whose date they inherit ------
+const enVerified = new Map(rows.filter((r) => r.pill && r.pill.verified)
+  .map((r) => [path.relative(REPO, r.file), iso(r.pill.verified)]));
+
+const locs = fs.readdirSync(REPO, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && /^[a-z]{2}(-[a-z]{2})?$/.test(d.name))
+  .flatMap((d) => {
+    const dir = path.join(REPO, d.name, 'updates');
+    if (!fs.existsSync(dir)) return [];
+    return fs.readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory())
+      .map((e) => path.join(dir, e.name, 'index.html')).filter(fs.existsSync);
+  });
+
+if (locs.length) {
+  const byLocale = new Map();
+  for (const f of locs) {
+    const lc = path.relative(REPO, f).split(path.sep)[0];
+    const parent = enParentOf(f);
+    const r = inspectLocale(f, parent ? enVerified.get(parent) : null);
+    const e = byLocale.get(lc) || { n: 0, bad: 0 };
+    e.n += 1; if (r.errors.length) e.bad += 1;
+    byLocale.set(lc, e);
+  }
+  const totalBad = [...byLocale.values()].reduce((a, b) => a + b.bad, 0);
+  console.log(`\nlocale entries — ${locs.length} pages across ${byLocale.size} locales`);
+  console.log('  ' + [...byLocale.entries()].sort()
+    .map(([lc, e]) => `${lc}:${e.n}${e.bad ? ` (${e.bad}✗)` : ''}`).join('  '));
+  console.log(`  ${totalBad} failing. A locale pill inherits its EN parent's verified date;`);
+  console.log("  a mismatch means EN moved and the translation did not.");
+}

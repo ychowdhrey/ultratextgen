@@ -10,7 +10,10 @@
  * SHADOW MODE IS THE DEFAULT. It reports what it WOULD have failed on and exits
  * 0. Promotion to blocking happens per-rule, deliberately, once the rule has
  * been exercised and its false positives reviewed - see
- * docs/editorial-footprint-risk.md, "Rollout". This is not caution for its own
+ * docs/editorial-footprint-risk.md, "Rollout". ONE EXCEPTION, decided by the
+ * user on 2026-09-02: the em dash is banned forward-only per locale (and the
+ * spaced hyphen on English), and an introduced one exits 1 regardless of mode
+ * (see the em dash policy block below). This is not caution for its own
  * sake: this repository has twice shipped a check that reported nothing and was
  * indistinguishable from a check that passed, and the cure for that is to watch
  * a rule fail on purpose before trusting it, not to switch it on and hope.
@@ -69,7 +72,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { extractPage, EDITORIAL_SLOTS, joinSlots } = require('./lib/editorial-corpus');
+const { extractPage, EDITORIAL_SLOTS, joinSlots, classifyPath } = require('./lib/editorial-corpus');
 const { matchBank, loadBank, scorePage, buildContext } = require('./lib/editorial-footprint');
 const { snapshot, compare, posture } = require('./lib/seo-snapshot');
 
@@ -104,6 +107,33 @@ const BLOCKING = new Set([
   'em-dash-touched',      // an em dash this branch inherited on a page whose copy it edited
   'em-dash-sibling'       // an em dash on an untouched locale sibling of a touched EN page
 ]);
+
+/**
+ * The em dash ban is PER LOCALE and forward-only, driven by
+ * data/em_dash_locale_policy.json through scripts/lib/em-dash-policy.js:
+ *
+ *   ban          English (house style) and the thirteen locales whose native
+ *                dash is the spaced en dash — an introduced em dash fails the
+ *                run in every mode, and the block names the replacement.
+ *   double-dash  zh-tw and ja, whose native dash is the paired —— — a lone
+ *                introduced — fails, a —— does not.
+ *   native       Russian, Spanish, Portuguese, French, Polish, Romanian — the
+ *                em dash is their punctuation and is never a finding here.
+ *   review       everything else — a warning, as before.
+ *
+ * The policy is applied to BOTH sides of a diff before anything else, so it
+ * composes with clean-on-touch (above) rather than competing with it: on a
+ * native locale a copy-touched page has no em dash findings at all, on a
+ * double-dash locale it must clear only its lone dashes, and a sibling pulled
+ * in by an English touch is measured under its own locale's policy — a
+ * Russian sibling is never pulled in, a Chinese one only for lone dashes.
+ * Introduced em dashes on a ban/double-dash locale (and spaced hyphens on
+ * English, EFR-F-006) fail in every mode; the touched and sibling obligations
+ * on those locales stay BLOCKING-eligible and bite under --enforce, per the
+ * rollout in docs/editorial-footprint-risk.md; on a review locale every em
+ * dash finding is a warning. Decision, table and evidence: docs/em-dash-policy.md.
+ */
+const { loadDashPolicy, applyDashPolicy, isBanned, policyFor } = require('./lib/em-dash-policy');
 
 /** Does this rule fail the run right now? Shadow → never; --enforce → if in scope. */
 function bites(rule) {
@@ -260,6 +290,7 @@ function upstreamSource(fragment) {
 
 function ruleOf(hit) {
   if (hit.id === 'EFR-F-001') return 'em-dash';
+  if (hit.id === 'EFR-F-006') return 'spaced-hyphen';
   if (['EFR-F-002', 'EFR-F-003', 'EFR-F-004', 'EFR-F-005'].includes(hit.id)) return 'model-leakage';
   if (hit.category === 'strongly_discouraged') return 'formulaic-phrase';
   if (hit.category === 'density_limited') return 'density-limited';
@@ -287,6 +318,13 @@ function main() {
   }
 
   const bank = loadBank();
+  const dash = loadDashPolicy();
+  if (dash.errors.length) {
+    console.error(`\n✗ ${path.relative(ROOT, dash.__path)} is malformed and is refused rather than partially honoured:`);
+    for (const e of dash.errors) console.error(`    · ${e}`);
+    process.exit(2);
+  }
+  const dropped = { native: 0, paired: 0 };
   let baseline = null;
   if (fs.existsSync(BASELINE_PATH)) {
     try { baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8')); } catch { baseline = null; }
@@ -350,18 +388,22 @@ function main() {
     const beforePage = beforeHtml ? extractPage(beforeHtml, rel) : null;
     const isNew = !beforeHtml;
 
-    // ---- phrase-bank findings, delta-scoped, clean-on-touch ----------------
+    // ---- phrase-bank findings: delta-scoped, clean-on-touch, per-locale ---
     const touched = copyTouched(beforePage, page);
     if (touched) touchedRels.push(rel);
-    const nowHits = matchBank(page, bank).filter((h) => ruleOf(h));
-    const beforeHits = beforePage ? matchBank(beforePage, bank).filter((h) => ruleOf(h)) : [];
-    const split = classifyHits(nowHits, beforeHits, touched);
+    // The locale's em dash policy is applied to BOTH sides identically, so the
+    // delta below still compares like with like: on a native locale no em
+    // dash is a finding, on a double-dash locale only a lone one is.
+    const nowPol = applyDashPolicy(matchBank(page, bank).filter((h) => ruleOf(h)), page.locale, dash);
+    const beforePol = beforePage ? applyDashPolicy(matchBank(beforePage, bank).filter((h) => ruleOf(h)), page.locale, dash) : { hits: [], dropped: 0 };
+    if (nowPol.policy.policy === 'native') dropped.native += nowPol.dropped; else dropped.paired += nowPol.dropped;
+    const split = classifyHits(nowPol.hits, beforePol.hits, touched);
     const attribute = (h, rule) => ({
-      rel, ...h, rule, upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, ''))
+      rel, locale: page.locale, ...h, rule, upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, ''))
     });
     for (const h of split.introduced) introduced.push(attribute(h, ruleOf(h)));
     for (const h of split.touchedEmDash) introduced.push(attribute(h, 'em-dash-touched'));
-    for (const h of split.preExisting) preExisting.push({ rel, ...h, rule: ruleOf(h) });
+    for (const h of split.preExisting) preExisting.push({ rel, locale: page.locale, ...h, rule: ruleOf(h) });
 
     // ---- SEO preservation, existing pages only ----------------------------
     if (beforePage) {
@@ -409,19 +451,22 @@ function main() {
       if (!rec || rec.ownLang !== 'en' || !clusters.has(url)) return [];
       return [...clusters.get(url)].filter((u) => u !== url).map((u) => byUrl.get(u) && byUrl.get(u).rel).filter(Boolean);
     };
+    // A sibling is measured under ITS OWN locale's policy: a Russian sibling
+    // is never pulled in, a Chinese one only for lone dashes.
     const emDashHits = (rel) => {
       const abs = path.join(ROOT, rel);
       if (!fs.existsSync(abs)) return [];
       try {
         const pg = extractPage(fs.readFileSync(abs, 'utf8'), rel);
         if (!pg || pg.indexable === false) return [];
-        return matchBank(pg, bank).filter((h) => ruleOf(h) === 'em-dash');
+        return applyDashPolicy(matchBank(pg, bank).filter((h) => ruleOf(h) === 'em-dash'), pg.locale, dash).hits;
       } catch { return []; }
     };
     for (const ob of siblingObligations(touchedEn, touchedSet, siblingsOf, emDashHits)) {
       siblingCount++;
+      const sibLocale = classifyPath(ob.rel).locale;
       for (const h of ob.hits) {
-        introduced.push({ rel: ob.rel, ...h, rule: 'em-dash-sibling', parent: ob.parent,
+        introduced.push({ rel: ob.rel, locale: sibLocale, ...h, rule: 'em-dash-sibling', parent: ob.parent,
           upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, '')) });
       }
     }
@@ -433,6 +478,8 @@ function main() {
   console.log(`  findings introduced: ${introduced.length}`);
   if (preExisting.length) console.log(`  pre-existing (not this branch's): ${preExisting.length}`);
   console.log(`  SEO preservation findings: ${seoFindings.length}`);
+  if (dropped.native) console.log(`  em dashes not counted on native-dash locale pages (policy "native"): ${dropped.native}`);
+  if (dropped.paired) console.log(`  paired —— not counted on double-dash locale pages: ${dropped.paired}`);
   console.log('');
 
   const byRule = new Map();
@@ -442,14 +489,62 @@ function main() {
   }
 
   let blockingHit = false;
+  let banHit = false;
 
+  // Banned findings print first, on their own, because they are the only
+  // ones that fail the run in shadow mode; the rest keep the shadow/enforce
+  // behaviour exactly as before.
+  /**
+   * Severity of one rule's findings for one locale.
+   *   banned   — fails in every mode: an introduced em dash on a ban or
+   *              double-dash locale, an introduced spaced hyphen on English.
+   *   blocking — BLOCKING-eligible, bites under --enforce: the clean-on-touch
+   *              and sibling obligations on a ban/double-dash locale, and the
+   *              non-dash blocking rules.
+   *   warning  — reported only: every em dash finding on a review locale,
+   *              and the rules that are not blocking-eligible.
+   */
+  const DASH_FAMILY = new Set(['em-dash', 'em-dash-touched', 'em-dash-sibling', 'spaced-hyphen']);
+  const severityOf = (rule, locale) => {
+    if (rule === 'em-dash' || rule === 'spaced-hyphen') return isBanned(rule, locale, dash) ? 'banned' : 'warning';
+    if (rule === 'em-dash-touched' || rule === 'em-dash-sibling') {
+      const p = policyFor(locale, dash).policy;
+      return p === 'ban' || p === 'double-dash' ? 'blocking' : 'warning';
+    }
+    return BLOCKING.has(rule) ? 'blocking' : 'warning';
+  };
+  const replacementFor = (rule, locale) => (rule === 'spaced-hyphen'
+    ? 'the same choices as the em dash: a colon, a full stop, a comma pair or parentheses; a range takes an en dash'
+    : policyFor(locale, dash).replacement);
+
+  // Locale-sensitive rules get one section per locale, so the replacement the
+  // block names is that locale's own; everything else is one section per rule.
+  const sections = [];
   for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
-    const blocks = BLOCKING.has(rule);
-    if (bites(rule)) blockingHit = true;
+    if (!DASH_FAMILY.has(rule)) { sections.push({ rule, list, locale: null, severity: severityOf(rule, null) }); continue; }
+    const byLoc = new Map();
+    for (const f of list) { if (!byLoc.has(f.locale)) byLoc.set(f.locale, []); byLoc.get(f.locale).push(f); }
+    for (const [loc, l] of byLoc) sections.push({ rule, list: l, locale: loc, severity: severityOf(rule, loc) });
+  }
+  const rank = { banned: 0, blocking: 1, warning: 2 };
+  sections.sort((a, b) => (rank[a.severity] - rank[b.severity]) || (b.list.length - a.list.length));
+
+  for (const { rule, list, locale, severity } of sections) {
+    const blocks = severity === 'blocking';
+    if (blocks && bites(rule)) blockingHit = true;
+    if (severity === 'banned') banHit = true;
     const noun = rule === 'em-dash-touched' ? 'inherited on copy-edited page(s), must be cleared'
       : rule === 'em-dash-sibling' ? 'on untouched locale sibling(s) of a copy-edited English page'
         : 'introduced';
-    console.log(`${blocks ? (bites(rule) ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} ${noun}`);
+    const where = locale ? ` on ${locale} page(s)` : '';
+    const pol = locale && DASH_FAMILY.has(rule) ? policyFor(locale, dash).policy : null;
+    const label = severity === 'banned'
+      ? `✗ BANNED   ${rule} - ${list.length} ${noun}${where} (forward-only, policy "${rule === 'spaced-hyphen' ? 'ban' : pol}"; fails even in shadow mode)`
+      : `${blocks ? (bites(rule) ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} ${noun}${where}${pol ? ` (policy "${pol}"${pol === 'review' ? ': reported only' : ''})` : ''}`;
+    console.log(label);
+    if (locale && DASH_FAMILY.has(rule) && severity !== 'warning' && replacementFor(rule, locale)) {
+      console.log(`    write instead: ${replacementFor(rule, locale)}`);
+    }
 
     // Summarise rather than flood: one line per page, capped.
     const byPage = new Map();
@@ -467,8 +562,8 @@ function main() {
       if (fs_[0].parent) console.log(`        pulled in by: ${fs_[0].parent} (copy-edited in this branch)`);
       if (up) console.log(`        upstream: ${up.upstream} ← fix it there, not in the HTML`);
       if (ANNOTATE) {
-        const lvl = bites(rule) ? 'error' : 'warning';
-        console.log(`::${lvl} file=${rel},title=EFR ${rule}::${fs_.length} ${noun}. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${fs_[0].parent ? ` | pulled in by ${fs_[0].parent}` : ''}${up ? ` | upstream: ${up.upstream}` : ''}`);
+        const lvl = severity === 'banned' || (blocks && bites(rule)) ? 'error' : 'warning';
+        console.log(`::${lvl} file=${rel},title=EFR ${rule}${severity === 'banned' ? ' (banned)' : ''}::${fs_.length} ${noun}. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${fs_[0].parent ? ` | pulled in by ${fs_[0].parent}` : ''}${up ? ` | upstream: ${up.upstream}` : ''}`);
       }
     }
     console.log('');
@@ -524,8 +619,13 @@ function main() {
   }
 
   console.log('How to act on this:');
+  if (banHit) {
+    console.log('  · A banned dash was introduced. Each BANNED block above names the locale\'s');
+    console.log('    own replacement (data/em_dash_locale_policy.json, docs/em-dash-policy.md).');
+  }
   console.log('  · A page whose copy this branch edits leaves with ZERO em dashes in its measured');
-  console.log('    slots - cards included - and an English page pulls its locale siblings along.');
+  console.log('    slots - cards included - and an English page pulls its locale siblings along,');
+  console.log('    each under its own locale\'s policy (a native-dash locale is never pulled in).');
   console.log('    A colon when what follows explains; a full stop when it is a separate thought;');
   console.log('    a comma pair for an aside; parentheses for a true parenthetical. Never a hyphen swap.');
   console.log('  · Replace a generic claim with the fact behind it, not with a synonym.');
@@ -537,6 +637,10 @@ function main() {
   console.log('    internal link to clear a warning. That is a relevance loss, not a fix.');
   console.log('  · Rules, evidence and rollout stage: docs/editorial-footprint-risk.md');
 
+  if (banHit) {
+    console.log('\nA banned dash was introduced (see the BANNED sections above). Exiting 1 (the ban is not subject to shadow mode).');
+    process.exit(1);
+  }
   if (!ENFORCE) {
     console.log('\n[SHADOW MODE] Exiting 0. Re-run with --enforce to see this gate bite.');
     process.exit(0);
@@ -547,5 +651,5 @@ function main() {
 if (require.main === module) main();
 module.exports = {
   BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, TOUCH_SLOTS,
-  ruleOf, bites, parseEnforce, copyTouched, classifyHits, siblingObligations
+  ruleOf, bites, parseEnforce, copyTouched, classifyHits, siblingObligations, isBanned
 };
