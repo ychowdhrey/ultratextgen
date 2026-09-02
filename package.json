@@ -31,6 +31,8 @@
     "audit:faq-schema": "node scripts/audit-faq-schema.js",
     "check:faq-schema": "node scripts/check-faq-schema.js",
     "check:zalgo-decodes": "node scripts/check-zalgo-decodes.js",
+    "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
+    "check:numeric-parity": "node scripts/check-numeric-parity.js",
     "audit:updates-verification": "node scripts/audit-updates-verification.js",
     "check:updates-verification": "node scripts/check-updates-verification.js",
     "audit:locale-translation": "node scripts/audit-locale-translation.js",

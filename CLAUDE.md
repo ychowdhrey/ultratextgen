@@ -2139,6 +2139,81 @@ the exact line that shipped: exit 1, naming the file, job, step and line.
 
 ---
 
+## Numeric Parity — the axis every other gate is blind to (added 2026-09-02)
+
+Every gate above measures **structure** (parity), **language** (locale
+translation), **schema** (FAQ), or **assets** (images). None of them measures
+**values**. A number is the one thing that can be well-structured, correctly
+translated, internally consistent — and false.
+
+**The case.** On 2026-09-01, `63d04e71b` ("rewrite **every English**
+`/updates/` entry to the Tone of Voice standard") corrected Unicode 18.0 from
+13,047 characters to 13,007, and four scripts to three. It touched 11 English
+files and zero locale files. Seven translations (`ar de es it ko nl tr`) went
+on asserting 13,047 in their `<title>`, meta description, OG/Twitter cards,
+JSON-LD, hero, pill, `<h2>` and FAQ — as current fact, for a month — while
+every PR in that window passed the full suite.
+
+Each existing gate was **right** to pass it:
+
+| gate | measures | why it was blind |
+|---|---|---|
+| `check-translation-parity` | links, `<h2>`/FAQ/tile counts | 13,047 → 13,007 moves no structural element |
+| `check-locale-translation` | English strings surviving on a locale page | `13.047 neue Zeichen` is perfectly German |
+| `check-faq-schema` | a page against itself | both halves said 13,047, in agreement |
+
+**What the check measures.** Not "do EN and its translations carry the same
+numbers" — they legitimately do not. `npm run audit:numeric-parity` reports
+**671 pages across 24 locales** diverging today, which is why a state check
+here would be permanently red and therefore ignored. It measures a delta with
+a specific shape: a page **replaced** a number — dropped one and added another
+**in the same slot** — while a sibling in its hreflang cluster still carries
+the dropped one.
+
+Four design choices, each measured rather than guessed:
+
+* **A substitution, never a bare deletion.** Prose gets reworded and numbers
+  dropped for innocent reasons constantly; a number replaced *by another
+  number in the same slot* is a fact changing.
+* **Scoped by slot type**, so EN's `<h2>` losing 13047 is checked against the
+  sibling's `<h2>`, never a stray match elsewhere. Page-wide matching drowns
+  in date and count noise.
+* **Separators normalised.** German writes 13.047 where English writes 13,047,
+  and Arabic-Indic digits map to ASCII. Without this the check would report
+  every European locale as divergent and nothing else.
+* **Three-digit floor, plus the `data/parity_catalogue_pages.json` exclusion.**
+  Replayed over the last 52 commits that touched HTML, a two-digit floor fired
+  four times: twice on `library/index.html` (catalogue pages, whose per-locale
+  item counts differ **by design**) and twice on bare date/version fragments.
+  With both, the replay fires **exactly once — on `63d04e71b` itself.** Zero
+  false positives. The cost is stated rather than hidden: a one- or two-digit
+  fact that changes ("12 to 15 characters") does not trip this. Every value
+  that has mattered here is larger.
+
+**Years are excluded.** `2026` is a date component, not a measured fact, and
+every locale formats dates its own way — a reordered date must never read as a
+changed value.
+
+#### Tooling
+
+- **`npm run audit:numeric-parity`** — whole-site triage, `--full` for detail,
+  `--locale <code>` to scope. **Informational, never gating** (671-page
+  standing backlog, most of it legitimate).
+- **`npm run check:numeric-parity`** — the diff-scoped gate, wired into
+  `.github/workflows/validate.yml`.
+- **`data/numeric_parity_exceptions.json`** — one discussed divergence per
+  `(page, slot, value)`. Same bar as every other ledger here: never added
+  unilaterally to make a PR pass. Ships empty.
+- Both scripts share **`scripts/lib/numeric-parity.js`**, so the audit and the
+  gate can never disagree about what a value is.
+
+**Verified by replaying the real incident**, not a synthetic probe: run against
+`63d04e71b` it names all **7 of 7** siblings and the values `13047` and
+`172848`. End-to-end on a branch, changing `13,007` → `13,999` on the EN page
+fails **64** sibling pages and exits 1. A first draft of the tokeniser read
+"May 26, 2026" as the single number `262026`; that bug was found by reading the
+replay output and is fixed — anchoring each group to exactly three digits.
+
 ## Library Hub Coverage — a page is not shipped until its hub knows about it
 
 Every gate above checks a page against a *standard*: its schema, its art, its
@@ -2894,6 +2969,13 @@ Standing protocol:
   pill" above. An "As of <date>" qualifier on a time-bound claim is a different
   statement and stays inline. `npm run check:updates-verification` gates this;
   `npm run audit:updates-verification` gives the whole-pillar picture.
+- Do not correct a number on one page of an hreflang cluster without correcting
+  its siblings in the same PR. Structure, language and schema gates all pass a
+  wrong number — that is how seven translations asserted a superseded Unicode
+  18.0 character count for a month. See "Numeric Parity" above.
+  `npm run check:numeric-parity` gates this; `npm run audit:numeric-parity` is
+  the whole-site picture. A deliberate divergence goes in
+  `data/numeric_parity_exceptions.json` with a reason — never to make a PR pass.
 - Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
   page's unzalgo widget strips marks by codepoint range and cannot undo a
   precomposed character, so composition silently breaks the card against the
