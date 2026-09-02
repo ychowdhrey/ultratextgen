@@ -206,6 +206,31 @@ def load_locale_siblings():
     return siblings
 
 
+EN_LIBRARY_URL_RE = re.compile(r"^https://ultratextgen\.com/library/([a-z0-9-]+)/?$")
+
+
+def load_locale_hubs():
+    """en_hub_slug -> {lang: path} for every <lang>/library/ hub page.
+
+    Same cluster rule as load_locale_siblings(): a page's language is its
+    top-level directory and its cluster is whatever EN URL its own
+    hreflang="en" declares. Never guess a locale slug from the EN one."""
+    hubs = {}
+    for page in sorted(REPO.glob("*/library/*/index.html")):
+        lang = page.relative_to(REPO).parts[0]
+        if not re.fullmatch(r"[a-z]{2}(-[a-z]{2})?", lang):
+            continue
+        html = page.read_text(encoding="utf-8", errors="replace")
+        m_en = EN_ALTERNATE_RE.search(html)
+        if not m_en:
+            continue
+        m_slug = EN_LIBRARY_URL_RE.match(m_en.group(1).strip())
+        if not m_slug:
+            continue
+        hubs.setdefault(m_slug.group(1), {})[lang] = page
+    return hubs
+
+
 def build_card(href, title, desc, card_class, indent):
     pad = " " * indent
     inner = " " * (indent + 2)
@@ -376,6 +401,44 @@ def main(argv=None):
                     names = ", ".join(f'/{lang}/symbol/{t["slug"]}/' for t in missing)
                     print(f"[WARN] {rel_src.parent}: EN peer(s) not mirrored here: {names}")
                     warns += len(missing)
+
+        # Hub->spoke, mirrored the same way. The EN pass above settles which
+        # hubs each spoke claims; that graph is EN-only until it is mirrored,
+        # so <lang>/library/<hub> was never required to link <lang>/symbol/<spoke>
+        # and no check could see the gap (CLAUDE.md, "Only the PEER graph is
+        # mirrored"). Restricted, like the peer pass, to relations where BOTH
+        # ends have a live sibling in that language.
+        locale_hubs = load_locale_hubs()
+        wanted_by_hub = {}
+        for slug, spoke in spokes.items():
+            for hub in spoke["claimed_hubs"]:
+                for lang, hub_page in locale_hubs.get(hub, {}).items():
+                    target = siblings.get(slug, {}).get(lang)
+                    if target is None:
+                        continue          # no sibling in L: skip, never link EN
+                    wanted_by_hub.setdefault((lang, hub, hub_page), []).append(target)
+
+        for (lang, hub, hub_page), targets in sorted(
+                wanted_by_hub.items(), key=lambda kv: (kv[0][0], kv[0][1])):
+            html = hub_page.read_text(encoding="utf-8", errors="replace")
+            missing = [t for t in targets
+                       if f'href="/{lang}/symbol/{t["slug"]}/"' not in html]
+            if not missing:
+                continue
+            rel_hub = hub_page.relative_to(REPO)
+            if args.write and args.reciprocal:
+                for target in missing:
+                    href = f'/{lang}/symbol/{target["slug"]}/'
+                    if inject_card(hub_page, href, target["title"], target["desc"]):
+                        print(f"[FIXED] {rel_hub.parent}: injected locale hub\u2192spoke card -> {href}")
+                        fixed += 1
+                    else:
+                        print(f"[WARN] {rel_hub.parent}: no compare-grid; add {href} manually")
+                        warns += 1
+            else:
+                names = ", ".join(f'/{lang}/symbol/{t["slug"]}/' for t in missing)
+                print(f"[WARN] {rel_hub.parent}: EN hub\u2192spoke link(s) not mirrored here: {names}")
+                warns += len(missing)
 
     print(f"\nChecked {len(spokes)} spoke(s) against {len(hub_links)} hub(s)"
           + (f" and {locale_pages} locale symbol page(s)" if args.locales else "")
