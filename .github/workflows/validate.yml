@@ -391,7 +391,18 @@ jobs:
       #
       # `--annotations` emits GitHub file/line annotations so findings appear on
       # the diff rather than only in this log.
-      - name: Run editorial footprint check (shadow mode, informational)
+      #
+      # ONE RULE GATES (2026-09-02, user decision): the em dash is banned on
+      # new or changed copy, forward-only and PER LOCALE, from
+      # data/em_dash_locale_policy.json — English and the thirteen en-dash
+      # locales ban outright, zh-tw and ja ban a lone dash, six native-dash
+      # locales are never flagged, nine warn pending a native reader. The
+      # spaced hyphen is banned on English. The script exits 1 only when a
+      # branch INTRODUCES a banned dash, whatever mode it runs in; every other
+      # rule stays shadow. That is why this step is in the gating list below
+      # while still being labelled shadow mode: existing em dashes are reported
+      # and never billed. Table and decision: docs/em-dash-policy.md.
+      - name: Run editorial footprint check (shadow mode; em dash policy enforced per locale)
         id: editorial_footprint
         continue-on-error: true
         run: npm run check:editorial-footprint -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee editorial-footprint.log
@@ -405,6 +416,35 @@ jobs:
         id: editorial_footprint_tests
         continue-on-error: true
         run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
+
+      # EFR Quality Gate — diff-scoped and GATING, unlike the shadow-mode check
+      # above, and the two are different questions. check-editorial-footprint
+      # asks "did this branch introduce a forbidden pattern or an SEO loss";
+      # this asks "did this branch move an /updates/ or /guide/ page's overall
+      # EFR score the wrong way against its section's PASS threshold" — a
+      # RATCHET, never a state check: a new page must meet PASS, an existing
+      # PASS page may not be pushed above it, an existing page above PASS may
+      # not get materially worse (+0.5), and an improvement bought by deleting
+      # facts or internal links is IMPROVED BY REMOVAL, not credited. The 13
+      # English guides above target on the day it was wired never count
+      # against a branch that does not touch them. Both sides of every diff
+      # are scored in one corpus so the delta is the page's own change.
+      # Thresholds, the exception ledger (data/efr_exceptions.json) and the
+      # editor playbook: docs/efr-quality-gate.md. Verified against seven
+      # deliberately broken inputs before being added to the gating list.
+      - name: Run EFR quality gate (updates/guide, ratcheted)
+        id: efr_gate
+        continue-on-error: true
+        run: npm run check:efr -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee efr-gate.log
+
+      # Gating, zero backlog: unit tests over the gate's own policy — threshold
+      # boundaries, every ratchet outcome, every exception state, and the
+      # worked example (11.5 -> 8.2 is an improvement still above target, not
+      # the same as 11.5 -> 12.5).
+      - name: Run EFR quality gate tests
+        id: efr_tests
+        continue-on-error: true
+        run: npm run test:efr | tee efr-tests.log
 
       # Diff-scoped and GATING. Page copy is hand-written once per spec in
       # data/library_page_specs/, and nothing compared those specs to each
@@ -582,7 +622,7 @@ jobs:
             cat library-hub-coverage-audit.log
             echo '```'
             echo ""
-            echo "### Editorial footprint check (shadow mode, informational) — \`${{ steps.editorial_footprint.outcome }}\`"
+            echo "### Editorial footprint check (shadow mode; em dash policy enforced per locale) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
             echo '```'
@@ -590,6 +630,16 @@ jobs:
             echo "### Editorial footprint tests — \`${{ steps.editorial_footprint_tests.outcome }}\`"
             echo '```'
             cat editorial-footprint-tests.log
+            echo '```'
+            echo ""
+            echo "### EFR quality gate (updates/guide, ratcheted) — \`${{ steps.efr_gate.outcome }}\`"
+            echo '```'
+            cat efr-gate.log
+            echo '```'
+            echo ""
+            echo "### EFR quality gate tests — \`${{ steps.efr_tests.outcome }}\`"
+            echo '```'
+            cat efr-tests.log
             echo '```'
             echo ""
             echo "### Printables generator parity tests — \`${{ steps.printables_parity_tests.outcome }}\`"
@@ -614,10 +664,13 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
-        # steps.editorial_footprint is excluded on purpose: it runs in SHADOW
-        # MODE and exits 0 by design (see its own step comment). Its unit tests,
-        # steps.editorial_footprint_tests, ARE gating — they have no backlog to
-        # be red against.
+        # steps.editorial_footprint runs in SHADOW MODE for every rule but one:
+        # it exits 1 only when a branch introduces an em dash on a locale whose
+        # policy bans it, or a spaced hyphen on an English page (the
+        # forward-only ban, see its step comment), which is why it is in this
+        # list since 2026-09-02. Its unit
+        # tests, steps.editorial_footprint_tests, are gating too — they have no
+        # backlog to be red against.
         #
         # steps.images, steps.symbol_peer_links_audit, and
         # steps.locale_parent_gap_audit (all whole-site audits) are
@@ -654,7 +707,10 @@ jobs:
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
+          steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
+          steps.efr_gate.outcome == 'failure' ||
+          steps.efr_tests.outcome == 'failure' ||
           steps.printables_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||

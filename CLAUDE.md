@@ -2389,13 +2389,26 @@ ranks the upstream sources.
   gating**, same reason as `check:images` and `audit:locale-parent-gap`: the
   backlog is total and a permanently-red check is one people learn to ignore.
 - **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
-  into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
-  would fail on and exits 0. Promotion to blocking is a documented step in
-  `docs/editorial-footprint-risk.md`, not a silent flag flip, and it happens
-  **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes only the named
-  rules bite. Five rules are eligible today (`model-leakage`, `seo-preservation`
-  errors, and since 2026-09-02 the three em-dash rules — see "Clean on touch"
-  below), each verified against deliberately broken inputs.
+  into `.github/workflows/validate.yml` in **shadow mode** for every rule but
+  one: it reports what it would fail on and exits 0. Promotion to blocking is a
+  documented step in `docs/editorial-footprint-risk.md`, not a silent flag flip,
+  and it happens **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes
+  only the named rules bite. Five rules are eligible today (`model-leakage`,
+  `seo-preservation` errors, and since 2026-09-02 the three em-dash rules — see
+  "Clean on touch" below), each verified against deliberately broken inputs.
+  **The exception, decided 2026-09-02: an em dash a branch *introduces* is
+  banned, per locale** — it exits 1 in every mode on a `ban` or `double-dash`
+  locale, which is why the step is in the gating list. The policy is
+  `data/em_dash_locale_policy.json` (English and the thirteen en-dash locales
+  ban, with the native replacement named in the block; zh-tw and ja ban only a
+  lone `—`; ru/es/pt/fr/pl/ro are native and never flagged; nine locales warn
+  pending a native reader), and the spaced hyphen is banned on English. The
+  same policy is applied before the clean-on-touch and sibling obligations, so
+  a native-dash sibling is never pulled in. Existing em dashes on an untouched
+  page (9,682 on 889 English pages when measured) are reported, never billed.
+  `npm run audit:em-dash` re-measures every locale against the ledger.
+  `docs/em-dash-policy.md` has the scope, the replacement guidance, the
+  title-separator note and the table.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
 - **`npm run test:editorial-footprint`** — 63 assertions, **gating**, no backlog
@@ -2415,6 +2428,53 @@ ranks the upstream sources.
   `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
   gate can never disagree about what any of it means.
+
+### The EFR Quality Gate — PASS / REVIEW / FAIL for `/updates/` and `/guide/` (added 2026-09-02)
+
+The audit above measures; this gate decides. It applies absolute thresholds to
+the existing EFR score — **the measurement is unchanged** — on the two
+hand-authored entry sections, as a per-PR **ratchet**:
+
+| section | PASS | REVIEW | FAIL |
+|---|---|---|---|
+| `/updates/<slug>/` | ≤ 5.0 | > 5.0 – 7.0 | > 7.0 |
+| `/guide/<slug>/` | ≤ 7.0 | > 7.0 – 8.0 | > 8.0 |
+
+**EFR is a diagnostic and publishing quality-control metric, not an SEO ranking
+factor.** And it is not minimised indefinitely: the target is the *minimum
+editorial footprint required to completely satisfy the query*, so a lower score
+bought by deleting facts, examples, tables, caveats or links is **IMPROVED BY
+REMOVAL** — blocked when a concrete fact or internal link went, credit withheld
+when depth, an example or a FAQ question went. Read `docs/efr-quality-gate.md`
+before changing a threshold, and its §9 before calling a high score a defect:
+`specificityDeficit` reads a fixed fact vocabulary, so a 2,983-word guide built
+on fourteen worked archetypes scores 17.5 for naming five recognised facts. That
+is what the exception ledger is for.
+
+- **`npm run check:efr`** — diff-scoped, **gating** in `validate.yml`. New page
+  must meet PASS; a PASS page may not be pushed above it; a page above PASS may
+  not get materially worse (**+0.5**, an allowance for the per-1,000-word
+  denominator, not for noise — the score is deterministic, verified across
+  4,619 unchanged pages); an improvement that is still above target is reported
+  as **IMPROVED BUT STILL FAILING TARGET** and holds the ratchet at the new
+  score, never as a regression. Both sides of every diff are scored in **one
+  corpus** so the delta is the page's own change.
+- **`npm run audit:efr`** / **`npm run report:efr`** — whole-site,
+  **informational**: per-section PASS/REVIEW/FAIL counts, mean/median/p90, the
+  Top 20 per section as the editorial backlog, written to
+  `docs/efr-quality-report.md`.
+- **`npm run test:efr`** — 37 assertions over the policy, **gating**.
+- **`data/efr_exceptions.json`** — one page per entry (no wildcards, no whole
+  sections), with the EFR it was agreed at, a reason, an owner, a date and an
+  optional review date. Visible in every report, never silent, and the same bar
+  as every other ledger here: discussed, never added to make a PR pass.
+
+Absolute thresholds apply to **English** pages only — raw scores are not
+comparable across locales (next section) — so a locale `/updates/` or `/guide/`
+page is scored, reported as `UNCALIBRATED`, and ratcheted against its own
+previous version only. Hub indexes (`/updates/`, `/guide/`) are unclassified by
+policy. Verified against seven deliberately broken inputs and a replay of the
+real 2026-09-01 `/updates/` rewrite before it was added to the gating list.
 
 ### Two things about it that are easy to get wrong
 
@@ -2509,6 +2569,10 @@ fix ranked by leverage, not a purge of sentences. But **a page whose own
 copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
 and its copy is brought to the tone-of-voice standard in the same change. User
 direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
+"Zero" is read through the locale policy (`data/em_dash_locale_policy.json`,
+adopted the same day): on a native-dash locale an em dash is never a finding,
+on zh-tw and ja only a lone `—` counts, and on a review locale the finding is a
+warning — see `docs/em-dash-policy.md` §4.
 
 Three definitions carry the rule, and each one was chosen against a real case:
 
@@ -2520,7 +2584,10 @@ Three definitions carry the rule, and each one was chosen against a real case:
   its cards count too.
 * **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
   sibling in the cluster that the PR does not itself copy-edit must already be
-  clean, or the gate names it and the parent that pulled it in. Anchored on
+  clean **under its own locale's policy** (`data/em_dash_locale_policy.json`: a
+  Russian sibling is never pulled in, a Chinese one only for a lone `—`, a
+  review-locale sibling is a warning), or the gate names it and the parent that
+  pulled it in. Anchored on
   English on purpose — it is where pages are born and where the standard is
   applied first — so a translator's one-line fix never obliges an English
   rewrite, and a new locale batch never obliges the cleanup of every parent it
@@ -2936,6 +3003,16 @@ Standing protocol:
   an internal link. Google's spam policy names "automated transformations like
   synonymizing" as scaled content abuse, and the SEO Preservation Gate blocks the
   rest. Replace a generic claim with the fact behind it instead.
+- Do not add an em dash to new or changed copy on a locale whose policy in
+  `data/em_dash_locale_policy.json` is `ban` (English and the thirteen en-dash
+  locales) or `double-dash` (zh-tw, ja, where only the paired `——` is native),
+  and do not add a spaced hyphen standing in for one on an English page —
+  `npm run check:editorial-footprint` exits 1 on an introduced one, in shadow
+  mode too, since 2026-09-02, and names the locale's replacement (a colon, a
+  full stop, a comma pair or parentheses in English; the spaced en dash in the
+  en-dash locales). Do not change a locale's policy on a page by hand or by
+  translating the English rule: it changes only in the ledger, with a native
+  reader or corpus evidence — see `docs/em-dash-policy.md` §4 and §7.
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
   generator run — the gate names the upstream file when it can find it, and the
@@ -2951,7 +3028,9 @@ Standing protocol:
   page whose title, meta description, H1, headings, prose or FAQ text a PR
   changes must leave with zero em dashes in every measured slot, cards included,
   and its siblings must already be clean or be cleaned in the same PR — see "Clean
-  on touch" above. `npm run check:editorial-footprint` reports both as
+  on touch" above. "Clean" is read through each page's own locale policy in
+  `data/em_dash_locale_policy.json` (a Russian sibling keeps its dashes; a
+  Chinese one keeps `——`). `npm run check:editorial-footprint` reports both as
   `em-dash-touched` / `em-dash-sibling`.
 - Do not paste a sentence from one page spec into another. `npm run
   check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
@@ -2966,6 +3045,13 @@ Standing protocol:
   and must say so.
 - Do not compare Editorial Footprint Risk scores across locales, or read an
   unmeasured dimension as a zero. Rank on `locale_percentile`.
+- Do not lower an `/updates/` or `/guide/` page's EFR to clear
+  `npm run check:efr` by cutting explanation, evidence, examples, methodology,
+  caveats, tables, instructions or source context — the target is the minimum
+  footprint that still completely satisfies the query, and the gate reports a
+  drop that coincides with a lost fact or link as IMPROVED BY REMOVAL. A page
+  that genuinely needs its footprint goes in `data/efr_exceptions.json` with a
+  reason — never to make a PR pass. See "The EFR Quality Gate" above.
 - Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
   in that locale's hub — a page no hub links is reachable only from the sitemap.
   See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates
