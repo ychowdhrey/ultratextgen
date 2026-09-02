@@ -227,6 +227,18 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Diff-scoped and gating. Fails a PR that corrects a number on one page of
+      # an hreflang cluster and leaves a sibling asserting the old value — the
+      # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
+      # and seven translations kept the old figure for a month with full CI
+      # green. Every other gate here measures structure, language, schema or
+      # assets; a wrong number passes all of them. Replayed over the last 52
+      # commits that touched HTML it fires exactly once, on that commit.
+      - name: Run numeric parity check
+        id: numeric_parity
+        continue-on-error: true
+        run: npm run check:numeric-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee numeric-parity.log
+
       # Whole-pillar and gating, same call as the zalgo check above: no backlog
       # to be permanently red against — all 11 updates/ entries carry exactly
       # one verification date, in the guide-meta pill, so a failure is always a
@@ -567,6 +579,11 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
+            echo '```'
+            cat numeric-parity.log
+            echo '```'
+            echo ""
             echo "### Updates verification-date check — \`${{ steps.updates_verification.outcome }}\`"
             echo '```'
             cat updates-verification.log
@@ -697,6 +714,7 @@ jobs:
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
+          steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
