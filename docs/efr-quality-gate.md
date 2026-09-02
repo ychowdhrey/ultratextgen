@@ -130,6 +130,22 @@ limitation §9.6 describes made visible, and the reason absolute thresholds are
 re-read after any extractor or baseline change. The ratchet is unaffected, since
 it scores both sides of a diff in one context.
 
+**Re-measured a third time the same day, after the fact vocabulary was
+widened** (§9.11): Updates read 8 PASS / 1 REVIEW / 2 FAIL (mean 3.66, median
+3.3), Guides 19 / 1 / 12 (mean 6.95, median 5.5). The widening was aimed at
+two false positives and hit them: `lienquan-mobile-name-penalty-update` went
+10.9 → 3.3 once "Liên Quân Mobile", "1 day to 3 years" and "January 1, 2026"
+counted, and `unicode-18-most-anticipated-emoji` 8.5 → 2.2 once "Emoji 16.0"
+did. It also moved pages nobody touched, in both directions, because five of
+the nine dimensions are cohort-relative and the cohort's bar rose: the English
+guide median went from 6.6 to 7.8 recognised facts per 1,000 words, and
+`discord-where-fonts-work` (5.6 → 9.5), `instagram-font-ideas` (6.7 → 10.6) and
+`bio-formatting-without-spam` (2.6 → 7.1) crossed out of PASS with no word
+changed. Site-wide, 423 pages improved, 3,270 held and 936 worsened by 0.5 or
+more (the largest by 11.1, a Vietnamese emoji page); the site median moved
+9.9 → 10.0. **A widening is a re-baseline event**: the baseline was regenerated
+in the same change, and the thresholds were re-read and left where they are.
+
 ### The principle behind the numbers
 
 **EFR is not minimised indefinitely.** The target is the *minimum editorial
@@ -250,7 +266,17 @@ is **refused** (exit 2) rather than partially honoured.
 **Same bar as every other ledger in this repository**
 (`translation_parity_exceptions.json`, `english_parent_exceptions.json`,
 `library_hub_exclusions.json`): an entry is a discussed decision, never added
-unilaterally, and never to make a pull request pass. The ledger ships empty.
+unilaterally, and never to make a pull request pass.
+
+The ledger shipped empty. Its first two entries were agreed on 2026-09-02, and
+the order they were agreed in is the rule for the next one: **cleanup first,
+exception after.** `guide/linkedin-comments-guide` and
+`guide/instagram-fonts-shadowban-myth` are both facts-led (§9.1 and §9.12), and
+both were still carrying dozens of em dashes, a title or heading em dash and
+rhetorical questions. Those were removed first (18.1 → 11.5 and 14.6 → 14.1),
+and only the residue that the fact vocabulary cannot read was recorded, each
+with a `reviewBy` of 2026-12-01. An exception is never a way to skip the
+editing the page still owes.
 
 ## 7. Running it
 
@@ -385,6 +411,29 @@ fixed corpus context.
     it −5.8 with one alternation and +0.1 with the other, because its em
     dashes, three-item lists and recognised facts are unevenly distributed.
     A "shorter is better" reading of the score is wrong in both directions.
+11. **Widening the fact vocabulary moves pages nobody touched.**
+    `specificityDeficit` is a shortfall against the page's cohort median, so
+    when the detector learns to read dates, durations, publishers or game
+    names, every page that states them gains and the median rises; a page that
+    states none of them falls further below it without changing. Measured on
+    2026-09-02 (§4): three untouched guides crossed out of PASS, 936 pages
+    site-wide worsened by 0.5 or more, 423 improved. A first draft of the
+    same widening also counted the site's own units ("3 styles", "12
+    symbols", "two lines") and moved the guide median further still; it was
+    narrowed to engagement counts before landing. Two rules follow. A
+    widening is never done to fix one page, and it is committed with a
+    regenerated baseline and a re-read of the thresholds in the same change.
+    The ratchet does not see any of this, since it scores both versions of a
+    changed page in one corpus.
+12. **The lever names the kind of work, not the amount.** The `lever` column
+    (`facts`, `phrasing`, `template`, `punctuation`, `mixed`) reports the
+    dimension carrying 70% or more of a non-PASS score. Every FAIL on both
+    sections at first measurement was facts-led, and the two guides that
+    became the first exceptions read `facts (77%)` and `facts (98%)` after
+    their em dashes were removed: the cleanup took 6.6 points off one and
+    0.5 off the other, which is what a phrasing fix does to a facts-led
+    page. It is a routing hint for an editor, and it cannot say whether the
+    missing facts exist to be added (§9.1).
 
 ## 10. Verified against deliberately broken inputs
 
@@ -470,3 +519,6 @@ with the reason written down, not a rewrite.
 | date | change | reason |
 |---|---|---|
 | 2026-09-02 | Gate created. Updates ≤ 5.0 / Guides ≤ 7.0, ratchet with a 0.5 material allowance, exception ledger, whole-site report, 37 tests, wired gating in `validate.yml`. Measurement semantics unchanged. | user request; thresholds indicative |
+| 2026-09-02 | **Fact vocabulary widened** (`scripts/lib/editorial-footprint.js`): game names harvested from `js/gamename/game-rules.js` plus `EXTRA_GAMES`; platform list extended (Twitter, Reddit, Twitch, Slack, Bluesky, Mastodon, Messenger, WeChat, KakaoTalk, Zalo, Viber, Tinder, Bumble, iMessage); new kinds `organisation`, `emoji-font`, `emoji-version`, `os-version`, `date`, `duration`, `figure`, `percentage`, `quantity`; `limit` accepts thousands separators. Baseline regenerated; §4 and §9.11 carry the measured shift. 5 assertions added (`test:editorial-footprint` 76). | user decision: keep adding factual phrases; two facts-led false positives |
+| 2026-09-02 | **`lever` column** in the report and console (`leverFor`, `leverAdvice` in `efr-gate.js`, `DOMINANT_SHARE` 0.7). 3 assertions added (`test:efr` 40). | user decision; every FAIL was facts-led and the report could not say so |
+| 2026-09-02 | **First two exceptions** recorded (`guide/linkedin-comments-guide` 11.5, `guide/instagram-fonts-shadowban-myth` 14.1, review 2026-12-01) after both pages had their em dashes, a title/heading em dash, rhetorical questions and flagged promotional wording removed and their FAQ JSON-LD brought back to mirroring the visible answers. | user decision: cleanup first, exception after |

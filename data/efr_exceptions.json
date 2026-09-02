@@ -1,4 +1,21 @@
 {
   "_readme": "Ledger of /updates/ and /guide/ pages explicitly agreed to sit above their section's EFR PASS threshold. Read by scripts/check-efr.js and scripts/audit-efr.js. An entry never hides a result: the page's EFR and status are still computed and printed, and the report labels the row 'exception'. Do NOT add an entry here unilaterally — every entry reflects a real, discussed decision with the user, the same bar as data/translation_parity_exceptions.json and data/english_parent_exceptions.json, and never to make a PR pass. Entry shape: { page (one route with leading and trailing slash — no wildcards, no whole sections), efr (the page's EFR when the exception was agreed; the exception covers that score plus the 0.5 material allowance, not a further regression), reason (why the higher footprint is justified — e.g. the depth the page needs is not in the detector's fact vocabulary), owner (who agreed it, or the source), agreed (YYYY-MM-DD), reviewBy (optional YYYY-MM-DD; after it the exception is reported as expired and the normal rules apply until it is re-agreed) }. Full process: docs/efr-quality-gate.md.",
-  "exceptions": []
+  "exceptions": [
+    {
+      "page": "/guide/linkedin-comments-guide/",
+      "efr": 11.5,
+      "reason": "facts-led (specificityDeficit 8.8 of 11.5): a 3,000-word guide built on fourteen worked comment archetypes, each with a quoted example, a when-to-use rule and an impact rating. An archetype, a worked example and a named author (Adam Grant, Hidden Potential) are not in the fact detector's vocabulary, so the page's depth reads as absence. Agreed only after the copy was cleaned: 47 measured em dashes, the title's em dash, one rhetorical question and the flagged promotional wording were removed on 2026-09-02, which took the page from 18.1 to 11.5. Still above the 7.0 target; not an editorial defect.",
+      "owner": "Yasir",
+      "agreed": "2026-09-02",
+      "reviewBy": "2026-12-01"
+    },
+    {
+      "page": "/guide/instagram-fonts-shadowban-myth/",
+      "efr": 14.1,
+      "reason": "facts-led (specificityDeficit 13.8 of 14.1): a myth-busting argument whose evidence is a reproducible search test, a two-column myth/real-cost ledger and a three-step reach checklist, none of which the fact detector reads; the page names five recognised facts in 1,941 words. Agreed only after the copy was cleaned: 36 measured em dashes, the heading's em dash and both rhetorical questions were removed on 2026-09-02 (14.6 to 14.1). Still above the 7.0 target; the remaining footprint is the shape of the argument, not template prose.",
+      "owner": "Yasir",
+      "agreed": "2026-09-02",
+      "reviewBy": "2026-12-01"
+    }
+  ]
 }
