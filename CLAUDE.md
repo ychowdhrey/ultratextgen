@@ -2733,6 +2733,18 @@ Three definitions carry the rule, and each one was chosen against a real case:
   directory, an asset swap: none of those is a touch, because a mesh pass that
   rewrites 1,009 pages must not demand 1,009 rewrites. Once a page *is* touched,
   its cards count too.
+* **A template-level change is not a touch (user decision, 2026-09-02).** The
+  first large diff the rule met was the template-tier em-dash pass in #840: 499
+  pages read as copy-touched and were billed 7,983 inherited em dashes, though
+  nobody had written on any of them. So a page is touched only by a change of
+  its own. Two shapes are carved out, in `classifyTouches()`: a string added or
+  removed verbatim on **three or more** changed pages in the same PR (one string
+  on many pages is a template by the phrase bank's own `variety` definition, and
+  the fix lives in the template), and a string whose **punctuation or case alone**
+  moved (the same rule the sitemap's significance hash applies, so the two
+  systems cannot disagree). A page carrying a template change *and* a sentence of
+  its own is still touched; a new page always is. Replayed on #840 the rule
+  stopped reading the pass as 499 copy edits.
 * **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
   sibling in the cluster that the PR does not itself copy-edit must already be
   clean **under its own locale's policy** (`data/em_dash_locale_policy.json`: a

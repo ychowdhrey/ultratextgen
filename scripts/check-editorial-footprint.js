@@ -37,6 +37,11 @@
  * rewrites 1,009 pages must not demand 1,009 rewrites. Once a page IS touched,
  * every measured slot on it must be clean, cards included.
  *
+ * A template-level change is not a touch (user decision, 2026-09-02): a string
+ * added or removed verbatim on three or more changed pages in the same diff,
+ * or a string whose punctuation or case alone moved, does not make a page
+ * touched. Only a page with a change of its own is. See classifyTouches().
+ *
  * An English page that is touched pulls its locale siblings along: each
  * sibling that this branch does not itself copy-edit must already be clean,
  * or it is reported under `em-dash-sibling` naming the parent that pulled it
@@ -163,10 +168,86 @@ function parseEnforce(argv) {
  */
 const TOUCH_SLOTS = EDITORIAL_SLOTS.filter((s) => s !== 'cta');
 
-/** Did this branch edit the page's own copy? A new page is touched by definition. */
+/** Did this page's touch-slot text move at all? A new page is touched by definition. */
 function copyTouched(beforePage, page) {
   if (!beforePage) return true;
   return joinSlots(beforePage, TOUCH_SLOTS).join('\n') !== joinSlots(page, TOUCH_SLOTS).join('\n');
+}
+
+/**
+ * A template-level change is not a touch (user decision, 2026-09-02).
+ *
+ * The first large diff the touch rule met was the template-tier em-dash pass:
+ * 499 pages read as copy-touched and were billed 7,983 inherited em dashes,
+ * because a shared CTA sentence and a tile-label format moved on every page
+ * at once. Nobody had edited those pages' copy. So "touched" now means the
+ * AUTHOR wrote on this page, and two shapes of change are carved out:
+ *
+ *   - SHARED: a string added or removed on this page that is added or removed
+ *     verbatim on TEMPLATE_SHARE_MIN or more changed pages in the same diff.
+ *     One string on many pages is a template by the phrase bank's own
+ *     definition (variety ≈ 0), and the fix lives in the template.
+ *   - COSMETIC: a string whose punctuation or case moved and nothing else —
+ *     an em dash becoming a colon, a full stop capitalising the next word.
+ *     The same rule the sitemap's significance hash applies, so the two
+ *     systems cannot disagree about what a change is.
+ *
+ * A page is copy-touched only if at least one element of its delta is neither.
+ * A page with a template change AND a sentence of its own is touched. A new
+ * page is touched. Pure over extracted slots; tested directly.
+ */
+const TEMPLATE_SHARE_MIN = 3;
+
+function normalizeCopy(s) {
+  return (s || '').replace(/\p{P}/gu, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+function slotDelta(beforePage, page) {
+  const out = [];
+  for (const slot of TOUCH_SLOTS) {
+    const before = (beforePage && beforePage.slots[slot]) || [];
+    const after = (page && page.slots[slot]) || [];
+    const bs = new Set(before), as = new Set(after);
+    const removed = before.filter((x) => !as.has(x));
+    const added = after.filter((x) => !bs.has(x));
+    const normRemoved = new Set(removed.map(normalizeCopy));
+    const normAdded = new Set(added.map(normalizeCopy));
+    for (const x of added) out.push({ slot, sign: '+', text: x, cosmetic: normRemoved.has(normalizeCopy(x)) });
+    for (const x of removed) out.push({ slot, sign: '-', text: x, cosmetic: normAdded.has(normalizeCopy(x)) });
+  }
+  return out;
+}
+
+/**
+ * pages: [{ rel, beforePage|null, page }] for every changed page in the diff.
+ * Returns { touched: Set<rel>, reasons: Map<rel, 'new'|'own-copy'|'template-only'|'unchanged'> }.
+ */
+function classifyTouches(pages) {
+  const deltas = new Map();
+  const shareCount = new Map();
+  for (const p of pages) {
+    if (!p.beforePage) continue;
+    const d = slotDelta(p.beforePage, p.page);
+    deltas.set(p.rel, d);
+    const seen = new Set();
+    for (const e of d) {
+      const key = `${e.slot}|${e.sign}|${e.text}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      shareCount.set(key, (shareCount.get(key) || 0) + 1);
+    }
+  }
+  const touched = new Set();
+  const reasons = new Map();
+  for (const p of pages) {
+    if (!p.beforePage) { touched.add(p.rel); reasons.set(p.rel, 'new'); continue; }
+    const d = deltas.get(p.rel);
+    if (!d.length) { reasons.set(p.rel, 'unchanged'); continue; }
+    const own = d.some((e) => !e.cosmetic && (shareCount.get(`${e.slot}|${e.sign}|${e.text}`) || 0) < TEMPLATE_SHARE_MIN);
+    if (own) { touched.add(p.rel); reasons.set(p.rel, 'own-copy'); }
+    else reasons.set(p.rel, 'template-only');
+  }
+  return { touched, reasons };
 }
 
 /**
@@ -376,21 +457,30 @@ function main() {
     return +(100 * lo / arr.length).toFixed(1);
   };
 
+  // Extract every changed page first: "touched" is a property of the whole
+  // diff (a string shared across pages is a template), not of one page.
+  const extracted = [];
   for (const rel of changed) {
     const abs = path.join(ROOT, rel);
     if (!fs.existsSync(abs)) continue;          // deleted later in the branch
     let page;
     try { page = extractPage(fs.readFileSync(abs, 'utf8'), rel); } catch { continue; }
     if (!page || page.indexable === false) continue;
-    checked++;
-
     const beforeHtml = blobAt(mergeBase, rel);
     const beforePage = beforeHtml ? extractPage(beforeHtml, rel) : null;
-    const isNew = !beforeHtml;
+    extracted.push({ rel, page, beforePage });
+  }
+  const touchClass = classifyTouches(extracted);
+  let templateOnly = 0;
+
+  for (const { rel, page, beforePage } of extracted) {
+    checked++;
+    const isNew = !beforePage;
 
     // ---- phrase-bank findings: delta-scoped, clean-on-touch, per-locale ---
-    const touched = copyTouched(beforePage, page);
+    const touched = touchClass.touched.has(rel);
     if (touched) touchedRels.push(rel);
+    if (touchClass.reasons.get(rel) === 'template-only') templateOnly++;
     // The locale's em dash policy is applied to BOTH sides identically, so the
     // delta below still compares like with like: on a native locale no em
     // dash is a finding, on a double-dash locale only a lone one is.
@@ -474,7 +564,7 @@ function main() {
 
   // ---- report ------------------------------------------------------------
   console.log(`  pages checked:      ${checked}`);
-  console.log(`  copy-touched pages: ${touchedRels.length}` + (touchedEn.length ? ` (${touchedEn.length} English, pulling ${siblingCount} unclean sibling(s))` : ''));
+  console.log(`  copy-touched pages: ${touchedRels.length}` + (touchedEn.length ? ` (${touchedEn.length} English, pulling ${siblingCount} unclean sibling(s))` : '') + (templateOnly ? `; ${templateOnly} changed only by a template or punctuation, not touched` : ''));
   console.log(`  findings introduced: ${introduced.length}`);
   if (preExisting.length) console.log(`  pre-existing (not this branch's): ${preExisting.length}`);
   console.log(`  SEO preservation findings: ${seoFindings.length}`);
@@ -650,6 +740,7 @@ function main() {
 
 if (require.main === module) main();
 module.exports = {
-  BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, TOUCH_SLOTS,
-  ruleOf, bites, parseEnforce, copyTouched, classifyHits, siblingObligations, isBanned
+  BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, TOUCH_SLOTS, TEMPLATE_SHARE_MIN,
+  ruleOf, bites, parseEnforce, copyTouched, classifyTouches, slotDelta, normalizeCopy,
+  classifyHits, siblingObligations, isBanned
 };
