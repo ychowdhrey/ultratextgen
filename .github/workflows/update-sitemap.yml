@@ -30,6 +30,27 @@ on:
   # workflow_dispatch is kept so the sitemap can still be regenerated on
   # demand while the schedule is off.
   #
+  # ── Addendum 2026-09-02: the mass-bump above is fixed; the pause is not ──
+  #
+  # Two more site-wide passes landed since: the static footer on every page
+  # (#790) and a template-tier em-dash pass on ~2,800 pages (#840). Under the
+  # old significance hash the next run would still have advanced 4,576 of
+  # 4,576. scripts/lib/content-significance.js now ignores the generated
+  # static footer block and is punctuation-blind and case-folded on visible
+  # text, title, H1 and meta description (symbols and copy payloads stay
+  # verbatim), and data/sitemap-lastmod-cache.json was re-baselined against
+  # the tree of the last run (df1f93e7f) with every lastmod kept. Measured on
+  # that tree pair, not assumed:
+  #     old hash: 4576 advance · footer ignored: 3236 · final hash: 784 advance, 3792 held
+  # The 784 are pages a reader can see changed since 2026-08-20 — translations
+  # landed, sections added, hubs pre-rendered, tone rewrites — and each is now
+  # dated by the newest commit that changed what a reader sees (a commit walk
+  # in update-sitemap.js), not by the mesh or template pass that touched the
+  # file last, so they no longer all report one day.
+  #
+  # Resuming is still the incident's call, not this fix's: uncomment the two
+  # schedule lines when that decision is made. Nothing here un-pauses.
+  #
   # schedule:
   #   - cron: '0 0 * * *'  # every day at midnight UTC
   workflow_dispatch:
