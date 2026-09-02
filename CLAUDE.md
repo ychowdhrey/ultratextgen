@@ -324,9 +324,40 @@ Fixed for the currency lane only (2026-09-01) by importing this script's own
 `load_locale_siblings()`, `page_title_and_desc()` and `inject_card()` rather
 than reimplementing them — a second copy of that logic would drift from the
 first, which is the failure the peer-mirroring paragraph above already
-documents. **Every other `library/` hub × locale is still unaudited**, and the
-general fix is to give the hub→spoke pass the same locale mirroring the peer
-pass already has.
+documents.
+
+**Closed generally 2026-09-02 — the hub→spoke pass now mirrors like the peer
+pass.** The whole-site number was **1,032 missing links across 16 languages and
+250 hub pages**, 61% of the 1,686 relations where both ends actually exist, led
+by `math-symbols` (207), `zodiac-symbols` (130), `greek-letter-symbols` (124),
+`religious-symbols` (122) and `special-characters` (111). `load_locale_hubs()`
+plus a second loop inside the existing locale-propagation block closes it, under
+the same three rules the peer loop already follows: cluster membership from each
+page's own `hreflang="en"` and never a guessed slug; a spoke with no sibling in
+L skipped rather than linked in English; card copy read from the target locale
+page's own `<h1>` and hero tagline, so nothing is translated or invented. Behind
+`--reciprocal`, off under `--no-locales`. A full run now reports **0 errors, 0
+warnings**.
+
+**The gate gained the matching rule**, so it cannot silently regrow:
+`check-new-symbol-peer-links.py` now also requires every `<lang>/symbol/` page a
+branch **adds** to be linked from that locale's copy of each hub its EN parent
+claims. Scoped to added pages, not modified ones — that is the regression which
+produced the 1,032, and it keeps the gate off the pre-existing backlog rather
+than permanently red. It imports the generator's own loaders for the same
+no-second-copy reason as above.
+
+**Grid sizes stay in proportion**, which is the objection worth checking before
+a backfill of this size: median 6 cards per affected grid, worst 28 against EN's
+own 21 on the same hub, and 175 of the 250 pages needed 3 cards or fewer.
+
+Verified per this file's own rule against three differently-shaped probes: a new
+`de/symbol/` page no hub links **exits 1** naming the exact hub; the same page
+once linked **exits 0**; and a one-directional EN peer relation still **exits 1**,
+proving the original rule was not broken by the addition. That verification was
+not ceremonial — the first draft of this change defined the new function inside
+`main()`, so `main()` fell off the end and the whole gate **exited 0 in silence**.
+`ast.parse` was happy; the check was inert. Confirm structure, not syntax.
 
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
