@@ -2265,6 +2265,53 @@ ranks the upstream sources.
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
   gate can never disagree about what any of it means.
 
+### The EFR Quality Gate — PASS / REVIEW / FAIL for `/updates/` and `/guide/` (added 2026-09-02)
+
+The audit above measures; this gate decides. It applies absolute thresholds to
+the existing EFR score — **the measurement is unchanged** — on the two
+hand-authored entry sections, as a per-PR **ratchet**:
+
+| section | PASS | REVIEW | FAIL |
+|---|---|---|---|
+| `/updates/<slug>/` | ≤ 5.0 | > 5.0 – 7.0 | > 7.0 |
+| `/guide/<slug>/` | ≤ 7.0 | > 7.0 – 8.0 | > 8.0 |
+
+**EFR is a diagnostic and publishing quality-control metric, not an SEO ranking
+factor.** And it is not minimised indefinitely: the target is the *minimum
+editorial footprint required to completely satisfy the query*, so a lower score
+bought by deleting facts, examples, tables, caveats or links is **IMPROVED BY
+REMOVAL** — blocked when a concrete fact or internal link went, credit withheld
+when depth, an example or a FAQ question went. Read `docs/efr-quality-gate.md`
+before changing a threshold, and its §9 before calling a high score a defect:
+`specificityDeficit` reads a fixed fact vocabulary, so a 2,983-word guide built
+on fourteen worked archetypes scores 17.5 for naming five recognised facts. That
+is what the exception ledger is for.
+
+- **`npm run check:efr`** — diff-scoped, **gating** in `validate.yml`. New page
+  must meet PASS; a PASS page may not be pushed above it; a page above PASS may
+  not get materially worse (**+0.5**, an allowance for the per-1,000-word
+  denominator, not for noise — the score is deterministic, verified across
+  4,619 unchanged pages); an improvement that is still above target is reported
+  as **IMPROVED BUT STILL FAILING TARGET** and holds the ratchet at the new
+  score, never as a regression. Both sides of every diff are scored in **one
+  corpus** so the delta is the page's own change.
+- **`npm run audit:efr`** / **`npm run report:efr`** — whole-site,
+  **informational**: per-section PASS/REVIEW/FAIL counts, mean/median/p90, the
+  Top 20 per section as the editorial backlog, written to
+  `docs/efr-quality-report.md`.
+- **`npm run test:efr`** — 37 assertions over the policy, **gating**.
+- **`data/efr_exceptions.json`** — one page per entry (no wildcards, no whole
+  sections), with the EFR it was agreed at, a reason, an owner, a date and an
+  optional review date. Visible in every report, never silent, and the same bar
+  as every other ledger here: discussed, never added to make a PR pass.
+
+Absolute thresholds apply to **English** pages only — raw scores are not
+comparable across locales (next section) — so a locale `/updates/` or `/guide/`
+page is scored, reported as `UNCALIBRATED`, and ratcheted against its own
+previous version only. Hub indexes (`/updates/`, `/guide/`) are unclassified by
+policy. Verified against seven deliberately broken inputs and a replay of the
+real 2026-09-01 `/updates/` rewrite before it was added to the gating list.
+
 ### Two things about it that are easy to get wrong
 
 **Raw scores are not comparable across locales.** A locale page has no English
@@ -2694,6 +2741,13 @@ Standing protocol:
   and must say so.
 - Do not compare Editorial Footprint Risk scores across locales, or read an
   unmeasured dimension as a zero. Rank on `locale_percentile`.
+- Do not lower an `/updates/` or `/guide/` page's EFR to clear
+  `npm run check:efr` by cutting explanation, evidence, examples, methodology,
+  caveats, tables, instructions or source context — the target is the minimum
+  footprint that still completely satisfies the query, and the gate reports a
+  drop that coincides with a lost fact or link as IMPROVED BY REMOVAL. A page
+  that genuinely needs its footprint goes in `data/efr_exceptions.json` with a
+  reason — never to make a PR pass. See "The EFR Quality Gate" above.
 - Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
   in that locale's hub — a page no hub links is reachable only from the sitemap.
   See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates
