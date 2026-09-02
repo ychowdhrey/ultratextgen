@@ -100,6 +100,8 @@ function createExceptionResolver(exceptions) {
         h2Delta: 0,
         faqDelta: 0,
         symbolTilesDelta: 0,
+        tableDelta: 0,
+        tableRowsDelta: 0,
         collectionsOnlyInEN: [],
         collectionsOnlyInLocale: [],
         collectionGroupDeltas: [],
@@ -118,6 +120,10 @@ function createExceptionResolver(exceptions) {
       h2Delta: sup.h2Delta ? 0 : diff.h2Delta,
       faqDelta: sup.faqDelta ? 0 : diff.faqDelta,
       symbolTilesDelta: sup.symbolTilesDelta ? 0 : diff.symbolTilesDelta,
+      tableDelta: sup.tableDelta ? 0 : diff.tableDelta || 0,
+      // Carried through unsuppressed: rows are reported, never scored, so
+      // there is nothing for a suppress key to switch off.
+      tableRowsDelta: diff.tableRowsDelta || 0,
       // No per-collection suppress key exists; a scoped entry passes the
       // combo-set axes through untouched rather than silently clearing them.
       collectionsOnlyInEN: diff.collectionsOnlyInEN || [],

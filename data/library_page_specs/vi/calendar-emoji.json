@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/calendar-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Lịch",
       "intro": "Glyph Unicode cốt lõi — một trang lịch bị xé duy nhất.",
       "symbols": [
-        { "char": "📅", "label": "Lịch (U+1F4C5)" }
+        {
+          "char": "📅",
+          "label": "Lịch (U+1F4C5)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Các Emoji Lịch Khác Thường Bị Nhầm Lẫn",
       "intro": "Hai glyph lịch Unicode liền kề, mỗi cái khắc họa một kiểu lịch vật lý khác nhau.",
       "symbols": [
-        { "char": "📆", "label": "Lịch Xé Từng Tờ (U+1F4C6)" },
-        { "char": "🗓️", "label": "Lịch Xoắn Ốc (U+1F5D3)" }
+        {
+          "char": "📆",
+          "label": "Lịch Xé Từng Tờ (U+1F4C6)"
+        },
+        {
+          "char": "🗓️",
+          "label": "Lịch Xoắn Ốc (U+1F5D3)"
+        }
       ]
     },
     {
@@ -47,15 +65,31 @@
       "h2": "Các Emoji Lập Kế Hoạch & Thời Gian Liên Quan",
       "intro": "Các emoji thường xuất hiện cạnh lịch trong ngữ cảnh lên lịch và nhắc nhở.",
       "symbols": [
-        { "char": "⏰", "label": "Đồng Hồ Báo Thức" },
-        { "char": "📌", "label": "Ghim Bấm" },
-        { "char": "✅", "label": "Nút Dấu Kiểm" }
+        {
+          "char": "⏰",
+          "label": "Đồng Hồ Báo Thức"
+        },
+        {
+          "char": "📌",
+          "label": "Ghim Bấm"
+        },
+        {
+          "char": "✅",
+          "label": "Nút Dấu Kiểm"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/object-emojis/", "title": "Ký Hiệu Đồ Vật", "desc": "Mọi emoji đồ vật đã được mã hóa, bao gồm trọn bộ lịch và lập kế hoạch." },
-    { "href": "/library/clock-time-symbols/", "title": "Ký Hiệu Đồng Hồ & Thời Gian", "desc": "Mặt đồng hồ, báo thức và các emoji liên quan đến thời gian, duyệt và sao chép sẵn sàng." }
+    {
+      "href": "/library/object-emojis/",
+      "title": "Ký Hiệu Đồ Vật",
+      "desc": "Mọi emoji đồ vật đã được mã hóa, bao gồm trọn bộ lịch và lập kế hoạch."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Ký Hiệu Đồng Hồ & Thời Gian",
+      "desc": "Mặt đồng hồ, báo thức và các emoji liên quan đến thời gian, duyệt và sao chép sẵn sàng."
+    }
   ]
 }

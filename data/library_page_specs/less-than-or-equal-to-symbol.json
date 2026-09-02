@@ -12,9 +12,18 @@
   "date_modified": "2026-07-24",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
   ],
   "sections": [
     {
@@ -23,8 +32,14 @@
       "h2": "Less Than or Equal To, in Math and Code",
       "intro": "The math symbol, and the two-character stand-in most programming languages use instead since ≤ itself was never part of ASCII.",
       "symbols": [
-        { "char": "≤", "label": "Less-Than or Equal To (Math)" },
-        { "char": "<=", "label": "Less Than or Equal To (Code — C, Python, JavaScript, Java, SQL)" }
+        {
+          "char": "≤",
+          "label": "Less-Than or Equal To (Math)"
+        },
+        {
+          "char": "<=",
+          "label": "Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL)"
+        }
       ]
     },
     {
@@ -33,10 +48,22 @@
       "h2": "Symbols Often Mistaken for ≤",
       "intro": "These all mean roughly the same thing but are distinct Unicode characters from different typesetting traditions.",
       "symbols": [
-        { "char": "≦", "label": "Less-Than Over Equal To (U+2266)" },
-        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D) — the ISO 31-11 preferred form" },
-        { "char": "≲", "label": "Less-Than or Equivalent To (U+2272)" },
-        { "char": "≪", "label": "Much Less Than (U+226A) — a different relation, not a variant of ≤" }
+        {
+          "char": "≦",
+          "label": "Less-Than Over Equal To (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Less-Than or Slanted Equal To (U+2A7D): the ISO 31-11 preferred form"
+        },
+        {
+          "char": "≲",
+          "label": "Less-Than or Equivalent To (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Much Less Than (U+226A): a different relation, not a variant of ≤"
+        }
       ]
     },
     {
@@ -45,15 +72,29 @@
       "h2": "Related Comparison Symbols",
       "intro": "The other relation symbols ≤ pairs with in inequalities and set notation.",
       "symbols": [
-        { "char": "≥", "label": "Greater-Than or Equal To (U+2265)" },
-        { "char": "<", "label": "Less Than" },
-        { "char": ">", "label": "Greater Than" },
-        { "char": "≠", "label": "Not Equal To" },
-        { "char": "=", "label": "Equals Sign" }
+        {
+          "char": "≥",
+          "label": "Greater-Than or Equal To (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Less Than"
+        },
+        {
+          "char": ">",
+          "label": "Greater Than"
+        },
+        {
+          "char": "≠",
+          "label": "Not Equal To"
+        },
+        {
+          "char": "=",
+          "label": "Equals Sign"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/math-symbols/",

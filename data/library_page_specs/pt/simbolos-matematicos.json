@@ -16,11 +16,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/library/simbolos/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/math-symbols/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-matematicos/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/math-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/math-symbols/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-matematicos/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/math-symbols/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "basic-operators",
@@ -28,16 +36,46 @@
       "h2": "Operadores Matemáticos Básicos",
       "intro": "Símbolos de operadores aritméticos e algébricos para equações e expressões.",
       "symbols": [
-        { "char": "±", "label": "Sinal de Mais ou Menos" },
-        { "char": "×", "label": "Sinal de Multiplicação" },
-        { "char": "÷", "label": "Sinal de Divisão" },
-        { "char": "∓", "label": "Sinal de Menos ou Mais" },
-        { "char": "∣", "label": "Divide" },
-        { "char": "⁄", "label": "Barra de Fração" },
-        { "char": "∤", "label": "Não Divide" },
-        { "char": "+", "label": "Sinal de Mais" },
-        { "char": "−", "label": "Sinal de Menos" },
-        { "char": "∕", "label": "Barra de Divisão" }
+        {
+          "char": "±",
+          "label": "Sinal de Mais ou Menos"
+        },
+        {
+          "char": "×",
+          "label": "Sinal de Multiplicação"
+        },
+        {
+          "char": "÷",
+          "label": "Sinal de Divisão"
+        },
+        {
+          "char": "∓",
+          "label": "Sinal de Menos ou Mais"
+        },
+        {
+          "char": "∣",
+          "label": "Divide"
+        },
+        {
+          "char": "⁄",
+          "label": "Barra de Fração"
+        },
+        {
+          "char": "∤",
+          "label": "Não Divide"
+        },
+        {
+          "char": "+",
+          "label": "Sinal de Mais"
+        },
+        {
+          "char": "−",
+          "label": "Sinal de Menos"
+        },
+        {
+          "char": "∕",
+          "label": "Barra de Divisão"
+        }
       ]
     },
     {
@@ -46,18 +84,54 @@
       "h2": "Símbolos de Comparação e Igualdade",
       "intro": "Símbolos para comparar valores e expressar relações entre quantidades.",
       "symbols": [
-        { "char": "≠", "label": "Diferente de" },
-        { "char": "≈", "label": "Quase Igual a" },
-        { "char": "≡", "label": "Idêntico a" },
-        { "char": "≤", "label": "Menor ou Igual a" },
-        { "char": "≥", "label": "Maior ou Igual a" },
-        { "char": "≪", "label": "Muito Menor Que" },
-        { "char": "≫", "label": "Muito Maior Que" },
-        { "char": "≃", "label": "Assintoticamente Igual a" },
-        { "char": "≅", "label": "Aproximadamente Igual a" },
-        { "char": "≊", "label": "Quase Igual ou Igual a" },
-        { "char": "∼", "label": "Operador Til" },
-        { "char": "≜", "label": "Igual por Definição" }
+        {
+          "char": "≠",
+          "label": "Diferente de"
+        },
+        {
+          "char": "≈",
+          "label": "Quase Igual a"
+        },
+        {
+          "char": "≡",
+          "label": "Idêntico a"
+        },
+        {
+          "char": "≤",
+          "label": "Menor ou Igual a"
+        },
+        {
+          "char": "≥",
+          "label": "Maior ou Igual a"
+        },
+        {
+          "char": "≪",
+          "label": "Muito Menor Que"
+        },
+        {
+          "char": "≫",
+          "label": "Muito Maior Que"
+        },
+        {
+          "char": "≃",
+          "label": "Assintoticamente Igual a"
+        },
+        {
+          "char": "≅",
+          "label": "Aproximadamente Igual a"
+        },
+        {
+          "char": "≊",
+          "label": "Quase Igual ou Igual a"
+        },
+        {
+          "char": "∼",
+          "label": "Operador Til"
+        },
+        {
+          "char": "≜",
+          "label": "Igual por Definição"
+        }
       ]
     },
     {
@@ -66,17 +140,50 @@
       "h2": "Símbolos de Teoria dos Conjuntos e Lógica",
       "intro": "Símbolos para pertencimento a conjuntos, subconjuntos, uniões, interseções e operações lógicas.",
       "symbols": [
-        { "char": "∈", "label": "Pertence a" },
-        { "char": "∉", "label": "Não Pertence a" },
-        { "char": "∋", "label": "Contém como Membro" },
-        { "char": "∌", "label": "Não Contém como Membro" },
-        { "char": "⊂", "label": "Subconjunto de" },
-        { "char": "⊃", "label": "Superconjunto de" },
-        { "char": "⊄", "label": "Não é Subconjunto de" },
-        { "char": "⊅", "label": "Não é Superconjunto de" },
-        { "char": "∪", "label": "União" },
-        { "char": "∩", "label": "Interseção" },
-        { "char": "∅", "label": "Conjunto Vazio" }
+        {
+          "char": "∈",
+          "label": "Pertence a"
+        },
+        {
+          "char": "∉",
+          "label": "Não Pertence a"
+        },
+        {
+          "char": "∋",
+          "label": "Contém como Membro"
+        },
+        {
+          "char": "∌",
+          "label": "Não Contém como Membro"
+        },
+        {
+          "char": "⊂",
+          "label": "Subconjunto de"
+        },
+        {
+          "char": "⊃",
+          "label": "Superconjunto de"
+        },
+        {
+          "char": "⊄",
+          "label": "Não é Subconjunto de"
+        },
+        {
+          "char": "⊅",
+          "label": "Não é Superconjunto de"
+        },
+        {
+          "char": "∪",
+          "label": "União"
+        },
+        {
+          "char": "∩",
+          "label": "Interseção"
+        },
+        {
+          "char": "∅",
+          "label": "Conjunto Vazio"
+        }
       ]
     },
     {
@@ -85,22 +192,70 @@
       "h2": "Símbolos de Letras Gregas (minúsculas α–ω)",
       "intro": "Letras gregas minúsculas usadas em matemática, física e ciências.",
       "symbols": [
-        { "char": "α", "label": "Alfa" },
-        { "char": "β", "label": "Beta" },
-        { "char": "γ", "label": "Gama" },
-        { "char": "δ", "label": "Delta" },
-        { "char": "ε", "label": "Épsilon" },
-        { "char": "ζ", "label": "Zeta" },
-        { "char": "η", "label": "Eta" },
-        { "char": "θ", "label": "Teta" },
-        { "char": "λ", "label": "Lambda" },
-        { "char": "μ", "label": "Mi" },
-        { "char": "π", "label": "Pi" },
-        { "char": "σ", "label": "Sigma" },
-        { "char": "τ", "label": "Tau" },
-        { "char": "φ", "label": "Fi" },
-        { "char": "ψ", "label": "Psi" },
-        { "char": "ω", "label": "Ômega" }
+        {
+          "char": "α",
+          "label": "Alfa"
+        },
+        {
+          "char": "β",
+          "label": "Beta"
+        },
+        {
+          "char": "γ",
+          "label": "Gama"
+        },
+        {
+          "char": "δ",
+          "label": "Delta"
+        },
+        {
+          "char": "ε",
+          "label": "Épsilon"
+        },
+        {
+          "char": "ζ",
+          "label": "Zeta"
+        },
+        {
+          "char": "η",
+          "label": "Eta"
+        },
+        {
+          "char": "θ",
+          "label": "Teta"
+        },
+        {
+          "char": "λ",
+          "label": "Lambda"
+        },
+        {
+          "char": "μ",
+          "label": "Mi"
+        },
+        {
+          "char": "π",
+          "label": "Pi"
+        },
+        {
+          "char": "σ",
+          "label": "Sigma"
+        },
+        {
+          "char": "τ",
+          "label": "Tau"
+        },
+        {
+          "char": "φ",
+          "label": "Fi"
+        },
+        {
+          "char": "ψ",
+          "label": "Psi"
+        },
+        {
+          "char": "ω",
+          "label": "Ômega"
+        }
       ]
     },
     {
@@ -109,30 +264,102 @@
       "h2": "Símbolos de Letras Gregas (maiúsculas Α–Ω)",
       "intro": "Letras gregas maiúsculas usadas como identificadores em matemática, estatística e engenharia — por exemplo, Σ para somatório, Δ para variação, Ω para ohms.",
       "symbols": [
-        { "char": "Α", "label": "Alfa" },
-        { "char": "Β", "label": "Beta" },
-        { "char": "Γ", "label": "Gama" },
-        { "char": "Δ", "label": "Delta" },
-        { "char": "Ε", "label": "Épsilon" },
-        { "char": "Ζ", "label": "Zeta" },
-        { "char": "Η", "label": "Eta" },
-        { "char": "Θ", "label": "Teta" },
-        { "char": "Ι", "label": "Iota" },
-        { "char": "Κ", "label": "Kappa" },
-        { "char": "Λ", "label": "Lambda" },
-        { "char": "Μ", "label": "Mi" },
-        { "char": "Ν", "label": "Ni" },
-        { "char": "Ξ", "label": "Csi" },
-        { "char": "Ο", "label": "Ômicron" },
-        { "char": "Π", "label": "Pi" },
-        { "char": "Ρ", "label": "Rô" },
-        { "char": "Σ", "label": "Sigma" },
-        { "char": "Τ", "label": "Tau" },
-        { "char": "Υ", "label": "Ípsilon" },
-        { "char": "Φ", "label": "Fi" },
-        { "char": "Χ", "label": "Qui" },
-        { "char": "Ψ", "label": "Psi" },
-        { "char": "Ω", "label": "Ômega" }
+        {
+          "char": "Α",
+          "label": "Alfa"
+        },
+        {
+          "char": "Β",
+          "label": "Beta"
+        },
+        {
+          "char": "Γ",
+          "label": "Gama"
+        },
+        {
+          "char": "Δ",
+          "label": "Delta"
+        },
+        {
+          "char": "Ε",
+          "label": "Épsilon"
+        },
+        {
+          "char": "Ζ",
+          "label": "Zeta"
+        },
+        {
+          "char": "Η",
+          "label": "Eta"
+        },
+        {
+          "char": "Θ",
+          "label": "Teta"
+        },
+        {
+          "char": "Ι",
+          "label": "Iota"
+        },
+        {
+          "char": "Κ",
+          "label": "Kappa"
+        },
+        {
+          "char": "Λ",
+          "label": "Lambda"
+        },
+        {
+          "char": "Μ",
+          "label": "Mi"
+        },
+        {
+          "char": "Ν",
+          "label": "Ni"
+        },
+        {
+          "char": "Ξ",
+          "label": "Csi"
+        },
+        {
+          "char": "Ο",
+          "label": "Ômicron"
+        },
+        {
+          "char": "Π",
+          "label": "Pi"
+        },
+        {
+          "char": "Ρ",
+          "label": "Rô"
+        },
+        {
+          "char": "Σ",
+          "label": "Sigma"
+        },
+        {
+          "char": "Τ",
+          "label": "Tau"
+        },
+        {
+          "char": "Υ",
+          "label": "Ípsilon"
+        },
+        {
+          "char": "Φ",
+          "label": "Fi"
+        },
+        {
+          "char": "Χ",
+          "label": "Qui"
+        },
+        {
+          "char": "Ψ",
+          "label": "Psi"
+        },
+        {
+          "char": "Ω",
+          "label": "Ômega"
+        }
       ]
     },
     {
@@ -141,16 +368,46 @@
       "h2": "Símbolos de Cálculo e Análise",
       "intro": "Símbolos de integral, derivada, somatório e limite para notação de cálculo.",
       "symbols": [
-        { "char": "∫", "label": "Integral" },
-        { "char": "∬", "label": "Integral Dupla" },
-        { "char": "∭", "label": "Integral Tripla" },
-        { "char": "∮", "label": "Integral de Contorno" },
-        { "char": "∂", "label": "Derivada Parcial" },
-        { "char": "∇", "label": "Nabla" },
-        { "char": "∆", "label": "Incremento" },
-        { "char": "∞", "label": "Infinito" },
-        { "char": "∑", "label": "Somatório" },
-        { "char": "∏", "label": "Produtório" }
+        {
+          "char": "∫",
+          "label": "Integral"
+        },
+        {
+          "char": "∬",
+          "label": "Integral Dupla"
+        },
+        {
+          "char": "∭",
+          "label": "Integral Tripla"
+        },
+        {
+          "char": "∮",
+          "label": "Integral de Contorno"
+        },
+        {
+          "char": "∂",
+          "label": "Derivada Parcial"
+        },
+        {
+          "char": "∇",
+          "label": "Nabla"
+        },
+        {
+          "char": "∆",
+          "label": "Incremento"
+        },
+        {
+          "char": "∞",
+          "label": "Infinito"
+        },
+        {
+          "char": "∑",
+          "label": "Somatório"
+        },
+        {
+          "char": "∏",
+          "label": "Produtório"
+        }
       ]
     },
     {
@@ -159,16 +416,46 @@
       "h2": "Números Sobrescritos e Subscritos",
       "intro": "Caracteres numéricos sobrescritos e subscritos para expoentes e fórmulas químicas.",
       "symbols": [
-        { "char": "⁰", "label": "Zero Sobrescrito" },
-        { "char": "¹", "label": "Um Sobrescrito" },
-        { "char": "²", "label": "Dois Sobrescrito" },
-        { "char": "³", "label": "Três Sobrescrito" },
-        { "char": "⁴", "label": "Quatro Sobrescrito" },
-        { "char": "⁵", "label": "Cinco Sobrescrito" },
-        { "char": "₀", "label": "Zero Subscrito" },
-        { "char": "₁", "label": "Um Subscrito" },
-        { "char": "₂", "label": "Dois Subscrito" },
-        { "char": "₃", "label": "Três Subscrito" }
+        {
+          "char": "⁰",
+          "label": "Zero Sobrescrito"
+        },
+        {
+          "char": "¹",
+          "label": "Um Sobrescrito"
+        },
+        {
+          "char": "²",
+          "label": "Dois Sobrescrito"
+        },
+        {
+          "char": "³",
+          "label": "Três Sobrescrito"
+        },
+        {
+          "char": "⁴",
+          "label": "Quatro Sobrescrito"
+        },
+        {
+          "char": "⁵",
+          "label": "Cinco Sobrescrito"
+        },
+        {
+          "char": "₀",
+          "label": "Zero Subscrito"
+        },
+        {
+          "char": "₁",
+          "label": "Um Subscrito"
+        },
+        {
+          "char": "₂",
+          "label": "Dois Subscrito"
+        },
+        {
+          "char": "₃",
+          "label": "Três Subscrito"
+        }
       ]
     },
     {
@@ -177,9 +464,18 @@
       "h2": "Sinais de Raiz Quadrada e Radical",
       "intro": "Os sinais de radical pré-compostos em Unicode: raiz quadrada, raiz cúbica e raiz quarta.",
       "symbols": [
-        { "char": "√", "label": "Raiz Quadrada" },
-        { "char": "∛", "label": "Raiz Cúbica" },
-        { "char": "∜", "label": "Raiz Quarta" }
+        {
+          "char": "√",
+          "label": "Raiz Quadrada"
+        },
+        {
+          "char": "∛",
+          "label": "Raiz Cúbica"
+        },
+        {
+          "char": "∜",
+          "label": "Raiz Quarta"
+        }
       ]
     },
     {
@@ -188,12 +484,30 @@
       "h2": "Símbolo de Infinito e Variantes",
       "intro": "O sinal de infinito e suas variações em Unicode — proporcional, eterno e as formas matemáticas de infinito.",
       "symbols": [
-        { "char": "∞", "label": "Infinito" },
-        { "char": "♾", "label": "Eterno (Papel Permanente)" },
-        { "char": "∝", "label": "Proporcional a" },
-        { "char": "⧜", "label": "Infinito Incompleto" },
-        { "char": "⧝", "label": "Infinito com Laço" },
-        { "char": "⧞", "label": "Infinito Negado" }
+        {
+          "char": "∞",
+          "label": "Infinito"
+        },
+        {
+          "char": "♾",
+          "label": "Eterno (Papel Permanente)"
+        },
+        {
+          "char": "∝",
+          "label": "Proporcional a"
+        },
+        {
+          "char": "⧜",
+          "label": "Infinito Incompleto"
+        },
+        {
+          "char": "⧝",
+          "label": "Infinito com Laço"
+        },
+        {
+          "char": "⧞",
+          "label": "Infinito Negado"
+        }
       ]
     },
     {
@@ -202,22 +516,70 @@
       "h2": "Sinais de Desigualdade e Comparação Negada",
       "intro": "Relações de menor-que / maior-que além do básico — variantes estritas, não estritas, negadas e de \"menor ou igual\", usadas em álgebra, notação de conjuntos e provas.",
       "symbols": [
-        { "char": "≤", "label": "Menor ou Igual" },
-        { "char": "≥", "label": "Maior ou Igual" },
-        { "char": "≦", "label": "Menor Sobre Igual" },
-        { "char": "≧", "label": "Maior Sobre Igual" },
-        { "char": "≮", "label": "Não é Menor Que" },
-        { "char": "≯", "label": "Não é Maior Que" },
-        { "char": "≰", "label": "Não é Menor nem Igual" },
-        { "char": "≱", "label": "Não é Maior nem Igual" },
-        { "char": "≶", "label": "Menor ou Maior" },
-        { "char": "≷", "label": "Maior ou Menor" },
-        { "char": "≲", "label": "Menor ou Equivalente" },
-        { "char": "≳", "label": "Maior ou Equivalente" },
-        { "char": "⋜", "label": "Igual ou Menor" },
-        { "char": "⋝", "label": "Igual ou Maior" },
-        { "char": "≨", "label": "Menor, Não Igual" },
-        { "char": "≩", "label": "Maior, Não Igual" }
+        {
+          "char": "≤",
+          "label": "Menor ou Igual"
+        },
+        {
+          "char": "≥",
+          "label": "Maior ou Igual"
+        },
+        {
+          "char": "≦",
+          "label": "Menor Sobre Igual"
+        },
+        {
+          "char": "≧",
+          "label": "Maior Sobre Igual"
+        },
+        {
+          "char": "≮",
+          "label": "Não é Menor Que"
+        },
+        {
+          "char": "≯",
+          "label": "Não é Maior Que"
+        },
+        {
+          "char": "≰",
+          "label": "Não é Menor nem Igual"
+        },
+        {
+          "char": "≱",
+          "label": "Não é Maior nem Igual"
+        },
+        {
+          "char": "≶",
+          "label": "Menor ou Maior"
+        },
+        {
+          "char": "≷",
+          "label": "Maior ou Menor"
+        },
+        {
+          "char": "≲",
+          "label": "Menor ou Equivalente"
+        },
+        {
+          "char": "≳",
+          "label": "Maior ou Equivalente"
+        },
+        {
+          "char": "⋜",
+          "label": "Igual ou Menor"
+        },
+        {
+          "char": "⋝",
+          "label": "Igual ou Maior"
+        },
+        {
+          "char": "≨",
+          "label": "Menor, Não Igual"
+        },
+        {
+          "char": "≩",
+          "label": "Maior, Não Igual"
+        }
       ]
     }
   ],

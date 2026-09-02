@@ -24,8 +24,8 @@
       "h2": "El Símbolo de Picas — ♠ y ♤",
       "intro": "El palo en sí, en sus dos formas Unicode. La ♠ sólida es la pica «negra» por defecto; ♤ es la versión «blanca» de contorno, y ♠️ es la forma de presentación emoji con selector de variación. Lista para pegar donde sea.",
       "symbols": [
-        { "char": "♠", "label": "Palo de Picas Negro (U+2660) — Sólido / Relleno" },
-        { "char": "♤", "label": "Palo de Picas Blanco (U+2664) — Contorno" },
+        { "char": "♠", "label": "Palo de Picas Negro (U+2660): Sólido / Relleno" },
+        { "char": "♤", "label": "Palo de Picas Blanco (U+2664): Contorno" },
         { "char": "♠️", "label": "Emoji de Palo de Picas (U+2660 U+FE0F)" }
       ]
     },

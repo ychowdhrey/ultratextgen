@@ -28,7 +28,7 @@
       "h2": "Not the Same as a Plain Crescent or Star",
       "intro": "The star and crescent is one combined glyph. The separate crescent-moon and star characters people often reach for instead each have their own code point and their own job.",
       "symbols": [
-        { "char": "☾", "label": "Last Quarter Moon (U+263E) — Plain Crescent" },
+        { "char": "☾", "label": "Last Quarter Moon (U+263E): Plain Crescent" },
         { "char": "☽", "label": "First Quarter Moon (U+263D)" },
         { "char": "🌙", "label": "Crescent Moon Emoji (U+1F319)" },
         { "char": "⭐", "label": "White Medium Star (U+2B50)" },

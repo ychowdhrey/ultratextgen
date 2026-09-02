@@ -18,51 +18,51 @@
    "symbols": [
     {
      "char": "α",
-     "label": "\\alpha — Alpha"
+     "label": "\\alpha: Alpha"
     },
     {
      "char": "β",
-     "label": "\\beta — Beta"
+     "label": "\\beta: Beta"
     },
     {
      "char": "γ",
-     "label": "\\gamma — Gamma"
+     "label": "\\gamma: Gamma"
     },
     {
      "char": "δ",
-     "label": "\\delta — Delta (klein)"
+     "label": "\\delta: Delta (klein)"
     },
     {
      "char": "θ",
-     "label": "\\theta — Theta"
+     "label": "\\theta: Theta"
     },
     {
      "char": "λ",
-     "label": "\\lambda — Lambda"
+     "label": "\\lambda: Lambda"
     },
     {
      "char": "μ",
-     "label": "\\mu — My"
+     "label": "\\mu: My"
     },
     {
      "char": "π",
-     "label": "\\pi — Pi"
+     "label": "\\pi: Pi"
     },
     {
      "char": "σ",
-     "label": "\\sigma — Sigma (klein)"
+     "label": "\\sigma: Sigma (klein)"
     },
     {
      "char": "φ",
-     "label": "\\varphi — Phi"
+     "label": "\\varphi: Phi"
     },
     {
      "char": "Δ",
-     "label": "\\Delta — Delta (groß)"
+     "label": "\\Delta: Delta (groß)"
     },
     {
      "char": "Ω",
-     "label": "\\Omega — Omega (groß)"
+     "label": "\\Omega: Omega (groß)"
     }
    ]
   },
@@ -74,51 +74,51 @@
    "symbols": [
     {
      "char": "∑",
-     "label": "\\sum — Summe"
+     "label": "\\sum: Summe"
     },
     {
      "char": "∏",
-     "label": "\\prod — Produkt"
+     "label": "\\prod: Produkt"
     },
     {
      "char": "∫",
-     "label": "\\int — Integral"
+     "label": "\\int: Integral"
     },
     {
      "char": "∬",
-     "label": "\\iint — Doppelintegral"
+     "label": "\\iint: Doppelintegral"
     },
     {
      "char": "∮",
-     "label": "\\oint — Kurvenintegral"
+     "label": "\\oint: Kurvenintegral"
     },
     {
      "char": "√",
-     "label": "\\sqrt — Wurzel"
+     "label": "\\sqrt: Wurzel"
     },
     {
      "char": "∂",
-     "label": "\\partial — Partielle Ableitung"
+     "label": "\\partial: Partielle Ableitung"
     },
     {
      "char": "∇",
-     "label": "\\nabla — Nabla"
+     "label": "\\nabla: Nabla"
     },
     {
      "char": "±",
-     "label": "\\pm — Plusminus"
+     "label": "\\pm: Plusminus"
     },
     {
      "char": "×",
-     "label": "\\times — Mal"
+     "label": "\\times: Mal"
     },
     {
      "char": "÷",
-     "label": "\\div — Geteilt"
+     "label": "\\div: Geteilt"
     },
     {
      "char": "⋅",
-     "label": "\\cdot — Malpunkt"
+     "label": "\\cdot: Malpunkt"
     }
    ]
   },
@@ -130,35 +130,35 @@
    "symbols": [
     {
      "char": "≤",
-     "label": "\\leq — Kleiner oder gleich"
+     "label": "\\leq: Kleiner oder gleich"
     },
     {
      "char": "≥",
-     "label": "\\geq — Größer oder gleich"
+     "label": "\\geq: Größer oder gleich"
     },
     {
      "char": "≠",
-     "label": "\\neq — Ungleich"
+     "label": "\\neq: Ungleich"
     },
     {
      "char": "≈",
-     "label": "\\approx — Ungefähr gleich"
+     "label": "\\approx: Ungefähr gleich"
     },
     {
      "char": "≡",
-     "label": "\\equiv — Identisch"
+     "label": "\\equiv: Identisch"
     },
     {
      "char": "∼",
-     "label": "\\sim — Ähnlich"
+     "label": "\\sim: Ähnlich"
     },
     {
      "char": "≅",
-     "label": "\\cong — Kongruent"
+     "label": "\\cong: Kongruent"
     },
     {
      "char": "∝",
-     "label": "\\propto — Proportional"
+     "label": "\\propto: Proportional"
     }
    ]
   },
@@ -170,51 +170,51 @@
    "symbols": [
     {
      "char": "∈",
-     "label": "\\in — Element von"
+     "label": "\\in: Element von"
     },
     {
      "char": "∉",
-     "label": "\\notin — Kein Element von"
+     "label": "\\notin: Kein Element von"
     },
     {
      "char": "⊂",
-     "label": "\\subset — Echte Teilmenge"
+     "label": "\\subset: Echte Teilmenge"
     },
     {
      "char": "⊆",
-     "label": "\\subseteq — Teilmenge"
+     "label": "\\subseteq: Teilmenge"
     },
     {
      "char": "∪",
-     "label": "\\cup — Vereinigung"
+     "label": "\\cup: Vereinigung"
     },
     {
      "char": "∩",
-     "label": "\\cap — Schnittmenge"
+     "label": "\\cap: Schnittmenge"
     },
     {
      "char": "∅",
-     "label": "\\emptyset — Leere Menge"
+     "label": "\\emptyset: Leere Menge"
     },
     {
      "char": "∀",
-     "label": "\\forall — Für alle"
+     "label": "\\forall: Für alle"
     },
     {
      "char": "∃",
-     "label": "\\exists — Es existiert"
+     "label": "\\exists: Es existiert"
     },
     {
      "char": "¬",
-     "label": "\\neg — Nicht"
+     "label": "\\neg: Nicht"
     },
     {
      "char": "∧",
-     "label": "\\land — Und"
+     "label": "\\land: Und"
     },
     {
      "char": "∨",
-     "label": "\\lor — Oder"
+     "label": "\\lor: Oder"
     }
    ]
   },
@@ -226,27 +226,27 @@
    "symbols": [
     {
      "char": "→",
-     "label": "\\rightarrow — Pfeil nach rechts"
+     "label": "\\rightarrow: Pfeil nach rechts"
     },
     {
      "char": "←",
-     "label": "\\leftarrow — Pfeil nach links"
+     "label": "\\leftarrow: Pfeil nach links"
     },
     {
      "char": "↔",
-     "label": "\\leftrightarrow — Doppelpfeil"
+     "label": "\\leftrightarrow: Doppelpfeil"
     },
     {
      "char": "⇒",
-     "label": "\\Rightarrow — Folgt"
+     "label": "\\Rightarrow: Folgt"
     },
     {
      "char": "⇔",
-     "label": "\\Leftrightarrow — Äquivalent"
+     "label": "\\Leftrightarrow: Äquivalent"
     },
     {
      "char": "↦",
-     "label": "\\mapsto — Wird abgebildet auf"
+     "label": "\\mapsto: Wird abgebildet auf"
     }
    ]
   },
@@ -258,51 +258,51 @@
    "symbols": [
     {
      "char": "∞",
-     "label": "\\infty — Unendlich"
+     "label": "\\infty: Unendlich"
     },
     {
      "char": "ℵ",
-     "label": "\\aleph — Aleph"
+     "label": "\\aleph: Aleph"
     },
     {
      "char": "ℏ",
-     "label": "\\hbar — Reduziertes Plancksches Wirkungsquantum"
+     "label": "\\hbar: Reduziertes Plancksches Wirkungsquantum"
     },
     {
      "char": "ℓ",
-     "label": "\\ell — Kleines L (Schreibschrift)"
+     "label": "\\ell: Kleines L (Schreibschrift)"
     },
     {
      "char": "⊥",
-     "label": "\\perp — Senkrecht"
+     "label": "\\perp: Senkrecht"
     },
     {
      "char": "∥",
-     "label": "\\parallel — Parallel"
+     "label": "\\parallel: Parallel"
     },
     {
      "char": "∠",
-     "label": "\\angle — Winkel"
+     "label": "\\angle: Winkel"
     },
     {
      "char": "⌈",
-     "label": "\\lceil — Aufrundungsklammer links"
+     "label": "\\lceil: Aufrundungsklammer links"
     },
     {
      "char": "⌋",
-     "label": "\\rfloor — Abrundungsklammer rechts"
+     "label": "\\rfloor: Abrundungsklammer rechts"
     },
     {
      "char": "⋯",
-     "label": "\\cdots — Auslassungspunkte (mittig)"
+     "label": "\\cdots: Auslassungspunkte (mittig)"
     },
     {
      "char": "∴",
-     "label": "\\therefore — Daraus folgt"
+     "label": "\\therefore: Daraus folgt"
     },
     {
      "char": "∵",
-     "label": "\\because — Weil"
+     "label": "\\because: Weil"
     }
    ]
   }

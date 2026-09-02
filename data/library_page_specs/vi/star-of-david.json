@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-of-david/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/star-of-david/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-of-david/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/star-of-david/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/star-of-david/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/star-of-david/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Ngôi Sao David",
       "intro": "Ngôi Sao David trong Unicode, sẵn sàng để dán vào tiểu sử, bài viết hoặc hồ sơ. Hai dạng: glyph thuần và emoji đầy màu sắc.",
       "symbols": [
-        { "char": "✡", "label": "Ngôi Sao David" },
-        { "char": "✡️", "label": "Emoji Ngôi Sao David" }
+        {
+          "char": "✡",
+          "label": "Ngôi Sao David"
+        },
+        {
+          "char": "✡️",
+          "label": "Emoji Ngôi Sao David"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Các Ký Hiệu Do Thái Giáo Liên Quan",
       "intro": "Các ký hiệu khác từ truyền thống Do Thái giáo mà Ngôi Sao David thường xuất hiện cùng.",
       "symbols": [
-        { "char": "🕎", "label": "Menorah" },
-        { "char": "🕍", "label": "Giáo Đường Do Thái" },
-        { "char": "חי", "label": "Chai (Sự Sống)" }
+        {
+          "char": "🕎",
+          "label": "Menorah"
+        },
+        {
+          "char": "🕍",
+          "label": "Giáo Đường Do Thái"
+        },
+        {
+          "char": "חי",
+          "label": "Chai (Sự Sống)"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Ngôi Sao Sáu Cánh & Biến Thể Hình Lục Giác Sao",
       "intro": "Cùng hình học sáu cánh này xuất hiện rộng rãi vượt xa một tôn giáo duy nhất — như trang trí, trong thiên văn học và huyền bí học, và như hình học thuần túy.",
       "symbols": [
-        { "char": "🔯", "label": "Ngôi Sao Sáu Cánh Có Chấm" },
-        { "char": "✶", "label": "Ngôi Sao Đen Sáu Cánh" },
-        { "char": "⬡", "label": "Hình Lục Giác Trắng" },
-        { "char": "⬢", "label": "Hình Lục Giác Đen" }
+        {
+          "char": "🔯",
+          "label": "Ngôi Sao Sáu Cánh Có Chấm"
+        },
+        {
+          "char": "✶",
+          "label": "Ngôi Sao Đen Sáu Cánh"
+        },
+        {
+          "char": "⬡",
+          "label": "Hình Lục Giác Trắng"
+        },
+        {
+          "char": "⬢",
+          "label": "Hình Lục Giác Đen"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
-    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda", "desc": "Một biểu tượng tôn giáo cụ thể khác với lịch sử thật sự, có thể truy nguyên phía sau nó." },
-    { "href": "/library/star-symbols/", "title": "Ký Hiệu Ngôi Sao", "desc": "Mọi loại ngôi sao — bốn, năm, sáu và tám cánh — trong một trang tra cứu để sao chép và dán." }
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Ký Hiệu Tôn Giáo",
+      "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/khanda-symbol/",
+      "title": "Ký Hiệu Khanda",
+      "desc": "Một biểu tượng tôn giáo cụ thể khác với lịch sử thật sự, có thể truy nguyên phía sau nó."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Ký Hiệu Ngôi Sao",
+      "desc": "Mọi loại ngôi sao — bốn, năm, sáu và tám cánh — trong một trang tra cứu để sao chép và dán."
+    }
   ]
 }

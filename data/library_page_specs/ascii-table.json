@@ -17,21 +17,21 @@
       "h2": "ASCII Punctuation & Symbols (33–47)",
       "intro": "The first printable block: punctuation and arithmetic symbols.",
       "symbols": [
-        { "char": "!", "label": "33 / 0x21 / 0b0100001 / 0o41 — Exclamation Mark" },
-        { "char": "\"", "label": "34 / 0x22 / 0b0100010 / 0o42 — Quotation Mark" },
-        { "char": "#", "label": "35 / 0x23 / 0b0100011 / 0o43 — Number Sign" },
-        { "char": "$", "label": "36 / 0x24 / 0b0100100 / 0o44 — Dollar Sign" },
-        { "char": "%", "label": "37 / 0x25 / 0b0100101 / 0o45 — Percent Sign" },
-        { "char": "&", "label": "38 / 0x26 / 0b0100110 / 0o46 — Ampersand" },
-        { "char": "'", "label": "39 / 0x27 / 0b0100111 / 0o47 — Apostrophe" },
-        { "char": "(", "label": "40 / 0x28 / 0b0101000 / 0o50 — Left Parenthesis" },
-        { "char": ")", "label": "41 / 0x29 / 0b0101001 / 0o51 — Right Parenthesis" },
-        { "char": "*", "label": "42 / 0x2A / 0b0101010 / 0o52 — Asterisk" },
-        { "char": "+", "label": "43 / 0x2B / 0b0101011 / 0o53 — Plus Sign" },
-        { "char": ",", "label": "44 / 0x2C / 0b0101100 / 0o54 — Comma" },
-        { "char": "-", "label": "45 / 0x2D / 0b0101101 / 0o55 — Hyphen-Minus" },
-        { "char": ".", "label": "46 / 0x2E / 0b0101110 / 0o56 — Full Stop" },
-        { "char": "/", "label": "47 / 0x2F / 0b0101111 / 0o57 — Solidus (Slash)" }
+        { "char": "!", "label": "33 / 0x21 / 0b0100001 / 0o41: Exclamation Mark" },
+        { "char": "\"", "label": "34 / 0x22 / 0b0100010 / 0o42: Quotation Mark" },
+        { "char": "#", "label": "35 / 0x23 / 0b0100011 / 0o43: Number Sign" },
+        { "char": "$", "label": "36 / 0x24 / 0b0100100 / 0o44: Dollar Sign" },
+        { "char": "%", "label": "37 / 0x25 / 0b0100101 / 0o45: Percent Sign" },
+        { "char": "&", "label": "38 / 0x26 / 0b0100110 / 0o46: Ampersand" },
+        { "char": "'", "label": "39 / 0x27 / 0b0100111 / 0o47: Apostrophe" },
+        { "char": "(", "label": "40 / 0x28 / 0b0101000 / 0o50: Left Parenthesis" },
+        { "char": ")", "label": "41 / 0x29 / 0b0101001 / 0o51: Right Parenthesis" },
+        { "char": "*", "label": "42 / 0x2A / 0b0101010 / 0o52: Asterisk" },
+        { "char": "+", "label": "43 / 0x2B / 0b0101011 / 0o53: Plus Sign" },
+        { "char": ",", "label": "44 / 0x2C / 0b0101100 / 0o54: Comma" },
+        { "char": "-", "label": "45 / 0x2D / 0b0101101 / 0o55: Hyphen-Minus" },
+        { "char": ".", "label": "46 / 0x2E / 0b0101110 / 0o56: Full Stop" },
+        { "char": "/", "label": "47 / 0x2F / 0b0101111 / 0o57: Solidus (Slash)" }
       ]
     },
     {
@@ -40,16 +40,16 @@
       "h2": "ASCII Digits (48–57)",
       "intro": "The ten decimal digits — each digit's code is 48 plus its value.",
       "symbols": [
-        { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60 — Digit Zero" },
-        { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61 — Digit One" },
-        { "char": "2", "label": "50 / 0x32 / 0b0110010 / 0o62 — Digit Two" },
-        { "char": "3", "label": "51 / 0x33 / 0b0110011 / 0o63 — Digit Three" },
-        { "char": "4", "label": "52 / 0x34 / 0b0110100 / 0o64 — Digit Four" },
-        { "char": "5", "label": "53 / 0x35 / 0b0110101 / 0o65 — Digit Five" },
-        { "char": "6", "label": "54 / 0x36 / 0b0110110 / 0o66 — Digit Six" },
-        { "char": "7", "label": "55 / 0x37 / 0b0110111 / 0o67 — Digit Seven" },
-        { "char": "8", "label": "56 / 0x38 / 0b0111000 / 0o70 — Digit Eight" },
-        { "char": "9", "label": "57 / 0x39 / 0b0111001 / 0o71 — Digit Nine" }
+        { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60: Digit Zero" },
+        { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61: Digit One" },
+        { "char": "2", "label": "50 / 0x32 / 0b0110010 / 0o62: Digit Two" },
+        { "char": "3", "label": "51 / 0x33 / 0b0110011 / 0o63: Digit Three" },
+        { "char": "4", "label": "52 / 0x34 / 0b0110100 / 0o64: Digit Four" },
+        { "char": "5", "label": "53 / 0x35 / 0b0110101 / 0o65: Digit Five" },
+        { "char": "6", "label": "54 / 0x36 / 0b0110110 / 0o66: Digit Six" },
+        { "char": "7", "label": "55 / 0x37 / 0b0110111 / 0o67: Digit Seven" },
+        { "char": "8", "label": "56 / 0x38 / 0b0111000 / 0o70: Digit Eight" },
+        { "char": "9", "label": "57 / 0x39 / 0b0111001 / 0o71: Digit Nine" }
       ]
     },
     {
@@ -58,13 +58,13 @@
       "h2": "ASCII Punctuation & Symbols (58–64)",
       "intro": "The symbols between the digits and the uppercase letters.",
       "symbols": [
-        { "char": ":", "label": "58 / 0x3A / 0b0111010 / 0o72 — Colon" },
-        { "char": ";", "label": "59 / 0x3B / 0b0111011 / 0o73 — Semicolon" },
-        { "char": "<", "label": "60 / 0x3C / 0b0111100 / 0o74 — Less-Than Sign" },
-        { "char": "=", "label": "61 / 0x3D / 0b0111101 / 0o75 — Equals Sign" },
-        { "char": ">", "label": "62 / 0x3E / 0b0111110 / 0o76 — Greater-Than Sign" },
-        { "char": "?", "label": "63 / 0x3F / 0b0111111 / 0o77 — Question Mark" },
-        { "char": "@", "label": "64 / 0x40 / 0b1000000 / 0o100 — Commercial At" }
+        { "char": ":", "label": "58 / 0x3A / 0b0111010 / 0o72: Colon" },
+        { "char": ";", "label": "59 / 0x3B / 0b0111011 / 0o73: Semicolon" },
+        { "char": "<", "label": "60 / 0x3C / 0b0111100 / 0o74: Less-Than Sign" },
+        { "char": "=", "label": "61 / 0x3D / 0b0111101 / 0o75: Equals Sign" },
+        { "char": ">", "label": "62 / 0x3E / 0b0111110 / 0o76: Greater-Than Sign" },
+        { "char": "?", "label": "63 / 0x3F / 0b0111111 / 0o77: Question Mark" },
+        { "char": "@", "label": "64 / 0x40 / 0b1000000 / 0o100: Commercial At" }
       ]
     },
     {
@@ -73,20 +73,20 @@
       "h2": "ASCII Letters (65–90 and 97–122)",
       "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z) — always uppercase plus 32.",
       "symbols": [
-        { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101 — Latin Capital Letter A" },
-        { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102 — Latin Capital Letter B" },
-        { "char": "C", "label": "67 / 0x43 / 0b1000011 / 0o103 — Latin Capital Letter C" },
-        { "char": "M", "label": "77 / 0x4D / 0b1001101 / 0o115 — Latin Capital Letter M" },
-        { "char": "N", "label": "78 / 0x4E / 0b1001110 / 0o116 — Latin Capital Letter N" },
-        { "char": "X", "label": "88 / 0x58 / 0b1011000 / 0o130 — Latin Capital Letter X" },
-        { "char": "Y", "label": "89 / 0x59 / 0b1011001 / 0o131 — Latin Capital Letter Y" },
-        { "char": "Z", "label": "90 / 0x5A / 0b1011010 / 0o132 — Latin Capital Letter Z" },
-        { "char": "a", "label": "97 / 0x61 / 0b1100001 / 0o141 — Latin Small Letter A" },
-        { "char": "b", "label": "98 / 0x62 / 0b1100010 / 0o142 — Latin Small Letter B" },
-        { "char": "m", "label": "109 / 0x6D / 0b1101101 / 0o155 — Latin Small Letter M" },
-        { "char": "n", "label": "110 / 0x6E / 0b1101110 / 0o156 — Latin Small Letter N" },
-        { "char": "x", "label": "120 / 0x78 / 0b1111000 / 0o170 — Latin Small Letter X" },
-        { "char": "z", "label": "122 / 0x7A / 0b1111010 / 0o172 — Latin Small Letter Z" }
+        { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101: Latin Capital Letter A" },
+        { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102: Latin Capital Letter B" },
+        { "char": "C", "label": "67 / 0x43 / 0b1000011 / 0o103: Latin Capital Letter C" },
+        { "char": "M", "label": "77 / 0x4D / 0b1001101 / 0o115: Latin Capital Letter M" },
+        { "char": "N", "label": "78 / 0x4E / 0b1001110 / 0o116: Latin Capital Letter N" },
+        { "char": "X", "label": "88 / 0x58 / 0b1011000 / 0o130: Latin Capital Letter X" },
+        { "char": "Y", "label": "89 / 0x59 / 0b1011001 / 0o131: Latin Capital Letter Y" },
+        { "char": "Z", "label": "90 / 0x5A / 0b1011010 / 0o132: Latin Capital Letter Z" },
+        { "char": "a", "label": "97 / 0x61 / 0b1100001 / 0o141: Latin Small Letter A" },
+        { "char": "b", "label": "98 / 0x62 / 0b1100010 / 0o142: Latin Small Letter B" },
+        { "char": "m", "label": "109 / 0x6D / 0b1101101 / 0o155: Latin Small Letter M" },
+        { "char": "n", "label": "110 / 0x6E / 0b1101110 / 0o156: Latin Small Letter N" },
+        { "char": "x", "label": "120 / 0x78 / 0b1111000 / 0o170: Latin Small Letter X" },
+        { "char": "z", "label": "122 / 0x7A / 0b1111010 / 0o172: Latin Small Letter Z" }
       ]
     },
     {
@@ -95,12 +95,12 @@
       "h2": "ASCII Brackets & Marks (91–96)",
       "intro": "Square brackets, backslash, caret, underscore, and the grave accent.",
       "symbols": [
-        { "char": "[", "label": "91 / 0x5B / 0b1011011 / 0o133 — Left Square Bracket" },
-        { "char": "\\", "label": "92 / 0x5C / 0b1011100 / 0o134 — Reverse Solidus (Backslash)" },
-        { "char": "]", "label": "93 / 0x5D / 0b1011101 / 0o135 — Right Square Bracket" },
-        { "char": "^", "label": "94 / 0x5E / 0b1011110 / 0o136 — Circumflex Accent (Caret)" },
-        { "char": "_", "label": "95 / 0x5F / 0b1011111 / 0o137 — Low Line (Underscore)" },
-        { "char": "`", "label": "96 / 0x60 / 0b1100000 / 0o140 — Grave Accent (Backtick)" }
+        { "char": "[", "label": "91 / 0x5B / 0b1011011 / 0o133: Left Square Bracket" },
+        { "char": "\\", "label": "92 / 0x5C / 0b1011100 / 0o134: Reverse Solidus (Backslash)" },
+        { "char": "]", "label": "93 / 0x5D / 0b1011101 / 0o135: Right Square Bracket" },
+        { "char": "^", "label": "94 / 0x5E / 0b1011110 / 0o136: Circumflex Accent (Caret)" },
+        { "char": "_", "label": "95 / 0x5F / 0b1011111 / 0o137: Low Line (Underscore)" },
+        { "char": "`", "label": "96 / 0x60 / 0b1100000 / 0o140: Grave Accent (Backtick)" }
       ]
     },
     {
@@ -109,10 +109,10 @@
       "h2": "ASCII Braces & Tilde (123–126)",
       "intro": "The final printable characters before the DEL control code at 127.",
       "symbols": [
-        { "char": "{", "label": "123 / 0x7B / 0b1111011 / 0o173 — Left Curly Bracket" },
-        { "char": "|", "label": "124 / 0x7C / 0b1111100 / 0o174 — Vertical Line (Pipe)" },
-        { "char": "}", "label": "125 / 0x7D / 0b1111101 / 0o175 — Right Curly Bracket" },
-        { "char": "~", "label": "126 / 0x7E / 0b1111110 / 0o176 — Tilde" }
+        { "char": "{", "label": "123 / 0x7B / 0b1111011 / 0o173: Left Curly Bracket" },
+        { "char": "|", "label": "124 / 0x7C / 0b1111100 / 0o174: Vertical Line (Pipe)" },
+        { "char": "}", "label": "125 / 0x7D / 0b1111101 / 0o175: Right Curly Bracket" },
+        { "char": "~", "label": "126 / 0x7E / 0b1111110 / 0o176: Tilde" }
       ]
     }
   ],

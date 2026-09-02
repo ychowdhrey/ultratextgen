@@ -75,43 +75,43 @@
       "symbols": [
         {
           "char": "月",
-          "label": "Tsuki — Moon"
+          "label": "Tsuki: Moon"
         },
         {
           "char": "星",
-          "label": "Hoshi — Star"
+          "label": "Hoshi: Star"
         },
         {
           "char": "光",
-          "label": "Hikari — Light"
+          "label": "Hikari: Light"
         },
         {
           "char": "魂",
-          "label": "Tamashii — Soul"
+          "label": "Tamashii: Soul"
         },
         {
           "char": "嵐",
-          "label": "Arashi — Storm"
+          "label": "Arashi: Storm"
         },
         {
           "char": "虎",
-          "label": "Tora — Tiger"
+          "label": "Tora: Tiger"
         },
         {
           "char": "狼",
-          "label": "Okami — Wolf"
+          "label": "Okami: Wolf"
         },
         {
           "char": "鷹",
-          "label": "Taka — Hawk"
+          "label": "Taka: Hawk"
         },
         {
           "char": "剣",
-          "label": "Ken — Sword"
+          "label": "Ken: Sword"
         },
         {
           "char": "覇",
-          "label": "Ha — Supremacy"
+          "label": "Ha: Supremacy"
         }
       ]
     },
@@ -320,7 +320,6 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain — gratis dan instan.",
   "related": [
     {
       "href": "/id/library/simbol-ff/",

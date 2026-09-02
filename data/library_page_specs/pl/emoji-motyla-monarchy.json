@@ -37,7 +37,7 @@
       "h2": "Emoji, z Którym Bywa Mylony",
       "intro": "Już zakodowane, ogólne emoji, z którego wydzielono Motyla Monarchę, oraz sąsiad, jako który bywa przez pomyłkę renderowany.",
       "symbols": [
-        { "char": "🦋", "label": "Motyl — ogólny gatunek, z którego wydzielono Motyla Monarchę" }
+        { "char": "🦋", "label": "Motyl: ogólny gatunek, z którego wydzielono Motyla Monarchę" }
       ]
     },
     {
@@ -46,13 +46,13 @@
       "h2": "Inne Projektowe Kandydatury Emoji 18.0",
       "intro": "Motyl Monarcha nie jest jedynym niezatwierdzonym znakiem w tej edycji — te zaprojektowano razem z nim, równie niewyrenderowane aż do decyzji we wrześniu 2026 roku.",
       "symbols": [
-        { "char": "🫫", "label": "Pękająca Twarz (projekt, U+1FAEB) — wygrała głosowanie publiczne" },
+        { "char": "🫫", "label": "Pękająca Twarz (projekt, U+1FAEB): wygrała głosowanie publiczne" },
         { "char": "🫝", "label": "Ogórek Kiszony (projekt, U+1FADD)" },
         { "char": "🪋", "label": "Meteor (projekt, U+1FA8B)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/animal-emojis/",

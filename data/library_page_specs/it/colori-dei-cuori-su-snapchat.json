@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/colori-dei-cuori-su-snapchat/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/colori-dei-cuori-su-snapchat/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    }
   ],
   "sections": [
     {
@@ -29,9 +37,18 @@
       "h2": "I Colori dei Cuori Usati da Snapchat",
       "intro": "I tre colori di cuore che compaiono nella classica progressione da migliore amico di Snapchat.",
       "symbols": [
-        { "char": "💛", "label": "Cuore Giallo" },
-        { "char": "❤️", "label": "Cuore Rosso" },
-        { "char": "💕", "label": "Due Cuori (Rosa)" }
+        {
+          "char": "💛",
+          "label": "Cuore Giallo"
+        },
+        {
+          "char": "❤️",
+          "label": "Cuore Rosso"
+        },
+        {
+          "char": "💕",
+          "label": "Due Cuori (Rosa)"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Altri Colori dell'Emoji Cuore (Significato Generale)",
       "intro": "Il resto della tavolozza di colori dei cuori Unicode — vedi l'hub completo delle emoji cuore collegato qui sotto per l'elenco completo e ogni significato.",
       "symbols": [
-        { "char": "🧡", "label": "Cuore Arancione" },
-        { "char": "💚", "label": "Cuore Verde" },
-        { "char": "💙", "label": "Cuore Blu" },
-        { "char": "💜", "label": "Cuore Viola" }
+        {
+          "char": "🧡",
+          "label": "Cuore Arancione"
+        },
+        {
+          "char": "💚",
+          "label": "Cuore Verde"
+        },
+        {
+          "char": "💙",
+          "label": "Cuore Blu"
+        },
+        {
+          "char": "💜",
+          "label": "Cuore Viola"
+        }
       ]
     },
     {
@@ -52,8 +81,14 @@
       "h2": "Simbolo Cuore e Forme Testuali",
       "intro": "I glifi del cuore senza colore — il cuore del seme di carte Unicode e il classico cuore testuale.",
       "symbols": [
-        { "char": "♥", "label": "Black Heart Suit (U+2665)" },
-        { "char": "<3", "label": "Cuore Testuale ASCII" }
+        {
+          "char": "♥",
+          "label": "Black Heart Suit (U+2665)"
+        },
+        {
+          "char": "<3",
+          "label": "Cuore Testuale ASCII"
+        }
       ]
     }
   ],

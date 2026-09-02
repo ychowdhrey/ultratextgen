@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/box-drawing-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/rahmenzeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/box-drawing-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/box-drawing-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/rahmenzeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/box-drawing-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "lines-corners",
@@ -28,17 +36,50 @@
       "h2": "Linien, Ecken & Kreuzungen",
       "intro": "Einfache waagerechte und senkrechte Linienstücke, Ecken und T-Kreuzungen.",
       "symbols": [
-        { "char": "─", "label": "Rahmen leicht waagerecht" },
-        { "char": "│", "label": "Rahmen leicht senkrecht" },
-        { "char": "┌", "label": "Rahmen leicht nach unten und rechts" },
-        { "char": "┐", "label": "Rahmen leicht nach unten und links" },
-        { "char": "└", "label": "Rahmen leicht nach oben und rechts" },
-        { "char": "┘", "label": "Rahmen leicht nach oben und links" },
-        { "char": "├", "label": "Rahmen leicht senkrecht und rechts" },
-        { "char": "┤", "label": "Rahmen leicht senkrecht und links" },
-        { "char": "┬", "label": "Rahmen leicht nach unten und waagerecht" },
-        { "char": "┴", "label": "Rahmen leicht nach oben und waagerecht" },
-        { "char": "┼", "label": "Rahmen leicht senkrecht und waagerecht" }
+        {
+          "char": "─",
+          "label": "Rahmen leicht waagerecht"
+        },
+        {
+          "char": "│",
+          "label": "Rahmen leicht senkrecht"
+        },
+        {
+          "char": "┌",
+          "label": "Rahmen leicht nach unten und rechts"
+        },
+        {
+          "char": "┐",
+          "label": "Rahmen leicht nach unten und links"
+        },
+        {
+          "char": "└",
+          "label": "Rahmen leicht nach oben und rechts"
+        },
+        {
+          "char": "┘",
+          "label": "Rahmen leicht nach oben und links"
+        },
+        {
+          "char": "├",
+          "label": "Rahmen leicht senkrecht und rechts"
+        },
+        {
+          "char": "┤",
+          "label": "Rahmen leicht senkrecht und links"
+        },
+        {
+          "char": "┬",
+          "label": "Rahmen leicht nach unten und waagerecht"
+        },
+        {
+          "char": "┴",
+          "label": "Rahmen leicht nach oben und waagerecht"
+        },
+        {
+          "char": "┼",
+          "label": "Rahmen leicht senkrecht und waagerecht"
+        }
       ]
     },
     {
@@ -47,17 +88,50 @@
       "h2": "Doppelte & fette Rahmen",
       "intro": "Doppellinien- und fette Varianten für kräftigere Rahmen.",
       "symbols": [
-        { "char": "═", "label": "Rahmen doppelt waagerecht" },
-        { "char": "║", "label": "Rahmen doppelt senkrecht" },
-        { "char": "╔", "label": "Rahmen doppelt nach unten und rechts" },
-        { "char": "╗", "label": "Rahmen doppelt nach unten und links" },
-        { "char": "╚", "label": "Rahmen doppelt nach oben und rechts" },
-        { "char": "╝", "label": "Rahmen doppelt nach oben und links" },
-        { "char": "╬", "label": "Rahmen doppelt senkrecht und waagerecht" },
-        { "char": "━", "label": "Rahmen fett waagerecht" },
-        { "char": "┃", "label": "Rahmen fett senkrecht" },
-        { "char": "┏", "label": "Rahmen fett nach unten und rechts" },
-        { "char": "┓", "label": "Rahmen fett nach unten und links" }
+        {
+          "char": "═",
+          "label": "Rahmen doppelt waagerecht"
+        },
+        {
+          "char": "║",
+          "label": "Rahmen doppelt senkrecht"
+        },
+        {
+          "char": "╔",
+          "label": "Rahmen doppelt nach unten und rechts"
+        },
+        {
+          "char": "╗",
+          "label": "Rahmen doppelt nach unten und links"
+        },
+        {
+          "char": "╚",
+          "label": "Rahmen doppelt nach oben und rechts"
+        },
+        {
+          "char": "╝",
+          "label": "Rahmen doppelt nach oben und links"
+        },
+        {
+          "char": "╬",
+          "label": "Rahmen doppelt senkrecht und waagerecht"
+        },
+        {
+          "char": "━",
+          "label": "Rahmen fett waagerecht"
+        },
+        {
+          "char": "┃",
+          "label": "Rahmen fett senkrecht"
+        },
+        {
+          "char": "┏",
+          "label": "Rahmen fett nach unten und rechts"
+        },
+        {
+          "char": "┓",
+          "label": "Rahmen fett nach unten und links"
+        }
       ]
     },
     {
@@ -66,17 +140,50 @@
       "h2": "Blockelemente & Schattierung",
       "intro": "Volle, halbe und Teilblöcke sowie Schattierungszeichen für Flächen und Balken.",
       "symbols": [
-        { "char": "█", "label": "Vollblock" },
-        { "char": "▉", "label": "Block sieben Achtel links" },
-        { "char": "▊", "label": "Block drei Viertel links" },
-        { "char": "▌", "label": "Halbblock links" },
-        { "char": "▎", "label": "Block ein Viertel links" },
-        { "char": "▏", "label": "Block ein Achtel links" },
-        { "char": "▀", "label": "Oberer Halbblock" },
-        { "char": "▄", "label": "Unterer Halbblock" },
-        { "char": "░", "label": "Leichte Schattierung" },
-        { "char": "▒", "label": "Mittlere Schattierung" },
-        { "char": "▓", "label": "Dunkle Schattierung" }
+        {
+          "char": "█",
+          "label": "Vollblock"
+        },
+        {
+          "char": "▉",
+          "label": "Block sieben Achtel links"
+        },
+        {
+          "char": "▊",
+          "label": "Block drei Viertel links"
+        },
+        {
+          "char": "▌",
+          "label": "Halbblock links"
+        },
+        {
+          "char": "▎",
+          "label": "Block ein Viertel links"
+        },
+        {
+          "char": "▏",
+          "label": "Block ein Achtel links"
+        },
+        {
+          "char": "▀",
+          "label": "Oberer Halbblock"
+        },
+        {
+          "char": "▄",
+          "label": "Unterer Halbblock"
+        },
+        {
+          "char": "░",
+          "label": "Leichte Schattierung"
+        },
+        {
+          "char": "▒",
+          "label": "Mittlere Schattierung"
+        },
+        {
+          "char": "▓",
+          "label": "Dunkle Schattierung"
+        }
       ]
     }
   ],
@@ -88,12 +195,48 @@
   },
   "collection_container_id": "boxDrawingCollectionsContainer",
   "collections": [
-    { "name": "Leichte Trennlinie", "flags": ["────────────"], "defaultFormat": "inline" },
-    { "name": "Fette Trennlinie", "flags": ["━━━━━━━━━━━━"], "defaultFormat": "inline" },
-    { "name": "Doppelte Trennlinie", "flags": ["════════════"], "defaultFormat": "inline" },
-    { "name": "Leichter oberer Rand", "flags": ["┌──────────┐"], "defaultFormat": "inline" },
-    { "name": "Doppelter oberer Rand", "flags": ["╔══════════╗"], "defaultFormat": "inline" },
-    { "name": "Schattierter Verlaufsbalken", "flags": ["░▒▓█▓▒░"], "defaultFormat": "inline" }
+    {
+      "name": "Leichte Trennlinie",
+      "flags": [
+        "────────────"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fette Trennlinie",
+      "flags": [
+        "━━━━━━━━━━━━"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Doppelte Trennlinie",
+      "flags": [
+        "════════════"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Leichter oberer Rand",
+      "flags": [
+        "┌──────────┐"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Doppelter oberer Rand",
+      "flags": [
+        "╔══════════╗"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Schattierter Verlaufsbalken",
+      "flags": [
+        "░▒▓█▓▒░"
+      ],
+      "defaultFormat": "inline"
+    }
   ],
   "related": [
     {

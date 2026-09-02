@@ -27,7 +27,7 @@
       "h2": "Symbols Often Mistaken for the Cent Sign",
       "intro": "These get substituted for ¢ in practice — each is a distinct character with its own meaning.",
       "symbols": [
-        { "char": "₵", "label": "Cedi Sign (Ghana) — Not the Cent Sign" },
+        { "char": "₵", "label": "Cedi Sign (Ghana): Not the Cent Sign" },
         { "char": "₡", "label": "Colón Sign (Costa Rica / El Salvador)" },
         { "char": "¤", "label": "Generic Currency Sign" },
         { "char": "c", "label": "Plain Letter C (Common Keyboard Substitute)" }

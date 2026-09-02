@@ -25,7 +25,7 @@
       "intro": "El símbolo matemático, y el sustituto de dos caracteres que usan la mayoría de los lenguajes de programación en su lugar, ya que ≤ nunca formó parte del ASCII.",
       "symbols": [
         { "char": "≤", "label": "Menor o Igual Que (Matemáticas)" },
-        { "char": "<=", "label": "Menor o Igual Que (Código — C, Python, JavaScript, Java, SQL)" }
+        { "char": "<=", "label": "Menor o Igual Que (Código: C, Python, JavaScript, Java, SQL)" }
       ]
     },
     {
@@ -35,9 +35,9 @@
       "intro": "Todos significan aproximadamente lo mismo, pero son caracteres Unicode distintos de tradiciones tipográficas diferentes.",
       "symbols": [
         { "char": "≦", "label": "Menor Que sobre Igual A (U+2266)" },
-        { "char": "⩽", "label": "Menor o Igual Que Inclinado (U+2A7D) — la forma preferida por la norma ISO 31-11" },
+        { "char": "⩽", "label": "Menor o Igual Que Inclinado (U+2A7D): la forma preferida por la norma ISO 31-11" },
         { "char": "≲", "label": "Menor o Equivalente A (U+2272)" },
-        { "char": "≪", "label": "Mucho Menor Que (U+226A) — una relación distinta, no una variante de ≤" }
+        { "char": "≪", "label": "Mucho Menor Que (U+226A): una relación distinta, no una variante de ≤" }
       ]
     },
     {

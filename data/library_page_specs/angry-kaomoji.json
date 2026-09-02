@@ -16,12 +16,30 @@
       "h2": "Annoyed Kaomoji",
       "intro": "Low-grade irritation and side-eye.",
       "symbols": [
-        { "char": "(¬_¬)", "label": "Side Eye" },
-        { "char": "(￣ヘ￣)", "label": "Unamused" },
-        { "char": "(；¬_¬)", "label": "Suspicious" },
-        { "char": "(ಠ_ಠ)", "label": "Disapproval" },
-        { "char": "(¬､¬)", "label": "Skeptical" },
-        { "char": "(－‸ლ)", "label": "Facepalm" }
+        {
+          "char": "(¬_¬)",
+          "label": "Side Eye"
+        },
+        {
+          "char": "(￣ヘ￣)",
+          "label": "Unamused"
+        },
+        {
+          "char": "(；¬_¬)",
+          "label": "Suspicious"
+        },
+        {
+          "char": "(ಠ_ಠ)",
+          "label": "Disapproval"
+        },
+        {
+          "char": "(¬､¬)",
+          "label": "Skeptical"
+        },
+        {
+          "char": "(－‸ლ)",
+          "label": "Facepalm"
+        }
       ]
     },
     {
@@ -30,12 +48,30 @@
       "h2": "Mad Kaomoji",
       "intro": "Genuinely mad faces with steam building.",
       "symbols": [
-        { "char": "(ノಠ益ಠ)ノ", "label": "Losing It" },
-        { "char": "(＃`Д´)", "label": "Yelling" },
-        { "char": "(҂⌣̀_⌣́)", "label": "Fed Up" },
-        { "char": "٩(╬ʘ益ʘ╬)۶", "label": "Enraged" },
-        { "char": "(◣_◢)", "label": "Menacing" },
-        { "char": "ヽ(≧Д≦)ノ", "label": "Frustrated" }
+        {
+          "char": "(ノಠ益ಠ)ノ",
+          "label": "Losing It"
+        },
+        {
+          "char": "(＃`Д´)",
+          "label": "Yelling"
+        },
+        {
+          "char": "(҂⌣̀_⌣́)",
+          "label": "Fed Up"
+        },
+        {
+          "char": "٩(╬ʘ益ʘ╬)۶",
+          "label": "Enraged"
+        },
+        {
+          "char": "(◣_◢)",
+          "label": "Menacing"
+        },
+        {
+          "char": "ヽ(≧Д≦)ノ",
+          "label": "Frustrated"
+        }
       ]
     },
     {
@@ -44,10 +80,22 @@
       "h2": "Fuming Kaomoji",
       "intro": "Peak rage — fists up, veins popping.",
       "symbols": [
-        { "char": "(╬ Ò﹏Ó)", "label": "Furious" },
-        { "char": "(ﾉಥДಥ)ﾉ", "label": "Screaming Rage" },
-        { "char": "(҂` ﾛ ´)凸", "label": "Middle Finger" },
-        { "char": "୧((#Φ益Φ#))୨", "label": "Boiling Over" }
+        {
+          "char": "(╬ Ò﹏Ó)",
+          "label": "Furious"
+        },
+        {
+          "char": "(ﾉಥДಥ)ﾉ",
+          "label": "Screaming Rage"
+        },
+        {
+          "char": "(҂` ﾛ ´)凸",
+          "label": "Middle Finger"
+        },
+        {
+          "char": "୧((#Φ益Φ#))୨",
+          "label": "Boiling Over"
+        }
       ]
     },
     {
@@ -56,19 +104,50 @@
       "h2": "Table Flip Kaomoji",
       "intro": "When words fail — flip the table.",
       "symbols": [
-        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
-        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Double Flip" },
-        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Angry Flip" },
-        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Put It Back" }
+        {
+          "char": "(╯°□°）╯︵ ┻━┻",
+          "label": "Table Flip"
+        },
+        {
+          "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻",
+          "label": "Double Flip"
+        },
+        {
+          "char": "(ノ`Д´)ノ彡┻━┻",
+          "label": "Angry Flip"
+        },
+        {
+          "char": "┬─┬ ノ( ゜-゜ノ)",
+          "label": "Put It Back"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/table-flip-kaomoji/", "title": "Table Flip Kaomoji", "desc": "Every table flip kaomoji and table flip ASCII piece, on its own dedicated page." },
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/angry-emoji/", "title": "Angry Emoji", "desc": "Rage faces, fire combos, and mad emoji to copy and paste." },
-    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants." },
-    { "href": "/library/crying-kaomoji/", "title": "Crying & Sad Kaomoji", "desc": "Tearful and gloomy text faces for a lower mood." }
+    {
+      "href": "/library/table-flip-kaomoji/",
+      "title": "Table Flip Kaomoji",
+      "desc": "Every table flip kaomoji and table flip ASCII piece, on its own dedicated page."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji",
+      "desc": "Rage faces, fire combos, and mad emoji to copy and paste."
+    },
+    {
+      "href": "/library/shrug-kaomoji/",
+      "title": "Shrug Kaomoji",
+      "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants."
+    },
+    {
+      "href": "/library/crying-kaomoji/",
+      "title": "Crying & Sad Kaomoji",
+      "desc": "Tearful and gloomy text faces for a lower mood."
+    }
   ]
 }

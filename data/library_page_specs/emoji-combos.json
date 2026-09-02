@@ -17,16 +17,46 @@
       "h2": "Aesthetic Emoji Staples",
       "intro": "The core emojis that appear in almost every aesthetic combo — sparkles, bows, butterflies, and soft sky elements.",
       "symbols": [
-        { "char": "✨", "label": "Sparkles" },
-        { "char": "🌸", "label": "Cherry Blossom" },
-        { "char": "🎀", "label": "Ribbon" },
-        { "char": "🦋", "label": "Butterfly" },
-        { "char": "☁️", "label": "Cloud" },
-        { "char": "🌷", "label": "Tulip" },
-        { "char": "💫", "label": "Dizzy" },
-        { "char": "🍓", "label": "Strawberry" },
-        { "char": "🌙", "label": "Crescent Moon" },
-        { "char": "🫧", "label": "Bubbles" }
+        {
+          "char": "✨",
+          "label": "Sparkles"
+        },
+        {
+          "char": "🌸",
+          "label": "Cherry Blossom"
+        },
+        {
+          "char": "🎀",
+          "label": "Ribbon"
+        },
+        {
+          "char": "🦋",
+          "label": "Butterfly"
+        },
+        {
+          "char": "☁️",
+          "label": "Cloud"
+        },
+        {
+          "char": "🌷",
+          "label": "Tulip"
+        },
+        {
+          "char": "💫",
+          "label": "Dizzy"
+        },
+        {
+          "char": "🍓",
+          "label": "Strawberry"
+        },
+        {
+          "char": "🌙",
+          "label": "Crescent Moon"
+        },
+        {
+          "char": "🫧",
+          "label": "Bubbles"
+        }
       ]
     },
     {
@@ -35,14 +65,38 @@
       "h2": "Cute & Cozy Emojis",
       "intro": "Warm, homey emojis for cottagecore, study, and comfort-themed combos.",
       "symbols": [
-        { "char": "🧸", "label": "Teddy Bear" },
-        { "char": "🍄", "label": "Mushroom" },
-        { "char": "🐚", "label": "Spiral Shell" },
-        { "char": "🕯️", "label": "Candle" },
-        { "char": "📖", "label": "Open Book" },
-        { "char": "☕", "label": "Hot Beverage" },
-        { "char": "🧺", "label": "Basket" },
-        { "char": "🍯", "label": "Honey Pot" }
+        {
+          "char": "🧸",
+          "label": "Teddy Bear"
+        },
+        {
+          "char": "🍄",
+          "label": "Mushroom"
+        },
+        {
+          "char": "🐚",
+          "label": "Spiral Shell"
+        },
+        {
+          "char": "🕯️",
+          "label": "Candle"
+        },
+        {
+          "char": "📖",
+          "label": "Open Book"
+        },
+        {
+          "char": "☕",
+          "label": "Hot Beverage"
+        },
+        {
+          "char": "🧺",
+          "label": "Basket"
+        },
+        {
+          "char": "🍯",
+          "label": "Honey Pot"
+        }
       ]
     },
     {
@@ -51,14 +105,38 @@
       "h2": "Bright & Fun Emojis",
       "intro": "High-energy emojis for playful, colorful, and Y2K-leaning combinations.",
       "symbols": [
-        { "char": "🌈", "label": "Rainbow" },
-        { "char": "⚡", "label": "High Voltage" },
-        { "char": "🍒", "label": "Cherries" },
-        { "char": "🍋", "label": "Lemon" },
-        { "char": "🌻", "label": "Sunflower" },
-        { "char": "🪩", "label": "Mirror Ball" },
-        { "char": "💖", "label": "Sparkling Heart" },
-        { "char": "🎉", "label": "Party Popper" }
+        {
+          "char": "🌈",
+          "label": "Rainbow"
+        },
+        {
+          "char": "⚡",
+          "label": "High Voltage"
+        },
+        {
+          "char": "🍒",
+          "label": "Cherries"
+        },
+        {
+          "char": "🍋",
+          "label": "Lemon"
+        },
+        {
+          "char": "🌻",
+          "label": "Sunflower"
+        },
+        {
+          "char": "🪩",
+          "label": "Mirror Ball"
+        },
+        {
+          "char": "💖",
+          "label": "Sparkling Heart"
+        },
+        {
+          "char": "🎉",
+          "label": "Party Popper"
+        }
       ]
     },
     {
@@ -67,14 +145,38 @@
       "h2": "Symbol Accents for Combos",
       "intro": "Text symbols that slot between emojis to make a combo feel hand-decorated.",
       "symbols": [
-        { "char": "♡", "label": "White Heart Suit" },
-        { "char": "☆", "label": "White Star" },
-        { "char": "✧", "label": "White Four Pointed Star" },
-        { "char": "✦", "label": "Black Four Pointed Star" },
-        { "char": "❀", "label": "White Florette" },
-        { "char": "✿", "label": "Black Florette" },
-        { "char": "⋆", "label": "Star Operator" },
-        { "char": "°", "label": "Degree Sign" }
+        {
+          "char": "♡",
+          "label": "White Heart Suit"
+        },
+        {
+          "char": "☆",
+          "label": "White Star"
+        },
+        {
+          "char": "✧",
+          "label": "White Four Pointed Star"
+        },
+        {
+          "char": "✦",
+          "label": "Black Four Pointed Star"
+        },
+        {
+          "char": "❀",
+          "label": "White Florette"
+        },
+        {
+          "char": "✿",
+          "label": "Black Florette"
+        },
+        {
+          "char": "⋆",
+          "label": "Star Operator"
+        },
+        {
+          "char": "°",
+          "label": "Degree Sign"
+        }
       ]
     }
   ],
@@ -88,46 +190,93 @@
   "collections": [
     {
       "name": "Soft Girl",
-      "flags": ["🎀", "🌸", "🩰", "🤍", "✨"],
+      "flags": [
+        "🎀",
+        "🌸",
+        "🩰",
+        "🤍",
+        "✨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Ocean Breeze",
-      "flags": ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      "flags": [
+        "🌊",
+        "🐚",
+        "🐬",
+        "⛱️",
+        "🫧"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Cottage Garden",
-      "flags": ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      "flags": [
+        "🍄",
+        "🌷",
+        "🐝",
+        "🍓",
+        "🧺"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Night Sky",
-      "flags": ["🌙", "⭐", "☁️", "💫", "🔭"],
+      "flags": [
+        "🌙",
+        "⭐",
+        "☁️",
+        "💫",
+        "🔭"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Coffee Date",
-      "flags": ["☕", "🥐", "📖", "🍂", "🤎"],
+      "flags": [
+        "☕",
+        "🥐",
+        "📖",
+        "🍂",
+        "🤎"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Y2K Sparkle",
-      "flags": ["💿", "🦋", "💖", "⚡", "🪩"],
+      "flags": [
+        "💿",
+        "🦋",
+        "💖",
+        "⚡",
+        "🪩"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Cute Animals",
-      "flags": ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      "flags": [
+        "🐰",
+        "🐻",
+        "🍯",
+        "🌼",
+        "☀️"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Sunset Vibes",
-      "flags": ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      "flags": [
+        "🌅",
+        "🍊",
+        "🌺",
+        "🏝️",
+        "🧡"
+      ],
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/aesthetic-symbols/",

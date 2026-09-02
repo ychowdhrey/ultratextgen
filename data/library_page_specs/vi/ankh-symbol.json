@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/ankh-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/ankh-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ankh-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ankh-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/ankh-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ankh-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Ankh",
       "intro": "Dingbat ankh và các dạng thánh giá mà hình dạng vòng của nó gắn liền về mặt lịch sử.",
       "symbols": [
-        { "char": "☥", "label": "Ankh (Chìa Khóa Sự Sống)" },
-        { "char": "✝️", "label": "Thánh Giá Latinh" },
-        { "char": "☦️", "label": "Thánh Giá Chính Thống Giáo" }
+        {
+          "char": "☥",
+          "label": "Ankh (Chìa Khóa Sự Sống)"
+        },
+        {
+          "char": "✝️",
+          "label": "Thánh Giá Latinh"
+        },
+        {
+          "char": "☦️",
+          "label": "Thánh Giá Chính Thống Giáo"
+        }
       ]
     },
     {
@@ -39,10 +57,22 @@
       "h2": "Ký Hiệu Ai Cập Cổ Đại",
       "intro": "Các emoji thường gắn với Ai Cập cổ đại và hình ảnh mà ankh xuất hiện cùng.",
       "symbols": [
-        { "char": "🪲", "label": "Bọ Hung" },
-        { "char": "🐍", "label": "Rắn" },
-        { "char": "👁️", "label": "Mắt" },
-        { "char": "🐈", "label": "Mèo" }
+        {
+          "char": "🪲",
+          "label": "Bọ Hung"
+        },
+        {
+          "char": "🐍",
+          "label": "Rắn"
+        },
+        {
+          "char": "👁️",
+          "label": "Mắt"
+        },
+        {
+          "char": "🐈",
+          "label": "Mèo"
+        }
       ]
     },
     {
@@ -51,17 +81,40 @@
       "h2": "Ký Hiệu Tâm Linh & Bảo Vệ",
       "intro": "Các ký hiệu tâm linh và bảo vệ đơn lẻ khác mà ankh thường được tìm kiếm cùng.",
       "symbols": [
-        { "char": "🧿", "label": "Bùa Nazar (Con Mắt Quỷ Dữ)" },
-        { "char": "🪬", "label": "Bàn Tay Hamsa" },
-        { "char": "☯️", "label": "Âm Dương" },
-        { "char": "☮️", "label": "Ký Hiệu Hòa Bình" }
+        {
+          "char": "🧿",
+          "label": "Bùa Nazar (Con Mắt Quỷ Dữ)"
+        },
+        {
+          "char": "🪬",
+          "label": "Bàn Tay Hamsa"
+        },
+        {
+          "char": "☯️",
+          "label": "Âm Dương"
+        },
+        {
+          "char": "☮️",
+          "label": "Ký Hiệu Hòa Bình"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/egyptian-hieroglyphs/", "title": "Chữ Tượng Hình Ai Cập", "desc": "Toàn bộ hệ thống chữ tượng hình mà ankh (ký hiệu S34) thuộc về." },
-    { "href": "/vi/symbol/cross-symbol/", "title": "Ký Hiệu Thánh Giá", "desc": "Thánh giá Ki-tô giáo với dạng «crux ansata» thời kỳ đầu bắt nguồn trực tiếp từ hình dạng vòng của ankh ở Ai Cập thời Coptic." },
-    { "href": "/vi/symbol/hamsa-symbol/", "title": "Ký Hiệu Hamsa", "desc": "Một biểu tượng cổ xưa khác về sự sống và bảo vệ được trình bày như lịch sử đã ghi chép, không thiên vị bên nào." }
+    {
+      "href": "/library/egyptian-hieroglyphs/",
+      "title": "Chữ Tượng Hình Ai Cập",
+      "desc": "Toàn bộ hệ thống chữ tượng hình mà ankh (ký hiệu S34) thuộc về."
+    },
+    {
+      "href": "/vi/symbol/cross-symbol/",
+      "title": "Ký Hiệu Thánh Giá",
+      "desc": "Thánh giá Ki-tô giáo với dạng «crux ansata» thời kỳ đầu bắt nguồn trực tiếp từ hình dạng vòng của ankh ở Ai Cập thời Coptic."
+    },
+    {
+      "href": "/vi/symbol/hamsa-symbol/",
+      "title": "Ký Hiệu Hamsa",
+      "desc": "Một biểu tượng cổ xưa khác về sự sống và bảo vệ được trình bày như lịch sử đã ghi chép, không thiên vị bên nào."
+    }
   ]
 }

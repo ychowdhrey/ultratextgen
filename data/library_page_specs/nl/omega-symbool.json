@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "omega-symbool",
   "title": "Omega-symbool: Kopieer en Plak Ω ω — En het Ohm-teken waar het Vaak mee Verward Wordt",
   "meta_description": "Kopieer en plak de Griekse letter omega (Ω ω) en ontdek waarom het elektrische ohm-teken (U+2126) er identiek uitziet maar een ander Unicode-teken is — een echte, gedocumenteerde bron van bugs. Klik op een teken om het direct te kopiëren.",
@@ -56,11 +55,11 @@
       "symbols": [
         {
           "char": "Ω",
-          "label": "Ohm-teken (Elektrische Weerstand, U+2126) — Ziet Eruit als Omega, Ander Codepunt"
+          "label": "Ohm-teken (Elektrische Weerstand, U+2126): Ziet Eruit als Omega, Ander Codepunt"
         },
         {
           "char": "℧",
-          "label": "Mho-teken (Elektrische Geleiding) — 'Ohm' Achterstevoren Gespeld, Ondersteboven Gedraaid"
+          "label": "Mho-teken (Elektrische Geleiding): 'Ohm' Achterstevoren Gespeld, Ondersteboven Gedraaid"
         }
       ]
     },

@@ -38,8 +38,8 @@
       "h2": "Rodzina Symboli Krzyża",
       "intro": "Jak ukośne, trzybelkowe ramię krzyża prawosławnego wypada na tle innych nazwanych form krzyża — przydatne, jeśli nie masz pewności, jaki krzyż widzisz.",
       "symbols": [
-        { "char": "✝", "label": "Krzyż Łaciński — Jedna Poprzeczka, Chrześcijaństwo Zachodnie" },
-        { "char": "☨", "label": "Krzyż Lotaryński — Dwie Poziome Belki, Bez Ukosu, Użycie Patriarchalne" },
+        { "char": "✝", "label": "Krzyż Łaciński: Jedna Poprzeczka, Chrześcijaństwo Zachodnie" },
+        { "char": "☨", "label": "Krzyż Lotaryński: Dwie Poziome Belki, Bez Ukosu, Użycie Patriarchalne" },
         { "char": "☩", "label": "Krzyż Jerozolimski" },
         { "char": "♱", "label": "Krzyż Wschodniosyryjski" }
       ]
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/religious-symbols/",

@@ -17,15 +17,42 @@
       "h2": "Sweaty Classic Characters",
       "intro": "The katakana and CJK marks that defined the sweaty name era — ツ above all.",
       "symbols": [
-        { "char": "ツ", "label": "Katakana Tsu (Sweaty Smile)" },
-        { "char": "シ", "label": "Katakana Si (Tilted Smile)" },
-        { "char": "ッ", "label": "Katakana Small Tu" },
-        { "char": "ソ", "label": "Katakana So" },
-        { "char": "ン", "label": "Katakana N" },
-        { "char": "乂", "label": "Yi — Crossed Blades Mark" },
-        { "char": "亗", "label": "Sui — Stacked Tier Mark" },
-        { "char": "々", "label": "Ideographic Iteration Mark" },
-        { "char": "彡", "label": "San — Triple Slash" }
+        {
+          "char": "ツ",
+          "label": "Katakana Tsu (Sweaty Smile)"
+        },
+        {
+          "char": "シ",
+          "label": "Katakana Si (Tilted Smile)"
+        },
+        {
+          "char": "ッ",
+          "label": "Katakana Small Tu"
+        },
+        {
+          "char": "ソ",
+          "label": "Katakana So"
+        },
+        {
+          "char": "ン",
+          "label": "Katakana N"
+        },
+        {
+          "char": "乂",
+          "label": "Yi: Crossed Blades Mark"
+        },
+        {
+          "char": "亗",
+          "label": "Sui: Stacked Tier Mark"
+        },
+        {
+          "char": "々",
+          "label": "Ideographic Iteration Mark"
+        },
+        {
+          "char": "彡",
+          "label": "San: Triple Slash"
+        }
       ]
     },
     {
@@ -34,16 +61,46 @@
       "h2": "Power Kanji for Names",
       "intro": "Single kanji with heavyweight meanings — one character that carries a whole vibe.",
       "symbols": [
-        { "char": "鬼", "label": "Oni — Demon" },
-        { "char": "龍", "label": "Ryu — Dragon" },
-        { "char": "神", "label": "Kami — God" },
-        { "char": "王", "label": "O — King" },
-        { "char": "影", "label": "Kage — Shadow" },
-        { "char": "刃", "label": "Ha — Blade" },
-        { "char": "雷", "label": "Kaminari — Thunder" },
-        { "char": "火", "label": "Hi — Fire" },
-        { "char": "風", "label": "Kaze — Wind" },
-        { "char": "闇", "label": "Yami — Darkness" }
+        {
+          "char": "鬼",
+          "label": "Oni: Demon"
+        },
+        {
+          "char": "龍",
+          "label": "Ryu: Dragon"
+        },
+        {
+          "char": "神",
+          "label": "Kami: God"
+        },
+        {
+          "char": "王",
+          "label": "O: King"
+        },
+        {
+          "char": "影",
+          "label": "Kage: Shadow"
+        },
+        {
+          "char": "刃",
+          "label": "Ha: Blade"
+        },
+        {
+          "char": "雷",
+          "label": "Kaminari: Thunder"
+        },
+        {
+          "char": "火",
+          "label": "Hi: Fire"
+        },
+        {
+          "char": "風",
+          "label": "Kaze: Wind"
+        },
+        {
+          "char": "闇",
+          "label": "Yami: Darkness"
+        }
       ]
     },
     {
@@ -52,16 +109,46 @@
       "h2": "Clan-Tag Stars & Lightning",
       "intro": "Stars and bolt glyphs that make two-letter clan tags pop in the kill feed.",
       "symbols": [
-        { "char": "★", "label": "Black Star" },
-        { "char": "☆", "label": "White Star" },
-        { "char": "✰", "label": "Shadowed White Star" },
-        { "char": "✦", "label": "Black Four-Pointed Star" },
-        { "char": "✧", "label": "White Four-Pointed Star" },
-        { "char": "✯", "label": "Pinwheel Star" },
-        { "char": "✪", "label": "Circled White Star" },
-        { "char": "⍟", "label": "APL Circle Star" },
-        { "char": "⚡", "label": "High Voltage" },
-        { "char": "ϟ", "label": "Greek Small Letter Koppa (Lightning Bolt Style)" }
+        {
+          "char": "★",
+          "label": "Black Star"
+        },
+        {
+          "char": "☆",
+          "label": "White Star"
+        },
+        {
+          "char": "✰",
+          "label": "Shadowed White Star"
+        },
+        {
+          "char": "✦",
+          "label": "Black Four-Pointed Star"
+        },
+        {
+          "char": "✧",
+          "label": "White Four-Pointed Star"
+        },
+        {
+          "char": "✯",
+          "label": "Pinwheel Star"
+        },
+        {
+          "char": "✪",
+          "label": "Circled White Star"
+        },
+        {
+          "char": "⍟",
+          "label": "APL Circle Star"
+        },
+        {
+          "char": "⚡",
+          "label": "High Voltage"
+        },
+        {
+          "char": "ϟ",
+          "label": "Greek Small Letter Koppa (Lightning Bolt Style)"
+        }
       ]
     },
     {
@@ -70,16 +157,46 @@
       "h2": "Clan-Tag Brackets",
       "intro": "Corner and lenticular brackets that frame clan tags more cleanly than plain [ ].",
       "symbols": [
-        { "char": "「", "label": "Left Corner Bracket" },
-        { "char": "」", "label": "Right Corner Bracket" },
-        { "char": "『", "label": "Left White Corner Bracket" },
-        { "char": "』", "label": "Right White Corner Bracket" },
-        { "char": "【", "label": "Left Black Lenticular Bracket" },
-        { "char": "】", "label": "Right Black Lenticular Bracket" },
-        { "char": "〖", "label": "Left White Lenticular Bracket" },
-        { "char": "〗", "label": "Right White Lenticular Bracket" },
-        { "char": "《", "label": "Left Double Angle Bracket" },
-        { "char": "》", "label": "Right Double Angle Bracket" }
+        {
+          "char": "「",
+          "label": "Left Corner Bracket"
+        },
+        {
+          "char": "」",
+          "label": "Right Corner Bracket"
+        },
+        {
+          "char": "『",
+          "label": "Left White Corner Bracket"
+        },
+        {
+          "char": "』",
+          "label": "Right White Corner Bracket"
+        },
+        {
+          "char": "【",
+          "label": "Left Black Lenticular Bracket"
+        },
+        {
+          "char": "】",
+          "label": "Right Black Lenticular Bracket"
+        },
+        {
+          "char": "〖",
+          "label": "Left White Lenticular Bracket"
+        },
+        {
+          "char": "〗",
+          "label": "Right White Lenticular Bracket"
+        },
+        {
+          "char": "《",
+          "label": "Left Double Angle Bracket"
+        },
+        {
+          "char": "》",
+          "label": "Right Double Angle Bracket"
+        }
       ]
     },
     {
@@ -88,14 +205,38 @@
       "h2": "Crosshair & Combat Glyphs",
       "intro": "Crosshairs, crossed swords, and skulls for box-fighter and aim-demon energy.",
       "symbols": [
-        { "char": "⌖", "label": "Position Indicator (Crosshair)" },
-        { "char": "✛", "label": "Open Centre Cross" },
-        { "char": "✜", "label": "Heavy Open Centre Cross" },
-        { "char": "◎", "label": "Bullseye" },
-        { "char": "⊕", "label": "Circled Plus (Scope)" },
-        { "char": "⚔", "label": "Crossed Swords" },
-        { "char": "☠", "label": "Skull and Crossbones" },
-        { "char": "🎯", "label": "Direct Hit" }
+        {
+          "char": "⌖",
+          "label": "Position Indicator (Crosshair)"
+        },
+        {
+          "char": "✛",
+          "label": "Open Centre Cross"
+        },
+        {
+          "char": "✜",
+          "label": "Heavy Open Centre Cross"
+        },
+        {
+          "char": "◎",
+          "label": "Bullseye"
+        },
+        {
+          "char": "⊕",
+          "label": "Circled Plus (Scope)"
+        },
+        {
+          "char": "⚔",
+          "label": "Crossed Swords"
+        },
+        {
+          "char": "☠",
+          "label": "Skull and Crossbones"
+        },
+        {
+          "char": "🎯",
+          "label": "Direct Hit"
+        }
       ]
     }
   ],
@@ -109,41 +250,68 @@
   "collections": [
     {
       "name": "Sweaty Smile Frame",
-      "flags": ["ツ", "YourName", "ツ"],
+      "flags": [
+        "ツ",
+        "YourName",
+        "ツ"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Stacked Tier Tag",
-      "flags": ["亗", "YOURNAME", "亗"],
+      "flags": [
+        "亗",
+        "YOURNAME",
+        "亗"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Crossed Blades Wrap",
-      "flags": ["乂•", "YourName", "•乂"],
+      "flags": [
+        "乂•",
+        "YourName",
+        "•乂"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Lightning Strike Tag",
-      "flags": ["ϟ", "YourName", "ϟ"],
+      "flags": [
+        "ϟ",
+        "YourName",
+        "ϟ"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Shadow Kanji Combo",
-      "flags": ["影", "ɴᴀᴍᴇ", "彡"],
+      "flags": [
+        "影",
+        "ɴᴀᴍᴇ",
+        "彡"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Star Bracket Clan Tag",
-      "flags": ["「★」", "YourName", "「★」"],
+      "flags": [
+        "「★」",
+        "YourName",
+        "「★」"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Crosshair Callout",
-      "flags": ["⌖", "YourName", "⌖"],
+      "flags": [
+        "⌖",
+        "YourName",
+        "⌖"
+      ],
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/minecraft-symbols/",

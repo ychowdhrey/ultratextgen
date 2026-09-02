@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/accent-marks-diacritics/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/akzente-diakritische-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/accent-marks-diacritics/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/accent-marks-diacritics/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/akzente-diakritische-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/accent-marks-diacritics/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "accents-above",
@@ -28,27 +36,90 @@
       "h2": "Kombinierende Zeichen oben",
       "intro": "Kombinierende diakritische Zeichen, die über einem Grundzeichen erscheinen. Setze sie hinter einen beliebigen Buchstaben, um ihn zu akzentuieren.",
       "symbols": [
-        { "char": "̀", "label": "Kombinierendes Gravis" },
-        { "char": "́", "label": "Kombinierendes Akut" },
-        { "char": "̂", "label": "Kombinierendes Zirkumflex" },
-        { "char": "̃", "label": "Kombinierende Tilde" },
-        { "char": "̄", "label": "Kombinierender Makron" },
-        { "char": "̅", "label": "Kombinierender Überstrich" },
-        { "char": "̆", "label": "Kombinierendes Breve" },
-        { "char": "̇", "label": "Kombinierender Punkt oben" },
-        { "char": "̈", "label": "Kombinierendes Trema" },
-        { "char": "̉", "label": "Kombinierender Haken oben" },
-        { "char": "̊", "label": "Kombinierender Ring oben" },
-        { "char": "̋", "label": "Kombinierender Doppelakut" },
-        { "char": "̌", "label": "Kombinierendes Hatschek (Caron)" },
-        { "char": "̍", "label": "Kombinierende senkrechte Linie oben" },
-        { "char": "̎", "label": "Kombinierende doppelte senkrechte Linie oben" },
-        { "char": "̏", "label": "Kombinierender Doppelgravis" },
-        { "char": "̐", "label": "Kombinierendes Candrabindu" },
-        { "char": "̑", "label": "Kombinierendes umgekehrtes Breve" },
-        { "char": "̒", "label": "Kombinierendes gedrehtes Komma oben" },
-        { "char": "̓", "label": "Kombinierendes Komma oben" },
-        { "char": "̔", "label": "Kombinierendes umgekehrtes Komma oben" }
+        {
+          "char": "̀",
+          "label": "Kombinierendes Gravis"
+        },
+        {
+          "char": "́",
+          "label": "Kombinierendes Akut"
+        },
+        {
+          "char": "̂",
+          "label": "Kombinierendes Zirkumflex"
+        },
+        {
+          "char": "̃",
+          "label": "Kombinierende Tilde"
+        },
+        {
+          "char": "̄",
+          "label": "Kombinierender Makron"
+        },
+        {
+          "char": "̅",
+          "label": "Kombinierender Überstrich"
+        },
+        {
+          "char": "̆",
+          "label": "Kombinierendes Breve"
+        },
+        {
+          "char": "̇",
+          "label": "Kombinierender Punkt oben"
+        },
+        {
+          "char": "̈",
+          "label": "Kombinierendes Trema"
+        },
+        {
+          "char": "̉",
+          "label": "Kombinierender Haken oben"
+        },
+        {
+          "char": "̊",
+          "label": "Kombinierender Ring oben"
+        },
+        {
+          "char": "̋",
+          "label": "Kombinierender Doppelakut"
+        },
+        {
+          "char": "̌",
+          "label": "Kombinierendes Hatschek (Caron)"
+        },
+        {
+          "char": "̍",
+          "label": "Kombinierende senkrechte Linie oben"
+        },
+        {
+          "char": "̎",
+          "label": "Kombinierende doppelte senkrechte Linie oben"
+        },
+        {
+          "char": "̏",
+          "label": "Kombinierender Doppelgravis"
+        },
+        {
+          "char": "̐",
+          "label": "Kombinierendes Candrabindu"
+        },
+        {
+          "char": "̑",
+          "label": "Kombinierendes umgekehrtes Breve"
+        },
+        {
+          "char": "̒",
+          "label": "Kombinierendes gedrehtes Komma oben"
+        },
+        {
+          "char": "̓",
+          "label": "Kombinierendes Komma oben"
+        },
+        {
+          "char": "̔",
+          "label": "Kombinierendes umgekehrtes Komma oben"
+        }
       ]
     },
     {
@@ -57,27 +128,90 @@
       "h2": "Kombinierende Zeichen unten",
       "intro": "Kombinierende diakritische Zeichen, die unter einem Grundzeichen erscheinen.",
       "symbols": [
-        { "char": "̖", "label": "Kombinierendes Gravis unten" },
-        { "char": "̗", "label": "Kombinierendes Akut unten" },
-        { "char": "̘", "label": "Kombinierender linker Haken unten" },
-        { "char": "̙", "label": "Kombinierender rechter Haken unten" },
-        { "char": "̚", "label": "Kombinierender linker Winkel oben" },
-        { "char": "̛", "label": "Kombinierendes Horn" },
-        { "char": "̜", "label": "Kombinierender linker Halbring unten" },
-        { "char": "̝", "label": "Kombinierender Aufwärtshaken unten" },
-        { "char": "̞", "label": "Kombinierender Abwärtshaken unten" },
-        { "char": "̟", "label": "Kombinierendes Plus unten" },
-        { "char": "̠", "label": "Kombinierendes Minus unten" },
-        { "char": "̡", "label": "Kombinierendes I unten" },
-        { "char": "̢", "label": "Kombinierendes U unten" },
-        { "char": "̣", "label": "Kombinierender Punkt unten" },
-        { "char": "̤", "label": "Kombinierendes Trema unten" },
-        { "char": "̥", "label": "Kombinierender Ring unten" },
-        { "char": "̦", "label": "Kombinierendes Komma unten" },
-        { "char": "̧", "label": "Kombinierende Cedille" },
-        { "char": "̨", "label": "Kombinierendes Ogonek" },
-        { "char": "̩", "label": "Kombinierende senkrechte Linie unten" },
-        { "char": "̪", "label": "Kombinierende Brücke unten" }
+        {
+          "char": "̖",
+          "label": "Kombinierendes Gravis unten"
+        },
+        {
+          "char": "̗",
+          "label": "Kombinierendes Akut unten"
+        },
+        {
+          "char": "̘",
+          "label": "Kombinierender linker Haken unten"
+        },
+        {
+          "char": "̙",
+          "label": "Kombinierender rechter Haken unten"
+        },
+        {
+          "char": "̚",
+          "label": "Kombinierender linker Winkel oben"
+        },
+        {
+          "char": "̛",
+          "label": "Kombinierendes Horn"
+        },
+        {
+          "char": "̜",
+          "label": "Kombinierender linker Halbring unten"
+        },
+        {
+          "char": "̝",
+          "label": "Kombinierender Aufwärtshaken unten"
+        },
+        {
+          "char": "̞",
+          "label": "Kombinierender Abwärtshaken unten"
+        },
+        {
+          "char": "̟",
+          "label": "Kombinierendes Plus unten"
+        },
+        {
+          "char": "̠",
+          "label": "Kombinierendes Minus unten"
+        },
+        {
+          "char": "̡",
+          "label": "Kombinierendes I unten"
+        },
+        {
+          "char": "̢",
+          "label": "Kombinierendes U unten"
+        },
+        {
+          "char": "̣",
+          "label": "Kombinierender Punkt unten"
+        },
+        {
+          "char": "̤",
+          "label": "Kombinierendes Trema unten"
+        },
+        {
+          "char": "̥",
+          "label": "Kombinierender Ring unten"
+        },
+        {
+          "char": "̦",
+          "label": "Kombinierendes Komma unten"
+        },
+        {
+          "char": "̧",
+          "label": "Kombinierende Cedille"
+        },
+        {
+          "char": "̨",
+          "label": "Kombinierendes Ogonek"
+        },
+        {
+          "char": "̩",
+          "label": "Kombinierende senkrechte Linie unten"
+        },
+        {
+          "char": "̪",
+          "label": "Kombinierende Brücke unten"
+        }
       ]
     },
     {
@@ -86,27 +220,90 @@
       "h2": "Haken, Hörner & Sonderzeichen",
       "intro": "Kombinierende Zeichen für spezielle phonetische und linguistische Notation.",
       "symbols": [
-        { "char": "̫", "label": "Kombinierender umgekehrter Doppelbogen unten" },
-        { "char": "̬", "label": "Kombinierendes Hatschek unten" },
-        { "char": "̭", "label": "Kombinierendes Zirkumflex unten" },
-        { "char": "̮", "label": "Kombinierendes Breve unten" },
-        { "char": "̯", "label": "Kombinierendes umgekehrtes Breve unten" },
-        { "char": "̰", "label": "Kombinierende Tilde unten" },
-        { "char": "̱", "label": "Kombinierender Makron unten" },
-        { "char": "̲", "label": "Kombinierende Grundlinie (Unterstrich)" },
-        { "char": "̳", "label": "Kombinierende doppelte Grundlinie" },
-        { "char": "̴", "label": "Kombinierende Tilde-Überlagerung" },
-        { "char": "̵", "label": "Kombinierender kurzer Strich" },
-        { "char": "̶", "label": "Kombinierender langer Strich" },
-        { "char": "̷", "label": "Kombinierender kurzer Schrägstrich" },
-        { "char": "̸", "label": "Kombinierender langer Schrägstrich" },
-        { "char": "̹", "label": "Kombinierender rechter Halbring unten" },
-        { "char": "̺", "label": "Kombinierende umgekehrte Brücke unten" },
-        { "char": "̻", "label": "Kombinierendes Quadrat unten" },
-        { "char": "̼", "label": "Kombinierende Möwe unten" },
-        { "char": "̽", "label": "Kombinierendes X oben" },
-        { "char": "̾", "label": "Kombinierende senkrechte Tilde" },
-        { "char": "̿", "label": "Kombinierender doppelter Überstrich" }
+        {
+          "char": "̫",
+          "label": "Kombinierender umgekehrter Doppelbogen unten"
+        },
+        {
+          "char": "̬",
+          "label": "Kombinierendes Hatschek unten"
+        },
+        {
+          "char": "̭",
+          "label": "Kombinierendes Zirkumflex unten"
+        },
+        {
+          "char": "̮",
+          "label": "Kombinierendes Breve unten"
+        },
+        {
+          "char": "̯",
+          "label": "Kombinierendes umgekehrtes Breve unten"
+        },
+        {
+          "char": "̰",
+          "label": "Kombinierende Tilde unten"
+        },
+        {
+          "char": "̱",
+          "label": "Kombinierender Makron unten"
+        },
+        {
+          "char": "̲",
+          "label": "Kombinierende Grundlinie (Unterstrich)"
+        },
+        {
+          "char": "̳",
+          "label": "Kombinierende doppelte Grundlinie"
+        },
+        {
+          "char": "̴",
+          "label": "Kombinierende Tilde-Überlagerung"
+        },
+        {
+          "char": "̵",
+          "label": "Kombinierender kurzer Strich"
+        },
+        {
+          "char": "̶",
+          "label": "Kombinierender langer Strich"
+        },
+        {
+          "char": "̷",
+          "label": "Kombinierender kurzer Schrägstrich"
+        },
+        {
+          "char": "̸",
+          "label": "Kombinierender langer Schrägstrich"
+        },
+        {
+          "char": "̹",
+          "label": "Kombinierender rechter Halbring unten"
+        },
+        {
+          "char": "̺",
+          "label": "Kombinierende umgekehrte Brücke unten"
+        },
+        {
+          "char": "̻",
+          "label": "Kombinierendes Quadrat unten"
+        },
+        {
+          "char": "̼",
+          "label": "Kombinierende Möwe unten"
+        },
+        {
+          "char": "̽",
+          "label": "Kombinierendes X oben"
+        },
+        {
+          "char": "̾",
+          "label": "Kombinierende senkrechte Tilde"
+        },
+        {
+          "char": "̿",
+          "label": "Kombinierender doppelter Überstrich"
+        }
       ]
     },
     {
@@ -115,27 +312,90 @@
       "h2": "Alleinstehende Abstandsformen",
       "intro": "Diese Abstands-Akzentzeichen haben eine eigene sichtbare Form und lassen sich allein tippen oder dekorativ verwenden. Anders als kombinierende Zeichen hängen sie sich nicht an einen vorangehenden Buchstaben an.",
       "symbols": [
-        { "char": "`", "label": "Gravis" },
-        { "char": "´", "label": "Akut" },
-        { "char": "^", "label": "Zirkumflex" },
-        { "char": "~", "label": "Tilde" },
-        { "char": "¯", "label": "Makron" },
-        { "char": "˘", "label": "Breve" },
-        { "char": "˙", "label": "Punkt oben" },
-        { "char": "¨", "label": "Trema" },
-        { "char": "˚", "label": "Ring oben" },
-        { "char": "˝", "label": "Doppelakut" },
-        { "char": "ˇ", "label": "Hatschek (Caron)" },
-        { "char": "¸", "label": "Cedille" },
-        { "char": "˛", "label": "Ogonek" },
-        { "char": "˜", "label": "Kleine Tilde" },
-        { "char": "ˆ", "label": "Modifikator-Zirkumflex" },
-        { "char": "á", "label": "a mit Akut" },
-        { "char": "é", "label": "e mit Akut" },
-        { "char": "ñ", "label": "n mit Tilde" },
-        { "char": "ç", "label": "c mit Cedille" },
-        { "char": "ü", "label": "u mit Trema" },
-        { "char": "ø", "label": "o mit Schrägstrich" }
+        {
+          "char": "`",
+          "label": "Gravis"
+        },
+        {
+          "char": "´",
+          "label": "Akut"
+        },
+        {
+          "char": "^",
+          "label": "Zirkumflex"
+        },
+        {
+          "char": "~",
+          "label": "Tilde"
+        },
+        {
+          "char": "¯",
+          "label": "Makron"
+        },
+        {
+          "char": "˘",
+          "label": "Breve"
+        },
+        {
+          "char": "˙",
+          "label": "Punkt oben"
+        },
+        {
+          "char": "¨",
+          "label": "Trema"
+        },
+        {
+          "char": "˚",
+          "label": "Ring oben"
+        },
+        {
+          "char": "˝",
+          "label": "Doppelakut"
+        },
+        {
+          "char": "ˇ",
+          "label": "Hatschek (Caron)"
+        },
+        {
+          "char": "¸",
+          "label": "Cedille"
+        },
+        {
+          "char": "˛",
+          "label": "Ogonek"
+        },
+        {
+          "char": "˜",
+          "label": "Kleine Tilde"
+        },
+        {
+          "char": "ˆ",
+          "label": "Modifikator-Zirkumflex"
+        },
+        {
+          "char": "á",
+          "label": "a mit Akut"
+        },
+        {
+          "char": "é",
+          "label": "e mit Akut"
+        },
+        {
+          "char": "ñ",
+          "label": "n mit Tilde"
+        },
+        {
+          "char": "ç",
+          "label": "c mit Cedille"
+        },
+        {
+          "char": "ü",
+          "label": "u mit Trema"
+        },
+        {
+          "char": "ø",
+          "label": "o mit Schrägstrich"
+        }
       ]
     }
   ],

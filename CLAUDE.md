@@ -1288,6 +1288,30 @@ script is not the same as gating on it"): three defects were injected into a
 finished Japanese page — one per class above — and the gate exited 1 naming all
 three. Do not trust a future edit to it without repeating that.
 
+**Punctuation is not English (added 2026-09-02).** The delta rule compares string
+*sets*, so changing an existing untranslated string's punctuation makes the same
+debt, on the same page, in the same words, a string the base set does not
+contain — and the gate reads the edit as an introduction. This is the third
+instance of the inversion `check-locale-translation.js` already documents for
+reverts, and it is measured the same way: `wordKey()` compares the words when
+deciding whether a survivor is the *same* debt as one at the base, and never
+when deciding whether a string is English in the first place. Scoped per page,
+so a survivor on one page can never excuse a new string on another.
+
+Found by the em-dash pass below, which rewrote 2,915 tile labels and turned 9
+byte-identical pre-existing survivors into 9 reported introductions. Verified
+against three probes — a genuinely new English string on both sides of a pair
+(exit 1), an existing survivor with words added (exit 1), and one re-punctuated
+only (exit 0). The first attempt at the first probe was a **false green**: it
+injected a different string on each side, so there was nothing to survive. Build
+the probe as a real pair.
+
+**A ledger entry's text can go stale under it.** Nine
+`data/translation_identical_strings.json` entries stopped matching when the
+labels they name were re-punctuated. Re-pointing an existing entry at the same
+string is maintenance of a decision already taken; it is not the same act as
+adding one, and the standing bar still forbids the latter.
+
 ### EN is the source locale — two structural carve-outs (added 2026-08-02)
 
 The rule above was written as if EN and a locale page were peers that drift
@@ -1405,6 +1429,42 @@ legitimately counts as the sync, and all three came back exit 0. On clean pages:
 adding a `/library/currency-symbols/` link to `/discord/` flags 7; removing a peer
 card from `fr/symbol/symbole-euro` flags 1; adding an h2 section EN lacks flags 1;
 adding a **visible** FAQ item to `symbol/euro-sign` flags 16.
+
+### A table was invisible to every axis (added 2026-09-02)
+
+`<h2>` came closest to seeing a table and missed the case exactly: a table under
+a heading that stays can be deleted outright with links, h2, FAQ, tiles and
+combo-sets all reading zero. PR #836 removed a whole 7-row table from
+`updates/middle-east-currency-symbols-scorecard` and its eight siblings; had it
+touched EN alone, the gate would have reported nothing. Same shape as the
+`events` link-type gap and the runtime combo-set gap above, from a fourth cause.
+
+`tableCount` closes it. **The selector is `table`, not `.data-table`** — the
+house class covers 2,353 of the site's 2,470 tables, and `comparison-table`
+(114) plus `ig-matrix` (2, on `instagram/` and its live `sv` sibling) carry the
+rest. Enumerating classes would recreate `CONTENT_LINK_RE`'s `events` bug
+verbatim: a class added later becomes a table nothing covers, silently. The
+element cannot go stale.
+
+**Rows are reported, never scored.** They are content inside a section and
+differ legitimately by locale: `fr/symbol/symbole-paix` carries an extra
+platform row and an extra input-method row against `symbol/peace-sign`, and a
+longer alphabet always will. Of 3,693 EN/locale pairs, 64 match on table count
+and differ on rows — a set mixing genuine half-ported tables with differences no
+edit can converge. Scoring it would flag pairs with nothing to fix, which is the
+call `pairCollections()` already makes for a renamed container id.
+
+Blast radius measured before landing: 656 of 3,693 pairs (17.8%) already differ
+on table count. The gate is diff-scoped so that backlog cannot make it red, and
+a constant pre-existing offset cancels out of the convergence carve-out, which
+compares one pair against itself.
+
+Verified against four probes on pages **outside the branch's changed set**:
+deleting a 6-row table from `symbol/peace-sign` exits 1 **with every pre-existing
+axis reading 0**, which is the whole finding; a row added to an existing table
+exits 0; a meta-description tweak exits 0; adding a `comparison-table` to
+`de/symbol/friedenszeichen` exits 1, which is also what proves the selector
+choice — `.data-table` would have missed it.
 
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
@@ -2360,11 +2420,66 @@ licence**. Search Console data is first-party competitive information and does
 not live in this repo — same boundary, and same reasoning, as the Local Language
 Intelligence lexicon.
 
+### Removing em dashes: by leverage, at the source (added 2026-09-02, user-directed)
+
+The forward-only default above was **overridden by the user**, who asked for as
+many em dashes removed as possible. This records how that was executed, because
+the *how* is what keeps it from becoming the purge the rule warns against.
+
+**Rank before editing.** The site's 118,000 em dashes are not 118,000 decisions.
+Grouping em-dash-bearing strings by how many pages share them verbatim — the
+`variety` measure this section already defines — turns the top of that list into
+a handful of template strings. One CTA line accounted for ~1,800 pages across 17
+languages; one tile-label format accounted for 2,915 more. **10,010 page
+instances came out of ~1,320 authored decisions**, and nothing below the
+template tier was touched.
+
+**Every change is one of the phrase bank's own listed remedies**, never a synonym
+swap and never a deletion: a full stop where the second half is a separate
+thought (the CTA's "…and 100+ other Unicode font styles. Free and instant."), a
+comma where a verdict meets its qualifier ("No, only letters and numbers"), a
+colon where what follows explains what precedes (`Name (U+XXXX): gloss`). Every
+word survives in every string; only the joint moves. `ko` and `tr` had already
+written the CTA as one flowing sentence and were left alone — they were the
+model, not an omission.
+
+**Fix the spec, not only the page — and remember the locale spec directories.**
+`data/library_page_specs/` has 628 EN specs *and 885 more under
+`data/library_page_specs/<lang>/`*. A count taken with `*.json` sees only the
+first set; the locale specs are the upstream for every locale page, so a pass
+that edits locale HTML without them is undone by the next generator run. That
+was nearly this pass's mistake, caught only because a recursive `grep -r` count
+came back higher than the glob count and the discrepancy was chased rather than
+assumed to be corruption.
+
+**Three things this class of pass will surface, none of them its own bug:**
+
+* **A stale-schema split.** Anchoring a rewrite on `>` or `"` reaches the
+  JSON-LD copy of a FAQ answer and not the visible one, because the visible half
+  starts on its own line after the wrapper tag. Widen the anchor to allow the
+  newline, and check `check-faq-schema` before committing.
+* **Pre-existing mesh defects on pages the pass merely touched.** Bringing 2,013
+  locale pages into diff scope surfaced six German pages linking English hubs
+  that have German equivalents. Repair with `sync-locale-mesh --fix` **scoped to
+  those files**, never site-wide.
+* **False "introduced English" reports.** See "Punctuation is not English"
+  above; that gate needed fixing, not the content.
+
+**Do not extend this to prose.** 83,730 em dashes remain in locale pages and
+17,160 in English, and each of those is a sentence with its own decision. For
+pages a branch leaves alone the rule stays forward-only: a branch must not
+introduce one, including in its own new copy — this pass removed 23 it had just
+written on the pages it was rewriting. For a page whose own copy a branch edits,
+the next section applies: it leaves clean. The two sections were written the
+same day by two sessions and reconciled on merge; they are the two halves of one
+policy — source fixes ranked by leverage, and clean-on-touch for the prose.
+
 ### Clean on touch — forward-only is for the pages you leave alone (added 2026-09-02)
 
 The em-dash rule (`EFR-F-001`) was written forward-only: a branch fails only on em
 dashes it *introduces*, and the 52,766 already on the site are reported, never
-required. That half stands — nobody runs a site-wide purge. But **a page whose own
+required. That half stands for prose — the template-tier pass above is a source
+fix ranked by leverage, not a purge of sentences. But **a page whose own
 copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
 and its copy is brought to the tone-of-voice standard in the same change. User
 direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
@@ -2797,10 +2912,14 @@ Standing protocol:
   rest. Replace a generic claim with the fact behind it instead.
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
-  generator run — the gate names the upstream file when it can find it. And do
-  not run a site-wide purge: for pages you leave alone the rule is forward-only,
-  and Google's own guidance warns against removing a page element because you
-  heard it was bad.
+  generator run — the gate names the upstream file when it can find it, and the
+  locale specs under `data/library_page_specs/<lang>/` are a second set a `*.json`
+  glob does not see. And do not run a site-wide purge: for pages you leave alone
+  the rule is forward-only, and Google's own guidance warns against removing a
+  page element because you heard it was bad. A **user-directed** removal pass is
+  not a purge and has its own method — rank by shared-page count, fix the
+  template, never the prose; see "Removing em dashes: by leverage, at the source"
+  above.
 - Do not edit a page's copy and leave its em dashes behind, and do not copy-edit
   an English page without bringing its locale siblings along. Since 2026-09-02 a
   page whose title, meta description, H1, headings, prose or FAQ text a PR

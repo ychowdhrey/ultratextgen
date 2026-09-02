@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/lenny-face/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/lenny-face/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/lenny-face/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/lenny-face/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/lenny-face/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/lenny-face/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "related": [
     {
       "href": "/de/library/kaomoji/",
@@ -45,11 +53,26 @@
       "h2": "Das Original Lenny Face",
       "intro": "Das klassische Grinsen und seine nächsten Verwandten.",
       "symbols": [
-        { "char": "( ͡° ͜ʖ ͡°)", "label": "Klassisches Lenny" },
-        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Zwinkerndes Lenny" },
-        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Fröhliches Lenny" },
-        { "char": "( ͠° ͟ʖ ͡°)", "label": "Verschmitztes Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Greifendes Lenny" }
+        {
+          "char": "( ͡° ͜ʖ ͡°)",
+          "label": "Klassisches Lenny"
+        },
+        {
+          "char": "( ͡~ ͜ʖ ͡°)",
+          "label": "Zwinkerndes Lenny"
+        },
+        {
+          "char": "( ͡ᵔ ͜ʖ ͡ᵔ)",
+          "label": "Fröhliches Lenny"
+        },
+        {
+          "char": "( ͠° ͟ʖ ͡°)",
+          "label": "Verschmitztes Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)づ",
+          "label": "Greifendes Lenny"
+        }
       ]
     },
     {
@@ -58,10 +81,22 @@
       "h2": "Muskulöses & posendes Lenny Face",
       "intro": "Arme hoch — posend, hyped, startklar.",
       "symbols": [
-        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Posendes Lenny" },
-        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Marschierendes Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Freches Lenny" },
-        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Starkes Lenny" }
+        {
+          "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ",
+          "label": "Posendes Lenny"
+        },
+        {
+          "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ",
+          "label": "Marschierendes Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)╭∩╮",
+          "label": "Freches Lenny"
+        },
+        {
+          "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ",
+          "label": "Starkes Lenny"
+        }
       ]
     },
     {
@@ -70,10 +105,22 @@
       "h2": "Greifendes Lenny Face",
       "intro": "Grabschende, zeigende und \"gib her\"-Varianten.",
       "symbols": [
-        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Umarmendes Lenny" },
-        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Zeigendes Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Verlangendes Lenny" },
-        { "char": "( ͡°Ѡ ͡°)", "label": "Breites Lenny" }
+        {
+          "char": "(づ ͡° ͜ʖ ͡°)づ",
+          "label": "Umarmendes Lenny"
+        },
+        {
+          "char": "☞ ͡° ͜ʖ ͡°☞",
+          "label": "Zeigendes Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)੭",
+          "label": "Verlangendes Lenny"
+        },
+        {
+          "char": "( ͡°Ѡ ͡°)",
+          "label": "Breites Lenny"
+        }
       ]
     },
     {
@@ -82,11 +129,26 @@
       "h2": "Lenny Face Augen-Varianten",
       "intro": "Gleiches Grinsen, andere Augen.",
       "symbols": [
-        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Rundäugiges Lenny" },
-        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Großäugiges Lenny" },
-        { "char": "( ͡• ͜ʖ ͡•)", "label": "Punktäugiges Lenny" },
-        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Zielscheiben-Lenny" },
-        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Münzäugiges Lenny" }
+        {
+          "char": "( ͡ʘ ͜ʖ ͡ʘ)",
+          "label": "Rundäugiges Lenny"
+        },
+        {
+          "char": "( ͡◉ ͜ʖ ͡◉)",
+          "label": "Großäugiges Lenny"
+        },
+        {
+          "char": "( ͡• ͜ʖ ͡•)",
+          "label": "Punktäugiges Lenny"
+        },
+        {
+          "char": "( ͡⊙ ͜ʖ ͡⊙)",
+          "label": "Zielscheiben-Lenny"
+        },
+        {
+          "char": "( ͡ↀ ͜ʖ ͡ↀ)",
+          "label": "Münzäugiges Lenny"
+        }
       ]
     }
   ]

@@ -17,18 +17,54 @@
       "h2": "Clock Faces — On the Hour",
       "intro": "Twelve clock-face emojis, one for each hour from one to twelve o'clock.",
       "symbols": [
-        { "char": "🕐", "label": "Clock Face One O'Clock" },
-        { "char": "🕑", "label": "Clock Face Two O'Clock" },
-        { "char": "🕒", "label": "Clock Face Three O'Clock" },
-        { "char": "🕓", "label": "Clock Face Four O'Clock" },
-        { "char": "🕔", "label": "Clock Face Five O'Clock" },
-        { "char": "🕕", "label": "Clock Face Six O'Clock" },
-        { "char": "🕖", "label": "Clock Face Seven O'Clock" },
-        { "char": "🕗", "label": "Clock Face Eight O'Clock" },
-        { "char": "🕘", "label": "Clock Face Nine O'Clock" },
-        { "char": "🕙", "label": "Clock Face Ten O'Clock" },
-        { "char": "🕚", "label": "Clock Face Eleven O'Clock" },
-        { "char": "🕛", "label": "Clock Face Twelve O'Clock" }
+        {
+          "char": "🕐",
+          "label": "Clock Face One O'Clock"
+        },
+        {
+          "char": "🕑",
+          "label": "Clock Face Two O'Clock"
+        },
+        {
+          "char": "🕒",
+          "label": "Clock Face Three O'Clock"
+        },
+        {
+          "char": "🕓",
+          "label": "Clock Face Four O'Clock"
+        },
+        {
+          "char": "🕔",
+          "label": "Clock Face Five O'Clock"
+        },
+        {
+          "char": "🕕",
+          "label": "Clock Face Six O'Clock"
+        },
+        {
+          "char": "🕖",
+          "label": "Clock Face Seven O'Clock"
+        },
+        {
+          "char": "🕗",
+          "label": "Clock Face Eight O'Clock"
+        },
+        {
+          "char": "🕘",
+          "label": "Clock Face Nine O'Clock"
+        },
+        {
+          "char": "🕙",
+          "label": "Clock Face Ten O'Clock"
+        },
+        {
+          "char": "🕚",
+          "label": "Clock Face Eleven O'Clock"
+        },
+        {
+          "char": "🕛",
+          "label": "Clock Face Twelve O'Clock"
+        }
       ]
     },
     {
@@ -37,18 +73,54 @@
       "h2": "Clock Faces — Half Past",
       "intro": "The matching half-hour set, from one-thirty through twelve-thirty.",
       "symbols": [
-        { "char": "🕜", "label": "Clock Face One-Thirty" },
-        { "char": "🕝", "label": "Clock Face Two-Thirty" },
-        { "char": "🕞", "label": "Clock Face Three-Thirty" },
-        { "char": "🕟", "label": "Clock Face Four-Thirty" },
-        { "char": "🕠", "label": "Clock Face Five-Thirty" },
-        { "char": "🕡", "label": "Clock Face Six-Thirty" },
-        { "char": "🕢", "label": "Clock Face Seven-Thirty" },
-        { "char": "🕣", "label": "Clock Face Eight-Thirty" },
-        { "char": "🕤", "label": "Clock Face Nine-Thirty" },
-        { "char": "🕥", "label": "Clock Face Ten-Thirty" },
-        { "char": "🕦", "label": "Clock Face Eleven-Thirty" },
-        { "char": "🕧", "label": "Clock Face Twelve-Thirty" }
+        {
+          "char": "🕜",
+          "label": "Clock Face One-Thirty"
+        },
+        {
+          "char": "🕝",
+          "label": "Clock Face Two-Thirty"
+        },
+        {
+          "char": "🕞",
+          "label": "Clock Face Three-Thirty"
+        },
+        {
+          "char": "🕟",
+          "label": "Clock Face Four-Thirty"
+        },
+        {
+          "char": "🕠",
+          "label": "Clock Face Five-Thirty"
+        },
+        {
+          "char": "🕡",
+          "label": "Clock Face Six-Thirty"
+        },
+        {
+          "char": "🕢",
+          "label": "Clock Face Seven-Thirty"
+        },
+        {
+          "char": "🕣",
+          "label": "Clock Face Eight-Thirty"
+        },
+        {
+          "char": "🕤",
+          "label": "Clock Face Nine-Thirty"
+        },
+        {
+          "char": "🕥",
+          "label": "Clock Face Ten-Thirty"
+        },
+        {
+          "char": "🕦",
+          "label": "Clock Face Eleven-Thirty"
+        },
+        {
+          "char": "🕧",
+          "label": "Clock Face Twelve-Thirty"
+        }
       ]
     },
     {
@@ -57,16 +129,46 @@
       "h2": "Timers, Watches & Calendars",
       "intro": "Hourglasses, stopwatches, alarm clocks, and calendar icons for schedules and deadlines.",
       "symbols": [
-        { "char": "⌚", "label": "Watch" },
-        { "char": "⏰", "label": "Alarm Clock" },
-        { "char": "⏱", "label": "Stopwatch" },
-        { "char": "⏲", "label": "Timer Clock" },
-        { "char": "⌛", "label": "Hourglass Done" },
-        { "char": "⏳", "label": "Hourglass Not Done" },
-        { "char": "🕰", "label": "Mantelpiece Clock" },
-        { "char": "📅", "label": "Calendar" },
-        { "char": "📆", "label": "Tear-Off Calendar" },
-        { "char": "🗓", "label": "Spiral Calendar" }
+        {
+          "char": "⌚",
+          "label": "Watch"
+        },
+        {
+          "char": "⏰",
+          "label": "Alarm Clock"
+        },
+        {
+          "char": "⏱",
+          "label": "Stopwatch"
+        },
+        {
+          "char": "⏲",
+          "label": "Timer Clock"
+        },
+        {
+          "char": "⌛",
+          "label": "Hourglass Done"
+        },
+        {
+          "char": "⏳",
+          "label": "Hourglass Not Done"
+        },
+        {
+          "char": "🕰",
+          "label": "Mantelpiece Clock"
+        },
+        {
+          "char": "📅",
+          "label": "Calendar"
+        },
+        {
+          "char": "📆",
+          "label": "Tear-Off Calendar"
+        },
+        {
+          "char": "🗓",
+          "label": "Spiral Calendar"
+        }
       ]
     },
     {
@@ -75,14 +177,38 @@
       "h2": "Day & Night Icons",
       "intro": "Sunrise-to-night icons for marking morning, evening, and overnight times.",
       "symbols": [
-        { "char": "🌅", "label": "Sunrise" },
-        { "char": "🌄", "label": "Sunrise Over Mountains" },
-        { "char": "🌞", "label": "Sun with Face" },
-        { "char": "🌇", "label": "Sunset" },
-        { "char": "🌆", "label": "Cityscape at Dusk" },
-        { "char": "🌃", "label": "Night with Stars" },
-        { "char": "🌙", "label": "Crescent Moon" },
-        { "char": "🌛", "label": "First Quarter Moon Face" }
+        {
+          "char": "🌅",
+          "label": "Sunrise"
+        },
+        {
+          "char": "🌄",
+          "label": "Sunrise Over Mountains"
+        },
+        {
+          "char": "🌞",
+          "label": "Sun with Face"
+        },
+        {
+          "char": "🌇",
+          "label": "Sunset"
+        },
+        {
+          "char": "🌆",
+          "label": "Cityscape at Dusk"
+        },
+        {
+          "char": "🌃",
+          "label": "Night with Stars"
+        },
+        {
+          "char": "🌙",
+          "label": "Crescent Moon"
+        },
+        {
+          "char": "🌛",
+          "label": "First Quarter Moon Face"
+        }
       ]
     },
     {
@@ -91,16 +217,33 @@
       "h2": "Hourglass & Duration Marks",
       "intro": "Text-style hourglasses, minute and second primes, and compact AM/PM characters.",
       "symbols": [
-        { "char": "⧖", "label": "White Hourglass" },
-        { "char": "⧗", "label": "Black Hourglass" },
-        { "char": "′", "label": "Prime (Minutes)" },
-        { "char": "″", "label": "Double Prime (Seconds)" },
-        { "char": "㏂", "label": "Square AM" },
-        { "char": "㏘", "label": "Square PM" }
+        {
+          "char": "⧖",
+          "label": "White Hourglass"
+        },
+        {
+          "char": "⧗",
+          "label": "Black Hourglass"
+        },
+        {
+          "char": "′",
+          "label": "Prime (Minutes)"
+        },
+        {
+          "char": "″",
+          "label": "Double Prime (Seconds)"
+        },
+        {
+          "char": "㏂",
+          "label": "Square AM"
+        },
+        {
+          "char": "㏘",
+          "label": "Square PM"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/weather-symbols/",

@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/ruble-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/ruble-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/ruble-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Ruble (₽)",
       "intro": "Chính ký hiệu này và chữ cái Cyrillic mà nó được xây dựng từ đó. Thiết kế chiến thắng là chữ Er hoa (Р) với một vạch ngang thêm bên dưới bụng chữ — chữ r thường là chữ từng xuất hiện trong cách viết tắt cũ «р.».",
       "symbols": [
-        { "char": "₽", "label": "Ký Hiệu Ruble (U+20BD)" },
-        { "char": "Р", "label": "Chữ Cyrillic Hoa Er (U+0420) — Nền Tảng Của Ký Hiệu" },
-        { "char": "р", "label": "Chữ Cyrillic Thường Er (U+0440) — Dùng Trong Cách Viết Tắt Cũ «р.»" }
+        {
+          "char": "₽",
+          "label": "Ký Hiệu Ruble (U+20BD)"
+        },
+        {
+          "char": "Р",
+          "label": "Chữ Cyrillic Hoa Er (U+0420): Nền Tảng Của Ký Hiệu"
+        },
+        {
+          "char": "р",
+          "label": "Chữ Cyrillic Thường Er (U+0440): Dùng Trong Cách Viết Tắt Cũ «р.»"
+        }
       ]
     },
     {
@@ -39,11 +57,26 @@
       "h2": "Các Ký Hiệu Tiền Tệ Được Thông Qua Gần Đây",
       "intro": "Ký hiệu ruble có những «hàng xóm» gần trong khối Currency Symbols của Unicode — một cụm ký hiệu chỉ được mã hóa vào thập niên 2010 khi các quốc gia hậu Xô Viết và một số nước khác trao cho đồng tiền của mình một glyph riêng. Ký hiệu rupee Ấn Độ, giống như ruble, cũng được chọn qua một cuộc thi thiết kế công khai.",
       "symbols": [
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9) — Được Chọn Qua Cuộc Thi Công Khai Năm 2010" },
-        { "char": "₺", "label": "Ký Hiệu Lira Thổ Nhĩ Kỳ (U+20BA) — Thông Qua Năm 2012" },
-        { "char": "₸", "label": "Ký Hiệu Tenge (U+20B8) — Tenge Kazakhstan" },
-        { "char": "₼", "label": "Ký Hiệu Manat (U+20BC) — Manat Azerbaijan" },
-        { "char": "₾", "label": "Ký Hiệu Lari (U+20BE) — Lari Gruzia" }
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ (U+20B9): Được Chọn Qua Cuộc Thi Công Khai Năm 2010"
+        },
+        {
+          "char": "₺",
+          "label": "Ký Hiệu Lira Thổ Nhĩ Kỳ (U+20BA): Thông Qua Năm 2012"
+        },
+        {
+          "char": "₸",
+          "label": "Ký Hiệu Tenge (U+20B8): Tenge Kazakhstan"
+        },
+        {
+          "char": "₼",
+          "label": "Ký Hiệu Manat (U+20BC): Manat Azerbaijan"
+        },
+        {
+          "char": "₾",
+          "label": "Ký Hiệu Lari (U+20BE): Lari Gruzia"
+        }
       ]
     },
     {
@@ -52,18 +85,44 @@
       "h2": "Ký Hiệu Tiền Tệ Cổ Điển Để So Sánh",
       "intro": "So với nguồn gốc rõ ràng, được ghi chép đầy đủ năm 2013 của ruble, những ký hiệu tiền tệ nổi tiếng nhất thế giới lại già hơn hàng thế kỷ và mơ hồ hơn nhiều — chính câu chuyện đứng sau ký hiệu đô la và bảng Anh vẫn còn đang được tranh luận.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La (U+0024)" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3)" },
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC)" },
-        { "char": "¥", "label": "Ký Hiệu Yên (U+00A5)" },
-        { "char": "¢", "label": "Ký Hiệu Cent (U+00A2)" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La (U+0024)"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh (U+00A3)"
+        },
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro (U+20AC)"
+        },
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên (U+00A5)"
+        },
+        {
+          "char": "¢",
+          "label": "Ký Hiệu Cent (U+00A2)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Bộ sưu tập các ký hiệu tiền tệ thế giới, từ đô la, euro cho đến rupee, ruble và bitcoin." },
-    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee", "desc": "Người họ hàng gần nhất của ruble: ₹ của Ấn Độ cũng được chọn qua một cuộc thi thiết kế công khai, chỉ ba năm trước đó vào năm 2010." },
-    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La", "desc": "Câu chuyện trái ngược hoàn toàn — ký hiệu $ đã hàng thế kỷ tuổi với nguồn gốc còn gây tranh cãi, trong khi sự ra đời năm 2013 của ruble lại được ghi chép đầy đủ." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Bộ sưu tập các ký hiệu tiền tệ thế giới, từ đô la, euro cho đến rupee, ruble và bitcoin."
+    },
+    {
+      "href": "/vi/symbol/rupee-sign/",
+      "title": "Ký Hiệu Rupee",
+      "desc": "Người họ hàng gần nhất của ruble: ₹ của Ấn Độ cũng được chọn qua một cuộc thi thiết kế công khai, chỉ ba năm trước đó vào năm 2010."
+    },
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La",
+      "desc": "Câu chuyện trái ngược hoàn toàn — ký hiệu $ đã hàng thế kỷ tuổi với nguồn gốc còn gây tranh cãi, trong khi sự ra đời năm 2013 của ruble lại được ghi chép đầy đủ."
+    }
   ]
 }

@@ -33,7 +33,7 @@
       "h2": "El Emoji con el que se Confunde",
       "intro": "Emoji celestes ya codificados con los que más se compara Meteoro, o de los que se le acusa de solaparse.",
       "symbols": [
-        { "char": "☄️", "label": "Cometa — el diseño del que se separa Meteoro" },
+        { "char": "☄️", "label": "Cometa: el diseño del que se separa Meteoro" },
         { "char": "🌠", "label": "Estrella Fugaz" },
         { "char": "⭐", "label": "Estrella" }
       ]
@@ -44,7 +44,7 @@
       "h2": "Otros Candidatos en Borrador de Emoji 18.0",
       "intro": "Meteoro no es el único carácter sin aprobar de esta versión — estos están en borrador junto a él, igual de sin renderizar hasta la decisión de septiembre de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB) — ganó la votación pública" },
+        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB): ganó la votación pública" },
         { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" },
         { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" }
       ]
