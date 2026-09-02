@@ -183,16 +183,62 @@ without the data.
 | check | scope | role |
 |---|---|---|
 | `npm run audit:editorial-footprint` | whole site | **informational**, never gating |
-| `npm run check:editorial-footprint` | diff-scoped | **shadow mode** — reports, exits 0 |
+| `npm run check:editorial-footprint` | diff-scoped | **shadow mode** — reports, exits 0; `--enforce <rule,rule>` promotes per rule |
 | `npm run test:editorial-footprint` | fixtures | **gating** — no backlog to be red against |
 | `npm run check:spec-sentence-reuse` | diff-scoped | **gating** — a spec may not paste a sentence 3+ other specs already carry |
 | `npm run audit:spec-sentence-reuse` | whole corpus | **informational** — the 416-spec backlog |
 | `npm run test:spec-sentence-reuse` | fixtures | **gating** — 19 assertions, no backlog to be red against |
 
-**The gate measures the delta, not the state.** A finding counts against a branch
-only if it exists now and did not exist at the merge base; pre-existing findings
-are reported, never silenced. Same reasoning as `check-locale-translation.js` and
-`check-faq-schema.js`, for a bigger backlog than either.
+**The gate measures the delta, not the state — for pages a branch leaves alone.**
+A finding counts against a branch only if it exists now and did not exist at the
+merge base; pre-existing findings are reported, never silenced. Same reasoning as
+`check-locale-translation.js` and `check-faq-schema.js`, for a bigger backlog than
+either.
+
+**Clean on touch (2026-09-02, user direction).** For a page whose own copy the
+branch edits, the em-dash rule is not delta-scoped: the page must leave with
+**zero** em dashes in every measured slot, cards included, not merely no new ones.
+The inherited ones are reported as `em-dash-touched`, with the same upstream
+attribution as `em-dash`. "Copy" means the page's title, meta description, H1,
+headings, prose or FAQ text differs between the merge base and HEAD
+(`TOUCH_SLOTS`). A card added by the peer-link sync, a regenerated footer or
+hreflang block, a rebuilt library directory or an asset swap changes none of those
+and is **not** a touch — a mesh pass that rewrites 1,009 pages must not demand
+1,009 rewrites. Once a page is touched, its cards count too.
+
+**An English touch pulls the locale siblings along (`em-dash-sibling`).** Each
+sibling in the touched page's hreflang cluster that the branch does not itself
+copy-edit must already be clean, or it is reported naming the parent that pulled
+it in. The rule is anchored on English on purpose: English is where pages are born
+and where the tone standard is applied first, so a translator's one-line fix never
+obliges an English rewrite, and a new locale batch never obliges the cleanup of
+every parent it translates. The cost is real and was chosen with the number in
+view: copy-editing `symbol/euro-sign` pulls 18 siblings carrying 159 em dashes.
+
+**Two extractor changes the rule needed.** `.related-card` was in no slot at all,
+so the updates hub's eleven dated card labels — every one carrying an em dash —
+and the "Keep reading" grids on 193 pages were invisible to every rule, including
+this one; a single `CARD_SELECTORS` constant now covers every card class. And the
+pre-rendered library directory (`[data-static-directory]`) is dropped: it is
+inventory rendered from other pages by the hub builders, a hand edit to it is
+overwritten by the next build, and `es/library/index.html` carried 144 of its 157
+em dashes inside it. On the EN hub the source is the page's own `LIBRARY` array —
+a script block, outside every slot — so its 25 inventory em dashes are a bounded
+backlog in one file, cleared through the array and a rebuild.
+
+Verified per CLAUDE.md's own rule against seven differently-shaped probes: a
+prose edit on the updates hub reports 18 inherited em dashes across meta
+description, prose and cards; an href-only edit on the same page reports 0 and
+lists them as pre-existing; an EN `symbol/euro-sign` edit reports its own 8 and
+pulls 18 siblings; a French-only edit reports 9 and pulls nobody; an edit inside
+the pre-rendered directory reports 0; EN and French edited together lists French
+under `em-dash-touched`, not `em-dash-sibling`; and `--enforce em-dash-touched`
+exits 1 where `--enforce seo-preservation` on the same diff exits 0. Replayed over
+the last ten merged PRs, `em-dash-touched` fired on four, every finding a real em
+dash on a copy-edited page (the currency scorecard's surviving card label among
+them), and `em-dash-sibling` fired once — 745 hits across 40 untouched siblings of
+eleven copy-edited English pages — which is the rule's intended cost, not a false
+positive.
 
 **The delta is measured by count per (rule, slot), not by surrounding text.**
 Keying on the context excerpt looks more precise and is wrong: the excerpt is a
@@ -223,12 +269,21 @@ HTML sends them to a file the next generator run overwrites.
 |---|---|
 | `model-leakage` | deterministic, unambiguous, zero legitimate occurrences (`EFR-F-002/003/004`) |
 | `seo-preservation` (error severity) | deterministic diff of identity fields, protected terms, facts and links |
+| `em-dash` | an em dash the branch wrote; deterministic; blocking-eligible since the clean-on-touch decision (2026-09-02) |
+| `em-dash-touched` | an inherited em dash on a page whose copy the branch edited; deterministic; verified against seven probes |
+| `em-dash-sibling` | an em dash on an untouched locale sibling of a copy-edited English page; deterministic |
+
+The three em-dash rules are blocking-*eligible*, not yet blocking: the workflow
+step has not been given `--enforce`, so they print "would block" and exit 0
+until the shadow sample is reviewed (see Rollout, stage 5). `--enforce` takes a
+per-rule list precisely so they can be promoted without `seo-preservation`,
+which has its own open prerequisite — a deliberate retitle has nowhere to record
+its intent — and must not ride along.
 
 **Informational — reports only:**
 
 | rule | why it is not blocking |
 |---|---|
-| `em-dash` | total backlog; the fix is usually upstream; needs shadow exposure first |
 | `formulaic-phrase` | editorial judgment, not a defect |
 | `density-limited` | a rate, and legitimate below its cap |
 | `new-page-threshold` | a percentile, not a defect |
@@ -250,7 +305,7 @@ English-derived rule applied to a non-English page.
 | **2. Shadow** | **now** | the gate runs on every PR, annotates the diff, exits 0. Collect what it would have failed. |
 | **3. Review** | next | review shadow findings for false positives and false negatives; adjust exemptions and thresholds; record every change here. |
 | **4. Enforce the deterministic rules** | after stage 3 | switch `model-leakage` and `seo-preservation` errors to gating by adding `--enforce` to the workflow step and moving it into the gating list. |
-| **5. Ratchet** | later | promote `em-dash` for **new prose** once the upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md` are fixed; tighten the new-page percentile as the backlog falls. |
+| **5. Ratchet** | review scheduled 2026-09-16 | promote the three em-dash rules per rule — `--enforce em-dash,em-dash-touched,em-dash-sibling` on the workflow step, and the step into the gating list — once every shadow finding since 2026-09-02 has been classified and none is a false positive. The upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md` are still where a generated page's em dash gets fixed; the gate names them. Tighten the new-page percentile as the backlog falls. |
 
 **Every threshold change is recorded here, with its date and its reason.** A rule
 may become blocking only when it is deterministic, documented, has zero
@@ -266,6 +321,7 @@ a deliberately broken input.
 | 2026-08-26 | `npm run test:printables-parity` added as a **gating** check (14 assertions, no backlog). Acting on Batch A found the four generators would delete five shipped site-wide repairs from 90 live pages; `scripts/lib/printables_parity.py` now refuses such a write. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §1a. | safety finding |
 | 2026-08-26 | `npm run check:spec-sentence-reuse` added as a **gating**, diff-scoped check, with `npm run test:spec-sentence-reuse` (19 assertions) gating alongside it. It stops a new or edited spec pasting a sentence 3+ other specs already carry. **The design it replaces was wrong**: field-level comparison of `hero_tagline`/`meta_description`/`title`/`intro` finds **zero** duplicates in the corpus and would have shipped a gate that could never fire — the reuse is a *sentence inside* an otherwise page-specific field (171 taglines, 148 meta descriptions, one line). Backlog measured and **left untouched**: 45 sentences across 416 of 591 specs. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §3. | prevention (Batch C) |
 | 2026-09-01 | **`specificityDeficit`: six console and storefront names added to the `platform` rule** — `Xbox`, `PlayStation`, `PSN`, `Steam`, `Valorant`, `Garena`. The list already carried Roblox, Fortnite, PUBG and Minecraft, so it was never social-only, and there is no principled reason "Roblox" reads as a concrete fact while "Xbox" does not. The omission systematically under-scored every page whose subject is game identity: measured on `/updates/`, it inflated `specificityDeficit` on `forza-horizon-6-gamertag-rules` from 4.18 to 10.51 and on `lienquan-mobile-name-penalty-update` from 7.34 to 9.15, with no page changing by one word. **Site-wide effect measured before landing: 152 pages improve, 4,032 unchanged, 444 worsen by at most 5.1 points, site median unchanged at 9.9.** The 444 are pages naming no platform at all; they did not get worse, their cohort median got more accurate, which is the dimension working as designed. 34 of them cross the 10-point percentile regression rule, which is why the baseline is regenerated in the commit that follows this one. `Steam` is the only token colliding with a common English word, so the rule stays case-sensitive — all 85 pages carrying capitalised "Steam" mean Valve's, checked 2026-09-01. Two assertions added to `npm run test:editorial-footprint` (now 57) and verified against a deliberately broken input: reverting the six names fails the first and leaves the case-sensitivity one green. | rule bug |
+| 2026-09-02 | **Forward-only became clean-on-touch, siblings included** (user direction). A copy-edited page must leave with zero em dashes in every measured slot (`em-dash-touched`); a copy-edited English page pulls its locale siblings (`em-dash-sibling`); untouched pages stay forward-only. `.related-card` joined the card slot (193 pages, the updates hub's 11 dated labels among them) and `[data-static-directory]` left measurement (inventory rendered from other pages). `--enforce` gained a per-rule list. All three em-dash rules entered `BLOCKING`; the workflow step stays in shadow. Verified against seven probes and replayed over the last ten merged PRs (four true-positive `em-dash-touched` PRs, one `em-dash-sibling` PR at 745 hits, zero false positives). Ledger and baseline regenerated in their own commit. Tests 52 → 63. | policy change + extractor fix |
 
 ---
 

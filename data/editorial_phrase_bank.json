@@ -111,9 +111,9 @@
       "seoProtection": "none",
       "maxPer1000Words": null,
       "firstAdded": "2026-08-26",
-      "lastReviewed": "2026-08-26",
+      "lastReviewed": "2026-09-02",
       "replacementGuidance": "A colon when what follows explains what precedes; a full stop when it is a separate thought; a comma pair for a genuine aside; parentheses for a true parenthetical. If none of those fits, the sentence is doing two jobs and should be two sentences.",
-      "notes": "FORWARD-ONLY, and this is not negotiable. 52,766 occurrences on 98.9% of pages is a total backlog, and Google's own guidance warns against quick-fix element removal and against changing content that already performs. The gate fails only on em dashes a branch INTRODUCES; existing ones are reported and never auto-edited. The subject exemption is load-bearing: without it this rule flags the site's own em-dash page."
+      "notes": "FORWARD-ONLY for pages a branch leaves alone, and that half is not negotiable: 52,766 occurrences on 98.9% of pages is a total backlog, and Google's own guidance warns against quick-fix element removal and against changing content that already performs. REVISED 2026-09-02 (user direction) - CLEAN-ON-TOUCH for the rest. A page whose own copy a branch edits (title, meta description, H1, headings, prose or FAQ text changed since the merge base) must leave with zero em dashes in every measured slot, cards included; the gate reports those as `em-dash-touched`. An English page that is touched pulls its locale siblings along (`em-dash-sibling`). Existing em dashes are still never auto-edited, and an untouched page is still only reported. The subject exemption is load-bearing: without it this rule flags the site's own em-dash page."
     },
     {
       "id": "EFR-F-002",
