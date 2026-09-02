@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/skull-and-crossbones/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Đầu Lâu Xương Chéo — ☠",
       "intro": "Chính ký hiệu, ở cả dạng văn bản thuần và dạng trình bày emoji. Cùng một mã điểm, U+2620 — chỉ một bộ chọn biến thể theo sau mới chuyển nó từ glyph đen trắng sang emoji có màu.",
       "symbols": [
-        { "char": "☠", "label": "Đầu Lâu Xương Chéo (U+2620)" },
-        { "char": "☠️", "label": "Đầu Lâu Xương Chéo, Kiểu Emoji (U+2620 U+FE0F)" }
+        {
+          "char": "☠",
+          "label": "Đầu Lâu Xương Chéo (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Đầu Lâu Xương Chéo, Kiểu Emoji (U+2620 U+FE0F)"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "☠ So Với Emoji Đầu Lâu 💀",
       "intro": "Điểm dễ nhầm đáng làm rõ: ☠ (đầu lâu xương chéo) và 💀 (đầu lâu thuần) là các ký tự Unicode khác nhau. 💀 là ký tự mọi người dán cho phản ứng «tôi chết mất» hay cười lăn; ☠ là biểu tượng nguy hiểm và cướp biển. Thật hợp lý, emoji cờ cướp biển 🏴‍☠️ được xây bằng cách ghép một lá cờ đen với chính U+2620.",
       "symbols": [
-        { "char": "☠️", "label": "Đầu Lâu Xương Chéo (U+2620)" },
-        { "char": "💀", "label": "Đầu Lâu (U+1F480)" },
-        { "char": "🏴‍☠️", "label": "Cờ Cướp Biển (U+1F3F4 U+200D U+2620)" }
+        {
+          "char": "☠️",
+          "label": "Đầu Lâu Xương Chéo (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Đầu Lâu (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Cờ Cướp Biển (U+1F3F4 U+200D U+2620)"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Ký Hiệu Nguy Hại & Cảnh Báo Liên Quan",
       "intro": "Đầu lâu xương chéo nằm trong khối Miscellaneous Symbols của Unicode ngay cạnh các dấu cảnh báo khác mà nó thường bị xếp cùng — mỗi cái là một mã điểm riêng với ý nghĩa nguy hiểm của riêng nó.",
       "symbols": [
-        { "char": "☠", "label": "Đầu Lâu Xương Chéo (U+2620)" },
-        { "char": "☢", "label": "Dấu Hiệu Phóng Xạ (U+2622)" },
-        { "char": "☣", "label": "Dấu Hiệu Nguy Hại Sinh Học (U+2623)" },
-        { "char": "⚠", "label": "Dấu Hiệu Cảnh Báo (U+26A0)" }
+        {
+          "char": "☠",
+          "label": "Đầu Lâu Xương Chéo (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Dấu Hiệu Phóng Xạ (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Dấu Hiệu Nguy Hại Sinh Học (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Dấu Hiệu Cảnh Báo (U+26A0)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/hazard-warning-symbols/", "title": "Ký Hiệu Nguy Hại & Cảnh Báo", "desc": "Phóng xạ, nguy hại sinh học, điện áp cao và các hình tượng cảnh báo khác để sao chép trong một trang tra cứu." },
-    { "href": "/library/skull-emoji/", "title": "Emoji Đầu Lâu & Kaomoji", "desc": "Emoji đầu lâu 💀 và các mặt chữ văn bản họ hàng của nó — mặt phản ứng meme của đầu lâu, tập hợp trong một trang." },
-    { "href": "/vi/symbol/biohazard-symbol/", "title": "Ký Hiệu Nguy Hại Sinh Học (☣)", "desc": "Dấu hiệu nguy hại sinh học ☣ — một glyph nguy hiểm lân cận trong khối Miscellaneous Symbols của Unicode, được trình bày đầy đủ." }
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Ký Hiệu Nguy Hại & Cảnh Báo",
+      "desc": "Phóng xạ, nguy hại sinh học, điện áp cao và các hình tượng cảnh báo khác để sao chép trong một trang tra cứu."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Emoji Đầu Lâu & Kaomoji",
+      "desc": "Emoji đầu lâu 💀 và các mặt chữ văn bản họ hàng của nó — mặt phản ứng meme của đầu lâu, tập hợp trong một trang."
+    },
+    {
+      "href": "/vi/symbol/biohazard-symbol/",
+      "title": "Ký Hiệu Nguy Hại Sinh Học (☣)",
+      "desc": "Dấu hiệu nguy hại sinh học ☣ — một glyph nguy hiểm lân cận trong khối Miscellaneous Symbols của Unicode, được trình bày đầy đủ."
+    }
   ]
 }

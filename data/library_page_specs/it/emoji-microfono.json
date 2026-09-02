@@ -16,12 +16,23 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-microfono/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/emoji-microfono/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
   ],
   "sections": [
     {
@@ -30,7 +41,10 @@
       "h2": "L'Emoji Microfono",
       "intro": "Il microfono a mano in sé — pronto da incollare ovunque siano supportate le emoji.",
       "symbols": [
-        { "char": "🎤", "label": "Microphone (U+1F3A4)" }
+        {
+          "char": "🎤",
+          "label": "Microphone (U+1F3A4)"
+        }
       ]
     },
     {
@@ -39,10 +53,22 @@
       "h2": "Emoji con Cui Viene Confusa",
       "intro": "Simboli che si cercano aspettandosi il microfono a mano, ma che sono in realtà emoji separate, con codifica diversa.",
       "symbols": [
-        { "char": "🎙️", "label": "Studio Microphone (U+1F399): il microfono da studio su treppiede per broadcast/podcast" },
-        { "char": "🔊", "label": "Speaker High Volume (U+1F50A)" },
-        { "char": "🗣️", "label": "Speaking Head (U+1F5E3 FE0F)" },
-        { "char": "📢", "label": "Public Address Loudspeaker (U+1F4E2)" }
+        {
+          "char": "🎙️",
+          "label": "Studio Microphone (U+1F399): il microfono da studio su treppiede per broadcast/podcast"
+        },
+        {
+          "char": "🔊",
+          "label": "Speaker High Volume (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Speaking Head (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Public Address Loudspeaker (U+1F4E2)"
+        }
       ]
     },
     {
@@ -51,11 +77,26 @@
       "h2": "Emoji di Musica e Performance che si Abbinano",
       "intro": "Emoji che compaiono spesso accanto al microfono in didascalie di canto, concerti e podcast.",
       "symbols": [
-        { "char": "🎧", "label": "Headphone (U+1F3A7)" },
-        { "char": "🎵", "label": "Musical Note (U+1F3B5)" },
-        { "char": "🎶", "label": "Musical Notes (U+1F3B6)" },
-        { "char": "🎸", "label": "Guitar (U+1F3B8)" },
-        { "char": "🥁", "label": "Drum (U+1F941)" }
+        {
+          "char": "🎧",
+          "label": "Headphone (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Musical Note (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Musical Notes (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Guitar (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Drum (U+1F941)"
+        }
       ]
     }
   ],

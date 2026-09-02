@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/theta-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/theta-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-theta-symbol",
@@ -29,10 +37,22 @@
       "h2": "Das Theta-Symbol — θ, Θ & ϑ",
       "intro": "Theta kommt in drei Glyphen vor, die tatsächlich eingefügt werden: das alltägliche kleine θ, das große Θ und die offene ϑ-Variante, reserviert für Mathematik und Physik. Eine vierte, überstrichene Großform existiert rein als mathematisches Zeichen.",
       "symbols": [
-        { "char": "θ", "label": "Griechischer Kleinbuchstabe Theta (U+03B8): das Winkelzeichen" },
-        { "char": "Θ", "label": "Griechischer Großbuchstabe Theta (U+0398): Big-Theta-Notation" },
-        { "char": "ϑ", "label": "Griechisches Theta-Symbol (U+03D1): die offene Mathe-Variante" },
-        { "char": "ϴ", "label": "Griechisches Theta-Symbol, Großform (U+03F4): die überstrichene Variante" }
+        {
+          "char": "θ",
+          "label": "Griechischer Kleinbuchstabe Theta (U+03B8): das Winkelzeichen"
+        },
+        {
+          "char": "Θ",
+          "label": "Griechischer Großbuchstabe Theta (U+0398): Big-Theta-Notation"
+        },
+        {
+          "char": "ϑ",
+          "label": "Griechisches Theta-Symbol (U+03D1): die offene Mathe-Variante"
+        },
+        {
+          "char": "ϴ",
+          "label": "Griechisches Theta-Symbol, Großform (U+03F4): die überstrichene Variante"
+        }
       ]
     },
     {
@@ -41,10 +61,22 @@
       "h2": "Theta in Mathematik und Informatik",
       "intro": "Zwei ganz unterschiedliche Aufgaben teilen sich denselben Buchstaben. Das kleine θ ist das Standardzeichen für einen Winkel; das große Θ ist die enge Schranke der Komplexitätsanalyse, zwischen Big-O (obere Schranke) und Big-Omega (untere Schranke).",
       "symbols": [
-        { "char": "θ", "label": "Kleines Theta (U+03B8): Winkel in Trigonometrie & Geometrie" },
-        { "char": "Θ", "label": "Großes Theta (U+0398): Big-Theta, die enge Schranke" },
-        { "char": "Ω", "label": "Großes Omega (U+03A9): Big-Omega, die untere Schranke" },
-        { "char": "ϑ", "label": "Theta-Symbol (U+03D1): die physikalische Schreibvariante" }
+        {
+          "char": "θ",
+          "label": "Kleines Theta (U+03B8): Winkel in Trigonometrie & Geometrie"
+        },
+        {
+          "char": "Θ",
+          "label": "Großes Theta (U+0398): Big-Theta, die enge Schranke"
+        },
+        {
+          "char": "Ω",
+          "label": "Großes Omega (U+03A9): Big-Omega, die untere Schranke"
+        },
+        {
+          "char": "ϑ",
+          "label": "Theta-Symbol (U+03D1): die physikalische Schreibvariante"
+        }
       ]
     },
     {
@@ -53,10 +85,22 @@
       "h2": "Verwandte griechische Buchstaben",
       "intro": "Theta ist der 8. Buchstabe des griechischen Alphabets. Hier sind die Nachbarn, die am häufigsten daneben gesucht und kopiert werden.",
       "symbols": [
-        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" },
-        { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" },
-        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
-        { "char": "α", "label": "Griechischer Kleinbuchstabe Alpha" }
+        {
+          "char": "Ω",
+          "label": "Griechischer Großbuchstabe Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Griechischer Großbuchstabe Delta"
+        },
+        {
+          "char": "π",
+          "label": "Griechischer Kleinbuchstabe Pi"
+        },
+        {
+          "char": "α",
+          "label": "Griechischer Kleinbuchstabe Alpha"
+        }
       ]
     }
   ],

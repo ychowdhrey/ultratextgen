@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/fleur-de-lis-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/fleur-de-lis-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Fleur-de-lis",
       "intro": "Dingbat fleur-de-lis và cách trình bày kiểu emoji của nó.",
       "symbols": [
-        { "char": "⚜", "label": "Fleur-de-lis" },
-        { "char": "⚜️", "label": "Fleur-de-lis (Kiểu Emoji)" }
+        {
+          "char": "⚜",
+          "label": "Fleur-de-lis"
+        },
+        {
+          "char": "⚜️",
+          "label": "Fleur-de-lis (Kiểu Emoji)"
+        }
       ]
     },
     {
@@ -38,11 +53,26 @@
       "h2": "Ký Hiệu Vương Miện & Hoàng Gia",
       "intro": "Các vương miện và bảo vật hoàng gia chia sẻ bối cảnh huy hiệu học, hoàng gia với fleur-de-lis.",
       "symbols": [
-        { "char": "👑", "label": "Vương Miện" },
-        { "char": "🤴", "label": "Hoàng Tử" },
-        { "char": "👸", "label": "Công Chúa" },
-        { "char": "🏰", "label": "Lâu Đài" },
-        { "char": "🛡️", "label": "Khiên" }
+        {
+          "char": "👑",
+          "label": "Vương Miện"
+        },
+        {
+          "char": "🤴",
+          "label": "Hoàng Tử"
+        },
+        {
+          "char": "👸",
+          "label": "Công Chúa"
+        },
+        {
+          "char": "🏰",
+          "label": "Lâu Đài"
+        },
+        {
+          "char": "🛡️",
+          "label": "Khiên"
+        }
       ]
     },
     {
@@ -51,17 +81,40 @@
       "h2": "Ký Hiệu Hoa & Họa Tiết Hoa",
       "intro": "Các biểu tượng hoa và họa tiết hoa đơn lẻ khác trong cùng họ trang trí.",
       "symbols": [
-        { "char": "🌸", "label": "Hoa Anh Đào" },
-        { "char": "🌼", "label": "Hoa Nở" },
-        { "char": "✿", "label": "Họa Tiết Hoa Đen" },
-        { "char": "❀", "label": "Họa Tiết Hoa Trắng" }
+        {
+          "char": "🌸",
+          "label": "Hoa Anh Đào"
+        },
+        {
+          "char": "🌼",
+          "label": "Hoa Nở"
+        },
+        {
+          "char": "✿",
+          "label": "Họa Tiết Hoa Đen"
+        },
+        {
+          "char": "❀",
+          "label": "Họa Tiết Hoa Trắng"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/crown-royalty-symbols/", "title": "Ký Hiệu Vương Miện & Hoàng Gia", "desc": "Vương miện, ngai vàng và bảo vật hoàng gia — bối cảnh huy hiệu học mà fleur-de-lis thuộc về." },
-    { "href": "/vi/symbol/star-of-david/", "title": "Ngôi Sao David", "desc": "Một glyph biểu tượng đơn lẻ khác có hành trình từ họa tiết trang trí đến biểu tượng xác định là chuyện đã được ghi chép rõ ràng." },
-    { "href": "/vi/symbol/pentagram-symbol/", "title": "Ký Hiệu Ngôi Sao Năm Cánh", "desc": "Một biểu tượng hình sao khác được mang theo qua huy hiệu học, tôn giáo và huyền bí học." }
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Ký Hiệu Vương Miện & Hoàng Gia",
+      "desc": "Vương miện, ngai vàng và bảo vật hoàng gia — bối cảnh huy hiệu học mà fleur-de-lis thuộc về."
+    },
+    {
+      "href": "/vi/symbol/star-of-david/",
+      "title": "Ngôi Sao David",
+      "desc": "Một glyph biểu tượng đơn lẻ khác có hành trình từ họa tiết trang trí đến biểu tượng xác định là chuyện đã được ghi chép rõ ràng."
+    },
+    {
+      "href": "/vi/symbol/pentagram-symbol/",
+      "title": "Ký Hiệu Ngôi Sao Năm Cánh",
+      "desc": "Một biểu tượng hình sao khác được mang theo qua huy hiệu học, tôn giáo và huyền bí học."
+    }
   ]
 }

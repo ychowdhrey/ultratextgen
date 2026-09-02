@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-signe-du-pouce/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/emoji-signe-du-pouce/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Signe du Pouce Gauche & Droit",
       "intro": "Les deux caractères provisoires eux-mêmes — copiables dès aujourd'hui en tant que codes, même si aucune police ne peut encore les afficher.",
       "symbols": [
-        { "char": "🫹", "label": "Signe du Pouce vers la Gauche (brouillon, U+1FAF9)" },
-        { "char": "🫺", "label": "Signe du Pouce vers la Droite (brouillon, U+1FAFA)" }
+        {
+          "char": "🫹",
+          "label": "Signe du Pouce vers la Gauche (brouillon, U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Signe du Pouce vers la Droite (brouillon, U+1FAFA)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Les Emoji Auxquels on le Confond",
       "intro": "Les gestes déjà encodés auxquels Signe du Pouce est le plus souvent comparé, ou accusé de faire doublon.",
       "symbols": [
-        { "char": "👍", "label": "Pouce Levé: approbation verticale, pas un geste directionnel" },
-        { "char": "👎", "label": "Pouce Baissé: désapprobation verticale, pas un geste directionnel" },
-        { "char": "👈", "label": "Dos de Main Pointant vers la Gauche" },
-        { "char": "👉", "label": "Dos de Main Pointant vers la Droite" }
+        {
+          "char": "👍",
+          "label": "Pouce Levé: approbation verticale, pas un geste directionnel"
+        },
+        {
+          "char": "👎",
+          "label": "Pouce Baissé: désapprobation verticale, pas un geste directionnel"
+        },
+        {
+          "char": "👈",
+          "label": "Dos de Main Pointant vers la Gauche"
+        },
+        {
+          "char": "👉",
+          "label": "Dos de Main Pointant vers la Droite"
+        }
       ]
     },
     {
@@ -50,18 +77,45 @@
       "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
       "intro": "Signe du Pouce n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public" },
-        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
-        { "char": "🪋", "label": "Météore (brouillon, U+1FA8B)" },
-        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" }
+        {
+          "char": "🫫",
+          "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public"
+        },
+        {
+          "char": "🫝",
+          "label": "Cornichon (brouillon, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Météore (brouillon, U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Papillon Monarque (brouillon, U+1FACC)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/hand-symbols/", "title": "Hand Gesture Symbols", "desc": "Les mains qui pointent, les gestes d'approbation et tous les caractères de main déjà encodés (en anglais)." },
-    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public." },
-    { "href": "/fr/symbol/emoji-cornichon/", "title": "Emoji Cornichon", "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente." },
-    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Unicode 18.0's New Emoji", "desc": "La liste complète des 9 candidats provisoires, classés par vote public (en anglais)." }
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Gesture Symbols",
+      "desc": "Les mains qui pointent, les gestes d'approbation et tous les caractères de main déjà encodés (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/emoji-visage-fissure/",
+      "title": "Emoji Visage Fissuré",
+      "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public."
+    },
+    {
+      "href": "/fr/symbol/emoji-cornichon/",
+      "title": "Emoji Cornichon",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "La liste complète des 9 candidats provisoires, classés par vote public (en anglais)."
+    }
   ]
 }

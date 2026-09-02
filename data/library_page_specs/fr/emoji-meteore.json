@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-meteore/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/emoji-meteore/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/meteor-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Météore",
       "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
       "symbols": [
-        { "char": "🪋", "label": "Météore (brouillon, U+1FA8B)" }
+        {
+          "char": "🪋",
+          "label": "Météore (brouillon, U+1FA8B)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Les Emoji Auxquels on le Confond",
       "intro": "Des emoji célestes déjà encodés auxquels on compare le plus souvent Météore, ou dont on l'accuse de faire doublon.",
       "symbols": [
-        { "char": "☄️", "label": "Comète: le dessin dont Météore se détache" },
-        { "char": "🌠", "label": "Étoile Filante" },
-        { "char": "⭐", "label": "Étoile" }
+        {
+          "char": "☄️",
+          "label": "Comète: le dessin dont Météore se détache"
+        },
+        {
+          "char": "🌠",
+          "label": "Étoile Filante"
+        },
+        {
+          "char": "⭐",
+          "label": "Étoile"
+        }
       ]
     },
     {
@@ -48,16 +69,36 @@
       "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
       "intro": "Météore n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public" },
-        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
-        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" }
+        {
+          "char": "🫫",
+          "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public"
+        },
+        {
+          "char": "🫝",
+          "label": "Cornichon (brouillon, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Papillon Monarque (brouillon, U+1FACC)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/weather-symbols/", "title": "Weather Symbols", "desc": "Soleil, pluie, neige et tous les caractères célestes déjà encodés, dont Comète (en anglais)." },
-    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public." },
-    { "href": "/fr/symbol/emoji-cornichon/", "title": "Emoji Cornichon", "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente." }
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Soleil, pluie, neige et tous les caractères célestes déjà encodés, dont Comète (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/emoji-visage-fissure/",
+      "title": "Emoji Visage Fissuré",
+      "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public."
+    },
+    {
+      "href": "/fr/symbol/emoji-cornichon/",
+      "title": "Emoji Cornichon",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+    }
   ]
 }

@@ -10,9 +10,18 @@
   "date_published": "2026-08-12",
   "date_modified": "2026-08-12",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/angry-kaomoji/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/kaomoji-enojado/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/angry-kaomoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/angry-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji-enojado/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/angry-kaomoji/"
+    }
   ],
   "title": "Kaomoji Enojado: Copiar y Pegar Caritas de Texto de Enojo",
   "meta_description": "Explora y copia kaomoji enojado — también escrito kamoji — caritas de texto japonesas de rabia, fastidio y mesa volteada. Haz clic para copiar al instante.",
@@ -20,7 +29,6 @@
   "hero_h1": "Kaomoji Enojado",
   "hero_tagline": "Copia y pega kaomoji enojado — caritas de texto japonesas furiosas, fastidiadas y volteando la mesa. Haz clic en cualquier cara para copiarla al instante.",
   "intro": "Los kaomoji enojados (también escritos kamoji) son caritas de texto al estilo japonés para cada nivel de enojo: fastidio leve, rabia inflada y mesas volteadas por completo. Un kaomoji enojado como (ノಠ益ಠ)ノ o (¬_¬) es texto Unicode simple, así que se pega limpio en biografías, publicaciones, comentarios y chats. Explora por intensidad más abajo y haz clic en cualquier cara para copiarla al instante. Lo busques como kaomoji enojado o como kaomoji de enojo, todas las caras de aquí son gratis para copiar y pegar.",
-  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.",
   "sections": [
     {
       "id": "annoyed",
@@ -28,12 +36,30 @@
       "h2": "Kaomoji de Fastidio",
       "intro": "Irritación de bajo voltaje y miradas de reojo.",
       "symbols": [
-        { "char": "(¬_¬)", "label": "Mirada de reojo" },
-        { "char": "(￣ヘ￣)", "label": "Sin ninguna gracia" },
-        { "char": "(；¬_¬)", "label": "Desconfianza" },
-        { "char": "(ಠ_ಠ)", "label": "Desaprobación" },
-        { "char": "(¬､¬)", "label": "Escepticismo" },
-        { "char": "(－‸ლ)", "label": "Manos a la cara" }
+        {
+          "char": "(¬_¬)",
+          "label": "Mirada de reojo"
+        },
+        {
+          "char": "(￣ヘ￣)",
+          "label": "Sin ninguna gracia"
+        },
+        {
+          "char": "(；¬_¬)",
+          "label": "Desconfianza"
+        },
+        {
+          "char": "(ಠ_ಠ)",
+          "label": "Desaprobación"
+        },
+        {
+          "char": "(¬､¬)",
+          "label": "Escepticismo"
+        },
+        {
+          "char": "(－‸ლ)",
+          "label": "Manos a la cara"
+        }
       ]
     },
     {
@@ -42,12 +68,30 @@
       "h2": "Kaomoji de Enojo",
       "intro": "Caras genuinamente enojadas, con el vapor subiendo.",
       "symbols": [
-        { "char": "(ノಠ益ಠ)ノ", "label": "Perdiendo la paciencia" },
-        { "char": "(＃`Д´)", "label": "Gritando" },
-        { "char": "(҂⌣̀_⌣́)", "label": "Hasta la coronilla" },
-        { "char": "٩(╬ʘ益ʘ╬)۶", "label": "Enfurecido" },
-        { "char": "(◣_◢)", "label": "Amenazante" },
-        { "char": "ヽ(≧Д≦)ノ", "label": "Frustrado" }
+        {
+          "char": "(ノಠ益ಠ)ノ",
+          "label": "Perdiendo la paciencia"
+        },
+        {
+          "char": "(＃`Д´)",
+          "label": "Gritando"
+        },
+        {
+          "char": "(҂⌣̀_⌣́)",
+          "label": "Hasta la coronilla"
+        },
+        {
+          "char": "٩(╬ʘ益ʘ╬)۶",
+          "label": "Enfurecido"
+        },
+        {
+          "char": "(◣_◢)",
+          "label": "Amenazante"
+        },
+        {
+          "char": "ヽ(≧Д≦)ノ",
+          "label": "Frustrado"
+        }
       ]
     },
     {
@@ -56,10 +100,22 @@
       "h2": "Kaomoji de Furia",
       "intro": "Rabia al máximo — puños arriba y venas saltadas.",
       "symbols": [
-        { "char": "(╬ Ò﹏Ó)", "label": "Furioso" },
-        { "char": "(ﾉಥДಥ)ﾉ", "label": "Grito de rabia" },
-        { "char": "(҂` ﾛ ´)凸", "label": "Dedo medio" },
-        { "char": "୧((#Φ益Φ#))୨", "label": "Hirviendo de rabia" }
+        {
+          "char": "(╬ Ò﹏Ó)",
+          "label": "Furioso"
+        },
+        {
+          "char": "(ﾉಥДಥ)ﾉ",
+          "label": "Grito de rabia"
+        },
+        {
+          "char": "(҂` ﾛ ´)凸",
+          "label": "Dedo medio"
+        },
+        {
+          "char": "୧((#Φ益Φ#))୨",
+          "label": "Hirviendo de rabia"
+        }
       ]
     },
     {
@@ -68,10 +124,22 @@
       "h2": "Kaomoji de Mesa Volteada",
       "intro": "Cuando las palabras no alcanzan — voltea la mesa.",
       "symbols": [
-        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Mesa volteada" },
-        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Doble volteada" },
-        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Volteada con furia" },
-        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Acomodar la mesa" }
+        {
+          "char": "(╯°□°）╯︵ ┻━┻",
+          "label": "Mesa volteada"
+        },
+        {
+          "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻",
+          "label": "Doble volteada"
+        },
+        {
+          "char": "(ノ`Д´)ノ彡┻━┻",
+          "label": "Volteada con furia"
+        },
+        {
+          "char": "┬─┬ ノ( ゜-゜ノ)",
+          "label": "Acomodar la mesa"
+        }
       ]
     }
   ],

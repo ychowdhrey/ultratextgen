@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/chi-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/chi-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-chi-symbol",
@@ -29,8 +37,14 @@
       "h2": "Das Chi-Symbol — Χ & χ",
       "intro": "Der griechische Buchstabe selbst, in beiden Schreibweisen. Das große Χ trägt Chis religiöse und Abkürzungsgeschichte; das kleine χ übernimmt den Großteil der heutigen Mathe- und Wissenschaftsarbeit.",
       "symbols": [
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7)" },
-        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi (U+03C7)" }
+        {
+          "char": "Χ",
+          "label": "Griechischer Großbuchstabe Chi (U+03A7)"
+        },
+        {
+          "char": "χ",
+          "label": "Griechischer Kleinbuchstabe Chi (U+03C7)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Chi-Rho, Xmas & das christliche Christogramm",
       "intro": "Weil das große Χ Χριστός („Christus“) eröffnet, wurde es zu einem jahrhundertealten Kürzel für den Namen — die Quelle sowohl des Christogramms Chi-Rho, das Konstantin als Feldzeichen führte, als auch des modernen „Xmas“. Die Bausteine dieser Geschichte zum Kopieren.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627): das ΧΡ-Christogramm / Labarum" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7): das Χ, mit dem Χριστός beginnt" },
-        { "char": "X", "label": "Lateinischer Großbuchstabe X (U+0058): das X in „Xmas“" }
+        {
+          "char": "☧",
+          "label": "Chi Rho (U+2627): das ΧΡ-Christogramm / Labarum"
+        },
+        {
+          "char": "Χ",
+          "label": "Griechischer Großbuchstabe Chi (U+03A7): das Χ, mit dem Χριστός beginnt"
+        },
+        {
+          "char": "X",
+          "label": "Lateinischer Großbuchstabe X (U+0058): das X in „Xmas“"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Chi-Quadrat (χ²) in Statistik & Wissenschaft",
       "intro": "Das kleine χ ist ein wissenschaftliches Arbeitspferd: der Anpassungsgüte-Test χ², den Karl Pearson 1900 einführte, dazu die Euler-Charakteristik in der Topologie und die magnetische Suszeptibilität in der Physik. Kopiere den Buchstaben und eine hochgestellte Zwei, um χ² selbst zusammenzusetzen.",
       "symbols": [
-        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi (U+03C7): die χ²-Testgröße" },
-        { "char": "²", "label": "Hochgestellte Zwei (U+00B2): zum Zusammensetzen von χ²" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7): benennt auch Zufallsvariablen" }
+        {
+          "char": "χ",
+          "label": "Griechischer Kleinbuchstabe Chi (U+03C7): die χ²-Testgröße"
+        },
+        {
+          "char": "²",
+          "label": "Hochgestellte Zwei (U+00B2): zum Zusammensetzen von χ²"
+        },
+        {
+          "char": "Χ",
+          "label": "Griechischer Großbuchstabe Chi (U+03A7): benennt auch Zufallsvariablen"
+        }
       ]
     },
     {
@@ -61,10 +93,22 @@
       "h2": "Chi vs. das lateinische X — die Doppelgänger",
       "intro": "Chi sieht dem lateinischen Buchstaben X fast identisch — aber jeder hat seinen eigenen Codepoint, und ein stiller Austausch bricht Suche, Code und Gleichungen. Hier sind alle vier, damit du genau das kopierst, was du meinst.",
       "symbols": [
-        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi (U+03C7)" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7)" },
-        { "char": "x", "label": "Lateinischer Kleinbuchstabe X (U+0078)" },
-        { "char": "X", "label": "Lateinischer Großbuchstabe X (U+0058)" }
+        {
+          "char": "χ",
+          "label": "Griechischer Kleinbuchstabe Chi (U+03C7)"
+        },
+        {
+          "char": "Χ",
+          "label": "Griechischer Großbuchstabe Chi (U+03A7)"
+        },
+        {
+          "char": "x",
+          "label": "Lateinischer Kleinbuchstabe X (U+0078)"
+        },
+        {
+          "char": "X",
+          "label": "Lateinischer Großbuchstabe X (U+0058)"
+        }
       ]
     },
     {
@@ -73,10 +117,22 @@
       "h2": "Verwandte griechische Buchstaben",
       "intro": "Chi ist der 22. Buchstabe des griechischen Alphabets, zwischen Phi und Psi. Hier sind seine Nachbarn und die übrigen griechischen Buchstaben, die häufig gemeinsam kopiert werden.",
       "symbols": [
-        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi" },
-        { "char": "ψ", "label": "Griechischer Kleinbuchstabe Psi" },
-        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
-        { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" }
+        {
+          "char": "φ",
+          "label": "Griechischer Kleinbuchstabe Phi"
+        },
+        {
+          "char": "ψ",
+          "label": "Griechischer Kleinbuchstabe Psi"
+        },
+        {
+          "char": "π",
+          "label": "Griechischer Kleinbuchstabe Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Griechischer Großbuchstabe Sigma"
+        }
       ]
     }
   ],

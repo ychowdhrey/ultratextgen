@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sagittarius-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/sagittarius-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sagittarius-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sagittarius-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/sagittarius-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sagittarius-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Nhân Mã",
       "intro": "Ký hiệu Unicode của cung Nhân Mã, sẵn sàng để dán.",
       "symbols": [
-        { "char": "♐", "label": "Ký Hiệu Nhân Mã" },
-        { "char": "♐️", "label": "Ký Hiệu Nhân Mã (Dạng Emoji)" }
+        {
+          "char": "♐",
+          "label": "Ký Hiệu Nhân Mã"
+        },
+        {
+          "char": "♐️",
+          "label": "Ký Hiệu Nhân Mã (Dạng Emoji)"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Hành Tinh Chủ Quản & Nguyên Tố",
       "intro": "Hành tinh và nguyên tố cổ điển gắn liền với Nhân Mã theo truyền thống chiêm tinh.",
       "symbols": [
-        { "char": "♃", "label": "Sao Mộc (Hành Tinh Chủ Quản)" },
-        { "char": "🜂", "label": "Lửa (Nguyên Tố, Ký Hiệu Giả Kim)" }
+        {
+          "char": "♃",
+          "label": "Sao Mộc (Hành Tinh Chủ Quản)"
+        },
+        {
+          "char": "🜂",
+          "label": "Lửa (Nguyên Tố, Ký Hiệu Giả Kim)"
+        }
       ]
     },
     {
@@ -48,17 +69,40 @@
       "h2": "Thêm Ký Hiệu Cung Hoàng Đạo & Thiên Thể",
       "intro": "Các thiên thể khác và cung đối diện của Nhân Mã trên vòng hoàng đạo (Song Tử).",
       "symbols": [
-        { "char": "☉", "label": "Mặt Trời" },
-        { "char": "☽", "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)" },
-        { "char": "⛎", "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)" },
-        { "char": "♊", "label": "Song Tử (Cung Đối Diện)" }
+        {
+          "char": "☉",
+          "label": "Mặt Trời"
+        },
+        {
+          "char": "☽",
+          "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)"
+        },
+        {
+          "char": "⛎",
+          "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)"
+        },
+        {
+          "char": "♊",
+          "label": "Song Tử (Cung Đối Diện)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu." },
-    { "href": "/vi/symbol/gemini-symbol/", "title": "Ký Hiệu Song Tử", "desc": "Cung đối diện của Nhân Mã, nằm thẳng phía bên kia vòng hoàng đạo." },
-    { "href": "/vi/symbol/aquarius-symbol/", "title": "Ký Hiệu Bảo Bình", "desc": "Người mang nước nhưng lại được xếp vào nhóm Khí, không phải Nước." }
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Ký Hiệu Cung Hoàng Đạo",
+      "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/gemini-symbol/",
+      "title": "Ký Hiệu Song Tử",
+      "desc": "Cung đối diện của Nhân Mã, nằm thẳng phía bên kia vòng hoàng đạo."
+    },
+    {
+      "href": "/vi/symbol/aquarius-symbol/",
+      "title": "Ký Hiệu Bảo Bình",
+      "desc": "Người mang nước nhưng lại được xếp vào nhóm Khí, không phải Nước."
+    }
   ]
 }

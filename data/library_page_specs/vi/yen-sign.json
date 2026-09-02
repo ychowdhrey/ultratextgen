@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/yen-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/yen-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/yen-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/yen-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/yen-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/yen-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Yên",
       "intro": "Ký hiệu yên và biến thể chiều rộng đầy đủ dùng trong chữ Đông Á.",
       "symbols": [
-        { "char": "¥", "label": "Ký Hiệu Yên (U+00A5)" },
-        { "char": "￥", "label": "Ký Hiệu Yên Chiều Rộng Đầy Đủ (U+FFE5): dùng trong dàn trang chữ Đông Á (Trung/Nhật/Hàn)" }
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên (U+00A5)"
+        },
+        {
+          "char": "￥",
+          "label": "Ký Hiệu Yên Chiều Rộng Đầy Đủ (U+FFE5): dùng trong dàn trang chữ Đông Á (Trung/Nhật/Hàn)"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Ký Hiệu Dễ Nhầm Với Yên",
       "intro": "Ký hiệu tiền tệ khác có hình dáng gần giống ¥, nhưng mang ý nghĩa hoàn toàn riêng.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC): ký hiệu tiền tệ riêng, được thiết kế có chủ đích" },
-        { "char": "₩", "label": "Ký Hiệu Won (U+20A9): chữ W gạch ngang, «họ hàng» ngôn ngữ của yên" }
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro (U+20AC): ký hiệu tiền tệ riêng, được thiết kế có chủ đích"
+        },
+        {
+          "char": "₩",
+          "label": "Ký Hiệu Won (U+20A9): chữ W gạch ngang, «họ hàng» ngôn ngữ của yên"
+        }
       ]
     },
     {
@@ -48,18 +69,46 @@
       "h2": "Các Ký Hiệu Tiền Tệ Khác",
       "intro": "Những ký hiệu tiền tệ lớn khác thường xuất hiện cùng ¥ trong nội dung tài chính.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh"
+        },
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
-    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
-    { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
-    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee (₹)", "desc": "Được chọn qua một cuộc thi thiết kế quốc gia năm 2010." },
-    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới." }
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La ($)",
+      "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó."
+    },
+    {
+      "href": "/vi/symbol/euro-sign/",
+      "title": "Ký Hiệu Euro (€)",
+      "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996."
+    },
+    {
+      "href": "/vi/symbol/pound-sign/",
+      "title": "Ký Hiệu Bảng Anh (£)",
+      "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra."
+    },
+    {
+      "href": "/vi/symbol/rupee-sign/",
+      "title": "Ký Hiệu Rupee (₹)",
+      "desc": "Được chọn qua một cuộc thi thiết kế quốc gia năm 2010."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Tất Cả Ký Hiệu Tiền Tệ",
+      "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới."
+    }
   ]
 }

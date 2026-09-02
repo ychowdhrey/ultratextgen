@@ -16,12 +16,30 @@
       "h2": "Cute Kaomoji Faces",
       "intro": "Soft, rounded faces that read as instantly cute.",
       "symbols": [
-        { "char": "(◕‿◕)", "label": "Cute Smile" },
-        { "char": "(｡◕‿◕｡)", "label": "Sweet Face" },
-        { "char": "(◠‿◠✿)", "label": "Flower Smile" },
-        { "char": "(✿◡‿◡)", "label": "Happy Flower" },
-        { "char": "( ◜‿◝ )♡", "label": "Loving Cutie" },
-        { "char": "(＾▽＾)", "label": "Bright Cutie" }
+        {
+          "char": "(◕‿◕)",
+          "label": "Cute Smile"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Sweet Face"
+        },
+        {
+          "char": "(◠‿◠✿)",
+          "label": "Flower Smile"
+        },
+        {
+          "char": "(✿◡‿◡)",
+          "label": "Happy Flower"
+        },
+        {
+          "char": "( ◜‿◝ )♡",
+          "label": "Loving Cutie"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Bright Cutie"
+        }
       ]
     },
     {
@@ -30,11 +48,26 @@
       "h2": "Kawaii Animal Kaomoji",
       "intro": "Tiny bears, cats, and critters in their cutest form.",
       "symbols": [
-        { "char": "ʕ•ᴥ•ʔ", "label": "Bear" },
-        { "char": "(=^・ω・^=)", "label": "Cat" },
-        { "char": "(◕ᴥ◕)", "label": "Puppy" },
-        { "char": "ʕ •ᴥ•ʔ♡", "label": "Loving Bear" },
-        { "char": "(U ᵕ U❁)", "label": "Sweet Pup" }
+        {
+          "char": "ʕ•ᴥ•ʔ",
+          "label": "Bear"
+        },
+        {
+          "char": "(=^・ω・^=)",
+          "label": "Cat"
+        },
+        {
+          "char": "(◕ᴥ◕)",
+          "label": "Puppy"
+        },
+        {
+          "char": "ʕ •ᴥ•ʔ♡",
+          "label": "Loving Bear"
+        },
+        {
+          "char": "(U ᵕ U❁)",
+          "label": "Sweet Pup"
+        }
       ]
     },
     {
@@ -43,10 +76,22 @@
       "h2": "Shy & Blushing Cute Kaomoji",
       "intro": "Bashful, flustered faces for shy little moments.",
       "symbols": [
-        { "char": "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)", "label": "Very Shy" },
-        { "char": "(//▽//)", "label": "Blushing" },
-        { "char": "(๑•́ ₃ •̀๑)", "label": "Pouty Cute" },
-        { "char": "(◡‿◡✿)", "label": "Quiet Cutie" }
+        {
+          "char": "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)",
+          "label": "Very Shy"
+        },
+        {
+          "char": "(//▽//)",
+          "label": "Blushing"
+        },
+        {
+          "char": "(๑•́ ₃ •̀๑)",
+          "label": "Pouty Cute"
+        },
+        {
+          "char": "(◡‿◡✿)",
+          "label": "Quiet Cutie"
+        }
       ]
     },
     {
@@ -55,18 +100,45 @@
       "h2": "Cute Kaomoji with Sparkles",
       "intro": "Extra-cute faces with stars and sparkle accents.",
       "symbols": [
-        { "char": "(★ω★)", "label": "Star Eyes" },
-        { "char": "✧(≖ ‿ ≖)✧", "label": "Sparkle Smirk" },
-        { "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "label": "Throwing Sparkles" },
-        { "char": "(◍•ᴗ•◍)✧", "label": "Sparkly Joy" }
+        {
+          "char": "(★ω★)",
+          "label": "Star Eyes"
+        },
+        {
+          "char": "✧(≖ ‿ ≖)✧",
+          "label": "Sparkle Smirk"
+        },
+        {
+          "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+          "label": "Throwing Sparkles"
+        },
+        {
+          "char": "(◍•ᴗ•◍)✧",
+          "label": "Sparkly Joy"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/cat-kaomoji/", "title": "Cat Kaomoji", "desc": "Cute Japanese cat text faces with whiskers, paws, and big eyes." },
-    { "href": "/library/kawaii-cute-symbols/", "title": "Kawaii Cute Symbols", "desc": "Soft, cute Unicode symbols for kawaii and aesthetic text." },
-    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy and paste." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Cute Japanese cat text faces with whiskers, paws, and big eyes."
+    },
+    {
+      "href": "/library/kawaii-cute-symbols/",
+      "title": "Kawaii Cute Symbols",
+      "desc": "Soft, cute Unicode symbols for kawaii and aesthetic text."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling, excited, and joyful Japanese text faces to copy and paste."
+    }
   ]
 }

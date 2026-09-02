@@ -16,12 +16,23 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/library/simbolos/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/japanese-symbols/" },
-    { "lang": "ja", "href": "https://ultratextgen.com/ja/library/japanese-symbols/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-japoneses/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/japanese-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/japanese-symbols/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/japanese-symbols/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-japoneses/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/japanese-symbols/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "beautiful-kanji",
@@ -29,18 +40,54 @@
       "h2": "Kanji Bonitos com Significado",
       "intro": "Kanji cheios de significado para natureza, luz e emoção — os caracteres mais usados em perfis aesthetic.",
       "symbols": [
-        { "char": "桜", "label": "Sakura: Flor de Cerejeira" },
-        { "char": "愛", "label": "Ai: Amor" },
-        { "char": "夢", "label": "Yume: Sonho" },
-        { "char": "月", "label": "Tsuki: Lua" },
-        { "char": "星", "label": "Hoshi: Estrela" },
-        { "char": "光", "label": "Hikari: Luz" },
-        { "char": "空", "label": "Sora: Céu" },
-        { "char": "海", "label": "Umi: Mar" },
-        { "char": "雨", "label": "Ame: Chuva" },
-        { "char": "花", "label": "Hana: Flor" },
-        { "char": "心", "label": "Kokoro: Coração" },
-        { "char": "魂", "label": "Tamashii: Alma" }
+        {
+          "char": "桜",
+          "label": "Sakura: Flor de Cerejeira"
+        },
+        {
+          "char": "愛",
+          "label": "Ai: Amor"
+        },
+        {
+          "char": "夢",
+          "label": "Yume: Sonho"
+        },
+        {
+          "char": "月",
+          "label": "Tsuki: Lua"
+        },
+        {
+          "char": "星",
+          "label": "Hoshi: Estrela"
+        },
+        {
+          "char": "光",
+          "label": "Hikari: Luz"
+        },
+        {
+          "char": "空",
+          "label": "Sora: Céu"
+        },
+        {
+          "char": "海",
+          "label": "Umi: Mar"
+        },
+        {
+          "char": "雨",
+          "label": "Ame: Chuva"
+        },
+        {
+          "char": "花",
+          "label": "Hana: Flor"
+        },
+        {
+          "char": "心",
+          "label": "Kokoro: Coração"
+        },
+        {
+          "char": "魂",
+          "label": "Tamashii: Alma"
+        }
       ]
     },
     {
@@ -49,18 +96,54 @@
       "h2": "Caracteres Hiragana",
       "intro": "O silabário arredondado e fluido usado para palavras nativas japonesas.",
       "symbols": [
-        { "char": "あ", "label": "A: Hiragana Letra A" },
-        { "char": "い", "label": "I: Hiragana Letra I" },
-        { "char": "う", "label": "U: Hiragana Letra U" },
-        { "char": "え", "label": "E: Hiragana Letra E" },
-        { "char": "お", "label": "O: Hiragana Letra O" },
-        { "char": "か", "label": "Ka: Hiragana Letra Ka" },
-        { "char": "き", "label": "Ki: Hiragana Letra Ki" },
-        { "char": "さ", "label": "Sa: Hiragana Letra Sa" },
-        { "char": "し", "label": "Shi: Hiragana Letra Si" },
-        { "char": "の", "label": "No: Hiragana Letra No" },
-        { "char": "は", "label": "Ha: Hiragana Letra Ha" },
-        { "char": "ん", "label": "N: Hiragana Letra N" }
+        {
+          "char": "あ",
+          "label": "A: Hiragana Letra A"
+        },
+        {
+          "char": "い",
+          "label": "I: Hiragana Letra I"
+        },
+        {
+          "char": "う",
+          "label": "U: Hiragana Letra U"
+        },
+        {
+          "char": "え",
+          "label": "E: Hiragana Letra E"
+        },
+        {
+          "char": "お",
+          "label": "O: Hiragana Letra O"
+        },
+        {
+          "char": "か",
+          "label": "Ka: Hiragana Letra Ka"
+        },
+        {
+          "char": "き",
+          "label": "Ki: Hiragana Letra Ki"
+        },
+        {
+          "char": "さ",
+          "label": "Sa: Hiragana Letra Sa"
+        },
+        {
+          "char": "し",
+          "label": "Shi: Hiragana Letra Si"
+        },
+        {
+          "char": "の",
+          "label": "No: Hiragana Letra No"
+        },
+        {
+          "char": "は",
+          "label": "Ha: Hiragana Letra Ha"
+        },
+        {
+          "char": "ん",
+          "label": "N: Hiragana Letra N"
+        }
       ]
     },
     {
@@ -69,18 +152,54 @@
       "h2": "Caracteres Katakana",
       "intro": "O silabário angular para palavras estrangeiras — incluindo ツ e シ, queridinhos como carinhas sorridentes em nicks.",
       "symbols": [
-        { "char": "ツ", "label": "Tsu: Katakana Letra Tu (Rosto Sorridente)" },
-        { "char": "シ", "label": "Shi: Katakana Letra Si (Rosto Sorridente)" },
-        { "char": "ア", "label": "A: Katakana Letra A" },
-        { "char": "カ", "label": "Ka: Katakana Letra Ka" },
-        { "char": "サ", "label": "Sa: Katakana Letra Sa" },
-        { "char": "タ", "label": "Ta: Katakana Letra Ta" },
-        { "char": "ナ", "label": "Na: Katakana Letra Na" },
-        { "char": "ハ", "label": "Ha: Katakana Letra Ha" },
-        { "char": "マ", "label": "Ma: Katakana Letra Ma" },
-        { "char": "ヤ", "label": "Ya: Katakana Letra Ya" },
-        { "char": "ラ", "label": "Ra: Katakana Letra Ra" },
-        { "char": "ワ", "label": "Wa: Katakana Letra Wa" }
+        {
+          "char": "ツ",
+          "label": "Tsu: Katakana Letra Tu (Rosto Sorridente)"
+        },
+        {
+          "char": "シ",
+          "label": "Shi: Katakana Letra Si (Rosto Sorridente)"
+        },
+        {
+          "char": "ア",
+          "label": "A: Katakana Letra A"
+        },
+        {
+          "char": "カ",
+          "label": "Ka: Katakana Letra Ka"
+        },
+        {
+          "char": "サ",
+          "label": "Sa: Katakana Letra Sa"
+        },
+        {
+          "char": "タ",
+          "label": "Ta: Katakana Letra Ta"
+        },
+        {
+          "char": "ナ",
+          "label": "Na: Katakana Letra Na"
+        },
+        {
+          "char": "ハ",
+          "label": "Ha: Katakana Letra Ha"
+        },
+        {
+          "char": "マ",
+          "label": "Ma: Katakana Letra Ma"
+        },
+        {
+          "char": "ヤ",
+          "label": "Ya: Katakana Letra Ya"
+        },
+        {
+          "char": "ラ",
+          "label": "Ra: Katakana Letra Ra"
+        },
+        {
+          "char": "ワ",
+          "label": "Wa: Katakana Letra Wa"
+        }
       ]
     },
     {
@@ -89,17 +208,50 @@
       "h2": "Pontuação e Marcas Especiais Japonesas",
       "intro": "Colchetes, pontos e marcas circuladas que dão ao texto uma cara autêntica de tipografia japonesa.",
       "symbols": [
-        { "char": "「", "label": "Colchete Angular Esquerdo" },
-        { "char": "」", "label": "Colchete Angular Direito" },
-        { "char": "『", "label": "Colchete Branco Esquerdo" },
-        { "char": "』", "label": "Colchete Branco Direito" },
-        { "char": "・", "label": "Ponto Médio Katakana" },
-        { "char": "〜", "label": "Til Ondulado" },
-        { "char": "。", "label": "Ponto Final Ideográfico" },
-        { "char": "々", "label": "Marca de Iteração Ideográfica" },
-        { "char": "㊗", "label": "Ideograma Circulado de Parabéns" },
-        { "char": "㊙", "label": "Ideograma Circulado de Segredo" },
-        { "char": "〒", "label": "Marca Postal" }
+        {
+          "char": "「",
+          "label": "Colchete Angular Esquerdo"
+        },
+        {
+          "char": "」",
+          "label": "Colchete Angular Direito"
+        },
+        {
+          "char": "『",
+          "label": "Colchete Branco Esquerdo"
+        },
+        {
+          "char": "』",
+          "label": "Colchete Branco Direito"
+        },
+        {
+          "char": "・",
+          "label": "Ponto Médio Katakana"
+        },
+        {
+          "char": "〜",
+          "label": "Til Ondulado"
+        },
+        {
+          "char": "。",
+          "label": "Ponto Final Ideográfico"
+        },
+        {
+          "char": "々",
+          "label": "Marca de Iteração Ideográfica"
+        },
+        {
+          "char": "㊗",
+          "label": "Ideograma Circulado de Parabéns"
+        },
+        {
+          "char": "㊙",
+          "label": "Ideograma Circulado de Segredo"
+        },
+        {
+          "char": "〒",
+          "label": "Marca Postal"
+        }
       ]
     }
   ],
@@ -111,13 +263,71 @@
   },
   "collection_container_id": "japaneseSetsContainer",
   "collections": [
-    { "name": "Conjunto Aesthetic Sakura", "flags": ["桜", "花", "春", "風", "月"], "defaultFormat": "inline" },
-    { "name": "Conjunto Céu Noturno", "flags": ["月", "星", "夜", "光", "夢"], "defaultFormat": "inline" },
-    { "name": "Conjunto Mar e Chuva", "flags": ["海", "波", "雨", "空"], "defaultFormat": "inline" },
-    { "name": "Sorrisos para Nick", "flags": ["ツ", "シ", "彡", "ノ"], "defaultFormat": "inline" },
-    { "name": "Ai: Amor", "flags": ["愛"], "defaultFormat": "inline" },
-    { "name": "Arigatou — Obrigado", "flags": ["ありがとう"], "defaultFormat": "inline" },
-    { "name": "Moldura de Bio Sakura", "flags": ["☾ 月 ☽", "桜 · 夢 · 愛", "〜 ありがとう 〜"], "defaultFormat": "vertical" }
+    {
+      "name": "Conjunto Aesthetic Sakura",
+      "flags": [
+        "桜",
+        "花",
+        "春",
+        "風",
+        "月"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Conjunto Céu Noturno",
+      "flags": [
+        "月",
+        "星",
+        "夜",
+        "光",
+        "夢"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Conjunto Mar e Chuva",
+      "flags": [
+        "海",
+        "波",
+        "雨",
+        "空"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sorrisos para Nick",
+      "flags": [
+        "ツ",
+        "シ",
+        "彡",
+        "ノ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ai: Amor",
+      "flags": [
+        "愛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arigatou — Obrigado",
+      "flags": [
+        "ありがとう"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moldura de Bio Sakura",
+      "flags": [
+        "☾ 月 ☽",
+        "桜 · 夢 · 愛",
+        "〜 ありがとう 〜"
+      ],
+      "defaultFormat": "vertical"
+    }
   ],
   "related": [
     {

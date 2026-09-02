@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/stern-und-halbmond/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/stern-und-halbmond/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "stern-und-halbmond",
@@ -29,8 +37,14 @@
       "h2": "Stern-und-Halbmond-Symbol — ☪ & ☪️",
       "intro": "Der Unicode-Stern-und-Halbmond, bereit zum Einfügen in Bio, Beitrag oder Profil. Zwei Formen: die schlichte schwarze Glyphe und das vollfarbige Emoji.",
       "symbols": [
-        { "char": "☪", "label": "Stern und Halbmond (U+262A)" },
-        { "char": "☪️", "label": "Stern-und-Halbmond-Emoji (U+262A U+FE0F)" }
+        {
+          "char": "☪",
+          "label": "Stern und Halbmond (U+262A)"
+        },
+        {
+          "char": "☪️",
+          "label": "Stern-und-Halbmond-Emoji (U+262A U+FE0F)"
+        }
       ]
     },
     {
@@ -39,12 +53,30 @@
       "h2": "Nicht dasselbe wie ein einzelner Halbmond oder Stern",
       "intro": "Stern und Halbmond ist eine einzelne, kombinierte Glyphe. Die separaten Halbmond- und Stern-Zeichen, zu denen viele stattdessen greifen, haben jeweils einen eigenen Codepoint und eine eigene Aufgabe.",
       "symbols": [
-        { "char": "☾", "label": "Abnehmender Halbmond (U+263E): schlichter Halbmond" },
-        { "char": "☽", "label": "Zunehmender Halbmond (U+263D)" },
-        { "char": "🌙", "label": "Halbmond-Emoji (U+1F319)" },
-        { "char": "⭐", "label": "Mittlerer weißer Stern (U+2B50)" },
-        { "char": "★", "label": "Schwarzer Stern (U+2605)" },
-        { "char": "☆", "label": "Weißer Stern (U+2606)" }
+        {
+          "char": "☾",
+          "label": "Abnehmender Halbmond (U+263E): schlichter Halbmond"
+        },
+        {
+          "char": "☽",
+          "label": "Zunehmender Halbmond (U+263D)"
+        },
+        {
+          "char": "🌙",
+          "label": "Halbmond-Emoji (U+1F319)"
+        },
+        {
+          "char": "⭐",
+          "label": "Mittlerer weißer Stern (U+2B50)"
+        },
+        {
+          "char": "★",
+          "label": "Schwarzer Stern (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Weißer Stern (U+2606)"
+        }
       ]
     },
     {
@@ -53,12 +85,30 @@
       "h2": "Weitere Glaubenssymbole, mit denen es gruppiert wird",
       "intro": "Stern und Halbmond wird üblicherweise neben den Identitätssymbolen anderer Weltreligionen gesucht und angezeigt. Hier sind die, neben denen es am häufigsten steht.",
       "symbols": [
-        { "char": "✡️", "label": "Davidstern (U+2721)" },
-        { "char": "✝️", "label": "Lateinisches Kreuz (U+271D)" },
-        { "char": "☸️", "label": "Dharma-Rad (U+2638)" },
-        { "char": "🕉️", "label": "Om (U+1F549)" },
-        { "char": "☯️", "label": "Yin und Yang (U+262F)" },
-        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+        {
+          "char": "✡️",
+          "label": "Davidstern (U+2721)"
+        },
+        {
+          "char": "✝️",
+          "label": "Lateinisches Kreuz (U+271D)"
+        },
+        {
+          "char": "☸️",
+          "label": "Dharma-Rad (U+2638)"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om (U+1F549)"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin und Yang (U+262F)"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda / Adi Shakti (U+262C)"
+        }
       ]
     }
   ],

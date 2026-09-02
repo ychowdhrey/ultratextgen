@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-chi/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-chi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Il Simbolo Chi — Χ e χ",
       "intro": "La lettera greca stessa, in entrambi i casi. La Χ maiuscola porta la storia religiosa e abbreviativa di chi; la χ minuscola svolge la maggior parte del lavoro matematico e scientifico moderno.",
       "symbols": [
-        { "char": "Χ", "label": "Lettera Greca Maiuscola Chi (U+03A7)" },
-        { "char": "χ", "label": "Lettera Greca Minuscola Chi (U+03C7)" }
+        {
+          "char": "Χ",
+          "label": "Lettera Greca Maiuscola Chi (U+03A7)"
+        },
+        {
+          "char": "χ",
+          "label": "Lettera Greca Minuscola Chi (U+03C7)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Chi-Rho, Xmas e il Monogramma Cristiano",
       "intro": "Poiché la Χ maiuscola apre Χριστός (\"Cristo\"), è diventata un'abbreviazione secolare del nome — l'origine sia del monogramma Chi-Rho che Costantino portò come stendardo di battaglia, sia del moderno \"Xmas\". Copia qui i pezzi di questa storia.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627): il cristogramma / labaro ΧΡ" },
-        { "char": "Χ", "label": "Lettera Greca Maiuscola Chi (U+03A7): la Χ che apre Χριστός" },
-        { "char": "X", "label": "Lettera Latina Maiuscola X (U+0058) — la X di \"Xmas\"" }
+        {
+          "char": "☧",
+          "label": "Chi Rho (U+2627): il cristogramma / labaro ΧΡ"
+        },
+        {
+          "char": "Χ",
+          "label": "Lettera Greca Maiuscola Chi (U+03A7): la Χ che apre Χριστός"
+        },
+        {
+          "char": "X",
+          "label": "Lettera Latina Maiuscola X (U+0058) — la X di \"Xmas\""
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Chi-Quadrato (χ²) in Statistica e Scienza",
       "intro": "La χ minuscola è un pilastro scientifico: il test di bontà di adattamento χ² introdotto da Karl Pearson nel 1900, più la caratteristica di Eulero in topologia e la suscettibilità magnetica in fisica. Prendi la lettera e un due in apice per comporre χ² da solo.",
       "symbols": [
-        { "char": "χ", "label": "Lettera Greca Minuscola Chi (U+03C7): la statistica del test χ²" },
-        { "char": "²", "label": "Due in Apice (U+00B2): per comporre χ²" },
-        { "char": "Χ", "label": "Lettera Greca Maiuscola Chi (U+03A7): indica anche variabili casuali" }
+        {
+          "char": "χ",
+          "label": "Lettera Greca Minuscola Chi (U+03C7): la statistica del test χ²"
+        },
+        {
+          "char": "²",
+          "label": "Due in Apice (U+00B2): per comporre χ²"
+        },
+        {
+          "char": "Χ",
+          "label": "Lettera Greca Maiuscola Chi (U+03A7): indica anche variabili casuali"
+        }
       ]
     },
     {
@@ -61,10 +93,22 @@
       "h2": "Chi vs. la X Latina — i Sosia",
       "intro": "Chi appare quasi identica alla lettera latina X, ma ciascuna ha il proprio codepoint — scambiarle in silenzio rompe ricerche, codice ed equazioni. Ecco tutte e quattro, così puoi copiare esattamente quella che ti serve.",
       "symbols": [
-        { "char": "χ", "label": "Lettera Greca Minuscola Chi (U+03C7)" },
-        { "char": "Χ", "label": "Lettera Greca Maiuscola Chi (U+03A7)" },
-        { "char": "x", "label": "Lettera Latina Minuscola X (U+0078)" },
-        { "char": "X", "label": "Lettera Latina Maiuscola X (U+0058)" }
+        {
+          "char": "χ",
+          "label": "Lettera Greca Minuscola Chi (U+03C7)"
+        },
+        {
+          "char": "Χ",
+          "label": "Lettera Greca Maiuscola Chi (U+03A7)"
+        },
+        {
+          "char": "x",
+          "label": "Lettera Latina Minuscola X (U+0078)"
+        },
+        {
+          "char": "X",
+          "label": "Lettera Latina Maiuscola X (U+0058)"
+        }
       ]
     },
     {
@@ -73,10 +117,22 @@
       "h2": "Lettere Greche Correlate",
       "intro": "Chi è la 22ª lettera dell'alfabeto greco, tra phi e psi. Ecco le sue vicine e le altre lettere greche che vengono copiate più spesso insieme a lei.",
       "symbols": [
-        { "char": "φ", "label": "Lettera Greca Minuscola Phi" },
-        { "char": "ψ", "label": "Lettera Greca Minuscola Psi" },
-        { "char": "π", "label": "Lettera Greca Minuscola Pi" },
-        { "char": "Σ", "label": "Lettera Greca Maiuscola Sigma" }
+        {
+          "char": "φ",
+          "label": "Lettera Greca Minuscola Phi"
+        },
+        {
+          "char": "ψ",
+          "label": "Lettera Greca Minuscola Psi"
+        },
+        {
+          "char": "π",
+          "label": "Lettera Greca Minuscola Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Lettera Greca Maiuscola Sigma"
+        }
       ]
     }
   ],

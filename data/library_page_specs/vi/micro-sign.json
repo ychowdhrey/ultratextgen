@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/micro-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/micro-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/micro-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/micro-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Micro (U+00B5)",
       "intro": "Ký hiệu micro cũ, được giữ lại trong Unicode để tương thích với các hệ thống Latin-1 (ISO/IEC 8859-1) đời trước. Dùng cho µm (micron), µg (microgram), µs (micro giây).",
       "symbols": [
-        { "char": "µ", "label": "Ký Hiệu Micro" },
-        { "char": "µs", "label": "Viết Tắt Micro Giây" },
-        { "char": "µg", "label": "Viết Tắt Microgram" }
+        {
+          "char": "µ",
+          "label": "Ký Hiệu Micro"
+        },
+        {
+          "char": "µs",
+          "label": "Viết Tắt Micro Giây"
+        },
+        {
+          "char": "µg",
+          "label": "Viết Tắt Microgram"
+        }
       ]
     },
     {
@@ -39,8 +57,14 @@
       "h2": "Chữ Thường Hy Lạp Mu (U+03BC)",
       "intro": "Chữ cái thứ mười hai thật sự trong bảng chữ cái Hy Lạp — trông giống hệt ký hiệu micro và là ký tự mà chính quy tắc chuẩn hóa của Unicode ưu tiên.",
       "symbols": [
-        { "char": "μ", "label": "Chữ Thường Hy Lạp Mu" },
-        { "char": "Μ", "label": "Chữ Hoa Hy Lạp Mu" }
+        {
+          "char": "μ",
+          "label": "Chữ Thường Hy Lạp Mu"
+        },
+        {
+          "char": "Μ",
+          "label": "Chữ Hoa Hy Lạp Mu"
+        }
       ]
     },
     {
@@ -49,19 +73,48 @@
       "h2": "Ký Hiệu Thường Đi Kèm Với Ký Hiệu Micro",
       "intro": "Các ký hiệu đo lường và ký hiệu khoa học khác thường xuất hiện cùng µ trong văn bản kỹ thuật.",
       "symbols": [
-        { "char": "Ω", "label": "Ký Hiệu Ohm" },
-        { "char": "°", "label": "Ký Hiệu Độ" },
-        { "char": "±", "label": "Ký Hiệu Cộng Trừ" },
-        { "char": "‰", "label": "Ký Hiệu Phần Nghìn" },
-        { "char": "∞", "label": "Vô Cực" },
-        { "char": "≈", "label": "Gần Bằng" }
+        {
+          "char": "Ω",
+          "label": "Ký Hiệu Ohm"
+        },
+        {
+          "char": "°",
+          "label": "Ký Hiệu Độ"
+        },
+        {
+          "char": "±",
+          "label": "Ký Hiệu Cộng Trừ"
+        },
+        {
+          "char": "‰",
+          "label": "Ký Hiệu Phần Nghìn"
+        },
+        {
+          "char": "∞",
+          "label": "Vô Cực"
+        },
+        {
+          "char": "≈",
+          "label": "Gần Bằng"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/unit-measurement-symbols/", "title": "Ký Hiệu Đơn Vị & Đo Lường", "desc": "Các ký hiệu đo lường hệ mét, hệ Anh và khoa học dùng cho văn bản kỹ thuật." },
-    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp trong Unicode, dạng hoa và thường." },
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Các toán tử toán học, chữ cái Hy Lạp, căn số và ký hiệu vô cực." }
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Ký Hiệu Đơn Vị & Đo Lường",
+      "desc": "Các ký hiệu đo lường hệ mét, hệ Anh và khoa học dùng cho văn bản kỹ thuật."
+    },
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Ký Hiệu Chữ Cái Hy Lạp",
+      "desc": "Trọn bộ bảng chữ cái Hy Lạp trong Unicode, dạng hoa và thường."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Các toán tử toán học, chữ cái Hy Lạp, căn số và ký hiệu vô cực."
+    }
   ]
 }

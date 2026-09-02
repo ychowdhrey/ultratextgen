@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/trattino-medio/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/trattino-medio/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Il Trattino Medio e il Trattino da Cifre",
       "intro": "Il trattino medio per intervalli e composti, più il trattino da cifre — la stessa larghezza, riservata alle cifre numeriche perché i numeri si allineino con precisione in tabelle e numeri di telefono. Pronto da incollare ovunque.",
       "symbols": [
-        { "char": "–", "label": "Trattino Medio (U+2013)" },
-        { "char": "‒", "label": "Trattino da Cifre (U+2012)" }
+        {
+          "char": "–",
+          "label": "Trattino Medio (U+2013)"
+        },
+        {
+          "char": "‒",
+          "label": "Trattino da Cifre (U+2012)"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Trattini e Lineette con Cui Viene Confuso",
       "intro": "I segni con cui il trattino medio viene scambiato — ognuno ha la propria larghezza, il proprio codepoint e il proprio compito, dal semplice trattino da tastiera alla lineetta fino al vero segno meno.",
       "symbols": [
-        { "char": "—", "label": "Lineetta (U+2014)" },
-        { "char": "-", "label": "Trattino-Meno (da Tastiera)" },
-        { "char": "‐", "label": "Trattino Tipografico (U+2010)" },
-        { "char": "−", "label": "Segno Meno (U+2212)" },
-        { "char": "―", "label": "Barra Orizzontale (U+2015)" }
+        {
+          "char": "—",
+          "label": "Lineetta (U+2014)"
+        },
+        {
+          "char": "-",
+          "label": "Trattino-Meno (da Tastiera)"
+        },
+        {
+          "char": "‐",
+          "label": "Trattino Tipografico (U+2010)"
+        },
+        {
+          "char": "−",
+          "label": "Segno Meno (U+2212)"
+        },
+        {
+          "char": "―",
+          "label": "Barra Orizzontale (U+2015)"
+        }
       ]
     },
     {
@@ -52,17 +81,44 @@
       "h2": "Segni che un Trattino Medio Spaziato Sostituisce",
       "intro": "Nell'uso britannico, australiano e canadese un trattino medio spaziato – come questo – isola un inciso dove l'inglese americano chiude una lineetta senza spazi; questi sono i segni con cui lavora fianco a fianco o che sostituisce.",
       "symbols": [
-        { "char": ",", "label": "Virgola" },
-        { "char": ":", "label": "Due Punti" },
-        { "char": ";", "label": "Punto e Virgola" },
-        { "char": "(", "label": "Parentesi Tonda Sinistra" },
-        { "char": ")", "label": "Parentesi Tonda Destra" }
+        {
+          "char": ",",
+          "label": "Virgola"
+        },
+        {
+          "char": ":",
+          "label": "Due Punti"
+        },
+        {
+          "char": ";",
+          "label": "Punto e Virgola"
+        },
+        {
+          "char": "(",
+          "label": "Parentesi Tonda Sinistra"
+        },
+        {
+          "char": ")",
+          "label": "Parentesi Tonda Destra"
+        }
       ]
     }
   ],
   "related": [
-    { "href": "/library/dash-hyphen-symbols/", "title": "Dash & Hyphen Symbols", "desc": "Trattini medi, lineette, trattini brevi e segni meno affiancati con i loro codepoint in un unico riferimento." },
-    { "href": "/it/library/simboli-punteggiatura/", "title": "Simboli di Punteggiatura", "desc": "Trattini, virgolette, parentesi e il resto della punteggiatura quotidiana di Unicode, pronti da copiare." },
-    { "href": "/it/symbol/trattino-lungo/", "title": "Trattino Lungo (—)", "desc": "Il fratello più largo del trattino medio: il trattino lungo per interruzioni e incisi, circa il doppio della larghezza e con un compito diverso." }
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Trattini medi, lineette, trattini brevi e segni meno affiancati con i loro codepoint in un unico riferimento."
+    },
+    {
+      "href": "/it/library/simboli-punteggiatura/",
+      "title": "Simboli di Punteggiatura",
+      "desc": "Trattini, virgolette, parentesi e il resto della punteggiatura quotidiana di Unicode, pronti da copiare."
+    },
+    {
+      "href": "/it/symbol/trattino-lungo/",
+      "title": "Trattino Lungo (—)",
+      "desc": "Il fratello più largo del trattino medio: il trattino lungo per interruzioni e incisi, circa il doppio della larghezza e con un compito diverso."
+    }
   ]
 }

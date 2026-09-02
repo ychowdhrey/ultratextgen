@@ -16,13 +16,34 @@
       "h2": "Star Eyes Kaomoji",
       "intro": "Faces with stars for eyes — impressed and starstruck.",
       "symbols": [
-        { "char": "(★ω★)", "label": "Star Eyes" },
-        { "char": "(☆▽☆)", "label": "Amazed" },
-        { "char": "(✧ω✧)", "label": "Sparkle Eyes" },
-        { "char": "(★▽★)", "label": "Wowed" },
-        { "char": "(☆ω☆)", "label": "Dazzled" },
-        { "char": "(✪ω✪)", "label": "Wide Star Eyes" },
-        { "char": "(★^O^★)", "label": "Thrilled Star" }
+        {
+          "char": "(★ω★)",
+          "label": "Star Eyes"
+        },
+        {
+          "char": "(☆▽☆)",
+          "label": "Amazed"
+        },
+        {
+          "char": "(✧ω✧)",
+          "label": "Sparkle Eyes"
+        },
+        {
+          "char": "(★▽★)",
+          "label": "Wowed"
+        },
+        {
+          "char": "(☆ω☆)",
+          "label": "Dazzled"
+        },
+        {
+          "char": "(✪ω✪)",
+          "label": "Wide Star Eyes"
+        },
+        {
+          "char": "(★^O^★)",
+          "label": "Thrilled Star"
+        }
       ]
     },
     {
@@ -31,11 +52,26 @@
       "h2": "Starstruck & Excited Kaomoji",
       "intro": "High-energy faces bursting with starry excitement.",
       "symbols": [
-        { "char": "٩(★ω★)۶", "label": "So Excited" },
-        { "char": "ヽ(★ω★)ﾉ", "label": "Cheering Stars" },
-        { "char": "＼(☆o☆)／", "label": "Starstruck" },
-        { "char": "ヽ(>∀<☆)ノ", "label": "Overjoyed" },
-        { "char": "(ﾉ☆ヮ☆)ﾉ", "label": "Throwing Stars" }
+        {
+          "char": "٩(★ω★)۶",
+          "label": "So Excited"
+        },
+        {
+          "char": "ヽ(★ω★)ﾉ",
+          "label": "Cheering Stars"
+        },
+        {
+          "char": "＼(☆o☆)／",
+          "label": "Starstruck"
+        },
+        {
+          "char": "ヽ(>∀<☆)ノ",
+          "label": "Overjoyed"
+        },
+        {
+          "char": "(ﾉ☆ヮ☆)ﾉ",
+          "label": "Throwing Stars"
+        }
       ]
     },
     {
@@ -44,10 +80,22 @@
       "h2": "Dreamy & Wishing Kaomoji",
       "intro": "Soft, wishful faces with a starry sparkle.",
       "symbols": [
-        { "char": "‧₊˚✧ (◕‿◕) ✧˚₊‧", "label": "Starry Wish" },
-        { "char": "(｡•̀ᴗ-)✧", "label": "Confident Star" },
-        { "char": "(☆_☆)", "label": "Wonderstruck" },
-        { "char": "(¬‿¬)☆", "label": "Sly Star" }
+        {
+          "char": "‧₊˚✧ (◕‿◕) ✧˚₊‧",
+          "label": "Starry Wish"
+        },
+        {
+          "char": "(｡•̀ᴗ-)✧",
+          "label": "Confident Star"
+        },
+        {
+          "char": "(☆_☆)",
+          "label": "Wonderstruck"
+        },
+        {
+          "char": "(¬‿¬)☆",
+          "label": "Sly Star"
+        }
       ]
     },
     {
@@ -56,18 +104,45 @@
       "h2": "Shooting Star Kaomoji",
       "intro": "Faces framed by shooting stars and sparkles.",
       "symbols": [
-        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Star Shower" },
-        { "char": "(づ｡◕‿‿◕｡)づ★", "label": "Star Hug" },
-        { "char": "★彡( º ロ º )", "label": "Shooting By" },
-        { "char": "｡ﾟ+.(★ω★).+ﾟ｡", "label": "Glowing Star" }
+        {
+          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+          "label": "Star Shower"
+        },
+        {
+          "char": "(づ｡◕‿‿◕｡)づ★",
+          "label": "Star Hug"
+        },
+        {
+          "char": "★彡( º ロ º )",
+          "label": "Shooting By"
+        },
+        {
+          "char": "｡ﾟ+.(★ω★).+ﾟ｡",
+          "label": "Glowing Star"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/sparkle-kaomoji/", "title": "Sparkle & Star Kaomoji", "desc": "Glitter, sparkles, and magical shine in Japanese text-face form." },
-    { "href": "/library/star-symbols/", "title": "Star Symbols", "desc": "Single star characters in every weight and style to copy and paste." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/sparkle-kaomoji/",
+      "title": "Sparkle & Star Kaomoji",
+      "desc": "Glitter, sparkles, and magical shine in Japanese text-face form."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Single star characters in every weight and style to copy and paste."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    }
   ]
 }

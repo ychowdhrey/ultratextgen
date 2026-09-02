@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/orthodox-cross/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/orthodox-cross/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/orthodox-cross/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/orthodox-cross/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/orthodox-cross/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/orthodox-cross/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Thánh Giá Chính Thống Giáo",
       "intro": "Chính thánh giá ba thanh, sẵn sàng để dán.",
       "symbols": [
-        { "char": "☦", "label": "Thánh Giá Chính Thống Giáo" },
-        { "char": "☦️", "label": "Thánh Giá Chính Thống Giáo (Emoji)" }
+        {
+          "char": "☦",
+          "label": "Thánh Giá Chính Thống Giáo"
+        },
+        {
+          "char": "☦️",
+          "label": "Thánh Giá Chính Thống Giáo (Emoji)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Họ Ký Hiệu Thánh Giá",
       "intro": "Ba thanh nghiêng của thánh giá Chính Thống giáo so với các dạng thánh giá khác có tên riêng — hữu ích nếu bạn chưa chắc mình đang nhìn thấy loại thánh giá nào.",
       "symbols": [
-        { "char": "✝", "label": "Thánh Giá Latinh: Một Thanh Ngang, Ki-tô Giáo Phương Tây" },
-        { "char": "☨", "label": "Thánh Giá Lorraine: Hai Thanh Ngang, Không Nghiêng, Dùng Trong Nghi Lễ Thượng Phụ" },
-        { "char": "☩", "label": "Thánh Giá Jerusalem" },
-        { "char": "♱", "label": "Thánh Giá Đông Syriac" }
+        {
+          "char": "✝",
+          "label": "Thánh Giá Latinh: Một Thanh Ngang, Ki-tô Giáo Phương Tây"
+        },
+        {
+          "char": "☨",
+          "label": "Thánh Giá Lorraine: Hai Thanh Ngang, Không Nghiêng, Dùng Trong Nghi Lễ Thượng Phụ"
+        },
+        {
+          "char": "☩",
+          "label": "Thánh Giá Jerusalem"
+        },
+        {
+          "char": "♱",
+          "label": "Thánh Giá Đông Syriac"
+        }
       ]
     },
     {
@@ -50,17 +77,40 @@
       "h2": "Ký Hiệu Tôn Giáo & Tâm Linh Liên Quan",
       "intro": "Các ký hiệu tôn giáo khác thường được tìm kiếm và hiển thị cùng thánh giá Chính Thống giáo.",
       "symbols": [
-        { "char": "✡", "label": "Ngôi Sao David" },
-        { "char": "☪", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
-        { "char": "☯", "label": "Âm Dương" },
-        { "char": "☮", "label": "Ký Hiệu Hòa Bình" }
+        {
+          "char": "✡",
+          "label": "Ngôi Sao David"
+        },
+        {
+          "char": "☪",
+          "label": "Ngôi Sao Và Trăng Lưỡi Liềm"
+        },
+        {
+          "char": "☯",
+          "label": "Âm Dương"
+        },
+        {
+          "char": "☮",
+          "label": "Ký Hiệu Hòa Bình"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo & Tâm Linh", "desc": "Các ký hiệu tôn giáo và tâm linh từ những truyền thống lớn trên thế giới, gồm thánh giá, trăng lưỡi liềm và ngôi sao." },
-    { "href": "/vi/symbol/cross-symbol/", "title": "Ký Hiệu Thánh Giá", "desc": "Thánh giá Latinh đơn giản của Ki-tô giáo — và dấu chấm than cùng ký hiệu ✕ mà nó thường bị nhầm lẫn." },
-    { "href": "/vi/symbol/star-of-david/", "title": "Ký Hiệu Ngôi Sao David", "desc": "Một ký hiệu khác với lịch sử thật sự, được ghi chép đầy đủ, trình bày không thiên vị bên nào." }
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Ký Hiệu Tôn Giáo & Tâm Linh",
+      "desc": "Các ký hiệu tôn giáo và tâm linh từ những truyền thống lớn trên thế giới, gồm thánh giá, trăng lưỡi liềm và ngôi sao."
+    },
+    {
+      "href": "/vi/symbol/cross-symbol/",
+      "title": "Ký Hiệu Thánh Giá",
+      "desc": "Thánh giá Latinh đơn giản của Ki-tô giáo — và dấu chấm than cùng ký hiệu ✕ mà nó thường bị nhầm lẫn."
+    },
+    {
+      "href": "/vi/symbol/star-of-david/",
+      "title": "Ký Hiệu Ngôi Sao David",
+      "desc": "Một ký hiệu khác với lịch sử thật sự, được ghi chép đầy đủ, trình bày không thiên vị bên nào."
+    }
   ]
 }

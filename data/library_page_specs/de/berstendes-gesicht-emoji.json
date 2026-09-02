@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/berstendes-gesicht-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/berstendes-gesicht-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "berstendes-gesicht",
@@ -29,7 +37,10 @@
       "h2": "Berstendes Gesicht Emoji",
       "intro": "Das Entwurfszeichen selbst — schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
       "symbols": [
-        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB)" }
+        {
+          "char": "🫫",
+          "label": "Berstendes Gesicht (Entwurf, U+1FAEB)"
+        }
       ]
     },
     {
@@ -38,10 +49,22 @@
       "h2": "Bereits vorhandene Emojis, mit denen es verglichen wird",
       "intro": "Bereits kodierte, vollständig unterstützte Gesichts-Emojis mit ähnlich „angespanntem“ oder „überfordertem“ Ausdruck — nützliche Übergangslösungen, bis Berstendes Gesicht tatsächlich verfügbar ist.",
       "symbols": [
-        { "char": "😬", "label": "Grimassierendes Gesicht" },
-        { "char": "🫠", "label": "Schmelzendes Gesicht" },
-        { "char": "🥴", "label": "Schwindeliges Gesicht" },
-        { "char": "🫪", "label": "Verzerrtes Gesicht (das beliebteste neue Emoji aus Unicode 17.0)" }
+        {
+          "char": "😬",
+          "label": "Grimassierendes Gesicht"
+        },
+        {
+          "char": "🫠",
+          "label": "Schmelzendes Gesicht"
+        },
+        {
+          "char": "🥴",
+          "label": "Schwindeliges Gesicht"
+        },
+        {
+          "char": "🫪",
+          "label": "Verzerrtes Gesicht (das beliebteste neue Emoji aus Unicode 17.0)"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
       "intro": "Berstendes Gesicht ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
-        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" },
-        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" },
-        { "char": "🛙", "label": "Leuchtturm (Entwurf, U+1F6D9)" }
+        {
+          "char": "🫝",
+          "label": "Essiggurke (Entwurf, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarchfalter (Entwurf, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Leuchtturm (Entwurf, U+1F6D9)"
+        }
       ]
     }
   ],

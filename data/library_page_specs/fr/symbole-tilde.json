@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-tilde/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-tilde/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Le Tilde ~ et Ses Sosies",
       "intro": "Trois caractères Unicode bien distincts que tout le monde appelle « le tilde » — la touche du clavier, un modificateur autonome, et le diacritique combinant qui se pose sur une lettre.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E): la Touche du Clavier" },
-        { "char": "˜", "label": "Petit Tilde (U+02DC): Modificateur Autonome" },
-        { "char": "̃", "label": "Tilde Combinant (U+0303): se Pose sur une Lettre" }
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): la Touche du Clavier"
+        },
+        {
+          "char": "˜",
+          "label": "Petit Tilde (U+02DC): Modificateur Autonome"
+        },
+        {
+          "char": "̃",
+          "label": "Tilde Combinant (U+0303): se Pose sur une Lettre"
+        }
       ]
     },
     {
@@ -39,10 +57,22 @@
       "h2": "Les Lettres qui Portent un Tilde",
       "intro": "Le tilde combinant en action. Le ñ espagnol et les ã et õ portugais sont les héritiers quotidiens de ce raccourci de scribe pour un « n » omis.",
       "symbols": [
-        { "char": "ñ", "label": "N Minuscule Tilde Latin (U+00F1)" },
-        { "char": "Ñ", "label": "N Majuscule Tilde Latin (U+00D1)" },
-        { "char": "ã", "label": "A Minuscule Tilde Latin (U+00E3)" },
-        { "char": "õ", "label": "O Minuscule Tilde Latin (U+00F5)" }
+        {
+          "char": "ñ",
+          "label": "N Minuscule Tilde Latin (U+00F1)"
+        },
+        {
+          "char": "Ñ",
+          "label": "N Majuscule Tilde Latin (U+00D1)"
+        },
+        {
+          "char": "ã",
+          "label": "A Minuscule Tilde Latin (U+00E3)"
+        },
+        {
+          "char": "õ",
+          "label": "O Minuscule Tilde Latin (U+00F5)"
+        }
       ]
     },
     {
@@ -51,18 +81,44 @@
       "h2": "Les Tildes Mathématiques : Semblable-à et Presque-Égal",
       "intro": "En équation, le tilde signifie « semblable à » ou « environ », mais les véritables signes mathématiques sont des caractères Unicode à part entière — pas le ~ ASCII que l'on tape habituellement à leur place.",
       "symbols": [
-        { "char": "∼", "label": "Opérateur Tilde (U+223C): « Semblable à »" },
-        { "char": "≈", "label": "Presque Égal à (U+2248): « Approximativement Égal »" },
-        { "char": "≅", "label": "Approximativement Égal à (U+2245)" },
-        { "char": "≃", "label": "Asymptotiquement Égal à (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E): le Caractère ASCII Souvent Tapé à sa Place" }
+        {
+          "char": "∼",
+          "label": "Opérateur Tilde (U+223C): « Semblable à »"
+        },
+        {
+          "char": "≈",
+          "label": "Presque Égal à (U+2248): « Approximativement Égal »"
+        },
+        {
+          "char": "≅",
+          "label": "Approximativement Égal à (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asymptotiquement Égal à (U+2243)"
+        },
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): le Caractère ASCII Souvent Tapé à sa Place"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier (en anglais)." },
-    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde (en anglais)." },
-    { "href": "/library/accent-marks-diacritics/", "title": "Accent Marks & Diacritics", "desc": "Le tilde combinant sur ñ et ã, ainsi que les accents aigus, graves, trémas et les autres marques posées sur une lettre (en anglais)." }
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier (en anglais)."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde (en anglais)."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accent Marks & Diacritics",
+      "desc": "Le tilde combinant sur ñ et ã, ainsi que les accents aigus, graves, trémas et les autres marques posées sur une lettre (en anglais)."
+    }
   ]
 }

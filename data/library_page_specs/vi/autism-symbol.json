@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/autism-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/autism-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/autism-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/autism-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/autism-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/autism-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Vô Cực",
       "intro": "Ký hiệu được những người tự vận động vì quyền tự kỷ và phong trào đa dạng thần kinh ưa chuộng, đại diện cho sự đa dạng và khả năng vô tận thay vì một khiếm khuyết cần khắc phục.",
       "symbols": [
-        { "char": "∞", "label": "Vô Cực" },
-        { "char": "♾️", "label": "Emoji Vô Cực" }
+        {
+          "char": "∞",
+          "label": "Vô Cực"
+        },
+        {
+          "char": "♾️",
+          "label": "Emoji Vô Cực"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Vàng, Cầu Vồng & Ý Nghĩa Màu Sắc",
       "intro": "Màu sắc mang ý nghĩa cụ thể ở đây: vàng đánh dấu riêng tự kỷ (một sự gợi nhắc đến Au, ký hiệu hóa học của vàng), cầu vồng đánh dấu đa dạng thần kinh nói chung (tự kỷ, ADHD, chứng khó đọc và nhiều hơn nữa cùng nhau). ∞ dạng văn bản thuần không thể tự mang màu, nên phiên bản cầu vồng thường được dán như một tổ hợp.",
       "symbols": [
-        { "char": "🌈♾️", "label": "Vô Cực Cầu Vồng (Đa Dạng Thần Kinh)" },
-        { "char": "🌈", "label": "Cầu Vồng" }
+        {
+          "char": "🌈♾️",
+          "label": "Vô Cực Cầu Vồng (Đa Dạng Thần Kinh)"
+        },
+        {
+          "char": "🌈",
+          "label": "Cầu Vồng"
+        }
       ]
     },
     {
@@ -48,15 +69,32 @@
       "h2": "Mảnh Ghép — Ký Hiệu Cũ Gây Tranh Cãi",
       "intro": "Vẫn được nhận biết rộng rãi và vẫn được một số tổ chức và gia đình sử dụng, nhưng không còn là ký hiệu mà phần lớn các nhóm vận động do người tự kỷ dẫn dắt sử dụng. Đưa vào đây để tham khảo, không phải khuyến nghị.",
       "symbols": [
-        { "char": "🧩", "label": "Mảnh Ghép" },
-        { "char": "💙", "label": "Trái Tim Xanh (Light It Up Blue)" }
+        {
+          "char": "🧩",
+          "label": "Mảnh Ghép"
+        },
+        {
+          "char": "💙",
+          "label": "Trái Tim Xanh (Light It Up Blue)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/awareness-ribbons/", "title": "Dải Băng Nhận Thức", "desc": "Các ký hiệu dải băng vận động và nhận thức cho sức khỏe, hỗ trợ và vận động." },
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Ký hiệu vô cực toán học, cùng toán tử, chữ cái Hy Lạp và căn số." },
-    { "href": "/library/heart-symbols/", "title": "Ký Hiệu Trái Tim", "desc": "Emoji trái tim và ký tự trái tim Unicode ở mọi màu sắc và kiểu dáng." }
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Dải Băng Nhận Thức",
+      "desc": "Các ký hiệu dải băng vận động và nhận thức cho sức khỏe, hỗ trợ và vận động."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Ký hiệu vô cực toán học, cùng toán tử, chữ cái Hy Lạp và căn số."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Ký Hiệu Trái Tim",
+      "desc": "Emoji trái tim và ký tự trái tim Unicode ở mọi màu sắc và kiểu dáng."
+    }
   ]
 }

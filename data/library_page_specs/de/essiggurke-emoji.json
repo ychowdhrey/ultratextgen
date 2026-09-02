@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/essiggurke-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/essiggurke-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "essiggurke",
@@ -29,7 +37,10 @@
       "h2": "Essiggurke Emoji",
       "intro": "Das Entwurfszeichen selbst — schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
       "symbols": [
-        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" }
+        {
+          "char": "🫝",
+          "label": "Essiggurke (Entwurf, U+1FADD)"
+        }
       ]
     },
     {
@@ -38,9 +49,18 @@
       "h2": "Die Emojis, mit denen sie verwechselt wird",
       "intro": "Bereits kodierte Gemüse-Emojis, mit denen die Essiggurke am häufigsten verglichen oder für überflüssig erklärt wird.",
       "symbols": [
-        { "char": "🥒", "label": "Gurke" },
-        { "char": "🍆", "label": "Aubergine" },
-        { "char": "🫑", "label": "Paprika" }
+        {
+          "char": "🥒",
+          "label": "Gurke"
+        },
+        {
+          "char": "🍆",
+          "label": "Aubergine"
+        },
+        {
+          "char": "🫑",
+          "label": "Paprika"
+        }
       ]
     },
     {
@@ -49,9 +69,18 @@
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
       "intro": "Die Essiggurke ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
-        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB)" },
-        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" },
-        { "char": "🛙", "label": "Leuchtturm (Entwurf, U+1F6D9)" }
+        {
+          "char": "🫫",
+          "label": "Berstendes Gesicht (Entwurf, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarchfalter (Entwurf, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Leuchtturm (Entwurf, U+1F6D9)"
+        }
       ]
     }
   ],

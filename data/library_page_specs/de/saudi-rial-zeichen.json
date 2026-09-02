@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/saudi-rial-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/saudi-rial-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "saudisches-rial-zeichen",
@@ -29,7 +37,10 @@
       "h2": "Saudisches Rial-Zeichen",
       "intro": "Das bestätigte, finale Zeichen — kodiert mit Unicode 17.0, schon heute kopierbar, auch wenn die meisten Schriftarten es noch nicht nativ darstellen.",
       "symbols": [
-        { "char": "⃁", "label": "Saudisches Rial-Zeichen (U+20C1, final seit Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Saudisches Rial-Zeichen (U+20C1, final seit Unicode 17.0)"
+        }
       ]
     },
     {
@@ -38,9 +49,18 @@
       "h2": "Weitere neue Golf-Währungssymbole",
       "intro": "Drei weitere Währungen der Region erhielten in der folgenden Unicode-Version, 18.0, ihre eigenen Zeichen — zum Zeitpunkt dieses Textes noch in der Beta.",
       "symbols": [
-        { "char": "⃃", "label": "VAE-Dirham-Zeichen (U+20C3, Unicode-18.0-Beta)" },
-        { "char": "⃄", "label": "Omanisches Rial-Zeichen (U+20C4, Unicode-18.0-Beta)" },
-        { "char": "⃂", "label": "Maledivisches Rufiyaa-Zeichen (U+20C2, Unicode-18.0-Beta)" }
+        {
+          "char": "⃃",
+          "label": "VAE-Dirham-Zeichen (U+20C3, Unicode-18.0-Beta)"
+        },
+        {
+          "char": "⃄",
+          "label": "Omanisches Rial-Zeichen (U+20C4, Unicode-18.0-Beta)"
+        },
+        {
+          "char": "⃂",
+          "label": "Maledivisches Rufiyaa-Zeichen (U+20C2, Unicode-18.0-Beta)"
+        }
       ]
     },
     {
@@ -49,8 +69,14 @@
       "h2": "Nahost-Währungssymbole, die schon überall funktionieren",
       "intro": "Zum Vergleich — regionale Währungssymbole, die die Lücke zwischen Standard und Schriftart bereits vor Jahren geschlossen haben und heute auf praktisch jedem Gerät angezeigt werden.",
       "symbols": [
-        { "char": "₪", "label": "Israelisches-Neuer-Schekel-Zeichen" },
-        { "char": "₺", "label": "Türkisches-Lira-Zeichen" }
+        {
+          "char": "₪",
+          "label": "Israelisches-Neuer-Schekel-Zeichen"
+        },
+        {
+          "char": "₺",
+          "label": "Türkisches-Lira-Zeichen"
+        }
       ]
     }
   ],

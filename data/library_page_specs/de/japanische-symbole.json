@@ -17,11 +17,19 @@
   "library_url": "https://ultratextgen.com/de/library/",
   "collection_container_id": "japanSetsContainerDE",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/japanese-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/japanische-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/japanese-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/japanese-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/japanische-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/japanese-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "related": [
     {
       "href": "/de/library/kaomoji/",
@@ -46,18 +54,54 @@
       "h2": "Schöne Kanji mit Bedeutung",
       "intro": "Ausdrucksstarke Kanji für Natur, Licht und Gefühle — die beliebtesten Zeichen für ästhetische Profile.",
       "symbols": [
-        { "char": "桜", "label": "Sakura: Kirschblüte" },
-        { "char": "愛", "label": "Ai: Liebe" },
-        { "char": "夢", "label": "Yume: Traum" },
-        { "char": "月", "label": "Tsuki: Mond" },
-        { "char": "星", "label": "Hoshi: Stern" },
-        { "char": "光", "label": "Hikari: Licht" },
-        { "char": "空", "label": "Sora: Himmel" },
-        { "char": "海", "label": "Umi: Meer" },
-        { "char": "雨", "label": "Ame: Regen" },
-        { "char": "花", "label": "Hana: Blume" },
-        { "char": "心", "label": "Kokoro: Herz" },
-        { "char": "魂", "label": "Tamashii: Seele" }
+        {
+          "char": "桜",
+          "label": "Sakura: Kirschblüte"
+        },
+        {
+          "char": "愛",
+          "label": "Ai: Liebe"
+        },
+        {
+          "char": "夢",
+          "label": "Yume: Traum"
+        },
+        {
+          "char": "月",
+          "label": "Tsuki: Mond"
+        },
+        {
+          "char": "星",
+          "label": "Hoshi: Stern"
+        },
+        {
+          "char": "光",
+          "label": "Hikari: Licht"
+        },
+        {
+          "char": "空",
+          "label": "Sora: Himmel"
+        },
+        {
+          "char": "海",
+          "label": "Umi: Meer"
+        },
+        {
+          "char": "雨",
+          "label": "Ame: Regen"
+        },
+        {
+          "char": "花",
+          "label": "Hana: Blume"
+        },
+        {
+          "char": "心",
+          "label": "Kokoro: Herz"
+        },
+        {
+          "char": "魂",
+          "label": "Tamashii: Seele"
+        }
       ]
     },
     {
@@ -66,18 +110,54 @@
       "h2": "Hiragana-Zeichen",
       "intro": "Die runden, fließenden Silbenzeichen für einheimische japanische Wörter.",
       "symbols": [
-        { "char": "あ", "label": "A: Hiragana-Zeichen A" },
-        { "char": "い", "label": "I: Hiragana-Zeichen I" },
-        { "char": "う", "label": "U: Hiragana-Zeichen U" },
-        { "char": "え", "label": "E: Hiragana-Zeichen E" },
-        { "char": "お", "label": "O: Hiragana-Zeichen O" },
-        { "char": "か", "label": "Ka: Hiragana-Zeichen Ka" },
-        { "char": "き", "label": "Ki: Hiragana-Zeichen Ki" },
-        { "char": "さ", "label": "Sa: Hiragana-Zeichen Sa" },
-        { "char": "し", "label": "Shi: Hiragana-Zeichen Shi" },
-        { "char": "の", "label": "No: Hiragana-Zeichen No" },
-        { "char": "は", "label": "Ha: Hiragana-Zeichen Ha" },
-        { "char": "ん", "label": "N: Hiragana-Zeichen N" }
+        {
+          "char": "あ",
+          "label": "A: Hiragana-Zeichen A"
+        },
+        {
+          "char": "い",
+          "label": "I: Hiragana-Zeichen I"
+        },
+        {
+          "char": "う",
+          "label": "U: Hiragana-Zeichen U"
+        },
+        {
+          "char": "え",
+          "label": "E: Hiragana-Zeichen E"
+        },
+        {
+          "char": "お",
+          "label": "O: Hiragana-Zeichen O"
+        },
+        {
+          "char": "か",
+          "label": "Ka: Hiragana-Zeichen Ka"
+        },
+        {
+          "char": "き",
+          "label": "Ki: Hiragana-Zeichen Ki"
+        },
+        {
+          "char": "さ",
+          "label": "Sa: Hiragana-Zeichen Sa"
+        },
+        {
+          "char": "し",
+          "label": "Shi: Hiragana-Zeichen Shi"
+        },
+        {
+          "char": "の",
+          "label": "No: Hiragana-Zeichen No"
+        },
+        {
+          "char": "は",
+          "label": "Ha: Hiragana-Zeichen Ha"
+        },
+        {
+          "char": "ん",
+          "label": "N: Hiragana-Zeichen N"
+        }
       ]
     },
     {
@@ -86,18 +166,54 @@
       "h2": "Katakana-Zeichen",
       "intro": "Die eckigen Silbenzeichen für Lehnwörter — darunter ツ und シ, beliebt als Smiley-Gesichter in Nutzernamen.",
       "symbols": [
-        { "char": "ツ", "label": "Tsu: Katakana-Zeichen Tsu (Lächel-Gesicht)" },
-        { "char": "シ", "label": "Shi: Katakana-Zeichen Shi (Lächel-Gesicht)" },
-        { "char": "ア", "label": "A: Katakana-Zeichen A" },
-        { "char": "カ", "label": "Ka: Katakana-Zeichen Ka" },
-        { "char": "サ", "label": "Sa: Katakana-Zeichen Sa" },
-        { "char": "タ", "label": "Ta: Katakana-Zeichen Ta" },
-        { "char": "ナ", "label": "Na: Katakana-Zeichen Na" },
-        { "char": "ハ", "label": "Ha: Katakana-Zeichen Ha" },
-        { "char": "マ", "label": "Ma: Katakana-Zeichen Ma" },
-        { "char": "ヤ", "label": "Ya: Katakana-Zeichen Ya" },
-        { "char": "ラ", "label": "Ra: Katakana-Zeichen Ra" },
-        { "char": "ワ", "label": "Wa: Katakana-Zeichen Wa" }
+        {
+          "char": "ツ",
+          "label": "Tsu: Katakana-Zeichen Tsu (Lächel-Gesicht)"
+        },
+        {
+          "char": "シ",
+          "label": "Shi: Katakana-Zeichen Shi (Lächel-Gesicht)"
+        },
+        {
+          "char": "ア",
+          "label": "A: Katakana-Zeichen A"
+        },
+        {
+          "char": "カ",
+          "label": "Ka: Katakana-Zeichen Ka"
+        },
+        {
+          "char": "サ",
+          "label": "Sa: Katakana-Zeichen Sa"
+        },
+        {
+          "char": "タ",
+          "label": "Ta: Katakana-Zeichen Ta"
+        },
+        {
+          "char": "ナ",
+          "label": "Na: Katakana-Zeichen Na"
+        },
+        {
+          "char": "ハ",
+          "label": "Ha: Katakana-Zeichen Ha"
+        },
+        {
+          "char": "マ",
+          "label": "Ma: Katakana-Zeichen Ma"
+        },
+        {
+          "char": "ヤ",
+          "label": "Ya: Katakana-Zeichen Ya"
+        },
+        {
+          "char": "ラ",
+          "label": "Ra: Katakana-Zeichen Ra"
+        },
+        {
+          "char": "ワ",
+          "label": "Wa: Katakana-Zeichen Wa"
+        }
       ]
     },
     {
@@ -106,17 +222,50 @@
       "h2": "Japanische Satzzeichen & Sonderzeichen",
       "intro": "Klammern, Punkte und eingekreiste Zeichen für einen authentischen japanischen Typografie-Look.",
       "symbols": [
-        { "char": "「", "label": "Linke Eckklammer" },
-        { "char": "」", "label": "Rechte Eckklammer" },
-        { "char": "『", "label": "Linke weiße Eckklammer" },
-        { "char": "』", "label": "Rechte weiße Eckklammer" },
-        { "char": "・", "label": "Katakana-Mittelpunkt" },
-        { "char": "〜", "label": "Wellenlinie (Tilde)" },
-        { "char": "。", "label": "Ideografischer Punkt" },
-        { "char": "々", "label": "Ideografisches Wiederholungszeichen" },
-        { "char": "㊗", "label": "Eingekreistes Ideogramm Glückwunsch" },
-        { "char": "㊙", "label": "Eingekreistes Ideogramm Geheim" },
-        { "char": "〒", "label": "Postleitzahl-Zeichen" }
+        {
+          "char": "「",
+          "label": "Linke Eckklammer"
+        },
+        {
+          "char": "」",
+          "label": "Rechte Eckklammer"
+        },
+        {
+          "char": "『",
+          "label": "Linke weiße Eckklammer"
+        },
+        {
+          "char": "』",
+          "label": "Rechte weiße Eckklammer"
+        },
+        {
+          "char": "・",
+          "label": "Katakana-Mittelpunkt"
+        },
+        {
+          "char": "〜",
+          "label": "Wellenlinie (Tilde)"
+        },
+        {
+          "char": "。",
+          "label": "Ideografischer Punkt"
+        },
+        {
+          "char": "々",
+          "label": "Ideografisches Wiederholungszeichen"
+        },
+        {
+          "char": "㊗",
+          "label": "Eingekreistes Ideogramm Glückwunsch"
+        },
+        {
+          "char": "㊙",
+          "label": "Eingekreistes Ideogramm Geheim"
+        },
+        {
+          "char": "〒",
+          "label": "Postleitzahl-Zeichen"
+        }
       ]
     }
   ],
@@ -127,12 +276,70 @@
     "intro": "Kopiere ein komplettes thematisches Set japanischer Zeichen oder eine fertige Bio-Dekoration mit einem Klick."
   },
   "collections": [
-    { "name": "Sakura-Ästhetik-Set", "flags": ["桜", "花", "春", "風", "月"], "defaultFormat": "inline" },
-    { "name": "Nachthimmel-Set", "flags": ["月", "星", "夜", "光", "夢"], "defaultFormat": "inline" },
-    { "name": "Meer- & Regen-Set", "flags": ["海", "波", "雨", "空"], "defaultFormat": "inline" },
-    { "name": "Nutzername-Smileys", "flags": ["ツ", "シ", "彡", "ノ"], "defaultFormat": "inline" },
-    { "name": "Ai: Liebe", "flags": ["愛"], "defaultFormat": "inline" },
-    { "name": "Arigatou — Danke", "flags": ["ありがとう"], "defaultFormat": "inline" },
-    { "name": "Sakura-Bio-Rahmen", "flags": ["☾ 月 ☽", "桜 · 夢 · 愛", "〜 ありがとう 〜"], "defaultFormat": "vertical" }
+    {
+      "name": "Sakura-Ästhetik-Set",
+      "flags": [
+        "桜",
+        "花",
+        "春",
+        "風",
+        "月"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nachthimmel-Set",
+      "flags": [
+        "月",
+        "星",
+        "夜",
+        "光",
+        "夢"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Meer- & Regen-Set",
+      "flags": [
+        "海",
+        "波",
+        "雨",
+        "空"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nutzername-Smileys",
+      "flags": [
+        "ツ",
+        "シ",
+        "彡",
+        "ノ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ai: Liebe",
+      "flags": [
+        "愛"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arigatou — Danke",
+      "flags": [
+        "ありがとう"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sakura-Bio-Rahmen",
+      "flags": [
+        "☾ 月 ☽",
+        "桜 · 夢 · 愛",
+        "〜 ありがとう 〜"
+      ],
+      "defaultFormat": "vertical"
+    }
   ]
 }

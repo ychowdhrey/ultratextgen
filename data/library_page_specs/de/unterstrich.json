@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/unterstrich/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/unterstrich/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "der-unterstrich",
@@ -29,9 +37,18 @@
       "h2": "Der Unterstrich, in voller Breite & doppelt",
       "intro": "Der schlichte Tastatur-Unterstrich und seine zwei Breitenvarianten — die in voller Breite genutzte Form aus dem ostasiatischen Schriftsatz und der doppelte, weiter beabstandete Unterstrich. Bereit zum Einfügen, überall.",
       "symbols": [
-        { "char": "_", "label": "Unterstrich / Low Line (U+005F)" },
-        { "char": "＿", "label": "Low Line in voller Breite (U+FF3F)" },
-        { "char": "‗", "label": "Doppelter Low Line (U+2017)" }
+        {
+          "char": "_",
+          "label": "Unterstrich / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Low Line in voller Breite (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Doppelter Low Line (U+2017)"
+        }
       ]
     },
     {
@@ -40,8 +57,14 @@
       "h2": "Der Überstrich: derselbe Strich, nur über dem Text",
       "intro": "Der Überstrich ist das Spiegelbild des Unterstrichs — derselbe waagerechte Strich, nur über statt unter dem Text platziert, weshalb beide oft als Gegensatzpaar verwechselt werden. Der Makron ist der kurze Balken, den viele stattdessen tippen, wenn sie einen Überstrich meinen.",
       "symbols": [
-        { "char": "‾", "label": "Überstrich / spacing Overscore (U+203E)" },
-        { "char": "¯", "label": "Makron (U+00AF)" }
+        {
+          "char": "‾",
+          "label": "Überstrich / spacing Overscore (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Makron (U+00AF)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Unterstrich vs. die Familie aus Bindestrich & Gedankenstrich",
       "intro": "In URLs, Benutzernamen und Dateinamen werden Unterstrich und Bindestrich ständig gegeneinander vertauscht — dabei sitzen sie auf unterschiedlicher Höhe, haben unterschiedliche Codepoints und erfüllen jeweils eine andere Aufgabe.",
       "symbols": [
-        { "char": "-", "label": "Bindestrich / Tastatur-Bindestrich (U+002D)" },
-        { "char": "‐", "label": "Bindestrich, typografisch (U+2010)" },
-        { "char": "–", "label": "Halbgeviertstrich (U+2013)" },
-        { "char": "−", "label": "Minuszeichen (U+2212)" }
+        {
+          "char": "-",
+          "label": "Bindestrich / Tastatur-Bindestrich (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Bindestrich, typografisch (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "Halbgeviertstrich (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Minuszeichen (U+2212)"
+        }
       ]
     }
   ],

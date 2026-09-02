@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/tete-de-mort/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/tete-de-mort/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "La Tête de Mort — ☠",
       "intro": "Le symbole lui-même, sous sa forme texte pleine et sa présentation emoji. C'est le même point de code, U+2620 — seul un sélecteur de variation final le fait basculer entre glyphe noir et blanc et emoji en couleur.",
       "symbols": [
-        { "char": "☠", "label": "Tête de Mort (U+2620)" },
-        { "char": "☠️", "label": "Tête de Mort, Style Emoji (U+2620 U+FE0F)" }
+        {
+          "char": "☠",
+          "label": "Tête de Mort (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Tête de Mort, Style Emoji (U+2620 U+FE0F)"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "☠ vs. l'Emoji Crâne 💀",
       "intro": "La confusion à dissiper : ☠ (tête de mort) et 💀 (crâne simple) sont des caractères Unicode différents. 💀 est celui qu'on colle pour « je suis mort » ou les réactions de fou rire ; ☠ est le symbole de danger et de piraterie. D'ailleurs, l'emoji pavillon pirate 🏴‍☠️ se construit justement en associant un drapeau noir à U+2620 lui-même.",
       "symbols": [
-        { "char": "☠️", "label": "Tête de Mort (U+2620)" },
-        { "char": "💀", "label": "Crâne (U+1F480)" },
-        { "char": "🏴‍☠️", "label": "Pavillon Pirate (U+1F3F4 U+200D U+2620)" }
+        {
+          "char": "☠️",
+          "label": "Tête de Mort (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Crâne (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Pavillon Pirate (U+1F3F4 U+200D U+2620)"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Autres Symboles de Danger & d'Avertissement",
       "intro": "La tête de mort se trouve dans le bloc Miscellaneous Symbols d'Unicode, juste à côté des autres marques d'avertissement avec lesquelles on la regroupe — chacune un point de code distinct avec sa propre signification de danger.",
       "symbols": [
-        { "char": "☠", "label": "Tête de Mort (U+2620)" },
-        { "char": "☢", "label": "Symbole de Radioactivité (U+2622)" },
-        { "char": "☣", "label": "Symbole de Danger Biologique (U+2623)" },
-        { "char": "⚠", "label": "Symbole d'Avertissement (U+26A0)" }
+        {
+          "char": "☠",
+          "label": "Tête de Mort (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Symbole de Radioactivité (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Symbole de Danger Biologique (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Symbole d'Avertissement (U+26A0)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/hazard-warning-symbols/", "title": "Hazard & Warning Symbols", "desc": "Radioactivité, danger biologique, haute tension et les autres pictogrammes d'avertissement à copier dans une même référence (en anglais)." },
-    { "href": "/library/skull-emoji/", "title": "Skull Emoji & Kaomoji", "desc": "L'emoji crâne 💀 et ses cousins en visage-texte — le côté meme-réaction du crâne, réunis dans un même hub (en anglais)." },
-    { "href": "/fr/symbol/symbole-danger-biologique/", "title": "Symbole Danger Biologique (☣)", "desc": "Le signe ☣ danger biologique — un glyphe de danger voisin dans le bloc Miscellaneous Symbols d'Unicode, couvert en détail." }
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Radioactivité, danger biologique, haute tension et les autres pictogrammes d'avertissement à copier dans une même référence (en anglais)."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Skull Emoji & Kaomoji",
+      "desc": "L'emoji crâne 💀 et ses cousins en visage-texte — le côté meme-réaction du crâne, réunis dans un même hub (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-danger-biologique/",
+      "title": "Symbole Danger Biologique (☣)",
+      "desc": "Le signe ☣ danger biologique — un glyphe de danger voisin dans le bloc Miscellaneous Symbols d'Unicode, couvert en détail."
+    }
   ]
 }

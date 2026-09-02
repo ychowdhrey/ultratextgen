@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/interrobang/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/interrobang/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "der-interrobang",
@@ -29,8 +37,14 @@
       "h2": "Der Interrobang — ‽ & ⸘",
       "intro": "Das Zeichen selbst und sein Spiegelbild: der übliche Interrobang, der eine erstaunte Frage abschließt, und die umgekehrte Form, gebaut, um eine solche zu eröffnen.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D): Frage + Ausruf in einer Glyphe" },
-        { "char": "⸘", "label": "Umgekehrter Interrobang (U+2E18): der satzeröffnende Zwilling" }
+        {
+          "char": "‽",
+          "label": "Interrobang (U+203D): Frage + Ausruf in einer Glyphe"
+        },
+        {
+          "char": "⸘",
+          "label": "Umgekehrter Interrobang (U+2E18): der satzeröffnende Zwilling"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Das Fragezeichen und Ausrufezeichen, die er verbindet",
       "intro": "Der Interrobang komprimiert diese beiden alltäglichen Zeichen zu einem. Kommt eine Tastatur nicht damit klar, tippen die meisten stattdessen beide hintereinander — oder greifen zu Unicodes fertigen kombinierten Formen.",
       "symbols": [
-        { "char": "?", "label": "Fragezeichen (U+003F)" },
-        { "char": "!", "label": "Ausrufezeichen (U+0021)" },
-        { "char": "⁉", "label": "Ausrufe-Fragezeichen (U+2049)" },
-        { "char": "⁈", "label": "Frage-Ausrufezeichen (U+2048)" },
-        { "char": "⁇", "label": "Doppeltes Fragezeichen (U+2047)" }
+        {
+          "char": "?",
+          "label": "Fragezeichen (U+003F)"
+        },
+        {
+          "char": "!",
+          "label": "Ausrufezeichen (U+0021)"
+        },
+        {
+          "char": "⁉",
+          "label": "Ausrufe-Fragezeichen (U+2049)"
+        },
+        {
+          "char": "⁈",
+          "label": "Frage-Ausrufezeichen (U+2048)"
+        },
+        {
+          "char": "⁇",
+          "label": "Doppeltes Fragezeichen (U+2047)"
+        }
       ]
     },
     {
@@ -52,10 +81,22 @@
       "h2": "Warum es den umgekehrten Interrobang gibt",
       "intro": "Das Spanische und verwandte Sprachen eröffnen eine Frage mit ¿ und einen Ausruf mit ¡; der umgekehrte Interrobang ⸘ verschmilzt dieses eröffnende Paar und spiegelt am Satzanfang, was ‽ am Satzende leistet. Das umgekehrte Fragezeichen ⸮ ist ein völlig eigenständiges Zeichen — siehe seine eigene Seite.",
       "symbols": [
-        { "char": "¿", "label": "Umgekehrtes Fragezeichen, spanisch (U+00BF)" },
-        { "char": "¡", "label": "Umgekehrtes Ausrufezeichen (U+00A1)" },
-        { "char": "⸘", "label": "Umgekehrter Interrobang (U+2E18)" },
-        { "char": "⸮", "label": "Umgekehrtes Fragezeichen (U+2E2E)" }
+        {
+          "char": "¿",
+          "label": "Umgekehrtes Fragezeichen, spanisch (U+00BF)"
+        },
+        {
+          "char": "¡",
+          "label": "Umgekehrtes Ausrufezeichen (U+00A1)"
+        },
+        {
+          "char": "⸘",
+          "label": "Umgekehrter Interrobang (U+2E18)"
+        },
+        {
+          "char": "⸮",
+          "label": "Umgekehrtes Fragezeichen (U+2E2E)"
+        }
       ]
     }
   ],

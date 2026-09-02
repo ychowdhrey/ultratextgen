@@ -16,11 +16,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/library/simbolos/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/bullet-point-symbols/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-marcadores/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/bullet-point-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-marcadores/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "classic-bullets",
@@ -28,14 +36,38 @@
       "h2": "Caracteres de Marcador Clássicos",
       "intro": "Caracteres de marcador padrão para listas e tópicos.",
       "symbols": [
-        { "char": "•", "label": "Marcador" },
-        { "char": "‣", "label": "Marcador Triangular" },
-        { "char": "◦", "label": "Marcador Branco" },
-        { "char": "⁃", "label": "Marcador Hífen" },
-        { "char": "∙", "label": "Operador Marcador" },
-        { "char": "⊙", "label": "Operador Ponto Circulado" },
-        { "char": "⊚", "label": "Operador Anel Circulado" },
-        { "char": "◉", "label": "Olho de Peixe" }
+        {
+          "char": "•",
+          "label": "Marcador"
+        },
+        {
+          "char": "‣",
+          "label": "Marcador Triangular"
+        },
+        {
+          "char": "◦",
+          "label": "Marcador Branco"
+        },
+        {
+          "char": "⁃",
+          "label": "Marcador Hífen"
+        },
+        {
+          "char": "∙",
+          "label": "Operador Marcador"
+        },
+        {
+          "char": "⊙",
+          "label": "Operador Ponto Circulado"
+        },
+        {
+          "char": "⊚",
+          "label": "Operador Anel Circulado"
+        },
+        {
+          "char": "◉",
+          "label": "Olho de Peixe"
+        }
       ]
     },
     {
@@ -44,14 +76,38 @@
       "h2": "Caracteres de Marcador com Seta",
       "intro": "Marcadores em formato de seta para listas que precisam de direção e destaque.",
       "symbols": [
-        { "char": "▸", "label": "Ponteiro Preto Apontando à Direita" },
-        { "char": "►", "label": "Triângulo Preto Apontando à Direita" },
-        { "char": "→", "label": "Seta para a Direita" },
-        { "char": "➤", "label": "Ponta de Seta Preta à Direita" },
-        { "char": "➜", "label": "Seta Grossa de Ponta Arredondada à Direita" },
-        { "char": "➔", "label": "Seta Grossa de Cabeça Larga à Direita" },
-        { "char": "▶", "label": "Triângulo Preto Apontando à Direita" },
-        { "char": "▷", "label": "Triângulo Branco Apontando à Direita" }
+        {
+          "char": "▸",
+          "label": "Ponteiro Preto Apontando à Direita"
+        },
+        {
+          "char": "►",
+          "label": "Triângulo Preto Apontando à Direita"
+        },
+        {
+          "char": "→",
+          "label": "Seta para a Direita"
+        },
+        {
+          "char": "➤",
+          "label": "Ponta de Seta Preta à Direita"
+        },
+        {
+          "char": "➜",
+          "label": "Seta Grossa de Ponta Arredondada à Direita"
+        },
+        {
+          "char": "➔",
+          "label": "Seta Grossa de Cabeça Larga à Direita"
+        },
+        {
+          "char": "▶",
+          "label": "Triângulo Preto Apontando à Direita"
+        },
+        {
+          "char": "▷",
+          "label": "Triângulo Branco Apontando à Direita"
+        }
       ]
     },
     {
@@ -60,12 +116,30 @@
       "h2": "Marcadores de Confirmação e Caixa",
       "intro": "Checkmarks e caixas de seleção para listas de tarefas e comparações.",
       "symbols": [
-        { "char": "✓", "label": "Sinal de Confirmação" },
-        { "char": "✔", "label": "Sinal de Confirmação Grosso" },
-        { "char": "☑", "label": "Caixa de Votação com Confirmação" },
-        { "char": "✅", "label": "Botão de Confirmação" },
-        { "char": "☐", "label": "Caixa de Votação" },
-        { "char": "☒", "label": "Caixa de Votação com X" }
+        {
+          "char": "✓",
+          "label": "Sinal de Confirmação"
+        },
+        {
+          "char": "✔",
+          "label": "Sinal de Confirmação Grosso"
+        },
+        {
+          "char": "☑",
+          "label": "Caixa de Votação com Confirmação"
+        },
+        {
+          "char": "✅",
+          "label": "Botão de Confirmação"
+        },
+        {
+          "char": "☐",
+          "label": "Caixa de Votação"
+        },
+        {
+          "char": "☒",
+          "label": "Caixa de Votação com X"
+        }
       ]
     },
     {
@@ -74,14 +148,38 @@
       "h2": "Marcadores de Estrela e Losango",
       "intro": "Marcadores decorativos de estrela e losango para listas com mais estilo.",
       "symbols": [
-        { "char": "★", "label": "Estrela Preta" },
-        { "char": "◆", "label": "Losango Preto" },
-        { "char": "✦", "label": "Estrela Preta de Quatro Pontas" },
-        { "char": "◇", "label": "Losango Branco" },
-        { "char": "◈", "label": "Losango Branco Contendo Losango Preto" },
-        { "char": "❖", "label": "Losango Preto Menos X Branco" },
-        { "char": "✧", "label": "Estrela Branca de Quatro Pontas" },
-        { "char": "✶", "label": "Estrela Preta de Seis Pontas" }
+        {
+          "char": "★",
+          "label": "Estrela Preta"
+        },
+        {
+          "char": "◆",
+          "label": "Losango Preto"
+        },
+        {
+          "char": "✦",
+          "label": "Estrela Preta de Quatro Pontas"
+        },
+        {
+          "char": "◇",
+          "label": "Losango Branco"
+        },
+        {
+          "char": "◈",
+          "label": "Losango Branco Contendo Losango Preto"
+        },
+        {
+          "char": "❖",
+          "label": "Losango Preto Menos X Branco"
+        },
+        {
+          "char": "✧",
+          "label": "Estrela Branca de Quatro Pontas"
+        },
+        {
+          "char": "✶",
+          "label": "Estrela Preta de Seis Pontas"
+        }
       ]
     },
     {
@@ -90,14 +188,38 @@
       "h2": "Marcadores Decorativos de Flor e Ornamento",
       "intro": "Marcadores florais e ornamentais para listas criativas e com estilo aesthetic.",
       "symbols": [
-        { "char": "❀", "label": "Florzinha Branca" },
-        { "char": "❁", "label": "Florzinha Preta de Oito Pétalas Contornada" },
-        { "char": "✿", "label": "Florzinha Preta" },
-        { "char": "⚘", "label": "Flor" },
-        { "char": "✾", "label": "Florzinha Preta e Branca de Seis Pétalas" },
-        { "char": "❃", "label": "Florzinha Grossa" },
-        { "char": "✻", "label": "Asterisco em Formato de Gota" },
-        { "char": "❋", "label": "Florzinha Grossa de Oito Pétalas" }
+        {
+          "char": "❀",
+          "label": "Florzinha Branca"
+        },
+        {
+          "char": "❁",
+          "label": "Florzinha Preta de Oito Pétalas Contornada"
+        },
+        {
+          "char": "✿",
+          "label": "Florzinha Preta"
+        },
+        {
+          "char": "⚘",
+          "label": "Flor"
+        },
+        {
+          "char": "✾",
+          "label": "Florzinha Preta e Branca de Seis Pétalas"
+        },
+        {
+          "char": "❃",
+          "label": "Florzinha Grossa"
+        },
+        {
+          "char": "✻",
+          "label": "Asterisco em Formato de Gota"
+        },
+        {
+          "char": "❋",
+          "label": "Florzinha Grossa de Oito Pétalas"
+        }
       ]
     },
     {
@@ -106,16 +228,46 @@
       "h2": "Marcadores de Número Circulado",
       "intro": "Números circulados para listas numeradas que mantêm a formatação em ambientes de texto simples.",
       "symbols": [
-        { "char": "①", "label": "Dígito Circulado Um" },
-        { "char": "②", "label": "Dígito Circulado Dois" },
-        { "char": "③", "label": "Dígito Circulado Três" },
-        { "char": "④", "label": "Dígito Circulado Quatro" },
-        { "char": "⑤", "label": "Dígito Circulado Cinco" },
-        { "char": "⑥", "label": "Dígito Circulado Seis" },
-        { "char": "⑦", "label": "Dígito Circulado Sete" },
-        { "char": "⑧", "label": "Dígito Circulado Oito" },
-        { "char": "⑨", "label": "Dígito Circulado Nove" },
-        { "char": "⑩", "label": "Número Circulado Dez" }
+        {
+          "char": "①",
+          "label": "Dígito Circulado Um"
+        },
+        {
+          "char": "②",
+          "label": "Dígito Circulado Dois"
+        },
+        {
+          "char": "③",
+          "label": "Dígito Circulado Três"
+        },
+        {
+          "char": "④",
+          "label": "Dígito Circulado Quatro"
+        },
+        {
+          "char": "⑤",
+          "label": "Dígito Circulado Cinco"
+        },
+        {
+          "char": "⑥",
+          "label": "Dígito Circulado Seis"
+        },
+        {
+          "char": "⑦",
+          "label": "Dígito Circulado Sete"
+        },
+        {
+          "char": "⑧",
+          "label": "Dígito Circulado Oito"
+        },
+        {
+          "char": "⑨",
+          "label": "Dígito Circulado Nove"
+        },
+        {
+          "char": "⑩",
+          "label": "Número Circulado Dez"
+        }
       ]
     }
   ],

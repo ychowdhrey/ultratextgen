@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/star-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/star-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/star-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/star-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Ngôi Sao",
       "intro": "Ngôi sao năm cánh dạng đặc và dạng viền dùng cho đánh giá và mục yêu thích.",
       "symbols": [
-        { "char": "★", "label": "Sao Đen (U+2605)" },
-        { "char": "☆", "label": "Sao Trắng / Viền (U+2606)" }
+        {
+          "char": "★",
+          "label": "Sao Đen (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Sao Trắng / Viền (U+2606)"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Sao Trang Trí & Nhiều Cánh",
       "intro": "Các glyph sao trang trí từ khối Dingbats dùng cho tiểu sử và chú thích.",
       "symbols": [
-        { "char": "✦", "label": "Sao Bốn Cánh Đen (U+2726)" },
-        { "char": "✧", "label": "Sao Bốn Cánh Trắng (U+2727)" },
-        { "char": "✩", "label": "Sao Trắng Viền Nhấn (U+2729)" },
-        { "char": "✪", "label": "Sao Trắng Trong Vòng Tròn (U+272A)" },
-        { "char": "✭", "label": "Sao Trắng Tâm Đen (U+272D)" },
-        { "char": "✴", "label": "Sao Đen Tám Cánh (U+2734)" }
+        {
+          "char": "✦",
+          "label": "Sao Bốn Cánh Đen (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "Sao Bốn Cánh Trắng (U+2727)"
+        },
+        {
+          "char": "✩",
+          "label": "Sao Trắng Viền Nhấn (U+2729)"
+        },
+        {
+          "char": "✪",
+          "label": "Sao Trắng Trong Vòng Tròn (U+272A)"
+        },
+        {
+          "char": "✭",
+          "label": "Sao Trắng Tâm Đen (U+272D)"
+        },
+        {
+          "char": "✴",
+          "label": "Sao Đen Tám Cánh (U+2734)"
+        }
       ]
     },
     {
@@ -52,18 +85,44 @@
       "h2": "Emoji Sao & Các Ký Hiệu Dễ Nhầm Với ★",
       "intro": "Emoji sao có màu và các ký hiệu người ta hay dùng nhầm thay cho ★.",
       "symbols": [
-        { "char": "⭐", "label": "Emoji Sao (U+2B50)" },
-        { "char": "🌟", "label": "Sao Sáng Rực" },
-        { "char": "✨", "label": "Lấp Lánh" },
-        { "char": "*", "label": "Dấu Hoa Thị (U+002A): Không Phải Ngôi Sao" },
-        { "char": "✱", "label": "Dấu Hoa Thị Đậm (U+2731)" }
+        {
+          "char": "⭐",
+          "label": "Emoji Sao (U+2B50)"
+        },
+        {
+          "char": "🌟",
+          "label": "Sao Sáng Rực"
+        },
+        {
+          "char": "✨",
+          "label": "Lấp Lánh"
+        },
+        {
+          "char": "*",
+          "label": "Dấu Hoa Thị (U+002A): Không Phải Ngôi Sao"
+        },
+        {
+          "char": "✱",
+          "label": "Dấu Hoa Thị Đậm (U+2731)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/star-symbols/", "title": "Ký Hiệu Ngôi Sao", "desc": "Mọi ký tự sao, lấp lánh và sao đánh giá trong một trang tổng hợp." },
-    { "href": "/vi/symbol/heart-symbol/", "title": "Ký Hiệu Trái Tim (♥)", "desc": "Chất bài trái tim đã trở thành dấu hiệu của tình yêu." },
-    { "href": "/library/aesthetic-symbols/", "title": "Ký Hiệu Thẩm Mỹ", "desc": "Sao, lấp lánh và các dấu trang trí cho tiểu sử và tên người dùng." }
+    {
+      "href": "/library/star-symbols/",
+      "title": "Ký Hiệu Ngôi Sao",
+      "desc": "Mọi ký tự sao, lấp lánh và sao đánh giá trong một trang tổng hợp."
+    },
+    {
+      "href": "/vi/symbol/heart-symbol/",
+      "title": "Ký Hiệu Trái Tim (♥)",
+      "desc": "Chất bài trái tim đã trở thành dấu hiệu của tình yêu."
+    },
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Ký Hiệu Thẩm Mỹ",
+      "desc": "Sao, lấp lánh và các dấu trang trí cho tiểu sử và tên người dùng."
+    }
   ]
 }

@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/caveira-com-ossos-cruzados/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/caveira-com-ossos-cruzados/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "skull-and-crossbones",
@@ -29,8 +37,14 @@
       "h2": "A Caveira com Ossos Cruzados — ☠",
       "intro": "O símbolo em si, tanto na forma de texto simples quanto na apresentação emoji. É o mesmo código, U+2620 — um seletor de variação no final é só o que muda entre um glifo preto e branco e um emoji colorido.",
       "symbols": [
-        { "char": "☠", "label": "Caveira com Ossos Cruzados (U+2620)" },
-        { "char": "☠️", "label": "Caveira com Ossos Cruzados, Estilo Emoji (U+2620 U+FE0F)" }
+        {
+          "char": "☠",
+          "label": "Caveira com Ossos Cruzados (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Caveira com Ossos Cruzados, Estilo Emoji (U+2620 U+FE0F)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "☠ vs. o Emoji de Caveira 💀",
       "intro": "A confusão que vale a pena esclarecer: ☠ (caveira com ossos cruzados) e 💀 (caveira simples) são caracteres Unicode diferentes. 💀 é o que as pessoas colam para reações de «estou morto» ou de rir demais; ☠ é o símbolo de risco e pirata. Aliás, o próprio emoji de bandeira pirata 🏴‍☠️ é construído unindo uma bandeira preta ao próprio U+2620.",
       "symbols": [
-        { "char": "☠️", "label": "Caveira com Ossos Cruzados (U+2620)" },
-        { "char": "💀", "label": "Caveira (U+1F480)" },
-        { "char": "🏴‍☠️", "label": "Bandeira Pirata (U+1F3F4 U+200D U+2620)" }
+        {
+          "char": "☠️",
+          "label": "Caveira com Ossos Cruzados (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Caveira (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Bandeira Pirata (U+1F3F4 U+200D U+2620)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Símbolos de Risco e Alerta Relacionados",
       "intro": "A caveira com ossos cruzados fica no bloco Miscellaneous Symbols do Unicode bem ao lado das outras marcas de alerta com que costuma ser agrupada — cada uma um código próprio, com seu próprio significado de risco.",
       "symbols": [
-        { "char": "☠", "label": "Caveira com Ossos Cruzados (U+2620)" },
-        { "char": "☢", "label": "Símbolo Radioativo (U+2622)" },
-        { "char": "☣", "label": "Símbolo de Risco Biológico (U+2623)" },
-        { "char": "⚠", "label": "Sinal de Alerta (U+26A0)" }
+        {
+          "char": "☠",
+          "label": "Caveira com Ossos Cruzados (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Símbolo Radioativo (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Símbolo de Risco Biológico (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Sinal de Alerta (U+26A0)"
+        }
       ]
     }
   ],

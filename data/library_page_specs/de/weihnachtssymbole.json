@@ -16,12 +16,23 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/christmas-symbols/" },
-    { "lang": "no", "href": "https://ultratextgen.com/no/library/julesymboler/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/weihnachtssymbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/christmas-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/christmas-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/julesymboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/weihnachtssymbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/christmas-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "trees-stars",
@@ -29,14 +40,38 @@
       "h2": "Weihnachtsbäume & Sterne",
       "intro": "Der Baum und der Stern obendrauf — die beiden Zeichen, die am schnellsten Weihnachten sagen.",
       "symbols": [
-        { "char": "🎄", "label": "Weihnachtsbaum" },
-        { "char": "🌲", "label": "Nadelbaum" },
-        { "char": "⭐", "label": "Stern" },
-        { "char": "🌟", "label": "Leuchtender Stern" },
-        { "char": "✨", "label": "Funkeln" },
-        { "char": "🌠", "label": "Sternschnuppe" },
-        { "char": "✦", "label": "Vierzackiger Stern" },
-        { "char": "🎀", "label": "Schleife" }
+        {
+          "char": "🎄",
+          "label": "Weihnachtsbaum"
+        },
+        {
+          "char": "🌲",
+          "label": "Nadelbaum"
+        },
+        {
+          "char": "⭐",
+          "label": "Stern"
+        },
+        {
+          "char": "🌟",
+          "label": "Leuchtender Stern"
+        },
+        {
+          "char": "✨",
+          "label": "Funkeln"
+        },
+        {
+          "char": "🌠",
+          "label": "Sternschnuppe"
+        },
+        {
+          "char": "✦",
+          "label": "Vierzackiger Stern"
+        },
+        {
+          "char": "🎀",
+          "label": "Schleife"
+        }
       ]
     },
     {
@@ -45,15 +80,42 @@
       "h2": "Schneeflocken & Winterwetter",
       "intro": "Unicode hat drei verschiedene Schneeflocken-Glyphen sowie Schneemänner mit und ohne fallenden Schnee.",
       "symbols": [
-        { "char": "❄", "label": "Schneeflocke" },
-        { "char": "❅", "label": "Dreiblättrige Schneeflocke" },
-        { "char": "❆", "label": "Schneeflocke mit fetten Zacken" },
-        { "char": "☃", "label": "Schneemann" },
-        { "char": "⛄", "label": "Schneemann ohne Schnee" },
-        { "char": "🌨", "label": "Wolke mit Schnee" },
-        { "char": "🧊", "label": "Eis" },
-        { "char": "🧤", "label": "Handschuhe" },
-        { "char": "🧣", "label": "Schal" }
+        {
+          "char": "❄",
+          "label": "Schneeflocke"
+        },
+        {
+          "char": "❅",
+          "label": "Dreiblättrige Schneeflocke"
+        },
+        {
+          "char": "❆",
+          "label": "Schneeflocke mit fetten Zacken"
+        },
+        {
+          "char": "☃",
+          "label": "Schneemann"
+        },
+        {
+          "char": "⛄",
+          "label": "Schneemann ohne Schnee"
+        },
+        {
+          "char": "🌨",
+          "label": "Wolke mit Schnee"
+        },
+        {
+          "char": "🧊",
+          "label": "Eis"
+        },
+        {
+          "char": "🧤",
+          "label": "Handschuhe"
+        },
+        {
+          "char": "🧣",
+          "label": "Schal"
+        }
       ]
     },
     {
@@ -62,14 +124,38 @@
       "h2": "Weihnachtsmann, Rentier & Geschenke",
       "intro": "Vom Schlitten bis zum Strumpf — alles für Geschenke-Posts und Wunschlisten.",
       "symbols": [
-        { "char": "🎅", "label": "Weihnachtsmann" },
-        { "char": "🤶", "label": "Weihnachtsfrau" },
-        { "char": "🦌", "label": "Hirsch" },
-        { "char": "🛷", "label": "Schlitten" },
-        { "char": "🎁", "label": "Verpacktes Geschenk" },
-        { "char": "🔔", "label": "Glocke" },
-        { "char": "🕯", "label": "Kerze" },
-        { "char": "🧦", "label": "Socken" }
+        {
+          "char": "🎅",
+          "label": "Weihnachtsmann"
+        },
+        {
+          "char": "🤶",
+          "label": "Weihnachtsfrau"
+        },
+        {
+          "char": "🦌",
+          "label": "Hirsch"
+        },
+        {
+          "char": "🛷",
+          "label": "Schlitten"
+        },
+        {
+          "char": "🎁",
+          "label": "Verpacktes Geschenk"
+        },
+        {
+          "char": "🔔",
+          "label": "Glocke"
+        },
+        {
+          "char": "🕯",
+          "label": "Kerze"
+        },
+        {
+          "char": "🧦",
+          "label": "Socken"
+        }
       ]
     },
     {
@@ -78,13 +164,34 @@
       "h2": "Festtags-Leckereien & Getränke",
       "intro": "Kekse für den Weihnachtsmann, Süßigkeiten und warme Getränke für gemütliche Feiertags-Captions.",
       "symbols": [
-        { "char": "🍪", "label": "Keks" },
-        { "char": "🥛", "label": "Glas Milch" },
-        { "char": "🍬", "label": "Bonbon" },
-        { "char": "🍫", "label": "Schokoladentafel" },
-        { "char": "☕", "label": "Heißgetränk" },
-        { "char": "🍷", "label": "Weinglas" },
-        { "char": "🍊", "label": "Mandarine" }
+        {
+          "char": "🍪",
+          "label": "Keks"
+        },
+        {
+          "char": "🥛",
+          "label": "Glas Milch"
+        },
+        {
+          "char": "🍬",
+          "label": "Bonbon"
+        },
+        {
+          "char": "🍫",
+          "label": "Schokoladentafel"
+        },
+        {
+          "char": "☕",
+          "label": "Heißgetränk"
+        },
+        {
+          "char": "🍷",
+          "label": "Weinglas"
+        },
+        {
+          "char": "🍊",
+          "label": "Mandarine"
+        }
       ]
     },
     {
@@ -93,11 +200,26 @@
       "h2": "Engel & Krippe",
       "intro": "Zeichen für die religiöse Seite der Feiertage — Engel, Kirchen und Kerzenandachten.",
       "symbols": [
-        { "char": "👼", "label": "Engelchen" },
-        { "char": "⛪", "label": "Kirche" },
-        { "char": "✝", "label": "Lateinisches Kreuz" },
-        { "char": "🙏", "label": "Gefaltete Hände" },
-        { "char": "🕊", "label": "Taube" }
+        {
+          "char": "👼",
+          "label": "Engelchen"
+        },
+        {
+          "char": "⛪",
+          "label": "Kirche"
+        },
+        {
+          "char": "✝",
+          "label": "Lateinisches Kreuz"
+        },
+        {
+          "char": "🙏",
+          "label": "Gefaltete Hände"
+        },
+        {
+          "char": "🕊",
+          "label": "Taube"
+        }
       ]
     },
     {
@@ -106,12 +228,30 @@
       "h2": "Weihnachts-Grußkombos",
       "intro": "Fertige festliche Grüße und Bio-Dekorationen — jeder Button kopiert die ganze Kombo mit einem Klick.",
       "symbols": [
-        { "char": "🎄✨ Frohe Weihnachten ✨🎄", "label": "Gruß: Frohe Weihnachten" },
-        { "char": "❄️☃️❄️ Lass es schneien ❄️☃️❄️", "label": "Gruß: Lass es schneien" },
-        { "char": "🎅🎁🦌 Ho Ho Ho 🦌🎁🎅", "label": "Gruß: Ho Ho Ho" },
-        { "char": "•❅──────✧❅✦❅✧──────❅•", "label": "Schneeflocken-Trenner" },
-        { "char": "🔔✨🎄✨🔔", "label": "Festliche Bio-Deko" },
-        { "char": "❄ ❅ ❆ ❅ ❄", "label": "Schneeflocken-Kette" }
+        {
+          "char": "🎄✨ Frohe Weihnachten ✨🎄",
+          "label": "Gruß: Frohe Weihnachten"
+        },
+        {
+          "char": "❄️☃️❄️ Lass es schneien ❄️☃️❄️",
+          "label": "Gruß: Lass es schneien"
+        },
+        {
+          "char": "🎅🎁🦌 Ho Ho Ho 🦌🎁🎅",
+          "label": "Gruß: Ho Ho Ho"
+        },
+        {
+          "char": "•❅──────✧❅✦❅✧──────❅•",
+          "label": "Schneeflocken-Trenner"
+        },
+        {
+          "char": "🔔✨🎄✨🔔",
+          "label": "Festliche Bio-Deko"
+        },
+        {
+          "char": "❄ ❅ ❆ ❅ ❄",
+          "label": "Schneeflocken-Kette"
+        }
       ]
     }
   ],

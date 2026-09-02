@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dollar-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/dollar-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dollar-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dollar-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/dollar-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dollar-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Đô La",
       "intro": "Ký hiệu đô la, sẵn sàng để dán.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La (U+0024)" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La (U+0024)"
+        }
       ]
     },
     {
@@ -37,11 +49,26 @@
       "h2": "Ký Hiệu Dễ Nhầm Với Đô La",
       "intro": "Các ký hiệu tiền tệ và biến thể khác đôi khi bị nhầm lẫn với ký hiệu đô la tiêu chuẩn.",
       "symbols": [
-        { "char": "¢", "label": "Ký Hiệu Cent (U+00A2): một phần trăm của đô la" },
-        { "char": "¤", "label": "Ký Hiệu Tiền Tệ Chung (U+00A4): ký hiệu giữ chỗ, không đại diện cho đồng tiền cụ thể nào" },
-        { "char": "₱", "label": "Ký Hiệu Peso Philippines (U+20B1): đồng tiền hiện đại bắt nguồn từ chính đồng «peso» đã đặt tên cho $" },
-        { "char": "＄", "label": "Ký Hiệu Đô La Chiều Rộng Đầy Đủ (U+FF04): dạng rộng dùng trong dàn trang chữ Nhật/Trung/Hàn" },
-        { "char": "💲", "label": "Emoji Ký Hiệu Đô La Đậm (U+1F4B2): một emoji đầy màu sắc, không phải ký tự $ dạng văn bản thuần" }
+        {
+          "char": "¢",
+          "label": "Ký Hiệu Cent (U+00A2): một phần trăm của đô la"
+        },
+        {
+          "char": "¤",
+          "label": "Ký Hiệu Tiền Tệ Chung (U+00A4): ký hiệu giữ chỗ, không đại diện cho đồng tiền cụ thể nào"
+        },
+        {
+          "char": "₱",
+          "label": "Ký Hiệu Peso Philippines (U+20B1): đồng tiền hiện đại bắt nguồn từ chính đồng «peso» đã đặt tên cho $"
+        },
+        {
+          "char": "＄",
+          "label": "Ký Hiệu Đô La Chiều Rộng Đầy Đủ (U+FF04): dạng rộng dùng trong dàn trang chữ Nhật/Trung/Hàn"
+        },
+        {
+          "char": "💲",
+          "label": "Emoji Ký Hiệu Đô La Đậm (U+1F4B2): một emoji đầy màu sắc, không phải ký tự $ dạng văn bản thuần"
+        }
       ]
     },
     {
@@ -50,18 +77,45 @@
       "h2": "Các Ký Hiệu Tiền Tệ Lớn Khác",
       "intro": "Những ký hiệu tiền tệ khác thường xuất hiện cùng $ trong nội dung tài chính.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
-        { "char": "¥", "label": "Ký Hiệu Yên" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" }
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh"
+        },
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên"
+        },
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
-    { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
-    { "href": "/vi/symbol/cent-sign/", "title": "Ký Hiệu Cent (¢)", "desc": "Ký hiệu tiền tệ phổ biến duy nhất không có phím riêng trên bàn phím." },
-    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Mọi ký hiệu tiền tệ thế giới, sắp xếp theo khu vực." }
+    {
+      "href": "/vi/symbol/euro-sign/",
+      "title": "Ký Hiệu Euro (€)",
+      "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996."
+    },
+    {
+      "href": "/vi/symbol/pound-sign/",
+      "title": "Ký Hiệu Bảng Anh (£)",
+      "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra."
+    },
+    {
+      "href": "/vi/symbol/cent-sign/",
+      "title": "Ký Hiệu Cent (¢)",
+      "desc": "Ký hiệu tiền tệ phổ biến duy nhất không có phím riêng trên bàn phím."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Tất Cả Ký Hiệu Tiền Tệ",
+      "desc": "Mọi ký hiệu tiền tệ thế giới, sắp xếp theo khu vực."
+    }
   ]
 }

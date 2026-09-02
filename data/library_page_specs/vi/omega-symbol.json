@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/omega-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/omega-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omega-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omega-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/omega-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omega-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Omega — Viết Hoa & Viết Thường",
       "intro": "Chính chữ cái Hy Lạp, ở cả hai dạng viết.",
       "symbols": [
-        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
-        { "char": "ω", "label": "Chữ Thường Hy Lạp Omega" }
+        {
+          "char": "Ω",
+          "label": "Chữ Hoa Hy Lạp Omega"
+        },
+        {
+          "char": "ω",
+          "label": "Chữ Thường Hy Lạp Omega"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Nhầm Lẫn Với Ký Hiệu Ohm",
       "intro": "Hiển thị giống hệt chữ omega hoa ở trên, nhưng lại được mã hóa như một ký tự riêng biệt — cùng với đơn vị điện học đặt tên bằng cách lật ngược nó.",
       "symbols": [
-        { "char": "Ω", "label": "Ký Hiệu Ohm (Điện Trở, U+2126): Trông Giống Omega, Mã Điểm Khác" },
-        { "char": "℧", "label": "Ký Hiệu Mho (Độ Dẫn Điện): «Ohm» Viết Ngược, Lật Lộn Ngược" }
+        {
+          "char": "Ω",
+          "label": "Ký Hiệu Ohm (Điện Trở, U+2126): Trông Giống Omega, Mã Điểm Khác"
+        },
+        {
+          "char": "℧",
+          "label": "Ký Hiệu Mho (Độ Dẫn Điện): «Ohm» Viết Ngược, Lật Lộn Ngược"
+        }
       ]
     },
     {
@@ -48,17 +69,40 @@
       "h2": "Alpha, Omega & Chữ Cái Hy Lạp Liên Quan",
       "intro": "Alpha mở đầu bảng chữ cái Hy Lạp theo cách omega khép lại nó — cùng hai chữ cái Hy Lạp khác được tìm kiếm nhiều.",
       "symbols": [
-        { "char": "Α", "label": "Chữ Hoa Hy Lạp Alpha" },
-        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha" },
-        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" },
-        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" }
+        {
+          "char": "Α",
+          "label": "Chữ Hoa Hy Lạp Alpha"
+        },
+        {
+          "char": "α",
+          "label": "Chữ Thường Hy Lạp Alpha"
+        },
+        {
+          "char": "Δ",
+          "label": "Chữ Hoa Hy Lạp Delta"
+        },
+        {
+          "char": "Σ",
+          "label": "Chữ Hoa Hy Lạp Sigma"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học." },
-    { "href": "/vi/symbol/sigma-symbol/", "title": "Ký Hiệu Sigma", "desc": "Chữ cái đứng sau trào lưu «sigma male» — và lý do 🗿 lại được dán nhiều hơn chính nó." },
-    { "href": "/vi/symbol/micro-sign/", "title": "Ký Hiệu Micro", "desc": "Đúng kiểu nhầm lẫn y hệt ohm với omega — trông giống hệt chữ Hy Lạp mu trên màn hình, nhưng lại là một ký tự khác bên dưới." }
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Ký Hiệu Chữ Cái Hy Lạp",
+      "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học."
+    },
+    {
+      "href": "/vi/symbol/sigma-symbol/",
+      "title": "Ký Hiệu Sigma",
+      "desc": "Chữ cái đứng sau trào lưu «sigma male» — và lý do 🗿 lại được dán nhiều hơn chính nó."
+    },
+    {
+      "href": "/vi/symbol/micro-sign/",
+      "title": "Ký Hiệu Micro",
+      "desc": "Đúng kiểu nhầm lẫn y hệt ohm với omega — trông giống hệt chữ Hy Lạp mu trên màn hình, nhưng lại là một ký tự khác bên dưới."
+    }
   ]
 }

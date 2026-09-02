@@ -16,11 +16,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/library/simbolos/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/cross-x-symbols/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-cruz-e-x/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/cross-x-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/cross-x-symbols/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-cruz-e-x/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/cross-x-symbols/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "math-x",
@@ -28,13 +36,34 @@
       "h2": "Multiplicação e X Matemático",
       "intro": "Símbolos em formato de cruz usados em notação matemática e científica.",
       "symbols": [
-        { "char": "×", "label": "Sinal de Multiplicação" },
-        { "char": "✕", "label": "X de Multiplicação" },
-        { "char": "✖", "label": "X de Multiplicação Grosso" },
-        { "char": "⨯", "label": "Produto Vetorial ou Cruzado" },
-        { "char": "⋇", "label": "Divisão Vezes" },
-        { "char": "⨰", "label": "Sinal de Multiplicação com Ponto Acima" },
-        { "char": "✖️", "label": "X de Multiplicação Grosso" }
+        {
+          "char": "×",
+          "label": "Sinal de Multiplicação"
+        },
+        {
+          "char": "✕",
+          "label": "X de Multiplicação"
+        },
+        {
+          "char": "✖",
+          "label": "X de Multiplicação Grosso"
+        },
+        {
+          "char": "⨯",
+          "label": "Produto Vetorial ou Cruzado"
+        },
+        {
+          "char": "⋇",
+          "label": "Divisão Vezes"
+        },
+        {
+          "char": "⨰",
+          "label": "Sinal de Multiplicação com Ponto Acima"
+        },
+        {
+          "char": "✖️",
+          "label": "X de Multiplicação Grosso"
+        }
       ]
     },
     {
@@ -43,12 +72,30 @@
       "h2": "Caracteres de Votação e Marca X",
       "intro": "Marcas de X usadas em formulários, checklists e interfaces — indicando cancelamento, exclusão ou \"não\".",
       "symbols": [
-        { "char": "✗", "label": "X de Votação" },
-        { "char": "✘", "label": "X de Votação Grosso" },
-        { "char": "❌", "label": "Emoji de Marca de X" },
-        { "char": "❎", "label": "Emoji de Botão de Marca X" },
-        { "char": "☓", "label": "Aspa (Saltire)" },
-        { "char": "𐄂", "label": "Marca de Confirmação Egeia" }
+        {
+          "char": "✗",
+          "label": "X de Votação"
+        },
+        {
+          "char": "✘",
+          "label": "X de Votação Grosso"
+        },
+        {
+          "char": "❌",
+          "label": "Emoji de Marca de X"
+        },
+        {
+          "char": "❎",
+          "label": "Emoji de Botão de Marca X"
+        },
+        {
+          "char": "☓",
+          "label": "Aspa (Saltire)"
+        },
+        {
+          "char": "𐄂",
+          "label": "Marca de Confirmação Egeia"
+        }
       ]
     },
     {
@@ -57,13 +104,34 @@
       "h2": "Caracteres de Cruz Religiosa",
       "intro": "Símbolos de cruz usados em contextos religiosos e espirituais.",
       "symbols": [
-        { "char": "✝", "label": "Cruz Latina" },
-        { "char": "✞", "label": "Cruz Latina Branca Sombreada" },
-        { "char": "✟", "label": "Cruz Latina Contornada" },
-        { "char": "✠", "label": "Cruz de Malta" },
-        { "char": "☦", "label": "Cruz Ortodoxa" },
-        { "char": "☧", "label": "Cristograma (Chi Rho)" },
-        { "char": "☨", "label": "Cruz de Lorena" }
+        {
+          "char": "✝",
+          "label": "Cruz Latina"
+        },
+        {
+          "char": "✞",
+          "label": "Cruz Latina Branca Sombreada"
+        },
+        {
+          "char": "✟",
+          "label": "Cruz Latina Contornada"
+        },
+        {
+          "char": "✠",
+          "label": "Cruz de Malta"
+        },
+        {
+          "char": "☦",
+          "label": "Cruz Ortodoxa"
+        },
+        {
+          "char": "☧",
+          "label": "Cristograma (Chi Rho)"
+        },
+        {
+          "char": "☨",
+          "label": "Cruz de Lorena"
+        }
       ]
     },
     {
@@ -72,15 +140,42 @@
       "h2": "Caracteres de Cruz Decorativa e Grossa",
       "intro": "Formatos de cruz em negrito, decorativos e estilizados para destaque e design visual.",
       "symbols": [
-        { "char": "✙", "label": "Cruz Grega Contornada" },
-        { "char": "✚", "label": "Cruz Grega Grossa" },
-        { "char": "✛", "label": "Cruz de Centro Aberto" },
-        { "char": "✜", "label": "Cruz de Centro Aberto Grossa" },
-        { "char": "✡", "label": "Estrela de Davi" },
-        { "char": "✢", "label": "Asterisco de Quatro Raios em Gota" },
-        { "char": "✣", "label": "Asterisco de Quatro Raios em Balão" },
-        { "char": "✤", "label": "Asterisco de Quatro Raios em Balão Grosso" },
-        { "char": "✥", "label": "Asterisco de Quatro Raios em Trevo" }
+        {
+          "char": "✙",
+          "label": "Cruz Grega Contornada"
+        },
+        {
+          "char": "✚",
+          "label": "Cruz Grega Grossa"
+        },
+        {
+          "char": "✛",
+          "label": "Cruz de Centro Aberto"
+        },
+        {
+          "char": "✜",
+          "label": "Cruz de Centro Aberto Grossa"
+        },
+        {
+          "char": "✡",
+          "label": "Estrela de Davi"
+        },
+        {
+          "char": "✢",
+          "label": "Asterisco de Quatro Raios em Gota"
+        },
+        {
+          "char": "✣",
+          "label": "Asterisco de Quatro Raios em Balão"
+        },
+        {
+          "char": "✤",
+          "label": "Asterisco de Quatro Raios em Balão Grosso"
+        },
+        {
+          "char": "✥",
+          "label": "Asterisco de Quatro Raios em Trevo"
+        }
       ]
     },
     {
@@ -89,12 +184,30 @@
       "h2": "Caracteres de Adaga",
       "intro": "Símbolos tipográficos de adaga usados em notas de rodapé, registros e destaque especial.",
       "symbols": [
-        { "char": "†", "label": "Adaga" },
-        { "char": "‡", "label": "Adaga Dupla" },
-        { "char": "⸵", "label": "Adaga Invertida" },
-        { "char": "⸸", "label": "Marcador de Interpolação Elevado" },
-        { "char": "🗡", "label": "Emoji de Adaga" },
-        { "char": "⚔", "label": "Espadas Cruzadas" }
+        {
+          "char": "†",
+          "label": "Adaga"
+        },
+        {
+          "char": "‡",
+          "label": "Adaga Dupla"
+        },
+        {
+          "char": "⸵",
+          "label": "Adaga Invertida"
+        },
+        {
+          "char": "⸸",
+          "label": "Marcador de Interpolação Elevado"
+        },
+        {
+          "char": "🗡",
+          "label": "Emoji de Adaga"
+        },
+        {
+          "char": "⚔",
+          "label": "Espadas Cruzadas"
+        }
       ]
     },
     {
@@ -103,10 +216,22 @@
       "h2": "Caracteres Especiais de Cruz",
       "intro": "Outros caracteres notáveis relacionados a cruz de vários blocos Unicode.",
       "symbols": [
-        { "char": "╳", "label": "Cruz Diagonal de Desenho de Caixa" },
-        { "char": "⨉", "label": "Operador N-ário de Vezes" },
-        { "char": "⦻", "label": "Círculo com X Sobreposto" },
-        { "char": "⊗", "label": "Vezes Circulado" }
+        {
+          "char": "╳",
+          "label": "Cruz Diagonal de Desenho de Caixa"
+        },
+        {
+          "char": "⨉",
+          "label": "Operador N-ário de Vezes"
+        },
+        {
+          "char": "⦻",
+          "label": "Círculo com X Sobreposto"
+        },
+        {
+          "char": "⊗",
+          "label": "Vezes Circulado"
+        }
       ]
     },
     {
@@ -115,14 +240,38 @@
       "h2": "Marcas de Aviso, Cancelamento e Erro",
       "intro": "Marcas de cruz e X usadas para estados de \"não\", \"cancelado\", \"erro\" e \"não permitido\" em interfaces, formulários e mensagens de status — tanto em glifo monocromático quanto em emoji colorido.",
       "symbols": [
-        { "char": "❌", "label": "Marca de X" },
-        { "char": "❎", "label": "Botão de Cruz" },
-        { "char": "🚫", "label": "Proibido" },
-        { "char": "⛔", "label": "Entrada Proibida" },
-        { "char": "🛑", "label": "Parar" },
-        { "char": "⊘", "label": "Barra de Divisão Circulada (proibido)" },
-        { "char": "✗", "label": "Rejeitado ✗" },
-        { "char": "✘ Cancelado", "label": "Linha Cancelado" }
+        {
+          "char": "❌",
+          "label": "Marca de X"
+        },
+        {
+          "char": "❎",
+          "label": "Botão de Cruz"
+        },
+        {
+          "char": "🚫",
+          "label": "Proibido"
+        },
+        {
+          "char": "⛔",
+          "label": "Entrada Proibida"
+        },
+        {
+          "char": "🛑",
+          "label": "Parar"
+        },
+        {
+          "char": "⊘",
+          "label": "Barra de Divisão Circulada (proibido)"
+        },
+        {
+          "char": "✗",
+          "label": "Rejeitado ✗"
+        },
+        {
+          "char": "✘ Cancelado",
+          "label": "Linha Cancelado"
+        }
       ]
     }
   ],

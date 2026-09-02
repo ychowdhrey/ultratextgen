@@ -16,11 +16,26 @@
       "h2": "The Original Lenny Face",
       "intro": "The classic smirk and its closest relatives.",
       "symbols": [
-        { "char": "( ͡° ͜ʖ ͡°)", "label": "Classic Lenny" },
-        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny" },
-        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Happy Lenny" },
-        { "char": "( ͠° ͟ʖ ͡°)", "label": "Sly Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Reaching Lenny" }
+        {
+          "char": "( ͡° ͜ʖ ͡°)",
+          "label": "Classic Lenny"
+        },
+        {
+          "char": "( ͡~ ͜ʖ ͡°)",
+          "label": "Winking Lenny"
+        },
+        {
+          "char": "( ͡ᵔ ͜ʖ ͡ᵔ)",
+          "label": "Happy Lenny"
+        },
+        {
+          "char": "( ͠° ͟ʖ ͡°)",
+          "label": "Sly Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)づ",
+          "label": "Reaching Lenny"
+        }
       ]
     },
     {
@@ -29,10 +44,22 @@
       "h2": "Buff & Flexing Lenny Face",
       "intro": "Arms up — flexing, hyped, ready to go.",
       "symbols": [
-        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Flexing Lenny" },
-        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Marching Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Rude Lenny" },
-        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Strong Lenny" }
+        {
+          "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ",
+          "label": "Flexing Lenny"
+        },
+        {
+          "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ",
+          "label": "Marching Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)╭∩╮",
+          "label": "Rude Lenny"
+        },
+        {
+          "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ",
+          "label": "Strong Lenny"
+        }
       ]
     },
     {
@@ -41,10 +68,22 @@
       "h2": "Reaching Lenny Face",
       "intro": "Grabby, pointing, and gimme variants.",
       "symbols": [
-        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Hugging Lenny" },
-        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Pointing Lenny" },
-        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Gimme Lenny" },
-        { "char": "( ͡°Ѡ ͡°)", "label": "Wide Lenny" }
+        {
+          "char": "(づ ͡° ͜ʖ ͡°)づ",
+          "label": "Hugging Lenny"
+        },
+        {
+          "char": "☞ ͡° ͜ʖ ͡°☞",
+          "label": "Pointing Lenny"
+        },
+        {
+          "char": "( ͡° ͜ʖ ͡°)੭",
+          "label": "Gimme Lenny"
+        },
+        {
+          "char": "( ͡°Ѡ ͡°)",
+          "label": "Wide Lenny"
+        }
       ]
     },
     {
@@ -53,19 +92,49 @@
       "h2": "Lenny Face Eye Variants",
       "intro": "Same smirk, swapped-out eyes.",
       "symbols": [
-        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Round-Eyed Lenny" },
-        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Bold-Eyed Lenny" },
-        { "char": "( ͡• ͜ʖ ͡•)", "label": "Dot-Eyed Lenny" },
-        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Target-Eyed Lenny" },
-        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Coin-Eyed Lenny" }
+        {
+          "char": "( ͡ʘ ͜ʖ ͡ʘ)",
+          "label": "Round-Eyed Lenny"
+        },
+        {
+          "char": "( ͡◉ ͜ʖ ͡◉)",
+          "label": "Bold-Eyed Lenny"
+        },
+        {
+          "char": "( ͡• ͜ʖ ͡•)",
+          "label": "Dot-Eyed Lenny"
+        },
+        {
+          "char": "( ͡⊙ ͜ʖ ͡⊙)",
+          "label": "Target-Eyed Lenny"
+        },
+        {
+          "char": "( ͡ↀ ͜ʖ ͡ↀ)",
+          "label": "Coin-Eyed Lenny"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/dongers/", "title": "Dongers", "desc": "Arms-raised, hype-fueled text faces like ヽ༼ຈل͜ຈ༽ﾉ to copy and paste." },
-    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/dongers/",
+      "title": "Dongers",
+      "desc": "Arms-raised, hype-fueled text faces like ヽ༼ຈل͜ຈ༽ﾉ to copy and paste."
+    },
+    {
+      "href": "/library/shrug-kaomoji/",
+      "title": "Shrug Kaomoji",
+      "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    }
   ]
 }

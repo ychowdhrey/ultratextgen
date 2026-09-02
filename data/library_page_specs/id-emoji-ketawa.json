@@ -1,396 +1,395 @@
 {
- "slug": "emoji-ketawa",
- "title": "Emoji Ketawa 😂 🤣 💀 — Salin & Tempel Kombinasi Ngakak | UltraTextGen",
- "meta_description": "Emoji ketawa 😂 🤣 💀, kaomoji ngakak seperti (≧▽≦), dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.",
- "breadcrumb": "Emoji Ketawa",
- "hero_h1": "Emoji Ketawa & Kaomoji",
- "hero_tagline": "Dari 😂 ketawa sampai nangis, 💀 mati ketawa ala meme, sampai kaomoji (≧▽≦) — segala cara ketawa lewat teks. Klik simbolnya, langsung kesalin.",
- "intro": "Emoji ketawa 😂 sudah satu dekade nangkring di daftar emoji paling banyak dipakai sedunia, sementara 💀 dan 😭 jadi penggantinya di era meme buat bilang \"gua mati\". Halaman ini ngumpulin semua varian emoji ketawa, reaksi tengkorak dan jari nunjuk yang beneran dipakai anak sekarang, muka cengengesan dan senyum sinis, plus kaomoji ketawa ala Jepang — lengkap sama kombinasi ngakak sekali klik buat komentar, balasan, dan grup chat.",
- "copy_pattern": "collection",
- "sections": [
-  {
-   "id": "laughing-faces",
-   "label": "Wajah Ketawa",
-   "h2": "Varian Emoji Ketawa",
-   "intro": "Wajah ketawa klasik, dari cekikikan sopan sampai guling-guling di lantai.",
-   "symbols": [
+  "slug": "emoji-ketawa",
+  "title": "Emoji Ketawa 😂 🤣 💀 — Salin & Tempel Kombinasi Ngakak | UltraTextGen",
+  "meta_description": "Emoji ketawa 😂 🤣 💀, kaomoji ngakak seperti (≧▽≦), dan kombinasi reaksi meme siap pakai buat komentar dan grup chat. Klik emojinya, langsung kesalin.",
+  "breadcrumb": "Emoji Ketawa",
+  "hero_h1": "Emoji Ketawa & Kaomoji",
+  "hero_tagline": "Dari 😂 ketawa sampai nangis, 💀 mati ketawa ala meme, sampai kaomoji (≧▽≦) — segala cara ketawa lewat teks. Klik simbolnya, langsung kesalin.",
+  "intro": "Emoji ketawa 😂 sudah satu dekade nangkring di daftar emoji paling banyak dipakai sedunia, sementara 💀 dan 😭 jadi penggantinya di era meme buat bilang \"gua mati\". Halaman ini ngumpulin semua varian emoji ketawa, reaksi tengkorak dan jari nunjuk yang beneran dipakai anak sekarang, muka cengengesan dan senyum sinis, plus kaomoji ketawa ala Jepang — lengkap sama kombinasi ngakak sekali klik buat komentar, balasan, dan grup chat.",
+  "copy_pattern": "collection",
+  "sections": [
     {
-     "char": "😂",
-     "label": "Ketawa Sampai Nangis"
+      "id": "laughing-faces",
+      "label": "Wajah Ketawa",
+      "h2": "Varian Emoji Ketawa",
+      "intro": "Wajah ketawa klasik, dari cekikikan sopan sampai guling-guling di lantai.",
+      "symbols": [
+        {
+          "char": "😂",
+          "label": "Ketawa Sampai Nangis"
+        },
+        {
+          "char": "🤣",
+          "label": "Ngakak Guling-Guling"
+        },
+        {
+          "char": "😆",
+          "label": "Nyengir Mata Merem"
+        },
+        {
+          "char": "😄",
+          "label": "Nyengir Mata Berbinar"
+        },
+        {
+          "char": "😁",
+          "label": "Senyum Lebar Gigi Terlihat"
+        },
+        {
+          "char": "😅",
+          "label": "Senyum Keringat Dingin"
+        },
+        {
+          "char": "🤭",
+          "label": "Nutup Mulut Sambil Ketawa"
+        },
+        {
+          "char": "😹",
+          "label": "Kucing Ketawa Sampai Nangis"
+        },
+        {
+          "char": "🙂",
+          "label": "Wajah Tersenyum Tipis"
+        },
+        {
+          "char": "😊",
+          "label": "Wajah Tersenyum dengan Mata Berbinar"
+        }
+      ]
     },
     {
-     "char": "🤣",
-     "label": "Ngakak Guling-Guling"
+      "id": "dead-laughing",
+      "label": "Mati Ketawa",
+      "h2": "Tengkorak & Reaksi Ketawa Ala Meme",
+      "intro": "Cara meme bilang sesuatu bikin kamu mati — tengkorak, nisan, dan jari nunjuk.",
+      "symbols": [
+        {
+          "char": "💀",
+          "label": "Tengkorak"
+        },
+        {
+          "char": "☠",
+          "label": "Tengkorak & Tulang Silang"
+        },
+        {
+          "char": "🪦",
+          "label": "Batu Nisan"
+        },
+        {
+          "char": "🫵",
+          "label": "Jari Nunjuk ke Kamu"
+        },
+        {
+          "char": "😵",
+          "label": "Mata Jadi Silang"
+        },
+        {
+          "char": "😮‍💨",
+          "label": "Wajah Menghela Napas"
+        },
+        {
+          "char": "⚰️",
+          "label": "Peti Mati"
+        },
+        {
+          "char": "😭",
+          "label": "Wajah Menangis Keras"
+        },
+        {
+          "char": "🥲",
+          "label": "Wajah Tersenyum dengan Air Mata"
+        },
+        {
+          "char": "🫠",
+          "label": "Wajah Meleleh"
+        },
+        {
+          "char": "😵‍💫",
+          "label": "Wajah dengan Mata Berputar"
+        },
+        {
+          "char": "🤡",
+          "label": "Wajah Badut"
+        },
+        {
+          "char": "🗿",
+          "label": "Moai"
+        }
+      ]
     },
     {
-     "char": "😆",
-     "label": "Nyengir Mata Merem"
+      "id": "giggles-smirks",
+      "label": "Cengengesan",
+      "h2": "Wajah Cekikikan, Sinis & Iseng",
+      "intro": "Ketawa yang lebih ringan — senyum sinis, julurkan lidah, dan ironi terbalik.",
+      "symbols": [
+        {
+          "char": "😏",
+          "label": "Senyum Sinis"
+        },
+        {
+          "char": "😝",
+          "label": "Melet Mata Merem"
+        },
+        {
+          "char": "😜",
+          "label": "Melet Sambil Kedip"
+        },
+        {
+          "char": "🤪",
+          "label": "Wajah Absurd"
+        },
+        {
+          "char": "😛",
+          "label": "Julurkan Lidah"
+        },
+        {
+          "char": "🙃",
+          "label": "Wajah Terbalik"
+        },
+        {
+          "char": "😬",
+          "label": "Nyengir Kaku"
+        },
+        {
+          "char": "😈",
+          "label": "Wajah Tersenyum Bertanduk"
+        },
+        {
+          "char": "🙈",
+          "label": "Monyet Tutup Mata"
+        }
+      ]
     },
     {
-     "char": "😄",
-     "label": "Nyengir Mata Berbinar"
-    },
-    {
-     "char": "😁",
-     "label": "Senyum Lebar Gigi Terlihat"
-    },
-    {
-     "char": "😅",
-     "label": "Senyum Keringat Dingin"
-    },
-    {
-     "char": "🤭",
-     "label": "Nutup Mulut Sambil Ketawa"
-    },
-    {
-     "char": "😹",
-     "label": "Kucing Ketawa Sampai Nangis"
-    },
-    {
-     "char": "🙂",
-     "label": "Wajah Tersenyum Tipis"
-    },
-    {
-     "char": "😊",
-     "label": "Wajah Tersenyum dengan Mata Berbinar"
+      "id": "laughing-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kaomoji Ketawa & Wajah Teks",
+      "intro": "Wajah teks ala Jepang yang berseri, terbahak, dan melambaikan tangan.",
+      "symbols": [
+        {
+          "char": "(≧▽≦)",
+          "label": "Kaomoji Ketawa Mata Merem"
+        },
+        {
+          "char": "ヽ(´▽`)/",
+          "label": "Kaomoji Ketawa Angkat Tangan"
+        },
+        {
+          "char": "(´∀｀)",
+          "label": "Kaomoji Nyengir Santai"
+        },
+        {
+          "char": "（＾ｖ＾）",
+          "label": "Kaomoji Senyum Usil"
+        },
+        {
+          "char": "(＾ω＾)",
+          "label": "Kaomoji Cekikikan"
+        },
+        {
+          "char": "(≧∇≦)/",
+          "label": "Kaomoji Ketawa Sambil Melambai"
+        },
+        {
+          "char": "ヾ(≧▽≦*)o",
+          "label": "Kaomoji Ketawa Nggak Tertahan"
+        },
+        {
+          "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
+          "label": "Kaomoji Ketawa Berkilau"
+        },
+        {
+          "char": "(¬‿¬)",
+          "label": "Kaomoji Nyengir Licik"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Kaomoji Senyum Lebar"
+        },
+        {
+          "char": "( ˘ ³˘)",
+          "label": "Kaomoji Puas"
+        },
+        {
+          "char": "ヽ(♡‿♡)ノ",
+          "label": "Kaomoji Terpesona"
+        },
+        {
+          "char": "(ﾉ≧∀≦)ﾉ",
+          "label": "Kaomoji Tertawa Riang"
+        },
+        {
+          "char": "XD",
+          "label": "Emotikon XD Klasik"
+        },
+        {
+          "char": "(*≧ω≦*)",
+          "label": "Kaomoji Cekikikan"
+        }
+      ]
     }
-   ]
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombinasi",
+    "h2": "Kombinasi Emoji Ngakak",
+    "intro": "Salin satu kombinasi ketawa lengkap sekali klik — pas banget buat reaksi cepat di kolom komentar."
   },
-  {
-   "id": "dead-laughing",
-   "label": "Mati Ketawa",
-   "h2": "Tengkorak & Reaksi Ketawa Ala Meme",
-   "intro": "Cara meme bilang sesuatu bikin kamu mati — tengkorak, nisan, dan jari nunjuk.",
-   "symbols": [
+  "collection_container_id": "laughingSetsContainer",
+  "collections": [
     {
-     "char": "💀",
-     "label": "Tengkorak"
+      "name": "Spam Ketawa Nangis",
+      "flags": [
+        "😂",
+        "😂",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "☠",
-     "label": "Tengkorak & Tulang Silang"
+      "name": "Gua Mati",
+      "flags": [
+        "💀",
+        "💀",
+        "🙏",
+        "😭"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "🪦",
-     "label": "Batu Nisan"
+      "name": "Paket Ngakak",
+      "flags": [
+        "🤣",
+        "✋",
+        "😭",
+        "💀"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "🫵",
-     "label": "Jari Nunjuk ke Kamu"
+      "name": "Ngakak Sampai Sesak",
+      "flags": [
+        "😆",
+        "😮‍💨",
+        "😂",
+        "💨"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "😵",
-     "label": "Mata Jadi Silang"
+      "name": "Nunjuk Sambil Ketawa",
+      "flags": [
+        "🫵",
+        "😂",
+        "🤣"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "😮‍💨",
-     "label": "Wajah Menghela Napas"
+      "name": "Nahan Ketawa",
+      "flags": [
+        "🤭",
+        "😬",
+        "😂",
+        "💥"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "⚰️",
-     "label": "Peti Mati"
+      "name": "Sirkus Badut",
+      "flags": [
+        "🤡",
+        "🎪",
+        "😂"
+      ],
+      "defaultFormat": "inline"
     },
     {
-     "char": "😭",
-     "label": "Wajah Menangis Keras"
-    },
-    {
-     "char": "🥲",
-     "label": "Wajah Tersenyum dengan Air Mata"
-    },
-    {
-     "char": "🫠",
-     "label": "Wajah Meleleh"
-    },
-    {
-     "char": "😵‍💫",
-     "label": "Wajah dengan Mata Berputar"
-    },
-    {
-     "char": "🤡",
-     "label": "Wajah Badut"
-    },
-    {
-     "char": "🗿",
-     "label": "Moai"
+      "name": "Paket Kaomoji Ngakak",
+      "flags": [
+        "(≧▽≦)",
+        "ヽ(´▽`)/",
+        "(≧∇≦)/"
+      ],
+      "defaultFormat": "inline"
     }
-   ]
-  },
-  {
-   "id": "giggles-smirks",
-   "label": "Cengengesan",
-   "h2": "Wajah Cekikikan, Sinis & Iseng",
-   "intro": "Ketawa yang lebih ringan — senyum sinis, julurkan lidah, dan ironi terbalik.",
-   "symbols": [
+  ],
+  "editorial_sections": [
     {
-     "char": "😏",
-     "label": "Senyum Sinis"
-    },
-    {
-     "char": "😝",
-     "label": "Melet Mata Merem"
-    },
-    {
-     "char": "😜",
-     "label": "Melet Sambil Kedip"
-    },
-    {
-     "char": "🤪",
-     "label": "Wajah Absurd"
-    },
-    {
-     "char": "😛",
-     "label": "Julurkan Lidah"
-    },
-    {
-     "char": "🙃",
-     "label": "Wajah Terbalik"
-    },
-    {
-     "char": "😬",
-     "label": "Nyengir Kaku"
-    },
-    {
-     "char": "😈",
-     "label": "Wajah Tersenyum Bertanduk"
-    },
-    {
-     "char": "🙈",
-     "label": "Monyet Tutup Mata"
+      "id": "across-platforms",
+      "label": "Antar Perangkat",
+      "h2": "Tampilan Emoji Ketawa di Tiap Perangkat",
+      "paragraphs": [
+        "Karakternya sama di semua HP, gambarnya yang beda — dan di keluarga ini bedanya sampai menggeser makna. 😂 versi tiap vendor beda seberapa deras air matanya, tapi maknanya selamat di mana-mana.",
+        "Yang perlu diperhatikan justru <strong>💀</strong>. Karakternya tetap tengkorak, tapi <em>artinya</em> bergeser: buat sebagian orang dia berarti \"ngakak sampai mati\", buat yang lain masih berarti kematian, bahaya, atau nada gelap. Ke lawan bicara yang belum akrab, 😂 jauh lebih kecil risikonya salah tangkap.",
+        "Buat wajah ketawa versi <em>teks</em> yang nempel di username dan kolom tanpa emoji — (≧▽≦) dan sejenisnya — lihat halaman <a href=\"/id/library/kaomoji/\">kaomoji</a>."
+      ]
     }
-   ]
-  },
-  {
-   "id": "laughing-kaomoji",
-   "label": "Kaomoji",
-   "h2": "Kaomoji Ketawa & Wajah Teks",
-   "intro": "Wajah teks ala Jepang yang berseri, terbahak, dan melambaikan tangan.",
-   "symbols": [
+  ],
+  "faq_h2": "Emoji Ketawa, Dijawab",
+  "faq": [
     {
-     "char": "(≧▽≦)",
-     "label": "Kaomoji Ketawa Mata Merem"
+      "q": "Apa bedanya 😂 sama 🤣?",
+      "a": "😂 ketawa sampai air matanya keluar — masih ada wajahnya yang tegak. 🤣 sudah guling-guling di lantai, jadi levelnya lebih tinggi. Dalam praktiknya orang pakai keduanya bergantian, dan 😂 tetap yang paling banyak dipakai di dunia."
     },
     {
-     "char": "ヽ(´▽`)/",
-     "label": "Kaomoji Ketawa Angkat Tangan"
+      "q": "Kenapa orang pakai 💀 buat ketawa?",
+      "a": "Karena maknanya bergeser jadi \"gua mati\" — sesuatu begitu lucu sampai kamu mati ketawa. Pergeseran ini datang dari budaya meme dan sekarang jadi salah satu reaksi paling umum di kolom komentar, menggantikan 😂 buat sebagian orang."
     },
     {
-     "char": "(´∀｀)",
-     "label": "Kaomoji Nyengir Santai"
+      "q": "Apa 😭 juga berarti ketawa?",
+      "a": "Bisa. 😭 dipakai buat dua arah sekaligus — sedih beneran dan ketawa berlebihan — dan arahnya dibaca dari konteks. Kalau nadanya harus jelas sedih, tulis juga maksudnya pakai kata."
     },
     {
-     "char": "（＾ｖ＾）",
-     "label": "Kaomoji Senyum Usil"
+      "q": "Emoji ketawa mana yang aman ke orang yang lebih tua atau atasan?",
+      "a": "😄 dan 😂. Keduanya kebaca lucu tanpa perlu paham meme. 💀 dan 🫵 sebaiknya disimpan buat teman sebaya — di luar konteks meme, dua-duanya gampang kebaca kasar."
     },
     {
-     "char": "(＾ω＾)",
-     "label": "Kaomoji Cekikikan"
-    },
-    {
-     "char": "(≧∇≦)/",
-     "label": "Kaomoji Ketawa Sambil Melambai"
-    },
-    {
-     "char": "ヾ(≧▽≦*)o",
-     "label": "Kaomoji Ketawa Nggak Tertahan"
-    },
-    {
-     "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆",
-     "label": "Kaomoji Ketawa Berkilau"
-    },
-    {
-     "char": "(¬‿¬)",
-     "label": "Kaomoji Nyengir Licik"
-    },
-    {
-     "char": "(＾▽＾)",
-     "label": "Kaomoji Senyum Lebar"
-    },
-    {
-     "char": "( ˘ ³˘)",
-     "label": "Kaomoji Puas"
-    },
-    {
-     "char": "ヽ(♡‿♡)ノ",
-     "label": "Kaomoji Terpesona"
-    },
-    {
-     "char": "(ﾉ≧∀≦)ﾉ",
-     "label": "Kaomoji Tertawa Riang"
-    },
-    {
-     "char": "XD",
-     "label": "Emotikon XD Klasik"
-    },
-    {
-     "char": "(*≧ω≦*)",
-     "label": "Kaomoji Cekikikan"
+      "q": "Gimana cara nulis ketawa pakai teks biasa?",
+      "a": "Pakai kaomoji, bukan emoji — (≧▽≦), (´∀｀), (¬‿¬). Semuanya disusun dari karakter biasa, jadi bisa ditempel ke username dan kolom yang menolak emoji."
     }
-   ]
-  }
- ],
- "collection_section": {
-  "id": "combo-sets",
-  "label": "Kombinasi",
-  "h2": "Kombinasi Emoji Ngakak",
-  "intro": "Salin satu kombinasi ketawa lengkap sekali klik — pas banget buat reaksi cepat di kolom komentar."
- },
- "collection_container_id": "laughingSetsContainer",
- "collections": [
-  {
-   "name": "Spam Ketawa Nangis",
-   "flags": [
-    "😂",
-    "😂",
-    "😂",
-    "🤣"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Gua Mati",
-   "flags": [
-    "💀",
-    "💀",
-    "🙏",
-    "😭"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Paket Ngakak",
-   "flags": [
-    "🤣",
-    "✋",
-    "😭",
-    "💀"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Ngakak Sampai Sesak",
-   "flags": [
-    "😆",
-    "😮‍💨",
-    "😂",
-    "💨"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Nunjuk Sambil Ketawa",
-   "flags": [
-    "🫵",
-    "😂",
-    "🤣"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Nahan Ketawa",
-   "flags": [
-    "🤭",
-    "😬",
-    "😂",
-    "💥"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Sirkus Badut",
-   "flags": [
-    "🤡",
-    "🎪",
-    "😂"
-   ],
-   "defaultFormat": "inline"
-  },
-  {
-   "name": "Paket Kaomoji Ngakak",
-   "flags": [
-    "(≧▽≦)",
-    "ヽ(´▽`)/",
-    "(≧∇≦)/"
-   ],
-   "defaultFormat": "inline"
-  }
- ],
- "editorial_sections": [
-  {
-   "id": "across-platforms",
-   "label": "Antar Perangkat",
-   "h2": "Tampilan Emoji Ketawa di Tiap Perangkat",
-   "paragraphs": [
-    "Karakternya sama di semua HP, gambarnya yang beda — dan di keluarga ini bedanya sampai menggeser makna. 😂 versi tiap vendor beda seberapa deras air matanya, tapi maknanya selamat di mana-mana.",
-    "Yang perlu diperhatikan justru <strong>💀</strong>. Karakternya tetap tengkorak, tapi <em>artinya</em> bergeser: buat sebagian orang dia berarti \"ngakak sampai mati\", buat yang lain masih berarti kematian, bahaya, atau nada gelap. Ke lawan bicara yang belum akrab, 😂 jauh lebih kecil risikonya salah tangkap.",
-    "Buat wajah ketawa versi <em>teks</em> yang nempel di username dan kolom tanpa emoji — (≧▽≦) dan sejenisnya — lihat halaman <a href=\"/id/library/kaomoji/\">kaomoji</a>."
-   ]
-  }
- ],
- "faq_h2": "Emoji Ketawa, Dijawab",
- "faq": [
-  {
-   "q": "Apa bedanya 😂 sama 🤣?",
-   "a": "😂 ketawa sampai air matanya keluar — masih ada wajahnya yang tegak. 🤣 sudah guling-guling di lantai, jadi levelnya lebih tinggi. Dalam praktiknya orang pakai keduanya bergantian, dan 😂 tetap yang paling banyak dipakai di dunia."
-  },
-  {
-   "q": "Kenapa orang pakai 💀 buat ketawa?",
-   "a": "Karena maknanya bergeser jadi \"gua mati\" — sesuatu begitu lucu sampai kamu mati ketawa. Pergeseran ini datang dari budaya meme dan sekarang jadi salah satu reaksi paling umum di kolom komentar, menggantikan 😂 buat sebagian orang."
-  },
-  {
-   "q": "Apa 😭 juga berarti ketawa?",
-   "a": "Bisa. 😭 dipakai buat dua arah sekaligus — sedih beneran dan ketawa berlebihan — dan arahnya dibaca dari konteks. Kalau nadanya harus jelas sedih, tulis juga maksudnya pakai kata."
-  },
-  {
-   "q": "Emoji ketawa mana yang aman ke orang yang lebih tua atau atasan?",
-   "a": "😄 dan 😂. Keduanya kebaca lucu tanpa perlu paham meme. 💀 dan 🫵 sebaiknya disimpan buat teman sebaya — di luar konteks meme, dua-duanya gampang kebaca kasar."
-  },
-  {
-   "q": "Gimana cara nulis ketawa pakai teks biasa?",
-   "a": "Pakai kaomoji, bukan emoji — (≧▽≦), (´∀｀), (¬‿¬). Semuanya disusun dari karakter biasa, jadi bisa ditempel ke username dan kolom yang menolak emoji."
-  }
- ],
- "related": [
-  {
-   "href": "/id/library/emoji-nangis/",
-   "title": "Emoji Nangis",
-   "desc": "Wajah nangis dan air mata — sepupu terdekat ketawa sampai nangis."
-  },
-  {
-   "href": "/id/library/emoji-senang/",
-   "title": "Emoji Senang",
-   "desc": "Senyum, kombinasi bahagia, dan set emoji bersuasana cerah."
-  },
-  {
-   "href": "/id/library/kaomoji/",
-   "title": "Kaomoji & Wajah Teks",
-   "desc": "Koleksi kaomoji lengkap buat semua suasana hati dan reaksi."
-  },
-  {
-   "href": "/id/library/emoji-combos/",
-   "title": "Kombinasi Emoji",
-   "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
-  }
- ],
- "canonical": "https://ultratextgen.com/id/library/emoji-ketawa/",
- "date_published": "2026-08-08",
- "date_modified": "2026-08-08",
- "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.",
- "lang": "id",
- "page_type": "library",
- "faq_label": "FAQ",
- "hreflang": [
-  {
-   "lang": "en",
-   "href": "https://ultratextgen.com/library/laughing-emoji/"
-  },
-  {
-   "lang": "id",
-   "href": "https://ultratextgen.com/id/library/emoji-ketawa/"
-  },
-  {
-   "lang": "x-default",
-   "href": "https://ultratextgen.com/library/laughing-emoji/"
-  }
- ]
+  ],
+  "related": [
+    {
+      "href": "/id/library/emoji-nangis/",
+      "title": "Emoji Nangis",
+      "desc": "Wajah nangis dan air mata — sepupu terdekat ketawa sampai nangis."
+    },
+    {
+      "href": "/id/library/emoji-senang/",
+      "title": "Emoji Senang",
+      "desc": "Senyum, kombinasi bahagia, dan set emoji bersuasana cerah."
+    },
+    {
+      "href": "/id/library/kaomoji/",
+      "title": "Kaomoji & Wajah Teks",
+      "desc": "Koleksi kaomoji lengkap buat semua suasana hati dan reaksi."
+    },
+    {
+      "href": "/id/library/emoji-combos/",
+      "title": "Kombinasi Emoji",
+      "desc": "Kombinasi emoji siap pakai buat caption, bio, dan komentar."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/id/library/emoji-ketawa/",
+  "date_published": "2026-08-08",
+  "date_modified": "2026-08-08",
+  "lang": "id",
+  "page_type": "library",
+  "faq_label": "FAQ",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/laughing-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/emoji-ketawa/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/laughing-emoji/"
+    }
+  ]
 }

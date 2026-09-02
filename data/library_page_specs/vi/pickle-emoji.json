@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pickle-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Pickle",
       "intro": "Ký tự bản nháp chính nó — sao chép được ngay hôm nay dưới dạng mã điểm, dù chưa phông chữ nào có thể hiển thị nó.",
       "symbols": [
-        { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" }
+        {
+          "char": "🫝",
+          "label": "Pickle (bản nháp, U+1FADD)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Các Emoji Thường Bị Nhầm Lẫn",
       "intro": "Những emoji nông sản đã được mã hóa mà Pickle thường bị so sánh hoặc bị cho là trùng lặp.",
       "symbols": [
-        { "char": "🥒", "label": "Cucumber (Dưa Chuột)" },
-        { "char": "🍆", "label": "Eggplant (Cà Tím)" },
-        { "char": "🫑", "label": "Bell Pepper (Ớt Chuông)" }
+        {
+          "char": "🥒",
+          "label": "Cucumber (Dưa Chuột)"
+        },
+        {
+          "char": "🍆",
+          "label": "Eggplant (Cà Tím)"
+        },
+        {
+          "char": "🫑",
+          "label": "Bell Pepper (Ớt Chuông)"
+        }
       ]
     },
     {
@@ -48,19 +69,51 @@
       "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
       "intro": "Pickle không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB)" },
-        { "char": "🫌", "label": "Monarch Butterfly (bản nháp, U+1FACC)" },
-        { "char": "🛙", "label": "Lighthouse (bản nháp, U+1F6D9)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bản nháp, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bản nháp, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (bản nháp, U+1F6D9)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/food-drink-emojis/", "title": "Ký Hiệu Đồ Ăn & Thức Uống", "desc": "Mọi emoji món ăn, bữa ăn và nông sản đã được mã hóa, sẵn sàng sao chép và dán ngay hôm nay." },
-    { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — và là ứng viên đã thắng cuộc bình chọn công khai." },
-    { "href": "/vi/symbol/meteor-emoji/", "title": "Emoji Meteor", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — tách ra từ cuộc chia rẽ hiển thị kéo dài của Comet." },
-    { "href": "/vi/symbol/monarch-butterfly-emoji/", "title": "Emoji Monarch Butterfly", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — khắc phục sự nhầm lẫn Butterfly giữa các nền tảng." },
-    { "href": "/vi/symbol/thumb-sign-emoji/", "title": "Emoji Ký Hiệu Ngón Cái", "desc": "Một cặp ứng viên bản nháp khác của Emoji 18.0 — chỉ hướng, không phải tán thành." },
-    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Các Emoji Mới Của Unicode 18.0", "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai." }
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Ký Hiệu Đồ Ăn & Thức Uống",
+      "desc": "Mọi emoji món ăn, bữa ăn và nông sản đã được mã hóa, sẵn sàng sao chép và dán ngay hôm nay."
+    },
+    {
+      "href": "/vi/symbol/cracking-face-emoji/",
+      "title": "Emoji Cracking Face",
+      "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — và là ứng viên đã thắng cuộc bình chọn công khai."
+    },
+    {
+      "href": "/vi/symbol/meteor-emoji/",
+      "title": "Emoji Meteor",
+      "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — tách ra từ cuộc chia rẽ hiển thị kéo dài của Comet."
+    },
+    {
+      "href": "/vi/symbol/monarch-butterfly-emoji/",
+      "title": "Emoji Monarch Butterfly",
+      "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — khắc phục sự nhầm lẫn Butterfly giữa các nền tảng."
+    },
+    {
+      "href": "/vi/symbol/thumb-sign-emoji/",
+      "title": "Emoji Ký Hiệu Ngón Cái",
+      "desc": "Một cặp ứng viên bản nháp khác của Emoji 18.0 — chỉ hướng, không phải tán thành."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Các Emoji Mới Của Unicode 18.0",
+      "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai."
+    }
   ]
 }

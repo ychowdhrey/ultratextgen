@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/stella-e-mezzaluna/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/stella-e-mezzaluna/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Simbolo Stella e Mezzaluna — ☪ e ☪️",
       "intro": "La stella e mezzaluna di Unicode, pronta da incollare in una bio, un post o un profilo. Due forme: il glifo semplice in nero e l'emoji a colori pieni.",
       "symbols": [
-        { "char": "☪", "label": "Stella e Mezzaluna (U+262A)" },
-        { "char": "☪️", "label": "Emoji Stella e Mezzaluna (U+262A U+FE0F)" }
+        {
+          "char": "☪",
+          "label": "Stella e Mezzaluna (U+262A)"
+        },
+        {
+          "char": "☪️",
+          "label": "Emoji Stella e Mezzaluna (U+262A U+FE0F)"
+        }
       ]
     },
     {
@@ -39,12 +53,30 @@
       "h2": "Non È lo Stesso di una Semplice Mezzaluna o Stella",
       "intro": "La stella e mezzaluna è un unico glifo combinato. I caratteri separati di mezzaluna e stella a cui spesso ci si rivolge invece hanno ciascuno il proprio codepoint e il proprio compito.",
       "symbols": [
-        { "char": "☾", "label": "Ultimo Quarto di Luna (U+263E): Mezzaluna Semplice" },
-        { "char": "☽", "label": "Primo Quarto di Luna (U+263D)" },
-        { "char": "🌙", "label": "Emoji Mezzaluna (U+1F319)" },
-        { "char": "⭐", "label": "Stella Media Bianca (U+2B50)" },
-        { "char": "★", "label": "Stella Nera (U+2605)" },
-        { "char": "☆", "label": "Stella Bianca (U+2606)" }
+        {
+          "char": "☾",
+          "label": "Ultimo Quarto di Luna (U+263E): Mezzaluna Semplice"
+        },
+        {
+          "char": "☽",
+          "label": "Primo Quarto di Luna (U+263D)"
+        },
+        {
+          "char": "🌙",
+          "label": "Emoji Mezzaluna (U+1F319)"
+        },
+        {
+          "char": "⭐",
+          "label": "Stella Media Bianca (U+2B50)"
+        },
+        {
+          "char": "★",
+          "label": "Stella Nera (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Stella Bianca (U+2606)"
+        }
       ]
     },
     {
@@ -53,12 +85,30 @@
       "h2": "Altri Simboli Religiosi con Cui Viene Raggruppata",
       "intro": "La stella e mezzaluna viene di solito cercata e mostrata accanto ai simboli identitari di altre religioni mondiali. Ecco quelli con cui compare più spesso.",
       "symbols": [
-        { "char": "✡️", "label": "Stella di David (U+2721)" },
-        { "char": "✝️", "label": "Croce Latina (U+271D)" },
-        { "char": "☸️", "label": "Ruota del Dharma (U+2638)" },
-        { "char": "🕉️", "label": "Om (U+1F549)" },
-        { "char": "☯️", "label": "Yin e Yang (U+262F)" },
-        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+        {
+          "char": "✡️",
+          "label": "Stella di David (U+2721)"
+        },
+        {
+          "char": "✝️",
+          "label": "Croce Latina (U+271D)"
+        },
+        {
+          "char": "☸️",
+          "label": "Ruota del Dharma (U+2638)"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om (U+1F549)"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin e Yang (U+262F)"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda / Adi Shakti (U+262C)"
+        }
       ]
     }
   ],

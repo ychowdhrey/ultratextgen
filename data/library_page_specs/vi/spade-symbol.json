@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/spade-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/spade-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Bích — ♠ & ♤",
       "intro": "Chính chất bài, ở cả hai dạng Unicode. Dạng đặc ♠ là bích «đen» mặc định; ♤ là dạng viền «trắng», và ♠️ là dạng trình bày emoji có bộ chọn biến thể. Sẵn sàng để dán ở bất cứ đâu.",
       "symbols": [
-        { "char": "♠", "label": "Bích Đen (U+2660): Dạng Đặc / Tô Đặc" },
-        { "char": "♤", "label": "Bích Trắng (U+2664): Dạng Viền" },
-        { "char": "♠️", "label": "Emoji Chất Bích (U+2660 U+FE0F)" }
+        {
+          "char": "♠",
+          "label": "Bích Đen (U+2660): Dạng Đặc / Tô Đặc"
+        },
+        {
+          "char": "♤",
+          "label": "Bích Trắng (U+2664): Dạng Viền"
+        },
+        {
+          "char": "♠️",
+          "label": "Emoji Chất Bích (U+2660 U+FE0F)"
+        }
       ]
     },
     {
@@ -39,14 +57,38 @@
       "h2": "Cả Bốn Chất — Đặc & Viền",
       "intro": "Unicode cấp cho mỗi chất bài kiểu Pháp một glyph «đen» đặc và một glyph «trắng» viền, gói gọn trong một dãy liền từ U+2660 đến U+2667. Lưu ý điểm đặc biệt: bích và nhép mặc định là dạng đặc trong khi cơ và rô mặc định là dạng viền.",
       "symbols": [
-        { "char": "♠", "label": "Bích Đen (U+2660)" },
-        { "char": "♥", "label": "Cơ Đen (U+2665)" },
-        { "char": "♦", "label": "Rô Đen (U+2666)" },
-        { "char": "♣", "label": "Nhép Đen (U+2663)" },
-        { "char": "♤", "label": "Bích Trắng (U+2664)" },
-        { "char": "♡", "label": "Cơ Trắng (U+2661)" },
-        { "char": "♢", "label": "Rô Trắng (U+2662)" },
-        { "char": "♧", "label": "Nhép Trắng (U+2667)" }
+        {
+          "char": "♠",
+          "label": "Bích Đen (U+2660)"
+        },
+        {
+          "char": "♥",
+          "label": "Cơ Đen (U+2665)"
+        },
+        {
+          "char": "♦",
+          "label": "Rô Đen (U+2666)"
+        },
+        {
+          "char": "♣",
+          "label": "Nhép Đen (U+2663)"
+        },
+        {
+          "char": "♤",
+          "label": "Bích Trắng (U+2664)"
+        },
+        {
+          "char": "♡",
+          "label": "Cơ Trắng (U+2661)"
+        },
+        {
+          "char": "♢",
+          "label": "Rô Trắng (U+2662)"
+        },
+        {
+          "char": "♧",
+          "label": "Nhép Trắng (U+2667)"
+        }
       ]
     },
     {
@@ -55,18 +97,44 @@
       "h2": "Át Bích & Các Glyph Bài Tây",
       "intro": "Lá bài giàu truyền thuyết nhất bộ bài: nước Anh đóng dấu thuế lên Át Bích từ năm 1712 và in thiết kế Stamp Office công phu sau năm 1765, và một câu chuyện thời chiến được lan truyền rộng rãi (và gây tranh cãi) kể về việc lính Mỹ tại Việt Nam dùng nó như một «lá bài tử thần». Khối Playing Cards của Unicode cấp cho mỗi lá bài glyph riêng — đây là bốn con át và mặt sau lá bài.",
       "symbols": [
-        { "char": "🂡", "label": "Bài Tây Át Bích (U+1F0A1)" },
-        { "char": "🂱", "label": "Bài Tây Át Cơ (U+1F0B1)" },
-        { "char": "🃁", "label": "Bài Tây Át Rô (U+1F0C1)" },
-        { "char": "🃑", "label": "Bài Tây Át Nhép (U+1F0D1)" },
-        { "char": "🂠", "label": "Mặt Sau Lá Bài (U+1F0A0)" }
+        {
+          "char": "🂡",
+          "label": "Bài Tây Át Bích (U+1F0A1)"
+        },
+        {
+          "char": "🂱",
+          "label": "Bài Tây Át Cơ (U+1F0B1)"
+        },
+        {
+          "char": "🃁",
+          "label": "Bài Tây Át Rô (U+1F0C1)"
+        },
+        {
+          "char": "🃑",
+          "label": "Bài Tây Át Nhép (U+1F0D1)"
+        },
+        {
+          "char": "🂠",
+          "label": "Mặt Sau Lá Bài (U+1F0A0)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "Cả bốn chất bài Tây — bích, cơ, rô và nhép — ở dạng đặc và viền để duyệt và sao chép." },
-    { "href": "/library/dice-domino-symbols/", "title": "Ký Hiệu Xúc Xắc, Domino & Mạt Chược", "desc": "Phần còn lại của bộ trò chơi trên bàn: mặt xúc xắc, quân domino và ký hiệu mạt chược Unicode." },
-    { "href": "/vi/symbol/heart-symbol/", "title": "Ký Hiệu Trái Tim (♥)", "desc": "Chất bài «anh em»: trái tim ở dạng đặc ♥ và viền ♡ trong Unicode, từ cùng dãy U+2660–U+2667." }
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Ký Hiệu Chất Bài",
+      "desc": "Cả bốn chất bài Tây — bích, cơ, rô và nhép — ở dạng đặc và viền để duyệt và sao chép."
+    },
+    {
+      "href": "/library/dice-domino-symbols/",
+      "title": "Ký Hiệu Xúc Xắc, Domino & Mạt Chược",
+      "desc": "Phần còn lại của bộ trò chơi trên bàn: mặt xúc xắc, quân domino và ký hiệu mạt chược Unicode."
+    },
+    {
+      "href": "/vi/symbol/heart-symbol/",
+      "title": "Ký Hiệu Trái Tim (♥)",
+      "desc": "Chất bài «anh em»: trái tim ở dạng đặc ♥ và viền ♡ trong Unicode, từ cùng dãy U+2660–U+2667."
+    }
   ]
 }

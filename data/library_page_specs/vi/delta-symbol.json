@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/delta-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/delta-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/delta-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/delta-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/delta-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/delta-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Delta — Δ & δ",
       "intro": "Chính chữ cái Hy Lạp, ở cả hai dạng viết. Delta hoa là ký hiệu «thay đổi trong»; delta thường đảm nhận các vai trò ở quy mô nhỏ hơn.",
       "symbols": [
-        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta (U+0394): «Thay Đổi Trong»" },
-        { "char": "δ", "label": "Chữ Thường Hy Lạp Delta (U+03B4): Vô Cùng Bé / Điện Tích Riêng Phần" }
+        {
+          "char": "Δ",
+          "label": "Chữ Hoa Hy Lạp Delta (U+0394): «Thay Đổi Trong»"
+        },
+        {
+          "char": "δ",
+          "label": "Chữ Thường Hy Lạp Delta (U+03B4): Vô Cùng Bé / Điện Tích Riêng Phần"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Nhầm Lẫn Với Ký Hiệu Số Gia",
       "intro": "Có một ký tự toán học riêng biệt, ∆ INCREMENT, hiển thị gần như giống hệt delta hoa nhưng lại là mã điểm khác — cùng kiểu bẫy nhầm lẫn như ký hiệu ohm và omega. Một số phông chữ và trình đọc màn hình xử lý hai ký tự này khác nhau.",
       "symbols": [
-        { "char": "∆", "label": "Số Gia (U+2206): Toán Tử Trông Giống Δ, Mã Điểm Khác" },
-        { "char": "Δ", "label": "Delta Hoa (U+0394): Chính Chữ Cái Hy Lạp" }
+        {
+          "char": "∆",
+          "label": "Số Gia (U+2206): Toán Tử Trông Giống Δ, Mã Điểm Khác"
+        },
+        {
+          "char": "Δ",
+          "label": "Delta Hoa (U+0394): Chính Chữ Cái Hy Lạp"
+        }
       ]
     },
     {
@@ -48,18 +69,45 @@
       "h2": "Chữ Cái Hy Lạp Liên Quan",
       "intro": "Delta đứng cạnh những chữ cái Hy Lạp được tìm kiếm nhiều nhất khác. Sao chép chữ cái mà phương trình của bạn cần.",
       "symbols": [
-        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
-        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
-        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
-        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha" }
+        {
+          "char": "Ω",
+          "label": "Chữ Hoa Hy Lạp Omega"
+        },
+        {
+          "char": "Σ",
+          "label": "Chữ Hoa Hy Lạp Sigma"
+        },
+        {
+          "char": "π",
+          "label": "Chữ Thường Hy Lạp Pi"
+        },
+        {
+          "char": "α",
+          "label": "Chữ Thường Hy Lạp Alpha"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Ký hiệu «thay đổi trong» delta cùng các toán tử, quan hệ và chữ cái Hy Lạp lấp đầy một phương trình." },
-    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "Omega khép lại bảng chữ cái; delta thường sánh đôi cùng nó trong toán học." },
-    { "href": "/vi/symbol/sigma-symbol/", "title": "Ký Hiệu Sigma", "desc": "Một chữ cái Hy Lạp chủ lực khác — dấu tổng trong toán học, và trào lưu «sigma male» trên mạng." }
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Ký Hiệu Chữ Cái Hy Lạp",
+      "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Ký hiệu «thay đổi trong» delta cùng các toán tử, quan hệ và chữ cái Hy Lạp lấp đầy một phương trình."
+    },
+    {
+      "href": "/vi/symbol/omega-symbol/",
+      "title": "Ký Hiệu Omega",
+      "desc": "Omega khép lại bảng chữ cái; delta thường sánh đôi cùng nó trong toán học."
+    },
+    {
+      "href": "/vi/symbol/sigma-symbol/",
+      "title": "Ký Hiệu Sigma",
+      "desc": "Một chữ cái Hy Lạp chủ lực khác — dấu tổng trong toán học, và trào lưu «sigma male» trên mạng."
+    }
   ]
 }

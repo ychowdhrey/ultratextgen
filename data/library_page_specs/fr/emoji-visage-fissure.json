@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-visage-fissure/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/emoji-visage-fissure/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Emoji Visage Fissuré",
       "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
       "symbols": [
-        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB)" }
+        {
+          "char": "🫫",
+          "label": "Visage Fissuré (brouillon, U+1FAEB)"
+        }
       ]
     },
     {
@@ -37,10 +49,22 @@
       "h2": "Emoji Déjà Existants Auxquels on le Compare",
       "intro": "Des emoji de visage déjà encodés et pleinement pris en charge, couvrant un registre similaire de tension ou de submersion — des substituts utiles jusqu'à ce que Visage Fissuré sorte réellement.",
       "symbols": [
-        { "char": "😬", "label": "Grimace" },
-        { "char": "🫠", "label": "Visage qui Fond" },
-        { "char": "🥴", "label": "Visage Étourdi" },
-        { "char": "🫪", "label": "Visage Distordu (l'emoji le plus populaire d'Unicode 17.0)" }
+        {
+          "char": "😬",
+          "label": "Grimace"
+        },
+        {
+          "char": "🫠",
+          "label": "Visage qui Fond"
+        },
+        {
+          "char": "🥴",
+          "label": "Visage Étourdi"
+        },
+        {
+          "char": "🫪",
+          "label": "Visage Distordu (l'emoji le plus populaire d'Unicode 17.0)"
+        }
       ]
     },
     {
@@ -49,18 +73,46 @@
       "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
       "intro": "Visage Fissuré n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
       "symbols": [
-        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
-        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" },
-        { "char": "🛙", "label": "Phare (brouillon, U+1F6D9)" }
+        {
+          "char": "🫝",
+          "label": "Cornichon (brouillon, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Papillon Monarque (brouillon, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Phare (brouillon, U+1F6D9)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/face-emojis/", "title": "Face Emojis", "desc": "Tous les emoji de visage déjà encodés, à parcourir et copier-coller dès aujourd'hui (en anglais)." },
-    { "href": "/fr/symbol/emoji-cornichon/", "title": "Emoji Cornichon", "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente." },
-    { "href": "/fr/symbol/emoji-meteore/", "title": "Emoji Météore", "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète." },
-    { "href": "/fr/symbol/emoji-papillon-monarque/", "title": "Emoji Papillon Monarque", "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon." },
-    { "href": "/fr/symbol/emoji-signe-du-pouce/", "title": "Emoji Signe du Pouce", "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation." }
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Tous les emoji de visage déjà encodés, à parcourir et copier-coller dès aujourd'hui (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/emoji-cornichon/",
+      "title": "Emoji Cornichon",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente."
+    },
+    {
+      "href": "/fr/symbol/emoji-meteore/",
+      "title": "Emoji Météore",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète."
+    },
+    {
+      "href": "/fr/symbol/emoji-papillon-monarque/",
+      "title": "Emoji Papillon Monarque",
+      "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon."
+    },
+    {
+      "href": "/fr/symbol/emoji-signe-du-pouce/",
+      "title": "Emoji Signe du Pouce",
+      "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation."
+    }
   ]
 }

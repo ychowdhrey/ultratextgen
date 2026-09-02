@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/vertical-line/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/vertical-line/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/vertical-line/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/vertical-line/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/vertical-line/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/vertical-line/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Vạch Dọc",
       "intro": "Ký hiệu vạch dọc, sẵn sàng để dán.",
       "symbols": [
-        { "char": "|", "label": "Ký Hiệu Vạch Dọc (U+007C)" }
+        {
+          "char": "|",
+          "label": "Ký Hiệu Vạch Dọc (U+007C)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Ký Hiệu Trông Giống Vạch Dọc",
       "intro": "Những ký hiệu này có hình dáng gần giống | nhưng mang ý nghĩa khác.",
       "symbols": [
-        { "char": "‖", "label": "Vạch Dọc Kép (U+2016): dùng trong toán học cho chuẩn, ví dụ ‖v‖" },
-        { "char": "¦", "label": "Vạch Đứt Đoạn (U+00A6): một biến thể cũ hơn, ít gặp hơn, có trên một số bàn phím quốc tế" }
+        {
+          "char": "‖",
+          "label": "Vạch Dọc Kép (U+2016): dùng trong toán học cho chuẩn, ví dụ ‖v‖"
+        },
+        {
+          "char": "¦",
+          "label": "Vạch Đứt Đoạn (U+00A6): một biến thể cũ hơn, ít gặp hơn, có trên một số bàn phím quốc tế"
+        }
       ]
     },
     {
@@ -47,15 +65,32 @@
       "h2": "Các Ký Hiệu Liên Quan Khác",
       "intro": "Những ký hiệu khác thường xuất hiện cùng | trong nội dung về dấu chuẩn và ký tự ẩn.",
       "symbols": [
-        { "char": "°", "label": "Ký Hiệu Độ" },
-        { "char": "⠀", "label": "Ký Tự Vô Hình" }
+        {
+          "char": "°",
+          "label": "Ký Hiệu Độ"
+        },
+        {
+          "char": "⠀",
+          "label": "Ký Tự Vô Hình"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Nhiều thế kỷ dùng trong thiên văn học, góc và các thang nhiệt độ." },
-    { "href": "/vi/symbol/invisible-character/", "title": "Ký Tự Vô Hình", "desc": "Bí quyết đứng sau tên người dùng và tên hiển thị trống." },
-    { "href": "/library/vertical-line-symbols/", "title": "Tất Cả Ký Hiệu Vạch Dọc", "desc": "Mọi ký tự pipe, vạch và đường kẻ dọc mà Unicode cung cấp." }
+    {
+      "href": "/vi/symbol/degree-symbol/",
+      "title": "Ký Hiệu Độ (°)",
+      "desc": "Nhiều thế kỷ dùng trong thiên văn học, góc và các thang nhiệt độ."
+    },
+    {
+      "href": "/vi/symbol/invisible-character/",
+      "title": "Ký Tự Vô Hình",
+      "desc": "Bí quyết đứng sau tên người dùng và tên hiển thị trống."
+    },
+    {
+      "href": "/library/vertical-line-symbols/",
+      "title": "Tất Cả Ký Hiệu Vạch Dọc",
+      "desc": "Mọi ký tự pipe, vạch và đường kẻ dọc mà Unicode cung cấp."
+    }
   ]
 }

@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/recycling-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/recycling-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/recycling-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/recycling-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/recycling-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/recycling-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Tái Chế",
       "intro": "Unicode mang theo một số dấu tái chế: ký hiệu đầy quen thuộc, viền rỗng của nó, và biến thể dành cho giấy tái chế.",
       "symbols": [
-        { "char": "♻", "label": "Ký Hiệu Tái Chế" },
-        { "char": "♲", "label": "Ký Hiệu Tái Chế Phổ Quát (Viền Rỗng)" },
-        { "char": "♼", "label": "Ký Hiệu Giấy Tái Chế" }
+        {
+          "char": "♻",
+          "label": "Ký Hiệu Tái Chế"
+        },
+        {
+          "char": "♲",
+          "label": "Ký Hiệu Tái Chế Phổ Quát (Viền Rỗng)"
+        },
+        {
+          "char": "♼",
+          "label": "Ký Hiệu Giấy Tái Chế"
+        }
       ]
     },
     {
@@ -39,11 +57,26 @@
       "h2": "Ký Hiệu Môi Trường & Thiên Nhiên",
       "intro": "Các ký hiệu thường được ghép cùng tái chế trong thông điệp môi trường và bền vững.",
       "symbols": [
-        { "char": "🌱", "label": "Cây Non" },
-        { "char": "🌍", "label": "Địa Cầu (Châu Âu-Châu Phi)" },
-        { "char": "🍃", "label": "Lá Bay Trong Gió" },
-        { "char": "🌳", "label": "Cây Rụng Lá" },
-        { "char": "💧", "label": "Giọt Nước" }
+        {
+          "char": "🌱",
+          "label": "Cây Non"
+        },
+        {
+          "char": "🌍",
+          "label": "Địa Cầu (Châu Âu-Châu Phi)"
+        },
+        {
+          "char": "🍃",
+          "label": "Lá Bay Trong Gió"
+        },
+        {
+          "char": "🌳",
+          "label": "Cây Rụng Lá"
+        },
+        {
+          "char": "💧",
+          "label": "Giọt Nước"
+        }
       ]
     },
     {
@@ -52,17 +85,40 @@
       "h2": "Biển Báo & Hình Tượng Được Chuẩn Hóa",
       "intro": "Các hình tượng và dấu cảnh báo được chuẩn hóa quốc tế khác trong cùng họ chức năng.",
       "symbols": [
-        { "char": "♿", "label": "Ký Hiệu Xe Lăn" },
-        { "char": "☣️", "label": "Nguy Hại Sinh Học" },
-        { "char": "⚠️", "label": "Cảnh Báo" },
-        { "char": "☢️", "label": "Phóng Xạ" }
+        {
+          "char": "♿",
+          "label": "Ký Hiệu Xe Lăn"
+        },
+        {
+          "char": "☣️",
+          "label": "Nguy Hại Sinh Học"
+        },
+        {
+          "char": "⚠️",
+          "label": "Cảnh Báo"
+        },
+        {
+          "char": "☢️",
+          "label": "Phóng Xạ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/recycle-environment-symbols/", "title": "Ký Hiệu Tái Chế & Môi Trường", "desc": "Dấu tái chế, nhãn sinh thái và ký hiệu thiên nhiên trong một trang tra cứu — trang này là «trang nhánh» dành riêng cho ký hiệu tái chế của trang tổng hợp đó." },
-    { "href": "/vi/symbol/biohazard-symbol/", "title": "Ký Hiệu Nguy Hại Sinh Học", "desc": "Một hình tượng hiện đại khác có nguồn gốc thiết kế doanh nghiệp được ghi chép đầy đủ — tạo ra tại Dow Chemical năm 1966 để cố ý «dễ nhớ nhưng vô nghĩa»." },
-    { "href": "/vi/symbol/wheelchair-symbol/", "title": "Ký Hiệu Xe Lăn", "desc": "Một hình tượng được chuẩn hóa quốc tế khác với lịch sử thiết kế cụ thể, có thể truy nguyên." }
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Ký Hiệu Tái Chế & Môi Trường",
+      "desc": "Dấu tái chế, nhãn sinh thái và ký hiệu thiên nhiên trong một trang tra cứu — trang này là «trang nhánh» dành riêng cho ký hiệu tái chế của trang tổng hợp đó."
+    },
+    {
+      "href": "/vi/symbol/biohazard-symbol/",
+      "title": "Ký Hiệu Nguy Hại Sinh Học",
+      "desc": "Một hình tượng hiện đại khác có nguồn gốc thiết kế doanh nghiệp được ghi chép đầy đủ — tạo ra tại Dow Chemical năm 1966 để cố ý «dễ nhớ nhưng vô nghĩa»."
+    },
+    {
+      "href": "/vi/symbol/wheelchair-symbol/",
+      "title": "Ký Hiệu Xe Lăn",
+      "desc": "Một hình tượng được chuẩn hóa quốc tế khác với lịch sử thiết kế cụ thể, có thể truy nguyên."
+    }
   ]
 }

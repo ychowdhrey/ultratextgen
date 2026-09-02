@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/stop-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/stop-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/stop-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/stop-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/stop-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/stop-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Emoji Biển Báo Dừng",
       "intro": "Chính hình bát giác, và hai ký hiệu gần nghĩa nhất mà không phải cùng một thứ.",
       "symbols": [
-        { "char": "🛑", "label": "Biển Báo Dừng" },
-        { "char": "⛔", "label": "Cấm Vào" },
-        { "char": "🚫", "label": "Cấm" }
+        {
+          "char": "🛑",
+          "label": "Biển Báo Dừng"
+        },
+        {
+          "char": "⛔",
+          "label": "Cấm Vào"
+        },
+        {
+          "char": "🚫",
+          "label": "Cấm"
+        }
       ]
     },
     {
@@ -39,11 +57,26 @@
       "h2": "Ký Hiệu Giao Thông & Cảnh Báo",
       "intro": "Các dấu hiệu cảnh báo và nguy hiểm liên quan thường xuất hiện cùng biển báo dừng trong biển báo và nhắn tin.",
       "symbols": [
-        { "char": "⚠️", "label": "Cảnh Báo" },
-        { "char": "🚧", "label": "Công Trường" },
-        { "char": "⚡", "label": "Điện Áp Cao" },
-        { "char": "☢️", "label": "Phóng Xạ" },
-        { "char": "☣️", "label": "Nguy Hại Sinh Học" }
+        {
+          "char": "⚠️",
+          "label": "Cảnh Báo"
+        },
+        {
+          "char": "🚧",
+          "label": "Công Trường"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Áp Cao"
+        },
+        {
+          "char": "☢️",
+          "label": "Phóng Xạ"
+        },
+        {
+          "char": "☣️",
+          "label": "Nguy Hại Sinh Học"
+        }
       ]
     },
     {
@@ -52,17 +85,40 @@
       "h2": "Dấu Câu Cảnh Báo & Báo Động",
       "intro": "Các đối tác cấp độ dấu câu mà mọi người dùng để thêm sự cấp bách mà không cần cả một ký hiệu biển báo.",
       "symbols": [
-        { "char": "❗", "label": "Dấu Chấm Than" },
-        { "char": "❕", "label": "Dấu Chấm Than Trắng" },
-        { "char": "‼️", "label": "Dấu Chấm Than Đôi" },
-        { "char": "⁉️", "label": "Dấu Chấm Than Hỏi" }
+        {
+          "char": "❗",
+          "label": "Dấu Chấm Than"
+        },
+        {
+          "char": "❕",
+          "label": "Dấu Chấm Than Trắng"
+        },
+        {
+          "char": "‼️",
+          "label": "Dấu Chấm Than Đôi"
+        },
+        {
+          "char": "⁉️",
+          "label": "Dấu Chấm Than Hỏi"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/hazard-warning-symbols/", "title": "Ký Hiệu Nguy Hại & Cảnh Báo", "desc": "Bộ dấu hiệu cảnh báo, phóng xạ và nguy hại sinh học rộng hơn mà biển báo dừng thường xuất hiện cạnh." },
-    { "href": "/vi/symbol/biohazard-symbol/", "title": "Ký Hiệu Nguy Hại Sinh Học", "desc": "Một biển báo khác mà chính hình dạng của nó là lời cảnh báo — thiết kế năm 1966 để vô nghĩa cho đến khi được dạy, rồi trở nên khó quên." },
-    { "href": "/vi/symbol/wheelchair-symbol/", "title": "Ký Hiệu Xe Lăn", "desc": "Một kiểu ký hiệu biển báo chuẩn hóa khác, với lịch sử thiết kế năm 1968 riêng và cuộc tranh luận thiết kế lại hiện đại." }
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Ký Hiệu Nguy Hại & Cảnh Báo",
+      "desc": "Bộ dấu hiệu cảnh báo, phóng xạ và nguy hại sinh học rộng hơn mà biển báo dừng thường xuất hiện cạnh."
+    },
+    {
+      "href": "/vi/symbol/biohazard-symbol/",
+      "title": "Ký Hiệu Nguy Hại Sinh Học",
+      "desc": "Một biển báo khác mà chính hình dạng của nó là lời cảnh báo — thiết kế năm 1966 để vô nghĩa cho đến khi được dạy, rồi trở nên khó quên."
+    },
+    {
+      "href": "/vi/symbol/wheelchair-symbol/",
+      "title": "Ký Hiệu Xe Lăn",
+      "desc": "Một kiểu ký hiệu biển báo chuẩn hóa khác, với lịch sử thiết kế năm 1968 riêng và cuộc tranh luận thiết kế lại hiện đại."
+    }
   ]
 }

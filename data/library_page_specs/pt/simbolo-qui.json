@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-qui/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-qui/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/chi-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "the-chi-symbol",
@@ -29,8 +37,14 @@
       "h2": "O Símbolo Qui — Χ e χ",
       "intro": "A letra grega em si, nas duas caixas. O Χ maiúsculo carrega a história religiosa e de abreviação de qui; o χ minúsculo faz a maior parte do trabalho matemático e científico moderno.",
       "symbols": [
-        { "char": "Χ", "label": "Letra Grega Maiúscula Qui (U+03A7)" },
-        { "char": "χ", "label": "Letra Grega Minúscula Qui (U+03C7)" }
+        {
+          "char": "Χ",
+          "label": "Letra Grega Maiúscula Qui (U+03A7)"
+        },
+        {
+          "char": "χ",
+          "label": "Letra Grega Minúscula Qui (U+03C7)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Chi-Rho, Xmas e o Monograma Cristão",
       "intro": "Como o Χ maiúsculo abre Χριστός («Cristo»), ele virou uma abreviação secular do nome — a origem tanto do monograma Chi-Rho que Constantino usou como estandarte de batalha quanto do moderno «Xmas». Cole aqui as peças dessa história.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627): o cristograma / labarum ΧΡ" },
-        { "char": "Χ", "label": "Letra Grega Maiúscula Qui (U+03A7): o Χ que abre Χριστός" },
-        { "char": "X", "label": "Letra Latina Maiúscula X (U+0058): o X em «Xmas»" }
+        {
+          "char": "☧",
+          "label": "Chi Rho (U+2627): o cristograma / labarum ΧΡ"
+        },
+        {
+          "char": "Χ",
+          "label": "Letra Grega Maiúscula Qui (U+03A7): o Χ que abre Χριστός"
+        },
+        {
+          "char": "X",
+          "label": "Letra Latina Maiúscula X (U+0058): o X em «Xmas»"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Qui-Quadrado (χ²) na Estatística e na Ciência",
       "intro": "O χ minúsculo é um cavalo de batalha científico: o teste de qualidade de ajuste χ² que Karl Pearson introduziu em 1900, além da característica de Euler em topologia e da suscetibilidade magnética na física. Pegue a letra e um dois sobrescrito para compor χ² você mesmo.",
       "symbols": [
-        { "char": "χ", "label": "Letra Grega Minúscula Qui (U+03C7): a estatística de teste χ²" },
-        { "char": "²", "label": "Dois Sobrescrito (U+00B2): para compor χ²" },
-        { "char": "Χ", "label": "Letra Grega Maiúscula Qui (U+03A7): também nomeia variáveis aleatórias" }
+        {
+          "char": "χ",
+          "label": "Letra Grega Minúscula Qui (U+03C7): a estatística de teste χ²"
+        },
+        {
+          "char": "²",
+          "label": "Dois Sobrescrito (U+00B2): para compor χ²"
+        },
+        {
+          "char": "Χ",
+          "label": "Letra Grega Maiúscula Qui (U+03A7): também nomeia variáveis aleatórias"
+        }
       ]
     },
     {
@@ -61,10 +93,22 @@
       "h2": "Qui vs. o X Latino — os Parecidos",
       "intro": "Qui parece quase idêntico à letra latina X, mas cada um tem seu próprio código — trocá-los sem perceber quebra buscas, código e equações. Aqui estão os quatro juntos, para você copiar exatamente o que precisa.",
       "symbols": [
-        { "char": "χ", "label": "Letra Grega Minúscula Qui (U+03C7)" },
-        { "char": "Χ", "label": "Letra Grega Maiúscula Qui (U+03A7)" },
-        { "char": "x", "label": "Letra Latina Minúscula X (U+0078)" },
-        { "char": "X", "label": "Letra Latina Maiúscula X (U+0058)" }
+        {
+          "char": "χ",
+          "label": "Letra Grega Minúscula Qui (U+03C7)"
+        },
+        {
+          "char": "Χ",
+          "label": "Letra Grega Maiúscula Qui (U+03A7)"
+        },
+        {
+          "char": "x",
+          "label": "Letra Latina Minúscula X (U+0078)"
+        },
+        {
+          "char": "X",
+          "label": "Letra Latina Maiúscula X (U+0058)"
+        }
       ]
     },
     {
@@ -73,10 +117,22 @@
       "h2": "Letras Gregas Relacionadas",
       "intro": "Qui é a 22ª letra do alfabeto grego, entre fi e psi. Aqui estão suas vizinhas e as outras letras gregas mais copiadas junto com ela.",
       "symbols": [
-        { "char": "φ", "label": "Letra Grega Minúscula Fi" },
-        { "char": "ψ", "label": "Letra Grega Minúscula Psi" },
-        { "char": "π", "label": "Letra Grega Minúscula Pi" },
-        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" }
+        {
+          "char": "φ",
+          "label": "Letra Grega Minúscula Fi"
+        },
+        {
+          "char": "ψ",
+          "label": "Letra Grega Minúscula Psi"
+        },
+        {
+          "char": "π",
+          "label": "Letra Grega Minúscula Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Letra Grega Maiúscula Sigma"
+        }
       ]
     }
   ],

@@ -17,14 +17,38 @@
       "h2": "Zero Width & Invisible Format Characters",
       "intro": "These characters occupy no visual width at all — ideal for invisible usernames and for breaking up text without showing anything.",
       "symbols": [
-        { "char": "​", "label": "Zero Width Space: U+200B" },
-        { "char": "‌", "label": "Zero Width Non-Joiner: U+200C" },
-        { "char": "‍", "label": "Zero Width Joiner: U+200D" },
-        { "char": "⁠", "label": "Word Joiner: U+2060" },
-        { "char": "﻿", "label": "Zero Width No-Break Space: U+FEFF" },
-        { "char": "‎", "label": "Left-to-Right Mark: U+200E" },
-        { "char": "‏", "label": "Right-to-Left Mark: U+200F" },
-        { "char": "­", "label": "Soft Hyphen: U+00AD" }
+        {
+          "char": "​",
+          "label": "Zero Width Space: U+200B"
+        },
+        {
+          "char": "‌",
+          "label": "Zero Width Non-Joiner: U+200C"
+        },
+        {
+          "char": "‍",
+          "label": "Zero Width Joiner: U+200D"
+        },
+        {
+          "char": "⁠",
+          "label": "Word Joiner: U+2060"
+        },
+        {
+          "char": "﻿",
+          "label": "Zero Width No-Break Space: U+FEFF"
+        },
+        {
+          "char": "‎",
+          "label": "Left-to-Right Mark: U+200E"
+        },
+        {
+          "char": "‏",
+          "label": "Right-to-Left Mark: U+200F"
+        },
+        {
+          "char": "­",
+          "label": "Soft Hyphen: U+00AD"
+        }
       ]
     },
     {
@@ -33,14 +57,38 @@
       "h2": "Blank Space Characters",
       "intro": "Visible-width but empty: these spaces survive in places where the regular space bar character gets trimmed or collapsed.",
       "symbols": [
-        { "char": " ", "label": "No-Break Space: U+00A0" },
-        { "char": " ", "label": "En Space: U+2002" },
-        { "char": " ", "label": "Em Space: U+2003" },
-        { "char": " ", "label": "Figure Space: U+2007" },
-        { "char": " ", "label": "Punctuation Space: U+2008" },
-        { "char": " ", "label": "Thin Space: U+2009" },
-        { "char": " ", "label": "Hair Space: U+200A" },
-        { "char": " ", "label": "Narrow No-Break Space: U+202F" }
+        {
+          "char": " ",
+          "label": "No-Break Space: U+00A0"
+        },
+        {
+          "char": " ",
+          "label": "En Space: U+2002"
+        },
+        {
+          "char": " ",
+          "label": "Em Space: U+2003"
+        },
+        {
+          "char": " ",
+          "label": "Figure Space: U+2007"
+        },
+        {
+          "char": " ",
+          "label": "Punctuation Space: U+2008"
+        },
+        {
+          "char": " ",
+          "label": "Thin Space: U+2009"
+        },
+        {
+          "char": " ",
+          "label": "Hair Space: U+200A"
+        },
+        {
+          "char": " ",
+          "label": "Narrow No-Break Space: U+202F"
+        }
       ]
     },
     {
@@ -49,13 +97,34 @@
       "h2": "Wide & Special Space Characters",
       "intro": "Extra-wide blank characters, including the full-width ideographic space used in CJK typography — great for big visible gaps.",
       "symbols": [
-        { "char": " ", "label": "En Quad: U+2000" },
-        { "char": " ", "label": "Em Quad: U+2001" },
-        { "char": " ", "label": "Three-Per-Em Space: U+2004" },
-        { "char": " ", "label": "Four-Per-Em Space: U+2005" },
-        { "char": " ", "label": "Six-Per-Em Space: U+2006" },
-        { "char": " ", "label": "Medium Mathematical Space: U+205F" },
-        { "char": "　", "label": "Ideographic Space: U+3000" }
+        {
+          "char": " ",
+          "label": "En Quad: U+2000"
+        },
+        {
+          "char": " ",
+          "label": "Em Quad: U+2001"
+        },
+        {
+          "char": " ",
+          "label": "Three-Per-Em Space: U+2004"
+        },
+        {
+          "char": " ",
+          "label": "Four-Per-Em Space: U+2005"
+        },
+        {
+          "char": " ",
+          "label": "Six-Per-Em Space: U+2006"
+        },
+        {
+          "char": " ",
+          "label": "Medium Mathematical Space: U+205F"
+        },
+        {
+          "char": "　",
+          "label": "Ideographic Space: U+3000"
+        }
       ]
     },
     {
@@ -64,16 +133,33 @@
       "h2": "Filler & Blank-Glyph Characters",
       "intro": "Letters and patterns that render as empty glyphs — the braille blank and Hangul filler are the go-to picks for invisible game names.",
       "symbols": [
-        { "char": "⠀", "label": "Braille Pattern Blank: U+2800" },
-        { "char": "ㅤ", "label": "Hangul Filler: U+3164" },
-        { "char": "ᅟ", "label": "Hangul Choseong Filler: U+115F" },
-        { "char": "ᅠ", "label": "Hangul Jungseong Filler: U+1160" },
-        { "char": "ﾠ", "label": "Halfwidth Hangul Filler: U+FFA0" },
-        { "char": "᠎", "label": "Mongolian Vowel Separator: U+180E" }
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank: U+2800"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler: U+3164"
+        },
+        {
+          "char": "ᅟ",
+          "label": "Hangul Choseong Filler: U+115F"
+        },
+        {
+          "char": "ᅠ",
+          "label": "Hangul Jungseong Filler: U+1160"
+        },
+        {
+          "char": "ﾠ",
+          "label": "Halfwidth Hangul Filler: U+FFA0"
+        },
+        {
+          "char": "᠎",
+          "label": "Mongolian Vowel Separator: U+180E"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/special-characters/",

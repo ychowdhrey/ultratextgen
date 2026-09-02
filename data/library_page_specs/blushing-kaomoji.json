@@ -16,12 +16,30 @@
       "h2": "Blushing Kaomoji",
       "intro": "Rosy-cheeked faces caught blushing.",
       "symbols": [
-        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Soft Blush" },
-        { "char": "( 〃▽〃)", "label": "Warm Blush" },
-        { "char": "(//∇//)", "label": "Rosy Cheeks" },
-        { "char": "(⑉• •⑉)", "label": "Bashful" },
-        { "char": "(๑•́ ₃ •̀๑)", "label": "Flushed" },
-        { "char": "( 〃ω〃)", "label": "Shy Smile" }
+        {
+          "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)",
+          "label": "Soft Blush"
+        },
+        {
+          "char": "( 〃▽〃)",
+          "label": "Warm Blush"
+        },
+        {
+          "char": "(//∇//)",
+          "label": "Rosy Cheeks"
+        },
+        {
+          "char": "(⑉• •⑉)",
+          "label": "Bashful"
+        },
+        {
+          "char": "(๑•́ ₃ •̀๑)",
+          "label": "Flushed"
+        },
+        {
+          "char": "( 〃ω〃)",
+          "label": "Shy Smile"
+        }
       ]
     },
     {
@@ -30,11 +48,26 @@
       "h2": "Shy Kaomoji",
       "intro": "Timid, hiding faces for a bashful moment.",
       "symbols": [
-        { "char": "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)", "label": "Peeking Shy" },
-        { "char": "(๑•﹏•)", "label": "Timid" },
-        { "char": "(,,´•ω•`,,)", "label": "Nervous" },
-        { "char": "( ˃̶᷄ ﹏ ˂̶᷅ )", "label": "Overwhelmed" },
-        { "char": "(⁄ ⁄˘⁄ε⁄˘⁄ ⁄)", "label": "Shy Kiss" }
+        {
+          "char": "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)",
+          "label": "Peeking Shy"
+        },
+        {
+          "char": "(๑•﹏•)",
+          "label": "Timid"
+        },
+        {
+          "char": "(,,´•ω•`,,)",
+          "label": "Nervous"
+        },
+        {
+          "char": "( ˃̶᷄ ﹏ ˂̶᷅ )",
+          "label": "Overwhelmed"
+        },
+        {
+          "char": "(⁄ ⁄˘⁄ε⁄˘⁄ ⁄)",
+          "label": "Shy Kiss"
+        }
       ]
     },
     {
@@ -43,10 +76,22 @@
       "h2": "Flustered Kaomoji",
       "intro": "Panicky, embarrassed faces losing their cool.",
       "symbols": [
-        { "char": "(⁄˃⁄ ⁄ω⁄ ⁄˂⁄)", "label": "Flustered" },
-        { "char": "(>/////<)", "label": "Bright Red" },
-        { "char": "(꒪ᗜ꒪ )", "label": "Frozen Up" },
-        { "char": "(๑>؂•̀๑)", "label": "Caught Off Guard" }
+        {
+          "char": "(⁄˃⁄ ⁄ω⁄ ⁄˂⁄)",
+          "label": "Flustered"
+        },
+        {
+          "char": "(>/////<)",
+          "label": "Bright Red"
+        },
+        {
+          "char": "(꒪ᗜ꒪ )",
+          "label": "Frozen Up"
+        },
+        {
+          "char": "(๑>؂•̀๑)",
+          "label": "Caught Off Guard"
+        }
       ]
     },
     {
@@ -55,18 +100,45 @@
       "h2": "Bashful Love Kaomoji",
       "intro": "Lovestruck faces blushing over a crush.",
       "symbols": [
-        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)♡", "label": "Blushing Heart" },
-        { "char": "(„ಡωಡ„)", "label": "Smitten Blush" },
-        { "char": "( ˶˘ ³˘)♡", "label": "Shy Kiss Heart" },
-        { "char": "(ﾉ*°▽°*)", "label": "Swept Away" }
+        {
+          "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)♡",
+          "label": "Blushing Heart"
+        },
+        {
+          "char": "(„ಡωಡ„)",
+          "label": "Smitten Blush"
+        },
+        {
+          "char": "( ˶˘ ³˘)♡",
+          "label": "Shy Kiss Heart"
+        },
+        {
+          "char": "(ﾉ*°▽°*)",
+          "label": "Swept Away"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." },
-    { "href": "/library/love-kaomoji/", "title": "Love & Heart Kaomoji", "desc": "Hearts, kisses, and hugs in cute Japanese text-face form." },
-    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful Japanese text faces for any good mood." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Love & Heart Kaomoji",
+      "desc": "Hearts, kisses, and hugs in cute Japanese text-face form."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces for any good mood."
+    }
   ]
 }

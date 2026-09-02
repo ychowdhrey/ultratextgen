@@ -16,14 +16,31 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/bracket-symbols/" },
-    { "lang": "ar", "href": "https://ultratextgen.com/ar/library/bracket-symbols/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-parentesi/" },
-    { "lang": "ko", "href": "https://ultratextgen.com/ko/library/gwalho-giho/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/klammer-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/bracket-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/bracket-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/bracket-symbols/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-parentesi/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/gwalho-giho/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/klammer-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/bracket-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "standard-brackets",
@@ -31,14 +48,38 @@
       "h2": "Standard-Klammerzeichen",
       "intro": "Gängige Klammertypen: runde, eckige, geschweifte und spitze Klammern.",
       "symbols": [
-        { "char": "(", "label": "Runde Klammer auf" },
-        { "char": ")", "label": "Runde Klammer zu" },
-        { "char": "[", "label": "Eckige Klammer auf" },
-        { "char": "]", "label": "Eckige Klammer zu" },
-        { "char": "{", "label": "Geschweifte Klammer auf" },
-        { "char": "}", "label": "Geschweifte Klammer zu" },
-        { "char": "⟨", "label": "Mathematische spitze Klammer auf" },
-        { "char": "⟩", "label": "Mathematische spitze Klammer zu" }
+        {
+          "char": "(",
+          "label": "Runde Klammer auf"
+        },
+        {
+          "char": ")",
+          "label": "Runde Klammer zu"
+        },
+        {
+          "char": "[",
+          "label": "Eckige Klammer auf"
+        },
+        {
+          "char": "]",
+          "label": "Eckige Klammer zu"
+        },
+        {
+          "char": "{",
+          "label": "Geschweifte Klammer auf"
+        },
+        {
+          "char": "}",
+          "label": "Geschweifte Klammer zu"
+        },
+        {
+          "char": "⟨",
+          "label": "Mathematische spitze Klammer auf"
+        },
+        {
+          "char": "⟩",
+          "label": "Mathematische spitze Klammer zu"
+        }
       ]
     },
     {
@@ -47,18 +88,54 @@
       "h2": "CJK- & japanische Klammerzeichen",
       "intro": "Chinesische, japanische und koreanische Klammerzeichen, beliebt in ästhetischem Text und Benutzernamen.",
       "symbols": [
-        { "char": "「", "label": "Eckklammer auf" },
-        { "char": "」", "label": "Eckklammer zu" },
-        { "char": "『", "label": "Weiße Eckklammer auf" },
-        { "char": "』", "label": "Weiße Eckklammer zu" },
-        { "char": "【", "label": "Schwarze Linsenklammer auf" },
-        { "char": "】", "label": "Schwarze Linsenklammer zu" },
-        { "char": "〔", "label": "Schildkrötenpanzer-Klammer auf" },
-        { "char": "〕", "label": "Schildkrötenpanzer-Klammer zu" },
-        { "char": "〈", "label": "Spitze Klammer auf" },
-        { "char": "〉", "label": "Spitze Klammer zu" },
-        { "char": "《", "label": "Doppelte spitze Klammer auf" },
-        { "char": "》", "label": "Doppelte spitze Klammer zu" }
+        {
+          "char": "「",
+          "label": "Eckklammer auf"
+        },
+        {
+          "char": "」",
+          "label": "Eckklammer zu"
+        },
+        {
+          "char": "『",
+          "label": "Weiße Eckklammer auf"
+        },
+        {
+          "char": "』",
+          "label": "Weiße Eckklammer zu"
+        },
+        {
+          "char": "【",
+          "label": "Schwarze Linsenklammer auf"
+        },
+        {
+          "char": "】",
+          "label": "Schwarze Linsenklammer zu"
+        },
+        {
+          "char": "〔",
+          "label": "Schildkrötenpanzer-Klammer auf"
+        },
+        {
+          "char": "〕",
+          "label": "Schildkrötenpanzer-Klammer zu"
+        },
+        {
+          "char": "〈",
+          "label": "Spitze Klammer auf"
+        },
+        {
+          "char": "〉",
+          "label": "Spitze Klammer zu"
+        },
+        {
+          "char": "《",
+          "label": "Doppelte spitze Klammer auf"
+        },
+        {
+          "char": "》",
+          "label": "Doppelte spitze Klammer zu"
+        }
       ]
     },
     {
@@ -67,14 +144,38 @@
       "h2": "Mathematische Klammerzeichen",
       "intro": "Aufrundungs-, Abrundungs-, doppelte eckige und mathematische Notationsklammern.",
       "symbols": [
-        { "char": "⌈", "label": "Aufrundungsklammer auf" },
-        { "char": "⌉", "label": "Aufrundungsklammer zu" },
-        { "char": "⌊", "label": "Abrundungsklammer auf" },
-        { "char": "⌋", "label": "Abrundungsklammer zu" },
-        { "char": "⟦", "label": "Mathematische weiße eckige Klammer auf" },
-        { "char": "⟧", "label": "Mathematische weiße eckige Klammer zu" },
-        { "char": "⟪", "label": "Mathematische doppelte spitze Klammer auf" },
-        { "char": "⟫", "label": "Mathematische doppelte spitze Klammer zu" }
+        {
+          "char": "⌈",
+          "label": "Aufrundungsklammer auf"
+        },
+        {
+          "char": "⌉",
+          "label": "Aufrundungsklammer zu"
+        },
+        {
+          "char": "⌊",
+          "label": "Abrundungsklammer auf"
+        },
+        {
+          "char": "⌋",
+          "label": "Abrundungsklammer zu"
+        },
+        {
+          "char": "⟦",
+          "label": "Mathematische weiße eckige Klammer auf"
+        },
+        {
+          "char": "⟧",
+          "label": "Mathematische weiße eckige Klammer zu"
+        },
+        {
+          "char": "⟪",
+          "label": "Mathematische doppelte spitze Klammer auf"
+        },
+        {
+          "char": "⟫",
+          "label": "Mathematische doppelte spitze Klammer zu"
+        }
       ]
     },
     {
@@ -83,16 +184,46 @@
       "h2": "Dekorative Klammerzeichen",
       "intro": "Ornamentale und dekorative Klammerzeichen für stilisierten Text.",
       "symbols": [
-        { "char": "❪", "label": "Abgeflachte runde Klammer auf" },
-        { "char": "❫", "label": "Abgeflachte runde Klammer zu" },
-        { "char": "❬", "label": "Mittlere spitze Klammer auf" },
-        { "char": "❭", "label": "Mittlere spitze Klammer zu" },
-        { "char": "❮", "label": "Fettes spitzes Anführungszeichen-Ornament auf" },
-        { "char": "❯", "label": "Fettes spitzes Anführungszeichen-Ornament zu" },
-        { "char": "❰", "label": "Fettes spitzes Klammer-Ornament auf" },
-        { "char": "❱", "label": "Fettes spitzes Klammer-Ornament zu" },
-        { "char": "❲", "label": "Leichte Schildkrötenpanzer-Klammer auf" },
-        { "char": "❳", "label": "Leichte Schildkrötenpanzer-Klammer zu" }
+        {
+          "char": "❪",
+          "label": "Abgeflachte runde Klammer auf"
+        },
+        {
+          "char": "❫",
+          "label": "Abgeflachte runde Klammer zu"
+        },
+        {
+          "char": "❬",
+          "label": "Mittlere spitze Klammer auf"
+        },
+        {
+          "char": "❭",
+          "label": "Mittlere spitze Klammer zu"
+        },
+        {
+          "char": "❮",
+          "label": "Fettes spitzes Anführungszeichen-Ornament auf"
+        },
+        {
+          "char": "❯",
+          "label": "Fettes spitzes Anführungszeichen-Ornament zu"
+        },
+        {
+          "char": "❰",
+          "label": "Fettes spitzes Klammer-Ornament auf"
+        },
+        {
+          "char": "❱",
+          "label": "Fettes spitzes Klammer-Ornament zu"
+        },
+        {
+          "char": "❲",
+          "label": "Leichte Schildkrötenpanzer-Klammer auf"
+        },
+        {
+          "char": "❳",
+          "label": "Leichte Schildkrötenpanzer-Klammer zu"
+        }
       ]
     },
     {
@@ -101,14 +232,38 @@
       "h2": "Typografische Anführungsklammern",
       "intro": "Typografische Anführungszeichen und Guillemets für formellen und dekorativen Text.",
       "symbols": [
-        { "char": "‹", "label": "Einfaches spitzes Anführungszeichen links" },
-        { "char": "›", "label": "Einfaches spitzes Anführungszeichen rechts" },
-        { "char": "«", "label": "Doppeltes spitzes Anführungszeichen links" },
-        { "char": "»", "label": "Doppeltes spitzes Anführungszeichen rechts" },
-        { "char": "❝", "label": "Fettes doppeltes gedrehtes Komma-Anführungszeichen" },
-        { "char": "❞", "label": "Fettes doppeltes Komma-Anführungszeichen" },
-        { "char": "❛", "label": "Fettes einfaches gedrehtes Komma-Anführungszeichen" },
-        { "char": "❜", "label": "Fettes einfaches Komma-Anführungszeichen" }
+        {
+          "char": "‹",
+          "label": "Einfaches spitzes Anführungszeichen links"
+        },
+        {
+          "char": "›",
+          "label": "Einfaches spitzes Anführungszeichen rechts"
+        },
+        {
+          "char": "«",
+          "label": "Doppeltes spitzes Anführungszeichen links"
+        },
+        {
+          "char": "»",
+          "label": "Doppeltes spitzes Anführungszeichen rechts"
+        },
+        {
+          "char": "❝",
+          "label": "Fettes doppeltes gedrehtes Komma-Anführungszeichen"
+        },
+        {
+          "char": "❞",
+          "label": "Fettes doppeltes Komma-Anführungszeichen"
+        },
+        {
+          "char": "❛",
+          "label": "Fettes einfaches gedrehtes Komma-Anführungszeichen"
+        },
+        {
+          "char": "❜",
+          "label": "Fettes einfaches Komma-Anführungszeichen"
+        }
       ]
     },
     {
@@ -117,12 +272,30 @@
       "h2": "Vollbreite Klammerzeichen",
       "intro": "Vollbreite Klammervarianten aus der CJK-Typografie und für ästhetischen Text.",
       "symbols": [
-        { "char": "（", "label": "Vollbreite runde Klammer auf" },
-        { "char": "）", "label": "Vollbreite runde Klammer zu" },
-        { "char": "［", "label": "Vollbreite eckige Klammer auf" },
-        { "char": "］", "label": "Vollbreite eckige Klammer zu" },
-        { "char": "｛", "label": "Vollbreite geschweifte Klammer auf" },
-        { "char": "｝", "label": "Vollbreite geschweifte Klammer zu" }
+        {
+          "char": "（",
+          "label": "Vollbreite runde Klammer auf"
+        },
+        {
+          "char": "）",
+          "label": "Vollbreite runde Klammer zu"
+        },
+        {
+          "char": "［",
+          "label": "Vollbreite eckige Klammer auf"
+        },
+        {
+          "char": "］",
+          "label": "Vollbreite eckige Klammer zu"
+        },
+        {
+          "char": "｛",
+          "label": "Vollbreite geschweifte Klammer auf"
+        },
+        {
+          "char": "｝",
+          "label": "Vollbreite geschweifte Klammer zu"
+        }
       ]
     }
   ],

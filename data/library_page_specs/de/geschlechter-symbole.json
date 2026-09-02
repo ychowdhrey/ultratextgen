@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/gender-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/geschlechter-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/gender-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/gender-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/geschlechter-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/gender-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "related": [
     {
       "href": "/de/library/herz-symbole/",
@@ -45,11 +53,26 @@
       "h2": "Grundlegende Geschlechtszeichen",
       "intro": "Die wichtigsten Zeichen für männlich, weiblich, transgender und neutral.",
       "symbols": [
-        { "char": "♀", "label": "Weiblich-Zeichen" },
-        { "char": "♂", "label": "Männlich-Zeichen" },
-        { "char": "⚧", "label": "Transgender-Symbol" },
-        { "char": "⚲", "label": "Neutrum-Zeichen" },
-        { "char": "⚪", "label": "Mittelgroßer weißer Kreis (Agender)" }
+        {
+          "char": "♀",
+          "label": "Weiblich-Zeichen"
+        },
+        {
+          "char": "♂",
+          "label": "Männlich-Zeichen"
+        },
+        {
+          "char": "⚧",
+          "label": "Transgender-Symbol"
+        },
+        {
+          "char": "⚲",
+          "label": "Neutrum-Zeichen"
+        },
+        {
+          "char": "⚪",
+          "label": "Mittelgroßer weißer Kreis (Agender)"
+        }
       ]
     },
     {
@@ -58,13 +81,34 @@
       "h2": "Kombinierte & Orientierungszeichen",
       "intro": "Verdoppelte und verschränkte Zeichen für Orientierungs- und Geschlechtskombinationen.",
       "symbols": [
-        { "char": "⚢", "label": "Verdoppeltes Weiblich-Zeichen" },
-        { "char": "⚣", "label": "Verdoppeltes Männlich-Zeichen" },
-        { "char": "⚤", "label": "Verschränktes Weiblich- und Männlich-Zeichen" },
-        { "char": "⚥", "label": "Männlich- und Weiblich-Zeichen" },
-        { "char": "⚦", "label": "Männlich-Zeichen mit Balken" },
-        { "char": "⚨", "label": "Vertikales Männlich-Zeichen mit Balken" },
-        { "char": "⚩", "label": "Horizontales Männlich-Zeichen mit Balken" }
+        {
+          "char": "⚢",
+          "label": "Verdoppeltes Weiblich-Zeichen"
+        },
+        {
+          "char": "⚣",
+          "label": "Verdoppeltes Männlich-Zeichen"
+        },
+        {
+          "char": "⚤",
+          "label": "Verschränktes Weiblich- und Männlich-Zeichen"
+        },
+        {
+          "char": "⚥",
+          "label": "Männlich- und Weiblich-Zeichen"
+        },
+        {
+          "char": "⚦",
+          "label": "Männlich-Zeichen mit Balken"
+        },
+        {
+          "char": "⚨",
+          "label": "Vertikales Männlich-Zeichen mit Balken"
+        },
+        {
+          "char": "⚩",
+          "label": "Horizontales Männlich-Zeichen mit Balken"
+        }
       ]
     },
     {
@@ -73,9 +117,18 @@
       "h2": "Ehe- & Partnerschaftszeichen",
       "intro": "Zeichen aus Genealogie und Urkunden für Verbindungen und deren Auflösung.",
       "symbols": [
-        { "char": "⚭", "label": "Ehe-Symbol" },
-        { "char": "⚮", "label": "Scheidungs-Symbol" },
-        { "char": "⚯", "label": "Unverheiratete-Partnerschaft-Symbol" }
+        {
+          "char": "⚭",
+          "label": "Ehe-Symbol"
+        },
+        {
+          "char": "⚮",
+          "label": "Scheidungs-Symbol"
+        },
+        {
+          "char": "⚯",
+          "label": "Unverheiratete-Partnerschaft-Symbol"
+        }
       ]
     }
   ]

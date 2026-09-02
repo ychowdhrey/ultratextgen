@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-cetriolino/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/emoji-cetriolino/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +37,10 @@
       "h2": "Emoji Cetriolino",
       "intro": "Il carattere in bozza in sé — copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
       "symbols": [
-        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" }
+        {
+          "char": "🫝",
+          "label": "Pickle (bozza, U+1FADD)"
+        }
       ]
     },
     {
@@ -38,9 +49,18 @@
       "h2": "Le Emoji con Cui Viene Confusa",
       "intro": "Emoji di prodotti ortofrutticoli già codificate a cui Pickle viene più spesso paragonata, o di cui viene accusata di sovrapporsi.",
       "symbols": [
-        { "char": "🥒", "label": "Cetriolo" },
-        { "char": "🍆", "label": "Melanzana" },
-        { "char": "🫑", "label": "Peperone" }
+        {
+          "char": "🥒",
+          "label": "Cetriolo"
+        },
+        {
+          "char": "🍆",
+          "label": "Melanzana"
+        },
+        {
+          "char": "🫑",
+          "label": "Peperone"
+        }
       ]
     },
     {
@@ -49,9 +69,18 @@
       "h2": "Altre Candidate in Bozza di Emoji 18.0",
       "intro": "Pickle non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB)" },
-        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" },
-        { "char": "🛙", "label": "Lighthouse (bozza, U+1F6D9)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bozza, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bozza, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (bozza, U+1F6D9)"
+        }
       ]
     }
   ],

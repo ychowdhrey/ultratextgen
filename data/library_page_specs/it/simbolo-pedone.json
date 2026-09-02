@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-pedone/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-pedone/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Il Simbolo Pedone — ♟ e ♙",
       "intro": "I due glifi del pedone. Il ♟ nero pieno è quello che copiano quasi tutti; il ♙ bianco a contorno è il suo gemello del lato chiaro. Entrambi sono singoli caratteri Unicode, pronti da inserire in qualsiasi testo.",
       "symbols": [
-        { "char": "♟", "label": "Black Chess Pawn (U+265F)" },
-        { "char": "♙", "label": "White Chess Pawn (U+2659)" }
+        {
+          "char": "♟",
+          "label": "Black Chess Pawn (U+265F)"
+        },
+        {
+          "char": "♙",
+          "label": "White Chess Pawn (U+2659)"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "I Compagni di Squadra del Pedone Nero",
       "intro": "Il resto dello schieramento nero che si allinea dietro il pedone — re, regina, torre, alfiere e cavallo, da U+265A a U+265E nello stesso blocco Unicode.",
       "symbols": [
-        { "char": "♚", "label": "Black Chess King (U+265A)" },
-        { "char": "♛", "label": "Black Chess Queen (U+265B)" },
-        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
-        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
-        { "char": "♞", "label": "Black Chess Knight (U+265E)" }
+        {
+          "char": "♚",
+          "label": "Black Chess King (U+265A)"
+        },
+        {
+          "char": "♛",
+          "label": "Black Chess Queen (U+265B)"
+        },
+        {
+          "char": "♜",
+          "label": "Black Chess Rook (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Black Chess Bishop (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Black Chess Knight (U+265E)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "I Pezzi Bianchi degli Scacchi",
       "intro": "Lo schieramento bianco a contorno che affronta il pedone nero dall'altra parte della scacchiera, occupando da U+2654 a U+2658 — la regina che un giorno potrebbe dover temere, e il re che non potrà mai diventare.",
       "symbols": [
-        { "char": "♔", "label": "White Chess King (U+2654)" },
-        { "char": "♕", "label": "White Chess Queen (U+2655)" },
-        { "char": "♖", "label": "White Chess Rook (U+2656)" },
-        { "char": "♗", "label": "White Chess Bishop (U+2657)" },
-        { "char": "♘", "label": "White Chess Knight (U+2658)" }
+        {
+          "char": "♔",
+          "label": "White Chess King (U+2654)"
+        },
+        {
+          "char": "♕",
+          "label": "White Chess Queen (U+2655)"
+        },
+        {
+          "char": "♖",
+          "label": "White Chess Rook (U+2656)"
+        },
+        {
+          "char": "♗",
+          "label": "White Chess Bishop (U+2657)"
+        },
+        {
+          "char": "♘",
+          "label": "White Chess Knight (U+2658)"
+        }
       ]
     },
     {
@@ -65,10 +109,22 @@
       "h2": "Cosa Può Diventare un Pedone",
       "intro": "Un pedone che raggiunge l'estremità opposta della scacchiera deve promuovere — a regina, torre, alfiere o cavallo del proprio colore. Non può mai diventare re, e non può restare pedone. La regina è la scelta abituale; qualsiasi altra è una \"sotto-promozione\".",
       "symbols": [
-        { "char": "♛", "label": "Black Chess Queen (U+265B): la promozione abituale" },
-        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
-        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
-        { "char": "♞", "label": "Black Chess Knight (U+265E): una sotto-promozione" }
+        {
+          "char": "♛",
+          "label": "Black Chess Queen (U+265B): la promozione abituale"
+        },
+        {
+          "char": "♜",
+          "label": "Black Chess Rook (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Black Chess Bishop (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Black Chess Knight (U+265E): una sotto-promozione"
+        }
       ]
     }
   ],

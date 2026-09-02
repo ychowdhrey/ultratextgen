@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/totenkopf-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/totenkopf-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-symbol",
@@ -29,8 +37,14 @@
       "h2": "Der Totenkopf mit gekreuzten Knochen — ☠",
       "intro": "Das Symbol selbst, sowohl in reiner Textform als auch in Emoji-Darstellung. Es ist derselbe Codepoint, U+2620 — ein angehängter Variationsselektor entscheidet allein, ob es als schwarz-weiße Glyphe oder als farbiges Emoji erscheint.",
       "symbols": [
-        { "char": "☠", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
-        { "char": "☠️", "label": "Totenkopf mit gekreuzten Knochen, Emoji-Stil (U+2620 U+FE0F)" }
+        {
+          "char": "☠",
+          "label": "Totenkopf mit gekreuzten Knochen (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Totenkopf mit gekreuzten Knochen, Emoji-Stil (U+2620 U+FE0F)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "☠ vs. das 💀-Skull-Emoji",
       "intro": "Die Verwechslung, die sich lohnt aufzuklären: ☠ (Totenkopf mit gekreuzten Knochen) und 💀 (schlichter Schädel) sind unterschiedliche Unicode-Zeichen. 💀 posten die meisten für „Ich bin tot“ oder Lach-Reaktionen; ☠ ist das Gefahren- und Piratenzeichen. Passend dazu setzt sich das Piratenflagge-Emoji 🏴‍☠️ zusammen, indem eine schwarze Flagge mit genau U+2620 verbunden wird.",
       "symbols": [
-        { "char": "☠️", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
-        { "char": "💀", "label": "Schädel (U+1F480)" },
-        { "char": "🏴‍☠️", "label": "Piratenflagge (U+1F3F4 U+200D U+2620)" }
+        {
+          "char": "☠️",
+          "label": "Totenkopf mit gekreuzten Knochen (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Schädel (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Piratenflagge (U+1F3F4 U+200D U+2620)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Verwandte Gefahren- & Warnzeichen",
       "intro": "Der Totenkopf mit gekreuzten Knochen sitzt in Unicodes Block Miscellaneous Symbols direkt neben den übrigen Warnzeichen, mit denen er oft gruppiert wird — jedes ein eigener Codepoint mit eigener Gefahrenbedeutung.",
       "symbols": [
-        { "char": "☠", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
-        { "char": "☢", "label": "Radioaktiv-Zeichen (U+2622)" },
-        { "char": "☣", "label": "Biohazard-Zeichen (U+2623)" },
-        { "char": "⚠", "label": "Warnzeichen (U+26A0)" }
+        {
+          "char": "☠",
+          "label": "Totenkopf mit gekreuzten Knochen (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Radioaktiv-Zeichen (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Biohazard-Zeichen (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Warnzeichen (U+26A0)"
+        }
       ]
     }
   ],

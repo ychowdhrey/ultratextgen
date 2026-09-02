@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/anarchy-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/anarchy-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/anarchy-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/anarchy-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Vô Chính Phủ (Chữ A Trong Vòng Tròn)",
       "intro": "Chính chữ A trong vòng tròn, sẵn sàng để dán bất cứ đâu. Unicode không có ký tự vô chính phủ chuyên dụng — đây là các glyph chữ A bao quanh đứng thay cho nó.",
       "symbols": [
-        { "char": "Ⓐ", "label": "Chữ Latin Hoa A Trong Vòng Tròn (U+24B6)" },
-        { "char": "🅐", "label": "Chữ A Trong Vòng Tròn Âm Bản (Biến Thể Tô Đặc)" }
+        {
+          "char": "Ⓐ",
+          "label": "Chữ Latin Hoa A Trong Vòng Tròn (U+24B6)"
+        },
+        {
+          "char": "🅐",
+          "label": "Chữ A Trong Vòng Tròn Âm Bản (Biến Thể Tô Đặc)"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Ký Hiệu Punk & Tiểu Văn Hóa",
       "intro": "Các dấu thẩm mỹ thay thế mà chữ A trong vòng tròn thường đi cùng nhất — biểu tượng punk và DIY đã mang nó đi khắp thế giới.",
       "symbols": [
-        { "char": "☠", "label": "Đầu Lâu Xương Chéo" },
-        { "char": "💀", "label": "Đầu Lâu" },
-        { "char": "⚡", "label": "Điện Áp Cao" },
-        { "char": "🤘", "label": "Ký Hiệu Sừng" },
-        { "char": "★", "label": "Ngôi Sao Đen" },
-        { "char": "🎸", "label": "Đàn Guitar" }
+        {
+          "char": "☠",
+          "label": "Đầu Lâu Xương Chéo"
+        },
+        {
+          "char": "💀",
+          "label": "Đầu Lâu"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Áp Cao"
+        },
+        {
+          "char": "🤘",
+          "label": "Ký Hiệu Sừng"
+        },
+        {
+          "char": "★",
+          "label": "Ngôi Sao Đen"
+        },
+        {
+          "char": "🎸",
+          "label": "Đàn Guitar"
+        }
       ]
     },
     {
@@ -52,19 +85,48 @@
       "h2": "Ký Hiệu Phản Kháng & Chính Trị",
       "intro": "Các dấu phong trào và phản kháng khác mà ký hiệu vô chính phủ thường được xếp cùng — gồm cả lá cờ đen từ lâu gắn liền với chủ nghĩa vô chính phủ.",
       "symbols": [
-        { "char": "☮", "label": "Ký Hiệu Hòa Bình" },
-        { "char": "✊", "label": "Nắm Đấm Giơ Lên" },
-        { "char": "🏴", "label": "Cờ Đen (Đang Bay)" },
-        { "char": "⚑", "label": "Cờ Đen" },
-        { "char": "✌️", "label": "Dấu Hiệu Chiến Thắng" },
-        { "char": "🕊️", "label": "Chim Bồ Câu Hòa Bình" }
+        {
+          "char": "☮",
+          "label": "Ký Hiệu Hòa Bình"
+        },
+        {
+          "char": "✊",
+          "label": "Nắm Đấm Giơ Lên"
+        },
+        {
+          "char": "🏴",
+          "label": "Cờ Đen (Đang Bay)"
+        },
+        {
+          "char": "⚑",
+          "label": "Cờ Đen"
+        },
+        {
+          "char": "✌️",
+          "label": "Dấu Hiệu Chiến Thắng"
+        },
+        {
+          "char": "🕊️",
+          "label": "Chim Bồ Câu Hòa Bình"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/goth-grunge-symbols/", "title": "Ký Hiệu Goth & Grunge", "desc": "Các dấu punk, goth và thẩm mỹ thay thế mà chữ A trong vòng tròn hòa hợp hoàn hảo." },
-    { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình", "desc": "Một biểu tượng phản kháng khác với câu chuyện nguồn gốc do một nhà thiết kế duy nhất tạo ra, được ghi chép chính xác." },
-    { "href": "/library/pride-lgbtq-symbols/", "title": "Ký Hiệu Cầu Vồng & LGBTQ", "desc": "Thêm các biểu tượng phong trào và bản sắc được tiểu văn hóa dùng cho phản kháng và sự thuộc về." }
+    {
+      "href": "/library/goth-grunge-symbols/",
+      "title": "Ký Hiệu Goth & Grunge",
+      "desc": "Các dấu punk, goth và thẩm mỹ thay thế mà chữ A trong vòng tròn hòa hợp hoàn hảo."
+    },
+    {
+      "href": "/vi/symbol/peace-sign/",
+      "title": "Ký Hiệu Hòa Bình",
+      "desc": "Một biểu tượng phản kháng khác với câu chuyện nguồn gốc do một nhà thiết kế duy nhất tạo ra, được ghi chép chính xác."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Ký Hiệu Cầu Vồng & LGBTQ",
+      "desc": "Thêm các biểu tượng phong trào và bản sắc được tiểu văn hóa dùng cho phản kháng và sự thuộc về."
+    }
   ]
 }

@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-asterisque/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-asterisque/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,11 +37,26 @@
       "h2": "L'Astérisque & Ses Variantes d'Affichage",
       "intro": "Le simple astérisque du clavier plus les formes d'affichage plus marquées et l'opérateur spécifiquement mathématique. Chacun est prêt à être collé.",
       "symbols": [
-        { "char": "*", "label": "Astérisque (U+002A): Note de Bas de Page, Joker & Marque de Censure" },
-        { "char": "✱", "label": "Astérisque Épais (U+2731)" },
-        { "char": "✳", "label": "Astérisque à Huit Branches (U+2733)" },
-        { "char": "∗", "label": "Opérateur Astérisque (U+2217): le Glyphe Mathématique de Multiplication" },
-        { "char": "＊", "label": "Astérisque Pleine Chasse (U+FF0A)" }
+        {
+          "char": "*",
+          "label": "Astérisque (U+002A): Note de Bas de Page, Joker & Marque de Censure"
+        },
+        {
+          "char": "✱",
+          "label": "Astérisque Épais (U+2731)"
+        },
+        {
+          "char": "✳",
+          "label": "Astérisque à Huit Branches (U+2733)"
+        },
+        {
+          "char": "∗",
+          "label": "Opérateur Astérisque (U+2217): le Glyphe Mathématique de Multiplication"
+        },
+        {
+          "char": "＊",
+          "label": "Astérisque Pleine Chasse (U+FF0A)"
+        }
       ]
     },
     {
@@ -41,9 +65,18 @@
       "h2": "Astérisme & Marques de Séparation de Section",
       "intro": "Des marques éditoriales construites à partir de l'astérisque — l'astérisme à trois branches en triangle qui sépare des sections, plus ses cousins empilés et abaissés.",
       "symbols": [
-        { "char": "⁂", "label": "Astérisme (U+2042): Trois Astérisques en Triangle" },
-        { "char": "⁑", "label": "Deux Astérisques Alignés Verticalement (U+2051)" },
-        { "char": "⁎", "label": "Astérisque Bas (U+204E)" }
+        {
+          "char": "⁂",
+          "label": "Astérisme (U+2042): Trois Astérisques en Triangle"
+        },
+        {
+          "char": "⁑",
+          "label": "Deux Astérisques Alignés Verticalement (U+2051)"
+        },
+        {
+          "char": "⁎",
+          "label": "Astérisque Bas (U+204E)"
+        }
       ]
     },
     {
@@ -52,18 +85,44 @@
       "h2": "Formes d'Étoile avec Lesquelles on le Confond",
       "intro": "Des glyphes en forme d'étoile que l'on va chercher en pensant à un astérisque. Ce sont des étoiles décoratives — un registre ornemental, pas un outil de note de bas de page ou de ponctuation.",
       "symbols": [
-        { "char": "★", "label": "Étoile Noire (U+2605)" },
-        { "char": "☆", "label": "Étoile Blanche (U+2606)" },
-        { "char": "⭐", "label": "Étoile Blanche Moyenne (U+2B50): l'Emoji Étoile Jaune" },
-        { "char": "✦", "label": "Étoile Noire à Quatre Branches (U+2726)" },
-        { "char": "✧", "label": "Étoile Blanche à Quatre Branches (U+2727)" }
+        {
+          "char": "★",
+          "label": "Étoile Noire (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Étoile Blanche (U+2606)"
+        },
+        {
+          "char": "⭐",
+          "label": "Étoile Blanche Moyenne (U+2B50): l'Emoji Étoile Jaune"
+        },
+        {
+          "char": "✦",
+          "label": "Étoile Noire à Quatre Branches (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "Étoile Blanche à Quatre Branches (U+2727)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "Tirets, crochets, guillemets et toute la famille de ponctuation courante à laquelle appartient l'astérisque (en anglais)." },
-    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "L'astérisque, l'esperluette, le dièse et le reste des symboles imprimés sur les rangées de ton clavier (en anglais)." },
-    { "href": "/fr/symbol/symbole-etoile/", "title": "Symbole Étoile (★)", "desc": "L'étoile décorative ★ et l'emoji étoile jaune ⭐ — les cousines ornementales que l'on confond avec l'astérisque." }
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Tirets, crochets, guillemets et toute la famille de ponctuation courante à laquelle appartient l'astérisque (en anglais)."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "L'astérisque, l'esperluette, le dièse et le reste des symboles imprimés sur les rangées de ton clavier (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-etoile/",
+      "title": "Symbole Étoile (★)",
+      "desc": "L'étoile décorative ★ et l'emoji étoile jaune ⭐ — les cousines ornementales que l'on confond avec l'astérisque."
+    }
   ]
 }

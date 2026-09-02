@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/kalender-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/kalender-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "kalender-emoji-kern",
@@ -29,7 +37,10 @@
       "h2": "Kalender-Emoji",
       "intro": "Die zentrale Unicode-Glyphe — ein einzelnes, abgerissenes Kalenderblatt.",
       "symbols": [
-        { "char": "📅", "label": "Kalender (U+1F4C5)" }
+        {
+          "char": "📅",
+          "label": "Kalender (U+1F4C5)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Weitere Kalender-Emojis, mit denen es verwechselt wird",
       "intro": "Zwei benachbarte Unicode-Kalender-Glyphen, jede mit einem anderen physischen Kalenderstil.",
       "symbols": [
-        { "char": "📆", "label": "Abreißkalender (U+1F4C6)" },
-        { "char": "🗓️", "label": "Spiralkalender (U+1F5D3)" }
+        {
+          "char": "📆",
+          "label": "Abreißkalender (U+1F4C6)"
+        },
+        {
+          "char": "🗓️",
+          "label": "Spiralkalender (U+1F5D3)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Verwandte Planungs- & Zeit-Emojis",
       "intro": "Emojis, die im Planungs- und Erinnerungskontext häufig neben einem Kalender auftauchen.",
       "symbols": [
-        { "char": "⏰", "label": "Wecker" },
-        { "char": "📌", "label": "Pinnnadel" },
-        { "char": "✅", "label": "Häkchen-Button" }
+        {
+          "char": "⏰",
+          "label": "Wecker"
+        },
+        {
+          "char": "📌",
+          "label": "Pinnnadel"
+        },
+        {
+          "char": "✅",
+          "label": "Häkchen-Button"
+        }
       ]
     }
   ],

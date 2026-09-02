@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/fahrenheit-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/fahrenheit-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Dấu Độ Fahrenheit",
       "intro": "Ký tự đơn ℉ và chuỗi hai ký tự °F mà Unicode ưu tiên.",
       "symbols": [
-        { "char": "℉", "label": "Độ Fahrenheit (Ký Tự Đơn)" },
-        { "char": "°F", "label": "Dấu Độ + F (Dạng Được Khuyến Nghị)" }
+        {
+          "char": "℉",
+          "label": "Độ Fahrenheit (Ký Tự Đơn)"
+        },
+        {
+          "char": "°F",
+          "label": "Dấu Độ + F (Dạng Được Khuyến Nghị)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Các Ký Hiệu Thường Bị Nhầm Với ℉",
       "intro": "Các ký hiệu thường bị dùng thay cho ℉ — mỗi cái là một ký tự riêng biệt.",
       "symbols": [
-        { "char": "°", "label": "Dấu Độ (U+00B0)" },
-        { "char": "℃", "label": "Độ Celsius (U+2103)" },
-        { "char": "K", "label": "Dấu Kelvin (U+212A)" },
-        { "char": "F", "label": "Chữ Latin F Hoa" }
+        {
+          "char": "°",
+          "label": "Dấu Độ (U+00B0)"
+        },
+        {
+          "char": "℃",
+          "label": "Độ Celsius (U+2103)"
+        },
+        {
+          "char": "K",
+          "label": "Dấu Kelvin (U+212A)"
+        },
+        {
+          "char": "F",
+          "label": "Chữ Latin F Hoa"
+        }
       ]
     },
     {
@@ -50,19 +77,49 @@
       "h2": "Các Ký Hiệu Đo Lường & Đơn Vị Khác",
       "intro": "Các dấu prime, tỷ lệ và ký hiệu khoa học đi kèm với ℉.",
       "symbols": [
-        { "char": "′", "label": "Prime (Phút / Feet)" },
-        { "char": "″", "label": "Double Prime (Giây / Inch)" },
-        { "char": "‰", "label": "Dấu Phần Nghìn" },
-        { "char": "µ", "label": "Ký Hiệu Micro (U+00B5)" },
-        { "char": "Ω", "label": "Ký Hiệu Ohm (U+2126)" }
+        {
+          "char": "′",
+          "label": "Prime (Phút / Feet)"
+        },
+        {
+          "char": "″",
+          "label": "Double Prime (Giây / Inch)"
+        },
+        {
+          "char": "‰",
+          "label": "Dấu Phần Nghìn"
+        },
+        {
+          "char": "µ",
+          "label": "Ký Hiệu Micro (U+00B5)"
+        },
+        {
+          "char": "Ω",
+          "label": "Ký Hiệu Ohm (U+2126)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/celsius-symbol/", "title": "Ký Hiệu Celsius (℃)", "desc": "Dấu độ Celsius đã ghép sẵn, và dạng °C mà Unicode ưu tiên." },
-    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Dấu độ đứng riêng đằng sau ℉, góc và tọa độ." },
-    { "href": "/library/unit-measurement-symbols/", "title": "Ký Hiệu Đơn Vị & Đo Lường", "desc": "Nhiệt độ, đơn vị SI và các ký hiệu khoa học trong một trang tra cứu." },
-    { "href": "/library/weather-symbols/", "title": "Ký Hiệu Thời Tiết", "desc": "Ký hiệu nhiệt độ, mặt trời, mây và bão cho dự báo thời tiết." }
+    {
+      "href": "/vi/symbol/celsius-symbol/",
+      "title": "Ký Hiệu Celsius (℃)",
+      "desc": "Dấu độ Celsius đã ghép sẵn, và dạng °C mà Unicode ưu tiên."
+    },
+    {
+      "href": "/vi/symbol/degree-symbol/",
+      "title": "Ký Hiệu Độ (°)",
+      "desc": "Dấu độ đứng riêng đằng sau ℉, góc và tọa độ."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Ký Hiệu Đơn Vị & Đo Lường",
+      "desc": "Nhiệt độ, đơn vị SI và các ký hiệu khoa học trong một trang tra cứu."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Ký Hiệu Thời Tiết",
+      "desc": "Ký hiệu nhiệt độ, mặt trời, mây và bão cho dự báo thời tiết."
+    }
   ]
 }

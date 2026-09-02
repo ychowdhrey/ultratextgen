@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/dirham-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/dirham-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Dirham",
       "intro": "Ký tự đã được xác nhận — có thể sao chép ngay hôm nay theo mã điểm, dù chưa phông chữ nào hiển thị được nó theo cách gốc.",
       "symbols": [
-        { "char": "⃃", "label": "Ký Hiệu Dirham UAE (U+20C3, đã chốt để xuất bản)" }
+        {
+          "char": "⃃",
+          "label": "Ký Hiệu Dirham UAE (U+20C3, đã chốt để xuất bản)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Các Ký Hiệu Tiền Tệ Vùng Vịnh Mới Khác Trong Bản Phát Hành Này",
       "intro": "Dirham không phải ký hiệu tiền tệ mới duy nhất xuất hiện trong Unicode 18.0 — hai đồng tiền khu vực khác cũng nhận được ký hiệu riêng trong cùng bản beta.",
       "symbols": [
-        { "char": "⃄", "label": "Ký Hiệu Rial Oman (U+20C4)" },
-        { "char": "⃂", "label": "Ký Hiệu Rufiyaa Maldives (U+20C2)" }
+        {
+          "char": "⃄",
+          "label": "Ký Hiệu Rial Oman (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Ký Hiệu Rufiyaa Maldives (U+20C2)"
+        }
       ]
     },
     {
@@ -47,9 +65,18 @@
       "h2": "Các Ký Hiệu Tiền Tệ Đã Gõ Được Ngay Hôm Nay",
       "intro": "Để so sánh — những ký hiệu tiền tệ đã vượt qua khoảng cách từ chuẩn hóa đến bàn phím từ nhiều năm trước và có thể gõ được đầy đủ ngay hôm nay.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La" },
-        { "char": "€", "label": "Ký Hiệu Euro" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La"
+        },
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh"
+        }
       ]
     },
     {
@@ -58,15 +85,33 @@
       "h2": "Ký Hiệu Tiền Tệ Vùng Vịnh Ra Mắt Sớm Hơn Một Phiên Bản",
       "intro": "Ký hiệu riyal Ả Rập Saudi đã đi qua con đường tương tự sớm hơn hẳn một phiên bản Unicode — đã chính thức từ Unicode 17.0, không chỉ dừng ở bản beta.",
       "symbols": [
-        { "char": "⃁", "label": "Ký Hiệu Riyal Saudi (U+20C1, chính thức từ Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Ký Hiệu Riyal Saudi (U+20C1, chính thức từ Unicode 17.0)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Mọi ký hiệu tiền tệ thế giới mà bạn đã có thể sao chép và dán ngay hôm nay." },
-    { "href": "/vi/symbol/omani-rial-sign/", "title": "Ký Hiệu Rial Oman", "desc": "Một ký hiệu tiền tệ vùng Vịnh khác ra mắt trong cùng bản beta Unicode 18.0." },
-    { "href": "/vi/symbol/saudi-riyal-sign/", "title": "Ký Hiệu Riyal Saudi", "desc": "Một ký hiệu tiền tệ vùng Vịnh đã chính thức, đi trước một phiên bản Unicode." },
-    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Mọi ký hiệu tiền tệ thế giới mà bạn đã có thể sao chép và dán ngay hôm nay."
+    },
+    {
+      "href": "/vi/symbol/omani-rial-sign/",
+      "title": "Ký Hiệu Rial Oman",
+      "desc": "Một ký hiệu tiền tệ vùng Vịnh khác ra mắt trong cùng bản beta Unicode 18.0."
+    },
+    {
+      "href": "/vi/symbol/saudi-riyal-sign/",
+      "title": "Ký Hiệu Riyal Saudi",
+      "desc": "Một ký hiệu tiền tệ vùng Vịnh đã chính thức, đi trước một phiên bản Unicode."
+    },
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La",
+      "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó."
+    }
   ]
 }

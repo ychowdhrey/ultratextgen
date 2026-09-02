@@ -17,15 +17,42 @@
       "h2": "Ornate Frame Characters",
       "intro": "The Javanese and Tibetan ornaments that anchor almost every decorated FF nick.",
       "symbols": [
-        { "char": "꧁", "label": "Javanese Left Rerenggan" },
-        { "char": "꧂", "label": "Javanese Right Rerenggan" },
-        { "char": "꧅", "label": "Javanese Pada Luhur" },
-        { "char": "༺", "label": "Tibetan Mark Gug Rtags Gyon" },
-        { "char": "༻", "label": "Tibetan Mark Gug Rtags Gyas" },
-        { "char": "༒", "label": "Tibetan Mark Rgya Gram Shad" },
-        { "char": "࿐", "label": "Tibetan Mark Bska Shog Gi Mgo Rgyan (Flag Flourish)" },
-        { "char": "❰", "label": "Heavy Left-Pointing Angle Bracket Ornament" },
-        { "char": "❱", "label": "Heavy Right-Pointing Angle Bracket Ornament" }
+        {
+          "char": "꧁",
+          "label": "Javanese Left Rerenggan"
+        },
+        {
+          "char": "꧂",
+          "label": "Javanese Right Rerenggan"
+        },
+        {
+          "char": "꧅",
+          "label": "Javanese Pada Luhur"
+        },
+        {
+          "char": "༺",
+          "label": "Tibetan Mark Gug Rtags Gyon"
+        },
+        {
+          "char": "༻",
+          "label": "Tibetan Mark Gug Rtags Gyas"
+        },
+        {
+          "char": "༒",
+          "label": "Tibetan Mark Rgya Gram Shad"
+        },
+        {
+          "char": "࿐",
+          "label": "Tibetan Mark Bska Shog Gi Mgo Rgyan (Flag Flourish)"
+        },
+        {
+          "char": "❰",
+          "label": "Heavy Left-Pointing Angle Bracket Ornament"
+        },
+        {
+          "char": "❱",
+          "label": "Heavy Right-Pointing Angle Bracket Ornament"
+        }
       ]
     },
     {
@@ -34,14 +61,38 @@
       "h2": "Crown & Royalty Marks",
       "intro": "Crowns and regal glyphs for top-of-the-leaderboard nicknames.",
       "symbols": [
-        { "char": "👑", "label": "Crown" },
-        { "char": "♛", "label": "Black Chess Queen" },
-        { "char": "♚", "label": "Black Chess King" },
-        { "char": "♕", "label": "White Chess Queen" },
-        { "char": "♔", "label": "White Chess King" },
-        { "char": "⚜", "label": "Fleur-de-Lis" },
-        { "char": "㊝", "label": "Circled Ideograph Excellent" },
-        { "char": "❂", "label": "Circled Open Centre Eight Pointed Star" }
+        {
+          "char": "👑",
+          "label": "Crown"
+        },
+        {
+          "char": "♛",
+          "label": "Black Chess Queen"
+        },
+        {
+          "char": "♚",
+          "label": "Black Chess King"
+        },
+        {
+          "char": "♕",
+          "label": "White Chess Queen"
+        },
+        {
+          "char": "♔",
+          "label": "White Chess King"
+        },
+        {
+          "char": "⚜",
+          "label": "Fleur-de-Lis"
+        },
+        {
+          "char": "㊝",
+          "label": "Circled Ideograph Excellent"
+        },
+        {
+          "char": "❂",
+          "label": "Circled Open Centre Eight Pointed Star"
+        }
       ]
     },
     {
@@ -50,14 +101,38 @@
       "h2": "Katakana & CJK Flair",
       "intro": "The メ and 彡 strokes that give FF nicks their slashed, fast look.",
       "symbols": [
-        { "char": "メ", "label": "Katakana Me (Slash Mark)" },
-        { "char": "彡", "label": "San: Triple Slash" },
-        { "char": "ミ", "label": "Katakana Mi" },
-        { "char": "ツ", "label": "Katakana Tsu (Smile)" },
-        { "char": "丶", "label": "CJK Dot Stroke" },
-        { "char": "个", "label": "Ge: Spire Mark" },
-        { "char": "乡", "label": "Xiang: Ribbon Curl" },
-        { "char": "王", "label": "Wang: King" }
+        {
+          "char": "メ",
+          "label": "Katakana Me (Slash Mark)"
+        },
+        {
+          "char": "彡",
+          "label": "San: Triple Slash"
+        },
+        {
+          "char": "ミ",
+          "label": "Katakana Mi"
+        },
+        {
+          "char": "ツ",
+          "label": "Katakana Tsu (Smile)"
+        },
+        {
+          "char": "丶",
+          "label": "CJK Dot Stroke"
+        },
+        {
+          "char": "个",
+          "label": "Ge: Spire Mark"
+        },
+        {
+          "char": "乡",
+          "label": "Xiang: Ribbon Curl"
+        },
+        {
+          "char": "王",
+          "label": "Wang: King"
+        }
       ]
     },
     {
@@ -66,15 +141,42 @@
       "h2": "Star & Flower Accents",
       "intro": "Floral asterisks and stars to dot around a nick or guild name.",
       "symbols": [
-        { "char": "★", "label": "Black Star" },
-        { "char": "✩", "label": "Stress Outlined White Star" },
-        { "char": "✫", "label": "Open Centre Black Star" },
-        { "char": "✬", "label": "Black Centre White Star" },
-        { "char": "❉", "label": "Balloon-Spoked Asterisk" },
-        { "char": "❀", "label": "White Florette" },
-        { "char": "✿", "label": "Black Florette" },
-        { "char": "✼", "label": "Open Centre Teardrop-Spoked Asterisk" },
-        { "char": "⁂", "label": "Asterism" }
+        {
+          "char": "★",
+          "label": "Black Star"
+        },
+        {
+          "char": "✩",
+          "label": "Stress Outlined White Star"
+        },
+        {
+          "char": "✫",
+          "label": "Open Centre Black Star"
+        },
+        {
+          "char": "✬",
+          "label": "Black Centre White Star"
+        },
+        {
+          "char": "❉",
+          "label": "Balloon-Spoked Asterisk"
+        },
+        {
+          "char": "❀",
+          "label": "White Florette"
+        },
+        {
+          "char": "✿",
+          "label": "Black Florette"
+        },
+        {
+          "char": "✼",
+          "label": "Open Centre Teardrop-Spoked Asterisk"
+        },
+        {
+          "char": "⁂",
+          "label": "Asterism"
+        }
       ]
     },
     {
@@ -83,13 +185,34 @@
       "h2": "Dagger & Arrow Glyphs",
       "intro": "Daggers and feathered arrows for an aggressive squad-leader edge.",
       "symbols": [
-        { "char": "†", "label": "Dagger" },
-        { "char": "‡", "label": "Double Dagger" },
-        { "char": "⚔", "label": "Crossed Swords" },
-        { "char": "➳", "label": "White-Feathered Rightwards Arrow" },
-        { "char": "➸", "label": "Heavy Black-Feathered Rightwards Arrow" },
-        { "char": "➹", "label": "Heavy Black-Feathered North East Arrow" },
-        { "char": "☄", "label": "Comet" }
+        {
+          "char": "†",
+          "label": "Dagger"
+        },
+        {
+          "char": "‡",
+          "label": "Double Dagger"
+        },
+        {
+          "char": "⚔",
+          "label": "Crossed Swords"
+        },
+        {
+          "char": "➳",
+          "label": "White-Feathered Rightwards Arrow"
+        },
+        {
+          "char": "➸",
+          "label": "Heavy Black-Feathered Rightwards Arrow"
+        },
+        {
+          "char": "➹",
+          "label": "Heavy Black-Feathered North East Arrow"
+        },
+        {
+          "char": "☄",
+          "label": "Comet"
+        }
       ]
     }
   ],
@@ -103,41 +226,68 @@
   "collections": [
     {
       "name": "Classic Royale Frame",
-      "flags": ["꧁༒", "YourNick", "༒꧂"],
+      "flags": [
+        "꧁༒",
+        "YourNick",
+        "༒꧂"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Pro Player Frame",
-      "flags": ["꧁•ᴾᴿᴼ•", "YourNick", "꧂"],
+      "flags": [
+        "꧁•ᴾᴿᴼ•",
+        "YourNick",
+        "꧂"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Tibetan Scroll Tag",
-      "flags": ["༺", "YourNick", "༻"],
+      "flags": [
+        "༺",
+        "YourNick",
+        "༻"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Flame Banner Nick",
-      "flags": ["🔥", "YourNick", "࿐"],
+      "flags": [
+        "🔥",
+        "YourNick",
+        "࿐"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Crowned Booyah Nick",
-      "flags": ["👑", "YourNick", "♛"],
+      "flags": [
+        "👑",
+        "YourNick",
+        "♛"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Dagger Strike Frame",
-      "flags": ["꧁†", "YourNick", "†꧂"],
+      "flags": [
+        "꧁†",
+        "YourNick",
+        "†꧂"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Star Squad Tag",
-      "flags": ["★彡", "YourNick", "彡★"],
+      "flags": [
+        "★彡",
+        "YourNick",
+        "彡★"
+      ],
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/ml-name-symbols/",

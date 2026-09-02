@@ -302,32 +302,74 @@
   "collections": [
     {
       "name": "Pemisah bio Instagram",
-      "flags": ["✦", "⊹", "˚", "✧", "˚", "⊹", "✦"],
+      "flags": [
+        "✦",
+        "⊹",
+        "˚",
+        "✧",
+        "˚",
+        "⊹",
+        "✦"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Kombinasi caption berkilau",
-      "flags": ["✨", "•", "✨", "🌟", "✨", "•", "✨"],
+      "flags": [
+        "✨",
+        "•",
+        "✨",
+        "🌟",
+        "✨",
+        "•",
+        "✨"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Pemisah bio bunga",
-      "flags": ["✿", "─", "✿", "─", "✿"],
+      "flags": [
+        "✿",
+        "─",
+        "✿",
+        "─",
+        "✿"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Spasi bio titik-titik",
-      "flags": ["·", "◦", "·", "◦", "·"],
+      "flags": [
+        "·",
+        "◦",
+        "·",
+        "◦",
+        "·"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Caption bulan dan awan",
-      "flags": ["🌙", "☁️", "˖", "✦", "˖", "☁️", "🌙"],
+      "flags": [
+        "🌙",
+        "☁️",
+        "˖",
+        "✦",
+        "˖",
+        "☁️",
+        "🌙"
+      ],
       "defaultFormat": "inline"
     },
     {
       "name": "Kombinasi caption mata hati",
-      "flags": ["♡", "˖", "😍", "˖", "♡"],
+      "flags": [
+        "♡",
+        "˖",
+        "😍",
+        "˖",
+        "♡"
+      ],
       "defaultFormat": "inline"
     }
   ],
@@ -356,7 +398,6 @@
   "canonical": "https://ultratextgen.com/id/library/simbol-instagram/",
   "date_published": "2026-08-08",
   "date_modified": "2026-08-08",
-  "cta": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.",
   "lang": "id",
   "page_type": "library",
   "faq_label": "FAQ",

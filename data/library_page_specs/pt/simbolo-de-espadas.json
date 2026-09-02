@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-espadas/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-espadas/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "spade-symbol",
@@ -29,9 +37,18 @@
       "h2": "O Símbolo de Espadas — ♠ e ♤",
       "intro": "O naipe em si, nas duas formas do Unicode. O ♠ preenchido é o espadas «preto» padrão; ♤ é a versão contornada «branca», e ♠️ é a forma de apresentação emoji, com um seletor de variação. Pronto para colar em qualquer lugar.",
       "symbols": [
-        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660): Sólido / Preenchido" },
-        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664): Contornado" },
-        { "char": "♠️", "label": "Emoji de Naipe de Espadas (U+2660 U+FE0F)" }
+        {
+          "char": "♠",
+          "label": "Naipe de Espadas Preto (U+2660): Sólido / Preenchido"
+        },
+        {
+          "char": "♤",
+          "label": "Naipe de Espadas Branco (U+2664): Contornado"
+        },
+        {
+          "char": "♠️",
+          "label": "Emoji de Naipe de Espadas (U+2660 U+FE0F)"
+        }
       ]
     },
     {
@@ -40,14 +57,38 @@
       "h2": "Os Quatro Naipes — Preenchidos e Contornados",
       "intro": "O Unicode dá a cada naipe francês um glifo preenchido «preto» e um contornado «branco», reunidos numa sequência de U+2660 a U+2667. Repare na curiosidade: espadas e paus vêm preenchidos por padrão, enquanto copas e ouros vêm contornados por padrão.",
       "symbols": [
-        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660)" },
-        { "char": "♥", "label": "Naipe de Copas Preto (U+2665)" },
-        { "char": "♦", "label": "Naipe de Ouros Preto (U+2666)" },
-        { "char": "♣", "label": "Naipe de Paus Preto (U+2663)" },
-        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664)" },
-        { "char": "♡", "label": "Naipe de Copas Branco (U+2661)" },
-        { "char": "♢", "label": "Naipe de Ouros Branco (U+2662)" },
-        { "char": "♧", "label": "Naipe de Paus Branco (U+2667)" }
+        {
+          "char": "♠",
+          "label": "Naipe de Espadas Preto (U+2660)"
+        },
+        {
+          "char": "♥",
+          "label": "Naipe de Copas Preto (U+2665)"
+        },
+        {
+          "char": "♦",
+          "label": "Naipe de Ouros Preto (U+2666)"
+        },
+        {
+          "char": "♣",
+          "label": "Naipe de Paus Preto (U+2663)"
+        },
+        {
+          "char": "♤",
+          "label": "Naipe de Espadas Branco (U+2664)"
+        },
+        {
+          "char": "♡",
+          "label": "Naipe de Copas Branco (U+2661)"
+        },
+        {
+          "char": "♢",
+          "label": "Naipe de Ouros Branco (U+2662)"
+        },
+        {
+          "char": "♧",
+          "label": "Naipe de Paus Branco (U+2667)"
+        }
       ]
     },
     {
@@ -56,11 +97,26 @@
       "h2": "O Ás de Espadas e os Glifos de Carta de Baralho",
       "intro": "A carta mais lendária do baralho: a Inglaterra estampou o Ás de Espadas com uma marca de imposto a partir de 1712 e imprimiu seu design ornamentado da Repartição de Selos depois de 1765, e uma história de guerra amplamente repetida (e muito debatida) conta que tropas dos EUA no Vietnã a usavam como «carta da morte». O bloco Playing Cards do Unicode dá a cada carta seu próprio glifo — aqui estão os quatro áses e o verso da carta.",
       "symbols": [
-        { "char": "🂡", "label": "Carta de Baralho: Ás de Espadas (U+1F0A1)" },
-        { "char": "🂱", "label": "Carta de Baralho: Ás de Copas (U+1F0B1)" },
-        { "char": "🃁", "label": "Carta de Baralho: Ás de Ouros (U+1F0C1)" },
-        { "char": "🃑", "label": "Carta de Baralho: Ás de Paus (U+1F0D1)" },
-        { "char": "🂠", "label": "Verso de Carta de Baralho (U+1F0A0)" }
+        {
+          "char": "🂡",
+          "label": "Carta de Baralho: Ás de Espadas (U+1F0A1)"
+        },
+        {
+          "char": "🂱",
+          "label": "Carta de Baralho: Ás de Copas (U+1F0B1)"
+        },
+        {
+          "char": "🃁",
+          "label": "Carta de Baralho: Ás de Ouros (U+1F0C1)"
+        },
+        {
+          "char": "🃑",
+          "label": "Carta de Baralho: Ás de Paus (U+1F0D1)"
+        },
+        {
+          "char": "🂠",
+          "label": "Verso de Carta de Baralho (U+1F0A0)"
+        }
       ]
     }
   ],

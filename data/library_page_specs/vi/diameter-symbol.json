@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/diameter-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/diameter-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/diameter-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/diameter-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Dấu Đường Kính",
       "intro": "Dấu đường kính Unicode chính xác, sẵn sàng để dán trước một số đo.",
       "symbols": [
-        { "char": "⌀", "label": "Dấu Đường Kính" }
+        {
+          "char": "⌀",
+          "label": "Dấu Đường Kính"
+        }
       ]
     },
     {
@@ -37,11 +49,26 @@
       "h2": "Các Ký Hiệu Thường Bị Nhầm Với Dấu Đường Kính",
       "intro": "Những ký hiệu này trông đủ giống ⌀ để bị thay thế nhầm — mỗi cái mang một ý nghĩa khác.",
       "symbols": [
-        { "char": "∅", "label": "Tập Rỗng (Không Phải Dấu Đường Kính)" },
-        { "char": "Ø", "label": "Chữ Latin O Hoa Gạch Ngang" },
-        { "char": "ø", "label": "Chữ Latin O Thường Gạch Ngang" },
-        { "char": "φ", "label": "Chữ Hy Lạp Phi Thường" },
-        { "char": "Φ", "label": "Chữ Hy Lạp Phi Hoa" }
+        {
+          "char": "∅",
+          "label": "Tập Rỗng (Không Phải Dấu Đường Kính)"
+        },
+        {
+          "char": "Ø",
+          "label": "Chữ Latin O Hoa Gạch Ngang"
+        },
+        {
+          "char": "ø",
+          "label": "Chữ Latin O Thường Gạch Ngang"
+        },
+        {
+          "char": "φ",
+          "label": "Chữ Hy Lạp Phi Thường"
+        },
+        {
+          "char": "Φ",
+          "label": "Chữ Hy Lạp Phi Hoa"
+        }
       ]
     },
     {
@@ -50,19 +77,48 @@
       "h2": "Bán Kính, Cung & Các Ký Hiệu Đo Kích Thước Liên Quan",
       "intro": "Các ký hiệu dung sai và đo kích thước hình học (GD&T) khác thường dùng cùng với dấu đường kính.",
       "symbols": [
-        { "char": "R", "label": "Bán Kính (Chữ Cái Thường)" },
-        { "char": "□", "label": "Hình Vuông (Bề Rộng Qua Các Cạnh Phẳng)" },
-        { "char": "⌒", "label": "Cung" },
-        { "char": "⌓", "label": "Đoạn Cung" },
-        { "char": "°", "label": "Dấu Độ" },
-        { "char": "±", "label": "Dấu Cộng Trừ" }
+        {
+          "char": "R",
+          "label": "Bán Kính (Chữ Cái Thường)"
+        },
+        {
+          "char": "□",
+          "label": "Hình Vuông (Bề Rộng Qua Các Cạnh Phẳng)"
+        },
+        {
+          "char": "⌒",
+          "label": "Cung"
+        },
+        {
+          "char": "⌓",
+          "label": "Đoạn Cung"
+        },
+        {
+          "char": "°",
+          "label": "Dấu Độ"
+        },
+        {
+          "char": "±",
+          "label": "Dấu Cộng Trừ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ", "desc": "Dấu độ cùng các ký hiệu góc, nhiệt độ và hình học đi kèm với nó." },
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Toán tử, chữ cái Hy Lạp, căn số và dấu vô cực." },
-    { "href": "/library/geometric-symbols/", "title": "Ký Hiệu Hình Học", "desc": "Hình vuông, hình tròn, tam giác và các biến thể tô đặc so với viền." }
+    {
+      "href": "/vi/symbol/degree-symbol/",
+      "title": "Ký Hiệu Độ",
+      "desc": "Dấu độ cùng các ký hiệu góc, nhiệt độ và hình học đi kèm với nó."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Toán tử, chữ cái Hy Lạp, căn số và dấu vô cực."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Ký Hiệu Hình Học",
+      "desc": "Hình vuông, hình tròn, tam giác và các biến thể tô đặc so với viền."
+    }
   ]
 }

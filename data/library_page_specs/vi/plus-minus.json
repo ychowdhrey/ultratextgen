@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/plus-minus/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/plus-minus/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/plus-minus/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/plus-minus/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/plus-minus/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/plus-minus/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Cộng Trừ",
       "intro": "Ký hiệu cộng trừ và ảnh gương của nó, ký hiệu trừ cộng.",
       "symbols": [
-        { "char": "±", "label": "Ký Hiệu Cộng Trừ (U+00B1)" },
-        { "char": "∓", "label": "Ký Hiệu Trừ Cộng (U+2213): Dạng Ảnh Gương, Dùng Trong Các Biểu Thức Đi Cặp" }
+        {
+          "char": "±",
+          "label": "Ký Hiệu Cộng Trừ (U+00B1)"
+        },
+        {
+          "char": "∓",
+          "label": "Ký Hiệu Trừ Cộng (U+2213): Dạng Ảnh Gương, Dùng Trong Các Biểu Thức Đi Cặp"
+        }
       ]
     },
     {
@@ -38,7 +53,10 @@
       "h2": "Đừng Nhầm Lẫn Với",
       "intro": "Ký hiệu này không thể thay thế cho ±.",
       "symbols": [
-        { "char": "+", "label": "Dấu Cộng (U+002B): không phải một cách thay thế; ± là một ký tự duy nhất, không phải + và - gõ cạnh nhau" }
+        {
+          "char": "+",
+          "label": "Dấu Cộng (U+002B): không phải một cách thay thế; ± là một ký tự duy nhất, không phải + và - gõ cạnh nhau"
+        }
       ]
     },
     {
@@ -47,17 +65,41 @@
       "h2": "Các Ký Hiệu Toán Học Khác",
       "intro": "Các ký hiệu toán học khác thường xuất hiện cùng ± trong biểu thức và phương trình.",
       "symbols": [
-        { "char": "√", "label": "Căn Bậc Hai" },
-        { "char": "÷", "label": "Dấu Chia" },
-        { "char": "∞", "label": "Vô Cực" }
+        {
+          "char": "√",
+          "label": "Căn Bậc Hai"
+        },
+        {
+          "char": "÷",
+          "label": "Dấu Chia"
+        },
+        {
+          "char": "∞",
+          "label": "Vô Cực"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/square-root/", "title": "Căn Bậc Hai (√)", "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum." },
-    { "href": "/vi/symbol/division-sign/", "title": "Dấu Chia (÷)", "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó." },
-    { "href": "/vi/symbol/infinity/", "title": "Vô Cực (∞)", "desc": "Nguồn gốc của hình lemniscate." },
-    { "href": "/vi/library/math-symbols/", "title": "Tất Cả Ký Hiệu Toán Học", "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích." }
+    {
+      "href": "/vi/symbol/square-root/",
+      "title": "Căn Bậc Hai (√)",
+      "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum."
+    },
+    {
+      "href": "/vi/symbol/division-sign/",
+      "title": "Dấu Chia (÷)",
+      "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó."
+    },
+    {
+      "href": "/vi/symbol/infinity/",
+      "title": "Vô Cực (∞)",
+      "desc": "Nguồn gốc của hình lemniscate."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Tất Cả Ký Hiệu Toán Học",
+      "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích."
+    }
   ]
 }

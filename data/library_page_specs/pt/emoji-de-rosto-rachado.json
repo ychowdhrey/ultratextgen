@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-rosto-rachado/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-rosto-rachado/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "cracking-face",
@@ -29,7 +37,10 @@
       "h2": "Emoji de Rosto Rachado",
       "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (rascunho, U+1FAEB)"
+        }
       ]
     },
     {
@@ -38,10 +49,22 @@
       "h2": "Emojis Já Existentes com que É Comparado",
       "intro": "Emojis de rosto já codificados e totalmente suportados que cobrem um território parecido de «tensão» ou «sobrecarga» — substitutos úteis até o Cracking Face realmente ser lançado.",
       "symbols": [
-        { "char": "😬", "label": "Rosto Fazendo Careta" },
-        { "char": "🫠", "label": "Rosto Derretendo" },
-        { "char": "🥴", "label": "Rosto Zonzo" },
-        { "char": "🫪", "label": "Rosto Distorcido (o emoji novo mais popular do Unicode 17.0)" }
+        {
+          "char": "😬",
+          "label": "Rosto Fazendo Careta"
+        },
+        {
+          "char": "🫠",
+          "label": "Rosto Derretendo"
+        },
+        {
+          "char": "🥴",
+          "label": "Rosto Zonzo"
+        },
+        {
+          "char": "🫪",
+          "label": "Rosto Distorcido (o emoji novo mais popular do Unicode 17.0)"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Outros Candidatos Rascunho do Emoji 18.0",
       "intro": "Cracking Face não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
       "symbols": [
-        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
-        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" },
-        { "char": "🛙", "label": "Lighthouse (rascunho, U+1F6D9)" }
+        {
+          "char": "🫝",
+          "label": "Pickle (rascunho, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (rascunho, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (rascunho, U+1F6D9)"
+        }
       ]
     }
   ],

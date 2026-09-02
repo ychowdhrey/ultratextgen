@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/snapchat-herzfarben/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/snapchat-herzfarben/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "herzen-auf-snapchat",
@@ -29,9 +37,18 @@
       "h2": "Herzfarben, die Snapchat verwendet",
       "intro": "Die drei Herzfarben, die in Snapchats klassischer Bestefreunde-Stufenfolge vorkommen.",
       "symbols": [
-        { "char": "💛", "label": "Gelbes Herz" },
-        { "char": "❤️", "label": "Rotes Herz" },
-        { "char": "💕", "label": "Zwei Herzen (pink)" }
+        {
+          "char": "💛",
+          "label": "Gelbes Herz"
+        },
+        {
+          "char": "❤️",
+          "label": "Rotes Herz"
+        },
+        {
+          "char": "💕",
+          "label": "Zwei Herzen (pink)"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Weitere Herz-Emoji-Farben (allgemeine Bedeutung)",
       "intro": "Die übrige Herzfarben-Palette von Unicode — die vollständige Liste mit jeder Bedeutung findest du im unten verlinkten Herz-Emoji-Hub.",
       "symbols": [
-        { "char": "🧡", "label": "Oranges Herz" },
-        { "char": "💚", "label": "Grünes Herz" },
-        { "char": "💙", "label": "Blaues Herz" },
-        { "char": "💜", "label": "Lilanes Herz" }
+        {
+          "char": "🧡",
+          "label": "Oranges Herz"
+        },
+        {
+          "char": "💚",
+          "label": "Grünes Herz"
+        },
+        {
+          "char": "💙",
+          "label": "Blaues Herz"
+        },
+        {
+          "char": "💜",
+          "label": "Lilanes Herz"
+        }
       ]
     },
     {
@@ -52,8 +81,14 @@
       "h2": "Herz-Symbol & Textformen",
       "intro": "Die farblosen Herz-Glyphen — das Unicode-Kartenfarben-Herz und das klassische Text-Herz.",
       "symbols": [
-        { "char": "♥", "label": "Schwarze Herz-Farbe (U+2665)" },
-        { "char": "<3", "label": "ASCII-Text-Herz" }
+        {
+          "char": "♥",
+          "label": "Schwarze Herz-Farbe (U+2665)"
+        },
+        {
+          "char": "<3",
+          "label": "ASCII-Text-Herz"
+        }
       ]
     }
   ],

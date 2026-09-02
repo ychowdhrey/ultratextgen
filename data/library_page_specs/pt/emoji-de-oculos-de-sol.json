@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-oculos-de-sol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-oculos-de-sol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "sunglasses-emoji-core",
@@ -29,8 +37,14 @@
       "h2": "Emoji de Óculos de Sol",
       "intro": "Os dois glifos Unicode principais: o rosto sorridente usando óculos de sol, e o objeto óculos de sol simples.",
       "symbols": [
-        { "char": "😎", "label": "Rosto Sorridente com Óculos de Sol (U+1F60E)" },
-        { "char": "🕶️", "label": "Óculos de Sol (U+1F576)" }
+        {
+          "char": "😎",
+          "label": "Rosto Sorridente com Óculos de Sol (U+1F60E)"
+        },
+        {
+          "char": "🕶️",
+          "label": "Óculos de Sol (U+1F576)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Rostos Tranquilos e Confiantes com que Combina",
       "intro": "Emojis que carregam um tom parecido de convicção, confiança ou tranquilidade.",
       "symbols": [
-        { "char": "😏", "label": "Rosto com Sorriso Malicioso" },
-        { "char": "🆒", "label": "Botão Cool" },
-        { "char": "💪", "label": "Bíceps Flexionado" }
+        {
+          "char": "😏",
+          "label": "Rosto com Sorriso Malicioso"
+        },
+        {
+          "char": "🆒",
+          "label": "Botão Cool"
+        },
+        {
+          "char": "💪",
+          "label": "Bíceps Flexionado"
+        }
       ]
     },
     {
@@ -50,8 +73,14 @@
       "h2": "Alternativas em Texto e Kaomoji",
       "intro": "Formas em texto simples para expressar a mesma energia tranquila, de óculos escuros.",
       "symbols": [
-        { "char": "B-)", "label": "Kaomoji de Rosto com Óculos de Sol" },
-        { "char": "(⌐■_■)", "label": "Kaomoji \"Deal With It\"" }
+        {
+          "char": "B-)",
+          "label": "Kaomoji de Rosto com Óculos de Sol"
+        },
+        {
+          "char": "(⌐■_■)",
+          "label": "Kaomoji \"Deal With It\""
+        }
       ]
     }
   ],

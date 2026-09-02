@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/chess-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/schach-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/chess-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "white-pieces",
@@ -28,12 +36,30 @@
       "h2": "Weiße Schachfiguren",
       "intro": "Die sechs weißen (umrandeten) Schachfiguren-Symbole in Unicode: König, Dame, Turm, Läufer, Springer und Bauer.",
       "symbols": [
-        { "char": "♔", "label": "König" },
-        { "char": "♕", "label": "Dame" },
-        { "char": "♖", "label": "Turm" },
-        { "char": "♗", "label": "Läufer" },
-        { "char": "♘", "label": "Springer" },
-        { "char": "♙", "label": "Bauer" }
+        {
+          "char": "♔",
+          "label": "König"
+        },
+        {
+          "char": "♕",
+          "label": "Dame"
+        },
+        {
+          "char": "♖",
+          "label": "Turm"
+        },
+        {
+          "char": "♗",
+          "label": "Läufer"
+        },
+        {
+          "char": "♘",
+          "label": "Springer"
+        },
+        {
+          "char": "♙",
+          "label": "Bauer"
+        }
       ]
     },
     {
@@ -42,12 +68,30 @@
       "h2": "Schwarze Schachfiguren",
       "intro": "Die sechs schwarzen (gefüllten) Schachfiguren-Symbole in Unicode: König, Dame, Turm, Läufer, Springer und Bauer.",
       "symbols": [
-        { "char": "♚", "label": "König" },
-        { "char": "♛", "label": "Dame" },
-        { "char": "♜", "label": "Turm" },
-        { "char": "♝", "label": "Läufer" },
-        { "char": "♞", "label": "Springer" },
-        { "char": "♟", "label": "Bauer" }
+        {
+          "char": "♚",
+          "label": "König"
+        },
+        {
+          "char": "♛",
+          "label": "Dame"
+        },
+        {
+          "char": "♜",
+          "label": "Turm"
+        },
+        {
+          "char": "♝",
+          "label": "Läufer"
+        },
+        {
+          "char": "♞",
+          "label": "Springer"
+        },
+        {
+          "char": "♟",
+          "label": "Bauer"
+        }
       ]
     },
     {
@@ -56,12 +100,30 @@
       "h2": "Brettfelder & Spiel-Symbole",
       "intro": "Brettfeld-Zeichen in verschiedenen Größen, mit denen sich in Unicode Schachbretter darstellen lassen.",
       "symbols": [
-        { "char": "⬜", "label": "Weißes Quadrat" },
-        { "char": "⬛", "label": "Schwarzes Quadrat" },
-        { "char": "▪", "label": "Kleines schwarzes Quadrat" },
-        { "char": "▫", "label": "Kleines weißes Quadrat" },
-        { "char": "◻", "label": "Mittleres weißes Quadrat" },
-        { "char": "◼", "label": "Mittleres schwarzes Quadrat" }
+        {
+          "char": "⬜",
+          "label": "Weißes Quadrat"
+        },
+        {
+          "char": "⬛",
+          "label": "Schwarzes Quadrat"
+        },
+        {
+          "char": "▪",
+          "label": "Kleines schwarzes Quadrat"
+        },
+        {
+          "char": "▫",
+          "label": "Kleines weißes Quadrat"
+        },
+        {
+          "char": "◻",
+          "label": "Mittleres weißes Quadrat"
+        },
+        {
+          "char": "◼",
+          "label": "Mittleres schwarzes Quadrat"
+        }
       ]
     },
     {
@@ -70,21 +132,66 @@
       "h2": "Erweiterte Schach-Symbole",
       "intro": "Märchenschach-Figuren und Notationszeichen aus dem Unicode-Block „Chess Symbols“, inklusive neutraler Figuren und gedrehter Varianten.",
       "symbols": [
-        { "char": "🨀", "label": "Neutraler König" },
-        { "char": "🨁", "label": "Neutrale Dame" },
-        { "char": "🨂", "label": "Neutraler Turm" },
-        { "char": "🨃", "label": "Neutraler Läufer" },
-        { "char": "🨄", "label": "Neutraler Springer" },
-        { "char": "🨅", "label": "Neutraler Bauer" },
-        { "char": "🨆", "label": "Weißer Springer 45°" },
-        { "char": "🨇", "label": "Schwarzer Springer 45°" },
-        { "char": "🨈", "label": "Neutraler Springer 45°" },
-        { "char": "🨉", "label": "Weißer König 90°" },
-        { "char": "🨊", "label": "Weiße Dame 90°" },
-        { "char": "🨋", "label": "Weißer Turm 90°" },
-        { "char": "🨌", "label": "Weißer Läufer 90°" },
-        { "char": "🨍", "label": "Weißer Springer 90°" },
-        { "char": "🨎", "label": "Weißer Bauer 90°" }
+        {
+          "char": "🨀",
+          "label": "Neutraler König"
+        },
+        {
+          "char": "🨁",
+          "label": "Neutrale Dame"
+        },
+        {
+          "char": "🨂",
+          "label": "Neutraler Turm"
+        },
+        {
+          "char": "🨃",
+          "label": "Neutraler Läufer"
+        },
+        {
+          "char": "🨄",
+          "label": "Neutraler Springer"
+        },
+        {
+          "char": "🨅",
+          "label": "Neutraler Bauer"
+        },
+        {
+          "char": "🨆",
+          "label": "Weißer Springer 45°"
+        },
+        {
+          "char": "🨇",
+          "label": "Schwarzer Springer 45°"
+        },
+        {
+          "char": "🨈",
+          "label": "Neutraler Springer 45°"
+        },
+        {
+          "char": "🨉",
+          "label": "Weißer König 90°"
+        },
+        {
+          "char": "🨊",
+          "label": "Weiße Dame 90°"
+        },
+        {
+          "char": "🨋",
+          "label": "Weißer Turm 90°"
+        },
+        {
+          "char": "🨌",
+          "label": "Weißer Läufer 90°"
+        },
+        {
+          "char": "🨍",
+          "label": "Weißer Springer 90°"
+        },
+        {
+          "char": "🨎",
+          "label": "Weißer Bauer 90°"
+        }
       ]
     },
     {
@@ -93,20 +200,62 @@
       "h2": "Schach-Notation & Kommentar-Symbole",
       "intro": "Die Zeichen der Schachnotation zum Festhalten von Schach, Schlagzügen und Zugqualität (PGN/algebraische Kommentar-Glyphen).",
       "symbols": [
-        { "char": "×", "label": "Schlagzug" },
-        { "char": "+", "label": "Schach" },
-        { "char": "#", "label": "Schachmatt" },
-        { "char": "‡", "label": "Matt (‡)" },
-        { "char": "!", "label": "Guter Zug" },
-        { "char": "!!", "label": "Brillanter Zug" },
-        { "char": "?", "label": "Fehler" },
-        { "char": "??", "label": "Grober Fehler" },
-        { "char": "!?", "label": "Interessanter Zug" },
-        { "char": "?!", "label": "Fragwürdiger Zug" },
-        { "char": "=", "label": "Ausgeglichen" },
-        { "char": "±", "label": "Weiß steht besser" },
-        { "char": "∓", "label": "Schwarz steht besser" },
-        { "char": "⩲", "label": "Leichter Vorteil" }
+        {
+          "char": "×",
+          "label": "Schlagzug"
+        },
+        {
+          "char": "+",
+          "label": "Schach"
+        },
+        {
+          "char": "#",
+          "label": "Schachmatt"
+        },
+        {
+          "char": "‡",
+          "label": "Matt (‡)"
+        },
+        {
+          "char": "!",
+          "label": "Guter Zug"
+        },
+        {
+          "char": "!!",
+          "label": "Brillanter Zug"
+        },
+        {
+          "char": "?",
+          "label": "Fehler"
+        },
+        {
+          "char": "??",
+          "label": "Grober Fehler"
+        },
+        {
+          "char": "!?",
+          "label": "Interessanter Zug"
+        },
+        {
+          "char": "?!",
+          "label": "Fragwürdiger Zug"
+        },
+        {
+          "char": "=",
+          "label": "Ausgeglichen"
+        },
+        {
+          "char": "±",
+          "label": "Weiß steht besser"
+        },
+        {
+          "char": "∓",
+          "label": "Schwarz steht besser"
+        },
+        {
+          "char": "⩲",
+          "label": "Leichter Vorteil"
+        }
       ]
     }
   ],
@@ -118,8 +267,30 @@
   },
   "collection_container_id": "chessCollectionsContainer",
   "collections": [
-    { "name": "Weiße Schachfiguren", "flags": ["♔", "♕", "♖", "♗", "♘", "♙"], "defaultFormat": "inline" },
-    { "name": "Schwarze Schachfiguren", "flags": ["♚", "♛", "♜", "♝", "♞", "♟"], "defaultFormat": "inline" }
+    {
+      "name": "Weiße Schachfiguren",
+      "flags": [
+        "♔",
+        "♕",
+        "♖",
+        "♗",
+        "♘",
+        "♙"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Schwarze Schachfiguren",
+      "flags": [
+        "♚",
+        "♛",
+        "♜",
+        "♝",
+        "♞",
+        "♟"
+      ],
+      "defaultFormat": "inline"
+    }
   ],
   "related": [
     {

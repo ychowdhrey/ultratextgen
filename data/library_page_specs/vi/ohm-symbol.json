@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/ohm-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/ohm-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ohm-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ohm-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/ohm-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ohm-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Ohm (Ω)",
       "intro": "Đơn vị điện trở. U+2126 là dấu ohm riêng biệt, dù trong thực tế hầu hết mọi người chỉ gõ chữ Hy Lạp hoa omega, trông giống hệt. Chữ omega thường (ω) đi cùng nó trong toán học dòng điện xoay chiều, nơi nó biểu thị tần số góc, ω = 2πf.",
       "symbols": [
-        { "char": "Ω", "label": "Dấu Ohm (U+2126): Điện Trở" },
-        { "char": "ω", "label": "Omega Hy Lạp Thường (ω): Tần Số Góc" }
+        {
+          "char": "Ω",
+          "label": "Dấu Ohm (U+2126): Điện Trở"
+        },
+        {
+          "char": "ω",
+          "label": "Omega Hy Lạp Thường (ω): Tần Số Góc"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Dấu Ohm so với Omega Hy Lạp",
       "intro": "Hai ô này là hai ký tự Unicode khác nhau — U+2126, dấu ohm, và U+03A9, omega Hy Lạp hoa — trông giống hệt nhau trong hầu hết mọi phông chữ. Cơ sở dữ liệu Unicode nói rằng dấu ohm nên chuẩn hóa về omega thông thường, và hầu hết bàn phím cùng công cụ tạo ra omega, không phải dấu ohm. Sự lệch pha này đã gây ra những lỗi chuyển đổi tài liệu có thật. Để sao chép dán thì cả hai đều dùng được như nhau; để biết cách phân biệt đầy đủ, bao gồm lỗi Pandoc đã được ghi nhận, xem trang ký hiệu omega.",
       "symbols": [
-        { "char": "Ω", "label": "Dấu Ohm (U+2126): Mã Điểm Cũ" },
-        { "char": "Ω", "label": "Omega Hy Lạp Hoa (U+03A9): Dạng Unicode Ưu Tiên" }
+        {
+          "char": "Ω",
+          "label": "Dấu Ohm (U+2126): Mã Điểm Cũ"
+        },
+        {
+          "char": "Ω",
+          "label": "Omega Hy Lạp Hoa (U+03A9): Dạng Unicode Ưu Tiên"
+        }
       ]
     },
     {
@@ -48,8 +69,14 @@
       "h2": "Mho & Siemens — Đơn Vị Nghịch Đảo",
       "intro": "Độ dẫn điện là nghịch đảo của điện trở — theo đúng nghĩa đen là 1 ÷ Ω — và đơn vị cũ của nó là mho (℧), đơn giản là chữ «ohm» viết ngược. Lord Kelvin đề xuất tên gọi này năm 1883. Hệ SI hiện đại đã thay thế nó vào năm 1971 bằng siemens (ký hiệu S, đặt theo tên nhà phát minh Werner von Siemens); NIST hiện đánh dấu «mho» là một tên gọi cần tránh, dù ℧ vẫn xuất hiện trong các văn bản và sơ đồ cũ hơn.",
       "symbols": [
-        { "char": "℧", "label": "Dấu Mho (U+2127): «Ohm» Viết Ngược" },
-        { "char": "S", "label": "Siemens (S): Đơn Vị SI Hiện Đại Của Độ Dẫn Điện" }
+        {
+          "char": "℧",
+          "label": "Dấu Mho (U+2127): «Ohm» Viết Ngược"
+        },
+        {
+          "char": "S",
+          "label": "Siemens (S): Đơn Vị SI Hiện Đại Của Độ Dẫn Điện"
+        }
       ]
     },
     {
@@ -58,16 +85,36 @@
       "h2": "Các Ký Hiệu Điện & Mạch Điện Khác",
       "intro": "Ohm nằm giữa một họ glyph xuất hiện trong sơ đồ mạch và datasheet. Ba ký tự Unicode nữa mà một sơ đồ điện tử có thể cần đến:",
       "symbols": [
-        { "char": "⏚", "label": "Nối Đất (U+23DA)" },
-        { "char": "⚡", "label": "Dấu Điện Áp Cao (U+26A1)" },
-        { "char": "∿", "label": "Sóng Sin (U+223F): Dòng Điện Xoay Chiều" }
+        {
+          "char": "⏚",
+          "label": "Nối Đất (U+23DA)"
+        },
+        {
+          "char": "⚡",
+          "label": "Dấu Điện Áp Cao (U+26A1)"
+        },
+        {
+          "char": "∿",
+          "label": "Sóng Sin (U+223F): Dòng Điện Xoay Chiều"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "Chữ Hy Lạp trông giống hệt mà Ω của trang này chuẩn hóa về — cách phân biệt Unicode đầy đủ, lỗi chuyển đổi Pandoc đã ghi nhận, và nơi hai glyph âm thầm tách biệt." },
-    { "href": "/library/electrical-circuit-symbols/", "title": "Ký Hiệu Điện & Mạch Điện", "desc": "Một bộ glyph sơ đồ có thể duyệt được — nối đất, nguồn, công tắc, và các đơn vị dán nhãn chúng." },
-    { "href": "/vi/symbol/micro-sign/", "title": "Ký Hiệu Micro", "desc": "Cùng một điểm kỳ lạ Unicode như dấu ohm: µ là một ký tự cũ chuẩn hóa về mu Hy Lạp — một tiền tố SI khác (µF, µA) trông giống chữ Hy Lạp nhưng bản chất không phải." }
+    {
+      "href": "/vi/symbol/omega-symbol/",
+      "title": "Ký Hiệu Omega",
+      "desc": "Chữ Hy Lạp trông giống hệt mà Ω của trang này chuẩn hóa về — cách phân biệt Unicode đầy đủ, lỗi chuyển đổi Pandoc đã ghi nhận, và nơi hai glyph âm thầm tách biệt."
+    },
+    {
+      "href": "/library/electrical-circuit-symbols/",
+      "title": "Ký Hiệu Điện & Mạch Điện",
+      "desc": "Một bộ glyph sơ đồ có thể duyệt được — nối đất, nguồn, công tắc, và các đơn vị dán nhãn chúng."
+    },
+    {
+      "href": "/vi/symbol/micro-sign/",
+      "title": "Ký Hiệu Micro",
+      "desc": "Cùng một điểm kỳ lạ Unicode như dấu ohm: µ là một ký tự cũ chuẩn hóa về mu Hy Lạp — một tiền tố SI khác (µF, µA) trông giống chữ Hy Lạp nhưng bản chất không phải."
+    }
   ]
 }

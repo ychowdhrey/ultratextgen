@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/interrobang/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/interrobang/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "L'Interrobang — ‽ e ⸘",
       "intro": "Il segno stesso e la sua immagine speculare: l'interrobang standard che chiude una domanda stupita, e la forma invertita costruita per aprirne una.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D): Domanda + Esclamazione in un Solo Glifo" },
-        { "char": "⸘", "label": "Interrobang Invertito (U+2E18): Il Gemello che Apre la Frase" }
+        {
+          "char": "‽",
+          "label": "Interrobang (U+203D): Domanda + Esclamazione in un Solo Glifo"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Invertito (U+2E18): Il Gemello che Apre la Frase"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Il Punto Interrogativo e il Punto Esclamativo che Combina",
       "intro": "L'interrobang comprime questi due segni quotidiani in uno solo. Quando una tastiera non può produrlo, si digita la coppia — oppure si ricorre alle forme combinate già pronte di Unicode.",
       "symbols": [
-        { "char": "?", "label": "Punto Interrogativo (U+003F)" },
-        { "char": "!", "label": "Punto Esclamativo (U+0021)" },
-        { "char": "⁉", "label": "Exclamation Question Mark (U+2049)" },
-        { "char": "⁈", "label": "Question Exclamation Mark (U+2048)" },
-        { "char": "⁇", "label": "Double Question Mark (U+2047)" }
+        {
+          "char": "?",
+          "label": "Punto Interrogativo (U+003F)"
+        },
+        {
+          "char": "!",
+          "label": "Punto Esclamativo (U+0021)"
+        },
+        {
+          "char": "⁉",
+          "label": "Exclamation Question Mark (U+2049)"
+        },
+        {
+          "char": "⁈",
+          "label": "Question Exclamation Mark (U+2048)"
+        },
+        {
+          "char": "⁇",
+          "label": "Double Question Mark (U+2047)"
+        }
       ]
     },
     {
@@ -52,10 +81,22 @@
       "h2": "Perché Esiste l'Interrobang Invertito",
       "intro": "Lo spagnolo e le lingue affini aprono una domanda con ¿ e un'esclamazione con ¡; l'interrobang invertito ⸘ fonde quella coppia di apertura, rispecchiando all'inizio della frase ciò che ‽ fa alla fine. Il punto interrogativo rovesciato ⸮ è un segno completamente diverso — vedi la sua pagina dedicata.",
       "symbols": [
-        { "char": "¿", "label": "Punto Interrogativo Rovesciato (U+00BF)" },
-        { "char": "¡", "label": "Punto Esclamativo Rovesciato (U+00A1)" },
-        { "char": "⸘", "label": "Interrobang Invertito (U+2E18)" },
-        { "char": "⸮", "label": "Punto Interrogativo Rovesciato Retorico (U+2E2E)" }
+        {
+          "char": "¿",
+          "label": "Punto Interrogativo Rovesciato (U+00BF)"
+        },
+        {
+          "char": "¡",
+          "label": "Punto Esclamativo Rovesciato (U+00A1)"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Invertito (U+2E18)"
+        },
+        {
+          "char": "⸮",
+          "label": "Punto Interrogativo Rovesciato Retorico (U+2E2E)"
+        }
       ]
     }
   ],

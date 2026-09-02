@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/travessao-curto/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/travessao-curto/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "en-dash",
@@ -29,8 +37,14 @@
       "h2": "O Travessão Curto e o Figure Dash",
       "intro": "O travessão curto para intervalos e ligações, mais o figure dash — mesma largura, reservado para numerais, para que os dígitos se alinhem certinho em tabelas e números de telefone. Pronto para colar em qualquer lugar.",
       "symbols": [
-        { "char": "–", "label": "Travessão Curto / En Dash (U+2013)" },
-        { "char": "‒", "label": "Figure Dash (U+2012)" }
+        {
+          "char": "–",
+          "label": "Travessão Curto / En Dash (U+2013)"
+        },
+        {
+          "char": "‒",
+          "label": "Figure Dash (U+2012)"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Travessões e Hífens com que É Confundido",
       "intro": "As marcas pelas quais o travessão curto é trocado — cada uma com sua própria largura, código e função, do hífen comum do teclado ao travessão longo e ao verdadeiro sinal de menos.",
       "symbols": [
-        { "char": "—", "label": "Travessão Longo / Em Dash (U+2014)" },
-        { "char": "-", "label": "Hífen-Menos (Teclado)" },
-        { "char": "‐", "label": "Hífen Tipográfico (U+2010)" },
-        { "char": "−", "label": "Sinal de Menos (U+2212)" },
-        { "char": "―", "label": "Barra Horizontal (U+2015)" }
+        {
+          "char": "—",
+          "label": "Travessão Longo / Em Dash (U+2014)"
+        },
+        {
+          "char": "-",
+          "label": "Hífen-Menos (Teclado)"
+        },
+        {
+          "char": "‐",
+          "label": "Hífen Tipográfico (U+2010)"
+        },
+        {
+          "char": "−",
+          "label": "Sinal de Menos (U+2212)"
+        },
+        {
+          "char": "―",
+          "label": "Barra Horizontal (U+2015)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "Marcas que um Travessão Curto com Espaços Substitui",
       "intro": "No uso britânico, australiano e canadense, um travessão curto com espaços – como este aqui – isola um comentário à parte onde o inglês americano fecha com um travessão longo; estas são as marcas com que ele funciona junto ou no lugar das quais entra.",
       "symbols": [
-        { "char": ",", "label": "Vírgula" },
-        { "char": ":", "label": "Dois-Pontos" },
-        { "char": ";", "label": "Ponto e Vírgula" },
-        { "char": "(", "label": "Parêntese Esquerdo" },
-        { "char": ")", "label": "Parêntese Direito" }
+        {
+          "char": ",",
+          "label": "Vírgula"
+        },
+        {
+          "char": ":",
+          "label": "Dois-Pontos"
+        },
+        {
+          "char": ";",
+          "label": "Ponto e Vírgula"
+        },
+        {
+          "char": "(",
+          "label": "Parêntese Esquerdo"
+        },
+        {
+          "char": ")",
+          "label": "Parêntese Direito"
+        }
       ]
     }
   ],

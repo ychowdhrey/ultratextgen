@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/biohazard-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/biohazard-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/biohazard-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/biohazard-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Dấu Hiệu Nguy Hại Sinh Học",
       "intro": "Ký tự nguy hại sinh học trong Unicode, sẵn sàng để dán vào bất cứ đâu — tiểu sử, thẻ chơi game, hoặc trường hợp thật.",
       "symbols": [
-        { "char": "☣", "label": "Dấu Hiệu Nguy Hại Sinh Học" },
-        { "char": "☣️", "label": "Emoji Nguy Hại Sinh Học" }
+        {
+          "char": "☣",
+          "label": "Dấu Hiệu Nguy Hại Sinh Học"
+        },
+        {
+          "char": "☣️",
+          "label": "Emoji Nguy Hại Sinh Học"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Ký Hiệu Nguy Hại Phóng Xạ & Phòng Thí Nghiệm",
       "intro": "Những ký hiệu «anh em» gần gũi nhất của nguy hại sinh học — những ký hiệu thường bị nhầm hoặc đi cùng nó trong biển báo thực tế.",
       "symbols": [
-        { "char": "☢", "label": "Dấu Hiệu Phóng Xạ" },
-        { "char": "⚡", "label": "Điện Áp Cao" },
-        { "char": "🧫", "label": "Đĩa Petri" },
-        { "char": "🧪", "label": "Ống Nghiệm" }
+        {
+          "char": "☢",
+          "label": "Dấu Hiệu Phóng Xạ"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Áp Cao"
+        },
+        {
+          "char": "🧫",
+          "label": "Đĩa Petri"
+        },
+        {
+          "char": "🧪",
+          "label": "Ống Nghiệm"
+        }
       ]
     },
     {
@@ -50,17 +77,40 @@
       "h2": "Biển Báo Cảnh Báo & Cấm",
       "intro": "Biển báo nguy hiểm và «không được» tổng quát mà nguy hại sinh học thường xuất hiện cùng.",
       "symbols": [
-        { "char": "⚠", "label": "Dấu Hiệu Cảnh Báo" },
-        { "char": "☠", "label": "Đầu Lâu Xương Chéo" },
-        { "char": "⛔", "label": "Cấm Vào" },
-        { "char": "🚫", "label": "Cấm" }
+        {
+          "char": "⚠",
+          "label": "Dấu Hiệu Cảnh Báo"
+        },
+        {
+          "char": "☠",
+          "label": "Đầu Lâu Xương Chéo"
+        },
+        {
+          "char": "⛔",
+          "label": "Cấm Vào"
+        },
+        {
+          "char": "🚫",
+          "label": "Cấm"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/library/hazard-warning-symbols/", "title": "Ký Hiệu Nguy Hại & Cảnh Báo", "desc": "Biển báo độc hại, phóng xạ, điện và cảnh báo trong một trang tra cứu." },
-    { "href": "/vi/symbol/autism-symbol/", "title": "Ký Hiệu Tự Kỷ", "desc": "Một ký hiệu khác với câu chuyện thiết kế/ý nghĩa thật sự, được ghi chép đầy đủ." },
-    { "href": "/library/witchy-occult-symbols/", "title": "Ký Hiệu Phù Thủy & Huyền Bí", "desc": "Ngôi sao năm cánh, dấu giả kim và các ký hiệu khác thường dùng trong cùng tiểu sử thẩm mỹ tối màu." }
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Ký Hiệu Nguy Hại & Cảnh Báo",
+      "desc": "Biển báo độc hại, phóng xạ, điện và cảnh báo trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/autism-symbol/",
+      "title": "Ký Hiệu Tự Kỷ",
+      "desc": "Một ký hiệu khác với câu chuyện thiết kế/ý nghĩa thật sự, được ghi chép đầy đủ."
+    },
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Ký Hiệu Phù Thủy & Huyền Bí",
+      "desc": "Ngôi sao năm cánh, dấu giả kim và các ký hiệu khác thường dùng trong cùng tiểu sử thẩm mỹ tối màu."
+    }
   ]
 }

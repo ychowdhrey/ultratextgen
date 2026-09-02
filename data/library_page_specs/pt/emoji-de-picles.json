@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-picles/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-picles/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "pickle",
@@ -29,7 +37,10 @@
       "h2": "Emoji de Picles",
       "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
       "symbols": [
-        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" }
+        {
+          "char": "🫝",
+          "label": "Pickle (rascunho, U+1FADD)"
+        }
       ]
     },
     {
@@ -38,9 +49,18 @@
       "h2": "Os Emojis com que É Confundido",
       "intro": "Emojis de hortifrúti já codificados com que o Pickle é mais comumente comparado, ou acusado de se sobrepor.",
       "symbols": [
-        { "char": "🥒", "label": "Pepino" },
-        { "char": "🍆", "label": "Berinjela" },
-        { "char": "🫑", "label": "Pimentão" }
+        {
+          "char": "🥒",
+          "label": "Pepino"
+        },
+        {
+          "char": "🍆",
+          "label": "Berinjela"
+        },
+        {
+          "char": "🫑",
+          "label": "Pimentão"
+        }
       ]
     },
     {
@@ -49,9 +69,18 @@
       "h2": "Outros Candidatos Rascunho do Emoji 18.0",
       "intro": "Pickle não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB)" },
-        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" },
-        { "char": "🛙", "label": "Lighthouse (rascunho, U+1F6D9)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (rascunho, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (rascunho, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (rascunho, U+1F6D9)"
+        }
       ]
     }
   ],

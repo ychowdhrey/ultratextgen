@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/euro-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/euro-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/euro-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/euro-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/euro-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/euro-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Euro",
       "intro": "Ký hiệu euro, sẵn sàng để dán.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC)" }
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro (U+20AC)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Ký Hiệu Dễ Nhầm Với Euro",
       "intro": "Các ký hiệu tiền tệ khác đôi khi bị gõ nhầm thay cho €.",
       "symbols": [
-        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3): đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9): một ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích" }
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh (U+00A3): đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra"
+        },
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ (U+20B9): một ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích"
+        }
       ]
     },
     {
@@ -47,17 +65,41 @@
       "h2": "Các Ký Hiệu Tiền Tệ Lớn Khác",
       "intro": "Những ký hiệu tiền tệ khác thường xuất hiện cùng € trong nội dung tài chính.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La" },
-        { "char": "¥", "label": "Ký Hiệu Yên" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La"
+        },
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên"
+        },
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
-    { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên (¥)", "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc." },
-    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee (₹)", "desc": "Được chọn qua một cuộc thi thiết kế quốc gia năm 2010." },
-    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới." }
+    {
+      "href": "/vi/symbol/pound-sign/",
+      "title": "Ký Hiệu Bảng Anh (£)",
+      "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra."
+    },
+    {
+      "href": "/vi/symbol/yen-sign/",
+      "title": "Ký Hiệu Yên (¥)",
+      "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc."
+    },
+    {
+      "href": "/vi/symbol/rupee-sign/",
+      "title": "Ký Hiệu Rupee (₹)",
+      "desc": "Được chọn qua một cuộc thi thiết kế quốc gia năm 2010."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Tất Cả Ký Hiệu Tiền Tệ",
+      "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới."
+    }
   ]
 }

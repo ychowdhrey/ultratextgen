@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-dirham/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-dirham/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Symbole du Dirham",
       "intro": "Le caractère confirmé lui-même — copiable dès aujourd'hui via son code, même si aucune police ne l'affiche encore nativement.",
       "symbols": [
-        { "char": "⃃", "label": "Symbole du Dirham des Émirats (U+20C3, figé pour publication)" }
+        {
+          "char": "⃃",
+          "label": "Symbole du Dirham des Émirats (U+20C3, figé pour publication)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Autres Nouveaux Symboles Monétaires du Golfe dans Cette Version",
       "intro": "Le dirham n'est pas le seul nouveau symbole monétaire de la version Unicode 18.0 — deux autres monnaies régionales ont reçu leur propre signe dans la même bêta.",
       "symbols": [
-        { "char": "⃄", "label": "Symbole du Rial Omanais (U+20C4)" },
-        { "char": "⃂", "label": "Symbole du Rufiyaa Maldivien (U+20C2)" }
+        {
+          "char": "⃄",
+          "label": "Symbole du Rial Omanais (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Symbole du Rufiyaa Maldivien (U+20C2)"
+        }
       ]
     },
     {
@@ -47,9 +65,18 @@
       "h2": "Symboles Monétaires Déjà Utilisables Aujourd'hui",
       "intro": "Pour comparaison — des symboles monétaires qui ont franchi ce même écart norme-vers-clavier il y a des années et sont pleinement saisissables aujourd'hui.",
       "symbols": [
-        { "char": "$", "label": "Symbole Dollar" },
-        { "char": "€", "label": "Symbole Euro" },
-        { "char": "£", "label": "Symbole Livre" }
+        {
+          "char": "$",
+          "label": "Symbole Dollar"
+        },
+        {
+          "char": "€",
+          "label": "Symbole Euro"
+        },
+        {
+          "char": "£",
+          "label": "Symbole Livre"
+        }
       ]
     },
     {
@@ -58,16 +85,38 @@
       "h2": "Le Symbole Monétaire du Golfe qui est Sorti une Version Plus Tôt",
       "intro": "Le symbole du riyal saoudien a franchi ce même chemin une version Unicode entière plus tôt — déjà définitif depuis Unicode 17.0, et non plus simplement en bêta.",
       "symbols": [
-        { "char": "⃁", "label": "Symbole du Riyal Saoudien (U+20C1, définitif depuis Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Symbole du Riyal Saoudien (U+20C1, définitif depuis Unicode 17.0)"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "Tous les symboles monétaires mondiaux déjà copiables-collables aujourd'hui (en anglais)." },
-    { "href": "/fr/symbol/symbole-rial-omanais/", "title": "Symbole du Rial Omanais", "desc": "Un autre symbole monétaire du Golfe qui sort dans la même bêta d'Unicode 18.0." },
-    { "href": "/fr/symbol/symbole-riyal-saoudien/", "title": "Symbole du Riyal Saoudien", "desc": "Un symbole monétaire du Golfe déjà définitif, une version Unicode d'avance." },
-    { "href": "/fr/symbol/symbole-dollar/", "title": "Symbole Dollar", "desc": "Le symbole monétaire le plus reconnu au monde — et son origine disputée." },
-    { "href": "/updates/uae-dirham-symbol-unicode-18/", "title": "UAE Dirham Symbol Update", "desc": "Le suivi daté du parcours de ce symbole à travers Unicode 18.0 et vers de vrais claviers (en anglais)." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Tous les symboles monétaires mondiaux déjà copiables-collables aujourd'hui (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/symbole-rial-omanais/",
+      "title": "Symbole du Rial Omanais",
+      "desc": "Un autre symbole monétaire du Golfe qui sort dans la même bêta d'Unicode 18.0."
+    },
+    {
+      "href": "/fr/symbol/symbole-riyal-saoudien/",
+      "title": "Symbole du Riyal Saoudien",
+      "desc": "Un symbole monétaire du Golfe déjà définitif, une version Unicode d'avance."
+    },
+    {
+      "href": "/fr/symbol/symbole-dollar/",
+      "title": "Symbole Dollar",
+      "desc": "Le symbole monétaire le plus reconnu au monde — et son origine disputée."
+    },
+    {
+      "href": "/updates/uae-dirham-symbol-unicode-18/",
+      "title": "UAE Dirham Symbol Update",
+      "desc": "Le suivi daté du parcours de ce symbole à travers Unicode 18.0 et vers de vrais claviers (en anglais)."
+    }
   ]
 }

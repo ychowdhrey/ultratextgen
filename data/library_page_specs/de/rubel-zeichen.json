@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/ruble-sign/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/rubel-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/rubel-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-rubel-zeichen",
@@ -29,9 +37,18 @@
       "h2": "Das Rubel-Zeichen (₽)",
       "intro": "Das Zeichen selbst und der kyrillische Buchstabe, aus dem es entstand. Das siegreiche Design ist das große Er (Р) mit einem zusätzlichen waagerechten Balken unterhalb der Rundung — das kleine р ist jenes, das in der alten „р.“-Abkürzung erschien.",
       "symbols": [
-        { "char": "₽", "label": "Rubel-Zeichen (U+20BD)" },
-        { "char": "Р", "label": "Kyrillischer Großbuchstabe Er (U+0420): die Grundlage des Zeichens" },
-        { "char": "р", "label": "Kyrillischer Kleinbuchstabe Er (U+0440): genutzt in der alten „р.“-Abkürzung" }
+        {
+          "char": "₽",
+          "label": "Rubel-Zeichen (U+20BD)"
+        },
+        {
+          "char": "Р",
+          "label": "Kyrillischer Großbuchstabe Er (U+0420): die Grundlage des Zeichens"
+        },
+        {
+          "char": "р",
+          "label": "Kyrillischer Kleinbuchstabe Er (U+0440): genutzt in der alten „р.“-Abkürzung"
+        }
       ]
     },
     {
@@ -40,11 +57,26 @@
       "h2": "Weitere kürzlich eingeführte Währungszeichen",
       "intro": "Das Rubel-Zeichen hat enge Nachbarn in Unicodes Block der Währungssymbole — ein Cluster von Zeichen, die erst in den 2010er-Jahren kodiert wurden, als post-sowjetische und andere Staaten ihrer Währung eine eigene Glyphe gaben. Indiens Rupienzeichen wurde, wie das Rubelzeichen, durch einen öffentlichen Designwettbewerb ausgewählt.",
       "symbols": [
-        { "char": "₹", "label": "Indisches Rupienzeichen (U+20B9): 2010 durch öffentlichen Wettbewerb gewählt" },
-        { "char": "₺", "label": "Türkisches Lira-Zeichen (U+20BA): eingeführt 2012" },
-        { "char": "₸", "label": "Tenge-Zeichen (U+20B8): kasachischer Tenge" },
-        { "char": "₼", "label": "Manat-Zeichen (U+20BC): aserbaidschanischer Manat" },
-        { "char": "₾", "label": "Lari-Zeichen (U+20BE): georgischer Lari" }
+        {
+          "char": "₹",
+          "label": "Indisches Rupienzeichen (U+20B9): 2010 durch öffentlichen Wettbewerb gewählt"
+        },
+        {
+          "char": "₺",
+          "label": "Türkisches Lira-Zeichen (U+20BA): eingeführt 2012"
+        },
+        {
+          "char": "₸",
+          "label": "Tenge-Zeichen (U+20B8): kasachischer Tenge"
+        },
+        {
+          "char": "₼",
+          "label": "Manat-Zeichen (U+20BC): aserbaidschanischer Manat"
+        },
+        {
+          "char": "₾",
+          "label": "Lari-Zeichen (U+20BE): georgischer Lari"
+        }
       ]
     },
     {
@@ -53,11 +85,26 @@
       "h2": "Klassische Währungssymbole im Vergleich",
       "intro": "Der klaren, gut dokumentierten Entstehung des Rubels 2013 stehen die weltweit bekanntesten Währungszeichen gegenüber, die Jahrhunderte älter und deutlich unklarer sind — über die genauen Geschichten hinter Dollar- und Pfundzeichen wird bis heute gestritten.",
       "symbols": [
-        { "char": "$", "label": "Dollarzeichen (U+0024)" },
-        { "char": "£", "label": "Pfundzeichen (U+00A3)" },
-        { "char": "€", "label": "Eurozeichen (U+20AC)" },
-        { "char": "¥", "label": "Yenzeichen (U+00A5)" },
-        { "char": "¢", "label": "Centzeichen (U+00A2)" }
+        {
+          "char": "$",
+          "label": "Dollarzeichen (U+0024)"
+        },
+        {
+          "char": "£",
+          "label": "Pfundzeichen (U+00A3)"
+        },
+        {
+          "char": "€",
+          "label": "Eurozeichen (U+20AC)"
+        },
+        {
+          "char": "¥",
+          "label": "Yenzeichen (U+00A5)"
+        },
+        {
+          "char": "¢",
+          "label": "Centzeichen (U+00A2)"
+        }
       ]
     }
   ],

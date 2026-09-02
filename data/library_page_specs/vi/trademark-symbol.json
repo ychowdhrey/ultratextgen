@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/trademark-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/trademark-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/trademark-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/trademark-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Nhãn Hiệu",
       "intro": "Ký hiệu nhãn hiệu, sẵn sàng để dán.",
       "symbols": [
-        { "char": "™", "label": "Ký Hiệu Nhãn Hiệu (U+2122)" }
+        {
+          "char": "™",
+          "label": "Ký Hiệu Nhãn Hiệu (U+2122)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Các Dấu Hiệu Pháp Lý Khác",
       "intro": "Những ký hiệu pháp lý dễ bị nhầm hoặc gộp chung với ™.",
       "symbols": [
-        { "char": "®", "label": "Ký Hiệu Nhãn Hiệu Đã Đăng Ký (U+00AE): về mặt pháp lý chỉ dùng cho các nhãn hiệu đã thực sự đăng ký với cơ quan nhãn hiệu" },
-        { "char": "©", "label": "Ký Hiệu Bản Quyền (U+00A9): bảo vệ tác phẩm sáng tạo, không phải tên thương hiệu" }
+        {
+          "char": "®",
+          "label": "Ký Hiệu Nhãn Hiệu Đã Đăng Ký (U+00AE): về mặt pháp lý chỉ dùng cho các nhãn hiệu đã thực sự đăng ký với cơ quan nhãn hiệu"
+        },
+        {
+          "char": "©",
+          "label": "Ký Hiệu Bản Quyền (U+00A9): bảo vệ tác phẩm sáng tạo, không phải tên thương hiệu"
+        }
       ]
     },
     {
@@ -47,15 +65,32 @@
       "h2": "Các Ký Tự Đặc Biệt Khác",
       "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng nội dung về ký hiệu pháp lý và thương hiệu.",
       "symbols": [
-        { "char": "©", "label": "Ký Hiệu Bản Quyền" },
-        { "char": "§", "label": "Ký Hiệu Điều Khoản" }
+        {
+          "char": "©",
+          "label": "Ký Hiệu Bản Quyền"
+        },
+        {
+          "char": "§",
+          "label": "Ký Hiệu Điều Khoản"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/copyright-symbol/", "title": "Ký Hiệu Bản Quyền (©)", "desc": "Vì sao nó không còn là yêu cầu pháp lý bắt buộc, và vì sao nó vẫn còn quan trọng." },
-    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },
-    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+    {
+      "href": "/vi/symbol/copyright-symbol/",
+      "title": "Ký Hiệu Bản Quyền (©)",
+      "desc": "Vì sao nó không còn là yêu cầu pháp lý bắt buộc, và vì sao nó vẫn còn quan trọng."
+    },
+    {
+      "href": "/vi/symbol/section-sign/",
+      "title": "Ký Hiệu Điều Khoản (§)",
+      "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Tất Cả Ký Tự Đặc Biệt",
+      "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác."
+    }
   ]
 }

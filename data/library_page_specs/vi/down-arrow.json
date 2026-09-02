@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/down-arrow/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/down-arrow/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/down-arrow/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/down-arrow/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/down-arrow/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/down-arrow/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Mũi Tên Xuống",
       "intro": "Ký hiệu mũi tên xuống và hình tam giác thường được dùng thay thế mang tính trang trí.",
       "symbols": [
-        { "char": "↓", "label": "Mũi Tên Xuống (U+2193)" },
-        { "char": "▼", "label": "Tam Giác Đen Trỏ Xuống (U+25BC): thường thay cho ↓ mang tính trang trí" }
+        {
+          "char": "↓",
+          "label": "Mũi Tên Xuống (U+2193)"
+        },
+        {
+          "char": "▼",
+          "label": "Tam Giác Đen Trỏ Xuống (U+25BC): thường thay cho ↓ mang tính trang trí"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Các Hướng Mũi Tên Khác",
       "intro": "Ba hướng còn lại trong bộ bốn mũi tên cơ bản của Unicode.",
       "symbols": [
-        { "char": "↑", "label": "Mũi Tên Lên" },
-        { "char": "→", "label": "Mũi Tên Phải" },
-        { "char": "←", "label": "Mũi Tên Trái" }
+        {
+          "char": "↑",
+          "label": "Mũi Tên Lên"
+        },
+        {
+          "char": "→",
+          "label": "Mũi Tên Phải"
+        },
+        {
+          "char": "←",
+          "label": "Mũi Tên Trái"
+        }
       ]
     },
     {
@@ -49,17 +73,41 @@
       "h2": "Mũi Tên Đôi & Mũi Tên Trắng",
       "intro": "Các biến thể khác của mũi tên xuống trong Unicode.",
       "symbols": [
-        { "char": "⇓", "label": "Mũi Tên Đôi Hướng Xuống (U+21D3)" },
-        { "char": "⇩", "label": "Mũi Tên Trắng Hướng Xuống (U+21E9)" },
-        { "char": "↡", "label": "Mũi Tên Hai Đầu Hướng Xuống (U+21A1)" }
+        {
+          "char": "⇓",
+          "label": "Mũi Tên Đôi Hướng Xuống (U+21D3)"
+        },
+        {
+          "char": "⇩",
+          "label": "Mũi Tên Trắng Hướng Xuống (U+21E9)"
+        },
+        {
+          "char": "↡",
+          "label": "Mũi Tên Hai Đầu Hướng Xuống (U+21A1)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/up-arrow/", "title": "Mũi Tên Lên (↑)", "desc": "Tín hiệu tăng, hướng bắc và các dãy số đi lên." },
-    { "href": "/vi/symbol/right-arrow/", "title": "Mũi Tên Phải (→)", "desc": "Ánh xạ, hệ quả và «tiếp theo»." },
-    { "href": "/vi/symbol/left-arrow/", "title": "Mũi Tên Trái (←)", "desc": "«Quay lại», «trước đó» và hệ quả đảo chiều." },
-    { "href": "/library/arrow-symbols/", "title": "Tất Cả Ký Hiệu Mũi Tên", "desc": "Mọi ký tự mũi tên định hướng và trang trí." }
+    {
+      "href": "/vi/symbol/up-arrow/",
+      "title": "Mũi Tên Lên (↑)",
+      "desc": "Tín hiệu tăng, hướng bắc và các dãy số đi lên."
+    },
+    {
+      "href": "/vi/symbol/right-arrow/",
+      "title": "Mũi Tên Phải (→)",
+      "desc": "Ánh xạ, hệ quả và «tiếp theo»."
+    },
+    {
+      "href": "/vi/symbol/left-arrow/",
+      "title": "Mũi Tên Trái (←)",
+      "desc": "«Quay lại», «trước đó» và hệ quả đảo chiều."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Tất Cả Ký Hiệu Mũi Tên",
+      "desc": "Mọi ký tự mũi tên định hướng và trang trí."
+    }
   ]
 }

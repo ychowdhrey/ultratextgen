@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/peso-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/peso-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-pesozeichen",
@@ -29,8 +37,14 @@
       "h2": "Die zwei Zeichen, die man „das Pesozeichen“ nennt — ₱ und $",
       "intro": "Beide werden Pesozeichen genannt. ₱ ist das eigene Zeichen des philippinischen Peso; $ ist, was fast jeder andere Peso verwendet — weil das Dollarzeichen selbst vermutlich als Kürzel für den spanischen Peso begann. Ob es aus einem handschriftlichen „Ps“ oder aus den S-umschlungenen Säulen des Herkules auf spanischen Dollarmünzen entstand, ist unter Historikern bis heute umstritten.",
       "symbols": [
-        { "char": "₱", "label": "Pesozeichen (U+20B1): die eigene Glyphe des philippinischen Peso" },
-        { "char": "$", "label": "Dollarzeichen (U+0024): das Zeichen, das der mexikanische, argentinische und andere Pesos tatsächlich verwenden" }
+        {
+          "char": "₱",
+          "label": "Pesozeichen (U+20B1): die eigene Glyphe des philippinischen Peso"
+        },
+        {
+          "char": "$",
+          "label": "Dollarzeichen (U+0024): das Zeichen, das der mexikanische, argentinische und andere Pesos tatsächlich verwenden"
+        }
       ]
     },
     {
@@ -39,12 +53,30 @@
       "h2": "Die Familie durchgestrichener Buchstaben-Währungszeichen",
       "intro": "Das Pesozeichen ist ein großes P, gekreuzt von zwei parallelen Balken — dasselbe Rezept hinter einer ganzen Generation moderner Währungszeichen, jeweils ein nationaler Buchstabe mit einem oder zwei Strichen versehen. Zum Kopieren, überall einsetzbar.",
       "symbols": [
-        { "char": "₹", "label": "Indisches Rupienzeichen (U+20B9): ein durchgestrichenes R, offiziell 2010 eingeführt" },
-        { "char": "₩", "label": "Wonzeichen (U+20A9): ein W mit zwei Balken" },
-        { "char": "₦", "label": "Nairazeichen (U+20A6): ein durchgestrichenes N (Nigeria)" },
-        { "char": "₴", "label": "Hrywnja-Zeichen (U+20B4): ein durchgestrichener Buchstabe für die Ukraine" },
-        { "char": "₫", "label": "Dong-Zeichen (U+20AB): ein durchgestrichenes d (Vietnam)" },
-        { "char": "€", "label": "Eurozeichen (U+20AC): ein abgerundetes E mit zwei Strichen" }
+        {
+          "char": "₹",
+          "label": "Indisches Rupienzeichen (U+20B9): ein durchgestrichenes R, offiziell 2010 eingeführt"
+        },
+        {
+          "char": "₩",
+          "label": "Wonzeichen (U+20A9): ein W mit zwei Balken"
+        },
+        {
+          "char": "₦",
+          "label": "Nairazeichen (U+20A6): ein durchgestrichenes N (Nigeria)"
+        },
+        {
+          "char": "₴",
+          "label": "Hrywnja-Zeichen (U+20B4): ein durchgestrichener Buchstabe für die Ukraine"
+        },
+        {
+          "char": "₫",
+          "label": "Dong-Zeichen (U+20AB): ein durchgestrichenes d (Vietnam)"
+        },
+        {
+          "char": "€",
+          "label": "Eurozeichen (U+20AC): ein abgerundetes E mit zwei Strichen"
+        }
       ]
     },
     {
@@ -53,11 +85,26 @@
       "h2": "Doppelgänger: Glyphen, die man mit ₱ verwechselt",
       "intro": "Weil ₱ im Grunde ein durchgestrichenes P ist, wird es mit anderen P-förmigen Zeichen vertauscht — darunter eines, das eine völlig andere Währung ist. Jedes davon ist ein eigener Unicode-Codepoint, keine Stilvariante.",
       "symbols": [
-        { "char": "₽", "label": "Rubelzeichen (U+20BD): Russlands Währung, ebenfalls ein durchgestrichenes P, aber mit anderem Balken" },
-        { "char": "P", "label": "Lateinischer Großbuchstabe P (U+0050): der schlichte Ersatz, oft für den Peso getippt" },
-        { "char": "Ᵽ", "label": "Lateinisches Großbuchstabe P mit Strich (U+2C63): ein einfach durchgestrichenes P aus der Linguistik, keine Währung" },
-        { "char": "Ρ", "label": "Griechischer Großbuchstabe Rho (U+03A1): sieht aus wie ein P" },
-        { "char": "Р", "label": "Kyrillischer Großbuchstabe Er (U+0420): ein weiterer P-Doppelgänger" }
+        {
+          "char": "₽",
+          "label": "Rubelzeichen (U+20BD): Russlands Währung, ebenfalls ein durchgestrichenes P, aber mit anderem Balken"
+        },
+        {
+          "char": "P",
+          "label": "Lateinischer Großbuchstabe P (U+0050): der schlichte Ersatz, oft für den Peso getippt"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "Lateinisches Großbuchstabe P mit Strich (U+2C63): ein einfach durchgestrichenes P aus der Linguistik, keine Währung"
+        },
+        {
+          "char": "Ρ",
+          "label": "Griechischer Großbuchstabe Rho (U+03A1): sieht aus wie ein P"
+        },
+        {
+          "char": "Р",
+          "label": "Kyrillischer Großbuchstabe Er (U+0420): ein weiterer P-Doppelgänger"
+        }
       ]
     }
   ],

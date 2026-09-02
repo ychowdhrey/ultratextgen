@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/invisible-character/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/invisible-character/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/invisible-character/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/invisible-character/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/invisible-character/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/invisible-character/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Tự Vô Hình (Braille Pattern Blank)",
       "intro": "Ký tự chính nó — trông trống rỗng nhưng là một ký tự Unicode thật sự, sao chép được ngay.",
       "symbols": [
-        { "char": "⠀", "label": "Braille Pattern Blank (U+2800)" }
+        {
+          "char": "⠀",
+          "label": "Braille Pattern Blank (U+2800)"
+        }
       ]
     },
     {
@@ -37,9 +49,18 @@
       "h2": "Các Ký Tự «Vô Hình» Khác — & Vì Sao Lựa Chọn Quan Trọng",
       "intro": "Những ký tự này cũng trông trống, nhưng mỗi cái hoạt động khác nhau trước bộ kiểm tra xác thực của các nền tảng.",
       "symbols": [
-        { "char": "​", "label": "Khoảng Trắng Độ Rộng Bằng Không (U+200B): độ rộng thực sự bằng không; nhiều bộ kiểm tra loại bỏ nó như khoảng trắng, nên thường thất bại ở nơi U+2800 thành công" },
-        { "char": " ", "label": "Khoảng Trắng Không Ngắt Dòng (U+00A0): một ký tự khoảng trắng thật sự; hầu như luôn bị cắt bỏ hoặc từ chối thẳng" },
-        { "char": "ㅤ", "label": "Hangul Filler (U+3164): một lựa chọn tên trống phổ biến khác, hoạt động trên một số nền tảng mà U+2800 không hoạt động, và ngược lại" }
+        {
+          "char": "​",
+          "label": "Khoảng Trắng Độ Rộng Bằng Không (U+200B): độ rộng thực sự bằng không; nhiều bộ kiểm tra loại bỏ nó như khoảng trắng, nên thường thất bại ở nơi U+2800 thành công"
+        },
+        {
+          "char": " ",
+          "label": "Khoảng Trắng Không Ngắt Dòng (U+00A0): một ký tự khoảng trắng thật sự; hầu như luôn bị cắt bỏ hoặc từ chối thẳng"
+        },
+        {
+          "char": "ㅤ",
+          "label": "Hangul Filler (U+3164): một lựa chọn tên trống phổ biến khác, hoạt động trên một số nền tảng mà U+2800 không hoạt động, và ngược lại"
+        }
       ]
     },
     {
@@ -48,17 +69,40 @@
       "h2": "Các Ký Tự Định Dạng Độ Rộng Bằng Không Khác",
       "intro": "Cùng họ với khoảng trắng độ rộng bằng không — những ký tự Unicode hợp lệ này không hiển thị gì nhưng phục vụ vai trò định dạng văn bản riêng, không phải để lách kiểm tra tên trống.",
       "symbols": [
-        { "char": "‌", "label": "Zero Width Non-Joiner (U+200C)" },
-        { "char": "‍", "label": "Zero Width Joiner (U+200D)" },
-        { "char": "⁠", "label": "Word Joiner (U+2060)" },
-        { "char": "­", "label": "Soft Hyphen (U+00AD)" }
+        {
+          "char": "‌",
+          "label": "Zero Width Non-Joiner (U+200C)"
+        },
+        {
+          "char": "‍",
+          "label": "Zero Width Joiner (U+200D)"
+        },
+        {
+          "char": "⁠",
+          "label": "Word Joiner (U+2060)"
+        },
+        {
+          "char": "­",
+          "label": "Soft Hyphen (U+00AD)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/vertical-line/", "title": "Ký Hiệu Vạch Đứng", "desc": "Từ dấu phân cách ASCII đến «pipe» trong Unix." },
-    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ", "desc": "Nhiều thế kỷ thiên văn học, góc độ và thang nhiệt độ." },
-    { "href": "/library/invisible-character/", "title": "Mọi Ký Tự Vô Hình", "desc": "Khoảng trắng độ rộng bằng không, ký tự lấp đầy và chữ nổi Braille trống." }
+    {
+      "href": "/vi/symbol/vertical-line/",
+      "title": "Ký Hiệu Vạch Đứng",
+      "desc": "Từ dấu phân cách ASCII đến «pipe» trong Unix."
+    },
+    {
+      "href": "/vi/symbol/degree-symbol/",
+      "title": "Ký Hiệu Độ",
+      "desc": "Nhiều thế kỷ thiên văn học, góc độ và thang nhiệt độ."
+    },
+    {
+      "href": "/library/invisible-character/",
+      "title": "Mọi Ký Tự Vô Hình",
+      "desc": "Khoảng trắng độ rộng bằng không, ký tự lấp đầy và chữ nổi Braille trống."
+    }
   ]
 }

@@ -12,9 +12,18 @@
   "date_modified": "2026-07-24",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
   ],
   "sections": [
     {
@@ -23,7 +32,10 @@
       "h2": "The Microphone Emoji",
       "intro": "The handheld mic itself — ready to paste anywhere emoji are supported.",
       "symbols": [
-        { "char": "🎤", "label": "Microphone (U+1F3A4)" }
+        {
+          "char": "🎤",
+          "label": "Microphone (U+1F3A4)"
+        }
       ]
     },
     {
@@ -32,10 +44,22 @@
       "h2": "Emoji It Gets Confused With",
       "intro": "Symbols people reach for expecting the handheld mic, but that are actually separate, differently-coded emoji.",
       "symbols": [
-        { "char": "🎙️", "label": "Studio Microphone (U+1F399): the tripod-mounted broadcast/podcast mic" },
-        { "char": "🔊", "label": "Speaker High Volume (U+1F50A)" },
-        { "char": "🗣️", "label": "Speaking Head (U+1F5E3 FE0F)" },
-        { "char": "📢", "label": "Public Address Loudspeaker (U+1F4E2)" }
+        {
+          "char": "🎙️",
+          "label": "Studio Microphone (U+1F399): the tripod-mounted broadcast/podcast mic"
+        },
+        {
+          "char": "🔊",
+          "label": "Speaker High Volume (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Speaking Head (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Public Address Loudspeaker (U+1F4E2)"
+        }
       ]
     },
     {
@@ -44,15 +68,29 @@
       "h2": "Music & Performance Emoji That Pair With It",
       "intro": "Emoji that show up alongside the microphone in singing, concert, and podcast captions.",
       "symbols": [
-        { "char": "🎧", "label": "Headphone (U+1F3A7)" },
-        { "char": "🎵", "label": "Musical Note (U+1F3B5)" },
-        { "char": "🎶", "label": "Musical Notes (U+1F3B6)" },
-        { "char": "🎸", "label": "Guitar (U+1F3B8)" },
-        { "char": "🥁", "label": "Drum (U+1F941)" }
+        {
+          "char": "🎧",
+          "label": "Headphone (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Musical Note (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Musical Notes (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Guitar (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Drum (U+1F941)"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/object-emojis/",

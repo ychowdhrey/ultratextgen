@@ -17,9 +17,18 @@
   "crumb_library": "Symboles",
   "library_url": "https://ultratextgen.com/fr/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" },
-    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-lunettes-de-soleil/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/emoji-lunettes-de-soleil/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Emoji Lunettes de Soleil",
       "intro": "Les deux glyphes Unicode centraux : le visage souriant portant des lunettes de soleil, et l'objet lunettes de soleil tout simple.",
       "symbols": [
-        { "char": "😎", "label": "Visage Souriant avec Lunettes de Soleil (U+1F60E)" },
-        { "char": "🕶️", "label": "Lunettes de Soleil (U+1F576)" }
+        {
+          "char": "😎",
+          "label": "Visage Souriant avec Lunettes de Soleil (U+1F60E)"
+        },
+        {
+          "char": "🕶️",
+          "label": "Lunettes de Soleil (U+1F576)"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Les Visages Cool & Confiants qui l'Accompagnent",
       "intro": "Des emoji qui partagent un ton similaire, satisfait, confiant ou imperturbable.",
       "symbols": [
-        { "char": "😏", "label": "Visage en Coin (Smirk)" },
-        { "char": "🆒", "label": "Bouton Cool" },
-        { "char": "💪", "label": "Biceps Contracté" }
+        {
+          "char": "😏",
+          "label": "Visage en Coin (Smirk)"
+        },
+        {
+          "char": "🆒",
+          "label": "Bouton Cool"
+        },
+        {
+          "char": "💪",
+          "label": "Biceps Contracté"
+        }
       ]
     },
     {
@@ -49,15 +73,32 @@
       "h2": "Kaomoji & Alternatives en Texte",
       "intro": "Des façons purement textuelles d'exprimer la même énergie « lunettes sur le nez ».",
       "symbols": [
-        { "char": "B-)", "label": "Kaomoji Smiley à Lunettes de Soleil" },
-        { "char": "(⌐■_■)", "label": "Kaomoji « Deal With It »" }
+        {
+          "char": "B-)",
+          "label": "Kaomoji Smiley à Lunettes de Soleil"
+        },
+        {
+          "char": "(⌐■_■)",
+          "label": "Kaomoji « Deal With It »"
+        }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
-    { "href": "/library/snapchat-symbols/", "title": "Snapchat Symbols & Emoji", "desc": "Symboles de bio Snapchat à copier-coller et l'explication complète du système Friend Emoji (en anglais)." },
-    { "href": "/library/sunglasses-emoji/", "title": "Sunglasses Emoji & Kaomoji", "desc": "La collection complète d'emoji et de combos « cool et confiant » à lunettes de soleil (en anglais)." },
-    { "href": "/fr/symbol/couleurs-des-coeurs-snapchat/", "title": "Couleurs des Cœurs Snapchat", "desc": "Ce que signifie chaque couleur de cœur à côté du nom d'un ami sur Snapchat." }
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Snapchat Symbols & Emoji",
+      "desc": "Symboles de bio Snapchat à copier-coller et l'explication complète du système Friend Emoji (en anglais)."
+    },
+    {
+      "href": "/library/sunglasses-emoji/",
+      "title": "Sunglasses Emoji & Kaomoji",
+      "desc": "La collection complète d'emoji et de combos « cool et confiant » à lunettes de soleil (en anglais)."
+    },
+    {
+      "href": "/fr/symbol/couleurs-des-coeurs-snapchat/",
+      "title": "Couleurs des Cœurs Snapchat",
+      "desc": "Ce que signifie chaque couleur de cœur à côté du nom d'un ami sur Snapchat."
+    }
   ]
 }

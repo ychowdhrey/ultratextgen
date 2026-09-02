@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/congruent-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/congruent-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/congruent-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/congruent-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/congruent-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/congruent-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Đồng Dạng — ≅",
       "intro": "Glyph mà hình học dùng cho sự đồng dạng — cùng hình dạng và kích thước — dù tên chính thức mà Unicode đặt cho nó không hề nhắc đến từ này. «Người họ hàng» thị giác gần gũi của nó, ≃, mang một dấu ngã đơn thay vì đôi.",
       "symbols": [
-        { "char": "≅", "label": "Đồng Dạng Với: Chính Thức Là «Gần Bằng» (U+2245)" },
-        { "char": "≃", "label": "Tiệm Cận Bằng (U+2243): «Người Họ Hàng» Một Dấu Ngã" }
+        {
+          "char": "≅",
+          "label": "Đồng Dạng Với: Chính Thức Là «Gần Bằng» (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Tiệm Cận Bằng (U+2243): «Người Họ Hàng» Một Dấu Ngã"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "≅ So Với ≈ So Với ≡ — Các Ký Hiệu Dễ Nhầm",
       "intro": "Ba ký hiệu nét ngang xếp chồng liên tục bị hoán đổi, mỗi ký hiệu mang một công việc riêng. Đồng dạng (cùng hình dạng và kích thước), gần bằng (một ước lượng thô), và đồng nhất (tính đồng nhất thật sự và đồng dư modulo).",
       "symbols": [
-        { "char": "≅", "label": "Gần Bằng (U+2245): Dùng Cho Sự Đồng Dạng Hình Học" },
-        { "char": "≈", "label": "Gần Bằng (U+2248): Xấp Xỉ, Ví Dụ π ≈ 3,14" },
-        { "char": "≡", "label": "Đồng Nhất (U+2261): Tính Đồng Nhất & Đồng Dư Modulo" }
+        {
+          "char": "≅",
+          "label": "Gần Bằng (U+2245): Dùng Cho Sự Đồng Dạng Hình Học"
+        },
+        {
+          "char": "≈",
+          "label": "Gần Bằng (U+2248): Xấp Xỉ, Ví Dụ π ≈ 3,14"
+        },
+        {
+          "char": "≡",
+          "label": "Đồng Nhất (U+2261): Tính Đồng Nhất & Đồng Dư Modulo"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Thêm Các Ký Hiệu Quan Hệ Toán Học",
       "intro": "Phần còn lại của «họ dấu bằng» sống cạnh ký hiệu đồng dạng trong phương trình và chứng minh.",
       "symbols": [
-        { "char": "≠", "label": "Không Bằng (U+2260)" },
-        { "char": "=", "label": "Dấu Bằng" },
-        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng" },
-        { "char": "≥", "label": "Lớn Hơn Hoặc Bằng" }
+        {
+          "char": "≠",
+          "label": "Không Bằng (U+2260)"
+        },
+        {
+          "char": "=",
+          "label": "Dấu Bằng"
+        },
+        {
+          "char": "≤",
+          "label": "Nhỏ Hơn Hoặc Bằng"
+        },
+        {
+          "char": "≥",
+          "label": "Lớn Hơn Hoặc Bằng"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Trọn bộ các quan hệ, toán tử và chữ cái Hy Lạp mà ký hiệu đồng dạng sống cạnh trong phương trình." },
-    { "href": "/vi/symbol/not-equal-sign/", "title": "Ký Hiệu Không Bằng", "desc": "Quan hệ đối lập — và một «người hàng xóm» gần trong cùng «họ dấu bằng» của các ký hiệu toán học." },
-    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "Một ký tự khác mà danh tính hằng ngày của nó — ký hiệu ohm cho điện trở — không phải cái tên mà Unicode chính thức đặt cho nó." }
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Trọn bộ các quan hệ, toán tử và chữ cái Hy Lạp mà ký hiệu đồng dạng sống cạnh trong phương trình."
+    },
+    {
+      "href": "/vi/symbol/not-equal-sign/",
+      "title": "Ký Hiệu Không Bằng",
+      "desc": "Quan hệ đối lập — và một «người hàng xóm» gần trong cùng «họ dấu bằng» của các ký hiệu toán học."
+    },
+    {
+      "href": "/vi/symbol/omega-symbol/",
+      "title": "Ký Hiệu Omega",
+      "desc": "Một ký tự khác mà danh tính hằng ngày của nó — ký hiệu ohm cho điện trở — không phải cái tên mà Unicode chính thức đặt cho nó."
+    }
   ]
 }

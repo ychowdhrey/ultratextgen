@@ -17,14 +17,38 @@
       "h2": "Power & Energy Symbols",
       "intro": "Power states, plugs, and batteries — the glyphs of switching things on and off.",
       "symbols": [
-        { "char": "⚡", "label": "High Voltage" },
-        { "char": "⏻", "label": "Power Symbol" },
-        { "char": "⏼", "label": "Power On-Off Symbol" },
-        { "char": "⏽", "label": "Power On Symbol" },
-        { "char": "⏾", "label": "Power Sleep Symbol" },
-        { "char": "🔌", "label": "Electric Plug" },
-        { "char": "🔋", "label": "Battery" },
-        { "char": "🪫", "label": "Low Battery" }
+        {
+          "char": "⚡",
+          "label": "High Voltage"
+        },
+        {
+          "char": "⏻",
+          "label": "Power Symbol"
+        },
+        {
+          "char": "⏼",
+          "label": "Power On-Off Symbol"
+        },
+        {
+          "char": "⏽",
+          "label": "Power On Symbol"
+        },
+        {
+          "char": "⏾",
+          "label": "Power Sleep Symbol"
+        },
+        {
+          "char": "🔌",
+          "label": "Electric Plug"
+        },
+        {
+          "char": "🔋",
+          "label": "Battery"
+        },
+        {
+          "char": "🪫",
+          "label": "Low Battery"
+        }
       ]
     },
     {
@@ -33,14 +57,38 @@
       "h2": "Ground, Current & Circuit Glyphs",
       "intro": "True circuit-diagram characters from the Miscellaneous Technical block.",
       "symbols": [
-        { "char": "⏚", "label": "Earth Ground" },
-        { "char": "⏛", "label": "Fuse" },
-        { "char": "⏦", "label": "AC Current" },
-        { "char": "⎓", "label": "Direct Current Symbol Form Two" },
-        { "char": "⌁", "label": "Electric Arrow" },
-        { "char": "∿", "label": "Sine Wave" },
-        { "char": "⏧", "label": "Electrical Intersection" },
-        { "char": "↯", "label": "Downwards Zigzag Arrow" }
+        {
+          "char": "⏚",
+          "label": "Earth Ground"
+        },
+        {
+          "char": "⏛",
+          "label": "Fuse"
+        },
+        {
+          "char": "⏦",
+          "label": "AC Current"
+        },
+        {
+          "char": "⎓",
+          "label": "Direct Current Symbol Form Two"
+        },
+        {
+          "char": "⌁",
+          "label": "Electric Arrow"
+        },
+        {
+          "char": "∿",
+          "label": "Sine Wave"
+        },
+        {
+          "char": "⏧",
+          "label": "Electrical Intersection"
+        },
+        {
+          "char": "↯",
+          "label": "Downwards Zigzag Arrow"
+        }
       ]
     },
     {
@@ -49,19 +97,58 @@
       "h2": "Logic Gate & Digital Symbols",
       "intro": "Boolean operators and digital-electronics output symbols for logic notation.",
       "symbols": [
-        { "char": "∧", "label": "Logical And (AND)" },
-        { "char": "∨", "label": "Logical Or (OR)" },
-        { "char": "¬", "label": "Not Sign (Inverter)" },
-        { "char": "⊕", "label": "Circled Plus (XOR)" },
-        { "char": "⊻", "label": "Xor" },
-        { "char": "⊼", "label": "Nand" },
-        { "char": "⊽", "label": "Nor" },
-        { "char": "⎍", "label": "Monostable Symbol" },
-        { "char": "⎎", "label": "Hysteresis Symbol" },
-        { "char": "⎏", "label": "Open-Circuit-Output H-Type Symbol" },
-        { "char": "⎐", "label": "Open-Circuit-Output L-Type Symbol" },
-        { "char": "⎑", "label": "Passive-Pull-Down-Output Symbol" },
-        { "char": "⎒", "label": "Passive-Pull-Up-Output Symbol" }
+        {
+          "char": "∧",
+          "label": "Logical And (AND)"
+        },
+        {
+          "char": "∨",
+          "label": "Logical Or (OR)"
+        },
+        {
+          "char": "¬",
+          "label": "Not Sign (Inverter)"
+        },
+        {
+          "char": "⊕",
+          "label": "Circled Plus (XOR)"
+        },
+        {
+          "char": "⊻",
+          "label": "Xor"
+        },
+        {
+          "char": "⊼",
+          "label": "Nand"
+        },
+        {
+          "char": "⊽",
+          "label": "Nor"
+        },
+        {
+          "char": "⎍",
+          "label": "Monostable Symbol"
+        },
+        {
+          "char": "⎎",
+          "label": "Hysteresis Symbol"
+        },
+        {
+          "char": "⎏",
+          "label": "Open-Circuit-Output H-Type Symbol"
+        },
+        {
+          "char": "⎐",
+          "label": "Open-Circuit-Output L-Type Symbol"
+        },
+        {
+          "char": "⎑",
+          "label": "Passive-Pull-Down-Output Symbol"
+        },
+        {
+          "char": "⎒",
+          "label": "Passive-Pull-Up-Output Symbol"
+        }
       ]
     },
     {
@@ -70,20 +157,62 @@
       "h2": "Electrical Units & Quantities",
       "intro": "The ohm sign plus single-character squared units for volts, amps, watts, hertz, and farads.",
       "symbols": [
-        { "char": "Ω", "label": "Ohm Sign" },
-        { "char": "℧", "label": "Inverted Ohm Sign (Mho)" },
-        { "char": "µ", "label": "Micro Sign" },
-        { "char": "㎌", "label": "Square µF (Microfarad)" },
-        { "char": "㎷", "label": "Square mV (Millivolt)" },
-        { "char": "㎸", "label": "Square kV (Kilovolt)" },
-        { "char": "㎃", "label": "Square mA (Milliampere)" },
-        { "char": "㎄", "label": "Square kA (Kiloampere)" },
-        { "char": "㎾", "label": "Square kW (Kilowatt)" },
-        { "char": "㎿", "label": "Square MW (Megawatt)" },
-        { "char": "㎐", "label": "Square Hz (Hertz)" },
-        { "char": "㎒", "label": "Square MHz (Megahertz)" },
-        { "char": "㏀", "label": "Square kΩ (Kiloohm)" },
-        { "char": "㏁", "label": "Square MΩ (Megaohm)" }
+        {
+          "char": "Ω",
+          "label": "Ohm Sign"
+        },
+        {
+          "char": "℧",
+          "label": "Inverted Ohm Sign (Mho)"
+        },
+        {
+          "char": "µ",
+          "label": "Micro Sign"
+        },
+        {
+          "char": "㎌",
+          "label": "Square µF (Microfarad)"
+        },
+        {
+          "char": "㎷",
+          "label": "Square mV (Millivolt)"
+        },
+        {
+          "char": "㎸",
+          "label": "Square kV (Kilovolt)"
+        },
+        {
+          "char": "㎃",
+          "label": "Square mA (Milliampere)"
+        },
+        {
+          "char": "㎄",
+          "label": "Square kA (Kiloampere)"
+        },
+        {
+          "char": "㎾",
+          "label": "Square kW (Kilowatt)"
+        },
+        {
+          "char": "㎿",
+          "label": "Square MW (Megawatt)"
+        },
+        {
+          "char": "㎐",
+          "label": "Square Hz (Hertz)"
+        },
+        {
+          "char": "㎒",
+          "label": "Square MHz (Megahertz)"
+        },
+        {
+          "char": "㏀",
+          "label": "Square kΩ (Kiloohm)"
+        },
+        {
+          "char": "㏁",
+          "label": "Square MΩ (Megaohm)"
+        }
       ]
     },
     {
@@ -92,17 +221,50 @@
       "h2": "Math Symbols for Circuit Analysis",
       "intro": "Phase angles, frequency, and the math notation that fills engineering worksheets.",
       "symbols": [
-        { "char": "φ", "label": "Greek Small Letter Phi (Phase Angle)" },
-        { "char": "ω", "label": "Greek Small Letter Omega (Angular Frequency)" },
-        { "char": "θ", "label": "Greek Small Letter Theta" },
-        { "char": "Δ", "label": "Greek Capital Letter Delta" },
-        { "char": "π", "label": "Greek Small Letter Pi" },
-        { "char": "∑", "label": "N-Ary Summation" },
-        { "char": "∫", "label": "Integral" },
-        { "char": "√", "label": "Square Root" },
-        { "char": "±", "label": "Plus-Minus Sign" },
-        { "char": "≈", "label": "Almost Equal To" },
-        { "char": "∞", "label": "Infinity" }
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi (Phase Angle)"
+        },
+        {
+          "char": "ω",
+          "label": "Greek Small Letter Omega (Angular Frequency)"
+        },
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "∑",
+          "label": "N-Ary Summation"
+        },
+        {
+          "char": "∫",
+          "label": "Integral"
+        },
+        {
+          "char": "√",
+          "label": "Square Root"
+        },
+        {
+          "char": "±",
+          "label": "Plus-Minus Sign"
+        },
+        {
+          "char": "≈",
+          "label": "Almost Equal To"
+        },
+        {
+          "char": "∞",
+          "label": "Infinity"
+        }
       ]
     },
     {
@@ -111,14 +273,25 @@
       "h2": "Electrical Safety & Warning Signs",
       "intro": "Warning glyphs for high-voltage labels and safety callouts.",
       "symbols": [
-        { "char": "⚠", "label": "Warning Sign" },
-        { "char": "☠", "label": "Skull and Crossbones" },
-        { "char": "⛔", "label": "No Entry" },
-        { "char": "🚫", "label": "Prohibited" }
+        {
+          "char": "⚠",
+          "label": "Warning Sign"
+        },
+        {
+          "char": "☠",
+          "label": "Skull and Crossbones"
+        },
+        {
+          "char": "⛔",
+          "label": "No Entry"
+        },
+        {
+          "char": "🚫",
+          "label": "Prohibited"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/unit-measurement-symbols/",

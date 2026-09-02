@@ -17,12 +17,23 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-microfone/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-microfone/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "microphone-emoji",
@@ -30,7 +41,10 @@
       "h2": "O Emoji de Microfone",
       "intro": "O microfone de mão em si — pronto para colar em qualquer lugar que aceite emoji.",
       "symbols": [
-        { "char": "🎤", "label": "Microfone (U+1F3A4)" }
+        {
+          "char": "🎤",
+          "label": "Microfone (U+1F3A4)"
+        }
       ]
     },
     {
@@ -39,10 +53,22 @@
       "h2": "Emojis com que É Confundido",
       "intro": "Símbolos que as pessoas usam esperando o microfone de mão, mas que na verdade são emojis separados, com códigos diferentes.",
       "symbols": [
-        { "char": "🎙️", "label": "Microfone de Estúdio (U+1F399): o microfone de transmissão/podcast montado em tripé" },
-        { "char": "🔊", "label": "Alto-Falante com Volume Alto (U+1F50A)" },
-        { "char": "🗣️", "label": "Cabeça Falando (U+1F5E3 FE0F)" },
-        { "char": "📢", "label": "Alto-Falante de Anúncio Público (U+1F4E2)" }
+        {
+          "char": "🎙️",
+          "label": "Microfone de Estúdio (U+1F399): o microfone de transmissão/podcast montado em tripé"
+        },
+        {
+          "char": "🔊",
+          "label": "Alto-Falante com Volume Alto (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Cabeça Falando (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Alto-Falante de Anúncio Público (U+1F4E2)"
+        }
       ]
     },
     {
@@ -51,11 +77,26 @@
       "h2": "Emojis de Música e Performance que Combinam com Ele",
       "intro": "Emojis que aparecem junto com o microfone em legendas de canto, show e podcast.",
       "symbols": [
-        { "char": "🎧", "label": "Fone de Ouvido (U+1F3A7)" },
-        { "char": "🎵", "label": "Nota Musical (U+1F3B5)" },
-        { "char": "🎶", "label": "Notas Musicais (U+1F3B6)" },
-        { "char": "🎸", "label": "Violão (U+1F3B8)" },
-        { "char": "🥁", "label": "Tambor (U+1F941)" }
+        {
+          "char": "🎧",
+          "label": "Fone de Ouvido (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Nota Musical (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Notas Musicais (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Violão (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Tambor (U+1F941)"
+        }
       ]
     }
   ],

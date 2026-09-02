@@ -16,12 +16,30 @@
       "h2": "The Classic Shruggie",
       "intro": "The original ¯\\_(ツ)_/¯ and its close relatives.",
       "symbols": [
-        { "char": "¯\\_(ツ)_/¯", "label": "Classic Shrug" },
-        { "char": "¯\\_(⊙_ʖ⊙)_/¯", "label": "Confused Shrug" },
-        { "char": "¯\\_(ᵔᵕᵔ)_/¯", "label": "Happy Shrug" },
-        { "char": "¯\\_(◉‿◉)_/¯", "label": "Wide-Eyed Shrug" },
-        { "char": "¯\\_( ͡° ͜ʖ ͡°)_/¯", "label": "Lenny Shrug" },
-        { "char": "¯\\(°_o)/¯", "label": "One-Arm Shrug" }
+        {
+          "char": "¯\\_(ツ)_/¯",
+          "label": "Classic Shrug"
+        },
+        {
+          "char": "¯\\_(⊙_ʖ⊙)_/¯",
+          "label": "Confused Shrug"
+        },
+        {
+          "char": "¯\\_(ᵔᵕᵔ)_/¯",
+          "label": "Happy Shrug"
+        },
+        {
+          "char": "¯\\_(◉‿◉)_/¯",
+          "label": "Wide-Eyed Shrug"
+        },
+        {
+          "char": "¯\\_( ͡° ͜ʖ ͡°)_/¯",
+          "label": "Lenny Shrug"
+        },
+        {
+          "char": "¯\\(°_o)/¯",
+          "label": "One-Arm Shrug"
+        }
       ]
     },
     {
@@ -30,12 +48,30 @@
       "h2": "Kana Shrug Kaomoji",
       "intro": "Japanese-bracket shrugs with the same what-can-you-do energy.",
       "symbols": [
-        { "char": "┐(´～`)┌", "label": "Dunno" },
-        { "char": "┐(´д`)┌", "label": "Beats Me" },
-        { "char": "╮(╯▽╰)╭", "label": "Oh Well" },
-        { "char": "┐(￣ヘ￣)┌", "label": "Whatever" },
-        { "char": "╮(╯_╰)╭", "label": "No Idea" },
-        { "char": "┐(‘～`;)┌", "label": "Awkward Shrug" }
+        {
+          "char": "┐(´～`)┌",
+          "label": "Dunno"
+        },
+        {
+          "char": "┐(´д`)┌",
+          "label": "Beats Me"
+        },
+        {
+          "char": "╮(╯▽╰)╭",
+          "label": "Oh Well"
+        },
+        {
+          "char": "┐(￣ヘ￣)┌",
+          "label": "Whatever"
+        },
+        {
+          "char": "╮(╯_╰)╭",
+          "label": "No Idea"
+        },
+        {
+          "char": "┐(‘～`;)┌",
+          "label": "Awkward Shrug"
+        }
       ]
     },
     {
@@ -44,18 +80,45 @@
       "h2": "Indifferent & Whatever Kaomoji",
       "intro": "Cool, unbothered shrugs for a hard pass.",
       "symbols": [
-        { "char": "╮ (. ❛ ᴗ ❛.) ╭", "label": "Cute Shrug" },
-        { "char": "┐(シ)┌", "label": "Minimal Shrug" },
-        { "char": "╮(╯∀╰)╭", "label": "Grinning Shrug" },
-        { "char": "┐(￣ヮ￣)┌", "label": "Carefree Shrug" }
+        {
+          "char": "╮ (. ❛ ᴗ ❛.) ╭",
+          "label": "Cute Shrug"
+        },
+        {
+          "char": "┐(シ)┌",
+          "label": "Minimal Shrug"
+        },
+        {
+          "char": "╮(╯∀╰)╭",
+          "label": "Grinning Shrug"
+        },
+        {
+          "char": "┐(￣ヮ￣)┌",
+          "label": "Carefree Shrug"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful Japanese text faces to copy and paste." },
-    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." },
-    { "href": "/library/crying-kaomoji/", "title": "Crying & Sad Kaomoji", "desc": "Tearful and gloomy text faces for a lower mood." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces to copy and paste."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/library/crying-kaomoji/",
+      "title": "Crying & Sad Kaomoji",
+      "desc": "Tearful and gloomy text faces for a lower mood."
+    }
   ]
 }

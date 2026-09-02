@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/daumenzeichen-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/daumenzeichen-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "daumenzeichen",
@@ -29,8 +37,14 @@
       "h2": "Daumenzeichen nach links & rechts",
       "intro": "Die beiden Entwurfszeichen selbst — schon heute als Codepoints kopierbar, auch wenn noch keine Schriftart sie darstellen kann.",
       "symbols": [
-        { "char": "🫹", "label": "Daumenzeichen nach links (Entwurf, U+1FAF9)" },
-        { "char": "🫺", "label": "Daumenzeichen nach rechts (Entwurf, U+1FAFA)" }
+        {
+          "char": "🫹",
+          "label": "Daumenzeichen nach links (Entwurf, U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Daumenzeichen nach rechts (Entwurf, U+1FAFA)"
+        }
       ]
     },
     {
@@ -39,10 +53,22 @@
       "h2": "Die Emojis, mit denen sie verwechselt werden",
       "intro": "Bereits kodierte Gesten, mit denen Daumenzeichen am häufigsten verglichen oder der Doppelung bezichtigt wird.",
       "symbols": [
-        { "char": "👍", "label": "Daumen hoch: senkrechte Zustimmung, kein richtungsweisendes Zeigen" },
-        { "char": "👎", "label": "Daumen runter: senkrechte Ablehnung, kein richtungsweisendes Zeigen" },
-        { "char": "👈", "label": "Handrücken zeigt nach links" },
-        { "char": "👉", "label": "Handrücken zeigt nach rechts" }
+        {
+          "char": "👍",
+          "label": "Daumen hoch: senkrechte Zustimmung, kein richtungsweisendes Zeigen"
+        },
+        {
+          "char": "👎",
+          "label": "Daumen runter: senkrechte Ablehnung, kein richtungsweisendes Zeigen"
+        },
+        {
+          "char": "👈",
+          "label": "Handrücken zeigt nach links"
+        },
+        {
+          "char": "👉",
+          "label": "Handrücken zeigt nach rechts"
+        }
       ]
     },
     {
@@ -51,10 +77,22 @@
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
       "intro": "Daumenzeichen ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
-        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung" },
-        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" },
-        { "char": "🪋", "label": "Meteor (Entwurf, U+1FA8B)" },
-        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" }
+        {
+          "char": "🫫",
+          "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung"
+        },
+        {
+          "char": "🫝",
+          "label": "Essiggurke (Entwurf, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (Entwurf, U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarchfalter (Entwurf, U+1FACC)"
+        }
       ]
     }
   ],

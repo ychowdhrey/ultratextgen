@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-asterisco/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-asterisco/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,11 +37,26 @@
       "h2": "L'Asterisco e le Sue Varianti di Visualizzazione",
       "intro": "Il semplice asterisco da tastiera più le forme più marcate per la visualizzazione e l'operatore specifico della matematica. Ognuno è pronto da incollare.",
       "symbols": [
-        { "char": "*", "label": "Asterisco (U+002A): Nota a Piè di Pagina, Carattere Jolly e Censura" },
-        { "char": "✱", "label": "Heavy Asterisk (U+2731)" },
-        { "char": "✳", "label": "Eight-Spoked Asterisk (U+2733)" },
-        { "char": "∗", "label": "Asterisk Operator (U+2217): Il Glifo Matematico della Moltiplicazione" },
-        { "char": "＊", "label": "Asterisco a Larghezza Intera (U+FF0A)" }
+        {
+          "char": "*",
+          "label": "Asterisco (U+002A): Nota a Piè di Pagina, Carattere Jolly e Censura"
+        },
+        {
+          "char": "✱",
+          "label": "Heavy Asterisk (U+2731)"
+        },
+        {
+          "char": "✳",
+          "label": "Eight-Spoked Asterisk (U+2733)"
+        },
+        {
+          "char": "∗",
+          "label": "Asterisk Operator (U+2217): Il Glifo Matematico della Moltiplicazione"
+        },
+        {
+          "char": "＊",
+          "label": "Asterisco a Larghezza Intera (U+FF0A)"
+        }
       ]
     },
     {
@@ -42,9 +65,18 @@
       "h2": "Asterismo e Segni di Interruzione di Sezione",
       "intro": "Segni editoriali costruiti a partire dall'asterisco — l'asterismo a triangolo che interrompe le sezioni, più i suoi cugini impilati e abbassati.",
       "symbols": [
-        { "char": "⁂", "label": "Asterismo (U+2042): Tre Asterischi a Triangolo" },
-        { "char": "⁑", "label": "Due Asterischi Allineati Verticalmente (U+2051)" },
-        { "char": "⁎", "label": "Asterisco Basso (U+204E)" }
+        {
+          "char": "⁂",
+          "label": "Asterismo (U+2042): Tre Asterischi a Triangolo"
+        },
+        {
+          "char": "⁑",
+          "label": "Due Asterischi Allineati Verticalmente (U+2051)"
+        },
+        {
+          "char": "⁎",
+          "label": "Asterisco Basso (U+204E)"
+        }
       ]
     },
     {
@@ -53,11 +85,26 @@
       "h2": "Forme di Stella con Cui Viene Confuso",
       "intro": "Glifi a forma di stella a cui si ricorre pensando a un asterisco. Sono stelle decorative — un registro ornamentale, non uno strumento di nota a piè di pagina o punteggiatura.",
       "symbols": [
-        { "char": "★", "label": "Stella Nera (U+2605)" },
-        { "char": "☆", "label": "Stella Bianca (U+2606)" },
-        { "char": "⭐", "label": "Stella Media Bianca (U+2B50): L'Emoji Stella Gialla" },
-        { "char": "✦", "label": "Stella Nera a Quattro Punte (U+2726)" },
-        { "char": "✧", "label": "Stella Bianca a Quattro Punte (U+2727)" }
+        {
+          "char": "★",
+          "label": "Stella Nera (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Stella Bianca (U+2606)"
+        },
+        {
+          "char": "⭐",
+          "label": "Stella Media Bianca (U+2B50): L'Emoji Stella Gialla"
+        },
+        {
+          "char": "✦",
+          "label": "Stella Nera a Quattro Punte (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "Stella Bianca a Quattro Punte (U+2727)"
+        }
       ]
     }
   ],

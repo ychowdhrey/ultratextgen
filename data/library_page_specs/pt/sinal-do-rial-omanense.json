@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-do-rial-omanense/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-do-rial-omanense/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "omani-rial-sign",
@@ -29,7 +37,10 @@
       "h2": "Sinal do Rial Omanense",
       "intro": "O caractere confirmado — já pronto para copiar pelo código, embora nenhuma fonte o renderize nativamente ainda.",
       "symbols": [
-        { "char": "⃄", "label": "Sinal do Rial Omanense (U+20C4, congelado para publicação)" }
+        {
+          "char": "⃄",
+          "label": "Sinal do Rial Omanense (U+20C4, congelado para publicação)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Outros Novos Símbolos Monetários Neste Lançamento",
       "intro": "O rial omanense não é o único novo símbolo monetário chegando no Unicode 18.0 — outras duas moedas ganharam seus próprios sinais na mesma fase beta.",
       "symbols": [
-        { "char": "⃃", "label": "Sinal do Dirham dos EAU (U+20C3)" },
-        { "char": "⃂", "label": "Sinal do Rufiyaa Maldivo (U+20C2)" }
+        {
+          "char": "⃃",
+          "label": "Sinal do Dirham dos EAU (U+20C3)"
+        },
+        {
+          "char": "⃂",
+          "label": "Sinal do Rufiyaa Maldivo (U+20C2)"
+        }
       ]
     },
     {
@@ -48,7 +65,10 @@
       "h2": "O Símbolo Monetário do Golfo que Chegou uma Versão Antes",
       "intro": "O sinal do rial saudita percorreu esse mesmo caminho uma versão inteira do Unicode mais cedo — já definitivo desde o Unicode 17.0, não apenas em fase beta.",
       "symbols": [
-        { "char": "⃁", "label": "Sinal do Rial Saudita (U+20C1, definitivo desde o Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Sinal do Rial Saudita (U+20C1, definitivo desde o Unicode 17.0)"
+        }
       ]
     }
   ],

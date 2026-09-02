@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/mikrofon-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/mikrofon-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "mikrofon-emoji",
@@ -29,7 +37,10 @@
       "h2": "Das Mikrofon-Emoji",
       "intro": "Das Handmikrofon selbst — bereit zum Einfügen, überall wo Emojis unterstützt werden.",
       "symbols": [
-        { "char": "🎤", "label": "Mikrofon (U+1F3A4)" }
+        {
+          "char": "🎤",
+          "label": "Mikrofon (U+1F3A4)"
+        }
       ]
     },
     {
@@ -38,10 +49,22 @@
       "h2": "Emojis, mit denen es verwechselt wird",
       "intro": "Zeichen, zu denen viele in Erwartung des Handmikrofons greifen, die aber eigenständige, anders kodierte Emojis sind.",
       "symbols": [
-        { "char": "🎙️", "label": "Studiomikrofon (U+1F399): das stativmontierte Broadcast-/Podcast-Mikrofon" },
-        { "char": "🔊", "label": "Lautsprecher, hohe Lautstärke (U+1F50A)" },
-        { "char": "🗣️", "label": "Sprechender Kopf (U+1F5E3 FE0F)" },
-        { "char": "📢", "label": "Megafon (U+1F4E2)" }
+        {
+          "char": "🎙️",
+          "label": "Studiomikrofon (U+1F399): das stativmontierte Broadcast-/Podcast-Mikrofon"
+        },
+        {
+          "char": "🔊",
+          "label": "Lautsprecher, hohe Lautstärke (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Sprechender Kopf (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Megafon (U+1F4E2)"
+        }
       ]
     },
     {
@@ -50,11 +73,26 @@
       "h2": "Musik- & Auftritts-Emojis, die dazu passen",
       "intro": "Emojis, die häufig neben dem Mikrofon in Gesangs-, Konzert- und Podcast-Beschriftungen auftauchen.",
       "symbols": [
-        { "char": "🎧", "label": "Kopfhörer (U+1F3A7)" },
-        { "char": "🎵", "label": "Musiknote (U+1F3B5)" },
-        { "char": "🎶", "label": "Mehrere Musiknoten (U+1F3B6)" },
-        { "char": "🎸", "label": "Gitarre (U+1F3B8)" },
-        { "char": "🥁", "label": "Trommel (U+1F941)" }
+        {
+          "char": "🎧",
+          "label": "Kopfhörer (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Musiknote (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Mehrere Musiknoten (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Gitarre (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Trommel (U+1F941)"
+        }
       ]
     }
   ],

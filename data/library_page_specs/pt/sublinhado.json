@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sublinhado/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sublinhado/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "the-underscore",
@@ -29,9 +37,18 @@
       "h2": "O Sublinhado, Largura Total e Duplo",
       "intro": "O low line comum do teclado e suas duas variantes de largura — a forma de largura total usada na tipografia do Leste Asiático e o sublinhado duplo de espaçamento. Pronto para colar em qualquer lugar.",
       "symbols": [
-        { "char": "_", "label": "Sublinhado / Low Line (U+005F)" },
-        { "char": "＿", "label": "Low Line de Largura Total (U+FF3F)" },
-        { "char": "‗", "label": "Duplo Low Line (U+2017)" }
+        {
+          "char": "_",
+          "label": "Sublinhado / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Low Line de Largura Total (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Duplo Low Line (U+2017)"
+        }
       ]
     },
     {
@@ -40,8 +57,14 @@
       "h2": "O Traço Superior: o Mesmo Traço, Acima do Texto",
       "intro": "O traço superior é a imagem espelhada do sublinhado — o mesmo traço horizontal colocado acima do texto em vez de abaixo, e é por isso que os dois acabam confundidos como opostos. O mácron é a barra curta que as pessoas costumam digitar quando querem dizer traço superior.",
       "symbols": [
-        { "char": "‾", "label": "Traço Superior / Overscore de Espaçamento (U+203E)" },
-        { "char": "¯", "label": "Mácron (U+00AF)" }
+        {
+          "char": "‾",
+          "label": "Traço Superior / Overscore de Espaçamento (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Mácron (U+00AF)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Sublinhado vs. a Família do Hífen e do Travessão",
       "intro": "Em URLs, nomes de usuário e nomes de arquivo, sublinhado e hífen são trocados o tempo todo — mas ficam em alturas diferentes, têm códigos diferentes e cada um cumpre uma função distinta.",
       "symbols": [
-        { "char": "-", "label": "Hífen-Menos / Hífen do Teclado (U+002D)" },
-        { "char": "‐", "label": "Hífen (U+2010)" },
-        { "char": "–", "label": "Travessão Curto / En Dash (U+2013)" },
-        { "char": "−", "label": "Sinal de Menos (U+2212)" }
+        {
+          "char": "-",
+          "label": "Hífen-Menos / Hífen do Teclado (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Hífen (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "Travessão Curto / En Dash (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Sinal de Menos (U+2212)"
+        }
       ]
     }
   ],
