@@ -380,6 +380,69 @@ not enroll a site in Google News. Formal Google News Publisher Center
 submission remains explicitly out of scope, for the same domain-risk reasoning
 as the case study above — this refinement does not reopen that question.
 
+### One verification date per entry, in the pill (added 2026-09-02)
+
+The pillar's value is *"this number was true, and here is when we last
+confirmed it"* — so the verification date is its load-bearing claim. It was
+being made twice, in two slots, with two wordings.
+
+`Last checked <date>` sat in body prose on all 11 entries, from the
+tone-of-voice pass. A later change added a `Published <date> · Verified <date>`
+`guide-pill` to one of them. Nothing reconciled the two, and that entry shipped
+asserting **September 1 in its body and September 2 in its pill** — both
+sentences read fine, the markup was valid, and no check compared them.
+
+**The near-miss is the part worth carrying forward.** The first sweep for this
+grepped `Checked` **case-sensitively** and concluded "no other entry carries an
+inline stamp." Every one of the 11 does; they all say `Last checked`. A
+pattern-matched audit found the surface it was written for and missed the next
+one — the same failure "Structure is not language" documents above. Enumerate
+the class, do not sample a pattern you guessed.
+
+**The rule:** exactly one verification date per entry, as the last
+`guide-pill`, agreeing with the page's own `datePublished`. No verification
+stamp in body prose.
+
+**Three kinds of date live on these pages and only one is a stamp.** Conflating
+them would flag the 19 real event dates on `uae-dirham-symbol-unicode-18`:
+
+| kind | example | where it belongs |
+|---|---|---|
+| **stamp** | "Last checked September 1, 2026" | the pill, page-level |
+| **scoped** | "As of September 2, 2026 no date has been announced" | **stays inline** |
+| **factual** | "Unicode 18.0 publishes on September 16, 2026" | ordinary content |
+
+A scoped qualifier is not a stamp: *"no rollout date has been announced"* is
+only true at a point in time and must carry its own date wherever it sits,
+because a reader cannot infer it from a header pill.
+
+**`dateModified` is not a verification date and must not be used as one.** All
+11 entries carry `2026-09-01` from a single tone-of-voice rewrite — it means
+"when the prose was last edited", which is a different claim. The visible
+verified date is deliberately independent of it.
+
+A stamp in a `<meta name="description">` is allowed — snippet copy is its own
+slot and audience — but the gate **warns** if it disagrees with the pill.
+
+#### Tooling
+
+- **`npm run audit:updates-verification`** — whole-pillar dashboard, oldest
+  check first, i.e. the order a re-verification pass should work in.
+- **`npm run check:updates-verification`** — the enforcing half, wired into
+  `.github/workflows/validate.yml`. It **gates rather than informs** (same call
+  as `check:zalgo-decodes`): there is no backlog to be permanently red against.
+  It is **whole-pillar, not diff-scoped**, on purpose — the shape it catches is
+  an older page drifting out of agreement with a convention set later, which a
+  diff-scoped check cannot see.
+- Both share **`scripts/lib/updates-verification.js`**, so the audit and the
+  gate can never disagree about what a stamp is.
+
+Verified per this file's own rule before being trusted, against five
+differently-shaped broken inputs so the check could not be tuned to one: the
+real regression re-injected into body prose, a deleted pill, a pill contradicting
+`datePublished`, a `Verified` date predating `Published` — each exits 1 — and a
+meta description contradicting the pill, which warns and exits 0.
+
 ---
 
 ## Hub vs Spoke: preventing self-cannibalization
@@ -2242,22 +2305,27 @@ ranks the upstream sources.
 - **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
   into `.github/workflows/validate.yml` in **shadow mode** for every rule but
   one: it reports what it would fail on and exits 0. Promotion to blocking is a
-  documented step in `docs/editorial-footprint-risk.md`, not a silent flag flip.
-  Only two rules are eligible today (`model-leakage`, `seo-preservation`
-  errors), both verified against deliberately broken inputs. **The exception,
-  decided 2026-09-02: the em dash is banned forward-only, per locale** — an
-  introduced one exits 1 in every mode on a `ban` or `double-dash` locale, and
-  the step is in the gating list. The policy is `data/em_dash_locale_policy.json`
-  (English and the thirteen en-dash locales ban, with the native replacement
-  named in the block; zh-tw and ja ban only a lone `—`; ru/es/pt/fr/pl/ro are
-  native and never flagged; nine locales warn pending a native reader), and
-  the spaced hyphen is banned on English. Existing em dashes (9,682 on 889
-  English pages) are reported, never billed. `npm run audit:em-dash`
-  re-measures every locale against the ledger. `docs/em-dash-policy.md` has the
-  scope, the replacement guidance, the title-separator note and the table.
+  documented step in `docs/editorial-footprint-risk.md`, not a silent flag flip,
+  and it happens **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes
+  only the named rules bite. Five rules are eligible today (`model-leakage`,
+  `seo-preservation` errors, and since 2026-09-02 the three em-dash rules — see
+  "Clean on touch" below), each verified against deliberately broken inputs.
+  **The exception, decided 2026-09-02: an em dash a branch *introduces* is
+  banned, per locale** — it exits 1 in every mode on a `ban` or `double-dash`
+  locale, which is why the step is in the gating list. The policy is
+  `data/em_dash_locale_policy.json` (English and the thirteen en-dash locales
+  ban, with the native replacement named in the block; zh-tw and ja ban only a
+  lone `—`; ru/es/pt/fr/pl/ro are native and never flagged; nine locales warn
+  pending a native reader), and the spaced hyphen is banned on English. The
+  same policy is applied before the clean-on-touch and sibling obligations, so
+  a native-dash sibling is never pulled in. Existing em dashes on an untouched
+  page (9,682 on 889 English pages when measured) are reported, never billed.
+  `npm run audit:em-dash` re-measures every locale against the ledger.
+  `docs/em-dash-policy.md` has the scope, the replacement guidance, the
+  title-separator note and the table.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
-- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+- **`npm run test:editorial-footprint`** — 63 assertions, **gating**, no backlog
   to be red against.
 - **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
   hand-written once per spec in `data/library_page_specs/` and nothing compared
@@ -2351,6 +2419,60 @@ time (`--sensitivity`), and **`unknown` is the conservative posture, never a
 licence**. Search Console data is first-party competitive information and does
 not live in this repo — same boundary, and same reasoning, as the Local Language
 Intelligence lexicon.
+
+### Clean on touch — forward-only is for the pages you leave alone (added 2026-09-02)
+
+The em-dash rule (`EFR-F-001`) was written forward-only: a branch fails only on em
+dashes it *introduces*, and the 52,766 already on the site are reported, never
+required. That half stands — nobody runs a site-wide purge. But **a page whose own
+copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
+and its copy is brought to the tone-of-voice standard in the same change. User
+direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
+"Zero" is read through the locale policy (`data/em_dash_locale_policy.json`,
+adopted the same day): on a native-dash locale an em dash is never a finding,
+on zh-tw and ja only a lone `—` counts, and on a review locale the finding is a
+warning — see `docs/em-dash-policy.md` §4.
+
+Three definitions carry the rule, and each one was chosen against a real case:
+
+* **"Touched" means the page's own copy moved** — title, meta description, H1,
+  headings, prose or FAQ text differs from the merge base. A card injected by the
+  peer-link sync, a regenerated footer or hreflang block, a rebuilt library
+  directory, an asset swap: none of those is a touch, because a mesh pass that
+  rewrites 1,009 pages must not demand 1,009 rewrites. Once a page *is* touched,
+  its cards count too.
+* **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
+  sibling in the cluster that the PR does not itself copy-edit must already be
+  clean **under its own locale's policy** (`data/em_dash_locale_policy.json`: a
+  Russian sibling is never pulled in, a Chinese one only for a lone `—`, a
+  review-locale sibling is a warning), or the gate names it and the parent that
+  pulled it in. Anchored on
+  English on purpose — it is where pages are born and where the standard is
+  applied first — so a translator's one-line fix never obliges an English
+  rewrite, and a new locale batch never obliges the cleanup of every parent it
+  translates. The cost was chosen with the number in view: editing
+  `symbol/euro-sign` pulls 18 siblings carrying 159 em dashes. Plan the sibling
+  pass before opening the PR, not after the gate names them.
+* **Generated inventory is not the hub's copy.** The pre-rendered library
+  directory (`[data-static-directory]`) is rendered from other pages by the hub
+  builders and is dropped from measurement — a hand edit there is overwritten by
+  the next build, and `es/library/index.html` carried 144 of its 157 em dashes
+  inside it. The EN hub's own `LIBRARY` array is the one exception: 25 em dashes
+  in a script block nothing measures, cleared through the array and a rebuild.
+
+Two things this surfaced. `.related-card` had never been in the card slot, so the
+updates hub's eleven dated labels ("Aug 12, 2026 — Telegram …") and the "Keep
+reading" grids on 193 pages were invisible to every rule — the currency scorecard
+shipped its tone rewrite with one em dash left in exactly that slot. And the
+gate's own upstream attribution still applies: when `em-dash-touched` names a spec
+or generator, the fix goes there.
+
+The gate stays in **shadow mode** for now — the three em-dash rules are in
+`BLOCKING` and print "would block", and promotion is one workflow line per rule,
+scheduled for review on 2026-09-16 after the shadow findings since this change are
+classified. Do not turn `--enforce` on bare: `seo-preservation` would ride along,
+and a deliberate retitle (which the tone standard requires) still has nowhere to
+record its intent.
 
 ### The remediation principle
 
@@ -2717,6 +2839,13 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not put a verification stamp ("Last checked <date>", "Checked <date>") in
+  an `updates/` entry's body prose, and do not let a second one appear anywhere
+  on the page. One verification date per entry, as the last `guide-pill`,
+  agreeing with `datePublished`. See "One verification date per entry, in the
+  pill" above. An "As of <date>" qualifier on a time-bound claim is a different
+  statement and stays inline. `npm run check:updates-verification` gates this;
+  `npm run audit:updates-verification` gives the whole-pillar picture.
 - Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
   page's unzalgo widget strips marks by codepoint range and cannot undo a
   precomposed character, so composition silently breaks the card against the
@@ -2746,8 +2875,18 @@ Standing protocol:
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
   generator run — the gate names the upstream file when it can find it. And do
-  not run a site-wide purge: the rule is forward-only, and Google's own guidance
-  warns against removing a page element because you heard it was bad.
+  not run a site-wide purge: for pages you leave alone the rule is forward-only,
+  and Google's own guidance warns against removing a page element because you
+  heard it was bad.
+- Do not edit a page's copy and leave its em dashes behind, and do not copy-edit
+  an English page without bringing its locale siblings along. Since 2026-09-02 a
+  page whose title, meta description, H1, headings, prose or FAQ text a PR
+  changes must leave with zero em dashes in every measured slot, cards included,
+  and its siblings must already be clean or be cleaned in the same PR — see "Clean
+  on touch" above. "Clean" is read through each page's own locale policy in
+  `data/em_dash_locale_policy.json` (a Russian sibling keeps its dashes; a
+  Chinese one keeps `——`). `npm run check:editorial-footprint` reports both as
+  `em-dash-touched` / `em-dash-sibling`.
 - Do not paste a sentence from one page spec into another. `npm run
   check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
   sentence 3+ other specs already carry, and the fix is a sentence about *this*

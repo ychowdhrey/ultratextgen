@@ -117,6 +117,19 @@ English inventory measured: Updates — 11 pages, mean 3.76, median 3.4, p90 5.8
 20 PASS / 0 REVIEW / 12 FAIL. The live picture is `docs/efr-quality-report.md`
 (`npm run report:efr`).
 
+**Re-measured the same day after merging `main`**, which had changed two things
+underneath the score: the extractor now counts "Keep reading" card labels as
+card copy and drops the pre-rendered library directory, and the verification
+stamp moved out of every update's prose into its meta pill. Updates read
+7 PASS / 0 REVIEW / 4 FAIL (mean 4.55); Guides 21 / 0 / 11 (mean 6.75). Three
+updates crossed from REVIEW to FAIL (`forza-horizon-6-gamertag-rules` 5.4 → 7.1,
+`telegram-premium-message-limit` 5.6 → 7.2, `unicode-18-most-anticipated-emoji`
+5.8 → 8.5) without their prose getting worse: the card labels dilute the facts
+per 1,000 words, and the moved stamp removed a counted date. That is the
+limitation §9.6 describes made visible, and the reason absolute thresholds are
+re-read after any extractor or baseline change. The ratchet is unaffected, since
+it scores both sides of a diff in one context.
+
 ### The principle behind the numbers
 
 **EFR is not minimised indefinitely.** The target is the *minimum editorial

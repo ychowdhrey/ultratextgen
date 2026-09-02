@@ -36,6 +36,10 @@ Why forward-only, in numbers measured on 2026-09-02:
 | in the shared CTA card (one template string) | 1,239 |
 | upstream: spec files / generator scripts carrying one | 1,400+ / 140 |
 
+(Re-measured after `main`'s extractor change of the same day — card labels
+counted, the pre-rendered directory dropped — the English total is 9,688; the
+policy and the argument do not move.)
+
 A purge would mean hand-rewriting 9,682 sentences, retitling 381 pages, and
 fixing every generator first so the next run does not put them back. CLAUDE.md
 already records the two reasons not to: Google's guidance warns against removing

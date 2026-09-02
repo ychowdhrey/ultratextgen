@@ -84,7 +84,20 @@ const DROP_SELECTORS = [
   'code', 'pre', 'kbd', 'samp', 'var',
   '.data-table', '.alpha-glyphs', '.alpha-row', '.block-example',
   '.glyph-copy', '.deco-chip', '.uname-chip', '.symbol-hero-tile',
-  '.decoration-tab', '.category-tab', '.copy-btn', '.cta-btn'
+  '.decoration-tab', '.category-tab', '.copy-btn', '.cta-btn',
+  // Inventory rendered FROM OTHER PAGES (added 2026-09-02). The pre-rendered
+  // library-hub directory — `build-library-hub.js` for the 19 locale hubs,
+  // `build-library-directory.js` for EN — carries one entry per listed page.
+  // On a locale hub that entry is derived from the listed page's own markup,
+  // so the text is measured where it is written and counting it here counts it
+  // twice; es/library/index.html holds 144 of its 157 em dashes inside the
+  // block. Worse, under the clean-on-touch rule it would make a hub answerable
+  // for copy it cannot edit: a hand edit to the block is overwritten by the
+  // next build, and `check:library-hub-parity` fails a stale one. On the EN hub
+  // the source is the page's own `LIBRARY` array — a script block, outside
+  // every slot — so its 25 inventory em dashes are a bounded backlog in one
+  // file, cleared through the array and a rebuild, never through the HTML.
+  '[data-static-directory]'
 ];
 
 /** Payload containers whose text is captured as `ui` before being dropped. */
@@ -98,6 +111,20 @@ const UI_SELECTORS = [
   // `faqQuestions` read 0 against `faqAnswers` 21.
   'button:not(.faq-question)'
 ];
+
+/**
+ * Editorial cards: hand-written pointer copy — a CTA card, a "Keep reading"
+ * grid, a symbol page's related-card grid. Captured as the `cta` slot, then
+ * removed so a card's own heading and text are not also counted as page prose.
+ *
+ * `.related-card` was missing from this list until 2026-09-02, so the updates
+ * hub's dated card labels ("Aug 12, 2026 — Telegram …", eleven of them, every
+ * one carrying an em dash) and the "Keep reading" grids on 193 pages sat in no
+ * slot at all — invisible to every rule, including the em-dash rule that was
+ * supposed to reach them. One constant, used everywhere cards are handled, so
+ * the set cannot drift three ways again.
+ */
+const CARD_SELECTORS = '.cta-card, .related-page-card, .related-card, .compare-card';
 
 const WS = /\s+/g;
 
@@ -231,7 +258,7 @@ function extractPage(html, relPath) {
   const h1 = clean($body.find('h1').first().text());
   // Headings INSIDE a card are captured with the card below, in `cta`. Reading
   // them here as well counts one card title twice in every density measure.
-  $body.find('.cta-card, .related-page-card, .compare-card').addClass('utg-card-scope');
+  $body.find(CARD_SELECTORS).addClass('utg-card-scope');
   const headings = [];
   $body.find('h2, h3, h4, .article-section-label').each((_, el) => {
     if ($(el).closest('.utg-card-scope').length) return;
@@ -246,8 +273,8 @@ function extractPage(html, relPath) {
   // double-counts its own answers in every density measure.
   $body.find('.faq-item, .faq-question, .faq-answer').remove();
 
-  const cta = textsFrom($, $body, '.cta-card, .related-page-card, .compare-card');
-  $body.find('.cta-card, .related-page-card, .compare-card').remove();
+  const cta = textsFrom($, $body, CARD_SELECTORS);
+  $body.find(CARD_SELECTORS).remove();
 
   const prose = textsFrom($, $body, 'p, li, blockquote, figcaption, summary, dd, .hero-tagline');
 
@@ -375,6 +402,7 @@ module.exports = {
   LOCALES,
   EDITORIAL_SLOTS,
   PROSE_SLOTS,
+  CARD_SELECTORS,
   classifyPath,
   extractPage,
   editorialText,

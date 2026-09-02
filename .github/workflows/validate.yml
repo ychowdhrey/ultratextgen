@@ -227,6 +227,17 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Whole-pillar and gating, same call as the zalgo check above: no backlog
+      # to be permanently red against — all 11 updates/ entries carry exactly
+      # one verification date, in the guide-meta pill, so a failure is always a
+      # regression this branch introduced. Deliberately NOT diff-scoped: the
+      # shape this catches is an older page drifting out of agreement with a
+      # convention set later, which a diff-scoped check cannot see.
+      - name: Run updates verification-date check
+        id: updates_verification
+        continue-on-error: true
+        run: npm run check:updates-verification | tee updates-verification.log
+
       - name: Run locale translation completeness check
         id: locale_translation
         continue-on-error: true
@@ -556,6 +567,11 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### Updates verification-date check — \`${{ steps.updates_verification.outcome }}\`"
+            echo '```'
+            cat updates-verification.log
+            echo '```'
+            echo ""
             echo "### Locale translation completeness check — \`${{ steps.locale_translation.outcome }}\`"
             echo '```'
             cat locale-translation.log
@@ -681,6 +697,7 @@ jobs:
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
+          steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
           steps.tile_codepoints.outcome == 'failure' ||

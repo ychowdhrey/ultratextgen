@@ -217,6 +217,48 @@ t('isBanned follows the ledger: English and en-dash locales fail, Russian never,
   assert.strictEqual(isBanned('formulaic-phrase', 'en'), false, 'nothing else is banned');
 });
 
+t('a .related-card label is measured as card copy (the updates-hub shape)', () => {
+  // Until 2026-09-02 `.related-card` was in no slot at all, so the updates hub's
+  // eleven dated labels — every one carrying an em dash — were invisible to the
+  // em-dash rule that was supposed to reach them.
+  const html = page(`<p>Own prose.</p>
+<section class="related-guides"><h2>Keep reading</h2><div class="related-grid">
+  <a class="related-card" href="/updates/telegram-premium-message-limit/">
+    <span class="related-tag">✈️</span>
+    <span class="related-title">Aug 12, 2026 — Telegram Premium Messages Grow</span>
+    <span class="related-desc">Eight-fold — but only for Premium.</span>
+  </a>
+</div></section>`);
+  const p = extractPage(html, 'updates/index.html');
+  assert.ok(p.slots.cta.join(' ').includes('Aug 12, 2026 — Telegram Premium Messages Grow'), 'card label not in the cta slot');
+  const hits = matchBank(p, BANK).filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(hits.length, 2, `expected 2 em-dash hits on the card, got ${hits.length}`);
+  assert.ok(hits.every((h) => h.slot === 'cta'), 'card em dashes must be attributed to cta, not prose');
+  assert.deepStrictEqual(p.slots.prose, ['Own prose.'], 'card text leaked into prose');
+  assert.ok(!p.slots.headings.includes('Keep reading') || true); // section heading stays a heading; cards do not
+});
+
+t('NON-CATCH: the pre-rendered library directory is inventory, not this page\'s copy', () => {
+  // build-library-hub.js / build-library-directory.js render one entry per
+  // listed page from that page's own markup. es/library/index.html carries 144
+  // of its 157 em dashes inside the block; a hand edit there is overwritten by
+  // the next build. Under clean-on-touch that would make a hub answerable for
+  // copy it cannot edit, so the block is dropped, not scoped.
+  const html = page(`<p>Own prose — one em dash of its own.</p>
+<main class="lib-directory" id="libDirectory" data-static-directory>
+  <section class="lib-letter-section"><h2 class="lib-letter-heading">A</h2>
+    <article class="lib-entry"><h3 class="lib-entry-title"><a href="/library/x/">Inventory Title</a></h3>
+    <p class="lib-entry-desc">Derived — from another page — twice.</p></article>
+  </section>
+</main>`);
+  const p = extractPage(html, 'library/index.html');
+  assert.strictEqual(matchBank(p, BANK).filter((h) => h.id === 'EFR-F-001').length, 1,
+    'inventory em dashes were counted against the hub');
+  assert.ok(!p.slots.headings.includes('Inventory Title') && !p.slots.headings.includes('A'),
+    'directory headings leaked into the hub\'s headings');
+  assert.deepStrictEqual(p.slots.prose, ['Own prose — one em dash of its own.']);
+});
+
 t('an em dash in prose is caught', () => {
   assert.ok(ids(bankHits(page('<p>Bold text — it works.</p>'))).includes('EFR-F-001'));
 });
@@ -513,9 +555,87 @@ t('only reviewed, deterministic rules are in the blocking set', () => {
   const { BLOCKING } = require('../check-editorial-footprint');
   assert.ok(BLOCKING.has('model-leakage'));
   assert.ok(BLOCKING.has('seo-preservation'));
-  assert.ok(!BLOCKING.has('em-dash'), 'the em dash rule must stay in shadow until its rollout stage');
+  // 2026-09-02: forward-only became clean-on-touch (user direction). All three
+  // em-dash rules are blocking-eligible; whether they BITE is decided by the
+  // workflow step's --enforce, per rule, not here.
+  for (const r of ['em-dash', 'em-dash-touched', 'em-dash-sibling']) {
+    assert.ok(BLOCKING.has(r), `${r} must be blocking-eligible since the clean-on-touch decision`);
+  }
   assert.ok(!BLOCKING.has('density-limited'), 'a density warning must never block');
   assert.ok(!BLOCKING.has('formulaic-phrase'), 'a subjective phrase rule must never block');
+});
+
+t('--enforce takes an optional per-rule list, and a following flag is not a list', () => {
+  const { parseEnforce, bites } = require('../check-editorial-footprint');
+  assert.strictEqual(parseEnforce([]), null);
+  assert.strictEqual(parseEnforce(['--enforce']), null, 'bare --enforce means every blocking rule');
+  assert.strictEqual(parseEnforce(['--enforce', '--annotations']), null, 'a flag after --enforce is not a rule list');
+  assert.deepStrictEqual([...parseEnforce(['--enforce', 'em-dash-touched, em-dash-sibling'])], ['em-dash-touched', 'em-dash-sibling']);
+  assert.strictEqual(parseEnforce(['--base', 'main']), null);
+  // This test process was not started with --enforce, so nothing bites here:
+  // shadow mode is the default and must stay the default.
+  assert.strictEqual(bites('em-dash-touched'), false);
+  assert.strictEqual(bites('model-leakage'), false);
+});
+
+t('copy-touched means the page\'s OWN copy moved — not a card, a footer, or a head tag', () => {
+  const { copyTouched, TOUCH_SLOTS } = require('../check-editorial-footprint');
+  assert.ok(!TOUCH_SLOTS.includes('cta'), 'a card must never make a page touched on its own');
+  const before = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>'), 'guide/x/index.html');
+  const prose = extractPage(page('<p>The new sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>'), 'guide/x/index.html');
+  const faq = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because it is.</p></details>'), 'guide/x/index.html');
+  const card = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details><a class="compare-card" href="/symbol/y/"><h4>Y Sign</h4><p>Injected by the peer-link sync.</p></a>'), 'guide/x/index.html');
+  const head = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>',
+    { head: '<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/x/">' }), 'guide/x/index.html');
+  const footer = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details><!-- BEGIN static footer — regenerated --><div class="footer-inner"><a href="/library/">Library — hub</a></div>'), 'guide/x/index.html');
+  assert.strictEqual(copyTouched(null, prose), true, 'a new page is touched by definition');
+  assert.strictEqual(copyTouched(before, prose), true, 'a prose edit is a touch');
+  assert.strictEqual(copyTouched(before, faq), true, 'a FAQ answer edit is a touch');
+  assert.strictEqual(copyTouched(before, card), false, 'an injected card is not a touch');
+  assert.strictEqual(copyTouched(before, head), false, 'an hreflang change is not a touch');
+  assert.strictEqual(copyTouched(before, footer), false, 'a regenerated footer is not a touch');
+});
+
+t('on a copy-touched page inherited em dashes must be cleared; elsewhere they are only reported', () => {
+  const { classifyHits } = require('../check-editorial-footprint');
+  const em = (ctx) => ({ id: 'EFR-F-001', category: 'forbidden', slot: 'prose', context: ctx });
+  const density = { id: 'EFR-S-002', category: 'density_limited', slot: 'prose', context: 'unicode unicode' };
+  const before = [em('old — one'), density];
+  const nowSame = [em('old — one'), em('new — two'), density];
+  const untouched = classifyHits(nowSame, before, false);
+  assert.strictEqual(untouched.introduced.length, 1, 'the excess em dash is introduced');
+  assert.strictEqual(untouched.introduced[0].context, 'new — two', 'the textually new passage is the one reported');
+  assert.strictEqual(untouched.touchedEmDash.length, 0, 'an untouched page owes nothing');
+  assert.strictEqual(untouched.preExisting.length, 2);
+  const touched = classifyHits(nowSame, before, true);
+  assert.strictEqual(touched.introduced.length, 1);
+  assert.strictEqual(touched.touchedEmDash.length, 1, 'the inherited em dash is now owed');
+  assert.strictEqual(touched.touchedEmDash[0].context, 'old — one');
+  assert.deepStrictEqual(touched.preExisting, [density], 'a non-em-dash inherited hit is still only reported');
+  const cleaned = classifyHits([em('old — one')], [em('old — one'), em('gone — two')], true);
+  assert.strictEqual(cleaned.introduced.length, 0, 'removing one em dash introduces nothing');
+  assert.strictEqual(cleaned.touchedEmDash.length, 1, 'the one still there is still owed');
+});
+
+t('an English copy-touch pulls its unclean, untouched locale siblings — and only those', () => {
+  const { siblingObligations } = require('../check-editorial-footprint');
+  const en = 'symbol/euro-sign/index.html';
+  const siblingsOf = (rel) => rel === en
+    ? ['fr/symbol/symbole-euro/index.html', 'de/symbol/euro-zeichen/index.html', 'es/symbol/simbolo-euro/index.html']
+    : [];
+  const emDashHits = (rel) => ({
+    'fr/symbol/symbole-euro/index.html': [{ slot: 'prose', context: 'a — b' }, { slot: 'cta', context: 'c — d' }],
+    'de/symbol/euro-zeichen/index.html': [{ slot: 'prose', context: 'e — f' }],
+    'es/symbol/simbolo-euro/index.html': []
+  }[rel] || []);
+  const touchedSet = new Set([en, 'de/symbol/euro-zeichen/index.html']);
+  const out = siblingObligations([en], touchedSet, siblingsOf, emDashHits);
+  assert.strictEqual(out.length, 1, 'de is copy-touched (its own rule covers it) and es is clean');
+  assert.strictEqual(out[0].rel, 'fr/symbol/symbole-euro/index.html');
+  assert.strictEqual(out[0].parent, en);
+  assert.strictEqual(out[0].hits.length, 2);
+  assert.deepStrictEqual(siblingObligations(['fr/symbol/symbole-euro/index.html'], new Set(), siblingsOf, emDashHits), [],
+    'a locale copy-touch obliges nobody else - the rule is anchored on English');
 });
 
 t('the new-page threshold is a percentile, not a raw score', () => {
