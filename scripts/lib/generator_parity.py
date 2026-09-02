@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-printables_parity.py
+generator_parity.py
 
-A refuse-to-overwrite guard for the printables generators.
+A refuse-to-overwrite guard for this site's full-page generators.
+
+Renamed from `printables_parity.py` on 2026-08-26, when it picked up its fifth
+caller. Nothing in it was ever printables-specific; the name was.
 
 WHY THIS EXISTS
 ---------------
+A full regenerator silently deletes whatever it does not emit from every page it
+rewrites. This site's generators were written before several site-wide repair
+passes, and none of them learned about any of it.
+
 The four printables generators (bubble letters, bubble numbers, alphabet
-coloring pages, dot-to-dot alphabet) are FULL regenerators: whatever they do not
-emit is silently deleted from every page they rewrite. They were written before
-five later site-wide passes, and none of them learned about any of it. Running
-them unmodified against the tree on 2026-08-26 changed 90 files, and the entire
-diff was other people's repairs being undone:
+coloring pages, dot-to-dot alphabet), run unmodified against the tree on
+2026-08-26, changed 90 files, and the entire diff was other people's repairs
+being undone:
 
   1. The Funding Choices ad-blocking-recovery tag  -> check-funding-choices.js
      (GATING) fails.
@@ -31,6 +36,20 @@ Items 1-3 have since been fixed in the generators themselves. Items 4 and 5 have
 NOT: the generators have no model of the hreflang mesh or the art pipeline, and
 teaching them is a real project, not a copy fix.
 
+`generate_library_page_from_spec.py` was measured the same way on 2026-08-26 and
+is worse, not better, than the optimistic reading it had been given (it emits the
+Funding Choices tag and calls the mesh sync, so it "looked fine"). Across a
+40-spec sample, **40 of 40 pages regressed**:
+
+  · static footer markup   40 pages
+  · hreflang alternates    35 pages
+  · social image tags      21 pages
+
+The mesh hook does not save it. That hook runs only when `lang != "en"`, and it
+runs AFTER the write — so an English library or symbol page, which carries live
+hreflang alternates pointing at every locale sibling, gets no sync at all and
+loses them outright.
+
 So this guard exists to make the remaining gap LOUD instead of silent. A
 generator that quietly deletes a shipped repair is the same failure this
 repository has recorded twice in CI: a check that reports nothing is
@@ -39,7 +58,7 @@ whose damage is invisible until a gate fails on a later PR.
 
 USAGE
 -----
-    from lib.printables_parity import assert_no_regression
+    from lib.generator_parity import assert_no_regression
 
     assert_no_regression(targets, force=args.force_stale)
 
