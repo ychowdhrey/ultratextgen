@@ -138,8 +138,8 @@ def load_spokes():
         spokes[slug] = {
             "path": page,
             "claimed_hubs": hubs,
-            "title": strip_tags(m_h1.group(1)) if m_h1 else slug.replace("-", " ").title(),
-            "desc": first_sentence(desc_source),
+            "title": dash_safe(strip_tags(m_h1.group(1)) if m_h1 else slug.replace("-", " ").title(), "en"),
+            "desc": dash_safe(first_sentence(desc_source), "en"),
         }
     return spokes
 
@@ -166,17 +166,62 @@ def load_symbol_out_links():
     return links
 
 
-def page_title_and_desc(html, fallback_slug):
-    """The <h1> and one-line summary a page wrote for itself. Used verbatim as
-    the card copy, so a locale card never carries invented or translated text."""
+# ── Card copy follows the locale's dash policy (added 2026-09-02) ───────────
+#
+# Card copy is lifted verbatim from the target page's <h1> and hero tagline,
+# and those still carry the site's pre-existing em dashes. Since 2026-09-02 an
+# em dash INTRODUCED on a `ban` or `double-dash` locale fails
+# check-editorial-footprint in every mode, and an injected card is an
+# introduction on the hub even though the spoke has carried the dash for
+# months: the first locale hub->spoke mirror run put 518 of them on 16 locales
+# and went red. So the joint is moved here, once, in the one place card copy is
+# built, using data/em_dash_locale_policy.json rather than a private table:
+#   ban, English      -> a colon (the tile-label precedent, `Name (U+XXXX): gloss`)
+#   ban, other        -> the spaced en dash, which that policy never flags
+#   double-dash       -> the paired ——, the only dash native to zh-tw and ja
+#   native / review   -> untouched; the dash is theirs, or not yet decided
+# Nothing else in the string moves, so the card still says what the page says.
+_DASH_POLICY = None
+
+
+def _dash_policy():
+    global _DASH_POLICY
+    if _DASH_POLICY is None:
+        import json
+        try:
+            data = json.loads((REPO / "data" / "em_dash_locale_policy.json").read_text(encoding="utf-8"))
+            _DASH_POLICY = {k: (v.get("policy") if isinstance(v, dict) else None)
+                            for k, v in (data.get("locales") or {}).items()}
+        except (OSError, ValueError):
+            _DASH_POLICY = {}
+    return _DASH_POLICY
+
+
+def dash_safe(text, lang):
+    """Rewrite em dashes in card copy the way the locale's policy allows."""
+    if not text or "\u2014" not in text:
+        return text
+    policy = _dash_policy().get(lang)
+    if policy == "ban":
+        joint = ": " if lang == "en" else " \u2013 "
+        return re.sub(r"\s*\u2014\s*", joint, text)
+    if policy == "double-dash":
+        return re.sub(r"(?<!\u2014)\u2014(?!\u2014)", "\u2014\u2014", text)
+    return text
+
+
+def page_title_and_desc(html, fallback_slug, lang="en"):
+    """The <h1> and one-line summary a page wrote for itself. Used as the card
+    copy, so a locale card never carries invented or translated text; only a
+    dash the locale's policy bans is re-jointed (see dash_safe)."""
     m_h1 = H1_RE.search(html)
     m_tagline = TAGLINE_RE.search(html)
     m_desc = META_DESC_RE.search(html)
     desc_source = strip_tags(m_tagline.group(1)) if m_tagline else (
         m_desc.group(1) if m_desc else "")
     return (
-        strip_tags(m_h1.group(1)) if m_h1 else fallback_slug.replace("-", " ").title(),
-        first_sentence(desc_source),
+        dash_safe(strip_tags(m_h1.group(1)) if m_h1 else fallback_slug.replace("-", " ").title(), lang),
+        dash_safe(first_sentence(desc_source), lang),
     )
 
 
@@ -199,11 +244,36 @@ def load_locale_siblings():
         if not m_slug:
             continue
         slug = page.parent.name
-        title, desc = page_title_and_desc(html, slug)
+        title, desc = page_title_and_desc(html, slug, lang)
         siblings.setdefault(m_slug.group(1), {})[lang] = {
             "path": page, "slug": slug, "title": title, "desc": desc,
         }
     return siblings
+
+
+EN_LIBRARY_URL_RE = re.compile(r"^https://ultratextgen\.com/library/([a-z0-9-]+)/?$")
+
+
+def load_locale_hubs():
+    """en_hub_slug -> {lang: path} for every <lang>/library/ hub page.
+
+    Same cluster rule as load_locale_siblings(): a page's language is its
+    top-level directory and its cluster is whatever EN URL its own
+    hreflang="en" declares. Never guess a locale slug from the EN one."""
+    hubs = {}
+    for page in sorted(REPO.glob("*/library/*/index.html")):
+        lang = page.relative_to(REPO).parts[0]
+        if not re.fullmatch(r"[a-z]{2}(-[a-z]{2})?", lang):
+            continue
+        html = page.read_text(encoding="utf-8", errors="replace")
+        m_en = EN_ALTERNATE_RE.search(html)
+        if not m_en:
+            continue
+        m_slug = EN_LIBRARY_URL_RE.match(m_en.group(1).strip())
+        if not m_slug:
+            continue
+        hubs.setdefault(m_slug.group(1), {})[lang] = page
+    return hubs
 
 
 def build_card(href, title, desc, card_class, indent):
@@ -376,6 +446,44 @@ def main(argv=None):
                     names = ", ".join(f'/{lang}/symbol/{t["slug"]}/' for t in missing)
                     print(f"[WARN] {rel_src.parent}: EN peer(s) not mirrored here: {names}")
                     warns += len(missing)
+
+        # Hub->spoke, mirrored the same way. The EN pass above settles which
+        # hubs each spoke claims; that graph is EN-only until it is mirrored,
+        # so <lang>/library/<hub> was never required to link <lang>/symbol/<spoke>
+        # and no check could see the gap (CLAUDE.md, "Only the PEER graph is
+        # mirrored"). Restricted, like the peer pass, to relations where BOTH
+        # ends have a live sibling in that language.
+        locale_hubs = load_locale_hubs()
+        wanted_by_hub = {}
+        for slug, spoke in spokes.items():
+            for hub in spoke["claimed_hubs"]:
+                for lang, hub_page in locale_hubs.get(hub, {}).items():
+                    target = siblings.get(slug, {}).get(lang)
+                    if target is None:
+                        continue          # no sibling in L: skip, never link EN
+                    wanted_by_hub.setdefault((lang, hub, hub_page), []).append(target)
+
+        for (lang, hub, hub_page), targets in sorted(
+                wanted_by_hub.items(), key=lambda kv: (kv[0][0], kv[0][1])):
+            html = hub_page.read_text(encoding="utf-8", errors="replace")
+            missing = [t for t in targets
+                       if f'href="/{lang}/symbol/{t["slug"]}/"' not in html]
+            if not missing:
+                continue
+            rel_hub = hub_page.relative_to(REPO)
+            if args.write and args.reciprocal:
+                for target in missing:
+                    href = f'/{lang}/symbol/{target["slug"]}/'
+                    if inject_card(hub_page, href, target["title"], target["desc"]):
+                        print(f"[FIXED] {rel_hub.parent}: injected locale hub\u2192spoke card -> {href}")
+                        fixed += 1
+                    else:
+                        print(f"[WARN] {rel_hub.parent}: no compare-grid; add {href} manually")
+                        warns += 1
+            else:
+                names = ", ".join(f'/{lang}/symbol/{t["slug"]}/' for t in missing)
+                print(f"[WARN] {rel_hub.parent}: EN hub\u2192spoke link(s) not mirrored here: {names}")
+                warns += len(missing)
 
     print(f"\nChecked {len(spokes)} spoke(s) against {len(hub_links)} hub(s)"
           + (f" and {locale_pages} locale symbol page(s)" if args.locales else "")
