@@ -11,9 +11,9 @@
  * 0. Promotion to blocking happens per-rule, deliberately, once the rule has
  * been exercised and its false positives reviewed - see
  * docs/editorial-footprint-risk.md, "Rollout". ONE EXCEPTION, decided by the
- * user on 2026-09-02: the em dash and the spaced hyphen are BANNED on new or
- * changed English copy, and an introduced one exits 1 regardless of mode
- * (see BANNED below). This is not caution for its own
+ * user on 2026-09-02: the em dash is banned forward-only per locale (and the
+ * spaced hyphen on English), and an introduced one exits 1 regardless of mode
+ * (see the em dash policy block below). This is not caution for its own
  * sake: this repository has twice shipped a check that reported nothing and was
  * indistinguishable from a check that passed, and the cure for that is to watch
  * a rule fail on purpose before trusting it, not to switch it on and hope.
@@ -76,27 +76,25 @@ const BLOCKING = new Set([
 ]);
 
 /**
- * Rules BANNED outright for the listed locales, forward-only.
+ * The em dash ban is PER LOCALE and forward-only, driven by
+ * data/em_dash_locale_policy.json through scripts/lib/em-dash-policy.js:
  *
- * A finding a branch INTRODUCES on a page in one of these locales fails the
- * run even in shadow mode. Decided by the user on 2026-09-02 for English:
- * the em dash (EFR-F-001) and the spaced hyphen that replaces it
- * (EFR-F-006). Forward-only is what makes this affordable — the delta logic
- * below already counts only the EXCESS over what the page carried at the
- * merge base, so the 9,682 em dashes on 889 existing English pages are
- * reported and never billed, and a regenerated page with the same count
- * passes. English only, on purpose: the em dash is required punctuation in
- * Russian and native in Spanish, Portuguese, French and Polish, and the
- * research memo forbids applying an English-derived rule to another locale.
- * docs/em-dash-policy.md carries the per-language table and the decision.
+ *   ban          English (house style) and the thirteen locales whose native
+ *                dash is the spaced en dash — an introduced em dash fails the
+ *                run in every mode, and the block names the replacement.
+ *   double-dash  zh-tw and ja, whose native dash is the paired —— — a lone
+ *                introduced — fails, a —— does not.
+ *   native       Russian, Spanish, Portuguese, French, Polish, Romanian — the
+ *                em dash is their punctuation and is never a finding here.
+ *   review       everything else — a warning, as before.
+ *
+ * Forward-only is what makes this affordable: the delta logic below counts
+ * only the EXCESS over what the page carried at the merge base, so existing
+ * em dashes are reported and never billed, and a regenerated page with the
+ * same count passes. The spaced hyphen (EFR-F-006) is banned on English only.
+ * Decision, table and evidence: docs/em-dash-policy.md.
  */
-const BANNED = {
-  'em-dash': new Set(['en']),
-  'spaced-hyphen': new Set(['en'])
-};
-function isBanned(rule, locale) {
-  return !!(BANNED[rule] && BANNED[rule].has(locale));
-}
+const { loadDashPolicy, applyDashPolicy, isBanned, policyFor } = require('./lib/em-dash-policy');
 
 const BASELINE_PATH = path.join(ROOT, 'data', 'editorial_footprint_baseline.json');
 
@@ -180,6 +178,13 @@ function main() {
   }
 
   const bank = loadBank();
+  const dash = loadDashPolicy();
+  if (dash.errors.length) {
+    console.error(`\n✗ ${path.relative(ROOT, dash.__path)} is malformed and is refused rather than partially honoured:`);
+    for (const e of dash.errors) console.error(`    · ${e}`);
+    process.exit(2);
+  }
+  const dropped = { native: 0, paired: 0 };
   let baseline = null;
   if (fs.existsSync(BASELINE_PATH)) {
     try { baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8')); } catch { baseline = null; }
@@ -243,8 +248,14 @@ function main() {
     const isNew = !beforeHtml;
 
     // ---- phrase-bank findings, delta-scoped -------------------------------
-    const nowHits = matchBank(page, bank).filter((h) => ruleOf(h));
-    const beforeHits = beforePage ? matchBank(beforePage, bank).filter((h) => ruleOf(h)) : [];
+    // The locale's em dash policy is applied to BOTH sides identically, so the
+    // delta below still compares like with like: on a native locale no em
+    // dash is a finding, on a double-dash locale only a lone one is.
+    const nowPol = applyDashPolicy(matchBank(page, bank).filter((h) => ruleOf(h)), page.locale, dash);
+    const beforePol = beforePage ? applyDashPolicy(matchBank(beforePage, bank).filter((h) => ruleOf(h)), page.locale, dash) : { hits: [], dropped: 0 };
+    const nowHits = nowPol.hits;
+    const beforeHits = beforePol.hits;
+    if (nowPol.policy.policy === 'native') dropped.native += nowPol.dropped; else dropped.paired += nowPol.dropped;
 
     // Delta by COUNT per (rule id, slot), not by surrounding text.
     //
@@ -319,6 +330,8 @@ function main() {
   console.log(`  findings introduced: ${introduced.length}`);
   if (preExisting.length) console.log(`  pre-existing (not this branch's): ${preExisting.length}`);
   console.log(`  SEO preservation findings: ${seoFindings.length}`);
+  if (dropped.native) console.log(`  em dashes not counted on native-dash locale pages (policy "native"): ${dropped.native}`);
+  if (dropped.paired) console.log(`  paired —— not counted on double-dash locale pages: ${dropped.paired}`);
   console.log('');
 
   const byRule = new Map();
@@ -335,21 +348,31 @@ function main() {
   // behaviour exactly as before.
   const sections = [];
   for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
-    const banned = list.filter((f) => isBanned(rule, f.locale));
-    const rest = list.filter((f) => !isBanned(rule, f.locale));
-    if (banned.length) sections.push({ rule, list: banned, banned: true });
+    const banned = list.filter((f) => isBanned(rule, f.locale, dash));
+    const rest = list.filter((f) => !isBanned(rule, f.locale, dash));
+    // One section per locale for banned findings, so the replacement the
+    // block names is that locale's own.
+    const byLoc = new Map();
+    for (const f of banned) { if (!byLoc.has(f.locale)) byLoc.set(f.locale, []); byLoc.get(f.locale).push(f); }
+    for (const [loc, l] of byLoc) sections.push({ rule, list: l, banned: true, locale: loc, policy: policyFor(loc, dash) });
     if (rest.length) sections.push({ rule, list: rest, banned: false });
   }
   sections.sort((a, b) => (b.banned - a.banned) || (b.list.length - a.list.length));
 
-  for (const { rule, list, banned } of sections) {
+  for (const { rule, list, banned, locale, policy } of sections) {
     const blocks = BLOCKING.has(rule);
     if (blocks) blockingHit = true;
     if (banned) banHit = true;
     const label = banned
-      ? `✗ BANNED   ${rule} - ${list.length} introduced on English page(s) (forward-only ban; fails even in shadow mode)`
+      ? `✗ BANNED   ${rule} - ${list.length} introduced on ${locale} page(s) (forward-only, policy "${rule === 'em-dash' ? policy.policy : 'ban'}"; fails even in shadow mode)`
       : `${blocks ? (ENFORCE ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} introduced`;
     console.log(label);
+    if (banned) {
+      const repl = rule === 'em-dash'
+        ? policy.replacement
+        : 'the same choices as the em dash: a colon, a full stop, a comma pair or parentheses; a range takes an en dash';
+      console.log(`    write instead: ${repl}`);
+    }
 
     // Summarise rather than flood: one line per page, capped.
     const byPage = new Map();
@@ -422,9 +445,9 @@ function main() {
 
   console.log('How to act on this:');
   if (banHit) {
-    console.log('  · Em dashes and spaced hyphens are BANNED in new or changed English copy');
-    console.log('    (docs/em-dash-policy.md). A colon, a full stop, a comma pair or parentheses;');
-    console.log('    a range takes an en dash. Existing ones on the page are not counted.');
+    console.log('  · A banned dash was introduced. Each BANNED block above names the locale\'s');
+    console.log('    own replacement (data/em_dash_locale_policy.json, docs/em-dash-policy.md).');
+    console.log('    Existing em dashes on the page are not counted; only the ones this branch added.');
   }
   console.log('  · Replace a generic claim with the fact behind it, not with a synonym.');
   console.log('    Google names "automated transformations like synonymizing" as scaled');
@@ -436,7 +459,7 @@ function main() {
   console.log('  · Rules, evidence and rollout stage: docs/editorial-footprint-risk.md');
 
   if (banHit) {
-    console.log('\nA banned pattern was introduced on an English page. Exiting 1 (the ban is not subject to shadow mode).');
+    console.log('\nA banned dash was introduced (see the BANNED sections above). Exiting 1 (the ban is not subject to shadow mode).');
     process.exit(1);
   }
   if (!ENFORCE) {
@@ -447,4 +470,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { BLOCKING, BANNED, isBanned, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, ruleOf };
+module.exports = { BLOCKING, isBanned, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, ruleOf };

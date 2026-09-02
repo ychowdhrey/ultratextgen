@@ -153,13 +153,67 @@ t('the spaced-hyphen rule is English-only and honours the subject exemption', ()
   assert.ok(!ids(bankHits(page('<p>Type a spaced hyphen (word - word) and Word converts it.</p>', { title: 'Hyphen' }), 'symbol/hyphen/index.html')).includes('EFR-F-006'));
 });
 
-t('the forward-only ban covers the em dash and the spaced hyphen on English pages only', () => {
-  const { BANNED, isBanned } = require('../check-editorial-footprint');
-  assert.deepStrictEqual(Object.keys(BANNED).sort(), ['em-dash', 'spaced-hyphen']);
+t('the em dash policy ledger is valid, covers every locale, and says what it was adopted to say', () => {
+  const P = require('./em-dash-policy');
+  const l = P.loadDashPolicy();
+  assert.deepStrictEqual(l.errors, []);
+  assert.deepStrictEqual(l.missing, [], 'every canonical locale needs a row');
+  assert.strictEqual(P.policyFor('en').policy, 'ban');
+  assert.strictEqual(P.policyFor('de').policy, 'ban');
+  assert.ok(/en dash/.test(P.policyFor('de').replacement), 'a ban names the native replacement');
+  assert.strictEqual(P.policyFor('ru').policy, 'native', 'the dash is required punctuation in Russian');
+  assert.strictEqual(P.policyFor('zh-tw').policy, 'double-dash');
+  assert.strictEqual(P.policyFor('ja').policy, 'double-dash');
+  assert.strictEqual(P.policyFor('id').policy, 'review');
+  const unknown = P.policyFor('xx');
+  assert.strictEqual(unknown.policy, 'review');
+  assert.strictEqual(unknown.missing, true, 'an unlisted locale is review and reported missing, never silently banned or exempt');
+});
+
+t('the ledger refuses a ban with no replacement, a native policy with one, and an unknown policy', () => {
+  const P = require('./em-dash-policy');
+  const row = { nativeMark: 'x', basis: 'reference orthography', adopted: '2026-09-02', nextReview: '2026-09-26' };
+  assert.ok(P.validatePolicy({ locales: { de: { ...row, policy: 'ban' } } }).errors.length, 'ban without replacement');
+  assert.ok(P.validatePolicy({ locales: { ru: { ...row, policy: 'native', replacement: 'x' } } }).errors.length, 'native with replacement');
+  assert.ok(P.validatePolicy({ locales: { de: { ...row, policy: 'forbid', replacement: 'x' } } }).errors.length, 'unknown policy');
+  assert.ok(P.validatePolicy({ locales: { zz: { ...row, policy: 'review' } } }).errors.length, 'not a canonical locale');
+  assert.deepStrictEqual(P.validatePolicy({ locales: { de: { ...row, policy: 'ban', replacement: 'the en dash' } } }).errors, []);
+});
+
+t('a paired —— is not a lone em dash, and the policy drops what its locale allows', () => {
+  const P = require('./em-dash-policy');
+  const paired = bankHits(page('<p>這是——一個破折號。</p>', { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(paired.length, 2);
+  assert.ok(paired.every(P.isPairedEmDash), 'both halves of —— read as paired');
+  const lone = bankHits(page('<p>這是—一個。</p>', { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(lone.length, 1);
+  assert.strictEqual(P.isPairedEmDash(lone[0]), false);
+  const mixed = [...paired, ...lone];
+  assert.strictEqual(P.applyDashPolicy(mixed, 'zh-tw').hits.length, 1, 'double-dash keeps only the lone one');
+  assert.strictEqual(P.applyDashPolicy(mixed, 'ru').hits.length, 0, 'native drops every em dash');
+  assert.strictEqual(P.applyDashPolicy(mixed, 'de').hits.length, 3, 'ban keeps every em dash');
+  const hy = bankHits(page('<p>Bold works - mostly.</p>')).filter((h) => h.id === 'EFR-F-006');
+  assert.strictEqual(P.applyDashPolicy(hy, 'ru').hits.length, hy.length, 'the policy never touches other rules');
+});
+
+t('a hit that was cut on the left still resolves its neighbours', () => {
+  const P = require('./em-dash-policy');
+  const long = 'x'.repeat(80);
+  const hits = bankHits(page(`<p>${long} 這是——一個破折號。</p>`, { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(hits.length, 2);
+  assert.ok(hits[0].context.startsWith('...'), 'the excerpt was cut');
+  assert.ok(hits.every(P.isPairedEmDash));
+});
+
+t('isBanned follows the ledger: English and en-dash locales fail, Russian never, review locales only warn', () => {
+  const { isBanned } = require('../check-editorial-footprint');
   assert.strictEqual(isBanned('em-dash', 'en'), true);
+  assert.strictEqual(isBanned('em-dash', 'de'), true);
+  assert.strictEqual(isBanned('em-dash', 'zh-tw'), true, 'a lone — on a double-dash locale is banned; the pair never reaches this check');
+  assert.strictEqual(isBanned('em-dash', 'ru'), false);
+  assert.strictEqual(isBanned('em-dash', 'id'), false);
   assert.strictEqual(isBanned('spaced-hyphen', 'en'), true);
-  assert.strictEqual(isBanned('em-dash', 'ru'), false, 'the dash is required punctuation in Russian');
-  assert.strictEqual(isBanned('em-dash', 'de'), false);
+  assert.strictEqual(isBanned('spaced-hyphen', 'de'), false, 'the hyphen guard is English-only');
   assert.strictEqual(isBanned('formulaic-phrase', 'en'), false, 'nothing else is banned');
 });
 

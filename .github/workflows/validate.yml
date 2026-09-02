@@ -381,15 +381,17 @@ jobs:
       # `--annotations` emits GitHub file/line annotations so findings appear on
       # the diff rather than only in this log.
       #
-      # ONE RULE GATES (2026-09-02, user decision): the em dash and the spaced
-      # hyphen are banned on new or changed ENGLISH copy, forward-only. The
-      # script exits 1 only when a branch INTRODUCES one on an English page,
-      # whatever mode it runs in; every other rule stays shadow. That is why
-      # this step is now in the gating list below while still being labelled
-      # shadow mode: the 9,682 em dashes already on English pages are reported
-      # and never billed. Per-language table and the decision:
-      # docs/em-dash-policy.md.
-      - name: Run editorial footprint check (shadow mode; em dash ban enforced on English)
+      # ONE RULE GATES (2026-09-02, user decision): the em dash is banned on
+      # new or changed copy, forward-only and PER LOCALE, from
+      # data/em_dash_locale_policy.json — English and the thirteen en-dash
+      # locales ban outright, zh-tw and ja ban a lone dash, six native-dash
+      # locales are never flagged, nine warn pending a native reader. The
+      # spaced hyphen is banned on English. The script exits 1 only when a
+      # branch INTRODUCES a banned dash, whatever mode it runs in; every other
+      # rule stays shadow. That is why this step is in the gating list below
+      # while still being labelled shadow mode: existing em dashes are reported
+      # and never billed. Table and decision: docs/em-dash-policy.md.
+      - name: Run editorial footprint check (shadow mode; em dash policy enforced per locale)
         id: editorial_footprint
         continue-on-error: true
         run: npm run check:editorial-footprint -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee editorial-footprint.log
@@ -604,7 +606,7 @@ jobs:
             cat library-hub-coverage-audit.log
             echo '```'
             echo ""
-            echo "### Editorial footprint check (shadow mode; em dash ban enforced on English) — \`${{ steps.editorial_footprint.outcome }}\`"
+            echo "### Editorial footprint check (shadow mode; em dash policy enforced per locale) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
             echo '```'
@@ -647,9 +649,10 @@ jobs:
 
       - name: Fail the job if any gating validator reported problems
         # steps.editorial_footprint runs in SHADOW MODE for every rule but one:
-        # it exits 1 only when a branch introduces an em dash or a spaced
-        # hyphen on an English page (the forward-only ban, see its step
-        # comment), which is why it is in this list since 2026-09-02. Its unit
+        # it exits 1 only when a branch introduces an em dash on a locale whose
+        # policy bans it, or a spaced hyphen on an English page (the
+        # forward-only ban, see its step comment), which is why it is in this
+        # list since 2026-09-02. Its unit
         # tests, steps.editorial_footprint_tests, are gating too — they have no
         # backlog to be red against.
         #

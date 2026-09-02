@@ -2245,14 +2245,16 @@ ranks the upstream sources.
   documented step in `docs/editorial-footprint-risk.md`, not a silent flag flip.
   Only two rules are eligible today (`model-leakage`, `seo-preservation`
   errors), both verified against deliberately broken inputs. **The exception,
-  decided 2026-09-02: the em dash and the spaced hyphen are banned forward-only
-  on English copy** — an introduced one on an English page exits 1 in every
-  mode, and the step is in the gating list. Existing em dashes (9,682 on 889
-  English pages) are reported, never billed. English only: the em dash is
-  required punctuation in Russian and native in five more locales, and the en
-  dash is the native mark in thirteen others. `docs/em-dash-policy.md` has the
-  scope, the replacement guidance, the title-separator note and the per-language
-  table.
+  decided 2026-09-02: the em dash is banned forward-only, per locale** — an
+  introduced one exits 1 in every mode on a `ban` or `double-dash` locale, and
+  the step is in the gating list. The policy is `data/em_dash_locale_policy.json`
+  (English and the thirteen en-dash locales ban, with the native replacement
+  named in the block; zh-tw and ja ban only a lone `—`; ru/es/pt/fr/pl/ro are
+  native and never flagged; nine locales warn pending a native reader), and
+  the spaced hyphen is banned on English. Existing em dashes (9,682 on 889
+  English pages) are reported, never billed. `npm run audit:em-dash`
+  re-measures every locale against the ledger. `docs/em-dash-policy.md` has the
+  scope, the replacement guidance, the title-separator note and the table.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
 - **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
@@ -2731,13 +2733,16 @@ Standing protocol:
   an internal link. Google's spam policy names "automated transformations like
   synonymizing" as scaled content abuse, and the SEO Preservation Gate blocks the
   rest. Replace a generic claim with the fact behind it instead.
-- Do not add an em dash, or a spaced hyphen standing in for one, to new or
-  changed English copy — `npm run check:editorial-footprint` exits 1 on an
-  introduced one, in shadow mode too, since 2026-09-02. Use a colon, a full
-  stop, a comma pair or parentheses; a range takes an en dash. Do not apply
-  the ban to another locale by hand: it is required punctuation in Russian and
-  the native mark is the en dash in most of the rest — see
-  `docs/em-dash-policy.md` §4 before touching a locale's dashes.
+- Do not add an em dash to new or changed copy on a locale whose policy in
+  `data/em_dash_locale_policy.json` is `ban` (English and the thirteen en-dash
+  locales) or `double-dash` (zh-tw, ja, where only the paired `——` is native),
+  and do not add a spaced hyphen standing in for one on an English page —
+  `npm run check:editorial-footprint` exits 1 on an introduced one, in shadow
+  mode too, since 2026-09-02, and names the locale's replacement (a colon, a
+  full stop, a comma pair or parentheses in English; the spaced en dash in the
+  en-dash locales). Do not change a locale's policy on a page by hand or by
+  translating the English rule: it changes only in the ledger, with a native
+  reader or corpus evidence — see `docs/em-dash-policy.md` §4 and §7.
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
   generator run — the gate names the upstream file when it can find it. And do
