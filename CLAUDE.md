@@ -469,6 +469,40 @@ real regression re-injected into body prose, a deleted pill, a pill contradictin
 `datePublished`, a `Verified` date predating `Published` — each exits 1 — and a
 meta description contradicting the pill, which warns and exits 0.
 
+#### Locale entries (added 2026-09-02)
+
+The 56 `<lang>/updates/` pages carry **one** localized verification pill and no
+`Published` half. The asymmetry is deliberate: for an English entry the
+publication date is a real claim — it is where the fact was first reported —
+while for a translation the only claim worth publishing is when the facts were
+last checked, and that check happens once, upstream, in English. A locale
+pill's date must therefore equal its EN parent's `Verified` date, resolved
+through the page's own `hreflang="en"`.
+
+**Wording is each locale's own, taken from the site rather than invented.**
+Eight locales already carried a stamp (`Zuletzt geprüft am`, `Son kontrol:`,
+`Última comprobación:`, `2026년 9월 1일 최종 확인`, …) so those keep their exact
+phrasing; the other nine were authored to match. Read the existing string
+before adding one — Swedish here is **`kontrollerat`** (neuter, agreeing with
+*innehållet*), and a first draft of the registry guessed `kontrollerad` and was
+wrong.
+
+**Labels are matched from a registry, never generated, and dates compare as
+integers** — the pill must contain the parent's year and day, plus its month
+wherever the locale writes months as digits (`ja ko vi zh-tw`). That keeps this
+check from becoming the authority on month names in seventeen languages, which
+is not a thing a CI script should own.
+
+**Stamps in body prose are removed here as in English**, but the removal must
+match a *dated* stamp and never the bare word: German `wurde geprüft und mit
+der Bitte`, Dutch `een gecontroleerd experiment`, Turkish `kontrollü bir
+deneye` and Thai `ตรวจสอบมากขึ้น` are ordinary prose that a word-level sweep
+would have deleted.
+
+Verified against three probes: bumping an EN `Verified` date fails all of that
+page's locale siblings by name, a deleted locale pill exits 1, and a localized
+stamp re-injected into body prose exits 1.
+
 ---
 
 ## Hub vs Spoke: preventing self-cannibalization
