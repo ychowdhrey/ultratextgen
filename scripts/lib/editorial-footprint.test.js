@@ -596,6 +596,47 @@ t('copy-touched means the page\'s OWN copy moved — not a card, a footer, or a 
   assert.strictEqual(copyTouched(before, footer), false, 'a regenerated footer is not a touch');
 });
 
+t('a template-level change is not a touch: shared verbatim across pages, or punctuation/case only', () => {
+  const { classifyTouches, TEMPLATE_SHARE_MIN } = require('../check-editorial-footprint');
+  assert.strictEqual(TEMPLATE_SHARE_MIN, 3);
+  const P = (rel, before, after) => ({ rel, beforePage: extractPage(page(before), rel), page: extractPage(page(after), rel) });
+  const cta = (v) => `<p>Use UltraTextGen to convert plain text into bold and 100+ styles${v}</p>`;
+  const own = (n) => `<p>Page ${n} says something of its own — about the ${n} sign.</p>`;
+  // One CTA sentence reworded identically on three pages: none of them is touched.
+  const shared = classifyTouches([
+    P('a/index.html', cta(' — free and instant.') + own('a'), cta('. Free and instant.') + own('a')),
+    P('b/index.html', cta(' — free and instant.') + own('b'), cta('. Free and instant.') + own('b')),
+    P('c/index.html', cta(' — free and instant.') + own('c'), cta('. Free and instant.') + own('c')),
+  ]);
+  assert.strictEqual(shared.touched.size, 0, 'a string moved verbatim on 3 pages is a template, not a touch');
+  assert.strictEqual(shared.reasons.get('a/index.html'), 'template-only');
+  // The same reword on only two pages is below the threshold: a real edit until proven shared...
+  const two = classifyTouches([
+    P('a/index.html', cta(' with a new promise'), cta(' with a bold new promise')),
+    P('b/index.html', cta(' with a new promise'), cta(' with a bold new promise')),
+  ]);
+  assert.strictEqual(two.touched.size, 2, 'two pages sharing a word change are each touched');
+  // ...unless the change is punctuation or case only, which is never a touch even on one page.
+  const cosmetic = classifyTouches([P('a/index.html', own('a'), own('a').replace(' — about', ': about'))]);
+  assert.strictEqual(cosmetic.touched.size, 0, 'an em dash becoming a colon on one page is not a touch');
+  const caseOnly = classifyTouches([P('a/index.html', own('a'), own('a').replace('says', 'Says'))]);
+  assert.strictEqual(caseOnly.touched.size, 0, 'a case change alone is not a touch');
+  // A page with a template change AND its own sentence is touched; its template-only neighbours are not.
+  const mixed = classifyTouches([
+    P('a/index.html', cta(' — free.') + own('a'), cta('. Free.') + own('a').replace('something', 'nothing')),
+    P('b/index.html', cta(' — free.') + own('b'), cta('. Free.') + own('b')),
+    P('c/index.html', cta(' — free.') + own('c'), cta('. Free.') + own('c')),
+  ]);
+  assert.deepStrictEqual([...mixed.touched], ['a/index.html']);
+  assert.strictEqual(mixed.reasons.get('b/index.html'), 'template-only');
+  // A single page with a real word change is touched; a new page is touched by definition.
+  const single = classifyTouches([P('a/index.html', own('a'), own('a').replace('something', 'nothing'))]);
+  assert.strictEqual(single.reasons.get('a/index.html'), 'own-copy');
+  const fresh = classifyTouches([{ rel: 'n/index.html', beforePage: null, page: extractPage(page(own('n')), 'n/index.html') }]);
+  assert.strictEqual(fresh.reasons.get('n/index.html'), 'new');
+  assert.ok(fresh.touched.has('n/index.html'));
+});
+
 t('on a copy-touched page inherited em dashes must be cleared; elsewhere they are only reported', () => {
   const { classifyHits } = require('../check-editorial-footprint');
   const em = (ctx) => ({ id: 'EFR-F-001', category: 'forbidden', slot: 'prose', context: ctx });

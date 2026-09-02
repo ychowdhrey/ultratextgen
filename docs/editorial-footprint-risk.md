@@ -206,6 +206,17 @@ hreflang block, a rebuilt library directory or an asset swap changes none of tho
 and is **not** a touch — a mesh pass that rewrites 1,009 pages must not demand
 1,009 rewrites. Once a page is touched, its cards count too.
 
+**A template-level change is not a touch (user decision, 2026-09-02).** #840's
+template-tier em-dash pass read as 499 copy-touched pages owing 7,983 inherited
+em dashes, though nobody had written on any of them. `classifyTouches()` now
+classifies the whole diff at once: a string added or removed verbatim on
+`TEMPLATE_SHARE_MIN` (3) or more changed pages is a template, and a string whose
+punctuation or case alone moved is cosmetic; a page is touched only if some
+element of its delta is neither. A page with a template change and a sentence of
+its own is touched; a new page always is. Verified against six fixture shapes
+(three pages sharing one reword, two pages sharing one, punctuation-only,
+case-only, template plus own sentence, a new page) and by replaying #840.
+
 **An English touch pulls the locale siblings along (`em-dash-sibling`).** Each
 sibling in the touched page's hreflang cluster that the branch does not itself
 copy-edit must already be clean, or it is reported naming the parent that pulled
@@ -334,6 +345,7 @@ a deliberately broken input.
 | 2026-09-02 | **Forward-only became clean-on-touch, siblings included** (user direction). A copy-edited page must leave with zero em dashes in every measured slot (`em-dash-touched`); a copy-edited English page pulls its locale siblings (`em-dash-sibling`); untouched pages stay forward-only. `.related-card` joined the card slot (193 pages, the updates hub's 11 dated labels among them) and `[data-static-directory]` left measurement (inventory rendered from other pages). `--enforce` gained a per-rule list. All three em-dash rules entered `BLOCKING`; the workflow step stays in shadow. Verified against seven probes and replayed over the last ten merged PRs (four true-positive `em-dash-touched` PRs, one `em-dash-sibling` PR at 745 hits, zero false positives). Ledger and baseline regenerated in their own commit. Tests 52 → 63. | policy change + extractor fix |
 | 2026-09-02 | **Em dash and spaced hyphen banned forward-only on English copy** (`docs/em-dash-policy.md`). `EFR-F-006` added to the bank (spaced hyphen as a dash, English, prose slots, measured base rate 3 occurrences on 3 pages). `check-editorial-footprint.js` gains `BANNED` — an introduced finding on a banned rule and locale exits 1 in every mode, all other rules keep shadow — and its step joins `validate.yml`'s gating list. Locale scope is deliberate: the em dash is required in Russian and native in five more locales, and the en dash is the native mark in thirteen; no locale rule was created. Verified on a throwaway branch (English em dash and spaced hyphen: `BANNED`, exit 1; German em dash and a plain English sentence: exit 0). Four assertions added to `npm run test:editorial-footprint` (now 61). | user decision |
 | 2026-09-02 | **The em dash ban became per-locale policy** (`data/em_dash_locale_policy.json`, read through `scripts/lib/em-dash-policy.js`): ban on en and thirteen en-dash locales with the native replacement named in the block, double-dash on zh-tw and ja, native on six locales, review on nine. `matchBank()` hits now carry `index` so the pair detector can read the neighbouring character. `npm run audit:em-dash` re-measures every locale against the ledger. Verified on a throwaway branch per the table in `docs/em-dash-policy.md` §5. Five assertions added to `npm run test:editorial-footprint`. | user decision |
+| 2026-09-02 | **A template-level change is not a touch** (user decision, ahead of the 09-16 review). `classifyTouches()` carves out strings shared verbatim on 3+ changed pages in one diff and punctuation/case-only rewrites; only a change of the page's own makes it copy-touched. Replayed on #840, which had read as 499 copy-touched pages. Test blocks 71 → 72. | rule refinement |
 
 ---
 
