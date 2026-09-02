@@ -380,7 +380,16 @@ jobs:
       #
       # `--annotations` emits GitHub file/line annotations so findings appear on
       # the diff rather than only in this log.
-      - name: Run editorial footprint check (shadow mode, informational)
+      #
+      # ONE RULE GATES (2026-09-02, user decision): the em dash and the spaced
+      # hyphen are banned on new or changed ENGLISH copy, forward-only. The
+      # script exits 1 only when a branch INTRODUCES one on an English page,
+      # whatever mode it runs in; every other rule stays shadow. That is why
+      # this step is now in the gating list below while still being labelled
+      # shadow mode: the 9,682 em dashes already on English pages are reported
+      # and never billed. Per-language table and the decision:
+      # docs/em-dash-policy.md.
+      - name: Run editorial footprint check (shadow mode; em dash ban enforced on English)
         id: editorial_footprint
         continue-on-error: true
         run: npm run check:editorial-footprint -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee editorial-footprint.log
@@ -595,7 +604,7 @@ jobs:
             cat library-hub-coverage-audit.log
             echo '```'
             echo ""
-            echo "### Editorial footprint check (shadow mode, informational) — \`${{ steps.editorial_footprint.outcome }}\`"
+            echo "### Editorial footprint check (shadow mode; em dash ban enforced on English) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
             echo '```'
@@ -637,10 +646,12 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
-        # steps.editorial_footprint is excluded on purpose: it runs in SHADOW
-        # MODE and exits 0 by design (see its own step comment). Its unit tests,
-        # steps.editorial_footprint_tests, ARE gating — they have no backlog to
-        # be red against.
+        # steps.editorial_footprint runs in SHADOW MODE for every rule but one:
+        # it exits 1 only when a branch introduces an em dash or a spaced
+        # hyphen on an English page (the forward-only ban, see its step
+        # comment), which is why it is in this list since 2026-09-02. Its unit
+        # tests, steps.editorial_footprint_tests, are gating too — they have no
+        # backlog to be red against.
         #
         # steps.images, steps.symbol_peer_links_audit, and
         # steps.locale_parent_gap_audit (all whole-site audits) are
@@ -676,6 +687,7 @@ jobs:
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
+          steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
           steps.efr_gate.outcome == 'failure' ||
           steps.efr_tests.outcome == 'failure' ||

@@ -136,6 +136,33 @@ t('sentence splitting handles CJK and Arabic terminators', () => {
 
 // ── 3. phrase bank: catches ────────────────────────────────────────────────
 
+t('a spaced hyphen used as a dash in prose is caught (EFR-F-006)', () => {
+  assert.ok(ids(bankHits(page('<p>Bold text - it works on most platforms.</p>'))).includes('EFR-F-006'));
+  assert.ok(ids(bankHits(page('<div class="faq-item"><button class="faq-question">Q?</button><p class="faq-answer">Yes - always.</p></div>'))).includes('EFR-F-006'));
+});
+
+t('a hyphenated compound, a negative number and a title separator are not spaced-hyphen findings', () => {
+  assert.ok(!ids(bankHits(page('<p>Use copy-paste fonts and zero-width joiners.</p>'))).includes('EFR-F-006'));
+  assert.ok(!ids(bankHits(page('<p>The offset is -3 codepoints.</p>'))).includes('EFR-F-006'));
+  const t = bankHits(page('<p>Body prose.</p>', { title: 'Bold Text Generator - Copy & Paste', desc: 'Bold - the easy way.' }));
+  assert.strictEqual(t.filter((h) => h.id === 'EFR-F-006').length, 0, 'title and meta description are conventional separator positions, not prose');
+});
+
+t('the spaced-hyphen rule is English-only and honours the subject exemption', () => {
+  assert.ok(!ids(bankHits(page('<p>Fettdruck - so geht es.</p>', { lang: 'de' }), 'de/x/index.html')).includes('EFR-F-006'));
+  assert.ok(!ids(bankHits(page('<p>Type a spaced hyphen (word - word) and Word converts it.</p>', { title: 'Hyphen' }), 'symbol/hyphen/index.html')).includes('EFR-F-006'));
+});
+
+t('the forward-only ban covers the em dash and the spaced hyphen on English pages only', () => {
+  const { BANNED, isBanned } = require('../check-editorial-footprint');
+  assert.deepStrictEqual(Object.keys(BANNED).sort(), ['em-dash', 'spaced-hyphen']);
+  assert.strictEqual(isBanned('em-dash', 'en'), true);
+  assert.strictEqual(isBanned('spaced-hyphen', 'en'), true);
+  assert.strictEqual(isBanned('em-dash', 'ru'), false, 'the dash is required punctuation in Russian');
+  assert.strictEqual(isBanned('em-dash', 'de'), false);
+  assert.strictEqual(isBanned('formulaic-phrase', 'en'), false, 'nothing else is banned');
+});
+
 t('an em dash in prose is caught', () => {
   assert.ok(ids(bankHits(page('<p>Bold text — it works.</p>'))).includes('EFR-F-001'));
 });

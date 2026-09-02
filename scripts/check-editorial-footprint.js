@@ -10,7 +10,10 @@
  * SHADOW MODE IS THE DEFAULT. It reports what it WOULD have failed on and exits
  * 0. Promotion to blocking happens per-rule, deliberately, once the rule has
  * been exercised and its false positives reviewed - see
- * docs/editorial-footprint-risk.md, "Rollout". This is not caution for its own
+ * docs/editorial-footprint-risk.md, "Rollout". ONE EXCEPTION, decided by the
+ * user on 2026-09-02: the em dash and the spaced hyphen are BANNED on new or
+ * changed English copy, and an introduced one exits 1 regardless of mode
+ * (see BANNED below). This is not caution for its own
  * sake: this repository has twice shipped a check that reported nothing and was
  * indistinguishable from a check that passed, and the cure for that is to watch
  * a rule fail on purpose before trusting it, not to switch it on and hope.
@@ -72,6 +75,29 @@ const BLOCKING = new Set([
   // total, and the fix is usually upstream. See the rollout stages.
 ]);
 
+/**
+ * Rules BANNED outright for the listed locales, forward-only.
+ *
+ * A finding a branch INTRODUCES on a page in one of these locales fails the
+ * run even in shadow mode. Decided by the user on 2026-09-02 for English:
+ * the em dash (EFR-F-001) and the spaced hyphen that replaces it
+ * (EFR-F-006). Forward-only is what makes this affordable — the delta logic
+ * below already counts only the EXCESS over what the page carried at the
+ * merge base, so the 9,682 em dashes on 889 existing English pages are
+ * reported and never billed, and a regenerated page with the same count
+ * passes. English only, on purpose: the em dash is required punctuation in
+ * Russian and native in Spanish, Portuguese, French and Polish, and the
+ * research memo forbids applying an English-derived rule to another locale.
+ * docs/em-dash-policy.md carries the per-language table and the decision.
+ */
+const BANNED = {
+  'em-dash': new Set(['en']),
+  'spaced-hyphen': new Set(['en'])
+};
+function isBanned(rule, locale) {
+  return !!(BANNED[rule] && BANNED[rule].has(locale));
+}
+
 const BASELINE_PATH = path.join(ROOT, 'data', 'editorial_footprint_baseline.json');
 
 /** Regression allowance for an EXISTING page, in within-locale percentile points. */
@@ -128,6 +154,7 @@ function upstreamSource(fragment) {
 
 function ruleOf(hit) {
   if (hit.id === 'EFR-F-001') return 'em-dash';
+  if (hit.id === 'EFR-F-006') return 'spaced-hyphen';
   if (['EFR-F-002', 'EFR-F-003', 'EFR-F-004', 'EFR-F-005'].includes(hit.id)) return 'model-leakage';
   if (hit.category === 'strongly_discouraged') return 'formulaic-phrase';
   if (hit.category === 'density_limited') return 'density-limited';
@@ -252,7 +279,7 @@ function main() {
         (beforeContexts.has(`${key}|${a.context}`) ? 1 : 0) - (beforeContexts.has(`${key}|${b.context}`) ? 1 : 0));
       ranked.forEach((h, i) => {
         if (i < excess) {
-          introduced.push({ rel, ...h, rule: ruleOf(h), upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, '')) });
+          introduced.push({ rel, locale: page.locale, ...h, rule: ruleOf(h), upstream: upstreamSource(h.context.replace(/^\.{3}|\.{3}$/g, '')) });
         } else {
           preExisting.push({ rel, ...h, rule: ruleOf(h) });
         }
@@ -301,11 +328,28 @@ function main() {
   }
 
   let blockingHit = false;
+  let banHit = false;
 
+  // Banned findings print first, on their own, because they are the only
+  // ones that fail the run in shadow mode; the rest keep the shadow/enforce
+  // behaviour exactly as before.
+  const sections = [];
   for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
+    const banned = list.filter((f) => isBanned(rule, f.locale));
+    const rest = list.filter((f) => !isBanned(rule, f.locale));
+    if (banned.length) sections.push({ rule, list: banned, banned: true });
+    if (rest.length) sections.push({ rule, list: rest, banned: false });
+  }
+  sections.sort((a, b) => (b.banned - a.banned) || (b.list.length - a.list.length));
+
+  for (const { rule, list, banned } of sections) {
     const blocks = BLOCKING.has(rule);
     if (blocks) blockingHit = true;
-    console.log(`${blocks ? (ENFORCE ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} introduced`);
+    if (banned) banHit = true;
+    const label = banned
+      ? `✗ BANNED   ${rule} - ${list.length} introduced on English page(s) (forward-only ban; fails even in shadow mode)`
+      : `${blocks ? (ENFORCE ? '✗ BLOCKING' : '✗ would block') : '⚠ warning'}  ${rule} - ${list.length} introduced`;
+    console.log(label);
 
     // Summarise rather than flood: one line per page, capped.
     const byPage = new Map();
@@ -321,8 +365,8 @@ function main() {
       console.log(`        ${fs_[0].context.slice(0, 130)}`);
       if (up) console.log(`        upstream: ${up.upstream} ← fix it there, not in the HTML`);
       if (ANNOTATE) {
-        const lvl = blocks && ENFORCE ? 'error' : 'warning';
-        console.log(`::${lvl} file=${rel},title=EFR ${rule}::${fs_.length} introduced. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${up ? ` | upstream: ${up.upstream}` : ''}`);
+        const lvl = banned || (blocks && ENFORCE) ? 'error' : 'warning';
+        console.log(`::${lvl} file=${rel},title=EFR ${rule}${banned ? ' (banned)' : ''}::${fs_.length} introduced. ${fs_[0].context.slice(0, 160).replace(/\n/g, ' ')}${up ? ` | upstream: ${up.upstream}` : ''}`);
       }
     }
     console.log('');
@@ -377,6 +421,11 @@ function main() {
   }
 
   console.log('How to act on this:');
+  if (banHit) {
+    console.log('  · Em dashes and spaced hyphens are BANNED in new or changed English copy');
+    console.log('    (docs/em-dash-policy.md). A colon, a full stop, a comma pair or parentheses;');
+    console.log('    a range takes an en dash. Existing ones on the page are not counted.');
+  }
   console.log('  · Replace a generic claim with the fact behind it, not with a synonym.');
   console.log('    Google names "automated transformations like synonymizing" as scaled');
   console.log('    content abuse, so swapping words to lower a score moves the wrong way.');
@@ -386,6 +435,10 @@ function main() {
   console.log('    internal link to clear a warning. That is a relevance loss, not a fix.');
   console.log('  · Rules, evidence and rollout stage: docs/editorial-footprint-risk.md');
 
+  if (banHit) {
+    console.log('\nA banned pattern was introduced on an English page. Exiting 1 (the ban is not subject to shadow mode).');
+    process.exit(1);
+  }
   if (!ENFORCE) {
     console.log('\n[SHADOW MODE] Exiting 0. Re-run with --enforce to see this gate bite.');
     process.exit(0);
@@ -394,4 +447,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { BLOCKING, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, ruleOf };
+module.exports = { BLOCKING, BANNED, isBanned, NEW_PAGE_PERCENTILE, REGRESSION_TOLERANCE, ruleOf };

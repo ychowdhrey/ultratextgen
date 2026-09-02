@@ -217,6 +217,15 @@ HTML sends them to a file the next generator run overwrites.
 
 ## Rules currently blocking, and rules currently informational
 
+**Banned outright, forward-only, in every mode (decided by the user 2026-09-02):**
+
+| rule | scope | why |
+|---|---|---|
+| `em-dash` (`EFR-F-001`) | English pages, all editorial slots | house style; 9,682 existing ones are reported and never billed — only an em dash a branch *introduces* fails |
+| `spaced-hyphen` (`EFR-F-006`) | English pages, prose/FAQ/CTA/headings | the substitute the ban invites; not flagged in titles or meta descriptions, where a spaced hyphen is a conventional separator |
+
+Full scope, the replacement guidance and the per-language table: `docs/em-dash-policy.md`.
+
 **Blocking under `--enforce` (verified against deliberately broken inputs):**
 
 | rule | why it qualifies |
@@ -228,7 +237,7 @@ HTML sends them to a file the next generator run overwrites.
 
 | rule | why it is not blocking |
 |---|---|
-| `em-dash` | total backlog; the fix is usually upstream; needs shadow exposure first |
+| `em-dash` on a non-English page | the em dash is required punctuation in Russian and native in Spanish, Portuguese, French and Polish; the native mark is the en dash in thirteen other locales — see `docs/em-dash-policy.md` §4 |
 | `formulaic-phrase` | editorial judgment, not a defect |
 | `density-limited` | a rate, and legitimate below its cap |
 | `new-page-threshold` | a percentile, not a defect |
@@ -250,7 +259,7 @@ English-derived rule applied to a non-English page.
 | **2. Shadow** | **now** | the gate runs on every PR, annotates the diff, exits 0. Collect what it would have failed. |
 | **3. Review** | next | review shadow findings for false positives and false negatives; adjust exemptions and thresholds; record every change here. |
 | **4. Enforce the deterministic rules** | after stage 3 | switch `model-leakage` and `seo-preservation` errors to gating by adding `--enforce` to the workflow step and moving it into the gating list. |
-| **5. Ratchet** | later | promote `em-dash` for **new prose** once the upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md` are fixed; tighten the new-page percentile as the backlog falls. |
+| **5. Ratchet** | **partly done 2026-09-02** | `em-dash` promoted for new and changed **English** copy by user decision, ahead of the upstream fixes — affordable because the delta rule bills only introduced em dashes, so generated pages regenerating with the same count still pass; new spec-generated pages will fail until their generators stop emitting em dashes, which is the intended pressure. Still open: the upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md`; tightening the new-page percentile as the backlog falls. |
 
 **Every threshold change is recorded here, with its date and its reason.** A rule
 may become blocking only when it is deterministic, documented, has zero
@@ -265,6 +274,7 @@ a deliberately broken input.
 | 2026-08-26 | First remediation applied (Batch A): the four printables generators de-templated. Print-guidance answers went from 2 distinct across 26 bubble-letter pages to 26; the 184-page shared trust line and the 88-page "Yes — every letter…" opener are gone from generator output. **No live page changed**, and 0 title/H1/canonical/meta lines moved — the SEO Preservation Gate constrains its own author, since these titles carry em dashes and the rule is forward-only. | approved cleanup |
 | 2026-08-26 | `npm run test:printables-parity` added as a **gating** check (14 assertions, no backlog). Acting on Batch A found the four generators would delete five shipped site-wide repairs from 90 live pages; `scripts/lib/printables_parity.py` now refuses such a write. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §1a. | safety finding |
 | 2026-08-26 | `npm run check:spec-sentence-reuse` added as a **gating**, diff-scoped check, with `npm run test:spec-sentence-reuse` (19 assertions) gating alongside it. It stops a new or edited spec pasting a sentence 3+ other specs already carry. **The design it replaces was wrong**: field-level comparison of `hero_tagline`/`meta_description`/`title`/`intro` finds **zero** duplicates in the corpus and would have shipped a gate that could never fire — the reuse is a *sentence inside* an otherwise page-specific field (171 taglines, 148 meta descriptions, one line). Backlog measured and **left untouched**: 45 sentences across 416 of 591 specs. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §3. | prevention (Batch C) |
+| 2026-09-02 | **Em dash and spaced hyphen banned forward-only on English copy** (`docs/em-dash-policy.md`). `EFR-F-006` added to the bank (spaced hyphen as a dash, English, prose slots, measured base rate 3 occurrences on 3 pages). `check-editorial-footprint.js` gains `BANNED` — an introduced finding on a banned rule and locale exits 1 in every mode, all other rules keep shadow — and its step joins `validate.yml`'s gating list. Locale scope is deliberate: the em dash is required in Russian and native in five more locales, and the en dash is the native mark in thirteen; no locale rule was created. Verified on a throwaway branch (English em dash and spaced hyphen: `BANNED`, exit 1; German em dash and a plain English sentence: exit 0). Four assertions added to `npm run test:editorial-footprint` (now 61). | user decision |
 | 2026-09-01 | **`specificityDeficit`: six console and storefront names added to the `platform` rule** — `Xbox`, `PlayStation`, `PSN`, `Steam`, `Valorant`, `Garena`. The list already carried Roblox, Fortnite, PUBG and Minecraft, so it was never social-only, and there is no principled reason "Roblox" reads as a concrete fact while "Xbox" does not. The omission systematically under-scored every page whose subject is game identity: measured on `/updates/`, it inflated `specificityDeficit` on `forza-horizon-6-gamertag-rules` from 4.18 to 10.51 and on `lienquan-mobile-name-penalty-update` from 7.34 to 9.15, with no page changing by one word. **Site-wide effect measured before landing: 152 pages improve, 4,032 unchanged, 444 worsen by at most 5.1 points, site median unchanged at 9.9.** The 444 are pages naming no platform at all; they did not get worse, their cohort median got more accurate, which is the dimension working as designed. 34 of them cross the 10-point percentile regression rule, which is why the baseline is regenerated in the commit that follows this one. `Steam` is the only token colliding with a common English word, so the rule stays case-sensitive — all 85 pages carrying capitalised "Steam" mean Valve's, checked 2026-09-01. Two assertions added to `npm run test:editorial-footprint` (now 57) and verified against a deliberately broken input: reverting the six names fails the first and leaves the case-sensitivity one green. | rule bug |
 
 ---
