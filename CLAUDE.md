@@ -2560,9 +2560,32 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 ## Automated Workflows
 
 ### `update-sitemap.yml`
-- **Schedule**: Daily at 00:00 UTC
+- **Schedule**: Daily at 00:00 UTC — **paused since 2026-08-20** (the schedule
+  lines are commented out in the workflow, with the reason; `workflow_dispatch`
+  still works). Resuming is a decision tied to the 2026-08-16 organic-search
+  incident, not a tooling question.
 - **Action**: Runs `scripts/update-sitemap.js`, auto-commits `sitemap.xml` with `[skip ci]`
 - **Do not** edit `sitemap.xml` manually — it will be overwritten
+
+**`<lastmod>` means "what a reader sees changed" (rules as of 2026-09-02).**
+`scripts/lib/content-significance.js` hashes each page and
+`data/sitemap-lastmod-cache.json` holds `{hash, lastmod}` per URL; a date
+advances only when the hash moves. Three classes never move it, each learned
+from a real mass-bump: aria-labels and head metadata (2,533 pages on
+2026-08-15/16), the generated static footer block (all 4,576 URLs would have
+advanced on 2026-08-20 after #790), and punctuation or case alone (~2,800 pages
+after the 2026-09-02 template-tier em-dash pass). Symbols and copy payloads are
+hashed verbatim, because on this site a currency sign or a kaomoji *is* the
+content. When a date does advance it is the date of the newest commit that
+changed the hash, found by walking the file's recent commits, not the mesh or
+template pass that happened to touch the file last.
+
+**If you change what the hash covers, re-baseline the cache in the same PR:**
+`npm run rebaseline:sitemap-cache -- <commit of the last sitemap run>` (that
+commit is `git log -1 -- data/sitemap-lastmod-cache.json`). The stored hashes
+were made by the old function; without this, the next run reads every URL as
+changed. `npm run test:content-significance` gates the rules in CI and encodes
+each mass-bump as a non-catch.
 
 ### `tweet-queue.yml`
 - **Schedule**: Daily at 09:00 UTC (also triggerable manually)

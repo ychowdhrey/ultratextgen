@@ -406,6 +406,17 @@ jobs:
         continue-on-error: true
         run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
 
+      # Gating, no backlog: fixtures for the sitemap's significance hash, the
+      # rule that decides whether a page's <lastmod> advances. It encodes the
+      # two mass-bumps this repo actually produced (the site-wide static footer
+      # on 2026-08-20, the template-tier punctuation pass on 2026-09-02) as
+      # NON-catches, and the changes a reader can see as catches, so a future
+      # edit cannot silently re-enable either failure.
+      - name: Run content-significance tests
+        id: content_significance_tests
+        continue-on-error: true
+        run: npm run test:content-significance | tee content-significance-tests.log
+
       # Diff-scoped and GATING. Page copy is hand-written once per spec in
       # data/library_page_specs/, and nothing compared those specs to each
       # other: 45 sentences repeat across more than one spec and 416 of 591
@@ -592,6 +603,11 @@ jobs:
             cat editorial-footprint-tests.log
             echo '```'
             echo ""
+            echo "### Content-significance tests — \`${{ steps.content_significance_tests.outcome }}\`"
+            echo '```'
+            cat content-significance-tests.log
+            echo '```'
+            echo ""
             echo "### Printables generator parity tests — \`${{ steps.printables_parity_tests.outcome }}\`"
             echo '```'
             cat printables-parity-tests.log
@@ -655,6 +671,7 @@ jobs:
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
+          steps.content_significance_tests.outcome == 'failure' ||
           steps.printables_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||

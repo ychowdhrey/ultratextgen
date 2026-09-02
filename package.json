@@ -60,6 +60,8 @@
     "refresh:events": "python3 scripts/refresh-event-pages.py",
     "check:counter-claims": "node scripts/check-counter-claims.js",
     "test:sitemap-images": "node scripts/update-sitemap.test.js",
+    "test:content-significance": "node scripts/lib/content-significance.test.js",
+    "rebaseline:sitemap-cache": "node scripts/rebaseline-sitemap-lastmod-cache.js",
     "test:page-infra-targets": "node scripts/lib/page-infra-targets.test.js",
     "plan:library-locale": "python3 scripts/plan-library-locale-batch.py",
     "check:tile-codepoints": "python3 scripts/check-tile-codepoints.py",

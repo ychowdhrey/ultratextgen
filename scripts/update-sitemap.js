@@ -2,8 +2,8 @@
 
 const fs   = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
-const { significanceHash } = require('./lib/content-significance');
+const { execSync, execFileSync } = require('child_process');
+const { significanceHash, pickSignificantDate } = require('./lib/content-significance');
 
 const BASE_URL     = 'https://ultratextgen.com';
 const SITEMAP_PATH = path.resolve(__dirname, '..', 'sitemap.xml');
@@ -162,6 +162,55 @@ function todayDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+// ─── Significant lastmod: date the change a reader can see ───────────────────
+//
+// getGitLastMod() returns the newest commit that TOUCHED the file. On this site
+// that is usually the wrong date: a mesh pass, a static-footer rebuild or a
+// template fix lands on thousands of pages after their real edit, so 2,000
+// pages would all report the same day. So for a page whose hash moved, walk its
+// recent commits newest-first, hash each blob, and take the newest commit whose
+// hash differs from the one before it (scripts/lib/content-significance.js,
+// pickSignificantDate). Only bumped pages pay for the walk; a held page costs
+// nothing, as before.
+
+const SIGNIFICANT_WALK_LIMIT = 15;
+
+function gitTouches(filePath, limit) {
+  try {
+    // execFileSync, not execSync: the format string carries a `|`, which a
+    // shell would read as a pipe and silently return nothing — every page
+    // would then date as today, which is the failure this walk exists to fix.
+    const out = execFileSync('git', ['log', '-n', String(limit), '--format=%H|%cI', '--', filePath],
+      { cwd: REPO_ROOT, encoding: 'utf8' }).trim();
+    if (!out) return [];
+    return out.split('\n').map((line) => {
+      const [sha, iso] = line.split('|');
+      return { sha, date: iso.split('T')[0] };
+    });
+  } catch {
+    return [];
+  }
+}
+
+function blobHash(sha, filePath) {
+  try {
+    return significanceHash(execFileSync('git', ['show', `${sha}:${filePath}`],
+      { cwd: REPO_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }));
+  } catch {
+    return null;
+  }
+}
+
+function getSignificantLastMod(filePath, currentHash) {
+  const touches = gitTouches(filePath, SIGNIFICANT_WALK_LIMIT);
+  if (!touches.length) return todayDate();
+  const entries = touches.map((t) => ({ date: t.date, hash: blobHash(t.sha, filePath) }));
+  // The edit is still only in the working tree (HEAD's blob hashes differently):
+  // git cannot date it, so today is the honest answer — same rule as before.
+  if (entries[0].hash !== null && entries[0].hash !== currentHash) return todayDate();
+  return pickSignificantDate(entries) || touches[0].date;
+}
+
 // ─── lastmod significance cache ───────────────────────────────────────────────
 //
 // <lastmod> must mean "the content meaningfully changed", not "some byte in the
@@ -281,13 +330,12 @@ function generateSitemap() {
       lastmod = seed[url];                    // first run — inherit, never mass-bump
       held++;
     } else {
-      // Real change, or a genuinely new page. getGitLastMod is right in CI, where
-      // the sitemap job runs after the commit lands. But if the edit is still only
-      // in the working tree, git reports the PREVIOUS commit's date — older than
-      // the date we already cached — and lastmod would silently fail to advance
-      // even though the content moved. Fall back to today in exactly that case.
-      const gitDate = getGitLastMod(filePath);
-      lastmod = (prev && gitDate <= prev.lastmod) ? todayDate() : gitDate;
+      // Real change, or a genuinely new page. Date it by the newest commit that
+      // changed what a reader sees, not the newest commit that touched the file
+      // (see getSignificantLastMod). A date can never move backwards: if the walk
+      // lands before the date already published, keep the published one.
+      const sigDate = getSignificantLastMod(filePath, hash);
+      lastmod = (prev && sigDate < prev.lastmod) ? prev.lastmod : sigDate;
       bumped++;
     }
     nextCache[url] = { hash, lastmod };
