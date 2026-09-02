@@ -38,7 +38,7 @@
       "h2": "Jeden Znak, Dwie Skłócone Waluty",
       "intro": "Ten sam znak ₩ oznacza zarówno południowokoreański won (KRW), jak i północnokoreański won (KPW) — dwie waluty dwóch państw, które rozdzieliły się w 1948 roku i formalnie wciąż są w stanie wojny. Po koreańsku jednostkę zapisuje się w alfabecie hangul jako 원. Nic w samym symbolu nie odróżnia obu walut — robi to wyłącznie trzyliterowy kod waluty.",
       "symbols": [
-        { "char": "₩", "label": "Znak Wona (U+20A9) — Wspólny dla KRW (Południe) i KPW (Północ)" },
+        { "char": "₩", "label": "Znak Wona (U+20A9): Wspólny dla KRW (Południe) i KPW (Północ)" },
         { "char": "원", "label": "Won Zapisany w Hangul (원)" }
       ]
     },
@@ -49,12 +49,12 @@
       "intro": "Won, jen i juan to językowi kuzyni — wszystkie trzy wywodzą się od znaku 圓 (uproszczonego do 元 we współczesnych Chinach), oznaczającego „okrągły”, od okrągłych srebrnych dolarów krążących niegdyś po całej Azji. Japoński jen i chiński juan mają nawet wspólny symbol, ¥, co po części tłumaczy, dlaczego osoby niebędące rodzimymi użytkownikami czasem mylą ₩ z ¥ na pierwszy rzut oka.",
       "symbols": [
         { "char": "¥", "label": "Znak Jena i Juana (U+00A5)" },
-        { "char": "圓", "label": "Hanja 圓 — „Okrągły”, Wspólny Rdzeń" },
+        { "char": "圓", "label": "Hanja 圓: „Okrągły”, Wspólny Rdzeń" },
         { "char": "元", "label": "Juan (元)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-euro/",

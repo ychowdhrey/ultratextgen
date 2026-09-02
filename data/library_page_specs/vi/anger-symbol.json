@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/anger-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/anger-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/anger-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/anger-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/anger-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/anger-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,10 +37,22 @@
       "h2": "Ký Hiệu Tức Giận (Gân Nổi Manga)",
       "intro": "Chính dấu gân nổi, và các hiệu ứng khung truyện mà nó thuộc cùng một họ.",
       "symbols": [
-        { "char": "💢", "label": "Ký Hiệu Tức Giận" },
-        { "char": "💥", "label": "Va Chạm" },
-        { "char": "💦", "label": "Giọt Mồ Hôi" },
-        { "char": "💤", "label": "Zzz (Đang Ngủ)" }
+        {
+          "char": "💢",
+          "label": "Ký Hiệu Tức Giận"
+        },
+        {
+          "char": "💥",
+          "label": "Va Chạm"
+        },
+        {
+          "char": "💦",
+          "label": "Giọt Mồ Hôi"
+        },
+        {
+          "char": "💤",
+          "label": "Zzz (Đang Ngủ)"
+        }
       ]
     },
     {
@@ -40,10 +61,22 @@
       "h2": "Emoji Tức Giận & Phẫn Nộ",
       "intro": "Các biểu cảm khuôn mặt mà 💢 được ghép cùng để đẩy một phản ứng từ khó chịu lên đến giận dữ.",
       "symbols": [
-        { "char": "😠", "label": "Mặt Giận Dữ" },
-        { "char": "😡", "label": "Mặt Phụng Phịu (Phẫn Nộ)" },
-        { "char": "🤬", "label": "Mặt Có Ký Hiệu Trên Miệng" },
-        { "char": "🗯️", "label": "Bong Bóng Giận Phải" }
+        {
+          "char": "😠",
+          "label": "Mặt Giận Dữ"
+        },
+        {
+          "char": "😡",
+          "label": "Mặt Phụng Phịu (Phẫn Nộ)"
+        },
+        {
+          "char": "🤬",
+          "label": "Mặt Có Ký Hiệu Trên Miệng"
+        },
+        {
+          "char": "🗯️",
+          "label": "Bong Bóng Giận Phải"
+        }
       ]
     },
     {
@@ -52,17 +85,40 @@
       "h2": "Ký Hiệu Bực Bội & Khó Chịu",
       "intro": "Các dấu nhẹ nhàng hơn cho sự khó chịu chưa leo thang thành giận dữ trọn vẹn.",
       "symbols": [
-        { "char": "😤", "label": "Mặt Phì Hơi Qua Mũi" },
-        { "char": "🙄", "label": "Mặt Trợn Mắt" },
-        { "char": "😒", "label": "Mặt Không Vui" },
-        { "char": "⚡", "label": "Điện Áp Cao" }
+        {
+          "char": "😤",
+          "label": "Mặt Phì Hơi Qua Mũi"
+        },
+        {
+          "char": "🙄",
+          "label": "Mặt Trợn Mắt"
+        },
+        {
+          "char": "😒",
+          "label": "Mặt Không Vui"
+        },
+        {
+          "char": "⚡",
+          "label": "Điện Áp Cao"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/emoji-combos/", "title": "Tổ Hợp Emoji", "desc": "Các tổ hợp thẩm mỹ và phản ứng dựng sẵn, gồm nhiều tổ hợp xây quanh gương mặt giận dữ và phẫn nộ." },
-    { "href": "/vi/symbol/stop-sign/", "title": "Ký Hiệu Biển Báo Dừng", "desc": "Một emoji khác mà toàn bộ ý nghĩa dựa vào một hình dạng quen thuộc ngoài đời thay vì một khuôn mặt." },
-    { "href": "/usecase/zalgo-text/", "title": "Công Cụ Tạo Chữ Glitch", "desc": "Khi một mặt giận đơn thuần chưa đủ điên loạn — chữ Zalgo ma quái với các mẫu dựng sẵn chỉ một cú nhấp." }
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Tổ Hợp Emoji",
+      "desc": "Các tổ hợp thẩm mỹ và phản ứng dựng sẵn, gồm nhiều tổ hợp xây quanh gương mặt giận dữ và phẫn nộ."
+    },
+    {
+      "href": "/vi/symbol/stop-sign/",
+      "title": "Ký Hiệu Biển Báo Dừng",
+      "desc": "Một emoji khác mà toàn bộ ý nghĩa dựa vào một hình dạng quen thuộc ngoài đời thay vì một khuôn mặt."
+    },
+    {
+      "href": "/usecase/zalgo-text/",
+      "title": "Công Cụ Tạo Chữ Glitch",
+      "desc": "Khi một mặt giận đơn thuần chưa đủ điên loạn — chữ Zalgo ma quái với các mẫu dựng sẵn chỉ một cú nhấp."
+    }
   ]
 }

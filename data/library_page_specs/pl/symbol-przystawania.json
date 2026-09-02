@@ -28,8 +28,8 @@
       "h2": "Symbol Przystawania — ≅",
       "intro": "Glif używany w geometrii dla przystawania — ten sam kształt i rozmiar — mimo że oficjalna nazwa Unicode dla tego znaku nie wspomina tego słowa. Jego bliski wizualny kuzyn ≃ ma pojedynczą tyldę zamiast podwójnej.",
       "symbols": [
-        { "char": "≅", "label": "Przystaje do — Oficjalnie „W Przybliżeniu Równe” (U+2245)" },
-        { "char": "≃", "label": "Asymptotycznie Równe (U+2243) — Kuzyn z Pojedynczą Tyldą" }
+        { "char": "≅", "label": "Przystaje do: Oficjalnie „W Przybliżeniu Równe” (U+2245)" },
+        { "char": "≃", "label": "Asymptotycznie Równe (U+2243): Kuzyn z Pojedynczą Tyldą" }
       ]
     },
     {
@@ -38,9 +38,9 @@
       "h2": "≅ kontra ≈ kontra ≡ — Znaki Mylone",
       "intro": "Trzy symbole zbudowane z ułożonych kresek, nieustannie zamieniane miejscami, z których każdy ma własne zadanie. Przystawanie (ten sam kształt i rozmiar), przybliżona równość (zgrubne oszacowanie) i tożsamość (prawdziwa identyczność oraz przystawanie modularne).",
       "symbols": [
-        { "char": "≅", "label": "W Przybliżeniu Równe (U+2245) — Używane dla Przystawania Geometrycznego" },
-        { "char": "≈", "label": "Prawie Równe (U+2248) — Przybliżenie, np. π ≈ 3,14" },
-        { "char": "≡", "label": "Identyczne (U+2261) — Tożsamość i Przystawanie Modularne" }
+        { "char": "≅", "label": "W Przybliżeniu Równe (U+2245): Używane dla Przystawania Geometrycznego" },
+        { "char": "≈", "label": "Prawie Równe (U+2248): Przybliżenie, np. π ≈ 3,14" },
+        { "char": "≡", "label": "Identyczne (U+2261): Tożsamość i Przystawanie Modularne" }
       ]
     },
     {
@@ -56,7 +56,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/symbole-matematyczne/",

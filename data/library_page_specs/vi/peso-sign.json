@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/peso-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/peso-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Hai Ký Hiệu Cùng Được Gọi Là «Ký Hiệu Peso» — ₱ và $",
       "intro": "Cả hai ký hiệu này đều được gọi là ký hiệu peso. ₱ là ký tự riêng của đồng peso Philippines; $ là ký hiệu mà gần như mọi đồng peso khác sử dụng — vì bản thân ký hiệu đô la có lẽ khởi đầu như một cách viết tắt cho đồng peso Tây Ban Nha. Liệu nó bắt nguồn từ chữ viết tay «Ps» hay từ hình ảnh Trụ Cột Hercules quấn chữ S trên đồng tiền Tây Ban Nha vẫn còn là điều các sử gia thật sự tranh cãi.",
       "symbols": [
-        { "char": "₱", "label": "Ký Hiệu Peso (U+20B1) — Glyph Riêng Của Đồng Peso Philippines" },
-        { "char": "$", "label": "Ký Hiệu Đô La (U+0024) — Ký Hiệu Mà Đồng Peso Mexico, Argentina Và Nhiều Nước Khác Thực Sự Dùng" }
+        {
+          "char": "₱",
+          "label": "Ký Hiệu Peso (U+20B1): Glyph Riêng Của Đồng Peso Philippines"
+        },
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La (U+0024): Ký Hiệu Mà Đồng Peso Mexico, Argentina Và Nhiều Nước Khác Thực Sự Dùng"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Nhóm Ký Hiệu Tiền Tệ «Chữ Gạch Ngang»",
       "intro": "Ký hiệu peso là một chữ P hoa bị gạch ngang bởi hai vạch song song — chính công thức đứng sau cả một thế hệ ký hiệu tiền tệ hiện đại, mỗi ký hiệu là một chữ cái quốc gia bị gạch bởi một hoặc hai vạch. Sẵn sàng để dán ở bất cứ đâu.",
       "symbols": [
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9) — Chữ R Gạch Ngang, Chính Thức Thông Qua Năm 2010" },
-        { "char": "₩", "label": "Ký Hiệu Won (U+20A9) — Chữ W Với Hai Vạch" },
-        { "char": "₦", "label": "Ký Hiệu Naira (U+20A6) — Chữ N Gạch Ngang (Nigeria)" },
-        { "char": "₴", "label": "Ký Hiệu Hryvnia (U+20B4) — Chữ Cái Gạch Ngang Của Ukraine" },
-        { "char": "₫", "label": "Ký Hiệu Đồng (U+20AB) — Chữ D Có Vạch Ngang (Việt Nam)" },
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — Chữ E Tròn Với Hai Nét Gạch" }
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ (U+20B9): Chữ R Gạch Ngang, Chính Thức Thông Qua Năm 2010"
+        },
+        {
+          "char": "₩",
+          "label": "Ký Hiệu Won (U+20A9): Chữ W Với Hai Vạch"
+        },
+        {
+          "char": "₦",
+          "label": "Ký Hiệu Naira (U+20A6): Chữ N Gạch Ngang (Nigeria)"
+        },
+        {
+          "char": "₴",
+          "label": "Ký Hiệu Hryvnia (U+20B4): Chữ Cái Gạch Ngang Của Ukraine"
+        },
+        {
+          "char": "₫",
+          "label": "Ký Hiệu Đồng (U+20AB): Chữ D Có Vạch Ngang (Việt Nam)"
+        },
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro (U+20AC): Chữ E Tròn Với Hai Nét Gạch"
+        }
       ]
     },
     {
@@ -52,18 +85,44 @@
       "h2": "Ký Tự Dễ Bị Nhầm Với ₱",
       "intro": "Vì ₱ về cơ bản là chữ P bị gạch ngang, nó thường bị hoán đổi với các ký tự hình chữ P khác — kể cả một ký tự thuộc về một đồng tiền hoàn toàn khác. Mỗi ký tự là một mã điểm Unicode riêng, không phải một biến thể kiểu chữ.",
       "symbols": [
-        { "char": "₽", "label": "Ký Hiệu Ruble (U+20BD) — Tiền Tệ Của Nga, Cũng Là Chữ P Gạch Ngang Nhưng Khác Vạch" },
-        { "char": "P", "label": "Chữ Latin Hoa P (U+0050) — Ký Tự Thay Thế Đơn Giản Thường Được Gõ Cho Peso" },
-        { "char": "Ᵽ", "label": "Chữ Latin Hoa P Có Gạch Ngang (U+2C63) — Dùng Trong Ngôn Ngữ Học, Không Phải Tiền Tệ" },
-        { "char": "Ρ", "label": "Chữ Hoa Hy Lạp Rho (U+03A1) — Trông Giống Chữ P" },
-        { "char": "Р", "label": "Chữ Cyrillic Hoa Er (U+0420) — Một Ký Tự Khác Dễ Nhầm Với P" }
+        {
+          "char": "₽",
+          "label": "Ký Hiệu Ruble (U+20BD): Tiền Tệ Của Nga, Cũng Là Chữ P Gạch Ngang Nhưng Khác Vạch"
+        },
+        {
+          "char": "P",
+          "label": "Chữ Latin Hoa P (U+0050): Ký Tự Thay Thế Đơn Giản Thường Được Gõ Cho Peso"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "Chữ Latin Hoa P Có Gạch Ngang (U+2C63): Dùng Trong Ngôn Ngữ Học, Không Phải Tiền Tệ"
+        },
+        {
+          "char": "Ρ",
+          "label": "Chữ Hoa Hy Lạp Rho (U+03A1): Trông Giống Chữ P"
+        },
+        {
+          "char": "Р",
+          "label": "Chữ Cyrillic Hoa Er (U+0420): Một Ký Tự Khác Dễ Nhầm Với P"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Duyệt qua mọi ký hiệu tiền tệ thế giới — đô la, euro, bảng Anh, yên và peso — cạnh nhau trong một trang." },
-    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu mà gần như mọi đồng peso thực sự dùng: chỉ peso Philippines có ký hiệu riêng ₱, còn peso Mexico, Argentina và Colombia đều dùng $." },
-    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee (₹)", "desc": "Đồng rupee Ấn Độ — giống ₱, một ký hiệu tiền tệ hiện đại được quyết định riêng cho một quốc gia bằng cách gạch một chữ cái với các vạch song song." }
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Duyệt qua mọi ký hiệu tiền tệ thế giới — đô la, euro, bảng Anh, yên và peso — cạnh nhau trong một trang."
+    },
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La ($)",
+      "desc": "Ký hiệu mà gần như mọi đồng peso thực sự dùng: chỉ peso Philippines có ký hiệu riêng ₱, còn peso Mexico, Argentina và Colombia đều dùng $."
+    },
+    {
+      "href": "/vi/symbol/rupee-sign/",
+      "title": "Ký Hiệu Rupee (₹)",
+      "desc": "Đồng rupee Ấn Độ — giống ₱, một ký hiệu tiền tệ hiện đại được quyết định riêng cho một quốc gia bằng cách gạch một chữ cái với các vạch song song."
+    }
   ]
 }

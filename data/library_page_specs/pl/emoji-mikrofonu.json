@@ -38,7 +38,7 @@
       "h2": "Emoji, z Którymi Bywa Mylony",
       "intro": "Symbole, po które ludzie sięgają, oczekując ręcznego mikrofonu, a które są w rzeczywistości osobnymi, inaczej zakodowanymi emoji.",
       "symbols": [
-        { "char": "🎙️", "label": "Mikrofon Studyjny (U+1F399) — mikrofon nadawczy/podcastowy na statywie" },
+        { "char": "🎙️", "label": "Mikrofon Studyjny (U+1F399): mikrofon nadawczy/podcastowy na statywie" },
         { "char": "🔊", "label": "Głośnik z Wysoką Głośnością (U+1F50A)" },
         { "char": "🗣️", "label": "Mówiąca Głowa (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Megafon (U+1F4E2)" }
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/object-emojis/",

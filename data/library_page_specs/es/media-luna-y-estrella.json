@@ -34,7 +34,7 @@
       "h2": "No es lo Mismo que una Luna o una Estrella Sueltas",
       "intro": "La media luna y estrella es un único glifo combinado. Los caracteres independientes de luna creciente y estrella a los que la gente suele recurrir en su lugar tienen cada uno su propio punto de código y su propia función.",
       "symbols": [
-        { "char": "☾", "label": "Luna en Cuarto Menguante (U+263E) — Media Luna Simple" },
+        { "char": "☾", "label": "Luna en Cuarto Menguante (U+263E): Media Luna Simple" },
         { "char": "☽", "label": "Luna en Cuarto Creciente (U+263D)" },
         { "char": "🌙", "label": "Emoji de Luna Creciente (U+1F319)" },
         { "char": "⭐", "label": "Estrella Blanca Mediana (U+2B50)" },

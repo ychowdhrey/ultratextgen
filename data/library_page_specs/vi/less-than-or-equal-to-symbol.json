@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/less-than-or-equal-to-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Nhỏ Hơn Hoặc Bằng, Trong Toán Học Và Mã Nguồn",
       "intro": "Ký hiệu toán học, và cặp hai ký tự thay thế mà hầu hết ngôn ngữ lập trình dùng thay vì ≤, vì bản thân ký hiệu này chưa bao giờ là một phần của ASCII.",
       "symbols": [
-        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng (Toán Học)" },
-        { "char": "<=", "label": "Nhỏ Hơn Hoặc Bằng (Mã Nguồn — C, Python, JavaScript, Java, SQL)" }
+        {
+          "char": "≤",
+          "label": "Nhỏ Hơn Hoặc Bằng (Toán Học)"
+        },
+        {
+          "char": "<=",
+          "label": "Nhỏ Hơn Hoặc Bằng (Mã Nguồn: C, Python, JavaScript, Java, SQL)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Ký Hiệu Thường Bị Nhầm Với ≤",
       "intro": "Những ký hiệu này đều mang ý nghĩa gần tương tự nhau nhưng là các ký tự Unicode riêng biệt từ những truyền thống kiểu chữ khác nhau.",
       "symbols": [
-        { "char": "≦", "label": "Nhỏ Hơn Trên Bằng (U+2266)" },
-        { "char": "⩽", "label": "Nhỏ Hơn Hoặc Bằng Nghiêng (U+2A7D) — dạng được ISO 31-11 ưu tiên" },
-        { "char": "≲", "label": "Nhỏ Hơn Hoặc Tương Đương (U+2272)" },
-        { "char": "≪", "label": "Nhỏ Hơn Rất Nhiều (U+226A) — một quan hệ khác, không phải biến thể của ≤" }
+        {
+          "char": "≦",
+          "label": "Nhỏ Hơn Trên Bằng (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Nhỏ Hơn Hoặc Bằng Nghiêng (U+2A7D): dạng được ISO 31-11 ưu tiên"
+        },
+        {
+          "char": "≲",
+          "label": "Nhỏ Hơn Hoặc Tương Đương (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Nhỏ Hơn Rất Nhiều (U+226A): một quan hệ khác, không phải biến thể của ≤"
+        }
       ]
     },
     {
@@ -50,18 +77,44 @@
       "h2": "Các Ký Hiệu So Sánh Liên Quan",
       "intro": "Các ký hiệu quan hệ khác mà ≤ thường đi cùng trong bất đẳng thức và ký hiệu tập hợp.",
       "symbols": [
-        { "char": "≥", "label": "Lớn Hơn Hoặc Bằng (U+2265)" },
-        { "char": "<", "label": "Nhỏ Hơn" },
-        { "char": ">", "label": "Lớn Hơn" },
-        { "char": "≠", "label": "Không Bằng" },
-        { "char": "=", "label": "Dấu Bằng" }
+        {
+          "char": "≥",
+          "label": "Lớn Hơn Hoặc Bằng (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Nhỏ Hơn"
+        },
+        {
+          "char": ">",
+          "label": "Lớn Hơn"
+        },
+        {
+          "char": "≠",
+          "label": "Không Bằng"
+        },
+        {
+          "char": "=",
+          "label": "Dấu Bằng"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Toán tử, ký hiệu tập hợp và hằng số toán học trong một trang tra cứu." },
-    { "href": "/vi/symbol/not-equal-sign/", "title": "Ký Hiệu Không Bằng (≠)", "desc": "Được Euler dùng, bị loại khỏi ASCII, và vì sao mã nguồn dùng != thay thế." },
-    { "href": "/vi/symbol/less-than-greater-than/", "title": "Nhỏ Hơn & Lớn Hơn", "desc": "Các ký hiệu so sánh nghiêm ngặt mà ≤ và ≥ được xây dựng từ đó, và vì sao chúng có thể làm hỏng mã HTML." }
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Toán tử, ký hiệu tập hợp và hằng số toán học trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/not-equal-sign/",
+      "title": "Ký Hiệu Không Bằng (≠)",
+      "desc": "Được Euler dùng, bị loại khỏi ASCII, và vì sao mã nguồn dùng != thay thế."
+    },
+    {
+      "href": "/vi/symbol/less-than-greater-than/",
+      "title": "Nhỏ Hơn & Lớn Hơn",
+      "desc": "Các ký hiệu so sánh nghiêm ngặt mà ≤ và ≥ được xây dựng từ đó, và vì sao chúng có thể làm hỏng mã HTML."
+    }
   ]
 }

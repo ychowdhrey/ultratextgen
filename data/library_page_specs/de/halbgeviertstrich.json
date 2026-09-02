@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/halbgeviertstrich/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/halbgeviertstrich/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/en-dash/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "halbgeviertstrich",
@@ -29,8 +37,14 @@
       "h2": "Der Halbgeviertstrich & der Zifferngeviertstrich",
       "intro": "Der Halbgeviertstrich für Bereiche und Verbindungen, dazu der Zifferngeviertstrich — gleiche Breite, aber Ziffern vorbehalten, damit Zahlen in Tabellen und Telefonnummern sauber untereinanderstehen. Bereit zum Einfügen, überall.",
       "symbols": [
-        { "char": "–", "label": "Halbgeviertstrich (U+2013)" },
-        { "char": "‒", "label": "Zifferngeviertstrich (U+2012)" }
+        {
+          "char": "–",
+          "label": "Halbgeviertstrich (U+2013)"
+        },
+        {
+          "char": "‒",
+          "label": "Zifferngeviertstrich (U+2012)"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Striche & Bindestriche, mit denen er verwechselt wird",
       "intro": "Die Zeichen, gegen die der Halbgeviertstrich ausgetauscht wird — jedes mit eigener Breite, eigenem Codepoint und eigener Aufgabe, vom schlichten Tastatur-Bindestrich bis zum Geviertstrich und dem echten Minuszeichen.",
       "symbols": [
-        { "char": "—", "label": "Geviertstrich (U+2014)" },
-        { "char": "-", "label": "Bindestrich-Minus (Tastatur)" },
-        { "char": "‐", "label": "Bindestrich, typografisch (U+2010)" },
-        { "char": "−", "label": "Minuszeichen (U+2212)" },
-        { "char": "―", "label": "Waagerechter Strich (U+2015)" }
+        {
+          "char": "—",
+          "label": "Geviertstrich (U+2014)"
+        },
+        {
+          "char": "-",
+          "label": "Bindestrich-Minus (Tastatur)"
+        },
+        {
+          "char": "‐",
+          "label": "Bindestrich, typografisch (U+2010)"
+        },
+        {
+          "char": "−",
+          "label": "Minuszeichen (U+2212)"
+        },
+        {
+          "char": "―",
+          "label": "Waagerechter Strich (U+2015)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "Zeichen, die ein Halbgeviertstrich als Einschub ersetzt",
       "intro": "Im britischen, australischen und kanadischen Englisch setzt ein mit Leerzeichen umgebener Halbgeviertstrich – wie hier – einen Einschub, wo das amerikanische Englisch einen eng gesetzten Geviertstrich verwendet; dies sind die Zeichen, mit denen er zusammenarbeitet oder die er ersetzt.",
       "symbols": [
-        { "char": ",", "label": "Komma" },
-        { "char": ":", "label": "Doppelpunkt" },
-        { "char": ";", "label": "Semikolon" },
-        { "char": "(", "label": "Runde Klammer auf" },
-        { "char": ")", "label": "Runde Klammer zu" }
+        {
+          "char": ",",
+          "label": "Komma"
+        },
+        {
+          "char": ":",
+          "label": "Doppelpunkt"
+        },
+        {
+          "char": ";",
+          "label": "Semikolon"
+        },
+        {
+          "char": "(",
+          "label": "Runde Klammer auf"
+        },
+        {
+          "char": ")",
+          "label": "Runde Klammer zu"
+        }
       ]
     }
   ],

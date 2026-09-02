@@ -228,7 +228,7 @@ for (const rel of changedFiles) {
   // Was the ONLY structural change the addition of outbound links? If so, the
   // question of whether a sibling must be touched depends on that sibling's
   // locale — see linksUnreachableFor() below. Anything else that moved (a
-  // section, an FAQ, symbol tiles, a combo-set section, or a removed link) is translatable content
+  // section, an FAQ, symbol tiles, a table, a combo-set section, or a removed link) is translatable content
   // and always requires the sibling to be synced or excepted.
   const addedLinks = structuralDiff ? structuralDiff.onlyInLocale : [];
   const onlyAddedLinks =
@@ -238,6 +238,7 @@ for (const rel of changedFiles) {
     structuralDiff.h2Delta === 0 &&
     structuralDiff.faqDelta === 0 &&
     structuralDiff.symbolTilesDelta === 0 &&
+    structuralDiff.tableDelta === 0 &&
     structuralDiff.collectionsOnlyInEN.length === 0 &&
     structuralDiff.collectionsOnlyInLocale.length === 0 &&
     structuralDiff.collectionGroupDeltas.length === 0;

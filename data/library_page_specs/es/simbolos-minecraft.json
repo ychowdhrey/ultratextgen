@@ -29,7 +29,6 @@
   "hero_h1": "Símbolos Minecraft",
   "hero_tagline": "Corchetes para el chat, bloques de sombreado para los MOTD, líneas de marco e iconos temáticos que se ven bien en la fuente de Minecraft. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "La fuente predeterminada de Minecraft muestra una buena parte de Unicode, y por eso los servidores decoran los MOTD, los rangos del chat, los hologramas y las pantallas de expulsión con caracteres como ►, ▌ y ☠. Esta biblioteca reúne los símbolos Minecraft que se ven de forma confiable en el chat, en la lista de servidores, en las líneas del marcador y en la configuración de los plugins: desde bloques de sombreado para los banners de MOTD hasta picos y espadas para los prefijos de rango. Pégalos en los plugins de MOTD que leen server.properties, en los formatos de chat de Essentials o en objetos renombrados en el yunque.",
-  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
   "sections": [
     {
       "id": "chat-rank-brackets",

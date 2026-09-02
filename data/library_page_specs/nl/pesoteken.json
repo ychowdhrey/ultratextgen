@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "pesoteken",
   "title": "Pesoteken: Kopieer en Plak ₱ — Alleen de Filipijnse Peso Heeft Er Een; de Rest Gebruikt $",
   "meta_description": "Kopieer het pesoteken ₱ (U+20B1) — het eigen teken van de Filipijnse peso, terwijl de Mexicaanse, Argentijnse, Colombiaanse en andere peso's allemaal met gewoon $ worden geschreven. Klik om het direct te kopiëren.",
@@ -40,11 +39,11 @@
       "symbols": [
         {
           "char": "₱",
-          "label": "Pesoteken (U+20B1) — het eigen glyph van de Filipijnse peso"
+          "label": "Pesoteken (U+20B1): het eigen glyph van de Filipijnse peso"
         },
         {
           "char": "$",
-          "label": "Dollarteken (U+0024) — het teken dat de Mexicaanse, Argentijnse en andere peso's daadwerkelijk gebruiken"
+          "label": "Dollarteken (U+0024): het teken dat de Mexicaanse, Argentijnse en andere peso's daadwerkelijk gebruiken"
         }
       ]
     },
@@ -56,27 +55,27 @@
       "symbols": [
         {
           "char": "₹",
-          "label": "Indiase Roepieteken (U+20B9) — een doorkruiste R, officieel aangenomen in 2010"
+          "label": "Indiase Roepieteken (U+20B9): een doorkruiste R, officieel aangenomen in 2010"
         },
         {
           "char": "₩",
-          "label": "Wonteken (U+20A9) — een W met twee balken"
+          "label": "Wonteken (U+20A9): een W met twee balken"
         },
         {
           "char": "₦",
-          "label": "Nairateken (U+20A6) — een doorkruiste N (Nigeria)"
+          "label": "Nairateken (U+20A6): een doorkruiste N (Nigeria)"
         },
         {
           "char": "₴",
-          "label": "Hryvniateken (U+20B4) — een doorkruiste letter voor Oekraïne"
+          "label": "Hryvniateken (U+20B4): een doorkruiste letter voor Oekraïne"
         },
         {
           "char": "₫",
-          "label": "Dongteken (U+20AB) — een doorstreepte d (Vietnam)"
+          "label": "Dongteken (U+20AB): een doorstreepte d (Vietnam)"
         },
         {
           "char": "€",
-          "label": "Euroteken (U+20AC) — een afgeronde E met twee strepen"
+          "label": "Euroteken (U+20AC): een afgeronde E met twee strepen"
         }
       ]
     },
@@ -88,23 +87,23 @@
       "symbols": [
         {
           "char": "₽",
-          "label": "Roebelteken (U+20BD) — Ruslands munt, ook een doorstreepte P maar met een andere streep"
+          "label": "Roebelteken (U+20BD): Ruslands munt, ook een doorstreepte P maar met een andere streep"
         },
         {
           "char": "P",
-          "label": "Latijnse Hoofdletter P (U+0050) — de platte vervanger die vaak voor de peso wordt getypt"
+          "label": "Latijnse Hoofdletter P (U+0050): de platte vervanger die vaak voor de peso wordt getypt"
         },
         {
           "char": "Ᵽ",
-          "label": "Latijnse Hoofdletter P met Streep (U+2C63) — een enkel doorstreepte P gebruikt in taalkunde, niet in valuta"
+          "label": "Latijnse Hoofdletter P met Streep (U+2C63): een enkel doorstreepte P gebruikt in taalkunde, niet in valuta"
         },
         {
           "char": "Ρ",
-          "label": "Griekse Hoofdletter Rho (U+03A1) — ziet eruit als een P"
+          "label": "Griekse Hoofdletter Rho (U+03A1): ziet eruit als een P"
         },
         {
           "char": "Р",
-          "label": "Cyrillische Hoofdletter Er (U+0420) — nog een P-look-alike"
+          "label": "Cyrillische Hoofdletter Er (U+0420): nog een P-look-alike"
         }
       ]
     }

@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-volto-incrinato/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/emoji-volto-incrinato/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cracking-face-emoji/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +37,10 @@
       "h2": "Emoji Volto Incrinato",
       "intro": "Il carattere in bozza in sé — copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB)" }
+        {
+          "char": "🫫",
+          "label": "Cracking Face (bozza, U+1FAEB)"
+        }
       ]
     },
     {
@@ -38,10 +49,22 @@
       "h2": "Emoji Già Esistenti a Cui Viene Spesso Paragonata",
       "intro": "Emoji di volti già codificate e pienamente supportate che coprono un territorio simile di tensione o sopraffazione — utili sostitute finché Cracking Face non sarà effettivamente disponibile.",
       "symbols": [
-        { "char": "😬", "label": "Grimacing Face" },
-        { "char": "🫠", "label": "Melting Face" },
-        { "char": "🥴", "label": "Woozy Face" },
-        { "char": "🫪", "label": "Distorted Face (l'emoji più popolare di Unicode 17.0)" }
+        {
+          "char": "😬",
+          "label": "Grimacing Face"
+        },
+        {
+          "char": "🫠",
+          "label": "Melting Face"
+        },
+        {
+          "char": "🥴",
+          "label": "Woozy Face"
+        },
+        {
+          "char": "🫪",
+          "label": "Distorted Face (l'emoji più popolare di Unicode 17.0)"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Altre Candidate in Bozza di Emoji 18.0",
       "intro": "Cracking Face non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
       "symbols": [
-        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" },
-        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" },
-        { "char": "🛙", "label": "Lighthouse (bozza, U+1F6D9)" }
+        {
+          "char": "🫝",
+          "label": "Pickle (bozza, U+1FADD)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (bozza, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (bozza, U+1F6D9)"
+        }
       ]
     }
   ],

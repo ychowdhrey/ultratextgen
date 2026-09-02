@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/om-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/om-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/om-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/om-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/om-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/om-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Ký Hiệu Om",
       "intro": "Ba ký tự Unicode cho Om: chữ ghép trong hệ chữ Devanagari, glyph hình ảnh độc lập OM SYMBOL, và Om Kỳ Na giáo riêng biệt.",
       "symbols": [
-        { "char": "ॐ", "label": "Om Chữ Devanagari" },
-        { "char": "🕉️", "label": "Ký Hiệu Om" },
-        { "char": "ꣽ", "label": "Om Kỳ Na Giáo" }
+        {
+          "char": "ॐ",
+          "label": "Om Chữ Devanagari"
+        },
+        {
+          "char": "🕉️",
+          "label": "Ký Hiệu Om"
+        },
+        {
+          "char": "ꣽ",
+          "label": "Om Kỳ Na Giáo"
+        }
       ]
     },
     {
@@ -39,10 +57,22 @@
       "h2": "Ký Hiệu Thiền Định & Yoga",
       "intro": "Các ký hiệu thường được hiển thị cùng Om trong yoga, thiền định và các bối cảnh Ấn Độ giáo/Phật giáo/Kỳ Na giáo.",
       "symbols": [
-        { "char": "🪷", "label": "Hoa Sen" },
-        { "char": "🧘", "label": "Người Ngồi Thiền" },
-        { "char": "📿", "label": "Chuỗi Hạt Cầu Nguyện" },
-        { "char": "☸️", "label": "Bánh Xe Pháp Luân" }
+        {
+          "char": "🪷",
+          "label": "Hoa Sen"
+        },
+        {
+          "char": "🧘",
+          "label": "Người Ngồi Thiền"
+        },
+        {
+          "char": "📿",
+          "label": "Chuỗi Hạt Cầu Nguyện"
+        },
+        {
+          "char": "☸️",
+          "label": "Bánh Xe Pháp Luân"
+        }
       ]
     },
     {
@@ -51,18 +81,44 @@
       "h2": "Các Ký Hiệu Tôn Giáo & Biểu Tượng Khác",
       "intro": "Các ký hiệu từ những truyền thống khác thường phù hợp với nội dung về đức tin và bản sắc.",
       "symbols": [
-        { "char": "🪯", "label": "Khanda" },
-        { "char": "✡️", "label": "Ngôi Sao David" },
-        { "char": "☪️", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
-        { "char": "☯️", "label": "Âm Dương" },
-        { "char": "✝️", "label": "Thánh Giá Latinh" }
+        {
+          "char": "🪯",
+          "label": "Khanda"
+        },
+        {
+          "char": "✡️",
+          "label": "Ngôi Sao David"
+        },
+        {
+          "char": "☪️",
+          "label": "Ngôi Sao Và Trăng Lưỡi Liềm"
+        },
+        {
+          "char": "☯️",
+          "label": "Âm Dương"
+        },
+        {
+          "char": "✝️",
+          "label": "Thánh Giá Latinh"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
-    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda", "desc": "Biểu tượng Sikh giáo mà chính trang riêng của nó đã hiển thị Om như một ký hiệu tôn giáo liên quan." },
-    { "href": "/vi/symbol/hamsa-symbol/", "title": "Ký Hiệu Hamsa", "desc": "Một ký hiệu liên tôn giáo khác được trình bày như lịch sử đã ghi chép, không thiên vị bên nào." }
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Ký Hiệu Tôn Giáo",
+      "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/khanda-symbol/",
+      "title": "Ký Hiệu Khanda",
+      "desc": "Biểu tượng Sikh giáo mà chính trang riêng của nó đã hiển thị Om như một ký hiệu tôn giáo liên quan."
+    },
+    {
+      "href": "/vi/symbol/hamsa-symbol/",
+      "title": "Ký Hiệu Hamsa",
+      "desc": "Một ký hiệu liên tôn giáo khác được trình bày như lịch sử đã ghi chép, không thiên vị bên nào."
+    }
   ]
 }

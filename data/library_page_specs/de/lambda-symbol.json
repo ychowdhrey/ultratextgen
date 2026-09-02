@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/lambda-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/lambda-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "der-buchstabe",
@@ -29,8 +37,14 @@
       "h2": "Das Lambda-Symbol — λ & Λ",
       "intro": "Der griechische Buchstabe selbst — der 11. im Alphabet, im griechischen Zahlensystem 30 wert, abstammend vom phönizischen Buchstaben Lamed. Das kleine λ leistet fast die gesamte kulturelle Arbeit; das große Λ ist ein eigenständiges Mathe- und Kosmologie-Symbol.",
       "symbols": [
-        { "char": "λ", "label": "Griechischer Kleinbuchstabe Lambda (U+03BB)" },
-        { "char": "Λ", "label": "Griechischer Großbuchstabe Lambda (U+039B)" }
+        {
+          "char": "λ",
+          "label": "Griechischer Kleinbuchstabe Lambda (U+03BB)"
+        },
+        {
+          "char": "Λ",
+          "label": "Griechischer Großbuchstabe Lambda (U+039B)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Lambda als Zeichen der Schwulenbewegung",
       "intro": "New Yorks Gay Activists Alliance nahm das kleine λ 1970 an, und 1974 erklärte der Internationale Kongress für Homosexuellenrechte es zum internationalen Symbol für die Rechte von Schwulen und Lesben — eines der frühesten Embleme der Bewegung. Kopiere es neben den Pride-Zeichen, denen es heute zur Seite steht.",
       "symbols": [
-        { "char": "λ", "label": "Griechischer Kleinbuchstabe Lambda (U+03BB) — das Zeichen der Schwulenbewegung" },
-        { "char": "🏳️‍🌈", "label": "Regenbogenflagge" },
-        { "char": "⚧", "label": "Transgender-Symbol (U+26A7)" }
+        {
+          "char": "λ",
+          "label": "Griechischer Kleinbuchstabe Lambda (U+03BB): das Zeichen der Schwulenbewegung"
+        },
+        {
+          "char": "🏳️‍🌈",
+          "label": "Regenbogenflagge"
+        },
+        {
+          "char": "⚧",
+          "label": "Transgender-Symbol (U+26A7)"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Lambda in Code, Mathematik & Physik",
       "intro": "Das technische Leben des Buchstabens. Das kleine λ bezeichnet anonyme Funktionen — von Alonzo Churchs Lambda-Kalkül über Pythons lambda-Schlüsselwort bis zu AWS Lambda — und steht in der Physik für Wellenlänge; das große Λ ist die kosmologische Konstante des ΛCDM-Modells.",
       "symbols": [
-        { "char": "λ", "label": "Griechischer Kleinbuchstabe Lambda (U+03BB) — Wellenlänge & Lambda-Kalkül" },
-        { "char": "Λ", "label": "Griechischer Großbuchstabe Lambda (U+039B) — kosmologische Konstante" },
-        { "char": "𝜆", "label": "Mathematisch-kursives Lambda (U+1D706) — die Gleichungsvariante" }
+        {
+          "char": "λ",
+          "label": "Griechischer Kleinbuchstabe Lambda (U+03BB): Wellenlänge & Lambda-Kalkül"
+        },
+        {
+          "char": "Λ",
+          "label": "Griechischer Großbuchstabe Lambda (U+039B): kosmologische Konstante"
+        },
+        {
+          "char": "𝜆",
+          "label": "Mathematisch-kursives Lambda (U+1D706): die Gleichungsvariante"
+        }
       ]
     },
     {
@@ -61,11 +93,26 @@
       "h2": "Verwandte griechische Buchstaben",
       "intro": "Lambda ist der 11. Buchstabe des griechischen Alphabets. Hier sind die Nachbarn, die häufig gleich mitkopiert werden.",
       "symbols": [
-        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
-        { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" },
-        { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" },
-        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" },
-        { "char": "α", "label": "Griechischer Kleinbuchstabe Alpha" }
+        {
+          "char": "π",
+          "label": "Griechischer Kleinbuchstabe Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Griechischer Großbuchstabe Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Griechischer Großbuchstabe Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "Griechischer Großbuchstabe Omega"
+        },
+        {
+          "char": "α",
+          "label": "Griechischer Kleinbuchstabe Alpha"
+        }
       ]
     }
   ],

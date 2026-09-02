@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-calendario/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/emoji-de-calendario/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "calendar-emoji-core",
@@ -29,7 +37,10 @@
       "h2": "Emoji de Calendário",
       "intro": "O glifo Unicode principal — uma única folha de calendário arrancada.",
       "symbols": [
-        { "char": "📅", "label": "Calendário (U+1F4C5)" }
+        {
+          "char": "📅",
+          "label": "Calendário (U+1F4C5)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Outros Emojis de Calendário com que É Confundido",
       "intro": "Dois glifos de calendário vizinhos no Unicode, cada um retratando um estilo diferente de calendário físico.",
       "symbols": [
-        { "char": "📆", "label": "Calendário de Folhas (U+1F4C6)" },
-        { "char": "🗓️", "label": "Calendário Espiral (U+1F5D3)" }
+        {
+          "char": "📆",
+          "label": "Calendário de Folhas (U+1F4C6)"
+        },
+        {
+          "char": "🗓️",
+          "label": "Calendário Espiral (U+1F5D3)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Emojis de Planejamento e Tempo Relacionados",
       "intro": "Emojis que costumam aparecer junto com um calendário em contextos de agendamento e lembrete.",
       "symbols": [
-        { "char": "⏰", "label": "Despertador" },
-        { "char": "📌", "label": "Alfinete" },
-        { "char": "✅", "label": "Botão de Confirmação" }
+        {
+          "char": "⏰",
+          "label": "Despertador"
+        },
+        {
+          "char": "📌",
+          "label": "Alfinete"
+        },
+        {
+          "char": "✅",
+          "label": "Botão de Confirmação"
+        }
       ]
     }
   ],

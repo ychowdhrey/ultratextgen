@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/rupee-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/rupee-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/rupee-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/rupee-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/rupee-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/rupee-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Rupee Ấn Độ",
       "intro": "Ký hiệu rupee, sẵn sàng để dán.",
       "symbols": [
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9)" }
+        {
+          "char": "₹",
+          "label": "Ký Hiệu Rupee Ấn Độ (U+20B9)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Ký Hiệu Tiền Tệ Cùng Thời",
       "intro": "Những ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích, tương tự ₹.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — một ký hiệu tiền tệ hiện đại khác được thiết kế có chủ đích" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3) — đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" }
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro (U+20AC): một ký hiệu tiền tệ hiện đại khác được thiết kế có chủ đích"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh (U+00A3): đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra"
+        }
       ]
     },
     {
@@ -47,19 +65,50 @@
       "h2": "Các Ký Hiệu Tiền Tệ Lớn Khác",
       "intro": "Những ký hiệu tiền tệ khác thường xuất hiện cùng ₹ trong nội dung tài chính.",
       "symbols": [
-        { "char": "$", "label": "Ký Hiệu Đô La" },
-        { "char": "€", "label": "Ký Hiệu Euro" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
-        { "char": "¥", "label": "Ký Hiệu Yên" }
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La"
+        },
+        {
+          "char": "€",
+          "label": "Ký Hiệu Euro"
+        },
+        {
+          "char": "£",
+          "label": "Ký Hiệu Bảng Anh"
+        },
+        {
+          "char": "¥",
+          "label": "Ký Hiệu Yên"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
-    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
-    { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
-    { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên (¥)", "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc." },
-    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới." }
+    {
+      "href": "/vi/symbol/dollar-sign/",
+      "title": "Ký Hiệu Đô La ($)",
+      "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó."
+    },
+    {
+      "href": "/vi/symbol/euro-sign/",
+      "title": "Ký Hiệu Euro (€)",
+      "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996."
+    },
+    {
+      "href": "/vi/symbol/pound-sign/",
+      "title": "Ký Hiệu Bảng Anh (£)",
+      "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra."
+    },
+    {
+      "href": "/vi/symbol/yen-sign/",
+      "title": "Ký Hiệu Yên (¥)",
+      "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Tất Cả Ký Hiệu Tiền Tệ",
+      "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới."
+    }
   ]
 }

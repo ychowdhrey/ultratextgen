@@ -28,18 +28,18 @@
       "h2": "Letras Griegas",
       "intro": "Las letras griegas que se usan en todas las matemáticas y la física, con sus comandos de LaTeX.",
       "symbols": [
-        { "char": "α", "label": "\\alpha — Letra griega minúscula alfa" },
-        { "char": "β", "label": "\\beta — Letra griega minúscula beta" },
-        { "char": "γ", "label": "\\gamma — Letra griega minúscula gamma" },
-        { "char": "δ", "label": "\\delta — Letra griega minúscula delta" },
-        { "char": "θ", "label": "\\theta — Letra griega minúscula theta" },
-        { "char": "λ", "label": "\\lambda — Letra griega minúscula lambda" },
-        { "char": "μ", "label": "\\mu — Letra griega minúscula mu" },
-        { "char": "π", "label": "\\pi — Letra griega minúscula pi" },
-        { "char": "σ", "label": "\\sigma — Letra griega minúscula sigma" },
-        { "char": "φ", "label": "\\varphi — Letra griega minúscula fi" },
-        { "char": "Δ", "label": "\\Delta — Letra griega mayúscula delta" },
-        { "char": "Ω", "label": "\\Omega — Letra griega mayúscula omega" }
+        { "char": "α", "label": "\\alpha: Letra griega minúscula alfa" },
+        { "char": "β", "label": "\\beta: Letra griega minúscula beta" },
+        { "char": "γ", "label": "\\gamma: Letra griega minúscula gamma" },
+        { "char": "δ", "label": "\\delta: Letra griega minúscula delta" },
+        { "char": "θ", "label": "\\theta: Letra griega minúscula theta" },
+        { "char": "λ", "label": "\\lambda: Letra griega minúscula lambda" },
+        { "char": "μ", "label": "\\mu: Letra griega minúscula mu" },
+        { "char": "π", "label": "\\pi: Letra griega minúscula pi" },
+        { "char": "σ", "label": "\\sigma: Letra griega minúscula sigma" },
+        { "char": "φ", "label": "\\varphi: Letra griega minúscula fi" },
+        { "char": "Δ", "label": "\\Delta: Letra griega mayúscula delta" },
+        { "char": "Ω", "label": "\\Omega: Letra griega mayúscula omega" }
       ]
     },
     {
@@ -48,18 +48,18 @@
       "h2": "Operadores y Grandes Operadores",
       "intro": "Sumatorias, productos, integrales y los operadores aritméticos del día a día.",
       "symbols": [
-        { "char": "∑", "label": "\\sum — Sumatoria n-aria" },
-        { "char": "∏", "label": "\\prod — Producto n-ario" },
-        { "char": "∫", "label": "\\int — Integral" },
-        { "char": "∬", "label": "\\iint — Integral doble" },
-        { "char": "∮", "label": "\\oint — Integral de contorno" },
-        { "char": "√", "label": "\\sqrt — Raíz cuadrada" },
-        { "char": "∂", "label": "\\partial — Derivada parcial" },
-        { "char": "∇", "label": "\\nabla — Nabla" },
-        { "char": "±", "label": "\\pm — Signo más-menos" },
-        { "char": "×", "label": "\\times — Signo de multiplicación" },
-        { "char": "÷", "label": "\\div — Signo de división" },
-        { "char": "⋅", "label": "\\cdot — Operador punto" }
+        { "char": "∑", "label": "\\sum: Sumatoria n-aria" },
+        { "char": "∏", "label": "\\prod: Producto n-ario" },
+        { "char": "∫", "label": "\\int: Integral" },
+        { "char": "∬", "label": "\\iint: Integral doble" },
+        { "char": "∮", "label": "\\oint: Integral de contorno" },
+        { "char": "√", "label": "\\sqrt: Raíz cuadrada" },
+        { "char": "∂", "label": "\\partial: Derivada parcial" },
+        { "char": "∇", "label": "\\nabla: Nabla" },
+        { "char": "±", "label": "\\pm: Signo más-menos" },
+        { "char": "×", "label": "\\times: Signo de multiplicación" },
+        { "char": "÷", "label": "\\div: Signo de división" },
+        { "char": "⋅", "label": "\\cdot: Operador punto" }
       ]
     },
     {
@@ -68,14 +68,14 @@
       "h2": "Relaciones y Comparaciones",
       "intro": "Relaciones de igualdad, desigualdad y equivalencia con sus comandos.",
       "symbols": [
-        { "char": "≤", "label": "\\leq — Menor o igual que" },
-        { "char": "≥", "label": "\\geq — Mayor o igual que" },
-        { "char": "≠", "label": "\\neq — Distinto de" },
-        { "char": "≈", "label": "\\approx — Aproximadamente igual a" },
-        { "char": "≡", "label": "\\equiv — Idéntico a" },
-        { "char": "∼", "label": "\\sim — Operador tilde" },
-        { "char": "≅", "label": "\\cong — Congruente con" },
-        { "char": "∝", "label": "\\propto — Proporcional a" }
+        { "char": "≤", "label": "\\leq: Menor o igual que" },
+        { "char": "≥", "label": "\\geq: Mayor o igual que" },
+        { "char": "≠", "label": "\\neq: Distinto de" },
+        { "char": "≈", "label": "\\approx: Aproximadamente igual a" },
+        { "char": "≡", "label": "\\equiv: Idéntico a" },
+        { "char": "∼", "label": "\\sim: Operador tilde" },
+        { "char": "≅", "label": "\\cong: Congruente con" },
+        { "char": "∝", "label": "\\propto: Proporcional a" }
       ]
     },
     {
@@ -84,18 +84,18 @@
       "h2": "Teoría de Conjuntos y Lógica",
       "intro": "Pertenencia, subconjuntos, uniones, cuantificadores y conectores lógicos.",
       "symbols": [
-        { "char": "∈", "label": "\\in — Pertenece a" },
-        { "char": "∉", "label": "\\notin — No pertenece a" },
-        { "char": "⊂", "label": "\\subset — Subconjunto de" },
-        { "char": "⊆", "label": "\\subseteq — Subconjunto de o igual a" },
-        { "char": "∪", "label": "\\cup — Unión" },
-        { "char": "∩", "label": "\\cap — Intersección" },
-        { "char": "∅", "label": "\\emptyset — Conjunto vacío" },
-        { "char": "∀", "label": "\\forall — Para todo" },
-        { "char": "∃", "label": "\\exists — Existe" },
-        { "char": "¬", "label": "\\neg — Signo de negación" },
-        { "char": "∧", "label": "\\land — Y lógico (conjunción)" },
-        { "char": "∨", "label": "\\lor — O lógico (disyunción)" }
+        { "char": "∈", "label": "\\in: Pertenece a" },
+        { "char": "∉", "label": "\\notin: No pertenece a" },
+        { "char": "⊂", "label": "\\subset: Subconjunto de" },
+        { "char": "⊆", "label": "\\subseteq: Subconjunto de o igual a" },
+        { "char": "∪", "label": "\\cup: Unión" },
+        { "char": "∩", "label": "\\cap: Intersección" },
+        { "char": "∅", "label": "\\emptyset: Conjunto vacío" },
+        { "char": "∀", "label": "\\forall: Para todo" },
+        { "char": "∃", "label": "\\exists: Existe" },
+        { "char": "¬", "label": "\\neg: Signo de negación" },
+        { "char": "∧", "label": "\\land: Y lógico (conjunción)" },
+        { "char": "∨", "label": "\\lor: O lógico (disyunción)" }
       ]
     },
     {
@@ -104,12 +104,12 @@
       "h2": "Flechas y Aplicaciones",
       "intro": "Flechas de implicación y de aplicación que se usan en demostraciones y definiciones de funciones.",
       "symbols": [
-        { "char": "→", "label": "\\rightarrow — Flecha hacia la derecha" },
-        { "char": "←", "label": "\\leftarrow — Flecha hacia la izquierda" },
-        { "char": "↔", "label": "\\leftrightarrow — Flecha de doble sentido" },
-        { "char": "⇒", "label": "\\Rightarrow — Flecha doble hacia la derecha" },
-        { "char": "⇔", "label": "\\Leftrightarrow — Flecha doble de doble sentido" },
-        { "char": "↦", "label": "\\mapsto — Flecha con barra (aplica a)" }
+        { "char": "→", "label": "\\rightarrow: Flecha hacia la derecha" },
+        { "char": "←", "label": "\\leftarrow: Flecha hacia la izquierda" },
+        { "char": "↔", "label": "\\leftrightarrow: Flecha de doble sentido" },
+        { "char": "⇒", "label": "\\Rightarrow: Flecha doble hacia la derecha" },
+        { "char": "⇔", "label": "\\Leftrightarrow: Flecha doble de doble sentido" },
+        { "char": "↦", "label": "\\mapsto: Flecha con barra (aplica a)" }
       ]
     },
     {
@@ -118,18 +118,18 @@
       "h2": "Otros Símbolos Matemáticos",
       "intro": "Infinito, marcas de geometría, delimitadores y abreviaturas de demostración.",
       "symbols": [
-        { "char": "∞", "label": "\\infty — Infinito" },
-        { "char": "ℵ", "label": "\\aleph — Símbolo alef" },
-        { "char": "ℏ", "label": "\\hbar — Constante de Planck reducida" },
-        { "char": "ℓ", "label": "\\ell — Ele minúscula manuscrita" },
-        { "char": "⊥", "label": "\\perp — Perpendicular a" },
-        { "char": "∥", "label": "\\parallel — Paralelo a" },
-        { "char": "∠", "label": "\\angle — Ángulo" },
-        { "char": "⌈", "label": "\\lceil — Techo izquierdo" },
-        { "char": "⌋", "label": "\\rfloor — Piso derecho" },
-        { "char": "⋯", "label": "\\cdots — Puntos suspensivos centrados" },
-        { "char": "∴", "label": "\\therefore — Por lo tanto" },
-        { "char": "∵", "label": "\\because — Porque" }
+        { "char": "∞", "label": "\\infty: Infinito" },
+        { "char": "ℵ", "label": "\\aleph: Símbolo alef" },
+        { "char": "ℏ", "label": "\\hbar: Constante de Planck reducida" },
+        { "char": "ℓ", "label": "\\ell: Ele minúscula manuscrita" },
+        { "char": "⊥", "label": "\\perp: Perpendicular a" },
+        { "char": "∥", "label": "\\parallel: Paralelo a" },
+        { "char": "∠", "label": "\\angle: Ángulo" },
+        { "char": "⌈", "label": "\\lceil: Techo izquierdo" },
+        { "char": "⌋", "label": "\\rfloor: Piso derecho" },
+        { "char": "⋯", "label": "\\cdots: Puntos suspensivos centrados" },
+        { "char": "∴", "label": "\\therefore: Por lo tanto" },
+        { "char": "∵", "label": "\\because: Porque" }
       ]
     }
   ],

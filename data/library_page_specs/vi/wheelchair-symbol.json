@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/wheelchair-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/wheelchair-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/wheelchair-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/wheelchair-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/wheelchair-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/wheelchair-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Xe Lăn (Biểu Tượng Quốc Tế Về Khả Năng Tiếp Cận)",
       "intro": "Ký tự xe lăn trong Unicode (U+267F) — glyph hiển thị Biểu Tượng Quốc Tế Về Khả Năng Tiếp Cận cổ điển trên hầu hết hệ thống. Sẵn sàng để dán vào tài liệu, ghi chú biển báo, hoặc tiểu sử.",
       "symbols": [
-        { "char": "♿", "label": "Ký Hiệu Xe Lăn" },
-        { "char": "♿️", "label": "Ký Hiệu Xe Lăn (Emoji)" }
+        {
+          "char": "♿",
+          "label": "Ký Hiệu Xe Lăn"
+        },
+        {
+          "char": "♿️",
+          "label": "Ký Hiệu Xe Lăn (Emoji)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Ký Hiệu Khả Năng Tiếp Cận & Di Chuyển",
       "intro": "Các ký hiệu Unicode liên quan cho thiết bị hỗ trợ di chuyển và nhu cầu tiếp cận khác — mỗi ký tự là một ký tự riêng biệt, không phải biến thể của ký hiệu xe lăn.",
       "symbols": [
-        { "char": "🦽", "label": "Xe Lăn Thủ Công" },
-        { "char": "🦼", "label": "Xe Lăn Điện" },
-        { "char": "🦯", "label": "Gậy Trắng" },
-        { "char": "🧏", "label": "Người Khiếm Thính" }
+        {
+          "char": "🦽",
+          "label": "Xe Lăn Thủ Công"
+        },
+        {
+          "char": "🦼",
+          "label": "Xe Lăn Điện"
+        },
+        {
+          "char": "🦯",
+          "label": "Gậy Trắng"
+        },
+        {
+          "char": "🧏",
+          "label": "Người Khiếm Thính"
+        }
       ]
     },
     {
@@ -50,17 +77,40 @@
       "h2": "Ký Hiệu Sức Khỏe & Y Tế Liên Quan",
       "intro": "Các ký hiệu sức khỏe, chăm sóc và cơ sở y tế mà ký hiệu tiếp cận thường xuất hiện cùng trên bản đồ, biển chỉ dẫn và biển báo tòa nhà.",
       "symbols": [
-        { "char": "⚕", "label": "Ký Hiệu Y Khoa (Cây Trượng Aesculapius)" },
-        { "char": "➕", "label": "Dấu Cộng" },
-        { "char": "🏥", "label": "Bệnh Viện" },
-        { "char": "🚑", "label": "Xe Cứu Thương" }
+        {
+          "char": "⚕",
+          "label": "Ký Hiệu Y Khoa (Cây Trượng Aesculapius)"
+        },
+        {
+          "char": "➕",
+          "label": "Dấu Cộng"
+        },
+        {
+          "char": "🏥",
+          "label": "Bệnh Viện"
+        },
+        {
+          "char": "🚑",
+          "label": "Xe Cứu Thương"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/medical-symbols/", "title": "Ký Hiệu Y Tế", "desc": "Cây trượng Aesculapius, thánh giá y tế, biển hiệu nhà thuốc và ký hiệu sức khỏe, khẩn cấp trong một trang tra cứu." },
-    { "href": "/vi/symbol/autism-symbol/", "title": "Ký Hiệu Tự Kỷ", "desc": "Một ký hiệu liên quan đến khả năng tiếp cận khác với cuộc tranh luận thiết kế cộng đồng thật sự, được ghi chép và vẫn chưa được giải quyết." },
-    { "href": "/library/traffic-road-sign-symbols/", "title": "Ký Hiệu Biển Báo Giao Thông", "desc": "Bãi đỗ xe, cảnh báo và ký hiệu biển báo chỉ dẫn — bối cảnh biển báo mà ký hiệu tiếp cận xuất hiện." }
+    {
+      "href": "/library/medical-symbols/",
+      "title": "Ký Hiệu Y Tế",
+      "desc": "Cây trượng Aesculapius, thánh giá y tế, biển hiệu nhà thuốc và ký hiệu sức khỏe, khẩn cấp trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/autism-symbol/",
+      "title": "Ký Hiệu Tự Kỷ",
+      "desc": "Một ký hiệu liên quan đến khả năng tiếp cận khác với cuộc tranh luận thiết kế cộng đồng thật sự, được ghi chép và vẫn chưa được giải quyết."
+    },
+    {
+      "href": "/library/traffic-road-sign-symbols/",
+      "title": "Ký Hiệu Biển Báo Giao Thông",
+      "desc": "Bãi đỗ xe, cảnh báo và ký hiệu biển báo chỉ dẫn — bối cảnh biển báo mà ký hiệu tiếp cận xuất hiện."
+    }
   ]
 }

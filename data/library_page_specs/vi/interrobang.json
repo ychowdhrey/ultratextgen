@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/interrobang/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/interrobang/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Interrobang — ‽ & ⸘",
       "intro": "Chính dấu này và hình ảnh gương của nó: interrobang chuẩn đóng lại một câu hỏi kinh ngạc, và dạng ngược được xây để mở đầu một câu như vậy.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Câu Hỏi + Cảm Thán Trong Một Glyph" },
-        { "char": "⸘", "label": "Interrobang Ngược (U+2E18) — «Người Anh Em» Mở Đầu Câu" }
+        {
+          "char": "‽",
+          "label": "Interrobang (U+203D): Câu Hỏi + Cảm Thán Trong Một Glyph"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Ngược (U+2E18): «Người Anh Em» Mở Đầu Câu"
+        }
       ]
     },
     {
@@ -38,11 +53,26 @@
       "h2": "Dấu Chấm Hỏi Và Dấu Chấm Than Mà Nó Kết Hợp",
       "intro": "Interrobang nén hai dấu câu hằng ngày này thành một. Khi bàn phím không tạo được nó, người ta gõ cả cặp — hoặc dùng các dạng kết hợp sẵn của Unicode.",
       "symbols": [
-        { "char": "?", "label": "Dấu Chấm Hỏi (U+003F)" },
-        { "char": "!", "label": "Dấu Chấm Than (U+0021)" },
-        { "char": "⁉", "label": "Dấu Chấm Than Hỏi (U+2049)" },
-        { "char": "⁈", "label": "Dấu Chấm Hỏi Chấm Than (U+2048)" },
-        { "char": "⁇", "label": "Dấu Chấm Hỏi Đôi (U+2047)" }
+        {
+          "char": "?",
+          "label": "Dấu Chấm Hỏi (U+003F)"
+        },
+        {
+          "char": "!",
+          "label": "Dấu Chấm Than (U+0021)"
+        },
+        {
+          "char": "⁉",
+          "label": "Dấu Chấm Than Hỏi (U+2049)"
+        },
+        {
+          "char": "⁈",
+          "label": "Dấu Chấm Hỏi Chấm Than (U+2048)"
+        },
+        {
+          "char": "⁇",
+          "label": "Dấu Chấm Hỏi Đôi (U+2047)"
+        }
       ]
     },
     {
@@ -51,18 +81,45 @@
       "h2": "Vì Sao Interrobang Ngược Tồn Tại",
       "intro": "Tiếng Tây Ban Nha và các ngôn ngữ liên quan mở đầu một câu hỏi bằng ¿ và một câu cảm thán bằng ¡; interrobang ngược ⸘ hợp nhất cặp mở đầu đó, phản chiếu ở đầu câu điều mà ‽ làm ở cuối câu. Dấu chấm hỏi ngược ⸮ là một dấu hoàn toàn khác — xem trang riêng của nó.",
       "symbols": [
-        { "char": "¿", "label": "Dấu Chấm Hỏi Xoay Ngược (U+00BF)" },
-        { "char": "¡", "label": "Dấu Chấm Than Xoay Ngược (U+00A1)" },
-        { "char": "⸘", "label": "Interrobang Ngược (U+2E18)" },
-        { "char": "⸮", "label": "Dấu Chấm Hỏi Soi Gương (U+2E2E)" }
+        {
+          "char": "¿",
+          "label": "Dấu Chấm Hỏi Xoay Ngược (U+00BF)"
+        },
+        {
+          "char": "¡",
+          "label": "Dấu Chấm Than Xoay Ngược (U+00A1)"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Ngược (U+2E18)"
+        },
+        {
+          "char": "⸮",
+          "label": "Dấu Chấm Hỏi Soi Gương (U+2E2E)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Bộ tra cứu đầy đủ dấu câu thông thường và chuyên biệt trong Unicode, từ dấu gạch ngang và ngoặc đến các dấu mới lạ như interrobang." },
-    { "href": "/vi/symbol/backwards-question-mark/", "title": "Dấu Chấm Hỏi Ngược (⸮)", "desc": "Một dấu tu từ lịch sử khác — dấu chấm hỏi soi gương năm 1575, không phải kết hợp câu hỏi-cảm thán như interrobang." },
-    { "href": "/vi/symbol/em-dash/", "title": "Dấu Gạch Ngang Dài (—)", "desc": "Một dấu câu khác với câu chuyện sống động và một họ hình ảnh giống nhau mà mọi người liên tục nhầm lẫn." },
-    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn — một ký hiệu kiểu chữ biên tập với lịch sử in ấn lâu đời của riêng nó." }
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Ký Hiệu Dấu Câu",
+      "desc": "Bộ tra cứu đầy đủ dấu câu thông thường và chuyên biệt trong Unicode, từ dấu gạch ngang và ngoặc đến các dấu mới lạ như interrobang."
+    },
+    {
+      "href": "/vi/symbol/backwards-question-mark/",
+      "title": "Dấu Chấm Hỏi Ngược (⸮)",
+      "desc": "Một dấu tu từ lịch sử khác — dấu chấm hỏi soi gương năm 1575, không phải kết hợp câu hỏi-cảm thán như interrobang."
+    },
+    {
+      "href": "/vi/symbol/em-dash/",
+      "title": "Dấu Gạch Ngang Dài (—)",
+      "desc": "Một dấu câu khác với câu chuyện sống động và một họ hình ảnh giống nhau mà mọi người liên tục nhầm lẫn."
+    },
+    {
+      "href": "/vi/symbol/pilcrow/",
+      "title": "Pilcrow (¶)",
+      "desc": "Dấu đoạn văn — một ký hiệu kiểu chữ biên tập với lịch sử in ấn lâu đời của riêng nó."
+    }
   ]
 }

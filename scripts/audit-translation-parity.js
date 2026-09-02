@@ -210,6 +210,12 @@ function printPair(r) {
   if (r.diff.faqDelta !== 0) log(`    FAQ question count delta (EN - ${r.lang}): ${r.diff.faqDelta}`);
   if (r.diff.symbolTilesDelta !== 0)
     log(`    .symbol-tile count delta (EN - ${r.lang}): ${r.diff.symbolTilesDelta}`);
+  if (r.diff.tableDelta) {
+    // Rows ride along on the same line only when the table count itself moved;
+    // they are context for that finding, never a finding of their own.
+    const rows = r.diff.tableRowsDelta ? `, ${r.diff.tableRowsDelta} row(s)` : '';
+    log(`    table count delta (EN - ${r.lang}): ${r.diff.tableDelta}${rows}`);
+  }
   for (const c of r.diff.collectionsOnlyInEN || [])
     log(`    combo-set section EN renders, ${r.lang} does not: #${c.id} (${c.groups} groups)`);
   for (const c of r.diff.collectionsOnlyInLocale || [])

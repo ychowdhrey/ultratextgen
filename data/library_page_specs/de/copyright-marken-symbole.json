@@ -16,11 +16,19 @@
   "crumb_library": "Bibliothek",
   "library_url": "https://ultratextgen.com/de/library/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/library/copyright-trademark-symbols/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/copyright-marken-symbole/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/library/copyright-trademark-symbols/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/copyright-marken-symbole/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/copyright-trademark-symbols/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "copyright-registered",
@@ -28,13 +36,34 @@
       "h2": "Copyright- & Registriert-Zeichen",
       "intro": "Eigentumszeichen: Copyright, eingetragene Marke, Tonträger-Copyright und eingekreiste Buchstabenvarianten in Groß- und Kleinform.",
       "symbols": [
-        { "char": "©", "label": "Copyright-Zeichen" },
-        { "char": "®", "label": "Registriert-Zeichen (eingetragene Marke)" },
-        { "char": "℗", "label": "Tonträger-Copyright" },
-        { "char": "Ⓒ", "label": "Eingekreistes großes C" },
-        { "char": "Ⓡ", "label": "Eingekreistes großes R" },
-        { "char": "ⓒ", "label": "Eingekreistes kleines c" },
-        { "char": "ⓡ", "label": "Eingekreistes kleines r" }
+        {
+          "char": "©",
+          "label": "Copyright-Zeichen"
+        },
+        {
+          "char": "®",
+          "label": "Registriert-Zeichen (eingetragene Marke)"
+        },
+        {
+          "char": "℗",
+          "label": "Tonträger-Copyright"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "Eingekreistes großes C"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "Eingekreistes großes R"
+        },
+        {
+          "char": "ⓒ",
+          "label": "Eingekreistes kleines c"
+        },
+        {
+          "char": "ⓡ",
+          "label": "Eingekreistes kleines r"
+        }
       ]
     },
     {
@@ -43,8 +72,14 @@
       "h2": "Marken- & Dienstleistungszeichen",
       "intro": "Marken- und Dienstleistungszeichen, die Marken- und Dienstkennungen kennzeichnen.",
       "symbols": [
-        { "char": "™", "label": "Markenzeichen" },
-        { "char": "℠", "label": "Dienstleistungsmarke" }
+        {
+          "char": "™",
+          "label": "Markenzeichen"
+        },
+        {
+          "char": "℠",
+          "label": "Dienstleistungsmarke"
+        }
       ]
     },
     {
@@ -53,11 +88,26 @@
       "h2": "Numero- & Amtszeichen",
       "intro": "Buchstabenähnliche Amtsabkürzungen und das Numero-Zeichen aus dem formellen Schriftverkehr.",
       "symbols": [
-        { "char": "№", "label": "Numero-Zeichen (Nummer)" },
-        { "char": "℅", "label": "Per Adresse (c/o)" },
-        { "char": "℀", "label": "Auf Rechnung von" },
-        { "char": "℁", "label": "Adressiert an den Betreff" },
-        { "char": "℆", "label": "Je Stück (cada una)" }
+        {
+          "char": "№",
+          "label": "Numero-Zeichen (Nummer)"
+        },
+        {
+          "char": "℅",
+          "label": "Per Adresse (c/o)"
+        },
+        {
+          "char": "℀",
+          "label": "Auf Rechnung von"
+        },
+        {
+          "char": "℁",
+          "label": "Adressiert an den Betreff"
+        },
+        {
+          "char": "℆",
+          "label": "Je Stück (cada una)"
+        }
       ]
     },
     {
@@ -66,15 +116,42 @@
       "h2": "Abschnitts-, Absatz- & Verweiszeichen",
       "intro": "Dokumentzeichen für Abschnitte, Absätze, Fußnoten und Zitate.",
       "symbols": [
-        { "char": "§", "label": "Paragraphzeichen" },
-        { "char": "¶", "label": "Absatzzeichen (Pilcrow)" },
-        { "char": "†", "label": "Kreuz (Dagger)" },
-        { "char": "‡", "label": "Doppelkreuz (Double Dagger)" },
-        { "char": "※", "label": "Verweiszeichen" },
-        { "char": "‖", "label": "Doppelter senkrechter Strich" },
-        { "char": "⁂", "label": "Asterismus" },
-        { "char": "⁑", "label": "Zwei senkrecht angeordnete Sternchen" },
-        { "char": "⸿", "label": "Capitulum" }
+        {
+          "char": "§",
+          "label": "Paragraphzeichen"
+        },
+        {
+          "char": "¶",
+          "label": "Absatzzeichen (Pilcrow)"
+        },
+        {
+          "char": "†",
+          "label": "Kreuz (Dagger)"
+        },
+        {
+          "char": "‡",
+          "label": "Doppelkreuz (Double Dagger)"
+        },
+        {
+          "char": "※",
+          "label": "Verweiszeichen"
+        },
+        {
+          "char": "‖",
+          "label": "Doppelter senkrechter Strich"
+        },
+        {
+          "char": "⁂",
+          "label": "Asterismus"
+        },
+        {
+          "char": "⁑",
+          "label": "Zwei senkrecht angeordnete Sternchen"
+        },
+        {
+          "char": "⸿",
+          "label": "Capitulum"
+        }
       ]
     }
   ],

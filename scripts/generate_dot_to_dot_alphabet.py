@@ -261,7 +261,7 @@ def render_hub(spec):
     faqs = [
         (
             "Are these dot-to-dot alphabet pages free to print?",
-            "Yes — every dot-to-dot letter here is completely free, with no sign-up, "
+            "Yes, every dot-to-dot letter here is completely free, with no sign-up, "
             "watermark, or limit. Pick a letter for a numbered connect-the-dots puzzle, "
             "then use <strong>Print this letter</strong> to send it to your printer or "
             "<strong>Download PNG</strong> to save a high-resolution image.",

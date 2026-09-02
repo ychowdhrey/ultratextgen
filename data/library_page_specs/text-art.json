@@ -17,21 +17,66 @@
       "h2": "Box Drawing Characters",
       "intro": "Straight lines, corners, and junctions — the skeleton of frames, tables, and structured text art.",
       "symbols": [
-        { "char": "─", "label": "Box Drawings Light Horizontal" },
-        { "char": "│", "label": "Box Drawings Light Vertical" },
-        { "char": "┌", "label": "Box Drawings Light Down and Right" },
-        { "char": "┐", "label": "Box Drawings Light Down and Left" },
-        { "char": "└", "label": "Box Drawings Light Up and Right" },
-        { "char": "┘", "label": "Box Drawings Light Up and Left" },
-        { "char": "├", "label": "Box Drawings Light Vertical and Right" },
-        { "char": "┤", "label": "Box Drawings Light Vertical and Left" },
-        { "char": "┼", "label": "Box Drawings Light Vertical and Horizontal" },
-        { "char": "═", "label": "Box Drawings Double Horizontal" },
-        { "char": "║", "label": "Box Drawings Double Vertical" },
-        { "char": "╔", "label": "Box Drawings Double Down and Right" },
-        { "char": "╗", "label": "Box Drawings Double Down and Left" },
-        { "char": "╚", "label": "Box Drawings Double Up and Right" },
-        { "char": "╝", "label": "Box Drawings Double Up and Left" }
+        {
+          "char": "─",
+          "label": "Box Drawings Light Horizontal"
+        },
+        {
+          "char": "│",
+          "label": "Box Drawings Light Vertical"
+        },
+        {
+          "char": "┌",
+          "label": "Box Drawings Light Down and Right"
+        },
+        {
+          "char": "┐",
+          "label": "Box Drawings Light Down and Left"
+        },
+        {
+          "char": "└",
+          "label": "Box Drawings Light Up and Right"
+        },
+        {
+          "char": "┘",
+          "label": "Box Drawings Light Up and Left"
+        },
+        {
+          "char": "├",
+          "label": "Box Drawings Light Vertical and Right"
+        },
+        {
+          "char": "┤",
+          "label": "Box Drawings Light Vertical and Left"
+        },
+        {
+          "char": "┼",
+          "label": "Box Drawings Light Vertical and Horizontal"
+        },
+        {
+          "char": "═",
+          "label": "Box Drawings Double Horizontal"
+        },
+        {
+          "char": "║",
+          "label": "Box Drawings Double Vertical"
+        },
+        {
+          "char": "╔",
+          "label": "Box Drawings Double Down and Right"
+        },
+        {
+          "char": "╗",
+          "label": "Box Drawings Double Down and Left"
+        },
+        {
+          "char": "╚",
+          "label": "Box Drawings Double Up and Right"
+        },
+        {
+          "char": "╝",
+          "label": "Box Drawings Double Up and Left"
+        }
       ]
     },
     {
@@ -40,16 +85,46 @@
       "h2": "Block & Shading Characters",
       "intro": "Solid and shaded blocks for filling shapes and creating gradients in larger pieces.",
       "symbols": [
-        { "char": "█", "label": "Full Block" },
-        { "char": "▀", "label": "Upper Half Block" },
-        { "char": "▄", "label": "Lower Half Block" },
-        { "char": "▌", "label": "Left Half Block" },
-        { "char": "▐", "label": "Right Half Block" },
-        { "char": "░", "label": "Light Shade" },
-        { "char": "▒", "label": "Medium Shade" },
-        { "char": "▓", "label": "Dark Shade" },
-        { "char": "▖", "label": "Quadrant Lower Left" },
-        { "char": "▘", "label": "Quadrant Upper Left" }
+        {
+          "char": "█",
+          "label": "Full Block"
+        },
+        {
+          "char": "▀",
+          "label": "Upper Half Block"
+        },
+        {
+          "char": "▄",
+          "label": "Lower Half Block"
+        },
+        {
+          "char": "▌",
+          "label": "Left Half Block"
+        },
+        {
+          "char": "▐",
+          "label": "Right Half Block"
+        },
+        {
+          "char": "░",
+          "label": "Light Shade"
+        },
+        {
+          "char": "▒",
+          "label": "Medium Shade"
+        },
+        {
+          "char": "▓",
+          "label": "Dark Shade"
+        },
+        {
+          "char": "▖",
+          "label": "Quadrant Lower Left"
+        },
+        {
+          "char": "▘",
+          "label": "Quadrant Upper Left"
+        }
       ]
     },
     {
@@ -58,16 +133,46 @@
       "h2": "Braille Dot Characters",
       "intro": "Braille patterns give text art its finest resolution — most modern dot art is drawn with these.",
       "symbols": [
-        { "char": "⠁", "label": "Braille Pattern Dots-1" },
-        { "char": "⠉", "label": "Braille Pattern Dots-14" },
-        { "char": "⠛", "label": "Braille Pattern Dots-1245" },
-        { "char": "⠿", "label": "Braille Pattern Dots-123456" },
-        { "char": "⣀", "label": "Braille Pattern Dots-78" },
-        { "char": "⣤", "label": "Braille Pattern Dots-3678" },
-        { "char": "⣶", "label": "Braille Pattern Dots-235678" },
-        { "char": "⣿", "label": "Braille Pattern Dots-12345678" },
-        { "char": "⡇", "label": "Braille Pattern Dots-1237" },
-        { "char": "⢸", "label": "Braille Pattern Dots-4568" }
+        {
+          "char": "⠁",
+          "label": "Braille Pattern Dots-1"
+        },
+        {
+          "char": "⠉",
+          "label": "Braille Pattern Dots-14"
+        },
+        {
+          "char": "⠛",
+          "label": "Braille Pattern Dots-1245"
+        },
+        {
+          "char": "⠿",
+          "label": "Braille Pattern Dots-123456"
+        },
+        {
+          "char": "⣀",
+          "label": "Braille Pattern Dots-78"
+        },
+        {
+          "char": "⣤",
+          "label": "Braille Pattern Dots-3678"
+        },
+        {
+          "char": "⣶",
+          "label": "Braille Pattern Dots-235678"
+        },
+        {
+          "char": "⣿",
+          "label": "Braille Pattern Dots-12345678"
+        },
+        {
+          "char": "⡇",
+          "label": "Braille Pattern Dots-1237"
+        },
+        {
+          "char": "⢸",
+          "label": "Braille Pattern Dots-4568"
+        }
       ]
     },
     {
@@ -76,14 +181,38 @@
       "h2": "Geometric Shape Accents",
       "intro": "Simple geometric characters for stars, diamonds, and decorative detail work.",
       "symbols": [
-        { "char": "◆", "label": "Black Diamond" },
-        { "char": "◇", "label": "White Diamond" },
-        { "char": "●", "label": "Black Circle" },
-        { "char": "○", "label": "White Circle" },
-        { "char": "▲", "label": "Black Up-Pointing Triangle" },
-        { "char": "△", "label": "White Up-Pointing Triangle" },
-        { "char": "▼", "label": "Black Down-Pointing Triangle" },
-        { "char": "▽", "label": "White Down-Pointing Triangle" }
+        {
+          "char": "◆",
+          "label": "Black Diamond"
+        },
+        {
+          "char": "◇",
+          "label": "White Diamond"
+        },
+        {
+          "char": "●",
+          "label": "Black Circle"
+        },
+        {
+          "char": "○",
+          "label": "White Circle"
+        },
+        {
+          "char": "▲",
+          "label": "Black Up-Pointing Triangle"
+        },
+        {
+          "char": "△",
+          "label": "White Up-Pointing Triangle"
+        },
+        {
+          "char": "▼",
+          "label": "Black Down-Pointing Triangle"
+        },
+        {
+          "char": "▽",
+          "label": "White Down-Pointing Triangle"
+        }
       ]
     }
   ],
@@ -164,7 +293,6 @@
       "defaultFormat": "vertical"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/meme-text-art/",
