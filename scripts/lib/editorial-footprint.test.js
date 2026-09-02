@@ -261,6 +261,23 @@ t('specificity recognises codepoints, limits, platforms and constraints', () => 
   assert.ok(s.byKind.constraint >= 1);
 });
 
+t('specificity recognises consoles and storefronts, not only social platforms', () => {
+  // The list carried Roblox, Fortnite, PUBG and Minecraft but not Xbox, PSN or
+  // Steam until 2026-09-01, so a page about game identity scored as vague on
+  // the one dimension its subject was made of.
+  const s = specificityInventory(
+    'An Xbox Gamertag, a PlayStation PSN ID, a Steam persona name, a Valorant tag and a Garena account.'
+  );
+  assert.strictEqual(s.byKind.platform, 6, 'expected all six console/storefront names to count');
+});
+
+t('the platform rule stays case-sensitive so ordinary "steam" is not a fact', () => {
+  // Steam is the only entry that collides with a common English word. Losing
+  // the case-sensitivity would turn every mention of vapour into specificity.
+  const s = specificityInventory('The kettle produced steam and the engine was steam-powered.');
+  assert.strictEqual(s.byKind.platform, undefined, 'lowercase "steam" must not count as a platform');
+});
+
 // ── 6. locale isolation ────────────────────────────────────────────────────
 
 t('the triad detector exists per locale and is absent for CJK', () => {
