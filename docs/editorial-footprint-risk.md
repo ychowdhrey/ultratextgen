@@ -263,15 +263,24 @@ HTML sends them to a file the next generator run overwrites.
 
 ## Rules currently blocking, and rules currently informational
 
+**Banned outright, forward-only, in every mode (decided by the user 2026-09-02):**
+
+| rule | scope | why |
+|---|---|---|
+| `em-dash` (`EFR-F-001`) | per locale, from `data/em_dash_locale_policy.json`: **ban** on English and the thirteen locales whose native dash is the en dash; **double-dash** on zh-tw and ja (a lone `—` fails, `——` does not); **native** on ru/es/pt/fr/pl/ro (never a finding); **review** elsewhere (warning) | house style and each language's own orthography; existing em dashes are reported and never billed — only one a branch *introduces* fails, and the block names the locale's replacement |
+| `spaced-hyphen` (`EFR-F-006`) | English pages, prose/FAQ/CTA/headings | the substitute the ban invites; not flagged in titles or meta descriptions, where a spaced hyphen is a conventional separator |
+
+Full scope, the replacement guidance and the per-language table: `docs/em-dash-policy.md`.
+
 **Blocking under `--enforce` (verified against deliberately broken inputs):**
 
 | rule | why it qualifies |
 |---|---|
 | `model-leakage` | deterministic, unambiguous, zero legitimate occurrences (`EFR-F-002/003/004`) |
 | `seo-preservation` (error severity) | deterministic diff of identity fields, protected terms, facts and links |
-| `em-dash` | an em dash the branch wrote; deterministic; blocking-eligible since the clean-on-touch decision (2026-09-02) |
-| `em-dash-touched` | an inherited em dash on a page whose copy the branch edited; deterministic; verified against seven probes |
-| `em-dash-sibling` | an em dash on an untouched locale sibling of a copy-edited English page; deterministic |
+| `em-dash` | an em dash the branch wrote; deterministic. On a `ban` or `double-dash` locale it is **banned** (fails in every mode — see the table above); on a `review` locale it is a warning |
+| `em-dash-touched` | an inherited em dash on a page whose copy the branch edited, measured under the page's locale policy (never on a native-dash locale; lone dashes only on zh-tw/ja; a warning on a review locale); deterministic; verified against seven probes |
+| `em-dash-sibling` | an em dash on an untouched locale sibling of a copy-edited English page, measured under the sibling's own locale policy (a Russian sibling is never pulled in); deterministic |
 
 The three em-dash rules are blocking-*eligible*, not yet blocking: the workflow
 step has not been given `--enforce`, so they print "would block" and exit 0
@@ -284,6 +293,7 @@ its intent — and must not ride along.
 
 | rule | why it is not blocking |
 |---|---|
+| `em-dash` on a `review` locale (id, ms, tl, tr, vi, ar, hi, th, ko) | each language's rules define a dash mark that is rarely used; which form is the import needs a native reader before a rule exists — see `docs/em-dash-policy.md` §4 and §7 |
 | `formulaic-phrase` | editorial judgment, not a defect |
 | `density-limited` | a rate, and legitimate below its cap |
 | `new-page-threshold` | a percentile, not a defect |
@@ -305,7 +315,7 @@ English-derived rule applied to a non-English page.
 | **2. Shadow** | **now** | the gate runs on every PR, annotates the diff, exits 0. Collect what it would have failed. |
 | **3. Review** | next | review shadow findings for false positives and false negatives; adjust exemptions and thresholds; record every change here. |
 | **4. Enforce the deterministic rules** | after stage 3 | switch `model-leakage` and `seo-preservation` errors to gating by adding `--enforce` to the workflow step and moving it into the gating list. |
-| **5. Ratchet** | review scheduled 2026-09-16 | promote the three em-dash rules per rule — `--enforce em-dash,em-dash-touched,em-dash-sibling` on the workflow step, and the step into the gating list — once every shadow finding since 2026-09-02 has been classified and none is a false positive. The upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md` are still where a generated page's em dash gets fixed; the gate names them. Tighten the new-page percentile as the backlog falls. |
+| **5. Ratchet** | **partly done 2026-09-02; review scheduled 2026-09-16** | Done: an em dash a branch *introduces* fails in every mode on a `ban` or `double-dash` locale (user decision; `data/em_dash_locale_policy.json`), and the step is in the gating list — affordable because the delta rule bills only introduced em dashes, so generated pages regenerating with the same count still pass; new spec-generated pages fail until their generators stop emitting em dashes, which is the intended pressure. Still shadow: the clean-on-touch and sibling obligations (`em-dash-touched`, `em-dash-sibling`) print "would block" until the shadow findings since 2026-09-02 are classified, then are promoted per rule with `--enforce em-dash-touched,em-dash-sibling` on the workflow step. Still open: the upstream sources in `docs/editorial-footprint-upstream-findings-2026-08-26.md`; tightening the new-page percentile as the backlog falls. |
 
 **Every threshold change is recorded here, with its date and its reason.** A rule
 may become blocking only when it is deterministic, documented, has zero
@@ -322,6 +332,8 @@ a deliberately broken input.
 | 2026-08-26 | `npm run check:spec-sentence-reuse` added as a **gating**, diff-scoped check, with `npm run test:spec-sentence-reuse` (19 assertions) gating alongside it. It stops a new or edited spec pasting a sentence 3+ other specs already carry. **The design it replaces was wrong**: field-level comparison of `hero_tagline`/`meta_description`/`title`/`intro` finds **zero** duplicates in the corpus and would have shipped a gate that could never fire — the reuse is a *sentence inside* an otherwise page-specific field (171 taglines, 148 meta descriptions, one line). Backlog measured and **left untouched**: 45 sentences across 416 of 591 specs. Full record: `docs/editorial-footprint-upstream-findings-2026-08-26.md` §3. | prevention (Batch C) |
 | 2026-09-01 | **`specificityDeficit`: six console and storefront names added to the `platform` rule** — `Xbox`, `PlayStation`, `PSN`, `Steam`, `Valorant`, `Garena`. The list already carried Roblox, Fortnite, PUBG and Minecraft, so it was never social-only, and there is no principled reason "Roblox" reads as a concrete fact while "Xbox" does not. The omission systematically under-scored every page whose subject is game identity: measured on `/updates/`, it inflated `specificityDeficit` on `forza-horizon-6-gamertag-rules` from 4.18 to 10.51 and on `lienquan-mobile-name-penalty-update` from 7.34 to 9.15, with no page changing by one word. **Site-wide effect measured before landing: 152 pages improve, 4,032 unchanged, 444 worsen by at most 5.1 points, site median unchanged at 9.9.** The 444 are pages naming no platform at all; they did not get worse, their cohort median got more accurate, which is the dimension working as designed. 34 of them cross the 10-point percentile regression rule, which is why the baseline is regenerated in the commit that follows this one. `Steam` is the only token colliding with a common English word, so the rule stays case-sensitive — all 85 pages carrying capitalised "Steam" mean Valve's, checked 2026-09-01. Two assertions added to `npm run test:editorial-footprint` (now 57) and verified against a deliberately broken input: reverting the six names fails the first and leaves the case-sensitivity one green. | rule bug |
 | 2026-09-02 | **Forward-only became clean-on-touch, siblings included** (user direction). A copy-edited page must leave with zero em dashes in every measured slot (`em-dash-touched`); a copy-edited English page pulls its locale siblings (`em-dash-sibling`); untouched pages stay forward-only. `.related-card` joined the card slot (193 pages, the updates hub's 11 dated labels among them) and `[data-static-directory]` left measurement (inventory rendered from other pages). `--enforce` gained a per-rule list. All three em-dash rules entered `BLOCKING`; the workflow step stays in shadow. Verified against seven probes and replayed over the last ten merged PRs (four true-positive `em-dash-touched` PRs, one `em-dash-sibling` PR at 745 hits, zero false positives). Ledger and baseline regenerated in their own commit. Tests 52 → 63. | policy change + extractor fix |
+| 2026-09-02 | **Em dash and spaced hyphen banned forward-only on English copy** (`docs/em-dash-policy.md`). `EFR-F-006` added to the bank (spaced hyphen as a dash, English, prose slots, measured base rate 3 occurrences on 3 pages). `check-editorial-footprint.js` gains `BANNED` — an introduced finding on a banned rule and locale exits 1 in every mode, all other rules keep shadow — and its step joins `validate.yml`'s gating list. Locale scope is deliberate: the em dash is required in Russian and native in five more locales, and the en dash is the native mark in thirteen; no locale rule was created. Verified on a throwaway branch (English em dash and spaced hyphen: `BANNED`, exit 1; German em dash and a plain English sentence: exit 0). Four assertions added to `npm run test:editorial-footprint` (now 61). | user decision |
+| 2026-09-02 | **The em dash ban became per-locale policy** (`data/em_dash_locale_policy.json`, read through `scripts/lib/em-dash-policy.js`): ban on en and thirteen en-dash locales with the native replacement named in the block, double-dash on zh-tw and ja, native on six locales, review on nine. `matchBank()` hits now carry `index` so the pair detector can read the neighbouring character. `npm run audit:em-dash` re-measures every locale against the ledger. Verified on a throwaway branch per the table in `docs/em-dash-policy.md` §5. Five assertions added to `npm run test:editorial-footprint`. | user decision |
 
 ---
 

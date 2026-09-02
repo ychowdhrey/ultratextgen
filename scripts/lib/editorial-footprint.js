@@ -155,7 +155,7 @@ function matchBank(page, bank = loadBank()) {
           while ((idx = text.indexOf(entry.pattern, idx + 1)) !== -1) {
             hits.push({
               id: entry.id, category: entry.category, severity: entry.severity,
-              slot, match: entry.pattern, context: excerpt(text, idx, entry.pattern.length)
+              slot, match: entry.pattern, index: idx, context: excerpt(text, idx, entry.pattern.length)
             });
           }
         } else {
@@ -164,7 +164,7 @@ function matchBank(page, bank = loadBank()) {
           while ((m = entry._rx.exec(text)) !== null) {
             hits.push({
               id: entry.id, category: entry.category, severity: entry.severity,
-              slot, match: m[0], context: excerpt(text, m.index, m[0].length)
+              slot, match: m[0], index: m.index, context: excerpt(text, m.index, m[0].length)
             });
             if (m[0].length === 0) entry._rx.lastIndex++;
           }

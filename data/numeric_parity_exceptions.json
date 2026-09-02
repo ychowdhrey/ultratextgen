@@ -1,0 +1,21 @@
+{
+  "_readme": [
+    "Deliberate, discussed numeric divergences between pages in one hreflang cluster.",
+    "check-numeric-parity.js fails a PR that corrects a number on one page of a cluster",
+    "and leaves a sibling asserting the old value. An entry here silences exactly one",
+    "(page, slot, value) triple.",
+    "",
+    "Same bar as data/translation_parity_exceptions.json and",
+    "data/english_parent_exceptions.json: every entry is a decision agreed with the user,",
+    "never added unilaterally to make a PR pass. If the gate flags a sibling, the default",
+    "fix is to correct the sibling in the same PR.",
+    "",
+    "Entry shape: { page, slot, value, reason, date }",
+    "  page   repo-relative path, e.g. \"de/updates/unicode-18-beta-startet/index.html\"",
+    "  slot   one of the slot names in scripts/lib/numeric-parity.js SLOTS",
+    "  value  the canonical digit string, e.g. \"13047\"",
+    "",
+    "Ships empty on purpose."
+  ],
+  "exceptions": []
+}
