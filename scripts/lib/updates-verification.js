@@ -136,4 +136,91 @@ function inspect(file) {
   return { file, errors, warnings, pill };
 }
 
-module.exports = { inspect, parseDate, iso, bodyOf, DATE_RE, STAMP_RE, PILL_RE };
+/**
+ * LOCALE VERIFICATION PILLS
+ * -------------------------
+ * A locale entry carries ONE verification pill in its own language and no
+ * "Published" half. That asymmetry is deliberate: for an English entry the
+ * publication date is a real claim (it is where the fact was first reported),
+ * while for a translation the only claim worth publishing is when the facts
+ * were last checked — and that check happens once, upstream, in English.
+ *
+ * So a locale pill's date must equal its EN parent's Verified date, found via
+ * the page's own hreflang="en". That single rule is what catches the failure
+ * this whole file exists for: on 2026-09-01 an EN-only pass corrected the
+ * Unicode 18.0 character count from 13,047 to 13,007 and left seven
+ * translations asserting the old figure as current. No gate saw it, because
+ * the parity gate compares a STRUCTURAL fingerprint (links, h2/FAQ/tile
+ * counts) which a changed number does not move, and the locale-translation
+ * gate looks for surviving English strings, which a correctly-translated
+ * wrong number is not. Every gate measured structure or language; none
+ * measured facts. A verified-date that must agree across a cluster is a
+ * cheap proxy for "somebody looked at the translation when EN moved".
+ *
+ * Labels are matched, not generated. Dates are compared as integers rather
+ * than by formatting a string per locale: the pill must contain the parent's
+ * year and day, plus its month wherever the locale writes months as digits
+ * (ja/ko/vi/zh-tw). That is enough to catch a stale date and avoids
+ * hand-authoring month names in seventeen languages — a table this file has
+ * no business being the authority on.
+ */
+const LOCALE_LABELS = {
+  ar: ['آخر تحقّق'], de: ['Zuletzt geprüft'], es: ['Última comprobación'],
+  fr: ['Dernière vérification'], id: ['Terakhir diperiksa'], it: ['Ultimo controllo'],
+  ja: ['最終確認'], ko: ['최종 확인'], nl: ['Laatst gecontroleerd'],
+  pl: ['Ostatnio sprawdzone'], pt: ['Última verificação'], ru: ['Последняя проверка'],
+  sv: ['Senast kontrollerat'], th: ['ตรวจสอบล่าสุด'], tr: ['Son kontrol'],
+  vi: ['Kiểm chứng lần cuối'], 'zh-tw': ['最後查核'],
+};
+
+/** Inspect one <lang>/updates/ entry against its EN parent's verified date. */
+function inspectLocale(file, enVerifiedIso) {
+  const html = fs.readFileSync(file, 'utf8');
+  const body = bodyOf(html);
+  const locale = file.split(/[\\/]/).filter(Boolean).slice(-4)[0];
+  const errors = [];
+  const labels = LOCALE_LABELS[locale];
+  if (!labels) return { file, errors: [`no verification label registered for locale "${locale}"`], warnings: [] };
+
+  const pills = (body.match(/<span class="guide-pill[^"]*">[^<]*<\/span>/g) || [])
+    .filter((p) => labels.some((l) => p.includes(l)));
+
+  if (pills.length !== 1) {
+    errors.push(pills.length === 0
+      ? `no verification pill (expected a guide-pill containing "${labels[0]}")`
+      : `${pills.length} verification pills; exactly one is allowed`);
+  }
+
+  // no stamp in body prose — the pill owns the claim, same rule as English
+  const prose = body.replace(/<span class="guide-pill[^"]*">[^<]*<\/span>/g, ' ');
+  for (const l of labels) {
+    const re = new RegExp(`${l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^<]{0,40}\\d{4}`, 'g');
+    for (const m of prose.matchAll(re)) {
+      errors.push(`verification stamp in body prose: "${m[0].trim()}" — it belongs in the pill`);
+    }
+  }
+
+  if (pills.length === 1 && enVerifiedIso) {
+    const [y, mo, d] = enVerifiedIso.split('-').map(Number);
+    const ints = (pills[0].match(/\d+/g) || []).map(Number);
+    const missing = [];
+    if (!ints.includes(y)) missing.push(`year ${y}`);
+    if (!ints.includes(d)) missing.push(`day ${d}`);
+    if (ints.length >= 3 && !ints.includes(mo)) missing.push(`month ${mo}`);
+    if (missing.length) {
+      errors.push(`pill "${pills[0].replace(/<[^>]+>/g, '')}" does not match its EN parent's `
+        + `Verified date ${enVerifiedIso} (missing ${missing.join(', ')})`);
+    }
+  }
+  return { file, errors, warnings: [] };
+}
+
+/** The EN parent an entry declares via its own hreflang="en". */
+function enParentOf(file) {
+  const m = fs.readFileSync(file, 'utf8')
+    .match(/<link rel="alternate" hreflang="en" href="https:\/\/ultratextgen\.com\/([^"]*)"/);
+  if (!m) return null;
+  return m[1].replace(/\/$/, '') + '/index.html';
+}
+
+module.exports = { inspect, inspectLocale, enParentOf, LOCALE_LABELS, parseDate, iso, bodyOf, DATE_RE, STAMP_RE, PILL_RE };
