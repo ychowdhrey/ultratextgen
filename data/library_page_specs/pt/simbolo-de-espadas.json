@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-espadas/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "spade-symbol",
@@ -29,8 +29,8 @@
       "h2": "O Símbolo de Espadas — ♠ e ♤",
       "intro": "O naipe em si, nas duas formas do Unicode. O ♠ preenchido é o espadas «preto» padrão; ♤ é a versão contornada «branca», e ♠️ é a forma de apresentação emoji, com um seletor de variação. Pronto para colar em qualquer lugar.",
       "symbols": [
-        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660) — Sólido / Preenchido" },
-        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664) — Contornado" },
+        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660): Sólido / Preenchido" },
+        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664): Contornado" },
         { "char": "♠️", "label": "Emoji de Naipe de Espadas (U+2660 U+FE0F)" }
       ]
     },

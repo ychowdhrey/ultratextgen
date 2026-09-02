@@ -8,7 +8,7 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes. Gratis en direct.",
   "slug": "tilde-teken",
   "title": "Tilde (~): Kopieer en Plak ~ ˜ ∼ ≈ — Van Middeleeuwse Afkorting tot Unix Home-map",
   "meta_description": "Kopieer en plak de tilde (~), de kleine tilde (˜), het combinerende ñ-teken en de wiskundige tildes ∼ en ≈ — plus hoe een middeleeuwse schrijversafkorting tot ñ leidde. Klik op een teken om het direct te kopiëren.",
@@ -40,15 +40,15 @@
       "symbols": [
         {
           "char": "~",
-          "label": "Tilde (U+007E) — de Toetsenbordtoets"
+          "label": "Tilde (U+007E): de Toetsenbordtoets"
         },
         {
           "char": "˜",
-          "label": "Kleine Tilde (U+02DC) — Losstaande Spatiëringsvariant"
+          "label": "Kleine Tilde (U+02DC): Losstaande Spatiëringsvariant"
         },
         {
           "char": "̃",
-          "label": "Combinerende Tilde (U+0303) — Staat boven een Letter"
+          "label": "Combinerende Tilde (U+0303): Staat boven een Letter"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "symbols": [
         {
           "char": "∼",
-          "label": "Tilde-operator (U+223C) — ‘Gelijksoortig Aan’"
+          "label": "Tilde-operator (U+223C): ‘Gelijksoortig Aan’"
         },
         {
           "char": "≈",
@@ -100,7 +100,7 @@
         },
         {
           "char": "~",
-          "label": "Tilde (U+007E) — de ASCII-toets die er vaak voor wordt getypt"
+          "label": "Tilde (U+007E): de ASCII-toets die er vaak voor wordt getypt"
         }
       ]
     }

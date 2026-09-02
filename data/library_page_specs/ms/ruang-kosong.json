@@ -25,35 +25,35 @@
       "symbols": [
         {
           "char": "​",
-          "label": "Zero Width Space — U+200B"
+          "label": "Zero Width Space: U+200B"
         },
         {
           "char": "‌",
-          "label": "Zero Width Non-Joiner — U+200C"
+          "label": "Zero Width Non-Joiner: U+200C"
         },
         {
           "char": "‍",
-          "label": "Zero Width Joiner — U+200D"
+          "label": "Zero Width Joiner: U+200D"
         },
         {
           "char": "⁠",
-          "label": "Word Joiner — U+2060"
+          "label": "Word Joiner: U+2060"
         },
         {
           "char": "﻿",
-          "label": "Zero Width No-Break Space — U+FEFF"
+          "label": "Zero Width No-Break Space: U+FEFF"
         },
         {
           "char": "‎",
-          "label": "Left-to-Right Mark — U+200E"
+          "label": "Left-to-Right Mark: U+200E"
         },
         {
           "char": "‏",
-          "label": "Right-to-Left Mark — U+200F"
+          "label": "Right-to-Left Mark: U+200F"
         },
         {
           "char": "­",
-          "label": "Soft Hyphen — U+00AD"
+          "label": "Soft Hyphen: U+00AD"
         }
       ]
     },
@@ -65,35 +65,35 @@
       "symbols": [
         {
           "char": " ",
-          "label": "No-Break Space — U+00A0"
+          "label": "No-Break Space: U+00A0"
         },
         {
           "char": " ",
-          "label": "En Space — U+2002"
+          "label": "En Space: U+2002"
         },
         {
           "char": " ",
-          "label": "Em Space — U+2003"
+          "label": "Em Space: U+2003"
         },
         {
           "char": " ",
-          "label": "Figure Space — U+2007"
+          "label": "Figure Space: U+2007"
         },
         {
           "char": " ",
-          "label": "Punctuation Space — U+2008"
+          "label": "Punctuation Space: U+2008"
         },
         {
           "char": " ",
-          "label": "Thin Space — U+2009"
+          "label": "Thin Space: U+2009"
         },
         {
           "char": " ",
-          "label": "Hair Space — U+200A"
+          "label": "Hair Space: U+200A"
         },
         {
           "char": " ",
-          "label": "Narrow No-Break Space — U+202F"
+          "label": "Narrow No-Break Space: U+202F"
         }
       ]
     },
@@ -105,31 +105,31 @@
       "symbols": [
         {
           "char": " ",
-          "label": "En Quad — U+2000"
+          "label": "En Quad: U+2000"
         },
         {
           "char": " ",
-          "label": "Em Quad — U+2001"
+          "label": "Em Quad: U+2001"
         },
         {
           "char": " ",
-          "label": "Three-Per-Em Space — U+2004"
+          "label": "Three-Per-Em Space: U+2004"
         },
         {
           "char": " ",
-          "label": "Four-Per-Em Space — U+2005"
+          "label": "Four-Per-Em Space: U+2005"
         },
         {
           "char": " ",
-          "label": "Six-Per-Em Space — U+2006"
+          "label": "Six-Per-Em Space: U+2006"
         },
         {
           "char": " ",
-          "label": "Medium Mathematical Space — U+205F"
+          "label": "Medium Mathematical Space: U+205F"
         },
         {
           "char": "　",
-          "label": "Ideographic Space — U+3000"
+          "label": "Ideographic Space: U+3000"
         }
       ]
     },
@@ -141,27 +141,27 @@
       "symbols": [
         {
           "char": "⠀",
-          "label": "Braille Pattern Blank — U+2800"
+          "label": "Braille Pattern Blank: U+2800"
         },
         {
           "char": "ㅤ",
-          "label": "Hangul Filler — U+3164"
+          "label": "Hangul Filler: U+3164"
         },
         {
           "char": "ᅟ",
-          "label": "Hangul Choseong Filler — U+115F"
+          "label": "Hangul Choseong Filler: U+115F"
         },
         {
           "char": "ᅠ",
-          "label": "Hangul Jungseong Filler — U+1160"
+          "label": "Hangul Jungseong Filler: U+1160"
         },
         {
           "char": "ﾠ",
-          "label": "Halfwidth Hangul Filler — U+FFA0"
+          "label": "Halfwidth Hangul Filler: U+FFA0"
         },
         {
           "char": "᠎",
-          "label": "Mongolian Vowel Separator — U+180E"
+          "label": "Mongolian Vowel Separator: U+180E"
         }
       ]
     }

@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-peao/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "pawn-symbol",
@@ -65,10 +65,10 @@
       "h2": "No que um Peão Pode Se Transformar",
       "intro": "Um peão que alcança a extremidade oposta do tabuleiro precisa ser promovido — a uma rainha, torre, bispo ou cavalo da sua própria cor. Nunca pode virar rei, e não pode continuar sendo peão. A rainha é a escolha usual; qualquer outra é uma «sub-promoção».",
       "symbols": [
-        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B) — a promoção usual" },
+        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B): a promoção usual" },
         { "char": "♜", "label": "Torre de Xadrez Preta (U+265C)" },
         { "char": "♝", "label": "Bispo de Xadrez Preto (U+265D)" },
-        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E) — uma sub-promoção" }
+        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E): uma sub-promoção" }
       ]
     }
   ],

@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Gần Gũi Với Ampersand",
       "intro": "Những ký hiệu này chia sẻ nguồn gốc hoặc ý nghĩa gần với ampersand.",
       "symbols": [
-        { "char": "⁊", "label": "Tironian Et (U+204A) — một dạng viết tắt cổ hơn cho «và», vẫn được dùng trong tiếng Ireland và Scottish Gaelic" },
-        { "char": "@", "label": "Ký Hiệu At — một ký hiệu viết tắt thương mại khác, nhưng mang ý nghĩa hoàn toàn khác" }
+        { "char": "⁊", "label": "Tironian Et (U+204A): một dạng viết tắt cổ hơn cho «và», vẫn được dùng trong tiếng Ireland và Scottish Gaelic" },
+        { "char": "@", "label": "Ký Hiệu At: một ký hiệu viết tắt thương mại khác, nhưng mang ý nghĩa hoàn toàn khác" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử." },
     { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },

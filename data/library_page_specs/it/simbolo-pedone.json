@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-pedone/" },
@@ -65,10 +65,10 @@
       "h2": "Cosa Può Diventare un Pedone",
       "intro": "Un pedone che raggiunge l'estremità opposta della scacchiera deve promuovere — a regina, torre, alfiere o cavallo del proprio colore. Non può mai diventare re, e non può restare pedone. La regina è la scelta abituale; qualsiasi altra è una \"sotto-promozione\".",
       "symbols": [
-        { "char": "♛", "label": "Black Chess Queen (U+265B) — la promozione abituale" },
+        { "char": "♛", "label": "Black Chess Queen (U+265B): la promozione abituale" },
         { "char": "♜", "label": "Black Chess Rook (U+265C)" },
         { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
-        { "char": "♞", "label": "Black Chess Knight (U+265E) — una sotto-promozione" }
+        { "char": "♞", "label": "Black Chess Knight (U+265E): una sotto-promozione" }
       ]
     }
   ],

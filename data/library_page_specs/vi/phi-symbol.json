@@ -28,9 +28,9 @@
       "h2": "Ký Hiệu Phi — φ, Φ & ϕ",
       "intro": "Ba dạng mà mọi người nghĩ đến khi nói «ký hiệu phi»: chữ thường quen thuộc, chữ hoa, và biến thể toán học chuyên dụng. Dán dạng nào tùy bạn cần.",
       "symbols": [
-        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6) — Chữ Cái Tỉ Lệ Vàng, Dạng Vòng Mở" },
-        { "char": "Φ", "label": "Chữ Hoa Hy Lạp Phi (U+03A6) — Từ Thông Trong Vật Lý" },
-        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5) — Biến Thể Toán Học Vòng Đóng, Có Nét Gạch" }
+        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6): Chữ Cái Tỉ Lệ Vàng, Dạng Vòng Mở" },
+        { "char": "Φ", "label": "Chữ Hoa Hy Lạp Phi (U+03A6): Từ Thông Trong Vật Lý" },
+        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5): Biến Thể Toán Học Vòng Đóng, Có Nét Gạch" }
       ]
     },
     {
@@ -39,10 +39,10 @@
       "h2": "Phi: Tỉ Lệ Vàng & Ứng Dụng Toán Học",
       "intro": "Vai trò được tìm kiếm nhiều nhất của phi. Chữ thường φ đặt tên cho tỉ lệ vàng ≈ 1,618, định nghĩa bằng (1 + √5) / 2; từ Unicode 3.0, dạng đóng ϕ (U+03D5) là glyph được khuyến nghị cho cách dùng toán học đó, còn chữ hoa Φ ký hiệu từ thông.",
       "symbols": [
-        { "char": "φ", "label": "Phi Thường (U+03C6) — Tỉ Lệ Vàng ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5) — Glyph Đóng Được Ưu Tiên Trong Toán Học" },
-        { "char": "Φ", "label": "Phi Hoa (U+03A6) — Từ Thông" },
-        { "char": "√", "label": "Căn Bậc Hai (U+221A) — Xuất Hiện Trong Công Thức (1 + √5) / 2 Của Phi" }
+        { "char": "φ", "label": "Phi Thường (U+03C6): Tỉ Lệ Vàng ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5): Glyph Đóng Được Ưu Tiên Trong Toán Học" },
+        { "char": "Φ", "label": "Phi Hoa (U+03A6): Từ Thông" },
+        { "char": "√", "label": "Căn Bậc Hai (U+221A): Xuất Hiện Trong Công Thức (1 + √5) / 2 Của Phi" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
     { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Tỉ lệ vàng, căn bậc hai, và các toán tử cùng chữ cái Hy Lạp lấp đầy một phương trình." },

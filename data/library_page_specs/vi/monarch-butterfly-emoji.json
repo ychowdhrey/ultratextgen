@@ -37,7 +37,7 @@
       "h2": "Emoji Nó Thường Bị Nhầm Lẫn",
       "intro": "Emoji chung chung đã được mã hóa mà Bướm Chúa được tách ra từ đó, và người hàng xóm mà nó thường bị hiển thị nhầm thành.",
       "symbols": [
-        { "char": "🦋", "label": "Butterfly — loài chung chung mà Bướm Chúa được tách ra" }
+        { "char": "🦋", "label": "Butterfly: loài chung chung mà Bướm Chúa được tách ra" }
       ]
     },
     {
@@ -46,13 +46,13 @@
       "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
       "intro": "Bướm Chúa không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB) — thắng cuộc bình chọn công khai" },
+        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB): thắng cuộc bình chọn công khai" },
         { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" },
         { "char": "🪋", "label": "Meteor (bản nháp, U+1FA8B)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/animal-emojis/", "title": "Ký Hiệu Động Vật & Sinh Vật", "desc": "Mọi emoji sinh vật đã được mã hóa, bao gồm cả Butterfly chung chung, duyệt và sao chép ngay hôm nay." },
     { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai." },

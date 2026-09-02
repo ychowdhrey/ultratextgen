@@ -29,7 +29,7 @@
       "intro": "Ký hiệu mũi tên trái và hình tam giác thường dùng thay thế mang tính trang trí, kiểu «tua lại».",
       "symbols": [
         { "char": "←", "label": "Mũi Tên Trái (U+2190)" },
-        { "char": "◀", "label": "Tam Giác Đen Trỏ Trái (U+25C0) — thường thay cho ← mang tính trang trí, kiểu «tua lại»" }
+        { "char": "◀", "label": "Tam Giác Đen Trỏ Trái (U+25C0): thường thay cho ← mang tính trang trí, kiểu «tua lại»" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/right-arrow/", "title": "Mũi Tên Phải (→)", "desc": "Ánh xạ, hệ quả và «tiếp theo»." },
     { "href": "/vi/symbol/up-arrow/", "title": "Mũi Tên Lên (↑)", "desc": "Tín hiệu tăng, hướng bắc và các dãy số đi lên." },

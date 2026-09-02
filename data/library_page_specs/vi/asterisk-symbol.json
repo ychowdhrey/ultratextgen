@@ -28,10 +28,10 @@
       "h2": "Dấu Sao & Các Biến Thể Trình Bày",
       "intro": "Dấu sao thường trên bàn phím cộng với các dạng trình bày đậm hơn và toán tử chuyên dụng cho toán học. Tất cả đều sẵn sàng để dán.",
       "symbols": [
-        { "char": "*", "label": "Dấu Sao (U+002A) — Chú Thích, Ký Tự Đại Diện & Dấu Kiểm Duyệt" },
+        { "char": "*", "label": "Dấu Sao (U+002A): Chú Thích, Ký Tự Đại Diện & Dấu Kiểm Duyệt" },
         { "char": "✱", "label": "Dấu Sao Đậm (U+2731)" },
         { "char": "✳", "label": "Dấu Sao Tám Nan (U+2733)" },
-        { "char": "∗", "label": "Toán Tử Dấu Sao (U+2217) — Glyph Phép Nhân Trong Toán Học" },
+        { "char": "∗", "label": "Toán Tử Dấu Sao (U+2217): Glyph Phép Nhân Trong Toán Học" },
         { "char": "＊", "label": "Dấu Sao Chiều Rộng Đầy Đủ (U+FF0A)" }
       ]
     },
@@ -41,7 +41,7 @@
       "h2": "Dấu Ba Sao & Dấu Ngắt Phần",
       "intro": "Các dấu biên tập được xây từ dấu sao — dấu ba sao hình tam giác ngắt phần, cùng những «người anh em» xếp chồng và hạ thấp của nó.",
       "symbols": [
-        { "char": "⁂", "label": "Dấu Ba Sao (U+2042) — Ba Dấu Sao Xếp Thành Tam Giác" },
+        { "char": "⁂", "label": "Dấu Ba Sao (U+2042): Ba Dấu Sao Xếp Thành Tam Giác" },
         { "char": "⁑", "label": "Hai Dấu Sao Xếp Dọc (U+2051)" },
         { "char": "⁎", "label": "Dấu Sao Thấp (U+204E)" }
       ]
@@ -54,13 +54,13 @@
       "symbols": [
         { "char": "★", "label": "Ngôi Sao Đen (U+2605)" },
         { "char": "☆", "label": "Ngôi Sao Trắng (U+2606)" },
-        { "char": "⭐", "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50) — Emoji Ngôi Sao Vàng" },
+        { "char": "⭐", "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50): Emoji Ngôi Sao Vàng" },
         { "char": "✦", "label": "Ngôi Sao Đen Bốn Cánh (U+2726)" },
         { "char": "✧", "label": "Ngôi Sao Trắng Bốn Cánh (U+2727)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu gạch ngang, dấu ngoặc, dấu ngoặc kép và họ dấu câu thông thường mà dấu sao thuộc về." },
     { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu sao, ampersand, dấu thăng và phần còn lại của các ký hiệu in trên các hàng bàn phím." },

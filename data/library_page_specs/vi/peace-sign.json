@@ -37,9 +37,9 @@
       "h2": "Các Ký Hiệu Khác Đừng Nhầm Lẫn",
       "intro": "Những ký hiệu khác thường được liên tưởng đến hòa bình nhưng mang mã điểm và nguồn gốc hoàn toàn riêng biệt.",
       "symbols": [
-        { "char": "✌", "label": "Bàn Tay Chữ V (U+270C) — một cử chỉ tay, không phải ký hiệu hòa bình hình tròn" },
-        { "char": "🕊", "label": "Chim Bồ Câu (U+1F54A) — một emoji liên tưởng hòa bình riêng biệt" },
-        { "char": "☯", "label": "Âm Dương (U+262F) — một ký hiệu khác, đôi khi được ghép cùng hình ảnh hòa bình" }
+        { "char": "✌", "label": "Bàn Tay Chữ V (U+270C): một cử chỉ tay, không phải ký hiệu hòa bình hình tròn" },
+        { "char": "🕊", "label": "Chim Bồ Câu (U+1F54A): một emoji liên tưởng hòa bình riêng biệt" },
+        { "char": "☯", "label": "Âm Dương (U+262F): một ký hiệu khác, đôi khi được ghép cùng hình ảnh hòa bình" }
       ]
     },
     {
@@ -48,12 +48,12 @@
       "h2": "Dạng Trình Bày Chữ & Emoji",
       "intro": "Cùng một mã điểm nhưng hai kiểu hiển thị khác nhau: dạng chữ đơn sắc mặc định, và dạng emoji nhiều màu khi có bộ chọn biến thể VS16, tùy nền tảng có hỗ trợ hay không.",
       "symbols": [
-        { "char": "☮", "label": "Ký Hiệu Hòa Bình — Dạng Chữ Mặc Định" },
-        { "char": "☮️", "label": "Ký Hiệu Hòa Bình — Dạng Emoji (U+262E U+FE0F)" }
+        { "char": "☮", "label": "Ký Hiệu Hòa Bình: Dạng Chữ Mặc Định" },
+        { "char": "☮️", "label": "Ký Hiệu Hòa Bình: Dạng Emoji (U+262E U+FE0F)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/yin-yang/", "title": "Âm Dương (☯)", "desc": "Triết học Trung Hoa cổ đại đằng sau hình xoáy." },
     { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo & Tâm Linh", "desc": "Hòa bình, cử chỉ tay, chim bồ câu và các ký hiệu thiện chí trong thư viện đầy đủ." },

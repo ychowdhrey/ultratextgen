@@ -29,8 +29,8 @@
       "intro": "Le signe lui-même et la lettre cyrillique dont il est issu. Le dessin gagnant est l'Er majuscule (Р) avec une barre horizontale supplémentaire sous la panse — le р minuscule est celui qui apparaissait dans l'ancienne abréviation « р. ».",
       "symbols": [
         { "char": "₽", "label": "Symbole du Rouble (U+20BD)" },
-        { "char": "Р", "label": "Er Majuscule Cyrillique (U+0420) — la Base du Symbole" },
-        { "char": "р", "label": "Er Minuscule Cyrillique (U+0440) — Utilisé dans l'Ancienne Abréviation « р. »" }
+        { "char": "Р", "label": "Er Majuscule Cyrillique (U+0420): la Base du Symbole" },
+        { "char": "р", "label": "Er Minuscule Cyrillique (U+0440): Utilisé dans l'Ancienne Abréviation « р. »" }
       ]
     },
     {
@@ -39,11 +39,11 @@
       "h2": "Autres Symboles Monétaires Récemment Adoptés",
       "intro": "Le symbole du rouble a des voisins proches dans le bloc Currency Symbols d'Unicode — un groupe de signes encodés seulement dans les années 2010, quand des États post-soviétiques et d'autres ont doté leur monnaie d'un glyphe dédié. Le signe de la roupie indienne, comme le rouble, a été choisi par concours de design public.",
       "symbols": [
-        { "char": "₹", "label": "Symbole de la Roupie Indienne (U+20B9) — Choisi par Concours Public en 2010" },
-        { "char": "₺", "label": "Symbole de la Livre Turque (U+20BA) — Adopté en 2012" },
-        { "char": "₸", "label": "Symbole du Tenge (U+20B8) — Tenge Kazakh" },
-        { "char": "₼", "label": "Symbole du Manat (U+20BC) — Manat Azerbaïdjanais" },
-        { "char": "₾", "label": "Symbole du Lari (U+20BE) — Lari Géorgien" }
+        { "char": "₹", "label": "Symbole de la Roupie Indienne (U+20B9): Choisi par Concours Public en 2010" },
+        { "char": "₺", "label": "Symbole de la Livre Turque (U+20BA): Adopté en 2012" },
+        { "char": "₸", "label": "Symbole du Tenge (U+20B8): Tenge Kazakh" },
+        { "char": "₼", "label": "Symbole du Manat (U+20BC): Manat Azerbaïdjanais" },
+        { "char": "₾", "label": "Symbole du Lari (U+20BE): Lari Géorgien" }
       ]
     },
     {
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/currency-symbols/", "title": "Currency Symbols", "desc": "Un ensemble de symboles monétaires du monde à parcourir, du dollar et de l'euro jusqu'à la roupie, le rouble et le bitcoin (en anglais)." },
     { "href": "/fr/symbol/symbole-roupie/", "title": "Symbole de la Roupie", "desc": "La cousine la plus proche du rouble : le ₹ indien a lui aussi été choisi par concours de design public, seulement trois ans plus tôt, en 2010." },

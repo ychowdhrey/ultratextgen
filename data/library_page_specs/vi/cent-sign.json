@@ -37,7 +37,7 @@
       "h2": "Các Ký Hiệu Thường Bị Nhầm Với Cent",
       "intro": "Những ký hiệu này thường bị dùng thay cho ¢ trong thực tế — mỗi cái là một ký tự riêng biệt với ý nghĩa riêng.",
       "symbols": [
-        { "char": "₵", "label": "Ký Hiệu Cedi (Ghana) — Không Phải Ký Hiệu Cent" },
+        { "char": "₵", "label": "Ký Hiệu Cedi (Ghana): Không Phải Ký Hiệu Cent" },
         { "char": "₡", "label": "Ký Hiệu Colón (Costa Rica / El Salvador)" },
         { "char": "¤", "label": "Ký Hiệu Tiền Tệ Chung" },
         { "char": "c", "label": "Chữ Cái C Thường (Cách Thay Thế Phổ Biến Trên Bàn Phím)" }
@@ -56,7 +56,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
     { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },

@@ -38,7 +38,7 @@
       "h2": "Pas la Même Chose qu'un Simple Croissant ou une Simple Étoile",
       "intro": "Le croissant et l'étoile forme un seul glyphe combiné. Les caractères séparés de croissant de lune et d'étoile, que l'on va souvent chercher à la place, ont chacun leur propre point de code et leur propre rôle.",
       "symbols": [
-        { "char": "☾", "label": "Dernier Quartier de Lune (U+263E) — Croissant Tout Simple" },
+        { "char": "☾", "label": "Dernier Quartier de Lune (U+263E): Croissant Tout Simple" },
         { "char": "☽", "label": "Premier Quartier de Lune (U+263D)" },
         { "char": "🌙", "label": "Emoji Croissant de Lune (U+1F319)" },
         { "char": "⭐", "label": "Étoile Blanche Moyenne (U+2B50)" },
@@ -61,7 +61,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/religious-symbols/", "title": "Religious Symbols", "desc": "Les symboles de foi de chaque grande religion mondiale réunis dans une même référence à parcourir (en anglais)." },
     { "href": "/library/islamic-symbols/", "title": "Islamic Symbols", "desc": "Le croissant et l'étoile aux côtés de la calligraphie « Allah », de la mosquée, de la prière et des autres symboles liés à l'islam (en anglais)." },

@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/phi-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-phi-symbol",
@@ -29,9 +29,9 @@
       "h2": "Das Phi-Symbol — φ, Φ & ϕ",
       "intro": "Die drei Formen, die mit „dem Phi-Symbol“ gemeint sind: der alltägliche Kleinbuchstabe, der Großbuchstabe und die eigene Mathe-Variante. Kopiere, welche du gerade brauchst.",
       "symbols": [
-        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi (U+03C6) — der Goldene-Schnitt-Buchstabe, offene „geschwungene“ Form" },
-        { "char": "Φ", "label": "Griechischer Großbuchstabe Phi (U+03A6) — magnetischer Fluss in der Physik" },
-        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5) — die „geschlossene“, durchstrichene Mathe-Variante" }
+        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi (U+03C6): der Goldene-Schnitt-Buchstabe, offene „geschwungene“ Form" },
+        { "char": "Φ", "label": "Griechischer Großbuchstabe Phi (U+03A6): magnetischer Fluss in der Physik" },
+        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5): die „geschlossene“, durchstrichene Mathe-Variante" }
       ]
     },
     {
@@ -40,10 +40,10 @@
       "h2": "Phi: Goldener Schnitt & Mathematik",
       "intro": "Phis meistgesuchte Rolle. Das kleine φ bezeichnet den Goldenen Schnitt ≈ 1,618, definiert als (1 + √5) / 2; seit Unicode 3.0 ist das geschlossene ϕ (U+03D5) die für diese mathematische Verwendung empfohlene Glyphe, und das große Φ steht für den magnetischen Fluss.",
       "symbols": [
-        { "char": "φ", "label": "Kleines Phi (U+03C6) — Goldener Schnitt ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5) — die für Mathematik empfohlene geschlossene Glyphe" },
-        { "char": "Φ", "label": "Großes Phi (U+03A6) — magnetischer Fluss" },
-        { "char": "√", "label": "Quadratwurzelzeichen (U+221A) — Teil von Phis Formel (1 + √5) / 2" }
+        { "char": "φ", "label": "Kleines Phi (U+03C6): Goldener Schnitt ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5): die für Mathematik empfohlene geschlossene Glyphe" },
+        { "char": "Φ", "label": "Großes Phi (U+03A6): magnetischer Fluss" },
+        { "char": "√", "label": "Quadratwurzelzeichen (U+221A): Teil von Phis Formel (1 + √5) / 2" }
       ]
     },
     {

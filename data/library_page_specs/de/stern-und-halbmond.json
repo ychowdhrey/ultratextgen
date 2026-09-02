@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/stern-und-halbmond/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "stern-und-halbmond",
@@ -39,7 +39,7 @@
       "h2": "Nicht dasselbe wie ein einzelner Halbmond oder Stern",
       "intro": "Stern und Halbmond ist eine einzelne, kombinierte Glyphe. Die separaten Halbmond- und Stern-Zeichen, zu denen viele stattdessen greifen, haben jeweils einen eigenen Codepoint und eine eigene Aufgabe.",
       "symbols": [
-        { "char": "☾", "label": "Abnehmender Halbmond (U+263E) — schlichter Halbmond" },
+        { "char": "☾", "label": "Abnehmender Halbmond (U+263E): schlichter Halbmond" },
         { "char": "☽", "label": "Zunehmender Halbmond (U+263D)" },
         { "char": "🌙", "label": "Halbmond-Emoji (U+1F319)" },
         { "char": "⭐", "label": "Mittlerer weißer Stern (U+2B50)" },

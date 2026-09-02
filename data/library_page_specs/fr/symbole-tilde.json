@@ -28,9 +28,9 @@
       "h2": "Le Tilde ~ et Ses Sosies",
       "intro": "Trois caractères Unicode bien distincts que tout le monde appelle « le tilde » — la touche du clavier, un modificateur autonome, et le diacritique combinant qui se pose sur une lettre.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E) — la Touche du Clavier" },
-        { "char": "˜", "label": "Petit Tilde (U+02DC) — Modificateur Autonome" },
-        { "char": "̃", "label": "Tilde Combinant (U+0303) — se Pose sur une Lettre" }
+        { "char": "~", "label": "Tilde (U+007E): la Touche du Clavier" },
+        { "char": "˜", "label": "Petit Tilde (U+02DC): Modificateur Autonome" },
+        { "char": "̃", "label": "Tilde Combinant (U+0303): se Pose sur une Lettre" }
       ]
     },
     {
@@ -51,15 +51,15 @@
       "h2": "Les Tildes Mathématiques : Semblable-à et Presque-Égal",
       "intro": "En équation, le tilde signifie « semblable à » ou « environ », mais les véritables signes mathématiques sont des caractères Unicode à part entière — pas le ~ ASCII que l'on tape habituellement à leur place.",
       "symbols": [
-        { "char": "∼", "label": "Opérateur Tilde (U+223C) — « Semblable à »" },
-        { "char": "≈", "label": "Presque Égal à (U+2248) — « Approximativement Égal »" },
+        { "char": "∼", "label": "Opérateur Tilde (U+223C): « Semblable à »" },
+        { "char": "≈", "label": "Presque Égal à (U+2248): « Approximativement Égal »" },
         { "char": "≅", "label": "Approximativement Égal à (U+2245)" },
         { "char": "≃", "label": "Asymptotiquement Égal à (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E) — le Caractère ASCII Souvent Tapé à sa Place" }
+        { "char": "~", "label": "Tilde (U+007E): le Caractère ASCII Souvent Tapé à sa Place" }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier (en anglais)." },
     { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde (en anglais)." },

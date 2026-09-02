@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-picche/" },
@@ -29,8 +29,8 @@
       "h2": "Il Simbolo Picche — ♠ e ♤",
       "intro": "Il seme stesso, in entrambe le forme Unicode. Il ♠ pieno è la \"nera\" picche predefinita; ♤ è la versione \"bianca\" a contorno, e ♠️ è la forma con presentazione emoji e selettore di variazione. Pronto da incollare ovunque.",
       "symbols": [
-        { "char": "♠", "label": "Black Spade Suit (U+2660) — Piena / Riempita" },
-        { "char": "♤", "label": "White Spade Suit (U+2664) — Contorno" },
+        { "char": "♠", "label": "Black Spade Suit (U+2660): Piena / Riempita" },
+        { "char": "♤", "label": "White Spade Suit (U+2664): Contorno" },
         { "char": "♠️", "label": "Spade Suit Emoji (U+2660 U+FE0F)" }
       ]
     },

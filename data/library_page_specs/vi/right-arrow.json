@@ -29,7 +29,7 @@
       "intro": "Ký hiệu mũi tên phải cùng biến thể trang trí thường bị nhầm lẫn với nó.",
       "symbols": [
         { "char": "→", "label": "Mũi Tên Phải (U+2192)" },
-        { "char": "▶", "label": "Tam Giác Đen Trỏ Phải (U+25B6) — thường thay cho → mang tính trang trí, kiểu «phát»" }
+        { "char": "▶", "label": "Tam Giác Đen Trỏ Phải (U+25B6): thường thay cho → mang tính trang trí, kiểu «phát»" }
       ]
     },
     {
@@ -49,13 +49,13 @@
       "h2": "Mũi Tên Đôi & Mũi Tên Trắng",
       "intro": "Các biến thể khác của mũi tên phải trong Unicode.",
       "symbols": [
-        { "char": "⇒", "label": "Mũi Tên Đôi Hướng Phải (U+21D2) — cũng dùng cho «suy ra» trong logic học" },
+        { "char": "⇒", "label": "Mũi Tên Đôi Hướng Phải (U+21D2): cũng dùng cho «suy ra» trong logic học" },
         { "char": "⇨", "label": "Mũi Tên Trắng Hướng Phải (U+21E8)" },
         { "char": "↠", "label": "Mũi Tên Hai Đầu Hướng Phải (U+21A0)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/left-arrow/", "title": "Mũi Tên Trái (←)", "desc": "«Quay lại», «trước đó» và hệ quả đảo chiều." },
     { "href": "/vi/symbol/up-arrow/", "title": "Mũi Tên Lên (↑)", "desc": "Tín hiệu tăng, hướng bắc và các dãy số đi lên." },

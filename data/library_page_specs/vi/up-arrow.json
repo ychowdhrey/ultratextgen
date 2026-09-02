@@ -29,7 +29,7 @@
       "intro": "Ký hiệu mũi tên lên và hình tam giác thường được dùng thay thế mang tính trang trí.",
       "symbols": [
         { "char": "↑", "label": "Mũi Tên Lên (U+2191)" },
-        { "char": "▲", "label": "Tam Giác Đen Trỏ Lên (U+25B2) — thường thay cho ↑ mang tính trang trí" }
+        { "char": "▲", "label": "Tam Giác Đen Trỏ Lên (U+25B2): thường thay cho ↑ mang tính trang trí" }
       ]
     },
     {
@@ -50,12 +50,12 @@
       "intro": "Các biến thể khác của mũi tên lên trong Unicode — mũi tên đôi hay dùng trong toán học, còn mũi tên trắng chính là ký hiệu quen thuộc trên phím Shift.",
       "symbols": [
         { "char": "⇑", "label": "Mũi Tên Đôi Hướng Lên (U+21D1)" },
-        { "char": "⇧", "label": "Mũi Tên Trắng Hướng Lên (U+21E7) — ký hiệu phím Shift" },
+        { "char": "⇧", "label": "Mũi Tên Trắng Hướng Lên (U+21E7): ký hiệu phím Shift" },
         { "char": "↟", "label": "Mũi Tên Hai Đầu Hướng Lên (U+219F)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/down-arrow/", "title": "Mũi Tên Xuống (↓)", "desc": "Tín hiệu giảm, hướng nam và cuộn xuống." },
     { "href": "/vi/symbol/right-arrow/", "title": "Mũi Tên Phải (→)", "desc": "Ánh xạ, hệ quả và «tiếp theo»." },

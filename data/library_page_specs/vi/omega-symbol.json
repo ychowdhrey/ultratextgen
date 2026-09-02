@@ -38,8 +38,8 @@
       "h2": "Nhầm Lẫn Với Ký Hiệu Ohm",
       "intro": "Hiển thị giống hệt chữ omega hoa ở trên, nhưng lại được mã hóa như một ký tự riêng biệt — cùng với đơn vị điện học đặt tên bằng cách lật ngược nó.",
       "symbols": [
-        { "char": "Ω", "label": "Ký Hiệu Ohm (Điện Trở, U+2126) — Trông Giống Omega, Mã Điểm Khác" },
-        { "char": "℧", "label": "Ký Hiệu Mho (Độ Dẫn Điện) — «Ohm» Viết Ngược, Lật Lộn Ngược" }
+        { "char": "Ω", "label": "Ký Hiệu Ohm (Điện Trở, U+2126): Trông Giống Omega, Mã Điểm Khác" },
+        { "char": "℧", "label": "Ký Hiệu Mho (Độ Dẫn Điện): «Ohm» Viết Ngược, Lật Lộn Ngược" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học." },
     { "href": "/vi/symbol/sigma-symbol/", "title": "Ký Hiệu Sigma", "desc": "Chữ cái đứng sau trào lưu «sigma male» — và lý do 🗿 lại được dán nhiều hơn chính nó." },

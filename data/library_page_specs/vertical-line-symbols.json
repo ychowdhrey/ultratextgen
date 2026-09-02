@@ -17,16 +17,16 @@
       "h2": "Pipe & Bar Characters",
       "intro": "The standard vertical bar and its direct relatives, including full-width and letter forms.",
       "symbols": [
-        { "char": "|", "label": "Vertical Line (Pipe) — U+007C" },
-        { "char": "¦", "label": "Broken Bar — U+00A6" },
-        { "char": "‖", "label": "Double Vertical Line — U+2016" },
-        { "char": "∣", "label": "Divides — U+2223" },
-        { "char": "∥", "label": "Parallel To — U+2225" },
-        { "char": "｜", "label": "Fullwidth Vertical Line — U+FF5C" },
-        { "char": "￨", "label": "Halfwidth Forms Light Vertical — U+FFE8" },
-        { "char": "ǀ", "label": "Latin Letter Dental Click — U+01C0" },
-        { "char": "ǁ", "label": "Latin Letter Lateral Click — U+01C1" },
-        { "char": "⏐", "label": "Vertical Line Extension — U+23D0" }
+        { "char": "|", "label": "Vertical Line (Pipe): U+007C" },
+        { "char": "¦", "label": "Broken Bar: U+00A6" },
+        { "char": "‖", "label": "Double Vertical Line: U+2016" },
+        { "char": "∣", "label": "Divides: U+2223" },
+        { "char": "∥", "label": "Parallel To: U+2225" },
+        { "char": "｜", "label": "Fullwidth Vertical Line: U+FF5C" },
+        { "char": "￨", "label": "Halfwidth Forms Light Vertical: U+FFE8" },
+        { "char": "ǀ", "label": "Latin Letter Dental Click: U+01C0" },
+        { "char": "ǁ", "label": "Latin Letter Lateral Click: U+01C1" },
+        { "char": "⏐", "label": "Vertical Line Extension: U+23D0" }
       ]
     },
     {
@@ -56,9 +56,9 @@
       "h2": "Heavy & Decorative Bars",
       "intro": "Thick dingbat bars and block-element verticals when you want a bolder divider.",
       "symbols": [
-        { "char": "❘", "label": "Light Vertical Bar — U+2758" },
-        { "char": "❙", "label": "Medium Vertical Bar — U+2759" },
-        { "char": "❚", "label": "Heavy Vertical Bar — U+275A" },
+        { "char": "❘", "label": "Light Vertical Bar: U+2758" },
+        { "char": "❙", "label": "Medium Vertical Bar: U+2759" },
+        { "char": "❚", "label": "Heavy Vertical Bar: U+275A" },
         { "char": "▏", "label": "Left One Eighth Block" },
         { "char": "▕", "label": "Right One Eighth Block" },
         { "char": "▮", "label": "Black Vertical Rectangle" },
@@ -72,18 +72,18 @@
       "h2": "Mathematical & Technical Verticals",
       "intro": "Negated divides, parallel operators, and bracket-extension pieces from the technical blocks.",
       "symbols": [
-        { "char": "∤", "label": "Does Not Divide — U+2224" },
-        { "char": "∦", "label": "Not Parallel To — U+2226" },
-        { "char": "⎢", "label": "Left Square Bracket Extension — U+23A2" },
-        { "char": "⎥", "label": "Right Square Bracket Extension — U+23A5" },
-        { "char": "⎮", "label": "Integral Extension — U+23AE" },
-        { "char": "⎪", "label": "Curly Bracket Extension — U+23AA" },
-        { "char": "⎸", "label": "Left Vertical Box Line — U+23B8" },
-        { "char": "⎹", "label": "Right Vertical Box Line — U+23B9" }
+        { "char": "∤", "label": "Does Not Divide: U+2224" },
+        { "char": "∦", "label": "Not Parallel To: U+2226" },
+        { "char": "⎢", "label": "Left Square Bracket Extension: U+23A2" },
+        { "char": "⎥", "label": "Right Square Bracket Extension: U+23A5" },
+        { "char": "⎮", "label": "Integral Extension: U+23AE" },
+        { "char": "⎪", "label": "Curly Bracket Extension: U+23AA" },
+        { "char": "⎸", "label": "Left Vertical Box Line: U+23B8" },
+        { "char": "⎹", "label": "Right Vertical Box Line: U+23B9" }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/dash-hyphen-symbols/",

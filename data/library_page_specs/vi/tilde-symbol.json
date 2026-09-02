@@ -28,9 +28,9 @@
       "h2": "Dấu Ngã ~ Và Những Người «Anh Em Song Sinh»",
       "intro": "Ba ký tự Unicode riêng biệt mà mọi người đều gọi là «dấu ngã» — phím bàn phím, dấu phụ điều chỉnh khoảng cách độc lập, và dấu phụ kết hợp nằm trên một chữ cái.",
       "symbols": [
-        { "char": "~", "label": "Dấu Ngã (U+007E) — Phím Bàn Phím" },
-        { "char": "˜", "label": "Dấu Ngã Nhỏ (U+02DC) — Dấu Phụ Điều Chỉnh Khoảng Cách Độc Lập" },
-        { "char": "̃", "label": "Dấu Ngã Kết Hợp (U+0303) — Nằm Trên Một Chữ Cái" }
+        { "char": "~", "label": "Dấu Ngã (U+007E): Phím Bàn Phím" },
+        { "char": "˜", "label": "Dấu Ngã Nhỏ (U+02DC): Dấu Phụ Điều Chỉnh Khoảng Cách Độc Lập" },
+        { "char": "̃", "label": "Dấu Ngã Kết Hợp (U+0303): Nằm Trên Một Chữ Cái" }
       ]
     },
     {
@@ -51,15 +51,15 @@
       "h2": "Dấu Ngã Toán Học: Tương Tự Và Gần Bằng",
       "intro": "Trong phương trình, dấu ngã mang nghĩa «tương tự» hoặc «xấp xỉ», nhưng các dấu toán học thật sự lại là những ký tự Unicode riêng của chúng — không phải dấu ~ ASCII mà mọi người thường gõ thay thế.",
       "symbols": [
-        { "char": "∼", "label": "Toán Tử Dấu Ngã (U+223C) — «Tương Tự Với»" },
-        { "char": "≈", "label": "Gần Bằng (U+2248) — «Xấp Xỉ Bằng»" },
+        { "char": "∼", "label": "Toán Tử Dấu Ngã (U+223C): «Tương Tự Với»" },
+        { "char": "≈", "label": "Gần Bằng (U+2248): «Xấp Xỉ Bằng»" },
         { "char": "≅", "label": "Xấp Xỉ Bằng (U+2245)" },
         { "char": "≃", "label": "Tiệm Cận Bằng (U+2243)" },
-        { "char": "~", "label": "Dấu Ngã (U+007E) — Phím ASCII Thường Được Gõ Thay Thế" }
+        { "char": "~", "label": "Dấu Ngã (U+007E): Phím ASCII Thường Được Gõ Thay Thế" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu ngã, dấu huyền, ampersand và phần còn lại của các phím dấu câu, ký hiệu trên bàn phím tiêu chuẩn, sẵn sàng để sao chép." },
     { "href": "/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Gần bằng, tương tự với, và các toán tử cùng quan hệ lấp đầy một phương trình bên cạnh dấu ngã." },

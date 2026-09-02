@@ -38,7 +38,7 @@
       "h2": "Các Emoji Thường Bị Nhầm Lẫn",
       "intro": "Các ký hiệu người ta tìm với kỳ vọng là micro cầm tay, nhưng thực ra là emoji riêng biệt, mã hóa khác.",
       "symbols": [
-        { "char": "🎙️", "label": "Micro Phòng Thu (U+1F399) — micro phát thanh/podcast gắn chân đế" },
+        { "char": "🎙️", "label": "Micro Phòng Thu (U+1F399): micro phát thanh/podcast gắn chân đế" },
         { "char": "🔊", "label": "Loa Âm Lượng Cao (U+1F50A)" },
         { "char": "🗣️", "label": "Đầu Đang Nói (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Loa Phóng Thanh Công Cộng (U+1F4E2)" }
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/object-emojis/", "title": "Ký Hiệu Đồ Vật", "desc": "Mọi emoji vật dụng hằng ngày — công nghệ, gia dụng và văn phòng — bao gồm cả micro, duyệt trong một lưới." },
     { "href": "/library/emoji-combos/", "title": "Tổ Hợp Emoji", "desc": "Các cặp emoji dựng sẵn cho tiểu sử và chú thích, bao gồm chủ đề âm nhạc và biểu diễn." },

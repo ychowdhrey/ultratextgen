@@ -28,10 +28,10 @@
       "h2": "Le Symbole Thêta — θ, Θ & ϑ",
       "intro": "Thêta se décline en trois glyphes réellement utilisés : le θ minuscule du quotidien, le Θ majuscule, et la variante à boucle ouverte ϑ réservée aux mathématiques et à la physique. Une quatrième forme, majuscule barrée, n'existe que comme symbole mathématique.",
       "symbols": [
-        { "char": "θ", "label": "Thêta Minuscule Grec (U+03B8) — le Symbole de l'Angle" },
-        { "char": "Θ", "label": "Thêta Majuscule Grec (U+0398) — la Notation Grand-Thêta" },
-        { "char": "ϑ", "label": "Symbole Thêta Grec (U+03D1) — la Variante Mathématique à Boucle Ouverte" },
-        { "char": "ϴ", "label": "Symbole Thêta Majuscule Grec (U+03F4) — la Variante Barrée" }
+        { "char": "θ", "label": "Thêta Minuscule Grec (U+03B8): le Symbole de l'Angle" },
+        { "char": "Θ", "label": "Thêta Majuscule Grec (U+0398): la Notation Grand-Thêta" },
+        { "char": "ϑ", "label": "Symbole Thêta Grec (U+03D1): la Variante Mathématique à Boucle Ouverte" },
+        { "char": "ϴ", "label": "Symbole Thêta Majuscule Grec (U+03F4): la Variante Barrée" }
       ]
     },
     {
@@ -40,10 +40,10 @@
       "h2": "Thêta en Mathématiques et en Informatique",
       "intro": "Deux fonctions bien distinctes se partagent la même lettre. Le θ minuscule est le nom de référence pour un angle ; le Θ majuscule est la borne serrée en analyse de complexité, situé entre le Grand-O (borne supérieure) et le Grand-Oméga (borne inférieure).",
       "symbols": [
-        { "char": "θ", "label": "Petit Thêta (U+03B8) — Angle en Trigonométrie & Géométrie" },
-        { "char": "Θ", "label": "Grand Thêta (U+0398) — Grand-Thêta, la Borne Serrée" },
-        { "char": "Ω", "label": "Oméga Majuscule (U+03A9) — Grand-Oméga, la Cousine Borne Inférieure" },
-        { "char": "ϑ", "label": "Symbole Thêta (U+03D1) — la Variante de Composition en Physique" }
+        { "char": "θ", "label": "Petit Thêta (U+03B8): Angle en Trigonométrie & Géométrie" },
+        { "char": "Θ", "label": "Grand Thêta (U+0398): Grand-Thêta, la Borne Serrée" },
+        { "char": "Ω", "label": "Oméga Majuscule (U+03A9): Grand-Oméga, la Cousine Borne Inférieure" },
+        { "char": "ϑ", "label": "Symbole Thêta (U+03D1): la Variante de Composition en Physique" }
       ]
     },
     {
@@ -59,7 +59,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet, majuscules, minuscules et variantes mathématiques, prêt à copier-coller." },
     { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Angles, opérateurs, et les lettres grecques qui complètent une équation (en anglais)." },

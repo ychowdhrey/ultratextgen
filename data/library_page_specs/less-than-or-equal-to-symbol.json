@@ -24,7 +24,7 @@
       "intro": "The math symbol, and the two-character stand-in most programming languages use instead since ≤ itself was never part of ASCII.",
       "symbols": [
         { "char": "≤", "label": "Less-Than or Equal To (Math)" },
-        { "char": "<=", "label": "Less Than or Equal To (Code — C, Python, JavaScript, Java, SQL)" }
+        { "char": "<=", "label": "Less Than or Equal To (Code: C, Python, JavaScript, Java, SQL)" }
       ]
     },
     {
@@ -34,9 +34,9 @@
       "intro": "These all mean roughly the same thing but are distinct Unicode characters from different typesetting traditions.",
       "symbols": [
         { "char": "≦", "label": "Less-Than Over Equal To (U+2266)" },
-        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D) — the ISO 31-11 preferred form" },
+        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D): the ISO 31-11 preferred form" },
         { "char": "≲", "label": "Less-Than or Equivalent To (U+2272)" },
-        { "char": "≪", "label": "Much Less Than (U+226A) — a different relation, not a variant of ≤" }
+        { "char": "≪", "label": "Much Less Than (U+226A): a different relation, not a variant of ≤" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/math-symbols/",

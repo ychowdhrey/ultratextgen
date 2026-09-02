@@ -38,10 +38,10 @@
       "h2": "Ký Hiệu Trông Giống < >",
       "intro": "Những ký hiệu này có hình dáng gần giống < > nhưng mang ý nghĩa hoàn toàn khác, chủ yếu là các dạng dấu ngoặc kép.",
       "symbols": [
-        { "char": "‹", "label": "Dấu Ngoặc Kép Đơn Trái (U+2039) — một dấu trích dẫn, không phải phép so sánh" },
-        { "char": "«", "label": "Dấu Ngoặc Kép Đôi Trái (U+00AB) — dấu ngoặc kép tiếng Pháp/Đức" },
-        { "char": "⟨", "label": "Dấu Ngoặc Nhọn Trái (U+27E8) — dùng trong ký hiệu bra-ket và vectơ, không phải phép so sánh" },
-        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng (U+2264) — «người anh em» có thêm phần bằng" }
+        { "char": "‹", "label": "Dấu Ngoặc Kép Đơn Trái (U+2039): một dấu trích dẫn, không phải phép so sánh" },
+        { "char": "«", "label": "Dấu Ngoặc Kép Đôi Trái (U+00AB): dấu ngoặc kép tiếng Pháp/Đức" },
+        { "char": "⟨", "label": "Dấu Ngoặc Nhọn Trái (U+27E8): dùng trong ký hiệu bra-ket và vectơ, không phải phép so sánh" },
+        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng (U+2264): «người anh em» có thêm phần bằng" }
       ]
     },
     {
@@ -56,7 +56,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/plus-minus/", "title": "Ký Hiệu Cộng Trừ (±)", "desc": "Hai giá trị khả dĩ trong một biểu thức duy nhất." },
     { "href": "/vi/symbol/division-sign/", "title": "Dấu Chia (÷)", "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó." },

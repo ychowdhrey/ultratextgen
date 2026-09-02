@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-meteora/" },
@@ -38,7 +38,7 @@
       "h2": "Le Emoji con Cui Viene Confusa",
       "intro": "Emoji celesti già codificate a cui Meteor viene più spesso paragonata, o di cui viene accusata di sovrapporsi.",
       "symbols": [
-        { "char": "☄️", "label": "Comet — il design da cui Meteor si separa" },
+        { "char": "☄️", "label": "Comet: il design da cui Meteor si separa" },
         { "char": "🌠", "label": "Stella Cadente" },
         { "char": "⭐", "label": "Stella" }
       ]
@@ -49,7 +49,7 @@
       "h2": "Altre Candidate in Bozza di Emoji 18.0",
       "intro": "Meteor non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB) — ha vinto il voto pubblico" },
+        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB): ha vinto il voto pubblico" },
         { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" },
         { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" }
       ]

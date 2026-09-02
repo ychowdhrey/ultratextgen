@@ -38,7 +38,7 @@
       "h2": "Lambda comme Symbole de la Libération Gay",
       "intro": "La Gay Activists Alliance de New York a adopté le λ minuscule en 1970, et le Congrès international des droits gays l'a déclaré symbole international des droits gays et lesbiens en 1974 — l'un des tout premiers emblèmes du mouvement. Colle-le aux côtés des symboles de fierté qu'il accompagne aujourd'hui.",
       "symbols": [
-        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB) — le Signe de la Libération Gay" },
+        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB): le Signe de la Libération Gay" },
         { "char": "🏳️‍🌈", "label": "Drapeau Arc-en-Ciel" },
         { "char": "⚧", "label": "Symbole Transgenre (U+26A7)" }
       ]
@@ -49,9 +49,9 @@
       "h2": "Lambda en Code, en Maths & en Physique",
       "intro": "La vie technique de la lettre. Le λ minuscule marque les fonctions anonymes — du lambda-calcul d'Alonzo Church jusqu'au mot-clé lambda de Python et à AWS Lambda — et représente la longueur d'onde en physique ; le Λ majuscule est la constante cosmologique du modèle ΛCDM.",
       "symbols": [
-        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB) — Longueur d'Onde & Lambda-Calcul" },
-        { "char": "Λ", "label": "Lambda Majuscule Grec (U+039B) — Constante Cosmologique" },
-        { "char": "𝜆", "label": "Lambda Italique Mathématique (U+1D706) — la Variante d'Équation" }
+        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB): Longueur d'Onde & Lambda-Calcul" },
+        { "char": "Λ", "label": "Lambda Majuscule Grec (U+039B): Constante Cosmologique" },
+        { "char": "𝜆", "label": "Lambda Italique Mathématique (U+1D706): la Variante d'Équation" }
       ]
     },
     {
@@ -68,7 +68,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet — alpha, lambda, pi, sigma, oméga — en majuscules et minuscules, prêt à copier-coller." },
     { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Longueur d'onde, constante cosmologique, et les opérateurs et lettres grecques qui complètent une équation (en anglais)." },

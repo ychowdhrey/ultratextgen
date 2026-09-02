@@ -38,9 +38,9 @@
       "h2": "Psi Trong Cơ Học Lượng Tử",
       "intro": "Vai trò đặc trưng của psi: hàm sóng của Schrödinger. Theo quy ước, chữ hoa Ψ là hàm sóng phụ thuộc thời gian đầy đủ của một hệ, còn chữ thường ψ là hàm sóng dừng, không phụ thuộc thời gian — thường đi kèm với φ (phi) làm trạng thái đồng hành.",
       "symbols": [
-        { "char": "Ψ", "label": "Psi Hoa (U+03A8) — Hàm Sóng Phụ Thuộc Thời Gian" },
-        { "char": "ψ", "label": "Psi Thường (U+03C8) — Hàm Sóng Dừng" },
-        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6) — Trạng Thái Đồng Hành Thường Đi Kèm ψ" }
+        { "char": "Ψ", "label": "Psi Hoa (U+03A8): Hàm Sóng Phụ Thuộc Thời Gian" },
+        { "char": "ψ", "label": "Psi Thường (U+03C8): Hàm Sóng Dừng" },
+        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6): Trạng Thái Đồng Hành Thường Đi Kèm ψ" }
       ]
     },
     {
@@ -49,9 +49,9 @@
       "h2": "Psi Trong Tâm Lý Học & Hình Dạng Đinh Ba",
       "intro": "Chữ hoa Ψ là biểu tượng toàn cầu của tâm lý học, tâm thần học và cận tâm lý học — được chọn vì «psyche» bắt đầu bằng psi, chứ không phải vì truyền thuyết cây chĩa của quỷ dữ. Hình dạng ba nhánh của nó là lý do người ta hay ví nó với cây đinh ba, vũ khí của thần Poseidon.",
       "symbols": [
-        { "char": "Ψ", "label": "Psi Hoa (U+03A8) — Biểu Tượng Tâm Lý Học & Tâm Thần Học" },
-        { "char": "ψ", "label": "Psi Thường (U+03C8) — Chữ Cái Của «Psyche»" },
-        { "char": "🔱", "label": "Biểu Tượng Đinh Ba (U+1F531) — Đinh Ba Của Poseidon, Hình Dạng Mà Psi Gợi Nhớ" }
+        { "char": "Ψ", "label": "Psi Hoa (U+03A8): Biểu Tượng Tâm Lý Học & Tâm Thần Học" },
+        { "char": "ψ", "label": "Psi Thường (U+03C8): Chữ Cái Của «Psyche»" },
+        { "char": "🔱", "label": "Biểu Tượng Đinh Ba (U+1F531): Đinh Ba Của Poseidon, Hình Dạng Mà Psi Gợi Nhớ" }
       ]
     },
     {
@@ -60,14 +60,14 @@
       "h2": "Chữ Cái Hy Lạp Liên Quan",
       "intro": "Psi là chữ cái Hy Lạp thứ 23, nằm ngay trước khi omega khép lại bảng chữ cái. Đây là những chữ cái lân cận được tìm kiếm nhiều nhất cùng nó.",
       "symbols": [
-        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega — Chữ Cái Ngay Sau Psi" },
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega: Chữ Cái Ngay Sau Psi" },
         { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
         { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
         { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
     { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Hàm sóng, toán tử, và các chữ cái Hy Lạp lấp đầy một phương trình vật lý hay toán học." },

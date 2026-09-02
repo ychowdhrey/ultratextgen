@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/chi-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-chi-symbol",
@@ -39,9 +39,9 @@
       "h2": "Chi-Rho, Xmas & das christliche Christogramm",
       "intro": "Weil das große Χ Χριστός („Christus“) eröffnet, wurde es zu einem jahrhundertealten Kürzel für den Namen — die Quelle sowohl des Christogramms Chi-Rho, das Konstantin als Feldzeichen führte, als auch des modernen „Xmas“. Die Bausteine dieser Geschichte zum Kopieren.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627) — das ΧΡ-Christogramm / Labarum" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7) — das Χ, mit dem Χριστός beginnt" },
-        { "char": "X", "label": "Lateinischer Großbuchstabe X (U+0058) — das X in „Xmas“" }
+        { "char": "☧", "label": "Chi Rho (U+2627): das ΧΡ-Christogramm / Labarum" },
+        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7): das Χ, mit dem Χριστός beginnt" },
+        { "char": "X", "label": "Lateinischer Großbuchstabe X (U+0058): das X in „Xmas“" }
       ]
     },
     {
@@ -50,9 +50,9 @@
       "h2": "Chi-Quadrat (χ²) in Statistik & Wissenschaft",
       "intro": "Das kleine χ ist ein wissenschaftliches Arbeitspferd: der Anpassungsgüte-Test χ², den Karl Pearson 1900 einführte, dazu die Euler-Charakteristik in der Topologie und die magnetische Suszeptibilität in der Physik. Kopiere den Buchstaben und eine hochgestellte Zwei, um χ² selbst zusammenzusetzen.",
       "symbols": [
-        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi (U+03C7) — die χ²-Testgröße" },
-        { "char": "²", "label": "Hochgestellte Zwei (U+00B2) — zum Zusammensetzen von χ²" },
-        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7) — benennt auch Zufallsvariablen" }
+        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi (U+03C7): die χ²-Testgröße" },
+        { "char": "²", "label": "Hochgestellte Zwei (U+00B2): zum Zusammensetzen von χ²" },
+        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi (U+03A7): benennt auch Zufallsvariablen" }
       ]
     },
     {

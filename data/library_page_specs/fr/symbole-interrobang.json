@@ -28,8 +28,8 @@
       "h2": "L'Interrobang — ‽ & ⸘",
       "intro": "Le signe lui-même et son image miroir : l'interrobang standard qui referme une question stupéfaite, et la forme inversée conçue pour en ouvrir une.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Question + Exclamation en un Seul Glyphe" },
-        { "char": "⸘", "label": "Interrobang Inversé (U+2E18) — le Jumeau qui Ouvre la Phrase" }
+        { "char": "‽", "label": "Interrobang (U+203D): Question + Exclamation en un Seul Glyphe" },
+        { "char": "⸘", "label": "Interrobang Inversé (U+2E18): le Jumeau qui Ouvre la Phrase" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "L'ensemble complet de la ponctuation courante et spécialisée d'Unicode, des tirets et crochets aux signes rares comme l'interrobang (en anglais)." },
     { "href": "/fr/symbol/point-interrogation-inverse/", "title": "Point d'Interrogation à l'Envers (⸮)", "desc": "Un tout autre signe rhétorique historique — le point d'interrogation renversé de 1575, pas une fusion question-exclamation comme l'interrobang." },

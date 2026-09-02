@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/sternchen-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-sternchen",
@@ -29,10 +29,10 @@
       "h2": "Das Sternchen & seine Anzeigevarianten",
       "intro": "Das schlichte Tastatur-Sternchen plus die kräftigeren Anzeigeformen und der mathematikspezifische Operator. Jedes davon zum Kopieren bereit.",
       "symbols": [
-        { "char": "*", "label": "Sternchen (U+002A) — Fußnote, Platzhalter & Zensurzeichen" },
+        { "char": "*", "label": "Sternchen (U+002A): Fußnote, Platzhalter & Zensurzeichen" },
         { "char": "✱", "label": "Fettes Sternchen (U+2731)" },
         { "char": "✳", "label": "Achtstrahliges Sternchen (U+2733)" },
-        { "char": "∗", "label": "Asterisk-Operator (U+2217) — die mathematische Multiplikationsglyphe" },
+        { "char": "∗", "label": "Asterisk-Operator (U+2217): die mathematische Multiplikationsglyphe" },
         { "char": "＊", "label": "Sternchen in voller Breite (U+FF0A)" }
       ]
     },
@@ -42,7 +42,7 @@
       "h2": "Asterismus & Abschnittstrenner",
       "intro": "Lektoratszeichen, aus dem Sternchen aufgebaut — der dreifache, dreiecksförmige Asterismus, der Abschnitte trennt, dazu seine gestapelten und tiefer gesetzten Verwandten.",
       "symbols": [
-        { "char": "⁂", "label": "Asterismus (U+2042) — drei Sternchen im Dreieck" },
+        { "char": "⁂", "label": "Asterismus (U+2042): drei Sternchen im Dreieck" },
         { "char": "⁑", "label": "Zwei senkrecht angeordnete Sternchen (U+2051)" },
         { "char": "⁎", "label": "Tief gesetztes Sternchen (U+204E)" }
       ]
@@ -55,7 +55,7 @@
       "symbols": [
         { "char": "★", "label": "Schwarzer Stern (U+2605)" },
         { "char": "☆", "label": "Weißer Stern (U+2606)" },
-        { "char": "⭐", "label": "Mittlerer weißer Stern (U+2B50) — der gelbe Stern-Emoji" },
+        { "char": "⭐", "label": "Mittlerer weißer Stern (U+2B50): der gelbe Stern-Emoji" },
         { "char": "✦", "label": "Schwarzer vierzackiger Stern (U+2726)" },
         { "char": "✧", "label": "Weißer vierzackiger Stern (U+2727)" }
       ]

@@ -38,9 +38,9 @@
       "h2": "Chi-Rho, Xmas & Biểu Tượng Ki-tô Giáo",
       "intro": "Vì chữ hoa Χ mở đầu Χριστός («Christ»), nó trở thành chữ viết tắt hàng thế kỷ cho cái tên này — nguồn gốc của cả biểu tượng Chi-Rho mà Constantine mang theo làm quân kỳ lẫn «Xmas» hiện đại. Dán từng mảnh của câu chuyện đó tại đây.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627) — Christogram ΧΡ / labarum" },
-        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7) — Chữ Χ Mở Đầu Χριστός" },
-        { "char": "X", "label": "Chữ Hoa Latin X (U+0058) — Chữ X Trong «Xmas»" }
+        { "char": "☧", "label": "Chi Rho (U+2627): Christogram ΧΡ / labarum" },
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7): Chữ Χ Mở Đầu Χριστός" },
+        { "char": "X", "label": "Chữ Hoa Latin X (U+0058): Chữ X Trong «Xmas»" }
       ]
     },
     {
@@ -49,9 +49,9 @@
       "h2": "Chi Bình Phương (χ²) Trong Thống Kê & Khoa Học",
       "intro": "Chữ thường χ là công cụ khoa học chủ lực: kiểm định độ phù hợp χ² mà Karl Pearson giới thiệu năm 1900, cộng với đặc trưng Euler trong tô pô học và độ cảm từ trong vật lý. Ghép chữ cái này với số hai bên trên để tự tạo ra χ².",
       "symbols": [
-        { "char": "χ", "label": "Chữ Thường Hy Lạp Chi (U+03C7) — Đại Lượng Thống Kê Kiểm Định χ²" },
-        { "char": "²", "label": "Số Mũ Hai (U+00B2) — Để Ghép Thành χ²" },
-        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7) — Cũng Dùng Đặt Tên Biến Ngẫu Nhiên" }
+        { "char": "χ", "label": "Chữ Thường Hy Lạp Chi (U+03C7): Đại Lượng Thống Kê Kiểm Định χ²" },
+        { "char": "²", "label": "Số Mũ Hai (U+00B2): Để Ghép Thành χ²" },
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7): Cũng Dùng Đặt Tên Biến Ngẫu Nhiên" }
       ]
     },
     {
@@ -79,7 +79,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
     { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Chi bình phương, số mũ, và các toán tử cùng chữ cái Hy Lạp lấp đầy một phương trình." },

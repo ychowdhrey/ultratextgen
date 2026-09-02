@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-lambda/" },
@@ -39,7 +39,7 @@
       "h2": "Lambda Come Simbolo della Liberazione Gay",
       "intro": "La Gay Activists Alliance di New York adottò la λ minuscola nel 1970, e l'International Gay Rights Congress la dichiarò simbolo internazionale dei diritti gay e lesbici nel 1974 — uno dei primi emblemi del movimento. Copiala insieme ai glifi pride con cui oggi condivide lo spazio.",
       "symbols": [
-        { "char": "λ", "label": "Lettera Greca Minuscola Lambda (U+03BB) — Il Segno della Liberazione Gay" },
+        { "char": "λ", "label": "Lettera Greca Minuscola Lambda (U+03BB): Il Segno della Liberazione Gay" },
         { "char": "🏳️‍🌈", "label": "Bandiera Arcobaleno" },
         { "char": "⚧", "label": "Simbolo Transgender (U+26A7)" }
       ]
@@ -50,9 +50,9 @@
       "h2": "Lambda nel Codice, in Matematica e in Fisica",
       "intro": "La vita tecnica della lettera. La λ minuscola indica le funzioni anonime — dal lambda calcolo di Alonzo Church fino alla parola chiave lambda di Python e ad AWS Lambda — e rappresenta la lunghezza d'onda in fisica; la Λ maiuscola è la costante cosmologica del modello ΛCDM.",
       "symbols": [
-        { "char": "λ", "label": "Lettera Greca Minuscola Lambda (U+03BB) — Lunghezza d'Onda e Lambda Calcolo" },
-        { "char": "Λ", "label": "Lettera Greca Maiuscola Lambda (U+039B) — Costante Cosmologica" },
-        { "char": "𝜆", "label": "Lambda Corsiva Matematica (U+1D706) — La Variante da Equazione" }
+        { "char": "λ", "label": "Lettera Greca Minuscola Lambda (U+03BB): Lunghezza d'Onda e Lambda Calcolo" },
+        { "char": "Λ", "label": "Lettera Greca Maiuscola Lambda (U+039B): Costante Cosmologica" },
+        { "char": "𝜆", "label": "Lambda Corsiva Matematica (U+1D706): La Variante da Equazione" }
       ]
     },
     {

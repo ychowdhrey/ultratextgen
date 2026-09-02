@@ -38,7 +38,7 @@
       "h2": "Một Ký Hiệu, Hai Đồng Tiền Đối Nghịch",
       "intro": "Cùng một ký hiệu ₩ đại diện cho cả đồng won Hàn Quốc (KRW) lẫn won Triều Tiên (KPW) — hai đồng tiền của hai nhà nước đã chia cắt từ năm 1948 và về mặt kỹ thuật vẫn đang trong tình trạng chiến tranh. Trong tiếng Hàn, đơn vị này được viết là 원 bằng chữ Hangul. Không có gì trong ký hiệu phân biệt hai đồng tiền này — chỉ có mã ba chữ cái mới làm được điều đó.",
       "symbols": [
-        { "char": "₩", "label": "Ký Hiệu Won (U+20A9) — Dùng Chung Cho KRW (Nam) Và KPW (Bắc)" },
+        { "char": "₩", "label": "Ký Hiệu Won (U+20A9): Dùng Chung Cho KRW (Nam) Và KPW (Bắc)" },
         { "char": "원", "label": "Won Viết Bằng Chữ Hangul (원)" }
       ]
     },
@@ -49,12 +49,12 @@
       "intro": "Won, yên và nhân dân tệ là những «người họ hàng» ngôn ngữ — cả ba đều bắt nguồn từ chữ 圓 (giản thể thành 元 trong tiếng Trung hiện đại), nghĩa là «tròn», gợi nhớ những đồng bạc tròn từng lưu hành khắp châu Á. Yên Nhật và nhân dân tệ Trung Quốc thậm chí còn dùng chung một ký hiệu, ¥ — một phần lý do vì sao người đọc không phải bản ngữ đôi khi nhầm lẫn giữa ₩ và ¥ khi nhìn thoáng qua.",
       "symbols": [
         { "char": "¥", "label": "Ký Hiệu Yên & Nhân Dân Tệ (U+00A5)" },
-        { "char": "圓", "label": "Chữ Hán 圓 — «Tròn», Gốc Từ Chung" },
+        { "char": "圓", "label": "Chữ Hán 圓: «Tròn», Gốc Từ Chung" },
         { "char": "元", "label": "Nhân Dân Tệ (元)" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Bộ sưu tập các ký hiệu tiền tệ thế giới, từ đô la, euro cho đến rupee và bitcoin." },
     { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên", "desc": "«Người họ hàng» Đông Á của won — cùng gốc từ «tròn», và ký hiệu ¥ mà người đọc không phải bản ngữ đôi khi nhầm với ₩." },

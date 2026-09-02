@@ -28,8 +28,8 @@
       "intro": "Foundational Unicode signs used for gender and orientation. See the full set, including marriage and partnership marks, on Gender Symbols.",
       "symbols": [
         { "char": "⚧", "label": "Transgender Symbol" },
-        { "char": "⚢", "label": "Doubled Female Sign — Sapphic / Lesbian Pride" },
-        { "char": "⚣", "label": "Doubled Male Sign — Gay Pride" },
+        { "char": "⚢", "label": "Doubled Female Sign: Sapphic / Lesbian Pride" },
+        { "char": "⚣", "label": "Doubled Male Sign: Gay Pride" },
         { "char": "⚥", "label": "Male and Female Sign" },
         { "char": "⚦", "label": "Male With Stroke Sign" }
       ]
@@ -41,8 +41,8 @@
       "intro": "The rainbow is the single most recognized Pride symbol — see the full rainbow and atmospheric set on Weather Symbols. Pair it with these everyday solidarity marks.",
       "symbols": [
         { "char": "🌈", "label": "Rainbow" },
-        { "char": "🫶", "label": "Heart Hands — Solidarity & Love" },
-        { "char": "🤝", "label": "Handshake — Unity & Ally" }
+        { "char": "🫶", "label": "Heart Hands: Solidarity & Love" },
+        { "char": "🤝", "label": "Handshake: Unity & Ally" }
       ]
     }
   ],
@@ -156,7 +156,7 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/gender-symbols/",

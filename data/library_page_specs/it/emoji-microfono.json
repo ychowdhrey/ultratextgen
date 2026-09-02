@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-microfono/" },
@@ -39,7 +39,7 @@
       "h2": "Emoji con Cui Viene Confusa",
       "intro": "Simboli che si cercano aspettandosi il microfono a mano, ma che sono in realtà emoji separate, con codifica diversa.",
       "symbols": [
-        { "char": "🎙️", "label": "Studio Microphone (U+1F399) — il microfono da studio su treppiede per broadcast/podcast" },
+        { "char": "🎙️", "label": "Studio Microphone (U+1F399): il microfono da studio su treppiede per broadcast/podcast" },
         { "char": "🔊", "label": "Speaker High Volume (U+1F50A)" },
         { "char": "🗣️", "label": "Speaking Head (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Public Address Loudspeaker (U+1F4E2)" }

@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/bauer-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-bauer-symbol",
@@ -65,10 +65,10 @@
       "h2": "Was aus einem Bauern werden kann",
       "intro": "Ein Bauer, der die gegnerische Grundreihe erreicht, muss sich verwandeln — in eine Dame, einen Turm, einen Läufer oder einen Springer der eigenen Farbe. Ein König kann er nie werden, und Bauer bleiben kann er nicht. Die Dame ist die übliche Wahl; alles andere gilt als „Unterverwandlung“.",
       "symbols": [
-        { "char": "♛", "label": "Schwarze Schachdame (U+265B) — die übliche Umwandlung" },
+        { "char": "♛", "label": "Schwarze Schachdame (U+265B): die übliche Umwandlung" },
         { "char": "♜", "label": "Schwarzer Schachturm (U+265C)" },
         { "char": "♝", "label": "Schwarzer Schachläufer (U+265D)" },
-        { "char": "♞", "label": "Schwarzer Schachspringer (U+265E) — eine Unterverwandlung" }
+        { "char": "♞", "label": "Schwarzer Schachspringer (U+265E): eine Unterverwandlung" }
       ]
     }
   ],

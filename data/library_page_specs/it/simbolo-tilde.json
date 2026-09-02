@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-tilde/" },
@@ -29,9 +29,9 @@
       "h2": "La Tilde ~ e i Suoi Sosia",
       "intro": "Tre caratteri Unicode distinti che tutti chiamano \"la tilde\" — il tasto da tastiera, un modificatore autonomo e il segno diacritico combinante che si posiziona sopra una lettera.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E) — il Tasto da Tastiera" },
-        { "char": "˜", "label": "Piccola Tilde (U+02DC) — Modificatore Autonomo" },
-        { "char": "̃", "label": "Tilde Combinante (U+0303) — Sopra una Lettera" }
+        { "char": "~", "label": "Tilde (U+007E): il Tasto da Tastiera" },
+        { "char": "˜", "label": "Piccola Tilde (U+02DC): Modificatore Autonomo" },
+        { "char": "̃", "label": "Tilde Combinante (U+0303): Sopra una Lettera" }
       ]
     },
     {
@@ -56,7 +56,7 @@
         { "char": "≈", "label": "Quasi Uguale (U+2248) — \"Approssimativamente Uguale\"" },
         { "char": "≅", "label": "Approssimativamente Uguale a (U+2245)" },
         { "char": "≃", "label": "Asintoticamente Uguale a (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E) — la Tilde ASCII Spesso Digitata al Suo Posto" }
+        { "char": "~", "label": "Tilde (U+007E): la Tilde ASCII Spesso Digitata al Suo Posto" }
       ]
     }
   ],

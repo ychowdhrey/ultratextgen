@@ -16,7 +16,7 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
     { "lang": "it", "href": "https://ultratextgen.com/it/symbol/stella-e-mezzaluna/" },
@@ -39,7 +39,7 @@
       "h2": "Non È lo Stesso di una Semplice Mezzaluna o Stella",
       "intro": "La stella e mezzaluna è un unico glifo combinato. I caratteri separati di mezzaluna e stella a cui spesso ci si rivolge invece hanno ciascuno il proprio codepoint e il proprio compito.",
       "symbols": [
-        { "char": "☾", "label": "Ultimo Quarto di Luna (U+263E) — Mezzaluna Semplice" },
+        { "char": "☾", "label": "Ultimo Quarto di Luna (U+263E): Mezzaluna Semplice" },
         { "char": "☽", "label": "Primo Quarto di Luna (U+263D)" },
         { "char": "🌙", "label": "Emoji Mezzaluna (U+1F319)" },
         { "char": "⭐", "label": "Stella Media Bianca (U+2B50)" },

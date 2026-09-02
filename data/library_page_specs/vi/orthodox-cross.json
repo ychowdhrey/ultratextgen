@@ -38,8 +38,8 @@
       "h2": "Họ Ký Hiệu Thánh Giá",
       "intro": "Ba thanh nghiêng của thánh giá Chính Thống giáo so với các dạng thánh giá khác có tên riêng — hữu ích nếu bạn chưa chắc mình đang nhìn thấy loại thánh giá nào.",
       "symbols": [
-        { "char": "✝", "label": "Thánh Giá Latinh — Một Thanh Ngang, Ki-tô Giáo Phương Tây" },
-        { "char": "☨", "label": "Thánh Giá Lorraine — Hai Thanh Ngang, Không Nghiêng, Dùng Trong Nghi Lễ Thượng Phụ" },
+        { "char": "✝", "label": "Thánh Giá Latinh: Một Thanh Ngang, Ki-tô Giáo Phương Tây" },
+        { "char": "☨", "label": "Thánh Giá Lorraine: Hai Thanh Ngang, Không Nghiêng, Dùng Trong Nghi Lễ Thượng Phụ" },
         { "char": "☩", "label": "Thánh Giá Jerusalem" },
         { "char": "♱", "label": "Thánh Giá Đông Syriac" }
       ]
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo & Tâm Linh", "desc": "Các ký hiệu tôn giáo và tâm linh từ những truyền thống lớn trên thế giới, gồm thánh giá, trăng lưỡi liềm và ngôi sao." },
     { "href": "/vi/symbol/cross-symbol/", "title": "Ký Hiệu Thánh Giá", "desc": "Thánh giá Latinh đơn giản của Ki-tô giáo — và dấu chấm than cùng ký hiệu ✕ mà nó thường bị nhầm lẫn." },

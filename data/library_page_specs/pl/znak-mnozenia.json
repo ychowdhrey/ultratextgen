@@ -39,7 +39,7 @@
       "symbols": [
         { "char": "x", "label": "Mała Litera X (To Nie Znak Matematyczny)" },
         { "char": "X", "label": "Wielka Litera X" },
-        { "char": "⋅", "label": "Kropka Mnożenia — alternatywny znak „razy”" },
+        { "char": "⋅", "label": "Kropka Mnożenia: alternatywny znak „razy”" },
         { "char": "∙", "label": "Operator Punktowy (Bullet)" },
         { "char": "✕", "label": "Znaczek X Mnożenia (Dingbat)" },
         { "char": "✖", "label": "Pogrubiony Znaczek X Mnożenia (Dingbat)" }
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-dzielenia/",

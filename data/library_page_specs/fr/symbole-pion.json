@@ -64,14 +64,14 @@
       "h2": "Ce que Peut Devenir un Pion",
       "intro": "Un pion qui atteint l'extrémité opposée du plateau doit se promouvoir — en reine, tour, fou ou cavalier de sa propre couleur. Il ne peut jamais devenir roi, et il ne peut pas rester pion. La reine est le choix habituel ; toute autre pièce constitue une « sous-promotion ».",
       "symbols": [
-        { "char": "♛", "label": "Reine Noire (U+265B) — la promotion habituelle" },
+        { "char": "♛", "label": "Reine Noire (U+265B): la promotion habituelle" },
         { "char": "♜", "label": "Tour Noire (U+265C)" },
         { "char": "♝", "label": "Fou Noir (U+265D)" },
-        { "char": "♞", "label": "Cavalier Noir (U+265E) — une sous-promotion" }
+        { "char": "♞", "label": "Cavalier Noir (U+265E): une sous-promotion" }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/chess-symbols/", "title": "Chess Symbols", "desc": "Le jeu d'échecs Unicode complet — rois, reines, tours, fous, cavaliers et les deux pions — dans une même référence à copier-coller (en anglais)." },
     { "href": "/library/card-suit-symbols/", "title": "Card Suit Symbols", "desc": "Piques, cœurs, carreaux et trèfles — les autres glyphes de jeu, juste à côté des pièces d'échecs dans le bloc Miscellaneous Symbols d'Unicode (en anglais)." },

@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/pik-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-pik-symbol",
@@ -29,8 +29,8 @@
       "h2": "Das Pik-Symbol — ♠ & ♤",
       "intro": "Die Farbe selbst, in beiden Unicode-Formen. Das gefüllte ♠ ist die Standard-„schwarze“ Pik-Form; ♤ ist die „weiße“ Umriss-Version, und ♠️ ist die Emoji-Darstellung mit Variationsselektor. Zum Kopieren, überall einsetzbar.",
       "symbols": [
-        { "char": "♠", "label": "Schwarze Pik-Farbe (U+2660) — gefüllt" },
-        { "char": "♤", "label": "Weiße Pik-Farbe (U+2664) — Umriss" },
+        { "char": "♠", "label": "Schwarze Pik-Farbe (U+2660): gefüllt" },
+        { "char": "♤", "label": "Weiße Pik-Farbe (U+2664): Umriss" },
         { "char": "♠️", "label": "Pik-Farbe als Emoji (U+2660 U+FE0F)" }
       ]
     },

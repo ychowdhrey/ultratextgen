@@ -28,10 +28,10 @@
       "h2": "Gwiazdka i Jej Warianty Wyświetlania",
       "intro": "Zwykła klawiaturowa gwiazdka plus śmielsze formy wyświetlania i operator matematyczny. Każda gotowa do wklejenia.",
       "symbols": [
-        { "char": "*", "label": "Gwiazdka (U+002A) — Przypis, Znak Wieloznaczny i Cenzura" },
+        { "char": "*", "label": "Gwiazdka (U+002A): Przypis, Znak Wieloznaczny i Cenzura" },
         { "char": "✱", "label": "Pogrubiona Gwiazdka (U+2731)" },
         { "char": "✳", "label": "Gwiazdka Ośmioramienna (U+2733)" },
-        { "char": "∗", "label": "Operator Gwiazdki (U+2217) — Matematyczny Glif Mnożenia" },
+        { "char": "∗", "label": "Operator Gwiazdki (U+2217): Matematyczny Glif Mnożenia" },
         { "char": "＊", "label": "Gwiazdka Pełnej Szerokości (U+FF0A)" }
       ]
     },
@@ -41,7 +41,7 @@
       "h2": "Asteryzm i Znaki Podziału Sekcji",
       "intro": "Znaki redakcyjne zbudowane z gwiazdki — trójkątny asteryzm dzielący sekcje, plus jego skumulowani i obniżeni kuzyni.",
       "symbols": [
-        { "char": "⁂", "label": "Asteryzm (U+2042) — Trzy Gwiazdki w Trójkącie" },
+        { "char": "⁂", "label": "Asteryzm (U+2042): Trzy Gwiazdki w Trójkącie" },
         { "char": "⁑", "label": "Dwie Gwiazdki Ułożone Pionowo (U+2051)" },
         { "char": "⁎", "label": "Niska Gwiazdka (U+204E)" }
       ]
@@ -54,13 +54,13 @@
       "symbols": [
         { "char": "★", "label": "Czarna Gwiazda (U+2605)" },
         { "char": "☆", "label": "Biała Gwiazda (U+2606)" },
-        { "char": "⭐", "label": "Biała Gwiazda Średnia (U+2B50) — Żółte Emoji Gwiazdy" },
+        { "char": "⭐", "label": "Biała Gwiazda Średnia (U+2B50): Żółte Emoji Gwiazdy" },
         { "char": "✦", "label": "Czarna Gwiazdka Czteroramienna (U+2726)" },
         { "char": "✧", "label": "Biała Gwiazdka Czteroramienna (U+2727)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/symbole-punktowania/",

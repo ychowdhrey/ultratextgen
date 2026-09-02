@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Dễ Nhầm Vì Trùng Tên",
       "intro": "Trong tiếng Anh, «pound sign» còn được dùng để gọi cả một ký tự hoàn toàn khác.",
       "symbols": [
-        { "char": "#", "label": "Dấu Thăng / Số (U+0023) — cũng được gọi là «pound sign» một cách không chính thức trong tiếng Anh Mỹ, nhưng là một ký tự hoàn toàn khác, không liên quan" },
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — một ký hiệu tiền tệ được thiết kế có chủ đích năm 1996, khác hẳn quá trình hình thành tự nhiên của £" }
+        { "char": "#", "label": "Dấu Thăng / Số (U+0023): cũng được gọi là «pound sign» một cách không chính thức trong tiếng Anh Mỹ, nhưng là một ký tự hoàn toàn khác, không liên quan" },
+        { "char": "€", "label": "Ký Hiệu Euro (U+20AC): một ký hiệu tiền tệ được thiết kế có chủ đích năm 1996, khác hẳn quá trình hình thành tự nhiên của £" }
       ]
     },
     {
@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
     { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },

@@ -44,9 +44,9 @@
         { "char": "彡", "label": "CJK Radical Shan (Motion Lines)" },
         { "char": "ミ", "label": "Katakana Letter Mi (Motion Lines)" },
         { "char": "亗", "label": "CJK Ideograph (Stacked Mountain Tag)" },
-        { "char": "龍", "label": "Long — Dragon" },
-        { "char": "神", "label": "Shen — God" },
-        { "char": "王", "label": "Wang — King" }
+        { "char": "龍", "label": "Long: Dragon" },
+        { "char": "神", "label": "Shen: God" },
+        { "char": "王", "label": "Wang: King" }
       ]
     },
     {
@@ -159,7 +159,7 @@
       "defaultFormat": "vertical"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/free-fire-name-symbols/",

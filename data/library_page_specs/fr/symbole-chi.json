@@ -38,9 +38,9 @@
       "h2": "Chi-Rho, Xmas & le Monogramme Chrétien",
       "intro": "Parce que le Χ majuscule ouvre Χριστός (« Christ »), il est devenu une abréviation vieille de plusieurs siècles pour ce nom — la source à la fois du monogramme Chi-Rho que Constantin a arboré comme étendard de bataille et du « Xmas » moderne. Colle ici les pièces de cette histoire.",
       "symbols": [
-        { "char": "☧", "label": "Chi Rho (U+2627) — le christogramme/labarum ΧΡ" },
-        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7) — le Χ qui ouvre Χριστός" },
-        { "char": "X", "label": "X Majuscule Latin (U+0058) — le X de « Xmas »" }
+        { "char": "☧", "label": "Chi Rho (U+2627): le christogramme/labarum ΧΡ" },
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7): le Χ qui ouvre Χριστός" },
+        { "char": "X", "label": "X Majuscule Latin (U+0058): le X de « Xmas »" }
       ]
     },
     {
@@ -49,9 +49,9 @@
       "h2": "Le Chi-Deux (χ²) en Statistiques & en Sciences",
       "intro": "Le χ minuscule est un pilier scientifique : le test d'adéquation χ² que Karl Pearson a introduit en 1900, plus la caractéristique d'Euler en topologie et la susceptibilité magnétique en physique. Associe la lettre à un deux en exposant pour composer χ² toi-même.",
       "symbols": [
-        { "char": "χ", "label": "Chi Minuscule Grec (U+03C7) — la statistique de test χ²" },
-        { "char": "²", "label": "Deux en Exposant (U+00B2) — pour composer χ²" },
-        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7) — nomme aussi des variables aléatoires" }
+        { "char": "χ", "label": "Chi Minuscule Grec (U+03C7): la statistique de test χ²" },
+        { "char": "²", "label": "Deux en Exposant (U+00B2): pour composer χ²" },
+        { "char": "Χ", "label": "Chi Majuscule Grec (U+03A7): nomme aussi des variables aléatoires" }
       ]
     },
     {
@@ -79,7 +79,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet, majuscules, minuscules et variantes mathématiques, prêt à copier-coller." },
     { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Le chi-deux, les exposants, et les opérateurs et lettres grecques qui complètent une équation (en anglais)." },

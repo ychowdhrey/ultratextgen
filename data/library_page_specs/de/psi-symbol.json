@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/psi-symbol/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/psi-symbol/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "das-psi-symbol",
@@ -39,9 +39,9 @@
       "h2": "Psi in der Quantenmechanik",
       "intro": "Psis bekannteste Rolle: Schrödingers Wellenfunktion. Nach Konvention bezeichnet das große Ψ die vollständige zeitabhängige Wellenfunktion eines Systems, das kleine ψ den stationären, zeitunabhängigen Zustand — oft gepaart mit φ (phi) für einen zweiten Zustand.",
       "symbols": [
-        { "char": "Ψ", "label": "Großes Psi (U+03A8) — zeitabhängige Wellenfunktion" },
-        { "char": "ψ", "label": "Kleines Psi (U+03C8) — stationäre Wellenfunktion" },
-        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi (U+03C6) — der Partnerzustand, oft mit ψ gepaart" }
+        { "char": "Ψ", "label": "Großes Psi (U+03A8): zeitabhängige Wellenfunktion" },
+        { "char": "ψ", "label": "Kleines Psi (U+03C8): stationäre Wellenfunktion" },
+        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi (U+03C6): der Partnerzustand, oft mit ψ gepaart" }
       ]
     },
     {
@@ -50,9 +50,9 @@
       "h2": "Psi in der Psychologie & die Dreizack-Form",
       "intro": "Das große Ψ ist weltweit das Zeichen für Psychologie, Psychiatrie und Parapsychologie — gewählt, weil „Psyche“ mit Psi beginnt, nicht wegen einer Teufelsdreizack-Legende. Seine dreizinkige Silhouette ist der Grund, warum man sie mit dem Dreizack Poseidons vergleicht.",
       "symbols": [
-        { "char": "Ψ", "label": "Großes Psi (U+03A8) — das Zeichen für Psychologie & Psychiatrie" },
-        { "char": "ψ", "label": "Kleines Psi (U+03C8) — der „Psyche“-Buchstabe" },
-        { "char": "🔱", "label": "Dreizack-Emoji (U+1F531) — Poseidons Dreizack, dessen Form Psi widerspiegelt" }
+        { "char": "Ψ", "label": "Großes Psi (U+03A8): das Zeichen für Psychologie & Psychiatrie" },
+        { "char": "ψ", "label": "Kleines Psi (U+03C8): der „Psyche“-Buchstabe" },
+        { "char": "🔱", "label": "Dreizack-Emoji (U+1F531): Poseidons Dreizack, dessen Form Psi widerspiegelt" }
       ]
     },
     {
@@ -61,7 +61,7 @@
       "h2": "Verwandte griechische Buchstaben",
       "intro": "Psi ist der 23. griechische Buchstabe und steht direkt vor dem alphabetabschließenden Omega. Hier sind die Nachbarn, die oft gleich mitkopiert werden.",
       "symbols": [
-        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega — der Buchstabe direkt nach Psi" },
+        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega: der Buchstabe direkt nach Psi" },
         { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
         { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" },
         { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" }

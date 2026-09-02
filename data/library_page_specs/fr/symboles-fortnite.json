@@ -29,10 +29,10 @@
         { "char": "ッ", "label": "Petit Katakana Tsu" },
         { "char": "ソ", "label": "Katakana So" },
         { "char": "ン", "label": "Katakana N" },
-        { "char": "乂", "label": "Yi — Marque des Lames Croisées" },
-        { "char": "亗", "label": "Sui — Marque de Palier Empilé" },
+        { "char": "乂", "label": "Yi: Marque des Lames Croisées" },
+        { "char": "亗", "label": "Sui: Marque de Palier Empilé" },
         { "char": "々", "label": "Marque de Répétition Idéographique" },
-        { "char": "彡", "label": "San — Triple Trait" }
+        { "char": "彡", "label": "San: Triple Trait" }
       ]
     },
     {
@@ -41,16 +41,16 @@
       "h2": "Kanjis de Puissance pour Pseudos",
       "intro": "Un seul kanji chargé de sens — un caractère qui porte toute une ambiance.",
       "symbols": [
-        { "char": "鬼", "label": "Oni — Démon" },
-        { "char": "龍", "label": "Ryu — Dragon" },
-        { "char": "神", "label": "Kami — Dieu" },
-        { "char": "王", "label": "O — Roi" },
-        { "char": "影", "label": "Kage — Ombre" },
-        { "char": "刃", "label": "Ha — Lame" },
-        { "char": "雷", "label": "Kaminari — Tonnerre" },
-        { "char": "火", "label": "Hi — Feu" },
-        { "char": "風", "label": "Kaze — Vent" },
-        { "char": "闇", "label": "Yami — Ténèbres" }
+        { "char": "鬼", "label": "Oni: Démon" },
+        { "char": "龍", "label": "Ryu: Dragon" },
+        { "char": "神", "label": "Kami: Dieu" },
+        { "char": "王", "label": "O: Roi" },
+        { "char": "影", "label": "Kage: Ombre" },
+        { "char": "刃", "label": "Ha: Lame" },
+        { "char": "雷", "label": "Kaminari: Tonnerre" },
+        { "char": "火", "label": "Hi: Feu" },
+        { "char": "風", "label": "Kaze: Vent" },
+        { "char": "闇", "label": "Yami: Ténèbres" }
       ]
     },
     {

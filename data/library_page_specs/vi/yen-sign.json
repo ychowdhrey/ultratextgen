@@ -29,7 +29,7 @@
       "intro": "Ký hiệu yên và biến thể chiều rộng đầy đủ dùng trong chữ Đông Á.",
       "symbols": [
         { "char": "¥", "label": "Ký Hiệu Yên (U+00A5)" },
-        { "char": "￥", "label": "Ký Hiệu Yên Chiều Rộng Đầy Đủ (U+FFE5) — dùng trong dàn trang chữ Đông Á (Trung/Nhật/Hàn)" }
+        { "char": "￥", "label": "Ký Hiệu Yên Chiều Rộng Đầy Đủ (U+FFE5): dùng trong dàn trang chữ Đông Á (Trung/Nhật/Hàn)" }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "h2": "Ký Hiệu Dễ Nhầm Với Yên",
       "intro": "Ký hiệu tiền tệ khác có hình dáng gần giống ¥, nhưng mang ý nghĩa hoàn toàn riêng.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — ký hiệu tiền tệ riêng, được thiết kế có chủ đích" },
-        { "char": "₩", "label": "Ký Hiệu Won (U+20A9) — chữ W gạch ngang, «họ hàng» ngôn ngữ của yên" }
+        { "char": "€", "label": "Ký Hiệu Euro (U+20AC): ký hiệu tiền tệ riêng, được thiết kế có chủ đích" },
+        { "char": "₩", "label": "Ký Hiệu Won (U+20A9): chữ W gạch ngang, «họ hàng» ngôn ngữ của yên" }
       ]
     },
     {
@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
     { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },

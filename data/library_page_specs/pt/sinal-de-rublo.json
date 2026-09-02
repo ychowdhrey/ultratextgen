@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-de-rublo/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "ruble-sign",
@@ -30,8 +30,8 @@
       "intro": "A marca em si e a letra cirílica que a originou. O design vencedor é o Er maiúsculo (Р) com uma barra horizontal extra abaixo da curva — o р minúsculo é o que aparecia na antiga abreviação «р.».",
       "symbols": [
         { "char": "₽", "label": "Sinal de Rublo (U+20BD)" },
-        { "char": "Р", "label": "Letra Cirílica Maiúscula Er (U+0420) — a Base do Sinal" },
-        { "char": "р", "label": "Letra Cirílica Minúscula Er (U+0440) — Usada na Antiga Abreviação «р.»" }
+        { "char": "Р", "label": "Letra Cirílica Maiúscula Er (U+0420): a Base do Sinal" },
+        { "char": "р", "label": "Letra Cirílica Minúscula Er (U+0440): Usada na Antiga Abreviação «р.»" }
       ]
     },
     {
@@ -40,11 +40,11 @@
       "h2": "Outros Sinais Monetários Adotados Recentemente",
       "intro": "O sinal de rublo tem vizinhos próximos no bloco Currency Symbols do Unicode — um grupo de marcas codificadas só nos anos 2010, quando países pós-soviéticos e outros deram um glifo próprio às suas moedas. O sinal de rupia indiana, como o rublo, foi escolhido por concurso público de design.",
       "symbols": [
-        { "char": "₹", "label": "Sinal de Rupia Indiana (U+20B9) — Escolhido por Concurso Público em 2010" },
-        { "char": "₺", "label": "Sinal de Lira Turca (U+20BA) — Adotado em 2012" },
-        { "char": "₸", "label": "Sinal de Tenge (U+20B8) — Tenge Cazaque" },
-        { "char": "₼", "label": "Sinal de Manat (U+20BC) — Manat Azerbaijano" },
-        { "char": "₾", "label": "Sinal de Lari (U+20BE) — Lari Georgiano" }
+        { "char": "₹", "label": "Sinal de Rupia Indiana (U+20B9): Escolhido por Concurso Público em 2010" },
+        { "char": "₺", "label": "Sinal de Lira Turca (U+20BA): Adotado em 2012" },
+        { "char": "₸", "label": "Sinal de Tenge (U+20B8): Tenge Cazaque" },
+        { "char": "₼", "label": "Sinal de Manat (U+20BC): Manat Azerbaijano" },
+        { "char": "₾", "label": "Sinal de Lari (U+20BE): Lari Georgiano" }
       ]
     },
     {

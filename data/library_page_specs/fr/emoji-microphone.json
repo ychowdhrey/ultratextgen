@@ -38,7 +38,7 @@
       "h2": "Emoji Auxquels on le Confond",
       "intro": "Des symboles que l'on cherche en s'attendant au micro à main, mais qui sont en réalité des emoji distincts, à un code différent.",
       "symbols": [
-        { "char": "🎙️", "label": "Microphone de Studio (U+1F399) — le micro de diffusion/podcast sur pied" },
+        { "char": "🎙️", "label": "Microphone de Studio (U+1F399): le micro de diffusion/podcast sur pied" },
         { "char": "🔊", "label": "Haut-Parleur Volume Fort (U+1F50A)" },
         { "char": "🗣️", "label": "Tête qui Parle (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Haut-Parleur Public (U+1F4E2)" }
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/object-emojis/", "title": "Object Emojis", "desc": "Chaque emoji d'objet du quotidien — technologie, maison et bureau, dont le microphone — à parcourir dans une même grille (en anglais)." },
     { "href": "/library/emoji-combos/", "title": "Emoji Combos", "desc": "Des associations d'emoji toutes prêtes pour bios et légendes, y compris sur les thèmes musique et performance (en anglais)." },

@@ -60,10 +60,10 @@
       "h2": "En Qué Puede Convertirse un Peón",
       "intro": "Un peón que llega al extremo opuesto del tablero debe coronar — en reina, torre, alfil o caballo de su propio color. Nunca puede convertirse en rey, y no puede quedarse como peón. La reina es la elección habitual; cualquier otra opción es una «subpromoción».",
       "symbols": [
-        { "char": "♛", "label": "Reina de Ajedrez Negra (U+265B) — la coronación habitual" },
+        { "char": "♛", "label": "Reina de Ajedrez Negra (U+265B): la coronación habitual" },
         { "char": "♜", "label": "Torre de Ajedrez Negra (U+265C)" },
         { "char": "♝", "label": "Alfil de Ajedrez Negro (U+265D)" },
-        { "char": "♞", "label": "Caballo de Ajedrez Negro (U+265E) — una subpromoción" }
+        { "char": "♞", "label": "Caballo de Ajedrez Negro (U+265E): una subpromoción" }
       ]
     }
   ],

@@ -22,10 +22,10 @@
         { "char": "ッ", "label": "Katakana Small Tu" },
         { "char": "ソ", "label": "Katakana So" },
         { "char": "ン", "label": "Katakana N" },
-        { "char": "乂", "label": "Yi — Crossed Blades Mark" },
-        { "char": "亗", "label": "Sui — Stacked Tier Mark" },
+        { "char": "乂", "label": "Yi: Crossed Blades Mark" },
+        { "char": "亗", "label": "Sui: Stacked Tier Mark" },
         { "char": "々", "label": "Ideographic Iteration Mark" },
-        { "char": "彡", "label": "San — Triple Slash" }
+        { "char": "彡", "label": "San: Triple Slash" }
       ]
     },
     {
@@ -34,16 +34,16 @@
       "h2": "Power Kanji for Names",
       "intro": "Single kanji with heavyweight meanings — one character that carries a whole vibe.",
       "symbols": [
-        { "char": "鬼", "label": "Oni — Demon" },
-        { "char": "龍", "label": "Ryu — Dragon" },
-        { "char": "神", "label": "Kami — God" },
-        { "char": "王", "label": "O — King" },
-        { "char": "影", "label": "Kage — Shadow" },
-        { "char": "刃", "label": "Ha — Blade" },
-        { "char": "雷", "label": "Kaminari — Thunder" },
-        { "char": "火", "label": "Hi — Fire" },
-        { "char": "風", "label": "Kaze — Wind" },
-        { "char": "闇", "label": "Yami — Darkness" }
+        { "char": "鬼", "label": "Oni: Demon" },
+        { "char": "龍", "label": "Ryu: Dragon" },
+        { "char": "神", "label": "Kami: God" },
+        { "char": "王", "label": "O: King" },
+        { "char": "影", "label": "Kage: Shadow" },
+        { "char": "刃", "label": "Ha: Blade" },
+        { "char": "雷", "label": "Kaminari: Thunder" },
+        { "char": "火", "label": "Hi: Fire" },
+        { "char": "風", "label": "Kaze: Wind" },
+        { "char": "闇", "label": "Yami: Darkness" }
       ]
     },
     {
@@ -143,7 +143,7 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/minecraft-symbols/",

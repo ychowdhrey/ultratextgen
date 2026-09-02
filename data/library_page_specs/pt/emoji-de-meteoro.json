@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-meteoro/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "meteor",
@@ -38,7 +38,7 @@
       "h2": "Os Emojis com que É Confundido",
       "intro": "Emojis celestes já codificados com que o Meteor é mais comumente comparado, ou acusado de se sobrepor.",
       "symbols": [
-        { "char": "☄️", "label": "Cometa — o design do qual o Meteor se separa" },
+        { "char": "☄️", "label": "Cometa: o design do qual o Meteor se separa" },
         { "char": "🌠", "label": "Estrela Cadente" },
         { "char": "⭐", "label": "Estrela" }
       ]
@@ -49,7 +49,7 @@
       "h2": "Outros Candidatos Rascunho do Emoji 18.0",
       "intro": "Meteor não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB) — venceu a votação pública" },
+        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB): venceu a votação pública" },
         { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
         { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" }
       ]

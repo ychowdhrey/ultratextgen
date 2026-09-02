@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Trông Giống Vạch Dọc",
       "intro": "Những ký hiệu này có hình dáng gần giống | nhưng mang ý nghĩa khác.",
       "symbols": [
-        { "char": "‖", "label": "Vạch Dọc Kép (U+2016) — dùng trong toán học cho chuẩn, ví dụ ‖v‖" },
-        { "char": "¦", "label": "Vạch Đứt Đoạn (U+00A6) — một biến thể cũ hơn, ít gặp hơn, có trên một số bàn phím quốc tế" }
+        { "char": "‖", "label": "Vạch Dọc Kép (U+2016): dùng trong toán học cho chuẩn, ví dụ ‖v‖" },
+        { "char": "¦", "label": "Vạch Đứt Đoạn (U+00A6): một biến thể cũ hơn, ít gặp hơn, có trên một số bàn phím quốc tế" }
       ]
     },
     {
@@ -52,7 +52,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Nhiều thế kỷ dùng trong thiên văn học, góc và các thang nhiệt độ." },
     { "href": "/vi/symbol/invisible-character/", "title": "Ký Tự Vô Hình", "desc": "Bí quyết đứng sau tên người dùng và tên hiển thị trống." },

@@ -37,8 +37,8 @@
       "h2": "Các Dấu Hiệu Pháp Lý Khác",
       "intro": "Những ký hiệu pháp lý thường bị nhầm hoặc gộp chung với ©.",
       "symbols": [
-        { "char": "™", "label": "Ký Hiệu Nhãn Hiệu (U+2122) — bảo vệ tên thương hiệu và logo, không phải tác phẩm sáng tạo" },
-        { "char": "®", "label": "Ký Hiệu Nhãn Hiệu Đã Đăng Ký (U+00AE) — về mặt pháp lý chỉ dùng cho các nhãn hiệu đã thực sự đăng ký với cơ quan nhãn hiệu" }
+        { "char": "™", "label": "Ký Hiệu Nhãn Hiệu (U+2122): bảo vệ tên thương hiệu và logo, không phải tác phẩm sáng tạo" },
+        { "char": "®", "label": "Ký Hiệu Nhãn Hiệu Đã Đăng Ký (U+00AE): về mặt pháp lý chỉ dùng cho các nhãn hiệu đã thực sự đăng ký với cơ quan nhãn hiệu" }
       ]
     },
     {
@@ -52,7 +52,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/trademark-symbol/", "title": "Ký Hiệu Nhãn Hiệu (™)", "desc": "Một tuyên bố thương hiệu chưa đăng ký, và cách nó khác với ®." },
     { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },

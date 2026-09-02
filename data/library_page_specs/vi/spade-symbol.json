@@ -28,8 +28,8 @@
       "h2": "Ký Hiệu Bích — ♠ & ♤",
       "intro": "Chính chất bài, ở cả hai dạng Unicode. Dạng đặc ♠ là bích «đen» mặc định; ♤ là dạng viền «trắng», và ♠️ là dạng trình bày emoji có bộ chọn biến thể. Sẵn sàng để dán ở bất cứ đâu.",
       "symbols": [
-        { "char": "♠", "label": "Bích Đen (U+2660) — Dạng Đặc / Tô Đặc" },
-        { "char": "♤", "label": "Bích Trắng (U+2664) — Dạng Viền" },
+        { "char": "♠", "label": "Bích Đen (U+2660): Dạng Đặc / Tô Đặc" },
+        { "char": "♤", "label": "Bích Trắng (U+2664): Dạng Viền" },
         { "char": "♠️", "label": "Emoji Chất Bích (U+2660 U+FE0F)" }
       ]
     },
@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "Cả bốn chất bài Tây — bích, cơ, rô và nhép — ở dạng đặc và viền để duyệt và sao chép." },
     { "href": "/library/dice-domino-symbols/", "title": "Ký Hiệu Xúc Xắc, Domino & Mạt Chược", "desc": "Phần còn lại của bộ trò chơi trên bàn: mặt xúc xắc, quân domino và ký hiệu mạt chược Unicode." },

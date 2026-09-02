@@ -8,7 +8,7 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes. Gratis en direct.",
   "slug": "delta-symbool",
   "title": "Delta-symbool: Kopieer en Plak Δ δ — de Letter die in Elke Vergelijking 'Verandering' Betekent",
   "meta_description": "Kopieer en plak het delta-symbool — hoofdletter Δ (het universele teken voor 'verandering in') en kleine letter δ — en ontdek de echte betekenissen in wiskunde, natuurkunde, scheikunde en optiehandel, plus het incrementteken ∆ waar het mee wordt verward. Klik om het direct te kopiëren.",
@@ -40,11 +40,11 @@
       "symbols": [
         {
           "char": "Δ",
-          "label": "Griekse Hoofdletter Delta (U+0394) — 'Verandering In'"
+          "label": "Griekse Hoofdletter Delta (U+0394): 'Verandering In'"
         },
         {
           "char": "δ",
-          "label": "Griekse Kleine Letter Delta (U+03B4) — Infinitesimaal / Partiële Lading"
+          "label": "Griekse Kleine Letter Delta (U+03B4): Infinitesimaal / Partiële Lading"
         }
       ]
     },
@@ -56,11 +56,11 @@
       "symbols": [
         {
           "char": "∆",
-          "label": "Increment (U+2206) — De Wiskundige Operator die op Δ Lijkt, Ander Codepunt"
+          "label": "Increment (U+2206): De Wiskundige Operator die op Δ Lijkt, Ander Codepunt"
         },
         {
           "char": "Δ",
-          "label": "Hoofdletter Delta (U+0394) — De Griekse Letter Zelf"
+          "label": "Hoofdletter Delta (U+0394): De Griekse Letter Zelf"
         }
       ]
     },

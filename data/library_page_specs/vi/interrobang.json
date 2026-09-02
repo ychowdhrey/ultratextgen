@@ -28,8 +28,8 @@
       "h2": "Interrobang — ‽ & ⸘",
       "intro": "Chính dấu này và hình ảnh gương của nó: interrobang chuẩn đóng lại một câu hỏi kinh ngạc, và dạng ngược được xây để mở đầu một câu như vậy.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Câu Hỏi + Cảm Thán Trong Một Glyph" },
-        { "char": "⸘", "label": "Interrobang Ngược (U+2E18) — «Người Anh Em» Mở Đầu Câu" }
+        { "char": "‽", "label": "Interrobang (U+203D): Câu Hỏi + Cảm Thán Trong Một Glyph" },
+        { "char": "⸘", "label": "Interrobang Ngược (U+2E18): «Người Anh Em» Mở Đầu Câu" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Bộ tra cứu đầy đủ dấu câu thông thường và chuyên biệt trong Unicode, từ dấu gạch ngang và ngoặc đến các dấu mới lạ như interrobang." },
     { "href": "/vi/symbol/backwards-question-mark/", "title": "Dấu Chấm Hỏi Ngược (⸮)", "desc": "Một dấu tu từ lịch sử khác — dấu chấm hỏi soi gương năm 1575, không phải kết hợp câu hỏi-cảm thán như interrobang." },

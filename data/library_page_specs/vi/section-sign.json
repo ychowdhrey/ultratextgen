@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Trông Giống Điều Khoản",
       "intro": "Những ký hiệu này có hình dáng gần giống § nhưng mang ý nghĩa hoàn toàn khác.",
       "symbols": [
-        { "char": "¶", "label": "Pilcrow (U+00B6) — đánh dấu một chỗ ngắt đoạn văn, không phải một điều khoản pháp lý" },
-        { "char": "$", "label": "Ký Hiệu Đô La — hình dáng hai nét gạch chéo trông tương tự, nhưng ý nghĩa không liên quan" }
+        { "char": "¶", "label": "Pilcrow (U+00B6): đánh dấu một chỗ ngắt đoạn văn, không phải một điều khoản pháp lý" },
+        { "char": "$", "label": "Ký Hiệu Đô La: hình dáng hai nét gạch chéo trông tương tự, nhưng ý nghĩa không liên quan" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn." },
     { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử." },

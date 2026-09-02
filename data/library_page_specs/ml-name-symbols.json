@@ -37,16 +37,16 @@
       "h2": "Epic Kanji for ML Nicks",
       "intro": "Moon, wolf, storm — single characters with hero-skin energy for your name.",
       "symbols": [
-        { "char": "月", "label": "Tsuki — Moon" },
-        { "char": "星", "label": "Hoshi — Star" },
-        { "char": "光", "label": "Hikari — Light" },
-        { "char": "魂", "label": "Tamashii — Soul" },
-        { "char": "嵐", "label": "Arashi — Storm" },
-        { "char": "虎", "label": "Tora — Tiger" },
-        { "char": "狼", "label": "Okami — Wolf" },
-        { "char": "鷹", "label": "Taka — Hawk" },
-        { "char": "剣", "label": "Ken — Sword" },
-        { "char": "覇", "label": "Ha — Supremacy" }
+        { "char": "月", "label": "Tsuki: Moon" },
+        { "char": "星", "label": "Hoshi: Star" },
+        { "char": "光", "label": "Hikari: Light" },
+        { "char": "魂", "label": "Tamashii: Soul" },
+        { "char": "嵐", "label": "Arashi: Storm" },
+        { "char": "虎", "label": "Tora: Tiger" },
+        { "char": "狼", "label": "Okami: Wolf" },
+        { "char": "鷹", "label": "Taka: Hawk" },
+        { "char": "剣", "label": "Ken: Sword" },
+        { "char": "覇", "label": "Ha: Supremacy" }
       ]
     },
     {
@@ -146,7 +146,7 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/free-fire-name-symbols/",

@@ -64,14 +64,14 @@
       "h2": "Tốt Có Thể Trở Thành Gì",
       "intro": "Một quân tốt đến được đầu kia bàn cờ bắt buộc phải phong cấp — thành hậu, xe, tượng hoặc mã cùng màu. Nó không bao giờ có thể trở thành vua, và không thể giữ nguyên là tốt. Hậu là lựa chọn thường thấy; bất kỳ quân nào khác là một «phong cấp non» (underpromotion).",
       "symbols": [
-        { "char": "♛", "label": "Hậu Đen (U+265B) — Lựa Chọn Phong Cấp Thường Thấy" },
+        { "char": "♛", "label": "Hậu Đen (U+265B): Lựa Chọn Phong Cấp Thường Thấy" },
         { "char": "♜", "label": "Xe Đen (U+265C)" },
         { "char": "♝", "label": "Tượng Đen (U+265D)" },
-        { "char": "♞", "label": "Mã Đen (U+265E) — Một Kiểu Phong Cấp Non" }
+        { "char": "♞", "label": "Mã Đen (U+265E): Một Kiểu Phong Cấp Non" }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/chess-symbols/", "title": "Ký Hiệu Cờ Vua", "desc": "Trọn bộ cờ vua Unicode — vua, hậu, xe, tượng, mã và cả hai tốt — trong một trang tra cứu để sao chép và dán." },
     { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "Bích, cơ, rô và nhép — các glyph trò chơi khác, nằm ngay cạnh quân cờ trong khối Miscellaneous Symbols của Unicode." },

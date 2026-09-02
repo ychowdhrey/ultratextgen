@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/meteor-emoji/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "meteor",
@@ -38,7 +38,7 @@
       "h2": "Die Emojis, mit denen er verwechselt wird",
       "intro": "Bereits kodierte Himmels-Emojis, mit denen Meteor am häufigsten verglichen oder für überflüssig erklärt wird.",
       "symbols": [
-        { "char": "☄️", "label": "Komet — das Design, von dem sich Meteor abspaltet" },
+        { "char": "☄️", "label": "Komet: das Design, von dem sich Meteor abspaltet" },
         { "char": "🌠", "label": "Sternschnuppe" },
         { "char": "⭐", "label": "Stern" }
       ]
@@ -49,7 +49,7 @@
       "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
       "intro": "Meteor ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
       "symbols": [
-        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB) — Gewinner der öffentlichen Abstimmung" },
+        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB): Gewinner der öffentlichen Abstimmung" },
         { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" },
         { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" }
       ]

@@ -38,9 +38,9 @@
       "h2": "Podobnie Wyglądające Symbole",
       "intro": "Te znaki wyglądają podobnie, ale to cudzysłowy kątowe albo notacja matematyczna, nie porównania.",
       "symbols": [
-        { "char": "‹", "label": "Pojedynczy Cudzysłów Kątowy Lewy (U+2039) — znak interpunkcyjny, nie porównanie" },
-        { "char": "«", "label": "Podwójny Cudzysłów Kątowy Lewy (U+00AB) — cudzysłowy francuskie/niemieckie" },
-        { "char": "⟨", "label": "Lewy Nawias Kątowy (U+27E8) — używany w notacji bra-ket i wektorach, nie w porównaniach" }
+        { "char": "‹", "label": "Pojedynczy Cudzysłów Kątowy Lewy (U+2039): znak interpunkcyjny, nie porównanie" },
+        { "char": "«", "label": "Podwójny Cudzysłów Kątowy Lewy (U+00AB): cudzysłowy francuskie/niemieckie" },
+        { "char": "⟨", "label": "Lewy Nawias Kątowy (U+27E8): używany w notacji bra-ket i wektorach, nie w porównaniach" }
       ]
     },
     {
@@ -49,13 +49,13 @@
       "h2": "Powiązane Znaki Porównania",
       "intro": "Warianty „lub równe” zbudowane z tych samych podstawowych znaków porównania.",
       "symbols": [
-        { "char": "≤", "label": "Mniejsze lub Równe (U+2264) — kuzyn „lub-równy”" },
+        { "char": "≤", "label": "Mniejsze lub Równe (U+2264): kuzyn „lub-równy”" },
         { "char": "≥", "label": "Większe lub Równe (U+2265)" },
         { "char": "≠", "label": "Różne Od (U+2260)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-plus-minus/",

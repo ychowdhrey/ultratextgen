@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/interrobang/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "der-interrobang",
@@ -29,8 +29,8 @@
       "h2": "Der Interrobang — ‽ & ⸘",
       "intro": "Das Zeichen selbst und sein Spiegelbild: der übliche Interrobang, der eine erstaunte Frage abschließt, und die umgekehrte Form, gebaut, um eine solche zu eröffnen.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Frage + Ausruf in einer Glyphe" },
-        { "char": "⸘", "label": "Umgekehrter Interrobang (U+2E18) — der satzeröffnende Zwilling" }
+        { "char": "‽", "label": "Interrobang (U+203D): Frage + Ausruf in einer Glyphe" },
+        { "char": "⸘", "label": "Umgekehrter Interrobang (U+2E18): der satzeröffnende Zwilling" }
       ]
     },
     {

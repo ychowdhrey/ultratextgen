@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Tiền Tệ Cùng Thời",
       "intro": "Những ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích, tương tự ₹.",
       "symbols": [
-        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — một ký hiệu tiền tệ hiện đại khác được thiết kế có chủ đích" },
-        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3) — đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" }
+        { "char": "€", "label": "Ký Hiệu Euro (U+20AC): một ký hiệu tiền tệ hiện đại khác được thiết kế có chủ đích" },
+        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3): đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" }
       ]
     },
     {
@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
     { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },

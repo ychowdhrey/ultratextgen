@@ -38,8 +38,8 @@
       "h2": "Les Emoji Auxquels on le Confond",
       "intro": "Les gestes déjà encodés auxquels Signe du Pouce est le plus souvent comparé, ou accusé de faire doublon.",
       "symbols": [
-        { "char": "👍", "label": "Pouce Levé — approbation verticale, pas un geste directionnel" },
-        { "char": "👎", "label": "Pouce Baissé — désapprobation verticale, pas un geste directionnel" },
+        { "char": "👍", "label": "Pouce Levé: approbation verticale, pas un geste directionnel" },
+        { "char": "👎", "label": "Pouce Baissé: désapprobation verticale, pas un geste directionnel" },
         { "char": "👈", "label": "Dos de Main Pointant vers la Gauche" },
         { "char": "👉", "label": "Dos de Main Pointant vers la Droite" }
       ]
@@ -50,14 +50,14 @@
       "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
       "intro": "Signe du Pouce n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB) — grand gagnant du vote public" },
+        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB): grand gagnant du vote public" },
         { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
         { "char": "🪋", "label": "Météore (brouillon, U+1FA8B)" },
         { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" }
       ]
     }
   ],
-  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.",
   "related": [
     { "href": "/library/hand-symbols/", "title": "Hand Gesture Symbols", "desc": "Les mains qui pointent, les gestes d'approbation et tous les caractères de main déjà encodés (en anglais)." },
     { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public." },

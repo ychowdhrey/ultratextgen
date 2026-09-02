@@ -20,7 +20,7 @@
   "hero_h1": "Símbolos de Barra Vertical",
   "hero_tagline": "Cada pipe, barra y línea vertical que ofrece Unicode — desde el | del teclado hasta las barras gruesas ❚. Haz clic en cualquier símbolo para copiarlo al instante.",
   "intro": "El símbolo de barra vertical — también llamado pipe, pleca o barra — separa elementos en titulares, biografías, menús de navegación y código. Más allá del pipe | del teclado, Unicode incluye barras dobles, verticales punteadas del bloque de dibujo de recuadros, barras gruesas decorativas y caracteres matemáticos de 'divide a'. Elige abajo el grosor y el estilo exacto de barra vertical que necesites; cada uno es un solo carácter que puedes copiar.",
-  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.",
   "sections": [
     {
       "id": "basic-pipes",
@@ -28,16 +28,16 @@
       "h2": "Caracteres de Pipe y Barra",
       "intro": "La barra vertical estándar y sus parientes directos, incluidas las formas de ancho completo y las letras.",
       "symbols": [
-        { "char": "|", "label": "Barra vertical (pipe) — U+007C" },
-        { "char": "¦", "label": "Barra partida — U+00A6" },
-        { "char": "‖", "label": "Barra vertical doble — U+2016" },
-        { "char": "∣", "label": "Divide a — U+2223" },
-        { "char": "∥", "label": "Paralelo a — U+2225" },
-        { "char": "｜", "label": "Barra vertical de ancho completo — U+FF5C" },
-        { "char": "￨", "label": "Vertical fina de formas de medio ancho — U+FFE8" },
-        { "char": "ǀ", "label": "Letra latina clic dental — U+01C0" },
-        { "char": "ǁ", "label": "Letra latina clic lateral — U+01C1" },
-        { "char": "⏐", "label": "Extensión de barra vertical — U+23D0" }
+        { "char": "|", "label": "Barra vertical (pipe): U+007C" },
+        { "char": "¦", "label": "Barra partida: U+00A6" },
+        { "char": "‖", "label": "Barra vertical doble: U+2016" },
+        { "char": "∣", "label": "Divide a: U+2223" },
+        { "char": "∥", "label": "Paralelo a: U+2225" },
+        { "char": "｜", "label": "Barra vertical de ancho completo: U+FF5C" },
+        { "char": "￨", "label": "Vertical fina de formas de medio ancho: U+FFE8" },
+        { "char": "ǀ", "label": "Letra latina clic dental: U+01C0" },
+        { "char": "ǁ", "label": "Letra latina clic lateral: U+01C1" },
+        { "char": "⏐", "label": "Extensión de barra vertical: U+23D0" }
       ]
     },
     {
@@ -67,9 +67,9 @@
       "h2": "Barras Gruesas y Decorativas",
       "intro": "Barras decorativas gruesas y verticales de bloque para cuando quieres un separador más marcado.",
       "symbols": [
-        { "char": "❘", "label": "Barra vertical fina — U+2758" },
-        { "char": "❙", "label": "Barra vertical mediana — U+2759" },
-        { "char": "❚", "label": "Barra vertical gruesa — U+275A" },
+        { "char": "❘", "label": "Barra vertical fina: U+2758" },
+        { "char": "❙", "label": "Barra vertical mediana: U+2759" },
+        { "char": "❚", "label": "Barra vertical gruesa: U+275A" },
         { "char": "▏", "label": "Bloque de un octavo izquierdo" },
         { "char": "▕", "label": "Bloque de un octavo derecho" },
         { "char": "▮", "label": "Rectángulo vertical negro" },
@@ -83,14 +83,14 @@
       "h2": "Verticales Matemáticas y Técnicas",
       "intro": "Negaciones de 'divide a', operadores de paralelismo y piezas de extensión de corchetes de los bloques técnicos.",
       "symbols": [
-        { "char": "∤", "label": "No divide a — U+2224" },
-        { "char": "∦", "label": "No paralelo a — U+2226" },
-        { "char": "⎢", "label": "Extensión de corchete izquierdo — U+23A2" },
-        { "char": "⎥", "label": "Extensión de corchete derecho — U+23A5" },
-        { "char": "⎮", "label": "Extensión de integral — U+23AE" },
-        { "char": "⎪", "label": "Extensión de llave — U+23AA" },
-        { "char": "⎸", "label": "Línea vertical izquierda de caja — U+23B8" },
-        { "char": "⎹", "label": "Línea vertical derecha de caja — U+23B9" }
+        { "char": "∤", "label": "No divide a: U+2224" },
+        { "char": "∦", "label": "No paralelo a: U+2226" },
+        { "char": "⎢", "label": "Extensión de corchete izquierdo: U+23A2" },
+        { "char": "⎥", "label": "Extensión de corchete derecho: U+23A5" },
+        { "char": "⎮", "label": "Extensión de integral: U+23AE" },
+        { "char": "⎪", "label": "Extensión de llave: U+23AA" },
+        { "char": "⎸", "label": "Línea vertical izquierda de caja: U+23B8" },
+        { "char": "⎹", "label": "Línea vertical derecha de caja: U+23B9" }
       ]
     }
   ],

@@ -40,7 +40,7 @@
         { "char": "😬", "label": "Grimacing Face (Mặt Nhăn Nhó)" },
         { "char": "🫠", "label": "Melting Face (Mặt Đang Tan Chảy)" },
         { "char": "🥴", "label": "Woozy Face (Mặt Choáng Váng)" },
-        { "char": "🫪", "label": "Distorted Face — emoji mới được ưa chuộng nhất của Unicode 17.0" }
+        { "char": "🫪", "label": "Distorted Face: emoji mới được ưa chuộng nhất của Unicode 17.0" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/face-emojis/", "title": "Ký Hiệu Gương Mặt", "desc": "Mọi emoji gương mặt đã được mã hóa, sẵn sàng duyệt và sao chép ngay hôm nay." },
     { "href": "/vi/symbol/pickle-emoji/", "title": "Emoji Pickle", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn." },

@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-polegar-direcional/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "thumb-sign",
@@ -39,8 +39,8 @@
       "h2": "Os Emojis com que É Confundido",
       "intro": "Gestos já codificados com que o Thumb Sign é mais comumente comparado, ou acusado de duplicar.",
       "symbols": [
-        { "char": "👍", "label": "Joinha — aprovação vertical, não apontamento direcional" },
-        { "char": "👎", "label": "Não Curti — reprovação vertical, não apontamento direcional" },
+        { "char": "👍", "label": "Joinha: aprovação vertical, não apontamento direcional" },
+        { "char": "👎", "label": "Não Curti: reprovação vertical, não apontamento direcional" },
         { "char": "👈", "label": "Mão Apontando para a Esquerda" },
         { "char": "👉", "label": "Mão Apontando para a Direita" }
       ]
@@ -51,7 +51,7 @@
       "h2": "Outros Candidatos Rascunho do Emoji 18.0",
       "intro": "Thumb Sign não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB) — venceu a votação pública" },
+        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB): venceu a votação pública" },
         { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
         { "char": "🪋", "label": "Meteor (rascunho, U+1FA8B)" },
         { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" }

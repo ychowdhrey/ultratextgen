@@ -37,8 +37,8 @@
       "h2": "Ký Hiệu Dễ Nhầm Với Euro",
       "intro": "Các ký hiệu tiền tệ khác đôi khi bị gõ nhầm thay cho €.",
       "symbols": [
-        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3) — đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" },
-        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9) — một ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích" }
+        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3): đã hơn 1.000 năm tuổi, bắt nguồn từ chữ Latin libra" },
+        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ (U+20B9): một ký hiệu tiền tệ hiện đại khác cũng được thiết kế có chủ đích" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/pound-sign/", "title": "Ký Hiệu Bảng Anh (£)", "desc": "Đã hơn một nghìn năm tuổi, bắt nguồn từ chữ Latin libra." },
     { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên (¥)", "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc." },

@@ -38,7 +38,7 @@
       "h2": "Không Giống Trăng Lưỡi Liềm Hay Ngôi Sao Đơn Lẻ",
       "intro": "Ngôi sao và trăng lưỡi liềm là một glyph kết hợp. Các ký tự trăng lưỡi liềm và ngôi sao riêng lẻ mà mọi người hay dùng thay thế đều có mã điểm và công việc riêng.",
       "symbols": [
-        { "char": "☾", "label": "Trăng Hạ Huyền (U+263E) — Trăng Lưỡi Liềm Đơn Thuần" },
+        { "char": "☾", "label": "Trăng Hạ Huyền (U+263E): Trăng Lưỡi Liềm Đơn Thuần" },
         { "char": "☽", "label": "Trăng Thượng Huyền (U+263D)" },
         { "char": "🌙", "label": "Emoji Trăng Lưỡi Liềm (U+1F319)" },
         { "char": "⭐", "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50)" },
@@ -61,7 +61,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu để duyệt." },
     { "href": "/library/islamic-symbols/", "title": "Ký Hiệu Hồi Giáo", "desc": "Ngôi sao và trăng lưỡi liềm cùng thư pháp Allah, thánh đường, cầu nguyện và các ký hiệu khác gắn với Hồi giáo." },

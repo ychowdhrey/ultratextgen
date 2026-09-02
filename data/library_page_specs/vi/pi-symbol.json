@@ -28,8 +28,8 @@
       "h2": "Ký Hiệu Pi — π & Π",
       "intro": "Chính chữ cái Hy Lạp. Chữ thường π là hằng số toán học nổi tiếng; chữ hoa Π lại là một công cụ hoàn toàn khác.",
       "symbols": [
-        { "char": "π", "label": "Chữ Thường Hy Lạp Pi (U+03C0) — Hằng Số Toán Học ≈ 3,14159" },
-        { "char": "Π", "label": "Chữ Hoa Hy Lạp Pi (U+03A0) — Toán Tử Tích" }
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi (U+03C0): Hằng Số Toán Học ≈ 3,14159" },
+        { "char": "Π", "label": "Chữ Hoa Hy Lạp Pi (U+03A0): Toán Tử Tích" }
       ]
     },
     {
@@ -38,10 +38,10 @@
       "h2": "Pi Trong Toán Học: Tích So Với Tổng",
       "intro": "Chữ hoa Π là toán tử tích, và — giống hệt sigma — nó có ký hiệu toán học chuyên dụng riêng, ∏ (N-ARY PRODUCT), một ký tự Unicode tách biệt với chữ cái. Đây chính là «bản sao chép nhân» của toán tử tổng ∑, chữ cái tương ứng nhau từng cặp.",
       "symbols": [
-        { "char": "∏", "label": "Tích N Phần Tử (U+220F) — Toán Tử Tích Chuyên Dụng" },
-        { "char": "Π", "label": "Pi Hoa (U+03A0) — Chữ Cái Thường Được Gõ Thay Cho Toán Tử Tích" },
-        { "char": "∑", "label": "Tổng N Phần Tử (U+2211) — «Anh Em» Cộng Của Toán Tử Tích" },
-        { "char": "Σ", "label": "Sigma Hoa (U+03A3) — Chữ Cái Đứng Sau Toán Tử Tổng" }
+        { "char": "∏", "label": "Tích N Phần Tử (U+220F): Toán Tử Tích Chuyên Dụng" },
+        { "char": "Π", "label": "Pi Hoa (U+03A0): Chữ Cái Thường Được Gõ Thay Cho Toán Tử Tích" },
+        { "char": "∑", "label": "Tổng N Phần Tử (U+2211): «Anh Em» Cộng Của Toán Tử Tích" },
+        { "char": "Σ", "label": "Sigma Hoa (U+03A3): Chữ Cái Đứng Sau Toán Tử Tổng" }
       ]
     },
     {
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
     { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Tích, tổng, và các toán tử cùng chữ cái Hy Lạp sống cạnh pi trong phương trình." },

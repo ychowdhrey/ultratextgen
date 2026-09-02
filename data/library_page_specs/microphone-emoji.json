@@ -32,7 +32,7 @@
       "h2": "Emoji It Gets Confused With",
       "intro": "Symbols people reach for expecting the handheld mic, but that are actually separate, differently-coded emoji.",
       "symbols": [
-        { "char": "🎙️", "label": "Studio Microphone (U+1F399) — the tripod-mounted broadcast/podcast mic" },
+        { "char": "🎙️", "label": "Studio Microphone (U+1F399): the tripod-mounted broadcast/podcast mic" },
         { "char": "🔊", "label": "Speaker High Volume (U+1F50A)" },
         { "char": "🗣️", "label": "Speaking Head (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Public Address Loudspeaker (U+1F4E2)" }
@@ -52,7 +52,7 @@
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/object-emojis/",

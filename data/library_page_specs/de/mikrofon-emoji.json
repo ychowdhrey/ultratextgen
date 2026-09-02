@@ -21,7 +21,7 @@
     { "lang": "de", "href": "https://ultratextgen.com/de/symbol/mikrofon-emoji/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.",
   "sections": [
     {
       "id": "mikrofon-emoji",
@@ -38,7 +38,7 @@
       "h2": "Emojis, mit denen es verwechselt wird",
       "intro": "Zeichen, zu denen viele in Erwartung des Handmikrofons greifen, die aber eigenständige, anders kodierte Emojis sind.",
       "symbols": [
-        { "char": "🎙️", "label": "Studiomikrofon (U+1F399) — das stativmontierte Broadcast-/Podcast-Mikrofon" },
+        { "char": "🎙️", "label": "Studiomikrofon (U+1F399): das stativmontierte Broadcast-/Podcast-Mikrofon" },
         { "char": "🔊", "label": "Lautsprecher, hohe Lautstärke (U+1F50A)" },
         { "char": "🗣️", "label": "Sprechender Kopf (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Megafon (U+1F4E2)" }

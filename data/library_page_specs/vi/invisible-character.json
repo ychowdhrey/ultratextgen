@@ -37,9 +37,9 @@
       "h2": "Các Ký Tự «Vô Hình» Khác — & Vì Sao Lựa Chọn Quan Trọng",
       "intro": "Những ký tự này cũng trông trống, nhưng mỗi cái hoạt động khác nhau trước bộ kiểm tra xác thực của các nền tảng.",
       "symbols": [
-        { "char": "​", "label": "Khoảng Trắng Độ Rộng Bằng Không (U+200B) — độ rộng thực sự bằng không; nhiều bộ kiểm tra loại bỏ nó như khoảng trắng, nên thường thất bại ở nơi U+2800 thành công" },
-        { "char": " ", "label": "Khoảng Trắng Không Ngắt Dòng (U+00A0) — một ký tự khoảng trắng thật sự; hầu như luôn bị cắt bỏ hoặc từ chối thẳng" },
-        { "char": "ㅤ", "label": "Hangul Filler (U+3164) — một lựa chọn tên trống phổ biến khác, hoạt động trên một số nền tảng mà U+2800 không hoạt động, và ngược lại" }
+        { "char": "​", "label": "Khoảng Trắng Độ Rộng Bằng Không (U+200B): độ rộng thực sự bằng không; nhiều bộ kiểm tra loại bỏ nó như khoảng trắng, nên thường thất bại ở nơi U+2800 thành công" },
+        { "char": " ", "label": "Khoảng Trắng Không Ngắt Dòng (U+00A0): một ký tự khoảng trắng thật sự; hầu như luôn bị cắt bỏ hoặc từ chối thẳng" },
+        { "char": "ㅤ", "label": "Hangul Filler (U+3164): một lựa chọn tên trống phổ biến khác, hoạt động trên một số nền tảng mà U+2800 không hoạt động, và ngược lại" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/vertical-line/", "title": "Ký Hiệu Vạch Đứng", "desc": "Từ dấu phân cách ASCII đến «pipe» trong Unix." },
     { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ", "desc": "Nhiều thế kỷ thiên văn học, góc độ và thang nhiệt độ." },

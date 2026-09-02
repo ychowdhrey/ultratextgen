@@ -36,7 +36,7 @@
         { "char": "➤", "label": "Black Rightwards Arrowhead" },
         { "char": "✝", "label": "Latin Cross (Tokyo Manji Gang-Style Tattoo Motif)" },
         { "char": "乂", "label": "CJK Ideograph Yi (Crossed-Blade Mark)" },
-        { "char": "力", "label": "Chikara — Power/Strength" }
+        { "char": "力", "label": "Chikara: Power/Strength" }
       ]
     },
     {
@@ -110,7 +110,7 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/japanese-symbols/",

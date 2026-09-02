@@ -21,7 +21,7 @@
     { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/til/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.",
   "sections": [
     {
       "id": "the-tilde",
@@ -29,9 +29,9 @@
       "h2": "O Til ~ e Seus Parecidos",
       "intro": "Três caracteres Unicode diferentes que todo mundo chama de «til» — a tecla do teclado, um modificador de espaçamento independente e o diacrítico combinável que fica sobre uma letra.",
       "symbols": [
-        { "char": "~", "label": "Til (U+007E) — a Tecla do Teclado" },
-        { "char": "˜", "label": "Til Pequeno (U+02DC) — Modificador de Espaçamento Independente" },
-        { "char": "̃", "label": "Til Combinável (U+0303) — Fica Sobre uma Letra" }
+        { "char": "~", "label": "Til (U+007E): a Tecla do Teclado" },
+        { "char": "˜", "label": "Til Pequeno (U+02DC): Modificador de Espaçamento Independente" },
+        { "char": "̃", "label": "Til Combinável (U+0303): Fica Sobre uma Letra" }
       ]
     },
     {
@@ -52,11 +52,11 @@
       "h2": "Tils Matemáticos: Similar a e Aproximadamente Igual",
       "intro": "Em equações, o til significa «similar a» ou «aproximadamente», mas os verdadeiros sinais matemáticos são caracteres Unicode próprios — não o ~ do ASCII que as pessoas costumam digitar no lugar.",
       "symbols": [
-        { "char": "∼", "label": "Operador Til (U+223C) — «Similar a»" },
-        { "char": "≈", "label": "Quase Igual a (U+2248) — «Aproximadamente Igual»" },
+        { "char": "∼", "label": "Operador Til (U+223C): «Similar a»" },
+        { "char": "≈", "label": "Quase Igual a (U+2248): «Aproximadamente Igual»" },
         { "char": "≅", "label": "Aproximadamente Igual a (U+2245)" },
         { "char": "≃", "label": "Assintoticamente Igual a (U+2243)" },
-        { "char": "~", "label": "Til (U+007E) — a Tecla ASCII Digitada no Lugar" }
+        { "char": "~", "label": "Til (U+007E): a Tecla ASCII Digitada no Lugar" }
       ]
     }
   ],

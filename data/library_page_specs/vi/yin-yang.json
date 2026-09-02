@@ -29,7 +29,7 @@
       "intro": "Ký hiệu âm dương và một hệ thống biểu tượng liên quan nhưng khác biệt được xây từ các vạch âm/dương.",
       "symbols": [
         { "char": "☯", "label": "Ký Hiệu Âm Dương" },
-        { "char": "☰", "label": "Quẻ Càn (Trời) Trong Kinh Dịch — một hệ thống biểu tượng liên quan nhưng khác biệt, được xây từ các vạch âm/dương" }
+        { "char": "☰", "label": "Quẻ Càn (Trời) Trong Kinh Dịch: một hệ thống biểu tượng liên quan nhưng khác biệt, được xây từ các vạch âm/dương" }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "h2": "Ký Hiệu Đôi Khi Bị Nhầm Với Âm Dương",
       "intro": "Những ký hiệu này có hình dáng bề ngoài gần giống ☯ nhưng mang ý nghĩa hoàn toàn khác.",
       "symbols": [
-        { "char": "🌗", "label": "Trăng Hạ Huyền (U+1F317) — hình ảnh sáng/tối chia đôi trông tương tự, nhưng không liên quan về ý nghĩa" },
-        { "char": "☮", "label": "Ký Hiệu Hòa Bình (U+262E) — một ký hiệu khác, đôi khi được đặt cùng hình ảnh âm dương" }
+        { "char": "🌗", "label": "Trăng Hạ Huyền (U+1F317): hình ảnh sáng/tối chia đôi trông tương tự, nhưng không liên quan về ý nghĩa" },
+        { "char": "☮", "label": "Ký Hiệu Hòa Bình (U+262E): một ký hiệu khác, đôi khi được đặt cùng hình ảnh âm dương" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.",
   "related": [
     { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình (☮)", "desc": "Thiết kế bán kỳ hiệu năm 1958 của Gerald Holtom." },
     { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo & Tâm Linh", "desc": "Các quẻ, vạch âm dương và ký hiệu tôn giáo trong thư viện đầy đủ." },

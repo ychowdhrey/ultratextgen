@@ -32,19 +32,19 @@
       "symbols": [
         {
           "char": "Br",
-          "label": "Br — the Latin abbreviation used by the National Bank"
+          "label": "Br: the Latin abbreviation used by the National Bank"
         },
         {
           "char": "BYN",
-          "label": "BYN — the ISO 4217 currency code"
+          "label": "BYN: the ISO 4217 currency code"
         },
         {
           "char": "руб.",
-          "label": "руб. — the Cyrillic short form"
+          "label": "руб.: the Cyrillic short form"
         },
         {
           "char": "¤",
-          "label": "¤ — the generic currency sign, as a last resort"
+          "label": "¤: the generic currency sign, as a last resort"
         }
       ]
     },
@@ -56,11 +56,11 @@
       "symbols": [
         {
           "char": "₽",
-          "label": "₽ Russian Ruble Sign (U+20BD) — a different currency, encoded since Unicode 7.0"
+          "label": "₽ Russian Ruble Sign (U+20BD): a different currency, encoded since Unicode 7.0"
         },
         {
           "char": "Б",
-          "label": "Б Cyrillic Capital Be (U+0411) — the plain letter, without the centre bar"
+          "label": "Б Cyrillic Capital Be (U+0411): the plain letter, without the centre bar"
         }
       ]
     },
@@ -72,19 +72,19 @@
       "symbols": [
         {
           "char": "⃁",
-          "label": "Saudi Riyal Sign (U+20C1) — final since Unicode 17.0"
+          "label": "Saudi Riyal Sign (U+20C1): final since Unicode 17.0"
         },
         {
           "char": "⃃",
-          "label": "UAE Dirham Sign (U+20C3) — shipping in Unicode 18.0"
+          "label": "UAE Dirham Sign (U+20C3): shipping in Unicode 18.0"
         },
         {
           "char": "⃄",
-          "label": "Omani Rial Sign (U+20C4) — shipping in Unicode 18.0"
+          "label": "Omani Rial Sign (U+20C4): shipping in Unicode 18.0"
         },
         {
           "char": "⃂",
-          "label": "Rufiyaa Sign (U+20C2) — shipping in Unicode 18.0"
+          "label": "Rufiyaa Sign (U+20C2): shipping in Unicode 18.0"
         }
       ]
     }

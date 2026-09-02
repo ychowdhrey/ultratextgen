@@ -51,13 +51,13 @@
       "intro": "The メ and 彡 strokes that give FF nicks their slashed, fast look.",
       "symbols": [
         { "char": "メ", "label": "Katakana Me (Slash Mark)" },
-        { "char": "彡", "label": "San — Triple Slash" },
+        { "char": "彡", "label": "San: Triple Slash" },
         { "char": "ミ", "label": "Katakana Mi" },
         { "char": "ツ", "label": "Katakana Tsu (Smile)" },
         { "char": "丶", "label": "CJK Dot Stroke" },
-        { "char": "个", "label": "Ge — Spire Mark" },
-        { "char": "乡", "label": "Xiang — Ribbon Curl" },
-        { "char": "王", "label": "Wang — King" }
+        { "char": "个", "label": "Ge: Spire Mark" },
+        { "char": "乡", "label": "Xiang: Ribbon Curl" },
+        { "char": "王", "label": "Wang: King" }
       ]
     },
     {
@@ -137,7 +137,7 @@
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles. Free and instant.",
   "related": [
     {
       "href": "/library/ml-name-symbols/",
