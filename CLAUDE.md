@@ -380,6 +380,69 @@ not enroll a site in Google News. Formal Google News Publisher Center
 submission remains explicitly out of scope, for the same domain-risk reasoning
 as the case study above — this refinement does not reopen that question.
 
+### One verification date per entry, in the pill (added 2026-09-02)
+
+The pillar's value is *"this number was true, and here is when we last
+confirmed it"* — so the verification date is its load-bearing claim. It was
+being made twice, in two slots, with two wordings.
+
+`Last checked <date>` sat in body prose on all 11 entries, from the
+tone-of-voice pass. A later change added a `Published <date> · Verified <date>`
+`guide-pill` to one of them. Nothing reconciled the two, and that entry shipped
+asserting **September 1 in its body and September 2 in its pill** — both
+sentences read fine, the markup was valid, and no check compared them.
+
+**The near-miss is the part worth carrying forward.** The first sweep for this
+grepped `Checked` **case-sensitively** and concluded "no other entry carries an
+inline stamp." Every one of the 11 does; they all say `Last checked`. A
+pattern-matched audit found the surface it was written for and missed the next
+one — the same failure "Structure is not language" documents above. Enumerate
+the class, do not sample a pattern you guessed.
+
+**The rule:** exactly one verification date per entry, as the last
+`guide-pill`, agreeing with the page's own `datePublished`. No verification
+stamp in body prose.
+
+**Three kinds of date live on these pages and only one is a stamp.** Conflating
+them would flag the 19 real event dates on `uae-dirham-symbol-unicode-18`:
+
+| kind | example | where it belongs |
+|---|---|---|
+| **stamp** | "Last checked September 1, 2026" | the pill, page-level |
+| **scoped** | "As of September 2, 2026 no date has been announced" | **stays inline** |
+| **factual** | "Unicode 18.0 publishes on September 16, 2026" | ordinary content |
+
+A scoped qualifier is not a stamp: *"no rollout date has been announced"* is
+only true at a point in time and must carry its own date wherever it sits,
+because a reader cannot infer it from a header pill.
+
+**`dateModified` is not a verification date and must not be used as one.** All
+11 entries carry `2026-09-01` from a single tone-of-voice rewrite — it means
+"when the prose was last edited", which is a different claim. The visible
+verified date is deliberately independent of it.
+
+A stamp in a `<meta name="description">` is allowed — snippet copy is its own
+slot and audience — but the gate **warns** if it disagrees with the pill.
+
+#### Tooling
+
+- **`npm run audit:updates-verification`** — whole-pillar dashboard, oldest
+  check first, i.e. the order a re-verification pass should work in.
+- **`npm run check:updates-verification`** — the enforcing half, wired into
+  `.github/workflows/validate.yml`. It **gates rather than informs** (same call
+  as `check:zalgo-decodes`): there is no backlog to be permanently red against.
+  It is **whole-pillar, not diff-scoped**, on purpose — the shape it catches is
+  an older page drifting out of agreement with a convention set later, which a
+  diff-scoped check cannot see.
+- Both share **`scripts/lib/updates-verification.js`**, so the audit and the
+  gate can never disagree about what a stamp is.
+
+Verified per this file's own rule before being trusted, against five
+differently-shaped broken inputs so the check could not be tuned to one: the
+real regression re-injected into body prose, a deleted pill, a pill contradicting
+`datePublished`, a `Verified` date predating `Published` — each exits 1 — and a
+meta description contradicting the pill, which warns and exits 0.
+
 ---
 
 ## Hub vs Spoke: preventing self-cannibalization
@@ -2709,6 +2772,13 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not put a verification stamp ("Last checked <date>", "Checked <date>") in
+  an `updates/` entry's body prose, and do not let a second one appear anywhere
+  on the page. One verification date per entry, as the last `guide-pill`,
+  agreeing with `datePublished`. See "One verification date per entry, in the
+  pill" above. An "As of <date>" qualifier on a time-bound claim is a different
+  statement and stays inline. `npm run check:updates-verification` gates this;
+  `npm run audit:updates-verification` gives the whole-pillar picture.
 - Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
   page's unzalgo widget strips marks by codepoint range and cannot undo a
   precomposed character, so composition silently breaks the card against the
