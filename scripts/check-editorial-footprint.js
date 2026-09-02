@@ -315,7 +315,10 @@ function siblingObligations(touchedEnRels, touchedSet, siblingsOf, emDashHits) {
   return out;
 }
 
-const BASELINE_PATH = path.join(ROOT, 'data', 'editorial_footprint_baseline.json');
+// data/editorial_footprint_baseline.json is deliberately NOT read here. It is a
+// whole-site audit snapshot and stays useful as one, but using its scores as the
+// "before" half of this gate's regression check compares two numbers computed
+// against different cohorts — see the comment on the regression branch below.
 
 /** Regression allowance for an EXISTING page, in within-locale percentile points. */
 const REGRESSION_TOLERANCE = 10;
@@ -406,10 +409,6 @@ function main() {
     process.exit(2);
   }
   const dropped = { native: 0, paired: 0 };
-  let baseline = null;
-  if (fs.existsSync(BASELINE_PATH)) {
-    try { baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8')); } catch { baseline = null; }
-  }
 
   const introduced = [];      // findings this branch added, plus the inherited em dashes it must clear
   const preExisting = [];     // findings already at the merge base that it may leave
@@ -512,11 +511,30 @@ function main() {
           if (pct !== null && pct >= NEW_PAGE_PERCENTILE) {
             newPages.push({ rel, score: r.score, pct, locale: page.locale, dims: r.dimensions });
           }
-        } else if (baseline && baseline.pages[rel] && baseline.pages[rel].score !== null) {
-          const beforeScore = baseline.pages[rel].score;
-          const beforePct = pctOf(page.locale, beforeScore);
-          if (pct !== null && beforePct !== null && pct - beforePct >= REGRESSION_TOLERANCE) {
-            regressions.push({ rel, before: beforeScore, after: r.score, beforePct, pct });
+        } else if (beforePage) {
+          // Score the merge-base version of THIS page under the SAME ctx as the
+          // current one. Reading the before-score out of
+          // data/editorial_footprint_baseline.json instead — which is what this
+          // did until b0eb18d13 — compares two numbers computed against
+          // different cohorts, and these dimensions are cohort-relative by
+          // construction (shortfallBelow/excessAbove divide by the cohort
+          // median). The baseline is a whole-site audit over ~4,570 pages; ctx
+          // is built from the pages THIS branch changed. The same page scores
+          // differently under each, with no edit at all.
+          //
+          // Measured on the CTA-routing branch, which reported 26 pages
+          // "worsening by >= 10 percentile points": library/bear-kaomoji scored
+          // 3.1 -> 3.1 with no context, 10.1 -> 10.1 within its own 30-page
+          // kaomoji cohort, and 11.3 -> 18.8 under baseline-vs-ctx. Its text had
+          // not moved by one measurable point; only the denominator had. Same
+          // shape as the parity gate's convergence carve-out: a proxy that
+          // inverts on a legitimate change.
+          const rBefore = scorePage(beforePage, ctx);
+          if (rBefore.score !== null) {
+            const beforePct = pctOf(page.locale, rBefore.score);
+            if (pct !== null && beforePct !== null && pct - beforePct >= REGRESSION_TOLERANCE) {
+              regressions.push({ rel, before: rBefore.score, after: r.score, beforePct, pct });
+            }
           }
         }
       }
