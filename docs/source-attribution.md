@@ -198,17 +198,41 @@ Sources block.
 ## 7. Verified against deliberately broken inputs
 
 Per `CLAUDE.md`'s own rule — *adding a validator script is not the same as
-gating on it* — the gate was run against five differently-shaped defects so it
-could not be tuned to one. See §8 of this repo's commit for that branch's run;
-the probes are:
+gating on it* — the gate was run against five differently-shaped defects plus
+a control, so it could not be tuned to one bug. Each probe was committed
+(the gate diffs `merge-base..HEAD`, so **uncommitted work is invisible to it**)
+and reverted after:
 
-1. a citation added to a page with no Sources block → **exit 1**
-2. a citation moved out of the block into body prose → **exit 1**
-3. `rel="nofollow"` restored on a `unicode.org` citation → **exit 1**
-4. the `.source-note` class reverted to `editorial-block` → **exit 1**
-5. a JSON-LD `citation` entry deleted while the block keeps it → **exit 1**
+| # | Probe | Result |
+|---|---|---|
+| 1 | A citation added to a page with no Sources block | **exit 1** — "cites 1 external source(s) but has no Sources block" |
+| 2 | A cited URL present on the page but absent from the block | **exit 1** — names the URL |
+| 3 | `rel="nofollow"` restored on a `unicode.org` citation | **exit 1** — "should carry rel=\"noopener\" (primary source)" |
+| 4 | `.source-note` reverted to `.editorial-block` | **exit 1** — "not marked up as a .source-note panel" |
+| 5 | One JSON-LD `citation` entry deleted, block unchanged | **exit 1** — "does not match the Sources block (7 vs 8)" |
+| 6 | An **unclassified** domain cited inside the block | **exit 0 with a warning** — the error/warning split holds |
 
-and one negative control: a page whose Sources block is correct → **exit 0**.
+**Two things this exercise caught that reasoning had not.**
+
+*The negative control found a design bug, before any probe ran.* The first
+draft required every citation **tag** to sit inside the block. Run against the
+26 backfilled pages it failed all of them, because those pages name the source
+inside the very sentence it backs — "Per the official Roblox Developer Forum,
+those icons live in..." — which is good writing and what §2.7 of the
+tone-of-voice standard asks for elsewhere. Satisfying that draft would have
+meant stripping a useful inline link from 26 pages. The rule is now the one
+this document always stated: every cited URL **appears in** the block, which is
+the complete account, not the exclusive home.
+
+*A probe that edits nothing reports success.* Probe 3's first run used a
+malformed `sed`, changed no bytes, committed nothing, and the gate duly exited
+0 — a **false green** that looked exactly like a pass. Worse, the cleanup
+`git reset --hard HEAD~1` then ran anyway and rolled back a real commit, so the
+two probes after it silently tested an older version of the checker. The runner
+now aborts unless `git diff` shows the probe actually changed something, and
+resets to a captured SHA rather than to `HEAD~1`. If you repeat these, keep
+both guards: *a check that reports nothing is indistinguishable from a check
+that passes* applies to the probes as much as to the gates.
 
 ---
 
