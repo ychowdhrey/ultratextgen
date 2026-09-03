@@ -250,6 +250,18 @@ jobs:
         continue-on-error: true
         run: npm run check:updates-verification | tee updates-verification.log
 
+      # Source attribution: a page that cites an external source presents it in
+      # one Sources block, with each citation's rel set by the cited domain's
+      # authority tier (data/source_authority.json). Diff-scoped, because 32
+      # pages carried citations with no block when this landed and that backlog
+      # is written prose, not a mechanical fix. It GATES rather than informs:
+      # for the pages a PR actually touches there is nothing to be permanently
+      # red against, and fix-source-attribution.js closes the mechanical half.
+      - name: Run source attribution check
+        id: source_attribution
+        continue-on-error: true
+        run: npm run check:source-attribution -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee source-attribution.log
+
       - name: Run locale translation completeness check
         id: locale_translation
         continue-on-error: true
@@ -625,6 +637,11 @@ jobs:
             cat updates-verification.log
             echo '```'
             echo ""
+            echo "### Source attribution check — \`${{ steps.source_attribution.outcome }}\`"
+            echo '```'
+            cat source-attribution.log
+            echo '```'
+            echo ""
             echo "### Locale translation completeness check — \`${{ steps.locale_translation.outcome }}\`"
             echo '```'
             cat locale-translation.log
@@ -757,6 +774,7 @@ jobs:
           steps.new_symbol_peer_links.outcome == 'failure' ||
           steps.parity.outcome == 'failure' ||
           steps.locale_mesh.outcome == 'failure' ||
+          steps.source_attribution.outcome == 'failure' ||
           steps.locale_translation.outcome == 'failure' ||
           steps.locale_parent_gap.outcome == 'failure' ||
           steps.locale_spec.outcome == 'failure' ||

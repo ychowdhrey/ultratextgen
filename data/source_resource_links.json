@@ -1,0 +1,65 @@
+{
+  "_readme": "External links that are NOT citations. A citation is evidence for a fact the page asserts and did not originate; it belongs in the page's Sources block. A RESOURCE link tells the reader where to go next — install this free font, sign in here to rename your account, file your proposal at this address — and belongs inline in the sentence that sends them, where it is useful. Both kinds still take their rel from data/source_authority.json; only the Sources-block obligation differs. Keyed by route, listing the domains that are resource links ON THAT PAGE: the same domain can be a citation on one page and a destination on another, which is exactly why this is scoped per page and not per domain. A page whose every external domain is listed here needs no Sources block. Same bar as data/library_hub_exclusions.json and every other ledger in this repo: entries are discussed decisions with a reason and a date, never added to make a page pass. If a link is really backing a claim, the fix is to write the Sources block, not to list it here.",
+  "_fields": {
+    "domains": "Domains on this page whose links are destinations, not evidence.",
+    "reason": "What the reader is being sent to do.",
+    "added": "ISO date."
+  },
+  "routes": {
+    "answers/what-font-does-linkedin-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "\"Install Source Sans 3 for free\" — the specimen page is where the reader downloads the lookalike font, not evidence for what LinkedIn uses.",
+      "added": "2026-09-03"
+    },
+    "answers/what-font-does-snapchat-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "\"Install Public Sans from Google Fonts\" — a download destination for the free substitute.",
+      "added": "2026-09-03"
+    },
+    "answers/what-font-does-pinterest-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "\"Install Poppins for free\" — a download destination. The Grilli Type link on the same page IS a citation and is in the Sources block.",
+      "added": "2026-09-03"
+    },
+    "ar/answers/what-font-does-pinterest-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "Locale sibling of answers/what-font-does-pinterest-use; same split.",
+      "added": "2026-09-03"
+    },
+    "es/answers/what-font-does-pinterest-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "Locale sibling of answers/what-font-does-pinterest-use; same split.",
+      "added": "2026-09-03"
+    },
+    "fr/answers/what-font-does-pinterest-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "Locale sibling of answers/what-font-does-pinterest-use; same split.",
+      "added": "2026-09-03"
+    },
+    "id/answers/what-font-does-pinterest-use/index.html": {
+      "domains": ["fonts.google.com"],
+      "reason": "Locale sibling of answers/what-font-does-pinterest-use; same split.",
+      "added": "2026-09-03"
+    },
+    "answers/how-to-change-minecraft-username/index.html": {
+      "domains": ["minecraft.net", "xbox.com"],
+      "reason": "\"Go to minecraft.net's Edit Profile page and sign in\" and \"Go to xbox.com and sign in\" — the pages the reader performs the rename on. The page is the instruction; these are its steps.",
+      "added": "2026-09-03"
+    },
+    "answers/how-to-change-roblox-username/index.html": {
+      "domains": ["roblox.com"],
+      "reason": "\"Go to roblox.com and log in\" — where the reader performs the rename.",
+      "added": "2026-09-03"
+    },
+    "usecase/xbox-name-generator/index.html": {
+      "domains": ["xbox.com"],
+      "reason": "\"Go to xbox.com and sign in\" — where the reader changes the gamertag.",
+      "added": "2026-09-03"
+    },
+    "guide/unicode-symbol-approval-process/index.html": {
+      "domains": ["unicode.org"],
+      "reason": "\"Use Unicode's official emoji proposal process at unicode.org/emoji/proposals.html\" and the L2 document register — the addresses the reader files at. The guide teaches the process rather than reporting a fact about it, so these are destinations. If it later asserts a dated fact about the process, that fact needs a Sources block of its own.",
+      "added": "2026-09-03"
+    }
+  }
+}
