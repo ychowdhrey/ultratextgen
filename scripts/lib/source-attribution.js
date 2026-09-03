@@ -225,9 +225,18 @@ function inspect(relPath, html) {
     warnings.push(`Sources label is "${sec.label}"; this locale's canonical label is "${LOCALE_LABELS[locale][0]}"`);
   }
   if (sec) {
-    for (const c of cites) {
-      if (sec.html.indexOf(c.tag) < 0) {
-        errors.push(`citation to ${c.host} sits outside the Sources block ("${c.anchor.slice(0, 40)}")`);
+    // The block must ACCOUNT FOR every cited URL, not be its exclusive home.
+    // A source named inside the sentence it backs ("Per the official Roblox
+    // Developer Forum, those icons live in...") is good writing, and the
+    // tone-of-voice standard asks for exactly that shape of link elsewhere;
+    // the block is the one place a reader or an answer engine can see the
+    // complete list. Demanding exclusivity would have forced 26 pages to
+    // strip a useful inline link to satisfy a check — which this rule's own
+    // first draft did, and the negative-control run caught.
+    const inBlock = new Set(citationLinks(sec.html).map((c) => c.url));
+    for (const url of new Set(cites.map((c) => c.url))) {
+      if (!inBlock.has(url)) {
+        errors.push(`${hostOf(url)} is cited on the page but not listed in the Sources block (${url})`);
       }
     }
     if (!/class="source-note"/.test(sec.html)) {
