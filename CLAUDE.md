@@ -1111,27 +1111,42 @@ linguistic argument (specific regional game, no EN equivalent exists to
 translate) rather than confirmed search volume. Revisit with real numbers
 if either page's ranking ever becomes a live question.
 
-**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
-consolidation** case, the same shape as the `fr/calligraphie` trio and
-explicitly *not* a "no English speaker would search this" claim. The page
-targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
-obviously has English demand — but **the EN homepage already *is* that page**:
-its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
-no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
-spokes *about* fancy text, a different content type). Building an EN parent
-would cannibalise the site's own homepage.
+**~~Ratified exception, `tr/sekilli-yazi/` (2026-08-02)~~ — SUPERSEDED
+2026-09-03: the page was retired (301 to `/tr/`) and its ledger entry removed.**
+The reasoning is kept below because the *shape* of the argument still applies to
+the `fr/calligraphie` trio, and because the way it failed is the lesson.
 
-On the Turkish side the two do not compete, which is what makes the page worth
-keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **the
-overwhelming majority of its impressions on `süslü` queries**, at first-page
-positions, while sitting far down the SERP on the `şekilli yaz*` family that
-`/tr/` owns. The page was retargeted
-onto `süslü` on 2026-08-01 for exactly that reason.
+The original ratification: an **EN-SERP-consolidation** case, explicitly *not* a
+"no English speaker would search this" claim. The page targeted `süslü yazı` /
+`süslü harf`, which obviously has English demand — but the EN homepage already
+*is* that page (H1 "Fancy Text Generator", "fancy text" ×14, no standalone EN
+fancy-text page), so building an EN parent would have cannibalised the homepage.
+On the Turkish side the two were held not to compete: first-party GSC (27 days to
+2026-08-02) showed the page drawing the overwhelming majority of its impressions
+on `süslü` queries at first-page positions, while sitting far down the SERP on
+the `şekilli yaz*` family `/tr/` owns. It was retargeted onto `süslü` on
+2026-08-01 for exactly that reason.
 
-**What is not verified:** the cannibalisation premise rests on this repo's own
-structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
-since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
-`fr/calligraphie` entry carries.
+**Why it was retired.** A query×page pull (Türkiye, 2026-08-24 → 09-01) showed
+the page owning *neither* family: **one impression in nine days at position 49**,
+against ~53 expected from its own 3-month baseline of 539 Turkish impressions at
+position 10. In the same window `/tr/` held `süslü yazı kopyala yapıştır` at
+position 7 and the `şekilli yazı` writing queries at 1–5, and `/tr/sekilli-nick/`
+held the nick queries at 5–6. The retarget had moved the page onto a term the
+homepage then went on to win outright, leaving a spoke with no query to own —
+Hub-vs-Spoke Rule 3 in its sharpest form, where the hub wins the spoke's own
+target term.
+
+**Two things worth carrying forward.** First, a de-confliction retarget can
+fail by the hub simply *winning the new term too*; "the spoke owns term B today"
+is a fact with a shelf life, not a structural property. Second, the EN-side
+cannibalisation premise was **never verified** against an EN SERP or EN GSC pull
+— Semrush has been out of API units since 2026-07-30, through four checks — so
+this entry retired without that question ever being answered. The
+`fr/calligraphie` trio still carries the identical unverified premise. A
+standalone EN `/fancy-letters/` page has since shipped (2026-08-11), which
+changes the EN-side picture the original ratification described and is worth
+re-reading before the trio's premise is treated as settled.
 
 **Ratified exceptions are ledgered state, not just prose (2026-08-01):**
 every ratified local-only exception above is also recorded in
