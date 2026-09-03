@@ -2305,6 +2305,110 @@ fails **64** sibling pages and exits 1. A first draft of the tokeniser read
 "May 26, 2026" as the single number `262026`; that bug was found by reading the
 replay output and is fixed — anchoring each group to exactly three digits.
 
+## Source Attribution — how a page shows its evidence (added 2026-09-03)
+
+Every gate above measures structure, language, schema, values or assets. None
+of them asked whether a page that states a fact it did not originate *shows
+where the fact came from*, or how.
+
+**There was no standard.** Sources had no CSS class, no markup convention, no
+tone-of-voice rule and no check — only a habit, which held on one pillar and
+nowhere else. 67 of 68 `/updates/` entries presented citations identically
+(one prose paragraph, immediately before the FAQ, all 207 links inside it,
+100% consistent), and **33 other pages cited external sources with no
+attribution surface at all** — including `guide/unicode-symbol-approval-process`,
+an article about the Unicode process citing `unicode.org` twice with nothing
+saying so. An undocumented convention has no failure mode, only a drift.
+
+**The distinction the standard turns on: a citation is evidence, a resource
+link is a destination.** They are identical in HTML and are not the same
+thing. "commissioned from **Grilli Type**" backs a claim and belongs in the
+Sources block; "**Install Poppins** for free" sends the reader somewhere and
+belongs inline in the sentence that sends them. Getting this wrong is not
+academic — the first pass counted every external link as a citation and
+reported 33 offenders when 6 of them were not citing at all. The same domain
+is a citation on one page and a destination on another (`xbox.com` is a
+sign-in link on `answers/how-to-change-minecraft-username`), which is why
+`data/source_resource_links.json` is keyed by **route and domain**, never by
+domain alone.
+
+**The rules:** a page asserting a sourced fact carries one `.source-note`
+Sources block, labelled in that locale's own word, immediately before the FAQ,
+holding every citation on the page; it is **prose, not a bibliography**,
+because a list says a source exists while a sentence says which claim it backs;
+each citation's `rel` comes from the cited domain's tier in
+`data/source_authority.json`; and the block's citations are projected into the
+page's JSON-LD as schema.org `citation`, generated from the block so the two
+cannot drift.
+
+**Primary sources are followed, and that is deliberate.** All 207 citations
+were `rel="nofollow"`, which told search engines the Unicode Consortium's own
+pipeline page was as trustworthy as a forum post. Google reserves `nofollow`
+for paid and untrusted links. A `primary` source — the standards body, the
+central bank that designed the symbol, the platform's own changelog, the issue
+tracker the request lives in — is `rel="noopener"`; press, third-party
+reference works and user-generated threads stay `nofollow`. `devforum.roblox.com`
+is Roblox-operated and still secondary: forum posts are user-generated
+whatever the domain. **An unlisted domain is treated as secondary and
+reported**, so an unclassified source fails safe.
+
+Three defects the missing standard had already produced, all now closed:
+`vi/updates/lien-quan-khoa-doi-ten` carried no Sources block while its EN
+parent cited Garena's patch notes — the omission landing on the one locale
+whose readers play the game; `ja` labelled the section 情報源 on one entry and
+出典 on another, `th` split แหล่งข้อมูล / แหล่งอ้างอิง (two words for one
+section, with nothing comparing them — the Swedish `kontrollerat` near-miss
+again); and nothing anywhere carried schema.org `citation`, so a page's
+evidence was legible to a human and invisible to the answer engines the
+tone-of-voice standard ranks as reader #2.
+
+### Tooling
+
+- **`npm run audit:source-attribution`** — whole-site dashboard.
+  **Informational, never gating**, same call as `check:images`.
+- **`npm run check:source-attribution`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. It gates rather than informs because for
+  the pages a PR touches there is nothing to be permanently red against.
+- **`npm run fix:source-attribution`** (`-- --write`) — the repair pass:
+  panel class, `rel`/`target`, legacy label, JSON-LD projection. Idempotent.
+- All three share **`scripts/lib/source-attribution.js`**, so they can never
+  disagree about what a Sources block is.
+
+**The fixer will not create a block on a page that lacks one**, and that
+refusal is the point: the block's content is a sentence about what each source
+establishes, in the page's own language. Generating `Sources: <list of links>`
+would satisfy the gate and defeat the standard.
+
+**The JSON is patched as text, never re-serialised.** 161 of the 281 `ld+json`
+blocks on the affected pages do not survive a `JSON.parse` →
+`JSON.stringify(null, 2)` round trip byte for byte, so a re-serialising fixer
+would rewrite formatting across the site and bury the real change in noise.
+
+**The EFR gate had to be taught about this, and the fix is not the obvious
+one.** Adding a Sources block to a short page is a blocking EFR regression:
+the block `vi/updates/lien-quan-khoa-doi-ten` was missing moved that entry
+10.8 -> 12.1 on `specificityDeficit`, for the act of citing Garena's own patch
+notes, and cutting it to the bare citation still landed on +0.5, the material
+threshold exactly. A Sources block is apparatus, deliberately formulaic across
+pages, and its "facts" are publisher names and URLs rather than codepoints or
+limits — so `scripts/lib/editorial-corpus.js` now drops Sources sections
+before scoring, the same call as `[data-static-directory]`. **It matches the
+section by its LABEL, via the one registry in `source-attribution.js`, never
+by `.source-note`:** keying on the class drops the block on one side of a diff
+and not the other for any branch that introduces the class, which turned one
+blocked page into 37 regressions on the first attempt. What a section *is*
+does not change when its markup does.
+`data/editorial_footprint_baseline.json` was regenerated in the same change
+per the re-baseline rule (336 entries moved; 49 carry a Sources block, 287
+were pre-existing drift).
+
+Verified per this file's own rule against five differently-shaped broken
+inputs plus a negative control — see `docs/source-attribution.md` §7 for the
+probes and the full standard, including the CSS design and its RTL and print
+behaviour.
+
+---
+
 ## Library Hub Coverage — a page is not shipped until its hub knows about it
 
 Every gate above checks a page against a *standard*: its schema, its art, its
@@ -3302,6 +3406,21 @@ Standing protocol:
   drop that coincides with a lost fact or link as IMPROVED BY REMOVAL. A page
   that genuinely needs its footprint goes in `data/efr_exceptions.json` with a
   reason — never to make a PR pass. See "The EFR Quality Gate" above.
+- Do not cite an external source inline with no Sources block, and do not put a
+  citation in a Sources block with the wrong `rel`. A page that states a fact it
+  did not originate carries one `.source-note` block, in that locale's own word
+  for Sources, holding every citation on the page, with `rel` set by the cited
+  domain's tier in `data/source_authority.json` — a standards body, central bank
+  or platform changelog is followed; press, reference works and forum threads are
+  `nofollow`. See "Source Attribution" above. `npm run check:source-attribution`
+  gates every page a PR touches; `npm run fix:source-attribution -- --write`
+  fixes the mechanical half. A link that is a destination rather than evidence
+  ("install this free font", "sign in here") goes in
+  `data/source_resource_links.json` with a reason — never to make a PR pass.
+- Do not hand-write a schema.org `citation` array, and do not hand-edit a
+  Sources block's JSON-LD. It is generated from the block by the fixer precisely
+  so the two cannot drift — the same reason the FAQ schema and the visible FAQ
+  are compared rather than maintained twice.
 - Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
   in that locale's hub — a page no hub links is reachable only from the sitemap.
   See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates

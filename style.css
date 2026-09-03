@@ -9175,3 +9175,113 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-back-top:hover,
 .lib-back-top:focus-visible { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; outline: none; }
 .lib-back-top.visible { display: inline-flex; }
+
+/* ==============================================================
+   SOURCE ATTRIBUTION — the citation apparatus
+   ==============================================================
+   Where a page states a fact it did not originate, the evidence for
+   that fact goes in one Sources block, immediately before the FAQ.
+   Convention, rules and the rel policy: docs/source-attribution.md
+
+   It is deliberately RECESSIVE. Before this existed the block reused
+   .editorial-block and rendered identically to every content section
+   on the page, so a paragraph of pure apparatus carried the same
+   visual weight as the answer the reader came for. Smaller, quieter
+   and set behind a rule reads as "here is the backing", not as one
+   more thing to read.
+
+   Prose is kept on purpose. A bibliography row says a source exists;
+   a sentence says which claim it backs ("Release date comes from
+   Unicode 18.0.0") — that mapping is the part a reader and an answer
+   engine can actually use, and a list throws it away.
+   ============================================================== */
+
+.source-note {
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--accent-purple);
+  border-radius: 0 8px 8px 0;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.source-note p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.source-note p + p {
+  margin-top: 0.6rem;
+}
+
+/* Citations are the only links here, and every one leaves the site.
+   The marker is a CSS pseudo-element rather than markup so it never
+   enters the page's text: the locale-translation and em-dash gates
+   read extracted strings, and a glyph in the HTML would show up in
+   both as content nobody wrote. */
+.source-note a[href^="http"]::after {
+  content: "\2197";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.85em;
+  line-height: 1;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.source-note a {
+  color: var(--accent-purple);
+  text-decoration-color: color-mix(in srgb, var(--accent-purple) 40%, transparent);
+  text-underline-offset: 2px;
+}
+
+.source-note a:hover,
+.source-note a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* Right-to-left locales: the accent rule belongs on the reading edge,
+   and the outbound arrow has to point away from the text, not into it. */
+[dir="rtl"] .source-note,
+html[lang="ar"] .source-note {
+  border-left: 1px solid var(--border-light);
+  border-right: 3px solid var(--accent-purple);
+  border-radius: 8px 0 0 8px;
+}
+
+[dir="rtl"] .source-note a[href^="http"]::after,
+html[lang="ar"] .source-note a[href^="http"]::after {
+  content: "\2196";
+  margin-left: 0;
+  margin-right: 0.15em;
+}
+
+body.dark-mode .source-note {
+  background: var(--bg-base);
+}
+
+@media (max-width: 600px) {
+  .source-note {
+    padding: 0.8rem 0.9rem;
+  }
+  .source-note p {
+    font-size: 0.85rem;
+  }
+}
+
+@media print {
+  .source-note {
+    border: 1px solid #999;
+    background: none;
+  }
+  /* In print the link text is useless without its target. */
+  .source-note a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    opacity: 1;
+  }
+}
