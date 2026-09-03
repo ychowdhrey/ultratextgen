@@ -45,6 +45,10 @@
  */
 
 const cheerio = require('cheerio');
+// One registry of locale Sources labels, shared with the source-attribution
+// standard so the corpus and the gate can never disagree about what a Sources
+// section is called in a given language.
+const { LOCALE_LABELS: SOURCE_LABELS } = require('./source-attribution.js');
 const path = require('path');
 
 /** Canonical locale prefixes. A path segment not in here is an EN page. */
@@ -73,6 +77,47 @@ const FAMILY_RULES = [
 ];
 
 /** Containers that are chrome, navigation or payload — never editorial prose. */
+/**
+ * CITATION APPARATUS — removed by what the section IS, not by its class
+ * (added 2026-09-03).
+ *
+ * A Sources block (docs/source-attribution.md) is evidence for the claims
+ * above it, and it is deliberately formulaic across pages: that consistency
+ * IS the standard. Scored as editorial writing it reads as precisely what EFR
+ * exists to flag — repeated syntax, templated rhythm, and a low fact density,
+ * because its "facts" are publisher names and URLs rather than codepoints,
+ * limits or dates. So the incentive runs backwards: a page is penalised for
+ * showing its sources.
+ *
+ * Measured rather than assumed. Adding the Sources block that
+ * vi/updates/lien-quan-khoa-doi-ten was missing moved that entry from 10.8 to
+ * 12.1, a blocking regression whose dominant contributor was
+ * specificityDeficit, earned by citing Garena's own patch notes. Cutting the
+ * sentence by a quarter reached 11.9; cutting it to the bare citation still
+ * reached 11.3, exactly the +0.5 material threshold. The cost is structural,
+ * not a wording problem: any short page that gains a Sources block pays it.
+ *
+ * It matches on the section's LABEL, via the one locale registry in
+ * source-attribution.js, and not on `.source-note`. Keying on the class would
+ * drop the block on one side of a diff and not the other for any branch that
+ * introduces the class — which is exactly what the branch adding this
+ * standard did, turning one blocked page into 37 regressions across the 67
+ * entries it renamed. What a section is does not change when its markup does.
+ *
+ * Same call, and the same reasoning, as [data-static-directory] above: text
+ * that is not the page's own editorial writing is measured nowhere rather
+ * than measured wrongly. A Sources block owes correctness and the
+ * claim->source mapping, and check:source-attribution is what enforces those.
+ */
+function removeSourceSections($, $body) {
+  const labels = new Set();
+  for (const list of Object.values(SOURCE_LABELS)) for (const l of list) labels.add(l);
+  $body.find('section').each((_, el) => {
+    const label = clean($(el).find('> .article-section-label').first().text());
+    if (label && labels.has(label)) $(el).remove();
+  });
+}
+
 const DROP_SELECTORS = [
   'script', 'style', 'noscript', 'template', 'svg', 'iframe',
   'header', 'footer', 'nav',
@@ -253,6 +298,7 @@ function extractPage(html, relPath) {
 
   // Now strip everything that is not editorial.
   for (const sel of [...DROP_SELECTORS, ...UI_SELECTORS]) $body.find(sel).remove();
+  removeSourceSections($, $body);
   $body.find('*').contents().filter((_, n) => n.type === 'comment').remove();
 
   const h1 = clean($body.find('h1').first().text());

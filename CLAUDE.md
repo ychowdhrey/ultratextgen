@@ -2384,6 +2384,24 @@ blocks on the affected pages do not survive a `JSON.parse` →
 `JSON.stringify(null, 2)` round trip byte for byte, so a re-serialising fixer
 would rewrite formatting across the site and bury the real change in noise.
 
+**The EFR gate had to be taught about this, and the fix is not the obvious
+one.** Adding a Sources block to a short page is a blocking EFR regression:
+the block `vi/updates/lien-quan-khoa-doi-ten` was missing moved that entry
+10.8 -> 12.1 on `specificityDeficit`, for the act of citing Garena's own patch
+notes, and cutting it to the bare citation still landed on +0.5, the material
+threshold exactly. A Sources block is apparatus, deliberately formulaic across
+pages, and its "facts" are publisher names and URLs rather than codepoints or
+limits — so `scripts/lib/editorial-corpus.js` now drops Sources sections
+before scoring, the same call as `[data-static-directory]`. **It matches the
+section by its LABEL, via the one registry in `source-attribution.js`, never
+by `.source-note`:** keying on the class drops the block on one side of a diff
+and not the other for any branch that introduces the class, which turned one
+blocked page into 37 regressions on the first attempt. What a section *is*
+does not change when its markup does.
+`data/editorial_footprint_baseline.json` was regenerated in the same change
+per the re-baseline rule (336 entries moved; 49 carry a Sources block, 287
+were pre-existing drift).
+
 Verified per this file's own rule against five differently-shaped broken
 inputs plus a negative control — see `docs/source-attribution.md` §7 for the
 probes and the full standard, including the CSS design and its RTL and print

@@ -236,7 +236,42 @@ that passes* applies to the probes as much as to the gates.
 
 ---
 
-## 8. What this does not cover
+## 8. The Editorial Footprint Risk gate had to be taught about this
+
+Adding a Sources block to a short page is a **blocking EFR regression**, and
+that is structural rather than a wording problem. Adding the block that
+`vi/updates/lien-quan-khoa-doi-ten` was missing moved that entry from 10.8 to
+12.1 — dominant contributor `specificityDeficit` — earned entirely by citing
+Garena's own patch notes. Trimming the sentence by a quarter reached 11.9.
+Cutting it to the bare citation, three named entities and a date, still reached
+11.3: **exactly the +0.5 material threshold.** Any short page that gains a
+Sources block pays this.
+
+The incentive was backwards. EFR measures how templated a page's own writing
+reads; a Sources block is apparatus, deliberately formulaic across pages
+(*that consistency is this standard*), and its "facts" are publisher names and
+URLs rather than the codepoints, limits and dates the fact vocabulary counts.
+So `scripts/lib/editorial-corpus.js` now drops Sources sections before
+scoring — the same call, and the same reasoning, as the `[data-static-directory]`
+exclusion above it: text that is not the page's own editorial writing is
+measured nowhere rather than measured wrongly.
+
+**It matches the section by its LABEL, through the one locale registry in
+`source-attribution.js`, never by `.source-note`.** Keying on the class drops
+the block on one side of a diff and not the other for any branch that
+introduces the class — which is what the first attempt did, turning one blocked
+page into **37 regressions and 13 blocked pages** across the 67 entries this
+branch renamed. What a section *is* does not change when its markup does.
+
+Because this changes what the metric covers,
+`data/editorial_footprint_baseline.json` was regenerated in the same change,
+per `CLAUDE.md`'s re-baseline rule. Of the 336 entries that moved, **49 are
+pages carrying a Sources block and 287 are pre-existing drift** the stale
+baseline had accumulated against `main`.
+
+---
+
+## 9. What this does not cover
 
 * **Internal links.** Tone-of-voice §2.7 owns those: every named thing with a
   page on this site gets linked at first mention, most specific target first.
