@@ -214,6 +214,30 @@ Required spec fields (enforced by the generator):
 - For `collection`: also `collections` (`[{ name, flags, defaultFormat }]`),
   plus optional `collection_section` and `collection_container_id`.
 
+Optional, and required as soon as the page states a fact it did not originate:
+
+- `sources` — one prose string, the Sources block's paragraph, with the
+  citations as inline `<a href="https://…">anchor</a>` markup. The generator
+  renders it as a `.source-note` panel immediately before the FAQ, labels the
+  section in that page's own locale (from `data/source_block_labels.json`),
+  sets each link's `rel` from the cited domain's authority tier in
+  `data/source_authority.json`, and projects the citations into the page's
+  JSON-LD as schema.org `citation`. **You write the sentence and the links;
+  everything else is generated** — do not hand-write `rel`, the label, or the
+  `citation` array.
+
+  It is prose rather than a list on purpose: a list says a source exists, a
+  sentence says *which claim it backs*. A link that merely sends the reader
+  somewhere to act ("install this free font") is a resource link, not a
+  citation — it stays inline in the body and goes in
+  `data/source_resource_links.json`. Full standard, including that
+  distinction: `docs/source-attribution.md`. A page that cites something with
+  no `sources` field fails `npm run check:source-attribution`.
+
+  ```json
+  "sources": "The codepoint and block come from the Unicode Consortium's own <a href=\"https://www.unicode.org/charts/\">code charts</a>."
+  ```
+
 Generate a page:
 
 ```bash

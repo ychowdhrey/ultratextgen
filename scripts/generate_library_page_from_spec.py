@@ -136,6 +136,34 @@ def validate_spec(spec):
     if not isinstance(sections, list) or len(sections) < 1:
         raise SpecError("sections must be a non-empty list")
 
+    # "sources" is the Sources block's prose (docs/source-attribution.md).
+    # Optional — a page that originates every fact it states needs none.
+    src = spec.get("sources")
+    if src is not None:
+        if not isinstance(src, str) or not src.strip():
+            raise SpecError("sources must be a non-empty string when present")
+        if not _SOURCE_A_RE.search(src):
+            raise SpecError(
+                "sources must contain at least one <a href=\"https://…\">…</a> citation; "
+                "prose with no link is not a source"
+            )
+        # It is the one field that carries raw markup, so bound what that markup
+        # can be: anchors and nothing else. Without this the generator would
+        # emit whatever a spec put in, including a <script>.
+        stripped = _SOURCE_A_RE.sub("", src)
+        if "<" in stripped:
+            raise SpecError(
+                "sources may contain <a> citation links and no other markup; "
+                f"found stray '<' in: {stripped.strip()[:80]!r}"
+            )
+        lang_key = str(spec.get("lang", "en")).lower()
+        if lang_key not in source_labels():
+            raise SpecError(
+                f"no Sources label registered for locale {lang_key!r} in "
+                "data/source_block_labels.json — add one (a discussed decision, "
+                "in that locale's own word) before generating a page with sources"
+            )
+
     for i, sec in enumerate(sections):
         items_key = "art" if pattern == "art" else "symbols"
         for key in ("id", "h2", items_key):
@@ -287,6 +315,94 @@ def url_segment(lang):
     """Directory segment for a locale. Always lowercase: the site serves /zh-tw/."""
     return str(lang).lower()
 
+
+
+# ---------------------------------------------------------------------------
+# SOURCE ATTRIBUTION (docs/source-attribution.md)
+#
+# A generated page that states a fact it did not originate needs a Sources
+# block, or scripts/check-source-attribution.js fails the PR. Before this
+# existed the generator had no way to declare one, so the author had to
+# hand-add it after generation — the right failure with the wrong workflow,
+# against this repo's standing "generated, not audited" pattern.
+#
+# Both tables are read from data/ rather than restated here. The label table
+# is shared with the Node checker (scripts/lib/source-attribution.js reads the
+# same file); a second copy in this generator would drift from the checker,
+# which is the failure that standard exists to prevent.
+# ---------------------------------------------------------------------------
+
+_SOURCE_LABELS = None
+_SOURCE_AUTHORITY = None
+
+
+def source_labels():
+    global _SOURCE_LABELS
+    if _SOURCE_LABELS is None:
+        with open(REPO / "data" / "source_block_labels.json", encoding="utf-8") as fh:
+            _SOURCE_LABELS = json.load(fh)["labels"]
+    return _SOURCE_LABELS
+
+
+def source_authority():
+    global _SOURCE_AUTHORITY
+    if _SOURCE_AUTHORITY is None:
+        with open(REPO / "data" / "source_authority.json", encoding="utf-8") as fh:
+            _SOURCE_AUTHORITY = json.load(fh)["domains"]
+    return _SOURCE_AUTHORITY
+
+
+def source_rel(url):
+    """The rel a citation to `url` must carry, from the domain's tier.
+
+    An unlisted domain is secondary — fail safe, so a source nobody has
+    classified never silently earns a followed link.
+    """
+    m = re.match(r"^https?://([^/?#]+)", url, re.I)
+    host = m.group(1).lower().removeprefix("www.") if m else ""
+    entry = source_authority().get(host)
+    return "noopener" if entry and entry.get("tier") == "primary" else "nofollow noopener"
+
+
+_SOURCE_A_RE = re.compile(r"<a\s+[^>]*href=\"(https?://[^\"]+)\"[^>]*>(.*?)</a>", re.I | re.S)
+
+
+def source_citations(prose):
+    """[{@type, name, url}] for the JSON-LD, derived from the block's own
+    anchors so the two can never disagree. Deduplicated by URL, first
+    anchor wins."""
+    out, seen = [], set()
+    for url, anchor in _SOURCE_A_RE.findall(prose):
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append({"@type": "WebPage", "name": html.unescape(re.sub(r"<[^>]+>", "", anchor)).strip(), "url": url})
+    return out
+
+
+def render_sources(prose, label):
+    """The Sources block: one prose paragraph in a .source-note panel.
+
+    Prose, not a list, is deliberate and user-directed — a list says a source
+    exists, a sentence says which claim it backs. See docs/source-attribution.md §3.
+
+    Anchors are rewritten so rel/target come from the authority tier rather
+    than from whatever the spec author typed.
+    """
+    def _fix(m):
+        url, inner = m.group(1), m.group(2)
+        return f'<a href="{esc_attr(url)}" rel="{source_rel(url)}" target="_blank">{inner}</a>'
+
+    body = _SOURCE_A_RE.sub(_fix, prose)
+    return (
+        "<!-- SOURCES -->\n"
+        '<section class="editorial-section">\n'
+        f'  <span class="article-section-label">{esc(label)}</span>\n'
+        '  <div class="source-note">\n'
+        f"    <p>{body}</p>\n"
+        "  </div>\n"
+        "</section>"
+    )
 
 
 def render_faq(faq, label, heading=None):
@@ -592,10 +708,28 @@ def render_page(spec):
     cta = _cta_field("cta", "cta", SHARED_CTA_DEFAULTS["cta"])
 
     # JSON-LD must use real (entity-decoded) strings; json.dumps handles escaping.
+    sources_prose = spec.get("sources")
+    if sources_prose:
+        sources_html = (
+            "\n\n<div class=\"section-divider\"></div>\n\n"
+            + render_sources(sources_prose, source_labels()[str(lang).lower()][0])
+        )
+        source_ld = source_citations(sources_prose)
+    else:
+        sources_html = ""
+        source_ld = []
+
     ld_article = json.dumps(
         {
             "@context": "https://schema.org",
             "@type": "Article",
+            # Derived from the Sources block's own anchors, never authored
+            # separately — two hand-kept copies of one list drift, and the
+            # drifted one is the one nobody sees. Emitted immediately after
+            # "@type" because that is where fix-source-attribution.js inserts
+            # it; matching its position is what makes a fixer run over a
+            # generated page a genuine no-op rather than a reformat.
+            **({"citation": source_ld} if source_ld else {}),
             "headline": html.unescape(title),
             "description": html.unescape(meta),
             "author": {
@@ -774,7 +908,7 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}{editorial_html}{faq_html}
+{body_sections}{editorial_html}{sources_html}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
