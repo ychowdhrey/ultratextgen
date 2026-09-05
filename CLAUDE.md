@@ -3190,6 +3190,12 @@ and browser-based:
   Assertions for the pure half of the character counter: counting modes,
   per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
   `LIMITS` table integrity. No DOM, no dependencies.
+- `usecase/zalgo-text/zalgo-text.test.js` — `npm run test:zalgo-engine`.
+  The zalgo generator's pure half, sliced out of the shipped widget by
+  `scripts/lib/zalgo-engine.js`: the Thai cascade generator (every placement,
+  carrier and mark, the 10..150 depth clamp), the unzalgo decoder's round
+  trip, and the promise that ordinary Thai survives it. No DOM, no
+  dependencies. Gating, because the decoder is a Check surface.
 - `js/counter/counter.test.html` — the DOM half, which needs a browser: the
   two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
   ordering, SMS segments, soft-limit warning, clear. Open it and read the
@@ -3254,6 +3260,48 @@ Verified per this file's own rule before being trusted, against two
 differently-shaped broken inputs: NFC-normalising one EN card (the real
 regression) exits 1 naming it, and replacing a `ru` card with the plain word
 exits 1 as unmarked.
+
+#### The Thai cascade, and why the decoder is now a function (added 2026-09-05)
+
+Issue #864 added a second engine to `usecase/zalgo-text`: **Thai Cascade**,
+the viral "side spike". It is not classic zalgo at a higher amplitude. Classic
+zalgo scatters many *different* U+0300-block marks around *every* letter; the
+cascade repeats *one* Thai tone mark (U+0E48..U+0E4B, Mai Tho by default) 10
+to 150 times on *one* carrier (KO KAI, U+0E01, or the text's own first or
+last letter), and the renderer's attempt to place every repeat against the
+same base is what draws the tall, often diagonal, trail. Three consequences:
+
+* **The Thai marks live in their own pool and never reach `pickUnique()`.**
+  They are Thai orthography, not noise. `generateCascade()` is deterministic,
+  which is what makes a cascade a shareable URL and a decodable card.
+* **The decoder is a two-stage function, `decodeZalgo()`, no longer one
+  regex.** Stage one strips the classic ranges as before. Stage two strips a
+  *repeated* Thai tone mark (the same mark two or more times in a row) and
+  the tool's own carrier when it stands apart from the text. A single mark is
+  never touched: Thai writes at most one tone mark per consonant, so "น้ำ"
+  pasted into the box comes back as "น้ำ". `usecase/zalgo-text/zalgo-text.test.js`
+  asserts both halves, and `npm run test:zalgo-engine` gates on it.
+* **The engine is sliced out of the shipped widget, never copied.** The
+  block between `/* @zalgo-engine:begin */` and `/* @zalgo-engine:end */` in
+  `zalgo-text.js` is evaluated by `scripts/lib/zalgo-engine.js`, and both the
+  test and `check-zalgo-decodes.js` call the functions users run. The gate
+  used to lift the decoder's regex with a matcher; a function with two
+  stages cannot be lifted that way, and reimplementing it in the gate is the
+  drift this section already warns about. Move the markers if you move the
+  code; the loader throws rather than falling back.
+
+The gate also now **requires** a cascade card on the EN page (`cascade cards
+(Thai run): 1`): the decoder's second stage is exercised only by a card that
+carries a repeated Thai mark, and a check that finds none cannot tell "the
+cascade decodes" from "nothing tested it". Verified: with the card removed the
+gate exits 1 naming the page; with it present, 73 cards decode.
+
+**The mode is opt-in per page** (`data-cascade` on `#zalgoControlPanel`, EN
+only today). A locale page without the attribute renders no cascade controls,
+ignores `?cascade=1`, and still decodes cascade text, so nothing shows in
+English on a translated page until its `zalgoI18n` block carries the strings.
+The embed widget carries its own sliced copy of the classic engine and does
+not have the cascade.
 
 ---
 

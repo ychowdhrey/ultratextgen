@@ -227,6 +227,17 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Gating, no backlog: the zalgo generator's pure engine (mark pools,
+      # the Thai cascade generator, the unzalgo decoder) is sliced out of the
+      # shipped widget by scripts/lib/zalgo-engine.js and asserted headless.
+      # The decoder is a Check surface with two promises that a visual check
+      # cannot see: a generated Thai stack (one tone mark repeated) is removed,
+      # and ordinary Thai (one tone mark per consonant) survives untouched.
+      - name: Run zalgo engine tests
+        id: zalgo_engine_tests
+        continue-on-error: true
+        run: npm run test:zalgo-engine | tee zalgo-engine-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -627,6 +638,11 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### Zalgo engine tests — \`${{ steps.zalgo_engine_tests.outcome }}\`"
+            echo '```'
+            cat zalgo-engine-tests.log
+            echo '```'
+            echo ""
             echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
             echo '```'
             cat numeric-parity.log
@@ -781,6 +797,7 @@ jobs:
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
+          steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
           steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
