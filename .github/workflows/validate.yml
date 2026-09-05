@@ -227,6 +227,34 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Whole-site and gating, same call as the Funding Choices tag and the
+      # zalgo decode check rather than the informational whole-site audits:
+      # there is no backlog to be permanently red against. A page either loads
+      # the shared Save/Share modules or it does not, and
+      # `npm run inject:share-save-tags` closes any gap in one idempotent run.
+      # Whole-site rather than diff-scoped on purpose — the shape it catches is
+      # a page generator emitting a template that predates the 2026-09-05 split,
+      # so a NEW page arrives untagged from a file the PR may not even touch.
+      - name: Run share/save module tag check
+        id: share_save_tags
+        continue-on-error: true
+        run: npm run check:share-save-tags | tee share-save-tags.log
+
+      # symbol-explorer.js hand-carries a 28-locale UI string table because its
+      # 3,605 pages deliberately do not load i18n.js. This asserts that table
+      # still agrees with locales/*.json, which is the source of truth for the
+      # same strings on the generator side.
+      - name: Run symbol-explorer string sync check
+        id: explorer_strings
+        continue-on-error: true
+        run: npm run check:explorer-strings | tee explorer-strings.log
+
+      # Unit tests for the typed saved-items store. Gating, no backlog.
+      - name: Run saved-items store tests
+        id: saved_items_tests
+        continue-on-error: true
+        run: npm run test:saved-items | tee saved-items-tests.log
+
       # Diff-scoped and gating. Fails a PR that corrects a number on one page of
       # an hreflang cluster and leaves a sibling asserting the old value — the
       # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
@@ -562,6 +590,13 @@ jobs:
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
+            echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
+            echo "### Saved-items store tests — \`${{ steps.saved_items_tests.outcome }}\`"
+            echo '```'
+            cat share-save-tags.log explorer-strings.log saved-items-tests.log
+            echo '```'
+            echo ""
             echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
             echo '```'
             cat funding-choices.log
@@ -770,6 +805,9 @@ jobs:
           steps.hreflang_completeness.outcome == 'failure' ||
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
+          steps.share_save_tags.outcome == 'failure' ||
+          steps.explorer_strings.outcome == 'failure' ||
+          steps.saved_items_tests.outcome == 'failure' ||
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||
           steps.parity.outcome == 'failure' ||

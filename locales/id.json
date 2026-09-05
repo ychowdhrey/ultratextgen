@@ -181,6 +181,18 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "copyButtons": {
+      "copy": "Salin",
+      "copied": "✓ Tersalin",
+      "failed": "✗ Gagal",
+      "copyTitle": "Salin ke papan klip",
+      "save": "Simpan",
+      "saved": "Tersimpan",
+      "saveTitle": "Simpan gaya ini",
+      "unsaveTitle": "Hapus dari gaya tersimpan",
+      "empty": "Ketik sesuatu di atas...",
+      "noStyles": "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain."
     }
   },
   "useCases": {

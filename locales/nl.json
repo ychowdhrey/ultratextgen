@@ -181,6 +181,18 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "copyButtons": {
+      "copy": "Kopieer",
+      "copied": "✓ Gekopieerd",
+      "failed": "✗ Mislukt",
+      "copyTitle": "Kopiëren naar klembord",
+      "save": "Bewaar",
+      "saved": "Bewaard",
+      "saveTitle": "Bewaar deze stijl",
+      "unsaveTitle": "Verwijder uit bewaarde stijlen",
+      "empty": "Typ hierboven iets…",
+      "noStyles": "Geen stijlen gevonden. Probeer een ander filter of zoekwoord."
     }
   },
   "useCases": {

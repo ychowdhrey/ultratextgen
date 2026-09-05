@@ -181,6 +181,18 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "copyButtons": {
+      "copy": "Kopiuj",
+      "copied": "✓ Skopiowano",
+      "failed": "✗ Błąd",
+      "copyTitle": "Kopiuj do schowka",
+      "save": "Zapisz",
+      "saved": "Zapisano",
+      "saveTitle": "Zapisz ten styl",
+      "unsaveTitle": "Usuń z zapisanych stylów",
+      "empty": "Wpisz coś powyżej...",
+      "noStyles": "Nie znaleziono stylów. Spróbuj innego filtra lub hasła."
     }
   },
   "useCases": {
