@@ -86,6 +86,15 @@
     return tpl.content.firstElementChild;
   }
 
+  // Printable output telemetry lives in header.js (window.UltraTextGen.
+  // trackPrintable) — this engine is a separate IIFE from printablesEngine.js
+  // and a second copy of the event's shape would drift from it.
+  function trackPrintable(action, sheet) {
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
+      window.UltraTextGen.trackPrintable(action, sheet);
+    }
+  }
+
   function slugify(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -371,6 +380,7 @@
       a.click();
       document.body.removeChild(a);
       setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      trackPrintable("download_png", "cross_stitch");
     }, "image/png");
   }
 
@@ -381,6 +391,7 @@
     const model = buildRows(state.text);
     if (model.empty || model.cols === 0) return;
 
+    trackPrintable("print", "cross_stitch");
     const root = $("#pt-print-root");
     if (!root) { window.print(); return; }
     root.innerHTML = "";

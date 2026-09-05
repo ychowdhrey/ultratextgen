@@ -861,9 +861,58 @@
 
   /* @copy-identity:end */
 
+  /* ---------------------------------------------------------------
+     Printable output telemetry
+
+     Every print and every PNG export on every /printables/ page funnels
+     through exactly these two functions, so instrumenting them here covers
+     the whole family from two places instead of 23 call sites — and a new
+     sheet type added later is measured the moment it calls one of them.
+
+     Before this, the printables family fired NO product events at all: the
+     engines contained zero dataLayer pushes, so the one question that
+     decides investment here — do people who land actually make a sheet —
+     had no answer, on the family that earns the largest share of revenue
+     per user on the site. That data cannot be backfilled.
+
+     Decisions each parameter serves:
+       printable_action → print vs. PNG. Decides whether print-CSS work or
+                          canvas/export work is the one worth doing.
+       printable_sheet  → which surface inside the engine got used. Says
+                          whether the personalisation (name_worksheet,
+                          banner, puzzle) or the preset alphabet sheets are
+                          what people came for — a question page-level
+                          analytics cannot answer, since both live on one URL.
+       printable_page   → which printable earned it, robust against the
+                          page_location rewrites GA4 configs tend to grow.
+
+     WHAT IS DELIBERATELY NOT SENT: the text the user typed. These pages take
+     children's names (name-tracing, dot-to-dot-name, name-puzzle-maker,
+     monogram-maker). Sending that to Analytics would be collecting personal
+     data about a child and is prohibited by Google's own policy on PII in
+     Analytics. `printable_sheet` already separates personalised sheets from
+     preset ones, which is the decision the text was tempting for — so there
+     is nothing to trade off here. Do not add the input, its length, or its
+     initials.
+     --------------------------------------------------------------- */
+  function trackPrintable(action, sheet) {
+    var parts = (window.location.pathname || "/").split("/").filter(Boolean);
+    // e.g. /printables/block-letters/letter-a/ -> "block-letters/letter-a";
+    // a locale build (/es/imprimibles/...) keeps its own first segment.
+    var page = parts.length > 1 ? parts.slice(1).join("/") : (parts[0] || "index");
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "printable_output",
+      printable_action: action,
+      printable_sheet: sheet || "sheet",
+      printable_page: page
+    });
+  }
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;
+  ns.trackPrintable = trackPrintable;
 
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
