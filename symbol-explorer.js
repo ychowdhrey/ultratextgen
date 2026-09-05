@@ -877,11 +877,7 @@
     clear.className = "symbol-saved-clear";
     clear.textContent = t("clearAll", "Clear all");
     clear.addEventListener("click", function () {
-      UTGX.saved.clear("symbol");
-      decorateTiles();
-      document.querySelectorAll(".symbol-save-btn").forEach(function (b) {
-        paintSaveBtn(b, isSavedSymbol(b.getAttribute("data-symbol")));
-      });
+      UTGX.saved.clear("symbol"); // utg:savedchange repaints the strip and the stars
     });
     head.appendChild(clear);
     strip.appendChild(head);
@@ -1012,14 +1008,28 @@
     revealSharedSymbol();
   }
 
-  document.addEventListener("utg:savedchange", renderSavedStrip);
+  /* Repaint every star whenever the store changes, not just the strip. A
+     clear() leaves the grid's stars lit otherwise — the strip empties and the
+     tiles still claim to be saved. The strip's own Clear button used to repaint
+     them itself, which meant any other path into clear() (another tab, a future
+     caller) skipped it. */
+  function repaintStars() {
+    document.querySelectorAll(".symbol-save-btn").forEach(function (b) {
+      paintSaveBtn(b, isSavedSymbol(b.getAttribute("data-symbol")));
+    });
+  }
+
+  document.addEventListener("utg:savedchange", function () {
+    renderSavedStrip();
+    repaintStars();
+  });
   // i18n.js resolves its locale fetch after this file runs, so every label
   // injected above is re-read once it lands. Without this a Korean library
   // page would show Korean prose with English buttons on it — the exact bug
   // i18n.js's own comment records for the shadow locales.
   document.addEventListener("utg:i18nready", function () {
+    repaintStars();
     document.querySelectorAll(".symbol-save-btn").forEach(function (b) {
-      paintSaveBtn(b, isSavedSymbol(b.getAttribute("data-symbol")));
       // Re-read the row's own label rather than falling back to the raw
       // glyph: "Save Black Star" is the announcement, not "Save ★".
       const row = b.closest(".flag-row");

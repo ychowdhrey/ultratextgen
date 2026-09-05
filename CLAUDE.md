@@ -2727,6 +2727,15 @@ source of truth that `script.js`'s own comment had flagged.
   the reason `js/counter/counterRules.test.js` does: a saved symbol that fails
   to persist, or a migration that drops a returning user's saved fonts, is
   invisible until someone comes back a week later.
+- **`js/share/shareSave.test.html`** — the DOM half, which needs a browser, in
+  the `js/counter/counter.test.html` idiom: open it and read the panel, or drive
+  it headlessly and read `window.__UTG_TEST`. It carries a copy of the real tile
+  markup, so it exercises the actual attach path. **Both bugs this feature
+  shipped in development were runtime-only** — one threw, one silently attached
+  nothing — and neither was visible to node, to a syntax check or to any of the
+  40 CI gates. Its 37th assertion found a third on its first run: `clear()`
+  emptied the strip and left every tile star still lit, because only the strip's
+  own Clear button repainted them and any other path into `clear()` skipped it.
 - `scripts/lib/share-save-tags.js` is shared by the injector and the gate, so
   they cannot disagree about what a correctly-tagged page is.
 

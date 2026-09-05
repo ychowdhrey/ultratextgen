@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Copy / Save / Share — DOM tests</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+</head>
+<body>
+<!--
+  Manual + headless test page for the Save/Share layer that symbol-explorer.js
+  attaches to library and symbol pages, in the same idiom as
+  js/counter/counter.test.html and js/vertical/verticalLayouts.test.html.
+
+  The store itself is pure and covered by js/saved/savedItems.test.js, which
+  needs no DOM. Everything below needs a real one, and that is the whole point:
+  both bugs this feature shipped in development were invisible to every static
+  check and to node.
+
+    1. The modules were injected AFTER script.js. Every one of these scripts is
+       `defer`, so they run in document order, and script.js calls
+       UTG.sharedStyleId() at init — TypeError, and the generator rendered zero
+       cards. 300 pages carried a second instance of this from a different
+       cause (they load both host scripts, script.js first).
+    2. symbol-explorer.js keyed its init on `readyState === "loading"`, which is
+       already false inside a deferred script, so init ran before the modules it
+       depends on had executed and every attach silently no-opped. Zero Save
+       buttons, no error, nothing to grep for.
+
+  A save star that never attaches looks exactly like a page that has none.
+  Open this file in a browser and read the panel, or drive it headlessly and
+  read window.__UTG_TEST ({ pass, fail, lines, summary }).
+
+  The tile markup below is a copy of what the page generators emit, so this
+  exercises the real attach path rather than a convenient one.
+-->
+<h1>Copy / Save / Share — DOM tests</h1>
+<pre id="results">running…</pre>
+
+<section id="fixture">
+  <h2>Star Symbols</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copy Black Star">★</button>
+      <span class="flag-label">Black Star</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☆" aria-label="Copy White Star">☆</button>
+      <span class="flag-label">White Star</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✦" aria-label="Copy Black Four-Pointed Star">✦</button>
+      <span class="flag-label">Black Four-Pointed Star</span>
+    </div>
+  </div>
+</section>
+
+<!-- A reference-table tile. It carries .symbol-tile too, but it is a table
+     cell rather than a grid tile, and must NOT get a floating star on top of
+     its own text. -->
+<table class="data-table">
+  <tbody><tr><td>
+    <button class="copy-cell symbol-tile" data-symbol="€" aria-label="Copy Euro Sign">€</button>
+  </td></tr></tbody>
+</table>
+
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script>
+  // A clean device for every run, so an earlier manual click cannot change
+  // what the assertions see.
+  try { localStorage.removeItem("utg_saved_items"); localStorage.removeItem("utg_saved_styles"); } catch (e) {}
+</script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
+<script src="/symbol-explorer.js" defer></script>
+
+<script>
+window.addEventListener("load", function () {
+  "use strict";
+
+  var pass = 0, fail = 0, lines = [];
+  function check(label, cond, extra) {
+    if (cond) { pass++; lines.push("ok    " + label); }
+    else { fail++; lines.push("FAIL  " + label + (extra ? "   [" + extra + "]" : "")); }
+  }
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+
+  var UTG = window.UltraTextGen || {};
+
+  /* ---- the modules are present and in a usable order ---- */
+  check("share core loaded", typeof UTG.shareCreation === "function");
+  check("share core exposes the button factory", typeof UTG.buildShareActions === "function");
+  check("saved store loaded", !!UTG.saved);
+  check("sharedStyleId is callable (the defer-order bug)", typeof UTG.sharedStyleId === "function");
+
+  /* ---- stars attach to grid tiles, and only to grid tiles ---- */
+  var stars = $$(".flag-row .symbol-save-btn");
+  check("a star per grid tile", stars.length === 3, stars.length);
+  check("no star on a .copy-cell table tile",
+    $$(".data-table .symbol-save-btn").length === 0);
+  check("the star is not inside the copy target",
+    stars.length > 0 && !stars[0].closest(".symbol-tile"));
+  check("star carries its symbol", stars.length > 0 && stars[0].dataset.symbol === "★",
+    stars.length && stars[0].dataset.symbol);
+  check("star names the tile, not the glyph, for a screen reader",
+    stars.length > 0 && /Black Star/.test(stars[0].getAttribute("aria-label")),
+    stars.length && stars[0].getAttribute("aria-label"));
+
+  /* ---- per-section share ---- */
+  check("one share pair per section", $$(".symbol-section-actions .share-result-btn").length === 1);
+  check("share-image companion present", $$(".symbol-section-actions .share-image-btn").length === 1);
+  var secBtn = $(".symbol-section-actions .share-result-btn");
+  check("section share carries every symbol in the section",
+    secBtn && secBtn.dataset.shareText === "★ ☆ ✦", secBtn && secBtn.dataset.shareText);
+  check("section share is labelled by surface",
+    secBtn && secBtn.dataset.shareSurface === "library_section", secBtn && secBtn.dataset.shareSurface);
+
+  /* ---- the strip is absent until something is saved ---- */
+  var strip = document.getElementById("symbolSavedStrip");
+  check("saved strip hidden while empty", !strip || strip.hidden);
+
+  /* ---- saving ---- */
+  window.dataLayer = window.dataLayer || [];
+  var before = window.dataLayer.length;
+  stars[0].click();
+
+  check("star reads as pressed", stars[0].getAttribute("aria-pressed") === "true");
+  check("star fills", stars[0].textContent.trim() === "★");
+  check("record is in the store", UTG.saved.has("symbol", "★"));
+  check("stored under the tile's own label",
+    (UTG.saved.all("symbol")[0] || {}).label === "Black Star",
+    JSON.stringify(UTG.saved.all("symbol")[0]));
+
+  var evt = window.dataLayer.slice(before).filter(function (e) { return e.event === "save_style"; }).pop();
+  check("save_style fires", !!evt);
+  check("save_style says what kind of thing was saved", evt && evt.item_type === "symbol",
+    evt && evt.item_type);
+  check("style_name is omitted for a symbol", evt && evt.style_name === undefined);
+
+  /* ---- clicking the star must not also copy the tile ---- */
+  check("the star does not trigger the tile's copy",
+    window.dataLayer.slice(before).filter(function (e) { return e.event === "copy_text"; }).length === 0);
+
+  /* ---- the strip ---- */
+  strip = document.getElementById("symbolSavedStrip");
+  check("saved strip appears", !!strip && !strip.hidden);
+  check("strip sits above the first tile section",
+    !!strip && !!(strip.compareDocumentPosition($("#fixture")) & Node.DOCUMENT_POSITION_FOLLOWING));
+  check("strip lists the saved symbol", $$("#symbolSavedStrip .symbol-tile").length === 1);
+  check("strip offers Copy", $$("#symbolSavedStrip .copy-collection-btn").length === 1);
+  check("strip offers Share", $$("#symbolSavedStrip .share-result-btn").length === 1);
+  check("strip offers Share as image", $$("#symbolSavedStrip .share-image-btn").length === 1);
+  var stripShare = $("#symbolSavedStrip .share-result-btn");
+  check("strip share is labelled by its own surface",
+    stripShare && stripShare.dataset.shareSurface === "library_saved",
+    stripShare && stripShare.dataset.shareSurface);
+
+  /* ---- a second save, then unsave ---- */
+  stars[2].click();
+  check("two saved", UTG.saved.count("symbol") === 2);
+  check("strip shows both", $$("#symbolSavedStrip .symbol-tile").length === 2);
+  check("strip shares the whole set",
+    $("#symbolSavedStrip .share-result-btn").dataset.shareText.indexOf("✦") !== -1);
+
+  stars[0].click();
+  check("unsave removes the record", !UTG.saved.has("symbol", "★"));
+  check("star empties", stars[0].textContent.trim() === "☆");
+  check("strip drops it", $$("#symbolSavedStrip .symbol-tile").length === 1);
+
+  UTG.saved.clear("symbol");
+  check("clear empties the strip", document.getElementById("symbolSavedStrip").hidden);
+  check("clear resets the stars",
+    $$(".flag-row .symbol-save-btn.is-saved").length === 0);
+
+  /* ---- report ---- */
+  var summary = pass + " passed, " + fail + " failed";
+  document.getElementById("results").textContent = lines.join("\n") + "\n\n" + summary;
+  window.__UTG_TEST = { pass: pass, fail: fail, lines: lines, summary: summary };
+});
+</script>
+</body>
+</html>
