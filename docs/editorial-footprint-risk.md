@@ -190,7 +190,7 @@ without the data.
 | `npm run test:spec-sentence-reuse` | fixtures | **gating** — 19 assertions, no backlog to be red against |
 | `npm run route:cta-cards` | whole site | in-place pass; report-only without `--write`, idempotent |
 | `npm run test:cta-routing` | fixtures | **gating** — 19 assertions |
-| `npm run test:cta-tracking` | fixtures | **gating** — 24 assertions |
+| `npm run test:header-analytics` | fixtures | **gating** — 49 assertions |
 | `npm run test:generator-parity` | fixtures | **gating** — 14 assertions (renamed from `test:printables-parity`) |
 
 **The gate measures the delta, not the state — for pages a branch leaves alone.**

@@ -561,6 +561,310 @@
     return parts.length ? parts[0] : "homepage";
   }
 
+
+  /* ============================================================
+     Copy identity — shared by every copy_text call site
+     ============================================================
+     `copy_text` recorded WHICH item was copied on the generator-button
+     path only (style_name). The symbol-tile path — live on 3,608 pages —
+     recorded nothing, so "what the world actually copies" was
+     unmeasurable on the site's largest copy surface, and that data
+     cannot be backfilled.
+
+     It lives HERE, not in symbol-explorer.js or script.js, for the same
+     reason cta_click does: header.js is on 4,635 of 4,647 pages
+     (including all 3,608 symbol-explorer pages), and a second copy of
+     this table in each consumer would drift from the first.
+
+     TWO parameters, because one cannot do the job alone. The site
+     carries 8,806 distinct copy payloads, far past the cardinality GA4
+     will keep as distinct rows — so `copy_item` alone would very likely
+     arrive as a column of "(other)". `copy_item_group` is the
+     low-cardinality companion (a real Unicode block, ~60 values) that
+     survives standard GA4 reports regardless, while `copy_item` stays
+     exact in the BigQuery raw-event export.
+
+     Decisions each one serves:
+       copy_item       → which specific symbols deserve their own page,
+                         tile placement, or feature work.
+       copy_item_group → which Unicode families the site should invest
+                         in, readable even when copy_item buckets.
+     ============================================================ */
+
+  // Flat [firstCodepoint, name] table, sorted ascending; a block runs
+  // until the next entry starts. Derived from the Unicode block list and
+  // trimmed to the ranges this site actually ships, measured across every
+  // data-symbol attribute in the tree. Entries named "" are gaps — real
+  // Unicode blocks the site does not use — and resolve to "Other".
+  /* @copy-identity:begin */
+  var COPY_BLOCKS = [
+    [0x0000, "Basic Latin"],
+    [0x0080, "Latin-1 Supplement"],
+    [0x0100, "Latin Extended-A"],
+    [0x0180, "Latin Extended-B"],
+    [0x0250, "IPA Extensions"],
+    [0x02B0, "Spacing Modifier Letters"],
+    [0x0300, "Combining Diacritical Marks"],
+    [0x0370, "Greek and Coptic"],
+    [0x0400, "Cyrillic"],
+    [0x0500, "Cyrillic Supplement"],
+    [0x0530, "Armenian"],
+    [0x0590, "Hebrew"],
+    [0x0600, "Arabic"],
+    [0x0700, "Syriac"],
+    [0x0750, "Arabic Supplement"],
+    [0x0780, "Thaana"],
+    [0x07C0, "NKo"],
+    [0x0800, "Samaritan"],
+    [0x0840, "Mandaic"],
+    [0x08A0, "Arabic Extended-A"],
+    [0x0900, "Devanagari"],
+    [0x0980, "Bengali"],
+    [0x0A00, "Gurmukhi"],
+    [0x0A80, "Gujarati"],
+    [0x0B00, "Oriya"],
+    [0x0B80, "Tamil"],
+    [0x0C00, "Telugu"],
+    [0x0C80, "Kannada"],
+    [0x0D00, "Malayalam"],
+    [0x0D80, "Sinhala"],
+    [0x0E00, "Thai"],
+    [0x0E80, "Lao"],
+    [0x0F00, "Tibetan"],
+    [0x1000, "Myanmar"],
+    [0x10A0, "Georgian"],
+    [0x1100, "Hangul Jamo"],
+    [0x1200, "Ethiopic"],
+    [0x1400, "Unified Canadian Aboriginal Syllabics"],
+    [0x1680, "Ogham"],
+    [0x16A0, "Runic"],
+    [0x1700, "Philippine Scripts"],
+    [0x1780, "Khmer"],
+    [0x1800, "Mongolian"],
+    [0x18B0, "Unified Canadian Aboriginal Syllabics Extended"],
+    [0x1900, "Limbu"],
+    [0x1950, "Tai Le"],
+    [0x1980, "New Tai Lue"],
+    [0x19E0, "Khmer Symbols"],
+    [0x1A00, "Buginese"],
+    [0x1A20, "Tai Tham"],
+    [0x1AB0, "Combining Diacritical Marks Extended"],
+    [0x1B00, "Balinese"],
+    [0x1B80, "Sundanese"],
+    [0x1BC0, "Batak"],
+    [0x1C00, "Lepcha"],
+    [0x1C50, "Ol Chiki"],
+    [0x1CC0, ""],
+    [0x1D00, "Phonetic Extensions"],
+    [0x1D80, "Phonetic Extensions Supplement"],
+    [0x1DC0, ""],
+    [0x1E00, "Latin Extended Additional"],
+    [0x1F00, "Greek Extended"],
+    [0x2000, "General Punctuation"],
+    [0x2070, "Superscripts and Subscripts"],
+    [0x20A0, "Currency Symbols"],
+    [0x20D0, "Combining Marks for Symbols"],
+    [0x2100, "Letterlike Symbols"],
+    [0x2150, "Number Forms"],
+    [0x2190, "Arrows"],
+    [0x2200, "Mathematical Operators"],
+    [0x2300, "Miscellaneous Technical"],
+    [0x2400, "Control Pictures"],
+    [0x2440, "OCR"],
+    [0x2460, "Enclosed Alphanumerics"],
+    [0x2500, "Box Drawing"],
+    [0x2580, "Block Elements"],
+    [0x25A0, "Geometric Shapes"],
+    [0x2600, "Miscellaneous Symbols"],
+    [0x2700, "Dingbats"],
+    [0x27C0, "Miscellaneous Mathematical Symbols-A"],
+    [0x27F0, "Supplemental Arrows-A"],
+    [0x2800, "Braille Patterns"],
+    [0x2900, "Supplemental Arrows-B"],
+    [0x2980, "Miscellaneous Mathematical Symbols-B"],
+    [0x2A00, "Supplemental Mathematical Operators"],
+    [0x2B00, "Miscellaneous Symbols and Arrows"],
+    [0x2C00, "Glagolitic"],
+    [0x2C80, "Coptic"],
+    [0x2D00, "Tifinagh and Ethiopic Extended"],
+    [0x2E00, "Supplemental Punctuation"],
+    [0x2E80, "CJK Radicals"],
+    [0x3000, "CJK Symbols and Punctuation"],
+    [0x3040, "Hiragana"],
+    [0x30A0, "Katakana"],
+    [0x3100, "Bopomofo"],
+    [0x3130, "Hangul Compatibility Jamo"],
+    [0x3190, "Kanbun"],
+    [0x31A0, "Bopomofo Extended"],
+    [0x3200, "Enclosed CJK Letters and Months"],
+    [0x3300, "CJK Compatibility"],
+    [0x3400, "CJK Unified Ideographs"],
+    [0xA000, "Yi Syllables"],
+    [0xA490, "Yi Radicals"],
+    [0xA4D0, "Lisu"],
+    [0xA500, "Vai"],
+    [0xA640, "Cyrillic Extended-B"],
+    [0xA700, "Modifier Tone Letters"],
+    [0xA720, "Latin Extended-D"],
+    [0xA800, "Syloti Nagri"],
+    [0xA840, "Phags-pa"],
+    [0xA880, "Saurashtra"],
+    [0xA900, "Kayah Li"],
+    [0xA930, "Rejang"],
+    [0xA960, ""],
+    [0xA980, "Javanese"],
+    [0xA9E0, "Myanmar Extended-B"],
+    [0xAA00, "Cham"],
+    [0xAA80, "Meetei and Ethiopic Extended-A"],
+    [0xAC00, "Hangul Syllables"],
+    [0xD7B0, ""],
+    [0xF900, "CJK Compatibility Ideographs"],
+    [0xFB00, "Alphabetic Presentation Forms"],
+    [0xFB50, "Arabic Presentation Forms"],
+    [0xFE00, "Variation Selectors"],
+    [0xFE10, "Vertical Forms"],
+    [0xFE20, "Combining Half Marks"],
+    [0xFE30, "CJK Compatibility Forms"],
+    [0xFE50, "Small Form Variants"],
+    [0xFE70, "Arabic Presentation Forms-B"],
+    [0xFF00, "Halfwidth and Fullwidth Forms"],
+    [0xFFF0, "Specials"],
+    [0x10000, "Ancient Scripts"],
+    [0x10100, "Aegean and Ancient Numbers"],
+    [0x10200, "Ancient Scripts"],
+    [0x10600, "Linear A"],
+    [0x10800, "Ancient Scripts"],
+    [0x13000, "Egyptian Hieroglyphs"],
+    [0x13460, "Egyptian Hieroglyph Format Controls"],
+    [0x14400, "Anatolian Hieroglyphs"],
+    [0x16800, "Bamum Supplement"],
+    [0x16A40, "Historic Scripts"],
+    [0x16E40, "Medefaidrin"],
+    [0x16F00, "Miao"],
+    [0x1D000, "Byzantine Musical Symbols"],
+    [0x1D100, "Musical Symbols"],
+    [0x1D200, ""],
+    [0x1D400, "Mathematical Alphanumeric Symbols"],
+    [0x1D800, ""],
+    [0x1F000, "Mahjong Tiles"],
+    [0x1F030, "Domino Tiles"],
+    [0x1F0A0, "Playing Cards"],
+    [0x1F100, "Enclosed Alphanumeric Supplement"],
+    [0x1F200, "Enclosed Ideographic Supplement"],
+    [0x1F300, "Miscellaneous Symbols and Pictographs"],
+    [0x1F600, "Emoticons"],
+    [0x1F650, "Ornamental Dingbats"],
+    [0x1F680, "Transport and Map Symbols"],
+    [0x1F700, "Alchemical Symbols"],
+    [0x1F780, "Geometric Shapes Extended"],
+    [0x1F800, "Supplemental Arrows-C"],
+    [0x1F900, "Supplemental Symbols and Pictographs"],
+    [0x1FA00, "Symbols and Pictographs Extended-A"],
+    [0x1FB00, "Symbols for Legacy Computing"],
+    [0x20000, ""]
+  ];
+
+  // Codepoints that are never the *identity* of what was copied: they
+  // modify or join the character before them. Skipping them is what makes
+  // an emoji ZWJ sequence report as its lead pictograph rather than as
+  // "Variation Selectors", and a Zalgo string as its base letter.
+  function isModifierCp(cp) {
+    return (
+      (cp >= 0x0300 && cp <= 0x036F) || // combining diacriticals
+      (cp >= 0x1AB0 && cp <= 0x1AFF) ||
+      (cp >= 0x1DC0 && cp <= 0x1DFF) ||
+      (cp >= 0x20D0 && cp <= 0x20FF) || // combining marks for symbols
+      (cp >= 0xFE00 && cp <= 0xFE0F) || // variation selectors
+      (cp >= 0x1F3FB && cp <= 0x1F3FF) || // skin-tone modifiers
+      cp === 0x200D || // ZWJ
+      cp === 0x200B ||
+      cp === 0x2060 ||
+      cp === 0xFEFF
+    );
+  }
+
+  function blockName(cp) {
+    // Regional indicators are technically Enclosed Alphanumeric
+    // Supplement, but a flag is the analytically interesting thing —
+    // flag pages are their own family on this site.
+    if (cp >= 0x1F1E6 && cp <= 0x1F1FF) return "Flags";
+    var lo = 0;
+    var hi = COPY_BLOCKS.length - 1;
+    var ans = -1;
+    while (lo <= hi) {
+      var mid = (lo + hi) >> 1;
+      if (COPY_BLOCKS[mid][0] <= cp) {
+        ans = mid;
+        lo = mid + 1;
+      } else {
+        hi = mid - 1;
+      }
+    }
+    if (ans === -1) return "Other";
+    return COPY_BLOCKS[ans][1] || "Other";
+  }
+
+  // Returns { item, group } for any copied payload. `item` is the exact
+  // text (capped so a whole-paragraph copy cannot blow the event size);
+  // `group` is the Unicode block of its first non-modifier codepoint.
+  function copyIdentity(text) {
+    var raw = String(text == null ? "" : text);
+    if (!raw) return { item: "", group: "" };
+    // Trim only when something survives it. The invisible-character family —
+    // a real, load-bearing family on this site — ships tiles whose ENTIRE
+    // payload is whitespace (U+0020, U+00A0, U+2000..U+200A), and trimming
+    // would erase precisely the identity being recorded. Measured: 26 of the
+    // site's 8,806 distinct payloads are in that state.
+    var s = raw.trim() || raw;
+
+    var lead = null;
+    for (var i = 0; i < s.length; ) {
+      var cp = s.codePointAt(i);
+      i += cp > 0xFFFF ? 2 : 1;
+      if (!isModifierCp(cp)) {
+        lead = cp;
+        break;
+      }
+    }
+    // An all-modifier payload (a bare combining mark tile, of which this
+    // site ships several) is legitimate — fall back to its first
+    // codepoint rather than reporting nothing.
+    if (lead === null) lead = s.codePointAt(0);
+
+    return {
+      item: s.length > 60 ? s.slice(0, 60) : s,
+      group: blockName(lead)
+    };
+  }
+
+  // Push a copy_text event carrying the item identity. Every copy surface
+  // on the site routes through here so the payload shape cannot diverge
+  // between them — the reason this is one function and not five pushes.
+  function trackCopy(method, text, extra) {
+    var id = copyIdentity(text);
+    var payload = {
+      event: "copy_text",
+      copy_method: method,
+      copy_item: id.item,
+      copy_item_group: id.group
+    };
+    if (extra) {
+      for (var k in extra) {
+        if (Object.prototype.hasOwnProperty.call(extra, k) && extra[k] !== undefined) {
+          payload[k] = extra[k];
+        }
+      }
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+  }
+
+  /* @copy-identity:end */
+
+  var ns = (window.UltraTextGen = window.UltraTextGen || {});
+  ns.copyIdentity = copyIdentity;
+  ns.trackCopy = trackCopy;
+
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
       var link = evt.target && evt.target.closest && evt.target.closest(CTA_SELECTOR);

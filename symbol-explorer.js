@@ -282,33 +282,65 @@
     label = label || text;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
-        feedback(el, label);
+        feedback(el, label, text);
       }).catch(function () {
         fallbackCopy(text);
-        feedback(el, label);
+        feedback(el, label, text);
       });
     } else {
       fallbackCopy(text);
-      feedback(el, label);
+      feedback(el, label, text);
     }
   }
   ns.copyText = copyText;
 
+  // A tile's payload is not always visible, and one that isn't must still be
+  // copyable and still confirm itself. Two things follow, both learned from
+  // real markup rather than reasoned up front:
+  //
+  //  1. Do NOT trim a payload away. The invisible-character family ships
+  //     tiles whose ENTIRE value is whitespace — U+00A0, U+2000..U+200A,
+  //     U+202F, U+205F, U+3000, U+FEFF — all of which JS `.trim()` removes.
+  //     The old `(getAttribute(...) || "").trim()` reduced those to "" and
+  //     returned early, so 311 tiles across 41 pages in 18 locales were dead
+  //     buttons: click, nothing copied, no feedback. Trim only when something
+  //     survives it, so padded markup is still cleaned up.
+  //  2. Toast the tile's own LABEL when the payload has no visible glyph.
+  //     Echoing an invisible character back gives a blank toast at exactly
+  //     the moment a user most needs to be told the copy worked.
+  function tileLabel(tile, symbol) {
+    if (symbol.trim()) return symbol;
+    var row = tile.parentElement;
+    var label = row && row.querySelector ? row.querySelector(".flag-label") : null;
+    var text = label && label.textContent ? label.textContent.trim() : "";
+    return text || tile.getAttribute("aria-label") || symbol;
+  }
+
   function copySymbol(tile) {
-    var symbol = (tile.getAttribute("data-symbol") || "").trim();
+    var raw = tile.getAttribute("data-symbol");
+    if (raw == null) return;
+    var symbol = raw.trim() || raw;
     if (!symbol) return;
-    copyText(symbol, tile, symbol);
+    copyText(symbol, tile, tileLabel(tile, symbol));
   }
   ns.copySymbol = copySymbol;
 
-  function feedback(el, label) {
+  function feedback(el, label, copied) {
     el.classList.add("is-copied");
     setTimeout(function () {
       el.classList.remove("is-copied");
     }, 1000);
     showToast(label);
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "copy_text", copy_method: "symbol_tile" });
+    // Record WHAT was copied, not just that a copy happened. header.js owns
+    // the identity helper (it is on every page these tiles ship on); the
+    // guard keeps the copy working if it is ever absent.
+    var utg = window.UltraTextGen;
+    if (utg && utg.trackCopy) {
+      utg.trackCopy("symbol_tile", copied === undefined ? label : copied);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "copy_text", copy_method: "symbol_tile" });
+    }
   }
 
   /* ============================
@@ -468,8 +500,19 @@
         }
 
         showToast(groups[gi2].flags[0] + "…");
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "copy_text", copy_method: "grid_collection" });
+        var utgGrid = window.UltraTextGen;
+        if (utgGrid && utgGrid.trackCopy) {
+          // For a whole collection the group's own name is the identity that
+          // matters; the concatenated payload would be neither readable nor
+          // within the event's size budget.
+          utgGrid.trackCopy("grid_collection", groups[gi2].flags[0], {
+            copy_collection: (groups[gi2].label || groups[gi2].name || "").slice(0, 80),
+            copy_item_count: groups[gi2].flags.length
+          });
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "copy_text", copy_method: "grid_collection" });
+        }
       }
     });
   }

@@ -2344,11 +2344,14 @@ document.addEventListener("click", async (e) => {
   try {
     await navigator.clipboard.writeText(text);
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "glyph"
-    });
+    // header.js owns the copy-identity helper (it loads on every page this
+    // does); the guard keeps the copy working if it is ever absent.
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("glyph", text);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "copy_text", copy_method: "glyph" });
+    }
 
     btn.classList.add("copied");
     showCopyToast();
@@ -2377,11 +2380,12 @@ document.addEventListener("click", (e) => {
 document.addEventListener("copy", () => {
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "manual"
-    });
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("manual", selection);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "copy_text", copy_method: "manual" });
+    }
   }
 });
      }
@@ -2616,12 +2620,16 @@ document.addEventListener("click", async (e) => {
     const styleName = btn.dataset.style || "";
     recordStyleUsage(styleName);
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "button",
-      style_name: styleName
-    });
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("button", text, { style_name: styleName });
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "copy_text",
+        copy_method: "button",
+        style_name: styleName
+      });
+    }
 
     setCopyBtnLabel(btn, STR.copied);
     btn.classList.add("copied");

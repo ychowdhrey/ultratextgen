@@ -81,7 +81,11 @@
       button.textContent = "Copied";
       showCopyToast("Copied to clipboard");
       if (window.dataLayer) {
-        window.dataLayer.push({ event: "copy_text", copy_method: "button", label: label || "" });
+        if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+          window.UltraTextGen.trackCopy("button", text, { label: label || "" });
+        } else {
+          window.dataLayer.push({ event: "copy_text", copy_method: "button", label: label || "" });
+        }
       }
       setTimeout(function () {
         button.classList.remove("copied");

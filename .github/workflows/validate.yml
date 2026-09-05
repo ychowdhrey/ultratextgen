@@ -525,17 +525,26 @@ jobs:
         continue-on-error: true
         run: npm run test:spec-sentence-reuse | tee spec-sentence-reuse-tests.log
 
-      # Gating, zero backlog: unit tests over the two classifiers behind the
-      # cta_click event. They decide what every future CTA number means, and
-      # both carry a real trap — /js/ is a genuine two-letter top-level
-      # directory and is not a locale, and a pillar index is a different answer
-      # from a page inside that pillar. The test SLICES the functions out of the
-      # live header.js rather than reimplementing them, the same technique
-      # check-zalgo-decodes.js uses for generateZalgo().
-      - name: Run CTA click-tracking tests
-        id: cta_tracking_tests
+      # Gating, zero backlog: unit tests over the analytics classifiers in
+      # header.js. Two concerns, both of which decide what every future number
+      # from them means:
+      #
+      #   · the cta_click pair, each carrying a real trap — /js/ is a genuine
+      #     two-letter top-level directory and is not a locale, and a pillar
+      #     index is a different answer from a page inside that pillar;
+      #   · the copy_text identity engine, whose Unicode block table is a
+      #     factual assertion about encodings. Its whole-site case is
+      #     self-maintaining: ship a page in a script the table does not cover
+      #     and this goes red, instead of that page's copies arriving as
+      #     "Other".
+      #
+      # The test SLICES both out of the live header.js rather than
+      # reimplementing them, the same technique check-zalgo-decodes.js uses for
+      # generateZalgo().
+      - name: Run header.js analytics tests
+        id: header_analytics_tests
         continue-on-error: true
-        run: npm run test:cta-tracking | tee cta-tracking-tests.log
+        run: npm run test:header-analytics | tee header-analytics-tests.log
 
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
@@ -746,9 +755,9 @@ jobs:
             cat spec-sentence-reuse-tests.log
             echo '```'
             echo ""
-            echo "### CTA click-tracking tests — \`${{ steps.cta_tracking_tests.outcome }}\`"
+            echo "### header.js analytics tests — \`${{ steps.header_analytics_tests.outcome }}\`"
             echo '```'
-            cat cta-tracking-tests.log
+            cat header-analytics-tests.log
             echo '```'
             echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
@@ -817,7 +826,7 @@ jobs:
           steps.generator_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
-          steps.cta_tracking_tests.outcome == 'failure' ||
+          steps.header_analytics_tests.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |

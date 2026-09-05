@@ -200,8 +200,12 @@
   async function copyText(text) {
     try {
       await navigator.clipboard.writeText(text);
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+      if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+        window.UltraTextGen.trackCopy("button", text);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+      }
       return true;
     } catch (err) {
       console.error("Copy failed:", err);

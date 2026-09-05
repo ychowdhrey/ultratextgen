@@ -2692,8 +2692,9 @@ ranks the upstream sources.
   regenerated page and a live page cannot disagree about the card. The copy lives
   there rather than in the specs because writing it into 214 spec files would
   paste one sentence into 96 specs, which `check:spec-sentence-reuse` exists to
-  fail. `npm run test:cta-routing` (19 assertions) and `npm run test:cta-tracking`
-  (24) gate it.
+  fail. `npm run test:cta-routing` (19 assertions) and
+  `npm run test:header-analytics` (49 — the `cta_click` classifiers plus the
+  `copy_text` identity engine, both sliced from the live `header.js`) gate it.
 - Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
   `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
