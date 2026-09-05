@@ -2670,6 +2670,11 @@ neither would have shown up in a syntax check or a diff review.
    called `UTG.sharedStyleId()` before `share-core.js` had defined it, threw,
    and **the generator rendered zero result cards**. The modules are
    dependency-free, so `inject-share-save-tags.js` now places them *first*.
+   **The same bug came back once more, on 300 pages, from a second cause:**
+   those pages load *both* `script.js` and `symbol-explorer.js`, and the
+   injector anchored on the explorer when both were present. `script.js` comes
+   first on every one of the 300, so the modules again landed too late. The
+   anchor is now the *earliest* host tag, whichever it is.
 2. **`readyState === "loading"` is already false inside a deferred script.**
    `symbol-explorer.js` keyed its init on it, so init ran during its own
    execution — before the modules that follow it in document order — and every
@@ -2708,8 +2713,14 @@ source of truth that `script.js`'s own comment had flagged.
   permanently red against. Whole-site rather than diff-scoped on purpose — the
   shape it catches is a page generator emitting a pre-split template, so a *new*
   page arrives untagged from a file the PR may not touch.
+  **It checks position, not just presence**, and that half was added only after
+  the 300-page order bug above: the first version asked "is the tag there",
+  reported all 3,846 pages fine, and 300 of them were throwing on load. A tag
+  sitting after its consumer is not a tag that works.
 - **`npm run inject:share-save-tags`** — the idempotent repair pass, mirroring
-  `inject-funding-choices-tag.js`.
+  `inject-funding-choices-tag.js`. It strips any existing module tags and
+  reinserts them rather than skipping a page that already has them, because
+  otherwise it could not repair *order* — only absence.
 - **`npm run check:explorer-strings`** / **`sync:explorer-strings`** — the
   harvest and its gate.
 - **`npm run test:saved-items`** — 44 assertions over the store. It exists for
@@ -2746,10 +2757,17 @@ restored. The browser run covers 39 assertions across an English library page, a
 `?symbol=` deep link, a Korean page's labels, and the generator still rendering,
 saving and sharing after the extraction.
 
-**Note for anyone repeating that:** reading a probe's result through `| head`
-reports *head's* exit status, which showed a false `EXIT=0` for both store
-probes on the first attempt. It is the same pipefail trap this file documents
-twice elsewhere.
+The order rule has its own two probes: the real 300-page regression re-injected
+into `usecase/tattoo-fonts` **exits 1** naming it, as does deleting a module tag
+outright, and the restored file exits 0.
+
+**Two notes for anyone repeating this.** Reading a probe's result through
+`| head` reports *head's* exit status, which showed a false `EXIT=0` for both
+store probes on the first attempt — the same pipefail trap this file documents
+twice elsewhere. And **sweep page *types*, not one page**: the 300-page order
+bug was invisible on the homepage, on a library page and on the zalgo page, and
+only appeared once the sweep included a page that loads both hosts. Every gate
+in this repo passed while it was live.
 
 ### Not done here
 

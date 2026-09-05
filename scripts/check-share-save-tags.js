@@ -34,28 +34,49 @@ if (!L.modulesExist()) {
 const files = globSync('**/*.html', { cwd: L.ROOT, absolute: true });
 
 const missing = [];
-let checked = 0;
+const misordered = [];
 
 for (const file of files) {
   if (L.shouldSkip(file)) continue;
   const html = fs.readFileSync(file, 'utf8');
+  if (L.firstHostIndex(html) === -1) continue;
+
   const needs = L.requiredTags(html);
-  if (!needs.length) continue;
-  checked++;
-  missing.push({ file: path.relative(L.ROOT, file), needs });
+  if (needs.length) {
+    missing.push({ file: path.relative(L.ROOT, file), needs });
+    continue;
+  }
+  // Presence is not correctness. Every one of these scripts is `defer`, so
+  // they run in document order, and script.js calls UTG.sharedStyleId() at
+  // init — a module tag sitting after its consumer throws and the page
+  // renders nothing. 300 pages shipped exactly that on this branch's first
+  // pass, and a presence-only check reported all 3,846 as fine.
+  if (!L.tagsAreOrdered(html)) misordered.push(path.relative(L.ROOT, file));
 }
 
-if (!missing.length) {
-  console.log('check-share-save-tags: every copy-hosting page loads the shared Save/Share modules.');
+if (!missing.length && !misordered.length) {
+  console.log('check-share-save-tags: every copy-hosting page loads the shared Save/Share modules, before the scripts that consume them.');
   process.exit(0);
 }
 
-console.error(`check-share-save-tags: ${missing.length} page(s) host a copy target but do not load the shared modules.\n`);
-for (const row of missing.slice(0, 40)) {
-  console.error(`  ${row.file}`);
-  row.needs.forEach((n) => console.error(`      missing ${n}`));
+if (missing.length) {
+  console.error(`check-share-save-tags: ${missing.length} page(s) host a copy target but do not load the shared modules.\n`);
+  for (const row of missing.slice(0, 25)) {
+    console.error(`  ${row.file}`);
+    row.needs.forEach((n) => console.error(`      missing ${n}`));
+  }
+  if (missing.length > 25) console.error(`  … and ${missing.length - 25} more\n`);
 }
-if (missing.length > 40) console.error(`\n  … and ${missing.length - 40} more`);
-console.error('\nFix: node scripts/inject-share-save-tags.js');
+
+if (misordered.length) {
+  console.error(`\ncheck-share-save-tags: ${misordered.length} page(s) load the modules AFTER a script that consumes them.\n`);
+  console.error('  Every one of these is `defer`, so they execute in document order. script.js');
+  console.error('  calls UTG.sharedStyleId() during init; a module tag placed after it throws');
+  console.error('  and the generator renders zero result cards.\n');
+  misordered.slice(0, 25).forEach((f) => console.error(`  ${f}`));
+  if (misordered.length > 25) console.error(`  … and ${misordered.length - 25} more`);
+}
+
+console.error('\nFix: node scripts/inject-share-save-tags.js  (it repairs order as well as absence)');
 console.error('If a page genuinely should not offer Save/Share, it should not be rendering copy buttons either.');
 process.exit(1);

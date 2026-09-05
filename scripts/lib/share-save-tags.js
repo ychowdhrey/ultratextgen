@@ -59,6 +59,35 @@ function hasTag(html, src) {
   return html.includes(`src="${src}"`);
 }
 
+/**
+ * Where the modules have to go: before the FIRST host script on the page.
+ *
+ * 300 pages load both script.js and symbol-explorer.js, and on every one of
+ * them script.js comes first. Anchoring on the explorer (the first draft's
+ * rule when both were present) therefore placed the modules after script.js,
+ * whose init calls UTG.sharedStyleId() — TypeError, and the page's generator
+ * rendered nothing. No gate could see it: they check that a tag is present,
+ * not that it is in a position where it can do its job.
+ *
+ * Returns the index of the earliest host script tag, or -1.
+ */
+function firstHostIndex(html) {
+  const idx = Object.values(HOST_SCRIPTS)
+    .map((src) => html.indexOf(`src="${src}"`))
+    .filter((i) => i !== -1);
+  return idx.length ? Math.min(...idx) : -1;
+}
+
+/** True when every module tag precedes every host script that consumes it. */
+function tagsAreOrdered(html) {
+  const host = firstHostIndex(html);
+  if (host === -1) return true;
+  return [SHARE_CORE, SAVED_ITEMS].every((src) => {
+    const i = html.indexOf(`src="${src}"`);
+    return i !== -1 && i < host;
+  });
+}
+
 function tagFor(src) {
   return `<script src="${src}" defer></script>`;
 }
@@ -87,5 +116,6 @@ function modulesExist() {
 
 module.exports = {
   ROOT, SHARE_CORE, SAVED_ITEMS, HOST_SCRIPTS,
-  requiredTags, hasTag, tagFor, shouldSkip, modulesExist
+  requiredTags, hasTag, tagFor, shouldSkip, modulesExist,
+  firstHostIndex, tagsAreOrdered
 };

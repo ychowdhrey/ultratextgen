@@ -46,34 +46,44 @@ for (const file of files) {
   if (L.shouldSkip(file)) { skipped++; continue; }
 
   const html = fs.readFileSync(file, 'utf8');
-  const needs = L.requiredTags(html);
-  if (!needs.length) {
-    (html.includes(`src="${L.HOST_SCRIPTS.generator}"`) || html.includes(`src="${L.HOST_SCRIPTS.explorer}"`))
-      ? alreadyComplete++
-      : notApplicable++;
-    continue;
+  const first = L.firstHostIndex(html);
+  if (first === -1) { notApplicable++; continue; }
+
+  if (L.tagsAreOrdered(html)) { alreadyComplete++; continue; }
+
+  // Strip any existing module tags first, then reinsert. Presence alone is not
+  // correctness here: a page can carry both tags and still be broken because
+  // they sit after a host that consumes them at init. Removing and reinserting
+  // makes this idempotent AND makes it repair order, which a
+  // skip-if-present pass could not.
+  let next = html;
+  for (const src of [L.SHARE_CORE, L.SAVED_ITEMS]) {
+    const re = new RegExp(`[ \\t]*<script src="${src.replace(/[/.]/g, '\\$&')}"[^>]*></script>\\n?`, 'g');
+    next = next.replace(re, '');
   }
 
-  // Anchor on the page's own host script tag so the modules land in the same
-  // block, in a predictable order, rather than wherever </body> happens to be
-  // relative to other injected snippets.
-  const host = html.includes(`src="${L.HOST_SCRIPTS.explorer}"`)
-    ? L.HOST_SCRIPTS.explorer
-    : L.HOST_SCRIPTS.generator;
+  // Anchor on whichever host script comes FIRST. 300 pages load both
+  // script.js and symbol-explorer.js, script.js first on every one; anchoring
+  // on the explorer there put the modules after script.js, whose init calls
+  // UTG.sharedStyleId(), and the page threw before rendering a single card.
+  const hostIdx = L.firstHostIndex(next);
+  const host = Object.values(L.HOST_SCRIPTS)
+    .filter((src) => next.indexOf(`src="${src}"`) === hostIdx)[0];
   const hostTagRe = new RegExp(`([ \\t]*)<script src="${host.replace(/[/.]/g, '\\$&')}"[^>]*></script>`);
-  const m = html.match(hostTagRe);
+  const m = next.match(hostTagRe);
   if (!m) { noAnchor.push(path.relative(L.ROOT, file)); continue; }
 
   const indent = m[1] || '';
-  const block = needs.map((src) => `${indent}${L.tagFor(src)}\n`).join('');
-  const next = html.replace(hostTagRe, `${block}${m[0]}`);
+  const block = [L.SHARE_CORE, L.SAVED_ITEMS].map((src) => `${indent}${L.tagFor(src)}\n`).join('');
+  next = next.replace(hostTagRe, `${block}${m[0]}`);
 
+  if (next === html) { alreadyComplete++; continue; }
   if (!DRY) fs.writeFileSync(file, next);
   updated++;
 }
 
 console.log(DRY ? 'inject-share-save-tags (dry run)' : 'inject-share-save-tags');
-console.log(`  pages tagged            : ${updated}`);
+console.log(`  pages tagged / reordered: ${updated}`);
 console.log(`  already complete        : ${alreadyComplete}`);
 console.log(`  no copy host (untouched): ${notApplicable}`);
 console.log(`  skipped by scope rules  : ${skipped}`);
