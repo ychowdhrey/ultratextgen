@@ -123,6 +123,22 @@ t('two DIFFERENT tone marks in a row are not a generated run and survive', E.dec
 t('Thai vowels above and below are not tone marks and survive', E.decodeZalgo('กิ กี กึ กื กุ กู กั ก็ ก์'), 'กิ กี กึ กื กุ กู กั ก็ ก์');
 t('Lao tone marks are outside the decoder (not generated here)', E.decodeZalgo('a້້'), 'a້້');
 
+// --- Extreme: the classic engine with a larger budget (a mode, not a wider default) ---
+t('classic range is 1..20, extreme 1..100 (default 50)',
+  [E.AMPLITUDE_CLASSIC.min, E.AMPLITUDE_CLASSIC.max, E.AMPLITUDE_EXTREME.min, E.AMPLITUDE_EXTREME.max, E.AMPLITUDE_EXTREME.default], [1, 20, 1, 100, 50]);
+t('clampAmplitude keeps an old ?amp=500 link at 20 in classic mode', E.clampAmplitude('500', false), 20);
+t('clampAmplitude allows 100 in extreme mode and no more', [E.clampAmplitude(100, true), E.clampAmplitude(101, true)], [100, 100]);
+t('clampAmplitude floors at 1 in both modes', [E.clampAmplitude(0, false), E.clampAmplitude(-4, true)], [1, 1]);
+t('non-numeric amplitude falls back to 5 classic / 50 extreme', [E.clampAmplitude('x', false), E.clampAmplitude('x', true)], [5, 50]);
+{
+  const out = E.generateZalgo('ab', { charType: 'all', position: 'all', shape: 'uniform', frequency: 1, amplitude: 100 });
+  const marks = out.length - 2;
+  // up 55% + mid (capped at 2) + down 35% of 100 = 55 + 2 + 35 per letter
+  t('extreme budget 100 stacks 92 marks on each letter (55 up, 2 mid, 35 down)', marks, 2 * 92);
+  t('extreme output decodes back to its input', E.decodeZalgo(out), 'ab');
+  t('extreme output uses classic pools only (no Thai marks)', THAI_TONE.test(out), false);
+}
+
 // --- the NFC fact the check-zalgo-decodes gate leans on ---
 t('KO KAI + Mai Tho has no precomposed form, so the cascade card is NFC-stable',
   (KO_KAI + MAI_THO).normalize('NFC').length, 2);

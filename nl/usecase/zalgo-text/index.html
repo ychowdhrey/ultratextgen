@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Vorm</strong> bepaalt hoe de tekendichtheid <em>varieert over je tekst</em>. Uniform past overal gelijke dichtheid toe. Oplopende helling begint schoon en bouwt chaos op. Golf oscilleert. Piramide piekt in het midden.</p>
       <p><strong>Frequentie</strong> is de kans dat een gegeven karakter tekens krijgt. Bij 50% blijft ongeveer de helft van je karakters schoon. Bij 100% wordt elk karakter beïnvloed.</p>
       <p><strong>Amplitude</strong> is hoeveel tekens er op elk beïnvloed karakter gestapeld worden. Bij 1 is het een subtiel accent. Bij 20 is het maximale visuele chaos.</p>
+
+      <h3 id="thai-cascade">Klassieke zalgo en de Thaise cascade</h3>
+      <p>De hoge piek die in virale screenshots over het scherm loopt, is geen zalgo op maximum, en ook niet de preset Extreem. Het is één <strong>Thais toonteken</strong> (standaard Mai Tho, U+0E49) dat tot 150 keer herhaald wordt op één dragerletter, de Thaise medeklinker ก. Klassieke zalgo strooit tientallen <em>verschillende</em> tekens rond <em>elke</em> letter; de cascade stapelt <em>hetzelfde</em> teken op <em>één</em>.</p>
+      <p>Kies de preset <strong>Thaise cascade</strong> en de piek staat naast je tekst, die leesbaar blijft. De plaatsing <em>Elk teken</em> zet in plaats daarvan een stapel op elke letter, en <em>Je tekst</em> als drager hangt hem aan je eerste of laatste letter.</p>
+      <p>Dezelfde tekens zien er per app anders uit: sommige tekenen een hoge diagonaal, andere een rechte kolom, weer andere kappen af op de regelhoogte. De vorm is van de renderer, niet van de tool. Elke herhaling telt als één teken, dus de standaardpiek van 80 tekens is 82 tekens met zijn spatie: te lang voor een Discord-bijnaam van 32 tekens, en bijna een derde van een post van 280 tekens op X.</p>
+      <p>De decoder hieronder behandelt een herhaald Thais teken als een stapel en laat losse tekens met rust, dus gewone Thaise woorden komen ongeschonden terug.</p>
+
+      <h3 id="compare">Wat andere zalgo-generators wel en niet kunnen</h3>
+      <p>De meeste zalgo-generators regelen één ding: hoeveel corruptie er wordt toegevoegd. Deze pagina regelt ook welke tekens gebruikt worden, waar ze aanhaken en hoe de dichtheid over je tekst verandert. Daarom heeft ze vijf groepen knoppen in plaats van één schuifregelaar.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Functie</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Vijf andere gecontroleerd</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Intensiteit instellen</td><td>Ja, 1 tot 20, tot 100 in Extreem</td><td>Ja, één schuifregelaar</td><td>Ja, 1 tot 5</td><td>Ja, 1 tot 10</td><td>4 van 5</td></tr>
+            <tr><td>Tekens boven, midden en onder apart kiezen</td><td>Ja</td><td>Nee</td><td>Ja</td><td>Nee</td><td>1 van 5</td></tr>
+            <tr><td>Keuze van tekenfamilie (balken, letters, symbolen, ruis)</td><td>Ja</td><td>Nee</td><td>Nee</td><td>10 benoemde stijlen</td><td>0 van 5</td></tr>
+            <tr><td>Frequentie los van intensiteit</td><td>Ja</td><td>Nee</td><td>Nee</td><td>Nee</td><td>0 van 5</td></tr>
+            <tr><td>Vorm over de tekst (helling, golf, piramide, trappen)</td><td>Ja</td><td>Nee</td><td>Nee</td><td>Nee</td><td>0 van 5</td></tr>
+            <tr><td>Presets met één klik</td><td>7</td><td>Nee</td><td>4</td><td>10</td><td>3 van 5</td></tr>
+            <tr><td>Opnieuw genereren voor een nieuwe variant</td><td>Ja</td><td>Nee</td><td>Nee, altijd hetzelfde resultaat</td><td>Nee</td><td>1 van 5</td></tr>
+            <tr><td>Decoder (unzalgo) naast de generator</td><td>Ja</td><td>Nee</td><td>Ja</td><td>Nee</td><td>0 van 5</td></tr>
+            <tr><td>Past-het-check tegen platformlimieten</td><td>Ja, 4 limieten, live</td><td>Nee</td><td>Nee</td><td>Alleen een richttabel</td><td>0 van 5</td></tr>
+            <tr><td>Exacte instellingen delen via link</td><td>Ja</td><td>Nee</td><td>Nee</td><td>Nee</td><td>0 van 5</td></tr>
+            <tr><td>Thaise cascade (één teken 10 tot 150 keer herhaald)</td><td>Ja</td><td>Nee</td><td>Nee</td><td>Nee</td><td>0 van 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Gecontroleerd op 5 september 2026 op de live pagina van elke generator. De vijf andere zijn FontB, PrettyText, Piliapp, Convertxt en Nepeta, het origineel uit 2009. Zalgo.org en Namecheap blokkeren automatische controles en zijn niet beoordeeld.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">g̷̢͎̒̆͘l̸͎̗̾́̽i̷̢̪͗̂͞t̶̝͇̔͆͞c̷̦̙̊̾̂h̸̨̬̐́͝</span>
         <span class="zx-footer"><span class="zx-label">glitch</span><button class="zx-copy" type="button">Kopiëren</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Thaise cascade kopiëren: cascade">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ cascade</span>
+        <span class="zx-footer"><span class="zx-label">cascade</span><button class="zx-copy" type="button">Kopiëren</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo – Verwijder Zalgo uit Elke Tekst</h2>
-      <p>Dit is de enige grote zalgo-generator met een ingebouwde <strong>unzalgo-decoder</strong>. Plak corrupte tekst in het vak <a href="#unzalgo">Zalgo Decoderen</a> hierboven: het verwijdert elk gecombineerd Unicode-teken en geeft je direct de originele, leesbare tekst terug – je hebt geen aparte "zalgo remover" nodig.</p>
+      <p>De meeste zalgo-generators kunnen hun eigen resultaat niet terugdraaien. Van de acht die op 5 september 2026 zijn gecontroleerd, heeft alleen Zalgo.io een cleaner naast zijn generator; deze pagina ook, met een ingebouwde <strong>unzalgo-decoder</strong>. Plak corrupte tekst in het vak <a href="#unzalgo">Zalgo Decoderen</a> hierboven: het verwijdert elk gecombineerd Unicode-teken en geeft je direct de originele, leesbare tekst terug. Een Thaise cascadestapel (één herhaald toonteken) verdwijnt ook, en gewone Thaise tekst blijft zoals hij is.</p>
       <p>Gebruik het om een vervloekt bericht te lezen dat iemand je stuurde, tekst op te schonen voordat je die citeert, iets terug te halen dat je te ver hebt gecorrumpeerd of – als je een Discord-server of forum modereert – om te zien wat een zalgo-gebruikersnaam of -bericht echt zegt voordat je ingrijpt. Omdat zalgo niets meer is dan basistekens plus combinatietekens, gaat er bij het decoderen niets verloren: de originele tekst is altijd terug te halen. Voor de volledige uitleg (en hoe moderators zalgo automatisch filteren), zie de gids (Engels) over <a href="/answers/how-to-remove-zalgo-text/">hoe je zalgo-tekst verwijdert</a>.</p>
     </section>
 
@@ -405,7 +439,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Spitsen',
     variantRoots:            'Wortels',
     variantStrike:           'Doorgestreept',
-    variantTinyStack:        'Mini-letters'
+    variantTinyStack:        'Mini-letters',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Thaise cascade',
+    controlCascade:          'Thaise cascade',
+    tooltipCascade:          'Eén Thais toonteken, vele keren herhaald op één dragerletter. Afhankelijk van app en lettertype zie je een hoge kolom, een diagonaal, of wordt het afgekapt.',
+    cascadeDepth:            'Stapeldiepte',
+    tooltipCascadeDepth:     'Hoe vaak het teken herhaald wordt (10 = kort, 150 = de volledige internetpiek)',
+    cascadePlacement:        'Plaatsing',
+    cascadePrefix:           'Voor de tekst',
+    cascadeSuffix:           'Na de tekst',
+    cascadeEach:             'Elk teken',
+    cascadeMark:             'Teken',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Drager',
+    cascadeAnchorThai:       'Thaise letter',
+    cascadeAnchorText:       'Je tekst',
+    cascadeNote:             'Richting en hoogte verschillen per app en lettertype. Elke herhaling telt als één teken, schermlezers lezen ze allemaal voor, en sommige platforms kappen de stapel af of weigeren hem.',
+    cascadeCopyLabel:        'Thaise cascade kopiëren',
+    cascadeOutputLabel:      'Thaise cascade voor: {text}',
+    presetExtreme:           'Extreem',
+    tooltipAmplitudeExtreme: 'Extreem-modus: tot 100 tekens gestapeld per letter. Lange tekst wordt erg zwaar en de meeste apps kappen het af.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

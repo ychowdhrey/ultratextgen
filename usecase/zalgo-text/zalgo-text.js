@@ -92,7 +92,11 @@
     cascadeAnchorText:       'Your text',
     cascadeNote:             'Direction and height vary by app and font. Every repeat counts as one character, screen readers announce each one, and some platforms truncate or reject the stack.',
     cascadeCopyLabel:        'Copy Thai cascade output',
-    cascadeOutputLabel:      'Thai cascade output for: {text}'
+    cascadeOutputLabel:      'Thai cascade output for: {text}',
+    // Extreme mode: classic marks with a far larger budget. Gated by
+    // data-extreme on #zalgoControlPanel for the same reason as the cascade.
+    presetExtreme:           'Extreme',
+    tooltipAmplitudeExtreme: 'Extreme mode: up to 100 marks stacked per character. Long text gets heavy; most apps clip it.'
   }, window.zalgoI18n || {});
 
 
@@ -350,6 +354,22 @@
   const CASCADE_PLACEMENTS  = ['prefix', 'suffix', 'each'];
   const CASCADE_ANCHORS     = ['thai', 'text'];
 
+  // ── Extreme: the classic engine with a larger budget ─────────────
+  // Not a new algorithm: generateZalgo() with the same pools and the same
+  // pickUnique() cycling, so a 100-mark letter is the whole up pool twice
+  // over. It is a MODE rather than a wider default slider so classic
+  // presets and amplitude 1..20 stay exactly as they were (issue #864's
+  // rule), and the URL/slider clamp knows which range is in force.
+  const AMPLITUDE_CLASSIC = { min: 1, max: 20 };
+  const AMPLITUDE_EXTREME = { min: 1, max: 100, default: 50 };
+
+  function clampAmplitude(n, extreme) {
+    const range = extreme ? AMPLITUDE_EXTREME : AMPLITUDE_CLASSIC;
+    const a = parseInt(n, 10);
+    if (!Number.isFinite(a)) return extreme ? AMPLITUDE_EXTREME.default : 5;
+    return Math.min(range.max, Math.max(range.min, a));
+  }
+
   function cascadeMark(id) {
     return CASCADE_MARKS.find(m => m.id === id) ||
            CASCADE_MARKS.find(m => m.id === CASCADE_DEFAULT_MARK);
@@ -449,9 +469,21 @@
     id: 'cascade', labelKey: 'presetCascade', cascade: true,
     preview: CASCADE_ANCHOR + cascadeMark(CASCADE_DEFAULT_MARK).char.repeat(8)
   };
+  // Extreme rides the classic engine. The preview is a real generateZalgo()
+  // render of "he" at amplitude 40 (generated, never hand-typed: see the
+  // zalgo-decodes rule in CLAUDE.md), stored so the button is stable.
+  const EXTREME_PRESET = {
+    id: 'extreme', labelKey: 'presetExtreme', extreme: true,
+    preview: 'h̷̶̜̗̯̺̝͈̳̼̰̖͍̏͌̈́͗̋̌̃́̅̓̂̑̈͊̓̄́̆͐͘͟͜͞͝ͅẹ̴̶̡̧̰̦͙̺͓͇̱̫̹͚̄̓̔͆̾̒̃̎͋̍͗̇̀͊͐͌́̈͘͠͝͡ͅ',
+    settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: AMPLITUDE_EXTREME.default }
+  };
   let cascadeAvailable = false;
+  let extremeAvailable = false;
   function presetList() {
-    return cascadeAvailable ? PRESETS.concat([CASCADE_PRESET]) : PRESETS;
+    let list = PRESETS;
+    if (extremeAvailable) list = list.concat([EXTREME_PRESET]);
+    if (cascadeAvailable) list = list.concat([CASCADE_PRESET]);
+    return list;
   }
 
   // ── Output Variants ─────────────────────────────────────────────
@@ -490,6 +522,7 @@
     amplitude: 5,
     output:    '',
     preset:    'classic',
+    extreme:   false,
     cascade: {
       enabled:   false,
       depth:     CASCADE_DEPTH.default,
@@ -687,11 +720,11 @@
         <div class="control-group">
           <div class="control-label">
             <span class="icon">◉</span> ${i18n.controlAmplitude}
-            ${tooltip(i18n.tooltipAmplitude)}
+            ${tooltip(extremeAvailable ? i18n.tooltipAmplitude + ' ' + i18n.tooltipAmplitudeExtreme : i18n.tooltipAmplitude)}
           </div>
           <div class="slider-row">
             <input type="range" class="slider-track" id="amplitudeSlider"
-              min="1" max="20" step="1" value="${state.amplitude}">
+              min="${AMPLITUDE_CLASSIC.min}" max="${state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max}" step="1" value="${state.amplitude}">
             <span class="slider-value" id="amplitudeValue">${state.amplitude}</span>
           </div>
         </div>
@@ -866,6 +899,7 @@
     // nothing on a deterministic output.
     const cascadeLive = !!(state.cascade.enabled && state.output);
     body.classList.toggle('is-cascade', cascadeLive);
+    body.classList.toggle('is-extreme', !!(state.extreme && !state.cascade.enabled && state.output));
     const regen = $('#regenBtn');
     if (regen) regen.hidden = state.cascade.enabled;
     if (cascadeLive) {
@@ -902,7 +936,11 @@
     if (freqValue)  freqValue.textContent = Math.round(state.frequency * 100) + '%';
     const ampSlider = $('#amplitudeSlider');
     const ampValue  = $('#amplitudeValue');
-    if (ampSlider) ampSlider.value = state.amplitude;
+    if (ampSlider) {
+      ampSlider.max = state.extreme ? AMPLITUDE_EXTREME.max : AMPLITUDE_CLASSIC.max;
+      ampSlider.value = state.amplitude;
+      ampSlider.setAttribute('aria-valuemax', ampSlider.max);
+    }
     if (ampValue)  ampValue.textContent = state.amplitude;
 
     const group = $('#cascadeGroup');
@@ -946,11 +984,14 @@
             state.cascade.enabled = true;
           } else {
             state.cascade.enabled = false;
+            state.extreme = !!preset.extreme;
             Object.assign(state, preset.settings);
+            state.amplitude = clampAmplitude(state.amplitude, state.extreme);
           }
           setActivePreset(preset.id);
           syncControlsToState();
           runGenerate();
+          trackPreset(preset);
         }
         return;
       }
@@ -1020,7 +1061,7 @@
     const ampValue  = $('#amplitudeValue');
     if (ampSlider) {
       ampSlider.addEventListener('input', () => {
-        state.amplitude = parseInt(ampSlider.value, 10);
+        state.amplitude = clampAmplitude(ampSlider.value, state.extreme);
         ampValue.textContent = state.amplitude;
         runGenerate();
       });
@@ -1124,6 +1165,22 @@
     });
   }
 
+  // Preset selection telemetry: dataLayer -> GTM -> GA4, same shape as
+  // header.js's cta_click. Exists so the cascade and extreme modes have a
+  // measurable adoption number for their readout (the one thing the
+  // game-name checker retro found genuinely missing was instrumentation).
+  function trackPreset(preset) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'zalgo_preset',
+        zalgo_preset: preset.id,
+        zalgo_mode: preset.cascade ? 'cascade' : (preset.extreme ? 'extreme' : 'classic'),
+        zalgo_source_path: window.location.pathname
+      });
+    } catch (e) { /* analytics must never break the generator */ }
+  }
+
   // Shared clipboard helper with execCommand fallback + button feedback
   function copyToClipboard(text, btn, idleLabel) {
     const done = () => {
@@ -1168,7 +1225,13 @@
     if (params.has('pos'))       state.position  = params.get('pos');
     if (params.has('shape'))     state.shape     = params.get('shape');
     if (params.has('freq'))      state.frequency = parseFloat(params.get('freq'));
-    if (params.has('amp'))       state.amplitude = parseInt(params.get('amp'), 10);
+    if (extremeAvailable && params.get('extreme') === '1') {
+      state.extreme = true;
+      state.preset = 'extreme';
+    }
+    // The amplitude clamp follows the mode: an old link with amp=500 used to
+    // generate 500 marks per letter; now it is 20, or 100 in extreme mode.
+    if (params.has('amp'))       state.amplitude = clampAmplitude(params.get('amp'), state.extreme);
     // Cascade settings round-trip only where the mode exists; a locale page
     // that has not opted in ignores them rather than half-rendering the mode.
     if (cascadeAvailable && params.get('cascade') === '1') {
@@ -1194,6 +1257,7 @@
     if (state.shape     !== 'uniform')     params.set('shape', state.shape);
     if (state.frequency !== 0.8)           params.set('freq',  state.frequency);
     if (state.amplitude !== 5)             params.set('amp',   state.amplitude);
+    if (state.extreme && !state.cascade.enabled) params.set('extreme', '1');
     if (state.cascade.enabled) {
       params.set('cascade', '1');
       if (state.cascade.depth !== CASCADE_DEPTH.default)  params.set('depth',  state.cascade.depth);
@@ -1299,6 +1363,7 @@
   function init() {
     const panel = $('#zalgoControlPanel');
     cascadeAvailable = !!(panel && panel.hasAttribute('data-cascade'));
+    extremeAvailable = !!(panel && panel.hasAttribute('data-extreme'));
     loadFromURL();
     buildControls();
     buildOutput();

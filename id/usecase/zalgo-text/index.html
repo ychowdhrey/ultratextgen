@@ -226,7 +226,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -253,6 +253,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Bentuk</strong> mengontrol bagaimana kepadatan tanda <em>bervariasi di seluruh teks</em>. Seragam menerapkan kepadatan merata di mana-mana. Lereng naik dimulai bersih dan membangun kekacauan. Gelombang berosilasi. Piramida memuncak di tengah.</p>
       <p><strong>Frekuensi</strong> adalah probabilitas bahwa karakter tertentu mendapatkan tanda. Pada 50%, sekitar setengah karakter Anda tetap bersih. Pada 100%, setiap karakter terpengaruh.</p>
       <p><strong>Amplitudo</strong> adalah berapa banyak tanda yang ditumpuk pada setiap karakter yang terpengaruh. Pada 1, ini adalah aksen yang halus. Pada 20, ini adalah kekacauan visual maksimum.</p>
+
+      <h3 id="thai-cascade">Zalgo klasik dan kaskade Thai</h3>
+      <p>Tiang tinggi yang melintasi layar di tangkapan layar viral itu bukan zalgo yang diputar ke maksimum, dan bukan preset Ekstrem juga. Itu satu <strong>tanda nada Thai</strong> (bawaannya Mai Tho, U+0E49) yang diulang sampai 150 kali di atas satu huruf penyangga, yaitu konsonan Thai ก. Zalgo klasik menebar puluhan tanda <em>berbeda</em> di sekitar <em>setiap</em> huruf; kaskade menumpuk tanda <em>yang sama</em> di <em>satu</em> huruf.</p>
+      <p>Pilih preset <strong>Kaskade Thai</strong>, dan tiangnya berdiri di samping teksmu yang tetap terbaca. Penempatan <em>Setiap karakter</em> menaruh tumpukan di setiap huruf, dan <em>Teksmu</em> sebagai penyangga menggantungkannya di huruf pertama atau terakhirmu.</p>
+      <p>Karakter yang sama tampil beda di tiap aplikasi: ada yang menggambar garis miring tinggi, ada yang kolom lurus, ada yang memotongnya di tinggi baris. Bentuknya ditentukan mesin render, bukan alat ini. Setiap pengulangan dihitung satu karakter, jadi tiang bawaan 80 tanda memakan 82 karakter dengan spasinya: terlalu panjang untuk nama panggilan Discord 32 karakter, dan hampir sepertiga dari postingan 280 karakter di X.</p>
+      <p>Dekoder di bawah memperlakukan tanda Thai yang berulang sebagai tumpukan dan membiarkan tanda tunggal apa adanya, jadi kata Thai biasa kembali utuh.</p>
+
+      <h3 id="compare">Apa yang bisa dan tidak bisa dilakukan generator zalgo lain</h3>
+      <p>Kebanyakan generator zalgo cuma mengatur satu hal: seberapa banyak kerusakan yang ditambahkan. Halaman ini juga mengatur tanda mana yang dipakai, di mana tanda itu menempel, dan bagaimana kepadatannya berubah di sepanjang teksmu. Itu sebabnya ada lima kelompok kontrol, bukan satu slider.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Fitur</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Lima lainnya yang dicek</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kontrol intensitas</td><td>Ya, 1 sampai 20, sampai 100 di Ekstrem</td><td>Ya, satu slider</td><td>Ya, 1 sampai 5</td><td>Ya, 1 sampai 10</td><td>4 dari 5</td></tr>
+            <tr><td>Tanda atas, tengah, dan bawah dipilih terpisah</td><td>Ya</td><td>Tidak</td><td>Ya</td><td>Tidak</td><td>1 dari 5</td></tr>
+            <tr><td>Pilihan keluarga tanda (garis, huruf, simbol, noise)</td><td>Ya</td><td>Tidak</td><td>Tidak</td><td>10 gaya bernama</td><td>0 dari 5</td></tr>
+            <tr><td>Frekuensi terpisah dari intensitas</td><td>Ya</td><td>Tidak</td><td>Tidak</td><td>Tidak</td><td>0 dari 5</td></tr>
+            <tr><td>Bentuk di sepanjang teks (lereng, gelombang, piramida, tangga)</td><td>Ya</td><td>Tidak</td><td>Tidak</td><td>Tidak</td><td>0 dari 5</td></tr>
+            <tr><td>Preset sekali klik</td><td>7</td><td>Tidak</td><td>4</td><td>10</td><td>3 dari 5</td></tr>
+            <tr><td>Buat ulang untuk variasi baru</td><td>Ya</td><td>Tidak</td><td>Tidak, hasilnya selalu sama</td><td>Tidak</td><td>1 dari 5</td></tr>
+            <tr><td>Dekoder (unzalgo) di samping generator</td><td>Ya</td><td>Tidak</td><td>Ya</td><td>Tidak</td><td>0 dari 5</td></tr>
+            <tr><td>Cek batas karakter per platform</td><td>Ya, 4 batas, langsung</td><td>Tidak</td><td>Tidak</td><td>Hanya tabel panduan</td><td>0 dari 5</td></tr>
+            <tr><td>Bagikan pengaturan persis lewat tautan</td><td>Ya</td><td>Tidak</td><td>Tidak</td><td>Tidak</td><td>0 dari 5</td></tr>
+            <tr><td>Kaskade Thai (satu tanda diulang 10 sampai 150 kali)</td><td>Ya</td><td>Tidak</td><td>Tidak</td><td>Tidak</td><td>0 dari 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Dicek pada 5 September 2026 di halaman asli tiap generator. Lima lainnya adalah FontB, PrettyText, Piliapp, Convertxt, dan Nepeta, yang asli gaya 2009. Zalgo.org dan Namecheap memblokir pengecekan otomatis dan tidak dinilai.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -284,13 +314,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">ȑ̵͖̹̕͝ṷ̸̗͑͒͛s̴͚͑̃͜͝à̶̼̒̐͢ḳ̴͖̀́͘</span>
         <span class="zx-footer"><span class="zx-label">rusak</span><button class="zx-copy" type="button">Salin</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Salin kaskade Thai: kaskade">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ kaskade</span>
+        <span class="zx-footer"><span class="zx-label">kaskade</span><button class="zx-copy" type="button">Salin</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Hapus Zalgo dari Teks Apa Pun</h2>
-      <p>Ini satu-satunya generator zalgo besar yang punya <strong>dekoder unzalgo</strong> bawaan. Tempel teks yang korup ke kotak <a href="#unzalgo">Dekode Zalgo</a> di atas: alat itu mencabut setiap tanda Unicode kombinasi dan langsung mengembalikan teks aslinya yang bisa dibaca — tanpa perlu tool "penghapus zalgo" terpisah.</p>
+      <p>Kebanyakan generator zalgo tidak bisa membalik hasilnya sendiri. Dari delapan yang dicek pada 5 September 2026, cuma Zalgo.io yang punya pembersih di samping generatornya; halaman ini juga punya, berupa <strong>dekoder unzalgo</strong> bawaan. Tempel teks yang korup ke kotak <a href="#unzalgo">Dekode Zalgo</a> di atas: alat itu mencabut setiap tanda Unicode kombinasi dan langsung mengembalikan teks aslinya yang bisa dibaca. Tumpukan kaskade Thai (satu tanda nada yang diulang) ikut hilang, sedangkan teks Thai biasa tetap apa adanya.</p>
       <p>Pakai untuk membaca pesan terkutuk yang dikirim orang ke kamu, membersihkan teks sebelum mengutipnya, menyelamatkan sesuatu yang telanjur kamu korupsi terlalu parah, atau — kalau kamu momod server Discord atau forum — melihat isi sebenarnya dari sebuah username atau pesan zalgo sebelum mengambil tindakan. Karena zalgo hanyalah karakter dasar ditambah tanda kombinasi, proses dekodenya tidak menghilangkan apa pun: teks aslinya selalu bisa dipulihkan. Penjelasan lengkapnya (dan cara moderator memfilter zalgo secara otomatis) ada di <a href="/answers/how-to-remove-zalgo-text/">cara menghapus teks zalgo</a> (dalam bahasa Inggris).</p>
     </section>
 
@@ -398,7 +432,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Menara',
     variantRoots:            'Akar',
     variantStrike:           'Coret',
-    variantTinyStack:        'Huruf mini'
+    variantTinyStack:        'Huruf mini',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Kaskade Thai',
+    controlCascade:          'Kaskade Thai',
+    tooltipCascade:          'Satu tanda nada Thai yang diulang berkali-kali di atas satu huruf penyangga. Tergantung aplikasi dan fontnya, hasilnya bisa berupa kolom tinggi, garis miring, atau terpotong.',
+    cascadeDepth:            'Kedalaman tumpukan',
+    tooltipCascadeDepth:     'Berapa kali tanda diulang (10 = pendek, 150 = tiang penuh seperti di internet)',
+    cascadePlacement:        'Penempatan',
+    cascadePrefix:           'Sebelum teks',
+    cascadeSuffix:           'Setelah teks',
+    cascadeEach:             'Setiap karakter',
+    cascadeMark:             'Tanda',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Penyangga',
+    cascadeAnchorThai:       'Huruf Thai',
+    cascadeAnchorText:       'Teksmu',
+    cascadeNote:             'Arah dan tingginya beda-beda tergantung aplikasi dan font. Setiap pengulangan dihitung satu karakter, pembaca layar membacakan semuanya satu per satu, dan sebagian platform memotong atau menolak tumpukannya.',
+    cascadeCopyLabel:        'Salin kaskade Thai',
+    cascadeOutputLabel:      'Kaskade Thai untuk: {text}',
+    presetExtreme:           'Ekstrem',
+    tooltipAmplitudeExtreme: 'Mode Ekstrem: sampai 100 tanda ditumpuk per karakter. Teks panjang jadi sangat berat dan kebanyakan aplikasi memotongnya.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

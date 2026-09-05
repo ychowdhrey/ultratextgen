@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Form</strong> steuert, wie die Zeichendichte <em>im Text variiert</em>. Gleichmäßig wendet überall gleichmäßige Dichte an. Aufsteigende Steigung beginnt sauber und baut Chaos auf. Welle oszilliert. Pyramide erreicht in der Mitte ihren Höhepunkt.</p>
       <p><strong>Häufigkeit</strong> ist die Wahrscheinlichkeit, dass ein Zeichen Markierungen erhält. Bei 50 % bleiben etwa die Hälfte der Zeichen sauber. Bei 100 % ist jedes Zeichen betroffen.</p>
       <p><strong>Amplitude</strong> ist die Anzahl der auf jedem betroffenen Zeichen gestapelten Markierungen. Bei 1 ist es ein subtiler Akzent. Bei 20 ist es maximales visuelles Chaos.</p>
+
+      <h3 id="thai-cascade">Klassisches Zalgo und die Thai-Kaskade</h3>
+      <p>Die hohe Spitze, die in viralen Screenshots quer über den Bildschirm läuft, ist kein Zalgo auf Maximum, und auch nicht das Preset Extrem. Es ist ein einziges <strong>thailändisches Tonzeichen</strong> (standardmäßig Mai Tho, U+0E49), bis zu 150 Mal auf einem Trägerbuchstaben wiederholt, dem thailändischen Konsonanten ก. Klassisches Zalgo streut Dutzende <em>verschiedene</em> Zeichen um <em>jeden</em> Buchstaben; die Kaskade stapelt <em>dasselbe</em> Zeichen auf <em>einen</em>.</p>
+      <p>Wähle das Preset <strong>Thai-Kaskade</strong>, und die Spitze steht neben deinem Text, der lesbar bleibt. Die Platzierung <em>Jedes Zeichen</em> setzt stattdessen auf jeden Buchstaben einen Stapel, und <em>Dein Text</em> als Träger hängt ihn an deinen ersten oder letzten Buchstaben.</p>
+      <p>Dieselben Zeichen sehen je nach App anders aus: manche zeichnen eine hohe Diagonale, manche eine gerade Säule, manche schneiden an der Zeilenhöhe ab. Die Form bestimmt der Renderer, nicht das Tool. Jede Wiederholung zählt als ein Zeichen, die Standard-Spitze mit 80 Zeichen belegt also 82 Zeichen samt Leerzeichen: zu lang für einen Discord-Nicknamen mit 32 Zeichen und fast ein Drittel eines Posts mit 280 Zeichen auf X.</p>
+      <p>Der Decoder unten behandelt ein wiederholtes Thai-Zeichen als Stapel und lässt einzelne Zeichen in Ruhe, sodass normale thailändische Wörter unverändert zurückkommen.</p>
+
+      <h3 id="compare">Was andere Zalgo-Generatoren können und was nicht</h3>
+      <p>Die meisten Zalgo-Generatoren steuern nur eines: wie viel Verzerrung hinzukommt. Diese Seite steuert außerdem, welche Zeichen verwendet werden, wo sie andocken und wie sich die Dichte über deinen Text verändert. Deshalb hat sie fünf Kontrollgruppen statt eines einzigen Reglers.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Funktion</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Fünf weitere geprüft</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Intensitätsregler</td><td>Ja, 1 bis 20, bis 100 im Extrem-Modus</td><td>Ja, ein Regler</td><td>Ja, 1 bis 5</td><td>Ja, 1 bis 10</td><td>4 von 5</td></tr>
+            <tr><td>Zeichen oben, mittig und unten getrennt wählbar</td><td>Ja</td><td>Nein</td><td>Ja</td><td>Nein</td><td>1 von 5</td></tr>
+            <tr><td>Wahl der Zeichenfamilie (Balken, Buchstaben, Symbole, Rauschen)</td><td>Ja</td><td>Nein</td><td>Nein</td><td>10 benannte Stile</td><td>0 von 5</td></tr>
+            <tr><td>Häufigkeit getrennt von der Intensität</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Nein</td><td>0 von 5</td></tr>
+            <tr><td>Form über den Text (Anstieg, Welle, Pyramide, Stufen)</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Nein</td><td>0 von 5</td></tr>
+            <tr><td>Ein-Klick-Presets</td><td>7</td><td>Nein</td><td>4</td><td>10</td><td>3 von 5</td></tr>
+            <tr><td>Neu generieren für eine neue Variante</td><td>Ja</td><td>Nein</td><td>Nein, immer dasselbe Ergebnis</td><td>Nein</td><td>1 von 5</td></tr>
+            <tr><td>Decoder (Unzalgo) direkt neben dem Generator</td><td>Ja</td><td>Nein</td><td>Ja</td><td>Nein</td><td>0 von 5</td></tr>
+            <tr><td>Passt-es-Check gegen Plattformlimits</td><td>Ja, 4 Limits, live</td><td>Nein</td><td>Nein</td><td>Nur eine Hinweistabelle</td><td>0 von 5</td></tr>
+            <tr><td>Genaue Einstellungen per Link teilen</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Nein</td><td>0 von 5</td></tr>
+            <tr><td>Thai-Kaskade (ein Zeichen 10 bis 150 Mal wiederholt)</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Nein</td><td>0 von 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Geprüft am 5. September 2026 auf der Live-Seite jedes Generators. Die fünf weiteren sind FontB, PrettyText, Piliapp, Convertxt und Nepeta, das Original von 2009. Zalgo.org und Namecheap blockieren automatische Prüfungen und wurden nicht bewertet.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">g̷͔̘͙͒́͊̇r̶͍̍̔͜͢͡͝u̵̝͗̂̋̐͟ͅs̶̪͔̍̊̀͘͟e̴̬̯̼̽͊͆͞l̷̥̤̘̄̈̍͝į̵̰͊͑̕͡ͅg̸̰̝̼͗̈̾̊</span>
         <span class="zx-footer"><span class="zx-label">gruselig</span><button class="zx-copy" type="button">Kopieren</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Thai-Kaskade kopieren: Kaskade">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ Kaskade</span>
+        <span class="zx-footer"><span class="zx-label">Kaskade</span><button class="zx-copy" type="button">Kopieren</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo – Zalgo aus jedem Text entfernen</h2>
-      <p>Dies ist der einzige große Zalgo-Generator mit eingebautem <strong>Unzalgo-Decoder</strong>. Füge korrumpierten Text in das Feld <a href="#unzalgo">Zalgo Dekodieren</a> weiter oben ein: Es entfernt jedes Unicode-Kombinationszeichen und gibt sofort den ursprünglichen, lesbaren Text zurück – ganz ohne separates „Zalgo-Entferner“-Tool.</p>
+      <p>Die meisten Zalgo-Generatoren können ihr eigenes Ergebnis nicht rückgängig machen. Von den acht am 5. September 2026 geprüften bietet nur Zalgo.io einen Cleaner neben dem Generator; diese Seite auch, mit einem eingebauten <strong>Unzalgo-Decoder</strong>. Füge korrumpierten Text in das Feld <a href="#unzalgo">Zalgo Dekodieren</a> weiter oben ein: Es entfernt jedes Unicode-Kombinationszeichen und gibt sofort den ursprünglichen, lesbaren Text zurück. Ein Thai-Kaskaden-Stapel (ein wiederholtes Tonzeichen) verschwindet ebenfalls, normaler thailändischer Text bleibt, wie er ist.</p>
       <p>Nutze es, um eine verfluchte Nachricht zu lesen, die dir jemand geschickt hat, um Text vor dem Zitieren zu bereinigen, um etwas zurückzuholen, das du zu stark korrumpiert hast – oder, wenn du einen Discord-Server oder ein Forum moderierst, um zu sehen, was ein Zalgo-Nickname oder eine Zalgo-Nachricht tatsächlich sagt, bevor du handelst. Da Zalgo nur aus Basiszeichen plus Kombinationszeichen besteht, ist das Dekodieren verlustfrei: Der Originaltext lässt sich immer wiederherstellen. Die vollständige Erklärung (und wie Moderatoren Zalgo automatisch filtern) findest du auf der Seite (auf Englisch) <a href="/answers/how-to-remove-zalgo-text/">wie man Zalgo-Text entfernt</a>.</p>
     </section>
 
@@ -405,7 +439,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Spitzen',
     variantRoots:            'Wurzeln',
     variantStrike:           'Durchgestrichen',
-    variantTinyStack:        'Mini-Buchstaben'
+    variantTinyStack:        'Mini-Buchstaben',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Thai-Kaskade',
+    controlCascade:          'Thai-Kaskade',
+    tooltipCascade:          'Ein thailändisches Tonzeichen, viele Male auf einem Trägerbuchstaben wiederholt. Je nach App und Schrift erscheint es als hohe Säule, als Diagonale oder wird abgeschnitten.',
+    cascadeDepth:            'Stapeltiefe',
+    tooltipCascadeDepth:     'Wie oft das Zeichen wiederholt wird (10 = kurz, 150 = die volle Internet-Spitze)',
+    cascadePlacement:        'Platzierung',
+    cascadePrefix:           'Vor dem Text',
+    cascadeSuffix:           'Nach dem Text',
+    cascadeEach:             'Jedes Zeichen',
+    cascadeMark:             'Zeichen',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Träger',
+    cascadeAnchorThai:       'Thai-Buchstabe',
+    cascadeAnchorText:       'Dein Text',
+    cascadeNote:             'Richtung und Höhe hängen von App und Schrift ab. Jede Wiederholung zählt als ein Zeichen, Screenreader lesen jede einzelne vor, und manche Plattformen kürzen oder blockieren den Stapel.',
+    cascadeCopyLabel:        'Thai-Kaskade kopieren',
+    cascadeOutputLabel:      'Thai-Kaskade für: {text}',
+    presetExtreme:           'Extrem',
+    tooltipAmplitudeExtreme: 'Extrem-Modus: bis zu 100 Zeichen pro Buchstabe gestapelt. Lange Texte werden sehr schwer, und die meisten Apps schneiden sie ab.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

@@ -894,3 +894,15 @@
   padding: 220px 22px 60px;
   line-height: 1.6;
 }
+
+/* Extreme mode (classic marks, budget up to 100 per letter) paints as far
+   outside its line box as the cascade does; same containment. */
+.output-body.is-extreme {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  contain: paint;
+  min-height: 360px;
+  padding: 150px 22px 150px;
+  line-height: 1.6;
+}

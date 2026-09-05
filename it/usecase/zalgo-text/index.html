@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Forma</strong> controlla come la densità dei segni <em>varia nel testo</em>. Uniforme applica densità uniforme ovunque. Pendenza ascendente inizia pulito e accumula caos. Onda oscilla. Piramide raggiunge il picco al centro.</p>
       <p><strong>Frequenza</strong> è la probabilità che un dato carattere riceva segni. Al 50%, circa metà dei caratteri rimane pulita. Al 100%, ogni carattere è interessato.</p>
       <p><strong>Ampiezza</strong> è quanti segni vengono impilati su ogni carattere interessato. A 1, è un accento sottile. A 20, è il massimo caos visivo.</p>
+
+      <h3 id="thai-cascade">Zalgo classico e cascata thai</h3>
+      <p>Il picco alto che attraversa lo schermo negli screenshot virali non è zalgo al massimo, e non è nemmeno il preset Estremo. È un solo <strong>segno tonale thai</strong> (Mai Tho, U+0E49, di default) ripetuto fino a 150 volte su una lettera portante, la consonante thai ก. Lo zalgo classico sparge decine di segni <em>diversi</em> intorno a <em>ogni</em> lettera; la cascata impila lo <em>stesso</em> segno su <em>una</em>.</p>
+      <p>Scegli il preset <strong>Cascata thai</strong> e il picco resta accanto al tuo testo, che rimane leggibile. La posizione <em>Ogni carattere</em> mette invece una pila su ogni lettera, e <em>Il tuo testo</em> come portante la aggancia alla tua prima o ultima lettera.</p>
+      <p>Gli stessi caratteri si vedono in modo diverso da app ad app: alcune disegnano una diagonale alta, altre una colonna dritta, altre tagliano all’altezza della riga. La forma la decide il motore di rendering, non lo strumento. Ogni ripetizione conta come un carattere, quindi il picco predefinito da 80 segni occupa 82 caratteri con lo spazio: troppo per un nickname Discord da 32 caratteri, e quasi un terzo di un post da 280 caratteri su X.</p>
+      <p>Il decoder qui sotto tratta un segno thai ripetuto come una pila e lascia stare i segni singoli, così le parole thai normali tornano intatte.</p>
+
+      <h3 id="compare">Cosa sanno fare, e cosa no, gli altri generatori di zalgo</h3>
+      <p>La maggior parte dei generatori di zalgo controlla una cosa sola: quanta corruzione aggiungere. Questa pagina controlla anche quali segni vengono usati, dove si agganciano e come cambia la densità lungo il tuo testo. Per questo ha cinque gruppi di controlli invece di un solo cursore.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Funzione</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Altri cinque verificati</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Controllo dell’intensità</td><td>Sì, da 1 a 20, fino a 100 in Estremo</td><td>Sì, un cursore</td><td>Sì, da 1 a 5</td><td>Sì, da 1 a 10</td><td>4 su 5</td></tr>
+            <tr><td>Segni sopra, in mezzo e sotto scelti separatamente</td><td>Sì</td><td>No</td><td>Sì</td><td>No</td><td>1 su 5</td></tr>
+            <tr><td>Scelta della famiglia di segni (barre, lettere, simboli, rumore)</td><td>Sì</td><td>No</td><td>No</td><td>10 stili con nome</td><td>0 su 5</td></tr>
+            <tr><td>Frequenza separata dall’intensità</td><td>Sì</td><td>No</td><td>No</td><td>No</td><td>0 su 5</td></tr>
+            <tr><td>Forma lungo il testo (rampa, onda, piramide, gradini)</td><td>Sì</td><td>No</td><td>No</td><td>No</td><td>0 su 5</td></tr>
+            <tr><td>Preset con un clic</td><td>7</td><td>No</td><td>4</td><td>10</td><td>3 su 5</td></tr>
+            <tr><td>Rigenera per una nuova variante</td><td>Sì</td><td>No</td><td>No, stesso risultato ogni volta</td><td>No</td><td>1 su 5</td></tr>
+            <tr><td>Decoder (unzalgo) accanto al generatore</td><td>Sì</td><td>No</td><td>Sì</td><td>No</td><td>0 su 5</td></tr>
+            <tr><td>Verifica dei limiti per piattaforma</td><td>Sì, 4 limiti, dal vivo</td><td>No</td><td>No</td><td>Solo tabella indicativa</td><td>0 su 5</td></tr>
+            <tr><td>Condividi le impostazioni esatte via link</td><td>Sì</td><td>No</td><td>No</td><td>No</td><td>0 su 5</td></tr>
+            <tr><td>Cascata thai (un segno ripetuto da 10 a 150 volte)</td><td>Sì</td><td>No</td><td>No</td><td>No</td><td>0 su 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Verificato il 5 settembre 2026 sulla pagina reale di ogni generatore. Gli altri cinque sono FontB, PrettyText, Piliapp, Convertxt e Nepeta, l’originale del 2009. Zalgo.org e Namecheap bloccano i controlli automatici e non sono valutati.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">g̶̮̲̅͋̈́͊l̴̲̝̓̃͊̄ị̶̺͛͐͊͗t̸̡̳͆̊̃̀ç̶̪̒̈̀͞h̵̭͂̒͆͘͟</span>
         <span class="zx-footer"><span class="zx-label">glitch</span><button class="zx-copy" type="button">Copia</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Copia cascata thai: cascata">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ cascata</span>
+        <span class="zx-footer"><span class="zx-label">cascata</span><button class="zx-copy" type="button">Copia</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo – Rimuovi lo Zalgo da Qualsiasi Testo</h2>
-      <p>Questo è l'unico grande generatore di testo zalgo con un decoder unzalgo integrato. Incolla il testo corrotto nel riquadro <a href="#unzalgo">Decodifica Zalgo</a> qui sopra: rimuove ogni segno Unicode combinato e restituisce all'istante il testo originale e leggibile – senza bisogno di un tool separato per "rimuovere" lo zalgo.</p>
+      <p>La maggior parte dei generatori di zalgo non sa invertire il proprio risultato. Degli otto verificati il 5 settembre 2026, solo Zalgo.io offre un pulitore accanto al generatore; questa pagina pure, con un <strong>decoder unzalgo</strong> integrato. Incolla il testo corrotto nel riquadro <a href="#unzalgo">Decodifica Zalgo</a> qui sopra: rimuove ogni segno Unicode combinato e restituisce all’istante il testo originale leggibile. Anche una pila di cascata thai (un segno tonale ripetuto) sparisce, mentre il testo thai normale resta com’è.</p>
       <p>Usalo per leggere un messaggio maledetto che qualcuno ti ha inviato, per ripulire un testo prima di citarlo, per recuperare qualcosa che hai corrotto troppo o – se moderi un server Discord o un forum – per vedere cosa dice davvero uno username o un messaggio zalgo prima di agire. Poiché lo zalgo è solo caratteri di base più segni combinati, la decodifica non comporta perdita di dati: il testo originale è sempre recuperabile. Per la spiegazione completa (e come i moderatori filtrano automaticamente lo zalgo), vedi la guida (in inglese) su <a href="/answers/how-to-remove-zalgo-text/">come rimuovere il testo zalgo</a>.</p>
     </section>
 
@@ -405,7 +439,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Guglie',
     variantRoots:            'Radici',
     variantStrike:           'Barrato',
-    variantTinyStack:        'Mini lettere'
+    variantTinyStack:        'Mini lettere',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Cascata thai',
+    controlCascade:          'Cascata thai',
+    tooltipCascade:          'Un segno tonale thai ripetuto molte volte su una lettera portante. A seconda dell’app e del font appare come una colonna alta, una diagonale, oppure viene tagliato.',
+    cascadeDepth:            'Profondità',
+    tooltipCascadeDepth:     'Quante volte si ripete il segno (10 = corto, 150 = il picco completo visto su internet)',
+    cascadePlacement:        'Posizione',
+    cascadePrefix:           'Prima del testo',
+    cascadeSuffix:           'Dopo il testo',
+    cascadeEach:             'Ogni carattere',
+    cascadeMark:             'Segno',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Portante',
+    cascadeAnchorThai:       'Lettera thai',
+    cascadeAnchorText:       'Il tuo testo',
+    cascadeNote:             'Direzione e altezza cambiano in base ad app e font. Ogni ripetizione conta come un carattere, gli screen reader le leggono una per una, e alcune piattaforme tagliano o rifiutano la pila.',
+    cascadeCopyLabel:        'Copia la cascata thai',
+    cascadeOutputLabel:      'Cascata thai per: {text}',
+    presetExtreme:           'Estremo',
+    tooltipAmplitudeExtreme: 'Modalità Estremo: fino a 100 segni impilati per carattere. I testi lunghi diventano pesantissimi e quasi tutte le app li tagliano.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

@@ -3296,12 +3296,40 @@ carries a repeated Thai mark, and a check that finds none cannot tell "the
 cascade decodes" from "nothing tested it". Verified: with the card removed the
 gate exits 1 naming the page; with it present, 73 cards decode.
 
-**The mode is opt-in per page** (`data-cascade` on `#zalgoControlPanel`, EN
-only today). A locale page without the attribute renders no cascade controls,
-ignores `?cascade=1`, and still decodes cascade text, so nothing shows in
-English on a translated page until its `zalgoI18n` block carries the strings.
-The embed widget carries its own sliced copy of the classic engine and does
-not have the cascade.
+**The mode is opt-in per page** (`data-cascade` on `#zalgoControlPanel`). A
+page without the attribute renders no cascade controls, ignores `?cascade=1`,
+and still decodes cascade text, so nothing can show in English on a translated
+page whose `zalgoI18n` block lacks the strings. All twelve pages opted in on
+2026-09-05 with their own strings, at the register each page already used
+(`fr` stays *vous*, `ru` stays *вы*, the rest informal), each with its own
+generated cascade card. The embed widget carries a ported prefix-only
+`generateCascade()` beside its ported classic engine.
+
+**Extreme is the same rule applied the other way (added 2026-09-05).** The
+issue said not to widen the amplitude slider to 150, and the user then asked
+for an "Extreme Zalgo" that is classic marks with a far larger budget. It is a
+*mode*, not a wider default: the `Extreme` preset (opt-in via `data-extreme`)
+lifts the slider's range to `AMPLITUDE_EXTREME` (1..100, default 50); every
+other preset returns it to `AMPLITUDE_CLASSIC` (1..20), and `clampAmplitude()`
+reads the mode, so an old `?amp=500` link now yields 20 marks per letter, not
+500. Same pools, same `pickUnique()`, same decoder: at 100 a letter carries 55
+above, 2 through and 35 below, and `test:zalgo-engine` asserts exactly that.
+Measured in headless Chromium: 500 characters at amplitude 100 (37,484 code
+units) generate and render in under a second. Every preset click pushes a
+`zalgo_preset` dataLayer event (`zalgo_mode`: classic, extreme or cascade),
+the same shape as `header.js`'s `cta_click`, so the modes have an adoption
+number to read at their 30-day review instead of an impression.
+
+**A comparison table is a Check surface (added 2026-09-05).** The EN page and
+its eleven siblings carry a dated capability table against eight generators
+whose live pages were fetched that day (LingoJam, Zalgo.io,
+TextGlitchGenerator, FontB, PrettyText, Piliapp, Convertxt, Nepeta); zalgo.org
+and Namecheap blocked the fetch and are named as unscored rather than guessed.
+It replaced the sentence "the only major zalgo generator with a built-in
+unzalgo decoder", which was false on all twelve pages: Zalgo.io ships a
+cleaner beside its generator. The table's dated line enrols it in the 90-day
+re-check sweep the tone standard requires for every dated claim; re-verify
+against the live pages, never by memory.
 
 ---
 

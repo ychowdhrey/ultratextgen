@@ -35,7 +35,8 @@ const END = '/* @zalgo-engine:end */';
 const EXPORTS = [
   'MARKS_UP', 'MARKS_MID', 'MARKS_DOWN', 'CHAR_TYPE_MAP', 'generateZalgo',
   'CASCADE_MARKS', 'CASCADE_DEFAULT_MARK', 'CASCADE_ANCHOR', 'CASCADE_DEPTH',
-  'CASCADE_PLACEMENTS', 'CASCADE_ANCHORS', 'generateCascade', 'decodeZalgo'
+  'CASCADE_PLACEMENTS', 'CASCADE_ANCHORS', 'generateCascade', 'decodeZalgo',
+  'AMPLITUDE_CLASSIC', 'AMPLITUDE_EXTREME', 'clampAmplitude'
 ];
 
 function loadZalgoEngine(file) {

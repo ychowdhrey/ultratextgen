@@ -217,7 +217,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   },
   "description": "Generate creepy glitch text (Zalgo) using Unicode combining marks. One-click presets, full control over characters, position, shape, frequency, and amplitude, a Thai Cascade mode that stacks one Thai tone mark up to 150 times for the viral side spike, a platform character-limit checker for Discord, X and Instagram, and a built-in unzalgo decoder that removes zalgo from any text.",
   "featureList": [
-    "One-click intensity presets (Subtle to HE COMES)",
+    "One-click intensity presets (Subtle to HE COMES, plus Extreme at up to 100 marks per letter)",
     "Separate control of marks above, through, and below each letter",
     "Density shapes: uniform, slope, wave, pyramid, so corruption spreads across a sentence",
     "Thai Cascade preset: one Thai tone mark repeated 10 to 150 times on one carrier letter, the viral side-spike effect",
@@ -258,7 +258,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="app">
       <div class="zalgo-page-header">
         <h1 class="hero-headline">Glitch Text Generator: Create Creepy, Cursed Zalgo Text</h1>
-        <p>Type your text below, then pick a preset: Subtle, Classic, Cursed, full H̸E̶ ̷C̵O̸M̷E̸S̶ chaos, Tiny Stack, or the Thai Cascade side spike from the viral screenshots. Fine-tune character type, position, shape, frequency and amplitude, or the cascade’s depth and placement. The “Will it fit?” checker shows whether the result survives Discord, X and Instagram limits, and the built-in unzalgo decoder turns corrupted text back into clean text.</p>
+        <p>Type your text below, then pick a preset: Subtle, Classic, Cursed, full H̸E̶ ̷C̵O̸M̷E̸S̶ chaos, Tiny Stack, Extreme (up to 100 marks a letter), or the Thai Cascade side spike from the viral screenshots. Fine-tune character type, position, shape, frequency and amplitude, or the cascade’s depth and placement. The “Will it fit?” checker shows whether the result survives Discord, X and Instagram limits, and the built-in unzalgo decoder turns corrupted text back into clean text.</p>
       </div>
 
       <!-- Text Input -->
@@ -276,7 +276,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel" data-cascade="thai"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -305,14 +305,45 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Position</strong> controls <em>where</em> marks attach: above, below, through the middle, or a combination. "Up & Down" gives the classic zalgo look with spires and roots but no strikethrough.</p>
       <p><strong>Shape</strong> controls how mark density <em>varies across your text</em>. Uniform applies even density everywhere. Slope Up starts clean and builds chaos. Wave oscillates. Pyramid peaks in the middle. Each shape creates a different visual rhythm.</p>
       <p><strong>Frequency</strong> is the probability that any given character receives marks at all. At 50%, roughly half your characters stay clean, which gives a "corruption spreading" look. At 100%, every character is affected.</p>
-      <p><strong>Amplitude</strong> is how many marks stack on each affected character. At 1, it's a subtle accent. At 20, it's maximum visual chaos.</p>
+      <p><strong>Amplitude</strong> is how many marks stack on each affected character. At 1 it is a subtle accent, at 20 it is maximum classic chaos. The <strong>Extreme</strong> preset raises the budget to 100 marks per letter: the same marks and the same engine, so the decoder still reverses it, but most apps clip it at the line.</p>
       <p><strong>Combining marks vs. "double stack" text:</strong> The same Unicode marks behind zalgo also power the "double stack" or Le&#869;ge&#867;n&#875;d look, where a small letter sits on top of each character. That is zalgo with Characters set to <em>Letters</em>, Position <em>Up</em>, and Amplitude <em>1</em>. For clean, readable top-to-bottom stacking instead of layered marks, use the <a href="https://ultratextgen.com/usecase/vertical-text/">Vertical &amp; Stacked Text Generator</a>.</p>
 
       <h3 id="thai-cascade">Classic Zalgo vs. the Thai cascade</h3>
-      <p>The tall spike running across the screen in viral screenshots is not zalgo turned up to maximum. It is one <strong>Thai tone mark</strong> (Mai Tho, U+0E49, by default) repeated up to 150 times on one carrier letter, the Thai consonant ก. Classic zalgo scatters dozens of <em>different</em> marks around <em>every</em> letter; the cascade stacks the <em>same</em> mark on <em>one</em>.</p>
+      <p>The tall spike running across the screen in viral screenshots is not zalgo turned up to maximum, and it is not the Extreme preset either. It is one <strong>Thai tone mark</strong> (Mai Tho, U+0E49, by default) repeated up to 150 times on one carrier letter, the Thai consonant ก. Classic zalgo scatters dozens of <em>different</em> marks around <em>every</em> letter; the cascade stacks the <em>same</em> mark on <em>one</em>.</p>
       <p>Pick the <strong>Thai Cascade</strong> preset and the spike sits beside your text, which stays readable. <em>Every character</em> placement puts a stack on each letter instead, and <em>Your text</em> as the carrier hangs it off your first or last letter.</p>
       <p>The same characters render differently by app: some draw a tall diagonal, some a straight column, some clip it at the line height. The shape is the renderer’s, not the tool’s. Every repeat counts as one character, so the default 80-mark spike is 82 characters with its space: too long for a 32-character Discord nickname, and nearly a third of a 280-character post on X.</p>
       <p>The decoder below treats a repeated Thai mark as a stack and leaves single marks alone, so ordinary Thai words come back untouched.</p>
+
+      <h3 id="compare">What other zalgo generators can and cannot do</h3>
+      <p>Most zalgo generators control one thing: how much corruption is added. This page also controls which marks are used, where they attach, and how the density changes across your text. That is why it has five control groups instead of one slider.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>UltraTextGen</th>
+              <th>LingoJam</th>
+              <th>Zalgo.io</th>
+              <th>TextGlitchGenerator</th>
+              <th>Five others checked</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Intensity control</td><td>Yes, 1 to 20, up to 100 in Extreme</td><td>Yes, one slider</td><td>Yes, 1 to 5</td><td>Yes, 1 to 10</td><td>4 of 5</td></tr>
+            <tr><td>Marks above, through and below chosen separately</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>1 of 5</td></tr>
+            <tr><td>Choice of mark family (bars, letters, symbols, noise)</td><td>Yes</td><td>No</td><td>No</td><td>10 named styles</td><td>0 of 5</td></tr>
+            <tr><td>Frequency separate from intensity</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>0 of 5</td></tr>
+            <tr><td>Shape across the text (slope, wave, pyramid, steps)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>0 of 5</td></tr>
+            <tr><td>One-click presets</td><td>7</td><td>No</td><td>4</td><td>10</td><td>3 of 5</td></tr>
+            <tr><td>Regenerate for a new variation</td><td>Yes</td><td>No</td><td>No, same result each time</td><td>No</td><td>1 of 5</td></tr>
+            <tr><td>Decoder (unzalgo) beside the generator</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>0 of 5</td></tr>
+            <tr><td>Will-it-fit check against platform limits</td><td>Yes, 4 limits, live</td><td>No</td><td>No</td><td>Guidance table only</td><td>0 of 5</td></tr>
+            <tr><td>Share exact settings by link</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>0 of 5</td></tr>
+            <tr><td>Thai cascade (one mark repeated 10 to 150 times)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>0 of 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Checked September 5, 2026 on each generator's live page. The five others are FontB, PrettyText, Piliapp, Convertxt and Nepeta, the 2009-style original. Zalgo.org and Namecheap block automated checks and are not scored.</p>
     </section>
 
 
@@ -355,7 +386,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo: Remove Zalgo From Any Text</h2>
-      <p>This is the only major zalgo generator with a built-in <strong>unzalgo decoder</strong>. Paste corrupted text into the <a href="#unzalgo">Decode Zalgo box</a> above and it strips every Unicode combining mark, returning the original readable text instantly. No separate "zalgo remover" tool needed. A Thai cascade stack (one tone mark repeated) comes out too, and normal Thai text stays as it is.</p>
+      <p>Most zalgo generators cannot reverse their own output. Of the eight checked on September 5, 2026, only Zalgo.io ships a cleaner beside its generator; this page does too, as a built-in <strong>unzalgo decoder</strong>. Paste corrupted text into the <a href="#unzalgo">Decode Zalgo box</a> above and it strips every Unicode combining mark, returning the original readable text instantly. No separate "zalgo remover" tool needed. A Thai cascade stack (one tone mark repeated) comes out too, and normal Thai text stays as it is.</p>
       <p>Use it to read a cursed message someone sent you, clean up text before quoting it, recover something you over-corrupted, or, if you moderate a Discord server or forum, to see what a zalgo username or message actually says before acting on it. Because zalgo is just base characters plus combining marks, decoding is lossless: the original text is always recoverable. For the full explanation (and how moderators auto-filter zalgo), see <a href="/answers/how-to-remove-zalgo-text/">how to remove zalgo text</a>.</p>
     </section>
 
