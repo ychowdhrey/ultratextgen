@@ -732,7 +732,12 @@ const decorations = window.UTG_DECORATIONS
 
     // Combining-mark-heavy text (zalgo) needs tall lines and head/footroom so
     // the stacks don't collide with the frame; everything else sits tighter.
-    const marky = /[\u0300-\u036f\u0483-\u0489\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/.test(text);
+    // A Thai cascade (the zalgo page's Thai Cascade mode: one tone mark
+    // U+0E48..U+0E4B repeated on one carrier) is the tallest thing the site
+    // makes and is not in the classic blocks. It is matched as a REPEAT, so
+    // ordinary Thai text (one tone mark per consonant) keeps the tight lines.
+    const marky = /[\u0300-\u036f\u0483-\u0489\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/.test(text) ||
+      /([\u0e48-\u0e4b])\1/.test(text);
     const lineFactor = marky ? 2.6 : 1.35;
     const family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif';
     const maxW = SIZE - PAD * 2;

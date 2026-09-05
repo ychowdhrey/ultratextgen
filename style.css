@@ -2411,6 +2411,18 @@ button.cta-btn { border: 0; cursor: pointer; }
   margin: 0 auto;
   padding: 20px 16px 12px;
 }
+/* Zalgo embed, Thai Cascade preset: the stack paints far above its line box,
+   so the output card clips it and gets headroom. Copy still copies the full
+   string; only the preview is clipped. */
+.embed-wrapper #zalgoOutputCard.is-cascade {
+  overflow: hidden;
+  contain: paint;
+}
+.embed-wrapper #zalgoOutputCard.is-cascade .style-preview {
+  padding-top: 120px;
+  line-height: 1.6;
+}
+
 .embed-wrapper .hero-card {
   padding: 24px 20px;
   box-shadow: none;

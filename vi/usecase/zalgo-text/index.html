@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Hình dạng</strong> kiểm soát cách mật độ ký tự <em>thay đổi trong văn bản</em>. Đồng đều áp dụng mật độ đồng đều ở mọi nơi. Dốc lên bắt đầu sạch và tăng dần hỗn loạn. Sóng dao động. Kim tự tháp đỉnh ở giữa.</p>
       <p><strong>Tần suất</strong> là xác suất một ký tự nhất định nhận được dấu. Ở 50%, khoảng một nửa ký tự của bạn vẫn sạch. Ở 100%, mỗi ký tự đều bị ảnh hưởng.</p>
       <p><strong>Biên độ</strong> là số dấu xếp chồng trên mỗi ký tự bị ảnh hưởng. Ở 1, đó là dấu nhẹ nhàng. Ở 20, đó là hỗn loạn hình ảnh tối đa.</p>
+
+      <h3 id="thai-cascade">Zalgo cổ điển và thác Thái</h3>
+      <p>Cột cao chạy ngang màn hình trong các ảnh chụp viral không phải zalgo vặn hết cỡ, cũng không phải chế độ Cực đại. Đó là một <strong>dấu thanh tiếng Thái</strong> duy nhất (mặc định là Mai Tho, U+0E49) lặp lại tới 150 lần trên một chữ cái mang dấu, phụ âm Thái ก. Zalgo cổ điển rải hàng chục dấu <em>khác nhau</em> quanh <em>mọi</em> chữ; thác Thái xếp <em>cùng một</em> dấu lên <em>một</em> chữ.</p>
+      <p>Chọn chế độ <strong>Thác Thái</strong>, cột dấu sẽ đứng cạnh chữ của bạn và chữ vẫn đọc được. Vị trí <em>Mỗi ký tự</em> đặt một cột lên từng chữ, còn <em>Chữ của bạn</em> làm chữ mang dấu sẽ treo cột vào chữ đầu hoặc chữ cuối.</p>
+      <p>Cùng một chuỗi ký tự nhưng mỗi ứng dụng hiển thị khác nhau: nơi vẽ đường chéo cao, nơi vẽ cột thẳng, nơi cắt ở chiều cao dòng. Hình dạng do trình hiển thị quyết định, không phải công cụ. Mỗi lần lặp tính là một ký tự, nên cột mặc định 80 dấu chiếm 82 ký tự kể cả dấu cách: quá dài cho biệt danh Discord 32 ký tự, và gần một phần ba bài đăng 280 ký tự trên X.</p>
+      <p>Bộ giải mã bên dưới coi dấu Thái lặp lại là một chuỗi và giữ nguyên dấu đơn, nên từ tiếng Thái bình thường quay về nguyên vẹn.</p>
+
+      <h3 id="compare">Các trình tạo zalgo khác làm được gì và không làm được gì</h3>
+      <p>Hầu hết trình tạo zalgo chỉ điều khiển một thứ: thêm bao nhiêu độ lỗi. Trang này còn điều khiển dùng dấu nào, dấu bám vào đâu, và mật độ thay đổi ra sao dọc theo chữ của bạn. Vì vậy trang có năm nhóm điều khiển thay vì một thanh trượt.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Tính năng</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Năm trang khác đã kiểm tra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Điều khiển cường độ</td><td>Có, 1 đến 20, tới 100 ở Cực đại</td><td>Có, một thanh trượt</td><td>Có, 1 đến 5</td><td>Có, 1 đến 10</td><td>4 trên 5</td></tr>
+            <tr><td>Chọn riêng dấu trên, giữa và dưới</td><td>Có</td><td>Không</td><td>Có</td><td>Không</td><td>1 trên 5</td></tr>
+            <tr><td>Chọn họ dấu (gạch, chữ, ký hiệu, nhiễu)</td><td>Có</td><td>Không</td><td>Không</td><td>10 kiểu có tên</td><td>0 trên 5</td></tr>
+            <tr><td>Tần suất tách khỏi cường độ</td><td>Có</td><td>Không</td><td>Không</td><td>Không</td><td>0 trên 5</td></tr>
+            <tr><td>Hình dạng dọc theo chữ (dốc, sóng, kim tự tháp, bậc thang)</td><td>Có</td><td>Không</td><td>Không</td><td>Không</td><td>0 trên 5</td></tr>
+            <tr><td>Cài đặt sẵn một chạm</td><td>7</td><td>Không</td><td>4</td><td>10</td><td>3 trên 5</td></tr>
+            <tr><td>Tạo lại để có biến thể mới</td><td>Có</td><td>Không</td><td>Không, lần nào cũng cùng kết quả</td><td>Không</td><td>1 trên 5</td></tr>
+            <tr><td>Bộ giải mã (unzalgo) ngay cạnh trình tạo</td><td>Có</td><td>Không</td><td>Có</td><td>Không</td><td>0 trên 5</td></tr>
+            <tr><td>Kiểm tra giới hạn ký tự theo nền tảng</td><td>Có, 4 giới hạn, trực tiếp</td><td>Không</td><td>Không</td><td>Chỉ có bảng hướng dẫn</td><td>0 trên 5</td></tr>
+            <tr><td>Chia sẻ đúng cài đặt bằng liên kết</td><td>Có</td><td>Không</td><td>Không</td><td>Không</td><td>0 trên 5</td></tr>
+            <tr><td>Thác Thái (một dấu lặp 10 đến 150 lần)</td><td>Có</td><td>Không</td><td>Không</td><td>Không</td><td>0 trên 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Kiểm tra ngày 5 tháng 9 năm 2026 trên trang thật của từng trình tạo. Năm trang khác là FontB, PrettyText, Piliapp, Convertxt và Nepeta, bản gốc kiểu 2009. Zalgo.org và Namecheap chặn kiểm tra tự động nên không được chấm.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">c̸̟͈͌̈̉ḩ̶͉́͗̚ữ̸̯̣̓̈͘ l̴̪̓̚͞ͅỗ̵͚͙͂̀̕i̶̘͉̊̉͞</span>
         <span class="zx-footer"><span class="zx-label">chữ lỗi</span><button class="zx-copy" type="button">Sao chép</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Sao chép thác Thái: thác nước">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ thác nước</span>
+        <span class="zx-footer"><span class="zx-label">thác nước</span><button class="zx-copy" type="button">Sao chép</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Gỡ Zalgo Khỏi Mọi Đoạn Chữ</h2>
-      <p>Đây là trình tạo zalgo lớn duy nhất có sẵn <strong>bộ giải mã unzalgo</strong>. Dán đoạn chữ bị hỏng vào ô <a href="#unzalgo">Giải Mã Zalgo</a> ở trên: nó gỡ sạch mọi ký tự Unicode kết hợp và trả lại ngay đoạn chữ gốc dễ đọc — không cần thêm công cụ "xóa zalgo" nào khác.</p>
+      <p>Hầu hết trình tạo zalgo không đảo ngược được chính kết quả của mình. Trong tám trang kiểm tra ngày 5 tháng 9 năm 2026, chỉ Zalgo.io có bộ làm sạch ngay cạnh trình tạo; trang này cũng có, với <strong>bộ giải mã unzalgo</strong> tích hợp sẵn. Dán đoạn chữ bị hỏng vào ô <a href="#unzalgo">Giải Mã Zalgo</a> ở trên: nó gỡ sạch mọi ký tự Unicode kết hợp và trả lại ngay đoạn chữ gốc dễ đọc. Chuỗi thác Thái (một dấu thanh lặp lại) cũng được gỡ, còn chữ Thái bình thường vẫn giữ nguyên.</p>
       <p>Dùng nó để đọc một tin nhắn bị nguyền ai đó gửi cho bạn, làm sạch một đoạn chữ trước khi trích dẫn, cứu lại thứ bạn đã lỡ làm hỏng quá tay, hoặc — nếu bạn quản trị một máy chủ Discord hay một diễn đàn — xem một username hoặc một tin nhắn zalgo thật sự viết gì trước khi xử lý. Vì zalgo chỉ là ký tự gốc cộng thêm ký tự kết hợp, việc giải mã không làm mất dữ liệu: đoạn chữ ban đầu luôn lấy lại được. Giải thích đầy đủ (và cách các mod tự động lọc zalgo) có trong bài <a href="/answers/how-to-remove-zalgo-text/">cách xóa chữ zalgo</a> (tiếng Anh).</p>
     </section>
 
@@ -427,7 +461,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Tháp nhọn',
     variantRoots:            'Rễ',
     variantStrike:           'Gạch ngang',
-    variantTinyStack:        'Chữ mini'
+    variantTinyStack:        'Chữ mini',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Thác Thái',
+    controlCascade:          'Thác Thái',
+    tooltipCascade:          'Một dấu thanh tiếng Thái lặp lại nhiều lần trên một chữ cái mang dấu. Tùy ứng dụng và phông chữ, nó hiện thành cột cao, đường chéo, hoặc bị cắt bớt.',
+    cascadeDepth:            'Độ sâu',
+    tooltipCascadeDepth:     'Số lần lặp dấu (10 = ngắn, 150 = cột cao như trên mạng)',
+    cascadePlacement:        'Vị trí',
+    cascadePrefix:           'Trước chữ',
+    cascadeSuffix:           'Sau chữ',
+    cascadeEach:             'Mỗi ký tự',
+    cascadeMark:             'Dấu',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Chữ mang dấu',
+    cascadeAnchorThai:       'Chữ Thái',
+    cascadeAnchorText:       'Chữ của bạn',
+    cascadeNote:             'Hướng và chiều cao thay đổi theo ứng dụng và phông chữ. Mỗi lần lặp tính là một ký tự, trình đọc màn hình đọc từng dấu một, và một số nền tảng cắt bớt hoặc từ chối chuỗi này.',
+    cascadeCopyLabel:        'Sao chép thác Thái',
+    cascadeOutputLabel:      'Thác Thái cho: {text}',
+    presetExtreme:           'Cực đại',
+    tooltipAmplitudeExtreme: 'Chế độ Cực đại: xếp tới 100 dấu trên mỗi ký tự. Chữ dài sẽ rất nặng và hầu hết ứng dụng sẽ cắt bớt.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>
