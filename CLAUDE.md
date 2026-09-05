@@ -644,8 +644,16 @@ Scripts are loaded in a strict order in every HTML page:
 <script src="/header.js"></script>      <!-- 1. Inject shared nav -->
 <script src="/styles.js"></script>      <!-- 2. Register font styles -->
 <script src="/renderer.js"></script>    <!-- 3. Rendering engine -->
-<script src="/script.js" defer></script><!-- 4. UI logic -->
+<script src="/js/share/share-core.js" defer></script><!-- 4. Share core -->
+<script src="/js/saved/saved-items.js" defer></script><!-- 5. Saved store -->
+<script src="/script.js" defer></script><!-- 6. UI logic -->
 ```
+
+Order matters between 4/5 and 6: every one of these is `defer`, so they run in
+document order, and `script.js`'s init calls `UTG.sharedStyleId()`. Put the
+modules after it and the generator throws and renders zero cards.
+`npm run inject:share-save-tags` places them correctly;
+`npm run check:share-save-tags` gates that every copy-hosting page has them.
 
 ### Module Descriptions
 
@@ -722,6 +730,9 @@ Scripts are loaded in a strict order in every HTML page:
 - Real-time rendering as user types
 - Style filtering/search (client-side)
 - localStorage for recent selections and dark mode preference
+- **Does NOT own Share or the saved store any more** (2026-09-05). Both moved
+  to `js/share/share-core.js` and `js/saved/saved-items.js`; this file calls
+  into them and must load *after* both.
 - Query param `?q=text` for shareable URLs
 - **Owns the flair layer.** `applyDecoration(text)` applies the selected
   decoration: `mode: "wrap"` (default `prefix+text+suffix`), `"space"` (fill
@@ -731,6 +742,25 @@ Scripts are loaded in a strict order in every HTML page:
 - **Decoration tabs**: static `data-deco-tab` buttons read `decorations[key]`.
   `window.UTG_DECORATIONS` is **merged over** the defaults (`Object.assign`), so
   a page adds one tab without redeclaring the rest.
+
+#### `js/share/share-core.js`
+- **The site's one Share / Share-as-image implementation**, lifted out of
+  `script.js` on 2026-09-05 so any surface offering Copy can offer Share
+  without loading the 120KB generator. Owns `buildShareUrl`,
+  `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button
+  factories, the `?style=` reader and both delegated click handlers, all on
+  the existing `window.UltraTextGen` namespace.
+- Dependency-free. A caller that owns its own translations passes `label`
+  and `imageTitle`; otherwise it reads `window.UTG_I18N`.
+- **Must load before `script.js`** — see "Copy, Save, Share, Share-image".
+
+#### `js/saved/saved-items.js`
+- The typed per-device saved store shared by every surface:
+  `{type, value, label, href, t}`, `type` in `style | symbol | collection`,
+  identity on `(type, value)`. Replaces `script.js`'s style-name-only array
+  and migrates it.
+- `UltraTextGen.saved.{all,has,count,toggle,clear}`, fires
+  `utg:savedchange`. Tested by `npm run test:saved-items`.
 
 #### `js/flair/flair-engine.js`
 - Shared, reusable decoration **data** (the transform lives in `script.js`).
@@ -2592,6 +2622,146 @@ Do not trust a future edit to any of this without repeating them.
 
 ---
 
+---
+
+## Copy, Save, Share, Share-image — one action set, every copy surface (added 2026-09-05)
+
+**Copy was a site-wide capability and the three actions that follow it were a
+single-page feature.** 37 JS modules in this repo write to the clipboard.
+Exactly one — `script.js` — offered Save, Share or Share-as-image, and it loads
+on 540 of 4,639 pages. The 3,605 `library/` and `symbol/` pages, which carry
+**34% of every copy on the site** and convert *better* per pageview than the
+generator (0.34 copies/pageview against `usecase/`'s 0.30, GA4 2026-08-08 →
+09-04), had none of the three.
+
+**It was a data model, not an oversight, and that distinction is the useful
+part.** `SAVED_KEY` held a flat array of style *names* and `toggleSaved()`
+bailed on `!stylesRegistry[name]`, so a symbol, a kaomoji or a collection could
+not be represented at all. Meanwhile the share layer had been written to be
+shared — its own comment promised *"Exposed on the shared UltraTextGen namespace
+so specialized generators can reuse the same mechanism later without rebuilding
+it"* — and had **zero callers outside `script.js`** for months, because the only
+way to take it up was to load the whole 120KB file headless, which is what
+`usecase/zalgo-text` and the other specialized generators actually do.
+
+### The three pieces
+
+| module | owns | notes |
+|---|---|---|
+| **`js/share/share-core.js`** | `buildShareUrl`, `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button factories, the `?style=` reader, both delegated click handlers | Lifted **verbatim** out of `script.js`. It is now the only definition; `script.js` calls into it. Dependency-free. |
+| **`js/saved/saved-items.js`** | the typed store: `{type, value, label, href, t}` with `type` in `style \| symbol \| collection` | Identity is `(type, value)`, so one glyph saved under two locale labels is one record. |
+| **`symbol-explorer.js`** | a Save star per tile, Share + Share-image per section, the saved-symbols strip, the incoming `?symbol=` deep link | Attached **at runtime** to markup the generators already emit. |
+
+**Nothing here edits a page's content**, and that was a design constraint rather
+than a happy accident: the tiles are static HTML written into 3,605 pages by the
+generators, so adding per-tile buttons to the markup would have been a 3,605-page
+content diff against the parity, locale-translation and em-dash gates, for a
+feature that progressive enhancement delivers for free. The only HTML change is
+two `<script>` tags per page, which `content-significance.js` strips, so no
+`lastmod` moved.
+
+### Script order is load-bearing, and got this wrong twice
+
+Both bugs were found by driving a real browser, not by reading the code, and
+neither would have shown up in a syntax check or a diff review.
+
+1. **`script.js` is `defer`, so it runs before anything injected after it.** The
+   first injector put the modules after the host tag; `script.js`'s init then
+   called `UTG.sharedStyleId()` before `share-core.js` had defined it, threw,
+   and **the generator rendered zero result cards**. The modules are
+   dependency-free, so `inject-share-save-tags.js` now places them *first*.
+2. **`readyState === "loading"` is already false inside a deferred script.**
+   `symbol-explorer.js` keyed its init on it, so init ran during its own
+   execution — before the modules that follow it in document order — and every
+   attach silently no-opped. **Zero Save buttons, no error.** It keys on
+   `"complete"` now, which makes the wiring independent of tag order.
+
+The shared shape: *a check that reports nothing is indistinguishable from a
+check that passes*, in its runtime form. A save star that never attaches looks
+exactly like a page that has none.
+
+### Strings are harvested, never authored
+
+The 112 new locale strings (`save`, `saved`, `share`, `shareImage`, `clearAll`,
+`copyLabel` × 28 locales) were **copied out of `locales/*.json`**, where they
+already shipped translated for the generator's own Save and Share. Nothing was
+translated by hand.
+
+**These pages deliberately do not load `i18n.js`.** Doing so would cost a ~30KB
+locale-JSON fetch on the site's highest-traffic lane to read five short strings.
+So `symbol-explorer.js` keeps its own 28-locale table, and
+**`scripts/sync-explorer-strings.js`** copies from `locales/*.json` into it
+(`--write`) and fails when the two drift (no flag). `share-core.js` accepts a
+host-supplied `label`/`imageTitle` for the same reason — without it a Korean
+library page renders Korean prose with an English **Share** button, which is the
+exact defect `i18n.js`'s own comment records for the shadow locales, and which
+the browser run caught.
+
+The 10 locale JSONs whose `copyButtons` block existed only inside `script.js`'s
+`UI_STRINGS` were backfilled from it in the same change, removing a duplicate
+source of truth that `script.js`'s own comment had flagged.
+
+### Tooling
+
+- **`npm run check:share-save-tags`** — whole-site, **gating**, same call as
+  `check:funding-choices` and `check:zalgo-decodes`: no backlog to be
+  permanently red against. Whole-site rather than diff-scoped on purpose — the
+  shape it catches is a page generator emitting a pre-split template, so a *new*
+  page arrives untagged from a file the PR may not touch.
+- **`npm run inject:share-save-tags`** — the idempotent repair pass, mirroring
+  `inject-funding-choices-tag.js`.
+- **`npm run check:explorer-strings`** / **`sync:explorer-strings`** — the
+  harvest and its gate.
+- **`npm run test:saved-items`** — 44 assertions over the store. It exists for
+  the reason `js/counter/counterRules.test.js` does: a saved symbol that fails
+  to persist, or a migration that drops a returning user's saved fonts, is
+  invisible until someone comes back a week later.
+- `scripts/lib/share-save-tags.js` is shared by the injector and the gate, so
+  they cannot disagree about what a correctly-tagged page is.
+
+### Migration off `utg_saved_styles`
+
+The old flat array is read and folded in as `type: "style"` records, **and kept
+in step on every write**. Keeping it (rather than deleting it after one read)
+means a user who lands on a page still serving a cached pre-split `script.js`
+keeps their saved styles instead of watching them vanish; the cost is one
+duplicated key.
+
+### Analytics: `save_style` kept its name on purpose
+
+The event names are unchanged so the existing GA4 reports and their history stay
+continuous. What is new is **`item_type`** on save/unsave and
+**`share_surface`** + **`share_item_type`** on `share_text`. Without those the
+rollout could not be read: `share_text` previously recorded only its method
+(`native`/`link_copy`/`image`), which cannot answer *which surface did sharing
+actually work on*, and that is the whole question this change exists to settle.
+`style_name` is still set for styles, so nothing downstream breaks.
+
+### Verified against deliberately broken inputs before being trusted
+
+Per this file's own rule. The tag gate **exits 1** on the pre-injection tree
+naming all 3,846 pages and **0** after; the store tests **exit 1** on a broken
+identity check (7 failures) and on a dropped legacy migration (5), and 0 when
+restored. The browser run covers 39 assertions across an English library page, a
+`?symbol=` deep link, a Korean page's labels, and the generator still rendering,
+saving and sharing after the extraction.
+
+**Note for anyone repeating that:** reading a probe's result through `| head`
+reports *head's* exit status, which showed a false `EXIT=0` for both store
+probes on the first attempt. It is the same pipefail trap this file documents
+twice elsewhere.
+
+### Not done here
+
+The other 34 clipboard-writing modules (the emoji tool, `huruf`, vertical text,
+ASCII, the counters, the name generators) still have Copy alone. They were left
+because they are **~6% of the ungated copy volume between them** — the
+library/symbol lane was 93.6% of it — not because they should keep it that way.
+Now that the core is a standalone module, each is a few lines: build the
+buttons, stamp `surface`, pass a localized `label`.
+
+---
+
 ## Editorial Footprint Risk — measuring how templated our own prose reads
 
 Every gate above measures structure, language completeness, schema or assets.
@@ -3456,6 +3626,25 @@ Standing protocol:
   `glob("??")` silently skipped 73 of its pages for as long as that line existed.
   Read the canonical list from `data/locale_qualification_tiers.json` (Python) or
   `scripts/lib/locale-parent-registry.js`'s `LOCALES` (Node).
+- Do not ship a page that renders a copy target without the shared Save/Share
+  modules, and do not add a second implementation of either. Copy, Save, Share
+  and Share-image are one action set: `js/share/share-core.js` and
+  `js/saved/saved-items.js` are their only definitions, and a page that offers
+  Copy loads both. See "Copy, Save, Share, Share-image" above.
+  `npm run check:share-save-tags` gates this site-wide;
+  `npm run inject:share-save-tags` closes any gap in one idempotent run.
+- Do not place the share/save modules after `script.js`, and do not key a
+  runtime init on `document.readyState === "loading"`. Both are false-negative
+  traps specific to `defer`: deferred scripts run in document order and all of
+  them run before `DOMContentLoaded`, so the first breaks the generator outright
+  and the second silently attaches nothing. Both shipped and were caught only by
+  driving a browser.
+- Do not hand-author a UI string for `symbol-explorer.js`'s locale table. Every
+  one already ships translated in `locales/<lang>.json` — run
+  `npm run sync:explorer-strings`, which `npm run check:explorer-strings` gates.
+  And do not "fix" those pages' English buttons by adding `i18n.js` to them: it
+  costs a ~30KB locale fetch on the site's highest-traffic lane to read five
+  strings, which is why the table exists.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
