@@ -69,6 +69,7 @@
     "test:generator-parity": "python3 scripts/lib/generator_parity.test.py",
     "test:spec-sentence-reuse": "python3 scripts/check-spec-sentence-reuse.test.py",
     "test:header-analytics": "node header.test.js",
+    "test:i18n-faq-schema": "node i18n.test.js",
     "test:cta-routing": "python3 scripts/lib/cta_routing.test.py",
     "route:cta-cards": "python3 scripts/route-cta-cards.py",
     "refresh:events": "python3 scripts/refresh-event-pages.py",

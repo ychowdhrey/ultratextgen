@@ -72,9 +72,30 @@
     updateFAQSchema(t);
   }
 
+  // Selector for the elements that RENDER this locale JSON's FAQ. Exported on
+  // the module's own scope so i18n.test.js asserts against the real string.
+  var FAQ_RENDER_SELECTOR = '[data-i18n^="faq."], [data-i18n-html^="faq."]';
+
   function updateFAQSchema(t) {
     var faqCats = t.faq && t.faq.categories;
     if (!faqCats) return;
+
+    // The FAQ in a locale JSON is the HOMEPAGE's FAQ, and only a homepage
+    // renders it: of the 26 pages in this tree that bind `faq.*`, all 26 are a
+    // homepage. Every other page carrying this script has its own FAQ, in its
+    // own markup, with its own JSON-LD — so rewriting that page's schema from
+    // the homepage JSON replaces its questions with ones it never renders.
+    //
+    // That is invisible-content FAQ markup: it forfeits the rich result and is
+    // the shape Google's guidance treats as spammy structured markup (see
+    // CLAUDE.md, "FAQ schema must mirror visible page content").
+    //
+    // It was live. On the 11 locale zalgo pages the overlap between the page's
+    // own 6 questions and the homepage's 21 was ZERO — and invisible to
+    // check-faq-schema.js, which reads the static HTML while the substitution
+    // happens in the renderer. Hence a guard rather than a comment: only touch
+    // the schema on a page that actually renders this FAQ.
+    if (!document.querySelector(FAQ_RENDER_SELECTOR)) return;
 
     var scripts = document.querySelectorAll('script[type="application/ld+json"]');
     scripts.forEach(function (script) {

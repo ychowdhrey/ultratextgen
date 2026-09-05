@@ -3178,6 +3178,52 @@ JSON-LD left stale (0 → 16 tokens). Both exit 1; `audit-faq-schema.js` and
 status, which is the exact pipefail trap this file documents twice, and it
 reported a false EXIT=0 on the first attempt here.
 
+### The schema a gate reads is not always the schema Google renders (added 2026-09-05)
+
+Everything above compares a page's **static** JSON-LD against its **static**
+visible FAQ. `i18n.js` rewrites the JSON-LD **in the browser**, from the locale
+JSON it fetches — so a page can pass `check:faq-schema` on disk and still serve
+Google a different FAQ entirely. Fourth instance of *a check that reports
+nothing is indistinguishable from a check that passes*, from a fourth cause:
+the gate was looking at the right file at the wrong moment.
+
+**The FAQ in a locale JSON is the HOMEPAGE's FAQ.** Verified: of the 26 pages
+in this tree that bind `data-i18n="faq.*"`, **all 26 are a homepage**.
+`updateFAQSchema()` nonetheless ran on every page that loaded `i18n.js` and
+carried a `FAQPage` block — replacing that page's own questions with the
+homepage's, which the page never renders. That is invisible-content FAQ markup
+by this section's own definition.
+
+**It was live on 11 pages.** Every locale build of `usecase/zalgo-text` loads
+`i18n.js`, ships its own 6-question FAQ, and had it swapped at runtime for the
+homepage's 21. On `fr/usecase/zalgo-text` the overlap between the two sets was
+**0 of 6**, and the page carries **zero** `data-i18n` hooks — so nothing
+visible changed and only the structured data moved, which is exactly why
+nobody saw it.
+
+**The fix is a guard, not a comment:** `updateFAQSchema()` returns early unless
+the page actually renders this FAQ (`[data-i18n^="faq."]`). The blast radius
+was about to grow 35×, not shrink — register item #74 proposes adding
+`i18n.js` to the ~390 locale pages that lack it, **393 of which carry a
+`FAQPage` block**. Both of that item's candidate fixes would have multiplied
+this bug from 11 pages to ~394. Fix it first; it is a prerequisite, not a
+side quest.
+
+**`npm run test:i18n-faq-schema`** (`i18n.test.js`) gates it, wired into
+`validate.yml`. It slices `updateFAQSchema()` out of the live `i18n.js` and
+drives it against a DOM stub — the same technique `scripts/lib/zalgo-engine.js`
+uses, and for the same reason. Its last case asserts the **site-level
+invariant the guard rests on**: that no non-homepage binds `faq.*`. If one ever
+does, the guard's premise has changed and the test says so by name rather than
+letting the page silently take the homepage's schema.
+
+Verified per this file's own rule against four differently-shaped broken
+inputs: the guard deleted (the real regression), the guard widened to a
+selector that always matches, the guard inverted, and the slice markers
+renamed — each exits 1; restored, 7 pass. And verified that CI *gates* on it,
+not merely runs it: `run-ci-gates.py --only i18n_faq_schema_tests` returns 1
+with the guard removed and 0 with it restored.
+
 ---
 
 ## Testing

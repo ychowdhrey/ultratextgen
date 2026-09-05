@@ -546,6 +546,24 @@ jobs:
         continue-on-error: true
         run: npm run test:header-analytics | tee header-analytics-tests.log
 
+      # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
+      # the locale JSON it fetches, and the FAQ in a locale JSON is the
+      # HOMEPAGE's FAQ. Only a homepage renders it, so on any other page that
+      # rewrite substitutes questions the page never shows — invisible-content
+      # FAQ markup, which forfeits the rich result and is the shape Google
+      # treats as spammy structured markup.
+      #
+      # It was live on 11 locale zalgo pages (overlap between the page's own 6
+      # questions and the homepage's 21: ZERO), and INVISIBLE to
+      # steps.faq_schema, which reads the static HTML while the substitution
+      # happens in the renderer. So this is a different failure mode than that
+      # gate covers, not a duplicate of it. The test slices updateFAQSchema()
+      # out of the live i18n.js and drives it against a DOM stub.
+      - name: Run i18n FAQ-schema guard tests
+        id: i18n_faq_schema_tests
+        continue-on-error: true
+        run: npm run test:i18n-faq-schema | tee i18n-faq-schema-tests.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -760,6 +778,11 @@ jobs:
             cat header-analytics-tests.log
             echo '```'
             echo ""
+            echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
+            echo '```'
+            cat i18n-faq-schema-tests.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -827,6 +850,7 @@ jobs:
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
+          steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |
