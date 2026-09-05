@@ -924,7 +924,11 @@
         text: joined,
         input: joined,
         name: t("saved", "Saved"),
-        url: pageUrl(),
+        // One saved symbol shares as that symbol's own deep link, so the
+        // recipient lands with it highlighted; a set shares as the page.
+        // This is also what makes ?symbol= a link anything actually produces
+        // rather than a reader with no writer.
+        url: items.length === 1 ? symbolShareUrl(items[0].value) : pageUrl(),
         surface: "library_saved",
         itemType: "collection",
         // These pages carry no window.UTG_I18N, so the share core's own

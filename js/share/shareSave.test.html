@@ -157,10 +157,19 @@ window.addEventListener("load", function () {
   check("strip share is labelled by its own surface",
     stripShare && stripShare.dataset.shareSurface === "library_saved",
     stripShare && stripShare.dataset.shareSurface);
+  // A single saved symbol shares as its own deep link, which is what the
+  // ?symbol= reader on page load consumes. Without this the reader had no
+  // writer anywhere on the site.
+  check("one saved symbol shares as a ?symbol= deep link",
+    stripShare && /[?&]symbol=%E2%98%85/.test(stripShare.dataset.shareUrl || ""),
+    stripShare && stripShare.dataset.shareUrl);
 
   /* ---- a second save, then unsave ---- */
   stars[2].click();
   check("two saved", UTG.saved.count("symbol") === 2);
+  check("a set shares as the page, not as one symbol's deep link",
+    ($("#symbolSavedStrip .share-result-btn").dataset.shareUrl || "").indexOf("symbol=") === -1,
+    $("#symbolSavedStrip .share-result-btn").dataset.shareUrl);
   check("strip shows both", $$("#symbolSavedStrip .symbol-tile").length === 2);
   check("strip shares the whole set",
     $("#symbolSavedStrip .share-result-btn").dataset.shareText.indexOf("✦") !== -1);
