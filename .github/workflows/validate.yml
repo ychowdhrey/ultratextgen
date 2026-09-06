@@ -268,6 +268,16 @@ jobs:
       # is written prose, not a mechanical fix. It GATES rather than informs:
       # for the pages a PR actually touches there is nothing to be permanently
       # red against, and fix-source-attribution.js closes the mechanical half.
+      # The link-rot AUDIT itself never runs in CI and never gates — it reaches
+      # ~50 third-party hosts (see .github/workflows/link-rot.yml). What gates
+      # is its reasoning: how a fetch result is classified and when a streak
+      # counts as rot. That has no network dependency and no backlog, so a
+      # failure here is always a real regression.
+      - name: Run link-health tests
+        id: link_health_tests
+        continue-on-error: true
+        run: npm run test:link-health | tee link-health-tests.log
+
       - name: Run source attribution check
         id: source_attribution
         continue-on-error: true
@@ -653,6 +663,11 @@ jobs:
             cat updates-verification.log
             echo '```'
             echo ""
+            echo "### Link-health tests — \`${{ steps.link_health_tests.outcome }}\`"
+            echo '```'
+            cat link-health-tests.log
+            echo '```'
+            echo ""
             echo "### Source attribution check — \`${{ steps.source_attribution.outcome }}\`"
             echo '```'
             cat source-attribution.log
@@ -790,6 +805,7 @@ jobs:
           steps.new_symbol_peer_links.outcome == 'failure' ||
           steps.parity.outcome == 'failure' ||
           steps.locale_mesh.outcome == 'failure' ||
+          steps.link_health_tests.outcome == 'failure' ||
           steps.source_attribution.outcome == 'failure' ||
           steps.locale_translation.outcome == 'failure' ||
           steps.locale_parent_gap.outcome == 'failure' ||

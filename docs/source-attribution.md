@@ -279,6 +279,68 @@ baseline had accumulated against `main`.
 * **Whether a claim needs a source at all.** That is editorial judgment and
   stays with the tone-of-voice standard's certainty rules (§2.1, §3). This
   standard governs how a source is *presented* once a page relies on one.
-* **Link rot.** Nothing here re-checks that a cited URL still resolves. The
-  `updates/` verification pill covers whether the *fact* was re-checked; a
-  dead-link sweep is a separate instrument that does not exist yet.
+* **Whether a claim is still true.** The `updates/` verification pill covers
+  that. Link rot — whether the evidence still *loads* — is covered, separately,
+  by §10 below.
+
+---
+
+## 10. Link rot — does the evidence still load? (added 2026-09-06)
+
+§9 used to record this as the standard's one uncovered gap. It is covered now,
+by `npm run audit:link-rot`, and the shape of the answer is the interesting
+part.
+
+**A failed fetch is not a dead link, and treating it as one would have done
+real damage on the first run.** Measured while building this:
+
+| URL | via curl | via node |
+|---|---|---|
+| `cbo.gov.om/omrsymbol` | exit 60, TLS "unable to get local issuer" | **HTTP 503** |
+| a host that does not exist | exit 56, CONNECT tunnel 502 | DNS failure |
+
+Both report `http_code: 000` through curl. One of them is the Central Bank of
+Oman's own page for the currency sign this site has a whole `/updates/` entry
+about. A checker equating "not 200" with rot would have declared a live primary
+source dead and invited someone to delete a correct citation.
+
+So results are classified by **cause**, and only two causes are even candidates:
+
+| class | meaning | counts toward rot |
+|---|---|---|
+| `ok` | 2xx | no |
+| `redirect` | resolves, but the citation has genuinely moved | no — but update the citation |
+| `blocked` | 401/403/405/406/408/429/503/999 — WAF, bot protection, rate limit | **never** |
+| `gone` | 404/410 | yes |
+| `unreachable` | DNS, TLS, timeout, reset — environment-sensitive | yes |
+| `server` | other 5xx | yes |
+
+**And one bad fetch is still not rot.** A URL is reported as rotted only after
+**3 consecutive failing runs** recorded in `data/source_link_health.json`. That
+threshold is not caution for its own sake — it caught a live false positive
+immediately. `en.help.roblox.com/.../203313410` returned **404** on the first
+run and **403 on the next three**: Roblox's help centre bot-protects
+inconsistently. At a threshold of one, the standard's own tooling would have
+reported a working Terms-of-Service citation as dead.
+
+`lastGood` moves only on an actual success, so a URL blocked for a year can
+never read as recently healthy. Five of the 50 cited URLs have never returned
+2xx to an unauthenticated bot (both `cbo.gov.om` pages, the Roblox help
+article, a Minecraft **sign-in** page, and `timeoutdubai.com`) — all plausible
+blocks, none rot.
+
+**Baseline at introduction:** 50 distinct URLs across 28 hosts — 45 `ok`,
+5 `blocked`, 0 `gone`, **0 rotted**.
+
+### Why this one never gates
+
+It reaches the public internet, hosts that rate-limit, and whatever egress the
+runner has. A gate on that is red for reasons no PR author can fix — the same
+call `CLAUDE.md` records for `check:images`. **There is deliberately no
+`check-link-rot.js`.** `.github/workflows/link-rot.yml` runs it on
+`workflow_dispatch` only; putting it on a monthly cron is a one-line change
+and a decision, not a default, because it would be this repo's second
+scheduled auto-committing workflow.
+
+Resource links are checked too: a dead "install this free font" link is just as
+broken for the reader, even though it is not evidence and owes no Sources block.

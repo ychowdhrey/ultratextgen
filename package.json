@@ -34,6 +34,8 @@
     "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
     "check:numeric-parity": "node scripts/check-numeric-parity.js",
+    "audit:link-rot": "node scripts/audit-link-rot.js",
+    "test:link-health": "node scripts/lib/link-health.test.js",
     "audit:source-attribution": "node scripts/audit-source-attribution.js",
     "check:source-attribution": "node scripts/check-source-attribution.js",
     "fix:source-attribution": "node scripts/fix-source-attribution.js",
