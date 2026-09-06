@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Forma</strong> controla como a densidade das marcas <em>varia ao longo do texto</em>. Uniforme aplica densidade uniforme em todo lugar. Rampa ascendente começa limpo e aumenta o caos. Onda oscila. Pirâmide atinge o pico no meio.</p>
       <p><strong>Frequência</strong> é a probabilidade de que um dado caractere receba marcas. A 50%, aproximadamente metade dos seus caracteres permanece limpa. A 100%, cada caractere é afetado.</p>
       <p><strong>Amplitude</strong> é quantas marcas se empilham em cada caractere afetado. Em 1, é um acento sutil. Em 20, é o caos visual máximo.</p>
+
+      <h3 id="thai-cascade">Zalgo clássico e a cascata tailandesa</h3>
+      <p>O pico alto que atravessa a tela nas capturas virais não é zalgo no máximo, e também não é a predefinição Extremo. É uma única <strong>marca tonal tailandesa</strong> (Mai Tho, U+0E49, por padrão) repetida até 150 vezes sobre uma letra de apoio, a consoante tailandesa ก. O zalgo clássico espalha dezenas de marcas <em>diferentes</em> ao redor de <em>cada</em> letra; a cascata empilha a <em>mesma</em> marca sobre <em>uma</em>.</p>
+      <p>Escolha a predefinição <strong>Cascata tailandesa</strong> e o pico fica ao lado do seu texto, que continua legível. A posição <em>Cada caractere</em> põe uma pilha em cada letra, e <em>Seu texto</em> como apoio pendura a pilha na sua primeira ou última letra.</p>
+      <p>Os mesmos caracteres aparecem de forma diferente em cada app: uns desenham uma diagonal alta, outros uma coluna reta, outros cortam na altura da linha. A forma é do renderizador, não da ferramenta. Cada repetição conta como um caractere, então o pico padrão de 80 marcas ocupa 82 caracteres com o espaço: longo demais para um apelido do Discord de 32 caracteres, e quase um terço de um post de 280 caracteres no X.</p>
+      <p>O decodificador abaixo trata uma marca tailandesa repetida como pilha e deixa marcas isoladas em paz, então palavras tailandesas comuns voltam intactas.</p>
+
+      <h3 id="compare">O que outros geradores de zalgo fazem e não fazem</h3>
+      <p>A maioria dos geradores de zalgo controla uma coisa só: quanta corrupção é adicionada. Esta página também controla quais marcas são usadas, onde elas se prendem e como a densidade muda ao longo do seu texto. Por isso ela tem cinco grupos de controles em vez de um único controle deslizante.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Recurso</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Outros cinco verificados</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Controle de intensidade</td><td>Sim, de 1 a 20, até 100 no Extremo</td><td>Sim, um controle deslizante</td><td>Sim, de 1 a 5</td><td>Sim, de 1 a 10</td><td>4 de 5</td></tr>
+            <tr><td>Marcas acima, no meio e abaixo escolhidas separadamente</td><td>Sim</td><td>Não</td><td>Sim</td><td>Não</td><td>1 de 5</td></tr>
+            <tr><td>Escolha da família de marcas (barras, letras, símbolos, ruído)</td><td>Sim</td><td>Não</td><td>Não</td><td>10 estilos nomeados</td><td>0 de 5</td></tr>
+            <tr><td>Frequência separada da intensidade</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Forma ao longo do texto (rampa, onda, pirâmide, degraus)</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Predefinições de um clique</td><td>7</td><td>Não</td><td>4</td><td>10</td><td>3 de 5</td></tr>
+            <tr><td>Regenerar para uma nova variação</td><td>Sim</td><td>Não</td><td>Não, mesmo resultado sempre</td><td>Não</td><td>1 de 5</td></tr>
+            <tr><td>Decodificador (unzalgo) ao lado do gerador</td><td>Sim</td><td>Não</td><td>Sim</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Verificação de limites por plataforma</td><td>Sim, 4 limites, ao vivo</td><td>Não</td><td>Não</td><td>Só tabela de orientação</td><td>0 de 5</td></tr>
+            <tr><td>Compartilhar as configurações exatas por link</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
+            <tr><td>Cascata tailandesa (uma marca repetida de 10 a 150 vezes)</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td><td>0 de 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Verificado em 5 de setembro de 2026 na página real de cada gerador. Os outros cinco são FontB, PrettyText, Piliapp, Convertxt e Nepeta, o original de 2009. Zalgo.org e Namecheap bloqueiam verificações automáticas e não foram pontuados.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">g̷͉̰̿͌̓ľ̵͓̜͊́í̶̮̺̄̾t̷͇̝̓͘͝c̴͎̜̐͌͡ĥ̵̼̟̽͆</span>
         <span class="zx-footer"><span class="zx-label">glitch</span><button class="zx-copy" type="button">Copiar</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Copiar cascata tailandesa: cascata">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ cascata</span>
+        <span class="zx-footer"><span class="zx-label">cascata</span><button class="zx-copy" type="button">Copiar</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Remova o Zalgo de Qualquer Texto</h2>
-      <p>Este é o único gerador de zalgo importante com um <strong>decodificador unzalgo</strong> integrado. Cole o texto corrompido na caixa <a href="#unzalgo">Decodificar Zalgo</a> acima: ela remove todas as marcas Unicode combinadas e devolve na hora o texto original legível — sem precisar de uma ferramenta separada para "remover o zalgo".</p>
+      <p>A maioria dos geradores de zalgo não consegue reverter o próprio resultado. Dos oito verificados em 5 de setembro de 2026, só o Zalgo.io traz um limpador ao lado do gerador; esta página também, com um <strong>decodificador unzalgo</strong> integrado. Cole o texto corrompido na caixa <a href="#unzalgo">Decodificar Zalgo</a> acima: ela remove todas as marcas Unicode combinadas e devolve na hora o texto original legível. Uma pilha de cascata tailandesa (uma marca tonal repetida) também some, e o texto tailandês normal fica como está.</p>
       <p>Use-o para ler uma mensagem amaldiçoada que alguém lhe enviou, limpar um texto antes de citá-lo, recuperar algo que você corrompeu demais ou — se modera um servidor do Discord ou um fórum — para ver o que um nome de usuário ou uma mensagem em zalgo realmente diz antes de agir. Como o zalgo é apenas caracteres base mais marcas combinadas, a decodificação não perde nada: o texto original é sempre recuperável. Para a explicação completa (e como os moderadores filtram o zalgo automaticamente), veja o guia (em inglês) sobre <a href="/answers/how-to-remove-zalgo-text/">como remover o texto zalgo</a>.</p>
     </section>
 
@@ -405,7 +439,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Torres',
     variantRoots:            'Raízes',
     variantStrike:           'Riscado',
-    variantTinyStack:        'Letras mini'
+    variantTinyStack:        'Letras mini',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Cascata tailandesa',
+    controlCascade:          'Cascata tailandesa',
+    tooltipCascade:          'Uma marca tonal tailandesa repetida muitas vezes sobre uma letra de apoio. Dependendo do app e da fonte, aparece como uma coluna alta, uma diagonal, ou é cortada.',
+    cascadeDepth:            'Profundidade',
+    tooltipCascadeDepth:     'Quantas vezes a marca se repete (10 = curta, 150 = o pico completo da internet)',
+    cascadePlacement:        'Posição',
+    cascadePrefix:           'Antes do texto',
+    cascadeSuffix:           'Depois do texto',
+    cascadeEach:             'Cada caractere',
+    cascadeMark:             'Marca',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Apoio',
+    cascadeAnchorThai:       'Letra tailandesa',
+    cascadeAnchorText:       'Seu texto',
+    cascadeNote:             'Direção e altura variam conforme o app e a fonte. Cada repetição conta como um caractere, leitores de tela anunciam cada uma delas, e algumas plataformas cortam ou rejeitam a pilha.',
+    cascadeCopyLabel:        'Copiar a cascata tailandesa',
+    cascadeOutputLabel:      'Cascata tailandesa para: {text}',
+    presetExtreme:           'Extremo',
+    tooltipAmplitudeExtreme: 'Modo Extremo: até 100 marcas empilhadas por caractere. Textos longos ficam pesados e a maioria dos apps corta o resultado.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

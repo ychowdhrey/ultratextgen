@@ -57,7 +57,7 @@
   <div class="embed-wrapper">
     <div class="hero-card">
       <h1 class="hero-headline">Zalgo Text Generator</h1>
-      <p class="hero-tagline">Cursed glitch text — pick an intensity, type, copy.</p>
+      <p class="hero-tagline">Cursed glitch text: pick an intensity, type, copy.</p>
 
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="Type something cursed..." maxlength="60">hello</textarea>
@@ -66,13 +66,14 @@
 
       <!-- Intensity Presets -->
       <div class="helper-section">
-        <div class="helper-section-title">Intensity — click to choose</div>
+        <div class="helper-section-title">Intensity: click to choose</div>
         <div class="decoration-tabs" id="presetTabs">
           <button class="decoration-tab" data-preset="subtle" type="button">Subtle</button>
           <button class="decoration-tab active" data-preset="classic" type="button">Classic</button>
           <button class="decoration-tab" data-preset="cursed" type="button">Cursed</button>
           <button class="decoration-tab" data-preset="chaos" type="button">HE COMES</button>
           <button class="decoration-tab" data-preset="tinystack" type="button">Tiny Stack</button>
+          <button class="decoration-tab" data-preset="cascade" type="button">Thai Cascade</button>
         </div>
       </div>
 
@@ -263,6 +264,18 @@
       }).join('');
     }
 
+    // ── Thai Cascade (ported from zalgo-text.js generateCascade(), prefix
+    //    placement on the Thai carrier only; the full page has the controls) ──
+    // One Thai tone mark (MAI THO, U+0E49) repeated on KO KAI (U+0E01): the
+    // viral "side spike". Deterministic, so the card is stable per keystroke.
+    const CASCADE_ANCHOR = '\u0E01';
+    const CASCADE_MARK   = '\u0E49';
+    const CASCADE_DEPTH  = 60;
+    function generateCascade(text) {
+      const spike = CASCADE_ANCHOR + CASCADE_MARK.repeat(CASCADE_DEPTH);
+      return text ? spike + ' ' + text : spike;
+    }
+
     // ── Presets (intensity picker) ──────────────────────────────────
     const PRESETS = [
       { id: 'subtle',    label: 'Subtle',
@@ -274,7 +287,8 @@
       { id: 'chaos',     label: 'HE COMES',
         settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: 18 } },
       { id: 'tinystack', label: 'Tiny Stack',
-        settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } }
+        settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } },
+      { id: 'cascade',   label: 'Thai Cascade', cascade: true }
     ];
 
     // ── Output Variants (More Flavors grid) ─────────────────────────
@@ -296,6 +310,7 @@
     const charCount = document.getElementById('charCount');
     const presetTabs = document.querySelectorAll('#presetTabs [data-preset]');
     const zalgoOutput = document.getElementById('zalgoOutput');
+    const zalgoOutputCard = document.getElementById('zalgoOutputCard');
     const zalgoOutputName = document.getElementById('zalgoOutputName');
     const zalgoCopyBtn = document.getElementById('zalgoCopyBtn');
     const variationsGrid = document.getElementById('variationsGrid');
@@ -328,11 +343,15 @@
       const text = mainInput.value.trim();
       if (!text) {
         zalgoOutput.classList.add('placeholder');
+        zalgoOutputCard.classList.remove('is-cascade');
         zalgoOutput.textContent = 'Type something above to curse it';
         return;
       }
       zalgoOutput.classList.remove('placeholder');
-      zalgoOutput.textContent = generateZalgo(text, preset.settings);
+      // The cascade paints far above its line; the card clips it (CSS) and
+      // the copy button still copies the full string.
+      zalgoOutputCard.classList.toggle('is-cascade', !!preset.cascade);
+      zalgoOutput.textContent = preset.cascade ? generateCascade(text) : generateZalgo(text, preset.settings);
     }
 
     // ── Variations grid ─────────────────────────────────────────────

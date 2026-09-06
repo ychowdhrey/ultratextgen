@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Kształt</strong> kontroluje, jak gęstość znaków <em>zmienia się w tekście</em>. Jednolity stosuje równomierną gęstość wszędzie. Nachylenie w górę zaczyna się czysto i buduje chaos. Fala oscyluje. Piramida osiąga szczyt w środku.</p>
       <p><strong>Częstotliwość</strong> to prawdopodobieństwo, że dany znak otrzyma oznaczenia. Przy 50% około połowa znaków pozostaje czysta. Przy 100% każdy znak jest dotknięty.</p>
       <p><strong>Amplituda</strong> to liczba znaków ułożonych na każdym dotkniętym znaku. Przy 1 to subtelny akcent. Przy 20 to maksymalny wizualny chaos.</p>
+
+      <h3 id="thai-cascade">Klasyczne zalgo a kaskada tajska</h3>
+      <p>Wysoki słup, który w viralowych zrzutach ekranu przecina cały ekran, to nie zalgo podkręcone do maksimum ani preset Ekstremalny. To jeden <strong>tajski znak tonalny</strong> (domyślnie Mai Tho, U+0E49) powtórzony do 150 razy na jednej literze nośnej, tajskiej spółgłosce ก. Klasyczne zalgo rozsypuje dziesiątki <em>różnych</em> znaków wokół <em>każdej</em> litery; kaskada układa <em>ten sam</em> znak na <em>jednej</em>.</p>
+      <p>Wybierz preset <strong>Kaskada tajska</strong>, a słup stanie obok twojego tekstu, który pozostaje czytelny. Położenie <em>Każdy znak</em> stawia stos na każdej literze, a <em>Twój tekst</em> jako nośnik zawiesza go na twojej pierwszej lub ostatniej literze.</p>
+      <p>Te same znaki wyglądają inaczej w każdej aplikacji: jedne rysują wysoką ukośną linię, inne prostą kolumnę, jeszcze inne przycinają na wysokości wiersza. Kształt zależy od silnika renderowania, nie od narzędzia. Każde powtórzenie liczy się jako jeden znak, więc domyślny słup z 80 znaków zajmuje 82 znaki ze spacją: za dużo na pseudonim Discorda z 32 znaków i prawie jedna trzecia wpisu z 280 znaków na X.</p>
+      <p>Dekoder poniżej traktuje powtórzony tajski znak jak stos, a pojedyncze znaki zostawia w spokoju, więc zwykłe tajskie słowa wracają nietknięte.</p>
+
+      <h3 id="compare">Co potrafią, a czego nie potrafią inne generatory zalgo</h3>
+      <p>Większość generatorów zalgo steruje jedną rzeczą: ile zniekształceń dodać. Ta strona steruje też tym, jakie znaki są używane, gdzie się doczepiają i jak gęstość zmienia się wzdłuż twojego tekstu. Dlatego ma pięć grup ustawień zamiast jednego suwaka.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Funkcja</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Pięć innych sprawdzonych</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Regulacja intensywności</td><td>Tak, od 1 do 20, do 100 w trybie Ekstremalnym</td><td>Tak, jeden suwak</td><td>Tak, od 1 do 5</td><td>Tak, od 1 do 10</td><td>4 z 5</td></tr>
+            <tr><td>Znaki nad, przez i pod literą wybierane osobno</td><td>Tak</td><td>Nie</td><td>Tak</td><td>Nie</td><td>1 z 5</td></tr>
+            <tr><td>Wybór rodziny znaków (kreski, litery, symbole, szum)</td><td>Tak</td><td>Nie</td><td>Nie</td><td>10 nazwanych stylów</td><td>0 z 5</td></tr>
+            <tr><td>Częstotliwość niezależna od intensywności</td><td>Tak</td><td>Nie</td><td>Nie</td><td>Nie</td><td>0 z 5</td></tr>
+            <tr><td>Kształt wzdłuż tekstu (zbocze, fala, piramida, schody)</td><td>Tak</td><td>Nie</td><td>Nie</td><td>Nie</td><td>0 z 5</td></tr>
+            <tr><td>Presety jednym kliknięciem</td><td>7</td><td>Nie</td><td>4</td><td>10</td><td>3 z 5</td></tr>
+            <tr><td>Generuj ponownie dla nowej wersji</td><td>Tak</td><td>Nie</td><td>Nie, zawsze ten sam wynik</td><td>Nie</td><td>1 z 5</td></tr>
+            <tr><td>Dekoder (unzalgo) obok generatora</td><td>Tak</td><td>Nie</td><td>Tak</td><td>Nie</td><td>0 z 5</td></tr>
+            <tr><td>Sprawdzanie limitów platform</td><td>Tak, 4 limity, na żywo</td><td>Nie</td><td>Nie</td><td>Tylko tabela orientacyjna</td><td>0 z 5</td></tr>
+            <tr><td>Udostępnianie dokładnych ustawień linkiem</td><td>Tak</td><td>Nie</td><td>Nie</td><td>Nie</td><td>0 z 5</td></tr>
+            <tr><td>Kaskada tajska (jeden znak powtórzony od 10 do 150 razy)</td><td>Tak</td><td>Nie</td><td>Nie</td><td>Nie</td><td>0 z 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Sprawdzono 5 września 2026 na działającej stronie każdego generatora. Pozostałe pięć to FontB, PrettyText, Piliapp, Convertxt i Nepeta, oryginał z 2009 roku. Zalgo.org i Namecheap blokują automatyczne sprawdzanie i nie zostały ocenione.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">m̶͙̗͗̉̿̕ͅr̷̝̗̦͊̀̌͞o̴̡͎͖͐̏̀̚k̵͙̤̀̓̂͠ͅ</span>
         <span class="zx-footer"><span class="zx-label">mrok</span><button class="zx-copy" type="button">Kopiuj</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Kopiuj kaskadę tajską: kaskada">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ kaskada</span>
+        <span class="zx-footer"><span class="zx-label">kaskada</span><button class="zx-copy" type="button">Kopiuj</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Usuń Zalgo z Dowolnego Tekstu</h2>
-      <p>To jedyny duży generator zalgo z wbudowanym <strong>dekoderem unzalgo</strong>. Wklej uszkodzony tekst w pole <a href="#unzalgo">Dekoduj Zalgo</a> powyżej — usunie każdy łączący znak Unicode i natychmiast zwróci oryginalny, czytelny tekst, bez potrzeby osobnego narzędzia do „usuwania zalgo”.</p>
+      <p>Większość generatorów zalgo nie potrafi odwrócić własnego wyniku. Z ośmiu sprawdzonych 5 września 2026 tylko Zalgo.io ma czyścik obok generatora; ta strona też, w postaci wbudowanego <strong>dekodera unzalgo</strong>. Wklej uszkodzony tekst w pole <a href="#unzalgo">Dekoduj Zalgo</a> powyżej: usunie każdy łączący znak Unicode i natychmiast zwróci oryginalny, czytelny tekst. Stos kaskady tajskiej (jeden powtórzony znak tonalny) też znika, a zwykły tajski tekst zostaje bez zmian.</p>
       <p>Użyj go, aby przeczytać przeklętą wiadomość, którą ktoś ci wysłał, oczyścić tekst przed zacytowaniem, odzyskać coś, co zniekształciłeś za mocno — albo, jeśli moderujesz serwer Discord czy forum, sprawdzić, co naprawdę mówi zalgowa nazwa użytkownika lub wiadomość, zanim zareagujesz. Ponieważ zalgo to po prostu znaki bazowe plus znaki łączące, dekodowanie jest bezstratne: oryginał zawsze da się odzyskać. Pełne wyjaśnienie (i to, jak moderatorzy automatycznie filtrują zalgo) znajdziesz na stronie (po angielsku) <a href="/answers/how-to-remove-zalgo-text/">jak usunąć tekst zalgo</a>.</p>
     </section>
 
@@ -405,7 +439,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Iglice',
     variantRoots:            'Korzenie',
     variantStrike:           'Przekreślony',
-    variantTinyStack:        'Mini litery'
+    variantTinyStack:        'Mini litery',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Kaskada tajska',
+    controlCascade:          'Kaskada tajska',
+    tooltipCascade:          'Jeden tajski znak tonalny powtórzony wiele razy na jednej literze nośnej. Zależnie od aplikacji i czcionki wygląda jak wysoka kolumna, ukośna linia, albo zostaje przycięty.',
+    cascadeDepth:            'Głębokość',
+    tooltipCascadeDepth:     'Ile razy znak się powtarza (10 = krótko, 150 = pełny internetowy słup)',
+    cascadePlacement:        'Położenie',
+    cascadePrefix:           'Przed tekstem',
+    cascadeSuffix:           'Po tekście',
+    cascadeEach:             'Każdy znak',
+    cascadeMark:             'Znak',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Nośnik',
+    cascadeAnchorThai:       'Tajska litera',
+    cascadeAnchorText:       'Twój tekst',
+    cascadeNote:             'Kierunek i wysokość zależą od aplikacji i czcionki. Każde powtórzenie liczy się jako jeden znak, czytniki ekranu odczytują każde z nich, a niektóre platformy przycinają lub odrzucają taki stos.',
+    cascadeCopyLabel:        'Kopiuj kaskadę tajską',
+    cascadeOutputLabel:      'Kaskada tajska dla: {text}',
+    presetExtreme:           'Ekstremalny',
+    tooltipAmplitudeExtreme: 'Tryb Ekstremalny: do 100 znaków na literę. Długi tekst robi się bardzo ciężki, a większość aplikacji go przycina.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

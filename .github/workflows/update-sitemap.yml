@@ -1,58 +1,52 @@
 name: Update Sitemap
 
 on:
-  # ── PAUSED 2026-08-20, resume on or after 2026-08-27 ──────────────────────
+  # ── RESUMED 2026-09-05, by explicit user direction ────────────────────────
   #
-  # The daily schedule is deliberately commented out, not deleted. Restore it
-  # by uncommenting the two lines below.
+  # The daily schedule below was paused 2026-08-20 and is live again. History
+  # kept rather than deleted, per the repo's record-hygiene rule.
   #
-  # Why: organic search collapsed on 2026-08-16 and the cause is still open.
-  # PR #790 touched all 4,582 pages (it added the footer's ~27 internal links
-  # to every page's HTML), and the significance hash counts visible text and
-  # the internal link set — so the next run would advance <lastmod> on 4,576
-  # of 4,576 URLs and advertise "the entire site changed today" in the middle
-  # of an unresolved incident. Measured, not assumed:
+  # Why it was paused: organic search collapsed on 2026-08-16 with the cause
+  # still open, and PR #790 (the static footer on all 4,582 pages) meant the
+  # next run would advance <lastmod> on 4,576 of 4,576 URLs — advertising "the
+  # entire site changed today" mid-incident. Measured at the time:
   #     lastmod advanced: 4576   lastmod held: 0
   #
-  # That is the exact signal scripts/lib/content-significance.js was written
-  # to prevent — a 15–16 August cosmetic pass bumped 2,533 pages the day
-  # before onset, and "deployment regression" is still a live hypothesis.
-  # The bump here is honest (the links are real), but the signal Google
-  # receives is identical, so it waits.
+  # Why it resumes now — three conditions, all met:
   #
-  # Pausing costs very little: Crawl Stats for the 90 days to 2026-08-15 show
-  # 84% of crawling is Refresh, ~877 refresh HTML fetches/day against ~4,576
-  # pages — a full re-crawl pass roughly every 5 days with no sitemap ping at
-  # all. No new URLs are being added during the pause, so there is nothing
-  # the sitemap needs to announce. (Caveat: that export ends 08-15 and
-  # contains no day of the event window.)
+  #   1. The mass-bump is fixed (see the 2026-09-02 addendum that used to sit
+  #      here). scripts/lib/content-significance.js now ignores the generated
+  #      static footer block and is punctuation-blind and case-folded on
+  #      visible text, title, H1 and meta description; symbols and copy
+  #      payloads stay verbatim. data/sitemap-lastmod-cache.json was
+  #      re-baselined against the last run's tree (df1f93e7f). Measured on
+  #      that tree pair, not assumed:
+  #          old hash: 4576 advance · footer ignored: 3236 · final: 784 advance
+  #      The 784 are pages a reader can genuinely see changed, each dated by
+  #      the newest commit that changed what a reader sees. The signal this
+  #      workflow would now send is honest, so the reason to hold it is gone.
   #
-  # workflow_dispatch is kept so the sitemap can still be regenerated on
-  # demand while the schedule is off.
+  #   2. The pause's own premise expired. Its stated resume date was
+  #      2026-08-27. More importantly the publishing freeze it belonged to was
+  #      lifted site-wide on 2026-08-29 by explicit user direction, so the
+  #      diagnostic control group it was protecting no longer exists — holding
+  #      the sitemap now buys nothing it was meant to buy.
   #
-  # ── Addendum 2026-09-02: the mass-bump above is fixed; the pause is not ──
+  #   3. The pause had an unaccounted cost on the channel that now matters
+  #      most. It throttles sitemap announcements to Bing, Naver and Yandex,
+  #      not just Google — and the 2026-08-28 portfolio decision made Bing a
+  #      primary surface (~4.7x Google's RPM over the measured 7-day window).
+  #      By 2026-09-05 the newest <lastmod> in sitemap.xml was 2026-08-19:
+  #      16 days of real changes unannounced to every engine, including
+  #      everything shipped after the freeze lifted.
   #
-  # Two more site-wide passes landed since: the static footer on every page
-  # (#790) and a template-tier em-dash pass on ~2,800 pages (#840). Under the
-  # old significance hash the next run would still have advanced 4,576 of
-  # 4,576. scripts/lib/content-significance.js now ignores the generated
-  # static footer block and is punctuation-blind and case-folded on visible
-  # text, title, H1 and meta description (symbols and copy payloads stay
-  # verbatim), and data/sitemap-lastmod-cache.json was re-baselined against
-  # the tree of the last run (df1f93e7f) with every lastmod kept. Measured on
-  # that tree pair, not assumed:
-  #     old hash: 4576 advance · footer ignored: 3236 · final hash: 784 advance, 3792 held
-  # The 784 are pages a reader can see changed since 2026-08-20 — translations
-  # landed, sections added, hubs pre-rendered, tone rewrites — and each is now
-  # dated by the newest commit that changed what a reader sees (a commit walk
-  # in update-sitemap.js), not by the mesh or template pass that touched the
-  # file last, so they no longer all report one day.
+  # Note the pause's own cost estimate was Google-only ("Pausing costs very
+  # little" — reasoned from Google Crawl Stats refresh rates). That reasoning
+  # did not cover the other three engines, and is the specific gap condition 3
+  # closes.
   #
-  # Resuming is still the incident's call, not this fix's: uncomment the two
-  # schedule lines when that decision is made. Nothing here un-pauses.
-  #
-  # schedule:
-  #   - cron: '0 0 * * *'  # every day at midnight UTC
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight UTC
   workflow_dispatch:
 
 jobs:

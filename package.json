@@ -36,6 +36,7 @@
     "check:explorer-strings": "node scripts/sync-explorer-strings.js",
     "sync:explorer-strings": "node scripts/sync-explorer-strings.js --write",
     "test:saved-items": "node js/saved/savedItems.test.js",
+    "test:zalgo-engine": "node usecase/zalgo-text/zalgo-text.test.js",
     "audit:numeric-parity": "node scripts/audit-numeric-parity.js",
     "check:numeric-parity": "node scripts/check-numeric-parity.js",
     "audit:source-attribution": "node scripts/audit-source-attribution.js",

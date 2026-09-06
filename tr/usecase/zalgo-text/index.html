@@ -233,7 +233,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </div>
 
       <!-- Control Panel (populated by zalgo-text.js) -->
-      <div id="zalgoControlPanel"></div>
+      <div id="zalgoControlPanel" data-cascade="thai" data-extreme></div>
 
       <!-- Output (populated by zalgo-text.js) -->
       <div id="zalgoOutputSection"></div>
@@ -260,6 +260,36 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p><strong>Şekil</strong>, işaret yoğunluğunun <em>metnin genelinde nasıl değişeceğini</em> kontrol eder. Düzgün, her yerde eşit yoğunluk uygular. Yukarı eğim temiz başlar ve kaosu artırır. Dalga salınım yapar. Piramide ortada zirveye ulaşır.</p>
       <p><strong>Sıklık</strong>, belirli bir karakterin işaret alması olasılığıdır. %50'de karakterlerinizin yaklaşık yarısı temiz kalır. %100'de her karakter etkilenir.</p>
       <p><strong>Genlik</strong>, etkilenen her karaktere yığılan işaret sayısıdır. 1'de ince bir aksandır. 20'de maksimum görsel kaostur.</p>
+
+      <h3 id="thai-cascade">Klasik zalgo ile Tay kaskadı arasındaki fark</h3>
+      <p>Viral ekran görüntülerinde ekranı boydan boya geçen o uzun sivri uç, sonuna kadar açılmış zalgo değil; Aşırı ön ayarı da değil. Tek bir <strong>Tayca ton işaretinin</strong> (varsayılan olarak Mai Tho, U+0E49) tek bir taşıyıcı harfin, yani Tayca ünsüz ก harfinin üstünde 150 kereye kadar tekrarlanması. Klasik zalgo <em>her</em> harfin çevresine onlarca <em>farklı</em> işaret saçar; kaskat ise <em>aynı</em> işareti <em>tek</em> harfe yığar.</p>
+      <p><strong>Tay kaskadı</strong> ön ayarını seç, sivri uç metninin yanında durur ve metnin okunur kalır. <em>Her karaktere</em> konumu bunun yerine her harfe bir yığın koyar; taşıyıcı olarak <em>Kendi metnin</em> seçilirse yığın ilk ya da son harfine asılır.</p>
+      <p>Aynı karakterler her uygulamada farklı görünür: bazıları uzun bir çapraz çizgi, bazıları dümdüz bir sütun çizer, bazıları da satır yüksekliğinde kırpar. Şekli araç değil, görüntüleme motoru belirler. Her tekrar bir karakter sayılır; bu yüzden varsayılan 80 işaretlik sivri uç boşluğuyla birlikte 82 karakter tutar: 32 karakterlik bir Discord takma adı için fazla uzun ve X’teki 280 karakterlik bir gönderinin neredeyse üçte biri.</p>
+      <p>Aşağıdaki çözücü tekrarlanan bir Tay işaretini yığın olarak görür, tek işaretlere dokunmaz; böylece sıradan Tayca kelimeler olduğu gibi geri gelir.</p>
+
+      <h3 id="compare">Diğer zalgo oluşturucular neyi yapabiliyor, neyi yapamıyor</h3>
+      <p>Çoğu zalgo oluşturucu tek bir şeyi kontrol eder: ne kadar bozulma ekleneceğini. Bu sayfa ayrıca hangi işaretlerin kullanılacağını, nereye tutunacaklarını ve yoğunluğun metin boyunca nasıl değişeceğini de kontrol eder. Tek bir kaydırıcı yerine beş kontrol grubu olmasının nedeni bu.</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Özellik</th><th>UltraTextGen</th><th>LingoJam</th><th>Zalgo.io</th><th>TextGlitchGenerator</th><th>Kontrol edilen diğer beşi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Yoğunluk kontrolü</td><td>Evet, 1 ile 20 arası, Aşırı modda 100’e kadar</td><td>Evet, tek kaydırıcı</td><td>Evet, 1 ile 5 arası</td><td>Evet, 1 ile 10 arası</td><td>5’te 4</td></tr>
+            <tr><td>Üst, orta ve alt işaretler ayrı ayrı seçilebilir</td><td>Evet</td><td>Hayır</td><td>Evet</td><td>Hayır</td><td>5’te 1</td></tr>
+            <tr><td>İşaret ailesi seçimi (çizgiler, harfler, semboller, gürültü)</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>10 adlandırılmış stil</td><td>5’te 0</td></tr>
+            <tr><td>Sıklık, yoğunluktan bağımsız</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>Hayır</td><td>5’te 0</td></tr>
+            <tr><td>Metin boyunca şekil (eğim, dalga, piramit, basamak)</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>Hayır</td><td>5’te 0</td></tr>
+            <tr><td>Tek tıkla ön ayarlar</td><td>7</td><td>Hayır</td><td>4</td><td>10</td><td>5’te 3</td></tr>
+            <tr><td>Yeni bir varyasyon için yeniden oluştur</td><td>Evet</td><td>Hayır</td><td>Hayır, her seferinde aynı sonuç</td><td>Hayır</td><td>5’te 1</td></tr>
+            <tr><td>Oluşturucunun yanında çözücü (unzalgo)</td><td>Evet</td><td>Hayır</td><td>Evet</td><td>Hayır</td><td>5’te 0</td></tr>
+            <tr><td>Platform sınırlarına sığar mı kontrolü</td><td>Evet, 4 sınır, canlı</td><td>Hayır</td><td>Hayır</td><td>Yalnızca bilgi tablosu</td><td>5’te 0</td></tr>
+            <tr><td>Tam ayarları bağlantıyla paylaşma</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>Hayır</td><td>5’te 0</td></tr>
+            <tr><td>Tay kaskadı (bir işaret 10 ile 150 kez tekrarlanır)</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>Hayır</td><td>5’te 0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>5 Eylül 2026’da her oluşturucunun canlı sayfasında kontrol edildi. Diğer beşi FontB, PrettyText, Piliapp, Convertxt ve 2009 tarzı orijinal Nepeta. Zalgo.org ve Namecheap otomatik kontrolleri engellediği için puanlanmadı.</p>
     </section>
 
     <!-- Copy & Paste Examples -->
@@ -291,13 +321,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <span class="zx-text">ü̵̻̰̐̆̕r̴̲̖͂̈́͛k̵̙̉̃͂ͅü̵̡̖̂͂͗t̴̨͙͋͊̄ü̶̳̪̉́̍c̷͎̔͊̕͟ü̴̲̆̀͌ͅ</span>
         <span class="zx-footer"><span class="zx-label">ürkütücü</span><button class="zx-copy" type="button">Kopyala</button></span>
       </div>
+      <div class="zx-example zx-example-cascade" role="button" tabindex="0" aria-label="Tay kaskadını kopyala: kaskad">
+        <span class="zx-text">ก้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้ kaskad</span>
+        <span class="zx-footer"><span class="zx-label">kaskad</span><button class="zx-copy" type="button">Kopyala</button></span>
+      </div>
       </div>
     </section>
 
     <!-- Unzalgo / Decoder -->
     <section class="editorial-section" id="unzalgo-guide">
       <h2>Unzalgo — Herhangi Bir Metinden Zalgo'yu Kaldır</h2>
-      <p>Yerleşik bir <strong>unzalgo çözücüsü</strong> olan tek büyük zalgo oluşturucu bu. Bozuk metni yukarıdaki <a href="#unzalgo">Zalgo'yu Çöz</a> kutusuna yapıştır: her Unicode birleştirici işaretini söküp orijinal, okunabilir metni anında geri verir — ayrı bir "zalgo temizleyici" araca gerek kalmaz.</p>
+      <p>Çoğu zalgo oluşturucu kendi çıktısını geri çeviremez. 5 Eylül 2026’da kontrol edilen sekiz oluşturucudan yalnızca Zalgo.io, oluşturucusunun yanında bir temizleyici sunuyor; bu sayfa da yerleşik bir <strong>unzalgo çözücüsüyle</strong> sunuyor. Bozuk metni yukarıdaki <a href="#unzalgo">Zalgo'yu Çöz</a> kutusuna yapıştır: her Unicode birleştirici işaretini söküp orijinal, okunabilir metni anında geri verir. Tay kaskadı yığını (tekrarlanan tek bir ton işareti) da temizlenir, normal Tayca metin ise olduğu gibi kalır.</p>
       <p>Birinin sana gönderdiği lanetli bir mesajı okumak, alıntılamadan önce bir metni temizlemek, fazla bozduğun bir şeyi kurtarmak ya da — bir Discord sunucusu veya forum modere ediyorsan — bir zalgo kullanıcı adının ya da mesajının gerçekte ne dediğini işlem yapmadan önce görmek için kullan. Zalgo yalnızca temel karakterler artı birleştirici işaretlerden oluştuğu için çözme işlemi kayıpsızdır: orijinal metin her zaman geri alınabilir. Tam açıklama (ve moderatörlerin zalgo'yu otomatik olarak nasıl filtrelediği) için <a href="/answers/how-to-remove-zalgo-text/">zalgo metni nasıl kaldırılır</a> rehberine bak (İngilizce).</p>
     </section>
 
@@ -427,7 +461,30 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     variantSpires:           'Kuleler',
     variantRoots:            'Kökler',
     variantStrike:           'Üstü çizili',
-    variantTinyStack:        'Mini harfler'
+    variantTinyStack:        'Mini harfler',
+    // Thai Cascade + Extreme modes (issue #864)
+    presetCascade:           'Tay kaskadı',
+    controlCascade:          'Tay kaskadı',
+    tooltipCascade:          'Tek bir Tayca ton işareti, tek bir taşıyıcı harfin üstünde defalarca tekrarlanır. Uygulamaya ve yazı tipine göre uzun bir sütun ya da çapraz bir çizgi gibi görünür veya kırpılır.',
+    cascadeDepth:            'Yığın derinliği',
+    tooltipCascadeDepth:     'İşaretin kaç kez tekrarlandığı (10 = kısa, 150 = internetteki tam sivri uç)',
+    cascadePlacement:        'Konum',
+    cascadePrefix:           'Metnin önüne',
+    cascadeSuffix:           'Metnin sonuna',
+    cascadeEach:             'Her karaktere',
+    cascadeMark:             'İşaret',
+    cascadeMarkMaiEk:        'Mai Ek',
+    cascadeMarkMaiTho:       'Mai Tho',
+    cascadeMarkMaiTri:       'Mai Tri',
+    cascadeMarkMaiChattawa:  'Mai Chattawa',
+    cascadeAnchor:           'Taşıyıcı',
+    cascadeAnchorThai:       'Tay harfi',
+    cascadeAnchorText:       'Kendi metnin',
+    cascadeNote:             'Yön ve yükseklik uygulamaya ve yazı tipine göre değişir. Her tekrar bir karakter sayılır, ekran okuyucular her birini tek tek okur ve bazı platformlar yığını kırpar ya da reddeder.',
+    cascadeCopyLabel:        'Tay kaskadını kopyala',
+    cascadeOutputLabel:      'Şu metin için Tay kaskadı: {text}',
+    presetExtreme:           'Aşırı',
+    tooltipAmplitudeExtreme: 'Aşırı mod: karakter başına 100 işarete kadar yığın. Uzun metinler çok ağırlaşır ve çoğu uygulama bunları kırpar.'
   };
   </script>
   <script>window.UTG_HEADLESS = true;</script>

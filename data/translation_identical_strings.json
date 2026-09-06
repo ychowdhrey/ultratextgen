@@ -851,6 +851,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Link",
         "reason": "standard German term for a hyperlink (der Link); 'Verknüpfung' exists but is Windows-UI jargon, not what a signature line says",
         "found_on": "de/library/email-symbole/",
@@ -1229,6 +1235,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "de/schriftarten-fuer-snapchat/",
@@ -1347,6 +1359,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "de/guide/discord-namen-sicher-gestalten/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "de/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -2443,6 +2461,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lionel Messi",
         "reason": "footballer, club or national-team proper name, quoted as-is. Note on diacritics: this site renders every player name in ASCII site-wide (33 \"Mbappe\", 29 \"Suarez\", 29 \"Modric\", 39 \"Vinicius\", including in its own URL slugs and on the Portuguese pages), so the unaccented spelling here is the house convention rather than an untranslated English string. Spanish sports media does accent Mbappe and Suarez; whether to change the convention site-wide is an open question, not a translation defect, and \"Victor Osimhen\" is Nigerian and correctly carries no accent in any language.",
         "found_on": "es/library/adivina-el-futbolista-por-emojis/",
@@ -3013,6 +3037,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from es/library/simbolos-matematicos/ itself: the tiles around it are translated (Epsilon → Épsilon; Phi → Fi; Alpha → Alfa), so this one is kept because it genuinely matches.",
         "found_on": "es/library/simbolos-matematicos/",
@@ -3275,6 +3305,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "es/guide/nombre-discord-sin-riesgos/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "es/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -3845,6 +3881,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lion",
         "reason": "French for 🦁 is \"lion\"; ar/es/id/th/tr each differ",
         "found_on": "fr/library/emojis-animaux/",
@@ -4163,6 +4205,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "fr/police-snapchat/",
@@ -4271,10 +4319,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "fr/texte-invisible/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "cascade",
+        "reason": "the French word for a cascade is \"cascade\" (same spelling, same meaning); it is the label of the Thai-cascade example card, which decodes to exactly this word",
+        "found_on": "fr/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "equis",
@@ -4939,6 +4999,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from id/library/simbol-mata-uang/ itself: the tiles around it are translated (French Franc → Franc Prancis; Turkish Lira → Lira Turki; Ruble → Rubel), so this one is kept because it genuinely matches.",
         "found_on": "id/library/simbol-mata-uang/",
@@ -5251,6 +5317,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "id/font-snapchat/",
@@ -5381,6 +5453,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "id/guide/nama-discord-aman/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "id/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zebra",
@@ -5697,6 +5775,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from it/library/simboli-euro/ itself: the tiles around it are translated (French Franc → Franco Francese; Drachma → Dracma; Florin → Fiorino), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-euro/",
@@ -5919,6 +6003,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from it/library/simboli-matematici/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Insieme vuoto; Intersection → Intersezione), so this one is kept because it genuinely matches.",
         "found_on": "it/library/simboli-matematici/",
@@ -6001,6 +6091,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "it/guide/nome-discord-senza-rischi/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "it/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -6683,6 +6779,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lotus",
         "reason": "animal or object name that coincides with the English form in this language. Evidence from nl/library/religieuze-symbolen/ itself: the tiles around it are translated (Flute → Fluit; Diya Lamp → Diya-olielamp; Peacock Feather → Pauwenveer), so this one is kept because it genuinely matches.",
         "found_on": "nl/library/religieuze-symbolen/",
@@ -6881,6 +6983,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "nl/snapchat-lettertype/",
@@ -6959,10 +7067,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Zero Width",
         "reason": "Unicode terminology cited as such — the character names are \"Zero Width Space/Joiner/Non-Joiner\"",
         "found_on": "nl/onzichtbare-tekst/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "cascade",
+        "reason": "the Dutch word for a cascade is \"cascade\" (same spelling, same meaning); it is the label of the Thai-cascade example card, which decodes to exactly this word",
+        "found_on": "nl/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "glitch",
@@ -7365,6 +7485,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Manat",
         "reason": "currency name that coincides with the English form in this language. Evidence from pl/library/symbole-walut/ itself: the tiles around it are translated (Lira → Lir; French Franc → Frank francuski; Florin → Floren), so this one is kept because it genuinely matches.",
         "found_on": "pl/library/symbole-walut/",
@@ -7581,6 +7707,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "pl/czcionki-na-snapchat/",
@@ -7627,6 +7759,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "pl/guide/bezpieczna-nazwa-na-discordzie/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "pl/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -7931,6 +8069,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from pt/library/simbolos-de-moeda/ itself: the tiles around it are translated (French Franc → Franco francês; Drachma → Dracma; Florin → Florim), so this one is kept because it genuinely matches.",
         "found_on": "pt/library/simbolos-de-moeda/",
@@ -8135,6 +8279,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta-Delta",
         "reason": "proper noun from the tradition it names; this locale's own dedicated page uses the same word (nl \"Ankh (Sleutel van het Leven)\", vi \"Ankh (Chìa Khóa Sự Sống)\", id \"Ankh (Kunci Kehidupan)\")",
         "found_on": "pt/library/simbolos-therian/",
@@ -8187,6 +8337,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "pt/guide/nome-discord-sem-risco/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "pt/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
@@ -8379,6 +8535,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Markdown",
         "reason": "\"Markdown\" is the name of the format; every locale on this site cites it unchanged",
         "found_on": "ru/guide/formatirovanie-teksta-discord/",
@@ -8427,6 +8589,12 @@
         "added": "2026-08-30"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Unicode 6.0 (2010) / Emoji 1.0",
         "reason": "code or platform literal cited verbatim",
         "found_on": "ru/symbol/emodzi-mikrofon/",
@@ -8443,6 +8611,12 @@
         "reason": "platform brand names, rendered in Latin unchanged by this locale's own platform tabs",
         "found_on": "ru/schetchik-slov-i-simvolov/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "ru/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "iPhone / iPad / Mac",
@@ -9447,6 +9621,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Mango",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from tr/library/yemek-emojileri/ itself: the tiles around it are translated (Peach → Şeftali; Pineapple → Ananas; Cherries → Kiraz), so this one is kept because it genuinely matches.",
         "found_on": "tr/library/yemek-emojileri/",
@@ -9663,6 +9843,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "The Rhetoric of Fonts",
         "reason": "the title of an English-language guide, cited as a work title rather than translated",
         "found_on": "tr/snapchat-yazi-tipi/",
@@ -9739,6 +9925,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "tr/guide/guvenli-discord-ismi/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "tr/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zebra",
@@ -10037,6 +10229,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "LingoJam",
+        "reason": "product name of lingojam.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Lira",
         "reason": "currency name that coincides with the English form in this language. Evidence from vi/library/ky-hieu-tien-te/ itself: the tiles around it are translated (French Franc → Franc Pháp; Turkish Lira → Lira Thổ Nhĩ Kỳ; Kip → Kíp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/ky-hieu-tien-te/",
@@ -10193,6 +10391,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "TextGlitchGenerator",
+        "reason": "product name of textglitchgenerator.com, a competitor generator cited in the comparison table header; cited by its own name in every language",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
+      },
+      {
         "string": "Theta",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from vi/library/math-symbols/ itself: the tiles around it are translated (Empty Set → Tập Rỗng; Intersection → Giao; Union → Hợp), so this one is kept because it genuinely matches.",
         "found_on": "vi/library/math-symbols/",
@@ -10239,6 +10443,12 @@
         "reason": "\"Zalgo\" is the name of the text effect, a coined proper noun with no translation anywhere",
         "found_on": "vi/guide/dat-ten-discord-an-toan/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Zalgo.io",
+        "reason": "product name (a domain) of a competitor generator cited in the comparison table header; a domain is not translated",
+        "found_on": "vi/usecase/zalgo-text/",
+        "added": "2026-09-05"
       },
       {
         "string": "Zero Width",
