@@ -1,0 +1,98 @@
+{
+  "_readme": "UI-only runtime translations for a prerendered locale, same shape as fi.json / ko.json / zh-tw.json. The /ms/ pages ship fully translated HTML and carry no data-i18n attributes, so this file exists solely to populate window.UTG_I18N for the controls script.js injects at runtime (Copy/Save/Share, scope, safe mode, safety badges, saved styles, text stats). It deliberately omits ui.placeholder and ui.advertisement: those are already translated in the page HTML, and defining them here would overwrite that copy. It also omits faq, which is the HOMEPAGE's FAQ and must never be applied to a subpage (see i18n.js's updateFAQSchema guard). Vocabulary is taken from the site's own Malay pages and from header.js's ms NAV block wherever one already existed (Panduan, Kategori, Kegunaan, Pustaka, Simbol, Bingkai, Pemisah, Panah, Tulisan Tebal/Condong/Gotik/Kecil, Penjana, Salin Tampal, 'Taip tulisan anda di sini...'), never lifted from id.json: Malay and Indonesian diverge in exactly this register (taip not ketik, tiada not tidak ada, cuba not coba, padam not hapus). NOT yet reviewed by a native speaker; the strings are faithful to the English fallbacks in script.js and consistent with the ms pages already live, but a native pass is worth doing before treating this as final.",
+  "ui": {
+    "copyButtons": {
+      "copy": "Salin",
+      "copied": "✓ Disalin",
+      "failed": "✗ Gagal",
+      "copyTitle": "Salin ke papan klip",
+      "save": "Simpan",
+      "saved": "Disimpan",
+      "saveTitle": "Simpan gaya ini",
+      "unsaveTitle": "Buang daripada gaya tersimpan",
+      "empty": "Taip sesuatu di atas...",
+      "noStyles": "Tiada gaya dijumpai. Cuba penapis atau kata kunci lain."
+    },
+    "categoryTabs": {
+      "popular": "Popular",
+      "bold-fonts": "Tulisan Tebal",
+      "italic-fonts": "Tulisan Condong",
+      "bubble-fonts": "Tulisan Gelembung",
+      "cursive-fonts": "Tulisan Berangkai",
+      "gothic-fonts": "Tulisan Gotik",
+      "strikethrough-text": "Tulisan Bergaris Tengah",
+      "underline-text": "Tulisan Bergaris Bawah",
+      "small-text": "Tulisan Kecil",
+      "cute-fonts": "Tulisan Comel",
+      "aesthetic-fonts": "Tulisan Aesthetic",
+      "upside-down-text": "Terbalik",
+      "text-decorator": "Penghias Teks",
+      "classified": "Teks Ditutup",
+      "fullwidth-fonts": "Lebar Penuh",
+      "faux-fonts": "Tulisan Tangan Palsu",
+      "ancient-fonts": "Purba & Rune",
+      "emoji-letter-fonts": "Huruf Emoji",
+      "novelty-fonts": "Pelbagai"
+    },
+    "scopeControl": {
+      "label": "Gunakan gaya pada",
+      "ariaLabel": "Pilih berapa banyak teks yang hendak digayakan",
+      "whole": "Seluruh teks",
+      "wholeTitle": "Gayakan setiap baris teks anda.",
+      "firstLine": "Baris pertama sahaja",
+      "firstLineTag": "untuk poskan",
+      "firstLineTitle": "Gayakan baris pertama sahaja (tajuk atau ayat pembuka anda) dan biarkan selebihnya sebagai teks biasa yang mudah dibaca. Sesuai untuk poskan di media sosial."
+    },
+    "shareResult": {
+      "label": "Kongsi",
+      "title": "Kongsi hasil ini. Pautannya dibuka dengan teks anda dalam gaya ini",
+      "ariaLabel": "Kongsi hasil {style}",
+      "linkCopied": "Pautan disalin",
+      "afterCopy": "Kongsi gaya ini",
+      "sharedTag": "Gaya dikongsi",
+      "imageTitle": "Kongsi sebagai imej",
+      "imageAriaLabel": "Kongsi hasil {style} sebagai imej",
+      "imageSaved": "Imej sedia"
+    },
+    "safeMode": {
+      "label": "Keselamatan tampal",
+      "ariaLabel": "Semak gaya mana yang dipaparkan pada peranti orang lain",
+      "toggleLabel": "Mod selamat",
+      "hint": "Menandakan gaya yang mungkin dipaparkan sebagai kotak (▯) pada telefon lama orang lain."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Mungkin jadi kotak bagi sesetengah orang",
+      "boxesWarningTitle": "Gaya ini menggunakan aksara Unicode jarang yang tiada glifnya pada sesetengah telefon dan peranti lama. Ia boleh dipaparkan sebagai kotak (▯) kepada orang yang anda tampal teks itu. Pilih gaya biasa atau gaya sokongan luas jika audiens anda mungkin menggunakan peranti lama.",
+      "emojiWarning": "⚠ Menggunakan emoji, mungkin berbeza pada peranti lama",
+      "emojiWarningTitle": "Gaya ini mengandungi emoji. Emoji dipaparkan pada peranti moden tetapi boleh kelihatan berbeza, atau menjadi kotak, pada telefon yang sangat lama.",
+      "modernDevices": "Dipaparkan pada peranti moden",
+      "modernDevicesTitle": "Huruf Unicode bergaya ini dipaparkan pada semua telefon dan komputer semasa. Pada Android yang sangat lama (lebih kurang sebelum 2016) atau fon sistem yang minimum, beberapa aksara mungkin masih menjadi kotak (▯). Uji dahulu jika audiens anda menggunakan peranti lama.",
+      "rendersEverywhere": "✓ Dipaparkan di mana-mana",
+      "rendersEverywhereTitle": "Gaya ini teks biasa. Ia dipaparkan di mana-mana, tanpa risiko menjadi kotak pada mana-mana peranti.",
+      "deviceWarning": "⚠ Mungkin tidak dipaparkan pada peranti anda",
+      "deviceWarningTitle": "Fon pada peranti anda tidak dapat memaparkan gaya ini, jadi ia mungkin menjadi kotak (□). Ia masih boleh kelihatan elok pada peranti lain.",
+      "safeAnywhere": "✓ Selamat di mana-mana",
+      "safeAnywhereTitle": "Dipaparkan pada semua platform utama. Perhatian: pembaca skrin mungkin mengeja huruf bergaya satu per satu, jadi kekalkan teks badan sebagai teks biasa.",
+      "worksBestOn": "⚠ Terbaik pada {platforms}",
+      "worksBestOnTitle": "Terbaik pada: {platforms}. Platform lain mungkin membuang atau merosakkannya, jadi tampal ujian dahulu."
+    },
+    "savedStyles": {
+      "ariaLabel": "Gaya tersimpan anda",
+      "heading": "Gaya tersimpan anda",
+      "clearAll": "Kosongkan semua",
+      "hint": "Disimpan pada peranti ini. Ia akan menunggu di sini apabila anda kembali."
+    },
+    "textStats": {
+      "wordSingular": "1 perkataan",
+      "wordPlural": "{n} perkataan",
+      "charSingular": "1 aksara",
+      "charPlural": "{n} aksara"
+    },
+    "decorationsNone": "Tiada",
+    "categoryTabsToggle": {
+      "more": "Lagi",
+      "less": "Kurang"
+    },
+    "demoText": "Selamat datang ke UltraTextGen.\nTaip apa sahaja. Jadikan ia ultra."
+  }
+}
