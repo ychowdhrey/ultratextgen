@@ -42,7 +42,6 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # English-Parent Rule audit fixes (2026-07-25) — in-locale duplicates
 # retired in favor of the correctly-meshed EN-parented sibling
 /pt/usecase/nick-free-fire   /pt/usecase/nick-ff/  301
-/pt/usecase/nick-free-fire/  /pt/usecase/nick-ff/  301
 /ja/font-henkan              /ja/                   301
 /ja/font-henkan/             /ja/                   301
 
@@ -323,8 +322,6 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
 # cleanup): each pair had two same-locale pages claiming one hreflang
 # cluster slot; the less-integrated page folds into the survivor.
-/es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
-/es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
 /ja/library/text-faces-kaomoji/            /ja/library/kaomoji/  301
 /ja/library/text-faces-kaomoji/index.html  /ja/library/kaomoji/  301
 
