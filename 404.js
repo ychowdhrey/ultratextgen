@@ -4,6 +4,48 @@
   var Render = window.UltraTextGenRender;
   var styles = window.textStyles || {};
 
+  /* ─── Runtime strings ───────────────────────────────────────────────
+     404.html already loads i18n.js and already binds ten notFound.* keys
+     through data-i18n. The strings this file injects at runtime — the copy
+     button, its copied state, its failure state and the two toasts — were
+     hardcoded English, while `notFound.copy` and `notFound.copied` sat
+     translated in all 25 locale JSONs with nothing reading them. This is the
+     404 page for every locale on the site, so that English was showing on
+     every localized miss.
+
+     Nothing here is invented: every string below already existed in every
+     locale file. The failure state reuses `copyButtons.failed`, which is the
+     generator's own translated word for the same event, rather than adding a
+     key that would need 25 new translations.
+     ------------------------------------------------------------------- */
+  // A locale file has TWO shapes and this must read both. Measured across all
+  // 30 files: `notFound` is TOP-LEVEL in every one of the 25 that carry it and
+  // never under `ui`, while `scopeControl` and friends are always under `ui`.
+  // `copyButtons` is under `ui` in 20 and absent in exactly the 10 languages
+  // script.js's own older UI_STRINGS table already covers (de es fr id it nl
+  // pl pt tr vi) — coherent, because computeStr() merges the JSON over that
+  // table. 404.js does not load script.js, so for those 10 the failure label
+  // falls back to English; the copy and copied labels do not, because
+  // notFound.copy/copied exist in all 25.
+  function dig(root, path) {
+    return path.split(".").reduce(function (acc, key) {
+      return acc != null ? acc[key] : undefined;
+    }, root);
+  }
+  function t(path, fallback) {
+    var i18n = window.UTG_I18N;
+    if (!i18n) return fallback;
+    var val = dig(i18n, path);
+    if (val == null) val = dig(i18n.ui || {}, path);
+    return val != null ? val : fallback;
+  }
+  function copyLabel() { return t("notFound.copy", "Copy"); }
+  function copiedLabel() { return t("notFound.copied", "Copied"); }
+  function failedLabel() { return t("copyButtons.failed", "Error"); }
+  // notFound.copy is present in all 25 locale files; copyButtons.copyTitle in
+  // only 20 — so the accessible name is built from the one that always exists.
+  function copyAria(name) { return copyLabel() + ": " + name; }
+
   /* ─── Style name lists ──────────────────── */
   var HERO_STYLE_NAMES = [
     "Ultra Bold",
@@ -68,18 +110,18 @@
       try { document.execCommand("copy"); } catch (error) { /* silent */ }
       document.body.removeChild(ta);
       button.classList.add("copied");
-      button.textContent = "Copied";
-      showCopyToast("Copied to clipboard");
+      button.textContent = copiedLabel();
+      showCopyToast(copiedLabel());
       setTimeout(function () {
         button.classList.remove("copied");
-        button.textContent = "Copy";
+        button.textContent = copyLabel();
       }, 1200);
       return;
     }
     navigator.clipboard.writeText(text).then(function () {
       button.classList.add("copied");
-      button.textContent = "Copied";
-      showCopyToast("Copied to clipboard");
+      button.textContent = copiedLabel();
+      showCopyToast(copiedLabel());
       if (window.dataLayer) {
         if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
           window.UltraTextGen.trackCopy("button", text, { label: label || "" });
@@ -89,15 +131,15 @@
       }
       setTimeout(function () {
         button.classList.remove("copied");
-        button.textContent = "Copy";
+        button.textContent = copyLabel();
       }, 1200);
     }).catch(function () {
       button.classList.add("copy-error");
-      button.textContent = "Error";
-      showCopyToast("Copy failed");
+      button.textContent = failedLabel();
+      showCopyToast(failedLabel());
       setTimeout(function () {
         button.classList.remove("copy-error");
-        button.textContent = "Copy";
+        button.textContent = copyLabel();
       }, 1200);
     });
   }
@@ -194,13 +236,13 @@
       if (index === 0) card.classList.add("notfound-card-accent");
 
       var num = String(index + 1).padStart(2, "0");
-      var ariaLabel = "Copy " + name + " 404";
+      var ariaLabel = copyAria(name);
 
       card.innerHTML =
         '<div class="notfound-card-number">' + escapeHtml(num) + '</div>' +
         '<div class="notfound-card-rendered">' + escapeHtml(rendered) + '</div>' +
         '<div class="notfound-card-name">' + escapeHtml(name) + '</div>' +
-        '<button class="copy-btn" type="button" aria-label="' + escapeHtml(ariaLabel) + '" data-copy-text="' + escapeHtml(rendered) + '" data-style-name="' + escapeHtml(name) + '">Copy</button>';
+        '<button class="copy-btn" type="button" aria-label="' + escapeHtml(ariaLabel) + '" data-copy-text="' + escapeHtml(rendered) + '" data-style-name="' + escapeHtml(name) + '">' + escapeHtml(copyLabel()) + '</button>';
 
       fragment.appendChild(card);
     });
@@ -239,8 +281,8 @@
       var btn = document.createElement("button");
       btn.className = "copy-btn";
       btn.type = "button";
-      btn.setAttribute("aria-label", "Copy " + name + " version");
-      btn.textContent = "Copy";
+      btn.setAttribute("aria-label", copyAria(name));
+      btn.textContent = copyLabel();
       btn.setAttribute("data-copy-text", rendered);
       btn.setAttribute("data-style-name", name);
 
@@ -301,5 +343,19 @@
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
+
+
+  /* i18n.js's locale fetch is async, so any copy button rendered before it
+     resolves carries the English fallback. Relabel on arrival — the same
+     patch-on-arrival contract script.js uses for its own injected controls. */
+  document.addEventListener("utg:i18nready", function () {
+    var label = copyLabel();
+    Array.prototype.forEach.call(document.querySelectorAll(".copy-btn"), function (btn) {
+      if (btn.classList.contains("copied") || btn.classList.contains("copy-error")) return;
+      btn.textContent = label;
+      var name = btn.getAttribute("data-style-name");
+      if (name) btn.setAttribute("aria-label", copyAria(name));
+    });
+  });
 
 })();
