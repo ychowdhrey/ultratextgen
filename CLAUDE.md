@@ -2592,6 +2592,89 @@ Do not trust a future edit to any of this without repeating them.
 
 ---
 
+## Accessibility — the axis nothing measured until 2026-09-05
+
+Every gate above measures structure, language, schema, values, assets, hub
+coverage or prose. **None of them opened a page and asked whether it can be
+used.** There was no accessibility script, no rule and no gate — so the number
+was unknown rather than good.
+
+**The baseline turned out to be genuinely strong**, and that is worth stating
+because it decides how the tooling is shaped. Across all 4,645 pages: **0**
+images without `alt`, **0** buttons without an accessible name, **0** links
+without one, **0** empty `href`s, **0** unlabelled form controls, **0** pages
+missing `<html lang>`, **0** positive `tabindex`. This site was built with care
+on this axis; the job is to keep it that way, not to pay down debt.
+
+**Three pages carried duplicate ids, and one was a live functional bug.**
+`ko/index.html` shipped two byte-identical `<main class="container">` blocks, so
+it had two `#categoryTabs` and two `#resultsGrid`. `script.js` binds by id and
+populated only the first of each — measured in a browser, the Korean homepage
+rendered its real tab strip (20 tabs) and results (11), then an empty tab strip
+and an empty grid that could never fill, plus two `main` landmarks. The other
+two were id collisions between genuinely different sections
+(`symbol/index.html`'s punctuation vs. dash-and-hyphen groups;
+`es/library/simbolos-de-lazos`'s static grid vs. its JS mount), fixed by
+renaming the id and touching no copy.
+
+### Blocking vs advisory is decided by the backlog, not by severity
+
+The eleven **blocking** classes are exactly the ones standing at zero, so the
+gate has nothing to be permanently red against — the same call as
+`check:zalgo-decodes`, and the same reason `check:images` informs while
+`check:new-page-images` gates.
+
+**Heading-level skips are advisory, on 909 pages, and must stay that way.**
+Every one is the same design-system decision rather than an oversight: a
+`.compare-card` titles itself with `<h4>` inside a section headed `<h2>`.
+Skipping a level is a best-practice warning rather than a WCAG 1.3.1 failure,
+and restructuring 899 pages' card markup is an owner call about the design
+system. A validator must not force it.
+
+**What counts as a page is structural: a file with an `<html>` element.** Two
+tracked `.html` files are not pages — the Naver verification token and
+`scripts/data/funding-choices-tag.html`, a script fragment — and both would
+otherwise report as missing a lang and an h1. A hardcoded skip list would go
+stale; this filter excludes a future fragment and includes a future page on its
+own.
+
+#### Tooling
+
+- **`npm run audit:accessibility`** — whole-site dashboard, per rule, with
+  `--full`, `--rule`, `--locale` and `--json`. **Informational, never gating.**
+- **`npm run check:accessibility`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`.
+- Both share **`scripts/lib/accessibility-audit.js`**, so the audit and the gate
+  can never disagree about what a defect is.
+
+**It is a state check on changed pages, not a delta, and that is deliberate.**
+`check-locale-translation.js` and `check-faq-schema.js` measure deltas because
+both carry large legitimate backlogs. This one has none, so "this page has a
+duplicate id now" is worth failing on whether or not it had one before. **If a
+blocking class ever acquires a real backlog, move it to advisory rather than
+weakening this to a delta** — a blocking rule with a backlog is precisely the
+shape people learn to ignore.
+
+Verified per this file's own rule against six differently-shaped broken inputs
+so the gate could not be tuned to one — a duplicate id (the real `ko`
+regression), an `<img>` with no `alt`, a button with no accessible name, a
+second `<main>`, a removed `h1`, a removed `<html lang>` — each exits 1 naming
+its rule, with a restored-file control at exit 0. And verified that CI *gates*
+on it rather than merely running it: `run-ci-gates.py --only accessibility`
+returns 1 on a broken tree and 0 on a clean one.
+
+**One finding this pass reported rather than fixed.** `ns.buildGrids()` mounts
+into a container that is empty in static HTML on **896 of 898** pages — only
+`library/bow-ribbon-symbols` and `ja/library/ribon-kigou` pre-render theirs. So
+the collection grids that are the payload of those pages are JavaScript-only,
+which the Discovery Model section above names as a real cost ("several search
+and AI crawlers do not execute JavaScript"). That is a site-wide architectural
+choice, not a defect to fix unilaterally, and it is recorded here so the next
+person does not have to re-derive it. The first read of it was backwards —
+the two pre-rendered pages look like the norm until you count.
+
+---
+
 ## Editorial Footprint Risk — measuring how templated our own prose reads
 
 Every gate above measures structure, language completeness, schema or assets.

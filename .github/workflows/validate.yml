@@ -564,6 +564,27 @@ jobs:
         continue-on-error: true
         run: npm run test:i18n-faq-schema | tee i18n-faq-schema-tests.log
 
+      # Gating, diff-scoped, zero backlog: the accessibility classes that stand
+      # at ZERO across all 4,645 pages — duplicate ids, a second <main>, an
+      # <img> with no alt, a control with no accessible name, an unlabelled
+      # form field, an empty href, an untitled iframe, a missing or duplicated
+      # h1, a missing <html lang>, a positive tabindex.
+      #
+      # It gates rather than informs because that set is empty today (the same
+      # call as check:zalgo-decodes), and it is diff-scoped so it can only ever
+      # fail on something the PR itself introduced. Heading-level skips are
+      # ADVISORY and never billed: all 909 are the .compare-card design-system
+      # pattern, and restructuring them is an owner decision, not a validator's.
+      #
+      # It found a real one: ko/index.html shipped two <main> blocks, so
+      # script.js populated only the first #categoryTabs/#resultsGrid and the
+      # page rendered a dead tab strip and a dead results grid below the live
+      # ones. npm run audit:accessibility is the whole-site dashboard.
+      - name: Run accessibility check
+        id: accessibility
+        continue-on-error: true
+        run: npm run check:accessibility -- --base origin/${{ github.base_ref || 'main' }} | tee accessibility.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -783,6 +804,11 @@ jobs:
             cat i18n-faq-schema-tests.log
             echo '```'
             echo ""
+            echo "### Accessibility — \`${{ steps.accessibility.outcome }}\`"
+            echo '```'
+            cat accessibility.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -851,6 +877,7 @@ jobs:
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
           steps.header_analytics_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
+          steps.accessibility.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |
