@@ -9306,3 +9306,146 @@ body.dark-mode .source-note {
     opacity: 1;
   }
 }
+
+/* ---------------------------------------------------------------
+   Printables print settings, Save as PDF, share row, recent sheets
+   (js/printables/printablesEngine.js buildPrintOptions / addPdfButtons,
+   2026-09-10). The settings panel is a <details> so the default view
+   stays one Print button; the @page rule itself is written at print
+   time by applyPageStyle() into #pt-page-style.
+   --------------------------------------------------------------- */
+.pt-print-tools { margin: 0.9rem 0 0.4rem; }
+.pt-print-options {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  padding: 0.35rem 0.8rem;
+  margin: 0 0 0.6rem;
+}
+.pt-print-options > summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 0.35rem 0;
+  list-style: none;
+}
+.pt-print-options > summary::-webkit-details-marker { display: none; }
+.pt-print-options > summary::before {
+  content: "\25B8";
+  display: inline-block;
+  width: 1em;
+  color: var(--accent-purple);
+}
+.pt-print-options[open] > summary::before { content: "\25BE"; }
+.pt-print-opt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  padding: 0.35rem 0 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+.pt-print-opt-label {
+  flex: 0 0 100%;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.pt-print-opt .pt-choice-row { flex: 1 1 auto; }
+.pt-choice-sm { flex: 0 1 auto; padding: 0.35rem 0.65rem; font-size: 0.78rem; border-radius: 10px; }
+.pt-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0.4rem 0 0;
+}
+.pt-share-row .bubble-btn { font-size: 0.82rem; }
+.pt-pdf-btn { margin-left: 0.35rem; }
+.pt-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 1rem);
+  max-width: min(92vw, 30rem);
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background: var(--text-primary);
+  color: var(--bg-white);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 60;
+}
+.pt-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.pt-recent { margin: 0.7rem 0 0; }
+.pt-recent-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 0 0 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.pt-recent-clear {
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+.pt-recent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.pt-recent-list a {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+.pt-recent-list a:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+
+/* Ink saver: lighter outlines on every printed surface, chosen in the
+   settings panel and applied as a body class by printWrap(). Outlines
+   stay printable for tracing; the fill-heavy coloring cells stay white. */
+body.is-printing.pt-ink-saver #pt-print-root svg { opacity: 0.72; }
+body.is-printing.pt-ink-saver #pt-print-root .pt-glyph-print,
+body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
+
+@media print {
+  .pt-print-tools, .pt-toast, .pt-recent { display: none !important; }
+  /* One sheet per page, never a tile or a name row split across pages. */
+  .pt-sheet-page {
+    page-break-after: always;
+    break-after: page;
+  }
+  .pt-sheet-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .bubble-print-sheet .pt-tile-cell,
+  .bubble-print-sheet .pt-name-row,
+  .pt-tile-cell,
+  .pt-name-row,
+  .pt-puzzle-sheet,
+  .cursive-print-row {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

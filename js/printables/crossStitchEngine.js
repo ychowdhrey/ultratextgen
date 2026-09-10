@@ -368,7 +368,7 @@
     ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
     ctx.fillStyle = "#aeb4c0";
     ctx.textAlign = "center";
-    ctx.fillText("ultratextgen.com", canvasW / 2, canvasH - 16);
+    ctx.fillText(window.UltraTextGen && window.UltraTextGen.printableCredit ? window.UltraTextGen.printableCredit() : "ultratextgen.com", canvasW / 2, canvasH - 16);
 
     canvas.toBlob(function (blob) {
       if (!blob) return;

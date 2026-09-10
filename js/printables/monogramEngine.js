@@ -307,6 +307,14 @@
         else drawClassicCanvas(ctx, s, v);
       }
 
+      // Site credit with the page path, low contrast, in the bottom margin:
+      // the same line printablesEngine and crossStitchEngine draw, read from
+      // header.js so the three cannot drift.
+      ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
+      ctx.fillStyle = "#aeb4c0";
+      ctx.textAlign = "center";
+      ctx.fillText(siteCredit(), size / 2, size - 24);
+
       const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
       canvas.toBlob(function (blob) {
         if (!blob) return;
@@ -332,6 +340,11 @@
     if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
       window.UltraTextGen.trackPrintable(action, sheet);
     }
+  }
+
+  function siteCredit() {
+    if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
+    return "ultratextgen.com";
   }
 
   function printMonogram() {
