@@ -3142,10 +3142,12 @@ resolution, not a decision to drop the feature.
 
 **Two things this cost, worth remembering.** Nothing compares "a handler
 exists" against "a trigger exists", so the loss was silent for ten weeks. And
-tracing it needs real history: the repo is cloned shallow, so `git log -S`
-bottoms out at an unrelated merge and names the wrong commit — `git fetch
---deepen` first, as `docs/en-parent-required-register.md` already warns for
-first-add dates.
+tracing it needs real history: sessions here work a **shallow clone**, so
+`git log -S` bottoms out at whatever merge sits on the shallow boundary and
+confidently names the wrong commit. Measured this time: the boundary was
+2026-07-24 and the answer it gave was an unrelated graffiti-generator PR three
+weeks after the real one. Run `git fetch --deepen=<n>` before trusting any
+first-add or first-removal date.
 
 **Restored with zero new strings.** The button reads `stylePreview.title` and
 `stylePreview.dialogAriaLabel`, which all 30 locale files already carry. Driven
