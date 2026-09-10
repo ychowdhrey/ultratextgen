@@ -55,10 +55,20 @@ GEN = _load(os.path.join(HERE, "generate-printables-previews.py"), "printables_p
 HERO_RE = re.compile(r'(<section class="hero">[\s\S]*?</section>\n)')
 EXISTING_RE = re.compile(r'<figure class="guide-hero-figure pt-sheet-preview"[^>]*>[\s\S]*?</figure>\n')
 
+# P1 protect (lab review 2026-09-10, owner: "Okay for now"): block-letters is
+# 21% of site revenue on one URL and its first screen is frozen. Additive work
+# there goes below the fold, so on this page the figure anchors after the
+# second tool section (the name/word generator) instead of after the hero.
+# Anything else about the page (title, H1, canonical, hreflang, ad config,
+# copy) is untouched by this script by construction.
+BELOW_FOLD = {
+    "printables/block-letters/index.html": re.compile(r'(<section class="bubble-alphabet"[\s\S]*?</section>\n)'),
+}
+
 
 def figure_html(page):
     return (
-        '<figure class="guide-hero-figure pt-sheet-preview" style="max-width:560px;">\n'
+        '<figure class="guide-hero-figure pt-sheet-preview">\n'
         f'  <img src="{GEN.OUT_URL}/{page["slug"]}.png" width="{GEN.W}" height="{GEN.H}"\n'
         f'       alt="{GEN.esc(GEN.alt_for(page))}" loading="lazy">\n'
         '</figure>\n'
@@ -70,15 +80,17 @@ def wire(page, write):
     with open(path, encoding="utf-8") as fh:
         html = fh.read()
     fig = figure_html(page)
-    if EXISTING_RE.search(html):
-        new = EXISTING_RE.sub(lambda m: fig, html, count=1)
-        state = "current" if new == html else "updated"
-    else:
-        m = HERO_RE.search(html)
-        if not m:
-            return "no-hero"
-        new = html[: m.end()] + fig + html[m.end():]
-        state = "inserted"
+    had = bool(EXISTING_RE.search(html))
+    # Strip any existing figure first, then re-insert at the page's anchor, so
+    # a change of anchor (or of the figure markup) moves it rather than
+    # leaving a stale copy in place.
+    stripped = EXISTING_RE.sub("", html, count=1)
+    anchor = BELOW_FOLD.get(page["rel"].replace(os.sep, "/"), HERO_RE)
+    m = anchor.search(stripped)
+    if not m:
+        return "no-hero"
+    new = stripped[: m.end()] + fig + stripped[m.end():]
+    state = "current" if new == html else ("updated" if had else "inserted")
     if state != "current" and write:
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(new)

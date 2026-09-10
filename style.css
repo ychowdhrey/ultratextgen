@@ -9314,6 +9314,11 @@ body.dark-mode .source-note {
    stays one Print button; the @page rule itself is written at print
    time by applyPageStyle() into #pt-page-style.
    --------------------------------------------------------------- */
+/* Indexable sheet preview (scripts/wire-printables-previews.py): the real
+   sheet PNG as a visible figure, so image search has a descriptive image to
+   index instead of the decorative hero art. Sized here, never inline. */
+.pt-sheet-preview { max-width: 560px; }
+
 .pt-print-tools { margin: 0.9rem 0 0.4rem; }
 .pt-print-options {
   border: 1px solid var(--border-light);
