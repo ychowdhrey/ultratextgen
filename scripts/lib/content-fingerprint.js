@@ -7,7 +7,7 @@
  * pages it links to (resolved through the hreflang cluster map so a
  * locale-native link and its EN equivalent count as the same target — see
  * "Locale-native internal linking" in CLAUDE.md), plus rendered-FAQ/h2/
- * symbol-tile counts. Shared by audit-translation-parity.js (point-in-time site sweep)
+ * symbol-tile/table counts. Shared by audit-translation-parity.js (point-in-time site sweep)
  * and check-translation-parity.js (per-PR diff gate) so "did this page's
  * content actually change" means the same thing in both places.
  */
@@ -138,6 +138,86 @@ function createFingerprinter(byUrl, localeCodes) {
   }
 
   /**
+   * The combo-set sections this page renders AT RUNTIME, as containerId ->
+   * number of groups.
+   *
+   * Every other axis here reads static markup, and a `copy_pattern:
+   * "collection"` section has none: its tiles are built by
+   * `UltraTextGen.buildGrids(containerId, GROUPS)` after load, so the page
+   * ships an empty `<div id="…Container"></div>` and nothing else. A page
+   * missing an entire section therefore fingerprinted identically to one that
+   * had it, on links, FAQs and `.symbol-tile` alike.
+   *
+   * That blind spot shipped: 16 locale library pages went live without the
+   * combo-set section their English parent carries (ar/library/fire-emoji,
+   * de/library/krone-emoji, ja/library/dokuro-emoji, …), and no check on this
+   * site could see it. The one axis that did move — `<h2>` — moved the WRONG
+   * WAY when the section was restored, because those pages already carried
+   * two sections their parent lacks (a visible FAQ and an editorial block),
+   * so the h2 gap went from +1 to +2 and the repair scored as drift. Same
+   * inversion as the faqCount and boolean-score defects above, from a third
+   * cause.
+   *
+   * Container ids are language-independent by construction — a locale spec
+   * inherits `collection_container_id` from its EN parent verbatim — so they
+   * compare across languages the way translated headings never could. The
+   * group count gives the axis a magnitude, which is what lets a partially
+   * ported section register as movement (see score()).
+   *
+   * Groups are counted by `flags:`, not `defaultFormat:`. Both appear once
+   * per group in the generator's emitted `GROUPS` array, but hand-written
+   * arrays do not always carry `defaultFormat` — library/emoji-flags'
+   * FLAG_GROUPS has none, so counting it reported that page's section as 0
+   * groups, i.e. as empty. Across all 808 pages carrying a `buildGrids` call
+   * (exactly one each) `flags:` is never absent and never disagrees with
+   * `defaultFormat:` where both exist — verified 2026-09-01.
+   */
+  function collectionSets($) {
+    const sets = new Map();
+    $('script').each((_, el) => {
+      const js = $(el).html() || '';
+      const m = /\bbuildGrids\(\s*["']([^"']+)["']/.exec(js);
+      if (!m) return;
+      sets.set(m[1], (js.match(/\bflags\s*:/g) || []).length);
+    });
+    return sets;
+  }
+
+  /**
+   * How many tables the page renders.
+   *
+   * A table is a section-sized unit of content on this site — a scorecard, a
+   * platform-support matrix, an alt-input method list — and until 2026-09-02
+   * no axis here could see one. `<h2>` came closest and misses the case
+   * exactly: a table sitting under a heading that stays can be deleted
+   * outright with every axis reading zero. That is not hypothetical. PR #836
+   * removed a whole 7-row table from `updates/middle-east-currency-symbols-
+   * scorecard` and its eight siblings; had it touched EN alone, this gate
+   * would have reported nothing.
+   *
+   * SELECTOR: `table`, not `.data-table`. The house class covers 2,353 of the
+   * site's 2,470 tables — `comparison-table` (114) and `ig-matrix` (2, on
+   * instagram/ and its `sv` sibling, which is a live cluster) carry the rest.
+   * Enumerating classes here would recreate CONTENT_LINK_RE's `events` bug
+   * above verbatim: a class added later is a table this fingerprint silently
+   * stops covering, and nothing would say so. The element cannot go stale.
+   *
+   * ROWS ARE DELIBERATELY NOT SCORED, only reported. Rows are content inside
+   * a section and they legitimately differ by locale: fr/symbol/symbole-paix
+   * carries an extra platform row and an extra input-method row against
+   * symbol/peace-sign, and a locale whose alphabet is longer than English's
+   * will always carry more. Across the 3,693 EN/locale pairs on this site, 64
+   * match on table count and differ on rows — a set that mixes genuine
+   * half-ported tables with differences no edit can converge. Scoring it
+   * would flag pairs with nothing to fix, which is the same call
+   * pairCollections() already makes for a renamed container id: report it,
+   * never score it.
+   */
+  function countTables($) {
+    return { tables: $('table').length, rows: $('table tr').length };
+  }
+
+  /**
    * @param {string} html
    * @param {object} [opts]
    * @param {string} [opts.relPath] - repo-relative path; when it names a
@@ -156,22 +236,78 @@ function createFingerprinter(byUrl, localeCodes) {
         if (norm && CONTENT_LINK_RE.test(norm)) links.add(norm);
       });
     }
+    const tables = countTables($);
     return {
       links,
       catalogue,
       h2Count: $('h2').length,
       faqCount: countVisibleFaqItems($),
       symbolTileCount: $('.symbol-tile').length,
+      tableCount: tables.tables,
+      tableRowCount: tables.rows,
+      collectionSets: collectionSets($),
+    };
+  }
+
+  /**
+   * Match a page's combo-set sections against its sibling's.
+   *
+   * Container ids are USUALLY shared — a locale spec inherits
+   * `collection_container_id` from its EN parent — but not always: 40 of the
+   * site's 539 EN/locale pairs that render a combo set on both sides use
+   * different ids for the same section (`asciiSetsContainer` vs
+   * `textArtContainer`, `laughSetsContainer` vs `laughingSetsContainer`,
+   * `geldSetsContainerDE` vs `moneySetsContainer`).
+   *
+   * Matching on the id alone therefore reported both sides as missing a
+   * section the other has — and because an unmatched section is scored by its
+   * size, SHRINKING one then read as convergence. Probed exactly that way:
+   * deleting three of five groups from tr/library/gulen-emoji passed the gate
+   * with exit 0. Positional fallback (every page on this site carries exactly
+   * one buildGrids call — verified across all 808) pairs the leftovers, so a
+   * differently-named section is compared on its group count and a genuinely
+   * absent one still costs its full size.
+   *
+   * An id mismatch itself is reported, never scored: it is a naming
+   * inconsistency, not a content gap, and scoring it would flag those 40
+   * pairs with no edit able to converge them.
+   */
+  function pairCollections(enSets, loSets) {
+    const onlyEN = [...enSets.keys()].filter((id) => !loSets.has(id)).sort();
+    const onlyLocale = [...loSets.keys()].filter((id) => !enSets.has(id)).sort();
+    const deltas = [...enSets.keys()]
+      .filter((id) => loSets.has(id))
+      .sort()
+      .map((id) => ({ id, delta: enSets.get(id) - loSets.get(id) }));
+    const renamed = [];
+    while (onlyEN.length && onlyLocale.length) {
+      const a = onlyEN.shift();
+      const b = onlyLocale.shift();
+      renamed.push({ enId: a, localeId: b });
+      deltas.push({ id: `${a} / ${b}`, delta: enSets.get(a) - loSets.get(b) });
+    }
+    return {
+      collectionsOnlyInEN: onlyEN.map((id) => ({ id, groups: enSets.get(id) })),
+      collectionsOnlyInLocale: onlyLocale.map((id) => ({ id, groups: loSets.get(id) })),
+      collectionGroupDeltas: deltas.filter((d) => d.delta !== 0),
+      collectionsRenamed: renamed,
     };
   }
 
   function diff(enFp, fp) {
+    const enSets = enFp.collectionSets || new Map();
+    const loSets = fp.collectionSets || new Map();
     return {
       onlyInEN: [...enFp.links].filter((l) => !fp.links.has(l)).sort(),
       onlyInLocale: [...fp.links].filter((l) => !enFp.links.has(l)).sort(),
       h2Delta: enFp.h2Count - fp.h2Count,
       faqDelta: enFp.faqCount - fp.faqCount,
       symbolTilesDelta: enFp.symbolTileCount - fp.symbolTileCount,
+      tableDelta: (enFp.tableCount || 0) - (fp.tableCount || 0),
+      // Reported for context in a failure message, never fed to score() —
+      // see countTables() for the 64-pair measurement behind that split.
+      tableRowsDelta: (enFp.tableRowCount || 0) - (fp.tableRowCount || 0),
+      ...pairCollections(enSets, loSets),
     };
   }
 
@@ -201,12 +337,27 @@ function createFingerprinter(byUrl, localeCodes) {
    * a threshold.
    */
   function score(d) {
+    // Defensive `|| []`: applySuppression() in parity-exceptions.js rebuilds
+    // the diff object field by field, so a diff that has been through it
+    // carries only the fields that file knows about.
+    const missingSection = (list) =>
+      (list || []).reduce((n, c) => n + 1 + c.groups, 0);
     return (
       d.onlyInEN.length +
       d.onlyInLocale.length +
       Math.abs(d.h2Delta) +
       Math.abs(d.faqDelta) +
-      Math.abs(d.symbolTilesDelta)
+      Math.abs(d.symbolTilesDelta) +
+      // `|| 0`, like the collection axes below: applySuppression() and any
+      // older cached diff may predate this field, and NaN would poison the
+      // whole score rather than just this axis.
+      Math.abs(d.tableDelta || 0) +
+      // A section one side does not render at all costs its whole size, so
+      // restoring it outweighs the +1 the h2 axis can move in the wrong
+      // direction on a page that is otherwise richer than its parent.
+      missingSection(d.collectionsOnlyInEN) +
+      missingSection(d.collectionsOnlyInLocale) +
+      (d.collectionGroupDeltas || []).reduce((n, c) => n + Math.abs(c.delta), 0)
     );
   }
 

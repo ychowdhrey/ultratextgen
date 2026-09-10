@@ -38,8 +38,8 @@
       "h2": "Pomyłka ze Znakiem Oma",
       "intro": "Wyświetla się identycznie jak wielka omega powyżej, ale jest zakodowany jako osobny znak — plus jednostka elektryczna nazwana przez odwrócenie go do góry nogami.",
       "symbols": [
-        { "char": "Ω", "label": "Znak Oma (Rezystancja Elektryczna, U+2126) — Wygląda jak Omega, Inny Punkt Kodowy" },
-        { "char": "℧", "label": "Znak Mho (Konduktancja Elektryczna) — „Ohm” Zapisany od Tyłu, Odwrócony do Góry Nogami" }
+        { "char": "Ω", "label": "Znak Oma (Rezystancja Elektryczna, U+2126): Wygląda jak Omega, Inny Punkt Kodowy" },
+        { "char": "℧", "label": "Znak Mho (Konduktancja Elektryczna): „Ohm” Zapisany od Tyłu, Odwrócony do Góry Nogami" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

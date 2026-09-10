@@ -28,8 +28,8 @@
       "h2": "Symbol Oma (Ω)",
       "intro": "Jednostka rezystancji elektrycznej. U+2126 to dedykowany znak oma, choć w praktyce większość osób po prostu wpisuje wielką grecką omegę, która wygląda tak samo. Mała omega (ω) towarzyszy mu w matematyce prądu przemiennego, gdzie oznacza częstość kątową, ω = 2πf.",
       "symbols": [
-        { "char": "Ω", "label": "Znak Oma (U+2126) — Rezystancja Elektryczna" },
-        { "char": "ω", "label": "Mała Grecka Omega (ω) — Częstość Kątowa" }
+        { "char": "Ω", "label": "Znak Oma (U+2126): Rezystancja Elektryczna" },
+        { "char": "ω", "label": "Mała Grecka Omega (ω): Częstość Kątowa" }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "h2": "Znak Oma a Grecka Omega",
       "intro": "Te dwa kafelki to różne znaki Unicode — U+2126, znak oma, i U+03A9, wielka grecka omega — które w niemal każdej czcionce wyglądają identycznie. Baza danych Unicode mówi, że znak oma powinien normalizować się do zwykłej omegi, a większość klawiatur i narzędzi generuje omegę, nie znak oma. Ta rozbieżność spowodowała realne błędy w konwersji dokumentów. Do kopiowania i wklejania działa każdy z nich; pełne wyjaśnienie różnicy, wraz z udokumentowanym problemem w Pandoc, znajdziesz na stronie symbolu omega.",
       "symbols": [
-        { "char": "Ω", "label": "Znak Oma (U+2126) — Znak Historyczny" },
-        { "char": "Ω", "label": "Wielka Grecka Omega (U+03A9) — Preferowana przez Unicode" }
+        { "char": "Ω", "label": "Znak Oma (U+2126): Znak Historyczny" },
+        { "char": "Ω", "label": "Wielka Grecka Omega (U+03A9): Preferowana przez Unicode" }
       ]
     },
     {
@@ -48,8 +48,8 @@
       "h2": "Mho i Simens — Jednostka Odwrotna",
       "intro": "Konduktancja to odwrotność rezystancji — dosłownie 1 ÷ Ω — a jej dawną jednostką jest mho (℧), czyli po prostu „ohm” zapisany od tyłu. Nazwę zaproponował lord Kelvin w 1883 roku. Współczesny układ SI zastąpił ją w 1971 roku simensem (symbol S, nazwanym na cześć wynalazcy Wernera von Siemensa); amerykański NIST oznacza dziś „mho” jako nazwę, której należy unikać, choć ℧ wciąż pojawia się w starszych tekstach i schematach.",
       "symbols": [
-        { "char": "℧", "label": "Znak Mho (U+2127) — „Ohm” Odwrócony" },
-        { "char": "S", "label": "Simens (S) — Współczesna Jednostka SI Konduktancji" }
+        { "char": "℧", "label": "Znak Mho (U+2127): „Ohm” Odwrócony" },
+        { "char": "S", "label": "Simens (S): Współczesna Jednostka SI Konduktancji" }
       ]
     },
     {
@@ -60,11 +60,11 @@
       "symbols": [
         { "char": "⏚", "label": "Uziemienie (U+23DA)" },
         { "char": "⚡", "label": "Znak Wysokiego Napięcia (U+26A1)" },
-        { "char": "∿", "label": "Fala Sinusoidalna (U+223F) — Prąd Przemienny" }
+        { "char": "∿", "label": "Fala Sinusoidalna (U+223F): Prąd Przemienny" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/symbol-omega/",

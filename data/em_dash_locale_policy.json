@@ -1,0 +1,259 @@
+{
+ "_readme": "Per-locale policy for the em dash in editorial copy, read by scripts/check-editorial-footprint.js (enforcement, forward-only) and scripts/audit-em-dash.js (measurement). Adopted by the user on 2026-09-02 from the table in docs/em-dash-policy.md §4 and meant to be revised as more pages are crawled: a locale changes policy only with a dated edit here, a native reader's confirmation or corpus evidence, and an entry in the doc's change log. `policy` is one of the four keys in `policies`. `replacement` is what the gate tells an author to write instead and is null where no rule exists. `nextReview` is the date the row is re-read against the audit. Every canonical locale must have an entry; a locale without one is treated as `review` and reported as missing.",
+ "policies": {
+  "ban": "a new em dash a branch introduces in editorial copy fails the check, in every mode (forward-only; existing ones are reported, never billed). The gate names the locale's native replacement.",
+  "native": "the em dash is native punctuation in this language; it is never a finding.",
+  "double-dash": "the native dash is the paired form ——; a new lone — fails the check, a new —— does not.",
+  "review": "a new em dash is reported as a warning only, pending a native reader or corpus evidence."
+ },
+ "locales": {
+  "en": {
+   "policy": "ban",
+   "nativeMark": "none in new copy: the em dash is the pattern being removed",
+   "replacement": "a colon when what follows explains; a full stop for a separate thought; a comma pair for an aside; parentheses for a parenthetical; an en dash ( – ) for a range",
+   "basis": "house style; user decision 2026-09-02; 9,682 existing em dashes on 889 of 911 pages reported and never billed",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ru": {
+   "policy": "native",
+   "nativeMark": " — (тире), spaced; replaces an omitted copula, opens dialogue, marks ranges",
+   "replacement": null,
+   "basis": "Правила русской орфографии и пунктуации; corpus median 28.9 per 1,000 words, the highest on the site",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "es": {
+   "policy": "native",
+   "nativeMark": "— (raya) for dialogue and incisos; expository web prose leans on commas and parentheses",
+   "replacement": null,
+   "basis": "RAE, Ortografía de la lengua española; corpus median 10.9 per 1,000 words, the lowest Latin-script rate here",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "pt": {
+   "policy": "native",
+   "nativeMark": "— (travessão) for dialogue and asides",
+   "replacement": null,
+   "basis": "standard Brazilian and European usage; corpus median 16.0",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "fr": {
+   "policy": "native",
+   "nativeMark": " — or  –  (tiret) for incises and dialogue",
+   "replacement": null,
+   "basis": "Lexique des règles typographiques (Imprimerie nationale); corpus median 16.0",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "pl": {
+   "policy": "native",
+   "nativeMark": "— or  –  (myślnik); dashes are frequent in Polish prose",
+   "replacement": null,
+   "basis": "Wielki słownik ortograficzny PWN; corpus median 23.1",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ro": {
+   "policy": "native",
+   "nativeMark": "— or  –  (linia de pauză) for asides and dialogue",
+   "replacement": null,
+   "basis": "DOOM / Îndreptar ortografic; corpus median 23.6",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "de": {
+   "policy": "ban",
+   "nativeMark": " –  (Gedankenstrich), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Duden: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "nl": {
+   "policy": "ban",
+   "nativeMark": " –  (gedachtestreepje), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Taalunie: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "da": {
+   "policy": "ban",
+   "nativeMark": " –  (tankestreg), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Dansk Sprognævn: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "no": {
+   "policy": "ban",
+   "nativeMark": " –  (tankestrek), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Språkrådet: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "sv": {
+   "policy": "ban",
+   "nativeMark": " –  (tankstreck), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Svenska skrivregler: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "fi": {
+   "policy": "ban",
+   "nativeMark": " –  (ajatusviiva), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Kielitoimisto: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "cs": {
+   "policy": "ban",
+   "nativeMark": " –  (pomlčka), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Pravidla českého pravopisu: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "sk": {
+   "policy": "ban",
+   "nativeMark": " –  (pomlčka), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Pravidlá slovenského pravopisu: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "hu": {
+   "policy": "ban",
+   "nativeMark": " –  (gondolatjel), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "A magyar helyesírás szabályai: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "hr": {
+   "policy": "ban",
+   "nativeMark": " –  (crta), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Hrvatski pravopis: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "sr": {
+   "policy": "ban",
+   "nativeMark": " –  (crta), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Pravopis srpskoga jezika: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "bs": {
+   "policy": "ban",
+   "nativeMark": " –  (crta), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "Pravopis bosanskoga jezika: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "it": {
+   "policy": "ban",
+   "nativeMark": " –  (lineetta), the spaced en dash",
+   "replacement": "the spaced en dash ( – ), which is never flagged; or a comma pair, parentheses, a colon or a full stop",
+   "basis": "standard Italian typography; the em dash (lineato) is uncommon: the native mark is the en dash; a new em dash is an import. Existing em dashes are reported, never billed; conversion happens on a page's next edit",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "zh-tw": {
+   "policy": "double-dash",
+   "nativeMark": "—— (破折號), always two cells",
+   "replacement": "the paired —— where a dash is meant; otherwise native punctuation (、 。 「」)",
+   "basis": "教育部《重訂標點符號手冊》; corpus: 1,036 of 1,121 em dashes already paired, so a lone — is the import",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ja": {
+   "policy": "double-dash",
+   "nativeMark": "―― / —— (ダッシュ), paired; web prose mostly uses 、 。 「」 ～",
+   "replacement": "the paired —— where a dash is meant; otherwise 、 。 「」 or ～",
+   "basis": "文化庁『くぎり符号の使ひ方』; corpus: 1,810 of 2,565 em dashes already paired — this row was corrected from 'no dash tradition' by the corpus on 2026-09-02",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "id": {
+   "policy": "review",
+   "nativeMark": "— (tanda pisah) for insertions and ranges; rare in web prose",
+   "replacement": null,
+   "basis": "PUEBI defines it; corpus median 20.9 looks imported — density review by a native reader",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ms": {
+   "policy": "review",
+   "nativeMark": "— (tanda pisah); rare in web prose",
+   "replacement": null,
+   "basis": "Dewan Bahasa; as id",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "tl": {
+   "policy": "review",
+   "nativeMark": "follows English conventions",
+   "replacement": null,
+   "basis": "KWF Ortograpiyang Pambansa; six pages only — review together with English",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "tr": {
+   "policy": "review",
+   "nativeMark": "— (uzun çizgi) exists for dialogue; asides take commas or parentheses",
+   "replacement": null,
+   "basis": "TDK Yazım Kılavuzu; corpus median 20.2 looks imported — native review",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "vi": {
+   "policy": "review",
+   "nativeMark": " –  or  -  at dialogue start; asides take commas",
+   "replacement": null,
+   "basis": "Quy định về chính tả; corpus: 52 spaced hyphens on 3 pages are native dialogue marks, not a defect — native review",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ar": {
+   "policy": "review",
+   "nativeMark": "الشرطة, a short dash ( - or – ) for a parenthetical clause; the em dash is not the form",
+   "replacement": null,
+   "basis": "modern Arabic punctuation guides; native review before any rule",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "hi": {
+   "policy": "review",
+   "nativeMark": "निर्देशक चिह्न (dash), usually  –  or —; योजक (hyphen) for compounds",
+   "replacement": null,
+   "basis": "standard Hindi grammar lists a dash; native review before any rule",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "th": {
+   "policy": "review",
+   "nativeMark": "ยัติภาค (—) is in the official list but rare; Thai separates phrases with spaces",
+   "replacement": null,
+   "basis": "ราชบัณฑิตยสถาน; corpus median 3.5, the lowest on the site — native review",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  },
+  "ko": {
+   "policy": "review",
+   "nativeMark": "줄표 (—) is defined for explanations and lists; rare in web prose, ~ for ranges",
+   "replacement": null,
+   "basis": "한글 맞춤법 부록 문장 부호; native review before any rule",
+   "adopted": "2026-09-02",
+   "nextReview": "2026-09-26"
+  }
+ }
+}

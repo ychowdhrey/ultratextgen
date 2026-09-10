@@ -1,0 +1,309 @@
+{
+ "slug": "uhr-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "Uhr-Symbole & Zeit-Zeichen zum Kopieren — alle Uhrzeiten | UltraTextGen",
+ "meta_description": "Uhr-Symbole zum Kopieren: alle 24 Zifferblätter zu jeder halben Stunde, Wecker, Sanduhr, Stoppuhr und Kalender — plus die Zeichen für Minuten und Sekunden.",
+ "breadcrumb": "Uhr-Symbole",
+ "hero_h1": "Uhr-Symbole",
+ "hero_tagline": "Alle Zifferblätter, Wecker, Sanduhr und Kalender — zum Kopieren.",
+ "intro": "Unicode hat für jede volle und jede halbe Stunde ein eigenes Zifferblatt — 24 Zeichen insgesamt, mehr als für jedes andere Alltagsobjekt. Diese Seite hat sie alle, dazu Wecker, Stoppuhr, Sanduhr und die typografischen Zeichen für Minuten und Sekunden.",
+ "sections": [
+  {
+   "id": "volle",
+   "label": "Volle Stunden",
+   "h2": "Volle Stunden",
+   "intro": "Ein Zifferblatt je voller Stunde.",
+   "symbols": [
+    {
+     "char": "🕐",
+     "label": "1 Uhr"
+    },
+    {
+     "char": "🕑",
+     "label": "2 Uhr"
+    },
+    {
+     "char": "🕒",
+     "label": "3 Uhr"
+    },
+    {
+     "char": "🕓",
+     "label": "4 Uhr"
+    },
+    {
+     "char": "🕔",
+     "label": "5 Uhr"
+    },
+    {
+     "char": "🕕",
+     "label": "6 Uhr"
+    },
+    {
+     "char": "🕖",
+     "label": "7 Uhr"
+    },
+    {
+     "char": "🕗",
+     "label": "8 Uhr"
+    },
+    {
+     "char": "🕘",
+     "label": "9 Uhr"
+    },
+    {
+     "char": "🕙",
+     "label": "10 Uhr"
+    },
+    {
+     "char": "🕚",
+     "label": "11 Uhr"
+    },
+    {
+     "char": "🕛",
+     "label": "12 Uhr"
+    }
+   ]
+  },
+  {
+   "id": "halbe",
+   "label": "Halbe Stunden",
+   "h2": "Halbe Stunden",
+   "intro": "Dieselbe Reihe, jeweils um dreißig Minuten versetzt.",
+   "symbols": [
+    {
+     "char": "🕜",
+     "label": "1:30 Uhr"
+    },
+    {
+     "char": "🕝",
+     "label": "2:30 Uhr"
+    },
+    {
+     "char": "🕞",
+     "label": "3:30 Uhr"
+    },
+    {
+     "char": "🕟",
+     "label": "4:30 Uhr"
+    },
+    {
+     "char": "🕠",
+     "label": "5:30 Uhr"
+    },
+    {
+     "char": "🕡",
+     "label": "6:30 Uhr"
+    },
+    {
+     "char": "🕢",
+     "label": "7:30 Uhr"
+    },
+    {
+     "char": "🕣",
+     "label": "8:30 Uhr"
+    },
+    {
+     "char": "🕤",
+     "label": "9:30 Uhr"
+    },
+    {
+     "char": "🕥",
+     "label": "10:30 Uhr"
+    },
+    {
+     "char": "🕦",
+     "label": "11:30 Uhr"
+    },
+    {
+     "char": "🕧",
+     "label": "12:30 Uhr"
+    }
+   ]
+  },
+  {
+   "id": "uhren",
+   "label": "Uhren und Kalender",
+   "h2": "Uhren und Kalender",
+   "intro": "Wecker, Stoppuhr, Sanduhr und Kalenderblätter.",
+   "symbols": [
+    {
+     "char": "⌚",
+     "label": "Armbanduhr"
+    },
+    {
+     "char": "⏰",
+     "label": "Wecker"
+    },
+    {
+     "char": "⏱",
+     "label": "Stoppuhr"
+    },
+    {
+     "char": "⏲",
+     "label": "Kurzzeitmesser"
+    },
+    {
+     "char": "⌛",
+     "label": "Abgelaufene Sanduhr"
+    },
+    {
+     "char": "⏳",
+     "label": "Laufende Sanduhr"
+    },
+    {
+     "char": "🕰",
+     "label": "Kaminuhr"
+    },
+    {
+     "char": "📅",
+     "label": "Kalender"
+    },
+    {
+     "char": "📆",
+     "label": "Abreißkalender"
+    },
+    {
+     "char": "🗓",
+     "label": "Spiralkalender"
+    }
+   ]
+  },
+  {
+   "id": "tageszeit",
+   "label": "Tageszeiten",
+   "h2": "Tageszeiten",
+   "intro": "Sonnenauf- und -untergang, Abend und Nacht.",
+   "symbols": [
+    {
+     "char": "🌅",
+     "label": "Sonnenaufgang"
+    },
+    {
+     "char": "🌄",
+     "label": "Sonnenaufgang über Bergen"
+    },
+    {
+     "char": "🌞",
+     "label": "Sonne mit Gesicht"
+    },
+    {
+     "char": "🌇",
+     "label": "Sonnenuntergang"
+    },
+    {
+     "char": "🌆",
+     "label": "Stadt in der Dämmerung"
+    },
+    {
+     "char": "🌃",
+     "label": "Nacht mit Sternen"
+    },
+    {
+     "char": "🌙",
+     "label": "Mondsichel"
+    },
+    {
+     "char": "🌛",
+     "label": "Zunehmender Mond mit Gesicht"
+    }
+   ]
+  },
+  {
+   "id": "dauer",
+   "label": "Dauer und Zeitangaben",
+   "h2": "Dauer und Zeitangaben",
+   "intro": "Die typografischen Zeichen, die keine Emojis sind.",
+   "symbols": [
+    {
+     "char": "⧖",
+     "label": "Weiße Sanduhr"
+    },
+    {
+     "char": "⧗",
+     "label": "Schwarze Sanduhr"
+    },
+    {
+     "char": "′",
+     "label": "Minutenzeichen (Prime)"
+    },
+    {
+     "char": "″",
+     "label": "Sekundenzeichen (Doppelprime)"
+    },
+    {
+     "char": "㏂",
+     "label": "Vormittag (AM)"
+    },
+    {
+     "char": "㏘",
+     "label": "Nachmittag (PM)"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Uhr-Symbolen",
+ "faq": [
+  {
+   "q": "Warum gibt es 24 verschiedene Uhr-Emojis?",
+   "a": "Weil die japanischen Mobilfunkzeichensätze, aus denen der Emoji-Satz stammt, für Terminangaben eine Uhrzeit anzeigen wollten. Unicode hat die Reihe vollständig übernommen: zwölf volle und zwölf halbe Stunden. Eine Viertelstunde gibt es nicht."
+  },
+  {
+   "q": "Wie schreibe ich Minuten und Sekunden korrekt?",
+   "a": "Mit dem Prime ′ und dem Doppelprime ″, nicht mit Apostroph und Anführungszeichen. 5′30″ ist typografisch richtig, 5'30\" nur eine Behelfsschreibung. Dieselben Zeichen dienen auch für Winkelminuten und -sekunden."
+  },
+  {
+   "q": "Was ist der Unterschied zwischen ⌛ und ⏳?",
+   "a": "⌛ ist durchgelaufen, der Sand liegt unten; ⏳ läuft noch. In Statusmeldungen wird ⏳ für „in Arbeit“ und ⌛ für „Zeit abgelaufen“ verwendet — ein Unterschied, den viele übersehen."
+  },
+  {
+   "q": "Zeigen die Zifferblätter eine bestimmte Zeit an?",
+   "a": "Ja, jedes eine feste. Sie sind nicht dynamisch — 🕒 zeigt immer drei Uhr, unabhängig von der tatsächlichen Uhrzeit. Für eine echte Uhr braucht es ein Skript, kein Zeichen."
+  },
+  {
+   "q": "Warum werden ㏂ und ㏘ oft falsch dargestellt?",
+   "a": "Weil sie aus dem CJK-Kompatibilitätsblock stammen und in westlichen Schriften häufig fehlen. Im deutschsprachigen Raum werden sie ohnehin kaum gebraucht — hier ist die 24-Stunden-Angabe üblich."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum eine halbe Stunde reicht",
+   "body": "Dass Unicode bei der halben Stunde aufhört, wirkt willkürlich, folgt aber der Vorlage: die japanischen Betreiberzeichensätze führten Zifferblätter für Terminerinnerungen, und dort genügte die Auflösung von dreißig Minuten. Eine Erweiterung auf Viertelstunden hätte 48 Zeichen bedeutet, ohne erkennbaren Zusatznutzen — Emojis sollen erkennbar sein, und der Unterschied zwischen 3:15 und 3:30 ist auf Zeichengröße kaum zu sehen. Wer eine genaue Zeit angeben will, schreibt sie ohnehin aus; das Zifferblatt ist ein Hinweis, keine Anzeige."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/zahlen-symbole/",
+   "title": "Zahlen-Symbole",
+   "desc": "Ziffern in allen Unicode-Varianten zum Kopieren."
+  },
+  {
+   "href": "/de/library/wetter-symbole/",
+   "title": "Wetter-Symbole",
+   "desc": "Sonne, Wolken, Regen und Schnee als Zeichen."
+  },
+  {
+   "href": "/de/library/symbole-zum-kopieren/",
+   "title": "Sonderzeichen zum Kopieren",
+   "desc": "Alle Sonderzeichen an einem Ort."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/uhr-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/clock-time-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/uhr-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/clock-time-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

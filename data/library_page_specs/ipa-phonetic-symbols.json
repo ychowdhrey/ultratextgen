@@ -17,18 +17,18 @@
       "h2": "IPA Vowel Symbols",
       "intro": "The vowel symbols most used in English and general phonetic transcription.",
       "symbols": [
-        { "char": "ə", "label": "Schwa — 'a' in About" },
-        { "char": "ɪ", "label": "Small Capital I — 'i' in Kit" },
-        { "char": "ɛ", "label": "Open E (Epsilon) — 'e' in Dress" },
-        { "char": "æ", "label": "Ash — 'a' in Trap" },
-        { "char": "ʌ", "label": "Turned V — 'u' in Strut" },
-        { "char": "ɑ", "label": "Alpha — 'a' in Father" },
-        { "char": "ɒ", "label": "Turned Alpha — 'o' in Lot (British)" },
-        { "char": "ɔ", "label": "Open O — 'aw' in Thought" },
-        { "char": "ʊ", "label": "Upsilon — 'oo' in Foot" },
-        { "char": "ɜ", "label": "Reversed Open E — 'ur' in Nurse" },
-        { "char": "ɨ", "label": "Barred I — Close Central Vowel" },
-        { "char": "ɐ", "label": "Turned A — Near-Open Central Vowel" }
+        { "char": "ə", "label": "Schwa: 'a' in About" },
+        { "char": "ɪ", "label": "Small Capital I: 'i' in Kit" },
+        { "char": "ɛ", "label": "Open E (Epsilon): 'e' in Dress" },
+        { "char": "æ", "label": "Ash: 'a' in Trap" },
+        { "char": "ʌ", "label": "Turned V: 'u' in Strut" },
+        { "char": "ɑ", "label": "Alpha: 'a' in Father" },
+        { "char": "ɒ", "label": "Turned Alpha: 'o' in Lot (British)" },
+        { "char": "ɔ", "label": "Open O: 'aw' in Thought" },
+        { "char": "ʊ", "label": "Upsilon: 'oo' in Foot" },
+        { "char": "ɜ", "label": "Reversed Open E: 'ur' in Nurse" },
+        { "char": "ɨ", "label": "Barred I: Close Central Vowel" },
+        { "char": "ɐ", "label": "Turned A: Near-Open Central Vowel" }
       ]
     },
     {
@@ -37,16 +37,16 @@
       "h2": "Fricative & Sibilant Consonants",
       "intro": "The hissing and friction sounds — including the famous esh, ezh, theta, and eth.",
       "symbols": [
-        { "char": "ʃ", "label": "Esh — 'sh' in Ship" },
-        { "char": "ʒ", "label": "Ezh — 's' in Vision" },
-        { "char": "θ", "label": "Theta — 'th' in Think" },
-        { "char": "ð", "label": "Eth — 'th' in This" },
-        { "char": "ɸ", "label": "Phi — Voiceless Bilabial Fricative" },
-        { "char": "β", "label": "Beta — Voiced Bilabial Fricative" },
-        { "char": "ç", "label": "C with Cedilla — 'h' in Hue" },
-        { "char": "x", "label": "X — 'ch' in Loch" },
-        { "char": "ʁ", "label": "Small Capital Inverted R — French R" },
-        { "char": "ɣ", "label": "Gamma — Voiced Velar Fricative" }
+        { "char": "ʃ", "label": "Esh: 'sh' in Ship" },
+        { "char": "ʒ", "label": "Ezh: 's' in Vision" },
+        { "char": "θ", "label": "Theta: 'th' in Think" },
+        { "char": "ð", "label": "Eth: 'th' in This" },
+        { "char": "ɸ", "label": "Phi: Voiceless Bilabial Fricative" },
+        { "char": "β", "label": "Beta: Voiced Bilabial Fricative" },
+        { "char": "ç", "label": "C with Cedilla: 'h' in Hue" },
+        { "char": "x", "label": "X: 'ch' in Loch" },
+        { "char": "ʁ", "label": "Small Capital Inverted R: French R" },
+        { "char": "ɣ", "label": "Gamma: Voiced Velar Fricative" }
       ]
     },
     {
@@ -55,16 +55,16 @@
       "h2": "Nasals, Taps & Other Consonants",
       "intro": "Nasal, approximant, retroflex, and glottal consonant symbols.",
       "symbols": [
-        { "char": "ŋ", "label": "Eng — 'ng' in Sing" },
-        { "char": "ɲ", "label": "N with Left Hook — 'ñ' in Señor" },
-        { "char": "ɹ", "label": "Turned R — 'r' in Red" },
-        { "char": "ɾ", "label": "R with Fishhook — 'tt' in American Butter" },
-        { "char": "ʔ", "label": "Glottal Stop — the Catch in 'Uh-Oh'" },
-        { "char": "ʈ", "label": "T with Retroflex Hook — Retroflex T" },
-        { "char": "ɖ", "label": "D with Tail — Retroflex D" },
-        { "char": "ʎ", "label": "Turned Y — 'gl' in Italian Famiglia" },
-        { "char": "ɫ", "label": "L with Middle Tilde — Dark L in Feel" },
-        { "char": "ʍ", "label": "Turned W — Voiceless 'wh' in Which" }
+        { "char": "ŋ", "label": "Eng: 'ng' in Sing" },
+        { "char": "ɲ", "label": "N with Left Hook: 'ñ' in Señor" },
+        { "char": "ɹ", "label": "Turned R: 'r' in Red" },
+        { "char": "ɾ", "label": "R with Fishhook: 'tt' in American Butter" },
+        { "char": "ʔ", "label": "Glottal Stop: the Catch in 'Uh-Oh'" },
+        { "char": "ʈ", "label": "T with Retroflex Hook: Retroflex T" },
+        { "char": "ɖ", "label": "D with Tail: Retroflex D" },
+        { "char": "ʎ", "label": "Turned Y: 'gl' in Italian Famiglia" },
+        { "char": "ɫ", "label": "L with Middle Tilde: Dark L in Feel" },
+        { "char": "ʍ", "label": "Turned W: Voiceless 'wh' in Which" }
       ]
     },
     {
@@ -73,16 +73,16 @@
       "h2": "Stress, Length & Modifier Marks",
       "intro": "Suprasegmental marks for stress and vowel length, plus superscript modifiers.",
       "symbols": [
-        { "char": "ˈ", "label": "Vertical Line — Primary Stress Mark" },
-        { "char": "ˌ", "label": "Low Vertical Line — Secondary Stress Mark" },
-        { "char": "ː", "label": "Triangular Colon — Long Vowel Mark" },
-        { "char": "ˑ", "label": "Half Triangular Colon — Half-Long Mark" },
-        { "char": "ʰ", "label": "Superscript H — Aspiration" },
-        { "char": "ʷ", "label": "Superscript W — Labialization" },
-        { "char": "ʲ", "label": "Superscript J — Palatalization" },
-        { "char": "ⁿ", "label": "Superscript N — Nasal Release" },
-        { "char": "ʼ", "label": "Modifier Apostrophe — Ejective" },
-        { "char": "ˀ", "label": "Modifier Glottal Stop — Glottalization" }
+        { "char": "ˈ", "label": "Vertical Line: Primary Stress Mark" },
+        { "char": "ˌ", "label": "Low Vertical Line: Secondary Stress Mark" },
+        { "char": "ː", "label": "Triangular Colon: Long Vowel Mark" },
+        { "char": "ˑ", "label": "Half Triangular Colon: Half-Long Mark" },
+        { "char": "ʰ", "label": "Superscript H: Aspiration" },
+        { "char": "ʷ", "label": "Superscript W: Labialization" },
+        { "char": "ʲ", "label": "Superscript J: Palatalization" },
+        { "char": "ⁿ", "label": "Superscript N: Nasal Release" },
+        { "char": "ʼ", "label": "Modifier Apostrophe: Ejective" },
+        { "char": "ˀ", "label": "Modifier Glottal Stop: Glottalization" }
       ]
     }
   ],

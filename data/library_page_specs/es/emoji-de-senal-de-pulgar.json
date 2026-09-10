@@ -34,8 +34,8 @@
       "h2": "El Emoji con el que se Confunde",
       "intro": "Gestos ya codificados con los que más se compara Señal de Pulgar, o de los que se le acusa de duplicar.",
       "symbols": [
-        { "char": "👍", "label": "Pulgar Arriba — aprobación vertical, no señalar direccional" },
-        { "char": "👎", "label": "Pulgar Abajo — desaprobación vertical, no señalar direccional" },
+        { "char": "👍", "label": "Pulgar Arriba: aprobación vertical, no señalar direccional" },
+        { "char": "👎", "label": "Pulgar Abajo: desaprobación vertical, no señalar direccional" },
         { "char": "👈", "label": "Mano hacia Atrás Señalando a la Izquierda" },
         { "char": "👉", "label": "Mano hacia Atrás Señalando a la Derecha" }
       ]
@@ -46,7 +46,7 @@
       "h2": "Otros Candidatos en Borrador de Emoji 18.0",
       "intro": "Señal de Pulgar no es el único carácter sin aprobar de esta versión — estos están en borrador junto a él, igual de sin renderizar hasta la decisión de septiembre de 2026.",
       "symbols": [
-        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB) — ganó la votación pública" },
+        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB): ganó la votación pública" },
         { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" },
         { "char": "🪋", "label": "Meteoro (borrador, U+1FA8B)" },
         { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" }

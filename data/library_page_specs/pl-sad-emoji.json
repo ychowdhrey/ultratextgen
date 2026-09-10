@@ -6,7 +6,7 @@
   "hero_h1": "Smutne Emoji",
   "hero_tagline": "Wszystkie odcienie smutku: od lekko skrzywionej miny po płacz, a do tego smutne kaomoji.",
   "intro": "„Smutny” to nie jedna emocja i czasem jedno emoji nie wystarcza. Ta strona układa twarze od najlżejszej do najcięższej, dokłada symbole, które wstawia się zamiast słów, i kończy na kaomoji — na wypadek gdy okrągła buźka nie oddaje tego, o co chodzi. Kliknij, aby skopiować.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Dlaczego Smutnych Emoji Jest Aż Tyle",
       "body": "Unicode nie dodał piętnastu smutnych twarzy z rozpędu — każda pojawiła się dla zastosowania, którego wcześniejsze nie obejmowały. 😞 pochodzi z pierwszych japońskich zestawów, gdzie służyła do przepraszania. 🥺 przyszła znacznie później i niemal od razu została odczytana raczej czule niż smutno. 🫠 i 🫤 są z 2021 roku i mówią o wyczerpaniu, nie o żalu. Rozjazd między tym, co zapowiada nazwa unicodowa, a tym, co ludzie z emoji robią, jest realny — dlatego ta strona porządkuje je według natężenia, a nie daty dodania."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Odmiany Smutnego Emoji",
+    "h2": "Odmiany Smutnego Emoji",
+    "intro": "Melancholia jednym kliknięciem — skopiuj cały smutny zestaw i wklej go prosto w bio, podpis albo wiadomość."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Zestaw ze złamanym sercem",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deszczowa melancholia",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nocne smutki",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zawiedzione westchnienie",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zwiędła estetyka",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tęsknota",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pakiet smutnych kaomoji",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -1,0 +1,306 @@
+{
+ "slug": "satzzeichen",
+ "lang": "de",
+ "copy_pattern": "single",
+ "title": "Satzzeichen & Sonderzeichen zum Kopieren — Fragezeichen, Kreuz, Paragraf | UltraTextGen",
+ "meta_description": "Satzzeichen zum Kopieren: Kreuz †, Paragraf §, Absatzzeichen ¶, Interrobang ‽, umgekehrtes Fragezeichen ¿ und Promille ‰ — mit Erklärung, wofür sie stehen.",
+ "breadcrumb": "Satzzeichen",
+ "hero_h1": "Satzzeichen und typografische Zeichen",
+ "hero_tagline": "Kreuz, Paragraf, Absatzzeichen, Interrobang — die Zeichen jenseits von Punkt und Komma.",
+ "intro": "Punkt, Komma und Fragezeichen liegen auf der Tastatur. Alles andere nicht: das Kreuz für Verstorbene, das Paragrafenzeichen, das Absatzzeichen aus dem Lektorat, das Promillezeichen. Diese Seite sammelt die typografischen Zeichen, die man in Fußnoten, Rechtstexten und Lektoratsanmerkungen braucht — mit einer Erklärung, wofür jedes steht.",
+ "sections": [
+  {
+   "id": "kreuze",
+   "label": "Kreuze & Verweise",
+   "h2": "Kreuze, Sternchen und Verweiszeichen",
+   "intro": "Die klassische Fußnotenreihe und die Zeichen für Geburt und Tod.",
+   "symbols": [
+    {
+     "char": "†",
+     "label": "Kreuz (Todeszeichen, erste Fußnote)"
+    },
+    {
+     "char": "‡",
+     "label": "Doppelkreuz (zweite Fußnote)"
+    },
+    {
+     "char": "⁑",
+     "label": "Zwei Sternchen übereinander"
+    },
+    {
+     "char": "⁂",
+     "label": "Asterismus"
+    },
+    {
+     "char": "※",
+     "label": "Verweiszeichen"
+    },
+    {
+     "char": "‖",
+     "label": "Doppelter Senkrechtstrich"
+    }
+   ]
+  },
+  {
+   "id": "absatz",
+   "label": "Absatz & Paragraf",
+   "h2": "Absatz- und Paragrafenzeichen",
+   "intro": "Was im Lektorat und im Rechtstext gebraucht wird.",
+   "symbols": [
+    {
+     "char": "¶",
+     "label": "Absatzzeichen"
+    },
+    {
+     "char": "⁋",
+     "label": "Umgekehrtes Absatzzeichen"
+    },
+    {
+     "char": "§",
+     "label": "Paragrafenzeichen"
+    },
+    {
+     "char": "‰",
+     "label": "Promille"
+    },
+    {
+     "char": "‱",
+     "label": "Basispunkt (Zehntelpromille)"
+    }
+   ]
+  },
+  {
+   "id": "frage",
+   "label": "Frage & Ausruf",
+   "h2": "Interrobang und umgekehrte Zeichen",
+   "intro": "Für Fragen, die zugleich Ausrufe sind — und für spanische Sätze.",
+   "symbols": [
+    {
+     "char": "‽",
+     "label": "Interrobang"
+    },
+    {
+     "char": "⸮",
+     "label": "Ironiezeichen"
+    },
+    {
+     "char": "¡",
+     "label": "Umgekehrtes Ausrufezeichen"
+    },
+    {
+     "char": "¿",
+     "label": "Umgekehrtes Fragezeichen"
+    },
+    {
+     "char": "⁇",
+     "label": "Doppeltes Fragezeichen"
+    },
+    {
+     "char": "⁉",
+     "label": "Ausrufe- und Fragezeichen"
+    },
+    {
+     "char": "⁈",
+     "label": "Frage- und Ausrufezeichen"
+    }
+   ]
+  },
+  {
+   "id": "fragezeichen",
+   "label": "Fragezeichen",
+   "h2": "Fragezeichen, Ausrufezeichen & Semikolon",
+   "intro": "Fragezeichen und Ausrufezeichen samt der umgedrehten spanischen Formen und dem oft mitgesuchten Semikolon.",
+   "symbols": [
+    {
+     "char": "?",
+     "label": "Fragezeichen"
+    },
+    {
+     "char": "!",
+     "label": "Ausrufezeichen"
+    },
+    {
+     "char": ";",
+     "label": "Semikolon"
+    },
+    {
+     "char": "？",
+     "label": "Fragezeichen (Vollbreite)"
+    },
+    {
+     "char": "！",
+     "label": "Ausrufezeichen (Vollbreite)"
+    }
+   ]
+  },
+  {
+   "id": "doppelpunkt",
+   "label": "Doppelpunkt",
+   "h2": "Doppelpunkt & Unterstrich",
+   "intro": "Doppelpunkt, Unterstrich und verwandte Verbinder- und Trennzeichen für Text, Code und Benutzernamen.",
+   "symbols": [
+    {
+     "char": ":",
+     "label": "Doppelpunkt"
+    },
+    {
+     "char": "_",
+     "label": "Unterstrich"
+    },
+    {
+     "char": "：",
+     "label": "Doppelpunkt (Vollbreite)"
+    },
+    {
+     "char": "﹍",
+     "label": "Gestrichelte Unterlinie"
+    },
+    {
+     "char": "‿",
+     "label": "Unterbogen"
+    }
+   ]
+  },
+  {
+   "id": "komma",
+   "label": "Komma",
+   "h2": "Komma & Klammern",
+   "intro": "Komma, Klammern und verwandte Trennzeichen für sauber gesetzten Text — samt der ostasiatischen Vollbreiten-Formen.",
+   "symbols": [
+    {
+     "char": ",",
+     "label": "Komma"
+    },
+    {
+     "char": "(",
+     "label": "Klammer auf"
+    },
+    {
+     "char": ")",
+     "label": "Klammer zu"
+    },
+    {
+     "char": "，",
+     "label": "Komma (Vollbreite)"
+    },
+    {
+     "char": "、",
+     "label": "Ideografisches Komma"
+    },
+    {
+     "char": "（",
+     "label": "Klammer auf (Vollbreite)"
+    },
+    {
+     "char": "）",
+     "label": "Klammer zu (Vollbreite)"
+    }
+   ]
+  },
+  {
+   "id": "anfuehrungszeichen",
+   "label": "Anführungszeichen",
+   "h2": "Anführungszeichen",
+   "intro": "Gerade, typografische und französische Anführungszeichen. Im Deutschen stehen die typografischen Zeichen als „unten und oben“, nicht wie im Englischen beide oben.",
+   "symbols": [
+    {
+     "char": "\"",
+     "label": "Gerades Anführungszeichen"
+    },
+    {
+     "char": "“",
+     "label": "Linkes doppeltes Anführungszeichen"
+    },
+    {
+     "char": "”",
+     "label": "Rechtes doppeltes Anführungszeichen"
+    },
+    {
+     "char": "«",
+     "label": "Guillemet links (französisch)"
+    },
+    {
+     "char": "»",
+     "label": "Guillemet rechts (französisch)"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu Satzzeichen",
+ "faq": [
+  {
+   "q": "Wofür steht das Kreuz † bei Namen?",
+   "a": "Für das Sterbedatum. In Verbindung mit dem Sternchen * ergibt sich die übliche Lebensdatenangabe: * 1943, † 2021. In wissenschaftlichen Texten ist † zugleich das zweite Fußnotenzeichen nach dem Sternchen — welche Bedeutung gilt, ergibt sich aus dem Zusammenhang."
+  },
+  {
+   "q": "Wie schreibe ich das Paragrafenzeichen §?",
+   "a": "Auf der deutschen Tastatur liegt es auf Umschalt+3. Auf einer englischen Tastatur fehlt es, dort ist Kopieren der schnellste Weg. Wichtig: bei mehreren Paragrafen wird es verdoppelt — §§ 12 ff."
+  },
+  {
+   "q": "Was ist ein Interrobang?",
+   "a": "Das Zeichen ‽ vereint Frage- und Ausrufezeichen in einem Glyph. Es wurde 1962 von einem amerikanischen Werbefachmann vorgeschlagen und hat sich nie durchgesetzt — üblich bleibt ?!. Es existiert aber als reguläres Unicode-Zeichen und wird in Typografie gelegentlich bewusst eingesetzt."
+  },
+  {
+   "q": "Wofür ist das Absatzzeichen ¶?",
+   "a": "Im Lektorat markiert es einen Absatzwechsel, in Textverarbeitungen zeigt es die eingeblendeten Formatierungszeichen an. Im gesetzten Text erscheint es fast nie — mit einer Ausnahme: in juristischen und theologischen Texten dient es als Gliederungszeichen innerhalb eines Fließtexts."
+  },
+  {
+   "q": "Wann braucht man das umgekehrte Fragezeichen ¿?",
+   "a": "Im Spanischen, wo es den Fragesatz eröffnet: ¿Cómo estás? Im Deutschen gibt es dafür keine Verwendung — außer beim Zitieren spanischer Sätze. Verwechslungsgefahr besteht mit ⸮, dem historischen Ironiezeichen, das anders aussieht und eine ganz andere Funktion hat."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Die Reihenfolge der Fußnotenzeichen",
+   "body": "Wo Ziffern für Fußnoten nicht in Frage kommen — etwa in Tabellen, in denen Zahlen bereits Daten sind — gilt eine feste Reihenfolge: erst *, dann †, dann ‡, dann §, dann ‖, dann ¶. Danach wird verdoppelt: **, ††, ‡‡. Diese Folge stammt aus dem Bleisatz und wird von wissenschaftlichen Verlagen bis heute so verwendet. Wer nur ein Zeichen braucht, nimmt das Sternchen; wer drei braucht, sollte die Reihenfolge kennen, weil eine willkürliche Auswahl im gesetzten Text sofort auffällt."
+  },
+  {
+   "h2": "Warum ‰ und ‱ eigene Zeichen sind",
+   "body": "Das Prozentzeichen % hat zwei Nullen im Nenner, das Promillezeichen ‰ drei, das Basispunktzeichen ‱ vier — die Zeichenform bildet die Größenordnung direkt ab. ‰ ist im deutschsprachigen Raum vor allem aus dem Verkehrsrecht bekannt (Blutalkohol), ‱ fast ausschließlich aus dem Finanzwesen, wo Zinsänderungen in Basispunkten angegeben werden. Beide werden häufig durch „Promille“ beziehungsweise „bp“ ersetzt, was zulässig, aber weniger präzise ist."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/symbol/paragraphenzeichen/",
+   "title": "Paragrafenzeichen (§)",
+   "desc": "Herkunft, Verwendung und die Regel für §§ bei mehreren Paragrafen."
+  },
+  {
+   "href": "/de/symbol/absatzzeichen/",
+   "title": "Absatzzeichen (¶)",
+   "desc": "Das Pilcrow-Zeichen — Geschichte und heutige Verwendung."
+  },
+  {
+   "href": "/de/symbol/umgekehrtes-fragezeichen/",
+   "title": "Umgekehrtes Fragezeichen (¿)",
+   "desc": "Warum das Spanische den Fragesatz zweimal markiert."
+  },
+  {
+   "href": "/de/library/symbole-zum-kopieren/",
+   "title": "Sonderzeichen zum Kopieren",
+   "desc": "Alle Sonderzeichen an einem Ort, mit einem Klick kopiert."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/satzzeichen/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/punctuation-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/satzzeichen/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/vraagteken/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/punctuation-symbols/"
+  }
+ ],
+ "page_type": "library",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

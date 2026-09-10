@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/aquarius-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/aquarius-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/aquarius-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/aquarius-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/aquarius-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/aquarius-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Bảo Bình",
       "intro": "Ký hiệu Unicode của cung Bảo Bình, sẵn sàng để dán.",
       "symbols": [
-        { "char": "♒", "label": "Ký Hiệu Bảo Bình" },
-        { "char": "♒️", "label": "Ký Hiệu Bảo Bình (Dạng Emoji)" }
+        {
+          "char": "♒",
+          "label": "Ký Hiệu Bảo Bình"
+        },
+        {
+          "char": "♒️",
+          "label": "Ký Hiệu Bảo Bình (Dạng Emoji)"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Hành Tinh Chủ Quản & Nguyên Tố",
       "intro": "Hành tinh và nguyên tố cổ điển gắn liền với Bảo Bình theo truyền thống chiêm tinh.",
       "symbols": [
-        { "char": "♅", "label": "Sao Thiên Vương (Hành Tinh Chủ Quản)" },
-        { "char": "🜁", "label": "Khí (Nguyên Tố, Ký Hiệu Giả Kim)" }
+        {
+          "char": "♅",
+          "label": "Sao Thiên Vương (Hành Tinh Chủ Quản)"
+        },
+        {
+          "char": "🜁",
+          "label": "Khí (Nguyên Tố, Ký Hiệu Giả Kim)"
+        }
       ]
     },
     {
@@ -48,17 +69,40 @@
       "h2": "Thêm Ký Hiệu Cung Hoàng Đạo & Thiên Thể",
       "intro": "Các thiên thể khác và cung đối diện của Bảo Bình trên vòng hoàng đạo (Sư Tử).",
       "symbols": [
-        { "char": "☉", "label": "Mặt Trời" },
-        { "char": "☽", "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)" },
-        { "char": "⛎", "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)" },
-        { "char": "♌", "label": "Sư Tử (Cung Đối Diện)" }
+        {
+          "char": "☉",
+          "label": "Mặt Trời"
+        },
+        {
+          "char": "☽",
+          "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)"
+        },
+        {
+          "char": "⛎",
+          "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)"
+        },
+        {
+          "char": "♌",
+          "label": "Sư Tử (Cung Đối Diện)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu." },
-    { "href": "/vi/symbol/leo-symbol/", "title": "Ký Hiệu Sư Tử", "desc": "Cung đối diện của Bảo Bình, nằm thẳng phía bên kia vòng hoàng đạo." },
-    { "href": "/vi/symbol/libra-symbol/", "title": "Ký Hiệu Thiên Bình", "desc": "Ký hiệu hoàng đạo duy nhất tượng trưng cho một vật thể thay vì con vật hay con người." }
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Ký Hiệu Cung Hoàng Đạo",
+      "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/leo-symbol/",
+      "title": "Ký Hiệu Sư Tử",
+      "desc": "Cung đối diện của Bảo Bình, nằm thẳng phía bên kia vòng hoàng đạo."
+    },
+    {
+      "href": "/vi/symbol/libra-symbol/",
+      "title": "Ký Hiệu Thiên Bình",
+      "desc": "Ký hiệu hoàng đạo duy nhất tượng trưng cho một vật thể thay vì con vật hay con người."
+    }
   ]
 }

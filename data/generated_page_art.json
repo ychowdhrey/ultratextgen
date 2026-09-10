@@ -1,0 +1,4 @@
+{
+  "_readme": "Art-card registry entries written automatically by scripts/generate_library_page_from_spec.py, merged into scripts/generate-site-art.py's PAGES dict at import. It exists because PAGES is a hand-maintained 3,500-line literal, and generate-site-art.py refuses any slug it does not know ('error: no registered page matches') — so every generated page needed a manual dict edit before it could have art, and every generated page therefore shipped pointing at art that did not exist. A side file lets the generator register a page without editing that literal. Hand-written entries still belong in PAGES; this file is only for generated pages. Keys are the page path with '/' replaced by '-'. `kicker` is LIB or SYM; `glyphs` are the page's own copy tiles, which is what the art card draws.",
+  "entries": {}
+}

@@ -1,0 +1,67 @@
+name: Link Rot Audit
+
+# Does every externally cited URL on the site still load?
+#
+# MANUAL ONLY, on purpose. There is no `schedule:` here yet, and adding one is
+# a deliberate decision rather than a default:
+#
+#   * It reaches ~50 third-party hosts per run. That is a courtesy question as
+#     much as a technical one, and monthly is the most this should ever be.
+#   * It writes data/source_link_health.json back to the repo. This repo has
+#     one other scheduled auto-committing workflow (update-sitemap.yml), whose
+#     own history records being paused for two weeks after a mass-bump during
+#     a live incident. A second scheduled writer is not something to add
+#     without asking.
+#
+# To put it on a monthly cadence, add under `on:`:
+#     schedule:
+#       - cron: '0 6 1 * *'
+#
+# The audit never fails the job. A cited host that rate-limits us, or a runner
+# with odd egress, is not a defect in the site — see the header of
+# scripts/lib/link-health.js for the measurements behind that.
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  link-rot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Run link rot audit
+        id: link_rot
+        run: npm run audit:link-rot | tee link-rot.log
+
+      - name: Publish report
+        if: always()
+        run: |
+          {
+            echo "### Link rot audit — \`${{ steps.link_rot.outcome }}\`"
+            echo '```'
+            cat link-rot.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit updated link-health ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source_link_health.json
+          git diff --cached --quiet || git commit -m "chore: update link-health ledger [skip ci]"
+          git push

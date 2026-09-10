@@ -93,6 +93,22 @@
       "more": "더 보기",
       "less": "접기"
     },
-    "demoText": "UltraTextGen에 오신 것을 환영합니다.\n무엇이든 입력하세요. 특별하게 만들어 보세요."
+    "demoText": "UltraTextGen에 오신 것을 환영합니다.\n무엇이든 입력하세요. 특별하게 만들어 보세요.",
+    "formatControl": {
+      "label": "서식 추가",
+      "groupAriaLabel": "모든 스타일에 밑줄 또는 취소선 적용"
+    },
+    "platformChips": {
+      "all": "어디서나 작동"
+    },
+    "categoryLoad": {
+      "failed": "카테고리를 불러오지 못했습니다. 모든 폰트를 표시합니다."
+    },
+    "stylePreview": {
+      "title": "미리보기",
+      "titleFor": "{style} 미리보기",
+      "dialogAriaLabel": "플랫폼 미리보기",
+      "closeAriaLabel": "미리보기 닫기"
+    }
   }
 }

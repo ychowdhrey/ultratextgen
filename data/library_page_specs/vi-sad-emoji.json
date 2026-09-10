@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Buồn",
   "hero_tagline": "Đủ mọi mức độ buồn: từ mặt hơi xị xuống cho tới khóc oà, kèm cả kaomoji buồn.",
   "intro": "«Buồn» không phải chỉ một cảm xúc, và đôi khi một emoji là không đủ. Trang này xếp các khuôn mặt từ nhẹ tới nặng, thêm những ký hiệu người ta chèn vào thay lời nói, rồi tới kaomoji cho lúc một cái mặt tròn không diễn tả nổi. Bấm để sao chép.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Vì Sao Có Nhiều Emoji Buồn Đến Thế",
       "body": "Unicode không thêm mười lăm khuôn mặt buồn cho vui: mỗi cái ra đời để phục vụ một tình huống mà những cái trước chưa lo được. 😞 đến từ các bộ emoji Nhật đời đầu, vốn dùng khi xin lỗi. 🥺 xuất hiện muộn hơn nhiều và gần như lập tức bị đọc theo nghĩa nũng nịu chứ không phải buồn. 🫠 và 🫤 là của năm 2021, nói về sự kiệt sức chứ không phải nỗi đau. Khoảng cách giữa cái tên Unicode và cách người ta thật sự dùng là có thật — nên trang này xếp theo mức độ chứ không theo năm bổ sung."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Các Kiểu Emoji Buồn",
+    "h2": "Các Kiểu Emoji Buồn",
+    "intro": "Bấm một cái là buồn trọn bộ — sao chép nguyên combo cho bio, caption hay tin nhắn."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Bộ Trái Tim Tan Vỡ",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "U Sầu Ngày Mưa",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Giờ Ủ Rũ",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thở Dài Thất Vọng",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Phong Cách Héo Tàn",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nhớ Người",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bộ Kaomoji Buồn",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "lambda-symbool",
   "title": "Lambda-symbool: Kopieer en Plak λ Λ — het Homobevrijdingsteken & Churchs Lambda-calculus",
   "meta_description": "Kopieer en plak het lambda-symbool — kleine letter λ (golflengte, het homobevrijdingsteken uit 1970) en hoofdletter Λ (de kosmologische constante) — plus hoe het Pythons lambda en AWS Lambda hun naam gaf. Klik op een teken om het direct te kopiëren.",
@@ -56,7 +55,7 @@
       "symbols": [
         {
           "char": "λ",
-          "label": "Griekse Kleine Letter Lambda (U+03BB) — Het Homobevrijdingsteken"
+          "label": "Griekse Kleine Letter Lambda (U+03BB): Het Homobevrijdingsteken"
         },
         {
           "char": "🏳️‍🌈",
@@ -76,15 +75,15 @@
       "symbols": [
         {
           "char": "λ",
-          "label": "Griekse Kleine Letter Lambda (U+03BB) — Golflengte & Lambda-calculus"
+          "label": "Griekse Kleine Letter Lambda (U+03BB): Golflengte & Lambda-calculus"
         },
         {
           "char": "Λ",
-          "label": "Griekse Hoofdletter Lambda (U+039B) — Kosmologische Constante"
+          "label": "Griekse Hoofdletter Lambda (U+039B): Kosmologische Constante"
         },
         {
           "char": "𝜆",
-          "label": "Wiskundig Cursieve Lambda (U+1D706) — De Variant voor Vergelijkingen"
+          "label": "Wiskundig Cursieve Lambda (U+1D706): De Variant voor Vergelijkingen"
         }
       ]
     },

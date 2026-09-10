@@ -118,7 +118,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Czy mogę łączyć tekst pionowy ze stylami czcionek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tak — i dokładnie to robi ten generator. Każda karta stylu pokazuje Twój tekst przekonwertowany na czcionkę Unicode (pogrubioną, kursywę, ozdobną, gotycką, bąbelkową itd.) i ułożony pionowo. Wybierasz styl pasujący do Twojego klimatu, a następnie kopiujesz wersję pionową."
+        "text": "Tak, i dokładnie to robi ten generator. Każda karta stylu pokazuje Twój tekst przekonwertowany na czcionkę Unicode (pogrubioną, kursywę, ozdobną, gotycką, bąbelkową itd.) i ułożony pionowo. Wybierasz styl pasujący do Twojego klimatu, a następnie kopiujesz wersję pionową."
       }
     },
     {
@@ -241,6 +241,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Wpisz swój tekst tutaj…" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Twój tekst zawiera polskie znaki. Pogrubienie, kursywa, gotyk i większość innych stylów zachowują teraz <b>ą</b>, <b>ę</b> i <b>ś</b> ze znakiem — tylko nieliczne (tekst do góry nogami, oraz <b>ł</b>, które nie ma formy ze znakiem) wracają do zwykłych liter. <a href="/guide/fancy-fonts-and-accents/">Które style zachowują znaki diakrytyczne →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Zamknij">✕</button>
         </div>
 
         <!-- Vertical Control Panel: populated by verticalPageController.js -->
@@ -397,7 +404,7 @@ y   w</pre></div>
     </svg>
   </button>
   <div class="faq-answer">
-    Tak — i dokładnie to robi ten generator. Każda karta stylu pokazuje Twój tekst przekonwertowany na czcionkę Unicode (pogrubioną, kursywę, ozdobną, gotycką, bąbelkową itd.) i ułożony pionowo.
+    Tak, i dokładnie to robi ten generator. Każda karta stylu pokazuje Twój tekst przekonwertowany na czcionkę Unicode (pogrubioną, kursywę, ozdobną, gotycką, bąbelkową itd.) i ułożony pionowo.
     Wybierasz styl pasujący do Twojego klimatu, a następnie kopiujesz wersję pionową.
   </div>
 </div>
@@ -683,7 +690,11 @@ y   w</pre></div>
   <script src="/js/vertical/verticalLayouts.js" defer></script>
   <script src="/js/vertical/verticalDecorators.js" defer></script>
   <script src="/js/vertical/verticalDecoratorData.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/js/vertical/verticalPageController.js" defer></script>
 
 <script src="/footer.js" defer></script>

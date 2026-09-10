@@ -37,9 +37,9 @@
       "h2": "Inne Symbole Bliskie Pokojowi",
       "intro": "Znaki, z którymi bywa mylony albo łączony symbol pokoju.",
       "symbols": [
-        { "char": "✌", "label": "Znak Zwycięstwa/Pokoju Dłonią (U+270C) — gest dłoni, nie okrągły symbol pokoju" },
-        { "char": "🕊", "label": "Gołąb (U+1F54A) — osobne emoji kojarzone z pokojem" },
-        { "char": "☯", "label": "Yin Yang (U+262F) — inny symbol, czasem łączony z obrazami pokoju" }
+        { "char": "✌", "label": "Znak Zwycięstwa/Pokoju Dłonią (U+270C): gest dłoni, nie okrągły symbol pokoju" },
+        { "char": "🕊", "label": "Gołąb (U+1F54A): osobne emoji kojarzone z pokojem" },
+        { "char": "☯", "label": "Yin Yang (U+262F): inny symbol, czasem łączony z obrazami pokoju" }
       ]
     },
     {
@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/yin-yang/",

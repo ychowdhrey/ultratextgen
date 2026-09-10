@@ -1,0 +1,430 @@
+{
+ "slug": "email-symbole",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "single",
+ "title": "E-Mail-Symbole zum Kopieren — Aufzählungen, Trenner und Betreffzeichen | UltraTextGen",
+ "meta_description": "E-Mail-Symbole zum Kopieren: Aufzählungszeichen, Trennlinien, Statuszeichen und Kontaktsymbole für Signatur und Betreff — funktionieren in Outlook, Gmail und Word.",
+ "breadcrumb": "E-Mail-Symbole",
+ "hero_h1": "E-Mail-Symbole",
+ "hero_tagline": "Aufzählungen, Trenner, Statuszeichen und Kontaktsymbole — für Betreff, Text und Signatur.",
+ "intro": "In einer E-Mail steht kein Formatierungswerkzeug zur Verfügung, das über Fett und Kursiv hinausgeht. Wer trotzdem gliedern will, tut das mit Zeichen: ein ▸ als Aufzählungspunkt, eine ─ Linie als Trenner, ein 🔴 im Betreff für Dringlichkeit. Diese Seite sammelt die Zeichen, die dafür üblich sind — und die in Outlook, Gmail und Apple Mail gleichermaßen ankommen.",
+ "sections": [
+  {
+   "id": "betreff",
+   "label": "Betreffzeile",
+   "h2": "Betreffzeile",
+   "intro": "Zeichen, die eine Betreffzeile sichtbar machen. Sparsam einsetzen — zu viele wirken wie Werbung und landen im Spam.",
+   "symbols": [
+    {
+     "char": "⚡",
+     "label": "Blitz"
+    },
+    {
+     "char": "🔥",
+     "label": "Feuer"
+    },
+    {
+     "char": "✨",
+     "label": "Funkeln"
+    },
+    {
+     "char": "🎯",
+     "label": "Zielscheibe"
+    },
+    {
+     "char": "⭐",
+     "label": "Stern"
+    },
+    {
+     "char": "🚀",
+     "label": "Rakete"
+    },
+    {
+     "char": "📢",
+     "label": "Megafon"
+    },
+    {
+     "char": "📣",
+     "label": "Sprachrohr"
+    },
+    {
+     "char": "🆕",
+     "label": "Neu"
+    },
+    {
+     "char": "🔔",
+     "label": "Glocke"
+    },
+    {
+     "char": "💡",
+     "label": "Glühbirne"
+    },
+    {
+     "char": "❗",
+     "label": "Ausrufezeichen"
+    }
+   ]
+  },
+  {
+   "id": "aufzaehlung",
+   "label": "Aufzählungszeichen",
+   "h2": "Aufzählungszeichen",
+   "intro": "Sachliche Punkte für Listen — funktionieren auch dort, wo die Formatierung verlorengeht.",
+   "symbols": [
+    {
+     "char": "▸",
+     "label": "Kleines gefülltes Dreieck"
+    },
+    {
+     "char": "▹",
+     "label": "Kleines leeres Dreieck"
+    },
+    {
+     "char": "◆",
+     "label": "Gefüllte Raute"
+    },
+    {
+     "char": "➤",
+     "label": "Zeiger nach rechts"
+    },
+    {
+     "char": "◇",
+     "label": "Leere Raute"
+    },
+    {
+     "char": "●",
+     "label": "Gefüllter Kreis"
+    },
+    {
+     "char": "○",
+     "label": "Leerer Kreis"
+    },
+    {
+     "char": "‣",
+     "label": "Dreieckiger Aufzählungspunkt"
+    },
+    {
+     "char": "▪",
+     "label": "Kleines gefülltes Quadrat"
+    },
+    {
+     "char": "▫",
+     "label": "Kleines leeres Quadrat"
+    },
+    {
+     "char": "•",
+     "label": "Aufzählungspunkt"
+    }
+   ]
+  },
+  {
+   "id": "trenner",
+   "label": "Trennlinien",
+   "h2": "Trennlinien",
+   "intro": "Für Abschnitte und die Grenze zur Signatur.",
+   "symbols": [
+    {
+     "char": "─",
+     "label": "Dünne Linie"
+    },
+    {
+     "char": "═",
+     "label": "Doppelte Linie"
+    },
+    {
+     "char": "━",
+     "label": "Dicke Linie"
+    },
+    {
+     "char": "│",
+     "label": "Senkrechter Strich"
+    },
+    {
+     "char": "┃",
+     "label": "Dicker senkrechter Strich"
+    },
+    {
+     "char": "—",
+     "label": "Geviertstrich"
+    },
+    {
+     "char": "·",
+     "label": "Mittelpunkt"
+    },
+    {
+     "char": "⋯",
+     "label": "Auslassungspunkte"
+    },
+    {
+     "char": "〰",
+     "label": "Wellenlinie"
+    },
+    {
+     "char": "|",
+     "label": "Senkrechter Strich (ASCII)"
+    },
+    {
+     "char": "⁃",
+     "label": "Bindestrich-Aufzählung"
+    },
+    {
+     "char": "┄",
+     "label": "Gestrichelte Linie"
+    }
+   ]
+  },
+  {
+   "id": "status",
+   "label": "Status und Priorität",
+   "h2": "Status und Priorität",
+   "intro": "Für Projektlisten und Statusmeldungen.",
+   "symbols": [
+    {
+     "char": "🔴",
+     "label": "Rot (dringend)"
+    },
+    {
+     "char": "🟡",
+     "label": "Gelb (offen)"
+    },
+    {
+     "char": "🟢",
+     "label": "Grün (erledigt)"
+    },
+    {
+     "char": "✅",
+     "label": "Erledigt"
+    },
+    {
+     "char": "❌",
+     "label": "Abgesagt"
+    },
+    {
+     "char": "❓",
+     "label": "Rückfrage"
+    },
+    {
+     "char": "🆘",
+     "label": "Notfall"
+    },
+    {
+     "char": "🆓",
+     "label": "Kostenlos"
+    },
+    {
+     "char": "⚠️",
+     "label": "Achtung"
+    },
+    {
+     "char": "ℹ️",
+     "label": "Information"
+    },
+    {
+     "char": "🔵",
+     "label": "Blau (in Arbeit)"
+    },
+    {
+     "char": "⏰",
+     "label": "Frist"
+    },
+    {
+     "char": "📌",
+     "label": "Pinnnadel"
+    }
+   ]
+  },
+  {
+   "id": "kontakt",
+   "label": "Kontakt und Signatur",
+   "h2": "Kontakt und Signatur",
+   "intro": "Die Zeichen für den Block unter dem Gruß.",
+   "symbols": [
+    {
+     "char": "📧",
+     "label": "E-Mail"
+    },
+    {
+     "char": "📱",
+     "label": "Mobiltelefon"
+    },
+    {
+     "char": "📞",
+     "label": "Telefonhörer"
+    },
+    {
+     "char": "🌐",
+     "label": "Webseite"
+    },
+    {
+     "char": "📍",
+     "label": "Standort"
+    },
+    {
+     "char": "☎",
+     "label": "Telefon"
+    },
+    {
+     "char": "💼",
+     "label": "Aktentasche"
+    },
+    {
+     "char": "🔗",
+     "label": "Link"
+    },
+    {
+     "char": "📎",
+     "label": "Büroklammer"
+    },
+    {
+     "char": "🖊",
+     "label": "Stift"
+    },
+    {
+     "char": "✉",
+     "label": "Briefumschlag"
+    },
+    {
+     "char": "✆",
+     "label": "Telefonzeichen (Text)"
+    },
+    {
+     "char": "☏",
+     "label": "Telefon (Textzeichen)"
+    },
+    {
+     "char": "⌂",
+     "label": "Haus / Adresse (Textzeichen)"
+    },
+    {
+     "char": "✎",
+     "label": "Bleistift (Textzeichen)"
+    }
+   ]
+  },
+  {
+   "id": "reaktion",
+   "label": "Reaktion",
+   "h2": "Reaktion",
+   "intro": "Für kurze Antworten und Rückmeldungen.",
+   "symbols": [
+    {
+     "char": "👍",
+     "label": "Daumen hoch"
+    },
+    {
+     "char": "👎",
+     "label": "Daumen runter"
+    },
+    {
+     "char": "✅",
+     "label": "Freigegeben"
+    },
+    {
+     "char": "❌",
+     "label": "Abgelehnt"
+    },
+    {
+     "char": "🤝",
+     "label": "Handschlag"
+    },
+    {
+     "char": "🙏",
+     "label": "Danke"
+    },
+    {
+     "char": "👏",
+     "label": "Applaus"
+    },
+    {
+     "char": "💯",
+     "label": "Hundert Punkte"
+    },
+    {
+     "char": "💡",
+     "label": "Idee"
+    },
+    {
+     "char": "🎉",
+     "label": "Glückwunsch"
+    },
+    {
+     "char": "❤️",
+     "label": "Herz"
+    },
+    {
+     "char": "🔥",
+     "label": "Feuer"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu E-Mail-Symbolen",
+ "faq": [
+  {
+   "q": "Landen E-Mails mit Emojis im Betreff im Spam?",
+   "a": "Nicht automatisch, aber es erhöht das Risiko. Spamfilter bewerten Emojis im Betreff als schwaches Signal — entscheidend sind Absenderreputation und Inhalt. Ein einzelnes Zeichen ist unproblematisch, drei oder mehr sehen nach Werbung aus."
+  },
+  {
+   "q": "Wie füge ich Symbole in Outlook ein?",
+   "a": "Am schnellsten mit Windows-Taste + Punkt, das öffnet die Emoji-Auswahl. Alternativ Einfügen → Symbol für die reinen Unicode-Zeichen, oder schlicht von hier kopieren — das funktioniert in jeder Outlook-Version einschließlich der Web-Oberfläche."
+  },
+  {
+   "q": "Werden die Zeichen bei allen Empfängern gleich angezeigt?",
+   "a": "Die einfarbigen Unicode-Zeichen (▸ ─ ◆ •) praktisch überall, weil sie in jeder Standardschrift enthalten sind. Die bunten Emojis werden je nach Gerät unterschiedlich gezeichnet und in reinen Text-Mails gar nicht dargestellt. Für geschäftliche Post sind die einfarbigen Zeichen die sichere Wahl."
+  },
+  {
+   "q": "Welches Aufzählungszeichen wirkt am professionellsten?",
+   "a": "▸ und • sind unauffällig und in jeder Schrift vorhanden. ➤ wirkt bereits werblich, Emojis als Aufzählungspunkte durchweg informell. In der Bewerbung oder im Angebot bleibt man besser bei den ersten beiden."
+  },
+  {
+   "q": "Wie trenne ich die Signatur sauber ab?",
+   "a": "Konventionell mit zwei Bindestrichen und einem Leerzeichen in einer eigenen Zeile — daran erkennen viele Mailprogramme die Signatur und blenden sie beim Antworten aus. Optisch ansprechender ist eine Reihe aus ─, was diese Automatik allerdings aushebelt."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum Zeichen in E-Mails mehr leisten als Formatierung",
+   "body": "Eine E-Mail durchläuft auf dem Weg zum Empfänger mehrere Programme, und jedes darf die Formatierung anders auslegen oder verwerfen: Weiterleitungen entfernen Aufzählungen, Nur-Text-Ansichten löschen jede Auszeichnung, mobile Clients setzen Abstände neu. Ein Unicode-Zeichen überlebt all das, weil es Teil des Texts ist und nicht seiner Darstellung. Genau deshalb halten sich ▸ und ─ in geschäftlicher Korrespondenz so hartnäckig — sie sind die einzige Gliederung, die garantiert ankommt."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/symbole-zum-kopieren/",
+   "title": "Sonderzeichen zum Kopieren",
+   "desc": "Alle Sonderzeichen an einem Ort, mit einem Klick kopiert."
+  },
+  {
+   "href": "/de/library/aufzaehlungszeichen/",
+   "title": "Aufzählungszeichen",
+   "desc": "Punkte, Striche und Pfeile für Listen jeder Art."
+  },
+  {
+   "href": "/de/library/haekchen-symbole/",
+   "title": "Häkchen-Symbole",
+   "desc": "Haken, Kreuze und Kästchen für Checklisten."
+  },
+  {
+   "href": "/de/library/tastatur-symbole/",
+   "title": "Tastatur-Symbole",
+   "desc": "Wie sich Sonderzeichen direkt über die Tastatur eingeben lassen."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/email-symbole/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/email-symbols/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/email-symbole/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/email-symbols/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

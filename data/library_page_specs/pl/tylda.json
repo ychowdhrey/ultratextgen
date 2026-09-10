@@ -28,9 +28,9 @@
       "h2": "Tylda ~ i Jej Podobizny",
       "intro": "Trzy osobne znaki Unicode, które ludzie nazywają „tyldą” — klawisz na klawiaturze, samodzielny modyfikator odstępu oraz łączący znak diakrytyczny osadzony nad literą.",
       "symbols": [
-        { "char": "~", "label": "Tylda (U+007E) — Klawisz Klawiaturowy" },
-        { "char": "˜", "label": "Mała Tylda (U+02DC) — Samodzielny Modyfikator Odstępu" },
-        { "char": "̃", "label": "Łącząca Tylda (U+0303) — Osadzona nad Literą" }
+        { "char": "~", "label": "Tylda (U+007E): Klawisz Klawiaturowy" },
+        { "char": "˜", "label": "Mała Tylda (U+02DC): Samodzielny Modyfikator Odstępu" },
+        { "char": "̃", "label": "Łącząca Tylda (U+0303): Osadzona nad Literą" }
       ]
     },
     {
@@ -51,15 +51,15 @@
       "h2": "Tyldy Matematyczne: Podobne Do i Prawie Równe",
       "intro": "W równaniach tylda oznacza „podobne do” albo „w przybliżeniu”, ale prawdziwe znaki matematyczne to własne znaki Unicode — nie ta sama tylda ASCII, którą ludzie zwykle wpisują zamiast nich.",
       "symbols": [
-        { "char": "∼", "label": "Operator Tyldy (U+223C) — „Podobne Do”" },
-        { "char": "≈", "label": "Prawie Równe (U+2248) — „W Przybliżeniu Równe”" },
+        { "char": "∼", "label": "Operator Tyldy (U+223C): „Podobne Do”" },
+        { "char": "≈", "label": "Prawie Równe (U+2248): „W Przybliżeniu Równe”" },
         { "char": "≅", "label": "W Przybliżeniu Równe (U+2245)" },
         { "char": "≃", "label": "Asymptotycznie Równe (U+2243)" },
-        { "char": "~", "label": "Tylda (U+007E) — Znak ASCII Wpisywany Zamiast Nich" }
+        { "char": "~", "label": "Tylda (U+007E): Znak ASCII Wpisywany Zamiast Nich" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/keyboard-symbols/",

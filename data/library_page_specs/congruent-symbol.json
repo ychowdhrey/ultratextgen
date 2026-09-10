@@ -20,11 +20,11 @@
       "symbols": [
         {
           "char": "≅",
-          "label": "Congruent To — Officially ‘Approximately Equal To’ (U+2245)"
+          "label": "Congruent To: Officially ‘Approximately Equal To’ (U+2245)"
         },
         {
           "char": "≃",
-          "label": "Asymptotically Equal To (U+2243) — The Single-Tilde Cousin"
+          "label": "Asymptotically Equal To (U+2243): The Single-Tilde Cousin"
         }
       ]
     },
@@ -36,15 +36,15 @@
       "symbols": [
         {
           "char": "≅",
-          "label": "Approximately Equal To (U+2245) — Used for Geometric Congruence"
+          "label": "Approximately Equal To (U+2245): Used for Geometric Congruence"
         },
         {
           "char": "≈",
-          "label": "Almost Equal To (U+2248) — Approximation, e.g. π ≈ 3.14"
+          "label": "Almost Equal To (U+2248): Approximation, e.g. π ≈ 3.14"
         },
         {
           "char": "≡",
-          "label": "Identical To (U+2261) — Identity & Modular Congruence"
+          "label": "Identical To (U+2261): Identity & Modular Congruence"
         }
       ]
     },

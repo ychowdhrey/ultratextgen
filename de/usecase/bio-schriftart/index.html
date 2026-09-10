@@ -292,6 +292,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count bf-counter" id="bfCounter"><span id="charCount">0</span>/<span id="charLimit">500</span></span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
+        </div>
+
         <!-- Platform compatibility note -->
         <div class="bf-compat" id="bfCompat">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -648,7 +655,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Ja — <a href="/de/discord-schriftart/">Discord</a> unterstützt Unicode-Text sowohl im „Über mich“-Bereich als auch im Server-Spitznamen. Gotische und fette Schriften sind besonders beliebt in Gaming- und Community-Servern. Füg deinen gestylten Text einfach ins passende Feld in den Discord-Profileinstellungen ein.
+    Ja, <a href="/de/discord-schriftart/">Discord</a> unterstützt Unicode-Text sowohl im „Über mich“-Bereich als auch im Server-Spitznamen. Gotische und fette Schriften sind besonders beliebt in Gaming- und Community-Servern. Füg deinen gestylten Text einfach ins passende Feld in den Discord-Profileinstellungen ein.
   </div>
 </div>
 
@@ -748,7 +755,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Nein — die Nutzung von Unicode-Symbolen und Emojis ist auf den meisten Plattformen erlaubt, solange die Bio die allgemeinen Regeln einhält (keine Identitätstäuschung, keine Hassrede usw.). Es ist eine gängige Art, das Profil zu personalisieren. Das sind normale Zeichen aus dem Unicode-Standard, keine Hacks oder Exploits.
+    Nein, die Nutzung von Unicode-Symbolen und Emojis ist auf den meisten Plattformen erlaubt, solange die Bio die allgemeinen Regeln einhält (keine Identitätstäuschung, keine Hassrede usw.). Es ist eine gängige Art, das Profil zu personalisieren. Das sind normale Zeichen aus dem Unicode-Standard, keine Hacks oder Exploits.
   </div>
 </div>
 
@@ -760,7 +767,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Ja — Screenreader haben oft Schwierigkeiten, Unicode-gestylte Zeichen richtig zu interpretieren. Statt „hallo“ liest ein Screenreader manchmal einzelne Zeichencodes vor.
+    Ja, Screenreader haben oft Schwierigkeiten, Unicode-gestylte Zeichen richtig zu interpretieren. Statt „hallo“ liest ein Screenreader manchmal einzelne Zeichencodes vor.
     <br><br>
     <strong>Best Practice:</strong> Style nur eine Kernzeile oder deinen Anzeigenamen und lass den Rest deiner Bio in normalem Text. So bekommst du visuelle Wirkung und dein Profil bleibt für alle zugänglich.
   </div>
@@ -856,7 +863,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer=""></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/usecase/bio-font/bio-font.js" defer=""></script>
 
 

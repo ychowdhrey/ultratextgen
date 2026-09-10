@@ -18,6 +18,21 @@
   "canonical": "https://ultratextgen.com/events/diwali/",
 
   "native_script_language": "Hindi",
+  "occurrence": {
+    "type": "table",
+    "dates": [
+      "2026-11-08",
+      "2027-10-29",
+      "2028-10-17",
+      "2029-11-05",
+      "2030-10-26",
+      "2031-11-14",
+      "2032-11-02"
+    ],
+    "_source": "Diwali main day (Lakshmi Puja, the Amavasya of Kartika). Cross-checked 2026-09-01 across diwali.info/diwali-dates, bda.ai and a web search summary; 2026-11-08 independently corroborates the figure in the 2026-07-31 events audit. NOT native-verified against a panchang — see _caution.",
+    "_caution": "Do not source these from a page titled 'Lakshmi Puja' without checking which one it means. publicholidays.in gives 2026-10-25, because it documents Bengali Kojagari Lakshmi Puja (full moon of Ashwin, observed in Odisha/Tripura/West Bengal) — a different festival that shares the name. That mismatch is why this table carries a date_note rather than a bare date."
+  },
+  "date_note": "Regional traditions can observe Diwali a day either side of this, depending on when the tithi falls at dawn locally.",
   "fonts": {
     "curated_keys": [
       "Ultra Bold",

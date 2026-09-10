@@ -17,18 +17,18 @@
       "h2": "Beautiful Kanji With Meanings",
       "intro": "Evocative kanji for nature, light, and emotion — the most popular characters for aesthetic profiles.",
       "symbols": [
-        { "char": "桜", "label": "Sakura — Cherry Blossom" },
-        { "char": "愛", "label": "Ai — Love" },
-        { "char": "夢", "label": "Yume — Dream" },
-        { "char": "月", "label": "Tsuki — Moon" },
-        { "char": "星", "label": "Hoshi — Star" },
-        { "char": "光", "label": "Hikari — Light" },
-        { "char": "空", "label": "Sora — Sky" },
-        { "char": "海", "label": "Umi — Sea" },
-        { "char": "雨", "label": "Ame — Rain" },
-        { "char": "花", "label": "Hana — Flower" },
-        { "char": "心", "label": "Kokoro — Heart" },
-        { "char": "魂", "label": "Tamashii — Soul" }
+        { "char": "桜", "label": "Sakura: Cherry Blossom" },
+        { "char": "愛", "label": "Ai: Love" },
+        { "char": "夢", "label": "Yume: Dream" },
+        { "char": "月", "label": "Tsuki: Moon" },
+        { "char": "星", "label": "Hoshi: Star" },
+        { "char": "光", "label": "Hikari: Light" },
+        { "char": "空", "label": "Sora: Sky" },
+        { "char": "海", "label": "Umi: Sea" },
+        { "char": "雨", "label": "Ame: Rain" },
+        { "char": "花", "label": "Hana: Flower" },
+        { "char": "心", "label": "Kokoro: Heart" },
+        { "char": "魂", "label": "Tamashii: Soul" }
       ]
     },
     {
@@ -37,18 +37,18 @@
       "h2": "Hiragana Characters",
       "intro": "The rounded, flowing syllabary used for native Japanese words.",
       "symbols": [
-        { "char": "あ", "label": "A — Hiragana Letter A" },
-        { "char": "い", "label": "I — Hiragana Letter I" },
-        { "char": "う", "label": "U — Hiragana Letter U" },
-        { "char": "え", "label": "E — Hiragana Letter E" },
-        { "char": "お", "label": "O — Hiragana Letter O" },
-        { "char": "か", "label": "Ka — Hiragana Letter Ka" },
-        { "char": "き", "label": "Ki — Hiragana Letter Ki" },
-        { "char": "さ", "label": "Sa — Hiragana Letter Sa" },
-        { "char": "し", "label": "Shi — Hiragana Letter Si" },
-        { "char": "の", "label": "No — Hiragana Letter No" },
-        { "char": "は", "label": "Ha — Hiragana Letter Ha" },
-        { "char": "ん", "label": "N — Hiragana Letter N" }
+        { "char": "あ", "label": "A: Hiragana Letter A" },
+        { "char": "い", "label": "I: Hiragana Letter I" },
+        { "char": "う", "label": "U: Hiragana Letter U" },
+        { "char": "え", "label": "E: Hiragana Letter E" },
+        { "char": "お", "label": "O: Hiragana Letter O" },
+        { "char": "か", "label": "Ka: Hiragana Letter Ka" },
+        { "char": "き", "label": "Ki: Hiragana Letter Ki" },
+        { "char": "さ", "label": "Sa: Hiragana Letter Sa" },
+        { "char": "し", "label": "Shi: Hiragana Letter Si" },
+        { "char": "の", "label": "No, Hiragana Letter No" },
+        { "char": "は", "label": "Ha: Hiragana Letter Ha" },
+        { "char": "ん", "label": "N: Hiragana Letter N" }
       ]
     },
     {
@@ -57,18 +57,18 @@
       "h2": "Katakana Characters",
       "intro": "The angular syllabary for loanwords — including ツ and シ, beloved as smiley faces in usernames.",
       "symbols": [
-        { "char": "ツ", "label": "Tsu — Katakana Letter Tu (Smile Face)" },
-        { "char": "シ", "label": "Shi — Katakana Letter Si (Smile Face)" },
-        { "char": "ア", "label": "A — Katakana Letter A" },
-        { "char": "カ", "label": "Ka — Katakana Letter Ka" },
-        { "char": "サ", "label": "Sa — Katakana Letter Sa" },
-        { "char": "タ", "label": "Ta — Katakana Letter Ta" },
-        { "char": "ナ", "label": "Na — Katakana Letter Na" },
-        { "char": "ハ", "label": "Ha — Katakana Letter Ha" },
-        { "char": "マ", "label": "Ma — Katakana Letter Ma" },
-        { "char": "ヤ", "label": "Ya — Katakana Letter Ya" },
-        { "char": "ラ", "label": "Ra — Katakana Letter Ra" },
-        { "char": "ワ", "label": "Wa — Katakana Letter Wa" }
+        { "char": "ツ", "label": "Tsu: Katakana Letter Tu (Smile Face)" },
+        { "char": "シ", "label": "Shi: Katakana Letter Si (Smile Face)" },
+        { "char": "ア", "label": "A: Katakana Letter A" },
+        { "char": "カ", "label": "Ka: Katakana Letter Ka" },
+        { "char": "サ", "label": "Sa: Katakana Letter Sa" },
+        { "char": "タ", "label": "Ta: Katakana Letter Ta" },
+        { "char": "ナ", "label": "Na: Katakana Letter Na" },
+        { "char": "ハ", "label": "Ha: Katakana Letter Ha" },
+        { "char": "マ", "label": "Ma: Katakana Letter Ma" },
+        { "char": "ヤ", "label": "Ya, Katakana Letter Ya" },
+        { "char": "ラ", "label": "Ra: Katakana Letter Ra" },
+        { "char": "ワ", "label": "Wa: Katakana Letter Wa" }
       ]
     },
     {
@@ -120,7 +120,7 @@
       "defaultFormat": "inline"
     },
     {
-      "name": "Ai — Love",
+      "name": "Ai: Love",
       "flags": ["愛"],
       "defaultFormat": "inline"
     },

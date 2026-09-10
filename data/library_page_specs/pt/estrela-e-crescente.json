@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/estrela-e-crescente/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/estrela-e-crescente/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "star-and-crescent",
@@ -29,8 +37,14 @@
       "h2": "Símbolo de Estrela e Crescente — ☪ e ☪️",
       "intro": "A estrela e crescente do Unicode, pronta para colar numa bio, post ou perfil. Duas formas: o glifo preto simples e o emoji colorido.",
       "symbols": [
-        { "char": "☪", "label": "Estrela e Crescente (U+262A)" },
-        { "char": "☪️", "label": "Emoji de Estrela e Crescente (U+262A U+FE0F)" }
+        {
+          "char": "☪",
+          "label": "Estrela e Crescente (U+262A)"
+        },
+        {
+          "char": "☪️",
+          "label": "Emoji de Estrela e Crescente (U+262A U+FE0F)"
+        }
       ]
     },
     {
@@ -39,12 +53,30 @@
       "h2": "Não é o Mesmo que um Crescente ou uma Estrela Isolados",
       "intro": "A estrela e crescente é um único glifo combinado. Os caracteres separados de lua crescente e de estrela que as pessoas costumam usar no lugar têm cada um seu próprio código e sua própria função.",
       "symbols": [
-        { "char": "☾", "label": "Lua Minguante (U+263E) — Crescente Simples" },
-        { "char": "☽", "label": "Lua Crescente (U+263D)" },
-        { "char": "🌙", "label": "Emoji de Lua Crescente (U+1F319)" },
-        { "char": "⭐", "label": "Estrela Média Branca (U+2B50)" },
-        { "char": "★", "label": "Estrela Preta (U+2605)" },
-        { "char": "☆", "label": "Estrela Branca (U+2606)" }
+        {
+          "char": "☾",
+          "label": "Lua Minguante (U+263E): Crescente Simples"
+        },
+        {
+          "char": "☽",
+          "label": "Lua Crescente (U+263D)"
+        },
+        {
+          "char": "🌙",
+          "label": "Emoji de Lua Crescente (U+1F319)"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrela Média Branca (U+2B50)"
+        },
+        {
+          "char": "★",
+          "label": "Estrela Preta (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Estrela Branca (U+2606)"
+        }
       ]
     },
     {
@@ -53,12 +85,30 @@
       "h2": "Outros Símbolos de Fé com que É Agrupado",
       "intro": "A estrela e crescente costuma ser buscada e exibida ao lado dos símbolos de identidade de outras religiões mundiais. Aqui estão os que mais aparecem junto dela.",
       "symbols": [
-        { "char": "✡️", "label": "Estrela de Davi (U+2721)" },
-        { "char": "✝️", "label": "Cruz Latina (U+271D)" },
-        { "char": "☸️", "label": "Roda do Darma (U+2638)" },
-        { "char": "🕉️", "label": "Om (U+1F549)" },
-        { "char": "☯️", "label": "Yin e Yang (U+262F)" },
-        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+        {
+          "char": "✡️",
+          "label": "Estrela de Davi (U+2721)"
+        },
+        {
+          "char": "✝️",
+          "label": "Cruz Latina (U+271D)"
+        },
+        {
+          "char": "☸️",
+          "label": "Roda do Darma (U+2638)"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om (U+1F549)"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin e Yang (U+262F)"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda / Adi Shakti (U+262C)"
+        }
       ]
     }
   ],

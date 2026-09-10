@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/cores-dos-coracoes-do-snapchat/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/cores-dos-coracoes-do-snapchat/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "snapchat-relevant-hearts",
@@ -29,9 +37,18 @@
       "h2": "Cores de Coração Que o Snapchat Usa",
       "intro": "As três cores de coração que aparecem na progressão clássica de melhor amigo do Snapchat.",
       "symbols": [
-        { "char": "💛", "label": "Coração Amarelo" },
-        { "char": "❤️", "label": "Coração Vermelho" },
-        { "char": "💕", "label": "Dois Corações (Rosa)" }
+        {
+          "char": "💛",
+          "label": "Coração Amarelo"
+        },
+        {
+          "char": "❤️",
+          "label": "Coração Vermelho"
+        },
+        {
+          "char": "💕",
+          "label": "Dois Corações (Rosa)"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Outras Cores de Emoji de Coração (Significado Geral)",
       "intro": "O resto da paleta de cores de coração do Unicode — veja o hub completo de emoji de coração linkado abaixo para a lista completa e cada significado.",
       "symbols": [
-        { "char": "🧡", "label": "Coração Laranja" },
-        { "char": "💚", "label": "Coração Verde" },
-        { "char": "💙", "label": "Coração Azul" },
-        { "char": "💜", "label": "Coração Roxo" }
+        {
+          "char": "🧡",
+          "label": "Coração Laranja"
+        },
+        {
+          "char": "💚",
+          "label": "Coração Verde"
+        },
+        {
+          "char": "💙",
+          "label": "Coração Azul"
+        },
+        {
+          "char": "💜",
+          "label": "Coração Roxo"
+        }
       ]
     },
     {
@@ -52,8 +81,14 @@
       "h2": "Símbolo de Coração e Formas em Texto",
       "intro": "Os glifos de coração sem cor — o coração de naipe de baralho do Unicode e o clássico coração em texto.",
       "symbols": [
-        { "char": "♥", "label": "Naipe de Copas Preto (U+2665)" },
-        { "char": "<3", "label": "Coração em Texto ASCII" }
+        {
+          "char": "♥",
+          "label": "Naipe de Copas Preto (U+2665)"
+        },
+        {
+          "char": "<3",
+          "label": "Coração em Texto ASCII"
+        }
       ]
     }
   ],

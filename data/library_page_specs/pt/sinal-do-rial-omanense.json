@@ -8,7 +8,7 @@
   "breadcrumb": "Sinal do Rial Omanense",
   "hero_h1": "Sinal do Rial Omanense",
   "hero_tagline": "O símbolo monetário oficial de Omã, revelado no Dia Nacional de 2025 e congelado para publicação no Unicode 18.0 — já aprovado, mas ainda à frente de qualquer teclado ou fonte.",
-  "intro": "O sinal do rial omanense (⃄, U+20C4) é o símbolo monetário oficial do Banco Central de Omã, apresentado ao público em 19 de novembro de 2025, data escolhida para coincidir com o Dia Nacional de Omã. Seu design é construído a partir de letras árabes estilizadas — ʿayn (ع) e rāʾ (ر), a primeira e a terceira letras da palavra «rial» — cruzadas por duas linhas, no estilo compartilhado por muitos símbolos monetários modernos. O governador do Banco Central, Ahmed bin Jafar Al-Musallami, apresentou a adoção como uma medida estratégica para fortalecer a posição de Omã como polo financeiro regional e facilitar a identificação do rial em plataformas internacionais, comerciais e digitais. O símbolo foi submetido para codificação no Unicode junto com os sinais do dirham dos EAU e do rufiyaa maldivo, e, até o momento desta publicação, carrega status «white» na própria documentação do pipeline do Unicode — congelado para publicação, faltando apenas a aprovação da ISO, com publicação final prevista junto ao restante do Unicode 18.0 em setembro de 2026. Nenhum sistema operacional, fonte ou teclado oferece suporte nativo no momento. A única opção prática que já existe hoje é um módulo de software empresarial (um app do ERP Odoo) que embute uma fonte para renderizar o símbolo para empresas que precisam dele agora — um equivalente mais restrito e utilitário das ferramentas de código aberto já construídas em torno do sinal do dirham dos EAU.",
+  "intro": "O sinal do rial omanense (⃄, U+20C4) é o símbolo monetário oficial do Banco Central de Omã, apresentado ao público em 19 de novembro de 2025, data escolhida para coincidir com o Dia Nacional de Omã. Seu design é construído a partir de duas letras árabes estilizadas — ʿayn (ع), a primeira letra de عماني («omanense»), e rāʾ (ر), a primeira letra de ريال («rial») — cruzadas por duas linhas, no estilo compartilhado por muitos símbolos monetários modernos. O governador do Banco Central, Ahmed bin Jafar Al-Musallami, apresentou a adoção como uma medida estratégica para fortalecer a posição de Omã como polo financeiro regional e facilitar a identificação do rial em plataformas internacionais, comerciais e digitais. O símbolo foi submetido para codificação no Unicode junto com os sinais do dirham dos EAU e do rufiyaa maldivo, e, até o momento desta publicação, carrega status «white» na própria documentação do pipeline do Unicode — congelado para publicação, faltando apenas a aprovação da ISO, com publicação final prevista junto ao restante do Unicode 18.0 em setembro de 2026. Nenhum sistema operacional, fonte ou teclado oferece suporte nativo no momento. Enquanto isso, existem dois caminhos práticos. O Banco Central publica o sinal como arquivos SVG, PNG e EPS junto com suas diretrizes de uso, o que basta para um modelo de fatura, uma lista de preços ou uma placa impressa. Empresas que usam Odoo podem instalar um módulo de ERP que embute uma fonte, de modo que o símbolo apareça em faturas, relatórios, no portal do cliente e nos recibos do PDV. Nenhum dos dois substitui o caractere: só U+20C4 pode ser pesquisado, ordenado e colado.",
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-do-rial-omanense/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-do-rial-omanense/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "omani-rial-sign",
@@ -29,7 +37,10 @@
       "h2": "Sinal do Rial Omanense",
       "intro": "O caractere confirmado — já pronto para copiar pelo código, embora nenhuma fonte o renderize nativamente ainda.",
       "symbols": [
-        { "char": "⃄", "label": "Sinal do Rial Omanense (U+20C4, congelado para publicação)" }
+        {
+          "char": "⃄",
+          "label": "Sinal do Rial Omanense (U+20C4, congelado para publicação)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Outros Novos Símbolos Monetários Neste Lançamento",
       "intro": "O rial omanense não é o único novo símbolo monetário chegando no Unicode 18.0 — outras duas moedas ganharam seus próprios sinais na mesma fase beta.",
       "symbols": [
-        { "char": "⃃", "label": "Sinal do Dirham dos EAU (U+20C3)" },
-        { "char": "⃂", "label": "Sinal do Rufiyaa Maldivo (U+20C2)" }
+        {
+          "char": "⃃",
+          "label": "Sinal do Dirham dos EAU (U+20C3)"
+        },
+        {
+          "char": "⃂",
+          "label": "Sinal do Rufiyaa Maldivo (U+20C2)"
+        }
       ]
     },
     {
@@ -48,7 +65,10 @@
       "h2": "O Símbolo Monetário do Golfo que Chegou uma Versão Antes",
       "intro": "O sinal do rial saudita percorreu esse mesmo caminho uma versão inteira do Unicode mais cedo — já definitivo desde o Unicode 17.0, não apenas em fase beta.",
       "symbols": [
-        { "char": "⃁", "label": "Sinal do Rial Saudita (U+20C1, definitivo desde o Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Sinal do Rial Saudita (U+20C1, definitivo desde o Unicode 17.0)"
+        }
       ]
     }
   ],

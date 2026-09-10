@@ -42,10 +42,10 @@
       "h2": "Marks the Cross Is Confused With",
       "intro": "These look cross-like but carry unrelated meanings — none is the Christian cross.",
       "symbols": [
-        { "char": "†", "label": "Dagger (U+2020) — Footnotes & the Deceased" },
+        { "char": "†", "label": "Dagger (U+2020): Footnotes & the Deceased" },
         { "char": "‡", "label": "Double Dagger (U+2021)" },
         { "char": "✕", "label": "Multiplication X (U+2715)" },
-        { "char": "✗", "label": "Ballot X (U+2717) — Rejection" },
+        { "char": "✗", "label": "Ballot X (U+2717): Rejection" },
         { "char": "⛨", "label": "Black Cross on Shield (U+26E8)" }
       ]
     }

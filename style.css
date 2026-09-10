@@ -436,6 +436,15 @@
       display: none;
     }
 
+    /* Shown in place of the tab strip when fonts.json cannot be loaded. Was an
+       inline style until the message was routed through uiText() so it could be
+       translated; inline styles are not used on this site. */
+    .category-load-error {
+      color: var(--text-muted);
+      padding: 10px;
+      text-align: center;
+    }
+
    .category-tab,
    .category-more {
      padding: 10px 16px;
@@ -1732,6 +1741,13 @@
 .data-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+/* .editorial-block carries only a bottom margin, so a prose block placed after
+   a table sat flush against the table's last row (measured 0px). */
+.data-table-wrap + .editorial-block {
+  margin-top: 1.5rem;
 }
 
 .data-table {
@@ -1755,6 +1771,13 @@
   padding: 0.5rem 0.75rem;
   color: var(--text-primary);
   border-bottom: 1px solid var(--border-light);
+}
+
+/* Long unbroken tokens (URLs, codepoint strings) must wrap inside the cell
+   rather than pushing the column wider than its share of the table. */
+.data-table th,
+.data-table td {
+  overflow-wrap: break-word;
 }
 
 .data-table tr:last-child td {
@@ -2076,10 +2099,6 @@ a:hover {
   color: #10b981;
 }
 
-.data-table tr:last-child td {
-  border-bottom: none;
-}
-
 .section-divider {
   max-width: 800px;
   margin: 0 auto;
@@ -2180,6 +2199,16 @@ button.cta-btn { border: 0; cursor: pointer; }
   .data-table th,
   .data-table td {
     padding: .4rem .5rem;
+  }
+
+  /* .data-table-wrap already scrolls, but a width:100% table can never
+     exceed it, so the overflow never engaged and three-column tables were
+     crushed into one-word-per-line columns instead. Give a table with three
+     or more columns a floor so it scrolls on a narrow screen. Scoped with
+     :has() so two-column tables, which fit fine, keep filling the width;
+     browsers without :has() simply keep the current behaviour. */
+  .data-table:has(th:nth-child(3)) {
+    min-width: 30rem;
   }
 }
 /* -----------------------------------------------
@@ -2391,6 +2420,18 @@ button.cta-btn { border: 0; cursor: pointer; }
   margin: 0 auto;
   padding: 20px 16px 12px;
 }
+/* Zalgo embed, Thai Cascade preset: the stack paints far above its line box,
+   so the output card clips it and gets headroom. Copy still copies the full
+   string; only the preview is clipped. */
+.embed-wrapper #zalgoOutputCard.is-cascade {
+  overflow: hidden;
+  contain: paint;
+}
+.embed-wrapper #zalgoOutputCard.is-cascade .style-preview {
+  padding-top: 120px;
+  line-height: 1.6;
+}
+
 .embed-wrapper .hero-card {
   padding: 24px 20px;
   box-shadow: none;
@@ -2577,13 +2618,23 @@ button.cta-btn { border: 0; cursor: pointer; }
   margin-bottom: 6px;
 }
 
-/* Muted subline beneath section headings */
+/* Muted subline beneath section headings.
+   The -1rem tuck exists to pull the line up under a heading's own bottom
+   margin. It is only valid there: applied after a table, card grid or any
+   other block, it drags the text up over the last row of that block. Scope
+   it to the adjacent-heading case instead of making it the default. */
 .section-subline {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-top: -1rem;
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
+}
+
+h1 + .section-subline,
+h2 + .section-subline,
+h3 + .section-subline {
+  margin-top: -1rem;
 }
 
 /* Inline CTA link (replaces full-width .cat-cta on use-cases page) */
@@ -2677,6 +2728,46 @@ button.cta-btn { border: 0; cursor: pointer; }
   background: var(--accent-purple);
   color: #fff;
   border-color: var(--accent-purple);
+}
+
+/* -----------------------------------------------
+   Component: Copy Cell (.copy-cell)
+   A click-to-copy control that lives inside a .data-table cell, so a
+   reference table can hand over the character it is describing instead of
+   only naming it.
+
+   It carries .symbol-tile as well, which is what symbol-explorer.js's
+   delegated handler binds to. A .symbol-tile is a square grid tile, so the
+   overrides here are what turn it into a cell-width control that sizes to its
+   content. They rely on being declared AFTER .symbol-tile rather than on
+   higher specificity, the same ordering .uname-chip already depends on: move
+   this block above .symbol-tile and the tiles go square again.
+   ----------------------------------------------- */
+.copy-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  aspect-ratio: auto;
+  width: 100%;
+  padding: 0.3rem 0.55rem;
+  font-family: inherit;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+/* The codepoint or Latin abbreviation that identifies the character sits
+   beside the button, not inside it: the button's whole label is what it
+   copies, and a reader pressing it should not have to guess whether the
+   U+ number comes along. */
+.data-table .cell-note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  white-space: nowrap;
 }
 
 /* Toast notification */
@@ -9105,3 +9196,113 @@ html.dark .wc-dir-option, html.dark .wc-input { background: transparent; }
 .lib-back-top:hover,
 .lib-back-top:focus-visible { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; outline: none; }
 .lib-back-top.visible { display: inline-flex; }
+
+/* ==============================================================
+   SOURCE ATTRIBUTION — the citation apparatus
+   ==============================================================
+   Where a page states a fact it did not originate, the evidence for
+   that fact goes in one Sources block, immediately before the FAQ.
+   Convention, rules and the rel policy: docs/source-attribution.md
+
+   It is deliberately RECESSIVE. Before this existed the block reused
+   .editorial-block and rendered identically to every content section
+   on the page, so a paragraph of pure apparatus carried the same
+   visual weight as the answer the reader came for. Smaller, quieter
+   and set behind a rule reads as "here is the backing", not as one
+   more thing to read.
+
+   Prose is kept on purpose. A bibliography row says a source exists;
+   a sentence says which claim it backs ("Release date comes from
+   Unicode 18.0.0") — that mapping is the part a reader and an answer
+   engine can actually use, and a list throws it away.
+   ============================================================== */
+
+.source-note {
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--accent-purple);
+  border-radius: 0 8px 8px 0;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.source-note p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.source-note p + p {
+  margin-top: 0.6rem;
+}
+
+/* Citations are the only links here, and every one leaves the site.
+   The marker is a CSS pseudo-element rather than markup so it never
+   enters the page's text: the locale-translation and em-dash gates
+   read extracted strings, and a glyph in the HTML would show up in
+   both as content nobody wrote. */
+.source-note a[href^="http"]::after {
+  content: "\2197";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.85em;
+  line-height: 1;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.source-note a {
+  color: var(--accent-purple);
+  text-decoration-color: color-mix(in srgb, var(--accent-purple) 40%, transparent);
+  text-underline-offset: 2px;
+}
+
+.source-note a:hover,
+.source-note a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* Right-to-left locales: the accent rule belongs on the reading edge,
+   and the outbound arrow has to point away from the text, not into it. */
+[dir="rtl"] .source-note,
+html[lang="ar"] .source-note {
+  border-left: 1px solid var(--border-light);
+  border-right: 3px solid var(--accent-purple);
+  border-radius: 8px 0 0 8px;
+}
+
+[dir="rtl"] .source-note a[href^="http"]::after,
+html[lang="ar"] .source-note a[href^="http"]::after {
+  content: "\2196";
+  margin-left: 0;
+  margin-right: 0.15em;
+}
+
+body.dark-mode .source-note {
+  background: var(--bg-base);
+}
+
+@media (max-width: 600px) {
+  .source-note {
+    padding: 0.8rem 0.9rem;
+  }
+  .source-note p {
+    font-size: 0.85rem;
+  }
+}
+
+@media print {
+  .source-note {
+    border: 1px solid #999;
+    background: none;
+  }
+  /* In print the link text is useless without its target. */
+  .source-note a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    opacity: 1;
+  }
+}

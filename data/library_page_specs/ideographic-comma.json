@@ -28,9 +28,9 @@
       "h2": "Ideographic Comma vs. Fullwidth Comma",
       "intro": "These two are not interchangeable in Chinese writing. 、 joins items in a list; ， marks a pause between clauses. Using the wrong one is the single most common CJK punctuation mistake for non-native writers — and the plain ASCII comma is a third character again, half the width of both.",
       "symbols": [
-        { "char": "、", "label": "Ideographic Comma — Between List Items" },
-        { "char": "，", "label": "Fullwidth Comma (U+FF0C) — Between Clauses" },
-        { "char": ",", "label": "ASCII Comma (U+002C) — Western Text" }
+        { "char": "、", "label": "Ideographic Comma: Between List Items" },
+        { "char": "，", "label": "Fullwidth Comma (U+FF0C): Between Clauses" },
+        { "char": ",", "label": "ASCII Comma (U+002C): Western Text" }
       ]
     },
     {

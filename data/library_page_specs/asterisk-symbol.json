@@ -18,10 +18,10 @@
       "h2": "The Asterisk & Its Display Variants",
       "intro": "The plain keyboard asterisk plus the bolder display forms and the math-specific operator. Every one is ready to paste.",
       "symbols": [
-        { "char": "*", "label": "Asterisk (U+002A) — Footnote, Wildcard & Censor Mark" },
+        { "char": "*", "label": "Asterisk (U+002A): Footnote, Wildcard & Censor Mark" },
         { "char": "✱", "label": "Heavy Asterisk (U+2731)" },
         { "char": "✳", "label": "Eight-Spoked Asterisk (U+2733)" },
-        { "char": "∗", "label": "Asterisk Operator (U+2217) — The Math Multiplication Glyph" },
+        { "char": "∗", "label": "Asterisk Operator (U+2217): The Math Multiplication Glyph" },
         { "char": "＊", "label": "Fullwidth Asterisk (U+FF0A)" }
       ]
     },
@@ -31,7 +31,7 @@
       "h2": "Asterism & Section-Break Marks",
       "intro": "Editorial marks built from the asterisk — the three-in-a-triangle asterism that breaks sections, plus its stacked and lowered cousins.",
       "symbols": [
-        { "char": "⁂", "label": "Asterism (U+2042) — Three Asterisks in a Triangle" },
+        { "char": "⁂", "label": "Asterism (U+2042): Three Asterisks in a Triangle" },
         { "char": "⁑", "label": "Two Asterisks Aligned Vertically (U+2051)" },
         { "char": "⁎", "label": "Low Asterisk (U+204E)" }
       ]
@@ -44,7 +44,7 @@
       "symbols": [
         { "char": "★", "label": "Black Star (U+2605)" },
         { "char": "☆", "label": "White Star (U+2606)" },
-        { "char": "⭐", "label": "White Medium Star (U+2B50) — The Yellow Star Emoji" },
+        { "char": "⭐", "label": "White Medium Star (U+2B50): The Yellow Star Emoji" },
         { "char": "✦", "label": "Black Four-Pointed Star (U+2726)" },
         { "char": "✧", "label": "White Four-Pointed Star (U+2727)" }
       ]

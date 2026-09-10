@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/tilde-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/tilde-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "die-tilde",
@@ -29,9 +37,18 @@
       "h2": "Die Tilde ~ und ihre Doppelgänger",
       "intro": "Drei separate Unicode-Zeichen, die alle „die Tilde“ genannt werden — die Tastaturtaste, ein eigenständiger Spacing-Modifikator und das kombinierende Diakritikum, das über einem Buchstaben sitzt.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E) — die Tastaturtaste" },
-        { "char": "˜", "label": "Kleine Tilde (U+02DC) — eigenständiger Spacing-Modifikator" },
-        { "char": "̃", "label": "Kombinierende Tilde (U+0303) — sitzt über einem Buchstaben" }
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): die Tastaturtaste"
+        },
+        {
+          "char": "˜",
+          "label": "Kleine Tilde (U+02DC): eigenständiger Spacing-Modifikator"
+        },
+        {
+          "char": "̃",
+          "label": "Kombinierende Tilde (U+0303): sitzt über einem Buchstaben"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Buchstaben, die eine Tilde tragen",
       "intro": "Die kombinierende Tilde in Aktion. Das spanische ñ sowie das portugiesische ã und õ sind die alltäglichen Überlebenden des Schreiberkürzels für ein weggelassenes „n“.",
       "symbols": [
-        { "char": "ñ", "label": "Lateinischer Kleinbuchstabe N mit Tilde (U+00F1)" },
-        { "char": "Ñ", "label": "Lateinischer Großbuchstabe N mit Tilde (U+00D1)" },
-        { "char": "ã", "label": "Lateinischer Kleinbuchstabe A mit Tilde (U+00E3)" },
-        { "char": "õ", "label": "Lateinischer Kleinbuchstabe O mit Tilde (U+00F5)" }
+        {
+          "char": "ñ",
+          "label": "Lateinischer Kleinbuchstabe N mit Tilde (U+00F1)"
+        },
+        {
+          "char": "Ñ",
+          "label": "Lateinischer Großbuchstabe N mit Tilde (U+00D1)"
+        },
+        {
+          "char": "ã",
+          "label": "Lateinischer Kleinbuchstabe A mit Tilde (U+00E3)"
+        },
+        {
+          "char": "õ",
+          "label": "Lateinischer Kleinbuchstabe O mit Tilde (U+00F5)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "Mathe-Tilden: „ähnlich zu“ und „ungefähr gleich“",
       "intro": "In Gleichungen bedeutet die Tilde „ähnlich zu“ oder „ungefähr“, aber die tatsächlichen Mathe-Zeichen sind eigene Unicode-Zeichen — nicht das ASCII-~, das die meisten stattdessen tippen.",
       "symbols": [
-        { "char": "∼", "label": "Tilde-Operator (U+223C) — „ähnlich zu“" },
-        { "char": "≈", "label": "Fastgleichzeichen (U+2248) — „ungefähr gleich“" },
-        { "char": "≅", "label": "Kongruenzzeichen für „ungefähr gleich“ (U+2245)" },
-        { "char": "≃", "label": "Asymptotisch gleich (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E) — die ASCII-Taste, die oft stattdessen getippt wird" }
+        {
+          "char": "∼",
+          "label": "Tilde-Operator (U+223C): „ähnlich zu“"
+        },
+        {
+          "char": "≈",
+          "label": "Fastgleichzeichen (U+2248): „ungefähr gleich“"
+        },
+        {
+          "char": "≅",
+          "label": "Kongruenzzeichen für „ungefähr gleich“ (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asymptotisch gleich (U+2243)"
+        },
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): die ASCII-Taste, die oft stattdessen getippt wird"
+        }
       ]
     }
   ],

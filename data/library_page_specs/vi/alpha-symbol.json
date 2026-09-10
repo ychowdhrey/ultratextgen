@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/alpha-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/alpha-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/alpha-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/alpha-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/alpha-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/alpha-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Alpha — Α & α",
       "intro": "Chữ cái Hy Lạp ở cả hai dạng viết. Chữ thường α là dạng phổ biến nhất; nó cũng mang giá trị số 1 trong hệ số đếm Hy Lạp cổ.",
       "symbols": [
-        { "char": "Α", "label": "Chữ Hoa Hy Lạp Alpha (U+0391)" },
-        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha (U+03B1)" }
+        {
+          "char": "Α",
+          "label": "Chữ Hoa Hy Lạp Alpha (U+0391)"
+        },
+        {
+          "char": "α",
+          "label": "Chữ Thường Hy Lạp Alpha (U+03B1)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Alpha và Omega — Khởi Đầu và Hồi Kết",
       "intro": "Cách dùng nổi tiếng nhất của chữ cái này: đi cùng omega như chữ đầu và chữ cuối bảng chữ cái Hy Lạp, một ẩn dụ cho «mọi thứ từ đầu đến cuối» (Khải Huyền 22:13). Sao chép cặp đôi này.",
       "symbols": [
-        { "char": "α", "label": "Alpha Thường — «Khởi Đầu»" },
-        { "char": "Ω", "label": "Omega Hoa — «Hồi Kết»" },
-        { "char": "Α", "label": "Alpha Hoa" },
-        { "char": "ω", "label": "Omega Thường" }
+        {
+          "char": "α",
+          "label": "Alpha Thường: «Khởi Đầu»"
+        },
+        {
+          "char": "Ω",
+          "label": "Omega Hoa: «Hồi Kết»"
+        },
+        {
+          "char": "Α",
+          "label": "Alpha Hoa"
+        },
+        {
+          "char": "ω",
+          "label": "Omega Thường"
+        }
       ]
     },
     {
@@ -50,17 +77,40 @@
       "h2": "Chữ Cái Hy Lạp Liên Quan",
       "intro": "Alpha mở đầu bảng chữ cái; beta theo ngay sau, và đây là những chữ cái Hy Lạp khác được tìm kiếm nhiều nhất.",
       "symbols": [
-        { "char": "β", "label": "Chữ Thường Hy Lạp Beta" },
-        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
-        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" },
-        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" }
+        {
+          "char": "β",
+          "label": "Chữ Thường Hy Lạp Beta"
+        },
+        {
+          "char": "Σ",
+          "label": "Chữ Hoa Hy Lạp Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Chữ Hoa Hy Lạp Delta"
+        },
+        {
+          "char": "π",
+          "label": "Chữ Thường Hy Lạp Pi"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
-    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "Nửa còn lại của Alpha: «Ta là Alpha và Omega, khởi đầu và hồi kết.» Chữ cái cuối bảng chữ cái, và ký hiệu ohm dễ gây nhầm lẫn với nó." },
-    { "href": "/vi/symbol/sigma-symbol/", "title": "Ký Hiệu Sigma", "desc": "Một chữ cái Hy Lạp khác nổi tiếng vượt xa vai trò trong bảng chữ cái — dấu tổng trong toán học, và trào lưu «sigma male» trên mạng." }
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Ký Hiệu Chữ Cái Hy Lạp",
+      "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán."
+    },
+    {
+      "href": "/vi/symbol/omega-symbol/",
+      "title": "Ký Hiệu Omega",
+      "desc": "Nửa còn lại của Alpha: «Ta là Alpha và Omega, khởi đầu và hồi kết.» Chữ cái cuối bảng chữ cái, và ký hiệu ohm dễ gây nhầm lẫn với nó."
+    },
+    {
+      "href": "/vi/symbol/sigma-symbol/",
+      "title": "Ký Hiệu Sigma",
+      "desc": "Một chữ cái Hy Lạp khác nổi tiếng vượt xa vai trò trong bảng chữ cái — dấu tổng trong toán học, và trào lưu «sigma male» trên mạng."
+    }
   ]
 }

@@ -9,7 +9,7 @@
   "intro": "Facebook accepts standard Unicode text almost everywhere — posts, comments, the About/bio section, Page and Group descriptions, and Messenger. This library collects the symbols people paste there most: text equivalents of Facebook's own Like, Love, and Haha reactions, hearts and stars for a bio or About line, bullets and dividers for structuring a longer post, checkmarks for lists and announcements, and frame characters for Page and Group names. The one exception is the personal profile Name field, which is checked against Facebook's real-name policy and strips most decoration — see the FAQ for what still works there.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: competitor gap analysis — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
   "sections": [
     {
@@ -103,6 +103,45 @@
         { "char": "⋆", "label": "Star Operator" },
         { "char": "⊹", "label": "Hermitian Conjugate Matrix" }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "facebook-collections",
+    "label": "Facebook Collections",
+    "h2": "Facebook Bio & Post Combo Templates",
+    "intro": "Ready-made Facebook strings you can paste straight into a bio, Page name, or post — copy the whole combo in one click."
+  },
+  "collection_container_id": "facebookCollectionsContainer",
+  "collections": [
+    {
+      "name": "Divider Line",
+      "flags": ["─────", "♥", "─────"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Star Frame Page Name",
+      "flags": ["★", "⋆", "✦", "⋆", "★"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heart Bio Accent",
+      "flags": ["♡", "˖", "❀", "˖", "♡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Announcement Prefix",
+      "flags": ["📢", "➤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Quick Reaction String",
+      "flags": ["👍", "❤️", "😆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bracket Page Name",
+      "flags": ["「", "✦", "」"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

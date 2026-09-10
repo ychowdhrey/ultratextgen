@@ -37,8 +37,8 @@
       "h2": "Znaki o Podobnej Nazwie",
       "intro": "Znaki, z którymi bywa mylony znak funta — każdy to osobny, niepowiązany symbol.",
       "symbols": [
-        { "char": "#", "label": "Krzyżyk (U+0023) — potocznie też zwany „pound sign” w amerykańskim angielskim, ale zupełnie inny znak" },
-        { "char": "€", "label": "Znak Euro (U+20AC) — celowo zaprojektowany symbol waluty z 1996 roku, w przeciwieństwie do organicznej ewolucji £" }
+        { "char": "#", "label": "Krzyżyk (U+0023): potocznie też zwany „pound sign” w amerykańskim angielskim, ale zupełnie inny znak" },
+        { "char": "€", "label": "Znak Euro (U+20AC): celowo zaprojektowany symbol waluty z 1996 roku, w przeciwieństwie do organicznej ewolucji £" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-dolara/",

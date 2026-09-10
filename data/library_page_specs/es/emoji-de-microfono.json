@@ -33,7 +33,7 @@
       "h2": "Emoji con los que se Confunde",
       "intro": "Símbolos que la gente busca esperando el micrófono de mano, pero que en realidad son emoji distintos y con un código propio.",
       "symbols": [
-        { "char": "🎙️", "label": "Micrófono de Estudio (U+1F399) — el micrófono de trípode para radiodifusión y pódcast" },
+        { "char": "🎙️", "label": "Micrófono de Estudio (U+1F399): el micrófono de trípode para radiodifusión y pódcast" },
         { "char": "🔊", "label": "Altavoz con Volumen Alto (U+1F50A)" },
         { "char": "🗣️", "label": "Cabeza Hablando (U+1F5E3 FE0F)" },
         { "char": "📢", "label": "Megáfono de Anuncio Público (U+1F4E2)" }

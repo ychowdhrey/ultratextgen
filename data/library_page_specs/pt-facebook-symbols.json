@@ -9,7 +9,7 @@
   "intro": "O Facebook não tem botão de formatação, então símbolos Unicode são a única forma de dar estrutura e destaque a um post. Todos os caracteres desta página são texto de verdade — não imagens — então colam direto no post, na bio, no nome da página ou do grupo, e continuam legíveis no celular e no computador. Estão organizados por uso: símbolos de reação, corações, estrelas, marcadores e setas para separar ideias, marcas de verificação e símbolos para nome de página.",
   "date_published": "2026-08-15",
   "date_modified": "2026-08-15",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: competitor gap analysis — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
   "sections": [
     {
@@ -235,6 +235,45 @@
           "label": "Raio"
         }
       ]
+    }
+  ],
+  "collection_section": {
+    "id": "facebook-collections",
+    "label": "Coleções do Facebook",
+    "h2": "Modelos de combos para bio e publicações no Facebook",
+    "intro": "Sequências prontas para colar direto na bio, no nome da Página ou numa publicação — copie o combo inteiro com um clique."
+  },
+  "collection_container_id": "facebookCollectionsContainer",
+  "collections": [
+    {
+      "name": "Linha divisória",
+      "flags": ["─────", "♥", "─────"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nome de Página com moldura de estrelas",
+      "flags": ["★", "⋆", "✦", "⋆", "★"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Detalhe de coração para bio",
+      "flags": ["♡", "˖", "❀", "˖", "♡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Prefixo de anúncio",
+      "flags": ["📢", "➤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sequência de reação rápida",
+      "flags": ["👍", "❤️", "😆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nome de Página entre colchetes",
+      "flags": ["「", "✦", "」"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

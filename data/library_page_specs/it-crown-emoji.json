@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Corona",
   "hero_tagline": "👑 e tutto il contorno: la famiglia reale, il registro «queen», la vittoria e gli accessori.",
   "intro": "L'emoji corona sta raramente da sola: arriva col vocabolario «queen/king» oppure col discorso della vittoria. I quattro gruppi qui sotto seguono proprio questi usi. Clicca su un'emoji per copiarla.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "royal",
@@ -164,6 +164,55 @@
     {
       "h2": "Come la Corona è Diventata un Complimento",
       "body": "Nei primi set di emoji 👑 andava letta alla lettera: regalità, fiaba, monarchia. Il significato di oggi viene da un'altra parte — dal vocabolario «queen» nato nella cultura ballroom e poi adottato dai social, dove celebra un atteggiamento e non un titolo. Per questo le emoji che oggi la circondano — 💅 💯 🙌 — non hanno nulla di regale: appartengono al lessico del complimento, non a quello della corona."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Set di combo",
+    "h2": "Combo di emoji corona",
+    "intro": "Combo di corone già pronte — un clic copia il set intero, da incollare in bio, didascalia o commento."
+  },
+  "collection_container_id": "crownSetsContainer",
+  "collections": [
+    {
+      "name": "Sfoggio di corona",
+      "flags": ["👑", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Energia da regina",
+      "flags": ["👑", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Da vero re",
+      "flags": ["👑", "😎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Proprio nel mio stile",
+      "flags": ["👑", "💅", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vincitore",
+      "flags": ["👑", "🏆", "🥇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Status da GOAT",
+      "flags": ["👑", "🐐", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glow-up regale",
+      "flags": ["👑", "✨", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modalità incoronazione",
+      "flags": ["👑", "🎉", "🥂"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

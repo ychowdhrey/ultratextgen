@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/crescent-and-star/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/crescent-and-star/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/crescent-and-star/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Ngôi Sao Và Trăng Lưỡi Liềm — ☪ & ☪️",
       "intro": "Ngôi sao và trăng lưỡi liềm trong Unicode, sẵn sàng để dán vào tiểu sử, bài đăng hoặc hồ sơ. Hai dạng: glyph đen thuần và emoji đầy màu sắc.",
       "symbols": [
-        { "char": "☪", "label": "Ngôi Sao Và Trăng Lưỡi Liềm (U+262A)" },
-        { "char": "☪️", "label": "Emoji Ngôi Sao Và Trăng Lưỡi Liềm (U+262A U+FE0F)" }
+        {
+          "char": "☪",
+          "label": "Ngôi Sao Và Trăng Lưỡi Liềm (U+262A)"
+        },
+        {
+          "char": "☪️",
+          "label": "Emoji Ngôi Sao Và Trăng Lưỡi Liềm (U+262A U+FE0F)"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Không Giống Trăng Lưỡi Liềm Hay Ngôi Sao Đơn Lẻ",
       "intro": "Ngôi sao và trăng lưỡi liềm là một glyph kết hợp. Các ký tự trăng lưỡi liềm và ngôi sao riêng lẻ mà mọi người hay dùng thay thế đều có mã điểm và công việc riêng.",
       "symbols": [
-        { "char": "☾", "label": "Trăng Hạ Huyền (U+263E) — Trăng Lưỡi Liềm Đơn Thuần" },
-        { "char": "☽", "label": "Trăng Thượng Huyền (U+263D)" },
-        { "char": "🌙", "label": "Emoji Trăng Lưỡi Liềm (U+1F319)" },
-        { "char": "⭐", "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50)" },
-        { "char": "★", "label": "Ngôi Sao Đen (U+2605)" },
-        { "char": "☆", "label": "Ngôi Sao Trắng (U+2606)" }
+        {
+          "char": "☾",
+          "label": "Trăng Hạ Huyền (U+263E): Trăng Lưỡi Liềm Đơn Thuần"
+        },
+        {
+          "char": "☽",
+          "label": "Trăng Thượng Huyền (U+263D)"
+        },
+        {
+          "char": "🌙",
+          "label": "Emoji Trăng Lưỡi Liềm (U+1F319)"
+        },
+        {
+          "char": "⭐",
+          "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50)"
+        },
+        {
+          "char": "★",
+          "label": "Ngôi Sao Đen (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Ngôi Sao Trắng (U+2606)"
+        }
       ]
     },
     {
@@ -52,20 +85,53 @@
       "h2": "Các Ký Hiệu Tôn Giáo Khác Thường Được Xếp Cùng",
       "intro": "Ngôi sao và trăng lưỡi liềm thường được tìm kiếm và hiển thị cùng các biểu tượng bản sắc của những tôn giáo lớn khác trên thế giới. Đây là những ký hiệu nó thường được đặt cạnh nhất.",
       "symbols": [
-        { "char": "✡️", "label": "Ngôi Sao David (U+2721)" },
-        { "char": "✝️", "label": "Thánh Giá Latinh (U+271D)" },
-        { "char": "☸️", "label": "Bánh Xe Pháp Luân (U+2638)" },
-        { "char": "🕉️", "label": "Om (U+1F549)" },
-        { "char": "☯️", "label": "Âm Dương (U+262F)" },
-        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+        {
+          "char": "✡️",
+          "label": "Ngôi Sao David (U+2721)"
+        },
+        {
+          "char": "✝️",
+          "label": "Thánh Giá Latinh (U+271D)"
+        },
+        {
+          "char": "☸️",
+          "label": "Bánh Xe Pháp Luân (U+2638)"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om (U+1F549)"
+        },
+        {
+          "char": "☯️",
+          "label": "Âm Dương (U+262F)"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda / Adi Shakti (U+262C)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu để duyệt." },
-    { "href": "/library/islamic-symbols/", "title": "Ký Hiệu Hồi Giáo", "desc": "Ngôi sao và trăng lưỡi liềm cùng thư pháp Allah, thánh đường, cầu nguyện và các ký hiệu khác gắn với Hồi giáo." },
-    { "href": "/vi/symbol/star-of-david/", "title": "Ngôi Sao David (✡)", "desc": "Một biểu tượng tôn giáo khác được biết đến chủ yếu qua một quốc kỳ, với hình học chung cổ xưa hơn nhiều so với tôn giáo mà nó đại diện ngày nay." },
-    { "href": "/vi/symbol/hamsa-symbol/", "title": "Ký Hiệu Hamsa", "desc": "Bàn Tay Fatima — một dấu hiệu bảo vệ được chia sẻ giữa Hồi giáo và Do Thái giáo, cũng như ngôi sao và trăng lưỡi liềm, không được quy định trong kinh sách." }
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Ký Hiệu Tôn Giáo",
+      "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu để duyệt."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Ký Hiệu Hồi Giáo",
+      "desc": "Ngôi sao và trăng lưỡi liềm cùng thư pháp Allah, thánh đường, cầu nguyện và các ký hiệu khác gắn với Hồi giáo."
+    },
+    {
+      "href": "/vi/symbol/star-of-david/",
+      "title": "Ngôi Sao David (✡)",
+      "desc": "Một biểu tượng tôn giáo khác được biết đến chủ yếu qua một quốc kỳ, với hình học chung cổ xưa hơn nhiều so với tôn giáo mà nó đại diện ngày nay."
+    },
+    {
+      "href": "/vi/symbol/hamsa-symbol/",
+      "title": "Ký Hiệu Hamsa",
+      "desc": "Bàn Tay Fatima — một dấu hiệu bảo vệ được chia sẻ giữa Hồi giáo và Do Thái giáo, cũng như ngôi sao và trăng lưỡi liềm, không được quy định trong kinh sách."
+    }
   ]
 }

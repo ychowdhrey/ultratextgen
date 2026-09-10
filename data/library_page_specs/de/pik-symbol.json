@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/pik-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/pik-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "das-pik-symbol",
@@ -29,9 +37,18 @@
       "h2": "Das Pik-Symbol — ♠ & ♤",
       "intro": "Die Farbe selbst, in beiden Unicode-Formen. Das gefüllte ♠ ist die Standard-„schwarze“ Pik-Form; ♤ ist die „weiße“ Umriss-Version, und ♠️ ist die Emoji-Darstellung mit Variationsselektor. Zum Kopieren, überall einsetzbar.",
       "symbols": [
-        { "char": "♠", "label": "Schwarze Pik-Farbe (U+2660) — gefüllt" },
-        { "char": "♤", "label": "Weiße Pik-Farbe (U+2664) — Umriss" },
-        { "char": "♠️", "label": "Pik-Farbe als Emoji (U+2660 U+FE0F)" }
+        {
+          "char": "♠",
+          "label": "Schwarze Pik-Farbe (U+2660): gefüllt"
+        },
+        {
+          "char": "♤",
+          "label": "Weiße Pik-Farbe (U+2664): Umriss"
+        },
+        {
+          "char": "♠️",
+          "label": "Pik-Farbe als Emoji (U+2660 U+FE0F)"
+        }
       ]
     },
     {
@@ -40,14 +57,38 @@
       "h2": "Alle vier Farben — gefüllt & als Umriss",
       "intro": "Unicode gibt jeder französischen Kartenfarbe eine gefüllte „schwarze“ und eine Umriss-„weiße“ Glyphe, gepackt in einen zusammenhängenden Bereich von U+2660 bis U+2667. Eine Kuriosität am Rande: Pik und Kreuz sind standardmäßig gefüllt, während Herz und Karo standardmäßig als Umriss erscheinen.",
       "symbols": [
-        { "char": "♠", "label": "Schwarze Pik-Farbe (U+2660)" },
-        { "char": "♥", "label": "Schwarze Herz-Farbe (U+2665)" },
-        { "char": "♦", "label": "Schwarze Karo-Farbe (U+2666)" },
-        { "char": "♣", "label": "Schwarze Kreuz-Farbe (U+2663)" },
-        { "char": "♤", "label": "Weiße Pik-Farbe (U+2664)" },
-        { "char": "♡", "label": "Weiße Herz-Farbe (U+2661)" },
-        { "char": "♢", "label": "Weiße Karo-Farbe (U+2662)" },
-        { "char": "♧", "label": "Weiße Kreuz-Farbe (U+2667)" }
+        {
+          "char": "♠",
+          "label": "Schwarze Pik-Farbe (U+2660)"
+        },
+        {
+          "char": "♥",
+          "label": "Schwarze Herz-Farbe (U+2665)"
+        },
+        {
+          "char": "♦",
+          "label": "Schwarze Karo-Farbe (U+2666)"
+        },
+        {
+          "char": "♣",
+          "label": "Schwarze Kreuz-Farbe (U+2663)"
+        },
+        {
+          "char": "♤",
+          "label": "Weiße Pik-Farbe (U+2664)"
+        },
+        {
+          "char": "♡",
+          "label": "Weiße Herz-Farbe (U+2661)"
+        },
+        {
+          "char": "♢",
+          "label": "Weiße Karo-Farbe (U+2662)"
+        },
+        {
+          "char": "♧",
+          "label": "Weiße Kreuz-Farbe (U+2667)"
+        }
       ]
     },
     {
@@ -56,11 +97,26 @@
       "h2": "Das Pik-Ass & die Spielkarten-Glyphen",
       "intro": "Die geschichtsträchtigste Karte im Deck: England stempelte das Pik-Ass ab 1712 mit einer Steuermarke und druckte ab 1765 sein kunstvolles Stamp-Office-Design, und eine oft wiederholte (und stark umstrittene) Kriegsgeschichte erzählt von US-Soldaten in Vietnam, die es als „Todeskarte“ nutzten. Unicodes Playing-Cards-Block gibt jeder Karte eine eigene Glyphe — hier sind die vier Asse und die Kartenrückseite.",
       "symbols": [
-        { "char": "🂡", "label": "Spielkarte Pik-Ass (U+1F0A1)" },
-        { "char": "🂱", "label": "Spielkarte Herz-Ass (U+1F0B1)" },
-        { "char": "🃁", "label": "Spielkarte Karo-Ass (U+1F0C1)" },
-        { "char": "🃑", "label": "Spielkarte Kreuz-Ass (U+1F0D1)" },
-        { "char": "🂠", "label": "Spielkarten-Rückseite (U+1F0A0)" }
+        {
+          "char": "🂡",
+          "label": "Spielkarte Pik-Ass (U+1F0A1)"
+        },
+        {
+          "char": "🂱",
+          "label": "Spielkarte Herz-Ass (U+1F0B1)"
+        },
+        {
+          "char": "🃁",
+          "label": "Spielkarte Karo-Ass (U+1F0C1)"
+        },
+        {
+          "char": "🃑",
+          "label": "Spielkarte Kreuz-Ass (U+1F0D1)"
+        },
+        {
+          "char": "🂠",
+          "label": "Spielkarten-Rückseite (U+1F0A0)"
+        }
       ]
     }
   ],

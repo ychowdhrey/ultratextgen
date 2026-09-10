@@ -125,7 +125,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Does Sentence case just capitalize the first letter of my text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No — a naive \"capitalize the first character\" approach breaks on multi-sentence text. This tool's Sentence case capitalizes the first word of every sentence (after a period, question mark, or exclamation point), not just the very first letter of the whole input, and it also fixes the standalone pronoun \"i\" to \"I\"." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No, a naive \"capitalize the first character\" approach breaks on multi-sentence text. This tool's Sentence case capitalizes the first word of every sentence (after a period, question mark, or exclamation point), not just the very first letter of the whole input, and it also fixes the standalone pronoun \"i\" to \"I\"." }
     },
     {
       "@type": "Question",
@@ -182,6 +182,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Type or paste your text here..." maxlength="5000"></textarea>
         <span class="char-count"><span id="charCount">0</span>/5000</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -231,7 +238,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Does Sentence case just capitalize the first letter of my text?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">No — a naive "capitalize the first character" approach breaks on multi-sentence text. This tool's Sentence case capitalizes the first word of every sentence (after a period, question mark, or exclamation point), not just the very first letter of the whole input, and it also fixes the standalone pronoun "i" to "I".</div>
+        <div class="faq-answer">No, a naive "capitalize the first character" approach breaks on multi-sentence text. This tool's Sentence case capitalizes the first word of every sentence (after a period, question mark, or exclamation point), not just the very first letter of the whole input, and it also fixes the standalone pronoun "i" to "I".</div>
       </div>
 
       <div class="faq-item">
@@ -285,6 +292,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "case-converter";</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

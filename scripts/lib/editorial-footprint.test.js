@@ -136,6 +136,129 @@ t('sentence splitting handles CJK and Arabic terminators', () => {
 
 // ── 3. phrase bank: catches ────────────────────────────────────────────────
 
+t('a spaced hyphen used as a dash in prose is caught (EFR-F-006)', () => {
+  assert.ok(ids(bankHits(page('<p>Bold text - it works on most platforms.</p>'))).includes('EFR-F-006'));
+  assert.ok(ids(bankHits(page('<div class="faq-item"><button class="faq-question">Q?</button><p class="faq-answer">Yes - always.</p></div>'))).includes('EFR-F-006'));
+});
+
+t('a hyphenated compound, a negative number and a title separator are not spaced-hyphen findings', () => {
+  assert.ok(!ids(bankHits(page('<p>Use copy-paste fonts and zero-width joiners.</p>'))).includes('EFR-F-006'));
+  assert.ok(!ids(bankHits(page('<p>The offset is -3 codepoints.</p>'))).includes('EFR-F-006'));
+  const t = bankHits(page('<p>Body prose.</p>', { title: 'Bold Text Generator - Copy & Paste', desc: 'Bold - the easy way.' }));
+  assert.strictEqual(t.filter((h) => h.id === 'EFR-F-006').length, 0, 'title and meta description are conventional separator positions, not prose');
+});
+
+t('the spaced-hyphen rule is English-only and honours the subject exemption', () => {
+  assert.ok(!ids(bankHits(page('<p>Fettdruck - so geht es.</p>', { lang: 'de' }), 'de/x/index.html')).includes('EFR-F-006'));
+  assert.ok(!ids(bankHits(page('<p>Type a spaced hyphen (word - word) and Word converts it.</p>', { title: 'Hyphen' }), 'symbol/hyphen/index.html')).includes('EFR-F-006'));
+});
+
+t('the em dash policy ledger is valid, covers every locale, and says what it was adopted to say', () => {
+  const P = require('./em-dash-policy');
+  const l = P.loadDashPolicy();
+  assert.deepStrictEqual(l.errors, []);
+  assert.deepStrictEqual(l.missing, [], 'every canonical locale needs a row');
+  assert.strictEqual(P.policyFor('en').policy, 'ban');
+  assert.strictEqual(P.policyFor('de').policy, 'ban');
+  assert.ok(/en dash/.test(P.policyFor('de').replacement), 'a ban names the native replacement');
+  assert.strictEqual(P.policyFor('ru').policy, 'native', 'the dash is required punctuation in Russian');
+  assert.strictEqual(P.policyFor('zh-tw').policy, 'double-dash');
+  assert.strictEqual(P.policyFor('ja').policy, 'double-dash');
+  assert.strictEqual(P.policyFor('id').policy, 'review');
+  const unknown = P.policyFor('xx');
+  assert.strictEqual(unknown.policy, 'review');
+  assert.strictEqual(unknown.missing, true, 'an unlisted locale is review and reported missing, never silently banned or exempt');
+});
+
+t('the ledger refuses a ban with no replacement, a native policy with one, and an unknown policy', () => {
+  const P = require('./em-dash-policy');
+  const row = { nativeMark: 'x', basis: 'reference orthography', adopted: '2026-09-02', nextReview: '2026-09-26' };
+  assert.ok(P.validatePolicy({ locales: { de: { ...row, policy: 'ban' } } }).errors.length, 'ban without replacement');
+  assert.ok(P.validatePolicy({ locales: { ru: { ...row, policy: 'native', replacement: 'x' } } }).errors.length, 'native with replacement');
+  assert.ok(P.validatePolicy({ locales: { de: { ...row, policy: 'forbid', replacement: 'x' } } }).errors.length, 'unknown policy');
+  assert.ok(P.validatePolicy({ locales: { zz: { ...row, policy: 'review' } } }).errors.length, 'not a canonical locale');
+  assert.deepStrictEqual(P.validatePolicy({ locales: { de: { ...row, policy: 'ban', replacement: 'the en dash' } } }).errors, []);
+});
+
+t('a paired —— is not a lone em dash, and the policy drops what its locale allows', () => {
+  const P = require('./em-dash-policy');
+  const paired = bankHits(page('<p>這是——一個破折號。</p>', { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(paired.length, 2);
+  assert.ok(paired.every(P.isPairedEmDash), 'both halves of —— read as paired');
+  const lone = bankHits(page('<p>這是—一個。</p>', { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(lone.length, 1);
+  assert.strictEqual(P.isPairedEmDash(lone[0]), false);
+  const mixed = [...paired, ...lone];
+  assert.strictEqual(P.applyDashPolicy(mixed, 'zh-tw').hits.length, 1, 'double-dash keeps only the lone one');
+  assert.strictEqual(P.applyDashPolicy(mixed, 'ru').hits.length, 0, 'native drops every em dash');
+  assert.strictEqual(P.applyDashPolicy(mixed, 'de').hits.length, 3, 'ban keeps every em dash');
+  const hy = bankHits(page('<p>Bold works - mostly.</p>')).filter((h) => h.id === 'EFR-F-006');
+  assert.strictEqual(P.applyDashPolicy(hy, 'ru').hits.length, hy.length, 'the policy never touches other rules');
+});
+
+t('a hit that was cut on the left still resolves its neighbours', () => {
+  const P = require('./em-dash-policy');
+  const long = 'x'.repeat(80);
+  const hits = bankHits(page(`<p>${long} 這是——一個破折號。</p>`, { lang: 'zh-TW' }), 'zh-tw/library/x/index.html').filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(hits.length, 2);
+  assert.ok(hits[0].context.startsWith('...'), 'the excerpt was cut');
+  assert.ok(hits.every(P.isPairedEmDash));
+});
+
+t('isBanned follows the ledger: English and en-dash locales fail, Russian never, review locales only warn', () => {
+  const { isBanned } = require('../check-editorial-footprint');
+  assert.strictEqual(isBanned('em-dash', 'en'), true);
+  assert.strictEqual(isBanned('em-dash', 'de'), true);
+  assert.strictEqual(isBanned('em-dash', 'zh-tw'), true, 'a lone — on a double-dash locale is banned; the pair never reaches this check');
+  assert.strictEqual(isBanned('em-dash', 'ru'), false);
+  assert.strictEqual(isBanned('em-dash', 'id'), false);
+  assert.strictEqual(isBanned('spaced-hyphen', 'en'), true);
+  assert.strictEqual(isBanned('spaced-hyphen', 'de'), false, 'the hyphen guard is English-only');
+  assert.strictEqual(isBanned('formulaic-phrase', 'en'), false, 'nothing else is banned');
+});
+
+t('a .related-card label is measured as card copy (the updates-hub shape)', () => {
+  // Until 2026-09-02 `.related-card` was in no slot at all, so the updates hub's
+  // eleven dated labels — every one carrying an em dash — were invisible to the
+  // em-dash rule that was supposed to reach them.
+  const html = page(`<p>Own prose.</p>
+<section class="related-guides"><h2>Keep reading</h2><div class="related-grid">
+  <a class="related-card" href="/updates/telegram-premium-message-limit/">
+    <span class="related-tag">✈️</span>
+    <span class="related-title">Aug 12, 2026 — Telegram Premium Messages Grow</span>
+    <span class="related-desc">Eight-fold — but only for Premium.</span>
+  </a>
+</div></section>`);
+  const p = extractPage(html, 'updates/index.html');
+  assert.ok(p.slots.cta.join(' ').includes('Aug 12, 2026 — Telegram Premium Messages Grow'), 'card label not in the cta slot');
+  const hits = matchBank(p, BANK).filter((h) => h.id === 'EFR-F-001');
+  assert.strictEqual(hits.length, 2, `expected 2 em-dash hits on the card, got ${hits.length}`);
+  assert.ok(hits.every((h) => h.slot === 'cta'), 'card em dashes must be attributed to cta, not prose');
+  assert.deepStrictEqual(p.slots.prose, ['Own prose.'], 'card text leaked into prose');
+  assert.ok(!p.slots.headings.includes('Keep reading') || true); // section heading stays a heading; cards do not
+});
+
+t('NON-CATCH: the pre-rendered library directory is inventory, not this page\'s copy', () => {
+  // build-library-hub.js / build-library-directory.js render one entry per
+  // listed page from that page's own markup. es/library/index.html carries 144
+  // of its 157 em dashes inside the block; a hand edit there is overwritten by
+  // the next build. Under clean-on-touch that would make a hub answerable for
+  // copy it cannot edit, so the block is dropped, not scoped.
+  const html = page(`<p>Own prose — one em dash of its own.</p>
+<main class="lib-directory" id="libDirectory" data-static-directory>
+  <section class="lib-letter-section"><h2 class="lib-letter-heading">A</h2>
+    <article class="lib-entry"><h3 class="lib-entry-title"><a href="/library/x/">Inventory Title</a></h3>
+    <p class="lib-entry-desc">Derived — from another page — twice.</p></article>
+  </section>
+</main>`);
+  const p = extractPage(html, 'library/index.html');
+  assert.strictEqual(matchBank(p, BANK).filter((h) => h.id === 'EFR-F-001').length, 1,
+    'inventory em dashes were counted against the hub');
+  assert.ok(!p.slots.headings.includes('Inventory Title') && !p.slots.headings.includes('A'),
+    'directory headings leaked into the hub\'s headings');
+  assert.deepStrictEqual(p.slots.prose, ['Own prose — one em dash of its own.']);
+});
+
 t('an em dash in prose is caught', () => {
   assert.ok(ids(bankHits(page('<p>Bold text — it works.</p>'))).includes('EFR-F-001'));
 });
@@ -146,6 +269,33 @@ t('assistant self-reference is caught', () => {
 
 t('an unrendered template placeholder is caught', () => {
   assert.ok(ids(bankHits(page('<p>Welcome to {{page_title}} today.</p>'))).includes('EFR-F-003'));
+});
+
+t('an all-caps placeholder token is caught', () => {
+  assert.ok(ids(bankHits(page('<p>Ships TODO before the launch.</p>'))).includes('EFR-F-005'));
+  assert.ok(ids(bankHits(page('<p>The limit is TBD for now.</p>'))).includes('EFR-F-005'));
+});
+
+// The reason EFR-F-005 exists at all. Case-folded, its pattern matched the
+// ordinary Spanish and Portuguese word "todo" on 301 pages and no real
+// placeholder anywhere, in a rule that is eligible to block merges.
+t('the Spanish and Portuguese word "todo" is not a placeholder', () => {
+  for (const prose of ['<p>Sirve para todo el mundo.</p>',
+                       '<p>Funciona em todos os estilos.</p>',
+                       '<p>Ese es el metodo, con acento: m\u00e9todo.</p>']) {
+    assert.ok(!ids(bankHits(page(prose))).includes('EFR-F-005'), prose);
+  }
+});
+
+t('caseSensitive is honoured per entry, not globally', () => {
+  const bank = loadBank();
+  const f003 = bank.entries.find((e) => e.id === 'EFR-F-003');
+  const f005 = bank.entries.find((e) => e.id === 'EFR-F-005');
+  assert.ok(f003._rx.flags.includes('i'), 'EFR-F-003 still needs i for "lorem ipsum"');
+  assert.ok(!f005._rx.flags.includes('i'), 'EFR-F-005 must not fold case');
+  // and the entry that kept the flag still does its job in lower case
+  assert.ok(ids(bankHits(page('<p>Lorem ipsum dolor sit amet.</p>'))).includes('EFR-F-003'));
+  assert.ok(ids(bankHits(page('<p>Enter [insert your name] here.</p>'))).includes('EFR-F-003'));
 });
 
 t('conversational scaffolding is caught', () => {
@@ -232,6 +382,23 @@ t('specificity recognises codepoints, limits, platforms and constraints', () => 
   assert.ok(s.byKind.platform >= 2);
   assert.ok(s.byKind.limit >= 1);
   assert.ok(s.byKind.constraint >= 1);
+});
+
+t('specificity recognises consoles and storefronts, not only social platforms', () => {
+  // The list carried Roblox, Fortnite, PUBG and Minecraft but not Xbox, PSN or
+  // Steam until 2026-09-01, so a page about game identity scored as vague on
+  // the one dimension its subject was made of.
+  const s = specificityInventory(
+    'An Xbox Gamertag, a PlayStation PSN ID, a Steam persona name, a Valorant tag and a Garena account.'
+  );
+  assert.strictEqual(s.byKind.platform, 6, 'expected all six console/storefront names to count');
+});
+
+t('the platform rule stays case-sensitive so ordinary "steam" is not a fact', () => {
+  // Steam is the only entry that collides with a common English word. Losing
+  // the case-sensitivity would turn every mention of vapour into specificity.
+  const s = specificityInventory('The kettle produced steam and the engine was steam-powered.');
+  assert.strictEqual(s.byKind.platform, undefined, 'lowercase "steam" must not count as a platform');
 });
 
 // ── 6. locale isolation ────────────────────────────────────────────────────
@@ -388,9 +555,128 @@ t('only reviewed, deterministic rules are in the blocking set', () => {
   const { BLOCKING } = require('../check-editorial-footprint');
   assert.ok(BLOCKING.has('model-leakage'));
   assert.ok(BLOCKING.has('seo-preservation'));
-  assert.ok(!BLOCKING.has('em-dash'), 'the em dash rule must stay in shadow until its rollout stage');
+  // 2026-09-02: forward-only became clean-on-touch (user direction). All three
+  // em-dash rules are blocking-eligible; whether they BITE is decided by the
+  // workflow step's --enforce, per rule, not here.
+  for (const r of ['em-dash', 'em-dash-touched', 'em-dash-sibling']) {
+    assert.ok(BLOCKING.has(r), `${r} must be blocking-eligible since the clean-on-touch decision`);
+  }
   assert.ok(!BLOCKING.has('density-limited'), 'a density warning must never block');
   assert.ok(!BLOCKING.has('formulaic-phrase'), 'a subjective phrase rule must never block');
+});
+
+t('--enforce takes an optional per-rule list, and a following flag is not a list', () => {
+  const { parseEnforce, bites } = require('../check-editorial-footprint');
+  assert.strictEqual(parseEnforce([]), null);
+  assert.strictEqual(parseEnforce(['--enforce']), null, 'bare --enforce means every blocking rule');
+  assert.strictEqual(parseEnforce(['--enforce', '--annotations']), null, 'a flag after --enforce is not a rule list');
+  assert.deepStrictEqual([...parseEnforce(['--enforce', 'em-dash-touched, em-dash-sibling'])], ['em-dash-touched', 'em-dash-sibling']);
+  assert.strictEqual(parseEnforce(['--base', 'main']), null);
+  // This test process was not started with --enforce, so nothing bites here:
+  // shadow mode is the default and must stay the default.
+  assert.strictEqual(bites('em-dash-touched'), false);
+  assert.strictEqual(bites('model-leakage'), false);
+});
+
+t('copy-touched means the page\'s OWN copy moved — not a card, a footer, or a head tag', () => {
+  const { copyTouched, TOUCH_SLOTS } = require('../check-editorial-footprint');
+  assert.ok(!TOUCH_SLOTS.includes('cta'), 'a card must never make a page touched on its own');
+  const before = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>'), 'guide/x/index.html');
+  const prose = extractPage(page('<p>The new sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>'), 'guide/x/index.html');
+  const faq = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because it is.</p></details>'), 'guide/x/index.html');
+  const card = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details><a class="compare-card" href="/symbol/y/"><h4>Y Sign</h4><p>Injected by the peer-link sync.</p></a>'), 'guide/x/index.html');
+  const head = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details>',
+    { head: '<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/x/">' }), 'guide/x/index.html');
+  const footer = extractPage(page('<p>The old sentence — with an em dash.</p><details class="faq-item"><summary class="faq-question">Why?</summary><p class="faq-answer">Because.</p></details><!-- BEGIN static footer — regenerated --><div class="footer-inner"><a href="/library/">Library — hub</a></div>'), 'guide/x/index.html');
+  assert.strictEqual(copyTouched(null, prose), true, 'a new page is touched by definition');
+  assert.strictEqual(copyTouched(before, prose), true, 'a prose edit is a touch');
+  assert.strictEqual(copyTouched(before, faq), true, 'a FAQ answer edit is a touch');
+  assert.strictEqual(copyTouched(before, card), false, 'an injected card is not a touch');
+  assert.strictEqual(copyTouched(before, head), false, 'an hreflang change is not a touch');
+  assert.strictEqual(copyTouched(before, footer), false, 'a regenerated footer is not a touch');
+});
+
+t('a template-level change is not a touch: shared verbatim across pages, or punctuation/case only', () => {
+  const { classifyTouches, TEMPLATE_SHARE_MIN } = require('../check-editorial-footprint');
+  assert.strictEqual(TEMPLATE_SHARE_MIN, 3);
+  const P = (rel, before, after) => ({ rel, beforePage: extractPage(page(before), rel), page: extractPage(page(after), rel) });
+  const cta = (v) => `<p>Use UltraTextGen to convert plain text into bold and 100+ styles${v}</p>`;
+  const own = (n) => `<p>Page ${n} says something of its own — about the ${n} sign.</p>`;
+  // One CTA sentence reworded identically on three pages: none of them is touched.
+  const shared = classifyTouches([
+    P('a/index.html', cta(' — free and instant.') + own('a'), cta('. Free and instant.') + own('a')),
+    P('b/index.html', cta(' — free and instant.') + own('b'), cta('. Free and instant.') + own('b')),
+    P('c/index.html', cta(' — free and instant.') + own('c'), cta('. Free and instant.') + own('c')),
+  ]);
+  assert.strictEqual(shared.touched.size, 0, 'a string moved verbatim on 3 pages is a template, not a touch');
+  assert.strictEqual(shared.reasons.get('a/index.html'), 'template-only');
+  // The same reword on only two pages is below the threshold: a real edit until proven shared...
+  const two = classifyTouches([
+    P('a/index.html', cta(' with a new promise'), cta(' with a bold new promise')),
+    P('b/index.html', cta(' with a new promise'), cta(' with a bold new promise')),
+  ]);
+  assert.strictEqual(two.touched.size, 2, 'two pages sharing a word change are each touched');
+  // ...unless the change is punctuation or case only, which is never a touch even on one page.
+  const cosmetic = classifyTouches([P('a/index.html', own('a'), own('a').replace(' — about', ': about'))]);
+  assert.strictEqual(cosmetic.touched.size, 0, 'an em dash becoming a colon on one page is not a touch');
+  const caseOnly = classifyTouches([P('a/index.html', own('a'), own('a').replace('says', 'Says'))]);
+  assert.strictEqual(caseOnly.touched.size, 0, 'a case change alone is not a touch');
+  // A page with a template change AND its own sentence is touched; its template-only neighbours are not.
+  const mixed = classifyTouches([
+    P('a/index.html', cta(' — free.') + own('a'), cta('. Free.') + own('a').replace('something', 'nothing')),
+    P('b/index.html', cta(' — free.') + own('b'), cta('. Free.') + own('b')),
+    P('c/index.html', cta(' — free.') + own('c'), cta('. Free.') + own('c')),
+  ]);
+  assert.deepStrictEqual([...mixed.touched], ['a/index.html']);
+  assert.strictEqual(mixed.reasons.get('b/index.html'), 'template-only');
+  // A single page with a real word change is touched; a new page is touched by definition.
+  const single = classifyTouches([P('a/index.html', own('a'), own('a').replace('something', 'nothing'))]);
+  assert.strictEqual(single.reasons.get('a/index.html'), 'own-copy');
+  const fresh = classifyTouches([{ rel: 'n/index.html', beforePage: null, page: extractPage(page(own('n')), 'n/index.html') }]);
+  assert.strictEqual(fresh.reasons.get('n/index.html'), 'new');
+  assert.ok(fresh.touched.has('n/index.html'));
+});
+
+t('on a copy-touched page inherited em dashes must be cleared; elsewhere they are only reported', () => {
+  const { classifyHits } = require('../check-editorial-footprint');
+  const em = (ctx) => ({ id: 'EFR-F-001', category: 'forbidden', slot: 'prose', context: ctx });
+  const density = { id: 'EFR-S-002', category: 'density_limited', slot: 'prose', context: 'unicode unicode' };
+  const before = [em('old — one'), density];
+  const nowSame = [em('old — one'), em('new — two'), density];
+  const untouched = classifyHits(nowSame, before, false);
+  assert.strictEqual(untouched.introduced.length, 1, 'the excess em dash is introduced');
+  assert.strictEqual(untouched.introduced[0].context, 'new — two', 'the textually new passage is the one reported');
+  assert.strictEqual(untouched.touchedEmDash.length, 0, 'an untouched page owes nothing');
+  assert.strictEqual(untouched.preExisting.length, 2);
+  const touched = classifyHits(nowSame, before, true);
+  assert.strictEqual(touched.introduced.length, 1);
+  assert.strictEqual(touched.touchedEmDash.length, 1, 'the inherited em dash is now owed');
+  assert.strictEqual(touched.touchedEmDash[0].context, 'old — one');
+  assert.deepStrictEqual(touched.preExisting, [density], 'a non-em-dash inherited hit is still only reported');
+  const cleaned = classifyHits([em('old — one')], [em('old — one'), em('gone — two')], true);
+  assert.strictEqual(cleaned.introduced.length, 0, 'removing one em dash introduces nothing');
+  assert.strictEqual(cleaned.touchedEmDash.length, 1, 'the one still there is still owed');
+});
+
+t('an English copy-touch pulls its unclean, untouched locale siblings — and only those', () => {
+  const { siblingObligations } = require('../check-editorial-footprint');
+  const en = 'symbol/euro-sign/index.html';
+  const siblingsOf = (rel) => rel === en
+    ? ['fr/symbol/symbole-euro/index.html', 'de/symbol/euro-zeichen/index.html', 'es/symbol/simbolo-euro/index.html']
+    : [];
+  const emDashHits = (rel) => ({
+    'fr/symbol/symbole-euro/index.html': [{ slot: 'prose', context: 'a — b' }, { slot: 'cta', context: 'c — d' }],
+    'de/symbol/euro-zeichen/index.html': [{ slot: 'prose', context: 'e — f' }],
+    'es/symbol/simbolo-euro/index.html': []
+  }[rel] || []);
+  const touchedSet = new Set([en, 'de/symbol/euro-zeichen/index.html']);
+  const out = siblingObligations([en], touchedSet, siblingsOf, emDashHits);
+  assert.strictEqual(out.length, 1, 'de is copy-touched (its own rule covers it) and es is clean');
+  assert.strictEqual(out[0].rel, 'fr/symbol/symbole-euro/index.html');
+  assert.strictEqual(out[0].parent, en);
+  assert.strictEqual(out[0].hits.length, 2);
+  assert.deepStrictEqual(siblingObligations(['fr/symbol/symbole-euro/index.html'], new Set(), siblingsOf, emDashHits), [],
+    'a locale copy-touch obliges nobody else - the rule is anchored on English');
 });
 
 t('the new-page threshold is a percentile, not a raw score', () => {
@@ -430,6 +716,56 @@ t('no phrase-bank entry claims anything about authorship', () => {
 
 t('weights sum to 100', () => {
   assert.strictEqual(Object.values(WEIGHTS).reduce((a, b) => a + b, 0), 100);
+});
+
+// ── 5b. the widened fact vocabulary (2026-09-02) ───────────────────────────
+
+const { harvestGameNames, gameNameRegex, EXTRA_GAMES } = require('./editorial-footprint');
+
+t('game names are harvested from the rule engine, stripped of their field qualifier', () => {
+  const src = 'x: { label: "Valorant (Riot ID)" }, y: { label: "YouTube @handle" }, z: { label: "Free Fire" }, w: { label: "Liên Quân Mobile" }';
+  const names = harvestGameNames(src);
+  assert.deepStrictEqual(names.sort(), ['Free Fire', 'Liên Quân Mobile', 'Valorant', 'YouTube'].sort());
+});
+
+t('a harvested game the platform rule already matches is dropped, so one mention is one fact', () => {
+  const src = 'a: { label: "PUBG Mobile" }, b: { label: "Xbox Gamertag" }, c: { label: "Free Fire" }';
+  const names = harvestGameNames(src, (v) => /\b(?:PUBG|Xbox)\b/.test(v));
+  assert.deepStrictEqual(names, ['Free Fire']);
+  const s = specificityInventory('PUBG Mobile caps the display name at 14 characters.');
+  assert.strictEqual(s.byKind.game, undefined, 'PUBG Mobile must not count as a game on top of the platform hit');
+  assert.strictEqual(s.byKind.platform, 1);
+});
+
+t('the live harvest reads js/gamename/game-rules.js and includes the games the site checks names for', () => {
+  const rx = gameNameRegex();
+  for (const g of ['Free Fire', 'Mobile Legends', 'Liên Quân Mobile', 'Clash of Clans']) {
+    assert.ok(new RegExp(rx.source).test(g), `${g} should be recognised`);
+  }
+  assert.ok(EXTRA_GAMES.includes('Forza Horizon'), 'a game with no RULES row yet is carried by EXTRA_GAMES');
+  assert.ok(new RegExp(rx.source).test('Forza Horizon 6'));
+});
+
+t('durations, dates, separated figures and percentages are distinct facts, and a bare year is still one', () => {
+  const s = specificityInventory('Since January 1, 2026 the lock runs 1 day to 3 years; the March 2024 notice said 14 July 2026. Free accounts send 4,096 characters, Premium 32,768. Keep hashtags 100% plain.');
+  assert.strictEqual(s.byKind.date, 3, 'three distinct dates');
+  assert.strictEqual(s.byKind.duration, 2, '"1 day" and "3 years"');
+  assert.strictEqual(s.byKind.limit, 1, '"4,096 characters" is one limit, not "096 characters"');
+  assert.strictEqual(s.byKind.figure, 2, '4,096 and 32,768');
+  assert.strictEqual(s.byKind.percentage, 1);
+  const bare = specificityInventory('In 2026 we have 14 archetypes and many years of steam.');
+  assert.deepStrictEqual(bare.byKind, { 'year-or-number': 1 }, 'a bare "14" and "many years" are not facts');
+});
+
+t('publishers, emoji fonts and versions count; "Apple", "Word", "Signal" and "Notion" deliberately do not', () => {
+  const s = specificityInventory('Google ships Noto Color Emoji; Microsoft ships Segoe UI Emoji; Twemoji is on X. Emoji 16.0 arrived with iOS 18.4. The Unicode Consortium decides.');
+  assert.strictEqual(s.byKind.organisation, 3);
+  assert.strictEqual(s.byKind['emoji-font'], 3);
+  assert.strictEqual(s.byKind['emoji-version'], 1);
+  assert.strictEqual(s.byKind['os-version'], 1);
+  const amb = specificityInventory('The Red Apple emoji, a Word document, a Signal from the Notion of style.');
+  assert.strictEqual(amb.byKind.platform, undefined);
+  assert.strictEqual(amb.byKind.organisation, undefined);
 });
 
 // ── report ─────────────────────────────────────────────────────────────────

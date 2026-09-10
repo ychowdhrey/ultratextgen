@@ -48,7 +48,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-from lib.printables_parity import assert_no_regression  # noqa: E402
+from lib.generator_parity import assert_no_regression  # noqa: E402
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_dot_to_dot_alphabet.json"
 PRINTABLES_DIR = REPO / "printables"
@@ -261,7 +261,7 @@ def render_hub(spec):
     faqs = [
         (
             "Are these dot-to-dot alphabet pages free to print?",
-            "Yes — every dot-to-dot letter here is completely free, with no sign-up, "
+            "Yes, every dot-to-dot letter here is completely free, with no sign-up, "
             "watermark, or limit. Pick a letter for a numbered connect-the-dots puzzle, "
             "then use <strong>Print this letter</strong> to send it to your printer or "
             "<strong>Download PNG</strong> to save a high-resolution image.",

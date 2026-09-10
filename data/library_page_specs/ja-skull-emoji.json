@@ -6,7 +6,7 @@
   "hero_h1": "ドクロ 絵文字",
   "hero_tagline": "💀 の二つの意味——文字どおりの意味と、いま実際によく使われている意味。",
   "intro": "ネットでの 💀 はほとんど「死」の意味では使われず、「無理、笑いすぎた」という意味です。このページはその二つを分けて、まずドクロ本体、次に笑いの周辺、最後に本当の危険標識を並べています。タップでコピーできます。",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "core",
@@ -132,6 +132,55 @@
     {
       "h2": "ドクロが「笑い」になった経緯",
       "body": "この意味の変化は新しく、経緯もはっきりしています。2020年ごろ TikTok で 💀 が「面白すぎて死んだ」を表すようになりました。きっかけは、😂 が上の世代の記号と見なされるようになったことです。Unicode 上の名称はいまも単に「Skull」で、実際に伝わっている意味は文字表のどこにも書かれていません。文字どおりの意味で使いたいときは、この変化を免れた ☠ のほうが向いています。"
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "コンボセット",
+    "h2": "どくろ絵文字のコンボセット",
+    "intro": "どくろのコンボをワンクリックでまるごとコピーして、コメントやキャプション、返信にそのまま貼れます。"
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "笑い死に",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "危険地帯",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "海賊モード",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "完全に息絶えた",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "ハロウィンのどくろ",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "面白すぎて死ぬ",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "背筋が凍る",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "私、RIP",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

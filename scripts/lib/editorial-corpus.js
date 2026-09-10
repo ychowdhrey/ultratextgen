@@ -45,6 +45,10 @@
  */
 
 const cheerio = require('cheerio');
+// One registry of locale Sources labels, shared with the source-attribution
+// standard so the corpus and the gate can never disagree about what a Sources
+// section is called in a given language.
+const { LOCALE_LABELS: SOURCE_LABELS } = require('./source-attribution.js');
 const path = require('path');
 
 /** Canonical locale prefixes. A path segment not in here is an EN page. */
@@ -73,6 +77,47 @@ const FAMILY_RULES = [
 ];
 
 /** Containers that are chrome, navigation or payload — never editorial prose. */
+/**
+ * CITATION APPARATUS — removed by what the section IS, not by its class
+ * (added 2026-09-03).
+ *
+ * A Sources block (docs/source-attribution.md) is evidence for the claims
+ * above it, and it is deliberately formulaic across pages: that consistency
+ * IS the standard. Scored as editorial writing it reads as precisely what EFR
+ * exists to flag — repeated syntax, templated rhythm, and a low fact density,
+ * because its "facts" are publisher names and URLs rather than codepoints,
+ * limits or dates. So the incentive runs backwards: a page is penalised for
+ * showing its sources.
+ *
+ * Measured rather than assumed. Adding the Sources block that
+ * vi/updates/lien-quan-khoa-doi-ten was missing moved that entry from 10.8 to
+ * 12.1, a blocking regression whose dominant contributor was
+ * specificityDeficit, earned by citing Garena's own patch notes. Cutting the
+ * sentence by a quarter reached 11.9; cutting it to the bare citation still
+ * reached 11.3, exactly the +0.5 material threshold. The cost is structural,
+ * not a wording problem: any short page that gains a Sources block pays it.
+ *
+ * It matches on the section's LABEL, via the one locale registry in
+ * source-attribution.js, and not on `.source-note`. Keying on the class would
+ * drop the block on one side of a diff and not the other for any branch that
+ * introduces the class — which is exactly what the branch adding this
+ * standard did, turning one blocked page into 37 regressions across the 67
+ * entries it renamed. What a section is does not change when its markup does.
+ *
+ * Same call, and the same reasoning, as [data-static-directory] above: text
+ * that is not the page's own editorial writing is measured nowhere rather
+ * than measured wrongly. A Sources block owes correctness and the
+ * claim->source mapping, and check:source-attribution is what enforces those.
+ */
+function removeSourceSections($, $body) {
+  const labels = new Set();
+  for (const list of Object.values(SOURCE_LABELS)) for (const l of list) labels.add(l);
+  $body.find('section').each((_, el) => {
+    const label = clean($(el).find('> .article-section-label').first().text());
+    if (label && labels.has(label)) $(el).remove();
+  });
+}
+
 const DROP_SELECTORS = [
   'script', 'style', 'noscript', 'template', 'svg', 'iframe',
   'header', 'footer', 'nav',
@@ -84,7 +129,30 @@ const DROP_SELECTORS = [
   'code', 'pre', 'kbd', 'samp', 'var',
   '.data-table', '.alpha-glyphs', '.alpha-row', '.block-example',
   '.glyph-copy', '.deco-chip', '.uname-chip', '.symbol-hero-tile',
-  '.decoration-tab', '.category-tab', '.copy-btn', '.cta-btn'
+  '.decoration-tab', '.category-tab', '.copy-btn', '.cta-btn',
+  // Inventory rendered FROM OTHER PAGES (added 2026-09-02). The pre-rendered
+  // library-hub directory — `build-library-hub.js` for the 19 locale hubs,
+  // `build-library-directory.js` for EN — carries one entry per listed page.
+  // On a locale hub that entry is derived from the listed page's own markup,
+  // so the text is measured where it is written and counting it here counts it
+  // twice; es/library/index.html holds 144 of its 157 em dashes inside the
+  // block. Worse, under the clean-on-touch rule it would make a hub answerable
+  // for copy it cannot edit: a hand edit to the block is overwritten by the
+  // next build, and `check:library-hub-parity` fails a stale one. On the EN hub
+  // the source is the page's own `LIBRARY` array — a script block, outside
+  // every slot — so its 25 inventory em dashes are a bounded backlog in one
+  // file, cleared through the array and a rebuild, never through the HTML.
+  '[data-static-directory]',
+  // Collection grids pre-rendered by scripts/prerender-collection-grids.js
+  // (added 2026-09-10). Same case as the directory block above: the section is
+  // rendered FROM the page's own inline GROUPS array, which lives in a <script>
+  // and is therefore outside every slot — its group names are already captured
+  // as `ui` by scriptTileNames() below, and its buttons and tabs by the
+  // `button:not(.faq-question)` UI selector. Measuring the rendered copy would
+  // count the same strings a second time, in prose, and would make 898 pages
+  // answerable under clean-on-touch for markup a hand edit cannot change: the
+  // next generator run overwrites it.
+  '.flag-grid-section'
 ];
 
 /** Payload containers whose text is captured as `ui` before being dropped. */
@@ -98,6 +166,20 @@ const UI_SELECTORS = [
   // `faqQuestions` read 0 against `faqAnswers` 21.
   'button:not(.faq-question)'
 ];
+
+/**
+ * Editorial cards: hand-written pointer copy — a CTA card, a "Keep reading"
+ * grid, a symbol page's related-card grid. Captured as the `cta` slot, then
+ * removed so a card's own heading and text are not also counted as page prose.
+ *
+ * `.related-card` was missing from this list until 2026-09-02, so the updates
+ * hub's dated card labels ("Aug 12, 2026 — Telegram …", eleven of them, every
+ * one carrying an em dash) and the "Keep reading" grids on 193 pages sat in no
+ * slot at all — invisible to every rule, including the em-dash rule that was
+ * supposed to reach them. One constant, used everywhere cards are handled, so
+ * the set cannot drift three ways again.
+ */
+const CARD_SELECTORS = '.cta-card, .related-page-card, .related-card, .compare-card';
 
 const WS = /\s+/g;
 
@@ -226,12 +308,13 @@ function extractPage(html, relPath) {
 
   // Now strip everything that is not editorial.
   for (const sel of [...DROP_SELECTORS, ...UI_SELECTORS]) $body.find(sel).remove();
+  removeSourceSections($, $body);
   $body.find('*').contents().filter((_, n) => n.type === 'comment').remove();
 
   const h1 = clean($body.find('h1').first().text());
   // Headings INSIDE a card are captured with the card below, in `cta`. Reading
   // them here as well counts one card title twice in every density measure.
-  $body.find('.cta-card, .related-page-card, .compare-card').addClass('utg-card-scope');
+  $body.find(CARD_SELECTORS).addClass('utg-card-scope');
   const headings = [];
   $body.find('h2, h3, h4, .article-section-label').each((_, el) => {
     if ($(el).closest('.utg-card-scope').length) return;
@@ -246,8 +329,8 @@ function extractPage(html, relPath) {
   // double-counts its own answers in every density measure.
   $body.find('.faq-item, .faq-question, .faq-answer').remove();
 
-  const cta = textsFrom($, $body, '.cta-card, .related-page-card, .compare-card');
-  $body.find('.cta-card, .related-page-card, .compare-card').remove();
+  const cta = textsFrom($, $body, CARD_SELECTORS);
+  $body.find(CARD_SELECTORS).remove();
 
   const prose = textsFrom($, $body, 'p, li, blockquote, figcaption, summary, dd, .hero-tagline');
 
@@ -375,6 +458,7 @@ module.exports = {
   LOCALES,
   EDITORIAL_SLOTS,
   PROSE_SLOTS,
+  CARD_SELECTORS,
   classifyPath,
   extractPage,
   editorialText,

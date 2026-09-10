@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "roebelteken",
   "title": "Roebelteken: Kopieer en Plak ₽ — Het Valutateken dat Rusland via Publieke Stemming Koos",
   "meta_description": "Kopieer en plak het roebelteken (₽, U+20BD) — een van de nieuwste valutatekens, gekozen via een publieke stemming in 2013 onder 284.000+ Russen. Klik om het direct te kopiëren.",
@@ -44,11 +43,11 @@
         },
         {
           "char": "Р",
-          "label": "Cyrillische Hoofdletter Er (U+0420) — De Basis van het Teken"
+          "label": "Cyrillische Hoofdletter Er (U+0420): De Basis van het Teken"
         },
         {
           "char": "р",
-          "label": "Cyrillische Kleine Letter Er (U+0440) — Gebruikt in de Oude 'р.'-afkorting"
+          "label": "Cyrillische Kleine Letter Er (U+0440): Gebruikt in de Oude 'р.'-afkorting"
         }
       ]
     },
@@ -60,23 +59,23 @@
       "symbols": [
         {
           "char": "₹",
-          "label": "Indiase Roepieteken (U+20B9) — Gekozen via Publieke Wedstrijd in 2010"
+          "label": "Indiase Roepieteken (U+20B9): Gekozen via Publieke Wedstrijd in 2010"
         },
         {
           "char": "₺",
-          "label": "Turkse Lira-teken (U+20BA) — Aangenomen in 2012"
+          "label": "Turkse Lira-teken (U+20BA): Aangenomen in 2012"
         },
         {
           "char": "₸",
-          "label": "Tengeteken (U+20B8) — Kazachse Tenge"
+          "label": "Tengeteken (U+20B8): Kazachse Tenge"
         },
         {
           "char": "₼",
-          "label": "Manatteken (U+20BC) — Azerbeidzjaanse Manat"
+          "label": "Manatteken (U+20BC): Azerbeidzjaanse Manat"
         },
         {
           "char": "₾",
-          "label": "Lariteken (U+20BE) — Georgische Lari"
+          "label": "Lariteken (U+20BE): Georgische Lari"
         }
       ]
     },

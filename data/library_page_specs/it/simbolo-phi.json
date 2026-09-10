@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-phi/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-phi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,9 +37,18 @@
       "h2": "Il Simbolo Phi — φ, Φ e ϕ",
       "intro": "Le tre forme che si intendono con \"il simbolo phi\": la lettera minuscola di uso quotidiano, la maiuscola e la variante matematica dedicata. Copia quella che ti serve.",
       "symbols": [
-        { "char": "φ", "label": "Lettera Greca Minuscola Phi (U+03C6) — La Lettera della Sezione Aurea, Forma Aperta \"Loopy\"" },
-        { "char": "Φ", "label": "Lettera Greca Maiuscola Phi (U+03A6) — Flusso Magnetico in Fisica" },
-        { "char": "ϕ", "label": "Simbolo Greco Phi (U+03D5) — La Variante Matematica \"Chiusa\" e Barrata" }
+        {
+          "char": "φ",
+          "label": "Lettera Greca Minuscola Phi (U+03C6) — La Lettera della Sezione Aurea, Forma Aperta \"Loopy\""
+        },
+        {
+          "char": "Φ",
+          "label": "Lettera Greca Maiuscola Phi (U+03A6): Flusso Magnetico in Fisica"
+        },
+        {
+          "char": "ϕ",
+          "label": "Simbolo Greco Phi (U+03D5) — La Variante Matematica \"Chiusa\" e Barrata"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Phi: la Sezione Aurea e gli Usi Matematici",
       "intro": "Il compito più cercato di phi. La φ minuscola indica la sezione aurea ≈ 1,618, definita come (1 + √5) / 2; dalla versione 3.0 di Unicode, la ϕ chiusa (U+03D5) è il glifo raccomandato per quell'uso matematico, e la Φ maiuscola indica il flusso magnetico.",
       "symbols": [
-        { "char": "φ", "label": "Phi Minuscola (U+03C6) — Sezione Aurea ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Simbolo Greco Phi (U+03D5) — Il Glifo Chiuso Preferito in Matematica" },
-        { "char": "Φ", "label": "Phi Maiuscola (U+03A6) — Flusso Magnetico" },
-        { "char": "√", "label": "Radice Quadrata (U+221A) — Compare nella Formula di Phi (1 + √5) / 2" }
+        {
+          "char": "φ",
+          "label": "Phi Minuscola (U+03C6): Sezione Aurea ≈ 1,6180339887"
+        },
+        {
+          "char": "ϕ",
+          "label": "Simbolo Greco Phi (U+03D5): Il Glifo Chiuso Preferito in Matematica"
+        },
+        {
+          "char": "Φ",
+          "label": "Phi Maiuscola (U+03A6): Flusso Magnetico"
+        },
+        {
+          "char": "√",
+          "label": "Radice Quadrata (U+221A): Compare nella Formula di Phi (1 + √5) / 2"
+        }
       ]
     },
     {
@@ -52,10 +81,22 @@
       "h2": "Lettere Greche Correlate",
       "intro": "Phi è la 21ª lettera dell'alfabeto greco. Ecco le lettere vicine e le costanti più famose che le persone cercano più spesso insieme a lei.",
       "symbols": [
-        { "char": "π", "label": "Lettera Greca Minuscola Pi" },
-        { "char": "Σ", "label": "Lettera Greca Maiuscola Sigma" },
-        { "char": "Ω", "label": "Lettera Greca Maiuscola Omega" },
-        { "char": "θ", "label": "Lettera Greca Minuscola Theta" }
+        {
+          "char": "π",
+          "label": "Lettera Greca Minuscola Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Lettera Greca Maiuscola Sigma"
+        },
+        {
+          "char": "Ω",
+          "label": "Lettera Greca Maiuscola Omega"
+        },
+        {
+          "char": "θ",
+          "label": "Lettera Greca Minuscola Theta"
+        }
       ]
     }
   ],

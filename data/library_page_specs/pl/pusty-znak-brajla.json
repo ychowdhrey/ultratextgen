@@ -37,9 +37,9 @@
       "h2": "Inne „Niewidzialne” Znaki — i Dlaczego Wybór Ma Znaczenie",
       "intro": "Te znaki wyglądają równie pusto, ale technicznie są zupełnie inne — a to, który z nich wybierzesz, decyduje o tym, czy walidacja pola je zaakceptuje, czy odrzuci.",
       "symbols": [
-        { "char": "​", "label": "Spacja Zerowej Szerokości (U+200B) — prawdziwie zerowej szerokości; wiele walidatorów usuwa ją jak biały znak, więc często zawodzi tam, gdzie U+2800 się udaje" },
-        { "char": " ", "label": "Spacja Nierozdzielająca (U+00A0) — prawdziwy znak spacji; niemal zawsze przycinana lub odrzucana od razu" },
-        { "char": "ㅤ", "label": "Wypełniacz Hangul (U+3164) — kolejna popularna alternatywa dla pustej nazwy, działająca na niektórych platformach tam, gdzie U+2800 zawodzi, i odwrotnie" }
+        { "char": "​", "label": "Spacja Zerowej Szerokości (U+200B): prawdziwie zerowej szerokości; wiele walidatorów usuwa ją jak biały znak, więc często zawodzi tam, gdzie U+2800 się udaje" },
+        { "char": " ", "label": "Spacja Nierozdzielająca (U+00A0): prawdziwy znak spacji; niemal zawsze przycinana lub odrzucana od razu" },
+        { "char": "ㅤ", "label": "Wypełniacz Hangul (U+3164): kolejna popularna alternatywa dla pustej nazwy, działająca na niektórych platformach tam, gdzie U+2800 zawodzi, i odwrotnie" }
       ]
     },
     {
@@ -55,7 +55,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/pionowa-kreska/",

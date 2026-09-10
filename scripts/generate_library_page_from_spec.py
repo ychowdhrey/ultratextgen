@@ -44,6 +44,31 @@ REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
 SPECS_DIR = REPO / "data" / "library_page_specs"
 
+# The refuse-to-overwrite guard. This generator is a FULL regenerator: whatever
+# it does not emit is deleted from the page it rewrites. Measured 2026-08-26
+# across a 40-spec sample, 40 of 40 regressed — static footer on all 40,
+# hreflang alternates on 35, social image tags on 21. It had been read as
+# "probably fine" because it emits the Funding Choices tag and calls the mesh
+# sync; that hook only runs for `lang != "en"` and only AFTER the write, so an
+# English page loses its alternates outright. See scripts/lib/generator_parity.py.
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+from lib.generator_parity import assert_no_regression  # noqa: E402
+from lib.cta_routing import DESTINATIONS as CTA_DESTINATIONS, route as cta_route  # noqa: E402
+
+# The strings a spec is allowed to carry that are NOT a real override: they are
+# the shared default, copied in. `scripts/check-spec-sentence-reuse.py` measures
+# how far that spread — the `cta` line alone is byte-identical across 55 specs.
+SHARED_CTA_DEFAULTS = {
+    "cta": (
+        "Use UltraTextGen to convert plain text into bold, italic, cursive, "
+        "and 100+ other Unicode font styles. Free and instant."
+    ),
+    "cta_h3": "Transform text with Unicode fonts",
+    "cta_button_text": "Open UltraTextGen →",
+    "cta_button_href": None,
+}
+
 SITE = "https://ultratextgen.com"
 
 REQUIRED_TOP = [
@@ -111,6 +136,34 @@ def validate_spec(spec):
     if not isinstance(sections, list) or len(sections) < 1:
         raise SpecError("sections must be a non-empty list")
 
+    # "sources" is the Sources block's prose (docs/source-attribution.md).
+    # Optional — a page that originates every fact it states needs none.
+    src = spec.get("sources")
+    if src is not None:
+        if not isinstance(src, str) or not src.strip():
+            raise SpecError("sources must be a non-empty string when present")
+        if not _SOURCE_A_RE.search(src):
+            raise SpecError(
+                "sources must contain at least one <a href=\"https://…\">…</a> citation; "
+                "prose with no link is not a source"
+            )
+        # It is the one field that carries raw markup, so bound what that markup
+        # can be: anchors and nothing else. Without this the generator would
+        # emit whatever a spec put in, including a <script>.
+        stripped = _SOURCE_A_RE.sub("", src)
+        if "<" in stripped:
+            raise SpecError(
+                "sources may contain <a> citation links and no other markup; "
+                f"found stray '<' in: {stripped.strip()[:80]!r}"
+            )
+        lang_key = str(spec.get("lang", "en")).lower()
+        if lang_key not in source_labels():
+            raise SpecError(
+                f"no Sources label registered for locale {lang_key!r} in "
+                "data/source_block_labels.json — add one (a discussed decision, "
+                "in that locale's own word) before generating a page with sources"
+            )
+
     for i, sec in enumerate(sections):
         items_key = "art" if pattern == "art" else "symbols"
         for key in ("id", "h2", items_key):
@@ -170,33 +223,33 @@ def validate_spec(spec):
 # locale (not invented) wherever a generator-built precedent existed, and
 # a plain natural translation of the English default otherwise.
 LOCALE_UI_STRINGS = {
-    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
-    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
-    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
-    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
-    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
-    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
-    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_body": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode. Grátis e na hora.", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
+    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_body": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile. Kostenlos und sofort.", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
+    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_body": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode. Gratuit et instantané.", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
+    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_body": "UltraTextGen ile düz metni kalın, italik, el yazısı ve 100’den fazla Unicode yazı stiline anında ve ücretsiz çevir.", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
+    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_body": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode. Gratis e all'istante.", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
+    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_body": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode. Gratis y al instante.", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
+    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_body": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu.", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     # nl cta_btn is deliberately NOT "Open UltraTextGen →": that string is
     # byte-identical to the English default, so check-locale-translation.js
     # counts it as untranslated English surviving on a Dutch page. Use a real
     # Dutch label instead (matches the hand-written labels already on /nl/).
-    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
-    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
-    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
+    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_body": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes. Gratis en direct.", "cta_btn": "Open de tekstgenerator →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
+    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_body": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác. Miễn phí và tức thì.", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_body": "UltraTextGenillä muunnat tavallisen tekstin lihavoiduksi, kursivoiduksi, kaunokirjoitukseksi ja yli sadaksi muuksi Unicode-fonttityyliksi — ilmaiseksi ja heti.", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored
     # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
     # so generated and hand-authored pages read the same inside one locale.
-    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
-    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
-    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_body": "استخدم UltraTextGen لتحويل النص العادي إلى خط عريض ومائل وخط يد وأكثر من 100 نمط يونيكود آخر، مجاناً وفوراً.", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
+    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_body": "Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и 100+ других стилей Unicode. Бесплатно и мгновенно.", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
+    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_body": "UltraTextGen なら、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントスタイルに変換できます。無料ですぐに使えます。", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
     # zh-TW was missing entirely, so every Traditional-Chinese page fell back to
     # English chrome ("Copy", "Related Resources") while its 23 live siblings
     # carry proper Chinese. Caught 2026-08-10 on the iphone-emojis batch.
-    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
-    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
-    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
-    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
+    "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_body": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體，免費、即時。", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
+    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_body": "UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
+    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_body": "ใช้ UltraTextGen เปลี่ยนข้อความธรรมดาให้เป็นฟอนต์ Unicode ตัวหนา ตัวเอียง ลายมือ และอีกกว่า 100 แบบ ฟรีและทันที", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
+    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_body": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
 
 # Section label for the optional FAQ block, per locale. Falls back to English.
@@ -219,6 +272,137 @@ LOCALE_FAQ_LABEL = {
     "th": "คำถามที่พบบ่อย",
     "id": "Pertanyaan Umum",
 }
+
+# ---------------------------------------------------------------------------
+# Locale key normalisation.
+#
+# A spec's `lang` is a BCP-47 tag and BCP-47 is case-insensitive, so both
+# "zh-tw" and "zh-TW" are valid and BOTH occur in data/library_page_specs/
+# (33 specs lowercase, 13 with the conventional region casing). The chrome
+# tables above are keyed with the conventional casing only, so a plain
+# `.get(lang)` silently missed every lowercase spec and fell back to English
+# — verified 2026-08-31 by rendering data/library_page_specs/zh-tw/phi-symbol.json,
+# which produced aria-label="Copy 小寫 phi" and "Related Resources" while the
+# live page correctly carries 複製 / 相關頁面. Nothing failed; the page just
+# came out half-English, which is exactly the class of defect
+# check-locale-translation.js exists to catch.
+#
+# `chrome_key` resolves a tag to whatever key the tables actually use;
+# `url_segment` gives the directory name, which is always lowercase because
+# the site serves /zh-tw/ (see the URL_SEGMENT note further down).
+_CHROME_KEYS = {k.lower(): k for k in LOCALE_UI_STRINGS}
+_FAQ_KEYS = {k.lower(): k for k in LOCALE_FAQ_LABEL}
+
+
+def chrome_key(lang, table_keys):
+    """Canonical key for `lang` in a locale table, matched case-insensitively."""
+    return table_keys.get(str(lang).lower(), lang)
+
+
+def art_slug(lang, page_type, slug):
+    """The key scripts/generate-site-art.py uses for a page: its path with
+    "/" replaced by "-". symbol/phi-symbol -> "symbol-phi-symbol";
+    zh-tw/library/x -> "zh-tw-library-x". Derived here rather than passed in
+    so the meta tags and the art filename cannot disagree — they did before:
+    og:image was hardcoded to /logo.png, which check-new-page-image-assets.py
+    rejects by name, so every generated page failed that gate on arrival."""
+    base = "symbol" if page_type == "symbol" else "library"
+    parts = ([] if lang == "en" else [url_segment(lang)]) + [base, slug]
+    return "-".join(parts)
+
+
+def url_segment(lang):
+    """Directory segment for a locale. Always lowercase: the site serves /zh-tw/."""
+    return str(lang).lower()
+
+
+
+# ---------------------------------------------------------------------------
+# SOURCE ATTRIBUTION (docs/source-attribution.md)
+#
+# A generated page that states a fact it did not originate needs a Sources
+# block, or scripts/check-source-attribution.js fails the PR. Before this
+# existed the generator had no way to declare one, so the author had to
+# hand-add it after generation — the right failure with the wrong workflow,
+# against this repo's standing "generated, not audited" pattern.
+#
+# Both tables are read from data/ rather than restated here. The label table
+# is shared with the Node checker (scripts/lib/source-attribution.js reads the
+# same file); a second copy in this generator would drift from the checker,
+# which is the failure that standard exists to prevent.
+# ---------------------------------------------------------------------------
+
+_SOURCE_LABELS = None
+_SOURCE_AUTHORITY = None
+
+
+def source_labels():
+    global _SOURCE_LABELS
+    if _SOURCE_LABELS is None:
+        with open(REPO / "data" / "source_block_labels.json", encoding="utf-8") as fh:
+            _SOURCE_LABELS = json.load(fh)["labels"]
+    return _SOURCE_LABELS
+
+
+def source_authority():
+    global _SOURCE_AUTHORITY
+    if _SOURCE_AUTHORITY is None:
+        with open(REPO / "data" / "source_authority.json", encoding="utf-8") as fh:
+            _SOURCE_AUTHORITY = json.load(fh)["domains"]
+    return _SOURCE_AUTHORITY
+
+
+def source_rel(url):
+    """The rel a citation to `url` must carry, from the domain's tier.
+
+    An unlisted domain is secondary — fail safe, so a source nobody has
+    classified never silently earns a followed link.
+    """
+    m = re.match(r"^https?://([^/?#]+)", url, re.I)
+    host = m.group(1).lower().removeprefix("www.") if m else ""
+    entry = source_authority().get(host)
+    return "noopener" if entry and entry.get("tier") == "primary" else "nofollow noopener"
+
+
+_SOURCE_A_RE = re.compile(r"<a\s+[^>]*href=\"(https?://[^\"]+)\"[^>]*>(.*?)</a>", re.I | re.S)
+
+
+def source_citations(prose):
+    """[{@type, name, url}] for the JSON-LD, derived from the block's own
+    anchors so the two can never disagree. Deduplicated by URL, first
+    anchor wins."""
+    out, seen = [], set()
+    for url, anchor in _SOURCE_A_RE.findall(prose):
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append({"@type": "WebPage", "name": html.unescape(re.sub(r"<[^>]+>", "", anchor)).strip(), "url": url})
+    return out
+
+
+def render_sources(prose, label):
+    """The Sources block: one prose paragraph in a .source-note panel.
+
+    Prose, not a list, is deliberate and user-directed — a list says a source
+    exists, a sentence says which claim it backs. See docs/source-attribution.md §3.
+
+    Anchors are rewritten so rel/target come from the authority tier rather
+    than from whatever the spec author typed.
+    """
+    def _fix(m):
+        url, inner = m.group(1), m.group(2)
+        return f'<a href="{esc_attr(url)}" rel="{source_rel(url)}" target="_blank">{inner}</a>'
+
+    body = _SOURCE_A_RE.sub(_fix, prose)
+    return (
+        "<!-- SOURCES -->\n"
+        '<section class="editorial-section">\n'
+        f'  <span class="article-section-label">{esc(label)}</span>\n'
+        '  <div class="source-note">\n'
+        f"    <p>{body}</p>\n"
+        "  </div>\n"
+        "</section>"
+    )
 
 
 def render_faq(faq, label, heading=None):
@@ -453,13 +637,20 @@ def render_page(spec):
     # English specs render byte-identically).
     lang = spec.get("lang", "en")
     dir_attr = ' dir="rtl"' if lang in RTL_LANGS else ""
-    ui = LOCALE_UI_STRINGS.get(lang, {})
-    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{lang}/"
+    ui = LOCALE_UI_STRINGS.get(chrome_key(lang, _CHROME_KEYS), {})
+    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{url_segment(lang)}/"
     home_url = spec.get("home_url", default_home_url)
     crumb_home = spec.get("crumb_home", ui.get("home", "Home"))
     # page_type "symbol" pages sit under /symbol/ instead of /library/ and
     # carry a "Symbols" breadcrumb crumb by default.
     page_type = spec.get("page_type", "library")
+    # A page may deliberately share another page's art card — three locale
+    # pages do (zh-tw/symbol/invisible-character and two ms/ pages reuse the
+    # English cards, whose own art is language-neutral). Without this override
+    # regenerating them would repoint og:image at a PNG that does not exist,
+    # turning a working page into a broken reference. Explicit beats derived
+    # wherever the two disagree.
+    art_key = spec.get("art_slug") or art_slug(lang, page_type, slug)
     default_crumb_library = ui.get("symbols", "Symbols") if page_type == "symbol" else ui.get("library", "Library")
     default_library_url = (
         f"{default_home_url}symbol/" if page_type == "symbol" else f"{default_home_url}library/"
@@ -468,9 +659,36 @@ def render_page(spec):
     library_url = spec.get("library_url", default_library_url)
     copy_label = spec.get("copy_label", ui.get("copy", "Copy"))
     related_label = spec.get("related_label", ui.get("related", "Related Resources"))
-    cta_h3 = spec.get("cta_h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
-    cta_button_text = spec.get("cta_button_text", ui.get("cta_btn", "Open UltraTextGen →"))
-    cta_button_href = spec.get("cta_button_href", home_url)
+    # Where the reader's next job is one the generator cannot do, the card is
+    # routed to the tool that can. One owner for that decision and its copy:
+    # scripts/lib/cta_routing.py, which scripts/route-cta-cards.py also reads,
+    # so a regenerated page and a live page cannot disagree about this card.
+    # English only by construction (no locale build of any of these tools
+    # exists, and linking an English tool from a locale page is what CLAUDE.md's
+    # locale-native linking rule forbids) — cta_route() returns None for every
+    # <lang>/ path, so locale pages fall through to the ui defaults untouched.
+    _seg = "symbol" if page_type == "symbol" else "library"
+    _routed = CTA_DESTINATIONS.get(cta_route(f'{_seg}/{spec["slug"]}/index.html')) if lang == "en" else None
+
+    def _cta_field(key, routed_key, fallback):
+        """Spec override > routing default > locale/global default.
+
+        With one carve-out that matters: 55 specs "override" `cta` with the
+        SHARED DEFAULT SENTENCE, byte for byte. Treating that as a real override
+        leaves a routed card with a matched heading and button above a paragraph
+        about something else — verified on `cat-kaomoji`, which is exactly that
+        case. A copy of the default is not an override, so routing wins over it.
+        """
+        value = spec.get(key)
+        if isinstance(value, str) and value.strip() and value.strip() != SHARED_CTA_DEFAULTS.get(key):
+            return value
+        if _routed and _routed.get(routed_key):
+            return _routed[routed_key]
+        return value if isinstance(value, str) and value.strip() else fallback
+
+    cta_h3 = _cta_field("cta_h3", "h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
+    cta_button_text = _cta_field("cta_button_text", "button", ui.get("cta_btn", "Open UltraTextGen →"))
+    cta_button_href = _cta_field("cta_button_href", "href", home_url)
     hreflang_html = "".join(
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
@@ -487,17 +705,31 @@ def render_page(spec):
 
     date_pub = _iso_datetime(spec.get("date_published", "2026-01-01"))
     date_mod = _iso_datetime(spec.get("date_modified", spec.get("date_published", "2026-01-01")))
-    cta = spec.get(
-        "cta",
-        "Use UltraTextGen to convert plain text into bold, italic, cursive, "
-        "and 100+ other Unicode font styles — free and instant.",
-    )
+    cta = _cta_field("cta", "cta", SHARED_CTA_DEFAULTS["cta"])
 
     # JSON-LD must use real (entity-decoded) strings; json.dumps handles escaping.
+    sources_prose = spec.get("sources")
+    if sources_prose:
+        sources_html = (
+            "\n\n<div class=\"section-divider\"></div>\n\n"
+            + render_sources(sources_prose, source_labels()[str(lang).lower()][0])
+        )
+        source_ld = source_citations(sources_prose)
+    else:
+        sources_html = ""
+        source_ld = []
+
     ld_article = json.dumps(
         {
             "@context": "https://schema.org",
             "@type": "Article",
+            # Derived from the Sources block's own anchors, never authored
+            # separately — two hand-kept copies of one list drift, and the
+            # drifted one is the one nobody sees. Emitted immediately after
+            # "@type" because that is where fix-source-attribution.js inserts
+            # it; matching its position is what makes a fixer run over a
+            # generated page a genuine no-op rather than a reformat.
+            **({"citation": source_ld} if source_ld else {}),
             "headline": html.unescape(title),
             "description": html.unescape(meta),
             "author": {
@@ -557,7 +789,10 @@ def render_page(spec):
     # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
     # spec list, so a page can never ship schema for Q&A it doesn't render.
     faq = spec.get("faq") or []
-    faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
+    faq_label = spec.get(
+        "faq_label",
+        LOCALE_FAQ_LABEL.get(chrome_key(lang, _FAQ_KEYS), "Frequently Asked Questions"),
+    )
     faq_h2 = spec.get("faq_h2")
     faq_html = (
         f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label, faq_h2)}"
@@ -625,11 +860,11 @@ def render_page(spec):
 <meta name="description" content="{esc_attr(meta)}">
 
 <link rel="canonical" href="{esc_attr(canonical)}">{hreflang_html}
-<meta property="og:image" content="{SITE}/logo.png">
+<meta property="og:image" content="{SITE}/assets/og/{art_key}.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc_attr(title)}">
 <meta name="twitter:description" content="{esc_attr(meta)}">
-<meta name="twitter:image" content="{SITE}/logo.png">
+<meta name="twitter:image" content="{SITE}/assets/og/{art_key}.png">
 <meta property="og:title" content="{esc_attr(title)}">
 <meta property="og:description" content="{esc_attr(meta)}">
 <meta property="og:type" content="article">
@@ -673,7 +908,7 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}{editorial_html}{faq_html}
+{body_sections}{editorial_html}{sources_html}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
@@ -730,6 +965,9 @@ def main(argv=None):
                         help="validate and print target path without writing")
     parser.add_argument("--force", action="store_true",
                         help="overwrite an existing page")
+    parser.add_argument("--force-stale", action="store_true", dest="force_stale",
+                        help="write even if the live page carries content this "
+                             "generator would delete (prints what it overrides)")
     args = parser.parse_args(argv)
 
     try:
@@ -751,9 +989,11 @@ def main(argv=None):
     # The hreflang code is not always the directory name: zh-TW is the correct
     # hreflang code but every live Traditional-Chinese URL on this site is
     # /zh-tw/. Writing to REPO/zh-TW/ created a second, unlinked URL space —
-    # caught 2026-08-10 on the iphone-emojis batch. Map explicitly.
-    URL_SEGMENT = {"zh-TW": "zh-tw"}
-    seg = URL_SEGMENT.get(lang, lang)
+    # caught 2026-08-10 on the iphone-emojis batch. `url_segment` lowercases
+    # every tag, which covers zh-TW and any future region-subtagged locale;
+    # it is the same helper render_page() uses for the home-crumb URL, so the
+    # written path and the linked path cannot drift apart.
+    seg = url_segment(lang)
     out_dir = (REPO / seg / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
@@ -771,6 +1011,11 @@ def main(argv=None):
               f"({len(page)} bytes, pattern={spec['copy_pattern']})")
         return 0
 
+    # Refuse to overwrite a live page that carries something this run would
+    # delete. Runs after --dry-run returns, so a dry run stays read-only, and
+    # before mkdir so a refusal creates nothing.
+    assert_no_regression([(out_path, page)], force=args.force_stale)
+
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path.write_text(page, encoding="utf-8")
     print(f"Wrote {out_path.relative_to(REPO)} "
@@ -780,6 +1025,106 @@ def main(argv=None):
     if lang != "en" and not os.environ.get("SKIP_LOCALE_MESH_HOOK"):
         _sync_locale_mesh(out_path)
 
+    if not os.environ.get("SKIP_LAST_MILE_HOOK"):
+        return _last_mile(out_path, spec, art_key_for(spec))
+
+    return 0
+
+
+def art_key_for(spec):
+    """The art-registry key this spec's page will use."""
+    return spec.get("art_slug") or art_slug(
+        spec.get("lang", "en"), spec.get("page_type", "library"), spec["slug"])
+
+
+def _register_art(spec, key):
+    """Add this page to data/generated_page_art.json so generate-site-art.py
+    will draw it. Without this the art script refuses the slug outright
+    ("no registered page matches"), which is why every generated page used to
+    ship with an og:image nobody had rendered.
+
+    Never overwrites an existing entry — a page someone has art-directed by
+    hand keeps its own card.
+    """
+    path = REPO / "data" / "generated_page_art.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        data = {"entries": {}}
+    entries = data.setdefault("entries", {})
+    if key in entries or spec.get("art_slug"):
+        return False
+    tiles = [sym.get("char") for sec in spec.get("sections", [])
+             for sym in (sec.get("symbols") or []) if sym.get("char")]
+    entries[key] = {
+        "title": spec.get("hero_h1") or spec["slug"],
+        "sub": spec.get("hero_tagline", "")[:70],
+        "glyphs": tiles[:5],
+        "kicker": "SYM" if spec.get("page_type") == "symbol" else "LIB",
+        "added": spec.get("date_published", ""),
+    }
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return True
+
+
+def _run(cmd, label, timeout=300):
+    """Run one last-mile step. Returns True on success; never raises."""
+    try:
+        r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, timeout=timeout)
+        if r.returncode != 0:
+            sys.stderr.write(f"[last-mile] {label} FAILED (exit {r.returncode})\n")
+            if r.stderr.strip():
+                sys.stderr.write("    " + r.stderr.strip().splitlines()[-1] + "\n")
+            return False
+        return True
+    except FileNotFoundError:
+        sys.stderr.write(f"[last-mile] {label} SKIPPED — interpreter not on PATH\n")
+        return False
+    except subprocess.TimeoutExpired:
+        sys.stderr.write(f"[last-mile] {label} TIMED OUT\n")
+        return False
+
+
+def _last_mile(out_path, spec, key):
+    """Everything a generated page needs before it can pass CI.
+
+    A page used to be written and then declared done, while failing three
+    gating checks on arrival: og:image pointed at /logo.png (rejected by name),
+    the footer was an empty shell, and no hub listed the page. Each fix lived
+    in a separate script somebody had to remember, in order. The generator's
+    own success message was therefore indistinguishable from a finished job —
+    the same failure shape this repo has recorded three times in its CI.
+
+    So: run the steps here, and if any of them fails, say so and exit non-zero.
+    A half-generated page must never look like a successful one.
+    """
+    rel = out_path.relative_to(REPO).as_posix()
+    steps = []
+
+    steps.append(("art registry", _register_art(spec, key) or True))
+    steps.append(("art render", _run(
+        ["python3", "scripts/generate-site-art.py", "--only", key], f"art for {key}")))
+    steps.append(("static footer", _run(
+        ["node", "scripts/build-static-footer.js", "--write"], "static footer bake")))
+
+    failed = [name for name, ok in steps if not ok]
+    print(f"\nLast mile for {rel}:")
+    for name, ok in steps:
+        print(f"  {'ok  ' if ok else 'FAIL'} {name}")
+
+    # Hub registration is deliberately NOT automated: which hub a page belongs
+    # to, and where in it, is an editorial call the spec does not carry. It is
+    # named here so it cannot be forgotten silently.
+    print(f"  todo  hub registration — add {rel} to its locale's library/symbol hub,")
+    print("        then: npm run check:library-hub-coverage")
+
+    if failed:
+        sys.stderr.write(
+            f"\n[error] {len(failed)} last-mile step(s) failed: {', '.join(failed)}.\n"
+            "        The page is written but NOT shippable — it will fail CI.\n"
+            "        Fix the step above, or re-run with SKIP_LAST_MILE_HOOK=1 if\n"
+            "        you are deliberately deferring it.\n")
+        return 1
     return 0
 
 

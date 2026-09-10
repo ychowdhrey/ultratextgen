@@ -24,10 +24,10 @@
       "h2": "El Símbolo Theta — θ, Θ y ϑ",
       "intro": "Theta llega en tres glifos que la gente realmente pega: la θ minúscula cotidiana, la Θ mayúscula y la variante de bucle abierto ϑ reservada para matemáticas y física. Existe además una cuarta forma, mayúscula y barrada, puramente como símbolo matemático.",
       "symbols": [
-        { "char": "θ", "label": "Letra Griega Theta Minúscula (U+03B8) — el Símbolo del Ángulo" },
-        { "char": "Θ", "label": "Letra Griega Theta Mayúscula (U+0398) — Notación Theta Grande" },
-        { "char": "ϑ", "label": "Símbolo Griego Theta (U+03D1) — la Variante Matemática de Bucle Abierto" },
-        { "char": "ϴ", "label": "Símbolo Griego Theta Mayúscula Barrada (U+03F4) — la Variante Barrada" }
+        { "char": "θ", "label": "Letra Griega Theta Minúscula (U+03B8): el Símbolo del Ángulo" },
+        { "char": "Θ", "label": "Letra Griega Theta Mayúscula (U+0398): Notación Theta Grande" },
+        { "char": "ϑ", "label": "Símbolo Griego Theta (U+03D1): la Variante Matemática de Bucle Abierto" },
+        { "char": "ϴ", "label": "Símbolo Griego Theta Mayúscula Barrada (U+03F4): la Variante Barrada" }
       ]
     },
     {
@@ -36,10 +36,10 @@
       "h2": "Theta en Matemáticas e Informática",
       "intro": "Dos trabajos muy distintos comparten la letra. La θ minúscula es la opción habitual para nombrar un ángulo; la Θ mayúscula es la cota ajustada en el análisis de complejidad, situada entre la Big-O (cota superior) y la Big-Omega (cota inferior).",
       "symbols": [
-        { "char": "θ", "label": "Theta Minúscula (U+03B8) — Ángulo en Trigonometría y Geometría" },
-        { "char": "Θ", "label": "Theta Mayúscula (U+0398) — Theta Grande, la Cota Ajustada" },
-        { "char": "Ω", "label": "Omega Mayúscula (U+03A9) — Omega Grande, la Hermana de Cota Inferior" },
-        { "char": "ϑ", "label": "Símbolo Theta (U+03D1) — la Variante Tipográfica de Física" }
+        { "char": "θ", "label": "Theta Minúscula (U+03B8): Ángulo en Trigonometría y Geometría" },
+        { "char": "Θ", "label": "Theta Mayúscula (U+0398): Theta Grande, la Cota Ajustada" },
+        { "char": "Ω", "label": "Omega Mayúscula (U+03A9): Omega Grande, la Hermana de Cota Inferior" },
+        { "char": "ϑ", "label": "Símbolo Theta (U+03D1): la Variante Tipográfica de Física" }
       ]
     },
     {

@@ -55,12 +55,12 @@
         { "char": "⭐", "label": "Emoji Gwiazdy (U+2B50)" },
         { "char": "🌟", "label": "Świecąca Gwiazda" },
         { "char": "✨", "label": "Iskierki" },
-        { "char": "*", "label": "Gwiazdka Klawiaturowa (U+002A) — To Nie Gwiazda" },
+        { "char": "*", "label": "Gwiazdka Klawiaturowa (U+002A): To Nie Gwiazda" },
         { "char": "✱", "label": "Pogrubiona Gwiazdka (U+2731)" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/symbole-gwiazdek/",

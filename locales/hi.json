@@ -93,6 +93,22 @@
       "more": "और",
       "less": "कम"
     },
-    "demoText": "UltraTextGen में आपका स्वागत है।\nकुछ भी लिखें। उसे ख़ास बनाएं।"
+    "demoText": "UltraTextGen में आपका स्वागत है।\nकुछ भी लिखें। उसे ख़ास बनाएं।",
+    "formatControl": {
+      "label": "फ़ॉर्मेटिंग जोड़ें",
+      "groupAriaLabel": "हर स्टाइल पर अंडरलाइन या स्ट्राइकथ्रू लगाएं"
+    },
+    "platformChips": {
+      "all": "हर जगह काम करती है"
+    },
+    "categoryLoad": {
+      "failed": "श्रेणियाँ लोड नहीं हो सकीं। सभी फ़ॉन्ट दिखाए जा रहे हैं।"
+    },
+    "stylePreview": {
+      "title": "पूर्वावलोकन",
+      "titleFor": "{style} का पूर्वावलोकन",
+      "dialogAriaLabel": "प्लेटफ़ॉर्म पूर्वावलोकन",
+      "closeAriaLabel": "पूर्वावलोकन बंद करें"
+    }
   }
 }

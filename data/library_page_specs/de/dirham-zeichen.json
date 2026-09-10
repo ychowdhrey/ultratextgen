@@ -17,11 +17,19 @@
   "crumb_library": "Symbole",
   "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/dirham-zeichen/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/dirham-zeichen/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
   ],
-  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
   "sections": [
     {
       "id": "dirham-zeichen",
@@ -29,7 +37,10 @@
       "h2": "Dirham-Zeichen",
       "intro": "Das bestätigte Zeichen selbst — schon heute per Codepoint kopierbar, auch wenn noch keine Schriftart es nativ darstellt.",
       "symbols": [
-        { "char": "⃃", "label": "VAE-Dirham-Zeichen (U+20C3, eingefroren zur Veröffentlichung)" }
+        {
+          "char": "⃃",
+          "label": "VAE-Dirham-Zeichen (U+20C3, eingefroren zur Veröffentlichung)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Weitere neue Golf-Währungssymbole in dieser Ausgabe",
       "intro": "Der Dirham ist nicht das einzige neue Währungssymbol in Unicode 18.0 — zwei weitere Regionalwährungen erhielten in derselben Beta ihre eigenen Zeichen.",
       "symbols": [
-        { "char": "⃄", "label": "Omanisches Rial-Zeichen (U+20C4)" },
-        { "char": "⃂", "label": "Maledivisches Rufiyaa-Zeichen (U+20C2)" }
+        {
+          "char": "⃄",
+          "label": "Omanisches Rial-Zeichen (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Maledivisches Rufiyaa-Zeichen (U+20C2)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Bestehende Währungszeichen, die du schon tippen kannst",
       "intro": "Zum Vergleich — Währungszeichen, die diese Lücke zwischen Standard und Tastatur schon vor Jahren geschlossen haben und heute überall tippbar sind.",
       "symbols": [
-        { "char": "$", "label": "Dollarzeichen" },
-        { "char": "€", "label": "Eurozeichen" },
-        { "char": "£", "label": "Pfundzeichen" }
+        {
+          "char": "$",
+          "label": "Dollarzeichen"
+        },
+        {
+          "char": "€",
+          "label": "Eurozeichen"
+        },
+        {
+          "char": "£",
+          "label": "Pfundzeichen"
+        }
       ]
     },
     {
@@ -59,7 +85,10 @@
       "h2": "Das Golf-Währungssymbol, das eine Version früher erschien",
       "intro": "Saudi-Arabiens Rial-Zeichen legte denselben Weg eine volle Unicode-Version früher zurück — bereits final seit Unicode 17.0, nicht nur in der Beta.",
       "symbols": [
-        { "char": "⃁", "label": "Saudisches Rial-Zeichen (U+20C1, final seit Unicode 17.0)" }
+        {
+          "char": "⃁",
+          "label": "Saudisches Rial-Zeichen (U+20C1, final seit Unicode 17.0)"
+        }
       ]
     }
   ],

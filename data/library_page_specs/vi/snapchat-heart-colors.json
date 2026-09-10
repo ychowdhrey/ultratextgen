@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/snapchat-heart-colors/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/snapchat-heart-colors/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/"
+    }
   ],
   "sections": [
     {
@@ -28,9 +37,18 @@
       "h2": "Các Màu Trái Tim Snapchat Sử Dụng",
       "intro": "Ba màu trái tim xuất hiện trong chuỗi tiến triển bạn thân cổ điển của Snapchat.",
       "symbols": [
-        { "char": "💛", "label": "Trái Tim Vàng" },
-        { "char": "❤️", "label": "Trái Tim Đỏ" },
-        { "char": "💕", "label": "Hai Trái Tim (Hồng)" }
+        {
+          "char": "💛",
+          "label": "Trái Tim Vàng"
+        },
+        {
+          "char": "❤️",
+          "label": "Trái Tim Đỏ"
+        },
+        {
+          "char": "💕",
+          "label": "Hai Trái Tim (Hồng)"
+        }
       ]
     },
     {
@@ -39,10 +57,22 @@
       "h2": "Các Màu Emoji Trái Tim Khác (Ý Nghĩa Chung)",
       "intro": "Phần còn lại của bảng màu trái tim Unicode — xem trang tổng hợp emoji trái tim đầy đủ liên kết bên dưới để có danh sách và ý nghĩa trọn vẹn.",
       "symbols": [
-        { "char": "🧡", "label": "Trái Tim Cam" },
-        { "char": "💚", "label": "Trái Tim Xanh Lá" },
-        { "char": "💙", "label": "Trái Tim Xanh Dương" },
-        { "char": "💜", "label": "Trái Tim Tím" }
+        {
+          "char": "🧡",
+          "label": "Trái Tim Cam"
+        },
+        {
+          "char": "💚",
+          "label": "Trái Tim Xanh Lá"
+        },
+        {
+          "char": "💙",
+          "label": "Trái Tim Xanh Dương"
+        },
+        {
+          "char": "💜",
+          "label": "Trái Tim Tím"
+        }
       ]
     },
     {
@@ -51,16 +81,37 @@
       "h2": "Ký Hiệu Trái Tim & Dạng Chữ",
       "intro": "Các glyph trái tim không màu — trái tim chất bài Unicode và trái tim bằng chữ cổ điển.",
       "symbols": [
-        { "char": "♥", "label": "Trái Tim Chất Bài Đen (U+2665)" },
-        { "char": "<3", "label": "Trái Tim Bằng Chữ ASCII" }
+        {
+          "char": "♥",
+          "label": "Trái Tim Chất Bài Đen (U+2665)"
+        },
+        {
+          "char": "<3",
+          "label": "Trái Tim Bằng Chữ ASCII"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/snapchat-symbols/", "title": "Ký Hiệu & Emoji Snapchat", "desc": "Ký hiệu tiểu sử Snapchat để sao chép và dán, cùng lời giải thích đầy đủ về Friend Emoji." },
-    { "href": "/library/heart-emoji/", "title": "Emoji & Kaomoji Trái Tim", "desc": "Mọi màu, ý nghĩa và bộ tổ hợp trái tim trong một trang tổng hợp." },
-    { "href": "/vi/symbol/heart-symbol/", "title": "Ký Hiệu Trái Tim", "desc": "Nguồn gốc, mã điểm và cách gõ trái tim chất bài." },
-    { "href": "/vi/symbol/sunglasses-symbol/", "title": "Ký Hiệu Kính Râm", "desc": "Mã điểm của glyph 😎 và vai trò của nó trong Friend Emoji của Snapchat." }
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Ký Hiệu & Emoji Snapchat",
+      "desc": "Ký hiệu tiểu sử Snapchat để sao chép và dán, cùng lời giải thích đầy đủ về Friend Emoji."
+    },
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Emoji & Kaomoji Trái Tim",
+      "desc": "Mọi màu, ý nghĩa và bộ tổ hợp trái tim trong một trang tổng hợp."
+    },
+    {
+      "href": "/vi/symbol/heart-symbol/",
+      "title": "Ký Hiệu Trái Tim",
+      "desc": "Nguồn gốc, mã điểm và cách gõ trái tim chất bài."
+    },
+    {
+      "href": "/vi/symbol/sunglasses-symbol/",
+      "title": "Ký Hiệu Kính Râm",
+      "desc": "Mã điểm của glyph 😎 và vai trò của nó trong Friend Emoji của Snapchat."
+    }
   ]
 }

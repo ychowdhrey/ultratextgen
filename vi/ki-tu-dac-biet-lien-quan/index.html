@@ -176,6 +176,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Gõ tên Liên Quân của bạn..." maxlength="100"></textarea>
         <span class="char-count"><span id="charCount">0</span>/100</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Văn bản của bạn có dấu. Chữ đậm, chữ viết tay, gothic và hầu hết các kiểu khác giờ giữ nguyên <b>ế</b>, <b>ữ</b> và <b>ạ</b> cùng dấu — một vài kiểu (chữ ngược, và <b>đ</b> vốn không có dạng mang dấu) trở về chữ thường. <a href="/guide/fancy-fonts-and-accents/">Kiểu nào giữ được dấu →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Đóng">✕</button>
+      </div>
       <div class="decoration-section namecheck-inline">
         <div class="decoration-label">Kiểm tra tên LQ — trực tiếp khi bạn gõ</div>
         <div id="lqNameChecker"></div>
@@ -268,8 +275,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <h2>Kí tự khoảng trống LQ</h2>
     <p class="u-secondary-tight">Ô đổi tên Liên Quân thường từ chối dấu cách thường — thay bằng một trong các kí tự trống này. Ổn định nhất là Hangul Filler ㅤ (U+3164), hiển thị tốt trên cả Android và iOS.</p>
     <div class="flag-rows">
-      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Sao chép Hangul Filler U+3164">ㅤ</button><span class="flag-label">Hangul Filler — U+3164 (ổn định nhất)</span></div>
-      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="&#8203;" aria-label="Sao chép zero width space U+200B">&#8203;</button><span class="flag-label">Zero Width Space — U+200B (không chiếm chỗ)</span></div>
+      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Sao chép Hangul Filler U+3164">ㅤ</button><span class="flag-label">Hangul Filler: U+3164 (ổn định nhất)</span></div>
+      <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="&#8203;" aria-label="Sao chép zero width space U+200B">&#8203;</button><span class="flag-label">Zero Width Space: U+200B (không chiếm chỗ)</span></div>
       <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⠀" aria-label="Sao chép braille trống U+2800">⠀</button><span class="flag-label">Braille Trống — U+2800</span></div>
     </div>
     <p class="u-mt-15">Lưu ý: kí tự trống vẫn tính vào giới hạn 12 kí tự của Liên Quân. Muốn xem đủ các loại kí tự vô hình (kèm mẹo test từng máy), qua trang <a href="/vi/ky-tu-vo-hinh/">kí tự vô hình</a>.</p>
@@ -395,7 +402,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 </script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>

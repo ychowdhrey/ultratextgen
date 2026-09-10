@@ -302,6 +302,63 @@ behaviour. The first full run cleared a 2,537-link backlog across 1,009 pages
 in 19 languages. `check-new-symbol-peer-links.py` (the PR gate) is still
 EN-only and diff-scoped.
 
+**Only the PEER graph is mirrored, never hub→spoke — and nothing checks the
+difference (added 2026-09-01).** The paragraph above reads as if locale
+propagation is solved. It is solved for peer↔peer (`symbol/A` ↔ `symbol/B`).
+The hub→spoke pass in the same script still walks EN only, so
+`<lang>/library/<hub>` is **never required to link `<lang>/symbol/<spoke>`**,
+and `check-new-symbol-peer-links.py` cannot see it either — it is EN-only and
+checks *peers*, not hubs.
+
+The result is the failure mode this file names three times over: **a check that
+reports nothing is indistinguishable from a check that passes.** A whole-site
+`sync_symbol_spoke_links.py` run reports `0 error(s), 2 warning(s)` — neither in
+the currency lane — while `<lang>/library/currency-symbols` was missing **117
+links to its own locale's currency spokes** across 16 locales: `ar` linked 3 of
+13, `es` 3 of 14, `ko` 3 of 13, `nl` 3 of 13, against EN's 15 of 15. Verified as
+invisible rather than assumed: deleting one injected locale card and re-running
+leaves the site-wide check, the diff-scoped peer gate and
+`check-library-hub-coverage` all at exit 0.
+
+Fixed for the currency lane only (2026-09-01) by importing this script's own
+`load_locale_siblings()`, `page_title_and_desc()` and `inject_card()` rather
+than reimplementing them — a second copy of that logic would drift from the
+first, which is the failure the peer-mirroring paragraph above already
+documents.
+
+**Closed generally 2026-09-02 — the hub→spoke pass now mirrors like the peer
+pass.** The whole-site number was **1,032 missing links across 16 languages and
+250 hub pages**, 61% of the 1,686 relations where both ends actually exist, led
+by `math-symbols` (207), `zodiac-symbols` (130), `greek-letter-symbols` (124),
+`religious-symbols` (122) and `special-characters` (111). `load_locale_hubs()`
+plus a second loop inside the existing locale-propagation block closes it, under
+the same three rules the peer loop already follows: cluster membership from each
+page's own `hreflang="en"` and never a guessed slug; a spoke with no sibling in
+L skipped rather than linked in English; card copy read from the target locale
+page's own `<h1>` and hero tagline, so nothing is translated or invented. Behind
+`--reciprocal`, off under `--no-locales`. A full run now reports **0 errors, 0
+warnings**.
+
+**The gate gained the matching rule**, so it cannot silently regrow:
+`check-new-symbol-peer-links.py` now also requires every `<lang>/symbol/` page a
+branch **adds** to be linked from that locale's copy of each hub its EN parent
+claims. Scoped to added pages, not modified ones — that is the regression which
+produced the 1,032, and it keeps the gate off the pre-existing backlog rather
+than permanently red. It imports the generator's own loaders for the same
+no-second-copy reason as above.
+
+**Grid sizes stay in proportion**, which is the objection worth checking before
+a backfill of this size: median 6 cards per affected grid, worst 28 against EN's
+own 21 on the same hub, and 175 of the 250 pages needed 3 cards or fewer.
+
+Verified per this file's own rule against three differently-shaped probes: a new
+`de/symbol/` page no hub links **exits 1** naming the exact hub; the same page
+once linked **exits 0**; and a one-directional EN peer relation still **exits 1**,
+proving the original rule was not broken by the addition. That verification was
+not ceremonial — the first draft of this change defined the new function inside
+`main()`, so `main()` fell off the end and the whole gate **exited 0 in silence**.
+`ast.parse` was happy; the check was inert. Confirm structure, not syntax.
+
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
 translation of a `symbol/<slug>/` page ships to `<lang>/symbol/<slug>/`, even
@@ -379,6 +436,103 @@ result and for Discover/Top Stories eligibility, and a `NewsArticle` type does
 not enroll a site in Google News. Formal Google News Publisher Center
 submission remains explicitly out of scope, for the same domain-risk reasoning
 as the case study above — this refinement does not reopen that question.
+
+### One verification date per entry, in the pill (added 2026-09-02)
+
+The pillar's value is *"this number was true, and here is when we last
+confirmed it"* — so the verification date is its load-bearing claim. It was
+being made twice, in two slots, with two wordings.
+
+`Last checked <date>` sat in body prose on all 11 entries, from the
+tone-of-voice pass. A later change added a `Published <date> · Verified <date>`
+`guide-pill` to one of them. Nothing reconciled the two, and that entry shipped
+asserting **September 1 in its body and September 2 in its pill** — both
+sentences read fine, the markup was valid, and no check compared them.
+
+**The near-miss is the part worth carrying forward.** The first sweep for this
+grepped `Checked` **case-sensitively** and concluded "no other entry carries an
+inline stamp." Every one of the 11 does; they all say `Last checked`. A
+pattern-matched audit found the surface it was written for and missed the next
+one — the same failure "Structure is not language" documents above. Enumerate
+the class, do not sample a pattern you guessed.
+
+**The rule:** exactly one verification date per entry, as the last
+`guide-pill`, agreeing with the page's own `datePublished`. No verification
+stamp in body prose.
+
+**Three kinds of date live on these pages and only one is a stamp.** Conflating
+them would flag the 19 real event dates on `uae-dirham-symbol-unicode-18`:
+
+| kind | example | where it belongs |
+|---|---|---|
+| **stamp** | "Last checked September 1, 2026" | the pill, page-level |
+| **scoped** | "As of September 2, 2026 no date has been announced" | **stays inline** |
+| **factual** | "Unicode 18.0 publishes on September 16, 2026" | ordinary content |
+
+A scoped qualifier is not a stamp: *"no rollout date has been announced"* is
+only true at a point in time and must carry its own date wherever it sits,
+because a reader cannot infer it from a header pill.
+
+**`dateModified` is not a verification date and must not be used as one.** All
+11 entries carry `2026-09-01` from a single tone-of-voice rewrite — it means
+"when the prose was last edited", which is a different claim. The visible
+verified date is deliberately independent of it.
+
+A stamp in a `<meta name="description">` is allowed — snippet copy is its own
+slot and audience — but the gate **warns** if it disagrees with the pill.
+
+#### Tooling
+
+- **`npm run audit:updates-verification`** — whole-pillar dashboard, oldest
+  check first, i.e. the order a re-verification pass should work in.
+- **`npm run check:updates-verification`** — the enforcing half, wired into
+  `.github/workflows/validate.yml`. It **gates rather than informs** (same call
+  as `check:zalgo-decodes`): there is no backlog to be permanently red against.
+  It is **whole-pillar, not diff-scoped**, on purpose — the shape it catches is
+  an older page drifting out of agreement with a convention set later, which a
+  diff-scoped check cannot see.
+- Both share **`scripts/lib/updates-verification.js`**, so the audit and the
+  gate can never disagree about what a stamp is.
+
+Verified per this file's own rule before being trusted, against five
+differently-shaped broken inputs so the check could not be tuned to one: the
+real regression re-injected into body prose, a deleted pill, a pill contradicting
+`datePublished`, a `Verified` date predating `Published` — each exits 1 — and a
+meta description contradicting the pill, which warns and exits 0.
+
+#### Locale entries (added 2026-09-02)
+
+The 56 `<lang>/updates/` pages carry **one** localized verification pill and no
+`Published` half. The asymmetry is deliberate: for an English entry the
+publication date is a real claim — it is where the fact was first reported —
+while for a translation the only claim worth publishing is when the facts were
+last checked, and that check happens once, upstream, in English. A locale
+pill's date must therefore equal its EN parent's `Verified` date, resolved
+through the page's own `hreflang="en"`.
+
+**Wording is each locale's own, taken from the site rather than invented.**
+Eight locales already carried a stamp (`Zuletzt geprüft am`, `Son kontrol:`,
+`Última comprobación:`, `2026년 9월 1일 최종 확인`, …) so those keep their exact
+phrasing; the other nine were authored to match. Read the existing string
+before adding one — Swedish here is **`kontrollerat`** (neuter, agreeing with
+*innehållet*), and a first draft of the registry guessed `kontrollerad` and was
+wrong.
+
+**Labels are matched from a registry, never generated, and dates compare as
+integers** — the pill must contain the parent's year and day, plus its month
+wherever the locale writes months as digits (`ja ko vi zh-tw`). That keeps this
+check from becoming the authority on month names in seventeen languages, which
+is not a thing a CI script should own.
+
+**Stamps in body prose are removed here as in English**, but the removal must
+match a *dated* stamp and never the bare word: German `wurde geprüft und mit
+der Bitte`, Dutch `een gecontroleerd experiment`, Turkish `kontrollü bir
+deneye` and Thai `ตรวจสอบมากขึ้น` are ordinary prose that a word-level sweep
+would have deleted.
+
+Verified against three probes: bumping an EN `Verified` date fails all of that
+page's locale siblings by name, a deleted locale pill exits 1, and a localized
+stamp re-injected into body prose exits 1.
 
 ---
 
@@ -490,8 +644,16 @@ Scripts are loaded in a strict order in every HTML page:
 <script src="/header.js"></script>      <!-- 1. Inject shared nav -->
 <script src="/styles.js"></script>      <!-- 2. Register font styles -->
 <script src="/renderer.js"></script>    <!-- 3. Rendering engine -->
-<script src="/script.js" defer></script><!-- 4. UI logic -->
+<script src="/js/share/share-core.js" defer></script><!-- 4. Share core -->
+<script src="/js/saved/saved-items.js" defer></script><!-- 5. Saved store -->
+<script src="/script.js" defer></script><!-- 6. UI logic -->
 ```
+
+Order matters between 4/5 and 6: every one of these is `defer`, so they run in
+document order, and `script.js`'s init calls `UTG.sharedStyleId()`. Put the
+modules after it and the generator throws and renders zero cards.
+`npm run inject:share-save-tags` places them correctly;
+`npm run check:share-save-tags` gates that every copy-hosting page has them.
 
 ### Module Descriptions
 
@@ -568,6 +730,9 @@ Scripts are loaded in a strict order in every HTML page:
 - Real-time rendering as user types
 - Style filtering/search (client-side)
 - localStorage for recent selections and dark mode preference
+- **Does NOT own Share or the saved store any more** (2026-09-05). Both moved
+  to `js/share/share-core.js` and `js/saved/saved-items.js`; this file calls
+  into them and must load *after* both.
 - Query param `?q=text` for shareable URLs
 - **Owns the flair layer.** `applyDecoration(text)` applies the selected
   decoration: `mode: "wrap"` (default `prefix+text+suffix`), `"space"` (fill
@@ -577,6 +742,37 @@ Scripts are loaded in a strict order in every HTML page:
 - **Decoration tabs**: static `data-deco-tab` buttons read `decorations[key]`.
   `window.UTG_DECORATIONS` is **merged over** the defaults (`Object.assign`), so
   a page adds one tab without redeclaring the rest.
+- **Three surfaces in here are opt-in per page, and one has no entry point at
+  all (measured 2026-09-10).** `ensureFormatControl()` requires
+  `window.UTG_FORMAT_MARKS`, declared by exactly **one** page
+  (`category/bold-fonts/bold-italic`, English); `platformChipsHtml()` requires
+  `window.UTG_SHOW_PLATFORMS`, declared by **44** pages of which 42 are locale
+  pages; and the **platform-preview modal is unreachable** — `openPreview()`,
+  `buildMockup()`, `updatePreview()` and `.preview-btn`'s CSS all exist, and
+  nothing in the tree renders a `.preview-btn` to open it. Check the opt-in
+  before concluding a string in here is live on a page: the count is the number
+  of pages that declare the flag, not the number that load `script.js`. Whether
+  to wire the preview modal up is a product decision, recorded here rather than
+  taken.
+
+#### `js/share/share-core.js`
+- **The site's one Share / Share-as-image implementation**, lifted out of
+  `script.js` on 2026-09-05 so any surface offering Copy can offer Share
+  without loading the 120KB generator. Owns `buildShareUrl`,
+  `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button
+  factories, the `?style=` reader and both delegated click handlers, all on
+  the existing `window.UltraTextGen` namespace.
+- Dependency-free. A caller that owns its own translations passes `label`
+  and `imageTitle`; otherwise it reads `window.UTG_I18N`.
+- **Must load before `script.js`** — see "Copy, Save, Share, Share-image".
+
+#### `js/saved/saved-items.js`
+- The typed per-device saved store shared by every surface:
+  `{type, value, label, href, t}`, `type` in `style | symbol | collection`,
+  identity on `(type, value)`. Replaces `script.js`'s style-name-only array
+  and migrates it.
+- `UltraTextGen.saved.{all,has,count,toggle,clear}`, fires
+  `utg:savedchange`. Tested by `npm run test:saved-items`.
 
 #### `js/flair/flair-engine.js`
 - Shared, reusable decoration **data** (the transform lives in `script.js`).
@@ -957,27 +1153,42 @@ linguistic argument (specific regional game, no EN equivalent exists to
 translate) rather than confirmed search volume. Revisit with real numbers
 if either page's ranking ever becomes a live question.
 
-**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
-consolidation** case, the same shape as the `fr/calligraphie` trio and
-explicitly *not* a "no English speaker would search this" claim. The page
-targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
-obviously has English demand — but **the EN homepage already *is* that page**:
-its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
-no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
-spokes *about* fancy text, a different content type). Building an EN parent
-would cannibalise the site's own homepage.
+**~~Ratified exception, `tr/sekilli-yazi/` (2026-08-02)~~ — SUPERSEDED
+2026-09-03: the page was retired (301 to `/tr/`) and its ledger entry removed.**
+The reasoning is kept below because the *shape* of the argument still applies to
+the `fr/calligraphie` trio, and because the way it failed is the lesson.
 
-On the Turkish side the two do not compete, which is what makes the page worth
-keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **the
-overwhelming majority of its impressions on `süslü` queries**, at first-page
-positions, while sitting far down the SERP on the `şekilli yaz*` family that
-`/tr/` owns. The page was retargeted
-onto `süslü` on 2026-08-01 for exactly that reason.
+The original ratification: an **EN-SERP-consolidation** case, explicitly *not* a
+"no English speaker would search this" claim. The page targeted `süslü yazı` /
+`süslü harf`, which obviously has English demand — but the EN homepage already
+*is* that page (H1 "Fancy Text Generator", "fancy text" ×14, no standalone EN
+fancy-text page), so building an EN parent would have cannibalised the homepage.
+On the Turkish side the two were held not to compete: first-party GSC (27 days to
+2026-08-02) showed the page drawing the overwhelming majority of its impressions
+on `süslü` queries at first-page positions, while sitting far down the SERP on
+the `şekilli yaz*` family `/tr/` owns. It was retargeted onto `süslü` on
+2026-08-01 for exactly that reason.
 
-**What is not verified:** the cannibalisation premise rests on this repo's own
-structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
-since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
-`fr/calligraphie` entry carries.
+**Why it was retired.** A query×page pull (Türkiye, 2026-08-24 → 09-01) showed
+the page owning *neither* family: **one impression in nine days at position 49**,
+against ~53 expected from its own 3-month baseline of 539 Turkish impressions at
+position 10. In the same window `/tr/` held `süslü yazı kopyala yapıştır` at
+position 7 and the `şekilli yazı` writing queries at 1–5, and `/tr/sekilli-nick/`
+held the nick queries at 5–6. The retarget had moved the page onto a term the
+homepage then went on to win outright, leaving a spoke with no query to own —
+Hub-vs-Spoke Rule 3 in its sharpest form, where the hub wins the spoke's own
+target term.
+
+**Two things worth carrying forward.** First, a de-confliction retarget can
+fail by the hub simply *winning the new term too*; "the spoke owns term B today"
+is a fact with a shelf life, not a structural property. Second, the EN-side
+cannibalisation premise was **never verified** against an EN SERP or EN GSC pull
+— Semrush has been out of API units since 2026-07-30, through four checks — so
+this entry retired without that question ever being answered. The
+`fr/calligraphie` trio still carries the identical unverified premise. A
+standalone EN `/fancy-letters/` page has since shipped (2026-08-11), which
+changes the EN-side picture the original ratification described and is worth
+re-reading before the trio's premise is treated as settled.
 
 **Ratified exceptions are ledgered state, not just prose (2026-08-01):**
 every ratified local-only exception above is also recorded in
@@ -1225,6 +1436,30 @@ script is not the same as gating on it"): three defects were injected into a
 finished Japanese page — one per class above — and the gate exited 1 naming all
 three. Do not trust a future edit to it without repeating that.
 
+**Punctuation is not English (added 2026-09-02).** The delta rule compares string
+*sets*, so changing an existing untranslated string's punctuation makes the same
+debt, on the same page, in the same words, a string the base set does not
+contain — and the gate reads the edit as an introduction. This is the third
+instance of the inversion `check-locale-translation.js` already documents for
+reverts, and it is measured the same way: `wordKey()` compares the words when
+deciding whether a survivor is the *same* debt as one at the base, and never
+when deciding whether a string is English in the first place. Scoped per page,
+so a survivor on one page can never excuse a new string on another.
+
+Found by the em-dash pass below, which rewrote 2,915 tile labels and turned 9
+byte-identical pre-existing survivors into 9 reported introductions. Verified
+against three probes — a genuinely new English string on both sides of a pair
+(exit 1), an existing survivor with words added (exit 1), and one re-punctuated
+only (exit 0). The first attempt at the first probe was a **false green**: it
+injected a different string on each side, so there was nothing to survive. Build
+the probe as a real pair.
+
+**A ledger entry's text can go stale under it.** Nine
+`data/translation_identical_strings.json` entries stopped matching when the
+labels they name were re-punctuated. Re-pointing an existing entry at the same
+string is maintenance of a decision already taken; it is not the same act as
+adding one, and the standing bar still forbids the latter.
+
 ### EN is the source locale — two structural carve-outs (added 2026-08-02)
 
 The rule above was written as if EN and a locale page were peers that drift
@@ -1342,6 +1577,42 @@ legitimately counts as the sync, and all three came back exit 0. On clean pages:
 adding a `/library/currency-symbols/` link to `/discord/` flags 7; removing a peer
 card from `fr/symbol/symbole-euro` flags 1; adding an h2 section EN lacks flags 1;
 adding a **visible** FAQ item to `symbol/euro-sign` flags 16.
+
+### A table was invisible to every axis (added 2026-09-02)
+
+`<h2>` came closest to seeing a table and missed the case exactly: a table under
+a heading that stays can be deleted outright with links, h2, FAQ, tiles and
+combo-sets all reading zero. PR #836 removed a whole 7-row table from
+`updates/middle-east-currency-symbols-scorecard` and its eight siblings; had it
+touched EN alone, the gate would have reported nothing. Same shape as the
+`events` link-type gap and the runtime combo-set gap above, from a fourth cause.
+
+`tableCount` closes it. **The selector is `table`, not `.data-table`** — the
+house class covers 2,353 of the site's 2,470 tables, and `comparison-table`
+(114) plus `ig-matrix` (2, on `instagram/` and its live `sv` sibling) carry the
+rest. Enumerating classes would recreate `CONTENT_LINK_RE`'s `events` bug
+verbatim: a class added later becomes a table nothing covers, silently. The
+element cannot go stale.
+
+**Rows are reported, never scored.** They are content inside a section and
+differ legitimately by locale: `fr/symbol/symbole-paix` carries an extra
+platform row and an extra input-method row against `symbol/peace-sign`, and a
+longer alphabet always will. Of 3,693 EN/locale pairs, 64 match on table count
+and differ on rows — a set mixing genuine half-ported tables with differences no
+edit can converge. Scoring it would flag pairs with nothing to fix, which is the
+call `pairCollections()` already makes for a renamed container id.
+
+Blast radius measured before landing: 656 of 3,693 pairs (17.8%) already differ
+on table count. The gate is diff-scoped so that backlog cannot make it red, and
+a constant pre-existing offset cancels out of the convergence carve-out, which
+compares one pair against itself.
+
+Verified against four probes on pages **outside the branch's changed set**:
+deleting a 6-row table from `symbol/peace-sign` exits 1 **with every pre-existing
+axis reading 0**, which is the whole finding; a row added to an existing table
+exits 0; a meta-description tweak exits 0; adding a `comparison-table` to
+`de/symbol/friedenszeichen` exits 1, which is also what proves the selector
+choice — `.data-table` would have missed it.
 
 **This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
 exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
@@ -1613,6 +1884,39 @@ complete flowchart, and every script's flags/exit codes:
   backlog this script only surfaces — this class was driven to zero in the
   same change that added the check, so it **fails the build**; there is no
   legitimate case for two EN parents sharing a translation.
+
+  **A missing `x-default` was invisible to the direction pass (fixed
+  2026-08-30) — the same shape as both incidents above.** `audit-hreflang.js`
+  has always asserted that `x-default` points at the cluster's EN member, and
+  the first line of that pass is `const xd = …find(x-default); if (!xd)
+  continue;`. So a page that never declares the tag was skipped in silence,
+  and the audit printed **`x-default not pointing at EN: 0`** while 30 live
+  pages carried no `x-default` at all — 25 of them shipped two days earlier in
+  one Korean batch. *A check that reports nothing is indistinguishable from a
+  check that passes*, for the third recorded time.
+
+  **Absence and correctness are separate questions and each needs its own
+  pass**, so the audit now counts them separately (`x-default missing
+  entirely`) and `--fix` inserts the tag after the block's last alternate,
+  matching that line's indentation and pointing at the EN member the page
+  itself declares. The insertion is additive — it never edits or moves an
+  existing tag — so it cannot disturb a cluster it did not repair, and a page
+  with no `en` alternate is left alone (nothing to point at; `Headless
+  targets` already owns that class).
+
+  **The upstream cause was a spec, not the page.**
+  `generate_library_page_from_spec.py` writes a spec's `hreflang` array
+  verbatim, so 20 `data/library_page_specs/ko-*.json` files with no
+  `x-default` entry produced 20 pages with no `x-default` tag. Fix the spec as
+  well as the page, or the next generator run puts it back — and note that
+  `check_locale_spec.py` **did** error on all 20 and the batch merged anyway,
+  which is a branch-protection question, not a tooling one.
+
+  Verified per this file's own rule against three differently-shaped probes:
+  deleting an `x-default` exits 1 naming the page and `--fix` restores the
+  file byte-identically; removing a block's `en` entry is **not** flagged (no
+  false positive); and repointing an `x-default` at a Spanish URL still fires
+  the original direction class, not the new one.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
@@ -1746,6 +2050,38 @@ already existed as an undocumented positional argument; nobody used it because
 nothing said it was there and the dangerous path was the default one. The
 positional still works, hidden, for backwards compatibility.
 
+**A card title longer than the layout was silently truncated (fixed 2026-09-01).**
+`og_png_svg` wrapped the title and kept `[:3]`, discarding the rest with nothing in
+the output to say so. The tone-of-voice standard makes titles *longer* — they now
+carry the answer, not the filing system — and the first pass that applied it to nine
+pages truncated **seven** of them mid-phrase: `Middle East Currency Symbols: 5 Have
+Their Own,` with the answer cut off. It was caught by reading a rendered PNG, which
+is the only place it was visible.
+
+Two things changed, and the split matters:
+
+* **The cap was one line too tight.** Four lines fit and five do not, and that is
+  geometry rather than taste: the block is centred on y=250 and grows upward by 33
+  per line, so at four the first line's ascender sits at y=106 and clears the kicker
+  baseline at y=96, and at five it sits at y=73 and collides. `OG_TITLE_MAX_LINES`
+  is 4. That alone repaired **17 of the 24** titles already overflowing.
+* **What still cannot fit is reported, never dropped.** `_fit_title` collects every
+  overflow with the words it lost, and the run prints them at the end.
+  `--strict-titles` makes it exit 1. Reported by default because 24 titles were
+  already in that state — the same call as `check-image-assets.py` informing while
+  `check-new-page-image-assets.py` gates, and for the same reason.
+
+`--dry-run` measures titles without rasterising anything (over the pages already
+holding art too, not just the ones missing it — whether a title fits is a property
+of the registry, not of what is on disk), so **`--dry-run --all --strict-titles` is
+a cheap whole-site title check**.
+
+**The fix for an overflow is never to shorten the answer away.** Put the head term
+in the card title and the answer in the **sub** line, which does not wrap. Seven
+titles remain over the cap, all `unicode-18` emoji-vote and beta-review pages in
+`ar`, `de`, `ko`, `pl`, `ru`, `th`; shortening those is a content decision per page,
+not a mechanical one.
+
 **Page-derived motifs (added 2026-08-11).** The registry in `PAGES` pairs each
 page with a motif function. 718 of 1,209 pages were registered against a motif
 that takes **no per-page argument**, so every page sharing it got a
@@ -1856,6 +2192,21 @@ Two consequences worth carrying forward:
   trusting a new check, confirm it actually fails a PR — run it against a
   deliberately broken input and watch the job go red. Every gate in this file
   had been reasoned about, documented, and wired, and none of them worked.
+- **Never assemble the gate list by hand — run
+  `npm run check:ci-gates`** (`scripts/run-ci-gates.py`). It parses
+  `validate.yml`, reads the step ids named in the final "Fail the job if any
+  gating validator reported problems" `if:` expression, and runs exactly those,
+  substituting CI's own `--base origin/<base ref>` so the diff-scoped checks
+  resolve the merge base CI resolves. Add a gate to the workflow and it appears
+  here for free; make one informational and it disappears. **A list written out
+  in this file is not a substitute and will drift** — it drifted, twice:
+  `check:locale-spec` was missing from the local list on 2026-08-13, and on
+  2026-08-31 a session ran a 26-check sweep straight from this document, got a
+  clean pass, and was still red in CI on **`check:static-footer`** — a gate this
+  file has never named. Two new pages had shipped with an empty
+  `<div class="footer-inner">`, i.e. no crawlable footer link block at all. The
+  sweep was thorough and it was reconstructed from prose, which is the whole
+  failure. This bullet deliberately does not enumerate the gates.
 
 Also wired the same day: `npm run check:funding-choices`, which existed but
 was never added to the workflow — which is how 37 pages shipped without the
@@ -1936,6 +2287,205 @@ the exact line that shipped: exit 1, naming the file, job, step and line.
 
 ---
 
+## Numeric Parity — the axis every other gate is blind to (added 2026-09-02)
+
+Every gate above measures **structure** (parity), **language** (locale
+translation), **schema** (FAQ), or **assets** (images). None of them measures
+**values**. A number is the one thing that can be well-structured, correctly
+translated, internally consistent — and false.
+
+**The case.** On 2026-09-01, `63d04e71b` ("rewrite **every English**
+`/updates/` entry to the Tone of Voice standard") corrected Unicode 18.0 from
+13,047 characters to 13,007, and four scripts to three. It touched 11 English
+files and zero locale files. Seven translations (`ar de es it ko nl tr`) went
+on asserting 13,047 in their `<title>`, meta description, OG/Twitter cards,
+JSON-LD, hero, pill, `<h2>` and FAQ — as current fact, for a month — while
+every PR in that window passed the full suite.
+
+Each existing gate was **right** to pass it:
+
+| gate | measures | why it was blind |
+|---|---|---|
+| `check-translation-parity` | links, `<h2>`/FAQ/tile counts | 13,047 → 13,007 moves no structural element |
+| `check-locale-translation` | English strings surviving on a locale page | `13.047 neue Zeichen` is perfectly German |
+| `check-faq-schema` | a page against itself | both halves said 13,047, in agreement |
+
+**What the check measures.** Not "do EN and its translations carry the same
+numbers" — they legitimately do not. `npm run audit:numeric-parity` reports
+**671 pages across 24 locales** diverging today, which is why a state check
+here would be permanently red and therefore ignored. It measures a delta with
+a specific shape: a page **replaced** a number — dropped one and added another
+**in the same slot** — while a sibling in its hreflang cluster still carries
+the dropped one.
+
+Four design choices, each measured rather than guessed:
+
+* **A substitution, never a bare deletion.** Prose gets reworded and numbers
+  dropped for innocent reasons constantly; a number replaced *by another
+  number in the same slot* is a fact changing.
+* **Scoped by slot type**, so EN's `<h2>` losing 13047 is checked against the
+  sibling's `<h2>`, never a stray match elsewhere. Page-wide matching drowns
+  in date and count noise.
+* **Separators normalised.** German writes 13.047 where English writes 13,047,
+  and Arabic-Indic digits map to ASCII. Without this the check would report
+  every European locale as divergent and nothing else.
+* **Three-digit floor, plus the `data/parity_catalogue_pages.json` exclusion.**
+  Replayed over the last 52 commits that touched HTML, a two-digit floor fired
+  four times: twice on `library/index.html` (catalogue pages, whose per-locale
+  item counts differ **by design**) and twice on bare date/version fragments.
+  With both, the replay fires **exactly once — on `63d04e71b` itself.** Zero
+  false positives. The cost is stated rather than hidden: a one- or two-digit
+  fact that changes ("12 to 15 characters") does not trip this. Every value
+  that has mattered here is larger.
+
+**Years are excluded.** `2026` is a date component, not a measured fact, and
+every locale formats dates its own way — a reordered date must never read as a
+changed value.
+
+#### Tooling
+
+- **`npm run audit:numeric-parity`** — whole-site triage, `--full` for detail,
+  `--locale <code>` to scope. **Informational, never gating** (671-page
+  standing backlog, most of it legitimate).
+- **`npm run check:numeric-parity`** — the diff-scoped gate, wired into
+  `.github/workflows/validate.yml`.
+- **`data/numeric_parity_exceptions.json`** — one discussed divergence per
+  `(page, slot, value)`. Same bar as every other ledger here: never added
+  unilaterally to make a PR pass. Ships empty.
+- Both scripts share **`scripts/lib/numeric-parity.js`**, so the audit and the
+  gate can never disagree about what a value is.
+
+**Verified by replaying the real incident**, not a synthetic probe: run against
+`63d04e71b` it names all **7 of 7** siblings and the values `13047` and
+`172848`. End-to-end on a branch, changing `13,007` → `13,999` on the EN page
+fails **64** sibling pages and exits 1. A first draft of the tokeniser read
+"May 26, 2026" as the single number `262026`; that bug was found by reading the
+replay output and is fixed — anchoring each group to exactly three digits.
+
+## Source Attribution — how a page shows its evidence (added 2026-09-03)
+
+Every gate above measures structure, language, schema, values or assets. None
+of them asked whether a page that states a fact it did not originate *shows
+where the fact came from*, or how.
+
+**There was no standard.** Sources had no CSS class, no markup convention, no
+tone-of-voice rule and no check — only a habit, which held on one pillar and
+nowhere else. 67 of 68 `/updates/` entries presented citations identically
+(one prose paragraph, immediately before the FAQ, all 207 links inside it,
+100% consistent), and **33 other pages cited external sources with no
+attribution surface at all** — including `guide/unicode-symbol-approval-process`,
+an article about the Unicode process citing `unicode.org` twice with nothing
+saying so. An undocumented convention has no failure mode, only a drift.
+
+**The distinction the standard turns on: a citation is evidence, a resource
+link is a destination.** They are identical in HTML and are not the same
+thing. "commissioned from **Grilli Type**" backs a claim and belongs in the
+Sources block; "**Install Poppins** for free" sends the reader somewhere and
+belongs inline in the sentence that sends them. Getting this wrong is not
+academic — the first pass counted every external link as a citation and
+reported 33 offenders when 6 of them were not citing at all. The same domain
+is a citation on one page and a destination on another (`xbox.com` is a
+sign-in link on `answers/how-to-change-minecraft-username`), which is why
+`data/source_resource_links.json` is keyed by **route and domain**, never by
+domain alone.
+
+**The rules:** a page asserting a sourced fact carries one `.source-note`
+Sources block, labelled in that locale's own word, immediately before the FAQ,
+holding every citation on the page; it is **prose, not a bibliography**,
+because a list says a source exists while a sentence says which claim it backs;
+each citation's `rel` comes from the cited domain's tier in
+`data/source_authority.json`; and the block's citations are projected into the
+page's JSON-LD as schema.org `citation`, generated from the block so the two
+cannot drift.
+
+**Primary sources are followed, and that is deliberate.** All 207 citations
+were `rel="nofollow"`, which told search engines the Unicode Consortium's own
+pipeline page was as trustworthy as a forum post. Google reserves `nofollow`
+for paid and untrusted links. A `primary` source — the standards body, the
+central bank that designed the symbol, the platform's own changelog, the issue
+tracker the request lives in — is `rel="noopener"`; press, third-party
+reference works and user-generated threads stay `nofollow`. `devforum.roblox.com`
+is Roblox-operated and still secondary: forum posts are user-generated
+whatever the domain. **An unlisted domain is treated as secondary and
+reported**, so an unclassified source fails safe.
+
+Three defects the missing standard had already produced, all now closed:
+`vi/updates/lien-quan-khoa-doi-ten` carried no Sources block while its EN
+parent cited Garena's patch notes — the omission landing on the one locale
+whose readers play the game; `ja` labelled the section 情報源 on one entry and
+出典 on another, `th` split แหล่งข้อมูล / แหล่งอ้างอิง (two words for one
+section, with nothing comparing them — the Swedish `kontrollerat` near-miss
+again); and nothing anywhere carried schema.org `citation`, so a page's
+evidence was legible to a human and invisible to the answer engines the
+tone-of-voice standard ranks as reader #2.
+
+### Tooling
+
+- **`npm run audit:source-attribution`** — whole-site dashboard.
+  **Informational, never gating**, same call as `check:images`.
+- **`npm run check:source-attribution`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. It gates rather than informs because for
+  the pages a PR touches there is nothing to be permanently red against.
+- **`npm run fix:source-attribution`** (`-- --write`) — the repair pass:
+  panel class, `rel`/`target`, legacy label, JSON-LD projection. Idempotent.
+- All three share **`scripts/lib/source-attribution.js`**, so they can never
+  disagree about what a Sources block is.
+
+**The fixer will not create a block on a page that lacks one**, and that
+refusal is the point: the block's content is a sentence about what each source
+establishes, in the page's own language. Generating `Sources: <list of links>`
+would satisfy the gate and defeat the standard.
+
+**The JSON is patched as text, never re-serialised.** 161 of the 281 `ld+json`
+blocks on the affected pages do not survive a `JSON.parse` →
+`JSON.stringify(null, 2)` round trip byte for byte, so a re-serialising fixer
+would rewrite formatting across the site and bury the real change in noise.
+
+**The EFR gate had to be taught about this, and the fix is not the obvious
+one.** Adding a Sources block to a short page is a blocking EFR regression:
+the block `vi/updates/lien-quan-khoa-doi-ten` was missing moved that entry
+10.8 -> 12.1 on `specificityDeficit`, for the act of citing Garena's own patch
+notes, and cutting it to the bare citation still landed on +0.5, the material
+threshold exactly. A Sources block is apparatus, deliberately formulaic across
+pages, and its "facts" are publisher names and URLs rather than codepoints or
+limits — so `scripts/lib/editorial-corpus.js` now drops Sources sections
+before scoring, the same call as `[data-static-directory]`. **It matches the
+section by its LABEL, via the one registry in `source-attribution.js`, never
+by `.source-note`:** keying on the class drops the block on one side of a diff
+and not the other for any branch that introduces the class, which turned one
+blocked page into 37 regressions on the first attempt. What a section *is*
+does not change when its markup does.
+`data/editorial_footprint_baseline.json` was regenerated in the same change
+per the re-baseline rule (336 entries moved; 49 carry a Sources block, 287
+were pre-existing drift).
+
+**Link rot is a separate instrument, and it never gates (added 2026-09-06).**
+`npm run audit:link-rot` asks whether a cited URL still *loads*; the
+`updates/` verification pill asks whether the *fact* is still true. The rule
+worth carrying: **a failed fetch is not a dead link.** `cbo.gov.om` — the
+Central Bank of Oman's own page for a currency sign this site has an entry
+about — answers 503 to an unauthenticated bot, and through curl reports the
+same `http_code: 000` as a host that does not exist. So results classify by
+cause (`ok` / `redirect` / `blocked` / `gone` / `unreachable` / `server`),
+`blocked` never counts, and a URL is reported as rotted only after **3
+consecutive failing runs** in `data/source_link_health.json`. That threshold
+earned itself on the first run: a Roblox help article returned 404 once and
+403 three times, so at a threshold of one the tooling would have called a
+working citation dead. **There is deliberately no `check-link-rot.js`** — it
+depends on the public internet and on hosts that rate-limit, so a gate would
+be red for reasons no PR author can fix, the same call as `check:images`.
+`.github/workflows/link-rot.yml` is `workflow_dispatch` only; a monthly cron
+is a one-line change and a decision, since it would be the repo's second
+scheduled auto-committing workflow. Full design and the measurements:
+`docs/source-attribution.md` §10.
+
+Verified per this file's own rule against five differently-shaped broken
+inputs plus a negative control — see `docs/source-attribution.md` §7 for the
+probes and the full standard, including the CSS design and its RTL and print
+behaviour.
+
+---
+
 ## Library Hub Coverage — a page is not shipped until its hub knows about it
 
 Every gate above checks a page against a *standard*: its schema, its art, its
@@ -1960,11 +2510,23 @@ not of the locale:
 
 | Mechanism | Markup | Visible without JS | Used by |
 |---|---|---|---|
-| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | EN + es, fr, id, it, ko, pt, tr |
-| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | the same eight (generated) |
-| `azIndex` | `<ul class="lib-index-list">` | yes | the same eight |
-| `compareCard` | `<a class="compare-card">` | yes | ar, de, ja, nl, pl, ru, th, vi, zh-tw + every `symbol` hub |
+| `libraryArray` | `var/const LIBRARY = [{ slug, … }]` | **no** | **EN only** |
+| `libEntry` | `<article class="lib-entry">` in `#libDirectory` | yes | EN + all 19 locale hubs (generated) |
+| `azIndex` | `<ul class="lib-index-list">` | yes | the hubs that render an A–Z index |
+| `compareCard` | `<a class="compare-card">` | yes | ar, da, de, ja, nl, no, pl, ru, sv, th, vi, zh-tw + every `symbol` hub |
 | `tipCard` | `<a class="tip-card">` inside `.tips-grid` | yes | da, no, sv |
+
+**Corrected 2026-09-01.** The "Used by" column above previously read
+`EN + es, fr, id, it, ko, pt, tr` for `libraryArray` and "the same eight" twice.
+That is no longer true and had not been for some time: **all 19 locale hubs have
+migrated to `window.UTG_LIBRARY_HUB`**, driven by `build-library-hub.js`, and
+**EN is now the only page in the repo carrying a `LIBRARY` array** (measured, not
+recalled: `grep -c 'UTG_LIBRARY_HUB'` is 1 on every `<lang>/library/index.html`
+and 0 on `library/index.html`; the `LIBRARY =` count is the exact inverse). The
+mechanism *set* is unchanged and still must not be narrowed — that part of this
+section holds, and `da`/`no`/`sv` are still the reason. Only the ownership map
+had drifted. A session acting on the old table in 2026-08-31 hand-edited an
+`items` array that nothing reads, and had to revert it.
 
 So `registered` means "listed in any of the five" and `crawlable` means "listed
 in one of the four that survive without JavaScript". They are reported separately
@@ -2020,20 +2582,43 @@ register it. The list ships empty on purpose.
 
 ### Two builders pre-render the directory hubs, split by lane
 
-`build-library-directory.js` owns `library/index.html` and runs that page's own
-marker-delimited `directoryHtml()`. `build-locale-library-directory.js` owns the
-seven locale directory hubs and lifts each page's own `LIBRARY` array, `escHtml`
-and group-by-alpha block dynamically — resolving whatever outer constant that
-block reaches for (`ALPHABET` on `tr`/`fr`, `INITIAL_ID` on `ko`) by running it
-and lifting the named declaration on a `ReferenceError`. Neither re-implements
-the markup, so static and runtime output cannot drift.
+**There are three now, and the middle one is dormant (corrected 2026-09-01).**
 
-**Why two and not one:** the English hub carries extraction markers and the
-locale hubs deliberately do not — the locale builder was written so they never
-need them. The cost of that split is that **a locale hub's static block goes
-stale silently if its `LIBRARY` array changes and nobody re-runs the locale
-builder.** `npm run check:locale-library-directory` is what closes it; run both
-builders after touching any hub array.
+`build-library-directory.js` owns `library/index.html` and runs that page's own
+marker-delimited `directoryHtml()`. **`build-library-hub.js` owns all 19 locale
+hubs** and derives each entry from the *page's own markup* rather than from a
+hand-maintained array — which is why a locale hub needs no hand-help when a page
+is added, and why hand-editing one is the wrong move.
+`build-locale-library-directory.js` is the **superseded** builder that lifted a
+page's `LIBRARY` array, `escHtml` and group-by-alpha block dynamically; it now
+reports `0 file(s) updated, 19 skipped — no LIBRARY array / render block to
+drive` on every locale hub, because none of them has one any more. Keep running
+it (`check:locale-library-directory` still gates on it) and leave it in place,
+but do not reach for it to fix a locale hub.
+
+**So "run both builders after touching any hub array" is now: run
+`build-library-hub.js` for the locale hubs and `build-library-directory.js` for
+EN.** None of them re-implements the markup, so static and runtime output still
+cannot drift.
+
+**Two live defects this correction surfaced, neither gated and neither fixed
+here.** `build-library-hub.js` exits non-zero on two hubs —
+`ERROR de/library/index.html — no de label for: useCase:Profile, useCase:Care
+Labels` and the same for `nl` on `Care Labels` — so those two cannot be
+regenerated until the labels exist. And a plain run rewrites `es` and `ko`,
+meaning their committed static blocks are stale against their own data. CI is
+green on all three (`check:locale-library-directory`, `check:library-hub-parity`
+and `check:library-hub-coverage` all pass), so nothing is blocking; that is
+precisely why it needs writing down rather than leaving for the next person to
+rediscover.
+
+*Resolved 2026-09-01, same day:* both defects were fixed — the missing de/nl
+facet labels added and the three stale hubs regenerated (`6b6578afb`), with
+the German label corrected to the singular `Profil` matching every sibling
+locale (`dc8b02456`). Verified after: `npm run check:library-hub` reports all
+19 locale hubs current, de and nl included. The note above stays as the record
+of the find; a `build-library-hub.js` label error or a plain run rewriting a
+hub is once again a real regression, not known debt.
 
 **Pre-rendering a hub promotes its stale entries from invisible to crawlable.**
 The four leftover `<lang>/library/<slug>` entries from the library→symbol lane
@@ -2066,6 +2651,428 @@ it"), five probes, each a different shape so the gate could not be tuned to one:
 5. the same unregistered page with a ledger entry → **1 → 0**, exclusion honoured.
 
 Do not trust a future edit to any of this without repeating them.
+
+---
+
+## Copy, Save, Share, Share-image — one action set, every copy surface (added 2026-09-05)
+
+**Copy was a site-wide capability and the three actions that follow it were a
+single-page feature.** 37 JS modules in this repo write to the clipboard.
+Exactly one — `script.js` — offered Save, Share or Share-as-image, and it loads
+on 540 of 4,639 pages. The 3,605 `library/` and `symbol/` pages, which carry
+**34% of every copy on the site** and convert *better* per pageview than the
+generator (0.34 copies/pageview against `usecase/`'s 0.30, GA4 2026-08-08 →
+09-04), had none of the three.
+
+**It was a data model, not an oversight, and that distinction is the useful
+part.** `SAVED_KEY` held a flat array of style *names* and `toggleSaved()`
+bailed on `!stylesRegistry[name]`, so a symbol, a kaomoji or a collection could
+not be represented at all. Meanwhile the share layer had been written to be
+shared — its own comment promised *"Exposed on the shared UltraTextGen namespace
+so specialized generators can reuse the same mechanism later without rebuilding
+it"* — and had **zero callers outside `script.js`** for months, because the only
+way to take it up was to load the whole 120KB file headless, which is what
+`usecase/zalgo-text` and the other specialized generators actually do.
+
+### The three pieces
+
+| module | owns | notes |
+|---|---|---|
+| **`js/share/share-core.js`** | `buildShareUrl`, `shareCreation`, `shareCreationAsImage`, `renderCreationImage`, the button factories, the `?style=` reader, both delegated click handlers | Lifted **verbatim** out of `script.js`. It is now the only definition; `script.js` calls into it. Dependency-free. |
+| **`js/saved/saved-items.js`** | the typed store: `{type, value, label, href, t}` with `type` in `style \| symbol \| collection` | Identity is `(type, value)`, so one glyph saved under two locale labels is one record. |
+| **`symbol-explorer.js`** | a Save star per tile, Share + Share-image per section, the saved-symbols strip, the incoming `?symbol=` deep link | Attached **at runtime** to markup the generators already emit. |
+
+**Nothing here edits a page's content**, and that was a design constraint rather
+than a happy accident: the tiles are static HTML written into 3,605 pages by the
+generators, so adding per-tile buttons to the markup would have been a 3,605-page
+content diff against the parity, locale-translation and em-dash gates, for a
+feature that progressive enhancement delivers for free. The only HTML change is
+two `<script>` tags per page, which `content-significance.js` strips, so no
+`lastmod` moved.
+
+### Script order is load-bearing, and got this wrong twice
+
+Both bugs were found by driving a real browser, not by reading the code, and
+neither would have shown up in a syntax check or a diff review.
+
+1. **`script.js` is `defer`, so it runs before anything injected after it.** The
+   first injector put the modules after the host tag; `script.js`'s init then
+   called `UTG.sharedStyleId()` before `share-core.js` had defined it, threw,
+   and **the generator rendered zero result cards**. The modules are
+   dependency-free, so `inject-share-save-tags.js` now places them *first*.
+   **The same bug came back once more, on 300 pages, from a second cause:**
+   those pages load *both* `script.js` and `symbol-explorer.js`, and the
+   injector anchored on the explorer when both were present. `script.js` comes
+   first on every one of the 300, so the modules again landed too late. The
+   anchor is now the *earliest* host tag, whichever it is.
+2. **`readyState === "loading"` is already false inside a deferred script.**
+   `symbol-explorer.js` keyed its init on it, so init ran during its own
+   execution — before the modules that follow it in document order — and every
+   attach silently no-opped. **Zero Save buttons, no error.** It keys on
+   `"complete"` now, which makes the wiring independent of tag order.
+
+The shared shape: *a check that reports nothing is indistinguishable from a
+check that passes*, in its runtime form. A save star that never attaches looks
+exactly like a page that has none.
+
+### Strings are harvested, never authored
+
+The 112 new locale strings (`save`, `saved`, `share`, `shareImage`, `clearAll`,
+`copyLabel` × 28 locales) were **copied out of `locales/*.json`**, where they
+already shipped translated for the generator's own Save and Share. Nothing was
+translated by hand.
+
+**These pages deliberately do not load `i18n.js`.** Doing so would cost a ~30KB
+locale-JSON fetch on the site's highest-traffic lane to read five short strings.
+So `symbol-explorer.js` keeps its own 28-locale table, and
+**`scripts/sync-explorer-strings.js`** copies from `locales/*.json` into it
+(`--write`) and fails when the two drift (no flag). `share-core.js` accepts a
+host-supplied `label`/`imageTitle` for the same reason — without it a Korean
+library page renders Korean prose with an English **Share** button, which is the
+exact defect `i18n.js`'s own comment records for the shadow locales, and which
+the browser run caught.
+
+The 10 locale JSONs whose `copyButtons` block existed only inside `script.js`'s
+`UI_STRINGS` were backfilled from it in the same change, removing a duplicate
+source of truth that `script.js`'s own comment had flagged.
+
+### Tooling
+
+- **`npm run check:share-save-tags`** — whole-site, **gating**, same call as
+  `check:funding-choices` and `check:zalgo-decodes`: no backlog to be
+  permanently red against. Whole-site rather than diff-scoped on purpose — the
+  shape it catches is a page generator emitting a pre-split template, so a *new*
+  page arrives untagged from a file the PR may not touch.
+  **It checks position, not just presence**, and that half was added only after
+  the 300-page order bug above: the first version asked "is the tag there",
+  reported all 3,846 pages fine, and 300 of them were throwing on load. A tag
+  sitting after its consumer is not a tag that works.
+- **`npm run inject:share-save-tags`** — the idempotent repair pass, mirroring
+  `inject-funding-choices-tag.js`. It strips any existing module tags and
+  reinserts them rather than skipping a page that already has them, because
+  otherwise it could not repair *order* — only absence.
+- **`npm run check:explorer-strings`** / **`sync:explorer-strings`** — the
+  harvest and its gate.
+- **`npm run test:saved-items`** — 44 assertions over the store. It exists for
+  the reason `js/counter/counterRules.test.js` does: a saved symbol that fails
+  to persist, or a migration that drops a returning user's saved fonts, is
+  invisible until someone comes back a week later.
+- **`js/share/shareSave.test.html`** — the DOM half, which needs a browser, in
+  the `js/counter/counter.test.html` idiom: open it and read the panel, or drive
+  it headlessly and read `window.__UTG_TEST`. It carries a copy of the real tile
+  markup, so it exercises the actual attach path. **Both bugs this feature
+  shipped in development were runtime-only** — one threw, one silently attached
+  nothing — and neither was visible to node, to a syntax check or to any of the
+  40 CI gates. Its 37th assertion found a third on its first run: `clear()`
+  emptied the strip and left every tile star still lit, because only the strip's
+  own Clear button repainted them and any other path into `clear()` skipped it.
+- `scripts/lib/share-save-tags.js` is shared by the injector and the gate, so
+  they cannot disagree about what a correctly-tagged page is.
+
+### Migration off `utg_saved_styles`
+
+The old flat array is read and folded in as `type: "style"` records, **and kept
+in step on every write**. Keeping it (rather than deleting it after one read)
+means a user who lands on a page still serving a cached pre-split `script.js`
+keeps their saved styles instead of watching them vanish; the cost is one
+duplicated key.
+
+### Analytics: `save_style` kept its name on purpose
+
+The event names are unchanged so the existing GA4 reports and their history stay
+continuous. What is new is **`item_type`** on save/unsave and
+**`share_surface`** + **`share_item_type`** on `share_text`. Without those the
+rollout could not be read: `share_text` previously recorded only its method
+(`native`/`link_copy`/`image`), which cannot answer *which surface did sharing
+actually work on*, and that is the whole question this change exists to settle.
+`style_name` is still set for styles, so nothing downstream breaks.
+
+### Verified against deliberately broken inputs before being trusted
+
+Per this file's own rule. The tag gate **exits 1** on the pre-injection tree
+naming all 3,846 pages and **0** after; the store tests **exit 1** on a broken
+identity check (7 failures) and on a dropped legacy migration (5), and 0 when
+restored. The browser run covers 39 assertions across an English library page, a
+`?symbol=` deep link, a Korean page's labels, and the generator still rendering,
+saving and sharing after the extraction.
+
+The order rule has its own two probes: the real 300-page regression re-injected
+into `usecase/tattoo-fonts` **exits 1** naming it, as does deleting a module tag
+outright, and the restored file exits 0.
+
+**Two notes for anyone repeating this.** Reading a probe's result through
+`| head` reports *head's* exit status, which showed a false `EXIT=0` for both
+store probes on the first attempt — the same pipefail trap this file documents
+twice elsewhere. And **sweep page *types*, not one page**: the 300-page order
+bug was invisible on the homepage, on a library page and on the zalgo page, and
+only appeared once the sweep included a page that loads both hosts. Every gate
+in this repo passed while it was live.
+
+### Not done here
+
+The other 34 clipboard-writing modules (the emoji tool, `huruf`, vertical text,
+ASCII, the counters, the name generators) still have Copy alone. They were left
+because they are **~6% of the ungated copy volume between them** — the
+library/symbol lane was 93.6% of it — not because they should keep it that way.
+Now that the core is a standalone module, each is a few lines: build the
+buttons, stamp `surface`, pass a localized `label`.
+
+---
+
+## Accessibility — the axis nothing measured until 2026-09-05
+
+Every gate above measures structure, language, schema, values, assets, hub
+coverage or prose. **None of them opened a page and asked whether it can be
+used.** There was no accessibility script, no rule and no gate — so the number
+was unknown rather than good.
+
+**The baseline turned out to be genuinely strong**, and that is worth stating
+because it decides how the tooling is shaped. Across all 4,645 pages: **0**
+images without `alt`, **0** buttons without an accessible name, **0** links
+without one, **0** empty `href`s, **0** unlabelled form controls, **0** pages
+missing `<html lang>`, **0** positive `tabindex`. This site was built with care
+on this axis; the job is to keep it that way, not to pay down debt.
+
+**Three pages carried duplicate ids, and one was a live functional bug.**
+`ko/index.html` shipped two byte-identical `<main class="container">` blocks, so
+it had two `#categoryTabs` and two `#resultsGrid`. `script.js` binds by id and
+populated only the first of each — measured in a browser, the Korean homepage
+rendered its real tab strip (20 tabs) and results (11), then an empty tab strip
+and an empty grid that could never fill, plus two `main` landmarks. The other
+two were id collisions between genuinely different sections
+(`symbol/index.html`'s punctuation vs. dash-and-hyphen groups;
+`es/library/simbolos-de-lazos`'s static grid vs. its JS mount), fixed by
+renaming the id and touching no copy.
+
+### Blocking vs advisory is decided by the backlog, not by severity
+
+The eleven **blocking** classes are exactly the ones standing at zero, so the
+gate has nothing to be permanently red against — the same call as
+`check:zalgo-decodes`, and the same reason `check:images` informs while
+`check:new-page-images` gates.
+
+**Heading-level skips are advisory, on 909 pages, and must stay that way.**
+Every one is the same design-system decision rather than an oversight: a
+`.compare-card` titles itself with `<h4>` inside a section headed `<h2>`.
+Skipping a level is a best-practice warning rather than a WCAG 1.3.1 failure,
+and restructuring 899 pages' card markup is an owner call about the design
+system. A validator must not force it.
+
+**Put to the owner and declined, 2026-09-10.** The 909 were presented with the
+cost of changing them (one card template plus a regeneration of 909 pages, which
+under clean-on-touch drags in those pages' em dashes and their locale siblings)
+and the owner's answer was to leave them. So this is now a recorded decision
+rather than a validator's default, and re-proposing it needs new evidence — a
+real reported barrier, not the count.
+
+**What counts as a page is structural: a file with an `<html>` element.** Two
+tracked `.html` files are not pages — the Naver verification token and
+`scripts/data/funding-choices-tag.html`, a script fragment — and both would
+otherwise report as missing a lang and an h1. A hardcoded skip list would go
+stale; this filter excludes a future fragment and includes a future page on its
+own.
+
+#### Tooling
+
+- **`npm run audit:accessibility`** — whole-site dashboard, per rule, with
+  `--full`, `--rule`, `--locale` and `--json`. **Informational, never gating.**
+- **`npm run check:accessibility`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`.
+- Both share **`scripts/lib/accessibility-audit.js`**, so the audit and the gate
+  can never disagree about what a defect is.
+
+**It is a state check on changed pages, not a delta, and that is deliberate.**
+`check-locale-translation.js` and `check-faq-schema.js` measure deltas because
+both carry large legitimate backlogs. This one has none, so "this page has a
+duplicate id now" is worth failing on whether or not it had one before. **If a
+blocking class ever acquires a real backlog, move it to advisory rather than
+weakening this to a delta** — a blocking rule with a backlog is precisely the
+shape people learn to ignore.
+
+Verified per this file's own rule against six differently-shaped broken inputs
+so the gate could not be tuned to one — a duplicate id (the real `ko`
+regression), an `<img>` with no `alt`, a button with no accessible name, a
+second `<main>`, a removed `h1`, a removed `<html lang>` — each exits 1 naming
+its rule, with a restored-file control at exit 0. And verified that CI *gates*
+on it rather than merely running it: `run-ci-gates.py --only accessibility`
+returns 1 on a broken tree and 0 on a clean one.
+
+**One finding this pass reported rather than fixed.** `ns.buildGrids()` mounts
+into a container that is empty in static HTML on **896 of 898** pages — only
+`library/bow-ribbon-symbols` and `ja/library/ribon-kigou` pre-render theirs. So
+the collection grids that are the payload of those pages are JavaScript-only,
+which the Discovery Model section above names as a real cost ("several search
+and AI crawlers do not execute JavaScript"). That is a site-wide architectural
+choice, not a defect to fix unilaterally, and it is recorded here so the next
+person does not have to re-derive it. The first read of it was backwards —
+the two pre-rendered pages look like the norm until you count.
+
+**Correction and resolution (2026-09-10).** The number was **898 of 898**, and
+the correction is the lesson. Those two pages carry static `.flag-row` symbol
+tiles in the same container and `buildGrids` appends its sections underneath
+them, so "container has children" answered a different question than the one
+being asked — *nothing* pre-rendered its grids. Counting the right thing needs
+the right predicate, not a bigger sample. Fixed the same day, generator and
+gate; see the next section.
+
+---
+
+## Collection grids are pre-rendered, not built on load (added 2026-09-10)
+
+898 pages render a **collection section** — the grid of ready-made combos with
+a format picker and a Copy Collection button. On those pages that section is
+the payload, and all 898 shipped it as an empty `<div id="…Container">` plus an
+inline `GROUPS` array turned into DOM by `UltraTextGen.buildGrids()` on
+`DOMContentLoaded`. A client that runs no JavaScript saw a heading above
+nothing. The Discovery Model section states the cost: several search and AI
+crawlers execute none, and machine legibility is a distribution feature rather
+than hygiene.
+
+**No gate here could see it, and each was right not to.** The parity
+fingerprint's `collectionSets` axis reads the `buildGrids` *call* in `<script>`
+rather than its output; the locale and FAQ gates read text that was not there;
+the image gates read assets; the accessibility gate reads markup that rendered.
+The section was invisible in the same way a runtime FAQ-schema rewrite is —
+present at the wrong moment for every check that existed.
+
+### The markup has one owner
+
+`buildGrids()` used to build DOM with `createElement`. It now composes the same
+markup as a string through `gridSectionsHTML()` and inserts it with
+`insertAdjacentHTML`, so the build-time generator can call **the shipped
+renderer** instead of carrying a copy of the markup.
+`scripts/lib/collection-grid-engine.js` slices four marked regions out of
+`symbol-explorer.js` and evaluates them, the `scripts/lib/zalgo-engine.js`
+technique, and **throws** when a marker is missing rather than falling back to
+a local copy. `buildGrids()` skips construction when a `.flag-grid-section` is
+already present, so a pre-rendered page is not doubled.
+
+**`GROUPS` is executed, never parsed.** 18 flag pages build their groups by
+mapping ISO codes through `isoToFlag()`, so the generator runs each page's own
+inline script against a capturing stub and renders what `buildGrids` was
+actually called with. Three `emoji-flags` pages also build their country tile
+grid in that script and call `getElementById(...).appendChild` first, which is
+why the DOM stub returns a live chainable proxy rather than `null`. A stub
+cannot smuggle in a call the browser would not make: every captured container
+id is checked against the real HTML, and the splice asserts the child count
+grew by exactly the number of groups.
+
+The block is spliced as **text** between HTML comments, never round-tripped
+through cheerio — the same reason `docs/source-attribution.md` §4 gives for the
+JSON-LD fixer. Idempotent: a second run reports `898 already current`.
+
+### Tooling
+
+- **`npm run prerender:collection-grids`** (`-- --write`, `-- --files …`) — the
+  generator. Report-only by default.
+- **`npm run check:collection-grids`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. A **state check on changed pages**, like
+  `check:accessibility` and for the same reason: all 898 carry a current block,
+  so there is no backlog to be permanently red against.
+- Full write-up, the gate-interaction table and the `fi`/`ms` attestation
+  table: **`docs/collection-grid-prerender.md`**.
+
+### Two gates caught real problems, and neither was ledgered
+
+**`check:locale-translation`** flagged four `pt` pages newly showing `Vertical`
+verbatim. Six grid labels were byte-identical to English across `pt es fr ro`
+(`Vertical`), `de` (`Inline`) and `tl` (`Bullet`). The fix is **that locale's
+own attested word**, harvested from its own pages — `Na vertical` (31 uses),
+`En vertical` (14), `Verticale` (136), `Pe verticală` (4), `Nebeneinander` (16),
+`Listahan` (1) — never an entry in `data/translation_identical_strings.json`.
+The ledger is for a translation that is *correctly* identical; a cognate nobody
+chose is not that.
+
+**`check:locale-mesh`** flagged a pre-existing German hub link the pass merely
+brought into diff scope, the third recorded instance of that pattern. Repaired
+with `sync:locale-mesh --fix` **scoped to that one file**, never site-wide.
+
+### `fi` and `ms` had no UI strings at all
+
+`UI_STRINGS` in `symbol-explorer.js` is keyed by the two-letter prefix of
+`<html lang>` and falls back to `en`. It covered 29 locales and not those two,
+so 5 pages rendered English buttons under localised headings — invisible while
+the grids were JavaScript-only, and about to become static English. Fixed at the
+root, with every word attested on this site's own pages in that language and the
+two compounds of attested stems (`Format Salinan`, `Kopiointimuoto`) flagged as
+such rather than presented as harvested.
+
+### `<lastmod>` advances once here, and that is correct
+
+The grids are new visible content and new copy payloads on 898 pages. Nothing
+about *what* `content-significance.js` hashes changed, so **no cache
+re-baseline is required** — this is the "hubs pre-rendered" case that section
+already names as a change which legitimately advances a date.
+
+`.flag-grid-section` joins `[data-static-directory]` in
+`editorial-corpus.js`'s drop list: the group names are already captured as `ui`
+from the script by `scriptTileNames()`, and billing 898 pages under
+clean-on-touch for markup a hand edit cannot change is exactly what that
+selector exists to prevent.
+
+### Verified against the unmodified tree, not against expectation
+
+A git worktree of the pre-change commit was served alongside the working tree
+and both were driven in headless Chromium. The container's serialised HTML is
+**identical apart from the two HTML comments**, and the interaction trace
+matches on both: six sections (not twelve), a tab click rewriting `preview-0`
+and moving the `active` class, one `copy_text` event from the copy button. Then
+`ms`, `fi`, `ja` and the `isoToFlag`-built `library/emoji-flags` were each
+driven to confirm localised chrome and working tabs.
+
+The gate itself was verified against four differently-shaped broken inputs — a
+deleted block, a hand-edited block, a `GROUPS` array that grew, and a clean tree
+— and confirmed to make `run-ci-gates.py --only collection_grids` fail.
+
+**Still open, recorded rather than fixed:** the 17 pages carrying
+`#countryFlagList` build **195 country tiles** in JavaScript (EN and `ar` carry
+8 static ones, `vi` carries 0). Same class, different mechanism, and its output
+*would* be measured by `check:locale-translation` — see
+`docs/collection-grid-prerender.md` §7.
+
+---
+
+## Locale string attestation — evidence when there is no native reviewer (added 2026-09-10)
+
+`locales/ms.json` shipped 2026-09-05 with its own `_readme` recording that it
+had not been read by a Malay speaker, and nothing could say how much that
+mattered. The site's own pages in that language are the next-best evidence: 490
+`ms/` pages already say `Salin`, `ms/library/ruang-kosong` already calls a space
+`Ruang`, the `ms/` footer already calls vertical text `Teks Menegak`. A string
+built from those words is grounded in first-party evidence; one built from a
+dictionary guess is not, and before this nothing could tell them apart.
+
+**It measures corpus support, not correctness, and the difference is not a
+quibble.** A fully attested string can carry the wrong inflection — this file
+already records Swedish `kontrollerat` versus a guessed `kontrollerad`, where
+both stems are attested and only one agrees — the wrong collocation, or the
+wrong register. `attested` means *no word here is invented*, which is a real and
+checkable claim, and nothing more. It tells you which strings still need a
+human; it never says one does not.
+
+- **`npm run audit:locale-attestation`** — `--locale`, `--verdict`, `--full`,
+  `--json`, and `--strings "…" "…"` to attest a proposed translation **before**
+  adding it. **Informational, never gating**: a `partial` verdict is a question
+  for a reviewer, not a broken build.
+- `scripts/lib/locale-string-attestation.js` holds the method.
+
+**Three matching rules, each from a wrong result rather than reasoned up
+front.** Stem-prefix **or** substring, because Korean writes `스타일을` for the
+bare `스타일` and Finnish `kokoelmaan` for `kokoelma`, and a false "unattested"
+sends a reviewer chasing nothing. A script-aware minimum word length, because a
+Hangul syllable carries far more than a Latin letter and a flat minimum of three
+discarded Korean 공유 and 없음 as `no-evidence-needed`, which reads as *fine*
+when it means *not checked* (`ko` went 33 → 52 of 75 on that one fix).
+Spaceless scripts match whole segments verbatim, which reads low by
+construction — **`ja`, `th` and `zh-tw` numbers are not comparable to the Latin
+locales**, and the report says so per row rather than averaging it away, as it
+does for a thin corpus.
+
+First run: `ms` 64 of 75 attested against a 23-page corpus, with the eleven
+outliers named word by word. Of the 240 strings added for the `script.js` UI
+keys the same day, **202 were fully attested**, and every one of the 17
+unattested sits in a spaceless-script locale or in `hi`, whose corpus is 9
+pages.
 
 ---
 
@@ -2125,14 +3132,29 @@ ranks the upstream sources.
   gating**, same reason as `check:images` and `audit:locale-parent-gap`: the
   backlog is total and a permanently-red check is one people learn to ignore.
 - **`npm run check:editorial-footprint`** — the diff-scoped per-PR gate, wired
-  into `.github/workflows/validate.yml` in **shadow mode**: it reports what it
-  would fail on and exits 0. Promotion to blocking is a documented step in
-  `docs/editorial-footprint-risk.md`, not a silent flag flip. Only two rules are
-  eligible today (`model-leakage`, `seo-preservation` errors), both verified
-  against deliberately broken inputs.
+  into `.github/workflows/validate.yml` in **shadow mode** for every rule but
+  one: it reports what it would fail on and exits 0. Promotion to blocking is a
+  documented step in `docs/editorial-footprint-risk.md`, not a silent flag flip,
+  and it happens **per rule**: `--enforce em-dash-touched,em-dash-sibling` makes
+  only the named rules bite. Five rules are eligible today (`model-leakage`,
+  `seo-preservation` errors, and since 2026-09-02 the three em-dash rules — see
+  "Clean on touch" below), each verified against deliberately broken inputs.
+  **The exception, decided 2026-09-02: an em dash a branch *introduces* is
+  banned, per locale** — it exits 1 in every mode on a `ban` or `double-dash`
+  locale, which is why the step is in the gating list. The policy is
+  `data/em_dash_locale_policy.json` (English and the thirteen en-dash locales
+  ban, with the native replacement named in the block; zh-tw and ja ban only a
+  lone `—`; ru/es/pt/fr/pl/ro are native and never flagged; nine locales warn
+  pending a native reader), and the spaced hyphen is banned on English. The
+  same policy is applied before the clean-on-touch and sibling obligations, so
+  a native-dash sibling is never pulled in. Existing em dashes on an untouched
+  page (9,682 on 889 English pages when measured) are reported, never billed.
+  `npm run audit:em-dash` re-measures every locale against the ledger.
+  `docs/em-dash-policy.md` has the scope, the replacement guidance, the
+  title-separator note and the table.
 - **`npm run mine:editorial-phrases`** — regenerates the corpus evidence behind
   `data/editorial_phrase_bank.json`.
-- **`npm run test:editorial-footprint`** — 52 assertions, **gating**, no backlog
+- **`npm run test:editorial-footprint`** — 63 assertions, **gating**, no backlog
   to be red against.
 - **`npm run check:spec-sentence-reuse`** — **gating**, diff-scoped. Page copy is
   hand-written once per spec in `data/library_page_specs/` and nothing compared
@@ -2145,10 +3167,84 @@ ranks the upstream sources.
   have shipped a gate that could never fire. `npm run audit:spec-sentence-reuse`
   is the whole-corpus picture; `npm run test:spec-sentence-reuse` (19 assertions)
   gates alongside it.
+- **`npm run route:cta-cards`** — the in-place pass that routes a page's CTA card
+  to the tool that does the reader's next job. Report-only by default, `--write`
+  applies, **idempotent** (it only ever touches a card still on the shared
+  homepage default, and never reclaims one already pointed somewhere specific).
+  `scripts/lib/cta_routing.py` is the single owner of the routing table AND its
+  copy, read by `scripts/generate_library_page_from_spec.py` too, so a
+  regenerated page and a live page cannot disagree about the card. The copy lives
+  there rather than in the specs because writing it into 214 spec files would
+  paste one sentence into 96 specs, which `check:spec-sentence-reuse` exists to
+  fail. `npm run test:cta-routing` (19 assertions) and
+  `npm run test:header-analytics` (49 — the `cta_click` classifiers plus the
+  `copy_text` identity engine, both sliced from the live `header.js`) gate it.
 - Shared libraries `scripts/lib/editorial-corpus.js` (slot-aware extraction),
   `scripts/lib/editorial-footprint.js` (bank, dimensions, similarity) and
   `scripts/lib/seo-snapshot.js` (the SEO Preservation Gate), so the audit and the
   gate can never disagree about what any of it means.
+
+### The EFR Quality Gate — PASS / REVIEW / FAIL for `/updates/` and `/guide/` (added 2026-09-02)
+
+The audit above measures; this gate decides. It applies absolute thresholds to
+the existing EFR score — **the measurement is unchanged** — on the two
+hand-authored entry sections, as a per-PR **ratchet**:
+
+| section | PASS | REVIEW | FAIL |
+|---|---|---|---|
+| `/updates/<slug>/` | ≤ 5.0 | > 5.0 – 7.0 | > 7.0 |
+| `/guide/<slug>/` | ≤ 7.0 | > 7.0 – 8.0 | > 8.0 |
+
+**EFR is a diagnostic and publishing quality-control metric, not an SEO ranking
+factor.** And it is not minimised indefinitely: the target is the *minimum
+editorial footprint required to completely satisfy the query*, so a lower score
+bought by deleting facts, examples, tables, caveats or links is **IMPROVED BY
+REMOVAL** — blocked when a concrete fact or internal link went, credit withheld
+when depth, an example or a FAQ question went. Read `docs/efr-quality-gate.md`
+before changing a threshold, and its §9 before calling a high score a defect:
+`specificityDeficit` reads a fixed fact vocabulary, so a 2,983-word guide built
+on fourteen worked archetypes scores 17.5 for naming five recognised facts. That
+is what the exception ledger is for.
+The vocabulary is widened as gaps are found, never per page: game names are
+**harvested** from `js/gamename/game-rules.js` (the site's own rule engine),
+and dates, durations, separated figures, percentages, engagement counts,
+publishers and emoji fonts were added 2026-09-02. **A widening moves the cohort
+median, so untouched pages move too** (that day: three guides crossed into FAIL
+without a word changing, because the bar their cohort demonstrates rose). It
+is a re-baseline event: regenerate `data/editorial_footprint_baseline.json` in
+the same change and re-read the thresholds. The ratchet is unaffected, since it
+scores both sides of a diff in one corpus.
+
+- **`npm run check:efr`** — diff-scoped, **gating** in `validate.yml`. New page
+  must meet PASS; a PASS page may not be pushed above it; a page above PASS may
+  not get materially worse (**+0.5**, an allowance for the per-1,000-word
+  denominator, not for noise — the score is deterministic, verified across
+  4,619 unchanged pages); an improvement that is still above target is reported
+  as **IMPROVED BUT STILL FAILING TARGET** and holds the ratchet at the new
+  score, never as a regression. Both sides of every diff are scored in **one
+  corpus** so the delta is the page's own change.
+- **`npm run audit:efr`** / **`npm run report:efr`** — whole-site,
+  **informational**: per-section PASS/REVIEW/FAIL counts, mean/median/p90, the
+  Top 20 per section as the editorial backlog, written to
+  `docs/efr-quality-report.md`.
+- **`npm run test:efr`** — 37 assertions over the policy, **gating**.
+- **The `lever` column** (report and console, added 2026-09-02) says which kind
+  of work a non-PASS page needs: `facts` when `specificityDeficit` carries 70%
+  or more of the score (add the numbers, names, versions and constraints the
+  page is about; a phrasing rewrite will not move it), `phrasing`, `template`,
+  `punctuation`, or `mixed`. Every FAIL on both sections at first measurement
+  was facts-led, and an editor could not tell that from "9.3 FAIL".
+- **`data/efr_exceptions.json`** — one page per entry (no wildcards, no whole
+  sections), with the EFR it was agreed at, a reason, an owner, a date and an
+  optional review date. Visible in every report, never silent, and the same bar
+  as every other ledger here: discussed, never added to make a PR pass.
+
+Absolute thresholds apply to **English** pages only — raw scores are not
+comparable across locales (next section) — so a locale `/updates/` or `/guide/`
+page is scored, reported as `UNCALIBRATED`, and ratcheted against its own
+previous version only. Hub indexes (`/updates/`, `/guide/`) are unclassified by
+policy. Verified against seven deliberately broken inputs and a replay of the
+real 2026-09-01 `/updates/` rewrite before it was added to the gating list.
 
 ### Two things about it that are easy to get wrong
 
@@ -2179,6 +3275,160 @@ time (`--sensitivity`), and **`unknown` is the conservative posture, never a
 licence**. Search Console data is first-party competitive information and does
 not live in this repo — same boundary, and same reasoning, as the Local Language
 Intelligence lexicon.
+
+### Removing em dashes: by leverage, at the source (added 2026-09-02, user-directed)
+
+The forward-only default above was **overridden by the user**, who asked for as
+many em dashes removed as possible. This records how that was executed, because
+the *how* is what keeps it from becoming the purge the rule warns against.
+
+**Rank before editing.** The site's 118,000 em dashes are not 118,000 decisions.
+Grouping em-dash-bearing strings by how many pages share them verbatim — the
+`variety` measure this section already defines — turns the top of that list into
+a handful of template strings. One CTA line accounted for ~1,800 pages across 17
+languages; one tile-label format accounted for 2,915 more. **10,010 page
+instances came out of ~1,320 authored decisions**, and nothing below the
+template tier was touched.
+
+**Every change is one of the phrase bank's own listed remedies**, never a synonym
+swap and never a deletion: a full stop where the second half is a separate
+thought (the CTA's "…and 100+ other Unicode font styles. Free and instant."), a
+comma where a verdict meets its qualifier ("No, only letters and numbers"), a
+colon where what follows explains what precedes (`Name (U+XXXX): gloss`). Every
+word survives in every string; only the joint moves. `ko` and `tr` had already
+written the CTA as one flowing sentence and were left alone — they were the
+model, not an omission.
+
+**Fix the spec, not only the page — and remember the locale spec directories.**
+`data/library_page_specs/` has 628 EN specs *and 885 more under
+`data/library_page_specs/<lang>/`*. A count taken with `*.json` sees only the
+first set; the locale specs are the upstream for every locale page, so a pass
+that edits locale HTML without them is undone by the next generator run. That
+was nearly this pass's mistake, caught only because a recursive `grep -r` count
+came back higher than the glob count and the discrepancy was chased rather than
+assumed to be corruption.
+
+**Three things this class of pass will surface, none of them its own bug:**
+
+* **A stale-schema split.** Anchoring a rewrite on `>` or `"` reaches the
+  JSON-LD copy of a FAQ answer and not the visible one, because the visible half
+  starts on its own line after the wrapper tag. Widen the anchor to allow the
+  newline, and check `check-faq-schema` before committing.
+* **Pre-existing mesh defects on pages the pass merely touched.** Bringing 2,013
+  locale pages into diff scope surfaced six German pages linking English hubs
+  that have German equivalents. Repair with `sync-locale-mesh --fix` **scoped to
+  those files**, never site-wide.
+* **False "introduced English" reports.** See "Punctuation is not English"
+  above; that gate needed fixing, not the content.
+
+**Do not extend this to prose.** 83,730 em dashes remain in locale pages and
+17,160 in English, and each of those is a sentence with its own decision. For
+pages a branch leaves alone the rule stays forward-only: a branch must not
+introduce one, including in its own new copy — this pass removed 23 it had just
+written on the pages it was rewriting. For a page whose own copy a branch edits,
+the next section applies: it leaves clean. The two sections were written the
+same day by two sessions and reconciled on merge; they are the two halves of one
+policy — source fixes ranked by leverage, and clean-on-touch for the prose.
+
+### Clean on touch — forward-only is for the pages you leave alone (added 2026-09-02)
+
+The em-dash rule (`EFR-F-001`) was written forward-only: a branch fails only on em
+dashes it *introduces*, and the 52,766 already on the site are reported, never
+required. That half stands for prose — the template-tier pass above is a source
+fix ranked by leverage, not a purge of sentences. But **a page whose own
+copy a PR edits leaves with zero em dashes in its measured slots, cards included**,
+and its copy is brought to the tone-of-voice standard in the same change. User
+direction, 2026-09-02. The gate reports the inherited ones as `em-dash-touched`.
+"Zero" is read through the locale policy (`data/em_dash_locale_policy.json`,
+adopted the same day): on a native-dash locale an em dash is never a finding,
+on zh-tw and ja only a lone `—` counts, and on a review locale the finding is a
+warning — see `docs/em-dash-policy.md` §4.
+
+Three definitions carry the rule, and each one was chosen against a real case:
+
+* **"Touched" means the page's own copy moved** — title, meta description, H1,
+  headings, prose or FAQ text differs from the merge base. A card injected by the
+  peer-link sync, a regenerated footer or hreflang block, a rebuilt library
+  directory, an asset swap: none of those is a touch, because a mesh pass that
+  rewrites 1,009 pages must not demand 1,009 rewrites. Once a page *is* touched,
+  its cards count too.
+* **A template-level change is not a touch (user decision, 2026-09-02).** The
+  first large diff the rule met was the template-tier em-dash pass in #840: 499
+  pages read as copy-touched and were billed 7,983 inherited em dashes, though
+  nobody had written on any of them. So a page is touched only by a change of
+  its own. Two shapes are carved out, in `classifyTouches()`: a string added or
+  removed verbatim on **three or more** changed pages in the same PR (one string
+  on many pages is a template by the phrase bank's own `variety` definition, and
+  the fix lives in the template), and a string whose **punctuation or case alone**
+  moved (the same rule the sitemap's significance hash applies, so the two
+  systems cannot disagree). A page carrying a template change *and* a sentence of
+  its own is still touched; a new page always is. Replayed on #840 the rule
+  stopped reading the pass as 499 copy edits.
+* **An English touch pulls the locale siblings along** (`em-dash-sibling`). Every
+  sibling in the cluster that the PR does not itself copy-edit must already be
+  clean **under its own locale's policy** (`data/em_dash_locale_policy.json`: a
+  Russian sibling is never pulled in, a Chinese one only for a lone `—`, a
+  review-locale sibling is a warning), or the gate names it and the parent that
+  pulled it in. Anchored on
+  English on purpose — it is where pages are born and where the standard is
+  applied first — so a translator's one-line fix never obliges an English
+  rewrite, and a new locale batch never obliges the cleanup of every parent it
+  translates. The cost was chosen with the number in view: editing
+  `symbol/euro-sign` pulls 18 siblings carrying 159 em dashes. Plan the sibling
+  pass before opening the PR, not after the gate names them.
+* **Generated inventory is not the hub's copy.** The pre-rendered library
+  directory (`[data-static-directory]`) is rendered from other pages by the hub
+  builders and is dropped from measurement — a hand edit there is overwritten by
+  the next build, and `es/library/index.html` carried 144 of its 157 em dashes
+  inside it. The EN hub's own `LIBRARY` array is the one exception: 25 em dashes
+  in a script block nothing measures, cleared through the array and a rebuild.
+
+Two things this surfaced. `.related-card` had never been in the card slot, so the
+updates hub's eleven dated labels ("Aug 12, 2026 — Telegram …") and the "Keep
+reading" grids on 193 pages were invisible to every rule — the currency scorecard
+shipped its tone rewrite with one em dash left in exactly that slot. And the
+gate's own upstream attribution still applies: when `em-dash-touched` names a spec
+or generator, the fix goes there.
+
+The gate stays in **shadow mode** for now — the three em-dash rules are in
+`BLOCKING` and print "would block", and promotion is one workflow line per rule,
+scheduled for review on 2026-09-16 after the shadow findings since this change are
+classified. Do not turn `--enforce` on bare: `seo-preservation` would ride along,
+and a deliberate retitle (which the tone standard requires) still has nowhere to
+record its intent.
+
+### Routing the CTA card, and the two things that constrained it (2026-08-26)
+
+The shared CTA card sits on **3,951 pages, 2,758 of them (69.8%) pointing at a
+bare homepage**. The obvious reading of that number is wrong and worth stating
+before anyone acts on it again: **`/` and `/<locale>/` ARE the font generator**,
+so "Open UltraTextGen →" pointing there is a real tool, not a dead end. The
+defect is narrower — pages whose reader has a *different* next job get sent to
+the generator anyway.
+
+So the routing table is deliberately small: **214 English pages**, moved only
+where the site has a tool the generator is not. Everything else keeps its card.
+
+**No locale page routes, and that is not a translation gap — the destinations do
+not exist.** There is no `/fr/character-counter/`, no `/es/kaomoji-generator/`,
+no locale build of any of them. Linking an English tool from a locale page is
+what the locale-native internal linking rule above forbids, and the locale
+homepage already is that locale's generator. `route()` returns `None` for every
+`<lang>/` path and a test asserts it. Do not "finish the job" by routing them.
+
+**It does not lower the Editorial Footprint Risk score, and must not be described
+as doing so.** One shared card replaced by three shared cards is still a
+template; `variety` stays near zero. What changed is that the card is useful and,
+for the first time, measurable — see the `cta_click` event, which fires from
+`header.js` rather than `script.js` because **3,955 of 3,955 CTA pages load
+`header.js` and only 148 load `script.js`**.
+
+**The SEO Preservation Gate blocked its own author here, and was right.** The
+first draft of the new copy dropped `ultratextgen` from the editorial text of all
+214 pages — the old card was its only occurrence outside URLs and JSON-LD — and
+the gate reported `protected-term-lost` on every one. The fix was to put the
+product name back where each sentence already named the tool, never to exempt the
+rule.
 
 ### The remediation principle
 
@@ -2218,9 +3468,32 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 ## Automated Workflows
 
 ### `update-sitemap.yml`
-- **Schedule**: Daily at 00:00 UTC
+- **Schedule**: Daily at 00:00 UTC — **paused since 2026-08-20** (the schedule
+  lines are commented out in the workflow, with the reason; `workflow_dispatch`
+  still works). Resuming is a decision tied to the 2026-08-16 organic-search
+  incident, not a tooling question.
 - **Action**: Runs `scripts/update-sitemap.js`, auto-commits `sitemap.xml` with `[skip ci]`
 - **Do not** edit `sitemap.xml` manually — it will be overwritten
+
+**`<lastmod>` means "what a reader sees changed" (rules as of 2026-09-02).**
+`scripts/lib/content-significance.js` hashes each page and
+`data/sitemap-lastmod-cache.json` holds `{hash, lastmod}` per URL; a date
+advances only when the hash moves. Three classes never move it, each learned
+from a real mass-bump: aria-labels and head metadata (2,533 pages on
+2026-08-15/16), the generated static footer block (all 4,576 URLs would have
+advanced on 2026-08-20 after #790), and punctuation or case alone (~2,800 pages
+after the 2026-09-02 template-tier em-dash pass). Symbols and copy payloads are
+hashed verbatim, because on this site a currency sign or a kaomoji *is* the
+content. When a date does advance it is the date of the newest commit that
+changed the hash, found by walking the file's recent commits, not the mesh or
+template pass that happened to touch the file last.
+
+**If you change what the hash covers, re-baseline the cache in the same PR:**
+`npm run rebaseline:sitemap-cache -- <commit of the last sitemap run>` (that
+commit is `git log -1 -- data/sitemap-lastmod-cache.json`). The stored hashes
+were made by the old function; without this, the next run reads every URL as
+changed. `npm run test:content-significance` gates the rules in CI and encodes
+each mass-bump as a non-catch.
 
 ### `tweet-queue.yml`
 - **Schedule**: Daily at 09:00 UTC (also triggerable manually)
@@ -2228,6 +3501,46 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
 - Confidence threshold: 0.72 (favors HTML/CSS/guide changes; ignores lock files, lint, tests)
 
 ---
+
+## Discovery Model — multi-surface (added 2026-08-29)
+
+UltraTextGen does not optimize for a single discovery algorithm. Pages,
+tools, images, printables, embeds, and data files are built to be useful on
+their own terms and discoverable through many independent systems: Google,
+Bing, Naver, Yandex and other search engines; AI assistants, answer engines
+and their crawlers; image search; social sharing; embeds on other sites;
+citations; and direct return visits. Google matters and is served well — it
+is one distribution surface, not the operating system the site is designed
+around.
+
+Practical implications when working in this repo:
+
+- **A page or asset should have a defensible reason to exist even if Google
+  never sends it a visitor** — real utility, a share/print/embed path, or
+  reference value an AI or a person would cite. "A keyword exists" is not,
+  by itself, that reason.
+- **Machine legibility is a distribution feature, not hygiene.** Several
+  search and AI crawlers do not execute JavaScript; content and links that
+  matter for discovery should be present in static HTML where feasible
+  (the static footer and pre-rendered library-hub directories exist for
+  exactly this reason — see "Library Hub Coverage" above). `robots.txt`
+  deliberately welcomes AI crawlers.
+- **Engine-specific registrations and their state live in
+  `docs/webmaster-tools-registrations-2026-08-20.md`** (Google, Bing, Naver,
+  Yandex, Pinterest domain verification). Sitemap and structured-data
+  changes serve every registered engine, not just Google — weigh a
+  Google-motivated change against its effect on the others.
+- **The sharing/embed layer is part of discovery**: per-result share links
+  (`?q=&style=`) with their OG preview Function, the `/embed/` widgets and
+  their UTM conventions, and the printables' cred-line attribution are
+  distribution surfaces. Keep them working, and extend them through their
+  existing conventions (UTM naming, the OG style registry, the embed hub)
+  rather than ad hoc.
+- **None of this loosens the existing content rules.** Hub-vs-spoke,
+  English-Parent, parity, ledger discipline, and any active publishing
+  restrictions apply unchanged — multi-surface discovery is about
+  distributing and exposing well-built assets, never about generating more
+  pages.
 
 ## SEO & Structured Data
 
@@ -2349,6 +3662,52 @@ JSON-LD left stale (0 → 16 tokens). Both exit 1; `audit-faq-schema.js` and
 status, which is the exact pipefail trap this file documents twice, and it
 reported a false EXIT=0 on the first attempt here.
 
+### The schema a gate reads is not always the schema Google renders (added 2026-09-05)
+
+Everything above compares a page's **static** JSON-LD against its **static**
+visible FAQ. `i18n.js` rewrites the JSON-LD **in the browser**, from the locale
+JSON it fetches — so a page can pass `check:faq-schema` on disk and still serve
+Google a different FAQ entirely. Fourth instance of *a check that reports
+nothing is indistinguishable from a check that passes*, from a fourth cause:
+the gate was looking at the right file at the wrong moment.
+
+**The FAQ in a locale JSON is the HOMEPAGE's FAQ.** Verified: of the 26 pages
+in this tree that bind `data-i18n="faq.*"`, **all 26 are a homepage**.
+`updateFAQSchema()` nonetheless ran on every page that loaded `i18n.js` and
+carried a `FAQPage` block — replacing that page's own questions with the
+homepage's, which the page never renders. That is invisible-content FAQ markup
+by this section's own definition.
+
+**It was live on 11 pages.** Every locale build of `usecase/zalgo-text` loads
+`i18n.js`, ships its own 6-question FAQ, and had it swapped at runtime for the
+homepage's 21. On `fr/usecase/zalgo-text` the overlap between the two sets was
+**0 of 6**, and the page carries **zero** `data-i18n` hooks — so nothing
+visible changed and only the structured data moved, which is exactly why
+nobody saw it.
+
+**The fix is a guard, not a comment:** `updateFAQSchema()` returns early unless
+the page actually renders this FAQ (`[data-i18n^="faq."]`). The blast radius
+was about to grow 35×, not shrink — register item #74 proposes adding
+`i18n.js` to the ~390 locale pages that lack it, **393 of which carry a
+`FAQPage` block**. Both of that item's candidate fixes would have multiplied
+this bug from 11 pages to ~394. Fix it first; it is a prerequisite, not a
+side quest.
+
+**`npm run test:i18n-faq-schema`** (`i18n.test.js`) gates it, wired into
+`validate.yml`. It slices `updateFAQSchema()` out of the live `i18n.js` and
+drives it against a DOM stub — the same technique `scripts/lib/zalgo-engine.js`
+uses, and for the same reason. Its last case asserts the **site-level
+invariant the guard rests on**: that no non-homepage binds `faq.*`. If one ever
+does, the guard's premise has changed and the test says so by name rather than
+letting the page silently take the homepage's schema.
+
+Verified per this file's own rule against four differently-shaped broken
+inputs: the guard deleted (the real regression), the guard widened to a
+selector that always matches, the guard inverted, and the slice markers
+renamed — each exits 1; restored, 7 pass. And verified that CI *gates* on it,
+not merely runs it: `run-ci-gates.py --only i18n_faq_schema_tests` returns 1
+with the guard removed and 0 with it restored.
+
 ---
 
 ## Testing
@@ -2362,6 +3721,12 @@ and browser-based:
   Assertions for the pure half of the character counter: counting modes,
   per-language GSM-7 encoding flips, every reducer, `trimToFit` boundaries,
   `LIMITS` table integrity. No DOM, no dependencies.
+- `usecase/zalgo-text/zalgo-text.test.js` — `npm run test:zalgo-engine`.
+  The zalgo generator's pure half, sliced out of the shipped widget by
+  `scripts/lib/zalgo-engine.js`: the Thai cascade generator (every placement,
+  carrier and mark, the 10..150 depth clamp), the unzalgo decoder's round
+  trip, and the promise that ordinary Thai survives it. No DOM, no
+  dependencies. Gating, because the decoder is a Check surface.
 - `js/counter/counter.test.html` — the DOM half, which needs a browser: the
   two-tier picker, live count, inspect line, fix bar, undo, trim, fit-grid
   ordering, SMS segments, soft-limit warning, clear. Open it and read the
@@ -2426,6 +3791,76 @@ Verified per this file's own rule before being trusted, against two
 differently-shaped broken inputs: NFC-normalising one EN card (the real
 regression) exits 1 naming it, and replacing a `ru` card with the plain word
 exits 1 as unmarked.
+
+#### The Thai cascade, and why the decoder is now a function (added 2026-09-05)
+
+Issue #864 added a second engine to `usecase/zalgo-text`: **Thai Cascade**,
+the viral "side spike". It is not classic zalgo at a higher amplitude. Classic
+zalgo scatters many *different* U+0300-block marks around *every* letter; the
+cascade repeats *one* Thai tone mark (U+0E48..U+0E4B, Mai Tho by default) 10
+to 150 times on *one* carrier (KO KAI, U+0E01, or the text's own first or
+last letter), and the renderer's attempt to place every repeat against the
+same base is what draws the tall, often diagonal, trail. Three consequences:
+
+* **The Thai marks live in their own pool and never reach `pickUnique()`.**
+  They are Thai orthography, not noise. `generateCascade()` is deterministic,
+  which is what makes a cascade a shareable URL and a decodable card.
+* **The decoder is a two-stage function, `decodeZalgo()`, no longer one
+  regex.** Stage one strips the classic ranges as before. Stage two strips a
+  *repeated* Thai tone mark (the same mark two or more times in a row) and
+  the tool's own carrier when it stands apart from the text. A single mark is
+  never touched: Thai writes at most one tone mark per consonant, so "น้ำ"
+  pasted into the box comes back as "น้ำ". `usecase/zalgo-text/zalgo-text.test.js`
+  asserts both halves, and `npm run test:zalgo-engine` gates on it.
+* **The engine is sliced out of the shipped widget, never copied.** The
+  block between `/* @zalgo-engine:begin */` and `/* @zalgo-engine:end */` in
+  `zalgo-text.js` is evaluated by `scripts/lib/zalgo-engine.js`, and both the
+  test and `check-zalgo-decodes.js` call the functions users run. The gate
+  used to lift the decoder's regex with a matcher; a function with two
+  stages cannot be lifted that way, and reimplementing it in the gate is the
+  drift this section already warns about. Move the markers if you move the
+  code; the loader throws rather than falling back.
+
+The gate also now **requires** a cascade card on the EN page (`cascade cards
+(Thai run): 1`): the decoder's second stage is exercised only by a card that
+carries a repeated Thai mark, and a check that finds none cannot tell "the
+cascade decodes" from "nothing tested it". Verified: with the card removed the
+gate exits 1 naming the page; with it present, 73 cards decode.
+
+**The mode is opt-in per page** (`data-cascade` on `#zalgoControlPanel`). A
+page without the attribute renders no cascade controls, ignores `?cascade=1`,
+and still decodes cascade text, so nothing can show in English on a translated
+page whose `zalgoI18n` block lacks the strings. All twelve pages opted in on
+2026-09-05 with their own strings, at the register each page already used
+(`fr` stays *vous*, `ru` stays *вы*, the rest informal), each with its own
+generated cascade card. The embed widget carries a ported prefix-only
+`generateCascade()` beside its ported classic engine.
+
+**Extreme is the same rule applied the other way (added 2026-09-05).** The
+issue said not to widen the amplitude slider to 150, and the user then asked
+for an "Extreme Zalgo" that is classic marks with a far larger budget. It is a
+*mode*, not a wider default: the `Extreme` preset (opt-in via `data-extreme`)
+lifts the slider's range to `AMPLITUDE_EXTREME` (1..100, default 50); every
+other preset returns it to `AMPLITUDE_CLASSIC` (1..20), and `clampAmplitude()`
+reads the mode, so an old `?amp=500` link now yields 20 marks per letter, not
+500. Same pools, same `pickUnique()`, same decoder: at 100 a letter carries 55
+above, 2 through and 35 below, and `test:zalgo-engine` asserts exactly that.
+Measured in headless Chromium: 500 characters at amplitude 100 (37,484 code
+units) generate and render in under a second. Every preset click pushes a
+`zalgo_preset` dataLayer event (`zalgo_mode`: classic, extreme or cascade),
+the same shape as `header.js`'s `cta_click`, so the modes have an adoption
+number to read at their 30-day review instead of an impression.
+
+**A comparison table is a Check surface (added 2026-09-05).** The EN page and
+its eleven siblings carry a dated capability table against eight generators
+whose live pages were fetched that day (LingoJam, Zalgo.io,
+TextGlitchGenerator, FontB, PrettyText, Piliapp, Convertxt, Nepeta); zalgo.org
+and Namecheap blocked the fetch and are named as unscored rather than guessed.
+It replaced the sentence "the only major zalgo generator with a built-in
+unzalgo decoder", which was false on all twelve pages: Zalgo.io ships a
+cleaner beside its generator. The table's dated line enrols it in the 90-day
+re-check sweep the tone standard requires for every dated claim; re-verify
+against the live pages, never by memory.
 
 ---
 
@@ -2505,6 +3940,20 @@ Standing protocol:
   A byte-identical correct translation goes in
   `data/translation_identical_strings.json` with its reason — never use that
   ledger to silence a string you have not translated.
+- Do not put a verification stamp ("Last checked <date>", "Checked <date>") in
+  an `updates/` entry's body prose, and do not let a second one appear anywhere
+  on the page. One verification date per entry, as the last `guide-pill`,
+  agreeing with `datePublished`. See "One verification date per entry, in the
+  pill" above. An "As of <date>" qualifier on a time-bound claim is a different
+  statement and stays inline. `npm run check:updates-verification` gates this;
+  `npm run audit:updates-verification` gives the whole-pillar picture.
+- Do not correct a number on one page of an hreflang cluster without correcting
+  its siblings in the same PR. Structure, language and schema gates all pass a
+  wrong number — that is how seven translations asserted a superseded Unicode
+  18.0 character count for a month. See "Numeric Parity" above.
+  `npm run check:numeric-parity` gates this; `npm run audit:numeric-parity` is
+  the whole-site picture. A deliberate divergence goes in
+  `data/numeric_parity_exceptions.json` with a reason — never to make a PR pass.
 - Do not hand-type, hand-edit, or NFC-normalise a zalgo example string — the
   page's unzalgo widget strips marks by codepoint range and cannot undo a
   precomposed character, so composition silently breaks the card against the
@@ -2521,17 +3970,50 @@ Standing protocol:
   an internal link. Google's spam policy names "automated transformations like
   synonymizing" as scaled content abuse, and the SEO Preservation Gate blocks the
   rest. Replace a generic claim with the fact behind it instead.
+- Do not add an em dash to new or changed copy on a locale whose policy in
+  `data/em_dash_locale_policy.json` is `ban` (English and the thirteen en-dash
+  locales) or `double-dash` (zh-tw, ja, where only the paired `——` is native),
+  and do not add a spaced hyphen standing in for one on an English page —
+  `npm run check:editorial-footprint` exits 1 on an introduced one, in shadow
+  mode too, since 2026-09-02, and names the locale's replacement (a colon, a
+  full stop, a comma pair or parentheses in English; the spaced en dash in the
+  en-dash locales). Do not change a locale's policy on a page by hand or by
+  translating the English rule: it changes only in the ledger, with a native
+  reader or corpus evidence — see `docs/em-dash-policy.md` §4 and §7.
 - Do not "fix" an em dash by editing generated HTML. 6,918 of them are hardcoded
   in 572 spec files and 116 generator scripts, so the edit is undone by the next
-  generator run — the gate names the upstream file when it can find it. And do
-  not run a site-wide purge: the rule is forward-only, and Google's own guidance
-  warns against removing a page element because you heard it was bad.
+  generator run — the gate names the upstream file when it can find it, and the
+  locale specs under `data/library_page_specs/<lang>/` are a second set a `*.json`
+  glob does not see. And do not run a site-wide purge: for pages you leave alone
+  the rule is forward-only, and Google's own guidance warns against removing a
+  page element because you heard it was bad. A **user-directed** removal pass is
+  not a purge and has its own method — rank by shared-page count, fix the
+  template, never the prose; see "Removing em dashes: by leverage, at the source"
+  above.
+- Do not edit a page's copy and leave its em dashes behind, and do not copy-edit
+  an English page without bringing its locale siblings along. Since 2026-09-02 a
+  page whose title, meta description, H1, headings, prose or FAQ text a PR
+  changes must leave with zero em dashes in every measured slot, cards included,
+  and its siblings must already be clean or be cleaned in the same PR — see "Clean
+  on touch" above. "Clean" is read through each page's own locale policy in
+  `data/em_dash_locale_policy.json` (a Russian sibling keeps its dashes; a
+  Chinese one keeps `——`). `npm run check:editorial-footprint` reports both as
+  `em-dash-touched` / `em-dash-sibling`.
 - Do not paste a sentence from one page spec into another. `npm run
   check:spec-sentence-reuse` fails any spec a PR adds or changes that copies a
   sentence 3+ other specs already carry, and the fix is a sentence about *this*
   page — what the symbol is for, where it breaks, what it is confused with — not
   a synonym swap. A line that genuinely must be shared belongs in the generator
   default, where it is one string with one owner.
+- Do not route a locale page's CTA card to an English tool, and do not "finish"
+  the CTA routing by extending it to `<lang>/` pages. No locale build of any
+  destination tool exists; the locale homepage already is that locale's
+  generator. See "Routing the CTA card" above — `scripts/lib/cta_routing.py`
+  returns `None` for every locale path on purpose and a test asserts it.
+- Do not hand-edit a CTA card to change where it points. Change
+  `scripts/lib/cta_routing.py` and run `npm run route:cta-cards -- --write`,
+  which the page generator reads from too — a hand edit drifts the moment the
+  page is regenerated.
 - Do not add an entry to `data/editorial_phrase_bank.json` unilaterally, and
   never to make a page pass. Same bar as `data/translation_parity_exceptions.json`
   and `data/english_parent_exceptions.json`. Every entry carries its measured
@@ -2539,22 +4021,98 @@ Standing protocol:
   and must say so.
 - Do not compare Editorial Footprint Risk scores across locales, or read an
   unmeasured dimension as a zero. Rank on `locale_percentile`.
+- Do not lower an `/updates/` or `/guide/` page's EFR to clear
+  `npm run check:efr` by cutting explanation, evidence, examples, methodology,
+  caveats, tables, instructions or source context — the target is the minimum
+  footprint that still completely satisfies the query, and the gate reports a
+  drop that coincides with a lost fact or link as IMPROVED BY REMOVAL. A page
+  that genuinely needs its footprint goes in `data/efr_exceptions.json` with a
+  reason — never to make a PR pass. See "The EFR Quality Gate" above.
+- Do not cite an external source inline with no Sources block, and do not put a
+  citation in a Sources block with the wrong `rel`. A page that states a fact it
+  did not originate carries one `.source-note` block, in that locale's own word
+  for Sources, holding every citation on the page, with `rel` set by the cited
+  domain's tier in `data/source_authority.json` — a standards body, central bank
+  or platform changelog is followed; press, reference works and forum threads are
+  `nofollow`. See "Source Attribution" above. `npm run check:source-attribution`
+  gates every page a PR touches; `npm run fix:source-attribution -- --write`
+  fixes the mechanical half. A link that is a destination rather than evidence
+  ("install this free font", "sign in here") goes in
+  `data/source_resource_links.json` with a reason — never to make a PR pass.
+- Do not read one failed fetch as link rot, and do not add a `check-link-rot`
+  gate. A live primary source behind bot protection and a host that does not
+  exist look identical in a single request — `cbo.gov.om` answers 503, and a
+  Roblox help article returned 404 once and 403 three times on the same day.
+  `npm run audit:link-rot` classifies by cause and reports rot only after 3
+  consecutive failing runs; it is informational by construction. See "Source
+  Attribution" above and `docs/source-attribution.md` §10. Do not hand-edit
+  `data/source_link_health.json` — a hand-set `lastGood` is a claim nobody
+  checked.
+- Do not hand-write a schema.org `citation` array, and do not hand-edit a
+  Sources block's JSON-LD. It is generated from the block by the fixer precisely
+  so the two cannot drift — the same reason the FAQ schema and the visible FAQ
+  are compared rather than maintained twice.
 - Do not ship a `<lang>/library/` or `<lang>/symbol/` page without registering it
   in that locale's hub — a page no hub links is reachable only from the sitemap.
   See "Library Hub Coverage" above. `npm run check:library-hub-coverage` gates
   every page a PR adds; `npm run audit:library-hub-coverage` is the whole-site
   picture. A page that genuinely belongs outside its hub goes in
   `data/library_hub_exclusions.json` with a reason — never to make a PR pass.
-- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, and
-  do not narrow the five inventory mechanisms to the one a hub you are looking at
-  happens to use. Run `npm run build:library-directory` for English and
-  `npm run build:locale-library-directory` for the locale hubs; the static markup
-  and the runtime markup come from the same code over the same array precisely so
-  they cannot drift.
+- Do not hand-edit the pre-rendered `#libDirectory` block in any library hub, do
+  not hand-edit a hub's entry list, and do not narrow the five inventory
+  mechanisms to the one a hub you are looking at happens to use. Run
+  `npm run build:library-directory` for English and **`node
+  scripts/build-library-hub.js`** for the locale hubs — that one derives entries
+  from each page's own markup, so it needs no hand-help (it has no `npm run`
+  alias, unlike its two siblings). `npm run build:locale-library-directory` is
+  the superseded builder and now skips all 19 locale hubs; it is still gated on,
+  but it is not the tool that fixes one. The static markup and the runtime markup
+  come from the same code over the same source precisely so they cannot drift.
+- Do not ship a page that renders a copy-paste collection grid without its
+  pre-rendered block. All 898 such pages carry one; the section is the page's
+  payload and a crawler that runs no JavaScript sees an empty container without
+  it. See "Collection grids are pre-rendered, not built on load" above.
+  `npm run check:collection-grids` gates every page a PR touches, and
+  `npm run prerender:collection-grids -- --write` is the only fix — never
+  hand-edit a block, and never add a second copy of the markup to a generator:
+  `gridSectionsHTML()` in `symbol-explorer.js` is its one owner, sliced into
+  build-time code by `scripts/lib/collection-grid-engine.js`.
+- Do not resolve a byte-identical locale string by reaching for
+  `data/translation_identical_strings.json` before checking that locale's own
+  pages for a word it already uses. Six collection-grid labels were identical to
+  English (`Vertical` in pt/es/fr/ro, `Inline` in de, `Bullet` in tl) and all six
+  had an attested native alternative on the site. That ledger is for a
+  translation that is *correctly* identical, not for a cognate nobody chose.
+  `npm run audit:locale-attestation -- --locale <code> --strings "…"` answers the
+  question before you add the entry.
+- Do not read an `attested` verdict from `audit:locale-attestation` as "this
+  translation is correct", or compare a spaceless-script locale's score to a
+  Latin one. It measures only that no word is invented; inflection, collocation
+  and register are exactly what it cannot see. See "Locale string attestation"
+  above.
 - Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
   `glob("??")` silently skipped 73 of its pages for as long as that line existed.
   Read the canonical list from `data/locale_qualification_tiers.json` (Python) or
   `scripts/lib/locale-parent-registry.js`'s `LOCALES` (Node).
+- Do not ship a page that renders a copy target without the shared Save/Share
+  modules, and do not add a second implementation of either. Copy, Save, Share
+  and Share-image are one action set: `js/share/share-core.js` and
+  `js/saved/saved-items.js` are their only definitions, and a page that offers
+  Copy loads both. See "Copy, Save, Share, Share-image" above.
+  `npm run check:share-save-tags` gates this site-wide;
+  `npm run inject:share-save-tags` closes any gap in one idempotent run.
+- Do not place the share/save modules after `script.js`, and do not key a
+  runtime init on `document.readyState === "loading"`. Both are false-negative
+  traps specific to `defer`: deferred scripts run in document order and all of
+  them run before `DOMContentLoaded`, so the first breaks the generator outright
+  and the second silently attaches nothing. Both shipped and were caught only by
+  driving a browser.
+- Do not hand-author a UI string for `symbol-explorer.js`'s locale table. Every
+  one already ships translated in `locales/<lang>.json` — run
+  `npm run sync:explorer-strings`, which `npm run check:explorer-strings` gates.
+  And do not "fix" those pages' English buttons by adding `i18n.js` to them: it
+  costs a ~30KB locale fetch on the site's highest-traffic lane to read five
+  strings, which is why the table exists.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable

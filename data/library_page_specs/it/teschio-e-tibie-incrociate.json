@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/teschio-e-tibie-incrociate/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/teschio-e-tibie-incrociate/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
   ],
   "sections": [
     {
@@ -29,8 +37,14 @@
       "h2": "Il Teschio e Tibie Incrociate — ☠",
       "intro": "Il simbolo stesso, nella sua forma testuale semplice e nella presentazione emoji. È lo stesso codepoint, U+2620 — un selettore di variazione finale è tutto ciò che lo trasforma da glifo in bianco e nero a emoji colorata.",
       "symbols": [
-        { "char": "☠", "label": "Teschio e Tibie Incrociate (U+2620)" },
-        { "char": "☠️", "label": "Teschio e Tibie Incrociate, Stile Emoji (U+2620 U+FE0F)" }
+        {
+          "char": "☠",
+          "label": "Teschio e Tibie Incrociate (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Teschio e Tibie Incrociate, Stile Emoji (U+2620 U+FE0F)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "☠ vs. l'Emoji Teschio 💀",
       "intro": "La confusione che vale la pena chiarire: ☠ (teschio e tibie incrociate) e 💀 (teschio semplice) sono caratteri Unicode diversi. 💀 è quello che si usa per \"sono morto\" o per le reazioni da risata sfrenata; ☠ è il simbolo di pericolo e pirateria. Non a caso, l'emoji della bandiera pirata 🏴‍☠️ nasce unendo una bandiera nera proprio a U+2620.",
       "symbols": [
-        { "char": "☠️", "label": "Teschio e Tibie Incrociate (U+2620)" },
-        { "char": "💀", "label": "Teschio (U+1F480)" },
-        { "char": "🏴‍☠️", "label": "Bandiera Pirata (U+1F3F4 U+200D U+2620)" }
+        {
+          "char": "☠️",
+          "label": "Teschio e Tibie Incrociate (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Teschio (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Bandiera Pirata (U+1F3F4 U+200D U+2620)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Simboli di Pericolo e Avvertimento Correlati",
       "intro": "Il teschio e tibie incrociate si trova nel blocco Miscellaneous Symbols di Unicode proprio accanto agli altri segnali di allerta a cui viene associato — ciascuno un codepoint a sé con il proprio significato di pericolo.",
       "symbols": [
-        { "char": "☠", "label": "Teschio e Tibie Incrociate (U+2620)" },
-        { "char": "☢", "label": "Simbolo Radioattivo (U+2622)" },
-        { "char": "☣", "label": "Simbolo Biohazard (U+2623)" },
-        { "char": "⚠", "label": "Simbolo di Avvertimento (U+26A0)" }
+        {
+          "char": "☠",
+          "label": "Teschio e Tibie Incrociate (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Simbolo Radioattivo (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Simbolo Biohazard (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Simbolo di Avvertimento (U+26A0)"
+        }
       ]
     }
   ],

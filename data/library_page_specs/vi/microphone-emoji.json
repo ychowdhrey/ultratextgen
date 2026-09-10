@@ -17,10 +17,22 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/microphone-emoji/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
   ],
   "sections": [
     {
@@ -29,7 +41,10 @@
       "h2": "Emoji Micro",
       "intro": "Chính chiếc micro cầm tay — sẵn sàng để dán ở bất cứ đâu emoji được hỗ trợ.",
       "symbols": [
-        { "char": "🎤", "label": "Micro (U+1F3A4)" }
+        {
+          "char": "🎤",
+          "label": "Micro (U+1F3A4)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Các Emoji Thường Bị Nhầm Lẫn",
       "intro": "Các ký hiệu người ta tìm với kỳ vọng là micro cầm tay, nhưng thực ra là emoji riêng biệt, mã hóa khác.",
       "symbols": [
-        { "char": "🎙️", "label": "Micro Phòng Thu (U+1F399) — micro phát thanh/podcast gắn chân đế" },
-        { "char": "🔊", "label": "Loa Âm Lượng Cao (U+1F50A)" },
-        { "char": "🗣️", "label": "Đầu Đang Nói (U+1F5E3 FE0F)" },
-        { "char": "📢", "label": "Loa Phóng Thanh Công Cộng (U+1F4E2)" }
+        {
+          "char": "🎙️",
+          "label": "Micro Phòng Thu (U+1F399): micro phát thanh/podcast gắn chân đế"
+        },
+        {
+          "char": "🔊",
+          "label": "Loa Âm Lượng Cao (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Đầu Đang Nói (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Loa Phóng Thanh Công Cộng (U+1F4E2)"
+        }
       ]
     },
     {
@@ -50,18 +77,44 @@
       "h2": "Các Emoji Âm Nhạc & Biểu Diễn Đi Kèm",
       "intro": "Các emoji thường xuất hiện cạnh micro trong chú thích về ca hát, buổi hòa nhạc và podcast.",
       "symbols": [
-        { "char": "🎧", "label": "Tai Nghe (U+1F3A7)" },
-        { "char": "🎵", "label": "Nốt Nhạc (U+1F3B5)" },
-        { "char": "🎶", "label": "Các Nốt Nhạc (U+1F3B6)" },
-        { "char": "🎸", "label": "Guitar (U+1F3B8)" },
-        { "char": "🥁", "label": "Trống (U+1F941)" }
+        {
+          "char": "🎧",
+          "label": "Tai Nghe (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Nốt Nhạc (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Các Nốt Nhạc (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Guitar (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Trống (U+1F941)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/object-emojis/", "title": "Ký Hiệu Đồ Vật", "desc": "Mọi emoji vật dụng hằng ngày — công nghệ, gia dụng và văn phòng — bao gồm cả micro, duyệt trong một lưới." },
-    { "href": "/library/emoji-combos/", "title": "Tổ Hợp Emoji", "desc": "Các cặp emoji dựng sẵn cho tiểu sử và chú thích, bao gồm chủ đề âm nhạc và biểu diễn." },
-    { "href": "/library/music-symbols/", "title": "Ký Hiệu Âm Nhạc", "desc": "Ký hiệu nhạc Unicode dạng chữ — ♪ ♫ ♬ — người anh em văn bản của họ nhà emoji âm nhạc." }
+    {
+      "href": "/library/object-emojis/",
+      "title": "Ký Hiệu Đồ Vật",
+      "desc": "Mọi emoji vật dụng hằng ngày — công nghệ, gia dụng và văn phòng — bao gồm cả micro, duyệt trong một lưới."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Tổ Hợp Emoji",
+      "desc": "Các cặp emoji dựng sẵn cho tiểu sử và chú thích, bao gồm chủ đề âm nhạc và biểu diễn."
+    },
+    {
+      "href": "/library/music-symbols/",
+      "title": "Ký Hiệu Âm Nhạc",
+      "desc": "Ký hiệu nhạc Unicode dạng chữ — ♪ ♫ ♬ — người anh em văn bản của họ nhà emoji âm nhạc."
+    }
   ]
 }

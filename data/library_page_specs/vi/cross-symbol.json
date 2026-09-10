@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/cross-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/cross-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cross-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cross-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/cross-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cross-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Thánh Giá Latinh",
       "intro": "Thánh giá Latinh dạng văn bản thuần và phiên bản emoji màu của nó.",
       "symbols": [
-        { "char": "✝", "label": "Thánh Giá Latinh (U+271D)" },
-        { "char": "✝️", "label": "Emoji Thánh Giá Latinh" }
+        {
+          "char": "✝",
+          "label": "Thánh Giá Latinh (U+271D)"
+        },
+        {
+          "char": "✝️",
+          "label": "Emoji Thánh Giá Latinh"
+        }
       ]
     },
     {
@@ -38,12 +53,30 @@
       "h2": "Các Thánh Giá Ki-tô Giáo & Phụng Vụ Khác",
       "intro": "Các biến thể thánh giá dùng trong nhiều truyền thống Ki-tô giáo, mỗi loại là một ký tự Unicode riêng biệt.",
       "symbols": [
-        { "char": "☦", "label": "Thánh Giá Chính Thống Giáo (U+2626)" },
-        { "char": "✞", "label": "Thánh Giá Latinh Trắng Có Bóng (U+271E)" },
-        { "char": "✟", "label": "Thánh Giá Latinh Viền Nét (U+271F)" },
-        { "char": "✠", "label": "Thánh Giá Malta (U+2720)" },
-        { "char": "♰", "label": "Thánh Giá Tây Syriac (U+2670)" },
-        { "char": "♱", "label": "Thánh Giá Đông Syriac (U+2671)" }
+        {
+          "char": "☦",
+          "label": "Thánh Giá Chính Thống Giáo (U+2626)"
+        },
+        {
+          "char": "✞",
+          "label": "Thánh Giá Latinh Trắng Có Bóng (U+271E)"
+        },
+        {
+          "char": "✟",
+          "label": "Thánh Giá Latinh Viền Nét (U+271F)"
+        },
+        {
+          "char": "✠",
+          "label": "Thánh Giá Malta (U+2720)"
+        },
+        {
+          "char": "♰",
+          "label": "Thánh Giá Tây Syriac (U+2670)"
+        },
+        {
+          "char": "♱",
+          "label": "Thánh Giá Đông Syriac (U+2671)"
+        }
       ]
     },
     {
@@ -52,19 +85,49 @@
       "h2": "Các Ký Hiệu Dễ Nhầm Với Thánh Giá",
       "intro": "Những ký hiệu này trông giống thánh giá nhưng mang ý nghĩa hoàn toàn khác — không cái nào là thánh giá Ki-tô giáo.",
       "symbols": [
-        { "char": "†", "label": "Dấu Găm (U+2020) — Chú Thích & Người Đã Khuất" },
-        { "char": "‡", "label": "Dấu Găm Đôi (U+2021)" },
-        { "char": "✕", "label": "Dấu X Phép Nhân (U+2715)" },
-        { "char": "✗", "label": "Dấu X Phiếu Bầu (U+2717) — Từ Chối" },
-        { "char": "⛨", "label": "Thánh Giá Đen Trên Khiên (U+26E8)" }
+        {
+          "char": "†",
+          "label": "Dấu Găm (U+2020): Chú Thích & Người Đã Khuất"
+        },
+        {
+          "char": "‡",
+          "label": "Dấu Găm Đôi (U+2021)"
+        },
+        {
+          "char": "✕",
+          "label": "Dấu X Phép Nhân (U+2715)"
+        },
+        {
+          "char": "✗",
+          "label": "Dấu X Phiếu Bầu (U+2717): Từ Chối"
+        },
+        {
+          "char": "⛨",
+          "label": "Thánh Giá Đen Trên Khiên (U+26E8)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình (☮)", "desc": "Thiết kế năm 1958 của Gerald Holtom, cùng các ký hiệu thiện chí liên quan." },
-    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda (☬)", "desc": "Biểu tượng Sikh giáo, lấy từ cùng thư viện tôn giáo." },
-    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
-    { "href": "/library/cross-x-symbols/", "title": "Ký Hiệu Thánh Giá & X", "desc": "Các dấu hủy bỏ ✕ và ✗ mà thánh giá Latinh thường bị nhầm với." }
+    {
+      "href": "/vi/symbol/peace-sign/",
+      "title": "Ký Hiệu Hòa Bình (☮)",
+      "desc": "Thiết kế năm 1958 của Gerald Holtom, cùng các ký hiệu thiện chí liên quan."
+    },
+    {
+      "href": "/vi/symbol/khanda-symbol/",
+      "title": "Ký Hiệu Khanda (☬)",
+      "desc": "Biểu tượng Sikh giáo, lấy từ cùng thư viện tôn giáo."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Ký Hiệu Tôn Giáo",
+      "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu."
+    },
+    {
+      "href": "/library/cross-x-symbols/",
+      "title": "Ký Hiệu Thánh Giá & X",
+      "desc": "Các dấu hủy bỏ ✕ và ✗ mà thánh giá Latinh thường bị nhầm với."
+    }
   ]
 }

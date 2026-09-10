@@ -25,8 +25,8 @@
       "intro": "La marca en sí y la letra cirílica de la que se construyó. El diseño ganador es la Er mayúscula (Р) con una barra horizontal extra debajo del óvalo — la minúscula р es la que aparecía en la vieja abreviatura «р.».",
       "symbols": [
         { "char": "₽", "label": "Signo del Rublo (U+20BD)" },
-        { "char": "Р", "label": "Letra Cirílica Er Mayúscula (U+0420) — la Base del Signo" },
-        { "char": "р", "label": "Letra Cirílica Er Minúscula (U+0440) — Usada en la Vieja Abreviatura «р.»" }
+        { "char": "Р", "label": "Letra Cirílica Er Mayúscula (U+0420): la Base del Signo" },
+        { "char": "р", "label": "Letra Cirílica Er Minúscula (U+0440): Usada en la Vieja Abreviatura «р.»" }
       ]
     },
     {
@@ -35,11 +35,11 @@
       "h2": "Otros Signos de Moneda Adoptados Recientemente",
       "intro": "El signo del rublo tiene vecinos cercanos en el bloque Currency Symbols de Unicode — un grupo de marcas codificadas solo en la década de 2010, a medida que estados postsoviéticos y otros países le dieron a su moneda un glifo propio. La rupia india, como el rublo, se eligió mediante un concurso público de diseño.",
       "symbols": [
-        { "char": "₹", "label": "Signo de la Rupia India (U+20B9) — Elegido por Concurso Público en 2010" },
-        { "char": "₺", "label": "Signo de la Lira Turca (U+20BA) — Adoptado en 2012" },
-        { "char": "₸", "label": "Signo del Tenge (U+20B8) — Tenge Kazajo" },
-        { "char": "₼", "label": "Signo del Manat (U+20BC) — Manat Azerbaiyano" },
-        { "char": "₾", "label": "Signo del Lari (U+20BE) — Lari Georgiano" }
+        { "char": "₹", "label": "Signo de la Rupia India (U+20B9): Elegido por Concurso Público en 2010" },
+        { "char": "₺", "label": "Signo de la Lira Turca (U+20BA): Adoptado en 2012" },
+        { "char": "₸", "label": "Signo del Tenge (U+20B8): Tenge Kazajo" },
+        { "char": "₼", "label": "Signo del Manat (U+20BC): Manat Azerbaiyano" },
+        { "char": "₾", "label": "Signo del Lari (U+20BE): Lari Georgiano" }
       ]
     },
     {

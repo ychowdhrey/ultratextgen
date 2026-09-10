@@ -96,12 +96,12 @@ a copy fix.
 
 ### The guard
 
-`scripts/lib/printables_parity.py` makes the remaining gap loud. Before writing,
+`scripts/lib/generator_parity.py` makes the remaining gap loud. Before writing,
 each generator diffs its output against the live page and **refuses to overwrite**
 (exit 4) if the live page carries anything the new page lacks, naming the file,
 the missing element, and the pass that owns it. `--force-stale` overrides and
 prints what it is overriding. Verified by probe: a real run now exits 4 with
-nothing written; `npm run test:printables-parity` holds it there with 14
+nothing written; `npm run test:generator-parity` holds it there with 14
 assertions, including the deliberate non-catches (a new page, reordered tags, a
 copy-only edit).
 
@@ -161,6 +161,155 @@ entry, specifically so that mistake cannot be made from the data.
 **Fix:** one generator default plus the 89 specs that hardcode it. Vary the card
 by page family, or give the spec a required field with no default so a
 page-specific line has to be written.
+
+---
+
+## 2a. Acting on §2: the CTA card, routed and instrumented (2026-08-26)
+
+### The framing in §2 above is half wrong, and the correction changes the fix
+
+§2 counts the shared CTA card as template debt on 421 English pages. Re-measured
+site-wide it is bigger than that — **3,951 pages carry a CTA button, and 2,758
+(69.8%) point at a bare homepage**:
+
+| pages | family |
+|---:|---|
+| 1,340 | `library/` |
+| 1,153 | `symbol/` |
+| 100 | `usecase/` |
+| 44 | `guide/` |
+| 34 | `answers/` |
+| 19 | `events/` |
+
+But **the homepage is not a dead end.** `/` and `/<locale>/` *are* the font
+generator, so "Open UltraTextGen →" pointing there is a real tool, not a shrug.
+The 69.8% is "points at the generator", not "points nowhere", and any plan built
+on the second reading would have churned 2,758 pages to fix a problem that size
+does not exist.
+
+The defect is narrower: **pages whose reader has a different next job are sent to
+the generator anyway.** A reader who has just copied `€` off `symbol/euro-sign`
+does not need to restyle text; they need to know whether it fits in the field
+they are pasting into.
+
+### Two blockers found before touching anything
+
+**1. `generate_library_page_from_spec.py` is stale — worse than the printables
+four, not better.** §1a told the next session to run one command and read `git
+status`. Run against a 40-spec sample, **40 of 40 pages regressed**:
+
+| lost | pages |
+|---|---:|
+| static footer markup | 40 |
+| hreflang alternates | 35 |
+| social image tags | 21 |
+
+It had been read as "probably fine" because it emits the Funding Choices tag and
+calls the mesh sync. **The mesh hook does not save it**: that hook runs only when
+`lang != "en"` and only *after* the write, so an English library or symbol page,
+which carries live hreflang alternates pointing at every locale sibling, loses
+them outright.
+
+Fixed by wiring the same guard in, and renaming it: `scripts/lib/printables_parity.py`
+→ **`scripts/lib/generator_parity.py`**, since nothing in it was ever
+printables-specific except the name and it now has five callers. Verified with
+four probes — a real regeneration exits 4 having written nothing, `--force-stale`
+writes and reports what it overrode, `--dry-run` is unaffected, and a brand-new
+page is not blocked.
+
+*(Method note, since it bit twice in this session and CLAUDE.md documents it
+twice already: the first reading of that probe reported `EXIT=0` because the run
+was piped through `head`. `$?` is then head's status. Read the exit code without
+a pipe.)*
+
+**2. The card was not instrumented at all.** No `dataLayer` push, no `gtag` call,
+no click listener on `.cta-btn` or `.cta-card` anywhere in `script.js` or `js/`,
+and no entry in the analytics event registry. There was no way to answer *"what
+does this card convert at"*, and therefore no way to know whether changing it
+helped.
+
+`cta_click` now fires from **`header.js`**, not `script.js` — of the 3,955 pages
+carrying a CTA button, **3,955 load `header.js` and only 148 load `script.js`**;
+instrumenting from `script.js` would have measured 3.7% of the surface and looked
+finished. Payload carries `cta_href`, `cta_destination_type`, `cta_text`,
+`cta_source_family`, `cta_source_locale` and `cta_source_path`. It is
+**dataLayer-only** until a GTM trigger and GA4 tag are created by hand, the same
+manual step `save_style` needed; an empty GA4 report is not evidence of no
+clicks.
+
+Locale detection reads the site's own `NAV` table rather than a `/^[a-z]{2}/`
+regex, because **`/js/` is a real two-letter top-level directory here and is not
+a locale**. Asserted in `header.test.js`.
+
+### What was routed, and what deliberately was not
+
+`scripts/lib/cta_routing.py` is the single owner of the decision and its copy.
+The table is small on purpose — a page moves only where the site has a tool that
+does a job the generator does not:
+
+| source | pages | destination | the reader's next job |
+|---|---:|---|---|
+| `symbol/*` | 88 | `/character-counter/` | just copied one character; will it fit |
+| `library/*kaomoji*`, `*emoticon*` | 30 | `/kaomoji-generator/` | build a face that is not on the page |
+| `library/*combos*` | 96 | `/usecase/bio-font/` | the combo is going in a bio, which has a limit |
+| everything else | — | unchanged | the generator is already the best destination |
+
+**214 pages.** The other 26 EN pages in scope were skipped because someone had
+already pointed their card somewhere specific; those are never reclaimed.
+
+**No locale page routes, and that is not a translation problem — the
+destinations do not exist.** There is no `/fr/character-counter/`, no
+`/es/kaomoji-generator/`, no locale build of any of them (the only match is
+`embed/character-counter`, an embed). Sending a French reader to an English tool
+is exactly what CLAUDE.md's locale-native internal linking rule forbids, and the
+locale homepage already *is* that locale's generator. So 2,285 locale pages keep
+their card, correctly. `route()` returns `None` for every `<lang>/` path, and a
+test asserts it.
+
+### Two design constraints that shaped the implementation
+
+**The copy could not go in the specs — this repo's own gate would have failed
+the PR.** Writing three cards into 214 spec files pastes one sentence into 96
+specs at a time, which is precisely what `check-spec-sentence-reuse.py` (shipped
+hours earlier) exists to fail. That gate's own failure message names the fix:
+*"If a sentence genuinely must be shared, it belongs in the generator default,
+not copied into N specs."* So `cta_routing.py` is that owner, read by **both**
+the generator and the in-place pass, which is why a regenerated page and a live
+page cannot disagree about the card.
+
+**A copied-in default is not an override.** 55 specs "override" `cta` with the
+shared default sentence byte for byte. Honouring that literally produced a routed
+card with a matched heading and button above a paragraph about something else —
+seen on `library/cat-kaomoji`. Routing therefore wins over a value equal to the
+known default, and loses to genuinely page-specific copy.
+
+### The copy states facts, checked against the destination
+
+Per the remediation principle (generic claim → concrete information, never a
+synonym swap), every number is read out of the destination itself, and a test
+reads the limits back out of `js/counter/counterRules.js` so the card cannot
+drift from the tool it describes:
+
+> **Check it against the field you are pasting into.** A Discord nickname stops
+> at 32 characters, an Instagram bio at 150, a TikTok bio at 80, and X weights
+> some characters as two. The counter reads all of them at once.
+
+No em dash appears in any of the new copy; the em dash rule is forward-only.
+
+### What this does and does not claim
+
+**It does not lower the Editorial Footprint Risk score**, and should not be sold
+as doing so. A shared card replaced by three shared cards is still a template —
+`variety` stays near zero. What changed is that the card is now *useful* and
+*measurable*. Saying otherwise would be scoring the metric rather than the site.
+
+**And there is no before/after.** The routing shipped in the same pass as the
+instrumentation, at the user's explicit direction after this was raised, so no
+baseline window exists. What the payload does support is a **cross-sectional**
+read from day one: homepage-pointing buttons still exist in quantity (all 2,285
+locale pages plus every unrouted EN family), so `cta_destination_type` can be
+compared across concurrent traffic. That is weaker than a pre/post and should be
+reported as such.
 
 ---
 

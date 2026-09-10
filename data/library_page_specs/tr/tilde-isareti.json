@@ -21,15 +21,15 @@
       "symbols": [
         {
           "char": "~",
-          "label": "Tilde (U+007E) — Klavye Tuşu"
+          "label": "Tilde (U+007E): Klavye Tuşu"
         },
         {
           "char": "˜",
-          "label": "Small Tilde (U+02DC) — Bağımsız Aralık Düzenleyici"
+          "label": "Small Tilde (U+02DC): Bağımsız Aralık Düzenleyici"
         },
         {
           "char": "̃",
-          "label": "Combining Tilde (U+0303) — Bir Harfin Üzerinde Oturur"
+          "label": "Combining Tilde (U+0303): Bir Harfin Üzerinde Oturur"
         }
       ]
     },
@@ -65,11 +65,11 @@
       "symbols": [
         {
           "char": "∼",
-          "label": "Tilde Operator (U+223C) — 'Benzer'"
+          "label": "Tilde Operator (U+223C): 'Benzer'"
         },
         {
           "char": "≈",
-          "label": "Almost Equal To (U+2248) — 'Yaklaşık Eşit'"
+          "label": "Almost Equal To (U+2248): 'Yaklaşık Eşit'"
         },
         {
           "char": "≅",
@@ -81,7 +81,7 @@
         },
         {
           "char": "~",
-          "label": "Tilde (U+007E) — Yerine Sık Yazılan ASCII Tuşu"
+          "label": "Tilde (U+007E): Yerine Sık Yazılan ASCII Tuşu"
         }
       ]
     }

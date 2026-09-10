@@ -28,9 +28,9 @@
       "h2": "Symbols Often Confused with ℃",
       "intro": "Each of these gets swapped in for ℃, and each is a separate character with its own meaning.",
       "symbols": [
-        { "char": "°", "label": "Degree Sign (U+00B0) — On Its Own" },
+        { "char": "°", "label": "Degree Sign (U+00B0): On Its Own" },
         { "char": "℉", "label": "Degree Fahrenheit (U+2109)" },
-        { "char": "K", "label": "Kelvin Sign (U+212A) — Normalizes to Plain K" },
+        { "char": "K", "label": "Kelvin Sign (U+212A): Normalizes to Plain K" },
         { "char": "C", "label": "Latin Capital C" }
       ]
     },

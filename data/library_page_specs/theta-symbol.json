@@ -20,19 +20,19 @@
       "symbols": [
         {
           "char": "θ",
-          "label": "Greek Small Letter Theta (U+03B8) — The Angle Symbol"
+          "label": "Greek Small Letter Theta (U+03B8): The Angle Symbol"
         },
         {
           "char": "Θ",
-          "label": "Greek Capital Letter Theta (U+0398) — Big-Theta Notation"
+          "label": "Greek Capital Letter Theta (U+0398): Big-Theta Notation"
         },
         {
           "char": "ϑ",
-          "label": "Greek Theta Symbol (U+03D1) — The Open-Loop Math Variant"
+          "label": "Greek Theta Symbol (U+03D1): The Open-Loop Math Variant"
         },
         {
           "char": "ϴ",
-          "label": "Greek Capital Theta Symbol (U+03F4) — The Barred Variant"
+          "label": "Greek Capital Theta Symbol (U+03F4): The Barred Variant"
         }
       ]
     },
@@ -44,19 +44,19 @@
       "symbols": [
         {
           "char": "θ",
-          "label": "Small Theta (U+03B8) — Angle in Trigonometry & Geometry"
+          "label": "Small Theta (U+03B8): Angle in Trigonometry & Geometry"
         },
         {
           "char": "Θ",
-          "label": "Capital Theta (U+0398) — Big-Theta, the Tight Bound"
+          "label": "Capital Theta (U+0398): Big-Theta, the Tight Bound"
         },
         {
           "char": "Ω",
-          "label": "Capital Omega (U+03A9) — Big-Omega, the Lower-Bound Sibling"
+          "label": "Capital Omega (U+03A9): Big-Omega, the Lower-Bound Sibling"
         },
         {
           "char": "ϑ",
-          "label": "Theta Symbol (U+03D1) — The Physics Typesetting Variant"
+          "label": "Theta Symbol (U+03D1): The Physics Typesetting Variant"
         }
       ]
     },

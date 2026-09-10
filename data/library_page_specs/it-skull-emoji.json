@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Teschio",
   "hero_tagline": "💀 nei suoi due significati: quello letterale e quello che oggi si intende quasi sempre.",
   "intro": "Online 💀 non vuol quasi mai dire «morte», ma «non ce la faccio più dal ridere». Questa pagina separa le due letture: prima i teschi veri e propri, poi il contorno della risata, infine i segnali di pericolo. Clicca per copiare.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "core",
@@ -132,6 +132,55 @@
     {
       "h2": "Come il Teschio è Diventato una Risata",
       "body": "Il cambio di significato è recente e ben documentato: intorno al 2020 su TikTok 💀 ha iniziato a voler dire «era così divertente che sono morto», proprio perché 😂 era diventato il marchio di una generazione precedente. Il nome Unicode resta semplicemente «Skull» — il significato che le persone si scambiano non è scritto in nessuna tabella di caratteri. Chi ha bisogno della lettura letterale fa meglio a usare ☠, che quel passaggio non l'ha fatto."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Set di combo",
+    "h2": "Combo di emoji teschio",
+    "intro": "Copia un'intera combo di teschi con un clic e incollala direttamente in un commento, una didascalia o una risposta."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Morto dal ridere",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zona di pericolo",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Modalità pirata",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deceduto del tutto",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teschio di Halloween",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Così divertente che muoio",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Da far gelare il sangue",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP io",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -129,7 +129,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Bu grup ismi oluşturucu ücretsiz ve güvenli mi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Evet — tamamen ücretsiz, üyelik ve uygulama gerektirmez. Her şey tarayıcında işlenir, hiçbir isim verisi sunucuya gönderilmez. Sonuç sadece düz Unicode metni olduğu için her yere kopyalaman güvenlidir."
+        "text": "Evet, tamamen ücretsiz, üyelik ve uygulama gerektirmez. Her şey tarayıcında işlenir, hiçbir isim verisi sunucuya gönderilmez. Sonuç sadece düz Unicode metni olduğu için her yere kopyalaman güvenlidir."
       }
     }
   ]
@@ -205,6 +205,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Grubunun ismini yaz…" maxlength="100">Çevremiz</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+
+  <!-- Accent-aware hint: shows only when the input contains diacritics -->
+  <div class="accent-notice" id="accentNotice" role="note" hidden>
+    <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+    <span class="accent-notice-text">Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href="/guide/fancy-fonts-and-accents/">Hangi stiller Türkçe karakterleri koruyor →</a></span>
+    <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
+  </div>
   <div class="decoration-section"><div class="decoration-label">Sonuca süsleme ekle</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Sürpriz</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Semboller</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emojiler</button><button class="decoration-tab" data-deco-tab="group">Grup</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -281,7 +288,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section">
   <h2>Grup İsmi İçin Çerçeveler &amp; Semboller</h2>
   <p>Çerçeveyi her iki tarafta tek bir sembolle sınırlı tut — 【】, ✦ ya da ♛ küçük bir sohbet listesi önizlemesinde bile temiz okunur. Aynı sembollerin daha fazlasını tek başına görmek, ya da oyun başına bir guild ismi mi istiyorsun? <a href="/tr/library/semboller/">Şekilli Semboller</a> koleksiyonuna ya da <a href="/tr/usecase/free-fire-nick/">Free Fire şekilli nick</a> sayfasına bak — üye başına daha kısa bir tag için.</p>
-  <p>Farklı bir font gövdesi mi istiyorsun? <a href="/tr/kalin-yazi/">Kalın yazı</a>'yı ya da <a href="/tr/sekilli-yazi/">şekilli yazı</a>'yı dene — grubunun ismini yaz, kopyala, sonra bu sayfadaki sembollerle çerçevele.</p>
+  <p>Farklı bir font gövdesi mi istiyorsun? <a href="/tr/kalin-yazi/">Kalın yazı</a>'yı ya da <a href="/tr/">şekilli yazı</a>'yı dene — grubunun ismini yaz, kopyala, sonra bu sayfadaki sembollerle çerçevele.</p>
 </section>
 
 <!-- CTA -->
@@ -343,7 +350,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   </details>
   <details class="faq-item">
     <summary class="faq-question">Bu grup ismi oluşturucu ücretsiz ve güvenli mi?</summary>
-    <p class="faq-answer">Evet — tamamen ücretsiz, üyelik ve uygulama gerektirmez. Her şey tarayıcında işlenir, hiçbir isim verisi sunucuya gönderilmez. Sonuç sadece düz Unicode metni olduğu için her yere kopyalaman güvenlidir.</p>
+    <p class="faq-answer">Evet, tamamen ücretsiz, üyelik ve uygulama gerektirmez. Her şey tarayıcında işlenir, hiçbir isim verisi sunucuya gönderilmez. Sonuç sadece düz Unicode metni olduğu için her yere kopyalaman güvenlidir.</p>
   </details>
 </section>
 
@@ -365,7 +372,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 
 <!-- Symbol explorer -->
 <script src="/symbol-explorer.js" defer></script>

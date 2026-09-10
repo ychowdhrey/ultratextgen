@@ -37,7 +37,7 @@
       "h2": "Symbole Często Mylone ze Znakiem Centa",
       "intro": "Te znaki w praktyce zastępują ¢ — każdy to osobny znak z własnym znaczeniem.",
       "symbols": [
-        { "char": "₵", "label": "Znak Cedi (Ghana) — To Nie Znak Centa" },
+        { "char": "₵", "label": "Znak Cedi (Ghana): To Nie Znak Centa" },
         { "char": "₡", "label": "Znak Colón (Kostaryka / Salwador)" },
         { "char": "¤", "label": "Ogólny Znak Waluty" },
         { "char": "c", "label": "Zwykła Litera C (Popularny Zamiennik Klawiaturowy)" }
@@ -56,7 +56,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-euro/",

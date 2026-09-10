@@ -228,7 +228,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Gibt es einen Generator für Snapchat-Untertitel und Story-Text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja — der UltraTextGen <a href=\"https://ultratextgen.com/de/schriftarten-fuer-snapchat/\">Snapchat-Schrift-Generator</a> funktioniert auch als Untertitel- und Story-Text-Generator. Tippe deine Zeile einmal ein, und er erzeugt dutzende Copy-paste-Unicode-Stile, die du in einen Profil-Untertitel, eine Story-Caption oder eine beliebige Snap-Überlagerung einfügen kannst. <br><br> <strong>Für Profil-Untertitel</strong><br> Der Platz ist knapp, wähle also einen kompakten Stil wie Kapitälchen (ʏᴏᴜʀ sᴜʙᴛɪᴛʟᴇ) oder Kursiv (𝘺𝘰𝘶𝘳 𝘴𝘶𝘣𝘵𝘪𝘵𝘭𝘦). <br><br> <strong>Für Story-Text</strong><br> Fett (𝐒𝐭𝐨𝐫𝐲) liest sich klar vor unruhigen Hintergründen, während verzierter Text (✧ 𝒮𝓉𝑜𝓇𝓎 ✧) aus dem Deko-Panel eine Story kuratiert wirken lässt."
+        "text": "Ja, der UltraTextGen <a href=\"https://ultratextgen.com/de/schriftarten-fuer-snapchat/\">Snapchat-Schrift-Generator</a> funktioniert auch als Untertitel- und Story-Text-Generator. Tippe deine Zeile einmal ein, und er erzeugt dutzende Copy-paste-Unicode-Stile, die du in einen Profil-Untertitel, eine Story-Caption oder eine beliebige Snap-Überlagerung einfügen kannst. <br><br> <strong>Für Profil-Untertitel</strong><br> Der Platz ist knapp, wähle also einen kompakten Stil wie Kapitälchen (ʏᴏᴜʀ sᴜʙᴛɪᴛʟᴇ) oder Kursiv (𝘺𝘰𝘶𝘳 𝘴𝘶𝘣𝘵𝘪𝘵𝘭𝘦). <br><br> <strong>Für Story-Text</strong><br> Fett (𝐒𝐭𝐨𝐫𝐲) liest sich klar vor unruhigen Hintergründen, während verzierter Text (✧ 𝒮𝓉𝑜𝓇𝓎 ✧) aus dem Deko-Panel eine Story kuratiert wirken lässt."
       }
     },
     {
@@ -451,6 +451,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Deinen Text hier eingeben …" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Dein Text enthält Umlaute oder Akzente. Fett, Schreibschrift, Fraktur und die meisten anderen Stile behalten <b>ä</b>, <b>ö</b> und <b>ü</b> jetzt mit dem Zeichen — nur wenige (Kopfüber-Text, und <b>ß</b>, das keine Form mit Zeichen hat) fallen auf einfache Buchstaben zurück. <a href="/guide/fancy-fonts-and-accents/">Welche Stile Umlaute behalten →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Schließen">✕</button>
         </div>
 
         <div class="snapchat-context decoration-section" id="snapchatContext">
@@ -1298,7 +1305,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Ja — der Generator oben auf dieser Seite funktioniert auch als Untertitel- und Story-Text-Generator. Tippe deine Zeile einmal ein, und er erzeugt dutzende Copy-paste-Unicode-Stile, die du in einen Profil-Untertitel, eine Story-Caption oder eine beliebige Snap-Überlagerung einfügen kannst.
+    Ja, der Generator oben auf dieser Seite funktioniert auch als Untertitel- und Story-Text-Generator. Tippe deine Zeile einmal ein, und er erzeugt dutzende Copy-paste-Unicode-Stile, die du in einen Profil-Untertitel, eine Story-Caption oder eine beliebige Snap-Überlagerung einfügen kannst.
     <br><br>
     <strong>Für Profil-Untertitel</strong><br>
     Der Platz ist knapp, wähle also einen kompakten Stil wie Kapitälchen (ʏᴏᴜʀ sᴜʙᴛɪᴛʟᴇ) oder Kursiv (𝘺𝘰𝘶𝘳 𝘴𝘶𝘣𝘵𝘪𝘵𝘭𝘦).
@@ -1421,7 +1428,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <script src="/decorators.js"></script>
     <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer=""></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="snapchat-context.js" defer></script>
 
 

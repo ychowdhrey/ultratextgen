@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/section-sign/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/section-sign/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/section-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/section-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/section-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/section-sign/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Điều Khoản",
       "intro": "Ký hiệu điều khoản, sẵn sàng để dán.",
       "symbols": [
-        { "char": "§", "label": "Ký Hiệu Điều Khoản (U+00A7)" }
+        {
+          "char": "§",
+          "label": "Ký Hiệu Điều Khoản (U+00A7)"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Ký Hiệu Trông Giống Điều Khoản",
       "intro": "Những ký hiệu này có hình dáng gần giống § nhưng mang ý nghĩa hoàn toàn khác.",
       "symbols": [
-        { "char": "¶", "label": "Pilcrow (U+00B6) — đánh dấu một chỗ ngắt đoạn văn, không phải một điều khoản pháp lý" },
-        { "char": "$", "label": "Ký Hiệu Đô La — hình dáng hai nét gạch chéo trông tương tự, nhưng ý nghĩa không liên quan" }
+        {
+          "char": "¶",
+          "label": "Pilcrow (U+00B6): đánh dấu một chỗ ngắt đoạn văn, không phải một điều khoản pháp lý"
+        },
+        {
+          "char": "$",
+          "label": "Ký Hiệu Đô La: hình dáng hai nét gạch chéo trông tương tự, nhưng ý nghĩa không liên quan"
+        }
       ]
     },
     {
@@ -47,17 +65,41 @@
       "h2": "Các Ký Tự Đặc Biệt Khác",
       "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng § trong nội dung về dấu pháp lý và in ấn.",
       "symbols": [
-        { "char": "¶", "label": "Pilcrow" },
-        { "char": "@", "label": "Ký Hiệu At" },
-        { "char": "&", "label": "Ampersand" }
+        {
+          "char": "¶",
+          "label": "Pilcrow"
+        },
+        {
+          "char": "@",
+          "label": "Ký Hiệu At"
+        },
+        {
+          "char": "&",
+          "label": "Ampersand"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn." },
-    { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử." },
-    { "href": "/vi/symbol/ampersand/", "title": "Ampersand (&)", "desc": "Một chữ ghép La Mã cho «et», và tên gọi của nó từ đâu mà có." },
-    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+    {
+      "href": "/vi/symbol/pilcrow/",
+      "title": "Pilcrow (¶)",
+      "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn."
+    },
+    {
+      "href": "/vi/symbol/at-symbol/",
+      "title": "Ký Hiệu At (@)",
+      "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử."
+    },
+    {
+      "href": "/vi/symbol/ampersand/",
+      "title": "Ampersand (&)",
+      "desc": "Một chữ ghép La Mã cho «et», và tên gọi của nó từ đâu mà có."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Tất Cả Ký Tự Đặc Biệt",
+      "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác."
+    }
   ]
 }

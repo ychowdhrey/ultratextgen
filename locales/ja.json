@@ -193,6 +193,22 @@
           "faces": "顔文字"
         }
       }
+    },
+    "formatControl": {
+      "label": "装飾を追加",
+      "groupAriaLabel": "すべてのスタイルに下線または取り消し線を重ねる"
+    },
+    "platformChips": {
+      "all": "どこでも使えます"
+    },
+    "categoryLoad": {
+      "failed": "カテゴリを読み込めませんでした。すべてのフォントを表示しています。"
+    },
+    "stylePreview": {
+      "title": "プレビュー",
+      "titleFor": "{style}のプレビュー",
+      "dialogAriaLabel": "プラットフォームのプレビュー",
+      "closeAriaLabel": "プレビューを閉じる"
     }
   },
   "useCases": {

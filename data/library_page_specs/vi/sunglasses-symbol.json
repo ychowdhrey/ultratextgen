@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/sunglasses-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sunglasses-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/sunglasses-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/sunglasses-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Emoji Kính Râm",
       "intro": "Hai glyph Unicode cốt lõi: mặt cười đeo kính râm, và vật thể kính râm đơn thuần.",
       "symbols": [
-        { "char": "😎", "label": "Mặt Cười Đeo Kính Râm (U+1F60E)" },
-        { "char": "🕶️", "label": "Kính Râm (U+1F576)" }
+        {
+          "char": "😎",
+          "label": "Mặt Cười Đeo Kính Râm (U+1F60E)"
+        },
+        {
+          "char": "🕶️",
+          "label": "Kính Râm (U+1F576)"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Các Gương Mặt Ngầu & Tự Tin Đi Kèm",
       "intro": "Các emoji mang tông tự mãn, tự tin hoặc bất cần tương tự.",
       "symbols": [
-        { "char": "😏", "label": "Mặt Cười Nhếch Mép" },
-        { "char": "🆒", "label": "Nút Cool" },
-        { "char": "💪", "label": "Bắp Tay Gồng" }
+        {
+          "char": "😏",
+          "label": "Mặt Cười Nhếch Mép"
+        },
+        {
+          "char": "🆒",
+          "label": "Nút Cool"
+        },
+        {
+          "char": "💪",
+          "label": "Bắp Tay Gồng"
+        }
       ]
     },
     {
@@ -49,15 +73,32 @@
       "h2": "Kaomoji & Dạng Chữ Thay Thế",
       "intro": "Các cách viết chữ thuần để diễn đạt cùng năng lượng ngầu, đeo kính đó.",
       "symbols": [
-        { "char": "B-)", "label": "Kaomoji Mặt Cười Kính Râm" },
-        { "char": "(⌐■_■)", "label": "Kaomoji Deal With It" }
+        {
+          "char": "B-)",
+          "label": "Kaomoji Mặt Cười Kính Râm"
+        },
+        {
+          "char": "(⌐■_■)",
+          "label": "Kaomoji Deal With It"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/snapchat-symbols/", "title": "Ký Hiệu & Emoji Snapchat", "desc": "Ký hiệu tiểu sử Snapchat để sao chép và dán, cùng lời giải thích đầy đủ về Friend Emoji." },
-    { "href": "/library/sunglasses-emoji/", "title": "Emoji & Kaomoji Kính Râm", "desc": "Trọn bộ sưu tập emoji kính râm ngầu và tự tin cùng các tổ hợp." },
-    { "href": "/vi/symbol/snapchat-heart-colors/", "title": "Màu Trái Tim Snapchat", "desc": "Mỗi màu trái tim cạnh tên bạn bè có ý nghĩa gì trên Snapchat." }
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Ký Hiệu & Emoji Snapchat",
+      "desc": "Ký hiệu tiểu sử Snapchat để sao chép và dán, cùng lời giải thích đầy đủ về Friend Emoji."
+    },
+    {
+      "href": "/library/sunglasses-emoji/",
+      "title": "Emoji & Kaomoji Kính Râm",
+      "desc": "Trọn bộ sưu tập emoji kính râm ngầu và tự tin cùng các tổ hợp."
+    },
+    {
+      "href": "/vi/symbol/snapchat-heart-colors/",
+      "title": "Màu Trái Tim Snapchat",
+      "desc": "Mỗi màu trái tim cạnh tên bạn bè có ý nghĩa gì trên Snapchat."
+    }
   ]
 }

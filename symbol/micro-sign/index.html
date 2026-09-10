@@ -168,7 +168,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Are µ and μ the same character?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "<p>No — they're visually identical but Unicode gives them different code points (U+00B5 for the micro sign, U+03BC for Greek mu), and the difference can silently break search, regex matching, and string comparisons even though nothing looks wrong on screen.</p>"
+        "text": "<p>No, they're visually identical but Unicode gives them different code points (U+00B5 for the micro sign, U+03BC for Greek mu), and the difference can silently break search, regex matching, and string comparisons even though nothing looks wrong on screen.</p>"
       }
     },
     {
@@ -176,7 +176,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Is there a visible difference between µ and μ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "<p>No — in virtually every font they render as the same glyph. The difference is entirely at the character-encoding level, invisible until code, search, or file-matching tools are involved.</p>"
+        "text": "<p>No, in virtually every font they render as the same glyph. The difference is entirely at the character-encoding level, invisible until code, search, or file-matching tools are involved.</p>"
       }
     }
   ]
@@ -321,7 +321,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Are µ and μ the same character?</button>
     <div class="faq-answer">
-      <p>No — they're visually identical but Unicode gives them different code points (U+00B5 for the micro sign, U+03BC for Greek mu), and the difference can silently break search, regex matching, and string comparisons even though nothing looks wrong on screen.</p>
+      <p>No, they're visually identical but Unicode gives them different code points (U+00B5 for the micro sign, U+03BC for Greek mu), and the difference can silently break search, regex matching, and string comparisons even though nothing looks wrong on screen.</p>
     </div>
   </div>
   <div class="faq-item">
@@ -339,7 +339,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="faq-item">
     <button class="faq-question" type="button">Is there a visible difference between µ and μ?</button>
     <div class="faq-answer">
-      <p>No — in virtually every font they render as the same glyph. The difference is entirely at the character-encoding level, invisible until code, search, or file-matching tools are involved.</p>
+      <p>No, in virtually every font they render as the same glyph. The difference is entirely at the character-encoding level, invisible until code, search, or file-matching tools are involved.</p>
     </div>
   </div>
 </section>
@@ -354,9 +354,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <!-- CTA -->
 <div class="cta-card">
-  <h3>Transform text with Unicode fonts</h3>
-  <p>Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.</p>
-  <a href="https://ultratextgen.com/" class="cta-btn">Open UltraTextGen →</a>
+  <h3>Check it against the field you are pasting into</h3>
+  <p>A Discord nickname stops at 32 characters, an Instagram bio at 150, a TikTok bio at 80, and X weights some characters as two. The UltraTextGen counter reads all of them at once, and counts a multi-codepoint Unicode emoji the way each platform actually bills it.</p>
+  <a href="/character-counter/" class="cta-btn">Open the character counter →</a>
 </div>
 
 <!-- RELATED -->
@@ -398,6 +398,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 

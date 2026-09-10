@@ -93,7 +93,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Does strikethrough work differently from bold in a text generator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — they work in completely different ways. <br><br> <strong>Bold</strong> usually replaces each letter with a different special character. For example, plain \"Test\" becomes 𝐓𝐞𝐬𝐭 — the actual characters change. <br><br> <strong>Strikethrough</strong> does not replace anything. It simply adds an invisible overlay mark after every existing character. For example, plain \"Test\" becomes T̶e̶s̶t̶ — the original letters stay exactly the same; only the line is added on top. <br><br> Because strikethrough is an overlay, it works on top of almost any text — including bold text, non-English scripts, emojis, or even numbers and symbols. You can strikethrough any language (Arabic, Hindi, Chinese, Russian, etc.) because the overlay works on any script, while bold replacement only exists for certain alphabets. Try it yourself at <a href=\"https://ultratextgen.com\">UltraTextGen</a> — just paste your text and see it striked through instantly."
+        "text": "Yes, they work in completely different ways. <br><br> <strong>Bold</strong> usually replaces each letter with a different special character. For example, plain \"Test\" becomes 𝐓𝐞𝐬𝐭 — the actual characters change. <br><br> <strong>Strikethrough</strong> does not replace anything. It simply adds an invisible overlay mark after every existing character. For example, plain \"Test\" becomes T̶e̶s̶t̶ — the original letters stay exactly the same; only the line is added on top. <br><br> Because strikethrough is an overlay, it works on top of almost any text — including bold text, non-English scripts, emojis, or even numbers and symbols. You can strikethrough any language (Arabic, Hindi, Chinese, Russian, etc.) because the overlay works on any script, while bold replacement only exists for certain alphabets. Try it yourself at <a href=\"https://ultratextgen.com\">UltraTextGen</a> — just paste your text and see it striked through instantly."
       }
     },
     {
@@ -259,6 +259,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
         </div>
 
         <!-- Decoration Selector -->
@@ -632,7 +639,7 @@ Just type your Hindi sentence using English letters (like “Aaj mausam bahut ac
       </svg>
     </button>
     <div class="faq-answer">
-      Yes — they work in completely different ways.
+      Yes, they work in completely different ways.
       <br><br>
       <strong>Bold</strong> usually replaces each letter with a different special
       character. For example, plain "Test" becomes 𝐓𝐞𝐬𝐭 — the actual characters change.
@@ -747,7 +754,10 @@ Just type your Hindi sentence using English letters (like “Aaj mausam bahut ac
 
   <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 
 
 

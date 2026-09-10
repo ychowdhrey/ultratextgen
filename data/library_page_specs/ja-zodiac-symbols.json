@@ -6,7 +6,7 @@
   "hero_h1": "星座 記号",
   "hero_tagline": "12星座の記号を Unicode で。惑星、十二支、アスペクト記号もあわせて一覧にしました。",
   "intro": "星座記号は画像ではなく Unicode の文字なので、特別なフォントは要りません。Instagram のプロフィール、Discord の名前、メモ、メッセージにそのまま貼れます。タップするとコピーされます。",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "western",
@@ -284,6 +284,30 @@
     {
       "h2": "星座記号がそもそも文字である理由",
       "body": "星座記号と惑星記号は天文学や錬金術の写本から来ていて、何世紀も文字と同じように組版されてきました。Unicode に入ったのもその延長で、装飾のためではなく天文学の文献を組めるようにするためです。♈ が端末によって黒い記号になったりカラー絵文字になったりするのも同じ理由で、文字として扱うか絵として扱うかの差にすぎません。"
+    }
+  ],
+  "collection_section": {
+    "id": "zodiac-collections",
+    "label": "星座コレクション",
+    "h2": "星座・占星術セット",
+    "intro": "12星座をまとめて、さらに現代占星術の10天体を標準の順序でコピーできます。"
+  },
+  "collection_container_id": "zodiacCollectionsContainer",
+  "collections": [
+    {
+      "name": "西洋十二星座（牡羊座→魚座）",
+      "flags": ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "十二支（子→亥）",
+      "flags": ["🐀", "🐂", "🐅", "🐇", "🐉", "🐍", "🐎", "🐐", "🐒", "🐓", "🐕", "🐖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "現代占星術の10天体",
+      "flags": ["☉", "☽", "☿", "♀", "♂", "♃", "♄", "♅", "♆", "♇"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

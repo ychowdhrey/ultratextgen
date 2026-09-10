@@ -16,13 +16,34 @@
       "h2": "Downcast Kaomoji",
       "intro": "Quiet, low-energy faces for a plain bad mood.",
       "symbols": [
-        { "char": "(´･_･`)", "label": "Uneasy" },
-        { "char": "(._.)", "label": "Down" },
-        { "char": "(ｰ_ｰ)", "label": "Weary" },
-        { "char": "(´-ω-`)", "label": "Deflated" },
-        { "char": "( ˘･з･)", "label": "Meh" },
-        { "char": "(´ω`)", "label": "Glum" },
-        { "char": "(－‸ლ)", "label": "Facepalm" }
+        {
+          "char": "(´･_･`)",
+          "label": "Uneasy"
+        },
+        {
+          "char": "(._.)",
+          "label": "Down"
+        },
+        {
+          "char": "(ｰ_ｰ)",
+          "label": "Weary"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Deflated"
+        },
+        {
+          "char": "( ˘･з･)",
+          "label": "Meh"
+        },
+        {
+          "char": "(´ω`)",
+          "label": "Glum"
+        },
+        {
+          "char": "(－‸ლ)",
+          "label": "Facepalm"
+        }
       ]
     },
     {
@@ -31,12 +52,30 @@
       "h2": "Disappointed & Sighing Kaomoji",
       "intro": "Let-down and sighing faces for when things fall through.",
       "symbols": [
-        { "char": "(︶︹︶)", "label": "Disappointed" },
-        { "char": "( ´Д`)", "label": "Big Sigh" },
-        { "char": "(=____=)", "label": "Drained" },
-        { "char": "┐(´～`)┌", "label": "Resigned Shrug" },
-        { "char": "(－_－)", "label": "Unimpressed" },
-        { "char": "(´ﾟдﾟ`)", "label": "Dismayed" }
+        {
+          "char": "(︶︹︶)",
+          "label": "Disappointed"
+        },
+        {
+          "char": "( ´Д`)",
+          "label": "Big Sigh"
+        },
+        {
+          "char": "(=____=)",
+          "label": "Drained"
+        },
+        {
+          "char": "┐(´～`)┌",
+          "label": "Resigned Shrug"
+        },
+        {
+          "char": "(－_－)",
+          "label": "Unimpressed"
+        },
+        {
+          "char": "(´ﾟдﾟ`)",
+          "label": "Dismayed"
+        }
       ]
     },
     {
@@ -45,11 +84,26 @@
       "h2": "Lonely & Gloomy Kaomoji",
       "intro": "Withdrawn, blue faces for feeling alone.",
       "symbols": [
-        { "char": "(｡•́︿•̀｡)", "label": "Sad Frown" },
-        { "char": "(っ- ‸ - ς)", "label": "Sulking" },
-        { "char": "(´ᗒ﹏ᗕ`)", "label": "Distressed" },
-        { "char": "⊙︿⊙", "label": "Blue" },
-        { "char": "( ╥﹏╥)", "label": "Welling Up" }
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Sad Frown"
+        },
+        {
+          "char": "(っ- ‸ - ς)",
+          "label": "Sulking"
+        },
+        {
+          "char": "(´ᗒ﹏ᗕ`)",
+          "label": "Distressed"
+        },
+        {
+          "char": "⊙︿⊙",
+          "label": "Blue"
+        },
+        {
+          "char": "( ╥﹏╥)",
+          "label": "Welling Up"
+        }
       ]
     },
     {
@@ -58,19 +112,49 @@
       "h2": "Hurt & Heartsore Kaomoji",
       "intro": "Aching, wounded faces for a heavier kind of sad.",
       "symbols": [
-        { "char": "(◞‸◟)", "label": "Downhearted" },
-        { "char": "(⌣́_⌣̀)", "label": "Hurt" },
-        { "char": "(μ_μ)", "label": "Sorrowful" },
-        { "char": "(╯︵╰,)", "label": "Broken" },
-        { "char": "(๑◕︵◕๑)", "label": "Wounded" }
+        {
+          "char": "(◞‸◟)",
+          "label": "Downhearted"
+        },
+        {
+          "char": "(⌣́_⌣̀)",
+          "label": "Hurt"
+        },
+        {
+          "char": "(μ_μ)",
+          "label": "Sorrowful"
+        },
+        {
+          "char": "(╯︵╰,)",
+          "label": "Broken"
+        },
+        {
+          "char": "(๑◕︵◕๑)",
+          "label": "Wounded"
+        }
       ]
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
-    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
-    { "href": "/library/crying-kaomoji/", "title": "Crying & Sad Kaomoji", "desc": "Tearful, sobbing text faces for when the sadness spills over." },
-    { "href": "/library/sad-emoji/", "title": "Sad Emoji", "desc": "Downcast and crying emoji to copy and paste for any low moment." },
-    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful text faces for the opposite mood." }
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/crying-kaomoji/",
+      "title": "Crying & Sad Kaomoji",
+      "desc": "Tearful, sobbing text faces for when the sadness spills over."
+    },
+    {
+      "href": "/library/sad-emoji/",
+      "title": "Sad Emoji",
+      "desc": "Downcast and crying emoji to copy and paste for any low moment."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful text faces for the opposite mood."
+    }
   ]
 }

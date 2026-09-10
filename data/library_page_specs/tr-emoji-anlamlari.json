@@ -36,7 +36,7 @@
         },
         {
           "char": "😐",
-          "label": "İfadesiz — soğuk, etkilenmemiş"
+          "label": "İfadesiz: soğuk, etkilenmemiş"
         },
         {
           "char": "🙄",
@@ -44,7 +44,7 @@
         },
         {
           "char": "😤",
-          "label": "Burnundan soluma — hırs ya da öfke"
+          "label": "Burnundan soluma: hırs ya da öfke"
         }
       ]
     },
@@ -68,7 +68,7 @@
         },
         {
           "char": "🙏",
-          "label": "Teşekkür, rica — dua eden eller"
+          "label": "Teşekkür, rica: dua eden eller"
         },
         {
           "char": "✌️",
@@ -96,43 +96,43 @@
       "symbols": [
         {
           "char": "❤️",
-          "label": "Kırmızı — aşk, tutku"
+          "label": "Kırmızı: aşk, tutku"
         },
         {
           "char": "🧡",
-          "label": "Turuncu — sıcaklık, dostluk"
+          "label": "Turuncu: sıcaklık, dostluk"
         },
         {
           "char": "💛",
-          "label": "Sarı — mutluluk, arkadaşlık"
+          "label": "Sarı: mutluluk, arkadaşlık"
         },
         {
           "char": "💚",
-          "label": "Yeşil — doğa, sağlık, kıskançlık"
+          "label": "Yeşil: doğa, sağlık, kıskançlık"
         },
         {
           "char": "💙",
-          "label": "Mavi — güven, sadakat, platonik"
+          "label": "Mavi: güven, sadakat, platonik"
         },
         {
           "char": "💜",
-          "label": "Mor — şefkat, gizem"
+          "label": "Mor: şefkat, gizem"
         },
         {
           "char": "🖤",
-          "label": "Siyah — kara mizah, yas"
+          "label": "Siyah: kara mizah, yas"
         },
         {
           "char": "🤍",
-          "label": "Beyaz — saflık, huzur"
+          "label": "Beyaz: saflık, huzur"
         },
         {
           "char": "🤎",
-          "label": "Kahverengi — sıcaklık, toprak"
+          "label": "Kahverengi: sıcaklık, toprak"
         },
         {
           "char": "💗",
-          "label": "Pembe — sevgi, büyüyen hisler"
+          "label": "Pembe: sevgi, büyüyen hisler"
         }
       ]
     },
@@ -176,27 +176,27 @@
       "symbols": [
         {
           "char": "🍑",
-          "label": "Şeftali — imalı kullanımı yaygın"
+          "label": "Şeftali: imalı kullanımı yaygın"
         },
         {
           "char": "🍆",
-          "label": "Patlıcan — imalı kullanımı yaygın"
+          "label": "Patlıcan: imalı kullanımı yaygın"
         },
         {
           "char": "🔥",
-          "label": "Ateş — çok iyi, çok yakışmış"
+          "label": "Ateş: çok iyi, çok yakışmış"
         },
         {
           "char": "💀",
-          "label": "Kurukafa — 'öldüm' yani çok güldüm"
+          "label": "Kurukafa: 'öldüm' yani çok güldüm"
         },
         {
           "char": "🤡",
-          "label": "Palyaço — kendini rezil etmek"
+          "label": "Palyaço: kendini rezil etmek"
         },
         {
           "char": "🧢",
-          "label": "Şapka — yalan, 'no cap'"
+          "label": "Şapka: yalan, 'no cap'"
         }
       ]
     }

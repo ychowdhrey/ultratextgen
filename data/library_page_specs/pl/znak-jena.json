@@ -29,7 +29,7 @@
       "intro": "Właściwy unicode'owy znak jena, gotowy do wklejenia, oraz jego wariant pełnej szerokości używany w składzie wschodnioazjatyckim.",
       "symbols": [
         { "char": "¥", "label": "Znak Jena (U+00A5)" },
-        { "char": "￥", "label": "Znak Jena Pełnej Szerokości (U+FFE5) — używany w składzie CJK" }
+        { "char": "￥", "label": "Znak Jena Pełnej Szerokości (U+FFE5): używany w składzie CJK" }
       ]
     },
     {
@@ -38,7 +38,7 @@
       "h2": "Symbole Podobne do Znaku Jena",
       "intro": "Znaki, z którymi bywa mylony znak jena.",
       "symbols": [
-        { "char": "€", "label": "Znak Euro (U+20AC) — osobny, celowo zaprojektowany symbol waluty" }
+        { "char": "€", "label": "Znak Euro (U+20AC): osobny, celowo zaprojektowany symbol waluty" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/symbol/znak-dolara/",

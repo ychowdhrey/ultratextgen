@@ -20,11 +20,11 @@
       "symbols": [
         {
           "char": "Ω",
-          "label": "Ohm Sign (U+2126) — Electrical Resistance"
+          "label": "Ohm Sign (U+2126): Electrical Resistance"
         },
         {
           "char": "ω",
-          "label": "Greek Small Omega (ω) — Angular Frequency"
+          "label": "Greek Small Omega (ω): Angular Frequency"
         }
       ]
     },
@@ -36,11 +36,11 @@
       "symbols": [
         {
           "char": "Ω",
-          "label": "Ohm Sign (U+2126) — the Legacy Codepoint"
+          "label": "Ohm Sign (U+2126): the Legacy Codepoint"
         },
         {
           "char": "Ω",
-          "label": "Greek Capital Omega (U+03A9) — What Unicode Prefers"
+          "label": "Greek Capital Omega (U+03A9): What Unicode Prefers"
         }
       ]
     },
@@ -52,11 +52,11 @@
       "symbols": [
         {
           "char": "℧",
-          "label": "Mho Sign (U+2127) — “Ohm” Reversed"
+          "label": "Mho Sign (U+2127): “Ohm” Reversed"
         },
         {
           "char": "S",
-          "label": "Siemens (S) — the Modern SI Unit of Conductance"
+          "label": "Siemens (S): the Modern SI Unit of Conductance"
         }
       ]
     },
@@ -76,7 +76,7 @@
         },
         {
           "char": "∿",
-          "label": "Sine Wave (U+223F) — Alternating Current"
+          "label": "Sine Wave (U+223F): Alternating Current"
         }
       ]
     }

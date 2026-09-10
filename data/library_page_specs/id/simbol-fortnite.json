@@ -29,10 +29,10 @@
         { "char": "ッ", "label": "Katakana Tsu Kecil" },
         { "char": "ソ", "label": "Katakana So" },
         { "char": "ン", "label": "Katakana N" },
-        { "char": "乂", "label": "Yi — Tanda Pedang Silang" },
-        { "char": "亗", "label": "Sui — Tanda Tingkat Bertumpuk" },
+        { "char": "乂", "label": "Yi: Tanda Pedang Silang" },
+        { "char": "亗", "label": "Sui: Tanda Tingkat Bertumpuk" },
         { "char": "々", "label": "Tanda Pengulangan Ideografik" },
-        { "char": "彡", "label": "San — Tiga Goresan" }
+        { "char": "彡", "label": "San: Tiga Goresan" }
       ]
     },
     {
@@ -41,16 +41,16 @@
       "h2": "Kanji Power Buat Nama",
       "intro": "Satu kanji dengan makna berat — satu karakter yang bawa satu vibe utuh.",
       "symbols": [
-        { "char": "鬼", "label": "Oni — Iblis" },
-        { "char": "龍", "label": "Ryu — Naga" },
-        { "char": "神", "label": "Kami — Tuhan/Dewa" },
-        { "char": "王", "label": "O — Raja" },
-        { "char": "影", "label": "Kage — Bayangan" },
-        { "char": "刃", "label": "Ha — Bilah" },
-        { "char": "雷", "label": "Kaminari — Petir" },
-        { "char": "火", "label": "Hi — Api" },
-        { "char": "風", "label": "Kaze — Angin" },
-        { "char": "闇", "label": "Yami — Kegelapan" }
+        { "char": "鬼", "label": "Oni: Iblis" },
+        { "char": "龍", "label": "Ryu: Naga" },
+        { "char": "神", "label": "Kami: Tuhan/Dewa" },
+        { "char": "王", "label": "O: Raja" },
+        { "char": "影", "label": "Kage: Bayangan" },
+        { "char": "刃", "label": "Ha: Bilah" },
+        { "char": "雷", "label": "Kaminari: Petir" },
+        { "char": "火", "label": "Hi: Api" },
+        { "char": "風", "label": "Kaze: Angin" },
+        { "char": "闇", "label": "Yami: Kegelapan" }
       ]
     },
     {

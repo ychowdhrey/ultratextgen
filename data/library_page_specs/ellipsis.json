@@ -29,7 +29,7 @@
       "h2": "The Ellipsis vs. Three Periods",
       "intro": "Typing three full stops looks close but is three separate characters — they can be split across a line break, they space unevenly in justified text, and find-and-replace treats them as different strings. The vertical and diagonal dot variants below are separate mathematical characters again, not styling choices.",
       "symbols": [
-        { "char": ".", "label": "Full Stop (U+002E) — Typed Three Times for a Fake Ellipsis" },
+        { "char": ".", "label": "Full Stop (U+002E): Typed Three Times for a Fake Ellipsis" },
         { "char": "‥", "label": "Two Dot Leader (U+2025)" },
         { "char": "⋮", "label": "Vertical Ellipsis (U+22EE)" },
         { "char": "⋰", "label": "Up Right Diagonal Ellipsis (U+22F0)" },
@@ -42,8 +42,8 @@
       "h2": "The CJK Six-Dot Ellipsis",
       "intro": "Chinese and Japanese typography writes the ellipsis as six dots across two character widths, produced by doubling the character rather than by any dedicated codepoint. Traditional Chinese usage generally centres the dots (⋯⋯); Simplified Chinese and Japanese more often sit them on the baseline (……).",
       "symbols": [
-        { "char": "……", "label": "Doubled Horizontal Ellipsis — Baseline Six-Dot Form" },
-        { "char": "⋯⋯", "label": "Doubled Midline Ellipsis — Centred Six-Dot Form" }
+        { "char": "……", "label": "Doubled Horizontal Ellipsis: Baseline Six-Dot Form" },
+        { "char": "⋯⋯", "label": "Doubled Midline Ellipsis: Centred Six-Dot Form" }
       ]
     }
   ],

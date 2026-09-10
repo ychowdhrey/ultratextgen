@@ -38,7 +38,7 @@
       "h2": "Lambda jako Symbol Wyzwolenia Gejowskiego",
       "intro": "Nowojorski Gay Activists Alliance przyjął małe λ w 1970 roku, a Międzynarodowy Kongres Praw Gejowskich ogłosił ją w 1974 roku międzynarodowym symbolem praw gejów i lesbijek — jeden z najwcześniejszych emblematów tego ruchu. Wklej ją obok symboli dumy, obok których dziś stoi.",
       "symbols": [
-        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB) — Znak Wyzwolenia Gejowskiego" },
+        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB): Znak Wyzwolenia Gejowskiego" },
         { "char": "🏳️‍🌈", "label": "Flaga Tęczowa" },
         { "char": "⚧", "label": "Symbol Transgender (U+26A7)" }
       ]
@@ -49,9 +49,9 @@
       "h2": "Lambda w Kodzie, Matematyce i Fizyce",
       "intro": "Techniczne życie tej litery. Małe λ oznacza funkcje anonimowe — od rachunku lambda Alonzo Churcha, przez słowo kluczowe lambda w Pythonie, aż po AWS Lambda — i oznacza długość fali w fizyce; wielkie Λ to stała kosmologiczna modelu ΛCDM.",
       "symbols": [
-        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB) — Długość Fali i Rachunek Lambda" },
-        { "char": "Λ", "label": "Wielka Grecka Litera Lambda (U+039B) — Stała Kosmologiczna" },
-        { "char": "𝜆", "label": "Matematyczna Kursywna Lambda (U+1D706) — Wariant Równaniowy" }
+        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB): Długość Fali i Rachunek Lambda" },
+        { "char": "Λ", "label": "Wielka Grecka Litera Lambda (U+039B): Stała Kosmologiczna" },
+        { "char": "𝜆", "label": "Matematyczna Kursywna Lambda (U+1D706): Wariant Równaniowy" }
       ]
     },
     {
@@ -68,7 +68,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

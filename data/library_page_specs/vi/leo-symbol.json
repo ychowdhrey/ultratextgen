@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/leo-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/leo-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/leo-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/leo-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/leo-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/leo-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Sư Tử",
       "intro": "Ký hiệu Unicode của cung Sư Tử, sẵn sàng để dán.",
       "symbols": [
-        { "char": "♌", "label": "Ký Hiệu Sư Tử" },
-        { "char": "♌️", "label": "Ký Hiệu Sư Tử (Dạng Emoji)" }
+        {
+          "char": "♌",
+          "label": "Ký Hiệu Sư Tử"
+        },
+        {
+          "char": "♌️",
+          "label": "Ký Hiệu Sư Tử (Dạng Emoji)"
+        }
       ]
     },
     {
@@ -38,8 +53,14 @@
       "h2": "Hành Tinh Chủ Quản & Nguyên Tố",
       "intro": "Thiên thể và nguyên tố cổ điển gắn liền với Sư Tử theo truyền thống chiêm tinh.",
       "symbols": [
-        { "char": "☉", "label": "Mặt Trời (Hành Tinh Chủ Quản)" },
-        { "char": "🜂", "label": "Lửa (Nguyên Tố, Ký Hiệu Giả Kim)" }
+        {
+          "char": "☉",
+          "label": "Mặt Trời (Hành Tinh Chủ Quản)"
+        },
+        {
+          "char": "🜂",
+          "label": "Lửa (Nguyên Tố, Ký Hiệu Giả Kim)"
+        }
       ]
     },
     {
@@ -48,17 +69,40 @@
       "h2": "Thêm Ký Hiệu Cung Hoàng Đạo & Thiên Thể",
       "intro": "Các thiên thể khác và cung đối diện của Sư Tử trên vòng hoàng đạo (Bảo Bình).",
       "symbols": [
-        { "char": "☉", "label": "Mặt Trời" },
-        { "char": "☽", "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)" },
-        { "char": "⛎", "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)" },
-        { "char": "♒", "label": "Bảo Bình (Cung Đối Diện)" }
+        {
+          "char": "☉",
+          "label": "Mặt Trời"
+        },
+        {
+          "char": "☽",
+          "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)"
+        },
+        {
+          "char": "⛎",
+          "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)"
+        },
+        {
+          "char": "♒",
+          "label": "Bảo Bình (Cung Đối Diện)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu." },
-    { "href": "/vi/symbol/aquarius-symbol/", "title": "Ký Hiệu Bảo Bình", "desc": "Cung đối diện của Sư Tử, nằm thẳng phía bên kia vòng hoàng đạo." },
-    { "href": "/vi/symbol/taurus-symbol/", "title": "Ký Hiệu Kim Ngưu", "desc": "Có lẽ là chòm sao hoàng đạo được quan sát liên tục lâu đời nhất." }
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Ký Hiệu Cung Hoàng Đạo",
+      "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu."
+    },
+    {
+      "href": "/vi/symbol/aquarius-symbol/",
+      "title": "Ký Hiệu Bảo Bình",
+      "desc": "Cung đối diện của Sư Tử, nằm thẳng phía bên kia vòng hoàng đạo."
+    },
+    {
+      "href": "/vi/symbol/taurus-symbol/",
+      "title": "Ký Hiệu Kim Ngưu",
+      "desc": "Có lẽ là chòm sao hoàng đạo được quan sát liên tục lâu đời nhất."
+    }
   ]
 }

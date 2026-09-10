@@ -49,7 +49,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Discord Fonts — Change Your Name Font, Copy &amp; Paste, No Nitro | UltraTextGen</title>
+  <title>Discord Fonts: Copy &amp; Paste Name Fonts, No Nitro | UltraTextGen</title>
   <meta name="description" content="Turn your name into 𝗯𝗼𝗹𝗱, 𝘪𝘵𝘢𝘭𝘪𝘤, or 𝒸𝓊𝓇𝓈𝒾𝓋𝑒 text in seconds. Free Discord font generator — 100+ copy-and-paste Unicode fonts for display names, server nicknames, bios, and chat. No Nitro required.">
   <link rel="canonical" href="https://ultratextgen.com/discord/">
 
@@ -332,6 +332,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Your text has accent marks. Bold, script, gothic and most other styles now keep <b>é</b> and <b>ữ</b> styled — a few (upside-down, and letters like <b>ł đ ø ß</b> with no accent form) still fall back to plain. <a href="/guide/fancy-fonts-and-accents/">See which styles handle accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+        </div>
+
         <!-- Discord Context Selector -->
         <div class="discord-context decoration-section" id="discordContext">
           <div class="discord-context-label decoration-label">
@@ -552,7 +559,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <h2>Discord Fonts Without Nitro</h2>
 
   <div class="editorial-block">
-    <p>No — Unicode fonts aren't a Nitro feature. Every style on this page works on free, classic, and Nitro accounts alike, since the styled characters are standard Unicode, not a Discord-rendered effect. Nitro's own <em>Display Name Styles</em> are a separate, subscription-only feature — see the <a href="#nitro-compare">comparison below</a>, or the full breakdown in <a href="/answers/do-you-need-nitro-for-discord-fonts/">Do You Need Nitro for Discord Fonts?</a></p>
+    <p>No, Unicode fonts aren't a Nitro feature. Every style on this page works on free, classic, and Nitro accounts alike, since the styled characters are standard Unicode, not a Discord-rendered effect. Nitro's own <em>Display Name Styles</em> are a separate, subscription-only feature — see the <a href="#nitro-compare">comparison below</a>, or the full breakdown in <a href="/answers/do-you-need-nitro-for-discord-fonts/">Do You Need Nitro for Discord Fonts?</a></p>
   </div>
 </section>
 
@@ -628,7 +635,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <a href="/answers/do-you-need-nitro-for-discord-fonts/" class="compare-card variant-muted u-no-underline">
         <span class="compare-badge">Answer</span>
         <h4>Do You Need Nitro for Discord Fonts?</h4>
-        <ul><li>No — Unicode styled text works on free accounts too.</li></ul>
+        <ul><li>No, Unicode styled text works on free accounts too.</li></ul>
       </a>
       <a href="/answers/why-wont-discord-accept-fancy-username/" class="compare-card variant-muted u-no-underline">
         <span class="compare-badge">Answer</span>
@@ -910,7 +917,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <script src="/decorators.js"></script>
     <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
   <script src="discord-context.js" defer></script>
 
 

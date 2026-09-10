@@ -16,8 +16,17 @@ fail it. Root cause + case study: an internal audit (2026-07-24) traced it to
 the currency-symbol cluster — euro/pound/yen/rupee never linked back to
 ruble/dirham/riyal, which shipped weeks later.
 
-Scope: EN /symbol/*/index.html only, matching sync_symbol_spoke_links.py's own
-scope (it does not walk locale-prefixed <lang>/symbol/ pages). Reciprocity is
+Second rule (added 2026-09-02): every <lang>/symbol/ page this branch ADDS must
+be linked from that locale's copy of each /library/ hub its EN parent claims.
+sync_symbol_spoke_links.py mirrors the peer graph into every language but its
+hub->spoke pass walked EN only, so a locale hub was never required to link its
+own locale spokes and nothing could see the gap — 1,032 missing links across 16
+languages and 250 hub pages when it was first measured. Scoped to ADDED pages,
+not modified ones: that is the regression which produced those 1,032, and it
+keeps the gate off the pre-existing backlog rather than permanently red.
+
+Scope: EN /symbol/*/index.html only for the peer rule, matching
+sync_symbol_spoke_links.py's own peer scope. Reciprocity is
 checked against the CURRENT tree (this PR's HEAD), not "was the peer also
 touched in this PR" — unlike translation parity, there's no editorial call to
 make here; the fix is always mechanical (run the generator), so the gate just
@@ -32,6 +41,7 @@ changed/added /symbol/ page declares a peer relation its peer doesn't
 reciprocate.
 """
 import argparse
+import importlib.util
 import os
 import re
 import subprocess
@@ -41,6 +51,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYMBOL_DIR = os.path.join(ROOT, "symbol")
 
 SYM_HREF_RE = re.compile(r'href="/symbol/([a-z0-9-]+)/"')
+
+# The locale hub->spoke rule reuses the generator's own cluster discovery and
+# hub loading rather than reimplementing them; a second copy of that logic
+# would drift from the first, which is the failure the peer rule above exists
+# to document.
+_spec = importlib.util.spec_from_file_location(
+    "sync_symbol_spoke_links",
+    os.path.join(ROOT, "scripts", "sync_symbol_spoke_links.py"),
+)
+SYNC = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(SYNC)
 
 
 def git(args):
@@ -81,6 +102,56 @@ def peer_links(slug):
     return {s for s in SYM_HREF_RE.findall(html) if s != slug}
 
 
+def locale_hub_failures(merge_base):
+    """Every <lang>/symbol/ page this branch ADDS must be linked from that
+    locale's copy of each /library/ hub its EN parent claims. Returns a list of
+    (locale page, locale hub page, expected href)."""
+    added = [
+        l.strip()
+        for l in git(
+            ["diff", "--name-only", "--diff-filter=A", merge_base, "HEAD",
+             "--", "*/symbol/*/index.html"]
+        ).splitlines()
+        if l.strip()
+    ]
+    if not added:
+        return [], 0
+
+    spokes = SYNC.load_spokes()
+    locale_hubs = SYNC.load_locale_hubs()
+    out = []
+    checked = 0
+    for rel in added:
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            continue
+        parts = rel.split("/")
+        lang = parts[0]
+        if not re.fullmatch(r"[a-z]{2}(-[a-z]{2})?", lang):
+            continue
+        html = open(path, encoding="utf-8", errors="replace").read()
+        m_en = SYNC.EN_ALTERNATE_RE.search(html)
+        if not m_en:
+            continue                    # no declared EN parent: not in a cluster
+        m_slug = SYNC.EN_SYMBOL_URL_RE.match(m_en.group(1).strip())
+        if not m_slug:
+            continue
+        en_slug = m_slug.group(1)
+        spoke = spokes.get(en_slug)
+        if not spoke:
+            continue
+        checked += 1
+        href = f'href="/{lang}/symbol/{parts[-2]}/"'
+        for hub in spoke["claimed_hubs"]:
+            hub_page = locale_hubs.get(hub, {}).get(lang)
+            if hub_page is None:
+                continue                # hub not translated into L: nothing to link from
+            hub_html = hub_page.read_text(encoding="utf-8", errors="replace")
+            if href not in hub_html:
+                out.append((rel, str(hub_page.relative_to(SYNC.REPO)), href[6:-1]))
+    return out, checked
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", default="origin/main")
@@ -102,10 +173,6 @@ def main():
         if l.strip()
     ]
 
-    if not changed:
-        print("check-new-symbol-peer-links: no changed /symbol/ pages — nothing to check.")
-        return 0
-
     failures = []
     checked = 0
     for rel in changed:
@@ -123,11 +190,36 @@ def main():
             if slug not in peer_back:
                 failures.append((rel, peer))
 
+    hub_fails, hub_checked = locale_hub_failures(merge_base)
+
+    # Only short-circuit when BOTH rules have nothing to look at. Returning
+    # early on the EN set alone would skip the locale hub rule entirely — a
+    # PR that adds only <lang>/symbol/ pages touches no EN page at all, which
+    # is exactly the shape this rule exists for.
+    if not changed and not hub_checked:
+        print("check-new-symbol-peer-links: no changed /symbol/ pages and no added "
+              "locale spokes — nothing to check.")
+        return 0
+
     print("New/changed symbol-page peer-link reciprocity check")
     print(f"  base:                  {base} (merge-base {merge_base[:8]})")
     print(f"  changed symbol pages:  {len(changed)}")
     print(f"  pages checked:         {checked}")
     print(f"  problems found:        {len(failures)}")
+    print(f"  added locale spokes:   {hub_checked}")
+    print(f"  unlinked by their hub: {len(hub_fails)}")
+
+    if hub_fails:
+        print("")
+        print("This PR adds a <lang>/symbol/ page that its own locale library hub")
+        print("does not link, so nothing but the sitemap can reach it:")
+        for rel, hub, href in hub_fails:
+            print(f"  \u2717 {rel} is not linked from {hub} (expected {href})")
+        print("")
+        print("Fix: run the generator, which mirrors the EN hub\u2192spoke graph into")
+        print("every language —")
+        print("  python3 scripts/sync_symbol_spoke_links.py --write --reciprocal")
+        print("then commit the result in this same PR.")
 
     if failures:
         print("")
@@ -143,7 +235,11 @@ def main():
         return 1
 
     print("")
-    print("Every /symbol/ page changed in this branch has fully reciprocal peer links. ✓")
+    if hub_fails:
+        return 1
+
+    print("Every /symbol/ page changed in this branch has fully reciprocal peer links,")
+    print("and every locale spoke it adds is linked from its own locale hub. ✓")
     return 0
 
 

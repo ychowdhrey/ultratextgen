@@ -132,7 +132,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "Sentence case si limita a mettere la maiuscola alla prima lettera del mio testo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No — un approccio ingenuo che mette in maiuscolo solo il primissimo carattere si rompe su un testo con più frasi. Il Sentence case di questo strumento mette la maiuscola alla prima parola di ogni frase (dopo un punto, un punto interrogativo o un punto esclamativo), non solo alla prima lettera dell'intero testo, e corregge anche il pronome inglese isolato \"i\" trasformandolo in \"I\" (una regola specifica dell'inglese, dove \"I\", cioè \"io\", si scrive sempre maiuscolo)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No, un approccio ingenuo che mette in maiuscolo solo il primissimo carattere si rompe su un testo con più frasi. Il Sentence case di questo strumento mette la maiuscola alla prima parola di ogni frase (dopo un punto, un punto interrogativo o un punto esclamativo), non solo alla prima lettera dell'intero testo, e corregge anche il pronome inglese isolato \"i\" trasformandolo in \"I\" (una regola specifica dell'inglese, dove \"I\", cioè \"io\", si scrive sempre maiuscolo)." }
     },
     {
       "@type": "Question",
@@ -187,6 +187,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Scrivi o incolla qui il tuo testo…" maxlength="5000"></textarea>
         <span class="char-count"><span id="charCount">0</span>/5000</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Il tuo testo contiene lettere accentate. Grassetto, corsivo, gotico e quasi tutti gli altri stili ora mantengono <b>à</b>, <b>è</b> e <b>ù</b> con l’accento — solo alcuni (il testo capovolto, e lettere senza forma accentata come <b>ł đ ø ß</b>) tornano in lettere normali. <a href="/guide/fancy-fonts-and-accents/">Quali stili tengono gli accenti →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Chiudi">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -217,7 +224,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           Sentence case si limita a mettere la maiuscola alla prima lettera del mio testo?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">No — un approccio ingenuo che mette in maiuscolo solo il primissimo carattere si rompe su un testo con più frasi. Il Sentence case di questo strumento mette la maiuscola alla prima parola di ogni frase (dopo un punto, un punto interrogativo o un punto esclamativo), non solo alla prima lettera dell'intero testo, e corregge anche il pronome inglese isolato "i" trasformandolo in "I" (una regola specifica dell'inglese, dove "I", cioè "io", si scrive sempre maiuscolo).</div>
+        <div class="faq-answer">No, un approccio ingenuo che mette in maiuscolo solo il primissimo carattere si rompe su un testo con più frasi. Il Sentence case di questo strumento mette la maiuscola alla prima parola di ogni frase (dopo un punto, un punto interrogativo o un punto esclamativo), non solo alla prima lettera dell'intero testo, e corregge anche il pronome inglese isolato "i" trasformandolo in "I" (una regola specifica dell'inglese, dove "I", cioè "io", si scrive sempre maiuscolo).</div>
       </div>
 
       <div class="faq-item">
@@ -273,6 +280,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "case-converter";</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

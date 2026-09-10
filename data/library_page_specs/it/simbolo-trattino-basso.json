@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-trattino-basso/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-trattino-basso/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,9 +37,18 @@
       "h2": "Trattino Basso, Larghezza Intera e Doppio",
       "intro": "Il semplice low line da tastiera e le sue due varianti di larghezza — la forma a larghezza intera usata nella composizione tipografica dell'Asia orientale e il trattino basso doppio, più spaziato. Pronti da incollare ovunque.",
       "symbols": [
-        { "char": "_", "label": "Trattino Basso / Low Line (U+005F)" },
-        { "char": "＿", "label": "Trattino Basso a Larghezza Intera (U+FF3F)" },
-        { "char": "‗", "label": "Doppio Trattino Basso (U+2017)" }
+        {
+          "char": "_",
+          "label": "Trattino Basso / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Trattino Basso a Larghezza Intera (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Doppio Trattino Basso (U+2017)"
+        }
       ]
     },
     {
@@ -40,8 +57,14 @@
       "h2": "Il Soprasegno: Lo Stesso Tratto, Sopra il Testo",
       "intro": "Il soprasegno è l'immagine speculare del trattino basso — lo stesso tratto orizzontale, posto sopra il testo invece che sotto, motivo per cui i due vengono spesso scambiati per opposti. Il macron è il trattino corto che molti digitano quando in realtà intendono un soprasegno.",
       "symbols": [
-        { "char": "‾", "label": "Soprasegno / Spacing Overscore (U+203E)" },
-        { "char": "¯", "label": "Macron (U+00AF)" }
+        {
+          "char": "‾",
+          "label": "Soprasegno / Spacing Overscore (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Macron (U+00AF)"
+        }
       ]
     },
     {
@@ -50,10 +73,22 @@
       "h2": "Trattino Basso vs. la Famiglia di Trattini e Lineette",
       "intro": "In URL, username e nomi di file, il trattino basso e il trattino vengono scambiati di continuo — ma occupano altezze diverse e codepoint diversi, e ciascuno svolge un compito differente.",
       "symbols": [
-        { "char": "-", "label": "Trattino-Meno / Trattino da Tastiera (U+002D)" },
-        { "char": "‐", "label": "Trattino Tipografico (U+2010)" },
-        { "char": "–", "label": "Trattino Medio (U+2013)" },
-        { "char": "−", "label": "Segno Meno (U+2212)" }
+        {
+          "char": "-",
+          "label": "Trattino-Meno / Trattino da Tastiera (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Trattino Tipografico (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "Trattino Medio (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Segno Meno (U+2212)"
+        }
       ]
     }
   ],

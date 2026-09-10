@@ -38,8 +38,8 @@
       "h2": "Alfa i Omega — Początek i Koniec",
       "intro": "Najsłynniejsze użycie tej litery: w parze z omegą, jako pierwsza i ostatnia litera greckiego alfabetu, metafora „wszystkiego od początku do końca” (Apokalipsa 22:13). Skopiuj tę parę skrajnych liter.",
       "symbols": [
-        { "char": "α", "label": "Małe Alfa — „Początek”" },
-        { "char": "Ω", "label": "Wielka Omega — „Koniec”" },
+        { "char": "α", "label": "Małe Alfa: „Początek”" },
+        { "char": "Ω", "label": "Wielka Omega: „Koniec”" },
         { "char": "Α", "label": "Wielkie Alfa" },
         { "char": "ω", "label": "Małe Omega" }
       ]
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

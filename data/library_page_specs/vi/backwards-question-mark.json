@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/backwards-question-mark/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/backwards-question-mark/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/backwards-question-mark/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/backwards-question-mark/"
+    }
   ],
   "sections": [
     {
@@ -28,10 +37,22 @@
       "h2": "Dấu Chấm Hỏi Soi Gương So Với Xoay Ngược",
       "intro": "Ba dấu thường bị gộp chung là «ngược», và phép biến đổi khác nhau thực sự đứng sau mỗi dấu.",
       "symbols": [
-        { "char": "⸮", "label": "Dấu Chấm Hỏi Soi Gương" },
-        { "char": "؟", "label": "Dấu Chấm Hỏi Ả Rập" },
-        { "char": "¿", "label": "Dấu Chấm Hỏi Xoay Ngược" },
-        { "char": "?", "label": "Dấu Chấm Hỏi" }
+        {
+          "char": "⸮",
+          "label": "Dấu Chấm Hỏi Soi Gương"
+        },
+        {
+          "char": "؟",
+          "label": "Dấu Chấm Hỏi Ả Rập"
+        },
+        {
+          "char": "¿",
+          "label": "Dấu Chấm Hỏi Xoay Ngược"
+        },
+        {
+          "char": "?",
+          "label": "Dấu Chấm Hỏi"
+        }
       ]
     },
     {
@@ -40,10 +61,22 @@
       "h2": "Các Dấu Câu Tu Từ Lịch Sử Khác",
       "intro": "⸮ thuộc về một nhóm nhỏ các dấu câu được đề xuất nhưng phần lớn bị bỏ quên, dành cho những sắc thái mà dấu câu chuẩn không nắm bắt được.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang" },
-        { "char": "⸘", "label": "Interrobang Ngược" },
-        { "char": "⁇", "label": "Dấu Chấm Hỏi Đôi" },
-        { "char": "⁈", "label": "Dấu Chấm Hỏi Chấm Than" }
+        {
+          "char": "‽",
+          "label": "Interrobang"
+        },
+        {
+          "char": "⸘",
+          "label": "Interrobang Ngược"
+        },
+        {
+          "char": "⁇",
+          "label": "Dấu Chấm Hỏi Đôi"
+        },
+        {
+          "char": "⁈",
+          "label": "Dấu Chấm Hỏi Chấm Than"
+        }
       ]
     },
     {
@@ -52,17 +85,40 @@
       "h2": "Ký Hiệu Dấu Câu Thông Thường",
       "intro": "Bộ dấu câu hằng ngày mà ⸮ đứng cạnh một khi đã qua khỏi những dấu mới lạ.",
       "symbols": [
-        { "char": "!", "label": "Dấu Chấm Than" },
-        { "char": "‥", "label": "Hai Chấm Dẫn" },
-        { "char": "…", "label": "Dấu Ba Chấm Ngang" },
-        { "char": "‽", "label": "Interrobang" }
+        {
+          "char": "!",
+          "label": "Dấu Chấm Than"
+        },
+        {
+          "char": "‥",
+          "label": "Hai Chấm Dẫn"
+        },
+        {
+          "char": "…",
+          "label": "Dấu Ba Chấm Ngang"
+        },
+        {
+          "char": "‽",
+          "label": "Interrobang"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Bộ tra cứu đầy đủ các ký tự dấu ngoặc kép, dấu ba chấm và dấu lược bỏ." },
-    { "href": "/vi/symbol/quotation-mark/", "title": "Dấu Ngoặc Kép", "desc": "Một ký tự dấu câu khác với nhiều biến thể vùng miền hơn bàn phím thể hiện." },
-    { "href": "/category/upside-down-text/", "title": "Công Cụ Tạo Chữ Ngược", "desc": "Để lật ngược cả một câu, không chỉ một dấu — xoay, không phải soi gương, cùng phép biến đổi như ¿ so với ⸮." }
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Ký Hiệu Dấu Câu",
+      "desc": "Bộ tra cứu đầy đủ các ký tự dấu ngoặc kép, dấu ba chấm và dấu lược bỏ."
+    },
+    {
+      "href": "/vi/symbol/quotation-mark/",
+      "title": "Dấu Ngoặc Kép",
+      "desc": "Một ký tự dấu câu khác với nhiều biến thể vùng miền hơn bàn phím thể hiện."
+    },
+    {
+      "href": "/category/upside-down-text/",
+      "title": "Công Cụ Tạo Chữ Ngược",
+      "desc": "Để lật ngược cả một câu, không chỉ một dấu — xoay, không phải soi gương, cùng phép biến đổi như ¿ so với ⸮."
+    }
   ]
 }

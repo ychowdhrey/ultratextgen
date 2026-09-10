@@ -17,12 +17,30 @@
       "h2": "Shade & Fill Blocks",
       "intro": "The classic shade ramp — from light static to solid fill — that every text progress bar is built from.",
       "symbols": [
-        { "char": "░", "label": "Light Shade" },
-        { "char": "▒", "label": "Medium Shade" },
-        { "char": "▓", "label": "Dark Shade" },
-        { "char": "█", "label": "Full Block" },
-        { "char": "▄", "label": "Lower Half Block" },
-        { "char": "▀", "label": "Upper Half Block" }
+        {
+          "char": "░",
+          "label": "Light Shade"
+        },
+        {
+          "char": "▒",
+          "label": "Medium Shade"
+        },
+        {
+          "char": "▓",
+          "label": "Dark Shade"
+        },
+        {
+          "char": "█",
+          "label": "Full Block"
+        },
+        {
+          "char": "▄",
+          "label": "Lower Half Block"
+        },
+        {
+          "char": "▀",
+          "label": "Upper Half Block"
+        }
       ]
     },
     {
@@ -31,18 +49,54 @@
       "h2": "Block Fill Level Characters",
       "intro": "Eighth-step blocks that rise vertically or grow horizontally — perfect for smooth bar gradients and equalizers.",
       "symbols": [
-        { "char": "▁", "label": "Lower One Eighth Block" },
-        { "char": "▂", "label": "Lower One Quarter Block" },
-        { "char": "▃", "label": "Lower Three Eighths Block" },
-        { "char": "▄", "label": "Lower Half Block" },
-        { "char": "▅", "label": "Lower Five Eighths Block" },
-        { "char": "▆", "label": "Lower Three Quarters Block" },
-        { "char": "▇", "label": "Lower Seven Eighths Block" },
-        { "char": "█", "label": "Full Block" },
-        { "char": "▏", "label": "Left One Eighth Block" },
-        { "char": "▍", "label": "Left Three Eighths Block" },
-        { "char": "▌", "label": "Left Half Block" },
-        { "char": "▊", "label": "Left Three Quarters Block" }
+        {
+          "char": "▁",
+          "label": "Lower One Eighth Block"
+        },
+        {
+          "char": "▂",
+          "label": "Lower One Quarter Block"
+        },
+        {
+          "char": "▃",
+          "label": "Lower Three Eighths Block"
+        },
+        {
+          "char": "▄",
+          "label": "Lower Half Block"
+        },
+        {
+          "char": "▅",
+          "label": "Lower Five Eighths Block"
+        },
+        {
+          "char": "▆",
+          "label": "Lower Three Quarters Block"
+        },
+        {
+          "char": "▇",
+          "label": "Lower Seven Eighths Block"
+        },
+        {
+          "char": "█",
+          "label": "Full Block"
+        },
+        {
+          "char": "▏",
+          "label": "Left One Eighth Block"
+        },
+        {
+          "char": "▍",
+          "label": "Left Three Eighths Block"
+        },
+        {
+          "char": "▌",
+          "label": "Left Half Block"
+        },
+        {
+          "char": "▊",
+          "label": "Left Three Quarters Block"
+        }
       ]
     },
     {
@@ -51,14 +105,38 @@
       "h2": "Progress Bar Segment Characters",
       "intro": "Filled and empty segment pairs for step-style progress bars and rating tracks.",
       "symbols": [
-        { "char": "▰", "label": "Black Parallelogram (Filled Segment)" },
-        { "char": "▱", "label": "White Parallelogram (Empty Segment)" },
-        { "char": "▮", "label": "Black Vertical Rectangle" },
-        { "char": "▯", "label": "White Vertical Rectangle" },
-        { "char": "■", "label": "Black Square" },
-        { "char": "□", "label": "White Square" },
-        { "char": "●", "label": "Black Circle" },
-        { "char": "○", "label": "White Circle" }
+        {
+          "char": "▰",
+          "label": "Black Parallelogram (Filled Segment)"
+        },
+        {
+          "char": "▱",
+          "label": "White Parallelogram (Empty Segment)"
+        },
+        {
+          "char": "▮",
+          "label": "Black Vertical Rectangle"
+        },
+        {
+          "char": "▯",
+          "label": "White Vertical Rectangle"
+        },
+        {
+          "char": "■",
+          "label": "Black Square"
+        },
+        {
+          "char": "□",
+          "label": "White Square"
+        },
+        {
+          "char": "●",
+          "label": "Black Circle"
+        },
+        {
+          "char": "○",
+          "label": "White Circle"
+        }
       ]
     },
     {
@@ -67,14 +145,38 @@
       "h2": "Spinner & Timer Characters",
       "intro": "Rotating circle quarters, arrows, and hourglasses for buffering and please-wait moments.",
       "symbols": [
-        { "char": "◐", "label": "Circle With Left Half Black" },
-        { "char": "◓", "label": "Circle With Upper Half Black" },
-        { "char": "◑", "label": "Circle With Right Half Black" },
-        { "char": "◒", "label": "Circle With Lower Half Black" },
-        { "char": "↻", "label": "Clockwise Open Circle Arrow" },
-        { "char": "↺", "label": "Anticlockwise Open Circle Arrow" },
-        { "char": "⌛", "label": "Hourglass Done" },
-        { "char": "⏳", "label": "Hourglass Not Done" }
+        {
+          "char": "◐",
+          "label": "Circle With Left Half Black"
+        },
+        {
+          "char": "◓",
+          "label": "Circle With Upper Half Black"
+        },
+        {
+          "char": "◑",
+          "label": "Circle With Right Half Black"
+        },
+        {
+          "char": "◒",
+          "label": "Circle With Lower Half Black"
+        },
+        {
+          "char": "↻",
+          "label": "Clockwise Open Circle Arrow"
+        },
+        {
+          "char": "↺",
+          "label": "Anticlockwise Open Circle Arrow"
+        },
+        {
+          "char": "⌛",
+          "label": "Hourglass Done"
+        },
+        {
+          "char": "⏳",
+          "label": "Hourglass Not Done"
+        }
       ]
     }
   ],
@@ -134,7 +236,12 @@
     },
     {
       "name": "Buffering Spinner Frames",
-      "flags": ["◐", "◓", "◑", "◒"],
+      "flags": [
+        "◐",
+        "◓",
+        "◑",
+        "◒"
+      ],
       "defaultFormat": "inline"
     },
     {
@@ -149,7 +256,6 @@
       "defaultFormat": "vertical"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/y2k-symbols/",

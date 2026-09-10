@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/celsius-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/celsius-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/celsius-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/celsius-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Dấu Độ Celsius",
       "intro": "Ký tự đơn ℃ và chuỗi hai ký tự °C mà Unicode ưu tiên — sao chép cái nào phù hợp với ngữ cảnh của bạn.",
       "symbols": [
-        { "char": "℃", "label": "Độ Celsius (Ký Tự Đơn)" },
-        { "char": "°C", "label": "Dấu Độ + C (Dạng Được Khuyến Nghị)" }
+        {
+          "char": "℃",
+          "label": "Độ Celsius (Ký Tự Đơn)"
+        },
+        {
+          "char": "°C",
+          "label": "Dấu Độ + C (Dạng Được Khuyến Nghị)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Các Ký Hiệu Thường Bị Nhầm Với ℃",
       "intro": "Mỗi ký hiệu này thường bị dùng thay cho ℃, và mỗi cái là một ký tự riêng biệt với ý nghĩa riêng.",
       "symbols": [
-        { "char": "°", "label": "Dấu Độ (U+00B0) — Đứng Riêng" },
-        { "char": "℉", "label": "Độ Fahrenheit (U+2109)" },
-        { "char": "K", "label": "Dấu Kelvin (U+212A) — Chuẩn Hóa Về Chữ K Thường" },
-        { "char": "C", "label": "Chữ Latin C Hoa" }
+        {
+          "char": "°",
+          "label": "Dấu Độ (U+00B0): Đứng Riêng"
+        },
+        {
+          "char": "℉",
+          "label": "Độ Fahrenheit (U+2109)"
+        },
+        {
+          "char": "K",
+          "label": "Dấu Kelvin (U+212A): Chuẩn Hóa Về Chữ K Thường"
+        },
+        {
+          "char": "C",
+          "label": "Chữ Latin C Hoa"
+        }
       ]
     },
     {
@@ -50,19 +77,49 @@
       "h2": "Các Ký Hiệu Đo Lường & Đơn Vị Khác",
       "intro": "Các ký hiệu cùng lãnh thổ đo lường và ký hiệu khoa học với ℃.",
       "symbols": [
-        { "char": "′", "label": "Prime (Phút / Feet)" },
-        { "char": "″", "label": "Double Prime (Giây / Inch)" },
-        { "char": "‰", "label": "Dấu Phần Nghìn" },
-        { "char": "µ", "label": "Ký Hiệu Micro (U+00B5)" },
-        { "char": "Ω", "label": "Ký Hiệu Ohm (U+2126)" }
+        {
+          "char": "′",
+          "label": "Prime (Phút / Feet)"
+        },
+        {
+          "char": "″",
+          "label": "Double Prime (Giây / Inch)"
+        },
+        {
+          "char": "‰",
+          "label": "Dấu Phần Nghìn"
+        },
+        {
+          "char": "µ",
+          "label": "Ký Hiệu Micro (U+00B5)"
+        },
+        {
+          "char": "Ω",
+          "label": "Ký Hiệu Ohm (U+2126)"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/fahrenheit-symbol/", "title": "Ký Hiệu Fahrenheit (℉)", "desc": "Dấu độ Fahrenheit đã ghép sẵn, và dạng °F mà hầu hết hướng dẫn ưa dùng." },
-    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Dấu độ đứng riêng đằng sau ℃, góc và tọa độ." },
-    { "href": "/library/unit-measurement-symbols/", "title": "Ký Hiệu Đơn Vị & Đo Lường", "desc": "Nhiệt độ, đơn vị SI và các ký hiệu khoa học trong một trang tra cứu." },
-    { "href": "/library/weather-symbols/", "title": "Ký Hiệu Thời Tiết", "desc": "Ký hiệu nhiệt độ, mặt trời, mây và bão cho dự báo thời tiết." }
+    {
+      "href": "/vi/symbol/fahrenheit-symbol/",
+      "title": "Ký Hiệu Fahrenheit (℉)",
+      "desc": "Dấu độ Fahrenheit đã ghép sẵn, và dạng °F mà hầu hết hướng dẫn ưa dùng."
+    },
+    {
+      "href": "/vi/symbol/degree-symbol/",
+      "title": "Ký Hiệu Độ (°)",
+      "desc": "Dấu độ đứng riêng đằng sau ℃, góc và tọa độ."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Ký Hiệu Đơn Vị & Đo Lường",
+      "desc": "Nhiệt độ, đơn vị SI và các ký hiệu khoa học trong một trang tra cứu."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Ký Hiệu Thời Tiết",
+      "desc": "Ký hiệu nhiệt độ, mặt trời, mây và bão cho dự báo thời tiết."
+    }
   ]
 }

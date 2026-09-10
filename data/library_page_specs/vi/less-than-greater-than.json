@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/less-than-greater-than/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-greater-than/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/less-than-greater-than/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-greater-than/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Ký Hiệu Nhỏ Hơn & Lớn Hơn",
       "intro": "Hai ký hiệu so sánh, sẵn sàng để dán.",
       "symbols": [
-        { "char": "<", "label": "Ký Hiệu Nhỏ Hơn (U+003C)" },
-        { "char": ">", "label": "Ký Hiệu Lớn Hơn (U+003E)" }
+        {
+          "char": "<",
+          "label": "Ký Hiệu Nhỏ Hơn (U+003C)"
+        },
+        {
+          "char": ">",
+          "label": "Ký Hiệu Lớn Hơn (U+003E)"
+        }
       ]
     },
     {
@@ -38,10 +53,22 @@
       "h2": "Ký Hiệu Trông Giống < >",
       "intro": "Những ký hiệu này có hình dáng gần giống < > nhưng mang ý nghĩa hoàn toàn khác, chủ yếu là các dạng dấu ngoặc kép.",
       "symbols": [
-        { "char": "‹", "label": "Dấu Ngoặc Kép Đơn Trái (U+2039) — một dấu trích dẫn, không phải phép so sánh" },
-        { "char": "«", "label": "Dấu Ngoặc Kép Đôi Trái (U+00AB) — dấu ngoặc kép tiếng Pháp/Đức" },
-        { "char": "⟨", "label": "Dấu Ngoặc Nhọn Trái (U+27E8) — dùng trong ký hiệu bra-ket và vectơ, không phải phép so sánh" },
-        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng (U+2264) — «người anh em» có thêm phần bằng" }
+        {
+          "char": "‹",
+          "label": "Dấu Ngoặc Kép Đơn Trái (U+2039): một dấu trích dẫn, không phải phép so sánh"
+        },
+        {
+          "char": "«",
+          "label": "Dấu Ngoặc Kép Đôi Trái (U+00AB): dấu ngoặc kép tiếng Pháp/Đức"
+        },
+        {
+          "char": "⟨",
+          "label": "Dấu Ngoặc Nhọn Trái (U+27E8): dùng trong ký hiệu bra-ket và vectơ, không phải phép so sánh"
+        },
+        {
+          "char": "≤",
+          "label": "Nhỏ Hơn Hoặc Bằng (U+2264): «người anh em» có thêm phần bằng"
+        }
       ]
     },
     {
@@ -50,17 +77,41 @@
       "h2": "Các Ký Hiệu Toán Học Khác",
       "intro": "Các ký hiệu toán học khác thường xuất hiện cùng < và > trong biểu thức và phương trình.",
       "symbols": [
-        { "char": "±", "label": "Cộng Trừ" },
-        { "char": "÷", "label": "Dấu Chia" },
-        { "char": "√", "label": "Căn Bậc Hai" }
+        {
+          "char": "±",
+          "label": "Cộng Trừ"
+        },
+        {
+          "char": "÷",
+          "label": "Dấu Chia"
+        },
+        {
+          "char": "√",
+          "label": "Căn Bậc Hai"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/plus-minus/", "title": "Ký Hiệu Cộng Trừ (±)", "desc": "Hai giá trị khả dĩ trong một biểu thức duy nhất." },
-    { "href": "/vi/symbol/division-sign/", "title": "Dấu Chia (÷)", "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó." },
-    { "href": "/vi/symbol/square-root/", "title": "Căn Bậc Hai (√)", "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum." },
-    { "href": "/vi/library/math-symbols/", "title": "Tất Cả Ký Hiệu Toán Học", "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích." }
+    {
+      "href": "/vi/symbol/plus-minus/",
+      "title": "Ký Hiệu Cộng Trừ (±)",
+      "desc": "Hai giá trị khả dĩ trong một biểu thức duy nhất."
+    },
+    {
+      "href": "/vi/symbol/division-sign/",
+      "title": "Dấu Chia (÷)",
+      "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó."
+    },
+    {
+      "href": "/vi/symbol/square-root/",
+      "title": "Căn Bậc Hai (√)",
+      "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Tất Cả Ký Hiệu Toán Học",
+      "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích."
+    }
   ]
 }

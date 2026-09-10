@@ -1,0 +1,385 @@
+{
+ "slug": "ascii-kunst",
+ "lang": "de",
+ "copy_pattern": "collection",
+ "title": "ASCII-Kunst & Bilder aus Zeichen — Generator-Bausteine zum Kopieren | UltraTextGen",
+ "meta_description": "ASCII-Kunst selbst bauen: Rahmenzeichen, Blockelemente, Braille-Punkte und Formen zum Kopieren — plus fertige Bausteine für Bilder aus Zeichen.",
+ "breadcrumb": "ASCII-Kunst",
+ "hero_h1": "ASCII-Kunst",
+ "hero_tagline": "Die Bausteine, aus denen Bilder aus Zeichen entstehen — Linien, Blöcke, Punkte und Formen.",
+ "intro": "ASCII-Kunst entsteht nicht aus Buchstaben, sondern aus vier Zeichenfamilien: Rahmenzeichen für Linien, Blockelemente für Flächen, Braille-Punkte für feine Schattierungen und geometrische Formen für Akzente. Diese Seite sammelt sie alle zum Kopieren. Wer damit arbeitet, braucht keinen Generator — die Zeichen sind das Werkzeug.",
+ "sections": [
+  {
+   "id": "rahmen",
+   "label": "Rahmenzeichen",
+   "h2": "Rahmenzeichen für Linien und Kästen",
+   "intro": "Die Grundlage jeder Box: einfache und doppelte Linien, Ecken und Kreuzungen.",
+   "symbols": [
+    {
+     "char": "─",
+     "label": "Waagerechte Linie"
+    },
+    {
+     "char": "│",
+     "label": "Senkrechte Linie"
+    },
+    {
+     "char": "┌",
+     "label": "Ecke oben links"
+    },
+    {
+     "char": "┐",
+     "label": "Ecke oben rechts"
+    },
+    {
+     "char": "└",
+     "label": "Ecke unten links"
+    },
+    {
+     "char": "┘",
+     "label": "Ecke unten rechts"
+    },
+    {
+     "char": "├",
+     "label": "T-Kreuzung rechts"
+    },
+    {
+     "char": "┤",
+     "label": "T-Kreuzung links"
+    },
+    {
+     "char": "┼",
+     "label": "Kreuzung"
+    },
+    {
+     "char": "═",
+     "label": "Doppelte waagerechte Linie"
+    },
+    {
+     "char": "║",
+     "label": "Doppelte senkrechte Linie"
+    },
+    {
+     "char": "╔",
+     "label": "Doppelecke oben links"
+    },
+    {
+     "char": "╗",
+     "label": "Doppelecke oben rechts"
+    },
+    {
+     "char": "╚",
+     "label": "Doppelecke unten links"
+    },
+    {
+     "char": "╝",
+     "label": "Doppelecke unten rechts"
+    }
+   ]
+  },
+  {
+   "id": "bloecke",
+   "label": "Blockelemente",
+   "h2": "Blockelemente und Schattierungen",
+   "intro": "Für Flächen und Helligkeitsstufen — die vier Schattierungsgrade ergeben Graustufen aus reinem Text.",
+   "symbols": [
+    {
+     "char": "█",
+     "label": "Vollblock"
+    },
+    {
+     "char": "▀",
+     "label": "Oberer Halbblock"
+    },
+    {
+     "char": "▄",
+     "label": "Unterer Halbblock"
+    },
+    {
+     "char": "▌",
+     "label": "Linker Halbblock"
+    },
+    {
+     "char": "▐",
+     "label": "Rechter Halbblock"
+    },
+    {
+     "char": "░",
+     "label": "Helle Schattierung"
+    },
+    {
+     "char": "▒",
+     "label": "Mittlere Schattierung"
+    },
+    {
+     "char": "▓",
+     "label": "Dunkle Schattierung"
+    },
+    {
+     "char": "▖",
+     "label": "Viertel unten links"
+    },
+    {
+     "char": "▘",
+     "label": "Viertel oben links"
+    }
+   ]
+  },
+  {
+   "id": "braille",
+   "label": "Braille-Punkte",
+   "h2": "Braille-Punkte für feine Texturen",
+   "intro": "Braille-Zeichen bieten acht Punkte pro Zelle — die höchste Auflösung, die reiner Text erreicht.",
+   "symbols": [
+    {
+     "char": "⠁",
+     "label": "Braille Punkt 1"
+    },
+    {
+     "char": "⠉",
+     "label": "Braille Punkte 1-4"
+    },
+    {
+     "char": "⠛",
+     "label": "Braille Punkte 1-2-4-5"
+    },
+    {
+     "char": "⠿",
+     "label": "Braille Punkte 1-6"
+    },
+    {
+     "char": "⣀",
+     "label": "Braille Punkte 7-8"
+    },
+    {
+     "char": "⣤",
+     "label": "Braille Punkte 3-6-7-8"
+    },
+    {
+     "char": "⣶",
+     "label": "Braille Punkte 2-3-5-6-7-8"
+    },
+    {
+     "char": "⣿",
+     "label": "Braille alle acht Punkte"
+    },
+    {
+     "char": "⡇",
+     "label": "Braille Punkte 1-2-3-7"
+    },
+    {
+     "char": "⢸",
+     "label": "Braille Punkte 4-5-6-8"
+    }
+   ]
+  },
+  {
+   "id": "formen",
+   "label": "Formen",
+   "h2": "Geometrische Formen als Akzente",
+   "intro": "Punkte, Rauten und Dreiecke für Aufzählungen, Trenner und Details.",
+   "symbols": [
+    {
+     "char": "◆",
+     "label": "Gefüllte Raute"
+    },
+    {
+     "char": "◇",
+     "label": "Leere Raute"
+    },
+    {
+     "char": "●",
+     "label": "Gefüllter Kreis"
+    },
+    {
+     "char": "○",
+     "label": "Leerer Kreis"
+    },
+    {
+     "char": "▲",
+     "label": "Gefülltes Dreieck"
+    },
+    {
+     "char": "△",
+     "label": "Leeres Dreieck"
+    },
+    {
+     "char": "▼",
+     "label": "Gefülltes Dreieck (unten)"
+    },
+    {
+     "char": "▽",
+     "label": "Leeres Dreieck (unten)"
+    }
+   ]
+  }
+ ],
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Bausteine",
+  "h2": "Fertige ASCII-Bausteine",
+  "intro": "Komplette Elemente mit einem Klick kopieren — Rahmen, Balken und Trenner."
+ },
+ "collection_container_id": "asciiSetsContainer",
+ "collections": [
+  {
+   "name": "Einfacher Rahmen",
+   "flags": [
+    "┌",
+    "─",
+    "┐",
+    "│",
+    "└",
+    "┘"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Doppelter Rahmen",
+   "flags": [
+    "╔",
+    "═",
+    "╗",
+    "║",
+    "╚",
+    "╝"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Ladebalken",
+   "flags": [
+    "█",
+    "█",
+    "█",
+    "░",
+    "░"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Verlauf",
+   "flags": [
+    "░",
+    "▒",
+    "▓",
+    "█"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Trennlinie",
+   "flags": [
+    "─",
+    "─",
+    "─",
+    "─",
+    "─"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Braille-Verlauf",
+   "flags": [
+    "⣀",
+    "⣤",
+    "⣶",
+    "⣿"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Punktreihe",
+   "flags": [
+    "●",
+    "○",
+    "●",
+    "○"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Rautenreihe",
+   "flags": [
+    "◆",
+    "◇",
+    "◆",
+    "◇"
+   ],
+   "defaultFormat": "inline"
+  }
+ ],
+ "faq_h2": "Häufige Fragen zu ASCII-Kunst",
+ "faq": [
+  {
+   "q": "Warum verrutscht meine ASCII-Kunst?",
+   "a": "Weil die Schriftart nicht dicktengleich ist. ASCII-Kunst setzt voraus, dass jedes Zeichen exakt gleich breit ist — das gilt nur für Monospace-Schriften wie Courier oder Consolas. In WhatsApp, Instagram und den meisten Chat-Feldern wird proportional gesetzt, und dann bricht jedes Bild."
+  },
+  {
+   "q": "Wo funktioniert ASCII-Kunst zuverlässig?",
+   "a": "Überall dort, wo Monospace voreingestellt ist: Discord in Codeblöcken (mit ``` umschlossen), Terminals, Editoren, GitHub-Kommentare und E-Mails im Nur-Text-Format. Auf Instagram und WhatsApp funktioniert sie praktisch nie."
+  },
+  {
+   "q": "Was ist der Unterschied zu Braille-Kunst?",
+   "a": "Braille-Zeichen haben acht ansteuerbare Punkte pro Zeichen statt einem Glyph — das vervierfacht die Auflösung. Deshalb sehen Braille-Bilder feiner aus als Block-ASCII, brauchen aber eine Schrift, die den ganzen Braille-Block enthält."
+  },
+  {
+   "q": "Sind das wirklich ASCII-Zeichen?",
+   "a": "Streng genommen nein. Echtes ASCII umfasst nur 128 Zeichen, und Rahmen-, Block- und Braille-Zeichen gehören nicht dazu — sie stammen aus Unicode. Der Name hat sich trotzdem gehalten, weil die Technik dieselbe ist."
+  },
+  {
+   "q": "Kann ich damit ein Foto nachbauen?",
+   "a": "Ja, mit den vier Schattierungsstufen ░▒▓█ lassen sich Graustufen abbilden. Von Hand ist das mühsam; der übliche Weg ist, ein Bild in ein Raster zu zerlegen und jedem Feld die passende Stufe zuzuweisen."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum Monospace alles entscheidet",
+   "body": "Jede ASCII-Zeichnung beruht auf einer einzigen Annahme: dass ein Zeichen genauso breit ist wie jedes andere. In einer Proportionalschrift ist ein „i“ schmaler als ein „█“, und schon verschiebt sich jede Zeile gegen die darüber. Genau deshalb sieht dieselbe Zeichnung im Discord-Codeblock perfekt und in der Instagram-Bio zerrissen aus — nicht weil Zeichen fehlen, sondern weil sie unterschiedlich breit gesetzt werden. Wer ASCII-Kunst verschickt, sollte deshalb immer zuerst die Zielumgebung prüfen, nicht das Zeichenrepertoire."
+  },
+  {
+   "h2": "Vier Zeichenfamilien, vier Aufgaben",
+   "body": "Rahmenzeichen ziehen Linien und schließen Kästen — sie stammen aus der Terminalgrafik der Achtzigerjahre und sind bis heute die sauberste Art, in Text einen Kasten zu zeichnen. Blockelemente füllen Flächen und liefern mit ░▒▓█ vier Helligkeitsstufen. Braille-Punkte sind der Sonderfall: acht Punkte pro Zeichen, also die feinste erreichbare Auflösung. Geometrische Formen schließlich sind keine Bausteine, sondern Akzente — Aufzählungspunkte, Trenner, kleine Markierungen."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/rahmenzeichen/",
+   "title": "Rahmenzeichen",
+   "desc": "Alle Linien-, Ecken- und Kreuzungszeichen für Kästen und Tabellen."
+  },
+  {
+   "href": "/de/library/braille-symbole/",
+   "title": "Braille-Symbole",
+   "desc": "Der vollständige Braille-Block — auch für feine Textur in Textbildern."
+  },
+  {
+   "href": "/de/library/geometrische-symbole/",
+   "title": "Geometrische Symbole",
+   "desc": "Kreise, Quadrate, Dreiecke und Rauten in allen Varianten."
+  },
+  {
+   "href": "/de/library/ascii-tabelle/",
+   "title": "ASCII-Tabelle",
+   "desc": "Alle ASCII-Codes mit Dezimal-, Hex- und Zeichenspalte."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/ascii-kunst/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/text-art/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/ascii-kunst/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/text-art/"
+  }
+ ],
+ "page_type": "library",
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16"
+}

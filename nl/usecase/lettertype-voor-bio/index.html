@@ -197,7 +197,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Hoe gebruik ik de bio-lettertype-generator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Het kost je zo'n 5 seconden: 1. Kies je platform zodat de tekenteller overeenkomt met de bio-limiet 2. Typ je bio-tekst in het tekstvak 3. Kies een stijl — Sierlijk & Script, Vetgedrukt & Italic, Gothic of Bubbel — of voeg symbolen / een sjabloon toe 4. Klik op \"Kopieer\" bij de stijl die je mooi vindt 5. Plak het direct in je bio-veld (Instagram, TikTok, Discord, enz.)"
+        "text": "Het kost je zo'n 5 seconden: 1. Kies je platform zodat de tekenteller overeenkomt met de bio-limiet 2. Typ je bio-tekst in het tekstvak 3. Kies een stijl — Sierlijk & Script, Vetgedrukt & Italic, Gotisch of Bubbel — of voeg symbolen / een sjabloon toe 4. Klik op \"Kopieer\" bij de stijl die je mooi vindt 5. Plak het direct in je bio-veld (Instagram, TikTok, Discord, enz.)"
       }
     }
   ]
@@ -292,6 +292,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Typ hier je bio-tekst..." maxlength="500"></textarea>
           <span class="char-count bf-counter" id="bfCounter"><span id="charCount">0</span>/<span id="charLimit">500</span></span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌̈</span>
+          <span class="accent-notice-text">Je tekst bevat accenten of een trema. Vet, sierlijk, gotisch en bijna alle andere stijlen behouden nu <b>ë</b>, <b>é</b> en <b>ï</b> mét het teken — een enkele (omgekeerde tekst, en letters zonder accentvorm zoals <b>ł đ ø ß</b>) valt terug op gewone letters. <a href="/guide/fancy-fonts-and-accents/">Welke stijlen accenten houden →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Sluiten">✕</button>
         </div>
 
         <!-- Platformcompatibiliteit -->
@@ -524,7 +531,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <br><br>
     1. Kies je platform zodat de tekenteller overeenkomt met de bio-limiet<br>
     2. Typ je bio-tekst in het tekstvak<br>
-    3. Kies een stijl — Sierlijk &amp; Script, Vetgedrukt &amp; Italic, Gothic of Bubbel — of voeg symbolen / een sjabloon toe<br>
+    3. Kies een stijl — Sierlijk &amp; Script, Vetgedrukt &amp; Italic, Gotisch of Bubbel — of voeg symbolen / een sjabloon toe<br>
     4. Klik op "Kopieer" bij de stijl die je mooi vindt<br>
     5. Plak het direct in je bio-veld (Instagram, TikTok, Discord, enz.)
   </div>
@@ -638,7 +645,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     De populairste <a href="https://ultratextgen.com/tiktok/">TikTok</a>-bio-stijlen zijn
     <strong><a href="/nl/sierlijke-letters/">Sierlijk / Script</a></strong> (elegant, de go-to voor bio's van creators),
     <strong><a href="/nl/vetgedrukte-letters/">Vetgedrukt</a></strong> (𝘇𝗼𝗮𝗹𝘀 𝗱𝗶𝘁, pakkend voor personal brands), en
-    <strong><a href="/nl/gotische-letters/">Gothic</a></strong> (𝔷𝔬𝔞𝔩𝔰 𝔡𝔦𝔱, trending in alt- en muziekcommunities). TikTok-bio's zijn kort — maar 80 tekens — dus stileer één pakkende zin.
+    <strong><a href="/nl/gotische-letters/">Gotisch</a></strong> (𝔷𝔬𝔞𝔩𝔰 𝔡𝔦𝔱, trending in alt- en muziekcommunities). TikTok-bio's zijn kort — maar 80 tekens — dus stileer één pakkende zin.
   </div>
 </div>
 
@@ -650,7 +657,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Ja — <a href="https://ultratextgen.com/discord/">Discord</a> ondersteunt Unicode-tekst in zowel je "About Me"-bio-sectie als je servernaam-bijnaam. Gothic en vetgedrukte lettertypes zijn vooral populair in gaming- en community-servers. Plak je gestileerde tekst gewoon in het juiste veld in je Discord-profielinstellingen.
+    Ja, <a href="https://ultratextgen.com/discord/">Discord</a> ondersteunt Unicode-tekst in zowel je "About Me"-bio-sectie als je servernaam-bijnaam. Gotisch en vetgedrukte lettertypes zijn vooral populair in gaming- en community-servers. Plak je gestileerde tekst gewoon in het juiste veld in je Discord-profielinstellingen.
   </div>
 </div>
 
@@ -705,7 +712,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <br><br>
     ✍️ <strong>Sierlijk &amp; Script</strong> — Ultra Script (lichter sierschrift, clean en stijlvol) en Ultra Script Bold (elegant sierschrift, erg populair voor bio's)<br>
     🖤 <strong>Vetgedrukt &amp; Italic</strong> — Ultra Bold, Ultra Bold Italic, Ultra Bold Italic Serif, Ultra Italic Serif en Ultra Alternating Bold<br>
-    🏰 <strong>Gothic</strong> — Ultra Gothic (herkenbare Fraktur-stijl) en Ultra Gothic Bold (zwaardere gothic voor nadruk)<br>
+    🏰 <strong>Gotisch</strong> — Ultra Gotisch (herkenbare Fraktur-stijl) en Ultra Gotisch Bold (zwaardere gothic voor nadruk)<br>
     🫧 <strong>Bubbel</strong> — Ultra Bubble (speels en vriendelijk), Ultra Bubble Filled (gevulde, stoere look) en Ultra Bubble Light (zachtere variant)
   </div>
 </div>
@@ -733,7 +740,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Nee — het gebruik van Unicode-symbolen en emoji's is op de meeste platforms toegestaan, zolang de bio zich aan de algemene regels houdt (geen identiteitsfraude, haatspraak, enz.). Het is een gangbare manier om profielen te personaliseren. Dit zijn standaardtekens uit de Unicode-specificatie, geen hacks of exploits.
+    Nee, het gebruik van Unicode-symbolen en emoji's is op de meeste platforms toegestaan, zolang de bio zich aan de algemene regels houdt (geen identiteitsfraude, haatspraak, enz.). Het is een gangbare manier om profielen te personaliseren. Dit zijn standaardtekens uit de Unicode-specificatie, geen hacks of exploits.
   </div>
 </div>
 
@@ -745,7 +752,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Ja — screenreaders hebben vaak moeite om Unicode-gestileerde tekens correct te interpreteren. In plaats van "hallo" voor te lezen, kan een screenreader losse tekencodes aankondigen.
+    Ja, screenreaders hebben vaak moeite om Unicode-gestileerde tekens correct te interpreteren. In plaats van "hallo" voor te lezen, kan een screenreader losse tekencodes aankondigen.
     <br><br>
     <strong>Beste aanpak:</strong> stileer alleen een korte zin of je weergavenaam en houd de rest van je bio in platte tekst. Zo krijg je visuele impact zonder je profiel ontoegankelijk te maken.
   </div>
@@ -786,7 +793,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <footer class="footer">
     <div class="footer-inner">
 <!-- BEGIN static footer — generated by scripts/build-static-footer.js from footer.js. Do not edit by hand — run `npm run build:static-footer`. -->
-<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Verkennen</span><a href="/nl/" class="footer-link">Home</a><a href="/nl/guide/" class="footer-link">Guides</a><a href="/nl/answers/" class="footer-link">Antwoorden</a><a href="/nl/usecase/" class="footer-link">Toepassingen</a><a href="/category/" class="footer-link">Categorieën</a><a href="/nl/library/" class="footer-link">Bibliotheek</a><a href="/printables/" class="footer-link">Afdrukbaar</a><a href="/events/" class="footer-link">Evenementen</a></div><div class="footer-col"><span class="footer-col-title">Populaire Tools</span><a href="/nl/usecase/lettertype-voor-bio/" class="footer-link">Lettertype voor Bio</a><a href="/nl/usecase/tattoo-letters/" class="footer-link">Tattoo Letters</a><a href="/usecase/text-to-emoji/" class="footer-link">Emoji Vertaler</a><a href="/nl/usecase/vertical-text/" class="footer-link">Verticale Tekst</a></div><div class="footer-col"><span class="footer-col-title">Populaire Categorieën</span><a href="/nl/vetgedrukte-letters/" class="footer-link">Vetgedrukte Letters</a><a href="/nl/cursieve-letters/" class="footer-link">Cursieve Letters</a><a href="/nl/gotische-letters/" class="footer-link">Gotische Letters</a><a href="/nl/kleine-letters/" class="footer-link">Kleine Letters</a><a href="/category/strikethrough-text/" class="footer-link">Doorgestreepte Tekst</a></div><div class="footer-col"><span class="footer-col-title">Bedrijf</span><a href="/about/" class="footer-link">Over ons</a><a href="/privacy/" class="footer-link">Privacybeleid</a><a href="/terms/" class="footer-link">Servicevoorwaarden</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Stijlvolle letters die overal werken.</div>
+<div class="footer-columns"><div class="footer-col"><span class="footer-col-title">Verkennen</span><a href="/nl/" class="footer-link">Home</a><a href="/nl/guide/" class="footer-link">Gidsen</a><a href="/nl/answers/" class="footer-link">Antwoorden</a><a href="/nl/usecase/" class="footer-link">Toepassingen</a><a href="/category/" class="footer-link">Categorieën</a><a href="/nl/library/" class="footer-link">Bibliotheek</a><a href="/printables/" class="footer-link">Afdrukbaar</a><a href="/events/" class="footer-link">Evenementen</a></div><div class="footer-col"><span class="footer-col-title">Populaire Tools</span><a href="/nl/usecase/lettertype-voor-bio/" class="footer-link">Lettertype voor Bio</a><a href="/nl/usecase/tattoo-letters/" class="footer-link">Tattoo Letters</a><a href="/usecase/text-to-emoji/" class="footer-link">Emoji Vertaler</a><a href="/nl/usecase/vertical-text/" class="footer-link">Verticale Tekst</a></div><div class="footer-col"><span class="footer-col-title">Populaire Categorieën</span><a href="/nl/vetgedrukte-letters/" class="footer-link">Vetgedrukte Letters</a><a href="/nl/cursieve-letters/" class="footer-link">Cursieve Letters</a><a href="/nl/gotische-letters/" class="footer-link">Gotische Letters</a><a href="/nl/kleine-letters/" class="footer-link">Kleine Letters</a><a href="/category/strikethrough-text/" class="footer-link">Doorgestreepte Tekst</a></div><div class="footer-col"><span class="footer-col-title">Bedrijf</span><a href="/about/" class="footer-link">Over ons</a><a href="/privacy/" class="footer-link">Privacybeleid</a><a href="/terms/" class="footer-link">Servicevoorwaarden</a><a href="/contact/" class="footer-link">Contact</a></div></div><div class="footer-social-links"><a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a></div><div class="footer-bottom">© 2026 UltraTextGen. Stijlvolle letters die overal werken.</div>
 <!-- END static footer -->
 </div>
   </footer>
@@ -841,7 +848,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/usecase/bio-font/bio-font.js" defer></script>
 
 

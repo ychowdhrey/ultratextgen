@@ -20,11 +20,11 @@
       "symbols": [
         {
           "char": "π",
-          "label": "Greek Small Letter Pi (U+03C0) — The Math Constant ≈ 3.14159"
+          "label": "Greek Small Letter Pi (U+03C0): The Math Constant ≈ 3.14159"
         },
         {
           "char": "Π",
-          "label": "Greek Capital Letter Pi (U+03A0) — The Product Operator"
+          "label": "Greek Capital Letter Pi (U+03A0): The Product Operator"
         }
       ]
     },
@@ -36,19 +36,19 @@
       "symbols": [
         {
           "char": "∏",
-          "label": "N-ary Product (U+220F) — The Dedicated Product Operator"
+          "label": "N-ary Product (U+220F): The Dedicated Product Operator"
         },
         {
           "char": "Π",
-          "label": "Capital Pi (U+03A0) — The Letter Often Typed for Products"
+          "label": "Capital Pi (U+03A0): The Letter Often Typed for Products"
         },
         {
           "char": "∑",
-          "label": "N-ary Summation (U+2211) — The Product's Additive Twin"
+          "label": "N-ary Summation (U+2211): The Product's Additive Twin"
         },
         {
           "char": "Σ",
-          "label": "Capital Sigma (U+03A3) — The Letter Behind Summation"
+          "label": "Capital Sigma (U+03A3): The Letter Behind Summation"
         }
       ]
     },

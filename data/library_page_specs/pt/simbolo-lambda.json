@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-lambda/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-lambda/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "the-lambda-letter",
@@ -29,8 +37,14 @@
       "h2": "O Símbolo Lambda — λ e Λ",
       "intro": "A letra grega em si — a 11ª do alfabeto, valendo 30 no sistema de numerais gregos, descendente da letra fenícia lamed. O λ minúsculo faz quase todo o trabalho cultural; o Λ maiúsculo é um símbolo distinto de matemática e cosmologia.",
       "symbols": [
-        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB)" },
-        { "char": "Λ", "label": "Letra Grega Maiúscula Lambda (U+039B)" }
+        {
+          "char": "λ",
+          "label": "Letra Grega Minúscula Lambda (U+03BB)"
+        },
+        {
+          "char": "Λ",
+          "label": "Letra Grega Maiúscula Lambda (U+039B)"
+        }
       ]
     },
     {
@@ -39,9 +53,18 @@
       "h2": "Lambda como Símbolo da Libertação Gay",
       "intro": "A Gay Activists Alliance de Nova York adotou o λ minúsculo em 1970, e o Congresso Internacional pelos Direitos Gays o declarou símbolo internacional dos direitos de gays e lésbicas em 1974 — um dos primeiros emblemas do movimento. Cole-o ao lado dos glifos do orgulho com que hoje divide espaço.",
       "symbols": [
-        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB) — o Sinal da Libertação Gay" },
-        { "char": "🏳️‍🌈", "label": "Bandeira do Arco-Íris" },
-        { "char": "⚧", "label": "Símbolo Transgênero (U+26A7)" }
+        {
+          "char": "λ",
+          "label": "Letra Grega Minúscula Lambda (U+03BB): o Sinal da Libertação Gay"
+        },
+        {
+          "char": "🏳️‍🌈",
+          "label": "Bandeira do Arco-Íris"
+        },
+        {
+          "char": "⚧",
+          "label": "Símbolo Transgênero (U+26A7)"
+        }
       ]
     },
     {
@@ -50,9 +73,18 @@
       "h2": "Lambda no Código, na Matemática e na Física",
       "intro": "A vida técnica da letra. O λ minúsculo marca funções anônimas — do cálculo lambda de Alonzo Church até a palavra-chave lambda do Python e o AWS Lambda — e representa comprimento de onda na física; o Λ maiúsculo é a constante cosmológica do modelo ΛCDM.",
       "symbols": [
-        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB) — Comprimento de Onda e Cálculo Lambda" },
-        { "char": "Λ", "label": "Letra Grega Maiúscula Lambda (U+039B) — Constante Cosmológica" },
-        { "char": "𝜆", "label": "Lambda Itálico Matemático (U+1D706) — a Variante de Equação" }
+        {
+          "char": "λ",
+          "label": "Letra Grega Minúscula Lambda (U+03BB): Comprimento de Onda e Cálculo Lambda"
+        },
+        {
+          "char": "Λ",
+          "label": "Letra Grega Maiúscula Lambda (U+039B): Constante Cosmológica"
+        },
+        {
+          "char": "𝜆",
+          "label": "Lambda Itálico Matemático (U+1D706): a Variante de Equação"
+        }
       ]
     },
     {
@@ -61,11 +93,26 @@
       "h2": "Letras Gregas Relacionadas",
       "intro": "Lambda é a 11ª letra do alfabeto grego. Aqui estão as vizinhas que as pessoas copiam junto com ela.",
       "symbols": [
-        { "char": "π", "label": "Letra Grega Minúscula Pi" },
-        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" },
-        { "char": "Δ", "label": "Letra Grega Maiúscula Delta" },
-        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega" },
-        { "char": "α", "label": "Letra Grega Minúscula Alfa" }
+        {
+          "char": "π",
+          "label": "Letra Grega Minúscula Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Letra Grega Maiúscula Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Letra Grega Maiúscula Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "Letra Grega Maiúscula Ômega"
+        },
+        {
+          "char": "α",
+          "label": "Letra Grega Minúscula Alfa"
+        }
       ]
     }
   ],

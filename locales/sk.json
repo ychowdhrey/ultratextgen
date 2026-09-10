@@ -193,6 +193,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Pridať formátovanie",
+      "groupAriaLabel": "Použiť podčiarknutie alebo prečiarknutie na každý štýl"
+    },
+    "platformChips": {
+      "all": "Funguje všade"
+    },
+    "categoryLoad": {
+      "failed": "Kategórie sa nepodarilo načítať. Zobrazujú sa všetky písma."
+    },
+    "stylePreview": {
+      "title": "Náhľad",
+      "titleFor": "Náhľad: {style}",
+      "dialogAriaLabel": "Náhľad platformy",
+      "closeAriaLabel": "Zavrieť náhľad"
     }
   },
   "useCases": {

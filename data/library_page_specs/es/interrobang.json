@@ -24,8 +24,8 @@
       "h2": "El Interrobang — ‽ y ⸘",
       "intro": "El signo en sí y su imagen especular: el interrobang estándar que cierra una pregunta de asombro, y la forma invertida construida para abrirla.",
       "symbols": [
-        { "char": "‽", "label": "Interrobang (U+203D) — Interrogación y Exclamación en un Solo Glifo" },
-        { "char": "⸘", "label": "Interrobang Invertido (U+2E18) — el Gemelo de Apertura de Frase" }
+        { "char": "‽", "label": "Interrobang (U+203D): Interrogación y Exclamación en un Solo Glifo" },
+        { "char": "⸘", "label": "Interrobang Invertido (U+2E18): el Gemelo de Apertura de Frase" }
       ]
     },
     {

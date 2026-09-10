@@ -130,7 +130,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "O Sentence case só coloca a primeira letra do meu texto em maiúscula?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não — um método simplista de \"capitalizar só o primeiro caractere\" quebra em textos com várias frases. O Sentence case desta ferramenta capitaliza a primeira palavra de cada frase (depois de ponto final, interrogação ou exclamação), e não apenas a primeira letra do texto inteiro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não, um método simplista de \"capitalizar só o primeiro caractere\" quebra em textos com várias frases. O Sentence case desta ferramenta capitaliza a primeira palavra de cada frase (depois de ponto final, interrogação ou exclamação), e não apenas a primeira letra do texto inteiro." }
     },
     {
       "@type": "Question",
@@ -185,6 +185,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Digite ou cole seu texto aqui..." maxlength="5000"></textarea>
         <span class="char-count"><span id="charCount">0</span>/5000</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href="/guide/fancy-fonts-and-accents/">Que estilos mantêm os acentos →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
+      </div>
     </div>
   </div>
 </section>
@@ -215,7 +222,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           O Sentence case só coloca a primeira letra do meu texto em maiúscula?
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="faq-answer">Não — um método simplista de "capitalizar só o primeiro caractere" quebra em textos com várias frases. O Sentence case desta ferramenta capitaliza a primeira palavra de cada frase (depois de ponto final, interrogação ou exclamação), e não apenas a primeira letra do texto inteiro.</div>
+        <div class="faq-answer">Não, um método simplista de "capitalizar só o primeiro caractere" quebra em textos com várias frases. O Sentence case desta ferramenta capitaliza a primeira palavra de cada frase (depois de ponto final, interrogação ou exclamação), e não apenas a primeira letra do texto inteiro.</div>
       </div>
 
       <div class="faq-item">
@@ -269,6 +276,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_FAMILY = "case-converter";</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/footer.js" defer></script>
 </body></html>

@@ -18,12 +18,30 @@
       "h2": "First Symbol Group",
       "intro": "Short description of what this group contains and when to use it.",
       "symbols": [
-        { "char": "★", "label": "Black Star" },
-        { "char": "☆", "label": "White Star" },
-        { "char": "✦", "label": "Black Four Pointed Star" },
-        { "char": "✧", "label": "White Four Pointed Star" },
-        { "char": "✪", "label": "Circled White Star" },
-        { "char": "✩", "label": "Stress Outlined White Star" }
+        {
+          "char": "★",
+          "label": "Black Star"
+        },
+        {
+          "char": "☆",
+          "label": "White Star"
+        },
+        {
+          "char": "✦",
+          "label": "Black Four Pointed Star"
+        },
+        {
+          "char": "✧",
+          "label": "White Four Pointed Star"
+        },
+        {
+          "char": "✪",
+          "label": "Circled White Star"
+        },
+        {
+          "char": "✩",
+          "label": "Stress Outlined White Star"
+        }
       ]
     },
     {
@@ -32,10 +50,22 @@
       "h2": "Second Symbol Group",
       "intro": "Another themed grouping of related characters.",
       "symbols": [
-        { "char": "❂", "label": "Circled Open Centre Eight Pointed Star" },
-        { "char": "✯", "label": "Pinwheel Star" },
-        { "char": "✫", "label": "Open Centre Black Star" },
-        { "char": "✬", "label": "Black Centre White Star" }
+        {
+          "char": "❂",
+          "label": "Circled Open Centre Eight Pointed Star"
+        },
+        {
+          "char": "✯",
+          "label": "Pinwheel Star"
+        },
+        {
+          "char": "✫",
+          "label": "Open Centre Black Star"
+        },
+        {
+          "char": "✬",
+          "label": "Black Centre White Star"
+        }
       ]
     },
     {
@@ -44,10 +74,22 @@
       "h2": "Third Symbol Group",
       "intro": "A third section so the page has the required minimum of three H2 headings.",
       "symbols": [
-        { "char": "⭐", "label": "Star Emoji" },
-        { "char": "🌟", "label": "Glowing Star" },
-        { "char": "✨", "label": "Sparkles" },
-        { "char": "💫", "label": "Dizzy" }
+        {
+          "char": "⭐",
+          "label": "Star Emoji"
+        },
+        {
+          "char": "🌟",
+          "label": "Glowing Star"
+        },
+        {
+          "char": "✨",
+          "label": "Sparkles"
+        },
+        {
+          "char": "💫",
+          "label": "Dizzy"
+        }
       ]
     }
   ],
@@ -61,11 +103,15 @@
   "collections": [
     {
       "name": "Classic Stars",
-      "flags": ["★", "☆", "✦", "✧"],
+      "flags": [
+        "★",
+        "☆",
+        "✦",
+        "✧"
+      ],
       "defaultFormat": "inline"
     }
   ],
-  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
   "related": [
     {
       "href": "/library/heart-symbols/",

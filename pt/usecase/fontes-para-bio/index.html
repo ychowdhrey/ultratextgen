@@ -197,7 +197,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Fonte estilosa funciona nas bios e nicks do Discord?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim — o <a href='/pt/fontes-para-discord/'>Discord</a> aceita texto Unicode tanto no «Sobre mim» quanto no apelido de servidor. Fontes góticas e negrito são bem populares em servidores de jogos e comunidades. É só colar seu texto estilizado no campo certo nas configurações do seu perfil do Discord."
+        "text": "Sim, o <a href='/pt/fontes-para-discord/'>Discord</a> aceita texto Unicode tanto no «Sobre mim» quanto no apelido de servidor. Fontes góticas e negrito são bem populares em servidores de jogos e comunidades. É só colar seu texto estilizado no campo certo nas configurações do seu perfil do Discord."
       }
     },
     {
@@ -245,7 +245,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Minha bio estilizada pode me banir ou ser sinalizada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não — usar símbolos Unicode e emojis é permitido na maioria das plataformas, desde que a bio siga as regras gerais (nada de se passar por outra pessoa, discurso de ódio etc.). É uma forma comum de personalizar o perfil. São caracteres padrão da especificação Unicode, não hack nem exploit."
+        "text": "Não, usar símbolos Unicode e emojis é permitido na maioria das plataformas, desde que a bio siga as regras gerais (nada de se passar por outra pessoa, discurso de ódio etc.). É uma forma comum de personalizar o perfil. São caracteres padrão da especificação Unicode, não hack nem exploit."
       }
     },
     {
@@ -253,7 +253,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Fontes de bio têm algum problema de acessibilidade?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim — leitores de tela costumam ter dificuldade pra interpretar caracteres estilizados em Unicode corretamente. Em vez de ler «olá», um leitor de tela pode anunciar os códigos de cada caractere individualmente. <br><br> <strong>Boa prática:</strong> estilize só uma frase-chave ou o nome de exibição e deixe o resto da bio em texto normal. Assim você tem impacto visual sem deixar o perfil inacessível."
+        "text": "Sim, leitores de tela costumam ter dificuldade pra interpretar caracteres estilizados em Unicode corretamente. Em vez de ler «olá», um leitor de tela pode anunciar os códigos de cada caractere individualmente. <br><br> <strong>Boa prática:</strong> estilize só uma frase-chave ou o nome de exibição e deixe o resto da bio em texto normal. Assim você tem impacto visual sem deixar o perfil inacessível."
       }
     },
     {
@@ -364,6 +364,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Digite o texto da sua bio aqui..." maxlength="500"></textarea>
           <span class="char-count bf-counter" id="bfCounter"><span id="charCount">0</span>/<span id="charLimit">500</span></span>
+        </div>
+
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">O seu texto tem acentos. Negrito, cursiva, gótico e quase todos os outros estilos mantêm agora <b>ã</b>, <b>ç</b> e <b>é</b> com o acento. A exceção é o texto ao contrário: aí as letras acentuadas passam sem virar e ficam direitas. <a href="/guide/fancy-fonts-and-accents/">Que estilos mantêm os acentos →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Fechar">✕</button>
         </div>
 
         <!-- Platform compatibility note -->
@@ -722,7 +729,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Sim — o <a href="/pt/fontes-para-discord/">Discord</a> aceita texto Unicode tanto no "Sobre mim" quanto no apelido de servidor. Fontes góticas e negrito são bem populares em servidores de jogos e comunidades. É só colar seu texto estilizado no campo certo nas configurações do seu perfil do Discord.
+    Sim, o <a href="/pt/fontes-para-discord/">Discord</a> aceita texto Unicode tanto no "Sobre mim" quanto no apelido de servidor. Fontes góticas e negrito são bem populares em servidores de jogos e comunidades. É só colar seu texto estilizado no campo certo nas configurações do seu perfil do Discord.
   </div>
 </div>
 
@@ -805,7 +812,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Não — usar símbolos Unicode e emojis é permitido na maioria das plataformas, desde que a bio siga as regras gerais (nada de se passar por outra pessoa, discurso de ódio etc.). É uma forma comum de personalizar o perfil. São caracteres padrão da especificação Unicode, não hack nem exploit.
+    Não, usar símbolos Unicode e emojis é permitido na maioria das plataformas, desde que a bio siga as regras gerais (nada de se passar por outra pessoa, discurso de ódio etc.). É uma forma comum de personalizar o perfil. São caracteres padrão da especificação Unicode, não hack nem exploit.
   </div>
 </div>
 
@@ -817,7 +824,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </svg>
   </button>
   <div class="faq-answer">
-    Sim — leitores de tela costumam ter dificuldade pra interpretar caracteres estilizados em Unicode corretamente. Em vez de ler "olá", um leitor de tela pode anunciar os códigos de cada caractere individualmente.
+    Sim, leitores de tela costumam ter dificuldade pra interpretar caracteres estilizados em Unicode corretamente. Em vez de ler "olá", um leitor de tela pode anunciar os códigos de cada caractere individualmente.
     <br><br>
     <strong>Boa prática:</strong> estilize só uma frase-chave ou o nome de exibição e deixe o resto da bio em texto normal. Assim você tem impacto visual sem deixar o perfil inacessível.
   </div>
@@ -913,7 +920,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/share/share-core.js" defer></script>
+  <script src="/js/saved/saved-items.js" defer></script>
   <script src="/script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/accent-notice.js" defer></script>
   <script src="/usecase/bio-font/bio-font.js" defer></script>
 
 

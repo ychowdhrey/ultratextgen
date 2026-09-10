@@ -16,11 +16,19 @@
   "crumb_home": "Home",
   "crumb_library": "Simboli",
   "library_url": "https://ultratextgen.com/it/symbol/",
-  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
-    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-tilde/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-tilde/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    }
   ],
   "sections": [
     {
@@ -29,9 +37,18 @@
       "h2": "La Tilde ~ e i Suoi Sosia",
       "intro": "Tre caratteri Unicode distinti che tutti chiamano \"la tilde\" — il tasto da tastiera, un modificatore autonomo e il segno diacritico combinante che si posiziona sopra una lettera.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E) — il Tasto da Tastiera" },
-        { "char": "˜", "label": "Piccola Tilde (U+02DC) — Modificatore Autonomo" },
-        { "char": "̃", "label": "Tilde Combinante (U+0303) — Sopra una Lettera" }
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): il Tasto da Tastiera"
+        },
+        {
+          "char": "˜",
+          "label": "Piccola Tilde (U+02DC): Modificatore Autonomo"
+        },
+        {
+          "char": "̃",
+          "label": "Tilde Combinante (U+0303): Sopra una Lettera"
+        }
       ]
     },
     {
@@ -40,10 +57,22 @@
       "h2": "Le Lettere Che Portano la Tilde",
       "intro": "La tilde combinante in azione. La ñ spagnola e la ã e õ portoghesi sono le eredi quotidiane dell'abbreviazione medievale per una \"n\" omessa.",
       "symbols": [
-        { "char": "ñ", "label": "Lettera Latina Minuscola N con Tilde (U+00F1)" },
-        { "char": "Ñ", "label": "Lettera Latina Maiuscola N con Tilde (U+00D1)" },
-        { "char": "ã", "label": "Lettera Latina Minuscola A con Tilde (U+00E3)" },
-        { "char": "õ", "label": "Lettera Latina Minuscola O con Tilde (U+00F5)" }
+        {
+          "char": "ñ",
+          "label": "Lettera Latina Minuscola N con Tilde (U+00F1)"
+        },
+        {
+          "char": "Ñ",
+          "label": "Lettera Latina Maiuscola N con Tilde (U+00D1)"
+        },
+        {
+          "char": "ã",
+          "label": "Lettera Latina Minuscola A con Tilde (U+00E3)"
+        },
+        {
+          "char": "õ",
+          "label": "Lettera Latina Minuscola O con Tilde (U+00F5)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "Tilde Matematiche: Simile-a e Quasi-Uguale",
       "intro": "Nelle equazioni la tilde significa \"simile a\" o \"circa\", ma i veri segni matematici sono caratteri Unicode a parte — non la ~ ASCII che di solito si digita al loro posto.",
       "symbols": [
-        { "char": "∼", "label": "Operatore Tilde (U+223C) — \"Simile a\"" },
-        { "char": "≈", "label": "Quasi Uguale (U+2248) — \"Approssimativamente Uguale\"" },
-        { "char": "≅", "label": "Approssimativamente Uguale a (U+2245)" },
-        { "char": "≃", "label": "Asintoticamente Uguale a (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E) — la Tilde ASCII Spesso Digitata al Suo Posto" }
+        {
+          "char": "∼",
+          "label": "Operatore Tilde (U+223C) — \"Simile a\""
+        },
+        {
+          "char": "≈",
+          "label": "Quasi Uguale (U+2248) — \"Approssimativamente Uguale\""
+        },
+        {
+          "char": "≅",
+          "label": "Approssimativamente Uguale a (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asintoticamente Uguale a (U+2243)"
+        },
+        {
+          "char": "~",
+          "label": "Tilde (U+007E): la Tilde ASCII Spesso Digitata al Suo Posto"
+        }
       ]
     }
   ],

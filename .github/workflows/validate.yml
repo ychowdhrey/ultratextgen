@@ -227,6 +227,90 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Whole-site and gating, same call as the Funding Choices tag and the
+      # zalgo decode check rather than the informational whole-site audits:
+      # there is no backlog to be permanently red against. A page either loads
+      # the shared Save/Share modules or it does not, and
+      # `npm run inject:share-save-tags` closes any gap in one idempotent run.
+      # Whole-site rather than diff-scoped on purpose — the shape it catches is
+      # a page generator emitting a template that predates the 2026-09-05 split,
+      # so a NEW page arrives untagged from a file the PR may not even touch.
+      - name: Run share/save module tag check
+        id: share_save_tags
+        continue-on-error: true
+        run: npm run check:share-save-tags | tee share-save-tags.log
+
+      # symbol-explorer.js hand-carries a 28-locale UI string table because its
+      # 3,605 pages deliberately do not load i18n.js. This asserts that table
+      # still agrees with locales/*.json, which is the source of truth for the
+      # same strings on the generator side.
+      - name: Run symbol-explorer string sync check
+        id: explorer_strings
+        continue-on-error: true
+        run: npm run check:explorer-strings | tee explorer-strings.log
+
+      # Unit tests for the typed saved-items store. Gating, no backlog.
+      - name: Run saved-items store tests
+        id: saved_items_tests
+        continue-on-error: true
+        run: npm run test:saved-items | tee saved-items-tests.log
+
+      # Gating, no backlog: the zalgo generator's pure engine (mark pools,
+      # the Thai cascade generator, the unzalgo decoder) is sliced out of the
+      # shipped widget by scripts/lib/zalgo-engine.js and asserted headless.
+      # The decoder is a Check surface with two promises that a visual check
+      # cannot see: a generated Thai stack (one tone mark repeated) is removed,
+      # and ordinary Thai (one tone mark per consonant) survives untouched.
+      - name: Run zalgo engine tests
+        id: zalgo_engine_tests
+        continue-on-error: true
+        run: npm run test:zalgo-engine | tee zalgo-engine-tests.log
+
+      # Diff-scoped and gating. Fails a PR that corrects a number on one page of
+      # an hreflang cluster and leaves a sibling asserting the old value — the
+      # 2026-09-01 Unicode 18.0 case, where 13,047 -> 13,007 shipped in English
+      # and seven translations kept the old figure for a month with full CI
+      # green. Every other gate here measures structure, language, schema or
+      # assets; a wrong number passes all of them. Replayed over the last 52
+      # commits that touched HTML it fires exactly once, on that commit.
+      - name: Run numeric parity check
+        id: numeric_parity
+        continue-on-error: true
+        run: npm run check:numeric-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee numeric-parity.log
+
+      # Whole-pillar and gating, same call as the zalgo check above: no backlog
+      # to be permanently red against — all 11 updates/ entries carry exactly
+      # one verification date, in the guide-meta pill, so a failure is always a
+      # regression this branch introduced. Deliberately NOT diff-scoped: the
+      # shape this catches is an older page drifting out of agreement with a
+      # convention set later, which a diff-scoped check cannot see.
+      - name: Run updates verification-date check
+        id: updates_verification
+        continue-on-error: true
+        run: npm run check:updates-verification | tee updates-verification.log
+
+      # Source attribution: a page that cites an external source presents it in
+      # one Sources block, with each citation's rel set by the cited domain's
+      # authority tier (data/source_authority.json). Diff-scoped, because 32
+      # pages carried citations with no block when this landed and that backlog
+      # is written prose, not a mechanical fix. It GATES rather than informs:
+      # for the pages a PR actually touches there is nothing to be permanently
+      # red against, and fix-source-attribution.js closes the mechanical half.
+      # The link-rot AUDIT itself never runs in CI and never gates — it reaches
+      # ~50 third-party hosts (see .github/workflows/link-rot.yml). What gates
+      # is its reasoning: how a fetch result is classified and when a streak
+      # counts as rot. That has no network dependency and no backlog, so a
+      # failure here is always a real regression.
+      - name: Run link-health tests
+        id: link_health_tests
+        continue-on-error: true
+        run: npm run test:link-health | tee link-health-tests.log
+
+      - name: Run source attribution check
+        id: source_attribution
+        continue-on-error: true
+        run: npm run check:source-attribution -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee source-attribution.log
+
       - name: Run locale translation completeness check
         id: locale_translation
         continue-on-error: true
@@ -257,6 +341,20 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-spec | tee locale-spec.log
 
+      # A locale PAGE must carry its EN parent's combo-set section. That section
+      # renders at runtime through buildGrids(), so it leaves no static markup
+      # and every other gate here is blind to it — 43 locale pages shipped
+      # without it while passing all of them. Diff-scoped, unlike the spec
+      # check above, because a real backlog exists (61 pages missing the
+      # section, 32 short or long on groups) and a permanently red check is one
+      # people learn to ignore. The two are not redundant: the spec check stops
+      # a bad page being GENERATED and only sees the 327 pages that have a
+      # spec; this one stops a bad page being SHIPPED and sees all 798.
+      - name: Run locale combo-set parity check
+        id: locale_collection_parity
+        continue-on-error: true
+        run: npm run check:locale-collection-parity | tee locale-collection-parity.log
+
       - name: Run external-reference check
         id: external_refs
         continue-on-error: true
@@ -284,6 +382,18 @@ jobs:
         id: static_footer
         continue-on-error: true
         run: npm run check:static-footer | tee static-footer.log
+      # Gating, and with no backlog to be red against: the accent notice's copy
+      # either matches data/accent_notice_copy.json or it doesn't, and
+      # `npm run build:accent-notice` closes any gap in one idempotent run. The
+      # sentence is one string per locale baked onto ~200 pages, so a page
+      # edited by hand — or a page added with no notice at all — drifts
+      # silently otherwise. The check also fails on a generator page whose
+      # input wrapper it cannot place the block around, rather than patching
+      # blind.
+      - name: Run accent notice check
+        id: accent_notice
+        continue-on-error: true
+        run: npm run check:accent-notice | tee accent-notice.log
       # Gating, and with no backlog to be red against: library/index.html's
       # static directory either matches its own LIBRARY array or it doesn't,
       # and `npm run build:library-directory` closes any gap in one idempotent
@@ -296,16 +406,24 @@ jobs:
         continue-on-error: true
         run: npm run check:library-directory | tee library-directory.log
 
-      # The locale directory hubs are pre-rendered by a SECOND builder
-      # (scripts/build-locale-library-directory.js) because they carry no
-      # extraction markers. It shipped unwired — no npm script, no CI step — so
-      # nothing noticed if a locale hub's LIBRARY array changed and its static
-      # block was not regenerated. Same shape as every other "the check existed
-      # but nothing ran it" incident recorded in CLAUDE.md.
-      - name: Run locale library directory freshness check
+      # The locale directory hubs are pre-rendered so a non-rendering crawler
+      # sees their links. This step used to run check:locale-library-directory,
+      # which reads a `const LIBRARY = [...]` array — a format every locale hub
+      # migrated away from. All 19 skipped, it exited 0, and it printed "All
+      # locale library hubs are pre-rendered and current." The gate had been
+      # verifying nothing for as long as the new format has been live: the
+      # third instance in this repo of "a check that reports nothing is
+      # indistinguishable from a check that passes."
+      #
+      # scripts/build-library-hub.js reads window.UTG_LIBRARY_HUB, which is
+      # what the hubs actually carry, and exits 1 on drift. Wiring it here
+      # immediately caught real staleness in ko/library/index.html.
+      # build-locale-library-directory.js now fails loudly if it ever skips
+      # every target again, rather than reporting success.
+      - name: Run locale library hub freshness check
         id: locale_library_directory
         continue-on-error: true
-        run: npm run check:locale-library-directory | tee locale-library-directory.log
+        run: npm run check:library-hub | tee locale-library-directory.log
 
       # Library hub coverage — the DIFF-SCOPED gate. A page can ship correct in
       # every other respect (indexable, self-canonical, meshed, in the sitemap)
@@ -346,7 +464,18 @@ jobs:
       #
       # `--annotations` emits GitHub file/line annotations so findings appear on
       # the diff rather than only in this log.
-      - name: Run editorial footprint check (shadow mode, informational)
+      #
+      # ONE RULE GATES (2026-09-02, user decision): the em dash is banned on
+      # new or changed copy, forward-only and PER LOCALE, from
+      # data/em_dash_locale_policy.json — English and the thirteen en-dash
+      # locales ban outright, zh-tw and ja ban a lone dash, six native-dash
+      # locales are never flagged, nine warn pending a native reader. The
+      # spaced hyphen is banned on English. The script exits 1 only when a
+      # branch INTRODUCES a banned dash, whatever mode it runs in; every other
+      # rule stays shadow. That is why this step is in the gating list below
+      # while still being labelled shadow mode: existing em dashes are reported
+      # and never billed. Table and decision: docs/em-dash-policy.md.
+      - name: Run editorial footprint check (shadow mode; em dash policy enforced per locale)
         id: editorial_footprint
         continue-on-error: true
         run: npm run check:editorial-footprint -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee editorial-footprint.log
@@ -360,6 +489,45 @@ jobs:
         id: editorial_footprint_tests
         continue-on-error: true
         run: npm run test:editorial-footprint | tee editorial-footprint-tests.log
+
+      # EFR Quality Gate — diff-scoped and GATING, unlike the shadow-mode check
+      # above, and the two are different questions. check-editorial-footprint
+      # asks "did this branch introduce a forbidden pattern or an SEO loss";
+      # this asks "did this branch move an /updates/ or /guide/ page's overall
+      # EFR score the wrong way against its section's PASS threshold" — a
+      # RATCHET, never a state check: a new page must meet PASS, an existing
+      # PASS page may not be pushed above it, an existing page above PASS may
+      # not get materially worse (+0.5), and an improvement bought by deleting
+      # facts or internal links is IMPROVED BY REMOVAL, not credited. The 13
+      # English guides above target on the day it was wired never count
+      # against a branch that does not touch them. Both sides of every diff
+      # are scored in one corpus so the delta is the page's own change.
+      # Thresholds, the exception ledger (data/efr_exceptions.json) and the
+      # editor playbook: docs/efr-quality-gate.md. Verified against seven
+      # deliberately broken inputs before being added to the gating list.
+      - name: Run EFR quality gate (updates/guide, ratcheted)
+        id: efr_gate
+        continue-on-error: true
+        run: npm run check:efr -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} --annotations | tee efr-gate.log
+
+      # Gating, zero backlog: unit tests over the gate's own policy — threshold
+      # boundaries, every ratchet outcome, every exception state, and the
+      # worked example (11.5 -> 8.2 is an improvement still above target, not
+      # the same as 11.5 -> 12.5).
+      - name: Run EFR quality gate tests
+        id: efr_tests
+        continue-on-error: true
+        run: npm run test:efr | tee efr-tests.log
+      # Gating, no backlog: fixtures for the sitemap's significance hash, the
+      # rule that decides whether a page's <lastmod> advances. It encodes the
+      # two mass-bumps this repo actually produced (the site-wide static footer
+      # on 2026-08-20, the template-tier punctuation pass on 2026-09-02) as
+      # NON-catches, and the changes a reader can see as catches, so a future
+      # edit cannot silently re-enable either failure.
+      - name: Run content-significance tests
+        id: content_significance_tests
+        continue-on-error: true
+        run: npm run test:content-significance | tee content-significance-tests.log
 
       # Diff-scoped and GATING. Page copy is hand-written once per spec in
       # data/library_page_specs/, and nothing compared those specs to each
@@ -379,10 +547,10 @@ jobs:
       # deleting five later site-wide repairs (Funding Choices tag, static
       # footer, the FAQ's position in <main>, hreflang alternates, social image
       # tags) from 90 live pages in one unmodified run.
-      - name: Run printables generator parity tests
-        id: printables_parity_tests
+      - name: Run generator parity tests
+        id: generator_parity_tests
         continue-on-error: true
-        run: npm run test:printables-parity | tee printables-parity-tests.log
+        run: npm run test:generator-parity | tee generator-parity-tests.log
 
       # Gating, zero backlog: unit tests over fixtures for the check above. The
       # first specification of that check compared whole FIELDS, and the corpus
@@ -394,6 +562,100 @@ jobs:
         id: spec_sentence_reuse_tests
         continue-on-error: true
         run: npm run test:spec-sentence-reuse | tee spec-sentence-reuse-tests.log
+
+      # Gating, zero backlog: unit tests over the analytics classifiers in
+      # header.js. Two concerns, both of which decide what every future number
+      # from them means:
+      #
+      #   · the cta_click pair, each carrying a real trap — /js/ is a genuine
+      #     two-letter top-level directory and is not a locale, and a pillar
+      #     index is a different answer from a page inside that pillar;
+      #   · the copy_text identity engine, whose Unicode block table is a
+      #     factual assertion about encodings. Its whole-site case is
+      #     self-maintaining: ship a page in a script the table does not cover
+      #     and this goes red, instead of that page's copies arriving as
+      #     "Other".
+      #
+      # The test SLICES both out of the live header.js rather than
+      # reimplementing them, the same technique check-zalgo-decodes.js uses for
+      # generateZalgo().
+      - name: Run header.js analytics tests
+        id: header_analytics_tests
+        continue-on-error: true
+        run: npm run test:header-analytics | tee header-analytics-tests.log
+
+      # Gating, zero backlog: i18n.js rewrites a page's FAQPage JSON-LD from
+      # the locale JSON it fetches, and the FAQ in a locale JSON is the
+      # HOMEPAGE's FAQ. Only a homepage renders it, so on any other page that
+      # rewrite substitutes questions the page never shows — invisible-content
+      # FAQ markup, which forfeits the rich result and is the shape Google
+      # treats as spammy structured markup.
+      #
+      # It was live on 11 locale zalgo pages (overlap between the page's own 6
+      # questions and the homepage's 21: ZERO), and INVISIBLE to
+      # steps.faq_schema, which reads the static HTML while the substitution
+      # happens in the renderer. So this is a different failure mode than that
+      # gate covers, not a duplicate of it. The test slices updateFAQSchema()
+      # out of the live i18n.js and drives it against a DOM stub.
+      - name: Run i18n FAQ-schema guard tests
+        id: i18n_faq_schema_tests
+        continue-on-error: true
+        run: npm run test:i18n-faq-schema | tee i18n-faq-schema-tests.log
+
+      # Gating, diff-scoped, zero backlog: the accessibility classes that stand
+      # at ZERO across all 4,645 pages — duplicate ids, a second <main>, an
+      # <img> with no alt, a control with no accessible name, an unlabelled
+      # form field, an empty href, an untitled iframe, a missing or duplicated
+      # h1, a missing <html lang>, a positive tabindex.
+      #
+      # It gates rather than informs because that set is empty today (the same
+      # call as check:zalgo-decodes), and it is diff-scoped so it can only ever
+      # fail on something the PR itself introduced. Heading-level skips are
+      # ADVISORY and never billed: all 909 are the .compare-card design-system
+      # pattern, and restructuring them is an owner decision, not a validator's.
+      #
+      # It found a real one: ko/index.html shipped two <main> blocks, so
+      # script.js populated only the first #categoryTabs/#resultsGrid and the
+      # page rendered a dead tab strip and a dead results grid below the live
+      # ones. npm run audit:accessibility is the whole-site dashboard.
+      - name: Run accessibility check
+        id: accessibility
+        continue-on-error: true
+        run: npm run check:accessibility -- --base origin/${{ github.base_ref || 'main' }} | tee accessibility.log
+
+      # Gating, diff-scoped, zero backlog: every page a PR touches that renders
+      # a copy-paste collection grid must carry that grid in static HTML,
+      # current against the page's own GROUPS array.
+      #
+      # All 898 such pages shipped the section as an empty <div> plus an inline
+      # GROUPS array built into DOM after load, and no gate here could see it:
+      # the parity fingerprint reads the buildGrids CALL rather than its output,
+      # the locale and FAQ gates read text that was not there, the image gates
+      # read assets. On these pages the collections ARE the payload, and
+      # CLAUDE.md's Discovery Model section states the cost plainly: several
+      # search and AI crawlers execute no JavaScript.
+      #
+      # It gates rather than informs because there is no backlog to be red
+      # against (the same call as check:zalgo-decodes and check:accessibility):
+      # all 898 carry a current block, and the fix is one command.
+      - name: Run collection-grid pre-render check
+        id: collection_grids
+        continue-on-error: true
+        run: npm run check:collection-grids -- --base origin/${{ github.base_ref || 'main' }} | tee collection-grids.log
+
+      # Gating, zero backlog: unit tests over the CTA routing table and the
+      # in-place pass that applies it. Three things they pin down, each a
+      # silent defect rather than a crash: no <lang>/ page may ever route (no
+      # locale build of any destination tool exists, and linking an English
+      # tool from a locale page is what the locale-native rule forbids); the
+      # pass is idempotent and never reclaims a card already pointed somewhere
+      # specific; and the card copy quotes limits read back out of
+      # js/counter/counterRules.js, so it cannot drift from the tool it
+      # describes.
+      - name: Run CTA routing tests
+        id: cta_routing_tests
+        continue-on-error: true
+        run: npm run test:cta-routing | tee cta-routing-tests.log
 
       - name: Build step summary
         if: always()
@@ -417,6 +679,13 @@ jobs:
             echo '```'
             echo ""
             echo "### Funding Choices tag check — \`${{ steps.funding_choices.outcome }}\`"
+            echo "### Share/Save module tag check — \`${{ steps.share_save_tags.outcome }}\`"
+            echo "### symbol-explorer string sync check — \`${{ steps.explorer_strings.outcome }}\`"
+            echo "### Saved-items store tests — \`${{ steps.saved_items_tests.outcome }}\`"
+            echo '```'
+            cat share-save-tags.log explorer-strings.log saved-items-tests.log
+            echo '```'
+            echo ""
             echo "### Counter claim-consistency check — \`${{ steps.counter_claims.outcome }}\`"
             echo '```'
             cat funding-choices.log
@@ -462,6 +731,11 @@ jobs:
             cat static-footer.log
             echo '```'
             echo ""
+            echo "### Accent notice check — \`${{ steps.accent_notice.outcome }}\`"
+            echo '```'
+            cat accent-notice.log
+            echo '```'
+            echo ""
             echo "### Tile codepoint check — \`${{ steps.tile_codepoints.outcome }}\`"
             echo '```'
             cat tile-codepoints.log
@@ -477,6 +751,31 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### Zalgo engine tests — \`${{ steps.zalgo_engine_tests.outcome }}\`"
+            echo '```'
+            cat zalgo-engine-tests.log
+            echo '```'
+            echo ""
+            echo "### Numeric parity check — \`${{ steps.numeric_parity.outcome }}\`"
+            echo '```'
+            cat numeric-parity.log
+            echo '```'
+            echo ""
+            echo "### Updates verification-date check — \`${{ steps.updates_verification.outcome }}\`"
+            echo '```'
+            cat updates-verification.log
+            echo '```'
+            echo ""
+            echo "### Link-health tests — \`${{ steps.link_health_tests.outcome }}\`"
+            echo '```'
+            cat link-health-tests.log
+            echo '```'
+            echo ""
+            echo "### Source attribution check — \`${{ steps.source_attribution.outcome }}\`"
+            echo '```'
+            cat source-attribution.log
+            echo '```'
+            echo ""
             echo "### Locale translation completeness check — \`${{ steps.locale_translation.outcome }}\`"
             echo '```'
             cat locale-translation.log
@@ -485,6 +784,16 @@ jobs:
             echo "### Locale parent gap check — \`${{ steps.locale_parent_gap.outcome }}\`"
             echo '```'
             cat locale-parent-gap.log
+            echo '```'
+            echo ""
+            echo "### Locale spec check — \`${{ steps.locale_spec.outcome }}\`"
+            echo '```'
+            cat locale-spec.log
+            echo '```'
+            echo ""
+            echo "### Locale combo-set parity — \`${{ steps.locale_collection_parity.outcome }}\`"
+            echo '```'
+            cat locale-collection-parity.log
             echo '```'
             echo ""
             echo "### External-reference check — \`${{ steps.external_refs.outcome }}\`"
@@ -502,6 +811,11 @@ jobs:
             cat locale-library-directory.log
             echo '```'
             echo ""
+            echo "### Library hub parity check — \`${{ steps.library_hub_parity.outcome }}\`"
+            echo '```'
+            cat library-hub-parity.log
+            echo '```'
+            echo ""
             echo "### Library hub coverage check — \`${{ steps.library_hub_coverage.outcome }}\`"
             echo '```'
             cat library-hub-coverage.log
@@ -512,7 +826,7 @@ jobs:
             cat library-hub-coverage-audit.log
             echo '```'
             echo ""
-            echo "### Editorial footprint check (shadow mode, informational) — \`${{ steps.editorial_footprint.outcome }}\`"
+            echo "### Editorial footprint check (shadow mode; em dash policy enforced per locale) — \`${{ steps.editorial_footprint.outcome }}\`"
             echo '```'
             cat editorial-footprint.log
             echo '```'
@@ -522,9 +836,22 @@ jobs:
             cat editorial-footprint-tests.log
             echo '```'
             echo ""
-            echo "### Printables generator parity tests — \`${{ steps.printables_parity_tests.outcome }}\`"
+            echo "### EFR quality gate (updates/guide, ratcheted) — \`${{ steps.efr_gate.outcome }}\`"
             echo '```'
-            cat printables-parity-tests.log
+            cat efr-gate.log
+            echo '```'
+            echo ""
+            echo "### EFR quality gate tests — \`${{ steps.efr_tests.outcome }}\`"
+            echo '```'
+            cat efr-tests.log
+            echo "### Content-significance tests — \`${{ steps.content_significance_tests.outcome }}\`"
+            echo '```'
+            cat content-significance-tests.log
+            echo '```'
+            echo ""
+            echo "### Generator parity tests — \`${{ steps.generator_parity_tests.outcome }}\`"
+            echo '```'
+            cat generator-parity-tests.log
             echo '```'
             echo ""
             echo "### Spec sentence-reuse check — \`${{ steps.spec_sentence_reuse.outcome }}\`"
@@ -537,6 +864,31 @@ jobs:
             cat spec-sentence-reuse-tests.log
             echo '```'
             echo ""
+            echo "### header.js analytics tests — \`${{ steps.header_analytics_tests.outcome }}\`"
+            echo '```'
+            cat header-analytics-tests.log
+            echo '```'
+            echo ""
+            echo "### i18n FAQ-schema guard tests — \`${{ steps.i18n_faq_schema_tests.outcome }}\`"
+            echo '```'
+            cat i18n-faq-schema-tests.log
+            echo '```'
+            echo ""
+            echo "### Accessibility — \`${{ steps.accessibility.outcome }}\`"
+            echo '```'
+            cat accessibility.log
+            echo '```'
+            echo ""
+            echo "### Collection-grid pre-render — \`${{ steps.collection_grids.outcome }}\`"
+            echo '```'
+            cat collection-grids.log
+            echo '```'
+            echo ""
+            echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
+            echo '```'
+            cat cta-routing-tests.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
             echo '```'
             cat locale-parent-gap-audit.log
@@ -544,10 +896,13 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
-        # steps.editorial_footprint is excluded on purpose: it runs in SHADOW
-        # MODE and exits 0 by design (see its own step comment). Its unit tests,
-        # steps.editorial_footprint_tests, ARE gating — they have no backlog to
-        # be red against.
+        # steps.editorial_footprint runs in SHADOW MODE for every rule but one:
+        # it exits 1 only when a branch introduces an em dash on a locale whose
+        # policy bans it, or a spaced hyphen on an English page (the
+        # forward-only ban, see its step comment), which is why it is in this
+        # list since 2026-09-02. Its unit
+        # tests, steps.editorial_footprint_tests, are gating too — they have no
+        # backlog to be red against.
         #
         # steps.images, steps.symbol_peer_links_audit, and
         # steps.locale_parent_gap_audit (all whole-site audits) are
@@ -564,27 +919,46 @@ jobs:
           steps.hreflang_completeness.outcome == 'failure' ||
           steps.library.outcome == 'failure' ||
           steps.funding_choices.outcome == 'failure' ||
+          steps.share_save_tags.outcome == 'failure' ||
+          steps.explorer_strings.outcome == 'failure' ||
+          steps.saved_items_tests.outcome == 'failure' ||
           steps.new_images.outcome == 'failure' ||
           steps.new_symbol_peer_links.outcome == 'failure' ||
           steps.parity.outcome == 'failure' ||
           steps.locale_mesh.outcome == 'failure' ||
+          steps.link_health_tests.outcome == 'failure' ||
+          steps.source_attribution.outcome == 'failure' ||
           steps.locale_translation.outcome == 'failure' ||
           steps.locale_parent_gap.outcome == 'failure' ||
           steps.locale_spec.outcome == 'failure' ||
+          steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
+          steps.zalgo_engine_tests.outcome == 'failure' ||
+          steps.numeric_parity.outcome == 'failure' ||
+          steps.updates_verification.outcome == 'failure' ||
           steps.external_refs.outcome == 'failure' ||
           steps.counter_claims.outcome == 'failure' ||
           steps.tile_codepoints.outcome == 'failure' ||
           steps.document_head.outcome == 'failure' ||
           steps.static_footer.outcome == 'failure' ||
+          steps.accent_notice.outcome == 'failure' ||
           steps.library_directory.outcome == 'failure' ||
           steps.locale_library_directory.outcome == 'failure' ||
           steps.library_hub_coverage.outcome == 'failure' ||
+          steps.editorial_footprint.outcome == 'failure' ||
           steps.editorial_footprint_tests.outcome == 'failure' ||
-          steps.printables_parity_tests.outcome == 'failure' ||
+          steps.efr_gate.outcome == 'failure' ||
+          steps.efr_tests.outcome == 'failure' ||
+          steps.content_significance_tests.outcome == 'failure' ||
+          steps.generator_parity_tests.outcome == 'failure' ||
           steps.spec_sentence_reuse.outcome == 'failure' ||
           steps.spec_sentence_reuse_tests.outcome == 'failure' ||
+          steps.header_analytics_tests.outcome == 'failure' ||
+          steps.i18n_faq_schema_tests.outcome == 'failure' ||
+          steps.accessibility.outcome == 'failure' ||
+          steps.collection_grids.outcome == 'failure' ||
+          steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."

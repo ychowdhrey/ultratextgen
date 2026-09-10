@@ -28,8 +28,8 @@
       "h2": "Symbol Pika — ♠ i ♤",
       "intro": "Sam kolor, w obu formach Unicode. Pełne ♠ to domyślny „czarny” pik; ♤ to konturowa „biała” wersja, a ♠️ to forma prezentacji emoji z selektorem wariantu. Gotowe do wklejenia gdziekolwiek.",
       "symbols": [
-        { "char": "♠", "label": "Czarny Kolor Pik (U+2660) — Pełny" },
-        { "char": "♤", "label": "Biały Kolor Pik (U+2664) — Kontur" },
+        { "char": "♠", "label": "Czarny Kolor Pik (U+2660): Pełny" },
+        { "char": "♤", "label": "Biały Kolor Pik (U+2664): Kontur" },
         { "char": "♠️", "label": "Emoji Koloru Pik (U+2660 U+FE0F)" }
       ]
     },
@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/library/card-suit-symbols/",

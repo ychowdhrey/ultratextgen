@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/dirham-sign/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-do-dirham/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dirham-sign/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-do-dirham/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/dirham-sign/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "dirham-sign",
@@ -29,7 +37,10 @@
       "h2": "Sinal do Dirham",
       "intro": "O caractere confirmado — já pronto para copiar pelo código, embora nenhuma fonte o renderize nativamente ainda.",
       "symbols": [
-        { "char": "⃃", "label": "Sinal do Dirham dos EAU (U+20C3, congelado para publicação)" }
+        {
+          "char": "⃃",
+          "label": "Sinal do Dirham dos EAU (U+20C3, congelado para publicação)"
+        }
       ]
     },
     {
@@ -38,8 +49,14 @@
       "h2": "Outros Novos Símbolos Monetários do Golfo Neste Lançamento",
       "intro": "O dirham não é o único novo símbolo monetário chegando no Unicode 18.0 — outras duas moedas regionais ganharam seus próprios sinais na mesma fase beta.",
       "symbols": [
-        { "char": "⃄", "label": "Sinal do Rial Omanense (U+20C4)" },
-        { "char": "⃂", "label": "Sinal do Rufiyaa Maldivo (U+20C2)" }
+        {
+          "char": "⃄",
+          "label": "Sinal do Rial Omanense (U+20C4)"
+        },
+        {
+          "char": "⃂",
+          "label": "Sinal do Rufiyaa Maldivo (U+20C2)"
+        }
       ]
     },
     {
@@ -48,9 +65,18 @@
       "h2": "Símbolos Monetários que Você Já Consegue Digitar",
       "intro": "Para contraste — símbolos monetários que venceram essa mesma distância entre o padrão e o teclado anos atrás e são totalmente digitáveis hoje.",
       "symbols": [
-        { "char": "$", "label": "Símbolo de Dólar" },
-        { "char": "€", "label": "Símbolo de Euro" },
-        { "char": "£", "label": "Símbolo de Libra Esterlina" }
+        {
+          "char": "$",
+          "label": "Símbolo de Dólar"
+        },
+        {
+          "char": "€",
+          "label": "Símbolo de Euro"
+        },
+        {
+          "char": "£",
+          "label": "Símbolo de Libra Esterlina"
+        }
       ]
     }
   ],

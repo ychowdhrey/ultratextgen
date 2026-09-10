@@ -8,7 +8,6 @@
   "date_published": "2026-07-25",
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "slug": "pondteken",
   "title": "Pondteken: Kopieer en Plak £ — Latijnse Herkomst & Hoe Je Het Typt",
   "meta_description": "Wat het pondteken £ betekent, de Latijnse herkomst uit libra en hoe je het typt — plus het Amerikaanse 'pound sign' # waar het weleens mee verward wordt. Klik om te kopiëren.",
@@ -52,11 +51,11 @@
       "symbols": [
         {
           "char": "#",
-          "label": "Hekje (U+0023) — in het Amerikaans-Engels ook informeel 'pound sign' genoemd, maar een volledig ander, onverwant teken"
+          "label": "Hekje (U+0023): in het Amerikaans-Engels ook informeel 'pound sign' genoemd, maar een volledig ander, onverwant teken"
         },
         {
           "char": "€",
-          "label": "Euroteken (U+20AC) — een bewust ontworpen valutateken uit 1996, anders dan de organische evolutie van £"
+          "label": "Euroteken (U+20AC): een bewust ontworpen valutateken uit 1996, anders dan de organische evolutie van £"
         }
       ]
     },

@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Triste",
   "hero_tagline": "Todos os graus de tristeza: do rosto levemente contrariado ao choro, mais os kaomoji tristes.",
   "intro": "«Triste» não é uma emoção só, e às vezes um emoji não dá conta. Esta página organiza os rostos do mais leve ao mais pesado, junta os símbolos que a gente põe no lugar das palavras e fecha com kaomoji para quando um rostinho redondo não diz o que você quer. Clique para copiar.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "faces",
@@ -192,6 +192,50 @@
     {
       "h2": "Por Que Existem Tantos Emojis Tristes",
       "body": "O Unicode não colocou quinze rostos tristes por exagero: cada um entrou para um uso que os anteriores não cobriam. 😞 vem dos primeiros conjuntos japoneses, onde servia para pedir desculpa. 🥺 chegou bem depois e quase na hora foi relido como fofo em vez de triste. 🫠 e 🫤 são de 2021 e falam de esgotamento, não de dor. A distância entre o que o nome Unicode diz e o que as pessoas fazem com o emoji é real — por isso aqui eles estão em ordem de intensidade, e não de data de entrada."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Variações de Emoji Triste",
+    "h2": "Variações de Emoji Triste",
+    "intro": "Melancolia em um clique — copie um combo triste inteiro para a bio, uma legenda ou uma mensagem."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Coração Partido",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Melancolia de Chuva",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Madrugada Triste",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Suspiro de Decepção",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Estética Murcha",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Saudade de Você",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pacote Kaomoji Triste",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

@@ -17,11 +17,19 @@
   "crumb_library": "Símbolos",
   "library_url": "https://ultratextgen.com/pt/symbol/",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
-    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-peao/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-peao/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    }
   ],
-  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
   "sections": [
     {
       "id": "pawn-symbol",
@@ -29,8 +37,14 @@
       "h2": "O Símbolo de Peão — ♟ e ♙",
       "intro": "Os dois glifos de peão. O ♟ preto sólido é o que a maioria das pessoas cola; o ♙ branco contornado é seu gêmeo do lado claro. Ambos são caracteres Unicode únicos, prontos para soltar em qualquer texto.",
       "symbols": [
-        { "char": "♟", "label": "Peão de Xadrez Preto (U+265F)" },
-        { "char": "♙", "label": "Peão de Xadrez Branco (U+2659)" }
+        {
+          "char": "♟",
+          "label": "Peão de Xadrez Preto (U+265F)"
+        },
+        {
+          "char": "♙",
+          "label": "Peão de Xadrez Branco (U+2659)"
+        }
       ]
     },
     {
@@ -39,11 +53,26 @@
       "h2": "Os Companheiros de Time do Peão Preto",
       "intro": "O resto do lado preto que se alinha atrás do peão — rei, rainha, torre, bispo e cavalo, de U+265A a U+265E, no mesmo bloco Unicode.",
       "symbols": [
-        { "char": "♚", "label": "Rei de Xadrez Preto (U+265A)" },
-        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B)" },
-        { "char": "♜", "label": "Torre de Xadrez Preta (U+265C)" },
-        { "char": "♝", "label": "Bispo de Xadrez Preto (U+265D)" },
-        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E)" }
+        {
+          "char": "♚",
+          "label": "Rei de Xadrez Preto (U+265A)"
+        },
+        {
+          "char": "♛",
+          "label": "Rainha de Xadrez Preta (U+265B)"
+        },
+        {
+          "char": "♜",
+          "label": "Torre de Xadrez Preta (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Bispo de Xadrez Preto (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Cavalo de Xadrez Preto (U+265E)"
+        }
       ]
     },
     {
@@ -52,11 +81,26 @@
       "h2": "As Peças Brancas de Xadrez",
       "intro": "O conjunto branco contornado que enfrenta o peão preto do outro lado do tabuleiro, ocupando de U+2654 a U+2658 — a rainha que ele pode um dia temer, e o rei que jamais poderá se tornar.",
       "symbols": [
-        { "char": "♔", "label": "Rei de Xadrez Branco (U+2654)" },
-        { "char": "♕", "label": "Rainha de Xadrez Branca (U+2655)" },
-        { "char": "♖", "label": "Torre de Xadrez Branca (U+2656)" },
-        { "char": "♗", "label": "Bispo de Xadrez Branco (U+2657)" },
-        { "char": "♘", "label": "Cavalo de Xadrez Branco (U+2658)" }
+        {
+          "char": "♔",
+          "label": "Rei de Xadrez Branco (U+2654)"
+        },
+        {
+          "char": "♕",
+          "label": "Rainha de Xadrez Branca (U+2655)"
+        },
+        {
+          "char": "♖",
+          "label": "Torre de Xadrez Branca (U+2656)"
+        },
+        {
+          "char": "♗",
+          "label": "Bispo de Xadrez Branco (U+2657)"
+        },
+        {
+          "char": "♘",
+          "label": "Cavalo de Xadrez Branco (U+2658)"
+        }
       ]
     },
     {
@@ -65,10 +109,22 @@
       "h2": "No que um Peão Pode Se Transformar",
       "intro": "Um peão que alcança a extremidade oposta do tabuleiro precisa ser promovido — a uma rainha, torre, bispo ou cavalo da sua própria cor. Nunca pode virar rei, e não pode continuar sendo peão. A rainha é a escolha usual; qualquer outra é uma «sub-promoção».",
       "symbols": [
-        { "char": "♛", "label": "Rainha de Xadrez Preta (U+265B) — a promoção usual" },
-        { "char": "♜", "label": "Torre de Xadrez Preta (U+265C)" },
-        { "char": "♝", "label": "Bispo de Xadrez Preto (U+265D)" },
-        { "char": "♞", "label": "Cavalo de Xadrez Preto (U+265E) — uma sub-promoção" }
+        {
+          "char": "♛",
+          "label": "Rainha de Xadrez Preta (U+265B): a promoção usual"
+        },
+        {
+          "char": "♜",
+          "label": "Torre de Xadrez Preta (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Bispo de Xadrez Preto (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Cavalo de Xadrez Preto (U+265E): uma sub-promoção"
+        }
       ]
     }
   ],

@@ -24,9 +24,9 @@
       "h2": "La Virgulilla ~ y sus Parecidos",
       "intro": "Tres caracteres Unicode distintos a los que todo el mundo llama «la virgulilla»: la tecla del teclado, un modificador de espaciado independiente y el diacrítico combinante que se posa sobre una letra.",
       "symbols": [
-        { "char": "~", "label": "Virgulilla (U+007E) — la Tecla del Teclado" },
-        { "char": "˜", "label": "Tilde Pequeña (U+02DC) — Modificador de Espaciado Independiente" },
-        { "char": "̃", "label": "Virgulilla Combinante (U+0303) — se Posa sobre una Letra" }
+        { "char": "~", "label": "Virgulilla (U+007E): la Tecla del Teclado" },
+        { "char": "˜", "label": "Tilde Pequeña (U+02DC): Modificador de Espaciado Independiente" },
+        { "char": "̃", "label": "Virgulilla Combinante (U+0303): se Posa sobre una Letra" }
       ]
     },
     {
@@ -47,11 +47,11 @@
       "h2": "Tildes Matemáticas: Semejante A y Aproximadamente Igual",
       "intro": "En las ecuaciones la virgulilla significa «semejante a» o «aproximadamente», pero los signos matemáticos reales son caracteres Unicode propios — no la ~ del ASCII que la gente suele teclear en su lugar.",
       "symbols": [
-        { "char": "∼", "label": "Operador Tilde (U+223C) — «Semejante A»" },
-        { "char": "≈", "label": "Aproximadamente Igual (U+2248) — «Aproximadamente Igual»" },
+        { "char": "∼", "label": "Operador Tilde (U+223C): «Semejante A»" },
+        { "char": "≈", "label": "Aproximadamente Igual (U+2248): «Aproximadamente Igual»" },
         { "char": "≅", "label": "Aproximadamente Igual A (U+2245)" },
         { "char": "≃", "label": "Asintóticamente Igual A (U+2243)" },
-        { "char": "~", "label": "Virgulilla (U+007E) — la Tecla ASCII que se Teclea en su Lugar" }
+        { "char": "~", "label": "Virgulilla (U+007E): la Tecla ASCII que se Teclea en su Lugar" }
       ]
     }
   ],

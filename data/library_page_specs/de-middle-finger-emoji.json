@@ -1,0 +1,293 @@
+{
+ "slug": "mittelfinger-emoji",
+ "lang": "de",
+ "page_type": "library",
+ "copy_pattern": "collection",
+ "title": "Mittelfinger-Emoji 🖕 zum Kopieren — alle Hauttöne | UltraTextGen",
+ "meta_description": "Mittelfinger-Emoji 🖕 in allen Hauttönen zum Kopieren, dazu genervte Gesichter, Zornsymbole und trotzige Kaomoji — mit Hinweis, wo es blockiert wird.",
+ "breadcrumb": "Mittelfinger-Emoji",
+ "hero_h1": "Mittelfinger-Emoji",
+ "hero_tagline": "🖕 in allen Hauttönen, dazu die leiseren Arten, dasselbe zu sagen.",
+ "intro": "🖕 ist das eindeutigste Ablehnungszeichen im Emoji-Satz — und das am häufigsten gefilterte. Diese Seite hat es in allen Hauttönen, dazu die Zeichen für Trotz und Genervtheit, die dieselbe Haltung ausdrücken, ohne gemeldet zu werden.",
+ "sections": [
+  {
+   "id": "finger",
+   "label": "Mittelfinger in allen Hauttönen",
+   "h2": "Mittelfinger in allen Hauttönen",
+   "intro": "Grundton plus die fünf Modifikatoren.",
+   "symbols": [
+    {
+     "char": "🖕",
+     "label": "Mittelfinger"
+    },
+    {
+     "char": "🖕🏻",
+     "label": "Mittelfinger, heller Hautton"
+    },
+    {
+     "char": "🖕🏼",
+     "label": "Mittelfinger, mittelheller Hautton"
+    },
+    {
+     "char": "🖕🏽",
+     "label": "Mittelfinger, mittlerer Hautton"
+    },
+    {
+     "char": "🖕🏾",
+     "label": "Mittelfinger, mitteldunkler Hautton"
+    },
+    {
+     "char": "🖕🏿",
+     "label": "Mittelfinger, dunkler Hautton"
+    }
+   ]
+  },
+  {
+   "id": "trotz",
+   "label": "Trotz und Ablehnung",
+   "h2": "Trotz und Ablehnung",
+   "intro": "Dieselbe Haltung, ohne das explizite Zeichen.",
+   "symbols": [
+    {
+     "char": "🙄",
+     "label": "Augenrollen"
+    },
+    {
+     "char": "😏",
+     "label": "Schmunzeln"
+    },
+    {
+     "char": "😒",
+     "label": "Unbeeindrucktes Gesicht"
+    },
+    {
+     "char": "🙃",
+     "label": "Umgedrehtes Gesicht"
+    },
+    {
+     "char": "✋",
+     "label": "Erhobene Hand"
+    },
+    {
+     "char": "🤘",
+     "label": "Pommesgabel"
+    }
+   ]
+  },
+  {
+   "id": "genervt",
+   "label": "Frust",
+   "h2": "Frust",
+   "intro": "Wenn es eher Erschöpfung als Wut ist.",
+   "symbols": [
+    {
+     "char": "😤",
+     "label": "Dampf aus der Nase"
+    },
+    {
+     "char": "💢",
+     "label": "Zornsymbol"
+    },
+    {
+     "char": "🤦",
+     "label": "Hand vor dem Gesicht"
+    },
+    {
+     "char": "😫",
+     "label": "Erschöpftes Gesicht"
+    },
+    {
+     "char": "😩",
+     "label": "Müdes Gesicht"
+    },
+    {
+     "char": "😮‍💨",
+     "label": "Ausatmendes Gesicht"
+    }
+   ]
+  },
+  {
+   "id": "kaomoji",
+   "label": "Trotzige Kaomoji",
+   "h2": "Trotzige Kaomoji",
+   "intro": "Was in Textform geht, wo das Emoji gefiltert wird.",
+   "symbols": [
+    {
+     "char": "凸(￣ヘ￣)凸",
+     "label": "Doppelte Abfuhr"
+    },
+    {
+     "char": "╭∩╮( º_º)╭∩╮",
+     "label": "Beidseitige Abfuhr"
+    },
+    {
+     "char": "(￢_￢)",
+     "label": "Unbeeindruckter Seitenblick"
+    },
+    {
+     "char": "(；￣Д￣)",
+     "label": "Entnervte Grimasse"
+    },
+    {
+     "char": "┐(´～`)┌",
+     "label": "Achselzucken"
+    },
+    {
+     "char": "(￣︿￣)",
+     "label": "Missfallen"
+    },
+    {
+     "char": "(¬､¬)",
+     "label": "Süffisantes Grinsen"
+    }
+   ]
+  }
+ ],
+ "faq_h2": "Häufige Fragen zum Mittelfinger-Emoji",
+ "faq": [
+  {
+   "q": "Wird 🖕 auf Plattformen blockiert?",
+   "a": "Häufig. Instagram und TikTok filtern es in Kommentaren teilweise heraus, manche Spiele lassen es im Namen nicht zu, und in moderierten Foren führt es regelmäßig zu einer Verwarnung. Verschickt wird es meist trotzdem — es verschwindet nur nicht überall zuverlässig da, wo man es hinsetzt."
+  },
+  {
+   "q": "Seit wann gibt es das Emoji?",
+   "a": "Seit Unicode 7.0 im Jahr 2014, unter dem Namen „Reversed Hand with Middle Finger Extended“. Es war eine der umstritteneren Aufnahmen; Apple lieferte die Darstellung erst mit iOS 9.1 nach."
+  },
+  {
+   "q": "Warum erscheint bei mir ein leeres Kästchen?",
+   "a": "Weil die Hautton-Variante aus zwei Codepoints besteht. Kennt eine App die Kombination nicht, zeigt sie beide Teile getrennt oder gar nicht. Der Grundton 🖕 ohne Modifikator hat dieses Problem nicht."
+  },
+  {
+   "q": "Gibt es eine harmlosere Alternative?",
+   "a": "Mehrere, und sie kommen oft besser an: 🙄 für Genervtheit, 😒 für Ablehnung, ✋ für „hör auf“. Wo das Emoji gefiltert wird, funktionieren die Kaomoji weiter — 凸(￣ヘ￣)凸 sagt dasselbe in reinem Text."
+  },
+  {
+   "q": "Was bedeutet 🤘?",
+   "a": "Nicht dasselbe. Die Pommesgabel ist ein Rock-Gruß und meint Begeisterung, nicht Beleidigung. In einigen Ländern des Mittelmeerraums hat sie allerdings eine kränkende Nebenbedeutung — im Zweifel also nicht international verschicken."
+  }
+ ],
+ "editorial_sections": [
+  {
+   "h2": "Warum das Zeichen so spät kam",
+   "body": "Emojis stammen aus japanischen Mobilfunkzeichensätzen der Neunzigerjahre, und dort war eine Beleidigungsgeste nicht vorgesehen. Als Unicode den Satz 2010 vereinheitlichte, blieb die Lücke zunächst bestehen — 🖕 wurde erst 2014 nachgereicht, nach längerer Diskussion und mit dem neutral gehaltenen Namen „Reversed Hand with Middle Finger Extended“. Die Zurückhaltung wirkt bis heute nach: mehrere Plattformen filtern das Zeichen, obwohl es regulär kodiert ist."
+  },
+  {
+   "h2": "Wo Kaomoji das Emoji schlagen",
+   "body": "Genau weil 🖕 gefiltert wird, haben sich die Textvarianten gehalten. 凸(￣ヘ￣)凸 besteht aus gewöhnlichen Unicode-Zeichen, die kein Filter als Geste erkennt — es passiert Namensprüfungen und Kommentarfilter, an denen das Emoji scheitert. Das ist kein Umgehungstrick, sondern schlicht eine Eigenheit der Filter: sie prüfen Codepoints, nicht Bedeutung."
+  }
+ ],
+ "related": [
+  {
+   "href": "/de/library/hand-symbole/",
+   "title": "Hand-Symbole und Gesten",
+   "desc": "Alle Handzeichen von Victory bis Faust."
+  },
+  {
+   "href": "/de/library/daumen-hoch-emoji/",
+   "title": "Daumen hoch Emoji",
+   "desc": "👍 in allen Hauttönen, plus Daumendrücken."
+  },
+  {
+   "href": "/de/library/emoji-bedeutung/",
+   "title": "Emoji Bedeutung",
+   "desc": "Was die gebräuchlichsten Emojis wirklich aussagen."
+  },
+  {
+   "href": "/de/library/kaomoji/",
+   "title": "Kaomoji und Text-Emoticons",
+   "desc": "Aus Zeichen gebaute Gesichter im japanischen Stil."
+  }
+ ],
+ "canonical": "https://ultratextgen.com/de/library/mittelfinger-emoji/",
+ "hreflang": [
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/middle-finger-emoji/"
+  },
+  {
+   "lang": "de",
+   "href": "https://ultratextgen.com/de/library/mittelfinger-emoji/"
+  },
+  {
+   "lang": "nl",
+   "href": "https://ultratextgen.com/nl/library/middelvinger-emoji/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/middle-finger-emoji/"
+  }
+ ],
+ "date_published": "2026-08-16",
+ "date_modified": "2026-08-16",
+ "collection_section": {
+  "id": "combo-sets",
+  "label": "Fertige Kombinationen",
+  "h2": "Trotz-Kombinationen",
+  "intro": "Komplette Kombinationen mit einem Klick kopieren."
+ },
+ "collection_container_id": "fingerSetsContainer",
+ "collections": [
+  {
+   "name": "Nicht heute",
+   "flags": [
+    "🖕",
+    "🙄"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Rede mit der Hand",
+   "flags": [
+    "✋",
+    "😒",
+    "🙄"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Es reicht",
+   "flags": [
+    "😤",
+    "💢",
+    "🙄"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Fremdschäm-Moment",
+   "flags": [
+    "🤦",
+    "😩",
+    "💢"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Durch damit",
+   "flags": [
+    "🙄",
+    "😒",
+    "😮‍💨"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kurz vorm Platzen",
+   "flags": [
+    "😤",
+    "💢",
+    "🔥"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Rebellisch",
+   "flags": [
+    "🤘",
+    "😏",
+    "🖕"
+   ],
+   "defaultFormat": "inline"
+  }
+ ]
+}

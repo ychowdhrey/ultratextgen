@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/hamsa-symbol/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/hamsa-symbol/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/hamsa-symbol/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/hamsa-symbol/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/hamsa-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/hamsa-symbol/"
+    }
   ],
   "sections": [
     {
@@ -28,8 +37,14 @@
       "h2": "Bàn Tay Hamsa",
       "intro": "Emoji hamsa trong Unicode và lá bùa nazar thường được ghép cùng nó trong cách dùng mang tính bảo vệ, liên văn hóa.",
       "symbols": [
-        { "char": "🪬", "label": "Bàn Tay Hamsa" },
-        { "char": "🧿", "label": "Bùa Nazar (Con Mắt Quỷ Dữ)" }
+        {
+          "char": "🪬",
+          "label": "Bàn Tay Hamsa"
+        },
+        {
+          "char": "🧿",
+          "label": "Bùa Nazar (Con Mắt Quỷ Dữ)"
+        }
       ]
     },
     {
@@ -38,9 +53,18 @@
       "h2": "Ký Hiệu Bàn Tay & Bảo Vệ",
       "intro": "Các ký tự bàn tay xòe và con mắt khác thường được dùng cùng hamsa trong bối cảnh bảo vệ hoặc tâm linh.",
       "symbols": [
-        { "char": "🖐️", "label": "Bàn Tay Xòe Ngón" },
-        { "char": "🤚", "label": "Mu Bàn Tay Giơ Lên" },
-        { "char": "👁️", "label": "Mắt" }
+        {
+          "char": "🖐️",
+          "label": "Bàn Tay Xòe Ngón"
+        },
+        {
+          "char": "🤚",
+          "label": "Mu Bàn Tay Giơ Lên"
+        },
+        {
+          "char": "👁️",
+          "label": "Mắt"
+        }
       ]
     },
     {
@@ -49,17 +73,40 @@
       "h2": "Ký Hiệu Tôn Giáo & Tâm Linh",
       "intro": "Các ký hiệu tôn giáo và tâm linh khác thường được tìm kiếm và hiển thị cùng hamsa.",
       "symbols": [
-        { "char": "✡", "label": "Ngôi Sao David" },
-        { "char": "☪", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
-        { "char": "☯", "label": "Âm Dương" },
-        { "char": "☮", "label": "Ký Hiệu Hòa Bình" }
+        {
+          "char": "✡",
+          "label": "Ngôi Sao David"
+        },
+        {
+          "char": "☪",
+          "label": "Ngôi Sao Và Trăng Lưỡi Liềm"
+        },
+        {
+          "char": "☯",
+          "label": "Âm Dương"
+        },
+        {
+          "char": "☮",
+          "label": "Ký Hiệu Hòa Bình"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/library/evil-eye-hamsa-symbols/", "title": "Ký Hiệu Con Mắt Quỷ Dữ & Hamsa", "desc": "Bùa nazar, bàn tay hamsa, cùng các ký hiệu mắt và bùa hộ mệnh xua đuổi vận rủi." },
-    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda", "desc": "Một ký hiệu khác với lịch sử thiết kế thật sự, được ghi chép đầy đủ, trình bày không thiên vị bên nào." },
-    { "href": "/vi/symbol/star-of-david/", "title": "Ký Hiệu Ngôi Sao David", "desc": "Hành trình bất ngờ gần đây của một họa tiết cổ xưa chung để trở thành biểu tượng của riêng một tôn giáo." }
+    {
+      "href": "/library/evil-eye-hamsa-symbols/",
+      "title": "Ký Hiệu Con Mắt Quỷ Dữ & Hamsa",
+      "desc": "Bùa nazar, bàn tay hamsa, cùng các ký hiệu mắt và bùa hộ mệnh xua đuổi vận rủi."
+    },
+    {
+      "href": "/vi/symbol/khanda-symbol/",
+      "title": "Ký Hiệu Khanda",
+      "desc": "Một ký hiệu khác với lịch sử thiết kế thật sự, được ghi chép đầy đủ, trình bày không thiên vị bên nào."
+    },
+    {
+      "href": "/vi/symbol/star-of-david/",
+      "title": "Ký Hiệu Ngôi Sao David",
+      "desc": "Hành trình bất ngờ gần đây của một họa tiết cổ xưa chung để trở thành biểu tượng của riêng một tôn giáo."
+    }
   ]
 }

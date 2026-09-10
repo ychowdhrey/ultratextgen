@@ -6,7 +6,7 @@
   "hero_h1": "Emoji Tête de Mort",
   "hero_tagline": "💀 dans ses deux sens : le sens littéral et celui qu'on emploie presque toujours aujourd'hui.",
   "intro": "En ligne, 💀 ne veut presque jamais dire « mort » mais « je n'en peux plus de rire ». Cette page sépare les deux lectures : d'abord les têtes de mort elles-mêmes, puis l'entourage du rire, enfin les vrais symboles de danger. Cliquez pour copier.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "core",
@@ -132,6 +132,55 @@
     {
       "h2": "Comment la Tête de Mort Est Devenue un Rire",
       "body": "Le glissement est récent et bien documenté : vers 2020, sur TikTok, 💀 s'est mis à signifier « c'était tellement drôle que je suis mort », précisément parce que 😂 était devenu la marque d'une génération précédente. Le nom Unicode reste simplement « Skull » — le sens que les gens échangent ne figure dans aucune table de caractères. Pour la lecture littérale, ☠ reste le meilleur choix : il n'a pas suivi ce virage."
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Sets de combos",
+    "h2": "Combos d'emoji tête de mort",
+    "intro": "Copiez une combo tête de mort entière en un clic et collez-la directement dans un commentaire, une légende ou une réponse."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Mort de rire",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zone de danger",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mode pirate",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Complètement mort",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tête de mort d'Halloween",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tellement drôle que j'en meurs",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "À glacer le sang",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP moi",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
     }
   ],
   "related": [

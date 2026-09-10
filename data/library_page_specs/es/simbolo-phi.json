@@ -24,9 +24,9 @@
       "h2": "El Símbolo Phi — φ, Φ y ϕ",
       "intro": "Las tres formas a las que la gente se refiere con «el símbolo phi»: la letra minúscula cotidiana, la mayúscula y la variante matemática dedicada. Pega la que necesites.",
       "symbols": [
-        { "char": "φ", "label": "Letra Griega Phi Minúscula (U+03C6) — la Letra de la Proporción Áurea, Forma Abierta «con Bucle»" },
-        { "char": "Φ", "label": "Letra Griega Phi Mayúscula (U+03A6) — Flujo Magnético en Física" },
-        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5) — la Variante Matemática Cerrada, con Trazo" }
+        { "char": "φ", "label": "Letra Griega Phi Minúscula (U+03C6): la Letra de la Proporción Áurea, Forma Abierta «con Bucle»" },
+        { "char": "Φ", "label": "Letra Griega Phi Mayúscula (U+03A6): Flujo Magnético en Física" },
+        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5): la Variante Matemática Cerrada, con Trazo" }
       ]
     },
     {
@@ -35,10 +35,10 @@
       "h2": "Phi: la Proporción Áurea y sus Usos Matemáticos",
       "intro": "El uso más buscado de phi. La φ minúscula nombra la proporción áurea ≈ 1,618, definida como (1 + √5) / 2; desde Unicode 3.0, la ϕ cerrada (U+03D5) es el glifo recomendado para ese uso matemático, y la Φ mayúscula marca el flujo magnético.",
       "symbols": [
-        { "char": "φ", "label": "Phi Minúscula (U+03C6) — Proporción Áurea ≈ 1,6180339887" },
-        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5) — el Glifo Cerrado Preferido en Matemáticas" },
-        { "char": "Φ", "label": "Phi Mayúscula (U+03A6) — Flujo Magnético" },
-        { "char": "√", "label": "Raíz Cuadrada (U+221A) — Aparece en la Fórmula de Phi (1 + √5) / 2" }
+        { "char": "φ", "label": "Phi Minúscula (U+03C6): Proporción Áurea ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Símbolo Griego Phi (U+03D5): el Glifo Cerrado Preferido en Matemáticas" },
+        { "char": "Φ", "label": "Phi Mayúscula (U+03A6): Flujo Magnético" },
+        { "char": "√", "label": "Raíz Cuadrada (U+221A): Aparece en la Fórmula de Phi (1 + √5) / 2" }
       ]
     },
     {

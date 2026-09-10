@@ -38,9 +38,9 @@
       "h2": "Psi w Mechanice Kwantowej",
       "intro": "Charakterystyczna rola psi: funkcja falowa Schrödingera. Zgodnie z konwencją wielkie Ψ to pełna, zależna od czasu funkcja falowa układu, a małe ψ to jej stacjonarny, niezależny od czasu wariant — często w parze z φ (fi) dla stanu towarzyszącego.",
       "symbols": [
-        { "char": "Ψ", "label": "Wielkie Psi (U+03A8) — Funkcja Falowa Zależna od Czasu" },
-        { "char": "ψ", "label": "Małe Psi (U+03C8) — Funkcja Falowa Stacjonarna" },
-        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6) — Stan Towarzyszący Często Łączony z ψ" }
+        { "char": "Ψ", "label": "Wielkie Psi (U+03A8): Funkcja Falowa Zależna od Czasu" },
+        { "char": "ψ", "label": "Małe Psi (U+03C8): Funkcja Falowa Stacjonarna" },
+        { "char": "φ", "label": "Mała Grecka Litera Fi (U+03C6): Stan Towarzyszący Często Łączony z ψ" }
       ]
     },
     {
@@ -49,9 +49,9 @@
       "h2": "Psi w Psychologii i Kształt Trójzębu",
       "intro": "Wielkie Ψ to globalny znak psychologii, psychiatrii i parapsychologii — wybrany, bo „psyche” zaczyna się od psi, a nie z powodu legendy o diabelskich widłach. Jej trójramienna sylwetka to powód, dla którego kojarzy się z trójzębem, bronią Posejdona.",
       "symbols": [
-        { "char": "Ψ", "label": "Wielkie Psi (U+03A8) — Ikona Psychologii i Psychiatrii" },
-        { "char": "ψ", "label": "Małe Psi (U+03C8) — Litera „Psyche”" },
-        { "char": "🔱", "label": "Emblemat Trójzębu (U+1F531) — Trójząb Posejdona, Kształt Echa Psi" }
+        { "char": "Ψ", "label": "Wielkie Psi (U+03A8): Ikona Psychologii i Psychiatrii" },
+        { "char": "ψ", "label": "Małe Psi (U+03C8): Litera „Psyche”" },
+        { "char": "🔱", "label": "Emblemat Trójzębu (U+1F531): Trójząb Posejdona, Kształt Echa Psi" }
       ]
     },
     {
@@ -60,14 +60,14 @@
       "h2": "Powiązane Litery Greckie",
       "intro": "Psi to 23. litera grecka, tuż przed omegą zamykającą alfabet. Oto sąsiedzi, których kopiuje się razem z nią najczęściej.",
       "symbols": [
-        { "char": "Ω", "label": "Wielka Grecka Litera Omega — Litera Zaraz Po Psi" },
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega: Litera Zaraz Po Psi" },
         { "char": "π", "label": "Mała Grecka Litera Pi" },
         { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
         { "char": "Δ", "label": "Wielka Grecka Litera Delta" }
       ]
     }
   ],
-  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode. Za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
       "href": "/pl/library/alfabet-grecki/",

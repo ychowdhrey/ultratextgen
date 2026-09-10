@@ -304,6 +304,22 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /tr/yazi-stilleri/            /tr/  301
 /tr/yazi-stilleri/index.html  /tr/  301
 
+# tr/sekilli-yazi retired -> /tr/ (2026-09-03). The page was retargeted off
+# "şekilli yazı" onto "süslü yazı / süslü harf" on 2026-08-01, because it was
+# colliding with the TR homepage on the first term while owning the second.
+# Query-level GSC (Türkiye, Aug 24 - Sep 1) shows it now owns neither: one
+# impression in nine days at position 49, against ~53 expected from its own
+# 3-month baseline of 539 Turkish impressions at position 10. Over the same
+# window /tr/ holds "süslü yazı kopyala yapıştır" at position 7 and the
+# "şekilli yazı" writing queries at 1-5, and /tr/sekilli-nick/ holds the nick
+# queries at 5-6. The spoke had no query left to win, so it consolidates into
+# the page already winning both families. Its OG art (assets/og/tr-sekilli-yazi.png)
+# is deliberately left on disk so the decision is cheap to reverse: restore the
+# directory from git history and delete this block.
+/tr/sekilli-yazi              /tr/  301
+/tr/sekilli-yazi/             /tr/  301
+/tr/sekilli-yazi/index.html   /tr/  301
+
 # 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
 # cleanup): each pair had two same-locale pages claiming one hreflang
 # cluster slot; the less-integrated page folds into the survivor.

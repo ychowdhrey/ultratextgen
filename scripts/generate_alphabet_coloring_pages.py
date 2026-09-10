@@ -39,7 +39,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-from lib.printables_parity import assert_no_regression  # noqa: E402
+from lib.generator_parity import assert_no_regression  # noqa: E402
 REPO = SCRIPT_DIR.parent
 SPEC_PATH = REPO / "data" / "printables_alphabet_coloring.json"
 PRINTABLES_DIR = REPO / "printables"
@@ -250,7 +250,7 @@ def render_hub(spec):
     faqs = [
         (
             "Are these alphabet coloring pages free to print?",
-            "Yes — every alphabet coloring page here is completely free, with no sign-up, "
+            "Yes, every alphabet coloring page here is completely free, with no sign-up, "
             "watermark, or limit. Pick a letter for a big single-line outline, then use "
             "<strong>Print this letter</strong> to send it to your printer or "
             "<strong>Download PNG</strong> to save a high-resolution image.",

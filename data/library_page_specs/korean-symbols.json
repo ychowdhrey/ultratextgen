@@ -17,18 +17,18 @@
       "h2": "Meaningful Hangul Words",
       "intro": "Beautiful Korean words for love, dreams, and nature — the most copied Hangul for bios and captions.",
       "symbols": [
-        { "char": "사랑", "label": "Sarang — Love" },
-        { "char": "행복", "label": "Haengbok — Happiness" },
-        { "char": "꿈", "label": "Kkum — Dream" },
-        { "char": "별", "label": "Byeol — Star" },
-        { "char": "달", "label": "Dal — Moon" },
-        { "char": "하늘", "label": "Haneul — Sky" },
-        { "char": "마음", "label": "Maeum — Heart, Mind" },
-        { "char": "봄", "label": "Bom — Spring" },
-        { "char": "꽃", "label": "Kkot — Flower" },
-        { "char": "빛", "label": "Bit — Light" },
-        { "char": "바다", "label": "Bada — Sea" },
-        { "char": "희망", "label": "Huimang — Hope" }
+        { "char": "사랑", "label": "Sarang: Love" },
+        { "char": "행복", "label": "Haengbok: Happiness" },
+        { "char": "꿈", "label": "Kkum: Dream" },
+        { "char": "별", "label": "Byeol: Star" },
+        { "char": "달", "label": "Dal: Moon" },
+        { "char": "하늘", "label": "Haneul: Sky" },
+        { "char": "마음", "label": "Maeum: Heart, Mind" },
+        { "char": "봄", "label": "Bom: Spring" },
+        { "char": "꽃", "label": "Kkot: Flower" },
+        { "char": "빛", "label": "Bit: Light" },
+        { "char": "바다", "label": "Bada: Sea" },
+        { "char": "희망", "label": "Huimang: Hope" }
       ]
     },
     {
@@ -37,14 +37,14 @@
       "h2": "K-Pop & Fan Culture Words",
       "intro": "The fan vocabulary of K-pop comments and stan Twitter, with romanization so you use each word right.",
       "symbols": [
-        { "char": "최애", "label": "Choeae — Bias, Favorite" },
-        { "char": "대박", "label": "Daebak — Amazing" },
-        { "char": "화이팅", "label": "Hwaiting — You Can Do It!" },
-        { "char": "사랑해", "label": "Saranghae — I Love You" },
-        { "char": "오빠", "label": "Oppa — Older Brother (Girl Speaking)" },
-        { "char": "언니", "label": "Eonni — Older Sister (Girl Speaking)" },
-        { "char": "귀여워", "label": "Gwiyeowo — So Cute" },
-        { "char": "짱", "label": "Jjang — The Best" }
+        { "char": "최애", "label": "Choeae: Bias, Favorite" },
+        { "char": "대박", "label": "Daebak: Amazing" },
+        { "char": "화이팅", "label": "Hwaiting: You Can Do It!" },
+        { "char": "사랑해", "label": "Saranghae: I Love You" },
+        { "char": "오빠", "label": "Oppa: Older Brother (Girl Speaking)" },
+        { "char": "언니", "label": "Eonni: Older Sister (Girl Speaking)" },
+        { "char": "귀여워", "label": "Gwiyeowo: So Cute" },
+        { "char": "짱", "label": "Jjang: The Best" }
       ]
     },
     {
@@ -53,20 +53,20 @@
       "h2": "Hangul Letters (Jamo)",
       "intro": "The individual consonants and vowels of the Hangul alphabet, from the Hangul Compatibility Jamo block.",
       "symbols": [
-        { "char": "ㄱ", "label": "Giyeok — Hangul Letter Kiyeok (G/K)" },
-        { "char": "ㄴ", "label": "Nieun — Hangul Letter Nieun (N)" },
-        { "char": "ㄷ", "label": "Digeut — Hangul Letter Tikeut (D/T)" },
-        { "char": "ㄹ", "label": "Rieul — Hangul Letter Rieul (R/L)" },
-        { "char": "ㅁ", "label": "Mieum — Hangul Letter Mieum (M)" },
-        { "char": "ㅂ", "label": "Bieup — Hangul Letter Pieup (B/P)" },
-        { "char": "ㅅ", "label": "Siot — Hangul Letter Sios (S)" },
-        { "char": "ㅇ", "label": "Ieung — Hangul Letter Ieung (NG)" },
-        { "char": "ㅈ", "label": "Jieut — Hangul Letter Cieuc (J)" },
-        { "char": "ㅋ", "label": "Kieuk — Hangul Letter Khieukh (K)" },
-        { "char": "ㅎ", "label": "Hieut — Hangul Letter Hieuh (H)" },
-        { "char": "ㅏ", "label": "A — Hangul Letter A" },
-        { "char": "ㅗ", "label": "O — Hangul Letter O" },
-        { "char": "ㅜ", "label": "U — Hangul Letter U" }
+        { "char": "ㄱ", "label": "Giyeok: Hangul Letter Kiyeok (G/K)" },
+        { "char": "ㄴ", "label": "Nieun: Hangul Letter Nieun (N)" },
+        { "char": "ㄷ", "label": "Digeut: Hangul Letter Tikeut (D/T)" },
+        { "char": "ㄹ", "label": "Rieul: Hangul Letter Rieul (R/L)" },
+        { "char": "ㅁ", "label": "Mieum: Hangul Letter Mieum (M)" },
+        { "char": "ㅂ", "label": "Bieup: Hangul Letter Pieup (B/P)" },
+        { "char": "ㅅ", "label": "Siot: Hangul Letter Sios (S)" },
+        { "char": "ㅇ", "label": "Ieung: Hangul Letter Ieung (NG)" },
+        { "char": "ㅈ", "label": "Jieut: Hangul Letter Cieuc (J)" },
+        { "char": "ㅋ", "label": "Kieuk: Hangul Letter Khieukh (K)" },
+        { "char": "ㅎ", "label": "Hieut: Hangul Letter Hieuh (H)" },
+        { "char": "ㅏ", "label": "A: Hangul Letter A" },
+        { "char": "ㅗ", "label": "O: Hangul Letter O" },
+        { "char": "ㅜ", "label": "U: Hangul Letter U" }
       ]
     },
     {
@@ -75,14 +75,14 @@
       "h2": "Korean Text Slang & Laughs",
       "intro": "Jamo shorthand used in Korean chats — laughter, tears, and quick replies.",
       "symbols": [
-        { "char": "ㅋㅋㅋ", "label": "Kekeke — Laughing (Korean LOL)" },
-        { "char": "ㅎㅎ", "label": "Hehe — Soft Laugh" },
-        { "char": "ㅠㅠ", "label": "Yu Yu — Crying Eyes" },
-        { "char": "ㅜㅜ", "label": "U U — Crying Face" },
-        { "char": "ㅇㅇ", "label": "Eung — Yes, OK" },
-        { "char": "ㄱㄱ", "label": "Go Go — Let's Go" },
-        { "char": "ㄴㄴ", "label": "No No — Nope" },
-        { "char": "ㅊㅋ", "label": "Chuka — Congrats" }
+        { "char": "ㅋㅋㅋ", "label": "Kekeke: Laughing (Korean LOL)" },
+        { "char": "ㅎㅎ", "label": "Hehe: Soft Laugh" },
+        { "char": "ㅠㅠ", "label": "Yu Yu: Crying Eyes" },
+        { "char": "ㅜㅜ", "label": "U U: Crying Face" },
+        { "char": "ㅇㅇ", "label": "Eung: Yes, OK" },
+        { "char": "ㄱㄱ", "label": "Go Go: Let's Go" },
+        { "char": "ㄴㄴ", "label": "No No: Nope" },
+        { "char": "ㅊㅋ", "label": "Chuka: Congrats" }
       ]
     }
   ],
@@ -95,7 +95,7 @@
   "collection_container_id": "koreanSetsContainer",
   "collections": [
     {
-      "name": "Saranghae — I Love You",
+      "name": "Saranghae: I Love You",
       "flags": ["사랑해"],
       "defaultFormat": "inline"
     },

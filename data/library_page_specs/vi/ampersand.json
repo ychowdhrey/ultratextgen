@@ -17,9 +17,18 @@
   "date_modified": "2026-07-25",
   "copy_pattern": "single",
   "hreflang": [
-    { "lang": "en", "href": "https://ultratextgen.com/symbol/ampersand/" },
-    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/ampersand/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ampersand/" }
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ampersand/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/ampersand/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ampersand/"
+    }
   ],
   "sections": [
     {
@@ -28,7 +37,10 @@
       "h2": "Ký Hiệu Ampersand",
       "intro": "Ký hiệu ampersand, sẵn sàng để dán.",
       "symbols": [
-        { "char": "&", "label": "Ký Hiệu Ampersand" }
+        {
+          "char": "&",
+          "label": "Ký Hiệu Ampersand"
+        }
       ]
     },
     {
@@ -37,8 +49,14 @@
       "h2": "Ký Hiệu Gần Gũi Với Ampersand",
       "intro": "Những ký hiệu này chia sẻ nguồn gốc hoặc ý nghĩa gần với ampersand.",
       "symbols": [
-        { "char": "⁊", "label": "Tironian Et (U+204A) — một dạng viết tắt cổ hơn cho «và», vẫn được dùng trong tiếng Ireland và Scottish Gaelic" },
-        { "char": "@", "label": "Ký Hiệu At — một ký hiệu viết tắt thương mại khác, nhưng mang ý nghĩa hoàn toàn khác" }
+        {
+          "char": "⁊",
+          "label": "Tironian Et (U+204A): một dạng viết tắt cổ hơn cho «và», vẫn được dùng trong tiếng Ireland và Scottish Gaelic"
+        },
+        {
+          "char": "@",
+          "label": "Ký Hiệu At: một ký hiệu viết tắt thương mại khác, nhưng mang ý nghĩa hoàn toàn khác"
+        }
       ]
     },
     {
@@ -47,17 +65,41 @@
       "h2": "Các Ký Tự Đặc Biệt Khác",
       "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng ampersand trong nội dung về tên gọi và lịch sử ký hiệu.",
       "symbols": [
-        { "char": "@", "label": "Ký Hiệu At" },
-        { "char": "§", "label": "Ký Hiệu Điều Khoản" },
-        { "char": "¶", "label": "Pilcrow" }
+        {
+          "char": "@",
+          "label": "Ký Hiệu At"
+        },
+        {
+          "char": "§",
+          "label": "Ký Hiệu Điều Khoản"
+        },
+        {
+          "char": "¶",
+          "label": "Pilcrow"
+        }
       ]
     }
   ],
-  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
   "related": [
-    { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử." },
-    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },
-    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn." },
-    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+    {
+      "href": "/vi/symbol/at-symbol/",
+      "title": "Ký Hiệu At (@)",
+      "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử."
+    },
+    {
+      "href": "/vi/symbol/section-sign/",
+      "title": "Ký Hiệu Điều Khoản (§)",
+      "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể."
+    },
+    {
+      "href": "/vi/symbol/pilcrow/",
+      "title": "Pilcrow (¶)",
+      "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Tất Cả Ký Tự Đặc Biệt",
+      "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác."
+    }
   ]
 }

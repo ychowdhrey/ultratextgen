@@ -18,9 +18,9 @@
       "h2": "The Tilde ~ and Its Look-Alikes",
       "intro": "Three separate Unicode characters people all call ‘the tilde’ — the keyboard key, a standalone spacing modifier, and the combining diacritic that sits over a letter.",
       "symbols": [
-        { "char": "~", "label": "Tilde (U+007E) — the Keyboard Key" },
-        { "char": "˜", "label": "Small Tilde (U+02DC) — Standalone Spacing Modifier" },
-        { "char": "̃", "label": "Combining Tilde (U+0303) — Sits Over a Letter" }
+        { "char": "~", "label": "Tilde (U+007E): the Keyboard Key" },
+        { "char": "˜", "label": "Small Tilde (U+02DC): Standalone Spacing Modifier" },
+        { "char": "̃", "label": "Combining Tilde (U+0303): Sits Over a Letter" }
       ]
     },
     {
@@ -41,11 +41,11 @@
       "h2": "Math Tildes: Similar-To and Approximately-Equal",
       "intro": "In equations the tilde means ‘similar to’ or ‘approximately,’ but the true math signs are their own Unicode characters — not the ASCII ~ people usually type in their place.",
       "symbols": [
-        { "char": "∼", "label": "Tilde Operator (U+223C) — ‘Similar To’" },
-        { "char": "≈", "label": "Almost Equal To (U+2248) — ‘Approximately Equal’" },
+        { "char": "∼", "label": "Tilde Operator (U+223C): ‘Similar To’" },
+        { "char": "≈", "label": "Almost Equal To (U+2248): ‘Approximately Equal’" },
         { "char": "≅", "label": "Approximately Equal To (U+2245)" },
         { "char": "≃", "label": "Asymptotically Equal To (U+2243)" },
-        { "char": "~", "label": "Tilde (U+007E) — the ASCII Key Often Typed Instead" }
+        { "char": "~", "label": "Tilde (U+007E): the ASCII Key Often Typed Instead" }
       ]
     }
   ],

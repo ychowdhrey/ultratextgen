@@ -181,6 +181,13 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <textarea class="main-input" id="mainInput" placeholder="Metnini buraya yaz..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
+
+      <!-- Accent-aware hint: shows only when the input contains diacritics -->
+      <div class="accent-notice" id="accentNotice" role="note" hidden>
+        <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+        <span class="accent-notice-text">Metninde Türkçe karakterler var. Kalın, el yazısı, gotik ve diğer stillerin çoğu artık <b>ç</b>, <b>ğ</b> ve <b>ş</b> harflerini işaretiyle koruyor — birkaçı (ters yazı ve işaretli biçimi olmayan <b>ı</b>) düz harfe dönüyor. <a href="/guide/fancy-fonts-and-accents/">Hangi stiller Türkçe karakterleri koruyor →</a></span>
+        <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Kapat">✕</button>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Sonuca süsleme ekle</div>
         <div class="decoration-tabs">
@@ -247,7 +254,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       — <strong>Espri/ton</strong>: söylediğin ama «geri aldığın» kelimeyi çizerek imalı bir ton kur<br>
       — <strong>Nick ve bio</strong>: e̶s̶k̶i̶ takma adını çizip yeni kimliğini vurgula
     </div>
-    <p>Nick tarafına gidiyorsan hazır çerçeveler ve semboller <a href="/tr/sekilli-yazi/">şekilli yazı</a> sayfasında. Metne süsleme eklemek istersen <a href="/tr/metin-susleme/">metin süsleme</a> aracına bak.</p>
+    <p>Nick tarafına gidiyorsan hazır çerçeveler ve semboller <a href="/tr/">şekilli yazı</a> sayfasında. Metne süsleme eklemek istersen <a href="/tr/metin-susleme/">metin süsleme</a> aracına bak.</p>
   </section>
 
   <!-- Related -->
@@ -304,7 +311,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script>window.UTG_DEMO_TEXT = "üstü çizili yazıyı dene.\nyaz, kopyala, yapıştır.";</script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
+<script src="/js/share/share-core.js" defer></script>
+<script src="/js/saved/saved-items.js" defer></script>
 <script src="/script.js" defer=""></script>
+<script src="/i18n.js" defer></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js" defer></script>
 </body></html>

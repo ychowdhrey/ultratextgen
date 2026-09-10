@@ -19,51 +19,51 @@
       "symbols": [
         {
           "char": "α",
-          "label": "\\alpha — Griekse kleine letter alfa"
+          "label": "\\alpha: Griekse kleine letter alfa"
         },
         {
           "char": "β",
-          "label": "\\beta — Griekse kleine letter bèta"
+          "label": "\\beta: Griekse kleine letter bèta"
         },
         {
           "char": "γ",
-          "label": "\\gamma — Griekse kleine letter gamma"
+          "label": "\\gamma: Griekse kleine letter gamma"
         },
         {
           "char": "δ",
-          "label": "\\delta — Griekse kleine letter delta"
+          "label": "\\delta: Griekse kleine letter delta"
         },
         {
           "char": "θ",
-          "label": "\\theta — Griekse kleine letter thèta"
+          "label": "\\theta: Griekse kleine letter thèta"
         },
         {
           "char": "λ",
-          "label": "\\lambda — Griekse kleine letter lambda"
+          "label": "\\lambda: Griekse kleine letter lambda"
         },
         {
           "char": "μ",
-          "label": "\\mu — Griekse kleine letter mu"
+          "label": "\\mu: Griekse kleine letter mu"
         },
         {
           "char": "π",
-          "label": "\\pi — Griekse kleine letter pi"
+          "label": "\\pi: Griekse kleine letter pi"
         },
         {
           "char": "σ",
-          "label": "\\sigma — Griekse kleine letter sigma"
+          "label": "\\sigma: Griekse kleine letter sigma"
         },
         {
           "char": "φ",
-          "label": "\\varphi — Griekse kleine letter phi"
+          "label": "\\varphi: Griekse kleine letter phi"
         },
         {
           "char": "Δ",
-          "label": "\\Delta — Griekse hoofdletter delta"
+          "label": "\\Delta: Griekse hoofdletter delta"
         },
         {
           "char": "Ω",
-          "label": "\\Omega — Griekse hoofdletter omega"
+          "label": "\\Omega: Griekse hoofdletter omega"
         }
       ]
     },
@@ -75,51 +75,51 @@
       "symbols": [
         {
           "char": "∑",
-          "label": "\\sum — Somteken"
+          "label": "\\sum: Somteken"
         },
         {
           "char": "∏",
-          "label": "\\prod — Productteken"
+          "label": "\\prod: Productteken"
         },
         {
           "char": "∫",
-          "label": "\\int — Integraal"
+          "label": "\\int: Integraal"
         },
         {
           "char": "∬",
-          "label": "\\iint — Dubbele integraal"
+          "label": "\\iint: Dubbele integraal"
         },
         {
           "char": "∮",
-          "label": "\\oint — Kringintegraal"
+          "label": "\\oint: Kringintegraal"
         },
         {
           "char": "√",
-          "label": "\\sqrt — Wortelteken"
+          "label": "\\sqrt: Wortelteken"
         },
         {
           "char": "∂",
-          "label": "\\partial — Partiële afgeleide"
+          "label": "\\partial: Partiële afgeleide"
         },
         {
           "char": "∇",
-          "label": "\\nabla — Nabla"
+          "label": "\\nabla: Nabla"
         },
         {
           "char": "±",
-          "label": "\\pm — Plusminusteken"
+          "label": "\\pm: Plusminusteken"
         },
         {
           "char": "×",
-          "label": "\\times — Vermenigvuldigingsteken"
+          "label": "\\times: Vermenigvuldigingsteken"
         },
         {
           "char": "÷",
-          "label": "\\div — Deelteken"
+          "label": "\\div: Deelteken"
         },
         {
           "char": "⋅",
-          "label": "\\cdot — Puntoperator"
+          "label": "\\cdot: Puntoperator"
         }
       ]
     },
@@ -131,35 +131,35 @@
       "symbols": [
         {
           "char": "≤",
-          "label": "\\leq — Kleiner dan of gelijk aan"
+          "label": "\\leq: Kleiner dan of gelijk aan"
         },
         {
           "char": "≥",
-          "label": "\\geq — Groter dan of gelijk aan"
+          "label": "\\geq: Groter dan of gelijk aan"
         },
         {
           "char": "≠",
-          "label": "\\neq — Ongelijkteken"
+          "label": "\\neq: Ongelijkteken"
         },
         {
           "char": "≈",
-          "label": "\\approx — Ongeveer gelijk aan"
+          "label": "\\approx: Ongeveer gelijk aan"
         },
         {
           "char": "≡",
-          "label": "\\equiv — Identiek aan"
+          "label": "\\equiv: Identiek aan"
         },
         {
           "char": "∼",
-          "label": "\\sim — Tilde-operator"
+          "label": "\\sim: Tilde-operator"
         },
         {
           "char": "≅",
-          "label": "\\cong — Congruent met"
+          "label": "\\cong: Congruent met"
         },
         {
           "char": "∝",
-          "label": "\\propto — Evenredig met"
+          "label": "\\propto: Evenredig met"
         }
       ]
     },
@@ -171,51 +171,51 @@
       "symbols": [
         {
           "char": "∈",
-          "label": "\\in — Element van"
+          "label": "\\in: Element van"
         },
         {
           "char": "∉",
-          "label": "\\notin — Geen element van"
+          "label": "\\notin: Geen element van"
         },
         {
           "char": "⊂",
-          "label": "\\subset — Deelverzameling van"
+          "label": "\\subset: Deelverzameling van"
         },
         {
           "char": "⊆",
-          "label": "\\subseteq — Deelverzameling van of gelijk aan"
+          "label": "\\subseteq: Deelverzameling van of gelijk aan"
         },
         {
           "char": "∪",
-          "label": "\\cup — Vereniging"
+          "label": "\\cup: Vereniging"
         },
         {
           "char": "∩",
-          "label": "\\cap — Doorsnede"
+          "label": "\\cap: Doorsnede"
         },
         {
           "char": "∅",
-          "label": "\\emptyset — Lege verzameling"
+          "label": "\\emptyset: Lege verzameling"
         },
         {
           "char": "∀",
-          "label": "\\forall — Voor alle"
+          "label": "\\forall: Voor alle"
         },
         {
           "char": "∃",
-          "label": "\\exists — Er bestaat"
+          "label": "\\exists: Er bestaat"
         },
         {
           "char": "¬",
-          "label": "\\neg — Negatieteken"
+          "label": "\\neg: Negatieteken"
         },
         {
           "char": "∧",
-          "label": "\\land — Logische en"
+          "label": "\\land: Logische en"
         },
         {
           "char": "∨",
-          "label": "\\lor — Logische of"
+          "label": "\\lor: Logische of"
         }
       ]
     },
@@ -227,27 +227,27 @@
       "symbols": [
         {
           "char": "→",
-          "label": "\\rightarrow — Pijl naar rechts"
+          "label": "\\rightarrow: Pijl naar rechts"
         },
         {
           "char": "←",
-          "label": "\\leftarrow — Pijl naar links"
+          "label": "\\leftarrow: Pijl naar links"
         },
         {
           "char": "↔",
-          "label": "\\leftrightarrow — Pijl naar links en rechts"
+          "label": "\\leftrightarrow: Pijl naar links en rechts"
         },
         {
           "char": "⇒",
-          "label": "\\Rightarrow — Dubbele pijl naar rechts"
+          "label": "\\Rightarrow: Dubbele pijl naar rechts"
         },
         {
           "char": "⇔",
-          "label": "\\Leftrightarrow — Dubbele pijl naar links en rechts"
+          "label": "\\Leftrightarrow: Dubbele pijl naar links en rechts"
         },
         {
           "char": "↦",
-          "label": "\\mapsto — Afbeeldingspijl"
+          "label": "\\mapsto: Afbeeldingspijl"
         }
       ]
     },
@@ -259,56 +259,55 @@
       "symbols": [
         {
           "char": "∞",
-          "label": "\\infty — Oneindig"
+          "label": "\\infty: Oneindig"
         },
         {
           "char": "ℵ",
-          "label": "\\aleph — Alef-symbool"
+          "label": "\\aleph: Alef-symbool"
         },
         {
           "char": "ℏ",
-          "label": "\\hbar — Gereduceerde constante van Planck"
+          "label": "\\hbar: Gereduceerde constante van Planck"
         },
         {
           "char": "ℓ",
-          "label": "\\ell — Cursieve kleine l"
+          "label": "\\ell: Cursieve kleine l"
         },
         {
           "char": "⊥",
-          "label": "\\perp — Loodrecht op"
+          "label": "\\perp: Loodrecht op"
         },
         {
           "char": "∥",
-          "label": "\\parallel — Evenwijdig aan"
+          "label": "\\parallel: Evenwijdig aan"
         },
         {
           "char": "∠",
-          "label": "\\angle — Hoek"
+          "label": "\\angle: Hoek"
         },
         {
           "char": "⌈",
-          "label": "\\lceil — Linker plafondhaak"
+          "label": "\\lceil: Linker plafondhaak"
         },
         {
           "char": "⌋",
-          "label": "\\rfloor — Rechter vloerhaak"
+          "label": "\\rfloor: Rechter vloerhaak"
         },
         {
           "char": "⋯",
-          "label": "\\cdots — Horizontale puntjes op middenhoogte"
+          "label": "\\cdots: Horizontale puntjes op middenhoogte"
         },
         {
           "char": "∴",
-          "label": "\\therefore — Dus"
+          "label": "\\therefore: Dus"
         },
         {
           "char": "∵",
-          "label": "\\because — Omdat"
+          "label": "\\because: Omdat"
         }
       ]
     }
   ],
-  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
   "related": [
     {
       "href": "/nl/library/wiskunde-symbolen/",
