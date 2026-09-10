@@ -34,12 +34,12 @@ const vm = require('vm');
 const SOURCE = path.join(__dirname, '..', '..', 'symbol-explorer.js');
 const SLICES = [
   '@collection-grid-icons', '@collection-grid-strings',
-  '@collection-grid-iso', '@collection-grid'
+  '@collection-grid-iso', '@collection-grid', '@country-flag-rows'
 ];
 const EXPORTS = [
   'COPY_ICON', 'UI_STRINGS', 'FORMATS',
   'formatItems', 'escHtml', 'activeFormatsFor', 'isoToFlag',
-  'gridSectionHTML', 'gridSectionsHTML'
+  'gridSectionHTML', 'gridSectionsHTML', 'countryFlagRowsHTML'
 ];
 
 function slice(src, marker) {

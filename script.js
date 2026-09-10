@@ -924,6 +924,7 @@ const decorations = window.UTG_DECORATIONS
       <div class="style-actions-stack">
         <div class="style-actions">
           <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${ICONS.copy}<span class="copy-label">${STR.copy}</span> <kbd class="copy-kbd">↵</kbd></button>
+          <button class="preview-btn" data-style="${safeName}" type="button" title="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}">👁 <span class="preview-label">${escapeHtml(uiText("stylePreview.title", "Preview"))}</span></button>
           <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
         </div>
         <div class="result-share-row">
