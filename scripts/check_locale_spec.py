@@ -77,8 +77,21 @@ def en_parent_of(spec):
     return None, None
 
 
+# Markup written into a page by a build-time generator, not by its spec.
+# Counting it would compare a spec's authored sections against generated
+# inventory: pre-rendering the country flags took library/emoji-flags from 21
+# authored tiles to 216, which is not a spec that went stale. Same call as
+# editorial-corpus.js dropping .flag-grid-section, and for the same reason.
+# Keyed on the generators' own markers, so a future block is covered by adding
+# its name here rather than by a selector that silently stops matching.
+PRERENDERED_RE = re.compile(
+    r"<!--\s*BEGIN prerendered (?:country flags|collections)\b[\s\S]*?"
+    r"<!--\s*END prerendered (?:country flags|collections)\s*-->"
+)
+
+
 def live_tile_count(rel):
-    s = rd(rel)
+    s = PRERENDERED_RE.sub("", rd(rel))
     return len(re.findall(r'class="[^"]*symbol-tile', s))
 
 
