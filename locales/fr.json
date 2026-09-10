@@ -181,6 +181,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Ajouter une mise en forme",
+      "groupAriaLabel": "Appliquer le soulignement ou le barré à tous les styles"
+    },
+    "platformChips": {
+      "all": "Fonctionne partout"
+    },
+    "categoryLoad": {
+      "failed": "Échec du chargement des catégories. Toutes les polices sont affichées."
+    },
+    "stylePreview": {
+      "title": "Aperçu",
+      "titleFor": "Aperçu : {style}",
+      "dialogAriaLabel": "Aperçu par plateforme",
+      "closeAriaLabel": "Fermer l'aperçu"
     }
   },
   "useCases": {

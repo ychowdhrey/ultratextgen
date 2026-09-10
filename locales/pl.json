@@ -181,6 +181,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Dodaj formatowanie",
+      "groupAriaLabel": "Zastosuj podkreślenie lub przekreślenie do każdego stylu"
+    },
+    "platformChips": {
+      "all": "Działa wszędzie"
+    },
+    "categoryLoad": {
+      "failed": "Nie udało się wczytać kategorii. Wyświetlane są wszystkie czcionki."
+    },
+    "stylePreview": {
+      "title": "Podgląd",
+      "titleFor": "Podgląd: {style}",
+      "dialogAriaLabel": "Podgląd platformy",
+      "closeAriaLabel": "Zamknij podgląd"
     }
   },
   "useCases": {

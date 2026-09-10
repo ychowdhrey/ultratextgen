@@ -181,6 +181,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Formatierung hinzufügen",
+      "groupAriaLabel": "Unterstreichung oder Durchstreichung über jeden Stil legen"
+    },
+    "platformChips": {
+      "all": "Funktioniert überall"
+    },
+    "categoryLoad": {
+      "failed": "Kategorien konnten nicht geladen werden. Alle Schriftarten werden angezeigt."
+    },
+    "stylePreview": {
+      "title": "Vorschau",
+      "titleFor": "Vorschau: {style}",
+      "dialogAriaLabel": "Plattform-Vorschau",
+      "closeAriaLabel": "Vorschau schließen"
     }
   },
   "useCases": {

@@ -436,6 +436,15 @@
       display: none;
     }
 
+    /* Shown in place of the tab strip when fonts.json cannot be loaded. Was an
+       inline style until the message was routed through uiText() so it could be
+       translated; inline styles are not used on this site. */
+    .category-load-error {
+      color: var(--text-muted);
+      padding: 10px;
+      text-align: center;
+    }
+
    .category-tab,
    .category-more {
      padding: 10px 16px;

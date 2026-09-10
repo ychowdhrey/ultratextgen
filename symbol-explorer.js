@@ -54,21 +54,21 @@
       copyFormat: "Formato de cópia",
       copyCollection: " Copiar coleção",
       copiedBtn: " Copiado!",
-      formats: { inline: "Em linha", vertical: "Vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
+      formats: { inline: "Em linha", vertical: "Na vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
     es: {
       copied: "Copiado: ",
       copyFormat: "Formato de copia",
       copyCollection: " Copiar colección",
       copiedBtn: " ¡Copiado!",
-      formats: { inline: "En línea", vertical: "Vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
+      formats: { inline: "En línea", vertical: "En vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
     },
     de: {
       copied: "Kopiert: ",
       copyFormat: "Kopierformat",
       copyCollection: " Sammlung kopieren",
       copiedBtn: " Kopiert!",
-      formats: { inline: "Inline", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
+      formats: { inline: "Nebeneinander", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
     },
     id: {
       copied: "Disalin: ",
@@ -89,7 +89,7 @@
       copyFormat: "Format de copie",
       copyCollection: " Copier la collection",
       copiedBtn: " Copié !",
-      formats: { inline: "En ligne", vertical: "Vertical", comma: "Virgules", space: "Espaces", bullet: "Liste" }
+      formats: { inline: "En ligne", vertical: "Verticale", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     },
     nl: {
       copied: "Gekopieerd: ",
@@ -215,7 +215,7 @@
       copyFormat: "Format de copiere",
       copyCollection: " Copiază colecția",
       copiedBtn: " Copiat!",
-      formats: { inline: "Pe un rând", vertical: "Vertical", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
+      formats: { inline: "Pe un rând", vertical: "Pe verticală", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
     },
     hu: {
       copied: "Másolva: ",
@@ -236,7 +236,7 @@
       copyFormat: "Format ng Pagkopya",
       copyCollection: " Kopyahin ang Koleksyon",
       copiedBtn: " Nakopya!",
-      formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Bullet" }
+      formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Listahan" }
     },
     /* fi and ms were missing until 2026-09-10, so their 5 collection pages
        fell through to UI_STRINGS.en and rendered English buttons. Invisible

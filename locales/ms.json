@@ -93,6 +93,22 @@
       "more": "Lagi",
       "less": "Kurang"
     },
-    "demoText": "Selamat datang ke UltraTextGen.\nTaip apa sahaja. Jadikan ia ultra."
+    "demoText": "Selamat datang ke UltraTextGen.\nTaip apa sahaja. Jadikan ia ultra.",
+    "formatControl": {
+      "label": "Tambah pemformatan",
+      "groupAriaLabel": "Gunakan garis bawah atau garis lorek pada setiap gaya"
+    },
+    "platformChips": {
+      "all": "Berfungsi di mana-mana"
+    },
+    "categoryLoad": {
+      "failed": "Gagal memuatkan kategori. Semua fon dipaparkan."
+    },
+    "stylePreview": {
+      "title": "Pratonton",
+      "titleFor": "Pratonton: {style}",
+      "dialogAriaLabel": "Pratonton platform",
+      "closeAriaLabel": "Tutup pratonton"
+    }
   }
 }

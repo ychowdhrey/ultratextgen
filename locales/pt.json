@@ -181,6 +181,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Adicionar formatação",
+      "groupAriaLabel": "Aplicar sublinhado ou tachado a todos os estilos"
+    },
+    "platformChips": {
+      "all": "Funciona em qualquer lugar"
+    },
+    "categoryLoad": {
+      "failed": "Não foi possível carregar as categorias. Mostrando todas as fontes."
+    },
+    "stylePreview": {
+      "title": "Pré-visualização",
+      "titleFor": "Pré-visualização: {style}",
+      "dialogAriaLabel": "Pré-visualização por plataforma",
+      "closeAriaLabel": "Fechar pré-visualização"
     }
   },
   "useCases": {

@@ -181,6 +181,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Opmaak toevoegen",
+      "groupAriaLabel": "Onderstreping of doorhaling op elke stijl toepassen"
+    },
+    "platformChips": {
+      "all": "Werkt overal"
+    },
+    "categoryLoad": {
+      "failed": "Categorieën konden niet worden geladen. Alle lettertypen worden weergegeven."
+    },
+    "stylePreview": {
+      "title": "Voorbeeld",
+      "titleFor": "Voorbeeld: {style}",
+      "dialogAriaLabel": "Platformvoorbeeld",
+      "closeAriaLabel": "Voorbeeld sluiten"
     }
   },
   "useCases": {

@@ -18,6 +18,7 @@
     "check:library-hub": "node scripts/build-library-hub.js --check",
     "audit:library-hub-coverage": "node scripts/audit-library-hub-coverage.js",
     "audit:accessibility": "node scripts/audit-accessibility.js",
+    "audit:locale-attestation": "node scripts/audit-locale-string-attestation.js",
     "check:library-hub-coverage": "node scripts/check-library-hub-coverage.js",
     "check:accessibility": "node scripts/check-accessibility.js",
     "check:collection-grids": "node scripts/check-collection-grid-prerender.js",
