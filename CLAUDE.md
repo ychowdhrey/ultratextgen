@@ -3162,19 +3162,60 @@ inside all six mockups (Instagram, LinkedIn, Discord, X, WhatsApp, TikTok),
 labels itself in the page's language, locks the body scroll and closes cleanly,
 with no page errors.
 
-**Reported, not fixed: the mockup chrome is English on all 29 locales.**
-`buildMockup()` hardcodes ~14 strings — `posts`, `followers`, `Edit profile`,
+### The mockup chrome was English on 29 locales, and is now language-neutral
+
+`buildMockup()` hardcoded ~14 strings (`posts`, `followers`, `Edit profile`,
 `Marketing Lead · 1st`, `👍 Like`, `💬 Comment`, `↗ Share`, `Today at 9:41 AM`,
-`2h ago · Reply`. They are a depiction of a third-party app's interface rather
-than this site's own copy, and none exists in `locales/*.json` to harvest, so
-translating them would mean authoring ~420 strings unilaterally — against the
-standing rule that locale strings are harvested, never authored. It is invisible
-to `check:locale-translation` because the markup is built at runtime. A locale
-reader sees a German modal around an English Instagram mockup.
+`2h ago · Reply`), plus one caveat line under the modal. A locale reader saw a
+German modal around an English Instagram mockup, and it is invisible to
+`check:locale-translation` because the markup is built at runtime.
+
+**Translating it was measured and rejected, which is the useful part.** This
+chrome depicts a THIRD-PARTY product's interface, so the correct German for
+Instagram's "followers" is whatever Instagram says — a fact about Instagram, not
+a translation this repo may author. Both harvest sources fail, and fail
+*partially*, which is worse than failing outright:
+
+| source | result (measured 2026-09-10) |
+|---|---|
+| the site's own corpus | `Follower` on **0** of 373 `de/` pages, フォロワー on **0** of `ja/` — while `Kommentar` (57), `Antworten` (259), `Beiträge` (28) and `Profil` (47) are well attested |
+| `locales/*.json` | a display-name word exists in **15 of 31** files; `Share` exists as `ui.shareResult.label`; the other nine concepts in none |
+
+Either harvest ships a mockup that is **half English on every locale** — the
+"each fix caught the surface it was written for and missed the next one" failure
+this file documents twice.
+
+**So the labels were dropped, not guessed.** Every one is now an icon, a number,
+or a neutral placeholder bar (`.pv-ph`, `currentColor` so one rule serves six
+palettes). This is not a new convention: **X and WhatsApp were already built
+this way** (`💬 12`, `🔁 34`, `9:41 ✓✓`), so it applies the mockups' own
+existing grammar to the other four. The styled text is the content; the chrome's
+only job is to make the frame recognisable, which layout, colour and the avatar
+do wordlessly.
+
+**Two things only a rendered screenshot caught**, after a text-extraction sweep
+had already reported the chrome clean on five locales:
+
+* **`🖼` (U+1F5BC) drew tofu.** Swapped for `📷` (U+1F4F7), one of the oldest and
+  most widely supported emoji, and a better fit for Instagram anyway. Prefer an
+  old, common codepoint over a semantically perfect rare one.
+* **A whole surface was missing from the enumeration.** `.preview-note` —
+  *"Simulated look — fonts can differ slightly per device and app version."* —
+  sat outside `buildMockup()` and carried an em dash as well. **It was removed
+  rather than translated, because its content already ships translated:**
+  `safetyPillHtml()` renders a per-style device-variation badge
+  (`ui.safetyBadges.*`, all 30 locale files) on the very card whose Preview
+  button opens this modal, and the modal's title is already the word "preview"
+  in the reader's language, which is what carried "simulated". Its now-dead CSS
+  rule went with it.
 
 Note the overlap: `👍 Like`, `💬 Comment` and `↗ Share` are the same three
 strings the register-#74 scan missed because its pattern required a capital
 letter immediately after `>`.
+
+**Platform names on the tabs stay English** — Instagram, LinkedIn, Discord, X,
+WhatsApp, TikTok are proper nouns, exempt under this file's own "a formal
+identifier is not English" rule.
 
 ---
 

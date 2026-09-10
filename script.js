@@ -1676,33 +1676,54 @@ const decorations = window.UTG_DECORATIONS
 
   // Each mockup takes the styled text as a plain string; it is inserted with
   // textContent (never innerHTML), so no escaping gymnastics are needed.
+  /* The mockup chrome is deliberately LANGUAGE-NEUTRAL: icons, numbers and
+     neutral placeholder bars, never prose.
+
+     This modal renders on 29 locales, and its chrome depicts a THIRD-PARTY
+     product's interface rather than this site's own copy — so the correct
+     German for Instagram's "followers" is whatever Instagram itself says,
+     which is a fact about Instagram, not a translation we may author. It is
+     also not harvestable: measured 2026-09-10, `Follower` appears on 0 of the
+     site's German pages and フォロワー on 0 of its Japanese ones, and the one
+     word that IS in locales/*.json (a display name) exists in only 15 of 31
+     files. Both harvests land half-and-half, which ships a mockup that is
+     half English on every locale — worse than either extreme.
+
+     So the labels are dropped instead of guessed. X and WhatsApp were already
+     built this way (`💬 12`, `🔁 34`, `9:41 ✓✓`); this applies the mockups'
+     own existing convention to the other four. The user's styled text is the
+     content here — it goes in .pv-text — and everything else is scaffolding
+     whose job is to make the frame recognisable, which layout, colour and the
+     avatar do without a single word. */
   function buildMockup(platform) {
     const av = `<span class="pv-avatar" aria-hidden="true"></span>`;
+    const name = `<span class="pv-ph pv-ph-name" aria-hidden="true"></span>`;
+    const sub = `<span class="pv-ph pv-ph-sub" aria-hidden="true"></span>`;
     switch (platform) {
       case "instagram":
         return `
           <div class="pv-mock pv-instagram">
-            <div class="pv-ig-head">${av}<div class="pv-ig-stats"><span><b>128</b> posts</span><span><b>3,410</b> followers</span><span><b>512</b> following</span></div></div>
-            <div class="pv-ig-name">yourname</div>
+            <div class="pv-ig-head">${av}<div class="pv-ig-stats"><span><b>128</b> 📷</span><span><b>3,410</b> 👥</span><span><b>512</b> 👤</span></div></div>
+            <div class="pv-ig-name">${name}</div>
             <div class="pv-text pv-ig-bio"></div>
-            <div class="pv-ig-btn">Edit profile</div>
+            <div class="pv-ig-btn">✎</div>
           </div>`;
       case "linkedin":
         return `
           <div class="pv-mock pv-linkedin">
-            <div class="pv-li-head">${av}<div><div class="pv-li-name">Your Name</div><div class="pv-li-sub">Marketing Lead · 1st</div><div class="pv-li-sub">2h · 🌐</div></div></div>
+            <div class="pv-li-head">${av}<div><div class="pv-li-name">${name}</div><div class="pv-li-sub">${sub}</div><div class="pv-li-sub">2h · 🌐</div></div></div>
             <div class="pv-text pv-li-body"></div>
-            <div class="pv-li-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+            <div class="pv-li-actions"><span>👍</span><span>💬</span><span>↗</span></div>
           </div>`;
       case "discord":
         return `
           <div class="pv-mock pv-discord">
-            <div class="pv-dc-row">${av}<div><span class="pv-dc-name">yourname</span><span class="pv-dc-time">Today at 9:41 AM</span><div class="pv-text pv-dc-msg"></div></div></div>
+            <div class="pv-dc-row">${av}<div><span class="pv-dc-name">${name}</span><span class="pv-dc-time">09:41</span><div class="pv-text pv-dc-msg"></div></div></div>
           </div>`;
       case "x":
         return `
           <div class="pv-mock pv-x">
-            <div class="pv-x-head">${av}<div><span class="pv-x-name">Your Name</span> <span class="pv-x-handle">@yourname · 2h</span></div></div>
+            <div class="pv-x-head">${av}<div><span class="pv-x-name">${name}</span> <span class="pv-x-handle">${sub} · 2h</span></div></div>
             <div class="pv-text pv-x-body"></div>
             <div class="pv-x-actions"><span>💬 12</span><span>🔁 34</span><span>♥ 208</span></div>
           </div>`;
@@ -1714,7 +1735,7 @@ const decorations = window.UTG_DECORATIONS
       case "tiktok":
         return `
           <div class="pv-mock pv-tiktok">
-            <div class="pv-tt-row">${av}<div><div class="pv-tt-name">yourname</div><div class="pv-text pv-tt-msg"></div><div class="pv-tt-meta">2h ago · Reply</div></div><span class="pv-tt-like">♥<br>1.2K</span></div>
+            <div class="pv-tt-row">${av}<div><div class="pv-tt-name">${name}</div><div class="pv-text pv-tt-msg"></div><div class="pv-tt-meta">2h · 💬</div></div><span class="pv-tt-like">♥<br>1.2K</span></div>
           </div>`;
       default:
         return `<div class="pv-mock"><div class="pv-text"></div></div>`;
@@ -1742,7 +1763,14 @@ const decorations = window.UTG_DECORATIONS
           ).join("")}
         </div>
         <div class="preview-body" id="previewBody"></div>
-        <p class="preview-note">Simulated look — fonts can differ slightly per device and app version.</p>
+        <!-- No caveat line here on purpose. It used to read "Simulated look —
+             fonts can differ slightly per device and app version." in English
+             on all 29 locales, and its content is already delivered TRANSLATED:
+             safetyPillHtml() renders a per-style device-variation badge on
+             every card (ui.safetyBadges.*, present in all 30 locale files), on
+             the very card whose Preview button opened this modal. The modal's
+             own title is already the word "preview" in the reader's language,
+             which is what carried "simulated". -->
       </div>
     `;
     document.body.appendChild(modal);
