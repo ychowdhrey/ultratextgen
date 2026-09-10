@@ -193,6 +193,22 @@
       "unsaveTitle": "Hapus dari gaya tersimpan",
       "empty": "Ketik sesuatu di atas...",
       "noStyles": "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain."
+    },
+    "formatControl": {
+      "label": "Tambahkan format",
+      "groupAriaLabel": "Terapkan garis bawah atau coretan ke semua gaya"
+    },
+    "platformChips": {
+      "all": "Berfungsi di mana saja"
+    },
+    "categoryLoad": {
+      "failed": "Gagal memuat kategori. Menampilkan semua font."
+    },
+    "stylePreview": {
+      "title": "Pratinjau",
+      "titleFor": "Pratinjau: {style}",
+      "dialogAriaLabel": "Pratinjau platform",
+      "closeAriaLabel": "Tutup pratinjau"
     }
   },
   "useCases": {

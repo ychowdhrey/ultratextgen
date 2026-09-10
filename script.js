@@ -645,7 +645,8 @@ const decorations = window.UTG_DECORATIONS
     const list = Array.isArray(style && style.platforms) ? style.platforms : null;
     if (!list || !list.length) return "";
     if (list.includes("all")) {
-      return `<div class="style-platforms"><span class="plat-chip is-all">Works everywhere</span></div>`;
+      const allLabel = uiText("platformChips.all", "Works everywhere");
+      return `<div class="style-platforms"><span class="plat-chip is-all">${escapeHtml(allLabel)}</span></div>`;
     }
     const chips = list
       .map(p => PLATFORM_LABELS[p])
@@ -1191,7 +1192,9 @@ const decorations = window.UTG_DECORATIONS
       // Fallback: show error message and render all fonts
       const tabsContainer = $("#categoryTabs");
       if (tabsContainer) {
-        tabsContainer.innerHTML = '<div style="color: var(--text-muted); padding: 10px; text-align: center;">Failed to load categories. Showing all fonts.</div>';
+        const failMsg = uiText("categoryLoad.failed", "Failed to load categories. Showing all fonts.");
+        tabsContainer.innerHTML =
+          '<div class="category-load-error">' + escapeHtml(failMsg) + '</div>';
       }
       renderResults();
     }
@@ -1330,8 +1333,8 @@ const decorations = window.UTG_DECORATIONS
     control.className = "format-control";
     control.id = "formatControl";
     control.innerHTML = `
-      <span class="format-control-label">Add formatting</span>
-      <div class="format-chips" role="group" aria-label="Layer underline or strikethrough on every style">
+      <span class="format-control-label">${escapeHtml(uiText("formatControl.label", "Add formatting"))}</span>
+      <div class="format-chips" role="group" aria-label="${safeAttr(uiText("formatControl.groupAriaLabel", "Layer underline or strikethrough on every style"))}">
         <button class="format-chip${formatMarks.underline ? " active" : ""}" type="button" data-format="underline" aria-pressed="${formatMarks.underline}"><span class="format-chip-demo">U̲n̲d̲e̲r̲l̲i̲n̲e̲</span></button>
         <button class="format-chip${formatMarks.strike ? " active" : ""}" type="button" data-format="strike" aria-pressed="${formatMarks.strike}"><span class="format-chip-demo">S̶t̶r̶i̶k̶e̶</span></button>
       </div>
@@ -1727,10 +1730,10 @@ const decorations = window.UTG_DECORATIONS
     modal.hidden = true;
     modal.innerHTML = `
       <div class="preview-backdrop" data-preview-close></div>
-      <div class="preview-dialog" role="dialog" aria-modal="true" aria-label="Platform preview">
+      <div class="preview-dialog" role="dialog" aria-modal="true" aria-label="${safeAttr(uiText("stylePreview.dialogAriaLabel", "Platform preview"))}">
         <div class="preview-head">
-          <span class="preview-title" id="previewTitle">Preview</span>
-          <button class="preview-close" type="button" data-preview-close aria-label="Close preview">✕</button>
+          <span class="preview-title" id="previewTitle">${escapeHtml(uiText("stylePreview.title", "Preview"))}</span>
+          <button class="preview-close" type="button" data-preview-close aria-label="${safeAttr(uiText("stylePreview.closeAriaLabel", "Close preview"))}">✕</button>
         </div>
         <div class="preview-tabs" role="tablist">
           ${PREVIEW_PLATFORMS.map((p) =>
@@ -1775,7 +1778,11 @@ const decorations = window.UTG_DECORATIONS
     $$(".preview-tab", modal).forEach((t) =>
       t.classList.toggle("active", t.dataset.platform === previewPlatform)
     );
-    if (title) title.textContent = previewStyleName ? `${previewStyleName} — preview` : "Preview";
+    if (title) {
+      title.textContent = previewStyleName
+        ? uiText("stylePreview.titleFor", "{style} preview").replace("{style}", previewStyleName)
+        : uiText("stylePreview.title", "Preview");
+    }
 
     body.innerHTML = buildMockup(previewPlatform);
     const textEl = $(".pv-text", body);
@@ -1979,11 +1986,14 @@ document.addEventListener("click", async (e) => {
   try {
     await navigator.clipboard.writeText(text);
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "glyph"
-    });
+    // header.js owns the copy-identity helper (it loads on every page this
+    // does); the guard keeps the copy working if it is ever absent.
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("glyph", text);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "copy_text", copy_method: "glyph" });
+    }
 
     btn.classList.add("copied");
     showCopyToast();
@@ -2012,11 +2022,12 @@ document.addEventListener("click", (e) => {
 document.addEventListener("copy", () => {
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "manual"
-    });
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("manual", selection);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "copy_text", copy_method: "manual" });
+    }
   }
 });
      }
@@ -2080,6 +2091,34 @@ document.addEventListener("copy", () => {
         const tag = $(".scope-chip-tag", firstLineBtn);
         if (tag) tag.textContent = uiText("scopeControl.firstLineTag", "for posts");
       }
+    }
+
+    // ensureFormatControl() runs at init, before i18n.js's locale fetch
+    // resolves, and unlike the results grid its markup is never rebuilt — so
+    // without this the label and its group aria-label stay English for the
+    // whole session on every locale page. Same shape as the scope and
+    // safe-mode controls immediately above and below.
+    const formatControl = $("#formatControl");
+    if (formatControl) {
+      const label = $(".format-control-label", formatControl);
+      if (label) label.textContent = uiText("formatControl.label", "Add formatting");
+      const chipsGroup = $(".format-chips", formatControl);
+      if (chipsGroup) {
+        chipsGroup.setAttribute("aria-label",
+          uiText("formatControl.groupAriaLabel", "Layer underline or strikethrough on every style"));
+      }
+    }
+
+    // The preview modal is built once, on the first .preview-btn click. That is
+    // normally after the locale fetch resolves, but it is not guaranteed, and
+    // its chrome is never rebuilt either. Its title is read at open time and
+    // needs nothing here.
+    const previewModal = $("#previewModal");
+    if (previewModal) {
+      const dialog = $(".preview-dialog", previewModal);
+      if (dialog) dialog.setAttribute("aria-label", uiText("stylePreview.dialogAriaLabel", "Platform preview"));
+      const closeBtn = $(".preview-close", previewModal);
+      if (closeBtn) closeBtn.setAttribute("aria-label", uiText("stylePreview.closeAriaLabel", "Close preview"));
     }
 
     const safeModeControl = $("#safeModeControl");
@@ -2251,12 +2290,16 @@ document.addEventListener("click", async (e) => {
     const styleName = btn.dataset.style || "";
     recordStyleUsage(styleName);
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "copy_text",
-      copy_method: "button",
-      style_name: styleName
-    });
+    if (window.UltraTextGen && window.UltraTextGen.trackCopy) {
+      window.UltraTextGen.trackCopy("button", text, { style_name: styleName });
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "copy_text",
+        copy_method: "button",
+        style_name: styleName
+      });
+    }
 
     setCopyBtnLabel(btn, STR.copied);
     btn.classList.add("copied");

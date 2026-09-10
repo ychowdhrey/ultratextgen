@@ -193,6 +193,22 @@
           "faces": "Kaomoji"
         }
       }
+    },
+    "formatControl": {
+      "label": "Magdagdag ng pormat",
+      "groupAriaLabel": "Ilapat ang underline o strikethrough sa bawat istilo"
+    },
+    "platformChips": {
+      "all": "Gumagana kahit saan"
+    },
+    "categoryLoad": {
+      "failed": "Hindi ma-load ang mga kategorya. Ipinapakita ang lahat ng font."
+    },
+    "stylePreview": {
+      "title": "Preview",
+      "titleFor": "Preview ng {style}",
+      "dialogAriaLabel": "Preview sa platform",
+      "closeAriaLabel": "Isara ang preview"
     }
   },
   "useCases": {

@@ -117,6 +117,22 @@
       "unsaveTitle": "Xóa khỏi kiểu chữ đã lưu",
       "empty": "Nhập gì đó ở trên...",
       "noStyles": "Không tìm thấy kiểu chữ nào. Thử bộ lọc hoặc từ khóa khác."
+    },
+    "formatControl": {
+      "label": "Thêm định dạng",
+      "groupAriaLabel": "Áp dụng gạch chân hoặc gạch ngang cho mọi kiểu chữ"
+    },
+    "platformChips": {
+      "all": "Hoạt động ở mọi nơi"
+    },
+    "categoryLoad": {
+      "failed": "Không tải được danh mục. Đang hiển thị tất cả phông chữ."
+    },
+    "stylePreview": {
+      "title": "Xem trước",
+      "titleFor": "Xem trước: {style}",
+      "dialogAriaLabel": "Xem trước theo nền tảng",
+      "closeAriaLabel": "Đóng xem trước"
     }
   },
   "useCases": {

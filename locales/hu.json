@@ -93,6 +93,22 @@
       "more": "Több",
       "less": "Kevesebb"
     },
-    "demoText": "Üdv az UltraTextGenben.\nÍrj bármit. Tedd különlegessé."
+    "demoText": "Üdv az UltraTextGenben.\nÍrj bármit. Tedd különlegessé.",
+    "formatControl": {
+      "label": "Formázás hozzáadása",
+      "groupAriaLabel": "Aláhúzás vagy áthúzás alkalmazása minden stílusra"
+    },
+    "platformChips": {
+      "all": "Mindenhol működik"
+    },
+    "categoryLoad": {
+      "failed": "A kategóriák betöltése nem sikerült. Az összes betűtípus látható."
+    },
+    "stylePreview": {
+      "title": "Előnézet",
+      "titleFor": "Előnézet: {style}",
+      "dialogAriaLabel": "Platform-előnézet",
+      "closeAriaLabel": "Előnézet bezárása"
+    }
   }
 }

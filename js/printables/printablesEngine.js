@@ -888,7 +888,18 @@
     }
   }
 
-  function downloadCanvas(canvas, filename) {
+  // Printable output telemetry lives in header.js (window.UltraTextGen.
+  // trackPrintable) because crossStitchEngine.js and monogramEngine.js are
+  // separate IIFEs on pages that do not load this file, and three copies of
+  // one event's shape would drift. The guard keeps printing working if the
+  // helper is ever absent.
+  function trackPrintable(action, sheet) {
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
+      window.UltraTextGen.trackPrintable(action, sheet);
+    }
+  }
+
+  function downloadCanvas(canvas, filename, sheet) {
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -897,6 +908,7 @@
       a.download = filename;
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+      trackPrintable("download_png", sheet);
     }, "image/png");
   }
 
@@ -929,7 +941,7 @@
         const pad = Math.round(size * 0.0875);
         drawDotWordCanvas(ctx, ch.toUpperCase(), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
         drawCredit(ctx, size, size);
-        downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png");
+        downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png", "character");
         return;
       }
       ctx.textAlign = "center";
@@ -950,7 +962,7 @@
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
       if (RENDER !== "glyph") drawCredit(ctx, size, size);
-      downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
     });
   }
 
@@ -1009,7 +1021,7 @@
         ctx.fillText(out, width / 2, height * 0.52);
       }
       if (RENDER !== "glyph") drawCredit(ctx, width, height);
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
     }, o.font ? String(o.font).split(",")[0].trim().replace(/^['"]|['"]$/g, "") : null);
   }
 
@@ -1017,7 +1029,8 @@
      Print surface
      --------------------------------------------------------------- */
 
-  function printWrap(titleText, bodyNode) {
+  function printWrap(titleText, bodyNode, sheet) {
+    trackPrintable("print", sheet);
     if (!el.printRoot) { window.print(); return; }
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
@@ -1070,7 +1083,7 @@
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
       holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
-      printWrap(cap(NOUN) + " " + charLabel(ch), holder);
+      printWrap(cap(NOUN) + " " + charLabel(ch), holder, "character");
     });
     const pngBtn = document.createElement("button");
     pngBtn.type = "button";
@@ -1244,14 +1257,14 @@
       page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
       book.appendChild(page);
     });
-    printWrap("", book);
+    printWrap("", book, "alphabet_book");
   }
 
   function printAlphabetSheet() {
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
     CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet, "alphabet_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -1338,7 +1351,7 @@
       page.appendChild(grid);
       root.appendChild(page);
     });
-    printWrap("", root);
+    printWrap("", root, "alphabet_tiled");
   }
 
   // Optional "print size" radiogroup (#pt-size-control). Entirely opt-in:
@@ -1449,7 +1462,7 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet — ultratextgen.com", sheet);
+    printWrap(cap(NOUN) + " practice sheet — ultratextgen.com", sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -1580,10 +1593,10 @@
         page.appendChild(nameSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set);
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode());
+    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode(), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -1882,10 +1895,10 @@
         page.appendChild(genSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · ultratextgen.com", set);
+      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · ultratextgen.com", set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
+    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode(), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -1901,7 +1914,7 @@
       page.appendChild(genSheetNode(word, i + 1));
       set.appendChild(page);
     });
-    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set);
+    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set, "generator_ladder");
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -1956,7 +1969,7 @@
         }
         ctx.globalAlpha = 1;
       }
-      downloadCanvas(canvas, (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png");
+      downloadCanvas(canvas, (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png", "generator_word");
     });
   }
 
@@ -2687,11 +2700,11 @@
         page.appendChild(designSheetSVG(n));
         holder.appendChild(page);
       });
-      printWrap("", holder);
+      printWrap("", holder, "design");
       return;
     }
     holder.appendChild(designSheetSVG());
-    printWrap("", holder);
+    printWrap("", holder, "design");
   }
 
   // Dot-to-dot difficulty ladder as one print job — the same word at every
@@ -2709,7 +2722,7 @@
       holder.appendChild(page);
     });
     designState.density = picked;
-    printWrap("", holder);
+    printWrap("", holder, "design_ladder");
   }
 
   function roundRectPath(ctx, x, y, w, h, r) {
@@ -2798,7 +2811,7 @@
       }
 
       ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText("ultratextgen.com", W / 2, H - 24);
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png", "design");
     });
   }
 
@@ -3072,7 +3085,7 @@
   }
 
   function printBanner() {
-    printWrap("", bannerPagesNode(bannerValue()));
+    printWrap("", bannerPagesNode(bannerValue()), "banner");
   }
 
   // Canvas equivalent of flagSVG, scaled from the same geometry constants —
@@ -3154,7 +3167,7 @@
         }
         x += w + gap;
       });
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(phrase) || "banner") + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(phrase) || "banner") + ".png", "banner");
     });
   }
 
@@ -3317,11 +3330,11 @@
         page.appendChild(puzzleSheetNode(n));
         holder.appendChild(page);
       });
-      printWrap("", holder);
+      printWrap("", holder, "puzzle");
       return;
     }
     holder.appendChild(puzzleSheetNode());
-    printWrap("", holder);
+    printWrap("", holder, "puzzle");
   }
 
   // Word -> wide PNG mirroring the sheet: border strips, heading, a row of
@@ -3411,7 +3424,7 @@
       ctx.fillStyle = "#aeb4c0";
       ctx.fillText("ultratextgen.com", W / 2, 860);
 
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png", "puzzle");
     });
   }
 

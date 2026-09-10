@@ -318,13 +318,24 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        trackPrintable("download_png", "monogram");
       }, "image/png");
     });
   }
 
   /* ---------- print (isolated #pt-print-root surface) ---------- */
 
+  // Printable output telemetry lives in header.js (window.UltraTextGen.
+  // trackPrintable) — this engine is a separate IIFE from printablesEngine.js
+  // and a second copy of the event's shape would drift from it.
+  function trackPrintable(action, sheet) {
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintable) {
+      window.UltraTextGen.trackPrintable(action, sheet);
+    }
+  }
+
   function printMonogram() {
+    trackPrintable("print", "monogram");
     const root = byId("pt-print-root");
     if (!root) { window.print(); return; }
     const v = vals();

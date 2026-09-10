@@ -142,7 +142,17 @@ const DROP_SELECTORS = [
   // the source is the page's own `LIBRARY` array — a script block, outside
   // every slot — so its 25 inventory em dashes are a bounded backlog in one
   // file, cleared through the array and a rebuild, never through the HTML.
-  '[data-static-directory]'
+  '[data-static-directory]',
+  // Collection grids pre-rendered by scripts/prerender-collection-grids.js
+  // (added 2026-09-10). Same case as the directory block above: the section is
+  // rendered FROM the page's own inline GROUPS array, which lives in a <script>
+  // and is therefore outside every slot — its group names are already captured
+  // as `ui` by scriptTileNames() below, and its buttons and tabs by the
+  // `button:not(.faq-question)` UI selector. Measuring the rendered copy would
+  // count the same strings a second time, in prose, and would make 898 pages
+  // answerable under clean-on-touch for markup a hand edit cannot change: the
+  // next generator run overwrites it.
+  '.flag-grid-section'
 ];
 
 /** Payload containers whose text is captured as `ui` before being dropped. */

@@ -117,6 +117,22 @@
       "unsaveTitle": "Ukloni iz sačuvanih stilova",
       "empty": "Upiši nešto iznad...",
       "noStyles": "Nema pronađenih stilova. Probaj drugi filter ili pojam za pretragu."
+    },
+    "formatControl": {
+      "label": "Dodaj oblikovanje",
+      "groupAriaLabel": "Primeni podvlačenje ili precrtavanje na svaki stil"
+    },
+    "platformChips": {
+      "all": "Radi svuda"
+    },
+    "categoryLoad": {
+      "failed": "Kategorije nije moguće učitati. Prikazuju se svi fontovi."
+    },
+    "stylePreview": {
+      "title": "Pregled",
+      "titleFor": "Pregled: {style}",
+      "dialogAriaLabel": "Pregled platforme",
+      "closeAriaLabel": "Zatvori pregled"
     }
   },
   "useCases": {

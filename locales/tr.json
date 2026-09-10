@@ -193,6 +193,22 @@
       "unsaveTitle": "Kayıtlı stillerden çıkar",
       "empty": "Yukarıya bir şeyler yaz...",
       "noStyles": "Stil bulunamadı. Başka bir filtre veya arama terimi dene."
+    },
+    "formatControl": {
+      "label": "Biçimlendirme ekle",
+      "groupAriaLabel": "Altı çizili veya üstü çizili biçimi tüm stillere uygula"
+    },
+    "platformChips": {
+      "all": "Her yerde çalışır"
+    },
+    "categoryLoad": {
+      "failed": "Kategoriler yüklenemedi. Tüm yazı tipleri gösteriliyor."
+    },
+    "stylePreview": {
+      "title": "Önizleme",
+      "titleFor": "Önizleme: {style}",
+      "dialogAriaLabel": "Platform önizlemesi",
+      "closeAriaLabel": "Önizlemeyi kapat"
     }
   },
   "useCases": {

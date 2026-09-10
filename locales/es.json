@@ -193,6 +193,22 @@
       "unsaveTitle": "Quitar de los estilos guardados",
       "empty": "Escribe algo arriba...",
       "noStyles": "No se encontraron estilos. Prueba otro filtro o término de búsqueda."
+    },
+    "formatControl": {
+      "label": "Añadir formato",
+      "groupAriaLabel": "Aplicar subrayado o tachado a todos los estilos"
+    },
+    "platformChips": {
+      "all": "Funciona en todas partes"
+    },
+    "categoryLoad": {
+      "failed": "No se pudieron cargar las categorías. Se muestran todas las fuentes."
+    },
+    "stylePreview": {
+      "title": "Vista previa",
+      "titleFor": "Vista previa: {style}",
+      "dialogAriaLabel": "Vista previa por plataforma",
+      "closeAriaLabel": "Cerrar vista previa"
     }
   },
   "useCases": {
