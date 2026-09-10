@@ -731,6 +731,18 @@ Scripts are loaded in a strict order in every HTML page:
 - **Decoration tabs**: static `data-deco-tab` buttons read `decorations[key]`.
   `window.UTG_DECORATIONS` is **merged over** the defaults (`Object.assign`), so
   a page adds one tab without redeclaring the rest.
+- **Three surfaces in here are opt-in per page, and one has no entry point at
+  all (measured 2026-09-10).** `ensureFormatControl()` requires
+  `window.UTG_FORMAT_MARKS`, declared by exactly **one** page
+  (`category/bold-fonts/bold-italic`, English); `platformChipsHtml()` requires
+  `window.UTG_SHOW_PLATFORMS`, declared by **44** pages of which 42 are locale
+  pages; and the **platform-preview modal is unreachable** — `openPreview()`,
+  `buildMockup()`, `updatePreview()` and `.preview-btn`'s CSS all exist, and
+  nothing in the tree renders a `.preview-btn` to open it. Check the opt-in
+  before concluding a string in here is live on a page: the count is the number
+  of pages that declare the flag, not the number that load `script.js`. Whether
+  to wire the preview modal up is a product decision, recorded here rather than
+  taken.
 
 #### `js/flair/flair-engine.js`
 - Shared, reusable decoration **data** (the transform lives in `script.js`).
@@ -2673,6 +2685,174 @@ choice, not a defect to fix unilaterally, and it is recorded here so the next
 person does not have to re-derive it. The first read of it was backwards —
 the two pre-rendered pages look like the norm until you count.
 
+**Correction and resolution (2026-09-10).** The number was **898 of 898**, and
+the correction is the lesson. Those two pages carry static `.flag-row` symbol
+tiles in the same container and `buildGrids` appends its sections underneath
+them, so "container has children" answered a different question than the one
+being asked — *nothing* pre-rendered its grids. Counting the right thing needs
+the right predicate, not a bigger sample. Fixed the same day, generator and
+gate; see the next section.
+
+---
+
+## Collection grids are pre-rendered, not built on load (added 2026-09-10)
+
+898 pages render a **collection section** — the grid of ready-made combos with
+a format picker and a Copy Collection button. On those pages that section is
+the payload, and all 898 shipped it as an empty `<div id="…Container">` plus an
+inline `GROUPS` array turned into DOM by `UltraTextGen.buildGrids()` on
+`DOMContentLoaded`. A client that runs no JavaScript saw a heading above
+nothing. The Discovery Model section states the cost: several search and AI
+crawlers execute none, and machine legibility is a distribution feature rather
+than hygiene.
+
+**No gate here could see it, and each was right not to.** The parity
+fingerprint's `collectionSets` axis reads the `buildGrids` *call* in `<script>`
+rather than its output; the locale and FAQ gates read text that was not there;
+the image gates read assets; the accessibility gate reads markup that rendered.
+The section was invisible in the same way a runtime FAQ-schema rewrite is —
+present at the wrong moment for every check that existed.
+
+### The markup has one owner
+
+`buildGrids()` used to build DOM with `createElement`. It now composes the same
+markup as a string through `gridSectionsHTML()` and inserts it with
+`insertAdjacentHTML`, so the build-time generator can call **the shipped
+renderer** instead of carrying a copy of the markup.
+`scripts/lib/collection-grid-engine.js` slices four marked regions out of
+`symbol-explorer.js` and evaluates them, the `scripts/lib/zalgo-engine.js`
+technique, and **throws** when a marker is missing rather than falling back to
+a local copy. `buildGrids()` skips construction when a `.flag-grid-section` is
+already present, so a pre-rendered page is not doubled.
+
+**`GROUPS` is executed, never parsed.** 18 flag pages build their groups by
+mapping ISO codes through `isoToFlag()`, so the generator runs each page's own
+inline script against a capturing stub and renders what `buildGrids` was
+actually called with. Three `emoji-flags` pages also build their country tile
+grid in that script and call `getElementById(...).appendChild` first, which is
+why the DOM stub returns a live chainable proxy rather than `null`. A stub
+cannot smuggle in a call the browser would not make: every captured container
+id is checked against the real HTML, and the splice asserts the child count
+grew by exactly the number of groups.
+
+The block is spliced as **text** between HTML comments, never round-tripped
+through cheerio — the same reason `docs/source-attribution.md` §4 gives for the
+JSON-LD fixer. Idempotent: a second run reports `898 already current`.
+
+### Tooling
+
+- **`npm run prerender:collection-grids`** (`-- --write`, `-- --files …`) — the
+  generator. Report-only by default.
+- **`npm run check:collection-grids`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. A **state check on changed pages**, like
+  `check:accessibility` and for the same reason: all 898 carry a current block,
+  so there is no backlog to be permanently red against.
+- Full write-up, the gate-interaction table and the `fi`/`ms` attestation
+  table: **`docs/collection-grid-prerender.md`**.
+
+### Two gates caught real problems, and neither was ledgered
+
+**`check:locale-translation`** flagged four `pt` pages newly showing `Vertical`
+verbatim. Six grid labels were byte-identical to English across `pt es fr ro`
+(`Vertical`), `de` (`Inline`) and `tl` (`Bullet`). The fix is **that locale's
+own attested word**, harvested from its own pages — `Na vertical` (31 uses),
+`En vertical` (14), `Verticale` (136), `Pe verticală` (4), `Nebeneinander` (16),
+`Listahan` (1) — never an entry in `data/translation_identical_strings.json`.
+The ledger is for a translation that is *correctly* identical; a cognate nobody
+chose is not that.
+
+**`check:locale-mesh`** flagged a pre-existing German hub link the pass merely
+brought into diff scope, the third recorded instance of that pattern. Repaired
+with `sync:locale-mesh --fix` **scoped to that one file**, never site-wide.
+
+### `fi` and `ms` had no UI strings at all
+
+`UI_STRINGS` in `symbol-explorer.js` is keyed by the two-letter prefix of
+`<html lang>` and falls back to `en`. It covered 29 locales and not those two,
+so 5 pages rendered English buttons under localised headings — invisible while
+the grids were JavaScript-only, and about to become static English. Fixed at the
+root, with every word attested on this site's own pages in that language and the
+two compounds of attested stems (`Format Salinan`, `Kopiointimuoto`) flagged as
+such rather than presented as harvested.
+
+### `<lastmod>` advances once here, and that is correct
+
+The grids are new visible content and new copy payloads on 898 pages. Nothing
+about *what* `content-significance.js` hashes changed, so **no cache
+re-baseline is required** — this is the "hubs pre-rendered" case that section
+already names as a change which legitimately advances a date.
+
+`.flag-grid-section` joins `[data-static-directory]` in
+`editorial-corpus.js`'s drop list: the group names are already captured as `ui`
+from the script by `scriptTileNames()`, and billing 898 pages under
+clean-on-touch for markup a hand edit cannot change is exactly what that
+selector exists to prevent.
+
+### Verified against the unmodified tree, not against expectation
+
+A git worktree of the pre-change commit was served alongside the working tree
+and both were driven in headless Chromium. The container's serialised HTML is
+**identical apart from the two HTML comments**, and the interaction trace
+matches on both: six sections (not twelve), a tab click rewriting `preview-0`
+and moving the `active` class, one `copy_text` event from the copy button. Then
+`ms`, `fi`, `ja` and the `isoToFlag`-built `library/emoji-flags` were each
+driven to confirm localised chrome and working tabs.
+
+The gate itself was verified against four differently-shaped broken inputs — a
+deleted block, a hand-edited block, a `GROUPS` array that grew, and a clean tree
+— and confirmed to make `run-ci-gates.py --only collection_grids` fail.
+
+**Still open, recorded rather than fixed:** the 17 pages carrying
+`#countryFlagList` build **195 country tiles** in JavaScript (EN and `ar` carry
+8 static ones, `vi` carries 0). Same class, different mechanism, and its output
+*would* be measured by `check:locale-translation` — see
+`docs/collection-grid-prerender.md` §7.
+
+---
+
+## Locale string attestation — evidence when there is no native reviewer (added 2026-09-10)
+
+`locales/ms.json` shipped 2026-09-05 with its own `_readme` recording that it
+had not been read by a Malay speaker, and nothing could say how much that
+mattered. The site's own pages in that language are the next-best evidence: 490
+`ms/` pages already say `Salin`, `ms/library/ruang-kosong` already calls a space
+`Ruang`, the `ms/` footer already calls vertical text `Teks Menegak`. A string
+built from those words is grounded in first-party evidence; one built from a
+dictionary guess is not, and before this nothing could tell them apart.
+
+**It measures corpus support, not correctness, and the difference is not a
+quibble.** A fully attested string can carry the wrong inflection — this file
+already records Swedish `kontrollerat` versus a guessed `kontrollerad`, where
+both stems are attested and only one agrees — the wrong collocation, or the
+wrong register. `attested` means *no word here is invented*, which is a real and
+checkable claim, and nothing more. It tells you which strings still need a
+human; it never says one does not.
+
+- **`npm run audit:locale-attestation`** — `--locale`, `--verdict`, `--full`,
+  `--json`, and `--strings "…" "…"` to attest a proposed translation **before**
+  adding it. **Informational, never gating**: a `partial` verdict is a question
+  for a reviewer, not a broken build.
+- `scripts/lib/locale-string-attestation.js` holds the method.
+
+**Three matching rules, each from a wrong result rather than reasoned up
+front.** Stem-prefix **or** substring, because Korean writes `스타일을` for the
+bare `스타일` and Finnish `kokoelmaan` for `kokoelma`, and a false "unattested"
+sends a reviewer chasing nothing. A script-aware minimum word length, because a
+Hangul syllable carries far more than a Latin letter and a flat minimum of three
+discarded Korean 공유 and 없음 as `no-evidence-needed`, which reads as *fine*
+when it means *not checked* (`ko` went 33 → 52 of 75 on that one fix).
+Spaceless scripts match whole segments verbatim, which reads low by
+construction — **`ja`, `th` and `zh-tw` numbers are not comparable to the Latin
+locales**, and the report says so per row rather than averaging it away, as it
+does for a thin corpus.
+
+First run: `ms` 64 of 75 attested against a 23-page corpus, with the eleven
+outliers named word by word. Of the 240 strings added for the `script.js` UI
+keys the same day, **202 were fully attested**, and every one of the 17
+unattested sits in a spaceless-script locale or in `hi`, whose corpus is 9
+pages.
+
+
 ---
 
 ## Editorial Footprint Risk — measuring how templated our own prose reads
@@ -3658,6 +3838,28 @@ Standing protocol:
   the superseded builder and now skips all 19 locale hubs; it is still gated on,
   but it is not the tool that fixes one. The static markup and the runtime markup
   come from the same code over the same source precisely so they cannot drift.
+- Do not ship a page that renders a copy-paste collection grid without its
+  pre-rendered block. All 898 such pages carry one; the section is the page's
+  payload and a crawler that runs no JavaScript sees an empty container without
+  it. See "Collection grids are pre-rendered, not built on load" above.
+  `npm run check:collection-grids` gates every page a PR touches, and
+  `npm run prerender:collection-grids -- --write` is the only fix — never
+  hand-edit a block, and never add a second copy of the markup to a generator:
+  `gridSectionsHTML()` in `symbol-explorer.js` is its one owner, sliced into
+  build-time code by `scripts/lib/collection-grid-engine.js`.
+- Do not resolve a byte-identical locale string by reaching for
+  `data/translation_identical_strings.json` before checking that locale's own
+  pages for a word it already uses. Six collection-grid labels were identical to
+  English (`Vertical` in pt/es/fr/ro, `Inline` in de, `Bullet` in tl) and all six
+  had an attested native alternative on the site. That ledger is for a
+  translation that is *correctly* identical, not for a cognate nobody chose.
+  `npm run audit:locale-attestation -- --locale <code> --strings "…"` answers the
+  question before you add the entry.
+- Do not read an `attested` verdict from `audit:locale-attestation` as "this
+  translation is correct", or compare a spaceless-script locale's score to a
+  Latin one. It measures only that no word is invented; inflection, collocation
+  and register are exactly what it cannot see. See "Locale string attestation"
+  above.
 - Do not discover locales with a filesystem glob. `zh-tw` is five characters, so
   `glob("??")` silently skipped 73 of its pages for as long as that line existed.
   Read the canonical list from `data/locale_qualification_tiers.json` (Python) or

@@ -2458,6 +2458,34 @@ document.addEventListener("copy", () => {
       }
     }
 
+    // ensureFormatControl() runs at init, before i18n.js's locale fetch
+    // resolves, and unlike the results grid its markup is never rebuilt — so
+    // without this the label and its group aria-label stay English for the
+    // whole session on every locale page. Same shape as the scope and
+    // safe-mode controls immediately above and below.
+    const formatControl = $("#formatControl");
+    if (formatControl) {
+      const label = $(".format-control-label", formatControl);
+      if (label) label.textContent = uiText("formatControl.label", "Add formatting");
+      const chipsGroup = $(".format-chips", formatControl);
+      if (chipsGroup) {
+        chipsGroup.setAttribute("aria-label",
+          uiText("formatControl.groupAriaLabel", "Layer underline or strikethrough on every style"));
+      }
+    }
+
+    // The preview modal is built once, on the first .preview-btn click. That is
+    // normally after the locale fetch resolves, but it is not guaranteed, and
+    // its chrome is never rebuilt either. Its title is read at open time and
+    // needs nothing here.
+    const previewModal = $("#previewModal");
+    if (previewModal) {
+      const dialog = $(".preview-dialog", previewModal);
+      if (dialog) dialog.setAttribute("aria-label", uiText("stylePreview.dialogAriaLabel", "Platform preview"));
+      const closeBtn = $(".preview-close", previewModal);
+      if (closeBtn) closeBtn.setAttribute("aria-label", uiText("stylePreview.closeAriaLabel", "Close preview"));
+    }
+
     const safeModeControl = $("#safeModeControl");
     if (safeModeControl) {
       const label = $(".safemode-control-label", safeModeControl);
