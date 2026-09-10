@@ -85,16 +85,18 @@ const EXEMPT_PATHS = [/^privacy\//, /^about\//, /^contact\//, /^embed\//];
  *   th  แหล่งข้อมูล ("information source") vs แหล่งอ้างอิง ("reference
  *       source", unambiguous for citations) -> แหล่งอ้างอิง.
  * Both choices are between two forms the site had already published, not
- * inventions; a native reader can flip either here and re-run the fixer.
+ * inventions; a native reader can flip either there and re-run the fixer.
+ *
+ * The table itself lives in data/source_block_labels.json, not here, because
+ * generate_library_page_from_spec.py (Python) has to write the same label
+ * this (Node) checker reads. A second copy in the generator would drift from
+ * the checker — the exact failure this standard, and CLAUDE.md, document at
+ * length. The reasoning for the ja and th choices moved with it, into that
+ * file's _decisions block.
  */
-const LOCALE_LABELS = {
-  en: ['Sources'],
-  ar: ['المصادر'], de: ['Quellen'], es: ['Fuentes'], fr: ['Sources'],
-  id: ['Sumber'], it: ['Fonti'], ja: ['出典', '情報源'], ko: ['출처'],
-  ms: ['Sumber'], nl: ['Bronnen'], pl: ['Źródła'], pt: ['Fontes'],
-  ru: ['Источники'], sv: ['Källor'], th: ['แหล่งอ้างอิง', 'แหล่งข้อมูล'],
-  tr: ['Kaynaklar'], vi: ['Nguồn'], 'zh-tw': ['資料來源'],
-};
+const LOCALE_LABELS = JSON.parse(
+  fs.readFileSync(path.join(REPO, 'data', 'source_block_labels.json'), 'utf8')
+).labels;
 
 let _resources = null;
 /**
@@ -345,7 +347,21 @@ function withJsonLdCitations(html, list) {
 
   let raw = best.m[1];
   // Drop any citation array already there, so this is idempotent.
-  raw = raw.replace(/\n {2}"citation": \[[\s\S]*?\n {2}\],/, '');
+  //
+  // The comma handling is the whole subtlety, and getting it wrong produces a
+  // DUPLICATE "citation" key rather than a visible error. An array that is the
+  // LAST key in its node ends `]` with no trailing comma, so a pattern anchored
+  // on `],` silently fails to match, leaves the old copy in place and then
+  // inserts a second one. That is exactly what generated pages hit, because
+  // generate_library_page_from_spec.py appends citation last.
+  //
+  // So: capture the optional comma on either side and re-emit one only when the
+  // array sat BETWEEN two keys. Covers all three positions — first key, middle,
+  // and last — without ever leaving a trailing comma behind.
+  raw = raw.replace(
+    /(,)?\n {2}"citation": \[[\s\S]*?\n {2}\](,)?/,
+    (_m, before, after) => (before && after ? ',' : ''),
+  );
   if (list.length) {
     const anchor = new RegExp(`(^ {2}"@type":\\s*"${best.type}",)`, 'm');
     if (!anchor.test(raw)) return null;

@@ -182,6 +182,18 @@
         }
       }
     },
+    "copyButtons": {
+      "copy": "Kopyala",
+      "copied": "✓ Kopyalandı",
+      "failed": "✗ Başarısız",
+      "copyTitle": "Panoya kopyala",
+      "save": "Kaydet",
+      "saved": "Kaydedildi",
+      "saveTitle": "Bu stili kaydet",
+      "unsaveTitle": "Kayıtlı stillerden çıkar",
+      "empty": "Yukarıya bir şeyler yaz...",
+      "noStyles": "Stil bulunamadı. Başka bir filtre veya arama terimi dene."
+    },
     "formatControl": {
       "label": "Biçimlendirme ekle",
       "groupAriaLabel": "Altı çizili veya üstü çizili biçimi tüm stillere uygula"

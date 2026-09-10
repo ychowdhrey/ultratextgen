@@ -106,6 +106,18 @@
       "less": "Thu gọn"
     },
     "demoText": "Chào mừng đến với UltraTextGen.\nGõ bất cứ điều gì. Biến nó thành ultra.",
+    "copyButtons": {
+      "copy": "Sao chép",
+      "copied": "✓ Đã sao chép",
+      "failed": "✗ Thất bại",
+      "copyTitle": "Sao chép vào bộ nhớ tạm",
+      "save": "Lưu",
+      "saved": "Đã lưu",
+      "saveTitle": "Lưu kiểu chữ này",
+      "unsaveTitle": "Xóa khỏi kiểu chữ đã lưu",
+      "empty": "Nhập gì đó ở trên...",
+      "noStyles": "Không tìm thấy kiểu chữ nào. Thử bộ lọc hoặc từ khóa khác."
+    },
     "formatControl": {
       "label": "Thêm định dạng",
       "groupAriaLabel": "Áp dụng gạch chân hoặc gạch ngang cho mọi kiểu chữ"

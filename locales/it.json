@@ -182,6 +182,18 @@
         }
       }
     },
+    "copyButtons": {
+      "copy": "Copia",
+      "copied": "✓ Copiato",
+      "failed": "✗ Errore",
+      "copyTitle": "Copia negli appunti",
+      "save": "Salva",
+      "saved": "Salvato",
+      "saveTitle": "Salva questo stile",
+      "unsaveTitle": "Rimuovi dagli stili salvati",
+      "empty": "Scrivi qualcosa qui sopra...",
+      "noStyles": "Nessuno stile trovato. Prova un altro filtro o termine di ricerca."
+    },
     "formatControl": {
       "label": "Aggiungi formattazione",
       "groupAriaLabel": "Applica sottolineato o barrato a ogni stile"
