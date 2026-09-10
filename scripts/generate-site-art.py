@@ -2098,6 +2098,14 @@ PAGES = {
   "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Draft Emoji 18.0 candidate, not live yet", m_paw, K_SYM),
   "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☝", "☞", "☜", "☟", "✌"), K_SYM),
+  # Emoji 17.0, live on phones since iOS 26.4 (2026-03-24). Each is registered
+  # against a DRAWN motif rather than its own glyph: no font on the build box
+  # covers U+1FACD/U+1FA8A/U+1FA8E/U+1FAEF yet, and spanned() drops what it
+  # cannot draw, so selecting the emoji would render an empty card.
+  "symbol-orca-emoji": ("Orca Emoji", "U+1FACD, and why it is filed with the dolphins", m_paw, K_SYM),
+  "symbol-trombone-emoji": ("Trombone Emoji", "U+1FA8A, the slide that earned its own glyph", m_note, K_SYM),
+  "symbol-treasure-chest-emoji": ("Treasure Chest Emoji", "U+1FA8E, filed under money, not objects", m_coin, K_SYM),
+  "symbol-fight-cloud-emoji": ("Fight Cloud Emoji", "U+1FAEF, a century-old cartoon shorthand", m_burst_angry, K_SYM),
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),

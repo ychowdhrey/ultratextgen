@@ -1,0 +1,94 @@
+{
+  "slug": "fight-cloud-emoji",
+  "page_type": "symbol",
+  "title": "Fight Cloud Emoji (🫯): Codepoint, Meaning & the Century-Old Cartoon Cue",
+  "meta_description": "The fight cloud emoji 🫯 (U+1FAEF): its Unicode 17.0 codepoint, how to type it, and why a scuffle has been drawn as a dust cloud for about a hundred years.",
+  "canonical": "https://ultratextgen.com/symbol/fight-cloud-emoji/",
+  "breadcrumb": "Fight Cloud Emoji",
+  "hero_h1": "Fight Cloud Emoji",
+  "hero_tagline": "The brawl cloud 🫯 with its codepoint, its input routes, the emotion shelf Unicode files it on, and the comic-strip convention it encodes. Tap the cloud to copy it, and the effect glyphs below are what people reached for before it.",
+  "intro": "🫯 FIGHT CLOUD (U+1FAEF) was added in Unicode 17.0 and reached most phones with iOS 26.4 in March 2026. It is filed under **emotion**, not under people or objects, because it depicts no one: the cloud is the convention comics use to hide a scuffle while telling you a scuffle is happening. Jennifer Daniel, who wrote the character's Unicode proposal, described it in April 2026 as a visual verb for when things get messy. This page covers the glyph, how to type it, and the effect symbols it belongs with.",
+  "date_published": "2026-09-10",
+  "date_modified": "2026-09-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "fight-cloud-core",
+      "label": "The Glyph",
+      "h2": "Fight Cloud Emoji",
+      "intro": "The Unicode 17.0 codepoint, a dust cloud punctuated with stars and stray limbs.",
+      "symbols": [
+        {
+          "char": "🫯",
+          "label": "Fight Cloud (U+1FAEF)"
+        }
+      ]
+    },
+    {
+      "id": "fight-cloud-effects",
+      "label": "Effect Symbols",
+      "h2": "The Emotion Shelf It Joined",
+      "intro": "Unicode's emotion subgroup: pictures of feeling rather than pictures of faces.",
+      "symbols": [
+        {
+          "char": "💥",
+          "label": "Collision (U+1F4A5)"
+        },
+        {
+          "char": "💢",
+          "label": "Anger Symbol (U+1F4A2)"
+        },
+        {
+          "char": "💫",
+          "label": "Dizzy (U+1F4AB)"
+        },
+        {
+          "char": "💨",
+          "label": "Dashing Away (U+1F4A8)"
+        }
+      ]
+    },
+    {
+      "id": "fight-cloud-company",
+      "label": "In Context",
+      "h2": "What It Gets Typed Alongside",
+      "intro": "The glyphs that turn a cloud into a specific kind of trouble.",
+      "symbols": [
+        {
+          "char": "🥊",
+          "label": "Boxing Glove (U+1F94A)"
+        },
+        {
+          "char": "😤",
+          "label": "Face with Steam From Nose (U+1F624)"
+        },
+        {
+          "char": "🤼",
+          "label": "People Wrestling (U+1F93C)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis by Feeling",
+      "desc": "Every face emoji sorted by the feeling it carries, with the anger and shock shelves included."
+    },
+    {
+      "href": "/symbol/distorted-face-emoji/",
+      "title": "Distorted Face Emoji",
+      "desc": "🫪, the other Unicode 17.0 emotion glyph, and the release's most-used addition."
+    },
+    {
+      "href": "/symbol/treasure-chest-emoji/",
+      "title": "Treasure Chest Emoji",
+      "desc": "🪎, a Unicode 17.0 release-mate that Unicode files with currency, not with objects."
+    },
+    {
+      "href": "/updates/unicode-17-new-emoji-rollout/",
+      "title": "Unicode 17.0 Rollout Tracker",
+      "desc": "All eight Unicode 17.0 emoji and which platforms have drawn them so far."
+    }
+  ]
+}
