@@ -2447,6 +2447,26 @@ does not change when its markup does.
 per the re-baseline rule (336 entries moved; 49 carry a Sources block, 287
 were pre-existing drift).
 
+**Link rot is a separate instrument, and it never gates (added 2026-09-06).**
+`npm run audit:link-rot` asks whether a cited URL still *loads*; the
+`updates/` verification pill asks whether the *fact* is still true. The rule
+worth carrying: **a failed fetch is not a dead link.** `cbo.gov.om` — the
+Central Bank of Oman's own page for a currency sign this site has an entry
+about — answers 503 to an unauthenticated bot, and through curl reports the
+same `http_code: 000` as a host that does not exist. So results classify by
+cause (`ok` / `redirect` / `blocked` / `gone` / `unreachable` / `server`),
+`blocked` never counts, and a URL is reported as rotted only after **3
+consecutive failing runs** in `data/source_link_health.json`. That threshold
+earned itself on the first run: a Roblox help article returned 404 once and
+403 three times, so at a threshold of one the tooling would have called a
+working citation dead. **There is deliberately no `check-link-rot.js`** — it
+depends on the public internet and on hosts that rate-limit, so a gate would
+be red for reasons no PR author can fix, the same call as `check:images`.
+`.github/workflows/link-rot.yml` is `workflow_dispatch` only; a monthly cron
+is a one-line change and a decision, since it would be the repo's second
+scheduled auto-committing workflow. Full design and the measurements:
+`docs/source-attribution.md` §10.
+
 Verified per this file's own rule against five differently-shaped broken
 inputs plus a negative control — see `docs/source-attribution.md` §7 for the
 probes and the full standard, including the CSS design and its RTL and print
@@ -3705,6 +3725,15 @@ Standing protocol:
   fixes the mechanical half. A link that is a destination rather than evidence
   ("install this free font", "sign in here") goes in
   `data/source_resource_links.json` with a reason — never to make a PR pass.
+- Do not read one failed fetch as link rot, and do not add a `check-link-rot`
+  gate. A live primary source behind bot protection and a host that does not
+  exist look identical in a single request — `cbo.gov.om` answers 503, and a
+  Roblox help article returned 404 once and 403 three times on the same day.
+  `npm run audit:link-rot` classifies by cause and reports rot only after 3
+  consecutive failing runs; it is informational by construction. See "Source
+  Attribution" above and `docs/source-attribution.md` §10. Do not hand-edit
+  `data/source_link_health.json` — a hand-set `lastGood` is a claim nobody
+  checked.
 - Do not hand-write a schema.org `citation` array, and do not hand-edit a
   Sources block's JSON-LD. It is generated from the block by the fixer precisely
   so the two cannot drift — the same reason the FAQ schema and the visible FAQ
