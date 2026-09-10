@@ -3120,6 +3120,12 @@ whitespace between block-level rows.
 The gate was verified against four differently-shaped broken inputs and
 confirmed to make `run-ci-gates.py --only country_flags` fail.
 
+**The cost, measured rather than waved past:** +41.6 KB uncompressed per page on
+average (**+724 KB across the seventeen**), which is **+3.6 to +5.2 KB gzipped**
+— the figure that actually crosses the wire. That buys the page's entire payload
+becoming visible to a client that runs no JavaScript, on pages where 195 of the
+195 tiles previously were not.
+
 ---
 
 ## The platform-preview modal was restored, not built (added 2026-09-10)
