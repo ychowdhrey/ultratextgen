@@ -1,0 +1,300 @@
+{
+ "slug": "stjarntecken",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Stjärntecken symboler ♈ ♉ ♊ att kopiera – astrologiska tecken",
+ "meta_description": "Bläddra och kopiera stjärnteckensymboler, planetsymboler, kinesiska stjärntecken och astronomiska Unicode-tecken. Klicka på en symbol för att kopiera den direkt.",
+ "breadcrumb": "Stjärntecken & astrologisymboler",
+ "hero_h1": "Stjärntecken & astrologisymboler",
+ "hero_tagline": "En referenssamling med västerländska stjärntecken, planetsymboler, kinesiska stjärntecken och astronomiska tecken. Klicka på en symbol för att kopiera den direkt.",
+ "intro": "Det här biblioteket innehåller de 12 västerländska stjärnteckensymbolerna, planet- och himlakroppssymboler som används i astrologi och astronomi, kinesiska stjärntecken som djur-emoji samt relaterade astronomiska tecken. Symbolerna är grupperade efter tradition och kategori.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/stjarntecken/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/stjarntecken/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/zodiac-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/zodiac-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/stjarna-symboler/",
+   "title": "Stjärnsymboler (att kopiera)",
+   "desc": "En samling stjärnsymboler, gnistertecken och asterisk-varianter i Unicode. Från enkla stjärnor och flertaggade stjärnor till betygsstjärnor – klicka."
+  },
+  {
+   "href": "/sv/library/grekiska-bokstaver/",
+   "title": "Grekiska bokstäver",
+   "desc": "Hela det grekiska alfabetet – versaler, gemener och de matematiska variantformerna – redo att kopieras. Klicka på en bokstav för att kopiera den."
+  },
+  {
+   "href": "/sv/library/japanska-tecken/",
+   "title": "Japanska tecken",
+   "desc": "Kanji, hiragana och katakana med romaji och betydelser – färdiga för bios, bildtexter och användarnamn. Klicka på valfritt tecken för att kopiera det."
+  }
+ ],
+ "sections": [
+  {
+   "id": "western-zodiac",
+   "label": "Västerländska stjärntecken",
+   "h2": "Västerländska stjärntecken",
+   "intro": "De tolv tecknen i den västerländska astrologiska zodiaken, med sina datumintervall.",
+   "symbols": [
+    {
+     "char": "♈",
+     "label": "Väduren (21 mars – 19 apr)"
+    },
+    {
+     "char": "♉",
+     "label": "Oxen (20 apr – 20 maj)"
+    },
+    {
+     "char": "♊",
+     "label": "Tvillingarna (21 maj – 20 jun)"
+    },
+    {
+     "char": "♋",
+     "label": "Kräftan (21 jun – 22 jul)"
+    },
+    {
+     "char": "♌",
+     "label": "Lejonet (23 jul – 22 aug)"
+    },
+    {
+     "char": "♍",
+     "label": "Jungfrun (23 aug – 22 sep)"
+    },
+    {
+     "char": "♎",
+     "label": "Vågen (23 sep – 22 okt)"
+    },
+    {
+     "char": "♏",
+     "label": "Skorpionen (23 okt – 21 nov)"
+    },
+    {
+     "char": "♐",
+     "label": "Skytten (22 nov – 21 dec)"
+    },
+    {
+     "char": "♑",
+     "label": "Stenbocken (22 dec – 19 jan)"
+    },
+    {
+     "char": "♒",
+     "label": "Vattumannen (20 jan – 18 feb)"
+    },
+    {
+     "char": "♓",
+     "label": "Fiskarna (19 feb – 20 mars)"
+    },
+    {
+     "char": "⛎",
+     "label": "Ormbäraren (30 nov – 17 dec, inofficiellt 13:e tecken)"
+    }
+   ]
+  },
+  {
+   "id": "planetary-symbols",
+   "label": "Planet- & himlakroppssymboler",
+   "h2": "Planet- & himlakroppssymboler",
+   "intro": "Astronomiska och astrologiska symboler för planeter och himlakroppar.",
+   "symbols": [
+    {
+     "char": "☉",
+     "label": "Solen"
+    },
+    {
+     "char": "☽",
+     "label": "Första kvarterets måne"
+    },
+    {
+     "char": "☾",
+     "label": "Sista kvarterets måne"
+    },
+    {
+     "char": "☿",
+     "label": "Merkurius"
+    },
+    {
+     "char": "♀",
+     "label": "Venus"
+    },
+    {
+     "char": "♁",
+     "label": "Jorden"
+    },
+    {
+     "char": "♂",
+     "label": "Mars"
+    },
+    {
+     "char": "♃",
+     "label": "Jupiter"
+    },
+    {
+     "char": "♄",
+     "label": "Saturnus"
+    },
+    {
+     "char": "♅",
+     "label": "Uranus"
+    },
+    {
+     "char": "♆",
+     "label": "Neptunus"
+    },
+    {
+     "char": "♇",
+     "label": "Pluto"
+    }
+   ]
+  },
+  {
+   "id": "chinese-zodiac",
+   "label": "Kinesiska stjärntecken (djur)",
+   "h2": "Kinesiska stjärntecken (djur)",
+   "intro": "De kinesiska stjärntecknens djur som representerar den tolvåriga månkalendern.",
+   "symbols": [
+    {
+     "char": "🐀",
+     "label": "Råtta"
+    },
+    {
+     "char": "🐂",
+     "label": "Oxe"
+    },
+    {
+     "char": "🐅",
+     "label": "Tiger"
+    },
+    {
+     "char": "🐇",
+     "label": "Kanin"
+    },
+    {
+     "char": "🐉",
+     "label": "Drake"
+    },
+    {
+     "char": "🐍",
+     "label": "Orm"
+    },
+    {
+     "char": "🐎",
+     "label": "Häst"
+    },
+    {
+     "char": "🐐",
+     "label": "Get"
+    },
+    {
+     "char": "🐒",
+     "label": "Apa"
+    },
+    {
+     "char": "🐓",
+     "label": "Tupp"
+    },
+    {
+     "char": "🐕",
+     "label": "Hund"
+    },
+    {
+     "char": "🐖",
+     "label": "Gris"
+    }
+   ]
+  },
+  {
+   "id": "astrological-symbols",
+   "label": "Astrologiska notationssymboler",
+   "h2": "Astrologiska notationssymboler",
+   "intro": "Ytterligare astrologiska notationssymboler.",
+   "symbols": [
+    {
+     "char": "☊",
+     "label": "Uppstigande nod"
+    },
+    {
+     "char": "☋",
+     "label": "Nedstigande nod"
+    },
+    {
+     "char": "☌",
+     "label": "Konjunktion"
+    },
+    {
+     "char": "☍",
+     "label": "Opposition"
+    },
+    {
+     "char": "⚹",
+     "label": "Sextil"
+    },
+    {
+     "char": "□",
+     "label": "Kvadratur (kvadrat)"
+    },
+    {
+     "char": "△",
+     "label": "Trigon"
+    }
+   ]
+  },
+  {
+   "id": "classical-elements",
+   "label": "Klassiska element- & alkemisymboler",
+   "h2": "Klassiska element- & alkemisymboler",
+   "intro": "De fyra klassiska elementen som knyts till zodiakens trigoner – eld, jord, luft och vatten – i både alkemisk och geometrisk triangelform som används genom hela astrologin.",
+   "symbols": [
+    {
+     "char": "🜂",
+     "label": "Eld (alkemisk)"
+    },
+    {
+     "char": "🜄",
+     "label": "Vatten (alkemisk)"
+    },
+    {
+     "char": "🜁",
+     "label": "Luft (alkemisk)"
+    },
+    {
+     "char": "🜃",
+     "label": "Jord (alkemisk)"
+    },
+    {
+     "char": "△",
+     "label": "Eldtriangel"
+    },
+    {
+     "char": "▽",
+     "label": "Vattentriangel"
+    },
+    {
+     "char": "🜍",
+     "label": "Svavel"
+    },
+    {
+     "char": "☿",
+     "label": "Kvicksilver"
+    }
+   ]
+  }
+ ]
+}

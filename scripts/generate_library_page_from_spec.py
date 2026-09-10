@@ -249,6 +249,15 @@ LOCALE_UI_STRINGS = {
     "zh-TW": {"copy": "複製", "related": "相關頁面", "cta_h3": "用 Unicode 字體轉換文字", "cta_body": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體，免費、即時。", "cta_btn": "開啟 UltraTextGen →", "home": "首頁", "symbols": "符號", "library": "符號庫"},
     "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_body": "UltraTextGen을 쓰면 평범한 텍스트가 볼드체, 필기체 등 100가지가 넘는 유니코드 스타일로 무료로 즉시 바뀝니다.", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
     "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_body": "ใช้ UltraTextGen เปลี่ยนข้อความธรรมดาให้เป็นฟอนต์ Unicode ตัวหนา ตัวเอียง ลายมือ และอีกกว่า 100 แบบ ฟรีและทันที", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
+    # sv was absent entirely, so every generated Swedish page fell back to
+    # English chrome ("Copy", "Related Resources") while its 22 live siblings
+    # carry proper Swedish -- the same gap fi and ms hit. Every value below is
+    # harvested from sv/'s own pages (npm run audit:locale-attestation reports
+    # all nine as attested), never authored here. cta_body takes the spaced en
+    # dash rather than the em dash its sv siblings use, because
+    # data/em_dash_locale_policy.json bans a NEW em dash on sv and names the
+    # tankstreck as the native replacement.
+    "sv": {"copy": "Kopiera", "related": "Relaterade sidor", "cta_h3": "Omvandla text med Unicode-typsnitt", "cta_body": "Använd UltraTextGen för att omvandla vanlig text till fet, kursiv, skrivstil och 100+ andra Unicode-typsnitt – gratis och direkt.", "cta_btn": "Öppna UltraTextGen →", "home": "Startsida", "symbols": "Symboler", "library": "Bibliotek"},
     "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_body": "Pakai UltraTextGen buat ubah teks biasa jadi huruf tebal, miring, sambung, dan 100+ gaya Unicode lain. Gratis dan instan.", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
 
@@ -270,6 +279,7 @@ LOCALE_FAQ_LABEL = {
     "ja": "よくある質問",
     "ko": "자주 묻는 질문",
     "th": "คำถามที่พบบ่อย",
+    "sv": "Vanliga frågor",
     "id": "Pertanyaan Umum",
 }
 

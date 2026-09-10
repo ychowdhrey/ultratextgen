@@ -1397,6 +1397,19 @@
       "verdict": "veto",
       "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
       "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "sv",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized per-batch exception, not a fresh per-locale instrument pull. sv remains Tier 3 (hold-stub) in data/locale_qualification_tiers.json; this entry does not promote it and does not re-qualify it generally, exactly like the 2026-07-26 four-page sv entry, whose own text reserved future sv decisions for the user. Origin of the batch: a 2026-07-12 branch (claude/sv-competitive-analysis-eub4hl) built 16 sv/library pages in commits pushed AFTER its PR #524 had already merged, so no open PR tracked them and they never reached main. A 2026-09-10 audit of that stranded work found 4 slugs since built independently on main (in larger, newer versions), 2 that would have landed as duplicate claimants under a second slug (grekiska-alfabetet against main's grekiska-bokstaver, kon-symboler against konssymboler, each pair claiming one EN parent), and 10 with live EN parents and no sv claimant of any kind. The user was shown the Tier-3 default and the limited scope of the 2026-07-26 entry, was told the call was theirs, and authorized building these 10. Authorizes exactly: sv/library/copyright-tecken, grader-tecken, japanska-tecken, kors-symboler, kortfarg-symboler, punkt-symboler, skiljetecken, stjarntecken, tangentbord-symboler, vader-symboler. Future sv builds still go through the Tier-3 default (raise with the user first) unless sv is promoted via the 7-point gate.",
+      "recordedBy": "claude-session-lucid-davinci-oi44ql-user-authorized"
     }
   ]
 }

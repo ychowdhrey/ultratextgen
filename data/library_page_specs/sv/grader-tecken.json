@@ -1,0 +1,184 @@
+{
+ "slug": "grader-tecken",
+ "lang": "sv",
+ "page_type": "symbol",
+ "title": "Grader tecken ° att kopiera – gradsymbol för temperatur och vinklar",
+ "meta_description": "Gradtecknet ° samt symboler för Celsius, Fahrenheit, Kelvin, vinklar och geometri att kopiera. Klicka för att kopiera direkt – plus hur du skriver ° på tangentbordet.",
+ "breadcrumb": "Grader tecken (°)",
+ "hero_h1": "Grader tecken (°)",
+ "hero_tagline": "Gradtecknet ° och alla tecken som hör till – temperatur, vinklar, strecktecken och geometri. Klicka på en symbol för att kopiera den direkt.",
+ "intro": "Gradtecknet ° markerar temperaturer, vinklar och koordinater. Den här samlingen innehåller gradtecknet tillsammans med symbolerna för Celsius, Fahrenheit och Kelvin, en komplett uppsättning vinkeltecken, strecktecknen för minuter och sekunder samt de geometriska symboler som hör till. På tangentbordet skriver du gradtecknet med Alt + 0176 på Windows och Shift + Alt + 8 på Mac – eller så kopierar du det bara direkt här.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/symbol/grader-tecken/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Symboler",
+ "library_url": "https://ultratextgen.com/sv/symbol/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/symbol/grader-tecken/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/symbol/degree-symbol/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/symbol/degree-symbol/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/matematiska-symboler/",
+   "title": "Matematiska symboler",
+   "desc": "Kopiera och klistra in matematiska Unicode-tecken – operatorer, grekiska bokstäver, mängdlära, kalkyl och mer. Klicka på en symbol för att kopiera."
+  },
+  {
+   "href": "/sv/library/tangentbord-symboler/",
+   "title": "Tangentbordssymboler",
+   "desc": "Kommando, alternativ, skift och alla andra tangentsymboler för Mac och PC – perfekt för att skriva tydliga kortkommandon. Klicka på valfri symbol för."
+  },
+  {
+   "href": "/sv/library/vader-symboler/",
+   "title": "Vädersymboler och väder-emoji",
+   "desc": "En referenssamling med vädersymboler, månfaser och atmosfäriska Unicode-tecken. Klicka på valfri symbol för att kopiera den direkt."
+  }
+ ],
+ "sections": [
+  {
+   "id": "degree-temperature",
+   "label": "Grad- & temperatursymboler",
+   "h2": "Grad- & temperatursymboler",
+   "intro": "Gradtecknet och de fristående tecknen för temperaturskalor.",
+   "symbols": [
+    {
+     "char": "°",
+     "label": "Gradtecken"
+    },
+    {
+     "char": "℃",
+     "label": "Grad Celsius"
+    },
+    {
+     "char": "℉",
+     "label": "Grad Fahrenheit"
+    },
+    {
+     "char": "K",
+     "label": "Kelvintecken"
+    }
+   ]
+  },
+  {
+   "id": "angle-symbols",
+   "label": "Vinkeltecken",
+   "h2": "Vinkeltecken",
+   "intro": "Vinkeltecken som ofta skrivs tillsammans med gradangivelser.",
+   "symbols": [
+    {
+     "char": "∠",
+     "label": "Vinkel"
+    },
+    {
+     "char": "∡",
+     "label": "Uppmätt vinkel"
+    },
+    {
+     "char": "∢",
+     "label": "Sfärisk vinkel"
+    },
+    {
+     "char": "∟",
+     "label": "Rät vinkel"
+    },
+    {
+     "char": "⊾",
+     "label": "Rät vinkel med båge"
+    },
+    {
+     "char": "⊿",
+     "label": "Rätvinklig triangel"
+    },
+    {
+     "char": "⦝",
+     "label": "Uppmätt rät vinkel med punkt"
+    },
+    {
+     "char": "⟂",
+     "label": "Vinkelrät"
+    }
+   ]
+  },
+  {
+   "id": "prime-minute-second",
+   "label": "Streck-, minut- & sekundtecken",
+   "h2": "Streck-, minut- & sekundtecken",
+   "intro": "Strecktecken för bågminuter, bågsekunder och koordinatangivelser, inklusive de spegelvända formerna.",
+   "symbols": [
+    {
+     "char": "′",
+     "label": "Streck (minut)"
+    },
+    {
+     "char": "″",
+     "label": "Dubbelstreck (sekund)"
+    },
+    {
+     "char": "‴",
+     "label": "Trippelstreck"
+    },
+    {
+     "char": "⁗",
+     "label": "Fyrdubbelt streck"
+    },
+    {
+     "char": "‵",
+     "label": "Spegelvänt streck"
+    },
+    {
+     "char": "‶",
+     "label": "Spegelvänt dubbelstreck"
+    },
+    {
+     "char": "‷",
+     "label": "Spegelvänt trippelstreck"
+    }
+   ]
+  },
+  {
+   "id": "geometry-measurement",
+   "label": "Geometri & mått",
+   "h2": "Geometri & mått",
+   "intro": "Cirkel- och bågtecken som används tillsammans med vinkel- och gradnotation.",
+   "symbols": [
+    {
+     "char": "⌀",
+     "label": "Diametertecken"
+    },
+    {
+     "char": "⌒",
+     "label": "Båge"
+    },
+    {
+     "char": "⌓",
+     "label": "Cirkelsegment"
+    },
+    {
+     "char": "⊙",
+     "label": "Inringad punktoperator"
+    },
+    {
+     "char": "⦿",
+     "label": "Inringad prick"
+    },
+    {
+     "char": "∅",
+     "label": "Tom mängd"
+    }
+   ]
+  }
+ ]
+}
