@@ -1,4 +1,174 @@
 {
   "_readme": "Art-card registry entries written automatically by scripts/generate_library_page_from_spec.py, merged into scripts/generate-site-art.py's PAGES dict at import. It exists because PAGES is a hand-maintained 3,500-line literal, and generate-site-art.py refuses any slug it does not know ('error: no registered page matches') — so every generated page needed a manual dict edit before it could have art, and every generated page therefore shipped pointing at art that did not exist. A side file lets the generator register a page without editing that literal. Hand-written entries still belong in PAGES; this file is only for generated pages. Keys are the page path with '/' replaced by '-'. `kicker` is LIB or SYM; `glyphs` are the page's own copy tiles, which is what the art card draws.",
-  "entries": {}
+  "entries": {
+    "ko-symbol-maljurimpyo-giho": {
+      "title": "말줄임표 (…)",
+      "sub": "생략과 여운을 나타내는 점. 마침표 세 개가 아니라 한 글자입니다.",
+      "glyphs": [
+        "…",
+        "⋯",
+        "︙",
+        ".",
+        "‥"
+      ],
+      "kicker": "SYM",
+      "added": "2026-08-29"
+    },
+    "ko-library-dongmul-imoji": {
+      "title": "동물 이모지",
+      "sub": "🐶 🐱 🐰 🦊 🐼 🐧 🐳 🦋 🐢 — 103종을 종류별로.",
+      "glyphs": [
+        "🐶",
+        "🐕",
+        "🐩",
+        "🐱",
+        "🐈"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-eumsik-imoji": {
+      "title": "음식 이모지",
+      "sub": "🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋 🍧 — 과일부터 주방용품까지 103개.",
+      "glyphs": [
+        "🍎",
+        "🥑",
+        "🍇",
+        "🍊",
+        "🍋"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-son-giho": {
+      "title": "손 이모지",
+      "sub": "👆 👍 👌 ✌ 🫰 🫶 🙏 — 가리키기부터 손하트까지.",
+      "glyphs": [
+        "👆",
+        "👇",
+        "👈",
+        "👉",
+        "☝"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-gyeonggo-giho": {
+      "title": "경고 기호",
+      "sub": "☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔ — 위험을 알리는 표시.",
+      "glyphs": [
+        "☢",
+        "☣",
+        "☠",
+        "⚰",
+        "⚱"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-uiryo-giho": {
+      "title": "의료 기호",
+      "sub": "⚕ ☤ ⚚ ℞ ✚ 🩺 💊 — 병원과 약국에서 쓰는 기호.",
+      "glyphs": [
+        "⚕",
+        "⚕️",
+        "☤",
+        "⚚",
+        "℞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-gyotong-giho": {
+      "title": "교통 이모지",
+      "sub": "🚗 🚌 🏍 🚲 🚇 🚅 ✈ 🚢 ⚓ — 도로부터 항공·선박까지.",
+      "glyphs": [
+        "🚗",
+        "🚕",
+        "🚌",
+        "🚎",
+        "🏎"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-ascii-art": {
+      "title": "아스키 아트 재료",
+      "sub": "─ │ ┌ █ ░ ▓ ⣿ ◆ — 완성된 그림이 아니라, 직접 그릴 때 쓰는 재료입니다.",
+      "glyphs": [
+        "─",
+        "│",
+        "┌",
+        "┐",
+        "└"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-baegeu-giho": {
+      "title": "배그 특수문자",
+      "sub": "ツ ッ 彡 乂 ꧁ ꧂ ⚔ ☠ ★ — 닉네임과 클랜 태그용 기호.",
+      "glyphs": [
+        "ツ",
+        "ッ",
+        "彡",
+        "乂",
+        "亗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-banjjagi-giho": {
+      "title": "반짝이 특수문자",
+      "sub": "✦ ✧ ⊹ ❇ ❈ ✺ ★ ❦ ࿐ — 프로필과 다꾸에 쓰는 반짝임.",
+      "glyphs": [
+        "✨",
+        "💫",
+        "🌟",
+        "⭐",
+        "🔆"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-insta-giho": {
+      "title": "인스타 특수문자",
+      "sub": "✦ ✧ ⊹ ⌇ ♡ ❝ ❞ ✿ ◉ — 프로필과 캡션, 하이라이트 커버용.",
+      "glyphs": [
+        "✨",
+        "•",
+        "·",
+        "│",
+        "⌇"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-dal-giho": {
+      "title": "달 기호",
+      "sub": "☾ ☽ 🌙 🌑 🌕 ☀ ✦ ⋆ — 달의 위상과 밤하늘 장식.",
+      "glyphs": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "library-kakaotalk-symbols": {
+      "title": "KakaoTalk Symbols",
+      "sub": "꒰ ꒱ ♡ ⋆ ⊹ ㅋㅋ ㅠㅠ: frames for your name, accents for your status, and th",
+      "glyphs": [
+        "꒰",
+        "꒱",
+        "「",
+        "」",
+        "『"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    }
+  }
 }
