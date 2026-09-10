@@ -169,6 +169,58 @@
       ],
       "kicker": "LIB",
       "added": "2026-08-29"
+    },
+    "symbol-orca-emoji": {
+      "title": "Orca Emoji",
+      "sub": "The black-and-white orca 🫍 with its codepoint, its keyboard routes, th",
+      "glyphs": [
+        "🫍",
+        "🐋",
+        "🐳",
+        "🐬",
+        "🦈"
+      ],
+      "kicker": "SYM",
+      "added": "2026-09-10"
+    },
+    "symbol-trombone-emoji": {
+      "title": "Trombone Emoji",
+      "sub": "The slide trombone 🪊 with its codepoint, its input routes, the brass a",
+      "glyphs": [
+        "🪊",
+        "🎺",
+        "🎷",
+        "🪈",
+        "🪗"
+      ],
+      "kicker": "SYM",
+      "added": "2026-09-10"
+    },
+    "symbol-treasure-chest-emoji": {
+      "title": "Treasure Chest Emoji",
+      "sub": "The open treasure chest 🪎 with its codepoint, its input routes, the cu",
+      "glyphs": [
+        "🪎",
+        "💰",
+        "💎",
+        "🪙",
+        "💸"
+      ],
+      "kicker": "SYM",
+      "added": "2026-09-10"
+    },
+    "symbol-fight-cloud-emoji": {
+      "title": "Fight Cloud Emoji",
+      "sub": "The brawl cloud 🫯 with its codepoint, its input routes, the emotion sh",
+      "glyphs": [
+        "🫯",
+        "💥",
+        "💢",
+        "💫",
+        "💨"
+      ],
+      "kicker": "SYM",
+      "added": "2026-09-10"
     }
   }
 }
