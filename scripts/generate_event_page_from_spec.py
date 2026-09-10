@@ -89,6 +89,7 @@ LANGS_WITH_EVENTS_HUB = {"en"}
 # functions below. See tr() for the lookup + .format() behavior.
 STRINGS = {
     "en": {
+        "breadcrumb_aria": "Breadcrumb",
         "breadcrumb_home": "Home",
         "breadcrumb_events": "Events",
         "faq_what_is_q": "What is the {event_name} text and symbol generator?",
@@ -185,6 +186,7 @@ STRINGS = {
     # this generator has gained since (lunar/lunisolar date prose and the
     # native-script section) and are authored here.
     "id": {
+        "breadcrumb_aria": "Remah roti",
         "breadcrumb_home": "Beranda",
         "breadcrumb_events": "Acara",
         "faq_what_is_q": "Apa itu generator teks dan simbol {event_name}?",
@@ -244,6 +246,7 @@ STRINGS = {
         "section_native_intro": "Tap baris mana pun untuk menyalinnya dalam {script_language}. Ini bentuk aksara asli dari ucapan di atas; tempel langsung ke pesan, kartu, atau bio.",
     },
     "es": {
+        "breadcrumb_aria": "Ruta de navegación",
         "breadcrumb_home": "Inicio",
         "breadcrumb_events": "Eventos",
         "faq_what_is_q": "¿Qué es el generador de texto y símbolos de {event_name}?",
@@ -978,6 +981,10 @@ def render_page(spec):
             rel_href = "/" if url == f"{SITE}/" else url.replace(SITE, "", 1)
             crumb_parts.append(f'  <a href="{esc_attr(rel_href)}">{esc(name)}</a>')
     breadcrumb_nav_html = "\n".join(crumb_parts)
+    # The aria-label was hardcoded English, so every locale event page shipped
+    # aria-label="Breadcrumb". The es pages were repaired afterwards by
+    # scripts/fix-breadcrumb-aria-label.js; the generator now gets it right itself.
+    breadcrumb_aria = esc_attr(tr(language, "breadcrumb_aria"))
 
     cta_href = f"{SITE}{home_href(language)}"
     ascii_generator_href = "/ascii-art-generator/"
@@ -1105,7 +1112,7 @@ def render_page(spec):
   <div id="shared-header"></div>
 <script src="/header.js" defer></script>
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
+<nav class="breadcrumbs" aria-label="{breadcrumb_aria}">
 {breadcrumb_nav_html}
 </nav>
 
