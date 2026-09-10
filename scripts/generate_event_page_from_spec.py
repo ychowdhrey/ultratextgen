@@ -101,6 +101,18 @@ STRINGS = {
                             "page is calculated for the current year; because the start of "
                             "the month is confirmed locally by moon sighting, some countries "
                             "observe it a day either side.",
+        # The sighting sentence above is true of the Islamic calendar and NOT of the
+        # Chinese one, which is computed astronomically and fixed years in advance.
+        # chinese sits in LUNAR_TYPES with islamic, so events/chinese-new-year was
+        # rendering "confirmed locally by moon sighting" as fact.
+        "faq_when_a_lunisolar": "{event_name} moves each year against the Gregorian "
+                                "calendar because it follows {calendar_name}, so it lands "
+                                "about 11 days earlier than the year before. The date shown "
+                                "at the top of this page is calculated for the current year. "
+                                "That calendar is computed astronomically rather than "
+                                "confirmed by moon sighting, so the date is settled well in "
+                                "advance; countries on a different time zone can still "
+                                "observe it a day apart.",
         "faq_when_a": "{event_name} falls {date_window}.",
         "next_date_prefix": "Next {event_name}: ",
         "calendar_lunar_generic": "a lunar calendar",
@@ -157,7 +169,7 @@ STRINGS = {
                                 "decorated in one step.",
         "cta_heading": "Transform text with Unicode fonts",
         "cta_body": "Use UltraTextGen to convert plain text into bold, italic, cursive, and "
-                    "100+ other Unicode font styles — free and instant.",
+                    "100+ other Unicode font styles. Free and instant.",
         "cta_button": "Open UltraTextGen →",
         "related_heading": "Related Resources",
         "related_more_title": "More {event_name} phrases &amp; wording",
@@ -166,6 +178,70 @@ STRINGS = {
         "related_more_fallback_name": "this event",
         "footer_heading": "{event_name} questions",
         "copy_toast": "Copied!",
+    },
+    # Recovered from claude/cny-page-brainstorm-3toe0h, whose Indonesian pages were
+    # pushed after its PRs had already merged and so never reached main. The 45
+    # strings below are that branch's own Indonesian; the eight after them are keys
+    # this generator has gained since (lunar/lunisolar date prose and the
+    # native-script section) and are authored here.
+    "id": {
+        "breadcrumb_home": "Beranda",
+        "breadcrumb_events": "Acara",
+        "faq_what_is_q": "Apa itu generator teks dan simbol {event_name}?",
+        "faq_when_q": "Kapan {event_name} dirayakan?",
+        "faq_when_a": "{event_name} jatuh {date_window}. Cek kalender terbaru untuk tanggal pastinya, lalu kembali ke sini untuk mempercantik ucapanmu.",
+        "faq_how_q": "Bagaimana cara pakai generator {event_name} ini?",
+        "faq_how_a": "Ketik nama, ucapan, atau salam di kotak paling atas. Setiap gaya font {event_name} langsung berubah di bawahnya — tinggal tap Salin di kartu mana pun. Di bawahnya lagi, tap emoji, simbol, kaomoji, atau ASCII art mana pun untuk menyalinnya sendiri, atau tap kartu bank frasa untuk memasukkan ucapan siap pakai ke kotak dan lihat gayanya langsung berubah.",
+        "faq_more_q": "Di mana saya bisa menemukan lebih banyak ucapan {event_name} dan contoh kata-katanya?",
+        "faq_more_a": 'Lihat <a href="{href}">jawaban lengkap kami</a> untuk lebih banyak '
+                      "ucapan, terjemahan, dan ide pesan.",
+        "webapp_name": "Generator Teks & Simbol {event_name}",
+        "alt_fonts": "Font {event_name}",
+        "alt_symbols": "Simbol {event_name}",
+        "alt_textgen": "Generator Teks {event_name}",
+        "feature_fonts": "Gaya font {event_name} langsung untuk teks apa pun yang kamu ketik",
+        "feature_emoji": "Koleksi emoji & simbol {event_name} pilihan",
+        "feature_kaomoji": "Kaomoji {event_name}",
+        "feature_ascii": "ASCII art {event_name} pilihan",
+        "feature_phrase": "Bank frasa {event_name} yang tinggal diklik untuk bergaya (tulisan asli, romanisasi, terjemahan)",
+        "aka_label": "Juga dikenal sebagai:",
+        "textarea_placeholder": "Ketik nama, ucapan, atau salam...",
+        "section_fonts_label": "Font",
+        "section_fonts_heading": "Font {event_name}",
+        "section_fonts_intro": "Ketik teksmu di atas dan setiap gaya di bawah langsung berubah. Tap Salin pada yang kamu suka.",
+        "section_emoji_label": "Emoji &amp; Simbol",
+        "section_emoji_heading": "Emoji &amp; Simbol {event_name}",
+        "section_emoji_intro": "Tap karakter mana pun untuk menyalinnya, atau salin satu set penuh sekaligus dalam format favoritmu.",
+        "section_kaomoji_label": "Kaomoji",
+        "section_kaomoji_heading": "Kaomoji {event_name}",
+        "section_kaomoji_intro": "Setiap kotak adalah satu kaomoji utuh — tap untuk menyalin seluruh rangkaiannya dalam satu klik.",
+        "section_ascii_label": "ASCII Art",
+        "section_ascii_heading": "ASCII Art {event_name}",
+        "section_ascii_intro": "Karya multi-baris pilihan — tap Salin untuk mengambilnya lengkap dengan baris baru dan spasinya.",
+        "section_ascii_cta": 'Mau mengetik nama atau pesanmu sendiri jadi banner huruf '
+                             'balok yang langsung berubah? Coba <a href="{href}">Generator '
+                             'ASCII Art</a>.',
+        "section_phrase_label": "Bank Frasa",
+        "section_phrase_heading": "Bank Frasa {event_name}",
+        "section_phrase_intro": "Tap sebuah frasa untuk memasukkannya ke kotak di atas dan lihat setiap gaya font di atas langsung menyesuaikan.",
+        "cta_heading": "Ubah teks dengan font Unicode",
+        "cta_body": "Gunakan UltraTextGen untuk mengubah teks biasa jadi tebal, miring, kursif, dan 100+ gaya font Unicode lainnya — gratis dan instan.",
+        "cta_button": "Buka UltraTextGen →",
+        "related_heading": "Sumber Terkait",
+        "related_more_title": "Lebih banyak ucapan &amp; kata-kata {event_name}",
+        "related_more_desc": "Ucapan, terjemahan, dan ide pesan selain yang ada di bank frasa di atas.",
+        "related_more_fallback_name": "acara ini",
+        "footer_heading": "Pertanyaan seputar {event_name}",
+        "copy_toast": "Disalin!",
+        "faq_when_a_dated": "{event_name} berikutnya jatuh pada {next_date}. Setelah itu, {later_dates}.",
+        "faq_when_a_lunar": "{event_name} bergeser setiap tahun terhadap kalender Gregorian karena mengikuti {calendar_name}, sehingga jatuh sekitar 11 hari lebih awal dari tahun sebelumnya. Tanggal di bagian atas halaman ini dihitung untuk tahun berjalan; karena awal bulan ditetapkan lewat rukyat di masing-masing negara, sebagian negara merayakannya terpaut satu hari.",
+        "faq_when_a_lunisolar": "{event_name} bergeser setiap tahun terhadap kalender Gregorian karena mengikuti {calendar_name}, sehingga jatuh sekitar 11 hari lebih awal dari tahun sebelumnya. Tanggal di bagian atas halaman ini dihitung untuk tahun berjalan. Penanggalannya dihitung secara astronomis, bukan ditetapkan lewat rukyat, jadi tanggalnya sudah pasti jauh-jauh hari; negara dengan zona waktu berbeda tetap bisa merayakannya terpaut satu hari.",
+        "next_date_prefix": "{event_name} berikutnya: ",
+        "calendar_lunar_generic": "penanggalan lunar",
+        "date_join": ", lalu ",
+        "section_native_label": "Dalam {script_language}",
+        "section_native_heading": "{event_name} dalam {script_language}",
+        "section_native_intro": "Tap baris mana pun untuk menyalinnya dalam {script_language}. Ini bentuk aksara asli dari ucapan di atas; tempel langsung ke pesan, kartu, atau bio.",
     },
     "es": {
         "breadcrumb_home": "Inicio",
@@ -655,8 +731,14 @@ def when_answer(spec, language, event_name):
             answer = f"{answer} {note}"
         return answer
     if is_lunar(occurrence):
+        # "lunar" covers two different mechanisms. Only the Islamic calendar is
+        # confirmed by local moon sighting; the Chinese lunisolar calendar is
+        # computed. Saying otherwise on a Chinese New Year page states a fact
+        # about the wrong calendar.
+        key = ("faq_when_a_lunisolar"
+               if occurrence.get("type") == "chinese" else "faq_when_a_lunar")
         return tr(
-            language, "faq_when_a_lunar",
+            language, key,
             event_name=event_name,
             calendar_name=occurrence.get(
                 "calendar_name",
