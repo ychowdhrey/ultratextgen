@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/fight-cloud-emoji/",
   "breadcrumb": "Fight Cloud Emoji",
   "hero_h1": "Fight Cloud Emoji",
-  "hero_tagline": "The brawl cloud 🫯 with its codepoint, its input routes, the emotion shelf Unicode files it on, and the comic-strip convention it encodes. Click any symbol to copy it instantly.",
+  "hero_tagline": "The brawl cloud 🫯 with its codepoint, its input routes, the emotion shelf Unicode files it on, and the comic-strip convention it encodes. Tap the cloud to copy it, and the effect glyphs below are what people reached for before it.",
   "intro": "🫯 FIGHT CLOUD (U+1FAEF) was added in Unicode 17.0 and reached most phones with iOS 26.4 in March 2026. It is filed under **emotion**, not under people or objects, because it depicts no one: the cloud is the convention comics use to hide a scuffle while telling you a scuffle is happening. Jennifer Daniel, who wrote the character's Unicode proposal, described it in April 2026 as a visual verb for when things get messy. This page covers the glyph, how to type it, and the effect symbols it belongs with.",
   "date_published": "2026-09-10",
   "date_modified": "2026-09-10",
@@ -18,7 +18,10 @@
       "h2": "Fight Cloud Emoji",
       "intro": "The Unicode 17.0 codepoint, a dust cloud punctuated with stars and stray limbs.",
       "symbols": [
-        { "char": "🫯", "label": "Fight Cloud (U+1FAEF)" }
+        {
+          "char": "🫯",
+          "label": "Fight Cloud (U+1FAEF)"
+        }
       ]
     },
     {
@@ -27,10 +30,22 @@
       "h2": "The Emotion Shelf It Joined",
       "intro": "Unicode's emotion subgroup: pictures of feeling rather than pictures of faces.",
       "symbols": [
-        { "char": "💥", "label": "Collision (U+1F4A5)" },
-        { "char": "💢", "label": "Anger Symbol (U+1F4A2)" },
-        { "char": "💫", "label": "Dizzy (U+1F4AB)" },
-        { "char": "💨", "label": "Dashing Away (U+1F4A8)" }
+        {
+          "char": "💥",
+          "label": "Collision (U+1F4A5)"
+        },
+        {
+          "char": "💢",
+          "label": "Anger Symbol (U+1F4A2)"
+        },
+        {
+          "char": "💫",
+          "label": "Dizzy (U+1F4AB)"
+        },
+        {
+          "char": "💨",
+          "label": "Dashing Away (U+1F4A8)"
+        }
       ]
     },
     {
@@ -39,9 +54,18 @@
       "h2": "What It Gets Typed Alongside",
       "intro": "The glyphs that turn a cloud into a specific kind of trouble.",
       "symbols": [
-        { "char": "🥊", "label": "Boxing Glove (U+1F94A)" },
-        { "char": "😤", "label": "Face with Steam From Nose (U+1F624)" },
-        { "char": "🤼", "label": "People Wrestling (U+1F93C)" }
+        {
+          "char": "🥊",
+          "label": "Boxing Glove (U+1F94A)"
+        },
+        {
+          "char": "😤",
+          "label": "Face with Steam From Nose (U+1F624)"
+        },
+        {
+          "char": "🤼",
+          "label": "People Wrestling (U+1F93C)"
+        }
       ]
     }
   ],

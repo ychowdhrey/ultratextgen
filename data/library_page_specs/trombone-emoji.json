@@ -6,7 +6,7 @@
   "canonical": "https://ultratextgen.com/symbol/trombone-emoji/",
   "breadcrumb": "Trombone Emoji",
   "hero_h1": "Trombone Emoji",
-  "hero_tagline": "The slide trombone 🪊 with its codepoint, its input routes, the brass and woodwind it sits beside, and the one comic cue it gets typed for most. Click any symbol to copy it instantly.",
+  "hero_tagline": "The slide trombone 🪊 with its codepoint, its input routes, the brass and woodwind it sits beside, and the one comic cue it gets typed for most. Tap the trombone to copy it; the trumpet below is the glyph it kept getting substituted for.",
   "intro": "🪊 TROMBONE (U+1FA8A) joined Unicode in version 17.0 and landed on most phones with iOS 26.4 in March 2026. The instrument shelf already held a trumpet, and the argument for a second brass glyph was the slide: a trombone changes pitch by moving a tube rather than pressing valves, which is both what a player sees and what the descending \"womp womp\" cue depends on. That cue is why this emoji gets typed far more often than any orchestral use would predict.",
   "date_published": "2026-09-10",
   "date_modified": "2026-09-10",
@@ -18,7 +18,10 @@
       "h2": "Trombone Emoji",
       "intro": "The Unicode 17.0 codepoint, drawn with the slide extended on every vendor so far.",
       "symbols": [
-        { "char": "🪊", "label": "Trombone (U+1FA8A)" }
+        {
+          "char": "🪊",
+          "label": "Trombone (U+1FA8A)"
+        }
       ]
     },
     {
@@ -27,10 +30,22 @@
       "h2": "The Other Brass and Wind Emoji",
       "intro": "What the instrument shelf held before the trombone was encoded.",
       "symbols": [
-        { "char": "🎺", "label": "Trumpet (U+1F3BA)" },
-        { "char": "🎷", "label": "Saxophone (U+1F3B7)" },
-        { "char": "🪈", "label": "Flute (U+1FA88)" },
-        { "char": "🪗", "label": "Accordion (U+1FA97)" }
+        {
+          "char": "🎺",
+          "label": "Trumpet (U+1F3BA)"
+        },
+        {
+          "char": "🎷",
+          "label": "Saxophone (U+1F3B7)"
+        },
+        {
+          "char": "🪈",
+          "label": "Flute (U+1FA88)"
+        },
+        {
+          "char": "🪗",
+          "label": "Accordion (U+1FA97)"
+        }
       ]
     },
     {
@@ -39,9 +54,18 @@
       "h2": "Punchlines and Anticlimax",
       "intro": "The glyphs that usually keep it company when the joke has not landed.",
       "symbols": [
-        { "char": "😬", "label": "Grimacing Face (U+1F62C)" },
-        { "char": "🥁", "label": "Drum (U+1F941)" },
-        { "char": "📉", "label": "Chart Decreasing (U+1F4C9)" }
+        {
+          "char": "😬",
+          "label": "Grimacing Face (U+1F62C)"
+        },
+        {
+          "char": "🥁",
+          "label": "Drum (U+1F941)"
+        },
+        {
+          "char": "📉",
+          "label": "Chart Decreasing (U+1F4C9)"
+        }
       ]
     }
   ],
