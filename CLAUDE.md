@@ -742,18 +742,19 @@ modules after it and the generator throws and renders zero cards.
 - **Decoration tabs**: static `data-deco-tab` buttons read `decorations[key]`.
   `window.UTG_DECORATIONS` is **merged over** the defaults (`Object.assign`), so
   a page adds one tab without redeclaring the rest.
-- **Three surfaces in here are opt-in per page, and one has no entry point at
-  all (measured 2026-09-10).** `ensureFormatControl()` requires
-  `window.UTG_FORMAT_MARKS`, declared by exactly **one** page
-  (`category/bold-fonts/bold-italic`, English); `platformChipsHtml()` requires
-  `window.UTG_SHOW_PLATFORMS`, declared by **44** pages of which 42 are locale
-  pages; and the **platform-preview modal is unreachable** — `openPreview()`,
-  `buildMockup()`, `updatePreview()` and `.preview-btn`'s CSS all exist, and
-  nothing in the tree renders a `.preview-btn` to open it. Check the opt-in
-  before concluding a string in here is live on a page: the count is the number
-  of pages that declare the flag, not the number that load `script.js`. Whether
-  to wire the preview modal up is a product decision, recorded here rather than
-  taken.
+- **Two surfaces in here are opt-in per page (measured 2026-09-10).**
+  `ensureFormatControl()` requires `window.UTG_FORMAT_MARKS`, declared by
+  exactly **one** page (`category/bold-fonts/bold-italic`, English); and
+  `platformChipsHtml()` requires `window.UTG_SHOW_PLATFORMS`, declared by **44**
+  pages of which 42 are locale pages. Check the opt-in before concluding a
+  string in here is live on a page: the count is the number of pages that
+  declare the flag, not the number that load `script.js`.
+- **The platform-preview modal was a third such surface and is no longer
+  (2026-09-10).** It was measured as unreachable — handler, mockups and CSS all
+  present, no `.preview-btn` anywhere — and recorded here as an open product
+  decision. Tracing it properly showed the button had been *deleted by a merge*
+  on 2026-07-03, not left unbuilt, so it was restored rather than decided. See
+  "The platform-preview modal was restored, not built".
 
 #### `js/share/share-core.js`
 - **The site's one Share / Share-as-image implementation**, lifted out of
@@ -3024,11 +3025,197 @@ The gate itself was verified against four differently-shaped broken inputs — a
 deleted block, a hand-edited block, a `GROUPS` array that grew, and a clean tree
 — and confirmed to make `run-ci-gates.py --only collection_grids` fail.
 
-**Still open, recorded rather than fixed:** the 17 pages carrying
-`#countryFlagList` build **195 country tiles** in JavaScript (EN and `ar` carry
-8 static ones, `vi` carries 0). Same class, different mechanism, and its output
-*would* be measured by `check:locale-translation` — see
-`docs/collection-grid-prerender.md` §7.
+**Closed 2026-09-10 — see the next section.** The 17 pages carrying
+`#countryFlagList` built **195 country tiles** each in JavaScript; they are now
+pre-rendered by the same mechanism. Two figures in the paragraph this replaces
+were wrong and are worth keeping as the correction: EN and `ar` carry 8 static
+tiles and **every other page carries 0**, `vi` included — the earlier count came
+from a regex that stopped at the first `</div>`, where cheerio does not. And the
+translation concern it raised did not exist: each page's `COUNTRIES` registry is
+**already translated** (`Albanie`, `アルバニア`, `Албания`), and
+`locale-translation-audit.js` already harvests country names from the EN flag
+page's own registry and exempts them.
+
+---
+
+## Country flag tiles are pre-rendered too (added 2026-09-10)
+
+The 17 `emoji-flags` pages hold their own `COUNTRIES` registry — 195 entries,
+already translated per locale — and turned it into `.flag-row` tiles with
+`createElement` on `DOMContentLoaded`. **Fifteen of the seventeen rendered zero
+tiles without JavaScript**; EN and `ar` carry 8 hand-written ones above the
+registry, and that was the whole static payload of a page whose payload is the
+tiles. Same class as the collection grids above, a different mechanism, and
+invisible to every gate for the same reasons.
+
+**The markup has one owner.** `countryFlagRowsHTML` in `symbol-explorer.js`,
+sliced into build-time code by `scripts/lib/collection-grid-engine.js` — which
+now serves two generators rather than one. The page's inline script calls the
+same function at runtime, so static and runtime markup cannot drift.
+
+**The aria-label is the page's, never the generator's.** All 17 label their
+tiles differently (`"Copy " + name + " flag"`, `"" + name + "の国旗をコピー"`,
+`"نسخ علم " + name`), so the renderer takes the template split around the name
+and each page passes the strings it already shipped. Nothing here is translated
+or invented.
+
+**The guard is `.flag-row[data-region]`, and the predicate is load-bearing.**
+Generated rows carry that attribute; the hand-written tiles above them do not.
+`buildGrids`'s "container has children" test would have read EN's 8 static rows
+as "already done" and skipped 195 — which is exactly the mis-predicate behind
+the earlier `896 of 898` miscount, arriving a second time in a new place.
+
+### It fixed a latent bug nobody had reported
+
+Comparing the rendered DOM against a worktree of the base commit surfaced
+something the change was not aiming at: on **9 of the 17 pages the Save/Share
+buttons never attached to a flag tile at all** — 0 of 195, against 195 of 195 on
+the other eight.
+
+The cause is `DOMContentLoaded` **listener registration order**. `initSaveShare`
+is registered when `symbol-explorer.js` executes; the tile builder is registered
+when the page's own inline script executes; listeners fire in registration
+order. So a page whose `symbol-explorer.js` tag is **non-`defer` and sits before
+the inline script** attached save stars to tiles that did not exist yet. Neither
+half predicts it alone — `de` is non-`defer` and fine because its tag sits
+*after* the inline script. Pre-rendering removes the race outright, since the
+tiles are in the HTML before any listener runs.
+
+Verified by enumerating all 17 rather than sampling: the rule predicts the
+observed result on **17 of 17, with zero mispredictions**.
+
+**The root cause is reported, not fixed.** Twelve of the 17 load
+`symbol-explorer.js` without `defer`; adding it would change when that whole
+module runs on those pages, which is a wider blast radius than this change
+earns. Any other JS-built content on those pages is still exposed to the same
+race.
+
+### Tooling
+
+- **`npm run prerender:country-flags`** (`-- --write`, `-- --files …`) — the
+  generator. Report-only by default, idempotent (a second run reports
+  `17 already current`).
+- **`npm run check:country-flags`** — the **diff-scoped gate**, wired into
+  `.github/workflows/validate.yml`. A **state check on changed pages**, like
+  `check:collection-grids`: all 17 carry a current block, so there is no backlog
+  to be permanently red against.
+- `scripts/lib/inline-script-capture.js` holds what the two generators share —
+  the capturing VM stub, the container-range scan and the text splice — so the
+  second generator did not fork a copy of the first.
+
+**`GROUPS`-style capture applies here too: the arguments are executed, never
+parsed.** The generator runs each page's own inline script against a stub that
+records what `countryFlagRowsHTML` was actually called with, and attributes it
+to whichever container the page inserted into rather than assuming the id.
+
+### Verified against the unmodified tree
+
+A worktree of the base commit was served alongside the working tree and both
+were driven in headless Chromium. Row counts match (203/203 on EN and `ar`,
+195/195 elsewhere), the interaction trace matches (`europe` filter → 47 visible,
+`all` → 195, filter button activates), and page errors are 0 on both. The
+container's serialised HTML differs only by the two marker comments and the
+whitespace between block-level rows.
+
+The gate was verified against four differently-shaped broken inputs and
+confirmed to make `run-ci-gates.py --only country_flags` fail.
+
+**The cost, measured rather than waved past:** +41.6 KB uncompressed per page on
+average (**+724 KB across the seventeen**), which is **+3.6 to +5.2 KB gzipped**
+— the figure that actually crosses the wire. That buys the page's entire payload
+becoming visible to a client that runs no JavaScript, on pages where 195 of the
+195 tiles previously were not.
+
+---
+
+## The platform-preview modal was restored, not built (added 2026-09-10)
+
+`script.js` has carried `openPreview()`, `buildMockup()`, `updatePreview()`, a
+delegated click handler and `.preview-btn` CSS since 2026-07-02, with **nothing
+in the tree rendering a `.preview-btn` to open it**. The measurement note under
+`script.js`'s module description recorded it as unreachable and left whether to
+wire it up as an open product decision.
+
+**It was not unbuilt. It was deleted by a merge.** Commit `635379371`
+(2026-07-02) shipped it working, with the button in the card template — its own
+message describes "a Preview button on each card". The next day, `94953afdb`
+("Merge branch 'main' into claude/ultratextgen-ux-analysis-920t6y") resolved
+that region in favour of main's copy: parent 1 carried the button, parent 2 did
+not, and the merge result did not. The ~130 lines of modal code below it
+survived, as did the other four features from the same commit — including
+`UTG_PREVIEW_PLATFORM`, this modal's own config hook. A partial conflict
+resolution, not a decision to drop the feature.
+
+**Two things this cost, worth remembering.** Nothing compares "a handler
+exists" against "a trigger exists", so the loss was silent for ten weeks. And
+tracing it needs real history: sessions here work a **shallow clone**, so
+`git log -S` bottoms out at whatever merge sits on the shallow boundary and
+confidently names the wrong commit. Measured this time: the boundary was
+2026-07-24 and the answer it gave was an unrelated graffiti-generator PR three
+weeks after the real one. Run `git fetch --deepen=<n>` before trusting any
+first-add or first-removal date.
+
+**Restored with zero new strings.** The button reads `stylePreview.title` and
+`stylePreview.dialogAriaLabel`, which all 30 locale files already carry. Driven
+in a browser on EN, `de` and `ja`: the modal opens, renders the styled text
+inside all six mockups (Instagram, LinkedIn, Discord, X, WhatsApp, TikTok),
+labels itself in the page's language, locks the body scroll and closes cleanly,
+with no page errors.
+
+### The mockup chrome was English on 29 locales, and is now language-neutral
+
+`buildMockup()` hardcoded ~14 strings (`posts`, `followers`, `Edit profile`,
+`Marketing Lead · 1st`, `👍 Like`, `💬 Comment`, `↗ Share`, `Today at 9:41 AM`,
+`2h ago · Reply`), plus one caveat line under the modal. A locale reader saw a
+German modal around an English Instagram mockup, and it is invisible to
+`check:locale-translation` because the markup is built at runtime.
+
+**Translating it was measured and rejected, which is the useful part.** This
+chrome depicts a THIRD-PARTY product's interface, so the correct German for
+Instagram's "followers" is whatever Instagram says — a fact about Instagram, not
+a translation this repo may author. Both harvest sources fail, and fail
+*partially*, which is worse than failing outright:
+
+| source | result (measured 2026-09-10) |
+|---|---|
+| the site's own corpus | `Follower` on **0** of 267 `de/` pages (case-insensitively, and `Abonnenten` too), フォロワー on **0** of 202 `ja/` — while `Kommentar` (57), `Antworten` (259), `Beiträge` (28) and `Profil` (47) are well attested |
+| `locales/*.json` | a display-name word exists in **15 of 31** files; `Share` exists as `ui.shareResult.label`; the other nine concepts in none |
+
+Either harvest ships a mockup that is **half English on every locale** — the
+"each fix caught the surface it was written for and missed the next one" failure
+this file documents twice.
+
+**So the labels were dropped, not guessed.** Every one is now an icon, a number,
+or a neutral placeholder bar (`.pv-ph`, `currentColor` so one rule serves six
+palettes). This is not a new convention: **X and WhatsApp were already built
+this way** (`💬 12`, `🔁 34`, `9:41 ✓✓`), so it applies the mockups' own
+existing grammar to the other four. The styled text is the content; the chrome's
+only job is to make the frame recognisable, which layout, colour and the avatar
+do wordlessly.
+
+**Two things only a rendered screenshot caught**, after a text-extraction sweep
+had already reported the chrome clean on five locales:
+
+* **`🖼` (U+1F5BC) drew tofu.** Swapped for `📷` (U+1F4F7), one of the oldest and
+  most widely supported emoji, and a better fit for Instagram anyway. Prefer an
+  old, common codepoint over a semantically perfect rare one.
+* **A whole surface was missing from the enumeration.** `.preview-note` —
+  *"Simulated look — fonts can differ slightly per device and app version."* —
+  sat outside `buildMockup()` and carried an em dash as well. **It was removed
+  rather than translated, because its content already ships translated:**
+  `safetyPillHtml()` renders a per-style device-variation badge
+  (`ui.safetyBadges.*`, all 30 locale files) on the very card whose Preview
+  button opens this modal, and the modal's title is already the word "preview"
+  in the reader's language, which is what carried "simulated". Its now-dead CSS
+  rule went with it.
+
+Note the overlap: `👍 Like`, `💬 Comment` and `↗ Share` are the same three
+strings the register-#74 scan missed because its pattern required a capital
+letter immediately after `>`.
+
+**Platform names on the tabs stay English** — Instagram, LinkedIn, Discord, X,
+WhatsApp, TikTok are proper nouns, exempt under this file's own "a formal
+identifier is not English" rule.
 
 ---
 

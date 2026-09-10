@@ -214,7 +214,7 @@ The generator is the fix for anything the gate reports. Do not hand-edit a
 pre-rendered block: it is replaced on the next run, and the markup's single
 owner is `gridSectionsHTML()` in `symbol-explorer.js`.
 
-## 7. Left open: the country flag list is the same class, from a different mechanism
+## 7. Closed 2026-09-10: the country flag list, the same class from a different mechanism
 
 The 17 pages carrying `#countryFlagList` (`library/emoji-flags` and its 16
 locale builds) hold a **195-entry `COUNTRIES` array** that is turned into tiles
@@ -233,3 +233,28 @@ has shipped untranslated before). It is recorded here with its numbers so the
 next pass does not have to re-derive them — and so the first read is not the
 wrong one, as it was here: "entirely absent from static HTML" was the initial
 phrasing, and 8 tiles on two of the pages are not absent.
+
+**Closed by `scripts/prerender-country-flags.js`** (see CLAUDE.md, "Country flag
+tiles are pre-rendered too"). Three things this section got wrong, kept as the
+correction rather than edited away:
+
+* **`vi` does not carry 0 while others carry 8.** EN and `ar` carry 8; **every
+  other page carries 0**, `vi` included. The earlier count came from a regex
+  that stops at the first `</div>`; cheerio does not. So the figure is 195
+  JS-only tiles per page and **3,315** across the seventeen, not ~187.
+* **The `check:locale-translation` concern did not exist.** Each page's
+  `COUNTRIES` registry is already translated (`Albanie`, `アルバニア`,
+  `Албания`), and `locale-translation-audit.js` already harvests country names
+  from the EN flag page's own registry and exempts them. There was no
+  translation work to schedule.
+* **A different gate did break, and it was not the one predicted.**
+  `check_locale_spec.py` counts `class="…symbol-tile"` on the live EN parent to
+  catch a spec gone stale; pre-rendering took that count from 21 to 216 and
+  failed 9 locale specs. Fixed by excluding the generators' own marked blocks
+  from the count — generated inventory is not a page's authored tile set, the
+  same call `editorial-corpus.js` already makes for `.flag-grid-section`.
+  Verified the check still catches a genuinely stale spec afterwards (20 vs 21
+  → exit 1), so it is narrowed rather than neutered.
+
+The prediction was reasonable and still wrong in both directions: the gate it
+named was fine, and a gate it did not name broke. Run the gates.
