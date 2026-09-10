@@ -9177,6 +9177,12 @@
         "added": "2026-09-10"
       },
       {
+        "string": "Venus",
+        "reason": "planet name, identical in Swedish, like Jupiter, Mars, Pluto and Uranus in the same tile set; the tiles beside it translate to \"Merkurius\", \"Jorden\", \"Saturnus\" and \"Neptunus\"",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Yen / Yuan",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (Pound → Pund; Indian Rupee → Indisk rupie; Ruble → Rubel), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
