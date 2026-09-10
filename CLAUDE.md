@@ -3472,6 +3472,13 @@ npm install        # Installs cheerio (HTML parsing) and glob (file discovery)
   lines are commented out in the workflow, with the reason; `workflow_dispatch`
   still works). Resuming is a decision tied to the 2026-08-16 organic-search
   incident, not a tooling question.
+  **Correction (2026-09-10): the cron is live again.** It resumed on
+  2026-09-05 (`993c7bbf0`, by explicit user direction); the workflow file
+  carries the three conditions that were met and keeps the pause history in
+  its own comments. The bullet above describes the 2026-08-20 to 09-05 pause
+  and stays as the record. Practical consequence: a page whose visible
+  content changes gets its `<lastmod>` advanced on the next 00:00 UTC run,
+  under the rules below, and nobody needs to run the workflow by hand.
 - **Action**: Runs `scripts/update-sitemap.js`, auto-commits `sitemap.xml` with `[skip ci]`
 - **Do not** edit `sitemap.xml` manually — it will be overwritten
 

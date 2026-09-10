@@ -9454,3 +9454,34 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
     break-inside: avoid;
   }
 }
+
+/* Native PDF export (js/printables/printablePdf.js, loaded on demand by the
+   printables engines). While a sheet is being rasterised the print surface
+   is laid out for real, off screen, at the chosen paper's content width,
+   with the same print-only layout rules the browser applies at print time
+   so the file matches the printed page. */
+body.pt-pdf-rendering #pt-print-root {
+  display: block;
+  position: fixed;
+  left: -300vw;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  z-index: -1;
+  pointer-events: none;
+}
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root svg,
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-glyph-print,
+body.pt-pdf-rendering.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
+body.pt-pdf-rendering .bubble-print-wrap .pt-name-sheet {
+  min-height: 9.2in;
+  justify-content: space-between;
+}
+body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
+  min-height: 9.2in;
+  justify-content: center;
+  gap: 1.4rem;
+}
+body.pt-pdf-rendering .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
+body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }

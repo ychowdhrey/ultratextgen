@@ -42,7 +42,16 @@
     /* state.layout holds the raw data-value ("classic"/"stacked"/"circle"), so
        it must be mapped before it reaches a user-facing label. */
     layoutNames: CFG.layoutNames || { classic: "classic", stacked: "stacked", circle: "circle" },
-    printTitle:  pick(CFG.printTitle, "Monogram — ")
+    printTitle:  pick(CFG.printTitle, "Monogram — "),
+    /* Share row + PDF (2026-09-10). Harvested from printablesEngine.js's
+       printOpts for each locale; a translated page overrides them from its
+       own config like every other key here. */
+    share:       pick(CFG.share, "Share"),
+    shareImage:  pick(CFG.shareImage, "Share as image"),
+    copyLink:    pick(CFG.copyLink, "Copy link"),
+    linkCopied:  pick(CFG.linkCopied, "Link copied"),
+    pinterest:   pick(CFG.pinterest, "Save to Pinterest"),
+    savePdf:     pick(CFG.savePdf, "Save as PDF")
   };
   const WEIGHT = "700";
   const VB = 400; // SVG viewBox is 0 0 400 400
@@ -287,7 +296,9 @@
     drawRowCanvas(ctx, s, items, 200 * s, true);
   }
 
-  function downloadPNG() {
+  // The 1600x1600 canvas every export path draws: PNG download, image
+  // share and the PDF page all come from this one builder.
+  function withCanvas(cb) {
     whenFontReady(function () {
       const v = vals();
       const size = 1600;
@@ -316,6 +327,12 @@
       ctx.fillText(siteCredit(), size / 2, size - 24);
 
       const slug = (v.l + v.c + v.r).toLowerCase() || "initials";
+      cb(canvas, slug);
+    });
+  }
+
+  function downloadPNG() {
+    withCanvas(function (canvas, slug) {
       canvas.toBlob(function (blob) {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
@@ -328,6 +345,76 @@
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
         trackPrintable("download_png", "monogram");
       }, "image/png");
+    });
+  }
+
+  function shareImage() {
+    withCanvas(function (canvas, slug) {
+      canvas.toBlob(function (blob) {
+        if (!blob) return;
+        const ns = window.UltraTextGen;
+        if (ns && ns.shareImageBlob) {
+          ns.shareImageBlob(blob, { filename: "monogram-" + slug + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+        }
+      }, "image/png");
+    });
+  }
+
+  // js/printables/printablePdf.js is fetched on first use, never on load.
+  let pdfModulePromise = null;
+  function loadPdfModule() {
+    const ns = window.UltraTextGen;
+    if (ns && ns.pdf) return Promise.resolve(ns.pdf);
+    if (pdfModulePromise) return pdfModulePromise;
+    pdfModulePromise = new Promise(function (resolve, reject) {
+      const sc = document.createElement("script");
+      sc.src = "/js/printables/printablePdf.js";
+      sc.async = true;
+      sc.onload = function () { resolve(window.UltraTextGen && window.UltraTextGen.pdf); };
+      sc.onerror = function () { pdfModulePromise = null; reject(new Error("pdf module failed to load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfModulePromise;
+  }
+
+  function savePdf() {
+    withCanvas(function (canvas, slug) {
+      loadPdfModule().then(function (P) {
+        if (!P || !P.supported()) { printMonogram(); return; }
+        return P.fromCanvases([canvas], { paperIn: { w: 8.5, h: 11 }, marginIn: { x: 0.75, y: 1.0 }, title: document.title })
+          .then(function (blob) { P.download(blob, "monogram-" + slug + ".pdf"); trackPrintable("download_pdf", "monogram"); });
+      }).catch(function () { printMonogram(); });
+    });
+  }
+
+  /* ---------- preset link (the share URL) ---------- */
+
+  function presetUrl() {
+    const v = vals();
+    const params = new URLSearchParams();
+    if (v.l) params.set("l", v.l);
+    if (v.c) params.set("c", v.c);
+    if (v.r) params.set("r", v.r);
+    if (state.layout !== "classic") params.set("layout", state.layout);
+    if (state.style !== "solid") params.set("style", state.style);
+    const qs = params.toString();
+    return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
+  }
+
+  function applyPreset() {
+    let q = null;
+    try { q = new URLSearchParams(window.location.search); } catch (err) { return; }
+    [["l", "mono-left"], ["c", "mono-center"], ["r", "mono-right"]].forEach(function (pair) {
+      const val = q.get(pair[0]);
+      const input = byId(pair[1]);
+      if (val != null && input) input.value = val.slice(0, 1).toUpperCase();
+    });
+    [["layout", "mono-layout-group"], ["style", "mono-style-group"]].forEach(function (pair) {
+      const val = q.get(pair[0]);
+      const group = byId(pair[1]);
+      if (!val || !group) return;
+      const btn = group.querySelector('[data-value="' + val.replace(/[^a-z-]/g, "") + '"]');
+      if (btn) btn.click();
     });
   }
 
@@ -466,7 +553,33 @@
     if (printBtn) printBtn.addEventListener("click", printMonogram);
     const pngBtn = byId("mono-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
+    if (pngBtn) {
+      const pdfBtn = document.createElement("button");
+      pdfBtn.type = "button";
+      pdfBtn.className = pngBtn.className + " pt-pdf-btn";
+      pdfBtn.textContent = T.savePdf;
+      pdfBtn.addEventListener("click", savePdf);
+      pngBtn.insertAdjacentElement("afterend", pdfBtn);
+    }
 
+    // Share row (share-core's builder, the same one the sheet engine uses)
+    // under the action buttons; a share link reopens this exact monogram.
+    const ns = window.UltraTextGen;
+    const actions = (pngBtn || printBtn) && (pngBtn || printBtn).parentNode;
+    if (ns && ns.buildShareRow && actions) {
+      const og = document.querySelector('meta[property="og:image"]');
+      actions.insertAdjacentElement("afterend", ns.buildShareRow({
+        className: "pt-share-row",
+        url: presetUrl,
+        surface: "printables",
+        itemType: "printable",
+        labels: { share: T.share, shareImage: T.shareImage, copyLink: T.copyLink, linkCopied: T.linkCopied, pinterest: T.pinterest },
+        onShareImage: shareImage,
+        pinMedia: function () { return og ? og.getAttribute("content") : ""; }
+      }));
+    }
+
+    applyPreset();
     render();
     // Re-render once Playfair loads so measured positions are exact.
     whenFontReady(render);

@@ -942,6 +942,18 @@
     a4:     { css: "A4",     w: 7.27, h: 10.7 },
     legal:  { css: "legal",  w: 7.5,  h: 13.0 }
   };
+  // Full sheet sizes, for the PDF page box; the content areas above stay
+  // the layout budget so a PDF page matches the printed one.
+  const PAPER_FULL = {
+    auto:   { w: 8.5,  h: 11.0 },
+    letter: { w: 8.5,  h: 11.0 },
+    a4:     { w: 8.27, h: 11.69 },
+    legal:  { w: 8.5,  h: 14.0 }
+  };
+  function paperFull() {
+    const p = PAPER_FULL[printPrefs.paper] || PAPER_FULL.auto;
+    return printPrefs.orient === "landscape" ? { w: p.h, h: p.w } : { w: p.w, h: p.h };
+  }
   const MARGINS = { normal: "0.5in", narrow: "0.25in" };
   const printPrefs = { paper: "auto", orient: "portrait", margin: "normal", ink: "normal" };
   try {
@@ -1144,37 +1156,11 @@
     recentMount.appendChild(clear);
   }
 
-  function pushShareEvent(method) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "share_text", share_method: method, share_surface: "printables", share_item_type: "printable" });
-  }
   function previewImageUrl() {
     const img = $("img.pt-preview-img") || $(".pt-preview-figure img");
     if (img && img.src) return img.src;
     const og = $('meta[property="og:image"]');
     return og ? og.getAttribute("content") : "";
-  }
-  async function shareLink() {
-    const url = presetUrl();
-    rememberSheet("share");
-    const UTG = window.UltraTextGen;
-    if (UTG && UTG.shareCreation) {
-      const r = await UTG.shareCreation({ url: url, title: document.title, surface: "printables", itemType: "printable" });
-      if (r === "copied") showToast(PO.linkCopied);
-      return;
-    }
-    pushShareEvent(navigator.share ? "native" : "link_copy");
-    if (navigator.share) { try { await navigator.share({ title: document.title, url: url }); return; } catch (err) { if (err && err.name === "AbortError") return; } }
-    try { await navigator.clipboard.writeText(url); showToast(PO.linkCopied); } catch (err) { /* nothing to do */ }
-  }
-  async function copyLink() {
-    pushShareEvent("link_copy");
-    rememberSheet("share");
-    try { await navigator.clipboard.writeText(presetUrl()); showToast(PO.linkCopied); } catch (err) { /* nothing to do */ }
-  }
-  function pinterestUrl() {
-    return "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(presetUrl()) +
-      "&media=" + encodeURIComponent(previewImageUrl()) + "&description=" + encodeURIComponent(document.title);
   }
   // The page's primary PNG builder, reused by "Share as image": whichever
   // section this page mounts decides what the sheet is.
@@ -1251,21 +1237,22 @@
     details.appendChild(ink);
     wrap.appendChild(details);
 
-    const share = document.createElement("div");
-    share.className = "pt-share-row";
-    share.appendChild(makeBtn("bubble-btn pt-share-btn", PO.share, shareLink));
-    if (primaryInput() || el.panel) {
-      share.appendChild(makeBtn("bubble-btn pt-share-btn", PO.shareImage, () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; }));
+    // The share row is share-core's (js/share/share-core.js buildShareRow),
+    // the same builder the monogram and cross-stitch engines use, so the
+    // three surfaces cannot drift. Labels are this engine's own strings.
+    const UTGns = window.UltraTextGen;
+    if (UTGns && UTGns.buildShareRow) {
+      wrap.appendChild(UTGns.buildShareRow({
+        className: "pt-share-row",
+        url: presetUrl,
+        surface: "printables",
+        itemType: "printable",
+        labels: { share: PO.share, shareImage: PO.shareImage, copyLink: PO.copyLink, linkCopied: PO.linkCopied, pinterest: PO.pinterest },
+        onShareImage: (primaryInput() || el.panel) ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; } : null,
+        pinMedia: previewImageUrl,
+        onShared: () => rememberSheet("share")
+      }));
     }
-    share.appendChild(makeBtn("bubble-btn pt-share-btn", PO.copyLink, copyLink));
-    const pin = document.createElement("a");
-    pin.className = "bubble-btn pt-share-btn pt-pin-btn";
-    pin.textContent = PO.pinterest;
-    pin.href = "https://www.pinterest.com/";
-    pin.target = "_blank"; pin.rel = "noopener";
-    pin.addEventListener("click", () => { pin.href = pinterestUrl(); pushShareEvent("pinterest"); rememberSheet("share"); });
-    share.appendChild(pin);
-    wrap.appendChild(share);
 
     recentMount = document.createElement("div");
     recentMount.className = "pt-recent";
@@ -1331,21 +1318,16 @@
     }, "image/png");
   }
 
-  // Share a rendered sheet as a PNG file through the native share sheet
-  // (WhatsApp, Messages, a teacher group), with the preset link riding along
-  // as text; falls back to a plain download where files cannot be shared.
+  // Share a rendered sheet as a PNG file through the native share sheet,
+  // with the preset link riding along as text. share-core owns the act
+  // (js/share/share-core.js shareImageBlob); a plain download is the fallback
+  // if the module is somehow absent.
   async function shareBlob(blob, filename, sheet) {
-    const file = new File([blob], filename, { type: "image/png" });
-    const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
-    pushShareEvent(canShareFiles ? "image" : "image_download");
     rememberSheet(sheet);
-    if (canShareFiles) {
-      try {
-        await navigator.share({ files: [file], title: document.title, text: presetUrl() });
-        return;
-      } catch (err) {
-        if (err && err.name === "AbortError") return;
-      }
+    const UTGns = window.UltraTextGen;
+    if (UTGns && UTGns.shareImageBlob) {
+      await UTGns.shareImageBlob(blob, { filename: filename, title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+      return;
     }
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -1475,6 +1457,73 @@
      Print surface
      --------------------------------------------------------------- */
 
+  // js/printables/printablePdf.js is fetched the first time a PDF is asked
+  // for, never on page load: the writer is only needed by the visitors who
+  // click Save as PDF, and the sheet engines stay the size they are.
+  let pdfModulePromise = null;
+  function loadPdfModule() {
+    if (window.UltraTextGen && window.UltraTextGen.pdf) return Promise.resolve(window.UltraTextGen.pdf);
+    if (pdfModulePromise) return pdfModulePromise;
+    pdfModulePromise = new Promise((resolve, reject) => {
+      const sc = document.createElement("script");
+      sc.src = "/js/printables/printablePdf.js";
+      sc.async = true;
+      sc.onload = () => resolve(window.UltraTextGen && window.UltraTextGen.pdf);
+      sc.onerror = () => { pdfModulePromise = null; reject(new Error("pdf module failed to load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfModulePromise;
+  }
+  function pdfFilename(sheet) {
+    const input = primaryInput();
+    const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
+    return PNG_PREFIX + "-" + (base || sheet || "sheet") + ".pdf";
+  }
+  // Rasterise the mounted print surface and write the PDF. Resolves true on
+  // success; false means "use the print dialog instead" (module missing,
+  // an unsupported browser, a tainted canvas on Safari).
+  async function pdfFromWrap(wrap, sheet) {
+    let P = null;
+    try { P = await loadPdfModule(); } catch (err) { return false; }
+    if (!P || !P.supported()) return false;
+    // The PDF knows its exact sheet, so it lays out on the real page box
+    // (paper minus the chosen margin), not the conservative "auto" area the
+    // tile layout budgets for unknown paper. That is what the print dialog
+    // gives the same sheet, so the file and the printout paginate alike.
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    const area = { w: full.w - 2 * marginIn, h: full.h - 2 * marginIn };
+    const widthPx = Math.round(area.w * 96);
+    const pageHPx = Math.round(area.h * 96);
+    document.body.classList.add("pt-pdf-rendering");
+    document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    el.printRoot.style.width = widthPx + "px";
+    let pages = null;
+    try {
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+    } catch (err) {
+      pages = null;
+    } finally {
+      document.body.classList.remove("pt-pdf-rendering");
+      document.body.classList.remove("pt-ink-saver");
+      el.printRoot.style.width = "";
+    }
+    if (!pages || !pages.length) return false;
+    try {
+      const blob = await P.fromCanvases(pages, {
+        paperIn: full,
+        marginIn: { x: marginIn, y: marginIn },
+        title: document.title
+      });
+      P.download(blob, pdfFilename(sheet));
+    } catch (err) {
+      return false;
+    }
+    trackPrintable("download_pdf", sheet);
+    trackPrintableEvent("printable_output", { printable_action: "pdf_saved", printable_sheet: sheet || "sheet", printable_pages: pages.length });
+    return true;
+  }
+
   function printWrap(titleText, bodyNode, sheet) {
     trackPrintable("print", sheet);
     rememberSheet(sheet);
@@ -1492,10 +1541,24 @@
     }
     wrap.appendChild(bodyNode);
     el.printRoot.appendChild(wrap);
+
+    // Save as PDF writes the file itself (printablePdf.js); the browser's
+    // print dialog is the fallback, with the destination named in a toast.
+    if (wantPdf) {
+      pdfFromWrap(wrap, sheet).then((ok) => {
+        if (ok) { el.printRoot.innerHTML = ""; return; }
+        showToast(PO.pdfToast);
+        openPrintDialog(sheet, true);
+      });
+      return;
+    }
+    openPrintDialog(sheet, false);
+  }
+
+  function openPrintDialog(sheet, wantPdf) {
     applyPageStyle();
     document.body.classList.add("is-printing");
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
-    if (wantPdf) showToast(PO.pdfToast);
 
     // Tear the print surface down when the dialog closes, not when
     // window.print() returns: on desktop the two coincide, on iOS/Android
