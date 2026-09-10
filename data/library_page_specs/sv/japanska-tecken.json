@@ -10,7 +10,7 @@
  "intro": "Japanska tecken är ett självklart inslag i estetiska bios och användarnamn, från körsbärsblomman 桜 (sakura) till katakana-leendet ツ. Det här biblioteket samlar meningsfulla kanji, de grundläggande stavelsealfabeten hiragana och katakana samt japanska skiljetecken – varje tecken är märkt med sitt romaji-uttal och sin svenska betydelse. Kopiera dem till Instagram-bildtexter, Discord-namn eller överallt där du vill ge texten en japansk stil – respektfullt och med betydelsen tydlig.",
  "date_published": "2026-09-10",
  "date_modified": "2026-09-10",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "canonical": "https://ultratextgen.com/sv/library/japanska-tecken/",
  "home_url": "https://ultratextgen.com/sv/",
  "crumb_home": "Startsida",
@@ -267,6 +267,80 @@
      "label": "Posttecken"
     }
    ]
+  }
+ ],
+ "collection_container_id": "japanSetsContainerSV",
+ "collection_section": {
+  "id": "japanese-sets",
+  "label": "Teckenuppsättningar",
+  "h2": "Japanska teckenkombinationer",
+  "intro": "Kopiera en hel temauppsättning japanska tecken eller en färdig bio-dekoration med ett klick."
+ },
+ "collections": [
+  {
+   "name": "Sakura-estetik",
+   "flags": [
+    "桜",
+    "花",
+    "春",
+    "風",
+    "月"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Natthimmel",
+   "flags": [
+    "月",
+    "星",
+    "夜",
+    "光",
+    "夢"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Hav och regn",
+   "flags": [
+    "海",
+    "波",
+    "雨",
+    "空"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Smileys för användarnamn",
+   "flags": [
+    "ツ",
+    "シ",
+    "彡",
+    "ノ"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Ai: kärlek",
+   "flags": [
+    "愛"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Arigatou: tack",
+   "flags": [
+    "ありがとう"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Sakura-ram för bio",
+   "flags": [
+    "☾ 月 ☽",
+    "桜 · 夢 · 愛",
+    "〜 ありがとう 〜"
+   ],
+   "defaultFormat": "vertical"
   }
  ]
 }

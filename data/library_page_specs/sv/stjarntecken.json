@@ -10,7 +10,7 @@
  "intro": "Det här biblioteket innehåller de 12 västerländska stjärnteckensymbolerna, planet- och himlakroppssymboler som används i astrologi och astronomi, kinesiska stjärntecken som djur-emoji samt relaterade astronomiska tecken. Symbolerna är grupperade efter tradition och kategori.",
  "date_published": "2026-09-10",
  "date_modified": "2026-09-10",
- "copy_pattern": "single",
+ "copy_pattern": "collection",
  "canonical": "https://ultratextgen.com/sv/library/stjarntecken/",
  "home_url": "https://ultratextgen.com/sv/",
  "crumb_home": "Startsida",
@@ -295,6 +295,67 @@
      "label": "Kvicksilver"
     }
    ]
+  }
+ ],
+ "collection_container_id": "zodiacCollectionsContainerSV",
+ "collection_section": {
+  "id": "zodiac-collections",
+  "label": "Stjärnteckensamlingar",
+  "h2": "Stjärntecken- och astrologiuppsättningar",
+  "intro": "Kopiera hela stjärntecknens hjul och de tio moderna astrologiska planeterna i kanonisk ordning."
+ },
+ "collections": [
+  {
+   "name": "Västerländska stjärntecken (Väduren → Fiskarna)",
+   "flags": [
+    "♈",
+    "♉",
+    "♊",
+    "♋",
+    "♌",
+    "♍",
+    "♎",
+    "♏",
+    "♐",
+    "♑",
+    "♒",
+    "♓"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "Kinesiska djurtecken (Råttan → Grisen)",
+   "flags": [
+    "🐀",
+    "🐂",
+    "🐅",
+    "🐇",
+    "🐉",
+    "🐍",
+    "🐎",
+    "🐐",
+    "🐒",
+    "🐓",
+    "🐕",
+    "🐖"
+   ],
+   "defaultFormat": "inline"
+  },
+  {
+   "name": "De tio moderna astrologiska planeterna",
+   "flags": [
+    "☉",
+    "☽",
+    "☿",
+    "♀",
+    "♂",
+    "♃",
+    "♄",
+    "♅",
+    "♆",
+    "♇"
+   ],
+   "defaultFormat": "inline"
   }
  ]
 }

@@ -715,7 +715,14 @@ def render_page(spec):
 
     date_pub = _iso_datetime(spec.get("date_published", "2026-01-01"))
     date_mod = _iso_datetime(spec.get("date_modified", spec.get("date_published", "2026-01-01")))
-    cta = _cta_field("cta", "cta", SHARED_CTA_DEFAULTS["cta"])
+    # The locale table's `cta_body` had never been read: cta_h3 and cta_btn
+    # both fall back through `ui`, this one fell straight to the English
+    # SHARED_CTA_DEFAULTS, so all 17 translated cta_body values were dead and a
+    # locale spec that did not restate the sentence itself shipped a localised
+    # heading and button around an English paragraph. The sentence belongs to the
+    # generator rather than to each spec: restating it in ten sv specs is exactly
+    # what scripts/check-spec-sentence-reuse.py exists to fail.
+    cta = _cta_field("cta", "cta", ui.get("cta_body", SHARED_CTA_DEFAULTS["cta"]))
 
     # JSON-LD must use real (entity-decoded) strings; json.dumps handles escaping.
     sources_prose = spec.get("sources")

@@ -8775,10 +8775,22 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Capitulum",
+        "reason": "Latin name of the capitulum mark (⸿), cited unchanged in Swedish typography; the tiles around it on the same page are translated (\"Stycketecken\", \"Paragraftecken\")",
+        "found_on": "sv/library/copyright-tecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Cedi",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (French Franc → Fransk franc; Florin → Floren; Rupee Sign → Rupietecken), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Celsius",
+        "reason": "unit name from the Swedish astronomer Anders Celsius; identical in Swedish. Its own section translates the tiles around it (\"Termometer\", \"Gradtecken\"). Same case nl already ledgers for nl/symbol/celsius-symbool/",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
       },
       {
         "string": "Cent",
@@ -8859,6 +8871,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Fahrenheit",
+        "reason": "unit name from a surname; identical in Swedish, sitting beside the translated \"Termometer\" and \"Gradtecken\" in the same section",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Gamma",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Alpha → Alfa; Empty Set → Tomma mängden; Intersection → Snitt (intersektion)), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
@@ -8895,10 +8913,28 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Interrobang",
+        "reason": "name of the ‽ mark, borrowed whole into Swedish; the section around it is translated (\"Interrobang & omvända tecken\")",
+        "found_on": "sv/library/skiljetecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Iota",
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Omicron → Omikron; Alpha → Alfa; Phi → Fi), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Joker",
+        "reason": "loanword, spelled identically in Swedish card vocabulary; de and nl ledger the same string for their own card-suit pages",
+        "found_on": "sv/library/kortfarg-symboler/",
+        "added": "2026-09-10"
+      },
+      {
+        "string": "Jupiter",
+        "reason": "planet name, identical in Swedish. The tiles around it on the same page are translated (\"Merkurius\", \"Jorden\", \"Saturnus\", \"Neptunus\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
       },
       {
         "string": "Kappa",
@@ -8949,6 +8985,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Mars",
+        "reason": "planet name, identical in Swedish; the same tile set translates Merkurius, Jorden, Saturnus and Neptunus",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Minimal",
         "reason": "decoration-tab label; the word is identical in this language",
         "found_on": "sv/instagram-typsnitt/",
@@ -8979,6 +9021,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Opposition",
+        "reason": "name of the astrological aspect, identical in Swedish; its neighbours in the same section are translated (\"Konjunktion\", \"Kvadratur\", \"Trigon\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Orange",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from sv/library/hjarta-symboler/ itself: the tiles around it are translated (Red → Röd; Yellow → Gul; Rainbow → Regnbåge), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/hjarta-symboler/",
@@ -8995,6 +9043,12 @@
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (German Penny → Tysk pfennig; Tamil Rupee → Tamilsk rupie; Livre Tournois → Livre tournois), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Pluto",
+        "reason": "planet name, identical in Swedish, like Jupiter and Uranus in the same tile set",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
       },
       {
         "string": "Rial",
@@ -9093,6 +9147,18 @@
         "added": "2026-08-25"
       },
       {
+        "string": "Tiger",
+        "reason": "Swedish for 🐅 is \"tiger\", the same spelling; the Chinese-zodiac tiles around it are translated (\"Råtta\", \"Kanin\", \"Drake\", \"Häst\")",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
+      },
+      {
+        "string": "Tornado",
+        "reason": "weather term borrowed whole; identical in Swedish, while the tiles beside it in the same section are translated (\"Cyklon\", \"Vindansikte\", \"Löv i vind\", \"Vindspel\")",
+        "found_on": "sv/library/vader-symboler/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Tugrik",
         "reason": "currency name that coincides with the English form in this language. Evidence from sv/library/valuta-symboler/ itself: the tiles around it are translated (Rupee Sign → Rupietecken; French Franc → Fransk franc; Tamil Rupee → Tamilsk rupie), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/valuta-symboler/",
@@ -9103,6 +9169,12 @@
         "reason": "Greek letter name that coincides with the English form in this language. Evidence from sv/library/matematiska-symboler/ itself: the tiles around it are translated (Not a Superset Of → Inte en övermängd av; Intersection → Snitt (intersektion); Not a Subset Of → Inte en delmängd av), so this one is kept because it genuinely matches.",
         "found_on": "sv/library/matematiska-symboler/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "Uranus",
+        "reason": "planet name, identical in Swedish, like Jupiter, Mars and Pluto in the same tile set",
+        "found_on": "sv/library/stjarntecken/",
+        "added": "2026-09-10"
       },
       {
         "string": "Yen / Yuan",
