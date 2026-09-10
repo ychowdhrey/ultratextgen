@@ -2643,6 +2643,13 @@ Skipping a level is a best-practice warning rather than a WCAG 1.3.1 failure,
 and restructuring 899 pages' card markup is an owner call about the design
 system. A validator must not force it.
 
+**Put to the owner and declined, 2026-09-10.** The 909 were presented with the
+cost of changing them (one card template plus a regeneration of 909 pages, which
+under clean-on-touch drags in those pages' em dashes and their locale siblings)
+and the owner's answer was to leave them. So this is now a recorded decision
+rather than a validator's default, and re-proposing it needs new evidence — a
+real reported barrier, not the count.
+
 **What counts as a page is structural: a file with an `<html>` element.** Two
 tracked `.html` files are not pages — the Naver verification token and
 `scripts/data/funding-choices-tag.html`, a script fragment — and both would

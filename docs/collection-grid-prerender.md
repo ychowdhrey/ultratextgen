@@ -157,6 +157,20 @@ flagged as such rather than presented as harvested: `Format Salinan` (ms) and
 `Kopiointimuoto` (fi). Both are ordinary formations in their language from words
 the site already uses; neither is an attested collocation.
 
+## 4b. What it costs
+
+Stated rather than left to be discovered: **+6,090 KB across 898 pages**, a mean
+of **6.8 KB** and a worst case of **11.2 KB** (`pt/library/emoji-flags`), all
+uncompressed. The markup is highly repetitive, so on the wire it is far less —
+measured with `gzip -9`, `pt/library/emoji-flags` goes 18,702 -> 20,774 bytes
+(**+2.0 KB, +11%**) and `de/library/emoji-combos` 20,154 -> 21,049 (**+0.9 KB,
++4%**).
+
+That is the price of the section existing for a client that runs no JavaScript.
+It is worth naming because the opposite trade — keeping payload out of the HTML
+to keep pages small — is the decision that produced this defect in the first
+place.
+
 ## 5. Verification
 
 **Behaviour, against the unmodified tree as a control.** A git worktree of the
