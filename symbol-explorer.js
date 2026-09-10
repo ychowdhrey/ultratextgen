@@ -19,6 +19,7 @@
   /* ============================
      Icons (inline SVG strings)
      ============================ */
+  /* @collection-grid-icons:begin */
   var COPY_ICON =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>' +
@@ -27,10 +28,12 @@
   var CHECK_ICON =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<polyline points="20 6 9 17 4 12"/></svg>';
+  /* @collection-grid-icons:end */
 
   /* ============================
      UI strings (localized by <html lang>)
      ============================ */
+  /* @collection-grid-strings:begin */
   const UI_STRINGS = {
     en: {
       copied: "Copied: ",
@@ -234,8 +237,30 @@
       copyCollection: " Kopyahin ang Koleksyon",
       copiedBtn: " Nakopya!",
       formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Bullet" }
+    },
+    /* fi and ms were missing until 2026-09-10, so their 5 collection pages
+       fell through to UI_STRINGS.en and rendered English buttons. Invisible
+       while the grids were built by JS; pre-rendering them would have put that
+       English into static HTML. Every word below is attested on this site's own
+       pages in that language — see docs/collection-grid-prerender.md §4 for
+       where each one was harvested and which two are compounds of attested
+       stems rather than attested strings. */
+    fi: {
+      copied: "Kopioitu: ",
+      copyFormat: "Kopiointimuoto",
+      copyCollection: " Kopioi kokoelma",
+      copiedBtn: " Kopioitu!",
+      formats: { inline: "Rivi", vertical: "Pysty", comma: "Pilkku", space: "V\u00e4lily\u00f6nti", bullet: "Luettelo" }
+    },
+    ms: {
+      copied: "Disalin: ",
+      copyFormat: "Format Salinan",
+      copyCollection: " Salin Koleksi",
+      copiedBtn: " Disalin!",
+      formats: { inline: "Satu baris", vertical: "Menegak", comma: "Koma", space: "Ruang", bullet: "Senarai" }
     }
   };
+  /* @collection-grid-strings:end */
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
   const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
 
@@ -346,6 +371,7 @@
   /* ============================
      ISO alpha-2 → flag emoji
      ============================ */
+  /* @collection-grid-iso:begin */
   function isoToFlag(code) {
     if (!code) return "";
     var cc = String(code).trim().toUpperCase();
@@ -356,6 +382,7 @@
       base + (cc.charCodeAt(1) - 65)
     );
   }
+  /* @collection-grid-iso:end */
   ns.isoToFlag = isoToFlag;
 
   /* ============================
@@ -371,6 +398,7 @@
   /* ============================
      Format helpers
      ============================ */
+  /* @collection-grid:begin */
   var FORMATS = [
     { id: "inline",   label: "Inline" },
     { id: "vertical", label: "Vertical" },
@@ -384,82 +412,83 @@
       case "vertical": return items.join("\n");
       case "comma":    return items.join(", ");
       case "space":    return items.join(" ");
-      case "bullet":   return items.map(function (f) { return "• " + f; }).join("\n");
+      case "bullet":   return items.map(function (f) { return "\u2022 " + f; }).join("\n");
       default:         return items.join(" "); // inline
     }
   }
+
+  function escHtml(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function activeFormatsFor(groups) {
+    return groups.map(function (g) {
+      return (g && g.defaultFormat) ? g.defaultFormat : "vertical";
+    });
+  }
+
+  /* One collection section, as a markup STRING.
+
+     It is a string rather than createElement calls so that the build-time
+     pre-renderer can emit byte-identical markup by slicing THIS function out
+     of THIS file (scripts/lib/collection-grid-engine.js) and running it — the
+     same arrangement the library-hub builders use, and for the reason
+     CLAUDE.md records there: a second copy of the markup in the generator
+     drifts from the first and nothing says so. */
+  function gridSectionHTML(group, gi, activeFormat, str, formats, copyIcon) {
+    var tabs = formats.map(function (fmt) {
+      return '<button class="format-tab' + (fmt.id === activeFormat ? " active" : "") +
+        '" data-format="' + fmt.id + '" data-group="' + gi + '">' +
+        escHtml(str.formats[fmt.id] || fmt.label) + "</button>";
+    }).join("");
+    return '<div class="mood-explainer flag-grid-section">' +
+      "<h3>" + escHtml(group.name) + "</h3>" +
+      '<div class="flag-grid-display">' + escHtml(group.flags.join(" ")) + "</div>" +
+      '<div class="format-selector">' +
+      '<div class="format-selector-label">' + escHtml(str.copyFormat) + "</div>" +
+      '<div class="format-tabs">' + tabs + "</div>" +
+      "</div>" +
+      '<div class="format-preview" id="preview-' + gi + '">' +
+      escHtml(formatItems(group.flags, activeFormat)) + "</div>" +
+      '<button class="copy-collection-btn" id="copyBtn-' + gi + '" data-group="' + gi + '">' +
+      copyIcon + escHtml(str.copyCollection) + "</button>" +
+      "</div>";
+  }
+
+  function gridSectionsHTML(groups, activeFormats, str, formats, copyIcon) {
+    return groups.map(function (group, gi) {
+      return gridSectionHTML(group, gi, activeFormats[gi], str, formats, copyIcon);
+    }).join("");
+  }
+  /* @collection-grid:end */
   ns.formatItems = formatItems;
 
   /* ============================
      Build grid UI
      Call:  UltraTextGen.buildGrids("containerId", groups)
-     where groups = [{ name: "EU", flags: ["🇦🇹", …] }, …]
+     where groups = [{ name: "EU", flags: ["\ud83c\udde6\ud83c\uddf9", \u2026] }, \u2026]
      ============================ */
   function buildGrids(containerId, groups) {
     var container = document.getElementById(containerId);
     if (!container) return;
 
-   var activeFormats = groups.map(function (g) {
-     return (g && g.defaultFormat) ? g.defaultFormat : "vertical";
-   });
+    var activeFormats = activeFormatsFor(groups);
 
-    groups.forEach(function (group, gi) {
-      var defaultFormat = activeFormats[gi];
-      var section = document.createElement("div");
-      section.className = "mood-explainer flag-grid-section";
-
-      /* Title */
-      var h3 = document.createElement("h3");
-      h3.textContent = group.name;
-      section.appendChild(h3);
-
-      /* Browse grid (static) */
-      var grid = document.createElement("div");
-      grid.className = "flag-grid-display";
-      grid.textContent = group.flags.join(" ");
-      section.appendChild(grid);
-
-      /* Format selector */
-      var selWrap = document.createElement("div");
-      selWrap.className = "format-selector";
-
-      var selLabel = document.createElement("div");
-      selLabel.className = "format-selector-label";
-      selLabel.textContent = STR.copyFormat;
-      selWrap.appendChild(selLabel);
-
-      var tabs = document.createElement("div");
-      tabs.className = "format-tabs";
-
-      FORMATS.forEach(function (fmt, fi) {
-        var tab = document.createElement("button");
-         tab.className = "format-tab" + (fmt.id === defaultFormat ? " active" : "");
-        tab.setAttribute("data-format", fmt.id);
-        tab.setAttribute("data-group", gi);
-        tab.textContent = STR.formats[fmt.id] || fmt.label;
-        tabs.appendChild(tab);
-      });
-
-      selWrap.appendChild(tabs);
-      section.appendChild(selWrap);
-
-      /* Preview */
-      var preview = document.createElement("div");
-      preview.className = "format-preview";
-      preview.id = "preview-" + gi;
-      preview.textContent = formatItems(group.flags, defaultFormat);
-      section.appendChild(preview);
-
-      /* Copy button */
-      var copyBtn = document.createElement("button");
-      copyBtn.className = "copy-collection-btn";
-      copyBtn.id = "copyBtn-" + gi;
-      copyBtn.setAttribute("data-group", gi);
-      copyBtn.innerHTML = COPY_ICON + STR.copyCollection;
-      section.appendChild(copyBtn);
-
-      container.appendChild(section);
-    });
+    /* scripts/prerender-collection-grids.js writes these sections into the
+       page at build time so a crawler that runs no JavaScript still sees the
+       collections, which on these pages are the payload. Re-appending them
+       here would double every section, so only build what is not already
+       there. */
+    if (!container.querySelector(".flag-grid-section")) {
+      container.insertAdjacentHTML(
+        "beforeend",
+        gridSectionsHTML(groups, activeFormats, STR, FORMATS, COPY_ICON)
+      );
+    }
 
     /* Delegated events for this container */
     container.addEventListener("click", function (e) {

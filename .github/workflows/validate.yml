@@ -585,6 +585,26 @@ jobs:
         continue-on-error: true
         run: npm run check:accessibility -- --base origin/${{ github.base_ref || 'main' }} | tee accessibility.log
 
+      # Gating, diff-scoped, zero backlog: every page a PR touches that renders
+      # a copy-paste collection grid must carry that grid in static HTML,
+      # current against the page's own GROUPS array.
+      #
+      # All 898 such pages shipped the section as an empty <div> plus an inline
+      # GROUPS array built into DOM after load, and no gate here could see it:
+      # the parity fingerprint reads the buildGrids CALL rather than its output,
+      # the locale and FAQ gates read text that was not there, the image gates
+      # read assets. On these pages the collections ARE the payload, and
+      # CLAUDE.md's Discovery Model section states the cost plainly: several
+      # search and AI crawlers execute no JavaScript.
+      #
+      # It gates rather than informs because there is no backlog to be red
+      # against (the same call as check:zalgo-decodes and check:accessibility):
+      # all 898 carry a current block, and the fix is one command.
+      - name: Run collection-grid pre-render check
+        id: collection_grids
+        continue-on-error: true
+        run: npm run check:collection-grids -- --base origin/${{ github.base_ref || 'main' }} | tee collection-grids.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -809,6 +829,11 @@ jobs:
             cat accessibility.log
             echo '```'
             echo ""
+            echo "### Collection-grid pre-render — \`${{ steps.collection_grids.outcome }}\`"
+            echo '```'
+            cat collection-grids.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -878,6 +903,7 @@ jobs:
           steps.header_analytics_tests.outcome == 'failure' ||
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
+          steps.collection_grids.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |
