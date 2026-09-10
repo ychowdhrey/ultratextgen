@@ -1,7 +1,7 @@
 {
   "slug": "son-giho",
   "title": "손 이모지 👍 👌 🫰 ✌ — 손 모양·손짓 기호 복사 | UltraTextGen",
-  "meta_description": "손 이모지와 손 기호 모음 👆 👍 👌 ✌ 🫰 🫶 🙏. 가리키기·따봉·손짓·박수 36개를 눌러서 바로 복사하세요.",
+  "meta_description": "손 이모지와 손 기호 모음 👆 👍 👌 ✌ 🫰 🫶 🙏. 가리키기·따봉·손짓·박수·동작 48개를 눌러서 바로 복사하세요.",
   "breadcrumb": "손 이모지",
   "hero_h1": "손 이모지",
   "hero_tagline": "👆 👍 👌 ✌ 🫰 🫶 🙏 — 가리키기부터 손하트까지.",
@@ -183,6 +183,62 @@
           "label": "손하트"
         }
       ]
+    },
+    {
+      "id": "s4",
+      "label": "동작을 나타내는 손 기호",
+      "h2": "동작을 나타내는 손 기호",
+      "intro": "손 들기, 손 흔들기, 글씨 쓰기, 주먹처럼 구체적인 동작을 담은 손.",
+      "symbols": [
+        {
+          "char": "✋",
+          "label": "든 손"
+        },
+        {
+          "char": "🖐",
+          "label": "손가락 편 손"
+        },
+        {
+          "char": "🖖",
+          "label": "벌컨 인사"
+        },
+        {
+          "char": "✍",
+          "label": "글 쓰는 손"
+        },
+        {
+          "char": "🤚",
+          "label": "손등 보이는 손"
+        },
+        {
+          "char": "🖕",
+          "label": "가운뎃손가락"
+        },
+        {
+          "char": "🦾",
+          "label": "기계 팔"
+        },
+        {
+          "char": "✊",
+          "label": "든 주먹"
+        },
+        {
+          "char": "👊",
+          "label": "내민 주먹"
+        },
+        {
+          "char": "🤛",
+          "label": "왼쪽 주먹"
+        },
+        {
+          "char": "🤜",
+          "label": "오른쪽 주먹"
+        },
+        {
+          "char": "👋",
+          "label": "손 흔들기"
+        }
+      ]
     }
   ],
   "faq_h2": "손 이모지 자주 묻는 질문",
@@ -252,6 +308,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/son-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hand-symbols/"
     }
   ]
 }

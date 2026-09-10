@@ -1,10 +1,10 @@
 {
   "slug": "dongmul-imoji",
   "title": "동물 이모지 🐶 🐱 🐰 🦊 🐼 — 동물 이모지 전체 복사 | UltraTextGen",
-  "meta_description": "동물 이모지 모음 🐶 🐱 🐰 🐻 🦊 🐼 🐧 🐳 🦋 🐢. 반려동물·농장·야생·조류·바다·곤충·파충류 99개를 복사하세요.",
+  "meta_description": "동물 이모지 모음 🐶 🐱 🐰 🐻 🦊 🐼 🐧 🐳 🦋 🐢. 반려동물·농장·야생·조류·바다·곤충·파충류·신화 103개를 복사하세요.",
   "breadcrumb": "동물 이모지",
   "hero_h1": "동물 이모지",
-  "hero_tagline": "🐶 🐱 🐰 🦊 🐼 🐧 🐳 🦋 🐢 — 99종을 종류별로.",
+  "hero_tagline": "🐶 🐱 🐰 🦊 🐼 🐧 🐳 🦋 🐢 — 103종을 종류별로.",
   "intro": "동물 이모지를 반려동물·농장·야생·조류·바다·곤충·파충류 일곱 묶음으로 나눴습니다. 같은 동물이라도 얼굴만 있는 것과 몸 전체가 나온 것이 따로 있습니다. 🐶 는 얼굴, 🐕 는 옆모습 전신이라 프로필이나 짧은 글에는 얼굴 쪽이 더 눈에 잘 들어옵니다. 글자로 만든 동물 얼굴을 찾으신다면 <a href=\"/ko/library/goyangi-imotikon/\">고양이 이모티콘</a> 쪽입니다.",
   "copy_pattern": "single",
   "sections": [
@@ -459,6 +459,30 @@
           "label": "티라노사우루스"
         }
       ]
+    },
+    {
+      "id": "s7",
+      "label": "신화 속 동물 이모지",
+      "h2": "신화 속 동물 이모지",
+      "intro": "전설과 판타지에 나오는 생물 이모지.",
+      "symbols": [
+        {
+          "char": "🦄",
+          "label": "유니콘"
+        },
+        {
+          "char": "🐉",
+          "label": "용"
+        },
+        {
+          "char": "🐲",
+          "label": "용 얼굴"
+        },
+        {
+          "char": "🐦‍🔥",
+          "label": "불사조"
+        }
+      ]
     }
   ],
   "faq_h2": "동물 이모지 자주 묻는 질문",
@@ -540,6 +564,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/dongmul-imoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/animal-emojis/"
     }
   ]
 }

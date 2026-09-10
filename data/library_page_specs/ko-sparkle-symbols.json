@@ -6,7 +6,7 @@
   "hero_h1": "반짝이 특수문자",
   "hero_tagline": "✦ ✧ ⊹ ❇ ❈ ✺ ★ ❦ ࿐ — 프로필과 다꾸에 쓰는 반짝임.",
   "intro": "반짝임과 별표 계열 문자를 종류별로 모았습니다. 대부분 이모지가 아니라 <strong>인쇄용 장식 문자</strong>라서 색이 입혀지지 않고 글자 색과 굵기를 그대로 따라갑니다. 그래서 프로필 이름이나 다꾸 문구처럼 색을 맞춰야 하는 자리에 잘 맞습니다. 감성 장식 전반은 <a href=\"/ko/library/gamseong-giho/\">감성 특수문자</a>가 더 넓게 다룹니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s0",
@@ -388,6 +388,80 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/banjjagi-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/sparkle-symbols/"
+    }
+  ],
+  "collection_section": {
+    "id": "sparkle-collections",
+    "label": "반짝이 프로필과 구분선 세트",
+    "h2": "반짝이 프로필과 구분선 세트",
+    "intro": "프로필, 캡션, 아이디에 그대로 붙여 넣는 반짝이 조합입니다. 한 번 눌러 전체를 복사하세요."
+  },
+  "collection_container_id": "sparkleCollectionsContainer",
+  "collections": [
+    {
+      "name": "반짝이 프로필 구분선",
+      "flags": [
+        "✦",
+        "₊",
+        "˖",
+        "⊹",
+        "˖",
+        "₊",
+        "✦"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "캡션 반짝임 장식",
+      "flags": [
+        "✨",
+        "˖",
+        "°",
+        "💫",
+        "°",
+        "˖",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "은은한 반짝이 테두리",
+      "flags": [
+        "⊹",
+        "₊",
+        "˖",
+        "✿",
+        "˖",
+        "₊",
+        "⊹"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "점선 반짝이 구분선",
+      "flags": [
+        "┈",
+        "┈",
+        "✧",
+        "┈",
+        "┈"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "별빛 아이디 조합",
+      "flags": [
+        "₊",
+        "°",
+        "✦",
+        "⋆",
+        "✩"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

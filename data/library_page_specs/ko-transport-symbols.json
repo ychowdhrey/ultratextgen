@@ -1,7 +1,7 @@
 {
   "slug": "gyotong-giho",
   "title": "교통 이모지 🚗 🚇 ✈ 🚢 — 자동차·기차·비행기 복사 | UltraTextGen",
-  "meta_description": "교통 이모지 모음 🚗 🚕 🚌 🏍 🚲 🚇 🚅 ✈ 🚢 ⚓. 도로·이륜차·철도·항공·선박 55개를 눌러서 바로 복사하세요.",
+  "meta_description": "교통 이모지 모음 🚗 🚕 🚌 🏍 🚲 🚇 🚅 ✈ 🚢 ⚓. 도로·이륜차·철도·항공·선박·지도 67개를 눌러서 바로 복사하세요.",
   "breadcrumb": "교통 이모지",
   "hero_h1": "교통 이모지",
   "hero_tagline": "🚗 🚌 🏍 🚲 🚇 🚅 ✈ 🚢 ⚓ — 도로부터 항공·선박까지.",
@@ -267,6 +267,62 @@
           "label": "구명튜브"
         }
       ]
+    },
+    {
+      "id": "s5",
+      "label": "길찾기와 지도 기호",
+      "h2": "길찾기와 지도 기호",
+      "intro": "길 안내와 지도에 쓰는 방향 표시와 도로 기호.",
+      "symbols": [
+        {
+          "char": "🚏",
+          "label": "버스 정류장"
+        },
+        {
+          "char": "🚥",
+          "label": "가로형 신호등"
+        },
+        {
+          "char": "🚦",
+          "label": "세로형 신호등"
+        },
+        {
+          "char": "🚧",
+          "label": "공사 중"
+        },
+        {
+          "char": "⛽",
+          "label": "주유소"
+        },
+        {
+          "char": "🛤",
+          "label": "철길"
+        },
+        {
+          "char": "🛣",
+          "label": "고속도로"
+        },
+        {
+          "char": "🗺",
+          "label": "세계 지도"
+        },
+        {
+          "char": "🧭",
+          "label": "나침반"
+        },
+        {
+          "char": "📍",
+          "label": "위치 핀"
+        },
+        {
+          "char": "🗾",
+          "label": "일본 지도"
+        },
+        {
+          "char": "🌐",
+          "label": "지구본"
+        }
+      ]
     }
   ],
   "faq_h2": "교통 이모지 자주 묻는 질문",
@@ -324,6 +380,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/gyotong-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/transport-symbols/"
     }
   ]
 }

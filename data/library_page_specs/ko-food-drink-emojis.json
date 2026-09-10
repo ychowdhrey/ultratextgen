@@ -1,10 +1,10 @@
 {
   "slug": "eumsik-imoji",
   "title": "음식 이모지 🍕 🍜 🍣 ☕ 🍰 — 음식·음료 이모지 전체 복사 | UltraTextGen",
-  "meta_description": "음식 이모지 모음 🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋. 과일·채소·요리·디저트·음료 96개를 눌러서 바로 복사하세요.",
+  "meta_description": "음식 이모지 모음 🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋. 과일·채소·요리·디저트·음료·주방 103개를 눌러서 바로 복사하세요.",
   "breadcrumb": "음식 이모지",
   "hero_h1": "음식 이모지",
-  "hero_tagline": "🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋 🍧 — 과일부터 음료까지 96개.",
+  "hero_tagline": "🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋 🍧 — 과일부터 주방용품까지 103개.",
   "intro": "음식과 음료 이모지를 과일·채소, 조리된 음식, 디저트, 음료 네 묶음으로 나눴습니다. 한국 음식을 직접 가리키는 이모지는 거의 없어서, 라면은 🍜, 김밥은 🍙 나 🍣, 어묵은 🍥 처럼 가장 가까운 것을 골라 쓰는 것이 보통입니다. 어느 것도 정확하지 않지만 뜻은 대체로 통합니다.",
   "copy_pattern": "single",
   "sections": [
@@ -423,6 +423,42 @@
           "label": "얼음"
         }
       ]
+    },
+    {
+      "id": "s4",
+      "label": "주방과 조리 이모지",
+      "h2": "주방과 조리 이모지",
+      "intro": "요리 이야기에 쓰는 식기와 조리도구 이모지.",
+      "symbols": [
+        {
+          "char": "🍽️",
+          "label": "접시와 식기"
+        },
+        {
+          "char": "🍴",
+          "label": "포크와 나이프"
+        },
+        {
+          "char": "🥄",
+          "label": "숟가락"
+        },
+        {
+          "char": "🔪",
+          "label": "식칼"
+        },
+        {
+          "char": "🫙",
+          "label": "유리병"
+        },
+        {
+          "char": "🧑‍🍳",
+          "label": "요리사"
+        },
+        {
+          "char": "🥢",
+          "label": "젓가락"
+        }
+      ]
     }
   ],
   "faq_h2": "음식 이모지 자주 묻는 질문",
@@ -454,7 +490,7 @@
     {
       "href": "/ko/library/dongmul-imoji/",
       "title": "동물 이모지",
-      "desc": "🐶 🐱 🐰 동물 이모지 99종 전체 모음."
+      "desc": "🐶 🐱 🐰 동물 이모지 103종 전체 모음."
     },
     {
       "href": "/ko/library/gukgi-imoji/",
@@ -492,6 +528,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/eumsik-imoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/food-drink-emojis/"
     }
   ]
 }

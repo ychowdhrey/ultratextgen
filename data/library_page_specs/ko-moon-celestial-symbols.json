@@ -6,7 +6,7 @@
   "hero_h1": "달 기호",
   "hero_tagline": "☾ ☽ 🌙 🌑 🌕 ☀ ✦ ⋆ — 달의 위상과 밤하늘 장식.",
   "intro": "달과 하늘에 관한 기호를 모았습니다. 이모지 달은 위상 여덟 단계가 모두 따로 있어서 실제 달 모양을 그대로 나타낼 수 있고, ☾ ☽ 두 문자는 이모지가 아니라 일반 문자라 색이 입혀지지 않고 글자 색을 따라갑니다. 프로필과 감성 문구에는 이 둘이 특히 많이 쓰입니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s0",
@@ -320,6 +320,43 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/dal-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/moon-celestial-symbols/"
+    }
+  ],
+  "collection_section": {
+    "id": "celestial-collections",
+    "label": "천체 순서 모음",
+    "h2": "천체 순서 모음",
+    "intro": "천체 순서를 한 번에 복사하세요. 천문학 순서로 배열한 달의 여덟 위상과, 해돋이부터 밤까지 이어지는 태양의 하루입니다."
+  },
+  "collection_container_id": "celestialCollectionsContainer",
+  "collections": [
+    {
+      "name": "달의 위상 (천문학 순서)",
+      "flags": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕",
+        "🌖",
+        "🌗",
+        "🌘"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "태양의 하루 흐름",
+      "flags": [
+        "🌅",
+        "🌞",
+        "🌇",
+        "🌃"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

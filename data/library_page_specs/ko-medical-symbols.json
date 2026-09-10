@@ -1,7 +1,7 @@
 {
   "slug": "uiryo-giho",
   "title": "의료 기호 ⚕ ☤ ℞ 💊 — 병원·약국 기호 복사 붙여넣기 | UltraTextGen",
-  "meta_description": "의료 기호 모음 ⚕ ☤ ⚚ ℞ ✚ 🩺 💊 💉. 의료 지팡이, 처방 기호, 십자 표시 16개를 눌러서 바로 복사하세요.",
+  "meta_description": "의료 기호 모음 ⚕ ☤ ⚚ ℞ ✚ 🩺 💊 💉. 의료 지팡이, 처방 기호, 십자 표시, 응급 이모지 20개를 눌러서 바로 복사하세요.",
   "breadcrumb": "의료 기호",
   "hero_h1": "의료 기호",
   "hero_tagline": "⚕ ☤ ⚚ ℞ ✚ 🩺 💊 — 병원과 약국에서 쓰는 기호.",
@@ -93,6 +93,22 @@
         {
           "char": "🚑",
           "label": "구급차"
+        },
+        {
+          "char": "😷",
+          "label": "마스크 쓴 얼굴"
+        },
+        {
+          "char": "🏥",
+          "label": "병원"
+        },
+        {
+          "char": "🩻",
+          "label": "엑스레이"
+        },
+        {
+          "char": "❤️‍🩹",
+          "label": "회복 중인 하트"
         }
       ]
     }
@@ -168,6 +184,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/uiryo-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/medical-symbols/"
     }
   ]
 }

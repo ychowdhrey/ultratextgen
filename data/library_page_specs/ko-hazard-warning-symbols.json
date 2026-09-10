@@ -1,7 +1,7 @@
 {
   "slug": "gyeonggo-giho",
   "title": "경고 기호 ☢ ☣ ⚠ ⚡ ☠ — 위험·주의 표시 복사 | UltraTextGen",
-  "meta_description": "경고 기호 모음 ☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔. 방사능·생물학적 위험·고전압·주의 표시 16개를 눌러서 복사하세요.",
+  "meta_description": "경고 기호 모음 ☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔. 방사능·생물학적 위험·고전압·주의·금지 표시 23개를 눌러서 복사하세요.",
   "breadcrumb": "경고 기호",
   "hero_h1": "경고 기호",
   "hero_tagline": "☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔ — 위험을 알리는 표시.",
@@ -95,6 +95,42 @@
           "label": "진입 금지"
         }
       ]
+    },
+    {
+      "id": "no-sign",
+      "label": "금지와 통행 금지 표지",
+      "h2": "금지와 통행 금지 표지",
+      "intro": "경고문과 안내문에 쓰는 금지 기호와 통행 금지 표지.",
+      "symbols": [
+        {
+          "char": "🚫",
+          "label": "금지 표시"
+        },
+        {
+          "char": "∅",
+          "label": "공집합"
+        },
+        {
+          "char": "Ø",
+          "label": "사선 O"
+        },
+        {
+          "char": "🚭",
+          "label": "금연"
+        },
+        {
+          "char": "🚷",
+          "label": "보행자 통행 금지"
+        },
+        {
+          "char": "📵",
+          "label": "휴대전화 사용 금지"
+        },
+        {
+          "char": "🔞",
+          "label": "미성년자 이용 금지"
+        }
+      ]
     }
   ],
   "faq_h2": "경고 기호 자주 묻는 질문",
@@ -164,6 +200,10 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/gyeonggo-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/hazard-warning-symbols/"
     }
   ]
 }

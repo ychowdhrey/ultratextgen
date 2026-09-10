@@ -6,7 +6,7 @@
   "hero_h1": "배그 특수문자",
   "hero_tagline": "ツ ッ 彡 乂 ꧁ ꧂ ⚔ ☠ ★ — 닉네임과 클랜 태그용 기호.",
   "intro": "배틀그라운드와 배그 모바일 닉네임에 쓰는 기호를 모았습니다. 게임이 허용하는 문자가 정해져 있어서, 아무 기호나 되는 것은 아닙니다. 아래는 실제로 통과하는 경우가 많은 것들 위주이고, 그래도 넣기 전에 실제 입력칸에서 한 번 확인하는 편이 안전합니다. 닉네임 장식 전반은 <a href=\"/ko/library/nickname-giho/\">닉네임 특수문자</a>에 더 많습니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s0",
@@ -236,6 +236,71 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/baegeu-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/pubg-symbols/"
+    }
+  ],
+  "collection_section": {
+    "id": "pubg-collections",
+    "label": "바로 쓰는 배그 닉네임 조합",
+    "h2": "바로 쓰는 배그 닉네임 조합",
+    "intro": "배치를 통째로 복사한 뒤 이름만 바꿔 넣으세요. 액자까지 합쳐 14자 제한이라는 점을 기억하세요."
+  },
+  "collection_container_id": "pubgCollectionsContainer",
+  "collections": [
+    {
+      "name": "기본 액자 태그",
+      "flags": [
+        "꧁",
+        "이름",
+        "꧂"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "츠 웃음 액자",
+      "flags": [
+        "ツ",
+        "이름",
+        "ツ"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "교차 검 감싸기",
+      "flags": [
+        "乂•",
+        "이름",
+        "•乂"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "별 괄호 태그",
+      "flags": [
+        "「★」",
+        "이름"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "해골 전사 태그",
+      "flags": [
+        "☠",
+        "이름",
+        "☠"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "왕관 태그",
+      "flags": [
+        "♛",
+        "이름"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

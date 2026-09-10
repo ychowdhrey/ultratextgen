@@ -6,7 +6,7 @@
   "hero_h1": "인스타 특수문자",
   "hero_tagline": "✦ ✧ ⊹ ⌇ ♡ ❝ ❞ ✿ ◉ — 프로필과 캡션, 하이라이트 커버용.",
   "intro": "인스타그램 프로필 소개와 캡션을 꾸미는 기호를 모았습니다. 소개 칸은 줄바꿈이 제한적이라 기호로 구간을 나누는 방식이 자주 쓰이고, 하이라이트 커버에는 단순한 도형이 잘 어울립니다. 글자 모양 자체를 바꾸고 싶다면 <a href=\"/ko/insta-font/\">인스타 폰트</a> 쪽이 맞습니다.",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "s0",
@@ -336,6 +336,91 @@
     {
       "lang": "ko",
       "href": "https://ultratextgen.com/ko/library/insta-giho/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/instagram-symbols/"
+    }
+  ],
+  "collection_section": {
+    "id": "instagram-collections",
+    "label": "인스타 프로필과 캡션 조합",
+    "h2": "인스타 프로필과 캡션 조합",
+    "intro": "프로필, 캡션, 스토리에 그대로 붙여 넣는 인스타 조합입니다. 한 번 눌러 전체를 복사하세요."
+  },
+  "collection_container_id": "instagramCollectionsContainer",
+  "collections": [
+    {
+      "name": "인스타 프로필 구분선",
+      "flags": [
+        "✦",
+        "⊹",
+        "˚",
+        "✧",
+        "˚",
+        "⊹",
+        "✦"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "반짝임 캡션 조합",
+      "flags": [
+        "✨",
+        "•",
+        "✨",
+        "🌟",
+        "✨",
+        "•",
+        "✨"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "꽃 프로필 구분선",
+      "flags": [
+        "✿",
+        "─",
+        "✿",
+        "─",
+        "✿"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "점 프로필 여백",
+      "flags": [
+        "·",
+        "◦",
+        "·",
+        "◦",
+        "·"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "달과 구름 캡션",
+      "flags": [
+        "🌙",
+        "☁️",
+        "˖",
+        "✦",
+        "˖",
+        "☁️",
+        "🌙"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "하트 눈 캡션 조합",
+      "flags": [
+        "♡",
+        "˖",
+        "😍",
+        "˖",
+        "♡"
+      ],
+      "defaultFormat": "inline"
     }
   ]
 }

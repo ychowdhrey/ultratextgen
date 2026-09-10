@@ -13,6 +13,162 @@
       ],
       "kicker": "SYM",
       "added": "2026-08-29"
+    },
+    "ko-library-dongmul-imoji": {
+      "title": "동물 이모지",
+      "sub": "🐶 🐱 🐰 🦊 🐼 🐧 🐳 🦋 🐢 — 99종을 종류별로.",
+      "glyphs": [
+        "🐶",
+        "🐕",
+        "🐩",
+        "🐱",
+        "🐈"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-eumsik-imoji": {
+      "title": "음식 이모지",
+      "sub": "🍎 🍕 🍜 🍣 🍙 🍰 ☕ 🧋 🍧 — 과일부터 음료까지 96개.",
+      "glyphs": [
+        "🍎",
+        "🥑",
+        "🍇",
+        "🍊",
+        "🍋"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-son-giho": {
+      "title": "손 이모지",
+      "sub": "👆 👍 👌 ✌ 🫰 🫶 🙏 — 가리키기부터 손하트까지.",
+      "glyphs": [
+        "👆",
+        "👇",
+        "👈",
+        "👉",
+        "☝"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-gyeonggo-giho": {
+      "title": "경고 기호",
+      "sub": "☢ ☣ ☠ ⚠ ⚡ ‼ ❗ ⛔ — 위험을 알리는 표시.",
+      "glyphs": [
+        "☢",
+        "☣",
+        "☠",
+        "⚰",
+        "⚱"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-uiryo-giho": {
+      "title": "의료 기호",
+      "sub": "⚕ ☤ ⚚ ℞ ✚ 🩺 💊 — 병원과 약국에서 쓰는 기호.",
+      "glyphs": [
+        "⚕",
+        "⚕️",
+        "☤",
+        "⚚",
+        "℞"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-gyotong-giho": {
+      "title": "교통 이모지",
+      "sub": "🚗 🚌 🏍 🚲 🚇 🚅 ✈ 🚢 ⚓ — 도로부터 항공·선박까지.",
+      "glyphs": [
+        "🚗",
+        "🚕",
+        "🚌",
+        "🚎",
+        "🏎"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-ascii-art": {
+      "title": "아스키 아트 재료",
+      "sub": "─ │ ┌ █ ░ ▓ ⣿ ◆ — 완성된 그림이 아니라, 직접 그릴 때 쓰는 재료입니다.",
+      "glyphs": [
+        "─",
+        "│",
+        "┌",
+        "┐",
+        "└"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-baegeu-giho": {
+      "title": "배그 특수문자",
+      "sub": "ツ ッ 彡 乂 ꧁ ꧂ ⚔ ☠ ★ — 닉네임과 클랜 태그용 기호.",
+      "glyphs": [
+        "ツ",
+        "ッ",
+        "彡",
+        "乂",
+        "亗"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-banjjagi-giho": {
+      "title": "반짝이 특수문자",
+      "sub": "✦ ✧ ⊹ ❇ ❈ ✺ ★ ❦ ࿐ — 프로필과 다꾸에 쓰는 반짝임.",
+      "glyphs": [
+        "✨",
+        "💫",
+        "🌟",
+        "⭐",
+        "🔆"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-insta-giho": {
+      "title": "인스타 특수문자",
+      "sub": "✦ ✧ ⊹ ⌇ ♡ ❝ ❞ ✿ ◉ — 프로필과 캡션, 하이라이트 커버용.",
+      "glyphs": [
+        "✨",
+        "•",
+        "·",
+        "│",
+        "⌇"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "ko-library-dal-giho": {
+      "title": "달 기호",
+      "sub": "☾ ☽ 🌙 🌑 🌕 ☀ ✦ ⋆ — 달의 위상과 밤하늘 장식.",
+      "glyphs": [
+        "🌑",
+        "🌒",
+        "🌓",
+        "🌔",
+        "🌕"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
+    },
+    "library-kakaotalk-symbols": {
+      "title": "KakaoTalk Symbols",
+      "sub": "꒰ ꒱ ♡ ⋆ ⊹ ㅋㅋ ㅠㅠ: frames for your name, accents for your status, and th",
+      "glyphs": [
+        "꒰",
+        "꒱",
+        "「",
+        "」",
+        "『"
+      ],
+      "kicker": "LIB",
+      "added": "2026-08-29"
     }
   }
 }
