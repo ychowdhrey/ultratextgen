@@ -88,8 +88,19 @@ const LANG_SWITCHER = {
 
 const EN_CTA = {
   h3: 'Transform text with Unicode fonts',
-  p: 'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
-     'other Unicode font styles — free and instant.',
+  // Both wordings, and that is the point. The shared default in
+  // scripts/generate_library_page_from_spec.py (SHARED_CTA_DEFAULTS) lost its
+  // em dash when the em-dash policy landed; this table kept the old sentence.
+  // Since the swap below is an exact string match, the fixer then matched
+  // nothing on every freshly generated page while still reporting success —
+  // "0 CTA card(s)" read as "none needed" when it meant "none found". Keep the
+  // historical form here as long as any page on disk still carries it.
+  p: [
+    'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
+      'other Unicode font styles. Free and instant.',
+    'Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ ' +
+      'other Unicode font styles — free and instant.'
+  ],
   btn: 'Open UltraTextGen →'
 };
 
@@ -288,7 +299,7 @@ for (const loc of locales) {
             touched = true;
           };
           swap(`<h3>${EN_CTA.h3}</h3>`, `<h3>${cta.h3}</h3>`);
-          swap(`<p>${EN_CTA.p}</p>`, `<p>${cta.p}</p>`);
+          for (const enP of EN_CTA.p) swap(`<p>${enP}</p>`, `<p>${cta.p}</p>`);
           swap(`>${EN_CTA.btn}</a>`, `>${cta.btn}</a>`);
           if (touched) stat.cta++;
           return out;
