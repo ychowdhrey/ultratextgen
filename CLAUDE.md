@@ -3178,7 +3178,7 @@ a translation this repo may author. Both harvest sources fail, and fail
 
 | source | result (measured 2026-09-10) |
 |---|---|
-| the site's own corpus | `Follower` on **0** of 373 `de/` pages, フォロワー on **0** of `ja/` — while `Kommentar` (57), `Antworten` (259), `Beiträge` (28) and `Profil` (47) are well attested |
+| the site's own corpus | `Follower` on **0** of 267 `de/` pages (case-insensitively, and `Abonnenten` too), フォロワー on **0** of 202 `ja/` — while `Kommentar` (57), `Antworten` (259), `Beiträge` (28) and `Profil` (47) are well attested |
 | `locales/*.json` | a display-name word exists in **15 of 31** files; `Share` exists as `ui.shareResult.label`; the other nine concepts in none |
 
 Either harvest ships a mockup that is **half English on every locale** — the
