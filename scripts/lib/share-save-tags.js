@@ -34,7 +34,12 @@ const HOST_SCRIPTS = {
   /** The generator: builds result cards carrying Copy + Save + Share. */
   generator: '/script.js',
   /** Library and symbol pages: static tiles, enhanced at runtime. */
-  explorer: '/symbol-explorer.js'
+  explorer: '/symbol-explorer.js',
+  /** Printables (2026-09-10): the sheet engines offer Share / Share-image /
+   *  Copy-link beside Print, through the same share-core. */
+  printables: '/js/printables/printablesEngine.js',
+  monogram: '/js/printables/monogramEngine.js',
+  crossStitch: '/js/printables/crossStitchEngine.js'
 };
 
 /**
@@ -49,9 +54,8 @@ const HOST_SCRIPTS = {
  * scripts/sync-explorer-strings.js keeps in agreement with locales/*.json.
  */
 function requiredTags(html) {
-  const hasGenerator = html.includes(`src="${HOST_SCRIPTS.generator}"`);
-  const hasExplorer = html.includes(`src="${HOST_SCRIPTS.explorer}"`);
-  if (!hasGenerator && !hasExplorer) return [];
+  const hostsCopy = Object.values(HOST_SCRIPTS).some((src) => html.includes(`src="${src}"`));
+  if (!hostsCopy) return [];
   return [SHARE_CORE, SAVED_ITEMS].filter((src) => !html.includes(`src="${src}"`));
 }
 

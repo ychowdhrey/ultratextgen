@@ -23,7 +23,16 @@
     rowsWord:        CS_CFG.rowsWord        || "rows",
     stitchOne:       CS_CFG.stitchOne       || "stitch",
     stitchMany:      CS_CFG.stitchMany      || "stitches",
-    emptyHint:       CS_CFG.emptyHint       || "Type a word or name above to see its cross-stitch chart."
+    emptyHint:       CS_CFG.emptyHint       || "Type a word or name above to see its cross-stitch chart.",
+    /* Share row + PDF (2026-09-10). Harvested from printablesEngine.js's
+       printOpts per locale; a translated page overrides them from its own
+       config like the keys above. */
+    share:           CS_CFG.share           || "Share",
+    shareImage:      CS_CFG.shareImage      || "Share as image",
+    copyLink:        CS_CFG.copyLink        || "Copy link",
+    linkCopied:      CS_CFG.linkCopied      || "Link copied",
+    pinterest:       CS_CFG.pinterest       || "Save to Pinterest",
+    savePdf:         CS_CFG.savePdf         || "Save as PDF"
   };
 
   /* ── The 5×7 stitch alphabet ──────────────────────────────────────
@@ -311,9 +320,10 @@
     }
   }
 
-  function downloadPNG() {
+  // The export canvas every path draws: PNG download, image share, PDF.
+  function buildCanvas() {
     const model = buildRows(state.text);
-    if (model.empty || model.cols === 0) return;
+    if (model.empty || model.cols === 0) return null;
 
     const cell = 40;
     const margin = 40;
@@ -368,20 +378,90 @@
     ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
     ctx.fillStyle = "#aeb4c0";
     ctx.textAlign = "center";
-    ctx.fillText("ultratextgen.com", canvasW / 2, canvasH - 16);
+    ctx.fillText(window.UltraTextGen && window.UltraTextGen.printableCredit ? window.UltraTextGen.printableCredit() : "ultratextgen.com", canvasW / 2, canvasH - 16);
 
+    return canvas;
+  }
+
+  function exportName() { return "cross-stitch-" + (slugify(state.text) || "pattern"); }
+
+  function downloadPNG() {
+    const canvas = buildCanvas();
+    if (!canvas) return;
     canvas.toBlob(function (blob) {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "cross-stitch-" + (slugify(state.text) || "pattern") + ".png";
+      a.download = exportName() + ".png";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
       trackPrintable("download_png", "cross_stitch");
     }, "image/png");
+  }
+
+  function shareImage() {
+    const canvas = buildCanvas();
+    if (!canvas) return;
+    canvas.toBlob(function (blob) {
+      if (!blob) return;
+      const ns = window.UltraTextGen;
+      if (ns && ns.shareImageBlob) {
+        ns.shareImageBlob(blob, { filename: exportName() + ".png", title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+      }
+    }, "image/png");
+  }
+
+  // js/printables/printablePdf.js is fetched on first use, never on load.
+  let pdfModulePromise = null;
+  function loadPdfModule() {
+    const ns = window.UltraTextGen;
+    if (ns && ns.pdf) return Promise.resolve(ns.pdf);
+    if (pdfModulePromise) return pdfModulePromise;
+    pdfModulePromise = new Promise(function (resolve, reject) {
+      const sc = document.createElement("script");
+      sc.src = "/js/printables/printablePdf.js";
+      sc.async = true;
+      sc.onload = function () { resolve(window.UltraTextGen && window.UltraTextGen.pdf); };
+      sc.onerror = function () { pdfModulePromise = null; reject(new Error("pdf module failed to load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfModulePromise;
+  }
+
+  function savePdf() {
+    const canvas = buildCanvas();
+    if (!canvas) return;
+    loadPdfModule().then(function (P) {
+      if (!P || !P.supported()) { printPattern(); return; }
+      return P.fromCanvases([canvas], { paperIn: { w: 8.5, h: 11 }, marginIn: { x: 0.6, y: 0.75 }, title: document.title })
+        .then(function (blob) { P.download(blob, exportName() + ".pdf"); trackPrintable("download_pdf", "cross_stitch"); });
+    }).catch(function () { printPattern(); });
+  }
+
+  /* ── Preset link (the share URL) ─────────────────────────────────── */
+  function presetUrl() {
+    const params = new URLSearchParams();
+    if (state.text.trim()) params.set("text", state.text.trim().slice(0, 40));
+    if (state.color !== "#2b2b2b") params.set("color", state.color);
+    if (state.style !== "x-stitch") params.set("style", state.style);
+    const qs = params.toString();
+    return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
+  }
+  function applyPreset(input) {
+    let q = null;
+    try { q = new URLSearchParams(window.location.search); } catch (err) { return; }
+    const text = q.get("text") || q.get("q");
+    if (text) { state.text = String(text).slice(0, 40); if (input) input.value = state.text; }
+    [["color", "#cs-color-group"], ["style", "#cs-style-group"]].forEach(function (pair) {
+      const val = q.get(pair[0]);
+      const group = $(pair[1]);
+      if (!val || !group) return;
+      const btn = group.querySelector('[data-value="' + val.replace(/[^#a-z0-9-]/gi, "") + '"]');
+      if (btn) btn.click();
+    });
   }
 
   /* ── Print ─────────────────────────────────────────────────────────
@@ -497,7 +577,33 @@
 
     const pngBtn = $("#cs-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
+    if (pngBtn) {
+      const pdfBtn = document.createElement("button");
+      pdfBtn.type = "button";
+      pdfBtn.className = pngBtn.className + " pt-pdf-btn";
+      pdfBtn.textContent = T.savePdf;
+      pdfBtn.addEventListener("click", savePdf);
+      pngBtn.insertAdjacentElement("afterend", pdfBtn);
+    }
 
+    // Share row (share-core's builder, shared with the sheet engine) under
+    // the action buttons; a share link reopens this exact chart.
+    const ns = window.UltraTextGen;
+    const actions = (pngBtn || printBtn) && (pngBtn || printBtn).parentNode;
+    if (ns && ns.buildShareRow && actions) {
+      const og = document.querySelector('meta[property="og:image"]');
+      actions.insertAdjacentElement("afterend", ns.buildShareRow({
+        className: "pt-share-row",
+        url: presetUrl,
+        surface: "printables",
+        itemType: "printable",
+        labels: { share: T.share, shareImage: T.shareImage, copyLink: T.copyLink, linkCopied: T.linkCopied, pinterest: T.pinterest },
+        onShareImage: shareImage,
+        pinMedia: function () { return og ? og.getAttribute("content") : ""; }
+      }));
+    }
+
+    applyPreset(input);
     render();
   }
 

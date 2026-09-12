@@ -80,9 +80,129 @@
     },
     {
       "pattern": "printables/*",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Printable letterform spokes (bubble/cursive/block/calligraphy alphabets, tracing and coloring sheets). Added 2026-08-12: these previously matched NO pattern at all, so classifyParent returned pattern:null and tier:'unclassified', which the flowchart already treated as gated tail — its own rationale said to 'raise it with the user rather than assuming it's Core'. This entry codifies that existing de-facto treatment rather than changing it, and gives the pattern a real key so a per-locale gate-pass can actually be recorded in data/locale_parent_gap_audit.json (a null key could not be). Deliberately `gated`, not `core`: the printables engine renders Latin letterforms, and per-locale demand varies enormously — the 2026-07-10 i18n demand pass found strong evidence in es/fr/de/pt/pl, medium in it, and rated several other locales weak. Marked scriptIndependent:false for the same reason category/* is — a Latin-letterform tracing sheet is not meaningful for a non-Latin script. Note printables/index.html remains a separate, more-specific `core` entry: the pillar HUB mirrors by default, the spokes beneath it gate. || RE-TIERED gated -> core on 2026-09-10 (D15, approved 2026-08-30 conditional on validating the printables RPM at scale; precondition met 2026-09-05 on 1,808 users and re-confirmed 2026-09-10 on a third window: printables are 5.4% of landing users and 40.5% of ad revenue, RPU 11.6x the site, with FR/DE locale printables earning at EN-like RPU). The family LANDING pages (the \"23 hubs\", Class B in the global-locale architecture doc) now mirror by default into qualified Latin-script locales; the locale slug/H1 remains a locale-native naming decision. Two carve-outs are recorded as more-specific entries below: the per-letter/number children under each alphabet family are \"never\" (Class E: 223 EN spokes drew about 10 landing users and about $0.50 in 18 days; a doorway-fleet shape, never mirrored), and the English-wordplay/US-pedagogy pages (*-in-cursive, sight-word-tracing, spanish-alphabet-chart) stay \"gated\" (Class D). scriptIndependent stays false."
+    },
+    {
+      "pattern": "printables/block-letters/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/block-letters (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/block-letters/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/block-letters/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/block-letters/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/bubble-letters/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/bubble-letters (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/bubble-letters/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/bubble-letters/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/bubble-letters/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/cursive-alphabet/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/cursive-alphabet (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/cursive-alphabet/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/cursive-alphabet/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/cursive-alphabet/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/calligraphy-alphabet/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/calligraphy-alphabet (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/calligraphy-alphabet/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/calligraphy-alphabet/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/calligraphy-alphabet/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/alphabet-coloring-pages/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/alphabet-coloring-pages (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/alphabet-coloring-pages/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/alphabet-coloring-pages/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/alphabet-coloring-pages/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/dot-to-dot-alphabet/index.html",
+      "tier": "core",
+      "scriptIndependent": false,
+      "rationale": "Family landing page for printables/dot-to-dot-alphabet (Class B hub). Exact-match entry so it stays core while its per-letter/number children under printables/dot-to-dot-alphabet/* are never mirrored; the matcher has no glob for letter-*/number-*, so the landing and the children are separated by specificity (exact path beats the trailing-wildcard entry). Added 2026-09-10 with the D15 re-tier."
+    },
+    {
+      "pattern": "printables/dot-to-dot-alphabet/*",
+      "tier": "never",
+      "scriptIndependent": false,
+      "rationale": "Per-letter and per-number children under printables/dot-to-dot-alphabet/ (letter-a..z, number-0..9). Class E, never mirror regardless of demand: the 223 EN children earned about $0.50 across 18 days (2026-08-24..09-10) on about 10 landing users while the family landings earned everything; they were also the shape named in the 2026-08-16 collapse hypotheses (26-page per-letter families). Do not translate, do not build more. Added 2026-09-10."
+    },
+    {
+      "pattern": "printables/best-friend-in-cursive/index.html",
       "tier": "gated",
       "scriptIndependent": false,
-      "rationale": "Printable letterform spokes (bubble/cursive/block/calligraphy alphabets, tracing and coloring sheets). Added 2026-08-12: these previously matched NO pattern at all, so classifyParent returned pattern:null and tier:'unclassified', which the flowchart already treated as gated tail — its own rationale said to 'raise it with the user rather than assuming it's Core'. This entry codifies that existing de-facto treatment rather than changing it, and gives the pattern a real key so a per-locale gate-pass can actually be recorded in data/locale_parent_gap_audit.json (a null key could not be). Deliberately `gated`, not `core`: the printables engine renders Latin letterforms, and per-locale demand varies enormously — the 2026-07-10 i18n demand pass found strong evidence in es/fr/de/pt/pl, medium in it, and rated several other locales weak. Marked scriptIndependent:false for the same reason category/* is — a Latin-letterform tracing sheet is not meaningful for a non-Latin script. Note printables/index.html remains a separate, more-specific `core` entry: the pillar HUB mirrors by default, the spokes beneath it gate."
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/dad-in-cursive/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/family-in-cursive/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/love-in-cursive/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/mom-in-cursive/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/happy-birthday-in-cursive/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/sight-word-tracing/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
+    },
+    {
+      "pattern": "printables/spanish-alphabet-chart/index.html",
+      "tier": "gated",
+      "scriptIndependent": false,
+      "rationale": "Class D (English-wordplay or US-pedagogy page: *-in-cursive phrase pages, Dolch sight words, the Spanish alphabet chart for English speakers). Stays gated after the 2026-09-10 D15 re-tier of printables/* to core: translate only on a recorded per-locale demand pass (EP-003 dropped the ES translations of these on ~0 demand). spanish-alphabet-chart already has seven locale builds (a pre-D15 over-translation); this entry does not retire them, it stops the default from making more."
     },
     {
       "pattern": "answers/*",
