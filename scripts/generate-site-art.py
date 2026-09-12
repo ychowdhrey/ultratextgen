@@ -2947,6 +2947,7 @@ PAGES.update({
 "es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
 "es-imprimibles-moldes-de-letras": ("Moldes de Letras para Imprimir", "Plantillas huecas A-Z y 0-9 para recortar y pintar", P(m_letter_stencil, letter="M"), K_PRINT),
 "de-zum-ausdrucken-buchstaben-vorlagen": ("Buchstaben zum Ausdrucken", "Hohle Vorlagen A-Z und 0-9 zum Ausschneiden", P(m_letter_stencil, letter="B"), K_PRINT),
+"fr-imprimables-lettres-a-imprimer": ("Lettres à Imprimer et à Découper", "Contours creux A-Z et 0-9 à découper et à colorier", P(m_letter_stencil, letter="L"), K_PRINT),
 "es-imprimibles-ejercicios-de-caligrafia": ("Ejercicios de Caligrafia", "Fichas con linea modelo, repaso y renglon en blanco", P(m_trace_rows, sample="Mateo"), K_PRINT),
 "printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
 "printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
