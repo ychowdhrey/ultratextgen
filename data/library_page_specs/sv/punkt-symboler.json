@@ -1,0 +1,292 @@
+{
+ "slug": "punkt-symboler",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Punktsymboler att kopiera – bullet points och listtecken",
+ "meta_description": "Punktsymboler, bullet points och listtecken att kopiera och klistra in – pilpunkter, bockpunkter och dekorativa punkter för dokument och sociala inlägg. Klicka på en symbol för att kopiera direkt.",
+ "breadcrumb": "Punktsymboler att kopiera",
+ "hero_h1": "Punktsymboler att kopiera",
+ "hero_tagline": "Kopiera punkttecken och listtecken (bullet points) för LinkedIn-inlägg, mejl, dokument och sociala medier. Klicka på en symbol för att kopiera direkt.",
+ "intro": "Bullet points, eller punkter, hjälper dig att strukturera innehåll visuellt i alla textmiljöer. Oavsett om du formaterar ett LinkedIn-inlägg, strukturerar ett mejl eller pryder en bio i sociala medier fungerar de här Unicode-punkttecknen tillförlitligt att kopiera och klistra in på alla plattformar – utan särskild programvara.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/punkt-symboler/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/punkt-symboler/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/bullet-point-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/pil-symboler/",
+   "title": "Pilsymboler",
+   "desc": "En referenssamling med pil-tecken för alla riktningar och stilar – raka, böjda, dubbla, triangelformade och emoji-pilar. Klicka på en symbol för att."
+  },
+  {
+   "href": "/sv/library/bock-symboler/",
+   "title": "Bocksymboler",
+   "desc": "En samling bockar, kryss, statuscirklar och checklistetecken – med den gröna bocken (✅) som de flesta faktiskt söker efter allra först. Klicka på ett."
+  },
+  {
+   "href": "/sv/library/skiljetecken/",
+   "title": "Skiljetecken",
+   "desc": "Citationstecken, utropstecken, kors, stycketecken, interrobang och upp-och-nedvända tecken – skiljetecknen som inte finns på tangentbordet. Klicka på."
+  }
+ ],
+ "sections": [
+  {
+   "id": "classic-bullets",
+   "label": "Klassiska punkttecken",
+   "h2": "Klassiska punkttecken",
+   "intro": "Vanliga punkttecken för listor och dispositioner.",
+   "symbols": [
+    {
+     "char": "•",
+     "label": "Punkt"
+    },
+    {
+     "char": "‣",
+     "label": "Triangelpunkt"
+    },
+    {
+     "char": "◦",
+     "label": "Vit punkt"
+    },
+    {
+     "char": "⁃",
+     "label": "Bindestreckspunkt"
+    },
+    {
+     "char": "∙",
+     "label": "Punktoperator"
+    },
+    {
+     "char": "⊙",
+     "label": "Ringad punktoperator"
+    },
+    {
+     "char": "⊚",
+     "label": "Ringad ringoperator"
+    },
+    {
+     "char": "◉",
+     "label": "Fisköga"
+    }
+   ]
+  },
+  {
+   "id": "arrow-bullets",
+   "label": "Pilpunkttecken",
+   "h2": "Pilpunkttecken",
+   "intro": "Punkter i pilstil för listor som behöver riktning och eftertryck.",
+   "symbols": [
+    {
+     "char": "▸",
+     "label": "Svart högerpekare"
+    },
+    {
+     "char": "►",
+     "label": "Svart högertriangel"
+    },
+    {
+     "char": "→",
+     "label": "Pil höger"
+    },
+    {
+     "char": "➤",
+     "label": "Svart pilspets höger"
+    },
+    {
+     "char": "➜",
+     "label": "Tjock rundspetsad pil höger"
+    },
+    {
+     "char": "➔",
+     "label": "Tjock bredhövdad pil höger"
+    },
+    {
+     "char": "▶",
+     "label": "Svart högertriangel"
+    },
+    {
+     "char": "▷",
+     "label": "Vit högertriangel"
+    }
+   ]
+  },
+  {
+   "id": "checkmark-bullets",
+   "label": "Bock- & kryssrutepunkter",
+   "h2": "Bock- & kryssrutepunkter",
+   "intro": "Bockar och kryssrutor för att-göra-listor och funktionsjämförelser.",
+   "symbols": [
+    {
+     "char": "✓",
+     "label": "Bock"
+    },
+    {
+     "char": "✔",
+     "label": "Tjock bock"
+    },
+    {
+     "char": "☑",
+     "label": "Kryssruta med bock"
+    },
+    {
+     "char": "✅",
+     "label": "Bockknapp"
+    },
+    {
+     "char": "☐",
+     "label": "Kryssruta"
+    },
+    {
+     "char": "☒",
+     "label": "Kryssruta med kryss"
+    }
+   ]
+  },
+  {
+   "id": "star-diamond-bullets",
+   "label": "Stjärn- & rombpunkttecken",
+   "h2": "Stjärn- & rombpunkttecken",
+   "intro": "Dekorativa stjärn- och rombpunkter för snygga listor.",
+   "symbols": [
+    {
+     "char": "★",
+     "label": "Svart stjärna"
+    },
+    {
+     "char": "◆",
+     "label": "Svart romb"
+    },
+    {
+     "char": "✦",
+     "label": "Svart fyruddig stjärna"
+    },
+    {
+     "char": "◇",
+     "label": "Vit romb"
+    },
+    {
+     "char": "◈",
+     "label": "Vit romb med liten svart romb"
+    },
+    {
+     "char": "❖",
+     "label": "Svart romb minus vitt kryss"
+    },
+    {
+     "char": "✧",
+     "label": "Vit fyruddig stjärna"
+    },
+    {
+     "char": "✶",
+     "label": "Sexuddig svart stjärna"
+    }
+   ]
+  },
+  {
+   "id": "decorative-bullets",
+   "label": "Dekorativa blomster- & ornamentpunkter",
+   "h2": "Dekorativa blomster- & ornamentpunkter",
+   "intro": "Blomster- och ornamentpunkter för kreativ och estetisk liststil.",
+   "symbols": [
+    {
+     "char": "❀",
+     "label": "Vit blomma"
+    },
+    {
+     "char": "❁",
+     "label": "Åttabladig konturerad svart blomma"
+    },
+    {
+     "char": "✿",
+     "label": "Svart blomma"
+    },
+    {
+     "char": "⚘",
+     "label": "Blomma"
+    },
+    {
+     "char": "✾",
+     "label": "Sexbladig svartvit blomma"
+    },
+    {
+     "char": "❃",
+     "label": "Tjock blomma"
+    },
+    {
+     "char": "✻",
+     "label": "Asterisk med droppekrar"
+    },
+    {
+     "char": "❋",
+     "label": "Tjock åttabladig blomma"
+    }
+   ]
+  },
+  {
+   "id": "numbered-circled",
+   "label": "Ringade sifferpunkter",
+   "h2": "Ringade sifferpunkter",
+   "intro": "Ringade siffror för numrerade listor som behåller formateringen i ren text.",
+   "symbols": [
+    {
+     "char": "①",
+     "label": "Ringad etta"
+    },
+    {
+     "char": "②",
+     "label": "Ringad tvåa"
+    },
+    {
+     "char": "③",
+     "label": "Ringad trea"
+    },
+    {
+     "char": "④",
+     "label": "Ringad fyra"
+    },
+    {
+     "char": "⑤",
+     "label": "Ringad femma"
+    },
+    {
+     "char": "⑥",
+     "label": "Ringad sexa"
+    },
+    {
+     "char": "⑦",
+     "label": "Ringad sjua"
+    },
+    {
+     "char": "⑧",
+     "label": "Ringad åtta"
+    },
+    {
+     "char": "⑨",
+     "label": "Ringad nia"
+    },
+    {
+     "char": "⑩",
+     "label": "Ringad tia"
+    }
+   ]
+  }
+ ]
+}

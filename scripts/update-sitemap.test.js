@@ -21,7 +21,7 @@
    page-hero-figure shipped aria-hidden with a null alt (see CLAUDE.md,
    "Content Type: Updates", which states that split directly).
    ========================================================== */
-const { getContentImages } = require("./update-sitemap.js");
+const { getContentImages, getContentImageEntries, buildUrlBlock } = require("./update-sitemap.js");
 
 let pass = 0;
 let fail = 0;
@@ -123,6 +123,33 @@ eq("single-quoted attributes parse the same as double-quoted",
 eq("a page with no images yields none",
   getContentImages("<p>no images here</p>"),
   []);
+
+// --- <image:title> from the alt ---------------------------------------------
+// The printables sheet previews (assets/printables-previews/*.png) are the
+// first content images declared with a title. Bing reads <image:title>; the
+// alt is the page's own description, so the two can never disagree.
+eq("a content image's alt is carried as its title",
+  getContentImageEntries(
+    '<figure class="guide-hero-figure pt-sheet-preview">' +
+    '<img src="/assets/printables-previews/printables-block-letters-letter-a.png" ' +
+    'width="1200" height="900" alt="Printable block letter A stencil: hollow outline" loading="lazy"></figure>'),
+  [{ loc: `${B}/assets/printables-previews/printables-block-letters-letter-a.png`,
+     title: "Printable block letter A stencil: hollow outline" }]);
+
+eq("HTML entities in the alt are decoded once, not carried as &amp;amp;",
+  getContentImageEntries('<img src="/x.png" alt="A &amp; B &#39;C&#39;">').map(e => e.title),
+  ["A & B 'C'"]);
+
+eq("the URL block writes <image:title> XML-escaped, and none for a bare og:image",
+  buildUrlBlock("/printables/", "2026-09-10", "weekly", "0.8", [
+    { loc: `${B}/assets/og/printables.png` },
+    { loc: `${B}/assets/printables-previews/x.png`, title: "Letters A & B <hollow>" },
+  ]).split("\n").filter(l => l.includes("image:title")),
+  ["      <image:title>Letters A &amp; B &lt;hollow&gt;</image:title>"]);
+
+eq("a bare string image still emits a plain <image:loc> block",
+  buildUrlBlock("/p/", "2026-09-10", "weekly", "0.8", [`${B}/a.png`]).includes(`<image:loc>${B}/a.png</image:loc>`),
+  true);
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

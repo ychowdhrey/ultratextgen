@@ -1203,12 +1203,16 @@
         '<a href="/printables/dot-to-dot-alphabet/" class="footer-link">Dot-to-Dot Alphabet</a>' +
         '<a href="/printables/cursive-alphabet/" class="footer-link">Cursive Alphabet</a>' +
         '<a href="/printables/block-letters/" class="footer-link">Block Letters &amp; Stencils</a>' +
+        '<a href="/printables/calligraphy-alphabet/" class="footer-link">Calligraphy Alphabet</a>' +
+        '<a href="/printables/graffiti-letters/" class="footer-link">Graffiti Letters</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Generators</span>' +
         '<a href="/printables/handwriting-worksheet-generator/" class="footer-link">Handwriting Worksheets</a>' +
         '<a href="/printables/coloring-page-maker/" class="footer-link">Coloring Page Maker</a>' +
         '<a href="/printables/name-tracing/" class="footer-link">Name Tracing</a>' +
+        '<a href="/printables/sight-word-tracing/" class="footer-link">Sight Word Tracing</a>' +
+        '<a href="/printables/name-puzzle-maker/" class="footer-link">Name Puzzle Maker</a>' +
         '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
         '<a href="/printables/banner-maker/" class="footer-link">Banner Maker</a>' +
         '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +

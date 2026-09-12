@@ -170,6 +170,123 @@
       "kicker": "LIB",
       "added": "2026-08-29"
     },
+    "sv-library-copyright-tecken": {
+      "title": "Copyright-tecken, varumärke & juridiska symboler",
+      "sub": "Copyright, varumärke och juridiska dokumenttecken i Unicode.",
+      "glyphs": [
+        "©",
+        "®",
+        "℗",
+        "Ⓒ",
+        "Ⓡ"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-japanska-tecken": {
+      "title": "Japanska tecken",
+      "sub": "Kanji, hiragana och katakana med romaji och betydelser.",
+      "glyphs": [
+        "桜",
+        "愛",
+        "夢",
+        "月",
+        "星"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-kors-symboler": {
+      "title": "Kors- och X-symboler",
+      "sub": "Multiplikationstecken, kryss-X, religiösa kors och daggertecken.",
+      "glyphs": [
+        "×",
+        "✕",
+        "✖",
+        "⨯",
+        "⋇"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-kortfarg-symboler": {
+      "title": "Kortfärgssymboler ♠ ♥ ♦ ♣",
+      "sub": "Spelkortens färger, tärningar och schackpjäser i Unicode.",
+      "glyphs": [
+        "♠",
+        "♥",
+        "♦",
+        "♣",
+        "♤"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-punkt-symboler": {
+      "title": "Punktsymboler att kopiera",
+      "sub": "Punkttecken och listtecken för inlägg, bios och dokument.",
+      "glyphs": [
+        "•",
+        "‣",
+        "◦",
+        "⁃",
+        "∙"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-skiljetecken": {
+      "title": "Skiljetecken",
+      "sub": "Kors, stycketecken, interrobang och omvända skiljetecken.",
+      "glyphs": [
+        "†",
+        "‡",
+        "⁑",
+        "⁂",
+        "※"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-stjarntecken": {
+      "title": "Stjärntecken & astrologisymboler",
+      "sub": "Västerländska stjärntecken, planetsymboler och kinesiska djurtecken.",
+      "glyphs": [
+        "♈",
+        "♉",
+        "♊",
+        "♋",
+        "♌"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-tangentbord-symboler": {
+      "title": "Tangentbordssymboler",
+      "sub": "Kommando, alternativ, skift och andra tangentsymboler.",
+      "glyphs": [
+        "⌘",
+        "⌥",
+        "⇧",
+        "⌃",
+        "⇪"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
+    "sv-library-vader-symboler": {
+      "title": "Vädersymboler och väder-emoji",
+      "sub": "Vädersymboler, månfaser och atmosfäriska Unicode-tecken.",
+      "glyphs": [
+        "☀",
+        "☼",
+        "🌞",
+        "🌤",
+        "🌅"
+      ],
+      "kicker": "LIB",
+      "added": "2026-09-10"
+    },
     "symbol-orca-emoji": {
       "title": "Orca Emoji",
       "sub": "The black-and-white orca 🫍 with its codepoint, its keyboard routes, th",
