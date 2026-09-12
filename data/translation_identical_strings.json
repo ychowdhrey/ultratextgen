@@ -4561,6 +4561,12 @@
     ],
     "id": [
       {
+        "string": "ASCII Art",
+        "reason": "loanword; Indonesian uses the English term for the form, and this page's own translated prose does too (\"ASCII Art Imlek\", \"Generator ASCII Art\"). Same class as the Emoji and Markdown entries already here.",
+        "found_on": "id/events/imlek/",
+        "added": "2026-09-10"
+      },
+      {
         "string": "Alien",
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from id/library/emoji-wajah/ itself: the tiles around it are translated (Ghost → Hantu; Goblin → Goblin Tengu; Jack-O-Lantern → Labu Halloween), so this one is kept because it genuinely matches.",
         "found_on": "id/library/emoji-wajah/",
