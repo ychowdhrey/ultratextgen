@@ -1436,6 +1436,149 @@
       "verdict": "gate-fail",
       "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. This covers a FR translation of printables/calligraphy-alphabet/ (a calligraphy PRACTICE-SHEET printable), which was authorized by the user on 2026-09-12 as part of 'FR stencil + calligraphy-alphabet' but does not survive its own instrument check. The authorization rested on the locale's RPM, not on this page's demand, which had never been measured: the 2026-09-05 FR/DE pull (ad-revenue-recovery-alignment §11a) contains no calligraphy row at all. KEYWORD VOLUME: 40/mo for the printable intent, Semrush db=fr 2026-09-12 - 'alphabet calligraphie a imprimer' 20, 'calligraphie a imprimer' 20. Both re-checked with correct accents after an accent-stripped first pull, because Semrush treats the accented and unaccented forms as different keywords and the stripped forms understate the cluster; the accented figures are the ones recorded here and they did not move. THE LARGER TERM IS A DIFFERENT JOB: 'calligraphie alphabet' draws 4,400/mo but its SERP is images, stock and tutorials - Pinterest, magnific, amazon.fr, a Faber-Castell technique tutorial, lacalligraphe.fr, letteringcreatif, MyFonts, Shutterstock, Etsy - plus lettering.org's COPY-PASTE calligraphy generator. It is not a practice-sheet SERP, so it cannot be used to justify a practice-sheet page. Reading that 4,400 as demand for this page would be the mirror of the pochoir error in the sibling entry: right word, wrong job. OWNERSHIP: fr/calligraphie/ already exists (a ratified local-only page, 'Calligraphie en ligne a copier-coller') and serves exactly the copy-paste job that the one generator on that SERP serves. A third FR page in the same lexical space would compete with it for no measured gain. REVISIT IF: a FR GSC pull shows the EN calligraphy parent already drawing French-language impressions, or the printable-intent terms grow past four figures. Neither is true today.",
       "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12880,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes de/zum-ausdrucken/graffiti-buchstaben/, the DE translation of printables/graffiti-letters/. KEYWORD VOLUME: 12,880/mo generator-intent, Semrush db=de 2026-09-12 - graffiti buchstaben 6,600 + graffiti alphabet 5,400 + graffiti namen 880. THE INTENT FILTER MATTERS AND IS NOT THE SAME AS THE STENCIL CELL'S: 'graffiti buchstaben zum ausdrucken' is 20/mo and 'graffiti vorlagen zum ausdrucken' 70, so a print-intent filter would read this cell as 90/mo and drop it. That filter is wrong here because the EN parent is a NAME GENERATOR, not a print sheet. Excluded separately: 'graffiti schrift' 14,800 and 'graffiti schriftarten' 1,000, which are copy-paste FONT intent and belong to the DE homepage generator, not to a printable. COMPETITOR FOOTPRINT: decisive. graffiti-empire.com's own GENERATOR ranks #1 for 'graffiti buchstaben', and its 'graffiti-buchstaben-a-z' page also ranks on page 1: the exact page type this site ships, twice, from a direct competitor. The rest of the SERP is Pinterest, Amazon, Adobe Stock, Etsy, Shutterstock and YouTube, i.e. stock imagery and marketplaces that do not serve the generate-your-name job at all. OWNERSHIP: no DE page targets graffiti. de/ has 29 top-level directories and none is a graffiti page; the term appears in no DE title, H1 or meta. No Rule-3 de-target needed. enGscImpressionsFromLocale NULL: no GSC export available to this session; the Germany x /printables/* cut is still owed and is tracked on lab review-register item 62 for the 2026-10-16 readout.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 4030,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes fr/imprimables/lettres-graffiti/, the FR translation of printables/graffiti-letters/. KEYWORD VOLUME: 4,030/mo, Semrush db=fr 2026-09-12 - lettre graffiti 1,900 + alphabet graffiti 1,900 + ecriture graffiti 140 + graffiti prenom 90. COMPETITOR FOOTPRINT: yes, and the finding is a LANGUAGE GAP rather than a clear opening. The db=fr SERP is image- and video-led (Pinterest x2, Adobe Stock, Vecteezy, Shutterstock, magnific, YouTube x3) and the single right-page-type result is graffiti-empire.com's ENGLISH /graffiti-letters/ page ranking into a French SERP. So no French-language page serves this job today. Recorded as weaker than the DE cell rather than equivalent: Germany has a localized generator competitor at #1, France has an English one mid-page. OWNERSHIP: no FR page targets graffiti; fr/ has 32 top-level directories and none is a graffiti page. enGscImpressionsFromLocale NULL, as above.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1180,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "USER-AUTHORIZED 2026-09-12 (\"Okay go ahead and build this\", after being shown the 11-cell check plan and its expected yield). Part of a deliberate 11-cell instrument sweep across the only two locales with measured printables RPM (DE 14.34, FR 11.18); 4 cells failed on volume and 4 more were held, and those verdicts are recorded as sibling entries so the whole sweep is legible rather than only its winners. Authorizes fr/imprimables/alphabet-point-de-croix/, the FR translation of printables/cross-stitch-letters/. The cleanest cell in the sweep on competitor evidence, despite being the smallest. KEYWORD VOLUME: 1,180/mo, Semrush db=fr 2026-09-12 - alphabet point de croix 880 + grille alphabet point de croix 210 + lettres point de croix 90. COMPETITOR FOOTPRINT: three of the top ten are French-language GENERATOR TOOLS doing exactly this job - stitchpoint.com/fra/tool/alph/_imprimer_grille_text.php at #2 (a printable-grid tool), creamagic.com's 'generateur d'alphabet a broder a la main gratuit' at #3, and a second stitchpoint grid page at #7. The rest is Pinterest x4, Etsy and two embroidery-kit shops. A live tool ranking in-language is the strongest signal in this sweep that the page type belongs on the SERP. OWNERSHIP: no FR page targets point de croix. enGscImpressionsFromLocale NULL, as above.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f-user-authorized"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 290,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/calligraphy-alphabet/. DE calligraphy printable. The concept term 'kalligraphie alphabet' draws 2,400/mo and the family 5,560 (kalligraphie buchstaben 1,300, schoenschrift alphabet 880, kalligraphie lernen 720, kalligraphie vorlagen 260), but the EN parent is literally 'Printable Practice Sheets', so PRINT intent is the right filter and it measures 290/mo: kalligraphie uebungsblaetter 210, kalligraphie vorlagen zum ausdrucken 20, kalligraphie alphabet zum ausdrucken 20, kalligraphie zum ausdrucken 20, schoenschrift ueben vorlagen 20. The db=de SERP confirms the split: 8 of 10 are tutorials, stock vectors and Wikipedia (Faber-Castell, edding, eschenbach-vision, magnific, onlineprinters, Pinterest, kallipos), with ONE genuine printable-practice competitor (irmalink.de's 'kalligraphie-buchstaben-vorlagen-zum-schreiben-ueben'). Better than the FR calligraphy cell, which measured 40/mo with zero printable competitors and was gate-failed the same day, but not enough to clear. Note the asymmetry with the graffiti cells in this same sweep, which is the method rather than an inconsistency: there the print filter is wrong because the parent is a generator. REVISIT IF the printable-intent terms reach four figures or a DE GSC cut shows the EN parent drawing German impressions.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 390,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/cross-stitch-letters/. DE cross-stitch printable. 390/mo concept (kreuzstich buchstaben 210, kreuzstich alphabet 110, stickvorlagen buchstaben 70) and 10/mo for the explicit print form. Thin against the FR sibling cell's 1,180, which cleared the same day, so this is a size verdict rather than a doubt about the page type. REVISIT after the FR page has run long enough to show whether the format earns its place in a European market.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 90,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/dot-to-dot-alphabet/. DE dot-to-dot alphabet. 90/mo total (buchstaben verbinden 50, punkte verbinden vorlagen 20, malen nach zahlen buchstaben 20) and 'punkte verbinden buchstaben' returns 0. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "de",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 0,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a de translation of printables/dot-to-dot-name/. DE dot-to-dot name. No Semrush row for the German name-dot-to-dot formulation at all. Clear fail, and consistent with this ledger's own id entry, which recorded name-puzzle-maker at 0 matches in the Indonesian export.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 40,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/dot-to-dot-alphabet/. FR dot-to-dot alphabet. 'points a relier alphabet' 40/mo. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 0,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/dot-to-dot-name/. FR dot-to-dot name. 'points a relier prenom' returns 0. Clear fail.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 1000,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/coloring-page-maker/. FR colouring-page generator. 1,000/mo (coloriage personnalise 590, coloriage prenom 320, creer un coloriage 90) - real, and the only held cell in this sweep that failed on something other than size. Held rather than failed because its SERP was NOT checked and because fr/imprimables/coloriage-alphabet/ already occupies the FR colouring lane, so the ownership question (one page for alphabet colouring and a second for name colouring, or one page doing both) has to be settled before a page is built. REVISIT with a phrase_organic pull on 'coloriage prenom' and a read of what coloriage-alphabet currently targets.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
+    },
+    {
+      "pattern": "printables/*",
+      "locale": "fr",
+      "checkedDate": "2026-09-12",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": 450,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "NOT BUILT. Records the decision so the cell is not re-proposed. Covers a fr translation of printables/handwriting-worksheet-generator/. FR handwriting-worksheet generator. 450/mo (fiche d'ecriture cp 210, cahier d'ecriture a imprimer 110, modele ecriture cursive 90, exercice ecriture cp 20, fiche ecriture a imprimer 20). Thin. Worth noting for a future pass: the FR lexicon's FR-034 records 'lignage Seyes' as the most locally-binding French finding for handwriting sheets, and a page built without it would likely miss the intent regardless of volume. REVISIT together with FR-034.",
+      "recordedBy": "claude-session-01VujAq6r96Nf7wei181Ua9f"
     }
   ]
 }

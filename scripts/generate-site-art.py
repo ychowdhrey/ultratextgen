@@ -2938,10 +2938,13 @@ PAGES.update({
 "it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
 "es-imprimibles-monograma": ("Monograma para Imprimir", "Hasta tres iniciales, clasico o marco circular", P(m_circled_letter, letter="M"), K_PRINT),
 "es-imprimibles-letras-punto-de-cruz": ("Letras de Punto de Cruz", "Cualquier palabra como patron de puntadas", m_grid, K_PRINT),
+"fr-imprimables-alphabet-point-de-croix": ("Alphabet Point de Croix", "N'importe quel mot en grille de points", m_grid, K_PRINT),
 "es-imprimibles-letras-punteadas": ("Letras Punteadas para Imprimir", "Abecedario A-Z en puntos numerados para unir", P(m_letter_dots, letter="A"), K_PRINT),
 # 2026-08-12 ES printables gap-fill + graffiti EN parent.
 "printables-graffiti-letters": ("Printable Graffiti Letters", "Throw-up alphabet A-Z to trace, outline and colour", P(m_letter_stencil, letter="G"), K_PRINT),
 "es-imprimibles-letras-graffiti": ("Letras de Graffiti para Imprimir", "Abecedario throw-up A-Z para calcar y colorear", P(m_letter_stencil, letter="G"), K_PRINT),
+"de-zum-ausdrucken-graffiti-buchstaben": ("Graffiti-Buchstaben zum Ausdrucken", "Throw-up-Alphabet A-Z zum Nachzeichnen und Ausmalen", P(m_letter_stencil, letter="G"), K_PRINT),
+"fr-imprimables-lettres-graffiti": ("Lettres Graffiti à Imprimer", "Alphabet throw-up A-Z à décalquer et à colorier", P(m_letter_stencil, letter="G"), K_PRINT),
 # 2026-08-13 graffiti-generator pass: ID translation of the graffiti EN parent.
 "id-printables-grafiti-nama": ("Grafiti Nama", "Generator grafiti nama + huruf grafiti A-Z untuk dicetak", P(m_letter_stencil, letter="G"), K_PRINT),
 "es-imprimibles-caligrafia": ("Caligrafia: Abecedario A-Z", "Cursiva inglesa, gotica y script para imprimir", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="caligrafia A-Z"), K_PRINT),
