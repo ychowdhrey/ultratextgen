@@ -245,6 +245,9 @@ EN_ALT = {
     "graffiti-letters": {
         "landing": "Printable graffiti letters: the word {demo} in a hollow throw-up style above an A to Z outline row",
     },
+    "letter-tracing": {
+        "landing": "Letter tracing worksheet sample: {demo} as a solid model with dotted and dashed rows to trace on ruled handwriting lines",
+    },
     "name-tracing": {
         "landing": "Name tracing worksheet sample for {demo}: solid model, dotted and dashed rows on ruled handwriting lines",
     },
@@ -1077,6 +1080,7 @@ RENDERERS = {
     "calligraphy-alphabet": ("spoke_glyph", "glyph_practice"),
     "name-tracing": (None, "trace_rows"),
     "handwriting-worksheet-generator": (None, "trace_rows"),
+    "letter-tracing": (None, "trace_rows"),
     "sight-word-tracing": (None, "trace_rows"),
     "coloring-page-maker": (None, "word_outline"),
     "dot-to-dot-name": (None, "dots_word"),
