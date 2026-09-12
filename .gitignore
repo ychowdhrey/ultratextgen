@@ -19,3 +19,11 @@ assets/collection-pins/
 # also without the slash: "node_modules/" matches only a directory, and a symlink named
 # node_modules was committed past it on 2026-09-02 (8380aa483)
 node_modules
+
+# Font binaries are never committed (CLAUDE.md: no bundled .ttf/.otf/.woff).
+# scripts/generate-printables-previews.py renders with Google Fonts fetched
+# into a cache OUTSIDE the repo; this is the backstop for a stray copy.
+*.ttf
+*.otf
+*.woff
+*.woff2

@@ -1,0 +1,268 @@
+{
+ "slug": "skiljetecken",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Skiljetecken att kopiera – citationstecken, utropstecken ¶ † ‡ ※",
+ "meta_description": "Kopiera skiljetecken och specialtecken – citationstecken, utropstecken, frågetecken, kors †, dubbelkors ‡, stycketecken ¶ och upp-och-nedvända tecken. Klicka på ett tecken för att kopiera det direkt.",
+ "breadcrumb": "Skiljetecken",
+ "hero_h1": "Skiljetecken",
+ "hero_tagline": "Citationstecken, utropstecken, kors, stycketecken, interrobang och upp-och-nedvända tecken – skiljetecknen som inte finns på tangentbordet. Klicka på ett tecken för att kopiera det direkt.",
+ "intro": "Bortom det vardagliga kommatecknet och punkten finns en hel uppsättning specialtecken. Det här biblioteket samlar korset och dubbelkorset som används för fotnoter, asterismen och referensmärkena, stycke- och paragraftecknen samt interrobangen och de upp-och-nedvända tecknen – alla vanliga Unicode-tecken som du kan kopiera in i dokument och inlägg.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/skiljetecken/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/skiljetecken/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/punctuation-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/punctuation-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/tangentbord-symboler/",
+   "title": "Tangentbordssymboler",
+   "desc": "Kommando, alternativ, skift och alla andra tangentsymboler för Mac och PC – perfekt för att skriva tydliga kortkommandon. Klicka på valfri symbol för."
+  },
+  {
+   "href": "/sv/library/punkt-symboler/",
+   "title": "Punktsymboler att kopiera",
+   "desc": "Kopiera punkttecken och listtecken (bullet points) för LinkedIn-inlägg, mejl, dokument och sociala medier. Klicka på en symbol för att kopiera direkt."
+  },
+  {
+   "href": "/sv/library/copyright-tecken/",
+   "title": "Copyright-tecken, varumärke & juridiska symboler",
+   "desc": "Alla copyright-, varumärkes- och juridiska dokumenttecken i Unicode – ©, ®, ™, ℠, ℗ samt paragraf-, stycke- och referenstecken. Klicka på ett tecken."
+  }
+ ],
+ "sections": [
+  {
+   "id": "daggers-reference",
+   "label": "Kors, asterisker & referensmärken",
+   "h2": "Kors, asterisker & referensmärken",
+   "intro": "Fotnotskors, asterismer och referensmärken som används i typografi.",
+   "symbols": [
+    {
+     "char": "†",
+     "label": "Kors"
+    },
+    {
+     "char": "‡",
+     "label": "Dubbelkors"
+    },
+    {
+     "char": "⁑",
+     "label": "Två asterisker (vertikala)"
+    },
+    {
+     "char": "⁂",
+     "label": "Asterism"
+    },
+    {
+     "char": "※",
+     "label": "Referensmärke"
+    },
+    {
+     "char": "‖",
+     "label": "Dubbelt lodstreck"
+    }
+   ]
+  },
+  {
+   "id": "paragraph-section",
+   "label": "Stycke- & paragraftecken",
+   "h2": "Stycke- & paragraftecken",
+   "intro": "Stycketecken (pilcrow), paragraftecken och promilletecken som används i juridisk och redaktionell text.",
+   "symbols": [
+    {
+     "char": "¶",
+     "label": "Stycketecken (pilcrow)"
+    },
+    {
+     "char": "⁋",
+     "label": "Omvänt stycketecken"
+    },
+    {
+     "char": "§",
+     "label": "Paragraftecken"
+    },
+    {
+     "char": "‰",
+     "label": "Promilletecken"
+    },
+    {
+     "char": "‱",
+     "label": "Per tiotusen-tecken"
+    }
+   ]
+  },
+  {
+   "id": "interrobang-inverted",
+   "label": "Interrobang & omvända tecken",
+   "h2": "Interrobang & omvända tecken",
+   "intro": "Kombinerade och omvända fråge- och utropstecken.",
+   "symbols": [
+    {
+     "char": "‽",
+     "label": "Interrobang"
+    },
+    {
+     "char": "⸮",
+     "label": "Omvänt frågetecken"
+    },
+    {
+     "char": "¡",
+     "label": "Upp-och-nedvänt utropstecken"
+    },
+    {
+     "char": "¿",
+     "label": "Upp-och-nedvänt frågetecken"
+    },
+    {
+     "char": "⁇",
+     "label": "Dubbelt frågetecken"
+    },
+    {
+     "char": "⁉",
+     "label": "Utrops- och frågetecken"
+    },
+    {
+     "char": "⁈",
+     "label": "Fråge- och utropstecken"
+    }
+   ]
+  },
+  {
+   "id": "question-mark-symbol",
+   "label": "Frågetecken, utropstecken & semikolon",
+   "h2": "Frågetecken, utropstecken & semikolon",
+   "intro": "Kopiera frågetecknet och utropstecknet med deras upp-och-nedvända spanska former och semikolonet som ofta söks tillsammans med dem.",
+   "symbols": [
+    {
+     "char": "?",
+     "label": "Frågetecken"
+    },
+    {
+     "char": "!",
+     "label": "Utropstecken"
+    },
+    {
+     "char": ";",
+     "label": "Semikolon"
+    },
+    {
+     "char": "？",
+     "label": "Frågetecken (fullbredd)"
+    },
+    {
+     "char": "！",
+     "label": "Utropstecken (fullbredd)"
+    }
+   ]
+  },
+  {
+   "id": "colon-symbol",
+   "label": "Kolon & understreck",
+   "h2": "Kolon & understreck",
+   "intro": "Kopiera kolon, understreck och relaterade förbindnings- och avdelartecken som används i text, kod och användarnamn.",
+   "symbols": [
+    {
+     "char": ":",
+     "label": "Kolon"
+    },
+    {
+     "char": "_",
+     "label": "Understreck"
+    },
+    {
+     "char": "：",
+     "label": "Kolon (fullbredd)"
+    },
+    {
+     "char": "﹍",
+     "label": "Streckat understreck"
+    },
+    {
+     "char": "‿",
+     "label": "Underbåge (undertie)"
+    }
+   ]
+  },
+  {
+   "id": "comma-symbol",
+   "label": "Kommatecken & parenteser",
+   "h2": "Kommatecken & parenteser",
+   "intro": "Kopiera kommatecknet med parenteser och relaterade klammer- och avdelartecken för ren textformatering.",
+   "symbols": [
+    {
+     "char": ",",
+     "label": "Kommatecken"
+    },
+    {
+     "char": "(",
+     "label": "Vänsterparentes"
+    },
+    {
+     "char": ")",
+     "label": "Högerparentes"
+    },
+    {
+     "char": "，",
+     "label": "Kommatecken (fullbredd)"
+    },
+    {
+     "char": "、",
+     "label": "Ideografiskt kommatecken"
+    },
+    {
+     "char": "（",
+     "label": "Vänsterparentes (fullbredd)"
+    },
+    {
+     "char": "）",
+     "label": "Högerparentes (fullbredd)"
+    }
+   ]
+  },
+  {
+   "id": "quotation-marks",
+   "label": "Citationstecken",
+   "h2": "Citationstecken",
+   "intro": "Raka, böjda och vinkelformade (gåsögon) citationstecken – se den fullständiga sidan om citationstecken → för historik, alt-koder och fällan där böjda citattecken bryter kod.",
+   "symbols": [
+    {
+     "char": "\"",
+     "label": "Citationstecken"
+    },
+    {
+     "char": "“",
+     "label": "Vänster dubbelt citationstecken"
+    },
+    {
+     "char": "”",
+     "label": "Höger dubbelt citationstecken"
+    },
+    {
+     "char": "«",
+     "label": "Gåsögon (franskt citattecken)"
+    },
+    {
+     "char": "»",
+     "label": "Gåsögon (franskt citattecken)"
+    }
+   ]
+  }
+ ]
+}

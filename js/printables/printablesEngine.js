@@ -81,6 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
+      printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Save to Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Print as a book — one page per letter",
       nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
       nameSolidLabel: "Colour it in now (solid fill)",
@@ -130,6 +131,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
+      printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Imprimer en livret — une page par lettre",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
       nameSolidLabel: "Colorier maintenant (remplissage plein)",
@@ -172,6 +174,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
+      printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Imprimir como libro — una página por letra",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorear ahora (relleno sólido)",
@@ -214,6 +217,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
+      printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Imprimir como livro — uma página por letra",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorir agora (preenchimento sólido)",
@@ -256,6 +260,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
+      printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Stampa come libretto — una pagina per lettera",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colora adesso (riempimento pieno)",
@@ -298,6 +303,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
+      printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
       nameStyleLabel: "Styl", nameFillLabel: "Wypełnienie", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Pokoloruj od razu (pełne wypełnienie)",
@@ -344,6 +350,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
+      printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft drucken — eine Seite pro Buchstabe",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
@@ -395,6 +402,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
+      printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
       nameStyleLabel: "Gaya", nameFillLabel: "Warna isi", nameStrokeLabel: "Garis tepi",
       nameSolidLabel: "Langsung diwarnai (isi penuh)",
@@ -899,9 +907,406 @@
     }
   }
 
+  // Extra printables events (printable_generate, print_dialog_closed) go
+  // through the same header.js helper family so the payload shape stays in
+  // one place; the guard keeps the engine working if header.js is older.
+  function trackPrintableEvent(name, params) {
+    if (window.UltraTextGen && window.UltraTextGen.trackPrintableEvent) {
+      window.UltraTextGen.trackPrintableEvent(name, params);
+    }
+  }
+
+  /* ---------------------------------------------------------------
+     Print settings, presets and sharing (2026-09-10).
+     Every sheet on this site used to print with whatever paper size the
+     browser dialog defaulted to, and the only way to a PDF was to know that
+     the dialog can save one. Teachers' own workflow language ("print on
+     Letter", "A4", "black ink only", "here is the sheet I made") is what the
+     block below serves: a per-device print-settings panel, a Save as PDF
+     button that opens the dialog with the sheet already sized, a preset URL
+     for every sheet so it can be sent to a colleague or a parent and
+     reopened exactly, and a small "recent sheets" memory. All native APIs;
+     nothing leaves the browser except what the user explicitly shares.
+     --------------------------------------------------------------- */
+  const PO = Object.assign({}, I18N.en.printOpts, (I18N[LANG] && I18N[LANG].printOpts) || {});
+  const PRINT_PREF_KEY = "utg_print_prefs";
+  const RECENT_KEY = "utg_printables_recent";
+  const ROSTER_KEY = "utg_printables_roster:" + window.location.pathname;
+  const RECENT_MAX = 6;
+  // Usable print area per paper (inches), after the default browser margin
+  // and the sheet title. "auto" keeps the historical 7.0 x 9.3 in budget that
+  // is safe on both Letter and A4 without choosing.
+  const PAPERS = {
+    auto:   { css: null,     w: 7.0,  h: 9.3 },
+    letter: { css: "letter", w: 7.5,  h: 10.0 },
+    a4:     { css: "A4",     w: 7.27, h: 10.7 },
+    legal:  { css: "legal",  w: 7.5,  h: 13.0 }
+  };
+  // Full sheet sizes, for the PDF page box; the content areas above stay
+  // the layout budget so a PDF page matches the printed one.
+  const PAPER_FULL = {
+    auto:   { w: 8.5,  h: 11.0 },
+    letter: { w: 8.5,  h: 11.0 },
+    a4:     { w: 8.27, h: 11.69 },
+    legal:  { w: 8.5,  h: 14.0 }
+  };
+  function paperFull() {
+    const p = PAPER_FULL[printPrefs.paper] || PAPER_FULL.auto;
+    return printPrefs.orient === "landscape" ? { w: p.h, h: p.w } : { w: p.w, h: p.h };
+  }
+  const MARGINS = { normal: "0.5in", narrow: "0.25in" };
+  const printPrefs = { paper: "auto", orient: "portrait", margin: "normal", ink: "normal" };
+  try {
+    const saved = JSON.parse(localStorage.getItem(PRINT_PREF_KEY) || "null");
+    if (saved && typeof saved === "object") {
+      if (PAPERS[saved.paper]) printPrefs.paper = saved.paper;
+      if (saved.orient === "landscape" || saved.orient === "portrait") printPrefs.orient = saved.orient;
+      if (MARGINS[saved.margin]) printPrefs.margin = saved.margin;
+      if (saved.ink === "saver" || saved.ink === "normal") printPrefs.ink = saved.ink;
+    }
+  } catch (err) { /* private mode or corrupt value: defaults apply */ }
+  function savePrintPrefs() {
+    try { localStorage.setItem(PRINT_PREF_KEY, JSON.stringify(printPrefs)); } catch (err) { /* optional */ }
+  }
+  // The @page rule is injected only for the duration of a print job, so a
+  // visitor's saved preference never leaks into another page's print CSS.
+  function pageStyleCss() {
+    const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
+    const size = paper.css ? paper.css + " " + printPrefs.orient : printPrefs.orient;
+    return "@page { size: " + size + "; margin: " + (MARGINS[printPrefs.margin] || MARGINS.normal) + "; }";
+  }
+  function applyPageStyle() {
+    removePageStyle();
+    const st = document.createElement("style");
+    st.id = "pt-page-style";
+    st.textContent = pageStyleCss();
+    document.head.appendChild(st);
+  }
+  function removePageStyle() {
+    const old = document.getElementById("pt-page-style");
+    if (old) old.remove();
+  }
+  // Usable page area for the tiled/bulletin print, following the chosen
+  // paper and orientation (landscape swaps the two).
+  function printArea() {
+    const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
+    return printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
+  }
+
+  // "ultratextgen.com/printables/name-tracing": the credit every printed or
+  // exported sheet carries, so a sheet that travels (a class set going home,
+  // a PNG forwarded to a colleague) points back at the exact tool.
+  function siteCredit() {
+    if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
+    const path = String(window.location.pathname || "/").replace(/index\.html$/, "").replace(/\/$/, "");
+    return "ultratextgen.com" + (path || "");
+  }
+
+  function showToast(msg) {
+    let t = document.getElementById("pt-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "pt-toast";
+      t.className = "pt-toast";
+      t.setAttribute("role", "status");
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.add("is-visible");
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove("is-visible"), 4500);
+  }
+
+  // Export mode for the canvas builders: "download" (the Download PNG
+  // buttons) or "share" (the Share as image button hands the same PNG to the
+  // native share sheet). Set by the caller right before invoking a builder
+  // and reset by exportCanvas, so every builder stays a one-liner.
+  let exportMode = "download";
+  let pdfMode = false;
+
+  // Preset URL: the page's own inputs as query parameters, so "here is the
+  // sheet I made" is a link that reopens the same sheet. The parameters are
+  // read back by applyPresetInputs()/applyPresetState() on load. Nothing
+  // typed here is ever sent to analytics (see header.js trackPrintable).
+  function firstEl(list) { return list.filter(Boolean)[0] || null; }
+  function primaryInput() { return firstEl([el.nameInput, el.genInput, el.designInput, el.bannerInput, el.puzzleInput]); }
+  function primaryRoster() { return firstEl([el.nameRoster, el.genRoster, el.designRoster, el.puzzleRoster]); }
+  function presetParams() {
+    const p = {};
+    const input = primaryInput();
+    if (input && input.value.trim()) p.name = input.value.trim();
+    const roster = primaryRoster();
+    if (roster && roster.value.trim()) p.roster = rosterNames(roster).join("|");
+    if (el.genSlider || el.genLevels) p.level = genLevel();
+    const rows = firstEl([el.nameRows, el.genRows]);
+    if (rows && rows.value) p.rows = rows.value;
+    if (el.genCase && el.genCase.value && el.genCase.value !== "as-typed") p.case = el.genCase.value;
+    if (typeof nameStyleKey !== "undefined" && nameStyleKey) p.style = nameStyleKey;
+    if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
+    if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
+    const heading = firstEl([el.designHeading, el.puzzleHeading]);
+    if (heading && heading.value.trim()) p.heading = heading.value.trim();
+    if (el.strip && activeChar && !CFG.initialChar) p.ch = activeChar;
+    if (printPrefs.paper !== "auto") p.paper = printPrefs.paper;
+    if (printPrefs.orient !== "portrait") p.orient = printPrefs.orient;
+    return p;
+  }
+  function presetUrl() {
+    const params = new URLSearchParams();
+    const p = presetParams();
+    Object.keys(p).forEach((k) => { if (p[k] !== "" && p[k] != null) params.set(k, String(p[k])); });
+    const qs = params.toString();
+    return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
+  }
+  let presetQuery = null;
+  try { presetQuery = new URLSearchParams(window.location.search); } catch (err) { presetQuery = null; }
+  function presetGet(k) { return presetQuery ? presetQuery.get(k) : null; }
+  // Phase 1 (before the sections initialise): fill the inputs.
+  function applyPresetInputs() {
+    if (!presetQuery) return;
+    const name = presetGet("name") || presetGet("text") || presetGet("q");
+    const input = primaryInput();
+    if (name && input) input.value = String(name).slice(0, input.maxLength > 0 ? input.maxLength : 60);
+    const roster = presetGet("roster");
+    const rosterEl = primaryRoster();
+    if (roster && rosterEl) {
+      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).slice(0, 40).join("\n");
+      const field = rosterEl.closest("details"); if (field) field.open = true;
+    }
+    const rows = presetGet("rows"); const rowsEl = firstEl([el.nameRows, el.genRows]);
+    if (rows && rowsEl && /^[1-8]$/.test(rows)) rowsEl.value = rows;
+    const cs = presetGet("case");
+    if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
+    const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading]);
+    if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
+    const paper = presetGet("paper"); if (paper && PAPERS[paper]) printPrefs.paper = paper;
+    const orient = presetGet("orient"); if (orient === "landscape" || orient === "portrait") printPrefs.orient = orient;
+    if (!roster && rosterEl && !rosterEl.value.trim()) {
+      // Roster memory: a teacher's class list stays on the device between
+      // visits (this device only, never sent anywhere).
+      try { const remembered = localStorage.getItem(ROSTER_KEY); if (remembered) rosterEl.value = remembered; } catch (err) { /* optional */ }
+    }
+  }
+  // Phase 2 (after the sections initialise): apply state that has setters.
+  function applyPresetState() {
+    if (!presetQuery) return;
+    const level = parseInt(presetGet("level"), 10);
+    if (level && typeof setGenLevel === "function" && (el.genSlider || el.genLevels)) setGenLevel(level);
+    const style = presetGet("style");
+    if (style && typeof setNameStyle === "function" && typeof NAME_STYLES !== "undefined" && NAME_STYLES && NAME_STYLES.some((x) => x.key === style)) setNameStyle(style);
+    const script = presetGet("script");
+    if (script && typeof setGenScript === "function" && typeof SCRIPT_OPTIONS !== "undefined" && SCRIPT_OPTIONS && SCRIPT_OPTIONS.some((x) => x.key === script)) setGenScript(script);
+    const size = presetGet("size");
+    if (size && el.sizeControl && SIZE_PRESETS.some((x) => x.key === size)) {
+      alphaSizeKey = size;
+      $$(".pt-size-row .pt-choice", el.sizeControl).forEach((o, i) => {
+        const on = SIZE_PRESETS[i] && SIZE_PRESETS[i].key === size;
+        o.classList.toggle("is-active", on); o.setAttribute("aria-checked", on ? "true" : "false");
+      });
+    }
+    const ch = presetGet("ch");
+    if (ch && el.strip && CHARS.indexOf(String(ch).toUpperCase()) !== -1) selectChar(String(ch).toUpperCase(), { silent: true });
+    [typeof renderNamePreview === "function" && el.nameInput ? renderNamePreview : null,
+     typeof renderGenPreview === "function" && el.genInput ? renderGenPreview : null,
+     typeof renderDesignPreview === "function" && el.designInput ? renderDesignPreview : null,
+     typeof renderBannerPreview === "function" && el.bannerInput ? renderBannerPreview : null,
+     typeof renderPuzzlePreview === "function" && el.puzzleInput ? renderPuzzlePreview : null
+    ].forEach((fn) => { if (fn) { try { fn(); } catch (err) { /* section not mounted */ } } });
+  }
+
+  // "Recent sheets" memory (this device): the last few sheets made here,
+  // as preset links, so a teacher who printed Emma's sheet last week finds
+  // it without retyping. Stored alongside the site's other per-device keys.
+  function readRecent() {
+    try { const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (err) { return []; }
+  }
+  function rememberSheet(sheet) {
+    const input = primaryInput();
+    const label = (input && input.value.trim()) || (el.strip ? charLabel(activeChar) : "") || document.title.split("|")[0].trim();
+    const href = presetUrl();
+    const list = readRecent().filter((r) => r && r.href !== href);
+    list.unshift({ href: href, label: label.slice(0, 40), page: (document.title || "").split("|")[0].trim().slice(0, 60), sheet: sheet || "sheet", t: Date.now() });
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (err) { /* optional */ }
+    const roster = primaryRoster();
+    if (roster) { try { if (roster.value.trim()) localStorage.setItem(ROSTER_KEY, roster.value); else localStorage.removeItem(ROSTER_KEY); } catch (err) { /* optional */ } }
+    renderRecent();
+  }
+  let recentMount = null;
+  function renderRecent() {
+    if (!recentMount) return;
+    const list = readRecent();
+    recentMount.innerHTML = "";
+    if (!list.length) { recentMount.hidden = true; return; }
+    recentMount.hidden = false;
+    const title = document.createElement("span");
+    title.className = "pt-recent-title";
+    title.textContent = PO.recent;
+    recentMount.appendChild(title);
+    list.forEach((r) => {
+      const a = document.createElement("a");
+      a.className = "pt-recent-link";
+      a.href = r.href;
+      a.textContent = r.label;
+      a.title = r.page || "";
+      recentMount.appendChild(a);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button"; clear.className = "pt-recent-clear"; clear.textContent = PO.clear;
+    clear.addEventListener("click", () => { try { localStorage.removeItem(RECENT_KEY); } catch (err) { /* optional */ } renderRecent(); });
+    recentMount.appendChild(clear);
+  }
+
+  function previewImageUrl() {
+    const img = $("img.pt-preview-img") || $(".pt-preview-figure img");
+    if (img && img.src) return img.src;
+    const og = $('meta[property="og:image"]');
+    return og ? og.getAttribute("content") : "";
+  }
+  // The page's primary PNG builder, reused by "Share as image": whichever
+  // section this page mounts decides what the sheet is.
+  function primaryPngExport() {
+    if (el.namePng && typeof wordPNG === "function") { el.namePng.click(); return true; }
+    if (el.genPng) { el.genPng.click(); return true; }
+    if (el.designPng) { el.designPng.click(); return true; }
+    if (el.bannerPng) { el.bannerPng.click(); return true; }
+    if (el.puzzlePng) { el.puzzlePng.click(); return true; }
+    if (el.panel && typeof letterPNG === "function") { letterPNG(activeChar); return true; }
+    return false;
+  }
+  function makeBtn(cls, text, onClick) {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = cls; b.textContent = text;
+    b.addEventListener("click", onClick);
+    return b;
+  }
+  function choiceRow(labelText, options, current, onPick) {
+    const row = document.createElement("div");
+    row.className = "pt-print-opt";
+    const lab = document.createElement("span");
+    lab.className = "pt-print-opt-label"; lab.textContent = labelText;
+    row.appendChild(lab);
+    const group = document.createElement("div");
+    group.className = "pt-choice-row pt-print-opt-choices";
+    group.setAttribute("role", "radiogroup"); group.setAttribute("aria-label", labelText);
+    options.forEach((o) => {
+      const b = makeBtn("pt-choice pt-choice-sm", o.label, () => {
+        onPick(o.key);
+        $$(".pt-choice", group).forEach((x) => { const on = x === b; x.classList.toggle("is-active", on); x.setAttribute("aria-checked", on ? "true" : "false"); });
+      });
+      b.setAttribute("role", "radio");
+      const on = o.key === current;
+      b.classList.toggle("is-active", on); b.setAttribute("aria-checked", on ? "true" : "false");
+      group.appendChild(b);
+    });
+    row.appendChild(group);
+    return row;
+  }
+  // Mount the print-settings panel, the share row and the recent-sheets
+  // strip once per page, above the first print action the page carries (or
+  // into an explicit #pt-print-options mount).
+  function buildPrintOptions() {
+    const explicit = $("#pt-print-options");
+    const firstAction = firstEl([el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint]);
+    const anchor = explicit || (firstAction ? (firstAction.closest(".bubble-actions, .pt-actions, .pt-preview-actions") || firstAction) : (el.panel || null));
+    if (!anchor) return;
+    if (document.getElementById("pt-print-settings")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "pt-print-tools";
+    wrap.id = "pt-print-settings";
+
+    const details = document.createElement("details");
+    details.className = "pt-print-options";
+    const summary = document.createElement("summary");
+    summary.textContent = PO.settings;
+    details.appendChild(summary);
+    details.appendChild(choiceRow(PO.paper, [
+      { key: "auto", label: PO.auto }, { key: "letter", label: PO.letter }, { key: "a4", label: PO.a4 }, { key: "legal", label: PO.legal }
+    ], printPrefs.paper, (k) => { printPrefs.paper = k; savePrintPrefs(); }));
+    details.appendChild(choiceRow(PO.orientation, [
+      { key: "portrait", label: PO.portrait }, { key: "landscape", label: PO.landscape }
+    ], printPrefs.orient, (k) => { printPrefs.orient = k; savePrintPrefs(); }));
+    details.appendChild(choiceRow(PO.margins, [
+      { key: "normal", label: PO.normal }, { key: "narrow", label: PO.narrow }
+    ], printPrefs.margin, (k) => { printPrefs.margin = k; savePrintPrefs(); }));
+    const ink = document.createElement("label");
+    ink.className = "pt-print-opt pt-print-ink";
+    const inkBox = document.createElement("input");
+    inkBox.type = "checkbox"; inkBox.checked = printPrefs.ink === "saver";
+    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; savePrintPrefs(); });
+    ink.appendChild(inkBox); ink.appendChild(document.createTextNode(" " + PO.inkSaver));
+    details.appendChild(ink);
+    wrap.appendChild(details);
+
+    // The share row is share-core's (js/share/share-core.js buildShareRow),
+    // the same builder the monogram and cross-stitch engines use, so the
+    // three surfaces cannot drift. Labels are this engine's own strings.
+    const UTGns = window.UltraTextGen;
+    if (UTGns && UTGns.buildShareRow) {
+      wrap.appendChild(UTGns.buildShareRow({
+        className: "pt-share-row",
+        url: presetUrl,
+        surface: "printables",
+        itemType: "printable",
+        labels: { share: PO.share, shareImage: PO.shareImage, copyLink: PO.copyLink, linkCopied: PO.linkCopied, pinterest: PO.pinterest },
+        onShareImage: (primaryInput() || el.panel) ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; } : null,
+        pinMedia: previewImageUrl,
+        onShared: () => rememberSheet("share")
+      }));
+    }
+
+    recentMount = document.createElement("div");
+    recentMount.className = "pt-recent";
+    recentMount.hidden = true;
+    wrap.appendChild(recentMount);
+    renderRecent();
+
+    if (explicit) explicit.appendChild(wrap);
+    else anchor.parentNode.insertBefore(wrap, anchor);
+  }
+  // A "Save as PDF" button beside every print button: same print path, with
+  // the destination hint shown as a toast while the dialog is open.
+  function addPdfButtons() {
+    [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint].filter(Boolean).forEach((btn) => {
+      if (btn.nextElementSibling && btn.nextElementSibling.classList && btn.nextElementSibling.classList.contains("pt-pdf-btn")) return;
+      const pdf = makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; btn.click(); });
+      btn.parentNode.insertBefore(pdf, btn.nextSibling);
+    });
+  }
+  // printable_generate: the visitor typed something (count only, never the
+  // text). Debounced per input, throttled so a long session is one event
+  // per half minute at most.
+  function wireGenerateEvents() {
+    let last = 0;
+    [["name_worksheet", el.nameInput], ["generator_sheet", el.genInput], ["design", el.designInput], ["banner", el.bannerInput], ["puzzle", el.puzzleInput]].forEach((pair) => {
+      const input = pair[1];
+      if (!input) return;
+      let timer = null;
+      input.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const now = Date.now();
+          if (now - last < 30000) return;
+          last = now;
+          trackPrintableEvent("printable_generate", { printable_sheet: pair[0] });
+        }, 1500);
+      });
+    });
+    const roster = primaryRoster();
+    if (roster) {
+      let t2 = null;
+      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => { try { if (roster.value.trim()) localStorage.setItem(ROSTER_KEY, roster.value); else localStorage.removeItem(ROSTER_KEY); } catch (err) { /* optional */ } }, 800); });
+    }
+  }
+
   function downloadCanvas(canvas, filename, sheet) {
+    const mode = exportMode;
+    exportMode = "download";
     canvas.toBlob((blob) => {
       if (!blob) return;
+      if (mode === "share") {
+        shareBlob(blob, filename, sheet);
+        return;
+      }
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -909,7 +1314,26 @@
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
       trackPrintable("download_png", sheet);
+      rememberSheet(sheet);
     }, "image/png");
+  }
+
+  // Share a rendered sheet as a PNG file through the native share sheet,
+  // with the preset link riding along as text. share-core owns the act
+  // (js/share/share-core.js shareImageBlob); a plain download is the fallback
+  // if the module is somehow absent.
+  async function shareBlob(blob, filename, sheet) {
+    rememberSheet(sheet);
+    const UTGns = window.UltraTextGen;
+    if (UTGns && UTGns.shareImageBlob) {
+      await UTGns.shareImageBlob(blob, { filename: filename, title: document.title, text: presetUrl(), surface: "printables", itemType: "printable" });
+      return;
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
   // Small, low-contrast site credit near the bottom edge — the same
@@ -917,13 +1341,17 @@
   // titles, other PNG exports). Not drawn for RENDER === "glyph" (cursive/
   // calligraphy pages): those are typed-word art the visitor downloads to
   // use as-is, not a practice/coloring sheet, so they stay clean by design.
-  function drawCredit(ctx, w, h) {
+  function drawCredit(ctx, w, h, light) {
+    ctx.save();
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
-    ctx.font = "22px " + FONT;
-    ctx.fillStyle = "#aeb4c0";
-    ctx.fillText("ultratextgen.com", w / 2, h - 24);
+    ctx.font = (light ? "18px " : "22px ") + FONT;
+    ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
+    // The page path, not just the domain: a sheet that gets forwarded should
+    // open the same tool (2026-09-10 share pass).
+    ctx.fillText(siteCredit(), w / 2, h - 24);
+    ctx.restore();
   }
 
   // Single character -> square PNG.
@@ -961,7 +1389,7 @@
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
-      if (RENDER !== "glyph") drawCredit(ctx, size, size);
+      drawCredit(ctx, size, size, RENDER === "glyph");
       downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png", "character");
     });
   }
@@ -1020,7 +1448,7 @@
         ctx.fillStyle = INK;
         ctx.fillText(out, width / 2, height * 0.52);
       }
-      if (RENDER !== "glyph") drawCredit(ctx, width, height);
+      if (!o.transparent) drawCredit(ctx, width, height, RENDER === "glyph");
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
     }, o.font ? String(o.font).split(",")[0].trim().replace(/^['"]|['"]$/g, "") : null);
   }
@@ -1029,9 +1457,79 @@
      Print surface
      --------------------------------------------------------------- */
 
+  // js/printables/printablePdf.js is fetched the first time a PDF is asked
+  // for, never on page load: the writer is only needed by the visitors who
+  // click Save as PDF, and the sheet engines stay the size they are.
+  let pdfModulePromise = null;
+  function loadPdfModule() {
+    if (window.UltraTextGen && window.UltraTextGen.pdf) return Promise.resolve(window.UltraTextGen.pdf);
+    if (pdfModulePromise) return pdfModulePromise;
+    pdfModulePromise = new Promise((resolve, reject) => {
+      const sc = document.createElement("script");
+      sc.src = "/js/printables/printablePdf.js";
+      sc.async = true;
+      sc.onload = () => resolve(window.UltraTextGen && window.UltraTextGen.pdf);
+      sc.onerror = () => { pdfModulePromise = null; reject(new Error("pdf module failed to load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfModulePromise;
+  }
+  function pdfFilename(sheet) {
+    const input = primaryInput();
+    const base = input && input.value.trim() ? slugify(input.value.trim()) : "";
+    return PNG_PREFIX + "-" + (base || sheet || "sheet") + ".pdf";
+  }
+  // Rasterise the mounted print surface and write the PDF. Resolves true on
+  // success; false means "use the print dialog instead" (module missing,
+  // an unsupported browser, a tainted canvas on Safari).
+  async function pdfFromWrap(wrap, sheet) {
+    let P = null;
+    try { P = await loadPdfModule(); } catch (err) { return false; }
+    if (!P || !P.supported()) return false;
+    // The PDF knows its exact sheet, so it lays out on the real page box
+    // (paper minus the chosen margin), not the conservative "auto" area the
+    // tile layout budgets for unknown paper. That is what the print dialog
+    // gives the same sheet, so the file and the printout paginate alike.
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    const area = { w: full.w - 2 * marginIn, h: full.h - 2 * marginIn };
+    const widthPx = Math.round(area.w * 96);
+    const pageHPx = Math.round(area.h * 96);
+    document.body.classList.add("pt-pdf-rendering");
+    document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+    el.printRoot.style.width = widthPx + "px";
+    let pages = null;
+    try {
+      pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+    } catch (err) {
+      pages = null;
+    } finally {
+      document.body.classList.remove("pt-pdf-rendering");
+      document.body.classList.remove("pt-ink-saver");
+      el.printRoot.style.width = "";
+    }
+    if (!pages || !pages.length) return false;
+    try {
+      const blob = await P.fromCanvases(pages, {
+        paperIn: full,
+        marginIn: { x: marginIn, y: marginIn },
+        title: document.title
+      });
+      P.download(blob, pdfFilename(sheet));
+    } catch (err) {
+      return false;
+    }
+    trackPrintable("download_pdf", sheet);
+    trackPrintableEvent("printable_output", { printable_action: "pdf_saved", printable_sheet: sheet || "sheet", printable_pages: pages.length });
+    return true;
+  }
+
   function printWrap(titleText, bodyNode, sheet) {
     trackPrintable("print", sheet);
-    if (!el.printRoot) { window.print(); return; }
+    rememberSheet(sheet);
+    const wantPdf = pdfMode;
+    pdfMode = false;
+    if (!el.printRoot) { applyPageStyle(); window.print(); removePageStyle(); return; }
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
@@ -1043,10 +1541,55 @@
     }
     wrap.appendChild(bodyNode);
     el.printRoot.appendChild(wrap);
+
+    // Save as PDF writes the file itself (printablePdf.js); the browser's
+    // print dialog is the fallback, with the destination named in a toast.
+    if (wantPdf) {
+      pdfFromWrap(wrap, sheet).then((ok) => {
+        if (ok) { el.printRoot.innerHTML = ""; return; }
+        showToast(PO.pdfToast);
+        openPrintDialog(sheet, true);
+      });
+      return;
+    }
+    openPrintDialog(sheet, false);
+  }
+
+  function openPrintDialog(sheet, wantPdf) {
+    applyPageStyle();
     document.body.classList.add("is-printing");
+    document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
+
+    // Tear the print surface down when the dialog closes, not when
+    // window.print() returns: on desktop the two coincide, on iOS/Android
+    // print() can return before the preview is composed, and tearing down
+    // synchronously there printed the whole page. afterprint is the primary
+    // signal; the user coming back to the page is the fallback; a long timer
+    // is the last resort so the page can never stay hidden.
+    const started = Date.now();
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      window.removeEventListener("afterprint", finish);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", onVisible);
+      document.body.classList.remove("is-printing");
+      document.body.classList.remove("pt-ink-saver");
+      removePageStyle();
+      el.printRoot.innerHTML = "";
+      trackPrintableEvent("printable_output", { printable_action: wantPdf ? "pdf_dialog_closed" : "print_dialog_closed", printable_sheet: sheet || "sheet", printable_dialog_ms: Date.now() - started });
+    };
+    const onVisible = () => { if (document.visibilityState !== "hidden") setTimeout(finish, 300); };
+    window.addEventListener("afterprint", finish);
+    const t0 = Date.now();
     window.print();
-    document.body.classList.remove("is-printing");
-    el.printRoot.innerHTML = "";
+    // Desktop browsers block in print(); if we are back within a tick and
+    // afterprint has not fired, the dialog is already closed.
+    if (Date.now() - t0 > 250) { setTimeout(finish, 50); return; }
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", onVisible);
+    setTimeout(finish, 60000);
   }
 
   /* ---------------------------------------------------------------
@@ -1091,6 +1634,7 @@
     pngBtn.textContent = T.downloadPng;
     pngBtn.addEventListener("click", () => letterPNG(ch));
     actions.appendChild(printBtn);
+    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; printBtn.click(); }));
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
 
@@ -1252,7 +1796,7 @@
       page.className = "bubble-print-book-page";
       const t = document.createElement("h3");
       t.className = "bubble-print-title";
-      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — ultratextgen.com";
+      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — " + siteCredit();
       page.appendChild(t);
       page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
       book.appendChild(page);
@@ -1290,8 +1834,9 @@
   // and A4 (8.27x11.69in) with room left for default browser print margins
   // plus the page title line — the same portrait budget printAlphabetBook's
   // own fixed 8.2in single-letter height already assumes.
-  const TILE_PAGE_W_IN = 7.0;
-  const TILE_PAGE_H_IN = 9.3;
+  // Historical defaults; the live values follow the print-settings panel
+  // (printArea()) so a "4 in" letter tiles correctly on A4 or Letter,
+  // portrait or landscape.
   const TILE_GAP_IN = 0.25;
 
   // How tall a rendered character is relative to its width, per render mode
@@ -1307,8 +1852,9 @@
   // never overflow the safe usable area even when the division isn't exact.
   function tileLayout(heightIn) {
     const cellW = heightIn * tileAspect();
-    const cols = Math.max(1, Math.floor((TILE_PAGE_W_IN + TILE_GAP_IN) / (cellW + TILE_GAP_IN)));
-    const rows = Math.max(1, Math.floor((TILE_PAGE_H_IN + TILE_GAP_IN) / (heightIn + TILE_GAP_IN)));
+    const area = printArea();
+    const cols = Math.max(1, Math.floor((area.w + TILE_GAP_IN) / (cellW + TILE_GAP_IN)));
+    const rows = Math.max(1, Math.floor((area.h + TILE_GAP_IN) / (heightIn + TILE_GAP_IN)));
     return { cols: cols, rows: rows, perPage: cols * rows, cellW: cellW };
   }
 
@@ -1334,7 +1880,7 @@
       page.className = "pt-tile-page";
       const title = document.createElement("h3");
       title.className = "bubble-print-title";
-      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — ultratextgen.com";
+      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — " + siteCredit();
       page.appendChild(title);
 
       const grid = document.createElement("div");
@@ -1895,7 +2441,7 @@
         page.appendChild(genSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · ultratextgen.com", set, "generator_sheet");
+      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
       return;
     }
     printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode(), "generator_sheet");
@@ -1914,7 +2460,7 @@
       page.appendChild(genSheetNode(word, i + 1));
       set.appendChild(page);
     });
-    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set, "generator_ladder");
+    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · " + siteCredit(), set, "generator_ladder");
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -2678,7 +3224,7 @@
     if (footer) addFooter(svg, H - 150);
 
     const cred = svgMake("text", { x: W / 2, y: H - 24, "text-anchor": "middle", "font-family": FONT, "font-size": 22, fill: "#aeb4c0" }, svg);
-    cred.textContent = "ultratextgen.com";
+    cred.textContent = siteCredit();
     return svg;
   }
 
@@ -2810,7 +3356,7 @@
         ctx.textAlign = "center";
       }
 
-      ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText("ultratextgen.com", W / 2, H - 24);
+      ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText(siteCredit(), W / 2, H - 24);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png", "design");
     });
   }
@@ -3062,7 +3608,7 @@
 
       const foot = document.createElement("p");
       foot.className = "pt-banner-page-foot";
-      foot.textContent = "ultratextgen.com";
+      foot.textContent = siteCredit();
       page.appendChild(foot);
 
       root.appendChild(page);
@@ -3167,6 +3713,7 @@
         }
         x += w + gap;
       });
+      drawCredit(ctx, totalW, height);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(phrase) || "banner") + ".png", "banner");
     });
   }
@@ -3306,7 +3853,7 @@
 
     const cred = document.createElement("p");
     cred.className = "pt-puzzle-credit";
-    cred.textContent = "ultratextgen.com";
+    cred.textContent = siteCredit();
     sheet.appendChild(cred);
 
     return sheet;
@@ -3422,7 +3969,7 @@
 
       ctx.font = "22px " + FONT;
       ctx.fillStyle = "#aeb4c0";
-      ctx.fillText("ultratextgen.com", W / 2, 860);
+      ctx.fillText(siteCredit(), W / 2, 860);
 
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png", "puzzle");
     });
@@ -3446,6 +3993,7 @@
      --------------------------------------------------------------- */
 
   function init() {
+    applyPresetInputs();
     initStrokeToggle();
     buildStrip();
     buildAlphabetGrid();
@@ -3498,6 +4046,11 @@
       if (match) initial = match;
       selectChar(initial, { silent: true });
     }
+
+    buildPrintOptions();
+    addPdfButtons();
+    wireGenerateEvents();
+    applyPresetState();
   }
 
   if (document.readyState === "loading") {

@@ -1,0 +1,264 @@
+{
+ "slug": "kortfarg-symboler",
+ "lang": "sv",
+ "page_type": "library",
+ "title": "Kortfärgssymboler ♠ ♥ ♦ ♣ att kopiera – spader, hjärter, ruter, klöver",
+ "meta_description": "Bläddra och kopiera symboler för kortfärger (spader, hjärter, ruter, klöver), tärningar, dominobrickor och spelrelaterade Unicode-tecken. Klicka på valfri symbol för att kopiera den direkt.",
+ "breadcrumb": "Kortfärgssymboler ♠ ♥ ♦ ♣",
+ "hero_h1": "Kortfärgssymboler ♠ ♥ ♦ ♣",
+ "hero_tagline": "En referenssamling med symboler för spelkortens färger, tärningar, dominobrickor och spelrelaterade Unicode-tecken. Klicka på valfri symbol för att kopiera den direkt.",
+ "intro": "Det här biblioteket innehåller Unicode-symboler för spelkortens färger (hjärter, ruter, klöver, spader), enskilda korttecken, tärningssidor och andra spelrelaterade tecken. Symbolerna är grupperade efter speltyp och kategori.",
+ "date_published": "2026-09-10",
+ "date_modified": "2026-09-10",
+ "copy_pattern": "single",
+ "canonical": "https://ultratextgen.com/sv/library/kortfarg-symboler/",
+ "home_url": "https://ultratextgen.com/sv/",
+ "crumb_home": "Startsida",
+ "crumb_library": "Bibliotek",
+ "library_url": "https://ultratextgen.com/sv/library/",
+ "hreflang": [
+  {
+   "lang": "sv",
+   "href": "https://ultratextgen.com/sv/library/kortfarg-symboler/"
+  },
+  {
+   "lang": "en",
+   "href": "https://ultratextgen.com/library/card-suit-symbols/"
+  },
+  {
+   "lang": "x-default",
+   "href": "https://ultratextgen.com/library/card-suit-symbols/"
+  }
+ ],
+ "related": [
+  {
+   "href": "/sv/library/stjarna-symboler/",
+   "title": "Stjärnsymboler (att kopiera)",
+   "desc": "En samling stjärnsymboler, gnistertecken och asterisk-varianter i Unicode. Från enkla stjärnor och flertaggade stjärnor till betygsstjärnor – klicka."
+  },
+  {
+   "href": "/sv/library/hjarta-symboler/",
+   "title": "Hjärtsymboler att kopiera",
+   "desc": "En samling hjärta-emoji, Unicode-hjärtan och kärlekssymboler, sorterade efter färg och stil. Från röda och rosa hjärtan till brustna hjärtan och."
+  },
+  {
+   "href": "/sv/library/punkt-symboler/",
+   "title": "Punktsymboler att kopiera",
+   "desc": "Kopiera punkttecken och listtecken (bullet points) för LinkedIn-inlägg, mejl, dokument och sociala medier. Klicka på en symbol för att kopiera direkt."
+  }
+ ],
+ "sections": [
+  {
+   "id": "standard-suits",
+   "label": "Kortlekens fyra färger",
+   "h2": "Kortlekens fyra färger",
+   "intro": "De fyra fyllda färgsymbolerna som används i de flesta västerländska kortlekar.",
+   "symbols": [
+    {
+     "char": "♠",
+     "label": "Spader"
+    },
+    {
+     "char": "♥",
+     "label": "Hjärter"
+    },
+    {
+     "char": "♦",
+     "label": "Ruter"
+    },
+    {
+     "char": "♣",
+     "label": "Klöver"
+    }
+   ]
+  },
+  {
+   "id": "outlined-suits",
+   "label": "Konturfärger (vita)",
+   "h2": "Konturfärger (vita)",
+   "intro": "Konturerade (vita) varianter av de fyra standardfärgerna.",
+   "symbols": [
+    {
+     "char": "♤",
+     "label": "Vit spader"
+    },
+    {
+     "char": "♡",
+     "label": "Vit hjärter"
+    },
+    {
+     "char": "♢",
+     "label": "Vit ruter"
+    },
+    {
+     "char": "♧",
+     "label": "Vit klöver"
+    }
+   ]
+  },
+  {
+   "id": "card-suits-combined",
+   "label": "Kortfärger – fyllda och kontur (8)",
+   "h2": "Kortfärger – fyllda och kontur (8)",
+   "intro": "Alla åtta Unicode-kortfärger tillsammans – fyllda (♠ ♥ ♦ ♣) och konturerade (♤ ♡ ♢ ♧) – den kanoniska \"namngivna uppsättningen\" för kortdekoration.",
+   "symbols": [
+    {
+     "char": "♠",
+     "label": "Spader"
+    },
+    {
+     "char": "♥",
+     "label": "Hjärter"
+    },
+    {
+     "char": "♦",
+     "label": "Ruter"
+    },
+    {
+     "char": "♣",
+     "label": "Klöver"
+    },
+    {
+     "char": "♤",
+     "label": "Vit spader"
+    },
+    {
+     "char": "♡",
+     "label": "Vit hjärter"
+    },
+    {
+     "char": "♢",
+     "label": "Vit ruter"
+    },
+    {
+     "char": "♧",
+     "label": "Vit klöver"
+    }
+   ]
+  },
+  {
+   "id": "dice",
+   "label": "Tärningssidor",
+   "h2": "Tärningssidor",
+   "intro": "Unicode-tecken som visar varje sida av en vanlig sexsidig tärning.",
+   "symbols": [
+    {
+     "char": "⚀",
+     "label": "Tärning 1"
+    },
+    {
+     "char": "⚁",
+     "label": "Tärning 2"
+    },
+    {
+     "char": "⚂",
+     "label": "Tärning 3"
+    },
+    {
+     "char": "⚃",
+     "label": "Tärning 4"
+    },
+    {
+     "char": "⚄",
+     "label": "Tärning 5"
+    },
+    {
+     "char": "⚅",
+     "label": "Tärning 6"
+    }
+   ]
+  },
+  {
+   "id": "playing-card-emojis",
+   "label": "Spelkorts-emoji",
+   "h2": "Spelkorts-emoji",
+   "intro": "Emoji-varianter av spelkort och spelsymboler.",
+   "symbols": [
+    {
+     "char": "🃏",
+     "label": "Joker"
+    },
+    {
+     "char": "🎴",
+     "label": "Blomsterspelkort"
+    },
+    {
+     "char": "🀄",
+     "label": "Mahjong röd drake"
+    }
+   ]
+  },
+  {
+   "id": "trump-and-special-cards",
+   "label": "Trumf- och specialkortssymboler",
+   "h2": "Trumf- och specialkortssymboler",
+   "intro": "Unicode-spelkortstecken från Playing Cards-blocket.",
+   "symbols": [
+    {
+     "char": "🂠",
+     "label": "Kortets baksida"
+    },
+    {
+     "char": "🂡",
+     "label": "Spader ess"
+    },
+    {
+     "char": "🂢",
+     "label": "Spader två"
+    },
+    {
+     "char": "🂮",
+     "label": "Spader kung"
+    },
+    {
+     "char": "🂱",
+     "label": "Hjärter ess"
+    },
+    {
+     "char": "🂾",
+     "label": "Hjärter kung"
+    },
+    {
+     "char": "🃁",
+     "label": "Ruter ess"
+    },
+    {
+     "char": "🃎",
+     "label": "Ruter kung"
+    },
+    {
+     "char": "🃑",
+     "label": "Klöver ess"
+    },
+    {
+     "char": "🃞",
+     "label": "Klöver kung"
+    }
+   ]
+  },
+  {
+   "id": "game-symbols",
+   "label": "Spelsymboler",
+   "h2": "Spelsymboler",
+   "intro": "Ytterligare spel- och nöjessymboler.",
+   "symbols": [
+    {
+     "char": "🎰",
+     "label": "Enarmad bandit"
+    },
+    {
+     "char": "🎲",
+     "label": "Speltärning"
+    },
+    {
+     "char": "🎯",
+     "label": "Prick i mitten"
+    },
+    {
+     "char": "🎱",
+     "label": "Biljardklot 8"
+    }
+   ]
+  }
+ ]
+}

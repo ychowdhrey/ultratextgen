@@ -909,10 +909,41 @@
     });
   }
 
+  /* Any printables event that is not an output. Same page identity as
+     trackPrintable (derived from the pathname, never from the typed input:
+     the PII rule above applies here too), so every printables row in
+     Analytics carries one printable_page dimension. Used by the engines
+     for printable_generate (a sheet was produced on screen) and by the
+     nav listener below. */
+  function trackPrintableEvent(name, params) {
+    var parts = (window.location.pathname || "/").split("/").filter(Boolean);
+    var page = parts.length > 1 ? parts.slice(1).join("/") : (parts[0] || "index");
+    var row = { event: name, printable_page: page };
+    var extra = params || {};
+    for (var k in extra) {
+      if (Object.prototype.hasOwnProperty.call(extra, k)) row[k] = extra[k];
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(row);
+  }
+
+  /* "ultratextgen.com/printables/name-tracing": the credit every printed or
+     exported sheet carries. One owner for the three printables engines
+     (printablesEngine, monogramEngine, crossStitchEngine), which each reach
+     header.js already for trackPrintable, so the wording cannot drift
+     between a PNG and a print. The path, not only the domain, so a sheet
+     that travels opens the tool that made it. */
+  function printableCredit() {
+    var path = String(window.location.pathname || "/").replace(/index\.html$/, "").replace(/\/$/, "");
+    return "ultratextgen.com" + (path || "");
+  }
+
   var ns = (window.UltraTextGen = window.UltraTextGen || {});
   ns.copyIdentity = copyIdentity;
   ns.trackCopy = trackCopy;
   ns.trackPrintable = trackPrintable;
+  ns.trackPrintableEvent = trackPrintableEvent;
+  ns.printableCredit = printableCredit;
 
   function initializeCtaTracking() {
     document.addEventListener("click", function (evt) {
@@ -932,13 +963,43 @@
     }, false);
   }
 
+  /* Printables cluster navigation. The 2026-09-10 review could not say
+     whether a visitor who lands on a hub or a per-letter page ever reaches
+     a second printable, because nothing recorded the click. Only the
+     printables' own link surfaces are watched (hub cards, the A-Z strip,
+     prev/next, chips, related cards); header nav and footer are the site's
+     shared chrome and stay under cta_click / plain page_view. */
+  var PRINTABLE_NAV_SELECTOR = ".printable-card a[href], a.printable-card[href], .pt-az-link[href], a[rel=\"next\"][href], a[rel=\"prev\"][href], .pt-chip[href], .related-page-card a[href], a.related-page-card[href]";
+  function printableNavKind(link) {
+    if (link.matches(".pt-az-link")) return "az_strip";
+    if (link.matches("a[rel=\"next\"], a[rel=\"prev\"]")) return link.getAttribute("rel");
+    if (link.matches(".pt-chip")) return "chip";
+    if (link.matches(".related-page-card, .related-page-card a")) return "related_card";
+    return "hub_card";
+  }
+  function initializePrintableNavTracking() {
+    if (!/\/(printables|imprimibles|druckvorlagen|do-druku|imprimables|imprimiveis)\//.test(window.location.pathname || "")) return;
+    document.addEventListener("click", function (evt) {
+      var link = evt.target && evt.target.closest && evt.target.closest(PRINTABLE_NAV_SELECTOR);
+      if (!link) return;
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) === "#") return;
+      trackPrintableEvent("printable_nav", {
+        printable_nav_kind: printableNavKind(link),
+        printable_nav_href: href
+      });
+    }, false);
+  }
+
   if (document.body) {
     initializeSharedHeader();
     initializeCtaTracking();
+    initializePrintableNavTracking();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
       initializeSharedHeader();
       initializeCtaTracking();
+      initializePrintableNavTracking();
     });
   }
 })();

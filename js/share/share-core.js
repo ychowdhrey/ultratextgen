@@ -393,6 +393,123 @@
     return row;
   };
 
+  // Share a rendered image file through the native share sheet (WhatsApp,
+  // Messages, a teacher group) with a link riding along as text, falling
+  // back to a plain download where files cannot be shared. Lifted out of
+  // printablesEngine.js on 2026-09-10 so the monogram and cross-stitch
+  // engines share one implementation and one share_text shape.
+  //   opts: { filename, title, text, surface, itemType }
+  // Resolves to "native" | "aborted" | "downloaded".
+  UTG.shareImageBlob = async function (blob, opts) {
+    const o = opts || {};
+    const filename = o.filename || "share.png";
+    const file = new File([blob], filename, { type: blob.type || "image/png" });
+    const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "share_text",
+      share_method: canShareFiles ? "image" : "image_download",
+      share_surface: o.surface || "generator",
+      share_item_type: o.itemType || "style"
+    });
+    if (canShareFiles) {
+      try {
+        const payload = { files: [file], title: o.title || document.title };
+        if (o.text) payload.text = o.text;
+        await navigator.share(payload);
+        return "native";
+      } catch (err) {
+        if (err && err.name === "AbortError") return "aborted";
+      }
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    return "downloaded";
+  };
+
+  // A small transient message (link copied, PDF saved). One element per
+  // page, reused; the class is the printables toast so the look is shared.
+  let toastTimer = null;
+  UTG.showToast = function (msg) {
+    let t = document.getElementById("utg-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "utg-toast";
+      t.className = "pt-toast";
+      t.setAttribute("role", "status");
+      t.setAttribute("aria-live", "polite");
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("is-visible"), 2600);
+  };
+
+  // A Share / Share-as-image / Copy-link / Save-to-Pinterest row for a
+  // surface whose creation is a URL rather than a styled string (the
+  // printables: a sheet is its preset link). Labels come from the caller,
+  // which owns the page's translations, same as buildShareButton.
+  //   opts: { className, buttonClass, url: () => string, title,
+  //           surface, itemType,
+  //           labels: { share, shareImage, copyLink, linkCopied, pinterest },
+  //           onShareImage?: () => void,   // omitted: no image button
+  //           pinMedia?: () => string,     // omitted: no Pinterest button
+  //           onShared?: (result) => void }
+  UTG.buildShareRow = function (opts) {
+    const o = opts || {};
+    const L = o.labels || {};
+    const surface = o.surface || "generator";
+    const itemType = o.itemType || "style";
+    const urlOf = () => (typeof o.url === "function" ? o.url() : (o.url || window.location.href));
+    const titleOf = () => (typeof o.title === "function" ? o.title() : (o.title || document.title));
+    const cls = o.buttonClass || "bubble-btn pt-share-btn";
+    const mk = (text, onClick) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = cls; b.textContent = text;
+      b.addEventListener("click", onClick);
+      return b;
+    };
+    const row = document.createElement("div");
+    row.className = o.className || "result-share-row";
+    row.appendChild(mk(L.share || uiText("shareResult.label", "Share"), async () => {
+      const r = await UTG.shareCreation({ url: urlOf(), title: titleOf(), surface, itemType });
+      if (r === "copied" && L.linkCopied) UTG.showToast(L.linkCopied);
+      if (o.onShared) o.onShared(r);
+    }));
+    if (o.onShareImage) {
+      row.appendChild(mk(L.shareImage || uiText("shareResult.imageTitle", "Share as an image"), () => { o.onShareImage(); }));
+    }
+    row.appendChild(mk(L.copyLink || "Copy link", async () => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "share_text", share_method: "link_copy", share_surface: surface, share_item_type: itemType });
+      try {
+        await navigator.clipboard.writeText(urlOf());
+        if (L.linkCopied) UTG.showToast(L.linkCopied);
+        if (o.onShared) o.onShared("copied");
+      } catch (err) { /* clipboard unavailable: nothing to show */ }
+    }));
+    if (o.pinMedia) {
+      const pin = document.createElement("a");
+      pin.className = cls + " pt-pin-btn";
+      pin.textContent = L.pinterest || "Save to Pinterest";
+      pin.href = "https://www.pinterest.com/";
+      pin.target = "_blank"; pin.rel = "noopener";
+      pin.addEventListener("click", () => {
+        pin.href = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(urlOf()) +
+          "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(titleOf());
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "share_text", share_method: "pinterest", share_surface: surface, share_item_type: itemType });
+        if (o.onShared) o.onShared("pinterest");
+      });
+      row.appendChild(pin);
+    }
+    return row;
+  };
+
   // The ?style= value this page was opened with, normalized. Only ever
   // compared against ids the page itself produced — never rendered.
   let sharedStyleId = null;

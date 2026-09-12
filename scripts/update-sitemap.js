@@ -62,7 +62,14 @@ const ALT_RE = /\balt=["']([^"']*)["']/i;
 // deliberately a property of the markup rather than a hardcoded path: any future
 // content image described well enough to deserve indexing qualifies on its own,
 // and nothing here needs updating when one is added.
-function getContentImages(html) {
+//
+// Each entry carries the image's `loc` and, as `title`, the alt text that
+// qualified it. The alt is the one description of the image the page already
+// commits to, so declaring it as <image:title> costs nothing to maintain and
+// gives Bing (which still reads the tag; Google ignored it from 2022) the same
+// words the page shows a screen reader. getContentImages() keeps returning bare
+// URLs for callers that only want the list.
+function getContentImageEntries(html) {
   const out = [];
   for (const tag of html.replace(DECORATIVE_FIGURE_RE, '').match(IMG_TAG_RE) || []) {
     if (/\baria-hidden=["']true["']/i.test(tag)) continue;
@@ -71,20 +78,44 @@ function getContentImages(html) {
     const src = tag.match(SRC_RE);
     if (!src) continue;
     const url = src[1].trim();
+    const title = decodeEntities(alt[1].trim());
     // Same-origin only. A data: URI has no URL to index, and an image we do not
     // host is not ours to declare. `//host/path` is protocol-relative and points
     // at another origin despite its leading slash — prefixing it would produce
     // https://ultratextgen.com//cdn.example.com/... and declare an image that
     // 404s. Caught by update-sitemap.test.js rather than by review.
     if (url.startsWith('//')) continue;
-    if (url.startsWith('/')) out.push(`${BASE_URL}${url}`);
-    else if (url.startsWith(`${BASE_URL}/`)) out.push(url);
+    if (url.startsWith('/')) out.push({ loc: `${BASE_URL}${url}`, title });
+    else if (url.startsWith(`${BASE_URL}/`)) out.push({ loc: url, title });
   }
   return out;
 }
 
-// Every image this page wants indexed, og:image first, de-duplicated. A page may
-// legitimately declare several — the sitemap spec allows up to 1,000 per URL.
+function getContentImages(html) {
+  return getContentImageEntries(html).map(e => e.loc);
+}
+
+// The alt attribute is HTML; the sitemap is XML. Decode what HTML allows in an
+// attribute value, then escapeXml() re-encodes the five XML specials on output,
+// so `&amp;` in a page becomes `&` here and `&amp;` again in the sitemap
+// rather than the double-encoded `&amp;amp;`.
+function decodeEntities(s) {
+  return s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+    .replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+}
+
+function escapeXml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
+
+// Every image this page wants indexed, og:image first, de-duplicated by URL. A
+// page may legitimately declare several — the sitemap spec allows up to 1,000
+// per URL. Entries are {loc, title?}; the og:image has no title because the
+// page states none for it.
 function getPageImages(filePath) {
   let html;
   try {
@@ -93,10 +124,18 @@ function getPageImages(filePath) {
     return [];
   }
   const images = [];
+  const seen = new Set();
   const og = html.match(OG_IMAGE_RE);
-  if (og && og[1] !== LOGO_FALLBACK) images.push(og[1]);
-  images.push(...getContentImages(html));
-  return [...new Set(images)];
+  if (og && og[1] !== LOGO_FALLBACK) {
+    images.push({ loc: og[1] });
+    seen.add(og[1]);
+  }
+  for (const entry of getContentImageEntries(html)) {
+    if (seen.has(entry.loc)) continue;
+    seen.add(entry.loc);
+    images.push(entry);
+  }
+  return images;
 }
 
 // A sitemap is a list of pages we WANT indexed — advertising a noindex page
@@ -267,7 +306,10 @@ function buildUrlBlock(url, lastmod, changefreq, priority, images) {
     `    <priority>${priority}</priority>`,
   ];
   for (const image of images || []) {
-    lines.push('    <image:image>', `      <image:loc>${image}</image:loc>`, '    </image:image>');
+    const entry = typeof image === 'string' ? { loc: image } : image;
+    lines.push('    <image:image>', `      <image:loc>${entry.loc}</image:loc>`);
+    if (entry.title) lines.push(`      <image:title>${escapeXml(entry.title)}</image:title>`);
+    lines.push('    </image:image>');
   }
   lines.push('  </url>');
   return lines.join('\n');
@@ -387,4 +429,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { generateSitemap, getContentImages };
+module.exports = { generateSitemap, getContentImages, getContentImageEntries, buildUrlBlock };
