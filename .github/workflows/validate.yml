@@ -643,6 +643,16 @@ jobs:
         continue-on-error: true
         run: npm run check:collection-grids -- --base origin/${{ github.base_ref || 'main' }} | tee collection-grids.log
 
+      # Same shape and same reasoning as the collection-grid check above: the
+      # 17 emoji-flag pages build 195 country tiles each, and 15 of them
+      # rendered ZERO without JavaScript. Gating rather than informing because
+      # there is no backlog to be red against — all 17 carry a current block,
+      # and the fix is one command.
+      - name: Run country-flag pre-render check
+        id: country_flags
+        continue-on-error: true
+        run: npm run check:country-flags -- --base origin/${{ github.base_ref || 'main' }} | tee country-flags.log
+
       # Gating, zero backlog: unit tests over the CTA routing table and the
       # in-place pass that applies it. Three things they pin down, each a
       # silent defect rather than a crash: no <lang>/ page may ever route (no
@@ -884,6 +894,11 @@ jobs:
             cat collection-grids.log
             echo '```'
             echo ""
+            echo "### Country-flag pre-render — \`${{ steps.country_flags.outcome }}\`"
+            echo '```'
+            cat country-flags.log
+            echo '```'
+            echo ""
             echo "### CTA routing tests — \`${{ steps.cta_routing_tests.outcome }}\`"
             echo '```'
             cat cta-routing-tests.log
@@ -958,6 +973,7 @@ jobs:
           steps.i18n_faq_schema_tests.outcome == 'failure' ||
           steps.accessibility.outcome == 'failure' ||
           steps.collection_grids.outcome == 'failure' ||
+          steps.country_flags.outcome == 'failure' ||
           steps.cta_routing_tests.outcome == 'failure' ||
           steps.library_hub_parity.outcome == 'failure'
         run: |

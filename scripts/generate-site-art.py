@@ -2098,6 +2098,14 @@ PAGES = {
   "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Draft Emoji 18.0 candidate, not live yet", m_paw, K_SYM),
   "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☝", "☞", "☜", "☟", "✌"), K_SYM),
+  # Emoji 17.0, live on phones since iOS 26.4 (2026-03-24). Each is registered
+  # against a DRAWN motif rather than its own glyph: no font on the build box
+  # covers U+1FACD/U+1FA8A/U+1FA8E/U+1FAEF yet, and spanned() drops what it
+  # cannot draw, so selecting the emoji would render an empty card.
+  "symbol-orca-emoji": ("Orca Emoji", "U+1FACD, and why it is filed with the dolphins", m_paw, K_SYM),
+  "symbol-trombone-emoji": ("Trombone Emoji", "U+1FA8A, the slide that earned its own glyph", m_note, K_SYM),
+  "symbol-treasure-chest-emoji": ("Treasure Chest Emoji", "U+1FA8E, filed under money, not objects", m_coin, K_SYM),
+  "symbol-fight-cloud-emoji": ("Fight Cloud Emoji", "U+1FAEF, a century-old cartoon shorthand", m_burst_angry, K_SYM),
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
@@ -2189,6 +2197,8 @@ PAGES = {
         glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
+  "library-kakaotalk-symbols": ("KakaoTalk Symbols", "Name frames, status accents and jamo",
+      glyphs("ʰ", "♡", "⋆", "‹", "‹"), K_LIB),
   "library-discord-symbols": ("Discord Symbols", "Symbols that paste cleanly in Discord",
         glyphs("✦", "★", "⚔", "♥", "➤"), K_LIB),
   "library-divider-kaomoji": ("Kaomoji Dividers", "Cute text dividers & spacers", m_kaomoji, K_LIB),
@@ -2887,6 +2897,7 @@ PAGES.update({
 "events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
 "events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
+"id-events-imlek": ("Generator Teks & Simbol Imlek", "Lampion, angpau, dan ucapan Tahun Baru Imlek", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
 "events-easter": ("Easter Fonts & Emoji Generator", "Bunny, egg, and chick emoji for spring greetings", m_bunny, K_USE),
@@ -3297,6 +3308,7 @@ PAGES.update({
   "es-answers-what-font-does-whatsapp-use": ("¿Qué fuente usa WhatsApp?", "En resumen: el logo usa Helvetica Neue, pero el chat no tiene una fuen", m_qa, K_ANS),
   "fr-answers-what-font-does-pinterest-use": ("Quelle Police Utilise Pinterest ?", "La réponse courte, l'histoire de Pinterest Sans, et l'alternative grat", m_qa, K_ANS),
   "fr-answers-what-font-does-whatsapp-use": ("Quelle police utilise WhatsApp ?", "En bref : le logo est en Helvetica Neue, mais l'interface de chat n'ut", m_qa, K_ANS),
+  "id-answers-kata-kata-ucapan-imlek": ("Kata-Kata Ucapan Imlek yang Bagus", "Ucapan mana untuk siapa, dan kenapa banyak yang campur bahasa", m_qa, K_ANS),
   "id-answers-what-font-does-pinterest-use": ("Font Apa yang Digunakan Pinterest?", "Jawaban singkatnya, kisah di balik Pinterest Sans, dan font gratis mir", m_qa, K_ANS),
   "id-answers-what-font-does-whatsapp-use": ("Font Apa yang Digunakan WhatsApp?", "Singkatnya: logo WhatsApp menggunakan Helvetica Neue, tapi tampilan ch", m_qa, K_ANS),
   "it-answers-what-font-does-pinterest-use": ("Che Font Usa Pinterest?", "In breve: Pinterest usa un typeface proprietario chiamato Pinterest Sa", m_qa, K_ANS),

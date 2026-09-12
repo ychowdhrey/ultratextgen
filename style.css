@@ -5154,12 +5154,6 @@ body.preview-open { overflow: hidden; }
   color: var(--accent-purple);
   background: color-mix(in srgb, var(--accent-purple) 10%, var(--bg-white));
 }
-.preview-note {
-  margin: 12px 0 0;
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  text-align: center;
-}
 
 /* Shared mockup bits — platform-brand colors are scoped locals on purpose:
    the mockups replicate external UIs and must not follow the site theme. */
@@ -5187,6 +5181,22 @@ body.preview-open { overflow: hidden; }
 .pv-ig-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
 .pv-ig-stats { display: flex; gap: 14px; font-size: 0.78rem; color: var(--pv-fg); }
 .pv-ig-stats b { display: block; text-align: center; }
+    /* Neutral placeholder bars stand in for a display name or handle inside the
+       platform mockups. They carry no text on purpose: the modal renders on 29
+       locales, and this chrome depicts a third-party product's interface rather
+       than this site's own copy, so its wording is neither ours to author nor
+       harvestable from our pages (measured 2026-09-10). currentColor lets one
+       rule serve every mockup's own palette. */
+    .pv-ph {
+      display: inline-block;
+      height: 0.62em;
+      border-radius: 3px;
+      background: currentColor;
+      opacity: 0.28;
+      vertical-align: middle;
+    }
+    .pv-ph-name { width: 76px; }
+    .pv-ph-sub { width: 108px; }
 .pv-ig-name { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
 .pv-ig-bio { font-size: 0.85rem; }
 .pv-ig-btn { margin-top: 10px; text-align: center; font-size: 0.8rem; font-weight: 600;

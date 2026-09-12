@@ -659,6 +659,44 @@
   ns.formatItems = formatItems;
 
   /* ============================
+     Country flag rows
+     ============================ */
+  /* The 17 emoji-flag pages each hold their own COUNTRIES registry, already
+     translated into that page's language, and used to build 195 tiles per
+     page. They built them with createElement on load, so a client that runs
+     no JavaScript saw an empty box where the page's payload should be.
+
+     The markup lives here, once, so scripts/prerender-country-flags.js can
+     write the SAME markup into the page at build time by calling this
+     function rather than carrying a copy of it — the arrangement
+     gridSectionsHTML above already uses, for the reason CLAUDE.md gives for
+     the library-hub builders.
+
+     `aria` carries the page's own label template, split around the country
+     name (EN "Copy " + name + " flag", ja "" + name + "の国旗をコピー").
+     Nothing is translated here: each page passes the strings it already
+     shipped. */
+  /* @country-flag-rows:begin */
+  function countryFlagRowHTML(country, aria) {
+    var flag = isoToFlag(country.code);
+    var label = (aria && aria.before ? aria.before : "") + country.name +
+      (aria && aria.after ? aria.after : "");
+    return '<div class="flag-row" data-region="' + escHtml(country.region) + '">' +
+      '<button class="flag-emoji symbol-tile" data-symbol="' + escHtml(flag) +
+      '" aria-label="' + escHtml(label) + '">' + escHtml(flag) + "</button>" +
+      '<span class="flag-label">' + escHtml(country.name) + "</span>" +
+      "</div>";
+  }
+
+  function countryFlagRowsHTML(countries, aria) {
+    return (countries || []).map(function (country) {
+      return countryFlagRowHTML(country, aria);
+    }).join("");
+  }
+  /* @country-flag-rows:end */
+  ns.countryFlagRowsHTML = countryFlagRowsHTML;
+
+  /* ============================
      Build grid UI
      Call:  UltraTextGen.buildGrids("containerId", groups)
      where groups = [{ name: "EU", flags: ["\ud83c\udde6\ud83c\uddf9", \u2026] }, \u2026]

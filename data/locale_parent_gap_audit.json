@@ -1397,6 +1397,19 @@
       "verdict": "veto",
       "evidence": "POST-BUILD PERFORMANCE VETO (repurposed field use -- see note below), not a pre-build screen; the three named `instruments` fields don't fit this check's shape and are left null rather than mis-populated. Post-launch 4-week+ observation (built via public PR #741, merged 2026-08-12T03:32:10Z; review-register item 48). Real GSC Query x Landing Page x Country x Date export, user-supplied (lab repo data/raw-exports/gsc-query-page-country-2026-08-24_2026-09-07.csv, 24,602 rows, confirmed live -- id/library/simbol-love alone logs 250+ impressions/day in the same export, so this is a real zero, not an instrument outage). 0 impressions / 0 clicks over 14d. Stop rule from the review-register item 48 build brief (<20 impressions after 4 weeks with confirmed indexing) applied; not extending the observation window. Google-side verdict only -- Bing Webmaster Tools data was not checked for this cell (2026-09-10 AdSense channel split: Bing 1.69 SGD RPM vs Google 0.46 SGD RPM, Google ~15% of blended ad revenue -- see docs/current-operating-priorities.md and docs/multi-surface-discovery-reorientation-2026-08-29.md in the lab repo); a Bing-side re-check is a legitimate future follow-up, not required to close this Google-scoped item.",
       "recordedBy": "review-register-item-48-close-out"
+    },
+    {
+      "pattern": null,
+      "locale": "id",
+      "checkedDate": "2026-09-10",
+      "instruments": {
+        "competitorFootprintInLocale": false,
+        "keywordVolumeInLocaleMonthly": 33100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Real per-locale instrument pull (Semrush id database, 2026-09-10), not a user authorization in lieu of one. Volume, deduplicated by (keyword, country) and never summed: ucapan imlek 2026 33,100/mo (KD 28), gong xi fa cai 49,500/mo (KD 28), ucapan imlek 6,600/mo (KD 28), ucapan selamat imlek 3,600/mo (KD 25), kata kata ucapan imlek 320/mo. Trend arrays for all four head terms are distinct, so these are separate buckets rather than one bucket under several labels; every one is sharply single-month seasonal, which is what a lunar new year should look like. Competitor footprint: no text/symbol/copy-paste generator ranks for the job at all -- the top ten for `ucapan imlek` is generic listicles on off-topic domains (a university physics-department blog at #1, a travel site, a jobs board, two Instagram reels), i.e. a weak incumbent set. enGscImpressionsFromLocale is null because no GSC export is attached to this session; the other two instruments carried the check. The demand is decisively in the GREETINGS half, which is why this entry authorizes the events page and its companion answer page and nothing else: the generator-shaped terms are thin by comparison (emoji imlek 480, font imlek 260, simbol imlek 70). The pattern is null because events/ has no data/core_parent_set.json entry, so classifyParent() reports pattern: null / tier \"unclassified\" and a ledger entry must be keyed the same way to match -- same shape as the fi and zh-tw null-pattern entries above. The companion answer page is covered by the existing answers/*-locale-id cell, not by this entry. Origin: a 2026-07-10 branch (claude/cny-page-brainstorm-3toe0h) built six Indonesian pages in commits pushed AFTER its PRs #457 and #465 had merged; the Spanish half of that branch shipped and the Indonesian half never did. Authorizes exactly id/events/imlek/ and id/answers/kata-kata-ucapan-imlek/. The other four recovered pages (idul-fitri, idul-adha and their two answer pages) are NOT authorized and are not built: they declare no hreflang=\"en\" at all and have no English parent to translate from, which is an English-Parent Rule question rather than a demand question.",
+      "recordedBy": "claude-session-lucid-davinci-oi44ql-semrush-2026-09-10"
     }
   ]
 }
