@@ -582,6 +582,10 @@
         onShareImage: shareImage,
         pinMedia: function () { return og ? og.getAttribute("content") : ""; }
       }));
+    } else if (!(ns && ns.buildShareRow)) {
+      // Never fail silently: no share row looks identical to a page that
+      // never had one. See printablesEngine.js for the full note (2026-09-13).
+      console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
     }
 
     applyPreset();
@@ -590,9 +594,19 @@
     whenFontReady(render);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
+     settled on after shipping the bug. This file and the two modules it
+     depends on are all `defer`, and every deferred script runs BEFORE
+     DOMContentLoaded fires. During this file's own execution readyState is
+     already "interactive", so a `=== "loading"` guard runs init() immediately;
+     it worked only because share-core.js and saved-items.js happen to sit
+     earlier in document order on every page that loads this engine. Move a
+     tag and the share row and the saved-sheets strip stop rendering, with no
+     error and no failing check. Keying on "complete" makes the wiring
+     independent of tag order (2026-09-13). */
+  if (document.readyState === "complete") {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();

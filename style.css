@@ -47,11 +47,17 @@
     /* header.js is deferred; reserve its rendered height per viewport range
        so late injection can't shift content below it. Values mirror .header's
        measured wrap heights; the placeholder is replaced by the header. */
-    #shared-header { min-height: 63px; }
-    @media (max-width: 861px) { #shared-header { min-height: 83px; } }
-    @media (max-width: 640px) { #shared-header { min-height: 75px; } }
-    @media (max-width: 594px) { #shared-header { min-height: 131px; } }
-    @media (max-width: 409px) { #shared-header { min-height: 187px; } }
+    /* Re-derived 2026-09-13 by sweeping the rendered .header height every 10px
+       from 280px to 1920px and taking each band's maximum. The overflow fix
+       above changed how the row wraps, so the old values were stale in both
+       directions: 187px under-reserved a 229px header below 410px (a real
+       shift on the narrowest phones, and it was under-reserved before the fix
+       too, at 189px), while 83px over-reserved a 65px header from 641px up. */
+    #shared-header { min-height: 65px; }
+    @media (max-width: 861px) { #shared-header { min-height: 65px; } }
+    @media (max-width: 640px) { #shared-header { min-height: 133px; } }
+    @media (max-width: 594px) { #shared-header { min-height: 189px; } }
+    @media (max-width: 409px) { #shared-header { min-height: 229px; } }
 
     .header {
       position: sticky;
@@ -1170,6 +1176,29 @@
     }
 
     /* Responsive */
+
+    /* The header's labelled nav needs about 1,100px to fit, and .header-inner
+       does not wrap above 640px -- so between 641px and ~1,045px the row simply
+       ran off the side of the page. Measured on the tablet band: +404px of
+       horizontal scroll at 641px, +277px at 768px, +21px at 1024px, on every
+       page of the site. Hiding the labels across that band is the same remedy
+       the phone breakpoint already used, applied where it was actually needed
+       (found 2026-09-13 while fixing the 10px phone overflow, which turned out
+       to be the small end of this). */
+    @media (max-width: 1100px) {
+      .header-btn span {
+        display: none;
+      }
+
+      /* Icon-only, so the label no longer pays for the horizontal padding.
+         Eight buttons at 40px plus seven 8px gaps came to 376px, which still
+         did not fit at 641px; 34px each brings the row to 328px. The 32px
+         button height is unchanged, so no tap target gets shorter. */
+      .header-btn {
+        padding: 8px 9px;
+      }
+    }
+
     @media (max-width: 640px) {
       .header-inner {
         flex-wrap: wrap;
@@ -1184,6 +1213,15 @@
 
       .header-btn span {
         display: none;
+      }
+
+      /* Below roughly 360px even the tightened row does not fit. Wrapping is
+         the right
+         failure: a second row keeps every control reachable, where the
+         overflow hid the last one off-screen. */
+      .header-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
     
      .hero-inner {

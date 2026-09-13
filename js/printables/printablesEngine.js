@@ -1375,6 +1375,12 @@
         pinMedia: previewImageUrl,
         onShared: () => rememberSheet("share")
       }));
+    } else if (!(window.UltraTextGen && window.UltraTextGen.buildShareRow)) {
+      // Never fail silently. This branch means js/share/share-core.js did not
+      // execute before this engine did -- almost always a tag-order change --
+      // and the visible symptom is simply no share row, which looks identical
+      // to a page that never had one. Say so (2026-09-13).
+      console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
     }
 
     savedMount = document.createElement("div");
@@ -4369,9 +4375,19 @@
     applyPresetState();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
+     settled on after shipping the bug. This file and the two modules it
+     depends on are all `defer`, and every deferred script runs BEFORE
+     DOMContentLoaded fires. During this file's own execution readyState is
+     already "interactive", so a `=== "loading"` guard runs init() immediately;
+     it worked only because share-core.js and saved-items.js happen to sit
+     earlier in document order on every page that loads this engine. Move a
+     tag and the share row and the saved-sheets strip stop rendering, with no
+     error and no failing check. Keying on "complete" makes the wiring
+     independent of tag order (2026-09-13). */
+  if (document.readyState === "complete") {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();
