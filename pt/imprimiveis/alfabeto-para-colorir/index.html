@@ -169,8 +169,27 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Escolher uma letra para colorir"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">Quer o alfabeto completo? Imprima os 26 contornos para colorir de uma vez — em uma única folha, ou como livro com uma página por letra.</p>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
       <div class="bubble-actions pt-batch-actions">
         <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Imprimir o alfabeto</button>
+      </div>
+    </section>
+
+    <!-- Name / word coloring sheet -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Imprima um nome para colorir</h2>
+      <p class="bubble-az-intro">Digite um nome ou uma palavra curta e imprima-o como grandes contornos para colorir.</p>
+      <div class="pt-name-tool">
+        <div class="input-wrapper">
+          <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Digite um nome… ex. Mia" maxlength="40">
+        </div>
+        <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+        <div class="bubble-actions pt-name-actions">
+          <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Imprimir a folha</button>
+          <button type="button" class="bubble-btn" id="pt-name-png">Baixar PNG</button>
+        </div>
       </div>
     </section>
 <figure class="guide-hero-figure pt-sheet-preview">

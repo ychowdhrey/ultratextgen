@@ -166,9 +166,29 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Wybierz literę do pokolorowania"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
       <p class="bubble-az-intro">Chcesz cały alfabet? Wydrukuj wszystkie 26 konturów do pokolorowania naraz — na jednej kartce, albo jako książeczkę z jedną literą na stronę.</p>
+      <div class="pt-size-field">
+        <div id="pt-size-control"></div>
+      </div>
       <div class="bubble-actions pt-batch-actions">
         <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Drukuj alfabet</button>
       </div>
+    </section>
+
+    <!-- Name / word coloring sheet -->
+    <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
+      <h2 id="ptNameHeading">Wydrukuj imię do pokolorowania</h2>
+      <p class="bubble-az-intro">Wpisz imię lub krótkie słowo i wydrukuj je jako duże kontury do kolorowania.</p>
+      <div class="pt-name-tool">
+        <div class="input-wrapper">
+          <input type="text" class="main-input pt-name-input" id="pt-name-input" placeholder="Wpisz imię… np. Michał" maxlength="40">
+        </div>
+        <div class="pt-name-preview" id="pt-name-preview" aria-live="polite"></div>
+        <div class="bubble-actions pt-name-actions">
+          <button type="button" class="bubble-btn bubble-btn-primary" id="pt-name-print">Drukuj kartkę</button>
+          <button type="button" class="bubble-btn" id="pt-name-png">Pobierz PNG</button>
+        </div>
+      </div>
+      <p class="bubble-az-intro">Więcej możliwości: wzory, ramki i lista klasy są w <a href="/pl/do-druku/pokoloruj-imie/">Kolorowance z imieniem</a>.</p>
     </section>
 <figure class="guide-hero-figure pt-sheet-preview">
   <img src="/assets/printables-previews/pl-do-druku-alfabet-do-kolorowania.png" width="1200" height="900"

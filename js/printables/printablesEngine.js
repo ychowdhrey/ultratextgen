@@ -2116,6 +2116,18 @@
   // picks Medium or Small.
   function buildSizeControl() {
     if (!el.sizeControl) return;
+    // Label itself when the page did not supply one. T.size.label ships
+    // translated in all eight locales, so a hub only has to declare the bare
+    // mount and nothing about print size has to be authored per language.
+    // Pages that already carry a .pt-size-field-label (the EN hubs, the six
+    // Spanish-alphabet pages) keep theirs and get no second heading.
+    const field = el.sizeControl.parentNode;
+    if (field && !field.querySelector(".pt-size-field-label")) {
+      const lab = document.createElement("p");
+      lab.className = "pt-size-field-label";
+      lab.textContent = T.size.label;
+      field.insertBefore(lab, el.sizeControl);
+    }
     const group = document.createElement("div");
     group.className = "pt-choice-row pt-size-row";
     group.setAttribute("role", "radiogroup");
@@ -2166,11 +2178,7 @@
     wrap.className = "pt-spoke-batch";
 
     const field = document.createElement("div");
-    field.className = "pt-size-field";
-    const sizeLabel = document.createElement("p");
-    sizeLabel.className = "pt-size-field-label";
-    sizeLabel.textContent = T.size.label;
-    field.appendChild(sizeLabel);
+    field.className = "pt-size-field";   // buildSizeControl() adds the label
     const mount = document.createElement("div");
     mount.id = "pt-size-control";
     field.appendChild(mount);
