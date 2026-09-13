@@ -77,20 +77,59 @@
     return window.location.origin + window.location.pathname + (qs ? "?" + qs : "");
   };
 
+  /* share_text fires on the OUTCOME, never on the intent (2026-09-13).
+     Every push below used to run BEFORE the await, so a visitor who opened
+     the native sheet and closed it again was counted as a share, and
+     share_method recorded which API existed rather than what happened. That
+     made the one metric register #69 exists to read structurally unable to
+     answer "did anyone share": the number was "how many people clicked",
+     inflated by every cancel.
+
+     A cancel now pushes nothing. share_method is the completed outcome:
+     native | link_copy | image | image_download | pinterest.
+
+     Anyone comparing a series across 2026-09-13 must treat it as a
+     definition change, not a traffic change -- counts after this date are
+     strictly lower for the same behaviour. */
+  function pushShare(method, c) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "share_text",
+      share_method: method,
+      share_surface: (c && c.surface) || "generator",
+      share_item_type: (c && c.itemType) || "style"
+    });
+  }
+  UTG.pushShare = pushShare;
+
+  /* Can this browser hand a FILE to the OS share sheet? On Android and iOS
+     yes, and that sheet is where Instagram, Facebook, WhatsApp and Messages
+     actually live -- it is the reason those targets need no buttons of their
+     own. On desktop Chrome the API exists but files are usually refused, and
+     in Firefox and most desktop Safari navigator.share is absent entirely, so
+     "Share as image" silently degrades to a download. A caller that already
+     offers a download (every printables sheet has its own Download PNG) can
+     use this to leave the button out rather than ship two spellings of the
+     same action. Probed with a real one-byte File, because navigator.canShare
+     without arguments answers a different question. */
+  let canShareFilesCache = null;
+  UTG.canShareFiles = function () {
+    if (canShareFilesCache !== null) return canShareFilesCache;
+    canShareFilesCache = false;
+    try {
+      if (navigator.canShare && typeof File === "function") {
+        canShareFilesCache = navigator.canShare({ files: [new File(["0"], "probe.png", { type: "image/png" })] });
+      }
+    } catch (err) { canShareFilesCache = false; }
+    return canShareFilesCache;
+  };
+
   // creation: { input, output, styleId, title, url? } — url wins when given.
   // Resolves to "native" | "aborted" | "copied" | "failed" so the caller owns
   // its own button feedback.
   UTG.shareCreation = async function (creation) {
     const c = creation || {};
     const url = c.url || UTG.buildShareUrl(c);
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: navigator.share ? "native" : "link_copy",
-      share_surface: c.surface || "generator",
-      share_item_type: c.itemType || "style"
-    });
 
     if (navigator.share) {
       try {
@@ -99,14 +138,16 @@
         // text — the recipient sees the creation, not just a bare link.
         if (c.output) payload.text = c.output;
         await navigator.share(payload);
+        pushShare("native", c);
         return "native";
       } catch (err) {
-        if (err && err.name === "AbortError") return "aborted"; // user closed the sheet
+        if (err && err.name === "AbortError") return "aborted"; // user closed the sheet: not a share
         // Any other native failure falls through to the link-copy fallback.
       }
     }
     try {
       await navigator.clipboard.writeText(url);
+      pushShare("link_copy", c);
       return "copied";
     } catch (err) {
       console.error("Share failed:", err);
@@ -307,13 +348,6 @@
     const file = new File([blob], fileName, { type: "image/png" });
 
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: canShareFiles ? "image" : "image_download",
-      share_surface: c.surface || "generator",
-      share_item_type: c.itemType || "style"
-    });
 
     if (canShareFiles) {
       try {
@@ -324,6 +358,7 @@
           title: c.title || document.title,
           text: c.url || UTG.buildShareUrl(c)
         });
+        pushShare("image", c);
         return "image";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -338,6 +373,7 @@
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      pushShare("image_download", c);
       return "image_download";
     } catch (err) {
       console.error("Image share failed:", err);
@@ -383,7 +419,14 @@
   // The card templates in script.js build their markup as one innerHTML
   // string, so they need the icons as values rather than as built elements.
   // Published here because this module is now their only definition.
-  UTG.icons = { share: SHARE_ICON_SVG, copy: COPY_ICON_SVG, image: IMAGE_ICON_SVG, check: CHECK_ICON_SVG };
+  // Pinterest is the one share target that is a real destination rather than
+  // an OS sheet, so it is the one that carries a brand mark. Facebook and
+  // Instagram deliberately get none: those go through navigator.share, which
+  // lists whatever the visitor actually has installed, and a logo on a button
+  // that may not reach that app is a promise the button cannot keep.
+  const PINTEREST_ICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.853 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.78.744 2.281a.3.3 0 01.07.288c-.076.316-.245.995-.278 1.134-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.472 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.526-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>';
+
+  UTG.icons = { share: SHARE_ICON_SVG, copy: COPY_ICON_SVG, image: IMAGE_ICON_SVG, check: CHECK_ICON_SVG, pinterest: PINTEREST_ICON_SVG };
 
   UTG.buildShareActions = function (opts) {
     const row = document.createElement("div");
@@ -405,18 +448,12 @@
     const filename = o.filename || "share.png";
     const file = new File([blob], filename, { type: blob.type || "image/png" });
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: canShareFiles ? "image" : "image_download",
-      share_surface: o.surface || "generator",
-      share_item_type: o.itemType || "style"
-    });
     if (canShareFiles) {
       try {
         const payload = { files: [file], title: o.title || document.title };
         if (o.text) payload.text = o.text;
         await navigator.share(payload);
+        pushShare("image", o);
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -427,6 +464,7 @@
     a.href = url; a.download = filename;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+    pushShare("image_download", o);
     return "downloaded";
   };
 
@@ -467,42 +505,62 @@
     const urlOf = () => (typeof o.url === "function" ? o.url() : (o.url || window.location.href));
     const titleOf = () => (typeof o.title === "function" ? o.title() : (o.title || document.title));
     const cls = o.buttonClass || "bubble-btn pt-share-btn";
-    const mk = (text, onClick) => {
+    // Icon + label, never a bare string: four equal-weight text buttons read
+    // as a wall and outshouted the sheet's own Print button. The icons are
+    // the inline SVGs above, never emoji -- this site has already shipped
+    // tofu from an emoji glyph (U+1F5BC, swapped for the camera on the
+    // preview modal, 2026-09-10) and a share row is not the place to repeat it.
+    const mk = (icon, text, onClick, title) => {
       const b = document.createElement("button");
-      b.type = "button"; b.className = cls; b.textContent = text;
+      b.type = "button"; b.className = cls;
+      b.innerHTML = icon + '<span class="pt-share-label"></span>';
+      b.querySelector(".pt-share-label").textContent = text;
+      if (title) b.title = title;
       b.addEventListener("click", onClick);
       return b;
     };
     const row = document.createElement("div");
     row.className = o.className || "result-share-row";
-    row.appendChild(mk(L.share || uiText("shareResult.label", "Share"), async () => {
-      const r = await UTG.shareCreation({ url: urlOf(), title: titleOf(), surface, itemType });
-      if (r === "copied" && L.linkCopied) UTG.showToast(L.linkCopied);
-      if (o.onShared) o.onShared(r);
-    }));
+
+    /* One button, not two. navigator.share opens the OS sheet -- which is
+       already the dropdown, and already contains Instagram, Facebook,
+       WhatsApp and Messages -- and falls back to copying the link where the
+       API is absent (Firefox, most desktop Safari). "Share" and "Copy link"
+       were therefore the SAME action on desktop, shipped as two buttons with
+       one silent toast between them. The button now says which one it is
+       before it is pressed. (Audit 2026-09-13, question e.) */
+    const canNativeShare = !!navigator.share;
+    row.appendChild(mk(
+      canNativeShare ? SHARE_ICON_SVG : COPY_ICON_SVG,
+      canNativeShare
+        ? (L.share || uiText("shareResult.label", "Share"))
+        : (L.copyLink || "Copy link"),
+      async () => {
+        const r = await UTG.shareCreation({ url: urlOf(), title: titleOf(), surface, itemType });
+        if (r === "copied" && L.linkCopied) UTG.showToast(L.linkCopied);
+        if (o.onShared) o.onShared(r);
+      }
+    ));
+
     if (o.onShareImage) {
-      row.appendChild(mk(L.shareImage || uiText("shareResult.imageTitle", "Share as an image"), () => { o.onShareImage(); }));
+      row.appendChild(mk(
+        IMAGE_ICON_SVG,
+        L.shareImage || uiText("shareResult.imageTitle", "Share as an image"),
+        () => { o.onShareImage(); }
+      ));
     }
-    row.appendChild(mk(L.copyLink || "Copy link", async () => {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "share_text", share_method: "link_copy", share_surface: surface, share_item_type: itemType });
-      try {
-        await navigator.clipboard.writeText(urlOf());
-        if (L.linkCopied) UTG.showToast(L.linkCopied);
-        if (o.onShared) o.onShared("copied");
-      } catch (err) { /* clipboard unavailable: nothing to show */ }
-    }));
+
     if (o.pinMedia) {
       const pin = document.createElement("a");
       pin.className = cls + " pt-pin-btn";
-      pin.textContent = L.pinterest || "Save to Pinterest";
+      pin.innerHTML = PINTEREST_ICON_SVG + '<span class="pt-share-label"></span>';
+      pin.querySelector(".pt-share-label").textContent = L.pinterest || "Save to Pinterest";
       pin.href = "https://www.pinterest.com/";
       pin.target = "_blank"; pin.rel = "noopener";
       pin.addEventListener("click", () => {
         pin.href = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(urlOf()) +
           "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(titleOf());
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "share_text", share_method: "pinterest", share_surface: surface, share_item_type: itemType });
+        pushShare("pinterest", { surface: surface, itemType: itemType });
         if (o.onShared) o.onShared("pinterest");
       });
       row.appendChild(pin);
