@@ -67,8 +67,23 @@ jobs:
         with:
           node-version: '24'
 
+      # --submit-indexnow announces ONLY the URLs whose <lastmod> this run
+      # advanced, to Bing/Naver/Seznam/Yandex/Yep via api.indexnow.org. It runs
+      # after the sitemap and cache are written and can never fail this job.
+      #
+      # This replaced Cloudflare Crawler Hints on 2026-09-13 (user decision).
+      # Crawler Hints fires on CACHE state, so it had been announcing ~1,398
+      # URLs/day on a 4,679-URL site — the whole site every 3.3 days — against
+      # a real change rate of zero on a typical day. Bing's July 2025 sitemap
+      # guidance is explicit that inflating freshness signals backfires.
+      #
+      # DISABLE CRAWLER HINTS IN CLOUDFLARE (Caching -> Configuration) or the
+      # two submitters run side by side and the noisy one wins.
+      #
+      # The flag is opt-in per run, so `npm run prebuild` locally never
+      # announces. See scripts/lib/indexnow.js for the mass-bump ceiling.
       - name: Run sitemap generator
-        run: node scripts/update-sitemap.js
+        run: node scripts/update-sitemap.js --submit-indexnow
 
       - name: Commit updated sitemap.xml
         run: |
