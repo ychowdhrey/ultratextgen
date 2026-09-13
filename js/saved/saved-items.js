@@ -40,7 +40,12 @@
 
   const KEY = "utg_saved_items";
   const LEGACY_STYLE_KEY = "utg_saved_styles";
-  const TYPES = ["style", "symbol", "collection"];
+  // "printable" joins the set on 2026-09-13: a printables sheet is the fourth
+  // thing on this site worth keeping (a letter, a name sheet, a preset), and
+  // the printables engine already had its own per-page "recent sheets" list
+  // that no other surface could see. One store means a teacher's saved sheet
+  // sits beside their saved fonts and symbols instead of in a private corner.
+  const TYPES = ["style", "symbol", "collection", "printable"];
   const MAX = 200; // a saved list is a shortlist; past this it is a junk drawer
 
   function readRaw(key) {

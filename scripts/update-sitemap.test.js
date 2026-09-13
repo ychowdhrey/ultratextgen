@@ -21,7 +21,9 @@
    page-hero-figure shipped aria-hidden with a null alt (see CLAUDE.md,
    "Content Type: Updates", which states that split directly).
    ========================================================== */
-const { getContentImages, getContentImageEntries, buildUrlBlock } = require("./update-sitemap.js");
+const fs = require("fs");
+const path = require("path");
+const { getContentImages, getContentImageEntries, getPageImages, buildUrlBlock } = require("./update-sitemap.js");
 
 let pass = 0;
 let fail = 0;
@@ -150,6 +152,33 @@ eq("the URL block writes <image:title> XML-escaped, and none for a bare og:image
 eq("a bare string image still emits a plain <image:loc> block",
   buildUrlBlock("/p/", "2026-09-10", "weekly", "0.8", [`${B}/a.png`]).includes(`<image:loc>${B}/a.png</image:loc>`),
   true);
+
+// Ordering: the described sheet image leads, the branded og card follows
+// (2026-09-13). Leading with the card told Google Images the brand banner was
+// each printables page's principal image, in a cluster whose SERP is 99%
+// image pack. Written against a real file so it exercises getPageImages'
+// own read path, not a stub of it.
+{
+  const os = require("os");
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "utg-sitemap-"));
+  const rel = path.relative(path.join(__dirname, ".."), path.join(dir, "index.html"));
+  fs.writeFileSync(path.join(dir, "index.html"),
+    '<meta property="og:image" content="' + B + '/assets/og/p.png">' +
+    '<figure class="guide-hero-figure pt-sheet-preview"><img src="/assets/printables-previews/p.png" ' +
+    'width="1200" height="900" alt="Letter A coloring page" loading="lazy"></figure>');
+  eq("the described content image precedes the og:image",
+    getPageImages(rel).map((e) => e.loc),
+    [`${B}/assets/printables-previews/p.png`, `${B}/assets/og/p.png`]);
+  eq("only the content image carries a title",
+    getPageImages(rel).map((e) => e.title || null),
+    ["Letter A coloring page", null]);
+
+  fs.writeFileSync(path.join(dir, "index.html"),
+    '<meta property="og:image" content="' + B + '/assets/og/p.png">');
+  eq("a page with no content image still declares its og card",
+    getPageImages(rel).map((e) => e.loc), [`${B}/assets/og/p.png`]);
+  fs.rmSync(dir, { recursive: true, force: true });
+}
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

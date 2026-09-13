@@ -47,11 +47,17 @@
     /* header.js is deferred; reserve its rendered height per viewport range
        so late injection can't shift content below it. Values mirror .header's
        measured wrap heights; the placeholder is replaced by the header. */
-    #shared-header { min-height: 63px; }
-    @media (max-width: 861px) { #shared-header { min-height: 83px; } }
-    @media (max-width: 640px) { #shared-header { min-height: 75px; } }
-    @media (max-width: 594px) { #shared-header { min-height: 131px; } }
-    @media (max-width: 409px) { #shared-header { min-height: 187px; } }
+    /* Re-derived 2026-09-13 by sweeping the rendered .header height every 10px
+       from 280px to 1920px and taking each band's maximum. The overflow fix
+       above changed how the row wraps, so the old values were stale in both
+       directions: 187px under-reserved a 229px header below 410px (a real
+       shift on the narrowest phones, and it was under-reserved before the fix
+       too, at 189px), while 83px over-reserved a 65px header from 641px up. */
+    #shared-header { min-height: 65px; }
+    @media (max-width: 861px) { #shared-header { min-height: 65px; } }
+    @media (max-width: 640px) { #shared-header { min-height: 133px; } }
+    @media (max-width: 594px) { #shared-header { min-height: 189px; } }
+    @media (max-width: 409px) { #shared-header { min-height: 229px; } }
 
     .header {
       position: sticky;
@@ -1170,6 +1176,29 @@
     }
 
     /* Responsive */
+
+    /* The header's labelled nav needs about 1,100px to fit, and .header-inner
+       does not wrap above 640px -- so between 641px and ~1,045px the row simply
+       ran off the side of the page. Measured on the tablet band: +404px of
+       horizontal scroll at 641px, +277px at 768px, +21px at 1024px, on every
+       page of the site. Hiding the labels across that band is the same remedy
+       the phone breakpoint already used, applied where it was actually needed
+       (found 2026-09-13 while fixing the 10px phone overflow, which turned out
+       to be the small end of this). */
+    @media (max-width: 1100px) {
+      .header-btn span {
+        display: none;
+      }
+
+      /* Icon-only, so the label no longer pays for the horizontal padding.
+         Eight buttons at 40px plus seven 8px gaps came to 376px, which still
+         did not fit at 641px; 34px each brings the row to 328px. The 32px
+         button height is unchanged, so no tap target gets shorter. */
+      .header-btn {
+        padding: 8px 9px;
+      }
+    }
+
     @media (max-width: 640px) {
       .header-inner {
         flex-wrap: wrap;
@@ -1184,6 +1213,15 @@
 
       .header-btn span {
         display: none;
+      }
+
+      /* Below roughly 360px even the tightened row does not fit. Wrapping is
+         the right
+         failure: a second row keeps every control reachable, where the
+         overflow hid the last one off-screen. */
+      .header-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
     
      .hero-inner {
@@ -4220,6 +4258,14 @@ button.clear-decoration {
   gap: 1.5rem;
   align-items: start;
 }
+/* No detail column to fill the 1fr track (printablesEngine.js selectChar):
+   give the sheet the width instead of leaving 60% of the panel empty. Capped
+   so a single letter does not become a wall on a wide desktop -- the sheet is
+   a portrait page, and past ~560px it stops reading as one. */
+.bubble-stage.is-solo {
+  grid-template-columns: minmax(220px, 560px);
+  justify-content: center;
+}
 .bubble-outline-card {
   background: #fff;
   border: 1px solid var(--border-light);
@@ -4364,8 +4410,31 @@ button.clear-decoration {
   margin: 0.55rem 0 0;
 }
 
+/* The batch-print block printablesEngine.js buildSpokeBatch() adds under a
+   per-letter spoke's sheet: print size + "print as a book", so a spoke is not
+   a dead end for the teacher who wants the whole alphabet. Hubs declare their
+   own equivalent in HTML and never get this. */
+.pt-spoke-batch {
+  margin: 1.25rem 0 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+}
+.pt-spoke-batch .pt-size-field { margin-top: 0; }
+
+/* Save this sheet (printablesEngine.js buildSaveButton) -- the same typed
+   store js/saved/saved-items.js keeps for fonts and symbols. Quiet until it
+   is on, then it reads as state rather than as another action. */
+.pt-save-btn.is-saved {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
 @media (max-width: 640px) {
   .bubble-stage { grid-template-columns: 1fr; }
+  .bubble-stage.is-solo { grid-template-columns: 1fr; }
 }
 
 /* Print surface — hidden on screen, isolated when printing */
@@ -6303,6 +6372,11 @@ body.dark-mode .printable-card-art { color: var(--accent-blue); }
 
 /* Spoke: hollow upper/lower letter figures in the hero (line-art look) */
 .pt-letter-figures {
+  /* The hero's H1 and tagline are centred; this decorative pair never was, so
+     it sat hard against the left edge of an 820px centred block and read as a
+     layout break. One line, found while measuring the first screen for the
+     2026-09-13 printables audit. */
+  text-align: center;
   margin: 1.1rem 0 0;
   font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
@@ -9369,14 +9443,46 @@ body.dark-mode .source-note {
 }
 .pt-print-opt .pt-choice-row { flex: 1 1 auto; }
 .pt-choice-sm { flex: 0 1 auto; padding: 0.35rem 0.65rem; font-size: 0.78rem; border-radius: 10px; }
+/* Share sits below the sheet (printablesEngine.js buildPrintOptions) and is
+   deliberately quieter than the print buttons above it: secondary actions
+   should not out-weigh "Print this letter". Before 2026-09-13 this was four
+   full-width equal-weight buttons ABOVE the sheet, which inverted that. */
+.pt-share-tools { margin: 0.9rem 0 0; }
 .pt-share-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   justify-content: center;
-  margin: 0.4rem 0 0;
+  margin: 0;
 }
-.pt-share-row .bubble-btn { font-size: 0.82rem; }
+.pt-share-row .bubble-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.pt-share-row .bubble-btn:hover { color: var(--text-primary); }
+.pt-share-row .bubble-btn svg { flex: 0 0 auto; }
+/* The Pinterest mark is a filled path, so it needs its own colour rather than
+   the stroke the other three icons use. */
+.pt-share-row .pt-pin-btn svg { color: #bd081c; }
+@media (max-width: 480px) {
+  /* Icon-only below 480px: four labelled buttons wrap to two rows and start
+     competing with the sheet again. The label stays in the accessible name
+     via the button's own text -- it is clipped, not removed. */
+  .pt-share-row .pt-share-label {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .pt-share-row .bubble-btn { padding: 0.5rem 0.7rem; }
+}
 .pt-pdf-btn { margin-left: 0.35rem; }
 .pt-toast {
   position: fixed;
@@ -9444,7 +9550,7 @@ body.is-printing.pt-ink-saver #pt-print-root .pt-glyph-print,
 body.is-printing.pt-ink-saver #pt-print-root .pt-name-glyph { opacity: 0.72; }
 
 @media print {
-  .pt-print-tools, .pt-toast, .pt-recent { display: none !important; }
+  .pt-print-tools, .pt-share-tools, .pt-spoke-batch, .pt-toast, .pt-recent { display: none !important; }
   /* One sheet per page, never a tile or a name row split across pages. */
   .pt-sheet-page {
     page-break-after: always;
