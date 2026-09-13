@@ -83,6 +83,8 @@
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
       printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Save to Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Print as a book — one page per letter",
+      save: "Save",
+      saved: "Saved",
       nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
       nameSolidLabel: "Colour it in now (solid fill)",
       pngTransparent: "PNG (transparent)",
@@ -133,6 +135,8 @@
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
       printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Imprimer en livret — une page par lettre",
+      save: "Enregistrer",
+      saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
       nameSolidLabel: "Colorier maintenant (remplissage plein)",
       pngTransparent: "PNG (transparent)",
@@ -176,6 +180,8 @@
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
       printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Imprimir como libro — una página por letra",
+      save: "Guardar",
+      saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorear ahora (relleno sólido)",
       pngTransparent: "PNG (transparente)",
@@ -219,6 +225,8 @@
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Imprimir como livro — uma página por letra",
+      save: "Salvar",
+      saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorir agora (preenchimento sólido)",
       pngTransparent: "PNG (transparente)",
@@ -262,6 +270,8 @@
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Stampa come libretto — una pagina per lettera",
+      save: "Salva",
+      saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colora adesso (riempimento pieno)",
       pngTransparent: "PNG (trasparente)",
@@ -305,6 +315,8 @@
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
       printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
+      save: "Zapisz",
+      saved: "Zapisano",
       nameStyleLabel: "Styl", nameFillLabel: "Wypełnienie", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Pokoloruj od razu (pełne wypełnienie)",
       pngTransparent: "PNG (przezroczyste tło)",
@@ -352,6 +364,8 @@
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft drucken — eine Seite pro Buchstabe",
+      save: "Speichern",
+      saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
       pngTransparent: "PNG (transparent)",
@@ -404,6 +418,8 @@
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
       printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
+      save: "Simpan",
+      saved: "Tersimpan",
       nameStyleLabel: "Gaya", nameFillLabel: "Warna isi", nameStrokeLabel: "Garis tepi",
       nameSolidLabel: "Langsung diwarnai (isi penuh)",
       pngTransparent: "PNG (transparan)",
@@ -887,10 +903,41 @@
      PNG export (Canvas)
      --------------------------------------------------------------- */
 
+  /* Every sheet on this site is drawn in a Google Font fetched at runtime
+     (Baloo 2, Archivo Black, Fredoka, Quicksand, Playwrite). The build-time
+     preview PNGs are rasterised with the real face and can never fail; the
+     live tool can, and when it does the browser substitutes a system sans
+     with no error and no visible difference except the letterform itself.
+     A visitor on a blocked, filtered or offline connection then prints a
+     sheet that is not the sheet the page shows a picture of -- and nothing
+     anywhere recorded that it had happened. Reproduced accidentally while
+     auditing this engine on 2026-09-13, which is the only reason it is known
+     to be reachable at all.
+
+     Deliberately not a warning banner: the sheet is still usable, the CSS
+     stack already names sensible fallbacks, and inventing a caveat string in
+     eight languages to describe a font substitution most visitors cannot see
+     would cost more than it returns. What was missing is that the state was
+     unobservable, so it is made observable instead -- a root class for CSS or
+     a future decision to hang off, and one event so the rate is a number
+     rather than a guess. */
+  let fontFallbackReported = false;
+  function noteFontAvailability(fam) {
+    if (fontFallbackReported || !fam) return;
+    if (!document.fonts || !document.fonts.check) return;
+    let loaded = true;
+    try { loaded = document.fonts.check("700 200px " + fam); } catch (err) { return; }
+    if (loaded) return;
+    fontFallbackReported = true;
+    document.documentElement.classList.add("pt-font-fallback");
+    trackPrintableEvent("printable_font_fallback", { printable_font: fam });
+  }
+
   function withFont(cb, famOverride) {
     const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
-      document.fonts.load("700 200px " + fam).then(cb).catch(cb);
+      const done = () => { noteFontAvailability(fam); cb(); };
+      document.fonts.load("700 200px " + fam).then(done).catch(done);
     } else {
       cb();
     }
@@ -1271,7 +1318,13 @@
         surface: "printables",
         itemType: "printable",
         labels: { share: PO.share, shareImage: PO.shareImage, copyLink: PO.copyLink, linkCopied: PO.linkCopied, pinterest: PO.pinterest },
-        onShareImage: (primaryInput() || el.panel) ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; } : null,
+        // Only where the OS can actually take the file. Without that this
+        // button downloads a PNG, which every printables sheet already offers
+        // as "Download PNG" a few pixels above -- two labels, one action, and
+        // no way for the visitor to tell which is which.
+        onShareImage: ((primaryInput() || el.panel) && UTGns.canShareFiles && UTGns.canShareFiles())
+          ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; }
+          : null,
         pinMedia: previewImageUrl,
         onShared: () => rememberSheet("share")
       }));
@@ -1732,6 +1785,8 @@
     actions.appendChild(printBtn);
     actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; printBtn.click(); }));
     actions.appendChild(pngBtn);
+    const saveBtn = buildSaveButton(ch);
+    if (saveBtn) actions.appendChild(saveBtn);
     figure.appendChild(actions);
 
     // The PDF hint describes the FALLBACK, so it only appears once the
@@ -1803,6 +1858,49 @@
     if ((!opts || !opts.silent) && window.history && window.history.replaceState) {
       window.history.replaceState(null, "", "#" + charSlug(ch));
     }
+  }
+
+  /* The return loop, on the one store the whole site shares (2026-09-13).
+     printables already remembered the last few sheets per page in its own
+     localStorage key, which no other surface could read; js/saved/saved-items.js
+     is the typed cross-surface store every copy target on the site writes to,
+     and printables pages have been loading it all along without using it.
+     A saved sheet is now a record like a saved font: same list, same device,
+     no account.
+
+     Identity is the sheet's preset URL, so "letter A on the coloring page" and
+     "letter A on the block-letters page" are two records, and re-saving the
+     same sheet toggles rather than duplicates. Labels come from strings
+     harvested out of locales/<lang>.json ui.copyButtons.save/.saved -- the
+     exact words the site's own Save button already uses in each language. */
+  function buildSaveButton(ch) {
+    const store = window.UltraTextGen && window.UltraTextGen.saved;
+    if (!store) return null;
+    const value = presetUrl();
+    // A spoke's own title already names its letter ("Letter A Coloring
+    // Page"), so appending it again reads as a stutter; a hub's title covers
+    // the whole alphabet, and there the character is the only thing telling
+    // one saved sheet from the next. The signal is structural -- a hub has the
+    // picker, a spoke is locked to one letter -- rather than a search for the
+    // character in the title, which matched the "A" inside "A-Z" on the first
+    // attempt and dropped the letter from every hub label.
+    const base = document.title.split("|")[0].replace(/\s*\([^)]*\)\s*$/, "").trim();
+    const label = (el.strip && ch) ? (base + ": " + charLabel(ch)) : base;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "bubble-btn pt-save-btn";
+    const paint = () => {
+      const on = store.has("printable", value);
+      btn.classList.toggle("is-saved", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? T.saved : T.save;
+    };
+    btn.addEventListener("click", () => {
+      store.toggle({ type: "printable", value: value, label: label, href: value });
+      paint();
+    });
+    paint();
+    return btn;
   }
 
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }

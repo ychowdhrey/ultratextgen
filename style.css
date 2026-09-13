@@ -4385,6 +4385,15 @@ button.clear-decoration {
 }
 .pt-spoke-batch .pt-size-field { margin-top: 0; }
 
+/* Save this sheet (printablesEngine.js buildSaveButton) -- the same typed
+   store js/saved/saved-items.js keeps for fonts and symbols. Quiet until it
+   is on, then it reads as state rather than as another action. */
+.pt-save-btn.is-saved {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
 @media (max-width: 640px) {
   .bubble-stage { grid-template-columns: 1fr; }
   .bubble-stage.is-solo { grid-template-columns: 1fr; }

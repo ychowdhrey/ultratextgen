@@ -102,6 +102,28 @@
   }
   UTG.pushShare = pushShare;
 
+  /* Can this browser hand a FILE to the OS share sheet? On Android and iOS
+     yes, and that sheet is where Instagram, Facebook, WhatsApp and Messages
+     actually live -- it is the reason those targets need no buttons of their
+     own. On desktop Chrome the API exists but files are usually refused, and
+     in Firefox and most desktop Safari navigator.share is absent entirely, so
+     "Share as image" silently degrades to a download. A caller that already
+     offers a download (every printables sheet has its own Download PNG) can
+     use this to leave the button out rather than ship two spellings of the
+     same action. Probed with a real one-byte File, because navigator.canShare
+     without arguments answers a different question. */
+  let canShareFilesCache = null;
+  UTG.canShareFiles = function () {
+    if (canShareFilesCache !== null) return canShareFilesCache;
+    canShareFilesCache = false;
+    try {
+      if (navigator.canShare && typeof File === "function") {
+        canShareFilesCache = navigator.canShare({ files: [new File(["0"], "probe.png", { type: "image/png" })] });
+      }
+    } catch (err) { canShareFilesCache = false; }
+    return canShareFilesCache;
+  };
+
   // creation: { input, output, styleId, title, url? } — url wins when given.
   // Resolves to "native" | "aborted" | "copied" | "failed" so the caller owns
   // its own button feedback.

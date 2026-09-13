@@ -437,4 +437,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { generateSitemap, getContentImages, getContentImageEntries, buildUrlBlock };
+module.exports = { generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock };
