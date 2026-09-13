@@ -1156,8 +1156,16 @@
     recentMount.appendChild(clear);
   }
 
+  // The image a pin should carry: the SHEET preview, never the branded OG
+  // card. scripts/wire-printables-previews.py writes the figure as
+  // `.pt-sheet-preview`; the first two selectors here named classes that have
+  // never existed in the tree, so every pin between 2026-09-12 and 09-13 fell
+  // through to og:image -- a 1200x630 landscape brand card, on the one
+  // platform that is vertical-first. `.pt-sheet-preview` is the class the
+  // wiring script actually writes and is checked first; the older names stay
+  // as a fallback in case a page is wired by hand.
   function previewImageUrl() {
-    const img = $("img.pt-preview-img") || $(".pt-preview-figure img");
+    const img = $(".pt-sheet-preview img") || $("img.pt-preview-img") || $(".pt-preview-figure img");
     if (img && img.src) return img.src;
     const og = $('meta[property="og:image"]');
     return og ? og.getAttribute("content") : "";
@@ -1237,12 +1245,27 @@
     details.appendChild(ink);
     wrap.appendChild(details);
 
+    if (explicit) explicit.appendChild(wrap);
+    else anchor.parentNode.insertBefore(wrap, anchor);
+
+    /* Share sits AFTER the sheet, not before it (audit 2026-09-13, question d).
+       Print settings is a pre-print decision and stays above; sharing is a
+       post-completion act, and it shipped 2026-09-12 above the sheet -- four
+       full-width buttons asking a visitor to endorse something they had not
+       seen yet, each of them visually heavier than the "Print this letter"
+       button below. presetUrl() also serialises the generator's state, so on
+       a hub before a letter is picked, or a name tool before a name is typed,
+       the link being offered is the emptiest it will ever be. */
+    const shareWrap = document.createElement("div");
+    shareWrap.className = "pt-share-tools";
+    shareWrap.id = "pt-share-tools";
+
     // The share row is share-core's (js/share/share-core.js buildShareRow),
     // the same builder the monogram and cross-stitch engines use, so the
     // three surfaces cannot drift. Labels are this engine's own strings.
     const UTGns = window.UltraTextGen;
     if (UTGns && UTGns.buildShareRow) {
-      wrap.appendChild(UTGns.buildShareRow({
+      shareWrap.appendChild(UTGns.buildShareRow({
         className: "pt-share-row",
         url: presetUrl,
         surface: "printables",
@@ -1257,11 +1280,14 @@
     recentMount = document.createElement("div");
     recentMount.className = "pt-recent";
     recentMount.hidden = true;
-    wrap.appendChild(recentMount);
+    shareWrap.appendChild(recentMount);
     renderRecent();
 
-    if (explicit) explicit.appendChild(wrap);
-    else anchor.parentNode.insertBefore(wrap, anchor);
+    // After the sheet, and after the spoke's batch block when it has one, so
+    // the order on a page is always: choose -> see -> get -> share.
+    const after = $(".pt-spoke-batch") || el.panel || anchor;
+    if (after && after.parentNode) after.parentNode.insertBefore(shareWrap, after.nextSibling);
+    else wrap.appendChild(shareWrap);
   }
   // A "Save as PDF" button beside every print button: same print path, with
   // the destination hint shown as a toast while the dialog is open.
@@ -1354,6 +1380,61 @@
     ctx.restore();
   }
 
+  /* ---------------------------------------------------------------
+     Canvas outlines: the one rule, so a PNG cannot drift from its sheet
+     ---------------------------------------------------------------
+     outlineSVG() draws every hollow letter at font-size 210 with
+     stroke-width STROKE and paint-order="stroke". Two things follow from
+     that, and a canvas export has to reproduce BOTH or it stops being the
+     sheet it previews:
+
+       1. The width is a RATIO of the type, not of the canvas. STROKE is
+          quoted against font-size 210, so at canvas font size F the
+          equivalent is F * STROKE / 210.
+       2. paint-order="stroke" puts the stroke UNDER the fill, so only its
+          outer half is visible and the counters stay open. Canvas has no
+          paint-order: the same result is a stroke pass followed by a fill
+          pass on top. This is exactly what
+          scripts/generate-printables-previews.py's svg_text() already does
+          for cairosvg, which is why the build-time preview PNGs were right
+          while these were not.
+
+     Shipped 2026-09-10 and found 2026-09-13: letterPNG used a fixed 4.5% of
+     the CANVAS size against a 66% font size (6.8% of the type, 3.6x the
+     alphabet-coloring sheet's 1.9%) and stroked OVER the fill, doubling the
+     visible band again. Measured on letter A: 9.35% dark pixels against the
+     preview's 1.83% on a larger glyph, about 10x the ink. The download was a
+     solid black letter with a sliver of white in it -- not a coloring page.
+     wordPNG (6%), the design sheet (STROKE as raw px) and the puzzle strip
+     (6%) all carried a version of the same divergence.
+
+     Every canvas outline in this file goes through these two functions. */
+  const OUTLINE_SVG_FONT = 210;   // outlineSVG()'s font-size: the unit STROKE is quoted in
+  // wordOutlineSVG() draws at font-size 150 with stroke-width 3 (2% of the
+  // type). Restated in outlineSVG's 210 units so both go through one helper.
+  const WORD_OUTLINE_STROKE = 3 / 150 * OUTLINE_SVG_FONT;   // 4.2
+
+  function outlineLineWidth(fontSizePx, strokeUnits) {
+    const units = strokeUnits == null ? STROKE : strokeUnits;
+    return Math.max(1, fontSizePx * units / OUTLINE_SVG_FONT);
+  }
+
+  // paint-order="stroke" on a canvas: stroke first, fill over it. opts:
+  // strokeWidth (in outlineSVG units) / strokeColor / fill / hollow (skip the
+  // fill entirely -- a transparent sticker export keeps a real hole, so both
+  // halves of the stroke read as ink and the outer silhouette still matches).
+  function paintOutlineText(ctx, text, x, y, fontSizePx, opts) {
+    const o = opts || {};
+    ctx.lineJoin = "round";
+    ctx.lineWidth = outlineLineWidth(fontSizePx, o.strokeWidth);
+    ctx.strokeStyle = o.strokeColor || INK;
+    ctx.strokeText(text, x, y);
+    if (!o.hollow) {
+      ctx.fillStyle = o.fill || "#ffffff";
+      ctx.fillText(text, x, y);
+    }
+  }
+
   // Single character -> square PNG.
   function letterPNG(ch) {
     withFont(() => {
@@ -1378,13 +1459,10 @@
       const glyph = RENDER === "glyph"
         ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
         : ch;
-      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66)) + "px " + FONT;
+      const letterFs = Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66));
+      ctx.font = "700 " + letterFs + "px " + FONT;
       if (RENDER === "outline") {
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(glyph, size / 2, size * 0.5);
-        ctx.lineWidth = Math.round(size * 0.045);
-        ctx.strokeStyle = INK;
-        ctx.strokeText(glyph, size / 2, size * 0.5);
+        paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
@@ -1435,15 +1513,15 @@
           ctx.strokeText(out, width / 2, height * 0.52);
         }
       } else if (RENDER === "outline") {
-        // Hollow outline. On a transparent canvas a white interior would
-        // read as a white slab — keep the interior a real hole instead.
-        if (!o.transparent) {
-          ctx.fillStyle = "#ffffff";
-          ctx.fillText(out, width / 2, height * 0.52);
-        }
-        ctx.lineWidth = Math.max(6, Math.round(fontSize * 0.06));
-        ctx.strokeStyle = o.strokeColor || INK;
-        ctx.strokeText(out, width / 2, height * 0.52);
+        // Hollow outline, matching wordOutlineSVG(): its stroke-width default
+        // is 3 against font-size 150, i.e. 2% of the type. On a transparent
+        // canvas a white interior would read as a white slab, so the fill is
+        // skipped and the interior stays a real hole.
+        paintOutlineText(ctx, out, width / 2, height * 0.52, fontSize, {
+          strokeWidth: WORD_OUTLINE_STROKE,
+          strokeColor: o.strokeColor,
+          hollow: !!o.transparent
+        });
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(out, width / 2, height * 0.52);
@@ -1524,6 +1602,23 @@
     return true;
   }
 
+  // Every rendered copy of the PDF fallback hint, so the reveal reaches the
+  // one on screen whichever section mounted it.
+  const pdfHints = [];
+  let pdfFellBack = false;
+  function makePdfHint() {
+    const p = document.createElement("p");
+    p.className = "pt-pdf-hint";
+    p.textContent = T.pdfHint;
+    p.hidden = !pdfFellBack;
+    pdfHints.push(p);
+    return p;
+  }
+  function markPdfFallback() {
+    pdfFellBack = true;
+    pdfHints.forEach((p) => { p.hidden = false; });
+  }
+
   function printWrap(titleText, bodyNode, sheet) {
     trackPrintable("print", sheet);
     rememberSheet(sheet);
@@ -1547,6 +1642,7 @@
     if (wantPdf) {
       pdfFromWrap(wrap, sheet).then((ok) => {
         if (ok) { el.printRoot.innerHTML = ""; return; }
+        markPdfFallback();
         showToast(PO.pdfToast);
         openPrintDialog(sheet, true);
       });
@@ -1638,12 +1734,15 @@
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
 
-    // "Save as PDF" is the print dialog's native destination — say so, since
-    // PDF is the format most printable searchers are looking for.
-    const pdfTip = document.createElement("p");
-    pdfTip.className = "pt-pdf-hint";
-    pdfTip.textContent = T.pdfHint;
-    figure.appendChild(pdfTip);
+    // The PDF hint describes the FALLBACK, so it only appears once the
+    // fallback is used. printablePdf.js (2026-09-10) writes the file directly
+    // on browsers that support it, but this line shipped unconditionally, so
+    // every coloring page rendered "Tip: Print -> Save as PDF downloads this
+    // sheet" in eight languages directly under a one-click Save as PDF
+    // button, describing the site's own working feature as a workaround.
+    // markPdfFallback() reveals it the first time a PDF attempt has to hand
+    // off to the print dialog.
+    figure.appendChild(makePdfHint());
 
     // Right — copy-paste variants (glyph mode) and/or how-to steps.
     const detail = document.createElement("div");
@@ -1687,7 +1786,18 @@
     if (RENDER === "dots") detail.appendChild(dotControlsNode());
 
     stage.appendChild(figure);
-    if (detail.childNodes.length) stage.appendChild(detail);
+    // .bubble-stage is a two-column grid whose second track holds the detail
+    // panel (copy-paste variants, how-to steps, the dot ladder). A page whose
+    // config supplies none of those never appends it, and the 1fr track stayed
+    // reserved: on alphabet-coloring the sheet was pinned to 320px inside an
+    // 852px panel with 508px (60%) of dead space beside it. Seven families
+    // rendered that way -- alphabet-coloring, coloring-page-maker,
+    // cursive-alphabet, dot-to-dot-name, handwriting-worksheet-generator,
+    // sight-word-tracing, name-puzzle-maker. Collapsing the grid when there is
+    // nothing to put in the second column is the whole fix (audit 2026-09-13).
+    const hasDetail = detail.childNodes.length > 0;
+    if (hasDetail) stage.appendChild(detail);
+    else stage.classList.add("is-solo");
     el.panel.appendChild(stage);
 
     if ((!opts || !opts.silent) && window.history && window.history.replaceState) {
@@ -1935,6 +2045,59 @@
       group.appendChild(b);
     });
     el.sizeControl.appendChild(group);
+  }
+
+  /* A per-letter spoke is a dead end without this (audit 2026-09-13).
+     /printables/alphabet-coloring-pages/letter-a/ mounts #pt-panel and
+     #pt-print-root and nothing else: you could print A, and to print the
+     alphabet -- the job a teacher actually arrived with -- you had to notice
+     the A-Z list further down, click through to the hub and find its batch
+     button. The 223 spokes are 73% of the printables estate and earned about
+     $0.50 between them in 18 days; a dead end is part of why.
+
+     Built in JS from strings the engine already ships in all eight locales
+     (T.printBook, T.size.*), so 223 pages in 8 languages gain the batch print
+     without one line of new copy or one hand-edited page. Only ever added
+     where the page has a sheet panel, no strip and no batch button of its own
+     -- a hub keeps exactly the markup it declares. */
+  function buildSpokeBatch() {
+    if (!el.panel || el.strip || el.alphaPrint || el.bookPrint) return;
+    if (!Array.isArray(CHARS) || CHARS.length < 2) return;
+
+    const wrap = document.createElement("section");
+    wrap.className = "pt-spoke-batch";
+
+    const field = document.createElement("div");
+    field.className = "pt-size-field";
+    const sizeLabel = document.createElement("p");
+    sizeLabel.className = "pt-size-field-label";
+    sizeLabel.textContent = T.size.label;
+    field.appendChild(sizeLabel);
+    const mount = document.createElement("div");
+    mount.id = "pt-size-control";
+    field.appendChild(mount);
+    el.sizeControl = mount;
+    wrap.appendChild(field);
+
+    const actions = document.createElement("div");
+    actions.className = "bubble-actions pt-batch-actions";
+    const book = document.createElement("button");
+    book.type = "button";
+    // Secondary: "Print this letter" in the card above is this page's primary
+    // job, and two purple buttons in one column read as two primaries.
+    book.className = "bubble-btn";
+    book.textContent = T.printBook;
+    book.addEventListener("click", () => {
+      if (alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
+      printAlphabetBook();
+    });
+    actions.appendChild(book);
+    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; book.click(); }));
+    wrap.appendChild(actions);
+    wrap.appendChild(makePdfHint());
+
+    el.panel.insertAdjacentElement("afterend", wrap);
+    buildSizeControl();
   }
 
   function buildAlphabetGrid() {
@@ -3334,10 +3497,7 @@
         const widest = Math.max(...lines.map((s) => ctx.measureText(s).width));
         if (widest > W - 140) { fs = Math.floor(fs * (W - 140) / widest); ctx.font = "700 " + fs + "px " + FONT; }
         ctx.lineJoin = "round";
-        const drawLine = (str, y) => {
-          ctx.fillStyle = "#ffffff"; ctx.fillText(str, W / 2, y);
-          ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(str, W / 2, y);
-        };
+        const drawLine = (str, y) => paintOutlineText(ctx, str, W / 2, y, fs);
         if (lines.length === 2) {
           drawLine(lines[0], cy - fs * 0.68);
           drawLine(lines[1], cy + fs * 0.68);
@@ -3934,11 +4094,7 @@
           const cx = x + w / 2, cy = rowTop + rowH / 2;
           const fs = Math.min(rowH * 0.8, w * 0.85);
           ctx.font = "700 " + Math.round(fs) + "px " + FONT;
-          ctx.fillStyle = "#ffffff";
-          ctx.fillText(ch, cx, cy);
-          ctx.lineWidth = Math.max(4, fs * 0.06);
-          ctx.strokeStyle = INK;
-          ctx.strokeText(ch, cx, cy);
+          paintOutlineText(ctx, ch, cx, cy, fs);
           if (x > pad) boundaries.push(x);
         }
         x += w;
@@ -3997,6 +4153,7 @@
     initStrokeToggle();
     buildStrip();
     buildAlphabetGrid();
+    buildSpokeBatch();
     initGenerator();
     buildDesigner();
     buildBanner();

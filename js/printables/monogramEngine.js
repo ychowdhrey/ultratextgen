@@ -226,11 +226,16 @@
 
   function inkCanvas(ctx, ch, x, y, px) {
     if (state.style === "outline") {
-      ctx.fillStyle = "#ffffff";
-      ctx.fillText(ch, x, y);
+      // The SVG above sets the same stroke-width with paint-order="stroke",
+      // so only its outer half shows. Canvas has no paint-order: stroke
+      // first, fill over it, or the PNG carries twice the SVG's ink.
+      // (Same class of defect as printablesEngine.js's letterPNG, 2026-09-13.)
       ctx.lineWidth = Math.max(3, px * 0.045);
       ctx.strokeStyle = INK;
+      ctx.lineJoin = "round";
       ctx.strokeText(ch, x, y);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(ch, x, y);
     } else {
       ctx.fillStyle = INK;
       ctx.fillText(ch, x, y);

@@ -75,7 +75,7 @@ def main():
     args = ap.parse_args()
 
     og_dir = os.path.join(ROOT, "assets", "og")
-    scanned = written = swapped = inserted = skipped = noart = 0
+    scanned = written = swapped = inserted = skipped = noart = banner_dropped = kept_described = 0
     no_anchor = []
     os.chdir(ROOT)
 
@@ -157,11 +157,50 @@ def main():
         # 1,906 no-op rewrites plus whitespace churn. Strip exactly one newline
         # on each side; figure_block() puts exactly one back.
         had_figure = "data-uthero" in html
+        # A banner with a real alt and no aria-hidden is a DESCRIBED image --
+        # update-sitemap.js declares it, so it is content, not decoration. 26
+        # printables/cursive-alphabet spokes carry one. figure_block() below
+        # only ever emits the decorative form, so stripping and re-inserting
+        # would silently replace their alt text with "". Leave those pages
+        # alone entirely; whatever wrote that alt owns them (2026-09-13).
+        described_banner = bool(re.search(
+            r'<figure class="page-hero-figure" data-uthero(?![^>]*aria-hidden)[^>]*>\s*<img[^>]*\salt="[^"]+"',
+            html))
+        if described_banner:
+            kept_described += 1
+            if html != original:
+                if not args.dry_run:
+                    open(path, "w", encoding="utf-8").write(html)
+                written += 1
+            continue
         html = re.sub(
             r'\n<figure class="page-hero-figure" data-uthero[^>]*>.*?</figure>\n',
             '', html, flags=re.S)
 
         # 3. insert hero figure (decorative — see figure_block)
+
+        # ...unless the page already carries a REAL one. A printables page
+        # wired by scripts/wire-printables-previews.py has a visible, described,
+        # sitemap-declared <figure class="pt-sheet-preview"> showing the actual
+        # sheet. Stacking the decorative banner under it gave every printable
+        # two pictures of the same letter above its own tool: on
+        # /printables/alphabet-coloring-pages/letter-a/ the generator started at
+        # y=1091 on a 1000px viewport, behind three renderings of the letter A,
+        # with the described image lazy-loaded and the aria-hidden one carrying
+        # fetchpriority="high". The described figure wins; the banner is
+        # stripped above and simply not put back (audit 2026-09-13, question b).
+        #
+        # Content-shaped: keyed on the page having a real figure, not on a
+        # path list, so any lane that grows a described hero gets the same
+        # treatment and no table goes stale.
+        if 'class="guide-hero-figure pt-sheet-preview"' in html:
+            if had_figure:
+                banner_dropped += 1
+            if html != original:
+                if not args.dry_run:
+                    open(path, "w", encoding="utf-8").write(html)
+                written += 1
+            continue
 
         # Generator pages carry the live tool (textarea#mainInput) inside the
         # hero, so a figure placed *after* the hero lands below the whole tool.
@@ -200,7 +239,9 @@ def main():
             written += 1
 
     print(f"scanned: {scanned}  written: {written}  image swaps: {swapped}  "
-          f"hero inserted: {inserted}  already-correct: {skipped}  no-art: {noart}")
+          f"hero inserted: {inserted}  already-correct: {skipped}  no-art: {noart}  "
+          f"banner dropped (described figure present): {banner_dropped}  "
+          f"described banner left alone: {kept_described}")
     if no_anchor:
         print("NO HERO ANCHOR (og swapped, figure not inserted):")
         for s in no_anchor:

@@ -112,10 +112,19 @@ function escapeXml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 }
 
-// Every image this page wants indexed, og:image first, de-duplicated by URL. A
-// page may legitimately declare several — the sitemap spec allows up to 1,000
-// per URL. Entries are {loc, title?}; the og:image has no title because the
-// page states none for it.
+// Every image this page wants indexed, de-duplicated by URL. A page may
+// legitimately declare several — the sitemap spec allows up to 1,000 per URL.
+// Entries are {loc, title?}; the og:image has no title because the page states
+// none for it.
+//
+// Described content images come FIRST, the og:image last (changed 2026-09-13).
+// The og card is a branded 1200x630 banner that restates the title; a content
+// image is the thing the page is about, and it is the one carrying an
+// <image:title>. Leading with the card told Google Images that the brand
+// banner was each page's principal image — on the 297 printables pages, a
+// purple card with the page title on it ranked ahead of a picture of the
+// actual printable sheet, in a cluster whose SERP is 99% image pack. A page
+// with no content image is unaffected: the card is then its only entry.
 function getPageImages(filePath) {
   let html;
   try {
@@ -125,15 +134,14 @@ function getPageImages(filePath) {
   }
   const images = [];
   const seen = new Set();
-  const og = html.match(OG_IMAGE_RE);
-  if (og && og[1] !== LOGO_FALLBACK) {
-    images.push({ loc: og[1] });
-    seen.add(og[1]);
-  }
   for (const entry of getContentImageEntries(html)) {
     if (seen.has(entry.loc)) continue;
     seen.add(entry.loc);
     images.push(entry);
+  }
+  const og = html.match(OG_IMAGE_RE);
+  if (og && og[1] !== LOGO_FALLBACK && !seen.has(og[1])) {
+    images.push({ loc: og[1] });
   }
   return images;
 }
