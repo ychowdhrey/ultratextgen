@@ -53,6 +53,91 @@
     return input ? input.value : "";
   }
 
+  /* ===================
+     SHARE ANALYTICS — the one writer
+     =================== */
+  // Every share_text row on the site is pushed from trackShare() below and
+  // nowhere else. Before 2026-09-13 each of the five call sites in this file
+  // built its own object literal, and that cost two things.
+  //
+  // It PREDICTED its own outcome. shareCreation pushed share_method from
+  // `navigator.share ? "native" : "link_copy"` BEFORE the sheet had opened, so
+  // a share the user cancelled, a share that landed, and a native share that
+  // errored into the clipboard fallback were all one identical row. The image
+  // paths did the same from `navigator.canShare(...)`. An event stream where
+  // the cancel rate is unknowable cannot answer whether sharing works, which
+  // is the only question it exists to answer. Every push now fires AFTER the
+  // act it records has actually succeeded.
+  //
+  // And it had no `share_destination`. share_method says HOW the text left the
+  // page; it cannot say WHERE it went, so a copy-link fallback and an explicit
+  // "Copy link" button were indistinguishable from a Pinterest save's own
+  // method value only by accident of naming.
+  //
+  //   share_method       unchanged vocabulary: native | link_copy | image |
+  //                      image_download | pinterest.
+  //   share_destination  where it went. See SHARE_DESTINATIONS.
+  //   share_surface      which kind of page, stamped by the caller
+  //                      (generator | library | symbol | printables | ...).
+  //   share_item_type    what was shared (style | symbol | collection |
+  //                      printable | ...).
+  //   locale             the page's language, derived exactly the way
+  //                      script.js derives it for generate_text, so the one
+  //                      GA4 `locale` dimension means one thing across both
+  //                      events. (Two-letter, so a zh-TW page reports `zh` —
+  //                      matching generate_text is worth more here than the
+  //                      extra granularity. header.js's cta_source_locale is a
+  //                      separate, differently-named field and keeps the full
+  //                      tag.)
+  const SHARE_DESTINATIONS = {
+    // The Web Share API never tells the page which app the user picked, and it
+    // never will — the sheet is the OS's, not ours. "native_share" is
+    // deliberately opaque rather than guessed: a fabricated destination is
+    // worse than an honest unknown, because it reads as measured.
+    NATIVE: "native_share",
+    CLIPBOARD: "clipboard",   // the copy-link fallback, and the Copy link button
+    DOWNLOAD: "download",     // an image saved to the device — no share target
+    PINTEREST: "pinterest",
+    // Defined, not yet used: no explicit platform share button exists on this
+    // site today (audited 2026-09-13 — the only platform-named links in the
+    // tree are mailto: contact addresses). They are named here so the first
+    // one built takes the spelling this vocabulary already has, instead of
+    // inventing "Twitter", "tg" or "mail" at the call site.
+    WHATSAPP: "whatsapp",
+    FACEBOOK: "facebook",
+    TELEGRAM: "telegram",
+    X: "x",
+    REDDIT: "reddit",
+    EMAIL: "email"
+  };
+  UTG.SHARE_DESTINATIONS = SHARE_DESTINATIONS;
+
+  // Read lazily rather than cached at load: costs nothing on a click, and
+  // cannot be wrong if this module is ever evaluated before <html lang> is
+  // settled on some future surface.
+  function pageLocale() {
+    const el = document.documentElement;
+    return String((el && el.lang) || "en").slice(0, 2).toLowerCase();
+  }
+
+  //   opts: { method, destination, surface, itemType }
+  // Exported because it is the whole point of the exercise: a surface that
+  // grows an explicit platform button calls this with the matching
+  // SHARE_DESTINATIONS value instead of pushing its own share_text literal.
+  function trackShare(opts) {
+    const o = opts || {};
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "share_text",
+      locale: pageLocale(),
+      share_method: o.method,
+      share_destination: o.destination,
+      share_surface: o.surface || "generator",
+      share_item_type: o.itemType || "style"
+    });
+  }
+  UTG.trackShare = trackShare;
+
   // Turn a creation (input + style) into a shareable URL and hand it to the
   // browser's native share sheet, falling back to copying the link. Exposed on
   // the shared UltraTextGen namespace so specialized generators can reuse the
@@ -80,17 +165,16 @@
   // creation: { input, output, styleId, title, url? } — url wins when given.
   // Resolves to "native" | "aborted" | "copied" | "failed" so the caller owns
   // its own button feedback.
+  //
+  // Analytics: one share_text row, pushed on the branch that actually
+  // succeeded, never before. "aborted" (the user closed the sheet) pushes
+  // nothing — a declined share is not a share — and neither does a clipboard
+  // write that throws.
   UTG.shareCreation = async function (creation) {
     const c = creation || {};
     const url = c.url || UTG.buildShareUrl(c);
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: navigator.share ? "native" : "link_copy",
-      share_surface: c.surface || "generator",
-      share_item_type: c.itemType || "style"
-    });
+    const surface = c.surface || "generator";
+    const itemType = c.itemType || "style";
 
     if (navigator.share) {
       try {
@@ -99,14 +183,18 @@
         // text — the recipient sees the creation, not just a bare link.
         if (c.output) payload.text = c.output;
         await navigator.share(payload);
+        trackShare({ method: "native", destination: SHARE_DESTINATIONS.NATIVE, surface, itemType });
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted"; // user closed the sheet
-        // Any other native failure falls through to the link-copy fallback.
+        // Any other native failure falls through to the link-copy fallback,
+        // which records itself as the link_copy/clipboard it really is — the
+        // old push had already claimed "native" by this point.
       }
     }
     try {
       await navigator.clipboard.writeText(url);
+      trackShare({ method: "link_copy", destination: SHARE_DESTINATIONS.CLIPBOARD, surface, itemType });
       return "copied";
     } catch (err) {
       console.error("Share failed:", err);
@@ -295,7 +383,10 @@
 
   // Share the creation as a PNG file via the native sheet, falling back to a
   // plain download. Resolves "image" | "image_download" | "aborted" | "failed"
-  // so the caller owns its button feedback, mirroring shareCreation above.
+  // so the caller owns its button feedback, mirroring shareCreation above —
+  // including the analytics rule: the share_text row fires on the branch that
+  // succeeded, so a cancelled sheet records nothing and a download records
+  // itself as a download rather than as the native share it was predicted to be.
   UTG.shareCreationAsImage = async function (creation) {
     const c = creation || {};
     const canvas = UTG.renderCreationImage(c);
@@ -307,13 +398,8 @@
     const file = new File([blob], fileName, { type: "image/png" });
 
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: canShareFiles ? "image" : "image_download",
-      share_surface: c.surface || "generator",
-      share_item_type: c.itemType || "style"
-    });
+    const surface = c.surface || "generator";
+    const itemType = c.itemType || "style";
 
     if (canShareFiles) {
       try {
@@ -324,6 +410,7 @@
           title: c.title || document.title,
           text: c.url || UTG.buildShareUrl(c)
         });
+        trackShare({ method: "image", destination: SHARE_DESTINATIONS.NATIVE, surface, itemType });
         return "image";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -338,6 +425,7 @@
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      trackShare({ method: "image_download", destination: SHARE_DESTINATIONS.DOWNLOAD, surface, itemType });
       return "image_download";
     } catch (err) {
       console.error("Image share failed:", err);
@@ -405,18 +493,14 @@
     const filename = o.filename || "share.png";
     const file = new File([blob], filename, { type: blob.type || "image/png" });
     const canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [file] }));
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "share_text",
-      share_method: canShareFiles ? "image" : "image_download",
-      share_surface: o.surface || "generator",
-      share_item_type: o.itemType || "style"
-    });
+    const surface = o.surface || "generator";
+    const itemType = o.itemType || "style";
     if (canShareFiles) {
       try {
         const payload = { files: [file], title: o.title || document.title };
         if (o.text) payload.text = o.text;
         await navigator.share(payload);
+        trackShare({ method: "image", destination: SHARE_DESTINATIONS.NATIVE, surface, itemType });
         return "native";
       } catch (err) {
         if (err && err.name === "AbortError") return "aborted";
@@ -427,6 +511,7 @@
     a.href = url; a.download = filename;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+    trackShare({ method: "image_download", destination: SHARE_DESTINATIONS.DOWNLOAD, surface, itemType });
     return "downloaded";
   };
 
@@ -484,10 +569,11 @@
       row.appendChild(mk(L.shareImage || uiText("shareResult.imageTitle", "Share as an image"), () => { o.onShareImage(); }));
     }
     row.appendChild(mk(L.copyLink || "Copy link", async () => {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "share_text", share_method: "link_copy", share_surface: surface, share_item_type: itemType });
       try {
         await navigator.clipboard.writeText(urlOf());
+        // After the write, not before: a browser that denies clipboard access
+        // used to record a link_copy that never reached the clipboard.
+        trackShare({ method: "link_copy", destination: SHARE_DESTINATIONS.CLIPBOARD, surface, itemType });
         if (L.linkCopied) UTG.showToast(L.linkCopied);
         if (o.onShared) o.onShared("copied");
       } catch (err) { /* clipboard unavailable: nothing to show */ }
@@ -501,8 +587,11 @@
       pin.addEventListener("click", () => {
         pin.href = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(urlOf()) +
           "&media=" + encodeURIComponent(o.pinMedia() || "") + "&description=" + encodeURIComponent(titleOf());
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "share_text", share_method: "pinterest", share_surface: surface, share_item_type: itemType });
+        // The one destination recorded on intent rather than on completion:
+        // the pin is composed on pinterest.com in a new tab, and nothing comes
+        // back to this page to confirm it. Leaving the click unrecorded would
+        // lose the surface entirely, which is the worse error.
+        trackShare({ method: "pinterest", destination: SHARE_DESTINATIONS.PINTEREST, surface, itemType });
         if (o.onShared) o.onShared("pinterest");
       });
       row.appendChild(pin);
