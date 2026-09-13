@@ -211,9 +211,49 @@ for (const page of pages) {
   }
 }
 
+// ─── Unreferenced locale pages: no self-reference, and nobody names them ──────
+//
+// The `headless` map above is EDGE-DRIVEN: it is populated while walking each
+// cluster page's own alternates, so it can only ever see a target that some
+// OTHER page already names. A locale page that declares no hreflang at all AND
+// that no page references produces no edge, so nothing above sees it. Nor can
+// audit-hreflang-completeness.js, which reconstructs cluster membership from
+// each page's own hreflang="en" — a page with no block declares no parent and
+// is simply not a member of anything.
+//
+// So the one shape nothing covered is a locale page that is invisible to a
+// reciprocity walk and to a membership walk at the same time. CLAUDE.md's
+// "Locale Parent Governance" section already names this gap and recommends an
+// "occasional manual spot-check for headless pages" — a standing
+// recommendation that, in practice, produced none. Real case found 2026-09-13:
+// es/letras-en-otros-idiomas/ shipped 2026-07-08 carrying a visible language
+// switcher and zero hreflang tags, with three instruments all reporting clean.
+//
+// This walks byUrl directly (every page with a canonical, cluster or not)
+// rather than the edges, which is what makes it able to see a page nothing
+// points at. Scoped to locale pages: 210 English pages legitimately carry no
+// hreflang because they have no translations, and an EN page is its own
+// x-default by definition.
+//
+// Reported, never auto-fixed. A missing self-reference is mechanically
+// unambiguous, but the x-default that belongs beside it is not: it points at
+// the cluster's EN member for a translation and at the bare homepage for a
+// ratified local-only page, and choosing between those is a governance
+// decision (data/english_parent_exceptions.json), not a repair.
+const { LOCALES } = require('./lib/locale-parent-registry');
+const LOCALE_SET = new Set(LOCALES);
+const missingSelfRef = [];
+for (const record of byUrl.values()) {
+  const top = record.rel.split('/')[0];
+  if (!LOCALE_SET.has(top)) continue; // English page — no hreflang required
+  if (record.ownLang) continue;       // has a self-referencing alternate
+  missingSelfRef.push(record);
+}
+
 console.log(`  Non-reciprocal pairs:            ${nonReciprocal.length}`);
 console.log(`  Placeholder EN-homepage claims:  ${placeholderEnFallback.length} (informational)`);
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
+console.log(`  Locale pages with no self-ref:   ${missingSelfRef.length}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
 console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
 console.log(`  x-default missing entirely:      ${missingXDefault.length}`);
@@ -242,6 +282,17 @@ if (headless.size) {
     const via = sources.map((s) => `${s.sourcePage.rel} (hreflang="${s.hreflang}")`).join(', ');
     console.log(`  ✗ ${target.rel}  <-  referenced by ${via}`);
   }
+}
+if (missingSelfRef.length) {
+  console.log('');
+  console.log('Locale pages with no self-referencing hreflang (invisible to both the reciprocity walk and the completeness walk — never auto-fixed):');
+  for (const r of missingSelfRef) {
+    const what = r.alternates.length === 0 ? 'declares no hreflang at all' : `declares ${r.alternates.length} alternate(s) but none matching its own canonical`;
+    console.log(`  \u2717 ${r.rel}  (${what})`);
+  }
+  console.log('    Fix: add <link rel="alternate" hreflang="<locale>" href="<its own canonical>">, plus the x-default');
+  console.log('    that matches its status — the cluster\'s EN member for a translation, or the bare homepage');
+  console.log('    for a page ratified local-only in data/english_parent_exceptions.json.');
 }
 if (brokenList.length) {
   console.log('');
@@ -521,7 +572,8 @@ if (FIX) {
 }
 
 const totalIssues =
-  nonReciprocal.length + headless.size + brokenList.length + badXDefault.length + missingXDefault.length;
+  nonReciprocal.length + headless.size + brokenList.length + badXDefault.length + missingXDefault.length +
+  missingSelfRef.length;
 if (totalIssues && !FIX) {
   console.log('');
   console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and missing or misdirected x-default tags.`);
