@@ -1203,6 +1203,53 @@
     recentMount.appendChild(clear);
   }
 
+  /* Saved sheets, from the shared store rather than this page's own recency
+     key. Without it Save had nowhere to lead: the button remembered its own
+     state and the record was invisible until the visitor happened back onto
+     the same URL. This strip is cross-page and cross-surface by construction
+     -- a sheet saved on the coloring hub shows up on block-letters -- which
+     is the whole reason the record went into js/saved/saved-items.js instead
+     of another private key.
+
+     No copy was authored for it: the heading is T.saved and the button is
+     PO.clear, both already translated in all eight locales. */
+  let savedMount = null;
+  function renderSaved() {
+    if (!savedMount) return;
+    const store = window.UltraTextGen && window.UltraTextGen.saved;
+    const list = store ? store.all("printable") : [];
+    savedMount.innerHTML = "";
+    if (!list.length) { savedMount.hidden = true; return; }
+    savedMount.hidden = false;
+    const title = document.createElement("span");
+    title.className = "pt-recent-title";
+    title.textContent = T.saved;
+    savedMount.appendChild(title);
+    list.forEach((r) => {
+      const a = document.createElement("a");
+      a.className = "pt-recent-link";
+      a.href = r.href || r.value;
+      a.textContent = r.label || r.value;
+      savedMount.appendChild(a);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button"; clear.className = "pt-recent-clear"; clear.textContent = PO.clear;
+    clear.addEventListener("click", () => { if (store) store.clear("printable"); });
+    savedMount.appendChild(clear);
+  }
+  // saved-items.js fires this on every write, including one made by another
+  // surface on the same page, so the strip and the Save button cannot drift.
+  document.addEventListener("utg:savedchange", () => {
+    renderSaved();
+    const btn = $(".pt-save-btn");
+    if (btn && window.UltraTextGen && window.UltraTextGen.saved) {
+      const on = window.UltraTextGen.saved.has("printable", presetUrl());
+      btn.classList.toggle("is-saved", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? T.saved : T.save;
+    }
+  });
+
   // The image a pin should carry: the SHEET preview, never the branded OG
   // card. scripts/wire-printables-previews.py writes the figure as
   // `.pt-sheet-preview`; the first two selectors here named classes that have
@@ -1329,6 +1376,12 @@
         onShared: () => rememberSheet("share")
       }));
     }
+
+    savedMount = document.createElement("div");
+    savedMount.className = "pt-recent pt-saved-strip";
+    savedMount.hidden = true;
+    shareWrap.appendChild(savedMount);
+    renderSaved();
 
     recentMount = document.createElement("div");
     recentMount.className = "pt-recent";
