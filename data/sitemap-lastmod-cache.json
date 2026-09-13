@@ -4324,8 +4324,8 @@
   "lastmod": "2026-08-13"
  },
  "/events/chinese-new-year/": {
-  "hash": "6e841ce7c3c8afa6",
-  "lastmod": "2026-09-01"
+  "hash": "78c6598932c632e4",
+  "lastmod": "2026-09-10"
  },
  "/events/christmas/": {
   "hash": "da759830f7eab23e",
@@ -5639,6 +5639,10 @@
   "hash": "5195c7e5484e603f",
   "lastmod": "2026-08-15"
  },
+ "/id/answers/kata-kata-ucapan-imlek/": {
+  "hash": "a38e8f94bd796577",
+  "lastmod": "2026-09-10"
+ },
  "/id/answers/what-font-does-pinterest-use/": {
   "hash": "d44fe6b096e2f972",
   "lastmod": "2026-09-03"
@@ -5650,6 +5654,10 @@
  "/id/category/": {
   "hash": "ab32ac94b614975f",
   "lastmod": "2026-08-16"
+ },
+ "/id/events/imlek/": {
+  "hash": "4fe2d2ebf87f0b37",
+  "lastmod": "2026-09-10"
  },
  "/id/font-angka/": {
   "hash": "d2740becc4929936",
@@ -5804,8 +5812,8 @@
   "lastmod": "2026-08-15"
  },
  "/id/library/happy-kaomoji/": {
-  "hash": "eeac6840382256bd",
-  "lastmod": "2026-08-21"
+  "hash": "416ae0108f224e77",
+  "lastmod": "2026-09-10"
  },
  "/id/library/kaomoji/": {
   "hash": "b59bed8692994614",
@@ -12556,8 +12564,8 @@
   "lastmod": "2026-09-01"
  },
  "/printables/": {
-  "hash": "9c8d25365e03514d",
-  "lastmod": "2026-08-13"
+  "hash": "3d9525ce4ed70abf",
+  "lastmod": "2026-09-10"
  },
  "/printables/alphabet-coloring-pages/": {
   "hash": "266de1adf7624164",
@@ -12708,8 +12716,8 @@
   "lastmod": "2026-08-13"
  },
  "/printables/banner-maker/": {
-  "hash": "9d14c8c3954052e2",
-  "lastmod": "2026-07-25"
+  "hash": "8ebd2e224a06a500",
+  "lastmod": "2026-09-10"
  },
  "/printables/best-friend-in-cursive/": {
   "hash": "38dec44f58a0ba95",
@@ -13120,8 +13128,8 @@
   "lastmod": "2026-08-12"
  },
  "/printables/coloring-page-maker/": {
-  "hash": "da79939d09e655b1",
-  "lastmod": "2026-07-25"
+  "hash": "cba368e5187ee92f",
+  "lastmod": "2026-09-10"
  },
  "/printables/cross-stitch-letters/": {
   "hash": "bf167f33f2124be4",
@@ -13360,8 +13368,8 @@
   "lastmod": "2026-08-13"
  },
  "/printables/handwriting-worksheet-generator/": {
-  "hash": "07394cdf1a184c70",
-  "lastmod": "2026-08-12"
+  "hash": "1671fd833ef82aad",
+  "lastmod": "2026-09-10"
  },
  "/printables/happy-birthday-in-cursive/": {
   "hash": "2ac01e45ec5cc667",
@@ -13376,16 +13384,16 @@
   "lastmod": "2026-07-25"
  },
  "/printables/monogram-maker/": {
-  "hash": "6f7aa14a08a51bf5",
-  "lastmod": "2026-08-12"
+  "hash": "8acfb4fb4debc640",
+  "lastmod": "2026-09-10"
  },
  "/printables/name-puzzle-maker/": {
-  "hash": "4dd7c9ac9411e51a",
-  "lastmod": "2026-07-25"
+  "hash": "d9c17b245812f5ba",
+  "lastmod": "2026-09-10"
  },
  "/printables/name-tracing/": {
-  "hash": "d92e1fb0e6932f22",
-  "lastmod": "2026-07-25"
+  "hash": "f403570ef65f3db6",
+  "lastmod": "2026-09-10"
  },
  "/printables/sight-word-tracing/": {
   "hash": "0e507b1358073fec",
@@ -15204,12 +15212,16 @@
   "lastmod": "2026-09-01"
  },
  "/sv/library/": {
-  "hash": "d4c7c73d8b47a811",
-  "lastmod": "2026-08-26"
+  "hash": "de6e59a36d42e49b",
+  "lastmod": "2026-09-10"
  },
  "/sv/library/bock-symboler/": {
   "hash": "04a0e606aaee5b8d",
   "lastmod": "2026-08-15"
+ },
+ "/sv/library/copyright-tecken/": {
+  "hash": "66a4c02e128a9d70",
+  "lastmod": "2026-09-10"
  },
  "/sv/library/discord-symboler/": {
   "hash": "57f6fe18ae41ee53",
@@ -15227,9 +15239,21 @@
   "hash": "6ad90f2e519df371",
   "lastmod": "2026-09-10"
  },
+ "/sv/library/japanska-tecken/": {
+  "hash": "4dc89de857231316",
+  "lastmod": "2026-09-10"
+ },
  "/sv/library/konssymboler/": {
   "hash": "367838cb1965449a",
   "lastmod": "2026-08-15"
+ },
+ "/sv/library/kors-symboler/": {
+  "hash": "c0b2b9fce80d8968",
+  "lastmod": "2026-09-10"
+ },
+ "/sv/library/kortfarg-symboler/": {
+  "hash": "b62344f5f453a19a",
+  "lastmod": "2026-09-10"
  },
  "/sv/library/matematiska-symboler/": {
   "hash": "f3cfe64d64466321",
@@ -15239,12 +15263,32 @@
   "hash": "fb58761828582744",
   "lastmod": "2026-08-15"
  },
+ "/sv/library/punkt-symboler/": {
+  "hash": "a543fb6d26f28a50",
+  "lastmod": "2026-09-10"
+ },
  "/sv/library/roblox-symboler/": {
   "hash": "556e8f3b9d9e1369",
   "lastmod": "2026-09-10"
  },
+ "/sv/library/skiljetecken/": {
+  "hash": "e4730fa41d89ad31",
+  "lastmod": "2026-09-10"
+ },
  "/sv/library/stjarna-symboler/": {
   "hash": "eee77dc2f0449c05",
+  "lastmod": "2026-09-10"
+ },
+ "/sv/library/stjarntecken/": {
+  "hash": "475dbe22cf263928",
+  "lastmod": "2026-09-10"
+ },
+ "/sv/library/tangentbord-symboler/": {
+  "hash": "3611bc673245d3a5",
+  "lastmod": "2026-09-10"
+ },
+ "/sv/library/vader-symboler/": {
+  "hash": "57131c95a1d6ead2",
   "lastmod": "2026-09-10"
  },
  "/sv/library/valuta-symboler/": {
