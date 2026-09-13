@@ -4259,11 +4259,16 @@ button.clear-decoration {
   align-items: start;
 }
 /* No detail column to fill the 1fr track (printablesEngine.js selectChar):
-   give the sheet the width instead of leaving 60% of the panel empty. Capped
-   so a single letter does not become a wall on a wide desktop -- the sheet is
-   a portrait page, and past ~560px it stops reading as one. */
+   give the sheet the width instead of leaving 60% of the panel empty.
+
+   The flat 560px cap this carried until 2026-09-13 is gone. It was there so a
+   single letter did not become a wall on a wide desktop, which was the right
+   worry and the wrong lever: it also held a LANDSCAPE page to a portrait
+   page's width, and left 292px of the panel empty beside the sheet. The sheet
+   now caps itself by height instead (see .pt-paper-sheet), which bounds a
+   portrait page and frees a landscape one. */
 .bubble-stage.is-solo {
-  grid-template-columns: minmax(220px, 560px);
+  grid-template-columns: minmax(220px, 1fr);
   justify-content: center;
 }
 .bubble-outline-card {
@@ -4272,6 +4277,74 @@ button.clear-decoration {
   border-radius: var(--radius-lg);
   padding: 1.25rem;
   box-shadow: var(--shadow-soft);
+}
+
+/* The preview as a sheet of paper (printablesEngine.js paperPreview).
+   --pt-paper-aspect is the chosen paper's width/height, set per repaint, so
+   switching to Landscape visibly turns the page on its side rather than
+   changing nothing at all.
+
+   Capped by HEIGHT, not width: `72vh * aspect` keeps a portrait page inside
+   the viewport while letting a landscape one spread across the whole panel —
+   which is the answer to a 560px-wide sheet sitting in an 852px column with
+   292px of nothing beside it. */
+.pt-paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.pt-paper-sheet {
+  --pt-paper-aspect: 0.7727;
+  position: relative;
+  width: min(100%, calc(72vh * var(--pt-paper-aspect)));
+  aspect-ratio: var(--pt-paper-aspect);
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  transition: width 0.2s ease, aspect-ratio 0.2s ease, opacity 0.2s ease;
+}
+/* The margin box, positioned rather than padded. A percentage height needs a
+   definite containing height, and `aspect-ratio` does not provide one for
+   percentage resolution — a figure placed straight into the sheet fell back
+   to its intrinsic aspect at full width and pushed a landscape sheet to 893px
+   where the ratio called for 461. Absolute positioning both makes the height
+   definite and takes the figure out of the flow, so it cannot push the sheet
+   around. (Second instance of this trap in one change; the print surface has
+   the same note.) */
+.pt-paper-inner {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 6%;
+}
+.pt-paper.is-narrow .pt-paper-inner { padding: 3%; }
+.pt-paper-inner .bubble-outline,
+.pt-paper-inner .pt-glyph-figure {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+}
+/* The glyph preview (cursive/calligraphy pages) is type, not an SVG, so it
+   centres in the sheet rather than filling it. Kept at its existing 4.5rem —
+   this pass changed where the figure sits, not how big the type is. */
+.pt-paper-inner .pt-glyph-figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+}
+/* Ink saver prints lighter lines (body.pt-ink-saver in the print CSS below);
+   showing that here is the difference between a checkbox and a preview. */
+.pt-paper.is-ink-saver .pt-paper-sheet { opacity: 0.62; }
+.pt-paper-caption {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
 }
 .bubble-outline {
   display: block;
@@ -4422,15 +4495,6 @@ button.clear-decoration {
   background: var(--bg-white);
 }
 .pt-spoke-batch .pt-size-field { margin-top: 0; }
-
-/* Save this sheet (printablesEngine.js buildSaveButton) -- the same typed
-   store js/saved/saved-items.js keeps for fonts and symbols. Quiet until it
-   is on, then it reads as state rather than as another action. */
-.pt-save-btn.is-saved {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  font-weight: 700;
-}
 
 @media (max-width: 640px) {
   .bubble-stage { grid-template-columns: 1fr; }
@@ -6183,16 +6247,57 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 .bubble-print-single { text-align: center; }
 /* Single-character print: fill the printed page. These nodes only ever render
    inside the hidden print surface, so the sizes below are print sizes — the
-   fixed height (with the SVG's preserveAspectRatio centering) makes one
-   letter a full-page worksheet on Letter and A4 alike, instead of a small
-   floating figure. */
+   height (with the SVG's preserveAspectRatio centering) makes one letter a
+   full-page worksheet instead of a small floating figure.
+
+   --pt-sheet-h is set per print job by printablesEngine.js's
+   applySheetMetrics(), from the paper, orientation and margin the visitor
+   picked in Print settings. The fallbacks are the old fixed values, so a
+   surface that somehow prints without the property set behaves exactly as it
+   did before. They were the ONLY values until 2026-09-13, which is why
+   choosing Landscape printed one letter across three sheets: 8.4in of figure
+   does not fit on an 8.5in page once margins, the title and the footer are
+   taken out. */
 .bubble-print-single .bubble-outline {
   display: block;
   width: 100%;
   max-width: none;
-  height: 8.4in;
+  height: var(--pt-body-h, 8.4in);
   margin: 0 auto;
 }
+
+/* The one-figure sheets fill the page by FLEXING, not by arithmetic: the wrap
+   takes the real printable height, the title and the credit footer claim
+   whatever they need, and the figure absorbs the rest. That removes the whole
+   class of "my estimate of a heading's height was 0.11in out and the sheet
+   spilled onto a second page" — which is exactly how the first fix for the
+   three-page bug failed. printablesEngine.js adds .pt-fill-page in printWrap. */
+.bubble-print-wrap.pt-fill-page {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--pt-page-h, 9.4in);
+}
+.bubble-print-wrap.pt-fill-page .bubble-print-single {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+}
+/* Absolutely positioned, not height:100% in the flex flow. A percentage
+   height needs a DEFINITE containing height, and a flex item sized by
+   `flex: 1 1 auto` does not offer one — the SVG silently fell back to its
+   intrinsic aspect at full width and rendered 15.6in tall inside a 10in page.
+   Against an absolutely-positioned box the percentage resolves against the
+   padding box flex has already computed, and preserveAspectRatio does the
+   centring the flex alignment would otherwise have done. */
+.bubble-print-wrap.pt-fill-page .bubble-print-single .bubble-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.bubble-print-wrap.pt-fill-page .pt-glyph-print { height: auto; }
+/* Pushes the credit to the foot of the sheet wherever the figure ends. */
+.bubble-print-wrap.pt-fill-page .pt-credit { margin-top: auto; }
 
 /* Glyph-mode (cursive) prints render a text node, not an SVG — scale the
    type itself so those pages fill the sheet too. */
@@ -6201,21 +6306,76 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 8.2in;
-  font-size: 2.8in;
+  height: var(--pt-body-h, 8.2in);
+  font-size: var(--pt-glyph-size, 2.8in);
   line-height: 1.2;
+}
+
+/* The credit footer: the page this sheet came from, as a scannable QR and as
+   text. Printed paper has no other way back to the tool. */
+.pt-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25in;
+  color: #8b91a0;
+  font-size: 10pt;
+}
+/* 0.95in, and the number is physics rather than taste. A credit URL encodes
+   as a version-5 symbol: 37 modules plus an 8-module quiet zone is 45 across,
+   so 0.95in gives 0.53mm per module, just over the ~0.5mm a phone camera
+   needs at arm's length. The first draft shipped 0.42in, which is 0.24mm per
+   module — a QR that renders perfectly and cannot be scanned, which is the
+   same class of defect as everything else on this page. Verified by decoding
+   a render of the print surface, not by eye. */
+.pt-credit-qr {
+  display: block;
+  width: 0.95in;
+  height: 0.95in;
+  flex: 0 0 auto;
+}
+.pt-credit-text {
+  color: inherit;
+  text-decoration: none;
+  word-break: break-all;
 }
 
 /* Alphabet "book" print — one character per printed sheet, in order
    (printAlphabetBook in printablesEngine.js). */
-.bubble-print-book-page { text-align: center; }
+.bubble-print-book-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: var(--pt-page-h, 9.4in);
+}
+.bubble-print-book-page .bubble-figure {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+}
+.bubble-print-book-page .bubble-figure .bubble-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+}
+.bubble-print-book-page .bubble-figure .pt-glyph-print {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  margin: 0;
+}
 .bubble-print-book-page .bubble-outline {
   display: block;
   width: 100%;
   max-width: none;
-  height: 8.2in;
+  height: var(--pt-body-h, 8.2in);
   margin: 0 auto;
 }
+.bubble-print-book-page .pt-credit { margin-top: auto; }
 
 /* "Bulletin board" tiled alphabet print (printAlphabetTiled in
    printablesEngine.js) — several letters per page at a fixed real height
@@ -6275,11 +6435,11 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
      center the name-puzzle sheet vertically, instead of leaving the bottom
      third of the page blank. Print-only so on-screen previews are untouched. */
   .bubble-print-wrap .pt-name-sheet {
-    min-height: 9.2in;
+    min-height: var(--pt-body-h, 9.2in);
     justify-content: space-between;
   }
   .pt-puzzle-print-holder .pt-puzzle-sheet {
-    min-height: 9.2in;
+    min-height: var(--pt-body-h, 9.2in);
     justify-content: center;
     gap: 1.4rem;
   }
