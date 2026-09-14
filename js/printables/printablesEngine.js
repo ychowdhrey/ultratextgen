@@ -82,7 +82,9 @@
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
       printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Save to Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
-      printBook: "Print as a book — one page per letter",
+      printBook: "Print as a book: one page per letter",
+      save: "Save",
+      saved: "Saved",
       nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
       nameSolidLabel: "Colour it in now (solid fill)",
       pngTransparent: "PNG (transparent)",
@@ -133,6 +135,8 @@
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
       printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Imprimer en livret — une page par lettre",
+      save: "Enregistrer",
+      saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
       nameSolidLabel: "Colorier maintenant (remplissage plein)",
       pngTransparent: "PNG (transparent)",
@@ -176,6 +180,8 @@
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
       printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Imprimir como libro — una página por letra",
+      save: "Guardar",
+      saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorear ahora (relleno sólido)",
       pngTransparent: "PNG (transparente)",
@@ -219,6 +225,8 @@
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Imprimir como livro — uma página por letra",
+      save: "Salvar",
+      saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorir agora (preenchimento sólido)",
       pngTransparent: "PNG (transparente)",
@@ -262,6 +270,8 @@
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Stampa come libretto — una pagina per lettera",
+      save: "Salva",
+      saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colora adesso (riempimento pieno)",
       pngTransparent: "PNG (trasparente)",
@@ -305,6 +315,8 @@
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
       printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
+      save: "Zapisz",
+      saved: "Zapisano",
       nameStyleLabel: "Styl", nameFillLabel: "Wypełnienie", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Pokoloruj od razu (pełne wypełnienie)",
       pngTransparent: "PNG (przezroczyste tło)",
@@ -351,7 +363,9 @@
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
-      printBook: "Als Heft drucken — eine Seite pro Buchstabe",
+      printBook: "Als Heft drucken \u2013 eine Seite pro Buchstabe",
+      save: "Speichern",
+      saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
       pngTransparent: "PNG (transparent)",
@@ -404,6 +418,8 @@
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
       printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
+      save: "Simpan",
+      saved: "Tersimpan",
       nameStyleLabel: "Gaya", nameFillLabel: "Warna isi", nameStrokeLabel: "Garis tepi",
       nameSolidLabel: "Langsung diwarnai (isi penuh)",
       pngTransparent: "PNG (transparan)",
@@ -722,6 +738,76 @@
 
   // The big figure for the detail panel: outline SVG, a script-glyph pair, or
   // (RENDER === "dots") a single-character numbered dot-to-dot.
+  /* The on-screen preview as a sheet of the paper that was chosen.
+
+     Print settings used to change the @page rule and nothing a visitor could
+     see: the preview card rendered the same 518x622 figure whether you picked
+     US Letter portrait or Legal landscape, so the only way to find out what
+     the settings did was to print. Measured before the change — the preview
+     was byte-identical at 518x622 before and after switching to Legal /
+     Landscape / Narrow.
+
+     Now the card IS the page: it takes the chosen paper's aspect ratio, its
+     margin, and the ink-saver setting, and the letter fills it the way it will
+     fill the sheet. Landscape is short and wide on screen because it is short
+     and wide on paper. The caption underneath names the same settings in
+     words, composed only from strings the print-settings panel already ships
+     translated — nothing new was authored for it. */
+  let paperPreviewNode = null;
+  function paperCaption() {
+    const paperLabel = { auto: PO.auto, letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.auto;
+    const parts = [
+      paperLabel,
+      printPrefs.orient === "landscape" ? PO.landscape : PO.portrait,
+      printPrefs.margin === "narrow" ? PO.narrow : PO.normal
+    ];
+    if (printPrefs.ink === "saver") parts.push(PO.inkSaver);
+    return parts.join(" · ");
+  }
+  function paintPaperPreview() {
+    // No isConnected guard: paperPreview() paints once while the holder is
+    // still detached (selectChar appends it afterwards), and an isConnected
+    // check there silently skipped that first paint — the sheet took the
+    // default aspect and the caption rendered EMPTY. A stale node cannot be
+    // painted anyway, because paperPreviewNode is reassigned on every
+    // selectChar. Caught by driving a browser; nothing else could see it.
+    const node = paperPreviewNode;
+    if (!node) return;
+    const full = paperFull();
+    const sheet = $(".pt-paper-sheet", node);
+    // One custom property carries both the shape and the on-screen size: the
+    // sheet is capped by HEIGHT, so a landscape page spreads across the panel
+    // instead of being held to a portrait page's width.
+    if (sheet) sheet.style.setProperty("--pt-paper-aspect", (full.w / full.h).toFixed(4));
+    node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
+    node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
+    const cap = $(".pt-paper-caption", node);
+    if (cap) cap.textContent = paperCaption();
+  }
+  function paperPreview(ch) {
+    const holder = document.createElement("div");
+    holder.className = "pt-paper";
+    const sheet = document.createElement("div");
+    sheet.className = "pt-paper-sheet";
+    // The figure sits in its own absolutely-positioned box, not directly in
+    // the sheet. Percentage heights need a DEFINITE containing height and an
+    // aspect-ratio box does not give one, so a figure placed straight into
+    // the sheet fell back to its intrinsic aspect at full width and made the
+    // sheet 893px tall where the ratio called for 461. Same trap as the print
+    // surface, second instance in one change.
+    const inner = document.createElement("div");
+    inner.className = "pt-paper-inner";
+    inner.appendChild(figureNode(ch));
+    sheet.appendChild(inner);
+    holder.appendChild(sheet);
+    const caption = document.createElement("p");
+    caption.className = "pt-paper-caption";
+    holder.appendChild(caption);
+    paperPreviewNode = holder;
+    paintPaperPreview();
+    return holder;
+  }
+
   function figureNode(ch) {
     if (RENDER === "glyph") {
       const p = document.createElement("p");
@@ -887,10 +973,41 @@
      PNG export (Canvas)
      --------------------------------------------------------------- */
 
+  /* Every sheet on this site is drawn in a Google Font fetched at runtime
+     (Baloo 2, Archivo Black, Fredoka, Quicksand, Playwrite). The build-time
+     preview PNGs are rasterised with the real face and can never fail; the
+     live tool can, and when it does the browser substitutes a system sans
+     with no error and no visible difference except the letterform itself.
+     A visitor on a blocked, filtered or offline connection then prints a
+     sheet that is not the sheet the page shows a picture of -- and nothing
+     anywhere recorded that it had happened. Reproduced accidentally while
+     auditing this engine on 2026-09-13, which is the only reason it is known
+     to be reachable at all.
+
+     Deliberately not a warning banner: the sheet is still usable, the CSS
+     stack already names sensible fallbacks, and inventing a caveat string in
+     eight languages to describe a font substitution most visitors cannot see
+     would cost more than it returns. What was missing is that the state was
+     unobservable, so it is made observable instead -- a root class for CSS or
+     a future decision to hang off, and one event so the rate is a number
+     rather than a guess. */
+  let fontFallbackReported = false;
+  function noteFontAvailability(fam) {
+    if (fontFallbackReported || !fam) return;
+    if (!document.fonts || !document.fonts.check) return;
+    let loaded = true;
+    try { loaded = document.fonts.check("700 200px " + fam); } catch (err) { return; }
+    if (loaded) return;
+    fontFallbackReported = true;
+    document.documentElement.classList.add("pt-font-fallback");
+    trackPrintableEvent("printable_font_fallback", { printable_font: fam });
+  }
+
   function withFont(cb, famOverride) {
     const fam = famOverride || primaryFontName();
     if (fam && document.fonts && document.fonts.load) {
-      document.fonts.load("700 200px " + fam).then(cb).catch(cb);
+      const done = () => { noteFontAvailability(fam); cb(); };
+      document.fonts.load("700 200px " + fam).then(done).catch(done);
     } else {
       cb();
     }
@@ -990,7 +1107,15 @@
   // paper and orientation (landscape swaps the two).
   function printArea() {
     const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
-    return printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
+    const a = printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
+    // Every printed page carries a credit footer now (attachCredit), so the
+    // tile budget has to leave room for it. Without this the "Small" (2in)
+    // alphabet run fits four rows by the old arithmetic, 8.75in of tiles plus
+    // 1.6in of title and footer, which runs past a Letter page and costs a
+    // whole extra sheet. The width is untouched: PAPERS keeps its deliberately
+    // conservative figures there, which is what makes "auto" safe on Letter
+    // and A4 at once.
+    return { w: a.w, h: Math.max(1.5, a.h - PRINT_CREDIT_BAND_IN) };
   }
 
   // "ultratextgen.com/printables/name-tracing": the credit every printed or
@@ -1000,6 +1125,127 @@
     if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
     const path = String(window.location.pathname || "/").replace(/index\.html$/, "").replace(/\/$/, "");
     return "ultratextgen.com" + (path || "");
+  }
+  /* The same page as a real URL, for the QR code and the PDF link annotation.
+     siteCredit() strips the trailing slash for display; putting it back keeps
+     a scan off a redirect hop.
+
+     Deliberately the PAGE path and not presetUrl(), even though a scan that
+     reopened this exact sheet would be the nicer trick. A preset carrying a
+     class roster runs to 200+ characters, which is a version-9 symbol: 53
+     modules plus its quiet zone across the same 0.95in is 0.39mm per module,
+     under what a phone can read. A QR that works every time beats one that
+     works until someone types a long name. The Share row is where the preset
+     link lives, and the text credit beside the QR matches what it encodes. */
+  function creditUrl() { return "https://" + siteCredit() + "/"; }
+
+  /* How much of the chosen sheet a printed figure may occupy, in inches.
+     Everything in the Print settings panel feeds this: paper, orientation and
+     margin.
+
+     Before it existed, the single-letter and book prints hardcoded 8.4in and
+     8.2in figure heights regardless of what the visitor had chosen, so the
+     panel changed the @page rule and nothing else. Choosing Landscape then
+     asked for a figure taller than the page: measured across all eight
+     paper/orientation/margin combinations, every portrait one printed a
+     letter on 1 sheet and every landscape one on 3. That is the "Print this
+     letter renders 3 pages" report, and it is the same defect as "the print
+     settings do not change anything" seen from the other end.
+
+     printAlphabetTiled already derived its grid from printArea(); this is
+     that idea applied to the two layouts that did not. */
+  const PRINT_PADDING_IN = 0.34;   // #pt-print-root's 1rem top+bottom under @media print
+  /* Two heights, because the layouts need different things and only one of
+     them can be exact.
+
+     --pt-page-h is the real printable height and involves no guessing: paper,
+     minus the chosen margins, minus the print root's own padding. The single
+     and book prints are flex columns that take that height and let the title
+     and the credit footer claim their natural space, so the figure gets
+     whatever is left. Nothing there has to know how tall a heading is.
+
+     --pt-body-h is for the layouts that set a min-height instead (the name
+     and puzzle sheets), which cannot self-size that way. It subtracts a
+     deliberately GENEROUS chrome allowance. Measured at a 7.5in page width:
+     a 0.4in title, a 0.95in credit band (the QR sets that height) and its
+     0.25in margin, so 1.6in on a layout carrying all three; 1.9in leaves a
+     sheet slightly short of the bottom. That direction is the safe one -- a
+     min-height that overshoots spills onto a second page, one that
+     undershoots just does not stretch to the edge.
+
+     The first attempt at this did the arithmetic for every layout and was
+     wrong by 0.11in, which printed a letter on 2 pages instead of 1. Measured
+     after the change, the flex wrap lands on exactly --pt-page-h (9.66in on
+     Letter portrait) with the figure absorbing 8.14in of it, which is the
+     point: nothing had to know the title is 0.4in tall. Measure, or let the
+     layout measure itself; do not estimate where you can avoid it. */
+  const PRINT_CHROME_IN = 1.9;
+  // What the credit footer costs a layout that budgets its own page (the
+  // tiled alphabet run), measured: a 0.95in QR plus its 0.25in margin.
+  const PRINT_CREDIT_BAND_IN = 1.2;
+  // .pt-glyph-print shipped 2.8in type inside an 8.2in box; keeping the ratio
+  // means a cursive sheet scales with the paper like an outline one does.
+  const GLYPH_RATIO = 0.34;
+  function sheetMetrics() {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    // Floor these rather than letting a tiny page produce a negative height:
+    // a cramped sheet is recoverable, a broken one is not.
+    const page = Math.max(2, full.h - 2 * marginIn - PRINT_PADDING_IN);
+    const body = Math.max(1.4, page - PRINT_CHROME_IN);
+    // Width is not published: every figure is width:100% with the SVG's own
+    // preserveAspectRatio, so a landscape sheet letterboxes rather than
+    // overflowing, and a property nothing reads is a property that goes stale.
+    return { page: page, body: body };
+  }
+  // Published to the print CSS as custom properties, so one measurement
+  // drives every print layout instead of each one carrying its own constant.
+  function applySheetMetrics(node) {
+    if (!node) return;
+    const m = sheetMetrics();
+    node.style.setProperty("--pt-page-h", m.page.toFixed(2) + "in");
+    node.style.setProperty("--pt-body-h", m.body.toFixed(2) + "in");
+    node.style.setProperty("--pt-glyph-size", (m.body * GLYPH_RATIO).toFixed(2) + "in");
+  }
+
+  /* The footer every printed sheet and PDF page now carries: the exact page
+     this sheet came from, as text AND as a QR code.
+
+     Printed paper has no other way back. The text credit alone is a URL a
+     parent has to retype, and a PNG cannot carry a link at all — a QR is the
+     only route back from an image or from a sheet that has been printed. Only
+     the tiled alphabet print carried any credit before this; the
+     single-letter and book prints named nothing at all. */
+  function creditNode() {
+    const wrap = document.createElement("div");
+    wrap.className = "pt-credit";
+    const qrNs = qrModule();
+    const url = creditUrl();
+    if (qrNs) {
+      // A symbol too long to encode returns null rather than a broken one, so
+      // an unusually long preset URL degrades to the text credit alone.
+      const svg = qrNs.qrSvg(url, { px: 56, title: url });
+      if (svg) { svg.setAttribute("class", "pt-credit-qr"); wrap.appendChild(svg); }
+    }
+    const a = document.createElement("a");
+    a.className = "pt-credit-text";
+    a.href = url;
+    a.textContent = siteCredit();
+    wrap.appendChild(a);
+    return wrap;
+  }
+
+  // printablePdf.js's renderPages rasterises explicit page elements one
+  // canvas each and DROPS everything outside them, so a footer appended to
+  // the wrap would print from the browser dialog and silently vanish from the
+  // PDF. Give each page unit its own; the wrap gets one only when there are
+  // none. Same selector as that module's own PAGES, kept in step by name.
+  const PT_PAGE_UNITS = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
+  function attachCredit(wrap) {
+    const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
+    if (pages.length) { pages.forEach((p) => p.appendChild(creditNode())); return pages; }
+    wrap.appendChild(creditNode());
+    return [];
   }
 
   function showToast(msg) {
@@ -1156,8 +1402,54 @@
     recentMount.appendChild(clear);
   }
 
+  /* Saved sheets, from the shared store rather than this page's own recency
+     key. Without it Save had nowhere to lead: the button remembered its own
+     state and the record was invisible until the visitor happened back onto
+     the same URL. This strip is cross-page and cross-surface by construction
+     -- a sheet saved on the coloring hub shows up on block-letters -- which
+     is the whole reason the record went into js/saved/saved-items.js instead
+     of another private key.
+
+     No copy was authored for it: the heading is T.saved and the button is
+     PO.clear, both already translated in all eight locales. */
+  let savedMount = null;
+  function renderSaved() {
+    if (!savedMount) return;
+    const store = window.UltraTextGen && window.UltraTextGen.saved;
+    const list = store ? store.all("printable") : [];
+    savedMount.innerHTML = "";
+    if (!list.length) { savedMount.hidden = true; return; }
+    savedMount.hidden = false;
+    const title = document.createElement("span");
+    title.className = "pt-recent-title";
+    title.textContent = T.saved;
+    savedMount.appendChild(title);
+    list.forEach((r) => {
+      const a = document.createElement("a");
+      a.className = "pt-recent-link";
+      a.href = r.href || r.value;
+      a.textContent = r.label || r.value;
+      savedMount.appendChild(a);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button"; clear.className = "pt-recent-clear"; clear.textContent = PO.clear;
+    clear.addEventListener("click", () => { if (store) store.clear("printable"); });
+    savedMount.appendChild(clear);
+  }
+  // saved-items.js fires this on every write, including one made by another
+  // surface on the same page, so the strip and the Save button cannot drift.
+  document.addEventListener("utg:savedchange", () => { renderSaved(); });
+
+  // The image a pin should carry: the SHEET preview, never the branded OG
+  // card. scripts/wire-printables-previews.py writes the figure as
+  // `.pt-sheet-preview`; the first two selectors here named classes that have
+  // never existed in the tree, so every pin between 2026-09-12 and 09-13 fell
+  // through to og:image -- a 1200x630 landscape brand card, on the one
+  // platform that is vertical-first. `.pt-sheet-preview` is the class the
+  // wiring script actually writes and is checked first; the older names stay
+  // as a fallback in case a page is wired by hand.
   function previewImageUrl() {
-    const img = $("img.pt-preview-img") || $(".pt-preview-figure img");
+    const img = $(".pt-sheet-preview img") || $("img.pt-preview-img") || $(".pt-preview-figure img");
     if (img && img.src) return img.src;
     const og = $('meta[property="og:image"]');
     return og ? og.getAttribute("content") : "";
@@ -1219,49 +1511,89 @@
     const summary = document.createElement("summary");
     summary.textContent = PO.settings;
     details.appendChild(summary);
+    // Every one of these repaints the preview. Without that the panel is a
+    // set of controls with no visible consequence, which is the report this
+    // block was rebuilt for: "the print settings don't change the display".
+    const changed = () => { savePrintPrefs(); paintPaperPreview(); };
     details.appendChild(choiceRow(PO.paper, [
       { key: "auto", label: PO.auto }, { key: "letter", label: PO.letter }, { key: "a4", label: PO.a4 }, { key: "legal", label: PO.legal }
-    ], printPrefs.paper, (k) => { printPrefs.paper = k; savePrintPrefs(); }));
+    ], printPrefs.paper, (k) => { printPrefs.paper = k; changed(); }));
     details.appendChild(choiceRow(PO.orientation, [
       { key: "portrait", label: PO.portrait }, { key: "landscape", label: PO.landscape }
-    ], printPrefs.orient, (k) => { printPrefs.orient = k; savePrintPrefs(); }));
+    ], printPrefs.orient, (k) => { printPrefs.orient = k; changed(); }));
     details.appendChild(choiceRow(PO.margins, [
       { key: "normal", label: PO.normal }, { key: "narrow", label: PO.narrow }
-    ], printPrefs.margin, (k) => { printPrefs.margin = k; savePrintPrefs(); }));
+    ], printPrefs.margin, (k) => { printPrefs.margin = k; changed(); }));
     const ink = document.createElement("label");
     ink.className = "pt-print-opt pt-print-ink";
     const inkBox = document.createElement("input");
     inkBox.type = "checkbox"; inkBox.checked = printPrefs.ink === "saver";
-    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; savePrintPrefs(); });
+    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; changed(); });
     ink.appendChild(inkBox); ink.appendChild(document.createTextNode(" " + PO.inkSaver));
     details.appendChild(ink);
     wrap.appendChild(details);
+
+    if (explicit) explicit.appendChild(wrap);
+    else anchor.parentNode.insertBefore(wrap, anchor);
+
+    /* Share sits AFTER the sheet, not before it (audit 2026-09-13, question d).
+       Print settings is a pre-print decision and stays above; sharing is a
+       post-completion act, and it shipped 2026-09-12 above the sheet -- four
+       full-width buttons asking a visitor to endorse something they had not
+       seen yet, each of them visually heavier than the "Print this letter"
+       button below. presetUrl() also serialises the generator's state, so on
+       a hub before a letter is picked, or a name tool before a name is typed,
+       the link being offered is the emptiest it will ever be. */
+    const shareWrap = document.createElement("div");
+    shareWrap.className = "pt-share-tools";
+    shareWrap.id = "pt-share-tools";
 
     // The share row is share-core's (js/share/share-core.js buildShareRow),
     // the same builder the monogram and cross-stitch engines use, so the
     // three surfaces cannot drift. Labels are this engine's own strings.
     const UTGns = window.UltraTextGen;
     if (UTGns && UTGns.buildShareRow) {
-      wrap.appendChild(UTGns.buildShareRow({
+      shareWrap.appendChild(UTGns.buildShareRow({
         className: "pt-share-row",
         url: presetUrl,
         surface: "printables",
         itemType: "printable",
         labels: { share: PO.share, shareImage: PO.shareImage, copyLink: PO.copyLink, linkCopied: PO.linkCopied, pinterest: PO.pinterest },
-        onShareImage: (primaryInput() || el.panel) ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; } : null,
+        // Only where the OS can actually take the file. Without that this
+        // button downloads a PNG, which every printables sheet already offers
+        // as "Download PNG" a few pixels above -- two labels, one action, and
+        // no way for the visitor to tell which is which.
+        onShareImage: ((primaryInput() || el.panel) && UTGns.canShareFiles && UTGns.canShareFiles())
+          ? () => { exportMode = "share"; if (!primaryPngExport()) exportMode = "download"; }
+          : null,
         pinMedia: previewImageUrl,
         onShared: () => rememberSheet("share")
       }));
+    } else if (!(window.UltraTextGen && window.UltraTextGen.buildShareRow)) {
+      // Never fail silently. This branch means js/share/share-core.js did not
+      // execute before this engine did -- almost always a tag-order change --
+      // and the visible symptom is simply no share row, which looks identical
+      // to a page that never had one. Say so (2026-09-13).
+      console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
     }
+
+    savedMount = document.createElement("div");
+    savedMount.className = "pt-recent pt-saved-strip";
+    savedMount.hidden = true;
+    shareWrap.appendChild(savedMount);
+    renderSaved();
 
     recentMount = document.createElement("div");
     recentMount.className = "pt-recent";
     recentMount.hidden = true;
-    wrap.appendChild(recentMount);
+    shareWrap.appendChild(recentMount);
     renderRecent();
 
-    if (explicit) explicit.appendChild(wrap);
-    else anchor.parentNode.insertBefore(wrap, anchor);
+    // After the sheet, and after the spoke's batch block when it has one, so
+    // the order on a page is always: choose -> see -> get -> share.
+    const after = $(".pt-spoke-batch") || el.panel || anchor;
+    if (after && after.parentNode) after.parentNode.insertBefore(shareWrap, after.nextSibling);
+    else wrap.appendChild(shareWrap);
   }
   // A "Save as PDF" button beside every print button: same print path, with
   // the destination hint shown as a toast while the dialog is open.
@@ -1341,7 +1673,33 @@
   // titles, other PNG exports). Not drawn for RENDER === "glyph" (cursive/
   // calligraphy pages): those are typed-word art the visitor downloads to
   // use as-is, not a practice/coloring sheet, so they stay clean by design.
+  /* The credit on an exported PNG: the page path as text, and the same URL as
+     a QR code beside it.
+
+     A PNG cannot carry a link — that is the whole reason the QR is here
+     rather than only in the PDF. An image forwarded to a colleague, or
+     printed and handed to a class, has no other route back to the tool than
+     retyping what it says, and the QR removes that step for anyone holding a
+     phone. Scaled off the canvas rather than fixed, because this same
+     function signs a 1024px square letter and a 1600x520 word strip. */
   function drawCredit(ctx, w, h, light) {
+    const url = creditUrl();
+    const qrNs = qrModule();
+    /* Floored at 120px, from the print case rather than from taste. A credit
+       URL is a version-5 symbol: 37 modules plus an 8-module quiet zone is 45
+       across, and a phone needs about 0.5mm per module. A 1024px sheet
+       printed 8in wide therefore needs 45 * 0.0197in * 1024 / 8 = 113px of
+       QR, so 120 leaves a little room. The 7% term only matters on a canvas
+       larger than ~1700px, where it takes over from the floor. */
+    const qrSize = Math.max(120, Math.round(Math.min(w, h) * 0.07));
+    const pad = Math.round(qrSize * 0.35);
+    let drewQr = false;
+    if (qrNs) {
+      drewQr = qrNs.drawQrOnCanvas(ctx, url, w - qrSize - pad, h - qrSize - pad, qrSize, {
+        dark: light ? "#7d8494" : INK,
+        light: "#ffffff"
+      });
+    }
     ctx.save();
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
@@ -1349,9 +1707,68 @@
     ctx.font = (light ? "18px " : "22px ") + FONT;
     ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
     // The page path, not just the domain: a sheet that gets forwarded should
-    // open the same tool (2026-09-10 share pass).
+    // open the same tool (2026-09-10 share pass). It stays centred on the
+    // canvas rather than moving to make room for the QR — the QR sits in the
+    // corner, and re-centring the text on the remaining width would shift the
+    // credit line on every existing export for no gain.
     ctx.fillText(siteCredit(), w / 2, h - 24);
     ctx.restore();
+    return drewQr;
+  }
+
+  /* ---------------------------------------------------------------
+     Canvas outlines: the one rule, so a PNG cannot drift from its sheet
+     ---------------------------------------------------------------
+     outlineSVG() draws every hollow letter at font-size 210 with
+     stroke-width STROKE and paint-order="stroke". Two things follow from
+     that, and a canvas export has to reproduce BOTH or it stops being the
+     sheet it previews:
+
+       1. The width is a RATIO of the type, not of the canvas. STROKE is
+          quoted against font-size 210, so at canvas font size F the
+          equivalent is F * STROKE / 210.
+       2. paint-order="stroke" puts the stroke UNDER the fill, so only its
+          outer half is visible and the counters stay open. Canvas has no
+          paint-order: the same result is a stroke pass followed by a fill
+          pass on top. This is exactly what
+          scripts/generate-printables-previews.py's svg_text() already does
+          for cairosvg, which is why the build-time preview PNGs were right
+          while these were not.
+
+     Shipped 2026-09-10 and found 2026-09-13: letterPNG used a fixed 4.5% of
+     the CANVAS size against a 66% font size (6.8% of the type, 3.6x the
+     alphabet-coloring sheet's 1.9%) and stroked OVER the fill, doubling the
+     visible band again. Measured on letter A: 9.35% dark pixels against the
+     preview's 1.83% on a larger glyph, about 10x the ink. The download was a
+     solid black letter with a sliver of white in it -- not a coloring page.
+     wordPNG (6%), the design sheet (STROKE as raw px) and the puzzle strip
+     (6%) all carried a version of the same divergence.
+
+     Every canvas outline in this file goes through these two functions. */
+  const OUTLINE_SVG_FONT = 210;   // outlineSVG()'s font-size: the unit STROKE is quoted in
+  // wordOutlineSVG() draws at font-size 150 with stroke-width 3 (2% of the
+  // type). Restated in outlineSVG's 210 units so both go through one helper.
+  const WORD_OUTLINE_STROKE = 3 / 150 * OUTLINE_SVG_FONT;   // 4.2
+
+  function outlineLineWidth(fontSizePx, strokeUnits) {
+    const units = strokeUnits == null ? STROKE : strokeUnits;
+    return Math.max(1, fontSizePx * units / OUTLINE_SVG_FONT);
+  }
+
+  // paint-order="stroke" on a canvas: stroke first, fill over it. opts:
+  // strokeWidth (in outlineSVG units) / strokeColor / fill / hollow (skip the
+  // fill entirely -- a transparent sticker export keeps a real hole, so both
+  // halves of the stroke read as ink and the outer silhouette still matches).
+  function paintOutlineText(ctx, text, x, y, fontSizePx, opts) {
+    const o = opts || {};
+    ctx.lineJoin = "round";
+    ctx.lineWidth = outlineLineWidth(fontSizePx, o.strokeWidth);
+    ctx.strokeStyle = o.strokeColor || INK;
+    ctx.strokeText(text, x, y);
+    if (!o.hollow) {
+      ctx.fillStyle = o.fill || "#ffffff";
+      ctx.fillText(text, x, y);
+    }
   }
 
   // Single character -> square PNG.
@@ -1378,13 +1795,10 @@
       const glyph = RENDER === "glyph"
         ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
         : ch;
-      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66)) + "px " + FONT;
+      const letterFs = Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66));
+      ctx.font = "700 " + letterFs + "px " + FONT;
       if (RENDER === "outline") {
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(glyph, size / 2, size * 0.5);
-        ctx.lineWidth = Math.round(size * 0.045);
-        ctx.strokeStyle = INK;
-        ctx.strokeText(glyph, size / 2, size * 0.5);
+        paintOutlineText(ctx, glyph, size / 2, size * 0.5, letterFs);
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
@@ -1435,15 +1849,15 @@
           ctx.strokeText(out, width / 2, height * 0.52);
         }
       } else if (RENDER === "outline") {
-        // Hollow outline. On a transparent canvas a white interior would
-        // read as a white slab — keep the interior a real hole instead.
-        if (!o.transparent) {
-          ctx.fillStyle = "#ffffff";
-          ctx.fillText(out, width / 2, height * 0.52);
-        }
-        ctx.lineWidth = Math.max(6, Math.round(fontSize * 0.06));
-        ctx.strokeStyle = o.strokeColor || INK;
-        ctx.strokeText(out, width / 2, height * 0.52);
+        // Hollow outline, matching wordOutlineSVG(): its stroke-width default
+        // is 3 against font-size 150, i.e. 2% of the type. On a transparent
+        // canvas a white interior would read as a white slab, so the fill is
+        // skipped and the interior stays a real hole.
+        paintOutlineText(ctx, out, width / 2, height * 0.52, fontSize, {
+          strokeWidth: WORD_OUTLINE_STROKE,
+          strokeColor: o.strokeColor,
+          hollow: !!o.transparent
+        });
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(out, width / 2, height * 0.52);
@@ -1499,8 +1913,24 @@
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
+    let links = [];
     try {
       pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+      // Measure the credit blocks HERE, inside the rendering state: the print
+      // surface is display:none the moment pt-pdf-rendering comes off, and
+      // every rectangle then reads zero. The rects are computed by the PDF
+      // module's own rectOnCanvas, against the placement it recorded while
+      // rasterising — the alternative is reimplementing its page-cut logic
+      // out here, which is the drift this file keeps paying for elsewhere.
+      if (pages && P.rectOnCanvas) {
+        const credits = $$(".pt-credit", wrap);
+        pages.forEach((canvas, i) => {
+          credits.forEach((credit) => {
+            const rect = P.rectOnCanvas(canvas, credit);
+            if (rect) links.push({ page: i, rect: rect, url: creditUrl() });
+          });
+        });
+      }
     } catch (err) {
       pages = null;
     } finally {
@@ -1513,7 +1943,8 @@
       const blob = await P.fromCanvases(pages, {
         paperIn: full,
         marginIn: { x: marginIn, y: marginIn },
-        title: document.title
+        title: document.title,
+        links: links
       });
       P.download(blob, pdfFilename(sheet));
     } catch (err) {
@@ -1522,6 +1953,23 @@
     trackPrintable("download_pdf", sheet);
     trackPrintableEvent("printable_output", { printable_action: "pdf_saved", printable_sheet: sheet || "sheet", printable_pages: pages.length });
     return true;
+  }
+
+  // Every rendered copy of the PDF fallback hint, so the reveal reaches the
+  // one on screen whichever section mounted it.
+  const pdfHints = [];
+  let pdfFellBack = false;
+  function makePdfHint() {
+    const p = document.createElement("p");
+    p.className = "pt-pdf-hint";
+    p.textContent = T.pdfHint;
+    p.hidden = !pdfFellBack;
+    pdfHints.push(p);
+    return p;
+  }
+  function markPdfFallback() {
+    pdfFellBack = true;
+    pdfHints.forEach((p) => { p.hidden = false; });
   }
 
   function printWrap(titleText, bodyNode, sheet) {
@@ -1533,6 +1981,10 @@
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
+    // The one-figure sheets fill the page by flexing rather than by a
+    // computed figure height. Marked here because CSS cannot ask "does this
+    // wrap contain a single-character print".
+    if (sheet === "character") wrap.classList.add("pt-fill-page");
     if (titleText) {
       const h = document.createElement("h2");
       h.className = "bubble-print-title";
@@ -1540,6 +1992,10 @@
       wrap.appendChild(h);
     }
     wrap.appendChild(bodyNode);
+    // Size the sheet to the paper the visitor chose, then sign it. Both have
+    // to happen before anything measures or rasterises the surface.
+    applySheetMetrics(el.printRoot);
+    attachCredit(wrap);
     el.printRoot.appendChild(wrap);
 
     // Save as PDF writes the file itself (printablePdf.js); the browser's
@@ -1547,6 +2003,7 @@
     if (wantPdf) {
       pdfFromWrap(wrap, sheet).then((ok) => {
         if (ok) { el.printRoot.innerHTML = ""; return; }
+        markPdfFallback();
         showToast(PO.pdfToast);
         openPrintDialog(sheet, true);
       });
@@ -1614,7 +2071,7 @@
     // Left — big figure + print + PNG.
     const figure = document.createElement("div");
     figure.className = "bubble-outline-card";
-    figure.appendChild(figureNode(ch));
+    figure.appendChild(paperPreview(ch));
 
     const actions = document.createElement("div");
     actions.className = "bubble-actions";
@@ -1633,17 +2090,35 @@
     pngBtn.className = "bubble-btn";
     pngBtn.textContent = T.downloadPng;
     pngBtn.addEventListener("click", () => letterPNG(ch));
+    /* Two actions, not four (user decision, 2026-09-13).
+
+       The row shipped as Print this letter / Save as PDF / Download PNG /
+       Save — four equal-weight pills, two of them labelled Save, meaning
+       different things. The second Save was the weaker one: presetUrl() has
+       nothing to encode on a per-letter spoke (CFG.initialChar is set, so no
+       ?ch=), so it bookmarked the page the visitor was already looking at,
+       and its only in-viewport feedback was the word changing — the saved
+       strip that confirms it renders 303px further down the page. Measured,
+       not assumed: it did write to the shared store.
+
+       Save as PDF went with it. A PDF is still one step away — the print
+       dialog's own Save as PDF destination — and the credit line on that
+       sheet is a real <a>, so the browser's own writer makes it clickable.
+       addPdfButtons() still serves the alphabet-book and generator print
+       buttons on the other printable families; only this row lost it. */
     actions.appendChild(printBtn);
-    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; printBtn.click(); }));
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
 
-    // "Save as PDF" is the print dialog's native destination — say so, since
-    // PDF is the format most printable searchers are looking for.
-    const pdfTip = document.createElement("p");
-    pdfTip.className = "pt-pdf-hint";
-    pdfTip.textContent = T.pdfHint;
-    figure.appendChild(pdfTip);
+    // The PDF hint describes the FALLBACK, so it only appears once the
+    // fallback is used. printablePdf.js (2026-09-10) writes the file directly
+    // on browsers that support it, but this line shipped unconditionally, so
+    // every coloring page rendered "Tip: Print -> Save as PDF downloads this
+    // sheet" in eight languages directly under a one-click Save as PDF
+    // button, describing the site's own working feature as a workaround.
+    // markPdfFallback() reveals it the first time a PDF attempt has to hand
+    // off to the print dialog.
+    figure.appendChild(makePdfHint());
 
     // Right — copy-paste variants (glyph mode) and/or how-to steps.
     const detail = document.createElement("div");
@@ -1687,13 +2162,32 @@
     if (RENDER === "dots") detail.appendChild(dotControlsNode());
 
     stage.appendChild(figure);
-    if (detail.childNodes.length) stage.appendChild(detail);
+    // .bubble-stage is a two-column grid whose second track holds the detail
+    // panel (copy-paste variants, how-to steps, the dot ladder). A page whose
+    // config supplies none of those never appends it, and the 1fr track stayed
+    // reserved: on alphabet-coloring the sheet was pinned to 320px inside an
+    // 852px panel with 508px (60%) of dead space beside it. Seven families
+    // rendered that way -- alphabet-coloring, coloring-page-maker,
+    // cursive-alphabet, dot-to-dot-name, handwriting-worksheet-generator,
+    // sight-word-tracing, name-puzzle-maker. Collapsing the grid when there is
+    // nothing to put in the second column is the whole fix (audit 2026-09-13).
+    const hasDetail = detail.childNodes.length > 0;
+    if (hasDetail) stage.appendChild(detail);
+    else stage.classList.add("is-solo");
     el.panel.appendChild(stage);
 
     if ((!opts || !opts.silent) && window.history && window.history.replaceState) {
       window.history.replaceState(null, "", "#" + charSlug(ch));
     }
   }
+
+  /* The saved-sheets strip stays; the Save button that fed it does not
+     (2026-09-13). buildSaveButton() lived only in the per-character action
+     row, and on a spoke it saved the page the visitor was already on — see
+     that row's own note. renderSaved() is kept because the store is shared
+     across the whole site (js/saved/saved-items.js): a visitor who saved
+     sheets before this change still sees them, and deleting the strip would
+     orphan their records rather than tidy anything. */
 
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
@@ -1796,9 +2290,17 @@
       page.className = "bubble-print-book-page";
       const t = document.createElement("h3");
       t.className = "bubble-print-title";
-      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — " + siteCredit();
+      // The credit lives in the footer block now (attachCredit), with a QR
+      // beside it, so the heading stops repeating the URL.
+      t.textContent = cap(NOUN) + " " + charLabel(ch);
       page.appendChild(t);
-      page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      // The figure gets its own box so the page can flex: title and credit
+      // take their natural height, this absorbs the rest. Same reason the
+      // single-character print has one — see .pt-fill-page in style.css.
+      const figure = document.createElement("div");
+      figure.className = "bubble-figure";
+      figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      page.appendChild(figure);
       book.appendChild(page);
     });
     printWrap("", book, "alphabet_book");
@@ -1808,7 +2310,9 @@
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
     CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet, "alphabet_sheet");
+    // The credit is in the footer block now (attachCredit), with a QR beside
+    // it, so the heading stops carrying a second copy of the domain.
+    printWrap(cap(NOUN) + " alphabet", sheet, "alphabet_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -1880,7 +2384,10 @@
       page.className = "pt-tile-page";
       const title = document.createElement("h3");
       title.className = "bubble-print-title";
-      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — " + siteCredit();
+      // Same: the per-page footer carries the credit, so it comes off the
+      // heading. ("page N of M" is still hardcoded English on every locale —
+      // pre-existing, reported rather than fixed here.)
+      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length;
       page.appendChild(title);
 
       const grid = document.createElement("div");
@@ -1908,6 +2415,18 @@
   // picks Medium or Small.
   function buildSizeControl() {
     if (!el.sizeControl) return;
+    // Label itself when the page did not supply one. T.size.label ships
+    // translated in all eight locales, so a hub only has to declare the bare
+    // mount and nothing about print size has to be authored per language.
+    // Pages that already carry a .pt-size-field-label (the EN hubs, the six
+    // Spanish-alphabet pages) keep theirs and get no second heading.
+    const field = el.sizeControl.parentNode;
+    if (field && !field.querySelector(".pt-size-field-label")) {
+      const lab = document.createElement("p");
+      lab.className = "pt-size-field-label";
+      lab.textContent = T.size.label;
+      field.insertBefore(lab, el.sizeControl);
+    }
     const group = document.createElement("div");
     group.className = "pt-choice-row pt-size-row";
     group.setAttribute("role", "radiogroup");
@@ -1935,6 +2454,55 @@
       group.appendChild(b);
     });
     el.sizeControl.appendChild(group);
+  }
+
+  /* A per-letter spoke is a dead end without this (audit 2026-09-13).
+     /printables/alphabet-coloring-pages/letter-a/ mounts #pt-panel and
+     #pt-print-root and nothing else: you could print A, and to print the
+     alphabet -- the job a teacher actually arrived with -- you had to notice
+     the A-Z list further down, click through to the hub and find its batch
+     button. The 223 spokes are 73% of the printables estate and earned about
+     $0.50 between them in 18 days; a dead end is part of why.
+
+     Built in JS from strings the engine already ships in all eight locales
+     (T.printBook, T.size.*), so 223 pages in 8 languages gain the batch print
+     without one line of new copy or one hand-edited page. Only ever added
+     where the page has a sheet panel, no strip and no batch button of its own
+     -- a hub keeps exactly the markup it declares. */
+  function buildSpokeBatch() {
+    if (!el.panel || el.strip || el.alphaPrint || el.bookPrint) return;
+    if (!Array.isArray(CHARS) || CHARS.length < 2) return;
+
+    const wrap = document.createElement("section");
+    wrap.className = "pt-spoke-batch";
+
+    const field = document.createElement("div");
+    field.className = "pt-size-field";   // buildSizeControl() adds the label
+    const mount = document.createElement("div");
+    mount.id = "pt-size-control";
+    field.appendChild(mount);
+    el.sizeControl = mount;
+    wrap.appendChild(field);
+
+    const actions = document.createElement("div");
+    actions.className = "bubble-actions pt-batch-actions";
+    const book = document.createElement("button");
+    book.type = "button";
+    // Secondary: "Print this letter" in the card above is this page's primary
+    // job, and two purple buttons in one column read as two primaries.
+    book.className = "bubble-btn";
+    book.textContent = T.printBook;
+    book.addEventListener("click", () => {
+      if (alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
+      printAlphabetBook();
+    });
+    actions.appendChild(book);
+    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; book.click(); }));
+    wrap.appendChild(actions);
+    wrap.appendChild(makePdfHint());
+
+    el.panel.insertAdjacentElement("afterend", wrap);
+    buildSizeControl();
   }
 
   function buildAlphabetGrid() {
@@ -2008,7 +2576,7 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet — ultratextgen.com", sheet, "practice_sheet");
+    printWrap(cap(NOUN) + " practice sheet", sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -2139,10 +2707,10 @@
         page.appendChild(nameSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set, "name_worksheet");
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets", set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode(), "name_worksheet");
+    printWrap(nameValue() + " — tracing worksheet", nameSheetNode(), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -2444,7 +3012,7 @@
       printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode(), "generator_sheet");
+    printWrap(genValue() + " — " + spec.label + " worksheet", genSheetNode(), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -3334,10 +3902,7 @@
         const widest = Math.max(...lines.map((s) => ctx.measureText(s).width));
         if (widest > W - 140) { fs = Math.floor(fs * (W - 140) / widest); ctx.font = "700 " + fs + "px " + FONT; }
         ctx.lineJoin = "round";
-        const drawLine = (str, y) => {
-          ctx.fillStyle = "#ffffff"; ctx.fillText(str, W / 2, y);
-          ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(str, W / 2, y);
-        };
+        const drawLine = (str, y) => paintOutlineText(ctx, str, W / 2, y, fs);
         if (lines.length === 2) {
           drawLine(lines[0], cy - fs * 0.68);
           drawLine(lines[1], cy + fs * 0.68);
@@ -3934,11 +4499,7 @@
           const cx = x + w / 2, cy = rowTop + rowH / 2;
           const fs = Math.min(rowH * 0.8, w * 0.85);
           ctx.font = "700 " + Math.round(fs) + "px " + FONT;
-          ctx.fillStyle = "#ffffff";
-          ctx.fillText(ch, cx, cy);
-          ctx.lineWidth = Math.max(4, fs * 0.06);
-          ctx.strokeStyle = INK;
-          ctx.strokeText(ch, cx, cy);
+          paintOutlineText(ctx, ch, cx, cy, fs);
           if (x > pad) boundaries.push(x);
         }
         x += w;
@@ -3992,11 +4553,44 @@
      Wiring
      --------------------------------------------------------------- */
 
+  /* js/printables/qr.js is fetched by this engine rather than tagged on all
+     293 printables pages, the same ownership loadPdfModule() already uses for
+     printablePdf.js. The difference is WHEN: a PDF is wanted only by the
+     visitor who asks for one, but the QR is stamped on every print and every
+     PNG, and both build their markup synchronously — so this one loads at
+     init, not on demand.
+
+     creditNode() and drawCredit() both degrade to the plain text credit if it
+     has not arrived (a click within the first few hundred ms of a very slow
+     connection). That degradation is announced rather than silent: a sheet
+     that quietly loses its QR looks exactly like one that never had it. */
+  let qrWarned = false;
+  function qrModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.qr;
+    if (!ns && !qrWarned) {
+      qrWarned = true;
+      console.warn("[printables] js/printables/qr.js has not loaded; this sheet carries the text credit without a QR code.");
+    }
+    return ns || null;
+  }
+  function loadQrModule() {
+    if (window.UltraTextGen && window.UltraTextGen.qr) return;
+    if (document.querySelector('script[data-pt-qr]')) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/qr.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-qr", "");
+    sc.onerror = () => console.warn("[printables] js/printables/qr.js failed to load; sheets will carry the text credit only.");
+    document.head.appendChild(sc);
+  }
+
   function init() {
+    loadQrModule();
     applyPresetInputs();
     initStrokeToggle();
     buildStrip();
     buildAlphabetGrid();
+    buildSpokeBatch();
     initGenerator();
     buildDesigner();
     buildBanner();
@@ -4053,9 +4647,19 @@
     applyPresetState();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
+     settled on after shipping the bug. This file and the two modules it
+     depends on are all `defer`, and every deferred script runs BEFORE
+     DOMContentLoaded fires. During this file's own execution readyState is
+     already "interactive", so a `=== "loading"` guard runs init() immediately;
+     it worked only because share-core.js and saved-items.js happen to sit
+     earlier in document order on every page that loads this engine. Move a
+     tag and the share row and the saved-sheets strip stop rendering, with no
+     error and no failing check. Keying on "complete" makes the wiring
+     independent of tag order (2026-09-13). */
+  if (document.readyState === "complete") {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();

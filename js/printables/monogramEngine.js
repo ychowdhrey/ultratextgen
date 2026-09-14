@@ -226,11 +226,16 @@
 
   function inkCanvas(ctx, ch, x, y, px) {
     if (state.style === "outline") {
-      ctx.fillStyle = "#ffffff";
-      ctx.fillText(ch, x, y);
+      // The SVG above sets the same stroke-width with paint-order="stroke",
+      // so only its outer half shows. Canvas has no paint-order: stroke
+      // first, fill over it, or the PNG carries twice the SVG's ink.
+      // (Same class of defect as printablesEngine.js's letterPNG, 2026-09-13.)
       ctx.lineWidth = Math.max(3, px * 0.045);
       ctx.strokeStyle = INK;
+      ctx.lineJoin = "round";
       ctx.strokeText(ch, x, y);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(ch, x, y);
     } else {
       ctx.fillStyle = INK;
       ctx.fillText(ch, x, y);
@@ -577,6 +582,10 @@
         onShareImage: shareImage,
         pinMedia: function () { return og ? og.getAttribute("content") : ""; }
       }));
+    } else if (!(ns && ns.buildShareRow)) {
+      // Never fail silently: no share row looks identical to a page that
+      // never had one. See printablesEngine.js for the full note (2026-09-13).
+      console.warn("[printables] share-core.js has not loaded; the share row is not rendered. Check that /js/share/share-core.js is tagged before this engine.");
     }
 
     applyPreset();
@@ -585,9 +594,19 @@
     whenFontReady(render);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  /* Keyed on "complete", not on "loading" — the idiom symbol-explorer.js
+     settled on after shipping the bug. This file and the two modules it
+     depends on are all `defer`, and every deferred script runs BEFORE
+     DOMContentLoaded fires. During this file's own execution readyState is
+     already "interactive", so a `=== "loading"` guard runs init() immediately;
+     it worked only because share-core.js and saved-items.js happen to sit
+     earlier in document order on every page that loads this engine. Move a
+     tag and the share row and the saved-sheets strip stop rendering, with no
+     error and no failing check. Keying on "complete" makes the wiring
+     independent of tag order (2026-09-13). */
+  if (document.readyState === "complete") {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();
