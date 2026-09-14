@@ -3915,6 +3915,94 @@ Practical implications when working in this repo:
   distributing and exposing well-built assets, never about generating more
   pages.
 
+## `_redirects` has two buckets, and one splat drops you into the small one (added 2026-09-14)
+
+Every rule in this file was correct. 170 of the 182 redirect sources in it
+returned a 301 on production. The other **eight served a hard 404 for a
+month** — `/library/heart-emoji/`, `/es/library/emoji-corazon/`,
+`/pt/letras-para-copiar/` and `/es/conversor-de-letras/`, each in its `/` and
+`/index.html` form — and nothing on the site, in CI, or in any log a person
+reads said so.
+
+**Cloudflare Pages compiles this file into two buckets: STATIC (exact paths,
+cap 2,000) and DYNAMIC (anything with a `*` or `:placeholder`, cap 100). A rule
+is dynamic if it contains a splat OR IF ANY RULE ABOVE IT DOES** — precedence
+has to be preserved, so nothing under a splat can live in the fast static map.
+`/cdn-cgi/*` sat at line 151. From there down the whole file was dynamic, and
+the four retirements added between 2026-08-11 and 08-13 landed at dynamic rules
+101-108, past the cap, dropped in silence.
+
+Three things follow, and the second is the one worth remembering:
+
+* **The documented limits do not describe the failure.** The docs say 2,000
+  static and 100 dynamic; the file had 184 static-looking rules and 3 splats, so
+  by the docs it was nowhere near a limit. The ordering rule is what bites, and
+  it is not in the docs.
+* **The failure is positional, not chronological, which inverts the obvious
+  diagnosis.** A rule added 2026-09-03 at line 319 worked; rules added three
+  weeks earlier at line 372 did not. Every instinct says "stale deploy" — and
+  three separate freshness probes (live `header.js`/`style.css` byte-matching
+  `main`, the live `sitemap.xml` matching the copy `main` committed that
+  morning) said the deployment was current. It was.
+* **Cloudflare's own parser will tell you, and nothing else will.** Run it:
+  `npx wrangler pages dev . --port 8788` (install outside the repo, the
+  `Playwright` precedent — no dependency was added). It printed
+  `Parsed 172 valid redirect rules` and, plainly,
+  `Maximum number of dynamic rules supported is 100. Skipping remaining 30
+  lines of file.` That is the whole diagnosis, in a command the repo already
+  had precedent for using (`548b2f72`, the `_routes.json` verification).
+
+**The rule: every splat/placeholder rule lives at the BOTTOM of `_redirects`.**
+Ordering costs nothing — Cloudflare matches static rules first wherever they
+sit — so a splat above a static rule is pure loss.
+
+### What else the cap was hiding
+
+The skipped region was never parsed, so three separate defects sat inside it
+unreported, and two more were visible only once the file parsed to its end:
+
+| rule | what it actually did |
+|---|---|
+| `/*  /404.html  404` | **never valid** — Pages permits 200/301/302/303/307/308 as a redirect status and rejects 404. Removed; verified that with the rule ignored an unmatched path already returns 404 carrying this site's own `404.html`, which is identical to its absence |
+| `https://www.ultratextgen.com/*  …  301!` | **never in effect** — "Only relative URLs are allowed". www→apex is done at the Cloudflare zone level (verified live), not here |
+| `/  /index.html  200` | **rejected as an infinite loop** — serving `/index.html` normalises back to `/`. It was documented in this file, in `_redirects` and in `functions/_middleware.js` as the fallback layer keeping `/` English if Functions went inert. That fallback never existed; all three records now carry a dated correction |
+| 3 duplicate sources | ignored by the parser, but **they still spend their dynamic slot** — those three are exactly what moved the cap from line 389 to line 372 |
+
+### Tooling
+
+- **`npm run check:redirects`** (`scripts/check-redirects.js`) — **gating**,
+  wired into `.github/workflows/validate.yml`. It fails on a dropped rule, a
+  static rule demoted below a splat, a duplicate source, an absolute `from`, an
+  impermissible status, a self-referential loop, and either cap.
+- **Whole-file, not diff-scoped** — deliberately, and it is the one place that
+  choice is obviously right: the damage a splat does is to rules *elsewhere in
+  the file*, which the PR adding it never touches.
+- **Gating rather than informational** — the file carries zero violations now,
+  so there is no backlog to be permanently red against (same call as
+  `check:zalgo-decodes`).
+- `scripts/lib/redirects-parse.js` holds the model of Cloudflare's compiler, so
+  a future audit or fixer cannot disagree with the gate about what a live rule
+  is.
+
+**The model is calibrated against the real parser, not against the docs**, and
+the calibration is what makes it trustworthy: on the broken file it reports
+**172 live rules and the cap hit at line 372**, matching wrangler exactly, and
+on the repaired file **181 and zero invalid**, again exactly. Getting there
+required one non-obvious rule — a duplicate is dropped but still spends its
+slot — which was derived from the three-rule discrepancy, not guessed.
+
+Verified per this file's own rule against five differently-shaped broken inputs
+plus a control: the real pre-fix file (exit 1, naming all eight dropped URLs), a
+splat re-added mid-file, an added duplicate source, an absolute `from`, a 404
+status — each exits 1 — and the repaired file exits 0. And verified that CI
+*gates* on it rather than merely running it: `run-ci-gates.py --only redirects`
+returns 1 on a broken tree and 0 on a clean one.
+
+**The repo's own workflow lint caught the wiring mistake**, which is worth
+recording as evidence it works: adding the step without echoing its outcome into
+the job summary failed `npm run check:workflows` with *"can fail the job but is
+never printed to the job summary — a red build with a green summary."*
+
 ## SEO & Structured Data
 
 Every page includes JSON-LD for:
@@ -4524,6 +4612,15 @@ Standing protocol:
   middleware's `?lang=` 301s fire on `/` even though `_redirects` also has a
   `/` rule. Query matching belongs in `functions/_middleware.js`
   (`LANG_REDIRECTS`), which can actually read `url.searchParams`.
+- Do not put a splat or `:placeholder` rule anywhere but the BOTTOM of
+  `_redirects`, and do not leave a duplicate source in it. Every rule below a
+  splat is compiled into Cloudflare's 100-rule dynamic bucket instead of the
+  2,000-rule static one, and everything past that cap is dropped in silence —
+  `/cdn-cgi/*` at line 151 is why four retired pages served 404 for a month
+  with correct 301s sitting in the file. A duplicate is ignored and still
+  spends its slot. See "`_redirects` has two buckets" above;
+  `npm run check:redirects` gates this, and Cloudflare's own parser
+  (`npx wrangler pages dev . --port 8788`) is the ground truth for any change.
 - Do not widen `_routes.json`'s `include` list, add new files under
   `functions/`, or delete `_routes.json`, without checking the Functions
   invocation budget. Every included route bills one Workers-quota invocation

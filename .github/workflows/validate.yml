@@ -227,6 +227,23 @@ jobs:
         continue-on-error: true
         run: npm run check:zalgo-decodes | tee zalgo-decodes.log
 
+      # Whole-site and gating, same call as the zalgo decode check: the file
+      # carries zero violations today, so there is no backlog to be permanently
+      # red against. Deliberately NOT diff-scoped — the failure mode is a splat
+      # rule added anywhere in _redirects silently dropping the TAIL of the file,
+      # i.e. rules the PR never touched, which a diff-scoped check cannot see.
+      #
+      # It exists because that is not hypothetical: /cdn-cgi/* at line 151 put
+      # every rule below it in Cloudflare's 100-rule dynamic bucket instead of
+      # the 2,000-rule static one, so four retirements (library/heart-emoji,
+      # es/library/emoji-corazon, pt/letras-para-copiar, es/conversor-de-letras)
+      # served 404 in production for a month with correct 301s sitting in the
+      # file. Nothing anywhere reported it.
+      - name: Run _redirects rule check
+        id: redirects
+        continue-on-error: true
+        run: npm run check:redirects | tee redirects.log
+
       # Whole-site and gating, same call as the Funding Choices tag and the
       # zalgo decode check rather than the informational whole-site audits:
       # there is no backlog to be permanently red against. A page either loads
@@ -772,6 +789,11 @@ jobs:
             cat zalgo-decodes.log
             echo '```'
             echo ""
+            echo "### _redirects rule check — \`${{ steps.redirects.outcome }}\`"
+            echo '```'
+            cat redirects.log
+            echo '```'
+            echo ""
             echo "### Zalgo engine tests — \`${{ steps.zalgo_engine_tests.outcome }}\`"
             echo '```'
             cat zalgo-engine-tests.log
@@ -965,6 +987,7 @@ jobs:
           steps.locale_collection_parity.outcome == 'failure' ||
           steps.faq_schema.outcome == 'failure' ||
           steps.zalgo_decodes.outcome == 'failure' ||
+          steps.redirects.outcome == 'failure' ||
           steps.zalgo_engine_tests.outcome == 'failure' ||
           steps.qr_tests.outcome == 'failure' ||
           steps.numeric_parity.outcome == 'failure' ||
