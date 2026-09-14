@@ -234,6 +234,12 @@
         const dw = widthPx * fit * scale, dh = h * fit * scale;
         ctx.drawImage(img, (canvas.width - dw) / 2, 0, dw, dh);
         ctx.getImageData(0, 0, 1, 1); // throws on a tainted canvas (Safari): let the caller fall back
+        // Where this canvas's pixels came from, so a caller can map a DOM
+        // rectangle onto the page it actually landed on (fromCanvases lays
+        // /Link annotations over the credit block that way). Recorded here
+        // rather than recomputed by the caller: cutPoints() is this module's
+        // own, and a second copy of it would drift.
+        canvas.ptPlacement = { mode: "explicit", el: page, scale: scale, fit: fit, widthPx: widthPx };
         out.push(canvas);
       }
       return out;
@@ -246,6 +252,7 @@
       const ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, start, widthPx, end - start, 0, 0, widthPx * scale, (end - start) * scale);
       ctx.getImageData(0, 0, 1, 1);
+      canvas.ptPlacement = { mode: "flow", el: root, start: start, end: end, scale: scale, widthPx: widthPx };
       out.push(canvas);
     }
     return out;
@@ -286,12 +293,55 @@
     return "<" + hex.toUpperCase() + ">";
   }
 
+  // Where a DOM element sits on the canvas it was rasterised into, as
+  // fractions of that canvas. Returns null when the element is not on this
+  // page at all, which is what keeps a flow print from annotating the page
+  // the credit block did not land on.
+  function rectOnCanvas(canvas, el) {
+    const p = canvas.ptPlacement;
+    if (!p || !el) return null;
+    const r = el.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const base = p.el.getBoundingClientRect();
+    let x, y, w, h;
+    if (p.mode === "explicit") {
+      const dw = p.widthPx * p.fit * p.scale;
+      x = (canvas.width - dw) / 2 + (r.left - base.left) * p.scale * p.fit;
+      y = (r.top - base.top) * p.scale * p.fit;
+      w = r.width * p.scale * p.fit;
+      h = r.height * p.scale * p.fit;
+    } else {
+      x = (r.left - base.left) * p.scale;
+      y = ((r.top - base.top) - p.start) * p.scale;
+      w = r.width * p.scale;
+      h = r.height * p.scale;
+    }
+    if (y + h <= 0 || y >= canvas.height) return null;
+    // Clamp rather than trust: a block that straddles a page break would
+    // otherwise put an annotation rectangle off the edge of the sheet.
+    const top = Math.max(0, y), bottom = Math.min(canvas.height, y + h);
+    const left = Math.max(0, x), right = Math.min(canvas.width, x + w);
+    return {
+      x: left / canvas.width,
+      y: top / canvas.height,
+      w: (right - left) / canvas.width,
+      h: (bottom - top) / canvas.height
+    };
+  }
+
   async function fromCanvases(canvases, opts) {
     const o = opts || {};
     const paper = o.paperIn || { w: 8.5, h: 11 };
     const margin = o.marginIn || { x: 0.5, y: 0.5 };
     const W = paper.w * PT_PER_IN, H = paper.h * PT_PER_IN;
     const boxW = W - 2 * margin.x * PT_PER_IN, boxH = H - 2 * margin.y * PT_PER_IN;
+    // o.links: [{ page, rect, url }] with rect in canvas fractions. Each one
+    // becomes a /Link annotation, so the credit a PDF page carries is
+    // clickable rather than a URL to retype. Pages are rasterised images, so
+    // without this the text is pixels; the QR beside it covers paper, this
+    // covers the screen.
+    const links = Array.isArray(o.links) ? o.links.filter((l) => l && l.rect && l.url) : [];
+    const annotNum = (i) => 4 + canvases.length * 3 + i;
 
     const parts = []; let offset = 0; const offsets = [];
     const push = (x) => { const b = typeof x === "string" ? enc.encode(x) : x; parts.push(b); offset += b.length; };
@@ -315,12 +365,35 @@
       if (dh > boxH) { dh = boxH; dw = boxH * c.width / c.height; }
       const x = margin.x * PT_PER_IN + (boxW - dw) / 2;
       const y = H - margin.y * PT_PER_IN - dh;
-      obj(pageNum(i), "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + W.toFixed(2) + " " + H.toFixed(2) + "] /Resources << /XObject << /Im0 " + imageNum(i) + " 0 R >> >> /Contents " + contentNum(i) + " 0 R >>");
+      const mine = [];
+      links.forEach((l, li) => { if (l.page === i) mine.push(annotNum(li) + " 0 R"); });
+      const annots = mine.length ? " /Annots [" + mine.join(" ") + "]" : "";
+      obj(pageNum(i), "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + W.toFixed(2) + " " + H.toFixed(2) + "] /Resources << /XObject << /Im0 " + imageNum(i) + " 0 R >> >> /Contents " + contentNum(i) + " 0 R" + annots + " >>");
       const content = "q " + dw.toFixed(2) + " 0 0 " + dh.toFixed(2) + " " + x.toFixed(2) + " " + y.toFixed(2) + " cm /Im0 Do Q";
       streamObj(contentNum(i), "<< /Length " + enc.encode(content).length + " >>", enc.encode(content));
       streamObj(imageNum(i), "<< /Type /XObject /Subtype /Image /Width " + c.width + " /Height " + c.height + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter " + img.filter + " /Length " + img.bytes.length + " >>", img.bytes);
+      // The annotation rectangle is in the same user space as the image that
+      // was just placed, so it is derived from that placement (x/y/dw/dh)
+      // rather than from the page box: on a short last page the image does
+      // not fill the sheet, and a page-box rectangle would sit adrift of the
+      // text it is supposed to cover. PDF y runs up from the bottom, the
+      // canvas fraction runs down from the top, hence the flip.
+      links.forEach((l, li) => {
+        if (l.page !== i) return;
+        const lx = x + l.rect.x * dw;
+        const ly = y + dh - (l.rect.y + l.rect.h) * dh;
+        const lw = l.rect.w * dw, lh = l.rect.h * dh;
+        obj(annotNum(li), "<< /Type /Annot /Subtype /Link /Rect [" +
+          lx.toFixed(2) + " " + ly.toFixed(2) + " " + (lx + lw).toFixed(2) + " " + (ly + lh).toFixed(2) +
+          "] /Border [0 0 0] /A << /Type /Action /S /URI /URI (" + String(l.url).replace(/([\\()])/g, "\\$1") + ") >> >>");
+      });
     }
-    const count = 4 + n * 3;
+    // Every annotation object has to exist in the table even when its page
+    // carried none, or the xref offsets stop matching the objects.
+    for (let li = 0; li < links.length; li++) {
+      if (offsets[annotNum(li)] == null) obj(annotNum(li), "<< /Type /Annot /Subtype /Link /Rect [0 0 0 0] /Border [0 0 0] >>");
+    }
+    const count = 4 + n * 3 + links.length;
     const xref = offset;
     let table = "xref\n0 " + count + "\n0000000000 65535 f \n";
     for (let k = 1; k < count; k++) table += String(offsets[k]).padStart(10, "0") + " 00000 n \n";
@@ -342,5 +415,5 @@
       !!(window.HTMLCanvasElement && HTMLCanvasElement.prototype.toBlob) && typeof fetch === "function";
   }
 
-  UTG.pdf = { supported, renderPages, fromCanvases, download, CSS_PX_PER_IN };
+  UTG.pdf = { supported, renderPages, rectOnCanvas, fromCanvases, download, CSS_PX_PER_IN };
 })();

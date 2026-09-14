@@ -738,6 +738,76 @@
 
   // The big figure for the detail panel: outline SVG, a script-glyph pair, or
   // (RENDER === "dots") a single-character numbered dot-to-dot.
+  /* The on-screen preview as a sheet of the paper that was chosen.
+
+     Print settings used to change the @page rule and nothing a visitor could
+     see: the preview card rendered the same 518x622 figure whether you picked
+     US Letter portrait or Legal landscape, so the only way to find out what
+     the settings did was to print. Measured before the change — the preview
+     was byte-identical at 518x622 before and after switching to Legal /
+     Landscape / Narrow.
+
+     Now the card IS the page: it takes the chosen paper's aspect ratio, its
+     margin, and the ink-saver setting, and the letter fills it the way it will
+     fill the sheet. Landscape is short and wide on screen because it is short
+     and wide on paper. The caption underneath names the same settings in
+     words, composed only from strings the print-settings panel already ships
+     translated — nothing new was authored for it. */
+  let paperPreviewNode = null;
+  function paperCaption() {
+    const paperLabel = { auto: PO.auto, letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.auto;
+    const parts = [
+      paperLabel,
+      printPrefs.orient === "landscape" ? PO.landscape : PO.portrait,
+      printPrefs.margin === "narrow" ? PO.narrow : PO.normal
+    ];
+    if (printPrefs.ink === "saver") parts.push(PO.inkSaver);
+    return parts.join(" · ");
+  }
+  function paintPaperPreview() {
+    // No isConnected guard: paperPreview() paints once while the holder is
+    // still detached (selectChar appends it afterwards), and an isConnected
+    // check there silently skipped that first paint — the sheet took the
+    // default aspect and the caption rendered EMPTY. A stale node cannot be
+    // painted anyway, because paperPreviewNode is reassigned on every
+    // selectChar. Caught by driving a browser; nothing else could see it.
+    const node = paperPreviewNode;
+    if (!node) return;
+    const full = paperFull();
+    const sheet = $(".pt-paper-sheet", node);
+    // One custom property carries both the shape and the on-screen size: the
+    // sheet is capped by HEIGHT, so a landscape page spreads across the panel
+    // instead of being held to a portrait page's width.
+    if (sheet) sheet.style.setProperty("--pt-paper-aspect", (full.w / full.h).toFixed(4));
+    node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
+    node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
+    const cap = $(".pt-paper-caption", node);
+    if (cap) cap.textContent = paperCaption();
+  }
+  function paperPreview(ch) {
+    const holder = document.createElement("div");
+    holder.className = "pt-paper";
+    const sheet = document.createElement("div");
+    sheet.className = "pt-paper-sheet";
+    // The figure sits in its own absolutely-positioned box, not directly in
+    // the sheet. Percentage heights need a DEFINITE containing height and an
+    // aspect-ratio box does not give one, so a figure placed straight into
+    // the sheet fell back to its intrinsic aspect at full width and made the
+    // sheet 893px tall where the ratio called for 461. Same trap as the print
+    // surface, second instance in one change.
+    const inner = document.createElement("div");
+    inner.className = "pt-paper-inner";
+    inner.appendChild(figureNode(ch));
+    sheet.appendChild(inner);
+    holder.appendChild(sheet);
+    const caption = document.createElement("p");
+    caption.className = "pt-paper-caption";
+    holder.appendChild(caption);
+    paperPreviewNode = holder;
+    paintPaperPreview();
+    return holder;
+  }
+
   function figureNode(ch) {
     if (RENDER === "glyph") {
       const p = document.createElement("p");
@@ -1037,7 +1107,15 @@
   // paper and orientation (landscape swaps the two).
   function printArea() {
     const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
-    return printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
+    const a = printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
+    // Every printed page carries a credit footer now (attachCredit), so the
+    // tile budget has to leave room for it. Without this the "Small" (2in)
+    // alphabet run fits four rows by the old arithmetic, 8.75in of tiles plus
+    // 1.6in of title and footer, which runs past a Letter page and costs a
+    // whole extra sheet. The width is untouched: PAPERS keeps its deliberately
+    // conservative figures there, which is what makes "auto" safe on Letter
+    // and A4 at once.
+    return { w: a.w, h: Math.max(1.5, a.h - PRINT_CREDIT_BAND_IN) };
   }
 
   // "ultratextgen.com/printables/name-tracing": the credit every printed or
@@ -1047,6 +1125,127 @@
     if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
     const path = String(window.location.pathname || "/").replace(/index\.html$/, "").replace(/\/$/, "");
     return "ultratextgen.com" + (path || "");
+  }
+  /* The same page as a real URL, for the QR code and the PDF link annotation.
+     siteCredit() strips the trailing slash for display; putting it back keeps
+     a scan off a redirect hop.
+
+     Deliberately the PAGE path and not presetUrl(), even though a scan that
+     reopened this exact sheet would be the nicer trick. A preset carrying a
+     class roster runs to 200+ characters, which is a version-9 symbol: 53
+     modules plus its quiet zone across the same 0.95in is 0.39mm per module,
+     under what a phone can read. A QR that works every time beats one that
+     works until someone types a long name. The Share row is where the preset
+     link lives, and the text credit beside the QR matches what it encodes. */
+  function creditUrl() { return "https://" + siteCredit() + "/"; }
+
+  /* How much of the chosen sheet a printed figure may occupy, in inches.
+     Everything in the Print settings panel feeds this: paper, orientation and
+     margin.
+
+     Before it existed, the single-letter and book prints hardcoded 8.4in and
+     8.2in figure heights regardless of what the visitor had chosen, so the
+     panel changed the @page rule and nothing else. Choosing Landscape then
+     asked for a figure taller than the page: measured across all eight
+     paper/orientation/margin combinations, every portrait one printed a
+     letter on 1 sheet and every landscape one on 3. That is the "Print this
+     letter renders 3 pages" report, and it is the same defect as "the print
+     settings do not change anything" seen from the other end.
+
+     printAlphabetTiled already derived its grid from printArea(); this is
+     that idea applied to the two layouts that did not. */
+  const PRINT_PADDING_IN = 0.34;   // #pt-print-root's 1rem top+bottom under @media print
+  /* Two heights, because the layouts need different things and only one of
+     them can be exact.
+
+     --pt-page-h is the real printable height and involves no guessing: paper,
+     minus the chosen margins, minus the print root's own padding. The single
+     and book prints are flex columns that take that height and let the title
+     and the credit footer claim their natural space, so the figure gets
+     whatever is left. Nothing there has to know how tall a heading is.
+
+     --pt-body-h is for the layouts that set a min-height instead (the name
+     and puzzle sheets), which cannot self-size that way. It subtracts a
+     deliberately GENEROUS chrome allowance. Measured at a 7.5in page width:
+     a 0.4in title, a 0.95in credit band (the QR sets that height) and its
+     0.25in margin, so 1.6in on a layout carrying all three; 1.9in leaves a
+     sheet slightly short of the bottom. That direction is the safe one -- a
+     min-height that overshoots spills onto a second page, one that
+     undershoots just does not stretch to the edge.
+
+     The first attempt at this did the arithmetic for every layout and was
+     wrong by 0.11in, which printed a letter on 2 pages instead of 1. Measured
+     after the change, the flex wrap lands on exactly --pt-page-h (9.66in on
+     Letter portrait) with the figure absorbing 8.14in of it, which is the
+     point: nothing had to know the title is 0.4in tall. Measure, or let the
+     layout measure itself; do not estimate where you can avoid it. */
+  const PRINT_CHROME_IN = 1.9;
+  // What the credit footer costs a layout that budgets its own page (the
+  // tiled alphabet run), measured: a 0.95in QR plus its 0.25in margin.
+  const PRINT_CREDIT_BAND_IN = 1.2;
+  // .pt-glyph-print shipped 2.8in type inside an 8.2in box; keeping the ratio
+  // means a cursive sheet scales with the paper like an outline one does.
+  const GLYPH_RATIO = 0.34;
+  function sheetMetrics() {
+    const full = paperFull();
+    const marginIn = parseFloat(MARGINS[printPrefs.margin] || MARGINS.normal) || 0.5;
+    // Floor these rather than letting a tiny page produce a negative height:
+    // a cramped sheet is recoverable, a broken one is not.
+    const page = Math.max(2, full.h - 2 * marginIn - PRINT_PADDING_IN);
+    const body = Math.max(1.4, page - PRINT_CHROME_IN);
+    // Width is not published: every figure is width:100% with the SVG's own
+    // preserveAspectRatio, so a landscape sheet letterboxes rather than
+    // overflowing, and a property nothing reads is a property that goes stale.
+    return { page: page, body: body };
+  }
+  // Published to the print CSS as custom properties, so one measurement
+  // drives every print layout instead of each one carrying its own constant.
+  function applySheetMetrics(node) {
+    if (!node) return;
+    const m = sheetMetrics();
+    node.style.setProperty("--pt-page-h", m.page.toFixed(2) + "in");
+    node.style.setProperty("--pt-body-h", m.body.toFixed(2) + "in");
+    node.style.setProperty("--pt-glyph-size", (m.body * GLYPH_RATIO).toFixed(2) + "in");
+  }
+
+  /* The footer every printed sheet and PDF page now carries: the exact page
+     this sheet came from, as text AND as a QR code.
+
+     Printed paper has no other way back. The text credit alone is a URL a
+     parent has to retype, and a PNG cannot carry a link at all — a QR is the
+     only route back from an image or from a sheet that has been printed. Only
+     the tiled alphabet print carried any credit before this; the
+     single-letter and book prints named nothing at all. */
+  function creditNode() {
+    const wrap = document.createElement("div");
+    wrap.className = "pt-credit";
+    const qrNs = qrModule();
+    const url = creditUrl();
+    if (qrNs) {
+      // A symbol too long to encode returns null rather than a broken one, so
+      // an unusually long preset URL degrades to the text credit alone.
+      const svg = qrNs.qrSvg(url, { px: 56, title: url });
+      if (svg) { svg.setAttribute("class", "pt-credit-qr"); wrap.appendChild(svg); }
+    }
+    const a = document.createElement("a");
+    a.className = "pt-credit-text";
+    a.href = url;
+    a.textContent = siteCredit();
+    wrap.appendChild(a);
+    return wrap;
+  }
+
+  // printablePdf.js's renderPages rasterises explicit page elements one
+  // canvas each and DROPS everything outside them, so a footer appended to
+  // the wrap would print from the browser dialog and silently vanish from the
+  // PDF. Give each page unit its own; the wrap gets one only when there are
+  // none. Same selector as that module's own PAGES, kept in step by name.
+  const PT_PAGE_UNITS = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
+  function attachCredit(wrap) {
+    const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
+    if (pages.length) { pages.forEach((p) => p.appendChild(creditNode())); return pages; }
+    wrap.appendChild(creditNode());
+    return [];
   }
 
   function showToast(msg) {
@@ -1239,16 +1438,7 @@
   }
   // saved-items.js fires this on every write, including one made by another
   // surface on the same page, so the strip and the Save button cannot drift.
-  document.addEventListener("utg:savedchange", () => {
-    renderSaved();
-    const btn = $(".pt-save-btn");
-    if (btn && window.UltraTextGen && window.UltraTextGen.saved) {
-      const on = window.UltraTextGen.saved.has("printable", presetUrl());
-      btn.classList.toggle("is-saved", on);
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? T.saved : T.save;
-    }
-  });
+  document.addEventListener("utg:savedchange", () => { renderSaved(); });
 
   // The image a pin should carry: the SHEET preview, never the branded OG
   // card. scripts/wire-printables-previews.py writes the figure as
@@ -1321,20 +1511,24 @@
     const summary = document.createElement("summary");
     summary.textContent = PO.settings;
     details.appendChild(summary);
+    // Every one of these repaints the preview. Without that the panel is a
+    // set of controls with no visible consequence, which is the report this
+    // block was rebuilt for: "the print settings don't change the display".
+    const changed = () => { savePrintPrefs(); paintPaperPreview(); };
     details.appendChild(choiceRow(PO.paper, [
       { key: "auto", label: PO.auto }, { key: "letter", label: PO.letter }, { key: "a4", label: PO.a4 }, { key: "legal", label: PO.legal }
-    ], printPrefs.paper, (k) => { printPrefs.paper = k; savePrintPrefs(); }));
+    ], printPrefs.paper, (k) => { printPrefs.paper = k; changed(); }));
     details.appendChild(choiceRow(PO.orientation, [
       { key: "portrait", label: PO.portrait }, { key: "landscape", label: PO.landscape }
-    ], printPrefs.orient, (k) => { printPrefs.orient = k; savePrintPrefs(); }));
+    ], printPrefs.orient, (k) => { printPrefs.orient = k; changed(); }));
     details.appendChild(choiceRow(PO.margins, [
       { key: "normal", label: PO.normal }, { key: "narrow", label: PO.narrow }
-    ], printPrefs.margin, (k) => { printPrefs.margin = k; savePrintPrefs(); }));
+    ], printPrefs.margin, (k) => { printPrefs.margin = k; changed(); }));
     const ink = document.createElement("label");
     ink.className = "pt-print-opt pt-print-ink";
     const inkBox = document.createElement("input");
     inkBox.type = "checkbox"; inkBox.checked = printPrefs.ink === "saver";
-    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; savePrintPrefs(); });
+    inkBox.addEventListener("change", () => { printPrefs.ink = inkBox.checked ? "saver" : "normal"; changed(); });
     ink.appendChild(inkBox); ink.appendChild(document.createTextNode(" " + PO.inkSaver));
     details.appendChild(ink);
     wrap.appendChild(details);
@@ -1479,7 +1673,33 @@
   // titles, other PNG exports). Not drawn for RENDER === "glyph" (cursive/
   // calligraphy pages): those are typed-word art the visitor downloads to
   // use as-is, not a practice/coloring sheet, so they stay clean by design.
+  /* The credit on an exported PNG: the page path as text, and the same URL as
+     a QR code beside it.
+
+     A PNG cannot carry a link — that is the whole reason the QR is here
+     rather than only in the PDF. An image forwarded to a colleague, or
+     printed and handed to a class, has no other route back to the tool than
+     retyping what it says, and the QR removes that step for anyone holding a
+     phone. Scaled off the canvas rather than fixed, because this same
+     function signs a 1024px square letter and a 1600x520 word strip. */
   function drawCredit(ctx, w, h, light) {
+    const url = creditUrl();
+    const qrNs = qrModule();
+    /* Floored at 120px, from the print case rather than from taste. A credit
+       URL is a version-5 symbol: 37 modules plus an 8-module quiet zone is 45
+       across, and a phone needs about 0.5mm per module. A 1024px sheet
+       printed 8in wide therefore needs 45 * 0.0197in * 1024 / 8 = 113px of
+       QR, so 120 leaves a little room. The 7% term only matters on a canvas
+       larger than ~1700px, where it takes over from the floor. */
+    const qrSize = Math.max(120, Math.round(Math.min(w, h) * 0.07));
+    const pad = Math.round(qrSize * 0.35);
+    let drewQr = false;
+    if (qrNs) {
+      drewQr = qrNs.drawQrOnCanvas(ctx, url, w - qrSize - pad, h - qrSize - pad, qrSize, {
+        dark: light ? "#7d8494" : INK,
+        light: "#ffffff"
+      });
+    }
     ctx.save();
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
@@ -1487,9 +1707,13 @@
     ctx.font = (light ? "18px " : "22px ") + FONT;
     ctx.fillStyle = light ? "#c9ced8" : "#aeb4c0";
     // The page path, not just the domain: a sheet that gets forwarded should
-    // open the same tool (2026-09-10 share pass).
+    // open the same tool (2026-09-10 share pass). It stays centred on the
+    // canvas rather than moving to make room for the QR — the QR sits in the
+    // corner, and re-centring the text on the remaining width would shift the
+    // credit line on every existing export for no gain.
     ctx.fillText(siteCredit(), w / 2, h - 24);
     ctx.restore();
+    return drewQr;
   }
 
   /* ---------------------------------------------------------------
@@ -1689,8 +1913,24 @@
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
     el.printRoot.style.width = widthPx + "px";
     let pages = null;
+    let links = [];
     try {
       pages = await P.renderPages(wrap, { widthPx: widthPx, pageHeightPx: pageHPx, scale: 2 });
+      // Measure the credit blocks HERE, inside the rendering state: the print
+      // surface is display:none the moment pt-pdf-rendering comes off, and
+      // every rectangle then reads zero. The rects are computed by the PDF
+      // module's own rectOnCanvas, against the placement it recorded while
+      // rasterising — the alternative is reimplementing its page-cut logic
+      // out here, which is the drift this file keeps paying for elsewhere.
+      if (pages && P.rectOnCanvas) {
+        const credits = $$(".pt-credit", wrap);
+        pages.forEach((canvas, i) => {
+          credits.forEach((credit) => {
+            const rect = P.rectOnCanvas(canvas, credit);
+            if (rect) links.push({ page: i, rect: rect, url: creditUrl() });
+          });
+        });
+      }
     } catch (err) {
       pages = null;
     } finally {
@@ -1703,7 +1943,8 @@
       const blob = await P.fromCanvases(pages, {
         paperIn: full,
         marginIn: { x: marginIn, y: marginIn },
-        title: document.title
+        title: document.title,
+        links: links
       });
       P.download(blob, pdfFilename(sheet));
     } catch (err) {
@@ -1740,6 +1981,10 @@
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
+    // The one-figure sheets fill the page by flexing rather than by a
+    // computed figure height. Marked here because CSS cannot ask "does this
+    // wrap contain a single-character print".
+    if (sheet === "character") wrap.classList.add("pt-fill-page");
     if (titleText) {
       const h = document.createElement("h2");
       h.className = "bubble-print-title";
@@ -1747,6 +1992,10 @@
       wrap.appendChild(h);
     }
     wrap.appendChild(bodyNode);
+    // Size the sheet to the paper the visitor chose, then sign it. Both have
+    // to happen before anything measures or rasterises the surface.
+    applySheetMetrics(el.printRoot);
+    attachCredit(wrap);
     el.printRoot.appendChild(wrap);
 
     // Save as PDF writes the file itself (printablePdf.js); the browser's
@@ -1822,7 +2071,7 @@
     // Left — big figure + print + PNG.
     const figure = document.createElement("div");
     figure.className = "bubble-outline-card";
-    figure.appendChild(figureNode(ch));
+    figure.appendChild(paperPreview(ch));
 
     const actions = document.createElement("div");
     actions.className = "bubble-actions";
@@ -1841,11 +2090,24 @@
     pngBtn.className = "bubble-btn";
     pngBtn.textContent = T.downloadPng;
     pngBtn.addEventListener("click", () => letterPNG(ch));
+    /* Two actions, not four (user decision, 2026-09-13).
+
+       The row shipped as Print this letter / Save as PDF / Download PNG /
+       Save — four equal-weight pills, two of them labelled Save, meaning
+       different things. The second Save was the weaker one: presetUrl() has
+       nothing to encode on a per-letter spoke (CFG.initialChar is set, so no
+       ?ch=), so it bookmarked the page the visitor was already looking at,
+       and its only in-viewport feedback was the word changing — the saved
+       strip that confirms it renders 303px further down the page. Measured,
+       not assumed: it did write to the shared store.
+
+       Save as PDF went with it. A PDF is still one step away — the print
+       dialog's own Save as PDF destination — and the credit line on that
+       sheet is a real <a>, so the browser's own writer makes it clickable.
+       addPdfButtons() still serves the alphabet-book and generator print
+       buttons on the other printable families; only this row lost it. */
     actions.appendChild(printBtn);
-    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; printBtn.click(); }));
     actions.appendChild(pngBtn);
-    const saveBtn = buildSaveButton(ch);
-    if (saveBtn) actions.appendChild(saveBtn);
     figure.appendChild(actions);
 
     // The PDF hint describes the FALLBACK, so it only appears once the
@@ -1919,48 +2181,13 @@
     }
   }
 
-  /* The return loop, on the one store the whole site shares (2026-09-13).
-     printables already remembered the last few sheets per page in its own
-     localStorage key, which no other surface could read; js/saved/saved-items.js
-     is the typed cross-surface store every copy target on the site writes to,
-     and printables pages have been loading it all along without using it.
-     A saved sheet is now a record like a saved font: same list, same device,
-     no account.
-
-     Identity is the sheet's preset URL, so "letter A on the coloring page" and
-     "letter A on the block-letters page" are two records, and re-saving the
-     same sheet toggles rather than duplicates. Labels come from strings
-     harvested out of locales/<lang>.json ui.copyButtons.save/.saved -- the
-     exact words the site's own Save button already uses in each language. */
-  function buildSaveButton(ch) {
-    const store = window.UltraTextGen && window.UltraTextGen.saved;
-    if (!store) return null;
-    const value = presetUrl();
-    // A spoke's own title already names its letter ("Letter A Coloring
-    // Page"), so appending it again reads as a stutter; a hub's title covers
-    // the whole alphabet, and there the character is the only thing telling
-    // one saved sheet from the next. The signal is structural -- a hub has the
-    // picker, a spoke is locked to one letter -- rather than a search for the
-    // character in the title, which matched the "A" inside "A-Z" on the first
-    // attempt and dropped the letter from every hub label.
-    const base = document.title.split("|")[0].replace(/\s*\([^)]*\)\s*$/, "").trim();
-    const label = (el.strip && ch) ? (base + ": " + charLabel(ch)) : base;
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "bubble-btn pt-save-btn";
-    const paint = () => {
-      const on = store.has("printable", value);
-      btn.classList.toggle("is-saved", on);
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? T.saved : T.save;
-    };
-    btn.addEventListener("click", () => {
-      store.toggle({ type: "printable", value: value, label: label, href: value });
-      paint();
-    });
-    paint();
-    return btn;
-  }
+  /* The saved-sheets strip stays; the Save button that fed it does not
+     (2026-09-13). buildSaveButton() lived only in the per-character action
+     row, and on a spoke it saved the page the visitor was already on — see
+     that row's own note. renderSaved() is kept because the store is shared
+     across the whole site (js/saved/saved-items.js): a visitor who saved
+     sheets before this change still sees them, and deleting the strip would
+     orphan their records rather than tidy anything. */
 
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
@@ -2063,9 +2290,17 @@
       page.className = "bubble-print-book-page";
       const t = document.createElement("h3");
       t.className = "bubble-print-title";
-      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — " + siteCredit();
+      // The credit lives in the footer block now (attachCredit), with a QR
+      // beside it, so the heading stops repeating the URL.
+      t.textContent = cap(NOUN) + " " + charLabel(ch);
       page.appendChild(t);
-      page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      // The figure gets its own box so the page can flex: title and credit
+      // take their natural height, this absorbs the rest. Same reason the
+      // single-character print has one — see .pt-fill-page in style.css.
+      const figure = document.createElement("div");
+      figure.className = "bubble-figure";
+      figure.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      page.appendChild(figure);
       book.appendChild(page);
     });
     printWrap("", book, "alphabet_book");
@@ -2075,7 +2310,9 @@
     const sheet = document.createElement("div");
     sheet.className = "bubble-print-sheet";
     CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet, "alphabet_sheet");
+    // The credit is in the footer block now (attachCredit), with a QR beside
+    // it, so the heading stops carrying a second copy of the domain.
+    printWrap(cap(NOUN) + " alphabet", sheet, "alphabet_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -2147,7 +2384,10 @@
       page.className = "pt-tile-page";
       const title = document.createElement("h3");
       title.className = "bubble-print-title";
-      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — " + siteCredit();
+      // Same: the per-page footer carries the credit, so it comes off the
+      // heading. ("page N of M" is still hardcoded English on every locale —
+      // pre-existing, reported rather than fixed here.)
+      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length;
       page.appendChild(title);
 
       const grid = document.createElement("div");
@@ -2336,7 +2576,7 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet — ultratextgen.com", sheet, "practice_sheet");
+    printWrap(cap(NOUN) + " practice sheet", sheet, "practice_sheet");
   }
 
   /* ---------------------------------------------------------------
@@ -2467,10 +2707,10 @@
         page.appendChild(nameSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set, "name_worksheet");
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets", set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode(), "name_worksheet");
+    printWrap(nameValue() + " — tracing worksheet", nameSheetNode(), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -2772,7 +3012,7 @@
       printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode(), "generator_sheet");
+    printWrap(genValue() + " — " + spec.label + " worksheet", genSheetNode(), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -4313,7 +4553,39 @@
      Wiring
      --------------------------------------------------------------- */
 
+  /* js/printables/qr.js is fetched by this engine rather than tagged on all
+     293 printables pages, the same ownership loadPdfModule() already uses for
+     printablePdf.js. The difference is WHEN: a PDF is wanted only by the
+     visitor who asks for one, but the QR is stamped on every print and every
+     PNG, and both build their markup synchronously — so this one loads at
+     init, not on demand.
+
+     creditNode() and drawCredit() both degrade to the plain text credit if it
+     has not arrived (a click within the first few hundred ms of a very slow
+     connection). That degradation is announced rather than silent: a sheet
+     that quietly loses its QR looks exactly like one that never had it. */
+  let qrWarned = false;
+  function qrModule() {
+    const ns = window.UltraTextGen && window.UltraTextGen.qr;
+    if (!ns && !qrWarned) {
+      qrWarned = true;
+      console.warn("[printables] js/printables/qr.js has not loaded; this sheet carries the text credit without a QR code.");
+    }
+    return ns || null;
+  }
+  function loadQrModule() {
+    if (window.UltraTextGen && window.UltraTextGen.qr) return;
+    if (document.querySelector('script[data-pt-qr]')) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/qr.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-qr", "");
+    sc.onerror = () => console.warn("[printables] js/printables/qr.js failed to load; sheets will carry the text credit only.");
+    document.head.appendChild(sc);
+  }
+
   function init() {
+    loadQrModule();
     applyPresetInputs();
     initStrokeToggle();
     buildStrip();
