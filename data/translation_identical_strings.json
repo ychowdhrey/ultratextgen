@@ -1037,6 +1037,12 @@
         "added": "2026-08-25"
       },
       {
+        "string": "PNG (transparent)",
+        "reason": "\"transparent\" is the correct adjective in both German and French, so the button label coincides with the English. Not assumed: printablesEngine.js's own per-locale I18N table independently sets pngTransparent to \"PNG (transparent)\" for de and fr while setting it differently for es (transparente), it (trasparente), pl (przezroczyste tlo), pt (transparente) and id (transparan) - so the table made a per-locale decision rather than defaulting, and these two genuinely land on the English form. Attested against the locale's own corpus as well.",
+        "found_on": "de/zum-ausdrucken/graffiti-buchstaben/",
+        "added": "2026-09-12"
+      },
+      {
         "string": "Pallas",
         "reason": "Roman deity name carried by the asteroid, unchanged in German",
         "found_on": "de/library/okkulte-symbole/",
@@ -4005,6 +4011,12 @@
         "reason": "food, animal or object name that coincides with the English form in this language. Evidence from fr/library/symboles-coeur/ itself: the tiles around it are translated (Red → Rouge; Yellow → Jaune; Rainbow → Arc-en-ciel), so this one is kept because it genuinely matches.",
         "found_on": "fr/library/symboles-coeur/",
         "added": "2026-08-25"
+      },
+      {
+        "string": "PNG (transparent)",
+        "reason": "\"transparent\" is the correct adjective in both German and French, so the button label coincides with the English. Not assumed: printablesEngine.js's own per-locale I18N table independently sets pngTransparent to \"PNG (transparent)\" for de and fr while setting it differently for es (transparente), it (trasparente), pl (przezroczyste tlo), pt (transparente) and id (transparan) - so the table made a per-locale decision rather than defaulting, and these two genuinely land on the English form. Attested against the locale's own corpus as well.",
+        "found_on": "fr/imprimables/lettres-graffiti/",
+        "added": "2026-09-12"
       },
       {
         "string": "Pallas",

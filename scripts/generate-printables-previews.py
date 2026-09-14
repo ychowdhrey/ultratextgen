@@ -160,6 +160,9 @@ def parse_page(rel):
     lang = re.search(r'<html[^>]*\blang="([^"]+)"', h)
     chars = re.search(r"\bchars\s*:\s*\[([^\]]*)\]", cfg)
     designer = re.search(r"\bdesigner\s*:\s*\{[^}]*?\bdemo\s*:\s*\"([^\"]*)\"", cfg, re.S)
+    # The cross-stitch pages carry no *Demo key: their sample word is the
+    # value the reader actually sees in the chart input on load.
+    stitch_demo = re.search(r'<input\b(?=[^>]*\bid="cs-input")[^>]*\bvalue="([^"]*)"', h)
     script_font = re.search(r'scriptOptions\s*:\s*\[\s*\{[^}]*?\bfont\s*:\s*"([^"]*)"', cfg, re.S)
     if m:
         engine = "printables"
@@ -183,7 +186,8 @@ def parse_page(rel):
         "chars": [_js_str(c) for c in re.findall(r'"([^"]+)"', chars.group(1))] if chars else None,
         "glyphStyle": _cfg_str(cfg, "glyphStyle") or "",
         "demo": (_cfg_str(cfg, "nameDemo") or _cfg_str(cfg, "genDemo") or _cfg_str(cfg, "bannerDemo")
-                 or _cfg_str(cfg, "puzzleDemo") or (_js_str(designer.group(1)) if designer else None)),
+                 or _cfg_str(cfg, "puzzleDemo") or (_js_str(designer.group(1)) if designer else None)
+                 or (htmlmod.unescape(stitch_demo.group(1)).strip() or None if stitch_demo else None)),
         "initialChar": _cfg_str(cfg, "initialChar"),
     }
 
@@ -270,7 +274,7 @@ EN_ALT = {
         "landing": "Printable banner sample: pennant flags spelling {demo}, one letter per flag",
     },
     "cross-stitch-letters": {
-        "landing": "Cross-stitch letter chart sample: the word HOME as X stitches on a 5 by 7 grid",
+        "landing": "Cross-stitch letter chart sample: the word {DEMO} as X stitches on a 5 by 7 grid",
     },
     "monogram-maker": {
         "landing": "Monogram sample: the initials J, S and L in an elegant serif, small, large, small",
@@ -1024,7 +1028,13 @@ def _stitch_font():
 
 def r_cross_stitch(page, fd):
     glyphs = _stitch_font()
-    word = "HOME"
+    word = (page["demo"] or "HOME").upper()
+    # A char with no glyph would render as blank cells rather than as an
+    # error, so refuse instead of shipping a chart with holes in it.
+    missing = sorted({c for c in word if c not in glyphs})
+    if missing:
+        raise SystemExit(f"cross-stitch font has no glyph for {missing} "
+                         f"in {word!r} ({page['rel']})")
     cols = len(word) * 6 - 1 + 2
     rows = 7 + 2
     cell = min((W - 120) / cols, (H - 160) / rows)
