@@ -40,6 +40,7 @@
     "audit:faq-schema": "node scripts/audit-faq-schema.js",
     "check:faq-schema": "node scripts/check-faq-schema.js",
     "check:zalgo-decodes": "node scripts/check-zalgo-decodes.js",
+    "check:redirects": "node scripts/check-redirects.js",
     "check:explorer-strings": "node scripts/sync-explorer-strings.js",
     "sync:explorer-strings": "node scripts/sync-explorer-strings.js --write",
     "test:saved-items": "node js/saved/savedItems.test.js",

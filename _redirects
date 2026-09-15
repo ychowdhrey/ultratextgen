@@ -1,19 +1,47 @@
-# Canonical host: enforce non-www
-https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
+# HOW THIS FILE IS PARSED - read before adding a rule (learned 2026-09-14)
+#
+# Cloudflare Pages compiles these into two buckets: STATIC (exact paths, limit
+# 2,000) and DYNAMIC (anything containing * or :placeholder, limit 100). The
+# trap is ordering: every rule BELOW a splat line is compiled as dynamic too,
+# whatever its own shape. So a single splat near the top demotes the whole rest
+# of the file into the 100-rule bucket, and rule 101 onward is dropped silently.
+#
+# That is what happened here. `/cdn-cgi/*` sat at line 151, so from 2026-08-11
+# the four retirements below it - es/conversor-de-letras, pt/letras-para-copiar,
+# library/heart-emoji, es/library/emoji-corazon - compiled as dynamic rules
+# 101-108 and were skipped: eight 301s served 404 in production for a month
+# while this file looked correct. Cloudflare's own parser says so plainly:
+#
+#   npx wrangler pages dev . --port 8788
+#   -> "Maximum number of dynamic rules supported is 100. Skipping remaining
+#       30 lines of file."
+#
+# THE RULE: every splat/placeholder line lives at the BOTTOM of this file.
+# `npm run check:redirects` fails the build if one moves back up, and also
+# catches duplicate sources, absolute `from` paths, and statuses Pages rejects.
+#
+# Canonical host: enforce non-www.
+# Not done in this file. Pages rejects an absolute `from` ("Only relative URLs
+# are allowed"), so the `https://www.ultratextgen.com/*` line this file carried
+# was never in effect at all. www is redirected at the Cloudflare zone level
+# instead - verified 2026-09-14, https://www.ultratextgen.com/library/heart-symbols/
+# returns 301 to the apex host. Do not re-add it here; it would only add noise
+# to the build log.
 
 # Serve the English homepage for the root path.
 #
-# Fallback layer for /. On current production (verified 2026-08-10)
-# functions/_middleware.js IS executing and owns / — it runs before
-# _redirects on routes /_routes.json sends it, serves the English
-# homepage via /_root, and 301s legacy ?lang= URLs. This rule exists
-# for the state where Functions are inert (as a PR #674 preview test
-# observed on 2026-07-26, when this comment claimed Functions never
-# ran here): if the middleware ever stops executing again, this rewrite
-# is what keeps / on English instead of letting Pages' implicit
-# Accept-Language i18n negotiation serve a locale homepage. Keep both
-# layers; do not remove either expecting the other to cover /.
-/  /index.html  200
+# functions/_middleware.js owns / on production (verified 2026-08-10): it runs
+# before _redirects on the routes _routes.json sends it, serves the English
+# homepage via /_root, and 301s legacy ?lang= URLs.
+#
+# Correction (2026-09-14): this file used to carry `/  /index.html  200` here as
+# a second layer for the state where Functions go inert. Pages' parser rejects
+# that rule outright - "Infinite loop detected in this rule and has been
+# ignored", because the rewrite strips to /index and re-triggers itself - so the
+# fallback it documented never existed, and removing it changes no behaviour at
+# all. Pages serves /index.html for / by default regardless. If / ever needs a
+# real fallback against Accept-Language negotiation, it needs a live mechanism,
+# not a rule the parser drops.
 
 # Canonical path: enforce trailing slash on platform root pages
 /discord    /discord/    301
@@ -144,11 +172,17 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # instead of letting them 404 (GSC 404 cleanup).
 /og.png  /assets/og/fancy-text-generator-preview.png  301
 
-# Cloudflare email-obfuscation artifact: if this ever reaches Netlify origin
+# Cloudflare email-obfuscation artifact: if this ever reaches the origin
 # directly (rather than being served at the CF edge), send it somewhere real
-# instead of 404ing (GSC 404 cleanup).
+# instead of 404ing (GSC 404 cleanup, 2026-07-31).
+#
+# Measured 2026-09-14: /cdn-cgi/ is reserved by Cloudflare and answered at the
+# edge, so neither form actually fires - /cdn-cgi/l/email-protection still
+# returns 404 in production with this rule live. Kept because it is one static
+# slot and records the intent. Its splat half now sits at the bottom of this
+# file, which is where it should always have been: parked here it silently
+# demoted every rule below it to the 100-rule dynamic bucket.
 /cdn-cgi/l/email-protection  /contact/ 301
-/cdn-cgi/*                   /contact/ 301
 
 # Library → Symbol pillar: single-glyph pages moved to their own top-level namespace
 /library/degree-symbol              /symbol/degree-symbol/    301
@@ -279,7 +313,9 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # (same Free Fire nick-generator intent, no distinct EN parent of its own)
 # that was never picking up meaningful traffic of its own (19 impr/26 days
 # vs nick-ff's 1,147, 0 clicks) — consolidated into the established page.
-/pt/usecase/nick-free-fire/            /pt/usecase/nick-ff/  301
+# (The `/` form is declared in the 2026-07-25 audit block near the top of this
+# file. Its duplicate here was removed 2026-09-14 - Pages ignores a duplicate
+# source, and it was costing a slot in the capped dynamic bucket.)
 /pt/usecase/nick-free-fire/index.html  /pt/usecase/nick-ff/  301
 
 # de/gotische-schrift retargeted to de/altdeutsche-schrift: 26-day GSC data
@@ -323,8 +359,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
 # cleanup): each pair had two same-locale pages claiming one hreflang
 # cluster slot; the less-integrated page folds into the survivor.
-/es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
-/es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
+# (The es/symbol/signo-de-grado pair that stood here duplicated the 2026-08-03
+# block below, same destination; removed 2026-09-14 for the reason above.)
 /ja/library/text-faces-kaomoji/            /ja/library/kaomoji/  301
 /ja/library/text-faces-kaomoji/index.html  /ja/library/kaomoji/  301
 
@@ -397,4 +433,19 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/library/emoji-corazon/index.html  /es/simbolos-de-corazon/  301
 
 /404  /404.html  200
-/*    /404.html  404
+
+# ---------------------------------------------------------------------------
+# SPLAT / PLACEHOLDER RULES - KEEP THESE LAST, ALWAYS.
+# Every rule below a splat is compiled as a dynamic rule (limit 100) instead of
+# a static one (limit 2,000). Adding one above this line silently kills the tail
+# of the file. See the header of this file for the incident that proves it.
+# ---------------------------------------------------------------------------
+/cdn-cgi/*  /contact/ 301
+
+# The catch-all `/*  /404.html  404` that stood here was never valid: Pages
+# permits 200, 301, 302, 303, 307 and 308 as a redirect status and rejects 404
+# ("Got 404"), so the parser dropped it. It was invisible until 2026-09-14
+# because it sat inside the 30 lines the dynamic-rule cap was skipping. Removed
+# after verifying the behaviour it claimed is built in: with the rule ignored,
+# an unmatched path already returns 404 carrying this site's own 404.html
+# ("404 Page Not Found | UltraTextGen"), which is the same state as removal.
