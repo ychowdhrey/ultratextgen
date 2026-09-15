@@ -4,11 +4,19 @@ const fs   = require('fs');
 const path = require('path');
 const { execSync, execFileSync } = require('child_process');
 const { significanceHash, pickSignificantDate } = require('./lib/content-significance');
+const indexnow = require('./lib/indexnow');
 
 const BASE_URL     = 'https://ultratextgen.com';
 const SITEMAP_PATH = path.resolve(__dirname, '..', 'sitemap.xml');
 const REPO_ROOT    = path.resolve(__dirname, '..');
 const LASTMOD_CACHE = path.resolve(__dirname, '..', 'data', 'sitemap-lastmod-cache.json');
+
+// IndexNow announcement is OPT-IN per run and off by default, so `npm run
+// prebuild` on a laptop can never announce anything. Only update-sitemap.yml
+// passes the flag. See scripts/lib/indexnow.js for why this replaced
+// Cloudflare Crawler Hints.
+const SUBMIT_INDEXNOW = process.argv.includes('--submit-indexnow');
+const INDEXNOW_FORCE  = process.argv.includes('--indexnow-force');
 
 const EXCLUDED_FOLDERS = [
   'assets', 'css', 'js', 'images', 'img',
@@ -359,6 +367,7 @@ function generateSitemap() {
   const cache      = priorCache || {};
   const seed       = priorCache ? null : seedFromExistingSitemap();
   const nextCache  = {};
+  const bumpedUrls = [];
   let bumped = 0;
   let held   = 0;
 
@@ -387,12 +396,13 @@ function generateSitemap() {
       const sigDate = getSignificantLastMod(filePath, hash);
       lastmod = (prev && sigDate < prev.lastmod) ? prev.lastmod : sigDate;
       bumped++;
+      bumpedUrls.push(`${BASE_URL}${url}`);
     }
     nextCache[url] = { hash, lastmod };
     return lastmod;
   };
 
-  generateSitemap._report = () => ({ bumped, held, nextCache });
+  generateSitemap._report = () => ({ bumped, held, nextCache, bumpedUrls });
 
   const discovered = findIndexFiles(REPO_ROOT);
   const indexFiles = discovered.filter(f => !isNoindex(f));
@@ -416,7 +426,7 @@ function generateSitemap() {
 
   fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
 
-  const { bumped: b, held: h, nextCache: nc } = generateSitemap._report();
+  const { bumped: b, held: h, nextCache: nc, bumpedUrls: changed } = generateSitemap._report();
   saveLastmodCache(nc);
 
   console.log(`   URLs written:     ${urlEntries.length}`);
@@ -424,17 +434,66 @@ function generateSitemap() {
   console.log(`   lastmod held:     ${h}  (no meaningful change)`);
   console.log(`   Output path:      ${SITEMAP_PATH}`);
   console.log('✅ sitemap.xml fully regenerated.');
+
+  return { changed, total: urlEntries.length };
+}
+
+// ─── IndexNow ────────────────────────────────────────────────────────────────
+//
+// Announce the pages whose <lastmod> just advanced, and only those. Runs AFTER
+// the sitemap and cache are written, and can never prevent either: an engine
+// being unreachable must not cost us the cache, because a lost cache makes the
+// next run read all 4,679 URLs as changed — the mass bump this whole system
+// exists to avoid.
+async function announceToIndexNow({ changed, total }) {
+  const { key, file, reason } = indexnow.discoverKey(REPO_ROOT, fs);
+  if (!key) {
+    console.log(`   IndexNow:         skipped (${reason})`);
+    return;
+  }
+
+  const plan = indexnow.planSubmission({
+    bumpedUrls: changed,
+    totalUrls: total,
+    baseUrl: BASE_URL,
+    key,
+    enabled: SUBMIT_INDEXNOW,
+    force: INDEXNOW_FORCE,
+  });
+
+  if (plan.action !== 'submit') {
+    // 'refuse' is a real finding, not a no-op — print it where a run's log is read.
+    const mark = plan.action === 'refuse' || plan.action === 'error' ? '⚠️ ' : '   ';
+    console.log(`${mark}IndexNow:         ${plan.action} — ${plan.reason}`);
+    return;
+  }
+
+  const results = await indexnow.submit({
+    urls: plan.urls,
+    host: new URL(BASE_URL).host,
+    key,
+    keyLocation: `${BASE_URL}/${file}`,
+  });
+  for (const r of results) {
+    console.log(`   IndexNow:         ${r.ok ? '✅' : '⚠️ '} ${r.count} URL(s) — ${r.note}`);
+  }
 }
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
 if (require.main === module) {
+  let report;
   try {
-    generateSitemap();
+    report = generateSitemap();
   } catch (err) {
     console.error('❌ Sitemap generation failed:', err.message);
     process.exit(1);
   }
+  // Deliberately outside the try above: the sitemap is already written and the
+  // cache already saved, so an IndexNow failure is reported and never fatal.
+  announceToIndexNow(report).catch((err) => {
+    console.log(`⚠️  IndexNow:         announcement failed (${err.message}) — sitemap is unaffected`);
+  });
 }
 
-module.exports = { generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock };
+module.exports = { generateSitemap, getContentImages, getContentImageEntries, getPageImages, buildUrlBlock, announceToIndexNow };

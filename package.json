@@ -102,7 +102,8 @@
     "build:accent-notice": "node scripts/build-accent-notice.js --write",
     "check:accent-notice": "node scripts/build-accent-notice.js",
     "fix:footer-nested-content": "python3 scripts/fix-footer-nested-content.py --write",
-    "check:ci-gates": "python3 scripts/run-ci-gates.py"
+    "check:ci-gates": "python3 scripts/run-ci-gates.py",
+    "test:indexnow": "node scripts/lib/indexnow.test.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
