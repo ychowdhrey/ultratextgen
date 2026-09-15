@@ -81,15 +81,15 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Save to Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
-      printBook: "Print as a book: one page per letter",
+      printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
       nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
       nameSolidLabel: "Colour it in now (solid fill)",
       pngTransparent: "PNG (transparent)",
       classSet: "Class set — one sheet per name", sheets: "sheets",
-      classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
+      classSetPngHint: "PNG downloads the current name; use Save as PDF for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
       usLetter: "US Letter",
@@ -134,14 +134,14 @@
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
       printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
-      printBook: "Imprimer en livret — une page par lettre",
+      printBook: "Enregistrer en livret — une page par lettre",
       save: "Enregistrer",
       saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
       nameSolidLabel: "Colorier maintenant (remplissage plein)",
       pngTransparent: "PNG (transparent)",
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
-      classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Imprimer pour toute la série.",
+      classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Enregistrer en PDF pour toute la série.",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       trace: {
@@ -179,14 +179,14 @@
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
       printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
-      printBook: "Imprimir como libro — una página por letra",
+      printBook: "Guardar como libro — una página por letra",
       save: "Guardar",
       saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorear ahora (relleno sólido)",
       pngTransparent: "PNG (transparente)",
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
-      classSetPngHint: "El PNG descarga el nombre actual; usa Imprimir para el juego completo.",
+      classSetPngHint: "El PNG descarga el nombre actual; usa Guardar como PDF para el juego completo.",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       trace: {
@@ -224,14 +224,14 @@
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
-      printBook: "Imprimir como livro — uma página por letra",
+      printBook: "Salvar como livro — uma página por letra",
       save: "Salvar",
       saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colorir agora (preenchimento sólido)",
       pngTransparent: "PNG (transparente)",
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
-      classSetPngHint: "O PNG baixa o nome atual; use Imprimir para o conjunto completo.",
+      classSetPngHint: "O PNG baixa o nome atual; use Salvar como PDF para o conjunto completo.",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       trace: {
@@ -269,14 +269,14 @@
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
-      printBook: "Stampa come libretto — una pagina per lettera",
+      printBook: "Salva come libretto — una pagina per lettera",
       save: "Salva",
       saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colora adesso (riempimento pieno)",
       pngTransparent: "PNG (trasparente)",
       classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
-      classSetPngHint: "Il PNG scarica il nome corrente; usa Stampa per l'intero set.",
+      classSetPngHint: "Il PNG scarica il nome corrente; usa Salva come PDF per l'intero set.",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       trace: {
@@ -314,14 +314,14 @@
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
       printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
-      printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
+      printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
       nameStyleLabel: "Styl", nameFillLabel: "Wypełnienie", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Pokoloruj od razu (pełne wypełnienie)",
       pngTransparent: "PNG (przezroczyste tło)",
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
-      classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
+      classSetPngHint: "PNG pobiera bieżące imię; użyj Zapisz jako PDF dla całego zestawu.",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
       usLetter: "US Letter",
@@ -363,14 +363,14 @@
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
-      printBook: "Als Heft drucken \u2013 eine Seite pro Buchstabe",
+      printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       save: "Speichern",
       saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
       pngTransparent: "PNG (transparent)",
       classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
-      classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
+      classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Als PDF speichern verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
       usLetter: "US Letter",
@@ -417,14 +417,14 @@
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
       printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
-      printBook: "Cetak sebagai buku \u2014 satu halaman per huruf",
+      printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
       nameStyleLabel: "Gaya", nameFillLabel: "Warna isi", nameStrokeLabel: "Garis tepi",
       nameSolidLabel: "Langsung diwarnai (isi penuh)",
       pngTransparent: "PNG (transparan)",
       classSet: "Set kelas \u2014 satu lembar per nama", sheets: "lembar",
-      classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Cetak untuk seluruh setnya.",
+      classSetPngHint: "PNG mengunduh nama yang sedang tampil; pakai Simpan sebagai PDF untuk seluruh setnya.",
       bannerInstr: "Gunting tiap bendera mengikuti garis putus-putus, lubangi di setiap titik, lalu masukkan tali atau pita berurutan (1, 2, 3\u2026) sampai membentuk katanya.",
       puzzleCut: "Gunting mengikuti garis putus-putus untuk memisahkan tiap kepingan huruf.",
       usLetter: "US Letter",
@@ -1046,6 +1046,16 @@
      nothing leaves the browser except what the user explicitly shares.
      --------------------------------------------------------------- */
   const PO = Object.assign({}, I18N.en.printOpts, (I18N[LANG] && I18N[LANG].printOpts) || {});
+  /* The print verbs each locale's own page labels actually open with, longest
+     first so "Imprimir el" is tried before "Imprimir". Harvested from the
+     printables pages in that language (the survey behind the 2026-09-15
+     change), never guessed: only a leading verb is swapped, so German -- which
+     puts "drucken" last ("Arbeitsblatt drucken") -- deliberately has none and
+     those labels are left for the i18n table to set outright. */
+  const PRINT_VERBS = {
+    en: ["Print"], fr: ["Imprimer"], es: ["Imprimir"], pt: ["Imprimir"],
+    it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
+  };
   const PRINT_PREF_KEY = "utg_print_prefs";
   const RECENT_KEY = "utg_printables_recent";
   const ROSTER_KEY = "utg_printables_roster:" + window.location.pathname;
@@ -1595,15 +1605,66 @@
     if (after && after.parentNode) after.parentNode.insertBefore(shareWrap, after.nextSibling);
     else wrap.appendChild(shareWrap);
   }
-  // A "Save as PDF" button beside every print button: same print path, with
-  // the destination hint shown as a toast while the dialog is open.
-  function addPdfButtons() {
+  /* Every sheet action writes a PDF; the browser print dialog is the fallback
+     only (owner decision 2026-09-15).
+
+     Until now each section carried BOTH a "Print ..." button and a "Save as
+     PDF" button that worked by clicking it -- two buttons, one outcome, and
+     the print dialog's own "Save as PDF" destination as a third route to the
+     same file. The print path itself is unchanged and still runs when
+     pdfFromWrap() cannot write the file (a tainted canvas on Safari); what
+     goes away is the UI that offered it as a separate, equal choice.
+
+     The buttons are CONVERTED IN PLACE rather than rewritten in the pages:
+     the label lives in 102 page files across 8 languages in ~55 spellings
+     ("Print the worksheet", "Print the sheet", "Print worksheet" are all the
+     same action in English alone), so relabelling from this file's own i18n
+     table both removes the print wording and settles that drift. No page
+     HTML changes, so no locale page is "touched" for the parity, translation
+     or em-dash gates. */
+  function convertPrintButtonsToPdf() {
     [el.alphaPrint, el.practicePrint, el.namePrint, el.genPrint, el.designPrint, el.bannerPrint, el.puzzlePrint].filter(Boolean).forEach((btn) => {
-      if (btn.nextElementSibling && btn.nextElementSibling.classList && btn.nextElementSibling.classList.contains("pt-pdf-btn")) return;
-      const pdf = makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; btn.click(); });
-      btn.parentNode.insertBefore(pdf, btn.nextSibling);
+      if (btn.dataset.ptPdf) return;
+      btn.dataset.ptPdf = "1";
+      btn.textContent = PO.savePdf;
+      btn.classList.add("bubble-btn-primary");
+      // A stale "Save as PDF" sibling from an earlier build would now be a
+      // duplicate of the button beside it.
+      const sib = btn.nextElementSibling;
+      if (sib && sib.classList && sib.classList.contains("pt-pdf-btn")) sib.remove();
+    });
+    // The multi-sheet actions keep their own object ("all 7 levels", "the
+    // A-Z + 0-9 book") and swap only the verb, per the owner's rule that
+    // "Print all 7 levels" reads "Save all 7 levels".
+    [el.bookPrint, el.genLadder, el.designLadder].filter(Boolean).forEach((btn) => {
+      if (btn.dataset.ptPdf) return;
+      btn.dataset.ptPdf = "1";
+      btn.textContent = saveVerbLabel(btn.textContent);
     });
   }
+  /* Swap a print verb for this locale's own save verb, leaving the rest of
+     the label alone. Both words come from this file's i18n table for the
+     active locale -- nothing is translated here. Returns the label unchanged
+     when the verb is not recognised, which is the safe direction: a label
+     that still says "Print" is wrong but readable, an invented translation is
+     neither. */
+  function saveVerbLabel(label) {
+    const text = String(label || "").trim();
+    const verbs = PRINT_VERBS[LANG] || PRINT_VERBS.en;
+    for (const verb of verbs) {
+      const re = new RegExp("^" + verb.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+      if (re.test(text)) return text.replace(re, T.save);
+    }
+    return text;
+  }
+  // Delegated on document in the CAPTURE phase so it runs before the click
+  // handler the section wired on the button itself, whichever order the two
+  // were registered in.
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    const btn = t && t.closest ? t.closest("[data-pt-pdf]") : null;
+    if (btn) pdfMode = true;
+  }, true);
   // printable_generate: the visitor typed something (count only, never the
   // text). Debounced per input, throttled so a long session is one event
   // per half minute at most.
@@ -1973,10 +2034,18 @@
   }
 
   function printWrap(titleText, bodyNode, sheet) {
-    trackPrintable("print", sheet);
-    rememberSheet(sheet);
     const wantPdf = pdfMode;
     pdfMode = false;
+    /* Only a real print attempt counts as "print". Until 2026-09-15 this line
+       sat above the pdfMode read and fired for PDF clicks too -- the PDF
+       button works by invoking this same path -- so `print` counted prints
+       plus every Save as PDF, which is the exact split register #111 exists
+       to read. `download_pdf` (pdfFromWrap) and the dialog outcomes carry the
+       PDF side. Now that the UI offers no print button, a `print` event means
+       the PDF writer handed off to the dialog: a fallback rate, which is the
+       number worth watching. */
+    if (!wantPdf) trackPrintable("print", sheet);
+    rememberSheet(sheet);
     if (!el.printRoot) { applyPageStyle(); window.print(); removePageStyle(); return; }
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
@@ -2012,9 +2081,42 @@
     openPrintDialog(sheet, false);
   }
 
+  /* Everything the printed page must not carry, hidden inline at the same
+     priority the thing hiding from us uses.
+
+     style.css's `body.is-printing > *:not(#pt-print-root)` rule covers only
+     DIRECT children of <body>, and a stylesheet `!important` LOSES to an
+     inline `!important` -- which is how a bottom-anchored ad unit styles
+     itself. Measured in Chromium: an in-content ad is hidden correctly, while
+     a body child carrying inline `display:block !important` renders at
+     1280x90 and a node appended to <html> at 1280x60, both landing in the
+     printed sheet. CSS cannot win that cascade, so the hide is inline here
+     and unwound when the dialog closes. */
+  let printHidden = [];
+  function hideEverythingButPrintRoot() {
+    printHidden = [];
+    const keep = el.printRoot;
+    const hide = (node) => {
+      if (!node || node === keep || node.contains && keep && node.contains(keep)) return;
+      const tag = node.tagName;
+      if (tag === "HEAD" || tag === "SCRIPT" || tag === "STYLE" || tag === "LINK" || tag === "TITLE" || tag === "META") return;
+      printHidden.push([node, node.style.getPropertyValue("display"), node.style.getPropertyPriority("display")]);
+      node.style.setProperty("display", "none", "important");
+    };
+    Array.prototype.forEach.call(document.body.children, hide);
+    Array.prototype.forEach.call(document.documentElement.children, hide);
+  }
+  function restoreAfterPrint() {
+    printHidden.forEach((row) => {
+      if (row[1]) row[0].style.setProperty("display", row[1], row[2]);
+      else row[0].style.removeProperty("display");
+    });
+    printHidden = [];
+  }
   function openPrintDialog(sheet, wantPdf) {
     applyPageStyle();
     document.body.classList.add("is-printing");
+    hideEverythingButPrintRoot();
     document.body.classList.toggle("pt-ink-saver", printPrefs.ink === "saver");
 
     // Tear the print surface down when the dialog closes, not when
@@ -2033,6 +2135,7 @@
       window.removeEventListener("focus", onVisible);
       document.body.classList.remove("is-printing");
       document.body.classList.remove("pt-ink-saver");
+      restoreAfterPrint();
       removePageStyle();
       el.printRoot.innerHTML = "";
       trackPrintableEvent("printable_output", { printable_action: wantPdf ? "pdf_dialog_closed" : "print_dialog_closed", printable_sheet: sheet || "sheet", printable_dialog_ms: Date.now() - started });
@@ -2075,11 +2178,15 @@
 
     const actions = document.createElement("div");
     actions.className = "bubble-actions";
+    // One primary action, and it writes a PDF. The print dialog is still the
+    // fallback inside printWrap(); it is no longer offered as its own button
+    // (owner decision 2026-09-15).
     const printBtn = document.createElement("button");
     printBtn.type = "button";
-    printBtn.className = "bubble-btn bubble-btn-primary";
-    printBtn.textContent = /[0-9]/.test(ch) ? T.printThisNumber : T.printThisLetter;
+    printBtn.className = "bubble-btn bubble-btn-primary pt-pdf-btn";
+    printBtn.textContent = PO.savePdf;
     printBtn.addEventListener("click", () => {
+      pdfMode = true;
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
       holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
@@ -2491,13 +2598,13 @@
     // Secondary: "Print this letter" in the card above is this page's primary
     // job, and two purple buttons in one column read as two primaries.
     book.className = "bubble-btn";
+    book.dataset.ptPdf = "1";
     book.textContent = T.printBook;
     book.addEventListener("click", () => {
       if (alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
       printAlphabetBook();
     });
     actions.appendChild(book);
-    actions.appendChild(makeBtn("bubble-btn pt-pdf-btn", PO.savePdf, () => { pdfMode = true; book.click(); }));
     wrap.appendChild(actions);
     wrap.appendChild(makePdfHint());
 
@@ -2519,6 +2626,7 @@
         const bookBtn = document.createElement("button");
         bookBtn.type = "button";
         bookBtn.className = "bubble-btn";
+        bookBtn.dataset.ptPdf = "1";
         bookBtn.textContent = T.printBook;
         bookBtn.addEventListener("click", printAlphabetBook);
         el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
@@ -4642,7 +4750,7 @@
     }
 
     buildPrintOptions();
-    addPdfButtons();
+    convertPrintButtonsToPdf();
     wireGenerateEvents();
     applyPresetState();
   }

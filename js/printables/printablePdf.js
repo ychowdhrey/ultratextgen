@@ -190,6 +190,11 @@
   // Elements a page cut must never pass through.
   const ATOMS = ".cursive-print-row, .pt-name-row, .pt-gen-row, .pt-tile-cell, .pt-glyph-cell, .bubble-outline, .pt-word-outline, .pt-trace-svg, .pt-puzzle-sheet, .bubble-print-single, .pt-banner-cell, .pt-banner-gap, h2, h3, p, li";
   const PAGES = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
+  // How far past the page box a wrap may run and still be treated as one
+  // page, scaled to fit rather than cut. 6% of US Letter is ~0.66in: larger
+  // than any font-metric difference between two browsers, far smaller than
+  // any real page of content.
+  const SINGLE_PAGE_TOLERANCE = 0.06;
 
   function cutPoints(root, total, pageH) {
     const r0 = root.getBoundingClientRect().top;
@@ -246,6 +251,24 @@
     }
     const total = Math.ceil(root.getBoundingClientRect().height);
     const img = await subtreeToImage(root, widthPx, total);
+    /* A sheet that overruns the page box by a hair is a layout accident, not a
+       second page. Measured on /printables/coloring-page-maker/: the name
+       sheet is 952px against a 960px box -- 8px, 0.8% of headroom -- so which
+       fonts the browser actually loaded decides whether the reader gets one
+       page or two, and the second carries nothing but the sheet's bottom rule
+       and its credit line. Scale it down to fit instead, the same thing the
+       explicit-pages branch above already does via `fit`. The tolerance is far
+       below a real second page (which overruns by ~100%), so a genuinely
+       multi-page wrap still paginates. */
+    if (total > pageH && total <= pageH * (1 + SINGLE_PAGE_TOLERANCE)) {
+      const fit = pageH / total;
+      const canvas = blankCanvas(widthPx * scale, pageH * scale);
+      const ctx = canvas.getContext("2d");
+      const dw = widthPx * fit * scale, dh = total * fit * scale;
+      ctx.drawImage(img, (canvas.width - dw) / 2, 0, dw, dh);
+      ctx.getImageData(0, 0, 1, 1);
+      return [canvas];
+    }
     const cuts = cutPoints(root, total, pageH);
     for (const [start, end] of cuts) {
       const canvas = blankCanvas(widthPx * scale, pageH * scale);

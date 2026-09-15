@@ -572,19 +572,20 @@
       if (!silent) render();
     });
 
+    /* The primary action writes a PDF; savePdf() already falls back to
+       printPattern() when the PDF module cannot run, so the print dialog
+       remains reachable without being offered as its own button (owner
+       decision 2026-09-15). Relabelled here rather than in the page so no
+       page HTML is touched, matching printablesEngine.js. */
     const printBtn = $("#cs-print");
-    if (printBtn) printBtn.addEventListener("click", printPattern);
+    if (printBtn) {
+      printBtn.textContent = T.savePdf;
+      printBtn.classList.add("pt-pdf-btn");
+      printBtn.addEventListener("click", savePdf);
+    }
 
     const pngBtn = $("#cs-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
-    if (pngBtn) {
-      const pdfBtn = document.createElement("button");
-      pdfBtn.type = "button";
-      pdfBtn.className = pngBtn.className + " pt-pdf-btn";
-      pdfBtn.textContent = T.savePdf;
-      pdfBtn.addEventListener("click", savePdf);
-      pngBtn.insertAdjacentElement("afterend", pdfBtn);
-    }
 
     // Share row (share-core's builder, shared with the sheet engine) under
     // the action buttons; a share link reopens this exact chart.

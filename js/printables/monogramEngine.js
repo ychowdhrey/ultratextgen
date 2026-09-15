@@ -554,18 +554,19 @@
     wireSwatchGroup(byId("mono-layout-group"), "layout", layoutIcon);
     wireSwatchGroup(byId("mono-style-group"), "style", styleIcon);
 
+    /* The primary action writes a PDF; savePdf() already falls back to
+       printMonogram() when the PDF module cannot run, so the print dialog
+       remains reachable without being offered as its own button (owner
+       decision 2026-09-15). Relabelled here rather than in the page so no
+       page HTML is touched, matching printablesEngine.js. */
     const printBtn = byId("mono-print");
-    if (printBtn) printBtn.addEventListener("click", printMonogram);
+    if (printBtn) {
+      printBtn.textContent = T.savePdf;
+      printBtn.classList.add("pt-pdf-btn");
+      printBtn.addEventListener("click", savePdf);
+    }
     const pngBtn = byId("mono-png");
     if (pngBtn) pngBtn.addEventListener("click", downloadPNG);
-    if (pngBtn) {
-      const pdfBtn = document.createElement("button");
-      pdfBtn.type = "button";
-      pdfBtn.className = pngBtn.className + " pt-pdf-btn";
-      pdfBtn.textContent = T.savePdf;
-      pdfBtn.addEventListener("click", savePdf);
-      pngBtn.insertAdjacentElement("afterend", pdfBtn);
-    }
 
     // Share row (share-core's builder, the same one the sheet engine uses)
     // under the action buttons; a share link reopens this exact monogram.
