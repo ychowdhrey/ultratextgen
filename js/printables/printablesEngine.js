@@ -3725,6 +3725,56 @@
     printWrap(joinWords([nameValue(), "·", cap(NOUN)]), sheetPageNode(nameSheetNode()), "name_worksheet");
   }
 
+  /* PR-09 -- left-handed mode. A right-handed child writing left to right
+     keeps the model at the start of the line in view the whole way across; a
+     left-handed child's own hand covers it. Two practitioners state the same
+     concrete remedy independently -- Learning Without Tears: "Pages should
+     provide letter models on the left and right, so left-handed children can
+     always see the model they are copying"; The OT Toolbox: "ensure that the
+     model/example is on the right side of the page". LWT's both-sides
+     formulation is the one implemented, because a right-only model breaks
+     right-handers. Not one of the 43 generators the 2026-09-16 audit fetched
+     has this toggle.
+
+     It states what it changes and makes no medical claim: paper tilt, grip
+     and seating are the writer's, not the sheet's.
+
+     ENGLISH ONLY for now. The label needs a word in eight languages and
+     `npm run audit:locale-attestation` reports "Linkshänder", "gaucher" and
+     "mancini" attested on this site's own de, fr and it pages while "zurdos",
+     "leworęczni", "canhotos" and "kidal" are not. This repo does not invent a
+     locale string, so those four wait for a native reader rather than a
+     guess. */
+  let leftHanded = false;
+  function mountLeftHanded() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en") return;
+    const rows = el.nameRows || el.genRows;
+    if (!rows || $("#pt-lefty")) return;
+    const wrap = document.createElement("label");
+    wrap.className = "pt-lefty-field";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.id = "pt-lefty";
+    box.addEventListener("change", () => {
+      leftHanded = box.checked;
+      if (el.nameInput || el.namePreview) renderNamePreview();
+      if (el.genInput || el.genPreview) renderGenPreview();
+    });
+    wrap.appendChild(box);
+    wrap.appendChild(document.createTextNode(" Left-handed (model on both sides)"));
+    const host = rows.closest(".pt-field, .pt-opt, .pt-name-rows-field") || rows.parentElement;
+    host.insertAdjacentElement("afterend", wrap);
+  }
+  // A small second copy of the model at the right-hand end of a trace row.
+  function leftyModel(node) {
+    const aside = document.createElement("span");
+    aside.className = "pt-lefty-model";
+    aside.setAttribute("aria-hidden", "true");
+    aside.appendChild(node);
+    return aside;
+  }
+
   function nameRow(name, kind) {
     const row = document.createElement("div");
     row.className = "pt-name-row pt-name-" + kind;
@@ -3740,6 +3790,9 @@
       row.appendChild(wordOutlineSVG(name, o));
     } else {
       row.appendChild(wordOutlineSVG(name, { solid: kind === "model", overlay: strokeOverlayOn() }));
+    }
+    if (leftHanded && kind === "trace" && RENDER !== "glyph") {
+      row.appendChild(leftyModel(wordOutlineSVG(name, { solid: true })));
     }
     return row;
   }
@@ -6620,6 +6673,7 @@
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
+    mountLeftHanded();
     mountSheetCost();
     [el.nameRows, el.genRows].forEach(addLowDensityOption);
     /* After load, not here: footer.js is deferred and sits AFTER this file in

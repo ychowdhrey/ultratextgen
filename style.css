@@ -9986,3 +9986,23 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   color: var(--text-secondary);
 }
 @media print { .pt-sheet-cost { display: none; } }
+
+/* Left-handed mode: a small second model at the right end of each trace row,
+   so the model stays visible under a left hand travelling left to right. */
+.pt-lefty-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.pt-name-row .pt-lefty-model,
+.pt-gen-row .pt-lefty-model {
+  flex: 0 0 auto;
+  width: 14%;
+  align-self: center;
+  opacity: 0.75;
+}
+.pt-lefty-model svg { width: 100%; height: auto; display: block; }
+@media print { .pt-lefty-field { display: none; } }
