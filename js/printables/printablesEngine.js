@@ -568,6 +568,29 @@
   let LETTER_SPACING = Number(CFG.letterSpacing) || 0;
   const PNG_PREFIX = CFG.pngPrefix || "printable";
   const GLYPH_STYLE = CFG.glyphStyle || "";         // primary registry style (glyph mode)
+  /* The noun the copy-paste variant section uses, which is NOT always the
+     page's own noun. /printables/graffiti-letters/ headed that section
+     "Copy-paste graffiti letter A" over twenty-one circled and parenthesised
+     Unicode letters, none of which is graffiti. A page sets variantNoun: ""
+     to drop the adjective, leaving "Copy-paste letter A" -- true, and built
+     from charLabel(), so it needs no new string in any of the eight
+     languages this engine ships in. */
+  const VARIANT_NOUN = CFG.variantNoun != null ? CFG.variantNoun : (CFG.noun || "letter");
+  function joinWords(parts) { return parts.filter((x) => x != null && x !== "").join(" "); }
+
+  /* A style may declare `skew` in degrees. SVG's skewX shears about the
+     origin, so a glyph set on a baseline at y moves left by y*tan(skew); the
+     translate puts the anchor back where it was, leaving a slant instead of a
+     slide. Used by the graffiti Blockbuster face, which was rendering Archivo
+     Black upright -- /printables/block-letters/'s own typeface, under a
+     graffiti style name. A blockbuster piece is heavy block capitals set on a
+     slant, so the slant is the part that was missing, not the weight. */
+  function skewTransform(deg, anchorY) {
+    const d = Number(deg) || 0;
+    if (!d) return null;
+    const shift = -anchorY * Math.tan(d * Math.PI / 180);
+    return "translate(" + shift.toFixed(2) + ",0) skewX(" + d + ")";
+  }
   const INK = "#1a1a2e";
 
   const el = {
@@ -763,6 +786,8 @@
     text.setAttribute("stroke-width", String(Math.max(4, STROKE * strokeScale)));
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
+    const skew = skewTransform(o.skew != null ? o.skew : CFG.skew, 128);
+    if (skew) text.setAttribute("transform", skew);
     text.textContent = ch;
     svg.appendChild(text);
     if (o.overlay) addStrokeOverlay(svg, ch);
@@ -815,6 +840,8 @@
       text.setAttribute("letter-spacing", String(spacing));
       text.setAttribute("dx", String(-spacing / 2));
     }
+    const wskew = skewTransform(o.skew, 112);
+    if (wskew) text.setAttribute("transform", wskew);
     text.textContent = word;
     svg.appendChild(text);
     if (o.overlay) addWordStrokeOverlay(svg, word, fontSize, spacing, 112, "central", w);
@@ -2456,6 +2483,7 @@
     if (style.font) FONT = style.font;
     if (style.strokeWidth != null) STROKE = style.strokeWidth;
     if (style.letterSpacing != null) LETTER_SPACING = style.letterSpacing;
+    CFG.skew = style.skew;
     if (el.charStyles) {
       $$(".pt-char-style-opt", el.charStyles).forEach((b) => {
         const on = b.dataset.style === charStyleKey;
@@ -2558,7 +2586,7 @@
     if (variants) {
       const title = document.createElement("h3");
       title.className = "bubble-detail-title";
-      title.textContent = T.copyPaste + " " + NOUN + " " + charLabel(ch);
+      title.textContent = joinWords([T.copyPaste, VARIANT_NOUN, charLabel(ch)]);
       detail.appendChild(title);
       detail.appendChild(variants);
     }
@@ -2635,23 +2663,37 @@
     list.className = "bubble-variants";
     const cases = /[0-9]/.test(ch) ? ["upper"] : ["upper", "lower"];
     let any = false;
+    /* One character cannot show the difference between a style and its Spaced
+       sibling, and a case-identical style renders its upper and lower cases
+       the same. Both produced real, byte-identical duplicate cards: the
+       graffiti page shipped 21 of which 14 were repeats. Deduplicating on the
+       rendered value fixes it wherever it occurs rather than per page, and it
+       cannot hide a genuine variant, because two cards that copy the same
+       characters ARE the same card to the visitor. */
+    const seen = new Set();
     familyStyles().forEach(({ name, style }) => {
       cases.forEach((kind) => {
         const src = kind === "upper" ? ch.toUpperCase() : ch.toLowerCase();
         const rendered = renderGlyph(src, name);
         if (!rendered || rendered === src) return;
+        if (seen.has(rendered)) return;
+        seen.add(rendered);
         any = true;
         const row = document.createElement("button");
         row.type = "button";
         row.className = "bubble-variant glyph-copy";
         row.dataset.text = rendered;
-        row.setAttribute("aria-label", T.copy + " " + name + " " + NOUN + " " + charLabel(src));
+        // One label, read once: the aria-label used the raw registry key while
+        // the visible chip stripped the "Ultra " prefix, so a screen reader
+        // heard a different style name than the page showed.
+        const label = name.replace(/^Ultra /, "");
+        row.setAttribute("aria-label", joinWords([T.copy, label, VARIANT_NOUN, charLabel(src)]));
         const glyph = document.createElement("span");
         glyph.className = "bubble-variant-glyph";
         glyph.textContent = rendered;
         const meta = document.createElement("span");
         meta.className = "bubble-variant-name";
-        meta.textContent = name.replace(/^Ultra /, "") + (kind === "upper" ? "" : T.lowerSuffix);
+        meta.textContent = label + (kind === "upper" ? "" : T.lowerSuffix);
         const cta = document.createElement("span");
         cta.className = "bubble-variant-copy";
         cta.textContent = T.copy;
@@ -3244,7 +3286,8 @@
     if (!style) return { solid: kind === "model" };
     const o = {
       font: style.font,
-      spacing: style.letterSpacing != null ? style.letterSpacing : LETTER_SPACING
+      spacing: style.letterSpacing != null ? style.letterSpacing : LETTER_SPACING,
+      skew: style.skew
     };
     const solid = nameSolidOn();
     if (kind === "trace") {
@@ -3344,10 +3387,18 @@
         page.appendChild(nameSheetNode(n));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — tracing worksheets", set, "name_worksheet");
+      printWrap(joinWords([names.length + " " + T.sheets, "·", cap(NOUN)]), set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet", sheetPageNode(nameSheetNode()), "name_worksheet");
+    /* "<name> - tracing worksheet" was hardcoded English on all eight
+       languages, and it framed the sheet as handwriting practice on
+       /printables/graffiti-letters/, whose reader is a teenager making name
+       art rather than a child learning letters. CFG.noun is already the
+       page's own word in its own language ("Graffiti", "kolorowanka",
+       "tracing"), so the title is composed from it and needs nothing
+       translated here. The separator is the middle dot printAlphabetTiled
+       already uses, never an em dash. */
+    printWrap(joinWords([nameValue(), "·", cap(NOUN)]), sheetPageNode(nameSheetNode()), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -4630,7 +4681,7 @@
      in one scope, the second silently shadowing the first. #889's behaviour
      is not lost -- its single-character branch is dotBudgetFor's `drawn <= 1`
      case and its corner floor rides `singleMode` into dotWordGeometry. */
-  function layoutDotWordAt(text, budget, perLetterMode, box, singleMode) {
+  function layoutDotWordAt(text, budget, perLetterMode, box, singleMode, startAt) {
     const geom = dotWordGeometry(text, budget, perLetterMode, singleMode);
     const b = geom.bbox;
     const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
@@ -4640,6 +4691,13 @@
     const tx = (p) => [p[0] * scale + ox, p[1] * scale + oy];
     const letters = [];
     const all = [];
+    /* ONE sequence for the whole word, not one per letter. A name restarting
+       at 1 on every letter cannot be solved as a name: the child finishes E,
+       finds a second 1 somewhere to the right and has no way to know it comes
+       next. Numbering already ran on across the contours WITHIN a letter for
+       exactly this reason; it simply stopped at the letter boundary. A
+       single-character sheet is unaffected, because it has one letter. */
+    let num = startAt || 1;
     geom.letters.forEach((L) => {
       const cpt = tx([L.cx, L.cy]);
       // One closed loop per contour: the outline, then any counter, then any
@@ -4647,7 +4705,6 @@
       // ring, lifts the pen and starts the next at the following number.
       const loops = L.loops.map((lp) => lp.map(tx));
       const dots = [];
-      let num = 1;
       loops.forEach((lp) => {
         lp.forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: false, cx: cpt[0], cy: cpt[1] }); all.push(p); });
       });
@@ -4670,7 +4727,7 @@
     const med = nn.length ? nn[Math.floor(nn.length / 2)] : 40;
     const dotR = Math.max(3.2, Math.min(11, med * 0.17));
     const numF = Math.max(12, Math.min(30, med * 0.6));
-    return { letters: letters, dotR: dotR, numF: numF, med: med };
+    return { letters: letters, dotR: dotR, numF: numF, med: med, nextLabel: num };
   }
 
   /* The most dots per letter this word can carry in this box before the
@@ -4724,9 +4781,9 @@
     return { budget: budget, perLetterMode: true, singleMode: false, capped: budget < wanted, wanted: wanted };
   }
 
-  function layoutDotWord(text, level, box) {
+  function layoutDotWord(text, level, box, startAt) {
     const plan = dotBudgetFor(text, level, box);
-    const lay = layoutDotWordAt(text, plan.budget, plan.perLetterMode, box, plan.singleMode);
+    const lay = layoutDotWordAt(text, plan.budget, plan.perLetterMode, box, plan.singleMode, startAt);
     lay.budget = plan.budget;
     lay.capped = plan.capped;
     return lay;
@@ -4734,18 +4791,93 @@
 
   // Offset a number label radially outward from its letter centroid so it sits
   // clear of the outline where possible.
-  function dotLabelPos(dot, dotR, numF) {
+  function dotLabelPos(dot, dotR, numF, angleDeg) {
     let vx = dot.x - dot.cx, vy = dot.y - dot.cy;
     const vl = Math.hypot(vx, vy) || 1; vx /= vl; vy /= vl;
+    if (angleDeg) {
+      const a = angleDeg * Math.PI / 180, c = Math.cos(a), sn = Math.sin(a);
+      const rx = vx * c - vy * sn, ry = vx * sn + vy * c;
+      vx = rx; vy = ry;
+    }
     const off = dotR + numF * 0.62;
     return { x: dot.x + vx * off, y: dot.y + vy * off + numF * 0.34 };
+  }
+
+  /* Place every number once, for the whole sheet, avoiding the ones already
+     placed. Each label is pushed outward from its own letter's centroid, and
+     two dots from neighbouring letters can push their labels into the same
+     spot: measured on "EMMA", the 5 of one letter and the 13 of the next
+     printed as "513", which reads as a dot to visit after 512. Continuous
+     numbering makes two-digit labels arrive sooner, so this is the other half
+     of that fix rather than a separate polish.
+
+     The search only rotates the outward direction, never moves a label off
+     its dot, so a number always sits on the ring it belongs to. A label that
+     cannot be placed anywhere keeps its first position -- an overlap is worse
+     than a wrong-looking gap, but a missing number is worse than both. */
+  /* A dot-to-dot word is fitted to the band by width, so a long name is drawn
+     small: measured on /printables/dot-to-dot-name/, "Alexander" reaches 86%
+     of the sheet width and 6.6% of its height, which is the geometry of nine
+     letters in a row on a portrait page rather than a layout defect. Splitting
+     a long single-line name across the two stacked bands the designer already
+     builds for a deliberate two-line entry roughly doubles the letter size.
+
+     Only when it genuinely helps: the split is taken when the longer half is
+     meaningfully shorter than the whole, so a short name is never broken up
+     and a visitor who typed their own second line is never overridden. The
+     break prefers a space, so "Anna Marie" splits where a person would. */
+  const DOT_WRAP_MIN = 6;
+  function dotAutoLines(text, lines) {
+    if (lines.length !== 1) return lines;
+    const str = String(text);
+    const chars = [...str];
+    if (chars.length < DOT_WRAP_MIN) return lines;
+    const sp = str.lastIndexOf(" ", Math.ceil(str.length / 2) + 2);
+    const cut = sp > 0 && sp < str.length - 1 ? sp : Math.ceil(chars.length / 2);
+    const a = chars.slice(0, cut).join("").trim();
+    const b = chars.slice(sp > 0 ? cut + 1 : cut).join("").trim();
+    if (!a || !b) return lines;
+    // Two half-bands are each a little under half the full band, so the split
+    // has to buy more than a 2x reduction in line length to be worth taking.
+    const longer = Math.max([...a].length, [...b].length);
+    return longer * 2 <= chars.length + 1 ? [a, b] : lines;
+  }
+
+  const DOT_LABEL_ANGLES = [0, 28, -28, 56, -56, 84, -84, 112, -112, 140, -140, 168];
+  function placeDotLabels(lay) {
+    const placed = [];
+    const hits = (r) => placed.some((q) =>
+      Math.abs(r.x - q.x) * 2 < (r.w + q.w) && Math.abs(r.y - q.y) * 2 < (r.h + q.h));
+    lay.letters.forEach((L) => {
+      L.dots.forEach((d) => {
+        const digits = String(d.label).length;
+        // Advance of a bold numeral is close to 0.6em; the white halo the
+        // painters stroke around it adds a little on every side.
+        const w = lay.numF * 0.62 * digits + lay.numF * 0.2;
+        const h = lay.numF * 1.02;
+        let chosen = null;
+        for (let i = 0; i < DOT_LABEL_ANGLES.length; i++) {
+          const pos = dotLabelPos(d, lay.dotR, lay.numF, DOT_LABEL_ANGLES[i]);
+          const rect = { x: pos.x, y: pos.y - lay.numF * 0.34, w: w, h: h };
+          if (i === 0) chosen = { pos: pos, rect: rect };
+          if (!hits(rect)) { chosen = { pos: pos, rect: rect }; break; }
+        }
+        placed.push(chosen.rect);
+        d.labelPos = chosen.pos;
+      });
+    });
+    return lay;
   }
 
   // Render the dot-to-dot word into an SVG within the given box.
   // `numbers` (default true) toggles the printed dot numbers — turning them
   // off is the ladder's final stage before drawing freehand.
-  function addDotWordSVG(svg, text, level, box, hint, numbers) {
-    const lay = layoutDotWord(text, level, box);
+  /* Returns the next unused number, so a name split across two bands numbers
+     straight on from one line to the next. Two DELIBERATE lines are two words
+     and each starts at 1; an auto-wrapped name is one word on two rows and
+     must not, or the second row looks like a second puzzle. */
+  function addDotWordSVG(svg, text, level, box, hint, numbers, startAt) {
+    const lay = placeDotLabels(layoutDotWord(text, level, box, startAt));
     const numbered = numbers !== false;
     lay.letters.forEach((L) => {
       if (hint) {
@@ -4760,7 +4892,7 @@
       L.dots.forEach((d) => {
         svgMake("circle", { cx: d.x.toFixed(1), cy: d.y.toFixed(1), r: (d.accent ? lay.dotR * 0.9 : lay.dotR).toFixed(1), fill: INK }, svg);
         if (!numbered) return;
-        const lp = dotLabelPos(d, lay.dotR, lay.numF);
+        const lp = d.labelPos;
         const t = svgMake("text", {
           x: lp.x.toFixed(1), y: lp.y.toFixed(1), "text-anchor": "middle",
           "font-family": FONT, "font-weight": 700, "font-size": lay.numF.toFixed(1),
@@ -4769,11 +4901,12 @@
         t.textContent = String(d.label);
       });
     });
+    return lay.nextLabel;
   }
 
   // Render the dot-to-dot word onto a Canvas within the given box.
-  function drawDotWordCanvas(ctx, text, level, box, hint, numbers) {
-    const lay = layoutDotWord(text, level, box);
+  function drawDotWordCanvas(ctx, text, level, box, hint, numbers, startAt) {
+    const lay = placeDotLabels(layoutDotWord(text, level, box, startAt));
     const numbered = numbers !== false;
     ctx.save();
     ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
@@ -4793,7 +4926,7 @@
         ctx.arc(d.x, d.y, d.accent ? lay.dotR * 0.9 : lay.dotR, 0, Math.PI * 2);
         ctx.fillStyle = INK; ctx.fill();
         if (!numbered) return;
-        const lp = dotLabelPos(d, lay.dotR, lay.numF);
+        const lp = d.labelPos;
         ctx.font = "700 " + lay.numF.toFixed(1) + "px " + FONT;
         ctx.lineWidth = lay.numF * 0.16; ctx.strokeStyle = "#ffffff"; ctx.lineJoin = "round";
         ctx.strokeText(String(d.label), lp.x, lp.y);
@@ -4801,6 +4934,7 @@
       });
     });
     ctx.restore();
+    return lay.nextLabel;
   }
 
   /* ---------------------------------------------------------------
@@ -5019,7 +5153,8 @@
   function designSheetSVG(textOverride) {
     const text = textOverride != null ? String(textOverride).slice(0, DESIGN_MAX) : designText();
     const line2 = textOverride != null ? "" : designLine2();
-    const lines = line2 ? [text, line2] : [text];
+    let lines = line2 ? [text, line2] : [text];
+    let wrapped = false;
     const heading = headingForName(designHeadingText(), textOverride != null ? String(textOverride) : null);
     const fill = designFillKind();
     const borderSym = designBorderSym();
@@ -5055,6 +5190,9 @@
     const availW = W - M * 2;
 
     if (designModeIsDots()) {
+      const before = lines.length;
+      lines = dotAutoLines(text, lines);
+      wrapped = lines.length !== before;
       // Dot-to-dot: numbered dots along each letter's outline (uppercased for
       // iconic silhouettes). Sits in the same central band the outline would;
       // with a second line the band is split into two stacked half-bands.
@@ -5062,8 +5200,8 @@
       const half = Math.min(cy - (heading ? 250 : 200), (footer ? H - 250 : H - 150) - cy);
       if (lines.length === 2) {
         const bandH = half - 18;
-        addDotWordSVG(svg, String(lines[0]).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
-        addDotWordSVG(svg, String(lines[1]).toUpperCase(), designState.density, { x: M, y: cy + 18, w: availW, h: bandH }, designState.hint);
+        const next = addDotWordSVG(svg, String(lines[0]).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
+        addDotWordSVG(svg, String(lines[1]).toUpperCase(), designState.density, { x: M, y: cy + 18, w: availW, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
       } else {
         addDotWordSVG(svg, String(text).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
       }
@@ -5264,7 +5402,8 @@
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
       const text = designText(), line2 = designLine2(), heading = designHeadingText();
-      const lines = line2 ? [text, line2] : [text];
+      let lines = line2 ? [text, line2] : [text];
+    let wrapped = false;
       const borderSym = designBorderSym();
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
 
@@ -5287,13 +5426,16 @@
       }
 
       if (designModeIsDots()) {
+        const beforeC = lines.length;
+        lines = dotAutoLines(text, lines);
+        wrapped = lines.length !== beforeC;
         const footerOn = designFooterOn();
         const cyD = hasHeading ? 720 : 690;
         const half = Math.min(cyD - (hasHeading ? 250 : 200), (footerOn ? H - 250 : H - 150) - cyD);
         if (lines.length === 2) {
           const bandH = half - 18;
-          drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: bandH }, designState.hint);
-          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: 70, y: cyD + 18, w: W - 140, h: bandH }, designState.hint);
+          const next = drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: bandH }, designState.hint);
+          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: 70, y: cyD + 18, w: W - 140, h: bandH }, designState.hint, undefined, wrapped ? next : 1);
         } else {
           drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: half * 2 }, designState.hint);
         }
