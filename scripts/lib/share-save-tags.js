@@ -28,6 +28,11 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const SHARE_CORE = '/js/share/share-core.js';
 const SAVED_ITEMS = '/js/saved/saved-items.js';
 
+/** Sheet setup (paper, orientation, margins, ink saver, DPI), shared by all
+ *  three printables engines since 2026-09-16. Required only on printables
+ *  pages, unlike the two above, so it is tracked separately. */
+const PRINT_PREFS = '/js/printables/printPrefs.js';
+
 /** A page "hosts copy" if it loads one of the runtimes that renders the copy
  *  targets Save/Share were attached to. */
 const HOST_SCRIPTS = {
@@ -56,7 +61,21 @@ const HOST_SCRIPTS = {
 function requiredTags(html) {
   const hostsCopy = Object.values(HOST_SCRIPTS).some((src) => html.includes(`src="${src}"`));
   if (!hostsCopy) return [];
-  return [SHARE_CORE, SAVED_ITEMS].filter((src) => !html.includes(`src="${src}"`));
+  const need = [SHARE_CORE, SAVED_ITEMS];
+  if (hostsPrintables(html)) need.push(PRINT_PREFS);
+  return need.filter((src) => !html.includes(`src="${src}"`));
+}
+
+/** The three sheet engines that read printPrefs.js. */
+const PRINTABLE_HOSTS = [HOST_SCRIPTS.printables, HOST_SCRIPTS.monogram, HOST_SCRIPTS.crossStitch];
+
+function hostsPrintables(html) {
+  return PRINTABLE_HOSTS.some((src) => html.includes(`src="${src}"`));
+}
+
+/** Which module tags a given page owes, in the order they must appear. */
+function modulesFor(html) {
+  return hostsPrintables(html) ? [PRINT_PREFS, SHARE_CORE, SAVED_ITEMS] : [SHARE_CORE, SAVED_ITEMS];
 }
 
 function hasTag(html, src) {
@@ -86,14 +105,28 @@ function firstHostIndex(html) {
 function tagsAreOrdered(html) {
   const host = firstHostIndex(html);
   if (host === -1) return true;
-  return [SHARE_CORE, SAVED_ITEMS].every((src) => {
+  return modulesFor(html).every((src) => {
     const i = html.indexOf(`src="${src}"`);
     return i !== -1 && i < host;
   });
 }
 
+/**
+ * printPrefs.js is tagged WITHOUT defer, and that is not a style choice.
+ *
+ * Nine Indonesian printables pages load printablesEngine.js as a classic
+ * script, so its top level runs during parsing -- before any deferred script
+ * on the page. The engine reads window.UltraTextGen.printPrefs at its top
+ * level, so a deferred module would not exist yet and all nine would silently
+ * fall back to one hardcoded page size. A classic script placed before the
+ * engine executes first whether the engine is deferred or not, which is the
+ * only rule that holds for both shapes. The module is dependency-free and
+ * ~7KB, the same trade js/flair/flair-engine.js already makes.
+ */
 function tagFor(src) {
-  return `<script src="${src}" defer></script>`;
+  return src === PRINT_PREFS
+    ? `<script src="${src}"></script>`
+    : `<script src="${src}" defer></script>`;
 }
 
 /** Pages excluded from the site's own tag passes, mirrored here so this
@@ -115,11 +148,11 @@ function shouldSkip(filePath) {
 
 /** Both modules must exist on disk, or every page we tag 404s its own JS. */
 function modulesExist() {
-  return [SHARE_CORE, SAVED_ITEMS].every((p) => fs.existsSync(path.join(ROOT, p.slice(1))));
+  return [SHARE_CORE, SAVED_ITEMS, PRINT_PREFS].every((p) => fs.existsSync(path.join(ROOT, p.slice(1))));
 }
 
 module.exports = {
-  ROOT, SHARE_CORE, SAVED_ITEMS, HOST_SCRIPTS,
+  ROOT, SHARE_CORE, SAVED_ITEMS, PRINT_PREFS, HOST_SCRIPTS,
   requiredTags, hasTag, tagFor, shouldSkip, modulesExist,
-  firstHostIndex, tagsAreOrdered
+  firstHostIndex, tagsAreOrdered, hostsPrintables, modulesFor
 };

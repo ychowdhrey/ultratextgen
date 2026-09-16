@@ -9773,6 +9773,11 @@ body.pt-pdf-rendering .pt-puzzle-print-holder .pt-puzzle-sheet {
 body.pt-pdf-rendering .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
 body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
 
+/* MERGE 2026-09-16: two independent additions at the same place, kept in
+   full. Above: the coloring studio's visible budgets and switched-off
+   states (PR #891). Below: the A-Z book range, the 2-up/4-up flashcard
+   layouts and the dot-to-dot case toggle (PR #889). Verified disjoint --
+   no selector appears in both. */
 
 /* ============================================================
    Coloring studio: visible budgets and switched-off states
@@ -9837,3 +9842,76 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   color: var(--text-primary);
 }
 .pt-more-field > .pt-field { margin-top: 0.85rem; }
+/* A-Z book page range (2026-09-16): pick which letters the book prints.
+   Every visible label is character data, so nothing here needs translating;
+   the group and the free-text field take their accessible name from the
+   locale's own word for "letter". */
+.pt-book-range {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+}
+.pt-book-range-input {
+  width: 7.5rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pt-book-range-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Flashcard layouts for the A–Z book (2026-09-16): 2 or 4 cards per page with
+   dashed cut lines. The page stays the same flex column at 1-up, so the book
+   that shipped before this is untouched; only is-2up/is-4up become grids.
+   Each card is its own flex column for the same reason the page is one — the
+   figure inside absorbs the leftover height and its SVG is absolutely
+   positioned against it, which needs a definite height to resolve against. */
+.bubble-print-book-page.is-2up,
+.bubble-print-book-page.is-4up {
+  display: grid;
+  gap: 0;
+}
+.bubble-print-book-page.is-2up { grid-template-rows: 1fr 1fr; }
+.bubble-print-book-page.is-4up { grid-template: 1fr 1fr / 1fr 1fr; }
+.bubble-print-book-page.is-2up .pt-card,
+.bubble-print-book-page.is-4up .pt-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0.18in;
+  border: 1px dashed var(--border-color, #c9c9d4);
+}
+.bubble-print-book-page.is-2up .bubble-print-title,
+.bubble-print-book-page.is-4up .bubble-print-title {
+  font-size: 0.9rem;
+  margin: 0 0 0.12in;
+}
+.bubble-print-book-page.is-2up .pt-cut-hint,
+.bubble-print-book-page.is-4up .pt-cut-hint {
+  grid-column: 1 / -1;
+  margin: 0.1in 0 0;
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+}
+/* The cut hint is a row of its own, so it must not be absorbed by the card
+   rows above it — otherwise a 4-up page squeezes its cards to make room. */
+.bubble-print-book-page.is-2up { grid-template-rows: 1fr 1fr auto; }
+.bubble-print-book-page.is-4up { grid-template-rows: 1fr 1fr auto; grid-template-columns: 1fr 1fr; }
+
+/* Case toggle on the dot-to-dot pages (2026-09-16). Both chips are the
+   character itself, so the control carries no translated label; its group
+   takes an accessible name from the locale's own word for "letter". */
+.pt-dot-case { margin: 0.55rem 0 0; }
