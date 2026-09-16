@@ -135,6 +135,7 @@
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
       printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
+      pageCount: { one: "page", other: "pages" },
       save: "Enregistrer",
       saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
@@ -180,6 +181,7 @@
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
       printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
+      pageCount: { one: "página", other: "páginas" },
       save: "Guardar",
       saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
@@ -225,6 +227,7 @@
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
       printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
+      pageCount: { one: "página", other: "páginas" },
       save: "Salvar",
       saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
@@ -270,6 +273,7 @@
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto — una pagina per lettera",
+      pageCount: { one: "pagina", other: "pagine" },
       save: "Salva",
       saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
@@ -364,6 +368,7 @@
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
       printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
+      pageCount: { one: "Seite", other: "Seiten" },
       save: "Speichern",
       saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
@@ -457,7 +462,18 @@
       }
     }
   };
-  const T = I18N[LANG] || I18N.en;
+  /* Shallow-merged over English rather than replaced, so a key a locale block
+     does not define falls back instead of being undefined. `T.pageCount` was
+     missing from five of the eight blocks, and the first read of `.one`
+     threw before buildPrintOptions ran -- which took the settings panel, the
+     share row and the print-to-PDF relabelling down with it, on every German,
+     Spanish, French, Italian and Portuguese printables page at once. Nothing
+     could see it: the markup was valid, every gate passed, and a page whose
+     init aborted looks exactly like a page that never had those features.
+     The merge is shallow on purpose -- each locale's own plural `forms`
+     objects are complete units and must not be merged key-by-key with
+     English's. */
+  const T = Object.assign({}, I18N.en, I18N[LANG] || {});
 
   // Locale-aware pluralizer for the small count labels below (banner flags/
   // pages, handwriting model/trace/blank rows). English deliberately keeps
@@ -1578,13 +1594,16 @@
        this out of the parity, locale-translation and em-dash gates exactly as
        the 2026-09-15 relabelling did. Multi-sheet actions are deliberately
        excluded below -- a 36-page A-Z book is not a PNG. */
-    [[el.alphaPrint, "alphabet_sheet"], [el.practicePrint, "practice_sheet"]].forEach((pair) => {
+    [[el.alphaPrint, "alphabet_sheet", "pt-alphabet-png"], [el.practicePrint, "practice_sheet", "pt-practice-png"]].forEach((pair) => {
       const btn = pair[0];
       if (!btn || btn.dataset.ptPng) return;
       btn.dataset.ptPng = "1";
       const png = document.createElement("button");
       png.type = "button";
       png.className = "bubble-btn";
+      // The id every other section's PNG button carries in page HTML, so this
+      // one is addressable by the same convention even though it is injected.
+      if (!document.getElementById(pair[2])) png.id = pair[2];
       png.textContent = T.downloadPng;
       png.addEventListener("click", () => { pngMode = true; btn.click(); });
       btn.insertAdjacentElement("afterend", png);
