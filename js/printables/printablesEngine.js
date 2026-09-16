@@ -1495,6 +1495,7 @@
     if (typeof nameStyleKey !== "undefined" && nameStyleKey) p.style = nameStyleKey;
     if (typeof genScriptKey !== "undefined" && genScriptKey) p.script = genScriptKey;
     if (CHAR_STYLES && charStyleKey) p.cstyle = charStyleKey;
+    if (nameCase !== "as-typed") p.ncase = nameCase;
     if (el.sizeControl && alphaSizeKey !== "full") p.size = alphaSizeKey;
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
@@ -1561,6 +1562,11 @@
     if (style && typeof setNameStyle === "function" && typeof NAME_STYLES !== "undefined" && NAME_STYLES && NAME_STYLES.some((x) => x.key === style)) setNameStyle(style);
     const script = presetGet("script");
     if (script && typeof setGenScript === "function" && typeof SCRIPT_OPTIONS !== "undefined" && SCRIPT_OPTIONS && SCRIPT_OPTIONS.some((x) => x.key === script)) setGenScript(script);
+    const ncase = presetGet("ncase");
+    if (ncase === "upper" || ncase === "lower") {
+      const chip = $("#pt-name-case [data-case=\"" + ncase + "\"]");
+      if (chip) chip.click();
+    }
     const cstyle = presetGet("cstyle");
     if (cstyle && typeof setCharStyle === "function" && CHAR_STYLES && CHAR_STYLES.some((x) => x.key === cstyle)) setCharStyle(cstyle);
     const size = presetGet("size");
@@ -3118,6 +3124,27 @@
   // still defaults to today's unaffected output until the visitor actively
   // picks Medium or Small.
   function buildSizeControl() {
+    /* Mount it for a page that prints an alphabet and never declared the hook.
+       All 24 English landings gained the control on 2026-09-13; sixteen locale
+       pages that print the same A-Z sheet did not, among them
+       es/imprimibles/moldes-de-letras, the third-largest Bing click page on
+       the site. Created here rather than added to sixteen files for the reason
+       the injected PNG button already records: the markup is identical on
+       every one of them, and a runtime mount keeps a UI control out of the
+       parity, locale-translation and em-dash gates. The control labels itself
+       from T.size.label, which ships in all eight languages, so this adds no
+       string anywhere. Only where alphaPrint exists -- a size control on a
+       page with no alphabet sheet would be a control with no consequence. */
+    if (!el.sizeControl && el.alphaPrint) {
+      const field = document.createElement("div");
+      field.className = "pt-size-field";
+      const mount = document.createElement("div");
+      mount.id = "pt-size-control";
+      field.appendChild(mount);
+      const host = el.alphaPrint.closest(".bubble-actions, .pt-actions") || el.alphaPrint;
+      host.insertAdjacentElement("beforebegin", field);
+      el.sizeControl = mount;
+    }
     if (!el.sizeControl) return;
     // Label itself when the page did not supply one. T.size.label ships
     // translated in all eight locales, so a hub only has to declare the bare
@@ -3376,9 +3403,59 @@
     return first.replace(/^['"]|['"]$/g, "");
   }
 
+  /* Case on the name sheet (PR-17). The three generator tools have carried a
+     case control since they shipped and the name tool never did, so a teacher
+     could not print EMMA for a child still learning capitals, or emma for one
+     who has moved on -- while applyCase() sat right there, reading a select
+     the name tool does not have.
+
+     Two toggle chips rather than a four-option select, because a select needs
+     "As typed" and "Title Case" in eight languages and neither exists in the
+     table, while T.caseUpper and T.caseLower are already there and already
+     harvested. Pressing the active chip releases it, so all three outcomes
+     are reachable from two translated words. The visible chip is the
+     letterform itself, which needs no translation; the accessible name is
+     this locale's own word. Same pattern, and the same reasoning, as the
+     dot-to-dot page's case chips. */
+  let nameCase = "as-typed";
+  function mountNameCase() {
+    if (!el.nameInput || $("#pt-name-case")) return;
+    const row = document.createElement("div");
+    row.id = "pt-name-case";
+    row.className = "pt-choice-row pt-name-case";
+    row.setAttribute("aria-label", T.letterWord);
+    const chips = [];
+    [["upper", "AA", T.caseUpper], ["lower", "aa", T.caseLower]].forEach((spec) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice pt-choice-sm";
+      b.textContent = spec[1];
+      b.dataset.case = spec[0];
+      b.setAttribute("aria-pressed", "false");
+      b.setAttribute("aria-label", spec[2]);
+      b.addEventListener("click", () => {
+        nameCase = nameCase === spec[0] ? "as-typed" : spec[0];
+        chips.forEach((x) => {
+          const on = x.dataset.case === nameCase;
+          x.classList.toggle("is-active", on);
+          x.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        renderNamePreview();
+      });
+      chips.push(b);
+      row.appendChild(b);
+    });
+    const host = el.nameInput.closest(".pt-field, .pt-name-field") || el.nameInput.parentElement;
+    host.insertAdjacentElement("afterend", row);
+  }
+  function applyNameCase(word) {
+    if (nameCase === "upper") return String(word).toUpperCase();
+    if (nameCase === "lower") return String(word).toLowerCase();
+    return word;
+  }
   function nameValue() {
     const raw = el.nameInput ? el.nameInput.value : "";
-    return (raw && raw.trim()) ? raw.trim().slice(0, 40) : NAME_DEMO;
+    return applyNameCase((raw && raw.trim()) ? raw.trim().slice(0, 40) : NAME_DEMO);
   }
 
   function renderNamePreview() {
@@ -3402,6 +3479,36 @@
   // The full name worksheet as a DOM node — one primitive behind the single
   // print and the class-set print, so every sheet in a set matches the solo
   // one. `nameOverride` lets the roster path build one sheet per child.
+  /* A Name and Date line on the sheets that get handed out and collected
+     (PR-04). #pt-design-footer and #pt-puzzle-footer have existed since those
+     tools shipped, and the four sheets a teacher actually collects -- name
+     tracing, letter tracing, handwriting, sight words -- had none, so thirty
+     finished worksheets came back with nothing on them saying whose they were.
+     Every competitor the 2026-09-16 audit fetched offers this.
+
+     No toggle and no new string: T.nameLabel and T.dateLabel already ship in
+     all eight languages, and a practice sheet carrying a name line is the
+     field norm rather than a decoration. The design and puzzle sheets keep
+     their toggles, because those are display pieces where a name line is a
+     choice. */
+  function nameDateRow() {
+    const row = document.createElement("div");
+    row.className = "pt-sheet-footer";
+    [T.nameLabel, T.dateLabel].forEach((label) => {
+      const f = document.createElement("span");
+      f.className = "pt-sheet-footer-field";
+      const l = document.createElement("span");
+      l.className = "pt-sheet-footer-label";
+      l.textContent = label;
+      f.appendChild(l);
+      const rule = document.createElement("span");
+      rule.className = "pt-sheet-footer-rule";
+      f.appendChild(rule);
+      row.appendChild(f);
+    });
+    return row;
+  }
+
   function nameSheetNode(nameOverride) {
     const name = nameOverride != null ? String(nameOverride).slice(0, 40) : nameValue();
     const rows = document.createElement("div");
@@ -3414,6 +3521,7 @@
     for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
+    rows.appendChild(nameDateRow());
     return rows;
   }
 
@@ -3425,7 +3533,7 @@
       names.forEach((n) => {
         const page = document.createElement("div");
         page.className = "pt-sheet-page";
-        page.appendChild(nameSheetNode(n));
+        page.appendChild(nameSheetNode(applyNameCase(n)));
         set.appendChild(page);
       });
       printWrap(joinWords([names.length + " " + T.sheets, "·", cap(NOUN)]), set, "name_worksheet");
@@ -3735,6 +3843,7 @@
     // Finish on blank ruled lines for independent writing (skip if already blank).
     const blanks = level === TRACE_LEVELS.length ? 0 : 2;
     for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
+    sheet.appendChild(nameDateRow());
     return sheet;
   }
 
@@ -6335,6 +6444,7 @@
     /* Before applyPresetInputs(), which fills a roster from ?roster= and
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
+    mountNameCase();
     if (CFG.roster === true) {
       ["name", "gen", "design", "puzzle"].forEach((kind) => {
         const made = mountRoster(kind);

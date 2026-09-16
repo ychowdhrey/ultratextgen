@@ -9930,3 +9930,31 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
    character itself, so the control carries no translated label; its group
    takes an accessible name from the locale's own word for "letter". */
 .pt-dot-case { margin: 0.55rem 0 0; }
+
+/* Name and Date line on the collected practice sheets (name tracing, letter
+   tracing, handwriting, sight words). Tokens only, per the CSS conventions;
+   the rule is a border rather than an <hr> so it prints as one hairline. */
+.pt-sheet-footer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.4rem;
+  padding-top: 0.25rem;
+}
+.pt-sheet-footer-field {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex: 1 1 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.pt-sheet-footer-rule {
+  flex: 1 1 auto;
+  border-bottom: 2px solid var(--border-light);
+  height: 0.9em;
+}
+@media print {
+  .pt-sheet-footer-field { color: #1a1a2e; }
+  .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
+}
