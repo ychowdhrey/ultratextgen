@@ -2078,6 +2078,40 @@
     });
   }
 
+  /* PR-10, second half: carry the stroke-order overlay into the PNG.
+
+     strokeDirectionData.js has shipped on 13 pages since 2026-09-05 and
+     addWordStrokeOverlay() draws it into SVG only, so the numbered start dots
+     and arrows were on the screen and on the printed sheet and absent from
+     the PNG -- the one artifact that leaves the site. Every one of those 13
+     pages is a name or word tool, so the WORD export is where this is
+     reachable; the single-character export is not, because no page both
+     renders one character and loads the stroke data.
+
+     The overlay is rasterised from the engine's OWN addWordStrokeOverlay()
+     rather than redrawn against Canvas primitives. A second copy of that
+     geometry would drift from the first, which is the failure this file
+     documents in four other places, and the SVG path data is the only source
+     of the stroke shapes anyway. */
+  function strokeOverlayImage(word, width, height, fontSize, spacingPx, anchorY) {
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("xmlns", SVGNS);
+    svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+    svg.setAttribute("width", width);
+    svg.setAttribute("height", height);
+    addWordStrokeOverlay(svg, word, fontSize, spacingPx, anchorY, "central", width);
+    if (!svg.querySelector("path")) return Promise.resolve(null);
+    const blob = new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    return new Promise((res) => {
+      const img = new Image();
+      img.onload = () => { URL.revokeObjectURL(url); res(img); };
+      // A failed overlay must not cost the visitor the sheet itself.
+      img.onerror = () => { URL.revokeObjectURL(url); res(null); };
+      img.src = url;
+    });
+  }
+
   // A word / name -> wide PNG. opts (all optional — the name-style designer
   // path): font / spacing / fill / strokeColor / solid / transparent.
   function wordPNG(text, opts) {
@@ -2138,7 +2172,14 @@
         ctx.fillText(out, width / 2, height * 0.52);
       }
       if (!o.transparent) drawCredit(ctx, width, height, RENDER === "glyph");
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
+      const finish = () => downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png", "word");
+      if (RENDER === "outline" && strokeOverlayOn()) {
+        strokeOverlayImage(out, width, height, fontSize, spacingEm ? fontSize * spacingEm : 0, height * 0.52)
+          .then((img) => { if (img) ctx.drawImage(img, 0, 0, width, height); finish(); })
+          .catch(finish);
+      } else {
+        finish();
+      }
     }, o.font ? String(o.font).split(",")[0].trim().replace(/^['"]|['"]$/g, "") : null);
   }
 
@@ -3181,6 +3222,7 @@
           o.classList.toggle("is-active", isOn);
           o.setAttribute("aria-checked", isOn ? "true" : "false");
         });
+        updateSheetCost();
       });
       group.appendChild(b);
     });
@@ -3418,6 +3460,139 @@
      this locale's own word. Same pattern, and the same reasoning, as the
      dot-to-dot page's case chips. */
   let nameCase = "as-typed";
+  /* PR-19 -- the same word, on another kind of sheet.
+
+     One name could become a tracing sheet, a coloring page, a dot-to-dot, a
+     puzzle and a banner, and nothing on any of those pages offered the next
+     one: the journey map's own arrows existed as a diagram and as zero links.
+     Preset URLs already make it a link rather than a build, so this carries
+     whatever is typed into the sibling tool that takes a word.
+
+     ENGLISH ONLY, and that is a requirement rather than a shortcut: every
+     destination is an English tool, and linking one from a locale page is
+     exactly what the locale-native internal linking rule forbids. The labels
+     are read from the page's own rendered footer, so they cannot drift from
+     the site's own names for these tools and nothing is authored here.
+
+     Runtime rather than static markup, unlike the /learn/ bridge: the href
+     carries a word that only exists once someone types it, so there is no
+     crawlable link to lose. */
+  const CARRY_TOOLS = [
+    "/printables/name-tracing/", "/printables/letter-tracing/",
+    "/printables/handwriting-worksheet-generator/", "/printables/sight-word-tracing/",
+    "/printables/coloring-page-maker/", "/printables/dot-to-dot-name/",
+    "/printables/name-puzzle-maker/", "/printables/banner-maker/"
+  ];
+  /* PR-12 -- "how many sheets will this cost me?" was unanswerable before
+     pressing the button, on a family whose own community evidence is
+     "we can only afford printer ink a couple times a year". Every number here
+     is already computed: the roster length for a class set, tileLayout()'s
+     perPage for a tiled alphabet. This only displays what the engine knows.
+     T.sheets and T.pageCount ship in all eight languages, so it needs no
+     string; the paper is named by printPrefs rather than the hardcoded
+     "US Letter" the meta line used to print in every locale. */
+  function sheetCostText(count, pages) {
+    const bits = [];
+    if (count > 1) bits.push(count + " " + T.sheets);
+    if (pages > 1) bits.push(pages + " " + plural(pages, T.pageCount));
+    // The paper qualifies a count; on its own it is not a cost, and a line
+    // reading only "US Letter" under a button is noise.
+    if (bits.length && PP && PP.paperLabel) bits.push(PP.paperLabel());
+    return bits.join(" \u00b7 ");
+  }
+  function updateSheetCost() {
+    const host = $("#pt-sheet-cost");
+    if (!host) return;
+    const roster = primaryRoster();
+    const n = roster ? rosterEntries(roster).length : 0;
+    let pages = 0;
+    if (el.sizeControl && alphaSizeKey !== "full") {
+      const preset = SIZE_PRESETS.filter((x) => x.key === alphaSizeKey)[0];
+      if (preset && preset.heightIn) {
+        const per = tileLayout(preset.heightIn).perPage;
+        if (per > 0) pages = Math.ceil(CHARS.length / per);
+      }
+    }
+    const text = sheetCostText(n, pages);
+    host.textContent = text;
+    host.hidden = !text;
+  }
+  /* PR-33 -- "give students fewer items per page or line" is a named
+     accommodation (Understood.org states it twice), and the row count was the
+     only density lever on these sheets while every select started at 2. One
+     row is a real setting for a child who cannot face a full page, and it is
+     one <option> whose label is a digit, so it needs no translating. Added at
+     runtime rather than to each page's HTML for the same reason the size
+     control is: identical markup everywhere, and it keeps a UI change out of
+     the copy gates. */
+  function addLowDensityOption(sel) {
+    if (!sel || sel.querySelector('option[value="1"]')) return;
+    const o = document.createElement("option");
+    o.value = "1";
+    o.textContent = "1";
+    sel.insertBefore(o, sel.firstChild);
+  }
+
+  function mountSheetCost() {
+    if ($("#pt-sheet-cost")) return;
+    const btn = el.namePrint || el.genPrint || el.designPrint || el.puzzlePrint || el.alphaPrint;
+    if (!btn) return;
+    const out = document.createElement("p");
+    out.id = "pt-sheet-cost";
+    out.className = "pt-sheet-cost";
+    out.setAttribute("aria-live", "polite");
+    out.hidden = true;
+    (btn.closest(".bubble-actions, .pt-actions") || btn).insertAdjacentElement("afterend", out);
+    const roster = primaryRoster();
+    if (roster) roster.addEventListener("input", () => updateSheetCost());
+    updateSheetCost();
+  }
+
+  function mountCarryRow() {
+    const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+    if (lang !== "en") return null;
+    const input = primaryInput();
+    if (!input || $("#pt-carry-row")) return null;
+    const here = window.location.pathname.replace(/\/?$/, "/");
+    const links = [];
+    $$("footer .footer-link").forEach((a) => {
+      const href = (a.getAttribute("href") || "").replace(/\/?$/, "/");
+      if (href === here || CARRY_TOOLS.indexOf(href) === -1) return;
+      if (links.some((l) => l.href === href)) return;
+      links.push({ href: href, label: a.textContent.trim() });
+    });
+    if (links.length < 2) return null;
+    const row = document.createElement("div");
+    row.id = "pt-carry-row";
+    row.className = "pt-carry-row";
+    const lab = document.createElement("span");
+    lab.className = "pt-carry-label";
+    lab.textContent = "Same word, another sheet:";
+    row.appendChild(lab);
+    links.forEach((l) => {
+      const a = document.createElement("a");
+      a.className = "pt-carry-link";
+      a.href = l.href;
+      a.textContent = l.label;
+      a.dataset.carry = l.href;
+      row.appendChild(a);
+    });
+    const host = input.closest(".pt-field, .pt-name-field") || input.parentElement;
+    (host.closest("section") || host).appendChild(row);
+    updateCarryRow();
+    input.addEventListener("input", () => updateCarryRow());
+    return row;
+  }
+  function updateCarryRow() {
+    const row = $("#pt-carry-row");
+    const input = primaryInput();
+    if (!row || !input) return;
+    const word = (input.value || "").trim().slice(0, 40);
+    $$(".pt-carry-link", row).forEach((a) => {
+      a.href = a.dataset.carry + (word ? "?name=" + encodeURIComponent(word) : "");
+    });
+  }
+
   function mountNameCase() {
     if (!el.nameInput || $("#pt-name-case")) return;
     const row = document.createElement("div");
@@ -3897,7 +4072,7 @@
       if (level !== TRACE_LEVELS.length) parts.push("2 " + plural(2, T.blankCount));
       const rosterN = rosterNames(el.genRoster).length;
       if (rosterN >= 2) parts.push(rosterN + " " + T.sheets);
-      el.genPreviewMeta.textContent = parts.join(" · ") + " · " + T.usLetter;
+      el.genPreviewMeta.textContent = parts.join(" \u00b7 ") + " \u00b7 " + (PP && PP.paperLabel ? PP.paperLabel() : T.usLetter);
     }
     if (SCRIPT_OPTIONS) {
       const active = SCRIPT_OPTIONS.find((o) => o.key === genScriptKey) || SCRIPT_OPTIONS[0];
@@ -6445,6 +6620,14 @@
        therefore has to find one. el is built at module scope, so a roster
        created here is written back onto it rather than re-queried everywhere. */
     mountNameCase();
+    mountSheetCost();
+    [el.nameRows, el.genRows].forEach(addLowDensityOption);
+    /* After load, not here: footer.js is deferred and sits AFTER this file in
+       document order, so at init() the footer this reads its labels from does
+       not exist yet. The same deferred-script trap symbol-explorer.js hit with
+       readyState, in its other form. */
+    if (document.readyState === "complete") mountCarryRow();
+    else window.addEventListener("load", mountCarryRow, { once: true });
     if (CFG.roster === true) {
       ["name", "gen", "design", "puzzle"].forEach((kind) => {
         const made = mountRoster(kind);

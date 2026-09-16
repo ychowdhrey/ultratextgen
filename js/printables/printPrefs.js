@@ -255,6 +255,15 @@
     marginIn: marginIn,
     scale: scale,
     hasStored: function () { return stored; },
+    /* The chosen paper's own name, in this page's language. The printables
+       preview meta printed a hardcoded "US Letter" on every page in every
+       locale, which stopped being true the moment paper became a control --
+       the same "a control with no visible consequence" defect from the other
+       end, where the display asserts a setting nobody chose. */
+    paperLabel: function () {
+      const L = panelLabels();
+      return L[values.paper] || L.letter || "US Letter";
+    },
     pageStyleCss: pageStyleCss,
     save: save,
     /* o.only, when given, lists the controls this caller actually honours.

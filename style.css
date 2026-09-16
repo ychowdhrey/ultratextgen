@@ -9958,3 +9958,31 @@ body.pt-pdf-rendering .pt-banner-page { border-bottom: none; }
   .pt-sheet-footer-field { color: #1a1a2e; }
   .pt-sheet-footer-rule { border-bottom-color: #9aa3b2; }
 }
+
+/* "Same word, another sheet" -- the journey links under a generator input.
+   Screen only: a printed sheet has nowhere to click. */
+.pt-carry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.pt-carry-label { color: var(--text-secondary); font-weight: 600; }
+.pt-carry-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1px;
+}
+.pt-carry-link:hover, .pt-carry-link:focus-visible { border-bottom-color: currentColor; }
+@media print { .pt-carry-row { display: none; } }
+
+/* How many sheets this print will cost, before it is pressed. Screen only. */
+.pt-sheet-cost {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+@media print { .pt-sheet-cost { display: none; } }
