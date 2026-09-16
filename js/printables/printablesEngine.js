@@ -76,7 +76,7 @@
       downloadPng: "Download PNG",
       copyPaste: "Copy-paste", copy: "Copy", howToDraw: "How to draw it", lowerSuffix: " · lower",
       level: "Level", nameLabel: "Name:", dateLabel: "Date:", space: "space",
-      dotToDot: "dot to dot", bannerFlag: "Banner flag —",
+      dotToDot: "dot to dot", bannerFlag: "Banner flag:",
       dotsCount: "dots", dotNumbers: "Numbered dots",
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
@@ -88,7 +88,7 @@
       nameStyleLabel: "Style", nameFillLabel: "Fill", nameStrokeLabel: "Outline",
       nameSolidLabel: "Colour it in now (solid fill)",
       pngTransparent: "PNG (transparent)",
-      classSet: "Class set — one sheet per name", sheets: "sheets",
+      classSet: "Class set: one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Save as PDF for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
@@ -102,25 +102,25 @@
       traceCount: { one: "trace", other: "trace" },
       blankCount: { one: "blank", other: "blank" },
       trace: {
-        solid:    { label: "Solid model", hint: "Full dark letters — trace right on top" },
+        solid:    { label: "Solid model", hint: "Full dark letters: trace right on top" },
         "bold-dot": { label: "Bold dotted", hint: "Thick, closely-spaced dots to join" },
         "fine-dot": { label: "Fine dotted", hint: "Thinner dots with a little more space" },
-        dashed:   { label: "Dashed", hint: "Broken dashes — more line to complete" },
+        dashed:   { label: "Dashed", hint: "Broken dashes: more line to complete" },
         faded:    { label: "Faded ghost", hint: "Light gray letters to write over" },
-        faint:    { label: "Faint guide", hint: "Barely-there outline — almost solo" },
-        blank:    { label: "Blank line", hint: "No guide — write it from memory" }
+        faint:    { label: "Faint guide", hint: "Barely-there outline: almost solo" },
+        blank:    { label: "Blank line", hint: "No guide: write it from memory" }
       },
       dot: {
-        easy:   { label: "Easy", hint: "Big gaps, few dots — the youngest kids" },
+        easy:   { label: "Easy", hint: "Big gaps, few dots: the youngest kids" },
         medium: { label: "Medium", hint: "A balanced connect-the-dots" },
         hard:   { label: "Hard", hint: "More dots and finer letter detail" },
-        expert: { label: "Expert", hint: "Lots of dots — a real challenge" }
+        expert: { label: "Expert", hint: "Lots of dots: a real challenge" }
       },
       size: {
         label: "Print size",
-        full:   { label: "Full page", hint: "One big letter per sheet — today's default" },
-        medium: { label: "Medium (~4 in)", hint: "Several letters per sheet — good for posters" },
-        small:  { label: "Small (~2 in)", hint: "Many letters per sheet — great for bulletin boards" }
+        full:   { label: "Full page", hint: "One big letter per sheet: today's default" },
+        medium: { label: "Medium (~4 in)", hint: "Several letters per sheet: good for posters" },
+        small:  { label: "Small (~2 in)", hint: "Many letters per sheet: great for bulletin boards" }
       }
     },
     fr: {
@@ -277,13 +277,13 @@
       downloadPng: "Scarica PNG",
       copyPaste: "Copia e incolla", copy: "Copia", howToDraw: "Come disegnarla", lowerSuffix: " · min.",
       level: "Livello", nameLabel: "Nome:", dateLabel: "Data:", space: "spazio",
-      dotToDot: "unisci i puntini", bannerFlag: "Bandierina —",
+      dotToDot: "unisci i puntini", bannerFlag: "Bandierina – ",
       dotsCount: "punti", dotNumbers: "Punti numerati",
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
       printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
-      printBook: "Salva come libretto — una pagina per lettera",
+      printBook: "Salva come libretto – una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
       alphabetWord: "alfabeto",
@@ -293,30 +293,30 @@
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
       nameSolidLabel: "Colora adesso (riempimento pieno)",
       pngTransparent: "PNG (trasparente)",
-      classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
+      classSet: "Set per la classe – un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Salva come PDF per l'intero set.",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
       puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
       trace: {
-        solid:    { label: "Modello pieno", hint: "Lettere piene e scure — ricalca sopra" },
+        solid:    { label: "Modello pieno", hint: "Lettere piene e scure – ricalca sopra" },
         "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
         "fine-dot": { label: "Puntinato fine", hint: "Punti più sottili e un po' più distanziati" },
-        dashed:   { label: "Tratteggiato", hint: "Trattini spezzati — più linea da completare" },
+        dashed:   { label: "Tratteggiato", hint: "Trattini spezzati – più linea da completare" },
         faded:    { label: "Fantasma chiaro", hint: "Lettere grigio chiaro da ripassare" },
-        faint:    { label: "Guida leggera", hint: "Contorno appena visibile — quasi da solo" },
-        blank:    { label: "Riga vuota", hint: "Nessuna guida — scrivila a memoria" }
+        faint:    { label: "Guida leggera", hint: "Contorno appena visibile – quasi da solo" },
+        blank:    { label: "Riga vuota", hint: "Nessuna guida – scrivila a memoria" }
       },
       dot: {
-        easy:   { label: "Facile", hint: "Spazi ampi, pochi punti — i più piccoli" },
+        easy:   { label: "Facile", hint: "Spazi ampi, pochi punti – i più piccoli" },
         medium: { label: "Medio", hint: "Un unisci-i-puntini equilibrato" },
         hard:   { label: "Difficile", hint: "Più punti e più dettaglio nella lettera" },
-        expert: { label: "Esperto", hint: "Tanti punti — una vera sfida" }
+        expert: { label: "Esperto", hint: "Tanti punti – una vera sfida" }
       },
       size: {
         label: "Formato di stampa",
-        full:   { label: "Pagina intera", hint: "Una grande lettera per foglio — l'opzione predefinita" },
-        medium: { label: "Medio (~10 cm)", hint: "Diverse lettere per foglio — comodo per i poster" },
-        small:  { label: "Piccolo (~5 cm)", hint: "Tante lettere per foglio — ideale per una bacheca" }
+        full:   { label: "Pagina intera", hint: "Una grande lettera per foglio – l'opzione predefinita" },
+        medium: { label: "Medio (~10 cm)", hint: "Diverse lettere per foglio – comodo per i poster" },
+        small:  { label: "Piccolo (~5 cm)", hint: "Tante lettere per foglio – ideale per una bacheca" }
       }
     },
     pl: {
@@ -377,7 +377,7 @@
       downloadPng: "PNG herunterladen",
       copyPaste: "Kopieren", copy: "Kopieren", howToDraw: "So wird er gezeichnet", lowerSuffix: " · klein",
       level: "Stufe", nameLabel: "Name:", dateLabel: "Datum:", space: "Leerzeichen",
-      dotToDot: "Punkte verbinden", bannerFlag: "Wimpel —",
+      dotToDot: "Punkte verbinden", bannerFlag: "Wimpel – ",
       dotsCount: "Punkte", dotNumbers: "Nummerierte Punkte",
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
@@ -393,7 +393,7 @@
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
       nameSolidLabel: "Jetzt ausmalen (volle Füllung)",
       pngTransparent: "PNG (transparent)",
-      classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
+      classSet: "Klassensatz – ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Als PDF speichern verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
@@ -402,25 +402,25 @@
       traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
       blankCount: { one: "Leerzeile", other: "Leerzeilen" },
       trace: {
-        solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben — direkt nachfahren" },
+        solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben – direkt nachfahren" },
         "bold-dot": { label: "Dick gepunktet", hint: "Dicke, eng gesetzte Punkte zum Verbinden" },
         "fine-dot": { label: "Fein gepunktet", hint: "Dünnere Punkte mit etwas mehr Abstand" },
-        dashed:   { label: "Gestrichelt", hint: "Unterbrochene Striche — mehr Linie zu ergänzen" },
+        dashed:   { label: "Gestrichelt", hint: "Unterbrochene Striche – mehr Linie zu ergänzen" },
         faded:    { label: "Blasser Schatten", hint: "Hellgraue Buchstaben zum Überschreiben" },
-        faint:    { label: "Leichte Hilfe", hint: "Kaum sichtbarer Umriss — fast allein" },
-        blank:    { label: "Leere Linie", hint: "Keine Hilfe — aus dem Gedächtnis schreiben" }
+        faint:    { label: "Leichte Hilfe", hint: "Kaum sichtbarer Umriss – fast allein" },
+        blank:    { label: "Leere Linie", hint: "Keine Hilfe – aus dem Gedächtnis schreiben" }
       },
       dot: {
-        easy:   { label: "Leicht", hint: "Große Abstände, wenige Punkte — die Jüngsten" },
+        easy:   { label: "Leicht", hint: "Große Abstände, wenige Punkte – die Jüngsten" },
         medium: { label: "Mittel", hint: "Ausgewogenes Punkte-Verbinden" },
         hard:   { label: "Schwer", hint: "Mehr Punkte und feinere Details" },
-        expert: { label: "Experte", hint: "Viele Punkte — eine echte Herausforderung" }
+        expert: { label: "Experte", hint: "Viele Punkte – eine echte Herausforderung" }
       },
       size: {
         label: "Druckgröße",
-        full:   { label: "Ganze Seite", hint: "Ein großer Buchstabe pro Blatt — die heutige Standardeinstellung" },
-        medium: { label: "Mittel (~10 cm)", hint: "Mehrere Buchstaben pro Blatt — gut für Poster" },
-        small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt — ideal für eine Pinnwand" }
+        full:   { label: "Ganze Seite", hint: "Ein großer Buchstabe pro Blatt – die heutige Standardeinstellung" },
+        medium: { label: "Mittel (~10 cm)", hint: "Mehrere Buchstaben pro Blatt – gut für Poster" },
+        small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt – ideal für eine Pinnwand" }
       }
     }
 ,
@@ -3646,6 +3646,38 @@
     return rosterEntries(mount).map((e) => e.name);
   }
 
+  /* Mount a class roster on a page that wants one but does not author the
+     markup (CFG.roster === true). Seven English tools ship a roster and none
+     of their locale siblings did, while T.classSet and T.classSetPngHint have
+     shipped translated in all eight languages the whole time: a mount gap, not
+     a translation gap. Every string here is one of those, so nothing is
+     authored or translated at the call site, and the sample names in the
+     placeholder are the same Emma/Noah/Ava the English and German pages
+     already use. A page that authors its own roster is left alone. */
+  function mountRoster(kind) {
+    const input = $("#pt-" + kind + "-input");
+    if (!input || $("#pt-" + kind + "-roster")) return null;
+    const field = document.createElement("details");
+    field.className = "pt-roster-field";
+    const summary = document.createElement("summary");
+    summary.textContent = T.classSet;
+    field.appendChild(summary);
+    const ta = document.createElement("textarea");
+    ta.id = "pt-" + kind + "-roster";
+    ta.className = "main-input";
+    ta.rows = 5;
+    ta.placeholder = "Emma\nNoah\nAva";
+    ta.setAttribute("aria-label", T.classSet);
+    field.appendChild(ta);
+    const hint = document.createElement("p");
+    hint.className = "pt-roster-hint";
+    hint.textContent = T.classSetPngHint;
+    field.appendChild(hint);
+    const host = input.closest(".pt-field, .pt-name-field, .bubble-field") || input.parentElement;
+    host.insertAdjacentElement("afterend", field);
+    return ta;
+  }
+
   /* Append a level to the sample names already in a roster placeholder, so the
      syntax is visible without a sentence. Idempotent, and it leaves the first
      sample bare so both forms are shown: a line with a level and a line
@@ -6300,6 +6332,15 @@
 
   function init() {
     loadQrModule();
+    /* Before applyPresetInputs(), which fills a roster from ?roster= and
+       therefore has to find one. el is built at module scope, so a roster
+       created here is written back onto it rather than re-queried everywhere. */
+    if (CFG.roster === true) {
+      ["name", "gen", "design", "puzzle"].forEach((kind) => {
+        const made = mountRoster(kind);
+        if (made) el[kind + "Roster"] = made;
+      });
+    }
     applyPresetInputs();
     initStrokeToggle();
     /* Before the first paint, not after: setCharStyle() reassigns the FONT
