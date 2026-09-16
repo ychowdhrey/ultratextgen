@@ -6646,8 +6646,13 @@ body.dark-mode .pt-design-preview { background: #1c2030; }
   align-items: start;
   margin-top: 1.25rem;
 }
-.pt-studio-controls { min-width: 0; }
-.pt-studio-preview { min-width: 0; position: sticky; top: 1rem; }
+/* The preview is FIRST in source so it leads on a phone (see the 900px
+   block below), but the desktop grid's first column is the narrow 380px one
+   and the sheet belongs in the wide one. Explicit order puts the controls
+   back in column 1 without moving the markup. Pages whose markup already
+   ran controls-then-preview are unaffected, since that is this same order. */
+.pt-studio-controls { min-width: 0; order: 1; }
+.pt-studio-preview { min-width: 0; position: sticky; top: 1rem; order: 2; }
 
 /* Grouped control fields */
 .pt-field { margin-bottom: 1.35rem; }
