@@ -1774,6 +1774,19 @@
      retyping what it says, and the QR removes that step for anyone holding a
      phone. Scaled off the canvas rather than fixed, because this same
      function signs a 1024px square letter and a 1600x520 word strip. */
+  /* Height of the credit strip appended below a sheet that fills its own
+     canvas edge to edge.
+
+     drawCredit() puts the QR in the bottom-right CORNER, which is right for a
+     single big glyph but lands on the furniture of a full sheet: on the
+     coloring sheet the corner box (x 838-958, y 1238-1358) covers the end of
+     the Date rule and two symbols of the bottom border row. So those sheets
+     get a strip below them instead, which is also what the PRINTED page looks
+     like -- attachCredit() appends its credit block beneath the sheet rather
+     than inside it. 170 clears the 162 units drawCredit reserves (a 120 QR
+     plus its 42 pad) with a little air above. */
+  const PNG_CREDIT_BAND = 170;
+
   function drawCredit(ctx, w, h, light) {
     const url = creditUrl();
     const qrNs = qrModule();
@@ -4259,11 +4272,15 @@
   function designPNG() {
     withFont(() => {
       const W = SHEET_W, H = SHEET_H, scale = 2;
+      // The sheet keeps its own 1000x1400 geometry; the canvas is taller by
+      // the credit strip, so nothing on the sheet moves and the PNG carries
+      // the same QR the printed page and every other export already do.
+      const canvasH = H + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = W * scale; canvas.height = H * scale;
+      canvas.width = W * scale; canvas.height = canvasH * scale;
       const ctx = canvas.getContext("2d");
       ctx.scale(scale, scale);
-      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, canvasH);
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
@@ -4330,7 +4347,7 @@
         ctx.textAlign = "center";
       }
 
-      ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText(siteCredit(), W / 2, H - 24);
+      drawCredit(ctx, W, canvasH);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png", "design");
     });
   }
@@ -4941,11 +4958,15 @@
       const W = Math.max(1000, chars.length * 140 + 240);
       const H = 900;
       const pad = 70;
+      // Same as the coloring sheet: the puzzle keeps its own geometry and the
+      // canvas is taller by the credit strip, so the QR has somewhere to sit
+      // that is not on top of the Name and Date rules.
+      const canvasH = H + PNG_CREDIT_BAND;
       const canvas = document.createElement("canvas");
-      canvas.width = W; canvas.height = H;
+      canvas.width = W; canvas.height = canvasH;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, W, H);
+      ctx.fillRect(0, 0, W, canvasH);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
@@ -5005,9 +5026,7 @@
         ctx.textAlign = "center";
       }
 
-      ctx.font = "22px " + FONT;
-      ctx.fillStyle = "#aeb4c0";
-      ctx.fillText(siteCredit(), W / 2, 860);
+      drawCredit(ctx, W, canvasH);
 
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png", "puzzle");
     });
