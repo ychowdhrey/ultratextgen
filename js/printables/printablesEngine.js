@@ -1223,7 +1223,32 @@
     it: ["Stampa"], pl: ["Wydrukuj", "Drukuj"], id: ["Cetak"], de: []
   };
   const RECENT_KEY = "utg_printables_recent";
-  const ROSTER_KEY = "utg_printables_roster:" + window.location.pathname;
+  /* ONE roster for the whole pillar, not one per URL. It was keyed on
+     location.pathname, so a class typed on /printables/name-tracing/ was
+     invisible on the puzzle, sight-word, coloring and dot-to-dot tools that
+     mount the same control -- a teacher retyped thirty names to move between
+     two sheets of the same class. The per-path key is read once as a
+     migration source, exactly as saved-items.js absorbed utg_saved_styles and
+     printPrefs absorbed "auto", so nobody's typed roster disappears. */
+  const ROSTER_KEY = "utg_printables_roster";
+  const ROSTER_KEY_LEGACY = "utg_printables_roster:" + window.location.pathname;
+  function readRoster() {
+    try {
+      const shared = localStorage.getItem(ROSTER_KEY);
+      if (shared) return shared;
+      const legacy = localStorage.getItem(ROSTER_KEY_LEGACY);
+      if (legacy) { localStorage.setItem(ROSTER_KEY, legacy); return legacy; }
+    } catch (err) { /* private mode: no roster memory, which is not an error */ }
+    return null;
+  }
+  function writeRoster(value) {
+    try {
+      if (value && value.trim()) localStorage.setItem(ROSTER_KEY, value);
+      else localStorage.removeItem(ROSTER_KEY);
+      // The legacy key is not kept in step: it exists only to be read once.
+      localStorage.removeItem(ROSTER_KEY_LEGACY);
+    } catch (err) { /* optional */ }
+  }
   const RECENT_MAX = 6;
   /* Sheet setup (paper, orientation, margins, ink saver, render scale) is
      owned by js/printables/printPrefs.js, so this engine, monogramEngine and
@@ -1261,7 +1286,10 @@
   // Usable page area for the tiled/bulletin print, following the chosen
   // paper and orientation (landscape swaps the two).
   function printArea() {
-    const paper = PAPERS[printPrefs.paper] || PAPERS.auto;
+    // PAPERS.auto was removed with the "Automatic" option, so this fallback
+    // resolved to undefined and threw on the next property read instead of
+    // degrading. letter is the module's own documented default.
+    const paper = PAPERS[printPrefs.paper] || PAPERS.letter;
     const a = printPrefs.orient === "landscape" ? { w: paper.h, h: paper.w } : { w: paper.w, h: paper.h };
     // Every printed page carries a credit footer now (attachCredit), so the
     // tile budget has to leave room for it. Without this the "Small" (2in)
@@ -1471,7 +1499,11 @@
     const heading = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && heading.value.trim()) p.heading = heading.value.trim();
     if (el.strip && activeChar && !CFG.initialChar) p.ch = activeChar;
-    if (printPrefs.paper !== "auto") p.paper = printPrefs.paper;
+    /* Paper travels, but only as a suggestion -- see the read side, which
+       ignores it for a visitor who has chosen their own. The old guard tested
+       for "auto", a value printPrefs.js removed, so it was dead and every
+       shared link carried the sender's paper unconditionally. */
+    p.paper = printPrefs.paper;
     if (printPrefs.orient !== "portrait") p.orient = printPrefs.orient;
     return p;
   }
@@ -1494,7 +1526,9 @@
     const roster = presetGet("roster");
     const rosterEl = primaryRoster();
     if (roster && rosterEl) {
-      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).slice(0, 40).join("\n");
+      // ROSTER_CAP, not 40: a 41-name class lost its tail on the round trip
+      // and nothing said so.
+      rosterEl.value = String(roster).split("|").map((x) => x.trim()).filter(Boolean).slice(0, ROSTER_CAP).join("\n");
       const field = rosterEl.closest("details"); if (field) field.open = true;
     }
     const rows = presetGet("rows"); const rowsEl = firstEl([el.nameRows, el.genRows]);
@@ -1503,12 +1537,19 @@
     if (cs && el.genCase && ["as-typed", "upper", "lower", "title"].indexOf(cs) !== -1) el.genCase.value = cs;
     const heading = presetGet("heading"); const headingEl = firstEl([el.designHeading, el.puzzleHeading]);
     if (heading && headingEl) headingEl.value = String(heading).slice(0, 60);
-    const paper = presetGet("paper"); if (paper && PAPERS[paper]) printPrefs.paper = paper;
+    /* A link's paper seeds a visitor who has never chosen, and never
+       overrides one who has. Paper is a property of the recipient's printer,
+       not of the sheet: an A4 teacher opening a US colleague's link was being
+       handed a US Letter page box, silently, on a sheet they were about to
+       print and cut. Orientation below is the sender's design decision and
+       does travel. */
+    const paper = presetGet("paper");
+    if (paper && PAPERS[paper] && !(PP && PP.hasStored && PP.hasStored())) printPrefs.paper = paper;
     const orient = presetGet("orient"); if (orient === "landscape" || orient === "portrait") printPrefs.orient = orient;
     if (!roster && rosterEl && !rosterEl.value.trim()) {
       // Roster memory: a teacher's class list stays on the device between
       // visits (this device only, never sent anywhere).
-      try { const remembered = localStorage.getItem(ROSTER_KEY); if (remembered) rosterEl.value = remembered; } catch (err) { /* optional */ }
+      const remembered = readRoster(); if (remembered) rosterEl.value = remembered;
     }
   }
   // Phase 2 (after the sections initialise): apply state that has setters.
@@ -1554,7 +1595,7 @@
     list.unshift({ href: href, label: label.slice(0, 40), page: (document.title || "").split("|")[0].trim().slice(0, 60), sheet: sheet || "sheet", t: Date.now() });
     try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (err) { /* optional */ }
     const roster = primaryRoster();
-    if (roster) { try { if (roster.value.trim()) localStorage.setItem(ROSTER_KEY, roster.value); else localStorage.removeItem(ROSTER_KEY); } catch (err) { /* optional */ } }
+    if (roster) writeRoster(roster.value);
     renderRecent();
   }
   let recentMount = null;
@@ -1836,7 +1877,7 @@
     const roster = primaryRoster();
     if (roster) {
       let t2 = null;
-      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => { try { if (roster.value.trim()) localStorage.setItem(ROSTER_KEY, roster.value); else localStorage.removeItem(ROSTER_KEY); } catch (err) { /* optional */ } }, 800); });
+      roster.addEventListener("input", () => { clearTimeout(t2); t2 = setTimeout(() => writeRoster(roster.value), 800); });
     }
   }
 
@@ -3575,9 +3616,55 @@
   // is expected to support. Capped so a stray paste can't build 500 sheets;
   // 60 leaves room for the whole Dolch primer list (52 words) as one packet.
   const ROSTER_CAP = 60;
-  function rosterNames(mount) {
+  /* A roster line may carry its own difficulty: "Noah 2" prints Noah's sheet
+     at level 2 while the rest of the class stays on the level the picker
+     shows. This is the site's answer to the best-evidenced pain in the
+     printables corpus -- a mixed-ability class needs one sheet per child AT
+     THAT CHILD'S LEVEL, and the only way to get it was to set the level, print
+     one child, change the level and print again. genSheetNode(word, level)
+     has always taken both arguments; only the class-set loop passed one.
+
+     A trailing number, because a number needs no translating: the level names
+     ship in eight languages and a syntax built on them would work in one. The
+     number must be separated by whitespace and be within the ladder, so
+     "Anna 2" is a level and "R2D2" is a name. Anything else is the whole line.
+     A line with no number gets the picker's level, which is what every line
+     got before. */
+  function rosterEntries(mount) {
     if (!mount) return [];
-    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP);
+    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP)
+      .map((line) => {
+        const m = line.match(/^(.*\S)\s+(\d{1,2})$/);
+        if (m) {
+          const lv = parseInt(m[2], 10);
+          if (lv >= 1 && lv <= TRACE_LEVELS.length) return { name: m[1], level: lv };
+        }
+        return { name: line, level: null };
+      });
+  }
+  function rosterNames(mount) {
+    return rosterEntries(mount).map((e) => e.name);
+  }
+
+  /* Append a level to the sample names already in a roster placeholder, so the
+     syntax is visible without a sentence. Idempotent, and it leaves the first
+     sample bare so both forms are shown: a line with a level and a line
+     without. Lines that are not plain sample names (the leading "one name per
+     line" instruction, which every locale writes its own way) are recognised
+     by already containing a space, and left alone. */
+  function annotateRosterPlaceholder(mount) {
+    if (!mount || !mount.placeholder || /\s\d+$/m.test(mount.placeholder)) return;
+    const mid = Math.max(2, Math.min(TRACE_LEVELS.length, 2));
+    const high = Math.max(mid + 1, Math.min(TRACE_LEVELS.length, 5));
+    let sample = 0;
+    mount.placeholder = mount.placeholder.split("\n").map((line) => {
+      const t = line.trim();
+      if (!t || /\s/.test(t)) return line;
+      sample++;
+      if (sample === 2) return line + " " + mid;
+      if (sample === 3) return line + " " + high;
+      return line;
+    }).join("\n");
   }
 
   // Word-list preset buttons (page-authored, crawlable): a .pt-roster-preset
@@ -3687,20 +3774,23 @@
 
   function buildGeneratorSheet() {
     const spec = levelSpec(genLevel());
-    const names = rosterNames(el.genRoster);
-    if (names.length >= 2) {
+    const entries = rosterEntries(el.genRoster);
+    if (entries.length >= 2) {
       const set = document.createElement("div");
       set.className = "pt-class-set";
-      names.forEach((n) => {
+      entries.forEach((e) => {
         const page = document.createElement("div");
         page.className = "pt-sheet-page";
-        page.appendChild(genSheetNode(n));
+        page.appendChild(genSheetNode(e.name, e.level));
         set.appendChild(page);
       });
-      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
+      // A mixed set has no one level to name, so the title says how many
+      // sheets rather than asserting a level that is only true of some.
+      const mixed = entries.some((e) => e.level != null && e.level !== genLevel());
+      printWrap(joinWords([entries.length + " " + T.sheets, "\u00b7", mixed ? "" : spec.label, "\u00b7", siteCredit()]), set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet", sheetPageNode(genSheetNode()), "generator_sheet");
+    printWrap(joinWords([genValue(), "\u00b7", spec.label]), sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -3716,7 +3806,7 @@
       page.appendChild(genSheetNode(word, i + 1));
       set.appendChild(page);
     });
-    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · " + siteCredit(), set, "generator_ladder");
+    printWrap(joinWords([word, "\u00b7", TRACE_LEVELS.length + " " + T.sheets, "\u00b7", siteCredit()]), set, "generator_ladder");
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -3809,6 +3899,13 @@
       });
     }
     if (el.genRoster) {
+      /* Teach the per-line level by example rather than by sentence. The
+         placeholder already lists sample names in the page's own language;
+         appending a level to two of them shows the syntax with no word that
+         needs translating, and it stays in step with whatever each of the
+         eight locales wrote. Only the ladder tools get it -- the puzzle,
+         design and name rosters have no levels and must not imply one. */
+      annotateRosterPlaceholder(el.genRoster);
       let rosterTimer = null;
       el.genRoster.addEventListener("input", () => {
         if (rosterTimer) clearTimeout(rosterTimer);

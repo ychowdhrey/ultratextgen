@@ -109,9 +109,16 @@
     quality: "high"
   };
 
+  /* Whether this visitor has print settings of their own. A shared preset
+     carries the SENDER's paper, and paper is a property of the recipient's
+     printer rather than of the sheet -- an A4 teacher opening a US colleague's
+     link was being handed US Letter. So a link may seed paper for someone who
+     has never chosen, and never overrides someone who has. */
+  let stored = false;
   try {
     const saved = JSON.parse(localStorage.getItem(KEY) || "null");
     if (saved && typeof saved === "object") {
+      stored = true;
       /* A stored "auto" is a pref from before this module existed. Resolve it
          to the detected paper rather than dropping it: the visitor never
          chose Letter, the old default chose it for them. */
@@ -247,6 +254,7 @@
     paperFull: paperFull,
     marginIn: marginIn,
     scale: scale,
+    hasStored: function () { return stored; },
     pageStyleCss: pageStyleCss,
     save: save,
     /* o.only, when given, lists the controls this caller actually honours.
