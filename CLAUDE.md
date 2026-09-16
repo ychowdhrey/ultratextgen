@@ -3371,11 +3371,14 @@ The owner chose to drop **Save and Save as PDF**, leaving Print + Download PNG.
 site-wide and deleting the strip would orphan sheets a visitor saved earlier
 rather than tidy anything.
 
-**Scope, so the next session does not have to re-derive it:** only the
-per-character action row lost its PDF button. `addPdfButtons()` still serves the
-alphabet-book and generator print buttons on the other printable families, where
-a 26-page book as a file is the entire point. Widening that is a separate
-decision.
+**Superseded 2026-09-15, and the paragraph above is kept only as the record of
+what was decided on 09-13.** That decision left the row as Print + Download PNG
+with `addPdfButtons()` still serving the other families. The owner then reversed
+the direction entirely: **every sheet action writes a PDF and the print dialog is
+the fallback only**, so `addPdfButtons()` no longer exists (grep returns 0) and
+there is no longer any row that offers a print button. The per-character row is
+Save as PDF + Download PNG; the alphabet and practice sheets gained the same PNG
+on 2026-09-16. Do not cite the paragraph above as current scope.
 
 ### Attribution: a QR on both exports, and a real link in the PDF
 

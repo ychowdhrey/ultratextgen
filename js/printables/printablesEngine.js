@@ -81,7 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "Print settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -96,6 +96,8 @@
       bannerFlagsLabel: "banner flags", ofWord: "of",
       flagCount: { one: "flag", other: "flags" },
       pageCount: { one: "page", other: "pages" },
+      alphabetWord: "alphabet",
+      caseUpper: "Uppercase", caseLower: "Lowercase",
       modelCount: { one: "model", other: "model" },
       traceCount: { one: "trace", other: "trace" },
       blankCount: { one: "blank", other: "blank" },
@@ -133,9 +135,12 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages d'impression", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
+      ofWord: "sur",
+      alphabetWord: "alphabet",
+      caseUpper: "Majuscules", caseLower: "Minuscules",
       save: "Enregistrer",
       saved: "Enregistré",
       nameStyleLabel: "Style", nameFillLabel: "Remplissage", nameStrokeLabel: "Contour",
@@ -179,9 +184,12 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes de impresión", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
+      ofWord: "de",
+      alphabetWord: "alfabeto",
+      caseUpper: "Mayúsculas", caseLower: "Minúsculas",
       save: "Guardar",
       saved: "Guardado",
       nameStyleLabel: "Estilo", nameFillLabel: "Relleno", nameStrokeLabel: "Contorno",
@@ -225,9 +233,12 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações de impressão", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       pageCount: { one: "página", other: "páginas" },
+      ofWord: "de",
+      alphabetWord: "alfabeto",
+      caseUpper: "Maiúsculas", caseLower: "Minúsculas",
       save: "Salvar",
       saved: "Salvo",
       nameStyleLabel: "Estilo", nameFillLabel: "Preenchimento", nameStrokeLabel: "Contorno",
@@ -271,9 +282,12 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni di stampa", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto — una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
+      ofWord: "di",
+      alphabetWord: "alfabeto",
+      caseUpper: "Maiuscole", caseLower: "Minuscole",
       save: "Salva",
       saved: "Salvato",
       nameStyleLabel: "Stile", nameFillLabel: "Riempimento", nameStrokeLabel: "Contorno",
@@ -317,7 +331,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia druku", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -332,6 +346,8 @@
       bannerFlagsLabel: "chorągiewki", ofWord: "z",
       flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
       pageCount: { one: "strona", few: "strony", many: "stron" },
+      alphabetWord: "alfabet",
+      caseUpper: "Wielkie litery", caseLower: "Małe litery",
       trace: {
         solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
         "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
@@ -366,9 +382,12 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "Druckeinstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       pageCount: { one: "Seite", other: "Seiten" },
+      ofWord: "von",
+      alphabetWord: "Alphabet",
+      caseUpper: "Großbuchstaben", caseLower: "Kleinbuchstaben",
       save: "Speichern",
       saved: "Gespeichert",
       nameStyleLabel: "Stil", nameFillLabel: "Füllung", nameStrokeLabel: "Kontur",
@@ -421,7 +440,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan cetak", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -436,6 +455,8 @@
       bannerFlagsLabel: "bendera banner", ofWord: "dari",
       flagCount: { one: "bendera", other: "bendera" },
       pageCount: { one: "halaman", other: "halaman" },
+      alphabetWord: "alfabet",
+      caseUpper: "Huruf besar", caseLower: "Huruf kecil",
       modelCount: { one: "contoh", other: "contoh" },
       traceCount: { one: "tebalkan", other: "tebalkan" },
       blankCount: { one: "kosong", other: "kosong" },
@@ -771,7 +792,9 @@
      translated — nothing new was authored for it. */
   let paperPreviewNode = null;
   function paperCaption() {
-    const paperLabel = { auto: PO.auto, letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.auto;
+    // "auto" is no longer selectable and a saved one migrates to a real paper,
+    // so the fallback names a real sheet rather than a mode that is gone.
+    const paperLabel = { letter: PO.letter, a4: PO.a4, legal: PO.legal }[printPrefs.paper] || PO.letter;
     const parts = [
       paperLabel,
       printPrefs.orient === "landscape" ? PO.landscape : PO.portrait,
@@ -2773,10 +2796,15 @@
       page.className = "pt-tile-page";
       const title = document.createElement("h3");
       title.className = "bubble-print-title";
-      // Same: the per-page footer carries the credit, so it comes off the
-      // heading. ("page N of M" is still hardcoded English on every locale —
-      // pre-existing, reported rather than fixed here.)
-      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length;
+      /* Same: the per-page footer carries the credit, so it comes off the
+         heading. Every word here is now the locale's own: NOUN from the
+         page config, preset.label from T.size, and alphabetWord /
+         pageCount.one / ofWord from the i18n table. Until 2026-09-16 this
+         read "alphabet ... page 1 of 3" in English on all 16 non-EN pages
+         that offer tiled printing. The separator is the middle dot the
+         table already uses in lowerSuffix, never an em dash. */
+      title.textContent = cap(NOUN) + " " + T.alphabetWord + " \u00b7 " + preset.label +
+        " \u00b7 " + T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       page.appendChild(title);
 
       const grid = document.createElement("div");
@@ -3722,11 +3750,51 @@
   // so without it every level would render a single letter identically (which
   // is why the per-letter pages historically hid the picker).
   const DOT_LEVELS = [
-    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 12, hint: T.dot.easy.hint },
+    /* easy was 12 until 2026-09-16, which could not draw a letter with more
+       than a dozen corners: measured across all 62 glyphs, 16 reproduced worse
+       than 10% of their height, and m, s and a were visibly mangled -- m lost
+       a whole stem. 14 fixes all three on inspection and takes the count over
+       10% from 16 to 8, while staying clearly below medium's 16 so the ladder
+       still means something. Raising it further was tried and rejected: 15
+       sits one dot under medium and the picker stops distinguishing them.
+       `total` (the shared budget for a whole word) is deliberately unchanged;
+       that is a different surface and was not measured here. */
+    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 14, hint: T.dot.easy.hint },
     { key: "medium", label: T.dot.medium.label, total: 42, single: 16, hint: T.dot.medium.hint },
     { key: "hard",   label: T.dot.hard.label,   total: 60, single: 19, hint: T.dot.hard.hint },
     { key: "expert", label: T.dot.expert.label, total: 84, single: 22, hint: T.dot.expert.hint }
   ];
+  /* What a level actually yields for one character, so the picker can say the
+     real number instead of the nominal floor. Memoised per character and font
+     because it traces, and the trace is the expensive half of a render. */
+  const dotCountCache = new Map();
+  function dotCornerCountFor(ch) {
+    const key = String(ch) + "|" + FONT;
+    if (dotCountCache.has(key)) return dotCountCache.get(key);
+    let corners = 0;
+    try {
+      const R = dotRasterChar(String(ch).toUpperCase() === String(ch) ? ch : ch);
+      const cc = dotComponents(R.mask, R.w, R.h);
+      const minArea = Math.max(24, R.w * R.h * 0.00035);
+      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+      if (kept.length) {
+        const main = kept[0];
+        let sx = -1, sy = -1;
+        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+          for (let x = main.minx; x <= main.maxx; x++) {
+            if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; }
+          }
+        }
+        if (sx >= 0) corners = dotCornerIndices(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy), DOT_CORNER_DEGS[1]).length;
+      }
+    } catch (err) { corners = 0; }
+    dotCountCache.set(key, corners);
+    return corners;
+  }
+  function dotCountFor(ch, nominal) {
+    return Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
+  }
+
   function dotLevel(key) {
     for (let i = 0; i < DOT_LEVELS.length; i++) if (DOT_LEVELS[i].key === key) return DOT_LEVELS[i];
     return DOT_LEVELS[1];
@@ -3994,7 +4062,26 @@
 
   // Trace a whole word into per-letter dot sets laid out on a shared baseline.
   // Returns { letters:[{mainPts,accentPts,cx,cy}], bbox } in raster units.
-  function dotWordGeometry(text, total) {
+  /* A single fixed dot count cannot serve both O and m. O has no corners and
+     is drawn perfectly by 8; lowercase m has about twenty and is a zigzag at
+     twelve. Measured across all 62 glyphs at the old easy budget of 12, 16 of
+     them reproduced worse than 10% of their height, worst W at 23.0% and m at
+     21.1%.
+
+     Raising the whole ladder was the obvious fix and the wrong one: 15 dots
+     gets easy to 4 glyphs over 10%, but the ladder is 12/16/19/22, so easy
+     would then sit one dot below medium and the difficulty picker would stop
+     meaning anything.
+
+     So the level sets a FLOOR, not a fixed count, and a letter gets at least
+     as many dots as it has corners (capped at DOT_MAX). Easy now means "the
+     fewest dots that still draw this letter" rather than "twelve dots
+     whatever the letter is". A round letter is unchanged; only corner-rich
+     ones lift, and they lift exactly as far as they need to.
+
+     Single characters only. For a word the budget is shared out by perimeter
+     and a per-letter floor would blow it. */
+  function dotWordGeometry(text, total, singleMode) {
     const chars = [...String(text)];
     const raw = [];
     let xoff = 0;
@@ -4023,6 +4110,7 @@
     const letters = [];
     raw.forEach((r) => {
       let n = Math.round((r.perim / totalPerim) * total);
+      if (singleMode) n = Math.max(n, dotCornerIndices(r.boundary, DOT_CORNER_DEGS[1]).length);
       n = Math.max(DOT_MIN, Math.min(DOT_MAX, n));
       const mainPts = dotResampleClosed(r.boundary, n).map((p) => [p[0] + r.xoff, p[1]]);
       const accentPts = r.accents.map((c) => [c.cx + r.xoff, c.cy]);
@@ -4045,7 +4133,7 @@
   function layoutDotWord(text, level, box) {
     const lvl = dotLevel(level);
     const drawn = [...String(text)].filter((c) => c !== " ").length;
-    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total);
+    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total, drawn === 1);
     const b = geom.bbox;
     const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
     const scale = Math.min(box.w / bw, box.h / bh);
@@ -4232,7 +4320,11 @@
       b.setAttribute("aria-checked", on ? "true" : "false");
       b.appendChild(document.createTextNode(lvl.label));
       const small = document.createElement("small");
-      small.textContent = lvl.single + " " + T.dotsCount;
+      // The real count for THIS character, not the level's floor: the control
+      // is rebuilt on every selectChar, so it can be specific. A picker that
+      // said "12 dots" while the sheet drew 20 would be the same class of
+      // defect as a setting with no visible consequence.
+      small.textContent = dotCountFor(activeChar || CHARS[0], lvl.single) + " " + T.dotsCount;
       b.appendChild(small);
       b.addEventListener("click", () => {
         dotPageState.level = lvl.key;
@@ -4258,6 +4350,14 @@
         b.className = "pt-choice pt-choice-sm";
         b.textContent = pair[1];
         b.setAttribute("role", "radio");
+        /* The visible chip is the character itself, which needs no
+           translation; the ACCESSIBLE name is this locale's own word, so a
+           screen-reader user hears "Kleinbuchstaben" rather than a bare "a"
+           under a group vaguely labelled "letter". Every one of the sixteen
+           words is harvested from that locale's own pages -- Kleinbuchstaben
+           94 uses, minuscules 492, minúsculas 645, huruf kecil 368 -- not
+           authored here. */
+        b.setAttribute("aria-label", pair[0] === "upper" ? T.caseUpper : T.caseLower);
         const on = pair[0] === dotPageState.case;
         b.classList.toggle("is-active", on);
         b.setAttribute("aria-checked", on ? "true" : "false");
