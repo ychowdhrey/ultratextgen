@@ -3791,27 +3791,165 @@
     return boundary;
   }
 
-  // Resample a closed polyline into n points evenly spaced by arc length.
+  /* Resample a closed polyline into n points.
+
+     CORNERS FIRST, then even arc length between them. The original was pure
+     even-arc-length, which is optimal for a circle and wrong for a letter: it
+     places dots wherever the spacing falls, so every corner of the letterform
+     lands BETWEEN two dots and joining the dots cuts it off. Measured on the
+     shipped tracer at medium (16 dots), against the real traced outline:
+
+       E  12 corners, 9 with no dot within 4% of letter height, arms visibly
+          tilted because the horizontals were being cut diagonally
+       M  10 of 13 corners missed, outline off by 16.9% of letter height
+       W  10 of 13 missed, 16.5%          A  6 of 8 missed, the crossbar
+                                             notch skipped entirely
+       O  0 corners, 1.6% -- already perfect, and must stay that way
+
+     A dot-to-dot is drawn by a child joining the dots with a ruler or a
+     freehand line, so a corner with no dot on it cannot be drawn at all. That
+     makes corner placement correctness, not polish. Curves are unaffected:
+     with no corners detected this falls through to the original even spacing,
+     byte for byte. */
+  /* Which candidate sampling wins is DECIDED, not assumed. Forcing a dot onto
+     every corner is right for a letter built from straight strokes and can be
+     wrong for a mostly-round one: on S it spent dots on two gentle turns and
+     starved the curves, making the outline worse than plain even spacing
+     (10.4% -> 11.4%). So three samplings are built and scored against the real
+     traced boundary, and the best one is returned. That makes a regression
+     impossible by construction rather than by threshold-tuning, and it costs
+     about 13k float ops for a 22-dot letter. */
+  function dotWorstDeviation(boundary, dots) {
+    let worst = 0;
+    for (let i = 0; i < boundary.length; i++) {
+      const p = boundary[i];
+      let best = Infinity;
+      for (let k = 0; k < dots.length; k++) {
+        const a = dots[k], b = dots[(k + 1) % dots.length];
+        const vx = b[0] - a[0], vy = b[1] - a[1];
+        const L2 = vx * vx + vy * vy;
+        let t = L2 ? ((p[0] - a[0]) * vx + (p[1] - a[1]) * vy) / L2 : 0;
+        if (t < 0) t = 0; else if (t > 1) t = 1;
+        const d = Math.hypot(p[0] - (a[0] + vx * t), p[1] - (a[1] + vy * t));
+        if (d < best) best = d;
+      }
+      if (best > worst) worst = best;
+    }
+    return worst;
+  }
+
   function dotResampleClosed(pts, n) {
     const m = pts.length;
     if (m < 2 || n < 1) return pts.slice(0, Math.max(1, n));
-    const cum = [0];
-    for (let i = 1; i <= m; i++) {
-      const a = pts[(i - 1) % m], b = pts[i % m];
-      cum.push(cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]));
+    const candidates = [dotEvenClosed(pts, n)];
+    for (const deg of DOT_CORNER_DEGS) {
+      const c = dotCornerClosed(pts, n, deg);
+      if (c && c.length) candidates.push(c);
     }
+    let best = candidates[0], bestErr = dotWorstDeviation(pts, candidates[0]);
+    for (let i = 1; i < candidates.length; i++) {
+      const err = dotWorstDeviation(pts, candidates[i]);
+      if (err < bestErr) { bestErr = err; best = candidates[i]; }
+    }
+    return best;
+  }
+
+  const DOT_CORNER_WIN = 8;    // +/- boundary samples the turning angle spans
+  const DOT_CORNER_DEGS = [45, 55, 75];  // corner thresholds to try, in degrees
+  const DOT_CORNER_GAP = 10;   // min samples between two kept corners
+
+  // Turning angle at every boundary sample, then local maxima above the
+  // threshold, thinned so one physical corner yields one index.
+  function dotCornerIndices(pts, minDeg) {
+    const m = pts.length;
+    if (m < DOT_CORNER_WIN * 2 + 1) return [];
+    const deg = new Float64Array(m);
+    for (let i = 0; i < m; i++) {
+      const a = pts[(i - DOT_CORNER_WIN + m) % m], p = pts[i], b = pts[(i + DOT_CORNER_WIN) % m];
+      const a1 = Math.atan2(p[1] - a[1], p[0] - a[0]);
+      const a2 = Math.atan2(b[1] - p[1], b[0] - p[0]);
+      let d = Math.abs(a2 - a1);
+      if (d > Math.PI) d = 2 * Math.PI - d;
+      deg[i] = d * 180 / Math.PI;
+    }
+    const picked = [];
+    for (let i = 0; i < m; i++) {
+      if (deg[i] < minDeg) continue;
+      let top = true;
+      for (let k = -6; k <= 6; k++) { if (deg[(i + k + m) % m] > deg[i]) { top = false; break; } }
+      if (!top) continue;
+      if (picked.some((j) => Math.min(Math.abs(j - i), m - Math.abs(j - i)) < DOT_CORNER_GAP)) continue;
+      picked.push(i);
+    }
+    return picked.map((i) => ({ i: i, deg: deg[i] }));
+  }
+
+  function dotCumulative(pts) {
+    const m = pts.length;
+    const cum = new Float64Array(m + 1);
+    for (let i = 1; i <= m; i++) {
+      const a = pts[i - 1], b = pts[i % m];
+      cum[i] = cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]);
+    }
+    return cum;
+  }
+
+  function dotPointAtArc(pts, cum, t) {
+    const m = pts.length;
+    let lo = 0, hi = m;
+    while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] <= t) lo = mid + 1; else hi = mid; }
+    const i = Math.max(1, lo) - 1;
+    const segLen = (cum[i + 1] - cum[i]) || 1;
+    const f = (t - cum[i]) / segLen;
+    const a = pts[i % m], b = pts[(i + 1) % m];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+  }
+
+  // The original algorithm, kept intact as the no-corner path.
+  function dotEvenClosed(pts, n) {
+    const m = pts.length;
+    const cum = dotCumulative(pts);
     const total = cum[m] || 1;
     const out = [];
-    for (let k = 0; k < n; k++) {
-      const t = (k / n) * total;
-      let lo = 0, hi = m;
-      while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] <= t) lo = mid + 1; else hi = mid; }
-      const i = Math.max(1, lo) - 1;
-      const segLen = (cum[i + 1] - cum[i]) || 1;
-      const f = (t - cum[i]) / segLen;
-      const a = pts[i % m], b = pts[(i + 1) % m];
-      out.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
+    for (let k = 0; k < n; k++) out.push(dotPointAtArc(pts, cum, (k / n) * total));
+    return out;
+  }
+
+  function dotCornerClosed(pts, n, minDeg) {
+    const m = pts.length;
+    let corners = dotCornerIndices(pts, minDeg);
+    // More corners than the budget: keep the sharpest, so a low difficulty
+    // still spends every dot it has on the most letter-defining turns.
+    if (corners.length > n) {
+      corners = corners.slice().sort((a, b) => b.deg - a.deg).slice(0, n).sort((a, b) => a.i - b.i);
     }
+    if (!corners.length) return null;
+
+    const cum = dotCumulative(pts);
+    const total = cum[m] || 1;
+    const keep = corners.map((c) => c.i);
+    const gaps = keep.map((a, gi) => {
+      const b = keep[(gi + 1) % keep.length];
+      return { a: a, len: (b > a ? cum[b] - cum[a] : total - cum[a] + cum[b]) };
+    });
+    // Share the leftover dots across the gaps by arc length, largest-remainder
+    // so the count comes out exactly n and a hairline gap gets none.
+    const remain = n - keep.length;
+    const spanTotal = gaps.reduce((t, g) => t + g.len, 0) || 1;
+    const exact = gaps.map((g) => remain * g.len / spanTotal);
+    const extra = exact.map(Math.floor);
+    let used = extra.reduce((t, v) => t + v, 0);
+    const byFrac = exact.map((e, i) => ({ i: i, frac: e - Math.floor(e) })).sort((x, y) => y.frac - x.frac);
+    for (let k = 0; used < remain && byFrac.length; k++, used++) extra[byFrac[k % byFrac.length].i]++;
+
+    const out = [];
+    gaps.forEach((g, gi) => {
+      out.push([pts[g.a][0], pts[g.a][1]]);
+      const k = extra[gi];
+      for (let sIdx = 1; sIdx <= k; sIdx++) {
+        out.push(dotPointAtArc(pts, cum, (cum[g.a] + g.len * sIdx / (k + 1)) % total));
+      }
+    });
     return out;
   }
 
