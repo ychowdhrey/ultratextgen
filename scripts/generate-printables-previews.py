@@ -24,7 +24,15 @@ stroke, traceWordSVG()'s three ruled guides and dash specs, the dot-to-dot
 engine's outer-silhouette numbered loop, flagSVG()'s dashed pennants. The
 Unicode glyph families (cursive / calligraphy) go through the same registry
 maps in styles.js the engine renders with. Nothing here is a second copy of
-page copy: the image is text-free apart from the letters and the cred line.
+page copy.
+
+Correction 2026-09-16: that sentence used to end "...: the image is text-free
+apart from the letters and the cred line", which the coloring-page-maker sheet
+no longer is, because it draws a heading. The PRINCIPLE is unchanged and is
+the half that binds: the heading is HARVESTED from the page's own
+`#pt-design-heading` placeholder (heading_example below), exactly as `demo`
+and the cross-stitch sample word already are, so there is still one owner and
+a locale page cannot end up with an English heading. Never hardcode copy here.
 
 Build-time only — the same line generate-site-art.py already draws: cairosvg
 rasterises the SVG here, on a developer machine or in CI, and the site ships
@@ -147,6 +155,29 @@ def _first_family(font_css):
     return first or None
 
 
+# "e.g. " / "z. B. " / "es. " / "np. " -- one or two short letter groups, each
+# closed by a period. Every locale writes its own, so the example heading is
+# read off the page and the lead-in stripped rather than authored here.
+EG_PREFIX_RE = re.compile(r"^(?:[^\W\d_]{1,3}\.\s*){1,2}", re.UNICODE)
+
+
+def heading_example(raw):
+    """The example heading a coloring-page-maker page shows in its own
+    `#pt-design-heading` placeholder, minus the locale's "for example" lead-in.
+
+    Refuses rather than guesses: a lead-in this does not recognise would draw
+    "np. Kolorowanka Emmy" onto the sheet, and an image is the one surface no
+    gate in this repo reads, so the failure would be silent."""
+    txt = htmlmod.unescape(raw).strip()
+    out = EG_PREFIX_RE.sub("", txt).strip()
+    if not out or "." in out[:6]:
+        raise SystemExit(
+            f"heading placeholder {txt!r}: cannot tell the \"for example\" lead-in from the "
+            f"heading. Teach EG_PREFIX_RE this locale's form rather than shipping the lead-in "
+            f"into the preview image.")
+    return out
+
+
 def parse_page(rel):
     path = os.path.join(REPO, rel)
     with open(path, encoding="utf-8") as fh:
@@ -163,6 +194,9 @@ def parse_page(rel):
     # The cross-stitch pages carry no *Demo key: their sample word is the
     # value the reader actually sees in the chart input on load.
     stitch_demo = re.search(r'<input\b(?=[^>]*\bid="cs-input")[^>]*\bvalue="([^"]*)"', h)
+    # The designer sheet's optional heading: the page's own example, in the
+    # page's own language (see heading_example).
+    head_ph = re.search(r'<input\b(?=[^>]*\bid="pt-design-heading")[^>]*\bplaceholder="([^"]*)"', h)
     script_font = re.search(r'scriptOptions\s*:\s*\[\s*\{[^}]*?\bfont\s*:\s*"([^"]*)"', cfg, re.S)
     if m:
         engine = "printables"
@@ -189,6 +223,11 @@ def parse_page(rel):
                  or _cfg_str(cfg, "puzzleDemo") or (_js_str(designer.group(1)) if designer else None)
                  or (htmlmod.unescape(stitch_demo.group(1)).strip() or None if stitch_demo else None)),
         "initialChar": _cfg_str(cfg, "initialChar"),
+        "headingDemo": heading_example(head_ph.group(1)) if head_ph else None,
+        # designSheetSVG slices the heading at DESIGN_HEADING_MAX on every path
+        # (typed or preset), so this is what the sheet can actually carry.
+        "headingMax": int(re.search(r"\bheadingMaxChars\s*:\s*(\d+)", cfg).group(1))
+                      if re.search(r"\bheadingMaxChars\s*:\s*(\d+)", cfg) else 48,
     }
 
 
@@ -262,7 +301,7 @@ EN_ALT = {
         "landing": "Sight word tracing worksheet sample for the word {demo}: solid, dotted and dashed rows on ruled lines",
     },
     "coloring-page-maker": {
-        "landing": "Name coloring page sample: the name {demo} as large hollow letters to color in",
+        "landing": "Name coloring page sample: the name {demo} as large hollow letters filled with hearts to color in, under a heading and inside a star border",
     },
     "dot-to-dot-name": {
         "landing": "Dot to dot name sample: {DEMO} as numbered dots to connect, one loop per letter",
@@ -676,8 +715,129 @@ def r_alphabet_grid(page, fd):
     return sheet("".join(parts))
 
 
-def r_word_outline(page, fd, word=None, boxed=True, stroke=None, row=False):
-    """A hollow word (coloring-page-maker's designer sheet, graffiti demo)."""
+# ---------------------------------------------------- designed coloring sheet
+#
+# designSheetSVG() decorations, for the coloring-page-maker family only. The
+# preview used to draw the page's demo word as a PLAIN hollow outline with no
+# heading and no border, which is byte-for-byte the configuration the live tool
+# boots into (designState = {fill:"plain", border:"none"}, DESIGN.demo) -- so
+# the one indexable image on the page was a raster copy of the live preview
+# sitting directly above it, and showed none of the three things the maker can
+# do that the stripped-down name tool on /printables/alphabet-coloring-pages/
+# cannot. It now draws a configuration the tool really produces and the default
+# does not. Audit 2026-09-16.
+#
+# All geometry below is printablesEngine.js's, expressed against ITS sheet
+# (SHEET_W x SHEET_H) and mapped onto this landscape card, so the proportions
+# a reader sees here are the ones that print.
+DESIGN_SHEET_W, DESIGN_SHEET_H, DESIGN_SHEET_M = 1000, 1400, 70
+DESIGN_FRAME_Y = 18          # designSheetSVG's card rect
+DESIGN_BORDER_FS = 34        # BORDER_FS
+DESIGN_BORDER_TOP_Y = 78     # BORDER_TOP_Y
+DESIGN_BORDER_COUNT = 11     # addBorderRow(): count
+DESIGN_BORDER_SIDE = 60      # addBorderRow(): first x
+DESIGN_BORDER_COL = "#c8ccd6"
+DESIGN_HEADING_FS = 62
+DESIGN_HEADING_Y = 168
+DESIGN_CY_HEADING = 740      # designSheetSVG: cy with a heading
+DESIGN_PAT_TILE = 48         # addFillPattern(): non-stripe tile
+DESIGN_PAT_COL = "#9aa3b2"
+DESIGN_PAT_SW = 3
+# The engine's credit band, which is what reserves room under the bottom
+# border row. CREDIT_FS 22, ascent 0.92em, daylight 12.
+DESIGN_CREDIT_ASCENT = 0.92
+DESIGN_BORDER_DESCENT = 0.20
+DESIGN_BORDER_GAP = 12
+
+# Which configuration the preview depicts. Constrained, not decorative: it has
+# to be something a visitor can reproduce in the tool (both keys are in the
+# page's own swatch rows, and "Emma" is 4 characters, inside fillMaxChars 8),
+# and it has to differ from the live default on every axis. Hearts inside a
+# starred frame reads at thumbnail size in image search, where two patterns
+# from the same family would not.
+DESIGN_PREVIEW_FILL = "hearts"
+DESIGN_PREVIEW_BORDER = "stars"
+
+
+def heart_path(cx, cy, s):
+    """heartPath() from printablesEngine.js, verbatim."""
+    y = cy - s * 0.55
+    return (f"M{cx} {y + s * 0.35}"
+            f" C{cx} {y} {cx - s} {y} {cx - s} {y + s * 0.5}"
+            f" C{cx - s} {y + s * 1.05} {cx} {y + s * 1.35} {cx} {y + s * 1.65}"
+            f" C{cx} {y + s * 1.35} {cx + s} {y + s * 1.05} {cx + s} {y + s * 0.5}"
+            f" C{cx + s} {y} {cx} {y} {cx} {y + s * 0.35} Z")
+
+
+def star_path(cx, cy, outer, inner, points=5):
+    """starPath() from printablesEngine.js, verbatim."""
+    d = ""
+    step = math.pi / points
+    for i in range(points * 2):
+        r = outer if i % 2 == 0 else inner
+        a = -math.pi / 2 + i * step
+        d += ("M" if i == 0 else "L") + f"{cx + r * math.cos(a):.1f} {cy + r * math.sin(a):.1f}"
+    return d + "Z"
+
+
+def fill_pattern_def(kind, uid, k):
+    """addFillPattern(): a tiled outline shape painted as the glyph's own fill,
+    so it paints only inside the letters (no clipPath -- text-as-clip is
+    unreliable across renderers, and cairosvg is one of them).
+
+    `k` scales the tile with the letters. The tile is a fixed size on PAPER, so
+    depicting it faithfully means preserving its ratio to the letter, not its
+    absolute size on a canvas that is a different shape from the sheet."""
+    tile = DESIGN_PAT_TILE * k
+    c, sw = DESIGN_PAT_COL, DESIGN_PAT_SW * k
+    m = tile / 2
+    if kind == "dots":
+        shape = f'<circle cx="{m:.1f}" cy="{m:.1f}" r="{12 * k:.1f}" fill="none" stroke="{c}" stroke-width="{sw:.1f}"/>'
+    elif kind == "hearts":
+        shape = f'<path d="{heart_path(m, m, 13 * k)}" fill="none" stroke="{c}" stroke-width="{sw:.1f}"/>'
+    elif kind == "stars":
+        shape = f'<path d="{star_path(m, 25 * k, 15 * k, 7 * k)}" fill="none" stroke="{c}" stroke-width="{sw:.1f}"/>'
+    else:
+        raise SystemExit(f"fill_pattern_def: no tile for {kind!r} (stripes needs patternTransform; add it here)")
+    return (f'<defs><pattern id="{uid}" patternUnits="userSpaceOnUse" '
+            f'width="{tile:.1f}" height="{tile:.1f}">{shape}</pattern></defs>', f"url(#{uid})")
+
+
+def border_row(kind, y, size, left, gap, count=DESIGN_BORDER_COUNT):
+    """addBorderRow(): one row of decorative symbols across the sheet.
+
+    The engine sets these as TEXT and leans on the browser's per-glyph font
+    fallback to find a font holding U+2605 / U+2665. cairosvg has no per-glyph
+    fallback (see CLAUDE.md, generate-site-art.py's font rules), and the page
+    fonts here are display faces that carry neither, so the same shapes are
+    drawn as paths: a star the reader recognises, never tofu or a dropped
+    glyph. They are filled, not stroked, matching the glyph they stand in for."""
+    r = size * 0.36
+    out = []
+    for i in range(count):
+        cx = left + i * gap
+        if kind == "stars":
+            d = star_path(cx, y, r, r * 0.45)
+        elif kind == "hearts":
+            d = heart_path(cx, y - r * 0.55, r * 0.62)
+        else:
+            raise SystemExit(f"border_row: no shape for {kind!r}")
+        out.append(f'<path d="{d}" fill="{DESIGN_BORDER_COL}"/>')
+    return "".join(out)
+
+
+def design_engine_font_size(word):
+    """designSheetSVG's own single-line size for this word, so the preview can
+    keep the tile-to-letter ratio the printed sheet has."""
+    avail = DESIGN_SHEET_W - DESIGN_SHEET_M * 2
+    return max(110, min(360, round(avail * 1.3 / max(1, len(word)))))
+
+
+def r_word_outline(page, fd, word=None, boxed=True, stroke=None, row=False, designed=False):
+    """A hollow word (coloring-page-maker's designer sheet, graffiti demo).
+
+    `designed` adds the three decorations designSheetSVG can put on that sheet
+    and the live tool's default state cannot -- see the DESIGN_* block above."""
     fam = page["family"]
     met = metrics(fd, fam)
     word = word or page["demo"] or "Emma"
@@ -686,14 +846,78 @@ def r_word_outline(page, fd, word=None, boxed=True, stroke=None, row=False):
     if boxed:
         parts.append(f'<rect x="28" y="28" width="{W - 56}" height="{H - 56}" rx="26" fill="#ffffff" '
                      f'stroke="#e2e6ee" stroke-width="4"/>')
-    box_h = 420 if row else 520
-    size = min(fit_size(met, word, W - 200, box_h, spacing, cap_only=False), 560)
+    heading = page["headingDemo"] if designed else None
+    if heading and len(heading) > page["headingMax"]:
+        # The page's own example does not fit the page's own field. Drawing the
+        # truncation the sheet would produce ("Il disegno da colorare di") is
+        # not a heading any visitor would type, so the preview shows none and
+        # says so -- the copy is the thing to fix, not the image.
+        print(f"NOTE {page['rel']}: heading example {heading!r} is {len(heading)} chars over the "
+              f"page's own headingMaxChars {page['headingMax']}; preview drawn without a heading")
+        heading = None
+    if designed:
+        # The sheet's printable width mapped onto this card, which is what the
+        # chrome is measured in. Everything below is the engine's own number
+        # times this, positioned from the card edge the way the engine
+        # positions from its frame.
+        k = (W - 56) / DESIGN_SHEET_W
+        border_top = 28 + (DESIGN_BORDER_TOP_Y - DESIGN_FRAME_Y) * k
+        # The bottom row clears the credit line, derived FROM it exactly as
+        # BORDER_BOTTOM_Y is -- this canvas has its own credit metrics.
+        b_fs = DESIGN_BORDER_FS * k
+        cred_top = (H - 30) - 24 * DESIGN_CREDIT_ASCENT
+        border_bottom = cred_top - b_fs * DESIGN_BORDER_DESCENT - DESIGN_BORDER_GAP * k
+        left = DESIGN_BORDER_SIDE * k
+        gap = (W - 2 * left) / (DESIGN_BORDER_COUNT - 1)
+        parts.append(border_row(DESIGN_PREVIEW_BORDER, border_top, b_fs, left, gap))
+        parts.append(border_row(DESIGN_PREVIEW_BORDER, border_bottom, b_fs, left, gap))
+        head_y = 28 + (DESIGN_HEADING_Y - DESIGN_FRAME_Y) * k
+        h_fs = 0.0
+        if heading:
+            missing = [c for c in heading if c != " " and not met.name(c)]
+            if missing:
+                raise SystemExit(f"{page['rel']}: {fam!r} has no glyph for {''.join(missing)!r} in the "
+                                 f"heading {heading!r}; cairosvg would drop it silently")
+            h_fs = min(DESIGN_HEADING_FS * k,
+                       fit_size(met, heading, W - 2 * DESIGN_SHEET_M * k, 10_000))
+            parts.append(svg_text(W / 2, head_y, heading, fam, h_fs, weight_for(fam), INK,
+                                  extra=' text-anchor="middle"'))
+        # The word sits where it sits on the sheet: the engine's own fraction
+        # of the run between the heading baseline and the bottom border row.
+        span = (DESIGN_CY_HEADING - DESIGN_HEADING_Y) / (1337 - DESIGN_HEADING_Y)
+        cy = head_y + (border_bottom - head_y) * span
+        top_lim = head_y + h_fs * 0.25 + 26
+        bot_lim = border_bottom - b_fs * 0.92 - 26
+        box_h = 2 * min(cy - top_lim, bot_lim - cy)
+        size = min(fit_size(met, word, W - 2 * (left + 30), box_h, spacing, cap_only=False), 560)
+    else:
+        box_h = 420 if row else 520
+        size = min(fit_size(met, word, W - 200, box_h, spacing, cap_only=False), 560)
+        cy = H / 2 - (70 if row else 0)
     s = size / met.upm
     bb = [met.bbox(c) for c in word if c != " "]
     ymax, ymin = max(b[3] for b in bb), min(b[1] for b in bb)
-    cy = H / 2 - (70 if row else 0)
     baseline = cy + (ymax + ymin) / 2 * s
     parts.append(outline_text(met, fam, word, W / 2, baseline, size, stroke or page["stroke"], spacing))
+    if designed:
+        # The pattern goes ON TOP of the finished white-filled outline, rather
+        # than as the glyph's own fill the way designSheetSVG does it.
+        #
+        # Not a style choice. The engine can set paint-order="" for a patterned
+        # letter because a browser strokes only what the reader should see;
+        # cairosvg strokes every contour in the glyph, including the internal
+        # edges where Baloo 2's components overlap, and a transparent pattern
+        # fill leaves them showing. Measured: the same word renders with two
+        # dark bars through every stem here and none in Chromium, which is what
+        # svg_text's own docstring means by "overlapping glyph contours stay
+        # clean". Keeping the white fill under the stroke hides them, exactly
+        # as it already does for a plain sheet, and the pattern then paints
+        # over the white -- identical on paper, which is white.
+        defs, ref = fill_pattern_def(DESIGN_PREVIEW_FILL, "ptpat-" + page["slug"],
+                                     size / design_engine_font_size(word))
+        parts.append(defs)
+        parts.append(outline_text(met, fam, word, W / 2, baseline, size, 0, spacing,
+                                  fill=ref, stroke=None))
     if row:
         letters = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         lay_size = min(72, fit_size(met, letters, W - 120, 10_000, 0.08))
@@ -1092,7 +1316,7 @@ RENDERERS = {
     "handwriting-worksheet-generator": (None, "trace_rows"),
     "letter-tracing": (None, "trace_rows"),
     "sight-word-tracing": (None, "trace_rows"),
-    "coloring-page-maker": (None, "word_outline"),
+    "coloring-page-maker": (None, "design_sheet"),
     "dot-to-dot-name": (None, "dots_word"),
     "name-puzzle-maker": (None, "puzzle"),
     "banner-maker": (None, "banner"),
@@ -1119,7 +1343,7 @@ def render_svg(page, fd):
         "spoke_glyph": r_spoke_glyph,
         "glyph_practice": r_glyph_practice,
         "trace_rows": r_trace_rows,
-        "word_outline": r_word_outline,
+        "design_sheet": lambda p, d: r_word_outline(p, d, designed=True),
         "dots_word": r_dots_word,
         "puzzle": r_puzzle,
         "banner": r_banner,
