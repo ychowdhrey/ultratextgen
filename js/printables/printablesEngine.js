@@ -2396,11 +2396,19 @@
        strip that confirms it renders 303px further down the page. Measured,
        not assumed: it did write to the shared store.
 
-       Save as PDF went with it. A PDF is still one step away — the print
-       dialog's own Save as PDF destination — and the credit line on that
-       sheet is a real <a>, so the browser's own writer makes it clickable.
-       addPdfButtons() still serves the alphabet-book and generator print
-       buttons on the other printable families; only this row lost it. */
+       Save as PDF went with it, on the reasoning that a PDF was one step
+       away through the print dialog's own Save as PDF destination, that the
+       credit line on that sheet is a real <a> so the browser's own writer
+       makes it clickable, and that the other printable families kept their
+       own print buttons.
+
+       Superseded 2026-09-15 (owner decision; see CLAUDE.md, "Print settings
+       drive the printed sheet"). Every sheet action writes a PDF and the
+       print dialog is the fallback only. So the pair that survives here is
+       Save as PDF + Download PNG rather than Print + PNG, no printable
+       family offers a print button any more, and the helper that added them
+       to the other families no longer exists. The paragraph above is the
+       record of what was decided on 09-13, not a description of this row. */
     actions.appendChild(printBtn);
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
