@@ -2528,10 +2528,16 @@
     return picked.length ? picked : CHARS;
   }
 
+  /* Accept anything this page actually prints, not [A-Z0-9]: CFG.chars takes
+     an arbitrary array, so a lowercase or symbol page is config rather than
+     code, and a hardcoded class would silently reject every character such a
+     page is about. */
   function parseRange(text) {
-    const up = String(text || "").toUpperCase();
+    const printable = new Set(CHARS.map((c) => c.toUpperCase()));
     const set = [];
-    for (const ch of up) if (/[A-Z0-9]/.test(ch) && !set.includes(ch)) set.push(ch);
+    for (const ch of String(text || "").toUpperCase()) {
+      if (printable.has(ch) && !set.includes(ch)) set.push(ch);
+    }
     return set.length ? set : null;
   }
 
@@ -2544,6 +2550,12 @@
 
   function buildBookRangeControl(bookBtn) {
     if (!bookBtn || document.getElementById("pt-book-range")) return;
+    /* Only offer presets this page can actually honour. "A-Z" on a page whose
+       charset is punctuation is a button that does nothing, and the whole
+       control is pointless when only "everything" is left. */
+    const have = new Set(CHARS.map((c) => c.toUpperCase()));
+    const presets = BOOK_PRESETS.filter((pr) => !pr.chars || pr.chars.some((c) => have.has(c)));
+    if (presets.length < 2) return;
     const wrap = document.createElement("div");
     wrap.className = "pt-choice-row pt-book-range";
     wrap.id = "pt-book-range";
@@ -2558,7 +2570,7 @@
         c.setAttribute("aria-checked", on ? "true" : "false");
       });
     };
-    BOOK_PRESETS.forEach((preset) => {
+    presets.forEach((preset) => {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "pt-choice pt-choice-sm";
