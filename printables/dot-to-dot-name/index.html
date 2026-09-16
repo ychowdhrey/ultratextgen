@@ -218,10 +218,12 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <!-- Controls -->
         <div class="pt-studio-controls">
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-design-input">Name or word</label>
+            <label class="pt-field-label" for="pt-design-input">Name or word
+              <span class="pt-field-count" id="pt-design-count">0 / 11</span></label>
             <div class="input-wrapper">
-              <input type="text" class="main-input pt-design-input" id="pt-design-input" placeholder="Type a name… e.g. Emma" maxlength="24" autocomplete="off">
+              <input type="text" class="main-input pt-design-input" id="pt-design-input" placeholder="Type a name… e.g. Emma" maxlength="11" autocomplete="off">
             </div>
+            <p class="pt-field-hint">Up to eleven characters. The dots are spread along the letter outlines, so a longer name means smaller dots and smaller numbers: at eleven the numbers print around 8&nbsp;pt, and past that they stop being readable by the child following them.</p>
           </div>
 
           <div class="pt-field">
@@ -250,6 +252,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
           <div class="pt-field pt-dots-options" id="pt-design-dots-options">
             <span class="pt-field-label">Difficulty <span class="pt-field-opt">— fewer dots is easier</span></span>
+            <p class="pt-field-note" id="pt-design-density-note" hidden>Some levels are off for this name. Each letter needs room for its own dots and numbers, so a longer name leaves fewer levels that would actually come out different on paper. A shorter name brings them back.</p>
             <div class="pt-choice-row" id="pt-design-density-group" role="radiogroup" aria-label="Dot-to-dot difficulty">
               <button type="button" class="pt-choice" data-value="easy" role="radio" aria-checked="false">Easy<small>Few dots</small></button>
               <button type="button" class="pt-choice is-active" data-value="medium" role="radio" aria-checked="true">Medium<small>Balanced</small></button>
@@ -260,8 +263,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
               <input type="checkbox" id="pt-design-hint" checked>
               Show faint guide lines
             </label>
-            <button type="button" class="bubble-btn pt-ladder-btn" id="pt-design-ladder">Print all 4 levels — easy to expert</button>
-            <p class="pt-roster-hint">One print job, four sheets of the same name — start easy, finish expert. Choose “Save as PDF” in the print dialog to keep the set as one PDF.</p>
+            <button type="button" class="bubble-btn pt-ladder-btn" id="pt-design-ladder">Print every level, easy to expert</button>
+            <p class="pt-roster-hint">One print job, one sheet per level of the same name: start easy, finish at the hardest this name can carry. Levels that would print the same sheet twice are skipped. Choose “Save as PDF” in the print dialog to keep the set as one PDF.</p>
           </div>
 
           <div class="pt-field">
@@ -450,7 +453,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       font: "'Baloo 2', 'Plus Jakarta Sans', sans-serif",
       strokeWidth: 5,
       charset: "alnum",
-      designer: { demo: "Emma" }
+      // Measured: at eleven characters the printed dot numbers are about
+      // 8pt with 1.65mm dots; at twelve they fall to 6.4pt and the dots
+      // start touching. See DOT_NUM_MIN in the engine.
+      designer: { demo: "Emma", maxChars: 11 }
     };
   </script>
   <script src="/styles.js" defer></script>
