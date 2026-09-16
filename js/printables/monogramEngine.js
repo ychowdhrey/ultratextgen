@@ -226,6 +226,45 @@
   // Playfair Display arrives asynchronously via the page's Google Fonts <link>.
   // Canvas measuring/drawing before it loads would use fallback metrics, so we
   // re-run `cb` once the face is ready.
+  /* The QR encoder has ONE owner, js/printables/qr.js, and it is pulled in by
+     the engine rather than tagged on the page -- the same ownership
+     printablesEngine's loadQrModule() uses, so a locale build of this page
+     gets it without a markup change. Only the PLACEMENT is per-engine, because
+     the geometry differs: this canvas is a square with free corners, while the
+     coloring and puzzle sheets are full-bleed and take a strip underneath. */
+  function loadQrModule() {
+    if (window.UltraTextGen && window.UltraTextGen.qr) return;
+    if (document.querySelector('script[data-pt-qr]')) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/qr.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-qr", "");
+    sc.onerror = function () { console.warn("[monogram] js/printables/qr.js failed to load; the sheet carries the text credit only."); };
+    document.head.appendChild(sc);
+  }
+  function qrModule() { return (window.UltraTextGen && window.UltraTextGen.qr) || null; }
+
+  /* How many canvas pixels the QR box needs so the PRINTED symbol clears the
+     ~0.5mm per module a phone camera can resolve.
+
+     Derived from the symbol actually encoded, never from a guessed version.
+     That distinction is the whole point: this shipped sized for a 33-module
+     version-4 symbol, which is what the English URL encodes to, and the French
+     cross-stitch URL is longer and encodes to version 5 at 37 modules. It
+     measured 0.210 mm/module and would not have scanned, while the English
+     page looked fine. `quiet` is qr.js's own default 4-module margin each
+     side, which is part of the drawn box but not of the symbol. */
+  function qrBoxPx(qrNs, url, canvasPx, printWidthIn) {
+    var MM_PER_MODULE = 0.59;   // the figure the coloring sheets measured at
+    var QUIET = 4;
+    var sym = qrNs.encode(url);
+    var modules = sym ? sym.size : 45;             // fail safe: assume large
+    var symbolIn = modules * MM_PER_MODULE / 25.4;
+    var boxIn = symbolIn * (modules + QUIET * 2) / modules;
+    return Math.round(boxIn / printWidthIn * canvasPx);
+  }
+
+
   function whenFontReady(cb) {
     if (document.fonts && document.fonts.load) {
       document.fonts.load('700 40px "Playfair Display"').then(cb).catch(cb);
@@ -340,9 +379,26 @@
         else drawClassicCanvas(ctx, s, v);
       }
 
-      // Site credit with the page path, low contrast, in the bottom margin:
-      // the same line printablesEngine and crossStitchEngine draw, read from
-      // header.js so the three cannot drift.
+      /* Site credit with the page path, low contrast, in the bottom margin:
+         the same line printablesEngine and crossStitchEngine draw, read from
+         header.js so the three cannot drift. The QR beside it carries the same
+         URL, because a PNG cannot carry a link.
+
+         Sized by qrBoxPx() from the symbol this page's own URL encodes to,
+         against the ~6.5in this sheet prints at. Measured on a real export,
+         the largest clear bottom-right square is 420px, so the box fits. */
+      const qrNs = qrModule();
+      if (qrNs) {
+        const qrSize = qrBoxPx(qrNs, creditUrl(), size, 6.5);
+        const qrPad = Math.round(qrSize * 0.35);
+        qrNs.drawQrOnCanvas(ctx, creditUrl(), size - qrSize - qrPad, size - qrSize - qrPad, qrSize, {
+          // The TEXT credit is deliberately low-contrast; the QR must not be.
+          // Drawn in #aeb4c0 first, its darkest pixel measured 171/255 and no
+          // decoder could read it -- a faint QR looks exactly like a QR.
+          dark: INK,
+          light: "#ffffff"
+        });
+      }
       ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
       ctx.fillStyle = "#aeb4c0";
       ctx.textAlign = "center";
@@ -460,6 +516,9 @@
     if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
     return "ultratextgen.com";
   }
+  // Same derivation printablesEngine uses, so the scanned URL and the printed
+  // line can never name different pages.
+  function creditUrl() { return "https://" + siteCredit() + "/"; }
 
   function printMonogram() {
     trackPrintable("print", "monogram");
@@ -570,6 +629,7 @@
   /* ---------- init ---------- */
 
   function init() {
+    loadQrModule();
     wireInput("mono-left");
     wireInput("mono-center");
     wireInput("mono-right");

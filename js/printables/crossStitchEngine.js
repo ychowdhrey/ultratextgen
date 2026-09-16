@@ -344,7 +344,22 @@
     const chartW = model.cols * cell;
     const chartH = GLYPH_ROWS * cell;
     const canvasW = Math.max(chartW + margin * 2, 520);
-    const canvasH = titleH + chartH + legendH + margin;
+    /* The chart fills this canvas edge to edge: measured on a real export, the
+       largest clear bottom-right square is 80px, which is far too small for a
+       readable QR. So the credit gets a strip of its own underneath, the same
+       answer the coloring and puzzle sheets take, rather than a corner overlay
+       landing on the legend. */
+    /* The QR is sized off the CANVAS WIDTH, and the band is then sized to hold
+       it. A chart prints at roughly one page width whatever its pixel width,
+       so a longer word means more pixels per inch and a QR measured against
+       the band would shrink physically as the word grew. qrBoxPx() takes the
+       symbol this page's URL actually encodes to; a fixed ratio measured
+       0.345 mm/module in English and 0.210 in French, where the longer path
+       pushes the symbol up a version. */
+    const qrNsEarly = qrModule();
+    const qrSize = qrNsEarly ? qrBoxPx(qrNsEarly, creditUrl(), canvasW, 7) : 0;
+    const creditH = qrSize ? qrSize + 40 : 60;
+    const canvasH = titleH + chartH + legendH + margin + creditH;
 
     /* DPI is applied by scaling the CONTEXT, not the layout constants: every
        measurement below stays in logical units, so the chart cannot drift
@@ -392,12 +407,25 @@
     ctx.textAlign = "left";
     ctx.fillText(legendText, startX + symSize + gap, legendMidY);
 
-    // Small, low-contrast site credit in the reserved bottom margin —
-    // matches the existing printablesEngine/kanaChart footer convention.
+    /* Small, low-contrast site credit in its own strip, with the same URL as a
+       QR beside it because a PNG cannot carry a link. The encoder has one
+       owner (js/printables/qr.js) and is pulled in by the engine rather than
+       tagged on the page, so the locale builds get it without a markup
+       change. */
+    const qrNs = qrNsEarly;
+    if (qrNs && qrSize) {
+      qrNs.drawQrOnCanvas(ctx, creditUrl(), canvasW - qrSize - 28, canvasH - qrSize - 20, qrSize, {
+        // The TEXT credit is deliberately low-contrast; the QR must not be.
+        // Drawn in #aeb4c0 first, its darkest pixel measured 171/255 and no
+        // decoder could read it -- a faint QR looks exactly like a QR.
+        dark: TITLE_INK,
+        light: "#ffffff"
+      });
+    }
     ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
     ctx.fillStyle = "#aeb4c0";
     ctx.textAlign = "center";
-    ctx.fillText(window.UltraTextGen && window.UltraTextGen.printableCredit ? window.UltraTextGen.printableCredit() : "ultratextgen.com", canvasW / 2, canvasH - 16);
+    ctx.fillText(siteCredit(), canvasW / 2, canvasH - 16);
 
     return canvas;
   }
@@ -571,7 +599,53 @@
   }
 
   /* ── Init ──────────────────────────────────────────────────────── */
+  function siteCredit() {
+    if (window.UltraTextGen && window.UltraTextGen.printableCredit) return window.UltraTextGen.printableCredit();
+    return "ultratextgen.com";
+  }
+  // Same derivation printablesEngine uses, so the scanned URL and the printed
+  // line can never name different pages.
+  function creditUrl() { return "https://" + siteCredit() + "/"; }
+
+  /* The QR encoder has ONE owner, js/printables/qr.js, pulled in by the engine
+     rather than tagged on the page -- the same ownership printablesEngine's
+     loadQrModule() uses, so the es/fr/id builds of this page get it without a
+     markup change. */
+  function loadQrModule() {
+    if (window.UltraTextGen && window.UltraTextGen.qr) return;
+    if (document.querySelector('script[data-pt-qr]')) return;
+    const sc = document.createElement("script");
+    sc.src = "/js/printables/qr.js";
+    sc.async = true;
+    sc.setAttribute("data-pt-qr", "");
+    sc.onerror = function () { console.warn("[cross-stitch] js/printables/qr.js failed to load; the chart carries the text credit only."); };
+    document.head.appendChild(sc);
+  }
+  function qrModule() { return (window.UltraTextGen && window.UltraTextGen.qr) || null; }
+
+  /* How many canvas pixels the QR box needs so the PRINTED symbol clears the
+     ~0.5mm per module a phone camera can resolve.
+
+     Derived from the symbol actually encoded, never from a guessed version.
+     That distinction is the whole point: this shipped sized for a 33-module
+     version-4 symbol, which is what the English URL encodes to, and the French
+     cross-stitch URL is longer and encodes to version 5 at 37 modules. It
+     measured 0.210 mm/module and would not have scanned, while the English
+     page looked fine. `quiet` is qr.js's own default 4-module margin each
+     side, which is part of the drawn box but not of the symbol. */
+  function qrBoxPx(qrNs, url, canvasPx, printWidthIn) {
+    var MM_PER_MODULE = 0.59;   // the figure the coloring sheets measured at
+    var QUIET = 4;
+    var sym = qrNs.encode(url);
+    var modules = sym ? sym.size : 45;             // fail safe: assume large
+    var symbolIn = modules * MM_PER_MODULE / 25.4;
+    var boxIn = symbolIn * (modules + QUIET * 2) / modules;
+    return Math.round(boxIn / printWidthIn * canvasPx);
+  }
+
+
   function init() {
+    loadQrModule();
     const input = $("#cs-input");
     if (input) {
       state.text = input.value || state.text;
