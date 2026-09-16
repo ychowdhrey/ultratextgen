@@ -4329,13 +4329,28 @@ button.clear-decoration {
   margin: 0;
 }
 /* The glyph preview (cursive/calligraphy pages) is type, not an SVG, so it
-   centres in the sheet rather than filling it. Kept at its existing 4.5rem —
-   this pass changed where the figure sits, not how big the type is. */
+   has to be scaled rather than stretched.
+
+   It was a flat 4.5rem until 2026-09-16, which made the preview lie: the PRINT
+   path has scaled since the print-settings work (.bubble-print-single
+   .pt-glyph-print takes font-size from --pt-glyph-size, published by
+   applySheetMetrics() as body * GLYPH_RATIO), so a printed cursive sheet fills
+   its page while the preview beside it showed a fixed 72px glyph. Invisible
+   while the preview sheet was itself pinned to 320px by the copy-paste column;
+   obvious the moment that column went and the sheet reached 760px.
+
+   --pt-glyph-ratio is published by paintPaperPreview() from the SAME
+   GLYPH_RATIO constant the print uses, so the two cannot drift. 100cqh is the
+   query container's content-box height, and .pt-paper-inner is inset:0 inside
+   an aspect-ratio box, so that height is definite. The 4.5rem line above it is
+   the fallback for a client without container queries. */
+.pt-paper-inner { container-type: size; }
 .pt-paper-inner .pt-glyph-figure {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 4.5rem;
+  font-size: calc(var(--pt-glyph-ratio, 0.34) * 100cqh);
 }
 /* Ink saver prints lighter lines (body.pt-ink-saver in the print CSS below);
    showing that here is the difference between a checkbox and a preview. */

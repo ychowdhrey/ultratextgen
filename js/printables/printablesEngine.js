@@ -778,7 +778,14 @@
     // One custom property carries both the shape and the on-screen size: the
     // sheet is capped by HEIGHT, so a landscape page spreads across the panel
     // instead of being held to a portrait page's width.
-    if (sheet) sheet.style.setProperty("--pt-paper-aspect", (full.w / full.h).toFixed(4));
+    if (sheet) {
+      sheet.style.setProperty("--pt-paper-aspect", (full.w / full.h).toFixed(4));
+      // The preview's glyph scale comes from the SAME constant the print uses
+      // (see .pt-paper-inner .pt-glyph-figure in style.css). Publishing it
+      // rather than repeating 0.34 in CSS is what keeps a cursive preview and
+      // a cursive printout the same shape.
+      sheet.style.setProperty("--pt-glyph-ratio", String(GLYPH_RATIO));
+    }
     node.classList.toggle("is-ink-saver", printPrefs.ink === "saver");
     node.classList.toggle("is-narrow", printPrefs.margin === "narrow");
     const cap = $(".pt-paper-caption", node);
