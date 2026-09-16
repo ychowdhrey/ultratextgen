@@ -1261,6 +1261,27 @@
   // PDF. Give each page unit its own; the wrap gets one only when there are
   // none. Same selector as that module's own PAGES, kept in step by name.
   const PT_PAGE_UNITS = ".pt-sheet-page, .bubble-print-book-page, .pt-tile-page, .pt-banner-page";
+
+  /* One sheet is still a page, and it has to SAY so.
+
+     renderPages() has two branches: explicit page units become one canvas
+     each, and a body with none is measured as a flowed column and cut at
+     page height. Every tool here wrapped its class set in .pt-sheet-page and
+     its single sheet in nothing, so the single sheet took the flow branch,
+     where attachCredit's ~92px credit block is part of the measured column.
+     Measured on the coloring page maker: the sheet is 952px inside a 960px
+     box, the credit takes it to 1068px, and 11.3% is past the 6% single-page
+     tolerance -- so a PDF of one coloring page came out as two, the second
+     carrying nothing but the credit. Same arithmetic on the dot-to-dot name
+     sheet (1068px), the name worksheet (1053px) and the handwriting
+     generator sheet (1114px); the name puzzle sheet escaped at 999px only
+     because it is shorter than the tolerance, not because it differs. */
+  function sheetPageNode(node) {
+    const page = document.createElement("div");
+    page.className = "pt-sheet-page";
+    page.appendChild(node);
+    return page;
+  }
   function attachCredit(wrap) {
     const pages = $$(PT_PAGE_UNITS, wrap).filter((p) => !p.parentElement.closest(PT_PAGE_UNITS));
     if (pages.length) { pages.forEach((p) => p.appendChild(creditNode())); return pages; }
@@ -2064,13 +2085,20 @@
     // computed figure height. Marked here because CSS cannot ask "does this
     // wrap contain a single-character print".
     if (sheet === "character") wrap.classList.add("pt-fill-page");
+    wrap.appendChild(bodyNode);
     if (titleText) {
       const h = document.createElement("h2");
       h.className = "bubble-print-title";
       h.textContent = titleText;
-      wrap.appendChild(h);
+      /* renderPages rasterises explicit page units and drops everything
+         outside them, so on a job that is exactly one page the title has to
+         live inside the unit or it prints from the dialog and is missing
+         from the PDF. Scoped to the single-unit case on purpose: a multi-page
+         job's title placement is unchanged, so no existing PDF moves. */
+      const units = $$(PT_PAGE_UNITS, wrap).filter((u) => !u.parentElement.closest(PT_PAGE_UNITS));
+      if (units.length === 1) units[0].insertBefore(h, units[0].firstChild);
+      else wrap.insertBefore(h, wrap.firstChild);
     }
-    wrap.appendChild(bodyNode);
     // Size the sheet to the paper the visitor chose, then sign it. Both have
     // to happen before anything measures or rasterises the surface.
     applySheetMetrics(el.printRoot);
@@ -2828,7 +2856,7 @@
       printWrap(names.length + " " + T.sheets + " — tracing worksheets", set, "name_worksheet");
       return;
     }
-    printWrap(nameValue() + " — tracing worksheet", nameSheetNode(), "name_worksheet");
+    printWrap(nameValue() + " — tracing worksheet", sheetPageNode(nameSheetNode()), "name_worksheet");
   }
 
   function nameRow(name, kind) {
@@ -3130,7 +3158,7 @@
       printWrap(names.length + " " + T.sheets + " — " + spec.label + " · " + siteCredit(), set, "generator_sheet");
       return;
     }
-    printWrap(genValue() + " — " + spec.label + " worksheet", genSheetNode(), "generator_sheet");
+    printWrap(genValue() + " — " + spec.label + " worksheet", sheetPageNode(genSheetNode()), "generator_sheet");
   }
 
   // The whole difficulty ladder as one print job — one sheet per level,
@@ -3976,7 +4004,9 @@
   // the baseline, but the face varies with the page's own font stack, so the
   // daylight allowance is 12 units rather than a hairline: at 6 the measured
   // clearance came out at 4 units (0.7mm), which is closer than a decorative
-  // row should ever sit to the line that carries the page address.
+  // row should ever sit to the line that carries the page address. The SVG
+  // sheet no longer draws that line, but the PNG export still does, at this
+  // same baseline, so the band stays reserved for both.
   const BORDER_BOTTOM_Y = Math.round(CREDIT_TOP - BORDER_FS * 0.20 - 12);
   const BORDER_TOP_Y = 78;
 
@@ -4079,8 +4109,14 @@
 
     if (footer) addFooter(svg, H - 150);
 
-    const cred = svgMake("text", { x: W / 2, y: H - 24, "text-anchor": "middle", "font-family": FONT, "font-size": 22, fill: "#aeb4c0" }, svg);
-    cred.textContent = siteCredit();
+    /* No credit line inside the sheet. attachCredit() puts the real one on
+       every printed page unit, as the page path plus the same URL as a QR,
+       so a printed sheet carried the address FOUR times: this line, the
+       credit block's text, its link href and the QR payload. The block is
+       the one that scans and the one the PDF lays a /Link annotation over,
+       so this is the copy that goes. The PNG export is a different artifact
+       and draws its own credit at the same y (designPNG), which is why
+       CREDIT_TOP still reserves the band and the border row still clears it. */
     return svg;
   }
 
@@ -4173,7 +4209,7 @@
       printWrap("", holder, "design");
       return;
     }
-    holder.appendChild(designSheetSVG());
+    holder.appendChild(sheetPageNode(designSheetSVG()));
     printWrap("", holder, "design");
   }
 
@@ -4886,7 +4922,7 @@
       printWrap("", holder, "puzzle");
       return;
     }
-    holder.appendChild(puzzleSheetNode());
+    holder.appendChild(sheetPageNode(puzzleSheetNode()));
     printWrap("", holder, "puzzle");
   }
 
