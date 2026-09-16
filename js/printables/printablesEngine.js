@@ -81,7 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "PDF settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -135,7 +135,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages du PDF", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
@@ -184,7 +184,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes del PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -233,7 +233,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações do PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -282,7 +282,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni PDF", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto — una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -331,7 +331,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia PDF", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -382,7 +382,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       pageCount: { one: "Seite", other: "Seiten" },
       ofWord: "von",
@@ -440,7 +440,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -3773,7 +3773,7 @@
     if (dotCountCache.has(key)) return dotCountCache.get(key);
     let corners = 0;
     try {
-      const R = dotRasterChar(String(ch).toUpperCase() === String(ch) ? ch : ch);
+      const R = dotRasterChar(ch);
       const cc = dotComponents(R.mask, R.w, R.h);
       const minArea = Math.max(24, R.w * R.h * 0.00035);
       const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
@@ -4080,7 +4080,15 @@
      ones lift, and they lift exactly as far as they need to.
 
      Single characters only. For a word the budget is shared out by perimeter
-     and a per-letter floor would blow it. */
+     and a per-letter floor would blow it.
+
+     MEASURED 2026-09-16: with the shipped font this floor never fires. The
+     most cornered glyph in the charset is 13 (M, W, w) and the lowest level
+     is now 14, so every level already clears every letter. It is kept rather
+     than deleted because FONT is mutable at runtime (CFG.scriptOptions lets a
+     page switch script), and a different face has different corner counts --
+     which is also why dotCountCache keys on FONT. Do not read a passing sheet
+     as evidence that this code path works; it is currently unreachable. */
   function dotWordGeometry(text, total, singleMode) {
     const chars = [...String(text)];
     const raw = [];
@@ -4324,7 +4332,7 @@
       // is rebuilt on every selectChar, so it can be specific. A picker that
       // said "12 dots" while the sheet drew 20 would be the same class of
       // defect as a setting with no visible consequence.
-      small.textContent = dotCountFor(activeChar || CHARS[0], lvl.single) + " " + T.dotsCount;
+      small.textContent = dotCountFor(dotCase(activeChar || CHARS[0]), lvl.single) + " " + T.dotsCount;
       b.appendChild(small);
       b.addEventListener("click", () => {
         dotPageState.level = lvl.key;
