@@ -81,7 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
-      printOpts: { settings: "PDF settings", paper: "Paper", auto: "Automatic", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
+      printOpts: { settings: "PDF settings", paper: "Paper", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Landscape", margins: "Margins", normal: "Normal", narrow: "Narrow", inkSaver: "Ink saver (lighter lines)", savePdf: "Save as PDF", pdfToast: "In the print dialog, choose Save as PDF as the destination.", share: "Share", shareImage: "Share as image", copyLink: "Copy link", linkCopied: "Link copied", pinterest: "Pin on Pinterest", recent: "Your recent sheets", clear: "Clear", madeAt: "Made at" },
       printBook: "Save as a book: one page per letter",
       save: "Save",
       saved: "Saved",
@@ -135,7 +135,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
-      printOpts: { settings: "Réglages du PDF", paper: "Papier", auto: "Automatique", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
+      printOpts: { settings: "Réglages du PDF", paper: "Papier", letter: "Lettre US", a4: "A4", legal: "Legal", orientation: "Orientation", portrait: "Portrait", landscape: "Paysage", margins: "Marges", normal: "Normales", narrow: "Étroites", inkSaver: "Économie d'encre (traits plus clairs)", savePdf: "Enregistrer en PDF", pdfToast: "Dans la boîte d'impression, choisissez Enregistrer au format PDF comme destination.", share: "Partager", shareImage: "Partager en image", copyLink: "Copier le lien", linkCopied: "Lien copié", pinterest: "Épingler sur Pinterest", recent: "Vos fiches récentes", clear: "Effacer", madeAt: "Créé sur" },
       printBook: "Enregistrer en livret — une page par lettre",
       pageCount: { one: "page", other: "pages" },
       ofWord: "sur",
@@ -184,7 +184,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
-      printOpts: { settings: "Ajustes del PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
+      printOpts: { settings: "Ajustes del PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Oficio", orientation: "Orientación", portrait: "Vertical", landscape: "Horizontal", margins: "Márgenes", normal: "Normales", narrow: "Estrechos", inkSaver: "Ahorro de tinta (líneas más claras)", savePdf: "Guardar como PDF", pdfToast: "En el cuadro de impresión, elige Guardar como PDF como destino.", share: "Compartir", shareImage: "Compartir como imagen", copyLink: "Copiar enlace", linkCopied: "Enlace copiado", pinterest: "Guardar en Pinterest", recent: "Tus hojas recientes", clear: "Borrar", madeAt: "Hecho en" },
       printBook: "Guardar como libro — una página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -233,7 +233,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
-      printOpts: { settings: "Configurações do PDF", paper: "Papel", auto: "Automático", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
+      printOpts: { settings: "Configurações do PDF", paper: "Papel", letter: "Carta", a4: "A4", legal: "Ofício", orientation: "Orientação", portrait: "Retrato", landscape: "Paisagem", margins: "Margens", normal: "Normais", narrow: "Estreitas", inkSaver: "Economia de tinta (linhas mais claras)", savePdf: "Salvar como PDF", pdfToast: "Na caixa de impressão, escolha Salvar como PDF como destino.", share: "Compartilhar", shareImage: "Compartilhar como imagem", copyLink: "Copiar link", linkCopied: "Link copiado", pinterest: "Salvar no Pinterest", recent: "Suas folhas recentes", clear: "Limpar", madeAt: "Feito em" },
       printBook: "Salvar como livro — uma página por letra",
       pageCount: { one: "página", other: "páginas" },
       ofWord: "de",
@@ -282,7 +282,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
-      printOpts: { settings: "Impostazioni PDF", paper: "Carta", auto: "Automatico", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
+      printOpts: { settings: "Impostazioni PDF", paper: "Carta", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientamento", portrait: "Verticale", landscape: "Orizzontale", margins: "Margini", normal: "Normali", narrow: "Stretti", inkSaver: "Risparmio inchiostro (linee più chiare)", savePdf: "Salva come PDF", pdfToast: "Nella finestra di stampa scegli Salva come PDF come destinazione.", share: "Condividi", shareImage: "Condividi come immagine", copyLink: "Copia link", linkCopied: "Link copiato", pinterest: "Salva su Pinterest", recent: "I tuoi fogli recenti", clear: "Cancella", madeAt: "Creato su" },
       printBook: "Salva come libretto — una pagina per lettera",
       pageCount: { one: "pagina", other: "pagine" },
       ofWord: "di",
@@ -331,7 +331,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
-      printOpts: { settings: "Ustawienia PDF", paper: "Papier", auto: "Automatycznie", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
+      printOpts: { settings: "Ustawienia PDF", paper: "Papier", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientacja", portrait: "Pionowa", landscape: "Pozioma", margins: "Marginesy", normal: "Normalne", narrow: "Wąskie", inkSaver: "Oszczędzanie tuszu (jaśniejsze linie)", savePdf: "Zapisz jako PDF", pdfToast: "W oknie drukowania wybierz Zapisz jako PDF jako miejsce docelowe.", share: "Udostępnij", shareImage: "Udostępnij jako obraz", copyLink: "Kopiuj link", linkCopied: "Link skopiowany", pinterest: "Zapisz na Pintereście", recent: "Twoje ostatnie arkusze", clear: "Wyczyść", madeAt: "Utworzono na" },
       printBook: "Zapisz jako książeczkę — jedna strona na literę",
       save: "Zapisz",
       saved: "Zapisano",
@@ -382,7 +382,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
-      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", auto: "Automatisch", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
+      printOpts: { settings: "PDF-Einstellungen", paper: "Papier", letter: "US Letter", a4: "A4", legal: "Legal", orientation: "Ausrichtung", portrait: "Hochformat", landscape: "Querformat", margins: "Ränder", normal: "Normal", narrow: "Schmal", inkSaver: "Tintensparmodus (hellere Linien)", savePdf: "Als PDF speichern", pdfToast: "Wähle im Druckdialog Als PDF speichern als Ziel.", share: "Teilen", shareImage: "Als Bild teilen", copyLink: "Link kopieren", linkCopied: "Link kopiert", pinterest: "Auf Pinterest merken", recent: "Deine letzten Blätter", clear: "Löschen", madeAt: "Erstellt auf" },
       printBook: "Als Heft speichern \u2013 eine Seite pro Buchstabe",
       pageCount: { one: "Seite", other: "Seiten" },
       ofWord: "von",
@@ -440,7 +440,7 @@
       dotLadderTitle: "Tangga latihan",
       dotLadderText: "Mulai dari yang mudah, lalu tambah titiknya begitu sudah terbiasa. Sudah lancar di tingkat Ahli? Matikan nomornya, lalu coba gambar sendiri tanpa panduan.",
       pdfHint: "Tips: Cetak \u2192 \u201cSimpan sebagai PDF\u201d akan mengunduh lembar ini sebagai PDF.",
-      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", auto: "Otomatis", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
+      printOpts: { settings: "Pengaturan PDF", paper: "Kertas", letter: "Letter", a4: "A4", legal: "Legal", orientation: "Orientasi", portrait: "Potret", landscape: "Lanskap", margins: "Margin", normal: "Normal", narrow: "Sempit", inkSaver: "Hemat tinta (garis lebih tipis)", savePdf: "Simpan sebagai PDF", pdfToast: "Di dialog cetak, pilih Simpan sebagai PDF sebagai tujuan.", share: "Bagikan", shareImage: "Bagikan sebagai gambar", copyLink: "Salin tautan", linkCopied: "Tautan disalin", pinterest: "Simpan ke Pinterest", recent: "Lembar terbaru Anda", clear: "Hapus", madeAt: "Dibuat di" },
       printBook: "Simpan sebagai buku \u2014 satu halaman per huruf",
       save: "Simpan",
       saved: "Tersimpan",
@@ -3773,7 +3773,7 @@
     if (dotCountCache.has(key)) return dotCountCache.get(key);
     let corners = 0;
     try {
-      const R = dotRasterChar(String(ch).toUpperCase() === String(ch) ? ch : ch);
+      const R = dotRasterChar(ch);
       const cc = dotComponents(R.mask, R.w, R.h);
       const minArea = Math.max(24, R.w * R.h * 0.00035);
       const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
@@ -3792,7 +3792,47 @@
     return corners;
   }
   function dotCountFor(ch, nominal) {
-    return Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
+    const outer = Math.max(DOT_MIN, Math.min(DOT_MAX, Math.max(nominal, dotCornerCountFor(ch))));
+    return outer + dotExtraCountFor(ch, outer);
+  }
+
+  /* Dots the counters and second shapes add on top of the outline, so the
+     picker reports what the sheet actually draws: an O is its outline plus a
+     ring, not just the outline. */
+  const dotExtraCache = new Map();
+  function dotExtraCountFor(ch, outerN) {
+    const key = String(ch) + "|" + FONT + "|" + outerN;
+    if (dotExtraCache.has(key)) return dotExtraCache.get(key);
+    let extra = 0;
+    try {
+      const R = dotRasterChar(ch);
+      const cc = dotComponents(R.mask, R.w, R.h);
+      const minArea = Math.max(24, R.w * R.h * 0.00035);
+      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+      if (kept.length) {
+        const main = kept[0];
+        let sx = -1, sy = -1;
+        for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+          for (let x = main.minx; x <= main.maxx; x++) { if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; } }
+        }
+        if (sx >= 0) {
+          const base = dotPerimeter(dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy)) || 1;
+          const rest = [];
+          if (CFG.dotHoles !== false) dotHoleBoundaries(R.mask, R.w, R.h, main.area * DOT_HOLE_RATIO).forEach((b) => rest.push(b));
+          kept.slice(1).forEach((cmp) => {
+            if (cmp.area < main.area * DOT_SHAPE_RATIO) return;
+            let ax = -1, ay = -1;
+            for (let y = cmp.miny; y <= cmp.maxy && ay < 0; y++) {
+              for (let x = cmp.minx; x <= cmp.maxx; x++) { if (cc.labels[y * R.w + x] === cmp.label) { ax = x; ay = y; break; } }
+            }
+            if (ax >= 0) rest.push(dotMooreTrace(cc.labels, R.w, R.h, cmp.label, ax, ay));
+          });
+          rest.forEach((b) => { extra += Math.max(DOT_LOOP_MIN, Math.min(DOT_MAX, Math.round(outerN * dotPerimeter(b) / base))); });
+        }
+      }
+    } catch (err) { extra = 0; }
+    dotExtraCache.set(key, extra);
+    return extra;
   }
 
   function dotLevel(key) {
@@ -3805,6 +3845,8 @@
   // one line with ascenders/descenders in the right place.
   const DOT_FS = 240, DOT_BASELINE = 270, DOT_CANVAS_H = 390, DOT_TRACKING = 0.14;
   const DOT_MIN = 5, DOT_MAX = 22;
+  // Fewest dots a single contour may get, so a counter stays a recognisable ring.
+  const DOT_LOOP_MIN = 5;
   // 8-neighbourhood in clockwise order (E, SE, S, SW, W, NW, N, NE).
   const DOT_N8 = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]];
   function dotDirIndex(dx, dy) { for (let i = 0; i < 8; i++) if (DOT_N8[i][0] === dx && DOT_N8[i][1] === dy) return i; return 4; }
@@ -4060,8 +4102,86 @@
     return out;
   }
 
+  /* ---- multi-contour tracing (2026-09-16) ----------------------------
+     Until now the tracer kept the OUTER SILHOUETTE of the largest connected
+     component and nothing else, which cost two different things:
+
+       * counters. O lost 65.6% of its area to a hole that was never drawn,
+         Q 56.2%, D 53.6%, o 44.2%, 0 43.8% -- so a dot-to-dot O was a disc.
+         20 glyphs have a counter, the smallest being e at 13.3%.
+       * second shapes. "=" is two bars and the second one IS 100% of the
+         first, so half the glyph became a single centroid dot; "%" lost two
+         circles at 99.9% and 74.7%.
+
+     Both are now traced as their own closed loops. The thresholds come from
+     that measurement rather than taste: a second component is a SHAPE at
+     >= 50% of the main (= and % sit at 74.7-100) and a DOT below it (the i
+     tittle is 18.9%, j 12.9%, ? 16.6%, ! 29%), and a hole counts at >= 5%
+     (every real counter is >= 13.3%, and nothing at all falls between 1% and
+     13.3%, so the cut is unambiguous). */
+  const DOT_SHAPE_RATIO = 0.50;   // second component this big is traced, not dotted
+  const DOT_HOLE_RATIO  = 0.05;   // hole this big relative to the main is a counter
+
+  // Background reachable from the border. Anything not ink and not reached is
+  // inside a counter.
+  function dotOuterBackground(mask, w, h) {
+    const seen = new Uint8Array(w * h);
+    const st = [];
+    for (let x = 0; x < w; x++) { st.push(x); st.push((h - 1) * w + x); }
+    for (let y = 0; y < h; y++) { st.push(y * w); st.push(y * w + w - 1); }
+    while (st.length) {
+      const q = st.pop();
+      if (seen[q] || mask[q]) continue;
+      seen[q] = 1;
+      const x = q % w, y = (q / w) | 0;
+      if (x > 0) st.push(q - 1);
+      if (x < w - 1) st.push(q + 1);
+      if (y > 0) st.push(q - w);
+      if (y < h - 1) st.push(q + w);
+    }
+    return seen;
+  }
+
+  /* The counters of one glyph, as traced boundaries. Each hole is labelled as
+     if it were ink and handed to the same Moore tracer the outline uses, so
+     there is one boundary walker in this file rather than two that could
+     disagree. */
+  function dotHoleBoundaries(mask, w, h, minArea) {
+    const outside = dotOuterBackground(mask, w, h);
+    const hl = new Int32Array(w * h);
+    const out = [];
+    let n = 0;
+    for (let i = 0; i < w * h; i++) {
+      if (mask[i] || outside[i] || hl[i]) continue;
+      n++;
+      let area = 0, sx = -1, sy = -1;
+      const st = [i];
+      hl[i] = n;
+      while (st.length) {
+        const q = st.pop();
+        area++;
+        const x = q % w, y = (q / w) | 0;
+        if (sy < 0 || y < sy || (y === sy && x < sx)) { sx = x; sy = y; }
+        const nb = [x > 0 ? q - 1 : -1, x < w - 1 ? q + 1 : -1, y > 0 ? q - w : -1, y < h - 1 ? q + w : -1];
+        for (const nq of nb) { if (nq < 0 || mask[nq] || outside[nq] || hl[nq]) continue; hl[nq] = n; st.push(nq); }
+      }
+      if (area >= minArea && sx >= 0) out.push(dotMooreTrace(hl, w, h, n, sx, sy));
+    }
+    return out;
+  }
+
+  function dotPerimeter(pts) {
+    let p = 0;
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i], b = pts[(i + 1) % pts.length];
+      p += Math.hypot(b[0] - a[0], b[1] - a[1]);
+    }
+    return p;
+  }
+
   // Trace a whole word into per-letter dot sets laid out on a shared baseline.
-  // Returns { letters:[{mainPts,accentPts,cx,cy}], bbox } in raster units.
+  // Returns { letters:[{loops,accentPts,cx,cy}], bbox } in raster units, where
+  // loops is the outline plus any counters and second shapes.
   /* A single fixed dot count cannot serve both O and m. O has no corners and
      is drawn perfectly by 8; lowercase m has about twenty and is a zigzag at
      twelve. Measured across all 62 glyphs at the old easy budget of 12, 16 of
@@ -4080,11 +4200,20 @@
      ones lift, and they lift exactly as far as they need to.
 
      Single characters only. For a word the budget is shared out by perimeter
-     and a per-letter floor would blow it. */
+     and a per-letter floor would blow it.
+
+     MEASURED 2026-09-16: with the shipped font this floor never fires. The
+     most cornered glyph in the charset is 13 (M, W, w) and the lowest level
+     is now 14, so every level already clears every letter. It is kept rather
+     than deleted because FONT is mutable at runtime (CFG.scriptOptions lets a
+     page switch script), and a different face has different corner counts --
+     which is also why dotCountCache keys on FONT. Do not read a passing sheet
+     as evidence that this code path works; it is currently unreachable. */
   function dotWordGeometry(text, total, singleMode) {
     const chars = [...String(text)];
     const raw = [];
     let xoff = 0;
+    const wantExtra = !!singleMode;
     chars.forEach((ch) => {
       if (ch === " ") { xoff += DOT_FS * 0.34; return; }
       const R = dotRasterChar(ch);
@@ -4098,12 +4227,44 @@
         for (let x = main.minx; x <= main.maxx; x++) { if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; } }
       }
       const boundary = dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy);
-      let perim = 0;
-      for (let i = 0; i < boundary.length; i++) {
-        const a = boundary[i], b = boundary[(i + 1) % boundary.length];
-        perim += Math.hypot(b[0] - a[0], b[1] - a[1]);
+      const contours = [boundary];
+      /* Counters, then any second component big enough to be a shape rather
+         than a tittle. Everything below that ratio stays a single centroid
+         dot, which is what an i/j tittle and the dot of a ! or ? should be. */
+      /* Counters and second shapes are for a SINGLE-character sheet only.
+         Measured: on a word they roughly double the dot density in a layout
+         that is already tight, and "BOB" at medium went from 42 dots to 71 and
+         stopped reading as a word -- several letters share the page width
+         there, so a counter ring sits a few millimetres inside an already
+         small O. On a per-letter page the glyph fills the sheet and the ring
+         has room. Typing a single "=" into the name tool still counts as
+         single, which is how that glyph gets both of its bars. */
+      if (wantExtra && CFG.dotHoles !== false) {
+        dotHoleBoundaries(R.mask, R.w, R.h, main.area * DOT_HOLE_RATIO).forEach((b) => contours.push(b));
       }
-      raw.push({ boundary: boundary, perim: perim, xoff: xoff, main: main, accents: kept.slice(1) });
+      const accents = [];
+      kept.slice(1).forEach((cmp) => {
+        if (wantExtra && cmp.area >= main.area * DOT_SHAPE_RATIO) {
+          let ax = -1, ay = -1;
+          for (let y = cmp.miny; y <= cmp.maxy && ay < 0; y++) {
+            for (let x = cmp.minx; x <= cmp.maxx; x++) { if (cc.labels[y * R.w + x] === cmp.label) { ax = x; ay = y; break; } }
+          }
+          if (ax >= 0) {
+            contours.push(dotMooreTrace(cc.labels, R.w, R.h, cmp.label, ax, ay));
+            if (CFG.dotHoles !== false) {
+              // "%" carries a counter inside each of its circles.
+              dotHoleBoundaries(R.mask, R.w, R.h, cmp.area * DOT_HOLE_RATIO)
+                .filter((hb) => hb.some((pt) => pt[0] >= cmp.minx && pt[0] <= cmp.maxx && pt[1] >= cmp.miny && pt[1] <= cmp.maxy))
+                .forEach((hb) => { if (!contours.some((c) => c[0][0] === hb[0][0] && c[0][1] === hb[0][1])) contours.push(hb); });
+            }
+            return;
+          }
+        }
+        accents.push(cmp);
+      });
+      const perims = contours.map(dotPerimeter);
+      const perim = perims.reduce((t, v) => t + v, 0);
+      raw.push({ boundary: boundary, contours: contours, perims: perims, perim: perim, xoff: xoff, main: main, accents: accents });
       xoff += R.adv * (1 + DOT_TRACKING);
     });
     const totalPerim = raw.reduce((s, r) => s + r.perim, 0) || 1;
@@ -4112,13 +4273,32 @@
       let n = Math.round((r.perim / totalPerim) * total);
       if (singleMode) n = Math.max(n, dotCornerIndices(r.boundary, DOT_CORNER_DEGS[1]).length);
       n = Math.max(DOT_MIN, Math.min(DOT_MAX, n));
-      const mainPts = dotResampleClosed(r.boundary, n).map((p) => [p[0] + r.xoff, p[1]]);
+      /* The level's count is the OUTLINE's count, and every further contour
+         gets dots ON TOP of it rather than a share of it.
+
+         Sharing was tried first and is a real regression, which is why this is
+         written down: at 16 dots an O came out as an 11-dot outer ring around a
+         5-dot inner one and read worse than the filled disc it replaced, and B
+         split three ways into something unrecognisable. That is exactly the
+         cost the original tracer's comment predicted when it chose outer
+         silhouette only. Additive keeps the outline byte-for-byte what it was
+         before counters existed, so nothing that works today gets worse. A
+         counter is scaled by its own perimeter against the outline's, floored
+         at DOT_LOOP_MIN so it stays a ring rather than a triangle. */
+      const loops = [];
+      const outerN = n;
+      loops.push(dotResampleClosed(r.contours[0], outerN).map((p) => [p[0] + r.xoff, p[1]]));
+      const basePerim = r.perims[0] || 1;
+      for (let ci = 1; ci < r.contours.length; ci++) {
+        const k = Math.max(DOT_LOOP_MIN, Math.min(DOT_MAX, Math.round(outerN * r.perims[ci] / basePerim)));
+        loops.push(dotResampleClosed(r.contours[ci], k).map((p) => [p[0] + r.xoff, p[1]]));
+      }
       const accentPts = r.accents.map((c) => [c.cx + r.xoff, c.cy]);
-      letters.push({ mainPts: mainPts, accentPts: accentPts, cx: r.main.cx + r.xoff, cy: r.main.cy });
+      letters.push({ loops: loops, accentPts: accentPts, cx: r.main.cx + r.xoff, cy: r.main.cy });
     });
     let minx = 1e9, miny = 1e9, maxx = -1e9, maxy = -1e9;
     letters.forEach((L) => {
-      L.mainPts.concat(L.accentPts).forEach((p) => {
+      L.loops.reduce((a, l) => a.concat(l), []).concat(L.accentPts).forEach((p) => {
         if (p[0] < minx) minx = p[0]; if (p[0] > maxx) maxx = p[0];
         if (p[1] < miny) miny = p[1]; if (p[1] > maxy) maxy = p[1];
       });
@@ -4144,12 +4324,17 @@
     const all = [];
     geom.letters.forEach((L) => {
       const cpt = tx([L.cx, L.cy]);
-      const loop = L.mainPts.map(tx);
+      // One closed loop per contour: the outline, then any counter, then any
+      // second shape. Numbering runs on across them, so the child finishes one
+      // ring, lifts the pen and starts the next at the following number.
+      const loops = L.loops.map((lp) => lp.map(tx));
       const dots = [];
       let num = 1;
-      loop.forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: false, cx: cpt[0], cy: cpt[1] }); all.push(p); });
+      loops.forEach((lp) => {
+        lp.forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: false, cx: cpt[0], cy: cpt[1] }); all.push(p); });
+      });
       L.accentPts.map(tx).forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: true, cx: cpt[0], cy: cpt[1] }); all.push(p); });
-      letters.push({ loop: loop, dots: dots });
+      letters.push({ loops: loops, dots: dots });
     });
     // Adaptive dot / number size from the MEDIAN nearest-neighbour distance
     // (median, not min, so a single coincident pair doesn't shrink everything).
@@ -4186,11 +4371,14 @@
     const lay = layoutDotWord(text, level, box);
     const numbered = numbers !== false;
     lay.letters.forEach((L) => {
-      if (hint && L.loop.length > 1) {
-        svgMake("polygon", {
-          points: L.loop.map((p) => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" "),
-          fill: "none", stroke: "#c7bdf0", "stroke-width": 2.2, "stroke-dasharray": "5 7", "stroke-linejoin": "round"
-        }, svg);
+      if (hint) {
+        L.loops.forEach((lp) => {
+          if (lp.length < 2) return;
+          svgMake("polygon", {
+            points: lp.map((p) => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" "),
+            fill: "none", stroke: "#c7bdf0", "stroke-width": 2.2, "stroke-dasharray": "5 7", "stroke-linejoin": "round"
+          }, svg);
+        });
       }
       L.dots.forEach((d) => {
         svgMake("circle", { cx: d.x.toFixed(1), cy: d.y.toFixed(1), r: (d.accent ? lay.dotR * 0.9 : lay.dotR).toFixed(1), fill: INK }, svg);
@@ -4213,12 +4401,15 @@
     ctx.save();
     ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
     lay.letters.forEach((L) => {
-      if (hint && L.loop.length > 1) {
-        ctx.beginPath();
-        L.loop.forEach((p, i) => { if (i === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); });
-        ctx.closePath();
-        ctx.setLineDash([5, 7]); ctx.lineWidth = 2.2; ctx.strokeStyle = "#c7bdf0"; ctx.stroke();
-        ctx.setLineDash([]);
+      if (hint) {
+        L.loops.forEach((lp) => {
+          if (lp.length < 2) return;
+          ctx.beginPath();
+          lp.forEach((p, i) => { if (i === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); });
+          ctx.closePath();
+          ctx.setLineDash([5, 7]); ctx.lineWidth = 2.2; ctx.strokeStyle = "#c7bdf0"; ctx.stroke();
+          ctx.setLineDash([]);
+        });
       }
       L.dots.forEach((d) => {
         ctx.beginPath();
@@ -4324,7 +4515,7 @@
       // is rebuilt on every selectChar, so it can be specific. A picker that
       // said "12 dots" while the sheet drew 20 would be the same class of
       // defect as a setting with no visible consequence.
-      small.textContent = dotCountFor(activeChar || CHARS[0], lvl.single) + " " + T.dotsCount;
+      small.textContent = dotCountFor(dotCase(activeChar || CHARS[0]), lvl.single) + " " + T.dotsCount;
       b.appendChild(small);
       b.addEventListener("click", () => {
         dotPageState.level = lvl.key;
@@ -4356,7 +4547,21 @@
            under a group vaguely labelled "letter". Every one of the sixteen
            words is harvested from that locale's own pages -- Kleinbuchstaben
            94 uses, minuscules 492, minúsculas 645, huruf kecil 368 -- not
-           authored here. */
+           authored here.
+
+           Checked against native children's-worksheet publishers as well,
+           because harvesting proves a word is not invented and nothing more
+           (2026-09-16): de Grundschulkönig and Twinkl.de use "Groß und
+           Kleinbuchstaben" on tracing sheets; fr Nathan, Tipirate and
+           Caboucadin use "lettres majuscules et minuscules"; it
+           PianetaBambini and Maestra Chiara use "lettere maiuscole /
+           minuscole", which settles the one form that was a judgement call
+           here -- plural feminine, agreeing with lettere; pl childdevelop.pl
+           uses "wielkie i małe litery"; id lembarkerjaanak.com titles a sheet
+           "Menebalkan Huruf Besar dan Kecil A-Z", the same phrase as this
+           site's own id/printables/menebalkan-huruf/. es and pt were not
+           searched: mayúsculas / minúsculas and maiúsculas / minúsculas are
+           unambiguous and already carry 645 and 294 uses here. */
         b.setAttribute("aria-label", pair[0] === "upper" ? T.caseUpper : T.caseLower);
         const on = pair[0] === dotPageState.case;
         b.classList.toggle("is-active", on);
